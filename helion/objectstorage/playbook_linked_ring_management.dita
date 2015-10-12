@@ -3,7 +3,7 @@
 <topic id="topic_jmm_cnz_4t">
   <title>Swift Playbooks Linked to Ring Management</title>
   <body>
-    <p>The following table describes how playbooks relate to ring management</p>
+    <p>The following table describes how playbooks relate to ring management.</p>
     <simpletable id="simpletable_mtc_yb1_kt">
       <strow>
         <stentry><b>Playbook</b></stentry>
@@ -13,8 +13,8 @@
       <strow>
         <stentry><codeph>_swift-make-delta-rebalance.yml</codeph></stentry>
         <stentry>There are two steps in this playbook:<ul id="ul_smp_ygy_4t">
-            <li>Make delta<p>It processes the Input Model and compares against the existing rings.
-                After comparison, it produces a list of differences between the Input Model and the
+            <li>Make delta<p>It processes the input model and compares against the existing rings.
+                After comparison, it produces a list of differences between the input model and the
                 existing rings. This is called the ring delta. The ring delta covers drives being
                 added, drives being removed, weight changes, and replica count changes.</p></li>
           </ul><ul id="ul_xbm_2hy_4t">
@@ -35,21 +35,21 @@
             <li>Make delta<p>This is the same step as described above.</p></li>
           </ul><ul id="ul_ht2_f3y_4t">
             <li>Report<p>This prints a summary of the proposed changes that will be made to the
-                rings (i.e. what would happen if we rebalanced).</p></li>
-          </ul><p>The playbook reports any issues or problems it finds with the Input
-            Model.</p><p>This playbook can be useful to confirm that there are no errors in the
-            Input Model. It also allows you to check that when you change the Input Model, that the
-            proposed ring changes are as you expect. For example, if you had added a server to the
-            Input Model, but this playbook reports that no drives are being added, you should
+                rings (i.e. what would happen if you rebalanced).</p></li>
+          </ul><p>The playbook reports any issues or problems it finds with the input
+            model.</p><p>This playbook can be useful to confirm that there are no errors in the
+            input model. It also allows you to check that when you change the input model, that the
+            proposed ring changes are as you expect. For example, if you have added a server to the
+            input model, but this playbook reports that no drives are being added, you should
             determine the cause.</p></stentry>
         <stentry/>
       </strow>
       <strow>
         <stentry><codeph>swift-deploy.yml</codeph></stentry>
-        <stentry><codeph>swift-deploy.yml</codeph>is responsible for installing software and
-          configuring the Swift on nodes. As part installing and configuring, it runs the<codeph>
-            _swift-make-delta-rebalance.yml</codeph> and <codeph>swift-reconfigure.yml
-            playbooks.</codeph></stentry>
+        <stentry><codeph>swift-deploy.yml</codeph> is responsible for installing software and
+          configuring the Swift on nodes. As part of installing and configuring, it runs the
+            <codeph>_swift-make-delta-rebalance.yml</codeph> and
+            <codeph>swift-reconfigure.yml</codeph>  playbooks.</stentry>
         <stentry>This playbook is included in the <codeph>hlm-deploy.yml</codeph> and
             <codeph>site.yml</codeph> playbooks, so if you run either of those playbooks, the
             <codeph>swift-deploy.yml</codeph> playbook is also run.</stentry>
@@ -61,10 +61,10 @@
               <codeph>_swift-make-delta-rebalance.yml</codeph> playbook has changed and copies those
             rings to all Swift nodes.</p>
         </stentry>
-        <stentry>Every time that you directly use the<codeph>
-            _swift-make-delta-rebalance.yml</codeph> playbook, you must copy these rings to the
-          system using the <codeph>swift-reconfigure.yml</codeph> playbook. If you forget and run
-            _<codeph>swift-make-delta-rebalance.yml</codeph> twice, the process may move two
+        <stentry>Every time that you directly use the
+            <codeph>_swift-make-delta-rebalance.yml</codeph> playbook, you must copy these rings to
+          the system using the <codeph>swift-reconfigure.yml</codeph> playbook. If you forget and
+          run <codeph>_swift-make-delta-rebalance.yml</codeph> twice, the process may move two
           replicates of some partitions at the same time.</stentry>
       </strow>
     </simpletable>

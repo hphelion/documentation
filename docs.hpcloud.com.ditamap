@@ -191,6 +191,7 @@
       <topicref href="helion/objectstorage/replacing_drives_swift_node.dita"/>
       <topicref href="helion/objectstorage/replacing_swift_node.dita"/>
       <topicref href="helion/objectstorage/removing_node.dita"/>
+      <topicref href="helion/objectstorage/add_new_storage_policy.dita"/>
       <topicref href="helion/bura/bura_overview.dita" navtitle="Backing up and Restoring Your Data">
         <topicref href="helion/bura/backup.dita"/>
         <topicref href="helion/bura/restore.dita"/>

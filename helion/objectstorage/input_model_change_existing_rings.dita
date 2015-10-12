@@ -4,10 +4,10 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Applying Input Model Changes to Existing
     Rings</title>
   <body>
-    <p>This section describes a general approach of making changes to existing rings. This applies
-      to actions such as adding and removing a server and replacing and upgrading the disk drive(s).
-      There are a number of phases that must be performed when adding and removing a server and
-      replacing and upgrading the disk drive(s), as shown below:</p>
+    <p>This section describes a general approach of making changes to the existing rings. This
+      applies to actions such as adding and removing a server and replacing and upgrading the disk
+      drive(s). There are a number of phases that must be performed when adding and removing a
+      server and replacing and upgrading the disk drive(s), as shown below:</p>
     <p>
       <ul id="ul_sqz_jft_4t">
         <li><b>Changing the Input Model Phase</b><p>Do the following:<ol id="ol_jv2_zf5_pt">
@@ -18,7 +18,7 @@
                 requirement. For more information, refer <xref
                   href="../input_model.dita#input_model"/></li>
               <li>Commit your configuration to the <xref href="../using_git.dita">local repo</xref>,
-                as follows<codeblock>git add -A
+                as follows:<codeblock>git add -A
 git commit -m "commit message"</codeblock></li>
               <li>Run the configuration
                 processor:<codeblock>cd ~/helion/hos/ansible
@@ -30,7 +30,7 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
                 playbook.<codeblock>cd ~/helion/hos/ansible/
 ansible-playbook -i hosts/localhost _swift-validate-input-model.yml</codeblock></li>
               <li>Validate that the number of drives proposed to be added or deleted or weight
-                change is correct. Fix any errors in your Input Model. At this stage, no changes
+                change is correct. Fix any errors in your input model. At this stage, no changes
                 have been made to rings. </li>
             </ol></p></li>
         <li><b>First phase of ring rebalance:</b><p>Do the following:<ol id="ol_f5m_dg5_pt">
@@ -43,7 +43,7 @@ ansible-playbook -i hosts/verb_hosts swift-deploy.yml </codeblock></li>
                   href="safe_rebalance_deploy_ring.dita#topic_ohx_j1t_4t"/></li>
             </ol></p></li>
         <li><b>Weight change phase of ring rebalance:</b><p>At this stage, no changes are being made
-            to the input mode. However, when you set the weight-step attribute, the rings that was
+            to the input model. However, when you set the weight-step attribute, the rings that was
             rebuilt in the previous rebalance phase have weights that are different than their
             target/final value. You gradually move to the target/final weight by rebalancing a
             number of times as described in this page. For more information about the weight-step
@@ -53,7 +53,7 @@ ansible-playbook -i hosts/verb_hosts swift-deploy.yml </codeblock></li>
                 playbook:<codeblock>cd ~/helion/hos/ansible/
 ansible-playbook -i hosts/localhost _swift-make-delta-rebalance.yml</codeblock></li>
               <li>Run the
-                reconfigure<codeblock>cd ~/scratch/ansible/next/hos/ansible
+                reconfigure.<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
               <li>Wait until replication has finished or min-part-time has elapsed (which ever is
                 longer). For more information see <xref
@@ -89,13 +89,13 @@ ansible-playbook -i hosts/localhost _swift-make-delta-rebalance.yml | tee /tmp/r
       "NOTE: No partitions could be reassigned.", 
       "Either none need to be or none can be due to min_part_hours [16]."</codeblock><p>The
                   text <b>No partitions could be reassigned</b> indicates that no further rebalances
-                  are necessary. If this is true for all the rings, you are completed with the final
+                  are necessary. If this is true for all the rings, you have completed the final
                     phase.<note>You must have allowed enough time to elapse since the last
                     rebalance. In the example, you must have waited at least 16 hours since the last
                     rebalance. If not, you should wait until enough time has elapsed and repeat this
                     phase.</note></p></li>
               <li>Run the
-                reconfigure<codeblock>cd ~/scratch/ansible/next/hos/ansible
+                reconfigure.<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
               <li>Wait until replication has finished or min-part-time has elapsed (which ever is
                 longer). For more information see <xref
@@ -135,7 +135,7 @@ ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
                   <li>To add a server, follow the procedure described in <xref
                       href="add_new_node.dita#topic_j2p_d1r_4t">Adding a New
                     Node/Server</xref>.</li>
-                  <li>Follow the instructions menitoned in <xref href="#topic_vyp_cft_4t"
+                  <li>Follow the instructions mentioned in <xref href="#topic_vyp_cft_4t"
                       format="dita"/> to incrementally change the weights and perform the final
                     rebalance.</li>
                 </ul>
@@ -145,7 +145,7 @@ ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
           <strow>
             <stentry>Removing Server(s)</stentry>
             <stentry>
-              <p>In HP Helion OpenStack 2.0, when you remove servers from the Input Model, the disk
+              <p>In HP Helion OpenStack 2.0, when you remove servers from the input model, the disk
                 drives are removed from the ring – the weight is not gradually reduced using the
                 weight-step attribute. <ul id="ul_dwn_nk5_pt">
                   <li>Remove servers in phases<ul id="ul_wqy_nk5_pt">
@@ -167,7 +167,7 @@ ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
           <strow>
             <stentry>Replacing Disk Drive(s)</stentry>
             <stentry><p>When a drive fails, replace it as soon as possible. Do not attempt to remove
-                it from the ring – this creates too operator overhead. Swift will continue to store
+                it from the ring – this creates to operator overhead. Swift will continue to store
                 the correct number of replicas by "handing off" objects to other drives instead of
                 the failed drive.</p>If the disk drives are of the same size as the original when
               the drive is replaced, no ring changes are required. You can confirm this by running
