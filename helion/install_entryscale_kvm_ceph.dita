@@ -6,6 +6,8 @@
     <p>This page describes configuration, installation, and the integration of Ceph Block Storage
       with HP Helion OpenStack 2.0. It also provides the procedure to perform Ceph operation after
       Ceph deployment.</p>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/important_notes"/>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/prereqs"/>
     <section>
       <title>Prerequisite</title>
       <p>The deployer node must be setup before deploying Ceph.</p>
