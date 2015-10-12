@@ -16,13 +16,12 @@
         <li> Update your cloud model (<b>servers.yml </b>and <b>baremtal.yml</b>) with new MAC
           address; server ID; and iLO/IPMI user, password, and IP address if these have changed.
           (Please follow the procedure for updating your cloud model/ git repo)</li>
-        <li> Get the <b>servers.yml</b> and <b>baremetalConfig.yml </b>files stored in git:
+        <li> Get the <b>servers.yml</b> file stored in git:
           <codeblock>cd ~/helion/my_cloud/definition/data
 git checkout site</codeblock>then change
-          the IP address of this existing controller node in <b>servers.yml</b> and change the MAC
-          address and IPMI/iLO info in <b>baremetalConfig.yml </b>if different from what was there
-          previously. Save and commit the change
-          <codeblock>git commit -a -m "repaired node X"</codeblock></li>
+          the IP address of this existing controller node and change the MAC address and IPMI/iLO
+          info  in <b>servers.yml</b>  if different from what was there previously. Save and commit
+          the change <codeblock>git commit -a -m "repaired node X"</codeblock></li>
         <li>Run the configuration processor as follows:
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
