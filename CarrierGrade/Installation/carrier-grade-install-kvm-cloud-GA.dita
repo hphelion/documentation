@@ -88,15 +88,17 @@ ifconfig eth0 up</codeblock></li>
           </ul></li>
         <li>Apply the required patches on controller-0. Execute the following commands for each
           patch listed in the previous step.
-          <codeblock>sudo wrs-patch upload /home/wrsroot/TS_15.05_PATCH_0001.patch
+          <codeblock>
+sudo wrs-patch upload /home/wrsroot/TS_15.05_PATCH_0001.patch
 sudo wrs-patch upload /home/wrsroot/TS_15.05_PATCH_0002.patch
 sudo wrs-patch upload /home/wrsroot/TS_15.05_DESIGN_PATCH_HEAT.patch
 sudo wrs-patch upload /home/wrsroot/TS_15.05_DESIGN_PATCH_HORIZON.patch
-sudo wrs-patch apply /home/wrsroot/TS_15.05_PATCH_0001.patch
-sudo wrs-patch apply /home/wrsroot/TS_15.05_PATCH_0002.patch
-sudo wrs-patch apply /home/wrsroot/TS_15.05_DESIGN_PATCH_HEAT.patch
-sudo wrs-patch upload /home/wrsroot/TS_15.05_DESIGN_PATCH_HORIZON.patch
-sudo wrs-patch install-local /opt/branding</codeblock></li>
+sudo wrs-patch apply  TS_15.05_PATCH_0001
+sudo wrs-patch apply  TS_15.05_PATCH_0002
+sudo wrs-patch apply TS_15.05_DESIGN_PATCH_HEAT
+sudo wrs-patch apply TS_15.05_DESIGN_PATCH_HORIZON
+sudo wrs-patch install-local /opt/branding
+</li>
         <li>Reboot <codeph>controller-0</codeph>.<codeblock>sudo reboot       </codeblock></li>
     </ol>
     </section><section><title>Install the KVM region cloud</title>
