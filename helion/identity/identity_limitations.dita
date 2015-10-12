@@ -76,10 +76,10 @@
       <ul id="ul_az2_jpd_bt">
 
 
-        <li>Helion OpenStack MFA support is a custom configuration requiring HP Professional
+        <li>HP Helion OpenStack MFA support is a custom configuration requiring HP Professional
           Services support.</li>
-        <li>MFA drivers are not included with Helion OpenStack and need to be provided by a specific
-          MFA vendor.</li>
+        <li>MFA drivers are not included with HP Helion OpenStack and need to be provided by a
+          specific MFA vendor.</li>
         <li>Additional information can be found at <xref
             href="http://docs.openstack.org/security-guide/content/identity-authentication-methods.html#identity-authentication-methods-external-authentication-methods"
             format="html" scope="external"

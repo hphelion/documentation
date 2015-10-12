@@ -28,7 +28,7 @@
       <!--./commercial/GA1/1.1commerical.services-reporting-overview.md-->
       <!--permalink: /helion/openstack/1.1/services/reporting/overview/--></p>
     <p> </p>
-    <note>The deployment of the Helion OpenStack Metering service is considered experimental and
+    <note>The deployment of the HP Helion OpenStack Metering service is considered experimental and
       targeted at developers investigating integration of external software applications with the
       Ceilometer API for showback, chargeback, and billing applications only. Only a limited set of
       metrics are available. Developers interested in monitoring use cases should refer to the <xref
@@ -43,7 +43,7 @@
     <section id="newIn20">
       <title>New for HP Helion OpenStack 2.0</title>
       <p> Ceilometer configuration is now possible via a number of yaml files in the HP Helion
-        implementation of the OpenStack Ceilometer metering service.</p>
+        OpenStack implementation of the OpenStack Ceilometer metering service.</p>
     </section>
 
     <section id="installation">
