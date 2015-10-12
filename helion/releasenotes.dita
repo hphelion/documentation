@@ -331,7 +331,7 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
         errors as your first controller won't always be the one hit.</p>
       <p>To resolve this issue you can remove GUI installer's Apache configuration file
         (dayzero-apache.conf). If you are using the installer UI to install, you must wait until
-        after  installation is complete to remove it. That conf file is not needed again.</p>
+        after installation is complete to remove it. That conf file is not needed again.</p>
       <p>To remove the file, you can run these commands from your deployer:</p>
       <ol>
         <li>To remove the file, run:
@@ -347,6 +347,11 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
         <li>Reload Apache for the change to take
           effect:<codeblock>sudo service apache2 reload</codeblock></li>
       </ol>
+      <p><b>The <codeph>--limit</codeph> Option Does Not Work with the <codeph>bm-reimage</codeph>
+          and <codeph>cobbler-deploy</codeph> Playbooks</b></p>
+      <p>When running the <codeph>bm-reimage.yml</codeph> or <codeph>cobbler-deploy.yml</codeph>
+        playbooks you will see a mention of using the <codeph>--limit</codeph> switch to re-run the
+        playbook. This switch does not work.</p>
     </section>
   </body>
 </topic>
