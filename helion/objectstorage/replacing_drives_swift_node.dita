@@ -7,7 +7,7 @@
       disk drive (generally <b>/dev/sda</b>) and storage disk drives. There are different procedures
       for the replacement of each classes of drives to bring the node back to normal.</p>
     <section>
-      <title><b>Replacing an OS disk drive</b></title>
+      <title><b>Replacing OS disk drive</b></title>
       <p>After the OS disk drive is replaced, the node must be reimaged.<ol id="ol_ewb_vjv_pt">
           <li>Log onto the deployer.</li>
           <li>Using ansible, reimage the
