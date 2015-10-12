@@ -10,16 +10,21 @@
       be <b>true</b>:<ul id="ul_ggm_rkc_jt">
         <li>The following services must have a direct connection to the same network:<ul
             id="ul_x1c_5kc_jt">
-            <li>swift-proxy</li>
-            <li>swift-account</li>
-            <li>swift-container</li>
-            <li>swift-object</li>
-            <li>swift-ring-builder</li>
+            <li><codeph>swift-proxy</codeph></li>
+            <li><codeph>swift-account</codeph></li>
+            <li><codeph>swift-container</codeph></li>
+            <li><codeph>swift-object</codeph></li>
+            <li><codeph>swift-ring-builder</codeph></li>
           </ul></li>
         <li>The swift-proxy service must have a <b>direct</b> connection to the same network as the
             <codeph>cluster-ip</codeph> service.</li>
-        <li>The swift-proxy and memcached service must be <b>co-located</b> in the same cluster of
-          the control plane.</li>
+        <li>The memcached service must be configured on some cluster of the control plane. In small
+          deployments, it is convenient to run it on the same cluster as the horizon service. For
+          larger deployments with many nodes running the <codeph>swift-proxy</codeph> service, it
+          may be better to <b>co-locate</b> the <codeph>swift-proxy</codeph> and
+            <codeph>memcached</codeph> services. The <codeph>swift-proxy</codeph> and and
+            <codeph>swift-container</codeph> services must have a <b>direct</b> connection to the
+          same network as the <codeph>memcached</codeph> service.</li>
         <li>The swift-proxy and<codeph> swift-ring-builder</codeph> service must be
             <b>co-located</b> in the same cluster of the control plane.</li>
         <li>The ntp-client service must be <b>present</b> on all Swift nodes.</li>

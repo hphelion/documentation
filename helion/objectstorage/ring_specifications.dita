@@ -55,8 +55,9 @@
             <i>storage policies</i>. The <codeph>display-name</codeph> is the name of the storage
           policy and can be used by users of the Swift system when they create containers. It allows
           them to specify the storage policy that the container uses. In the example, the storage
-          policy is called
-          <b>General</b>.<!--<li>The swift-ring-builder will enforce a minimum of 16 hours between ring rebuilds.</li><li><b>Replica count</b>: The recommended value for the <codeph>replica-count</codeph> attribute is 3. Three copies of data are kept to provide resiliency and availability.</li>--></li>
+          policy is called <b>General</b>.</li>
+        <li>The swift-ring-builder will enforce a minimum of 16 hours between ring
+          rebuilds.<!--</li><li><b>Replica count</b>: The recommended value for the <codeph>replica-count</codeph> attribute is 3. Three copies of data are kept to provide resiliency and availability.</li>--></li>
         <li>
           <p>The purpose of the <b>min-part-time, partition-power, replication-policy</b>
               and<b>replica-count</b> are described in the following section. </p>

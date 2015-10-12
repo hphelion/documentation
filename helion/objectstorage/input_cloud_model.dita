@@ -95,16 +95,18 @@
             <li><xref href="lm_scan_metering.dita"/></li>
             <li><xref href="utility.dita"/></li>
           </ul></li>
-      </ul><p>
-        <!--In the entry-scale-with-vsa cloud model, you can perform the following swift operations: -->
-        <ul id="ul_hck_4c1_kt">
-          <li>
-            <p>You can not only perform the above operation but you can check the <xref
-                href="check_objectstorage_operation.dita">swift operation</xref> in your
-              environment.</p>
-          </li>
-        </ul>
-      </p></section>
+      </ul><ul id="ul_knx_1js_qt">
+        <li><xref href="troubleshooting.dita"/><ul id="ul_lh5_fjs_qt">
+            <li><xref href="deploy_fails_with_msdos_disks.dita"/></li>
+            <li><xref href="examine_details_planned_ring_changes_prior_deploy.dita"/></li>
+            <li><xref href="interpreting_swift_validate_input_model.dita"/></li>
+            <li><xref href="first_proxy_server.dita"/></li>
+            <li><xref href="label_on_partition.dita"/></li>
+            <li><xref href="filesystem_label.dita"/></li>
+            <li><xref href="recovering_builder_file.dita"/></li>
+            <li><xref href="restart_deploy_from_scratch.dita"/></li>
+          </ul></li>
+      </ul><p><!--In the entry-scale-with-vsa cloud model, you can perform the following swift operations: --></p></section>
     <!-- 
     <section id="mid-size"><title>Mid Size Cloud Model</title><p>This section describes
         configuration of Swift services in the mid size cloud model.</p><p>This example model allows

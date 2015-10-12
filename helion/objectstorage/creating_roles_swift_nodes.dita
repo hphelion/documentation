@@ -21,7 +21,7 @@
         <strow>
           <stentry><b><codeph>interface-model</codeph></b></stentry>
           <stentry> You can either select an existing interface model or create one specifically for
-            Swift object servers. In the following example <b>INTERFACE_SET_SWOBJ</b> is used. See
+            Swift object servers. In the following example <b>SWPAC-INTERFACES</b> is used. See
               <xref href="allocating_network.dita#topic_pcj_hzv_dt">Swift Network and Service
               Requirements</xref> for more information.</stentry>
         </strow>
@@ -40,8 +40,8 @@
 .
 .
 - name: <b>SWOBJ-ROLE</b>
-  interface-model: <b>INTERFACE_SET_SWOBJ</b>
-  disk-model: <b>SWOBJ-DISKS</b></codeblock>
+  interface-model: <b>SWPAC-INTERFACES</b>
+  disk-model: <b>SWPAC-DISKS</b></codeblock>
     </example>
     <p><!--You must alloacte a server for Swift. Therefore, you specify the roles of the servers in <codeph>data/baremetal.yml</codeph> file. For example, a Swift Proxy, Container, Account (PAC) node is specified as follows:--></p>
     <!--<p><codeblock>baremetal_servers:

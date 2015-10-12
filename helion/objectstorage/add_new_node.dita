@@ -5,13 +5,13 @@
   <body>
     <p>This page describes the procedure to add new node(s)/Swift object server to an existing
       system.</p>
-    <p>To add a new node to your cloud, you will need to add it to <codeph>servers.yml</codeph>, and
-      then run the scripts that update your cloud configuration. To begin, access the
-        <codeph>servers.yml file</codeph> by checking out the git branch where you are required to
-      make the changes:</p>
     <section>
       <title>Procedure to add a new node</title>
-      <p>You must add a new node details in the <codeph>server.yml</codeph> file. </p>
+      <p>To add a new node to your cloud, you will need to add it to <codeph>servers.yml</codeph>,
+        and then run the scripts that update your cloud configuration. To begin, access the
+          <codeph>servers.yml file</codeph> by checking out the git branch where you are required to
+        make the changes:
+        <!--You must add a new node details in the <codeph>server.yml</codeph> file. --></p>
       <p>Perform the following steps to add a new node:<ol id="ol_p4w_gbr_4t">
           <li><!--Log in to the deployer node.--> Get the<codeph> server.yml</codeph> file stored in
             git:<codeblock>cd ~/helion/my_cloud/definition/data

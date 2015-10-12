@@ -251,7 +251,7 @@
           <topicref href="helion/objectstorage/label_on_partition.dita"/>
           <topicref href="helion/objectstorage/filesystem_label.dita"/>
           <topicref href="helion/objectstorage/recovering_builder_file.dita"/>
-          <topicref href="helion/objectstorage/operational_procedure.dita"/>
+          <topicref href="helion/objectstorage/restart_deploy_from_scratch.dita"/>
         </topicref>
         <topicref href="helion/metering/metering_troubleshoot.dita"
           navtitle="Troubleshooting the Ceilometer Metering Service" locktitle="yes"/>
