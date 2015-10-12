@@ -30,8 +30,8 @@
               Features</xref></li>
           <li><xref href="kilo_features.dita#HP2.0KiloFeatures/HeatFeatures">Heat
             Features</xref></li>
-          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/IronicFeatures">Ironic
-              Features</xref></li>
+         <!-- <li><xref href="kilo_features.dita#HP2.0KiloFeatures/IronicFeatures">Ironic
+              Features</xref></li> -->
           <li><xref href="kilo_features.dita#HP2.0KiloFeatures/HorizonFeatures">Horizon
               Features</xref></li>
           <li><xref href="kilo_features.dita#HP2.0KiloFeatures/MonascaFeatures">Monasca
@@ -1100,6 +1100,7 @@
       </table>
     </section>
     
+    <!--
     <section id="IronicFeatures">
       <title>Ironic Features</title>
       <p>Ironic Description</p>
@@ -1156,6 +1157,7 @@
         </table>
       </p>
     </section>
+    -->
     
     <section id="HorizonFeatures">
       <title>Horizon Features</title>
