@@ -31,6 +31,21 @@
         </ul>For each Moonshot Nodes you must provide the iLO information which is shared across
         Moonshot and a Moonshot identifier as an additional field.</p>
     </section>
+    <section>
+      <title>Moonshot iLOs </title>
+      <p>All Moonshot nodes in a given enclosure have the same iLO IP address. To identify the
+        specific node in the enclosure you need to add a "moonshot:" field in
+          <codeph>servers.yml</codeph> using the standard <b>c&lt;cartridge>n&lt;node></b> moonshot
+        node identifiers.</p>
+      <p>For
+        example:<codeblock>  - id: ccn-0001
+      ip-addr: 10.1.12.34
+      role: ROLE-CCP
+      ilo-ip: 10.1.17.112
+      ilo-password: whatever
+      ilo-user: whatever
+      moonshot: c4n2</codeblock></p>
+    </section>
     <section><sectiondiv><b>YAML Files</b></sectiondiv><p>Ensure that you modify the following YAML
         files before provisioning Moonshot nodes:<ul id="ul_qbb_ln1_nt">
           <li><!--<codeph>baremetalConfig.yml</codeph><p>The <codeph>baremetalConfig.yml</codeph> provides a detail about each of the servers in your environment. You must add the iLO information and Moonshot identifier to this file. A sample file of <codeph>baremetalConfig.yml</codeph> is shown below:<codeblock>baremetal_servers:
