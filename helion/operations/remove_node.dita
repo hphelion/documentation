@@ -188,7 +188,7 @@ stack@padawan-ccp-c0-m1-mgmt:~$ nova service-list</codeblock><codeblock>+----+--
 +----+------------------+---------------------------+----------+---------+-------+----------------------------+-----------------+</codeblock></li>      
       
      <li>Finally, follow the <xref href="#topic_fld_zzy_lt/removeNodes" format="dita">remove node
-            steps</xref> at the top of this document.</li> 
+            steps</xref> at the top of this document. </li> 
       </ol>
 
 
