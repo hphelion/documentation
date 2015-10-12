@@ -1,37 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_kvm_ceph">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry Scale Cloud with Ceph</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry Scale Cloud
+    with Ceph</title>
   <body>
-    <p>This page describes configuration, installation, and the integration of Ceph Block Storage
-      with HP Helion OpenStack 2.0. It also provides the procedure to perform Ceph operation after
-      Ceph deployment.</p>
+    <p>This page describes how to do an installation for the Helion Entry Scale Cloud with Ceph
+      model.</p>
     <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/important_notes"/>
     <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/prereqs"/>
-    <section>
-      <title>Prerequisite</title>
-      <p>The deployer node must be setup before deploying Ceph.</p>
-    </section>
-    <section>
-      <title>Installation Procedure</title>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/install_deployer"/>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/configure_deployer"/>
+    <section id="configuration">
+      <title>Configure Your Environment</title>
       <p>Perform the following procedures to configuration, installation, and the integration of
         Ceph Block Storage with HP Helion OpenStack 2.0</p>
     </section>
     <section>
       <p>
-        <ol id="ol_evc_k11_gt">
-          <li>Login to the Deployer node.</li>
-          <li>Copy <codeph>helion/examples/</codeph> in the Deployed node.
-            <codeblock>cp -r ~/helion/examples/entry-scale-kvm-ceph/* ~/helion/my_cloud/definition/</codeblock></li>
-          <li>List the folder in <codeph>~/helion-input/my_cloud/definition</codeph>. <p>The
-              configuration files for editing are available at
-                <codeph>~/helion/my_cloud/definition/data</codeph>.</p></li>
-          <li>Edit the configuration files, based on your environment, to implement Ceph servers. </li>
-          <li>Execute the following command to ensure that the additional disks are available on the
-            servers marked for OSD as specified in the
-            <codeph>disks_osd.yml</codeph>.<codeblock>vi <codeph>disks_osd.yml</codeph></codeblock>The
-            sample file of <codeph>disks_osd.yml</codeph> is as
-              follows:<codeblock>  disk-models:
+        <ol>
+          <li>Setup your configuration files, as follows: <ol>
+              <li>See the sample set of configuration files in the
+                  <codeph>~/helion/examples/entry-scale-kvm-ceph</codeph> directory. The
+                accompanying README.md file explains the contents of each of the configuration
+                files.</li>
+              <li>Copy the example configuration files into the required setup directory and edit
+                them to contain the details of your environment:
+                <codeblock>cp -r ~/helion/examples/entry-scale-kvm-ceph/* ~/helion/my_cloud/definition/</codeblock></li>
+              <li>Begin inputting your environment information into the configuration files in the
+                  <codeph>~/helion/my_cloud/definition</codeph> directory. Full details of how to do
+                this can be found here: <xref href="input_model.dita">Helion OpenStack 2.0 Input
+                  Model</xref>. <note type="important">If you chose to use your first controller
+                  node as your deployer, ensure that your <codeph>servers.yml</codeph> file contains
+                  the <codeph>is-deployer: true</codeph> notation in your controller options. If you
+                  are using a dedicated deployer node you can omit this. Here is an example snippet
+                  of a <codeph>servers.yml</codeph> file where a user is using their first
+                  controller node as their deployer:
+                  <codeblock># Controllers
+                    - id: controller1
+                    ip-addr: 192.168.10.3
+                    role: CONTROLLER-ROLE
+                    server-group: RACK1
+                    nic-mapping: HP-DL360-4PORT
+                    mac-addr: b2:72:8d:ac:7c:6f
+                    ilo-ip: 192.168.9.3
+                    ilo-password: password
+                    ilo-user: admin
+                    <b>is-deployer: true</b></codeblock></note></li>
+              <li id="encrypt">[Optional] You can use the <codeph>hosencrypt.py</codeph> script to
+                encrypt your iLo passwords. This script uses OpenSSL. <ol>
+                  <li>Change to the Ansible directory:
+                    <codeblock>cd ~/helion/hos/ansible</codeblock></li>
+                  <li>Put the encrytion key into the following environment variable:
+                    <codeblock>export HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeblock></li>
+                  <li>Run the python script below and follow the instructions. Enter a password that
+                    you want to encrypt. <codeblock>hosencrypt.py</codeblock></li>
+                  <li>Take the string generated and place it in the <codeph>"ilo_password"</codeph>
+                    field in your <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph>
+                    file, remembering to enclose it in quotes.</li>
+                  <li>Repeat the above for each server.</li>
+                </ol>
+              </li>
+
+              <li>Edit your <codeph>disks_osd.yml</codeph> file to ensure that the additional disks
+                are available on the servers:
+                <codeblock>disk-models:
   - name: DISK_SET_OSD
     # two disk node; remainder of disk 1 and all of disk 2 combined in single VG
     # VG is used to create three logical vols for /var, /var/log, and /var/crash
@@ -59,9 +91,11 @@
            name: ceph
            attrs:
              usage: data
-             journal_disk: /dev/sdf</codeblock><p>The
-              above sample file contains three OSD nodes and two journal disk. </p><p>The disk model
-              has the following fields: </p><p>
+             journal_disk: /dev/sdf</codeblock></li>
+            </ol>
+            <p>The above sample file contains three OSD nodes and two journal disk.</p>
+            <p>The disk model has the following fields:</p>
+            <p>
               <simpletable>
                 <strow>
                   <stentry><b>device-groups</b></stentry>
