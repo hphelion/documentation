@@ -57,9 +57,9 @@
             <codeph>dvPortGroup</codeph>, as shown:<p><image
               href="../../media/CGH-install-portgroup-name.png" id="image_eqm_ngz_zs"/></p></li>
       </ol>
-      <p><i>Return to the Installing the <xref
-            href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
-            Deployment</xref>.</i></p>
+      <p>Return to the Installing the <xref
+          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+        Deployment</xref>.</p>
     </section>
 </body>
 </topic>
