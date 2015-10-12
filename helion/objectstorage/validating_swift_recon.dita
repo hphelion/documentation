@@ -22,7 +22,6 @@ Disk usage: space used: 13745373184 of 119927734272
 Disk usage: space free: 106182361088 of 119927734272
 Disk usage: lowest: 10.39%, highest: 12.96%, avg: 11.4613798613%
 ===============================================================================</codeblock></p>
-    <p>For example:</p>
     <p>In the above example, the results for several nodes are combined together. You can also view
       the results from individual nodes by adding the <b>-v </b>option as shown in the following
       example:<codeblock>$ sudo swift-recon --diskusage -v

@@ -10,8 +10,9 @@
     <section>
       <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
       <p><?oxy_custom_end?><ul id="ul_sqc_r2b_kt">
-          <li>Log onto the first node in the system that is running the swift-proxy-server
-            process.</li>
+          <li>Log onto the first node in the system that is running the swift-proxy-server process
+            (refer to <xref href="first_proxy_server.dita#topic_rtc_s3t_mt">Identifying the first
+              Swift Proxy Server</xref>)</li>
           <li>Execute the following command to get the entire list drives and the actions planned
             for the rings by executing the following
             command:<codeblock>sudo swiftlm-ring-supervisor --make-delta --report --detail </codeblock></li>

@@ -9,8 +9,8 @@
     <p>This section describes the procedure to allocate Proxy, Account, Container (PAC) Servers
       during the <b>initial</b> deployment of the system. </p>
     <section>
-      <title>Procedure to Allocate Swift PAC Servers</title>
-      <p>Perform the following steps to allocate to allocate PAC Servers:</p>
+      <title>Procedure to allocate Swift PAC Servers</title>
+      <p>Perform the following steps to allocate PAC Servers:</p>
     </section>
     <ul>
       <li>Verify if the example input model already contains a suitable server role. The server

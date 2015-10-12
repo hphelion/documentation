@@ -9,7 +9,7 @@
     <p>This section describes the procedure to allocate Swift Object Server during the
         <b>initial</b> deployment of the system. </p>
     <section id="procedure">
-      <title>Procedure to Allocate Swift Object Server</title>
+      <title>Procedure to allocate Swift Object Server</title>
       <p>Perform the following steps to allocate Swift Object Servers:<ul id="ul_fbk_fj3_kt">
           <li>Verify if the example input model already contains a suitable server role. The server
             roles are usually described in <codeph>data/server_roles.yml</codeph> file. If the
@@ -22,14 +22,14 @@
             servers. The resource nodes are usually assigned in
               <codeph>data/control_plane.yml</codeph> file. If it is not assigned, you must add a
             suitable resource node as described in <xref href="creating_object_server_resource.dita"
-                ><i>Creating an Object Sever Resource node</i></xref></li>
+                ><i>Creating an Object Sever Resource node</i></xref>.</li>
           <li>Identity the physical servers and their IP address and other detailed information. Add
             the servers details in either of the following YAML files and verify the server-groups
               information:<ul id="ul_gmj_ng3_kt">
-              <li>If you use Cobbler, add these details the baremetal-servers list (usually in
-                  <codeph>data/servers.yml</codeph>).</li>
+              <li>If you use Cobbler, add these details in the baremetal-servers list (usually in
+                  <codeph>data/servers.yml</codeph> file).</li>
               <li>As with all servers, you must also verify and/or modify the server-groups
-                information (usually in <codeph>data/server_groups.yml</codeph>)</li>
+                information (usually in <codeph>data/server_groups.yml</codeph> file)</li>
             </ul>The only part of this process that is unique to Swift is the allocation of disk
             drives for use by the object ring as described in <i><xref
                 href="allocating_disk_drives.dita#allocating-disk-drives">Allocating Disk Drives for
