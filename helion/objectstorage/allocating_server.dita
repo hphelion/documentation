@@ -26,7 +26,7 @@
           <li>Identity the physical servers and their IP address and other detailed information. Add
             the servers details in either of the following YAML files and verify the server-groups
               information:<ul id="ul_gmj_ng3_kt">
-              <li>If you use Cobbler, add these details in the baremetal-servers list (usually in
+              <li>You add these details in the servers list (usually in
                   <codeph>data/servers.yml</codeph> file).</li>
               <li>As with all servers, you must also verify and/or modify the server-groups
                 information (usually in <codeph>data/server_groups.yml</codeph> file)</li>
