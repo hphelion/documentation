@@ -16,10 +16,10 @@
         href="swift_safe-rebalance-deploy-ring.dita#topic_ohx_j1t_4t"
         >swift_safe-rebalance-deploy-ring.html</xref>.</p>
     <p>In HP Helion OpenStack, the weight-step attribute is set in the ring specification of the
-      Input Model. The weight-step value specifies a maximum value for the change of the weight of a
-      drive in any single rebalance. For example, if we add a drive of 4TB in size, we would
+      input model. The weight-step value specifies a maximum value for the change of the weight of a
+      drive in any single rebalance. For example, if you add a drive of 4TB in size, you would
       normally assign a weight of 4096. However, if the weight-step attribute is set to 1024, when
-      we to add a drive, the weight is initially set to 1024. Then next time we rebalance the ring,
+      you add a drive, the weight is initially set to 1024. Then next time you  rebalance the ring,
       the weight is set to 2048. Yet another rebalance sets the weight to the final value of
       4096.</p>
     <p>The value of weight-step is dependent on the size of the drives and number of the servers
@@ -31,8 +31,8 @@
         following steps to set the weight-step attribute:<note>You can set the weight-step
           attributes for Account, Container, Object-0, etc in the similar way.</note><ol
           id="ol_dl2_bdy_4t">
-          <li>Edit the (<codeph>data/swift/rings.yml</codeph>) file containing the
-            ring-specifications in the Input Model.</li>
+          <li>Edit the <codeph>data/swift/rings.yml</codeph> file containing the ring-specifications
+            in the input model.</li>
           <li>Search the attributes of a ring. In the following example we are setting the attribute
             for Account Ring. Similar procedure needs to be performed for Container and Object
             Rings.<codeblock>- name: account
