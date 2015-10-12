@@ -20,7 +20,7 @@
             containers.</li>
           <li>Object services provide storage management for object storage.</li>
         </ul>
-      </p><p>These services can be co-located in a number of ways. The following two general pattern
+      </p><p>These services can be co-located in a number of ways. The following general pattern
         exist in the example cloud models distributed in HP Helion OpenStack:</p><p>
         <ul>
           <li>The Swift-proxy, Account, Container, and Object services run on the same (PACO) node
