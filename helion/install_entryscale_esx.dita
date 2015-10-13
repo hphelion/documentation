@@ -19,8 +19,8 @@
           instructions carefully. </p>
       </note>
     </section>
-    <section conref="bare_installation_kvm.dita#install_kvm/important_notes"/>
-    <section conref="bare_installation_kvm.dita#install_kvm/prereqs"/>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm/important_notes"/>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm/prereqs"/>
     <section id="prereqs">
       <title>Prerequisite</title>
       <p>ESX/vCenter integration is not fully automatic, vCenter administrators are advised of the
@@ -57,8 +57,8 @@
       <title>Procedure to Deploy ESX cloud</title>
     </section>
     <p>The following topics in this section explain how to deploy ESX cloud.</p>
-    <section conref="bare_installation_kvm.dita#install_kvm/install_deployer"/>
-    <section conref="bare_installation_kvm.dita#install_kvm/configure_deployer"/>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm/install_deployer"/>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm/configure_deployer"/>
     <section id="Configure">
       <title>Prepare and Deploy Cloud Controllers</title>
       <ol id="ol_c1w_pfl_ft">
@@ -72,12 +72,11 @@
             <codeph>~/helion/my_cloud/definition/</codeph>. Refer to the <b><xref
               href="input_model.dita">Helion OpenStack 2.0 Input Model</xref></b> document for
           assistance with the configuration files. <note type="important">If you chose to use your
-            first controller node as your deployer, ensure that your
-              <codeph>servers.yml</codeph> file contains the <codeph>is-deployer:
-              true</codeph> notation in your controller options. If you are using a dedicated
-            deployer node you can omit this. Here is an example snippet of a
-              <codeph>servers.yml</codeph> file where a user is using their first controller
-            node as their deployer:
+            first controller node as your deployer, ensure that your <codeph>servers.yml</codeph>
+            file contains the <codeph>is-deployer: true</codeph> notation in your controller
+            options. If you are using a dedicated deployer node you can omit this. Here is an
+            example snippet of a <codeph>servers.yml</codeph> file where a user is using their first
+            controller node as their deployer:
             <codeblock># Controllers
 - id: controller1
   ip-addr: 192.168.10.3
@@ -103,8 +102,8 @@
 mechanism_drivers = ovsvapp, openvswitch, l2population
 [agent]
 enable_distributed_routing = False</codeblock></li>
-        <li>Commit your cloud deploy configuration to the<xref
-            href="using_git.dita"> local git repo</xref>, as follows: <codeblock>cd ~/helion/hos/ansible
+        <li>Commit your cloud deploy configuration to the<xref href="using_git.dita"> local git
+            repo</xref>, as follows: <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "My config or other commit message"</codeblock>
           <note>This step needs to be repeated any time you make changes to your configuration files
@@ -131,9 +130,9 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           href="installation_troubleshooting.dita#troubleshooting_installation/configproc"
           >Installation Troubleshooting</xref> document.</p>
     </section>
-    <section conref="bare_installation_kvm.dita#install_kvm/deploy_cobbler"/>
-    <section conref="bare_installation_kvm.dita#install_kvm/provision_nodes"/>
-    <section conref="bare_installation_kvm.dita#install_kvm/deploy"/>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm/deploy_cobbler"/>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm/provision_nodes"/>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm/deploy"/>
     <section id="prepAndDeploy">
       <title>Prepare and Deploy ESX Computes and OVSvAPPs </title>
       <p>The following sections describe the procedure to install and configure ESX compute and
@@ -562,8 +561,8 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></p>
 +------------+----------+------------+---------------------+
 | domain-c21 | Cluster1 | DC1        | activated           |
 +------------+----------+------------+---------------------+</codeblock></li>
-          <li>Commit your cloud deploy configuration to the<xref
-              href="using_git.dita"> local git repo</xref>, as follows:
+          <li>Commit your cloud deploy configuration to the<xref href="using_git.dita"> local git
+              repo</xref>, as follows:
             <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "My config or other commit message"</codeblock></li>

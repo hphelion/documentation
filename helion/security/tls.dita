@@ -15,25 +15,7 @@
       <p>OpenStack endpoints are HTTP (REST) services providing APIs to other OpenStack services on the
         management network. All traffic to OpenStack services coming in on the public endpoints are
         secured using TLS connections.</p>
-      <p>The following secure service endpoints and their associated ports use TLS: </p>
-      
-      <codeblock>HEA-ACF-mgmt:8000 heat-api-cfn (cloud foundry) 
-SHP-API-mgmt:21131 sherpa-api 
-FRE-API-mgmt:9090 freezer-api 
-OPS-WEB-mgmt:9095 ops-console-web 
-GLA-API-mgmt:9292 glance-api 
-HEA-ACW-mgmt:8003 heat-api-cloudwatch 
-MON-API-mgmt:8070 monasca-api 
-NEU-SVR-mgmt:9696 neutron-server 
-CEI-API-mgmt:8777 ceilometer-api 
-NOV-VNC-mgmt:6080 nova-vnc 
-KEY-API-mgmt:5000 keystone-api 
-HZN-WEB-mgmt:443 horizon-web 
-CND-API-mgmt:8776 cinder-api 
-NOV-API-mgmt:8774 nova-api 
-HEA-API-mgmt:8004 heat-api 
-SWF-PRX-mgmt:8080 swift-proxy 
-</codeblock>
+      <p/>
 
 
 <!--
@@ -142,8 +124,5 @@ git commit -m "My config or other commit message"</codeblock>
       <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
     </section>
-   
-    <!-- ===================== horizontal rule ===================== -->
-    <!-- Tom Cammann, Thom Leggett- SMEs Nova      -->
   </body>
 </topic>

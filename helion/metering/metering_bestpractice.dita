@@ -464,9 +464,9 @@ sinks:
         </section>
         <section id="ceilometer_api"><title>Ceilometer API</title>
             <b>Separate pipeline.yaml for Ceilometer Post Sample API</b>
-            <p>Post Sample API is disabled by default in HOS CM 2.0 and its configured with a
-                pipeline configuration different than the agents. The api pipeline has no meters
-                enabled, so it needs to be configured with meters when the Post sample API is
+            <p>Post Sample API is disabled by default in HP Helion OpenStack 2.0 and its configured
+                with a pipeline configuration different than the agents. The api pipeline has no
+                meters enabled, so it needs to be configured with meters when the Post sample API is
                 enabled. Exercise caution when adding meters to the API pipeline. Ensure that only
                 those meters are added to this pipeline which are already present in the
                 notification agent and the central agent pipeline. Here is a sample of the API
