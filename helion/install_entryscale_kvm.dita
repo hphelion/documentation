@@ -1,17 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_jxr_x31_rt">
-  <title>Installation for Helion Entry Scale Cloud with KVM</title>
+<topic id="install_kvm">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry Scale Cloud
+    with KVM</title>
   <body>
-    <p>ABOUT</p>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/important_notes"/>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/prereqs"/>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/install_deployer"/>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/configure_deployer"/>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/configuration"/>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/deploy_cobbler"/>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/provision_nodes"/>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/deploy"/>
+    <section id="about">
+      <p>This page describes the common installation step requirements for each of the HP Helion
+        Entry Scale Cloud models that utilize the KVM hypervisor on the Compute nodes. This includes
+        the following: <ul>
+          <li>Entry Scale Cloud with VSA</li>
+          <li>Entry Scale Cloud with Ceph</li>
+          <li>Entry Scale Cloud with 3PAR</li>
+        </ul>
+      </p>
+    </section>
+    <section id="important_notes"><title>Important Notes</title>
+      <ul>
+        <li>If you are looking for information about when to use the GUI installer and when to use
+          the CLI, see the <xref href="installation_overview.dita#install_overview">Installation
+            Overview</xref>.</li>
+        <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met in
+          your environment.</li>
+        <li>If you run into issues during installation, we have put together a list of <xref
+            href="installation_troubleshooting.dita">Troubleshooting Steps</xref> you can
+          reference.</li>
+        <li>Make sure <xref href="administration/wipe_disks.dita">all disks on the system(s) are
+            wiped</xref> before you begin the install. (For Swift, refer to <xref
+            href="objectstorage/allocating_disk_drives.dita#allocating-disk-drives/requirement-disk-device"
+            >Swift Requirements for Device Group Drives</xref>)</li>
+        <li>The <codeph>/dev/sda</codeph> disk on your systems will be used for the operating
+          system.</li>
+        <li>All machines of a given role should be the same configuration.</li>
+        <li>The machine hosting the deployer and all baremetal systems must be connected to a
+          management network. Nodes on this management network must be able to reach the iLO
+          subsystem of each baremetal system to enable host reboots as part of the install process.
+          The HP Helion OpenStack architecture requires that the IPMI network is a separate network
+          and that a route exists from the management network to the IPMI network for iLO
+          access.</li>
+        <li>There is no requirement to have a dedicated network for OS-install and system
+          deployment. More information can be found on the <xref href="example_configs.dita"
+            >Supported Configuration</xref> page.</li>
+      </ul>
+    </section>
+    <section id="prereqs">
+      <title>Before You Start</title>
+      <note type="important">We have put together a <xref href="preinstall_checklist.dita"
+          >Pre-Installation Checklist</xref> that should help with the recommended pre-installation
+        tasks.</note>
+      <p>Prepare your baremetal hardware, as follows, on all nodes:</p>
+      <ul>
+        <li>Set up the iLO Advanced license in the iLO configuration. Make sure the iLO user has
+          admin privileges.</li>
+        <li>The installer will detect and use the "BIOS" mode you have selected for each node;
+          either UEFI or legacy BIOS.</li>
+        <li>Ensure that the network interface to be used for PXE installation has PXE enabled.</li>
+        <li>Ensure that the other network interfaces have PXE disabled.</li>
+        <li>Ensure that any logical drives (LUN) for the servers you will be using are created to
+          meet the disk requirements outlined in the <xref href="hardware.dita">Minimum Hardware
+            Requirements</xref>.</li>
+      </ul>
+    </section>
+    <section id="setup_deployer">
+      <title>Set up the Deployer</title>
+      <p>The deployer will contain the installation scripts and configuration files for your cloud.
+        You can use a dedicated deployer node or you can run these instructions on your first
+        controller node. There is only one difference in these approaches and thats in the
+        configuration files. This will be discussed in each models page along with the rest of the
+        unique configurations.</p>
+      <ol>
+        <li>Download the HP Helion OpenStack 2.0.0 product from the <xref
+            href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
+            format="html" scope="external">Helion Downloads</xref> page after signing in.</li>
+        <li>Boot your deployer from the ISO contained in the download.</li>
+        <li>Enter "install" to start installation. <note>"install" is all lower case</note></li>
+        <li>Select the language. Note that only the English language selection is currently
+          supported.</li>
+        <li>Select the location.</li>
+        <li>Select the keyboard layout.</li>
+        <li>Select the primary network interface, if prompted:<ul>
+            <li>Assign IP address, netmask, default gateway</li>
+          </ul></li>
+        <li>Create new account:<ul>
+            <li>Enter a username.</li>
+            <li>Enter a password.</li>
+            <li>Enter time zone if prompted to do so.</li>
+          </ul>
+        </li>
+        <li>Ensure your deployer has a valid DNS nameserver in the <codeph>/etc/resolv.conf</codeph>
+          file</li>
+        <li>Install and configure NTP for your environment <ul>
+            <li>Ensure your NTP server(s) is placed into your <codeph>/etc/ntp.conf</codeph>
+              file</li>
+          </ul></li>
+      </ol>
+      <p>At the end of this section you should have a node set up with Linux for HP Helion on
+        it.</p>
+    </section>
+    <section id="configure_deployer">
+      <title>Configure and Run the Deployer</title>
+      <note type="important">It's critical that you don't run as root. Run as the user you just
+        created (or stack if you left the default of "stack"), but do not run as root.</note>
+      <ol>
+        <li>Log into your deployer node as the user you created and mount the install media at <codeph>/media/cdrom</codeph>. It may be
+          necessary to use <codeph>wget</codeph> or another file transfer method to transfer the
+          install media to the deployer before completing this step. Here is the command to mount
+          the media:
+          <codeblock>sudo mount Helion-OpenStack-2.0.0.iso /media/cdrom</codeblock></li>
+        <li>Unpack the tarball that is in the <codeph>/media/cdrom/hos2.0.0/</codeph> directory:
+          <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.2-20150920T130131Z.tgz</codeblock></li>
+        <li>Run the following included script:
+          <codeblock>~/hos-2.0.0-b.2/hos-init.bash</codeblock>
+          <p>You will be prompted to enter an optional SSH passphrase when running
+              <codeph>hos-init.bash</codeph>. This passphrase is used to protect the key used by
+            Ansible when connecting to its client nodes. If you do not want to use a passphrase then
+            just press return at the prompt.</p>
+          <p>For automated installation (e.g. CI) it is possible to disable SSH passphrase prompting
+            by setting the <codeph>HOS_INIT_AUTO</codeph> environment variable before running
+              <codeph>hos-init.bash</codeph>, like this:</p>
+          <codeblock>export HOST_INIT_AUTO=y</codeblock></li>
+      </ol>
+      <p>If you have protected the SSH key with a passphrase then execute the following commands to
+        avoid having to enter the passphrase on every attempt by Ansible to connect to its client
+        nodes: <codeblock>eval $(ssh-agent)
+          ssh-add ~/.ssh/id_rsa</codeblock></p>
+      <p>At the end of this section you should have a local directory structure, as described
+        below:</p>
+      <codeblock>
+        helion/                        Top level directory
+        helion/examples/               Directory contains the config input files of the example clouds
+        helion/my_cloud/definition/    Directory contains the config input files
+        helion/my_cloud/config/        Directory contains .j2 files which are symlinks to the /hos/ansible directory
+        helion/hos/                    Directory contains files used by the installer
+      </codeblock>
+    </section>
+
+    <section conref="install_entryscale_kvm.dita#install_kvm/install_deployer"/>
+    <section conref="install_entryscale_kvm.dita#install_kvm/configure_deployer"/>
+    <section conref="install_entryscale_kvm.dita#install_kvm/configuration"/>
+    <section conref="install_entryscale_kvm.dita#install_kvm/deploy_cobbler"/>
+    <section conref="install_entryscale_kvm.dita#install_kvm/provision_nodes"/>
+    <section conref="install_entryscale_kvm.dita#install_kvm/deploy"/>
     <p>POST-INSTALL</p>
   </body>
 </topic>
