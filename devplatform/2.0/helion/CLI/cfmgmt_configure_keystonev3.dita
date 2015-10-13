@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_j5v_bsb_rt">
+  <title>Configure the cf-mgmt Tool to Support Keystone v3</title>
+  <body><p>The configuration file needs a slight manual update to support Keystone v3.</p>
+    <ol> 
+      <li><xref href="devplatform_downloadRCFile.dita#topic_rmk_gnx_ft">Download</xref> the RC
+        configuration file. </li>
+      <li><xref
+          href="ALS_Client_Downloads.dita#topic843/hp-helion-als-cluster-management-tool-cf-mgmt"
+          >Download</xref> the version of the cluster management (cf-mgmt) tool appropriate for your
+        operating system.</li><li>Open the RC file in a text editor. It should look similar to the following (plus comments):
+        <codeblock>export OS_AUTH_URL=http://10.241.240.133:5000/v2.0 
+export OS_TENANT_ID=1815ea3d639f4ec89d8797a16ffcbc07 
+export OS_TENANT_NAME="admin" 
+export OS_PROJECT_NAME="admin" 
+export OS_USERNAME="admin" 
+echo "Please enter your OpenStack Password: " read -sr OS_PASSWORD_INPUT 
+export OS_PASSWORD=$OS_PASSWORD_INPUT 
+export OS_REGION_NAME="region1" if [ -z "$OS_REGION_NAME" ]; then unset OS_REGION_NAME; fi</codeblock></li>
+      <li>Change the following:
+        <ol>
+      <li> Copy and paste the following code block into the RC file at the top. Do not delete
+            anything.
+            <codeblock>Unset OS_DOMAIN_NAME 
+export OS_IDENTITY_API_VERSION=3 
+export OS_AUTH_VERSION=3 
+export OS_USER_DOMAIN_NAME=“Default" 
+export OS_PROJECT_DOMAIN_NAME=“Default" </codeblock></li>
+      <li>Change the variable name OS_TENANT_ID to OS_PROJECT_ID</li>
+      <li>Determine the value of the OS_AUTH_URL variable.
+            <codeblock>curl http://10.241.240.133:5000</codeblock> The results should look similar
+            to:
+            <codeblock>{ 
+  "versions": { 
+    "values": [ 
+    { 
+      "status": "stable", 
+      "updated": "2015-03-30T00:00:00Z", 
+      "media-types": [ 
+        { 
+          "base": "application/json",
+          "type": "application/vnd.openstack.identity-v3+json" 
+        } 
+       ], 
+       "id": "v3.4",
+       "links": [ 
+        { 
+         <b>"href": "http://10.241.240.133:5000/v3/",</b>
+         "rel": "self" } ...</codeblock></li> 
+      
+ <li>Replace the existing OS_AUTH_URL value with the URL located under <b>links</b> &gt;
+              <b>href</b></li></ol></li>
+          <li>Save and close the edited RC file.</li>
+          <li><xref href="cf_mgmt_createcluster.dita#topic_exb_b21_ct">Create clusters</xref> as
+            desired.</li>
+</ol>
+  </body>
+</topic>

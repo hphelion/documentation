@@ -2,25 +2,14 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13234">
 <title>HP Helion 2.0 Development Platform: ALS Cluster Management Tool Reference</title>
-<prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.3"/>
-<othermeta name="role" content="Application Developer"/>
-<othermeta name="role" content="Security Engineer"/>
-<othermeta name="role" content="ISV Developer"/>
-<othermeta name="role" content="Service Developer"/>
-<othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.3"/>
-</metadata>
-</prolog>
+
 <body>
     <p>The ALS command-line interface client (<codeph>cf-mgmt.exe</codeph>) provides an option for
       executing commands that construct, manage, update, or delete ALS clusters. Use the command
-      line when the Horizon management console is unavailable or when direct access is
-      preferred.</p>
+      line when the Horizon management console is unavailable or when direct access is preferred.
+        <note>When creating clusters that support Keystone v3, you will need to <xref
+          href="cfmgmt_configure_keystonev3.dita#topic_j5v_bsb_rt">modify the configuration
+          file</xref> first.</note></p>
     <ul>
       <li>
         <xref type="section" href="#topic13234/global">Global Options</xref>
@@ -64,7 +53,9 @@
     <section id="downloadfile">
       <title>Configuration Files</title>
       <p>ALS maintains separate configuration files, so configuration values must be included in the
-        appropriate file.</p>
+        appropriate file.<note>When creating clusters that support Keystone v3, you will need to
+            <xref href="cfmgmt_configure_keystonev3.dita#topic_j5v_bsb_rt">modify the configuration
+            file</xref> first.</note></p>
       <p>One configuration file contains the values for the global variables. The global
         configuration file is located in the home directory and is named <i>cf-mgmt.yml</i>. </p>
       <ul id="ul_jsn_n5b_ys">
@@ -127,16 +118,16 @@
               <entry>Yes</entry>
             </row>
             <row>
-              <entry>--os-tenant-id</entry>
-              <entry>OpenStack tenant ID</entry>
-              <entry>$OS_TENANT_ID</entry>
-              <entry>Yes, if <codeph>tenant-name</codeph> is not defined.</entry>
+              <entry>--os-project-id</entry>
+              <entry>OpenStack project ID</entry>
+              <entry>$OS_PROJECT_ID</entry>
+              <entry>Yes, if <codeph>project-name</codeph> is not defined.</entry>
             </row>
             <row>
-              <entry>--os-tenant-name</entry>
-              <entry>OpenStack tenant name</entry>
-              <entry>$OS_TENANT_NAME</entry>
-              <entry>Yes, if <codeph>tenant-id</codeph> is not defined.</entry>
+              <entry>--os-project-name</entry>
+              <entry>OpenStack project name</entry>
+              <entry>$OS_PROJECT_NAME</entry>
+              <entry>Yes, if <codeph>project-id</codeph> is not defined.</entry>
             </row>
             <row>
               <entry>--os-region-name</entry>

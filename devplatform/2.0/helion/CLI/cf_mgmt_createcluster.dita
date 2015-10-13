@@ -19,6 +19,9 @@
         <li>The <i>cf-mgmt</i> tool must be <xref
           href="ALS_Client_Downloads.dita#topic843/hp-helion-als-cluster-management-tool-cf-mgmt"
           >downloaded</xref> and installed.</li>
+        <li>If creating clusters that support Keystone v3, you will need to <xref
+            href="cfmgmt_configure_keystonev3.dita#topic_j5v_bsb_rt">modify the configuration
+            file</xref> first.</li>
       </ul></section>
     <section><title>Tips</title><ul>
       <li>To minimize the risk of errors, best practice is to create a small, starter cluster and
