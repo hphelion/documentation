@@ -127,6 +127,7 @@
           <topicref href="2.0/helion/CLI/cfmgmt_growcluster_addservice.dita"
             navtitle="Example: Add a Service" locktitle="yes"/>
         </topicref>
+        <topicref href="2.0/helion/CLI/cfmgmt_configure_keystonev3.dita" toc="no"/>
       </topichead>
       <topichead navtitle="ALS Management Console">
         <topicref href="2.0/helion/admin/console/console_intro.dita"
@@ -285,8 +286,6 @@
     </topichead>
     <!--IT Ops-->
     <topicref href="2.0/devplatform.sysadmin.dita" locktitle="yes" navtitle="Resources for IT Ops">
-      <topicref href="2.0/devplatform_upgrade.dita" navtitle="Upgrading Helion OpenStack"
-        locktitle="yes"/>
       <topicref href="2.0/helion/admin/server/network_port_configuration.dita"/>
       <topicref href="2.0/helion/admin/server/docker.dita" navtitle="Docker and Fence"
         locktitle="yes"/>
@@ -484,6 +483,10 @@
           navtitle="Port Service (Harbor)"/>
         <topicref href="2.0/helion/user/services/user-provided.dita" locktitle="yes"
           navtitle="User-Provided Services"/>
+      </topichead>
+      <topichead navtitle="Service Monitoring">
+        <topicref href="2.0/monitoring/devplatform.database-monitor.dita"/>
+        <topicref href="2.0/monitoring/devplatform.database-monitor-cli.dita"/>
       </topichead>
     </topicref>
   </topicref>
