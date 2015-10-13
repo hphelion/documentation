@@ -46,8 +46,8 @@ git commit -m "My config or other commit message"
               Configuration Management</xref> for more information.</note></li>
       </ol>
     </section>
-    <section conref="bare_installation_kvm.dita#install_kvm/deploy_cobbler"/>
-    <section conref="bare_installation_kvm.dita#install_kvm/provision_nodes"/>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm/deploy_cobbler"/>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm/provision_nodes"/>
     <p><xref href="gui_installer.dita#install_gui/chooseHypervisor">Return to GUI
         instructions</xref></p>
   </body>
