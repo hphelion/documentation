@@ -5,6 +5,11 @@
     <shortdesc><keyword keyref="prodLong"/> is a collection of scripts that allows you to acquire
         and deploy Docker images using Terraform. Terraform is a tool that combines the scripts and
         credentials required for the deployment.</shortdesc>
+    <prolog>
+        <metadata>
+            <othermeta name="author" content="Michael Khmelnitsky"/>
+        </metadata>
+    </prolog>
     <taskbody>
         <context/>
         <steps>

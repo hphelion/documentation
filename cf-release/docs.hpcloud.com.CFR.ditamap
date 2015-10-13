@@ -10,5 +10,7 @@
    <topicref href="root/HCF_license_agreements.dita" navtitle="Open Source and Third-Party Software License Agreements"/>
    <topicref href="root/HCF_software_license_terms.dita" navtitle="Software License Terms"/>
    -->
-   <topicref href="deploy/CFR_deploy.dita"/>
+   <topicref href="deploy/CFR_deploy.dita">
+      <topicref href="deploy/CFR_TF_vars.dita"/>
+   </topicref>
 </map>
