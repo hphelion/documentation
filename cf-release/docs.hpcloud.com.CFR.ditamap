@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "../dtd/map.dtd">
+<map>
+   <title>HP Helion Cloud Foundry</title>
+   <mapref href="docs.hpcloud.com.CFR_variables.ditamap"/>
+   <topicref href="root/CFR_documentation.dita" navtitle="Helion Cloud Foundry 1.0: Documentation"/>
+   <!--
+   <topicref href="root/HCF_whats_new.dita" navtitle="What's New"/>
+   <topicref href="root/HCF_release_notes.dita" navtitle="Release Notes"/>
+   <topicref href="root/HCF_license_agreements.dita" navtitle="Open Source and Third-Party Software License Agreements"/>
+   <topicref href="root/HCF_software_license_terms.dita" navtitle="Software License Terms"/>
+   -->
+   <topicref href="deploy/CFR_deploy.dita"/>
+</map>
