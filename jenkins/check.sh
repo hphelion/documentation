@@ -29,7 +29,6 @@ do
 		else
 		except=""
 		fi
-		echo "$except"
 		if [[ -n $(cat $i |sed ':a;N;$!ba;s/\n/ /g'| perl -pe  's|<!--.*-->||g' | grep "$test" | grep -v "$except") ]]; 
 		then
 		#cat $i |sed ':a;N;$!ba;s/\n/ /g'| perl -pe  's|<!--.*-->||g' | grep "$test" | grep "$except"
