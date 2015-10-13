@@ -193,8 +193,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           >Installation Troubleshooting</xref> document.</p>
     </section>
     <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/deploy_cobbler"/>
-    <section><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Provison the
-      nodes<?oxy_custom_end?></section>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/provision_nodes"/>
     <section id="deploy_cloud"><title>Deploy the Cloud (refer to vsa- third step not required.)</title>
       <ol>
         <li>Run the following command to create a deployment
