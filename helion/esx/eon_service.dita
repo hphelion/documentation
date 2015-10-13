@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_x2x_vy4_lt">
-  <title>EON Service</title>
+  <title>Esx ON-Boarding (EON) Service</title>
   <body>
-    <p>ESX integration in HP Helion OpenStack enables administrators to connect their cloud to an
-      existing VMware vCenter installation. The VMware vCenter driver connects to ESXi clusters in a
-      vCenter through Compute proxy nodes. The Nova scheduler sees the ESXi clusters as compute
-      nodes and uses that information for scheduling a new instance.</p>
-    <p>The ESX on boarding (EON) service is an inventory which interacts with the VMware vCenter
-      server and collects the information available at the datacenters and clusters. This
-      information is used for deployment and configuration of ESX Proxy Compute nodes. </p>
-    <p>The eon services (eon-api and eon-conductor) runs in the first controller of the cloud
-      control plane and EON client is installed in the deployer node.</p>
-    <p>EON, a new service sub component, captures details of the vCenter server in a Cloud
-      Controller and provides the details of the clusters for configuring the list of clusters
-      managed by ESX Proxy Compute node. The ESX Proxy Compute driver communicates to VMware vCenter
-      server through VI SDK.</p>
+    <p>EON service feliciate any VMWare vCenter Server onboading operations into HP Helion Openstack
+      2.0 ESX type cloud. EON interacts with VMWare vCenter Server and collects the inventory of
+      available Datacenters, Clusters, Datastore, dvSwitch and Portgroup details. When a cloud admin
+      wants a particular cluster to be a compute resource in HP Helion Openstack 2.0 EON will
+      provision nova compute proxy service vm for each clusters and OVSvApp service vm for each ESX
+      host in that cluster.</p>
+    <p>Currently in Openstack if a cluster wants to be a compute resoure it needs lot of manual
+      steps but through EON integrated with HP Helion Openstack 2.0 these steps were automated by
+      using few EON CLI commands.</p>
+    <!--<p>ESX integration in HP Helion OpenStack enables administrators to connect their cloud to an existing VMware vCenter installation. The VMware vCenter driver connects to ESXi clusters in a vCenter through Compute proxy nodes. The Nova scheduler sees the ESXi clusters as compute nodes and uses that information for scheduling a new instance.</p><p>The ESX on boarding (EON) service is an inventory which interacts with the VMware vCenter server and collects the information available at the datacenters and clusters. This information is used for deployment and configuration of ESX Proxy Compute nodes. </p><p>The eon services (eon-api and eon-conductor) runs in the first controller of the cloud control plane and EON client is installed in the deployer node.</p><p>EON, a new service sub component, captures details of the vCenter server in a Cloud Controller and provides the details of the clusters for configuring the list of clusters managed by ESX Proxy Compute node. The ESX Proxy Compute driver communicates to VMware vCenter server through VI SDK.</p>-->
+    <section>
+      <title><b>Architecture</b></title>
+      <p>Eon is installed on the master control plane node and the Eon CLI is installed on the HLM
+        Deployer node which is used by the Cloud Admin to setup vCenter Compute Proxy and OvsvApp
+        nodes.</p>
+      <p/>
+    </section>
     <section>
       <title>ESX Host Commissioning</title>
       <p>ESX Host Commissioning is a functionality provided to a user to add additional ESX hosts to
