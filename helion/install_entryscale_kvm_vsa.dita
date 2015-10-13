@@ -310,9 +310,7 @@ ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60
           <p>If you have used an encryption password when running the Configuration processor use
             the command below and enter the encryption password when prompted:
             <codeblock>ansible-playbook -i hosts/verb_hosts site.yml --ask-vault-pass</codeblock>
-          </p><p><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>vsa-deploy and
-            cmc-deploy are automatically deployed while executing the hlm-deploy playbook.
-            <?oxy_custom_end?></p>
+          </p>
           <note>The step above runs osconfig to configure the cloud and hlm-deploy, to deploy the
             cloud. Therefore, this step may run for quite some time while all the nodes are
             configured (perhaps 45 minutes or more, depending on the number of nodes, to a degree).

@@ -7,6 +7,8 @@
     <p>This page describes the configuration of HP 3PAR StoreServ Fibre Channel (FC) or iSCSI
       storage devices as a Cinder backend. Once the backend is configured you can create and
       validate the volume.</p>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/important_notes"/>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/prereqs"/>
     <section>
       <title id="preq">Prerequisite</title>
       <p>
@@ -21,6 +23,12 @@
         </ul>
       </p>
     </section>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/install_deployer"/>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/configure_deployer"/>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/configuration"/>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/deploy_cobbler"/>
+    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/provision_nodes"/>
+    
     <section id="configure-3par-fc">
       <title>Configure 3PAR FC as Cinder backend</title>
       <p>You must modify <codeph>cinder.conf.j2</codeph> to configure FC details.</p>
