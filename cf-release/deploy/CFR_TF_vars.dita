@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="reference_phl_shc_rt">
+  <title>Terraform Variables</title>
+  <shortdesc>You can configure the following values in your <filepath>.tfvars</filepath>
+    file.</shortdesc>
+  <prolog>
+    <metadata>
+      <othermeta name="author" content="Michael Khmelnitsky"/>
+    </metadata>
+  </prolog>
+  <refbody>
+    <table frame="all" rowsep="1" colsep="1" id="table_fjz_c3c_rt">
+      <desc>
+        <note type="remember">Specify the variable values in quotation marks.</note>
+      </desc>
+      <tgroup cols="3">
+        <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+        <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+        <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+        <thead>
+          <row>
+            <entry>Variable</entry>
+            <entry>Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry><codeph>openstack_availability_zone</codeph></entry>
+            <entry>The unique regional location on which the deployment is launched</entry>
+          </row>
+          <row>
+            <entry><codeph>openstack_keypair</codeph></entry>
+            <entry>Your key pair</entry>
+          </row>
+          <row>
+            <entry><codeph>openstack_network_id</codeph></entry>
+            <entry>Your network ID</entry>
+          </row>
+          <row>
+            <entry><codeph>key_file</codeph></entry>
+            <entry>The location of your private key file</entry>
+          </row>
+          <row>
+            <entry><codeph>router_ssl_cert_file</codeph></entry>
+            <entry>The location of the router SSL certificate file</entry>
+          </row>
+          <row>
+            <entry><codeph>router_ssl_key_file</codeph></entry>
+            <entry>The location of the router SSL key file</entry>
+          </row>          
+        </tbody>
+      </tgroup>
+    </table>
+    <example>
+      <title>A sample <codeph>.tfvars</codeph> file</title>
+      <codeblock>openstack_availability_zone = "az1"
+openstack_keypair = "myKeyPair.key"
+openstack_network_id = "myNetwork"
+key_file = "/home/myName/Documents/private.key"           
+router_ssl_cert_file = "/etc/ssl/certs/SSL.crt"
+router_ssl_key_file = "/etc/ssl/private/SSL.key"</codeblock>
+    </example>
+  </refbody>
+</reference>
