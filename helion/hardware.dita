@@ -67,7 +67,12 @@
               <entry morerows="3">Controller</entry>
               <entry morerows="3">3</entry>
               <entry>Disk</entry>
-              <entry>3 X 512 GB (Min.)</entry>
+              <entry>
+                <ul>
+                  <li>1 x 512 GB (Min.) – OS drive</li>
+                  <li>2 x 512 GB (Min.) – Data drive</li>
+                </ul>
+              </entry>
             </row>
             <row>
               <entry>Memory</entry>
