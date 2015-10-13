@@ -27,6 +27,10 @@
     <!--  <topichead navtitle="Uninstallation"-->
     <!--<topicref href="2.0/uninstallation/devplatform_uninstall.dita" navtitle="Full Uninstallation - All Services" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_platform.dita" navtitle="Uninstall the Development Platform" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_ALS.dita" navtitle="Uninstall the Application Lifecycle Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_database.dita" navtitle="Uninstall the Database Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_messaging.dita" navtitle="Uninstall the Messaging Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_vertica.dita" navtitle="Uninstall the Vertica Application" locktitle="yes"/>--><!--  </topichead>-->
     <!--application developers-->
+    <topichead navtitle="Service Monitoring">
+      <topicref href="2.0/monitoring/devplatform.database-monitor.dita"/>
+      <topicref href="2.0/monitoring/devplatform.database-monitor-cli.dita"/>
+    </topichead>
     <topichead navtitle="Windows Reference">
       <topicref href="2.0/windows/windows_overview.dita" locktitle="yes" navtitle="Windows Overview"/>
       <topichead navtitle="Administrator Reference">
