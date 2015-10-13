@@ -45,7 +45,7 @@
         </topicref>
         <topicref href="helion/install_entryscale_kvm_ceph.dita"
           navtitle="Installation for Helion Entry Scale Cloud with Ceph" locktitle="yes"/>
-        <topicref href="helion/blockstorage/3Par/3par_configuration.dita"
+        <topicref href="helion/install_entryscale_kvm_3par.dita"
           navtitle="Installation for Helion Entry Scale Cloud with 3PAR" locktitle="yes"/>
         <topicref href="helion/install_entryscale_esx.dita" navtitle="Installation for Helion Entry Scale Cloud with ESX"
           locktitle="yes"/>
