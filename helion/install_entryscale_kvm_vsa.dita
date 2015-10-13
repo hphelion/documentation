@@ -310,7 +310,9 @@ ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60
           <p>If you have used an encryption password when running the Configuration processor use
             the command below and enter the encryption password when prompted:
             <codeblock>ansible-playbook -i hosts/verb_hosts site.yml --ask-vault-pass</codeblock>
-          </p>
+          </p><p><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>vsa-deploy and
+            cmc-deploy are automatically deployed while executing the hlm-deploy playbook.
+            <?oxy_custom_end?></p>
           <note>The step above runs osconfig to configure the cloud and hlm-deploy, to deploy the
             cloud. Therefore, this step may run for quite some time while all the nodes are
             configured (perhaps 45 minutes or more, depending on the number of nodes, to a degree).
@@ -356,23 +358,27 @@ ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60
               <li>password-stack</li>
             </ul></li>
           <li>Click <b>Next</b> to display the Management Group Time page. </li>
-          <li>Add NTP server information and click <b>Next</b> to display the Domain Name Server
+          <li>Add NTP server information and click <b>Next</b> to display the Domain Name System
             Configuration page.</li>
-          <li>Skip the DNS and SMTP sections.</li>
+          <li><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Skip the DNS and
+            SMTP sections: Click Next  A pop box displays and click Accept
+            Incomplete.<?oxy_custom_end?></li>
           <li>Click <b>Next</b> to display a Wizard in the Create a Cluster page.</li>
           <li>Select the cluster type as <i>Standard Cluster</i> from the displayed options and
             click <b>Next</b>.</li>
           <li>In the <b>Cluster Name</b> box, enter the name of the cluster and click <b>Next</b>.
             For example: <codeph>hlm003-vsa-cluster</codeph>.</li>
-          <li>In the Add VIP and Subnet Mask pop-up box, enter the virtual IP and Subnet Mask of the
-            cluster in the respective boxes and click <b>OK</b>. The details are displayed in a
-            tabular format in the page. <note>The VIP IP can be found as the cluster IP value in the
+          <li>In the Assign Virtaula IP's and Subnet Masks page is displayed.</li>
+          <li>Click Add. Add VIPs and Subnet Masks pop-up box displays, enter the virtual IP and
+            Subnet Mask of the cluster in the respective boxes and click <b>OK</b>.
+              <!--The details are displayed in a tabular format in the page. --><note>The VIP IP can
+              be found as the cluster IP value in the
                 <codeph>~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph>
               file.</note></li>
           <li>Click <b>Next</b> to go to the next page.</li>
           <li>Select the checkbox displayed against <b>Skip Volume Creation</b>.</li>
-          <li>Click <b>Next</b>.The Management Group and Cluster is created and displays in the Home
-            page of CMC.<p>Wait till the cluster is displayed in the Home Page of CMC.</p></li>
+          <li>Click <b>Finish</b>.The Management Group and Cluster is created and displays in the
+            Home page of CMC.<p>Wait till the cluster is displayed in the Home Page of CMC.</p></li>
         </ol></p>
     </section>
     <section>
@@ -385,8 +391,7 @@ ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60
             follows:<codeblock># Configure the enabled backends
             enabled_backends=vsa-1</codeblock></li>
           <li>Copy VSA section, uncomment it, and modify the values in the
-              <codeph>cinder.conf.j2</codeph> file as shown in the following
-              example:<codeblock id="vssa-config">[vsa-1]
+              <codeph>cinder.conf.j2</codeph> file as shown in the following example:<codeblock id="vssa-config">[vsa-1]
             hplefthand_password: &lt;password given during cluster creation>
             hplefthand_clustername: &lt;VSA cluster name>
             hplefthand_api_url: https://&lt;store virtual virtual ip>:8081/lhos
@@ -394,8 +399,12 @@ ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60
             hplefthand_iscsi_chap_enabled: true
             volume_backend_name: &lt;volume backend name>
             volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
-            hplefthand_debug: false</codeblock><p><!--where,<ul id="ul_swt_2mb_lt"><li>hplefthand_password :  Password given during cluster creation.</li><li>hplefthand_clustername: Name of the VSA cluster.</li><li>hplefthand_api_url: Virtual IP of Store Virtual.</li><li>hplefthand_username: Username given during cluster creation.</li><li>hplefthand_iscsi_chap_enabled : </li><li>volume_backend_name: Name of the backend.</li><li>volume_driver</li><li>hplefthand_debug</li></ul>--></p><note>
-              Please enter the parameter values which are specific to your environment. </note></li>
+            hplefthand_debug: false</codeblock><p>
+              <!--where,<ul id="ul_swt_2mb_lt"><li>hplefthand_password :  Password given during cluster creation.</li><li>hplefthand_clustername: Name of the VSA cluster.</li><li>hplefthand_api_url: Virtual IP of Store Virtual.</li><li>hplefthand_username: Username given during cluster creation.</li><li>hplefthand_iscsi_chap_enabled : </li><li>volume_backend_name: Name of the backend.</li><li>volume_driver</li><li>hplefthand_debug</li></ul>-->
+              <note>HOS 2.0 is expected to support physical lefthand boxes along with VSA deployed
+                on ESX, hyper-v environment</note>
+            </p><note> Please enter the parameter values which are specific to your environment.
+            </note></li>
           <li>Commit your configuration to a <xref href="using_git.dita">local
               repository</xref>:<codeblock>cd ~/helion/hos/ansible
             git add -A
