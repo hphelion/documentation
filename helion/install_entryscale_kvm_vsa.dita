@@ -213,11 +213,7 @@ git commit -m "My config or other commit message"
       <p>Then you need to run the following commands to complete your configuration. These commands
         also verify your configuration is correct.</p>
       <ol>
-        <li>Run the following playbook which confirms that there is iLo connectivity for each of
-          your nodes so that they are accessible to be re-imaged in a later step:
-          <codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost bm-power-status.yml</codeblock></li>
-        <li>Run the configuration processor, as follows:
+       <li>Run the configuration processor, as follows:
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       </ol>
@@ -256,8 +252,10 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         the same as the user set up in the initial dialogue when installing the deployer from the
         iso, and is the same user that is running the cobbler-deploy play.</p>
       <ol>
-        <li>Run the following command:
-          <codeblock>export ANSIBLE_HOST_KEY_CHECKING=False</codeblock></li>
+        <li>Run the following playbook which confirms that there is iLo connectivity for each of
+          your nodes so that they are accessible to be re-imaged in a later step:
+          <codeblock>cd ~/helion/hos/ansible
+            ansible-playbook -i hosts/localhost bm-power-status.yml</codeblock></li>
         <li>Run the following playbook to deploy Cobbler:
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
