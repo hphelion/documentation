@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_jsc_qps_qt">
-  <title>Cloud Control Plane Backup</title>
+  <title>Backing up the Cloud Control Plane </title>
   <body>
     <section><title>Default Backup and Restore</title><p>As part of the installation procedure in HP
         Helion <tm tmtype="reg">OpenStack</tm> 2.0, automatic backup/restore jobs are uploaded from
