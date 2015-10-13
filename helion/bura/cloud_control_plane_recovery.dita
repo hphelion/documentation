@@ -123,8 +123,9 @@ ansible-playbook -i hosts/verb_hosts site.yml --limit padawan-ccp-c1-m2-mgmt</co
     <section><title>Restore from an SSH backup </title><p>You shouln't need to restore anything, the
         mysql database will be recovered automatically from other running nodes.</p></section>
     <section><title>3 CCN disaster recovery</title><p>All CCNs are destroyed</p><ul>
-        <li>Restore from a Swift backup: <p>This is not possible (swift is gone).</p></li>
-        <li>Restore from an SSH backup: <p><ol>
+        <li><b>Restore from a Swift backup: </b><p>This is not possible (swift is gone).</p></li>
+        <li><b>Restore from an SSH backup: </b><p>
+            <ol>
               <li>On deployer node, Follow the procedure to deploy your the CCNs:
                 <codeblock>
 cd ~/scratch/ansible/next/hos/ansible
@@ -136,7 +137,8 @@ ansible-playbook -i hosts/verb_hosts site.yml --limit padawan-ccp-c1-m1-mgmt,pad
 cd ~/scratch/ansible/next/hos/ansible
  
 ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</codeblock></li>
-            </ol></p></li>
+            </ol>
+          </p></li>
       </ul></section>
     <section><title>Deployer disaster recovery</title><p>Everything is still running (ccn's, cpn's)
         but you lost the deployer.</p><ul>
@@ -200,7 +202,8 @@ systemctl start dayzero</codeblock></li>
               <codeblock>
 cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml --limit localhost</codeblock></li>
-          </ol></li><li><b>Restore from an SSH backup</b>
+          </ol></li>
+        <li><b>Restore from an SSH backup</b>
           <ol>
             <li>On the deployer node, edit the ~/helion/my_cloud/config/freezer/ssh_credentials.yml
               file so it contains the same informations as before.</li>
@@ -230,5 +233,62 @@ cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml --limit localhost</codeblock></li>
           </ol></li>
       </ul></section>
+    <section><title>Full disaster recovery</title><p>Everything is dead.</p><ul>
+        <li><b>Restore from a Swift backup:</b><p>This is not possible (swift is gone).</p></li>
+        <li><b>Restore from an SSH backup: </b><ol>
+            <li>On the deployer node, edit the ~/helion/my_cloud/config/freezer/ssh_credentials.yml
+              file so it contains the same informations as before.</li>
+            <li>On the deployer node:
+              <codeblock>
+cp -r ~/hp-ci/padawan/* ~/helion/my_cloud/definition/
+cd ~/helion/hos/ansible/
+ansible-playbook -i hosts/localhost _deployer_restore_helper.yml</codeblock></li>
+            <li>Perform the restore:
+              <codeblock>
+sudo su
+cd /root/deployer_restore_helper/
+ 
+# Stop the Dayzero UI
+systemctl stop dayzero
+ 
+# execute the restore
+./deployer_restore_script.sh
+ 
+ 
+# Start the Dayzero UI
+systemctl start dayzero</codeblock></li>
+            <li>Follow the procedure to deploy your cloud:
+              <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ 
+ansible-playbook -i hosts/verb_hosts site.yml -e freezer_backup_jobs_upload=false</codeblock></li>
+            <li>You can now perform the procedures to restore Mysql, Swift.</li>
+            <li>Once everything is restored, re-enable the backups: From the deployer:
+              <codeblock>
+cd ~/scratch/ansible/next/hos/ansible
+ 
+ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</codeblock></li>
+          </ol></li>
+      </ul></section>
+    <section><title>Swift rings recovery</title><ul>
+        <li><b>Restore from the swift deployement backup</b>
+          <p>As long as you have one Swift Proxy or one swift object node still working, you can
+            recover the Swift rings from it. This is made possible because rings are created at the
+            deployement step and then backuped and copied to all swift node in the form of:
+            /etc/swiftlm/swift-rings-tarball.tar.</p><p>To manage rings, make sure the content of
+            that tar file is in the directory /etc/swiftlm/builder_dir/ on the first Swift Proxy
+            node (SWF-PXR[0] role). <ul>
+              <li>Once this is the case, just run swift-reconfigure if rings were corrupted.
+                <codeblock># On the deployer run 
+ 
+cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
+              <li>Or swift-deploy if one node was
+                lost:<codeblock>
+# On the deployer run 
+cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-deploy.yml</codeblock></li>
+            </ul>
+          </p></li></ul></section>
   </body>
+  
 </topic>
