@@ -17,15 +17,21 @@
               <codeblock> source admin-openrc.sh</codeblock>
             </p></li>
         </ol></li>
+      <li>Create the following directory:<codeblock>mkdir -p ~/.config/openstack/</codeblock></li>
       <li>Create a file <codeph>~/.config/openstack/clouds.yaml</codeph> and enter the configuration
         information for your installation in the file. The following sample configuration provides a
         starting point. For more detailed information, see the OpenStack <xref
           href="http://docs.openstack.org/developer/python-openstackclient/configuration.html"
-          format="html" scope="external">client configuration documentation</xref>. <note>The
-          Identity URL can be found in Horizon at: <b>Project</b> &gt; <b>Compute</b> &gt; <b>Access
-            &amp; Security</b> &gt; <b>API Access</b>. Note the Service Endpoint URL for the
-          Identity
-        Service.</note><codeblock>clouds:
+          format="html" scope="external">client configuration documentation</xref>. <note>
+          <sl>
+            <sli>The <codeph>Identity URL</codeph> can be found in Horizon at: <b>Project</b> &gt;
+                <b>Compute</b> &gt; <b>Access &amp; Security</b> &gt; <b>API Access</b>. Note the
+              Service Endpoint URL for the Identity Service.</sli>
+            <sli>The <codeph>CODN</codeph> fields are requesting the HDN (Helion Download Network)
+              username and password. The name of the download network has been changed, but not the
+              variable name.</sli><sli>The <codeph>AUTH</codeph> variable requires the Keystone v3 address found in the <codeph>service.osrc</codeph> file.</sli>
+          </sl>
+        </note><codeblock>clouds:
   mycloud:
     codn_username: hdnuser@domain.com
     codn_password: password
@@ -64,7 +70,7 @@
 | webpage       | http://www.hp.com/helion/devplatform                                                        |
 +---------------+---------------------------------------------------------------------------------------------+        </codeblock></li>
       <li> Install the ALS
-        service.<codeblock>openstack --os-cloud mycloud hdpi als install –-package wscatalog.2670</codeblock>
+        service.<codeblock>openstack --os-cloud mycloud hdpi als install --package wscatalog.2670</codeblock>
         The output will appear similar to:
         <codeblock>Application Lifecycle Service is now downloading
 ...
