@@ -20,6 +20,8 @@
       <!--<topicref href="2.0/helion/admin/server/upgrade.dita" locktitle="yes" navtitle="Upgrade Existing ALS Clusters"/>-->
       <!--<topicref href="2.0/devplatform.troubleshooting.dita" locktitle="yes" navtitle="Installation Troubleshooting"/>-->
       <!--<topicref href="2.0/devplatform.related-topics.dita" locktitle="yes" navtitle="Related Documentation "/>-->
+      <topicref href="2.0/installation/devplatform_install_ALS.dita"/>
+      <topicref href="2.0/installation/devplatform_install_database.dita"/>
     </topichead>
     <!--uninstallation -->
     <!--  <topichead navtitle="Uninstallation"-->
