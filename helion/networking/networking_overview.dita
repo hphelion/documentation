@@ -33,6 +33,16 @@
       <title>Working with the Networking service</title>
       <p>To perform tasks using the Networking service, you can use the dashboard, API or CLI.</p>
     </section>
+    
+    <section id="restarting">
+      <title>Reconfiguring the Networking service</title>
+      <p>If you change any of the network configuration after installation, it is recommended that
+        you reconfigure the Networking service by running the neutron-reconfigure playbook.</p>
+      <p>On the deployer node:</p>
+      <codeblock>cd ~/helion/hlm/ansible
+ansible-playbook -i hosts/verb_hosts neutron-reconfigure.yml</codeblock>
+
+    </section>
   <!--
     <section id="UI">
       <title>Using the dashboards</title>
