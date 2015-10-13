@@ -8,5 +8,7 @@
      <othermeta name="author" content="Michael Khmelnitsky"/>
    </metadata>
  </prolog>
- <conbody/>
+ <conbody>
+    <p><keyword keyref="prodLong"/> is a distribution of Cloud Foundry.</p>
+  </conbody>
 </concept>

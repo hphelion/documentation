@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
 <task id="task_yjj_vdc_rt">
-    <title>To Deploy a Docker Image to <keyword keyref="pubCloudLong"/></title>
-    <shortdesc><keyword keyref="prodLong"/> is a collection of scripts that allows you to acquire
-        and deploy Docker images using Terraform. Terraform is a tool that combines the scripts and
-        credentials required for the deployment.</shortdesc>
+    <title>To Deploy an <keyword keyref="prodLong"/> Docker Image to <keyword keyref="pubCloudLong"
+        /></title>
+    <shortdesc>Terraform is a tool that combines the scripts and credentials required for the
+        deployment. You can use Terraform to deploy an <keyword keyref="prodShort"/> Docker
+        image.</shortdesc>
     <prolog>
         <metadata>
             <othermeta name="author" content="Michael Khmelnitsky"/>
