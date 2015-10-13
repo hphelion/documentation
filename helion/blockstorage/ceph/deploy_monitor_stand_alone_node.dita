@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ah5_4yx_qt">
+  <title><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Deploying Monitor on
+    Standalone Independent Node</title>
+  <body>
+    <p/>
+    <p>HOS 2.0 recommends 3 monitor deployment for production setup. As monitor is more of CPU and
+      RAM sensitive only and does not any storage, we do recommend deployment of monitor on
+      controller node itself instead of deploying it on standalone nodes. It will help in effective
+      utilization of nodes. However if customer wants, he can choose to deploy monitor on
+      independent node instead on controller node. </p>
+    <p>Reasons can be one of the below or something else:<ol id="ol_rwy_syx_qt">
+        <li>Need to have more than 3 monitor nodes or,</li>
+        <li>Do not want to mix services running on controller nodes with monitor service of ceph
+            <p>Customer can achieve so by modifying cloud input model and treating monitor nodes as
+            resource nodes. Please node that we do not support deployment transition i.e. customer
+            can not deploy monitor on controller node day-1 and later migrate to standalone node. He
+            or she needs to decide upfront before deploying ceph. </p></li>
+      </ol></p>
+  </body>
+</topic>
+<?oxy_custom_end?>

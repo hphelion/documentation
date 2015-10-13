@@ -44,15 +44,17 @@ san_password=helion
 volume_driver=cinder.volume.drivers.san.hp.hp_3par_fc.HP3PARFCDriver
 volume_backend_name=3par_FC</codeblock><note>
               Please enter the values which are specific to your environment. </note></li>
-          <li>Commit your configuration to a <xref href="../../using_git.dita"
-              >local
+          <li>Commit your configuration to a <xref href="../../using_git.dita">local
               repository</xref>:<codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock><note>
               Enter your commit message &lt;commit message></note></li>
           <li>Run the configuration
-            processor:<codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+              processor:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock><note>While
+              executing the above command, you are prompted to enter the encryption key. If you
+              choose to enter the key then you can enter one, else you can press Enter and proceed
+              further.</note></li>
           <li>Run the following command to create a deployment
             directory.<codeblock><codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
           <li>Run the following command to configure 3PAR FC as a Cinder backend.
@@ -78,13 +80,13 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
 hp3par_api_url=https://10.1.192.10:8080/api/v1
 hp3par_username=helionadmin
 hp3par_password=helion
-hp3par_cpg=FC_r1
+hp3par_cpg=FC_r1 (valid cpg name. User need to get from system admin)
 san_ip=10.1.192.10
 san_login=helionadmin
 san_password=helion
 volume_driver=cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver
 volume_backend_name=3par_iSCSI
-iscsi_ip_address=172.32.0.9
+hp3par_iscsi_ips=172.32.0.9 (user can provide multiple IP separated by comma)
 hp3par_iscsi_chap_enabled=true</codeblock><note>
               Please enter the values of all the paramters specific to your environment.
             </note></li>

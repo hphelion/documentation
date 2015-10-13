@@ -14,7 +14,7 @@
           <li>
             <p>Block Storage should be configured to use a Fibre Channel Volume Driver that supports
               Zone Manager. To enable Fibre Channel Zone Manager, you require the following
-                <codeph>cinder.conf</codeph> configuration options. </p>
+                <codeph>cinder.conf.j2</codeph> configuration options. </p>
           </li>
         </ul>
       </p>
@@ -77,8 +77,11 @@ git add -A
 git commit -m "&lt;commit message>"</codeblock><note>
               Enter your commit message &lt;commit message></note></li>
           <li>Run the configuration
-            processor:<codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+              processor:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock><note>While
+              executing the above command, you are prompted to enter the encryption key. If you
+              choose to enter the key then you can enter one, else you can press Enter and proceed
+              further.</note></li>
           <li>Run the following command to create a deployment
             directory.<codeblock><codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
           <li>Run the following command to configure brocade zone manager.

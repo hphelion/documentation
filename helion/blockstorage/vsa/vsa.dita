@@ -114,7 +114,18 @@ hplefthand_iscsi_chap_enabled: true
 volume_backend_name: &lt;volume backend name>
 volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
 hplefthand_debug: false</codeblock><p><!--where,<ul id="ul_swt_2mb_lt"><li>hplefthand_password :  Password given during cluster creation.</li><li>hplefthand_clustername: Name of the VSA cluster.</li><li>hplefthand_api_url: Virtual IP of Store Virtual.</li><li>hplefthand_username: Username given during cluster creation.</li><li>hplefthand_iscsi_chap_enabled : </li><li>volume_backend_name: Name of the backend.</li><li>volume_driver</li><li>hplefthand_debug</li></ul>--></p><note>
-              Please enter the parameter values which are specific to your environment. </note></li>
+              Please enter the parameter values which are specific to your environment.
+                <p><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Use this model
+                if the StoreVirtual Storage array is running LeftHand OS lower than version
+                11.<?oxy_custom_end?><codeblock>[&lt;unique-section-name>]
+volume_driver=cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
+volume_backend_name=lefthand-cliq
+san_ip=&lt;san-ip>
+san_login=&lt;san_username>
+san_password=&lt;san_password>
+san_ssh_port=16022
+san_clustername=&lt;vsa-cluster-name>
+volume_backend_name: &lt;vsa-backend-name></codeblock></p></note></li>
           <li>Commit your configuration to a <xref href="../../using_git.dita"
               >local
               repository</xref>:<codeblock>cd ~/helion/hos/ansible
