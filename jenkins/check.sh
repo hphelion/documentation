@@ -22,7 +22,14 @@ do
 	do
 		test=`echo $line | sed 's|=.*||' | sed 's|%||g' `
 		help=`echo $line | sed 's|.*=||' | sed 's|%.*||' `
-		except=`echo $line | sed 's|.*%||'`
+		
+		if [[  $(echo "$line" | grep "@") ]]
+		then
+		except=`echo $line | sed 's|.*@||'`
+		else
+		except=""
+		fi
+		echo "$except"
 		if [[ -n $(cat $i |sed ':a;N;$!ba;s/\n/ /g'| perl -pe  's|<!--.*-->||g' | grep "$test" | grep -v "$except") ]]; 
 		then
 		#cat $i |sed ':a;N;$!ba;s/\n/ /g'| perl -pe  's|<!--.*-->||g' | grep "$test" | grep "$except"
