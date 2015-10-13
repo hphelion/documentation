@@ -37,7 +37,7 @@
         locktitle="yes"/>
       <topicref href="helion/preinstall_checklist.dita" navtitle="Pre-Installation Checklist"
         locktitle="yes"/>
-      <topichead navtitle="Entry Scale Cloud Installation">
+      <topicref href="helion/install_entryscale_kvm.dita" navtitle="Entry Scale Cloud Installation" locktitle="yes">
         <topicref href="helion/install_entryscale_kvm_vsa.dita"
           navtitle="Installation for Helion Entry Scale Cloud with VSA" locktitle="yes">
           <topicref href="helion/blockstorage/vsa/vsa.dita" navtitle="VSA Configuration"
@@ -49,7 +49,7 @@
           navtitle="Installation for Helion Entry Scale Cloud with 3PAR" locktitle="yes"/>
         <topicref href="helion/install_entryscale_esx.dita" navtitle="Installation for Helion Entry Scale Cloud with ESX"
           locktitle="yes"/>
-      </topichead>
+      </topicref>
       <topicref href="helion/gui_installer.dita" navtitle="Installing via the GUI" locktitle="yes"/>
       <topicref href="helion/gui_install_on_kvm.dita"
         navtitle="Installing the Operating System on KVM" locktitle="yes" toc="no"/>
