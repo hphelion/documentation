@@ -94,16 +94,23 @@ ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml \
 ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml -e PROV_NET_TYPE=vlan -e PROV_PHYS_NET=physnet1 -e PROV_NET_VLAN_ID=100 -e SVC_NET_CIDR=10.55.66.0/24 -e SVC_NET_DEST=192.168.245.1/32 -e SVC_NET_GATEWAY=10.55.66.3</codeblock></p>
               <note>To configure a service network for flat encapsulation, modify the service
                 network creation statement: <codeph>-e PROV_NET_TYPE flat</codeph> The subnet
-                creation statement does not change.</note></li>
-              -->
+                creation statement does not change.</note></li>     -->
+          </ol></li><li>Verify Connectivity <note>Using <codeph>ping</codeph> (ICMP) for the connectivity check is
+            insufficient because the installer will use TCP.</note><ol>
+            <li>Verify access to the <codeph>pypi</codeph> site  for downloading required python
+              scripts.<codeblock>curl --connect-timeout 15 -k --head "https://pypi.python.org/pypi" | head -n 1 | grep "HTTP/1.[01][23].." </codeblock></li>
+            <li>Verify Keystone access
+              <codeblock>curl --connect-timeout 15 -k --head "http://10.241.180.11:35357/v3" | head -n 1 | grep "HTTP/1.[01] [23].."</codeblock></li>
+            <li>Test connectivity to the public Sherpa endpoint
+              <codeblock>curl --connect-timeout 15 -k --head "http://10.241.180.11:21131/v1" | head -n 1 | grep "HTTP/1.[01] [23].." </codeblock></li>
           </ol></li>
       </ol>
     </section>
     <section>
-      <title>Step 2. Download the Latest Version of HP Helion Development Platform</title>
-      <p>The installation of the HP Helion Development Platform for HP Helion OpenStack is provided
-        as a small compressed tar file. The images for the individual services will be downloaded at
-        the installer's request.</p>
+      <title>Step 2. Download the Latest Version of HP Helion Development Platform Installation
+        Client</title>
+      <p>The installation is provided as a small compressed tar file. The images for the individual
+        services will be downloaded at the installer's request.</p>
       <ol id="ol_ogs_qpt_nt">
         <li>Navigate to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
             format="html" scope="external">HP Helion Download Network</xref> (HDN) and log in. If
@@ -115,17 +122,16 @@ ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml -e PROV_NET_T
       <title>Step 3. Download and Install the Python Scripts </title>
       <ol>
         <li>SSH to the Deployer. </li>
-        <li>Verify that you have access to the <xref href="https://pypi.python.org/pypi"
-            scope="external" format="html">pypi</xref> site. If <i>ping</i> is unavailable, use
-            <i>wget</i>.<codeblock>ping pypi.python.org</codeblock></li>
         <li>Install <codeph>python-virtualenv</codeph>
-          <codeblock>sudo apt-get install python-virtualenv</codeblock></li>
-        <li> Install <codeph>python-dev </codeph>
+          <codeblock>sudo apt-get install -y virtualenv</codeblock></li>
+        <li> Install <codeph>python-dev</codeph>
           <codeblock>sudo apt-get install python-dev</codeblock></li>
+        <li>Install
+          <codeph>python-pip</codeph><codeblock>sudo apt-get install -y python-pip</codeblock></li>
       </ol>
     </section>
     <section id="pre-installing-the-hp-helion-development-platform">
-      <title>Step 4. Install the HP Helion Development Platform</title>
+      <title>Step 4. Install the HP Helion Development Platform Installation Client</title>
       <note type="tip"> For help with the installer, enter the command <codeph>openstack
           hdpi</codeph>
       </note>
@@ -151,7 +157,12 @@ export http_proxy=http://proxy.example.com</codeblock></li>
 
 
         <li>Install the Development Platform Installer in the Virtual Environment
-          .<codeblock>pip install DevelopmentPlatformInstaller_2.0.0.0.tar.gz</codeblock></li>
+            .<codeblock>pip install DevelopmentPlatformInstaller_2.0.0.0.tar.gz --debug </codeblock><note>While
+            the <codeph>debug</codeph> option is optional, the information it returns is critical
+            for troubleshooting beta installations.</note></li>
+        <li>After installation completes, verify that the Installer is working. This command will
+          list all packages currently available for
+          download.<codeblock>openstack hdpi list --os-cloud mycloud </codeblock></li>
       </ol>
     </section>
   </body>
