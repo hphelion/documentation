@@ -3,6 +3,7 @@
 <map>
    <title>HP Helion Cloud Foundry</title>
    <mapref href="docs.hpcloud.com.CFR_variables.ditamap"/>
+<<<<<<< HEAD
    <topicref href="root/CFR_root_documentation.dita">
       <topicref href="root/CFR_whats_new.dita"/>
       <topicref href="root/CFR_relnotes.dita"/>
@@ -23,4 +24,14 @@
          <topicref href="reference/CFR_reference_gato.dita"/>
       </topichead>      
    </topicref>
+=======
+   <topicref href="root/CFR_documentation.dita" navtitle="Helion Cloud Foundry 1.0: Documentation"/>
+   <!--
+   <topicref href="root/HCF_whats_new.dita" navtitle="What's New"/>
+   <topicref href="root/HCF_release_notes.dita" navtitle="Release Notes"/>
+   <topicref href="root/HCF_license_agreements.dita" navtitle="Open Source and Third-Party Software License Agreements"/>
+   <topicref href="root/HCF_software_license_terms.dita" navtitle="Software License Terms"/>
+   -->
+   <topicref href="deploy/CFR_deploy.dita"/>
+>>>>>>> 603ec39... Added the initial files per Colin Henry's demo
 </map>

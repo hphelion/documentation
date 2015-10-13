@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "../dtd/map.dtd">
 <map>
+<<<<<<< HEAD
    <title>HPE Helion Cloud Foundry Variables</title>
+=======
+   <title>HP Helion Cloud Foundry Variables</title>
+>>>>>>> 603ec39... Added the initial files per Colin Henry's demo
    <keydef keys="corpLong">
       <topicmeta>
          <keywords>
@@ -12,6 +16,7 @@
    <keydef keys="corpShort">
       <topicmeta>
          <keywords>
+<<<<<<< HEAD
             <keyword>HPE</keyword>
          </keywords>
       </topicmeta>
@@ -132,6 +137,121 @@
       <topicmeta>
          <keywords>
             <keyword>Troubleshooting Your Cluster</keyword>
+=======
+            <keyword>HP Enterprise</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="pubCloudLong">
+      <topicmeta>
+         <keywords>
+            <keyword>HP Helion Public Cloud</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="pubCloudShort">
+      <topicmeta>
+         <keywords>
+            <keyword>HP Public Cloud</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="prodLong">
+      <topicmeta>
+         <keywords>
+            <keyword>HP Helion Cloud Foundry</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="prodLongNoCorp">
+      <topicmeta>
+         <keywords>
+            <keyword>Helion Cloud Foundry</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="prodShort">
+      <topicmeta>
+         <keywords>
+            <keyword>HCF</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="prodVer">
+      <topicmeta>
+         <keywords>
+            <keyword>1.0</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="CLIfile">
+      <topicmeta>
+         <keywords>
+            <keyword>hcf</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="defaultSysUser">
+      <topicmeta>
+         <keywords>
+            <keyword>hcf</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="defaultSysPass">
+      <topicmeta>
+         <keywords>
+            <keyword>hcf</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef> 
+   <keydef keys="mDNShostname">
+      <topicmeta>
+         <keywords>
+            <keyword>hcf-xxxx.local</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="testSysName">
+      <topicmeta>
+         <keywords>
+            <keyword>hcf-test</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef> 
+   <keydef keys="installDir">
+      <topicmeta>
+         <keywords>
+            <keyword>hcf-installdir</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="sampleMachine">
+      <topicmeta>
+         <keywords>
+            <keyword>hcf</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="sampleSecGroup">
+      <topicmeta>
+         <keywords>
+            <keyword>hcf-micro</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="docsLongURL">
+      <topicmeta>
+         <keywords>
+            <keyword>http://docs.hpcloud.com/#cloudfoundry/1.0/cloudfoundry.index.html</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="docsShortURL">
+      <topicmeta>
+         <keywords>
+            <keyword>http://docs.hpcloud.com/</keyword>
+>>>>>>> 603ec39... Added the initial files per Colin Henry's demo
          </keywords>
       </topicmeta>
    </keydef>
