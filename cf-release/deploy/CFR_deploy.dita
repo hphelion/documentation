@@ -14,8 +14,8 @@
         <context/>
         <steps>
             <step>
-                <cmd>Install Terraform on your machine and add it to your <codeph>PATH</codeph>
-                    environment variable.</cmd>
+                <cmd>Install Terraform 0.6.3 or higher on your machine and add it to your
+                        <codeph>PATH</codeph> environment variable.</cmd>
                 <info>
                     <note type="tip">For detailed instructions, see the <xref
                             href="https://terraform.io/intro/getting-started/install.html"
