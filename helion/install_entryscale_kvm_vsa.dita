@@ -361,8 +361,11 @@ ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60
           <li>Add NTP server information and click <b>Next</b> to display the Domain Name System
             Configuration page.</li>
           <li><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Skip the DNS and
-            SMTP sections: Click Next  A pop box displays and click Accept
-            Incomplete.<?oxy_custom_end?></li>
+            SMTP sections.  To do so, <ul id="ul_g42_ngz_qt">
+              <li>Cllick <b>Next</b> and .  A pop box displays and click <b>Accept
+                Incomplete</b>.</li>
+            </ul></li>
+          <?oxy_custom_end?>
           <li>Click <b>Next</b> to display a Wizard in the Create a Cluster page.</li>
           <li>Select the cluster type as <i>Standard Cluster</i> from the displayed options and
             click <b>Next</b>.</li>

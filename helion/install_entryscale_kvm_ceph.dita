@@ -8,6 +8,7 @@
       model.</p>
     <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/important_notes"/>
     <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/prereqs"/>
+    <p>New concept of Ceph </p>
     <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/install_deployer"/>
     <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/configure_deployer"/>
 
@@ -138,11 +139,11 @@
             <li><codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph>
               <p>In the <codeph>settings.yml</codeph> file, you can edit the following parameters: <ul>
                   <li>fsid</li>
-                  <li>ceph clusters</li>
+                  <li>ceph_cluster</li>
                   <li>osd_settle_time</li>
                   <li>OSD_journal_size</li>
-                </ul></p>
-            </li>
+                </ul></p><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Any
+              additional Ceph parameters: <?oxy_custom_end?></li>
             <li>
               <p><codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph></p>
               <p>The <codeph>user_model.yml</codeph> has the editable values for the different pools
@@ -192,13 +193,14 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           >Installation Troubleshooting</xref> document.</p>
     </section>
     <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/deploy_cobbler"/>
-    <section id="deploy_cloud"><title>Deploy the Cloud</title>
+    <section><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Provison the
+      nodes<?oxy_custom_end?></section>
+    <section id="deploy_cloud"><title>Deploy the Cloud (refer to vsa- third step not required.)</title>
       <ol>
         <li>Run the following command to create a deployment
           directory.<codeblock>cd ~/helion/hos/ansible
 <codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
-        <li>Modify <codeph>~/helion/hlm/ansible/hlm-deploy.yml</codeph> and uncomment the line
-          containing <codeph>ceph-deploy.yml</codeph> to enable deployment of ceph.</li>
+        <li><!--Modify <codeph>~/helion/hlm/ansible/hlm-deploy.yml</codeph> and uncomment the line containing <codeph>ceph-deploy.yml</codeph> to enable deployment of ceph.--></li>
         <li>Run the following ansible
           playbook:<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
