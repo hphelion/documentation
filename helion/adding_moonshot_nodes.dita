@@ -28,8 +28,10 @@
           <li><codeph>net_interfaces.yml</codeph></li>
           <li><codeph>servers.yml</codeph></li>
           <li><codeph>server_roles.yml</codeph></li>
-        </ul>For each Moonshot Nodes you must provide the iLO information which is shared across
-        Moonshot and a Moonshot identifier as an additional field.</p>
+        </ul></p>
+      <p>When using the automated os-install mechanism, for each Moonshot Nodes you must provide the
+        iLO information which is shared across Moonshot and a Moonshot identifier as an additional
+        field.</p>
     </section>
     <section>
       <title>Moonshot iLOs </title>
