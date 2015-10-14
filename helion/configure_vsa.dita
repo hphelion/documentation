@@ -96,7 +96,8 @@
             <codeblock># Configure the enabled backends
 enabled_backends=vsa-1</codeblock></li>
           <li>Copy VSA section, uncomment it, and modify the values in the
-              <codeph>cinder.conf.j2</codeph> file as shown in the following example: <codeblock id="vssa-config">[vsa-1]
+              <codeph>cinder.conf.j2</codeph> file as shown in the following example: 
+            <codeblock id="vsa-config">[vsa-1]
 hplefthand_password: &lt;password given during cluster creation>
 hplefthand_clustername: &lt;VSA cluster name>
 hplefthand_api_url: https://&lt;store virtual virtual ip>:8081/lhos

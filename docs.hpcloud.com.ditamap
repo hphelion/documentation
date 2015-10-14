@@ -58,7 +58,7 @@
       <topicref href="helion/installation_verification.dita" navtitle="Verifying Your Installation"
         locktitle="yes">
         <topicref href="helion/blockstorage/verify_backend_configuration.dita"
-          navtitle="Verifying a Backend Configuration" locktitle="yes"/>
+          navtitle="Verifying a Backend Configuration" locktitle="yes" toc="no"/>
       </topicref>
       <topicref href="helion/installation_troubleshooting.dita"
         navtitle="Troubleshooting Your Installation" locktitle="yes"/>
