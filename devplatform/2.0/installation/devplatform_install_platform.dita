@@ -119,7 +119,9 @@ ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml -e PROV_NET_T
       </ol>
     </section>
     <section>
-      <title>Step 3. Download and Install the Python Scripts </title>
+      <title>Step 3. Download and Install the Python Packages</title><note>Installing a Python package also installs any required dependencies. This may generate several
+        syntax warnings inline as the install occurs. This is expected behavior, and unless the
+        output of the pip install reflects a fatal error, the install is considered "clean".</note>
       <ol>
         <li>SSH to the Deployer. </li>
         <li>Install <codeph>python-virtualenv</codeph>
@@ -138,7 +140,7 @@ ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml -e PROV_NET_T
       <ol>
         <li>SSH to the Deployer.
           <!--find out whether this works on a windows box or if it needs further explanation; where should this be run from?--></li>
-        <li> If your network uses a proxy, it may be necessary to set the
+        <li>If your network uses a proxy, it may be necessary to set the
             <codeph>https_proxy</codeph> and <codeph>http_proxy</codeph> shell variables so that the
           installer may download required Python libraries from the <xref
             href="https://pypi.python.org/pypi" scope="external" format="html">pypi</xref> site. To
