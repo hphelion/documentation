@@ -17,53 +17,11 @@
     <p>New concept of Ceph </p>
     <section id="configuration">
       <title>Configure Your Environment</title>
-      <p>Perform the following procedures to configuration, installation, and the integration of
-        Ceph Block Storage with HP Helion OpenStack 2.0</p>
-      <ol>
-        <li>Setup your configuration files, as follows: <ol>
-            <li>See the sample set of configuration files in the
-                <codeph>~/helion/examples/entry-scale-kvm-ceph</codeph> directory. The accompanying
-              README.md file explains the contents of each of the configuration files.</li>
-            <li>Copy the example configuration files into the required setup directory and edit them
-              to contain the details of your environment:
-              <codeblock>cp -r ~/helion/examples/entry-scale-kvm-ceph/* ~/helion/my_cloud/definition/</codeblock></li>
-            <li>Begin inputting your environment information into the configuration files in the
-                <codeph>~/helion/my_cloud/definition</codeph> directory. Full details of how to do
-              this can be found here: <xref href="input_model.dita">Helion OpenStack 2.0 Input
-                Model</xref>. <note type="important">If you chose to use your first controller node
-                as your deployer, ensure that your <codeph>servers.yml</codeph> file contains the
-                  <codeph>is-deployer: true</codeph> notation in your controller options. If you are
-                using a dedicated deployer node you can omit this. Here is an example snippet of a
-                  <codeph>servers.yml</codeph> file where a user is using their first controller
-                node as their deployer:
-                <codeblock># Controllers
-   - id: controller1
-     ip-addr: 192.168.10.3
-     role: CONTROLLER-ROLE
-     server-group: RACK1
-     nic-mapping: HP-DL360-4PORT
-     mac-addr: b2:72:8d:ac:7c:6f
-     ilo-ip: 192.168.9.3
-     ilo-password: password
-     ilo-user: admin
-     <b>is-deployer: true</b></codeblock></note></li>
-            <li id="encrypt">[Optional] You can use the <codeph>hosencrypt.py</codeph> script to
-              encrypt your iLo passwords. This script uses OpenSSL. <ol>
-                <li>Change to the Ansible directory:
-                  <codeblock>cd ~/helion/hos/ansible</codeblock></li>
-                <li>Put the encrytion key into the following environment variable:
-                  <codeblock>export HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeblock></li>
-                <li>Run the python script below and follow the instructions. Enter a password that
-                  you want to encrypt. <codeblock>hosencrypt.py</codeblock></li>
-                <li>Take the string generated and place it in the <codeph>"ilo_password"</codeph>
-                  field in your <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> file,
-                  remembering to enclose it in quotes.</li>
-                <li>Repeat the above for each server.</li>
-              </ol>
-            </li>
-            <li>Edit your <codeph>disks_osd.yml</codeph> file to ensure that the additional disks
-              are available on the servers:
-              <codeblock>disk-models:
+      <p>The example configuration files for a Ceph backend can be found in
+          <codeph>~/helion/examples/entry-scale-kvm-ceph/</codeph></p>
+      <p>Edit your <codeph>disks_osd.yml</codeph> file to ensure that the additional disks are
+        available on the servers:</p>
+      <codeblock>disk-models:
   - name: DISK_SET_OSD
     # two disk node; remainder of disk 1 and all of disk 2 combined in single VG
     # VG is used to create three logical vols for /var, /var/log, and /var/crash
@@ -91,74 +49,71 @@
            name: ceph
            attrs:
              usage: data
-             journal_disk: /dev/sdf</codeblock></li>
-          </ol>
-          <p>The above sample file contains three OSD nodes and two journal disk.</p>
-          <p>The disk model has the following fields:</p>
-          <p>
-            <simpletable>
-              <strow>
-                <stentry><b>device-groups</b></stentry>
-                <stentry>There can be several device groups. This allows different sets of disks to
-                  be used for different purposes.</stentry>
-              </strow>
-              <strow>
-                <stentry><b>name</b></stentry>
-                <stentry>This is an arbitrary name for the device group. The name must be
-                  unique.</stentry>
-              </strow>
-              <strow>
-                <stentry><b>devices</b></stentry>
-                <stentry>This is a list of devices allocated to the device group. A
-                    <codeph>name</codeph> field containing <codeph>/dev/sdb</codeph>,
-                    <codeph>/dev/sdd</codeph>, and <codeph>/dev/sde</codeph> indicates that the
-                  device group is used by Ceph.</stentry>
-              </strow>
-              <strow>
-                <stentry><b>consumer</b></stentry>
-                <stentry>This specifies the service that uses the device group. A
-                    <codeph>name</codeph> field containing <b>ceph</b> indicates that the device
-                  group is used by Ceph.</stentry>
-              </strow>
-              <strow>
-                <stentry><b>attrs</b></stentry>
-                <stentry>This is the list of attributes.</stentry>
-              </strow>
-              <strow>
-                <stentry><b>usage</b></stentry>
-                <stentry>There can be several use of devices for a particular service. In the above
-                  sample, <codeph>usage</codeph> field contains <b>data</b> which indicates that the
-                  device is used for data storage.</stentry>
-              </strow>
-              <strow>
-                <stentry><b>journal_disk</b></stentry>
-                <stentry>It is to used to capture journal data. You can share the journal disk
-                  between two nodes.</stentry>
-              </strow>
-            </simpletable>
-          </p>
+             journal_disk: /dev/sdf</codeblock>
+      <p>The above sample file contains three OSD nodes and two journal disk.</p>
+      <p>The disk model has the following fields:</p>
+      <p>
+        <simpletable>
+          <strow>
+            <stentry><b>device-groups</b></stentry>
+            <stentry>There can be several device groups. This allows different sets of disks to be
+              used for different purposes.</stentry>
+          </strow>
+          <strow>
+            <stentry><b>name</b></stentry>
+            <stentry>This is an arbitrary name for the device group. The name must be
+              unique.</stentry>
+          </strow>
+          <strow>
+            <stentry><b>devices</b></stentry>
+            <stentry>This is a list of devices allocated to the device group. A
+                <codeph>name</codeph> field containing <codeph>/dev/sdb</codeph>,
+                <codeph>/dev/sdd</codeph>, and <codeph>/dev/sde</codeph> indicates that the device
+              group is used by Ceph.</stentry>
+          </strow>
+          <strow>
+            <stentry><b>consumer</b></stentry>
+            <stentry>This specifies the service that uses the device group. A <codeph>name</codeph>
+              field containing <b>ceph</b> indicates that the device group is used by
+              Ceph.</stentry>
+          </strow>
+          <strow>
+            <stentry><b>attrs</b></stentry>
+            <stentry>This is the list of attributes.</stentry>
+          </strow>
+          <strow>
+            <stentry><b>usage</b></stentry>
+            <stentry>There can be several use of devices for a particular service. In the above
+              sample, <codeph>usage</codeph> field contains <b>data</b> which indicates that the
+              device is used for data storage.</stentry>
+          </strow>
+          <strow>
+            <stentry><b>journal_disk</b></stentry>
+            <stentry>It is to used to capture journal data. You can share the journal disk between
+              two nodes.</stentry>
+          </strow>
+        </simpletable>
+      </p>
+      <p>Editable parameters for Ceph are available in the following locations:</p>
+      <ul>
+        <li><codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph>
+          <p>In the <codeph>settings.yml</codeph> file, you can edit the following parameters: <ul>
+              <li>fsid</li>
+              <li>ceph_cluster</li>
+              <li>osd_settle_time</li>
+              <li>OSD_journal_size</li>
+            </ul></p><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Any
+          additional Ceph parameters: <?oxy_custom_end?></li>
+        <li>
+          <p><codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph></p>
+          <p>The <codeph>user_model.yml</codeph> has the editable values for the different pools
+            created by HP Helion OpenStack.</p>
         </li>
-        <li>Editable parameters for Ceph are available in the following locations: <ul>
-            <li><codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph>
-              <p>In the <codeph>settings.yml</codeph> file, you can edit the following parameters: <ul>
-                  <li>fsid</li>
-                  <li>ceph_cluster</li>
-                  <li>osd_settle_time</li>
-                  <li>OSD_journal_size</li>
-                </ul></p><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Any
-              additional Ceph parameters: <?oxy_custom_end?></li>
-            <li>
-              <p><codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph></p>
-              <p>The <codeph>user_model.yml</codeph> has the editable values for the different pools
-                created by HP Helion OpenStack.</p>
-            </li>
-          </ul>
-        </li>
-        <li>Commit your configuration to a <xref href="using_git.dita">local repository</xref>: <codeblock>cd ~/helion/hos/ansible
+      </ul>
+      <p>Commit your configuration to a <xref href="using_git.dita">local repository</xref>: <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock>
-          <note>Enter your commit message &lt;commit message></note></li>
-      </ol>
+        <note>Enter your commit message &lt;commit message></note></p>
       <note type="important">This step needs to be repeated any time you make changes to your
         configuration files before you move onto the following steps. See <xref
           href="using_git.dita">Using Git for Configuration Management</xref> for more

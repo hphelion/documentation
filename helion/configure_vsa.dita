@@ -24,62 +24,7 @@
           href="#config_vsa/deploy-vsa-with-ao-without-ao" format="dita">VSA with AO and without
           AO</xref> section below.</p>
     </section>
-    <section id="configuration">
-      <title>Configure Your Environment</title>
-      <ol>
-        <li>Setup your configuration files, as follows: <ol>
-            <li>Copy the example configuration files into the definition directory and edit them to
-              contain the details of your environment:
-              <codeblock>cp -r ~/helion/examples/entry-scale-kvm-vsa/* ~/helion/my_cloud/definition/</codeblock></li>
-            <li>Begin inputting your environment information into the configuration files in the
-                <codeph>~/helion/my_cloud/definition</codeph> directory. Full details of how to do
-              this can be found here: <xref href="input_model.dita">Helion OpenStack 2.0 Input
-                Model</xref>. <note type="important">If you chose to use your first controller node
-                as your deployer, ensure that your <codeph>servers.yml</codeph> file contains the
-                  <codeph>is-deployer: true</codeph> notation in your controller options. If you are
-                using a dedicated deployer node you can omit this. Here is an example snippet of a
-                  <codeph>servers.yml</codeph> file where a user is using their first controller
-                node as their deployer:
-                <codeblock># Controllers
-  - id: controller1
-    ip-addr: 192.168.10.3
-    role: CONTROLLER-ROLE
-    server-group: RACK1
-    nic-mapping: HP-DL360-4PORT
-    mac-addr: b2:72:8d:ac:7c:6f
-    ilo-ip: 192.168.9.3
-    ilo-password: password
-    ilo-user: admin
-    <b>is-deployer: true</b></codeblock></note></li>
-            <li id="encrypt">[Optional] You can use the <codeph>hosencrypt.py</codeph> script to
-              encrypt your iLo passwords. This script uses OpenSSL. <ol>
-                <li>Change to the Ansible directory:
-                  <codeblock>cd ~/helion/hos/ansible</codeblock></li>
-                <li>Put the encrytion key into the following environment variable:
-                  <codeblock>export HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeblock></li>
-                <li>Run the python script below and follow the instructions. Enter a password that
-                  you want to encrypt. <codeblock>hosencrypt.py</codeblock></li>
-                <li>Take the string generated and place it in the <codeph>"ilo_password"</codeph>
-                  field in your <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> file,
-                  remembering to enclose it in quotes.</li>
-                <li>Repeat the above for each server.</li>
-              </ol>
-              <note>Before you run any playbooks, remember that you need to export the encryption
-                key in the following environment variable: <codeph>export
-                  HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeph></note></li>
-          </ol></li>
-        <li>Commit your configuration to the <xref href="using_git.dita">local git repo</xref>, as
-          follows: <codeblock>cd ~/helion/hos/ansible
-git add -A
-git commit -m "My config or other commit message"
-</codeblock>
-          <note type="important">This step needs to be repeated any time you make changes to your
-            configuration files before you move onto the following steps. See <xref
-              href="using_git.dita">Using Git for Configuration Management</xref> for more
-            information.</note></li>
-      </ol>
-    </section>
-    <section>
+     <section>
       <title>Creating a StoreVirtual Cluster and adding it to a new Management Group Cluster using
         CMC</title>
       <p><b> Install (any) X Display Tool to Launch Centralized Management Console (CMC)</b></p>
