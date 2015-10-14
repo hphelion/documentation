@@ -90,40 +90,48 @@ git commit -m "My config or other commit message"</codeblock>
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
     </section>
     
-    <section><title>Testing public endpoints</title>
-      
-      
-      The following write up is for people trying to test the public endpoints using the bundled test certificate with a virtual cloud.
-      
-      There are three usecases here.
-      <ul>
-      <li>Access public endpoints from the deployer
-      </li><li>Access public endpoints from the machine hosting the virtual cloud
-      </li><li>Access public endpoints from a machine other than the machine hosting the virtual cloud
-      </li></ul>All these cases reduce to the following steps
-      <ol>
-      <li>Have a name resolver for myhelion.test - It could /etc/hosts or dnsmasq reading from a hosts file
-      </li><li>Install the ca certificate that signed the test server certificate. This file can be found in the deployer under roles/tls-trust/files/frontend_cacert.pem. This file is not symlinked via the config directory to customers because we generally don't need the CA certificate signing the external certificate inside the cloud.
-      </li></ol>
+    <section><title>Testing public endpoints</title> The following write up is for people trying to
+      test the public endpoints using the bundled test certificate with a virtual cloud. There are
+      three usecases here. <ul id="ul_z51_djg_rt">
+        <li>Access public endpoints from the deployer </li>
+        <li>Access public endpoints from the machine hosting the virtual cloud </li>
+        <li>Access public endpoints from a machine other than the machine hosting the virtual cloud
+        </li>
+      </ul>All these cases reduce to the following steps <ol id="ol_ay1_djg_rt">
+        <li>Have a name resolver for myhelion.test - It could /etc/hosts or dnsmasq reading from a
+          hosts file </li>
+        <li>Install the ca certificate that signed the test server certificate. This file can be
+          found in the deployer under roles/tls-trust/files/frontend_cacert.pem. This file is not
+          symlinked via the config directory to customers because we generally don't need the CA
+          certificate signing the external certificate inside the cloud. </li>
+      </ol>
       <b>Accessing public endpoints from the deployer</b>
-      <ol>
-        <li>Make an entry for the vip inside the /etc/hosts file pointing to myhelion.test
-        </li><li>run the playbook to install ca certificate.
-          <codeblock>ansible-playbook -i hosts/verb_hosts tls-trust-deploy.yml</codeblock></li></ol>
+      <ol id="ol_q1b_djg_rt">
+        <li>Make an entry for the vip inside the /etc/hosts file pointing to myhelion.test </li>
+        <li>run the playbook to install ca certificate.
+          <codeblock>ansible-playbook -i hosts/verb_hosts tls-trust-deploy.yml</codeblock></li>
+      </ol>
       <b>Accessing public endpoints from the machine hosting the virtual cloud</b>
-      <ol>
-        <li>Make an entry for the vip inside the /etc/hosts file pointing to myhelion.test
-        </li><li>Copy the CA certificate from the deployer:/home/stack/scratch/ansible/next/hos/ansible/roles/tls-trust/files/frontend_cacert.pem to /usr/local/share/ca-certificates/helion-ca.crt
-        </li><li>Run <codeblock>sudo update-ca-certificates --fresh</codeblock></li></ol>
-      <b>Accessing public endpoints from a machine other than the machine hosting the virtual cloud</b>
-      Start by repeating what was done for the machine hosting the virtual cloud.
-      
-      But this time your /etc/hosts entry for myhelion.test should point to the IP address of the host running the virtual cloud. After this you need to have something tunnelling the packets to the VIP. This is easily accomplished with haproxy in tunnel mode. (mode tcp). But you need to have a stanza for every open port. But the stanzas are quite generic and can be scripted. For example if I want to do 'nova list' I may need port 5000 (keystone) and port 8774 (nova-api),
-      
-      <ol><li>Install haproxy with apt-get
-      </li><li>Open /etc/haproxy/haproxy.cfg and append the following sections to the existing content:
-      
-      <codeblock>listen keystone-5000
+      <ol id="ol_ddb_djg_rt">
+        <li>Make an entry for the vip inside the /etc/hosts file pointing to myhelion.test </li>
+        <li>Copy the CA certificate from the
+          deployer:/home/stack/scratch/ansible/next/hos/ansible/roles/tls-trust/files/frontend_cacert.pem
+          to /usr/local/share/ca-certificates/helion-ca.crt </li>
+        <li>Run <codeblock>sudo update-ca-certificates --fresh</codeblock></li>
+      </ol>
+      <b>Accessing public endpoints from a machine other than the machine hosting the virtual
+        cloud</b>
+    </section>
+    <section>Start by repeating what was done for the machine hosting the virtual cloud. But this
+      time your /etc/hosts entry for myhelion.test should point to the IP address of the host
+      running the virtual cloud. After this you need to have something tunnelling the packets to the
+      VIP. This is easily accomplished with haproxy in tunnel mode. (mode tcp). But you need to have
+      a stanza for every open port. But the stanzas are quite generic and can be scripted. For
+      example if I want to do 'nova list' I may need port 5000 (keystone) and port 8774 (nova-api),
+        <ol id="ol_ofb_djg_rt">
+        <li>Install haproxy with apt-get </li>
+        <li>Open /etc/haproxy/haproxy.cfg and append the following sections to the existing content:
+          <codeblock>listen keystone-5000
       option ssl-hello-chk
       mode tcp
       bind 16.25.10.10:5000
@@ -135,18 +143,8 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
       server nova-8774 192.168.245.10:8774 check inter 2000 rise 2 fall 5
       
       16.25.10.10 is the host running the virtual cloud
-      192.168.254.10 is the VIP</codeblock></li></ol>
-      One way to generate the list of all public ports behind TLS is to run 'grep "ssl crt" /etc/haproxy/haproxy.cfg' from a controller.
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    </section>
+      192.168.254.10 is the VIP</codeblock></li>
+      </ol> One way to generate the list of all public ports behind TLS is to run 'grep "ssl crt"
+      /etc/haproxy/haproxy.cfg' from a controller. </section>
   </body>
 </topic>
