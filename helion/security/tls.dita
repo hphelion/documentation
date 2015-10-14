@@ -76,16 +76,13 @@
       following and rerun the config-processor and reconfigure. Copy the certificate (containing
       both public and private key) to <b>helion/my_cloud/config/tls/certs/ directory</b> </section>
     <section>Update the new certificate filename in cert-file in
-        <b>helion/my_cloud/definition/data/network_groups.yml</b>. If you have already run the
-      config-processor-run.yml playbook which is required during installation, run the
-        <b>config-processor-clean.yml</b> playbook to clear out your previous configuration before
-      rerunning the configuration processor: <codeblock>cd ~/helion/hos/ansible
+        <b>helion/my_cloud/definition/data/network_groups.yml</b>. <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
-      <p>Commit your changes to git.</p>
+      <p>Commit your changes to git:</p>
       <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "My config or other commit message"</codeblock>
-      <p>Rerun the config processor</p>
+      <p>Rerun the config processor:</p>
       <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
     </section>
