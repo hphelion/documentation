@@ -97,7 +97,7 @@
     <topicref href="CarrierGrade/API/carrier-grade-api.dita" navtitle="API and SDK Reference"
       locktitle="yes"/>
     <topicref href="CarrierGrade/HLMCLI/CGH-2-hlm-cli.dita"
-      navtitle="Helion Lifecycle Manageent CLI Reference" locktitle="yes"/>
+      navtitle="Helion Lifecycle Managment CLI Reference" locktitle="yes"/>
     <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2--backup-restore.dita" toc="yes"
       navtitle="Backup and Restore Configuration Files and MySQL Clusters" locktitle="yes">
       <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2--backup-restore-cli.dita"
