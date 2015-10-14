@@ -29,7 +29,7 @@ do
 		else
 		except=""
 		fi
-		if [[ -n $(cat $i | sed 's|^[\s]*| |g' |sed ':a;N;$!ba;s/\n/ /g'| perl -pe  's|<!--.*-->||g'| | grep "$test" | egrep -v \""$except"\") ]]; 
+		if [[ -n $(cat $i | sed 's|^[\s]*| |g' |sed ':a;N;$!ba;s/\n/ /g'| perl -pe  's|<!--.*-->||g'|  grep "$test" | egrep -v \""$except"\") ]]; 
 		then
 			echo -e "${cc_blue}Found in file: $i on the $GIT_BRANCH (the issue is surrounded by ${cc_red}##${cc_blue}):${cc_normal}"
 			issue=`grep -n "$test" $i | egrep -v \""$except"\"  | sed "s|\($test\)|${cc_red} ## \1 ## ${cc_normal}|"`
