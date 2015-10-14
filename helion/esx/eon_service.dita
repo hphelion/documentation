@@ -21,7 +21,7 @@
       <p>EON is installed on the master control plane node and the Eon CLI is installed on the HLM
         Deployer node which is used by the Cloud Admin to setup vCenter Compute Proxy and OvsvApp
         nodes.</p>
-      <p><image href="../../media/esx/EON%20arch%20diagram.png" id="image_qcg_mqh_rt"/></p>
+      <p><image href="../../media/esx/eon_arch_diagram.png"/></p>
     </section>
     <section><title>EON CLI Operations</title><p>The EON client CLI package provides an http-client
         coupled command-line tool for managing EON (ESX management) services.<ol id="ol_d1l_ygf_rt">
