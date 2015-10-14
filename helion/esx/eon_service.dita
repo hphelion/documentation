@@ -8,7 +8,7 @@
       datastore, dvSwitch and portgroup details. When a cloud admin wants a particular cluster to be
       a compute resource in HP Helion Openstack 2.0, Eon provisions nova proxy service VM for each
       cluster and OVSvApp service VM for each ESX host in that cluster.</p>
-    <p>The integration of EON with HP Helion Openstack 2.0 automates the steps for moving/adding a
+    <p>The integration of EON with HP Helion OpenStack 2.0 automates the steps for moving/adding a
       cluster in a compute resource. You must execute a few EON CLI commands to do so.</p>
     <p>Moreover, EON is not installed by default. To install EON service, you must uncomment
         <systemoutput>eon-deploy.yml</systemoutput> file at
@@ -34,7 +34,7 @@
               Operations</xref></li>
         </ol></p><sectiondiv id="vcenter-operations"><b>vCenter Operation</b></sectiondiv><p>VMware
         vCenter is an appliance that is used to manage multiple ESXi hosts through a single console
-        application. VMware ESXi is a virtualization platform on which you create and run virtual
+        application. VMware ESXi is a visualization platform on which you create and run virtual
         machines. VMware vCenter acts as a central administrator for ESXi hosts that are connected
         on a network. You can pool and manage the resources of multiple ESXi hosts while monitoring
         and managing your physical and virtual infrastructure.<ul id="ul_uwj_4hf_rt">
@@ -130,7 +130,8 @@
               output</b>:<codeblock># eon vcenter-delete BC9DED4E-1639-481D-B190-2B54A2BF5674</codeblock></p></li>
       </ul></section>
     <section><sectiondiv id="cluster-operations"><b>Cluster Operations</b></sectiondiv><p>This
-        section lists the cluster operations performed in a vcenter.<ul id="ul_dvm_rlf_rt">
+        section lists the cluster operations performed in a vcenter.<note>No two clusters should
+          have the same name across datacenters in a given vCenter.</note><ul id="ul_dvm_rlf_rt">
           <li>List clusters in a vCenter<p>Displays a list of clusters in a specific
               vCenter.<codeblock># eon cluster-list --vcenter-id &lt;vCenter ID></codeblock></p><p><b>Sample
                 output</b>:</p><p>

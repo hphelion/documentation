@@ -41,7 +41,7 @@
 .
 - name: <b>SWOBJ-ROLE</b>
   interface-model: <b>SWPAC-INTERFACES</b>
-  disk-model: <b>SWPAC-DISKS</b></codeblock>
+  disk-model: <b>SWOBJ-DISKS</b></codeblock>
     </example>
     <p><!--You must alloacte a server for Swift. Therefore, you specify the roles of the servers in <codeph>data/baremetal.yml</codeph> file. For example, a Swift Proxy, Container, Account (PAC) node is specified as follows:--></p>
     <!--<p><codeblock>baremetal_servers:
