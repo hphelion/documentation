@@ -28,19 +28,15 @@
       <title>Commands</title>
       <dl>
         <dlentry>
-          <dt><filepath>config</filepath></dt>
+          <dt><xref href="#reference_cd3_bs3_rt/gato_config" format="dita"
+                ><filepath>config</filepath></xref></dt>
           <dd>Manipulate configuration values of <keyword keyref="prodShort"/> components.<ul
-              id="ul_egw_qrj_rt">
-              <li><xref href="#gato_config" format="dita"
-                    ><filepath>get</filepath></xref></li>
-              <li><xref href="#gato_config" format="dita"
-                    ><filepath>set</filepath></xref></li>
-              <li><xref href="#gato_config" format="dita"
-                    ><filepath>del</filepath></xref></li>
-              <li><xref href="#gato_config" format="dita"
-                    ><filepath>push</filepath></xref></li>
-              <li><xref href="#gato_config" format="dita"
-                    ><filepath>pop</filepath></xref></li>
+              id="ul_x4n_dtj_rt">
+              <li><filepath>get</filepath></li>
+              <li><filepath>set</filepath></li>
+              <li><filepath>del</filepath></li>
+              <li><filepath>push</filepath></li>
+              <li><filepath>pop</filepath></li>
             </ul></dd>
         </dlentry>
         <dlentry>
@@ -80,7 +76,7 @@
               <li><xref href="#reference_cd3_bs3_rt/node_list" format="dita"><filepath>node
                     list</filepath></xref></li>
               <li><xref href="#reference_cd3_bs3_rt/node_placementzone" format="dita"><filepath>node
-                    placementzones</filepath></xref></li>
+                    placementzone</filepath></xref></li>
               <li><xref href="#reference_cd3_bs3_rt/node_remove" format="dita"><filepath>node
                     remove</filepath></xref></li>
               <li><xref href="#reference_cd3_bs3_rt/node_rename" format="dita"><filepath>node
@@ -97,7 +93,7 @@
                     dhcp</filepath></xref></li>
               <li><xref href="#reference_cd3_bs3_rt/op_import_from_yaml_files" format="dita"
                     ><filepath>op import_from_yaml_files</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/op_import_from_yaml_files" format="dita"
+              <li><xref href="#reference_cd3_bs3_rt/op_import_from_yaml_file" format="dita"
                     ><filepath>op import_from_yaml_file</filepath></xref></li>
               <li><xref href="#reference_cd3_bs3_rt/op_static_ip" format="dita"><filepath>op
                     static_ip</filepath></xref></li>
@@ -115,11 +111,7 @@
               <li><xref href="#reference_cd3_bs3_rt/process_list" format="dita"><filepath>process
                     list</filepath></xref></li>
               <li><xref href="#reference_cd3_bs3_rt/process_start" format="dita"><filepath>process
-                    start</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/process_stop" format="dita"><filepath>process
-                    stop</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/process_restart" format="dita"><filepath>process
-                    restart</filepath></xref></li>
+                    start|stop|restart</filepath></xref></li>
               <li><xref href="#reference_cd3_bs3_rt/process_ready" format="dita"><filepath>process
                     ready</filepath></xref></li>
             </ul></dd>
@@ -318,14 +310,26 @@
           <dt><filepath>gato op dhcp</filepath></dt>
           <dd>Configure this node's networking to use DHCP</dd>
         </dlentry>
-        <dlentry id="op_import_from_yaml_files">
+        <dlentry>
           <dt><filepath>gato op import_from_yaml_files <varname>[--upgrade]</varname>
               <varname>[--new-key-file=&lt;file>]</varname></filepath></dt>
+          <dd>Import configuration from YAML files for all processes, deleting and replacing prior configuration.<dl>
+              <dlentry>
+                <dt><filepath>--new-key-file</filepath></dt>
+                <dd>Override config with a specific YAML file.</dd>
+              </dlentry>
+              <dlentry>
+                <dt><filepath>--upgrade</filepath></dt>
+                <dd>Merge the new configuration rather than deleting and replacing.</dd>
+              </dlentry>
+            </dl></dd>
+        </dlentry>
+        <dlentry id="op_import_from_yaml_files">
           <dt><filepath>gato op import_from_yaml_file <varname>[--upgrade]</varname>
               <varname>[--new-key-file=&lt;file>]</varname>
               <varname>&lt;process></varname></filepath></dt>
-          <dd>Import configuration from YAML files for all processes or for a single process,
-            deleting and replacing prior configuration for all processes or for that single process.<dl>
+          <dd>Import the YAML configuration for a single process, deleting and replacing all prior
+            configuration for that process.<dl>
               <dlentry>
                 <dt><filepath>--new-key-file</filepath></dt>
                 <dd>Override config with a specific YAML file.</dd>
@@ -412,11 +416,8 @@
             </dl></dd>
         </dlentry>
         <dlentry id="process_start">
-          <dt><filepath>gato process start <varname>[options]</varname>
-              <varname>[&lt;process>...]</varname></filepath></dt>
-          <dt><filepath>gato process stop <varname>[options]</varname>
-              <varname>[&lt;process>...]</varname></filepath></dt>
-          <dt><filepath>gato process restart <varname>[options]</varname>
+          <dt><filepath>gato process <varname>&lt;start|stop|restart></varname>
+              <varname>[options]</varname>
               <varname>[&lt;process>...]</varname></filepath></dt>
           <dd>Starts, stops, or restarts a process.<dl>
               <dlentry>
