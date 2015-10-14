@@ -3,13 +3,15 @@
 <topic id="install_verification">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Verifying the Installation</title>
   <body>
-    <section id="about"> 
+    <section id="about">
       <p>The verification process has two parts:</p>
       <ul>
         <li><xref href="#install_verification/tempest">Verifying the Install Using Embedded
             Tests</xref></li>
         <li><xref href="#install_verification/volume_verify">Verifying Your Block Storage
             Backend</xref></li>
+        <li><xref href="#install_verification/swift_verify">Validate Your Object Storage
+            Setup</xref></li>
       </ul>
     </section>
     <section id="tempest"><title>Verifying the Install Using Embedded Tests</title>
@@ -403,6 +405,52 @@ source /etc/environment</codeblock>
           <li>Verify that the volume was removed from the <b>Volumes</b> screen.</li>
         </ol>
       </p>
+    </section>
+    <section id="swift_verify"><title>Verifying Your Object Storage</title>
+      <p><b>Validate That All Servers Have Been Added to the Swift Rings</b></p>
+      <ul>
+        <li>Run the _swift-validate-input-model.yml playbook as follows:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml</codeblock></li>
+        <li>Search for output similar to the following. Specifically, look at the number of drives
+          that are proposed to be added.
+          <codeblock>TASK: [swiftlm-ring-supervisor | validate-input-model | Print report] ********* 
+ok: [padawan-ccp-c1-m1-mgmt] => {
+    "var": {
+        "report.stdout_lines": [
+            "Need to add 0 devices", 
+            "Need to remove 0 devices", 
+            "Need to set weight on 0 devices"
+        ]
+     }
+}</codeblock></li>
+        <li>If the text contains "Need to add 0 devices" then the deploy was successful and no
+          further action is needed.</li>
+        <li>If there are more drives need to be added, it indicates that the deploy failed on some
+          nodes and that you restarted the deploy to include those nodes. However, the nodes are not
+          in the Swift rings because enough time has not elapsed to allow the rings to be rebuilt.
+          You have two options to continue: <ul>
+            <li>Repeat the deploy. There are two steps involved as follows: <ul>
+                <li>Delete the ring builder files as described in
+                  http://docs-staging.hpcloud.com/hos2.0ga/#helion/objectstorage/restart_deploy_from_scratch.html</li>
+                <li>Repeat the installation process starting by running the site.yml playbook as
+                  described in "Deploy the Cloud"</li>
+              </ul></li>
+            <li>Rebalance the rings several times until all drives are incorporated in the rings.
+              This process may take several hours to complete (because you need to wait one hour
+              between each rebalance).The steps are as follows: <ul>
+                <li>Change the min-part-time to 1 hour. See
+                  http://docs-staging.hpcloud.com/hos2.0ga/#helion/objectstorage/how_to_change_min_part_power.html</li>
+                <li>Use the "First phase of ring rebalance" and "Final rebalance phase" as described
+                  in
+                  http://docs-staging.hpcloud.com/hos2.0ga/#helion/objectstorage/input_model_change_existing_rings.html.
+                  The "Weight change phase of ring rebalance" does not apply because you not set the
+                  weight-step attribute at this stage.</li>
+                <li>Set the min-part-time to the recommended 16 hours as described in
+                  http://docs-staging.hpcloud.com/hos2.0ga/#helion/objectstorage/how_to_change_min_part_power.html</li>
+              </ul></li>
+          </ul></li>
+      </ul>
     </section>
   </body>
 </topic>
