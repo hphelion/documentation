@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_srg_d5h_rt">
+  <title>Removing an Existing ESX Host from a Cluster</title>
+  <body>
+    <p>The process for removing an existing ESX host from cluster is as follows:<ol
+        id="ol_ilq_k5h_rt">
+        <li>Migrate all instances on the ESX host (to be removed) to other hosts in that cluster
+          through vCenter client. (<b>how to migrate??)</b></li>
+        <li>Delete the ovsvapp-*** VM present in that host through vCenter client. <b>(any command
+            to run?)</b></li>
+        <li>Remove the ESX host from the cluster. <b>(any command??)</b></li>
+      </ol></p>
+  </body>
+</topic>
