@@ -19,14 +19,15 @@
         href="https://www.consul.io/" format="html" scope="external">Consul</xref> for centralized
       configuration storage that runs on each host VM.</p>
     <ul id="ul_zrh_ll3_rt">
-      <li>If you have worked with Cloud Foundry, you can work in a familiar environment that uses
-          <xref href="https://terraform.io/" format="html" scope="external">Terraform</xref>, a
-        service management command-line tool.</li>
+      <li>If you have worked with Cloud Foundry before, <keyword keyref="prodShort"/> will allow you
+        to work in a familiar environment that uses <xref href="https://terraform.io/" format="html"
+          scope="external">Terraform</xref>, a service management command-line tool, instead of
+        BOSH.</li>
       <li>If you have worked with the <xref
           href="http://www8.hp.com/us/en/cloud/helion-devplatform-overview.html" format="html"
-          scope="external">HP Helion Development Platform</xref>, you can work in a familiar
-        environment that uses <filepath>gato</filepath>, a new command-line administration
-        utility.</li>
+          scope="external">HP Helion Development Platform</xref> before, <keyword keyref="prodShort"
+        /> will allow you to work in a familiar environment that uses <filepath>gato</filepath>, a
+        new command-line administration utility, instead of <filepath>kato</filepath>.</li>
     </ul>
   </conbody>
 </concept>
