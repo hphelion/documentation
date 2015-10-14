@@ -1,13 +1,13 @@
-% HLM[ \.,]%=Do not abbreviate.  Use Helion lifecycle management (The case is correct as shown.)
+% HLM[ \.,]%=Do not abbreviate. Use Helion lifecycle management (The case is correct as shown.)
  HOS%[ \.,]=Do not abbreviate. Use HP Helion OpenStack
-%[^P]\s*Helion OpenStack%=Change to HP Helion OpenStack
+%[^P] Helion OpenStack%=Change to HP Helion OpenStack
 %baremetalConfig.yml%=baremetalConfig has been merged with servers.yml. The combined servers file is servers.yml"%@(servers.yml|rm) 
 % hLinux %=Use Linux for HP Helion or Linux for HP Helion OpenStack.%@codeph
 %HP Enterprise%=Use Hewlett Packard Enterprise or HPE.
 %[^Mac] OS %=Write OS as operating system.%OS type: Linux
 %guestt%=Correct the typo.
 %lbass[^-]%=Use LBaaS.
-%ÎíÎñ%=this is an en-dash.  Use only dashes.
+%ÎíÎñ%=this is an en-dash. Use only dashes.
 % are have%= incorrect word grouping.
 % a [oO]bject%= object requires the article an.
 % a [iI]nstance%= instance requires the article an.
@@ -75,7 +75,6 @@
 %Servce% = correct spelling.
 % it it %= delete repeated word (it).
 % can can %= delete repeated word (can).
-%  , %=remove the space before the comma.
 % of of %= delete repeated word (of). 
 % a a %= delete repeated word (a).
 % to to %= delete repeated word (to).
@@ -93,7 +92,7 @@
 % [Nn]otificition %= correct spelling.
 % [Ss]elction %= correct spelling.
 % [Aa]dditonal %= correct spelling.
-%  eg %= use e.g.
+% eg %= use e.g.
 % [Pp]ersonalisation %= correct spelling.
 % lets do %= correct punctuation.
 % [Pp]eform %= correct spelling.
