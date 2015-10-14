@@ -310,7 +310,7 @@
           <dt><filepath>gato op dhcp</filepath></dt>
           <dd>Configure this node's networking to use DHCP</dd>
         </dlentry>
-        <dlentry>
+        <dlentry id="op_import_from_yaml_files">
           <dt><filepath>gato op import_from_yaml_files <varname>[--upgrade]</varname>
               <varname>[--new-key-file=&lt;file>]</varname></filepath></dt>
           <dd>Import configuration from YAML files for all processes, deleting and replacing prior configuration.<dl>
@@ -324,7 +324,7 @@
               </dlentry>
             </dl></dd>
         </dlentry>
-        <dlentry id="op_import_from_yaml_files">
+        <dlentry id="op_import_from_yaml_file">
           <dt><filepath>gato op import_from_yaml_file <varname>[--upgrade]</varname>
               <varname>[--new-key-file=&lt;file>]</varname>
               <varname>&lt;process></varname></filepath></dt>
