@@ -390,13 +390,12 @@ Password: cghelion</codeblock>
                 <codeph>&lt;cloudname></codeph> is the name you assigned to the cloud. The directory
               contains several sample Cinder configuration files that you can edit, depending upon
               which storage method(s) you are using.</li>
-            <li>Depending upon the type of storage you are using, edit the following file: <ul>
-            <li><codeph>cinder_conf.multiBackendSample</codeph> - this sample file provides all the
-              variables needed to use ESX in the non-KVM region and HP StoreVirtual VSA and/or HP
-              StoreServ (3PAR) attched to the KVM region;</li>
-          </ul><p>Use the <codeph>enabled_backends</codeph> variable to list each of the back-ends
-            you are using. You must specify at least one back-end for the non-KVM region and one or
-            more for the KVM region.</p><table>
+            <li>Depending upon the type of storage you are using, edit the
+            <codeph>cinder_conf.multiBackendSample</codeph> file. This sample file provides all the
+          variables needed to use ESX in the non-KVM region and HP StoreVirtual VSA and/or HP
+          StoreServ (3PAR) attched to the KVM region.<p>Use the <codeph>enabled_backends</codeph>
+            variable to list each of the back-ends you are using. You must specify at least one
+            back-end for the non-KVM region and one or more for the KVM region.</p><table>
             <tgroup cols="3">
               <colspec colname="col1" colsep="1" rowsep="1"/>
               <colspec colname="col2" colsep="1" rowsep="1"/>
