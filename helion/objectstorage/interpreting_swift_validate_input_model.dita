@@ -4,24 +4,6 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Interpreting _swift-validate-input-model.yml
     Errors</title>
   <body>
-    <p>When you execute the <codeph>_swift-validate-input-model.yml</codeph> playbook it can be hard
-      to pick out the errors being reported. If so, you view the error messages as follows:<ol
-        id="ol_szd_tht_dt">
-        <li>Log onto the first node in the system that is running the swift-proxy-server process.
-            <note> You must run the <codeph>_swift-validate-input-model.yml</codeph> playbook as
-            mentioned in step <b>1</b> in <b> </b><xref
-              href="../install_entryscale_kvm_vsa.dita#install_kvm/validate_swift">Validate Object
-              Storage</xref> or run the <codeph>hlm-deploy.yml</codeph> playbook as described in
-            step <b>2 c</b> in the <xref
-              href="../install_entryscale_kvm_vsa.dita#install_kvm/configuration">Install Guide</xref>
-            otherwise the files needed to run the <codeph>swiftlm-ring-supervisor</codeph> will not
-            be in place on the node.</note></li>
-        <li>Execute the following
-            command:<codeblock>sudo swiftlm-ring-supervisor --make-delta --report </codeblock><p>
-            The command will report any errors or problems (see List of errors) with the input
-            model. It also prints a summary of the ring create actions that are planned (i.e., that
-            will occur) for the deploy phase of the process.</p></li>
-      </ol></p>
     <section><b>List of errors</b></section>
     <p>The following example provides an error message, description, and the resolution.<note>To
         resolve an error, you must first modify the cloud model and re-run the configuration

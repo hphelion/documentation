@@ -4,7 +4,7 @@
   <title>Designing Storage Policies</title>
   <body>
     <p>Storage policies allow you to differentiate the way objects are stored. </p>
-    <p><b>Reason to use storage policies</b></p>
+    <p><b>Reasons to use storage policies</b></p>
     <p>They are as follows:<ul id="ul_q4t_cxd_jt">
         <li>Different types or classes of disk drive <p>You can use different drives to store
             various type of data. For example: You can use 7.5K RPM high-capacity drives for one
@@ -80,12 +80,14 @@
   replication-policy:
       replica-count: 3
 - name: object-1
+  display-name: Data
   default: yes
   min-part-time: 16
   partition-power: 20
   replication-policy:
       replica-count: 3
 - name: object-2
+  display-name: Archive
   default: no
   min-part-time: 16
   partition-power: 20

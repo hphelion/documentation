@@ -23,16 +23,16 @@ git checkout site</codeblock></li>
             example only one new server <b>swobj4</b> is added. However, you can add multiple
             servers by providing the server details in the <codeph>servers.yml</codeph>
             file.<codeblock>servers:
-…
+...
 - id: swobj4
-    role: SWOBJ_ROLE
-    server-group: &lt;server-group-name>
-    mac-addr: &lt;mac-address>
-    nic-mapping: &lt;nic-mapping-name>
-    ip-addr: &lt;ip-address>
-    ilo-ip: &lt;ilo-ip-address>
-    ilo-user: &lt;ilo-username> 
-    ilo-password: &lt;ilo-password></codeblock></li>
+  role: SWOBJ_ROLE
+  server-group: &lt;server-group-name>
+  mac-addr: &lt;mac-address>
+  nic-mapping: &lt;nic-mapping-name>
+  ip-addr: &lt;ip-address>
+  ilo-ip: &lt;ilo-ip-address>
+  ilo-user: &lt;ilo-username> 
+  ilo-password: &lt;ilo-password></codeblock></li>
           <li>Commit your
             changes.<codeblock>git add -A
 git commit -m "Add Node &lt;name>"</codeblock></li>

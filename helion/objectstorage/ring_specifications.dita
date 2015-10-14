@@ -56,8 +56,6 @@
           policy and can be used by users of the Swift system when they create containers. It allows
           them to specify the storage policy that the container uses. In the example, the storage
           policy is called <b>General</b>.</li>
-        <li>The swift-ring-builder will enforce a minimum of 16 hours between ring
-          rebuilds.<!--</li><li><b>Replica count</b>: The recommended value for the <codeph>replica-count</codeph> attribute is 3. Three copies of data are kept to provide resiliency and availability.</li>--></li>
         <li>
           <p>The purpose of the <b>min-part-time, partition-power, replication-policy</b>
               and<b>replica-count</b> are described in the following section. </p>
@@ -78,10 +76,11 @@
           <stentry><p>It changes the value used to decide if a given partition can be moved
               again.</p>This is the number of hours that the swift-ring-builder tool will enforce
             between ring rebuilds. On a small system, this can be as low as one hour. The value can
-            be different for each ring. <p>The swift-ring-builder will enforce a minimum of 16 hours
-              between ring rebuilds. However, this time is system-dependent so you will be unable to
-              figure out the appropriate value for <codeph>min-part-power</codeph> until you have
-              more experience with your system.</p></stentry>
+            be different for each ring. <p>In the example above, the swift-ring-builder will enforce
+              a minimum of 16 hours between ring rebuilds. However, this time is system-dependent so
+              you will be unable to figure out the appropriate value for
+                <codeph>min-part-time</codeph> until you have more experience with your
+            system.</p></stentry>
         </strow>
         <strow>
           <stentry><codeph>partition-power</codeph></stentry>
@@ -287,13 +286,11 @@
           </tbody>
         </tgroup>
       </table></section>
-    <section id="calculating-number"><b>Calculating Numbers of Partitions</b><p>The Object Storage
-        system hashes a given name into a specific <i>partition</i>. For each partition, for a
-        replica count of 3, there are three <i>partition directories</i>. The partition directories
-        are then evenly scattered over all drives. You can calculate the number of partition
-        directories as
-        follows:<codeblock>number-partition-directories-per-drive = ( (2 ** partition-power) * replica-count ) / number-of-drives
-</codeblock></p></section>
+    <section id="calculating-number"><b>Calculating Numbers of Partitions</b><p>The Object Storage system hashes a given name into a specific <i>partition</i>. For each
+        partition, for a replica count of 3, there are three <i>partition directories</i>. The
+        partition directories are then evenly scattered over all drives. You can calculate the
+        number of partition directories as
+        follows:<codeblock>number-partition-directories-per-drive = ( (2 ** partition-power) * replica-count ) / number-of-drives</codeblock></p></section>
     <p>An ideal number of partition directories per drive is 100. However, the system operate
       normally with a wide range of number of partition directories per drive. The table <i><b>
           <xref href="#ring-specification/partition-power" format="dita">Partition
@@ -303,11 +300,9 @@
       <li>For a given partition power, the minimum number of drives results in approximately 10,000
         partition directories per drive. With more directories on a drive results in performance
         issues.</li>
-      <li>
-        <p>For a given partition power, the maximum number of drives results in approximately 10
-          partition directories per drive. With fewer directories per drive results in an uneven
-          distribution of space utilization.</p>
-      </li>
+      <li>For a given partition power, the maximum number of drives results in approximately 10
+        partition directories per drive. With fewer directories per drive results in an uneven
+        distribution of space utilization.</li>
     </ul>
     <p> It is easy to select an appropriate partition power if your system is a fixed size. Select a
       value that gives the closest value to 100 partition directories per drive. If your system

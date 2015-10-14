@@ -27,8 +27,8 @@
       <title>Making Changes to a Swift Disk Model</title>
       <p>There are several reasons for changing the disk model.</p>
       <ul id="ul_d5y_255_dt">
-        <li>When you have additional drives available. If you do, then you add the drives to the
-          devices list.</li>
+        <li>If you have additional drives available then you add the drives to the devices
+          list.</li>
         <li>The disk devices listed in the example disk model have different names on your servers.
           This may be due to different hardware drives. Edit the disk model
           <!--(<codeph>DISK_SET_SWPAC</codeph> or <codeph>DISK_SET_SWOBJ</codeph>) -->and change the
@@ -246,10 +246,6 @@
               <b>swift</b>.</stentry>
           </strow>
         </simpletable></p>
-      <p>
-        <note>If the operating system of the node is reimaged (re-installed), all data on logical
-          volumes are lost.</note>
-      </p>
     </section>
     <p> Following is an example of Swift logical
       volumes:<codeblock>.

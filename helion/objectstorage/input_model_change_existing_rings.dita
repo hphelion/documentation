@@ -172,7 +172,7 @@ ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
                 the failed drive.</p>If the disk drives are of the same size as the original when
               the drive is replaced, no ring changes are required. You can confirm this by running
               the <codeph>_swift-make-delta-rebalance.yml</codeph> playbook. It should report that
-              no weight changes are needed. <p>For a single drive replacement, if the drive is
+              no weight changes are needed. <p>For a single drive replacement, even if the drive is
                 significantly larger than the original drives then you do not need to rebalance the
                 ring (however, the extra space on the drive will not be used).</p></stentry>
           </strow>

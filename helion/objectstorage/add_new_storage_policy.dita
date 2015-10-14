@@ -48,8 +48,8 @@
             - object-1
             - <b>object-2</b>
   ...</codeblock><note>You
-            must use the new object ring on at least one node that runs the <b>swift-object
-              service.</b> If you skip this step and continue to run the
+            must use the new object ring on at least one node that runs the
+              <codeph>swift-object</codeph> service. If you skip this step and continue to run the
               <codeph>_swift-validate-input-model.yml</codeph> and<codeph> swift-deploy.yml</codeph>
             playbooks then it will fail with an error ,"There are no devices in this ring, or all
             devices have been deleted", as shown

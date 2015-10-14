@@ -8,7 +8,7 @@
       creating a cluster or resource node and when defining the networks used by Swift. The network
       model allows many options and configurations. For smooth Swift operation, the following must
       be <b>true</b>:<ul id="ul_ggm_rkc_jt">
-        <li>The following services must have a direct connection to the same network:<ul
+        <li>The following services must have a <b>direct</b> connection to the same network:<ul
             id="ul_x1c_5kc_jt">
             <li><codeph>swift-proxy</codeph></li>
             <li><codeph>swift-account</codeph></li>
