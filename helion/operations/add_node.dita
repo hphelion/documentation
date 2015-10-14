@@ -37,9 +37,9 @@ git checkout site</codeblock> Add
       server-group: RACK1
       nic-mapping: nic-mapping: HP_DL360_6PORT
       mac-addr: d6:70:c1:36:43:f7
-      ilo_ip: "10.1.12.74"
-      ilo_user: "someone"
-      ilo_password: "password"</codeblock>
+      ilo_ip: "10.1.8.24"
+      ilo_user: "admin"
+      ilo_password: "whatever"</codeblock>
         </li>
         <li> Commit the changes <codeblock>git commit -a -m "Add node &lt;name>"</codeblock> Then
           run the configuration processor and the ready deploment
