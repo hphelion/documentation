@@ -78,11 +78,11 @@
     <section>Update the new certificate filename in cert-file in
         <b>helion/my_cloud/definition/data/network_groups.yml</b>. <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
-      <p>Commit your changes to git.</p>
+      <p>Commit your changes to git:</p>
       <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "My config or other commit message"</codeblock>
-      <p>Rerun the config processor</p>
+      <p>Rerun the config processor:</p>
       <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
     </section>
