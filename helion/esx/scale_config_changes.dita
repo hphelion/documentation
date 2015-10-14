@@ -3,12 +3,12 @@
 <topic id="topic_ijt_dyh_rt">
   <title>SCALE Configuration Changes</title>
   <body>
-    <p>The following are the recommended configuration changes to achieve 4K instances.  <b>(what is
+    <p>The recommended configuration changes to achieve 4K instances are as follows. <b>(what is
         reason to scale the configuration changes??)</b><ol id="ol_zwn_lyh_rt">
         <li>Change the directory. The <systemoutput>nova.conf.j2</systemoutput> is present in
           following
           directories:<codeblock>cd /home/stack/helion/hos/ansible/roles/nova-common/templates</codeblock></li>
-        <li>Edit the DEFAULT section in nova.conf.j2 file as
+        <li>Edit the DEFAULT section in <codeph>nova.conf.j2</codeph> file as
           below:<codeblock>[DEFAULT]
 rpc_responce_timeout = 180
 server_down_time = 300
