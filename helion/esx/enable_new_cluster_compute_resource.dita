@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_l5t_w5f_rt">
+  <title>Enabling a New Cluster as a Compute Resource</title>
+  <body>
+    <p>When a new cluster is created in vCenter, EONs periodic pooling task fetches the new cluster
+      information and updates the inventory. At present the state of  a new cluster is
+        <b>not_imported</b>.</p>
+    <p>Perform the following to enable a new cluster as a comupute resource.<ol id="ol_ipn_jvf_rt">
+        <li>List the
+            clusters.<codeblock># eon cluster-list --vcenter-id &lt;vCenter ID></codeblock><p>For
+            example:<codeblock># eon cluster-list --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674
++------------+----------+------------+---------------+
+| MOID       | Name     | Datacenter | Import Status |
++------------+----------+------------+---------------+
+| domain-c21 | Cluster1 | DC1        | activated     |
+| domain-c24 | Cluster2 | DC1        | not_imported  |
+| domain-c25 | Cluster3 | DC2        | not_imported  |
++------------+----------+------------+---------------+</codeblock></p><p>Once
+            the newly added cluster is visible in the eon cluster-list command, refer from <xref
+              href="../install_entryscale_esx.dita#install_esx/import-cluster">Import Cluster</xref>
+            in <i>Prepare and Deploy ESX Computes and OVSvAPPs</i> section.</p><p>Suppose the newly
+            added cluster is in a new Datacenter on which no activated clusters exists, refer from
+              <xref href="../install_entryscale_esx.dita#install_esx/register-network">Register ESX
+              Cloud Network Configuration</xref> in <i>Prepare and Deploy ESX Computes and
+              OVSvAPPs</i> section.</p></li>
+      </ol></p>
+  </body>
+</topic>
