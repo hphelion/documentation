@@ -18,42 +18,7 @@
       <p/>
 
 
-<!--
-      <p>It is generally recommended that you provide a CA key and certificate generated from a
-        well-known certificate authority during the installation process, so trust can be
-        established using the certificate chain. This can be either a specific certificate/key
-        generated for this deployment, a general certificate/key that is used for test deployments
-        by that organization, or a delegated signing certificate from another PKI to enable the use
-        of existing trust relationships between users and that PKI. Either way, the deployer must
-        provide the CA certificate to the Helion users, to enable secure TLS and prevent certificate
-        errors and warnings.</p>
-      <p>The CA certificate/key pair must not be reused between deployments at different
-        organizations, or in different deployments with differing levels of trust; for example, a
-        public, untrusted Helion test system and an internal production system.</p>
 
-    
-      <p>If a self-signed certificate was created during the Helion OpenStack installation, you must
-        install the generated certificate in your browser as a trusted CA to prevent messages about
-        insecure connections when connecting to the Horizon IP address. This can be done by
-        importing the eca.crt file from the seed VM as a trusted CA into your browser software.</p>
-      <p>Each client must use this certificate to authenticate the connection. How you achieve this
-        will depend on the client you are using. Below are some ways you can achieve this with the
-        OpenStack command line tools using the 'nova list' command as an example. The easiest way to
-        make sure the clients use this certificate is to set the environmental variable OS_CACERT to
-        point to the EPHEMERAL_CA_CERT_FILE that was copied off the seed.</p>
-
-      <p>Now when a service call is made, this cert will be used to authenticate the TLS
-        connection:</p>
-      <codeblock>nova list</codeblock>
-      
-
-      <p>Another option is for the clients not to authenticate TLS connections. This is not advised
-        as this will mean the identity of the server you are contacting will not be verified.
-        However if you want to bypass this check you can use the - -insecure option. A certificate is
-        not needed then.</p>
-      <codeblock>nova - -insecure list</codeblock>
-      <p> An endpoint can be either a virtual IP (VIP) or a back-end service URI. A VIP can be
-        public, internal or admin. </p>-->
     </section>
     <section id="TLS_termination"><title>TLS termination for a public endpoint VIP </title> HP
       Helion OpenStack&#174; 2.0 supports fully qualified domain names (FQDN) for public endpoints.
@@ -123,6 +88,65 @@ git commit -m "My config or other commit message"</codeblock>
       <p>Rerun the config processor</p>
       <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
+    </section>
+    
+    <section><title>Testing public endpoints</title>
+      
+      
+      The following write up is for people trying to test the public endpoints using the bundled test certificate with a virtual cloud.
+      
+      There are three usecases here.
+      <ul>
+      <li>Access public endpoints from the deployer
+      </li><li>Access public endpoints from the machine hosting the virtual cloud
+      </li><li>Access public endpoints from a machine other than the machine hosting the virtual cloud
+      </li></ul>All these cases reduce to the following steps
+      <ol>
+      <li>Have a name resolver for myhelion.test - It could /etc/hosts or dnsmasq reading from a hosts file
+      </li><li>Install the ca certificate that signed the test server certificate. This file can be found in the deployer under roles/tls-trust/files/frontend_cacert.pem. This file is not symlinked via the config directory to customers because we generally don't need the CA certificate signing the external certificate inside the cloud.
+      </li></ol>
+      <b>Accessing public endpoints from the deployer</b>
+      <ol>
+        <li>Make an entry for the vip inside the /etc/hosts file pointing to myhelion.test
+        </li><li>run the playbook to install ca certificate.
+          <codeblock>ansible-playbook -i hosts/verb_hosts tls-trust-deploy.yml</codeblock></li></ol>
+      <b>Accessing public endpoints from the machine hosting the virtual cloud</b>
+      <ol>
+        <li>Make an entry for the vip inside the /etc/hosts file pointing to myhelion.test
+        </li><li>Copy the CA certificate from the deployer:/home/stack/scratch/ansible/next/hos/ansible/roles/tls-trust/files/frontend_cacert.pem to /usr/local/share/ca-certificates/helion-ca.crt
+        </li><li>Run <codeblock>sudo update-ca-certificates --fresh</codeblock></li></ol>
+      <b>Accessing public endpoints from a machine other than the machine hosting the virtual cloud</b>
+      Start by repeating what was done for the machine hosting the virtual cloud.
+      
+      But this time your /etc/hosts entry for myhelion.test should point to the IP address of the host running the virtual cloud. After this you need to have something tunnelling the packets to the VIP. This is easily accomplished with haproxy in tunnel mode. (mode tcp). But you need to have a stanza for every open port. But the stanzas are quite generic and can be scripted. For example if I want to do 'nova list' I may need port 5000 (keystone) and port 8774 (nova-api),
+      
+      <ol><li>Install haproxy with apt-get
+      </li><li>Open /etc/haproxy/haproxy.cfg and append the following sections to the existing content:
+      
+      <codeblock>listen keystone-5000
+      option ssl-hello-chk
+      mode tcp
+      bind 16.25.10.10:5000
+      server keystone-5000 192.168.245.10:5000 check inter 2000 rise 2 fall 5
+      listen nova-8774
+      option ssl-hello-chk
+      mode tcp
+      bind 16.25.10.10:8774
+      server nova-8774 192.168.245.10:8774 check inter 2000 rise 2 fall 5
+      
+      16.25.10.10 is the host running the virtual cloud
+      192.168.254.10 is the VIP</codeblock></li></ol>
+      One way to generate the list of all public ports behind TLS is to run 'grep "ssl crt" /etc/haproxy/haproxy.cfg' from a controller.
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
     </section>
   </body>
 </topic>
