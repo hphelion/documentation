@@ -13,4 +13,5 @@
    <topicref href="deploy/CFR_deploy.dita">
       <topicref href="deploy/CFR_TF_vars.dita"/>
    </topicref>
+   <topicref href="reference/CFR_gato.dita"/>
 </map>

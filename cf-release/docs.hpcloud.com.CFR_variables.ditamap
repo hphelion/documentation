@@ -65,6 +65,20 @@
          </keywords>
       </topicmeta>
    </keydef>
+   <keydef keys="gatoName">
+      <topicmeta>
+         <keywords>
+            <keyword>Gato</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="CLIgato">
+      <topicmeta>
+         <keywords>
+            <keyword>gato</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
    <keydef keys="defaultSysUser">
       <topicmeta>
          <keywords>
