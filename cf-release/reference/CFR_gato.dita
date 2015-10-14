@@ -31,15 +31,15 @@
           <dt><filepath>config</filepath></dt>
           <dd>Manipulate configuration values of <keyword keyref="prodShort"/> components.<ul
               id="ul_egw_qrj_rt">
-              <li><xref href="#reference_cd3_bs3_rt/gato_config" format="dita"
+              <li><xref href="#gato_config" format="dita"
                     ><filepath>get</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/gato_config" format="dita"
+              <li><xref href="#gato_config" format="dita"
                     ><filepath>set</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/gato_config" format="dita"
+              <li><xref href="#gato_config" format="dita"
                     ><filepath>del</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/gato_config" format="dita"
+              <li><xref href="#gato_config" format="dita"
                     ><filepath>push</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/gato_config" format="dita"
+              <li><xref href="#gato_config" format="dita"
                     ><filepath>pop</filepath></xref></li>
             </ul></dd>
         </dlentry>
