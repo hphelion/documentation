@@ -95,18 +95,26 @@ ansible-playbook -i hosts/verb_hosts hlm-upgrade.yml</codeblock>
       </p>
     </section>
     <section><title>Model Changes required before Upgrading from Beta2 to HP Helion Openstack
-        2.0</title> After running the hos-init.bash script (or vagrant provision in a virtual
-      environment), the cloud model from the original Beta2 deployment must be updated prior to
-      running the upgrade to HOS 2.0. The exact changes depend on the original deployed cloud model.
-      The following are the model changes required before upgrading a cloud based on the standard
-      padawan model (used in CI), which uses a dedicated deployer (known as the lifecycle-manager)
-      node and a dedicated network for carrying HLM traffic: 1. Update the control plane model with
-      the lifecycle-manager/lifecycle-manager-target service components. For a cloud model using a
-      dedicated deployer/HLM node, the following changes are required: a. Remove logging-producer
-      and monasca-agent from common-service-components and add lifecycle-manager-target. b. Add a
-      new single-node (member-count of 1) cluster for the deployer/lifecycle manager node, which
-      includes the lifecycle-manager service component. c. Add logging-producer and monasca-agent
-      service component to all clusters except the single-node deployer/lifecycle-manager cluster. <codeblock>hlmuser@hLinux:~/helion/my_cloud/definition/data$ git diff
+        2.0</title>
+      <p>After running the <codeph>hos-init.bash</codeph> script (or vagrant provision in a virtual
+        environment), the cloud model from the original Beta2 deployment must be updated prior to
+        running the upgrade to HOS 2.0. The exact changes depend on the original deployed cloud
+        model. The following are the model changes required before upgrading a cloud based on the
+        standard padawan model (used in CI), which uses a dedicated deployer (known as the
+        lifecycle-manager) node and a dedicated network for carrying HLM traffic:</p>
+      <ul>
+        <li>Update the control plane model with the lifecycle-manager/lifecycle-manager-target
+          service components. For a cloud model using a dedicated deployer/HLM node, the following
+          changes are required: <ul>
+            <li>Remove logging-producer and monasca-agent from common-service-components and add
+              lifecycle-manager-target.</li>
+            <li>Add a new single-node (member-count of 1) cluster for the deployer/lifecycle manager
+              node, which includes the lifecycle-manager service component.</li>
+            <li>Add logging-producer and monasca-agent service component to all clusters except the
+              single-node deployer/lifecycle-manager cluster. </li>
+          </ul></li>
+      </ul>
+      <codeblock>hlmuser@hLinux:~/helion/my_cloud/definition/data$ git diff
 diff --git a/my_cloud/definition/data/control_plane.yml b/my_cloud/definition/data/control_plane.yml
 index f4f6273..6b999b8 100644
 --- a/my_cloud/definition/data/control_plane.yml
@@ -528,5 +536,33 @@ index c5e934d..6c4cef9 100644
        ip-addr: 192.168.10.3
        role: ROLE-CONTROLLER</codeblock>
     </section>
+    <!--
+    <section id="combine"><title>Combining the baremetalConfig.yml and servers.yml Files</title>
+      <p>This series of commands will allow you to combine the files together and commit them to
+        your configuration:</p>
+      <ol>
+        <li>Login to your deployer node</li>
+        <li>This command will combine the two files into a single <codeph>combined.yml</codeph> file
+          for you to review:
+          <codeblock>cd ~/helion/my_cloud/definition/data
+            ~/helion/hos/ansible/merge-baremetal.py baremetalConfig.yml servers.yml > combined.yml</codeblock>
+        </li>
+        <li>Review the changes in the file to confirm they are as you intended:
+          <codeblock>diff -u servers.yml combined.yml</codeblock>
+        </li>
+        <li>If the changes are correct, use these commands to setup your
+          <codeph>servers.yml</codeph> file and remove the deprecated
+          <codeph>baremetalConfig.yml</codeph> file:
+          <codeblock>mv combined.yml servers.yml
+            rm baremetalConfig.yml</codeblock>
+        </li>
+        <li>Commit this change to your local git:
+          <codeblock>cd ~/helion/hos/ansible
+            git add -A
+            git commit -m 'convert baremetal info to new style'</codeblock>
+        </li>
+      </ol>
+    </section>
+    -->
   </body>
 </topic>
