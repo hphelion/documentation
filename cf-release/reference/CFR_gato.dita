@@ -28,9 +28,20 @@
       <title>Commands</title>
       <dl>
         <dlentry>
-          <dt><xref href="#reference_cd3_bs3_rt/gato_config" format="dita"
-                ><filepath>config</filepath></xref></dt>
-          <dd>Manipulate configuration values of <keyword keyref="prodShort"/> components.</dd>
+          <dt><filepath>config</filepath></dt>
+          <dd>Manipulate configuration values of <keyword keyref="prodShort"/> components.<ul
+              id="ul_egw_qrj_rt">
+              <li><xref href="#reference_cd3_bs3_rt/gato_config" format="dita"
+                    ><filepath>get</filepath></xref></li>
+              <li><xref href="#reference_cd3_bs3_rt/gato_config" format="dita"
+                    ><filepath>set</filepath></xref></li>
+              <li><xref href="#reference_cd3_bs3_rt/gato_config" format="dita"
+                    ><filepath>del</filepath></xref></li>
+              <li><xref href="#reference_cd3_bs3_rt/gato_config" format="dita"
+                    ><filepath>push</filepath></xref></li>
+              <li><xref href="#reference_cd3_bs3_rt/gato_config" format="dita"
+                    ><filepath>pop</filepath></xref></li>
+            </ul></dd>
         </dlentry>
         <dlentry>
           <dt><filepath>help</filepath></dt>
@@ -86,7 +97,7 @@
                     dhcp</filepath></xref></li>
               <li><xref href="#reference_cd3_bs3_rt/op_import_from_yaml_files" format="dita"
                     ><filepath>op import_from_yaml_files</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/op_import_from_yaml_file" format="dita"
+              <li><xref href="#reference_cd3_bs3_rt/op_import_from_yaml_files" format="dita"
                     ><filepath>op import_from_yaml_file</filepath></xref></li>
               <li><xref href="#reference_cd3_bs3_rt/op_static_ip" format="dita"><filepath>op
                     static_ip</filepath></xref></li>
