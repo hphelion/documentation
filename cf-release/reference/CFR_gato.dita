@@ -48,7 +48,8 @@
         <dlentry>
           <dt><filepath>node</filepath></dt>
           <dd>Node management.<ul id="ul_ypb_hy3_rt">
-              <li><filepath>node attach</filepath></li>
+              <li><xref href="#reference_cd3_bs3_rt/node_attach" format="dita"><filepath>node
+                    attach</filepath></xref></li>
               <li><filepath>node availabilityzone</filepath></li>
               <li><filepath>node list</filepath></li>
               <li><filepath>node placementzones</filepath></li>
@@ -84,6 +85,35 @@
     </section>
     <section>
       <title>Command Options</title>
+      <dl>
+        <dlentry id="node_attach">
+          <dt><filepath>gato node attach [options] &lt;core-ip></filepath></dt>
+          <dd>
+            <dl>
+              <dlentry>
+                <dt><filepath>--enable</filepath>, <filepath>-e</filepath></dt>
+                <dd>Enable the specified roles (comma-separated, no spaces)</dd>
+              </dlentry>
+            </dl>
+            <dl>
+              <dlentry>
+                <dt><filepath>--no-start</filepath>, <filepath>-s</filepath></dt>
+                <dd>Do not auto start processes</dd>
+              </dlentry>
+            </dl>
+            <dl>
+              <dlentry>
+                <dt><filepath>--verbose</filepath>, <filepath>-v</filepath></dt>
+                <dd>Show process information when starting/stopping roles</dd>
+              </dlentry>
+              <dlentry>
+                <dt><filepath>--force</filepath>, <filepath>-f</filepath></dt>
+                <dd>Forces this node to attach to a core node, ignoring any version mismatches</dd>
+              </dlentry>
+            </dl>
+          </dd>
+        </dlentry>
+      </dl>
     </section>
   </refbody>
 </reference>
