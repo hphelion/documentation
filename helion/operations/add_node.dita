@@ -22,10 +22,6 @@ git checkout site</codeblock> Add
     # the individual servers listed below.
     subnet: 192.168.10.0
     netmask: 255.255.255.0
-    # NOTE: This value needs to be changed to match your environment.
-    # Define the interface on the Cobbler server where Cobbler should
-    # be configured to listen.
-    server-interface: eth2
 
   servers:
     # NOTE: Addresses of servers need to be changed to match your environment.
