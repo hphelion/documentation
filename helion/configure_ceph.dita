@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="config_ceph">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for Ceph Block Storage Backend</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for Ceph Block Storage
+    Backend</title>
   <body>
-    <p>This page describes how to configure your Ceph backend for the Helion Entry Scale Cloud with KVM model.</p>
-     <p>New concept of Ceph </p>
+    <p>This page describes how to configure your Ceph backend for the Helion Entry Scale Cloud with
+      KVM model.</p>
+    <section id="prereq"><title>Pre-requisites</title>
+      <p>
+        <ul>
+          <li>Your HP Helion Entry Scale Cloud should be up and running. Installation steps can be
+            found <xref href="install_entryscale_kvm.dita">here</xref>.</li>
+        </ul>
+      </p>
+    </section>
+    <p>New concept of Ceph </p>
     <section id="configuration">
       <title>Configure Your Environment</title>
       <p>Perform the following procedures to configuration, installation, and the integration of
@@ -155,46 +165,9 @@ git commit -m "&lt;commit message>"</codeblock>
         information.</note>
       <p>Then you need to run the following commands to complete your configuration. These commands
         also verify your configuration is correct.</p>
-      <ol>
-        <li>Run the following playbook which confirms that there is iLo connectivity for each of
-          your nodes so that they are accessible to be re-imaged in a later step:
-          <codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost bm-power-status.yml</codeblock></li>
-        <li>Run the configuration processor, as follows:
-          <codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
-      </ol>
-      <p>When you run the Configuration Processor you will be prompted for two passwords. Enter the
-        first password to make the Configuration Processor encrypt its sensitive data, which is
-        comprised of the random inter-service passwords that it generates and the Ansible group_vars
-        and host_vars that it produces for subsequent deploy runs. You will need this key for
-        subsequent Ansible deploy runs and subsequent Configuration Processor runs. If you wish to
-        change an encryption password that you have already used when running the Configuration
-        Processor then enter the new password at the second prompt, otherwise just press carriage
-        return.</p>
-      <p>For CI purposes you can specify the required passwords on the ansible command line. For
-        example, the command below will disable encryption by the configuration processor
-        <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml -e encrypt="" -e rekey=""</codeblock>
-      </p>
-      <p>If you receive an error during either of these steps then there is an issue with one or
-        more of your configuration files. We recommend that you verify that all of the information
-        in each of your configuration files is correct for your environment and then commit those
-        changes to git using the instructions above.</p>
-      <p>Before re-running the Configuration Processor after fixing an error you need to run the
-        clean script detailed in the <xref
-          href="installation_troubleshooting.dita#troubleshooting_installation/configproc"
-          >Installation Troubleshooting</xref> document.</p>
     </section>
-    <section id="deploy_cloud"><title>Deploy the Cloud (refer to vsa- third step not required.)</title>
-      <ol>
-        <li>Run the following command to create a deployment
-          directory.<codeblock>cd ~/helion/hos/ansible
-<codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
-        <li><!--Modify <codeph>~/helion/hlm/ansible/hlm-deploy.yml</codeph> and uncomment the line containing <codeph>ceph-deploy.yml</codeph> to enable deployment of ceph.--></li>
-        <li>Run the following ansible
-          playbook:<codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
-      </ol>
+    <section id="deploy_cloud"><title>Deploy the Cloud (refer to vsa- third step not
+        required.)</title>
       <p>Ceph Monitor service is deployed on the Controller Nodes and OSD's are deployed as separate
         nodes (Resource Nodes).</p>
       <p><b>Run Ceph Client Packages</b></p>

@@ -7,11 +7,11 @@
     <p>This page describes how to configure your 3PAR backend for the Helion Entry Scale Cloud with
       KVM model.</p>
     <section>
-      <title id="preq">Prerequisite</title>
+      <title id="preq">Pre-requisites</title>
       <p>
-        <ul id="ul_pfl_bbz_ht">
-          <li>HP Helion Cloud must be successfully deployed.
-            <!--It should be up and running.--></li>
+        <ul>
+          <li>Your HP Helion Entry Scale Cloud should be up and running. Installation steps can be
+            found <xref href="install_entryscale_kvm.dita">here</xref>.</li>
           <li>3PAR Storage Array should be available in cloud management network or routed to cloud
             management network and 3PAR FC and iSCSI ports configured.</li>
           <li>3PAR management IP and iSCSI port IP's must have connectivity from controller and
@@ -112,7 +112,7 @@ hp3par_iscsi_chap_enabled=true</codeblock><note>
       </p>
     </section>
     <p>To verify the 3PAR FC and iSCSI backends are configured successfully, please refer to <xref
-        href="../verify_backend_configuration.dita#topic_q5q_trz_jt">Verify Backend
-        Configuration</xref>.</p>
+        href="blockstorage/verify_backend_configuration.dita">Verify Backend
+      Configuration</xref>.</p>
   </body>
 </topic>
