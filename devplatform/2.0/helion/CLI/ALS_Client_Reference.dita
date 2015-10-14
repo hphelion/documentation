@@ -441,7 +441,7 @@
               <entry>No</entry>
             </row>
             <row>
-              <entry>--ftpproxy</entry>
+              <entry>--ftp-proxy</entry>
               <entry>FTP proxy. (Protocol://hostname:port. For example:
                   <codeph>ftp://proxy.comp.net:8080</codeph>)</entry>
               <entry>No</entry>
