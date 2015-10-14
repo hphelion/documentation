@@ -20,6 +20,7 @@
         nodes.</p>
       <p/>
     </section>
+    <image href="../../media/esx/EON%20arch%20diagram/eon_architecture.PNG" id="image_kym_jy2_rt"/>
     <section>
       <title>ESX Host Commissioning</title>
       <p>ESX Host Commissioning is a functionality provided to a user to add additional ESX hosts to

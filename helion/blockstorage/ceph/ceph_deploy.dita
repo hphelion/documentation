@@ -15,6 +15,11 @@
       <p>The deployer node must be setup before deploying Ceph. For more details on the installation
         of deployer node, refer to <xref href="../../install_entryscale_kvm_vsa.dita#install_kvm"
           >installation guide.</xref></p>
+      <p>
+        <note type="important">If you want monitor service on the dedicated resource node, ensure to add it at the
+          beginning of the ceph deployment. Once the Ceph is deployed, you cannot revert the changes
+          and add monitor service on the dedicated resource node.</note>
+      </p>
     </section>
     <section>
       <title id="install-procedure">Installation Procedure</title>
@@ -25,9 +30,14 @@
       <p>
         <ol id="ol_evc_k11_gt">
           <li>Login to the deployer node.</li>
-          <li>Change the directory as shown below:<codeblock>cd ~/helion</codeblock></li>
-          <li>Edit <codeph>cinder.conf.j2</codeph> file at
-              <codeph>my_cloud/config/cinder/cinder.conf.j2</codeph> to add Ceph backend:</li>
+          <li>Copy the example configuration files into the required setup directory and edit them
+            to contain the details of your environment:
+            <codeblock>cp -r ~/helion/examples/entry-scale-kvm-ceph/* ~/helion/my_cloud/definition/</codeblock>Begin
+            inputting your environment information into the configuration files in the
+              <codeph>~/helion/my_cloud/definition</codeph> directory. Full details of how to do
+            this can be found here: <xref href="input_model.dita">Helion OpenStack 2.0 Input
+              Model</xref>. </li>
+          <li>Edit  <codeph>my_cloud/config/cinder/cinder.conf.j2</codeph> to add Ceph backend:</li>
           <li>Edit the file <codeph>disks_osd.yml</codeph> and enter the details for the additional
             disks meant for OSD data and journal
               filesystems.<codeblock>vi <codeph>disks_osd.yml</codeph></codeblock><note>Ensure that
@@ -43,6 +53,13 @@
                     <li>osd_settle_time</li>
                     <li>OSD_journal_size</li>
                   </ul></p></li>
+              <li>
+                <p>Add any additional configuration parameters for Ceph in the same file
+                    (<codeph>settings.yml</codeph> file) under the 'extra:' category as
+                  follows:<codeblock>extra:
+  osd:
+    journal max write entries: 200</codeblock></p>
+              </li>
               <li>
                 <p><codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph></p>
                 <p>The <codeph>user_model.yml</codeph> has the editable values for the different
