@@ -285,6 +285,8 @@
         <topicref href="helion/esx/enable_new_cluster_compute_resource.dita"/>
         <topicref href="helion/esx/removing_esx_host_from_cluster.dita"/>
       </topicref>
+      <topicref href="helion/esx/change_log_level_debug.dita"/>
+      <topicref href="helion/esx/scale_config_changes.dita"/>
       <!-- END HORIZON -->
     </topichead>
     <!-- END USER GUIDE -->
