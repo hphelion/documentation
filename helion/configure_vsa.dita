@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="install_kvm_vsa">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry Scale Cloud
-    with VSA</title>
+<topic id="config_vsa">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for VSA Block Storage Backend</title>
   <body>
     <section id="about">
-      <p>This page describes how to do an installation for the Helion Entry Scale Cloud with VSA
-        model.</p>
+      <p>This page describes how to configure your VSA backend for the Helion Entry Scale Cloud with KVM model.</p>
     </section>
     <section id="prereq"><title>Pre-reqs</title>
       <p>

@@ -41,14 +41,14 @@
       <topicref href="helion/install_entryscale_kvm.dita"
         navtitle="Installation for Helion Entry Scale Cloud
         with KVM" locktitle="yes">
-        <topicref href="helion/install_entryscale_kvm_vsa.dita" navtitle="VSA Configuration"
+        <topicref href="helion/configure_vsa.dita" navtitle="VSA Configuration"
           locktitle="yes">
           <topicref href="helion/blockstorage/vsa/vsa.dita" navtitle="VSA Configuration"
             locktitle="yes" toc="no"/>
         </topicref>
-        <topicref href="helion/install_entryscale_kvm_ceph.dita" navtitle="Ceph Configuration"
+        <topicref href="helion/configure_ceph.dita" navtitle="Ceph Configuration"
           locktitle="yes"/>
-        <topicref href="helion/install_entryscale_kvm_3par.dita" navtitle="3PAR Configuration"
+        <topicref href="helion/configure_3par.dita" navtitle="3PAR Configuration"
           locktitle="yes"/>
       </topicref>
       <topicref href="helion/install_entryscale_esx.dita"

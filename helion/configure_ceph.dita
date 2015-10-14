@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="install_kvm_ceph">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry Scale Cloud
-    with Ceph</title>
+<topic id="config_ceph">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for Ceph Block Storage Backend</title>
   <body>
-    <p>This page describes how to do an installation for the Helion Entry Scale Cloud with Ceph
-      model.</p>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/important_notes"/>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/prereqs"/>
-    <p>New concept of Ceph </p>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/install_deployer"/>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/configure_deployer"/>
-
+    <p>This page describes how to configure your Ceph backend for the Helion Entry Scale Cloud with KVM model.</p>
+     <p>New concept of Ceph </p>
     <section id="configuration">
       <title>Configure Your Environment</title>
       <p>Perform the following procedures to configuration, installation, and the integration of
@@ -192,8 +185,6 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           href="installation_troubleshooting.dita#troubleshooting_installation/configproc"
           >Installation Troubleshooting</xref> document.</p>
     </section>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/deploy_cobbler"/>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/provision_nodes"/>
     <section id="deploy_cloud"><title>Deploy the Cloud (refer to vsa- third step not required.)</title>
       <ol>
         <li>Run the following command to create a deployment
