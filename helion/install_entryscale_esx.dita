@@ -147,7 +147,9 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         deploying the ESX compute proxy and OVSvAPPs is to create a VM template that will make it
         easier to deploy the ESX compute proxy for each Cluster and OVSvAPPs on each ESX server.
         </p><p>Perform the following steps to deploy a template:<ol id="ol_qdt_ljs_ft">
-          <li>Import the <codeph>hlm-shell-vm.ova</codeph> in the vCenter using the vSphere client. </li>
+          <li>Import the <codeph>hlm-shell-vm.ova</codeph> in the vCenter using the vSphere client.
+            The <codeph>hlm-shell-vm.ova</codeph>  template is present in the following
+            location:<codeblock>location /media/cdrom/hos-2.0.0/ hlm-shell-vm.ova</codeblock></li>
           <li>In the vSphere Client, click <b>File</b> and then click <b>Deploy OVF
             Template</b></li>
           <li>Follow the instructions in the wizard to specify the data center, cluster, and node to
