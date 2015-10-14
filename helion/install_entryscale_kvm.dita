@@ -192,38 +192,66 @@ git commit -m "My config or other commit message"</codeblock>
           configuration files before you move onto the following steps. See <xref
             href="using_git.dita">Using Git for Configuration Management</xref> for more
           information.</note></p>
-      <p>Then you need to run the following commands to complete your configuration. These commands
-        also verify your configuration is correct.</p>
+    </section>
+    <section id="config_processor"><title>Run the Configuration Processor</title>
+      <p>Once you have your configuration files setup you need to run the processor to complete your
+        configuration.</p>
+      <p>When you run the configuration processor you will be prompted for two passwords. Enter the
+        first password to make the configuration processor encrypt its sensitive data, which is
+        comprised of the random inter-service passwords that it generates and the ansible
+          <codeph>group_vars</codeph> and <codeph>host_vars</codeph> that it produces for subsequent
+        deploy runs. You will need this key for subsequent ansible deploy and configuration
+        processor runs. If you wish to change an encryption password that you have already used when
+        running the configuration processor then enter the new password at the second prompt,
+        otherwise just press carriage return to bypass this.</p>
+      <p>Run the configuration processor with this command:</p>
+      <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
+      <p>For automated installation (e.g. CI) you can specify the required passwords on the ansible
+        command line. For example, the command below will disable encryption by the configuration
+        processor
+        <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml -e encrypt="" -e rekey=""</codeblock>
+      </p>
+      <p>If you receive an error during this step then there is probably an issue with one or more
+        of your configuration files. We recommend that you verify that all of the information in
+        each of your configuration files is correct for your environment and then commit those
+        changes to git using the instructions in the previous section before re-running the
+        configuration processor again.</p>
+    </section>
+    <section id="deploy_cobbler">
+      <title>Deploy Cobbler</title>
+      <p>This phase of the install process takes the baremetal information that was provided in
+          <codeph>servers.yml</codeph> and installs the Cobbler provisioning tool and loads this
+        information into Cobbler. This sets each node to <codeph>netboot-enabled: true</codeph>.
+        Each node will be automatically marked as <codeph>netboot-enabled: false</codeph> when it
+        completes its operating system install successfully. Even if the node tries to PXE boot
+        subsequently, Cobbler will not serve it. This is deliberate so that you can't reimage a live
+        node by accident.</p>
+      <p>The <codeph>cobbler-deploy.yml</codeph> playbook prompts for a password - this is the
+        password to be able to log in to the nodes via their consoles after install. The username is
+        the same as the user set up in the initial dialogue when installing the deployer from the
+        iso, and is the same user that is running the cobbler-deploy play.</p>
       <ol>
         <li>Run the following playbook which confirms that there is iLo connectivity for each of
           your nodes so that they are accessible to be re-imaged in a later step:
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost bm-power-status.yml</codeblock></li>
-        <li>Run the configuration processor, as follows:
+        <li>Run the following playbook to deploy Cobbler:
           <codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
+        <li>The cobbler-deploy stage of the installation now prompts for a password. The entered
+          value is used to set a user-defined password for subsequent node installs so that a user
+          can gain console/terminal access to the nodes. For example, if a node maintenance is
+          required or if the SSH keys are lost. The value is encrypted and placed in the kickstart
+          for the node installs.<p>The password prompts look like this:</p>
+          <codeblock>Enter the password that will be used to access provisioned nodes:
+            confirm Enter the password that will be used to access provisioned nodes:</codeblock>
+          <p>Alternatively, you can also specify this password in the ansible playbook command like
+            this:</p>
+          <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml -e hlmuser_password="&lt;password>"</codeblock></li>
       </ol>
-      <p>When you run the Configuration Processor you will be prompted for two passwords. Enter the
-        first password to make the Configuration Processor encrypt its sensitive data, which is
-        comprised of the random inter-service passwords that it generates and the Ansible group_vars
-        and host_vars that it produces for subsequent deploy runs. You will need this key for
-        subsequent Ansible deploy runs and subsequent Configuration Processor runs. If you wish to
-        change an encryption password that you have already used when running the Configuration
-        Processor then enter the new password at the second prompt, otherwise just press carriage
-        return.</p>
-      <p>For CI purposes you can specify the required passwords on the ansible command line. For
-        example, the command below will disable encryption by the configuration processor
-        <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml -e encrypt="" -e rekey=""</codeblock>
-      </p>
-      <p>If you receive an error during either of these steps then there is an issue with one or
-        more of your configuration files. We recommend that you verify that all of the information
-        in each of your configuration files is correct for your environment and then commit those
-        changes to git using the instructions above.</p>
-      <p>Before re-running the Configuration Processor after fixing an error you need to run the
-        clean script detailed in the <xref
-          href="installation_troubleshooting.dita#troubleshooting_installation/configproc"
-          >Installation Troubleshooting</xref> document.</p>
     </section>
+
 
 
 
