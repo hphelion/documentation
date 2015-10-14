@@ -3,13 +3,11 @@
 <topic id="topic_qsv_h5y_lt">
   <title>Adding a Compute Node</title>
   <body>
-   <section> To add a new node to your cloud, you will need to add it to <b>servers.yml</b> and
-        <b>baremetalConfig.yml</b>, and then run the scripts that update your cloud configuration.
-      To begin, access the <b>servers.yml</b> and <b>baremetalConfig.yml</b> files by checking out
-      the git branch where you are required to make the changes:
-      
-      <ol>
-      <li>Get the <b>servers.yml</b> file stored in
+   <section> To add a new node to your cloud, you will need to add it to <b>servers.yml</b>and then
+      run the scripts that update your cloud configuration. To begin, access the
+      <b>servers.yml</b>file by checking out the git branch where you are required to make the
+      changes: <ol>
+        <li>Get the <b>servers.yml</b> file stored in
           git:<codeblock>cd ~/helion/my_cloud/definition/data
 git checkout site</codeblock> Add
           details of new node(s) to <b>severs.yml</b>. For example, if adding new server cpn-0004 in
@@ -38,26 +36,30 @@ git checkout site</codeblock> Add
      ... 
     # Compute Nodes
     - id: compute7
-      ip-addr: 10.240.21.13
+      ip-addr: 192.168.10.13
       role: COMPUTE-ROLE
       server-group: RACK1
       nic-mapping: nic-mapping: HP_DL360_6PORT
       mac-addr: d6:70:c1:36:43:f7
       ilo_ip: "10.1.12.74"
-      ilo_user: "hosqaadm"
-      ilo_password: "mul3d33r"</codeblock>
-        </li><li> Commit the changes <codeblock>git commit -a -m "Add node &lt;name>"</codeblock> Then run the
-          configuration processor and the ready deploment
+      ilo_user: "someone"
+      ilo_password: "password"</codeblock>
+        </li>
+        <li> Commit the changes <codeblock>git commit -a -m "Add node &lt;name>"</codeblock> Then
+          run the configuration processor and the ready deploment
           playbooks:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
-        </li><li>Now configure the new node(s)
-      <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml
+        </li>
+        <li>Now configure the new node(s)
+          <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml
 ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=compute7</codeblock>
-        </li><li>Finally, run the following deployment step specifying the '--limit' option to apply the deployment 
-          actions only to the target node(s). 
-       <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml --limit hlm004-ccp-comp0007*</codeblock></li></ol>
+        </li>
+        <li>Finally, run the following deployment step specifying the '--limit' option to apply the
+          deployment actions only to the target node(s).
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml --limit hlm004-ccp-comp0007*</codeblock></li>
+      </ol>
     </section>
     
     <section><title>Add availability zones</title>When adding a new node an additional step you'll
