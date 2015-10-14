@@ -79,7 +79,7 @@
         <b>helion/my_cloud/definition/data/network_groups.yml</b>. If you have already run the
       config-processor-run.yml playbook which is required during installation, run the
         <b>config-processor-clean.yml</b> playbook to clear out your previous configuration before
-      rerunning the configuration procesor: <codeblock>cd ~/helion/hos/ansible
+      rerunning the configuration processor: <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
       <p>Commit your changes to git.</p>
       <codeblock>cd ~/helion/hos/ansible
