@@ -26,7 +26,6 @@ do
 		if [[  $(echo "$line" | grep "@") ]]
 		then
 		except=`echo $line | sed 's|.*@||'`
-		echo $except
 		else
 		except=""
 		fi
