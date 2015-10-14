@@ -11,8 +11,6 @@
         <li><xref href="#install_esx/deployCloud" format="dita">Deploy ESX Cloud</xref></li>
         <li><xref href="#install_esx/prepAndDeploy" format="dita">Prepare and Deploy ESX Computes
             and OVSvAPPs</xref></li>
-        <li><xref href="#install_esx/host-commissioning" format="dita">ESX Host Commissioning</xref>
-            (<b>Optional</b>)</li>
       </ul></p>
     <section>
       <note type="important">
@@ -235,8 +233,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       <ol>
         <li>Execute the following command to get the network information
             template:<codeblock><codeph># eon get-network-info-template --filename &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
-            example:<codeblock># eon get-network-info-template --filename net_conf.json</codeblock></p><p>Sample
-            file of <codeph>net_conf.json</codeph> is shown
+            example:<codeblock># eon get-network-info-template --filename net_conf.json</codeblock></p><p>Sample file of <codeph>net_conf.json</codeph> is shown
             below:<codeblock>{
     "network": {
         # Deployer Network details
@@ -349,9 +346,6 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         "ssh_key": "&lt;deployer-ssh-pub-key-contents>"
     },
         # Do you want to skip inactive or maintenance mode hosts ?
-    "skip_inactive_hosts": "yes",
-        # Provide new host mo ids when you are adding a new host in an activated cluster.
-    "new_host_mo_ids": ""
 }</codeblock></p></li>
         <li>Modify the template (json file) as per your
             environment.<codeblock>vi &lt;<b>NETWORK_CONF_FILENAME</b>></codeblock><p>For
