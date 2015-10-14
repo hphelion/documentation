@@ -24,26 +24,26 @@
           <li>Edit the definition of the server (usually in<codeph> data/servers.yml</codeph> file).
             For example, if the entry for the server look
               like:<codeblock>- id: swobj4
-      ip-addr: 192.168.10.5
-      role: SWOBJ-ROLE
-      server-group: RACK3
+  ip-addr: 192.168.10.5
+  role: SWOBJ-ROLE
+  server-group: RACK3  
    ...</codeblock><p>Change
               the role to a new value – for example:
               SWOBJ-DRAINING-ROLE<codeblock>- id: swobj4
-      ip-addr: 192.168.10.5
-      role: SWOBJ-DRAINING-ROLE
-      server-group: RACK3
+  ip-addr: 192.168.10.5
+  role: SWOBJ-DRAINING-ROLE
+  server-group: RACK3
    ...</codeblock></p></li>
           <li>Edit the server-roles definition (usually in <codeph>data/server_roles.yml</codeph>
             file) and add the SWOBJ-DRAINING-ROLE role. Keep the interface model of the original
             SWOBJ-ROLE, but change the disk model to SWOBJ-DRAINING-DISKS as shown in the following
             example:<codeblock>- name: SWOBJ-ROLE
-      interface-model: INTERFACE_SET_SWOBJ
-      disk-model: SWOBJ-DISKS
+  interface-model: INTERFACE_SET_SWOBJ
+  disk-model: SWOBJ-DISKS
  
 - name: SWOBJ-DRAINING-ROLE
-      interface-model: INTERFACE_SET_SWOBJ
-      disk-model: SWOBJ-DRAINING-DISKS</codeblock></li>
+  interface-model: INTERFACE_SET_SWOBJ
+  disk-model: SWOBJ-DRAINING-DISKS</codeblock></li>
           <li>Create a SWOBJ-DRAINING-DISKS disk model by editing the file containing the
             SWOBJ-DISKS disk model (usually <codeph>data/swobj_disks.yml</codeph> file) and adding
             an entry for SWOBJ-DRAINING-DISKS. Make a copy of the SWOBJ-DISKS disk model, but change
@@ -115,7 +115,7 @@ ansible-playbook -i hosts/verb_hosts swift-deploy.yml</codeblock></li>
 ansible-playbook -i hosts/verb_hosts swift-stop --limit <b>swobj4</b></codeblock></li>
           <li>Remove configuration files as follows. This assumes you are logged onto the
               deployer:<codeblock>ssh swobj4 sudo rm -R /etc/swift</codeblock><note>Do not run any
-              other playbooks until you have finished the process described in the R<b>emoving a
+              other playbooks until you have finished the process described in the <b>Removing a
                 node from the input model</b>. Otherwise, these playbooks may recreate
                 <codeph>/etc/swift</codeph> and restart Swift on <b>swobj4</b>. If you accidentally
               run a playbook, simply repeat the process described <b>Disabling Swift on a

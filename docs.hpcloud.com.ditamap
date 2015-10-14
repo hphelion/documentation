@@ -50,8 +50,6 @@
       </topicref>
       <topicref href="helion/install_entryscale_esx.dita"
         navtitle="Installation for Helion Entry Scale Cloud with ESX" locktitle="yes"/>
-      <topicref href="helion/install_entryscale_swift.dita"
-        navtitle="Installation for Helion Entry Scale Cloud with Swift Only" locktitle="yes"/>
       <topicref href="helion/gui_installer.dita" navtitle="Installing via the GUI" locktitle="yes"/>
       <topicref href="helion/gui_install_on_kvm.dita"
         navtitle="Installing the Operating System on KVM" locktitle="yes" toc="no"/>
@@ -134,12 +132,12 @@
         </topicref>
         <topicref href="helion/objectstorage/ring_management.dita">
           <topicref href="helion/objectstorage/rebalanced_explained.dita"/>
-          <topicref href="helion/objectstorage/preparing_ring_changes.dita" toc="no"/>
+          <topicref href="helion/objectstorage/setting_up_weight_attributes_ring_changes.dita"/>
           <topicref href="helion/objectstorage/playbook_linked_ring_management.dita"/>
           <topicref href="helion/objectstorage/safe_rebalance_deploy_ring.dita"/>
           <topicref href="helion/objectstorage/input_model_change_existing_rings.dita"/>
           <topicref href="helion/objectstorage/add_new_storage_policy.dita"/>
-          <topicref href="helion/objectstorage/how_to_change_min_part_power.dita"/>
+          <topicref href="helion/objectstorage/how_to_change_min_part_time.dita"/>
         </topicref>
       </topicref>
 
@@ -190,7 +188,9 @@
       <topicref href="helion/objectstorage/replacing_drives_swift_node.dita"/>
       <topicref href="helion/objectstorage/replacing_swift_node.dita"/>
       <topicref href="helion/objectstorage/removing_node.dita"/>
-      <topicref href="helion/objectstorage/add_new_storage_policy.dita"/>
+      <topicref href="helion/objectstorage/add_new_storage_policy.dita"
+        navtitle="Adding a New Storage Policy - Swift" locktitle="yes">
+       </topicref>
       <topicref href="helion/bura/bura_overview.dita" navtitle="Backing up and Restoring Your Data">
         <topicref href="helion/bura/backup.dita"/>
         <topicref href="helion/bura/restore.dita"/>
