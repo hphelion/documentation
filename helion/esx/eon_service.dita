@@ -22,7 +22,7 @@
         Deployer node which is used by the Cloud Admin to setup vCenter Compute Proxy and OvsvApp
         nodes.</p>
       <p><image href="../../media/esx/EON%20arch%20diagram/eon_architecture.PNG"
-          id="image_hdn_cdg_rt"/></p>
+          id="image_hp3_sph_rt"/></p>
     </section>
     <section><title>EON CLI Operations</title><p>The EON client CLI package provides an http-client
         coupled command-line tool for managing EON (ESX management) services.<ol id="ol_d1l_ygf_rt">
