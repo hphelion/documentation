@@ -281,6 +281,7 @@
         navtitle="Attach a floating IP to a database instance"/>
       <topicref href="2.0/database/devplatform.database-replicate.dita"/>
       <topicref href="2.0/database/devplatform.database-backup.dita" navtitle="Back up a database"/>
+      <topicref href="2.0/database/devplatform.database-create-loadbalancer.dita"/>
       <topicref href="2.0/database/devplatform.database-ALS.dita" locktitle="yes"
         navtitle="Connecting the Database Service with the Application Lifecycle Service"/>
     </topichead>
