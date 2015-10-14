@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="reference_cd3_bs3_rt">
+  <title><keyword keyref="gatoName"/> Command Reference</title>
+  <shortdesc><filepath>gato</filepath> is the <keyword keyref="prodShort"/> administration
+    utility.</shortdesc>
+  <refbody>
+    <section>
+      <note type="important">The following commands apply to <filepath>gato</filepath> version
+        0.0.0.</note>
+      <title>Usage</title>
+      <codeblock><keyword keyref="CLIgato"/> [global options] command [command options] [arguments...]</codeblock>
+    </section>
+    <section>
+      <title>Global Options</title>
+      <dl>
+        <dlentry>
+          <dt><filepath>--help</filepath>, <filepath>-h</filepath></dt>
+          <dd>show help</dd>
+        </dlentry>
+        <dlentry>
+          <dt><filepath>--version</filepath>, <filepath>-v</filepath></dt>
+          <dd>print the version</dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section>
+      <title>Commands</title>
+      <dl>
+        <dlentry>
+          <dt><filepath>config</filepath></dt>
+          <dd>Manipulate configuration values of <keyword keyref="prodShort"/> components.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><filepath>help</filepath></dt>
+          <dd>Shows a list of commands or help for one command</dd>
+        </dlentry>
+        <dlentry>
+          <dt><filepath>info</filepath></dt>
+          <dd>Show information about this node or cluster including assigned and available
+            roles.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><filepath>inspect</filepath></dt>
+          <dd>Detect common problems with your <keyword keyref="prodShort"/> install using
+              <filepath>gato inspect</filepath>.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><filepath>node</filepath></dt>
+          <dd>Node management.<ul id="ul_ypb_hy3_rt">
+              <li><filepath>node attach</filepath></li>
+              <li><filepath>node availabilityzone</filepath></li>
+              <li><filepath>node list</filepath></li>
+              <li><filepath>node placementzones</filepath></li>
+              <li><filepath>node remove</filepath></li>
+              <li><filepath>node rename</filepath></li>
+              <li><filepath>node retire</filepath></li>
+              <li><filepath>node version</filepath></li>
+            </ul></dd>
+        </dlentry>
+        <dlentry>
+          <dt><filepath>op</filepath></dt>
+          <dd>Various operational commands.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><filepath>process</filepath></dt>
+          <dd>Start, stop, or restart individual processes. Generally not required; use
+              <filepath>gato start|stop|restart</filepath> on roles (sets of processes)
+            instead.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><filepath>report</filepath></dt>
+          <dd>Generate a report that can be sent to <keyword keyref="prodShort"/> support.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><filepath>restart</filepath></dt>
+          <dd>Restart <keyword keyref="prodShort"/> or individual roles.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><filepath>role</filepath></dt>
+          <dd>Management of node roles.</dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section>
+      <title>Command Options</title>
+    </section>
+  </refbody>
+</reference>
