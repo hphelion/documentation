@@ -131,12 +131,116 @@ helion/my_cloud/definition/    Directory contains the config input files
 helion/my_cloud/config/        Directory contains .j2 files which are symlinks to the /hos/ansible directory
 helion/hos/                    Directory contains files used by the installer</codeblock>
     </section>
+    <section id="configuration">
+      <title>Configure Your Environment</title>
+      <p>This part of the install is going to depend on the specific cloud configuration you are
+        going to use.</p>
+      <ol>
+        <li>Setup your configuration files, as follows: <ol>
+            <li>See the sample sets of configuration files in the
+                <codeph>~/helion/examples/</codeph> directory. Each set will have an accompanying
+              README.md file that explains the contents of each of the configuration files.</li>
+            <li>Copy the example configuration files into the required setup directory and edit them
+              to contain the details of your environment. For example, if you wanted to use the
+              Helion Entry Scale Cloud with VSA model, you could use this command to copy the files
+              to your cloud definition directory:
+              <codeblock>cp -r ~/helion/examples/entry-scale-kvm-vsa/* ~/helion/my_cloud/definition/</codeblock></li>
+            <li>Begin inputting your environment information into the configuration files in the
+                <codeph>~/helion/my_cloud/definition</codeph> directory. <p>Full details of how to
+                do this can be found here: <xref href="input_model.dita">Helion OpenStack 2.0 Input
+                  Model</xref>.</p>
+            </li>
+          </ol>
+          <p>If you chose to use your first controller node as your deployer, ensure that your
+              <codeph>servers.yml</codeph> file contains the <codeph>is-deployer: true</codeph>
+            notation in your controller options. If you are using a dedicated deployer node you can
+            omit this. Here is an example snippet of a <codeph>servers.yml</codeph> file where a
+            user is using their first controller node as their deployer:
+            <codeblock># Controllers
+  - id: controller1
+    ip-addr: 192.168.10.3
+    role: CONTROLLER-ROLE
+    server-group: RACK1
+    nic-mapping: HP-DL360-4PORT
+    mac-addr: b2:72:8d:ac:7c:6f
+    ilo-ip: 192.168.9.3
+    ilo-password: password
+    ilo-user: admin
+    <b>is-deployer: true</b></codeblock></p>
+          <p>Optionally, you can use the <codeph>hosencrypt.py</codeph> script to encrypt your iLo
+            passwords. This script uses OpenSSL.</p>
+          <ol>
+            <li>Change to the Ansible directory: <codeblock>cd ~/helion/hos/ansible</codeblock></li>
+            <li>Put the encrytion key into the following environment variable:
+              <codeblock>export HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeblock></li>
+            <li>Run the python script below and follow the instructions. Enter a password that you
+              want to encrypt. <codeblock>hosencrypt.py</codeblock></li>
+            <li>Take the string generated and place it in the <codeph>"ilo_password"</codeph> field
+              in your <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> file,
+              remembering to enclose it in quotes.</li>
+            <li>Repeat the above for each server.</li>
+          </ol>
+          <note>Before you run any playbooks, remember that you need to export the encryption key in
+            the following environment variable: <codeph>export
+              HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeph></note></li>
+      </ol>
+      <p>Commit your configuration to the <xref href="using_git.dita">local git repo</xref>, as
+        follows: <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "My config or other commit message"</codeblock>
+        <note type="important">This step needs to be repeated any time you make changes to your
+          configuration files before you move onto the following steps. See <xref
+            href="using_git.dita">Using Git for Configuration Management</xref> for more
+          information.</note></p>
+      <p>Then you need to run the following commands to complete your configuration. These commands
+        also verify your configuration is correct.</p>
+      <ol>
+        <li>Run the following playbook which confirms that there is iLo connectivity for each of
+          your nodes so that they are accessible to be re-imaged in a later step:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost bm-power-status.yml</codeblock></li>
+        <li>Run the configuration processor, as follows:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+      </ol>
+      <p>When you run the Configuration Processor you will be prompted for two passwords. Enter the
+        first password to make the Configuration Processor encrypt its sensitive data, which is
+        comprised of the random inter-service passwords that it generates and the Ansible group_vars
+        and host_vars that it produces for subsequent deploy runs. You will need this key for
+        subsequent Ansible deploy runs and subsequent Configuration Processor runs. If you wish to
+        change an encryption password that you have already used when running the Configuration
+        Processor then enter the new password at the second prompt, otherwise just press carriage
+        return.</p>
+      <p>For CI purposes you can specify the required passwords on the ansible command line. For
+        example, the command below will disable encryption by the configuration processor
+        <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml -e encrypt="" -e rekey=""</codeblock>
+      </p>
+      <p>If you receive an error during either of these steps then there is an issue with one or
+        more of your configuration files. We recommend that you verify that all of the information
+        in each of your configuration files is correct for your environment and then commit those
+        changes to git using the instructions above.</p>
+      <p>Before re-running the Configuration Processor after fixing an error you need to run the
+        clean script detailed in the <xref
+          href="installation_troubleshooting.dita#troubleshooting_installation/configproc"
+          >Installation Troubleshooting</xref> document.</p>
+    </section>
 
 
+
+
+
+
+
+
+
+
+
+    <!--
     <section conref="install_entryscale_kvm.dita#install_kvm/configuration"/>
     <section conref="install_entryscale_kvm.dita#install_kvm/deploy_cobbler"/>
     <section conref="install_entryscale_kvm.dita#install_kvm/provision_nodes"/>
     <section conref="install_entryscale_kvm.dita#install_kvm/deploy"/>
+    -->
     <p>POST-INSTALL</p>
   </body>
 </topic>
