@@ -88,10 +88,6 @@
         </li>
         <li>Ensure your deployer has a valid DNS nameserver in the <codeph>/etc/resolv.conf</codeph>
           file</li>
-        <li>Install and configure NTP for your environment <ul>
-            <li>Ensure your NTP server(s) is placed into your <codeph>/etc/ntp.conf</codeph>
-              file</li>
-          </ul></li>
       </ol>
       <p>At the end of this section you should have a node set up with Linux for HP Helion on
         it.</p>

@@ -20,8 +20,8 @@
           instructions carefully. </p>
       </note>
     </section>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/important_notes"/>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm_vsa/prereqs"/>
+    <section conref="install_entryscale_kvm.dita#install_kvm/important_notes"/>
+    <section conref="install_entryscale_kvm.dita#install_kvm/prereqs"/>
     <section id="prereqs">
       <title>Prerequisite</title>
       <p>ESX/vCenter integration is not fully automatic, vCenter administrators are advised of the

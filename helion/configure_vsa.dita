@@ -27,6 +27,39 @@
     <section>
       <title>Creating a StoreVirtual Cluster and adding it to a new Management Group Cluster using
         CMC</title>
+      <p>The CMC utility requires a GUI to access it. These steps below will allow you to setup a
+        VNC connect to your controller node so you can view the GUI.</p>
+      <ol>
+        <li>Login to your first controller node.</li>
+        <li>Run the following command to install some packages necessary to launch CMC:
+          <codeblock>sudo apt-get install -y xrdp xterm xbase-clients xfonts-base vnc4server</codeblock></li>
+        <li>Start <codeph>vnc4server</codeph> using the instructions below. You will be prompted for
+          a password (min 6 characters). Enter a password and proceed. The output will look like
+          this:
+          <codeblock>stack@helion-cp1-c1-m1-mgmt:~$ vnc4server
+            
+You will require a password to access your desktops.
+            
+Password:
+Verify:
+xauth:  file /home/stack/.Xauthority does not exist
+            
+New 'helion-cp1-c1-m1-mgmt:3 (stack)' desktop is helion-cp1-c1-m1-mgmt:3
+            
+Creating default startup script /home/stack/.vnc/xstartup
+Starting applications specified in /home/stack/.vnc/xstartup
+Log file is /home/stack/.vnc/helion-cp1-c1-m1-mgmt:3.log</codeblock></li>
+        <li>Run <codeph>netstat -anp } grep vnc</codeph> to determine the public port. In the
+          example below it is port 5903:
+          <codeblock>stack@helion-cp1-c1-m1-mgmt:~$ netstat -anp | grep vnc
+(Not all processes could be identified, non-owned process info
+will not be shown, you would have to be root to see it all.)
+tcp        0      0 0.0.0.0:6003            0.0.0.0:*               LISTEN      1413/Xvnc4
+tcp6       0      0 :::5903                 :::*                    LISTEN      1413/Xvnc4</codeblock></li>
+        <li>You should then be able to connect to your controller node via any remote desktop or VNC
+          client using the IP address, port, and password to access the CMC GUI diplay.</li>
+      </ol>
+      <!--
       <p><b> Install (any) X Display Tool to Launch Centralized Management Console (CMC)</b></p>
       <p>You must configure X display tool to launch CMC. User can select <b>any</b> X display tool.
         In this section we are using <b>Xming</b> tool for Windows as an example to launch CMC. The
@@ -41,6 +74,7 @@
             will be launch successfully.</li>
         </ol>
       </p>
+      -->
       <p>Perform the following steps to create the cluster.<ol id="ol_yln_fhl_jt">
           <li>Open CMC.<p>By default, the CMC is configured to discover the StoreVirtual nodes in
               the subnet in which it is installed. You can manually add the nodes also.</p></li>
@@ -96,8 +130,7 @@
             <codeblock># Configure the enabled backends
 enabled_backends=vsa-1</codeblock></li>
           <li>Copy VSA section, uncomment it, and modify the values in the
-              <codeph>cinder.conf.j2</codeph> file as shown in the following example: 
-            <codeblock id="vsa-config">[vsa-1]
+              <codeph>cinder.conf.j2</codeph> file as shown in the following example: <codeblock id="vsa-config">[vsa-1]
 hplefthand_password: &lt;password given during cluster creation>
 hplefthand_clustername: &lt;VSA cluster name>
 hplefthand_api_url: https://&lt;store virtual virtual ip>:8081/lhos
