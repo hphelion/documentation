@@ -137,7 +137,7 @@
           <topicref href="helion/objectstorage/safe_rebalance_deploy_ring.dita"/>
           <topicref href="helion/objectstorage/input_model_change_existing_rings.dita"/>
           <topicref href="helion/objectstorage/add_new_storage_policy.dita"/>
-          <topicref href="helion/objectstorage/how_to_change_min_part_power.dita"/>
+          <topicref href="helion/objectstorage/how_to_change_min_part_time.dita"/>
         </topicref>
       </topicref>
 
@@ -188,7 +188,35 @@
       <topicref href="helion/objectstorage/replacing_drives_swift_node.dita"/>
       <topicref href="helion/objectstorage/replacing_swift_node.dita"/>
       <topicref href="helion/objectstorage/removing_node.dita"/>
-      <topicref href="helion/objectstorage/add_new_storage_policy.dita"/>
+      <topicref href="helion/objectstorage/add_new_storage_policy.dita"
+        navtitle="Adding a New Storage Policy - Swift" locktitle="yes">
+        <p/>
+        <p>
+          <ol id="ol_rxn_3qn_pt">
+            <li>Select a storage policy index and ring name. <p>For example, if you already have
+                object-0 and object-1 rings in your ring-specifications (usually in
+                  <codeph>data/swift/rings.yml</codeph> file), the next index is 2 and the ring name
+                is object-2.</p></li>
+            <li>Select a user-visible name so that you can see when you examine container metadata
+              or when you want to specify the Storage Policy used when you create a container. The
+              name should be a single word (hyphen and dashes are allowed).</li>
+            <li>Decide if this new policy is to be the default for all new containers.</li>
+            <li>Decide on other attributes such as partition-power and replica-count. See <xref
+                href="ring_specifications.dita#ring-specification">Ring Specifications</xref> for
+              more details on the required attributes.</li>
+            <li>Edit the ring-specifications (usually in <codeph>data/swift/rings.yml</codeph> file)
+              and add the new ring specification. If this policy is to be the default Storage Policy
+              for new containers, set the default attribute to <b>yes</b>.<note>
+                <ul id="ul_fgw_xqn_pt">
+                  <li>Ensure that only one object ring has the default attribute set to <b>yes</b>.
+                    If you make two rings as default, Swift processes will not start.</li>
+                  <li>Do not specify the weight-step attribute for the new object ring. Since this
+                    is a new ring there is no need to gradually increase device weights.</li>
+                </ul>
+              </note></li>
+          </ol>
+        </p>
+      </topicref>
       <topicref href="helion/bura/bura_overview.dita" navtitle="Backing up and Restoring Your Data">
         <topicref href="helion/bura/backup.dita"/>
         <topicref href="helion/bura/restore.dita"/>

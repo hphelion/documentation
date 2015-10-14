@@ -130,7 +130,7 @@
         <li>Your system has more servers and disks than in the mid sized cloud example and the time
           to replicate data during a ring rebuild is longer than 16 hours. However, this time is
           system-dependent so you will be unable to figure out the appropriate value for
-            <codeph>min-part-power</codeph> until you have more experience with your
+            <codeph>min-part-time</codeph> until you have more experience with your
             system.<p>Therefore, during the initial deployment of Swift, we suggest not to make
             changes in <b>min-part-time</b>. </p></li>
       </ul></section>-->
