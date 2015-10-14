@@ -236,19 +236,17 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
           your nodes so that they are accessible to be re-imaged in a later step:
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost bm-power-status.yml</codeblock></li>
-        <li>Run the following playbook to deploy Cobbler:
-          <codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
-        <li>The cobbler-deploy stage of the installation now prompts for a password. The entered
-          value is used to set a user-defined password for subsequent node installs so that a user
-          can gain console/terminal access to the nodes. For example, if a node maintenance is
-          required or if the SSH keys are lost. The value is encrypted and placed in the kickstart
-          for the node installs.<p>The password prompts look like this:</p>
-          <codeblock>Enter the password that will be used to access provisioned nodes:
-            confirm Enter the password that will be used to access provisioned nodes:</codeblock>
-          <p>Alternatively, you can also specify this password in the ansible playbook command like
-            this:</p>
-          <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml -e hlmuser_password="&lt;password>"</codeblock></li>
+        <li>Run the following playbook to deploy Cobbler. The cobbler-deploy stage of the
+          installation now prompts for a password. The entered value is used to set a user-defined
+          password for subsequent node installs so that a user can gain console/terminal access to
+          the nodes. For example, if a node maintenance is required or if the SSH keys are lost. The
+          value is encrypted and placed in the kickstart for the node installs. <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost cobbler-deploy.yml -e hlmuser_password="&lt;password>"</codeblock>
+          <p>The cobbler-deploy stage of the installation now prompts for a password. The entered
+            value is used to set a user-defined password for subsequent node installs so that a user
+            can gain console/terminal access to the nodes. For example, if a node maintenance is
+            required or if the SSH keys are lost. The value is encrypted and placed in the kickstart
+            for the node installs.</p></li>
       </ol>
     </section>
 
