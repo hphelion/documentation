@@ -141,6 +141,7 @@
           <topicref href="helion/objectstorage/add_new_storage_policy.dita"/>
           <topicref href="helion/objectstorage/how_to_change_min_part_time.dita"/>
         </topicref>
+        <topicref href="helion/objectstorage/modify_swift_service_config_files.dita"/>
       </topicref>
 
       <!-- Cinder -->

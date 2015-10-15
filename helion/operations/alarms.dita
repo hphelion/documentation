@@ -485,6 +485,30 @@
           </thead>
           <tbody>
             <row>
+              <entry>Elasticsearch Low Watermark alarm definition</entry>
+              <entry>Elasticsearch</entry>
+              <entry>Elasticsearch Disk LOW Watermark. Backup indices. If high watermark is reached,
+                indices will be deleted. Adjust curator_low_watermark_percent,
+                curator_high_watermark_percent, and elasticsearch_max_total_indices_size_in_bytes if
+                needed.</entry>
+              <entry>Running out of disk space for /var/lib/elasticsearch.</entry>
+              <entry>Free up space by removing indices (backing them up first if desired).
+                Alternatively, adjust curator_low_watermark_percent, curator_high_watermark_percent,
+                and/or elasticsearch_max_total_indices_size_in_bytes if needed.</entry>
+            </row>
+            <row>
+              <entry>Elasticsearch High Watermark alarm definition</entry>
+              <entry>Elasticsearch</entry>
+              <entry>Elasticsearch Disk HIGH Watermark. Attempting to delete indices to free disk
+                space. Adjust curator_low_watermark_percent, curator_high_watermark_percent, and
+                elasticsearch_max_total_indices_size_in_bytes if needed.</entry>
+              <entry>Running out of disk space for /var/lib/elasticsearch.</entry>
+              <entry>Verify that disk space was freed up by the curator. If needed, free up
+                additional space by removing indices (backing them up first if desired).
+                Alternatively, adjust curator_low_watermark_percent, curator_high_watermark_percent,
+                and/or elasticsearch_max_total_indices_size_in_bytes if needed.</entry>
+            </row>
+            <row>
               <entry>Elasticsearch Unassigned Shards</entry>
               <entry>Elasticsearch</entry>
               <entry>Elasticsearch unassigned shards count is greater than 0</entry>
