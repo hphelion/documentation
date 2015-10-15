@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_dgl_1vq_rt">
+  <title>Test</title>
+  <body>
+    <p>
+      <table frame="all" rowsep="1" colsep="1" id="table_bng_bvq_rt">
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Test</entry>
+              <entry>Test2</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>test</entry>
+              <entry>test</entry>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </p>
+  </body>
+</topic>
