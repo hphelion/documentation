@@ -3,6 +3,10 @@
 <topic id="verify-partition-label">
   <title>How to Verify if a Partition is Labelled</title>
   <body>
+    <p>
+      <note type="warning">If this is a system upgrade <!--rather than an initial deploy--> then do
+        NOT clear the label before starting the upgrade.</note>
+    </p>
     <p>This page explains the procedure to check whether a device has label on partition.</p>
     <section id="label-partition">
       <p> To check whether a device partition has label on a partition, perform the following
