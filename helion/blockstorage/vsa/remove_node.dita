@@ -12,17 +12,17 @@
             prior to removing a VSA node. </li>
           <li>See <i>Using disk RAID with Network RAID in a cluster</i>, <i>Planning the RAID
               configuration</i>, and the <i>Data protection</i> sections of HP StoreVirtual Storage
-            Online help (available in <b>StoreVirtual Management Console</b> can i get the
-            appropriate link??) before configuring RAID. You must configure RAID before adding the
-            storage system to the management group. Refer the online help of <b>HP Storevirtual CMC
-              for configuring the network RAID for storage systems.</b> link required...</li>
+            Online help (available in <b>StoreVirtual Management Console</b>) before configuring
+            RAID. You must configure RAID before adding the storage system to the management group.
+            Refer the online help of <b>HP Storevirtual CMC for configuring the network RAID for
+              storage systems.</b> link required...</li>
           <li>You must set the Data protection level while creating the volume type for the VSA
             volumes in Openstack Cinder. The volume type extra spec for setting the data protection
-            is <xref href="http://hplhdata_pl/" format="html" scope="external">hplh:data_pl</xref>
-              (<b>link not working</b>) for HP LeftHand/StoreVirtual storage. For more details refer
-              <xref href="http://www8.hp.com/h20195/v2/GetPDF.aspx%2F4AA5-1966ENW.pdf" format="pdf"
-              scope="external">Openstack Cinder configuration guide(Kilo) for HP
-              LeftHand/StoreVirtual driver</xref>.</li>
+            is <codeph>hplh:data_pl</codeph> (<b>link not working</b>) for HP LeftHand/StoreVirtual
+            storage. For more details refer <xref
+              href="http://docs.openstack.org/kilo/config-reference/content/HP-LeftHand-StoreVirtual-driver.html"
+              format="html" scope="external">Openstack Cinder configuration guide(Kilo) for HP
+              LeftHand/StoreVirtual driver.</xref></li>
         </ul>
       </note></p>
     <section>
@@ -30,28 +30,27 @@
       <p>Perform the following steps to remove VSA storage system for maintenance:<ol
           id="ol_rpx_wp2_rt">
           <li>Review <i>Determining volume and snapshot availability</i> section in <b>HP
-              StoreVirtual Storage Online help</b>(i need link) and ensure that the volume is
-            available if the storage system/VSA node that is planned to remove for maintenance goes
-            offline.</li>
+              StoreVirtual Storage Online help</b> and ensure that the volume is available if the
+            storage system/VSA node that is planned to remove for maintenance goes offline.</li>
           <li>If the repair option is available for the VSA storage system, choose the appropriate
             option in repair. For detail, refer to <i>Using Repair Storage System</i>
-            <b>in HP StoreVirtual Storage Online help in CMC.</b> (link??)<p>OR</p><p>If the repair
-              option is unavailable, perform either of the below operations to remove the VSA
-              storage system for maintenance:<ul id="ul_dmj_sq2_rt">
+            <b>in HP StoreVirtual Storage Online help in CMC.</b><p>OR</p><p>If the repair option is
+              unavailable, perform either of the below operations to remove the VSA storage system
+              for maintenance:</p><p>Refer<i> Maintaining storage systems in clusters</i> section in
+              HP StoreVirtual Storage Online help in CMC and perform any of the below operations to
+              ensure that the cluster functions normally and the volumes continue to be available
+              even after the storage system is removed/replaced.</p><p>
+              <ul id="ul_dmj_sq2_rt">
                 <li>Add and remove storage systems for an existing cluster (The new storage system
-                  from the list of available VSA storage systems as shown in CMC). <b>How do we add
-                    or removed?? any command??</b></li>
-                <li>Exchange a storage system in a cluster. (<b>how do we do it??</b>)</li>
+                  from the list of available VSA storage systems as shown in CMC). </li>
+                <li>Exchange a storage system in a cluster. </li>
                 <li>Removing a storage system from a cluster (provided the remaining storage system
                   is sufficient for the data availability, a minimum of 3 nodes should be available
                   after the remove operation). Once the maintenance is done, the storage system may
                   be added back to the cluster. Follow the instructions for <b>"Adding a storage
-                    system to a cluster"</b> to add the VSA storage system back to the
-                      cluster.<p>Refer<i> Maintaining storage systems in clusters</i> section in HP
-                    StoreVirtual Storage Online help in CMC and perform any of the above operations
-                    to ensure that the cluster functions normally and the volumes continue to be
-                    available even after the storage system is removed/replaced.</p></li>
-              </ul></p></li>
+                    system to a cluster"</b> to add the VSA storage system back to the cluster.</li>
+              </ul>
+            </p></li>
         </ol></p>
     </section>
     <p>
@@ -69,7 +68,7 @@
         currently offline so that these nodes get excluded from any further reconfiguration or
         upgrades. This prevents a VSA node that is offline from being included in deployments.</p>
       <p/>
-      <p>I<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>n order to prevent a
+      <p><?oxy_custom_start type="oxy_content_highlight" color="140,255,140"?>In order to prevent a
         VSA node that is offline from being included in deployments it is recommended that a (what
         file??) file is created on the deployer node containing a list of VSA nodes that are
         currently offline so these nodes get excluded from any further reconfiguration or
@@ -78,14 +77,17 @@
         (baremetalConfig.yml and servers.yml). In order to prevent a VSA node that is offline from
         being included in deployments it is recommended that a file is created on the deployer node
         containing a list of VSA nodes that are currently offline so these nodes get excluded from
-        any further reconfiguration or upgrades. The format of this file would be!&lt;VSA
-        node-name>*Where the "VSA node-name" matches the interfaces used to access this node during
-        deployments, i.e.e.g., !padawan-ccp-vsa001* (VSA host as given in hosts/verb_hosts). Add
-        this VSA host name to a file, say "offline-vsa"When performing HLM deployments specify the
-        name of this file in a --limit option to prevent the deployment process trying to access the
-        VSA nodes that are offline.ansible-playbook -i hosts/localhost config-processor-run.yml
-        (from ~/helion/hos/ansible directory)ansible-playbook -i hosts/verb_hosts osconfig-run.yml
-        --limit @offline-vsaansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e
+        any further reconfiguration or
+        upgrades.<?oxy_custom_end?><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+      </p>
+      <p>The format of this file would be!&lt;VSA node-name>*Where the "VSA node-name" matches the
+        interfaces used to access this node during deployments, i.e.e.g., !padawan-ccp-vsa001* (VSA
+        host as given in hosts/verb_hosts). Add this VSA host name to a file, say "offline-vsa"When
+        performing HLM deployments specify the name of this file in a --limit option to prevent the
+        deployment process trying to access the VSA nodes that are offline.ansible-playbook -i
+        hosts/localhost config-processor-run.yml (from ~/helion/hos/ansible
+        directory)ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit
+        @offline-vsaansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e
         elasticsearch_cluster_name=hlm-001 --limit @offline-vsa</p>
     </section>
     <section>

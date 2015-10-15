@@ -6,8 +6,7 @@
   <body>
     <p>This page describes configuration, installation, and the integration of Ceph Block Storage
       with HP Helion<tm tmtype="reg">OpenStack</tm>2.0. After the installation of Ceph you can
-      perform the cinder operation as documented in this page. It also provides the procedure to
-      perform cinder operation after Ceph deployment.</p>
+      perform the OpenStack operations as documented in this page. </p>
     <p><!--Ceph has two components, i..e., monitor and OSD. These components require different set of hardware specifications as follows:<ul id="ul_pgh_qjv_kt"><li>For monitor node, storage is not required but it is CPU sensitive. </li><li>For OSD nodes, a significant disk media, RAM and reasonable CPU are required.<p>Therefore, with this requirement we recommend the following:<ul id="ul_rl1_jkv_kt"><li>SL4540 for OSD</li><li>SL230 series of servers for monitor if monitors are not deployed on controller node which is our default configuration. If monitor is deployed on controller node, the server used for controlller node is good neough to support monitor. </li></ul></p></li></ul>--></p>
     <!--<p>Ceph has two component with differing need of hardware specifications: monitor and OSD. Monitors does not need storage but CPU sensitive. OSD needs significant disk media, RAM and reasonable CPU. Keeping this aspect in mind, we do recommend following: SL4540 for OSD DL380 or SL230 series of servers for monitor if monitors are not deployed on controller node which is our default configuration. If monirot is deployed on controller node, the server used for controlller node is good neough to support monitor </p>-->
     <section>
@@ -16,9 +15,9 @@
         of deployer node, refer to <xref href="../../install_entryscale_kvm_vsa.dita#install_kvm"
           >installation guide.</xref></p>
       <p>
-        <note type="important">If you want monitor service on the dedicated resource node, ensure to add it at the
-          beginning of the ceph deployment. Once the Ceph is deployed, you cannot revert the changes
-          and add monitor service on the dedicated resource node.</note>
+        <note type="important">If you want monitor service on dedicated resource nodes, ensure to
+          add it at the beginning of the ceph deployment. Once  Ceph is deployed, you cannot revert
+          the changes and add monitor service on the dedicated resource node.</note>
       </p>
     </section>
     <section>
@@ -37,12 +36,12 @@
               <codeph>~/helion/my_cloud/definition</codeph> directory. Full details of how to do
             this can be found here: <xref href="input_model.dita">Helion OpenStack 2.0 Input
               Model</xref>. </li>
-          <li>Edit  <codeph>my_cloud/config/cinder/cinder.conf.j2</codeph> to add Ceph backend:</li>
           <li>Edit the file <codeph>disks_osd.yml</codeph> and enter the details for the additional
             disks meant for OSD data and journal
-              filesystems.<codeblock>vi <codeph>disks_osd.yml</codeph></codeblock><note>Ensure that
-              disks designated to be used for the OSD data and journal storage must be in a clean
-              state (i.e. any existing partitions must be deleted).</note></li>
+              filesystems.<codeblock>vi <codeph>disks_osd.yml</codeph></codeblock><p><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>How
+              to edit osd.yml file??<?oxy_custom_end?></p><note>Ensure that disks designated to be
+              used for the OSD data and journal storage must be in a clean state (i.e. any existing
+              partitions must be deleted).</note></li>
           <li>Editable parameters for Ceph are available in the following locations:<ul
               id="ul_jbn_nj5_kt">
               <li><codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph><p>In the
@@ -77,8 +76,6 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <li>Run the following command to create a deployment
             directory.<codeblock>cd ~/helion/hos/ansible
 <codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
-          <li>Modify <codeph>~/helion/hlm/ansible/hlm-deploy.yml</codeph> and uncomment the line
-            containing <codeph>ceph-deploy.yml</codeph> to enable deployment of ceph.</li>
           <li>Run the following ansible
             playbook:<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
