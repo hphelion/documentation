@@ -298,7 +298,7 @@
     <topichead navtitle="Conceptual Overviews">
       <topicref href="helion/high_availability.dita"/>
       <topicref href="helion/table_test.dita"/>
-      <topicref href="ServerArtifacts/table_test_differentSource.dita" navtitle="NonCartesian Table"
+      <topicref href="helion/table_test_differentSource.dita" navtitle="NonCartesian Table"
         locktitle="yes"/>
     </topichead>
   </topicref>
