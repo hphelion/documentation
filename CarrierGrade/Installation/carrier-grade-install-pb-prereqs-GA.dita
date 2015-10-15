@@ -304,7 +304,7 @@ StrictHostKeyChecking no </codeblock></li>
                                                   <codeph>horizon_web_patch_1.1.tar.gz</codeph></li>
                                                 <li><b>Helion Carrier Grade 1.1.0 ceilometer
                                                   patch1</b>. The file is named
-                                                  <codeph>hoscg-patchCG-1345.tar.gz</codeph>.</li>
+                                                  <codeph>hcg_1.1.0_ceilometer_patch1.tar.gz</codeph>.</li>
                                                 <li>NIC Bonding Patch. If you are using bonded NIC,
                                                   download the
                                                   <codeph>cg-hos-nic-bonding.patch</codeph>
