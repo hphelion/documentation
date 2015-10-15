@@ -411,30 +411,6 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
       <note>When using the Launch Instance action in the Volumes table, the Launch Instance Wizard
         form doesn't get pre-populated with the Volumes option selected, nor does it select the
         given Volume.</note>
-      <p id="nondedicateddeployerworkaround"><b>Issue with Apache If You Use a Non-Dedicated
-          Deployer Setup</b></p>
-      <p>The Apache configuration file used by the installer GUI will prevent the controller on a
-        cloud with a combined controller/deployer node from responding to API calls. If you are
-        using an HA 3-node cluster for your control plane, then this will present as intermittent
-        errors as your first controller won't always be the one hit.</p>
-      <p>To resolve this issue you can remove GUI installer's Apache configuration file
-        (dayzero-apache.conf). If you are using the installer UI to install, you must wait until
-        after installation is complete to remove it. That conf file is not needed again.</p>
-      <p>To remove the file, you can run these commands from your deployer:</p>
-      <ol>
-        <li>To remove the file, run:
-          <codeblock>sudo rm /etc/apache2/sites-enabled/dayzero-apache.conf</codeblock></li>
-        <li>To reload Apache for the change to take effect, run this command:
-          <codeblock>sudo service apache2 reload</codeblock></li>
-      </ol>
-      <p>If you don't want to remove this configuration but simply want to move it, you can do so
-        using these commands:</p>
-      <ol>
-        <li>To move the configuration file:
-          <codeblock>sudo mv /etc/apache2/sites-enabled/dayzero-apache.conf /etc/apache2/sites-available/dayzero-apache.conf</codeblock></li>
-        <li>Reload Apache for the change to take
-          effect:<codeblock>sudo service apache2 reload</codeblock></li>
-      </ol>
     </section>
   </body>
 </topic>
