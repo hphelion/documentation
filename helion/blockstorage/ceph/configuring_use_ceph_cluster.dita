@@ -4,9 +4,12 @@
   <title>Configuring OpenStack Services to use Ceph Cluster</title>
   <body>
     <p>This page contains the following topics :<ul id="ul_vrf_jf3_pt">
-        <li>Configure Ceph as a Cinder Backend</li>
-        <li>Configure Ceph as a Cinder Backup</li>
-        <li>Attach Ceph Volume to an Instance</li>
+        <li><xref href="#topic_i2z_zc3_pt/configure-ceph-as-cinder-backend" format="dita">Configure
+            Ceph as a Cinder Backend</xref></li>
+        <li><xref href="#topic_i2z_zc3_pt/configure-ceph-cinder-backup" format="dita">Configure Ceph
+            as a Cinder Backup</xref></li>
+        <li><xref href="#topic_i2z_zc3_pt/attach-ceph-volume-instance" format="dita">Attach Ceph
+            Volume to an Instance</xref></li>
       </ul></p>
     <section id="configure-ceph-as-cinder-backend">
       <title>Configure Ceph as Cinder Backend</title>

@@ -14,7 +14,7 @@
           installation of deployer node, refer to <xref
             href="../../install_entryscale_kvm_vsa.dita#install_kvm">installation guide.</xref></li>
         <li>You can deploy monitor service on a dedicated resource. Ensure to modify your
-          environment after deploying the deployer node. For more details refer to <xref
+          environment after deploying the deployer node. For more details, refer to <xref
             href="deploy_monitor_stand_alone_node.dita#topic_ah5_4yx_qt">Install a monitor service
             on a dedicated resource node</xref>.</li>
       </ul>
@@ -110,8 +110,7 @@
                     between two nodes.</stentry>
                 </strow>
               </simpletable>
-            </p><p><b>How to edit osd.yml
-              file</b><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>??<?oxy_custom_end?></p><note>Ensure
+            </p><p><!--<b>How to edit osd.yml file</b><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>??<?oxy_custom_end?>--></p><note>Ensure
               that disks designated to be used for the OSD data and journal storage must be in a
               clean state (i.e. any existing partitions must be deleted).</note></li>
           <li>Editable parameters for Ceph are available in the following locations:<ul
@@ -119,10 +118,10 @@
               <li><codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph><p>In the
                     <codeph>settings.yml</codeph> file, you can edit the following parameters:<ul
                     id="ul_ocp_ty5_kt">
-                    <li>fsid</li>
-                    <li>ceph clusters</li>
-                    <li>osd_settle_time</li>
-                    <li>OSD_journal_size</li>
+                    <li><codeph>fsid</codeph></li>
+                    <li><codeph>ceph clusters</codeph></li>
+                    <li><codeph>osd_settle_time</codeph></li>
+                    <li><codeph>OSD_journal_size</codeph></li>
                   </ul></p></li>
               <li>
                 <p>Add any additional configuration parameters for Ceph in the same file
