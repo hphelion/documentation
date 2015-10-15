@@ -4,7 +4,7 @@
 <topic xml:lang="en-us" id="topic2502">
   <title>HP Helion 2.0 Development Platform: Release Notes</title>
   <body>
-    <p>The following release notes are for the HP Helion Development Platform 2.0 beta released on
+    <p>The following release notes are for the HP Helion Development Platform 2.0 beta released in
       October, 2015. We hope you enjoy the release!</p>
     <section>
       <title>2.0 Beta Notes</title>
@@ -38,6 +38,12 @@ Oslo.config-1.3.0</codeblock></li>
 $ openstack endpoint create database admin 'http://<i>&lt;public-VIP-IP-address></i>:8779/v1.0/$(tenant_id)s'
 $ openstack endpoint create database internal 'http://<i>&lt;public-VIP-IP-address></i>:8779/v1.0/$(tenant_id)s'
 $ openstack endpoint create database public 'http://<i>&lt;public-VIP-IP-address></i>:8779/v1.0/$(tenant_id)s'</codeblock></dd>
+        </dlentry><dlentry>
+          <dt>Multiple Syntax Errors in Python pip Install Output</dt>
+          <dd>Installing a Python package also installs any required dependencies. This may generate
+            several syntax warnings inline as the install occurs. This is expected behavior, and
+            unless the output of the pip install reflects a fatal error, the install is still
+            considered "clean".</dd>
         </dlentry>
       </dl>
     </section>
@@ -50,7 +56,8 @@ $ openstack endpoint create database public 'http://<i>&lt;public-VIP-IP-address
             certificates in the payload. To fix this, skip SSL validation or use Horizon to create
             the cluster instead.<ol>
               <li>Launch the <codeph>cf-mgmt</codeph> tool.</li>
-              <li>Add the <codeph>--skip-ssl-validation</codeph> parameter prior to the command.
+              <li>Add the <codeph>--skip-ssl-validation</codeph> parameter prior to the cluster
+                creation command.
                 <codeblock>cf-mgmt --skip-ssl-validation create-cluster <i>[command options]</i> <i>[arguments...]</i></codeblock></li>
             </ol></dd>
       </dlentry>
