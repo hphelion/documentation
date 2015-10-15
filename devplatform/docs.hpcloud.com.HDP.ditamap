@@ -6,6 +6,7 @@
   <topicref href="2.0/devplatform.index.dita" navtitle="HP Helion Development Platform 2.0"
     locktitle="yes">
     <!--root level installation-->
+    <topicref href="2.0/tabletest.dita"/>
     <topicref href="2.0/devplatform.whatsnew.dita" locktitle="yes" navtitle="What's New"/>
     <topicref href="2.0/devplatform.release-notes.dita" locktitle="yes" navtitle="Release Notes"/>
     <topicref href="2.0/devplatform.thirdparty.licensing.dita" navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>
