@@ -519,7 +519,6 @@
       <title>Object Storage Features</title>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="SwiftTable">
-          <title>Swift Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
             <colspec colname="c2" colnum="2" colwidth="1.0*"/>
