@@ -49,7 +49,7 @@ New 'helion-cp1-c1-m1-mgmt:3 (stack)' desktop is helion-cp1-c1-m1-mgmt:3
 Creating default startup script /home/stack/.vnc/xstartup
 Starting applications specified in /home/stack/.vnc/xstartup
 Log file is /home/stack/.vnc/helion-cp1-c1-m1-mgmt:3.log</codeblock></li>
-        <li>Run <codeph>netstat -anp } grep vnc</codeph> to determine the public port. In the
+        <li>Run <codeph>netstat -anp | grep vnc</codeph> to determine the public port. In the
           example below it is port 5903:
           <codeblock>stack@helion-cp1-c1-m1-mgmt:~$ netstat -anp | grep vnc
 (Not all processes could be identified, non-owned process info
