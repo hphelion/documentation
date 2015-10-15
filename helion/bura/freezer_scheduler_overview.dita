@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_mlh_wtn_rt">
+  <title>Freezer Scheduler Overview</title>
+  <body>
+    <p>This document explains, through examples, how to setup Backup and Restore jobs using Freezer
+      Scheduler.</p>
+    <section><title>Overview</title>
+      <p>The freezer scheduler is a long running process that executes the following:<ul>
+          <li>Interact with the freezer API</li>
+          <li>Generate a client_id to register the client on to the API, so to be able to identify
+            the node during the next executions</li>
+          <li>Execute the freezer-agent according the jobs information retrieved from the API</li>
+          <li>Writes to the freezer API the outcome of the freezer-agent execution</li>
+      </ul></p><note>Freezer API maintains information about jobs in Elastic Search Database.</note></section>
+    <section><title>Freezer Scheduler Client-ID</title>
+      <p>In HOS 2.0, Freezer Scheduler is automatically installed on Deployer Node and Controller nodes.</p>
+      <p>There is a  client_id for each node and its corresponds to the hostname. The client_id is created at registration time. The registration is done automatically when the scheduler execute any request to the API. If the user wants to execute the registration explicitly, then scheduler option --register can be used.</p>
+      <p>Here is an example that lists all the freezer scheduler clients.</p><codeblock> root@padawan-ccp-c0-m1-mgmt:/home/stack/scratch/ansible/next/hos/ansible# freezer-scheduler  client-list
++---------------------------+---------------------------+-------------+
+|         client_id         |          hostname         | description |
++---------------------------+---------------------------+-------------+
+| padawan-ccp-comp0001-mgmt | padawan-ccp-comp0001-mgmt |             |
+|   padawan-ccp-c0-m1-mgmt  |   padawan-ccp-c0-m1-mgmt  |             |
+|   padawan-ccp-c1-m2-mgmt  |   padawan-ccp-c1-m2-mgmt  |             |
+| padawan-ccp-comp0002-mgmt | padawan-ccp-comp0002-mgmt |             |
+|   padawan-ccp-c1-m3-mgmt  |   padawan-ccp-c1-m3-mgmt  |             |
+| padawan-ccp-comp0003-mgmt | padawan-ccp-comp0003-mgmt |             |
+|   padawan-ccp-c1-m1-mgmt  |   padawan-ccp-c1-m1-mgmt  |             |
++---------------------------+---------------------------+-------------+</codeblock></section>
+  </body>
+</topic>
