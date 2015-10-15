@@ -31,5 +31,25 @@
         </tgroup>
       </table>
     </p>
+    <p>
+      <simpletable frame="all" relcolwidth="1.0* 1.0*" id="simpletable_m2l_kvq_rt">
+        <sthead>
+          <stentry>test</stentry>
+          <stentry>test2</stentry>
+        </sthead>
+        <strow>
+          <stentry>blah</stentry>
+          <stentry/>
+        </strow>
+        <strow>
+          <stentry/>
+          <stentry/>
+        </strow>
+        <strow>
+          <stentry/>
+          <stentry/>
+        </strow>
+      </simpletable>
+    </p>
   </body>
 </topic>
