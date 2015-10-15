@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_qlr_s3c_nt">
- <title><keyword keyref="prodLong"></keyword> <keyword keyref="prodVer"></keyword>: Documentation</title>
+ <title><keyword keyref="prodLong"/>
+    <keyword keyref="prodVer"/>: Documentation</title>
  <shortdesc/>
  <prolog>
    <metadata>
@@ -9,13 +10,11 @@
    </metadata>
  </prolog>
  <conbody>
-    <p><keyword keyref="prodLong"/> is a certified distribution of the <xref
-        href="http://www.cloudfoundry.org/" format="html" scope="external">Cloud Foundry
-        Platform-as-a-Service (PaaS)</xref> software. You can run <keyword keyref="prodShort"/> from
-      the command line to deploy a private or public PaaS.</p>
+    <p><keyword keyref="prodLong"/> is a certified distribution of <xref
+        href="http://www.cloudfoundry.org/" format="html" scope="external">Cloud Foundry</xref>.</p>
     <p>
       <keyword keyref="prodShort"/> uses containers for bundling all major functions, for
-      representing roles, and for providing simple update and upgrade workflows. It also uses <xref
+      representing roles and for providing simple update and upgrade workflows. It also uses <xref
         href="https://www.consul.io/" format="html" scope="external">Consul</xref> for centralized
       configuration storage that runs on each host VM.</p>
     <ul id="ul_zrh_ll3_rt">
