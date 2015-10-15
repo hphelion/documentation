@@ -19,7 +19,6 @@
               href="../../media/esx/eon_maintenance.png" id="image_jxq_22n_rt"/></p></li>
         <li>Disconnect the VM, Right click and select <b>Disconnect</b>.<p><image
               href="../../media/esx/eon_disconnect_maintenance.png" id="image_zx3_j2n_rt"/></p></li>
-        <li>Remove the ESX host from the cluster. </li>
       </ol></p>
   </body>
 </topic>
