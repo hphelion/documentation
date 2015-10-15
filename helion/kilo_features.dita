@@ -33,7 +33,28 @@
               Features</xref></li>
         </ul>
       </p>
+
+
+
     </section>
+    <simpletable frame="all" relcolwidth="1.0* 1.0*" id="simpletable_bpy_d2q_rt">
+      <sthead>
+        <stentry>data 1</stentry>
+        <stentry>data 2</stentry>
+      </sthead>
+      <strow>
+        <stentry/>
+        <stentry/>
+      </strow>
+      <strow>
+        <stentry/>
+        <stentry/>
+      </strow>
+      <strow>
+        <stentry/>
+        <stentry/>
+      </strow>
+    </simpletable>
 
     <section id="NovaFeatures">
       <title>Nova Features</title>
