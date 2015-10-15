@@ -3,7 +3,6 @@
  
 <map xml:lang="en" linking="none" locktitle="no">
 <title>HP Helion Development Platform</title>
-  <topicref href="table_test.dita" navtitle="table test"/>
   <topichead navtitle="Command Line Clients">
     <topicref href="2.0/helion/CLI/ALS_Client_Downloads.dita"
       navtitle="Command Line Client Downloads" locktitle="yes"/>
