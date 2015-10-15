@@ -289,6 +289,7 @@
       <topicref href="helion/esx/scale_config_changes.dita"/>
       <!-- END HORIZON -->
     </topichead>
+    <topicref href="helion/blockstorage/ceph/ceph_deploy.dita"/>
     <!-- END USER GUIDE -->
 
     <!-- CONCEPTS -->
