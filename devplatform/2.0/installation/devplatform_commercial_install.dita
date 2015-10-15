@@ -2,28 +2,9 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic24073">
 <title>HP Helion 2.0 Development Platform: Installation and Configuration</title>
-<titlealts>
-<searchtitle>HP Helion 2.0 Development Platform: Commercial Installation and Configuration</searchtitle>
-</titlealts>
-<prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 2.0"/>
-<othermeta name="role" content="Systems Administrator"/>
-<othermeta name="role" content="System Engineer"/>
-<othermeta name="role" content="Cloud Administrator"/>
-<othermeta name="role" content="Network Administrator"/>
-<othermeta name="role" content="Application Developer"/>
-<othermeta name="role" content="Application Developer"/>
-<othermeta name="role" content="ISV Developer"/>
-<othermeta name="role" content="Service Developer"/>
-<othermeta name="role" content="Jayme P, Patrick F"/>
-</metadata>
-</prolog>
 <body>
 <section>
-<p>HP Helion Development Platform contains the Application Lifecycle Service, Database, Marketplace, and Messaging services.</p>
+<p>Installing HP Helion Development Platform requires first installing the service deployer itself and then deploying key services.</p>
 <p>The following topics explain how to install and configure a new deployment of the HP Helion
         Development Platform. There is also <xref
           href="../devplatform.troubleshooting.dita">Troubleshooting</xref> documentation to handle
@@ -34,7 +15,7 @@
   <li>
   <xref href="#id_l4p_cxw_ft" format="dita">Install the HP Helion Development Platform</xref>
 </li>
-  <li> <xref href="#id_jbr_5qv_ft" format="dita">Install the Horizon UI Panels</xref></li>
+<!--    <li> <xref href="#id_jbr_5qv_ft" format="dita">Install the Horizon UI Panels</xref></li>-->
 <li>
   <xref href="#id_o3f_zww_ft" format="dita">Install the Application Lifecycle Service</xref></li>
 
@@ -54,9 +35,9 @@
   <topic id="id_l4p_cxw_ft" conref="devplatform_install_platform.dita#topic_gly_xmh_ts">
     <title/>
   </topic>
-  <topic id="id_jbr_5qv_ft" conref="devplatform.horizonui.install.dita#topic4029">
+ <!-- <topic id="id_jbr_5qv_ft" conref="devplatform.horizonui.install.dita#topic4029">
     <title>Install the Horizon UI Panels</title>
-  </topic>
+  </topic> -->
   <topic id="id_o3f_zww_ft" conref="devplatform_install_ALS.dita#topic_txg_cnh_ts">
     <title>Install the Application Lifecycle Service</title>
   </topic>
@@ -66,11 +47,5 @@
   <!--<topic id="id_hm5_bxw_ft" conref="devplatform_install_messaging.dita#topic_t3w_fnh_ts">
     <title>Install the Message Service</title>
   </topic>-->
- 
-  
-  
-  
-  
-  
   
 </topic>
