@@ -9,33 +9,38 @@
         standalone node(s) then you must decide prior to the deployment of Ceph. HP Helion OpenStack
         2.0 does not support deployment transition. Once Ceph is deployed, you cannot migrate
         monitor service(s) from controller to standalone node(s). </note></p>
-    <section><b>Prerequisite</b><p>The deployer node must be setup before starting Ceph deployment.
-        For more details on the installation of deployer node, refer to <xref
-          href="../../install_entryscale_kvm_vsa.dita#install_kvm">installation
-      guide.</xref></p></section>
+    <section>
+            <title>Prerequisite</title>
+            <p>The deployer node must be setup before starting Ceph deployment. For more details on
+                the installation of deployer node, refer to <xref
+                    href="../../install_entryscale_kvm_vsa.dita#install_kvm">installation
+                    guide.</xref></p>
+        </section>
     <p><b>Procedure to install monitor service(s) on a dedicated resource node(s)</b></p>
     <p>Perform the following procedure to install monitor on dedicated nodes:<ol id="ol_thh_pxn_rt">
         <li>Login to the deployer node.</li>
         <li>Ensure that your cloud definition
             (<codeph>~/helion/examples/entry-scale-kvm-ceph/*</codeph>) is placed under
-            <i>~/helion/my_cloud/definition/</i> directory.  </li>
+            <i>~/helion/my_cloud/definition/</i> directory. </li>
         <li>From <b>server-role: CONTROLLER-ROLE</b> in
             <i>~/helion/my_cloud/definition/data/control_plane.yml</i> file, remove the line
             <codeph>- ceph-monitor</codeph>. (<b>can i get the sample file??</b>)</li>
-        <li>Copy the following section in
-            <codeph>~/helion/my_cloud/definition/data/control_plane.yml</codeph>
-            file.<codeblock>- name: mon
+        <li>Edit <codeph>~/helion/my_cloud/definition/data/control_plane.yml</codeph> file to add
+                    monitor node as shown
+                        below.<codeblock>- name: mon
   resource-prefix: ceph-mon
   server-role: MON-ROLE
   service-components:
   - ntp-client
   - ceph-monitor</codeblock><note>Ensure
-            that the section is correctly indented.</note></li>
-        <li>Define the monitor resource</li>
-        <li>Copy the below definition in
-            <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> file to define all the
-          monitor nodes in the cloud. You must repeat this for each monitor
-            node.<codeblock>- id: mon4
+                        that the section is correctly indented.</note></li>
+        <li>Define the monitor resource as detailed in <xref
+            href="defining_monitor_resource.dita#topic_owr_kf4_rt">Defining Monitor Resource
+            Node</xref>.</li>
+        <li>Edit <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> file to define all
+                    the monitor nodes in the cloud as shown below. You must repeat this for each
+                    monitor
+                        node.<codeblock>- id: mon4
   ip-addr: 192.168.10.11
   role: MON-ROLE
   server-group: RACK3
@@ -44,8 +49,8 @@
   ilo-ip: 192.168.9.11
   ilo-password: password
   ilo-user: admin</codeblock><note>
-            Substitute the values in above sample with appropriate values for each of the monitor
-            nodes being added.</note></li>
+                        Substitute the values in above sample, as per your environment, for each of
+                        the monitor nodes being added.</note></li>
         <li>Commit your configuration
           <codeblock>cd ~/helion/hos/ansible
 git add -A
@@ -64,12 +69,5 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
 ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
           </p></li>
       </ol></p>
-    <section>
-      <title>Defining Monitor Resource</title>
-      <p>Perform the following procedure to define a monitor resource:<ol id="ol_wmt_b24_rt">
-          <li>Login to the deployer node.</li>
-          <li/>
-        </ol></p>
-    </section>
   </body>
 </topic>
