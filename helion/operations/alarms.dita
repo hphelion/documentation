@@ -1090,29 +1090,14 @@ ansible-playbook -i hosts/verb_hosts ops-console-start.yml</codeblock></entry>
               </entry>
             </row>
             <row>
-              <entry>Swift host ping</entry>
-              <entry>Alarms if the specified Swift target host cannot be pinged</entry>
-              <entry>The server is down.</entry>
-              <entry>
-                <p>Reboot the server.</p>
-                <p>If many servers have this alarm, it may indicate that the network has a
-                  failure.</p>
-              </entry>
-            </row>
-            <row>
               <entry>Swift host socket connect</entry>
-              <entry>Alarms if a socket cannot be opened to the specified target Swift host and
-                port</entry>
-              <entry>The server may be down. The Swift process running on the server may have
-                stopped. You may be able to distinguish these situations by looking to see if there
-                are "Swift services" or "Swift host ping" alarms. The "msg" field may also provide
-                additional information.</entry>
-              <entry>
-                <p>If the server is down, boot it.</p>
-                <p>If Swift processes have stopped, you can restart them by using the
-                  swift-start.yml playbook. if this fails, rebooting the node will restart the Swift
-                  processes.</p>
-              </entry>
+              <entry>Alarms if a socket cannot be opened to Keystone token validation API.</entry>
+              <entry>The Keystone server may be down. Another possible cause is that the network
+                between the host reporting the problem and the Keystone server or that the haproxy
+                process is not forwarding requests to Keystone.</entry>
+              <entry>The "URL" dimension contains the name of the VIP. Use curl of other similar
+                programs to confirm that a connection can or cannot be made to the VIP. Check that
+                haproxy is running. Check that the Keystone service is working.</entry>
             </row>
             <row>
               <entry>Swift memcache connect</entry>
