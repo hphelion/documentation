@@ -148,6 +148,7 @@ helion/hos/                    Directory contains files used by the installer</c
                   Model</xref>.</p>
             </li>
           </ol>
+          <!--
           <p>If you chose to use your first controller node as your deployer, ensure that your
               <codeph>servers.yml</codeph> file contains the <codeph>is-deployer: true</codeph>
             notation in your controller options. If you are using a dedicated deployer node you can
@@ -163,7 +164,7 @@ helion/hos/                    Directory contains files used by the installer</c
     ilo-ip: 192.168.9.3
     ilo-password: password
     ilo-user: admin
-    <b>is-deployer: true</b></codeblock></p>
+    <b>is-deployer: true</b></codeblock></p> -->
           <p>Optionally, you can use the <codeph>hosencrypt.py</codeph> script to encrypt your iLo
             passwords. This script uses OpenSSL.</p>
           <ol>
@@ -191,7 +192,7 @@ git commit -m "My config or other commit message"</codeblock>
           information.</note></p>
     </section>
     <section id="config_processor"><title>Run the Configuration Processor</title>
-      <p>Once you have your configuration files setup you need to run the processor to complete your
+      <p>Once you have your configuration files setup you need to run the configuration processor to complete your
         configuration.</p>
       <p>When you run the configuration processor you will be prompted for two passwords. Enter the
         first password to make the configuration processor encrypt its sensitive data, which is
@@ -239,11 +240,12 @@ ansible-playbook -i hosts/localhost bm-power-status.yml</codeblock></li>
           the nodes. For example, if a node maintenance is required or if the SSH keys are lost. The
           value is encrypted and placed in the kickstart for the node installs. <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost cobbler-deploy.yml -e hlmuser_password="&lt;password>"</codeblock>
+          <!--
           <p>The cobbler-deploy stage of the installation now prompts for a password. The entered
             value is used to set a user-defined password for subsequent node installs so that a user
             can gain console/terminal access to the nodes. For example, if a node maintenance is
             required or if the SSH keys are lost. The value is encrypted and placed in the kickstart
-            for the node installs.</p></li>
+            for the node installs.</p> --></li> 
       </ol>
     </section>
     <section id="provision_nodes"><title>Provision the Nodes</title>
