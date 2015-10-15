@@ -33,35 +33,12 @@
               Features</xref></li>
         </ul>
       </p>
-
-
-
     </section>
-    <simpletable frame="all" relcolwidth="1.0* 1.0*" id="simpletable_bpy_d2q_rt">
-      <sthead>
-        <stentry>data 1</stentry>
-        <stentry>data 2</stentry>
-      </sthead>
-      <strow>
-        <stentry/>
-        <stentry/>
-      </strow>
-      <strow>
-        <stentry/>
-        <stentry/>
-      </strow>
-      <strow>
-        <stentry/>
-        <stentry/>
-      </strow>
-    </simpletable>
 
     <section id="NovaFeatures">
       <title>Nova Features</title>
-      
-
-        <!--<table frame="all" rowsep="1" colsep="1" id="NovaTable">-->
-        <table id="NovaTable">
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="NovaTable">
           <title>Nova Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1"/>
@@ -244,7 +221,7 @@
             </tbody>
           </tgroup>
         </table>
-      
+      </p>
     </section>
 
     <section id="NeutronFeatures">
