@@ -284,7 +284,6 @@
       <topicref href="helion/esx/eon_service.dita">
         <topicref href="helion/esx/esx_host_commissioning.dita"/>
         <topicref href="helion/esx/remove_existing_cluster_%20compute_resource_pool.dita"/>
-        <topicref href="helion/esx/remove_existing_cluster_%20compute_resource_pool.dita"/>
         <topicref href="helion/esx/enable_new_cluster_compute_resource.dita"/>
         <topicref href="helion/esx/removing_esx_host_from_cluster.dita"/>
       </topicref>
