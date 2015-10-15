@@ -34,7 +34,7 @@
     </section>
 
     <section id="NovaFeatures">
-      <title>Nova Features</title>
+      <title>Compute Features</title>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="NovaTable">
           <tgroup cols="4">
@@ -222,9 +222,9 @@
     </section>
 
     <section id="NeutronFeatures">
+      <title>Networking Features</title>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="NeutronTable">
-          <title>Neutron Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
             <colspec colname="newCol2" colnum="2" colwidth="1*"/>
@@ -402,9 +402,9 @@
     </section>
 
     <section id="GlanceFeatures">
+      <title>Glance Features</title>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="GlanceTable">
-          <title>Glance Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
             <colspec colname="c2" colnum="2" colwidth="1.0*"/>
@@ -516,7 +516,7 @@
     </section>
 
     <section id="SwiftFeatures">
-      <title>Swift Features</title>
+      <title>Object Storage Features</title>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="SwiftTable">
           <title>Swift Features in Kilo</title>
@@ -700,9 +700,9 @@
     </section>
 
     <section id="CinderFeatures">
+      <title>Block Storage Features</title>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="CinderTable">
-          <title>Cinder Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
             <colspec colname="c2" colnum="2" colwidth="1.0*"/>
@@ -784,9 +784,9 @@
     </section>
 
     <section id="KeystoneFeatures">
+      <title>Keystone Features</title>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="KeystoneTable">
-          <title>Keystone Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
             <colspec colname="c2" colnum="2" colwidth="1.0*"/>
@@ -904,9 +904,9 @@
     </section>
 
     <section id="CeilometerFeatures">
+      <title>Ceilometer Features</title>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="CeilometerTable">
-          <title>Ceilometer Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
             <colspec colname="c2" colnum="2" colwidth="1.0*"/>
@@ -986,9 +986,9 @@
     </section>
 
     <section id="HeatFeatures">
+      <title>Heat Features</title>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="HeatTable">
-          <title>Heat Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
             <colspec colname="c2" colnum="2" colwidth="1.0*"/>
@@ -1136,6 +1136,7 @@
     -->
 
     <section id="HorizonFeatures">
+      <title>Horizon Features</title>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="HorizonTable">
           <title>Horizon Features in Kilo</title>
@@ -1184,9 +1185,9 @@
     </section>
 
     <section id="MonascaFeatures">
+      <title>Monitoring Features</title>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="MonascaTable">
-          <title>Monasca Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
             <colspec colname="c2" colnum="2" colwidth="1.0*"/>
