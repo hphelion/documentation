@@ -5,12 +5,7 @@
   <body>
     <section id="KiloFeatures">
       <title>HP Helion OpenStack 2.0 Kilo Features</title>
-      <p>Core features are enabled by default and supported by HP.</p>
-      <p>Non-core services are provided as-is and supported on a best-effort basis only, but are
-        provided in this release to provide early access to features that HP may support fully in
-        future releases, as well as legacy features that OpenStack is planning to deprecate but may
-        be needed in the short-term for compatibility reasons. If you need additional support on any
-        of these features for a specific use case, please contact HP’s professional services team. </p>
+     
       
       <p>
         <ul id="KiloFeatureJumplist">
@@ -42,7 +37,6 @@
 
     <section id="NovaFeatures">
       <title>Nova Features</title>
-      <p>Nova features and their corresponding state with the HP Helion OpenStack 2.0 release.</p>
       
       <p>
         <table frame="all" rowsep="1" colsep="1" id="NovaTable">
@@ -55,9 +49,9 @@
             <thead>
               <row>
                 <entry>Category</entry>
-                <entry>Core (Included)</entry>
-                <entry>Non-Core (Included)</entry>
-                <entry>Not Included</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Disabled</entry>
               </row>
             </thead>
             <tbody>
@@ -233,9 +227,6 @@
 
     <section id="NeutronFeatures">
       <title>Neutron Features</title>
-      <p>OpenStack Kilo upstream features that are enabled by default in HOS V2.0.  List high level
-        Kilo features here that are enabled in HP Helion OpenStack 2.0. This list is for Product Management
-        for use in communication with the field &amp; customers.</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="NeutronTable">
           <title>Neutron Features in Kilo</title>
@@ -247,9 +238,9 @@
             <thead>
               <row>
                 <entry>Category</entry>
-                <entry>Core (Included)</entry>
-                <entry>Non-core (Included)</entry>
-                <entry>Not Included</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Dsiabled</entry>
               </row>
             </thead>
             <tbody>
@@ -417,8 +408,7 @@
 
     <section id="GlanceFeatures">
       <title>Glance Features</title>
-      <p>Glance Description</p>
-      <p>
+       <p>
         <table frame="all" rowsep="1" colsep="1" id="GlanceTable">
           <title>Glance Features in Kilo</title>
           <tgroup cols="4">
@@ -429,9 +419,9 @@
             <thead>
               <row>
                 <entry>Category</entry>
-                <entry>Core (Included)</entry>
-                <entry>Non-core (Included)</entry>
-                <entry>Not Included</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Disabled</entry>
               </row>
             </thead>
             <tbody>
@@ -533,7 +523,6 @@
 
     <section id="SwiftFeatures">
       <title>Swift Features</title>
-      <p>Swift Description</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="SwiftTable">
           <title>Swift Features in Kilo</title>
@@ -545,9 +534,9 @@
             <thead>
               <row>
                 <entry>Category</entry>
-                <entry>Core (Included)</entry>
-                <entry>Non-core (Included)</entry>
-                <entry>Not Included</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Disabled</entry>
               </row>
             </thead>
             <tbody>
@@ -718,7 +707,6 @@
     
     <section id="CinderFeatures">
       <title>Cinder Features</title>
-      <p>Cinder Description</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="CinderTable">
           <title>Cinder Features in Kilo</title>
@@ -730,9 +718,9 @@
             <thead>
               <row>
                 <entry>Category</entry>
-                <entry>Core (Included)</entry>
-                <entry>Non-core (Included)</entry>
-                <entry>Not Included</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Disabled</entry>
               </row>
             </thead>
             <tbody>
@@ -804,7 +792,6 @@
     
     <section id="KeystoneFeatures">
       <title>Keystone Features</title>
-      <p>Keystone Description</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="KeystoneTable">
           <title>Keystone Features in Kilo</title>
@@ -816,9 +803,9 @@
             <thead>
               <row>
                 <entry>Category</entry>
-                <entry>Core (Included)</entry>
-                <entry>Non-core (Included)</entry>
-                <entry>Not Included</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Disabled</entry>
               </row>
             </thead>
             <tbody>
@@ -926,7 +913,6 @@
     
     <section id="CeilometerFeatures">
       <title>Ceilometer Features</title>
-      <p>Ceilometer Description</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="CeilometerTable">
           <title>Ceilometer Features in Kilo</title>
@@ -938,9 +924,9 @@
             <thead>
               <row>
                 <entry>Category</entry>
-                <entry>Core (Included)</entry>
-                <entry>Non-core (Included)</entry>
-                <entry>Not Included</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Disabled</entry>
               </row>
             </thead>
             <tbody>
@@ -1010,8 +996,7 @@
     
     <section id="HeatFeatures">
       <title>Heat Features</title>
-      <p>Heat Description</p>
-      <p></p>
+      <p>
       <table frame="all" rowsep="1" colsep="1" id="HeatTable">
         <title>Heat Features in Kilo</title>
         <tgroup cols="4">
@@ -1022,9 +1007,9 @@
           <thead>
             <row>
               <entry>Category</entry>
-              <entry>Core (Included)</entry>
-              <entry>Non-core (Included)</entry>
-              <entry>Not Included</entry>
+              <entry>Included</entry>
+              <entry>Included but not enabled</entry>
+              <entry>Disabled</entry>
             </row>
           </thead>
           <tbody>
@@ -1098,6 +1083,7 @@
           </tbody>
         </tgroup>
       </table>
+      </p>
     </section>
     
     <!--
@@ -1161,7 +1147,6 @@
     
     <section id="HorizonFeatures">
       <title>Horizon Features</title>
-      <p>Horizon Description</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="HorizonTable">
           <title>Horizon Features in Kilo</title>
@@ -1173,9 +1158,9 @@
             <thead>
               <row>
                 <entry>Category</entry>
-                <entry>Core (Included)</entry>
-                <entry>Non-core (Included)</entry>
-                <entry>Not Included</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Disabled</entry>
               </row>
             </thead>
             <tbody>
@@ -1211,7 +1196,6 @@
     
     <section id="MonascaFeatures">
       <title>Monasca Features</title>
-      <p>Monasca Description</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="MonascaTable">
           <title>Monasca Features in Kilo</title>
@@ -1223,9 +1207,9 @@
             <thead>
               <row>
                 <entry>Category</entry>
-                <entry>Core (Included)</entry>
-                <entry>Non-core (Included)</entry>
-                <entry>Not Included</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Disabled</entry>
               </row>
             </thead>
             <tbody>

@@ -28,11 +28,11 @@
                             Resource Node</xref></li>
           <li><xref href="reconfiuge_ceph_services.dita#topic_bl1_bfx_qt">Reconfigure ceph
               service</xref></li>
-          <li><?oxy_custom_start type="oxy_content_highlight" color="255,64,0"?>Remove Node
-            Operations<?oxy_custom_end?></li>
+          <li><b><?oxy_custom_start type="oxy_content_highlight" color="255,64,0"?>Remove Node
+                            Operations<?oxy_custom_end?> -- yet to receive the content??</b></li>
           <li><xref href="ceph_operation.dita#topic_wbn_td3_pt">Ceph operations</xref></li>
-          <li>Update and upgrade operations</li>
+          <li><b>Update and upgrade operations -- yet to receive the content</b></li>
         </ul></p></section>
-    <p>You can also monitor ceph components and view the logs.</p>
+    <p>You can also monitor ceph components and view the logs.??</p>
   </body>
 </topic>
