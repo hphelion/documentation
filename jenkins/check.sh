@@ -27,7 +27,7 @@ do
 		then
 		except=`echo $line | sed 's|.*@||'`
 		else
-		except=""
+		except="frabjous"
 		fi
 		if [[ -n $(cat $i | sed 's|^[\s]*| |g' |sed ':a;N;$!ba;s/\n/ /g'| perl -pe  's|<!--.*-->||g'|  grep "$test" | eval egrep -v '"$except"') ]]; 
 		then
