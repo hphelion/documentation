@@ -10,7 +10,7 @@
             Tests</xref></li>
         <li><xref href="#install_verification/volume_verify">Verifying Your Block Storage
             Backend</xref></li>
-        <li><xref href="#install_verification/swift_verify">Validate Your Object Storage
+        <li><xref href="#install_verification/swift_verify">Validate Your Object Storage (Swift)
             Setup</xref></li>
       </ul>
     </section>
@@ -406,7 +406,7 @@ source /etc/environment</codeblock>
         </ol>
       </p>
     </section>
-    <section id="swift_verify"><title>Verifying Your Object Storage</title>
+    <section id="swift_verify"><title>Verifying Your Object Storage (Swift)</title>
       <p><b>Validate That All Servers Have Been Added to the Swift Rings</b></p>
       <ol>
         <li>Run the _swift-validate-input-model.yml playbook as follows:
@@ -431,23 +431,28 @@ ok: [padawan-ccp-c1-m1-mgmt] => {
           in the Swift rings because enough time has not elapsed to allow the rings to be rebuilt.
           You have two options to continue: <ol>
             <li>Repeat the deploy. There are two steps involved as follows: <ol>
-                <li>Delete the ring builder files as described in
-                  http://docs-staging.hpcloud.com/hos2.0ga/#helion/objectstorage/restart_deploy_from_scratch.html</li>
-                <li>Repeat the installation process starting by running the site.yml playbook as
-                  described in "Deploy the Cloud"</li>
+                <li>Delete the ring builder files as described in <xref
+                    href="objectstorage/restart_deploy_from_scratch.dita">Restart Deploy from
+                    Scratch</xref>.</li>
+                <li>Repeat the installation process starting by running the
+                    <codeph>site.yml</codeph> playbook as described in the <xref
+                    href="install_entryscale_kvm.dita#install_kvm/deploy">Deploy the Cloud</xref>
+                  section of the installation instructions.</li>
               </ol></li>
             <li>Rebalance the rings several times until all drives are incorporated in the rings.
               This process may take several hours to complete (because you need to wait one hour
-              between each rebalance).The steps are as follows: <ol>
-                <li>Change the min-part-time to 1 hour. See
-                  http://docs-staging.hpcloud.com/hos2.0ga/#helion/objectstorage/how_to_change_min_part_power.html</li>
+              between each rebalance). The steps are as follows: <ol>
+                <li>Change the min-part-time to 1 hour. See <xref
+                    href="objectstorage/how_to_change_min_part_time.dita">How to Change
+                    mine-part-time</xref>.</li>
                 <li>Use the "First phase of ring rebalance" and "Final rebalance phase" as described
-                  in
-                  http://docs-staging.hpcloud.com/hos2.0ga/#helion/objectstorage/input_model_change_existing_rings.html.
-                  The "Weight change phase of ring rebalance" does not apply because you not set the
-                  weight-step attribute at this stage.</li>
-                <li>Set the min-part-time to the recommended 16 hours as described in
-                  http://docs-staging.hpcloud.com/hos2.0ga/#helion/objectstorage/how_to_change_min_part_power.html</li>
+                  in <xref href="objectstorage/input_model_change_existing_rings.dita">Applying
+                    Input Model Changes to Existing Rings</xref>. The "Weight change phase of ring
+                  rebalance" does not apply because you not set the weight-step attribute at this
+                  stage.</li>
+                <li>Set the min-part-time to the recommended 16 hours as described in <xref
+                    href="objectstorage/how_to_change_min_part_time.dita">How to Change
+                    min-part-time.</xref></li>
               </ol></li>
           </ol></li>
       </ol>
