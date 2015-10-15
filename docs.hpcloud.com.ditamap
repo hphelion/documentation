@@ -297,6 +297,7 @@
     <!-- CONCEPTS -->
     <topichead navtitle="Conceptual Overviews">
       <topicref href="helion/high_availability.dita"/>
+      <topicref href="helion/table_test.dita"/>
     </topichead>
   </topicref>
 </map>
