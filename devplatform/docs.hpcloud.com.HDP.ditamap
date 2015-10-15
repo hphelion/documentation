@@ -35,8 +35,7 @@
     
     
     <!--installation-->
-    <topicref href="2.0/installation/devplatform_commercial_install.dita" navtitle="Installation"
-      locktitle="yes">
+    <topichead navtitle="Installation">
       <topicref href="2.0/installation/devplatform_install_prereq.dita"
         navtitle="Installation Prerequisites" locktitle="yes"/>
       <topicref href="2.0/installation/devplatform_install_platform.dita"
@@ -45,7 +44,7 @@
         navtitle="Install the Application Lifecycle Service" locktitle="yes"/>
       <topicref href="2.0/installation/devplatform_install_database.dita"
         navtitle="Install the Database Service" locktitle="yes"/>
-    </topicref>
+    </topichead>
 
     <!--uninstallation -->
     <!--  <topichead navtitle="Uninstallation"-->
