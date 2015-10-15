@@ -480,7 +480,7 @@ Successfully deleted network info of vCenter: BC9DED4E-1639-481D-B190-2B54A2BF56
             cluster which is already enabled as a compute resource </xref></li>
         <li><xref href="enable_new_cluster_compute_resource.dita#topic_l5t_w5f_rt">Enabling a new
             cluster as a compute resource</xref></li>
-        <li><xref href="remove_existing_cluster_%20compute_resource_pool.dita#topic_lfq_3wf_rt"
+        <li><xref href="remove_existing_cluster_compute_resource_pool.dita#topic_lfq_3wf_rt"
             >Removing an existing cluster from the compute resource pool</xref></li>
         <li><xref href="removing_esx_host_from_cluster.dita#topic_srg_d5h_rt">Removing an existing
             ESX host from cluster</xref></li>
