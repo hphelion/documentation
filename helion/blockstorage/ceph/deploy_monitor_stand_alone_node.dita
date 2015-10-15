@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ah5_4yx_qt">
-  <title><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Deploying Monitor on
-    Standalone Independent Node</title>
+  <title><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>D<?oxy_custom_end?>eploying
+    Monitor Service on Dedicated Resource Node</title>
   <body>
     <p/>
     <p>HOS 2.0 recommends 3 monitor deployment for production setup. As monitor is more of CPU and
@@ -16,7 +16,8 @@
             <p>Customer can achieve so by modifying cloud input model and treating monitor nodes as
             resource nodes. Please node that we do not support deployment transition i.e. customer
             can not deploy monitor on controller node day-1 and later migrate to standalone node. He
-            or she needs to decide upfront before deploying ceph. </p></li>
+            or she needs to decide upfront before deploying ceph.
+          </p><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></li>
       </ol></p>
   </body>
 </topic>

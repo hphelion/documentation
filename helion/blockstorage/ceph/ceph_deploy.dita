@@ -7,18 +7,18 @@
     <p>This page describes configuration, installation, and the integration of Ceph Block Storage
       with HP Helion<tm tmtype="reg">OpenStack</tm>2.0. After the installation of Ceph you can
       perform the OpenStack operations as documented in this page. </p>
-    <p><!--Ceph has two components, i..e., monitor and OSD. These components require different set of hardware specifications as follows:<ul id="ul_pgh_qjv_kt"><li>For monitor node, storage is not required but it is CPU sensitive. </li><li>For OSD nodes, a significant disk media, RAM and reasonable CPU are required.<p>Therefore, with this requirement we recommend the following:<ul id="ul_rl1_jkv_kt"><li>SL4540 for OSD</li><li>SL230 series of servers for monitor if monitors are not deployed on controller node which is our default configuration. If monitor is deployed on controller node, the server used for controlller node is good neough to support monitor. </li></ul></p></li></ul>--></p>
-    <!--<p>Ceph has two component with differing need of hardware specifications: monitor and OSD. Monitors does not need storage but CPU sensitive. OSD needs significant disk media, RAM and reasonable CPU. Keeping this aspect in mind, we do recommend following: SL4540 for OSD DL380 or SL230 series of servers for monitor if monitors are not deployed on controller node which is our default configuration. If monirot is deployed on controller node, the server used for controlller node is good neough to support monitor </p>-->
     <section>
       <title id="preq">Prerequisite</title>
-      <p>The deployer node must be setup before deploying Ceph. For more details on the installation
-        of deployer node, refer to <xref href="../../install_entryscale_kvm_vsa.dita#install_kvm"
-          >installation guide.</xref></p>
-      <p>
-        <note type="important">If you want monitor service on dedicated resource nodes, ensure to
-          add it at the beginning of the ceph deployment. Once  Ceph is deployed, you cannot revert
-          the changes and add monitor service on the dedicated resource node.</note>
-      </p>
+      <ul id="ul_pmb_s1m_rt">
+        <li>The deployer node must be setup before deploying Ceph. For more details on the
+          installation of deployer node, refer to <xref
+            href="../../install_entryscale_kvm_vsa.dita#install_kvm">installation guide.</xref></li>
+        <li>You can deploy monitor service on a dedicated resource. Ensure to modify your
+          environment after deploying the deployer node. For more details refer to <xref
+            href="deploy_monitor_stand_alone_node.dita#topic_ah5_4yx_qt">Install a monitor service
+            on a dedicated resource node</xref>.</li>
+      </ul>
+      <p/>
     </section>
     <section>
       <title id="install-procedure">Installation Procedure</title>
