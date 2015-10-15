@@ -5,8 +5,6 @@
   <body>
     <section id="KiloFeatures">
       <title>HP Helion OpenStack 2.0 Kilo Features</title>
-     
-      
       <p>
         <ul id="KiloFeatureJumplist">
           <li><xref href="kilo_features.dita#HP2.0KiloFeatures/NovaFeatures">Nova
@@ -25,7 +23,7 @@
               Features</xref></li>
           <li><xref href="kilo_features.dita#HP2.0KiloFeatures/HeatFeatures">Heat
             Features</xref></li>
-         <!-- <li><xref href="kilo_features.dita#HP2.0KiloFeatures/IronicFeatures">Ironic
+          <!-- <li><xref href="kilo_features.dita#HP2.0KiloFeatures/IronicFeatures">Ironic
               Features</xref></li> -->
           <li><xref href="kilo_features.dita#HP2.0KiloFeatures/HorizonFeatures">Horizon
               Features</xref></li>
@@ -37,35 +35,8 @@
 
     <section id="NovaFeatures">
       <title>Nova Features</title>
-      <p><table frame="all" rowsep="1" colsep="1" id="table_y3p_bwq_rt">
-          <tgroup cols="2">
-            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
-            <thead>
-              <row>
-                <entry>test</entry>
-                <entry>test</entry>
-              </row>
-            </thead>
-            <tbody>
-              <row>
-                <entry>blah</entry>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>test</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="NovaTable">
-          <title>Nova Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1"/>
             <colspec colname="c2" colnum="2"/>
@@ -433,7 +404,7 @@
 
     <section id="GlanceFeatures">
       <title>Glance Features</title>
-       <p>
+      <p>
         <table frame="all" rowsep="1" colsep="1" id="GlanceTable">
           <title>Glance Features in Kilo</title>
           <tgroup cols="4">
@@ -729,7 +700,7 @@
         </table>
       </p>
     </section>
-    
+
     <section id="CinderFeatures">
       <title>Cinder Features</title>
       <p>
@@ -814,7 +785,7 @@
         </table>
       </p>
     </section>
-    
+
     <section id="KeystoneFeatures">
       <title>Keystone Features</title>
       <p>
@@ -935,7 +906,7 @@
         </table>
       </p>
     </section>
-    
+
     <section id="CeilometerFeatures">
       <title>Ceilometer Features</title>
       <p>
@@ -1018,99 +989,99 @@
         </table>
       </p>
     </section>
-    
+
     <section id="HeatFeatures">
       <title>Heat Features</title>
       <p>
-      <table frame="all" rowsep="1" colsep="1" id="HeatTable">
-        <title>Heat Features in Kilo</title>
-        <tgroup cols="4">
-          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
-          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
-          <thead>
-            <row>
-              <entry>Category</entry>
-              <entry>Included</entry>
-              <entry>Included but not enabled</entry>
-              <entry>Disabled</entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry morerows="1">Cloud Infrastructure</entry>
-              <entry>Stack create/update/restore</entry>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry>Stack snapshot/restore</entry>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry morerows="2">Cloud Application</entry>
-              <entry>Deployment</entry>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry>Configuration Management</entry>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry>Auto-scaling with Ceilometer</entry>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry morerows="1">Template</entry>
-              <entry>HOT &amp; CFN</entry>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry>Validate &amp; Preview Stack</entry>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry>Heat Engine</entry>
-              <entry>Monitor the Deployed Heat Engine Status</entry>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry morerows="1">Stack</entry>
-              <entry>Hidden</entry>
-              <entry>Multi-Region Stack</entry>
-              <entry/>
-            </row>
-            <row>
-              <entry>Keystone Based Stack</entry>
-              <entry>Abandon &amp; Adopt</entry>
-              <entry/>
-            </row>
-            <row>
-              <entry>Resource</entry>
-              <entry>Nova, Cinder, Neutron, etc</entry>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry>Scheduler</entry>
-              <entry/>
-              <entry>Hints</entry>
-              <entry/>
-            </row>
-          </tbody>
-        </tgroup>
-      </table>
+        <table frame="all" rowsep="1" colsep="1" id="HeatTable">
+          <title>Heat Features in Kilo</title>
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Category</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Disabled</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry morerows="1">Cloud Infrastructure</entry>
+                <entry>Stack create/update/restore</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Stack snapshot/restore</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="2">Cloud Application</entry>
+                <entry>Deployment</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Configuration Management</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Auto-scaling with Ceilometer</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="1">Template</entry>
+                <entry>HOT &amp; CFN</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Validate &amp; Preview Stack</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Heat Engine</entry>
+                <entry>Monitor the Deployed Heat Engine Status</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="1">Stack</entry>
+                <entry>Hidden</entry>
+                <entry>Multi-Region Stack</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Keystone Based Stack</entry>
+                <entry>Abandon &amp; Adopt</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Resource</entry>
+                <entry>Nova, Cinder, Neutron, etc</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Scheduler</entry>
+                <entry/>
+                <entry>Hints</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
       </p>
     </section>
-    
+
     <!--
     <section id="IronicFeatures">
       <title>Ironic Features</title>
@@ -1169,7 +1140,7 @@
       </p>
     </section>
     -->
-    
+
     <section id="HorizonFeatures">
       <title>Horizon Features</title>
       <p>
@@ -1218,7 +1189,7 @@
         </table>
       </p>
     </section>
-    
+
     <section id="MonascaFeatures">
       <title>Monasca Features</title>
       <p>
@@ -1272,11 +1243,11 @@
         </table>
       </p>
     </section>
-    
+
     <section id="MoreInfo">
       <title>More Information</title>
-      <p>For more information on OpenStack Kilo, see the OpenStack Kilo release page: 
-        <xref href="https://www.openstack.org/software/kilo/" scope="external" format="html"/></p>
+      <p>For more information on OpenStack Kilo, see the OpenStack Kilo release page: <xref
+          href="https://www.openstack.org/software/kilo/" scope="external" format="html"/></p>
     </section>
   </body>
 </topic>
