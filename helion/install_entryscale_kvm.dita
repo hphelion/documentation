@@ -32,14 +32,14 @@
           system.</li>
         <li>All machines of a given role should be the same configuration.</li>
         <li>The machine hosting the deployer and all baremetal systems must be connected to a
-          management network. Nodes on this management network must be able to reach the iLO
+          management network (MGMT). Nodes on this management network must be able to reach the iLO
           subsystem of each baremetal system to enable host reboots as part of the install process.
           The HP Helion OpenStack architecture requires that the IPMI network is a separate network
           and that a route exists from the management network to the IPMI network for iLO
           access.</li>
         <li>There is no requirement to have a dedicated network for OS-install and system
-          deployment. More information can be found on the <xref href="example_configs.dita"
-            >Supported Configuration</xref> page.</li>
+          deployment, this can be shared with the management network.  More information can be found
+          on the <xref href="example_configs.dita">Supported Configuration</xref> page.</li>
       </ul>
     </section>
     <section id="prereqs">
@@ -172,7 +172,7 @@ helion/hos/                    Directory contains files used by the installer</c
             <li>Put the encrytion key into the following environment variable:
               <codeblock>export HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeblock></li>
             <li>Run the python script below and follow the instructions. Enter a password that you
-              want to encrypt. <codeblock>hosencrypt.py</codeblock></li>
+              want to encrypt. <codeblock>~/hosencrypt.py</codeblock></li>
             <li>Take the string generated and place it in the <codeph>"ilo_password"</codeph> field
               in your <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> file,
               remembering to enclose it in quotes.</li>
@@ -226,9 +226,10 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
         subsequently, Cobbler will not serve it. This is deliberate so that you can't reimage a live
         node by accident.</p>
       <p>The <codeph>cobbler-deploy.yml</codeph> playbook prompts for a password - this is the
-        password to be able to log in to the nodes via their consoles after install. The username is
-        the same as the user set up in the initial dialogue when installing the deployer from the
-        iso, and is the same user that is running the cobbler-deploy play.</p>
+        password, associated with the user running the command on the deployer, to be able to log in
+        to the nodes via their consoles after install. The username is the same as the user set up
+        in the initial dialogue when installing the deployer from the iso, and is the same user that
+        is running the cobbler-deploy play.</p>
       <ol>
         <li>Run the following playbook which confirms that there is iLo connectivity for each of
           your nodes so that they are accessible to be re-imaged in a later step:
@@ -239,7 +240,7 @@ ansible-playbook -i hosts/localhost bm-power-status.yml</codeblock></li>
           password for subsequent node installs so that a user can gain console/terminal access to
           the nodes. For example, if a node maintenance is required or if the SSH keys are lost. The
           value is encrypted and placed in the kickstart for the node installs. <codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost cobbler-deploy.yml -e hlmuser_password="&lt;password>"</codeblock>
+ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
           <!--
           <p>The cobbler-deploy stage of the installation now prompts for a password. The entered
             value is used to set a user-defined password for subsequent node installs so that a user
