@@ -349,7 +349,8 @@
           Definitions.</li>
         <li>Navigate to the Monitoring | Alarm page</li>
         <li>Find the alarm definitions applied to the various hosts. These should match the alarm
-          definitions in the <xref href="alarms.dita">Alarms Definitions list</xref> below.</li>
+          definitions in the <xref href="alarms.dita#alarmdefinitions/logging">Logging Alarm
+            Definitions list</xref> .</li>
         <li>See if the alarm is green (good) or is in a bad state. If any are in a bad state, see
           the possible actions to perform in the <xref href="alarms.dita">Alarms Definitions
             list</xref>.</li>
