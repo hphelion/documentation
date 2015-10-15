@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1423088885963" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Allocating Host Memory for VM Pages or Platform Use</title>
+    <shortdesc>You can edit the platform and VM page memory allocations for a NUMA
+        node from the web administration interface using the <wintitle>Memory</wintitle> tab on the <wintitle>Inventory</wintitle>
+        pane.</shortdesc>
+    <prolog><author/>
+        <author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <prereq id="prereq_N1002C_N10029_N10001">
+            <p>Before requesting huge pages on a host, ensure that the host has
+                enough available memory. For details, see <xref href="jow1423087781001.xml"/>. If a huge page request cannot be allocated from the available
+                memory, an informative message is displayed.</p>
+        </prereq>
+        <steps>
+            <step id="step_N10033_N10030_N10024_N10001">
+                <cmd>On the <uicontrol>Inventory</uicontrol> pane, lock the host you
+                    want to edit.</cmd>
+            </step>
+            <step id="step_N1004B_N10039_N10029_N10001">
+                <cmd>Click the <uicontrol>Host Name</uicontrol> to
+                    open the settings for the host.</cmd>
+            </step>
+            <step id="step_N10058_N10039_N10029_N10001">
+                <cmd>On the <uicontrol>Memory</uicontrol> tab, click
+                        <uicontrol>Update Memory</uicontrol>.</cmd>
+                <info>
+                    <fig id="fig_gcz_rdf_2r">
+                        <image href="jow1424729372811.image" id="image_kg3_sdf_2r" width="5in">
+                            <alt>Update Memory button</alt>
+                        </image>
+                    </fig>
+                </info>
+            </step>
+            <step id="step_N1006A_N10039_N10029_N10001">
+                <cmd>Use the <wintitle>Update Memory
+                        Allocation</wintitle> dialog box to set the memory allocations for each NUMA
+                    node. </cmd>
+                <info>
+                    <p>For each available NUMA node, three fields are supplied, as
+                        illustrated in the following example screen for two NUMA nodes.</p>
+                    <fig id="fig_u13_tdf_2r">
+                        <image href="jow1424729464258.image" id="image_tcp_tdf_2r" width="5in">
+                            <alt>tis-hugepage-memory-dialog</alt>
+                        </image>
+                    </fig>
+                    <dl>
+                        <dlentry>
+                            <dt>Platform Memory for Node <i>n</i></dt>
+                            <dd>
+                                <p>The amount of memory to reserve for platform use
+                                    on the NUMA Node, in MiB. To see the minimum requirement, hover
+                                    over the Information icon next to the field. </p>
+                                <fig id="fig_wc1_f4q_ps">
+                                    <image href="jow1436294915672.image" id="image_drk_k4q_ps">
+                                        <alt>TiS minimum platform memory tooltip</alt>
+                                    </image>
+                                </fig>
+                            </dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt># of VM 2M Hugepages Node <i>n</i></dt>
+                            <dd>
+                                <p>The number of 2 MiB huge pages to reserve for VM
+                                    use on the NUMA Node. If no 2 MiB pages are required, type
+                                    0.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt># of VM 1G Hugepages Node <i>n</i></dt>
+                            <dd>
+                                <p>The number of 1 GiB huge pages to reserve for VM
+                                    use on the NUMA Node. If no 1 GiB pages are required, type
+                                    0.</p>
+                            </dd>
+                        </dlentry>
+                    </dl>
+                    <p>To see how many huge pages of a given size you can
+                        successfully request on a node (assuming that pages of another size are not
+                        also requested), hover over the Information icon next to the field.</p>
+                    <fig id="fig_zdt_vzd_cs">
+                        <image href="jow1432129731308.image" id="image_blt_xzd_cs" width="2.5in">
+                            <alt>TiS Update Hugepage Memory: Maximum Pages info</alt>
+                        </image>
+                    </fig>
+                    <p>Any unused memory is automatically allocated as 4 KiB pages
+                        of regular memory for VMs. You must use the Memory Page Size extra spec, or
+                        suitable image metadata, to use these 4 KiB pages as the backing mechanism
+                        for VM memory allocation requests. See <xref href="jow1424723681500.xml"/>
+                        for details.</p>
+                </info>
+            </step>
+            <step id="step_N100D6_N10039_N10029_N10001">
+                <cmd>Click <uicontrol>Save</uicontrol>.</cmd>
+            </step>
+            <step id="step_N100EB_N10039_N10029_N10001">
+                <cmd>Unlock the host and wait for it to be reported as
+                        <nameliteral>Available</nameliteral>.</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

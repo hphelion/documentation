@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333800588" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title ixia_locid="1">The Virtual Machine Scheduler</title>
+    <shortdesc ixia_locid="2">The virtual machine scheduler in HP Helion OpenStack Carrier Grade is a modified version
+        of the OpenStack Nova scheduler. It allows for better placement of virtual machines in order
+        to exploit hardware and network resources, and for a better distribution of the system
+        workload overall.</shortdesc>
+    <prolog>
+        <author></author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="5">In addition to the scheduler actions taken based upon the virtual machine
+            flavor in use, as discussed in <xref href="jow1404333663095.xml" ixia_locid="6"/>, the
+            following are enhancements integrated into the HP Helion OpenStack Carrier Grade Nova scheduler:</p>
+        <dl>
+            <dlentry ixia_locid="7">
+                <dt ixia_locid="8">Memory over-commit policy</dt>
+                <dd ixia_locid="9">
+                    <p ixia_locid="10">There is no support for memory over-commit when scheduling
+                        virtual machines. When launching a virtual machine, the Nova scheduler
+                        reserves the requested memory block from the system in its entirety. The
+                        launch operation fails if not enough memory can be allocated from the
+                        compute cluster.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="11">
+                <dt ixia_locid="12">Network load balancing across processor nodes</dt>
+                <dd ixia_locid="13">
+                    <p ixia_locid="14">When scheduling threads for new virtual CPUs, the Nova
+                        scheduler selects the target core taking into account the load average of
+                        the running AVS cores on each processor node. In a common scenario, the AVS
+                        is deployed on two cores, not necessarily part of the same processor. When a
+                        new virtual machine is launched, the Nova scheduler looks at the average
+                        load incurred by AVS cores on each processor, and then selects the processor
+                        with the lighter load as the target for the new virtual CPUs.</p>
+                    <p ixia_locid="15">This scheduling approach aims at balancing the switching load
+                        on the AVS across virtual machines as they are deployed, and minimizing the
+                        cross-NUMA inefficiencies for AVS switching.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="20">
+                <dt ixia_locid="21">Provider networks access verification</dt>
+                <dd ixia_locid="22">
+                    <p ixia_locid="23">When scheduling a virtual machine, the Nova scheduler
+                        verifies that the target compute node has data interfaces on all needed
+                        provider networks, as determined by the list of tenant networks the virtual
+                        NICs are attached to. This verification helps prevent unnecessary debugging
+                        steps incurred when the networking services on a guest application fail to
+                        operate due to the lack of proper network access.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="140">
+                <dt ixia_locid="141">NUMA node pinning</dt>
+                <dd ixia_locid="142">
+                    <p ixia_locid="143">When scheduling a virtual machine, the Nova scheduler
+                        selects a host on which the virtual NUMA nodes can be affined to specific
+                        host NUMA nodes according to the flavor extra specifications or image
+                        properties.</p>
+                </dd>
+            </dlentry>
+        </dl>
+        <section id="section_N10081_N1001F_N10001" ixia_locid="77">
+            <title ixia_locid="78">The Nova Scheduler and Server Group Policies</title>
+            <p ixia_locid="79">Virtual machines launched as part of a Server Group are subject to scheduling actions
+                determined by the selection of scheduling policy. See <xref href="jow1404333660893.xml" ixia_locid="80"/> for details.</p>
+            <dl>
+                <dlentry ixia_locid="81">
+                    <dt ixia_locid="82">Affinity policy</dt>
+                    <dd ixia_locid="83">
+                        <p ixia_locid="84">The goal of this policy is to schedule all virtual
+                            machines in the Server Group to execute on the same host. The target
+                            compute node is selected by the Nova scheduler when the first instance
+                            in the Server Group is launched, in compliance with its corresponding
+                            flavor, network, and system requirements.</p>
+                        <p ixia_locid="85"><!--The Nova scheduler takes no special considerations regarding the nature of the target host, HT-enabled or not. If an HT-enabled compute node is selected, then the instance is scheduled to run on any available logical processors as needed. You must live-migrate the instance if you prefer to use a different host.--></p>
+                        <p ixia_locid="86">If the <nameliteral ixia_locid="87">Best
+                                Effort</nameliteral> flag of the Server Group is clear, then the
+                            scheduling policy is strictly enforced. Any new instance in the Server
+                            Group will fail to launch if any run-time requirements cannot be
+                            satisfied by the selected compute node.</p>
+                        <p ixia_locid="88">If the <nameliteral ixia_locid="89">Best
+                                Effort</nameliteral> flag of the Server Group is set, then the
+                            scheduling policy is relaxed. New instances are scheduled to run on the
+                            selected compute node whenever possible, but are scheduled on a
+                            different host if otherwise necessary.</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="90">
+                    <dt ixia_locid="91">Anti-affinity policy</dt>
+                    <dd ixia_locid="92">
+                        <p ixia_locid="93">The goal of this policy is to schedule each virtual
+                            machine in the Server Group to execute on a different host. The target
+                            compute node for each instance is selected by the Nova scheduler in
+                            compliance with the corresponding flavor, network, and system
+                            requirements. As with the affinity policy, the Nova scheduler takes no
+                            special considerations regarding the nature of the target host,
+                            HT-enabled or not.</p>
+                        <p ixia_locid="94">If the <nameliteral ixia_locid="95">Best
+                                Effort</nameliteral> flag of the Server Group is clear, then the
+                            scheduling policy is strictly enforced. Any new instance in the Server
+                            Group will fail to launch if its run-time requirements can not be
+                            satisfied by any newly selected compute node.</p>
+                        <p ixia_locid="96">If the <nameliteral ixia_locid="97">Best
+                                Effort</nameliteral> flag of the Server Group is set, then the
+                            scheduling policy is relaxed. New instances are scheduled to run on a
+                            different compute node whenever possible, but are scheduled on any
+                            already selected host if otherwise necessary.</p>
+                    </dd>
+                </dlentry>
+            </dl>
+        </section>
+    </conbody>
+</concept-wr>

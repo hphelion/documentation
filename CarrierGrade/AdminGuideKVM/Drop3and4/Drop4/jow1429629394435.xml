@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1429629394435" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Adding Virtual Routers</title>
+    <shortdesc>You can add virtual routers to a tenant using the web administration interface or the
+        CLI.</shortdesc>
+    <prolog><author/>
+       
+    </prolog>
+    <taskbody>
+        <context id="context_N10028_N1001C_N10001">
+            <p>To add a router to a tenant, you must be logged in as the user
+                associated with the tenant.</p>
+            <p>As an alternative to the web administration interface, you can use
+                CLI commands to add a virtual router. First, become the appropriate keystone user.
+                The examples in this section assume you are the <nameliteral>admin</nameliteral> user.</p>
+            <p>To create a router from the CLI, use the <cmdname>neutron router-create</cmdname> command. For example: </p>
+            <codeblock>
+<systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron router-create <varname>router_name</varname> --distributed=True</userinput></codeblock>
+            <p>where <varname>router_name</varname> is a name
+                assigned to the router.</p>
+            <p>This example creates a distributed virtual router. If the <option>--distributed</option> option is omitted, the default setting
+                (centralized) is used.</p>
+            <note id="note_N10073_N10022_N1001F_N10001">
+                <p>Only the <nameliteral>admin</nameliteral> tenant can add a distributed virtual
+                    router.</p>
+            </note>
+        </context>
+        <steps>
+            <step id="step_N10064_N10061_N1001C_N10001">
+                <cmd>Log in as the user associated with the tenant.</cmd>
+                <info>
+                    <p>The following instructions assume that the <nameliteral>admin</nameliteral>
+                        tenant is logged in.</p>
+                </info>
+            </step>
+            <step id="step_N1006D_N10061_N1001C_N10001">
+                <cmd>Select <menucascade>
+                        <uicontrol>Project</uicontrol>
+                        <uicontrol>Network</uicontrol>
+                        <uicontrol>Routers</uicontrol>
+                    </menucascade>.</cmd>
+            </step>
+            <step id="step_N10089_N10061_N1001C_N10001">
+                <cmd>On the <wintitle>Routers</wintitle> page, click <uicontrol>Create
+                        Router</uicontrol>.</cmd>
+                <stepresult>
+                    <p>The Create Router dialog box appears.</p>
+                    <fig id="fig_zbr_vgc_5r">
+                        <image href="jow1429637898140.image" id="image_lxp_f1h_1t">
+                            <alt>Create Router (Admin tenant)</alt>
+                        </image>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N100B3_N10061_N1001C_N10001">
+                <cmd>Provide a <uicontrol>Router Name</uicontrol>.</cmd>
+            </step>
+            <step id="step_N100FA_N10081_N1001F_N10001" importance="optional">
+                <cmd>To add a connection to a tenant network configured for external access, select
+                    from the <nameliteral>External Network</nameliteral> drop-down menu.</cmd>
+                <info>
+                    <p>This adds a gateway for the router.  Alternatively, you can add a gateway
+                        after the router is created. For more information, see <xref href="jow1429631834947.xml"/>.</p>
+                </info>
+            </step>
+            <step id="step_N100C0_N10061_N1001C_N10001">
+                <cmd>Select the <uicontrol>Router Type</uicontrol>.</cmd>
+                <info>
+                    <note id="note_N100CA_N100C7_N100BC_N10061_N1001C_N10001">
+                        <p>The <uicontrol>Router Type</uicontrol>
+                            field is shown only for the <nameliteral>admin</nameliteral> user. For other tenants, a centralized router
+                            is added. The <nameliteral>admin</nameliteral> user can
+                            change this setting on behalf of another tenant after the router has
+                            been added (see <xref href="jow1429637676342.xml"/>).</p>
+                    </note>
+                    <dl>
+                        <dlentry>
+                            <dt>Use Server Default</dt>
+                            <dd>
+                                <p>Use the default setting specified on the
+                                    controller (for a standard HP Helion OpenStack Carrier Grade installation,
+                                    centralized).</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt>Centralized</dt>
+                            <dd>
+                                <p>Add a centralized virtual router.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt>Distributed</dt>
+                            <dd>
+                                <p>Add a distributed virtual router (DVR).</p>
+                            </dd>
+                        </dlentry>
+                    </dl>
+                    <p>For more information about these choices, see <xref href="jow1429628777191.xml"/>.</p>
+                </info>
+            </step>
+            <step id="step_N10120_N10061_N1001C_N10001">
+                <cmd>To save your settings and close the dialog box, click
+                        <uicontrol>Create Router</uicontrol>.</cmd>
+            </step>
+        </steps>
+        <postreq id="postreq_N10127_N1001C_N10001">
+            <p>To attach router interfaces to tenant networks, see <xref href="jow1429631834947.xml"/>.</p>
+        </postreq>
+    </taskbody>
+</task-wr>

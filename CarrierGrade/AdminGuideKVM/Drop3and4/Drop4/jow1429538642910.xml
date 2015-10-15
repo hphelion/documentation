@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1429538642910" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title>Flavor Extra Specifications</title>
+ <shortdesc>You can edit an existing flavor to include additional attributes using
+   <term>extra specifications</term>.</shortdesc>
+ <prolog><author/>
+  <author/>
+ </prolog>
+ <conbody>
+  <p>Extra specifications are key-value pairs you can add to an existing flavor to
+   be included when the flavor is used with a new virtual machine. The HP Helion OpenStack Carrier Grade <uicontrol>Extra Specs</uicontrol> tab for a flavor includes extensions specific to
+   HP Helion OpenStack Carrier Grade.</p>
+  <p>To access the extra specifications settings for a flavor, open the <wintitle>Flavors</wintitle> window and click the flavor name. For help accessing the
+   Flavors window, see <xref href="jow1404333663095.xml"/>.</p>
+  <fig id="fig_z2v_2lw_5p">
+   <title>Flavor extra specs</title>
+   <image href="jow1434398362447.image" id="image_yjr_prs_js">
+    <alt>TiS Extra Specs localstorage default</alt>
+   </image>
+  </fig>
+  <p>The <uicontrol>Extra Specs</uicontrol> tab lists extra
+   specifications that have been added for the flavor. </p>
+  <note id="note_N10060_N10024_N10001">
+   <p>A <nameliteral>Storage Type</nameliteral> extra spec is added by default for all new flavors.
+    To ensure that instantiated VMs use storage of a known type, do not delete this extra spec. For
+    more information, see <xref href="jow1426181040008.xml"/>.</p>
+  </note>
+  <p>To modify an existing entry, use the <uicontrol>Edit</uicontrol> button. To remove a single entry, open the drop-down menu associated with the
+   extra spec, and select <uicontrol>Delete extra spec</uicontrol> from the menu.
+   You can also remove all extra specs at once using the <uicontrol>Delete extra
+    specs</uicontrol> button.</p>
+  <p>To add a new extra specification, click <uicontrol>Create</uicontrol>. This opens the <wintitle>Create Flavor Extra
+    Spec</wintitle> window, as illustrated below:</p>
+  <fig id="fig_wyg_ylw_5p">
+   <title>Creating a flavor extra specification</title>
+   <image href="psa1413822561872.image" id="image_a2g_h2x_5p" placement="inline">
+    <alt>Create VM Flavor Extra Spec</alt>
+   </image>
+  </fig>
+  <p>Use the <uicontrol>Extra Spec</uicontrol> drop-down list to
+   add specifications. The following options are available:</p>
+  <dl>
+   <dlentry>
+    <dt><option>Custom Extra Spec</option></dt>
+    <dd>
+     <p>Available for internal use only.
+      <!-- Pedro nodes that you could use this to add documented extra specsd that are not supported from the GUI (specifically, Configuring the NUMA Node Allocations for a VM, for which you would add an extra spec with whatever name and supply as its value hw:numa_nodes=n). --></p>
+    </dd>
+   </dlentry>
+   <dlentry>
+    <dt><option>VCPU Model</option></dt>
+    <dd>
+     <p>The CPU model to use with the virtual machine. If this extra spec is not
+      added, then by default the QEMU processor is used. For more information, see <xref href="jow1429544114897.xml"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry>
+    <dt><option>Minimum Number of CPUs</option></dt>
+    <dd>
+     <p>Sets the minimum number of virtual CPUs for the flavor. If this extra spec
+      is not added, then by default the minimum is one. For more information, see <xref href="jow1417817540528.xml"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry>
+    <dt><option>Shared VCPU ID</option></dt>
+    <dd>
+     <p>The ID of a virtual CPU scheduled to run on a shared physical CPU in the
+      compute host. If this extra spec is not added, then by default the VM does not use a shared
+      CPU. For more information, see <xref href="jow1426618822854.xml"/> and <xref href="jow1426625051841.xml"/>.</p>
+     <note id="note_N102CA_N102BE_N102B5_N101CC_N10154_N1001F_N10001">
+      <p>To use this extra specification, you must also set the <nameliteral>CPU Policy</nameliteral> extra specification for the flavor to <option>Dedicated</option>. This enables the VM to run a single house-keeping
+       virtual CPU on a shared physical core, while keeping all its high-performance virtual CPUs on
+       dedicated physical cores.</p>
+     </note>
+    </dd>
+   </dlentry>
+   <dlentry>
+    <dt><option>CPU Policy</option></dt>
+    <dd>
+     <p>The policy for assigning dedicated physical or logical CPU resources to the
+      VM. If this extra spec is not added, then by default resources are drawn from a shared pool of
+      cores. For more information, see <xref href="jow1429544935360.xml"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry><dt><option>VCPU Scheduler Policy</option></dt><dd><p>Sets the scheduling priority for non-boot virtual CPUs. If this extra spec is not added, then by default <i>nice</i> priority 0 is assigned. For more information, see <xref href="jow1429547742880.xml"/>.</p>
+     <note id="note_N1017D_N1016B_N10161_N100BC_N10024_N10001">
+      <p>This extra spec is shown only for flavors with more than one CPU.</p>
+     </note></dd></dlentry>
+   <dlentry>
+    <dt><option>Number of NUMA Nodes</option></dt>
+    <dd>
+     <p>Sets the number of virtual NUMA Nodes. If this extra spec is not added,
+      then by default the memory and CPU resources for a flavor are assigned to a single virtual
+      NUMA Node.  For more information, see <xref href="jow1425236666266.xml"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry>
+    <dt><option>NUMA Node</option></dt>
+    <dd>
+     <p>The NUMA node to use when launching a virtual machine. If this extra spec
+      is not added, then by default any available NUMA node is used, subject to other NUMA node
+      settings. For more information, see <xref href="jow1425236723556.xml"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry>
+    <dt><option>Vswitch NUMA Affinity</option></dt>
+    <dd>
+     <p>Specifies that a NUMA node with a vSwitch core is required or preferred
+      when instantiating the VM. If this extra spec is not added, then by default any available NUMA
+      node is used, subject to other NUMA node settings. For more information, see <xref href="jow1436210207074.xml"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry>
+    <dt><option>PCI NUMA Affinity</option></dt>
+    <dd>
+     <p>For a VM configured to use an SR-IOV or PCI passthrough interface,
+      specifies that a NUMA node with direct access to the physical interface is either required or
+      preferred for instantiation. If this extra spec is not added, then by default a NUMA node with
+      direct access is used. For more information, see <xref href="jow1436197980621.xml"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry>
+    <dt><option>Memory Page Size</option></dt>
+    <dd>
+     <p>Sets the page size for VM memory. If this extra spec is not added, then by
+      default small pages are used. For more information, see <xref href="jow1424723681500.xml"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry>
+    <dt><option>Storage Type</option></dt>
+    <dd>
+     <p>Specifies whether to use local or remote ephemeral storage resources. This
+      extra spec is added automatically, and is set for remote storage by default. For more
+      information, see <xref href="jow1426181040008.xml"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry>
+    <dt><option>Guest Heartbeat</option></dt>
+    <dd>
+     <p>Enables the Heartbeat API for use by guests on the VM. If this extra spec is
+      not added, then by default this API is disabled. For more information, see <xref href="jow1429546712705.xml"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry>
+    <dt><option>Server Group Messaging</option></dt>
+    <dd>
+     <p>Enables the VM to communicate with other VMs in the same server group using
+      a messaging API. If this extra spec is not added, then by default this API is disabled. For
+      more information, see <xref href="jow1432240580490.xml"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry>
+    <dt><option>Instance Auto Recovery</option></dt>
+    <dd>
+     <draft-comment author="rstone">US61157 adds</draft-comment>
+     <p>Disables auto recovery of failed virtual machine instances. If this extra
+      spec is not added, then the system will automatically recover failed virtual machine
+      instances. For more information, see <xref href="rst1441899910150.xml"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry>
+    <dt><option>Live Migration Timeout</option></dt>
+    <dd>
+     <draft-comment author="rstone">US60539 adds</draft-comment>
+     <p>Specifies the number of seconds to wait for a live migration to complete.
+      If this extra spec is not added, then it defaults to 800 seconds.  For more information, see
+       <xref href="jow1404333655771.xml"/> and <xref href="rst1441822551049.xml"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry>
+    <dt><option>Live Migration Max Downtime</option></dt>
+    <dd>
+     <p><draft-comment author="rstone">US60539
+              added</draft-comment>Specifies the number of milliseconds of downtime to accept during
+            live migrations. If this extra spec is not set, then it defaults to 500 milliseconds.
+            For more information, see <xref href="rst1441988597710.xml"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry>
+    <dt><option>NIC Isolation</option></dt>
+    <dd>
+     <p><draft-comment author="rstone">US60525
+       adds</draft-comment>Enables isolating a virtual machine instance's network interface cards
+      from all other interfaces running on the host. If this extra spec is not set, then the
+      instance's interfaces are not isolated. For more information see <xref href="rst1441912501217.xml"/>. </p>
+    </dd>
+   </dlentry>
+  </dl>
+ </conbody>
+</concept-wr>

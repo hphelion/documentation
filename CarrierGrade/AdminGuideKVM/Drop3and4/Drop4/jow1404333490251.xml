@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333490251" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+        
+-->
+    <title ixia_locid="1">Initializing Controller-0 from a Local Device</title>
+    <shortdesc ixia_locid="2"> You can initialize <nameliteral ixia_locid="3">controller-0</nameliteral> using the HP Helion OpenStack Carrier Grade bootable ISO image. </shortdesc>
+    <prolog>
+        <author ixia_locid="4">Jim Owens</author>
+        <author ixia_locid="5">Pedro Sanchez</author>
+        <author ixia_locid="163">Tom Towle</author>
+    </prolog>
+    <taskbody conref="jow1433000943390.xml#jow1433000943390/taskbody_N10011_N1000E_N10001">
+        <section id="section_N10032_N1002E_N10001" ixia_locid="164">
+            <p ixia_locid="165"><xref href="jow1404333486758.xml" ixia_locid="166"/></p>
+        </section>
+    </taskbody>
+    <related-links>
+        <link href="jow1419267663457.xml" ixia_locid="168"/>
+        <link href="jow1404333486758.xml" ixia_locid="167"/>
+    </related-links>
+</task-wr>

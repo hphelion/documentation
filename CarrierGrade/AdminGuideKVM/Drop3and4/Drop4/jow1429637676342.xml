@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1429637676342" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title>Virtual Router Administration</title>
+ <shortdesc>Users with administrative privileges can review and edit router information for all
+  tenants.</shortdesc>
+ <prolog><author/>
+ 
+ </prolog>
+ <conbody>
+  <p>The <wintitle>Routers</wintitle> page accessed from <menucascade>
+    <uicontrol>Admin</uicontrol>
+    <uicontrol>System</uicontrol>
+    <uicontrol>Routers</uicontrol>
+   </menucascade> provides central control of all virtual routers. From this page, you can edit
+   router names, change router types, change the status of routers (<nameliteral>Up</nameliteral> or
+    <nameliteral>Down</nameliteral>), and delete routers. </p>
+  <p>Only users with administrative privileges can convert a centralized router to a distributed
+   router.</p>
+  <note id="note_N10043_N1001C_N10001">
+   <p>A distributed router cannot be converted to a centralized router.</p>
+  </note>
+  <p>An administrative user can delete routers on any tenant. A non-administrative user can delete
+   routers on the tenant associated with the
+   user.<!-- You can also change the router type for other tenants to Distributed, an option that is not available when you define the router type as a non-admin tenant. I don't understand this. Greg had some specualtions, but pointed out that this is just how OpenStack does it. --></p>
+  <p>As an alternative to the web administration interface, you can use the CLI.  The following
+   examples assume you have become the <nameliteral>admin</nameliteral> user.</p>
+  <ul id="ul_en4_bbd_5r">
+   <li>
+    <p>To list routers:</p>
+    <codeblock>
+<systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron router-list</userinput></codeblock>
+   </li>
+   <li>
+    <p>To show details for a router:</p>
+    <codeblock>
+<systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron router-show <varname>router_id</varname></userinput></codeblock>
+    <p>where <varname>router_id</varname> is the name or UUID of the
+     router.</p>
+   </li>
+   <li>
+    <p>To update a router:</p>
+    <codeblock>
+<systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron router-update <varname>router_id</varname> --distributed=True</userinput></codeblock>
+    <p>where <varname>router_id</varname> is the name or UUID of the router. This example updates a
+     router to make it a distributed virtual router. </p>
+   </li>
+   <li>
+    <p>To delete a router:</p>
+    <codeblock>
+<systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron router-delete <varname>router_id</varname></userinput></codeblock>
+   </li>
+  </ul>
+ </conbody>
+</concept-wr>

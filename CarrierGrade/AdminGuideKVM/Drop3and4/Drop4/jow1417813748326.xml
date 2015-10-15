@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1417813748326" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+
+ -->
+ <title>Scaling Virtual Machine Resources</title>
+ <shortdesc>You can scale the resources of individual instances up or
+  down.</shortdesc>
+ <prolog><author/>
+  <author/>
+ </prolog>
+ <conbody>
+  <p>Currently, the CPU resources for an instance are scalable.</p>
+  <p>For an instance to be scalable, the following requirements must be
+   satisfied:</p>
+  <ul id="ul_jxz_vfv_hq">
+   <li>
+    <p>The image used to launch the instance must support scaling.</p>
+    <p> The example image provided with HP Helion OpenStack Carrier Grade supports scaling. You can
+     also build your own image, incorporating the required libraries and services. For more about
+     building your own images, or about the technical requirements for scaling support, refer to the
+     documentation included with the HP Helion OpenStack Carrier Grade Software Development Kit. </p>
+   </li>
+   <li>
+    <p>The flavor used to launch the instance must be configured with maximum and
+     minimum scaling limits (the <term>scaling range</term>) for the resource.</p>
+   </li>
+  </ul>
+  <p>When scaling a VM, use the credentials of the user that launched the VM. This ensures that
+   quotas are correctly managed.  </p>
+  <p/>
+  <p>Depending on the resource being scaled, the scaling behavior applied by
+   HP Helion OpenStack Carrier Grade may be adjustable. For example, you can control which CPUs are released when the
+   CPU resources for an instance are scaled down. To adjust scaling behavior, use the App Scale
+   Helper script.</p>
+  <p>Normally, scaling is performed under the direction of Heat orchestration.  For more about Heat
+   autoscaling, see <xref href="jow1417818508589.xml"/>. If required, you can scale resources
+   manually from the command line using the <cmdname>nova scale</cmdname> command, with the
+   following syntax:</p>
+  <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova scale <varname>instance_id</varname> <varname>resource</varname> {up | down}</userinput></codeblock>
+  <p>For example, to reduce the number of CPUs allotted to an instance, you can use this
+   command:</p>
+  <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova scale <varname>instance_id</varname> cpu down</userinput></codeblock>
+  <note id="note_N1006A_N1001C_N10001">
+   <p>To scale up the resources for an instance, sufficient resources are required on the host. If
+    all available resources are already allocated to other instances, you may need to free up
+    resources manually.</p>
+  </note>
+ </conbody>
+</concept-wr>

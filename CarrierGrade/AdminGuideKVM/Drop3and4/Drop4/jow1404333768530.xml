@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333768530" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title>Processor</title>
+    <shortdesc>The <uicontrol>Processor</uicontrol> tab on the
+            <wintitle>Inventory Detail</wintitle> page presents processor details for
+        a host, as illustrated below.</shortdesc>
+    <prolog><author/>
+        <author/>
+        <author/>
+    </prolog>
+    <conbody>
+        <fig id="fig_N10027_N10024_N10001">
+            <image href="jow1404333763192.image" id="image_iqn_jlz_l4" width="6in"/>
+        </fig>
+        <p>The <uicontrol>Processor</uicontrol> tab includes the following items:</p>
+        <ul id="ul_stv_nlz_l4">
+            <li>
+                <p>processor model, number of processors, number of cores per
+                    processor, and Hyper-Threading status (enabled or disabled).</p>
+            </li>
+            <li>
+                <p>the CPU assignments. See section <xref href="jow1404333787693.xml#jow1404333787693/cpu-profiles"/> for more details.</p>
+            </li>
+        </ul>
+        <p>Two buttons are also available as follows:</p>
+        <dl>
+            <dlentry>
+                <dt><uicontrol>Create CPU Profile</uicontrol></dt>
+                <dd>
+                    <p>Clicking this button displays the <wintitle>Create CPU Profile</wintitle> window, where
+            the current CPU assignment can be given a name, as illustrated below.</p>
+                    <fig id="fig_N1006F_N10064_N1005B_N10058_N10024_N10001">
+                        <image href="jow1404333764867.image" id="image_mj3_zmz_l4" width="4in"/>
+                    </fig>
+                    <p>In this example, you are about to create a CPU Profile named
+              <nameliteral>HP-360-C1</nameliteral> out of the current CPU assignments found in a
+            compute node.</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><uicontrol>Edit CPU Assignments</uicontrol></dt>
+                <dd>
+                    <p>This button is available only when the host is in the locked
+                        state.</p>
+                    <p>Clicking this button displays the <wintitle>Edit CPU Assignments</wintitle> window. On a compute node, you can use
+                        this window to assign cores to specific functions, as illustrated below.
+                        Unassigned cores are available for allocation to virtual machine threads. </p>
+                    <fig id="fig_N1009D_N1008E_N10085_N10058_N10024_N10001">
+                        <image href="jow1404333766847.image" id="image_khm_xsz_l4"/>
+                    </fig>
+                    <note id="note_N100CC_N100AF_N100A3_N1006C_N1002E_N10001">
+                        <p>On a controller or storage node, only the <nameliteral>Platform</nameliteral> function is shown, and all
+                            available cores are automatically assigned as platform cores.</p>
+                    </note>
+                    <dl>
+                        <dlentry>
+                            <dt>Platform</dt>
+                            <dd>
+                                <p>You can reserve one or more cores in each NUMA
+                                    node for platform use. <ph product="tis_not_small">One core on each host is required to run
+                                        the operating system and associated services.</ph><ph product="tis_small">For a system with separate controller
+                                        and compute nodes, one core on each host is required to run
+                                        the operating system and associated services. For a combined
+                                        controller and compute node in a minimal two-server
+                                        configuration, two cores are required.</ph></p>
+                                <p>The ability to assign platform cores to specific NUMA nodes
+                                    offers increased flexibility for high-performance
+                                    configurations. For example, you can dedicate certain NUMA nodes
+                                    for vSwitch or VM use, or affine VMs that require
+                                    high-performance IRQ servicing with NUMA nodes that service the
+                                    requests.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt>Vswitch</dt>
+                            <dd>
+                                <p>AVS (vSwitch) cores can be configured for each
+                                    processor independently. This means that the single logical
+                                    vSwitch running on a compute node can make use of cores in
+                                    multiple processors, or NUMA nodes. Optimal data path
+                                    performance is achieved when all AVS cores, the physical ports,
+                                    and the virtual machines that use them are running on the same
+                                    processor. You can affine VMs to NUMA nodes with AVS cores; for
+                                    more information, see <xref href="jow1436210207074.xml"/>. Alternatively, having AVS cores on all
+                                    processors ensures that all virtual machines, regardless of the
+                                    core they run on, are efficiently serviced. The example
+                                    allocates two cores from processor 1 to the AVS threads.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt>Shared</dt>
+                            <dd>
+                                <p>One physical core per processor can be configured
+                                    as a shared CPU, which can be used by multiple VMs for low-load
+                                    tasks. To use the shared physical CPU, each VM must be
+                                    configured with a shared vCPU ID. For more information, see
+                                        <xref href="jow1426625051841.xml"/>.</p>
+                            </dd>
+                        </dlentry>
+                    </dl>
+                </dd>
+            </dlentry>
+        </dl>
+        <p>To see how many cores a processor contains, hover over the Information
+            icon.</p>
+        <fig id="fig_kfq_vzq_ps">
+            <image href="jow1436300231676.image" id="image_cls_d1r_ps">
+                <alt>TiS available cores tooltip</alt>
+            </image>
+        </fig>
+<!--        <section id="section_N100DD_N10029_N10001">
+            <title>CPU Topology From the CLI</title>
+            <p>You can use the <cmdname>vm-topology</cmdname>
+                command from the CLI on the controller nodes to explore the enumeration of sockets,
+                cores, and logical processors on a compute node. The command can be executed without
+                root privileges or Keystone authentication. Here is an example:</p>
+            <codeblock><systemoutput>$ </systemoutput><userinput>vm-topology -s topology</userinput><systemoutput>
+compute-1:  Model:SandyBridge, Arch:x86_64, Vendor:Intel, Sockets=2, Cores/Socket=12, Threads/Core=1
++-\-\-\-\-\-\-\-\-\-\-\-+-\-\-+-\-\-+-\-\-+... +-\-\-\-+-\-\-\-+-\-\-\-+-\-\-\-+... +-\-\-\-+
+|     cpu_id | 0 | 1 | 2 |... | 11 | 12 | 13 | 14 |... | 23 |
++-\-\-\-\-\-\-\-\-\-\-\-+-\-\-+-\-\-+-\-\-+... +-\-\-\-+-\-\-\-+-\-\-\-+-\-\-\-+... +-\-\-\-+
+|  socket_id | 0 | 0 | 0 |... |  0 |  1 |  1 |  1 |... |  1 |
+|    core_id | 0 | 1 | 2 |... | 13 |  0 |  1 |  2 |... | 13 |
+|  thread_id | 0 | 0 | 0 |... |  0 |  0 |  0 |  0 |... |  0 |
+| sibling_id | - | - | - |... |  - |  - |  - |  - |... |  - |
++-\-\-\-\-\-\-\-\-\-\-\-+-\-\-+-\-\-+-\-\-+... +-\-\-\-+-\-\-\-+-\-\-\-+-\-\-\-+... +-\-\-\-+
+
+compute-2:  Model:SandyBridge, Arch:x86_64, Vendor:Intel, Sockets=2, Cores/Socket=12, Threads/Core=2
++-\-\-\-\-\-\-\-\-\-\-\-+-\-\-\-+-\-\-\-+-\-\-\-+... +-\-\-\-+-\-\-\-+-\-\-\-+-\-\-\-+... +-\-\-\-+-\-\-\-+
+|     cpu_id |  0 |  1 |  2 |... | 11 | 12 | 13 | 14 |... | 46 | 47 |
++-\-\-\-\-\-\-\-\-\-\-\-+-\-\-\-+-\-\-\-+-\-\-\-+... +-\-\-\-+-\-\-\-+-\-\-\-+-\-\-\-+... +-\-\-\-+-\-\-\-+
+|  socket_id |  0 |  0 |  0 |... |  0 |  1 |  1 |  1 |... |  1 |  1 |
+|    core_id |  0 |  1 |  2 |... | 13 |  0 |  1 |  2 |... | 12 | 13 |
+|  thread_id |  0 |  0 |  0 |... |  0 |  0 |  0 |  0 |... |  1 |  1 |
+| sibling_id | 24 | 25 | 26 |... | 35 | 36 | 37 | 38 |... | 22 | 23 |
++-\-\-\-\-\-\-\-\-\-\-\-+-\-\-\-+-\-\-\-+-\-\-\-+... +-\-\-\-+-\-\-\-+-\-\-\-+-\-\-\-+... +-\-\-\-+-\-\-\-+</systemoutput></codeblock>
+            <p>The example shows two compute nodes, <nameliteral>compute-1</nameliteral> with two sockets, 12 cores per socket, and no
+                Hyper-Threading (Threads/Core=1), and <nameliteral>compute-2</nameliteral> with two sockets, 12 cores per socket, and
+                Hyper-Threading enabled with two logical processors per core (Threads/Core=2). The
+                rows <nameliteral>cpu_id</nameliteral> and <nameliteral>sibling_id</nameliteral> on <nameliteral>compute-2</nameliteral> node show the hyperthread sibling processors; cores in
+                this compute node can therefore be described by the sequence [0, 24] [1, 25] [2, 26]
+                ... [46, 22] [47, 23].</p>
+            <p>Use the command <cmdname>vm-topology -\-help</cmdname> to list other available options
+                to include information about virtual machine flavors, instances (servers), server
+                groups, and  migrations in progress.</p>
+        </section>
+-->    </conbody>
+</concept-wr>

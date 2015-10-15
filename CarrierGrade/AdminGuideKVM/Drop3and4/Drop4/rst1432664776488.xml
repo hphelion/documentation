@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content id="rst1432664776488" xml:lang="en-us">
+<title ixia_locid="70">ConRef: Attaching to Networks Using an Ethernet Interface</title>
+<rcbody>
+        <shortdesc id="shortdesc" ixia_locid="2">You can attach an Ethernet interface to a network by editing the
+            interface.</shortdesc>
+        <prolog id="prolog">
+            <author ixia_locid="3">Jim Owens</author>
+        </prolog>
+        <taskbody id="body">
+            <context id="context" ixia_locid="4">
+                <p ixia_locid="5">When a compute or storage node is added to HP Helion OpenStack Carrier Grade and
+                    initialized, Ethernet interfaces are created automatically for each physical
+                    port detected. To support installation using PXE booting, one interface is
+                    attached automatically to the management network. You must attach additional
+                    interfaces manually before you can unlock the node. For more about this
+                    requirement, see <xref href="jow1426948577755.xml" ixia_locid="6"/>.</p>
+                <p ixia_locid="65"> For a network that uses Ethernet interfaces, you can edit an
+                    existing Ethernet interface on the node to attach it, as described in this
+                    topic. You can also do this from the CLI; for more information, see <xref href="jow1427029415968.xml" ixia_locid="67"/>. </p>
+                <p ixia_locid="66">For a network that uses aggregated Ethernet or VLAN interfaces,
+                    you must create an interface in order to attach it; see <xref href="jow1426951671346.xml" ixia_locid="8"/> or <xref href="jow1426951757970.xml" ixia_locid="9"/>.</p>
+            </context>
+            <steps id="steps_z3w_41x_ds">
+                <step conref="jow1426453628262.xml#jow1426453628262/step_N1002B_N10028_N1001C_N10001" id="step_N1003B_N10038_N1001C_N10001" ixia_locid="10">
+                    <cmd ixia_locid="11"/>
+                </step>
+                <step id="step_N10044_N10038_N1001C_N10001" ixia_locid="12">
+                    <cmd ixia_locid="13">Select the <uicontrol ixia_locid="14">Interfaces</uicontrol> tab.</cmd>
+                    <stepresult ixia_locid="15">
+                        <fig id="fig_ypk_blk_lr" ixia_locid="16">
+                            <image href="jow1426954731455.image" id="image_onc_hlk_lr" ixia_locid="17" width="6in">
+                                <alt ixia_locid="18">Compute node default interfaces</alt>
+                            </image>
+                        </fig>
+                    </stepresult>
+                </step>
+                <step id="step_N10066_N10038_N1001C_N10001" ixia_locid="19">
+                    <cmd ixia_locid="20">Click <uicontrol ixia_locid="21">Edit Interface</uicontrol>
+                        for the interface you want to attach to a network.</cmd>
+                    <stepresult ixia_locid="22">
+                        <fig id="fig_tgf_tlk_lr" ixia_locid="23">
+                            <image href="jow1426954976474.image" id="image_w5l_tlk_lr" ixia_locid="24">
+                                <alt ixia_locid="25">TiS Edit Interface</alt>
+                            </image>
+                        </fig>
+                        <p ixia_locid="103">For an Ethernet interface, the <uicontrol ixia_locid="104">Port</uicontrol> is already selected. </p>
+                    </stepresult>
+                </step>
+                <step id="step_N10088_N10038_N1001C_N10001" ixia_locid="26">
+                    <cmd ixia_locid="27">Select the type of network for the interface.</cmd>
+                    <info ixia_locid="28">
+                        <p ixia_locid="68">For details, see <xref href="jow1426955886080.xml" ixia_locid="69"/>.</p>
+                    </info>
+                </step>
+                <step id="step_N10101_N10038_N1001C_N10001" ixia_locid="55">
+                    <cmd ixia_locid="56">Complete the required information for the type of
+                        interface.</cmd>
+                    <info ixia_locid="57">
+                        <p ixia_locid="58">For more information, see <xref href="jow1426955886080.xml" ixia_locid="59"/>.</p>
+                    </info>
+                </step>
+                <step id="step_N10116_N10038_N1001C_N10001" ixia_locid="60">
+                    <cmd ixia_locid="61">Click <uicontrol ixia_locid="62">Save</uicontrol> to save
+                        your changes and close the dialog box. </cmd>
+                    <info ixia_locid="236">
+                        <note id="note_N101BB_N10194_N1013A_N1010A_N100D4_N10012_N1000F_N10001" ixia_locid="233">
+                            <draft-comment author="rstone" ixia_locid="237">US60503 adds</draft-comment>
+                            <p ixia_locid="234">If an interface is not supported by AVS using DPDK
+                                poll-mode drivers, it will operate in non-accelerated mode
+                                leveraging kernel drivers. For more information see <cite ixia_locid="235">HP Helion OpenStack Carrier Grade Administration Guide:
+                                    Interfaces</cite>.</p>
+                        </note>
+                    </info>
+                </step>
+            </steps>
+            <result id="result_N1011E_N1001C_N10001" ixia_locid="63">
+                <p ixia_locid="64">The interface is attached to the network.</p>
+            </result>
+        </taskbody>
+    </rcbody>
+</referable-content>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1425585636142" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Setting Up a VXLAN Provider Network</title>
+    <shortdesc>You can use the CLI or the web administration interface to set up a VXLAN provider
+        network and add segmentation ranges.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N10022_N1001F_N10001">
+            <p>VXLAN provider networks are an alternative to VLAN provider networks
+                when VM L2 connectivity is required across separate Layer 2 network segments
+                separated by one or more Layer 3 routers.</p>
+            <p>The steps in this section describe how to set up a VXLAN provider
+                network and add segmentation ranges using the web administration interface. For
+                information about using CLI commands, see <xref href="jow1425677233816.xml"/>.</p>
+        </context>
+        <steps id="steps_rvq_zr2_hr">
+            <step conref="jow1424191621914.xml#jow1424191621914/step_N1003F_N1003C_N10024_N10001" id="step_N10031_N1002D_N1001F_N10001">
+                <cmd/>
+            </step>
+            <step conref="jow1424191621914.xml#jow1424191621914/step_N10054_N1003C_N10024_N10001" id="step_N1003A_N1002D_N1001F_N10001">
+                <cmd/>
+            </step>
+            <step id="step_N10043_N1002D_N1001F_N10001">
+                <cmd>Create a  provider network.</cmd>
+                <info conref="jow1424191621914.xml#jow1424191621914/Provider_Network_dialog"/>
+                <info>
+                    <fig id="fig_v3z_zsg_hr">
+                        <image href="jow1425675012586.image" id="image_jss_vsg_hr">
+                            <alt>i-ccs-create-provider-network-generic</alt>
+                        </image>
+                    </fig>
+                    <p>For the <nameliteral>Type</nameliteral>, select <nameliteral>VXLAN</nameliteral>.</p>
+                    <p>For the MTU, set a maximum transmission unit that allows for the overhead
+                        required by VXLAN encapsulation. For more information, see <xref href="jow1404333732592.xml"/>.</p>
+                </info>
+            </step>
+            <step conref="jow1424191621914.xml#jow1424191621914/step_N10127_N1003C_N10024_N10001" id="step_N1005D_N1002D_N1001F_N10001">
+                <cmd/>
+            </step>
+            <step id="step_N10072_N1002D_N1001F_N10001">
+                <cmd>Add one or more segmentation ranges.</cmd>
+                <info>
+                    <p conref="jow1425657297895.xml#jow1425657297895/seg_range_definition"/>
+                </info>
+                <info conref="jow1425657297895.xml#jow1425657297895/info_add_seg-range"/>
+                <!--RS: removed following UI element definitions because latest version of dialog does not show them-->
+                <info>
+                    <!--
+<dl conref="jow1425657297895.xml#jow1425657297895/dl_VxLAN_extras">
+                        <dlentry>
+                            <dt>"/>
+                            <dd>"/>
+                        </dlentry>
+                    </dl>-->
+                    <fig id="fig_tlm_tfg_hr">
+                        <image href="jow1425669118942.image" id="image_o4n_cgg_hr" width="5in">
+                            <alt>i-css-create-seg-range-vxlan</alt>
+                        </image>
+                    </fig>
+                </info>
+            </step>
+            <step id="step_N10088_N1002D_N1001F_N10001">
+                <cmd conref="jow1425657297895.xml#jow1425657297895/cmd_commit_seg_range"/>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

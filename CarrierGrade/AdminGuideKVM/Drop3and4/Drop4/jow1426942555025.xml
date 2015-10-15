@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content id="jow1426942555025" xml:lang="en-us">
+<title ixia_locid="85">Conref caution: local storage is ephemeral</title>
+<rcbody>
+        <note id="note_local_storage_ephemeral" ixia_locid="12" type="caution">
+            <p ixia_locid="81">Local storage is ephemeral.</p>
+            <ul id="ul_a14_dph_kr">
+                <li ixia_locid="82">
+                    <p ixia_locid="83">Unlike Cinder-based storage, local storage does not persist
+                        if the instance is terminated or the compute node fails.</p>
+                </li>
+                <li ixia_locid="86">
+                    <p id="local-storage-cold-migration" ixia_locid="88">Live migration is not
+                        currently supported for an instance using local storage. Locking the host
+                        initiates a cold migration. The local storage for the instance is
+                        rebuilt.</p>
+                </li>
+                <li ixia_locid="87">
+                    <p ixia_locid="89">Resizing of local storage is partly supported. If the
+                        reconfigured instance is instantiated on the same host, then any root or
+                        ephemeral disks that use local storage are resized with their data
+                        preserved. Swap disks that use local storage are rebuilt. If the instance is
+                        migrated to another host, only cold migration is supported. All local
+                        storage for the instance is rebuilt.</p>
+                </li>
+            </ul>
+        </note>
+    </rcbody>
+</referable-content>

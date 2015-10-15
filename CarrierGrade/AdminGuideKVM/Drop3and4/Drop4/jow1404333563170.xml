@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333563170" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+
+ -->
+    <title ixia_locid="1">Reference Logical Architecture</title>
+    <shortdesc ixia_locid="2">The HP Helion OpenStack Carrier Grade architecture supports various
+        types of host, networks, and networking hardware in different configurations. </shortdesc>
+    <prolog>
+        <author></author>
+        <author ixia_locid="132">Jim Owens</author>
+    </prolog>
+    <conbody>
+        <p>For more information on HP Helion OpenStack Carrier Grade architecture, see the <xref
+                href="../../Users/burkmich/documentation/documentation/CarrierGrade/Installation/carrier-grade-technical-overview.dita#topic3485"
+            >Technical Overview</xref>.</p>
+        <dl>
+            <dlentry ixia_locid="8">
+                <dt ixia_locid="9">Controller Nodes</dt>
+                <dd ixia_locid="10">
+                    <p ixia_locid="11">Run the Titanium Server services needed to manage the cloud
+                        infrastructure. The two controller nodes run the services in carrier grade
+                        mode, that is, as a high-availability cluster. See <xref
+                            href="jow1404333798721.xml" ixia_locid="183"/> for more information.</p>
+                    <p ixia_locid="12">Controller nodes manage other hosts over the attached
+                        internal management network. They also provide administration interfaces to
+                        clients over the OAM network. Two controllers are necessary for Titanium
+                        Server to operate properly.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="13">
+                <dt ixia_locid="14">Storage Node</dt>
+                <dd ixia_locid="15">
+                    <p ixia_locid="16">Runs Titanium Server storage services.</p>
+                    <p ixia_locid="17">Storage servers are optional, but when available:</p>
+                    <ul id="ul_bjz_34g_m4">
+                        <li ixia_locid="18">
+                            <p ixia_locid="19">two of them are mandatory for reliability
+                                purposes</p>
+                        </li>
+                        <li ixia_locid="20">
+                            <p ixia_locid="21">they must connect to both the internal management and
+                                infrastructure networks</p>
+                        </li>
+                    </ul>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="22">
+                <dt ixia_locid="23">Compute Node</dt>
+                <dd ixia_locid="24">
+                    <p ixia_locid="25">Runs the Titanium Server compute services and hosts the
+                        virtual machines.</p>
+                    <p ixia_locid="26">A compute node connects to the controller nodes over the
+                        internal management network, and to the provider networks using its data
+                        interfaces.</p>
+                    <dl>
+                        <dlentry ixia_locid="27">
+                            <dt ixia_locid="28">Data Interfaces</dt>
+                            <dd ixia_locid="29">
+                                <p ixia_locid="180">In a compute node, a data interface is a logical
+                                    network adapter used to connect to one or more provider
+                                    networks. It is created by mapping a physical network interface
+                                    on the compute node to the target provider networks. The mapping
+                                    can use multiple physical network interfaces to support a LAG
+                                    connection. For more information about LAG modes see the <cite
+                                        ixia_locid="181">Titanium Server Software Installation
+                                        Guide</cite>.</p>
+                                <p ixia_locid="182">Provider networks used by a single data
+                                    interface must share the same Ethernet MTU value.</p>
+                            </dd>
+                        </dlentry>
+                    </dl>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="142">
+                <dt ixia_locid="143">Internal L2 Switch</dt>
+                <dd ixia_locid="144">
+                    <p ixia_locid="145">An L2 switching facility, often implemented on a single
+                        Top-of-Rack (ToR) switch, used to realize the internal and infrastructure
+                        networks, and depending on the system configuration, the board management
+                        network. These networks are implemented as follows:</p>
+                    <ul id="ul_ip4_w54_dp">
+                        <li ixia_locid="146">
+                            <p ixia_locid="147">The internal management network using a dedicated
+                                port-based VLAN. On ports connecting to controller nodes, VLAN
+                                tagging is enabled to connect them to the board management network
+                                also.</p>
+                        </li>
+                        <li ixia_locid="150">
+                            <p ixia_locid="151">The board management network as a port-based VLAN.
+                                This applies only if a board management network is in use, and is
+                                configured for internal access.</p>
+                        </li>
+                        <li ixia_locid="148">
+                            <p ixia_locid="149">The infrastructure network using a dedicated
+                                port-based VLAN.</p>
+                        </li>
+                    </ul>
+                    <p ixia_locid="152">Each host in the Titanium Server cluster connects to the
+                        internal L2 switch, as follows:</p>
+                    <ul id="ul_ebw_qs4_dp">
+                        <li ixia_locid="153">
+                            <p ixia_locid="154">One dedicated mother-board physical port to
+                                participate in the internal management network. This connection is
+                                mandatory.</p>
+                            <ul id="ul_qhf_dyw_dp">
+                                <li ixia_locid="170">
+                                    <p ixia_locid="171">Controller nodes connect also to the board
+                                        management network using VLAN tagging on this same port.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li ixia_locid="155">
+                            <p ixia_locid="156">One dedicated physical port to participate in the
+                                infrastructure network. This connection is optional, but inclusive
+                                for all hosts. That is, if an infrastructure network is to be used,
+                                then all hosts must connect to it.</p>
+                        </li>
+                        <li ixia_locid="157">
+                            <p ixia_locid="158">Optionally, one physical iLO (Integrated Lights Out)
+                                port to participate in the board management network. This applies
+                                only if a board management network is in use, and is configured for
+                                internal access.</p>
+                        </li>
+                    </ul>
+                    <p ixia_locid="163">As long as the integrity and isolation of the internal,
+                        infrastructure, and board management networks are ensured, the internal L2
+                        switch can be realized over physical switching resources that provide
+                        connectivity to other networks.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="31">
+                <dt ixia_locid="32">Internal Management Network</dt>
+                <dd ixia_locid="172">
+                    <p ixia_locid="34">An isolated L2 network implemented on the internal L2 switch,
+                        used to enable communications among Titanium Server hosts for software
+                        installation, and management of hosts and virtual machines. This network is
+                        only accessible within the Titanium Server cluster, and for the most part,
+                        it is transparent to management operations of the cloud.</p>
+                    <p ixia_locid="35">The internal management network must be unique and dedicated
+                        to the Titanium Server Cluster. Sharing it with other Titanium Server
+                        Cluster, or other non-related equipment, is not supported.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="36">
+                <dt ixia_locid="37">Infrastructure Network</dt>
+                <dd ixia_locid="38">
+                    <p ixia_locid="39">An optional network used to improve overall performance for a
+                        variety of operational functions. When available, it is used by Titanium
+                        Server during the following operations:</p>
+                    <ul id="ul_dcp_r3m_14">
+                        <li ixia_locid="41">
+                            <p ixia_locid="42">control and data synchronization when migrating
+                                virtual machines between compute nodes</p>
+                        </li>
+                        <li ixia_locid="43">
+                            <p ixia_locid="44">isolation of storage traffic when accessing storage
+                                nodes providing storage services</p>
+                        </li>
+                    </ul>
+                    <p ixia_locid="45">Overall, an infrastructure network provides a target for the
+                        Titanium Server software to offload heavy traffic from the internal
+                        management network. This prevents sensitive traffic, such as internal
+                        heartbeat and monitoring messages, from being starved for bandwidth when
+                        background traffic, such as storage-related flows, peaks during normal
+                        operations.</p>
+                    <p ixia_locid="46">When unavailable, all infrastructure traffic is carried over
+                        the internal management network.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="47">
+                <dt ixia_locid="48">OAM Network</dt>
+                <dd ixia_locid="49">
+                    <p ixia_locid="50">A physical network used to provide access to the
+                        configuration and management facilities of Titanium Server. It provides
+                        connectivity between the controller nodes and the edge router of the OAM
+                        network. The web administration interface, and the console interfaces (using
+                        SSH) to the controllers, are available on this network. Depending on the
+                        system configuration, the OAM network may also be used for controller access
+                        to the board management network.</p>
+                    <p ixia_locid="51">The OAM network provides access to the OpenStack and Titanium
+                        Server-specific REST APIs, which can be used by users and third-party
+                        developers to develop high-level cloud orchestration services.</p>
+                    <p ixia_locid="52">The OAM network also provides the controller nodes with
+                        access to system-wide resources such as DNS and time servers. Access to the
+                        open Internet can also be provided if desired, at the discretion of each
+                        particular installation.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="133">
+                <dt ixia_locid="134">Board Management Network</dt>
+                <dd ixia_locid="135">
+                    <p ixia_locid="164">An optional network used by the controller nodes to perform
+                        out-of-band reset and power-on/power-off operations on hosts equipped with
+                        iLO (Integrated Lights Out) board management modules.</p>
+                    <p ixia_locid="174">This network can be configured for internal access or
+                        external access.</p>
+                    <dl>
+                        <dlentry ixia_locid="204">
+                            <dt ixia_locid="205">Internal access</dt>
+                            <dd ixia_locid="206">
+                                <p ixia_locid="207">In this configuration, the modules are
+                                    accessible using a VLAN network implemented on an internal L2
+                                    switch.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry ixia_locid="208">
+                            <dt ixia_locid="209">External access</dt>
+                            <dd ixia_locid="210">
+                                <p ixia_locid="211">In this configuration, the modules are
+                                    accessible using the OAM network.</p>
+                            </dd>
+                        </dlentry>
+                    </dl>
+                    <p ixia_locid="175">Board management modules are optional. Associated
+                        maintenance operations are available only for hosts equipped with them.</p>
+                    <p ixia_locid="176">For more information, refer to <xref
+                            href="jow1406727863674.xml" ixia_locid="173"/>.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="53">
+                <dt ixia_locid="54">Physical Network</dt>
+                <dd ixia_locid="55">
+                    <p ixia_locid="56">A physical transport resource used to interconnect compute
+                        nodes among themselves and with external networks. Virtual networks, such as
+                        provider and tenant networks, are built on top of the physical network.
+                        Access to multiple physical networks can be defined by the Titanium Server
+                        administrator.</p>
+                    <p ixia_locid="57">Physical networks are not configured by the Titanium Server
+                        administrator. They are physically provisioned by the data center where the
+                        Titanium Server cluster is deployed.</p>
+                </dd>
+            </dlentry>
+            <dlentry id="provider-networks-definition" ixia_locid="58">
+                <dt ixia_locid="59">Provider Network</dt>
+                <dd ixia_locid="60">
+                    <p ixia_locid="61">A Layer 2 virtual network used to provide the underlying
+                        network connectivity needed to instantiate the tenant networks. Multiple
+                        provider networks may be configured as required, and realized over the same
+                        or different physical networks. Access to external networks is typically
+                        granted to the compute nodes via the provider network. The extent of this
+                        connectivity, including access to the open Internet, is application
+                        dependent.</p>
+                    <p ixia_locid="62">Provider networks are created by the Titanium Server
+                        administrator to make use of an underlying set of resources on a physical
+                        network. They can be created as being of one of the following types:</p>
+                    <dl>
+                        <dlentry ixia_locid="73">
+                            <dt ixia_locid="74">flat</dt>
+                            <dd ixia_locid="75">
+                                <p ixia_locid="76">A provider network mapped entirely over the
+                                    physical network. The physical network is used as a single Layer
+                                    2 broadcast domain. Each physical network can realize at most
+                                    one flat provider network.</p>
+                                <p ixia_locid="77">A provider network of this type supports at most
+                                    one tenant network, even if its corresponding shared flag is
+                                    enabled.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry ixia_locid="65">
+                            <dt ixia_locid="66">VLAN</dt>
+                            <dd ixia_locid="67">
+                                <p ixia_locid="68">A provider network implemented over a range of
+                                    IEEE 802.1Q VLAN identifiers supported by the physical network.
+                                    This allows for multiple provider networks to be defined over
+                                    the same physical network, all operating over non-overlapping
+                                    sets of VLAN IDs.</p>
+                                <p ixia_locid="69">A set of consecutive VLAN IDs over which the
+                                    provider network is defined is referred to as a network's
+                                        <nameliteral ixia_locid="70">segmentation
+                                        range</nameliteral>. A provider network can have more than
+                                    one segmentation range. Each VLAN ID in a segmentation range is
+                                    used to support the implementation of a single tenant
+                                    network.</p>
+                                <p ixia_locid="71">A segmentation range can be shared by multiple
+                                    tenants if its <nameliteral ixia_locid="177"
+                                        >shared</nameliteral> flag is set. Otherwise, the
+                                    segmentation range supports tenant networks belonging to a
+                                    single specified tenant.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry ixia_locid="197">
+                            <dt ixia_locid="198">VXLAN</dt>
+                            <dd ixia_locid="199">
+                                <p ixia_locid="200">A provider network implemented over a range of
+                                    VXLAN Network Identifiers (VNIs.) This is similar to the VLAN
+                                    option, in that it allows multiple provider networks to be
+                                    defined over the same physical network using unique VNIs defined
+                                    in segmentation ranges. In addition, VXLAN provides a Layer 2
+                                    overlay scheme on Layer 3 networks, enabling connectivity
+                                    between Layer 2 segments separated by one or more Layer 3
+                                    routers.</p>
+                            </dd>
+                        </dlentry>
+                    </dl>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="78">
+                <dt ixia_locid="79">Tenant Network</dt>
+                <dd ixia_locid="80">
+                    <p ixia_locid="81">A virtual network associated with a tenant. A tenant network
+                        is instantiated on a compute node, and makes use of a provider network,
+                        either directly over a flat network, or using technologies such as VLAN and
+                        VXLAN.</p>
+                    <p ixia_locid="82">Tenant networks use the high-performance virtual L2 switching
+                        capabilities built into the Titanium Server software stack of the compute
+                        node. They provide switching facilities to the virtual service instances, to
+                        communicate with external resources and with other virtual service instances
+                        running on the same or different compute nodes.</p>
+                    <p ixia_locid="178">When instantiated over a provider network of the VLAN or
+                        VXLAN type, the VLAN ID or VNI for the tenant network is assigned
+                        automatically. The allocation algorithm selects the lowest available ID from
+                        any segmentation range owned by the tenant. If no such ID is available, it
+                        selects the lowest available ID from any shared segmentation range. The
+                        system reports an error when no available ID is found.</p>
+                    <p ixia_locid="179">Tenant networks created by the administration can also be
+                        configured to use a pre-selected VLAN ID or VNI. This can be used to extend
+                        connectivity to external networks.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="83">
+                <dt ixia_locid="84">Controller Floating IP Address</dt>
+                <dd ixia_locid="85">
+                    <p ixia_locid="86">A unique IP address shared by the cluster of controller
+                        nodes. Only the master controller node is active on this address at any
+                        time. The IP address is floating in the sense that it is automatically
+                        transferred from one controller node to the other, as dictated by the
+                        high-availability directives of the cluster.</p>
+                    <p ixia_locid="87">The controller cluster has two floating IP addresses, one
+                        facing the OAM network, only seen by the web interface SSH administration
+                        clients and REST APIs, and another facing the internal management network,
+                        only seen by the compute nodes.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="88">
+                <dt ixia_locid="89">Link Aggregation (LAG) or Aggregated Ethernet (AE)</dt>
+                <dd ixia_locid="90">
+                    <p ixia_locid="91">A mechanism that allows multiple parallel Ethernet network
+                        connections between two hosts to be used as a single logical connection.
+                        Titanium Server supports LAG connections on all its Ethernet connections for
+                        the purpose of protection (fault-tolerance) only. Different modes of
+                        operation are supported. For details, see the <cite ixia_locid="92">Titanium
+                            Server Software Installation Guide</cite>.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="93">
+                <dt ixia_locid="94">OAM Network L2 Switch(es)</dt>
+                <dd ixia_locid="95">
+                    <p ixia_locid="96">One or more switches used to provide an entry point into the
+                        OAM network.</p>
+                    <note id="note_N101AD_N101A6_N1019F_N10033_N1001C_N10001" ixia_locid="97">
+                        <p ixia_locid="98">The OAM ports on the controller do not support VLAN
+                            tagging. If needed, port- or MAC-based VLANs defined on the L2 switch
+                            can be used to steer OAM traffic appropriately.</p>
+                    </note>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="99">
+                <dt ixia_locid="100">Provider Network L2 Switches</dt>
+                <dd ixia_locid="101">
+                    <p ixia_locid="102">Provide the entry point into the provider networks. It is
+                        through these L2 switches that the compute nodes get integrated as active
+                        end points into each of the provider networks.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="103">
+                <dt ixia_locid="104">Edge Router</dt>
+                <dd ixia_locid="105">
+                    <p ixia_locid="106">Provides connectivity to external networks as needed by
+                        controller and compute nodes.</p>
+                    <p ixia_locid="107">Reachability to the open Internet is not mandatory, but
+                        strictly application-dependent. Guest applications running on the compute
+                        nodes may need to access, or be reachable from, the Internet. Additionally,
+                        access to the OAM Network from external networks might be desirable.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="108">
+                <dt ixia_locid="109">Web Administration Interface</dt>
+                <dd ixia_locid="110">
+                    <p ixia_locid="111">Provides the Titanium Server main management interface. It
+                        is available using any W3C standards-compliant web browser, from any point
+                        within the OAM Network where the OAM floating IP address is reachable.</p>
+                </dd>
+            </dlentry>
+        </dl>
+        <section id="section_N101EC_N1001C_N10001" ixia_locid="112">
+            <title ixia_locid="113">About Tenants (Projects) and Users</title>
+            <p ixia_locid="114">Tenants and users are system resources managed by the OpenStack
+                Keystone service.</p>
+            <p ixia_locid="116">Tenants are the core resource structure on which all end user services are managed. They
+        are isolated resource containers consisting of networks, storage volumes, images, virtual
+        machines, authentication keys, and users.</p>
+            <p ixia_locid="117">When HP Helion OpenStack Carrier Grade is deployed, two default tenants are created:
+                    <nameliteral ixia_locid="118">admin</nameliteral> and <nameliteral ixia_locid="119">services</nameliteral>. They are used to group resources to be
+                associated with the user <nameliteral ixia_locid="120">admin</nameliteral> and the
+                cloud services, respectively.</p>
+            <note id="note_N10211_N101ED_N1001C_N10001" ixia_locid="121">
+                <p ixia_locid="122">Earlier versions of OpenStack used the term <term ixia_locid="138">project</term>
+                    instead of <term ixia_locid="139">tenant</term>. Because of this legacy terminology, the web
+                    administration interface uses both terms, and some command-line tools use
+                        <nameliteral ixia_locid="125">--project_id</nameliteral> when a tenant ID is
+                    expected.</p>
+            </note>
+            <p ixia_locid="126">Users are system resources that can operate on one or more tenants, within the constraints
+        of a particular role. For each user, the Keystone service maintains a list of (tenant, role)
+        tuples, which are used to determine the tenants the user can operate on, and the role the
+        user should play on each of them.</p>
+            <p ixia_locid="127">In the default installation of HP Helion OpenStack Carrier Grade, several users are
+                already defined. Each of the OpenStack services, such as Nova and Neutron, exist as
+                system users. They all operate on the default tenant <nameliteral ixia_locid="128">services</nameliteral>.</p>
+            <p ixia_locid="129">The Keystone <nameliteral ixia_locid="130">admin</nameliteral> user
+                is associated with the <nameliteral ixia_locid="131">admin</nameliteral> tenant.
+                This user has administrator privileges for creating, modifying, and deleting
+                OpenStack resources, including creating other tenants and users.</p>
+        </section>
+    </conbody>
+</concept-wr>

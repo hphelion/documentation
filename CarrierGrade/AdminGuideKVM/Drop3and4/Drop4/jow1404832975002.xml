@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content id="jow1404832975002" xml:lang="en-us">
+<title ixia_locid="18">Conref step: CGCS open stack list</title>
+<rcbody>
+        <step id="open-stack-list" ixia_locid="6">
+            <cmd ixia_locid="7">Open the list of existing stacks.</cmd>
+            <info ixia_locid="8">
+                <p ixia_locid="9">From the <uicontrol ixia_locid="10">Project</uicontrol> menu of
+                    the web administration interface, select <menucascade ixia_locid="19">
+                        <uicontrol ixia_locid="11">Orchestration</uicontrol>
+                        <uicontrol ixia_locid="12">Stacks</uicontrol>
+                    </menucascade>.</p>
+                <p ixia_locid="15">The Stacks list appears.</p>
+                <fig id="fig_N10056_N10032_N1002A_N10027_N1001B_N10001" ixia_locid="16">
+                    <image alt="Stacks table: Launch Stack control" href="jow1404333623353.image" id="image_gv4_yy3_34" ixia_locid="17" width="6in"/>
+                </fig>
+            </info>
+        </step>
+    </rcbody>
+</referable-content>

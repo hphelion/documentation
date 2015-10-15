@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Reference//EN" "reference-wr.dtd">
+<reference-wr domains="(topic reference reference-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333496893" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+    
+-->
+    <title ixia_locid="1">Link Aggregation Settings</title>
+    <shortdesc ixia_locid="2">HP Helion OpenStack Carrier Grade supports several link aggregation (LAG) operational
+        modes.</shortdesc>
+    <prolog>
+        <author ixia_locid="3">Jim Owens</author>
+        <author ixia_locid="4">Pedro Sanchez</author>
+        <author ixia_locid="5">Tom Towle</author>
+    </prolog>
+    <refbody>
+        <section id="section_N10027_N10024_N10001" ixia_locid="6">
+            <p ixia_locid="7">If you select link aggregation (also known as Aggregate Ethernet) when
+                configuring the management, infrastructure, or OAM networks, you can choose from the
+                following operational modes. For more information, refer to the Linux kernel <xref format="html" href="https://www.kernel.org/doc/Documentation/networking/bonding.txt" ixia_locid="8" scope="external">Ethernet Bonding Driver</xref>
+                documentation.</p>
+            <note id="note_N1003E_N1002C_N10029_N10001" ixia_locid="93">
+                <p ixia_locid="94">Ensure that the LAG mode on the corresponding Top-of-Rack (ToR)
+                    switch ports is configured to match your selection.</p>
+            </note>
+            <table frame="all" id="table_kb5_rwb_ln">
+                <title ixia_locid="9">Supported Link Aggregation Operational Modes</title>
+                <tgroup cols="3">
+                    <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                    <colspec colname="c2" colnum="2" colwidth="3.0*"/>
+                    <colspec colname="newCol3" colnum="3" colwidth="2*"/>
+                    <thead>
+                        <row>
+                            <entry ixia_locid="10">
+                                <p ixia_locid="11">Mode</p>
+                            </entry>
+                            <entry ixia_locid="12">
+                                <p ixia_locid="13">Description</p>
+                            </entry>
+                            <entry ixia_locid="68">
+                                <p ixia_locid="69">Supported Interface Types</p>
+                            </entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <!-- row>
+                            <entry ixia_locid="14">
+                                <p ixia_locid="15">Balanced Round-Robin</p>
+                            </entry>
+                            <entry ixia_locid="16">
+                                <p ixia_locid="17">Provides aggregated bandwidth and fault
+                                    tolerance. Data packets are transmitted in sequential order from
+                                    the first available slave interface to the second.</p>
+                            </entry>
+                        </row -->
+                        <row>
+                            <entry ixia_locid="18">
+                                <p ixia_locid="89">Active-backup</p>
+                                <p ixia_locid="90">(default value)</p>
+                            </entry>
+                            <entry ixia_locid="21">
+                                <p ixia_locid="22">Provides fault tolerance. Only one slave
+                                    interface at a time is available. The backup slave interface
+                                    becomes active only when the active slave interface fails.</p>
+                            </entry>
+                            <entry ixia_locid="70">
+                                <p ixia_locid="71">OAM, infrastructure, and data interfaces (compute nodes)</p>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry ixia_locid="23">
+                                <p ixia_locid="24">Balanced XOR</p>
+                            </entry>
+                            <entry ixia_locid="25">
+                                <p ixia_locid="26">Provides aggregated bandwidth and fault
+                                    tolerance. The same slave interface is used for each destination
+                                    MAC address.</p>
+                                <p ixia_locid="27">This mode uses the default transmit policy, where
+                                    the target slave interface is determined by calculating the
+                                    source MAC address XOR'd with the destination MAC address,
+                                    modulo 2.</p>
+                                <p ixia_locid="72">You can modify the transmit policy using the
+                                    xmit-hash-policy option. For details, see <xref href="#jow1404333496893/xmit-hash-policy" ixia_locid="74"/>.</p>
+                            </entry>
+                            <entry ixia_locid="76">
+                                <p ixia_locid="77">OAM, infrastructure, and data interfaces (compute nodes)</p>
+                            </entry>
+                        </row>
+                        <!-- row>
+                            <entry ixia_locid="30">
+                                <p ixia_locid="31">Broadcast</p>
+                            </entry>
+                            <entry ixia_locid="32">
+                                <p ixia_locid="33">Provides fault tolerance. Data packets are transmitted simultaneously to both
+                  slave interfaces.</p>
+                            </entry>
+                        </row -->
+                        <row>
+                            <entry ixia_locid="34">
+                                <p ixia_locid="35">802.3ad</p>
+                            </entry>
+                            <entry ixia_locid="36">
+                                <p ixia_locid="37">Provides aggregated bandwidth and fault
+                                    tolerance. Implements dynamic link aggregation as per the IEEE
+                                    802.3ad (LACP) specification.</p>
+                                <p ixia_locid="73">You can modify the transmit policy using the
+                                    xmit-hash-policy option. For details, see <xref href="#jow1404333496893/xmit-hash-policy" ixia_locid="75"/>.</p>
+                                <p ixia_locid="78">In order to support booting over an aggregated management
+                                    interface, the far-end switch ports must be configured in
+                                    passive LACP mode.</p>
+                            </entry>
+                            <entry ixia_locid="79">
+                                <p ixia_locid="80">Management, infrastructure, and data interfaces
+                                    (compute nodes)<draft-comment author="rstone" ixia_locid="95">US62818, US61952 updated</draft-comment></p>
+                            </entry>
+                        </row>
+                        <!-- row>
+                            <entry ixia_locid="38">
+                                <p ixia_locid="39">Balance-tlb (Adaptive transmit load balancing)</p>
+                            </entry>
+                            <entry ixia_locid="40">
+                                <p ixia_locid="41">Provides aggregated bandwidth and fault
+                                    tolerance. Transmitted data traffic is distributed according to
+                                    the current load, computed relative to the speed on each slave.
+                                    If a receiving slave interface fails, the another slave
+                                    interface takes over the orphan MAC addresses.</p>
+                                <p ixia_locid="42">Balance-tlb mode does not require any special switch support.</p>
+                            </entry>
+                        </row -->
+                        <!-- row>
+                            <entry ixia_locid="43">
+                                <p ixia_locid="44">Balance-alb (Adaptive load balancing)</p>
+                            </entry>
+                            <entry ixia_locid="45">
+                                <p ixia_locid="46">Provides aggregated bandwidth and fault
+                                    tolerance. Includes Balance-tlb mode, plus receive load
+                                    balancing for IPV4 traffic, which is achieved by ARP
+                                    negotiation. </p>
+                                <p ixia_locid="47">Balance-alb mode does not require any special switch support.</p>
+                            </entry>
+                        </row -->
+                    </tbody>
+                </tgroup>
+            </table>
+            <table frame="all" id="xmit-hash-policy">
+                <title ixia_locid="50">xmit-hash-policy Options</title>
+                <tgroup cols="3">
+                    <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                    <colspec colname="c2" colnum="2" colwidth="2.0*"/>
+                    <colspec colname="newCol3" colnum="3" colwidth="2*"/>
+                    <thead>
+                        <row>
+                            <entry ixia_locid="51">
+                                <p ixia_locid="52">Option</p>
+                            </entry>
+                            <entry ixia_locid="53">
+                                <p ixia_locid="54">Description</p>
+                            </entry>
+                            <entry ixia_locid="81">
+                                <p ixia_locid="82">Supported Interface Types</p>
+                            </entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry ixia_locid="55">
+                                <p ixia_locid="91">Layer 2</p>
+                                <p ixia_locid="92">(default value)</p>
+                            </entry>
+                            <entry ixia_locid="58">
+                                <p ixia_locid="59">Hashes on source and destination MAC
+                                    addresses.</p>
+                            </entry>
+                            <entry ixia_locid="83">
+                                <p ixia_locid="84">OAM, internal management, infrastructure, and data interfaces
+                                    (compute nodes)</p>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry ixia_locid="60">
+                                <p ixia_locid="61">Layer 2 + 3</p>
+                            </entry>
+                            <entry ixia_locid="62">
+                                <p ixia_locid="63">Hashes on source and destination MAC addresses,
+                                    and on source and destination IP addresses.</p>
+                            </entry>
+                            <entry ixia_locid="85">
+                                <p ixia_locid="86">OAM, internal management, and infrastructure</p>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry ixia_locid="64">
+                                <p ixia_locid="65">Layer 3 + 4</p>
+                            </entry>
+                            <entry ixia_locid="66">
+                                <p ixia_locid="67">Hashes on source and destination IP addresses,
+                                    and on source and destination ports.</p>
+                            </entry>
+                            <entry ixia_locid="87">
+                                <p ixia_locid="88">OAM, internal management, and infrastructure</p>
+                            </entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+        </section>
+    </refbody>
+</reference-wr>

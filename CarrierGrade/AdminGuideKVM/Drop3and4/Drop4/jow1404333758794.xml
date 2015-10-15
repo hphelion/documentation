@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333758794" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title>Inventory Detail</title>
+    <shortdesc>From the <wintitle>Inventory Detail</wintitle> page you
+        can see detailed information about a host, and use it to define hardware profiles that can
+        be used across the cluster.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <conbody>
+        <p>You access the <wintitle>Inventory Detail</wintitle> page
+            by clicking the host name on the <uicontrol>Hosts</uicontrol> tab of the
+                <wintitle>Systems Inventory</wintitle> page, as described in <xref href="jow1404333646078.xml"/>. The inventory detail for a host
+            consists of multiple tabs, each addressing a different aspect of the host. They
+            include:</p>
+        <ul id="ul_ayq_s3z_l4">
+            <li>
+                <p>overview</p>
+            </li>
+            <li>
+                <p>processor</p>
+            </li>
+            <li>
+                <p>memory</p>
+            </li>
+            <li>
+                <p>storage</p>
+            </li>
+            <li>
+                <p>ports</p>
+            </li>
+            <li>
+                <p>interfaces</p>
+            </li>
+            <li>
+                <p><draft-comment author="jowens">US64069 sensors bullet
+                        added</draft-comment>sensors</p>
+            </li>
+        </ul>
+    </conbody>
+</concept-wr>

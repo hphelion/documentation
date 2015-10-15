@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333486758" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title ixia_locid="1">Boot Sequence Considerations</title>
+    <shortdesc ixia_locid="2">During HP Helion OpenStack Carrier Grade software installation, each host must boot from
+        different devices at different times. In some cases, you may need to adjust the boot
+        order.</shortdesc>
+    <prolog>
+        <author ixia_locid="3">Jim Owens</author>
+        <author ixia_locid="4">Pedro Sanchez</author>
+        <author ixia_locid="5">Tom Towle</author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="32">The first controller node must be booted initially from a removable
+            storage device to install an operating system. The host then reboots from the hard
+            drive.</p>
+        <p ixia_locid="33">Each remaining host must be booted initially from the network using PXE
+            to install an operating system. The host then reboots from the hard drive.</p>
+        <p ixia_locid="6">To facilitate this process, ensure that the hard drive does not already
+            contain a bootable operating system, and set the following boot order in the BIOS.</p>
+        <ol id="ol_htt_5qg_fn">
+            <li ixia_locid="19">
+                <p ixia_locid="20">removable storage device (USB flash drive or DVD drive)</p>
+            </li>
+            <li ixia_locid="21">
+                <p ixia_locid="22">hard drive</p>
+            </li>
+            <li ixia_locid="36" product="tis_standard">
+                <p ixia_locid="38">network (PXE), over an interface connected to the internal
+                    management network</p>
+            </li>
+            <li ixia_locid="37" product="tis_region">
+                <p ixia_locid="39">network (PXE), over an interface connected
+                    to the PXE boot network</p>
+            </li>
+        </ol>
+        <p ixia_locid="31">For BIOS configuration details, refer to the OEM documentation supplied
+            with the computing node.</p>
+        <note id="note_N10061_N10029_N10001" ixia_locid="34">
+            <p ixia_locid="35">If a host contains a bootable hard drive, either erase the drive
+                beforehand, or ensure that the host is set to boot from the correct source for
+                initial configuration. If necessary, you can change the boot device at boot time by
+                pressing a dedicated key. For more information, refer to the OEM documentation for
+                the compute node.</p>
+        </note>
+    </conbody>
+</concept-wr>

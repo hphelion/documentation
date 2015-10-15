@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1408039460152" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+        
+-->
+    <title ixia_locid="1">Adding an SNMP Community String</title>
+    <shortdesc ixia_locid="2">To enable SNMP services you need to define one or more SNMP community strings using
+        the command line interface.</shortdesc>
+    <prolog>
+        <author></author>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001" ixia_locid="4">
+            <p ixia_locid="5">No default community strings are defined on HP Helion OpenStack Carrier Grade after the
+                initial commissioning of the cluster. This means that no SNMP operations are enabled
+                by default. </p>
+            <p ixia_locid="6">The following exercise illustrates the system commands available to manage and query
+                SNMP community strings. It uses the string <term ixia_locid="7">commstr1</term> as an example.</p>
+        </context>
+        <prereq id="prereq_N10030_N1001C_N10001" ixia_locid="8">
+            <p ixia_locid="9">All commands must be executed on the active controller's console,
+                which can be accessed using the OAM floating IP address. You must acquire Keystone
+                    <nameliteral ixia_locid="10">admin</nameliteral> credentials in order to execute
+                the commands.</p>
+        </prereq>
+        <steps>
+            <step id="step_N10040_N1003D_N1001C_N10001" ixia_locid="11">
+                <cmd ixia_locid="12">Add the SNMP community string <term ixia_locid="13">commstr1</term> to the system.</cmd>
+                <stepxmp ixia_locid="14">
+                    <codeblock ixia_locid="15"><systemoutput ixia_locid="67">~(keystone_admin)$ </systemoutput><userinput ixia_locid="17">system snmp-comm-add -c commstr1
+</userinput><systemoutput ixia_locid="68">+-----------+--------------------------------------+
+| Property  | Value                                |
++-----------+--------------------------------------+
+| access    | ro                                   |
+| uuid      | eccf5729-e400-4305-82e2-bdf344eb868d |
+| community | commstr1                             |
+| view      | .1                                   |
++-----------+--------------------------------------+</systemoutput>
+</codeblock>
+                </stepxmp>
+                <info ixia_locid="19">
+                    <p ixia_locid="20">The following are attributes associated with the new community string:</p>
+                    <dl>
+                        <dlentry ixia_locid="21">
+                            <dt ixia_locid="22">access</dt>
+                            <dd ixia_locid="23">
+                                <p ixia_locid="24">The SNMP access type. In HP Helion OpenStack Carrier Grade all
+                                    community strings provide read-only access.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry ixia_locid="25">
+                            <dt ixia_locid="26">uuid</dt>
+                            <dd ixia_locid="27">
+                                <p ixia_locid="28">The UUID associated with the community string.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry ixia_locid="29">
+                            <dt ixia_locid="30">community</dt>
+                            <dd ixia_locid="31">
+                                <p ixia_locid="32">The community string value.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry ixia_locid="33">
+                            <dt ixia_locid="34">view</dt>
+                            <dd ixia_locid="35">
+                                <p ixia_locid="36">The is always the full MIB tree.</p>
+                            </dd>
+                        </dlentry>
+                    </dl>
+                </info>
+            </step>
+            <step id="step_N100AA_N1003D_N1001C_N10001" ixia_locid="37">
+                <cmd ixia_locid="38">List available community strings.</cmd>
+                <stepxmp ixia_locid="39">
+                    <codeblock ixia_locid="40"><systemoutput ixia_locid="69">~(keystone_admin)$ </systemoutput><userinput ixia_locid="42">system snmp-comm-list</userinput>
+<systemoutput ixia_locid="70">+----------------+--------------------+--------+
+| SNMP community | View               | Access |
++----------------+--------------------+--------+
+| commstr1       | .1                 | ro     |
++----------------+--------------------+--------+</systemoutput>
+</codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N100C5_N1003D_N1001C_N10001" ixia_locid="44">
+                <cmd ixia_locid="45">Query details of a specific community string.</cmd>
+                <stepxmp ixia_locid="46">
+                    <codeblock ixia_locid="47"><systemoutput ixia_locid="71">~(keystone_admin)$ </systemoutput><userinput ixia_locid="49">system snmp-comm-show commstr1</userinput>
+<systemoutput ixia_locid="72">+------------+--------------------------------------+
+| Property   | Value                                |
++------------+--------------------------------------+
+| access     | ro                                   |
+| created_at | 2014-08-14T21:12:10.037637+00:00     |
+| uuid       | eccf5729-e400-4305-82e2-bdf344eb868d |
+| community  | commstr1                             |
+| view       | .1                                   |
++------------+--------------------------------------+</systemoutput>
+</codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N100E0_N1003D_N1001C_N10001" ixia_locid="51">
+                <cmd ixia_locid="52">Delete a community string.</cmd>
+                <stepxmp ixia_locid="53">
+                    <codeblock ixia_locid="54"><systemoutput ixia_locid="73">~(keystone_admin)$ </systemoutput><userinput ixia_locid="56">system snmp-comm-delete commstr1</userinput>
+<systemoutput ixia_locid="74">Deleted community commstr1</systemoutput></codeblock>
+                </stepxmp>
+            </step>
+        </steps>
+        <result id="result_N10134_N1001F_N10001" ixia_locid="58">
+            <p ixia_locid="59">Community strings in HP Helion OpenStack Carrier Grade provide query access to any SNMP
+                monitor workstation that can reach the controller's OAM address on UDP port 161.</p>
+            <p ixia_locid="60">You can verify SNMP access using any monitor tool. For example, the freely available
+                command <cmdname ixia_locid="61">snmpwalk</cmdname> can be issued from any host to list the state of
+                all SNMP Object Identifiers (OID):</p>
+            <codeblock ixia_locid="62"><systemoutput ixia_locid="75">$ </systemoutput><userinput ixia_locid="64">snmpwalk -v 2c -c commstr1 10.10.10.100 &gt; oids.txt</userinput></codeblock>
+            <p ixia_locid="65">In this example, 10.10.10.100 is the HP Helion OpenStack Carrier Grade OAM floating IP
+                address. The output, which is a large file, is redirected to the file <filepath ixia_locid="66">oids.txt</filepath>.</p>
+        </result>
+    </taskbody>
+</task-wr>

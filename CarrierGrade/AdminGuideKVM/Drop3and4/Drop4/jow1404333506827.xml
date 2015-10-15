@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content id="jow1404333506827" xml:lang="en-us">
+    <!-- Modification History
+        
+-->
+    <title ixia_locid="1">[RC steps] Locking and Unlocking Hosts</title>
+    <shortdesc ixia_locid="2">You can lock a host in order to change its configuration, or unlock it
+        to make it available for use.</shortdesc>
+    <prolog>
+        <author ixia_locid="3">Jim Owens</author>
+    </prolog>
+    <rcbody>
+        <context id="context_N1001F_N1001C_N10001" ixia_locid="4">
+            <p ixia_locid="5">Unlocking causes the host to be rebooted so that its configuration can
+                be updated.</p>
+            <note id="note_N10027_N1001F_N1001C_N10001" ixia_locid="6">
+                <p ixia_locid="7">A newly added host is locked by default. To make it operational,
+                    you must unlock it manually.</p>
+            </note>
+        </context>
+        <prereq id="prereq_N10030_N1001C_N10001" ixia_locid="8">
+            <p ixia_locid="9">Ensure that the required network interfaces have been defined.</p>
+            <ul id="ul_gkf_wcn_m4">
+                <li ixia_locid="10">
+                    <p ixia_locid="11">Before you can unlock a <nameliteral ixia_locid="12">compute</nameliteral> host, at least one data interface to an existing
+                        provider network is required.</p>
+                </li>
+                <li ixia_locid="13">
+                    <p ixia_locid="14">Before you can unlock a <nameliteral ixia_locid="15">storage</nameliteral> host, an interface to the infrastructure network
+                        is required.</p>
+                </li>
+            </ul>
+        </prereq>
+        <steps id="steps_N10066_N1001F_N10001">
+            <step id="lock-node" ixia_locid="48">
+                <cmd ixia_locid="49">Lock the host to prepare it for configuration changes.</cmd>
+                <info ixia_locid="50">
+                    <p ixia_locid="51">In the <uicontrol ixia_locid="52">Hosts</uicontrol> list,
+                        click <uicontrol ixia_locid="54">More</uicontrol> for the host, and then
+                        select <uicontrol ixia_locid="55">Lock Host</uicontrol>.</p>
+                    <p ixia_locid="56">The host is locked and reported as <uicontrol ixia_locid="57">Locked</uicontrol>, <uicontrol ixia_locid="58">Disabled</uicontrol>,
+                        and <uicontrol ixia_locid="59">Online</uicontrol>.</p>
+                </info>
+            </step>
+            <step id="lock-or-unlock-node" ixia_locid="16">
+                <cmd ixia_locid="17">In the <uicontrol ixia_locid="18">Hosts</uicontrol> list, on
+                    the row associated with the host, click <uicontrol ixia_locid="19">More</uicontrol> to display a menu of actions.</cmd>
+                <choices id="choices_e2n_qfr_l4">
+                    <choice ixia_locid="20">
+                        <p ixia_locid="21">To unlock a locked host, click <uicontrol ixia_locid="22">Unlock Host</uicontrol>. The host is rebooted, and its <uicontrol ixia_locid="23">Availability State</uicontrol> is reported as
+                                <uicontrol ixia_locid="24">In-Test</uicontrol>. After a few minutes,
+                            it is reported as <uicontrol ixia_locid="25">Unlocked</uicontrol>,
+                                <uicontrol ixia_locid="26">Enabled</uicontrol>, and <uicontrol ixia_locid="27">Available</uicontrol>.</p>
+                    </choice>
+                    <choice ixia_locid="28">
+                        <p ixia_locid="29">To lock an unlocked host, click <uicontrol ixia_locid="30">Lock Host</uicontrol>, and confirm your selection in
+                            the dialog box that appears. The host is locked and reported as
+                                <uicontrol ixia_locid="31">Locked</uicontrol>, <uicontrol ixia_locid="32">Disabled</uicontrol>, and <uicontrol ixia_locid="33">Online</uicontrol>.</p>
+                    </choice>
+                </choices>
+            </step>
+            <step id="unlock-node" ixia_locid="34">
+                <cmd ixia_locid="35">Unlock the host to make it available for use.</cmd>
+                <info ixia_locid="36">
+                    <p ixia_locid="37">In the <uicontrol ixia_locid="38">Hosts</uicontrol> list,  on the row associated with the
+                        node, click <menucascade ixia_locid="39"><uicontrol ixia_locid="40">More</uicontrol><uicontrol ixia_locid="41">Unlock Host</uicontrol></menucascade>.</p>
+                </info>
+                <stepresult ixia_locid="60">
+                    <p ixia_locid="42">The host is rebooted, and its <uicontrol ixia_locid="43">Availability State</uicontrol> is reported as <uicontrol ixia_locid="44">In-Test</uicontrol>. After a few minutes, it is reported
+                        as <uicontrol ixia_locid="45">Unlocked</uicontrol>, <uicontrol ixia_locid="46">Enabled</uicontrol>, and <uicontrol ixia_locid="47">Available</uicontrol>.</p>
+                </stepresult>
+            </step>
+        </steps>
+    </rcbody>
+</referable-content>

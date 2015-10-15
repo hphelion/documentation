@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1440626167721" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title>Utilities for vSwitch</title>
+ <shortdesc>You can query virtual switch (vSwitch) instances in HP Helion OpenStack Carrier Grade, and
+    perform packet tracing on vSwitch interfaces.</shortdesc>
+ <prolog><author/>
+  <author/>
+ </prolog>
+ <conbody>
+  <p><draft-comment author="jowens">US53369 topic
+    added</draft-comment>In HP Helion OpenStack Carrier Grade, an accelerated virtual switch (AVS) runs on each
+   compute host, providing Layer 2 switching for the virtual machines instantiated on the host. Up
+   to 254 ports are supported for each host; this total includes physical, guest, and host
+   ports.</p>
+  <p>You can use the <cmdname>vshell</cmdname> utility to query the
+   status of each vSwitch and collect performance statistics. You can use the <cmdname>vtrace</cmdname> utility to perform packet trace operations.</p>
+ </conbody>
+</concept-wr>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333731990" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title ixia_locid="1">Ethernet Interfaces</title>
+    <shortdesc ixia_locid="2">Ethernet interfaces, both physical and virtual, play a key role in the overall
+  performance of the virtualized network. Therefore, it is important to understand the available
+  interface types, their configuration options, and their impact on network design.</shortdesc>
+    <prolog>
+        <author></author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="4">On compute node data interfaces, HP Helion OpenStack Carrier Grade supports Ethernet Network
+            Interface Cards (NIC) based on the following chip sets:</p>
+        <ul conref="jow1439492113306.xml#jow1439492113306/ul_bx4_xz4_n4" id="ul_asg_yqz_zs">
+            <li ixia_locid="40"/>
+        </ul>
+        <!-- ul conref="jow1439489718749.xml#jow1439489718749/ul_fnd_h3k_ns" id="ul_fhp_zmz_zs">
+            <li/>
+        </ul -->
+        <p ixia_locid="9">The following virtual network interfaces are available:</p>
+        <ul conref="jow1439489784564.xml#jow1439489784564/supported_vNIC" id="ul_amy_z5z_zs">
+            <li ixia_locid="41"/>
+        </ul>
+        <section id="section_N1006F_N1001A_N10001" ixia_locid="22">
+            <title ixia_locid="23">About LAG/AE Interfaces</title>
+            <p ixia_locid="24">To provide link protection, Ethernet interfaces in a LAG group can be
+                attached either to the same L2 switch, or to multiple switches in a redundant
+                configuration. For more information about L2 switch configurations, see <xref href="jow1404333739778.xml" ixia_locid="42"/>. For information about the
+                different LAG modes, see the <cite ixia_locid="30">HP Helion OpenStack Carrier Grade Software
+                    Installation Guide</cite>.</p>
+        </section>
+    </conbody>
+</concept-wr>

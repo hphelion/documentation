@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Reference//EN" "reference-wr.dtd">
+<reference-wr domains="(topic reference reference-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1409777224536" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+    
+-->
+  <title>Supported Heat Resource Types</title>
+  <shortdesc>The HP Helion OpenStack Carrier Grade implementation of Heat has been tested with most commonly-used
+    resource types. </shortdesc>
+  <prolog><author/>
+    <author/>
+  </prolog>
+  <refbody>
+    <section id="section_N1001F_N1001C_N10001">
+      <p>The following resource types have been tested for use with HP Helion OpenStack Carrier Grade.</p>
+      <ul id="ul_bsh_3s5_hp">
+        <li><p>AWS::AutoScaling::AutoScalingGroup</p></li>
+        <li><p>AWS::AutoScaling::LaunchConfiguration</p></li>
+        <li><p>AWS::AutoScaling::ScalingPolicy</p></li>
+        <li><p>AWS::CloudFormation::Stack</p></li>
+        <li><p>AWS::EC2::Instance</p></li>
+        <li><p>AWS::EC2::InternetGateway</p></li>
+        <li><p>AWS::EC2::NetworkInterface</p></li>
+        <li><p>AWS::IAM::AccessKey</p></li>
+        <li><p>AWS::IAM::User</p></li>
+        <li><p>OS::Ceilometer::Alarm</p></li>
+        <li><p>OS::Cinder::Volume</p></li>
+        <li><p>OS::Cinder::VolumeAttachment</p></li>
+        <li><p>OS::Glance::Image</p></li>
+        <li><p>OS::Heat::AccessPolicy</p></li>
+        <li><p>OS::Heat::AutoScalingGroup</p></li>
+        <li><p>OS::Heat::InstanceGroup</p></li>
+        <li><p>OS::Heat::ScalingPolicy</p></li>
+        <li><p>OS::Heat::Stack</p></li>
+        <li><p>OS::Neutron::FloatingIP</p></li>
+        <li><p>OS::Neutron::FloatingIPAssociation</p></li>
+        <li><p>OS::Neutron::Net</p></li>
+        <li><p>OS::Neutron::NetworkGateway</p></li>
+        <li><p>OS::Neutron::Port</p></li>
+        <li><p>OS::Neutron::Router</p></li>
+        <li><p>OS::Neutron::RouterGateway</p></li>
+        <li><p>OS::Neutron::RouterInterface</p></li>
+        <li><p>OS::Neutron::SecurityGroup</p></li>
+        <li><p>OS::Neutron::Subnet</p></li>
+        <li><p>OS::Nova::Flavor</p></li>
+        <li><p>OS::Nova::FloatingIP</p></li>
+        <li><p>OS::Nova::FloatingIPAssociation</p></li>
+        <li><p>OS::Nova::KeyPair</p></li>
+        <li><p>OS::Nova::Server</p></li>
+        <li><p>OS::Nova::ServerGroup</p></li>
+        <li><p>OS::WR::ScalingPolicy</p></li>
+        <li><p>WR::Neutron::PortForwarding</p></li>
+        <li><p>WR::Neutron::ProviderNet</p></li>
+        <li><p>WR::Neutron::ProviderNetRange</p></li>
+        <li><p>WR::Neutron::QoSPolicy</p></li>
+        
+      </ul>
+    </section>
+  </refbody>
+</reference-wr>

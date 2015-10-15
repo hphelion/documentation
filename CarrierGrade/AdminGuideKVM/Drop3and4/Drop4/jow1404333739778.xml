@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333739778" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title ixia_locid="1">L2 Access Switches</title>
+    <shortdesc ixia_locid="2">L2 access switches connect the HP Helion OpenStack Carrier Grade hosts to the different
+        networks. Proper configuration of the access ports is necessary to ensure proper traffic
+        flow.</shortdesc>
+    <prolog>
+        <author></author>
+    </prolog>
+    <conbody>
+        <section id="section_N1001D_N1001A_N10001" ixia_locid="4">
+            <p ixia_locid="5">One or more L2 switches can be used to connect the HP Helion OpenStack Carrier Grade
+                hosts to the different networks. When sharing a single L2 switch you must ensure
+                proper isolation of the network traffic. Here is an example of how to configure a
+                shared L2 switch:</p>
+            <ul id="ul_obf_dyr_4n">
+                <li ixia_locid="6">
+                    <p ixia_locid="7">one port- or MAC-based VLAN for the internal management network</p>
+                </li>
+                <li ixia_locid="8">
+                    <p ixia_locid="9">one port- or MAC-based VLAN for the OAM network</p>
+                </li>
+                <li ixia_locid="23">
+                    <p ixia_locid="24">one port-based VLAN for an optional board management network,
+                        if the network is configured for internal access</p>
+                </li>
+                <li ixia_locid="10">
+                    <p ixia_locid="11">one or more sets of VLANs for provider networks. For
+                        example:</p>
+                    <ul id="ul_ov4_kyr_4n">
+                        <li ixia_locid="12">
+                            <p ixia_locid="13">one set of VLANs with good QoS for bronze tenants</p>
+                        </li>
+                        <li ixia_locid="14">
+                            <p ixia_locid="15">one set of VLANs with better QoS for silver tenants</p>
+                        </li>
+                        <li ixia_locid="16">
+                            <p ixia_locid="17">one set of VLANs with the best QoS for gold tenants</p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <p ixia_locid="18">When using multiple L2 switches, there are several deployment
+                possibilities. Here are some examples:</p>
+            <ul id="ul_qmd_wyr_4n">
+                <li ixia_locid="19">
+                    <p ixia_locid="20">A single L2 switch for the internal management and OAM networks. Port- or MAC-based network
+      isolation is mandatory.</p>
+                </li>
+                <li ixia_locid="21">
+                    <p ixia_locid="22">One or more L2 switches, not necessarily inter-connected, with one L2 switch per provider
+      network.</p>
+                </li>
+                <li ixia_locid="52">
+                    <p ixia_locid="53">Redundant L2 switches to support link aggregation, using
+                        either a failover model, or Virtual Port Channel (VPC) for more robust
+                        redundancy. For more information, see <xref href="jow1437759656219.xml" ixia_locid="54"/>.</p>
+                </li>
+            </ul>
+            <p ixia_locid="47">Switch ports that send tagged traffic are referred to as <term ixia_locid="48">trunk</term> ports. They usually participate in the Spanning
+                Tree Protocol (STP) from the moment the link goes up, which usually translates into
+                several seconds of delay before the trunk port moves to the forwarding state. This
+                delay is likely to impact services such as DHCP and PXE which are used during
+                regular operations of HP Helion OpenStack Carrier Grade.</p>
+            <p ixia_locid="49">Therefore, you must consider configuring the switch ports to which
+                the management interfaces are attached to transition to the forwarding state
+                immediately after the link goes up. This option is usually referred to as a <term ixia_locid="50">PortFast</term>.</p>
+            <p ixia_locid="51">You should also consider configuring these ports to prevent them from
+                participating on any STP exchanges. This is usually done by configuring them to
+                avoid processing inbound and outbound BDPU STP packets completely. Consult your
+                switch's manual for details.</p>
+        </section>
+    </conbody>
+</concept-wr>

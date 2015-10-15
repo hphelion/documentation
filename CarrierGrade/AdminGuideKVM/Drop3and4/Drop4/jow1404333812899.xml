@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333812899" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+        
+-->
+    <title>Creating an In/Out Autoscaling Resource</title>
+    <shortdesc>The <filepath>CombinationAutoscaling.yaml</filepath>
+        template illustrates the use of a template to create an in/out autoscaling
+        resource.</shortdesc>
+    <prolog><author/>
+        
+    </prolog>
+    <taskbody>
+        <context id="context_N10023_N10020_N10001">
+            <p>This HOT template creates a load balancer VM
+                    (<nameliteral>OS::Nova::Server</nameliteral>) and a scalable pool of server VMs
+                    (<nameliteral>OS::Heat::AutoScalingGroup</nameliteral> of
+                    <nameliteral>OS::Nova:Server</nameliteral>). The associated OS::Ceilometer:Alarm
+                and OS::Heat::ScalingPolicy resources are based on a passed-in platform link
+                utilization meter. Instances are added or removed based on this information.</p>
+            <p>Use an <nameliteral>admin</nameliteral> account to run
+                this template.</p>
+        </context>
+        <steps>
+            <step id="step_N1005C_N10059_N10020_N10001">
+                <cmd>Collect the required parameter values for this template.</cmd>
+                <substeps id="substeps_wqc_mlv_34">
+                    <substep>
+                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-flavor"/>
+                    </substep>
+                    <substep>
+                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-keypair"/>
+                    </substep>
+                    <substep>
+                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-image"/>
+                    </substep>
+                    <substep>
+                        <cmd>On the <menucascade>
+                                <uicontrol>Admin</uicontrol>
+                                <uicontrol>System Panel</uicontrol>
+                                <uicontrol>Networks</uicontrol>
+                            </menucascade> page, click the <uicontrol>Name</uicontrol> of each required network in turn, in order to open
+                            the Network Overview page and obtain the network <uicontrol>ID</uicontrol>. For this template, a public network
+                            ID and an internal network ID are required.</cmd>
+                    </substep>
+                </substeps>
+            </step>
+            <step conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N10096_N10059_N10020_N10001"><cmd/></step>
+            <step conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N1009D_N10059_N10020_N10001"><cmd/></step>
+            
+            <step id="step_N100A4_N10059_N10020_N10001">
+                <cmd>Select<uicontrol> File</uicontrol>, then click
+                        <uicontrol>Browse</uicontrol> and select <filepath>CombinationAutoscaling.yaml</filepath> from the local
+                    disk.</cmd>
+            </step>
+            <step id="step_N100CA_N10059_N10020_N10001">
+                <cmd>Use the <wintitle>Launch Stack</wintitle> form to provide the required
+                    parameter values for the template. </cmd>
+                <info>
+                    <fig id="fig_N100D4_N100D1_N100C6_N10059_N10020_N10001">
+                        <image alt="CPUScale Launch Stack form" href="jow1404333811339.image" id="image_dvz_1wj_j4" width="4in"/>
+                    </fig>
+                    <note id="note_N100E1_N100D1_N100C6_N10059_N10020_N10001">
+                        <p>The parameters are presented in a single column. This image has been
+                            edited to present them in two columns.</p>
+                    </note>
+                </info>
+            </step>
+            <step id="step_N100F1_N10059_N10020_N10001" importance="optional">
+                <cmd>Adjust existing values to meet your requirements.</cmd>
+                <choicetable id="choicetable_nqn_msw_34" keycol="1" relcolwidth="1.0* 2.0*">
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>KeyName</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The <uicontrol>KeyPair</uicontrol>
+                                name from the<wintitle> Access &amp;
+                                    Security</wintitle> page.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>ViFModel</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The virtual interface model to use. For valid
+                                choices, see <cite>Multiple NIC Support</cite> in
+                                    <xref href="jow1404333807231.xml"/>.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>InstanceType</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The <uicontrol>Flavor
+                                    Name</uicontrol> from the <wintitle>Flavors</wintitle> page.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>ImageId</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The <uicontrol>Image
+                                    Name</uicontrol> from the <wintitle>Images</wintitle> page.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>PublicNetId</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The <uicontrol>ID</uicontrol> from
+                                the <wintitle>Network Overview</wintitle> page.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>InternalNetId</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The <uicontrol>ID</uicontrol> from
+                                the <wintitle>Network Overview</wintitle> page.
+                                <!-- this and the similar entry above need attention. We need two network IDs (or are the Names enough?) when we collect the parameters. --></p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>MinClusterSize</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The minimum number of VMs to launch. The stack cannot
+                                autoscale below this value.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>MaxClusterSize</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The maximum number of VMs that can be launched.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>CustomMeterName</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The name of a custom Ceilometer metric to store.<!-- For
+                                information about custom metrics, see <xref href="jow1404916152577.xml"/>.--></p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>CustomMeterUnit</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The unit of measurement to display for the custom
+                                metric; for example, 'Percent'.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>MetricHighWaterMark</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The value that triggers autoscaling to add
+                                resources.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>MetricLowWaterMark</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The value that triggers autoscaling to remove
+                                resources.</p>
+                        </chdesc>
+                    </chrow>
+                </choicetable>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410807758201" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+
+ -->
+ <title>System Backups</title>
+ <shortdesc>HP Helion OpenStack Carrier Grade provides tools to back up <term>system
+      data</term> and <term>Cinder volumes</term> so that they can be stored in
+    external storage resources and used to restore a full cluster.</shortdesc>
+ <prolog><author/>
+  
+ </prolog>
+ <conbody>
+  <p>The backup and restore procedures can be summarized as follows:</p>
+  <ul id="ul_at2_h3y_lp">
+   <li>
+    <p>Log in as user <nameliteral>wrsroot</nameliteral> to the
+          console of the active controller.</p>
+   </li>
+   <li>
+    <p>Execute the backup procedures from the CLI. The backup files are stored in the directory
+      <filepath>/opt/backups</filepath> on the current controller node.</p>
+   </li>
+   <li>
+    <p>Copy the backup files to an external storage resource.</p>
+   </li>
+   <li>
+    <p>Shut down the cluster, and proceed with any maintenance operations that might
+     be required. Ensure that all hosts are powered down.</p>
+   </li>
+   <li>
+    <p>Restore the cluster one host at a time. Start with the first controller, then
+          the second controller, then storage nodes, and finally compute nodes.</p>
+   </li>
+  </ul>
+    <p>It is important to note that a restore operation must be executed on the same
+      cluster hardware where the backups were created, otherwise, the operation fails. Hardware
+      differences affect the restore operation in multiple ways. For example, differences in
+      Ethernet MAC addresses impact the networking metadata stored in the system data backup files.
+      Also, storage devices with different sizes or geometries impact the metadata stored in the
+      Cinder block storage database.</p>
+  <p>The backup and restore tools are designed to operate on an entire Titanium
+   Server cluster. They are not suitable as a tool to back up and restore individual hosts.</p>
+ </conbody>
+</concept-wr>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1439301559036" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Displaying Provider Network Information</title>
+    <shortdesc>You can display details for a provider network from the CLI or the web
+        administration interface. </shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p>To view information for a provider network from the CLI, use the following
+                command:</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron providernet-show <varname>providernet</varname></userinput>
+</codeblock>
+            <p>where <varname>providernet</varname> is the name or
+                UUID of the provider network.</p>
+            <p>For example:</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron providernet-show a507bb89-8e78-48e4-8c8a-d8bac14fc097</userinput>
+</codeblock>
+            <draft-comment author="jowens">Need to create output to match screen
+                shot. Output may need updating for VLAN Transparent info (US60634)</draft-comment>
+            <draft-comment author="jowens">Add commands for viewing seg ranges and
+                tenant networks associated with the provider network (as shown in the GUI display)?
+                This is outside the scope of US55723, but appropriate for this new topic, which was
+                created because of it. The Install Guide has this info in Configuring Provider
+                Networks (and [same] Using the CLI).  </draft-comment>
+        </context>
+        <section id="section_N10068_N1001F_N10001">
+            <title>Viewing PCI Resource Usage from the CLI </title>
+            <p>To view information about PCI interface resources for a provider
+                network from the CLI, use the following command:</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova providernet-show <varname>providernet</varname></userinput>
+</codeblock>
+            <p>where <varname>providernet</varname> is the UUID of
+                the provider network.</p>
+            <p>For example:</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova providernet-show a507bb89-8e78-48e4-8c8a-d8bac14fc097</userinput>
+<systemoutput>+--------------------+--------------------------------------+
+| Property           | Value                                |
++--------------------+--------------------------------------+
+| id                 | a507bb89-8e78-48e4-8c8a-d8bac14fc097 |
+| name               | group0-ext0                          |
+| pci_pfs_configured | 1                                    |
+| pci_pfs_used       | 1                                    |
+| pci_vfs_configured | 0                                    |
+| pci_vfs_used       | 0                                    |
++--------------------+--------------------------------------+
+</systemoutput></codeblock>
+            <p>where<dl>
+                    <dlentry>
+                        <dt>pci_pfs_configured</dt>
+                        <dd>
+                            <p>is the number of PCI passthrough interfaces attached
+                                to the provider network</p>
+                        </dd>
+                    </dlentry>
+                    <dlentry>
+                        <dt>pci_pfs_used</dt>
+                        <dd>
+                            <p>is the number of PCI passthrough interfaces allocated
+                                to instances</p>
+                        </dd>
+                    </dlentry>
+                    <dlentry>
+                        <dt>pci_vfs_configured</dt>
+                        <dd>
+                            <p>is the number of SR-IOV interfaces attached to the
+                                provider network</p>
+                        </dd>
+                    </dlentry>
+                    <dlentry>
+                        <dt>pci_vfs_used</dt>
+                        <dd>
+                            <p>is the number of SR-IOV interfaces allocated to
+                                instances</p>
+                        </dd>
+                    </dlentry>
+                </dl></p>
+        </section>
+        <context id="context_N100FF_N1001F_N10001">
+            <p>To view the information from the web administration interface, follow
+                these steps:</p>
+        </context>
+        <steps>
+            <step id="step_N100A9_N100A6_N1001C_N10001">
+                <cmd>From the left pane menu select <menucascade>
+                        <uicontrol>Admin</uicontrol>
+                        <uicontrol>System</uicontrol>
+                        <uicontrol>Networks</uicontrol>
+                    </menucascade> to display the <wintitle>Networks</wintitle> page.</cmd>
+            </step>
+            <step id="step_N100BE_N100A6_N1001C_N10001">
+                <cmd>Select the <uicontrol>Provider
+                        Networks</uicontrol> tab.</cmd>
+            </step>
+            <step id="step_N100CF_N100A6_N1001C_N10001">
+                <cmd>Click the name of the provider network to open the <wintitle>Provider Network
+                        Overview</wintitle> page.</cmd>
+                <info>
+                    <p>Details for the provider network are displayed, including any associated
+                        segmentation ranges and tenant networks.</p>
+                    <fig id="fig_b5c_j1k_zs">
+                        <image href="jow1439306282185.image" id="image_cqm_j1k_zs">
+                            <alt>TiS Provider Network Overview for Admin Guide</alt>
+                        </image>
+                    </fig>
+                </info>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

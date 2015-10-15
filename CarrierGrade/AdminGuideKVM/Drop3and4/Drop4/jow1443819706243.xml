@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1443819706243" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title>CLI Commands for Managing Sensors</title>
+ <shortdesc>You can use the command-line interface to list sensor information and
+  change sensor settings.</shortdesc>
+ <prolog><author/>
+  <author/>
+ </prolog>
+ <conbody>
+  <p><draft-comment author="jowens">US64069 new
+   topic</draft-comment>The following CLI commands are available for working with sensors.  For
+   complete syntax information, refer to the command help.</p>
+   <ul>
+    <li>
+     <p><cmdname>system host-sensor-list</cmdname></p>
+    </li>
+    <li>
+     <p><cmdname>system host-sensor-modify</cmdname></p>
+     <p>You can modify sensors using the <parmname>suppress</parmname> parameter
+       (<option>True</option> or <option>False</option>).</p>
+    </li>
+    <li>
+     <p><cmdname>system host-sensor-show</cmdname></p>
+    </li>
+    <li>
+     <p><cmdname>system host-sensorgroup-list</cmdname></p>
+    </li>
+    <li>
+     <p><cmdname>system host-sensorgroup-modify</cmdname></p>
+     <p>You can modify sensor groups using the following parameters:</p>
+     <ul id="ul_kny_cxf_4t">
+      <li>
+       <p><parmname>actions_critical_group</parmname> (valid values are <option>alarm</option> or
+         <option>ignore</option>)</p>
+      </li>
+      <li>
+       <p><parmname>actions_major_group</parmname> (valid values are
+         <option>alarm</option> or <option>ignore</option>)</p>
+      </li>
+      <li>
+       <p><parmname>actions_minor_group</parmname>  (valid values are <option>alarm</option> or
+         <option>ignore</option>)</p>
+      </li>
+      <li>
+       <p><parmname>audit interval_group</parmname> (time in seconds)</p>
+      </li>
+      <li>
+       <p><parmname>suppress</parmname>  (<option>True</option> or <option>False</option>)</p>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <p><cmdname>system host-sensorgroup-show</cmdname></p>
+    </li>
+   </ul>
+  <p>For
+   example:<systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-sensor-modify controller-0 \
+d9af9433-44dd-4526-b0fd-8d7a0cdb877b suppress=True</userinput></p>
+  <p>For more information about sensors and sensor groups, see <xref href="jow1443819549360.xml"/>.</p>
+ </conbody>
+</concept-wr>

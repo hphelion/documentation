@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1443627833422" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title ixia_locid="1">Firewall Options</title>
+ <shortdesc ixia_locid="2">HP Helion OpenStack Carrier Grade incorporates a firewall for the OAM network. During
+  initial configuration, you can specify an additional file in order to augment or override the
+  default rules.</shortdesc>
+ <prolog>
+  <author ixia_locid="3">Jim Owens</author>
+ </prolog>
+ <conbody>
+  <draft-comment author="jowens" ixia_locid="5">US65292 new topic</draft-comment>
+  <p ixia_locid="6">For more information about specifying a firewall rules file during controller
+   configuration, see <xref href="jow1419271369349.xml" ixia_locid="8"/>.</p>
+  <p ixia_locid="9">The HP Helion OpenStack Carrier Grade firewall uses the <nameliteral ixia_locid="10">Netfilter</nameliteral>
+   framework to implement a firewall on the OAM network.  If  the system is configured to support an
+   optional firewall rules file, you can introduce custom rules by adding entries in this file.</p>
+  <p ixia_locid="11">Two input chains are supported for custom rules: <nameliteral ixia_locid="12">INPUT-custom-pre</nameliteral>, for rules to be processed before the default rules, and
+    <nameliteral ixia_locid="13">INPUT-custom-post</nameliteral>, for rules to be processed after
+   the default rules.</p>
+  <p ixia_locid="14">A minimal set of rules is always applied before any custom rules, as
+   follows:</p>
+  <ul id="ul_ehp_fkl_nt">
+   <li ixia_locid="15">
+    <p ixia_locid="16">Non-OAM traffic is always accepted.</p>
+   </li>
+   <li ixia_locid="17">
+    <p ixia_locid="18">Egress traffic is always accepted.</p>
+   </li>
+   <li ixia_locid="19">
+    <p ixia_locid="20">Service manager (SM) traffic is always accepted.</p>
+   </li>
+   <li ixia_locid="21">
+    <p ixia_locid="22">SSH traffic is always accepted.</p>
+   </li>
+  </ul>
+  <p ixia_locid="23">For the default rules used by HP Helion OpenStack Carrier Grade, see <xref href="jow1443627881098.xml" ixia_locid="24"/>. For more about custom rules, see <xref href="jow1443627902662.xml" ixia_locid="25"/>.</p>
+  <p ixia_locid="26">You can validate the file using the following
+   command:<codeblock ixia_locid="27"><systemoutput ixia_locid="28">$ </systemoutput><userinput ixia_locid="29">iptables-restore --noflush --test &lt; <varname ixia_locid="30">filename</varname></userinput></codeblock>where
+    <varname ixia_locid="31">filename</varname> is the path and name of the file.</p>
+  <note id="note_N100A2_N1001F_N10001" ixia_locid="32" type="caution">
+   <p ixia_locid="33">Validation is recommended before you run the configuration controller script. If the file is
+    invalid, you must correct any errors and then start the script again from the beginning.</p>
+  </note>
+ </conbody>
+</concept-wr>

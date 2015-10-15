@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1426183480976" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Configuring a Compute Host to Provide Local  Storage</title>
+    <shortdesc>You can configure a compute host to provide local storage for use by
+        VMs. </shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N10022_N1001F_N10001">
+            <p>Local storage can be used to provide improved disk access
+                performance for VMs instantiated on the host.</p>
+            <note conref="jow1426942555025.xml#jow1426942555025/note_local_storage_ephemeral" id="note_N1002C_N10022_N1001F_N10001"/>
+            <p>To provide local storage on a compute host, add a local volume group
+                called <nameliteral>nova-local</nameliteral> to the host. This
+                automatically includes the host in the <nameliteral>local_storage_hosts</nameliteral> host aggregate. The Nova scheduler draws from
+                this host aggregate to instantiate VMs that require local storage. </p>
+            <p>To populate the <nameliteral>nova-local</nameliteral>
+                group with storage resources, you must also add physical volumes created on local
+                disks.</p>
+            <p><draft-comment author="jowens">US65502
+                    added</draft-comment>You must manually allocate space on the local volume group
+                for an instances logical volume. For more information, see <xref href="jow1443470081421.xml"/>.</p><note id="note_N10059_N10022_N1001F_N10001" type="caution">
+                    <p>If less than the minimum required space is available for the
+                        instances logical volume, the compute host cannot be unlocked.</p></note>
+                
+            <p>As an alternative to the web administration interface, you can use
+                the CLI to configure the host for local storage. For more information, see <xref href="jow1426181291481.xml"/> and <xref href="jow1426182435441.xml"/>.</p>
+        </context>
+        <steps>
+            <step conref="jow1426453628262.xml#jow1426453628262/lock_host" id="step_N1002A_N10027_N1001F_N10001">
+                <cmd/>
+            </step>
+            <step conref="jow1426453628262.xml#jow1426453628262/open_details_locked_host" id="step_N10033_N10027_N1001F_N10001">
+                <cmd/>
+            </step>
+            <step id="step_N1002B_N10028_N1001C_N10001">
+                <cmd>Select the <uicontrol>Storage</uicontrol> tab.</cmd>
+                <info>
+                    <p>For a compute node, the storage tab displays three lists:</p>
+                    <dl>
+                        <dlentry>
+                            <dt>Disks</dt>
+                            <dd>
+                                <p>Physical disks installed in the compute node.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt>Local Volume Groups</dt>
+                            <dd>
+                                <p>Groups of physical volumes available for VM
+                                    storage.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt>Physical Volumes</dt>
+                            <dd>
+                                <p>Partitions that have been initialized for logical
+                                    volume management (LVM) and assigned to a local volume
+                                    group.</p>
+                            </dd>
+                        </dlentry>
+                    </dl>
+                    <fig id="fig_atv_4s5_jr">
+                        <image href="jow1426459038579.image" id="image_rhh_ps5_jr" width="6in">
+                            <alt>Compute Node Storage tab</alt>
+                        </image>
+                    </fig>
+                </info>
+            </step>
+            <step id="step_N10042_N10027_N1001F_N10001">
+                <cmd>If required, add the <nameliteral>nova-local</nameliteral> group to the <nameliteral>Local
+                        Volume Groups</nameliteral> list.</cmd>
+                <info>
+                    <p>The <nameliteral>Local Volume
+                            Groups</nameliteral> list displays groups of physical volumes designated
+                        for use as local storage.</p>
+                    <p>The default group for use by VMs is called <nameliteral>nova-local</nameliteral>. If this group is not listed,
+                        you can create it by clicking <nameliteral>Add Local Volume
+                            Group</nameliteral>, and then accepting the defaults in the dialog box
+                        that appears.</p>
+                    <fig id="fig_wrr_vs5_jr">
+                        <image href="jow1426459253956.image" id="image_ask_bt5_jr">
+                            <alt>Create Local Volume Group</alt>
+                        </image>
+                    </fig>
+                </info>
+                <stepresult>
+                    <p>The <nameliteral>nova-local</nameliteral> group is shown in the list.</p>
+                    <fig id="fig_i4s_p1z_jr">
+                        <image href="jow1426510376255.image" id="image_w1l_z1z_jr" width="6in">
+                            <alt>Local Volume Groups</alt>
+                        </image>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N10107_N10027_N1001F_N10001">
+                <cmd>Add a physical volume to the <nameliteral>nova-local</nameliteral> group.</cmd>
+                <info>
+                    <p>The <nameliteral>Physical
+                            Volumes</nameliteral> list displays LVM volumes that have been created
+                        and added to a Local Volume Group. To add a new one, click <nameliteral>Add Physical Volume</nameliteral> and complete the
+                        dialog box that appears.</p>
+                    <fig id="fig_myv_tdz_jr">
+                        <image href="jow1426511807740.image" id="image_dhp_12z_jr">
+                            <alt>Create Physical Volume dialog box</alt>
+                        </image>
+                    </fig>
+                    <note id="note_N1013A_N10112_N10107_N10027_N1001F_N10001">
+                        <p>The <uicontrol>Local Volume
+                                Group</uicontrol> drop-down selection is automatically set to
+                                <nameliteral>nova-local</nameliteral>, and cannot be
+                            changed.</p>
+                    </note>
+                    <p>Use the <uicontrol>Disks</uicontrol>
+                        drop-down menu to select a disk to provide storage. For the root disk, a
+                        designated partition  (<nameliteral>local_pv</nameliteral>) is used.</p>
+                    <p>You can add any number of physical volumes to the
+                            <nameliteral>nova-local</nameliteral> group, limited
+                        only by the number of available disks.</p>
+                </info>
+                <stepresult>
+                    <p>A physical volume is created and added to the
+                            <nameliteral>nova-local</nameliteral> group.</p>
+                    <fig id="fig_ajv_p2z_jr">
+                        <image href="jow1426512224610.image" id="image_c4b_w2z_jr" width="6in">
+                            <alt>Physical Volumes list</alt>
+                        </image>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N101F7_N1007F_N1001F_N10001">
+                <cmd><draft-comment author="jowens">US65502 step added</draft-comment>Allocate space
+                    for the instances logical volume.</cmd>
+                <info>
+                    <p>In the <nameliteral>Local Volume Groups</nameliteral> list, click
+                            <uicontrol>nova-local</uicontrol> to open the Local Volume Group Detail
+                            page.<fig id="fig_n1g_rwm_4t">
+                            <image href="jow1443974043719.image" id="image_ng4_rwm_4t">
+                                <alt>TiS Local Volume Group Detail</alt>
+                            </image>
+                        </fig></p>
+                    <p>Select the <uicontrol>Parameters</uicontrol> tab.<fig id="fig_y1n_cxm_4t">
+                            <image href="jow1443974983289.image" id="image_htz_qym_4t">
+                                <alt>TiS Local Volume Group Detail Parameters tab</alt>
+                            </image>
+                        </fig></p>
+                    <p>Click <uicontrol>Edit</uicontrol>, and then
+                        set the <uicontrol>Instances Logical Volume
+                            Size</uicontrol>.<fig id="fig_ok5_1ym_4t">
+                            <image href="jow1443975258969.image" id="image_a3q_3zm_4t">
+                                <alt>TiS Edit Local Volume Group Parameter
+                                    dialog</alt>
+                            </image>
+                        </fig></p>
+                    <p>If the total space in the volume group is less than 80GB
+                        (81920 MiB), then you must allocate at least 2048 MiB. If the volume group
+                        is greater than 80GB (81920 MiB), then you must allocate at least 5120 MiB.
+                        The actual size is limited to ensure at least 50% free space in the volume
+                        group for creating disks for launched instances. For more information, see
+                            <xref href="jow1443470081421.xml"/>
+                    </p>
+                </info>
+            </step>
+            <step id="step_N1019C_N10027_N1001F_N10001">
+                <cmd>Unlock the host to make the changes take effect.</cmd>
+            </step>
+        </steps>
+        <result id="result_N10172_N1001F_N10001">
+            <p>The compute host is ready to provide local  storage for use by VMs.
+                Because a <nameliteral>nova-local</nameliteral> local volume group
+                has been added, the host is automatically included in the <nameliteral>local_storage_hosts</nameliteral> host aggregate.</p>
+            <p>To return a host to the <nameliteral>remote_storage_hosts</nameliteral> host aggregate, so that it is used to
+                instantiate VMs configured for remote Cinder-based storage, delete the <nameliteral>nova-local</nameliteral> local volume group.</p>
+            <note id="note_N10204_N101E1_N1001F_N10001" type="caution">
+                <p>VMs instantiated on the compute node must be migrated or terminated before the
+                    host is reconfigured for remote storage.</p>
+            </note>
+        </result>
+        <postreq id="postreq_N1017B_N1001F_N10001">
+            <p>To configure a VM to use local storage or remote Cinder-based
+                storage, or to be instantiated on any compute host regardless of storage type, see
+                    <xref href="jow1426181040008.xml"/>. </p>
+            <p>To add disks to a compute node for extra local storage, see <xref href="jow1418924302353.xml"/>
+            </p>
+        </postreq>
+    </taskbody>
+</task-wr>

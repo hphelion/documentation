@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="psa1428687672712" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title ixia_locid="1">SR-IOV Ethernet Interfaces</title>
+    <shortdesc ixia_locid="2">A SR-IOV Ethernet interface is a physical PCI Ethernet NIC that
+        implements hardware-based virtualization mechanisms to expose multiple virtual network
+        interfaces that can be used by one or more virtual machines simultaneously.</shortdesc>
+    <prolog>
+        <author ixia_locid="163">Jim Owens</author>
+        <author></author>
+    </prolog>
+    <taskbody>
+        <context id="context_N10022_N1001F_N10001" ixia_locid="4">
+            <p ixia_locid="5">The PCI-SIG Single Root I/O Virtualization and Sharing (SR-IOV)
+                specification defines a standardized mechanism to create individual virtual Ethernet
+                devices from a single physical Ethernet interface. For each exposed virtual Ethernet
+                device, formally referred to as a <term ixia_locid="116">Virtual Function</term>
+                (VF), the SR-IOV interface provides separate management memory space, work queues,
+                interrupts resources, and DMA streams, while utilizing common resources behind the
+                host interface. Each VF therefore has direct access to the hardware and can be
+                considered to be an independent Ethernet interface.</p>
+            <p ixia_locid="118">When compared with a PCI Passthtrough Ethernet interface, a SR-IOV Ethernet
+                interface:</p>
+            <ul id="ul_tyq_ymg_rr">
+                <li ixia_locid="120">
+                    <p ixia_locid="122">Provides benefits similar to those of a PCI Passthtrough Ethernet interface,
+                        including lower latency packet processing.</p>
+                </li>
+                <li ixia_locid="124">
+                    <p ixia_locid="126">Scales up more easily in a virtualized environment by providing multiple VFs
+                        that can be attached to multiple virtual machine interfaces.</p>
+                </li>
+                <li ixia_locid="128">
+                    <p ixia_locid="130">Shares the same limitations, including the lack of support
+                        for LAG, QoS, ACL, and live migration.</p>
+                </li>
+                <li ixia_locid="30">
+                    <p ixia_locid="132">Has the same requirements regarding the VLAN configuration of
+                        the access switches.</p>
+                </li>
+                <li ixia_locid="134">
+                    <p ixia_locid="29">Provides a similar configuration workflow when used on HP Helion OpenStack Carrier Grade.</p>
+                </li>
+            </ul>
+            <p ixia_locid="136">It is suggested that you read <xref href="psa1413402160578.xml" ixia_locid="138"/> first. Most configuration steps are similar, with the
+                difference that you use <nameliteral ixia_locid="140">pci-sriov</nameliteral>
+                instead of <nameliteral ixia_locid="141">pci-passthrough</nameliteral> when defining
+                the network type of an interface.</p>
+            <p ixia_locid="168">To review the current PCI passthrough and SR-IOV device assignments
+                for a given provider network, see <xref href="jow1439301559036.xml" ixia_locid="169"/>.</p>
+            <p ixia_locid="142">In the following example a new virtual machine is launched by user
+                    <nameliteral ixia_locid="17">user1</nameliteral> on tenant <nameliteral ixia_locid="18">tenant1</nameliteral>, with a VF interface connected to the
+                tenant network <nameliteral ixia_locid="19">tenant1-net1</nameliteral> identified
+                with VLAN ID 20.</p>
+        </context>
+        <prereq id="prereq_N10065_N10020_N10001" ixia_locid="117">
+            <note id="note_N100B9_N100A5_N10024_N10001" ixia_locid="171">
+                <p ixia_locid="172">To use PCI passthrough or SR-IOV interfaces, you must have Intel
+                    VT-d features enabled in the BIOS.</p>
+            </note>
+            <p ixia_locid="119">The exercise assumes that the underlying provider network
+                    <nameliteral ixia_locid="121">group0-data0</nameliteral> exists already, and that
+                VLAN ID 20 is a valid segmentation ID assigned to <nameliteral ixia_locid="123">tenant1</nameliteral>.</p>
+        </prereq>
+        <steps>
+            <step id="step_N10079_N10076_N10020_N10001" ixia_locid="125">
+                <cmd ixia_locid="127">Log in as the <nameliteral ixia_locid="129">admin</nameliteral>
+                    user to the web management interface.</cmd>
+            </step>
+            <step id="step_N100BC_N100A9_N1001F_N10001" ixia_locid="144">
+                <cmd ixia_locid="145">Lock the compute node you want to configure.</cmd>
+            </step>
+            <step id="step_N10086_N10076_N10020_N10001" ixia_locid="131">
+                <cmd ixia_locid="135">Configure the Ethernet interface to be used as a SR-IOV
+                    interface.</cmd>
+                <info ixia_locid="146">
+                    <p ixia_locid="147">Select the <wintitle ixia_locid="133">System
+                            Inventory</wintitle> window from the <uicontrol ixia_locid="137">Admin</uicontrol> panel, click the <uicontrol ixia_locid="139">Hosts</uicontrol> tab, click the name of the compute node where the PCI
+                        interface is available, click the <uicontrol ixia_locid="143">Interfaces</uicontrol> tab, and finally click the <uicontrol ixia_locid="36">Edit Interface</uicontrol> button associated with the
+                        interface you want to configure. Fill in the window as illustrated
+                        below:</p>
+                    <fig id="fig_hfk_cfh_rr" ixia_locid="148">
+                        <image href="psa1428767288855.image" id="image_zl3_ffh_rr" ixia_locid="149">
+                            <alt ixia_locid="150">TiS Edit SR-IOV Interface</alt>
+                        </image>
+                    </fig>
+                    <p ixia_locid="151">In this example, Ethernet interface <nameliteral ixia_locid="42">eth8</nameliteral> is assigned the network type <term ixia_locid="43">pci-sriov</term>, enabled to use 4 VFs, and configured as connected to
+                        provider network <nameliteral ixia_locid="44">group0-data0</nameliteral>.
+                        Click the <uicontrol ixia_locid="45">Save</uicontrol> button to proceed.</p>
+                    <p ixia_locid="162">The Maximum number of VFs displayed in this form is a read-only item which is
+                        auto-discovered by the system by inspecting the specific NIC model. This
+                        value is reported as 0 when the selected interface does not support
+                        SR-IOV.</p>
+                    <p ixia_locid="46">The interface can also be configured from the CLI as
+                        illustrated below:</p>
+                    <codeblock ixia_locid="108"><systemoutput ixia_locid="111">~(keystone_admin)$ </systemoutput><userinput ixia_locid="115">system host-if-modify \
+-nt pci-sriov -N 4 -p group0-data0 compute-0 eth8</userinput></codeblock>
+                    <note id="note_N1013C_N100D7_N100CD_N100AF_N10023_N10001" ixia_locid="164">
+                        <p ixia_locid="165">By default, a VM that requires an SR-IOV interface is
+                            instantiated only if a host NUMA node with a directly attached PCI
+                            interface is available. You can specify best-effort instantiation by
+                            using an extra specification. For more information, see <xref href="jow1436197980621.xml" ixia_locid="166"/>.</p>
+                    </note>
+                </info>
+            </step>
+            <step id="step_N10080_N1007D_N1001F_N10001" ixia_locid="6">
+                <cmd ixia_locid="7">Create the <nameliteral ixia_locid="53">tenant1-net1</nameliteral> tenant network.</cmd>
+                <info ixia_locid="152">
+                    <p ixia_locid="153">You must ensure that:</p>
+                    <ul id="ul_pcn_vb4_tp">
+                        <li ixia_locid="61">
+                            <p ixia_locid="62">The <nameliteral ixia_locid="63">tenant1</nameliteral> tenant has access to the tenant network,
+                                either assigning it as the owner, or by enabling the tenant
+                                network's shared flag.</p>
+                        </li>
+                        <li ixia_locid="64">
+                            <p ixia_locid="65">The segmentation ID is set to 20. </p>
+                        </li>
+                    </ul>
+                </info>
+            </step>
+            <step id="step_N10160_N100A9_N1001F_N10001" ixia_locid="154">
+                <cmd ixia_locid="155">Configure the access switch.</cmd>
+                <info ixia_locid="73">
+                    <p ixia_locid="104">Configure the physical port on the access switch used to
+                        connect to Ethernet interface <nameliteral ixia_locid="75">eth8</nameliteral> as an access port with default VLAN ID of 20.</p>
+                </info>
+            </step>
+            <step id="step_N10178_N100A9_N1001F_N10001" ixia_locid="156">
+                <cmd ixia_locid="157">Unlock the compute node.</cmd>
+            </step>
+            <step id="step_N10181_N100A9_N1001F_N10001" ixia_locid="158">
+                <cmd ixia_locid="159">Launch the virtual machine.</cmd>
+                <substeps id="substeps_snp_klt_tp">
+                    <substep ixia_locid="79">
+                        <cmd ixia_locid="80">Log in as user <nameliteral ixia_locid="81">user1</nameliteral> to the web management interface.</cmd>
+                    </substep>
+                    <substep ixia_locid="82">
+                        <cmd ixia_locid="83">Configure the network interfaces for the new virtual
+                            machine.</cmd>
+                        <info ixia_locid="84">
+                            <p ixia_locid="85">Open the <wintitle ixia_locid="86">Launch
+                                    Instance</wintitle> dialog by clicking the <uicontrol ixia_locid="87">Launch Interface</uicontrol> button on the
+                                    <wintitle ixia_locid="88">Instances</wintitle> window. Configure
+                                the necessary options for the new virtual machine. In particular,
+                                click the <uicontrol ixia_locid="89">Networking</uicontrol> tab and
+                                add a SR-IOV interface on the tenant network <nameliteral ixia_locid="90">tenant1-net1</nameliteral>, as illustrated
+                                below. Add other network interfaces as needed, there are as many
+                                SR-IOV ports available as VFs have been enabled.</p>
+                            <fig id="fig_yxy_t1g_tp" ixia_locid="91">
+                                <image href="psa1428773859042.image" id="image_g4g_b4h_rr" ixia_locid="160" width="6in">
+                                    <alt ixia_locid="161">TiS Assign SR-IOV interface</alt>
+                                </image>
+                            </fig>
+                            <p ixia_locid="95">Click the <uicontrol ixia_locid="96">Launch</uicontrol> button to proceed.</p>
+                            <p ixia_locid="97">SR-IOV interfaces can be attached from the CLI when
+                                booting a new virtual machine, as illustrated below:</p>
+                            <codeblock ixia_locid="98"><systemoutput ixia_locid="114">~(keystone_admin)$ </systemoutput><userinput ixia_locid="100">nova boot \
+--nic net-id=704e9f3b,vif-model=pci-sriov --flavor small \
+--image cgcs-guest my-new-vm</userinput></codeblock>
+                        </info>
+                    </substep>
+                </substeps>
+            </step>
+        </steps>
+        <result id="result_N101C1_N10020_N10001" ixia_locid="101">
+            <p ixia_locid="102">The new virtual machine instance is up now. It has a SR-IOV VF
+                connection to the <nameliteral ixia_locid="103">tenant1-net1</nameliteral> tenant
+                network identified with VLAN ID 20.</p>
+        </result>
+        <postreq conref="jow1439307476374.xml#jow1439307476374/postreq_N1023B_N10024_N10001" id="postreq_N10243_N10024_N10001" ixia_locid="170"/>
+    </taskbody>
+</task-wr>

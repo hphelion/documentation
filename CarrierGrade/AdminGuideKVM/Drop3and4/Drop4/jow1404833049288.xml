@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content id="jow1404833049288" xml:lang="en-us">
+<title ixia_locid="41">Conref step: CGCS launch stack</title>
+<rcbody>
+        <step id="launch-stack" ixia_locid="18">
+            <cmd ixia_locid="19">Launch a new stack and specify a template.</cmd>
+            <info ixia_locid="20">
+                <p ixia_locid="21">Click <uicontrol ixia_locid="22">Launch Stack</uicontrol>, and
+                    then complete the <wintitle ixia_locid="23">Select Template</wintitle> dialog
+                    box.</p>
+                <fig id="fig_N1007C_N1006D_N10065_N10027_N1001B_N10001" ixia_locid="24">
+                    <image alt="Select Template" href="jow1404333624807.image" id="image_ddm_k1j_34" ixia_locid="25"/>
+                </fig>
+                <p ixia_locid="26">The <uicontrol ixia_locid="27">Template Source</uicontrol>
+                    drop-down list offers several ways to specify a template.</p>
+            </info>
+            <choicetable id="choicetable_bz5_c3h_k4" keycol="1">
+                <chrow>
+                    <choption ixia_locid="28">
+                        <p ixia_locid="29">URL</p>
+                    </choption>
+                    <chdesc ixia_locid="30">
+                        <p ixia_locid="31">Provides a text field for URL access to a template
+                            file.</p>
+                    </chdesc>
+                </chrow>
+                <chrow>
+                    <choption ixia_locid="32">
+                        <p ixia_locid="33">File</p>
+                    </choption>
+                    <chdesc ixia_locid="34">
+                        <p ixia_locid="35">Provides a <uicontrol ixia_locid="36">Browse</uicontrol>
+                            button for access to locally stored template files.</p>
+                    </chdesc>
+                </chrow>
+                <chrow>
+                    <choption ixia_locid="37">
+                        <p ixia_locid="38">Direct Input</p>
+                    </choption>
+                    <chdesc ixia_locid="39">
+                        <p ixia_locid="40">Provides a text window for direct entry of template
+                            content.</p>
+                    </chdesc>
+                </chrow>
+            </choicetable>
+        </step>
+    </rcbody>
+</referable-content>

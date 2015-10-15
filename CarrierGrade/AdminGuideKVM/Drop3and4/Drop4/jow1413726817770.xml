@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1413726817770" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title>Host Status and Alarms During System Configuration Changes</title>
+ <shortdesc>For all types of configuration changes, alarms and status messages appear
+  while the system is in transition. You can use the information provided by these messages to help
+  guide the transition successfully.</shortdesc>
+ <prolog><author/>
+  <author/>
+ </prolog>
+ <conbody>
+  <p>Configuration changes require multiple hosts to be reconfigured, during which
+   the settings across the cluster are not consistent. This causes alarms to be raised for the
+   system.</p>
+  <ul id="ul_uyz_tt5_4q">
+   <li>
+    <p>Changes to the DNS server configuration cause transitory alarms. These alarms
+     are cleared automatically when the configuration change is applied.</p>
+   </li>
+   <li>
+    <p>Changes to the External OAM network IP addresses or NTP server addresses, and
+     in particular to the controller storage allotments, cause persistent alarms. These alarms must
+     be cleared manually, by locking and unlocking the affected hosts or performing other
+     administrative actions.</p>
+   </li>
+  </ul>
+  <p>Alarms appear on the <wintitle>Fault Management</wintitle> pane, and related
+   status messages appear on the <wintitle>Hosts</wintitle> tab on the
+    <wintitle>Inventory</wintitle> pane. A variety of alarms may be reported on the Fault Management
+   page, depending on the configuration change.</p>
+  <note id="note_N1002C_N1001F_N10001" type="caution">
+   <p>To help identify alarms raised during a configuration change, ensure that any existing system
+    alarms are cleared before you begin. </p>
+  </note>
+  <p>On the <wintitle>Hosts</wintitle> tab of the <wintitle>System Inventory</wintitle> pane, the status <nameliteral>Config
+    out-of-date</nameliteral> is shown for hosts affected by the change.  Each host with this status
+   must be locked and then unlocked to update its configuration and clear the alarm.</p>
+ </conbody>
+</concept-wr>

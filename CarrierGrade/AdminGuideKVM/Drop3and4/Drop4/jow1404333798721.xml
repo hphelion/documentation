@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333798721" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title ixia_locid="1">Controller Nodes and High Availability</title>
+    <shortdesc ixia_locid="2">Services in the controller nodes run constantly in active/standby mode
+        to provide continuity in the event of a controller failure.</shortdesc>
+    <prolog>
+        <author></author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="4">Controller services are organized internally into the following groups:</p>
+        <table frame="all" id="table_vph_fyt_vp">
+            <title ixia_locid="63">Controller Service Groups</title>
+            <tgroup cols="2">
+                <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                <colspec colname="c2" colnum="2" colwidth="3.0*"/>
+                <thead>
+                    <row>
+                        <entry ixia_locid="64">
+                            <p ixia_locid="65">Group</p>
+                        </entry>
+                        <entry ixia_locid="66">
+                            <p ixia_locid="67">Description</p>
+                        </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry ixia_locid="68">
+                            <p ixia_locid="69">Cloud Services</p>
+                        </entry>
+                        <entry ixia_locid="70">
+                            <p ixia_locid="8">The enhanced OpenStack components, including Nova,
+                                Neutron, Cinder, Ceilometer, and Heat</p>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry ixia_locid="71">
+                            <p ixia_locid="72">Controller Services</p>
+                        </entry>
+                        <entry ixia_locid="73">
+                            <p ixia_locid="31">Core HP Helion OpenStack Carrier Grade services such as maintenance and
+                                inventory</p>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry ixia_locid="74">
+                            <p ixia_locid="75">Directory Services</p>
+                        </entry>
+                        <entry ixia_locid="76">
+                            <p ixia_locid="77">LDAP services</p>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry ixia_locid="78">
+                            <p ixia_locid="79">OAM Services</p>
+                        </entry>
+                        <entry ixia_locid="80">
+                            <p ixia_locid="81">OAM access services</p>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry ixia_locid="82">
+                            <p ixia_locid="83">Patching Services</p>
+                        </entry>
+                        <entry ixia_locid="84">
+                            <p ixia_locid="85">Patching alarm services</p>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry ixia_locid="86">
+                            <p ixia_locid="87">Storage Monitoring Services</p>
+                        </entry>
+                        <entry ixia_locid="88">
+                            <p ixia_locid="89">Storage alarm services</p>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry ixia_locid="90">
+                            <p ixia_locid="91">Storage Services</p>
+                        </entry>
+                        <entry ixia_locid="92">
+                            <p ixia_locid="93">Storage REST API services</p>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry ixia_locid="94">
+                            <p ixia_locid="95">Web Services</p>
+                        </entry>
+                        <entry ixia_locid="96">
+                            <p ixia_locid="97">The HP Helion OpenStack Carrier Grade OpenStack Horizon service and web server</p>
+                        </entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <p ixia_locid="21">Each of these groups is run in 1:1 HA mode by the controllers. This means that while some
+      service groups can be active on controller-0, and in standby on controller-1, others are
+      active on controller-1, and in standby on controller-0.</p>
+        <p ixia_locid="22">The high-availability framework constantly monitors and reports on the health of the
+      individual services within each of the service groups on both controllers. When a service
+      fails, a decision is made on whether to restart it on the same controller, or to switch the
+      corresponding service group to the other controller. This decision depends on the criticality
+      and the dependencies of the affected service.</p>
+        <p ixia_locid="23">For maintenance purposes, when one of the controller nodes needs to be powered down for
+      service, it is necessary to force all currently active service groups in one controller to
+      switch to the other. This can be done from the <uicontrol ixia_locid="24">Hosts</uicontrol> tab on the
+        <wintitle ixia_locid="25">Inventory</wintitle> page, by selecting the option <option ixia_locid="26">swact</option> (switch
+      active) in the <uicontrol ixia_locid="27">More</uicontrol> menu of the controller you want to take out of
+      service.</p>
+        <section id="section_N100EE_N1001F_N10001" ixia_locid="44">
+            <title ixia_locid="45">The Active Controller</title>
+            <p ixia_locid="46">Services in the <nameliteral ixia_locid="47">Controller
+                    Services</nameliteral> group drive core functionality in HP Helion OpenStack Carrier Grade. The
+                controller where they are running is referred to as the <term ixia_locid="48">active</term> controller. The <uicontrol ixia_locid="49">Hosts</uicontrol> tab
+                in the <wintitle ixia_locid="50">System Inventory</wintitle> page of the <uicontrol ixia_locid="51">Admin</uicontrol> panel lists the status of all hosts in the
+                cluster; it reports the active controller as having the <term ixia_locid="52">Controller-Active</term> personality.</p>
+            <p ixia_locid="53">When working from the CLI on a controller node it is often important
+                to ensure that you are working on the active controller, for example, to execute
+                OpenStack <nameliteral ixia_locid="62">admin</nameliteral> operations, or to change
+                the password of the <nameliteral ixia_locid="54">wrsroot</nameliteral> user account.
+                See <xref href="jow1404333563834.xml" ixia_locid="55"/> for further details on the
+                    <nameliteral ixia_locid="56">wrsroot</nameliteral> account.</p>
+            <p ixia_locid="61">You can ensure you are working on the active controller by using the
+                OAM floating IP address as the destination address in the SSH command.</p>
+        </section>
+    </conbody>
+</concept-wr>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content id="jow1426453628262" xml:lang="en-us">
+<title ixia_locid="20">[RC step] Lock host or Open the Inventory Detail page</title>
+<rcbody><!-- Includes an alternative for locking the host first. -->
+   
+        <step id="step_N1002B_N10028_N1001C_N10001" ixia_locid="21">
+            <cmd ixia_locid="24">Open the <uicontrol ixia_locid="27">Inventory Detail</uicontrol>
+                page for the host.</cmd>
+            <substeps id="substeps_fql_wfn_m4">
+                <substep ixia_locid="29">
+                    <cmd ixia_locid="31">On the <uicontrol ixia_locid="33">Admin</uicontrol> menu of
+                        the web administration interface, open the <uicontrol ixia_locid="35">System
+                            Panel</uicontrol> section, and then select <uicontrol ixia_locid="37">Inventory</uicontrol>. </cmd>
+                </substep>
+                <substep ixia_locid="39">
+                    <cmd ixia_locid="43">Select the <uicontrol ixia_locid="47">Hosts</uicontrol>
+                        tab, and then in the <uicontrol ixia_locid="49">Host Name</uicontrol>
+                        column, click the name of the host.</cmd>
+                </substep>
+            </substeps>
+        </step>
+    <steps id="steps_N1005F_N1000F_N10001">
+        <step id="lock_host" ixia_locid="22">
+            <cmd ixia_locid="25">Lock the host to make changes.</cmd>
+            <substeps id="substeps_trc_4nz_jr">
+                <substep ixia_locid="30">
+                    <cmd ixia_locid="32">On the <uicontrol ixia_locid="34">Admin</uicontrol> menu of
+                            the web administration interface, open the <uicontrol ixia_locid="36">System Panel</uicontrol> section, and then select <uicontrol ixia_locid="38">Inventory</uicontrol>. </cmd>
+                </substep>
+                <substep ixia_locid="40">
+                    <cmd ixia_locid="44">Select the <uicontrol ixia_locid="48">Hosts</uicontrol>
+                        tab.</cmd>
+                </substep>
+                <substep ixia_locid="41">
+                    <cmd ixia_locid="45">Open the <uicontrol ixia_locid="58">More</uicontrol>
+                            drop-down list for the host, and then select <uicontrol ixia_locid="59">Lock Host</uicontrol>. </cmd>
+                </substep>
+                    <substep ixia_locid="62">
+                        <cmd ixia_locid="63">Wait for the host to be reported as
+                            <nameliteral ixia_locid="64">Locked</nameliteral>.</cmd>
+                    </substep>
+            </substeps>
+        </step>
+        <step id="open_details_locked_host" ixia_locid="23">
+            <cmd ixia_locid="26">Open the <uicontrol ixia_locid="28">Inventory Detail</uicontrol>
+                    page for the locked host.</cmd>
+            <info ixia_locid="60">
+                <p ixia_locid="61">In the <uicontrol ixia_locid="51">Host Name</uicontrol> column,
+                        click the name of the host.</p>
+            </info>
+        </step>
+    </steps>
+    </rcbody>
+</referable-content>

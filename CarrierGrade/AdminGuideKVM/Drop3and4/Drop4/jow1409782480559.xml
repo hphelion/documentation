@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1409782480559" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+
+ -->
+ <title>Host Management on an Active System</title>
+ <shortdesc>You can add or remove hosts and change disks without interrupting
+  HP Helion OpenStack Carrier Grade.</shortdesc>
+ <prolog><author/>
+  <author/>
+  <author/>
+ </prolog>
+ <conbody>
+  <p>To make changes to a host, you must lock it. Locking a host automatically and
+   seamlessly redirects activity to other available hosts. While the host is locked, you can safely
+   power it down and make disk changes, or remove the host and insert a new one.</p>
+  <p>After making the required configuration changes, you can unlock the host and
+   begin using it.</p>
+ </conbody>
+</concept-wr>

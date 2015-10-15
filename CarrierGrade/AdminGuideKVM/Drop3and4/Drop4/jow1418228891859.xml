@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1418228891859" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Creating an Up/Down Autoscaling Resource</title>
+    <shortdesc>The <filepath>VMAutoscaling.yaml</filepath> template illustrates the
+        use of a template to create an up/down autoscaling resource.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N10023_N10020_N10001">
+            <p>This HOT template creates a VM instance with vCPU autoscaling. The number of online
+                vCPUS for the instance is scaled up or down depending on vCPU utilization. The
+                scaling range (minimum and maximum number of vCPUs) is determined by the launch
+                flavor. </p>
+            <p>For up/down scaling, the CPU measurement uses a <nameliteral>vcpu_util</nameliteral> meter, which takes into account the
+                current number of online vCPUs when measuring usage. This is in contrast to the
+                    <nameliteral>cpu_util</nameliteral> meter, which always uses
+                the maximum number of vCPUs. Using <nameliteral>cpu_util</nameliteral> for up/down scaling would produce an inaccurate
+                usage/availability ratio if any vCPUs were offline, since it assumes all VCPUs are
+                available.</p>
+            <p>The VM image selected for launch must be capable of scaling. For more information
+                about VM scaling, see <xref href="jow1417813748326.xml"/>.</p>
+        </context>
+        <steps>
+            <step id="step_N10077_N10074_N10020_N10001">
+                <cmd>Collect the required parameters.</cmd>
+                <substeps id="substeps_wqc_mlv_34">
+                    <substep>
+                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-flavor"/>
+                    </substep>
+                    <substep>
+                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-keypair"/>
+                    </substep>
+                    <substep>
+                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-image"/>
+                    </substep>
+                    <substep>
+                        <cmd>On the <menucascade>
+                                <uicontrol>Admin</uicontrol>
+                                <uicontrol>System Panel</uicontrol>
+                                <uicontrol>Networks</uicontrol>
+                            </menucascade> page, obtain the <uicontrol>Name</uicontrol> of the private network.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-user"/>
+                    </substep>
+                </substeps>
+            </step>
+            <step conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N10096_N10059_N10020_N10001">
+                <cmd/>
+            </step>
+            <step conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N1009D_N10059_N10020_N10001">
+                <cmd/>
+            </step>
+            <step id="step_N100A4_N10059_N10020_N10001">
+                <cmd>Select<uicontrol> File</uicontrol>, then click
+                        <uicontrol>Browse</uicontrol> and select <filepath>VMAutoScaling.yaml</filepath> from the local disk.</cmd>
+            </step>
+            <step id="step_N100DC_N10074_N10020_N10001">
+                <cmd>Adjust the parameters in the <wintitle>Launch Stack</wintitle> form to meet
+                    your requirements.</cmd>
+                <choicetable id="choicetable_nqn_msw_34" keycol="1" relcolwidth="30* 70*">
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>KeyName</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The <uicontrol>KeyPair</uicontrol> name from
+                                    the<wintitle> Access &amp; Security</wintitle> page.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>TenantUserID</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The tenant user ID associated with the instance
+                                launch. Scaling of the  instance resources can only be performed by
+                                the tenant associated with the launch.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>FlavorName</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The <uicontrol>Flavor Name</uicontrol> from the
+                                    <wintitle>Flavors</wintitle> page.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>ImageName</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The <uicontrol>Image Name</uicontrol> from the
+                                    <wintitle>Images</wintitle> page.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>PrivateNetName</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The <uicontrol>Name</uicontrol>
+                                from the <wintitle>Network Overview</wintitle>
+                                page.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>InstanceName</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The name of the instance to create.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>CustomMeterName</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The name of a custom Ceilometer metric to store.<!-- For
+                                information about custom metrics, see <xref href="jow1404916152577.xml"/>.--></p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>CustomMeterUnit</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The unit of measurement to display for the custom
+                                metric; for example, 'Percent'.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>MetricHighWaterMark</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The value that triggers autoscaling to add
+                                resources.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption>
+                            <p><uicontrol>MetricLowWaterMark</uicontrol></p>
+                        </choption>
+                        <chdesc>
+                            <p>The value that triggers autoscaling to remove
+                                resources.</p>
+                        </chdesc>
+                    </chrow>
+                </choicetable>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

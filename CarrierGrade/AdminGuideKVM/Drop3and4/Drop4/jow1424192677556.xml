@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1424192677556" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- This version is for use with TiS 15.x
+        
+-->
+    <title ixia_locid="215">Establishing Provider Networks</title>
+    <shortdesc ixia_locid="2">Provider networks are required to support the tenant networks in
+        HP Helion OpenStack Carrier Grade, including those used in the deployment scenarios.</shortdesc>
+    <prolog>
+        <author ixia_locid="3">Jim Owens</author>
+        <author ixia_locid="4">Pedro Sanchez</author>
+        <author ixia_locid="5">Tom Towle</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N10027_N10024_N10001" ixia_locid="6">
+            <p conref="jow1424191621914.xml#jow1424191621914/usually_set_up_at_installation" ixia_locid="216"/>
+            <p conref="jow1424191621914.xml#jow1424191621914/scenarios_assume_provider_networks" ixia_locid="217"/>
+            <p conref="jow1424191621914.xml#jow1424191621914/for_more_see_install_guide" ixia_locid="218"/>
+        </context>
+        <steps conref="jow1424191621914.xml#jow1424191621914/steps_hxh_rdh_wq" id="steps_czt_zdh_wq">
+            <step id="step_N10069_N10064_N10029_N10001" ixia_locid="212">
+                <cmd ixia_locid="213"/>
+            </step>
+        </steps>
+        <result conref="jow1424191621914.xml#jow1424191621914/result_N10278_N10024_N10001" id="result_N10071_N10029_N10001" ixia_locid="214"/>
+        <postreq id="postreq_N10057_N10029_N10001" ixia_locid="219">
+            <p ixia_locid="220">After creating a provider network of the VLAN type, you can assign one or more <term ixia_locid="207">segmentation ranges</term> consisting of a set of consecutive
+                VLAN IDs. Segmentation ranges are required in order to set up tenant networks.</p>
+        </postreq>
+    </taskbody>
+</task-wr>

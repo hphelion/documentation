@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content id="jow1419267499106" xml:lang="en-us">
+<title ixia_locid="477">[RC concept] HP Helion OpenStack Carrier Grade System / Hardware Requirements [main stream]</title>
+<rcbody>
+        <shortdesc id="shortdesc" ixia_locid="2">For successful software installation and operation, the Titanium
+            Server hardware platform must meet specific requirements.</shortdesc>
+        <prolog id="prolog_N10017_N1000E_N10001">
+            <author ixia_locid="170">Jim Owens</author>
+            <author></author>
+        </prolog>
+        <conbody id="conbody_N10026_N1000E_N10001">
+            <p id="SysEngGuidelines_reference" ixia_locid="468">For system planning considerations,
+                refer to the <cite ixia_locid="532">HP Helion OpenStack Carrier Grade Administration Guide:
+                    Configuration Planning</cite>. For help with performance calculations, refer to
+                the <cite ixia_locid="517">HP Helion OpenStack Carrier Grade System Engineering Guidelines</cite>.</p>
+            <section id="section_N10036_N1002E_N10001" ixia_locid="452">
+                <title ixia_locid="453">System Architecture</title>
+                <p ixia_locid="454">The HP Helion OpenStack Carrier Grade system consists of a set of hosts connected
+                    to internal and external networks, as illustrated in the following figure.</p>
+                <note id="note_N10087_N10036_N10027_N1000F_N10001" ixia_locid="489" product="tis_small">
+                    <p ixia_locid="490">For a minimal two-server configuration, the controller and
+                        compute functions are combined on a single host.</p>
+                </note>
+                <fig id="fig-logical-architecture" ixia_locid="5">
+                    <title ixia_locid="6">HP Helion OpenStack Carrier Grade Reference Logical Architecture</title>
+                    <image href="jow1404333560781.image" id="image_c1k_wtk_cn" ixia_locid="7" width="6in">
+                        <alt ixia_locid="455">HP Helion OpenStack Carrier Grade logical view</alt>
+                    </image>
+                </fig>
+                <p ixia_locid="460">This figure is simplified to show internal network connections to
+                    just one host of each type.</p>
+                <ul id="ul_z11_czg_vp">
+                    <li ixia_locid="470">
+                        <p ixia_locid="471">Two controller nodes are required.</p>
+                    </li>
+                    <li ixia_locid="472">
+                        <p ixia_locid="473">For systems using storage nodes, two storage nodes are
+                            required.</p>
+                    </li>
+                </ul>
+                <p ixia_locid="336">HP Helion OpenStack Carrier Grade runs on all x86-64 processors that support Intel
+                    Virtualization Technology (VT) VT-x/VT-d extensions. However, the Titanium
+                    Server kernel has been optimized specifically for the Intel Xeon-core family of
+                    processors.</p>
+                <note id="note_N10083_N10036_N10027_N1000F_N10001" ixia_locid="512">
+                    <p id="multicast_in_use" ixia_locid="49">The HP Helion OpenStack Carrier Grade controllers use IP multicast messaging on
+                        the management, infrastructure, and OAM networks. To prevent loss of
+                        controller synchronization, ensure that the switches and other devices on
+                        these networks are configured with appropriate settings.</p>
+                </note>
+            </section>
+            <section id="section_N100E4_N1001C_N10001" ixia_locid="171">
+                <title ixia_locid="173">Hardware Requirements</title>
+                <table id="table_ew1_kd2_jp">
+                    <tgroup cols="4">
+                        <colspec colname="spec" colwidth="1*"/>
+                        <colspec align="center" colname="controller" colwidth="1*"/>
+                        <colspec align="center" colname="compute" colwidth="1.01*"/>
+                        <colspec align="center" colname="storage" colwidth="1*"/>
+                        <thead>
+                            <row>
+                                <entry ixia_locid="175"/>
+                                <entry ixia_locid="177">
+                                    <p ixia_locid="179">Controller Nodes</p>
+                                </entry>
+                                <entry ixia_locid="181">
+                                    <p ixia_locid="183">Compute Nodes</p>
+                                </entry>
+                                <entry ixia_locid="185">
+                                    <p ixia_locid="187">Storage Nodes</p>
+                                </entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row id="hw_qty">
+                                <entry ixia_locid="189">
+                                    <p ixia_locid="191">Minimum Requirement</p>
+                                </entry>
+                                <entry ixia_locid="491">
+                                    <p ixia_locid="195">Two</p>
+                                </entry>
+                                <entry ixia_locid="197">
+                                    <p ixia_locid="199">One<fn ixia_locid="439">
+                                            <p ixia_locid="440">The number of compute nodes required
+                                                depends on the number of guest instances, the
+                                                resources they require, and the resources available
+                                                on the compute nodes.</p>
+                                        </fn></p>
+                                </entry>
+                                <entry ixia_locid="201">
+                                    <p ixia_locid="203">Two (optional)<fn ixia_locid="441">
+                                            <p ixia_locid="442">Storage nodes are optional, but
+                                                provide greater and more readily scalable storage
+                                                resources for guest instances. Note that this option
+                                                cannot be added after initial system
+                                                installation.</p>
+                                        </fn></p>
+                                </entry>
+                            </row>
+                            
+                            <!-- the first version of this row is for a normal TiS with separate controller and compute nodes -->
+                            <row id="hw_qty_ha">
+                                <entry ixia_locid="533">
+                                    <p ixia_locid="535">Recommended for HA</p>
+                                </entry>
+                                <entry ixia_locid="537">
+                                    <p ixia_locid="539">Two<fn ixia_locid="541">
+                                            <p ixia_locid="543">If using two controllers, the
+                                                controller port configurations must be
+                                                identical.</p>
+                                        </fn></p>
+                                </entry>
+                                <entry ixia_locid="545">
+                                    <p ixia_locid="547">Two or more </p>
+                                </entry>
+                                <entry ixia_locid="549">
+                                    <p ixia_locid="551">Two (optional)</p>
+                                </entry>
+                            </row>    
+                            <!-- the next version of this row is for small-footprint.
+                                 NOTE: It uses an additional row into which it straddles.-->
+                            <row id="hw_qty_ha_small">
+                                <entry ixia_locid="534" morerows="1">
+                                    <p ixia_locid="536">Recommended for HA</p>
+                                </entry>
+                                <entry ixia_locid="538">
+                                    <p ixia_locid="540">Two<fn ixia_locid="542">
+                                            <p ixia_locid="544">If using two controllers, the
+                                                controller port configurations must be
+                                                identical.</p>
+                                        </fn></p>
+                                </entry>
+                                <entry ixia_locid="546">
+                                    <p ixia_locid="548">Two or more </p>
+                                </entry>
+                                <entry ixia_locid="550" morerows="1">
+                                    <p ixia_locid="552">Two (optional)</p>
+                                </entry>
+                            </row>
+                            <!-- THis row is also required for small footprint, to complete the straddle. -->
+                            <row id="combined_note">
+                                <entry ixia_locid="573" nameend="compute" namest="controller">
+                                    <note id="note_N10166_N10160_N1015D_N100E4_N1009F_N1009B_N10091_N10027_N1000F_N10001" ixia_locid="574">
+                                        <p ixia_locid="575">For a minimal two-server configuration, the controller
+                                            and compute functions are combined on a single host.</p>
+                                    </note>
+                                </entry>
+                            </row>
+                            <!-- (2) the first version of this row is for a normal TiS with separate controller and compute nodes -->                            
+                            <row id="hw_ram">
+                                <entry ixia_locid="576">
+                                    <p ixia_locid="577">RAM (min)</p>
+                                </entry>
+                                <entry ixia_locid="578">
+                                    <p ixia_locid="579">64 GB</p>
+                                </entry>
+                                <entry ixia_locid="580">
+                                    <p ixia_locid="581">32 GB</p>
+                                </entry>
+                                <entry ixia_locid="582">
+                                    <p ixia_locid="583">64 GB</p>
+                                </entry>
+                            </row>
+                            <!-- (2) the next version of this row is for small-footprint.
+                                 NOTE: It uses an additional row into which it straddles.-->
+                            <row id="hw_ram_small">
+                                <entry ixia_locid="584" morerows="1">
+                                    <p ixia_locid="585">RAM (min)</p>
+                                </entry>
+                                <entry ixia_locid="586">
+                                    <p ixia_locid="587">64 GB</p>
+                                </entry>
+                                <entry ixia_locid="588">
+                                    <p ixia_locid="589">32 GB</p>
+                                </entry>
+                                <entry ixia_locid="590" morerows="1">
+                                    <p ixia_locid="591">64 GB</p>
+                                </entry>
+                            </row>
+                            <!-- (2) THis row is also required for small footprint, to complete the straddle. -->
+                            <row id="combined_note_RAM">
+                                <entry ixia_locid="592" nameend="compute" namest="controller">
+                                    <note id="note_small_min_RAM" ixia_locid="593">
+                                        <p ixia_locid="594">For a minimal two-server configuration, 64 GB is required.</p>
+                                    </note>
+                                </entry>
+                            </row>
+                            <row id="hw_p_stor">
+                                <entry ixia_locid="238">
+                                    <p ixia_locid="240">Primary Storage</p>
+                                </entry>
+                                <entry ixia_locid="242">
+                                    <p ixia_locid="244">500 GB, min 10K RPM<fn ixia_locid="444">
+                                            <p ixia_locid="445"> A two-disk RAID is suggested.</p>
+                                        </fn></p>
+                                </entry>
+                                <entry ixia_locid="248">
+                                    <p ixia_locid="250">120 GB, min 10K RPM</p>
+                                </entry>
+                                <entry ixia_locid="252">
+                                    <p ixia_locid="254">120 GB, min 10K RPM</p>
+                                </entry>
+                            </row>
+                            <row id="hw_s_stor">
+                                <entry ixia_locid="256">
+                                    <p ixia_locid="258">Secondary Storage</p>
+                                </entry>
+                                <entry ixia_locid="260">
+                                    <p ixia_locid="262">500 GB, min 10K RPM<fn ixia_locid="447">
+                                            <p ixia_locid="446">Solid-state drive recommended. A
+                                                two-disk RAID is suggested.</p>
+                                        </fn></p>
+                                </entry>
+                                <entry ixia_locid="266">
+                                    <p ixia_locid="268">For local storage: 500 GB, min 10K RPM (one
+                                        or more), </p>
+                                </entry>
+                                <entry ixia_locid="270">
+                                    <p ixia_locid="600">500 GB suggested minimum, min 10K RPM (two
+                                        or more)</p>
+                                </entry>
+                            </row>
+                            <row id="hw_usb">
+                                <entry ixia_locid="405">
+                                    <p ixia_locid="407">USB Interface</p>
+                                </entry>
+                                <entry ixia_locid="409">
+                                    <p ixia_locid="411">One<fn ixia_locid="448">
+                                            <p ixia_locid="449">Required for installation, and for
+                                                backup and restore operations.</p>
+                                        </fn></p>
+                                </entry>
+                                <entry ixia_locid="413">
+                                    <p ixia_locid="474">Not required</p>
+                                </entry>
+                                <entry ixia_locid="417">
+                                    <p ixia_locid="419">Not required</p>
+                                </entry>
+                            </row>
+                            <row id="hw_bd_mgmt">
+                                <entry ixia_locid="406">
+                                    <draft-comment author="rstone" ixia_locid="595">US64066 adds
+                                        Quanta</draft-comment>
+                                    <p ixia_locid="408">Board Management Module (optional)</p>
+                                </entry>
+                                <entry ixia_locid="410">
+                                    <p ixia_locid="596">iLO3,  iLO4 or Quanta</p>
+                                </entry>
+                                <entry ixia_locid="414">
+                                    <p ixia_locid="597">iLO3,  iLO4 or Quanta</p>
+                                </entry>
+                                <entry ixia_locid="418">
+                                    <p ixia_locid="598">iLO3,  iLO4 or Quanta</p>
+                                </entry>
+                            </row>
+                            <row id="hw_if_mgmt">
+                                <entry ixia_locid="286">
+                                    <p ixia_locid="288">Interface for Mgmt Network (PXE
+                                        bootable)</p>
+                                </entry>
+                                <entry ixia_locid="290">
+                                    <p ixia_locid="292">One</p>
+                                </entry>
+                                <entry ixia_locid="294">
+                                    <p ixia_locid="296">One</p>
+                                </entry>
+                                <entry ixia_locid="298">
+                                    <p ixia_locid="300">One</p>
+                                </entry>
+                            </row>
+                            <row id="hw_if_oam">
+                                <entry ixia_locid="302">
+                                    <p ixia_locid="304"><ph id="if_oam_14.10" ixia_locid="481">Interface for OAM Network</ph> (unless a
+                                        shared interface is used)</p>
+                                </entry>
+                                <entry ixia_locid="306">
+                                    <p ixia_locid="308">One</p>
+                                </entry>
+                                <entry ixia_locid="310">
+                                    <p ixia_locid="475">Not required</p>
+                                </entry>
+                                <entry ixia_locid="123">
+                                    <p ixia_locid="476">Not required</p>
+                                </entry>
+                            </row>
+                            <row id="hw_if_prov">
+                                <entry ixia_locid="314">
+                                    <p ixia_locid="316">Interface for Provider Network</p>
+                                </entry>
+                                <entry ixia_locid="318">
+                                    <p ixia_locid="320">Not required</p>
+                                </entry>
+                                <entry ixia_locid="322">
+                                    <p ixia_locid="324">One or more</p>
+                                </entry>
+                                <entry ixia_locid="326">
+                                    <p ixia_locid="132">Not required</p>
+                                </entry>
+                            </row>
+                            <row id="hw_if_infra">
+                                <entry ixia_locid="328">
+                                    <p ixia_locid="330"><ph id="if_infra_all" ixia_locid="482">Interface for Infrastructure
+                                            Network</ph> <ph id="if_infra_15.x" ixia_locid="484">(unless a shared interface is used)</ph><fn ixia_locid="450">
+                                            <p ixia_locid="451"><ph id="if_infra_footnote_all" ixia_locid="483">For a system with storage nodes,
+                                                  an infrastructure network is required. For a
+                                                  system without storage nodes, it is optional, but
+                                                  provides improved latency and throughput for VM
+                                                  disk access.</ph>
+                                                <ph id="if_infra_footnote_14.10" ixia_locid="485">Note that this option cannot be added after
+                                                  initial system installation.</ph>
+                                            </p>
+                                        </fn></p>
+                                </entry>
+                                <entry ixia_locid="332">
+                                    <p ixia_locid="136">One</p>
+                                </entry>
+                                <entry ixia_locid="137">
+                                    <p ixia_locid="138">One</p>
+                                </entry>
+                                <entry ixia_locid="139">
+                                    <p ixia_locid="140">One</p>
+                                </entry>
+                            </row>
+                            <row id="hw_total_nic">
+                                <entry ixia_locid="141">
+                                    <p ixia_locid="142">Total NICs (min)<fn ixia_locid="433">
+                                            <p ixia_locid="434">For LAG (recommended for HA),
+                                                multiply interfaces by two</p>
+                                        </fn></p>
+                                </entry>
+                                <entry ixia_locid="143">
+                                    <p ixia_locid="144">Two</p>
+                                </entry>
+                                <entry ixia_locid="145">
+                                    <p ixia_locid="146">Three</p>
+                                </entry>
+                                <entry ixia_locid="147">
+                                    <p ixia_locid="148">Two</p>
+                                </entry>
+                            </row>
+                            <row id="hw_boot_order">
+                                <entry ixia_locid="149">
+                                    <p ixia_locid="150">Boot order</p>
+                                </entry>
+                                <entry align="left" ixia_locid="151">
+                                    <ol id="ol_rbm_zg2_jp">
+                                        <li ixia_locid="152">
+                                            <p ixia_locid="153">HD</p>
+                                        </li>
+                                        <li ixia_locid="154">
+                                            <p ixia_locid="155">PXE</p>
+                                        </li>
+                                        <li ixia_locid="156">
+                                            <p ixia_locid="157">DVD</p>
+                                        </li>
+                                        <li ixia_locid="428">
+                                            <p ixia_locid="429">USB</p>
+                                        </li>
+                                    </ol>
+                                </entry>
+                                <entry align="left" ixia_locid="158">
+                                    <ol id="ol_nnh_ch2_jp">
+                                        <li ixia_locid="159">
+                                            <p ixia_locid="160">HD</p>
+                                        </li>
+                                        <li ixia_locid="161">
+                                            <p ixia_locid="162">PXE</p>
+                                        </li>
+                                    </ol>
+                                </entry>
+                                <entry align="left" ixia_locid="163">
+                                    <ol id="ol_qzk_ch2_jp">
+                                        <li ixia_locid="164">
+                                            <p ixia_locid="165">HD</p>
+                                        </li>
+                                        <li ixia_locid="166">
+                                            <p ixia_locid="456">PXE</p>
+                                        </li>
+                                    </ol>
+                                </entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+                <note id="note_N1038D_N1005C_N1002E_N10001" ixia_locid="457">
+                    <p ixia_locid="458">For console access to the hosts, a terminal server or KVM
+                        switch is also required.</p>
+                </note>
+            </section>
+            <section id="section_N1001F_N1001C_N10001" ixia_locid="337">
+                <title ixia_locid="338">Network Requirements</title>
+                <table id="table_k54_jd2_jp">
+                    <tgroup cols="4">
+                        <colspec colname="network" colwidth="1.02*"/>
+                        <colspec colname="purpose" colwidth="1*"/>
+                        <colspec colname="notes" colwidth="1.01*"/>
+                        <thead>
+                            <row>
+                                <entry ixia_locid="340">
+                                    <p ixia_locid="342">Network</p>
+                                </entry>
+                                <entry ixia_locid="344">
+                                    <p ixia_locid="346">Purpose</p>
+                                </entry>
+                                <entry ixia_locid="348">
+                                    <p ixia_locid="350">Notes</p>
+                                </entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry ixia_locid="352">
+                                    <p ixia_locid="354">Management</p>
+                                </entry>
+                                <entry ixia_locid="356">
+                                    <p ixia_locid="358">SW installation (PXE booting); internal
+                                        communications; board management VLAN network.</p>
+                                </entry>
+                                <entry ixia_locid="360">
+                                    <p ixia_locid="362">LAG (IEEE 802.3ad) option available. In
+                                        order to boot over an aggregated management interface, the
+                                        far-end switch ports must be configured in passive LACP
+                                        mode.</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry ixia_locid="364">
+                                    <p ixia_locid="366">OAM</p>
+                                </entry>
+                                <entry ixia_locid="368">
+                                    <p ixia_locid="370">System management CLI or GUI; REST API
+                                        access; DNS server and timeserver connections; SNMP.</p>
+                                </entry>
+                                <entry ixia_locid="372">
+                                    <p ixia_locid="374">LAG option available.</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry ixia_locid="376">
+                                    <p ixia_locid="378">Data</p>
+                                </entry>
+                                <entry ixia_locid="380">
+                                    <p ixia_locid="382">Provider networks; tenant networks.</p>
+                                </entry>
+                                <entry ixia_locid="28">
+                                    <p ixia_locid="29">LAG option available.</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry ixia_locid="30">
+                                    <p ixia_locid="31">Infrastructure</p>
+                                </entry>
+                                <entry ixia_locid="384">
+                                    <p ixia_locid="386">Storage node traffic and migration
+                                        synchronization; offload for management network.</p>
+                                </entry>
+                                <entry ixia_locid="388">
+                                    <p ixia_locid="390">Required for storage nodes; otherwise,
+                                        recommended when five or more compute nodes are used.</p>
+                                    <p ixia_locid="392"/>
+                                    <ul id="ul_wrn_kq2_jp">
+                                        <li ixia_locid="394">
+                                            <p ixia_locid="396">5-8 compute nodes: 1 Gb
+                                                Ethernet.</p>
+                                        </li>
+                                        <li ixia_locid="398">
+                                            <p ixia_locid="400">9 or more compute nodes: 10 Gb
+                                                Ethernet.</p>
+                                        </li>
+                                    </ul>
+                                    <p ixia_locid="402">LAG option available.</p>
+                                </entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </section>
+            <section id="section_N10027_N1001F_N10001" ixia_locid="313">
+                <title ixia_locid="315">System / BIOS Requirements</title>
+                <p ixia_locid="317">The BIOS on each host must support PXE booting for initial
+                    installation of the HP Helion OpenStack Carrier Grade software.</p>
+                <note id="note_N1050F_N10500_N10027_N1000F_N10001" ixia_locid="510">
+                    <p ixia_locid="511">Unified Extensible Firmware Interface (UEFI) mode is not supported. Ensure
+                        that the host is set to use Legacy BIOS mode. For details, refer to the
+                        documentation supplied with your hardware. </p>
+                </note>
+            </section>
+            <section id="section_N10023_N1001C_N10001" ixia_locid="339">
+                <title ixia_locid="341">Memory Requirements</title>
+                <p ixia_locid="343">The following are the minimum RAM resources suggested for the
+                    hosts.</p>
+                <table frame="all" id="table_pl2_c1s_2n">
+                    <title ixia_locid="345">HP Helion OpenStack Carrier Grade Minimum RAM Requirements</title>
+                    <tgroup cols="2">
+                        <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                        <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+                        <thead>
+                            <row>
+                                <entry ixia_locid="347">
+                                    <p ixia_locid="349">Host Type</p>
+                                </entry>
+                                <entry ixia_locid="351">
+                                    <p ixia_locid="353">RAM Size</p>
+                                </entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry ixia_locid="355">
+                                    <p ixia_locid="357">Controller</p>
+                                </entry>
+                                <entry ixia_locid="359">
+                                    <p ixia_locid="361">64 GB</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry ixia_locid="565">
+                                    <p ixia_locid="566">Compute</p>
+                                </entry>
+                                <entry ixia_locid="567">
+                                    <p ixia_locid="568">32 GB</p>
+                                </entry>
+                            </row>
+                            <row product="tis_small">
+                                <entry ixia_locid="569">
+                                    <p ixia_locid="570">Combined controller-compute (minimal two-server configuration)</p>
+                                </entry>
+                                <entry ixia_locid="571">
+                                    <p ixia_locid="572">64 GB</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry ixia_locid="371">
+                                    <p ixia_locid="373">Storage</p>
+                                </entry>
+                                <entry ixia_locid="375">
+                                    <p ixia_locid="377">64 GB</p>
+                                </entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+                <p ixia_locid="379">The actual memory requirement for production environments
+                    depends on the expected load. In particular, for compute nodes, the memory
+                    requirement depends on the expected number of virtual machines and the types of
+                    application running on them.</p>
+            </section>
+            <section id="section_N100A7_N1001C_N10001" ixia_locid="381">
+                <title id="storage_reqs" ixia_locid="383">Storage Requirements</title>
+                <p ixia_locid="461">The storage requirements for HP Helion OpenStack Carrier Grade depend on the
+                    system scale.</p>
+                <ul id="ul_ysl_dsh_pp">
+                    <li ixia_locid="462">
+                        <p ixia_locid="463">For small-scale solutions, the use of LVM/iSCSI shares
+                            on the controller node is required. Storage nodes are not required.</p>
+                    </li>
+                    <li ixia_locid="464">
+                        <p ixia_locid="465">For large-scale solutions, the use of Ceph storage on
+                            dedicated storage nodes is recommended. This type of system can be
+                            scaled upwards using additional disks on the storage nodes.</p>
+                    </li>
+                    <li ixia_locid="466">
+                        <p ixia_locid="467">For very large-scale deployments using external
+                            distributed file systems, contact  Professional Services.</p>
+                    </li>
+                </ul>
+                <p ixia_locid="331">All hosts require one system disk where the HP Helion OpenStack Carrier Grade
+                    system software is installed. System disks are automatically partitioned by the
+                    HP Helion OpenStack Carrier Grade installer program.</p>
+                <p ixia_locid="333">Controller nodes require an additional physical disk for volume
+                    storage. Storage nodes require an additional physical disk for OSD storage.</p>
+                <p ixia_locid="329">The following minimum hard drive capacities are suggested for
+                    the hosts.</p>
+                <table frame="all" id="table_z1x_5jb_ln">
+                    <title ixia_locid="385">HP Helion OpenStack Carrier Grade Minimum Hard Drive Capacities</title>
+                    <tgroup cols="3">
+                        <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                        <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+                        <colspec colname="c3" colnum="3" colwidth="2.0*"/>
+                        <thead>
+                            <row>
+                                <entry ixia_locid="387">
+                                    <p ixia_locid="389">Host Type</p>
+                                </entry>
+                                <entry ixia_locid="391">
+                                    <p ixia_locid="393">Drive</p>
+                                </entry>
+                                <entry ixia_locid="395">
+                                    <p ixia_locid="397">Capacity</p>
+                                </entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row product="tis_not_small">
+                                <entry ixia_locid="553" morerows="2">
+                                    <p ixia_locid="555">Controller</p>
+                                </entry>
+                                <entry ixia_locid="557">
+                                    <p ixia_locid="559">Primary disk</p>
+                                </entry>
+                                <entry ixia_locid="561">
+                                    <p ixia_locid="563">500 GB SSD.  A two-disk RAID is
+                                        suggested.</p>
+                                </entry>
+                            </row>
+                            <row product="tis_small">
+                                <entry ixia_locid="554" morerows="3"> <!-- for tis_small, adjust straddle for "storage disk" row -->
+                                    <p ixia_locid="556">Controller</p>
+                                </entry>
+                                <entry ixia_locid="558">
+                                    <p ixia_locid="560">Primary disk</p>
+                                </entry>
+                                <entry ixia_locid="562">
+                                    <p ixia_locid="564">500 GB SSD. A two-disk RAID is
+                                        suggested.</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry ixia_locid="495">
+                                    <p ixia_locid="180">Secondary disk</p>
+                                </entry>
+                                <entry ixia_locid="182">
+                                    <p ixia_locid="184">500 GB, min 10K RPM. Solid-state drive
+                                        recommended. A two-disk RAID is suggested. </p>
+                                </entry>
+                            </row>
+                            <row product="tis_small">
+                                <entry ixia_locid="496">
+                                    <p ixia_locid="497">Storage disk (zero or more if using combined
+                                        controller/compute host and local storage)</p>
+                                </entry>
+                                <entry ixia_locid="498">
+                                    <p ixia_locid="501">500 GB, min 10K RPM (one or more)</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry ixia_locid="186" nameend="c3" namest="c2">
+                                    <note id="note_N1013A_N10135_N10132_N100FE_N100C9_N100C0_N100A7_N1001C_N10001" ixia_locid="188">
+                                        <p ixia_locid="190">The configurations for <nameliteral ixia_locid="192">controller-0</nameliteral> and
+                                                <nameliteral ixia_locid="194">controller-1</nameliteral> must be identical.</p>
+                                    </note>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry ixia_locid="196" morerows="1">
+                                    <p ixia_locid="198">Compute</p>
+                                </entry>
+                                <entry ixia_locid="504">
+                                    <p ixia_locid="202">Primary disk</p>
+                                </entry>
+                                <entry ixia_locid="204">
+                                    <p ixia_locid="206">120 GB, min 10K RPM</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry ixia_locid="505">
+                                    <p ixia_locid="506">Secondary disk (one or more if using local
+                                        storage)</p>
+                                </entry>
+                                <entry ixia_locid="499">
+                                    <p ixia_locid="502">500 GB or larger, depending on VM virtual
+                                        disk requirements; min 10K RPM</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry ixia_locid="208" morerows="1">
+                                    <p ixia_locid="210">Storage</p>
+                                </entry>
+                                <entry ixia_locid="212">
+                                    <p ixia_locid="215">Primary disk</p>
+                                </entry>
+                                <entry ixia_locid="217">
+                                    <p ixia_locid="219">120 GB, min 10K RPM</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry ixia_locid="221">
+                                    <p ixia_locid="223">Secondary disks (two or more)</p>
+                                </entry>
+                                <entry ixia_locid="500">
+                                    <p ixia_locid="503">500 GB, min 10K RPM</p>
+                                </entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+                <p ixia_locid="229">On the controller nodes, the disk space is used to accommodate a
+                    variety of content, including HP Helion OpenStack Carrier Grade and guest images, the OpenStack
+                    configuration database, Cinder volumes, and Ceilometer CSV files.</p>
+                <p ixia_locid="231">For controller nodes, the suggested storage hardware includes
+                    the following:</p>
+                <ul id="ul_z2g_h4b_ln">
+                    <li ixia_locid="233">
+                        <p ixia_locid="235">solid state drives (SSD) to improve overall
+                            performance</p>
+                    </li>
+                    <li ixia_locid="237">
+                        <p ixia_locid="75">hardware RAID array for transparent failover and fallback
+                            operations </p>
+                    </li>
+                </ul>
+                <p ixia_locid="76">HP Helion OpenStack Carrier Grade uses distributed replicated block device (DRDB)
+                    technology to automatically synchronize the hard drives across the two
+                    controller nodes.</p>
+            </section>
+            <section id="section_N101C1_N1001C_N10001" ixia_locid="78">
+                <title ixia_locid="79">Ethernet Interfaces</title>
+                <p id="eth_if_network_boot" ixia_locid="325">All hosts in the HP Helion OpenStack Carrier Grade
+                    cluster connect to at least the internal management network using an Ethernet
+                    interface. The ports used for this connection must support network booting, and
+                    must be configured as the primary booting device for installation. In most
+                    BIOS/UEFI implementations, only on-board ports can be configured for network
+                    booting.</p>
+                <p ixia_locid="486">HP Helion OpenStack Carrier Grade supports provisioning multiple ports on
+                    supported NICs.</p>
+                <note id="note_N1070F_N106FB_N10027_N1000F_N10001" ixia_locid="487" type="caution">
+                    <p ixia_locid="488"> For a Mellanox CX3, all ports must be used either for data interfaces, or
+                        for non-data interfaces. It is not possible to use some ports for data
+                        interfaces and others for non-data interfaces on the same Mellanox CX3
+                        NIC.</p>
+                </note>
+                <p id="eth_if_ports_reqd" ixia_locid="327"> The following table illustrates the
+                    number and type of Ethernet ports required in two different installation
+                    scenarios.</p>
+                <note id="note_N106E8_N106D4_N10027_N1000F_N10001" ixia_locid="479">
+                    <p ixia_locid="480">The following table assumes that each interface is connected
+                        to a single network. An Ethernet interface can be shared by more than one
+                        network; for more information, see the <cite ixia_locid="478">Titanium
+                            Server Administration Guide: Shared (VLAN) Ethernet
+                        Interfaces</cite>.</p>
+                </note>
+                <table frame="all" id="table_irg_yht_cn">
+                    <title ixia_locid="81">Ethernet Port Density Scenarios</title>
+                    <tgroup cols="3">
+                        <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                        <colspec colname="c2" colnum="2" colwidth="2.0*"/>
+                        <colspec colname="c3" colnum="3" colwidth="2.0*"/>
+                        <thead>
+                            <row>
+                                <entry ixia_locid="82">
+                                    <p ixia_locid="239">Personality</p>
+                                </entry>
+                                <entry ixia_locid="241">
+                                    <p ixia_locid="243">Basic Scenario</p>
+                                </entry>
+                                <entry ixia_locid="245">
+                                    <p ixia_locid="247">LAG Scenario</p>
+                                </entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry ixia_locid="249" morerows="1">
+                                    <p ixia_locid="251">Controller Node</p>
+                                </entry>
+                                <entry ixia_locid="253">
+                                    <p ixia_locid="255">One 1G or 10G interface (Internal management
+                                        network)</p>
+                                    <p ixia_locid="257">One 1G or 10G interface (OAM)</p>
+                                    <p ixia_locid="507">One optional 10G interface (Infrastructure
+                                        network)</p>
+                                    <p ixia_locid="508" product="tis_small">For combined
+                                        controller/compute hosts, one 1G, 10G, or 40G interface per
+                                        Provider Network</p>
+                                </entry>
+                                <entry ixia_locid="261">
+                                    <p ixia_locid="263">Two 1G or 10G interfaces (Internal
+                                        management network)</p>
+                                    <p ixia_locid="265">Two 1G or 10G interfaces (OAM)</p>
+                                    <p ixia_locid="267">Two optional 10G interfaces (Infrastructure
+                                        network)</p>
+                                    <p ixia_locid="509" product="tis_small">For combined
+                                        controller/compute hosts, two 1G, 10G, or 40G interface per
+                                        Provider Network</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry ixia_locid="269" nameend="c3" namest="c2">
+                                    <note id="note_N10246_N10241_N1023E_N1020E_N101D8_N101CF_N101C3_N1001C_N10001" ixia_locid="271">
+                                        <p ixia_locid="273">The controller-0 and controller-1 port
+                                            configurations must be identical.</p>
+                                    </note>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry ixia_locid="275">
+                                    <p ixia_locid="277">Compute Node</p>
+                                </entry>
+                                <entry ixia_locid="279">
+                                    <p ixia_locid="281">One 1G or 10G interface (Internal management
+                                        network)</p>
+                                    <p ixia_locid="283">One 1G, 10G, or 40G interface per additional
+                                        Provider Network</p>
+                                    <p ixia_locid="285">One optional 10 G interface (Infrastructure
+                                        network)</p>
+                                </entry>
+                                <entry ixia_locid="287">
+                                    <p ixia_locid="289">Two 1G or 10G interfaces (Internal
+                                        management network)</p>
+                                    <p ixia_locid="291">Two 1G, 10G, or 40G interfaces per
+                                        additional Provider Network</p>
+                                    <p ixia_locid="293">Two optional 10 G interfaces (Infrastructure
+                                        network)</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry ixia_locid="295">
+                                    <p ixia_locid="297">Storage Node</p>
+                                </entry>
+                                <entry ixia_locid="299">
+                                    <p ixia_locid="301">One 1Gor 10G interface (Internal management
+                                        network)</p>
+                                    <p ixia_locid="303">One optional 10 G interface (Infrastructure
+                                        network)</p>
+                                </entry>
+                                <entry ixia_locid="305">
+                                    <p ixia_locid="307">Two 1G or 10G interfaces (Internal
+                                        management network)</p>
+                                    <p ixia_locid="309">Two optional 10 G interfaces (Infrastructure
+                                        network)</p>
+                                </entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+                <p id="eth_if_LAG" ixia_locid="311">In the basic scenario, a single Ethernet port is used to attach
+                    the host to each of the networks. In the LAG scenario, two Ethernet ports are
+                    used for each connection.</p>
+            </section>
+            <section id="section_N1033B_N1001F_N10001" ixia_locid="319">
+                <title ixia_locid="321">Board Management Modules</title>
+                <draft-comment author="rstone" ixia_locid="599">US64066 adds Quanta; US64069
+                    mentions sensor capabilities</draft-comment>
+                <p ixia_locid="323">For out-of-band reset, power-on/power-off, or performance sensor
+                    capabilities, HP iLO3 or iLO4 (Integrated Lights Out), or Quanta board
+                    management modules are required. Hardware sensor monitoring and reporting is
+                    supported for Quanta modules.</p>
+            </section>
+            <section id="section_N1074C_N1002E_N10001" ixia_locid="421">
+                <title ixia_locid="422">USB Interface</title>
+                <p ixia_locid="423">For the controller, a USB interface is required for backup and
+                    restore operations, and for software installation if a DVD is not available.</p>
+            </section>
+        </conbody>
+    </rcbody>
+</referable-content>

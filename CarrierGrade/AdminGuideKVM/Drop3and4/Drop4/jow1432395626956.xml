@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1432395626956" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title>REST API Secure Access Planning</title>
+ <shortdesc>For secure REST API access, you must obtain and install a signed digital certificate
+  before software installation.</shortdesc>
+ <prolog><author/>
+  
+ </prolog>
+ <conbody>
+  <p>HP Helion OpenStack Carrier Grade supports programming access using REST APIs. By default, access using the HTTP
+   protocol is supported. For increased security, you can enable  HTTPS access during system
+   installation.</p>
+  <p>To enable HTTPS access, you must obtain a digital certificate and copy it to the first
+   controller before starting the controller configuration script. For more information, see the
+    <cite>HP Helion OpenStack Carrier Grade Software Installation Guide</cite>.</p>
+ </conbody>
+</concept-wr>

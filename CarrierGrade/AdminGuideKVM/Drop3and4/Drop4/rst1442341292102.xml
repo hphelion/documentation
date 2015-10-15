@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="rst1442341292102" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title>VLAN Transparent</title>
+ <shortdesc><draft-comment author="rstone">New topic for
+   US60634</draft-comment>A <term>vlan transparent</term> tenant network is one that
+  allows VLAN tagged packets to be encapsulated within a provider network segment without removing
+  or modifying the guest VLAN tag. VLAN Transparent is provided in addition to VLAN-tagged Neutron
+  subnets for guest VLANs.</shortdesc>
+ <prolog><author/>
+  <author></author>
+ </prolog>
+ <conbody>
+  <p>VLAN Transparent must be supported on a provider network before a VLAN
+   Transparent tenant network can be created on that provider network. The <uicontrol>VLAN Transparent</uicontrol> column in the list of defined provider networks on
+   the <uicontrol>Provider Networks</uicontrol> tab of the <menucascade>
+    <uicontrol>System</uicontrol>
+    <uicontrol>Networks</uicontrol>
+   </menucascade> page indicates availability. </p>
+  <p>VLAN Priority attributes are propagated to the provider VLAN tag and then restored to the guest
+   VLAN tag.</p>
+  <fig id="fig_glw_vwk_jt">
+   <image href="rst1442405927569.image" id="image_dbb_wwk_jt"/>
+  </fig>
+  <p>This information is also available from the following command.</p>
+  <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron providernet-show provider1-vt</userinput>
+<systemoutput>+------------------+--------------------------------------------------------+
+| Field            | Value                                                  |
++------------------+--------------------------------------------------------+
+| description      |                                                        |
+| id               | 72a09e68-7170-493e-b9c6-d2bcb881f458                   |
+| mtu              | 1500                                                   |
+| name             | provider1-vt                                           |
+| ranges           | {                                                      |
+|                  |      "name": "provider1-vt-r1-0",                      |
+|                  |      "tenant_id": "c17a85ac5283496da1152ce68b79e606",  |
+|                  |      "maximum": 50,                                    |
+|                  |      "minimum": 59,                                    |
+|                  |      "shared": false,                                  |
+|                  |      "id": "8b1fa184-80e0-4555-bd9f-bcf444384189",     |
+|                  |      "description": null                               |
+|                  | }                                                      |
+| status           | DOWN                                                   |
+| type             | vlan                                                   |
+| vlan_transparent | True                                                   |
++------------------+--------------------------------------------------------+</systemoutput></codeblock>
+  <p>The summary information available by selecting a tenant network name form the
+    <uicontrol>Provider Networks</uicontrol> tab of the <menucascade>
+    <uicontrol>System</uicontrol>
+    <uicontrol>Networks</uicontrol>
+   </menucascade> page indicates if a tenant network will request VLAN Transparent services from a
+   provider network.</p>
+  <fig id="fig_t5z_4vk_jt">
+   <image href="rst1442405324298.image" id="image_utg_pvk_jt"/>
+  </fig>
+  <p>This information is also available from the following command.</p>
+  <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron net-show tenant1-vt</userinput>
+<systemoutput>+---------------------------+--------------------------------------+
+| Field                     | Value                                |
++---------------------------+--------------------------------------+
+| admin_state_up            | True                                 |
+| id                        | 011cea1e-422f-49d1-9d80-ba864bab361f |
+| mtu                       | 1500                                 |
+| name                      | tenant1-vt                           |
+| provider:network_type     | vlan                                 |
+| provider:physical_network | provider1-vt                         |
+| provider:segmentation_id  | 50                                   |
+| router:external           | False                                |
+| shared                    | False                                |
+| status                    | ACTIVE                               |
+| subnets                   | 3bff6cb0-8422-4596-857f-a02d68a051b1 |
+|                           | dedcd9e0-d4ee-4306-a6bf-194104baa9b4 |
+| tenant_id                 | c17a85ac5283496da1152ce68b79e606     |
+| vlan_transparent          | True                                 |
++---------------------------+--------------------------------------+</systemoutput></codeblock>
+  <p>For more information on setting up provider networks, see <cite>HP Helion OpenStack Carrier Grade Software Installation Guide: Configuring Provider Networks</cite> and <cite>HP Helion OpenStack Carrier Grade Software Installation Guide: Configuring Provider Networks Using
+    the CLI</cite>. For more information on setting up tenant networks, see <xref href="rst1442339291916.xml"/>.</p>
+  <table frame="all" id="table_njv_rkd_jt">
+   <title>VLAN Transparent Compatibility</title>
+   <tgroup cols="5">
+    <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+    <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+    <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+    <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+    <colspec colname="c5" colnum="5" colwidth="1.0*"/>
+    <thead>
+     <row>
+      <entry/>
+      <entry>
+       <p>802.1p</p>
+      </entry>
+      <entry>
+       <p>802.1q</p>
+      </entry>
+      <entry>
+       <p>802.1ad</p>
+      </entry>
+      <entry>
+       <p>QinQ</p>
+      </entry>
+     </row>
+    </thead>
+    <tbody>
+     <row>
+      <entry>
+       <p><b>Flat Provider Network</b></p>
+      </entry>
+      <entry>
+       <p>Yes</p>
+      </entry>
+      <entry>
+       <p>Yes</p>
+      </entry>
+      <entry>
+       <p>Yes</p>
+      </entry>
+      <entry>
+       <p>Yes</p>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <p><b>VLAN Provider Network</b></p>
+      </entry>
+      <entry>
+       <p>Yes</p>
+      </entry>
+      <entry>
+       <p>Yes</p>
+      </entry>
+      <entry>
+       <p>Yes</p>
+      </entry>
+      <entry>
+       <p>Yes</p>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <p><b>VXLAN Provider Network</b></p>
+      </entry>
+      <entry>
+       <p>Yes</p>
+      </entry>
+      <entry>
+       <p>Yes</p>
+      </entry>
+      <entry>
+       <p>Yes<fn>
+        <p>VLAN priority attributes not propagated to IP header differentiated services field.</p>
+       </fn></p>
+      </entry>
+      <entry>
+       <p>Yes</p>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <p><b>VLAN Tagged Subnets</b></p>
+      </entry>
+      <entry>
+       <p>Yes</p>
+      </entry>
+      <entry>
+       <p>Yes</p>
+      </entry>
+      <entry>
+       <p>No</p>
+      </entry>
+      <entry>
+       <p>No</p>
+      </entry>
+     </row>
+    </tbody>
+   </tgroup>
+  </table>
+ </conbody>
+</concept-wr>

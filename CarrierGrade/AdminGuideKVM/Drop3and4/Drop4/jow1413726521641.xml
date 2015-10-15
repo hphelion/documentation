@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1413726521641" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+
+ -->
+ <title>System Configuration Management</title>
+ <shortdesc>You can make changes to the initial HP Helion OpenStack Carrier Grade configuration at any
+  time after installation.</shortdesc>
+ <prolog><author/>
+  
+ </prolog>
+ <conbody>
+  <p>The initial configuration is defined during software installation, using the
+    <nameliteral>config_controller</nameliteral> script (see the <cite>HP Helion OpenStack Carrier Grade Software Installation Guide: Configuring Controller-0). </cite> After
+   installation, you can make changes using the web administration interface or the CLI. For most
+   types of changes, you can do this without interrupting system operations.</p>
+  <p>You can change the initial configuration as follows:</p>
+  <ul id="ul_ghh_hfp_5p">
+   <li>
+    <p>Reconfigure aspects of the External OAM network, including the subnet,
+     controller IP addresses, gateway IP address, and floating IP address.</p>
+   </li>
+   <li>
+    <p>Change the DNS server IP addresses.</p>
+   </li>
+   <li>
+    <p>Change the NTP server IP addresses.</p>
+   </li>
+   <li>
+    <p>Change the disk allocations for database storage, image storage, backup
+     storage, and Cinder volume storage.</p>
+   </li>
+   <li>
+    <p>Add an infrastructure network if one is not already configured.</p>
+    <note id="note_N10069_N10062_N10036_N1001F_N10001">
+     <p>A service interruption is required to add an infrastructure network; all
+      nodes except the active controller must be locked. In addition, you must use the CLI to make
+      this change.</p>
+    </note>
+   </li>
+  </ul>
+  <p>Immediately before making a change, ensure the following:</p>
+  <ul id="ul_o1p_hb2_vp">
+   <li>
+    <p>All hosts are unlocked.</p>
+   </li>
+   <li>
+    <p>No <nameliteral>Major</nameliteral> or <nameliteral>Critical</nameliteral>
+     alarms are shown for the system on the Fault Management page.</p>
+   </li>
+   <li>
+    <p>No <nameliteral>250.001 Configuration out-of-date</nameliteral> alarms are
+     shown for the system on the Fault Management page.</p>
+   </li>
+  </ul>
+  <p>During these changes, HP Helion OpenStack Carrier Grade can remain online and operational. For
+   some types of changes, alarms are raised while the settings are in transition. To make the
+   changes take effect and to clear the alarms, individual hosts must be locked and then unlocked
+   one at a time. For more information, see <xref href="jow1413726817770.xml"/>.</p>
+  <p>Only hosts with <nameliteral>250.001 Configuration out-of-date</nameliteral>
+   alarms need to be locked and then unlocked. When locking and unlocking the hosts to clear the
+   alarms, use the following order:</p>
+  <ol id="ol_wnd_nzd_vp">
+   <li>
+    <p>controller nodes</p>
+   </li>
+   <li>
+    <p>compute nodes</p>
+   </li>
+  </ol>
+  <note id="note_N1006C_N1001F_N10001">
+   <p>To keep the system operational during an OAM network change, sufficient
+    resources must be available to migrate the virtual machines on a compute node while it is locked
+    for changes.</p>
+  </note>
+  <p>To make changes using the web administration interface, you must be logged in
+   as the <nameliteral>admin</nameliteral> user.  Use the <wintitle>System Configuration</wintitle> pane, is available from the <uicontrol>System
+    Panel</uicontrol> section of the <uicontrol>Admin</uicontrol> menu. </p>
+  <p>To make changes using the CLI, you must be logged in as the
+    <nameliteral>wrsroot</nameliteral> user on the active controller, and sourced as the Keystone
+    <nameliteral>admin</nameliteral> user. For more information, see <xref href="jow1413729179585.xml"/>.</p>
+ </conbody>
+</concept-wr>

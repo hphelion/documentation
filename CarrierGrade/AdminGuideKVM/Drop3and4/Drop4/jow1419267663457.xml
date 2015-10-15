@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1419267663457" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title ixia_locid="1">Hardware Requirements</title>
+ <shortdesc conref="jow1419267499106.xml#jow1419267499106/shortdesc" ixia_locid="2"/>
+ <prolog>
+  <author ixia_locid="3">Jim Owens</author>
+ </prolog>
+ <conbody>
+  <p ixia_locid="12">This section describes the hardware requirements for a HP Helion OpenStack Carrier Grade system in detail. For a
+   quick summary, refer to the <cite ixia_locid="13">HP Helion OpenStack Carrier Grade Quick Start Guide</cite>.</p>
+  <p conref="jow1419267499106.xml#jow1419267499106/SysEngGuidelines_reference" ixia_locid="4"/>
+  <p ixia_locid="518">For limitations pertaining to this release of HP Helion OpenStack Carrier Grade, refer to the <i ixia_locid="519">HP Helion OpenStack Carrier Grade Release Notes</i>.</p>
+  <section conref="jow1419267499106.xml#jow1419267499106/section_N10036_N1002E_N10001" id="section_N10023_N1001C_N10001" ixia_locid="5"/>
+  <section conref="jow1419267499106.xml#jow1419267499106/section_N10027_N1001F_N10001" id="section_N10028_N1001C_N10001" ixia_locid="6"/>
+  <section conref="jow1419267499106.xml#jow1419267499106/section_N10023_N1001C_N10001" id="section_N1002D_N1001C_N10001" ixia_locid="7"/>
+  <section conref="jow1419267499106.xml#jow1419267499106/section_N100A7_N1001C_N10001" id="section_N10032_N1001C_N10001" ixia_locid="8"/>
+  <section conref="jow1419267499106.xml#jow1419267499106/section_N101C1_N1001C_N10001" id="section_N10037_N1001C_N10001" ixia_locid="9"/>
+  <section conref="jow1419267499106.xml#jow1419267499106/section_N1033B_N1001F_N10001" id="section_N1003C_N1001C_N10001" ixia_locid="10"/>
+  <section conref="jow1419267499106.xml#jow1419267499106/section_N1074C_N1002E_N10001" id="section_N10041_N1001C_N10001" ixia_locid="11"/>
+ </conbody>
+</concept-wr>

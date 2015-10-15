@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1429628777191" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title>Virtual Routers</title>
+ <shortdesc>Virtual routers provide internal and external network connectivity for
+  tenants.</shortdesc>
+ <prolog><author/>
+  
+ </prolog>
+ <conbody>
+  <p> The user associated with a tenant can add a designated number of virtual
+   routers (Neutron routers) to the tenant. The maximum number is specified in the quotas for the
+   tenant. </p>
+  <p>The virtual router automatically provides a connection to system services
+   required by the tenant, such as the metadata service that supplies instances with user data. You
+   can configure the virtual routers with interfaces to tenant networks to provide internal and
+   external connectivity.</p>
+  <p>A virtual router can be implemented as a centralized router, or a distributed
+   virtual router (DVR).</p>
+  <note id="note_N10031_N1001F_N10001">
+   <p>Only the <nameliteral>admin</nameliteral> user can specify a distributed
+    router. For other tenants, this choice is not available, and a centralized router is implemented
+    by default. The <nameliteral>admin</nameliteral> user can change a centralized router to a
+    distributed router on behalf of other tenants (see <xref href="jow1429637676342.xml"/>).</p>
+   <p>A distributed router cannot be converted to a centralized router.</p>
+  </note>
+  <dl>
+   <dlentry>
+    <dt>Centralized</dt>
+    <dd>
+     <p>A centralized virtual router is instantiated on a single compute node. All traffic using the
+      router must pass through the compute node.</p>
+    </dd>
+   </dlentry>
+   <dlentry>
+    <dt>Distributed</dt>
+    <dd>
+     <p>A distributed virtual router is instantiated in a distributed manner across
+      multiple hosts. Distributed virtual routers provide more efficient routing than standard
+      virtual routers for east-west (tenant-to-tenant) or floating IP address traffic. Local traffic
+      is routed within the local host, while external L3 traffic is routed directly between the
+      local host and the gateway router.</p>
+     <p>To implement the distributed model, a centralized-portion of the router is
+      still deployed on one host. The centralized portion manages north-south (external network)
+      traffic and source network address translation (SNAT) traffic, as well as agents deployed on
+      other hosts. The agents offload the centralized router for east-west (tenant-to-tenant)
+      routing and floating IP network address translation.</p>
+    </dd>
+   </dlentry>
+  </dl>
+  <p>You can enable SNAT on a virtual router. For more information, see <xref href="jow1438192116883.xml"/></p>
+  <p>To add a virtual router, see <xref href="jow1429629394435.xml"/>. To create interfaces, see <xref href="jow1429631834947.xml"/>.</p>
+  <!-- "I wouldn't talk about Accelerated DVR until we do it" - Greg -->
+  <!--  <p>An Accelerated DVR (to be made available in a later release) is implemented adjacent to the AVS
+   switch on each host to provide DPDK-accelerated east-west andL3 forwarding. North-South L3
+   Forwarding and SNAT may also be accelerated by implementing the centralized-portion of the router
+   as a VM configured to use multiple dedicated cores, instead of sharing the single platform core
+   with TiS and OpenStack Agents.</p> -->
+ </conbody>
+</concept-wr>

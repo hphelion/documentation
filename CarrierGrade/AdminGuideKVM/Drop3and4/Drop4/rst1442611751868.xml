@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="rst1442611751868" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Changing the MTU on a small-footprint System</title>
+    <shortdesc>
+        <draft-comment author="rstone">Topic created for CGTS-1944</draft-comment>
+    </shortdesc>
+    <prolog><author/>
+     
+    </prolog>
+    <taskbody>
+        <context id="context_N1001E_N1001B_N10001">
+            <p>The following steps illustrate how to change the MTU for an interface
+                for an infrastructure network. </p>
+        </context>
+        <steps>
+            <step id="step_N10029_N10026_N1001B_N10001">
+                <cmd>Lock Controller-1.</cmd>
+                <substeps id="substeps_gx5_1bc_kt">
+                    <substep>
+                        <cmd>From <menucascade>
+                            <uicontrol>System</uicontrol>
+                            <uicontrol>Instances</uicontrol>
+                        </menucascade>, select the <uicontrol>Hosts</uicontrol> tab.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>From the <uicontrol>Edit</uicontrol> menu for Controller-1, select
+                            <uicontrol>Lock Host</uicontrol>.</cmd>
+                        <info>
+                            <fig id="fig_N1005E_N1005B_N1004C_N10030_N10029_N10026_N1001B_N10001">
+                                <image href="rst1442611298701.image"/>
+                            </fig>
+                        </info>
+                    </substep>
+                </substeps>
+            </step>
+            <step id="step_N1006D_N10026_N1001B_N10001">
+                <cmd>Modify the MTU of an interface on controller-1.</cmd>
+                <substeps id="substeps_jks_chy_kt">
+                    <substep>
+                        <cmd>Click on the name of controller-1, then switch to the
+                                <uicontrol>Interfaces</uicontrol> tab and select
+                                <uicontrol>Edit</uicontrol> for the interface you want to
+                            change.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>In the <wintitle>Edit Interface</wintitle> dialog, change the
+                                <uicontrol>MTU</uicontrol> field, then click
+                                <uicontrol>Save</uicontrol>. </cmd>
+                    </substep>
+                </substeps>
+            </step>
+            <step id="step_N10076_N10026_N1001B_N10001">
+                <cmd>Unlock Controller-1.</cmd>
+                <info>
+                    <p>From the <uicontrol>Edit</uicontrol> menu for Controller-1, select
+                        <uicontrol>Unlock Host</uicontrol>.</p>
+                </info>
+            </step>
+            <step id="step_N1008F_N10026_N1001B_N10001">
+                <cmd>Swact host to Controller-1</cmd>
+                <info>
+                    <fig id="fig_N10096_N10093_N1008C_N10026_N1001B_N10001">
+                        <image href="psa1420751608971.image"/>
+                    </fig>
+                </info>
+            </step>
+            <step id="step_N100A6_N10026_N1001B_N10001">
+                <cmd>Lock controller-0</cmd>
+            </step>
+            <step id="step_N100AF_N10026_N1001B_N10001">
+                <cmd>Modify the MTU of an interface on controller-0</cmd>
+            </step>
+            <step id="step_N100B8_N10026_N1001B_N10001">
+                <cmd>Unlock Controller-0</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

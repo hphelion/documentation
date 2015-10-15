@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333564380" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+
+ -->
+    <title ixia_locid="1">Network Requirements</title>
+    <shortdesc ixia_locid="2">The  HP Helion OpenStack Carrier Grade networking environment incorporates up to five
+        types of network: the internal management network, the OAM network, one or more provider
+        networks, an optional infrastructure network, and an optional board management network.
+        Operational requirements for each network are described in the following
+        sections.</shortdesc>
+    <prolog>
+        <author></author>
+    </prolog>
+    <conbody>
+        <note id="note_N10022_N1001F_N10001" ixia_locid="48">
+            <p conref="jow1419267499106.xml#jow1419267499106/multicast_in_use" ixia_locid="49"/>
+        </note>
+        <section id="section_N1001F_N1001C_N10001" ixia_locid="4">
+            <title ixia_locid="5">Internal Management Network</title>
+            <p ixia_locid="6">The internal management network must be implemented as a single,
+                dedicated, Layer 2 broadcast domain for the exclusive use of each HP Helion OpenStack Carrier Grade
+                cluster. Sharing of this network by more than one HP Helion OpenStack Carrier Grade cluster is not a
+                supported configuration.</p>
+            <p ixia_locid="7">During the HP Helion OpenStack Carrier Grade software installation process, several
+                network services such as BOOTP, DHCP, and PXE, are expected to run over the internal
+                management network. These services are used to bring up the different hosts to an
+                operational state. Therefore, it is mandatory that this network be operational and
+                available in advance, to ensure a successful installation.</p>
+            <p ixia_locid="34">On each host, the internal management network can be implemented
+                using a 1Gb or 10 Gb Ethernet port. In either case, requirements for this port
+                are:</p>
+            <ul id="ul_uh1_pqs_hp">
+                <li ixia_locid="35">
+                    <p ixia_locid="36"> it must be capable of PXE-booting</p>
+                </li>
+                <li ixia_locid="37">
+                    <p ixia_locid="38">can be used by the motherboard as a primary boot device</p>
+                </li>
+            </ul>
+        </section>
+        <section id="section_N10030_N1001C_N10001" ixia_locid="8">
+            <title ixia_locid="9">Infrastructure Network</title>
+            <p ixia_locid="10">This is an optional network. As with the internal management network, the infrastructure
+    network must be implemented as a single, dedicated, Layer 2 broadcast domain for the exclusive
+    use of each HP Helion OpenStack Carrier Grade cluster. Sharing of this network by more than one HP Helion OpenStack Carrier Grade
+    cluster is not a supported configuration.</p>
+            <p ixia_locid="11">The infrastructure network can be implemented as a 1Gb or 10 Gb
+                Ethernet network. In its absence, all infrastructure traffic is carried over the
+                internal management network.</p>
+        </section>
+        <section id="section_N10041_N1001C_N10001" ixia_locid="12">
+            <title ixia_locid="13">OAM Network</title>
+            <p ixia_locid="14">You should ensure that the following services are available on the
+                OAM Network:</p>
+            <dl>
+                <dlentry ixia_locid="15">
+                    <dt ixia_locid="16">DNS Service</dt>
+                    <dd ixia_locid="17">
+                        <p ixia_locid="18">Needed to facilitate the name resolution of servers reachable on the OAM Network. </p>
+                        <p ixia_locid="19">HP Helion OpenStack Carrier Grade can operate without a configured DNS
+                            service. However, a DNS service should be in place to ensure that links
+                            to external references in the current and future versions of the web
+                            administration interface work as expected.</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="20">
+                    <dt ixia_locid="21">NTP Service</dt>
+                    <dd ixia_locid="22">
+                        <p ixia_locid="23">The Network Time Protocol (NTP) can be optionally used by the HP Helion OpenStack Carrier Grade controller
+       nodes to synchronize their local clocks with a reliable external time reference. However, it
+       is strongly suggested that this service be available, among other things, to ensure that
+       system-wide log reports present a unified view of the day-to-day operations.</p>
+                        <p ixia_locid="24">The HP Helion OpenStack Carrier Grade compute nodes always use the controller nodes as the de-facto time server for the
+       entire HP Helion OpenStack Carrier Grade cluster. </p>
+                    </dd>
+                </dlentry>
+            </dl>
+        </section>
+        <section id="section_N1007A_N1001C_N10001" ixia_locid="25">
+            <title ixia_locid="26">Provider Network</title>
+            <p ixia_locid="27">There are no specific requirements for network services to be available on the provider
+    network. However, you must ensure that all network services required by the guests running in
+    the compute nodes are available. For configuration purposes, the compute nodes themselves are
+    entirely served by the services provided by the controller nodes over the internal management
+    network.</p>
+        </section>
+        <section id="section_N100A2_N1001F_N10001" ixia_locid="28">
+            <title ixia_locid="29">Board Management Network</title>
+            <p ixia_locid="30">The board management network implementation depends on the system
+                configuration. </p>
+            <dl>
+                <dlentry ixia_locid="39">
+                    <dt ixia_locid="40">Internal access</dt>
+                    <dd ixia_locid="41">
+                        <p ixia_locid="42">On a system configured for internal access to the board management
+                            network, the board management modules are connected to VLAN-tagged ports
+                            on the internal L2 switch, and the controller is attached to the VLAN
+                            using the management network interface. For more about the internal L2
+                            switch, refer to <xref href="jow1404333563170.xml" ixia_locid="32"/>.</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="43">
+                    <dt ixia_locid="44">External access</dt>
+                    <dd ixia_locid="45">
+                        <p ixia_locid="46">On a system configured for external access to the board management
+                            network, the board management modules are assigned IP addresses
+                            accessible from the OAM network, and the controller uses the OAM network
+                            to connect to them.</p>
+                    </dd>
+                </dlentry>
+            </dl>
+            <p ixia_locid="47">The system configuration is determined at installation. If a board management network
+                is specified during the controller configuration script, then the network is
+                configured for internal access. Otherwise, the board managament network uses
+                external access. For more information, see <xref href="jow1406727863674.xml" ixia_locid="33"/>.</p>
+        </section>
+    </conbody>
+</concept-wr>

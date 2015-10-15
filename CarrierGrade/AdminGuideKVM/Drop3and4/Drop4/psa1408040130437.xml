@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1408040130437" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+        
+-->
+    <title>Configuring SNMP Trap Destinations</title>
+    <shortdesc>SNMP trap destinations are hosts configured in HP Helion OpenStack Carrier Grade to
+        receive unsolicited SNMP notifications. </shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001E_N1001B_N10001">
+            <p>Destination hosts are specified by IP address, or by host name if it
+                can be properly resolved by HP Helion OpenStack Carrier Grade. Notifications are sent to the hosts
+                using a designated community string so that they can be validated.</p>
+        </context>
+        <steps>
+            <step id="step_N10040_N1003D_N1001C_N10001">
+                <cmd>Configure IP address 10.10.10.1 to receive SNMP notifications
+                    using the community string <term>commstr1</term>.</cmd>
+                <stepxmp>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system snmp-trapdest-add -c commstr1 --ip_address 10.10.10.1</userinput>
+<systemoutput>+------------+--------------------------------------+
+| Property   | Value                                |
++------------+--------------------------------------+
+| uuid       | c7b6774e-7f45-40f5-bcca-3668de2a186f |
+| ip_address | 10.10.10.1                           |
+| community  | commstr1                             |
+| type       | snmpv2c_trap                         |
+| port       | 162                                  |
+| transport  | udp                                  |
++------------+--------------------------------------+</systemoutput>
+</codeblock>
+                </stepxmp>
+                <info>
+                    <p>The following are attributes associated with the new
+                        community string:</p>
+                    <dl>
+                        <dlentry>
+                            <dt>uuid</dt>
+                            <dd>
+                                <p>The UUID associated with the trap destination
+                                    object.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt>ip_address</dt>
+                            <dd>
+                                <p>The trap destination IP address.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt>community</dt>
+                            <dd>
+                                <p>The community string value to be associated with
+                                    the notifications.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt>type</dt>
+                            <dd>
+                                <p><term>snmpv2c_trap</term>, the
+                                    only supported message type for SNMP traps.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt>port</dt>
+                            <dd>
+                                <p>The destination UDP port that SNMP notifications
+                                    are sent to.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt>transport</dt>
+                            <dd>
+                                <p>The transport protocol used to send
+                                    notifications.</p>
+                            </dd>
+                        </dlentry>
+                    </dl>
+                </info>
+            </step>
+            <step id="step_N100AA_N1003D_N1001C_N10001">
+                <cmd>List defined trap destinations.</cmd>
+                <stepxmp>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system snmp-trapdest-list</userinput>
+<systemoutput>+------------+----------------+------+--------------+-----------+
+| IP Address  | SNMP Community | Port | Type         | Transport |
++-------------+----------------+------+--------------+-----------+
+| 10.10.10.1  | commstr1       | 162  | snmpv2c_trap | udp       |
++-------------+----------------+------+--------------+-----------+</systemoutput>
+</codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N100C5_N1003D_N1001C_N10001">
+                <cmd>Query access details of a specific trap destination.</cmd>
+                <stepxmp>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system snmp-trapdest-show 10.10.10.1</userinput>
+<systemoutput>+------------+--------------------------------------+
+| Property   | Value                                |
++------------+--------------------------------------+
+| uuid       | c7b6774e-7f45-40f5-bcca-3668de2a186f |
+| ip_address | 10.10.10.1                           |
+| community  | commstr1                             |
+| type       | snmpv2c_trap                         |
+| port       | 162                                  |
+| transport  | udp                                  |
++------------+--------------------------------------+</systemoutput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N100E0_N1003D_N1001C_N10001">
+                <cmd>Disable the sending of SNMP notifications to a specific IP
+                    address.</cmd>
+                <stepxmp>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system snmp-trapdest-delete 10.10.10.1</userinput>
+<systemoutput>Deleted ip 10.10.10.1</systemoutput></codeblock>
+                </stepxmp>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

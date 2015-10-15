@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1426182435441" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Managing Physical Volumes</title>
+    <shortdesc>You can add, delete, and review physical volumes on a compute
+        host.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p>Physical volumes provide storage using local disks. You can use the
+                web administration or the CLI to manage them. For web administration interface
+                instructions, see <xref href="jow1426183480976.xml"/>.</p>
+            <p>As each physical volume is created, it is added to an existing local volume
+                group.</p>
+        </context>
+        <prereq id="prereq_N1002D_N1001F_N10001">
+            <p>Before you can modify the settings for a host, you must lock the host: </p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>host-lock <varname>hostname</varname></userinput></codeblock>
+            <p>Before you can add a physical volume, a local volume group must exist on the host. To
+                create one, see <xref href="jow1426181291481.xml"/></p>
+        </prereq>
+        <context id="context_N10042_N1001F_N10001">
+            <p>The following CLI commands are available for managing physical volumes.</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>host-pv-add <varname>hostname</varname> <varname>groupname</varname> <varname>disk_uuid</varname></userinput></codeblock>
+            <p>where <nameliteral>groupname</nameliteral> is the name of the local volume group to
+                which the physical volume is added.</p>
+            <note id="note_N1007A_N1004F_N1001F_N10001">
+                <p>The only valid <nameliteral>groupname</nameliteral> is
+                        <nameliteral>nova-local</nameliteral>.</p>
+            </note>
+            <p>When <nameliteral>disk_uuid</nameliteral> indicates
+                the root disk, the physical volume uses a system-designated partition on the root
+                disk. For any other disk, the physical volume uses the entire disk.</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>host-pv-delete <varname>hostname</varname> <varname>nova-local</varname> <varname>disk_uuid</varname></userinput></codeblock>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>host-pv-list <varname>hostname</varname></userinput></codeblock>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>host-pv-show <varname>hostname</varname></userinput></codeblock>
+        </context>
+        <postreq id="postreq_N100E8_N1001F_N10001">
+            <p>To configure VMs to use local storage, see <xref href="jow1426181040008.xml"/>.</p>
+        </postreq>
+    </taskbody>
+</task-wr>

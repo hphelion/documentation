@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1440626361437" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Querying vSwitch</title>
+    <shortdesc>You can use the <cmdname>vshell</cmdname> command-line
+        utility to query the internal state of the virtual switch on a compute host.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001E_N1001B_N10001">
+            <p><draft-comment author="jowens">US53369 topic
+                    added</draft-comment>The <cmdname>vshell</cmdname> utility
+                reports information for the vSwitch running on a compute host. This can be useful
+                for debugging network-related issues.</p>
+            <p>You can run the utility from the active controller, or locally on the
+                compute host. You must be logged in with root privileges. </p>
+            <p>To run <cmdname>vshell</cmdname>, use the following syntax:</p>
+            <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell [-H <varname>hostname</varname>] <varname>command</varname></userinput></codeblock>
+            <p>where<parml>
+                    <plentry>
+                        <pt><varname>hostname</varname></pt>
+                        <pd>
+                            <p>is the name of the host, if the utility is run from
+                                the controller.</p>
+                        </pd>
+                    </plentry>
+                    <plentry>
+                        <pt><varname>command</varname></pt>
+                        <pd>
+                            <p>is the vshell command to run. </p>
+                        </pd>
+                    </plentry>
+                </parml>
+            </p>
+            <p>The most common commands are listed below. For more information, use
+                the following
+                command:<codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell help</userinput></codeblock></p>
+        </context>
+        <section id="section_N10092_N10023_N10001">
+            <title>Commonly used vshell commands</title>
+            <note id="note_N100B3_N100A9_N10024_N10001">
+                <p>The sample outputs in this section have been truncated or otherwise modified to
+                    fit the available space.</p>
+            </note>
+            <parml>
+                <plentry>
+                    <pt>engine-list</pt>
+                    <pd>
+                        <p>Lists details for the packet processing
+                            engine.<codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 engine-list</userinput>
+<systemoutput>+---------+----+-------+-----------+-----------+-----------+
+| uuid    | id | cpuid | socket-id | rxq-count | txq-count |
++---------+----+-------+-----------+-----------+-----------+
+| dfcd... | 0  | 1     | 0         | 29        | 41        |
+| ef55... | 1  | 2     | 0         | 28        | 41        |
++---------+----+-------+-----------+-----------+-----------+</systemoutput></codeblock></p>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>port-list</pt>
+                    <pd>
+                        <p>Lists attributes for virtual and physical ports.</p>
+                        <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 port-list</userinput>
+<systemoutput>+-------+----+-----------+-----------+-------------+------------+------+
+| uuid  | id | type      | socket-id | admin-state | link-state | mtu  |
++-------+----+-----------+-----------+-------------+------------+- ----+
+| 21... | 0  | physical  | 0         | up          | up         | 1600 |
+| d9... | 1  | physical  | 0         | up          | up         | 1600 |
+| fd... | 2  | avp-guest | 0         | up          | up         | 1500 |
+| da... | 3  | avp-guest | 0         | up          | up         | 1500 |
++-------+----+-----------+-----------+-------------+------------+------+
+
+-------------+--------------+--------------+
+ mac-address | network-uuid | network-name |
+-------------+- ------------+--------------+
+ 90:e2:ba... |              |              |
+ 90:e2:ba... |              |              |
+ fa:16:3e... | 4326a83a-... | net-4326a83a |
+ fa:16:3e... | 4c02316e-... | net-4c02316e |
+-------------+--------------+--------------+</systemoutput></codeblock>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>interface-list</pt>
+                    <pd>
+                        <p>Lists attributes for logical interfaces.</p>
+                        <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 interface-list</userinput>
+<systemoutput>+-------+----------+----------+-----------+-------------+------+
+| uuid  | type     | class    | name      | mac-address | mtu  |
++--------------------------------------+----------+-----+------+
+| c6... | ae       | provider | ae0       | 90:e2:ba... | 1600 |
+| 26... | ethernet | provider | eth0      | 90:e2:ba... | 1600 |
+| d3... | vlan     | provider | ae0.632   | 90:e2:ba... | 1500 |
+| 56... | vnic     | tenant   | vnic3     | fa:16:3e... | 1500 |
+| a8... | vxlan    | provider | vxlan0    | 00:00:00... | 1500 |
++-------+----------+----------+-----------+--------------------+
+
+--------------+----------------+-------+
+ network-uuid | network-name   | dvr   |
+--------------+----------------+-------+
+              |                | False |
+              |                | False |
+ 8e0c9ba9-... | net-8e0c9ba9   | False |
+ 4326a83a-... | net-4326a83a   | False |
+ 582528d0-... | net-582528d0   | False |
+--------------+----------------+-------+</systemoutput></codeblock>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>lldp-neighbour-list</pt>
+                    <pd>
+                        <p>lists the learned Link Layer Discovery Protocol (LLDP)
+                            neighbors of physical ports.</p>
+                        <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 lldp-neighbour-list</userinput>
+<systemoutput>+---------+-------------+----------------+-------------+--------+
+| port-id | remote-port | remote-address | mac-address | rx-ttl |
++---------+-------------+----------------+-------------+--------+
+| 0       | xe40        |                | 00:08:a2... | 120    |
+| 1       | xe39        |                | 00:08:a2... | 120    |
++---------+-------------+----------------+-------------+--------+
+
+-------------+--------------------+------------------+
+ system-name | system-description | port-description |
+-------------+--------------------+------------------+
+ yow-cgcs... | yow-cgcs-quanta-1  | yow-cgcs-iron... |
+ yow-cgcs... | yow-cgcs-quanta-1  | yow-cgcs-iron... |
+-------------+--------------------+------------------+</systemoutput></codeblock>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>network-table-list</pt>
+                    <pd>
+                        <p>Lists the learned and static MAC addresses of logical interfaces and
+                            network segments.</p>
+                        <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 network-table-list</userinput>
+<systemoutput>+-------------+---------+----------------+---------------+--------------+
+| mac-address | type    | interface-name | network-uuid  | network-name |
++------------ +---------+----------------+---------------+--------------+
+| fa:16:3e... | dynamic | ae0.664        | 4326a83a-4... | net-4326a83a |
+| fa:16:3e... | dynamic | ae0.632        | 8e0c9ba9-b... | net-8e0c9ba9 |
++-------------+---------+----------------+---------------+--------------+
+
+-------------+-------------+
+ created-age | timeout-age |
+-------------+-------------+
+ 243552      | 2           |
+ 243656      | 5           |
+-------------+-------------+
+                                
+</systemoutput></codeblock>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>address-list</pt>
+                    <pd>
+                        <p>Lists IPv4 and IPv6 network addresses assigned to logical interfaces.</p>
+                        <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 address-list</userinput>
+<systemoutput>+---------+----------------+----------------+----------------+--------------------+
+| address | interface-uuid | interface-name | valid-lifetime | preferred-lifetime |
++---------+----------------+----------------+----------------+--------------------+
+| 192.... | c67943b7-d1... | ae0            | infinity       | infinity           |
+| fd00... | c67943b7-d1... | ae0            | infinity       | infinity           |
+| fe80... | 1e93938d-4b... | eth1           | infinity       | infinity           |
+| fe80... | 0198434f-f8... | ae0.680        | infinity       | infinity           |
++---------+----------------+----------------+----------------+--------------------+
+
+-----------+----------+-------------+
+ permanent | autoconf | floating-ip |
+-----------+----------+-------------+
+ True      | False    | False       |
+ True      | False    | False       |
+ False     | False    | False       |
+ False     | False    | False       |
+-----------+----------+-------------+</systemoutput></codeblock>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>route-list</pt>
+                    <pd>
+                        <p>Lists the configured IPv4 and IPv6 network routes of virtual routers</p>
+                        <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 route-list</userinput>
+<systemoutput>
++--------+------------------+----------+----------------+----------------+
+| router | prefix           | type     | interface-uuid | interface-name |
++--------+------------------+----------+----------------+----------------+
+| 6b1... | 0.0.0.0/0        | external | c67943b7-d1... | ae0            |
+| 6b1... | 192.168.60.64/27 | prefix   | c67943b7-d1... | ae0            |
+| 6b1... | ::/0             | global   | c67943b7-d1... | ae0            |
+| 6b1... | fd00:0:0:5::/64  | prefix   | c67943b7-d1... | ae0            |
++--------+------------------+----------+----------------+----------------+
+
+---------------+--------+----------+-------------+-------------+
+ gateway       | weight | lifetime | created-age | timeout-age |
+---------------+--------+----------+-------------+-------------+
+ 192.168.60.65 | 1      | infinity | None        | None        |
+ None          | 255    | infinity | None        | None        |
+ fd00:0:0:5::1 | 1      | infinity | None        | None        |
+ None          | 255    | infinity | None        | None        |
+---------------+--------+----------+-------------+-------------+</systemoutput></codeblock>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>ping</pt>
+                    <pd>
+                        <p>Initiate an ICMP echo request to a far-end IP address for connectivity
+                            testing</p>
+                        <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 ping <varname>ip-address</varname> <varname>source-interface</varname></userinput></codeblock>
+                        <p>where<parml>
+                                <plentry>
+                                    <pt>ip-address</pt>
+                                    <pd>
+                                        <p>is the far-end IP address</p>
+                                    </pd>
+                                </plentry>
+                                <plentry>
+                                    <pt>source-interface</pt>
+                                    <pd>
+                                        <p>is the UUID of the vSwitch interface to use </p>
+                                    </pd>
+                                </plentry>
+                            </parml></p>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>statistic-group-list</pt>
+                    <pd>
+                        <p>Lists available statistic groups. You can use these
+                            groups to enable or disable statistics collection for network-related
+                            activity. For performance reasons, the groups are disabled by
+                            default.</p>
+                        <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 statistic-group-list</userinput>
+<systemoutput>+-----------+----------+
+| name      | state    |
++-----------+----------+
+| bridge    | disabled |
+| dvr       | disabled |
+| engine    | disabled |
+| filter    | disabled |
+| interface | disabled |
+| ip        | disabled |
+| layer2    | disabled |
+| nat       | disabled |
+| snat      | disabled |
+| udp       | disabled |
+| vxlan     | disabled |
++-----------+----------+</systemoutput></codeblock>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>statistic-group-enable</pt>
+                    <pd>
+                        <p>Enables the statistic group specified by <varname>groupname</varname>. The following example enables
+                            the <nameliteral>engine</nameliteral> group:</p>
+                        <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 statistic-group-enable engine
+</userinput></codeblock>
+                        <note id="note_N10159_N1014B_N10142_N100BC_N100A9_N10024_N10001" type="caution">
+                            <p>Real-time statistics collection can affect system performance. Always
+                                disable statistics collection when not in use.</p>
+                        </note>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>statistic-group-disable</pt>
+                    <pd>
+                        <p>Disables the statistic group specified by <varname>groupname</varname>. The following example disables
+                            the <nameliteral>engine</nameliteral> group:</p>
+                        <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 statistic-group-disable engine
+</userinput></codeblock>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>engine-stats-list</pt>
+                    <pd>
+                        <p>Displays packet processing and CPU utilization
+                            statistics for the packet processing engine. To collect fresh
+                            statistics, enable the <nameliteral>engine</nameliteral> statistic
+                            group.</p>
+                        <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 statistic-group-enable engine</userinput>
+<systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 engine-stats-list</userinput>
+<systemoutput>+-------+----+-------+------------+------------+-------------+
+| uuid  | id | cpuid | rx-packets | tx-packets | tx-disabled |
++-------+----+-------+------------+------------+-------------+
+| df... | 0  | 1     | 2536       | 7911       | 0           |
+| ef... | 1  | 2     | 1446       | 5819       | 0           |
++-------+----+-------+------------+------------+-------------+
+
+-------------+------------+------------+-------+
+ tx-overflow | rx-discard | tx-discard | usage |
+-------------+------------+------------+-------+
+ 0           | 0          | 0          | 0.00% |
+ 0           | 0          | 0          | 0.00% |
+-------------+------------+------------+-------+</systemoutput>
+</codeblock>
+                        <p>For best performance, disable the group when you are finished. </p>
+                        <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 statistic-group-disable engine
+</userinput></codeblock>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>port-stat-list</pt>
+                    <pd>
+                        <p>Displays packet processing statistics by port. For this
+                            list, there is no corresponding statistic group. Collection is always
+                            enabled.</p>
+                        <codeblock><userinput>sudo vshell -H compute-1 port-stats-list</userinput>
+<systemoutput>+-------+----+-----------+------------+------------+----------+----------+
+| uuid  | id | type      | rx-packets | tx-packets | rx-bytes | tx-bytes |
++-------+----+-----------+------------+------------+----------+----------+
+| 21... | 0  | physical  | 423017     | 154532     | 85008801 | 36865698 |
+| fd... | 2  | avp-guest | 16444      | 101988     | 2147791  | 25666266 |
++-------+----+-----------+------------+------------+----------+----------+
+
+-----------+-----------+-----------+
+ tx-errors | rx-errors | rx-nombuf |
+-----------+-----------+-----------+
+ 0         | 0         | 0         |
+ 0         | 0         | 0         |
+-----------+-----------+-----------+</systemoutput>
+</codeblock>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>interface-stats-list</pt>
+                    <pd>
+                        <p>Displays packet processing statistics by interface. To
+                            collect fresh statistics, enable the
+                                <nameliteral>interface</nameliteral> statistic group.</p>
+                        <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 statistic-group-enable interface</userinput>
+<systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 interface-stats-list</userinput>
+<systemoutput>+-------+----------+-----------+------------+------------+----------+----------+
+| uuid  | type     | name      | rx-packets | tx-packets | rx-bytes | tx-bytes |
++-------+----------+-----------+------------+------------+----------+----------+
+| c6... | ae       | ae0       | 0          | 0          | 0        | 0        |
+| 26... | ethernet | eth0      | 0          | 0          | 0        | 0        |
+| d3... | vlan     | ae0.632   | 0          | 0          | 0        | 0        |
+| 56... | vnic     | vnic3     | 0          | 0          | 0        | 0        |
+| a8... | vxlan    | vxlan0    | 0          | 0          | 0        | 0        |
++-------+----------+-----------+------------+------------+----------+----------+
+
+-----------+-----------+-------------+-------------+-----------+------------+
+ tx-errors | rx-errors | tx-discards | rx-discards | rx-floods | rx-no-vlan |
+-----------+-----------+-------------+-------------+-----------+------------+
+ 0         | 0         | 0           | 0           | 0         | 0          |
+ 0         | 0         | 0           | 0           | 0         | 0          |
+ 0         | 0         | 0           | 0           | 0         | 0          |
+ 0         | 0         | 0           | 0           | 0         | 0          |
+ 0         | 0         | 0           | 0           | 0         | 0          |
+-----------+-----------+-------------+-------------+-----------+------------+</systemoutput>
+</codeblock>
+                        <p>For best performance, disable the group when you are finished. </p>
+                        <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 statistic-group-disable interface
+</userinput></codeblock>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>ip-stats-list</pt>
+                    <pd>
+                        <p>Displays packet processing statistics for the IP stack.
+                            To collect fresh statistics, enable the <nameliteral>ip</nameliteral>
+                            statistic group.</p>
+                        <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 statistic-group-enable ip</userinput>
+<systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 ip-stats-list</userinput>
+<systemoutput>+--------+-------+----------+--------------+--------------+
+| family | cpuid | rx-total | rx-broadcast | rx-multicast |
++--------+-------+----------+--------------+--------------+
+| ipv4   | 0     | 0        | 0            | 0            |
+| ipv4   | 1     | 0        | 0            | 0            |
+| ipv4   | 2     | 0        | 0            | 0            |
+| ipv6   | 0     | 0        | 0            | 0            |
+| ipv6   | 1     | 0        | 0            | 0            |
+| ipv6   | 2     | 0        | 0            | 0            |
++--------+-------+----------+--------------+--------------+
+
+----------+--------------+--------------+-----------+
+ tx-total | tx-broadcast | tx-multicast | fwd-total |
+----------+--------------+--------------+-----------+
+ 0        | 0            | 0            | 0         |
+ 0        | 0            | 0            | 0         |
+ 0        | 0            | 0            | 0         |
+ 0        | 0            | 0            | 0         |
+ 0        | 0            | 0            | 0         |
+ 0        | 0            | 0            | 0         |
+----------+--------------+--------------+-----------+
+
+---------------+---------------+--------------+---------------+----------------+
+ rx-reassemble | tx-reassemble | tx-fragments | icmp-required | icmp-throttled |
+---------------+---------------+--------------+---------------+----------------+
+ 0             | 0             | 0            | 0             | 0              |
+ 0             | 0             | 0            | 0             | 0              |
+ 0             | 0             | 0            | 0             | 0              |
+ 0             | 0             | 0            | 0             | 0              |
+ 0             | 0             | 0            | 0             | 0              |
+ 0             | 0             | 0            | 0             | 0              |
+---------------+---------------+--------------+---------------+----------------+
+</systemoutput>
+</codeblock>
+                        <p>For best performance, disable the group when you are finished. </p>
+                        <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 statistic-group-disable ip
+</userinput></codeblock>
+                    </pd>
+                </plentry>
+            </parml>
+        </section>
+    </taskbody>
+</task-wr>

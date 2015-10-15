@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1429546712705" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Enabling the Guest Heartbeat API for a VM</title>
+    <shortdesc>You can accommodate the use of guest heartbeats on a VM using an extra specification. </shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001E_N1001B_N10001">
+            <p>Select this option when you expect one or more of the guest
+                applications running on the virtual machine to make use of the HP Helion OpenStack Carrier Grade Guest
+                Heartbeat API.  If no extra spec is added, then by default the API is disabled.</p>
+            <p> If this option is selected, the controller node starts heartbeat
+                application-level polling cycles on virtual machines launched using the flavor. For
+                more information about the Guest Heartbeat API, refer to the <cite>HP Helion OpenStack Carrier Grade Software Development Kit</cite>.</p>
+            <p>A guest application modified to use the Titanium Guest Server
+                Heartbeat API can be more accurately monitored by internal messaging within the
+                virtual machine. For more about application monitoring, see <xref href="jow1404333802962.xml"/>.</p>
+            <p>To add this extra spec to a flavor using the web administration
+                interface, use the <uicontrol>Guest Heartbeat</uicontrol> selection
+                in the <uicontrol>Create Flavor Extra Spec</uicontrol> drop-down
+                menu.  To access this menu, see <xref href="jow1429538642910.xml"/>. </p>
+            <note id="note_N1004E_N10021_N1001E_N10001">
+                <p>The non-default value <nameliteral>True</nameliteral> is offered when the extra spec is added using the web
+                    administration interface.</p>
+            </note>
+            <p>To enable the Guest Heartbeat API using the CLI, use the following
+                command:</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key <varname>flavor_name</varname> set sw:wrs:guest:heartbeat=<varname>value</varname></userinput></codeblock>
+            <p>where <varname>value</varname> is either
+                    <nameliteral>True</nameliteral> or <nameliteral>False</nameliteral>. If any other value is supplied, it is
+                ignored and the default value <nameliteral>False</nameliteral> is used.</p>
+        </context>
+    </taskbody>
+</task-wr>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1426181040008" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Specifying Local Storage for VM Ephemeral Resources</title>
+    <shortdesc>To use local storage for ephemeral resources, you must specify
+        instantiation on a host with local storage. You can do this by using a flavor with the
+        appropriate extra specification.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N10022_N1001F_N10001">
+            <p>Each new flavor is automatically assigned a <nameliteral>Storage Type</nameliteral> extra spec that specifies, as the
+                default, instantiation on hosts without local storage. You can change this extra
+                spec so that hosts with local storage are used. Ephemeral storage resources
+                    (<nameliteral>Ephemeral Disk</nameliteral> and <nameliteral>Swap Disk</nameliteral> space) defined for the flavor use this
+                local storage, which is allocated from the Local Volume Group on the host.</p>
+            <p>If the extra spec is set for local storage and instance is booted
+                from an image, then the root disk is ephemeral and also uses local storage. If the
+                instance is booted from a volume, the root disk uses Cinder-based storage allocated
+                from the controller (for a system using LVM) or from storage hosts (for a system
+                using 3PAR).</p>
+            <note id="note_N10036_N10022_N1001F_N10001">
+                <p>For faster VM booting, use a prepared Cinder volume. For more information, see
+                        <xref href="jow1439393204460.xml"/>.</p>
+            </note>
+        </context>
+        <prereq id="prereq_N10022_N1001F_N10001">
+            <p>Before you can use local storage for a VM, you must configure at least
+                one compute node to provide local storage. For more information, see <xref href="jow1426183480976.xml"/>.</p>
+        </prereq>
+        <context id="context_N1002F_N1001F_N10001">
+            <note conref="jow1426942555025.xml#jow1426942555025/note_local_storage_ephemeral" id="note_N10037_N10032_N1001F_N10001"/>
+            <p>To change the extra specification using the web administration
+                interface, click <uicontrol>Edit</uicontrol> for the existing
+                    <nameliteral>Storage Type</nameliteral> extra specification,
+                and then select the <uicontrol>Local Storage</uicontrol> check box.
+                To access the extra specification, see <xref href="jow1429538642910.xml"/>. </p>
+            <note id="note_N10064_N10042_N1001F_N10001" type="caution">
+                <p>If the <nameliteral>Storage Type</nameliteral>
+                    extra spec is not specified, instantiated VMs may use hosts with or without
+                    local storage. To ensure that instantiated VMs use storage of a known type, do
+                    not delete this extra spec.</p>
+            </note>
+            <p>You can also specify the extra spec from the CLI by setting the
+                following parameter for a flavor:</p>
+            <codeblock><userinput>aggregate_instance_extra_specs:localstorage=<varname>loc_storage</varname></userinput></codeblock>
+            <p>where <varname>loc_storage</varname> is one of the
+                following:</p>
+            <dl>
+                <dlentry>
+                    <dt>true</dt>
+                    <dd>
+                        <p>Specifies hosts with local storage for use by the VM.</p>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt>false</dt>
+                    <dd>
+                        <p>Specifies hosts without local storage for use by the
+                            VM.</p>
+                    </dd>
+                </dlentry>
+            </dl>
+            <p>For example:</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key <varname>flavor_name</varname> \
+set aggregate_instance_extra_specs:localstorage=false</userinput></codeblock>
+            <p>The local storage key is added by default on flavor creation and set
+                to false (hosts with no local storage).</p>
+        </context>
+    </taskbody>
+</task-wr>

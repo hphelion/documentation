@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1441133993989" xml:lang="en-us">
+    <!-- Modification History
+        
+-->
+    <title>Adding a Gateway to a Virtual Router</title>
+    <shortdesc>You can configure a gateway for a virtual router as a tenant or an
+        administrator. Users with administrator privileges have access to additional
+        controls.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001D_N1001A_N10001">
+            <p><draft-comment author="jowens">CGTS-2523 (nominal)
+                    added new topic, using material moved from an existing topic. The options for
+                    setting a gateway differ for the admin user acting as admin (rather than as the
+                    tenant called "admin"); trying to make this clear. . .</draft-comment>You can
+                use either the web administration interface or the CLI to configure a gateway. Steps
+                for the web administration interface are given later in this section.</p>
+            <p>To use the CLI, become the appropriate keystone user. The examples
+                in this section assume you are the <nameliteral>admin</nameliteral> user.</p>
+            <p>To add a gateway interface, use a command of the following form:</p>
+            <codeblock>
+<systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron router-gateway-set <varname>router_id</varname> <varname>externalnet_id</varname> \
+[--disable-snat] [--fixed-ip <varname>gateway_addr</varname>]</userinput></codeblock>
+            <p>where</p>
+            <parml>
+                <plentry>
+                    <pt><varname>router_id</varname></pt>
+                    <pd>
+                        <p>is the name or UUID of the router</p>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt><varname>externalnet_id</varname></pt>
+                    <pd>
+                        <p> is the name or UUID of a tenant network configured to provide external
+                            connections</p>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt><varname>gateway_addr</varname></pt>
+                    <pd>
+                        <p>is the gateway interface IP address.  If <varname>gateway_addr</varname> is not specified, the server allocates the
+                            next available external IP address.</p>
+                    </pd>
+                </plentry>
+            </parml>
+            <note id="note_N100B2_N10022_N1001F_N10001">
+                <p>The <option>fixed-ip</option> and <option>disable-snat</option>
+                    options require administrator privileges. For more about the SNAT option, see
+                        <xref href="jow1438192116883.xml"/>.</p>
+            </note>
+        </context>
+        <steps>
+            <step id="step_N10066_N10063_N1001C_N10001">
+                <cmd>Log in as the user associated with the tenant.</cmd>
+            </step>
+            <step id="step_N1006F_N10063_N1001C_N10001">
+                <cmd>Open the <wintitle>Routers</wintitle> page.</cmd>
+                <choices id="choices_sf5_jkn_ft">
+                    <choice>
+                        <p>To open the page with tenant privileges, select <menucascade>
+                                <uicontrol>Project</uicontrol>
+                                <uicontrol>Network</uicontrol>
+                                <uicontrol>Routers</uicontrol>
+                            </menucascade>.</p>
+                    </choice>
+                    <choice>
+                        <p>To open the page with administrator privileges, select <menucascade>
+                                <uicontrol>Admin</uicontrol>
+                                <uicontrol>System</uicontrol>
+                                <uicontrol>Routers</uicontrol>
+                            </menucascade>.</p>
+                    </choice>
+                </choices>
+            </step>
+            <step id="step_N1008B_N10063_N1001C_N10001">
+                <cmd>In the list of existing routers, click the name of the router
+                    to be configured.</cmd>
+                <info>
+                    <p>The <wintitle>Router Details</wintitle> page
+                        appears.</p>
+                    <fig id="fig_N100C4_N100B5_N100AE_N100AA_N100A3_N10034_N1001C_N10001">
+                        <image href="jow1441134829532.image" id="image_qyv_pxh_ft">
+                            <alt>TiS Add Gateway</alt>
+                        </image>
+                    </fig>
+                </info>
+            </step>
+            <step id="step_N101A2_N100BA_N1001F_N10001">
+                <cmd>On the <uicontrol>Interfaces</uicontrol> tab,
+                    click <uicontrol>Set Gateway</uicontrol>.</cmd>
+                <info>
+                    <note id="note_N101CE_N101CA_N101B4_N100CF_N1001F_N10001">
+                        <p>If a gateway has already been added, a <uicontrol>Clear Gateway</uicontrol> button is present
+                            instead.</p>
+                        <p> </p>
+                    </note>
+                    <p>The <wintitle>Set Gateway</wintitle> dialog
+                        box appears. </p>
+                    <fig id="fig_N10159_N1014A_N10143_N1011B_N10114_N10034_N1001C_N10001">
+                        <image href="jow1441136505281.image" id="image_k1p_kb3_ft">
+                            <alt>Tis Set Gateway admin</alt>
+                        </image>
+                    </fig>
+                    <dl>
+                        <dlentry>
+                            <dt><uicontrol>External Network</uicontrol></dt>
+                            <dd>
+                                <p>Select a tenant network configured to provide
+                                    external access.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt><uicontrol>Router Name</uicontrol></dt>
+                            <dd>
+                                <p>This field is shown for information only.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt><uicontrol>Router ID</uicontrol></dt>
+                            <dd>
+                                <p>This field is shown for information only.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt><uicontrol>IP Address (optional)</uicontrol></dt>
+                            <dd>
+                                <p>This field is shown only for users with
+                                    administrator privileges. You can optionally specify an IP
+                                    address for the gateway interface. By default, the server
+                                    allocates the next available external IP address.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt><uicontrol>Enable SNAT</uicontrol></dt>
+                            <dd>
+                                <p>This control is shown only for users with
+                                    administrator privileges.  For more about the SNAT option, see
+                                        <xref href="jow1438192116883.xml"/></p>
+                            </dd>
+                        </dlentry>
+                    </dl>
+                    <p>To save the gateway gettings and close the dialog box, click
+                            <uicontrol>Set Gateway</uicontrol>.</p>
+                </info>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

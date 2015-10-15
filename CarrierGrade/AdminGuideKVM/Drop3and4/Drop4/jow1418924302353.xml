@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1418924302353" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Adjusting Resources on a Compute Node</title>
+    <shortdesc>You can adjust the resources of a compute node while it is offline.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <steps>
+            <step conref="jow1426453628262.xml#jow1426453628262/lock_host" id="step_N10025_N10022_N1001F_N10001">
+                <cmd/>
+            </step>
+            <step id="step_N1004C_N10028_N1001C_N10001">
+                <cmd>Power off the host.</cmd>
+            </step>
+            <step id="step_N10055_N10028_N1001C_N10001">
+                <cmd>Make any required resource changes (for example, BIOS changes
+                    required for proper operation).</cmd>
+                <info>
+                    <p>If you are adding a disk to provide additional local storage for VMs, you can
+                        install an unpartitioned disk.  New disks are detected by the compute node
+                        operating system and automatically configured with a single partition.</p>
+                </info>
+            </step>
+            <step id="step_N1005E_N10028_N1001C_N10001">
+                <cmd>Power on the host, and wait for it to reboot fully.</cmd>
+                <info>
+                    <p>When the host is fully rebooted, it is shown as <nameliteral>Locked</nameliteral>, <nameliteral>Enabled</nameliteral>, and <nameliteral>Available</nameliteral> in the <wintitle>Hosts</wintitle> list.</p>
+                    <note id="note_N10079_N10062_N1005B_N10028_N1001C_N10001">
+                        <p>Do not unlock the host until it is fully rebooted.</p>
+                    </note>
+                </info>
+            </step>
+            <step id="step_N10088_N10028_N1001C_N10001">
+                <cmd>Unlock the host.</cmd>
+                <info>
+                    <p>The host is rebooted a second time.</p>
+                </info>
+            </step>
+        </steps>
+        <result id="result_N10094_N1001C_N10001">
+            <p>When the host is reported as <nameliteral>Unlocked</nameliteral>,
+                    <nameliteral>Enabled</nameliteral>, and <nameliteral>Available</nameliteral>, it
+                is ready for use with the adjusted resources.</p>
+        </result>
+    </taskbody>
+</task-wr>

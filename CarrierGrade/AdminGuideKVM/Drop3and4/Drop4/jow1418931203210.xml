@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1418931203210" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title>Compute Node Management</title>
+ <shortdesc>The compute nodes in HP Helion OpenStack Carrier Grade form a resource pool for hosting
+  guest instances. You can manage this pool by managing the hosts.</shortdesc>
+ <prolog><author/>
+  <author/>
+ </prolog>
+ <conbody>
+  <p> You can change the resource pool in several ways:</p>
+  <ul id="ul_bb3_1mk_lq">
+   <li>
+    <p>You can add or remove hosts to increase or decrease the size of the pool.</p>
+   </li>
+   <li>
+    <p>You can replace a host with another that has different resources (for
+     example, memory, or number of CPU cores).</p>
+   </li>
+   <li>
+    <p>You can adjust the resources on an existing host.</p>
+   </li>
+   <li>
+    <p>You can replace a failed compute node host with an equivalent.</p>
+   </li>
+  </ul>
+  <note id="note_N1004A_N1001D_N10001" type="caution">
+   <p>When replacing or adjusting a host, ensure that the overall resource pool
+    still meets the requirements for your system.</p>
+  </note>
+  <p>Complete instructions for adding a compute node are provided in the <cite>HP Helion OpenStack Carrier Grade Software Installation Guide: Initializing and Configuring
+    Compute Nodes</cite>.</p>
+ </conbody>
+</concept-wr>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333802962" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title ixia_locid="1">Virtual Machines and Carrier-Grade Availability</title>
+    <shortdesc ixia_locid="2">The HP Helion OpenStack Carrier Grade virtualized environment provides a health
+        monitoring mechanism that can be used to implement and support the deployment of guest
+        applications in Carrier-Grade High Availability (HA) mode.</shortdesc>
+    <prolog>
+        <author></author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="4">A simplified view of the health monitoring system is illustrated in the
+            following figure:</p>
+        <fig id="fig_N10023_N1001C_N10001" ixia_locid="5">
+            <title ixia_locid="6">Hardware and software health monitoring</title>
+            <image href="jow1404333801231.image" id="image_w22_prw_g4" ixia_locid="7"/>
+        </fig>
+        <dl>
+            <dlentry ixia_locid="8">
+                <dt ixia_locid="9">Host monitoring</dt>
+                <dd ixia_locid="10">
+                    <p ixia_locid="11">A host failure occurs when the compute node hardware that
+                        hosts the application fails, or when its kernel becomes unresponsive. Host
+                        failures are detected by the active controller node through an efficient and
+                        scalable monitoring process that runs continuously during normal operation
+                        of the HP Helion OpenStack Carrier Grade cluster.</p>
+                    <p ixia_locid="12">When such a failure is detected, HP Helion OpenStack Carrier Grade
+                        automatically re-schedules all affected virtual machines for deployment on
+                        alternative compute nodes.</p>
+                    <p ixia_locid="13">Host monitoring, and its recovery mechanisms, are always
+                        available for every deployed virtual machine in the HP Helion OpenStack Carrier Grade
+                        Cluster.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="14">
+                <dt ixia_locid="15">Virtual machine monitoring</dt>
+                <dd ixia_locid="16">
+                    <p ixia_locid="17">From the point of view of a guest application, a hardware failure occurs when the
+            hosting virtual machine fails to execute. From the compute node, this means that the
+            virtual machine process itself is experiencing execution problems, or that it is no
+            longer running.</p>
+                    <p ixia_locid="18">When such a failure is detected, HP Helion OpenStack Carrier Grade
+                        automatically tries to restart the affected virtual machine on the same
+                        compute node. If the restart operation fails, the virtual machine is
+                        automatically scheduled to deploy on an alternative compute node.</p>
+                    <p ixia_locid="19">Virtual machine monitoring, and its recovery mechanisms, are
+                        always available for every deployed virtual machine in the HP Helion OpenStack Carrier Grade
+                        cluster.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="20">
+                <dt ixia_locid="21">Execution environment</dt>
+                <dd ixia_locid="22">
+                    <p ixia_locid="23">The HP Helion OpenStack Carrier Grade Guest-Client daemon, built into the guest
+                        image, verifies the execution environment. If the guest kernel becomes
+                        unresponsive, the lack of heartbeat messages from the daemon triggers an
+                        alarm on the active controller.</p>
+                    <p ixia_locid="24">For all purposes, the virtual machine is considered then to
+                        be at fault, and is therefore re-scheduled for execution, first on the same
+                        compute node, and then on a different host if necessary.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="25">
+                <dt ixia_locid="26">Application monitoring</dt>
+                <dd ixia_locid="27">
+                    <p ixia_locid="28">Software failures at the application level can be addressed within the context of the
+            following failure scenarios:</p>
+                    <dl>
+                        <dlentry ixia_locid="29">
+                            <dt ixia_locid="30">Sudden death of the application process</dt>
+                            <dd ixia_locid="31">
+                                <p ixia_locid="32">The application process ends abruptly, likely because of a software bug in its
+                  code.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry ixia_locid="33">
+                            <dt ixia_locid="34">The application becomes unresponsive</dt>
+                            <dd ixia_locid="35">
+                                <p ixia_locid="36">Several conditions can lead the application
+                                    process to stall, that is, to be unscheduled for additional
+                                    work. This may happen because the application is waiting for
+                                    some resource that is not available, or because of a bug in the
+                                    application's logic.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry ixia_locid="37">
+                            <dt ixia_locid="38">The application declares itself to have failed</dt>
+                            <dd ixia_locid="39">
+                                <p ixia_locid="40">Logic built into the application determines conditions under which it must
+                  declare itself to be in an unrecoverable error state.</p>
+                            </dd>
+                        </dlentry>
+                    </dl>
+                    <p ixia_locid="66">Handling of these cases is optional, and subject to the
+                        proper API integration into the guest application itself.</p>
+                    <p ixia_locid="67">Application monitoring happens when the HP Helion OpenStack Carrier Grade
+                        Guest-Client daemon in the virtual machine registers the application for
+                        monitoring. What happens after an application failure occurs is determined
+                        when the application is registered. By default, an application failure
+                        triggers a hard reboot of the virtual machine instance.</p>
+                    <p ixia_locid="42">If the application makes use of the HP Helion OpenStack Carrier Grade Guest
+                        Heartbeat API, it can instruct the active controller on how to proceed when
+                        the application declares itself in a state of error. This could include a
+                        restart of the virtual machine, which in the case of 1:1 HA application/VM
+                        pair, would trigger a VM switchover. The application can also use the <term ixia_locid="68">VM Peer Notification API</term> to receive notifications
+                        when virtual machines in the same server group go up or down.</p>
+                    <p ixia_locid="43">Refer to the <cite ixia_locid="44">HP Helion OpenStack Carrier Grade SDK</cite>
+                        for more information on how to configure the Guest-Client daemon and the use
+                        of the HP Helion OpenStack Carrier Grade Guest Heartbeat API.</p>
+                </dd>
+            </dlentry>
+        </dl>
+        <p ixia_locid="45">Data persistence is another aspect that impacts the high-availability of
+            a running application. This is addressed by providing storage persistence across
+            applications restarts for Cinder remote HA block storage using distributed storage
+            backends, such as 3PAR, for configuration databases.</p>
+        <p ixia_locid="50">By instrumenting the level of interaction between the guest application
+            and the health-monitoring system, and by using the appropriate Cinder storage backends,
+            guest applications can be deployed to run in different HA scenarios. Note that in all
+            cases, monitoring of hardware and virtual machines, and their corresponding failure
+            recovery mechanisms, are always active.</p>
+        <section id="section_N100EB_N1001C_N10001" ixia_locid="51">
+            <title ixia_locid="52">HA-unaware Guest Applications</title>
+            <p ixia_locid="53">These are applications designed with no consideration for special
+                behavior needed when a failure occurs. Typical scenarios include:</p>
+            <ul id="ul_pw1_qws_h4">
+                <li ixia_locid="54">
+                    <p ixia_locid="55">Stateless applications such as web servers serving static data, and data query systems.
+            The requirement in these cases is for the application to be running continuously.</p>
+                    <p ixia_locid="56">This requirement is fulfilled when the application is
+                        deployed on HP Helion OpenStack Carrier Grade by the automatic monitoring at the hardware and
+                        virtual machine levels. Optionally, the application can benefit from all
+                        other monitoring levels when the proper instrumentation is in place.</p>
+                </li>
+                <li ixia_locid="57">
+                    <p ixia_locid="58">Stateful applications such as an enterprise-level call
+                        center, where the application's state is maintained in a database or some
+                        form of journaling system. An additional requirement in these cases is for
+                        storage persistence across restart operations, that is, for the state to be
+                        recoverable when the application restarts.</p>
+                    <p ixia_locid="59">This additional requirement is fulfilled when the application
+                        is deployed on HP Helion OpenStack Carrier Grade by the Cinder services, when configured to
+                        use distributed storage backends.</p>
+                </li>
+            </ul>
+        </section>
+        <section id="section_N10115_N1001C_N10001" ixia_locid="60">
+            <title ixia_locid="61">HA-aware Guest Applications</title>
+            <p ixia_locid="62">Typically, these are legacy applications supporting their own HA
+                framework. They are expected to run unmodified, or with minimal changes, when
+                deployed on HP Helion OpenStack Carrier Grade.</p>
+            <p ixia_locid="63">As with any other application, HA-aware applications benefit from the
+                hardware and virtual machine monitoring processes, which provide them with automatic
+                restart upon failures. When coupled with server groups (see <xref href="jow1404333660893.xml" ixia_locid="64"/>), they also benefit from the
+                anti-affinity options to ensure that hot/standby running applications are protected
+                against hardware failures.</p>
+            <p ixia_locid="65">HA-aware applications also benefit from internal tenant networks on
+                top of which the application's HA framework, and any journaling framework it may
+                use, can be deployed.</p>
+        </section>
+    </conbody>
+</concept-wr>

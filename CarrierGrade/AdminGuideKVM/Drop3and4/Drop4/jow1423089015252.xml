@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1423089015252" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+        
+-->
+    <title>Allocating Host Memory Using the CLI</title>
+    <shortdesc>You can edit the platform and huge page memory allocations for a NUMA
+        node from the CLI.</shortdesc>
+    <prolog><author/>
+        
+    </prolog>
+    <taskbody>
+        <steps id="steps_brf_p33_dr">
+            <step id="step_N10031_N1002D_N1001F_N10001">
+                <cmd>Lock the affected host.</cmd>
+                <info>
+                    <codeblock><systemoutput>(keystone_admin)$ </systemoutput><userinput>system host-lock <varname>hostname</varname></userinput></codeblock>
+                </info>
+            </step>
+            <step id="step_N1004D_N1002D_N1001F_N10001">
+                <cmd>Use the following command to set the memory allocations.</cmd>
+                <info>
+                    <codeblock><systemoutput>(keystone_admin)$ </systemoutput><userinput>system host-memory-modify <varname>hostname</varname> <varname>processor</varname> [-m <varname>reserved</varname>] [-2M <varname>2Mpages</varname>] [-1G <varname>1Gpages</varname>]</userinput></codeblock>
+                    <p>where</p>
+                    <parml>
+                        <plentry>
+                            <pt>hostname</pt>
+                            <pd>
+                                <p>is the hostname or id of the compute node</p>
+                            </pd>
+                        </plentry>
+                        <plentry>
+                            <pt>processor</pt>
+                            <pd>
+                                <p>is the NUMA node of the compute node (0 or 1)</p>
+                            </pd>
+                        </plentry>
+                        <plentry>
+                            <pt>reserved</pt>
+                            <pd>
+                                <p>(if the optional <option>-m</option> argument is included) the amount of memory
+                                    reserved for platform use, in MiB.</p>
+                            </pd>
+                        </plentry>
+                        <plentry>
+                            <pt>2Mpages</pt>
+                            <pd>
+                                <p>(if the optional <option>-2M</option> argument is included) the number of 2MiB huge
+                                    pages to make available.</p>
+                            </pd>
+                        </plentry>
+                        <plentry>
+                            <pt>1Gpages</pt>
+                            <pd>
+                                <p>(if the optional <option>-1G</option> argument is included) number of 1GiB huge
+                                    pages to make available</p>
+                            </pd>
+                        </plentry>
+                    </parml>
+                </info>
+                <stepxmp>
+                    <p>For example, to allocate four 2 MiB huge pages for use by VMs
+                        on NUMA node 1 of compute node <nameliteral>compute-0</nameliteral> :</p>
+                    <codeblock><systemoutput>(keystone_admin)$ </systemoutput><userinput>system host-memory-modify compute-0 1 -2M 4</userinput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N100E8_N1002D_N1001F_N10001">
+                <cmd>Unlock the host.</cmd>
+                <stepxmp>
+                    <codeblock><systemoutput>(keystone_admin)$ </systemoutput><userinput>system host-unlock <varname>hostname</varname></userinput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N10104_N1002D_N1001F_N10001">
+                <cmd>Wait for the host to be reported as <nameliteral>available</nameliteral>. </cmd>
+                <stepxmp>
+                    <codeblock><systemoutput>(keystone_admin)$ </systemoutput><userinput>system host-list <varname>hostname</varname></userinput>
+<systemoutput>+----+--------------+-------------+----------------+-------------+--------------+
+| id | hostname     | personality | administrative | operational | availability |
++----+--------------+-------------+----------------+-------------+--------------+
+| 1  | controller-0 | controller  | unlocked       | enabled     | available    |
+| 2  | controller-1 | controller  | unlocked       | enabled     | available    |
+| 3  | compute-0    | compute     | unlocked       | enabledd    | available      |
++----+--------------+-------------+----------------+-------------+--------------+</systemoutput></codeblock>
+                </stepxmp>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

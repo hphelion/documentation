@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Troubleshooting</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>This topic describes all the known issues that you might encounter:</p>
+    <ul id="ul_xzh_nmc_mt">
+      <li><xref href="#topic10581/no-instance" format="dita">Unable to create an instance in the
+          non-KVM region</xref></li>
+      <li><xref href="#topic10581/vm" format="dita"/></li>
+      <li><xref href="#topic10581/vrs" format="dita"/></li>
+      <li><xref href="#topic10581/backup" format="dita"/></li>
+    </ul>
+    <section id="no-instance">
+      <title><b>Unable to create an instance in the non-KVM region</b></title>
+      <p>When trying to create a virtual machine instance in the non-KVM region, the user receives a
+          <codeph>No valid host found</codeph> error. Check that all ESX host machines in the
+        cluster are configured with the ESX compute proxy. If one or more hosts in the cluster
+        configured with the proxy, disconnect the host(s) from the cluster or <xref
+          href="../Installation/carrier-grade-install-esx-proxy.dita#topic10581">install the ESX
+          compute proxy</xref>. <!--CG-1413--></p>
+    </section>
+    
+    <section  id="vm">
+      <title>VM fails to get private/Fixed IP address</title>
+      <p>
+        <b>System Behavior/Message</b>
+      </p>
+      <p>After <xref
+          href="../Installation/carrier-grade-install-config-dcn.dita#topic10581/vrsg-config"
+          >configuring the VRS-G</xref> during installation, the VRS-G VM is assigned with private
+        and floating IP, when seen on the VSD dashboard. However, if you launch a console session to
+        the VM, there is no networking.</p>
+      <p>
+        <b>Resolution</b>
+      </p>
+      <p>Make sure the Glance image has the correct properties set. For example, check that the
+        adapter type is <codeph>ide</codeph>. Also, check if gateway and subnet values are correctly
+        assigned to VRSvAPPs. </p>
+    </section>
+    <section id="vrs">
+      <title>VRSvAPPs missing in VSD dashboard</title>
+      <p>
+        <b>System Behavior/Message</b>
+      </p>
+      <p>While performing basic verification of cloud deployment, the VRSvAPPs might not appear in
+        the VSD dashboard and the associated TUL addresses are not pingable from VRS-G node. </p>
+      <p>
+        <b>Resolution</b>
+      </p>
+      <p>The vswitch1 on VRSvAPPs needs to be presented to the Niantics card. Once this was done,
+        VRSvAPPS were synchronized in VSD dashboard. </p>
+      <p>Memphis region deployment is done with following networking changes. </p>
+      <p>Networking changes done are as follows –</p>
+      <p>ETH0 is active</p>
+      <p>ETH1 is off</p>
+      <p>UNTAGGED TUL on NIANTICS on DCN, VRS and WR Computes</p>
+    </section>
+    <section id="backup">
+      <title>Backup storage size should be at least 120GB</title>
+      <p>If you experience the following error, you can edit the <codeph>region_config</codeph> file
+        for the KVM region to increase the default storage.</p>
+      <p><image href="../../media/CGH-trouble-storage.png" width="400" id="image_ehc_qjc_mt"/></p>
+      <p>
+        <ol id="ol_vcj_rjc_mt">
+          <li>Log into the KVM region controller-0.</li>
+          <li>Edit the <codeph>./&lt;cloud name&gt;/clouds/&lt;cloud
+              name&gt;/001/stage/windriver-config/region_config</codeph> file to update the
+              <codeph>backup_storage</codeph> value to 120 or higher.</li>
+        </ol>
+      </p>
+    </section>
+    <section><title>See Also</title>
+      <p>For troubleshooting tips related to the HP Helion OpenStack cloud, see <xref
+          href="../../commercial/GA1/1.1commercial.troubleshooting.dita#topic2105">HP Helion
+          OpenStack 1.1: Troubleshooting</xref>.</p>
+    </section>
+  </body>
+</topic>

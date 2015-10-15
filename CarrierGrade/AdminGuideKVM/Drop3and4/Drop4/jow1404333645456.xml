@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333645456" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title ixia_locid="1">Resource Usage</title>
+    <shortdesc ixia_locid="2">Usage of system resources is monitored by Ceilometer, the standard
+        OpenStack mechanism for collecting and distributing performance monitoring samples from the
+        cluster. The HP Helion OpenStack Carrier Grade cluster extends Ceilometer with improved reports and new tools
+        to facilitate offline analysis of the collected data.</shortdesc>
+    <prolog>
+        <author></author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="4">Performance Monitor (PM) samples are periodically collected from different
+            resources such as hosts, virtual machine instances, AVS, and others. They include CPU
+            and memory utilization, network traffic counters, storage space, and several more. By
+            default the samples are stored in a database which is used for reporting activities such
+            as:</p>
+        <ul id="ul_pfp_vlr_j4">
+            <li ixia_locid="5">
+                <p ixia_locid="6">command line queries and graphical charts</p>
+            </li>
+            <li ixia_locid="7">
+                <p ixia_locid="8">triggering of threshold alarms</p>
+            </li>
+            <li ixia_locid="9">
+                <p ixia_locid="10">triggering of threshold actions. The most common example is Heat actions to scale up and
+          down a resource.</p>
+            </li>
+        </ul>
+        <p ixia_locid="11">The Ceilometer database is periodically cleaned in order to contain its size and prevent the
+      overuse of storage resources on the controller nodes.</p>
+        <p ixia_locid="12">The Ceilometer implementation in HP Helion OpenStack Carrier Grade improves on several
+            aspects. They are described in the following sections.</p>
+        <section id="section_N10048_N1001C_N10001" ixia_locid="13">
+            <title ixia_locid="14">Optimized Ceilometer Filters</title>
+            <p ixia_locid="15">The Ceilometer implementation in HP Helion OpenStack Carrier Grade is specially tuned
+                to allow time-sensitive actions, such as Heat autoscaling, to take place in response
+                to relatively high-frequency sample rates of system events. The size of both the
+                Ceilometer database and the CSV files are maintained under control at all times,
+                while still enabling the required system actions to take place in real-time.</p>
+        </section>
+        <section id="section_N1006E_N1001C_N10001" ixia_locid="21">
+            <title ixia_locid="22">On-Line Ceilometer Reports</title>
+            <p ixia_locid="23">On-line, on-demand, Ceilometer reports in HP Helion OpenStack Carrier Grade benefit
+                from several improvements over the stock OpenStack reporting tool, including:</p>
+            <ul id="ul_lfg_pdz_j4">
+                <li ixia_locid="24">
+                    <p ixia_locid="25">optimized Ceilometer database queries</p>
+                </li>
+                <li ixia_locid="26">
+                    <p ixia_locid="27">improved naming of menu entries on pull-down menus</p>
+                </li>
+                <li ixia_locid="28">
+                    <p ixia_locid="29">use of brief meter descriptions and human-readable legends on
+                        the charts</p>
+                </li>
+            </ul>
+            <p ixia_locid="30">Additionally, all database queries are user-initiated, as opposed to event-initiated. This
+        provides a different user workflow, whereby all required report parameters and filters are
+        configured first, before the database query is executed</p>
+            <p ixia_locid="31">Access to Ceilometer reports is available from the <uicontrol ixia_locid="32">Stats</uicontrol> tab on the <wintitle ixia_locid="33">Resource
+                    Usage Overview</wintitle> page. This page can be accessed from the web
+                management interface by selecting the option <option ixia_locid="34">Resource
+                    Usage</option> on the <uicontrol ixia_locid="35">Admin</uicontrol> tab of the
+                system panel. The <uicontrol ixia_locid="36">Stats</uicontrol> tab is presented as
+                follows:</p>
+            <fig id="fig_N100B3_N1006E_N1001C_N10001" ixia_locid="37">
+                <image href="jow1404333641017.image" id="image_bsy_t3s_j4" ixia_locid="38" placement="inline" width="4in"/>
+            </fig>
+            <p ixia_locid="39">The following fields are available:</p>
+            <dl>
+                <dlentry ixia_locid="40">
+                    <dt ixia_locid="41">Metric</dt>
+                    <dd ixia_locid="42">
+                        <p ixia_locid="43">The Ceilometer metric you want to query. Metrics are
+                            grouped by service, as follows:</p>
+                        <ul id="ul_btj_sjs_j4">
+                            <li ixia_locid="44">
+                                <p ixia_locid="45">Compute (Nova)</p>
+                            </li>
+                            <li ixia_locid="46">
+                                <p ixia_locid="47">Network (Neutron)</p>
+                            </li>
+                            <li ixia_locid="48">
+                                <p ixia_locid="49">Image (Glance)</p>
+                            </li>
+                            <li ixia_locid="50">
+                                <p ixia_locid="51">Volume (Cinder)</p>
+                            </li>
+                            <li ixia_locid="56">
+                                <p ixia_locid="57">Switching (AVS)</p>
+                            </li>
+                        </ul>
+                        <p ixia_locid="58">On the CLI, use the following command to list the available metrics, and find their
+              resource IDs:</p>
+                        <codeblock ixia_locid="59"><systemoutput ixia_locid="229">~(keystone_admin)$ </systemoutput><userinput ixia_locid="61">ceilometer meter-list</userinput></codeblock>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="62">
+                    <dt ixia_locid="63">Value</dt>
+                    <dd ixia_locid="64">
+                        <p ixia_locid="65">The particular statistic you want to visualize. Select
+                            among <option ixia_locid="167">Average</option>, <option ixia_locid="168">Minimum</option>, <option ixia_locid="169">Maximum</option>, and <option ixia_locid="170">Summation</option>.</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="66">
+                    <dt ixia_locid="67">Group by</dt>
+                    <dd ixia_locid="68">
+                        <p ixia_locid="69">How to group the displayed charts, as follows:</p>
+                        <dl>
+                            <dlentry ixia_locid="70">
+                                <dt ixia_locid="71">None</dt>
+                                <dd ixia_locid="72">
+                                    <p ixia_locid="73">The selected statistic is presented as a single line chart reporting the
+                    aggregate over all resources and projects (tenants).</p>
+                                </dd>
+                            </dlentry>
+                            <dlentry ixia_locid="74">
+                                <dt ixia_locid="75">Projects (Tenants)</dt>
+                                <dd ixia_locid="76">
+                                    <p ixia_locid="77">The selected statistic is presented as a multiple line charts over all
+                    resources, one line per tenant.</p>
+                                </dd>
+                            </dlentry>
+                            <dlentry ixia_locid="78">
+                                <dt ixia_locid="79">Resource</dt>
+                                <dd ixia_locid="80">
+                                    <p ixia_locid="81">The selected statistic is presented as a multiple line charts over all
+                    resources, one line per resource (hosts, instances, and so on).</p>
+                                </dd>
+                            </dlentry>
+                        </dl>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="171">
+                    <dt ixia_locid="172">Period</dt>
+                    <dd ixia_locid="173">
+                        <p ixia_locid="174">The period of time to be covered by the report. They
+                            include <option ixia_locid="197">last 15 minutes</option>, <option ixia_locid="198">last 30 minutes</option>, <option ixia_locid="199">last hour</option>, <option ixia_locid="176">last day</option>,
+                                <option ixia_locid="177">last week</option>, <option ixia_locid="178">last 15 days</option>, <option ixia_locid="179">last 30 days</option>, <option ixia_locid="180">last year</option>,
+                            and <option ixia_locid="181">other</option>. When selecting <option ixia_locid="182">other</option>, two new fields become available,
+                                <option ixia_locid="183">Date From</option> and <option ixia_locid="184">Date To</option>, allowing you to specify a
+                            specific time period.</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="82">
+                    <dt ixia_locid="83">Metadata</dt>
+                    <dd ixia_locid="84">
+                        <p ixia_locid="85">Metadata represents additional attributes collected with a metric. In this menu, you
+              can select the specific attribute you want the report on.</p>
+                        <p ixia_locid="86">The pull-down menu is auto-populated with the corresponding attributes for the
+              selected metric. On the CLI, use the following command to list the metadata associated
+              with a metric identified with its resource ID:</p>
+                        <codeblock ixia_locid="87"><systemoutput ixia_locid="230">~(keystone_admin)$ </systemoutput><userinput ixia_locid="89">ceilometer resource-show <varname ixia_locid="234">resource_id</varname></userinput></codeblock>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="90">
+                    <dt ixia_locid="91">Filter</dt>
+                    <dd ixia_locid="92">
+                        <p ixia_locid="93">Use this field to limit the report to show metric samples whose metadata attribute
+              equals the specified value. The filter field is applied only when a specific metadata
+              attribute is selected.</p>
+                    </dd>
+                </dlentry>
+            </dl>
+            <p ixia_locid="94">Once the selections are in place, click the <option ixia_locid="95">Report</option> button to display the
+        report.</p>
+        </section>
+        <section id="section_N101AA_N1001C_N10001" ixia_locid="96">
+            <title ixia_locid="97">CSV Performance Monitoring Backend</title>
+            <p ixia_locid="98">HP Helion OpenStack Carrier Grade provides access to performance measurement samples in
+                the form of comma-separated values (CSV) files. They provide the following
+                benefits:</p>
+            <ul id="ul_dnc_dpz_j4">
+                <li ixia_locid="99">
+                    <p ixia_locid="100">off-line permanent storage of large samples history</p>
+                </li>
+                <li ixia_locid="101">
+                    <p ixia_locid="102">enables the use of off-line tools for data analysis, accounting, and archiving</p>
+                </li>
+            </ul>
+            <p ixia_locid="103">The CSV files are expected to be retrieved from the controllers using any suitable file
+        transfer client application such as SFTP or SCP. This can be done manually by the system
+        administrator, or automatically by an operations and support server (OSS/BSS) configured
+        with the appropriate login credentials.</p>
+            <p ixia_locid="104">Recording of samples and management of CSV files is done through
+                special Ceilometer pipelines available from the <uicontrol ixia_locid="106">Pipelines</uicontrol> tab, as illustrated below:</p>
+            <fig id="fig_N101DC_N101AB_N1001C_N10001" ixia_locid="107">
+                <image href="jow1404333642494.image" id="image_dkk_ptz_j4" ixia_locid="108" placement="inline" width="6in"/>
+            </fig>
+            <p ixia_locid="200">The <nameliteral ixia_locid="201">csv</nameliteral> pipeline collects system information with the
+                exception of AVS switching meters. The latter are collected by the
+                    <nameliteral ixia_locid="202">vswitch_avg</nameliteral> pipeline.</p>
+            <p ixia_locid="109">Click the button <uicontrol ixia_locid="110">Update
+                    Settings</uicontrol> to configure the behavior of a pipeline. The <wintitle ixia_locid="111">Edit Pipeline</wintitle> window is presented as follows:</p>
+            <fig id="fig_N101F4_N101AB_N1001C_N10001" ixia_locid="112">
+                <image href="jow1404333644008.image" id="image_ckk_gvz_j4" ixia_locid="113" placement="inline"/>
+            </fig>
+            <p ixia_locid="114">The following fields are available:</p>
+            <dl>
+                <dlentry ixia_locid="115">
+                    <dt ixia_locid="116">Name</dt>
+                    <dd ixia_locid="117">
+                        <p ixia_locid="118">A read-only field displaying the name of the pipeline</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="119">
+                    <dt ixia_locid="120">Meters</dt>
+                    <dd ixia_locid="121">
+                        <p ixia_locid="122">An editable field displaying the list of comma-separated
+                            meters included in the pipeline. The list must be enclosed in square
+                            brackets, as follows:</p>
+                        <codeblock ixia_locid="145"><userinput ixia_locid="146">[meter1,meter2,...]</userinput></codeblock>
+                        <p ixia_locid="147">The following syntax rules apply to the specified meters:</p>
+                        <ul id="ul_ipr_k42_1p">
+                            <li ixia_locid="148">
+                                <p ixia_locid="149">A meter specification is a text string of the form
+                                        <term ixia_locid="150">metergroup.metersubgroup.meter</term>, for example,
+                                        <userinput ixia_locid="151">disk.read.bytes</userinput></p>
+                            </li>
+                            <li ixia_locid="185">
+                                <p ixia_locid="187">A meter specification supports a trailing wild-card to include
+                                    all <term ixia_locid="189">meters</term> within a <term ixia_locid="191">metergroup</term>. For
+                                    example, the text <userinput ixia_locid="193">disk.*</userinput> matches the
+                                    meters <userinput ixia_locid="195">disk.read.bytes</userinput> and
+                                        <userinput ixia_locid="158">disk.write.bytes</userinput>.</p>
+                            </li>
+                            <li ixia_locid="186">
+                                <p ixia_locid="188">A meter specification supports a trailing
+                                    wild-card to include all <term ixia_locid="190">metersubgroups</term> within a <term ixia_locid="192">metergroup</term>. For example, the text <userinput ixia_locid="194">disk.read.*</userinput> matches the meter
+                                        <userinput ixia_locid="196">disk.read.bytes</userinput>.</p>
+                            </li>
+                            <li ixia_locid="159">
+                                <p ixia_locid="160">Meter specifications support a leading exclamation mark to
+                                    exclude the specified meter, as follows:</p>
+                                <codeblock ixia_locid="161"><userinput ixia_locid="162">[!meter1,!meter2,...]</userinput></codeblock>
+                                <p ixia_locid="163">Such a pipeline includes all meters but the ones in the list.</p>
+                                <p ixia_locid="164">Exclamation marks cannot be applied selectively in a list of
+                                    meters. Either all meters use them or none at all. The following
+                                    list is therefore invalid:</p>
+                                <codeblock ixia_locid="165"><userinput ixia_locid="166">[meter1,!meter2,meter3]</userinput></codeblock>
+                            </li>
+                        </ul>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="123">
+                    <dt ixia_locid="124">Location</dt>
+                    <dd ixia_locid="125">
+                        <p ixia_locid="126">The absolute path to the CSV file on the controller.</p>
+                        <p ixia_locid="235">You should use a path below <filepath ixia_locid="236">/opt/cgcs</filepath>. Otherwise, if
+                            the active controller fails, the <filepath ixia_locid="237">csv</filepath> files will not
+                            be available on the backup controller</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="127">
+                    <dt ixia_locid="128">Enabled</dt>
+                    <dd ixia_locid="129">
+                        <p ixia_locid="130">A check box used to enable or disable the pipeline.</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="131">
+                    <dt ixia_locid="132">Max Bytes</dt>
+                    <dd ixia_locid="133">
+                        <p ixia_locid="134">The maximum size, in bytes, of a CSV file. The default value is 10 MB.</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="137">
+                    <dt ixia_locid="138">Backup Count</dt>
+                    <dd ixia_locid="139">
+                        <p ixia_locid="140">The number of concurrent backup CSV files to maintain in a rotation ring, including
+              the currently active file. When a CSV file reaches its maximum size, it is renamed as
+              a backup file, and a new CSV file is opened for writing. Backup files older than the
+              size of the rotation ring are automatically removed.</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="141">
+                    <dt ixia_locid="142">Compress Backups</dt>
+                    <dd ixia_locid="143">
+                        <p ixia_locid="144">A check box used to select whether or not to compress backup files in the rotation
+              ring.</p>
+                    </dd>
+                </dlentry>
+            </dl>
+        </section>
+        <section id="section_N103F2_N1001F_N10001" ixia_locid="203">
+            <title ixia_locid="204">Retention Period</title>
+            <p ixia_locid="205">Performance samples are kept in the database for a limited period of time known as
+                the <term ixia_locid="206">retention period</term>. Its  default value is 86400 seconds, or 24
+                hours.</p>
+            <p ixia_locid="207">Click the <uicontrol ixia_locid="208">Edit Retention Period</uicontrol> button in the
+                    <uicontrol ixia_locid="209">Retention Period</uicontrol> tab to modify the current value. You
+                must ensure that the configured value is equal or higher than the period over which
+                you intend to gather statistics.</p>
+            <p ixia_locid="210">You can also control the retention period from the CLI. To view the current settings,
+                use the following command.</p>
+            <codeblock ixia_locid="211"><systemoutput ixia_locid="231">~(keystone_admin)$ </systemoutput><userinput ixia_locid="213">system pm-show</userinput></codeblock>
+            <p ixia_locid="214">To change the retention period from the CLI, use the following command syntax.</p>
+            <codeblock ixia_locid="215"><systemoutput ixia_locid="232">~(keystone_admin)$ </systemoutput><userinput ixia_locid="217">system pm-modify retention_secs=<varname ixia_locid="218">retention_period</varname></userinput></codeblock>
+            <p ixia_locid="219">For example:</p>
+            <codeblock ixia_locid="220"><systemoutput ixia_locid="233">~(keystone_admin)$ </systemoutput><userinput ixia_locid="222">system pm-modify retention_secs=172800</userinput></codeblock>
+            <note id="note_N1041B_N103CD_N1001F_N10001" ixia_locid="223">
+                <p ixia_locid="224">Changes to the retention period cause <nameliteral ixia_locid="225">250.001 Configuration
+                        out-of-date</nameliteral> alarms to be raised briefly for the controller
+                    nodes. During this period, the status <nameliteral ixia_locid="226">Config
+                        out-of-date</nameliteral> is displayed for the controller nodes on the
+                        <wintitle ixia_locid="227">Host</wintitle> tab of the <wintitle ixia_locid="228">Inventory</wintitle> pane.
+                    These alarms are resolved and cleared automatically after a few seconds.</p>
+            </note>
+        </section>
+    </conbody>
+</concept-wr>

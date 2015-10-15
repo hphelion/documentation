@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1417818508589" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title>Resource Scaling (Autoscaling)</title>
+ <shortdesc>You can use Heat to reassign stack resources automatically to meet changing
+  conditions.</shortdesc>
+ <prolog><author/>
+  <author/>
+ </prolog>
+ <conbody>
+  <p>You can define and monitor performance thresholds for metrics such as CPU
+   activity, and then add or remove resources when the thresholds are crossed. This allows you to
+   make efficient use of the hardware in the cluster, by allocating resources only when they are
+   needed, and assigning them where they are most required.</p>
+  <p>HP Helion OpenStack Carrier Grade supports two types of scaling:</p>
+  <dl>
+   <dlentry>
+    <dt>In/Out</dt>
+    <dd>
+     <p>This type of scaling (also known as <term>horizontal scaling</term>) adds or removes
+      instances as needed.</p>
+    </dd>
+   </dlentry>
+   <dlentry>
+    <dt>Up/Down</dt>
+    <dd>
+     <p>This type of scaling (also known as <term>vertical
+       scaling</term>) increases or decreases resources (for example, vCPUs) for individual
+      instances as needed. For more about up/down scaling, see <xref href="jow1417813748326.xml"/>.</p>
+    </dd>
+   </dlentry>
+  </dl>
+  <p>Performance metrics can be collected and reported by the HP Helion OpenStack Carrier Grade
+   platform, or by the guests using guest metrics.<!-- For more information about guest metrics, see
+    <xref href="jow1404916152577.xml"/>.--> </p>
+ </conbody>
+</concept-wr>

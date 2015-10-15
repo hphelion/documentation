@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1425236831500" xml:lang="en-us">
+    <title>Viewing NUMA Node Resources on a Host</title>
+    <shortdesc>You can use the CLI <!-- or GUI --> to display the NUMA node resources for a
+        host.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p>Host NUMA nodes can be <term>pinned</term>, or
+                assigned for use by VMs. For example, a VM can be configured to use NUMA node 0, so
+                that when the VM is launched or migrated, the virtual machine scheduler locates a
+                host node with an available NUMA node 0, and dedicates that NUMA node for use by the
+                VM. For more about pinning NUMA nodes, see <xref href="jow1425236723556.xml"/>.</p>
+            <p>The resources of the pinned NUMA node, including the number of
+                available CPUS and the available memory, must be sufficient to meet the requirements
+                of the VM, which can be specified independently. (For more about specifying NUMA
+                node requirements for a VM, see <xref href="jow1425236666266.xml"/>.) To ensure that
+                a given host NUMA node can support the VM requirements, you can review the CPU and
+                memory complements for host NUMA nodes.</p>
+            <p>To view the CPU complement for a NUMA Node (that is, for a socketed
+                physical processor), use the vm-topology command. For details, see <xref href="jow1404333768530.xml"/>.<!-- But can a socketed processor contain multiple NUMA nodes?  If so, this is the wrong place to look.  Also, how can you view the available memory for a NUMA Node? -->
+            </p>
+        </context>
+    </taskbody>
+</task-wr>

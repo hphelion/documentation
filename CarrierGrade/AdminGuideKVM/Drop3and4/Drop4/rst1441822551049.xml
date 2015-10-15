@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="rst1441822551049" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Specifying a Live Migration Timeout</title>
+    <shortdesc>Live migrations can take a long time to complete for reasons such as
+        high levels of guest activity, network latency, and so on. You can specify the number of
+        seconds to wait for a live migration to complete. </shortdesc>
+    <prolog><author/>
+        <author>Ron Stone</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p><draft-comment author="rstone">Topic created for
+                    US60539</draft-comment>If no value is set, the default is 800 seconds.</p>
+            <p>If the value is exceeded, the migration is canceled and a customer
+                log entry is created. The counter starts when the migration begins. The minimum
+                timeout value is 120 seconds and the maximum is 800 seconds. <draft-comment author="rstone">Following sentence to be confirmed</draft-comment>Set this value
+                to 0 to disable the live migration timeout feature. For more information, see <xref href="jow1404333655771.xml"/>. </p>
+            <note id="note_N10044_N10029_N10026_N10001">
+                <p>NOVA maintains an internal timer which guards a complete lack of
+                    VM instance live migration progress for longer than 150 seconds. If this timer
+                    expires, the live migration will be canceled; regardless of the value of the
+                    live migration maximum timeout.</p>
+            </note>
+            <p>A live migration timeout can be configured as an extra spec on a
+                flavor, such that any VM instance created with the flavor will inherit the specified
+                timeout value. Alternatively, a live migration timeout can be configured as
+                meta-data on an image, such that any VM instance created based on this Image will
+                have the specified timeout value. If the timeout value is provisioned in both the
+                flavor and the image, the smaller value is used.</p>
+            <p>To set this option using the web administration interface:</p>
+            <ul id="ul_xy2_v3y_lt">
+                <li>
+                    <p>As <term>admin</term>, use the <uicontrol>Live Migration Timeout</uicontrol> selection in the <uicontrol>Create Flavor Extra Spec</uicontrol> drop-down menu. To
+                        access this menu, see <xref href="jow1429538642910.xml"/>.</p>
+                </li>
+            </ul>
+            <p>or</p>
+            <ul id="ul_sbp_djy_lt">
+                <li>
+                    <p>As either <term>admin</term> or a tenant, select
+                            <menucascade>
+                            <uicontrol>System</uicontrol>
+                            <uicontrol>Images</uicontrol>
+                            <uicontrol>Edit Image</uicontrol>
+                            <uicontrol>Update Metadata</uicontrol>
+                        </menucascade> for the desired images and add an entry with:</p>
+                    <codeblock>hw_wrs_live_migration_timeout=<varname>seconds</varname></codeblock>
+                </li>
+            </ul>
+        </context>
+        <steps>
+            <step id="step_N10035_N10032_N1001C_N10001">
+                <cmd>Set the timer from the command line:</cmd>
+                <info>
+                    <p>The following examples set the timeout to 400 seconds.</p>
+                </info>
+                <choices id="choices_iks_2wn_ht">
+                    <choice>
+                        <p>As <term>admin</term>, add an extra spec to a flavor
+                            by:</p>
+                        <codeblock><systemoutput>~(keystone)admin)$ </systemoutput><userinput>nova flavor-key <varname>flavorName</varname> set hw:wrs:live_migration_timeout=400</userinput></codeblock>
+                    </choice>
+                    <choice>
+                        <p>As <term>admin</term> or a tenant, update the metadata
+                            of an image by:</p>
+                        <codeblock><systemoutput>~(keystone)admin)$ </systemoutput><userinput>glance image-update --property hw_wrs_live_migration_timeout=400 <varname>imageName</varname></userinput></codeblock>
+                    </choice>
+                </choices>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

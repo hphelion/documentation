@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333646078" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title ixia_locid="1">Managing Hardware Inventory</title>
+    <shortdesc ixia_locid="2">The maintenance and inventory component of HP Helion OpenStack Carrier Grade allows the administrator to
+    install, configure, and manage the hosts of the HP Helion OpenStack Carrier Grade cluster.</shortdesc>
+    <prolog>
+        <author></author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="4">To access the <wintitle ixia_locid="5">System Inventory</wintitle> page on the web management interface,
+      click the <option ixia_locid="6">Inventory</option> option of the <uicontrol ixia_locid="7">Admin</uicontrol> tab on the
+      side panel.</p>
+    </conbody>
+</concept-wr>

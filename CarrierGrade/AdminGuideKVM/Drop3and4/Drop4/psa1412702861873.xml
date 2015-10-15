@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="psa1412702861873" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title>Managed and Unmanaged Subnets</title>
+ <shortdesc>Use the <term>System Managed Subnet</term> and <term>Enable DHCP</term> subnet attributes to determine how IP addresses are allocated
+  and offered on an IP subnet.</shortdesc>
+ <prolog><author/>
+  
+ </prolog>
+ <conbody>
+  <p>With the proper configuration in place, DHCP services can be provided by the built-in Neutron
+   DHCP server, by a standalone server available from an external network infrastructure, or by
+   both.</p>
+  <p>When creating a new IP subnet for a tenant network you can specify the following
+   attributes:</p>
+  <dl>
+   <dlentry>
+    <dt>System Managed Subnet</dt>
+    <dd>
+     <p>When this attribute is enabled, the subnet is <term>system managed</term>.
+      the Neutron service automatically allocates an IP address from the address allocation pools
+      defined for the subnet to any new virtual machine instance with a virtual Ethernet interface
+      attached to the tenant network. Once allocated, the pair (MAC address, IP address) is
+      registered in the Neutron database as part of the overall registration process for the new
+      virtual machine.</p>
+     <p>When the system managed subnet attribute is disabled, the subnet is <term>unmanaged</term>. No automatic allocation of IP addresses takes place, and
+      the Neutron DHCP service for the subnet is disabled. Allocation of IP addresses for new
+      virtual machines must be done at boot time using the CLI or the API interfaces.</p>
+    </dd>
+   </dlentry>
+   <dlentry>
+    <dt>Enable DHCP</dt>
+    <dd>
+     <p>When this attribute is enabled, a virtual DHCP server becomes available when
+      the subnet is created. It uses the (MAC address, IP address) pairs registered in the Neutron
+      database to offer IP addresses in response to DHCP discovery requests broadcast on the subnet.
+      DHCP discovery requests from unknown MAC addresses are ignored.</p>
+     <p>The Neutron DHCP server can only be enabled on system managed subnets.  DHCP services for
+      unmanaged subnets, if required, must be provisioned by external, non-Neutron, DHCP
+      servers.</p>
+     <p>When the DHCP attribute is disabled, all DHCP and DNS services, and all
+      static routes, if any, must be provisioned externally.</p>
+    </dd>
+   </dlentry>
+   <dlentry>
+    <dt>Allocation Pools</dt>
+    <dd>
+     <p>This a list attribute where each element in the list specifies an IP address
+      range, or address pool, in the subnet address space that can be used for dynamic offering of
+      IP addresses. By default there is a single allocation pool comprised of the entire subnet's IP
+      address space, with the exception of the default gateway's IP address.</p>
+     <p>An external, non-Neutron, DHCP server can be attached to a system managed subnet to support
+      specific deployment needs as required. For example, it can be configured to offer IP addresses
+      on ranges outside the Neutron allocation pools to service physical devices attached to the
+      tenant network, such as testing equipment and servers.</p>
+     <p>Allocation pools can only be specified on system managed subnets.</p>
+    </dd>
+   </dlentry>
+  </dl>
+  <p>On the web administration interface you set these attributes in the <uicontrol>Subnet
+    Detail</uicontrol> tab of the <wintitle>Create Subnet</wintitle> window. On the CLI you set
+   these attributes as illustrated in the following examples.</p>
+  <p>Create a new system managed subnet, DHCP-enabled, and a custom allocation pool:</p>
+  <codeblock><systemoutput>$ </systemoutput><userinput>neutron subnet-create --name my-subnet ﻿\
+--allocation-pool start=172.18.0.100,end=172.18.0.150 \
+my-tenant-net 172.18.0.0/24</userinput></codeblock>
+  <p>Create a new system managed subnet with DHCP service disabled:</p>
+  <codeblock><systemoutput>$ </systemoutput><userinput>neutron subnet-create --name my-subnet \
+--disable-dhcp \
+my-tenant-net 172.18.0.0/24</userinput></codeblock>
+  <p>Create a new unmanaged subnet:</p>
+  <codeblock><systemoutput>$ </systemoutput><userinput>neutron subnet-create --name my-subnet \
+--unmanaged --disable-dhcp \
+my-tenant-net 172.18.0.0/24</userinput></codeblock>
+  <section id="section_N100A6_N10020_N10001">
+   <title>Accessing the Metadata Server</title>
+   <p>Access to the system's metadata server is available using the well known URL
+    ﻿http://169.254.169.254. In the HP Helion OpenStack Carrier Grade implementation, access to this address is
+    provided by a virtual router attached to the tenant on which the access request is made. Virtual
+    routers are automatically configured as proxies to the metadata service. </p>
+   <p>The following requirements must be satisfied in order for a guest application to access the
+    metadata service:</p>
+   <ol id="ol_dyn_vbd_sp">
+    <li>
+     <p>There is a route table entry to route traffic destined to the
+      169.254.169.254 address via a Neutron router, or via a suitable static route to the
+      169.254.169.254 address.</p>
+    </li>
+    <li>
+     <p>The metadata server knows about the virtual machine instance associated with
+      the MAC and IP addresses of the virtual Ethernet interface issuing the metadata service
+      request. This is necessary for the metadata server to be able to validate the request, and to
+      identify the virtual machine's specific data to be returned.</p>
+     <p>On system managed subnets, the Neutron service has all address information associated with
+      the virtual machines in its database.</p>
+     <p>On unmanaged subnets, you must tell the Neutron service the IP address of
+      the network interface issuing the metadata service requests. This can only be done using the
+      command line or API interfaces when instantiating the virtual machine, as illustrated
+      below:</p>
+     <codeblock><systemoutput>$ </systemoutput><userinput>nova boot \
+--nic net-id=<varname>net-uuid</varname>,vif-model=avp,v4-fixed-ip=172.18.0.1 \
+my-new-vm</userinput></codeblock>
+     <p>In this simplified example, the option <option>v4-fixed-ip</option> tells Neutron what the
+      IP address for this interface should be. The interface's MAC address is automatically
+      generated by Nova.</p>
+    </li>
+   </ol>
+  </section>
+ </conbody>
+</concept-wr>

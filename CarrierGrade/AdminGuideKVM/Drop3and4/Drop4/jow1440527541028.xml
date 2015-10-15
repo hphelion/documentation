@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1440527541028" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Changing the Hyper-threading Status</title>
+    <shortdesc>The hyper-threading status is controlled by the BIOS settings of the
+        host. </shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <steps id="steps_v2v_cv3_dt">
+            <step conref="jow1404333506827.xml#jow1404333506827/lock-node" id="step_N10023_N1001F_N1001C_N10001">
+                <cmd/>
+            </step>
+            <step id="step_N1002C_N1001F_N1001C_N10001">
+                <cmd>Edit the host BIOS settings to enable or disable
+                    hyper-threading.</cmd>
+                <info>
+                    <p>For more about editing the BIOS, refer to the documentation provided by the
+                        maker of the host computer. </p>
+                </info>
+            </step>
+            <step conref="jow1404333506827.xml#jow1404333506827/unlock-node" id="step_N1003D_N1001F_N1001C_N10001">
+                <cmd/>
+            </step>
+            <step id="step_N10046_N1001F_N1001C_N10001">
+                <cmd>Confirm the hyper-threading status in HP Helion OpenStack Carrier Grade.</cmd>
+                <info>
+                    <p>The hyper-threading status is reported on the <uicontrol>Processor</uicontrol> tab for the host. For more
+                        information, see <xref href="jow1404333768530.xml"/>.</p>
+                </info>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

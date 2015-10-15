@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1441306845507" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title ixia_locid="1">Using a Controller Configuration Input File</title>
+    <shortdesc ixia_locid="2">For automated installation, you can create a configuration file to use with the
+        controller configuration script.</shortdesc>
+    <prolog>
+        <author ixia_locid="3">Jim Owens</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001" ixia_locid="4">
+            <p ixia_locid="5"><draft-comment author="jowens" ixia_locid="6">US62804 new topic</draft-comment>The controller
+                configuration script accepts a path to a configuration file as an optional
+                parameter:</p>
+            <codeblock ixia_locid="7"><systemoutput ixia_locid="8">$ </systemoutput><userinput ixia_locid="9">config_controller --config-file <varname ixia_locid="10">filename</varname></userinput></codeblock>
+            <p ixia_locid="11">where <varname ixia_locid="17">filename</varname> is the path and name of the file.</p>
+            <p ixia_locid="13">The configuration file contains all the settings required by the
+                script, expressed using INI format. You can create one manually, or you can use the
+                configuration file generator utility provided with the HP Helion OpenStack Carrier Grade Guest
+                Software Development Kit. For more about the format, see <xref href="jow1441306905052.xml" ixia_locid="15"/>. <draft-comment author="rstone" ixia_locid="23">US63902 and US63694 add</draft-comment>For information about the
+                configuration file generator utility, see <cite ixia_locid="19">HP Helion OpenStack Carrier Grade
+                    Software Development Kit: wrs-configutilities—Configuration
+                Utilities</cite>.</p>
+            <p ixia_locid="20">You can validate a configuration file before applying it, using the
+                    <cmdname ixia_locid="18">config_validator</cmdname> utility provided with the
+                HP Helion OpenStack Carrier Grade Guest Software Development Kit. The same validation is also
+                performed automatically when the configuration controller script is executed.</p>
+            <draft-comment author="rstone" ixia_locid="24">US63902 and US63694 add</draft-comment>
+            <p ixia_locid="21">For information about the configuration file validator utility, see
+                    <cite ixia_locid="22">HP Helion OpenStack Carrier Grade Software Development Kit:
+                    wrs-configutilities—Configuration Utilities</cite>.</p>
+        </context>
+    </taskbody>
+</task-wr>

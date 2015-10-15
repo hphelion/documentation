@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1439388437367" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Launching Virtual Machine Instances</title>
+    <shortdesc>You can launch a virtual machine from the web administration interface or the
+        CLI.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p>You can launch a virtual machine from the CLI using the <cmdname>nova boot</cmdname>
+                command. For an example, see the <cite>HP Helion OpenStack Carrier Grade Reference Deployment
+                    Scenarios: Launching Instances Using the CLI</cite>.</p>
+            <p>To launch an instance from the web administration interface, use the following
+                steps.</p>
+        </context>
+        <prereq id="prereq_N10034_N1001C_N10001">
+            <p>To support fast booting, a Cinder volume is recommended. To prepare one, see <xref href="jow1439393204460.xml"/>.</p>
+        </prereq>
+        <steps>
+            <step id="step_N10044_N10041_N1001C_N10001">
+                <cmd>Log in as the appropriate tenant.</cmd>
+            </step>
+            <step id="step_N1004D_N10041_N1001C_N10001">
+                <cmd>On the <uicontrol>Project</uicontrol> menu, open the
+                        <uicontrol>Compute</uicontrol> section, and then click
+                        <uicontrol>Instances</uicontrol>.</cmd>
+            </step>
+            <step id="step_N10062_N10041_N1001C_N10001">
+                <cmd>On the <wintitle>Instances</wintitle> page,
+                    click <uicontrol>Launch Instance</uicontrol>.</cmd>
+            </step>
+            <step id="step_N10072_N10041_N1001C_N10001">
+                <cmd>Complete the <wintitle>Launch Instances</wintitle> form.</cmd>
+                <info>
+                    <p>For examples, see the <cite>HP Helion OpenStack Carrier Grade
+                            Reference Deployment Scenarios: Deploying the Bridging Scenario</cite>
+                        and <cite>Deploying the Routing Scenario</cite>.</p>
+                    <p><draft-comment author="jowens">US65502
+                            added</draft-comment>If the system uses compute hosts with local
+                        storage, ensure that the instances logical volume space on the hosts is
+                        configured appropriately. For more information, see <xref href="jow1443470081421.xml"/>.</p>
+                    <note id="note_N100BC_N10098_N10089_N1004C_N1001F_N10001">
+                        <p><draft-comment author="jowens">CGTS-2832 added</draft-comment>To use
+                            boot-from-image, you must enable local storage for the flavor using an
+                            extra specification. For more information, see  <xref href="jow1426181040008.xml"/>.</p>
+                    </note>
+                    <!-- p>For settings information, see <xref
+                            href="jow1439389700095.xml"/>.</p -->
+                    <note id="note_N1008B_N1007A_N1006F_N10041_N1001C_N10001">
+                        <p>For fast instance booting, use a prepared Cinder volume,
+                            and set the <uicontrol>Instance Boot Source</uicontrol>
+                            to <nameliteral>Boot from Volume</nameliteral>.</p>
+                    </note>
+                </info>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

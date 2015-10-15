@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333628570" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+        
+-->
+    <title>Launching a Stack</title>
+    <shortdesc>You can launch stacks using the web administration interface, or you
+        can use the command-line interface.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N10027_N10024_N10001">
+            <p>These instructions assume you are using the web administration
+                interface. For CLI assistance, use the following command.</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>heat help stack-create</userinput></codeblock>
+        </context>
+        <prereq id="prereq_N10034_N10024_N10001">
+            <p>Ensure that you have a template for the stack.</p>
+            <p>Depending on the template, you may need to collect some parameters in advance. For
+                details, see the documentation for the specific template, or refer to the Parameters
+                section of the template.</p>
+        </prereq>
+        
+        <steps>
+            <step conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N1004F_N1004C_N10029_N10001"><cmd/></step>
+            <step conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N10056_N1004C_N10029_N10001"><cmd/></step>
+            
+            <step id="step_N10052_N10041_N10024_N10001">
+                <cmd>Complete the <wintitle>Launch Stack</wintitle> form to provide any parameter
+                    values required by the template.</cmd>
+                <info>
+                    <note id="note_N1005E_N1005B_N10050_N10041_N10024_N10001">
+                        <p>The form is created dynamically based on the Parameters section of the
+                            template, and varies depending on the template. The form shown here is
+                            an example only.</p>
+                    </note>
+                    <fig id="fig_N10066_N1005B_N10050_N10041_N10024_N10001">
+                        <image alt="Launch Stack" href="jow1404333626947.image" id="image_xrx_kkv_34"/>
+                    </fig>
+                </info>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

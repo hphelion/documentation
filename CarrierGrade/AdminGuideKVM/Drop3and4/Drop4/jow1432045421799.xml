@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1432045421799" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Viewing Customer Logs</title>
+    <shortdesc>You can use the web administration interface or the CLI to examine
+        customer logs.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <prereq id="prereq_N1001F_N1001C_N10001">
+            <p>To view customer logs, you must be logged in with administrative
+                privileges.</p>
+        </prereq>
+        <context id="context_N10028_N1001C_N10001">
+            <p>You can use the command-line interface to view customer logs by
+                acquiring Keystone credentials and using the <cmdname>system
+                    log-list</cmdname> and <cmdname>system log-show</cmdname>
+                commands. Alternatively, you can use the web administration interface using the
+                steps given later in this section.</p>
+            <ul id="ul_agw_zby_bs">
+                <li>
+                    <p>To acquire Keystone <nameliteral>admin</nameliteral> credentials, type the following command:</p>
+                    <codeblock><systemoutput>$ </systemoutput><userinput>source /etc/nova/openrc</userinput></codeblock>
+                </li>
+                <li>
+                    <p>To list logs, use the following command:</p>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system log-list [-q <varname>query</varname>] [-l <varname>limit</varname>]</userinput></codeblock>
+                    <p>where</p>
+                    <dl>
+                        <dlentry>
+                            <dt><varname>query</varname></dt>
+                            <dd>
+                                <p>is a list of one or more key-value pairs with comparison
+                                    operators, separated by semicolons.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt><varname>limit</varname></dt>
+                            <dd>
+                                <p>is the maximum number of logs to return, beginning with the most
+                                    recent.</p>
+                            </dd>
+                        </dlentry>
+                    </dl>
+                    <p>For example:</p>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system log-list -q severity=critical -l 20</userinput></codeblock>
+                    <p>returns the 20 most recent logs with <nameliteral>critical</nameliteral> severity.</p>
+                </li>
+                <li>
+                    <p>To view details for an individual log, use the following
+                        command:</p>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system log-show <varname>uuid</varname></userinput></codeblock>
+                    <p>where <varname>uuid</varname> is the unique
+                        identifier for the log (obtained using the <cmdname>system
+                            log-list</cmdname> command).</p>
+                </li>
+            </ul>
+        </context>
+        <steps>
+            <step id="step_N100BC_N100B9_N1001C_N10001">
+                <cmd>In the main menu, select <menucascade>
+                        <uicontrol>Admin</uicontrol>
+                        <uicontrol>System</uicontrol>
+                        <uicontrol>Fault Management</uicontrol>
+                    </menucascade>.</cmd>
+            </step>
+            <step id="step_N100D5_N100B9_N1001C_N10001">
+                <cmd>On the Fault Management page, select the <uicontrol>Customer Logs</uicontrol>
+                    tab.</cmd>
+                <info>
+                    <p>The logs are displayed in chronological order, beginning with
+                        the most recent.</p>
+                    <fig id="fig_cyy_xqx_bs">
+                        <image href="jow1432054510610.image" id="image_ixf_drx_bs" width="4in">
+                            <alt>TiS Customer Logs</alt>
+                        </image>
+                    </fig>
+                    <p>By default, 20 items are shown per page. To see older items,
+                        scroll to the bottom of the list and click <uicontrol>Next</uicontrol>. You can change the number of items displayed per page
+                        using the <uicontrol>Default Limit</uicontrol> drop-down
+                        list.</p>
+                    <p>You can also filter the items using the <uicontrol>Filter</uicontrol> text box. Type the filter string, and
+                        then click the magnifying-glass icon. The results include only those logs
+                        that contain the string in the Customer Log Detail.</p>
+                </info>
+            </step>
+            <step id="step_N10113_N100B9_N1001C_N10001">
+                <cmd>To see the Customer Log Detail, click the <uicontrol>Timestamp</uicontrol>
+                    identifier for the log.</cmd>
+                <info>
+                    <fig id="fig_hs4_gsx_bs">
+                        <image href="jow1432055065375.image" id="image_fq4_msx_bs" width="3in">
+                            <alt>TiS Customer Log Detail</alt>
+                        </image>
+                    </fig>
+                </info>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

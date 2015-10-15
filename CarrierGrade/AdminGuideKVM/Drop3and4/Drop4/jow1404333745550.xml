@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333745550" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title ixia_locid="1">DiffServ-Based Priority Queuing and Scheduling</title>
+    <shortdesc ixia_locid="2">Differentiated Services, or DiffServ, is a packet-based traffic
+        management mechanism that allows end devices to specify an expected per-hop behavior (PHB)
+        from upstream switches and routers when handling their traffic during overload conditions. </shortdesc>
+    <prolog>
+        <author></author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="8">DiffServ marking and architecture are IEEE specifications, IEEE RFC 2474 and RFC
+            2475.</p>
+        <p ixia_locid="4">Support for DiffServ is implemented on the AVS for all input and output
+            ports, on all attached tenant networks. On each port, it uses eight queues associated
+            with the CS0 to CS7 DiffServ class selectors, which are processed by a round-robin
+            scheduler with weights of 1, 1, 2, 2, 4, 8, 16, and 32. Overflow traffic is tail-drop
+            discarded on each queue. Guest applications in the HP Helion OpenStack Carrier Grade cluster can set a
+            Differentiated Services Code Point (DSCP) value in the Differentiated Service (DS) field
+            of the IP header to mark the desired upstream PHB.</p>
+        <p ixia_locid="7">On ingress, a packet being processed to be sent to the VM is directed to
+            the appropriate DiffServ output queue. On overflow, that is, if the virtual machine
+            cannot keep up with the incoming traffic rate, lower priority packets are discarded
+            first.</p>
+        <p ixia_locid="5">On egress, a packet sent from the VM to the AVS is first enqueued into the appropriate DiffServ
+   input queue according to the specified DSCP value, the CS0 queue being the default. On overload,
+   that is, if the AVS cannot keep up with the incoming traffic, lower priority packets are
+   discarded first; in this case, you should consider re-engineering the AVS, possibly assigning it
+   more processing cores. Once serviced by the DiffServ class scheduler, the packet is processed
+   according to the QoS policy in place for the tenant network, as described in <xref href="jow1404333744498.xml" ixia_locid="6"/>. </p>
+    </conbody>
+</concept-wr>

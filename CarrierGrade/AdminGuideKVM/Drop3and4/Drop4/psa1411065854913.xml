@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1411065854913" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+
+ -->
+ <title ixia_locid="1">Cinder Volume Backups</title>
+ <shortdesc ixia_locid="2">Cinder volume backups are executed selectively, one volume at a time.
+  They can include virtual disk images and any other Cinder volumes available in the
+  system.</shortdesc>
+ <prolog>
+  <author></author>
+ </prolog>
+ <conbody>
+  <p ixia_locid="4">Consider the following recommendations when executing Cinder volume backups.</p>
+  <dl>
+   <dlentry ixia_locid="5">
+    <dt ixia_locid="6">Aim at backing up an idle system</dt>
+    <dd ixia_locid="7">
+     <p ixia_locid="28">In an idle system, there are no running virtual machines. All VMs are either
+      shut down or terminated. This is the ideal state for ensuring that the current content of all
+      volumes is captured for replication at the next restore operation. Volumes reported as <i ixia_locid="30">available</i> are not associated with any VMs, while volumes reported as <i ixia_locid="9">in-use</i> are associated only with shut-down VMs, and are not being actively
+      modified.</p>
+     <p ixia_locid="10">In a non-idle system, at least one VM is running. Volumes reported as <i ixia_locid="11">in-use</i> may be subject to write operations. In this case, you can create
+      snapshots and back them up, but there is a risk of changes after the snapshot that are not
+      captured.</p>
+     <p ixia_locid="12">Instructions to back up Cinder volumes in <i ixia_locid="13">available</i>
+      and <i ixia_locid="14">in-use</i> states are provided in the following sections.</p>
+    </dd>
+   </dlentry>
+   <dlentry ixia_locid="15">
+    <dt ixia_locid="16">Back up one volume at a time</dt>
+    <dd ixia_locid="17">
+     <p ixia_locid="18">Backing up Cinder volumes can be a time- and space- consuming process, as
+      determined by the size of the volumes themselves. Having two or more backup processes running
+      simultaneously is likely to result in a severe performance hit to the controller and the
+      running instances. This not only slows the normal system operations, but also makes the backup
+      operations themselves take much longer.</p>
+    </dd>
+   </dlentry>
+   <dlentry ixia_locid="19">
+    <dt ixia_locid="20">Clean up as soon as possible</dt>
+    <dd ixia_locid="21">
+     <p ixia_locid="22">Backup files for Cinder volumes can fill up the <filepath ixia_locid="23">/opt/backups</filepath> partition
+      on the controller very quickly. This is likely to cause further backup operations to fail in
+      the middle of the execution. Therefore, as soon as a Cinder volume is backed up, and its
+      backup files transferred and securely stored elsewhere:</p>
+     <ul id="ul_jws_dpz_lp">
+      <li ixia_locid="24">
+       <p ixia_locid="25">remove any snapshots you may have created during the backup process</p>
+      </li>
+      <li ixia_locid="26">
+       <p ixia_locid="27">remove the backup files themselves</p>
+      </li>
+     </ul>
+    </dd>
+   </dlentry>
+  </dl>
+ </conbody>
+</concept-wr>

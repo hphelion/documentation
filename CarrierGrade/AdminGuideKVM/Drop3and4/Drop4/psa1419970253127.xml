@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Reference//EN" "reference-wr.dtd">
+<reference-wr domains="(topic reference reference-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1419970253127" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+    
+-->
+  <title>System Alarms CLI Commands</title>
+  <shortdesc>You can use the CLI to find information about currently active and previously triggered
+    system alarms.</shortdesc>
+  <prolog><author/>
+    
+  </prolog>
+  <refbody>
+    <section id="section_N1001F_N1001C_N10001">
+      <p>The following commands are used to interact with the alarms subsystem: <cmdname>system
+          alarm-list</cmdname>, <cmdname>system alarm-show</cmdname>, <cmdname>system
+          alarm-delete</cmdname>, and <cmdname>system alarm-history-list</cmdname>. Before using the
+        commands you must log in to the active controller as the Keystone
+          <nameliteral>admin</nameliteral> user. See <xref href="jow1404333563834.xml"/> for
+        details.</p>
+    </section>
+    <section id="section_N10040_N1001C_N10001">
+      <title>system alarm-list</title>
+      <p>The command <cmdname>system alarm-list</cmdname> lists
+        currently active alarms, as illustrated below (the output is split in two pieces for
+        presentation purposes only):</p>
+      <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system alarm-list</userinput>
+<systemoutput>
++--------------+----------+--------------------+----------+---------------
+| UUID         | Alarm ID | Entity Instance ID | Severity |  Time Stamp   
++--------------+----------+--------------------+----------+---------------
+| 4ab5698a-... | 100.104  | host=controller-0  | critical |  2014-06-25...
++--------------+----------+--------------------+----------+---------------
+
+--+----------------------------------------------------------+
+  | Reason Text                                              |
+--+----------------------------------------------------------+
+  | /dev/sda3 severity critical threshold set (0.00 MB left) |
+--+----------------------------------------------------------+
+</systemoutput></codeblock>
+      <p>This example lists a single critical alarm on host <nameliteral>controller-0</nameliteral> regarding running out of space on disk unit
+          <filepath>/dev/sda3</filepath>. Each alarm object is listed with a unique
+        UUID which you can use to obtain additional information.</p>
+      <p>Specific subsets of alarms, or a particular alarm, can be listed using one
+        of the following <option>--query</option> command filters:</p>
+      <simpletable frame="all" id="simpletable_zc2_253_bp" relcolwidth="0.6* 1.0*">
+        <sthead>
+          <stentry>
+            <p>Query Filter</p>
+          </stentry>
+          <stentry>
+            <p>Comment</p>
+          </stentry>
+        </sthead>
+        <strow>
+          <stentry>
+            <p><cmdname>uuid=&lt;uuid&gt;</cmdname></p>
+          </stentry>
+          <stentry>
+            <p>Query alarm by UUID, for example:</p>
+            <codeblock><systemoutput>$ </systemoutput><userinput>system alarm-list --query uuid=4ab5698a-19cb...</userinput></codeblock>
+          </stentry>
+        </strow>
+        <strow>
+          <stentry>
+            <p><cmdname>alarm_id=&lt;alarm id&gt;</cmdname></p>
+          </stentry>
+          <stentry>
+            <p>Query alarms by alarm ID, for example:</p>
+            <codeblock><systemoutput>$ </systemoutput><userinput>system alarm-list --query alarm_id=100.104</userinput></codeblock>
+          </stentry>
+        </strow>
+        <strow>
+          <stentry>
+            <p><cmdname>alarm_type=&lt;type&gt;</cmdname></p>
+          </stentry>
+          <stentry>
+            <p>Query alarms by type, for example:</p>
+            <codeblock><systemoutput>$ </systemoutput><userinput>system alarm-list --query \
+alarm_type=operational-violation</userinput></codeblock>
+          </stentry>
+        </strow>
+        <strow>
+          <stentry>
+            <p><cmdname>entity_type_id=&lt;type id&gt;</cmdname></p>
+          </stentry>
+          <stentry>
+            <p>Query alarms by entity type ID, for example:</p>
+            <codeblock><systemoutput>$ </systemoutput><userinput>system alarm-list --query \
+entity_type_id=system.host </userinput></codeblock>
+          </stentry>
+        </strow>
+        <strow>
+          <stentry>
+            <p><cmdname>entity_instance_id=&lt;instance
+                id&gt;</cmdname></p>
+          </stentry>
+          <stentry>
+            <p>Query alarms by entity instance id, for example:</p>
+            <codeblock><systemoutput>$ </systemoutput><userinput>system alarm-list --query \
+entity_instance_id=host=compute-0</userinput></codeblock>
+          </stentry>
+        </strow>
+        <strow>
+          <stentry>
+            <p><cmdname>severity=&lt;severity&gt;</cmdname></p>
+          </stentry>
+          <stentry>
+            <p>Query alarms by severity type, for example:</p>
+            <codeblock><systemoutput>$ </systemoutput><userinput>system alarm-list --query severity=warning</userinput></codeblock>
+            <p>The valid severity types are <term>critical</term>,
+                <term>major</term>, <term>minor</term>, and <term>warning</term>.</p>
+          </stentry>
+        </strow>
+      </simpletable>
+      <p>Query command filters can be combined into a single expression separated by semicolons, as
+        illustrated in the following example:</p>
+      <codeblock><systemoutput>$ </systemoutput><userinput>system alarm-list -q 'alarm_id=400.002;entity_instance_id=service_domain=controller.service_group=directory-services'</userinput></codeblock>
+    </section>
+    <section id="section_N101AC_N1001C_N10001">
+      <title>system alarm-show</title>
+      <p>The command <cmdname>system alarm-show</cmdname> presents
+        additional information about a currently active alarm, as illustrated below:</p>
+      <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system alarm-show 4ab5698a-19cb-4c17-bd63-302173fef62c </userinput>
+<systemoutput>
++------------------------+-------------------------------------------------+
+| Property               | Value                                           |
++------------------------+-------------------------------------------------+
+| alarm_id               | 100.104                                         |
+| alarm_state            | set                                             |
+| alarm_type             | operational-violation                           |
+| entity_instance_id     | system=hp380-1_4.host=controller-0              |
+| entity_type_id         | system.host                                     |
+| probable_cause         | threshold-crossed                               |
+| proposed_repair_action | /dev/sda3 check usage                           |
+| reason_text            | /dev/sda3 critical threshold set (0.00 MB left) |
+| service_affecting      | False                                           |
+| severity               | critical                                        |
+| suppression            | True                                            |
+| timestamp              | 2014-06-25T16:58:57.324613                      |
+| uuid                   | 4ab5698a-19cb-4c17-bd63-302173fef62c            |
++------------------------+-------------------------------------------------+</systemoutput></codeblock>
+      <p>The pair of attributes <nameliteral>(alarm_id,
+          entity_instance_id)</nameliteral> uniquely identifies an active alarm:</p>
+      <dl>
+        <dlentry>
+          <dt><nameliteral>alarm_id</nameliteral></dt>
+          <dd>
+            <p>An ID identifying the particular alarm condition. Note that there are
+              some alarm conditions, such as <i>administratively locked</i> , that
+              can be raised by more than one entity-instance-id.</p>
+          </dd>
+        </dlentry>
+        <dlentry>
+          <dt><nameliteral>entity_instance_id</nameliteral></dt>
+          <dd>
+            <p>Type and instance information of the object raising the alarm. A
+              period-separated list of (key, value) pairs, representing the containment structure of
+              the overall entity instance. This structure is used for processing hierarchical
+              clearing of alarms.</p>
+          </dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section id="section_N10211_N1001C_N10001">
+      <title>system alarm-delete</title>
+      <p>The command <cmdname>system alarm-delete</cmdname> is
+        used to manually delete an alarm that remains active for no apparent reason, which may
+        happen in rare conditions. Alarms usually clear automatically when the trigger condition is
+        corrected. Use this command as illustrated below:</p>
+      <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system alarm-delete 4ab5698a-19cb-4c17-bd63-302173fef62c</userinput></codeblock>
+      <p>Manually deleting an alarm should not be done unless it is absolutely
+        clear that there is no reason for the alarm to be active.</p>
+    </section>
+    <section id="section_N10235_N1001C_N10001">
+      <title>system alarm-history-list</title>
+      <p>The command <cmdname>system alarm-history-list</cmdname>
+        is used to query the historical alarm table. It operates on an alarm ring buffer of up to
+        2000 entries used by the alarms subsystem to sequentially store active alarm change events.
+        In its simplest form, without any parameters, the command returns a list of the 20 most
+        recent change events in reverse chronological order, the most recent event first. Use the
+          <option>-l</option> option to specify the size of the list. The following
+        command lists the 30 more recent change events:</p>
+      <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system alarm-history-list -l 30</userinput></codeblock>
+      <p>The console output is automatically paginated when the list size is greater than 20. Press
+        the <userinput>Enter</userinput> key to go the next page, or press <userinput>q</userinput>
+        to quit.</p>
+      <p>Specific alarms, or alarm subsets, in the ring buffer can be listed using
+        the <option>--query</option> command filters accepted by the <cmdname>system alarms-list</cmdname> command. For example, use the following
+        command to query alarm events in the ring buffer by type ID:</p>
+      <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system alarm-history-list --query alarm_id=100.104</userinput></codeblock>
+      <p>Two additional command filters are available to restrict the command
+        output to change events in a particular time slot, as follows:</p>
+      <simpletable frame="all" id="simpletable_zwj_nw5_4q" relcolwidth="0.6* 1.0*">
+        <sthead>
+          <stentry>
+            <p>Query Filter</p>
+          </stentry>
+          <stentry>
+            <p>Comment</p>
+          </stentry>
+        </sthead>
+        <strow>
+          <stentry>
+            <p><cmdname>start=&lt;time_stamp&gt;</cmdname></p>
+          </stentry>
+          <stentry>
+            <p>Query change events that occurred at or after a particular time, for
+              example:</p>
+            <codeblock><systemoutput>$ </systemoutput><userinput>system alarm-history-list --query \
+start=2014-11-26T18:58:53</userinput></codeblock>
+          </stentry>
+        </strow>
+        <strow>
+          <stentry>
+            <p><cmdname>end=&lt;time_stamp&gt;</cmdname></p>
+          </stentry>
+          <stentry>
+            <p>Query change events that occurred at or before a particular time,
+              for example:</p>
+            <codeblock><systemoutput>$ </systemoutput><userinput>system alarm-history-list --query \
+end=﻿2014-11-26T18:59:53</userinput></codeblock>
+          </stentry>
+        </strow>
+      </simpletable>
+      <p>Time stamps must be entered in a suitable ISO 8601 date and time format. Some examples are:
+          <userinput>2014</userinput>, <userinput>2014-11-26</userinput>,
+          <userinput>2014-11-28T16:39</userinput>, and
+          <userinput>2014-11-28T16:42:35.647157</userinput>.</p>
+      <p>Query command filters can be combined into a single expression separated by semicolons, as
+        illustrated in the following example:</p>
+      <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system alarm-history-list -l 10 \
+-q 'start=2014-11-26T18:58:53;end=2014-11-26T18:59:53'</userinput></codeblock>
+    </section>
+  </refbody>
+</reference-wr>

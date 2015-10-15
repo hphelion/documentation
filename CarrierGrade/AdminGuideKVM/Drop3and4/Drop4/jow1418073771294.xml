@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1418073771294" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title>The App Scale Helper Script</title>
+ <shortdesc>The App Scale Helper script supports resource scaling
+    customizations.</shortdesc>
+ <prolog><author/>
+  <author/>
+ </prolog>
+ <conbody>
+  <p>This is an optional script running on the guest. If present, it can modify
+            aspects of scaling behavior. For example, it can control which CPU is taken offline
+            during a scale-down operation, overriding the default selection. </p>
+        <p>It can also call other scripts or programs. You can use this to coordinate
+            or manage processing work for the vCPUs as you scale them.</p>
+  <p>For more about the App Scale Helper script, refer to the documentation for the
+            HP Helion OpenStack Carrier Grade Software Development Kit.</p>
+ </conbody>
+</concept-wr>

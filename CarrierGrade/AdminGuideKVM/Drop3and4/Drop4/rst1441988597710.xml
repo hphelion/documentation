@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="rst1441988597710" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Specifying Live Migration Maximum Downtime</title>
+    <shortdesc><draft-comment author="rstone">Topic added for
+            US60539</draft-comment>You can change the maximum amount of  downtime to tolerate during
+        a live migration. </shortdesc>
+    <prolog><author/>
+        <author>Ron Stone</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p>If this extra spec is not added, then the default 500 milliseconds
+                is used. The minimum timer value is 100 milliseconds.</p>
+            <note id="note_N10033_N10029_N10026_N10001">
+                <p>Downtime during a live migration is the period during which the
+                    VM will be suspended in order to journal the final increment of data between
+                    source VM instance and destination VM instance, resulting in a temporary service
+                    interruption. Adjust this timer to avoid excessive down times that may violate
+                    service level agreements. When this threshold cannot be achieved within the
+                        <varname>live_migration_timeout</varname>, the migration is
+                    aborted. For more information about <varname>live_migration_timeout</varname>, see <xref href="rst1441822551049.xml"/>.</p>
+            </note>
+            <p>The live migration process will actually attempt to achieve a much smaller downtime
+                than specified by this parameter by starting with a lower value approximately 1/10th
+                of specified value, and increasing the downtime target and every 75 seconds for a
+                total of 10 attempts. Setting the Live Migration Maximum Timeout, as described in
+                    <xref href="rst1441822551049.xml"/>, lower than 750 seconds results in the
+                actual maximum tolerated live migration downtime being shorter than specified by
+                this parameter. </p>
+            <p>Live migration maximum downtime can be configured as an extra spec
+                on a flavor, such that any VM Instance created with the flavor will inherit the
+                specified value. Alternatively, it can be configured as meta-data on an image, such
+                that any VM instance created based on this image will have the specified value. If
+                live migration maximum downtime is set in both the flavor and the image, the value
+                from the flavor overrides the value from the image.</p>
+            <p>To set this option using the web administration interface:</p>
+            <ul id="ul_cy3_byy_lt">
+                <li>
+                    <p>As <term>admin</term>, use the <uicontrol>Live Migration Max Downtime</uicontrol> selection in the <uicontrol>Create Flavor Extra Spec</uicontrol> drop-down menu. To
+                        access this menu, see <xref href="jow1429538642910.xml"/>.</p>
+                </li>
+            </ul>
+            <p>or</p>
+            <ul id="ul_qxq_hyy_lt">
+                <li>
+                    <p>As either <term>admin</term> or a tenant,
+                        select <menucascade>
+                            <uicontrol>System</uicontrol>
+                            <uicontrol>Images</uicontrol>
+                            <uicontrol>Edit Image</uicontrol>
+                            <uicontrol>Update Metadata</uicontrol>
+                        </menucascade> for the desired images and add an entry with:</p>
+                    <codeblock>hw_wrs_live_migration_max_downtime=<varname>milliseconds</varname></codeblock>
+                </li>
+            </ul>
+        </context>
+        <steps id="steps_sf1_1wb_3t">
+            <step id="step_N10035_N10032_N1001C_N10001">
+                <cmd>Set the timer from the command line:</cmd>
+                <info>
+                    <p>The following examples set the timeout to 350
+                        milliseconds.</p>
+                </info>
+                <choices id="choices_iks_2wn_ht">
+                    <choice>
+                        <p>As <term>admin</term>, add an extra spec to a
+                            flavor:</p>
+                        <codeblock><systemoutput>~(keystone)admin)$ </systemoutput><userinput>nova flavor-key <varname>flavorName</varname> set hw:wrs:live_migration_max_downtime=350</userinput></codeblock>
+                    </choice>
+                    <choice>
+                        <p>As <term>admin</term> or a tenant, update the metadata
+                            of an image:</p>
+                        <codeblock><systemoutput>~(keystone)admin)$ </systemoutput><userinput>glance image-update --property hw_wrs_live_migration_max_downtime=350 <varname>imageName</varname></userinput></codeblock>
+                    </choice>
+                </choices>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

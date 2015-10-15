@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD IXIA DITA Composite//EN" "../../system/dtd/ixia/IxiaDitabase.dtd">
+<referable-content id="jow1404333809730" xml:lang="en-us">
+    <!-- Modification History
+        
+-->
+    <title ixia_locid="1">Conref steps: Supplying environment parameters when creating a heat stack</title>
+    <shortdesc ixia_locid="2"/>
+    <prolog>
+        <author ixia_locid="3">Jim Owens</author>
+    </prolog>
+    <rcbody>
+        <steps id="steps_N10021_N1001E_N10001">
+            <step id="step_N10021_N1001E_N1001B_N10001" ixia_locid="4">
+                <cmd id="locate-flavor" ixia_locid="5">On the <menucascade ixia_locid="6"><uicontrol ixia_locid="7">Admin</uicontrol><uicontrol ixia_locid="8">System Panel</uicontrol><uicontrol ixia_locid="9">Flavors</uicontrol></menucascade> page, locate a <uicontrol ixia_locid="10">Flavor Name</uicontrol> (a resource
+                    profile).</cmd>
+            </step>
+            <step id="step_N1003B_N1001E_N1001B_N10001" ixia_locid="11">
+                <cmd id="locate-keypair" ixia_locid="12">On the <menucascade ixia_locid="13">
+                        <uicontrol ixia_locid="14">Project</uicontrol>
+                        <uicontrol ixia_locid="15">Compute</uicontrol>
+                        <uicontrol ixia_locid="16">Access &amp; Security</uicontrol>
+                    </menucascade> page, locate a <uicontrol ixia_locid="17">Keypair
+                        Name</uicontrol> to provide secure access to the stack.</cmd>
+            </step>
+            <step id="step_N10055_N1001E_N1001B_N10001" ixia_locid="18">
+                <cmd id="locate-image" ixia_locid="19">On the <menucascade ixia_locid="20">
+                        <uicontrol ixia_locid="21">Admin</uicontrol>
+                        <uicontrol ixia_locid="22">System Panel</uicontrol>
+                        <uicontrol ixia_locid="23">Images</uicontrol>
+                    </menucascade> page, locate an <uicontrol ixia_locid="24">Image Name</uicontrol>
+                    to specify the VM image used by the stack.</cmd>
+            </step>
+            <step id="step_N1006F_N1001E_N1001B_N10001" ixia_locid="33">
+                <cmd id="locate-tenant" ixia_locid="35">On the <menucascade ixia_locid="37">
+                        <uicontrol ixia_locid="39">Admin</uicontrol>
+                        <uicontrol ixia_locid="41">System Panel</uicontrol>
+                        <uicontrol ixia_locid="43">Networks</uicontrol>
+                    </menucascade> page, click the appropriate network <uicontrol ixia_locid="31">Name</uicontrol> to open the Network Overview page, and then obtain the
+                    network <uicontrol ixia_locid="45">ID</uicontrol>. </cmd>
+            </step>
+            <step id="step_N100B3_N10021_N1001E_N10001" ixia_locid="34">
+                <cmd id="locate-user" ixia_locid="36">On the <menucascade ixia_locid="38">
+                        <uicontrol ixia_locid="40">Admin</uicontrol>
+                        <uicontrol ixia_locid="42">Identity Panel</uicontrol>
+                        <uicontrol ixia_locid="44">Users</uicontrol>
+                    </menucascade> page, locate the <uicontrol ixia_locid="46">User Name</uicontrol>
+                    for the tenant where the VM will be launched.</cmd>
+            </step>            
+        </steps>
+    </rcbody>
+</referable-content>

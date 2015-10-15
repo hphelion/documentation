@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333663095" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title ixia_locid="1">Virtual Machine Flavors</title>
+    <shortdesc ixia_locid="2">A flavor is a list of attributes applied to a virtual machine when a
+        new instance is created. It specifies resources to be allocated by the system, such as size
+        of RAM, number of cores, storage resources, and so on.</shortdesc>
+    <prolog>
+        <author ixia_locid="246">Jim Owens</author>
+        <author></author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="247">You can create and edit flavors using the <wintitle ixia_locid="249">Flavors</wintitle>
+            page of the web administration interface. To access this page, open the
+                <uicontrol ixia_locid="250">Admin</uicontrol> menu, expand the <uicontrol ixia_locid="251">System</uicontrol> section,
+            and then select <uicontrol ixia_locid="252">Flavors</uicontrol>.</p>
+        <ul id="ul_iln_ycv_tr">
+            <li ixia_locid="267">
+                <p ixia_locid="248">To create a flavor, click the <uicontrol ixia_locid="253">Create
+                        Flavor</uicontrol> button. The <wintitle ixia_locid="5">Create
+                        Flavor</wintitle> window appears, as illustrated below:</p>
+                <fig id="fig_N10027_N1001C_N10001" ixia_locid="6">
+                    <image href="jow1404333661555.image" id="image_tl3_33x_zn" ixia_locid="7" placement="inline"/>
+                </fig>
+                <p ixia_locid="254">The <wintitle ixia_locid="255">Create Flavor</wintitle> window
+                    has two tabs.</p>
+                <dl>
+                    <dlentry ixia_locid="256">
+                        <dt ixia_locid="257"><uicontrol ixia_locid="258">Flavor
+                                Information</uicontrol></dt>
+                        <dd ixia_locid="259">
+                            <p ixia_locid="260">Defines basic information for the flavor.</p>
+                            <dl>
+                                <dlentry ixia_locid="9">
+                                    <dt ixia_locid="10">Name</dt>
+                                    <dd ixia_locid="11">
+                                        <p ixia_locid="12">The name to be associated with the
+                                            flavor.</p>
+                                    </dd>
+                                </dlentry>
+                                <dlentry ixia_locid="13">
+                                    <dt ixia_locid="14">ID</dt>
+                                    <dd ixia_locid="15">
+                                        <p ixia_locid="16">The object ID to associate with the
+                                            flavor. In most situations you should leave the default
+                                            value of <nameliteral ixia_locid="17">auto</nameliteral>
+                                            for the system to auto-generate a unique ID.</p>
+                                    </dd>
+                                </dlentry>
+                                <dlentry ixia_locid="20">
+                                    <dt ixia_locid="21">VCPUs</dt>
+                                    <dd ixia_locid="22">
+                                        <p ixia_locid="23">Number of virtual CPUs to be allocated to
+                                            the virtual machine.</p>
+                                    </dd>
+                                </dlentry>
+                                <dlentry ixia_locid="57">
+                                    <dt ixia_locid="58">RAM MB</dt>
+                                    <dd ixia_locid="184">
+                                        <p ixia_locid="186">Memory, in megabytes, to be allocated to
+                                            the virtual machine.</p>
+                                    </dd>
+                                </dlentry>
+                                <dlentry ixia_locid="61">
+                                    <dt ixia_locid="62">Root Disk GB</dt>
+                                    <dd ixia_locid="63">
+                                        <p ixia_locid="64">Specifies the virtual root disk size in
+                                            gigabytes. This is an ephemeral disk to which the base
+                                            image is copied. Use the value <nameliteral ixia_locid="242">0</nameliteral> to set the
+                                            ephemeral disk size equal to the base image size. This
+                                            value is ignored when booting from a Cinder volume.</p>
+                                        <note id="note_N10144_N1001F_N10001" ixia_locid="103">
+                                            <p ixia_locid="104"><draft-comment author="jowens" ixia_locid="271">CGTS-2832
+                                                  updated.</draft-comment>Booting the VM from an
+                                                ephemeral root disk is supported only if local
+                                                storage is enabled for the flavor.  For more
+                                                information, see <xref href="jow1426181040008.xml" ixia_locid="280"/>.</p>
+                                        </note>
+                                    </dd>
+                                </dlentry>
+                                <dlentry ixia_locid="65">
+                                    <dt ixia_locid="66">Ephemeral Disk GB</dt>
+                                    <dd ixia_locid="67">
+                                        <p ixia_locid="68">Specifies the size, in gigabytes, of a
+                                            secondary ephemeral data disk. This is an empty,
+                                            unformatted disk that exists only for the life time of
+                                            the instance.</p>
+                                        <note id="note_N1011F_N10116_N1010D_N10086_N1007D_N10071_N1006E_N10044_N10040_N10024_N10001" ixia_locid="272">
+                                            <p ixia_locid="273"><draft-comment author="jowens" ixia_locid="274">CGTS-2832
+                                                  added</draft-comment>To use non-zero ephemeral
+                                                disk space, you must enable local storage for the
+                                                flavor. For more information, see  <xref href="jow1426181040008.xml" ixia_locid="275"/>.</p>
+                                        </note>
+                                    </dd>
+                                </dlentry>
+                                <dlentry ixia_locid="69">
+                                    <dt ixia_locid="243">Swap Disk MB</dt>
+                                    <dd ixia_locid="245">
+                                        <p ixia_locid="72"><draft-comment author="jowens" ixia_locid="276">CGTS-2832
+                                                added</draft-comment>Ephemeral swap space, in
+                                            megabytes, to be allocated to the instance.</p>
+                                        <note id="note_N1014C_N1013D_N10134_N10086_N1007D_N10071_N1006E_N10044_N10040_N10024_N10001" ixia_locid="277">
+                                            <p ixia_locid="278">To use non-zero ephemeral disk space, you must enable
+                                                local storage for the flavor. For more information,
+                                                see  <xref href="jow1426181040008.xml" ixia_locid="279"/>.</p>
+                                        </note>
+                                    </dd>
+                                </dlentry>
+                            </dl>
+                        </dd>
+                    </dlentry>
+                    <dlentry ixia_locid="261">
+                        <dt ixia_locid="262"><uicontrol ixia_locid="269">Flavor Access</uicontrol></dt>
+                        <dd ixia_locid="263">
+                            <p ixia_locid="264">Controls which projects can see and use the flavor. </p>
+                        </dd>
+                    </dlentry>
+                </dl>
+            </li>
+            <li ixia_locid="268">
+                <p ixia_locid="8">To edit an existing flavor, click its name in the <nameliteral ixia_locid="265">Flavor Name</nameliteral> column. For more information
+                    about editing flavors, see <xref href="jow1429538642910.xml" ixia_locid="266"/>.</p>
+            </li>
+        </ul>
+    </conbody>
+</concept-wr>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="rst1442868407518" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Changing the MTU on a small-footprint System using the CLI</title>
+    <shortdesc>
+        <draft-comment author="rstone">Topic created for CGTS-1944</draft-comment>
+    </shortdesc>
+    <prolog><author/>
+        <author>Ron Stone</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N10026_N10023_N10001">
+            <p>The following steps illustrate how to change the MTU for an interface
+                for an infrastructure network. This example uses eth6 as the interface to be
+                changed.</p>
+        </context>
+        <steps>
+            <step id="step_N10036_N10033_N10023_N10001">
+                <cmd>Lock controller-1.</cmd>
+                <stepxmp>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-lock controller-1</userinput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N1004C_N10033_N10023_N10001">
+                <cmd>Modify the MTU of an interface on controller-1.</cmd>
+                <stepxmp>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-if-modify controller-1 eth6 --imtu 1600</userinput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N10063_N10033_N10023_N10001">
+                <cmd>Unlock controller-1.</cmd>
+                <stepxmp>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-unlock controller-1</userinput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N10079_N10033_N10023_N10001">
+                <cmd>Swact the host to controller-1. </cmd>
+                <stepxmp>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-swact controller-1</userinput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N1008F_N10033_N10023_N10001">
+                <cmd>Lock controller-0.</cmd>
+                <stepxmp>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-lock controller-0</userinput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N100A5_N10033_N10023_N10001">
+                <cmd>Modify the MTU of the interface on controller-0. </cmd>
+                <stepxmp>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-if-modify controller-0 eth6 --imtu 1600</userinput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N100BC_N10033_N10023_N10001">
+                <cmd>Unlock controller-0. </cmd>
+                <stepxmp>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-unlock controller-0</userinput></codeblock>
+                </stepxmp>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

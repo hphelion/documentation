@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content id="jow1404766496848" xml:lang="en-us">
+<title ixia_locid="89">Conref step: CGCS set up Admin environment (source /etc/nova/openrc)</title>
+<rcbody>
+        <step id="source-nova-openrc" ixia_locid="83">
+            <cmd ixia_locid="84">Log in to the active controller as the Keystone <nameliteral ixia_locid="90">admin</nameliteral> user.</cmd>
+            <!-- remove example, per Pedro's guidance -->
+            <!-- stepxmp ixia_locid="85">
+                <codeblock ixia_locid="86"><systemoutput ixia_locid="87">$ </systemoutput><userinput ixia_locid="88">source /etc/nova/openrc</userinput></codeblock>
+            </stepxmp -->            
+        </step>
+    </rcbody>
+</referable-content>

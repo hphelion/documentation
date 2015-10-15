@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1406727863674" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+
+ -->
+ <title>The Board Management Network</title>
+ <shortdesc>The board management network is an optional network used for hardware
+  management facilities.</shortdesc>
+ <prolog><author/>
+  
+ </prolog>
+ <conbody>
+  <draft-comment author="rstone">US64066 adds Quanta; US64069 mention
+   sensors</draft-comment>
+  <p>This network provides access to iLO3, iLO4 or Quanta Integrated Lights Out
+   board management modules optionally installed in the hosts. These modules provide support for
+   remote reset and power control of the hosts, and in some cases for hardware sensor monitoring and
+   reporting.</p>
+  <p>The board management network can be implemented so that it is accessible
+   externally using the OAM network, or only accessible internally to the hosts in the cluster. This
+   choice is made at system installation, during the configuration controller script. For details,
+   see the <cite>HP Helion OpenStack Carrier Grade Software Installation Guide: The Controller
+    Configuration Script</cite>.</p>
+  <section id="section_N10036_N10024_N10001">
+   <title>Configuration for External Access</title>
+   <p>For external access, do not configure a board management network during the
+    controller configuration script (press <userinput>n</userinput> when prompted). </p>
+   <p>After completing the script, you must also do the following:</p>
+   <ul id="ul_kw4_qpp_ds">
+    <li>
+     <p>Configure each iLO module to use static IP addressing.</p>
+    </li>
+    <li>
+     <p>Peform additional host and module provisioning, as described in <xref format="dita" href="#jow1406727863674/module_and_host_provisioning"/>.</p>
+    </li>
+    <li>
+     <p>Ensure that the OAM Default Gateway specified during controller
+      configuration has access to the board management network.</p>
+    </li>
+   </ul>
+  </section>
+  <section id="section_N1006F_N10024_N10001">
+   <title>Configuration for Internal Access</title>
+   <p>For internal access, configure a board management network during the
+    controller configuration script (press <userinput>y</userinput> when prompted,
+    and then specify a VLAN ID and a subnet). This configures a VLAN ID on the controller management
+    interface for use with a board management network. To complete the VLAN, you must connect the
+    modules to VLAN-tagged ports on an internal L2 switch. The modules are assigned IP addresses
+    from the specified subnet.</p>
+   <fig id="fig_lwg_xlp_ds">
+    <title>Internal-access board management network</title>
+    <image href="psa1408575952625.image" id="image_mwg_xlp_ds" width="6in">
+     <alt>board management network</alt>
+    </image>
+   </fig>
+   <p>The figure above illustrates how the board management network operates when
+    configured for internal access. Compute nodes connect using iLO modules, while
+    controller nodes use the management port in tagged mode. As indicated in the figure, the
+    controller nodes can optionally attach using their own iLO modules, if available.</p>
+   <ul id="ul_n5g_xlp_ds">
+    <li>
+     <p>On the HP Helion OpenStack Carrier Grade networks:</p>
+     <ul id="ul_x5g_xlp_ds">
+      <li>
+       <p>Designate a VLAN ID for use by the board management network.</p>
+      </li>
+      <li>
+       <p>Configure this VLAN ID as part of the software installation process.</p>
+      </li>
+      <li>
+       <p>Ensure that the internal management network is operational and that all
+        participant hosts are attached to it.</p>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <p>On the HP Helion OpenStack Carrier Grade internal L2 switch:</p>
+     <ul id="ul_y5g_xlp_ds">
+      <li>
+       <p>Configure a VLAN using the designated VLAN ID for the board management
+        network.</p>
+      </li>
+      <li>
+       <p>Add each of the ports used to connect an iLO module to the VLAN.</p>
+      </li>
+      <li>
+       <p>Add the ports used to connect the controllers to the internal management
+        network to the VLAN. You must ensure that these ports are tagged ports for this VLAN, that
+        is, that outgoing board management traffic (toward the controllers) uses ﻿IEEE 802.1Q
+        tagging. Other management traffic on this port is untagged.</p>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <p>Configure each iLO module to use DHCP.</p>
+    </li>
+    <li>
+     <p>Peform additional host and module provisioning, as described in <xref format="dita" href="#jow1406727863674/module_and_host_provisioning"/>.</p>
+    </li>
+   </ul>
+   <p>For details on configuring or provisioning switch ports or iLO modules,
+    consult the user documentation supplied with the equipment.</p>
+  </section>
+  <section id="module_and_host_provisioning">
+   <title>Host and iLO Module Provisioning for a Board Management Network</title>
+   <p>For internal or external access, you must perform the following additional
+    provisioning:</p>
+   <ul id="ul_tmg_cmp_ds">
+    <li>
+     <p>Provision each iLO module with a username and password for secure
+      access.</p>
+    </li>
+    <li>
+     <p>Provision each host with the MAC address of the attached iLO module. This is
+      required so that the system can associate the module's assigned IP address with the correct
+      host.</p>
+    </li>
+    <li>
+     <p>For external-access configurations only, provision each host with the IP address of the
+      attached iLO module.</p>
+    </li>
+    <li>
+     <p>Provision each host with the username and password of the attached iLO
+      module. This is required for controller access to the module.</p>
+    </li>
+   </ul>
+   <p>For module provisioning, consult the user documentation supplied with the
+    equipment.</p>
+   <p>For host provisioning, you can use the <wintitle>Board
+     Management</wintitle> tab on the <wintitle>Edit Host</wintitle> dialog box, or
+    the CLI. For more information, see the <cite>HP Helion OpenStack Carrier Grade Software Installation
+    Guide</cite>.</p>
+  </section>
+ </conbody>
+</concept-wr>

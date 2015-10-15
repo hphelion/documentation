@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1436197980621" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Specifying Best Effort for PCI NUMA Node Affinity</title>
+    <shortdesc>You can select whether to require direct NUMA-node access to a PCI
+        interface when instantiating a VM. </shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p>By default, when a VM is configured to use an SR-IOV or
+                PCI-passthrough interface, the VM is affined to a NUMA node that has direct hardware
+                access to the physical PCI interface. If none is available, the instantiation fails. </p>
+            <p>You can set an extra spec so that if the requirement cannot be
+                satisifed, the VM is instantiated on another NUMA node with mediated access to the
+                interface.</p>
+            <p>To add this extra spec to a flavor using the web administration
+                interface, use the <nameliteral>PCI NUMA Affinity</nameliteral>
+                selection in the <nameliteral>Create Flavor Extra Spec</nameliteral>
+                drop-down menu. To access this menu, see <xref href="jow1429538642910.xml"/>.</p>
+            <p>You can also specify the extra spec from the CLI by setting the following parameter
+                for a flavor:</p>
+            <codeblock><userinput>hw:wrs:pci_numa_affinity=<varname>pci_affinity</varname></userinput></codeblock>
+            <p>where <varname>pci_affinity</varname> is one of the
+                following:</p>
+            <dl>
+                <dlentry>
+                    <dt>strict</dt>
+                    <dd>
+                        <p>(default) Requires a host NUMA node with direct access to
+                            a PCI interface. For a VM configured to use multiple NUMA nodes, at
+                            least one host NUMA node must have direct PCI access.  If these
+                            conditions cannot be satisfied, the instantiation fails.</p>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt>prefer</dt>
+                    <dd>
+                        <p>Prefers a host NUMA node with direct access to a PCI
+                            interface. If none is available, another NUMA node can be used.</p>
+                    </dd>
+                </dlentry>
+            </dl>
+            <p>For more information about using PCI interfaces, see <xref href="psa1413402160578.xml"/> and <xref href="psa1428687672712.xml"/>.</p>
+        </context>
+    </taskbody>
+</task-wr>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1426181291481" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Managing Local Volume Groups</title>
+    <shortdesc>You can add, delete, and review local volume groups on a compute
+        host.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p>Local volume groups are used to designate physical volumes on a
+                compute host as local storage for use by VMs. You can use the web administration or
+                the CLI to manage them. For web administration interface instructions, see <xref href="jow1426183480976.xml"/>.</p>
+        </context>
+        <prereq id="prereq_N1002D_N1001F_N10001">
+            <p>Before you can modify the settings for a host, you must lock the host: </p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>host-lock <varname>hostname</varname></userinput></codeblock>
+        </prereq>
+        <context id="context_N10042_N1001F_N10001">
+            <p>To configure a compute host to provide local storage for use by VMs,
+                add a local volume group with the name <nameliteral>nova-local</nameliteral>.</p>
+            <p><draft-comment author="jowens">US65502 added host-lvg-modify and
+                    associated parameter information</draft-comment>The following CLI commands are
+                available for managing local volume groups.</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>host-lvg-list <varname>hostname</varname></userinput></codeblock>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>host-lvg-show <varname>hostname</varname></userinput></codeblock>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>host-lvg-add <varname>hostname</varname> <varname>groupname</varname></userinput></codeblock>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>host-lvg-delete <varname>hostname</varname> <varname>groupname</varname></userinput></codeblock>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>host-lvg-modify <varname>hostname</varname> <varname>groupname</varname> -l nova-local -i <varname>size</varname></userinput></codeblock>
+            <p>where <dl>
+                    <dlentry>
+                        <dt><varname>groupname</varname></dt>
+                        <dd>
+                            <p> is the name of the local volume group</p>
+                            <note id="note_N1006E_N10048_N1001F_N10001">
+                                <p>The only valid <nameliteral>groupname</nameliteral> is <nameliteral>nova-local</nameliteral>.</p>
+                            </note>
+                        </dd>
+                    </dlentry>
+                    <dlentry>
+                        <dt><varname>size</varname></dt>
+                        <dd>
+                            <p> is the space in MB to allot for instances logical
+                                volume space.. </p>
+                        </dd>
+                    </dlentry>
+                </dl></p>
+        </context>
+        <postreq id="postreq_N100BD_N1001F_N10001">
+            <p>To complete the configuration of a compute host for local storage,
+                you must also add physical volumes to the <nameliteral>nova-local</nameliteral> local volume group. For more information, see <xref href="jow1426182435441.xml"/>.</p>
+            <p><draft-comment author="jowens">US65502 added
+                </draft-comment>In addition, you must set the instances logical volume size. For
+                more information, see <xref href="jow1443470081421.xml"/>. </p>
+        </postreq>
+    </taskbody>
+</task-wr>

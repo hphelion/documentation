@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1413726916641" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Changing the OAM IP Configuration</title>
+    <shortdesc>You can change the External OAM subnet, floating IP address, controller addresses,
+        and default gateway at any time after installation.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p>During software installation, HP Helion OpenStack Carrier Grade is configured with an
+                OAM network subnet and related IP addresses. You can change these addresses using
+                the web administration interface or the CLI.</p>
+            <note id="note_N1002F_N1002B_N1001D_N10001" type="caution">
+                <p>Access to the OAM network is interrupted during this procedure. When a swact is
+                    performed on the controllers, the newly active controller uses the changed OAM
+                    IP addresses. The existing OAM IP addresses are no longer valid, and you must
+                    use the new OAM IP addresses to reconnect to the controller. Changes to external
+                    OAM access routing settings may also be required. In addition, VNC console
+                    access to compute-node hosts is interrupted until the hosts are locked and
+                    unlocked.</p>
+            </note>
+        </context>
+        <prereq id="prereq_N1002B_N1001D_N10001">
+            <p>Before changing the OAM IP configuration, review the Fault Management
+                page and ensure that any existing system alarms are cleared.</p>
+        </prereq>
+        <steps id="steps_xfh_24z_5p">
+            <step id="step_N1002B_N10028_N1001C_N10001">
+                <cmd>In the HP Helion OpenStack Carrier Grade web administration interface, open the
+                        <wintitle>System Configuration</wintitle> pane.</cmd>
+                <info>
+                    <p>The <wintitle>System Configuration</wintitle>
+                        pane is available from the <uicontrol>System
+                            Panel</uicontrol> section of the <uicontrol>Admin</uicontrol> menu. </p>
+                </info>
+            </step>
+            <step id="step_N1004A_N10028_N1001C_N10001">
+                <cmd>Select the <wintitle>OAM IP</wintitle>
+                    tab.</cmd>
+                <stepresult>
+                    <p>The <wintitle>OAM IP</wintitle> page
+                        appears, showing the currently defined OAM network configuration.</p>
+                    <fig id="fig_t3s_4mz_5p">
+                        <image href="jow1413850481192.image" id="image_qjr_p1d_vp" width="6in">
+                            <alt>OAM IP page</alt>
+                        </image>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N10070_N10028_N1001C_N10001">
+                <cmd>Click <uicontrol>Edit OAM IP</uicontrol>.</cmd>
+                <stepresult>
+                    <p>The <wintitle>Edit OAM IP</wintitle> dialog
+                        box appears.</p>
+                    <fig id="fig_tmw_qnz_5p">
+                        <image href="jow1413850497887.image" id="image_fp4_r1d_vp">
+                            <alt>Edit OAM IP dialog</alt>
+                        </image>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N1009A_N10028_N1001C_N10001">
+                <cmd>Replace the IP addresses with different ones as required.</cmd>
+            </step>
+            <step id="step_N100CE_N1003A_N1001D_N10001">
+                <cmd>Click <uicontrol>Save</uicontrol>.</cmd>
+                <info>
+                    <p>This raises major alarms against the controllers and
+                        services. You can view the alarms on the Fault Management page.</p>
+                </info>
+            </step>
+            <step id="step_N100BF_N1002B_N1001D_N10001">
+                <cmd>Lock and unlock the controllers to clear the alarms.</cmd>
+                <info>
+                    <p>Open the <wintitle>Hosts</wintitle> list by
+                        clicking <uicontrol>Inventory</uicontrol> on the<wintitle> System Panel</wintitle> section of the <wintitle>Admin</wintitle> menu, and then selecting the <uicontrol>Hosts</uicontrol> tab. Hosts requiring attention are
+                        shown with the status <nameliteral>Config
+                            out-of-date</nameliteral>.</p>
+                    <p>To lock or unlock a host, click <uicontrol>More</uicontrol> for the host and then use the menu selections.</p>
+                </info>
+                <substeps id="substeps_zyf_rsz_5p">
+                    <substep>
+                        <cmd>Lock the standby controller. </cmd>
+                        <info>
+                            <p>Wait for the lock operation to be completed.</p>
+                        </info>
+                    </substep>
+                    <substep>
+                        <cmd>Unlock the standby controller.</cmd>
+                        <info>
+                            <p>Wait for the host to become available. It is updated
+                                with the new OAM configuration, and its error message is
+                                cleared.</p>
+                        </info>
+                    </substep>
+                    <substep>
+                        <cmd>Perform a swact on the active controller.</cmd>
+                        <info>
+                            <p>Click <menucascade>
+                                    <uicontrol>More</uicontrol>
+                                    <uicontrol>Swact Host</uicontrol>
+                                    <uicontrol> </uicontrol>
+                                </menucascade> for the active controller.</p>
+                            <note id="note_N10181_N10164_N1015B_N1012F_N100F2_N1003F_N1001F_N10001">
+                                <p>After the swact, HP Helion OpenStack Carrier Grade begins using
+                                    the new OAM network configuration. If you have changed the OAM
+                                    subnet or the OAM floating IP address, the current web session
+                                    is terminated. To continue using the web administration
+                                    interface, you must start a new session and log in using the new
+                                    IP address. You may also need to update router tables to
+                                    establish a connection. </p>
+                            </note>
+                        </info>
+                    </substep>
+                    <substep>
+                        <cmd>Lock the original controller (now in standby
+                            mode).</cmd>
+                        <info>
+                            <p>Wait for the lock operation to be completed.</p>
+                        </info>
+                    </substep>
+                    <substep>
+                        <cmd>Unlock the original controller.</cmd>
+                        <info>
+                            <p>Wait for it to become available. It is updated with
+                                the new OAM configuration, and its error message is cleared.</p>
+                        </info>
+                    </substep>
+                </substeps>
+            </step>
+            <step id="step_N101BC_N1003F_N1001F_N10001">
+                <cmd>Lock and unlock each compute node.</cmd>
+                <info>
+                    <note id="note_N101C5_N101C2_N101BB_N1003F_N1001F_N10001" type="caution">
+                        <p>Before locking a compute node, ensure that sufficient
+                            resources are available on other hosts to migrate any running
+                            instances.</p>
+                    </note>
+                </info>
+            </step>
+            <step id="step_N1025E_N100B7_N1001F_N10001">
+                <cmd>Ensure that the <nameliteral>250.001
+                        Configuration out-of-date</nameliteral> alarms are cleared for all
+                    hosts.</cmd>
+                <info>
+                    <p>If any alarms are present, clear them by locking and
+                        unlocking the affected host. In most cases, the alarms are cleared within
+                        one minute. If other system configuration operations are pending for the
+                        host, allow more time for the alarms to be cleared.</p>
+                </info>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

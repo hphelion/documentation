@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333744498" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title ixia_locid="1">Quality of Service Policies</title>
+    <shortdesc ixia_locid="2">Quality of Service (QoS) policies specify relative packet processing
+        priorities applied by the AVS switch on each compute node to incoming tenant network's
+        traffic during overload conditions.</shortdesc>
+    <prolog>
+        <author></author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="42">The QoS polices play no role under normal traffic loads, when no input traffic queues in
+            the AVS are close to their overflow limits.</p>
+        <p ixia_locid="4">QoS policies are created by the cluster administrator, and selected by the
+            tenant users to apply on a per-tenant network basis. To create a new QoS policy, log in
+            as administrator, select the option <option ixia_locid="5">Networks</option> from the
+                <uicontrol ixia_locid="6">Admin</uicontrol> menu, and visit the <uicontrol ixia_locid="7">QoS Policies</uicontrol> tab on the <wintitle ixia_locid="8">Networks</wintitle> page, as illustrated below.</p>
+        <fig id="fig_N10031_N1001A_N10001" ixia_locid="9">
+            <image href="jow1404333740550.image" id="image_hyt_rrm_44" ixia_locid="10" placement="inline" width="5in"/>
+        </fig>
+        <p ixia_locid="11">Click the button <uicontrol ixia_locid="12">Create QoS Policy</uicontrol> to display the <wintitle ixia_locid="13">Create QoS
+    Policy</wintitle> window.</p>
+        <fig id="fig_N10049_N1001A_N10001" ixia_locid="14">
+            <image href="jow1404333742007.image" id="image_mw1_1vm_44" ixia_locid="15" placement="inline"/>
+        </fig>
+        <p ixia_locid="16">The following fields are available:</p>
+        <dl>
+            <dlentry ixia_locid="17">
+                <dt ixia_locid="18">Name</dt>
+                <dd ixia_locid="19">
+                    <p ixia_locid="20">The name of the new QoS policy. This is the name that the tenant user sees as available for
+      use.</p>
+                    <p ixia_locid="21">This field is mandatory.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="22">
+                <dt ixia_locid="23">Description</dt>
+                <dd ixia_locid="24">
+                    <p ixia_locid="25">A free form text for your reference.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="26">
+                <dt ixia_locid="27">Scheduler Weight</dt>
+                <dd ixia_locid="28">
+                    <p ixia_locid="29">The relative weight the AVS traffic scheduler uses on overload conditions, as compared with
+      the scheduler weight of all other QoS policies.</p>
+                    <p ixia_locid="30">The scheduler weight is a positive integer number associated
+                        with each QoS policy. On overload, the AVS schedules traffic processing for
+                        each tenant network according to its assigned QoS policy. By default, with
+                        no specific QoS policies defined, traffic from all tenant networks is
+                        processed in round-robin mode, one tenant network after another.
+                        Effectively, the default behavior is similar to assigning a scheduler weight
+                        of 1 to all tenant networks.</p>
+                    <p ixia_locid="31">When a specific QoS policy with a scheduler weight greater
+                        than 1 is applied to a tenant network, its traffic is scheduled with a
+                        relative higher frequency. For example, if the scheduler weight for tenant
+                        network A is 10, and the one for tenant network B is 100, then on overload,
+                        tenant network B will see its queued traffic processed 10 times as often as
+                        tenant network A.</p>
+                    <p ixia_locid="32">The handling of the scheduler weight is implemented as a
+                        per-packet token bucket for each tenant network. This means that each unit
+                        in the scheduler weight counts as one packet to be processed in sequence. In
+                        the previous example, the AVS processes 10 consecutive packets from tenant
+                        network A, followed by 100 packets from tenant network B. This
+                        implementation ensures a fair-share behavior that prevents any tenant
+                        network from running into total bandwidth starvation, even if its scheduler
+                        weight is relatively low.</p>
+                    <p ixia_locid="33">The range of values for the scheduler weight is arbitrary. You must however ensure that the
+      values assigned to the different policies make sense for the intended applications.</p>
+                    <p ixia_locid="34">This field is mandatory.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="35">
+                <dt ixia_locid="36">Project</dt>
+                <dd ixia_locid="37">
+                    <p ixia_locid="38">A drop-down menu displaying the currently defined tenants (projects). The new QoS policy is
+      available to only the selected tenant. If no tenant is selected, it is available to all
+      tenants in the cluster.</p>
+                </dd>
+            </dlentry>
+        </dl>
+        <p ixia_locid="39">Tenant users can select available QoS policies when the tenant networks
+            are created from the <wintitle ixia_locid="40">Create Network</wintitle> window. They
+            can also apply a QoS policy to an already existing tenant network from the <wintitle ixia_locid="41">Edit Network</wintitle> window.</p>
+    </conbody>
+</concept-wr>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1439393204460" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Creating Cinder Volumes for Boot Images</title>
+    <shortdesc>You can create Cinder volumes to store VM boot images. </shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p>The use of Cinder volumes is recommended for fast instance booting.</p>
+        </context>
+        <steps>
+            <step id="step_N1002B_N10028_N1001C_N10001">
+                <cmd>Log in as the appropriate tenant.</cmd>
+            </step>
+            <step id="step_N10034_N10028_N1001C_N10001">
+                <cmd>On the <uicontrol>Project</uicontrol> menu, open the
+                        <uicontrol>Compute</uicontrol> section, and then click
+                        <uicontrol>Volumes</uicontrol>.</cmd>
+            </step>
+            <step id="step_N10049_N10028_N1001C_N10001">
+                <cmd>On the <wintitle>Volumes</wintitle> page, click <uicontrol>Create
+                        Volume</uicontrol></cmd>
+            </step>
+            <step id="step_N10059_N10028_N1001C_N10001">
+                <cmd>Complete the <wintitle>Create Volume</wintitle> form.</cmd>
+                <info>
+                    <p>For an example, see the <cite>HP Helion OpenStack Carrier Grade Reference Deployment Scenarios:
+                            Creating a Volume</cite>.</p>
+                    <!-- p>For settings information, see <xref href="jow1439393574682.xml"/>.</p -->
+                </info>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

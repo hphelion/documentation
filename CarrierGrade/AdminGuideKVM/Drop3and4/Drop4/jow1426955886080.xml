@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Reference//EN" "reference-wr.dtd">
+<reference-wr id="jow1426955886080" xml:lang="en-us">
+<!-- This version is used in the TiS Installation Guide
+    
+-->
+  <title ixia_locid="1">Interface Settings</title>
+  <shortdesc ixia_locid="2">The settings for creating or editing an interface on a node depend on
+    the type of network to which the interface is connected (for example, <nameliteral ixia_locid="6">infra</nameliteral> or <nameliteral ixia_locid="7">data</nameliteral>), as well
+    as the type of interface (for example, <nameliteral ixia_locid="8">aggregated
+      ethernet</nameliteral> or <nameliteral ixia_locid="9">vlan</nameliteral>).</shortdesc>
+  <prolog>
+    <author ixia_locid="3">Jim Owens</author>
+  </prolog>
+  <refbody>
+    <section id="section_N1001F_N1001C_N10001" ixia_locid="4">
+      <p ixia_locid="10">For more about creating and editing interfaces, see <xref href="jow1426948577755.xml" ixia_locid="11"/>.</p>
+      <dl conref="jow1431023964659.xml#jow1431023964659/interface_settings">
+        <dlentry ixia_locid="12">
+          <dt ixia_locid="13"/>
+          <dd ixia_locid="14"/>
+        </dlentry>
+      </dl>
+      <p ixia_locid="151">For more information about adding provider networks, see <xref href="jow1404333519516.xml" ixia_locid="146"/>.</p>
+      <p ixia_locid="152"> For more information about link aggregation, see <xref href="jow1404333496893.xml" ixia_locid="30"/>.</p>
+    </section>
+  </refbody>
+</reference-wr>

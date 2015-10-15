@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333798087" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title>Ports</title>
+    <shortdesc>The tab <uicontrol>Ports</uicontrol> on the <wintitle>Inventory Detail</wintitle> page presents information about the physical
+        ports on a host, as illustrated below.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <conbody>
+        <fig id="fig_N10027_N10024_N10001">
+            <image href="jow1404333796281.image" id="image_vlm_zxz_l4" width="6in"/>
+        </fig>
+        <p>Currently none of the port attributes is configurable; they are all read
+            directly from the hardware. Port information is presented in several columns, as
+            follows:</p>
+        <dl>
+            <dlentry>
+                <dt>Name</dt>
+                <dd>
+                    <p>The name of the physical port, as identified by the host's
+                        Linux kernel.</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>MAC Address</dt>
+                <dd>
+                    <p>The port's unique MAC address.</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>PCI Address</dt>
+                <dd>
+                    <p>The port's unique address on the PCI bus. Together with the
+                        MAC address, this field can be used to uniquely identify a port on the
+                        host's hardware platform.</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Processor</dt>
+                <dd>
+                    <p>The processor node that the port's IO controller is connected to.</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Auto Negotiation</dt>
+                <dd>
+                    <p>The status of the Ethernet auto-negotiation flag. Currently,
+                        auto-negotiation is always enabled.</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Boot Interface</dt>
+                <dd>
+                    <p>The boot flag, whether or not PXE booting is enabled.</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Accelerated</dt>
+                <dd>
+                    <draft-comment author="rstone">US60503 changes</draft-comment>
+                    <p>The acceleration status. If the port is supported by AVS
+                        using DPDK poll-mode drivers, acceleration will be used. Otherwise, it will
+                        operate in non-accelerated mode with AVS leveraging kernel drivers. </p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Device Type</dt>
+                <dd>
+                    <p>Hardware information about the port type, manufacturer, and model.</p>
+                </dd>
+            </dlentry>
+        </dl>
+    </conbody>
+</concept-wr>

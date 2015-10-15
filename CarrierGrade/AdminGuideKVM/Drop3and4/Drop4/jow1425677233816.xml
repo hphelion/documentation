@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1425677233816" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Setting Up a VXLAN Provider Network Using the CLI</title>
+    <shortdesc>You can use the command line interface  to set up a VXLAN provider
+        network and add segmentation ranges.</shortdesc>
+    <prolog><author/>
+        
+    </prolog>
+    <taskbody>
+        <context id="context_N10022_N1001F_N10001">
+            <p>VXLAN provider networks are an alternative to VLAN provider networks
+                when VM L2 connectivity is required across separate Layer 2 network segments
+                separated by one or more Layer 3 routers.</p>
+            <p>The steps in this section describe how to set up a VXLAN provider
+                network and add segmentation ranges using the command line interface. For
+                information about using the web administration interface, see <xref href="jow1425585636142.xml"/>.</p>
+        </context>
+        <context conref="jow1423853504951.xml#jow1423853504951/context_N1003B_N10037_N1000F_N10001" id="context_N10032_N1001F_N10001"/>
+        <context conref="jow1423853504951.xml#jow1423853504951/context_N100C3_N10032_N1000F_N10001" id="context_N1003D_N1001F_N10001"/>
+        <context id="context_N10037_N1001F_N10001">
+            <p>For more about these parameters, refer to the steps for using the
+                web administration interface.</p>
+        </context>
+        <context conref="jow1423853504951.xml#jow1423853504951/context_N101CB_N10037_N1000F_N10001" id="context_N10041_N1001F_N10001"/>
+    </taskbody>
+</task-wr>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333736207" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title ixia_locid="1">Address Filtering on Virtual Interfaces</title>
+    <shortdesc ixia_locid="2">The AVS on compute nodes can be configured to filter out packets based
+        on source MAC address.</shortdesc>
+    <prolog>
+        <author></author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="4">MAC addresses for virtual network interfaces on virtual machines are dynamically allocated by
+   the system. For most scenarios, the assigned MAC addresses are expected to be used on all
+   outgoing packets from the virtual machine instances. However, there are scenarios where the
+   source MAC address is not expected to match the original assignment, such as when a L2 switch is
+   implemented internally on the virtual machine.</p>
+        <p ixia_locid="5">By default, the AVS on compute nodes accepts any source MAC address on the attached virtual
+   network interfaces. However, it can be configured to filter out all incoming packets with
+   non-system-generated source MAC address, if required. When evaluating the use of the filtering
+   capability, you must consider the following:</p>
+        <ul id="ul_rzm_jtt_m4">
+            <li ixia_locid="6">
+                <p ixia_locid="7">Source MAC address filtering can be enabled and disabled by the administrator user only, not
+     by tenants.</p>
+            </li>
+            <li ixia_locid="8">
+                <p ixia_locid="9">Filtering is enabled on a per-tenant basis only. Higher granularity, such as per-instance
+     filtering, is not supported.</p>
+            </li>
+            <li ixia_locid="10">
+                <p ixia_locid="11">When enabled, source MAC address filtering applies to all new virtual interfaces created by
+     the Neutron service. Address filtering is not active on virtual interfaces created before
+     filtering is enabled.</p>
+            </li>
+        </ul>
+        <p ixia_locid="12">Use the following command to enable source MAC address filtering:</p>
+        <codeblock ixia_locid="13"><systemoutput ixia_locid="29">~(keystone_admin)$ </systemoutput><userinput ixia_locid="15">neutron setting-update --tenant-id=&lt;TENANTID&gt; \
+--mac-filtering={True|False}</userinput></codeblock>
+        <p ixia_locid="16">Filtering can be enabled or disabled from the web management interface.
+            As the administrator, select <uicontrol ixia_locid="17">Projects</uicontrol> from the
+                <uicontrol ixia_locid="18">Identity</uicontrol> menu to display the <wintitle ixia_locid="19">Projects</wintitle> window. Then select the option <option ixia_locid="20">Edit Project</option> from the <option ixia_locid="21">More</option>
+            drop-down menu of the desired tenant, as illustrated below.</p>
+        <fig id="fig_N10067_N1001A_N10001" ixia_locid="22">
+            <image href="jow1404333733225.image" id="image_urc_nzt_m4" ixia_locid="23" placement="inline" width="6in"/>
+        </fig>
+        <p ixia_locid="24">The <wintitle ixia_locid="25">Edit Project</wintitle> window is
+            displayed. The filtering option is available from the tab <uicontrol ixia_locid="26">Settings</uicontrol>, as illustrated below.</p>
+        <fig id="fig_N1007F_N1001A_N10001" ixia_locid="27">
+            <image href="jow1404333734792.image" id="image_q2j_pzt_m4" ixia_locid="28" placement="inline" width="6in"/>
+        </fig>
+    </conbody>
+</concept-wr>

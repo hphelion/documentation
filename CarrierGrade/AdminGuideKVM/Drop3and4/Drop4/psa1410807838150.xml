@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410807838150" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+        
+-->
+    <title ixia_locid="1">Performing a System Restore</title>
+    <shortdesc ixia_locid="2">You can restore a HP Helion OpenStack Carrier Grade cluster from available system data
+        and Cinder volume backup files to bring it back to the operational state it was when the
+        backup procedure took place.</shortdesc>
+    <prolog>
+        <author ixia_locid="278">Jim Owens</author>
+        <author></author>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001" ixia_locid="4">
+            <note id="note_N1002C_N10027_N10024_N10001" ixia_locid="281" product="tis_small">
+                <p ixia_locid="282">The following procedure is for use with a system that has
+                    separate controller and compute nodes. For a system with combined controller and
+                    compute nodes, see <xref href="jow1437657423737.xml" ixia_locid="283"/>.</p>
+            </note>
+            <p ixia_locid="5">Restoring a HP Helion OpenStack Carrier Grade cluster from a set of backup files is done
+                by restoring one host at a time, starting with the controllers, then the storage
+                nodes, and finally the compute nodes.</p>
+        </context>
+        <prereq conref="jow1437656331081.xml#maintask/prereq_N1002D_N1001F_N10001" id="prereq_N1003F_N10024_N10001" ixia_locid="284"/>
+        <steps>
+            <step conref="jow1437656331081.xml#maintask/common_start" conrefend="jow1437656331081.xml#maintask/common_end" id="step_N10077_N10074_N10024_N10001" ixia_locid="279">
+                <cmd ixia_locid="280"/>
+            </step>
+            <step conref="jow1437656331081.xml#maintask/restore_controller_1" conrefend="jow1437656331081.xml#maintask/restore_computes" id="step_N10054_N10045_N10024_N10001" ixia_locid="285">
+                <cmd ixia_locid="286"/>
+            </step>
+        </steps>
+        <result conref="jow1437656331081.xml#maintask/result" id="result_N10065_N10024_N10001" ixia_locid="287"/>
+        <postreq conref="jow1437656331081.xml#maintask/restore_passwords" id="postreq_N1006B_N10024_N10001" ixia_locid="288"/>
+    </taskbody>
+</task-wr>

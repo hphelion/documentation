@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1427029415968" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title ixia_locid="1">Network Interface Provisioning Using the CLI</title>
+ <shortdesc ixia_locid="2">You can use CLI commands to create and attach network
+  interfaces.</shortdesc>
+ <prolog>
+  <author ixia_locid="3"/>
+ </prolog>
+ <conbody>
+  <p ixia_locid="4">For more information about interface provisioning, or help using the web
+   administration interface, see <xref href="jow1426948577755.xml" ixia_locid="272"/>.</p>
+  <p ixia_locid="273">To list attached interfaces, use the <nameliteral ixia_locid="274">system host-if-list</nameliteral>
+   command.</p>
+  <codeblock ixia_locid="275"><systemoutput ixia_locid="276">~(keystone_admin)$ </systemoutput><userinput ixia_locid="277">system host-if-list controller-0</userinput>
+<systemoutput ixia_locid="278">...+--------+------...+----------+---------+-----------+------------+-------------+...
+...| name   | netwo...| type     | vlan id | ports     | uses i/f   | used by i/f |...
+...+--------+------...+----------+---------+-----------+------------+-------------+...
+...| infra0 | infra...| vlan     | 22      | []        | [u'mgmt0'] | []          |...
+...| oam0   | oam  ...| ethernet | None    | [u'eth0'] | []         | []          |...
+...| mgmt0  | mgmt ...| ethernet | None    | [u'eth1'] | []         | [u'infra0'] |...
+...+--------+------...+----------+---------+-----------+------------+-------------+...</systemoutput>
+</codeblock>
+  <p ixia_locid="38"> To see all available interfaces, add the <option ixia_locid="279">-a</option>
+   flag.</p>
+  <codeblock ixia_locid="41"><systemoutput ixia_locid="280">~(keystone_admin)$ </systemoutput><userinput ixia_locid="281">system host-if-list -a controller-0</userinput>
+<systemoutput ixia_locid="282">...+--------+------...+----------+---------+-----------+------------+-------------+...
+...| name   | netwo...| type     | vlan id | ports     | uses i/f   | used by i/f |...
+...+--------+------...+----------+---------+-----------+------------+-------------+...
+...| eth3   | None ...| ethernet | None    | [u'eth3'] | []         | []          |...
+...| infra0 | infra...| vlan     | 22      | []        | [u'mgmt0'] | []          |...
+...| eth2   | None ...| ethernet | None    | [u'eth2'] | []         | []          |...
+...| oam0   | oam  ...| ethernet | None    | [u'eth0'] | []         | []          |...
+...| mgmt0  | mgmt ...| ethernet | None    | [u'eth1'] | []         | [u'infra0'] |...
+...+--------+------...+----------+---------+-----------+------------+-------------+...</systemoutput></codeblock>
+  <p ixia_locid="283"><draft-comment author="jowens" ixia_locid="284">US62814 added host-addr add info</draft-comment>To assign an IP
+   address to an interface, use the <cmdname ixia_locid="285">system host-addr-add</cmdname> command. This is
+   required for the management and infrastructure networks if static IP address assignment is in
+   use.</p>
+  <codeblock ixia_locid="286"><systemoutput ixia_locid="287">~(keystone_admin)$ </systemoutput><userinput ixia_locid="46">system host-addr-add <varname ixia_locid="47">node</varname> <varname ixia_locid="288">ifname</varname> <varname ixia_locid="49">ip_address</varname> <varname ixia_locid="50">prefix</varname></userinput></codeblock>
+  <p ixia_locid="51">where</p>
+  <parml>
+   <plentry ixia_locid="52">
+    <pt ixia_locid="53">node</pt>
+    <pd ixia_locid="54">
+     <p ixia_locid="289">is the name or UUID of the compute node</p>
+    </pd>
+   </plentry>
+   <plentry ixia_locid="56">
+    <pt ixia_locid="290">ifname</pt>
+    <pd ixia_locid="291">
+     <p ixia_locid="292">is the name of the interface</p>
+    </pd>
+   </plentry>
+   <plentry ixia_locid="60">
+    <pt ixia_locid="61">ip_address</pt>
+    <pd ixia_locid="293">
+     <p ixia_locid="294">is an IPv4 or IPv6 address</p>
+    </pd>
+   </plentry>
+   <plentry ixia_locid="295">
+    <pt ixia_locid="296">prefix</pt>
+    <pd ixia_locid="297">
+     <p ixia_locid="298">is the netmask length for the address</p>
+    </pd>
+   </plentry>
+  </parml>
+  <section id="section_N1005F_N1001E_N10001" ixia_locid="71">
+   <title ixia_locid="72">Ethernet Interfaces</title>
+   <p ixia_locid="73">Ethernet interfaces are created automatically. To attach one to a network, use
+    a command of the following form:</p>
+   <codeblock ixia_locid="74"><systemoutput ixia_locid="299">~(keystone_admin)$ </systemoutput><userinput ixia_locid="75">system host-if-modify -n <varname ixia_locid="76">ifname</varname> -m <varname ixia_locid="77">mtu</varname> \
+-nt <varname ixia_locid="78">networktype</varname> <varname ixia_locid="79">hostname</varname> <varname ixia_locid="80">ethname</varname> [-p <varname ixia_locid="249">providernetworklist</varname>]</userinput></codeblock>
+   <p ixia_locid="81">where</p>
+   <parml>
+    <plentry ixia_locid="82">
+     <pt ixia_locid="83">ifname</pt>
+     <pd ixia_locid="84">
+      <p ixia_locid="85">is a name for the interface</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="229">
+     <pt ixia_locid="231">mtu</pt>
+     <pd ixia_locid="233">
+      <p ixia_locid="235">is the MTU for the interface</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="237">
+     <pt ixia_locid="239">networktype</pt>
+     <pd ixia_locid="241">
+      <p ixia_locid="93">is the type of network to attach to</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="94">
+     <pt ixia_locid="95">hostname</pt>
+     <pd ixia_locid="96">
+      <p ixia_locid="97">is the name or UUID of the host</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="98">
+     <pt ixia_locid="99">ethname</pt>
+     <pd ixia_locid="100">
+      <p ixia_locid="101">is the name or UUID of the Ethernet interface to use</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="258">
+     <pt ixia_locid="260">providernetworklist</pt>
+     <pd ixia_locid="262">
+      <p ixia_locid="264">is a list of provider networks, delimited by quotes and separated by
+       spaces; for example, <userinput ixia_locid="266">"provider-net-a provider-net-b"</userinput>.
+       To specify a single provider network, omit the quotes. This parameter is required only if the
+        <varname ixia_locid="268">networktype</varname> is set to <option ixia_locid="269">data</option>.</p>
+     </pd>
+    </plentry>
+   </parml>
+   <p ixia_locid="102">For example, to attach an interface named <nameliteral ixia_locid="103">infra0</nameliteral> to the
+    infrastructure network, using Ethernet interface <nameliteral ixia_locid="104">eth0</nameliteral> on
+     <nameliteral ixia_locid="105">compute-0</nameliteral>:</p>
+   <codeblock ixia_locid="106"><systemoutput ixia_locid="68">~(keystone_admin)$ </systemoutput><userinput ixia_locid="107">system host-if-modify -n infra0 \
+-nt infra compute0 eth0</userinput></codeblock>
+  </section>
+  <section id="section_N100FB_N1001E_N10001" ixia_locid="108">
+   <title ixia_locid="109">Aggregated Ethernet Interfaces</title>
+   <p ixia_locid="110">To create an aggregated Ethernet interface and attach it to a network, use a command of the
+    following form:</p>
+   <codeblock ixia_locid="111"><systemoutput ixia_locid="69">~(keystone_admin)$ </systemoutput><userinput ixia_locid="112">system host-if-add <varname ixia_locid="113">hostname</varname> -m <varname ixia_locid="114">mtu</varname> \
+-a <varname ixia_locid="115">aemode</varname> -x <varname ixia_locid="116">policy</varname> <varname ixia_locid="117">ifname</varname> \
+ ae "<varname ixia_locid="118">providernetworklist</varname>" <varname ixia_locid="119">ethname1</varname> <varname ixia_locid="120">ethname2</varname></userinput> </codeblock>
+   <p ixia_locid="121">where</p>
+   <parml>
+    <plentry ixia_locid="122">
+     <pt ixia_locid="123">ifname</pt>
+     <pd ixia_locid="124">
+      <p ixia_locid="125">is a name for the interface</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="126">
+     <pt ixia_locid="127">mtu</pt>
+     <pd ixia_locid="128">
+      <p ixia_locid="129">is the MTU for the interface</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="130">
+     <pt ixia_locid="131">aemode</pt>
+     <pd ixia_locid="132">
+      <p ixia_locid="133">is the link aggregation mode</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="134">
+     <pt ixia_locid="135">policy</pt>
+     <pd ixia_locid="136">
+      <p ixia_locid="137">is the balanced tx distribution hash policy</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="138">
+     <pt ixia_locid="139">hostname</pt>
+     <pd ixia_locid="140">
+      <p ixia_locid="141">is the name or UUID of the host</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="142">
+     <pt ixia_locid="143">providernetworklist</pt>
+     <pd ixia_locid="144">
+      <p ixia_locid="145">is a list of provider networks to attach to, separated by spaces</p>
+      <note id="note_N101E4_N101DB_N101D2_N1016B_N10123_N1001E_N10001" ixia_locid="246">
+       <p ixia_locid="247">For networks other than data networks, the value <nameliteral ixia_locid="248">none</nameliteral> is
+        required.</p>
+      </note>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="146">
+     <pt ixia_locid="147">ethname1, ethname2</pt>
+     <pd ixia_locid="148">
+      <p ixia_locid="149">are the names or UUIDs of the member interfaces</p>
+     </pd>
+    </plentry>
+   </parml>
+   <p ixia_locid="150">For example, to attach an aggregated Ethernet interface named <nameliteral ixia_locid="151">ae0</nameliteral>
+    to provider networks <nameliteral ixia_locid="152">provider-net-a</nameliteral> and
+     <nameliteral ixia_locid="153">provider-net-b</nameliteral>, using member interfaces
+     <nameliteral ixia_locid="154">eth2</nameliteral> and <nameliteral ixia_locid="155">eth3</nameliteral> on
+     <nameliteral ixia_locid="156">compute-0</nameliteral>:</p>
+   <codeblock ixia_locid="157"><systemoutput ixia_locid="70">~(keystone_admin)$ </systemoutput><userinput ixia_locid="158">system host-if-add compute-0 -a balanced \
+-x layer2 ae0 ae "provider-net-a provider-net-b" eth2 eth3</userinput></codeblock>
+   <p ixia_locid="159">For more about link aggregation modes and policies, see <xref href="jow1404333496893.xml" ixia_locid="160"/>.</p>
+  </section>
+  <section id="section_N101D8_N1001E_N10001" ixia_locid="161">
+   <title ixia_locid="162">VLAN Interfaces</title>
+   <p ixia_locid="163">To create a VLAN interface and attach it to a network, use a command of the following
+    form:</p>
+   <codeblock ixia_locid="164"><systemoutput ixia_locid="166">~(keystone_admin)$ </systemoutput><userinput ixia_locid="168">system host-if-add <varname ixia_locid="170">hostname</varname> -V <varname ixia_locid="171">vlan_id</varname> \
+-nt <varname ixia_locid="172">networktype</varname> <varname ixia_locid="173">ifname</varname> <varname ixia_locid="175">ethname</varname> [-p <varname ixia_locid="257">providernetworklist</varname>]</userinput>
+</codeblock>
+   <p ixia_locid="176">where</p>
+   <parml>
+    <plentry ixia_locid="177">
+     <pt ixia_locid="178">ifname</pt>
+     <pd ixia_locid="179">
+      <p ixia_locid="180">is a name for the interface</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="181">
+     <pt ixia_locid="182">vlan_id</pt>
+     <pd ixia_locid="183">
+      <p ixia_locid="184">is the VLAN identifier for the network</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="185">
+     <pt ixia_locid="186">hostname</pt>
+     <pd ixia_locid="187">
+      <p ixia_locid="188">is the name or UUID of the host</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="189">
+     <pt ixia_locid="190">networktype</pt>
+     <pd ixia_locid="191">
+      <p ixia_locid="192">is the type of network to attach to</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="193">
+     <pt ixia_locid="194">ethname</pt>
+     <pd ixia_locid="195">
+      <p ixia_locid="196">is the name or UUID of the Ethernet interface to use</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="259">
+     <pt ixia_locid="261">providernetworklist</pt>
+     <pd ixia_locid="263">
+      <p ixia_locid="265">is a list of provider networks, delimited by quotes and separated by
+       spaces; for example, <userinput ixia_locid="267">"provider-net-a provider-net-b"</userinput>.
+       To specify a single provider network, omit the quotes. This parameter is required only if the
+        <varname ixia_locid="270">networktype</varname> is set to <option ixia_locid="271">data</option>.</p>
+     </pd>
+    </plentry>
+   </parml>
+   <p ixia_locid="197">For example, to attach a VLAN interface named <nameliteral ixia_locid="198">infra0</nameliteral> with VLAN ID
+     <nameliteral ixia_locid="199">22</nameliteral> to the infrastructure network, using Ethernet interface
+     <nameliteral ixia_locid="200">eth1</nameliteral> on <nameliteral ixia_locid="201">storage-0</nameliteral>:</p>
+   <codeblock ixia_locid="165"><systemoutput ixia_locid="167">~(keystone_admin)$ </systemoutput><userinput ixia_locid="169">system host-if-add storage-0 -V 22 -nt infra infra0 vlan eth1</userinput>
+<systemoutput ixia_locid="300">+------------------+--------------------------------------+
+| Property         | Value                                |
++------------------+--------------------------------------+
+| ifname           | infra0                               |
+| networktype      | infra                                |
+| iftype           | vlan                                 |
+| ports            | []                                   |
+| providernetworks | None                                 |
+| imac             | 08:00:27:f2:0d:68                    |
+| imtu             | 1500                                 |
+| aemode           | None                                 |
+| schedpolicy      | None                                 |
+| txhashpolicy     | None                                 |
+| uuid             | 8ca9854e-a18e-4a3c-8afe-f050da702fdf |
+| ihost_uuid       | 3d207384-7d30-4bc0-affe-d68ab6a00a5b |
+| vlan_id          | 22                                   |
+| uses             | [u'eth1']                            |
+| used_by          | []                                   |
+| created_at       | 2015-02-04T16:23:28.917084+00:00     |
+| updated_at       | None                                 |
++------------------+--------------------------------------+
+</systemoutput></codeblock>
+   <p ixia_locid="202">where</p>
+   <parml>
+    <plentry ixia_locid="203">
+     <pt ixia_locid="204">ifname</pt>
+     <pd ixia_locid="205">
+      <p ixia_locid="206">is a name for the interface</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="207">
+     <pt ixia_locid="208">mtu</pt>
+     <pd ixia_locid="209">
+      <p ixia_locid="210">is the MTU for the interface</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="211">
+     <pt ixia_locid="212">aemode</pt>
+     <pd ixia_locid="213">
+      <p ixia_locid="214">is the link aggregation mode</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="215">
+     <pt ixia_locid="216">policy</pt>
+     <pd ixia_locid="217">
+      <p ixia_locid="218">is the balanced tx distribution hash policy</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="219">
+     <pt ixia_locid="220">hostname</pt>
+     <pd ixia_locid="221">
+      <p ixia_locid="222">is the name or UUID of the host</p>
+     </pd>
+    </plentry>
+    <plentry ixia_locid="223">
+     <pt ixia_locid="224">ethname1, ethname2</pt>
+     <pd ixia_locid="225">
+      <p ixia_locid="226">are the names or UUIDs of the member interfaces</p>
+     </pd>
+    </plentry>
+   </parml>
+   <p ixia_locid="227">For more about VLAN interfaces, see the <cite ixia_locid="228">HP Helion OpenStack Carrier Grade Administration Guide: Shared
+     Ethernet Interfaces</cite>.</p>
+  </section>
+  <section id="section_N10391_N1001E_N10001" ixia_locid="243">
+   <title ixia_locid="244">Combined Data and Management or Infrastructure Interfaces</title>
+   <p ixia_locid="245">You can add a data interface to a management or infrastructure interface using a command of
+    the following form:</p>
+   <codeblock ixia_locid="230"><systemoutput ixia_locid="232">~(keystone_admin)$ </systemoutput><userinput ixia_locid="234">system host-if-modify –nt “mgmt,data” –p group0-data0 compute-0 mgmt0</userinput></codeblock>
+   <p ixia_locid="236">This example adds a data network to the <nameliteral ixia_locid="238">mgmt0</nameliteral> interface on <nameliteral ixia_locid="240">compute-0</nameliteral>, for the
+    provider network <nameliteral ixia_locid="242">group0-data0</nameliteral>.</p>
+  </section>
+ </conbody>
+</concept-wr>

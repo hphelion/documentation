@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr
+    domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   "
+    id="jow1404333566955" xml:lang="en-us"
+    xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+
+ -->
+    <title>Dashboard Controls</title>
+    <shortdesc>The HP Helion OpenStack Carrier Grade web administration interface
+        provides a dashboard for managing all aspects of the system. </shortdesc>
+    <prolog>
+    
+    <author></author>
+    </prolog>  
+    <conbody>
+            <p>See the HP Helion OpenStack Carrier Grade 2.0 Beta: User Guide. </p>
+        </conbody>
+
+</concept-wr>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1423169316542" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title>Ethernet Interface Configuration</title>
+ <shortdesc>You can review and modify the configuration for physical or virtual
+  Ethernet interfaces using the web administration interface or the CLI.</shortdesc>
+ <prolog><author/>
+  <author/>
+ </prolog>
+ <conbody>
+  <section id="section_N1001F_N1001C_N10001">
+   <title>Physical Ethernet Interfaces</title>
+   <p>The physical Ethernet interfaces on HP Helion OpenStack Carrier Grade nodes are configured to
+    use the following networks: </p>
+   <ul id="ul_lk1_b4j_zq">
+    <li>
+     <p>the internal management network</p>
+    </li>
+    <li>
+     <p>the external OAM network</p>
+    </li>
+    <li>
+     <p>the infrastructure network, if present</p>
+    </li>
+    <li>
+     <p>one or more data networks</p>
+    </li>
+   </ul>
+   <p>A single interface can optionally be configured to support more than one
+    network using VLAN tagging (see <xref href="jow1423173019489.xml"/>). In
+    addition, the management or infrastructure interfaces, or both, can be configured with an
+    additional data network (see the <cite>HP Helion OpenStack Carrier Grade Software Installation
+     Guide: Editing Interface Settings</cite>).</p>
+   <p>On the controller nodes, all Ethernet interfaces are configured automatically
+    when the nodes are initialized, based on the information provided in the controller
+    configuration script (see the <cite>HP Helion OpenStack Carrier Grade Installation Guide: The
+     Controller Configuration Script</cite>). On compute nodes, the Ethernet interfaces
+    for the management network are configured automatically. The remaining interfaces require manual
+    configuration. Interface configurations are summarized in the following table.</p>
+   <note id="note_N10071_N10022_N1001F_N10001">
+    <p> If a network attachment uses LAG, the corresponding interfaces on the
+     storage and compute nodes must also be configured manually to specify the interface type.</p>
+   </note>
+   <table frame="all" id="table_xs4_npp_zq">
+    <title>Interface Configuration by Network Type</title>
+    <tgroup cols="3">
+     <colspec colname="c1" colnum="1" colwidth="1.02*"/>
+     <colspec colname="c2" colnum="2" colwidth="1.04*"/>
+     <colspec colname="c4" colnum="3" colwidth="1.02*"/>
+     <thead>
+      <row>
+       <entry/>
+       <entry>
+        <p>Controller</p>
+       </entry>
+       <entry>
+        <p>Compute</p>
+       </entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry>
+        <p>Mgmt</p>
+       </entry>
+       <entry>
+        <p>Configured automatically</p>
+       </entry>
+       <entry>
+        <p>Configured automatically</p>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <p>OAM</p>
+       </entry>
+       <entry>
+        <p>Configured automatically</p>
+       </entry>
+       <entry>
+        <p>Not used</p>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <p>Infra</p>
+       </entry>
+       <entry>
+        <p>Configured automatically</p>
+       </entry>
+       <entry>
+        <p>Configured manually</p>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <p>Data</p>
+       </entry>
+       <entry>
+        <p>Not used </p>
+       </entry>
+       <entry>
+        <p>Configured manually</p>
+       </entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </table>
+   <p>You can review and modify physical interface configurations from the web
+    administration interface or the CLI. For more information, see the <cite>HP Helion OpenStack Carrier Grade Installation Guide: Editing Interface Settings</cite>, the <cite>HP Helion OpenStack Carrier Grade Installation Guide: Creating Data Interfaces</cite>, and the
+     <cite>HP Helion OpenStack Carrier Grade Installation Guide: Command-line Installation</cite>.</p>
+   <p>You can also save the interface configurations for a particular node to use as
+    a <i>profile</i> or template when setting up other nodes. For more information,
+    see <xref href="jow1404333777760.xml"/>.</p>
+  </section>
+  <section id="section_N10059_N1001C_N10001">
+   <title>Virtual Ethernet Interfaces</title>
+   <p>The virtual Ethernet interfaces for guest VMs running on HP Helion OpenStack Carrier Grade are
+    defined when an instance is launched. They connect the VM to <term>tenant
+     networks</term>, which are virtual networks defined over <term>provider
+     networks</term>, which in turn are abstractions associated with physical interfaces assigned to
+    data networks on the compute nodes. Several virtual interface driver options are available. For
+    more information about launching instances and connecting their virtual Ethernet interfaces, see
+    the <cite>HP Helion OpenStack Carrier Grade Reference Deployment Scenarios</cite>. The chapters on
+     <cite>Deploying the Bridging Scenario</cite> and <cite>Deploying the Routing Scenario</cite> contain detailed examples for defining virtual Ethernet
+    interfaces.</p>
+   <p>You can also connect a VM directly to a physical interface using PCI
+    passthrough (see <xref href="psa1413402160578.xml"/>) or SR-IOV (see <xref href="psa1428687672712.xml"/>).</p>
+  </section>
+ </conbody>
+</concept-wr>

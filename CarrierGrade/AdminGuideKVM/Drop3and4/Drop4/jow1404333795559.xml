@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333795559" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title>Memory</title>
+    <shortdesc>Visit the <uicontrol>Memory</uicontrol> tab on the
+            <wintitle>Inventory Detail</wintitle> page to display host memory
+        details.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <conbody>
+        <fig id="fig_N10027_N10024_N10001">
+            <image href="jow1404333794155.image" id="image_zbk_dwz_l4"/>
+        </fig>
+        <p>The information is presented in three columns, as follows:</p>
+        <dl>
+            <dlentry>
+                <dt>Memory</dt>
+                <dd>
+                    <p>Overall memory on the host.</p>
+                    <p>For a controller node it displays the total and available memory figures.</p>
+                    <p>For a compute node, as in the example above, it displays the
+                        amount of memory reserved for the platform (system software), and the total
+                        and available figures for use by virtual machines.</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>VSwitch Huge Pages</dt>
+                <dd>
+                    <p>This column is relevant on compute nodes only.</p>
+                    <p>The size of the huge pages, and the total and available huge page figures.</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>VM Pages</dt>
+                <dd>
+                    <p>This column is relevant on compute nodes only.</p>
+                    <p>The size of the pages, and the total and available page
+                        figures. If changes to the huge page allocations have been requested for a
+                        locked host, they are shown as <nameliteral>Pending</nameliteral>.</p>
+                </dd>
+            </dlentry>
+        </dl>
+    </conbody>
+</concept-wr>

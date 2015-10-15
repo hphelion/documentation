@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333777760" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title>Interfaces</title>
+    <shortdesc>The <uicontrol>Interfaces</uicontrol> tab on the
+            <wintitle>Inventory Detail</wintitle> page presents details about the
+        logical L2 network interfaces on a node, as illustrated below for an unlocked controller
+        node.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <conbody>
+        <fig id="fig_N10027_N10024_N10001">
+            <image href="jow1404333771094.image" id="image_v3c_dc1_m4" width="6in"/>
+        </fig>
+        <p><!-- screen shot needs to match text! -->In this example the node has two allocated interfaces,
+                <nameliteral>eth0</nameliteral> connecting to the OAM network, and
+                <nameliteral>eth1</nameliteral> connecting to the internal management network. These
+            interfaces are mandatory and therefore cannot be deleted. They reflect the allocation
+            given when the node was provisioned. See the <cite>HP Helion OpenStack Carrier Grade
+                Software Installation Guide</cite> for details.</p>
+        <p>On a properly configured compute node, the <uicontrol>Interfaces</uicontrol> tab presents additional logical interfaces, as illustrated
+            below for a locked node:</p>
+        <fig id="fig_N10047_N10024_N10001">
+            <image href="jow1404333772968.image" id="image_xyx_c21_m4" width="6in"/>
+        </fig>
+        <p><!-- screen shot needs to match text! -->In this example the node has three allocated interfaces, <nameliteral>eth1</nameliteral> connecting to the internal management network,
+            and <nameliteral>data0</nameliteral> and <nameliteral>data1</nameliteral> connecting to the provider networks <nameliteral>group0-data0</nameliteral> and <nameliteral>group0-data1</nameliteral> respectively. The interface <nameliteral>eth1</nameliteral> is auto-provisioned as part of the automated software
+            installation process on the compute node. It can be modified but not deleted.</p>
+        <p>Information about interfaces is presented in several columns, as follows:</p>
+        <dl>
+            <dlentry>
+                <dt>Name</dt>
+                <dd>
+                    <p>The name given to the logical L2 interface.</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Network Type</dt>
+                <dd>
+                    <p>The type of network the logical network interface is connected to. The options are:</p>
+                    <ul id="ul_rtx_4g1_m4">
+                        <li>
+                            <p><nameliteral>data</nameliteral>, for a compute node data interface</p>
+                        </li>
+                        <li>
+                            <p><nameliteral>infra</nameliteral>, for
+                                the optional infrastructure network</p>
+                        </li>
+                        <li>
+                            <p><nameliteral>mgmt</nameliteral>, for
+                                the internal management network</p>
+                        </li>
+                        <li>
+                            <p><nameliteral>oam</nameliteral>, for the OAM network</p>
+                        </li>
+                        <li>
+                            <p><nameliteral>pci-passthrough</nameliteral>, for a PCI passthrough
+                                interface</p>
+                        </li>
+                    </ul>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Type</dt>
+                <dd>
+                    <p>Ethernet, or aggregated Ethernet (LAG).</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Vlan ID</dt>
+                <dd>
+                    <p>The VLAN ID of the network listed in the
+                            <nameliteral>Network Type</nameliteral> column,  if the network uses a
+                        shared interface. For more information about shared interfaces, see <xref href="jow1423173019489.xml"/>.</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Port(s)</dt>
+                <dd>
+                    <p>The physical ports on top of which the logical interface is
+                        built. Multiple ports are displayed when the logical interface uses LAG.</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Uses</dt>
+                <dd>
+                    <p>The interface used by the network listed in the
+                            <nameliteral>Network Type</nameliteral> column, if the network uses a
+                        shared interface. The VLAN ID of the network is shown in the
+                            <nameliteral>Vlan ID</nameliteral> field.</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Used By</dt>
+                <dd>
+                    <p>The networks that share the interface using VLAN tagging, if
+                        the interface is shared. For more information about shared interfaces, see
+                            <xref href="jow1423173019489.xml"/>.</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Provider Networks</dt>
+                <dd>
+                    <p>This option is relevant for compute nodes only, and for interfaces of the
+              <nameliteral>data</nameliteral> network type. It lists the provider networks
+            associated with the data interface.</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Attributes</dt>
+                <dd>
+                    <draft-comment author="rstone">US60503 changes</draft-comment>
+                    <p>Details including the current MTU size for the interface and
+                        whether the interface is DPDK-accelerated</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Actions</dt>
+                <dd>
+                    <p>On a locked node, you can modify a logical interface, and
+                        execute management operations on it. This is implemented using the buttons
+                            <uicontrol>Edit Interface</uicontrol> and <uicontrol>More</uicontrol>. These buttons are not available when
+                        the node is unlocked.</p>
+                </dd>
+            </dlentry>
+        </dl>
+        <section id="section_N10133_N10024_N10001">
+            <title>Creating an Interface Profile</title>
+            <p>Use the <uicontrol>Create Interface
+                    Profile</uicontrol> button on the <uicontrol>Interfaces</uicontrol> tab to display the <wintitle>Create
+                    Interface Profile</wintitle> window. From there you can create a new interface
+                profile out of the currently defined node interfaces. An example for a compute node
+                is illustrated below.</p>
+            <fig id="fig_N1014D_N10135_N10024_N10001">
+                <image href="jow1404333774522.image" id="image_gpp_pp1_m4" width="4in"/>
+            </fig>
+            <p>In this window you enter the name of the new profile,
+          <nameliteral>HP-360-cmpt-iface-profile</nameliteral> in this case, and then click the
+        button <uicontrol>Create Interface Profile</uicontrol> to execute. Available interface
+        profiles are listed, and can be removed, from the <wintitle>System Inventory</wintitle>
+        page, as described in <xref href="jow1404333787693.xml"/>.</p>
+        </section>
+        <section id="section_N1016B_N10024_N10001">
+            <title>Managing Interfaces</title>
+            <p>New logical interfaces can be created using the <uicontrol>Create Interface</uicontrol> button on the <uicontrol>Interfaces</uicontrol> tab. This button is available only on
+                nodes in the locked state. When the button is clicked, the window <wintitle>Create Interface</wintitle> is displayed, as illustrated
+                below.</p>
+            <fig id="fig_N10186_N1016E_N10024_N10001">
+                <image href="jow1404333776177.image" id="image_dz4_jr1_m4"/>
+            </fig>
+            <p>The following fields are available:</p>
+            <dl>
+                <dlentry>
+                    <dt>Interface Name</dt>
+                    <dd>
+                        <p>The name to be assigned to the new logical interface.</p>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt>Interface Type</dt>
+                    <dd>
+                        <p>The type of network interface, Ethernet or aggregated
+                            Ethernet (LAG).</p>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt>Ports</dt>
+                    <dd>
+                        <p>A list of physical ports available to the new logical
+                            interface, with corresponding check-mark boxes. Physical ports already
+                            allocated to other interfaces are not listed.</p>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt>Network Type</dt>
+                    <dd>
+                        <p>The type of network to attach the new logical interface
+                            to (<nameliteral>data</nameliteral> or <nameliteral>infra</nameliteral>, for compute node data
+                            interfaces and infrastructure network connections respectively). Note
+                            that connections to the OAM and internal management networks are
+                            auto-provisioned during the software installation process. </p>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt>Provider Network(s)</dt>
+                    <dd>
+                        <p>A list of provider networks available to the new logical
+                            interface, with corresponding check-mark boxes. They can be selected for
+                            networks of type <nameliteral>data</nameliteral>, to
+                            which multiple provider networks can be attached. Provider networks
+                            already allocated to other data interfaces are not listed, since no
+                            provider network can be associated with more than a single data
+                            interface.</p>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt>MTU</dt>
+                    <dd>
+                        <p>The MTU size in bytes for the interface. For compute nodes, values between 1500 and
+              9000 are supported. For controller nodes, the MTU size cannot exceed
+              1500.</p>
+                    </dd>
+                </dlentry>
+            </dl>
+        </section>
+        <section id="section_N10203_N10024_N10001">
+            <p>To edit or remove a logical interface of network type <nameliteral>data</nameliteral> or <nameliteral>infra</nameliteral> you
+                must first lock the target node. You can then use the <uicontrol>Edit Interface</uicontrol> and <uicontrol>More</uicontrol>
+                buttons to perform these maintenance actions.</p>
+            <p>Logical interfaces of network types <nameliteral>oam</nameliteral> and <nameliteral>mgmt</nameliteral> cannot
+                be deleted. They can only be modified to use different physical ports when required. </p>
+        </section>
+    </conbody>
+</concept-wr>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1409240700100" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+
+ -->
+ <title>Customizing Guest Images with User Data</title>
+ <shortdesc>You can provide bootstrap configuration for an instance at launch by including user data
+  in the template.</shortdesc>
+ <prolog><author/>
+  <author/>
+ </prolog>
+ <conbody>
+  <p>You can include user data by defining a <nameliteral>UserData</nameliteral> property for an instance. This sends configuration instructions to
+      the instance at launch. For an example of user data, see the <filepath>CombinationAutoScaling.yaml</filepath> template included with HP Helion OpenStack Carrier Grade.</p>
+  <p>Normally, this requires <libraryname>cloud-init</libraryname> to
+      be installed in the guest, because the user data is converted to MIME format and then
+      interpreted by <libraryname>cloud-init</libraryname>. For instances that do not
+      include <libraryname>cloud-init</libraryname>, you can bypass the MIME
+      conversion of user data by invoking an extension property and assigning the value
+        <nameliteral>'RAW'</nameliteral>. This allows the VM to retrieve the
+      specified user data in unaltered format through a simple REST API call to the metadata server.
+      The name of the property follows the convention for the associated resource type. For an AWS
+      resource (for example, <nameliteral>AWS::EC2::Instance</nameliteral>), use
+        <parmname>UserDataType</parmname>. For an OpenStack resource (for example,
+        <nameliteral>OS::Nova::Server</nameliteral>), use <parmname>user_data_type</parmname>. The following code fragment shows the property used with an AWS
+      resource.</p>
+  <codeblock>... 
+Srv:
+   type: OS::Nova::Server
+    properties:
+      name: l3-forwarding
+      …
+      user_data_format: 'RAW'
+      user_data:
+        Fn::Base64:
+            Fn::Replace:
+            - 'OS::stack_name': {Ref: 'OS::stack_name'}
+            - |
+              #cloud-config
+
+              runcmd:
+               - ifconfig eth1 1.1.1.1/24 up
+               - ifconfig eth2 2.2.2.1/24 up
+               - echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+               - sed -i -e 's#.*\(net.ipv4.ip_forward\).*#\1 = 1#g' /etc/sysctl.conf
+               - ip route add 192.50.0.0/16 via 1.1.1.10
+               - ip route add 192.51.0.0/16 via 2.2.2.10
+...</codeblock>
+    <note id="note_N10063_N1001F_N10001">
+      <p>For a VM to access user data, it must have a DHCP-enabled interface on a
+        tenant network that has a Neutron router. Typically, this is the interface to the VM's OAM
+        network or an internal network. The Neutron router provides a route to the metadata server,
+        which provides instances with access to user data.</p>
+    </note>
+ </conbody>
+</concept-wr>

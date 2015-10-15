@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="rst1441912501217" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Isolating an Untrusted Guest</title>
+    <shortdesc>You can isolate the network resources used and accessible by a
+        potentially untrusted virtual machine instance. </shortdesc>
+    <prolog><author/>
+        <author>Ron Stone</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p><draft-comment author="rstone">Topic added for:
+                    US60525</draft-comment>This ensures that the untrusted virtual machine cannot
+                exhaust or corrupt shared network resources and impact the operation or performance
+                of other virtual machines hosted on the same compute node. Note that network
+                resource isolation comes at a slight degradation of network performance for this
+                guest. </p>
+            <p>Set this option to true when you want to isolate the network
+                resources used and accessible by an untrusted guest instance from all other
+                instances running on the host. Set it to false to turn isolation off. If this extra
+                spec is not set, then the instance's NICs use of network resources are not isolated.  </p>
+            <p>To add this extra spec to a flavor using the web administration
+                interface, use the <uicontrol>NIC Isolation</uicontrol> selection
+                in the <uicontrol>Create Flavor Extra Spec</uicontrol> drop-down
+                menu. To access this menu, see <xref href="jow1429538642910.xml"/>.
+                This enables isolation of a virtual machine instance's NICs’ use of network
+                resources from all other physical or virtual interfaces on the host. If this extra
+                spec is not set, then the instance's network interfaces are not isolated. </p>
+        </context>
+        <prereq id="prereq_N10031_N1001F_N10001">
+            <p>To use this feature, the compute host must have sufficient 2 MB huge
+                pages available for isolated NIC creation. For example, a guest with 3 NICs would
+                require that 48 MB of 2 MB huge pages be available on its host. Isolated guests will
+                only be launched on hosts that meet this requirement. For more information on using
+                huge pages, see <xref href="jow1423087781001.xml"/>.</p>
+        </prereq>
+        <steps>
+            <step id="step_N1003F_N1003C_N1001C_N10001">
+                <cmd>Set this option using the CLI:</cmd>
+                <stepxmp>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key flavorName set hw:wrs:nic_isolation=true</userinput></codeblock>
+                </stepxmp>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

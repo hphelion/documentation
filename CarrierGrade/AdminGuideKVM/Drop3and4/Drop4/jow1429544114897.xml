@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1429544114897" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Specifying the VCPU Model for a VM</title>
+    <shortdesc>You can select a particular VCPU model for a VM in order to leverage
+        advanced CPU features such as SSE4.2, AES, or AVX on the compute nodes.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p>When a virtual machine is launched, a Nova scheduler filter
+                restricts the target compute nodes to those with available cores of the requested
+                model or better. If no such compute node is available, the error <term>No valid host was found</term> is reported. </p>
+            <p>If no <nameliteral>VCPU Model</nameliteral> extra
+                spec is added, then by default the QEMU virtual processor is used.</p>
+            <p>The following selections are available:</p>
+            <ul id="ul_wmm_b45_tr">
+                <li>
+                    <p>Intel Core i7 9xx (Nehalem Class Core i7)</p>
+                    <p>(This is offered by default when the extra spec is added using the web
+                        administration interface.)</p>
+                </li>
+                <li>
+                    <p>Intel Westmere E56xx/L56xx/X56xx (Nehalem-C)</p>
+                </li>
+                <li>
+                    <p>Intel Xeon E312xx (Sandy Bridge)</p>
+                </li>
+                <li>
+                    <p>Intel Core Processor (Haswell)</p>
+                    <note id="note_N10066_N1005D_N1003B_N10022_N1001F_N10001">
+                        <p>For some selections, limitations apply:</p>
+                        <ul id="ul_kyc_ymm_js">
+                            <li>
+                                <p>The default QEMU processor is based on the Intel
+                                    Core Duo CPU, which does not support extended instruction sets
+                                    such as SSSE3 or SSSE4.2 used for DPDK networking or other
+                                    advanced features.</p>
+                            </li>
+                            <li>
+                                <p>The Haswell model does not currently support transactional
+                                    synchronization extensions (TSX).</p>
+                            </li>
+                        </ul>
+                    </note>
+                </li>
+            </ul>
+            <p>To add this extra spec to a flavor using the web administration
+                interface, use the <uicontrol>VCPU Model</uicontrol> selection in
+                the <uicontrol>Create Flavor Extra Spec</uicontrol> drop-down menu.
+                To access this menu, see <xref href="jow1429538642910.xml"/>. </p>
+            <p>You can also specify the extra spec from the CLI using the following
+                command:</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key <varname>flavor_name</varname> set hw:cpu_model=<varname>cpu_model</varname></userinput></codeblock>
+            <p>where <varname>cpu_model</varname> is one of the
+                following:</p>
+            <ul id="ul_np4_13b_ks">
+                <li>
+                    <p><option>Nehalem</option></p>
+                </li>
+                <li>
+                    <p><option>Westmere</option></p>
+                </li>
+                <li>
+                    <p><option>SandyBridge</option></p>
+                </li>
+                <li>
+                    <p><option>Haswell</option></p>
+                </li>
+            </ul>
+            <note id="note_N10106_N10022_N1001F_N10001">
+                <p>If any other value is supplied, it is ignored and the default QEMU model is
+                    used.</p>
+            </note>
+            <p>If the <parmname>hw:cpu_model</parmname> parameter
+                is not supplied with the <cmdname>nova flavor-key</cmdname>
+                command, then the default QEMU model is used.</p>
+        </context>
+    </taskbody>
+</task-wr>

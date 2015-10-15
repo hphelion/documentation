@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1426182913166" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title>Host Aggregates</title>
+ <shortdesc>Host aggregates are collections of hosts that share common attributes for
+  the purposes of VM scheduling.</shortdesc>
+ <prolog><author/>
+  <author/>
+ </prolog>
+ <conbody>
+  <note id="note_N10022_N1001F_N10001">
+   <p>The information in this topic is preliminary and subject to change.</p>
+  </note>
+  <p>To view host aggregates, open the <wintitle>Host Aggregates</wintitle> page from the
+    <uicontrol>Admin</uicontrol> menu.</p>
+  <fig id="fig_fjl_2y1_kr">
+   <image href="jow1426532903039.image" id="image_k2w_2y1_kr" width="6in">
+    <alt>Host Aggregates page</alt>
+   </image>
+  </fig>
+  <p>When the Nova Scheduler selects a compute node to instantiate a VM, it can use
+   host aggregates to narrow the selection. For example, if the VM requires local storage, the Nova
+   scheduler selects a host from the <nameliteral>local_storage_hosts</nameliteral>
+   host aggregate. Alternatively, if the VM requires remote storage, the scheduler selects from the
+    <nameliteral>remote_storage_hosts</nameliteral> host aggregate. This ensures
+   that the instance is instantiated on a host that meets the requirements of the VM.</p>
+  <p>The Nova scheduler does not always use host aggregates. For example, if a VM
+   does not specify either local or remote storage, the Nova scheduler can instantiate it on any
+   resource.</p>
+  <p>Some host aggregates are managed automatically by HP Helion OpenStack Carrier Grade. </p>
+  <note id="note_N1005C_N1001F_N10001" type="caution">
+   <p>Do not make manual changes to host aggregates that are managed automatically.</p>
+  </note>
+  <ul id="ul_jgc_yt1_kr">
+   <li>
+    <p>The <nameliteral>local_storage_hosts</nameliteral> and
+      <nameliteral>remote_storage_hosts</nameliteral> memberships are updated automatically whenever
+     a local volume group is added or removed on a compute host. For more information, see <xref href="jow1426183480976.xml"/>.</p>
+   </li>
+  </ul>
+  <p>You can use host aggregates to meet special requirements. For example, you can
+   create a pool of compute hosts to offer dedicated resources such as pinned NUMA nodes or specific
+   huge page sizes, while grouping the remaining compute hosts to offer shared resources.
+   </p>
+  <!-- how can you specify that a VM needs a host from a given host aggregate? 
+  JO 2015-03-17 CHris F sends the following:
+  
+  This is all regular upstream stuff, so I'm not sure how much we need to cover. 
+(On the other hand the upstream docs aren't very thorough on this topic.)
+
+Host aggregates can normally only be manipulated by someone with admin privileges, not normal users.
+
+There are two ways to specify a particular host aggregate:
+
+The first is to use the AggregateInstanceExtraSpecsFilter to match flavor extra specs (that start with "aggregate_instance_extra_specs:") against host aggregate metadata.  This is essentially implicit in that the end-user selects the flavor and "behind the scenes" that has implications about host aggregates.  Because only the admin user can set the extra specs on the flavor, this means that it's the admin rather than the regular end-user that sets up the relationship between flavor/aggregate.  This technique works for all host aggregates.
+
+It's possible to expose a host aggregate as an availability zone.  Like it sounds, this is intended to group hosts together such that they are in different "zones" that could be reasonably expected not to fail simultaneously.  So different physical networks, or different power grids, or even different physical locations.  A given host is only supposed to be in one availability 
+zone at a time, though it can be in multiple aggregates.   (Personally I think 
+they should allow multiple orthogonal availability zones, but they don't currently.)
+
+For host aggregates that are exposed as an availability zone, the end-user can select the availability zone at instance creation time and this will constrain it to the set of hosts in the corresponding host aggregate.  An instance can only be placed in one availability zone at a time.
+  
+  -->
+ </conbody>
+</concept-wr>

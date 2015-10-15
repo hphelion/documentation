@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Reference//EN" "reference-wr.dtd">
+<reference-wr id="jow1443627881098" xml:lang="en-us">
+<!-- Modification History
+    
+-->
+  <title ixia_locid="1">Default Firewall Rules</title>
+  <shortdesc ixia_locid="2">HP Helion OpenStack Carrier Grade applies these default firewall rules on the OAM network.
+    The default rules are recommended for most applications. </shortdesc>
+  <prolog>
+    <author ixia_locid="3">Jim Owens</author>
+  </prolog>
+  <refbody>
+    <section id="section_N1001F_N1001C_N10001" ixia_locid="4">
+      <draft-comment author="jowens" ixia_locid="6">US65292 new topic</draft-comment>
+      <p ixia_locid="5">Traffic is permitted for the following protocols and ports to allow access
+        for platform or OpenStack services. By default, all other traffic is blocked.<note id="note_N1002B_N10027_N10022_N1001F_N10001" ixia_locid="198">
+          <p ixia_locid="199">Depending on the system configuration, additional rules may apply. For
+            more information, see <xref href="jow1443627833422.xml" ixia_locid="200"/></p>
+        </note><simpletable frame="all" id="simpletable_eny_sbk_nt" relcolwidth="1.0* 1.0* 1.0* 1.0*">
+          <sthead>
+            <stentry ixia_locid="7">
+              <p ixia_locid="8">Protocol</p>
+            </stentry>
+            <stentry ixia_locid="9">
+              <p ixia_locid="10">Port</p>
+            </stentry>
+            <stentry ixia_locid="11">
+              <p ixia_locid="12">Service Name</p>
+            </stentry>
+          </sthead>
+          <strow>
+            <stentry ixia_locid="15">
+              <p ixia_locid="16">tcp</p>
+            </stentry>
+            <stentry ixia_locid="17">
+              <p ixia_locid="18">22</p>
+            </stentry>
+            <stentry ixia_locid="19">
+              <p ixia_locid="20">ssh</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="23">
+              <p ixia_locid="24">tcp</p>
+            </stentry>
+            <stentry ixia_locid="25">
+              <p ixia_locid="26">80</p>
+            </stentry>
+            <stentry ixia_locid="27">
+              <p ixia_locid="28">horizon (http only)</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="31">
+              <p ixia_locid="32">tcp</p>
+            </stentry>
+            <stentry ixia_locid="33">
+              <p ixia_locid="34">199</p>
+            </stentry>
+            <stentry ixia_locid="35">
+              <p ixia_locid="36">smux</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="39">
+              <p ixia_locid="40">tcp</p>
+            </stentry>
+            <stentry ixia_locid="41">
+              <p ixia_locid="42">443</p>
+            </stentry>
+            <stentry ixia_locid="43">
+              <p ixia_locid="44">horizon (https only)</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="47">
+              <p ixia_locid="48">tcp</p>
+            </stentry>
+            <stentry ixia_locid="49">
+              <p ixia_locid="50">4545</p>
+            </stentry>
+            <stentry ixia_locid="51">
+              <p ixia_locid="52">nfv-vim-api</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="55">
+              <p ixia_locid="56">tcp</p>
+            </stentry>
+            <stentry ixia_locid="57">
+              <p ixia_locid="58">5000</p>
+            </stentry>
+            <stentry ixia_locid="59">
+              <p ixia_locid="60">keystone-api</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="63">
+              <p ixia_locid="64">tcp</p>
+            </stentry>
+            <stentry ixia_locid="65">
+              <p ixia_locid="66">6080</p>
+            </stentry>
+            <stentry ixia_locid="67">
+              <p ixia_locid="68">nova-nonvc-proxy</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="71">
+              <p ixia_locid="72">tcp</p>
+            </stentry>
+            <stentry ixia_locid="73">
+              <p ixia_locid="74">6835</p>
+            </stentry>
+            <stentry ixia_locid="75">
+              <p ixia_locid="76">sysinv-api</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="79">
+              <p ixia_locid="80">tcp</p>
+            </stentry>
+            <stentry ixia_locid="81">
+              <p ixia_locid="82">8000</p>
+            </stentry>
+            <stentry ixia_locid="83">
+              <p ixia_locid="84">heat-cfn</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="87">
+              <p ixia_locid="88">tcp</p>
+            </stentry>
+            <stentry ixia_locid="89">
+              <p ixia_locid="90">8003</p>
+            </stentry>
+            <stentry ixia_locid="91">
+              <p ixia_locid="92">heat-cloudwatch-api</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="95">
+              <p ixia_locid="96">tcp</p>
+            </stentry>
+            <stentry ixia_locid="97">
+              <p ixia_locid="98">8004</p>
+            </stentry>
+            <stentry ixia_locid="99">
+              <p ixia_locid="100">heat-api</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="103">
+              <p ixia_locid="104">tcp</p>
+            </stentry>
+            <stentry ixia_locid="105">
+              <p ixia_locid="106">8777</p>
+            </stentry>
+            <stentry ixia_locid="107">
+              <p ixia_locid="108">ceilometer-api</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="111">
+              <p ixia_locid="112">tcp</p>
+            </stentry>
+            <stentry ixia_locid="113">
+              <p ixia_locid="114">8776</p>
+            </stentry>
+            <stentry ixia_locid="115">
+              <p ixia_locid="116">cinder-api</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="119">
+              <p ixia_locid="120">tcp</p>
+            </stentry>
+            <stentry ixia_locid="121">
+              <p ixia_locid="122">8773</p>
+            </stentry>
+            <stentry ixia_locid="123">
+              <p ixia_locid="124">nova-ec2</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="127">
+              <p ixia_locid="128">tcp</p>
+            </stentry>
+            <stentry ixia_locid="129">
+              <p ixia_locid="130">8774</p>
+            </stentry>
+            <stentry ixia_locid="131">
+              <p ixia_locid="132">nova-api</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="135">
+              <p ixia_locid="136">tcp</p>
+            </stentry>
+            <stentry ixia_locid="137">
+              <p ixia_locid="138">9292</p>
+            </stentry>
+            <stentry ixia_locid="139">
+              <p ixia_locid="140">glance-api</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="143">
+              <p ixia_locid="144">tcp</p>
+            </stentry>
+            <stentry ixia_locid="145">
+              <p ixia_locid="146">9696</p>
+            </stentry>
+            <stentry ixia_locid="147">
+              <p ixia_locid="148">neutron-api</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="151">
+              <p ixia_locid="152">tcp</p>
+            </stentry>
+            <stentry ixia_locid="153">
+              <p ixia_locid="154">15491</p>
+            </stentry>
+            <stentry ixia_locid="155">
+              <p ixia_locid="156">patching-api</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="159">
+              <p ixia_locid="160">icmp</p>
+            </stentry>
+            <stentry ixia_locid="161"/>
+            <stentry ixia_locid="162">
+              <p ixia_locid="163">icmp</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="166">
+              <p ixia_locid="167">udp</p>
+            </stentry>
+            <stentry ixia_locid="168">
+              <p ixia_locid="169">123</p>
+            </stentry>
+            <stentry ixia_locid="170">
+              <p ixia_locid="171">ntp</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="174">
+              <p ixia_locid="175">udp</p>
+            </stentry>
+            <stentry ixia_locid="176">
+              <p ixia_locid="177">161</p>
+            </stentry>
+            <stentry ixia_locid="178">
+              <p ixia_locid="179">snmp</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="182">
+              <p ixia_locid="183">udp</p>
+            </stentry>
+            <stentry ixia_locid="184">
+              <p ixia_locid="185">2222</p>
+            </stentry>
+            <stentry ixia_locid="186">
+              <p ixia_locid="187">service manager</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry ixia_locid="190">
+              <p ixia_locid="191">udp</p>
+            </stentry>
+            <stentry ixia_locid="192">
+              <p ixia_locid="193">2223</p>
+            </stentry>
+            <stentry ixia_locid="194">
+              <p ixia_locid="195">service manager</p>
+            </stentry>
+          </strow>
+        </simpletable></p>
+    </section>
+  </refbody>
+</reference-wr>

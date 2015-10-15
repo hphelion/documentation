@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1420473404578" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+        
+-->
+    <title>Adding an Infrastructure Network Using the CLI</title>
+    <shortdesc>If an infrastructure network is not installed during initial
+        configuration, you can add one later using the CLI.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <prereq id="prereq_N10021_N1001E_N10001">
+            <note id="note_N10025_N10021_N1001E_N10001">
+                <p>On a cluster with an infrastructure network, each host must have an
+                    infrastructure interface before it can be unlocked. Ensure that all hosts have
+                    the required hardware.</p>
+            </note>
+        </prereq>
+        <context id="context_N1001D_N1001A_N10001">
+            <p>For a system with an LVM storage backend, the infrastructure network
+                is optional. It can be used to offload the internal management network on clusters
+                with many compute nodes. For more information, see <xref href="jow1404333674324.xml"/>.</p>
+            <p>You can view the existing infrastructure network configuration
+                using the following command on the active controller (assumed to be <nameliteral>controller-0</nameliteral> for this discussion).</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system infra-show</userinput></codeblock>
+            <draft-comment author="jowens">US62814 update infra-show output</draft-comment>
+            <codeblock><systemoutput>
++--------------+--------------------------------------+
+| Property     | Value                                |
++--------------+--------------------------------------+
+| uuid         | cc549ef3-5c81-4fbf-8c50-5163c89e5039 |
+| istate       | applied                              |
+| infra_subnet | None                                 |
+| infra_start  | None                                 |
+| infra_end    | None                                 |
+| isystem_uuid | 1bbd29be-c6a2-4e9b-93ce-a8dac3ce8e5c |
+| recordtype   | reconfig                             |
+| created_at   | 2014-12-23T21:15:34.074881+00:00     |
+| updated_at   | 2014-12-31T19:38:43.603320+00:00     |
++--------------+--------------------------------------+
+</systemoutput></codeblock>
+            <p>You can add an infrastructure network after initial installation.
+                For this operation, all nodes except the active controller must be locked. During
+                the change, the nodes cannot be unlocked until the new configuration is applied to
+                both controllers. In addition, before a node can be unlocked, an infrastructure
+                interface must be configured on the host.</p>
+        </context>
+        <steps>
+            <step id="step_N1017B_N10178_N1001A_N10001">
+                <cmd>Lock all hosts except the active controller.</cmd>
+                <info>
+                    <p>For each host, use the following command.</p>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-lock <varname>hostname</varname></userinput></codeblock>
+                </info>
+            </step>
+            <step id="step_N10076_N1004F_N1001E_N10001">
+                <cmd>Add an infrastructure interface on the standby controller.</cmd>
+                <info>
+                    <note id="note_N100A0_N10097_N1008D_N10065_N1001E_N10001">
+                        <p>You can also add an infrastructure network to a shared
+                            interface as a VLAN-tagged network. For more information, see <xref href="jow1423173019489.xml"/>.</p>
+                    </note>
+                    <p>To add an infrastructure network to a dedicated interface,
+                        use the following command, specifying a name for the network and the port to
+                        use for the network connection. To identify the port to use for an
+                        infrastructure network, consult your configuration plan.</p>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-if-modify -nt infra \
+-n <varname>interfacename</varname> <varname>hostname</varname> <varname>port</varname></userinput></codeblock>
+                    <p>For example:</p>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-if-modify -nt infra \
+-n infra0 controller-1 eth3</userinput>
+<systemoutput>+------------------+--------------------------------------+
+| Property         | Value                                |
++------------------+--------------------------------------+
+| ifname           | infra0                               |
+| networktype      | infra                                |
+| iftype           | ethernet                             |
+| ports            | [u'eth3']                            |
+| providernetworks | None                                 |
+| imac             | 08:00:27:7a:fa:a5                    |
+| imtu             | 1500                                 |
+| aemode           | active_standby                       |
+| schedpolicy      | None                                 |
+| txhashpolicy     | layer2                               |
+| uuid             | d3efde57-c475-402e-acad-34f5029f3988 |
+| ihost_uuid       | 62657285-cc9c-45a2-962e-ecb01647916f |
+| vlan_id          | None                                 |
+| uses             | []                                   |
+| used_by          | []                                   |
+| created_at       | 2014-12-31T20:13:16.326992+00:00     |
+| updated_at       | None                                 |
++------------------+--------------------------------------+
+</systemoutput></codeblock>
+                </info>
+            </step>
+            <step id="step_N100B8_N1004F_N1001E_N10001">
+                <cmd>Add the same infrastructure network on the active controller.</cmd>
+                <info>
+                    <p> For example:</p>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-if-modify -nt infra \
+-n infra0 controller-0 eth3</userinput>
+<systemoutput>+------------------+--------------------------------------+
+| Property         | Value                                |
++------------------+--------------------------------------+
+| ifname           | infra0                               |
+| networktype      | infra                                |
+| iftype           | ethernet                             |
+| ports            | [u'eth3']                            | 
+| providernetworks | None                                 |
+| imac             | 08:00:27:51:58:6b                    |
+| imtu             | 1500                                 |
+| aemode           | active_standby                       |
+| schedpolicy      | None                                 |
+| txhashpolicy     | layer2                               |
+| uuid             | 66c4543e-6bfd-4ede-9b8a-4d091cf290a9 |
+| ihost_uuid       | 3c11607b-1550-4e99-a46f-2580c18683da |
+| vlan_id          | None                                 |
+| uses             | []                                   |
+| used_by          | []                                   |
+| created_at       | 2014-12-31T20:29:51.759507+00:00     |
+| updated_at       | None                                 |
++------------------+--------------------------------------+</systemoutput></codeblock>
+                </info>
+            </step>
+            <step id="step_N100DB_N1004F_N1001E_N10001">
+                <cmd>Specify the infrastructure subnet.</cmd>
+                <info>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system infra-modify \
+infra_subnet=<varname>subnet/mask</varname> action=apply</userinput></codeblock>
+                    <p>For example:</p>
+                    <draft-comment author="jowens">US62814 update infra-modify
+                        output</draft-comment>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system infra-modify \
+infra_subnet=192.168.205.0/24 action=apply</userinput>
+
+<systemoutput>+--------------+--------------------------------------+
+| Property     | Value                                |
++--------------+--------------------------------------+
+| uuid         | cc549ef3-5c81-4fbf-8c50-5163c89e5039 |
+| istate       | applying                             |
+| infra_subnet | 192.168.205.0/24                     |
+| infra_start  | None                                 |
+| infra_end    | None                                 |
+| isystem_uuid | 1bbd29be-c6a2-4e9b-93ce-a8dac3ce8e5c |
+| recordtype   | reconfig                             |
+| created_at   | 2014-12-23T21:15:34.074881+00:00     |
+| updated_at   | 2015-01-02T16:06:39.275800+00:00     |
++--------------+--------------------------------------+</systemoutput></codeblock>
+                </info>
+            </step>
+            <step id="step_N10114_N1004F_N1001E_N10001">
+                <cmd>Reboot the standby controller.</cmd>
+                <info>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-reboot controller-1</userinput></codeblock>
+                    <p>This updates its configuration.</p>
+                    <p>Wait for the standby controller to reboot. To monitor its
+                        status, use the following command.</p>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>watch -n 5 system host-list</userinput></codeblock>
+                    <p>This displays a refreshed host list every five seconds.
+                        Monitor the output until the standby controller is shown as <nameliteral>locked</nameliteral> and <nameliteral>online</nameliteral>. To stop monitoring, enter <userinput>CTRL-C</userinput>.</p>
+                    <note id="note_N10154_N10139_N1012F_N10065_N1001E_N10001" type="caution">
+                        <p>To prevent potential service conflicts due to
+                            inconsistent controller network configurations, do not unlock the
+                            standby controller until the active controller is also rebooted.</p>
+                    </note>
+                </info>
+            </step>
+            <step id="step_N10149_N1004F_N1001E_N10001">
+                <cmd>Reboot the active controller.</cmd>
+                <info>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>sudo reboot</userinput>
+<systemoutput>The system is going down for reboot NOW!</systemoutput></codeblock>
+                    <p>Wait for the controller to reboot.</p>
+                </info>
+            </step>
+            <step id="step_N10171_N1004F_N1001E_N10001">
+                <cmd>Log in to the active controller and become the Keystone
+                        <nameliteral>admin</nameliteral> user.</cmd>
+                <info>
+                    <codeblock><systemoutput>$ </systemoutput><userinput>source /etc/nova/openrc</userinput>
+</codeblock>
+                </info>
+            </step>
+            <step id="step_N10190_N1004F_N1001E_N10001">
+                <cmd>Unlock the standby controller.</cmd>
+                <info>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-unlock controller-1</userinput>
+<systemoutput>+-----------------+--------------------------------------+
+| Property        | Value                                |
++-----------------+--------------------------------------+
+| action          | none                                 |
+| administrative  | locked                               |
+| availability    | online                               |
+| bm_ip           |                                      |
+| bm_mac          |                                      |
+| bm_type         | None                                 |
+| bm_username     |                                      |
+| capabilities    | {}                                   |
+| created_at      | 2014-12-24T16:44:08.749540+00:00     |
+| cstatus         |                                      |
+| hostname        | controller-1                         |
+| iconfig_applied | 76aa6a81-620a-4ba2-85c3-113d1c42f5ec |
+| iconfig_fini    | 76aa6a81-620a-4ba2-85c3-113d1c42f5ec |
+| iconfig_target  | 76aa6a81-620a-4ba2-85c3-113d1c42f5ec |
+| id              | 5                                    |
+| invprovision    | unprovisioned                        |
+| location        | {u'locn': u'Rack 1 Pos 2'}           |
+| mgmt_ip         | 192.168.204.4                        |
+| mgmt_mac        | 08:00:27:ba:e8:52                    |
+| operational     | disabled                             |
+| personality     | controller                           |
+| reserved        | False                                |
+| serialid        | None                                 |
+| task            | Unlocking                            |
+| updated_at      | 2015-01-02T17:12:56.464592+00:00     |
+| uptime          | 1955                                 |
+| uuid            | 62657285-cc9c-45a2-962e-ecb01647916f |
++-----------------+--------------------------------------+
+</systemoutput>
+</codeblock>
+                </info>
+            </step>
+            <step id="step_N101B3_N1004F_N1001E_N10001">
+                <cmd>Add infrastructure interfaces to each compute node.</cmd>
+                <info>
+                    <p>For each node, use the following command.</p>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-if-modify -nt infra \
+-n <varname>networkname</varname> <varname>hostname</varname> <varname>port</varname></userinput>
+<systemoutput>+------------------+--------------------------------------+
+| Property         | Value                                |
++------------------+--------------------------------------+
+| ifname           | infra0                               |
+| networktype      | infra                                |
+| iftype           | ethernet                             |
+| ports            | [u'eth0']                            |
+| providernetworks | None                                 |
+| imac             | 08:00:27:20:d2:d1                    |
+| imtu             | 1500                                 |
+| aemode           | active_standby                       |
+| schedpolicy      | None                                 |
+| txhashpolicy     | layer2                               |
+| uuid             | d664ad66-58fa-4378-b906-ae417d58dbf0 |
+| ihost_uuid       | 43b462ac-05fc-43dd-82de-160c7ab0923f |
+| vlan_id          | None                                 |
+| uses             | []                                   |
+| used_by          | []                                   |
+| created_at       | 2015-01-02T17:33:37.138694+00:00     |
+| updated_at       | None                                 |
++------------------+--------------------------------------+
+</systemoutput></codeblock>
+                    <p>You can now unlock the compute nodes. This clears any
+                            <nameliteral>Configuration out-of-date</nameliteral>
+                        errors.</p>
+                </info>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

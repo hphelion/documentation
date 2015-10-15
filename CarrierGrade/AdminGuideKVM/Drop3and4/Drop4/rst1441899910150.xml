@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="rst1441899910150" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Disabling Instance Auto Recovery</title>
+    <shortdesc>You can disable auto recovery of failed virtual machine
+        instances.</shortdesc>
+    <prolog><author/>
+        <author>Ron Stone</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p><draft-comment author="rstone">Topic added for
+                    US61157</draft-comment>If this extra spec is not added, then the system will
+                automatically recover failed virtual machine instances. Set this option to false if,
+                for example, you are writing a Virtual Network Function Manager (VNFM) and the VNFM
+                is to manage the auto-recovery of its VMs. Setting it to false disables this
+                behavior. To re-enable virtual machine instance auto recovery, set the value to
+                true. </p>
+            <p>Instance auto-recovery can be configured as an extra spec on a
+                flavor, such that any VM instance created with this flavor will have the specified
+                instance auto-recovery. Alternatively, instance auto-recovery can be configured as
+                meta-data on an image, such that any VM instance created based on the image will
+                have the specified instance auto-recovery. Note that Flavor extra-specs will
+                override the image meta-data.</p>
+            <p>To set the option using the web administration interface, do one of
+                the following:</p>
+            <ul id="ul_orz_33t_lt">
+                <li>
+                    <p>As <term>admin</term>, use the <uicontrol>Instance Auto Recovery</uicontrol> selection in the <uicontrol>Create Flavor Extra Spec</uicontrol> drop-down menu. To
+                        access this menu, see <xref href="jow1429538642910.xml"/>.</p>
+                </li>
+
+                    <li>
+                    <p>As either <term>admin</term> or a tenant,
+                        select <menucascade>
+                            <uicontrol>System</uicontrol>
+                            <uicontrol>Images</uicontrol>
+                            <uicontrol>Edit Image</uicontrol>
+                            <uicontrol/>
+                        </menucascade> for the desired images and uncheck the <uicontrol>Instance Auto Recovery</uicontrol> option. </p>
+                </li>
+                <!-- RS: Old/alternate method
+                    <li>
+                    <p>As either <term>admin</term> or a tenant, select <menucascade>
+                            <uicontrol>System</uicontrol>
+                            <uicontrol>Images</uicontrol>
+                            <uicontrol>Edit Image</uicontrol>
+                            <uicontrol>Update Metadata</uicontrol>
+                        </menucascade> for the desired images and add an entry with:</p>
+                    <codeblock>sw_wrs_auto_recovery=false</codeblock>
+                </li> -->
+            </ul>
+        </context>
+        <steps>
+            <step id="step_N1003F_N1003C_N1001C_N10001">
+                <cmd>To set the option from the command line do one of the
+                    following.</cmd>
+                <choices id="choices_cdc_hl5_ht">
+                    <choice>
+                        <p>As <term>admin</term>, add an extra spec to a
+                            flavor:</p>
+                        <codeblock><systemoutput>~(keystone)admin)$ </systemoutput><userinput>nova flavor-key <varname>flavorName</varname> set sw:wrs:auto_recovery=false</userinput></codeblock>
+                    </choice>
+                    <choice>
+                        <p>As <term>admin</term> or a tenant:</p>
+                        <codeblock><systemoutput>~(keystone)admin)$ </systemoutput><userinput>glance image-update --property sw_wrs_auto_recovery=false <varname>imageName</varname></userinput></codeblock>
+                    </choice>
+                </choices>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

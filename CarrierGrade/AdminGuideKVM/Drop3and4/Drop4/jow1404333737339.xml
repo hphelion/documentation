@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333737339" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title ixia_locid="1">The Infrastructure Network</title>
+    <shortdesc ixia_locid="2">The infrastructure network is a private network visible only to the
+        hosts in the cluster. It is optional unless storage nodes are part of the
+        cluster.</shortdesc>
+    <prolog>
+        <author ixia_locid="25">Jim Owens</author>
+        <author></author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="26"><draft-comment author="jowens" ixia_locid="27">86214 updated</draft-comment>For the most
+            part, the infrastructure network shares the design considerations applicable to the
+            internal management network. It can be implemented using either a 1 Gb or 10 Gb Ethernet
+            interface. It can be VLAN-tagged, enabling it to share an interface with the management
+            or OAM network. It can own the entire IP address range on the subnet, or a specified
+            range.</p>
+        <p ixia_locid="28">The infrastructure network supports dynamic or static IP address
+            assignment. The setting is determined by the setting for the management network. If
+            static assignment is used, you must manually assign IP addresses on the infrastructure
+            network for the other hosts in the cluster, using the <cmdname ixia_locid="29">system
+                host-addr-add</cmdname> command.</p>
+        <p ixia_locid="5">The decision whether to implement an infrastructure network depends on the
+            infrastructure traffic levels expected. The following table provides general guidelines
+            on when to implement the infrastructure network, using the number of compute nodes in
+            the HP Helion OpenStack Carrier Grade cluster as an indication of expected traffic levels.</p>
+        <simpletable id="simpletable_lgh_vms_14" relcolwidth="1.0* 3.0*">
+            <sthead>
+                <stentry ixia_locid="6">
+                    <p ixia_locid="7">Number of Compute Nodes</p>
+                </stentry>
+                <stentry ixia_locid="8">
+                    <p ixia_locid="9">Infrastructure Network Implementation</p>
+                </stentry>
+            </sthead>
+            <strow>
+                <stentry ixia_locid="10">
+                    <p ixia_locid="11">2 to 4</p>
+                </stentry>
+                <stentry ixia_locid="12">
+                    <p ixia_locid="13">No infrastructure network required. All infrastructure
+                        traffic is carried over the internal management network.</p>
+                </stentry>
+            </strow>
+            <strow>
+                <stentry ixia_locid="14">
+                    <p ixia_locid="15">5 to 8</p>
+                </stentry>
+                <stentry ixia_locid="16">
+                    <p ixia_locid="17">Use 1 Gb Ethernet</p>
+                </stentry>
+            </strow>
+            <strow>
+                <stentry ixia_locid="18">
+                    <p ixia_locid="19">9 or more</p>
+                </stentry>
+                <stentry ixia_locid="20">
+                    <p ixia_locid="30">Use 10 Gb Ethernet</p>
+                </stentry>
+            </strow>
+        </simpletable>
+        <p ixia_locid="22">In addition to the number of compute nodes, other factors must be taken into account when
+            deciding the type of infrastructure network to use. For example, live migration of
+            large, memory-intensive, guest applications is likely to require additional network
+            resources that might not be available in the current configuration. It is always safe to
+            implement the fastest infrastructure network possible.</p>
+        <note id="note_N10095_N1001D_N10001" ixia_locid="23">
+            <p conref="jow1419267499106.xml#jow1419267499106/multicast_in_use" ixia_locid="24"/>
+        </note>
+    </conbody>
+</concept-wr>

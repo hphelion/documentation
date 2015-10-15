@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1429547742880" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Configuring vCPU Scheduling and Priority</title>
+    <shortdesc>You can assign the Linux scheduler and priority for non-boot virtual CPUs using an
+        extra specification.</shortdesc>
+    <prolog><author/>
+        <author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p>This extra specification applies to non-boot virtual CPUs. For the
+                boot CPU, the Linux scheduler and priority are fixed to normal time-shared
+                scheduling policy with a <i>nice</i> priority of 0.</p>
+            <note id="note_N1017D_N1016B_N10161_N100BC_N10024_N10001">
+                <p>This extra spec is shown only for flavors with more than one
+                    CPU.</p>
+            </note>
+            <p>For each additional virtual CPU, the available options are:</p>
+            <dl>
+                <dlentry>
+                    <dt>Default Policy</dt>
+                    <dd>
+                        <p>Assigns a normal time-shared scheduling policy with <i>nice</i> priority of 0.</p>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt>Real-Time FIFO</dt>
+                    <dd>
+                        <p>Assigns a real-time, first-in-first-out policy, with
+                            priority in the range of 1‒99, specified in the associated <uicontrol>VCPU Priority</uicontrol> field.</p>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt>Real-Time Round Robin</dt>
+                    <dd>
+                        <p>Assigns a real-time, round-robin policy, with priority
+                            of 1‒99, specified in the associated <uicontrol>VCPU
+                                Priority</uicontrol> field.</p>
+                    </dd>
+                </dlentry>
+            </dl>
+            <note id="note_N10089_N10026_N10023_N10001">
+                <p>The scheduling policy and priority level set by this extra spec become effective
+                    when the virtual CPU thread is scheduled to run on regularly shared cores.
+                    Virtual CPU threads pinned to run on shared-only CPUs always use the default
+                    policy of time-shared scheduling with <i>nice</i> priority of 0. See <xref href="jow1426625051841.xml"/> for details.</p>
+            </note>
+            <p>To add this extra spec to a flavor using the web administration
+                interface, use the <uicontrol>VCPU Scheduler Policy</uicontrol>
+                selection in the <uicontrol>Create Flavor Extra Spec</uicontrol>
+                drop-down menu. To access this menu, see <xref href="jow1429538642910.xml"/>.</p>
+            <p>You can specify the scheduler policy and priority for non-boot
+                virtual CPUs from the CLI using the <option>hw:wrs:vcpu:scheduler</option> parameter on the <cmdname>nova
+                    flavor-key</cmdname> command. This parameter accepts a semicolon-separated list
+                of <varname>scheduler:priority:vcpus</varname> values enclosed by
+                quotes, as follows.</p>
+            <dl>
+                <dlentry>
+                    <dt><varname>scheduler</varname></dt>
+                    <dd>
+                        <p>The scheduler policy. One of <i>other</i>, <i>fifo</i>, or <i>rr</i> to indicate normal time-shared, FIFO, and Round Robin
+                            policies respectively.</p>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt><varname>priority</varname></dt>
+                    <dd>
+                        <p>The real-time scheduler priority. A value between 1 and
+                            99.</p>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt><varname>vcpus</varname></dt>
+                    <dd>
+                        <p>An optional list of virtual CPUs as a comma-separated
+                            list (1,2,3), or a range specification (1-3). Virtual CPU number 0
+                            refers to the boot virtual CPU and therefore cannot be used.</p>
+                    </dd>
+                </dlentry>
+            </dl>
+        </context>
+        <example>
+            <p>To set real-time schedulers and priorities on virtual CPU 1 (FIFO,
+                50) and virtual CPU 2 (Round Robin, 80):</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key <varname>flavor_name</varname> set hw:wrs:vcpu:scheduler="fifo:50:1;rr:80:2"</userinput></codeblock>
+            <p>To set real-time Round Robin schedulers for three virtual CPU (Round
+                Robin, 80):</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key <varname>flavor_name</varname> set hw:wrs:vcpu:scheduler=rr:80:1-3</userinput></codeblock>
+            <p>To set the FIFO scheduler with priority 50 on all virtual CPUs
+                except virtual CPU 0:</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key <varname>flavor_name</varname> set hw:wrs:vcpu:scheduler=fifo:50</userinput></codeblock>
+            <p>To reset all scheduler settings to default values (non real-time
+                scheduler with priority 0):</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key <varname>flavor_name</varname> unset hw:wrs:vcpu:scheduler</userinput></codeblock>
+        </example>
+    </taskbody>
+</task-wr>

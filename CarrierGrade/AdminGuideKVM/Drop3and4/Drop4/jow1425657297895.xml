@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content id="jow1425657297895" xml:lang="en-us">
+<title ixia_locid="357">Conref task: Creating Segmentation Ranges</title>
+<rcbody>
+        <title id="title_N10011_N1000E_N10001" ixia_locid="1">Creating Segmentation Ranges</title>
+        <shortdesc id="shortdesc_N10017_N1000E_N10001" ixia_locid="2">The <nameliteral ixia_locid="20">admin</nameliteral> user must
+            create segmentation ranges on existing provider networks of the <nameliteral ixia_locid="356">vlan</nameliteral> type in order to support tenant
+            networks.</shortdesc>
+        <prolog id="prolog_N10027_N1000E_N10001">
+            <author ixia_locid="3">Jim Owens</author>
+        </prolog>
+        <taskbody id="taskbody_N10031_N1000E_N10001">
+            <prereq id="prereq_N10027_N10024_N10001" ixia_locid="266">
+                <p ixia_locid="22">This task assumes that provider networks have already been
+                    created to unlock the compute nodes and make the system operational. For more
+                    information, see <xref href="jow1424192677556.xml" ixia_locid="355"/>.</p>
+            </prereq>
+            <context id="context_N10037_N10024_N10001" ixia_locid="230">
+                <p id="seg_range_definition" ixia_locid="267">Segmentation ranges are sets of
+                    contiguous identifiers defined on a provider network. Each ID is used to
+                    implement a tenant network. </p>
+                <p id="p_seg_range_sharing" ixia_locid="268">Depending on how a segmentation range is configured, its ID can
+                    be available to all tenants (shared), or designated for use by a particular
+                    tenant. When a tenant or admin creates a new tenant network, it is assigned an
+                    ID automatically from the available ranges on available provider networks.</p>
+                <p id="p_seg_ranges_in_scenarios" ixia_locid="269">To support the six tenant networks in the deployment scenarios,
+                    six VLAN IDs are needed. Several large segmentation ranges are defined, using
+                    both provider networks, so that more than enough VLAN IDs are available to meet
+                    the requirements.</p>
+            </context>
+            <steps id="steps_f4b_2gf_hr">
+                <step id="step_N10037_N10034_N1001C_N10001" ixia_locid="9">
+                    <cmd ixia_locid="10">List the provider networks currently defined on the
+                        system.</cmd>
+                    <info ixia_locid="11">
+                        <p ixia_locid="12">Select <uicontrol ixia_locid="13">Networks</uicontrol> in
+                            the System Panel section of the <uicontrol ixia_locid="14">Admin</uicontrol> tab, and then select the <uicontrol ixia_locid="15">Provider Networks</uicontrol> tab.</p>
+                    </info>
+                    <stepresult ixia_locid="16">
+                        <p ixia_locid="17">The <wintitle ixia_locid="18">Provider
+                                Networks</wintitle> page appears.</p>
+                        <fig id="fig_N1005D_N10052_N10037_N10034_N1001C_N10001" ixia_locid="19">
+                            <image href="jow1411603875640.image" id="image_qcn_cls_np" ixia_locid="24" placement="inline" width="5.5in">
+                                <alt ixia_locid="25">Two provider networks with no segmentation
+                                    ranges</alt>
+                            </image>
+                        </fig>
+                        <p ixia_locid="26">The provider networks used in the scenarios are named
+                                <nameliteral ixia_locid="27">provider-net-a</nameliteral> and
+                                <nameliteral ixia_locid="28">provider-net-b</nameliteral>. You can
+                            use any two provider networks of the VLAN type.</p>
+                    </stepresult>
+                </step>
+                <step id="step_N100A8_N1004A_N10024_N10001" ixia_locid="272">
+                    <cmd ixia_locid="273">Click the name of the provider network where you want to
+                        create a segmentation range.</cmd>
+                    <info ixia_locid="358">
+                        <p ixia_locid="359">Click <nameliteral ixia_locid="360">provider-net-a</nameliteral>. </p>
+                    </info>
+                    <stepresult ixia_locid="246">
+                        <p ixia_locid="248">The <wintitle ixia_locid="250">Provider Network
+                                Overview</wintitle> page appears. </p>
+                        <fig id="fig_jzv_qbj_wq" ixia_locid="252">
+                            <image href="jow1404333678017.image" id="image_tzv_qbj_wq" ixia_locid="254" placement="inline" width="6in"/>
+                        </fig>
+                    </stepresult>
+                </step>
+                <step id="step_N100E6_N1004A_N10024_N10001" ixia_locid="275">
+                    <cmd id="cmd_add_seg_range" ixia_locid="276">Add a segmentation range and assign it to a tenant. </cmd>
+                    <info id="info_add_seg-range" ixia_locid="176">
+                        <p id="p_create_range" ixia_locid="178">On the <wintitle ixia_locid="180">Provider Network
+                                Overview</wintitle> page, click <uicontrol ixia_locid="182">Create
+                                Range</uicontrol> to open the <wintitle ixia_locid="184">Create
+                                Segmentation Range</wintitle> page. Complete the form as
+                            required.</p>
+                        <dl>
+                            <dlentry ixia_locid="38">
+                                <dt ixia_locid="39">Name</dt>
+                                <dd ixia_locid="40">
+                                    <p ixia_locid="41">The name of the segmentation range.</p>
+                                </dd>
+                            </dlentry>
+                            <dlentry ixia_locid="43">
+                                <dt ixia_locid="44">Description</dt>
+                                <dd ixia_locid="45">
+                                    <p ixia_locid="46">A free-text field for reference.</p>
+                                </dd>
+                            </dlentry>
+                            <dlentry ixia_locid="379">
+                                <dt ixia_locid="381">Shared</dt>
+                                <dd ixia_locid="383">
+                                    <p ixia_locid="385">If selected, shares the range for use by all
+                                        tenants.</p>
+                                </dd>
+                            </dlentry>
+                            <dlentry ixia_locid="387">
+                                <dt ixia_locid="389">Project</dt>
+                                <dd ixia_locid="391">
+                                    <p ixia_locid="393">The tenant associated with the segmentation
+                                        range.</p>
+                                </dd>
+                            </dlentry>
+                            <dlentry ixia_locid="395">
+                                <dt ixia_locid="397">Minimum</dt>
+                                <dd ixia_locid="399">
+                                    <p ixia_locid="401">The lowest value of a range of  IDs.</p>
+                                </dd>
+                            </dlentry>
+                            <dlentry ixia_locid="365">
+                                <dt ixia_locid="368">Maximum</dt>
+                                <dd ixia_locid="371">
+                                    <p ixia_locid="374">The highest value of a range of IDs.</p>
+                                </dd>
+                            </dlentry>
+                        </dl>
+                        <note id="note_N1018C_N100F7_N100ED_N1005C_N10032_N1000F_N10001" ixia_locid="375" type="caution">
+                            <p ixia_locid="376">The range must not overlap other segmentation ranges
+                                on the same provider network.</p>
+                        </note>
+                    </info>
+                    <info id="info_VxLAN_extras" ixia_locid="403">
+                        <p ixia_locid="404">For a segmentation range on a VXLAN provider network,
+                            the following additional fields are used.</p>
+                        <dl id="dl_VxLAN_extras">
+                            <dlentry ixia_locid="380">
+                                <dt ixia_locid="382">Multicast Group Address</dt>
+                                <dd ixia_locid="384">
+                                    <p ixia_locid="386">The IPv4 or IPv6 address for participation
+                                        in a multicast group used to discover MAC addresses for
+                                        destination VMs. You can use a different multicast group for
+                                        each segmentation range to help organize and partition
+                                        network traffic.</p>
+                                </dd>
+                            </dlentry>
+                            <dlentry ixia_locid="388">
+                                <dt ixia_locid="390">UDP Port</dt>
+                                <dd ixia_locid="392">
+                                    <p ixia_locid="394">The destination UDP port for packets sent on
+                                        the VXLAN. You can select either the IANA standard 4789 to
+                                        use this range with the OpenStack Neutron service, or the
+                                        legacy standard 8472 for use with some commercial switch
+                                        equipment.</p>
+                                </dd>
+                            </dlentry>
+                            <dlentry ixia_locid="396">
+                                <dt ixia_locid="398">TTL</dt>
+                                <dd ixia_locid="400">
+                                    <p ixia_locid="402">The time-to-live, measured in hops, for
+                                        packets sent on the VXLAN. The value is decremented at each
+                                        hop; when it reaches zero, the packet expires. You can use
+                                        this to limit the scope of the VXLAN. For example, to limit
+                                        the packet to no more than three router hops, use a
+                                        time-to-live value of 4.</p>
+                                </dd>
+                            </dlentry>
+                        </dl>
+                    </info>
+                    <info id="info_pnet_a_tenant1_screen" ixia_locid="361">
+                        <p ixia_locid="362">To add a segmentation range on <nameliteral ixia_locid="277">provider-net-a</nameliteral> for use by <nameliteral ixia_locid="279">tenant1</nameliteral>, fill in the form as
+                            illustrated below.</p>
+                        <fig id="fig_ucw_mxh_wq" ixia_locid="186">
+                            <image href="jow1404333680994.image" id="image_odw_mxh_wq" ixia_locid="92" placement="inline" width="4in"/>
+                        </fig>
+                    </info>
+                </step>
+                <step id="step_N101B9_N1005C_N10032_N1000F_N10001" ixia_locid="377">
+                    <cmd id="cmd_commit_seg_range" ixia_locid="378">Click <uicontrol ixia_locid="190">Create Segmentation Range</uicontrol> to
+                        commit the changes.</cmd>
+                </step>
+            </steps>
+        </taskbody>
+    </rcbody>
+</referable-content>

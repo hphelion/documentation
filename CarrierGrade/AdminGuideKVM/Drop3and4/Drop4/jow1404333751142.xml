@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333751142" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title ixia_locid="1">Managing Hardware Resources</title>
+    <shortdesc ixia_locid="2">HP Helion OpenStack Carrier Grade reports status information about the hosts in the
+        cluster, and provides a set of tools to operate on them to execute commands, configure
+        parameters, and monitor status.</shortdesc>
+    <prolog>
+        <author></author>
+    </prolog>
+    <conbody/>
+</concept-wr>

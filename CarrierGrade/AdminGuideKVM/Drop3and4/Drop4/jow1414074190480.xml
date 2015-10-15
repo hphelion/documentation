@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1414074190480" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Managing Controller Nodes</title>
+    <shortdesc>You can replace controller nodes or disks while the system is
+        running.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p>The HP Helion OpenStack Carrier Grade system uses exactly two controllers; you cannot
+                add or remove a controller. However, you can replace the primary or secondary disks,
+                and you can replace faulty controller nodes.</p>
+            <note id="note_N1002C_N10022_N1001F_N10001">
+                <p>If you are replacing disks in order to increase the controller
+                    storage capacity, follow the instructions for <xref href="jow1413727075983.xml"/>.</p>
+            </note>
+        </context>
+        <steps>
+            <step id="step_N1003D_N1003A_N1001C_N10001">
+                <cmd>Lock the standby controller.</cmd>
+                <info>
+                    <p>Open the <wintitle>Hosts</wintitle> list by
+                        clicking <uicontrol>Inventory</uicontrol> on the<wintitle> System Panel</wintitle> section of the <wintitle>Admin</wintitle> menu, and then selecting the <uicontrol>Hosts</uicontrol> tab.</p>
+                    <p>Click <menucascade>
+                            <uicontrol>More</uicontrol>
+                            <uicontrol>Lock Host</uicontrol>
+                        </menucascade> for the controller. </p>
+                    <p>Wait for the procedure to be completed.</p>
+                </info>
+            </step>
+            <step id="step_N10080_N1003A_N1001C_N10001">
+                <cmd>Power down the standby controller and make any required
+                    hardware changes.</cmd>
+                <info>
+                    <p>This may involve replacing disks, or replacing the host
+                        completely. </p>
+                </info>
+            </step>
+            <step id="step_N1009D_N1003A_N1001C_N10001">
+                <cmd>Place the new or modified controller into service.</cmd>
+                <info/>
+                <substeps id="substeps_pft_ddt_vp">
+                    <substep>
+                        <cmd>Power up the controller.</cmd>
+                        <info>
+                            <p>Wait until the controller is reported as
+                                    <nameliteral>Locked</nameliteral>, <nameliteral>Enabled</nameliteral>, and <nameliteral>Available</nameliteral>.</p>
+                        </info>
+                    </substep>
+                    <substep>
+                        <cmd>If required, reinstall the HP Helion OpenStack Carrier Grade software on the
+                            controller.</cmd>
+                        <info>
+                            <p>If you are making disk changes to increase storage
+                                capacity, you must re-install the HP Helion OpenStack Carrier Grade software. For more
+                                information, see <xref href="jow1413727075983.xml"/>.</p>
+                            <p>To reinstall the software on a host , click
+                                    <menucascade>
+                                    <uicontrol>More</uicontrol>
+                                    <uicontrol>Reinstall</uicontrol>
+                                </menucascade>.</p>
+                            <note conref="rst1432737677834.xml#rst1432737677834/note_N10195_N10154_N1001F_N10001" id="note_N10195_N10154_N1001F_N10001"/>                            
+                            <p>Wait for the host to be reported as <nameliteral>Locked</nameliteral>, <nameliteral>Disabled</nameliteral>, and <nameliteral>Online</nameliteral>.</p>
+                        </info>
+                    </substep>
+                    <substep>
+                        <cmd>Perform a swact.</cmd>
+                        <info>
+                            <p>Click <menucascade>
+                                    <uicontrol>More</uicontrol>
+                                    <uicontrol>Swact Host</uicontrol>
+                                </menucascade> for the active controller.</p>
+                        </info>
+                        <stepresult>
+                            <p>The standby controller becomes the active controller, and the
+                                original active controller is placed into standby.</p>
+                        </stepresult>
+                    </substep>
+                </substeps>
+            </step>
+            <step id="step_N100F9_N1003A_N1001C_N10001">
+                <cmd>Lock the original active controller (now in standby).</cmd>
+                <info>
+                    <p>Open the <wintitle>Hosts</wintitle> list by
+                        clicking <uicontrol>Inventory</uicontrol> on the<wintitle> System Panel</wintitle> section of the <wintitle>Admin</wintitle> menu, and then selecting the <uicontrol>Hosts</uicontrol> tab.</p>
+                    <p>Click <menucascade>
+                            <uicontrol>More</uicontrol>
+                            <uicontrol>Lock Host</uicontrol>
+                        </menucascade> for the controller. </p>
+                    <p>Wait for the procedure to be completed.</p>
+                </info>
+            </step>
+            <step id="step_N1013C_N1003A_N1001C_N10001">
+                <cmd>Power down the controller and make the same hardware
+                    changes.</cmd>
+                <info>
+                    <note id="note_N1002F_N1001F_N1001C_N10001" type="caution">
+                        <p>The configurations for controller-0 and controller-1,
+                            including disk types and sizes, must be identical.</p>
+                    </note>
+                </info>
+            </step>
+            <step id="step_N10145_N1003A_N1001C_N10001">
+                <cmd>Power up the new or modified controller.</cmd>
+            </step>
+            <step id="step_N101C2_N1003D_N1001F_N10001">
+                <cmd>If required, reinstall the HP Helion OpenStack Carrier Grade software on the controller.</cmd>
+            </step>
+        </steps>
+        <result id="result_N10147_N1001C_N10001">
+            <p>The updated controllers are now in service.  The controller that was formerly active
+                is now the standby controller. </p>
+        </result>
+    </taskbody>
+</task-wr>

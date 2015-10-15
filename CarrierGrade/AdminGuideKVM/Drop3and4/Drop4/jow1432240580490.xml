@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1432240580490" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Enabling Server Group Messaging for a VM</title>
+    <shortdesc>You can enable a messaging API for a VM, for use with other VMs in
+        the same server group.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p> If this extra spec is not added, then by default this API is
+                disabled.</p>
+            <p>Server Group Messaging is a service that provides simple
+                low-bandwidth datagram messaging and notifications for virtual machines that belong
+                to the same server group. This message channel is available regardless of whether IP
+                networking is functional within the server, and requires no knowledge about the
+                other members in the group.</p>
+            <p>Guest applications can access this service if the Server Group
+                Messaging API is enabled for the VM. To enable the API, select this option. For more
+                information about the Server Group Messaging API, refer to the <cite>HP Helion OpenStack Carrier Grade Software Development Kit</cite>.</p>
+            <note id="note_N10036_N10022_N1001F_N10001">
+                <p>The non-default value <nameliteral>True</nameliteral> is offered when the extra
+                    spec is added.</p>
+            </note>
+            <p>The service provides three types of messaging:</p>
+            <ul id="ul_dtr_pkn_cs">
+                <li>
+                    <p><nameliteral>Broadcast</nameliteral>—allows the server to send a
+                        datagram of up to 3050 bytes to all other servers in the server group.</p>
+                </li>
+                <li>
+                    <p><nameliteral>Notification</nameliteral>—provides servers with
+                        information about changes to the state of other servers in the server
+                        group.</p>
+                </li>
+                <li>
+                    <p><nameliteral>Status</nameliteral>—allows
+                        the server to query the current state of all servers in the group (including
+                        the originating server).</p>
+                </li>
+            </ul>
+            <note id="note_N10059_N1001F_N1001C_N10001" type="caution">
+                <p>This service is not intended for high-bandwidth or low-latency
+                    operations. If reliability is an important consideration, use acknowledgements
+                    and retries.</p>
+            </note>
+            <p>To add this extra spec to a flavor using the web administration interface, use the
+                    <uicontrol>Server Group Messaging</uicontrol> selection in the <uicontrol>Create
+                    Flavor Extra Spec</uicontrol> drop-down menu. To access this menu, see <xref href="jow1429538642910.xml"/>.</p>
+            <p>To enable the Server Group Messaging API using the CLI, use the following
+                command:</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key <varname>flavor_name</varname> set sw:wrs:srv_grp_messaging=<varname>value</varname></userinput></codeblock>
+            <p>where <varname>value</varname> is either
+                    <option>False</option> or <option>True</option>.</p>
+        </context>
+    </taskbody>
+</task-wr>

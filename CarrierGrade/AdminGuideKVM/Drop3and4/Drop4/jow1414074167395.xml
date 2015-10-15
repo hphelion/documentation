@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1414074167395" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Removing Compute Nodes</title>
+    <shortdesc>You can remove a compute node from the pool of available
+        resources.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N10022_N1001F_N10001">
+            <p>You may need to remove a compute node in order to replace a failed host, or to change
+                the configuration of a host. If the host is active, you can migrate instances on it
+                by locking the host. </p>
+        </context>
+        <prereq id="prereq_N10034_N1001C_N10001">
+            <note id="note_N101C5_N101C2_N101BB_N1003F_N1001F_N10001" type="caution">
+                <p>Before locking a host, ensure that sufficient resources are
+                    available on other hosts to migrate any running instances.</p>
+            </note>
+        </prereq>
+        <steps>
+            <step id="step_N10048_N10045_N1001C_N10001">
+                <cmd>Lock the host to be removed.</cmd>
+                <info>
+                    <p>Open the <wintitle>Hosts</wintitle> list by
+                        clicking <uicontrol>Inventory</uicontrol> on the<wintitle> System Panel</wintitle> section of the <wintitle>Admin</wintitle> menu, and then selecting the <uicontrol>Hosts</uicontrol> tab.</p>
+                    <p>Click <menucascade>
+                            <uicontrol>More</uicontrol>
+                            <uicontrol>Lock Host</uicontrol>
+                        </menucascade> for the host. </p>
+                    <p>Wait for the procedure to be completed.</p>
+                </info>
+            </step>
+            <step id="step_N1008B_N10045_N1001C_N10001">
+                <cmd>Delete the host from the HP Helion OpenStack Carrier Grade system.</cmd>
+                <info>
+                    <p>Click <menucascade>
+                            <uicontrol>More</uicontrol>
+                            <uicontrol>Delete Host</uicontrol>
+                        </menucascade> for the host. </p>
+                </info>
+            </step>
+            <step id="step_N100AA_N10045_N1001C_N10001">
+                <cmd>Power down the host and remove the hardware from the cluster.</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

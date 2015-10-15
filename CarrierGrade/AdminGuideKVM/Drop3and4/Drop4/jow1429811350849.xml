@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1429811350849" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Creating and Using Memory Profiles</title>
+    <shortdesc>You can optionally save the memory allocations for a host as a
+        profile, and apply the profile to other hosts.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p>For more information about host memory allocation, see <xref href="jow1423087781001.xml"/>.</p>
+            <p>As an alternative to the web administration interface, you can use the following CLI
+                command to create a memory profile:</p>
+            <codeblock><systemoutput>~(keystone-admin)$ </systemoutput><userinput>system memprofile-add <varname>memoryprofile</varname> <varname>hostid</varname></userinput></codeblock>
+            <p>where <varname>memoryprofile</varname> is the name or UUID of the memory profile, and
+                    <varname>hostid</varname> is the name or UUID of the host from which to create
+                the profile.</p>
+        </context>
+        <steps>
+            <step conref="jow1426453628262.xml#jow1426453628262/step_N1002B_N10028_N1001C_N10001" id="step_N1002F_N1002C_N1001C_N10001">
+                <cmd/>
+            </step>
+            <step id="step_N10038_N1002C_N1001C_N10001">
+                <cmd>On the Memory tab, click <uicontrol>Create Memory Profile</uicontrol>.</cmd>
+                <info>
+                    <p>The <wintitle>Create Memory Profile</wintitle> dialog box appears.</p>
+                    <fig id="fig_cj1_byq_5r">
+                        <image href="jow1429812100638.image" id="image_bk3_byq_5r">
+                            <alt>Create Memory Profile</alt>
+                        </image>
+                    </fig>
+                </info>
+            </step>
+            <step id="step_N10062_N1002C_N1001C_N10001">
+                <cmd>Type a name for the memory profile.</cmd>
+            </step>
+            <step id="step_N1006B_N1002C_N1001C_N10001">
+                <cmd>Click <uicontrol>Create Memory
+                        Profile</uicontrol> to save the profile and close the dialog box.</cmd>
+            </step>
+        </steps>
+        <result id="result_N10075_N1001C_N10001">
+            <p>You can apply this profile to other hosts by editing the host
+                settings in the web administration interface. For information about editing a host,
+                see <xref href="jow1404333790046.xml"/>. You can also use the
+                following CLI command to apply a memory profile to a host:</p>
+            <codeblock><systemoutput>~(keystone-admin)$ </systemoutput><userinput>system host-apply-memprofile <varname>hostid</varname> <varname>memoryprofile</varname></userinput></codeblock>
+            <p>where <varname>hostid</varname> is the name or UUID
+                of the host, and <varname>memoryprofile</varname> is the name or
+                UUID of the memory profile.</p>
+            <p>To manage memory profiles, you can use the <wintitle>Memory Profiles</wintitle> tab
+                on the <wintitle>System Inventory</wintitle> page, or you can use the following CLI
+                commands:</p>
+            <ul id="ul_x1x_plr_5r">
+                <li>
+                    <p>To list memory profiles:</p>
+                    <codeblock><systemoutput>~(keystone-admin)$ </systemoutput><userinput>system memprofile-list</userinput></codeblock>
+                </li>
+                <li>
+                    <p>To show details for a memory profile:</p>
+                    <codeblock><systemoutput>~(keystone-admin)$ </systemoutput><userinput>system memprofile-show <varname>memoryprofile</varname></userinput></codeblock>
+                    <p>where <varname>memoryprofile</varname> is the name or UUID of the memory
+                        profile.</p>
+                </li>
+                <li>
+                    <p>To delete a memory profile:</p>
+                    <codeblock><systemoutput>~(keystone-admin)$ </systemoutput><userinput>system memprofile-delete <varname>memoryprofile</varname></userinput></codeblock>
+                    <p>where <varname>memoryprofile</varname> is the name or UUID of the memory
+                        profile.</p>
+                </li>
+            </ul>
+        </result>
+    </taskbody>
+</task-wr>

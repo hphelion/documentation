@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1423087781001" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title>Host Memory Provisioning</title>
+ <shortdesc>For each NUMA node on a host, you can adjust the amount of memory
+  reserved for platform use, and the size and number of memory pages allocated for use by
+  VMs.</shortdesc>
+ <prolog><author/>
+  <author/>
+  <author/>
+ </prolog>
+ <conbody>
+  <p>Memory not reserved for platform use is made available as VM memory. By
+   default, the VM memory is partitioned using 2 MiB huge pages. You can change this for individual
+   NUMA nodes to use a combination of 2 MiB, and 1 GiB huge pages. Using larger pages can reduce
+   page management overhead and improve system performance for systems with large amounts of virtual
+   memory and many running instances.</p>
+  <p>You can use the <cmdname>system host-memory-list</cmdname> and
+    <cmdname>system host-memory-show</cmdname> commands to see how much memory is
+   available for VMs. This information is also shown on the <uicontrol>Memory</uicontrol> tab of the <wintitle>Host Inventory</wintitle> page (see
+    <xref href="jow1404333795559.xml"/>). </p>
+  <p>After setting the memory allocations for a host, you can save them as a <term>memory profile</term>, and then apply the profile to other hosts. For more
+   information, see <xref href="jow1429811350849.xml"/>.</p>
+  <p>For individual VMs, you can specify which page size to use. For more
+   information, see <xref href="jow1424723681500.xml"/>.</p>
+ </conbody>
+</concept-wr>

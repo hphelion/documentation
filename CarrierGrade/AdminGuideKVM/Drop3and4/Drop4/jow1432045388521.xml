@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1432045388521" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title>Customer Logs</title>
+ <shortdesc>You can obtain information about transient events using Customer
+  Logs.</shortdesc>
+ <prolog><author/>
+  <author/>
+ </prolog>
+ <conbody>
+  <p>Certain system events that do not result in node state changes and typically do not require
+   immediate customer action, such as instance deletions or failed migration attempts, are recorded
+   in Customer Logs. Each log describes a single event. The logs are held in a buffer, with older
+   logs discarded as needed to release logging space.</p>
+  <p>The logs are displayed in a list, along with summary information. For each
+   individual log, you can view detailed information. For more information, see <xref href="jow1432045421799.xml"/>.</p>
+  <p/>
+ </conbody>
+</concept-wr>

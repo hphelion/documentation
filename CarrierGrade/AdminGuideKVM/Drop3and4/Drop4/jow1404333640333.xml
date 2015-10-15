@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333640333" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title>Cluster Overview</title>
+    <shortdesc>The <wintitle>Overview</wintitle> page appears when you
+        log into the HP Helion OpenStack Carrier Grade web management interface as the administrator. It presents a
+        dashboard providing a quick health-check overview of the cluster.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <conbody>
+        <p>The <wintitle>Overview</wintitle> page is an enhanced
+            version of its OpenStack counterpart. It includes the following features:</p>
+        <ul id="ul_rff_dwh_34">
+            <li>
+                <p>dynamically updated, relocatable resource charts. Click the top of
+                    any chart, and drag it to the desired location to customize the presentation as
+                    desired. The layout changes are persistent across logins.</p>
+            </li>
+            <li>
+                <p>dynamically updated, relocatable Host Server Status summary
+                    table. Presents the total number of hosts currently in one of the following
+                    states:</p>
+                <ul id="ul_t4l_vwh_34">
+                    <li>
+                        <p>locked</p>
+                    </li>
+                    <li>
+                        <p>unlocked</p>
+                    </li>
+                    <li>
+                        <p>available</p>
+                    </li>
+                    <li>
+                        <p>unavailable</p>
+                    </li>
+                    <li>
+                        <p>degraded</p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>dynamically updated, relocatable Alarms summary table. Lists the
+                    current count of critical, major, minor, and warning alarms.</p>
+            </li>
+        </ul>
+        <p>Common attributes of the resource pages are:</p>
+        <ul id="ul_hns_wm3_34">
+            <li>
+                <p>All resource charts display resource information in real-time, spanning over a
+          time-window of ten minutes.</p>
+            </li>
+            <li>
+                <p>Labels along the X-axis present the number of minutes elapsed since the last full-time
+          hour of the system clock.</p>
+            </li>
+            <li>
+                <p>Hovering the mouse over the charts overlays information windows with detailed values.</p>
+            </li>
+            <li>
+                <p>History information is lost when the <wintitle>Overview</wintitle> page is no longer
+          displayed.</p>
+            </li>
+        </ul>
+        <p>The following charts are available:</p>
+        <dl>
+            <dlentry>
+                <dt>Compute vCPU Usage</dt>
+                <dd>
+                    <fig id="fig_N100A3_N100A0_N10099_N10096_N10020_N10001">
+                        <image href="jow1404333631568.image" id="image_k1s_h13_34" width="2.25in"/>
+                    </fig>
+                    <p>Presents information about the number of virtual CPUs across the entire cluster,
+            available and allocated to virtual machines, and their average level of utilization.
+            Elements in this chart are as follows:</p>
+                    <ul id="ul_rbj_jm3_34">
+                        <li>
+                            <p>Y-axis is in units vCPUs.</p>
+                        </li>
+                        <li>
+                            <p>A solid black line tracking the number of available vCPUs. This line settles at a
+                constant value at the top of the chart, unless the number of compute nodes changes
+                over time.</p>
+                        </li>
+                        <li>
+                            <p>Light blue bars indicating the number of allocated vCPUs, that is, the number of
+                vCPUs in use by virtual machines (one in the example). </p>
+                        </li>
+                        <li>
+                            <p>Dark blue bars indicating the average level of utilization of the allocated vCPUs
+                (varies from 30 to 83% in the example), presented as a relative height with respect
+                to the light blue bars.</p>
+                        </li>
+                    </ul>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Instance CPU Utilization</dt>
+                <dd>
+                    <fig id="fig_N10107_N10104_N100FD_N10096_N10020_N10001">
+                        <image href="jow1404333633038.image" id="image_yf5_2p3_34" width="2.25in"/>
+                    </fig>
+                    <p>Presents information about virtual CPU utilization levels on virtual machines, across
+            the entire cluster or for individual instances. Elements in this chart are as
+            follows:</p>
+                    <ul id="ul_yq3_mp3_34">
+                        <li>
+                            <p>Y-axis displays the virtual CPU utilization level, from 0 to 100%.</p>
+                        </li>
+                        <li>
+                            <p>A solid black line tracking the maximum utilization level.</p>
+                        </li>
+                        <li>
+                            <p>Dark blue bars indicating the average utilization level.</p>
+                        </li>
+                        <li>
+                            <p>A gray line tracking the minimum utilization level.</p>
+                        </li>
+                        <li>
+                            <p>A filter drop-down menu to select the virtual machines on which to report
+                utilization levels. The default value for this filter is "All Instances," and
+                therefore it reports the same utilization levels indicated by the dark blue bars in
+                the Compute vCPU Usage chart.</p>
+                        </li>
+                    </ul>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Compute Memory Usage</dt>
+                <dd>
+                    <fig id="fig_N10150_N1014D_N10146_N10096_N10020_N10001">
+                        <image href="jow1404333634455.image" id="image_u2h_gv3_34" width="2.25in"/>
+                    </fig>
+                    <p>Presents information about memory usage levels on the compute nodes across the entire
+            cluster. Elements in this chart are as follows:</p>
+                    <ul id="ul_zzm_xv3_34">
+                        <li>
+                            <p>Y-axis is in units of bytes.</p>
+                        </li>
+                        <li>
+                            <p>A solid black line tracking the available aggregated compute memory. This line
+                usually settles as a constant value at the top of the chart, unless the number of
+                compute nodes changes over time.</p>
+                        </li>
+                        <li>
+                            <p>Dark blue bars indicating the amount of memory allocated to virtual machines (less
+                than 1 GB in the example).</p>
+                        </li>
+                    </ul>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Compute Disk Usage</dt>
+                <dd>
+                    <fig id="fig_N1019D_N1019A_N10193_N10096_N10020_N10001">
+                        <image href="jow1404333635945.image" id="image_a35_lv3_34" width="2.25in"/>
+                    </fig>
+                    <p>Presents information about disk usage levels on the compute nodes across the entire
+            cluster. Elements in this chart are as follows:</p>
+                    <ul id="ul_qws_xv3_34">
+                        <li>
+                            <p>Y-axis is in units of bytes.</p>
+                        </li>
+                        <li>
+                            <p>A solid black line tracking the available aggregated storage
+                                capacity. This line usually settles as a constant value at the top
+                                of the chart.</p>
+                        </li>
+                        <li>
+                            <p>Dark blue bars indicating the amount of disk space allocated to virtual machines
+                (about 1 GB in the example).</p>
+                        </li>
+                    </ul>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>AVS CPU Utilization</dt>
+                <dd>
+                    <fig id="fig_N101D6_N101D3_N101CC_N10096_N10020_N10001">
+                        <image href="jow1404333637433.image" id="image_ms4_3v3_34" width="2.25in"/>
+                    </fig>
+                    <p>Presents information about AVS CPU utilization levels on the
+                        compute nodes across the entire cluster. Elements in this chart are as
+                        follows:</p>
+                    <ul id="ul_csz_xv3_34">
+                        <li>
+                            <p>Y-axis displays the AVS CPU utilization level, from
+                                0 to 100%.</p>
+                        </li>
+                        <li>
+                            <p>A solid black line tracking the maximum utilization level.</p>
+                        </li>
+                        <li>
+                            <p>Dark blue bars indicating the average utilization level.</p>
+                        </li>
+                    </ul>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Provider Network Port Utilization</dt>
+                <dd>
+                    <fig id="fig_N10237_N10234_N1022D_N10096_N10020_N10001">
+                        <image href="jow1404333638899.image" id="image_zcq_4v3_34" width="2.25in"/>
+                    </fig>
+                    <p>Presents information about network traffic levels on provider networks across the
+            entire cluster. Elements in this chart are as follows:</p>
+                    <ul id="ul_t5r_yv3_34">
+                        <li>
+                            <p>Y-axis displays the port utilization level, from 0 to 100%.</p>
+                        </li>
+                        <li>
+                            <p>A solid black line tracking the maximum utilization level.</p>
+                        </li>
+                        <li>
+                            <p>Pairs of dark blue and dark green bars indicating the average utilization level,
+                egress and ingress (Tx and Rx) traffic respectively.</p>
+                        </li>
+                        <li>
+                            <p>A gray line tracking the minimum utilization level.</p>
+                        </li>
+                    </ul>
+                </dd>
+            </dlentry>
+        </dl>
+    </conbody>
+</concept-wr>

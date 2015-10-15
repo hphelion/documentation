@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1425584170078" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Configuring Endpoint IP Addresses Using the CLI</title>
+    <shortdesc>You can configure a data interface on a compute node with an endpoint
+        address using CLI commands.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N10022_N1001F_N10001">
+            <p>For VXLAN connectivity between VMs, the compute nodes that host the VMs must be
+                configured with endpoint IP addresses.</p>
+        </context>
+        <prereq id="prereq_N1001F_N1001C_N10001">
+            <p>To make interface changes, you must lock the compute node first.</p>
+        </prereq>
+        <steps id="steps_zkx_d1h_hr">
+            <step id="step_N1003C_N10038_N1001F_N10001">
+                <cmd>Lock the compute node.</cmd>
+            </step>
+            <step id="step_N10045_N10038_N1001F_N10001">
+                <cmd>Set the interface to support an IPv4 or IPv6 address, or both. </cmd>
+                <info>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-if-modify <varname>node</varname> <varname>ifname</varname> --ipv4-mode=<varname>ipv4mode</varname> --ipv6-mode=<varname>ipv6mode</varname></userinput></codeblock>
+                    <p>where</p>
+                    <parml>
+                        <plentry>
+                            <pt>node</pt>
+                            <pd>
+                                <p>is the name or UUID of the compute node</p>
+                            </pd>
+                        </plentry>
+                        <plentry>
+                            <pt>ifname</pt>
+                            <pd>
+                                <p>is the name of the interface</p>
+                            </pd>
+                        </plentry>
+                        <plentry>
+                            <pt>ipv4mode</pt>
+                            <pd>
+                                <p>is either <nameliteral>disabled</nameliteral> or<nameliteral>
+                                        static</nameliteral></p>
+                            </pd>
+                        </plentry>
+                        <plentry>
+                            <pt>ipv6mode</pt>
+                            <pd>
+                                <p>is either <nameliteral>disabled</nameliteral> or<nameliteral>
+                                        static</nameliteral></p>
+                            </pd>
+                        </plentry>
+                    </parml>
+                </info>
+            </step>
+            <step id="step_N100C0_N10038_N1001F_N10001">
+                <cmd>Add an IPv4 or IPv6 address to the interface.</cmd>
+                <info>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-addr-add <varname>node</varname> <varname>ifname</varname> <varname>ip_address</varname> <varname>prefix</varname></userinput></codeblock>
+                    <p>where</p>
+                    <parml>
+                        <plentry>
+                            <pt>node</pt>
+                            <pd>
+                                <p>is the name or UUID of the compute node</p>
+                            </pd>
+                        </plentry>
+                        <plentry>
+                            <pt>ifname</pt>
+                            <pd>
+                                <p>is the name of the interface</p>
+                            </pd>
+                        </plentry>
+                        <plentry>
+                            <pt>ip_address</pt>
+                            <pd>
+                                <p>is an IPv4 or IPv6 address</p>
+                            </pd>
+                        </plentry>
+                        <plentry>
+                            <pt>prefix</pt>
+                            <pd>
+                                <p>is the netmask length for the address</p>
+                            </pd>
+                        </plentry>
+                    </parml>
+                    <p>To delete an address, use the following commands:</p>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-addr-list</userinput></codeblock>
+                    <p>This displays the UUIDs of existing addresses.</p>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-addr-delete <varname>uuid</varname></userinput></codeblock>
+                    <p>where <nameliteral>uuid</nameliteral> is the UUID of the address.</p>
+                </info>
+            </step>
+            <step id="step_N10152_N10038_N1001F_N10001">
+                <cmd>Unlock the compute node and wait for it to become available.</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

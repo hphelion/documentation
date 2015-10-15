@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1436210207074" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Affining a VM to a NUMA Node with a vSwitch Core</title>
+    <shortdesc>You can select whether to place a VM in the same NUMA node as a
+        vSwitch (AVS) core.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p>For optimal networking performance, you can set an extra spec so that
+                a VM is instantiated on a host only if the host can offer a NUMA node with at least
+                one core assigned as a vSwitch. You can optionally specify best-effort placement, so
+                that if a suitable host is unavailable, the VM is still instantiated, but using a
+                NUMA node without a vSwitch core.</p>
+            <p>To add this extra spec to a flavor using the web administration
+                interface, use the <nameliteral>Vswitch NUMA Affinity</nameliteral>
+                selection in the <nameliteral>Create Flavor Extra Spec</nameliteral>
+                drop-down menu. To access this menu, see <xref href="jow1429538642910.xml"/>.</p>
+            <p>You can also specify the extra spec from the CLI by setting the following parameter
+                for a flavor:</p>
+            <codeblock><userinput>hw:wrs:vswitch_numa_affinity=<varname>vswitch_affinity</varname></userinput></codeblock>
+            <p>where <varname>vswitch_affinity</varname> is one of
+                the following:</p>
+            <dl>
+                <dlentry>
+                    <dt>strict</dt>
+                    <dd>
+                        <p>Requires a host NUMA node that has a vSwitch core. For a
+                            VM configured to use multiple NUMA nodes, each host NUMA node must have
+                            a vSwitch core. If these conditions cannot be satisfied, the
+                            instantiation fails.</p>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt>prefer</dt>
+                    <dd>
+                        <p>Prefers a host NUMA node that has a vSwitch core. For a
+                            VM configured to use multiple NUMA nodes,  prefers host NUMA nodes with
+                            a vSwitch core for as many virtual NUMA nodes as possible. If these
+                            conditions cannot be satisfied, another NUMA node can be used.</p>
+                    </dd>
+                </dlentry>
+            </dl>
+            <p>For information about assigning vSwitch cores on a host, see <xref href="jow1404333768530.xml"/>.</p>
+        </context>
+    </taskbody>
+</task-wr>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content id="rst1432737677834" xml:lang="en-us">
+<title ixia_locid="221">ConRef: host-reinstall note</title>
+<rcbody>
+        <note id="note_N10195_N10154_N1001F_N10001" ixia_locid="201">
+            <p ixia_locid="202">Performing a host reinstall successfully is dependent on your BIOS
+                boot order. Observe the following tips.</p>
+            <ul id="ul_mtt_vzq_ds">
+                <li ixia_locid="204">
+                    <p ixia_locid="205">Prior to installation, the BIOS should be configured to
+                        allow booting from disk and the network. </p>
+                </li>
+                <li ixia_locid="206">
+                    <p ixia_locid="207">During the host re-installation, it is advisable to have a
+                        console serial cable attached to the host to observe the boot progress. </p>
+                </li>
+                <li ixia_locid="209">
+                    <p ixia_locid="210">BIOS boot order should be:</p>
+                    <ol id="ol_a5r_5br_ds">
+                        <li ixia_locid="211">
+                            <p ixia_locid="212">The boot partition. </p>
+                            <p ixia_locid="213">Typically, this is the disk associated with
+                                    <filepath ixia_locid="214">/dev/sda</filepath> and is as defined
+                                in <filepath ixia_locid="215">/proc/cmdline</filepath> when the load
+                                is booted.</p>
+                        </li>
+                        <li ixia_locid="216">
+                            <p ixia_locid="217"> The NIC on the boot interface (e.g. management or
+                                pxe network).</p>
+                        </li>
+                    </ol>
+                </li>
+                <li ixia_locid="218">
+                    <p ixia_locid="219">Set BIOS boot options to ensure failsafe boot if available,
+                        e.g. rotating through available boot interfaces, watchdog timer on boot,
+                        retry boot interfaces etc. </p>
+                </li>
+            </ul>
+            <p ixia_locid="220">If the BIOS boot still fails to progress, it may be necessary to
+                force boot via the network interfaces via the BIOS boot option. </p>
+        </note>
+    </rcbody>
+</referable-content>

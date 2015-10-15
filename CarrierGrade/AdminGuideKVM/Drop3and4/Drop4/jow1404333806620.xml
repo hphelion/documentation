@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333806620" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+
+ -->
+    <title>Parameters</title>
+    <shortdesc>You can specify parameters for a stack, such as authentication,
+        storage, networking, and so on, when you invoke a template.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <conbody>
+        <p>You can supply parameter values by:</p>
+        <ul id="ul_iqc_bgq_34">
+            <li>
+                <p>including them in the template as defaults</p>
+            </li>
+            <li>
+                <p>specifying each one using a form in the web administration
+                    interface, or using the<option> -parameters</option> option on
+                    the <cmdname>heat create-stack</cmdname> command line</p>
+            </li>
+            <li>
+                <p>saving them in an environment file, which you can specify using the<option> -e</option>
+     option on the <cmdname>heat create-stack</cmdname> command line</p>
+            </li>
+        </ul>
+        <p>This enables you to customize the behavior of a common stack template
+            when the stack is created or modified.</p>
+        <p>You can use environment files or command-line entries to supplement parameters in the template,
+   or to override them if they already exist. Environment-file values override existing values in
+   the template. Command-line values override existing values in the environment file or the
+   template.</p>
+        <p>The syntax for specifying parameters is as follows:</p>
+        <ul id="ul_b45_s1v_34">
+            <li>
+                <p>on the command line, using the<option> -P
+                    </option>option. Multiple <option>-P</option> arguments are supported.</p>
+                <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>heat stack-create -P <varname>key1</varname>=<varname>val1</varname> -P <varname>key2</varname>=<varname>val2</varname></userinput></codeblock>
+            </li>
+            <li>
+                <p>in an environment file:</p>
+                <codeblock>parameters:
+    <varname>key:value</varname>
+    <varname>key:value</varname></codeblock>
+            </li>
+        </ul>
+    </conbody>
+</concept-wr>

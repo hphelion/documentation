@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="psa1420762251633" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title id="Preface_TiS_Admin_Guide" ixia_locid="1"/> 
+ <shortdesc ixia_locid="2"/>
+ <prolog>
+  <author></author>
+  <author ixia_locid="4">Jim Owens</author>
+ </prolog>
+ <conbody>
+  <p ixia_locid="5">The HP Helion OpenStack Carrier Grade Administration Guide is one of several documents released with the Wind
+   River HP Helion OpenStack Carrier Grade product line. They include:</p>
+  <ul id="ul_fsm_fgj_rq">
+   <li ixia_locid="6">
+    <p ixia_locid="7">Quick Start Guide</p>
+   </li>
+   <li ixia_locid="8">
+    <p ixia_locid="9">Software Installation Guide</p>
+   </li>
+   <li ixia_locid="10">
+    <p ixia_locid="11">Reference Deployment Scenarios</p>
+   </li>
+   <li ixia_locid="12">
+    <p ixia_locid="13">System Engineering Guidelines</p>
+   </li>
+   <li ixia_locid="14">
+    <p ixia_locid="15">Release Notes</p>
+   </li>
+  </ul>
+  <p ixia_locid="16">The Administration Guide is addressed to HP Helion OpenStack Carrier Grade administrators responsible for the
+   following areas:</p>
+  <ul id="ul_t5s_jgj_rq">
+   <li ixia_locid="17">
+    <p ixia_locid="18">Creating and maintaining resources used by end users (tenants), such as virtual machines,
+     storage pools, network objects, and access credentials.</p>
+   </li>
+   <li ixia_locid="19">
+    <p ixia_locid="20">Operating and maintaining components of the HP Helion OpenStack Carrier Grade product, such as clusters, nodes,
+     system software, licensing files, and backup and restore facilities.</p>
+   </li>
+  </ul>
+  <p ixia_locid="21">Familiarity with these technologies is assumed:</p>
+  <ul id="ul_ysy_mgj_rq">
+   <li ixia_locid="22">
+    <p ixia_locid="23">The OpenStack cloud computing service on which HP Helion OpenStack Carrier Grade is built. This guide provides
+     information specific to HP Helion OpenStack Carrier Grade. Detailed discussion of OpenStack components is outside
+     its scope. The OpenStack documentation at http://docs.openstack.org can be used as a
+     complement.</p>
+   </li>
+   <li ixia_locid="24">
+    <p ixia_locid="25">Networking communication standards and protocols, required to manage the
+     physical and virtual networks deployed within OpenStack and the HP Helion OpenStack Carrier Grade product.</p>
+   </li>
+   <li ixia_locid="26">
+    <p ixia_locid="27">Basic computing technology, including familiarity with BIOS settings, network interfaces, and
+     drive configurations, required to manage the physical nodes in the cluster.</p>
+   </li>
+   <li ixia_locid="28">
+    <p ixia_locid="29">The Linux operating system, including its file system, environment, and associated command
+     line operations.</p>
+   </li>
+  </ul>
+  <p ixia_locid="30"><b ixia_locid="31">Before installing the software, you are strongly encouraged to read and understand the
+    Overview and Planning chapters in this guide.</b> These chapters provide a mandatory
+   introduction to the concepts and considerations required for a smooth and successful
+   installation.</p>
+  <p ixia_locid="32">For the most part, the Administration Guide assumes that the HP Helion OpenStack Carrier Grade software is
+   already installed, and that you can log in to the web administration interface and the node
+   consoles.</p>
+ </conbody>
+</concept-wr>

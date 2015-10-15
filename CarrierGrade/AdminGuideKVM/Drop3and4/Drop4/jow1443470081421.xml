@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1443470081421" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title>Instances Logical Volume Considerations</title>
+ <shortdesc>On compute nodes that use local storage, dedicated space is required by
+    the <nameliteral>nova</nameliteral> service.</shortdesc>
+ <prolog><author/>
+  <author/>
+ </prolog>
+ <conbody>
+  <p><draft-comment author="jowens"> US65502 new
+        topic</draft-comment>The space is needed to store files that track each launched instance,
+      and to cache boot images for boot-by-image VMs. Boot images are always cached in RAW format;
+      Glance images formatted as QCOW2 are expanded to RAW format. The use of a cache speeds up
+      instance launch, because the image does not need to be fetched from the Glance image
+      store.</p>
+    <p>In HP Helion OpenStack Carrier Grade, the space is called the <term>instances
+        logical volume</term> or <nameliteral>Instances LV</nameliteral> space. To
+      provide for scalability, it is located on the <nameliteral>nova-local</nameliteral> local volume group instead of the root partition.</p>
+  <p>By default, no size is specified. The minimum required space is 2 GB for a
+      volume group with a total size less that 80 GB, and 5 GB for a volume group larger than 80 GB;
+      you must specify at least this amount. You can allocate more to support the anticipated number
+      of boot-from-image VMs, up to 50% of the maximum available storage for the local volume group.
+      At least 50% free space in the volume group is required to provide space for allocating
+      logical volume disks for launched instances. The value provided for the <uicontrol>Instance LV Size</uicontrol> is limited by this maximum.</p>
+  <p>Instructions for allocating the <uicontrol>Instances LV
+    Size</uicontrol> using the web administration interface are included in <xref href="jow1426183480976.xml"/>. To allocate space using the CLI, use the
+    <cmdname>system host-lvg-modify</cmdname> command.</p>
+  <note id="note_N10059_N10022_N1001F_N10001" type="caution">
+   <p>If less than the minimum required space is available, the compute host cannot
+    be unlocked.</p>
+  </note>
+ </conbody>
+</concept-wr>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content id="jow1439492113306" xml:lang="en-us">
+<title ixia_locid="79">[RC:p] TiS supported NICs for DPDK drivers</title>
+<rcbody><p id="p_N10011_N1000F_N10001" ixia_locid="80">The following NICs are supported by DPDK:</p>
+        <ul id="ul_bx4_xz4_n4">
+            <li ixia_locid="7">
+                <p ixia_locid="8">Intel I350 (Powerville) 1G </p>
+            </li>
+            <li ixia_locid="34">
+                <p ixia_locid="36">Intel 82599 (Niantic) 10 G</p>
+            </li>
+            <li ixia_locid="33">
+                <p ixia_locid="35">Mellanox Technologies MT27500 Family [ConnectX-3] 10G / 40G</p>
+            </li>
+        </ul>
+    <p id="p_N1003A_N1000F_N10001" ixia_locid="81">The following NICs have been verified in ‘un-accelerated’ mode for use with data
+                interfaces:<ul id="ul_vpq_ffb_pt">
+                <li ixia_locid="82">
+                    <p ixia_locid="83">Emulex XE-102 10G</p>
+                </li>
+                <li ixia_locid="84">
+                    <p ixia_locid="85">Broadcom (BCM57810) 10G</p>
+                </li>
+                <li ixia_locid="86">
+                    <p ixia_locid="87">Broadcom (BCM5719) 1G</p>
+                </li>
+            </ul></p>
+        
+    </rcbody>
+</referable-content>

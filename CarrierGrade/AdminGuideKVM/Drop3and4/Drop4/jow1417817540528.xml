@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1417817540528" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Setting the CPU Scaling Range</title>
+    <shortdesc>You can define the maximum and minimum CPU resources available to an instance by
+        using a flavor.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <ul id="ul_vsn_b2w_3q">
+                <li>
+                    <p>To set the maximum number of VCPUs for an instance, define a
+                        flavor with the required number of vCPUs.</p>
+                </li>
+                <li>
+                    <p>To set the minimum number of vCPUs, edit the flavor to
+                        include an Extra Spec. The minimum cannot be less than one.</p>
+                </li>
+            </ul>
+            <p>You can use the web administration interface or the CLI to edit the flavor. The CLI
+                parameter for setting the minimum number of CPUs is as follows:</p>
+            <codeblock>hw:wrs:min_vcpus=<varname>min</varname></codeblock>
+            <p>where <nameliteral>min</nameliteral> is the minimum number of CPUs.</p>
+            <p>For example:</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key <varname>flavor_name</varname> set hw:wrs:min_vcpus=<varname>integer_value</varname></userinput></codeblock>
+            <p>For complete information about working with flavors, see <xref href="jow1404333663095.xml"/>.</p>
+        </context>
+        <prereq id="prereq_N1007D_N1001F_N10001">
+            <p>For CPU scaling to take effect, the <nameliteral>CPU Policy</nameliteral> for the VM
+                must be set to <nameliteral>Dedicated</nameliteral>. For more information, see <xref href="jow1429544935360.xml"/>.</p>
+        </prereq>
+        <steps>
+            <step id="step_N10039_N10036_N1001F_N10001">
+                <cmd>Display the <wintitle>Flavors</wintitle>
+                    list.</cmd>
+                <info>
+                    <p>Select the <uicontrol>Admin</uicontrol> menu in the web
+                        administration interface, and then in the <uicontrol>System
+                            Panel</uicontrol> section of the menu, click <uicontrol>Flavors</uicontrol>. </p>
+                    <fig id="fig_j2j_plw_3q">
+                        <image href="jow1404333666903.image" id="image_ars_plw_3q" width="580px">
+                            <alt>i-ccs-setup-flavors-3.png</alt>
+                        </image>
+                    </fig>
+                </info>
+            </step>
+            <step id="step_N1008C_N10049_N1001F_N10001" importance="optional">
+                <cmd>If necessary, create a new flavor. </cmd>
+                <info>
+                    <p>If a suitable flavor already exists, you can edit it to
+                        specify the maximum and minimum vCPUs.</p>
+                    <p> If no suitable flavor exists, you can create a new flavor by
+                        clicking <uicontrol>Create Flavor</uicontrol> in the list to
+                        open the <wintitle>Create Flavor</wintitle> dialog box.</p>
+                    <fig id="fig_sqf_5lw_3q">
+                        <image href="jow1404333665262.image" id="image_nnv_5lw_3q" width="392px">
+                            <alt>i-ccs-setup-flavors-2.png</alt>
+                        </image>
+                    </fig>
+                    <p>Assign a <uicontrol>Name</uicontrol> for the flavor, and then save the flavor
+                        by clicking <uicontrol>Create Flavor</uicontrol> in the dialog box.</p>
+                </info>
+            </step>
+            <step id="step_N1002B_N10028_N1001C_N10001">
+                <cmd>Specify the maximum number of vCPUs for the instance.</cmd>
+                <info>
+                    <p>In the <wintitle>Flavors</wintitle> list, locate the flavor,
+                        and then click <uicontrol>Edit</uicontrol> to open the <wintitle>Edit
+                            Flavor</wintitle> dialog box. </p>
+                    <p>In the <uicontrol>vCPU</uicontrol> field,
+                        enter the maximum number of vCPUs.</p>
+                    <p>When you are finished editing, click <uicontrol>Save</uicontrol> to return to
+                        the <wintitle>Flavors</wintitle> list.</p>
+                </info>
+            </step>
+            <step id="step_N10085_N10036_N1001F_N10001">
+                <cmd>Specify the minimum number of vCPUs for the instance.</cmd>
+                <info>
+                    <p>You can specify the minimum number of vCPUs by adding an
+                        Extra Spec for the flavor.</p>
+                </info>
+                <substeps id="substeps_wpt_x3w_3q">
+                    <substep>
+                        <cmd>In the <wintitle>Flavors</wintitle> list, click the <uicontrol>Flavor
+                                Name</uicontrol> for the flavor to open the <wintitle>Flavor
+                                Details</wintitle> dialog box.</cmd>
+                        <info>
+                            <fig id="fig_ir3_znw_3q">
+                                <image href="jow1418139926596.image" id="image_u4r_znw_3q">
+                                    <alt>HP Helion OpenStack Carrier Grade Flavor Details with 4
+                                        CPUs</alt>
+                                </image>
+                            </fig>
+                        </info>
+                    </substep>
+                    <substep>
+                        <cmd>On the <uicontrol>Extra Specs</uicontrol> tab, click
+                                <uicontrol>Create</uicontrol>.</cmd>
+                        <info>
+                            <fig id="fig_fvn_npw_3q">
+                                <image href="psa1413822186171.image" id="image_tjf_4pw_3q" width="352px">
+                                    <alt>VM Flavor Extra Specs Tab</alt>
+                                </image>
+                            </fig>
+                        </info>
+                    </substep>
+                    <substep>
+                        <cmd>In the <uicontrol>Create Flavor Extra
+                                Spec</uicontrol> dialog, select <uicontrol>Minimum
+                                Number of CPUs</uicontrol> from the <uicontrol>Extra
+                                Spec</uicontrol> drop-down menu.</cmd>
+                        <info>
+                            <fig id="fig_j4n_fqw_3q">
+                                <image href="jow1418140984681.image" id="image_wrh_gqw_3q" width="393px">
+                                    <alt>HP Helion OpenStack Carrier Grade Create Flavor Extra Spec
+                                        dialog</alt>
+                                </image>
+                            </fig>
+                        </info>
+                    </substep>
+                    <substep>
+                        <cmd>In the <uicontrol>Key</uicontrol> field, enter
+                                <keyword>wrs:min_vcpus</keyword>.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>In the <uicontrol>Value</uicontrol> field, enter the minimum allowed
+                            number of vCPUs for the flavor.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Click <uicontrol>Create</uicontrol>.</cmd>
+                    </substep>
+                </substeps>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

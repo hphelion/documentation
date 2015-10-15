@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1425236723556" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Pinning a Guest NUMA Node to a Host NUMA Node</title>
+    <shortdesc>You can use flavor extra specs or image properties to pin a guest NUMA
+        node to a host NUMA node.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p>By default, when instances are launched or migrated, the virtual NUMA
+                nodes defined for the VMs are mapped to available host NUMA nodes. You can
+                optionally designate a specific host NUMA node for a virtual NUMA node, using either
+                a flavor extra specification (which takes the general form <nameliteral>hw:specification</nameliteral>), or an image property (which
+                takes the general form <nameliteral>hw_specification</nameliteral>).
+                This enables you to co-locate VM processes with AVS vSwitch processes for
+                high-performance networking. </p>
+            <p><!-- For information about exposing multiple NUMA nodes to a VM, see <xref
+                    href="jow1425236666266.xml"/>. -->For
+                information about assigning vSwitch processes to host NUMA nodes, see <xref href="jow1404333768530.xml"/>.</p>
+            <p>For a VM with only one virtual NUMA node, you can use an extra specification to
+                specify the host NUMA node.
+                <!--This is the Horizon-based implementation of the old way of assigning NUMA nodes, still extant. Presumably Horizon will be updated later to reflect the changes in NUMA node handling that inspired the current topic and related topics covering US51010. -->
+                To add this extra spec to a flavor using the web administration interface, use the
+                    <uicontrol>NUMA Node</uicontrol> selection in the <uicontrol>Create Flavor Extra Spec</uicontrol> drop-down menu. This
+                provides fields to associate a <uicontrol>Guest NUMA Node</uicontrol> with a
+                    <uicontrol>Host NUMA Node</uicontrol>. To access this menu, see <xref href="jow1429538642910.xml"/>.</p>
+            <p>You can also pin NUMA nodes using the CLI.  The following extra
+                specification assigns a specific host NUMA node to a virtual NUMA node:</p>
+            <codeblock>hw:numa_node.<varname>vnode_id</varname>=<varname>pnode_id</varname></codeblock>
+            <p>where</p>
+            <parml>
+                <plentry>
+                    <pt><parmname>vnode_id</parmname></pt>
+                    <pd>
+                        <p>is the number used to identify the virtual NUMA node (0
+                            for the first node, 1 for the second, and so on).</p>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt><parmname>pnode_id</parmname></pt>
+                    <pd>
+                        <p>is the number used to identify the host NUMA node (0 for
+                            the first node, 1 for the second, and so on).</p>
+                    </pd>
+                </plentry>
+            </parml>
+            <p>For example, given flavor <nameliteral>numa.pinned.asym</nameliteral>, use the following command to assign virtual
+                NUMA node 0 to host NUMA node 1:</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key numa.pinned.asym set hw:numa_node.0=1</userinput></codeblock>
+        </context>
+    </taskbody>
+</task-wr>

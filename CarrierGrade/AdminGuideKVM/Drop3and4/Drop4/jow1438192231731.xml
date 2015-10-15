@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1438192231731" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Connecting Virtual Machines to External Networks</title>
+    <shortdesc>You can provide VMs with external connectivity using one of several
+        methods.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p>You can use source network address translation (SNAT) or floating IP
+                addresses to expose VMs to an external network. Alternatively, you can use an
+                external NAT device, or use a network address space for the VMs that is directly
+                visible from the external network.</p>
+            <p>You can associate a floating IP address with a VM using a pool of
+                available floating IP addresses configured by the system administrator. When a host
+                on an external network initiates a connection to a public floating IP address, the
+                virtual router updates a connection table to enable bidirectional traffic flow
+                between the host and the VM.</p>
+            <p>When SNAT is enabled, the virtual router updates the connection table
+                only when a VM initiates connection to an external host. Until this happens, the VM
+                is inaccessible from the external network. This is true even if the private IP
+                address of the VM is used directly by incoming traffic.</p>
+            <p>You can use floating IP addresses and SNAT in any combination. The
+                following table presents an overview. </p>
+            <table frame="all" id="table_wbq_4p1_ws" rowheader="firstcol">
+                <tgroup cols="3">
+                    <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                    <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+                    <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+                    <thead>
+                        <row>
+                            <entry/>
+                            <entry>
+                                <p>Floating IP disabled</p>
+                            </entry>
+                            <entry>
+                                <p>Floating IP enabled</p>
+                            </entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>
+                                <p>SNAT disabled</p>
+                            </entry>
+                            <entry>
+                                <p>VMs are directly accessible from the external
+                                    network, provided the tenant network address space is directly
+                                    visible from the external network, or NAT is implemented using a
+                                    separate device.</p>
+                            </entry>
+                            <entry>
+                                <p>VMs cannot initiate connections to the external
+                                    network unless they have assigned floating IP addresses.
+                                    External hosts can initiate connections to VMs that have
+                                    assigned floating IP addresses.</p>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <p>SNAT enabled</p>
+                            </entry>
+                            <entry>
+                                <p>VMs can initiate connections to the external
+                                    network. External hosts cannot initiate connections to the
+                                    VMs.</p>
+                            </entry>
+                            <entry>
+                                <p>VMs can initiate connections to the external
+                                    network. External hosts can initiate connections to VMs that
+                                    have assigned floating IP addresses. </p>
+                            </entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <p>To enable or disable SNAT, see <xref href="jow1438192116883.xml"/>.</p>
+            <p>To configure floating IP addresses for VMs, refer to the public
+                OpenStack documentation.</p>
+        </context>
+        <prereq id="prereq_N100FD_N1001F_N10001">
+            <p>To connect VMs to external networks, you require an internal tenant network for the
+                VMs, an external tenant network connected to an edge router, and a virtual router
+                attached to both networks. For more information about adding and configuring these
+                components, see the <cite>HP Helion OpenStack Carrier Grade Reference Deployment Scenarios</cite>.</p>
+        </prereq>
+    </taskbody>
+</task-wr>

@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333496222" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+        
+-->
+    <title ixia_locid="1">Configuring Controller-0</title>
+    <shortdesc ixia_locid="2">You can configure <nameliteral ixia_locid="3">controller-0</nameliteral> by running a script from
+        the Linux command line.</shortdesc>
+    <prolog>
+        <author ixia_locid="4">Jim Owens</author>
+        <author ixia_locid="5">Pedro Sanchez</author>
+        <author ixia_locid="6">Tom Towle</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N10031_N1002E_N10001" ixia_locid="396">
+            <p ixia_locid="397"><draft-comment author="jowens" ixia_locid="398">US62804 mention controller configuration
+                    file</draft-comment>You can perform the configuration interactively, as
+                described in this section, or you can use a prepared configuration file. For more
+                about using a configuration file, see <xref href="jow1441306845507.xml" ixia_locid="399"/>.</p>
+        </context>
+        <prereq id="prereq_N1002B_N10028_N10001" ixia_locid="7">
+            <p ixia_locid="8">Before running the configuration script:</p>
+            <ul id="ul_hk2_wmr_g4">
+                <li ixia_locid="9">
+                    <p ixia_locid="10">Ensure that <nameliteral ixia_locid="144">controller-0</nameliteral> has been
+                        initialized, as described in <xref href="jow1404333490251.xml" ixia_locid="12"/>.</p>
+                </li>
+                <li ixia_locid="145">
+                    <p ixia_locid="146">Ensure that the management interface on
+                            <nameliteral ixia_locid="147">controller-0</nameliteral> is connected and
+                        operational.</p>
+                </li>
+                <li ixia_locid="202">
+                    <p ixia_locid="203">Install system software patches if there are any available from Wind
+                        River.</p>
+                </li>
+                <li ixia_locid="13">
+                    <p ixia_locid="14">Prepare a configuration plan to use as a reference. For
+                        details, see  the <cite ixia_locid="15">HP Helion OpenStack Carrier Grade Administration
+                            Guide: Storage Planning</cite>.</p>
+                </li>
+            </ul>
+        </prereq>
+        <context id="context_N1007D_N1002E_N10001" ixia_locid="282" product="tis_small">
+            <p ixia_locid="283">For a minimal two-server configuration, in which the controller and
+                compute functions are combined on a single host, the procedure varies slightly. The
+                compute function on <nameliteral ixia_locid="284">controller-0</nameliteral> is
+                configured before the <nameliteral ixia_locid="285">controller-1</nameliteral>
+                configuration is started.</p>
+        </context>
+        <steps>
+            <step id="step_N10102_N10031_N1001E_N10001" ixia_locid="201">
+                <cmd ixia_locid="232">Copy the license file to the controller node.</cmd>
+                <substeps id="substeps_rqq_nn2_hq">
+                    <substep ixia_locid="235">
+                        <cmd ixia_locid="193">Connect the controller to the OAM network.</cmd>
+                        <info ixia_locid="234">
+                            <p ixia_locid="237">On the controller, assign the correct OAM network
+                                address to the appropriate port.</p>
+                            <codeblock ixia_locid="239"><systemoutput ixia_locid="466">$ </systemoutput><userinput ixia_locid="467">sudo ip addr add <varname ixia_locid="215">OAM_IP_address/mask</varname> dev <varname ixia_locid="218">port</varname></userinput>
+<systemoutput ixia_locid="468">$ </systemoutput><userinput ixia_locid="316">sudo ip link set <varname ixia_locid="319">port</varname> up</userinput>
+<systemoutput ixia_locid="469">$ </systemoutput><userinput ixia_locid="317">sudo route add default gw <varname ixia_locid="320">gateway_addr</varname></userinput></codeblock>
+                            <note id="note_N10139_N10115_N1010C_N10108_N10101_N10031_N1001E_N10001" ixia_locid="222">
+                                <p ixia_locid="223">To identify the controller-0 port and IP
+                                    address, refer to your OAM network plan.</p>
+                            </note>
+                        </info>
+                        <stepxmp ixia_locid="224">
+                            <p ixia_locid="225">For example:</p>
+                            <codeblock ixia_locid="241"><systemoutput ixia_locid="261">$ </systemoutput><userinput ixia_locid="470">sudo ip addr add 10.10.10.3/24 dev eth0</userinput>
+<systemoutput ixia_locid="471">$ </systemoutput><userinput ixia_locid="472">sudo ip link set eth0 up</userinput>
+<systemoutput ixia_locid="473">$ </systemoutput><userinput ixia_locid="318">sudo route add default gw 10.10.10.1</userinput></codeblock>
+                        </stepxmp>
+                    </substep>
+                    <substep ixia_locid="226">
+                        <cmd ixia_locid="227">Connect a server containing the license file to the
+                            OAM network.</cmd>
+                    </substep>
+                    <substep ixia_locid="243">
+                        <cmd ixia_locid="126">Copy the HP Helion OpenStack Carrier Grade license file to <filepath ixia_locid="127">/home/wrsroot/license.lic</filepath> on the
+                            controller.</cmd>
+                        <info ixia_locid="245">
+                            <p ixia_locid="246">This is the default path offered during controller
+                                configuration. If you prefer, you can copy the file to a different
+                                path, and specify the path during configuration.</p>
+                        </info>
+                        <stepxmp ixia_locid="474">
+                            <codeblock ixia_locid="475"><systemoutput ixia_locid="476">$ </systemoutput><userinput ixia_locid="477">scp <varname ixia_locid="478">username</varname>@<varname ixia_locid="479">sourcehost</varname>:<varname ixia_locid="480">sourcepath</varname>/license.lic /home/wrsroot/license.lic</userinput></codeblock>
+                        </stepxmp>
+                    </substep>
+                </substeps>
+            </step>
+            <step id="step_N1015F_N10092_N1002E_N10001" importance="optional" ixia_locid="343">
+                <cmd ixia_locid="344">Copy a digital certificate file to the controller node. </cmd>
+                <info ixia_locid="345">
+                    <p ixia_locid="346">If you require secure REST API access using HTTPS, copy a
+                        CA-signed digital certificate (PEM file) to a directory on the controller.
+                        The recommended path is <filepath ixia_locid="350">/home/wrsroot</filepath>.</p>
+                </info>
+                <stepxmp ixia_locid="330">
+                    <codeblock ixia_locid="332"><systemoutput ixia_locid="334">$ </systemoutput><userinput ixia_locid="336">scp <varname ixia_locid="338">username</varname>@<varname ixia_locid="340">sourcehost</varname>:<varname ixia_locid="342">sourcepath</varname>/<varname ixia_locid="351">pem_file</varname> /home/wrsroot/<varname ixia_locid="352">pem_file</varname></userinput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N101CB_N10031_N1001E_N10001" ixia_locid="481">
+                <cmd ixia_locid="482">Install any required patches.</cmd>
+                <info ixia_locid="483">
+                    <p ixia_locid="484">For more information about obtaining and using patches,
+                        refer to the <cite ixia_locid="321">HP Helion OpenStack Carrier Grade Administration Guide:
+                            Managing Software Patches</cite>.</p>
+                </info>
+                <substeps id="substeps_mm2_2yf_hq">
+                    <substep ixia_locid="485">
+                        <cmd ixia_locid="263">Copy the patches from a connected server.</cmd>
+                        <info ixia_locid="486">
+                            <codeblock ixia_locid="487"><systemoutput ixia_locid="268">$ </systemoutput> <userinput ixia_locid="229">scp <varname ixia_locid="217">username</varname>@<varname ixia_locid="221">sourcehost</varname>:<varname ixia_locid="231">sourcepath</varname>/<varname ixia_locid="488">patchfile</varname> /home/wrsroot/<varname ixia_locid="489">patchfile</varname></userinput></codeblock>
+                        </info>
+                    </substep>
+                    <substep ixia_locid="420">
+                        <cmd ixia_locid="490">Upload the patches to the patch storage area.</cmd>
+                        <info ixia_locid="491">
+                            <codeblock ixia_locid="492"><systemoutput ixia_locid="269">$ </systemoutput><userinput ixia_locid="323">sudo sw-patch upload ./<varname ixia_locid="493">patchfile</varname></userinput></codeblock>
+                        </info>
+                    </substep>
+                    <substep ixia_locid="276">
+                        <cmd ixia_locid="494">Apply the patches.</cmd>
+                        <info ixia_locid="278">
+                            <draft-comment author="rstone" ixia_locid="464">US62817 changed
+                                wrs-patch -&gt; sw-patch</draft-comment>
+                            <codeblock ixia_locid="495"><systemoutput ixia_locid="496">$ </systemoutput><userinput ixia_locid="325">sudo sw-patch apply --all</userinput></codeblock>
+                        </info>
+                    </substep>
+                    <substep ixia_locid="327">
+                        <cmd ixia_locid="497">Install the patches locally.</cmd>
+                        <info ixia_locid="498">
+                            <draft-comment author="rstone" ixia_locid="465">US62817 changed
+                                wrs-patch -&gt; sw-patch</draft-comment>
+                            <codeblock ixia_locid="499"><systemoutput ixia_locid="500">$ </systemoutput><userinput ixia_locid="501">sudo sw-patch install-local</userinput></codeblock>
+                        </info>
+                        <stepresult ixia_locid="502">
+                            <p ixia_locid="503">This command applies and installs all applied
+                                patches on controller-0. </p>
+                            <note id="note_N1025B_N10254_N1023C_N101CA_N101B1_N10031_N1001E_N10001" ixia_locid="504">
+                                <p ixia_locid="505">You must reboot the controller to ensure that it
+                                    is running with the software fully patched.</p>
+                            </note>
+                        </stepresult>
+                    </substep>
+                    <substep ixia_locid="506">
+                        <cmd ixia_locid="427">Reboot controller-0.</cmd>
+                    </substep>
+                </substeps>
+                <stepresult ixia_locid="507">
+                    <p ixia_locid="508">Patch installation is complete.</p>
+                </stepresult>
+            </step>
+            <step id="step_N10058_N10055_N10028_N10001" ixia_locid="16">
+                <cmd ixia_locid="17">Start the controller configuration script.</cmd>
+                <stepxmp ixia_locid="18">
+                    <codeblock ixia_locid="19"><systemoutput ixia_locid="509">$ </systemoutput><userinput ixia_locid="21">sudo config_controller</userinput>
+<systemoutput ixia_locid="510">HP Helion OpenStack Carrier Grade Configuration
+======================================
+Enter Q at any prompt to abort...</systemoutput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N10072_N10055_N10028_N10001" ixia_locid="23">
+                <cmd ixia_locid="24">Configure the controller options as requested by the configuration script. </cmd>
+                <info ixia_locid="25">
+                    <note id="note_N1007B_N10078_N10071_N10055_N10028_N10001" ixia_locid="26">
+                        <p ixia_locid="27">The configuration is applied only after all options have been specified.
+                            You can safely abort the configuration process at any time by pressing
+                            the <nameliteral ixia_locid="28">Q</nameliteral> key.</p>
+                    </note>
+                    <p ixia_locid="29">The following configuration groups are presented. For detailed information,
+                        refer to <xref href="jow1419271369349.xml" ixia_locid="30"/>.</p>
+                    <table frame="all" id="table_m21_cmz_cn">
+                        <title ixia_locid="31">Controller Configuration Groups</title>
+                        <tgroup cols="2">
+                            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+                            <thead>
+                                <row>
+                                    <entry ixia_locid="32">
+                                        <p ixia_locid="33">Configuration Group</p>
+                                    </entry>
+                                    <entry ixia_locid="34">
+                                        <p ixia_locid="35">Comments</p>
+                                    </entry>
+                                </row>
+                            </thead>
+                            <tbody>
+                                <row>
+                                    <entry ixia_locid="36">
+                                        <p conref="jow1419271183630.xml#jow1419271183630/date_time_section" ixia_locid="395"/>
+                                    </entry>
+                                    <entry ixia_locid="38">
+                                        <p ixia_locid="353">The date and time as read from the local system
+                                            clock.</p>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry ixia_locid="40">
+                                        <p conref="jow1419271183630.xml#jow1419271183630/storage_section" ixia_locid="354"/>
+                                    </entry>
+                                    <entry ixia_locid="42">
+                                        <p ixia_locid="43">The disk space allocations for database, image, and
+                                            volume storage. For details, see the <cite ixia_locid="44">HP Helion OpenStack Carrier Grade Administration Guide</cite>.</p>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry ixia_locid="355">
+                                        <p conref="jow1419271183630.xml#jow1419271183630/pxeboot_network_section" ixia_locid="356"/>
+                                    </entry>
+                                    <entry ixia_locid="357">
+                                        <p ixia_locid="358">The configuration associated with the
+                                            PXE Boot network.</p>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry ixia_locid="359">
+                                        <p conref="jow1419271183630.xml#jow1419271183630/mgmt_network_section" ixia_locid="360"/>
+                                    </entry>
+                                    <entry ixia_locid="361">
+                                        <p ixia_locid="48">The configuration associated with the internal management
+                                            network.</p>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry ixia_locid="511">
+                                        <p conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_network_section" ixia_locid="362"/>
+                                    </entry>
+                                    <entry ixia_locid="279">
+                                        <p ixia_locid="281">The configuration associated with the board management
+                                            control network.</p>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry ixia_locid="49">
+                                        <p conref="jow1419271183630.xml#jow1419271183630/infra_network_section" ixia_locid="363"/>
+                                    </entry>
+                                    <entry ixia_locid="51">
+                                        <p ixia_locid="52">The configuration associated with the infrastructure
+                                            network.</p>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry ixia_locid="53">
+                                        <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_section" ixia_locid="364"/>
+                                    </entry>
+                                    <entry ixia_locid="55">
+                                        <p ixia_locid="56">The configuration associated with the OAM Network.</p>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry ixia_locid="57">
+                                        <p conref="jow1419271183630.xml#jow1419271183630/DNS_section" ixia_locid="365"/>
+                                    </entry>
+                                    <entry ixia_locid="59">
+                                        <p ixia_locid="60">The IP addresses to use for DNS servers.
+                                            The servers must be accessible from the OAM Network.</p>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry ixia_locid="61">
+                                        <p conref="jow1419271183630.xml#jow1419271183630/NTP_section" ixia_locid="366"/>
+                                    </entry>
+                                    <entry ixia_locid="63">
+                                        <p ixia_locid="64">The IP addresses to use for NTP servers.
+                                            The servers must be accessible from the OAM Network.</p>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry ixia_locid="367">
+                                        <p conref="jow1419271183630.xml#jow1419271183630/license_section" ixia_locid="368"/>
+                                    </entry>
+                                    <entry ixia_locid="369">
+                                        <p ixia_locid="158">The path to the HP Helion OpenStack Carrier Grade license
+                                            file.</p>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry ixia_locid="370">
+                                        <p conref="jow1419271183630.xml#jow1419271183630/api_https_section" ixia_locid="371"/>
+                                    </entry>
+                                    <entry ixia_locid="372">
+                                        <p ixia_locid="373">The configuration for secure API access.</p>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry ixia_locid="153">
+                                        <p conref="jow1419271183630.xml#jow1419271183630/auth_section" ixia_locid="374"/>
+                                    </entry>
+                                    <entry ixia_locid="157">
+                                        <p ixia_locid="159">A temporary password for the Titanium
+                                            Server cloud <nameliteral ixia_locid="178">admin</nameliteral> account. </p>
+                                        <note id="note_N1016A_N1015F_N10154_N100C1_N10099_N10090_N10078_N10071_N10055_N10028_N10001" ixia_locid="70">
+                                            <p ixia_locid="71">This is the password for the cloud
+                                                  <nameliteral ixia_locid="160">admin</nameliteral>
+                                                account, not the Linux <nameliteral ixia_locid="161">wrsroot</nameliteral> account.</p>
+                                        </note>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry ixia_locid="72">
+                                        <p ixia_locid="73">Apply the configuration settings</p>
+                                    </entry>
+                                    <entry ixia_locid="74">
+                                        <p ixia_locid="75">This is the final question before the
+                                            configuration selections are applied. Once you enter
+                                                <userinput ixia_locid="76">y</userinput> to accept
+                                            the selected options, the installation script commits
+                                            the configuration settings.</p>
+                                    </entry>
+                                </row>
+                            </tbody>
+                        </tgroup>
+                    </table>
+                </info>
+                <stepresult ixia_locid="77">
+                    <p ixia_locid="78">After a few minutes, the message 
+                        <b ixia_locid="79">Configuration was applied</b>
+                    
+                        appears.</p>
+                </stepresult>
+            </step>
+            <step id="step_N1023D_N10087_N1002E_N10001" ixia_locid="162">
+                <cmd ixia_locid="163">Change to the Keystone <nameliteral ixia_locid="164">admin</nameliteral> account.</cmd>
+                <info ixia_locid="177">
+                    <p ixia_locid="253">Use the <cmdname ixia_locid="512">source</cmdname> command to become the Keystone
+                            <nameliteral ixia_locid="513">admin</nameliteral> user.</p>
+                    <codeblock ixia_locid="514"><systemoutput ixia_locid="515">$ </systemoutput><userinput ixia_locid="516">source /etc/nova/openrc</userinput>
+<systemoutput ixia_locid="517">~(keystone_admin)$ </systemoutput></codeblock>
+                </info>
+            </step>
+            
+            <step id="step_N101C3_N10055_N10028_N10001" ixia_locid="89">
+                <cmd ixia_locid="90">Verify that the HP Helion OpenStack Carrier Grade controller services are running.</cmd>
+                <stepxmp ixia_locid="375">
+                    <codeblock ixia_locid="376"><systemoutput ixia_locid="377">~(keystone_admin)$ </systemoutput><userinput ixia_locid="378">nova service-list</userinput>
+<systemoutput ixia_locid="379">+------------------+--------------+--------+---------+------------+-------+ ...
+| Binary           | Host         | Zone   | Status  | Maint Mode | State | ...
++------------------+--------------+--------+---------+------------+-------+ ...
+| nova-conductor   | controller-0 | int... | enabled | disabled   | up    | ...
+| nova-cert        | controller-0 | int... | enabled | disabled   | up    | ...
+| nova-consoleauth | controller-0 | int... | enabled | disabled   | up    | ...
+| nova-scheduler   | controller-0 | int... | enabled | disabled   | up    | ...
++------------------+--------------+--------+---------+------------+-------+ ...</systemoutput>
+</codeblock>
+                    <note id="note_N103F7_N103E1_N103D7_N10093_N1002E_N10001" ixia_locid="400" product="tis_small">
+                        <p ixia_locid="401">For a minimal two-server  configuration, the
+                                <nameliteral ixia_locid="382">nova-compute</nameliteral> service is also listed.</p>
+                    </note>
+                </stepxmp>
+            </step>
+            <step id="step_N10407_N10093_N1002E_N10001" ixia_locid="383" product="tis_small">
+                <cmd ixia_locid="384">For a minimal two-server configuration, verify that the
+                    controller and compute subfunctions are present. </cmd>
+                <stepxmp ixia_locid="385">
+                    <codeblock ixia_locid="387"><systemoutput ixia_locid="388">~(keystone_admin)$ </systemoutput><userinput ixia_locid="389">system host-show 1 | grep subfunctions</userinput>
+<systemoutput ixia_locid="390">| personality     | controller,compute</systemoutput>
+</codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N101DE_N10055_N10028_N10001" ixia_locid="96">
+                <cmd ixia_locid="97">Verify that <nameliteral ixia_locid="98">controller-0</nameliteral> is in the state
+                        <nameliteral ixia_locid="99">unlocked-enabled-available</nameliteral>.</cmd>
+                <stepxmp ixia_locid="100">
+                    <codeblock ixia_locid="101"><systemoutput ixia_locid="518">~(keystone_admin)$ </systemoutput><userinput ixia_locid="103">system host-list</userinput>
+<systemoutput ixia_locid="519">+----+--------------+-------------+----------------+-------------+--------------+
+| id | hostname     | personality | administrative | operational | availability |
++----+--------------+-------------+----------------+-------------+--------------+
+| 1  | controller-0 | controller  | unlocked       | enabled     | available    |
++----+--------------+-------------+----------------+-------------+--------------+</systemoutput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N10200_N10055_N10028_N10001" importance="optional" ixia_locid="105">
+                <cmd ixia_locid="106">Synchronize the RAID array.</cmd>
+                <info ixia_locid="107">
+                    <p ixia_locid="108">Normally, the RAID array is already synchronized. If you need to synchronize
+                        the RAID array manually, do so now. You may be able to do this by pressing a
+                        button on the unit, or using a special key combination on the console
+                        keyboard. For details, consult the OEM documentation for the RAID.</p>
+                </info>
+            </step>
+            <step id="step_N10212_N10055_N10028_N10001" ixia_locid="109">
+                <cmd ixia_locid="110">Using a Web browser, navigate to the OAM floating IP address
+                    to verify that the HP Helion OpenStack Carrier Grade web administration interface is
+                    available.</cmd>
+                <info ixia_locid="111">
+                    <p ixia_locid="112">To identify the OAM floating IP address, consult the
+                        configuration plan.</p>
+                </info>
+                <stepresult ixia_locid="114">
+                    <p ixia_locid="115">The <wintitle ixia_locid="116">HP Helion OpenStack Carrier Grade</wintitle> login
+                        screen appears.</p>
+                    <fig id="fig_N10228_N1021D_N1020A_N10055_N10028_N10001" ixia_locid="117">
+                        <title ixia_locid="118">HP Helion OpenStack Carrier Grade login screen</title>
+                        <image alt="Carrier Grade Communication Server login screen" href="jow1404333491396.image" id="image_t5q_4b1_dn" ixia_locid="119" placement="inline" width="2.5in"/>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N10244_N10055_N10028_N10001" ixia_locid="120">
+                <cmd ixia_locid="121">Log in using the cloud <nameliteral ixia_locid="122">admin</nameliteral> account.</cmd>
+                <stepresult ixia_locid="123">
+                    <p ixia_locid="124">The <wintitle ixia_locid="125">HP Helion OpenStack Carrier Grade</wintitle> web
+                        administration interface appears.</p>
+                    <fig id="fig_N10251_N10246_N1023B_N10055_N10028_N10001" ixia_locid="184">
+                        <title ixia_locid="186">HP Helion OpenStack Carrier Grade web administration interface</title>
+                        <image alt="Carrier Grade Communication Server web administration interface" href="jow1404333493002.image" id="image_pzt_1ts_g4" ixia_locid="192" placement="inline" width="5.5in"/>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N1026E_N10055_N10028_N10001" ixia_locid="129">
+                <cmd ixia_locid="194">In the left-hand pane, on the <uicontrol ixia_locid="131">Admin</uicontrol> tab, click
+                        <uicontrol ixia_locid="196">Inventory</uicontrol>, and then select the
+                        <uicontrol ixia_locid="133">Hosts</uicontrol> tab.</cmd>
+                <stepresult ixia_locid="198">
+                    <p ixia_locid="135"><nameliteral ixia_locid="200">Controller-0</nameliteral> is reported in the hosts inventory
+                        list.</p>
+                    <fig id="fig_N10281_N10277_N10264_N10055_N10028_N10001" ixia_locid="182">
+                        <image alt="Hosts list showing controller-0" href="jow1404333494735.image" id="image_f1p_dtm_jn" ixia_locid="188" placement="inline" width="5.5in"/>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N1045B_N1008E_N1002E_N10001" ixia_locid="286" product="tis_small">
+                <cmd ixia_locid="287">If you are installing a minimal two-server configuration,
+                    configure the compute function on <nameliteral ixia_locid="288">controller-0</nameliteral>.</cmd>
+                <substeps id="substeps_u5p_fth_yr">
+                    <substep ixia_locid="289">
+                        <cmd ixia_locid="290">Configure provider networks.</cmd>
+                        <info ixia_locid="291">
+                            <p ixia_locid="292">For detailed instructions, see <xref href="jow1404333519516.xml" ixia_locid="293"/>.</p>
+                            <p ixia_locid="294">Provider networks are required so that you can
+                                configure data interfaces and unlock the host. By configuring the
+                                data interfaces on <nameliteral ixia_locid="295">controller-0</nameliteral> before you configure <nameliteral ixia_locid="296">controller-1</nameliteral>, you can avoid the
+                                need to swact controllers.</p>
+                            <p ixia_locid="520">Ordinarily, to attach data interfaces, you must lock
+                                the affected host. On a host that supports controller and compute
+                                functions, this would require a swact to lock the host. The Titanium
+                                Server setup for a minimal two-server configuration avoids this by
+                                allowing you to define the data interfaces on the unlocked
+                                    <nameliteral ixia_locid="298">controller-0</nameliteral> during
+                                initial setup.</p>
+                        </info>
+                    </substep>
+                    <substep ixia_locid="299">
+                        <cmd ixia_locid="300">Attach the data interfaces to the provider networks.</cmd>
+                        <info ixia_locid="301">
+                            <p ixia_locid="302">For details, see <xref href="jow1426948577755.xml" ixia_locid="521"/>.</p>
+                        </info>
+                    </substep>
+                    <substep ixia_locid="304">
+                        <cmd ixia_locid="305">Apply the data interface configuration.</cmd>
+                        <info ixia_locid="306">
+                            <p ixia_locid="307">At the command prompt,  type the following command:</p>
+                            <codeblock ixia_locid="308"><systemoutput ixia_locid="309">~(keystone_admin)$ </systemoutput><userinput ixia_locid="310">system compute-config-complete</userinput></codeblock>
+                        </info>
+                        <stepresult ixia_locid="311">
+                            <p ixia_locid="312">The configuration is applied and the host is
+                                rebooted. </p>
+                        </stepresult>
+                    </substep>
+                </substeps>
+            </step>
+        </steps>
+        <result id="result_N1028D_N10028_N10001" ixia_locid="190">
+            <p ixia_locid="140">The host <nameliteral ixia_locid="141">controller-0</nameliteral> is
+                now fully operational. It can be used to initialize all other hosts in the Titanium
+                Server cluster.</p>
+            <note id="note_N105D7_N105C8_N1002E_N10001" ixia_locid="391" product="tis_small">
+                <p ixia_locid="392">For a minimal two-server configuration, you can verify that the
+                        <nameliteral ixia_locid="393">nova-compute</nameliteral> service is running on the controller
+                    by using the <cmdname ixia_locid="394">nova service-list</cmdname> command.</p>
+            </note>
+        </result>
+        <postreq id="postreq_N106BD_N1002E_N10001" ixia_locid="525" product="tis_small">
+            <p ixia_locid="526"><draft-comment author="jowens" ixia_locid="527">US65502 added</draft-comment>For a minimal two-server
+                configuration, you must also set up local storage. This means that after configuring
+                    <nameliteral ixia_locid="528">controller-1</nameliteral>, you must swact the controllers in order
+                to lock <nameliteral ixia_locid="529">controller-0</nameliteral> and configure its local storage. The
+                required steps are included in the instructions for <xref href="jow1404333507469.xml" ixia_locid="530"/>.</p>
+        </postreq>
+    </taskbody>
+</task-wr>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333655771" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title ixia_locid="1">Live Migration of Virtual Machines</title>
+    <shortdesc ixia_locid="2">Live migration occurs when a virtual machine is transferred to execute
+        on a different compute node with minimal disruption of the guest applications. This can
+        happen automatically, or upon request by the system administrator.</shortdesc>
+    <prolog>
+        <author ixia_locid="64">Jim Owens</author>
+        <author></author>
+    </prolog>
+    <conbody>
+        <note id="note_N10026_N10023_N10001" ixia_locid="65">
+            <p ixia_locid="66">Live migration is not currently supported for instances using the following:</p>
+            <ul id="ul_ccz_fjc_gs">
+                <li ixia_locid="67">
+                    <p ixia_locid="68">PCI passthrough</p>
+                </li>
+                <li ixia_locid="69">
+                    <p ixia_locid="70">SR-IOV</p>
+                </li>
+                <li ixia_locid="71">
+                    <p ixia_locid="72">Local storage</p>
+                </li>
+            </ul>
+        </note>
+        <p ixia_locid="4">While executing a live migration operation, HP Helion OpenStack Carrier Grade manages the
+            virtual machine's state in such a way that it appears unmodified on the migrated
+            instance. This includes:</p>
+        <ul id="ul_e3n_drn_j4">
+            <li ixia_locid="5">
+                <p ixia_locid="6">system memory, both kernel and user space</p>
+            </li>
+            <li ixia_locid="7">
+                <p ixia_locid="8">access to all non-local storage resources, including LVM/iSCSI and
+                    Cinder</p>
+            </li>
+            <li ixia_locid="9">
+                <p ixia_locid="10">all the virtual machine networking options (unmodified/virtio, AVP kernel driver, AVP
+          DPDK Poll Mode Driver), and AVS</p>
+            </li>
+        </ul>
+        <p ixia_locid="11">Automatic migration of virtual machines occurs whenever the administrator
+            initiates a locking operation on a compute node. In this case, HP Helion OpenStack Carrier Grade first
+            live-migrates all virtual machine instances off of the compute node before
+            administratively locking it.</p>
+        <p ixia_locid="12">The <nameliteral ixia_locid="29">admin</nameliteral> user can also
+            initiate live migrations manually from the <wintitle ixia_locid="13">Instances</wintitle> page available by clicking the option <option ixia_locid="14">Instances</option> on the <uicontrol ixia_locid="30">Admin</uicontrol> side pane of
+            the web management interface. The <option ixia_locid="15">More</option> button of the
+            selected instance provides the option <option ixia_locid="16">Live Migrate
+                Instance</option>. When selected, the <wintitle ixia_locid="17">Live
+                Migrate</wintitle> window is displayed as illustrated below:</p>
+        <fig id="fig_N1005C_N1001C_N10001" ixia_locid="18">
+            <image href="jow1404333654305.image" id="image_klp_d5n_j4" ixia_locid="19" width="4in"/>
+        </fig>
+        <p ixia_locid="20">The following fields are available:</p>
+        <dl>
+            <dlentry ixia_locid="21">
+                <dt ixia_locid="22">Current Host</dt>
+                <dd ixia_locid="23">
+                    <p ixia_locid="24">A read-only field displaying the compute node the selected instance is currently
+            running on.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="25">
+                <dt ixia_locid="26">New Host</dt>
+                <dd ixia_locid="27">
+                    <p ixia_locid="28">The target compute node for the migration. The default value
+                        is to let HP Helion OpenStack Carrier Grade auto-schedule the virtual machine following the
+                        current scheduling guidelines and constraints. Optionally, you can manually
+                        select the target compute node.</p>
+                    <p ixia_locid="63">Note that the set of available target compute nodes for the
+                        migration is still subject to the scheduler constraints from the virtual
+                        machine flavor and other systems options that might be in place.</p>
+                </dd>
+            </dlentry>
+        </dl>
+        <section id="section_N100B6_N1001F_N10001" ixia_locid="31">
+            <title ixia_locid="32">Live Migration and Server Group Policies</title>
+            <p ixia_locid="33">Virtual machines launched as part of a Server Group are subject to additional live
+                migration restrictions determined by the selection of scheduling policy. See <xref href="jow1404333660893.xml" ixia_locid="34"/> for details.</p>
+            <dl>
+                <dlentry ixia_locid="35">
+                    <dt ixia_locid="36">Affinity policy</dt>
+                    <dd ixia_locid="37">
+                        <p ixia_locid="38">The goal of this policy is to schedule all virtual machines in the Server
+                            Group to execute on the same host.</p>
+                        <p ixia_locid="39">If the <nameliteral ixia_locid="40">Best
+                                Effort</nameliteral> flag of the Server Group is clear, then the
+                            individual instances cannot be migrated since this would break the
+                            affinity policy.</p>
+                        <p ixia_locid="41">Note that this means that a compute node running
+                            instances in a Server Group with affinity policy in strict mode cannot
+                            be locked. An alternative mode of operation is to always set the
+                                <nameliteral ixia_locid="42">Best Effort</nameliteral> flag and then
+                            manually migrate the instances to a common host.</p>
+                        <p ixia_locid="43">If the <nameliteral ixia_locid="44">Best Effort</nameliteral> flag of the Server Group is
+                            set, then any individual instances can migrate to any other available
+                            host.</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="45">
+                    <dt ixia_locid="46">Anti-affinity policy</dt>
+                    <dd ixia_locid="47">
+                        <p ixia_locid="48">The goal of this policy is to schedule each virtual machine in the Server
+                            Group to execute on a different host.</p>
+                        <p ixia_locid="49">If the <nameliteral ixia_locid="50">Best
+                                Effort</nameliteral> flag of the Server Group is clear, then the
+                            individual instances can migrate provided that there are suitable hosts
+                            where no other Server Group instance is running.</p>
+                        <p ixia_locid="51">If the <nameliteral ixia_locid="52">Best Effort</nameliteral> flag of the Server Group is
+                            set, then any individual instances can migrate to any other available
+                            host.</p>
+                    </dd>
+                </dlentry>
+            </dl>
+        </section>
+    </conbody>
+</concept-wr>

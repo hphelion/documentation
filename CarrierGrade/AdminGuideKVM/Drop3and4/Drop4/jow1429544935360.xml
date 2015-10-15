@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1429544935360" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Specifying Dedicated CPUs for a VM</title>
+    <shortdesc>You can require the use of dedicated CPUs for a VM using an extra
+        specification.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p>When a virtual machine is launched, its virtual CPUs use resources
+                from a shared pool of cores<!-- (physical cores or logical processors)--> on the
+                target compute node. Each virtual CPU is scheduled for processing as an independent
+                thread. The <option>CPU Policy</option> extra specification
+                involves two aspects of the scheduling process: the CPU affinity mask (that is, the
+                conditions required for a target CPU to be eligible), and the CPU over-commit limit
+                (an independent consideration that affects whether an otherwise eligible target CPU
+                may be used.) The extra spec controls whether the virtual CPU thread can share a
+                core with other vCPU threads.</p>
+            <p>Until this extra spec is explicitly defined, the effective default
+                is <nameliteral>Shared</nameliteral> to permit sharing, subject to the over-commit
+                limit. You can change this by adding the extra spec. When you do so using the web
+                administration interface, the non-default policy <nameliteral>Dedicated</nameliteral> is offered automatically for convenience.</p>
+            <p>When the <option>CPU Policy</option> is set to
+                    <nameliteral>Dedicated</nameliteral>, each virtual CPU thread
+                is scheduled to run on a single core exclusively. The cores are removed from the
+                shared resource pool, and each virtual CPU is scheduled to run as a dedicated thread
+                on its corresponding target core. The cores are returned to the shared pool upon
+                termination of the virtual machine.</p>
+            <p>Specifying <nameliteral>Dedicated</nameliteral>
+                effectively affines each virtual CPU thread to a dedicated core, and ensures that
+                the core is not shared with other virtual CPU threads.
+                <!--When launching virtual machines on a HT-enabled compute node, this option affines each virtual CPU thread to a logical processor instead; therefore, as many threads as logical processors are available can be scheduled to run on the same core. See <cite>HT-Enabled Compute Nodes</cite> in <xref href="jow1404333563170.xml"/> for further information.-->
+                The <nameliteral>Dedicated</nameliteral> setting is recommended for
+                Carrier-Grade requirements to prevent over-commitment of host resources, and to
+                minimize the impact that scheduling events may have on the latency and throughput
+                responses of the guest kernel. </p>
+            <note id="note_N10058_N10022_N1001F_N10001">
+                <p>The <nameliteral>Dedicated</nameliteral> setting is also required for CPU
+                    scaling.</p>
+            </note>
+            <p>When the <option>CPU Policy</option> is
+                    <nameliteral>Shared</nameliteral>, the virtual CPU threads are
+                scheduled to run on any available core on the compute node. Also, they can be moved
+                within the compute node from one core to another at any time. In a sense, the
+                virtual CPU threads can be considered to be floating threads. This is the CPU
+                affinity mask portion of the scheduling action.</p>
+            <p>Additionally, the virtual CPU threads can share the core with other
+                threads from the same virtual machine or other virtual machines. The default
+                OpenStack virtual CPU over-commit ratio is 16:1, which means that up to 16 virtual
+                CPU threads can share a single core. Over-committing of virtual CPUs is highly
+                discouraged in Carrier-Grade operations.</p>
+            <p>To add this extra spec to a flavor using the web administration
+                interface, use the <uicontrol>CPU Policy</uicontrol> selection in
+                the <uicontrol>Create Flavor Extra Spec</uicontrol> drop-down menu.
+                To access this menu, see <xref href="jow1429538642910.xml"/>.</p>
+            <p>To add the extra spec using the CLI, use the following command:</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key <varname>flavor_name</varname> set hw:cpu_policy=<varname>policy</varname></userinput></codeblock>
+            <p>where <varname>policy</varname> is either <option>dedicated</option> or <option>shared</option>.
+                If any other value is suppied, the policy is set to
+                    <nameliteral>Dedicated</nameliteral>.</p>
+            <note id="note_N10271_N101E7_N101DE_N101C7_N1014F_N1001F_N10001">
+                <p>Using a single compute node for both shared and dedicated
+                    threads is not recommended. For clusters that must support threads of both
+                    types, use a host aggregate for each
+                    type.<!-- JO 2015-03-13 Chris F suggests adding "in combination with the AggregateInstanceExtraSpecsFilter scheduler filter." -->
+                    For more information, see <xref href="jow1426182913166.xml"/>.</p>
+            </note>
+        </context>
+    </taskbody>
+</task-wr>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content id="jow1439489784564" xml:lang="en-us">
+<title ixia_locid="159">[RC:dl] TiS supported virtual NICs</title>
+    <rcbody><ul id="supported_vNIC"><li ixia_locid="184"><p ixia_locid="185"><option ixia_locid="128">avp</option> (Accelerated Virtual Port) </p></li>
+    <li ixia_locid="186"><p ixia_locid="187"><option ixia_locid="122">e1000</option> (Intel e1000 Emulation)</p></li>
+    <li ixia_locid="188">
+                <p ixia_locid="189"><option ixia_locid="138">ne2k_pci</option> (NE2000 Emulation)</p>
+            </li>
+    <li ixia_locid="190"><p ixia_locid="191"><option ixia_locid="143">pcnet</option> (AMD PCnet/PCI Emulation)</p></li>
+    <li ixia_locid="192"><p ixia_locid="193"><option ixia_locid="148">rtl8139</option> (Realtek 8139 Emulation)</p></li>
+    <li ixia_locid="194"><p ixia_locid="195"><option ixia_locid="125">virtio</option> (VirtIO Network)</p></li>
+    <li ixia_locid="196"><p ixia_locid="197"><option ixia_locid="156">pci-passthrough</option> (PCI Passthrough Device)</p></li>
+    <li ixia_locid="198"><p ixia_locid="199"><option ixia_locid="183">pci-sriov</option> (SR-IOV device)</p></li>
+</ul>
+    </rcbody>
+</referable-content>

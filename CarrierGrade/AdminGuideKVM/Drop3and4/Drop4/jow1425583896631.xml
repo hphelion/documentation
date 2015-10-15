@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1425583896631" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Using VXLANs<!-- --></title>
+    <shortdesc>You can use Virtual eXtensible Local Area Networks (VXLANs) to connect
+        VM instances across non-contiguous Layer 2 segments (that is, Layer 2 segments connected by
+        one or more Layer 3 routers). </shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N10022_N1001F_N10001">
+            <p>A VXLAN is a Layer 2 overlay network scheme on a Layer 3 network
+                infrastructure. Packets originating from VMs and destined for other VMs are
+                encapsulated with IP, UDP, and VXLAN headers and sent as Layer 3 packets. The IP
+                addresses of the source and destination compute nodes are included in the
+                headers.</p>
+            <p> You can configure VXLANs on HP Helion OpenStack Carrier Grade using the following
+                workflow.</p>
+        </context>
+        <steps id="steps_anc_b5z_gr">
+            <step id="step_N10036_N10032_N1001F_N10001">
+                <cmd>Set up a provider network of the VXLAN type.</cmd>
+                <info>
+                    <p>For details, see <xref href="jow1425585636142.xml"/>.</p>
+                </info>
+            </step>
+            <step id="step_N1004B_N10032_N1001F_N10001">
+                <cmd>Configure the endpoint IP addresses of the compute nodes.</cmd>
+                <info>
+                    <p>For details, see <xref href="jow1425584170078.xml"/>.</p>
+                </info>
+            </step>
+            <step id="step_N10060_N10032_N1001F_N10001">
+                <cmd>Establish routes between the hosts.</cmd>
+                <info>
+                    <p>For details, see <xref href="jow1425584215069.xml"/></p>
+                </info>
+            </step>
+        </steps>
+        <postreq id="postreq_N10072_N1001F_N10001">
+            <p>You must also ensure that the networking environment meets certain
+                minimum requirements. For more information, see <xref href="jow1404333739174.xml"/>.</p>
+        </postreq>
+    </taskbody>
+</task-wr>

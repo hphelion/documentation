@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1413729179585" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+
+ -->
+ <title>System Configuration Management Using the CLI</title>
+ <shortdesc>You can use the CLI to make changes to the system configuration after
+  installation.</shortdesc>
+ <prolog><author/>
+  <author/>
+ </prolog>
+ <conbody>
+  <p>For information about the types of configuration changes you can make, and
+   guidelines for implementing them on an operational system, see <xref href="jow1413726521641.xml"/>. During some configuration changes, system alarms are raised; for help viewing
+   them from the CLI, see <xref href="psa1419970253127.xml"/>.</p>
+  <p>To make configuration changes using the CLI, you must log in as user
+    <nameliteral>wrsroot</nameliteral> to the active controller and source the
+   script <filepath>/etc/nova/openrc</filepath> to obtain Keystone administrative
+   privileges. See <xref href="jow1404333563834.xml"/> for details.</p>
+  <p>With the exception of the DNS Server Configuration, the configuration changes
+   described in this section require that you lock and unlock the indicated hosts after the
+   configuration change is made. For more information about locking and unlocking hosts, see <xref href="jow1404333790046.xml"/>.</p>
+  <section id="section_N100C8_N1001F_N10001">
+   <title>OAM IP Configuration</title>
+   <p>To view the existing OAM IP configuration, use the following command.</p>
+   <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system oam-show</userinput>
+<systemoutput>+-----------------+--------------------------------------+
+| Property        | Value                                |
++-----------------+--------------------------------------+
+| uuid            | bacf5c9d-47a1-43df-845a-f38a88e1dcd4 |
+| istate          | applied                              |
+| oam_lag_ifc     | False                                |
+| oam_ifcs        | eth0                                 |
+| oam_mtu         | 1500                                 |
+| oam_subnet      | 10.10.10.0/24                        |
+| oam_gateway_ip  | 10.10.10.1                           |
+| oam_floating_ip | 10.10.10.2                           |
+| oam_c0_ip       | 10.10.10.3                           |
+| oam_c1_ip       | 10.10.10.4                           |
+| isystem_uuid    | 1bbd29be-c6a2-4e9b-93ce-a8dac3ce8e5c |
+| recordtype      | reconfig                             |
+| created_at      | 2014-12-23T21:15:34.097509+00:00     |
+| updated_at      | 2014-12-31T19:41:43.787097+00:00     |
++-----------------+--------------------------------------+
+</systemoutput></codeblock>
+   <p>To change the OAM IP subnet, floating IP address, gateway IP address, or
+    controller IP addresses, use the following command syntax. </p>
+   <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system oam-modify oam_subnet=<varname>subnet</varname>/<varname>netmask</varname> \
+oam_gateway_ip=<varname>gateway_ip_address</varname> \
+oam_floating_ip=<varname>floating_IP_address</varname> \
+oam_c0_ip=<varname>controller-0_IP_address</varname> \
+oam_c1_ip=<varname>controller-1_ip_address</varname> \
+action=apply</userinput></codeblock>
+   <p>For example:</p>
+   <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system oam-modify oam_subnet=10.10.10.0/24 \
+oam_gateway_ip=10.10.10.1 \
+oam_floating_ip=10.10.10.2 \
+oam_c0_ip=10.10.10.3 \
+oam_c1_ip=10.10.10.4 \
+action=apply</userinput></codeblock>
+   <p>After changing the OAM server configuration, you must lock and unlock the
+    controllers. This process requires a swact on the controllers. Then you must lock and unlock the
+    compute nodes one at a time, ensuring that sufficient resources are available to migrate any
+    running instances.</p>
+  </section>
+  <section id="section_N1002F_N1001C_N10001">
+   <title>DNS Server Configuration</title>
+   <p>To view the existing DNS server configuration, use the following command.</p>
+   <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system dns-show</userinput>
+<systemoutput>+--------------+--------------------------------------+
+| Property     | Value                                |
++--------------+--------------------------------------+
+| uuid         | cd2d645f-d8ca-4344-995b-aab480b1951d |
+| recordtype   | reconfig                             |
+| istate       | applied                              |
+| nameservers  | 8.8.8.8,8.8.4.4                      |
+| isystem_uuid | 1bbd29be-c6a2-4e9b-93ce-a8dac3ce8e5c |
+| created_at   | 2014-12-23T21:15:34.127239+00:00     |
+| updated_at   | 2014-12-31T19:41:43.806842+00:00     |
++--------------+--------------------------------------+</systemoutput></codeblock>
+   <p>To change the DNS server IP addresses, use the following command syntax. The
+     <option>nameservers</option> option takes a comma-delimited list of DNS server
+    IP addresses. </p>
+   <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system dns-modify \
+nameservers=<varname>IP_address_1[,IP_address_2][,IP_address_3]</varname> action=apply</userinput></codeblock>
+   <p>For example:</p>
+   <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system dns-modify \
+nameservers=8.8.8.8,8.8.4.4 action=apply</userinput></codeblock>
+  </section>
+  <section id="section_N10080_N1001F_N10001">
+   <title>NTP Server Configuration</title>
+   <p>To view the existing NTP server configuration, use the following command.</p>
+   <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system ntp-show</userinput>
+<systemoutput>+--------------+----------------------------------------------+
+| Property     | Value                                        |
++--------------+----------------------------------------------+
+| uuid         | 33bf8ad6-9426-4e10-b5b2-0be1b23a22c9         |
+| recordtype   | reconfig                                     |
+| istate       | applied                                      |
+| ntpservers   | 0.pool.ntp.org,2.pool.ntp.org,1.pool.ntp.org |
+| isystem_uuid | 1bbd29be-c6a2-4e9b-93ce-a8dac3ce8e5c         |
+| created_at   | 2014-12-23T21:15:34.145488+00:00             |
+| updated_at   | 2014-12-31T19:53:44.343981+00:00             |
++--------------+----------------------------------------------+</systemoutput></codeblock>
+   <p>To change the NTP server IP addresses, use the following command syntax. The
+     <option>ntpservers</option> option takes a comma-delimited list of NTP server
+    names.</p>
+   <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system ntp-modify \
+ntpservers=<varname>server_1[,server_2][,server_3]</varname> action=apply</userinput></codeblock>
+   <p>For example:</p>
+   <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system ntp-modify \
+ntpservers=0.north-america.pool.ntp.org,\
+0.north-america.pool.ntp.org,0.north-america.pool.ntp.org \
+action=apply</userinput></codeblock>
+   <p>After changing the NTP server configuration, you must lock and unlock both
+    controllers. This process requires a swact on the controllers.</p>
+  </section>
+  <section id="section_N1011F_N1001F_N10001">
+   <title>Controller Storage Configuration</title>
+   <p>To view the existing storage configuration, use the following command.</p>
+   <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system controllerfs-show</userinput>
+<systemoutput>+--------------+--------------------------------------+
+| Property     | Value                                |
++--------------+--------------------------------------+
+| uuid         | b1242c7f-7cb1-4878-a088-aac02c3f424b |
+| recordtype   | reconfig                             |
+| istate       | applied                              |
+| database_gib | 5                                    |
+| image_gib    | 8                                    |
+| backup_gib   | 27                                   |
+| cinder_gib   | 39                                   |
+| isystem_uuid | 1bbd29be-c6a2-4e9b-93ce-a8dac3ce8e5c |
+| created_at   | 2014-12-23T21:15:33.970585+00:00     |
+| updated_at   | 2014-12-31T19:54:44.321612+00:00     |
++--------------+--------------------------------------+</systemoutput></codeblock>
+   <p>Before you can change storage allotments, you must have enough disk space, including
+    additional headroom required to complete the operation. If there is not enough disk space,
+    changes to the storage allotment are disallowed. For more information, see <xref href="jow1413727075983.xml"/>. </p>
+   <p>You can replace the disks in the controllers to provide more space. For more
+    information, see <xref href="jow1414074190480.xml"/>. To support storage
+    changes, you must reinstall the HP Helion OpenStack Carrier Grade software on each controller during the disk
+    replacement procedure. This is required even if the primary disk is not directly affected by the
+    change. To reinstall the software, you can use the following command:</p>
+   <codeblock><systemoutput>~(keystone_admin)$ </systemoutput>system host-reinstall <varname>controller_name</varname></codeblock>
+    <note conref="rst1432737677834.xml#rst1432737677834/note_N10195_N10154_N1001F_N10001" id="note_N10195_N10154_N1001F_N10001"/>
+   <p>To change the database, image, or backup storage allotment, or the Cinder
+    volume storage allotment on a system with an LVM storage backend, use the following command
+    syntax, where the allotments are in GiB.</p>
+   <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system controllerfs-modify \
+database_gib=<varname>database_allotment</varname> \
+image_gib=<varname>image_allotment</varname> \
+backup_gib=<varname>backup_allotment</varname> \
+cinder_gib=<varname>cinder_volume_allotment</varname> \
+action=apply</userinput></codeblock>
+   <p>For example:</p>
+   <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system controllerfs-modify \
+database_gib=10 image_gib=13 backup_gib=22 action=apply</userinput></codeblock>
+   <p>After changing the controller storage configuration, you must lock each
+    controller and reinstall the HP Helion OpenStack Carrier Grade software, even if you have already done so as part
+    of changing the controller disks. You can use the following command:</p>
+   <codeblock><systemoutput>~(keystone_admin)]$ </systemoutput>system host-reinstall <varname>controller_name</varname></codeblock>
+   <p>Then you can unlock the controller to clear any <nameliteral>Configuration
+     out-of-date </nameliteral>alarms. A controller swact is required to update both
+    controllers.</p>
+  </section>
+ </conbody>
+</concept-wr>

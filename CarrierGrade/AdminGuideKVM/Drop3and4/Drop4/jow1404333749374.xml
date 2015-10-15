@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333749374" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title ixia_locid="1">Security Groups</title>
+    <shortdesc ixia_locid="2">Security groups are tenant-specific sets of IP filter rules that are
+        applied to the networking stack of a virtual machine.</shortdesc>
+    <prolog>
+        <author></author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="26">HP Helion OpenStack Carrier Grade does not enforce a default security group when launching
+            a new virtual machine. Instead, the security groups are optional, and only enforced when
+            explicitly assigned to a virtual machine, either at launch time, or while it is
+            executing.</p>
+        <p ixia_locid="4">At launch time, select the desired security groups from the tab <uicontrol ixia_locid="5">Access &amp;
+    Security</uicontrol> on the <wintitle ixia_locid="6">Launch Instance</wintitle> window, as illustrated
+   below.</p>
+        <fig id="fig_N10029_N1001A_N10001" ixia_locid="7">
+            <image href="jow1404333746212.image" id="image_zvn_z4l_44" ixia_locid="8" placement="inline" width="4in"/>
+        </fig>
+        <p ixia_locid="9">To assign security groups to a running instance, display the <wintitle ixia_locid="10">Instances</wintitle>
+   page, click the <uicontrol ixia_locid="11">More</uicontrol> button associated with the instance, and select the
+   option <option ixia_locid="12">Edit Security Groups</option>. The <wintitle ixia_locid="13">Edit Instance</wintitle> window
+   displays with the tab <uicontrol ixia_locid="14">Security Groups</uicontrol> showing the available security
+   instance groups, as illustrated below.</p>
+        <fig id="fig_N1004D_N1001A_N10001" ixia_locid="15">
+            <image href="jow1404333747855.image" id="image_hdq_3ql_44" ixia_locid="16" placement="inline" width="4in"/>
+        </fig>
+        <p ixia_locid="17">You can then drag and drop security groups from the section <nameliteral ixia_locid="18">All Security
+    Groups</nameliteral> to the section <nameliteral ixia_locid="19">Instance Security Groups</nameliteral>. The
+   selected security groups are applied immediately once the configuration is saved.</p>
+        <p ixia_locid="20">In the HP Helion OpenStack Carrier Grade implementation, the following limitations apply:</p>
+        <ul id="ul_uyw_pzl_44">
+            <li ixia_locid="21">
+                <p ixia_locid="22">the maximum number of security groups that can be applied to a single tenant network is
+     10</p>
+            </li>
+            <li ixia_locid="23">
+                <p ixia_locid="24">the maximum number of rules that can be configured on a single tenant network is 100</p>
+            </li>
+        </ul>
+        <p ixia_locid="25">These two limitations work always together, whichever is first
+            reached.</p>
+    </conbody>
+</concept-wr>

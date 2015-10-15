@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1425584215069" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Adding and Maintaining Routes for a VXLAN Network</title>
+    <shortdesc>You can add or delete routing table entries for hosts on a VXLAN
+        network using the CLI.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <prereq id="prereq_N1001F_N1001C_N10001">
+            <p>The compute node must be locked.</p>
+        </prereq>
+        <context id="context_N1002D_N1001F_N10001">
+            <p>To add routes, use the following command.</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-route-add <varname>node</varname> <varname>ifname</varname> <varname>network</varname> <varname>prefix</varname> <varname>gateway</varname> <varname>metric</varname></userinput></codeblock>
+            <p>where</p>
+            <parml>
+                <plentry>
+                    <pt>node</pt>
+                    <pd>
+                        <p>is the name or UUID of the compute node</p>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>ifname</pt>
+                    <pd>
+                        <p>is the name of the interface</p>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>network</pt>
+                    <pd>
+                        <p>is an IPv4 or IPv6 network address</p>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>prefix</pt>
+                    <pd>
+                        <p>is the netmask length for the network address</p>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>gateway</pt>
+                    <pd>
+                        <p>is the default gateway</p>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>metric</pt>
+                    <pd>
+                        <p>is the cost of the route (the number of hops)</p>
+                    </pd>
+                </plentry>
+            </parml>
+            <p>To delete routes, use the following command.</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-route-delete <varname>uuid</varname> <varname>ifname</varname> <varname>network</varname> <varname>prefix</varname> <varname>gateway</varname> <varname>metric</varname></userinput></codeblock>
+            <p>where <nameliteral>uuid</nameliteral> is the UUID of the route to be deleted.</p>
+            <p>To list existing routes, including their UUIDs, use the following command.</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-route-list compute-0</userinput></codeblock>
+        </context>
+    </taskbody>
+</task-wr>

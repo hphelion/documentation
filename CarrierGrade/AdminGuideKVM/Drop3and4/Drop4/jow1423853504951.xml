@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content id="jow1423853504951" xml:lang="en-us">
+<title ixia_locid="253">Conref task: Configuring Provider Networks Using the CLI (for TiS 15.x)</title>
+<rcbody>
+        <title id="title_N10011_N1000E_N10001" ixia_locid="1">Configuring Provider Networks Using the CLI</title>
+        <shortdesc id="shortdesc_N10017_N1000E_N10001" ixia_locid="2">You can set up provider
+            networks over physical networks using the  command-line interface on the active
+            controller. The provider networks provide connectivity for tenant networks.</shortdesc>
+        <prolog id="prolog_N10022_N1000E_N10001">
+            <author ixia_locid="4">Jim Owens</author>
+            <author ixia_locid="5">Tom Towle</author>
+            <author ixia_locid="6">Pedro Sanchez</author>
+        </prolog>
+        <taskbody id="taskbody_N10036_N1000E_N10001">
+            <context id="context_N1003B_N10037_N1000F_N10001" ixia_locid="375">
+                <p ixia_locid="289">To create a provider network using the CLI, use the following
+                    command:</p>
+                <codeblock ixia_locid="290"><systemoutput ixia_locid="291">~(keystone_admin)$ </systemoutput><userinput ixia_locid="292">neutron providernet-create name \
+--type=<varname ixia_locid="365">type</varname> --description=<varname ixia_locid="293">description</varname> mtu <varname ixia_locid="357">mtu_size</varname> \
+--vlan-transparent={True,False}</userinput></codeblock>
+                <p ixia_locid="294">where</p>
+                <parml>
+                    <plentry ixia_locid="295">
+                        <pt ixia_locid="296">name</pt>
+                        <pd ixia_locid="297">
+                            <p ixia_locid="298">is a name for the provider network</p>
+                        </pd>
+                    </plentry>
+                    <plentry ixia_locid="366">
+                        <pt ixia_locid="367">type</pt>
+                        <pd ixia_locid="368">
+                            <p ixia_locid="369">is the type of provider network (<nameliteral ixia_locid="370">flat</nameliteral>, <nameliteral ixia_locid="371">vlan</nameliteral>, or <nameliteral ixia_locid="372">vxlan</nameliteral>)</p>
+                        </pd>
+                    </plentry>
+                    <plentry ixia_locid="299">
+                        <pt ixia_locid="300">description</pt>
+                        <pd ixia_locid="301">
+                            <p ixia_locid="302">is a brief description for reference purposes</p>
+                        </pd>
+                    </plentry>
+                    <plentry ixia_locid="303">
+                        <pt ixia_locid="304">mtu_size</pt>
+                        <pd ixia_locid="305">
+                            <p ixia_locid="358">is the maximum transmission unit size</p>
+                        </pd>
+                    </plentry>
+                </parml>
+            </context>
+            <context id="context_N100C3_N10032_N1000F_N10001" ixia_locid="403">
+                <p ixia_locid="306">To add a segmentation range using the CLI, use the following
+                    command:</p>
+                <codeblock ixia_locid="307"><systemoutput ixia_locid="308">~(keystone_admin)$ </systemoutput><userinput ixia_locid="309">neutron providernet-range-create <varname ixia_locid="310">provider_network</varname> \
+--name=<varname ixia_locid="311">range_name</varname> --tenant_id=<varname ixia_locid="312">tenant</varname> \
+--description=<varname ixia_locid="313">description</varname> --range <varname ixia_locid="314">min</varname>-<varname ixia_locid="315">max</varname> \
+--group <varname ixia_locid="316">multicast_address</varname> --port=<varname ixia_locid="317">udp_port</varname> \
+--ttl=<varname ixia_locid="318">time_to_live</varname></userinput></codeblock>
+                <p ixia_locid="319">where</p>
+                <parml>
+                    <plentry ixia_locid="320">
+                        <pt ixia_locid="321">provider_network</pt>
+                        <pd ixia_locid="322">
+                            <p ixia_locid="323">is the name of the associated provider network</p>
+                        </pd>
+                    </plentry>
+                    <plentry ixia_locid="324">
+                        <pt ixia_locid="325">name</pt>
+                        <pd ixia_locid="326">
+                            <p ixia_locid="327">is a name for the segmentation range</p>
+                        </pd>
+                    </plentry>
+                    <plentry ixia_locid="328">
+                        <pt ixia_locid="329">tenant</pt>
+                        <pd ixia_locid="330">
+                            <p ixia_locid="331">is the name or UUID of the tenant associated with
+                                the range</p>
+                        </pd>
+                    </plentry>
+                    <plentry ixia_locid="332">
+                        <pt ixia_locid="333">description</pt>
+                        <pd ixia_locid="334">
+                            <p ixia_locid="335">is a brief description for reference purposes</p>
+                        </pd>
+                    </plentry>
+                    <plentry ixia_locid="336">
+                        <pt ixia_locid="337">min</pt>
+                        <pd ixia_locid="338">
+                            <p ixia_locid="339">is the lowest value in the range</p>
+                        </pd>
+                    </plentry>
+                    <plentry ixia_locid="340">
+                        <pt ixia_locid="341">max</pt>
+                        <pd ixia_locid="342">
+                            <p ixia_locid="343">is the highest value in the range</p>
+                        </pd>
+                    </plentry>
+                    <plentry ixia_locid="406">
+                        <pt ixia_locid="407">vlan-transparent</pt>
+                        <pd ixia_locid="408">
+                            <p ixia_locid="409">Allow VLAN tagged packets to be encapsulated within
+                                a VXLAN segment without removing or modifying the guest VLAN
+                                tag.</p>
+                        </pd>
+                    </plentry>
+                </parml>
+                <p ixia_locid="410">The following additional values are used for segmentation ranges
+                    on VxLAN provider networks:</p>
+                <parml>
+                    <plentry ixia_locid="344">
+                        <pt ixia_locid="345">multicast_address</pt>
+                        <pd ixia_locid="346">
+                            <p ixia_locid="386">The IPv4 or IPv6 address for participation in a
+                                multicast group used to discover MAC addresses for destination VMs.
+                                You can use a different multicast group for each segmentation range
+                                to help organize and partition network traffic.</p>
+                        </pd>
+                    </plentry>
+                    <plentry ixia_locid="348">
+                        <pt ixia_locid="349">udp_port</pt>
+                        <pd ixia_locid="350">
+                            <p ixia_locid="394">The destination UDP port for packets sent on the
+                                VXLAN. You can select either the IANA standard 4789 to use this
+                                range with the OpenStack Neutron service, or the legacy standard
+                                8472 for use with some commercial switch equipment.</p>
+                        </pd>
+                    </plentry>
+                    <plentry ixia_locid="352">
+                        <pt ixia_locid="353">time_to_live</pt>
+                        <pd ixia_locid="354">
+                            <p ixia_locid="402">The time-to-live, measured in hops, for packets sent
+                                on the VXLAN. The value is decremented at each hop; when it reaches
+                                zero, the packet expires. You can use this to limit the scope of the
+                                VXLAN. For example, to limit the packet to no more than three router
+                                hops, use a time-to-live value of 4.</p>
+                        </pd>
+                    </plentry>
+                </parml>
+            </context>
+            <context id="context_N101CB_N10037_N1000F_N10001" ixia_locid="377">
+                <p ixia_locid="376">You can obtain information about provider networks and
+                    segmentation ranges using the following commands.</p>
+                <codeblock ixia_locid="378"><systemoutput ixia_locid="379">~(keystone_admin)$ </systemoutput><userinput ixia_locid="380">neutron net-list-on-providernet <varname ixia_locid="381">providernet</varname></userinput></codeblock>
+                <codeblock ixia_locid="382"><systemoutput ixia_locid="383">~(keystone_admin)$ </systemoutput><userinput ixia_locid="384">neutron providernet-range-show <varname ixia_locid="385">providernet-range</varname></userinput></codeblock>
+            </context>
+            <context id="context_N1002B_N10028_N10001" ixia_locid="7">
+                <p ixia_locid="8">You must configure at least one provider network in order to
+                    assign data interfaces to compute nodes and unlock the hosts. In the example
+                    that follows, two provider networks, <nameliteral ixia_locid="9">provider-net-a</nameliteral> and <nameliteral ixia_locid="10">provider-net-b</nameliteral>, are configured. </p>
+            </context>
+            <prereq id="prereq_N1003C_N10028_N10001" ixia_locid="11">
+                <p conref="jow1404333506062.xml#jow1404333506062/prereq-controller-0-ready" ixia_locid="12"/>
+            </prereq>
+            <steps id="steps_hkv_vdp_wq">
+                <step conref="jow1404766496848.xml#jow1404766496848/source-nova-openrc" id="step_N10054_N10051_N1002E_N10001" ixia_locid="53">
+                    <cmd ixia_locid="54"/>
+                </step>
+                <step id="step_N10051_N10045_N10028_N10001" ixia_locid="15">
+                    <cmd ixia_locid="16">On the active controller's console, create the two example
+                        provider networks.</cmd>
+                    <stepxmp ixia_locid="18">
+                        <codeblock ixia_locid="19"><systemoutput ixia_locid="254">~(keystone_admin)$ </systemoutput><userinput ixia_locid="21">neutron providernet-create provider-net-a --type vlan</userinput>
+<systemoutput ixia_locid="255">~(keystone_admin)$ </systemoutput><userinput ixia_locid="23">neutron providernet-create provider-net-b --type vlan</userinput></codeblock>
+                    </stepxmp>
+                    <info ixia_locid="24">
+                        <p ixia_locid="404">Both provider networks are created as type <nameliteral ixia_locid="26">vlan</nameliteral>. This means that they can be
+                                <term ixia_locid="27">segmented</term>, or restricted to operate
+                            over a range of specific VLAN identifiers.</p>
+                    </info>
+                </step>
+            </steps>
+            <result id="result_N100D3_N10028_N10001" ixia_locid="50">
+                <p ixia_locid="51">Two VLAN provider networks are defined. They can be referenced
+                    when configuring the compute node's network interfaces.</p>
+            </result>
+        </taskbody>
+    </rcbody>
+    <related-links>
+        <!-- This link represents an xref that was removed from a conref source -->
+        <link href="jow1404333496222.xml" ixia_locid="405"/>
+    </related-links>
+</referable-content>

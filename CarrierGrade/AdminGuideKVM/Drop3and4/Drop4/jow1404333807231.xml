@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333807231" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+
+ -->
+    <title>HP Helion OpenStack Carrier Grade Extensions to Heat</title>
+    <shortdesc>Several extensions to Heat are included with HP Helion OpenStack Carrier Grade.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <conbody>
+        <p>The HP Helion OpenStack Carrier Grade Extensions are supported only for OpenStack resources,
+            which are the primary resources used with HOT format.</p>
+        <section id="section_N10027_N1001F_N10001">
+            <title>Multiple NIC Support</title>
+            <p>When launching a VM instance initially or in an autoscaling stack, you
+                can specify multiple network interfaces. The open-source version of Heat allows only
+                a single network interface to be specified at launch.</p>
+            <p>The syntax for the extension is as follows:</p>
+            <codeblock>... 
+vm:
+    type: OS::Nova::Server
+    properties:
+      ...      
+      networks :
+      - { network: 'tenant1-mgmt-net', vif-model: virtio}
+      - { network: { get_param: port0 }, vif-model: avp}
+      - { network: { get_param: port1 }, vif-model: avp}
+      ...</codeblock>
+            <p>As the example shows, this extension also adds the ability to specify a different
+                    <parmname>vif-model</parmname> for each interface. In addition, a new
+                    <option>avp</option> option is introduced, supporting the use of optimized AVP
+                device drivers.</p>
+            <p>The valid <parmname>vif-model</parmname> values are as follows:</p>
+            <ul conref="jow1439489784564.xml#jow1439489784564/supported_vNIC" id="ul_jcc_dvz_zs">
+                <li/>
+            </ul>
+        </section>
+        <section id="section_N10052_N1001F_N10001">
+            <title>Simplified VM Instance Naming</title>
+            <p>HP Helion OpenStack Carrier Grade introduces minor changes to the OpenStack VM naming
+                convention to make Heat-generated names more user-friendly.</p>
+            <ul id="ul_nq5_jl4_34">
+                <li>
+                    <p>For a static resource, launched VM instances are named using
+                            the<parmname> name</parmname> attribute of the <parmname>OS::Nova::Server</parmname> structure (without including
+                        the <cmdname>&lt;StackTemplateName&gt;</cmdname>). </p>
+                    <codeblock>Serving_Gateway:
+    Type: OS::Nova::Server
+    Properties:
+      name  : ‘Serving_Gateway’
+      image : 'cirros'
+      flavor: 'm1.tiny'
+
+
+~(keystone_admin)$ heat stack-create –f &lt;file&gt; EPC
+~(keystone_admin)$ nova list
++--------------------------------------+-----------------+--------+-…
+| ID                                   | Name            | Status | …
++--------------------------------------+-----------------+--------+-…
+| 581b3495-3cf1-4410-9587-5cf04fccfed2 | Serving_Gateway | ACTIVE | …
++--------------------------------------+-----------------+--------+-…</codeblock>
+                </li>
+            </ul>
+        </section>
+        <section id="section_N10097_N1001F_N10001">
+            <title>Enhanced Support for Server Groups</title>
+            <p>You can specify a maximum group size and a best-effort attribute for
+                Server Groups.</p>
+            <p>The syntax for adding a Server Group Resource is as follows:</p>
+            <codeblock>...
+resources:
+    ...
+    my_server_group:
+        type: OS::Nova::ServerGroup
+        properties:
+            policy: 'anti-affinity'
+            wrs-sg:group_size: 4
+            wrs-sg:best_effort: False
+    ...
+</codeblock>
+        </section>
+        <section id="section_N10117_N1001F_N10001">
+            <title>Relaxed Requirements for Passing User Data</title>
+            <p>The property <parmname>UserDataType</parmname> is a HP Helion OpenStack Carrier Grade template extension
+                that you can use to pass user data to an instance even if the instance does not have
+                    <libraryname>cloud-init</libraryname> installed.  For more information, see
+                    <xref href="jow1409240700100.xml"/>.</p>
+        </section>
+        <section id="section_N10136_N1001F_N10001">
+            <title>Improved User Access to Stacks</title>
+            <p>Stacks can be created, modified, or deleted by admin or non-admin users.</p>
+        </section>
+        <section id="section_N10143_N1001F_N10001">
+            <title>Greater Control over Resource Allocations</title>
+            <p>When creating a network resource using OS::Neutron::Net, you can use
+                a <nameliteral>depends_on</nameliteral> attribute to ensure that the requirements of
+                other resources are given priority before the resource is created. The attribute
+                takes another resource as an argument. In the following example, it is used to
+                specify that the resource <nameliteral>external_network </nameliteral>must be
+                created before <nameliteral>internal_network</nameliteral> is created.</p>
+            <codeblock>internal_network:
+      type: OS::Neutron::Net
+      properties:
+        name: { get_param: INTERNALNET }
+        depends_on: { get_resource: external_network }
+        shared: false
+        tenant_id: {get_param: TENANT_ID}</codeblock>
+        </section>
+        <section id="section_N10104_N1001F_N10001">
+            <title>Support for Local Files in Glance Image</title>
+            <p>Support is added for specifying a local file or web URL as the
+                location of a Glance image.</p>
+            <codeblock>...
+wrl5_Glance_Image:
+   type: OS::Glance::Image
+   properties:
+     name: {get_param: IMAGE_NAME }
+     is_public: true
+     container_format : bare
+     disk_format : qcow2
+     location: file:///home/wrsroot/images/cgcs-guest.img
+...</codeblock>
+        </section>
+        <section id="section_N1011B_N1001F_N10001">
+            <title>Support for name Property in Nova Flavor</title>
+            <p>A <nameliteral>name</nameliteral> property is added to the Flavor
+                resource to support user-friendly names for Heat-generated flavors.</p>
+        </section>
+        <section id="section_N10154_N1001F_N10001">
+            <title>Additional Heat Resources</title>
+            <p>In addition to the standard OpenStack resources available for Heat templates, you can
+                use the following resources:</p>
+            <dl>
+                <dlentry>
+                    <dt>OS::WR::ScalingPolicy</dt>
+                    <dd>
+                        <p>Defines a Resource UP/Down autoscaling property. </p>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt>WR::Neutron::ProviderNet</dt>
+                    <dd>
+                        <p>Defines a provider network. </p>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt>WR::Neutron::ProviderNetRange</dt>
+                    <dd>
+                        <p>Defines a segmentation range for a provider network.</p>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt>WR::Neutron::QoSPolicy</dt>
+                    <dd>
+                        <p>Defines a packet scheduling weight that can be
+                            referenced by a tenant network (OS::Neutron::Net). </p>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt>WR::Neutron::PortForwarding</dt>
+                    <dd>
+                        <p>Defines a destination NAT mapping between an external IP
+                            address (a router address) and external port, and an internal (VM) IP
+                            address and port. </p>
+                    </dd>
+                </dlentry>
+            </dl>
+        </section>
+    </conbody>
+</concept-wr>

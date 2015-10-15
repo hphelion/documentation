@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1426948577755" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title ixia_locid="1">Network Interface Provisioning</title>
+ <shortdesc ixia_locid="2">Interfaces on compute nodes require initial provisioning to attach them to
+  networks.</shortdesc>
+ <prolog>
+  <author ixia_locid="3">Jim Owens</author>
+ </prolog>
+ <conbody>
+  <p ixia_locid="6"> On compute nodes, some interfaces require manual provisioning
+   before the nodes can be unlocked.</p>
+  <ul id="ul_ecp_4fk_lr">
+   <li ixia_locid="10">
+    <draft-comment author="jowens" ixia_locid="37">US62814 removed statement that you must manually attach storage
+     interface to infra network; added clauses for static assignment, for compute nodes.</draft-comment>
+    <p ixia_locid="11">For a storage node, if the infrastructure network uses static IP address
+     assignment, you must assign an IP address to the infrastructure interface using the <cmdname ixia_locid="38">system host-addr-add</cmdname> command before you can unlock the node . For
+     more information, see the <cite ixia_locid="39">HP Helion OpenStack Carrier Grade Administration Guide: Adding an
+      IP Address to an Interface</cite>.</p>
+   </li>
+   <li ixia_locid="12">
+    <p ixia_locid="29">For a compute node, you must attach interfaces to provider networks before
+     you can unlock the node. The provider networks must be set up beforehand; for more information,
+     see <xref href="jow1404333519516.xml" ixia_locid="14"/>. </p>
+    <p ixia_locid="30">If the cluster uses an infrastructure network, you must attach an interface
+     to the infrastructure network before you can unlock the node. In addition, if the
+     infrastructure uses static addressing, you must assign an IP address to the interface using the
+      <cmdname ixia_locid="40">system host-addr-add</cmdname> command.</p>
+   </li>
+  </ul>
+  <p ixia_locid="15">The procedure for attaching an interface depends on whether the interface is an
+   Ethernet, aggregated Ethernet, or shared (VLAN) interface.</p>
+  <ul id="ul_pcn_f5q_lr">
+   <li ixia_locid="16">
+    <p ixia_locid="17">To attach an Ethernet interface, see <xref href="jow1426949897008.xml" ixia_locid="18"/>.</p>
+   </li>
+   <li ixia_locid="19">
+    <p ixia_locid="20">To attach an aggregated Ethernet interface, see <xref href="jow1426951671346.xml" ixia_locid="21"/>.</p>
+   </li>
+   <li ixia_locid="22">
+    <p ixia_locid="23">To attach a VLAN interface, see <xref href="jow1426951757970.xml" ixia_locid="24"/>.</p>
+    <note id="note_N1007F_N10071_N1004F_N1001F_N10001" ixia_locid="34">
+     <p ixia_locid="35">To attach a data network to an existing management or infrastructure network
+      interface<!-- using a method that supports VLAN provider networks-->, see <xref href="jow1414000462559.xml" ixia_locid="36"/>.</p>
+    </note>
+   </li>
+  </ul>
+  <p ixia_locid="25">As an alternative, you can use the CLI to attach interfaces. See <xref href="jow1427029415968.xml" ixia_locid="26"/>.</p>
+  <p ixia_locid="27">For more information about interfaces, see the <cite ixia_locid="28">HP Helion OpenStack Carrier Grade Administration Guide:
+    Ethernet Interfaces</cite>.</p>
+  <note id="note_N10095_N1001F_N10001" ixia_locid="31">
+   <p ixia_locid="32">On compute nodes, the Ethernet interface for the management network
+    is attached automatically, to support installation using PXE booting. </p>
+   <p ixia_locid="33">On controller nodes, interfaces are attached to the management, OAM, and
+    optional infrastructure networks automatically according to the settings specified during the
+    controller configuration script. They do not require further provisioning before system
+    deployment. For more information, see <xref href="jow1419271369349.xml" ixia_locid="5"/>.</p>
+  </note>
+ </conbody>
+</concept-wr>

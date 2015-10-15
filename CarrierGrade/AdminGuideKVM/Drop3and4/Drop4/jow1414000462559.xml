@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1414000462559" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title ixia_locid="55">Editing Interface Settings</title>
+    <shortdesc ixia_locid="56">You can change the settings for a host interface.</shortdesc>
+    <prolog>
+        <author ixia_locid="57">Jim Owens</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001E_N1001B_N10001" ixia_locid="58">
+            <p ixia_locid="59">The ability to change the interface settings is especially useful for
+                updating the management interface. When a compute node is first created, its
+                management interface is automatically set up using the default
+                    <nameliteral ixia_locid="70">Interface Type</nameliteral> (<nameliteral ixia_locid="71">ethernet</nameliteral>).
+                If you are using LAG on the management network, you must update this manually to
+                    <nameliteral ixia_locid="72">aggregated ethernet</nameliteral>.</p>
+            <p ixia_locid="82">You can also edit a management or infrastructure interface to attach
+                to a data network by selecting <uicontrol ixia_locid="83">data</uicontrol> as an
+                additional Network Type for the interface, or using the CLI. For CLI instructions,
+                see <xref href="jow1427029415968.xml" ixia_locid="86"/>.</p>
+            <p ixia_locid="90"><draft-comment author="jowens" ixia_locid="91">US62814 added</draft-comment>To add or edit IP
+                addresses on a data interface, see the <cite ixia_locid="92">HP Helion OpenStack Carrier Grade Administration Guide:
+                    Adding an IP Address to a Data Interface</cite>.</p>
+        </context>
+        <steps>
+            <step conref="jow1426453628262.xml#jow1426453628262/lock_host" id="step_N1003F_N1003C_N1001F_N10001" ixia_locid="73">
+                <cmd ixia_locid="74"/>
+            </step>
+            <step conref="jow1426453628262.xml#jow1426453628262/open_details_locked_host" id="step_N10048_N1003C_N1001F_N10001" ixia_locid="75">
+                <cmd ixia_locid="76"/>
+            </step>
+            <step id="step_N10069_N10028_N1001C_N10001" ixia_locid="20">
+                <cmd ixia_locid="21">Select the<uicontrol ixia_locid="22"> Interfaces</uicontrol>
+                    tab to display the existing interfaces.</cmd>
+                <info ixia_locid="87">
+                    <fig id="fig_N10076_N10073_N10064_N1004B_N1001F_N10001" ixia_locid="88">
+                        <image alt="Interfaces list" href="rst1440770718462.image" ixia_locid="89" width="5.5in"/>
+                    </fig>
+                </info>
+            </step>
+            <step id="step_N1009A_N10027_N1001B_N10001" ixia_locid="60">
+                <cmd ixia_locid="61">Click <uicontrol ixia_locid="62">Edit Interface</uicontrol> for the interface you want to
+                    change.</cmd>
+                <info ixia_locid="63">
+                    <fig id="fig_xfz_5fm_vp" ixia_locid="64">
+                        <image href="jow1426954976474.image" id="image_w5l_tlk_lr" ixia_locid="24">
+                            <alt ixia_locid="85">TiS Edit Interface</alt>
+                        </image>
+                    </fig>
+                    <!-- p>If you are changing the <nameliteral>Interface Type</nameliteral> to
+                            <nameliteral>aggregated ethernet</nameliteral>, select the second port
+                        connected to the network.</p -->
+                    <!-- JO 2015-03-24 screenshot? sounds plausible, but I don't see a second port -->
+                </info>
+            </step>
+            <step id="step_N100BB_N10027_N1001B_N10001" ixia_locid="67">
+                <cmd ixia_locid="68">Make the required changes, and then click <uicontrol ixia_locid="69">Save</uicontrol>.</cmd>
+                <info ixia_locid="79">
+                    <p ixia_locid="80">The settings shown depend on the interface type. For
+                        information about the available settings, see <xref href="jow1426955886080.xml" ixia_locid="81"/>.</p>
+                </info>
+            </step>
+            <step id="step_N100B2_N1003C_N1001F_N10001" ixia_locid="77">
+                <cmd ixia_locid="78">Unlock the host.</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

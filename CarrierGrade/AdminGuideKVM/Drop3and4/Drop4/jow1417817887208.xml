@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1417817887208" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title>CPU Scaling</title>
+ <shortdesc>HP Helion OpenStack Carrier Grade supports CPU up/down scaling for instances.</shortdesc>
+ <prolog><author/>
+  <author/>
+ </prolog>
+ <conbody>
+  <p>You can enable CPU scaling for an instance by setting a scaling range (see <xref href="jow1417817540528.xml"/>). You must also specify the use of dedicated CPUs (see <xref href="jow1429544935360.xml"/>).</p>
+  <p>When an instance is first started, all available vCPUs are brought online. If
+   the instance is restarted, the number of online vCPUs is set to match the number when the
+   instance was stopped. This is controlled by a helper script that automatically takes the required
+   number of vCPUs offline.</p>
+  <p>When CPU resources are scaled up, a vCPU is brought online from the pool of
+   available vCPUs for the instance, subject to the maximum allowed by the flavor. The
+   lowest-numbered offline vCPU is selected.</p>
+  <p>When CPU resources are scaled down, a vCPU is taken offline, subject to the
+   minimum allowed by the flavor. By default, the highest-numbered online vCPU is selected. This can
+   be overridden using the App Scale Helper script. </p>
+  <p>For more about CPU scaling, refer to the documentation for the HP Helion OpenStack Carrier Grade
+   Software Development Kit.</p>
+  <note id="note_N10054_N1001F_N10001">
+   <p>If there are insufficient resources to launch a scalable VM with the expected allotment when
+    the VM is started or restarted, the launch fails. The VM is <i>not</i> automatically scaled down
+    to compensate.</p>
+  </note>
+ </conbody>
+</concept-wr>

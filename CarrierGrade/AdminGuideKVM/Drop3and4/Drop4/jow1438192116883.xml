@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1438192116883" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Configuring SNAT on a Virtual Router</title>
+    <shortdesc>Source Network Address Translation (SNAT) provides network address
+        translation for internally initiated UDP and TCP traffic flows. A virtual router with SNAT
+        enabled translates between IP addresses and ports used on an internal network, and an IP
+        address and ports used on an external network.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N10022_N1001F_N10001">
+            <p>You can enable or disable Source Network Address Translation for each
+                individual external network connection on a virtual router. By default, SNAT is
+                enabled for all external networks.</p>
+            <p>When SNAT is enabled, the virtual router maintains network
+                translation tables for all internally-initiated UDP and TCP traffic flows. An
+                instance connected to an internal tenant network can initiate connections to servers
+                on an external, usually public, network. SNAT does <i>not</i> allow
+                external servers to initiate connections to external addresses mapped to internal
+                addresses. For this capability, the use of floating IP addresses <!-- for future use: or DNAT -->is
+                required.</p>
+            <p>System administrators can enable or disable SNAT using the following
+                command:</p>
+            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron router-update <varname>routername</varname> --external_gateway_info type=dict \
+network_id=<varname>externalnetwork</varname>,enable_snat=<varname>boolean</varname></userinput></codeblock>
+            <p>where:</p>
+            <parml>
+                <plentry>
+                    <pt><varname>routername</varname></pt>
+                    <pd>
+                        <p>is the name or UUID of the virtual router</p>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt><varname>externalnetwork</varname></pt>
+                    <pd>
+                        <p>is the name or UUID of the external network</p>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt><varname>boolean</varname></pt>
+                    <pd>
+                        <p>is <option>true</option> (to enable SNAT)
+                            or <option>false</option> (to disable SNAT)</p>
+                    </pd>
+                </plentry>
+            </parml>
+            <note id="note_N100A7_N10022_N1001F_N10001" type="caution">
+                <p>For SNMP implemented on guests, the following limitations apply
+                    when SNAT is enabled:</p>
+                <ul id="ul_h2h_czk_xs">
+                    <li>
+                        <p>An SNMP agent on an internal network cannot receive
+                            requests from SNMP managers on external networks.</p>
+                    </li>
+                    <li>
+                        <p>An SNMP manager on an internal network cannot receive
+                            traps from SNMP agents on external networks, even if communication is
+                            initiated by the manager. This is because SNMP traps are sent to UDP
+                            port 162, not to the source port.</p>
+                    </li>
+                </ul>
+                <p>Only agent responses to requests from a manager on the internal
+                    network are processed appropriately.</p>
+                <p>To overcome these limitations, you can use floating IP addresses
+                    or make internal addresses public. For more information, see <xref href="jow1438192231731.xml"/>.</p>
+            </note>
+        </context>
+    </taskbody>
+</task-wr>

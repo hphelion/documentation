@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="psa1428328539397" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title ixia_locid="1">Guest VLANs</title>
+ <shortdesc ixia_locid="2">Use guest VLANs to segregate IP traffic from a single virtual Ethernet interface on a
+  virtual machine into dedicated VLANs. Together with the capability to define multiple IP subnets
+  on a single tenant network, guest VLANs facilitate the transitioning of existing guest
+  applications to run on the HP Helion OpenStack Carrier Grade virtualized network environment.</shortdesc>
+ <prolog>
+  <author ixia_locid="33">Jim Owens</author>
+  <author></author>
+ </prolog>
+ <conbody>
+  <p ixia_locid="4">Guest VLANs are useful when guest applications rely on the capability to
+   configure a single virtual Ethernet interface with multiple, probably overlapping, IP addresses.
+   From the point of view of the guest, this is done by defining VLAN Ethernet interfaces, and
+   associating one or more IP addresses to them. If implementing overlapping IP addresses, typically
+   in support of VPN applications, the guest must use different VLAN IDs to separate traffic from
+   different VPNs.</p>
+  <p ixia_locid="5">For example. on a Linux guest, the virtual interfaces eth0.10:1, eth0.10:2, and
+   eth0.20 refer to the same eth0 physical interface with two virtual interfaces on VLAN ID 10, and
+   a single virtual interface on VLAN ID 20.  A common scenario in a VLAN application is to allocate
+   distinct IP addresses from the same IP subnet to virtual interfaces on the same VLAN. In this
+   example, eth0.10:1 and eth0.10:2 could be assigned distinct IP addresses from the subnet
+   192.168.1.0/24, and eth0.20 an address from the subnet 192.168.2.0/24. In the case of a VPN
+   application, overlapping IP addresses are allowed to exist on eth0.20 and either eth0.10:1 or
+   eth0.10:2.</p>
+  <p ixia_locid="6">HP Helion OpenStack Carrier Grade supports these deployment scenarios with the help of guest VLANs
+   which enable the transport of IP subnets traffic over VLAN-tagged Ethernet frames. To support the
+   example above, a tenant user would define the following two IP subnets, both on the same tenant
+   network, using guest VLAN IDs as follows:</p>
+  <ul id="ul_jn2_rdw_pr">
+   <li ixia_locid="7">
+    <p ixia_locid="8">Subnet 192.168.1.0/24 with guest VLAN ID set to 10</p>
+   </li>
+   <li ixia_locid="9">
+    <p ixia_locid="10">Subnet 192.168.2.0/24 with guest VLAN ID set to 20</p>
+   </li>
+  </ul>
+  <p ixia_locid="11">The subnet-to-VLAN_ID mapping can be one-to-one, as in this example, or
+   many-to-one. This means that tenant users can use a single VLAN ID of their choice to encapsulate
+   traffic from one or more IP subnets.</p>
+  <p ixia_locid="47">Alternately, tenant networks can be configured to use VLAN Transparent mode, in
+   which VLAN tagged guest packets are encapsulated within a provider network segment without
+   removing or modifying the guest VLAN tag. For more information, see <xref href="rst1442341292102.xml" ixia_locid="48"/>. </p>
+  <section id="section_N10044_N1001C_N10001" ixia_locid="12">
+   <title ixia_locid="13">Creating Guest VLANs</title>
+   <p ixia_locid="14">Tenant users can define a guest VLAN when they add a new IP subnet to a tenant
+    network they are creating, or to an existing one. See the <cite ixia_locid="15">HP Helion OpenStack Carrier Grade
+     Reference Deployment Scenarios</cite> for examples of how to create tenant networks.</p>
+   <p ixia_locid="16">From the web management interface you add the VLAN ID of the guest VLAN to the
+     <uicontrol ixia_locid="17">Subnet Detail</uicontrol> tab of the <wintitle ixia_locid="18">Create Subnet</wintitle> window. In the following example a guest VLAN with ID of 10 will be
+    created when the subnet is added.</p>
+   <fig id="fig_yts_jrw_pr" ixia_locid="19">
+    <title ixia_locid="20">Creating a guest VLAN</title>
+    <image href="psa1428335880496.image" id="image_upj_qrw_pr" ixia_locid="21">
+     <alt ixia_locid="22">Creating a guest VLAN</alt>
+    </image>
+   </fig>
+   <p ixia_locid="23">From the command line interface, a guest VLAN can be defined using the <option ixia_locid="24">--vlan-id</option> option when creating a new subnet, as illustrated below:</p>
+   <codeblock ixia_locid="25"><systemoutput ixia_locid="26">~(keystone_admin)$ </systemoutput><userinput ixia_locid="27">neutron subnet-create --tenant-id ${tenant_UUID} \
+--name my-new-subnet --vlan-id 10</userinput></codeblock>
+  </section>
+  <section id="section_N10086_N1001C_N10001" ixia_locid="28">
+   <title ixia_locid="29">Guest VLAN Implementation</title>
+   <p ixia_locid="30">Guest VLANs are implemented using available segmentation ranges from suitable provider
+    networks, just as it is done when new tenant networks are created. Therefore all network design
+    considerations regarding the configuration of L2 switches and the Neutron allocation strategy,
+    described in <xref href="jow1404333739174.xml" ixia_locid="31"/>, must be taken into consideration.</p>
+   <p ixia_locid="32">Additionally, note that the AVS will silently discard incoming VLAN-tagged VM traffic with
+    unknown VLAN IDs, that is, with VLAN IDs not defined as guest VLANs on the particular tenant
+    network.</p>
+  </section>
+ </conbody>
+</concept-wr>

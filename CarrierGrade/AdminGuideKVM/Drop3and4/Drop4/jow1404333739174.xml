@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333739174" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title ixia_locid="1">Tenant Networks</title>
+    <shortdesc ixia_locid="2">Tenant networks are logical networking entities visible to tenant users, and around
+  which working network topologies are built.</shortdesc>
+    <prolog>
+        <author></author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="26">Tenant networks need support from the physical layers to work as
+            intended. This means that the access L2 switches, providers' networks, and data
+            interface definitions on the compute nodes, must all be properly configured. In
+            particular, when using provider networks of the VLAN or VXLAN type, getting the proper
+            configuration in place requires additional planning. </p>
+        <p ixia_locid="27">For provider networks of the VLAN type, consider the following
+            guidelines:</p>
+        <ul id="ul_hqm_n2s_4n">
+            <li ixia_locid="29">
+                <p ixia_locid="31">All ports on the access L2 switches must be statically configured to support all the VLANs
+     defined on the provider networks they provide access to. The dynamic nature of the cloud might
+     force the set of VLANs in use by a particular L2 switch to change at any moment.</p>
+            </li>
+            <li ixia_locid="33">
+                <p ixia_locid="35">The set of VLANs used by each compute node is not fixed; it
+                    changes over time. The current VLAN set in use is determined by the
+                    configuration details of the tenant networks, and the scheduling on the compute
+                    nodes of the virtual machines that use them. This information is provided to the
+                    Neutron's AVS plugin, which then uses it to configure the AVS as required.</p>
+                <p ixia_locid="20">When a tenant creates a new network, the Neutron segmentation
+                    allocation strategy is to look first for an available segmentation identifier
+                    owned by the tenant. If none is available, the search continues over the
+                    available shared segmentation identifiers. The allocation process returns an
+                    error if no segmentation identifiers are available.</p>
+                <p ixia_locid="25">The VLAN ID assigned to a tenant network is fixed for as long as the tenant
+                    network is defined in the system. If for some reason the VLAN ID has to change,
+                    the tenant network must be deleted and recreated again.</p>
+            </li>
+            <li ixia_locid="37">
+                <p ixia_locid="39">Configuring a tenant network to have access to external networks
+                    (not just providing local networking) requires the following elements:</p>
+                <ul id="ul_vmr_tfs_4n">
+                    <li ixia_locid="41">
+                        <p ixia_locid="43">A physical router, and the provider network's access L2 switch, must be part of the same
+       Layer-2 network. Because this Layer 2 network uses a unique VLAN ID, this means also that the
+       router's port used in the connection must be statically configured to support the
+       corresponding VLAN ID.</p>
+                    </li>
+                    <li ixia_locid="45">
+                        <p ixia_locid="17">The router must be configured to be part of the same IP subnet that the tenant network is
+       intending to use.</p>
+                    </li>
+                    <li ixia_locid="18">
+                        <p ixia_locid="19">When configuring the IP subnet, the tenant must use the router's port IP address as its
+       external gateway.</p>
+                    </li>
+                    <li ixia_locid="21">
+                        <p ixia_locid="22">The tenant network must have the <nameliteral ixia_locid="23">external</nameliteral> flag set. Only the
+                                <nameliteral ixia_locid="24">admin</nameliteral> user can set this
+                            flag when the tenant network is created.</p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p ixia_locid="28">For provider networks of the VXLAN type, consider the following
+            guidelines:</p>
+        <ul id="ul_gwl_5fh_hr">
+            <li ixia_locid="4">
+                <p ixia_locid="30">Layer 3 routers used to interconnect compute nodes must be
+                    multicast-enabled, as required by the VXLAN protocol.</p>
+            </li>
+            <li ixia_locid="32">
+                <p ixia_locid="34">To minimize flooding of multicast packets, IGMP and MLD snooping
+                    is recommended on all Layer 2 switches. The AVS switch supports IGMP V1, V2 and
+                    V3, and MLD V1 and V2.</p>
+            </li>
+            <li ixia_locid="36">
+                <p ixia_locid="38">To support IGMP and MDL snooping, Layer 3 routers must be
+                    configured for IGMP and MDL querying.</p>
+            </li>
+            <li ixia_locid="40">
+                <p ixia_locid="11">To accommodate VXLAN encapsulation, the MTU values for Layer 2
+                    switches and compute node data interfaces must allow for additional headers. For
+                    more information, see <xref href="jow1404333732592.xml" ixia_locid="12"/>.</p>
+            </li>
+            <li ixia_locid="13">
+                <p ixia_locid="42">To participate in a VXLAN network, the data interfaces on the
+                    compute nodes must be configured with IP addresses, and with route table entries
+                    for the destination subnets or the local gateway. For more information, see
+                        <xref href="jow1425584170078.xml" ixia_locid="44"/>, and <xref href="jow1425584215069.xml" ixia_locid="46"/>.</p>
+            </li>
+        </ul>
+        <p ixia_locid="47">In some circumstances, tenant networks can be configured to use VLAN
+            Transparent mode, in which VLAN tagged packets from the guest are encapsulated within a
+            provider network segment (VLAN) without removing or modifying the guest VLAN tag. For
+            more information, see <xref href="rst1442341292102.xml" ixia_locid="48"/>. Alternately,
+            guest VLAN-tagged traffic can be supported by HP Helion OpenStack Carrier Grade tenants explicitly
+            defining one or more VLAN-tagged IP subnets on a single tenant network. With this
+            approach, the guest VLAN-tagged IP subnets have access to all of the services of the
+            virtualized network infrastructure, such as DHCP, virtual routing, meta-data server,
+            etc. For more information, see <xref href="jow1404333560080.xml" ixia_locid="49"/>.</p>
+    </conbody>
+</concept-wr>

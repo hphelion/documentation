@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333674324" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title ixia_locid="1">Network Planning</title>
+    <shortdesc ixia_locid="2">When planning the deployment of HP Helion OpenStack Carrier Grade, it is important to
+        understand the available networking options and how to take advantage of them for the
+        benefit of the end users. The sections that follow provide useful networking
+        guidelines.</shortdesc>
+    <prolog>
+        <author></author>
+    </prolog>
+    <conbody/>
+</concept-wr>

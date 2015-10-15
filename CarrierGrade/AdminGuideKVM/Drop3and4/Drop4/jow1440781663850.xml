@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1440781663850" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title>Utilities for HP Helion OpenStack Carrier Grade</title>
+ <shortdesc>HP Helion OpenStack Carrier Grade includes various utilities to help with system configuration and
+  maintenance.</shortdesc>
+ <prolog><author/>
+  
+ </prolog>
+ <conbody>
+  <p>
+   <draft-comment author="jowens">US53369 Topic added to provide a place for vSwitch utilities
+    topics</draft-comment>
+  </p>
+ </conbody>
+</concept-wr>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333731418" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+
+ -->
+    <title ixia_locid="1">Configuration Planning</title>
+    <shortdesc ixia_locid="2">System configuration options are available when installing the
+        HP Helion OpenStack Carrier Grade software. You should prepare a set of selected values and features ready to
+        use which are applicable to a specific deployment scenario.</shortdesc>
+    <prolog>
+        <author></author>
+    </prolog>
+    <conbody/>
+</concept-wr>

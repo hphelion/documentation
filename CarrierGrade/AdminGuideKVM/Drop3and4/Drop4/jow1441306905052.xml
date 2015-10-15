@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Reference//EN" "reference-wr.dtd">
+<reference-wr id="jow1441306905052" xml:lang="en-us">
+<!-- Modification History
+    
+-->
+  <title ixia_locid="1">Configuration Input File Format</title>
+  <shortdesc ixia_locid="2">The configuration file uses key-value pairs in standard INI format.</shortdesc>
+  <prolog>
+    <author ixia_locid="3">Jim Owens</author>
+  </prolog>
+  <refbody>
+    <section id="section_N1001F_N1001C_N10001" ixia_locid="4">
+      <p ixia_locid="5"><draft-comment author="jowens" ixia_locid="6">US62804 new
+          topic.</draft-comment>Valid sections, keys, and values are as follows.</p>
+      <table colsep="0" frame="all" id="table_c5k_dh1_mt" rowsep="0">
+        <title ixia_locid="7">Configuration Input File INI Specification </title>
+        <tgroup cols="4">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c3" colnum="3" colwidth="1.0*"/>          
+          <thead>
+            <row>
+              <entry ixia_locid="10">
+                <p ixia_locid="11">[Section] / Key</p>
+              </entry>
+              <entry ixia_locid="12">
+                <p ixia_locid="13">Value</p>
+              </entry>
+              <entry ixia_locid="14">
+                <p ixia_locid="15">Remarks</p>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry ixia_locid="365" nameend="c3" namest="c1">
+                <p ixia_locid="366"><nameliteral ixia_locid="413">[STORAGE]</nameliteral></p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="367">
+                <p ixia_locid="368"> DATABASE_STORAGE</p>
+              </entry>
+              <entry ixia_locid="20">
+                <p ixia_locid="21">(size in GB)</p>
+              </entry>
+              <entry ixia_locid="22">
+                <p ixia_locid="23">Postgres database size</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="25">
+                <p ixia_locid="26"> IMAGE_STORAGE</p>
+              </entry>
+              <entry ixia_locid="27">
+                <p ixia_locid="28">(size in GB)</p>
+              </entry>
+              <entry ixia_locid="29">
+                <p ixia_locid="30">Storage for nova instances launched from glance images</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="32">
+                <p ixia_locid="33"> BACKUP_STORAGE</p>
+              </entry>
+              <entry ixia_locid="34">
+                <p ixia_locid="35">(size in GB)</p>
+              </entry>
+              <entry ixia_locid="36">
+                <p ixia_locid="37">Must be at least DATABASE_STORAGE + 10</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="39">
+                <p ixia_locid="40"> CINDER_BACKEND</p>
+              </entry>
+              <entry ixia_locid="41">
+                <p ixia_locid="42"><option ixia_locid="43">lvm</option> or <option ixia_locid="44">ceph</option></p>
+              </entry>
+              <entry ixia_locid="45"/>
+            </row>
+            <row>
+              <entry ixia_locid="47">
+                <p ixia_locid="48"> CINDER_DEVICE</p>
+              </entry>
+              <entry ixia_locid="49">
+                <p ixia_locid="50">(string)</p>
+              </entry>
+              <entry ixia_locid="51"/>
+            </row>
+            <row>
+              <entry ixia_locid="53">
+                <p ixia_locid="54"> CINDER_STORAGE</p>
+              </entry>
+              <entry ixia_locid="55">
+                <p ixia_locid="56">(size in GB)</p>
+              </entry>
+              <entry ixia_locid="57"/>
+            </row>
+            <row>
+              <entry ixia_locid="414">
+                <p ixia_locid="415"><nameliteral ixia_locid="416">[DNS]</nameliteral></p> 
+              </entry>
+              <entry ixia_locid="417"><p ixia_locid="418"/></entry>
+              <entry ixia_locid="419"><p ixia_locid="420">(optional)</p></entry>
+            </row>
+            <row>
+              <entry ixia_locid="371">
+                <p ixia_locid="372"> NAMESERVER_1</p>
+              </entry>
+              <entry ixia_locid="62">
+                <p ixia_locid="63">(IPv4 address)</p>
+              </entry>
+              <entry ixia_locid="64"/>
+            </row>
+            <row>
+              <entry ixia_locid="66">
+                <p ixia_locid="67"> NAMESERVER_2</p>
+              </entry>
+              <entry ixia_locid="68">
+                <p ixia_locid="69">(IPv4 address)</p>
+              </entry>
+              <entry ixia_locid="70"/>
+            </row>
+            <row>
+              <entry ixia_locid="72">
+                <p ixia_locid="73"> NAMESERVER_3</p>
+              </entry>
+              <entry ixia_locid="74">
+                <p ixia_locid="75">(IPv4 address)</p>
+              </entry>
+              <entry ixia_locid="76"/>
+            </row>
+            <row>
+              <entry ixia_locid="421">
+                <p ixia_locid="422"><nameliteral ixia_locid="423">[NTP]</nameliteral></p> 
+              </entry>
+              <entry ixia_locid="424"><p ixia_locid="425"/></entry>
+              <entry ixia_locid="426"><p ixia_locid="427">(optional)</p></entry>
+            </row>
+            <row>
+              <entry ixia_locid="375">
+                <p ixia_locid="376"> NTP_SERVER_1</p>
+              </entry>
+              <entry ixia_locid="81">
+                <p ixia_locid="82">(IPv4 address or FQDN)</p>
+              </entry>
+              <entry ixia_locid="83"/>
+            </row>
+            <row>
+              <entry ixia_locid="85">
+                <p ixia_locid="86"> NTP_SERVER_2</p>
+              </entry>
+              <entry ixia_locid="87">
+                <p ixia_locid="88">(IPv4 address or FQDN)</p>
+              </entry>
+              <entry ixia_locid="89"/>
+            </row>
+            <row>
+              <entry ixia_locid="91">
+                <p ixia_locid="92"> NTP_SERVER_3</p>
+              </entry>
+              <entry ixia_locid="93">
+                <p ixia_locid="94">(IPv4 address or FQDN)</p>
+              </entry>
+              <entry ixia_locid="95"/>
+            </row>
+            <row>
+              <entry ixia_locid="377">
+                <p ixia_locid="378"><nameliteral ixia_locid="428">[LOGICAL_INTERFACE_n]</nameliteral></p>
+              </entry>
+              <entry ixia_locid="429"/>
+              <entry ixia_locid="430"><p ixia_locid="431">(where <i ixia_locid="100">n</i> is an
+                interface number, beginning with 1)</p></entry>
+            </row>
+            <row>
+              <entry ixia_locid="382">
+                <p ixia_locid="383"> LAG_INTERFACE</p>
+              </entry>
+              <entry ixia_locid="384">
+                <p ixia_locid="385"><option ixia_locid="105">Y</option> or <option ixia_locid="106">N</option></p>
+              </entry>
+              <entry ixia_locid="386"/>
+            </row>
+            <row>
+              <entry ixia_locid="109">
+                <p ixia_locid="110"> LAG_MODE</p>
+              </entry>
+              <entry ixia_locid="111">
+                <p ixia_locid="112"><option ixia_locid="113">802.3ad (LACP) policy</option> or</p>
+                <p ixia_locid="114"><option ixia_locid="115">Balanced XOR policy</option> or</p>
+                <p ixia_locid="116"><option ixia_locid="117">Active-backup policy</option></p>
+              </entry>
+              <entry ixia_locid="118"/>
+              
+            </row>
+            <row>
+              <entry ixia_locid="121">
+                <p ixia_locid="122"> INTERFACE_MTU</p>
+              </entry>
+              <entry ixia_locid="123">
+                <p ixia_locid="124"> (MTU size)</p>
+              </entry>
+              <entry ixia_locid="125"/>
+            </row>
+            <row>
+              <entry ixia_locid="127">
+                <p ixia_locid="128"> INTERFACE_PORTS</p>
+              </entry>
+              <entry ixia_locid="129">
+                <p ixia_locid="130">(a comma-separated list of ethernet interfaces)</p>
+              </entry>
+              <entry ixia_locid="131">
+                <p ixia_locid="132">for example: <option ixia_locid="133">eth0,eth1</option></p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="387" nameend="c3" namest="c1">
+                <p ixia_locid="388"><nameliteral ixia_locid="432">[MGMT_NETWORK]</nameliteral></p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="389">
+                <p ixia_locid="390"> VLAN</p>
+              </entry>
+              <entry ixia_locid="391">
+                <p ixia_locid="392">(VLAN id)</p>
+              </entry>
+              <entry ixia_locid="393"/>
+            </row>
+            <row>
+              <entry ixia_locid="142">
+                <p ixia_locid="143"> IP_START_ADDRESS</p>
+              </entry>
+              <entry ixia_locid="144">
+                <p ixia_locid="145">(IPv4 address)</p>
+              </entry>
+              <entry ixia_locid="146"/>
+            </row>
+            <row>
+              <entry ixia_locid="148">
+                <p ixia_locid="149"> IP_END_ADDRESS</p>
+              </entry>
+              <entry ixia_locid="150">
+                <p ixia_locid="151">(IPv4 address)</p>
+              </entry>
+              <entry ixia_locid="152"/>
+            </row>
+            <row>
+              <entry ixia_locid="154">
+                <p ixia_locid="155"> CIDR</p>
+              </entry>
+              <entry ixia_locid="156">
+                <p ixia_locid="157">(network/mask)</p>
+              </entry>
+              <entry ixia_locid="158"/>
+            </row>
+            <row>
+              <entry ixia_locid="160">
+                <p ixia_locid="161"> DYNAMIC_ALLOCATION</p>
+              </entry>
+              <entry ixia_locid="162">
+                <p ixia_locid="163"><option ixia_locid="164">Y</option> or <option ixia_locid="165">N</option></p>
+              </entry>
+              <entry ixia_locid="166">
+                <p ixia_locid="441">This setting applies to other network types system-wide, such as the Infra
+                  network.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="168">
+                <p ixia_locid="169"> LOGICAL_INTERFACE</p>
+              </entry>
+              <entry ixia_locid="170">
+                <p ixia_locid="171"><option ixia_locid="172">LOGICAL_INTERFACE_</option><i ixia_locid="173">n</i></p>
+              </entry>
+              <entry ixia_locid="176">
+                <p ixia_locid="174"> (where <i ixia_locid="175">n</i> is an interface number,
+                  beginning with 1)</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="178">
+                <p ixia_locid="179"> GATEWAY</p>
+              </entry>
+              <entry ixia_locid="180">
+                <p ixia_locid="181">(IPv4 address)</p>
+              </entry>
+              <entry ixia_locid="182">
+                <p ixia_locid="183">This key can be  specified in the MGMT_NETWORK section or OAM_NETWORK section,
+                  but not both</p>
+              </entry>
+            </row><row>
+              <entry ixia_locid="394" nameend="c3" namest="c1">
+                <p ixia_locid="395"><nameliteral ixia_locid="433">[INFRA_NETWORK]</nameliteral></p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="186">
+                <p ixia_locid="187"> VLAN</p>
+              </entry>
+              <entry ixia_locid="188">
+                <p ixia_locid="189">(VLAN id)</p>
+              </entry>
+              <entry ixia_locid="190"/>
+            </row>
+            <row>
+              <entry ixia_locid="192">
+                <p ixia_locid="193"> IP_START_ADDRESS</p>
+              </entry>
+              <entry ixia_locid="194">
+                <p ixia_locid="195">(IPv4 address)</p>
+              </entry>
+              <entry ixia_locid="196"/>
+            </row>
+            <row>
+              <entry ixia_locid="198">
+                <p ixia_locid="199"> IP_END_ADDRESS</p>
+              </entry>
+              <entry ixia_locid="200">
+                <p ixia_locid="201">(IPv4 address)</p>
+              </entry>
+              <entry ixia_locid="202"/>
+            </row>
+            <row>
+              <entry ixia_locid="204">
+                <p ixia_locid="205"> CIDR</p>
+              </entry>
+              <entry ixia_locid="206">
+                <p ixia_locid="207">(network/mask)</p>
+              </entry>
+              <entry ixia_locid="208"/>
+            </row>
+           <!-- RS: Removed per Tyler Smith review <row>
+              <entry ixia_locid="210">
+                <p ixia_locid="211"> DYNAMIC_ALLOCATION</p>
+              </entry>
+              <entry ixia_locid="212">
+                <p ixia_locid="213"><option ixia_locid="214">Y</option> or <option ixia_locid="215">N</option></p>
+              </entry>
+              <entry ixia_locid="216"/>
+            </row> -->
+            <row>
+              <entry ixia_locid="218">
+                <p ixia_locid="219"> LOGICAL_INTERFACE</p>
+              </entry>
+              <entry ixia_locid="220">
+                <p ixia_locid="221"><option ixia_locid="222">LOGICAL_INTERFACE_</option><i ixia_locid="223">n</i></p>
+              </entry>
+              <entry ixia_locid="226">
+                <p ixia_locid="224"> (where <i ixia_locid="225">n</i> is an interface number,
+                  beginning with 1)</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="396" nameend="c3" namest="c1">
+                <p ixia_locid="397"><nameliteral ixia_locid="434">[OAM_NETWORK]</nameliteral></p>
+              </entry>
+            </row> 
+            <row>
+              <entry ixia_locid="229">
+                <p ixia_locid="230"> VLAN</p>
+              </entry>
+              <entry ixia_locid="231">
+                <p ixia_locid="232">(VLAN id)</p>
+              </entry>
+              <entry ixia_locid="233"/>
+            </row>
+            <row>
+              <entry ixia_locid="235">
+                <p ixia_locid="236"> IP_START_ADDRESS</p>
+              </entry>
+              <entry ixia_locid="237">
+                <p ixia_locid="238">(IPv4 address)</p>
+              </entry>
+              <entry ixia_locid="239" morerows="1">
+                <p ixia_locid="442">You can use these to define contiguous addresses for the IP
+                  floating address and unit addresses; for example, 10.10.10.2 (the IP floating
+                  address) through 10.10.10.4 (for two contiguous unit addresses). As an
+                  alternative, you can specify the addresses separately (and non-contiguously) using
+                  the keys IP_FLOATING_ADDRESS,  IP_UNIT_0_ADDRESS, and IP_UNIT_1_ADDRESS.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="241">
+                <p ixia_locid="242"> IP_END_ADDRESS</p>
+              </entry>
+              <entry ixia_locid="243">
+                <p ixia_locid="244">(IPv4 address)</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="247">
+                <p ixia_locid="248"> CIDR</p>
+              </entry>
+              <entry ixia_locid="249">
+                <p ixia_locid="250">(network/mask)</p>
+              </entry>
+              <entry ixia_locid="251"/>
+            </row>
+          <!--  RS: Removed per Tyler Smith 
+            <row>
+              <entry ixia_locid="253">
+                <p ixia_locid="254"> DYNAMIC_ALLOCATION</p>
+              </entry>
+              <entry ixia_locid="255">
+                <p ixia_locid="256"><option ixia_locid="257">Y</option> or <option ixia_locid="258">N</option></p>
+              </entry>
+              <entry ixia_locid="259"/>
+            </row> -->
+            <row>
+              <entry ixia_locid="261">
+                <p ixia_locid="262"> LOGICAL_INTERFACE</p>
+              </entry>
+              <entry ixia_locid="263">
+                <p ixia_locid="264"><option ixia_locid="265">LOGICAL_INTERFACE_</option><i ixia_locid="266">n</i></p>
+              </entry>
+              <entry ixia_locid="269">
+                <p ixia_locid="267"> (where <i ixia_locid="268">n</i> is an interface number,
+                  beginning with 1)</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="271">
+                <p ixia_locid="272"> GATEWAY</p>
+              </entry>
+              <entry ixia_locid="273">
+                <p ixia_locid="274">(IPv4 address)</p>
+              </entry>
+              <entry ixia_locid="275">
+                <p ixia_locid="276">This key can be  specified in the MGMT_NETWORK section or OAM_NETWORK section,
+                  but not both</p>
+              </entry>
+            </row> 
+            <row>
+              <entry ixia_locid="398" nameend="c3" namest="c1">
+                <p ixia_locid="399"><nameliteral ixia_locid="435">[PXEBOOT_NETWORK]</nameliteral></p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="279">
+                <p ixia_locid="280"> PXEBOOT_CIDR</p>
+              </entry>
+              <entry ixia_locid="281">
+                <p ixia_locid="282">(network/mask)</p>
+              </entry>
+              <entry ixia_locid="283"/>
+            </row>
+            <row>
+              <entry ixia_locid="400" nameend="c3" namest="c1">
+                <p ixia_locid="401"><nameliteral ixia_locid="439">[LICENSING]</nameliteral></p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="294">
+                <p ixia_locid="295"> LICENSE_FILE_NAME</p>
+              </entry>
+              <entry ixia_locid="296">
+                <p ixia_locid="297">(filename or full path to license file)</p>
+              </entry>
+              <entry ixia_locid="298"/>
+            </row>
+            <row>
+              <entry ixia_locid="405" nameend="c3" namest="c1">
+                <p ixia_locid="406"><nameliteral ixia_locid="440">[SECURITY]</nameliteral></p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="301">
+                <p ixia_locid="302"> SSL_REST_API</p>
+              </entry>
+              <entry ixia_locid="303">
+                <p ixia_locid="304"><option ixia_locid="305">Y</option> or <option ixia_locid="306">N</option></p>
+              </entry>
+              <entry ixia_locid="307"/>
+            </row>
+            <row>
+              <entry ixia_locid="309">
+                <p ixia_locid="310"> SELF_SIGNED</p>
+              </entry>
+              <entry ixia_locid="311">
+                <p ixia_locid="312"><option ixia_locid="313">Y</option> or <option ixia_locid="314">N</option></p>
+              </entry>
+              <entry ixia_locid="315"/>
+            </row>
+            <row>
+              <entry ixia_locid="317">
+                <p ixia_locid="318"> CERTIFICATE_FILE_NAME</p>
+              </entry>
+              <entry ixia_locid="319">
+                <p ixia_locid="320">(filename or full path to license file)</p>
+              </entry>
+              <entry ixia_locid="321">
+                <p ixia_locid="322">Required only if SELF_SIGNED=N</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="324">
+                <p ixia_locid="325"> CERTIFICATE_PASSWORD</p>
+              </entry>
+              <entry ixia_locid="326">
+                <p ixia_locid="327">(string)</p>
+              </entry>
+              <entry ixia_locid="328">
+                <p ixia_locid="329">Required if CERTIFICATE_FILE_NAME is password-protected</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="407" nameend="c3" namest="c1">
+                <p ixia_locid="408"><nameliteral ixia_locid="436">[BOARD_MANAGEMENT_NETWORK]</nameliteral></p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="332">
+                <p ixia_locid="333"> VLAN</p>
+              </entry>
+              <entry ixia_locid="334">
+                <p ixia_locid="335">(VLAN id)</p>
+              </entry>
+              <entry ixia_locid="336"/>
+            </row>
+            <row>
+              <entry ixia_locid="338">
+                <p ixia_locid="339"> MTU</p>
+              </entry>
+              <entry ixia_locid="340">
+                <p ixia_locid="341">(MTU size)</p>
+              </entry>
+              <entry ixia_locid="342"/>
+            </row>
+            <row>
+              <entry ixia_locid="344">
+                <p ixia_locid="345"> SUBNET</p>
+              </entry>
+              <entry ixia_locid="346">
+                <p ixia_locid="347">(network/mask)</p>
+              </entry>
+              <entry ixia_locid="348"/>
+            </row>
+            <row>
+              <entry ixia_locid="409" nameend="c3" namest="c1">
+                <p ixia_locid="410"><nameliteral ixia_locid="437">[CEILOMETER]</nameliteral></p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="351">
+                <p ixia_locid="352"> TIME_TO_LIVE</p>
+              </entry>
+              <entry ixia_locid="353">
+                <p ixia_locid="354">(seconds)</p>
+              </entry>
+              <entry ixia_locid="355"/>
+            </row>
+            <row>
+              <entry ixia_locid="411" nameend="c3" namest="c1">
+                <p ixia_locid="412"><nameliteral ixia_locid="438">[AUTHENTICATION]</nameliteral></p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="358">
+                <p ixia_locid="359"> ADMIN_PASSWORD</p>
+              </entry>
+              <entry ixia_locid="360">
+                <p ixia_locid="361">(string)</p>
+              </entry>
+              <entry ixia_locid="362"/>
+            </row>
+            
+          </tbody>
+        </tgroup>
+      </table>
+      <p ixia_locid="363">The following example is provided for reference.</p>
+      <codeblock ixia_locid="364">[STORAGE]
+; Storage Configuration
+CINDER_BACKEND=lvm
+DATABASE_STORAGE=20
+IMAGE_STORAGE=10
+BACKUP_STORAGE=42
+CINDER_DEVICE=/dev/sdb
+CINDER_STORAGE=110
+
+;LOGICAL_INTERFACE_&lt;number&gt;
+;  LAG_INTERFACE   &lt;Y/N&gt;    
+;  LAG_MODE        One of 1) Active-backup policy
+;                         2) Balanced XOR policy
+;                         4) 802.3ad (LACP) policy
+;                  Interface for pxebooting can only be LACP
+;  INTERFACE_MTU   &lt;mtu size&gt;      
+;  INTERFACE_PORTS &lt;comma separated list of ethernet interfaces&gt;
+
+[LOGICAL_INTERFACE_1]
+LAG_INTERFACE=N
+;LAG_MODE=
+INTERFACE_MTU=1500
+INTERFACE_PORTS=eth1
+
+[LOGICAL_INTERFACE_2]
+LAG_INTERFACE=N
+;LAG_MODE=
+INTERFACE_MTU=1500
+INTERFACE_PORTS=eth0
+
+[MGMT_NETWORK]
+; Management Network Configuration
+CIDR=192.168.204.0/24
+DYNAMIC_ALLOCATION=Y
+IP_START_ADDRESS=192.168.204.2
+IP_END_ADDRESS=192.168.204.99
+LOGICAL_INTERFACE=LOGICAL_INTERFACE_1
+
+;[INFRA_NETWORK]
+; Infrastructure Network Configuration
+
+[OAM_NETWORK]
+; External OAM Network Configuration
+CIDR=128.224.150.0/23
+GATEWAY=128.224.150.1
+IP_FLOATING_ADDRESS=128.224.151.212
+IP_UNIT_0_ADDRESS=128.224.151.192
+IP_UNIT_1_ADDRESS=128.224.151.193
+LOGICAL_INTERFACE=LOGICAL_INTERFACE_2
+
+[DNS]
+; DNS Configuration
+NAMESERVER_1=128.224.144.130
+NAMESERVER_2=8.8.8.8
+NAMESERVER_3=8.8.4.4
+
+[NTP]
+; NTP Configuration
+NTP_SERVER_1=0.pool.ntp.org
+NTP_SERVER_2=1.pool.ntp.org
+NTP_SERVER_3=2.pool.ntp.org
+
+[LICENSING]
+LICENSE_FILE_NAME=license.lic
+
+[SECURITY]
+ENABLE_HTTPS=N
+
+[AUTHENTICATION]
+ADMIN_PASSWORD=admin
+</codeblock>
+    </section>
+  </refbody>
+</reference-wr>

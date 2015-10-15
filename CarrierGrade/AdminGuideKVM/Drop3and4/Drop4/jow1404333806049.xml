@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333806049" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+
+ -->
+    <title>Templates</title>
+    <shortdesc>A template is a formal set of instructions for defining and
+        configuring a stack. </shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <conbody>
+        <p>Templates specify the resources to include in a stack, and relationships
+            between them.</p>
+        <p>A template contains several sections, including:</p>
+        <dl>
+            <dlentry>
+                <dt>Description</dt>
+                <dd>
+                    <p>You can use this section to provide comments about the stack,
+                        such as its purpose or any special considerations when using it.</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Parameters</dt>
+                <dd>
+                    <p>This section defines the parameters that you can pass to the
+                        stack template. You can pass parameters using the command line, a web form,
+                        or an environment file.</p>
+                    <p>You can include a default value for a parameter, and optionally pass a different value when
+      the template is deployed. If no default value is included, you must provide a value when the
+      template is deployed. Parameters without default values are called <term>mandatory
+       parameters</term>.</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>Resources</dt>
+                <dd>
+                    <p>This section defines the resources to be created. They can be specified in any order.</p>
+                </dd>
+            </dlentry></dl>
+        <p>There are two official formats for templates: CloudFormation (CFN) and
+            Heat Orchestration Template (HOT).</p>
+        <dl>
+            <dlentry>
+                <dt>CFN</dt>
+                <dd>
+                    <p>This format is associated with Amazon Web Services (AWS) technology. A CFN template is
+      indicated by the first line:</p>
+                    <codeblock>HeatTemplateFormatVersion: '2012-12-12'</codeblock>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>HOT</dt>
+                <dd>
+                    <p>This format is associated specifically with the OpenStack project. A HOT template is
+      indicated by the first line: </p>
+                    <codeblock>heat_template_version: 2013-05-23</codeblock>
+                    <p>In HOT, some of the built-in functions are different, and lowercase is used for attribute
+      names.</p>
+                </dd>
+            </dlentry>
+        </dl>
+        <p>Both formats support Amazon Web Services (AWS) resources and OpenStack
+            resources, in any combination.</p>
+        <p>HP Helion OpenStack Carrier Grade extensions to Heat functionality are supported only on OpenStack
+            resources, which are the resources primarily used with HOT format.</p>
+        <p>HP Helion OpenStack Carrier Grade includes sample stack templates in HOT format for
+            demonstration purposes (see <xref href="jow1404915566084.xml"/>).
+            Example CFN-formatted Heat templates can be found at <xref format="html" href="https://github.com/openstack/heat-templates/tree/master/cfn" scope="external" type="https://github.com/openstack/heat-templates/tree/master/cfn"></xref>. The templates
+            are expressed using YAML, which is the recommended notation for HOT. Heat templates may
+            also be expressed using JSON, which is the usual notation for CFN.</p>
+        <p>For more information on the content and syntax of Heat templates, see the online <xref format="html" href="http://docs.openstack.org/developer/heat/template_guide/index.html" scope="external">OpenStack Template Guide</xref>.</p>
+    </conbody>
+</concept-wr>

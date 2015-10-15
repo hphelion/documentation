@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1425236666266" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title>Configuring the NUMA Node Allocations for a VM</title>
+    <shortdesc>You can use flavor extra specs or image properties to allocate virtual
+        memory and vCPU resources to virtual NUMA nodes.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001">
+            <p>By default, the memory and CPU resources defined for a flavor are
+                assigned to a single virtual NUMA node, which is mapped to an available host NUMA
+                node when an instance is launched or migrated. You can specify the use of multiple
+                NUMA nodes using either flavor extra specifications (which take the general form
+                    <nameliteral>hw:specification</nameliteral>), or image properties (which take
+                the general form <nameliteral>hw_specification</nameliteral>).</p>
+            <p>By default, the available CPU and memory resources for the flavor are
+                distributed equally among the NUMA nodes. You can customize the distribution of
+                resources. For example, given a flavor with two NUMA nodes, three vCPUs, and 1024 MB
+                of RAM, you can assign one vCPU and 512 MB to virtual NUMA node 0, and two VCPUs and
+                512 MB to virtual NUMA node 1. The ability to allocate resources is useful when
+                pinning virtual NUMA nodes to host NUMA nodes to optimize VM performance.</p>
+            <p>By default, the memory required for a virtual NUMA node is pinned to a single host
+                NUMA node to ensure high performance. For applications where this is not a concern,
+                you can relax the memory allocation requirements so that the memory for a virtual
+                NUMA node can be drawn from more than one host NUMA node if necessary.</p>
+            <p>When deploying network guest images operating on the data path, it
+                is advisable to co-locate the virtual machines, the AVS switch, physical ports, and
+                all other networking elements on the same node.</p>
+            <p>Use of this option should be limited to cases where fine-tuning of
+                the data path on guest applications is important.</p>
+            <note id="note_N10055_N10022_N1001F_N10001" type="caution">
+                <p>If the virtual CPUs cannot be allocated to run on the specified node on any
+                    compute node, the virtual machine may fail to launch</p>
+            </note>
+        </context>
+        <steps id="steps_q4v_blj_gr">
+            <step id="step_N10038_N10034_N1001F_N10001">
+                <cmd>Declare the number of NUMA nodes to create on the guest.</cmd>
+                <info>
+                    <p>The following extra specification sets the number of NUMA
+                        nodes:</p>
+                    <codeblock>hw:numa_nodes=<varname>n</varname></codeblock>
+                    <p>where <varname>n</varname> is the number of
+                        NUMA nodes to create (1 or more).</p>
+                </info>
+                <stepxmp>
+                    <p>For example, given the flavor <nameliteral>numa.pinned.asym</nameliteral>, use the following command to create two
+                        NUMA nodes.</p>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key numa.pinned.asym set hw:numa_nodes=2</userinput></codeblock>
+                </stepxmp>
+                <info>
+                    <p>To set an image property instead, you can use the following command:</p>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova image-meta <varname>image</varname> hw_numa_nodes=2</userinput></codeblock>
+                </info>
+            </step>
+            <step id="step_N1006D_N10034_N1001F_N10001" importance="optional">
+                <cmd>For each NUMA node, assign a list of CPUs.</cmd>
+                <info>
+                    <p>This step is optional. By default, available CPUs for the
+                        flavor are distributed evenly across the available NUMA nodes.</p>
+                    <p>The following extra specification assigns CPUs to a NUMA node:</p>
+                    <codeblock>hw:numa_cpus.<varname>vnode_id</varname>=<varname>cpu_list</varname></codeblock>
+                    <p>where</p>
+                    <parml>
+                        <plentry>
+                            <pt><parmname>vnode_id</parmname></pt>
+                            <pd>
+                                <p>is the number used to identify the virtual NUMA
+                                    node (0 for the first node, 1 for the second, and so on).</p>
+                            </pd>
+                        </plentry>
+                        <plentry>
+                            <pt><parmname>cpu_list</parmname></pt>
+                            <pd>
+                                <p>is a comma-separated list of vCPUs to assign to the node. The
+                                    vCPUs for the flavor are enumerated beginning with 0.</p>
+                            </pd>
+                        </plentry>
+                    </parml>
+                </info>
+                <stepxmp>
+                    <p>For example, given flavor <nameliteral>numa.pinned.asym</nameliteral>, use the following command to assign
+                        vCPU 0 to the first NUMA node, and vCPUs 1 and 2 to the second NUMA
+                        node:</p>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key numa.pinned.asym set hw:numa_cpus.0=0 \
+hw:numa_cpus.1=1,2</userinput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N100CF_N10034_N1001F_N10001" importance="optional">
+                <cmd>For each NUMA node, assign an amount of memory.</cmd>
+                <info>
+                    <p>This step is optional. By default, available memory for the
+                        flavor is distributed evenly across the available NUMA nodes.</p>
+                    <p>The following extra specification assigns memory to a NUMA node:</p>
+                    <codeblock>hw:numa_mem.<varname>vnode_id</varname>=<varname>ram_size</varname></codeblock>
+                    <p>where</p>
+                    <parml>
+                        <plentry>
+                            <pt><parmname>vnode_id</parmname></pt>
+                            <pd>
+                                <p>is the number used to identify the virtual NUMA
+                                    node (0 for the first node, 1 for the second, and so on).</p>
+                            </pd>
+                        </plentry>
+                        <plentry>
+                            <pt><parmname>ram_size</parmname></pt>
+                            <pd>
+                                <p>is the amount of RAM in MB.</p>
+                            </pd>
+                        </plentry>
+                    </parml>
+                </info>
+                <stepxmp>
+                    <p>For example, given flavor <nameliteral>numa.pinned.asym</nameliteral>, use the following command to assign 512
+                        MB of RAM to each of two NUMA nodes:</p>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key numa.pinned.asym set hw:numa_mem.0=512 \
+hw:numa_mem.1=512</userinput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N10181_N10044_N1001F_N10001" importance="optional">
+                <cmd>Specify whether memory for the flavor can be drawn from more than one NUMA node
+                    if necessary. </cmd>
+                <info>
+                    <p>This step is optional. By default, memory is allocated from the designated
+                        host NUMA node only.</p>
+                    <p>To control whether memory for the flavor can be drawn from more than one host
+                        NUMA node, use the following extra specification:</p>
+                    <codeblock>hw:numa_mempolicy=<varname>policy</varname></codeblock>
+                    <p>where <parmname>policy</parmname> is either
+                            <nameliteral>strict</nameliteral> (to use only memory
+                        from the designated host NUMA node) or <nameliteral>preferred</nameliteral> (to permit memory from other host NUMA nodes to
+                        be used if necessary).</p>
+                </info>
+            </step>
+        </steps>
+        <postreq id="postreq_N1012F_N1001F_N10001">
+            <p>To pin the virtual NUMA nodes to host NUMA nodes, see <xref href="jow1425236723556.xml"/>.</p>
+        </postreq>
+    </taskbody>
+</task-wr>

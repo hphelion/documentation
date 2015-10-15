@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333800036" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title ixia_locid="1">Managing Virtual Machines</title>
+    <shortdesc ixia_locid="2">Virtual machines and the applications that run on them are at the core
+        of cloud-based communications solutions. Understanding how to manage them is of paramount
+        importance.</shortdesc>
+    <prolog>
+        <author></author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="5">This chapter elaborates on software features available exclusively on
+            HP Helion OpenStack Carrier Grade, which add to the already powerful set of management tools available
+            from OpenStack. The exclusive features include virtual machine settings to optimize the
+            use of virtual CPUs, improvements to the scheduling algorithms, better integration of
+            NUMA architectures, and others.</p>
+    </conbody>
+</concept-wr>

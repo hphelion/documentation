@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content id="jow1439307476374" xml:lang="en-us">
+<title ixia_locid="148">[RC:postreq] PCI passthrough and SR-IOV postrequisites</title>
+<rcbody>
+        <postreq id="postreq_N1023B_N10024_N10001" ixia_locid="127">
+            <p ixia_locid="128">Access switches must be properly configured to ensure that virtual
+                machines using PCI-passthrough or SR-IOV Ethernet interfaces (the latter discussed
+                in <xref href="psa1428687672712.xml" ixia_locid="129"/>) have the expected
+                connectivity. In a common scenario, the virtual machine using these interfaces
+                connects to external end points only, that is, it does not connect to other virtual
+                machines in the same cluster. In this case:</p>
+            <ul id="ul_pz2_w4w_rr">
+                <li ixia_locid="130">
+                    <p ixia_locid="131">Traffic between the virtual machine and the access switch
+                        can be tagged or untagged.</p>
+                </li>
+                <li ixia_locid="144">
+                    <p ixia_locid="146">The connecting port on the access switch is part of a
+                        port-based VLAN.</p>
+                </li>
+                <li ixia_locid="145">
+                    <p ixia_locid="147">If the port is tagged, the allowed VLAN ID range must not
+                        overlap with VLAN ID ranges used by the AVS ports. </p>
+                </li>
+                <li ixia_locid="134">
+                    <p ixia_locid="135">The port-based VLAN provides the required connectivity to
+                        external switching and routing equipment needed by guest applications to
+                        establish connections to the intended end points.</p>
+                </li>
+            </ul>
+            <p ixia_locid="136">For connectivity to other virtual machines in the cluster the
+                following configuration is also required:</p>
+            <ul id="ul_ngs_nvw_rr">
+                <li ixia_locid="137">
+                    <p ixia_locid="138">The VLAN ID used for the tenant network, 10 in this example,
+                        and the default port VLAN ID of the access port on the switch are the same.
+                        This ensures that incoming traffic from the virtual machine is tagged
+                        internally by the switch as belonging to VLAN ID 10, and switched to the
+                        appropriate exit ports.</p>
+                </li>
+                <li ixia_locid="139">
+                    <p ixia_locid="140">The target virtual machines are reachable through another
+                        port on the compute node, which is managed by the AVS.</p>
+                </li>
+                <li ixia_locid="141">
+                    <p ixia_locid="142">That other port is configured as usual, as a VLAN trunk
+                        port, and the tenant network's VLAN ID (10) is included in the tagged range.
+                        This ensures that VLAN 10 is common to both the passthrough/SR-IOV interface
+                        and the AVS port.</p>
+                </li>
+            </ul>
+        </postreq>
+    </rcbody>
+</referable-content>

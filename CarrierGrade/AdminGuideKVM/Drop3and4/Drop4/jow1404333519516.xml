@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333519516" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+        
+-->
+    <title ixia_locid="1">Configuring Provider Networks</title>
+    <shortdesc ixia_locid="2">You can use the HP Helion OpenStack Carrier Grade CLI or web administration interface to
+        set up provider networks over physical networks.</shortdesc>
+    <prolog>
+        <author ixia_locid="3">Jim Owens</author>
+        <author ixia_locid="4">Pedro Sanchez</author>
+        <author ixia_locid="5">Tom Towle</author>
+    </prolog>
+    <taskbody>
+        <context conref="jow1424191621914.xml#jow1424191621914/context_N10027_N10024_N10001" id="context_N1002C_N10029_N10001" ixia_locid="215"/>
+        <context conref="jow1424191621914.xml#jow1424191621914/context_N10069_N10032_N1000F_N10001" id="context_N10032_N10029_N10001" ixia_locid="217"/>
+        <context conref="jow1424191621914.xml#jow1424191621914/note_for_RDS_setup" id="context_N10038_N10029_N10001" ixia_locid="367"/>
+        <steps id="steps_rvq_zr2_hr">
+            <step conref="jow1424191621914.xml#jow1424191621914/step_N1003F_N1003C_N10024_N10001" id="step_N10031_N1002D_N1001F_N10001" ixia_locid="363">
+                <cmd ixia_locid="7"/>
+            </step>
+            <step conref="jow1424191621914.xml#jow1424191621914/step_N10054_N1003C_N10024_N10001" id="step_N1003A_N1002D_N1001F_N10001" ixia_locid="366">
+                <cmd ixia_locid="9"/>
+            </step>
+            <step id="step_N10043_N1002D_N1001F_N10001" ixia_locid="10">
+                <cmd ixia_locid="11">Create a provider network.</cmd>
+                <info conref="jow1424191621914.xml#jow1424191621914/Provider_Network_dialog" ixia_locid="12"/>
+                <info ixia_locid="13">
+                    <fig id="fig_v3z_zsg_hr" ixia_locid="359">
+                        <image href="jow1425675012586.image" id="image_jss_vsg_hr" ixia_locid="360">
+                            <alt ixia_locid="361">i-ccs-create-provider-network-generic</alt>
+                        </image>
+                    </fig>
+                </info>
+            </step>
+            <step conref="jow1424191621914.xml#jow1424191621914/step_N10127_N1003C_N10024_N10001" id="step_N1005D_N1002D_N1001F_N10001" ixia_locid="16">
+                <cmd ixia_locid="17"/>
+            </step>
+        </steps>
+        <postreq conref="jow1424191621914.xml#jow1424191621914/postreq_N1020B_N10029_N10001" id="postreq_N10061_N10029_N10001" ixia_locid="216"/>
+    </taskbody>
+</task-wr>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333793412" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title>Overview</title>
+    <shortdesc>The <uicontrol>Overview</uicontrol> tab on the
+            <wintitle>Inventory Detail</wintitle> page summarizes core details about
+        a host object.</shortdesc>
+    <prolog><author/>
+        <author/>
+    </prolog>
+    <conbody>
+        <fig id="fig_N10027_N10024_N10001">
+            <image href="jow1404333790747.image" id="image_zdr_ljz_l4"/>
+        </fig>
+        <p>The following items are included in the summary:</p>
+        <ul id="ul_mjj_fkz_l4">
+            <li>
+                <p>host name, personality, and the internal UUID and host ID reference numbers</p>
+            </li>
+            <li>
+                <p>MAC and IP addresses on the internal management network</p>
+            </li>
+            <li>
+                <p>serial ID, if known. Use the command <cmdname>system host-modify
+                        &lt;hostname&gt; serialid=xxx</cmdname> to update it.</p>
+            </li>
+            <li>
+                <p>location, as entered by the operator using the <wintitle>Edit Host</wintitle> window (see
+            <xref href="jow1404333790046.xml"/>)</p>
+            </li>
+            <li>
+                <p>time stamps of when the host was created and last updated</p>
+            </li>
+            <li>
+                <p>the host's state</p>
+            </li>
+            <li>
+                <p>board management (iLO) information, if available, including controller type, MAC
+                    address, and IP address.</p>
+            </li>
+        </ul>
+    </conbody>
+</concept-wr>
