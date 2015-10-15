@@ -10,7 +10,7 @@
             Tests</xref></li>
         <li><xref href="#install_verification/volume_verify">Verifying Your Block Storage
             Backend</xref></li>
-        <li><xref href="#install_verification/swift_verify">Validate Your Object Storage
+        <li><xref href="#install_verification/swift_verify">Validate Your Object Storage (Swift)
             Setup</xref></li>
       </ul>
     </section>
