@@ -10,7 +10,7 @@
  </prolog>
  <conbody>
     <p><keyword keyref="prodLong"/> is a certified distribution of the <xref
-        href="http://pivotal.io/platform" format="html" scope="external">Cloud Foundry
+        href="http://www.cloudfoundry.org/" format="html" scope="external">Cloud Foundry
         Platform-as-a-Service (PaaS)</xref> software. You can run <keyword keyref="prodShort"/> from
       the command line to deploy a private or public PaaS.</p>
     <p>
