@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_hlp_zfq_rt">
+  <title>Table creation. No, Really.</title>
+  <body>
+    <table frame="all" rowsep="1" colsep="1" id="table_rzb_bgq_rt">
+      <title>This is a test.</title>
+      <tgroup cols="2">
+        <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+        <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+        <thead>
+          <row>
+            <entry>test col header 1</entry>
+            <entry>test col header 2</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>data</entry>
+            <entry>data</entry>
+          </row>
+          <row>
+            <entry>riker</entry>
+            <entry>riker</entry>
+          </row>
+          <row>
+            <entry>picard</entry>
+            <entry>picard </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <p></p>
+  </body>
+</topic>
