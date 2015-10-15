@@ -45,7 +45,9 @@
             are protected appropriately.</li>
           <li>Since the file containing the Helion message queue password could appear in the swap
             area of a vCenter server, appropriate controls should be applied to the vCenter cluster
-            to prevent discovery of the password via snooping of the swap area or memory dumps</li>
+            to prevent discovery of the password via snooping of the swap area or memory
+              dumps<note>No two clusters should have the same name across datacenters in a given
+              vCenter.</note></li>
         </ul>
       </p>
     </section>
@@ -347,7 +349,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         #SSH public key content for OVSvAPP/Computeproxy password less login.
         "ssh_key": "&lt;deployer-ssh-pub-key-contents>"
     },
-        # Do you want to skip inactive or maintenance mode hosts ?
+        
 }</codeblock></p></li>
         <li>Modify the template (json file) as per your
             environment.<codeblock>vi &lt;<b>NETWORK_CONF_FILENAME</b>></codeblock><p>For

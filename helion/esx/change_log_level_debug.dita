@@ -19,9 +19,11 @@ level: DEBUG</codeblock></li>
           <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock></li>
+        <li>Prepare your environment for
+          deployment:<codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml;
+cd /home/stack/scratch/ansible/next/hos/ansible;</codeblock></li>
         <li>Execute EON reconfigure
-          playbook<codeblock>cd /home/stack/scratch/ansible/next/hos/ansible;
-ansible-playbook -i hosts/verb_hosts eon-reconfigure.yml</codeblock></li>
+          playbook<codeblock>ansible-playbook -i hosts/verb_hosts eon-reconfigure.yml</codeblock></li>
       </ol></p>
   </body>
 </topic>

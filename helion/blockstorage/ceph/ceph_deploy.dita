@@ -18,7 +18,6 @@
             href="deploy_monitor_stand_alone_node.dita#topic_ah5_4yx_qt">Install a monitor service
             on a dedicated resource node</xref>.</li>
       </ul>
-      <p/>
     </section>
     <section>
       <title id="install-procedure">Installation Procedure</title>
@@ -38,10 +37,83 @@
               Model</xref>. </li>
           <li>Edit the file <codeph>disks_osd.yml</codeph> and enter the details for the additional
             disks meant for OSD data and journal
-              filesystems.<codeblock>vi <codeph>disks_osd.yml</codeph></codeblock><p><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>How
-              to edit osd.yml file??<?oxy_custom_end?></p><note>Ensure that disks designated to be
-              used for the OSD data and journal storage must be in a clean state (i.e. any existing
-              partitions must be deleted).</note></li>
+              filesystems.<codeblock>vi <codeph>disks_osd.yml</codeph></codeblock><p>A sample of
+                <codeph>disks_osd.yml</codeph> is as
+              follows:</p><codeblock>disk-models:
+  - name: DISK_SET_OSD
+    # two disk node; remainder of disk 1 and all of disk 2 combined in single VG
+    # VG is used to create three logical vols for /var, /var/log, and /var/crash
+    device-groups:
+      - name: ceph-osd-data-and-journal
+        devices:
+          - name: /dev/sdb
+        consumer:
+           name: ceph
+           attrs:
+             usage: data
+             journal_disk: /dev/sdc
+      - name: ceph-osd-data-and-shared-journal-set-1
+        devices:
+          - name: /dev/sdd
+        consumer:
+           name: ceph
+           attrs:
+             usage: data
+             journal_disk: /dev/sdf
+      - name: ceph-osd-data-and-shared-journal-set-2
+        devices:
+          - name: /dev/sde
+        consumer:
+           name: ceph
+           attrs:
+             usage: data
+             journal_disk: /dev/sdf</codeblock><p>The
+              above sample file contains three OSD nodes and two journal disk.</p><p>The disk model
+              has the following fields:</p><p>
+              <simpletable id="simpletable_dmf_dcm_rt">
+                <strow>
+                  <stentry><b>device-groups</b></stentry>
+                  <stentry>There can be several device groups. This allows different sets of disks
+                    to be used for different purposes.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>name</b></stentry>
+                  <stentry>This is an arbitrary name for the device group. The name must be
+                    unique.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>devices</b></stentry>
+                  <stentry>This is a list of devices allocated to the device group. A
+                      <codeph>name</codeph> field containing <codeph>/dev/sdb</codeph>,
+                      <codeph>/dev/sdd</codeph>, and <codeph>/dev/sde</codeph> indicates that the
+                    device group is used by Ceph.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>consumer</b></stentry>
+                  <stentry>This specifies the service that uses the device group. A
+                      <codeph>name</codeph> field containing <b>ceph</b> indicates that the device
+                    group is used by Ceph.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>attrs</b></stentry>
+                  <stentry>This is the list of attributes.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>usage</b></stentry>
+                  <stentry>There can be several use of devices for a particular service. In the
+                    above sample, <codeph>usage</codeph> field contains <b>data</b> which indicates
+                    that the device is used for data storage.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>journal_disk</b></stentry>
+                  <stentry>It is to used to capture journal data. You can share the journal disk
+                    between two nodes.</stentry>
+                </strow>
+              </simpletable>
+            </p><p><b>How to edit osd.yml
+              file</b><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>??<?oxy_custom_end?></p><note>Ensure
+              that disks designated to be used for the OSD data and journal storage must be in a
+              clean state (i.e. any existing partitions must be deleted).</note></li>
           <li>Editable parameters for Ceph are available in the following locations:<ul
               id="ul_jbn_nj5_kt">
               <li><codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph><p>In the
@@ -65,8 +137,8 @@
                   pools created by HP Helion OpenStack.</p>
               </li>
             </ul></li>
-          <li> Commit your configuration to a <xref href="../../using_git.dita">local
-              repository</xref>:<codeblock>cd ~/helion/hos/ansible
+          <li> Commit your
+              configuration<codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock><note>
               Enter your commit message &lt;commit message></note></li>
