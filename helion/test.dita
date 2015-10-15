@@ -51,5 +51,24 @@
         </strow>
       </simpletable>
     </p>
+    <simpletable frame="all" relcolwidth="1.0* 1.0*" id="simpletable_sjq_rvq_rt">
+      <sthead>
+        <stentry>test</stentry>
+        <stentry>test2</stentry>
+      </sthead>
+      <strow>
+        <stentry>blah</stentry>
+        <stentry/>
+      </strow>
+      <strow>
+        <stentry/>
+        <stentry/>
+      </strow>
+      <strow>
+        <stentry/>
+        <stentry/>
+      </strow>
+    </simpletable>
+    <p>test three</p>
   </body>
 </topic>
