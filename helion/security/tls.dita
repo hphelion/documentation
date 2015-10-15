@@ -5,9 +5,7 @@
   <body>
 
     <section id="intro">
-      <p>
-        <note><b>THIS DOCUMENT IS IN NO WAY READY FOR GA AND NEEDS MUCH UPDATING.</b></note>
-      </p>
+      <p/>
       
       <p>The Transport Layer Security (TLS) protocol, successor of SSL, provides the mechanisms to
         ensure authentication, non-repudiation, confidentiality, and integrity of user
@@ -16,80 +14,117 @@
         management network. All traffic to OpenStack services coming in on the public endpoints are
         secured using TLS connections.</p>
       <p/>
-
-
-
     </section>
-    <section id="TLS_termination"><title>TLS termination for a public endpoint VIP </title> HP
-      Helion OpenStack&#174; 2.0 supports fully qualified domain names (FQDN) for public endpoints.
-      Open the following file and change components to tls-components in
-      /home/stack/helion/my_cloud/definition/data/network_groups.yml load-balancers:
-      <codeblock>   - provider: ip-cluster
+<section> All of the HP Helion OpenStack 2.0 example cloud models ship with TLS enabled on the
+      public API. After installing, you must decide if you want to use a fully qualified domain name
+      (FQDN) or IP addresses for the Public URLs. Because this can't be changed after deployment we
+      ship the examples in a state where they will fail when the config processor is run unless you
+      take one of these actions: <ul id="ul_sdj_qfq_rt">
+        <li>Comment out the "external-name:" line in
+          /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that IP addresses are
+          used) </li>
+        <li>Assign a name to "external-name:" line in
+          /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that an FQDN is
+          used)</li>
+      </ul>
+      <p>You must also supply the name of a certificate file that matches your choice above. If you
+        are using IP addresses, you won't know the IP address until after the config processor has
+        run, but you can obtain it after running the config processor and before deployment. So the
+        sequence would be:</p>
+      <b>If using a FQDN:</b>
+      <ol id="ol_ngj_qfq_rt">
+        <li> Create or obtain a certificate to match the domain name you are going to use </li>
+        <li> Copy it to <b>helion/my_cloud/config/tls/certs/</b>
+        </li>
+        <li>Edit <b>network_groups.yml </b>(as part of the general set of edits they have to make to
+          the example) to set the values for "external-name" and "cert-file" </li>
+        <li>Commit your changes to git:
+          <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "My config or other commit message"</codeblock></li>
+         <li>Run the config
+          processor:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+        <li>Continue with the deployment as usual.</li>
+      </ol>
+      <b>If using IP addresses for external ULRs: </b><ol id="ol_y3j_qfq_rt">
+        <li>Edit <b>network_groups.yml</b> to comment out the "external-name" line </li>
+        <li>Commit your changes to git and run the configuration processor as in steps 4 and 5
+          above</li>
+        <li>Note the IP address used for the public URLs (from
+          <b>my_cloud/info/address_info.ym</b>l) </li>
+        <li>Create or obtain a certificate tied to this address </li>
+        <li>Copy the certificate (containing both public and private keys) to
+            <b>helion/my_cloud/config/tls/certs/ </b></li>
+        <li>Edit <b>network_groups.yml </b>to set the value for the name of the "cert-file"</li>
+        <li>Again, commit your changes to git and run the configuration processor as in steps 4 and
+          5 above</li>
+        <li>Continue with the deployment as usual</li>
+      </ol> Note that the certificate that is installed by default, "my-public-cert", is linked to
+      the name "myhelion.test". It is possible to deploy the system without generating or
+      configuring a new certificate and come back and change it later, but access to the public URLS
+      will have to use the "--insecure" flag to avoid "certificate mismatch" errors.</section>
+    <section> Here is the relevant section of
+      <b>network_groups.yml</b>.<codeblock> load-balancers: 
+     - provider: ip-cluster
      name: extlb                      # This is the external load balancer.
-     external-name: myhelion.test     # change this to a resolvable FQDN
+     external-name: myhelion.test     # change this to a resolvable FQDN or comment out if not using
      tls-components:
         - default
      roles:
         - public
-          cert-file: my-public-cert   # this cert should match the FQDN for authenticated TLS to work</codeblock>
-      What this configuration means: <dl>
+          cert-file: my-public-cert   # this cert should match the FQDN for authenticated TLS to work</codeblock></section>
+    <section id="TLS_termination">
+      <title>Definitions</title>
+      <dl>
         <dlentry>
           <dt>name: extlb</dt>
-          <dd>The external Loadbalancer (LB)</dd>
+          <dd>The external load balancer</dd>
         </dlentry>
         <dlentry>
           <dt>external-name:</dt>
           <dd>This name will be used in place of the external VIP address. This name can be an FQDN.
-            This will be registered in the public endpoints of the services. The myhelion.test has
-            to be</dd>
+            This will be registered in the public endpoints of the services. As noted above,
+            myhelion.test should be changed to your FQDN</dd>
         </dlentry>
         <dlentry>
           <dt>tls-components:</dt>
-          <dd>This list of services will be put behind TLS. Note this is only being done for the LB
-            in question, which is the external LB. The components in ‘default’ are those services
-            defined under service-components in data/control_plane.yml. If you want to have a finer
-            granularity, you can replace default with a list of individual components, as in:
-            <codeblock>tls-components: - 'horizon' </codeblock>
+          <dd>This list of services will be put behind TLS. Note this is only being done for the
+            load balancer in question, which is the external load balancer. The components in
+            'default' are those services defined under service-components in data/control_plane.yml.
+            If you want to have a finer granularity, you can replace default with a list of
+            individual components, such as: <codeblock>tls-components: - 'horizon' </codeblock>
           </dd>
         </dlentry>
         <dlentry>
           <dt>cert-file:</dt>
           <dd> the default my-public-cert is already part of the playbook but you can specify your
             own name. When you specify your own you also need to have the certificate copied in
-            ~/helion/my_cloud/config/tls/certs on the deployer. </dd>
+              <b>~/helion/my_cloud/config/tls/certs</b> on the deployer, as notd above. </dd>
         </dlentry>
       </dl>
-      <note>Do not enable TLS to the internal loadbalancer. </note></section>
+      <note>Do not enable TLS to the internal load balancer. </note>
+    </section>
+    <section><title>Disabling TLS</title>If you don't want to use TLS, then you should change "tls-components" to "components"
+      in <b>network_groups.yml</b>. Additionally, if you have a <b>network_groups.yml</b> file from
+      a previous installation, you won't have TLS enabled unless you change "components" to
+      "tls-components" in that file. </section>
     <section id="configure_cipher">
       <title>Configuring the cipher suite for public endpoints</title> We have set the default
       cipher suite to be: <codeph>HIGH:!aNULL:!eNULL:!DES:!3DES</codeph>. This is a recommended
       setting from the <xref
         href="http://docs.openstack.org/security-guide/secure-communication/introduction-to-ssl-and-tls.html"
-        format="html" scope="external">OpenStack documentation site</xref>.   You may override this.
-      Open <b>config/haproxy/defaults.yml</b> and edit it. The parameters would be under
-      haproxy_globals list.
+        format="html" scope="external">OpenStack documentation site</xref>. You may override this.
+      To do so, open <b>config/haproxy/defaults.yml</b> and edit it. The parameters can be found
+      under haproxy_globals list.
       <codeblock>- "ssl-default-bind-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"
 - "ssl-default-server-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"</codeblock>
       Make the changes as needed. It's best to keep the two options identical. </section>
-    <section id="new_cert"><title>Installing a new certificate</title> You should obtain your own
-      certificate and install it in the cloud. When this certificate is ready, please do the
-      following and rerun the config-processor and reconfigure. Copy the certificate (containing
-      both public and private key) to <b>helion/my_cloud/config/tls/certs/ directory</b> </section>
-    <section>Update the new certificate filename in cert-file in
-        <b>helion/my_cloud/definition/data/network_groups.yml</b>. <codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
-      <p>Commit your changes to git:</p>
-      <codeblock>cd ~/helion/hos/ansible
-git add -A
-git commit -m "My config or other commit message"</codeblock>
-      <p>Rerun the config processor:</p>
-      <codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
-    </section>
     
-    <section><title>Testing public endpoints</title> The following write up is for people trying to
-      test the public endpoints using the bundled test certificate with a virtual cloud. There are
-      three usecases here. <ul id="ul_z51_djg_rt">
+    
+    <section><title>Testing public endpoints using the test certificate with a virtual cloud</title>
+      The following write up is for people trying to test the public endpoints using the bundled
+      test certificate with a virtual cloud. There are three use cases here. <ul id="ul_z51_djg_rt">
         <li>Access public endpoints from the deployer </li>
         <li>Access public endpoints from the machine hosting the virtual cloud </li>
         <li>Access public endpoints from a machine other than the machine hosting the virtual cloud
@@ -97,20 +132,20 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
       </ul>All these cases reduce to the following steps <ol id="ol_ay1_djg_rt">
         <li>Have a name resolver for myhelion.test - It could /etc/hosts or dnsmasq reading from a
           hosts file </li>
-        <li>Install the ca certificate that signed the test server certificate. This file can be
-          found in the deployer under roles/tls-trust/files/frontend_cacert.pem. This file is not
-          symlinked via the config directory to customers because we generally don't need the CA
+        <li>Install the CA certificate that signed the test server certificate. This file can be
+          found in the deployer under <b>roles/tls-trust/files/frontend_cacert.pem</b>. This file is
+          not symlinked via the config directory to customers because we generally don't need the CA
           certificate signing the external certificate inside the cloud. </li>
       </ol>
       <b>Accessing public endpoints from the deployer</b>
       <ol id="ol_q1b_djg_rt">
-        <li>Make an entry for the vip inside the /etc/hosts file pointing to myhelion.test </li>
-        <li>run the playbook to install ca certificate.
+        <li>Make an entry for the VIP inside the /etc/hosts file pointing to myhelion.test </li>
+        <li>Run the playbook below to install the certificate.
           <codeblock>ansible-playbook -i hosts/verb_hosts tls-trust-deploy.yml</codeblock></li>
       </ol>
       <b>Accessing public endpoints from the machine hosting the virtual cloud</b>
       <ol id="ol_ddb_djg_rt">
-        <li>Make an entry for the vip inside the /etc/hosts file pointing to myhelion.test </li>
+        <li>Make an entry for the VIP inside the /etc/hosts file pointing to myhelion.test </li>
         <li>Copy the CA certificate from the
           deployer:/home/stack/scratch/ansible/next/hos/ansible/roles/tls-trust/files/frontend_cacert.pem
           to /usr/local/share/ca-certificates/helion-ca.crt </li>
@@ -127,7 +162,8 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
       example if I want to do 'nova list' I may need port 5000 (keystone) and port 8774 (nova-api),
         <ol id="ol_ofb_djg_rt">
         <li>Install haproxy with apt-get </li>
-        <li>Open /etc/haproxy/haproxy.cfg and append the following sections to the existing content:
+        <li>Open<b> /etc/haproxy/haproxy.cfg</b> and append the following sections to the existing
+          content:
           <codeblock>listen keystone-5000
       option ssl-hello-chk
       mode tcp
