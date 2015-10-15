@@ -152,7 +152,7 @@
    <keydef keys="pubCloudShort">
       <topicmeta>
          <keywords>
-            <keyword>HP Public Cloud</keyword>
+            <keyword>Helion Public Cloud</keyword>
          </keywords>
       </topicmeta>
    </keydef>
@@ -173,7 +173,7 @@
    <keydef keys="prodShort">
       <topicmeta>
          <keywords>
-            <keyword>HCF</keyword>
+            <keyword>Helion Cloud Foundry</keyword>
          </keywords>
       </topicmeta>
    </keydef>
