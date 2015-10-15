@@ -39,7 +39,8 @@
       <title>Nova Features</title>
       
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="NovaTable">
+        <!--<table frame="all" rowsep="1" colsep="1" id="NovaTable">-->
+        <table rowsep="1" colsep="1" id="NovaTable">
           <title>Nova Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
