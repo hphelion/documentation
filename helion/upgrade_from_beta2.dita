@@ -192,7 +192,13 @@ disk-models:
     <section><title>Firewall Settings</title> The cloudConfig.yml file can be update to
       enable/disable the setting of firewall rules as follows: The above example enables the setting
       of firewalls according the networking requirements of each service on a node; the default is
-      for this to be enabled. see file <p>HP Helion OpenStack 2.0 includes the feature to add
+      for this to be enabled. see file 
+      
+      <p><xref
+        href="../html/cloud_config_yml.html" format="html">See changes to
+        cloudConfig.yml</xref></p>
+     
+      <p>HP Helion OpenStack 2.0 includes the feature to add
         firewall rules for enabling access between services across the deployed cloud. The following
         is an example of a firewall rules file:</p>
       <codeblock>---

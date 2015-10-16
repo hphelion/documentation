@@ -1,0 +1,41 @@
+<html><head>
+
+<style type="text/css">
+.hlt {
+background-color: #D0E1E1;
+}
+body {
+  font-family: sans-serif;
+}
+</style>
+
+
+</head>
+  <title></title>
+  <body>   
+<h3>cloudConfig.yml</h3>                          <h3><a href="#" onClick="history.go(-1); return false;">Return to Upgrade</a></h3>                                                        
+    <pre> 
+
+<b>Before</b>                                                         <b>After</b>
+
+---                                                                ---
+  product:                                                           product:
+    version: 2                                                         version: 2
+  cloud:                                                             cloud:
+    name: padawan                                                      name: padawan
+    hostname-data:                                                     hostname-data:
+        host-prefix: padawan                                               host-prefix: padawan
+        member-prefix: -m                                                  member-prefix: -m
+    data-dir: data                                              <<span class="hlt">              </span>
+    ntp-servers:                                                       ntp-servers:
+      - ntp.hp.net                                                       - ntp.hp.net
+    dns-settings:                                                      dns-settings:
+      nameservers:                                                       nameservers:
+        - 192.168.121.1                                                    - 192.168.121.1
+                                                                ><span class="hlt">              
+                                                                >      firewall-settings:
+                                                                >          enable: true
+                                                                >          # log dropped packets
+                                                                >          logging: true</span>
+</pre></body>
+</html>
