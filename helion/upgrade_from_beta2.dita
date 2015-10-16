@@ -4,7 +4,7 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Upgrading from Beta 2</title>
   <body>
    <section>
-      <title>Model Changes required before Upgrading from Beta2 to 2.0</title>
+      <title>Model changes required before upgrading from Beta2 to HP Helion OpenStack 2.0</title>
       <p>After running the hos-init.bash script (or vagrant provision in a virtual environment), the
         cloud model from the original Beta2 deployment must be updated prior to running the upgrade
         to HOS 2.0. The exact changes depend on the original deployed cloud model. To cover the
@@ -32,12 +32,138 @@
         deployer node. Without this change, the upgrade of the dedicated deployer node will fail on
         an initial check of the status of these services. Add lifecycle-manager-target to the list
         of common-service-components. </p>
-     <xref href="../control_plane_yml.html" format="html">See changes to
-        control_plane.yml</xref>
+      <xref href="../control_plane_yml.html" format="html">See changes to control_plane.yml</xref>
     </section> 
+    <section>Add a baremetal node entry for the deployer node to the servers list 
+    in servers.yml and assign it a new role, shown as HLM-ROLE in the linked page:</section>
+    <section>Add the new HLM-ROLE role to the list of server-roles, e.g. to server_roles.yml. This role is required 
+      to differentiate the single dedicated HLM node from the remaining target nodes in the server allocation, in the linked page:Note that in this example, a different interface model and disk model are defined for the HLM role as the HLM node will typically differ from the cloud nodes in this regard
+      – this is covered in later sections on "Dedicated Deployer/HLM network" and "Separate disk model for Dedicated Deployer/HLM node".</section>
+    <section><title>Shared Deployer/HLM Node</title>
+      
+      
+      For Beta2 clouds using a shared deployer/HLM node, the following changes are required to add the new lifecycle-manager and lifecycle-manager-target service components into the cloud model:
+      
+      Add lifecycle-manager service component to a control plane cluster. Note that while the lifecycle-manager is depicted as existing across the cluster, for HOS 2.0, only one of these nodes can serve as the deployer/HLM node (the first node deployed using the HOS iso), i.e. HA of the deployer/HLM is not supported. 
+      Add lifecycle-manager-target to the list of common-service-components.
+      Change the now deprecated resource-nodes section to resources and remove the nova-kvm service component, which is redundant (nova-compute-kvm covers what is required). NOTE: WILL REUSE CONTROLPLANE_YML.HTML
+    </section>
+    
+    <section><title>Dedicated Deployer/HLM Network</title>
+      
+      
+      For Beta2 clouds deployed using a dedicated network for deployer/HLM traffic, the following sets of changes are required to represent this in the cloud model:
+      
+      <p>Add a new network group (named HLM below) to network-groups (e.g. in network_groups.yml): see linked file
+      </p>Add a new network (named HLM-NET below) to networks (e.g. in net_global.yml) with this network as a member of of the above-defined HLM network group: see linked file
+      <p>Add a new interface model (named HLM-INTERFACES below) to interface-models (e.g. in interfaces_set_1.yml), identifying the interface assigned for carrying HLM traffic; also need to assign the interface used for HLM traffic in the pre-existing interface models used for target cloud nodes (in this example, all target cloud nodes are 
+        covered in the same interface model file): see file</p>
+      <p>Add the new HLM-NET network to the list of global networks (e.g in server_groups.yml): see file</p>
+    </section>
+    <section><title>Shared Network for Deployer/HLM traffic
+    </title> No changes are required to an existing Beta2 model to represent this network setup.</section>
+    <section><title>Separate disk model for the Dedicated/HLM Node</title>
+      
+      
+      A separate disk model will be typically required for the dedicated HLM node; this should be added to disk-models, as done in the following, which uses a new yaml file for the HLM disk model definition (disks_hlm.yml). This disk model also needs to be referenced in the appropriate role, as shown above in the "Dedicated Deployer/HLM Node" section. The new yaml file is shown below:
+   <codeblock>
+disk-models:
+- name: HLM-DISKS
+  volume-groups:
+  # The policy is not to consume 100% of the space of each volume group.
+  # 5% should be left free for snapshots and to allow for some flexibility.
+  # sda_root is a templated value to align with whatever partition is really used
+  # This value is checked in os config and replaced by the partition actually used
+  # on sda e.g. sda1 or sda5
+    - name: hlm-vg
+      physical-volumes:
+        - /dev/sda_root
+      logical-volumes:
+        - name: root
+          size: 95%
+          fstype: ext4
+          mount: /
+      consumer:
+        name: os</codeblock>
     
     
     
+    </section>
+    <section><title>Firewall Settings</title>
+      The cloudConfig.yml file can be update to enable/disable the setting of firewall rules as follows: The above example enables the setting of firewalls according the networking requirements of each service on a node; the default is for this to be enabled.
+    see file
+      <p>HOS 2.0 includes the feature to add firewall rules for enabling access between services across the deployed cloud. The following is an example of a firewall rules file:</p>
     
+    <codeblock>---
+  product:
+    version: 2
+#
+# HOS will create firewall rules to enable the required access for
+# all of the deployed services. Use this section to define any
+# additional access.
+#
+# Each group of rules can be applied to one or more network groups
+# Examples are given for ping and ssh
+#
+# Names of rules, (e.g. "PING") are arbitrary and have no special significance
+#
+  firewall-rules:
+    - name: SSH
+      # network-groups is a list of all the network group names
+      # that the rules apply to
+      network-groups:
+      - MGMT
+      rules:
+      - type: allow
+        # range of remote addresses in CIDR format that this
+        # rule applies to
+        remote-ip-prefix:  0.0.0.0/0
+        port-range-min: 22
+        port-range-max: 22
+        # protocol must be one of: null, tcp, udp or icmp
+        protocol: tcp
+    - name: PING
+      network-groups:
+      - MGMT
+      - HLM
+      rules:
+      # open ICMP echo request (ping)
+      - type: allow
+        remote-ip-prefix:  0.0.0.0/0
+        # icmp type
+        port-range-min: 8
+        # icmp code
+        port-range-max: 0
+        protocol: icmp</codeblock>
+    </section>
+    <section>
+      <title>Testing an Upgrade</title>
+      Starting point is working deploy of beta2 release.
+      Download the new ISO e.g. wget  http://tarballs.gozer.ftclab.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-572/hLinux-cattleprod-amd64-blaster-netinst-20151005-hlm.2015-10-12T07:28:47_ec1186b.iso
+      Log in to the deployer node as the user you created during the beta2 deployment, and mount the GA install media at /media/cdrom, for example:
+      sudo mount hLinux-cattleprod-amd64-blaster-netinst-20151005-hlm.&lt;build-date_sha1>.iso /media/cdrom
+        Unpack the following tarball: Note this file name will change:
+        <codeblock>tar faxv /media/cdrom/hos/hos-2.0.0-rc1-20151012T062322Z.tar</codeblock>
+        
+        Run the included initialisation script to update the deployer:
+        <codeblock>~/hos-2.0.0-b.rc1/hos-init.bash</codeblock>
+        Prepare the new Ansible tree for the upgrade run:
+        Change all the model files to the new format (sad) This is documented here.
+        Resolve any merge conflicts that may have arisen:
+        <codeblock>cd ~/helion
+        git status</codeblock>
+        
+        Run the config processor:
+        <codeblock>cd ~/helion/hos/ansible
+        ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
+        Run ready deployment script:
+        <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
+        Run the upgrade playbook:
+        cd ~/scratch/ansible/next/hos/ansible
+        <codeblock>ansible-playbook -i hosts/verb_hosts hlm-upgrade.yml</codeblock>
+      
+      
+      
+    </section>
   </body>
 </topic>
