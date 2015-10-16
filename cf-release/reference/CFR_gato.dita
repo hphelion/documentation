@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
 <reference id="reference_cd3_bs3_rt">
-  <title><keyword keyref="gatoName"/> Command Reference</title>
-  <shortdesc><filepath>gato</filepath> is the <keyword keyref="prodShort"/> administration
+  <title><keyword keyref="adminUtil"/> Command Reference</title>
+  <shortdesc><filepath><keyword keyref="adminUtilCLI"/></filepath> is the <keyword keyref="prodShort"/> administration
     utility.</shortdesc>
   <refbody>
     <section>
-      <note type="note">The following commands apply to <filepath>gato</filepath> version
+      <note type="note">The following commands apply to <filepath><keyword keyref="adminUtilCLI"/></filepath> version
         0.0.0.</note>
       <title>Usage</title>
-      <codeblock><keyword keyref="CLIgato"/> <varname>[global options]</varname> <varname>command</varname> <varname>[command options]</varname> <varname>[arguments...]</varname></codeblock>
+      <codeblock><keyword keyref="adminUtil"/> <varname>[global options]</varname> <varname>command</varname> <varname>[command options]</varname> <varname>[arguments...]</varname></codeblock>
     </section>
     <section>
       <title>Global Options</title>
@@ -60,12 +60,14 @@
               </dlentry>
             </dl></dd>
         </dlentry>
+        <!--
         <dlentry>
           <dt><filepath>inspect</filepath></dt>
           <dd>Detect common problems with your <keyword keyref="prodShort"/> install using
-              <filepath>gato inspect</filepath>.<note type="attention"><b>&lt;INTERNAL NOTE> This
+            <filepath><keyword keyref="adminUtilCLI"/> inspect</filepath>.<note type="attention"><b>&lt;INTERNAL NOTE> This
                 option has not been coded yet.</b></note></dd>
         </dlentry>
+        -->
         <dlentry>
           <dt><filepath>node</filepath></dt>
           <dd>Node management.<ul id="ul_ypb_hy3_rt">
@@ -106,7 +108,7 @@
         <dlentry>
           <dt><filepath>process</filepath></dt>
           <dd>Start, stop, or restart individual processes. Generally not required; use
-              <filepath>gato start|stop|restart</filepath> on roles (sets of processes) instead.<ul
+            <filepath><keyword keyref="adminUtilCLI"/> start|stop|restart</filepath> on roles (sets of processes) instead.<ul
               id="ul_u1j_3gj_rt">
               <li><xref href="#reference_cd3_bs3_rt/process_list" format="dita"><filepath>process
                     list</filepath></xref></li>
@@ -159,20 +161,20 @@
       <title>Command Options</title>
       <dl>
         <dlentry id="gato_config">
-          <dt><filepath>gato config get <varname>[options]</varname>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> config get <varname>[options]</varname>
               <varname>[&lt;component>]</varname><varname>[&lt;key-path>]</varname></filepath></dt>
-          <dt><filepath>gato config set <varname>[options]</varname>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> config set <varname>[options]</varname>
               <varname>&lt;component></varname>
               <varname>&lt;key-path></varname>
               <varname>[&lt;value>]</varname></filepath></dt>
-          <dt><filepath>gato config del <varname>[options]</varname>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> config del <varname>[options]</varname>
               <varname>&lt;component></varname>
               <varname>&lt;key-path></varname></filepath></dt>
-          <dt><filepath>gato config push <varname>[options]</varname>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> config push <varname>[options]</varname>
               <varname>&lt;component></varname>
               <varname>&lt;key-path></varname>
               <varname>&lt;value></varname></filepath></dt>
-          <dt><filepath>gato config pop <varname>[options]</varname>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> config pop <varname>[options]</varname>
               <varname>&lt;component></varname>
               <varname>&lt;key-path></varname>
               <varname>&lt;value></varname></filepath></dt>
@@ -202,7 +204,7 @@
       </dl>
       <dl>
         <dlentry id="node_attach">
-          <dt><filepath>gato node attach <varname>[options]</varname>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> node attach <varname>[options]</varname>
               <varname>&lt;core-ip></varname></filepath></dt>
           <dd>Attach this node to a <keyword keyref="prodShort"/> core node<dl>
               <dlentry>
@@ -228,7 +230,7 @@
       </dl>
       <dl>
         <dlentry id="node_availabilityzone">
-          <dt><filepath>gato node availabilityzone <varname>[options]</varname>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> node availabilityzone <varname>[options]</varname>
               <varname>[&lt;zone>]</varname></filepath></dt>
           <dd>
             <dl>
@@ -241,7 +243,7 @@
           </dd>
         </dlentry>
         <dlentry id="node_list">
-          <dt><filepath>gato node list <varname>[options]</varname></filepath></dt>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> node list <varname>[options]</varname></filepath></dt>
           <dd>List all nodes known to this cluster<dl>
               <dlentry>
                 <dt><filepath>--json</filepath>, <filepath>-j</filepath></dt>
@@ -254,7 +256,7 @@
             </dl></dd>
         </dlentry>
         <dlentry id="node_placementzone">
-          <dt><filepath>gato node placementzone <varname>&lt;add|list|remove></varname>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> node placementzone <varname>&lt;add|list|remove></varname>
               <varname>[options]</varname>
               <varname>[&lt;node-IP>]</varname></filepath></dt>
           <dd>
@@ -263,7 +265,7 @@
           </dd>
         </dlentry>
         <dlentry id="node_remove">
-          <dt><filepath>gato node remove <varname>[--skip-detach]</varname>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> node remove <varname>[--skip-detach]</varname>
               <varname>&lt;node-IP></varname>...</filepath></dt>
           <dd>Remove the node(s) from the cluster<dl>
               <dlentry>
@@ -274,7 +276,7 @@
             </dl></dd>
         </dlentry>
         <dlentry id="node_rename">
-          <dt><filepath>gato node rename <varname>[options]</varname> &lt;hostname></filepath></dt>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> node rename <varname>[options]</varname> &lt;hostname></filepath></dt>
           <dd>
             <dl>
               <dlentry>
@@ -297,7 +299,7 @@
           </dd>
         </dlentry>
         <dlentry id="node_retire">
-          <dt><filepath>gato node retire <varname>[options]</varname></filepath></dt>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> node retire <varname>[options]</varname></filepath></dt>
           <dd>Gracefully retires a DEA node from the cluster. New instances of the apps are started
             on other available DEAs before the retiring DEA is shutdown.<dl>
               <dlentry>
@@ -307,11 +309,11 @@
             </dl></dd>
         </dlentry>
         <dlentry id="op_dhcp">
-          <dt><filepath>gato op dhcp</filepath></dt>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> op dhcp</filepath></dt>
           <dd>Configure this node's networking to use DHCP</dd>
         </dlentry>
         <dlentry id="op_import_from_yaml_files">
-          <dt><filepath>gato op import_from_yaml_files <varname>[--upgrade]</varname>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> op import_from_yaml_files <varname>[--upgrade]</varname>
               <varname>[--new-key-file=&lt;file>]</varname></filepath></dt>
           <dd>Import configuration from YAML files for all processes, deleting and replacing prior configuration.<dl>
               <dlentry>
@@ -325,7 +327,7 @@
             </dl></dd>
         </dlentry>
         <dlentry id="op_import_from_yaml_file">
-          <dt><filepath>gato op import_from_yaml_file <varname>[--upgrade]</varname>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> op import_from_yaml_file <varname>[--upgrade]</varname>
               <varname>[--new-key-file=&lt;file>]</varname>
               <varname>&lt;process></varname></filepath></dt>
           <dd>Import the YAML configuration for a single process, deleting and replacing all prior
@@ -341,7 +343,7 @@
             </dl></dd>
         </dlentry>
         <dlentry id="op_static_ip">
-          <dt><filepath>gato op static_ip <varname>[options]</varname></filepath></dt>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> op static_ip <varname>[options]</varname></filepath></dt>
           <dd>Configures this node to use a static IP. Interactively prompts for inputs if they are
             not specified as options.<dl>
               <dlentry>
@@ -381,12 +383,12 @@
             </dl></dd>
         </dlentry>
         <dlentry id="op_update_hostsfile">
-          <dt><filepath>gato op update_hostsfile</filepath></dt>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> op update_hostsfile</filepath></dt>
           <dd>Updates the <filepath>/etc/hosts</filepath> file with the endpoint URI mapped to the
             cloud controller's internal IP.</dd>
         </dlentry>
         <dlentry id="op_upstream_proxy">
-          <dt><filepath>gato op upstream_proxy <varname>&lt;set|delete></varname>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> op upstream_proxy <varname>&lt;set|delete></varname>
               <varname>[options]</varname></filepath></dt>
           <dd>
             <note type="attention"><b>&lt;INTERNAL NOTE> This option has not been coded
@@ -394,7 +396,7 @@
           </dd>
         </dlentry>
         <dlentry id="process_list">
-          <dt><filepath>gato process list <varname>[options]</varname>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> process list <varname>[options]</varname>
               <varname>[&lt;process>...]</varname></filepath></dt>
           <dd>Lists configured processes and their current running status.<dl>
               <dlentry>
@@ -416,7 +418,7 @@
             </dl></dd>
         </dlentry>
         <dlentry id="process_start">
-          <dt><filepath>gato process <varname>&lt;start|stop|restart></varname>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> process <varname>&lt;start|stop|restart></varname>
               <varname>[options]</varname>
               <varname>[&lt;process>...]</varname></filepath></dt>
           <dd>Starts, stops, or restarts a process.<dl>
@@ -431,7 +433,7 @@
             </dl></dd>
         </dlentry>
         <dlentry id="process_ready">
-          <dt><filepath>gato process ready <varname>[options]</varname>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> process ready <varname>[options]</varname>
               <varname>&lt;process></varname></filepath></dt>
           <dd>Waits for a process to be ready.<dl>
               <dlentry>
@@ -446,7 +448,7 @@
             </dl></dd>
         </dlentry>
         <dlentry id="role_add">
-          <dt><filepath>gato role add <varname>[options]</varname>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> role add <varname>[options]</varname>
               <varname>&lt;role></varname>...</filepath></dt>
           <dd>Enables roles on a node<dl>
               <dlentry>
@@ -476,7 +478,7 @@
             </dl></dd>
         </dlentry>
         <dlentry id="role_remove">
-          <dt><filepath>gato role remove <varname>[options]</varname>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> role remove <varname>[options]</varname>
               <varname>&lt;role></varname>...</filepath></dt>
           <dd>Disables roles on a node<dl>
               <dlentry>
@@ -498,7 +500,7 @@
             </dl></dd>
         </dlentry>
         <dlentry id="role_info">
-          <dt><filepath>gato role info <varname>&lt;role></varname>...</filepath></dt>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> role info <varname>&lt;role></varname>...</filepath></dt>
           <dd>Display info on roles</dd>
         </dlentry>
       </dl>

@@ -58,87 +58,17 @@
          </keywords>
       </topicmeta>
    </keydef>
-   <keydef keys="CLIfile">
-      <topicmeta>
-         <keywords>
-            <keyword>hcf</keyword>
-         </keywords>
-      </topicmeta>
-   </keydef>
-   <keydef keys="gatoName">
+   <keydef keys="adminUtil">
       <topicmeta>
          <keywords>
             <keyword>Gato</keyword>
          </keywords>
       </topicmeta>
    </keydef>
-   <keydef keys="CLIgato">
+   <keydef keys="adminUtilCLI">
       <topicmeta>
          <keywords>
             <keyword>gato</keyword>
-         </keywords>
-      </topicmeta>
-   </keydef>
-   <keydef keys="defaultSysUser">
-      <topicmeta>
-         <keywords>
-            <keyword>hcf</keyword>
-         </keywords>
-      </topicmeta>
-   </keydef>
-   <keydef keys="defaultSysPass">
-      <topicmeta>
-         <keywords>
-            <keyword>hcf</keyword>
-         </keywords>
-      </topicmeta>
-   </keydef> 
-   <keydef keys="mDNShostname">
-      <topicmeta>
-         <keywords>
-            <keyword>hcf-xxxx.local</keyword>
-         </keywords>
-      </topicmeta>
-   </keydef>
-   <keydef keys="testSysName">
-      <topicmeta>
-         <keywords>
-            <keyword>hcf-test</keyword>
-         </keywords>
-      </topicmeta>
-   </keydef> 
-   <keydef keys="installDir">
-      <topicmeta>
-         <keywords>
-            <keyword>hcf-installdir</keyword>
-         </keywords>
-      </topicmeta>
-   </keydef>
-   <keydef keys="sampleMachine">
-      <topicmeta>
-         <keywords>
-            <keyword>hcf</keyword>
-         </keywords>
-      </topicmeta>
-   </keydef>
-   <keydef keys="sampleSecGroup">
-      <topicmeta>
-         <keywords>
-            <keyword>hcf-micro</keyword>
-         </keywords>
-      </topicmeta>
-   </keydef>
-   <keydef keys="docsLongURL">
-      <topicmeta>
-         <keywords>
-            <keyword>http://docs.hpcloud.com/#cloudfoundry/1.0/cloudfoundry.index.html</keyword>
-         </keywords>
-      </topicmeta>
-   </keydef>
-   <keydef keys="docsShortURL">
-      <topicmeta>
-         <keywords>
-            <keyword>http://docs.hpcloud.com/</keyword>
          </keywords>
       </topicmeta>
    </keydef>
