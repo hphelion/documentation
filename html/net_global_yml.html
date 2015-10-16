@@ -1,0 +1,39 @@
+<html><head>
+
+<style type="text/css">
+.hlt {
+background-color: #D0E1E1;
+}
+</style>
+
+
+</head>
+  <title></title>
+  <body>   
+<h3>net_global.yml</h3>                          <h3><a href="#" onClick="history.go(-1); return false;">Return to Upgrade</a></h3>                                                        
+    <pre> 
+
+<b>Before</b>                                                         <b>After</b>
+
+---                                                                ---
+  product:                                                           product:
+    version: 2                                                         version: 2
+  networks:                                                          networks:
+                                                                >      <span class="hlt">- name: HLM-NET
+                                                                >        vlanid: 101
+                                                                >        tagged-vlan: false
+                                                                >        cidr: 192.168.10.0/24
+                                                                >        gateway-ip: 192.168.10.1
+                                                                >        network-group: HLM
+                                                                >                          </span>
+    - name: NET_MGMT                                                   - name: NET_MGMT
+      vlanid: 102                                                        vlanid: 102
+      tagged-vlan: false                                                 tagged-vlan: false
+      cidr: 192.168.245.0/24                                             cidr: 192.168.245.0/24
+      gateway-ip: 192.168.245.1                                          gateway-ip: 192.168.245.1
+      network-group: MGMT                                                network-group: MGMT
+    - name: NET_EXTERNAL_VM                                            - name: NET_EXTERNAL_VM
+      vlanid: 103                                                        vlanid: 103
+      network-group: EXTERNAL_VM                                         network-group: EXTERNAL_VM
+</pre></body>
+</html>

@@ -1,0 +1,57 @@
+<html><head>
+
+<style type="text/css">
+.hlt {
+background-color: #D0E1E1;
+}
+</style>
+
+
+</head>
+  <title></title>
+  <body>   
+<h3>interfaces_set_1.yml</h3>                          <h3><a href="#" onClick="history.go(-1); return false;">Return to Upgrade</a></h3>                                                        
+    <pre> 
+
+<b>Before</b>                                                         <b>After</b>
+
+
+---                                                                ---
+  product:                                                           product:
+    version: 2                                                         version: 2
+  interface-models:                                                  interface-models:
+                                                                >      <span class="hlt"- name: HLM-INTERFACES
+                                                                >        network-interfaces:
+                                                                >
+                                                                >          - name: eth1
+                                                                >            device:
+                                                                >              name: eth1
+                                                                >            network-groups:
+                                                                >              - MGMT
+                                                                >
+                                                                >          - name: eth2
+                                                                >            device:
+                                                                >              name: eth2
+                                                                >            network-groups:
+                                                                >              - HLM
+                                                                >                            </span>
+    - name: INTERFACE_SET_1                                            - name: INTERFACE_SET_1
+      network-interfaces:                                                network-interfaces:
+        - name: eth1                                                       - name: eth1
+          device:                                                            device:
+            name: eth1                                                         name: eth1
+          network-groups:                                                    network-groups:
+            - MGMT                                                             - MGMT
+                                                                ><span class="hlt">                  
+                                                                >          - name: eth2
+                                                                >            device:
+                                                                >              name: eth2
+                                                                >            network-groups:
+                                                                >              - HLM</span>
+        - name: eth3                                                       - name: eth3
+          device:                                                            device:
+            name: eth3                                                         name: eth3
+          network-groups:                                                    network-groups:
+            - EXTERNAL_VM                                                      - EXTERNAL_VM
+</pre></body>
+</html>

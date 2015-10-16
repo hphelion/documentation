@@ -59,15 +59,38 @@
       
       For Beta2 clouds deployed using a dedicated network for deployer/HLM traffic, the following sets of changes are required to represent this in the cloud model:
       
-      <p>Add a new network group (named HLM below) to network-groups (e.g. in network_groups.yml): see linked file
-      </p>Add a new network (named HLM-NET below) to networks (e.g. in net_global.yml) with this network as a member of of the above-defined HLM network group: see linked file
+      <p>Add a new network group (named HLM below) to network-groups (e.g. in network_groups.yml): see linked file</p>
+        <p><xref
+          href="../html/network_groups_yml.html" format="html">See changes to
+          network_groups.yml</xref></p>
+      
+      
+      
+      Add a new network (named HLM-NET below) to networks (e.g. in net_global.yml) with this network as a member of of the 
+      above-defined HLM network group: see linked file
+      <p><xref
+        href="../html/net_global_yml.html" format="html">See changes to
+        net_global.yml</xref></p>
+        
+      
+      
+      
       <p>Add a new interface model (named HLM-INTERFACES below) to interface-models (e.g. in interfaces_set_1.yml), identifying the interface assigned for carrying HLM traffic; also need to assign the interface used for HLM traffic in the pre-existing interface models used for target cloud nodes (in this example, all target cloud nodes are 
         covered in the same interface model file): see file</p>
+      <p><xref
+        href="../html/interfaces_set_1_yml.html" format="html">See changes to
+        interfaces_set_1.yml</xref></p>
+      
+      
+      
+      
       <p>Add the new HLM-NET network to the list of global networks (e.g in server_groups.yml): see file</p>
       <p><xref
-        href="../html/network_groups_yml.html" format="html">See changes to
-        network_groups.yml</xref></p>
-      
+        href="../html/server_groups_yml.html" format="html">See changes to
+        server_groups.yml</xref></p>
+    
+    
+    
     </section>
     <section><title>Shared Network for Deployer/HLM traffic
     </title> No changes are required to an existing Beta2 model to represent this network setup.</section>
