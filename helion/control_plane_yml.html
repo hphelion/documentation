@@ -1,0 +1,135 @@
+<html><head>
+
+<style type="text/css">
+.hlt {
+background-color: #D0E1E1;
+}
+</style>
+
+
+</head>
+  <title></title>
+  <body>   
+<h3>control_plane.yml</h3>                                                        
+    <pre> 
+
+<b>Before</b>                                                         <b>After</b>
+  ---                                                                ---
+    product:                                                           product:
+      version: 2                                                         version: 2
+    control-planes:                                                    control-planes:
+      - name: ccp                                                        - name: ccp
+      region-name: region1                                               region-name: region1
+      failure-zones:                                                     failure-zones:
+        - AZ1                                                              - AZ1
+        - AZ2                                                              - AZ2
+        - AZ3                                                              - AZ3
+      common-service-components:                                         common-service-components:
+                                                                           <span class="hlt">- lifecycle-manager-target</span>
+        - freezer-agent                                                    - freezer-agent
+        <span class="hlt">- logging-producer                                       
+        - monasca-agent</span>                                          
+        - stunnel                                                          - stunnel
+      clusters:                                                          clusters:
+                                                                       <span class="hlt">- name: cluster0
+                                                                           cluster-prefix: c0
+                                                                           server-role: HLM-ROLE
+                                                                           member-count: 1
+                                                                           allocation-policy: strict
+                                                                           service-components:
+                                                                             - lifecycle-manager</span>
+                                                             
+    - id: "1"                                                          - id: "1"
+    name: c1                                                           name: c1
+    server-role: ROLE-CONTROLLER                                       server-role: ROLE-CONTROLLER
+    member-count: 3                                                    member-count: 3
+    allocation-policy: strict                                          allocation-policy: strict
+    service-components:                                                service-components:
+      - ntp-server                                                       - ntp-server
+      - swift-ring-builder                                               - swift-ring-builder
+      - mysql                                                            - mysql
+      - ip-cluster                                                       - ip-cluster
+      - apache2                                                          - apache2
+      - keystone-api                                                     - keystone-api
+      - keystone-client                                                  - keystone-client
+      - rabbitmq                                                         - rabbitmq
+      - glance-api                                                       - glance-api
+      - glance-registry                                                  - glance-registry
+      - glance-client                                                    - glance-client
+      - cinder-api                                                       - cinder-api
+      - cinder-scheduler                                                 - cinder-scheduler
+      - cinder-volume                                                    - cinder-volume
+      - cinder-backup                                                    - cinder-backup
+      - cinder-client                                                    - cinder-client
+      - nova-api                                                         - nova-api
+      - nova-scheduler                                                   - nova-scheduler
+      - nova-conductor                                                   - nova-conductor
+      - nova-console-auth                                                - nova-console-auth
+      - nova-novncproxy                                                  - nova-novncproxy
+      - nova-client                                                      - nova-client
+      - neutron-server                                                   - neutron-server
+      - neutron-ml2-plugin                                               - neutron-ml2-plugin
+      - neutron-vpn-agent                                                - neutron-vpn-agent
+      - neutron-dhcp-agent                                               - neutron-dhcp-agent
+      - neutron-metadata-agent                                           - neutron-metadata-agent
+      - neutron-openvswitch-agent                                        - neutron-openvswitch-agent
+      - neutron-client                                                   - neutron-client
+      - horizon                                                          - horizon
+      - sherpa-api                                                       - sherpa-api
+      - swift-proxy                                                      - swift-proxy
+      - memcached                                                        - memcached
+      - swift-account                                                    - swift-account
+      - swift-container                                                  - swift-container
+      - swift-object                                                     - swift-object
+      - swift-client                                                     - swift-client
+      - heat-api                                                         - heat-api
+      - heat-api-cfn                                                     - heat-api-cfn
+      - heat-api-cloudwatch                                              - heat-api-cloudwatch
+      - heat-engine                                                      - heat-engine
+      - heat-client                                                      - heat-client
+      - openstack-client                                                 - openstack-client
+      - ceilometer-api                                                   - ceilometer-api
+      - ceilometer-collector                                             - ceilometer-collector
+      - ceilometer-agent-central                                         - ceilometer-agent-central
+      - ceilometer-agent-notification                                    - ceilometer-agent-notification
+      - ceilometer-expirer                                               - ceilometer-expirer
+      - ceilometer-common                                                - ceilometer-common
+      - ceilometer-client                                                - ceilometer-client
+      - zookeeper                                                        - zookeeper
+      - kafka                                                            - kafka
+      - vertica                                                          - vertica
+      - storm                                                            - storm
+      - monasca-api                                                      - monasca-api
+      - monasca-persister                                                - monasca-persister
+      - monasca-notifier                                                 - monasca-notifier
+      - monasca-threshold                                                - monasca-threshold
+      - monasca-client                                                   - monasca-client
+      - logging-server                                                   - logging-server
+      - ops-console-web                                                  - ops-console-web
+      - ops-console-monitor                                              - ops-console-monitor
+      - cmc-service                                                      - cmc-service
+      - freezer-api                                                      - freezer-api
+                                                                         <span class="hlt">- logging-producer
+                                                                         - monasca-agent</span>
+    resource-nodes:                                                    resources:
+      - name: compute                                                    - name: compute
+      resource-prefix: compute                                           resource-prefix: compute
+      server-role: ROLE-COMPUTE                                          server-role: ROLE-COMPUTE
+      allocation-policy: any                                             allocation-policy: any
+      service-components:                                                service-components:
+        - ntp-client                                                       - ntp-client
+        - nova-kvm                                           
+        - nova-compute-kvm                                                 - nova-compute-kvm
+        - nova-compute                                                     - nova-compute
+        - neutron-l3-agent                                                 - neutron-l3-agent
+        - neutron-metadata-agent                                           - neutron-metadata-agent
+        - neutron-openvswitch-agent                                        - neutron-openvswitch-agent
+        - neutron-lbaasv2-agent                                            - neutron-lbaasv2-agent
+                                                                           <span class="hlt">- logging-producer
+                                                                           - monasca-agent</span></pre>  
+ 
+
+    
+
+</body>
+</html>
