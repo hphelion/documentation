@@ -1,0 +1,60 @@
+<html><head>
+
+<style type="text/css">
+.hlt {
+background-color: #D0E1E1;
+}
+</style>
+
+
+</head>
+  <title></title>
+  <body>   
+<h3>control_plane.yml</h3>                          <h3><a href="#" onClick="history.go(-1); return false;">Return to Upgrade</a></h3>                                                        
+    <pre> 
+
+<b>Before</b>                                                         <b>After</b>
+---                                                                ---
+  product:                                                           product:
+    version: 2                                                         version: 2
+  network-groups:                                                    network-groups:
+                                                                >      <span class="hlt">- name: HLM
+                                                                >        hostname-suffix: hlm
+                                                                >        component-endpoints:
+                                                                >          - lifecycle-manager
+                                                                >          - lifecycle-manager-target</span>
+                                                                >
+    - name: MGMT                                                       - name: MGMT
+      hostname-suffix: mgmt                                              hostname-suffix: mgmt
+      hostname: true                                                     hostname: true
+      tags:                                                              tags:
+        - neutron.networks.vxlan                                           - neutron.networks.vxlan
+        - neutron.networks.vlan:                                           - neutron.networks.vlan:
+            provider-physical-network: physnet1                                provider-physical-network: physnet1
+        - nova.compute.iscsi                                               - nova.compute.iscsi
+      component-endpoints:                                               component-endpoints:
+        - default                                                          - default
+      routes:                                                            routes:
+        - default                                                          - default
+      load-balancers:                                                    load-balancers:
+        - provider: ip-cluster                                             - provider: ip-cluster
+          name: lb                                                           name: lb
+          components:                                                        components:
+            - default                                                          - default
+          roles:                                                             roles:
+            - internal                                                         - internal
+            - admin                                                            - admin
+        - provider: ip-cluster                                             - provider: ip-cluster
+          name: extlb                                                        name: extlb
+#          external-name: mycloud.org                              #          external-name: mycloud.org
+          components:                                                        components:
+            - default                                                          - default
+          roles:                                                             roles:
+            - public                                                           - public
+          cert-file: my-public-cert                                          cert-file: my-public-cert
+    - name: EXTERNAL_VM                                                - name: EXTERNAL_VM
+      tags:                                                              tags:
+        - neutron.l3_agent.external_network_bridge                         - neutron.l3_agent.external_network_bridge
+
+</pre></body>
+</html>
