@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_database_manage_cli">
+  <title>Managing a Database from the Command Line</title>
+  <body>
+    <p>This topic describes database management tasks that can be performed on the command line.</p>
+    <ul>
+      <li>Configuration Groups</li>
+      <li>Databases</li>
+      <li>Users</li>
+      <li>Metadata</li>
+      <li>Security Groups</li>
+    </ul>
+    <section id="config">
+      <title>Configuration Groups</title>
+    </section>
+    <section id="databases">
+      <title>Databases</title>
+    </section>
+    <section id="users">
+      <title>Users</title>
+    </section>
+    <section id="metadata">
+      <title>Metadata</title>
+    </section>
+    <section id="security">
+      <title>Security Groups</title>
+    </section>
+  </body>
+</topic>

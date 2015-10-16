@@ -15,6 +15,7 @@
       navtitle="Creating a database cluster from Horizon"/>
     <topicref href="2.0/database/devplatform.database-create-cluster-cli.dita"
       navtitle="Creating a database cluster from the command line"/>
+    <topicref href="2.0/database/devplatform.manage-cli.dita"/>
     <topicref href="2.0/database/devplatform.database-attach-ip.dita"
       navtitle="Attach a floating IP to a database instance"/>
     <topicref href="2.0/database/devplatform.database-replicate.dita"/>
