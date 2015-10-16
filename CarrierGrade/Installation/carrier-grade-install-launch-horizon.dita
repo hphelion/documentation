@@ -23,38 +23,15 @@
       verify that the installation was successful.</p>
     <section>
       <title>Import the Horizon browser certificate</title>
-      <p>After applying the Horizon patch, you need to import the Horizon security certificate
-          (<codeph>ca.crt</codeph>) into your browser. The <codeph>ca.crt</codeph> is available in
-        the HLM VM in the <codeph>~/&lt;cloudname></codeph> folder. You can use any file transfer
-        program to move the certificate file from the HLM VM to the local system.</p>
+      <p>You need to import the Horizon security certificate (<codeph>ca.crt</codeph>) into your
+        browser. The <codeph>ca.crt</codeph> is available in the HLM VM in the
+          <codeph>~/&lt;cloudname></codeph> folder. You can use any file transfer program to move
+        the certificate file from the HLM VM to the local system.</p>
       <p>Use the instructions provided by the browser manufacturer to import the
           <codeph>ca.crt</codeph> file. For a list of browsers supported by OpenStack, see <xref
           href="https://wiki.openstack.org/wiki/Horizon/BrowserSupport" format="html"
           scope="external">https://wiki.openstack.org/wiki/Horizon/BrowserSupport</xref>.</p>
       <p>Also, clear the cache from the browser.</p>
-    </section>
-    <section><title>Disabling the root user</title>
-      <p>For security purposes, we strongly recommend disabling root. After the <codeph>root</codeph>
-        user is disabled, you can use another default user account, <codeph>cghelion</codeph> to
-        access the HLM VM and any actions that require root access should be done using
-        <codeph>sudo</codeph>.</p>
-      <p>
-        <ol id="ol_td4_5nw_mt">
-          <li>Log into the HLM host.</li>
-          <li>Execute the following command to run a script that disables the <codeph>root</codeph>
-            user. <codeblock>sudo /root/cg-hlm/dev-tools/disable-root.sh</codeblock></li>
-        </ol>
-      </p>
-      <p>This command will disable the <codeph>root</codeph> user and performs the following tasks:</p>
-      <ul>
-        <li>removes password for root from the /etc/shadow file</li>
-        <li>removes any and all keys in /root/.ssh/authorized_keys file</li>
-        <li>changes PermitRootLogin in /etc/ssh/sshd_config file from "yes" back to default of
-          "without-password"</li>
-        <li>restarts the ssh service so the above config change takes effect immediately</li>
-      </ul>
-      <p>Once this command complete, the <codeph>cghelion</codeph> user should be used .</p>
-      
     </section>
     
     

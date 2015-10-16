@@ -39,8 +39,10 @@
       <p>For more information, see <xref href="carrier-grade-install-verify-vsc.dita#topic10581"
         />.</p>
     </section>
-    <section>The installation creates a VRS-G node as part of the cloud deployment. Use the
-      following command to verify that the VRS-G is active</section>
+  <section><title>Verify the VRS-G Node</title>
+    <p>The installation creates a VRS-G node as part of the cloud
+      deployment. Use the following command to verify that the VRS-G is active.</p>
+  </section>
     <section id="next-step">
       <title>Verify LDAP</title>
       <p>You should verify that LDAP is functioning correctly.</p>

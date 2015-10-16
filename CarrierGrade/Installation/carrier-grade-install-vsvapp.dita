@@ -29,7 +29,7 @@
     <ol>
         <li>Iin the vSphere Client, right-click the VRSvApp and select <b>Edit Settings</b>. </li>
     <li>Select <b>Virtual Machine Options</b>.</li>
-      <li> For each VRSvApp, select Disabled from the tAutomation Level list.  </li>
+      <li> For each VRSvApp, select <b>Disabled from the Automation Level</b> list. </li>
       <li>Click <b>OK</b> to save the settings.  </li></ol>
     </section>
     <section>

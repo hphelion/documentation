@@ -312,7 +312,7 @@ curl -ks -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "
         <li>Login to non-KVM controller0 <!--What is HCG OpenStack controller--><p>
             <codeblock>sudo su -</codeblock>
           </p></li>
-        <li>Source the stackrc file: <pre>source stackrc</pre></li>
+        <!--<li>Source the stackrc file: <pre>source stackrc</pre></li>-->
         <li> Map the organization created in VSD to HCG artifact:<ol id="ol_tdh_s4y_nt">
             <li>Create a net partition with same organization name that <xref href="#topic10581/org"
                 format="dita">you created in VSD</xref>.<p>
