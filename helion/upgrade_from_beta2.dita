@@ -31,8 +31,10 @@
         deployments do not have logging-producer or monasca-agent installed on the dedicated
         deployer node. Without this change, the upgrade of the dedicated deployer node will fail on
         an initial check of the status of these services. Add lifecycle-manager-target to the list
-        of common-service-components. </p>
-      <xref href="../control_plane_yml.html" format="html">See changes to control_plane.yml</xref>
+        of common-service-components. </p><p>Note the differences highlighted in<b>
+          control_plane.yml </b>linked below and make appropriate changes as found in the right-hand
+        column.</p>
+      <xref href="../html/control_plane_yml.html" format="html">See changes to control_plane.yml</xref>
     </section> 
     <section>Add a baremetal node entry for the deployer node to the servers list 
     in servers.yml and assign it a new role, shown as HLM-ROLE in the linked page:</section>
