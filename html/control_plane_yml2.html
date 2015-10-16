@@ -14,39 +14,27 @@ background-color: #D0E1E1;
     <pre> 
 
 <b>Before</b>                                                         <b>After</b>
-  ---                                                                ---
-    product:                                                           product:
-      version: 2                                                         version: 2
-    control-planes:                                                    control-planes:
-      - name: ccp                                                        - name: ccp
-      region-name: region1                                               region-name: region1
-      failure-zones:                                                     failure-zones:
-        - AZ1                                                              - AZ1
-        - AZ2                                                              - AZ2
-        - AZ3                                                              - AZ3
+---                                                                ---
+  product:                                                           product:
+    version: 2                                                         version: 2
+  control-planes:                                                    control-planes:
+    - name: control-plane                                              - name: control-plane
+      region-name: RegionOne                                             region-name: RegionOne
       common-service-components:                                         common-service-components:
-                                                                           <span class="hlt">- lifecycle-manager-target</span>
+                                                                >          <span class="hlt">- lifecycle-manager-target</span>
+        - logging-producer                                                 - logging-producer
+        - monasca-agent                                                    - monasca-agent
         - freezer-agent                                                    - freezer-agent
-        <span class="hlt">- logging-producer                                       
-        - monasca-agent</span>                                          
         - stunnel                                                          - stunnel
       clusters:                                                          clusters:
-                                                                       <span class="hlt">- name: cluster0
-                                                                           cluster-prefix: c0
-                                                                           server-role: HLM-ROLE
-                                                                           member-count: 1
-                                                                           allocation-policy: strict
-                                                                           service-components:
-                                                                             - lifecycle-manager</span>
-                                                             
         - id: "1"                                                          - id: "1"
-          name: c1                                                           name: c1
+          name: cluster1                                                     name: cluster1
           server-role: ROLE-CONTROLLER                                       server-role: ROLE-CONTROLLER
           member-count: 3                                                    member-count: 3
           allocation-policy: strict                                          allocation-policy: strict
           service-components:                                                service-components:
+                                                                >              <span class="hlt">- lifecycle-manager</span>
             - ntp-server                                                       - ntp-server
-            - swift-ring-builder                                               - swift-ring-builder
             - mysql                                                            - mysql
             - ip-cluster                                                       - ip-cluster
             - apache2                                                          - apache2
@@ -81,6 +69,7 @@ background-color: #D0E1E1;
             - swift-account                                                    - swift-account
             - swift-container                                                  - swift-container
             - swift-object                                                     - swift-object
+            - swift-ring-builder                                               - swift-ring-builder
             - swift-client                                                     - swift-client
             - heat-api                                                         - heat-api
             - heat-api-cfn                                                     - heat-api-cfn
@@ -109,27 +98,25 @@ background-color: #D0E1E1;
             - ops-console-monitor                                              - ops-console-monitor
             - cmc-service                                                      - cmc-service
             - freezer-api                                                      - freezer-api
-                                                                               <span class="hlt">- logging-producer
-                                                                               - monasca-agent</span>
-          resource-nodes:                                                    resources:
-            - name: compute                                                    - name: compute
-            resource-prefix: compute                                           resource-prefix: compute
-            server-role: ROLE-COMPUTE                                          server-role: ROLE-COMPUTE
-            allocation-policy: any                                             allocation-policy: any
-            service-components:                                                service-components:
-              - ntp-client                                                       - ntp-client
-              - nova-kvm                                           
-              - nova-compute-kvm                                                 - nova-compute-kvm
-              - nova-compute                                                     - nova-compute
-              - neutron-l3-agent                                                 - neutron-l3-agent
-              - neutron-metadata-agent                                           - neutron-metadata-agent
-              - neutron-openvswitch-agent                                        - neutron-openvswitch-agent
-              - neutron-lbaasv2-agent                                            - neutron-lbaasv2-agent
-                                                                                 <span class="hlt">- logging-producer
-                                                                                 - monasca-agent</span></pre>  
-       
-
-    
-
-</body>
+      resource-nodes:                                           |        <span class="hlt">resources:</span>
+        - name: compute                                                    - name: compute
+          resource-prefix: comp                                              resource-prefix: comp
+          server-role: ROLE-COMPUTE                                          server-role: ROLE-COMPUTE
+          allocation-policy: any                                             allocation-policy: any
+          min-count: 0                                                       min-count: 0
+          service-components:                                                service-components:
+            - ntp-client                                                       - ntp-client
+            - nova-kvm                                          <<span class="hlt">            </span>
+            - nova-compute                                                     - nova-compute
+            - nova-compute-kvm                                                 - nova-compute-kvm
+            - neutron-openvswitch-agent                                        - neutron-openvswitch-agent
+            - neutron-lbaasv2-agent                                            - neutron-lbaasv2-agent
+        - name: vsa                                                        - name: vsa
+          resource-prefix: vsa                                               resource-prefix: vsa
+          server-role: ROLE-VSA                                              server-role: ROLE-VSA
+          allocation-policy: strict                                          allocation-policy: strict
+          min-count: 3                                                       min-count: 3
+          service-components:                                                service-components:
+            - vsa                                                              - vsa
+</pre></body>
 </html>

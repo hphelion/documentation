@@ -41,14 +41,17 @@
     <section>Add the new HLM-ROLE role to the list of server-roles, e.g. to server_roles.yml. This role is required 
       to differentiate the single dedicated HLM node from the remaining target nodes in the server allocation, in the linked page:Note that in this example, a different interface model and disk model are defined for the HLM role as the HLM node will typically differ from the cloud nodes in this regard
       – this is covered in later sections on "Dedicated Deployer/HLM network" and "Separate disk model for Dedicated Deployer/HLM node".</section>
-    <section><title>Shared Deployer/HLM Node</title>
-      
-      
-      For Beta2 clouds using a shared deployer/HLM node, the following changes are required to add the new lifecycle-manager and lifecycle-manager-target service components into the cloud model:
-      
-      Add lifecycle-manager service component to a control plane cluster. Note that while the lifecycle-manager is depicted as existing across the cluster, for HOS 2.0, only one of these nodes can serve as the deployer/HLM node (the first node deployed using the HOS iso), i.e. HA of the deployer/HLM is not supported. 
-      Add lifecycle-manager-target to the list of common-service-components.
-      Change the now deprecated resource-nodes section to resources and remove the nova-kvm service component, which is redundant (nova-compute-kvm covers what is required). NOTE: WILL REUSE CONTROLPLANE_YML.HTML
+    <section><title>Shared Deployer/HLM Node</title> For Beta2 clouds using a shared deployer/HLM
+      node, the following changes are required to add the new lifecycle-manager and
+      lifecycle-manager-target service components into the cloud model: Add lifecycle-manager
+      service component to a control plane cluster. Note that while the lifecycle-manager is
+      depicted as existing across the cluster, for HOS 2.0, only one of these nodes can serve as the
+      deployer/HLM node (the first node deployed using the HOS iso), i.e. HA of the deployer/HLM is
+      not supported. Add lifecycle-manager-target to the list of common-service-components. Change
+      the now deprecated resource-nodes section to resources and remove the nova-kvm service
+      component, which is redundant (nova-compute-kvm covers what is required). <p><xref
+          href="../html/control_plane_yml2.html" format="html">See changes to
+          control_plane.yml</xref></p>
     </section>
     
     <section><title>Dedicated Deployer/HLM Network</title>
