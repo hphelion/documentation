@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ipm_gnt_rt">
+  <title>Removing Object Storage Daemon (OSD) Node </title>
+  <body>
+    <p>Perform the following steps to remove the OSD node:<ol id="ol_v3t_4nt_rt">
+        <li> Login to the deployer node.</li>
+        <li>Make a note of the OSD numbers on the OSD node to be removed, as
+            follows:<codeblock>$ ceph osd tree
+# id    weight  type name       up/down reweight
+-1      6       root default
+-2      3               host padawan-ceph-ccp-ceph0003-mgmt
+0       1                       osd.0   up      1
+3       1                       osd.3   up      1
+6       1                       osd.6   up      1
+-4      3               host padawan-ceph-ccp-ceph0001-mgmt
+1       1                       osd.1   up      1
+4       1                       osd.4   up      1
+7       1                       osd.7   up      1
+-3      3               host padawan-ceph-ccp-ceph0002-mgmt
+2       1                       osd.2   up      1
+5       1                       osd.5   up      1
+8       1                       osd.8   up      1</codeblock><p>For
+            example, to remove the OSD node 'padawan-ceph-ccp-ceph0001-mgmt', the OSD numbers 1, 4
+            and 7 are relevant.</p></li>
+        <li>Create a file name <i>osd-node-to-remove</i> and add the OSD hostname(s) (say in above
+          example <i>padawan-ceph-ccp-ceph0001-mgmt</i>) to the file.</li>
+        <li>Stop the OSDs running on the specific host, by executing below commands
+          :<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ceph-stop.yml --limit @osd-node-to-remove</codeblock></li>
+        <li> For each OSD number (obtained from step #2 above), execute the below
+            commands:<codeblock>ceph osd out &lt;osd-number> --cluster &lt;ceph_cluster>
+ceph auth del osd.&lt;osd-number> --cluster &lt;ceph_cluster>
+ceph osd crush remove osd.&lt;osd-number> --cluster &lt;ceph_cluster> 
+ceph osd rm &lt;osd-number> --cluster &lt;ceph_cluster></codeblock><note>Replace
+            the string &lt;ceph_cluster&gt; with the name of your Ceph cluster (default cluster name
+            is 'ceph').</note></li>
+        <li>Now, remove the OSD host from the Ceph CRUSH map by executing below
+            command:<codeblock>ceph osd crush remove &lt;host-name></codeblock><note> Replace the
+            string &lt;host-name&gt; in the above command.</note></li>
+        <li>Remove the section for the OSD host from
+            <i>~/helion/my_cloud/definition/data/servers.yml</i> file.</li>
+        <li>Commit your
+          configuration<codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "Remove OSD node &lt;host-name>"</codeblock></li>
+        <li>Run the configuration
+          processor:<codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+        <li>Use the playbook below to create a deployment directory:
+          <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        <li>Log in to the OSD node and un-mount the data and journal disks. Also remove the mount
+          instructions for the same disks from the <i>/etc/fstab</i> file.<p> </p></li>
+      </ol></p>
+  </body>
+</topic>

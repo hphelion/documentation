@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_gxm_bwt_rt">
+  <title>Upgrading Ceph Cluster </title>
+  <body>
+    <p>This page describes the update and upgrade operations of Ceph cluster and Ceph client.</p>
+    <p>Perform the following steps to upgrade:<ol id="ol_xdj_hwt_rt">
+        <li>Login to deployer node.</li>
+        <li>Execute the following command to upgrade Ceph
+          cluster:<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts hlm-upgrade.yml</codeblock></li>
+      </ol></p>
+    <p><b>Verifying the cluster after upgrade</b><ol id="ol_agx_swt_rt">
+        <li>Login to deployer node.</li>
+        <li>Execute the following command<codeblock>ceph -s</codeblock><p>Above command should
+            report the health as HEALTH_OK.</p></li>
+        <li>Verify the Ceph version by logging on the Monitor and/or OSD node(s) and executing
+          following command:<codeblock>ceph --version</codeblock><p>Above command should return the
+            version string of the latest package installed on the system.</p></li>
+      </ol></p>
+  </body>
+</topic>

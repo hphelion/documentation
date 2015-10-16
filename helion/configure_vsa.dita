@@ -142,7 +142,7 @@ hplefthand_iscsi_chap_enabled: true
 volume_backend_name: &lt;volume backend name>
 volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
 hplefthand_debug: false</codeblock><p>
-              <!--where,<ul id="ul_swt_2mb_lt"><li>hplefthand_password :  Password given during cluster creation.</li><li>hplefthand_clustername: Name of the VSA cluster.</li><li>hplefthand_api_url: Virtual IP of Store Virtual.</li><li>hplefthand_username: Username given during cluster creation.</li><li>hplefthand_iscsi_chap_enabled : </li><li>volume_backend_name: Name of the backend.</li><li>volume_driver</li><li>hplefthand_debug</li></ul>-->
+              where,<ul id="ul_swt_2mb_lt"><li>hplefthand_password :  Password given during cluster creation.</li><li>hplefthand_clustername: Name of the VSA cluster.</li><li>hplefthand_api_url: Virtual IP of Store Virtual.</li><li>hplefthand_username: Username given during cluster creation.</li><li>hplefthand_iscsi_chap_enabled : </li><li>volume_backend_name: Name of the backend.</li><li>volume_driver</li><li>hplefthand_debug</li></ul>
               <note>HOS 2.0 is expected to support physical lefthand boxes along with VSA deployed
                 on ESX, hyper-v environment</note>
             </p><note> Please enter the parameter values which are specific to your environment.
