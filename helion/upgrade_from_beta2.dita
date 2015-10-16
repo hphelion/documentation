@@ -244,33 +244,26 @@ disk-models:
         protocol: icmp</codeblock>
     </section>
     <section>
-      <title>Testing an Upgrade</title>
-      Starting point is working deploy of beta2 release.
-      Download the new ISO e.g. wget  http://tarballs.gozer.ftclab.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-572/hLinux-cattleprod-amd64-blaster-netinst-20151005-hlm.2015-10-12T07:28:47_ec1186b.iso
-      Log in to the deployer node as the user you created during the beta2 deployment, and mount the GA install media at /media/cdrom, for example:
-      sudo mount hLinux-cattleprod-amd64-blaster-netinst-20151005-hlm.&lt;build-date_sha1>.iso /media/cdrom
-        Unpack the following tarball: Note this file name will change:
-        <codeblock>tar faxv /media/cdrom/hos/hos-2.0.0-rc1-20151012T062322Z.tar</codeblock>
-        
-        Run the included initialisation script to update the deployer:
-        <codeblock>~/hos-2.0.0-b.rc1/hos-init.bash</codeblock>
-        Prepare the new Ansible tree for the upgrade run:
-        Change all the model files to the new format (sad) This is documented here.
-        Resolve any merge conflicts that may have arisen:
-        <codeblock>cd ~/helion
-        git status</codeblock>
-        
-        Run the config processor:
-        <codeblock>cd ~/helion/hos/ansible
-        ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
-        Run ready deployment script:
-        <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
-        Run the upgrade playbook:
-        cd ~/scratch/ansible/next/hos/ansible
-        <codeblock>ansible-playbook -i hosts/verb_hosts hlm-upgrade.yml</codeblock>
-      
-      
-      
+      <title>Testing an Upgrade</title> Starting point is working deploy of beta2 release. Download
+      the new ISO e.g. wget
+      http://tarballs.gozer.ftclab.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-572/hLinux-cattleprod-amd64-blaster-netinst-20151005-hlm.2015-10-12T07:28:47_ec1186b.iso
+      Log in to the deployer node as the user you created during the beta2 deployment, and mount the
+      GA install media at /media/cdrom, for example: sudo mount
+      hLinux-cattleprod-amd64-blaster-netinst-20151005-hlm.&lt;build-date_sha1>.iso /media/cdrom
+      Unpack the following tarball: Note this file name will change:
+      <codeblock>tar faxv /media/cdrom/hos/hos-2.0.0-rc1-20151012T062322Z.tar</codeblock> Run the
+      included initialisation script to update the deployer:
+      <codeblock>~/hos-2.0.0-b.rc1/hos-init.bash</codeblock> Prepare the new Ansible tree for the
+      upgrade run: Change all the model files to the new format (sad) This is documented here.
+      Resolve any merge conflicts that may have arisen:
+      <codeblock>cd ~/helion
+git status</codeblock> Run the config processor:
+      <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
+      Run ready deployment script:
+      <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock> Run the
+      upgrade playbook: cd ~/scratch/ansible/next/hos/ansible
+      <codeblock>ansible-playbook -i hosts/verb_hosts hlm-upgrade.yml</codeblock>
     </section>
   </body>
 </topic>
