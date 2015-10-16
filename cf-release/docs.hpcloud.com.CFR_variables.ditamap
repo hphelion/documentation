@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "../dtd/map.dtd">
 <map>
-   <title>HP Helion Cloud Foundry Variables</title>
+   <title>HPE Helion Cloud Foundry Variables</title>
    <keydef keys="corpLong">
       <topicmeta>
          <keywords>
@@ -19,7 +19,7 @@
    <keydef keys="pubCloudLong">
       <topicmeta>
          <keywords>
-            <keyword>HP Helion Public Cloud</keyword>
+            <keyword>HPE Helion Public Cloud</keyword>
          </keywords>
       </topicmeta>
    </keydef>
@@ -33,7 +33,7 @@
    <keydef keys="prodLong">
       <topicmeta>
          <keywords>
-            <keyword>HP Helion Cloud Foundry</keyword>
+            <keyword>HPE Helion Cloud Foundry</keyword>
          </keywords>
       </topicmeta>
    </keydef>
