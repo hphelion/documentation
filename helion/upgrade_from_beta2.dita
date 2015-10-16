@@ -90,7 +90,12 @@ git commit -m 'convert baremetal info to new style'</codeblock>
     
     
     Add a baremetal node entry for the deployer node to the servers list 
-      in servers.yml and assign it a new role, shown as HLM-ROLE in the linked page:</li></ul></section>
+      in servers.yml and assign it a new role, shown as HLM-ROLE in the linked page:
+        <xref href="../html/servers_yml.html" format="html">See changes to
+          servers.yml</xref>
+      
+      
+      </li></ul></section>
     <section>Add the new HLM-ROLE role to the list of server-roles, e.g. to server_roles.yml. This role is required 
       to differentiate the single dedicated HLM node from the remaining target nodes in the server allocation, in 
       the linked page:Note that in this example, a different interface model and disk model are defined for the HLM

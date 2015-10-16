@@ -1,0 +1,46 @@
+<html><head>
+
+<style type="text/css">
+.hlt {
+background-color: #D0E1E1;
+}
+</style>
+
+
+</head>
+  <title></title>
+  <body>   
+<h3>server_roles.yml</h3>                          <h3><a href="#" onClick="history.go(-1); return false;">Return to Upgrade</a></h3>                                                        
+    <pre> 
+
+<b>Before</b>                                                         <b>After</b>
+
+
+---                                                                ---
+  product:                                                           product:
+    version: 2                                                         version: 2
+  baremetal:                                                         baremetal:
+    netmask: 255.255.255.0                                             netmask: 255.255.255.0
+    subnet: 192.168.10.0                                               subnet: 192.168.10.0
+    server-interface: eth2                                             server-interface: eth2
+  servers:                                                           servers:
+                                                                >     <span class="hlt"> - id: deployer
+                                                                >        ip-addr: 192.168.10.254
+                                                                >        role: HLM-ROLE
+                                                                >        server-group: RACK1
+                                                                >        mac-addr: a4:93:0c:4f:7c:73
+                                                                >        ilo-ip: 192.168.9.2
+                                                                >        ilo-password: password
+                                                                >        ilo-user: admin
+                                                                >                            </span>
+    - id: ccn-0001                                                     - id: ccn-0001
+      ip-addr: 192.168.10.3                                              ip-addr: 192.168.10.3
+      role: ROLE-CONTROLLER                                              role: ROLE-CONTROLLER
+      server-group: RACK1                                                server-group: RACK1
+      mac-addr: b2:72:8d:ac:7c:6f                                        mac-addr: b2:72:8d:ac:7c:6f
+      ilo-ip: 192.168.9.3                                                ilo-ip: 192.168.9.3
+      ilo-password: password                                             ilo-password: password
+      ilo-user: admin                                                    ilo-user: admin
+...
+</pre></body>
+</html>
