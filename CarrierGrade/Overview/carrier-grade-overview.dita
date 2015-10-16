@@ -109,40 +109,49 @@
       <p>For more information, see <xref href="carrier-grade.services-overview.dita">Services
           Overview</xref>.</p>
     </section>
-    <section>
-      <title>Virtual Switching</title>
-      <!--<p>Taken from http://blogs.windriver.com/wind_river_blog/2014/10/wanted-virtual-switching-without-compromise.html. Must rewrite</p>-->
-      <p>Virtual switching is a key function within data centers based on Software Defined
-        Networking (SDN) as well as in telecom infrastructure that leverages Network Functions
-        Virtualization (NFV). </p>
-      <p>In the NFV scenario, for example, the virtual switch (vSwitch) is responsible for switching
-        network traffic between the core network and the virtualized applications or Virtual Network
-        Functions (VNFs) that are running in Virtual Machines (VMs). </p>
-      <p><b>PCI Pass-through</b>.  PCI pass-through is the simplest approach to switching for NFV
-        infrastructure. As explained in detail <xref
-          href="http://libvirt.org/guide/html/Application_Development_Guide-Device_Config-PCI_Pass.html"
-          format="html" scope="external">here</xref>, it allows a physical PCI Network Interface
-        Card (NIC) on the host server to be assigned directly to a guest VM. The guest OS drivers
-        can use the device hardware directly without relying on any driver capabilities from the
-        host OS.</p>
-      <p><b>Single-Root I/O Virtualization (SR-IOV)</b>. Basically, SR-IOV, which is implemented in
-        some but not all NICs, provides a mechanism by which a single Ethernet port can appear to be
-        multiple separate physical devices. This enables a single NIC to be shared between multiple
-        VMs.</p>
-      <p><b>HP DCN Virtual Routing Switch (VRS)</b>. HP DCN VRS is..</p>
-      <p><b> Accelerated vSwitch (AVS)</b>. AVS is integrated into the servers in the KVM region.
-        AVS is an optimization of Open vSwitch (OVS) technology for NFV environments. Open vSwitch
-        is a multilayer software switch licensed under the open source Apache 2 license.</p>
-    </section>
-    <section><title>Installation Options</title>HP Helion OpenStack Carreir Grade has two baremetal
-      installation options depending on your system configuration. It allows you to manage the KVM
-      and VMware ESX<tm tmtype="reg"/> hypervisors and provision virtual machines.<p>You can find
-        more information on the hypervisor options in the <xref
+    <section><title>Virtual
+        Switching</title><!--<p>Taken from http://blogs.windriver.com/wind_river_blog/2014/10/wanted-virtual-switching-without-compromise.html. Must rewrite</p>--><p>Virtual
+        switching is a key function within data centers based on Software Defined Networking (SDN)
+        as well as in telecom infrastructure that leverages Network Functions Virtualization (NFV).
+        </p><p>In the NFV scenario, for example, the virtual switch (vSwitch) is responsible for
+        switching network traffic between the core network and the virtualized applications or
+        Virtual Network Functions (VNFs) that are running in Virtual Machines (VMs). </p><b>HP DCN
+        Virtual Routing Switch (VRS)</b>. HP DCN VRS is..<p><b> Accelerated vSwitch (AVS)</b>. AVS
+        is integrated into the servers in the KVM region. AVS is an optimization of Open vSwitch
+        (OVS) technology for NFV environments. Open vSwitch is a multilayer software switch licensed
+        under the open source Apache 2 license.</p></section>
+    
+  <section><title>Ethernet Interface Types </title><p>You can connect a VM directly to a physical
+        interface using PCI passthrough or SR-IOV. You can choose either method by selecting
+          <codeph>pci-sriov</codeph> or <codeph>pci-passthrough</codeph> as the network type when
+        creating interfaces. <!--From WR Admin Guide.--></p><p>When compared with a PCI Passthtrough
+        Ethernet interface, a SR-IOV Ethernet interface: <ul id="ul_u1d_ffp_rt">
+          <li>Provides benefits similar to those of a PCI Passthtrough Ethernet interface, including
+            lower latency packet processing. </li>
+          <li>Scales up more easily in a virtualized environment by providing multiple VFs that can
+            be attached to multiple virtual machine interfaces.</li>
+          <li>Shares the same limitations, including the lack of support for LAG, QoS, ACL, and live
+            migration.</li>
+          <li>Has the same requirements regarding the VLAN configuration of the access switches. </li>
+          <li>Provides a similar configuration workflow.</li>
+        </ul></p><p>Refer to the KVM Region Administrator Guide for more information on PCI
+        Pass-through and SR-IOV.</p><p><b>PCI Pass-through</b>. A passthrough Ethernet interface is
+        a physical PCI Ethernet NIC on a compute node to which a virtual machine is granted direct
+        access. This minimizes packet processing delays but at the same time demands special
+        operational considerations. For all purposes, a PCI passthrough interface behaves as if it
+        were physically attached to the virtual machine.</p><p><b>SR-IOV</b>. A Single-Root I/O
+        Virtualization (SR-IOV) Ethernet interface is a physical PCI Ethernet NIC that implements
+        hardware-based virtualization mechanisms to expose multiple virtual network interfaces that
+        can be used by one or more virtual machines simultaneously.</p><title>Installation
+        Options</title>HP Helion OpenStack Carreir Grade has two baremetal installation options
+      depending on your system configuration. It allows you to manage the KVM and VMware ESX<tm
+        tmtype="reg"/> hypervisors and provision virtual machines.<p>You can find more information
+        on the hypervisor options in the <xref
           href="../Installation/carrier-grade-technical-overview.dita#topic3485">Technical
           Overview</xref>.</p>
       <b>KVM Topology</b>
       <p>If you install the KVM deployment, you can integrate either HP Storevirtual (VSA) or HP
-        StoreServ (3PAR) storage in the KVM region.</p><ul>
+        StoreServ (3PAR) storage in the KVM region.</p><ul id="ul_il4_qfp_rt">
         <li>With HP StoreVirtual VSA storage <p>HP StoreVirtual VSA software is a Virtual Storage
             Appliance that provides the complete array functionality on top of a Linux KVM
             environment without external hardware. VSA eliminates the need for external shared

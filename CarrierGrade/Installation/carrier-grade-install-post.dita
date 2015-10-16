@@ -20,7 +20,7 @@
       <title>Deploy the Horizon Patch</title>
       <p>After deploying the KVM cloud, on each controller node, apply a patch to incorporate
         specific UI rebranding changes. </p>
-      <p>For more information, see  <xref href="carrier-grade-install-horizon-patch.dita#topic10581"
+      <p>For more information, see <xref href="carrier-grade-install-horizon-patch.dita#topic10581"
           >Deploying the Horizon Patch</xref></p>
     </section>
     <section>
@@ -32,11 +32,20 @@
           >Configuring the DCN Metadata Agent</xref>
       </p>
     </section>
-  
-  <section id="next-step"> <title>Verify LDAP</title>
-      <p>Use the commands to verify that LDAP is functioning correctly.</p>
+    <section>
+      <title>Verify the VSC VMs</title>
+      <p>The installation process creates virtual machines for VSC. VSC VMs are installed and are
+        operational. </p>
+      <p>For more information, see <xref href="carrier-grade-install-verify-vsc.dita#topic10581"
+        />.</p>
+    </section>
+    <section>The installation creates a VRS-G node as part of the cloud deployment. Use the
+      following command to verify that the VRS-G is active</section>
+    <section id="next-step">
+      <title>Verify LDAP</title>
+      <p>You should verify that LDAP is functioning correctly.</p>
       <p>For more information, see <xref href="carrier-grade-install-ldap-verify.dita#topic10581"
           >Verifying the LDAP Deployment</xref></p>
-  </section>
-</body>
+    </section>
+  </body>
 </topic>

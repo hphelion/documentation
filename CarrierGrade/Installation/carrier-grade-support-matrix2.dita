@@ -227,7 +227,7 @@
       <p>The servers, selected from the <xref href="#topic1773/hardware" format="dita">Supported Hardware</xref> lists, must be configured as follows for HP Helion OpenStack
         Carrier Grade.</p>
       <p>One (1) <b>HLM Host</b>. You must have a server with a 40GB Disk and 8,192 MB RAM for the
-        HLM host.</p>
+        HLM host. This server will also host the VSD VM.</p>
       <p id="non-kvm-hos">Three (3) <b>HP Helion OpenStack Controllers.</b> You must have three (3)
         baremetal systems to install the HP Helion OpenStack controllers that meet the following
         requirements: </p>
@@ -266,8 +266,10 @@
     <p>
       <ul>
         <li>Two (2) <b>DCN hosts</b>. You must have: <ul>
-          <li>two (2) baremetal systems for DCN VSC controllers (HA mode) </li>
-          <li>two (2) baremetal systems for DCN VRS-G Software Gateway (HA mode)</li>
+          <li>two (2) baremetal systems for DCN VSC controllers (HA mode) ; this system will host
+                the VSC-VM.</li>
+          <li>two (2) baremetal systems for DCN VRS-G Software Gateway (HA mode); this system will
+                host the VRS-G gateway.</li>
           <li>VRSvApp requirements VRSvApp must be installed. Please Refer to the DCN VSP 3.0 R7
             installation Guide for VRSvApp installation. </li>
         </ul><p>Refer to the DCN documentation for the supported hardware configurations.
@@ -279,8 +281,10 @@
     <p>
         <ul id="ul_s3d_pmx_dt">
           <li>Two (2) <b>ESX hosts</b>. You must have a minimum of two (2) baremetal systems for
-            ESXi hosts. 1 – 4 ESXi clusters are supported. Refer to the ESX documentation for the
-            supported hardware configurations. <ul>
+            ESXi hosts. A minimum of 1 ESX cluster with two nodes. This cluster will host the ESX
+            Compute Proxy. A VRSvApp deployment is required for each cluster.<p>One (1) to four (4)
+              ESXi clusters are supported. Refer to the ESX documentation for the supported hardware
+              configurations.</p><ul id="ul_pl3_glv_rt">
               <li> vSphere Cluster running ESXi 5.5u2 with vMotion enabled.</li>
               <li>1 Virtual Machine Port Group with all Cloud Vlans associated to the Port Group.
               </li>

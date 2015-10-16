@@ -21,7 +21,9 @@
     <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing the
                 KVM + ESX deployment</xref> requires several JSON files that will be used when
             deploying the HLM VM.</p>
-        <p>The <codeph>esx.json</codeph> file contains the following fields:</p>
+        <p>The <codeph>esx.json</codeph> file in the
+                <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the HLM VM contains
+            the following fields:</p>
    <p> <table frame="all" rowsep="1" colsep="1" id="table_c54_dxd_ss">
         <tgroup cols="2">
                     <colspec colnum="1" colname="col1" colwidth="1*"/>
@@ -78,6 +80,14 @@
                         <row>
                             <entry>name</entry>
                             <entry>Name of CLM (Cloud Lab Management) network </entry>
+                        </row>
+                        <row>
+                            <entry>vrsvapp_address</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>VRSdeployment_toolbox_address</entry>
+                            <entry/>
                         </row>
                         <row>
                             <entry namest="col1" nameend="col2"><b>compute_proxy:</b></entry>
@@ -141,9 +151,15 @@
                                  "name": "Trunk Network"
                             }, 
                             "template": {
-                                "username": "cghelion", 
-                                "password": "cghelion", 
-                                "name": "TEMPL-CPV81"
+                                 "username": "cghelion",
+                                 "password": "cghelion",
+                                 "name": "TEMPL-CPV9"
+                            },
+                            "vrsvapp_address": [
+                                 "10.20.x.x",
+                                 "10.20.x.x"
+                             ],
+                             "VRSdeployment_toolbox_address": "10.20.x.x",
                             "compute_proxy": [
                             {
                                 "datacenter": "Datacenter-1",

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4797">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Sample definition.json File for
-        Installing the KVM + ESX Topology</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Sample ccp-dcn-esx.json
+    File for Installing the KVM + ESX Topology</title>
 <prolog>
     <metadata>
         <othermeta name="layout" content="default"/>
@@ -22,50 +22,53 @@
                 KVM + ESX deployment</xref> requires several JSON files that will be used when
             deploying the HLM VM.</p>
 <section id="sample-node-provisionjson-file">
-    <p>The following represents a sample <codeph>definition.json</codeph> file in the
-          <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the HLM VM. The IP
+    <p>The following represents a sample <codeph>ccp-dcn-esx.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;/.hos/</codeph> directory of the HLM VM. The IP
         addresses are masked for security purposes. Use values appropriate for your environment.</p>
             <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
                     the KVM + ESX Deployment</xref>.</p>
 <codeblock>{
-  "cloud": {
-    "environment": "environment.json",
-    "name": "b22",
-    "network-config": ".hos/lnet-control-data.json",
-    "nickname": "base",
-    "properties": "vars",
-    "server-config": "nodes.json"
-  },
-  "control-planes": [
-    {
-      "file": ".hos/ccp-dcn-esx.json",
-      "resource-nodes": [
+    "product": {
+        "version": 1
+    },
+
+    "id": "1",
+    "type": "ccp",
+    "region-name": "memphis",
+    "tiers": [
         {
-          "count": 1,
-          "file": ".hos/ccp-cpx.json"
+            "id": "1",
+            "member-count": 1,
+            "node-type": "dcn-001",
+            "services": [
+                {
+                    "name": "FND-IPT"
+                },
+                {
+                    "name": "ntp-server"
+                },
+                {
+                    "name": "dns-client"
+                },
+                {
+                    "name": "FND-KVM"
+                },
+                {
+                    "name": "DCN-BRG"
+                },
+                {
+                    "name": "DCN-RQ1"
+                },
+                {
+                    "name": "DCN-VSC"
+              }
+            ]
         },
         {
-          "count": 1,
-          "file": ".hos/ccp-vrsg.json"
-        }
-      ]
-    }
-  ],
-  "failure-zones": [
-    {
-      "name": "fz1"
-    },
-    {
-      "name": "fz2"
-    },
-    {
-      "name": "fz3"
-    }
-  ],
-  "product": {
-    "version": 1
-  }
-}</codeblock>
+            "id": "2",
+            "member-count": 3,
+            "node-type": "ccn-001",
+            "services": [</codeblock>
         </section>
 </body>
 </topic>

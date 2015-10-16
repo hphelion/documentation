@@ -45,7 +45,7 @@
       <p>
         <b>Resolution</b>
       </p>
-      <p>Make sure the Glance image has the correct properties set. For example, check that the
+      <p>Make sure the Glance image has the correct  properties set. For example, check that the
         adapter type is <codeph>ide</codeph>. Also, check if gateway and subnet values are correctly
         assigned to VRSvAPPs. </p>
     </section>

@@ -62,7 +62,7 @@
         <li>ESX Cluster with two (2) or more hosts installed with ESXi 5.5 U2 and above</li>
         <li>ESX Cluster should have HA, DRS &amp; Vmotion Enabled</li>
         <li>ESX Cluster should have Shared Storage</li>
-        <li>vCenter is working with the supported versions. One vCenter
+        <li>vCenter is working with the supported versions. One vCenter is
           supported<!-- with HCG 2.0 Build#9-->.</li>
         <li>The CLM and TUL networks must be available to all ESX hosts VMNICs</li>
       </ul>
@@ -127,7 +127,7 @@ Password: cghelion</codeblock>
         <li>Change to the home directory.<codeblock>cd ~</codeblock></li>
 
         <li>Execute the following command to provision and configure the HP Helion OpenStack cloud.
-            <codeblock>hnewcloud  &lt;cloudname&gt; memphis</codeblock><p>Where::</p><ul>
+            <codeblock>hlm define -t memphis &lt;cloudname&gt;</codeblock><p>Where::</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create.<p>The cloud
                 name can be any combination of up to 63 digits, letters, and the <codeph>-</codeph>
                   chracter:<ul id="ul_lz5_rbf_bt">
@@ -144,19 +144,21 @@ Password: cghelion</codeblock>
             <li><codeph>memphis</codeph> is the name of the template to use. The installation kit
               includes a template called <codeph>memphis</codeph> designed to install HP Helion
               OpenStack, specific to the KVM + ESX deployment.</li>
-          </ul><p>The command creates the <codeph>&lt;cloudname&gt;</codeph> directory, which
-            contains several JSON template files. </p></li></ol>
+          </ul><p>The command creates the <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph>
+            directory, which contains several JSON template files. </p></li></ol>
       </section>
     
     <section id="configure-node-provision-json">
       <title>Configure the node-provision JSON file</title>
-      <p>Modify the <codeph>node-provision.json</codeph> file in the <codeph>&lt;cloudname></codeph>
-        directory of the HLM VM. This file supplies input values to the <codeph>hprovision</codeph>
-        script, later in the installation. </p>
+      <p>Modify the <codeph>node-provision.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname></codeph> directory of the HLM VM. This file
+        supplies input values to the <codeph>hprovision</codeph> script, later in the installation. </p>
       <p><b>Note:</b> To see a sample <codeph>node-provision.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-node-json.dita">Sample node-provision.json File for
           Installing the KVM + ESX Topology</xref>.</p>
       <ol id="ol_ub2_xfl_zs">
+        <li>Change to the <codeph>&lt;cloudname&gt;</codeph>
+          directory:<codeblock>cd /var/hlm/clouds/&lt;cloudname&gt;</codeblock></li>
         <li>Edit <codeph>node-provision.json</codeph> file to change only the following fields: 
           <table>
             <tgroup cols="2">
@@ -217,78 +219,80 @@ Password: cghelion</codeblock>
         <codeph>node-provision.json</codeph> file.</p>
     <section id="configure-def-json">
       <title>Configure the definition.json file</title>
-      <p>Modify the <codeph>definition.json</codeph> file in the <codeph>&lt;cloudname></codeph>
-        directory of the HLM VM to define the number of ESX compute proxies required in your
-        environment. You need one proxy per vCenter; make sure this value is set to
-        2<!--set this value to the number of vCenters you have.-->, as shown in the following
-        example.</p>
+      <p>Modify the <codeph>definition.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the HLM VM to define the
+        number of ESX compute proxies required in your environment. You need one proxy per vCenter;
+        make sure this value is set to 2<!--set this value to the number of vCenters you have.-->,
+        as shown in the following example.</p>
       <p><b>Note:</b> To see a sample <codeph>definition.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-def-json.dita#topic4797">Sample definition.json File
           for Installing the KVM + ESX Topology</xref>.<ol id="ol_zzr_khl_zs">
           <li>Set the number of compute systems to 2 for an HA VRS-G installation under control
-            plane.<codeblock>"file": ".hos/ccp-vrsg.json",
-"count": 2
-...
-"file":  ".hos/ccp-vrsg.json",
-"count": 1</codeblock></li>
+            plane.<codeblock>"control-planes": [
+        {
+            "file": ".hos/ccp-dcn-esx.json",
+            "resource-nodes": [
+                {
+                    "file": ".hos/ccp-cpx.json",
+                    "count": 2
+                },
+                {
+                    "file": ".hos/ccp-vrsg.json",
+                    "count": 1
+                }
+ 
+            ]
+        }
+    ]</codeblock></li>
         </ol></p>
     </section>
     <section id="configure-env-json">
       <title>Configure the environment.json file</title>
-      <p>Modify the <codeph>environment.json</codeph> file in the <codeph>&lt;cloudname></codeph>
-        directory of the HLM VM to configure the VLANs and network addresses as appropriate for your
-        environment. Configure the CLM (management), CAN (api), and BLS (blockstore) networks.</p>
+      <p>Modify the <codeph>environment.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the HLM VM to configure
+        the VLANs and network addresses as appropriate for your environment. Configure the CLM
+        (management), CAN (api), and BLS (blockstore) networks.</p>
       <p><b>Note:</b> To see a sample <codeph>environment.json</codeph> file, see one of the
         following: <ul id="ul_smq_yqt_bt">
           <li><xref href="carrier-grade-install-pb-kvm-env-json.dita">For an Unbonded NIC
               Environment</xref>. <p>For each network provide:
-            </p><codeblock>{
+                </p><codeblock>{
               "name": "management",
               "type": "vlan",
               "segment-id": "1551",
               "network-address": {
-              "cidr": "10.200.51.0/24",
-              "start-address": "10.200.51.100",
-              "gateway": "10.200.51.1"
+              "cidr": "10.x.x.x/24",
+              "start-address": "10.x.x.x",
+              "gateway": "10.x.x.x"
               }
-              },        </codeblock></li>
+              },        </codeblock><p><b>Note:</b>
+              In the example, the IP addresses are masked for security purposes. Use values
+              appropriate for your environment.</p></li>
           <li><xref href="carrier-grade-install-pb-kvm-env-json-bonded.dita#topic4797">For a Bonded
               NIC Environment</xref></li>
         </ul></p>
     </section>
-    <section>
-      <title>Congfure the ccp-dcn-esx.json file</title>
-      <p>Modify the <codeph>member-count</codeph> field in the <codeph>ccp-dcn-esx.json</codeph> in
-        the <codeph>~/&lt;cloudname&gt;/.hos/ccp-dcn-esx.json</codeph>  directory of the HLM VM.
-        Make sure the <codeph>member-count</codeph> field in the <codeph>tiers</codeph> section is
-        set to <b>1</b> as shown:</p>
-      <p><!--By default it will be “2”, change to “1” for Build#15.--></p>
-      <codeblock>"tiers": [
-        {
-            "id": "1",
-            "member-count": 1,</codeblock>
-    </section>
     <section id="configure-ansible-json">
       <title>Configure the ansible.json file</title>
-      <p>Modify the <codeph>ansible.json</codeph> file in the <codeph>&lt;cloudname>/vars</codeph>
-        directory of the HLM VM.</p>
+      <p>Modify the <codeph>ansible.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;/vars</codeph> directory of the HLM VM.</p>
       <p>To see a sample <codeph>ansible.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-ansible-json.dita">Sample ansible.json File for
           Installing the KVM + ESX Topology</xref>.</p>
     </section>
     <section id="configure-esx-json">
       <title>Configure the esx.json file</title>
-      <p>Modify the <codeph>esx.json</codeph> file in the <codeph>&lt;cloudname></codeph> directory
-        on the HLM VM. This file is called by the script that installs the HP Helion OpenStack
-        cloud, later in the installation. </p>
+      <p>Modify the <codeph>esx.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory on the HLM VM. This file is
+        called by the script that installs the HP Helion OpenStack cloud, later in the installation. </p>
       <p>To see a sample <codeph>esx.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-esx-json.dita">Sample esx.json File for Installing the
           KVM + ESX Topology</xref>.</p>
     </section>
     <section id="configure-ldap-json">
       <title>Configure the ldap.json file</title>
-      <p>Modify the <codeph>ldap.json</codeph> file in the <codeph>&lt;cloudname>/vars</codeph>
-        directory of the HLM VM.</p>
+      <p>Modify the <codeph>ldap.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;/vars</codeph> directory of the HLM VM.</p>
       <p>To see a sample <codeph>ldap.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-ldap-json.dita">Sample ldap.json File for Installing
           the KVM + ESX Topology</xref>. </p>
@@ -308,17 +312,23 @@ Password: cghelion</codeblock>
             "scope": "private"
       },    </codeblock></p>
     </section>
-    <section id="ccp-dcn-esx-json"><title>Configure the ccp-dcn-esx.json file</title>Update the
-        <codeph>~/&lt;cloudname&gt;/.hos/ccp-dcn-esx.json</codeph> file. Change the field to 1. By
-      default it will be
-      2.<codeblock>"tiers": [
+    <section id="ccp-dcn-esx-json">
+      <title>Configure the ccp-dcn-esx.json file</title>
+      <p>Modify the <codeph>member-count</codeph> field in the <codeph>ccp-dcn-esx.json</codeph> in
+        the <codeph>/var/hlm/clouds/&lt;cloudname&gt;/.hos/</codeph> directory of the HLM VM. Make
+        sure the <codeph>member-count</codeph> field in the <codeph>tiers</codeph> section is set to
+          <b>1</b> as shown:</p>
+      <p><!--By default it will be “2”, change to “1” for Build#15.--></p>
+      <codeblock>"tiers": [
   {
     "id": "1",
-    "member-count": 1,      </codeblock></section>
+    "member-count": 1,      </codeblock>
+    </section>
     <section id="configure-wr-json">
       <title>Configure the wr.json file</title>
       <p><b>For bonded NIC environments</b>, modify the <codeph>wr.json</codeph> file in the
-          <codeph>&lt;cloudname>/vars</codeph> directory on the HLM VM.</p>
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;/&lt;cloudname>/vars</codeph> directory on the
+        HLM VM.</p>
       <p>To see a sample <codeph>wr.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-wr-json.dita">Sample wr.json File for Installing the
           KVM + ESX Topology</xref>. </p>
@@ -356,7 +366,7 @@ Password: cghelion</codeblock>
       <title>Provision the cloud nodes and bring the cloud nodes up</title>
       <ol>
         <li>On the HLM host, use the following script to start the provisioning of the HP Helion
-          OpenStack cloud: <codeblock>hprovision &lt;cloudname&gt;          </codeblock><p>Where:
+          OpenStack cloud: <codeblock>hlm provision &lt;cloudname&gt;          </codeblock><p>Where:
               <codeph>&lt;cloudname&gt;</codeph> is the name of the cloud you created. The script
             takes approximately 15 to 30 minutes.</p><p>This script prepares the bare metal servers
             for the HP Helion OpenStack Carrier Grade cloud installation including the hLinux
@@ -463,35 +473,27 @@ volume_backend_name = &lt;mybackendname3>
 vmware_host_ip = &lt;hostip>
 vmware_host_username = &lt;username>
 vmware_host_password = &lt;password>
-vmware_volume_folder = &lt;volumes_folder>
-vmware_image_transfer_timeout_secs = 7200
-vmware_task_poll_interval = 0.5
-vmware_max_objects_retrieval = 100
+#vmware_volume_folder = &lt;volumes_folder>
+#vmware_image_transfer_timeout_secs = 7200
+#vmware_task_poll_interval = 0.5
+#vmware_max_objects_retrieval = 100
 volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver</codeblock></li>
             <li>Save the file to <codeph>cinder_conf</codeph>.</li>
           </ol>
       </section>
-    <section>
-      <title>Deploy the Configuration Processor Patches</title>
-      <p>Before launching the HP Helion OpenStack cloud in the following section, deploy two patches
-        to update required configuration files. </p>
-      <p>See the README in the download or <xref
-          href="carrier-grade-install-config-patch.dita#topic10581">Deploying the Configuration
-          Processor Patches</xref>.</p>
-    </section>
         
     <section id="hos-cloud">
       <title>Deploy the HP Helion OpenStack cloud</title>
       <ol>
         <li>Run the HP Helion OpenStack Configuration Processor:
-            <codeblock>hcfgproc -d definition.json</codeblock><p>The HP Helion OpenStack
-            Configuration Processor is a script, called <codeph>hcfgproc</codeph>, that is
+            <codeblock>hlm generate –c &lt;cloudname&gt;</codeblock><p>This command runs the HP
+            Helion OpenStack Configuration Processor, a script (<codeph>hcfgproc</codeph>) that is
             incorporated into the installation environment. This command generates the necessary
             configuration for the cloud. </p><p><image
               href="../../media/CGH-2-install-proc-done.png" width="600" id="image_sqd_rpb_kt"
             /></p><p>When the command completes, you will see the following:
             message:</p><codeblock>#################################################################################
-The configuration processor completed successfully.
+The cloud &lt;cloudname> was generated successfully.
 ################################################################################</codeblock><p>To
             view the complete output of the command, see <xref
               href="carrier-grade-install-hcfgproc-output.dita#topic10581"> Output from the hcfgproc
@@ -500,26 +502,23 @@ The configuration processor completed successfully.
             <codeph>net/interfaces.d/eth.cfg</codeph> files to make sure the network settings are
           correct.</li>
         <li>Initialize network interfaces on all the cloud nodes using the following command:
-            <codeblock><codeph>hnetinit &lt;cloudname&gt;</codeph></codeblock><p>Where:
+            <codeblock>hlm netinit –c &lt;cloud name&gt;</codeblock><p>Where:
               <codeph>&lt;cloudname&gt;</codeph> is the name of the cloud you created.</p><p>After
             this command completes, all cloud nodes and CLM network interfaces are configured. The
             output for the command should appear similar to the following:</p><p><image
-              href="../../media/CGH-2-install-hnetinit-output-alpha.png" id="image_tft_r11_1t"
-              width="500"/></p></li>
-        <li>You can use the following command to ping each of the installed nodes:<p>
-            <codeblock>hnetping &lt;cloud name&gt;</codeblock>
-          </p></li>
+              href="../../media/CGH-2-install-hnetinit-output.png" id="image_tft_r11_1t" width="400"
+            /></p><p>The <codeph>hlm netinit</codeph> command also runs a ping on the cloud nodes.
+              </p><p><image href="../../media/CGH-2-install-hnetinit-ping.png" width="300"
+              id="image_qrd_3gw_rt"/></p></li>
       </ol>
     </section>
     <section id="hdeploy"><title>Deploy HP Helion OpenStack</title>
       <ol>
         <li>Use the following command to deploy the HP Helion OpenStack cloud:
-            <codeblock>hdeploy &lt;cloudname&gt;</codeblock><p>This command takes a significant
-            period of time. When this command is complete, the non-KVM cloud installation is
-            complete. Use the following sections to configure the Horizon interface, configure
-            networking, and configure the ESX environment. </p><p><image
-              href="../../media/CGH-2-install-hdeploy-output-alpha.png" width="500"
-              id="image_tgj_fnv_mt"/></p></li>
+            <codeblock>hlm deploy –c &lt;cloudname&gt;</codeblock><p>This command takes a
+            significant period of time. When this command is complete, the non-KVM cloud
+            installation is complete. Use the following sections to configure the Horizon interface,
+            configure networking, and configure the ESX environment. </p></li>
         <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
       </ol>
       <p><b>Note:</b> If the <codeph>hdeploy</codeph> script fails, review the topics in <xref
@@ -530,30 +529,12 @@ The configuration processor completed successfully.
     <section>
       <!--<title>Applying the HLM Port Security Patch</title>This patch secures all ports on the HLM VM. The standard protocol ports will allow inbound access only and the only the cloud nodes will have inbound access to the other ports of the HLM VM.<p>For more information, see the README in the download or <xref href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port Security Patch</xref>. </p>-->
     </section>
-    <section id="role"><title>Deploy the Role Generator Patches</title>After launching the hdeploy command,
-      deploy two following patches to correct the following issues: <ul id="ul_emj_1cb_mt">
-        <li>The floating IP assigned to the HLM VM not pingable with DCNR3 and VSD managed networks. </li>
-        <li>The installation fails due to excessive ESX logs</li>
-      </ul><p>For information, see <xref href="carrier-grade-install-role-patch.dita#topic10581"
-          >Deploying the Role Generator Patches</xref>.</p></section>
     <section>
       <title>Deploy the Networking Patch</title>
       <p>After launching the <codeph>hdeploy</codeph> command,, deploy the a networking patch. </p>
       <p>For more information, see <xref href="carrier-grade-install-network-patch.dita#topic10581"
           >Deploy the Networking Patch</xref>.  </p>
     </section>
-    <section><title>Disable debugging for the ESX Compute Proxy</title>Edit the
-        <codeph>nova.conf</codeph> file on the ESX compute proxy nodes to disable debugging. <p>
-        <ol id="ol_xrc_fmw_mt">
-          <li>Log into each ESX compute proxy node. </li>
-          <li>Edit the <codeph>/etc/nova/nova.conf</codeph> to comment out or change the
-              <codeph>debug</codeph> value to
-            <codeph>false</codeph>.<codeblock>#debug=true
-debug=false</codeblock></li>
-          <li>Execute the following command to restart the compute service:
-            <codeblock>service nova-compute restart </codeblock></li>
-        </ol>
-      </p></section>
     <section id="patch-after">
       <title>Configure LDAP to enable CLI and use Keystone v3</title>
       <p>By default, the HP Helion OpenStack Carrier Grade services are configured to use Keystone

@@ -20,7 +20,7 @@
                 for the required HP DCN Virtualized Services Directory (<i>VSD</i>):</p><ol
                 id="ol_gtd_b1l_2t">
                 <li>Log into the HLM host.</li>
-                <li>Copy the VSD qcow image, named <codeph>VSD-3.2.2_74-hp.qcow2</codeph> and
+                <li>Copy the VSD qcow image, named <codeph>VSD-3.2.3_105-hp.qcow2</codeph> and
                         <codeph>vsd.xml</codeph>, to the <codeph>var/lib/libvirt/images</codeph>
                     directory.</li>
                 <li>Execute the following
@@ -40,7 +40,7 @@ Password: Alcateldc</codeblock>
 IPADDR=10.20.5.21
 NETMASK=255.255.255.0
 GATEWAY=10.20.5.1</codeblock></p></li>
-                <li>Restart Networking using the following command:
+                <li>Restart the Networking service using the following command:
                     <codeblock>service network restart</codeblock></li>
                 <li>Edit the <i>/etc/resolv.conf</i> file with the IP address of the DNS name
                     server:<codeblock>nameserver &lt;ip-address&gt;</codeblock></li>
@@ -51,7 +51,7 @@ NETWORKING=yes
 HOSTNAME=vsd1.dcn-one.helion.cg</codeblock></li>
                 <li>Execute the following command in order for the VSD VM host name to be reflected
                     in the <i>/etc/sysconfig/network</i> file:
-                    <codeblock>service network restart </codeblock></li>
+                    <codeblock>/etc/init.d/network restart </codeblock></li>
                 <li>Exit the VSD VM console session, then log back in. You should see the VSD name
                     in the <i>/etc/sysconfig/network</i> file.</li>
                 <li>Configure an NTP Server for the VSD VM by editing the <i>/etc/ntp.conf</i> file.
@@ -60,10 +60,11 @@ HOSTNAME=vsd1.dcn-one.helion.cg</codeblock></li>
 server 16.110.135.113 </codeblock><p><image
                             href="../../media/CGH-2-ntp-vsd.png" id="image_tth_w2l_2t"/></p></li>
                 <li>Execute the following commands to set the NTP
-                        time:<codeblock>service ntpd stop
-ntpdate &lt;ip-address&gt;
-service ntpd start</codeblock><p>Where
-                        &lt;ip-address&gt; is the address of your NTP server.</p></li>
+                        time:<codeblock>/etc/init.d/ntpd stop
+ntpdate &lt;ntp server>
+/etc/init.d/ntpd start</codeblock><p>Where
+                            <codeph>&lt;ntp server&gt;</codeph> is the address of your NTP
+                        server.</p></li>
                 <li> Execute the following command to verify that the NTP servers are listed:<codeblock>ntpq –p</codeblock><p>
                         <image href="../../media/CGH-2-ntp-verify.png" id="image_ltd_b1l_2t"
                             width="500"/></p></li>
@@ -77,7 +78,7 @@ service ntpd start</codeblock><p>Where
             <ol id="ol_mgf_hgl_2t">
                 <li>Start a console session to the VSD VM from HLM host using the following command:
                         <codeblock>virsh console &lt;vsdname&gt; </codeblock><p>Where
-                        &lt;vsdname&gt; is the name of your VSD.</p></li>
+                            <codeph>&lt;vsdname&gt;</codeph> is the name of your VSD.</p></li>
                 <li>Execute the following command to confirm that you can access VSD.
                         <codeblock>service vsd status </codeblock><p>You should see the status as
                         shown:</p><p><image href="../../media/CGH-2-vsd-verify.png"
@@ -86,8 +87,8 @@ service ntpd start</codeblock><p>Where
             <section>
             <title>Logging into VSD node, creating user and applying License</title>
             <ol>
-                <li>Use a web browser such as Chrome/FireFox to launch the VSD Architect dashboard
-                    using the DCM IP and port 8443. For example:
+                <li>Use a web browser such as Chrome or Firefox to launch the VSD Architect
+                    dashboard using the DCM IP and port 8443. For example:
                         <codeblock>https://10.x.x.x:8443/
 Default credentials: 
 User Name: csproot 

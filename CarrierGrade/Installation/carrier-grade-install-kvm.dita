@@ -48,7 +48,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
           <title>Provision the new cloud</title>
           <ol>
         <li>Provision and configure your HP Helion OpenStack
-            VM.<codeblock>hnewcloud  &lt;cloudname&gt; denver</codeblock><p>Where:</p><ul>
+            VM.<codeblock>hlm define -t denver &lt;cloudname&gt;</codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create: <p>The cloud
                 name can be any combination of up to 63 digits, letters, and the <codeph>-</codeph>
                   chracter:<ul id="ul_lz5_rbf_bt">
@@ -303,7 +303,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
       <title>Provision the cloud nodes</title>
       <ol>
         <li>Use the following script to start the provisioning of the HP Helion OpenStack cloud:
-            <codeblock>hprovision &lt;cloudname&gt; </codeblock><p>Where:</p><ul>
+            <codeblock>hlm provision &lt;cloudname&gt; </codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create</li>
           </ul><p>This script will PXE boot the nodes specified in
               <codeph>node-provision.json</codeph> file. The script also tracks the PXE boot
@@ -426,34 +426,29 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
           </ol></li>
       </ol>
     </section>
-    <section>
-      <title>Deploy the Configuration Processor Patches</title>
-      <p>Before launching the HP Helion OpenStack cloud in the following section, deploy two patches
-        to update required configuration files. </p>
-      <p>See the README in the download or <xref
-          href="carrier-grade-install-config-patch.dita#topic10581">Deploying the Configuration
-          Processor Patches</xref>.</p>
-    </section>
     
     <section>
       <title>Deploy the HP Helion OpenStack cloud</title>
       <ol>
         <li>Once you have correctly edited all the json files and applied the appropriate patches,
           run the HP Helion OpenStack Configuration Processor:
-            <codeblock>hcfgproc -d definition.json</codeblock><p>The HP Helion OpenStack
-            Configuration Processor is a script, called <codeph>hcfgproc</codeph>, that is
-            incorporated into the installation environment. </p></li>
+            <codeblock>hlm generate –c &lt;cloudname&gt;</codeblock><p>This command runs the HP
+            Helion OpenStack Configuration Processor, a script (<codeph>hcfgproc</codeph>) that is
+            incorporated into the installation environment.</p><p>When the command completes, you
+            will see the following:
+          message:</p><codeblock>#################################################################################
+The cloud &lt;cloudname> was generated successfully.
+################################################################################</codeblock></li>
         <li>Review the CloudDiagram, <codeph>hosts.hf</codeph>, and
             <codeph>net/interfaces.d/eth.cfg</codeph> files to make sure the network settings are
           correct.</li>
         <li>Initialize network interfaces on all the cloud nodes using the following command:
-            <codeblock><codeph>hnetinit &lt;cloudname&gt;</codeph></codeblock><p>You can run this
-            command from any directory.</p><p>After this command completes, all cloud nodes and CLM
-            network interfaces should be set correctly.</p></li>
+            <codeblock>hlm netinit –c &lt;cloud name&gt;</codeblock><p>You can run this command from
+            any directory.</p><p>After this command completes, all cloud nodes and CLM network
+            interfaces should be set correctly.</p></li>
         <li>Use the following command to deploy the cloud:
-            <codeblock><codeph>hdeploy &lt;cloudname&gt;</codeph></codeblock><p>Once cloud
-            deployment is successfully complete, there will be 3 controller nodes in the non-KVM
-            region.</p></li>
+            <codeblock>hlm deploy –c &lt;cloudname&gt;</codeblock><p>Once cloud deployment is
+            successfully complete, there will be 3 controller nodes in the non-KVM region.</p></li>
       </ol>
     </section>
     <section id="patch-after">

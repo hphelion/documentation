@@ -300,4 +300,6 @@
                     navtitle="Setting Project Quotas" locktitle="yes"/>
             </topicref>
         </topicref>
+        <topicref href="Ironic/CGH-2-User-baremetal.dita" navtitle="Managing Baremetal"
+            locktitle="yes"/>
     </topicref></map>

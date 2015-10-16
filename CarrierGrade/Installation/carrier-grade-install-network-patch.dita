@@ -20,7 +20,7 @@
       <ol id="ol_pn3_141_mt">
         <li>Download the <codeph>nuage_restproxy.py.diff.gz</codeph> file.</li>
         <li>Copy the <codeph>nuage_restproxy.py.diff.gz</codeph> file to the <codeph>/tmp/</codeph>
-          directroy on all three controller nodes</li>
+          directory on all three controller nodes</li>
         <li>SSH to each controller node as the <codeph>cghelion</codeph> user.</li>
         <li>Use sudo to get root shell:<p>
             <codeblock>sudo su -</codeblock>

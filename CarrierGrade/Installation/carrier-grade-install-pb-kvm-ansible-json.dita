@@ -22,7 +22,9 @@
         <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing
                 the KVM + ESX deployment</xref> requires several JSON files that will be used when
             deploying the HLM VM.</p>
-        <p>The <codeph>ansible.json</codeph> file contains the following fields:</p>
+        <p>The <codeph>ansible.json</codeph> file in the
+                <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the HLM VM contains
+            the following fields:</p>
         <table frame="all" rowsep="1" colsep="1" id="table_c54_dxd_ss">
             <tgroup cols="2">
                 <colspec colnum="1" colname="col1"/>
