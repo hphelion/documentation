@@ -4,6 +4,7 @@
    <title>HP Helion Cloud Foundry</title>
    <mapref href="docs.hpcloud.com.CFR_variables.ditamap"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
    <topicref href="root/CFR_root_documentation.dita">
       <topicref href="root/CFR_whats_new.dita"/>
       <topicref href="root/CFR_relnotes.dita"/>
@@ -26,6 +27,9 @@
    </topicref>
 =======
    <topicref href="root/CFR_documentation.dita" navtitle="Helion Cloud Foundry 1.0: Documentation"/>
+=======
+   <topicref href="root/CFR_root_documentation.dita"/>
+>>>>>>> dbe18b3... Adding a new Quick Start section with some temp files to be removed later
    <!--
    <topicref href="root/HCF_whats_new.dita" navtitle="What's New"/>
    <topicref href="root/HCF_release_notes.dita" navtitle="Release Notes"/>
@@ -40,8 +44,24 @@
       <topicref href="deploy/CFR_TF_vars.dita"/>
    </topicref>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> d69391b... Added .tfvars file reference
 =======
    <topicref href="reference/CFR_gato.dita"/>
 >>>>>>> e00821a... Added initial Gato command reference
+=======
+   <topichead navtitle="Quick Start">
+      <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_deploying.dita">
+         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_register.dita"/>
+         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_tools.dita"/>
+         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_sandbox.dita"/>
+         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_cluster.dita"/>
+         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_windows.dita"/>
+         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_explore.dita"/>
+         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_terminate.dita"/>
+         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_troubleshoot.dita"/>
+      </topicref>
+   </topichead>
+   <topicref href="reference/CFR_reference_gato.dita"/>
+>>>>>>> dbe18b3... Adding a new Quick Start section with some temp files to be removed later
 </map>
