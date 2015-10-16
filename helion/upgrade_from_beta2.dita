@@ -3,13 +3,47 @@
 <topic id="beta_upgrade">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Upgrading from Beta 2</title>
   <body>
-   <section>
-      <title>Model changes required before upgrading from Beta2 to HP Helion OpenStack 2.0</title>
+
+     
+     
+    
+    <section id="combine"><title>Combining the baremetalConfig.yml and servers.yml Files</title>
+      <p>One of the changed to the HP Helion OpenStack 2.0 input model from Beta 2 to the released version is teh merging of baremetal.yml and servers.yml.
+      In order to use your current configuration files, you will need to hand the merging of these files yourself.</p>
+      
+      <p>This series of commands will allow you to combine the files together and commit them to
+        your configuration:</p>
+      <ol>
+        <li>Login to your deployer node</li>
+        <li>This command will combine the two files into a single <codeph>combined.yml</codeph> file
+          for you to review:
+          <codeblock>cd ~/helion/my_cloud/definition/data
+~/helion/hos/ansible/merge-baremetal.py baremetalConfig.yml servers.yml > combined.yml</codeblock>
+        </li>
+        <li>Review the changes in the file to confirm they are as you intended:
+          <codeblock>diff -u servers.yml combined.yml</codeblock>
+        </li>
+        <li>If the changes are correct, execute the following commands to create your
+            <codeph>servers.yml</codeph> file and remove the deprecated
+            <codeph>baremetalConfig.yml</codeph> file:
+          <codeblock>mv combined.yml servers.yml
+rm baremetalConfig.yml</codeblock>
+        </li>
+        <li>Commit this change to your local git:
+          <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m 'convert baremetal info to new style'</codeblock>
+        </li>
+      </ol>
+    </section>
+    
+    <section>
+      <title>Model changes required before upgrading from Beta 2 to HP Helion OpenStack 2.0</title>
       <p>After running the hos-init.bash script (or vagrant provision in a virtual environment), the
         cloud model from the original Beta2 deployment must be updated prior to running the upgrade
-        to HOS 2.0. The exact changes depend on the original deployed cloud model. To cover the
-        upgrade of varying cloud configurations, the following description of changes is grouped
-        into the following categories: </p>
+        to HP Helion OpenStack 2.0. The exact changes depend on the original deployed cloud model.
+        To cover the upgrade of varying cloud configurations, the following description of changes
+        is grouped into the following categories: </p>
       <p>Cloud using a dedicated deployer/HLM node (as used in the CI padawan model, for example).
         Deployer-in-cloud where one of the cloud nodes (typically a controller) is also used as the
         deployer/HLM node. Cloud using dedicated network for serving HLM traffic (sometimes known as
@@ -34,8 +68,8 @@
         of common-service-components. </p><p>Note the differences highlighted in<b>
           control_plane.yml </b>linked below and make appropriate changes as found in the right-hand
         column.</p>
-      <xref href="../html/control_plane_yml.html" format="html">See changes to control_plane.yml</xref>
-    </section> 
+      <xref href="../html/control_plane_yml.html" format="html">See changes to
+        control_plane.yml</xref></section>
     <section>Add a baremetal node entry for the deployer node to the servers list 
     in servers.yml and assign it a new role, shown as HLM-ROLE in the linked page:</section>
     <section>Add the new HLM-ROLE role to the list of server-roles, e.g. to server_roles.yml. This role is required 
@@ -45,12 +79,12 @@
       node, the following changes are required to add the new lifecycle-manager and
       lifecycle-manager-target service components into the cloud model: Add lifecycle-manager
       service component to a control plane cluster. Note that while the lifecycle-manager is
-      depicted as existing across the cluster, for HOS 2.0, only one of these nodes can serve as the
-      deployer/HLM node (the first node deployed using the HOS iso), i.e. HA of the deployer/HLM is
-      not supported. Add lifecycle-manager-target to the list of common-service-components. Change
-      the now deprecated resource-nodes section to resources and remove the nova-kvm service
-      component, which is redundant (nova-compute-kvm covers what is required). <p><xref
-          href="../html/control_plane_yml2.html" format="html">See changes to
+      depicted as existing across the cluster, for HP Helion OpenStack 2.0, only one of these nodes
+      can serve as the deployer/HLM node (the first node deployed using the HP Helion OpenStack
+      iso), i.e. HA of the deployer/HLM is not supported. Add lifecycle-manager-target to the list
+      of common-service-components. Change the now deprecated resource-nodes section to resources
+      and remove the nova-kvm service component, which is redundant (nova-compute-kvm covers what is
+      required). <p><xref href="../html/control_plane_yml2.html" format="html">See changes to
           control_plane.yml</xref></p>
     </section>
     
@@ -121,16 +155,17 @@ disk-models:
     
     
     </section>
-    <section><title>Firewall Settings</title>
-      The cloudConfig.yml file can be update to enable/disable the setting of firewall rules as follows: The above example enables the setting of firewalls according the networking requirements of each service on a node; the default is for this to be enabled.
-    see file
-      <p>HOS 2.0 includes the feature to add firewall rules for enabling access between services across the deployed cloud. The following is an example of a firewall rules file:</p>
-    
-    <codeblock>---
+    <section><title>Firewall Settings</title> The cloudConfig.yml file can be update to
+      enable/disable the setting of firewall rules as follows: The above example enables the setting
+      of firewalls according the networking requirements of each service on a node; the default is
+      for this to be enabled. see file <p>HP Helion OpenStack 2.0 includes the feature to add
+        firewall rules for enabling access between services across the deployed cloud. The following
+        is an example of a firewall rules file:</p>
+      <codeblock>---
   product:
     version: 2
 #
-# HOS will create firewall rules to enable the required access for
+# HP Helion OpenStack will create firewall rules to enable the required access for
 # all of the deployed services. Use this section to define any
 # additional access.
 #
