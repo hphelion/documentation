@@ -2,10 +2,14 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "../dtd/map.dtd">
 <map>
 <<<<<<< HEAD
+<<<<<<< HEAD
    <title>HPE Helion Cloud Foundry Variables</title>
 =======
    <title>HP Helion Cloud Foundry Variables</title>
 >>>>>>> 603ec39... Added the initial files per Colin Henry's demo
+=======
+   <title>HPE Helion Cloud Foundry Variables</title>
+>>>>>>> cbfad2a... Changed HP to HPE in variable file
    <keydef keys="corpLong">
       <topicmeta>
          <keywords>
@@ -145,7 +149,7 @@
    <keydef keys="pubCloudLong">
       <topicmeta>
          <keywords>
-            <keyword>HP Helion Public Cloud</keyword>
+            <keyword>HPE Helion Public Cloud</keyword>
          </keywords>
       </topicmeta>
    </keydef>
@@ -159,7 +163,7 @@
    <keydef keys="prodLong">
       <topicmeta>
          <keywords>
-            <keyword>HP Helion Cloud Foundry</keyword>
+            <keyword>HPE Helion Cloud Foundry</keyword>
          </keywords>
       </topicmeta>
    </keydef>
