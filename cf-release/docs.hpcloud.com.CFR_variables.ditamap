@@ -188,27 +188,21 @@
          </keywords>
       </topicmeta>
    </keydef>
-   <keydef keys="CLIfile">
-      <topicmeta>
-         <keywords>
-            <keyword>hcf</keyword>
-         </keywords>
-      </topicmeta>
-   </keydef>
-   <keydef keys="gatoName">
+   <keydef keys="adminUtil">
       <topicmeta>
          <keywords>
             <keyword>Gato</keyword>
          </keywords>
       </topicmeta>
    </keydef>
-   <keydef keys="CLIgato">
+   <keydef keys="adminUtilCLI">
       <topicmeta>
          <keywords>
             <keyword>gato</keyword>
          </keywords>
       </topicmeta>
    </keydef>
+<<<<<<< HEAD
    <keydef keys="defaultSysUser">
       <topicmeta>
          <keywords>
@@ -273,4 +267,6 @@
          </keywords>
       </topicmeta>
    </keydef>
+=======
+>>>>>>> bc34114... Revised some more variables
 </map>
