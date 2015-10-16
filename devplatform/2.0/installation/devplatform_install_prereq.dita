@@ -17,11 +17,10 @@
         
       </ul>
     </section>
-    <section id="preparation"><title>Gather Information</title><p>The installer retrieves service
-        configuration information from the <xref href="install_cloudsyaml.dita">os-client-config
-          ~/.config/openstack/clouds.yaml file</xref>. You may create this file now; however, it is
-        not required until after the HDPI installer is itself installed.</p>You will need the
-      following additional pieces of information: <dl>
+    <section id="preparation">
+      <title>Gather Information</title>
+      <p>You will need the following information:</p>
+      <dl>
         <dlentry>
           <dt>Deployer</dt>
           <dd>IP address of the Deployer.</dd>
@@ -36,7 +35,8 @@
           <dd>The OpenStack password of a cloud admin that has rights to perform a service update
             for the selected service.</dd>
         </dlentry>
-      </dl></section>
+      </dl>
+    </section>
       
       <section><title>Set Folder Ownership</title>
         Manually set folder ownership where required. [This is an extra step required for the

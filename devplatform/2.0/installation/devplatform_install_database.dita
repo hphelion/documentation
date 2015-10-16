@@ -3,20 +3,14 @@
 <topic id="topic_vsf_hnh_ts">
   <title>Install the Database Service</title>
   <body>
-<section id="install-database">
-<p>This section provides details on installing the Database Service for the Development
-        Platform.</p>
-      <p>The HDPI Installer Configuration of the database install is done through the clouds.yaml
-        file, so you will need to add more values to your configuration to install DBaaS<ul
-          id="ul_rt3_x2z_nt">
-          <li><xref href="#topic_vsf_hnh_ts/availability-zones">Configure Availability
-            Zones</xref></li>
-          <li><xref href="#topic_vsf_hnh_ts/quotas">Set Quotas</xref></li>
-          <li><xref href="#topic_vsf_hnh_ts/dbaas_installation">Install the Database
-            Service</xref></li>
-          <li><xref href="#topic_vsf_hnh_ts/configure_haproxy">Configure HAProxy</xref></li>
-        </ul></p>
-</section>
+<section id="install-database"><title>Prerequisites</title>Installing services requires that the HDP
+      Installer 2.0, also known as HDPI, has already <xref
+        href="devplatform_install_platform.dita#topic_gly_xmh_ts">been installed</xref>.<p>The
+        images for the individual services will be downloaded when the service installation is
+        started. A separate download step is not necessary.</p><p>The installer retrieves service
+        configuration information from the clouds.yaml file. If you did not create a clouds.yaml
+        file earlier, you can <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one
+          now</xref>.</p></section>
 
 <section id="availability-zones"> <title>Configure Availability Zones</title>
 <p>To configure the Database Service in a highly available manner, it is necessary to create
@@ -143,16 +137,6 @@ openstack aggregate create --zone AZ-3 aggregate-AZ-3</codeblock></li>
         the necessary resources to create that instance will be deducted from the admin project
         quota. The user's database service quota will also be affected.</p>
 </section>
-    <section><title>Create the clouds.yaml File</title><p> The installer retrieves service
-      configuration information from the os-client-config ~/.config/openstack/clouds.yaml file.
-      If you did not create your clouds.yaml file earlier, follow these steps:</p><ol>
-        <li>Create this directory:<codeblock>mkdir -p ~/.config/openstack/</codeblock></li>
-        <li>Create a plaintext file called <codeph>~/.config/openstack/clouds.yaml</codeph> in that
-          directory.</li>
-        <li>Enter the <xref href="install_cloudsyaml.dita">configuration information for your
-            installation</xref> in the <codeph>Database</codeph> section of the file. A sample
-          configuration file is provided for a starting point. </li>
-      </ol></section>
 <section id="dbaas_installation">
       <title>Install the Database Service </title>
       <ol id="ol_xct_5dz_nt">
@@ -168,6 +152,10 @@ openstack aggregate create --zone AZ-3 aggregate-AZ-3</codeblock></li>
                 <codeblock> source admin-openrc.sh</codeblock>
               </p></li>
           </ol></li>
+        <li>The installer retrieves service configuration information from the
+            <codeph>clouds.yaml</codeph> file. If you did not create a <codeph>clouds.yaml</codeph>
+          file earlier, you must <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one
+            now</xref>.</li>
         
         <li>Source the Virtual Environment.<pre>source .devplatform/bin/activate</pre></li>
          <li>List the available database versions to install:

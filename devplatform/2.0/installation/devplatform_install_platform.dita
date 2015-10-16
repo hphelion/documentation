@@ -8,16 +8,15 @@
         leverage the authentication, configuration and command line option parsing that is already
         part of OSC to greatly simplify the installation process.</p>
       <p>
-        <note type="warning">You must have created a complete <xref
-            href="install_cloudsyaml.dita#topic_wzw_r4w_rt">clouds.yaml</xref> file and <xref
-            href="devplatform_install_prereq.dita#topic_x54_njh_ts">satisfied all other
+        <note type="warning">You must have <xref
+            href="devplatform_install_prereq.dita#topic_x54_njh_ts">satisfied all
             prerequisites</xref> before beginning installation.</note>
       </p>
 
       <title>Download the Latest Version of HP Helion Development Platform Installation
         Client</title>
       <p>The installation is provided as a small compressed tar file. The images for the individual
-        services will be downloaded at the installer's request.</p>
+        services will be downloaded when the service installation is started.</p>
       <ol id="ol_ogs_qpt_nt">
         <li>Navigate to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
             format="html" scope="external">HP Helion Download Network</xref> (HDN) and log in. If
@@ -43,9 +42,10 @@
             .<codeblock>pip install DevelopmentPlatformInstaller_2.0.0.0.tar.gz --debug </codeblock><note>While
             the <codeph>debug</codeph> option is optional, the information it returns is critical
             for troubleshooting beta installations.</note></li>
-        <li>After installation completes, verify that the Installer is working. This command will
+        <li>After installation completes, verify that the Installer is working.
+          <!-- This command will
           list all packages currently available for
-          download.<codeblock>openstack hdpi list --os-cloud mycloud </codeblock></li>
+          download.<codeblock>openstack hdpi list dashdashos-cloud mycloud </codeblock>  this is the wrong command, it requires that you have a clouds.yaml file already and at this point the user may not.--></li>
       </ol>
     </section>
   </body>

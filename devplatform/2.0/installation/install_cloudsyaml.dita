@@ -5,11 +5,16 @@
   <body>
     <p>The installer gets its configuration information from the os-client-config
       ~/.config/openstack/clouds.yaml file. </p>
-    <p>Here is a sample clouds.yaml file. Information on where to find values for each field are
-      below the codeblock. </p>
-    <p>For more detailed information, see the OpenStack <xref
-        href="http://docs.openstack.org/developer/python-openstackclient/configuration.html"
-        format="html" scope="external">client configuration documentation</xref>. </p>
+    <ol id="ol_apx_khy_rt">
+      <li> Create this directory: <codeblock>mkdir -p ~/.config/openstack/</codeblock></li>
+      <li>Create a plaintext file called <codeph>clouds.yaml</codeph> in that directory.</li>
+      <li>Enter the configuration information for the service(s) being installed. A sample
+        configuration file is provided here. </li>    </ol>
+      <p>Information on each field is below the code block. For more detailed information, see the
+        OpenStack <xref
+          href="http://docs.openstack.org/developer/python-openstackclient/configuration.html"
+          format="html" scope="external">client configuration documentation</xref>. </p>
+
     <codeblock>clouds:
   &lt;mycloudname&gt;:
     codn_username: &lt; Helion Download Network user name&gt;
@@ -43,13 +48,13 @@
       hotpools_image_name: percona
       hotpools_flavor_names: "m1.medium,m1.small,m1.large"
       disable_rollback: false
-      project_id: &lt;project id of user to install service to&gt;   
-</codeblock>
-
-<section><title>Server Information</title>
-    <p>This information is for the Deployer server. This section is required for installation of the
-        Application Lifecycle Service.</p>
-<sl>  <sli><codeph>mycloudname</codeph>: The name of your cloud.</sli>
+      project_id: &lt;project id of user to install service to&gt;   </codeblock>
+    <section>
+      <title>Server Information</title>
+      <p>This information is for the Deployer server. This section is required for installation of
+        the Application Lifecycle Service.</p>
+      <sl>
+        <sli><codeph>mycloudname</codeph>: The name of your cloud.</sli>
         <sli><codeph>codn_username</codeph>: The username for the HDN (Helion Download Network)
           account. (The name of the download network used to be CODN.)</sli>
         <sli><codeph>codn_password</codeph>: The password for the HDN (Helion Download Network)
@@ -57,33 +62,37 @@
         <sli><codeph>horizon_url</codeph>: The URL where the Horizon management console can be
           accessed.</sli>
         <sli><codeph>region_name</codeph>: Default value is <codeph>region1 </codeph></sli>
-        <sli><codeph>cacert</codeph>:  The location where the SSL certificates can be
-          accessed.</sli></sl>
-</section>
-    <section><title>User Authentication Information (AUTH)</title>
+        <sli><codeph>cacert</codeph>: The location where the SSL certificates can be accessed.</sli>
+      </sl>
+    </section>
+    <section>
+      <title>User Authentication Information (AUTH)</title>
       <p>This section provides user authentication for performing installation. This section is
         required for installation of the Application Lifecycle Service.</p>
-      <sl>  <sli><codeph>auth</codeph>:  The Keystone v3 address found in the <codeph>service.osrc</codeph>
-          file.</sli>
-        <sli><codeph>auth_url</codeph>:  This URL can be found in Horizon at: Project Compute &gt;
+      <sl>
+        <sli><codeph>auth</codeph>: The Keystone v3 address found in the
+            <codeph>service.osrc</codeph> file.</sli>
+        <sli><codeph>auth_url</codeph>: This URL can be found in Horizon at: Project Compute &gt;
           Access &amp; Security &gt; API Access. Copy the Service Endpoint URL for the Identity
           Service.</sli>
-        <sli><codeph>project_name</codeph>:  The Name of the admin project in Horizon. </sli>
+        <sli><codeph>project_name</codeph>: The Name of the admin project in Horizon. </sli>
         <sli><codeph>username</codeph>: The Username of an account with installation privileges
           (administrator). </sli>
         <sli><codeph>password</codeph>: The Password for the same account with installation
-          privileges (administrator). </sli></sl>
-      
+          privileges (administrator). </sli>
+      </sl>
     </section>
-<section><title>Database Information</title>
+    <section>
+      <title>Database Information</title>
       <p>This information is for the Database Service. This section is required for installation of
         the Database Service.</p>
-  <sl>  <sli>ephemeral_ca_cert: Value must be unset </sli>
+      <sl>
+        <sli>ephemeral_ca_cert: Value must be unset </sli>
         <sli>external_network: &lt;guid of ext-net&gt;</sli>
         <sli>provider_network: &lt;guid of svc-net&gt; </sli>
         <sli>ntp_server: &lt;ip address of ntp server&gt; </sli>
         <sli>keypair: default </sli>
-        <sli><codeph>enable_ha</codeph>:  Options are True or False. If True, the database will be
+        <sli><codeph>enable_ha</codeph>: Options are True or False. If True, the database will be
           created with high-availability configurations. Ensure you have enough quota to do
           so.</sli>
         <sli><codeph>flavor</codeph>: The default is m1.medium Do not create any flavor smaller than
@@ -102,11 +111,9 @@
         <sli>hotpools_flavor_names: "m1.medium,m1.small,m1.large" </sli>
         <sli>disable_rollback: Options are True or False. If True, rollback of patch applications is
           disabled.</sli>
-        <sli>project_id: &lt;project id of user to install service to&gt; </sli></sl>
-</section>
-
-
-
+        <sli>project_id: &lt;project id of user to install service to&gt; </sli>
+      </sl>
+    </section>
   </body>
 
 

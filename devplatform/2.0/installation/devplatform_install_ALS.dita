@@ -2,9 +2,14 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_txg_cnh_ts">
   <title>Install the Application Lifecycle Service (ALS)</title>
-  <body>
-<note>Installing services requires using the HDPI installer.</note> 
-   <section><title>Prerequisites</title>
+  <body><section><title>Prerequisites</title>Installing services requires that the HDP Installer 2.0, also
+      known as HDPI, has already <xref href="devplatform_install_platform.dita#topic_gly_xmh_ts"
+        >been installed</xref>.<p>The images for the individual services will be downloaded when the
+        service installation is started. A separate download step is not necessary.</p><p>The
+        installer retrieves service configuration information from the <i>clouds.yaml</i> file. If
+        you did not create a clouds.yaml file earlier, you can <xref
+          href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one now</xref>.</p></section>
+   <section><title>Download the RC File</title>
 <ol>
       <li>Download an RC file for the admin user and project. <ol id="ol_bpk_1c1_4t">
           <li> Log in to Horizon using the admin account.</li>
@@ -18,17 +23,9 @@
               <codeblock> source admin-openrc.sh</codeblock>
             </p></li>
       </ol></li>
-  <li>The installer retrieves service configuration information from the os-client-config
-          ~/.config/openstack/clouds.yaml file. If you did not create your clouds.yaml file earlier,
-          follow these steps: <ol>
-            <li>Create this directory:<codeblock>mkdir -p ~/.config/openstack/</codeblock></li>
-            <li>Create a plaintext file called <codeph>~/.config/openstack/clouds.yaml</codeph> in
-              that directory.</li>
-            <li>Enter the <xref href="install_cloudsyaml.dita">configuration information for your
-                installation</xref> in the <codeph>mycloudname</codeph> and <codeph>auth</codeph>
-              sections of the file. A sample configuration file is provided for a starting point.
-            </li>
-          </ol></li>
+  <li>The installer retrieves service configuration information from the <codeph>clouds.yaml
+          </codeph>file. If you did not create a <codeph>clouds.yaml</codeph> file earlier, you must
+            <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one now</xref>.</li>
       <li>Source the Virtual Environment.<pre>source .devplatform/bin/activate</pre></li>
       <li>List the available ALS versions to
         install.<codeblock>openstack hdpi list --os-cloud mycloud | grep als</codeblock>The output
