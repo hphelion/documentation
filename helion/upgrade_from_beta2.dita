@@ -44,37 +44,66 @@ git commit -m 'convert baremetal info to new style'</codeblock>
         to HP Helion OpenStack 2.0. The exact changes depend on the original deployed cloud model.
         To cover the upgrade of varying cloud configurations, the following description of changes
         is grouped into the following categories: </p>
-      <p>Cloud using a dedicated deployer/HLM node (as used in the CI padawan model, for example).
-        Deployer-in-cloud where one of the cloud nodes (typically a controller) is also used as the
-        deployer/HLM node. Cloud using dedicated network for serving HLM traffic (sometimes known as
-        the PXE network).</p>
-      <p>Cloud using shared network for HLM and internal cloud management traffic (typically named
-        MGMT or MANAGEMENT network). Separate disk model for the deployer/HLM node. Addition of
-        firewall rules</p>
-      <p>A subset of the above categories of changes are required depending on the Beta2 cloud, the
+      <ul>
+     <li>Cloud using a dedicated deployer/HLM node (as used in the CI padawan model, for example).
+        </li><li>Deployer-in-cloud where one of the cloud nodes (typically a controller) is also used as the
+        deployer/HLM node. 
+        </li><li>Cloud using dedicated network for serving HLM traffic (sometimes known as
+        the PXE network).
+        </li><li>Cloud using shared network for HLM and internal cloud management traffic (typically named
+        MGMT or MANAGEMENT network). 
+        </li><li>Separate disk model for the deployer/HLM node. 
+        </li><li>Addition of firewall rules
+        </li></ul>
+      A subset of the above categories of changes are required depending on the Beta2 cloud, the
         simplest case being where only the "Deployer-in-cloud" set of changes needs to be applied,
         assuming that this cloud is also using a shared network for HLM and cloud management
         traffic. Dedicated Deployer/HLM Node For Beta2 clouds deployed using a dedicated deployer
         node, three sets of changes required to add this dedicated node into the cloud model and to
-        incorporate the new lifecycle-manager and lifecycle-manager-target service components:</p>
-      <p>Update the control plane model: Add a new single-node (member-count of 1) cluster for the
+        incorporate the new lifecycle-manager and lifecycle-manager-target service components:
+        
+        
+      <ul><li>Update the control plane model: 
+        <ul>
+        <li>Add a new single-node (member-count of 1) cluster for the
         dedicated deployer/lifecycle manager node. This cluster only contains one service component,
-        lifecycle-manager-target. Remove logging-producer and monasca-agent from the list of
+        lifecycle-manager-target. 
+        </li><li>Remove logging-producer and monasca-agent from the list of
         common-service-components and add them to any control-plane or resource-node cluster except
         than the newly-added lifecycle-manager cluster. This is required as existing Beta2
         deployments do not have logging-producer or monasca-agent installed on the dedicated
         deployer node. Without this change, the upgrade of the dedicated deployer node will fail on
-        an initial check of the status of these services. Add lifecycle-manager-target to the list
-        of common-service-components. </p><p>Note the differences highlighted in<b>
+        an initial check of the status of these services. 
+        </li><li>Add lifecycle-manager-target to the list
+        of common-service-components.
+        </li><li>Change the now deprecated name resource-nodes section to resources and remove the 
+          nova-kvm service component, which is redundant (nova-compute-kvm covers what is required).
+          
+          
+          <p>Note the differences highlighted in<b>
           control_plane.yml </b>linked below and make appropriate changes as found in the right-hand
         column.</p>
       <xref href="../html/control_plane_yml.html" format="html">See changes to
-        control_plane.yml</xref></section>
-    <section>Add a baremetal node entry for the deployer node to the servers list 
-    in servers.yml and assign it a new role, shown as HLM-ROLE in the linked page:</section>
+        control_plane.yml</xref>
+        </li></ul>
+    
+    
+    
+    Add a baremetal node entry for the deployer node to the servers list 
+      in servers.yml and assign it a new role, shown as HLM-ROLE in the linked page:</li></ul></section>
     <section>Add the new HLM-ROLE role to the list of server-roles, e.g. to server_roles.yml. This role is required 
-      to differentiate the single dedicated HLM node from the remaining target nodes in the server allocation, in the linked page:Note that in this example, a different interface model and disk model are defined for the HLM role as the HLM node will typically differ from the cloud nodes in this regard
-      – this is covered in later sections on "Dedicated Deployer/HLM network" and "Separate disk model for Dedicated Deployer/HLM node".</section>
+      to differentiate the single dedicated HLM node from the remaining target nodes in the server allocation, in 
+      the linked page:Note that in this example, a different interface model and disk model are defined for the HLM
+      role as the HLM node will typically differ from the cloud nodes in this regard
+      – this is covered in later sections on "Dedicated Deployer/HLM network" and "Separate disk model for
+      Dedicated Deployer/HLM node".
+    
+      <xref href="../html/server_roles_yml.html" format="html">See changes to
+        server_roles.yml</xref>
+    
+    
+    
+    </section>
     <section><title>Shared Deployer/HLM Node</title> For Beta2 clouds using a shared deployer/HLM
       node, the following changes are required to add the new lifecycle-manager and
       lifecycle-manager-target service components into the cloud model: Add lifecycle-manager

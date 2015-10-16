@@ -1,0 +1,33 @@
+<html><head>
+
+<style type="text/css">
+.hlt {
+background-color: #D0E1E1;
+}
+</style>
+
+
+</head>
+  <title></title>
+  <body>   
+<h3>server_roles.yml</h3>                          <h3><a href="#" onClick="history.go(-1); return false;">Return to Upgrade</a></h3>                                                        
+    <pre> 
+
+<b>Before</b>                                                         <b>After</b>
+
+---                                                                ---
+  product:                                                           product:
+    version: 2                                                         version: 2
+  server-roles:                                                      server-roles:
+                                                                >     <span class="hlt"> - name: HLM-ROLE
+                                                                >        interface-model: HLM-INTERFACES
+                                                                >        disk-model: HLM-DISKS
+                                                                >                               </span>
+    - name: ROLE-CONTROLLER                                            - name: ROLE-CONTROLLER
+      interface-model: INTERFACE_SET_1                                   interface-model: INTERFACE_SET_1
+      disk-model: DISK_SET_CONTROLLER                                    disk-model: DISK_SET_CONTROLLER
+    - name: ROLE-COMPUTE                                               - name: ROLE-COMPUTE
+      interface-model: INTERFACE_SET_1                                   interface-model: INTERFACE_SET_1
+      disk-model: DISK_SET_COMPUTE                                       disk-model: DISK_SET_COMPUTE
+</pre></body>
+</html>
