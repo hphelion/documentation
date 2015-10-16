@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_gxm_bwt_rt">
-  <title>Upgrading Ceph Cluster </title>
+  <title><?oxy_custom_start type="oxy_content_highlight" color="153,255,255"?>Upgrading Ceph Cluster
+    <?oxy_custom_end?></title>
   <body>
     <p>This page describes the update and upgrade operations of Ceph cluster and Ceph client.</p>
     <p>Perform the following steps to upgrade:<ol id="ol_xdj_hwt_rt">
