@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_t3w_fnh_ts">
-  <title>Install the Messaging Service</title>
+<topic id="topic_gkq_fqy_rt">
+  <title>Install the HP Helion Code Engine</title>
   <body>
-    <section id="install-messaging">
-      <p>This section provides details on installing the Messaging service from the Development
-        Platform.</p>
-    </section>
     <section><title>Prerequisites</title>Installing services requires that the HDP Installer 2.0,
       also known as HDPI, has already <xref
         href="devplatform_install_platform.dita#topic_gly_xmh_ts">been installed</xref>.<p>The
