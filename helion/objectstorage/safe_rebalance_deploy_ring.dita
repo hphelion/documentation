@@ -14,8 +14,11 @@
           load on the system. To check that replication has finished, use the
             <codeph>swift-recon</codeph> command with the <b>--replication</b> argument. See <xref
             href="validating_swift_recon.dita"> swift-recon</xref> for more information. The oldest
-          replication time is useful as shown in the following
-          example:<codeblock>$ sudo swift-recon --replication
+          completion time can indicate that the replication process is very busy. If it is more than
+          15-20 minutes then the object replication process are probably still very busy. The
+          following example indicates that the oldest completion is 120 seconds. This indicates that
+          the replication process is probably not
+          busy:<codeblock>$ sudo swift-recon --replication
 ===============================================================================
 --> Starting reconnaissance on 3 hosts
 ===============================================================================

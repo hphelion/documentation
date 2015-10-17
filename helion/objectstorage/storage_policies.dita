@@ -4,15 +4,12 @@
   <title>Designing Storage Policies</title>
   <body>
     <p>Storage policies allow you to differentiate the way objects are stored. </p>
-    <p><b>Reasons to use storage policies</b></p>
-    <p>They are as follows:<ul id="ul_q4t_cxd_jt">
-        <li>Different types or classes of disk drive <p>You can use different drives to store
-            various type of data. For example: You can use 7.5K RPM high-capacity drives for one
-            type of data and fast SSD drives for another type of data.</p></li>
-      </ul></p>
-    <p>
-      <ul id="ul_wtd_zbc_jt">
-        <li>Different redundancy or availability needs<p>You can define the redundancy and
+    <section><b>Reasons to use storage policies</b><p>They are as follows:<ul id="ul_q4t_cxd_jt">
+          <li>Different types or classes of disk drive <p>You can use different drives to store
+              various type of data. For example: You can use 7.5K RPM high-capacity drives for one
+              type of data and fast SSD drives for another type of data.</p></li>
+        
+          <li>Different redundancy or availability needs<p>You can define the redundancy and
             availability based on your requirement. You can use a replica count of 3 for "normal"
             data and a replica count of 4 for "critical" data. </p><p>If you have several different
             types or classes of disk drive. For example, you could use 7.5K RPM high-capacity drives
@@ -21,16 +18,16 @@
             recommended partition power as described in <xref
               href="ring_specifications.dita#ring-specification/selecting-partition-power">selecting
               partition power</xref>.</p></li>
-        <li>Erasure-coded storage and replicated storage (This is not supported in this
-            release.)<p>If you use erasure-coded storage for some objects and replicated storage for
-            other objects. </p></li>
-      </ul>
-    </p>
-    <p>Storage policies are implemented on per-container basis. Usually storage policy is not
-      specified but you can specify which storage policy is used by using the <b>default</b>
-      attribute. You can change which storage policy is the default. However, this does not affect
-      existing containers. Once the storage policy of a container is set, the policy for that
-      container cannot be changed.</p>
+        <li>Erasure-coded storage (this is not supported in this release) and replicated storage
+              <p>If you use erasure-coded storage for some objects and replicated storage for other
+              objects. </p></li>
+      </ul></p></section>
+
+    <p>Storage policies are implemented on per-container basis. If  you want a non-default storage
+      policy to be used for a new container, you can explicitly specify the storage policy to use
+      when you create the container. You can change which storage policy is the default. However,
+      this does not affect existing containers. Once the storage policy of a container is set, the
+      policy for that container cannot be changed.</p>
     <p><!--Once you create and assign the storage policy to a container that remains intact, i.e., you cannot change the policy for that container but you can always create additional policies and move data from one container to another, if you choose to assign a different policy to a new container.-->
     </p>
     <p>The disk drives used by storage policies can overlap or be distinct. If the storage policies

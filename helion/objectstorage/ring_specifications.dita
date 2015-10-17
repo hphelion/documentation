@@ -74,13 +74,13 @@
         <strow>
           <stentry><codeph>min-part-time</codeph></stentry>
           <stentry><p>It changes the value used to decide if a given partition can be moved
-              again.</p>This is the number of hours that the swift-ring-builder tool will enforce
-            between ring rebuilds. On a small system, this can be as low as one hour. The value can
-            be different for each ring. <p>In the example above, the swift-ring-builder will enforce
-              a minimum of 16 hours between ring rebuilds. However, this time is system-dependent so
-              you will be unable to figure out the appropriate value for
-                <codeph>min-part-time</codeph> until you have more experience with your
-            system.</p></stentry>
+              again.</p>This is the number of hours that the <codeph>swift-ring-builde</codeph>r
+            tool will enforce between ring rebuilds. On a small system, this can be as low as one
+            hour. The value can be different for each ring. <p>In the example above, the
+                <codeph>swift-ring-builder</codeph> will enforce a minimum of 16 hours between ring
+              rebuilds. However, this time is system-dependent so you will be unable to figure out
+              the appropriate value for <codeph>min-part-time</codeph> until you have more
+              experience with your system.</p></stentry>
         </strow>
         <strow>
           <stentry><codeph>partition-power</codeph></stentry>
@@ -211,9 +211,12 @@
             higher partition power.</li>
           <li>The largest anticipated number of drives imposes a limit in how a few drives (the
             minimum) you can have. See <xref href="#ring-specification/calculating-number"
-              format="dita">Calculating Numbers of Partitions</xref>. This means that if you
-            anticipate significant growth, your initial system can be small, but under certain
-            limit.</li>
+              format="dita">Calculating Numbers of Partitions</xref> for the reason. This means that
+            if you anticipate significant growth, your initial system can be small, but under
+            certain limit. For example: If you determine that the maximum number of drives the
+            system will grow to is 40,000, then you choose a partition power of 17 as listed in the
+            table below. And a minimum of 36 drives is required to build  the smallest system with
+            this partition power.</li>
           <li>The table assumes that disk drives are the same size. The actual size of a drive is
             not significant.</li>
         </ul>
