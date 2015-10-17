@@ -9,9 +9,9 @@
       <li>In the <codeph>data/control_plane.yml</codeph> file, identity the control plane that the
         PAC serves are associated with. </li>
       <li>Identity the node type/role used by the Swift PAC servers. In the following example,
-          <b>SWPAC-ROLE</b> is mentioned as server-role.<p>Add an entry to the <b>clusters</b> item
-          in the <b>control-plane</b> as
-          follows:<codeblock>ccontrol-planes:
+          <b>SWPAC-ROLE</b> is mentioned as server-role.<p>Add an entry to the <b>clusters</b> item in the <b>control-plane</b>
+          as
+          follows:<codeblock>control-planes:
 - name: ccp
   region: region1
   . . .

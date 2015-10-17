@@ -36,7 +36,7 @@
         package on the server.</li>
     </ul>
     <p>Resource nodes do not have a member count attribute. So the number of servers allocated with
-      the S<b>WOBJ-ROLE</b> is the number of servers in <codeph>data/servers.yml</codeph>  file with
+      the <b>SWOBJ-ROLE</b> is the number of servers in <codeph>data/servers.yml</codeph> file with
       a server role of <b>SWOBJ-ROLE</b>.</p>
   </body>
 </topic>

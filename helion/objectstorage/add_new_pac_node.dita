@@ -13,7 +13,7 @@
         make the changes:
         <!--You must add a new node details in the <codeph>server.yml</codeph> file. --></p>
       <p>Perform the following steps to add a new node:<ol id="ol_p4w_gbr_4t">
-          <li><!--Log in to the deployer node.--> Get the<codeph> server.yml</codeph> file stored in
+          <li><!--Log in to the deployer node.--> Get the <codeph>server.yml</codeph> file stored in
             git:<codeblock>cd ~/helion/my_cloud/definition/data
 git checkout site</codeblock></li>
           <li>If not already done, set the weight-step attribute. See <xref
@@ -33,28 +33,45 @@ git checkout site</codeblock></li>
   ilo-password: &lt;ilo-password></codeblock><p>
               In the above example only one new server <b>swpac4 </b> is added. However, you can add
               multiple servers by providing the server details in the <codeph>servers.yml</codeph>
-              file.</p><p><?oxy_custom_start type="oxy_content_highlight" color="153,255,255"?>In
-              the entry-scale configurations the swift PAC servers are collocated with other
-              services on the first control plane cluster. If you wish to extend beyond 3 swift PAC
-              servers then you need to add dedicated servers for the swift PAC service. You have the
-              option of leaving the first 3 PAC servers on the first control plane cluster and
-              adding new dedicated swift PAC servers, or you can have all the swift PAC servers on
-              dedicated servers. </p><p>If you wish to move the swift PAC services from the first
-              control plane cluster onto dedicated servers then you need to remove all swift
-              services from the first control plane cluster. For example remove the following
-              services from the first control plane cluster in
-              data/control_plane.yml:<?oxy_custom_end?><codeblock>- swift-ring-builder
+              file.</p><p>In the entry-scale configurations, the Swift PAC servers are co-located
+              with other services on the first control plane cluster. If you want to extend the
+              Swift PAC servers, i.e, more than 3 Swift PAC, then you need to add dedicated servers
+              for the Swift PAC service. You have an option to leave the first 3 Swift PAC servers
+              on the first control plane cluster and add a new dedicated Swift PAC server; or you
+              can have all the Swift PAC servers on the dedicated servers.</p><p>If you want to move
+              the Swift PAC services from the first control plane cluster onto dedicated servers
+              then  remove all Swift services from the first control plane cluster.  For example
+              remove the following services from the first control plane cluster in
+                <codeph>data/control_plane.yml</codeph>:<?oxy_custom_start type="oxy_content_highlight" color="153,255,255"?></p><p>
+              <?oxy_custom_end?>
+              <codeblock>- swift-ring-builder
 - swift-proxy
 - swift-account
 - swift-container
-- swift-client</codeblock></p><p>To
-              create a new control plane cluster for the three existing swift PAC servers and the
-              one new swift PAC server please refer to <xref
-                href="http://docs-staging.hpcloud.com/hos2.0ga/#helion/objectstorage/creating_pac_cluster.html"
-                format="html" scope="external"
-                >http://docs-staging.hpcloud.com/hos2.0ga/#helion/objectstorage/creating_pac_cluster.html</xref>.
-              If you have 4 swift PAC servers in the cluster remember to set the member-count for
-              the cluster in data/control_plane.yml to 4.</p></li>
+- swift-client</codeblock>
+            </p><p>To create a new control plane cluster for the 3 existing Swift PAC servers and
+              the new Swift PAC server, refer to <xref
+                href="creating_pac_cluster.dita#topic_rvj_21c_jt">creating PAC cluster</xref>. If
+              there are 4 Swift PAC servers in the cluster, remember to set the
+                <codeph>member-count</codeph> for the cluster in
+                <codeph>data/control_plane.yml</codeph> file to <b>4</b> as shown
+              below.<codeblock>control-planes:
+- name: ccp
+  region: region1
+  . . .
+  clusters:
+  . . .
+     - name: swpac
+       cluster-prefix: c2
+       server-role: SWPAC-ROLE
+       member-count: <b>4</b>
+       allocation-policy: strict
+       service-components:
+         - swift-ring-builder
+         - swift-proxy
+         - swift-account
+         - swift-container
+         - swift-client</codeblock></p></li>
           <li>Commit your
             changes.<codeblock>git add -A
 git commit -m "Add Node &lt;name>"</codeblock></li>
