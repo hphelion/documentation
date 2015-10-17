@@ -4,7 +4,7 @@
   <title>Install the Messaging Service</title>
   <body>
     <section id="install-messaging">
-      <p>This section provides details on installing the Messaging service from the Development
+      <p>This section provides details on installing the Messaging service for the Development
         Platform.</p>
     </section>
     <section><title>Prerequisites</title>Installing services requires that the HDP Installer 2.0,
@@ -15,5 +15,15 @@
         configuration information from the clouds.yaml file. If you did not create a clouds.yaml
         file earlier, you can <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one
           now</xref>.</p></section>
+    <p>Add the following to the clouds.yaml file:</p>
+    <codeblock>deployer_key: keypair to use for the deployer instance (defaults to “default”)
+deployer_flavor: flavor to use for the deployer instance (defaults to “4” a large)
+deployer_name: name of the deployer instance (defaults to &lt;service&gt;_deployer_&lt;version&gt;)
+deployer_security_group: security group for the deployer (defaults to “default”)
+deployer_version: version of the deployer (defaults to version in image name if not set)
+deployer_image: image to use for the deployer (an attempt will be made to find the image using an image prefix “msgaas” or “helionci” and contains the word “hlinux”)
+deployer_uri: location most likely in swift to download the deployer tgz (will be set by the CLI based on where it lands in swift)
+deployer_net_id: Network id for the deployer instance (defaults to the id of the network named “SVC”)
+deployer_cloud: Cloud in clouds.yaml in which to use to create the deployer. The deployer create must be run by admin, but the deployer itself may be owned by someone else.</codeblock>
   </body>
 </topic>

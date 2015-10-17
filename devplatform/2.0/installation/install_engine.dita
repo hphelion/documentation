@@ -8,8 +8,32 @@
         href="devplatform_install_platform.dita#topic_gly_xmh_ts">been installed</xref>.<p>The
         images for the individual services will be downloaded when the service installation is
         started. A separate download step is not necessary.</p><p>The installer retrieves service
-        configuration information from the clouds.yaml file. If you did not create a clouds.yaml
-        file earlier, you can <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one
-          now</xref>.</p></section>
+        configuration information from the <codeph>clouds.yaml</codeph> file. If you did not create
+        a <codeph>clouds.yaml</codeph> file earlier, you can <xref
+          href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one now</xref>.</p><p>The HP Helion
+        Code Engine also requires a code repository hosted on GitHub or a private
+      server.</p></section>  
+    
+    <section>
+            <title>Install the HP Helion Code Engine</title>
+            <note type="tip"> For help with the installer, enter the command <codeph>openstack
+              hdpi</codeph>
+            </note>
+            <ol>
+              <li>SSH to the Deployer.                </li>
+              <li>Create a Virtual Environment. <codeblock>virtualenv .devplatform</codeblock></li>
+              <li>Source the Virtual
+                Environment.<codeblock>source .devplatform/bin/activate</codeblock></li>
+              
+              
+              <li>The installer retrieves service configuration information from the
+            <codeph>clouds.yaml</codeph> file. If you did not create a <codeph>clouds.yaml</codeph>
+          file earlier, you must <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one
+            now</xref>.</li>
+        <li>Run the installer.
+          <codeblock>openstack hdpi helionci install --package wscatalog.3333</codeblock></li>
+        <li>Launch the HP Helion Code Engine.<codeblock>os hdpi helionci launch</codeblock></li>
+            </ol>
+          </section>
   </body>
 </topic>
