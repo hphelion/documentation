@@ -91,8 +91,9 @@
         elasticsearch_cluster_name=hlm-001 --limit @offline-vsa</p>
     </section>
     <section>
-      <title><b>Remove VSA storage system from cloud after it's removed from cluster/management
-          group in CMC( In case if the VSA needs to be removed permanently)</b></title>
+      <title><?oxy_custom_end?><b>Remove VSA storage system from cloud after it's removed from
+          cluster/management group in CMC( In case if the VSA needs to be removed
+        permanently)</b></title>
       <p>After the VSA storage system is removed from CMC if the same needs to be removed from
         cloud, follow the below steps.</p>
       <p>1.) Delete or comment out the VSA system info in servers.yml entry (
@@ -100,7 +101,7 @@
       <p>2.) git add &amp; commit the changes</p>
       <p>3.) Run config-processor-run playbook to generate updated cloud inventory data</p>
       <p>4.) Run ready-deployment-playbook to update changes to staging directory</p>
-      <p>5.) Verify the node is removed from hosts/verb_hosts file.<?oxy_custom_end?></p>
+      <p>5.) Verify the node is removed from hosts/verb_hosts file.</p>
     </section>
   </body>
 </topic>
