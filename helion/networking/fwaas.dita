@@ -77,9 +77,13 @@ password: &lt;password&gt;</codeblock></li>
         <li>Create new firewall rules using <codeph>firewall-rule-create</codeph> command and
           providing the protocol, action (allow, deny) and name for the new rule. This example
           allows icmp and ssh while denying access to http. See the <codeph>neutron</codeph>
-          command-line reference under <xref href="fwaas.dita#HP2.0FWaaS/MoreInfo">more information</xref>
-          on additional options such as source IP, destination IP, source port and destination
-          port.<codeblock>neutron firewall-rule-create --protocol icmp --action allow --name allow-icmp
+          command-line reference under <xref href="fwaas.dita#HP2.0FWaaS/MoreInfo">more
+            information</xref> on additional options such as source IP, destination IP, source port
+          and destination
+          port.
+          <note>You can create a firewall rule with an identical name and each instance will have 
+          a unique id associated with the created rule, however for clarity purposes this is not recommended.</note>
+          <codeblock>neutron firewall-rule-create --protocol icmp --action allow --name allow-icmp
 neutron firewall-rule-create --protocol tcp --destination-port 80 --action deny --name deny-http
 neutron firewall-rule-create --protocol tcp --destination-port 22 --action allow --name allow-ssh</codeblock></li>
         <li>Once the rules are created, create the firewall policy by using the <codeph>firewall-policy-create</codeph> command with the 

@@ -18,8 +18,8 @@
       <p>Tempest is a set of integration tests for OpenStack API validation, scenarios, and other
         specific tests to be run against a live OpenStack cluster.</p>
       <p>A version of the upstream <xref href="http://docs.openstack.org/developer/tempest/"
-          scope="external" format="html">Tempest</xref> integration tests is pre-deployed on the 
-        HP Helion OpenStack deployer node.</p>
+          scope="external" format="html">Tempest</xref> integration tests is pre-deployed on the HP
+        Helion OpenStack deployer node.</p>
       <p>You can use these embedded tests to verify if the deployed cloud is functional.</p>
       <ul>
         <li>
@@ -66,11 +66,11 @@ source /etc/environment</codeblock>
           specific tests</xref>.</p>
     </section>
     <section id="results"><title>Viewing Test Results</title>
-      <p>Tempest is deployed under <codeph>/opt/stack/tempest</codeph>. Test results are written in
-        the following log file:</p>
+      <p>Check the test results by viewing the following log file:</p>
       <codeblock>/opt/stack/tempest/testr_results.log </codeblock>
       <p>A detailed log file is written to:
         <codeblock>/opt/stack/tempest/tempest.log</codeblock></p>
+      <!-- DOCS-1858
       <p>The results are also stored in the <codeph>testrepository</codeph> database.</p>
       <p>To access the results after the run:</p>
       <ol>
@@ -83,7 +83,8 @@ source /etc/environment</codeblock>
 cd /opt/stack/tempest
 testr last</codeblock>
         </li>
-      </ol>
+             </ol>
+              -->
       <p>See <xref href="https://testrepository.readthedocs.org/en/latest/" scope="external"
           format="html">Test Repository Users Manual</xref> for more details on how to manage the
         test result repository.</p>
