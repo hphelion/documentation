@@ -22,13 +22,13 @@
 <p>Visit these links to learn more:</p>
 <ul>
 <li>
-  <xref href="be http://docs.hpcloud.com/eucalyptus/" scope="external" format="html" >Documentation</xref>
+  <xref href="http://docs.hpcloud.com/eucalyptus/" scope="external" format="html" >Documentation</xref>
 </li>
 <li>
   <xref href="http://support.eucalyptus.com" scope="external" format="html" >Support</xref>
 </li>
 <li>
-  <xref href="http://docs.hpcloud.com/eucalyptus/4.1.2/#shared/intro_compatibility_matrix_4.1.html " scope="external" format="html" >Support matrix</xref>
+  <xref href="http://docs.hpcloud.com/eucalyptus/4.1.2/#shared/intro_compatibility_matrix_4.1.html" scope="external" format="html" >Support matrix</xref>
 </li>
 </ul>
 </section>
