@@ -9,7 +9,7 @@
       <li><xref type="section" href="#HP2.0HA/concepts-overview">High Availablity Concepts Overview</xref>
         <ul>
           <li><xref type="sectiondiv" href="#HP2.0HA/cloud-infrastructure">Highly Available Cloud Infrastructure</xref></li>
-          <li><xref type="sectiondiv" href="#HP2.0HA/cloud-infrastructure">Highly Available Cloud-Aware Tenant Workloads</xref></li>
+          <li><xref type="sectiondiv" href="#HP2.0HA/tenant_workloads">Highly Available Cloud-Aware Tenant Workloads</xref></li>
         </ul>
       </li>
       <li><xref type="section" href="#HP2.0HA/highly-available-cloud-infrastructure">Highly Available Cloud Infrastructure</xref></li>
@@ -143,7 +143,7 @@
       </ul>    
       
       <sectiondiv id="api_request">
-        <p><b>API Request Message Flow</b>></p>
+        <p><b>API Request Message Flow</b></p>
         <p>The diagram below shows the flow for an API request in an HA deployment. All API 
           requests (internal and external) are sent through the VIP.</p>
         <p><image href="../media/ha/ControlPlaneHA2.0_2.png" id="ControlPlane2"/></p>
@@ -202,7 +202,35 @@
         <p>When HA proxy detects the errors against the mysql instance on Controller0, 
           it removes that node from its pool for future database requests.</p>
       </sectiondiv>
-      
+      <sectiondiv id="singleton_services">
+        <p><b>Singletone Services</b></p>
+        
+        <sectiondiv id="cinder_volume">
+          <p><b>Cinder-Volume</b></p>
+          <p>Due to the single threading required in both cinder-volume and the drivers, 
+            the Cinder volume service is run as a singleton in the control plane. </p>
+        </sectiondiv>
+        <sectiondiv id="sherpa">
+          <p><b>Sherpa</b></p>
+          <p>In HOS 2.0, Sherpa is used by the Helion Development Platform (HDP) and 
+            is not used for HOS Upgrade.</p>
+          <p>You must take periodic backups of the Sherpa service since it does 
+            maintain some state information on local disk storage on the controller. 
+            If the controller fails, Sherpa becomes unavailable until you rebuild or 
+            restore the controller. After restoring the controller, you should restore 
+            the Sherpa state from its latest backup.</p>
+          <note>The Sherpa backup needs to be done manually. It's not backed up as 
+            part of Control Plane Backup (i.e. Freezer)</note>
+        </sectiondiv>
+        <sectiondiv id="nova_consoleauth">
+          <p><b>Nova consoleauth</b></p>
+          <p>If the controller fails, the Nova consoleauth service will become 
+            unavailable and users will not be able to connect to their VM consoles 
+            via VNC. The service will be restored once you restore the controller.</p>
+        </sectiondiv>
+        
+        
+      </sectiondiv>
     </section>
     
     
