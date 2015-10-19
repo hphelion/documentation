@@ -67,7 +67,7 @@
         <li>Copy the example configuration files into the required setup directory and edit them as
           required:
           <codeblock>cp -r ~/helion/examples/entry-scale-esx/* ~/helion/my_cloud/definition/</codeblock></li>
-        <li><!--The configuration files for editing are available at <codeph>~/helion/my_cloud/definition/</codeph>. Refer to the <b><xref href="input_model.dita">Helion OpenStack 2.0 Input Model</xref></b> document for assistance with the configuration files. <note type="important">If you chose to use your first controller node as your deployer, ensure that your <codeph>servers.yml</codeph> file contains the <codeph>is-deployer: true</codeph> notation in your controller options. If you are using a dedicated deployer node you can omit this. Here is an example snippet of a <codeph>servers.yml</codeph> file where a user is using their first controller node as their deployer: <codeblock># Controllers
+        <!--The configuration files for editing are available at <codeph>~/helion/my_cloud/definition/</codeph>. Refer to the <b><xref href="input_model.dita">Helion OpenStack 2.0 Input Model</xref></b> document for assistance with the configuration files. <note type="important">If you chose to use your first controller node as your deployer, ensure that your <codeph>servers.yml</codeph> file contains the <codeph>is-deployer: true</codeph> notation in your controller options. If you are using a dedicated deployer node you can omit this. Here is an example snippet of a <codeph>servers.yml</codeph> file where a user is using their first controller node as their deployer: <codeblock># Controllers
 - id: controller1
   ip-addr: 192.168.10.3
   role: CONTROLLER-ROLE
@@ -77,18 +77,21 @@
   ilo-ip: 192.168.9.3
   ilo-password: password
   ilo-user: admin
-  <b>is_deployer: true</b></codeblock></note>--></li>
+  <b>is_deployer: true</b></codeblock></note>-->
         <li>Modify the <codeph>~/helion/hos/ansible/hlm-deploy.yml</codeph> to uncomment the line
           containing <codeph>eon-deploy.yml</codeph>. You must comment the line containing
-            <codeph>ceph-deploy.yml</codeph>,  <codeph>vsa-deploy.yml</codeph>, and
-            <codeph>cmc-deploy.yml</codeph>. </li>
-        <!--<li>Modify the <codeph>neutron.conf.j2</codeph> at <codeph>~/helion/my_cloud/config/<codeph>neutron/neutron.conf.j2</codeph></codeph>with the following values:<codeblock>router_distributed = False</codeblock><p> And add <codeph>mechanism_drivers = ovsvapp</codeph> at the end of the <codeph>neutron.conf.j2</codeph>.</p></li><li>Modify <codeph>ml2_conf.ini.j2</codeph> at <codeph>~/helion/my_cloud/config/<codeph>neutron/ml2_conf.ini.j2</codeph></codeph>with the following values:<codeblock>[ml2]
+            <codeph>ceph-deploy.yml</codeph>, <codeph>vsa-deploy.yml</codeph>, and
+            <codeph>cmc-deploy.yml</codeph>.
+            <p><!--<li>Modify the <codeph>neutron.conf.j2</codeph> at <codeph>~/helion/my_cloud/config/<codeph>neutron/neutron.conf.j2</codeph></codeph>with the following values:<codeblock>router_distributed = False</codeblock><p> And add <codeph>mechanism_drivers = ovsvapp</codeph> at the end of the <codeph>neutron.conf.j2</codeph>.</p></li><li>Modify <codeph>ml2_conf.ini.j2</codeph> at <codeph>~/helion/my_cloud/config/<codeph>neutron/ml2_conf.ini.j2</codeph></codeph>with the following values:<codeblock>[ml2]
 mechanism_drivers = ovsvapp, openvswitch, l2population
 [agent]
-enable_distributed_routing = False</codeblock></li>-->
+enable_distributed_routing = False</codeblock></li>--></p></li>
         <li>Enable EON logs in the central server, refer to <xref
             href="esx/change_log_level_debug.dita#topic_rq3_mxh_rt/enable-eon-service-centralized-logging"
-            >Enable EON Service for Centralised Logging</xref> for more details.</li>
+            >Enable EON Service for Centralized Logging</xref> for more details.</li>
+      </ol>
+    </section>
+        <ol id="ol_a14_jy4_st">
         <li>Commit your cloud deploy configuration to the<xref href="using_git.dita"> local git
             repo</xref>, as follows: <codeblock>cd ~/helion/hos/ansible
 git add -A
@@ -99,7 +102,7 @@ git commit -m "My config or other commit message"</codeblock>
       </ol>
       <p>Then you need to run the following commands to complete your configuration. These commands
         also verify your configuration is correct.</p>
-      <ol>
+      <ol id="ol_og4_jy4_st">
         <li>Run the following playbook which confirms that there is iLo connectivity for each of
           your nodes so that they are accessible to be re-imaged in a later step:
           <codeblock>cd ~/helion/hos/ansible
@@ -116,7 +119,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         clean script detailed in the <xref
           href="installation_troubleshooting.dita#troubleshooting_installation/configproc"
           >Installation Troubleshooting</xref> document.</p>
-    </section>
+    
     <section conref="install_entryscale_kvm.dita#install_kvm/deploy_cobbler"/>
     <section conref="install_entryscale_kvm.dita#install_kvm/provision_nodes"/>
     <section conref="install_entryscale_kvm.dita#install_kvm/deploy"/>
