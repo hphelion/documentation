@@ -21,9 +21,9 @@
       <title>Bring Up Controller-0 in the KVM Region</title>
       <ol>
         <li>Make sure other servers to be used in KVM region are shutdown.</li>
-        <li>Use the <codeph>HP-HCG-Server-host-installer-15.05-b10.iso</codeph> to boot the
+        <li>Use the <codeph>HP-HCG-Server-host-installer-15.05-b11.iso</codeph> to boot the
           controller
-          node.<codeblock>mount HP-HCG-Server-host-installer-15.05-b10.iso</codeblock></li>
+          node.<codeblock>mount HP-HCG-Server-host-installer-15.05-b11.iso</codeblock></li>
         <li>Follow the install wizard. Select the Graphics mode for the controller only. Do not
           select <codeph>Controller+Compute</codeph>.</li>
         <li>After the reboot, log in as user name <codeph>wrsroot</codeph> and password
@@ -44,9 +44,7 @@ ifconfig eth0 up</codeblock></li>
       <ol id="ol_mdt_dd3_ys">
         <!--<li>In a browser, navigate to <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">HP Helion Download Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs"><li>Click <b>Sign In</b> to log in using your account. </li><li>After signing in, click the <b>Downloads</b> link in the menu on the left side of the page.</li><li>On the <b>Downloads</b> page, locate HP Helion OpenStack Carrier Grade and click <b>Download</b>.</li></ul></li><li>Download and extract the <b id="productShow_apcodeph">Helion Carrier Grade 2.0 Windriver License patch signature file</b> and the associated signature and checksum files. For information on performing verifications of the download, see the Prerequistues. </li>-->
         <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the
-            <codeph>controller-0</codeph>. The files are located in the
-            <codeph>/root/cg-hlm/windriver-files</codeph> directory on the HLM host.<ul
-            id="ul_mpn_hnr_bt">
+            <codeph>controller-0</codeph>. <ul id="ul_mpn_hnr_bt">
             <li><codeph>license.lic</codeph></li>
             <li><codeph>region_config</codeph>
             </li>
@@ -54,20 +52,19 @@ ifconfig eth0 up</codeblock></li>
           </ul><p>You should have downloaded these files <xref
               href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/patches">in the
               prerequisites</xref></p></li>
-        <li>Restart <codeph>controller-0</codeph> to load the license file.</li>
       </ol>
     </section>
     <section>
       <title>Install the KVM region cloud</title>
       <ol>
         <li>Execute the following command to install the KVM region cloud:
-              <codeblock>sudo config_region</codeblock><p><image
+              <codeblock>sudo config_region region_config</codeblock><p><image
               href="../../media/CGH-install-KVM.png" width="500" id="image_c2w_4kk_bt"/></p>Ignore
           the message which displays during <codeph>config_region</codeph> process.
               <codeblock>Step 9 of 29 [####  ]dm-6 WRITE SAME failed. Manually zeroing. </codeblock><p><image
               href="../../media/CGH-install-kvm-error.png" width="500"/></p></li>
-        <li>After <codeph>controller-0</codeph> is deployed, deploy the remaining nodes as
-            <codeph>controller-1</codeph> and <codeph>compute-'n'</codeph>.
+        <li>After <codeph>controller-0</codeph> is deployed, add and configure the remaining nodes
+          as <codeph>controller-1</codeph> and <codeph>compute-'n'</codeph>.
               <codeblock>system host-add --hostname controller-1 --personality controller --mgmt_mac &lt;mgmt_mac&gt; --bm_mac &lt;bm_mac&gt; --bm_ip &lt;ilo_ip&gt; --bm_type ilo4 --bm_username &lt;ilo_user&gt; --bm_password &lt;ilo_password&gt;
 system host-add --hostname &lt;unique-compute-name&gt; --personality compute --mgmt_mac &lt;mgmt_mac&gt; --mgmt_ip &lt;mgmt_ip&gt; --bm_mac &lt;ilo_mac&gt; --bm_ip &lt;ilo_ip&gt; --bm_type ilo4 --bm_username &lt;ilo_user&gt;  --bm_password &lt;ilo_password&gt;</codeblock><p><image
               href="../../media/CGH-install-kvm-host-add.png" id="image_tv5_wz1_ct" width="300"
@@ -157,12 +154,6 @@ system host-if-modify compute-3 -n vrs -nt data-vrs --ipv4-mode=static eth4
 system host-addr-add compute-3 vrs 10.70.5.83 24
 system host-update compute-3 vsc_controllers=10.70.5.31,10.70.5.32
 system host-unlock compute-3        </codeblock></li>
-        <li>Perform the following steps on controller-0 to ensure instance launching succeeds.
-          Repeat the commands for each compute node.
-          <codeblock>source /etc/nova/openrc
-nova aggregate-create remote_storage_hosts
-nova aggregate-set-metadata remote_storage_hosts localstorage=false
-nova aggregate-add-host remote_storage_hosts &lt;compute host name&gt;</codeblock></li>
       </ol>
     </section>
     <section id="nic">

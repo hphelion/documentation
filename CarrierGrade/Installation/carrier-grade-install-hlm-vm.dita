@@ -118,14 +118,20 @@ upstream_ntp_servers:
           <codeph>apt-get install &lt;packagename></codeph> command, the index would indicate the
         correct package to install. </p>
       <ol id="ol_yhm_ylr_st">
-        <li>Copy two deb packages into <codeph>/var/cache/hlm/repo/debian/lib</codeph>. You should
-          have <xref href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/debian">downloaded
-            these files in the
+        <li>Copy the following Debian packages to <codeph>/var/cache/hlm/repo/debian/</codeph>. You
+          should have <xref href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/debian"
+            >downloaded these files in the
           Prerequisites</xref>.<codeblock>protobuf-c0_0.14-1+b1_amd64.deb
-python-setproctitle_1.1.8-1_amd64.deb</codeblock></li>
+python-setproctitle_1.1.8-1_amd64.deb
+nuagenetlib_0.0.0-1729-kilo_all.deb
+nuage-openstack-neutron_2015.1.1729_all.deb</codeblock></li>
+        <li>Remove the following files from the <codeph>/var/cache/hlm/repo/debian/</codeph>
+          directory:
+          <codeblock>nuagenetlib_2015.1.3.2.4.133_all.deb
+nuage-openstack-neutron_2015.1.1725_all.deb</codeblock></li>
         <li>Change to the <codeph>/var/cache/hlm/repo/debian/</codeph> directory.</li>
         <li>Execute the <codeph>dpkg-scanpackages</codeph> command to update Debian repositroy index
-          file:<codeblock>/root/cg-hlm/dev-tools/dpkg-scanpackages . /dev/null | gzip -9c &gt; Packages.gz</codeblock></li>
+          file:<codeblock>/root/cg-hlm/dev-tools/dpkg-scanpackages --multiversion . /dev/null | gzip -9c &gt; Packages.gz</codeblock></li>
       </ol>
     </section>
 

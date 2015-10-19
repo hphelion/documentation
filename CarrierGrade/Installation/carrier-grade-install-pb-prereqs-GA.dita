@@ -266,7 +266,7 @@ StrictHostKeyChecking no </codeblock></li>
                                 packages are located on the LR4 FTC jump server (15.215.66.57) in
                                 the <codeph>E:\Builds\cg-hos-2-0-builds\build15</codeph> directory.
                                 CDL credentials re required.</p>
-                        <p><image href="../../media/CGH-2-install-download-alpha.png" width="600"
+                        <p><image href="../../media/CGH-2-install-download-build22.png" width="600"
                                         id="image_nxb_jxz_jt"/></p>
                 </section>
                 <section id="patches">
@@ -311,10 +311,10 @@ StrictHostKeyChecking no </codeblock></li>
                                         <codeph>E:\Builds\cg-hos-2-0-builds\build22\Nuage_Debians</codeph>
                                 directory:</p><ul id="ul_lt4_v3s_st">
                                 <li>
-                                        <p><codeph>nuage-neutron_1722-nuage-kilo_all.deb</codeph></p>
+                                        <p><codeph>nuagenetlib_0.0.0-1729-kilo_all.deb</codeph></p>
                                 </li>
                                 <li>
-                                        <p><codeph>python-nuagenetlib_0.0.-1717-kilo_all.deb</codeph></p>
+                                        <p><codeph>nuage-openstack-neutron_2015.1.1729_all.deb</codeph></p>
                                 </li>
                         </ul></section>
                 <section id="download-esx">
@@ -329,7 +329,7 @@ StrictHostKeyChecking no </codeblock></li>
                                 including the VMware vSphere Distributed Switch (VDS) .</p>
                         <p><b>DCN components</b></p>
                         <p>Download all required DCN packages needed to deploy the DCN environment.
-                                The current supported version is DCN version 3.2 R3.</p>
+                                The current supported version is DCN version 3.2 R4.</p>
                         <p>The files are available on the from the LR4 FTC jump server
                                 (15.215.66.57) in the <codeph>E:\DCN3.2R4release</codeph>
                                 directory.</p>
@@ -345,14 +345,12 @@ StrictHostKeyChecking no </codeblock></li>
                                                 </row>
                                                 <row>
                                                   <entry>
-                                                  <p>nuage-metadata-agent_3.2.3-102_all.deb</p>
-                                                  <p> nuage-neutron_1694-nuage-kilo_all.deb</p>
-                                                  <p>
-                                                  nuage-openvswitch-common_3.2.3-102_amd64.deb</p>
-                                                  <p>
-                                                  nuage-openvswitch-switch_3.2.3-102_amd64.deb</p>
-                                                  <p> nuage-python-openvswitch_3.2.3-102_all.deb</p>
-                                                  <p> python-nuagenetlib_3.2.3-101-kilo_all.deb</p>
+                                                  <p>nuage-metadata-agent_3.2.4-133_all.deb</p>
+                                                  <p>nuagenetlib_0.0.0-1729-kilo_all</p>
+                                                  <p>nuage-openstack-neutron_2015.1.1729_all.deb</p>
+                                                  <p>nuage-openvswitch-common_3.2.4-133_amd64.deb</p>
+                                                  <p>nuage-openvswitch-switch_3.2.4-133_amd64.deb</p>
+                                                  <p>nuage-python-openvswitch_3.2.4-133_all.deb</p>
                                                   <p> vsc_singledisk.qcow2</p>
                                                   </entry>
                                                   <entry>
@@ -362,18 +360,15 @@ StrictHostKeyChecking no </codeblock></li>
                                                   </entry>
                                                 </row>
                                                 <row>
-                                                  <entry>
-                                                  <p>VSD-3.2.3_105-hp.qcow2</p>
-                                                  <p>vsd.xml</p>
-                                                  </entry>
+                                                  <entry>VSD-3.2.4_134-hp.qcow2<p>vsd.xml</p></entry>
                                                   <entry>
                                                   <p>/var/lib/libvirt/images</p>
                                                   </entry>
                                                 </row>
                                                 <row>
                                                   <entry>
-                                                  <p>VRS_3.2.3-104_08282015.ovf</p>
-                                                  <p>VRS_3.2.3-104_08282015-disk1.vmdk</p>
+                                                  <p>VRS_3.2.4-135_10062015.ovf</p>
+                                                  <p> VRS_3.2.4-135_10062015-disk1.vmdk</p>
                                                   </entry>
                                                   <entry>
                                                   <p>Any location on the KVM host. Will be copied
@@ -560,7 +555,7 @@ StrictHostKeyChecking no </codeblock></li>
                         --><!--<li><b>vCenter Proxy Appliance</b>. For the KVM + ESX deployment, download this file, named <codeph>overcloud_vcenter_compute_proxy.tar</codeph>. Also download the Signature files. This file will need to be moved to the system that hosts the VMware vCenter client. You can move the file to that system or download the file later.</li><li><b id="productShow_apcodeph">VCN OVSvApp Appliance</b>.  For the KVM + ESX deployment, download this file, named   Also download the Signature files. HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).</li>--><!--  <li><xref href="#topic7148/verify" format="dita">Verify the
                                                 signature and checksums</xref>. </li>
                         </ol>--></section>
-                <!--<section id="verify"><title>Verify the downloaded signature</title><p>After downloading the installation packages, you should verify the signature of the download. You can use the GPG utility, which is already installed on the HLM node. Signed by the signature file.</p><p>A set of GPG public keys are available on <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Download Network(HDN)</xref> . If you did not download the public keys in the previous section, click the <b>GPG keys to verify signature files</b> link in HDN to download the <codeph>cg-hos.tar.gz.gpg</codeph> file. </p><ol><li>Copy the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file to the <codeph>/root/cg/</codeph> directory. You wlll need to create this directory:<codeblock>mkdir /root/cg/</codeblock></li><li>Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file.<codeblock> tar xvf GPG-HPCSS-Public-Keys.tar </codeblock></li><li>Copy the public keys to the HLM host server, extract the keys from the compressed files. <p>The following keys are included in the download:</p><ul id="ul_uzg_xmq_bt"><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-1.pub</li><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-2.pub</li><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-3.pub</li><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-4.pub</li><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-5.pub</li><li>hpPublicKey.pub</li><li>hpPublicKey2048.pub</li></ul></li><li>Execute the following command to import the keys: <codeblock>gpg -\-import "&lt;filename>"</codeblock><p>Where &lt;filename> is the name of the extracted file.</p><p>The keys are then imported into the gpgp key share: <codeblock>gpg -\-import hpPublicKey.pub 
+                <!--<section id="verify"><title>Verify the downloaded signature</title><p>After downloading the installation packages, you should verify the signature of the download. You can use the GPG utility, which is already installed on the HLM node. Signed by the signature file.</p><p>A set of GPG public keys are available on <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Download Network(HDN)</xref> . If you did not download the public keys in the previous section, click the <b>GPG keys to verify signature files</b> link in HDN to download the <codeph>cg-hos.tar.gz.</codeph> file. </p><ol><li>Copy the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file to the <codeph>/root/cg/</codeph> directory. You wlll need to create this directory:<codeblock>mkdir /root/cg/</codeblock></li><li>Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file.<codeblock> tar xvf GPG-HPCSS-Public-Keys.tar </codeblock></li><li>Copy the public keys to the HLM host server, extract the keys from the compressed files. <p>The following keys are included in the download:</p><ul id="ul_uzg_xmq_bt"><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-1.pub</li><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-2.pub</li><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-3.pub</li><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-4.pub</li><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-5.pub</li><li>hpPublicKey.pub</li><li>hpPublicKey2048.pub</li></ul></li><li>Execute the following command to import the keys: <codeblock>gpg -\-import "&lt;filename>"</codeblock><p>Where &lt;filename> is the name of the extracted file.</p><p>The keys are then imported into the gpgp key share: <codeblock>gpg -\-import hpPublicKey.pub 
 gpg -\-import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-1.pub 
 gpg -\-import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-2.pub 
 gpg -\-import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-3.pub 
@@ -646,8 +641,8 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                 </row>
                                                 <row>
                                                   <entry>
-                                                  <p>cg-hos-misc.tar.gz.gpg</p>
-                                                  <p>cg-hos-src.tar.gz.gpg</p>
+                                                  <p>cg-hos-misc.tar.gz</p>
+                                                  <p>cg-hos-src.tar.gz</p>
                                                   </entry>
                                                   <entry>
                                                   <p>/root/cg</p>
@@ -658,12 +653,9 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   <entry> </entry>
                                                 </row>
                                                 <row>
-                                                  <entry> cg-infra-src.tar.gz.gpg</entry>
+                                                  <entry> cg-infra-src.tar.gz</entry>
                                                   <entry>
                                                   <p>/root </p>
-                                                  <p>Step 1: Decrypt and untar using “gpg -d
-                                                  cg-infra-playbooks.tar.gz.gpg | tar -xzvf –“</p>
-                                                  <p>Password: cghelion</p>
                                                   <p> </p>
                                                   </entry>
                                                   <entry> </entry>
@@ -671,9 +663,6 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                 <row>
                                                   <entry>
                                                   <p>TEMPL-CPV9.ova</p>
-                                                  <p> </p>
-                                                  <p>Note:
-                                                  <b>E:\sFTP\HCG2.0\DCN3.2bits-For-build9\compute-proxy</b></p>
                                                   </entry>
                                                   <entry>Uploaded to the ESX Cluster</entry>
                                                   <entry> </entry>
@@ -687,14 +676,19 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                         <p>Download the following files required to install the KVM region:</p>
                         <p>
                                 <ul>
-                                        <li><codeph>license.lic</codeph></li>
-                                        <li><codeph>region_config</codeph>
-                                        </li>
-                                        <li><codeph>cakey.pem</codeph></li>
+                                        <li><codeph>license.lic</codeph> Located in the
+                                                  <codeph>/root/cg-hlm/windriver-files</codeph>
+                                                directory on the HLM host.</li>
+                                        <li><codeph>region_config</codeph> Located in the
+                                                  /<codeph>var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
+                                                directory on the HLM host.</li>
+                                        <li><codeph>cakey.pem</codeph> Located in the
+                                                  <codeph>/var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
+                                                directory on the HLM host.</li>
                                 </ul>
                         </p>
                         <p>You can download these files to any location. You will copy these files
-                                to  the <codeph>/home/wrsroot/</codeph> directory of
+                                to the <codeph>/home/wrsroot/</codeph> directory of
                                         <codeph>controller-0</codeph> in the KVM region during the
                                 installation process. </p>
                 </section>
@@ -703,10 +697,10 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                         list of files is extracted:
                                         <codeblock>cg-hlm.qcow2 
 cg-hlm.qcow2.md5
-cg-hos.tar.gz.gpg
-cg-hos.tar.gz.gpg.md5
-cg-infra-playbooks.tar.gz.gpg
-cg-infra-playbooks.tar.gz.gpg.md5
+cg-hos.tar.gz
+cg-hos.tar.gz.md5
+cg-infra-playbooks.tar.gz
+cg-infra-playbooks.tar.gz.md5
 TEMPL-CPV9.ova
 WR/HP-HCG-Server-host-installer-15.05-b10.iso
 WR/HP-HCG-Server-host-installer-15.05-b10.iso.md5
@@ -715,7 +709,7 @@ WR/extras/HP-HCG-SDK-15.05-b10.tgz.md5
 WR/extras/HP-HCG-sample-guest-15.05-b9.img
 WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                         </ol>-->
-                        <!--<section id="extract"><ol><li>Copy the <codeph>cg-hlm.qcow2</codeph> file to the images folder: <codeph>/var/lib/libvirt/images</codeph>. </li><li>Copy the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file from the <codeph>hcg_1.1.0.tar</codeph> files to the <codeph>/root</codeph> directory.</li></ol><p>The following table lists the installation and patch files and indicates where you need to copy those files.</p><table id="table_yhb_zny_zs"><tgroup cols="3"><colspec colnum="1" colname="col2" colwidth="1*"/><colspec colnum="2" colname="col3" colwidth="1.11*"/><colspec colnum="3" colname="col4" colwidth="1.11*"/><thead><row><entry>File Name</entry><entry>Extracted from</entry><entry>Copy the file to: </entry></row></thead><tbody><row><entry><codeph>cg-hlm.qcow2</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/var/lib/libvirt/images</codeph> on the HLM host</entry></row><row><entry><codeph>cg-infra-playbooks.tar.gz.gpg</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on the HLM host</entry></row><row><entry><codeph>TEMPL-CPV9.ova</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry>Any location on any server that can be accessed by the VMware vCenter client.</entry></row><row><entry><codeph>ldap_patch_1.1.tar.gz and hoscg-update.tgz </codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1/</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>gre_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry>Any directory on the HLM host. Make note of the location.</entry></row><row><entry><codeph>compute_proxy_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>random-password.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>horizon_web_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>WR/HP-HCG-Server-host-installer-15.05-b10.iso</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on <codeph>controller-0</codeph> in the KVM region.</entry></row><row><entry><codeph>WR/extras/HP-HCG-SDK-15.05-b10.tgz WR/extras/HP-HCG-SDK-15.05-b10.tgz.md5</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on <codeph>controller-0</codeph> in the KVM region. SDK files to be used as needed.</entry></row><row><entry><codeph>WR/extras/HP-HCG-sample-guest-15.05-b9.img WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on <codeph>controller-0</codeph> in the KVM region. Sample guestt OS files to be used as needed.</entry></row></tbody></tgroup></table></section>-->
+                        <!--<section id="extract"><ol><li>Copy the <codeph>cg-hlm.qcow2</codeph> file to the images folder: <codeph>/var/lib/libvirt/images</codeph>. </li><li>Copy the <codeph>cg-infra-playbooks.tar.gz</codeph> file from the <codeph>hcg_1.1.0.tar</codeph> files to the <codeph>/root</codeph> directory.</li></ol><p>The following table lists the installation and patch files and indicates where you need to copy those files.</p><table id="table_yhb_zny_zs"><tgroup cols="3"><colspec colnum="1" colname="col2" colwidth="1*"/><colspec colnum="2" colname="col3" colwidth="1.11*"/><colspec colnum="3" colname="col4" colwidth="1.11*"/><thead><row><entry>File Name</entry><entry>Extracted from</entry><entry>Copy the file to: </entry></row></thead><tbody><row><entry><codeph>cg-hlm.qcow2</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/var/lib/libvirt/images</codeph> on the HLM host</entry></row><row><entry><codeph>cg-infra-playbooks.tar.gz</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on the HLM host</entry></row><row><entry><codeph>TEMPL-CPV9.ova</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry>Any location on any server that can be accessed by the VMware vCenter client.</entry></row><row><entry><codeph>ldap_patch_1.1.tar.gz and hoscg-update.tgz </codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1/</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>gre_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry>Any directory on the HLM host. Make note of the location.</entry></row><row><entry><codeph>compute_proxy_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>random-password.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>horizon_web_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>WR/HP-HCG-Server-host-installer-15.05-b10.iso</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on <codeph>controller-0</codeph> in the KVM region.</entry></row><row><entry><codeph>WR/extras/HP-HCG-SDK-15.05-b10.tgz WR/extras/HP-HCG-SDK-15.05-b10.tgz.md5</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on <codeph>controller-0</codeph> in the KVM region. SDK files to be used as needed.</entry></row><row><entry><codeph>WR/extras/HP-HCG-sample-guest-15.05-b9.img WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on <codeph>controller-0</codeph> in the KVM region. Sample guestt OS files to be used as needed.</entry></row></tbody></tgroup></table></section>-->
                 <section>
                         <title>Bring Up Single VSD VM Manually</title>
                         <p><b>Note:</b> This is applicable only for KVM + ESX Cloud Deployment. </p>

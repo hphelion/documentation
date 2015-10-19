@@ -112,49 +112,22 @@ subnet 10.20.94.0 netmask 255.255.255.0 {
             bundled as part of the vCenter Integration node. The metadata plugin needs to be
             installed once the vCenter Integration node is up and running.<p>To install and
                 configure the metadata plugin:</p><ol id="ol_o4m_w34_rt">
-                <li>SSH into the vCenter Integration node: monit stop jboss.</li>
-                <li>Extract the war:
-                    /opt/vsd/jboss/standalone/deployment/NuagePlugin-1.6.0.war.</li>
-                <li>Step 3 Edit the file WEB-INF/plugin.properties as follows:<ol id="ol_iwh_y34_rt">
-                        <li>login.screen=true: Set this to true if you want to login as a specific
-                            user, otherwise it will login as the default username/password</li>
-                        <li>vsd.api.url=https://x.x.x.x:8443/nuage/api/v3_2: Replace the x.x.x.x
-                            with the actual VSD whose metadata you wish to access. In most cases
-                            this will be the same machine on which you installed VSD.</li>
-                        <li>vsd.csp.org=csp: Specify VSD organization.</li>
-                        <li>vsd.username=csproot: Specify VSD username.</li>
-                        <li>vsd.password=csproot: Specify VSD password.</li>
-                        <li>self.ip=x.x.x.x: This is the IP address where your war is running. In
-                            most cases this will be the same machine on which you installed
-                            VSD.</li>
-                        <li>self.url.prefix=https://*:8443/NuagePlugin-1.6.0: This is the endpoint
-                            where your application is running. If you are running the application
-                            as-is on the VSD server, do not change this.</li>
-                        <li>self.extensionKey=net.nuagenetworks.nde.plugin.vcenter: The plugin
-                            name.</li>
-                        <li>vCenter settings:
-                            <codeblock>vc.host=x.x.x.x //: This is the vCenter IP address:
+                <li>Stop the JBoss application server on the the vCenter Integration node. <ol
+                        id="ol_zj2_g3t_st">
+                        <li>SSH into the vCenter Integration node.</li>
+                        <li>Execute the following command:
+                            <codeblock>monit stop jboss</codeblock></li>
+                    </ol></li>
+                <li>Edit the the <codeph>/opt/vsd/jboss/standalone/configuration
+                        /metadataplugin.properties</codeph>. Enter vCenter properties the in the
+                    fields, as
+                    follows:<codeblock>vc.host=x.x.x.x //: This is the vCenter IP address:
 vc.http.proxy.port = 80 //: This is the default port. Do not change. 
 vc.https.proxy.port = 443 //: This is the default port. Do not change. 
 vc.user = root //: vCenter username
 vc.password =vmware //: vCenter password</codeblock></li>
-                    </ol></li>
-                <li>Edit the file pluginConfiguration.xml by replacing 135.227.211.147 with the IP
-                    address of your VSD machine.
-                    <codeblock>&lt;extension parent="InventoryView.VirtualMachine">
-&lt;title locale="en">Nuage&lt;/title>
-&lt;url>https://135.227.211.147:8443/NuagePlugin-1.6.0/nuage&lt;/url>
-&lt;/extension>               </codeblock></li>
-                <li>Stop the JBoss application server. <ol id="ol_mpx_hn4_rt">
-                        <li>SSH into the vCenter Integration node.</li>
-                        <li>Execute the following
-                            command::<codeblock>monit stop jboss</codeblock></li>
-                    </ol></li>
-                <li>Deploy the <codeph>NuagePlugin-1.6.0.war</codeph> metadata binary.  Refer to the
-                        <i>HP Distributed Cloud Networking Installation Guide</i> for
-                    instructions.</li>
                 <li>Start the JBoss application server using the following
-                    command::<codeblock>monit stop jboss</codeblock></li>
+                    command::<codeblock>monit start jboss</codeblock></li>
             </ol><p>The <codeph>monit start jboss</codeph> Metadata plugin is automatically deployed
                 and installed upon. The plugin will be listed as registered in
             vCenter.</p></section>
