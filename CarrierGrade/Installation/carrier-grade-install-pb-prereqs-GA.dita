@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic7148">
-        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Installation
+        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Post-Alpha Release Build 22: Installation
                 Prerequisites</title>
         <titlealts>
                 <searchtitle>HP Helion Openstack Installation Prerequisites</searchtitle>
@@ -296,6 +296,17 @@ StrictHostKeyChecking no </codeblock></li>
                                 </tgroup>
                         </table>
                 </section>
+                <section id="debian"><title>Download required Debian packages</title>Download the following
+                        files from the LR4 Jump Server (15.215.66.57) in the
+                                <codeph>E:\Builds\cg-hos-2-0-builds\build15\HPCSS</codeph>
+                                directory:<ul id="ul_ggl_glr_st">
+                                <li>
+                                        <p><codeph>libprotobuf-c0_0.14-1+b1_amd64.deb</codeph></p>
+                                </li>
+                                <li>
+                                        <p><codeph>python-setproctitle_1.1.8-1_amd64.deb</codeph></p>
+                                </li>
+                        </ul></section>
                 <section id="download-esx">
                         <title>Download the DCN and ESX packages for KVM + ESX  from the Jump
                                 Server</title>

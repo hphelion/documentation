@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying the HLM VM and
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Post-Alpha Release Build 22: Deploying the HLM VM and
     Installation Services</title>
 <prolog>
   <metadata>
@@ -110,6 +110,19 @@ upstream_ntp_servers:
           VM during the HP Helion OpenStack Carrier Grade installation process.</li> 
       </ol>
 </section>
+    <section>
+      <title>Adding to HLM local file repo before cloud is deployed</title>
+      <ol id="ol_yhm_ylr_st">
+        <li>Copy two deb packages into <codeph>/var/cache/hlm/repo/debian/lib</codeph>. You should
+          have <xref href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/debian">downloaded
+            these files in the
+          Prerequisites</xref>.<codeblock>protobuf-c0_0.14-1+b1_amd64.deb
+python-setproctitle_1.1.8-1_amd64.deb</codeblock></li>
+        <li>Change to the <codeph>/var/cache/hlm/repo/debian/</codeph> directory.</li>
+        <li>Execute the <codeph>dpkg-scanpackages</codeph> command to update Debian repositroy index
+          file:<codeblock>cg-hlm:/var/cache/hlm/repo/debian# /root/cg-hlm/dev-tools/dpkg-scanpackages . /dev/null | gzip -9c &gt; Packages.gz</codeblock></li>
+      </ol>
+    </section>
 
   <section id="next-step"> <title>Next Step</title>
 <p>The next step depends upon the HP Helion OpenStack Carrier Grade deployment model you are

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4797">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Sample wr.json File for
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Post-Alpha Release Build 22: Sample wr.json File for
         Installing the KVM + ESX Topology</title>
 <prolog>
     <metadata>
@@ -24,7 +24,7 @@
         
 <section id="sample-node-provisionjson-file">
             <p><b>For bonded NIC environments</b>, edit the file as follows:</p>
-<codeblock>{
+            <codeblock>{
     "lag_interface": "Y",   
     "lag_mode": 4,
     "interface_mtu": 1500,
@@ -39,12 +39,23 @@
 "tul_ip_start_address": "10.20.6.50",
 "tul_ip_end_address": "10.20.6.99",
 "region_name": "regionone",</codeblock>
-
-    <p>The following represents a sample <codeph>wr.json</codeph> file in the
+            <p><b>For SR-IOV environments,</b> edit the following values.</p>
+            <p><codeph>physnet_VLAN_range_mappings</codeph>: Specify VLAN ranges for SRIOV/PCIPT
+                enabled Tenant Networks in the following format:
+                &lt;physical_network&gt;[:&lt;vlan_min&gt;:&lt;vlan_max&gt;] tuples .
+                <!--From Hrushi email 10/16/15--></p>
+            <p><codeph>pci_vendor_id</codeph>: Specify a comma-separated list of supported Vendor
+                PCI Devices, in the <codeph>vendor_id:product_id</codeph> format. This variable used
+                to define the devices being used for SR-IOV interfaces.
+                <!--From Hrushi email 10/16/15--></p>
+        </section>
+        <section>
+            <title>Sample wr.json file</title>
+            <p>The following represents a sample <codeph>wr.json</codeph> file in the
                     <codeph>/var/hlm/clouds/&lt;cloudname&gt;/&lt;cloudname>/vars</codeph> directory
                 on the HLM VM. The IP addresses are masked for security purposes. Use values
                 appropriate for your environment.</p>
-<codeblock>{
+            <codeblock>{
     "product": {
         "version": 1
     },
@@ -95,8 +106,7 @@
             }
         }
     ]
-}</codeblock>        
-
-</section>
+}</codeblock>
+        </section>
 </body>
 </topic>
