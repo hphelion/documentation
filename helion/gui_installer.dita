@@ -40,18 +40,19 @@
           that the only option for the Cloud model on KVM with VSA is the have 3 VSA nodes; there is
           no option to have 0 VSA nodes. Note also that you cannot put the deployer on a control
           plane node using the GUI installer.</li>
-        <li>Before you use the GUI to install your cloud, you must install the operating system, HP
-          Linux for HP Helion OpenStack, on your nodes (servers) based on your hypervisor. You must
-          do so by following the appropriate installation instructions. <ul>
+        <li>Before you use the GUI to install your cloud, you may install the operating system, HP
+          Linux for HP Helion OpenStack, on your nodes (servers) based on your hypervisor, if you
+          prefer. Otherwise the installer will install it for you. Te option is available in the
+          GUI. If you deci You must do so by following the appropriate installation instructions. <ul>
             <li><xref href="gui_install_on_kvm.dita">KVM</xref></li>
             <li><xref href="gui_install_on_esx.dita">ESX</xref></li>
           </ul>
-          <p id="chooseHypervisor"
-          /><!--<note>You will follow the installation instructions found on the installation page,
-            stopping before the step "Run the Configuration Processor" and skipping the "Configure
-            Your Environment" steps. Therefore, your last OS install step will be
-            <codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock>
-          </note>-->
+          <p id="chooseHypervisor"/><note>Before starting the GUI, you will also need to change the
+            file permissions of hlm-ux-implementation/server/ansible/hosts/localhost to not
+            executable. Execute the following command to do so:
+            <codeblock>chmod -x ~/hlm-ux-implementation/server/ansible/hosts/localhost </codeblock>This
+            will set the correct permission on the localhost file so that the ready-install-os.yml
+            playbook can run and install the operating system on the nodes.</note>
         </li>
 
       </ol>
@@ -67,21 +68,19 @@
         installing the deployer. Username and password should be what was set in "Set up the
         Deployer" in the installation instructions. For example:</p>
       <codeblock>ssh -v -N -L 8080:&lt;Deployer_IP>:79 &lt;Username>@&lt;Deployer_IP></codeblock>
-      <p>Then on your local machine, point your web browser to: http://localhost:8080/dayzero</p>
-      <image placement="break" href="../media/install/GUIpage1.png" id="image_a3s_km3_kt"/>As you
-      proceed through the GUI, you need only supply your server names and IP addresses. </section>
+      <p>Then on your local machine, point your web browser to: http://localhost:8080/dayzero</p> As
+      you proceed through the GUI, you need only supply your server names and IP addresses. </section>
     <section>In the Assign network groups: External VM network fields, <b>do not</b> add entries for
       CIDR, Gateway, or IP Range, only VLAN ID. Neutron will assign these.<p>When the installation
         is complete, the Ansible log will be displayed on the final page.</p>
     </section>
     <section><title>Using the installer securely</title>
-      <p>The Dayzero Installer is a web based application . It runs on the deployer and is
+      <p>The Dayzero Installer is a web-based application . It runs on the deployer and is
         implemented in nodejs. Currently this application runs behind Apache 2.0 where requests are
         proxied to the nodejs Express Web Server. The nodejs Express Server runs on port 3000 and
         Apache runs on port 79. You should access the installer through Apache and not directly from
-        the Express server. An Example URL looks like this:
-        http://&lt;deployer-host-ip>:79/installer When you finish installing, the Installer will be
-        disabled via Ansible.</p>
+        the Express server. An Example URL looks like this: http://&lt;deployer-host-ip>:79/dayzero.
+        When you finish installing, the Installer will be disabled via Ansible.</p>
     </section>
     <section>
       <p>The GUI is used only once: during the initial installation of your cloud.</p><p>For VSA you
@@ -95,6 +94,12 @@
           <li><xref href="using_git.dita">Using Git for Configuration Management</xref></li>
         </ul>
       </p>
+      <note>Because the GUI installer is disabled after deployment finishes, either via the GUI or
+        via the command line, if you want to re-enable the GUI later but are not re-installing from
+        scratch, run these commands:
+        <codeblock>sudo a2ensite dayzero-apache.conf
+sudo systemctl start dayzero.service</codeblock>
+      </note>
     </section>
 
   </body>
