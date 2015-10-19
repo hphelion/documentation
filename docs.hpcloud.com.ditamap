@@ -195,6 +195,7 @@
       <!-- BURA -->
       <topicref href="helion/adding_moonshot_nodes.dita"/>
       <topicref href="helion/objectstorage/add_new_node.dita"/>
+      <topicref href="helion/objectstorage/add_new_pac_node.dita"/>
       <topicref href="helion/objectstorage/replacing_drives_swift_node.dita"/>
       <topicref href="helion/objectstorage/replacing_swift_node.dita"/>
       <topicref href="helion/objectstorage/removing_node.dita"/>

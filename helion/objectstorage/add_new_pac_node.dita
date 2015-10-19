@@ -40,7 +40,7 @@ git checkout site</codeblock></li>
               on the first control plane cluster and add a new dedicated Swift PAC server; or you
               can have all the Swift PAC servers on the dedicated servers.</p><p>If you want to move
               the Swift PAC services from the first control plane cluster onto dedicated servers
-              then  remove all Swift services from the first control plane cluster.  For example
+              then remove all Swift services from the first control plane cluster. For example
               remove the following services from the first control plane cluster in
                 <codeph>data/control_plane.yml</codeph>:<?oxy_custom_start type="oxy_content_highlight" color="153,255,255"?></p><p>
               <?oxy_custom_end?>
