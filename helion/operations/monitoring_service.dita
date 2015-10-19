@@ -100,8 +100,8 @@
           href="centralized_logging.dita#logging/interface">Logging Interface</xref></p>
     </section>
     <section id="info"><title>For More Information</title>
-      <p>For details on OpenStack Monasca, see <xref href="https://wiki.openstack.org/wiki/Monasca"
-          format="html" scope="external">https://wiki.openstack.org/wiki/Monasca</xref></p>
+      <p>For details on OpenStack Monasca, see <xref href="http://monasca.io/"
+          format="html" scope="external">Monasca.io</xref></p>
     </section>
   </body>
 </topic>
