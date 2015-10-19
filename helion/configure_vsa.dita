@@ -79,10 +79,8 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
       </p>
       -->
       <p>Perform the following steps to create the cluster.<ol id="ol_yln_fhl_jt">
-          <li>Open
-              CMC.<codeblock> /opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock><p>By
-              default, the CMC is configured to discover the StoreVirtual nodes in the subnet in
-              which it is installed. You can manually add the nodes also.</p></li>
+          <li>Open CMC.<p>By default, the CMC is configured to discover the StoreVirtual nodes in
+              the subnet in which it is installed. You can manually add the nodes also.</p></li>
           <li>In the CMC UI, click <b>Find</b> and then click <b>Find Systems</b> from the left
             panel. Find Systems dialogue box is displayed.</li>
           <li>You can choose <b>Add</b> or <b>Find</b> option to search the system. Find option
