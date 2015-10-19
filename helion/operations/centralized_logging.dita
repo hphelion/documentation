@@ -214,7 +214,7 @@
         </tgroup>
       </table>
     </section>
-    <section>
+    <section id="config">
       <title>Centralized Logging Configuration</title>
       <!--
         <p>To configure logging, modify the specific services setting file in the
@@ -271,7 +271,7 @@
           </ul></li>
       </ul>
       <p><b>How to Configure the Log Levels for Specific Services</b></p> -->
-      <p id="config">To configure the logging level for a specific service follow these steps:</p>
+      <p>To configure the logging level for a specific service follow these steps:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="loglevel_config">
           <tgroup cols="4">
@@ -389,14 +389,12 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                 <entry>INFO</entry>
                 <entry>Currently the freezer-api does not support debug logs. INFO level is the
                   default one used for this component.</entry>
-                <entry/>
               </row>
               <row>
                 <entry>freezer-scheduler</entry>
                 <entry>INFO</entry>
                 <entry>Currently the freezer-scheduler does not support debug logs. INFO level is
                   the default one used for this component.</entry>
-                <entry/>
               </row>
               <row>
                 <entry>Glance</entry>
