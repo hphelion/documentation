@@ -3,6 +3,7 @@
  
 <map xml:lang="en" linking="none" locktitle="no">
 <title>HP Helion Development Platform</title>
+   <!--PDFTITLE "HP Helion Development Platform 1.3 Complete Documentation"-->
   <topicref href="1.3/devplatform.index.dita"
     navtitle="HP Helion Development Platform 1.3" locktitle="yes">
     <!--permalink: /helion/devplatform/eula/-->
