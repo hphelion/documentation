@@ -21,7 +21,7 @@
           <li><xref type="sectiondiv" href="#HP2.0HA/galera_cluster">MySQL Galera Cluster</xref></li>
           <li><xref type="sectiondiv" href="#HP2.0HA/singleton_services">Singleton Services</xref>
             <ul>
-              <li><xref type="sectiondiv" href="#HP2.0HA/cinder-volume">Cinder-Volume</xref></li>
+              <li><xref href="#HP2.0HA/cinder_volume">Cinder-Volume</xref></li>
               <li><xref type="sectiondiv" href="#HP2.0HA/sherpa">Sherpa</xref></li>
               <li><xref type="sectiondiv" href="#HP2.0HA/nova_consoleauth">Nova consoleauth</xref></li>
             </ul>
