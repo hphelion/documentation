@@ -37,9 +37,9 @@
           </ul>
         </li>
         <li>Choose your <xref href="example_configs.dita">cloud model/example</xref> template. Note
-          that the only option for the Cloud model on KVM with VSA is the have 3 VSA nodes; there is
-          no option to have 0 VSA nodes. Note also that you cannot put the deployer on a control
-          plane node using the GUI installer.</li>
+          that the only option for the Cloud model on KVM with VSA is to have 0 or 3 VSA nodes;
+          there is no option to have 0 VSA nodes. Note also that you cannot put the deployer on a
+          dedicated node using the GUI installer--only in the control plane.</li>
         <li>Before you use the GUI to install your cloud, you may install the operating system, HP
           Linux for HP Helion OpenStack, on your nodes (servers) based on your hypervisor, if you
           prefer. Otherwise the installer will install it for you. Te option is available in the
@@ -61,8 +61,6 @@
       <p>Now that the OS, HP Linux for HP Helion OpenStack, is installed on all your servers
         (nodes), you will configure and install your cloud using the GUI.</p>
       <p>The GUI is found on the deployer node at: <b>http://&lt;Deployer_IP>:79/dayzero</b></p>
-      <p>Make sure you choose "NO" to the question of whether you want the Day0 installer to install
-        the Linux for HP Helion operating system on your nodes.</p>
       <p>To create a secure tunnel/port forwarding into Apache from the deployer to be able to use
         the GUI in a browser, SSH tunnel into the deployer with the username/password set up when
         installing the deployer. Username and password should be what was set in "Set up the
@@ -94,6 +92,12 @@
           <li><xref href="using_git.dita">Using Git for Configuration Management</xref></li>
         </ul>
       </p>
+      <note>Because the GUI installer is disabled after deployment finishes, either via the GUI or
+        via the command line, if you want to re-enable the GUI later but are not re-installing from
+        scratch, run these commands:
+        <codeblock>sudo a2ensite dayzero-apache.conf
+sudo systemctl start dayzero.service</codeblock>
+      </note>
     </section>
 
   </body>
