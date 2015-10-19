@@ -55,8 +55,8 @@ git commit -m 'convert baremetal info to new style'</codeblock>
         the original Beta 2 deployment must be updated prior to running the upgrade to HP Helion
         OpenStack 2.0. The exact changes depend on the original deployed cloud model. </p> Some
       subset of the categories of changes listed below are required, depending on the Beta 2 cloud.
-      In the simplest case, when you have instaalled the deployer in the control plane, you will
-      only need to apply a small number of changes, assuming that this cloud is also using a shared
+      In the simplest case, when you have installed the deployer in the control plane, you will only
+      need to apply a small number of changes, assuming that this cloud is also using a shared
       network for HLM and cloud management traffic.</section>
     <section>To cover the upgrade of varying cloud configurations, the description of changes is
       grouped into the following categories: <ul id="ul_xc3_g3s_st">
@@ -116,13 +116,10 @@ git commit -m 'convert baremetal info to new style'</codeblock>
       node, the following changes are required to add the new lifecycle-manager and
       lifecycle-manager-target service components into the cloud model: 
       
-      <ol><li>Add lifecycle-manager
-      service component to a control plane cluster. Note that while the lifecycle-manager is
-      depicted as existing across the cluster, for HP Helion OpenStack 2.0, only one of these nodes
-      can serve as the deployer/HLM node (the first node deployed using the HP Helion OpenStack
-      iso), i.e. HA of the deployer/HLM is not supported. 
-      
-      </li><li>Add lifecycle-manager-target to the list
+      <ol><li>Add lifecycle-manager service component to a control plane cluster. Note that while the
+          lifecycle-manager is depicted as existing across the cluster, for HP Helion OpenStack 2.0,
+          only one of these nodes can serve as the deployer/HLM node (the first node deployed using
+          the HP Helion OpenStack ISO), i.e. HA of the deployer/HLM is not supported. </li><li>Add lifecycle-manager-target to the list
       of common-service-components. 
       
       </li><li>Change the now deprecated resource-nodes section to resources
@@ -142,7 +139,7 @@ git commit -m 'convert baremetal info to new style'</codeblock>
           network_groups.yml</xref></p> 
         
       </li><li>Add a new network (named HLM-NET below) to networks (e.g. in net_global.yml) with this network
-          as a member of of the above-defined HLM network group. Note that this network must be an
+          as a member of the above-defined HLM network group. Note that this network must be an
           untagged VLAN. Note that the address range of this network must match the ip_addr values
           of the servers in servers.yml. <p><xref href="../html/net_global_yml.html" format="html"
               >See changes to net_global.yml</xref></p>
@@ -156,7 +153,7 @@ git commit -m 'convert baremetal info to new style'</codeblock>
               <p><xref href="../html/interfaces_set_1_yml.html" format="html">See changes to
               interfaces_set_1.yml</xref></p>
         </li><li>If your model includes server groups add the new HLM-NET network to the list of global networks
-          (e.g in server_groups.yml): see file <p><xref href="../html/server_groups_yml.html"
+          (e.g. in server_groups.yml): see file <p><xref href="../html/server_groups_yml.html"
               format="html">See changes to server_groups.yml</xref></p>
         </li></ol>
     </section>
@@ -166,9 +163,9 @@ git commit -m 'convert baremetal info to new style'</codeblock>
       network.</p></section>
     <section><title>Separate disk model for the dedicated deployer node</title> A separate disk
       model will be typically required for the dedicated HLM node; this should be added to
-        <i>disk-models</i>, as done in the following, which uses a new yaml file for the HLM disk
+        <i>disk-models</i>, as done in the following, which uses a new YAML file for the HLM disk
       model definition (disks_hlm.yml). This disk model also needs to be referenced in the
-      appropriate role, as shown above in the "Dedicated Deployer/HLM Node" section. The new yaml
+      appropriate role, as shown above in the "Dedicated Deployer/HLM Node" section. The new YAML
       file is shown
       below:<codeblock>
 disk-models:
@@ -177,7 +174,7 @@ disk-models:
   # The policy is not to consume 100% of the space of each volume group.
   # 5% should be left free for snapshots and to allow for some flexibility.
   # sda_root is a templated value to align with whatever partition is really used
-  # This value is checked in os config and replaced by the partition actually used
+  # This value is checked in OS config and replaced by the partition actually used
   # on sda e.g. sda1 or sda5
     - name: hlm-vg
       physical-volumes:
@@ -250,7 +247,7 @@ disk-models:
       <codeblock>tar faxv /media/cdrom/hos/hos-2.0.0-rc1-20151012T062322Z.tar</codeblock> Run the
       included initialization script to update the deployer:
       <codeblock>~/hos-2.0.0-b.rc1/hos-init.bash</codeblock> Prepare the new Ansible tree for the
-      upgrade run,, asuming you have made the necessary YAML config file changes above. Resolve any
+      upgrade run,, assuming you have made the necessary YAML config file changes above. Resolve any
       merge conflicts that may have arisen: <codeblock>cd ~/helion
 git status</codeblock> Run the
       config processor:
