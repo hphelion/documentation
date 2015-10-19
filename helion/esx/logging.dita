@@ -38,8 +38,8 @@ ansible-playbook -i hosts/verb_hosts eon-reconfigure.yml</codeblock></li>
     <p>To enable EON Service for centralised logging:</p>
     <ol>
       <li>Change the directory<codeblock>~/helion/my_cloud/config/logging/vars</codeblock></li>
-      <li>Ediit <codeph>eon-api-clr.yml</codeph>  and <codeph>eon-conductor-clr.yml</codeph> files
-        to set the value of <b>centralized_logging</b> as <b>true</b> as shown in the following
+      <li>Edit <codeph>eon-api-clr.yml</codeph> and <codeph>eon-conductor-clr.yml</codeph> files to
+        set the value of <b>centralized_logging</b> as <b>true</b> as shown in the following
         sample:<codeblock>logr_services:
   eon-conductor:
     logging_options:

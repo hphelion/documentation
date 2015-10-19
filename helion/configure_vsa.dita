@@ -126,7 +126,7 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
     </section>
     <section>
       <title>Configure VSA as a Cinder Backend</title>
-      <p>You must modify <codeph>cinder.conf.j2</codeph> to update VSA cluster.</p>
+      <p>You must modify <codeph>cinder.conf.j2</codeph> to update VSA cluster. </p>
       <p>Perform the following steps to update the VSA cluster: <ol>
           <li>Login to deployer node.</li>
           <li>Edit <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> to add VSA data
@@ -184,10 +184,6 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
       specifying the configuration in cloud model. For more details, refer <xref
         href="blockstorage/vsa/vsa_create_multiple_clusters.dita">Modifying Cloud Model to Create
         Multiple Clusters</xref>.</note>
-    <p>To configure extra specs (provision type and RAID protection level) on the volume type for
-      VSA, refer to <xref
-        href="http://docs.openstack.org/kilo/config-reference/content/hp-lefthand-supported-ops-rest.html"
-        format="html" scope="external"/>.</p>
     <section id="deploy-vsa-with-ao-without-ao">
       <title>VSA with AO and without AO</title>
       <p>VSA is deployed with adoptive optimization (AO) and without AO. AO allows built-in storage
