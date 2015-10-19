@@ -73,7 +73,8 @@
       <p>You can further customize the monasca-agent to suit your needs, see <xref
           href="https://github.com/stackforge/monasca-agent/blob/master/docs/Customizations.md"
           format="html" scope="external">Customizing the Agent</xref></p>
-      <p><b>Access to Monasca</b></p>
+    </section>
+    <section id="access"><title>Access to Monasca</title>
       <p>Access to Monasca is available through the <xref
           href="https://github.com/stackforge/python-monascaclient/blob/master/README.rst"
           format="html" scope="external">command-line interface (CLI)</xref>, the low-level <xref
@@ -89,7 +90,7 @@
       <p>Full details of the Monasca API can be found <xref
           href="https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md"
           format="html" scope="external">on GitHub</xref></p>
-    </section>
+      <p><b>Operations Console (OpsConsole) GUI</b></p></section>
     <section conref="opsconsole_overview.dita#opsconsole/about"/>
     <section conref="opsconsole_overview.dita#opsconsole/connecting"/>
     <section id="servicealarms"><title>Service Alarm Definitions</title>
