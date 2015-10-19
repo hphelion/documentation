@@ -6,7 +6,7 @@
   <body>
     <p>This page covers the following topics:</p>
     <ul>
-      <li><xref type="section" href="#HP2.0HA/concepts-overview">High Availablity Concepts Overview</xref>
+      <li><xref type="section" href="#HP2.0HA/concepts-overview">High Availability Concepts Overview</xref>
         <ul>
           <li><xref type="sectiondiv" href="#HP2.0HA/cloud-infrastructure">Highly Available Cloud Infrastructure</xref></li>
           <li><xref type="sectiondiv" href="#HP2.0HA/tenant_workloads">Highly Available Cloud-Aware Tenant Workloads</xref></li>
@@ -36,7 +36,7 @@
     
     
     <section id="concepts-overview">
-      <title>High Availablity Concepts Overview</title>
+      <title>High Availability Concepts Overview</title>
       <p>Highly Available Cloud ensures that at least a minimum of cloud resources are always available on request, 
         hich results in uninterrupted operations for users.</p>
       <p>In order to achieve this high availability of infrastructure and workloads, we define the scope of HA to be 
@@ -74,7 +74,7 @@
         <p>The infrastructure that provides these features is called a <b>Highly Available Cloud Infrastructure</b>.</p>
       </sectiondiv>
       
-      <sectiondiv id="tenant-workloads">
+      <sectiondiv id="tenant_workloads">
         <p><b>Highly Available Cloud-Aware Tenant Workloads</b></p>
         <p>HP Helion OpenStack Compute hypervisors do not support transparent high availability for user 
           applications; as such, the project application provider is responsible for deploying their applications 
