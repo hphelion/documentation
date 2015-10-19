@@ -18,12 +18,13 @@
   <topicref href="home.dita"/>
   <!-- HoS 2.0 -->
   <topicref href="helion/index.dita">
+    <topicref href="helion/upgrade_from_beta2.dita"/>
     <topicref href="helion/releasenotes.dita"/>
     <topicref href="helion/supportedconfigs.dita"/>
     <topicref href="helion/hardware.dita"/>
     <topicref href="helion/faq.dita"/>
     <topicref href="helion/installation_overview.dita" navtitle="Installation - Overview" locktitle="yes">
-      <topicref href="helion/upgrade_from_beta2.dita"/>
+      
       <topicref href="helion/beta1_to_beta2_upgrade.dita"/>
       <topicref href="helion/input_model.dita"/>
       <topicref href="helion/using_git.dita" navtitle="Using Git for Configuration Management"
