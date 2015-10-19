@@ -60,6 +60,19 @@
           format="html" scope="external">command-line interface (CLI)</xref>, or the low-level <xref
           href="https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md"
           format="html" scope="external">REST API</xref>.</p>
+      <p><b>Monasca-Agent</b></p>
+      <p>The <b>monasca-agent</b> is a Python program that runs on the control plane nodes. It runs
+        the defined checks and then sends data onto the API. The checks that the agent runs include: <ul>
+          <li>System metrics: cpu, memory, network, disk and file-system utilization.</li>
+          <li>Service metrics: The agent supports plugins such as MySQL, RabbitMQ, Kafka, and many
+            others.</li>
+        </ul></p>
+      <p>You can further customize the monasca-agent to suit your needs, see <xref
+          href="https://github.com/stackforge/monasca-agent/blob/master/docs/Customizations.md"
+          format="html" scope="external">Customizing the Agent</xref></p>
+      <p>For a full list of packaged plugins that are included HPE Helion OpenStack, see <xref
+          href="https://github.com/stackforge/monasca-agent/blob/master/docs/Plugins.md"
+          format="html" scope="external">Monasca Plugins</xref></p>
     </section>
     <section conref="opsconsole_overview.dita#opsconsole/about"/>
     <section conref="opsconsole_overview.dita#opsconsole/connecting"/>
