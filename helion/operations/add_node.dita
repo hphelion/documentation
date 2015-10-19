@@ -10,11 +10,11 @@
         <li>Get the <b>servers.yml</b> file stored in
           git:<codeblock>cd ~/helion/my_cloud/definition/data
 git checkout site</codeblock> Add
-          details of new node(s) to <b>severs.yml</b>. For example, if adding new server cpn-0004 in
+          details of new node(s) to <b>severs.yml</b>. For example, if adding new server compute7 in
             <b>servers.yml
           </b><codeblock>---
   product:
-    version: 2
+    version: 2  
 
   baremetal:
     # NOTE: These values need to be changed to match your environment.
@@ -58,12 +58,11 @@ ansible-playbook -i hosts/verb_hosts site.yml --limit hlm004-ccp-comp0007*</code
       </ol>
     </section>
     
-    <section><title>Add availability zones</title>When adding a new node an additional step you'll
-      need to take  is to add the new node(s) to a Nova availability zone. This can be skipped if
-      you have not configured any availability zones. 
-      <ol>
-    <li>First get a list of availability zones:<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova availability-zone-list</codeblock>
-      <codeblock>+------------------------------+----------------------------------------+
+    <section><title>Add availability zones</title>When adding a new node, an additional step you'll
+      need to take is to add the new node(s) to a Nova availability zone. This can be skipped if you
+      have not configured any availability zones. <ol>
+        <li>First get a list of availability zones to get their staus:<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova availability-zone-list</codeblock>
+          <codeblock>+------------------------------+----------------------------------------+
 | Name                         | Status                                 |
 +------------------------------+----------------------------------------+
 | internal                     | available                              |
@@ -87,7 +86,9 @@ ansible-playbook -i hosts/verb_hosts site.yml --limit hlm004-ccp-comp0007*</code
 | |- padawan-ccp-comp0002-mgmt |                                        |
 | | |- nova-compute            | enabled :-) 2015-10-12T10:32:21.000000 |
 +------------------------------+----------------------------------------+</codeblock>
-      </li><li>Then run nova-cloud-configure.yml. <codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ ansible-playbook -i hosts/verb_hosts nova-cloud-configure.yml</codeblock>
+        </li>
+        <li>Then run nova-cloud-configure.yml to update the nova availabity zones and effect the
+          changes you made in the previous section:<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ ansible-playbook -i hosts/verb_hosts nova-cloud-configure.yml</codeblock>
           <codeblock>PLAY [NOV-CLI] **************************************************************** 
 
 GATHERING FACTS *************************************************************** 
@@ -113,7 +114,9 @@ Total: ----------------------------------------------------------------- 14.10s
 padawan-ccp-c1-m1-mgmt     : ok=3    changed=1    unreachable=0    failed=0   
 padawan-ccp-c1-m2-mgmt     : ok=3    changed=1    unreachable=0    failed=0   
 padawan-ccp-c1-m3-mgmt     : ok=3    changed=1    unreachable=0    failed=0</codeblock>
-        </li><li>Get a list of availability zones again<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova availability-zone-list</codeblock>
+        </li>
+        <li>Get a list of availability zones again to verify that the new node is in the the right
+          availability zone now.<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova availability-zone-list</codeblock>
           <codeblock>+------------------------------+----------------------------------------+
 | Name                         | Status                                 |
 +------------------------------+----------------------------------------+
@@ -137,7 +140,8 @@ padawan-ccp-c1-m3-mgmt     : ok=3    changed=1    unreachable=0    failed=0</cod
 | |- padawan-ccp-comp0003-mgmt |                                        |
 | | |- nova-compute            | enabled :-) 2015-10-12T10:34:11.000000 |
 +------------------------------+----------------------------------------+</codeblock>
-        </li></ol>
+        </li>
+      </ol>
     </section>
   </body>
 </topic>
