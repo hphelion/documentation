@@ -111,7 +111,10 @@ upstream_ntp_servers:
       </ol>
 </section>
     <section>
-      <title>Adding to HLM local file repo before cloud is deployed</title>
+      <title>Update the Debain Repository Index File</title>
+      <p>A Debian <xref href="http://en.wikipedia.org/wiki/Software_repository" format="html"
+          scope="external">repository</xref> is a directory where you can find software you can
+        install on Debian. </p>
       <ol id="ol_yhm_ylr_st">
         <li>Copy two deb packages into <codeph>/var/cache/hlm/repo/debian/lib</codeph>. You should
           have <xref href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/debian">downloaded
@@ -120,7 +123,7 @@ upstream_ntp_servers:
 python-setproctitle_1.1.8-1_amd64.deb</codeblock></li>
         <li>Change to the <codeph>/var/cache/hlm/repo/debian/</codeph> directory.</li>
         <li>Execute the <codeph>dpkg-scanpackages</codeph> command to update Debian repositroy index
-          file:<codeblock>cg-hlm:/var/cache/hlm/repo/debian# /root/cg-hlm/dev-tools/dpkg-scanpackages . /dev/null | gzip -9c &gt; Packages.gz</codeblock></li>
+          file:<codeblock>/root/cg-hlm/dev-tools/dpkg-scanpackages . /dev/null | gzip -9c &gt; Packages.gz</codeblock></li>
       </ol>
     </section>
 
