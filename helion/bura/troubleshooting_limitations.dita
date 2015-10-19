@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ly3_yyr_st">
+  <title>Troubleshooting and Limitations</title>
+  <body>
+    <p>Logs can be used to troubleshoot Freezer functionality <table>
+        <tgroup cols="2">
+          <tbody>
+            <row>
+              <entry>Component</entry>
+              <entry>Description</entry>
+            </row>
+            <row>
+              <entry>Freezer Client</entry><entry>/var/log/freezer.log</entry>
+            </row>
+            <row><entry>Freezer Scheduler</entry><entry>/var/log/freezer-scheduler.log</entry></row>
+            <row>
+              <entry>Freezer API</entry><entry>/var/log/freezer-api.log</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table></p>
+    <section><title>Limitations</title>
+    <p><ul>
+      <li>Recovery of the following services (or cloud topologies) will be partially supported as they need additional data (other than mySQL DB) to return to be fully functional.<ul>
+        <li>ESX Cloud</li>
+        <li>Ceph Cloud</li>
+        <li>Network services - LBaaS, and VPNaaS</li>
+      </ul></li>
+      <li>Logging Data (that is, log files)</li>
+    </ul></p></section>
+  </body>
+</topic>

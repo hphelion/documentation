@@ -5,7 +5,7 @@
   <body>
     <section id="supported_hardware"><title>Hardware Support Matrix</title>
       <p>For information about the supported hardware in HP Helion OpenStack 2.0, see the <xref
-          href="http://helionready.hpcloud.com/ihv/category/Server" format="html" scope="external"
+        href="http://helionready.hpcloud.com/ihv/" format="html" scope="external"
           >HP Helion Ready Solution Catalog</xref>.</p>
     </section>
     <section id="supported_configs">
