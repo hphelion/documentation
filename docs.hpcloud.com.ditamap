@@ -141,13 +141,17 @@
           <topicref href="helion/objectstorage/add_new_storage_policy.dita"/>
           <topicref href="helion/objectstorage/how_to_change_min_part_time.dita"/>
         </topicref>
+        <topicref href="helion/objectstorage/modify_swift_service_config_files.dita"/>
       </topicref>
 
       <!-- Cinder -->
       <topicref href="helion/blockstorage/blockstorage_overview.dita"
         navtitle="Block Storage Service" locktitle="yes">
         <topicref href="helion/blockstorage/ceph/ceph_overview.dita" navtitle="Ceph Overview"
-          locktitle="yes"/>
+          locktitle="yes">
+          <topicref href="helion/blockstorage/ceph/upgrade_ceph_cluster.dita"/>
+          <topicref href="helion/blockstorage/ceph/using_erasure_code_pool.dita"/>
+        </topicref>
       </topicref>
 
       <!-- Neutron -->
@@ -179,8 +183,12 @@
       <topicref href="helion/operations/repair_node.dita"/>
       <topicref href="helion/operations/remove_node.dita"/>
       <topicref href="helion/operations/replace_controller.dita"/>
+      <topicref href="helion/blockstorage/vsa/remove_node.dita"/>
       <topicref href="helion/blockstorage/vsa/vsa_create_multiple_clusters.dita"/>
       <topicref href="helion/blockstorage/ceph/adding_new_osd_node.dita"/>
+      <topicref href="helion/blockstorage/ceph/remove_osd_node.dita"/>
+      <topicref href="helion/blockstorage/ceph/adding_new_monitor_node.dita"/>
+      <topicref href="helion/blockstorage/ceph/remove_monitor_node.dita"/>
       <topicref href="helion/blockstorage/singleton_service_cinder.dita"/>
       <topicref href="helion/blockstorage/brocade_zone_manager.dita"
         navtitle="Configuring Brocade Zone Manager" locktitle="yes"/>
@@ -191,8 +199,7 @@
       <topicref href="helion/objectstorage/replacing_swift_node.dita"/>
       <topicref href="helion/objectstorage/removing_node.dita"/>
       <topicref href="helion/objectstorage/add_new_storage_policy.dita"
-        navtitle="Adding a New Storage Policy - Swift" locktitle="yes">
-       </topicref>
+        navtitle="Adding a New Storage Policy - Swift" locktitle="yes"/>
       <topicref href="helion/bura/bura_overview.dita" navtitle="Backing up and Restoring Your Data">
         <topicref href="helion/bura/backup.dita"/>
         <topicref href="helion/bura/restore.dita"/>
@@ -286,8 +293,8 @@
         <topicref href="helion/esx/enable_new_cluster_compute_resource.dita"/>
         <topicref href="helion/esx/remove_existing_cluster_compute_resource_pool.dita"/>
         <topicref href="helion/esx/removing_esx_host_from_cluster.dita"/>
+        <topicref href="helion/esx/logging.dita"/>
       </topicref>
-      <topicref href="helion/esx/change_log_level_debug.dita"/>
       <topicref href="helion/esx/scale_config_changes.dita"/>
       <!-- END HORIZON -->
     </topichead>
