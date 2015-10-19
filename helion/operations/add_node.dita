@@ -48,9 +48,15 @@ ansible-playbook -i hosts/localhost config-processor-run.yml
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
         </li>
         <li>Now configure the new node(s)
-          <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml
-ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=compute7</codeblock>
-        </li>
+            <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml
+ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=compute7</codeblock><b
+          > </b>Before proceeding, you may want to take a look at <b>info/server_info.yml</b> to see
+          if the assignment of the node you have added is what you expect. It may not be, as nodes
+          will not be numbered consecutively if any have previoulsy been removed. This is to prevent
+          loss of data; the config processor retains data about removed nodes and keeps their ID
+          numbers from being reallocated. See the <ph id="_Toc432693223">Persisted Server
+            Allocations</ph> section in <xref href="../input_model.dita#input_model">HP Helion
+            OpenStack 2.0 Input Model</xref> for information on how this works.</li>
         <li>Finally, run the following deployment step specifying the '--limit' option to apply the
           deployment actions only to the target node(s).
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
