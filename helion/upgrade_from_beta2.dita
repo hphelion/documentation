@@ -4,17 +4,23 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Upgrading from Beta 2</title>
   <body>
 
-     
+     <section><title>Before you upgrade</title> There are a number of changes you must make to the
+      cloud configuration that is defined in a number of YAML files. In HP Helion OpenStack Beta 2,
+      you used these files to configure your cloud, and you will ust them again, after
+      modifications. <p>Modifications will depend on your particular cloud, but for all clouds you
+        will need to merge servers.yml and baremetal.yml.</p>
+    </section>
      
     
     <section id="combine"><title>Combining the baremetalConfig.yml and servers.yml Files</title>
-      <p>One of the changed to the HP Helion OpenStack 2.0 input model from Beta 2 to the released version is teh merging of baremetal.yml and servers.yml.
-      In order to use your current configuration files, you will need to hand the merging of these files yourself.</p>
+      <p>As mentioned above, one of the changes to the input model from Beta 2 to the released
+        version is the merging of baremetal.yml and servers.yml. In order to use your current
+        configuration files, you will need to handle the merging of these two files yourself.</p>
       
-      <p>This series of commands will allow you to combine the files together and commit them to
-        your configuration:</p>
+      <p>This series of commands will allow you to combine the files and commit them to your
+        configuration:</p>
       <ol>
-        <li>Login to your deployer node</li>
+        <li>Log into your deployer node</li>
         <li>This command will combine the two files into a single <codeph>combined.yml</codeph> file
           for you to review:
           <codeblock>cd ~/helion/my_cloud/definition/data
@@ -39,64 +45,61 @@ git commit -m 'convert baremetal info to new style'</codeblock>
     
     <section>
       <title>Model changes required before upgrading from Beta 2 to HP Helion OpenStack 2.0</title>
-      <p>After running the hos-init.bash script (or vagrant provision in a virtual environment), the
-        cloud model from the original Beta2 deployment must be updated prior to running the upgrade
-        to HP Helion OpenStack 2.0. The exact changes depend on the original deployed cloud model.
-        To cover the upgrade of varying cloud configurations, the following description of changes
-        is grouped into the following categories: </p>
-      <ul>
-     <li>Cloud using a dedicated deployer/HLM node (as used in the CI padawan model, for example).
-        </li><li>Deployer-in-cloud where one of the cloud nodes (typically a controller) is also used as the
-        deployer/HLM node. 
-        </li><li>Cloud using dedicated network for serving HLM traffic (sometimes known as
-        the PXE network).
-        </li><li>Cloud using shared network for HLM and internal cloud management traffic (typically named
-        MGMT or MANAGEMENT network). 
-        </li><li>Separate disk model for the deployer/HLM node. 
-        </li><li>Addition of firewall rules
-        </li></ul>
-      A subset of the above categories of changes are required depending on the Beta2 cloud, the
-        simplest case being where only the "Deployer-in-cloud" set of changes needs to be applied,
-        assuming that this cloud is also using a shared network for HLM and cloud management
-        traffic. Dedicated Deployer/HLM Node For Beta2 clouds deployed using a dedicated deployer
-        node, three sets of changes required to add this dedicated node into the cloud model and to
-        incorporate the new lifecycle-manager and lifecycle-manager-target service components:
-        
-        
-      <ul><li>Update the control plane model: 
-        <ul>
-        <li>Add a new single-node (member-count of 1) cluster for the
-        dedicated deployer/lifecycle manager node. This cluster only contains one service component,
-        lifecycle-manager-target. 
-        </li><li>Remove logging-producer and monasca-agent from the list of
-        common-service-components and add them to any control-plane or resource-node cluster except
-        than the newly-added lifecycle-manager cluster. This is required as existing Beta2
-        deployments do not have logging-producer or monasca-agent installed on the dedicated
-        deployer node. Without this change, the upgrade of the dedicated deployer node will fail on
-        an initial check of the status of these services. 
-        </li><li>Add lifecycle-manager-target to the list
-        of common-service-components.
-        </li><li>Change the now deprecated name resource-nodes section to resources and remove the 
-          nova-kvm service component, which is redundant (nova-compute-kvm covers what is required).
-          
-          
-          <p>Note the differences highlighted in<b>
-          control_plane.yml </b>linked below and make appropriate changes as found in the right-hand
-        column.</p>
-      <xref href="../html/control_plane_yml.html" format="html">See changes to
-        control_plane.yml</xref>
-        </li></ul>
-    
-    
-    
-    Add a baremetal node entry for the deployer node to the servers list 
-      in servers.yml and assign it a new role, shown as HLM-ROLE in the linked page:
-        <xref href="../html/servers_yml.html" format="html">See changes to
-          servers.yml</xref>
+      <p>One of the changes from Beta 2 to GA is that the server installed as the deployer and the
+        network used for lifecycle management must now be explicitly included in the input model so
+        that they can be secured and upgraded. In cases where the deployer has been used as a server
+        in the cloud and/or the network is already included (e.g. a shared deployment / management
+        network) the changes are relatively minor. If you have a dedicated deployer node or a
+        dedicated deployment network, then additions are more complex.</p><p>After running the
+        hos-init.bash script (or vagrant provision in a virtual environment), the cloud model from
+        the original Beta 2 deployment must be updated prior to running the upgrade to HP Helion
+        OpenStack 2.0. The exact changes depend on the original deployed cloud model. </p> Some
+      subset of the categories of changes listed below are required, depending on the Beta 2 cloud.
+      In the simplest case, when you have instaalled the deployer in the control plane, you will
+      only need to apply a small number of changes, assuming that this cloud is also using a shared
+      network for HLM and cloud management traffic.</section>
+    <section>To cover the upgrade of varying cloud configurations, the description of changes is
+      grouped into the following categories: <ul id="ul_xc3_g3s_st">
+        <li>Cloud using a dedicated deployer node. </li>
+        <li>Deployer-in-cloud where one of the cloud nodes (typically a controller) is also used as
+          the deployer node. </li>
+        <li>Cloud using dedicated network for serving installation traffic (sometimes known as the
+          PXE network). </li>
+        <li>Cloud using shared network for HLM and internal cloud management traffic (typically
+          named MGMT or MANAGEMENT network). </li>
+        <li>Separate disk model for the deployer node. </li>
+        <li>Addition of firewall rules </li>
+      </ul>
+    </section>
+
+    <section><title>Dedicated Deployer Node</title> For Beta 2 clouds deployed using a dedicated
+      deployer node, three sets of changes are required to add this dedicated node to the cloud
+      model and to incorporate the new lifecycle-manager and lifecycle-manager-target service
+      components: <ol>
+        <li>Update the control plane model: <ol>
+            <li>Add a new single-node (member-count of 1) cluster for the dedicated
+              deployer/lifecycle manager node. This cluster  contains only one service component:
+              lifecycle-manager-target. </li>
+            <li>Remove logging-producer and monasca-agent from the list of common-service-components
+              and add them to any control-plane or resource-node cluster except the newly-added
+              lifecycle-manager cluster. This is required as existing Beta 2 deployments do not have
+              logging-producer or monasca-agent installed on the dedicated deployer node. Without
+              this change, the upgrade of the dedicated deployer node will fail on an initial check
+              of the status of these services. </li>
+            <li>Add lifecycle-manager-target to the list of common-service-components. </li>
+            <li>Change the now deprecated name resource-nodes section to resources and remove the
+              nova-kvm service component, which is redundant (nova-compute-kvm covers what is
+              required). <p>Note the differences highlighted in<b> control_plane.yml </b>linked
+                below and make appropriate changes as found in the right-hand column.</p>
+              <xref href="../html/control_plane_yml.html" format="html">See changes to
+                control_plane.yml</xref>
+            </li></ol></li>
+          <li> Add a baremetal node entry for the deployer node to the servers list in servers.yml
+          and assign it a new role, shown as HLM-ROLE in the linked page: <xref
+            href="../html/servers_yml.html" format="html">See changes to servers.yml</xref>
+        </li>
       
-      
-      </li></ul></section>
-    <section>Add the new HLM-ROLE role to the list of server-roles, e.g. to server_roles.yml. This role is required 
+    <li>Add the new HLM-ROLE role to the list of server-roles, e.g. to server_roles.yml. This role is required 
       to differentiate the single dedicated HLM node from the remaining target nodes in the server allocation, in 
       the linked page:Note that in this example, a different interface model and disk model are defined for the HLM
       role as the HLM node will typically differ from the cloud nodes in this regard
@@ -105,68 +108,69 @@ git commit -m 'convert baremetal info to new style'</codeblock>
     
       <xref href="../html/server_roles_yml.html" format="html">See changes to
         server_roles.yml</xref>
-    
-    
+    </li>
+    </ol>
     
     </section>
-    <section><title>Shared Deployer/HLM Node</title> For Beta2 clouds using a shared deployer/HLM
+    <section><title>Shared Deployer Node</title> For Beta2 clouds using a shared deployer
       node, the following changes are required to add the new lifecycle-manager and
-      lifecycle-manager-target service components into the cloud model: Add lifecycle-manager
+      lifecycle-manager-target service components into the cloud model: 
+      
+      <ol><li>Add lifecycle-manager
       service component to a control plane cluster. Note that while the lifecycle-manager is
       depicted as existing across the cluster, for HP Helion OpenStack 2.0, only one of these nodes
       can serve as the deployer/HLM node (the first node deployed using the HP Helion OpenStack
-      iso), i.e. HA of the deployer/HLM is not supported. Add lifecycle-manager-target to the list
-      of common-service-components. Change the now deprecated resource-nodes section to resources
+      iso), i.e. HA of the deployer/HLM is not supported. 
+      
+      </li><li>Add lifecycle-manager-target to the list
+      of common-service-components. 
+      
+      </li><li>Change the now deprecated resource-nodes section to resources
       and remove the nova-kvm service component, which is redundant (nova-compute-kvm covers what is
       required). <p><xref href="../html/control_plane_yml2.html" format="html">See changes to
-          control_plane.yml</xref></p>
+          control_plane.yml</xref></p></li>
+      </ol>
     </section>
     
-    <section><title>Dedicated Deployer/HLM Network</title>
-      
-      
-      For Beta2 clouds deployed using a dedicated network for deployer/HLM traffic, the following sets of changes are required to represent this in the cloud model:
-      
-      <p>Add a new network group (named HLM below) to network-groups (e.g. in network_groups.yml): see linked file</p>
-        <p><xref
-          href="../html/network_groups_yml.html" format="html">See changes to
-          network_groups.yml</xref></p>
-      
-      
-      
-      Add a new network (named HLM-NET below) to networks (e.g. in net_global.yml) with this network as a member of of the 
-      above-defined HLM network group: see linked file
-      <p><xref
-        href="../html/net_global_yml.html" format="html">See changes to
-        net_global.yml</xref></p>
+    <section><title>Dedicated Deployer Network</title> For Beta2 clouds deployed using a dedicated
+      network for deployer/HLM traffic, the following sets of changes are required to represent the
+      network in the cloud model: 
+      <ol>
+      <li>Add a new network group (named HLM below) to network-groups
+        (e.g. in network_groups.yml): see linked file
+      <p><xref href="../html/network_groups_yml.html" format="html">See changes to
+          network_groups.yml</xref></p> 
         
-      
-      
-      
-      <p>Add a new interface model (named HLM-INTERFACES below) to interface-models (e.g. in interfaces_set_1.yml), identifying the interface assigned for carrying HLM traffic; also need to assign the interface used for HLM traffic in the pre-existing interface models used for target cloud nodes (in this example, all target cloud nodes are 
-        covered in the same interface model file): see file</p>
-      <p><xref
-        href="../html/interfaces_set_1_yml.html" format="html">See changes to
-        interfaces_set_1.yml</xref></p>
-      
-      
-      
-      
-      <p>Add the new HLM-NET network to the list of global networks (e.g in server_groups.yml): see file</p>
-      <p><xref
-        href="../html/server_groups_yml.html" format="html">See changes to
-        server_groups.yml</xref></p>
-    
-    
-    
+      </li><li>Add a new network (named HLM-NET below) to networks (e.g. in net_global.yml) with this network
+          as a member of of the above-defined HLM network group. Note that this network must be an
+          untagged VLAN. Note that the address range of this network must match the ip_addr values
+          of the servers in servers.yml. <p><xref href="../html/net_global_yml.html" format="html"
+              >See changes to net_global.yml</xref></p>
+        </li><li>Add a new interface model (named HLM-INTERFACES below) to interface-models (e.g. in
+          interfaces_set_1.yml), identifying the interface assigned for carrying HLM traffic; also
+          need to assign the interface used for HLM traffic in the pre-existing interface models
+          used for target cloud nodes (in this example, all target cloud nodes are covered in the
+          same interface model file). Note that this example shows using a dedicated network
+          interface. If you are using the same interfaces as other network groups then the other
+          networks must all be tagged VLANS (as the deployment network must be untagged) see file
+              <p><xref href="../html/interfaces_set_1_yml.html" format="html">See changes to
+              interfaces_set_1.yml</xref></p>
+        </li><li>If your model includes server groups add the new HLM-NET network to the list of global networks
+          (e.g in server_groups.yml): see file <p><xref href="../html/server_groups_yml.html"
+              format="html">See changes to server_groups.yml</xref></p>
+        </li></ol>
     </section>
-    <section><title>Shared Network for Deployer/HLM traffic
-    </title> No changes are required to an existing Beta2 model to represent this network setup.</section>
-    <section><title>Separate disk model for the Dedicated/HLM Node</title>
-      
-      
-      A separate disk model will be typically required for the dedicated HLM node; this should be added to disk-models, as done in the following, which uses a new yaml file for the HLM disk model definition (disks_hlm.yml). This disk model also needs to be referenced in the appropriate role, as shown above in the "Dedicated Deployer/HLM Node" section. The new yaml file is shown below:
-   <codeblock>
+    <section><title>Shared Network for Deployer/HLM traffic </title> No changes are required to an
+      existing Beta2 model to represent this network setup. <p>There are additional validation that
+        the ip-addr values of the servers in servers.yml are in range of the shared
+      network.</p></section>
+    <section><title>Separate disk model for the dedicated deployer node</title> A separate disk
+      model will be typically required for the dedicated HLM node; this should be added to
+        <i>disk-models</i>, as done in the following, which uses a new yaml file for the HLM disk
+      model definition (disks_hlm.yml). This disk model also needs to be referenced in the
+      appropriate role, as shown above in the "Dedicated Deployer/HLM Node" section. The new yaml
+      file is shown
+      below:<codeblock>
 disk-models:
 - name: HLM-DISKS
   volume-groups:
@@ -185,22 +189,16 @@ disk-models:
           mount: /
       consumer:
         name: os</codeblock>
-    
-    
-    
     </section>
-    <section><title>Firewall Settings</title> The cloudConfig.yml file can be update to
-      enable/disable the setting of firewall rules as follows: The above example enables the setting
-      of firewalls according the networking requirements of each service on a node; the default is
-      for this to be enabled. see file 
-      
-      <p><xref
-        href="../html/cloud_config_yml.html" format="html">See changes to
-        cloudConfig.yml</xref></p>
-     
-      <p>HP Helion OpenStack 2.0 includes the feature to add
-        firewall rules for enabling access between services across the deployed cloud. The following
-        is an example of a firewall rules file:</p>
+    <section><title>Firewall Settings</title> The cloudConfig.yml file can be updated to
+      enable/disable the setting of firewall rules as follows. <p>Note that "data-dir" has been
+        removed as it was never used.</p>The example enables the setting of firewalls according the
+      networking requirements of each service on a node; the default is for this to be enabled. see
+      file <p><xref href="../html/cloud_config_yml.html" format="html">See changes to
+          cloudConfig.yml</xref></p>
+      <p>HP Helion OpenStack 2.0 includes the feature to add firewall rules for enabling access
+        between services across the deployed cloud. The following is an example of a firewall rules
+        file:</p>
       <codeblock>---
   product:
     version: 2
@@ -244,26 +242,25 @@ disk-models:
         protocol: icmp</codeblock>
     </section>
     <section>
-      <title>Testing an Upgrade</title> Starting point is working deploy of beta2 release. Download
-      the new ISO e.g. wget
-      http://tarballs.gozer.ftclab.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-572/hLinux-cattleprod-amd64-blaster-netinst-20151005-hlm.2015-10-12T07:28:47_ec1186b.iso
-      Log in to the deployer node as the user you created during the beta2 deployment, and mount the
-      GA install media at /media/cdrom, for example: sudo mount
-      hLinux-cattleprod-amd64-blaster-netinst-20151005-hlm.&lt;build-date_sha1>.iso /media/cdrom
-      Unpack the following tarball: Note this file name will change:
+      <title>Performing the Upgrade</title> The starting point for upgrading is a working deployment
+      of the Beta 2 release. To begin, log in to the deployer node as the user you created during
+      the Beta 2 deployment, and mount the GA install media at /media/cdrom; for example:
+      <codeblock>sudo mount hLinux-cattleprod-amd64-blaster-netinst-20151005-hlm.&lt;<i>build-date_sha1</i>>.iso /media/cdrom</codeblock>
+      Unpack the following tarball: Note needs file name
       <codeblock>tar faxv /media/cdrom/hos/hos-2.0.0-rc1-20151012T062322Z.tar</codeblock> Run the
-      included initialisation script to update the deployer:
+      included initialization script to update the deployer:
       <codeblock>~/hos-2.0.0-b.rc1/hos-init.bash</codeblock> Prepare the new Ansible tree for the
-      upgrade run: Change all the model files to the new format (sad) This is documented here.
-      Resolve any merge conflicts that may have arisen:
-      <codeblock>cd ~/helion
-git status</codeblock> Run the config processor:
+      upgrade run,, asuming you have made the necessary YAML config file changes above. Resolve any
+      merge conflicts that may have arisen: <codeblock>cd ~/helion
+git status</codeblock> Run the
+      config processor:
       <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
-      Run ready deployment script:
+      Run the ready deployment playbook:
       <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock> Run the
-      upgrade playbook: cd ~/scratch/ansible/next/hos/ansible
-      <codeblock>ansible-playbook -i hosts/verb_hosts hlm-upgrade.yml</codeblock>
+      upgrade playbook:
+      <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts hlm-upgrade.yml</codeblock>
     </section>
   </body>
 </topic>
