@@ -187,6 +187,25 @@ vc.password =vmware //: vCenter password</codeblock></li>
                 the cluster level and also on the ESXi level, then only the ESXi-level parameter
                 will be used.</p></section>
         <section>
+            <p>
+                <b>Enabling the agent settings on each hypervisor</b></p>
+            <p>Each VM that needs to be configured with the Nuage VRS-VM Agent needs to be
+                configured with generic bootstrapping agent settings.</p>
+            <p>To configure these settings: <ol id="ol_kmp_cbp_rt">
+                    <li>In the vSphere web client, select the <b>Hypervisor</b> in the Nuage
+                        Cluster. </li>
+                    <li>Click <b>Manage</b>, then <b>Settings</b>, then <b>Agent VM
+                        Settings</b>.</li>
+                    <li>Click the <b>Edit</b> button.</li>
+                    <li>Configure the Datastore and Bootstrap Network settings. <p><image
+                                href="../../media/CGH-2-install-vrsvapp4.png" width="500"
+                                id="image_mpd_qy4_rt"/></p><p>The Bootstrap Network is the network
+                            on which the VRS VM issues DHCP requests and issues requests to the
+                            vCenter integration node in order to receive all its
+                        parameters.</p></li>
+                </ol></p>
+        </section>
+        <section>
             <title>Adding the Cluster to the Agency</title>
             <p>After adding the vCenter topology to the deployment toolbox, configure the cluster on
                 vCenter for Agent use.</p>
@@ -201,9 +220,9 @@ vc.password =vmware //: vCenter password</codeblock></li>
                         shown below:<p><image href="../../media/CGH-2-install-vrsvapp1.png"
                                 width="400" id="image_wd4_hq4_rt"/></p></li>
                     <li>Click on the vCenter Solutions Manager to see a list of extensions,
-                        including NuageVRS Agent Manager, as shown below:<image
-                            href="../../media/CGH-2-install-vrsvapp2.png" width="400"
-                            id="image_qs2_xx4_rt"/></li>
+                        including NuageVRS Agent Manager, as shown below:<p><image
+                                href="../../media/CGH-2-install-vrsvapp2.png" width="400"
+                                id="image_qs2_xx4_rt"/></p></li>
                     <li>Click the Nuage VRS Agent Manager and navigate to the <b>Solutions</b> tab.
                             <p>If a warning about a certificate issue appears, navigate to
                                 <codeph>https://&lt;vcenter_IP&gt;:8443/EamPlugin-1.6.0/</codeph>.
@@ -223,23 +242,6 @@ vc.password =vmware //: vCenter password</codeblock></li>
                             <b>Remove</b>, then <b>Update Configuration</b>.</li>
                 </ol>
             </p>
-            <p>
-                <b>Enabling The Agent settings on each Hypervisor</b></p>
-            <p>Each VM that needs to be configured with the Nuage VRS-VM Agent needs to be
-                configured with generic bootstrapping agent settings.</p>
-            <p>To configure these settings: <ol id="ol_kmp_cbp_rt">
-                    <li>In the vSphere web client, select the <b>Hypervisor</b> in the Nuage
-                        Cluster. </li>
-                    <li>Click <b>Manage</b>, then <b>Settings</b>, then <b>Agent VM
-                        Settings</b>.</li>
-                    <li>Click the <b>Edit</b> button.</li>
-                    <li>Configure the Datastore and Bootstrap Network settings. <p><image
-                                href="../../media/CGH-2-install-vrsvapp4.png" width="500"
-                                id="image_mpd_qy4_rt"/></p><p>The Bootstrap Network is the network
-                            on which the VRS VM issues DHCP requests and issues requests to the
-                            vCenter integration node in order to receive all its
-                        parameters.</p></li>
-                </ol></p>
         </section>
       <p><i>Return to the Installing the <xref
           href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
