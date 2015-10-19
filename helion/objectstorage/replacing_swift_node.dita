@@ -10,10 +10,10 @@
       a Swift node in a system is a follows:<ol id="ol_mbn_5pv_pt">
         <li>Log onto the deployer.</li>
         <li>Update the cloud model (<codeph>data/servers.yml</codeph> file) with a new MAC address,
-          iLO/IPMI user, password, and IP address (iLO) if these have changed. There is no need to
-          change the actual IP address. For
-          example:<codeblock> - id: swpac2
-   role: SWPAC-ROLE
+          iLO/IPMI user, password, and IP address (iLO) if these have changed. Do not change the
+          servers IP address, i.e.,<codeph> ip-add IP</codeph>. For
+          example:<codeblock> - id: swobj5
+   role: SWOBJ-ROLE
    server-group: rack2
    mac-addr: 8c:dc:d4:b5:cb:bd 
    nic-mapping: HP-DL360-6PORT
@@ -32,25 +32,24 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           directory.<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
         <li>Remove the replaced Swift node from cobbler by executing the following
-            command:<codeblock>sudo cobbler system remove --name &lt;server-id></codeblock><p>For
-            example:<codeblock>sudo cobbler system remove --name swpac2</codeblock></p></li>
+            command:<codeblock>sudo cobbler system remove --name &lt;server-id></codeblock><p>For example:<codeblock>sudo cobbler system remove --name swobj5</codeblock></p></li>
         <li>Re-run the cobbler deploy playbook to re-add the replaced
           node:<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
         <li>Using ansible, reimage the
             node:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=&lt;server id></codeblock><p>In
-            the example below <b>swobj2</b> server is
+            the example below <b>swobj5</b> server is
             reimaged.<codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=swpac2</codeblock></p></li>
+ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=swobj5</codeblock></p></li>
         <li>Examine the <codeph>cloudConfig.yml</codeph> and<codeph> data/control_plane.yml</codeph>
           files to get the host prefix (for example, helion) and the control plane name (for
           example, ccp). This gives you the hostname of the node. Configure the operating system as
             follows.<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit &lt;hostname></codeblock><p>In
-            the following example, for <b>swobj2</b>, the hostname is <b>helion-ccp-swpac2</b>.
+            the following example, for <b>swobj5</b>, the hostname is <b>helion-ccp-swobj5</b>.
             <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit helion-ccp-swpac2*</codeblock></p></li>
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit helion-ccp-swobj5*</codeblock></p></li>
         <li>If this is the first server running the swift-proxy service (see <xref
             href="first_proxy_server.dita#topic_rtc_s3t_mt">identifying first proxy server</xref>)
           you need to restore the Swift Ring Builder files to the
@@ -61,7 +60,7 @@ ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit helion-ccp-swpac2
           have used an encryption password when running the Configuration processor include the
             <b>--ask-vault-pass
             </b>argument.<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --ask-vault-pass --limit &lt;hostname></codeblock><p>For
-            example:<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --ask-vault-pass --limit helion-ccp-swpac2*</codeblock></p></li>
+            example:<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --ask-vault-pass --limit helion-ccp-swobj5*</codeblock></p></li>
       </ol></p>
   </body>
 </topic>

@@ -345,13 +345,14 @@
         <li>Log in to the Operations Console GUI</li>
         <li>Navigate to the Monitoring | Alarm Definitions page</li>
         <li>Find the alarm definitions that are applied to the various hosts. See the <xref
-            href="alarms.dita">Alarm Definitions List</xref> for the Centralized Logging Alarm
+          href="alarms.dita#alarmdefinitions/logging">Alarm Definitions List</xref> for the Centralized Logging Alarm
           Definitions.</li>
         <li>Navigate to the Monitoring | Alarm page</li>
         <li>Find the alarm definitions applied to the various hosts. These should match the alarm
-          definitions in the <xref href="alarms.dita">Alarms Definitions list</xref> below.</li>
+          definitions in the <xref href="alarms.dita#alarmdefinitions/logging">Logging Alarm
+            Definitions list</xref> .</li>
         <li>See if the alarm is green (good) or is in a bad state. If any are in a bad state, see
-          the possible actions to perform in the <xref href="alarms.dita">Alarms Definitions
+          the possible actions to perform in the <xref href="alarms.dita#alarmdefinitions/logging">Alarms Definitions
             list</xref>.</li>
       </ol>
       <p>You can use this filtering technique in the "Alarms" page to look for the following:</p>

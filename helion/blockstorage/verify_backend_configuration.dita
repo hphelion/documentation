@@ -48,25 +48,22 @@
               respective backend used. The backend name is mentioned in the
                 <codeph>cinder.conf.j2</codeph> file.<ul id="ul_u4j_1vz_jt">
                 <li>VSA: You can enter <codeph>vsa-backend-hlm003</codeph> in the <b>Value</b>
-                  field. In value is taken from <xref
-                    href="vsa/vsa.dita#topic_gmc_dgk_jt/vssa-config">VSA cinder.conf.j2</xref>.</li>
+                  field. In value is taken from <b>VSA cinder.conf.j2</b>.</li>
                 <li>Ceph: You can enter <codeph>ceph</codeph> in the <b>Value</b> field. In value is
-                  taken from <xref
-                    href="ceph/install_entryscale_kvm_ceph.dita#topic_jrc_5lz_ft/ceph-cinder-conf"
-                    >Ceph cinder.conf.j2</xref>.</li>
+                  taken from <b>Ceph cinder.conf.j2</b>.</li>
                 <li>3PAR FC: You can enter <codeph>3par_FC</codeph> in the <b>Value</b> field. In
-                  value is taken from <xref
-                    href="3Par/3par_configuration.dita#topic_vln_2xy_ht/3par-fc">3PAR FC
-                    cinder.conf.j2</xref>.</li>
+                  value is taken from <b>3PAR FC cinder.conf.j2</b>.</li>
                 <li>3PAR iSCSI : You can enter <codeph>3par_iscsi</codeph> in the <b>Value</b>
-                  field. In value is taken from <xref
-                    href="3Par/3par_configuration.dita#topic_vln_2xy_ht/3par-iscsi">3PAR iSCSI
-                    cinder.conf.j2</xref>.</li>
+                  field. In value is taken from <b>3PAR iSCSI cinder.conf.j2</b>.</li>
               </ul></p></li>
           <li>Click <b>Create</b> to create the extra volume type specs. <note> Once the volume type
               is mapped to the backend, you can create volumes with this volume type.</note></li>
         </ol></p>
     </section>
+    <p><b>(This is only for VSA</b>) You can configure extra specs (provision type and RAID
+      protection level) on the volume type for VSA. For more details, refer to <xref
+        href="http://docs.openstack.org/kilo/config-reference/content/hp-lefthand-supported-ops-rest.html"
+        format="html" scope="external"/>.</p>
     <section id="create-volume">
       <title>Create Volume </title>
       <p>Perform the following steps to create a volume using Horizon dashboard. <ol

@@ -42,6 +42,7 @@
               </ul>
             </li>
           </ol>
+          <!--
           <p>If you chose to use your first controller node as your deployer, ensure that your
               <codeph>servers.yml</codeph> file contains the <codeph>is-deployer: true</codeph>
             notation in your controller options. If you are using a dedicated deployer node you can
@@ -57,7 +58,7 @@
     ilo-ip: 192.168.9.3
     ilo-password: password
     ilo-user: admin
-    <b>is-deployer: true</b></codeblock></p>
+    <b>is-deployer: true</b></codeblock></p> -->
           <p>Optionally, you can use the <codeph>hosencrypt.py</codeph> script to encrypt your iLo
             passwords. This script uses OpenSSL.</p>
           <ol>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_psp_vrd_st">
+  <title>Using Erasure Code Pool in Ceph </title>
+  <body>
+    <p>(<b>where does this topic fit??</b>)An erasure coded (EC) Ceph pool cannot be directly used
+      as a Cinder backend. This is due to the limitation of Ceph EC pool; since it does not support
+      partial writes. To overcome this limitation, create a <b>writeback</b> cache tier in front of
+      the EC pool (which should be of type ‘replicated’). The user (i.e. <b>rbd_user</b> in
+        <codeph>cinder.conf.j2</codeph>) needs to be given permissions to the cache pool. However,
+      the <b>rbd_pool</b> in <codeph>cinder.conf.j2</codeph> will be the main storage pool (i.e.
+      volumes) itself. For more information on the cache tiering, refer to <xref
+        href="http://docs.ceph.com/docs/master/rados/operations/cache-tiering/" format="html"
+        scope="external"/></p>
+    <section><b>Procedure to use erasure code pool</b><p>Perform the following procedure to use
+        erasure code pool:<note>In the following procedure we assume that the name of the main
+          storage pool is <b>volumes</b>.</note><ol id="ol_jrl_htd_st">
+          <li>Create the caching
+            pool<codeblock>ceph osd pool create cache_tier_for_volumes 128 128 replicated</codeblock></li>
+          <li>Define the cache pool <codeph>cache_tier_for_volumes</codeph> for the storage pool
+              <b>volumes</b><codeblock>ceph osd tier add volumes cache_tier_for_volumes</codeblock></li>
+          <li>Set the cache mode to
+            <b>writeback</b><codeblock>ceph osd tier cache-mode cache_tier_for_volumes writeback</codeblock></li>
+          <li>Direct the client traffic directly to the cache
+            pool<codeblock>ceph osd tier set-overlay volumes cache_tier_for_volumes</codeblock></li>
+          <li>Execute the following command to provide <b>cinder</b> user permissions to the cache
+            pool<codeblock>sudo ceph-authtool /etc/ceph/ceph.client.cinder.keyring -n client.cinder \
+--cap osd 'allow class-read object_prefix rbd_children, allow rwx pool=volumes, \
+allow rwx pool=vms, allow rwx pool=images, allow rwx pool=cache_tier_for_volumes' --cap mon 'allow r'</codeblock></li>
+          <li>Import the keyring, so that the permissions are
+            refreshed:<codeblock>sudo ceph auth import -i /etc/ceph/ceph.client.cinder.keyring</codeblock></li>
+        </ol></p></section>
+  </body>
+</topic>

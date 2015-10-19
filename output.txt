@@ -1,1 +1,210 @@
-./helion/monasca/monasca.dita:          <xref href="http://docs-staging.hpcloud.com/hos2.0beta1/#helion/eula.html" format="html"
+./helion/adding_moonshot_nodes.dita:      ilo-password: whatever
+./helion/adding_moonshot_nodes.dita:      ilo_password: password</codeblock></p>In the sample file, <b>moonshot: c39n1</b> is an identifier for Moonshot node.--></li>
+./helion/administration/configure_monitoring.dita:  #  password:</codeblock>
+./helion/administration/configure_monitoring.dita:                <entry>User / Password (optional)</entry>
+./helion/administration/configure_monitoring.dita:                  password. Use double quotes around the password to avoid issues with special
+./helion/administration/configure_monitoring.dita:  password: password
+./helion/administration/configure_monitoring.dita:  password: "{{ vertica_api_user[0].password }}"
+./helion/administration/configure_monitoring.dita:  password: "{{ vertica_api_password }}"
+./helion/administration/configure_monitoring.dita:  password:
+./helion/administration/configure_monitoring.dita:  password: password
+./helion/administration/configure_monitoring.dita:  password: "{{ vertica_persister_user[0].password }}"
+./helion/administration/configure_monitoring.dita:  password: "{{ vertica_persister_password }}"
+./helion/administration/configure_monitoring.dita:  password:
+./helion/administration/configure_monitoring.dita:vertica_api_password: "{{ MON_API.consumes_FND_VDB.vars.vertica_monasca_api_password }}"
+./helion/administration/configure_monitoring.dita:vertica_persister_password: "{{ MON_PST.consumes_FND_VDB.vars.vertica_monasca_persister_password }}"</codeblock></li>
+./helion/administration/postinstall_checklist.dita:Password: admin</codeblock>
+./helion/administration/postinstall_checklist.dita:Password: admin</codeblock>
+./helion/blockstorage/brocade_zone_manager.dita:fc_fabric_password = password
+./helion/blockstorage/brocade_zone_manager.dita:fc_fabric_password = password
+./helion/blockstorage/ceph/adding_new_monitor_node.dita:  ilo-password: password
+./helion/blockstorage/ceph/deploy_monitor_stand_alone_node.dita:  ilo-password: password
+./helion/blockstorage/vsa/vsa.dita:        <li>Enter the required information (username/password) for the Administrative User.<p>For
+./helion/blockstorage/vsa/vsa.dita:              <li>password-stack</li>
+./helion/blockstorage/vsa/vsa.dita:hplefthand_password: &lt;password given during cluster creation>
+./helion/blockstorage/vsa/vsa.dita:hplefthand_debug: false</codeblock><p><!--where,<ul id="ul_swt_2mb_lt"><li>hplefthand_password :  Password given during cluster creation.</li><li>hplefthand_clustername: Name of the VSA cluster.</li><li>hplefthand_api_url: Virtual IP of Store Virtual.</li><li>hplefthand_username: Username given during cluster creation.</li><li>hplefthand_iscsi_chap_enabled : </li><li>volume_backend_name: Name of the backend.</li><li>volume_driver</li><li>hplefthand_debug</li></ul>--></p><note>
+./helion/blockstorage/vsa/vsa.dita:san_password=&lt;san_password>
+./helion/blockstorage/vsa/vsa_beta1.dita:            <li>Enter the username and password, for example: <codeph>stack / stack</codeph></li>
+./helion/blockstorage/vsa/vsa_beta1.dita:<b>hplefthand_password: stack
+./helion/blockstorage/vsa/vsa_create_multiple_clusters.dita:      ilo_password: "gone2far"
+./helion/blockstorage/vsa/vsa_create_multiple_clusters.dita:      ilo_password: "gone2far"
+./helion/blockstorage/vsa/vsa_create_multiple_clusters.dita:      ilo_password: "gone2far"
+./helion/blockstorage/vsa/vsa_create_multiple_clusters.dita:      ilo_password: "gone2far"
+./helion/blockstorage/vsa/vsa_create_multiple_clusters.dita:      ilo_password: "gone2far"
+./helion/blockstorage/vsa/vsa_create_multiple_clusters.dita:      ilo_password: "gone2far"</codeblock>The
+./helion/blockstorage/vsa/vsa_old.dita:        <li>Enter the following username and password: stack / stack</li>
+./helion/blockstorage/vsa/vsa_old.dita:hplefthand_password: stack
+./helion/bura/cloud_control_plane_backup.dita:      <li>Disable password login (only allow rsa keys)</li>
+./helion/configure_3par.dita:hp3par_password=helion
+./helion/configure_3par.dita:san_password=helion
+./helion/configure_3par.dita:              you run the Configuration Processor you will be prompted for two passwords. Enter the
+./helion/configure_3par.dita:              first password to make the Configuration Processor encrypt its sensitive data, which
+./helion/configure_3par.dita:              is comprised of the random inter-service passwords that it generates and the Ansible
+./helion/configure_3par.dita:              runs. If you wish to change an encryption password that you have already used when
+./helion/configure_3par.dita:              running the Configuration Processor then enter the new password at the second prompt,
+./helion/configure_3par.dita:              required passwords on the ansible command line. For example, the command below will
+./helion/configure_3par.dita:hp3par_password=helion
+./helion/configure_3par.dita:san_password=helion
+./helion/configure_vsa.dita:          a password (min 6 characters). Enter a password and proceed. The output will look like
+./helion/configure_vsa.dita:You will require a password to access your desktops.
+./helion/configure_vsa.dita:Password:
+./helion/configure_vsa.dita:          client using the IP address, port, and password to access the CMC GUI diplay.</li>
+./helion/configure_vsa.dita:          <li>Enter the required information (username/password) for the Administrative User.<p>For
+./helion/configure_vsa.dita:              <li>password-stack</li>
+./helion/configure_vsa.dita:hplefthand_password: &lt;password given during cluster creation>
+./helion/configure_vsa.dita:              <!--where,<ul id="ul_swt_2mb_lt"><li>hplefthand_password :  Password given during cluster creation.</li><li>hplefthand_clustername: Name of the VSA cluster.</li><li>hplefthand_api_url: Virtual IP of Store Virtual.</li><li>hplefthand_username: Username given during cluster creation.</li><li>hplefthand_iscsi_chap_enabled : </li><li>volume_backend_name: Name of the backend.</li><li>volume_driver</li><li>hplefthand_debug</li></ul>-->
+./helion/esx/eon_service.dita:              them.<codeblock># eon vcenter-add --name &lt;vCenter Name&gt; --ip-address &lt;vCenter IP address&gt; --username &lt;vCenter Username&gt; --password &lt;vCenter Password&gt; --port &lt;vCenter Port&gt;</codeblock></p>where:<ul
+./helion/esx/eon_service.dita:              <li>vCenter Password - the password for the above username.</li>
+./helion/esx/eon_service.dita:              Output</b>:<codeblock><codeph># eon vcenter-add --name vc01 --ip-address 10.1.200.41 --username administrator@vsphere.local --password password --port 443</codeph>
+./helion/esx/eon_service.dita:| password   | &lt;SANITIZED>                          |
+./helion/esx/eon_service.dita:| password   | &lt;SANITIZED>                          |
+./helion/esx/eon_service.dita:            password,
+./helion/esx/eon_service.dita:            port)<codeblock># eon vcenter-update --name &lt;vCenter Name&gt; --ip-address &lt;vCenter IP address&gt; --username &lt;vCenter Username&gt; --password &lt;vCenter Password&gt; --port &lt;vCenter Port&gt; &lt;vCenter ID&gt;</codeblock></p><p><b>Sample
+./helion/esx/eon_service.dita:              output</b>:<codeblock># eon vcenter-update --name vc02 --ip-address 10.1.200.41 --username administrator@vsphere.local --password password --port 443 BC9DED4E-1639-481D-B190-2B54A2BF5674
+./helion/esx/eon_service.dita:| password   | &lt;SANITIZED>                          |
+./helion/faq.dita:      <title>How do I change my service passwords from the default?</title>
+./helion/faq.dita:      <p>By default the user name and password to administer the services (such as Horizon) are:
+./helion/faq.dita:password: admin</codeblock></p>
+./helion/faq.dita:      <p>The default password can be changed via the Keystone API, or by using the OpenStack command
+./helion/faq.dita:openstack user password set -password &lt;one_password></codeblock></p>
+./helion/faq.dita:      <p>However, this password will also need to be updated in the respective service
+./helion/gui_installer.dita:            <li>IPMI/iLO IP address, username, password </li>
+./helion/gui_installer.dita:        the GUI in a browser, SSH tunnel into the deployer with the username/password set up when
+./helion/gui_installer.dita:        installing the deployer. Username and password should be what was set in "Set up the
+./helion/horizon/horizon_overview.dita:        zone, and your password.</p>
+./helion/horizon/horizon_overview.dita:          <p>On the <b>Log In</b> page, enter your user name and password and then click <b>Sign
+./helion/identity/identity_admin.dita:stack@hLinux:~$ openstack user create --domain default --password-prompt --email test@example.com --description "Test User" --enable testuser
+./helion/identity/identity_admin.dita:User Password:
+./helion/identity/identity_admin.dita:Repeat User Password:
+./helion/identity/identity_init.dita:stack@hLinux:~$ openstack user create --domain default --password-prompt --email test@example.com --description "Test User" --enable testuser
+./helion/identity/identity_init.dita:User Password:
+./helion/identity/identity_init.dita:Repeat User Password:
+./helion/identity/identity_ldap.dita:        password: REDACTED
+./helion/identity/identity_ldap.dita:            --os-password testuser1_password \
+./helion/identity/identity_ldap.dita:            --os-password testuser1_password \
+./helion/identity/identity_limitations.dita:        <li>MFA provides the ability to deploy non-password based authentication; for example: token
+./helion/identity/identity_overview.dita:        management systems such as forcing password changes. The focus of the Keystone native
+./helion/identity/identity_overview.dita:        password, and can include options such as SMS text, a temporal token generator, a
+./helion/identity/identity_reconfigure.dita:# Username/Password for rabbit
+./helion/identity/identity_roles.dita:          should be removed after installation and the "admin" password changed.</li>
+./helion/input_model.dita:                <entry>ilo-password (optional)</entry>
+./helion/input_model.dita:                <entry>This provides the user password of the power
+./helion/input_model.dita:      ilo-password: password
+./helion/input_model.dita:      ilo-password: password
+./helion/input_model.dita:      ilo-password: password
+./helion/input_model.dita:      ilo-password: password
+./helion/input_model.dita:      ilo-password: password
+./helion/input_model.dita:      ilo-password: password
+./helion/input_model.dita:      ilo-password: password
+./helion/install_entryscale_esx.dita:            password for the Helion message queue.</li>
+./helion/install_entryscale_esx.dita:          <li>Since the file containing the Helion message queue password could appear in the swap
+./helion/install_entryscale_esx.dita:            to prevent discovery of the password via snooping of the swap area or memory
+./helion/install_entryscale_esx.dita:  ilo-password: password
+./helion/install_entryscale_esx.dita:            client.<codeblock><codeph># eon vcenter-add --name &lt;vCenter Name> --ip-address &lt;vCenter IP address> --username &lt;vCenter Username> --password &lt;vCenter Password> --port &lt;vCenter Port></codeph></codeblock><p>where:
+./helion/install_entryscale_esx.dita:              <li>vCenter Password - the password for the above username.</li>
+./helion/install_entryscale_esx.dita:            Output:</b><codeblock><codeph># eon vcenter-add --name vc01 --ip-address 10.1.200.41 --username administrator@vsphere.local --password password --port 443</codeph>
+./helion/install_entryscale_esx.dita:| password   | &lt;SANITIZED>                          |
+./helion/install_entryscale_esx.dita:| password   | &lt;SANITIZED>                          |
+./helion/install_entryscale_esx.dita:        #SSH public key content for OVSvAPP/Computeproxy password less login.
+./helion/install_entryscale_esx.dita:#vmware_host_password = &lt;password>
+./helion/install_entryscale_kvm.dita:            <li>Enter a password.</li>
+./helion/install_entryscale_kvm.dita:    ilo-password: password
+./helion/install_entryscale_kvm.dita:            passwords. This script uses OpenSSL.</p>
+./helion/install_entryscale_kvm.dita:              <codeblock>export HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeblock></li>
+./helion/install_entryscale_kvm.dita:            <li>Run the python script below and follow the instructions. Enter a password that you
+./helion/install_entryscale_kvm.dita:            <li>Take the string generated and place it in the <codeph>"ilo_password"</codeph> field
+./helion/install_entryscale_kvm.dita:              HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeph></note></li>
+./helion/install_entryscale_kvm.dita:      <p>When you run the configuration processor you will be prompted for two passwords. Enter the
+./helion/install_entryscale_kvm.dita:        first password to make the configuration processor encrypt its sensitive data, which is
+./helion/install_entryscale_kvm.dita:        comprised of the random inter-service passwords that it generates and the ansible
+./helion/install_entryscale_kvm.dita:        processor runs. If you wish to change an encryption password that you have already used when
+./helion/install_entryscale_kvm.dita:        running the configuration processor then enter the new password at the second prompt,
+./helion/install_entryscale_kvm.dita:      <p>For automated installation (e.g. CI) you can specify the required passwords on the ansible
+./helion/install_entryscale_kvm.dita:      <p>The <codeph>cobbler-deploy.yml</codeph> playbook prompts for a password - this is the
+./helion/install_entryscale_kvm.dita:        password, associated with the user running the command on the deployer, to be able to log in
+./helion/install_entryscale_kvm.dita:          installation now prompts for a password. The entered value is used to set a user-defined
+./helion/install_entryscale_kvm.dita:          password for subsequent node installs so that a user can gain console/terminal access to
+./helion/install_entryscale_kvm.dita:          <p>The cobbler-deploy stage of the installation now prompts for a password. The entered
+./helion/install_entryscale_kvm.dita:            value is used to set a user-defined password for subsequent node installs so that a user
+./helion/install_entryscale_kvm.dita:          <p>If you have used an encryption password when running the configuration processor use
+./helion/install_entryscale_kvm.dita:            the command below and enter the encryption password when prompted:
+./helion/install_entryscale_swift.dita:    ilo-password: password
+./helion/install_entryscale_swift.dita:            passwords. This script uses OpenSSL.</p>
+./helion/install_entryscale_swift.dita:              <codeblock>export HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeblock></li>
+./helion/install_entryscale_swift.dita:            <li>Run the python script below and follow the instructions. Enter a password that you
+./helion/install_entryscale_swift.dita:            <li>Take the string generated and place it in the <codeph>"ilo_password"</codeph> field
+./helion/install_entryscale_swift.dita:              HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeph></note></li>
+./helion/metering/metering_rbac.dita:      typically User Name and Password or Token, Keystone will augment that request with the Roles
+./helion/networking/dnsaas.dita:            <li>Password</li>
+./helion/networking/dnsaas.dita:            <li>Password</li>
+./helion/networking/dnsaas.dita:                    <li>Password</li>
+./helion/networking/dnsaas.dita:                    <li>Password</li>
+./helion/networking/dnsaas.dita:          <codeblock>keystone user-create --name dnsaas --tenant dnsaas --email dnsaas@example.com --pass password</codeblock>
+./helion/networking/dnsaas.dita:          <codeblock>keystone user-create --name designate --tenant service --email designate@example.com --pass password</codeblock>
+./helion/networking/dnsaas.dita:                <li><codeph>database_root_password</codeph> - Password for the database root user. This should be over 16 characters.</li>
+./helion/networking/dnsaas.dita:                <li><codeph>database_designate_password</codeph> - Password for the database designate user. This should be over 16 characters.</li>
+./helion/networking/dnsaas.dita:                <li><codeph>database_powerdns_password</codeph> - Password for the database powerdns user. This should be over 16 characters.</li>
+./helion/networking/dnsaas.dita:                <li><codeph>messaging_root_password</codeph> - Password for the messaging root user. This should be over 16 characters.</li>
+./helion/networking/dnsaas.dita:                <li><codeph>messaging_designate_password</codeph> - Password for the messaging designate user. This should be over 16 characters.</li>
+./helion/networking/dnsaas.dita:                <li><codeph>service_password</codeph> - Password for a user with permission to validate Keystone tokens</li>
+./helion/networking/dnsaas.dita:                <li><codeph>ephemeralca_password</codeph> - EphemeralCA Password. This must match the eCA password value from the overcloud passwords file. This should be output by the Helion EE installer</li>
+./helion/networking/dnsaas.dita:                <li><codeph>beaver_rabbit_password</codeph> - Beaver RabbitMQ Connection Password This must match the RabbitMQ password value from the undercloud passwords file. This should be output by the Helion EE installer</li>
+./helion/networking/dnsaas.dita:                <li><codeph>akamai_password</codeph>: The password that was set up as part of your Akamai signup.</li>
+./helion/networking/dnsaas.dita:                <li><codeph>dynect_password</codeph> - Password provided by DynECT signup.</li>
+./helion/networking/dnsaas.dita:          <codeblock>dnsaas-installer --target-password &lt;Target User Password&gt; validate</codeblock>
+./helion/networking/dnsaas.dita:          <codeblock>dnsaas-installer --target-password &lt;Target User Password&gt; install</codeblock>
+./helion/networking/dnsaas.dita:      <codeblock>dnsaas-installer --target-password &lt;Target User Password&gt; haproxy</codeblock>
+./helion/networking/dnsaas.dita:                <li><codeph>RabbitMQ Password / Confirm Password</codeph> - Enter the value of the <codeph>messaging_designate_password</codeph> value in the <codeph>dnsaas-installer.conf</codeph>.</li>
+./helion/networking/dnsaas.dita:        <codeblock>dnsaas-installer --target-password &lt;Target User Password&gt; keystone-registration</codeblock>
+./helion/networking/fwaas.dita:password: &lt;password&gt;</codeblock></li>
+./helion/networking/fwaas.dita:password: &lt;password></codeblock></li>
+./helion/networking/vpnaas.dita:password: &lt;password&gt;
+./helion/networking/vpnaas.dita:password: &lt;password&gt;
+./helion/networking/vpnaas.dita:password: &lt;password&gt;
+./helion/networking/vpnaas.dita:password: &lt;password&gt;
+./helion/objectstorage/add_new_node.dita:  ilo-password: &lt;ilo-password></codeblock></li>
+./helion/objectstorage/creating_roles_swift_nodes.dita:  ilo_password: password
+./helion/objectstorage/creating_roles_swift_nodes.dita:  ilo_password: password
+./helion/objectstorage/replacing_drives_swift_node.dita:            have used an encryption password when running the Configuration processor include the
+./helion/objectstorage/replacing_swift_node.dita:          iLO/IPMI user, password, and IP address (iLO) if these have changed. There is no need to
+./helion/objectstorage/replacing_swift_node.dita:   ilo-password: iLOpass
+./helion/objectstorage/replacing_swift_node.dita:          have used an encryption password when running the Configuration processor include the
+./helion/objectstorage/utility.dita:OS_PASSWORD=&lt;redacted>
+./helion/objectstorage/utility.dita:    <p>You must enter the appropriate password for the demo user and select the correct endpoint for
+./helion/operations/accessing_horizon.dita:        find the randomized password that is created for this user you will need to look into the
+./helion/operations/add_node.dita:      ilo_password: "whatever"</codeblock>
+./helion/operations/centralized_logging.dita:        <li>Password: 1f3pNxQmXXELJn/MJ4jOHixePSXlu4eZzhi1gJjr7mI=</li>
+./helion/operations/monitoring_service.dita:        Password: admin</codeblock>
+./helion/operations/opsconsole_overview.dita:        the randomized password that is created for this user you will need to look into the
+./helion/operations/replace_controller.dita:          address; server ID; and iLO/IPMI user, password, and IP address if these have changed.
+./helion/preinstall_checklist.dita:                <entry>iLO Username/Password</entry>
+./helion/preinstall_checklist.dita:                <entry>iLO Username/Password</entry>
+./helion/preinstall_checklist.dita:                <entry>iLO Username/Password</entry>
+./helion/preinstall_checklist.dita:                <entry>iLO Username/Password</entry>
+./helion/preinstall_checklist.dita:                <entry>iLO Username/Password</entry>
+./helion/releasenotes.dita:      <p>In this release, connection details and passwords are encrypted and or protected. See <xref
+./helion/releasenotes.dita:          href="security/encrypted_storage.dita">Encryption of Passwords and
+./helion/releasenotes.dita:  ilo-password: password
+./helion/releasenotes.dita:              address or password.</li>
+./helion/security/encrypted_storage.dita:<topic id="password_encryption">
+./helion/security/encrypted_storage.dita:  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Encryption of Passwords and Sensitive Data</title>
+./helion/security/encrypted_storage.dita:      The passwords that are encrypted:
+./helion/security/encrypted_storage.dita:      <li>Inter-service passwords generated by the configuration processor (Keystone, MySQL, RabbitMQ and Vertica passwords)
+./helion/security/encrypted_storage.dita:          RabbitMQ, Horizon secret key, Keystone admin token) </li><li>User-supplied passwords (iLO passwords, Cinder back-end passwords) </li></ul>
+./helion/security/encrypted_storage.dita:    <p>If you need to change a password, then the following applies:</p>
+./helion/security/encrypted_storage.dita:        <li> Inter-service passwords: These cannot be changed at this time.</li>   
+./helion/security/encrypted_storage.dita:        <li>User-supplied passwords:  can be changed
+./helion/security/encrypted_storage.dita:        categories of password and secret-keys listed below, and the processes are documented.</p>
+./helion/security/encrypted_storage.dita:          <p>Finally, if user-supplied passwords have been encrypted (this process uses the OpenSSL library)
+./helion/security/encrypted_storage.dita:            then the environment variable HOS_USER_PASSWORD_ENCRYPT_KEY must contain the key used to encrypt those passwords.</p>
+./helion/security/encrypted_storage.dita:     <p> The generated passwords are stored in Ansible inputs generated by the configuration processor.</p>
+./helion/security/encrypted_storage.dita:        passwords, some Ansible inputs, and the SSH key used by Ansible on the deployer. See the
+./helion/security/encrypted_storage.dita:        <li><b>Configuration Processor Key</b> - If you wish to change an encryption password that
+./helion/security/encrypted_storage.dita:          password at the first prompt and the new password at the second prompt when running the
+./helion/security/encrypted_storage.dita:            Password during Configuration Processor</xref> for more details.</li>
+./helion/security/encrypted_storage.dita:        <li><b>iLO passwords, VSA password if encrypted with <codeph>hosencrypt.py</codeph></b> -
+./helion/security/encrypted_storage.dita:          the plaintext passwords at the password prompt.</li>
+./helion/userguide/create_network.dita:Password: demo</codeblock></li>
+./helion/userguide/create_network.dita:Password: demo</codeblock></li>
+./helion/userguide/lbaas.dita:pass: &lt;password&gt;</codeblock></li>
+./helion/userguide/lbaas.dita:pass: &lt;password&gt;</codeblock></li>

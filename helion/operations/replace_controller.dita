@@ -13,9 +13,9 @@
           first. </p></note>
       <b>Update your model with replacement server information</b>
       <ol>
-        <li> Update your cloud model (<b>servers.yml </b>and <b>baremtal.yml</b>) with new MAC
-          address; server ID; and iLO/IPMI user, password, and IP address if these have changed.
-          (Please follow the procedure for updating your cloud model/ git repo)</li>
+        <li> Update your cloud model (<b>servers.yml </b>) with new MAC address; server ID; and
+          iLO/IPMI user, password, and IP address if these have changed. (Please follow the
+          procedure for updating your cloud model/ git repo)</li>
         <li> Get the <b>servers.yml</b> file stored in git:
           <codeblock>cd ~/helion/my_cloud/definition/data
 git checkout site</codeblock>then change

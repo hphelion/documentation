@@ -3,6 +3,10 @@
 <topic id="verify-the-filesystem-label">
   <title>How to Verify if a Filesystem is Labelled</title>
   <body>
+    <p>
+      <note type="warning">For system upgrade <!--rather than an initial deploy--> then do NOT clear
+        the label before starting the upgrade.</note>
+    </p>
     <p>This page explains the procedure to check whether a filesystem in a partition has a
       label.</p>
     <p>To check whether a filesystem in a partition has a label, perform the following step:<ul

@@ -9,8 +9,9 @@
     <section id="prereq"><title>Pre-requisites</title>
       <p>
         <ul>
-          <li>Your HP Helion Entry Scale Cloud should be up and running. Installation steps can be
-            found <xref href="install_entryscale_kvm.dita">here</xref>.</li>
+          <li>The deployer node must be setup before deploying Ceph. For more details on the
+            installation of deployer node, refer  <xref href="install_entryscale_kvm.dita"
+              >here</xref>.</li>
         </ul>
       </p>
     </section>

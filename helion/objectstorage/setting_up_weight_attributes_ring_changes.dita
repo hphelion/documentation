@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_t1y_vjs_4t">
-  <title>Setting up Weight Attributes for Ring Changes</title>
+  <title>Using the Weight-Step Attributes to Prepare for Ring Changes</title>
   <body>
     <p>Rings are build during a deploy and sets the weights of disk drives such that smaller disk
       drives have a smaller weight than larger disk drives. As explained in <xref

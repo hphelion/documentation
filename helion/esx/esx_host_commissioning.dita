@@ -4,9 +4,7 @@
   <title>ESX Host Commissioning</title>
   <body>
     <p>ESX Host Commissioning is a functionality provided to a user to add additional ESX hosts to
-      an already activated cluster. You can add ESX host to an already activated cluster if OVSvApp
-      is installed in the host. With the OVSvApp installed, you can connect the tenant VMs which are
-      being created on that host to the tenant network.</p>
+      an already activated cluster. </p>
     <p>The following steps provides a detailed procedure on how to commission a new a host to an
       already activated cluster.<ol id="ol_xls_25f_rt">
         <li>List the current state of the cluster using EON python
@@ -76,16 +74,6 @@ cd /home/stack/scratch/ansible/next/hos/ansible;</codeblock></li>
           playbook:<codeblock>ansible-playbook -i hosts/verb_hosts guard-deployment.yml
 ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit '*esx-ovsvapp'
 ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit NEU-OVSVAPP</codeblock></li>
-        <li>After successful deployment of the <b>hlm-deploy</b>, execute the following command from
-          the deployer
-            node.<codeblock># eon move-hosts –-vcenter-id &lt;vCenter ID> --host &lt;host IP> –-status &lt;Status of deployment></codeblock><note>The
-            status can be "failure "or "success" based on the deployment.</note><p>For example:
-            </p><codeblock># eon move-hosts –-vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --host 100.10.0.50 –-status SUCCESS</codeblock><p>The
-            host will be moved back to the original cluster as shown below:</p><p><image
-              href="../../media/esx/eon_service_host3.png" id="image_xhw_pbp_lt"/><note type="tip"
-              >You can get the host IP address from <codeph>pass_through.yml</codeph> file at
-                <codeph>/home/stack/helion/definition/data/</codeph> as shown below. <p><image
-                  href="../../media/esx/host_ip_add.png" id="image_dm5_4np_lt"/></p></note></p></li>
       </ol></p>
   </body>
 </topic>

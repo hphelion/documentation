@@ -67,40 +67,42 @@
           <codeph>servers.yml</codeph> file on the deployer node with a list of VSA nodes that are
         currently offline so that these nodes get excluded from any further reconfiguration or
         upgrades. This prevents a VSA node that is offline from being included in deployments.</p>
-      <p/>
-      <p><?oxy_custom_start type="oxy_content_highlight" color="140,255,140"?>In order to prevent a
-        VSA node that is offline from being included in deployments it is recommended that a (what
-        file??) file is created on the deployer node containing a list of VSA nodes that are
-        currently offline so these nodes get excluded from any further reconfiguration or
-        upgrades.</p>
-      <p>If a VSA node is being removed, it should continue to remain in HLM configuration files
-        (baremetalConfig.yml and servers.yml). In order to prevent a VSA node that is offline from
-        being included in deployments it is recommended that a file is created on the deployer node
-        containing a list of VSA nodes that are currently offline so these nodes get excluded from
-        any further reconfiguration or
-        upgrades.<?oxy_custom_end?><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
-      </p>
-      <p>The format of this file would be!&lt;VSA node-name>*Where the "VSA node-name" matches the
-        interfaces used to access this node during deployments, i.e.e.g., !padawan-ccp-vsa001* (VSA
-        host as given in hosts/verb_hosts). Add this VSA host name to a file, say "offline-vsa"When
-        performing HLM deployments specify the name of this file in a --limit option to prevent the
-        deployment process trying to access the VSA nodes that are offline.ansible-playbook -i
-        hosts/localhost config-processor-run.yml (from ~/helion/hos/ansible
-        directory)ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit
-        @offline-vsaansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e
-        elasticsearch_cluster_name=hlm-001 --limit @offline-vsa</p>
+      <p><b>&lt;DETAILED INFORMATION IS REQUIRED></b></p>
+      <p>The format of servers.yml file would be <codeph>!&lt;VSA node-name>*</codeph></p>
+      <p> where VSA node-name matched the interface used to access this node during deployment. For
+        example<codeblock>!padawan-ccp-vsa001* (VSA host as given in hosts/verb_hosts)</codeblock></p>
+      <p>When performing HLM deployments specify the name of this file in a --limit option to
+        prevent the deployment process trying to access the VSA nodes that are offline.</p>
+      <p>Run the configuration
+        processor<codeblock>cd /home/stack/helion/hos/ansible;
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></p>
+      <p>Execute the following command
+        <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit &lt;hostname></codeblock></p>
+      <p>For example: Adding  "offline-vsa" to the VSA host name
+        <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit @offline-vsa</codeblock></p>
+      <p>Run the following
+        playbook<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e elasticsearch_cluster_name=hlm-001 --limit @offline-vsa</codeblock></p>
     </section>
+    <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
     <section>
-      <title><b>Remove VSA storage system from cloud after it's removed from cluster/management
-          group in CMC( In case if the VSA needs to be removed permanently)</b></title>
-      <p>After the VSA storage system is removed from CMC if the same needs to be removed from
-        cloud, follow the below steps.</p>
-      <p>1.) Delete or comment out the VSA system info in servers.yml entry (
-        /home/stack/helion/my_cloud/definition/data/servers.yml )</p>
-      <p>2.) git add &amp; commit the changes</p>
-      <p>3.) Run config-processor-run playbook to generate updated cloud inventory data</p>
-      <p>4.) Run ready-deployment-playbook to update changes to staging directory</p>
-      <p>5.) Verify the node is removed from hosts/verb_hosts file.<?oxy_custom_end?></p>
+      <title><?oxy_custom_end?><b>Remove VSA storage system from cloud </b></title>
+      <p>You can remove the VSA storage system from the cloud after it is removed from cluster
+        management group in CMC. This is done, if you want to remove VSA permanently.</p>
+      <p>Perform the following steps to remove the same cluster which has been removed from CMC in
+        cloud. (<b>How do u remove cluster in CMC??)</b><ol id="ol_mdp_qvk_st">
+          <li>Delete or comment out the VSA system information at
+              <codeph>/home/stack/helion/my_cloud/definition/data/servers.yml </codeph>.</li>
+          <li>Commit your
+            configuration<codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "Remove OSD node &lt;host-name>"</codeblock></li>
+          <li>Run the configuration
+            processor:<codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Use the playbook below to create a deployment directory:
+            <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+          <li>Verify that the node is removed from <codeph>hosts/verb_hosts</codeph> file.
+              (<b>command to verify??)</b></li>
+        </ol></p>
     </section>
   </body>
 </topic>

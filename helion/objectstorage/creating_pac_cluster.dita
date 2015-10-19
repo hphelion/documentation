@@ -7,9 +7,9 @@
       proxy, account, and container servers. </p>
     <ul id="ul_r4r_r1c_jt">
       <li>In the <codeph>data/control_plane.yml</codeph> file, identity the control plane that the
-        object serves are associated with. </li>
-      <li>Identity the node type/role used by the Swift Object servers. In the following example,
-          <b>SWPAC-ROLE</b> is mentioned as server-role.<p>Add an entry to the <b>clusters </b>item in the <b>control-plane</b>
+        PAC serves are associated with. </li>
+      <li>Identity the node type/role used by the Swift PAC servers. In the following example,
+          <b>SWPAC-ROLE</b> is mentioned as server-role.<p>Add an entry to the <b>clusters</b> item in the <b>control-plane</b>
           as
           follows:<codeblock>control-planes:
 - name: ccp
@@ -17,18 +17,17 @@
   . . .
   clusters:
   . . .
-  - id: "4" 
-      name: swpac
-      server-role: SWPAC-ROLE
-      member-count: 3
-      allocation-policy: strict
-      service-components:
-      - ntp-client
-      - swift-proxy
-      - swift-account
-      - swift-container
-      - swift-ring-builder
-      - swift-client</codeblock></p></li>
+     - name: swpac
+       cluster-prefix: c2
+       server-role: SWPAC-ROLE
+       member-count: 3
+       allocation-policy: strict
+       service-components:
+         - swift-ring-builder
+         - swift-proxy
+         - swift-account
+         - swift-container
+         - swift-client</codeblock></p></li>
     </ul>
     <ul id="ul_s5v_rmg_rt">
       <li>You must change the <b>member-count</b> to match the number of servers, if you have more

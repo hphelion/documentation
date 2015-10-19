@@ -484,6 +484,7 @@ Successfully deleted network info of vCenter: BC9DED4E-1639-481D-B190-2B54A2BF56
             >Removing an existing cluster from the compute resource pool</xref></li>
         <li><xref href="removing_esx_host_from_cluster.dita#topic_srg_d5h_rt">Removing an existing
             ESX host from cluster</xref></li>
+        <li><xref href="logging.dita#topic_rq3_mxh_rt">Logging</xref></li>
       </ul></p>
   </body>
 </topic>
