@@ -5,12 +5,13 @@
   <body>
     <p>This page describe the procedure to enable EON service for centralised logging and changing
       EON log level to DEBUG.</p>
-    <section><b>Change EON Log Level to DEBUG</b>
+    <section><b>Modify EON Log Level </b>
       <p>To change the EON log level to DEBUG, do the following:</p><p>
         <ol id="ol_ydx_4xh_rt">
-          <li>Change the directory. The <systemoutput>eon.conf.j2</systemoutput> is present in
-            following
-            directories:<codeblock>cd /home/stack/helion/hos/ansible/roles/eon-common/templates</codeblock></li>
+          <li>Change the directory to
+            <codeblock>cd ~/helion/hos/ansible/roles/eon-common/templates</codeblock></li>
+          <li>In the logger section: INFO(default), WARN, DEBUG; set it ti default, to enable the
+            log.</li>
           <li>Edit the DEFAULT section in
             <codeph>eon.conf.j2</codeph><codeblock>[DEFAULT]
 debug = True</codeblock></li>
@@ -33,12 +34,11 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
 ansible-playbook -i hosts/verb_hosts eon-reconfigure.yml</codeblock></li>
         </ol>
       </p></section>
-    <section id="enable-eon-service-centralized-logging"><b>Enable EON Service for Centralized
-        Logging</b>
+    <section id="enable-eon-service-centralized-logging"><b> EON Service for Centralized Logging</b>
       <p>To enable EON Service for centralised logging:</p><ol>
-        <li>Change the directory<codeblock>~/helion/my_cloud/config/logging/vars</codeblock></li>
+        <li>Change the directory to<codeblock>~/helion/my_cloud/config/logging/vars</codeblock></li>
         <li>Edit <codeph>eon-api-clr.yml</codeph> and <codeph>eon-conductor-clr.yml</codeph> files
-          to set the value of <b>centralized_logging</b> as <b>true</b> as shown in the following
+          to set the value of <b>centralized_logging</b> to <b>true</b> as shown in the following
           sample:<codeblock>logr_services:
   eon-conductor:
     logging_options:
@@ -72,5 +72,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           playbook<codeblock>cd /home/stack/scratch/ansible/next/hos/ansible;
 ansible-playbook -i hosts/verb_hosts eon-reconfigure.yml</codeblock></li>
       </ol></section>
+    <note>To disable the centralized logging, set the value of <b>centralized_logging</b> to
+        <b>False</b> (See Step <b>2</b>).</note>
   </body>
 </topic>
