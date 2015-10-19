@@ -17,11 +17,11 @@
 | domain-c24 | Cluster2 | DC1        | not_imported  |
 | domain-c25 | Cluster3 | DC2        | not_imported  |
 +------------+----------+------------+---------------+</codeblock></p></li>
-        <li>Once the newly added cluster is appears after executing <codeph>cluster-list</codeph>
+        <li>Once the newly added cluster appears after executing <codeph>cluster-list</codeph>
           command, refer from <xref href="../install_entryscale_esx.dita#install_esx/import-cluster"
             >Import Cluster</xref> in <i>Prepare and Deploy ESX Computes and OVSvAPPs</i>
-            section.<p>OR</p><p>If the newly added cluster is in a new Datacenter on which no
-            activated clusters exists, refer from <xref
+            section.<p>OR (<b>need to add some more content)</b></p><p>If the newly added cluster is
+            in a new Datacenter on which no activated clusters exists, refer from <xref
               href="../install_entryscale_esx.dita#install_esx/register-network">Register ESX Cloud
               Network Configuration</xref> in <i>Prepare and Deploy ESX Computes and OVSvAPPs</i>
             section.</p></li>

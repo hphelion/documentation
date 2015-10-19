@@ -79,11 +79,16 @@
   ilo-user: admin
   <b>is_deployer: true</b></codeblock></note>--></li>
         <li>Modify the <codeph>~/helion/hos/ansible/hlm-deploy.yml</codeph> to uncomment the line
-          containing <codeph>eon-deploy.yml</codeph>.</li>
+          containing <codeph>eon-deploy.yml</codeph>. You must comment the line containing
+            <codeph>ceph-deploy.yml</codeph>,  <codeph>vsa-deploy.yml</codeph>, and
+            <codeph>cmc-deploy.yml</codeph>. </li>
         <!--<li>Modify the <codeph>neutron.conf.j2</codeph> at <codeph>~/helion/my_cloud/config/<codeph>neutron/neutron.conf.j2</codeph></codeph>with the following values:<codeblock>router_distributed = False</codeblock><p> And add <codeph>mechanism_drivers = ovsvapp</codeph> at the end of the <codeph>neutron.conf.j2</codeph>.</p></li><li>Modify <codeph>ml2_conf.ini.j2</codeph> at <codeph>~/helion/my_cloud/config/<codeph>neutron/ml2_conf.ini.j2</codeph></codeph>with the following values:<codeblock>[ml2]
 mechanism_drivers = ovsvapp, openvswitch, l2population
 [agent]
 enable_distributed_routing = False</codeblock></li>-->
+        <li>Enable EON logs in the central server, refer to <xref
+            href="esx/change_log_level_debug.dita#topic_rq3_mxh_rt/enable-eon-service-centralized-logging"
+            >Enable EON Service for Centralised Logging</xref> for more details.</li>
         <li>Commit your cloud deploy configuration to the<xref href="using_git.dita"> local git
             repo</xref>, as follows: <codeblock>cd ~/helion/hos/ansible
 git add -A
