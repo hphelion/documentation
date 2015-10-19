@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_dsm_fbs_st">
+  <title>Starting and Stopping Freezer Services</title>
+  <body>
+    <p>To stop freezer globally launch the following playbook from the deployer (This will stop all
+      freezer-api and all freezer-agent running on your
+      clusters):<codeblock>
+ansible-playbook -i hosts/verb_hosts freezer-stop.yml</codeblock></p>
+    <p>To start freezer globally launch the following playbook from the
+      deployer:<codeblock>
+ansible-playbook -i hosts/verb_hosts freezer-start.yml</codeblock></p>
+    <p>It is possible to target only specific nodes using the ansible --limit paramater.</p>
+    <section><title>Manually</title><p><i>For the freezer-agent: </i><ol>
+          <li>Connect to the concerned host</li>
+          <li>Run the following command to stop the
+            freezer-agent:<codeblock>
+sudo systemctl stop freezer-scheduler</codeblock> or run the
+            following commands to start the freezer-agent:
+            <codeblock>
+sudo systemctl start freezer-scheduler</codeblock><codeblock>sudo systemctl stop freezer-scheduler</codeblock></li>
+        </ol></p>
+      <p><i>For the freezer-api:</i><ol>
+          <li>Connect to the concerned host</li>
+          <li>Run the following commands to stop the freezer-api:
+            <codeblock>
+sudo a2dissite freezer-modwsgi</codeblock><codeblock>sudo systemctl reload apache2</codeblock>or
+            run the following commands to start the
+            freezer-api:<codeblock>
+sudo a2ensite freezer-modwsgi</codeblock><codeblock>sudo systemctl reload apache2</codeblock></li>
+        </ol></p></section>
+  </body>
+</topic>
