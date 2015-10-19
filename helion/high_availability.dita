@@ -8,9 +8,27 @@
     <ul>
       <li><xref type="section" href="#HP2.0HA/concepts-overview">High Availablity Concepts Overview</xref>
         <ul>
-          <li><xref type="" href="#HP2.0HA/cloud-infrastructure">Highly Available Cloud Infrastructure</xref></li>
+          <li><xref type="sectiondiv" href="#HP2.0HA/cloud-infrastructure">Highly Available Cloud Infrastructure</xref></li>
+          <li><xref type="sectiondiv" href="#HP2.0HA/cloud-infrastructure">Highly Available Cloud-Aware Tenant Workloads</xref></li>
         </ul>
       </li>
+      <li><xref type="section" href="#HP2.0HA/highly-available-cloud-infrastructure">Highly Available Cloud Infrastructure</xref></li>
+      <li><xref type="section" href="#HP2.0HA/high-availablity-controllers">High Availablity of Controllers</xref>
+        <ul>
+          <li><xref type="sectiondiv" href="#HP2.0HA/api_request">API Request Message Flow</xref></li>
+          <li><xref type="sectiondiv" href="#HP2.0HA/node_failure">Handling Node Failure</xref></li>
+          <li><xref type="sectiondiv" href="#HP2.0HA/network_partitions">Handling Network Partitions</xref></li>
+          <li><xref type="sectiondiv" href="#HP2.0HA/galera_cluster">MySQL Galera Cluster</xref></li>
+          <li><xref type="sectiondiv" href="#HP2.0HA/singleton_services">Singleton Services</xref>
+            <ul>
+              <li><xref type="sectiondiv" href="#HP2.0HA/cinder-volume">Cinder-Volume</xref></li>
+              <li><xref type="sectiondiv" href="#HP2.0HA/sherpa">Sherpa</xref></li>
+              <li><xref type="sectiondiv" href="#HP2.0HA/nova_consoleauth">Nova consoleauth</xref></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      
     </ul>
     
     
@@ -33,6 +51,7 @@
         attempt to automatically protect the system against multiple cascading levels of failures; such cascading 
         failures will result in an unpredictable state.Hence, the cloud operator is encouraged to recover and restore 
         any failed component, as soon as the first level of failure occurs.</p>
+ 
       <sectiondiv id="cloud-infrastructure">
         <p><b>Highly Available Cloud Infrastructure</b></p>
         <p>Cloud users are able to provision and manage the compute, storage, and network infrastructure resources 
@@ -55,10 +74,136 @@
         <p>The infrastructure that provides these features is called a <b>Highly Available Cloud Infrastructure</b>.</p>
       </sectiondiv>
       
+      <sectiondiv id="tenant-workloads">
+        <p><b>Highly Available Cloud-Aware Tenant Workloads</b></p>
+        <p>HP Helion OpenStack Compute hypervisors do not support transparent high availability for user 
+          applications; as such, the project application provider is responsible for deploying their applications 
+          in a redundant and highly available manner, using multiple VMs spread appropriately across availability 
+          zones, routed through the load balancers and made highly available through clustering.</p>
+        <p>These are known as <b>Highly Available Cloud-Aware Tenant Workloads</b>.</p>
+      </sectiondiv>
       
     </section>
     
+    <section id="highly-available-cloud-infrastructure">
+      <title>Highly Available Cloud Infrastructure</title>
+      <p>The highly available cloud infrastructure consists of the following:</p>
+      <ul>
+        <li>High Avalibility of Controllers</li>
+        <li>Availability Zones</li>
+        <li>Compute with KVM</li>
+        <li>Nova Availablity Zones</li>
+        <li>Compute with ESX</li>
+        <li>Clock Storage with StoreVirtual VSA</li>
+        <li>Object Storage with Swift</li>
+      </ul>
+    </section>
     
+    <section id="high-availablity-controllers">
+      <title>High Availablity of Controllers</title>
+      <p>The HP Helion OpenStack installer deploys highly available configurations of 
+        OpenStack cloud services, resilient against single points of failure.</p>
+      <p>The high availability of the controller components comes in two main forms.</p>
+      <ul>
+        <li>Many services are stateless and multiple instances are run across the control 
+          plane in active-active mode. The API services (nova-api, cinder-api, etc.) are 
+          accessed through the HA proxy load balancer whereas the internal services 
+          (nova-scheduler, cinder-scheduler, etc.), are accessed through the message 
+          broker. These services use the database cluster to persist any data.
+          <note>The HA proxy load balancer is also run in active-active mode and 
+            keepalived (used for Virtual IP (VIP) Management) is run in active-active 
+            mode, with only one keepalived instance holding the VIP at any one point 
+            in time.</note></li>
+        <li>The high availability of the message queue service and the database service 
+          is achieved by running these in a clustered mode across the three nodes of the 
+          control plane: RabbitMQ cluster with Mirrored Queues and Percona MySQL Galera cluster.</li>
+      </ul>
+      <p><image href="../media/ha/ControlPlaneHA2.0_1.png" id="ControlPlane1"/></p>
+      <p>The above diagram illustrates the HA architecture with the focus on VIP management 
+        and load balancing. It only shows a subset of active-active API instances and does 
+        not show examples of other services such as nova-scheduler, cinder-scheduler, etc.</p>
+      <p>In the above diagram, requests from an OpenStack client to the API services are 
+        sent to VIP and port combination; for example, 192.0.2.26:8774 for a Nova request. 
+        The load balancer listens for requests on that VIP and port. When it receives a request, 
+        it selects one of the controller nodes configured for handling Nova requests, in this 
+        particular case, and then forwards the request to the IP of the selected controller 
+        node on the same port.</p>
+      <p>The nova-api service list, which is listening for requests on the IP of its host 
+        machine, then receives the request and deals with it accordingly. The database service 
+        is also accessed through the load balancer . RabbitMQ, on the other hand, is not 
+        currently accessed through VIP/HA proxy as the clients are configured with the set 
+        of nodes in the RabbitMQ cluster and failover between cluster nodes is automatically 
+        handled by the clients.</p>
+      <p>The sections below cover the following topics in detail:</p>
+      <ul>
+        <li><xref type="sectiondiv" href="#HP2.0HA/api_request">API Request Message Flow</xref></li>
+        <li><xref type="sectiondiv" href="#HP2.0HA/node_failure">Handling Node Failure</xref></li>
+        <li><xref type="sectiondiv" href="#HP2.0HA/network_partitions">Handling Network Partitions</xref></li>
+        <li><xref type="sectiondiv" href="#HP2.0HA/galera_cluster">MySQL Galera Cluster</xref></li>
+      </ul>    
+      
+      <sectiondiv id="api_request">
+        <p><b>API Request Message Flow</b>></p>
+        <p>The diagram below shows the flow for an API request in an HA deployment. All API 
+          requests (internal and external) are sent through the VIP.</p>
+        <p><image href="../media/ha/ControlPlaneHA2.0_2.png" id="ControlPlane2"/></p>
+        <p>The flow of a sample API request is explained below:</p>
+        <ul>
+          <li>keepalived has currently configured the VIP on the Controller0 node; 
+            client sends Nova request to VIP:8774</li>
+          <li>HA proxy (listening on VIP:8774) receives the request and selects Controller0 
+            from the list of available nodes (Controller0, Controller1, Controller2). 
+            The request is forwarded to the Controller0IP:8774</li>
+          <li>nova-api on Controller0 receives the request and determines that a 
+            database change is required. It connects to the database using VIP:</li>
+          <li>HA proxy (listening on VIP:3306) receives the database connection request 
+            and selects Controller1 from the list of available nodes (Controller0, 
+            Controller1, Controller2). The connection request is forwarded to 
+            Controller1IP:3306</li>
+        </ul>
+      </sectiondiv>
+      
+      <sectiondiv id="node_failure">
+        <p><b>Handling Node Failure</b></p>
+        <p>With the above HA set up, loss of a controller node is handled as follows:</p>
+        <p>Assume that the Controller0, which is currently in control of the VIP, is lost, 
+          as shown in the diagram below:</p>
+        <p><image href="../media/ha/ControlPlaneHA2.0_3.png" id="ControlPlane3"/></p>
+        <p>When this occurs, keepalived immediately moves the VIP on to the Controller1 
+          and can now receive API requests, which is load-balanced by HA proxy, as stated 
+          earlier.</p>
+        <note>Although MySQL and RabbitMQ clusters have lost a node, they still continue 
+          to be operational:</note>
+        <p><image href="../media/ha/ControlPlaneHA2.0_4.png" id="ControlPlane4"/></p>
+        <p>Finally, when Controller0 comes back online, keepalived and HA proxy will 
+          resume in standby/slave mode and be ready to take over, should there be a 
+          failure of Controller1. The Controller0 rejoins the MySQL and RabbitMQ clusters.</p>
+      </sectiondiv>
+      
+      <sectiondiv id="network_partitions">
+        <p><b>Handling Network Partitions</b></p>
+        <p>It is important for the HA setup to tolerate network failures, specifically those 
+          that result in a partition of the cluster, whereby one of the three nodes in the 
+          control plane cannot communicate with the remaining two nodes of the cluster. 
+          The description of network partition handling is separated into the main HA 
+          components of the controller.</p>
+      </sectiondiv>
+      
+      <sectiondiv id="galera_cluster">
+        <p><b>MySQL Galera Cluster</b></p>
+        <p>The handling of network partitions is illustrated in the diagram below. 
+          Galera has a quorum mechanism so when there is a partition in the cluster, 
+          the primary or quorate partition can continue to operate as normal, whereas 
+          the non-primary/minority partition cannot commit any requests. In the example 
+          below, Controller0 is partitioned from the rest of the control plane. As a 
+          result, requests can only be satisfied on Controller1 or Controller2. 
+          Controller0 will continue to attempt to rejoin the cluster:</p>
+        <p><image href="../media/ha/ControlPlaneHA2.0_5.png" id="ControlPlane5"/></p>
+        <p>When HA proxy detects the errors against the mysql instance on Controller0, 
+          it removes that node from its pool for future database requests.</p>
+      </sectiondiv>
+      
+    </section>
     
     
     
