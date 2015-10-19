@@ -31,7 +31,7 @@
         <xref type="section" href="#logging/types">Centralized Logging Data</xref>
       </li>
       <li>
-        <xref type="section" href="#logging/config">Centralized Logging Configuration</xref>
+        <xref href="#logging/config">Centralized Logging Configuration</xref>
       </li>
       <li>
         <xref type="section" href="#logging/kibana">Kibana Configuration</xref>
