@@ -214,7 +214,7 @@
         </tgroup>
       </table>
     </section>
-    <section id="config">
+    <section>
       <title>Centralized Logging Configuration</title>
       <!--
         <p>To configure logging, modify the specific services setting file in the
@@ -271,7 +271,7 @@
           </ul></li>
       </ul>
       <p><b>How to Configure the Log Levels for Specific Services</b></p> -->
-      <p>To configure the logging level for a specific service follow these steps:</p>
+      <p id="config">To configure the logging level for a specific service follow these steps:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="loglevel_config">
           <tgroup cols="4">
