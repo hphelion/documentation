@@ -60,6 +60,24 @@
           format="html" scope="external">command-line interface (CLI)</xref>, or the low-level <xref
           href="https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md"
           format="html" scope="external">REST API</xref>.</p>
+      <p><b>Monasca-Agent</b></p>
+      <p>The <b>monasca-agent</b> is a Python program that runs on the control plane nodes. It runs
+        the defined checks and then sends data onto the API. The checks that the agent runs include: <ul>
+          <li>System Metrics: CPU utilization, memory usage, disk I/O, network I/O, and filesystem
+            utilization on Control Plane and Resource Nodes.</li>
+          <li>Service Metrics: the agent supports plugins such as MySQL, RabbitMQ, Kafka, and many
+            others.</li>
+          <li>VM Metrics: CPU utilization, disk I/O, network I/O, and memory usage of hosted virtual
+            machines on Compute nodes. Full details of these can be found <xref
+              href="https://github.com/openstack/monasca-agent/blob/master/docs/Plugins.md#per-instance-metrics"
+              format="html" scope="external">here</xref>.</li>
+        </ul></p>
+      <p>For a full list of packaged plugins that are included HPE Helion OpenStack, see <xref
+          href="https://github.com/stackforge/monasca-agent/blob/master/docs/Plugins.md"
+          format="html" scope="external">Monasca Plugins</xref></p>
+      <p>You can further customize the monasca-agent to suit your needs, see <xref
+          href="https://github.com/stackforge/monasca-agent/blob/master/docs/Customizations.md"
+          format="html" scope="external">Customizing the Agent</xref></p>
     </section>
     <section conref="opsconsole_overview.dita#opsconsole/about"/>
     <section conref="opsconsole_overview.dita#opsconsole/connecting"/>
@@ -87,8 +105,8 @@
           href="centralized_logging.dita#logging/interface">Logging Interface</xref></p>
     </section>
     <section id="info"><title>For More Information</title>
-      <p>For details on OpenStack Monasca, see <xref href="https://wiki.openstack.org/wiki/Monasca"
-          format="html" scope="external">https://wiki.openstack.org/wiki/Monasca</xref></p>
+      <p>For details on OpenStack Monasca, see <xref href="http://monasca.io/" format="html"
+          scope="external">Monasca.io</xref></p>
     </section>
   </body>
 </topic>
