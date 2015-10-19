@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_rtc_s3t_mt">
+  <title>Identifying the first Swift Proxy Server</title>
+  <body>
+    <p>Perform the following steps to identify the first node which is running the swift-proxy
+        service:<ol id="ol_tqx_qjt_mt">
+        <li>Log on to the deployer node.</li>
+        <li>Change to the
+          directory.<codeblock>cd ~/scratch/ansible/next/hos/ansible/host/verb_hosts</codeblock></li>
+        <li>Edit the following file.<codeblock>vi host/verb_hosts </codeblock></li>
+        <li>Search the entry with the name
+            <codeph>SWF-PRX-&lt;cloud-name>-&lt;control-plane-name>-&lt;cluster-name>:children</codeph>.<p>The
+            server which appears first in the SWF-PRX list is the first Swift Proxy
+            Server.</p><p>For example: For cloud mycld, control plane, ccp, and cluster c3 is as
+            follows:<codeblock>[SWF-PRX-ccp-c1:children]
+mycld-ccp-c3-m1-mgmt
+mycld-ccp-c3-m2-mgmt
+mycld-ccp-c3-m3-mgmt</codeblock></p><p>In
+            the above example, the first swift proxy server is
+            <codeph>mycld-ccp-c3-m1-mgmt</codeph>.</p></li>
+      </ol></p>
+  </body>
+</topic>

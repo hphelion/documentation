@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_rmq_j1v_4t">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Refining Access Control with AppArmor</title>
+  <body>
+   <section id="intro">
+      <p> AppArmor is a Mandatory Access Control (MAC) system as opposed to a discretionay access
+        control system. It is a kernel-level security module for Linux that controls
+        access to low-level resources based on rights granted via policies to a program rather than to a
+        user role. It enforces rules at the lowest software layer --the kernel level, preventing
+        software from circumventing resource restrictions that reside at levels above the kernel.
+        With AppArmor, the final gatekeeper is closest to the hardware.</p>
+      <p>Controlling resource access per application vs per user role allows you to enforce rules
+        based on specifically what a program can do versus trying to create user roles that are
+        broad enough yet specific enough to apply to a group of users. In addition, it prevents the
+        trap of having to predict all possible vulnerabilities in order to be secure.</p>
+      <p>AppArmor uses a hybrid of whitelisting and blacklisting rules, and its security policies
+        are/can be cascading, permitting inheritance from different or more general policies. Policies
+        are enforced on a per-process basis.</p>
+      <p>AppArmor also lets you tie a process to a CPU core if you want, and set process
+        priority.</p>
+      <p> AppArmor profiles are loaded into the kernel, typically on boot. They can run in either
+        enforcement or complain modes. In enforcement mode, the policy is enforced and policy
+        violation attempts are reported. In complain mode, policy violation attempts are reported but
+        not prevented. </p>
+    </section>
+    
+    <section id="apparmor_helion"><title>Using AppArmor in HP Helion&#174; OpenStack</title>
+      <title>TBD...</title></section>
+  </body>
+</topic>

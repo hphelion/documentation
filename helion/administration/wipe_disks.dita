@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="wipe_disks">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Pre-Installation Disk Cleanup</title>
+  <body>
+    <section id="about">
+      <p>You may have a need to wipe the disks of one or more of the nodes in your Cloud. There is
+        an Ansible playbook included as part of the installation that will assist in this tasks.</p>
+    </section>
+    <section id="prereq"><title>Pre-requisites</title>
+      <p>If you're wanting to wipe your disks but you've previously run through a HP Helion OpenStack
+        installation, chances are you will get an error telling you that <codeph>osconfig</codeph>
+        has already run on your nodes. In order to successfully use the
+          <codeph>wipe_disks.yml</codeph> playbook below you will need to SSH to each of the nodes
+        you want to wipe and remove the <codeph>/etc/hos/osconfig-ran</codeph> file with this
+        command:</p>
+      <codeblock>sudo rm /etc/hos/osconfig-ran</codeblock>
+      <p>That will clear this flag and all the disk to be wiped.</p>
+    </section>
+    <section id="playbook"><title>Run the Playbook</title>
+      <p>This playbook will wipe the disks of the nodes that you specify:</p>
+      <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts wipe_disks.yml --limit &lt;NODE_NAME></codeblock>
+      <p>The table below shows the optional switches you can use as part of this playbook to specify
+        environment-specific information:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="ansible">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Switch</entry>
+                <entry>Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>
+                  <p><codeph>--limit &lt;NODE_NAME></codeph></p>
+                </entry>
+                <entry>
+                  <p>You can optionally specify the list of nodes you want to wipe.</p>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+  </body>
+</topic>

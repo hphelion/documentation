@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_r21_rpv_pt">
+  <title>Replacing a Swift Node</title>
+  <body>
+    <p><note type="warning">If it applies to the server, do not skip step 11. If you do so, the
+        system will overwrite the existing rings with new rings. This will not cause data loss, but
+        potentially will move most objects in your system to new locations and may make data
+        unavailable until the replication process has completed.</note>The procedure to the replace
+      a Swift node in a system is a follows:<ol id="ol_mbn_5pv_pt">
+        <li>Log onto the deployer.</li>
+        <li>Update the cloud model (<codeph>data/servers.yml</codeph> file) with a new MAC address,
+          iLO/IPMI user, password, and IP address (iLO) if these have changed. Do not change the
+          servers IP address, i.e.,<codeph> ip-add IP</codeph>. For
+          example:<codeblock> - id: swobj5
+   role: SWOBJ-ROLE
+   server-group: rack2
+   mac-addr: 8c:dc:d4:b5:cb:bd 
+   nic-mapping: HP-DL360-6PORT
+   ip-addr: 10.243.131.10
+   ilo-ip: 10.1.12.88
+   ilo-user: iLOuser
+   ilo-password: iLOpass
+  ...</codeblock></li>
+        <li>Commit the changes to
+          git.<codeblock>cd ~helion
+git commit -a -m "&lt;commit message>"</codeblock></li>
+        <li>Run the configuration
+          processor:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+        <li>Run the following command to create a deployment
+          directory.<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        <li>Remove the replaced Swift node from cobbler by executing the following
+            command:<codeblock>sudo cobbler system remove --name &lt;server-id></codeblock><p>For example:<codeblock>sudo cobbler system remove --name swobj5</codeblock></p></li>
+        <li>Re-run the cobbler deploy playbook to re-add the replaced
+          node:<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
+        <li>Using ansible, reimage the
+            node:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=&lt;server id></codeblock><p>In
+            the example below <b>swobj5</b> server is
+            reimaged.<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=swobj5</codeblock></p></li>
+        <li>Examine the <codeph>cloudConfig.yml</codeph> and<codeph> data/control_plane.yml</codeph>
+          files to get the host prefix (for example, helion) and the control plane name (for
+          example, ccp). This gives you the hostname of the node. Configure the operating system as
+            follows.<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit &lt;hostname></codeblock><p>In
+            the following example, for <b>swobj5</b>, the hostname is <b>helion-ccp-swobj5</b>.
+            <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit helion-ccp-swobj5*</codeblock></p></li>
+        <li>If this is the first server running the swift-proxy service (see <xref
+            href="first_proxy_server.dita#topic_rtc_s3t_mt">identifying first proxy server</xref>)
+          you need to restore the Swift Ring Builder files to the
+            <codeph>/etc/swiftlm/builder_dir</codeph> directory. See <xref
+            href="recovering_builder_file.dita#topic_gbz_13t_mt">recovering builder files</xref> for
+          details.</li>
+        <li>Configuring services on the node using the <codeph>site.yml</codeph> playbook. If you
+          have used an encryption password when running the Configuration processor include the
+            <b>--ask-vault-pass
+            </b>argument.<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --ask-vault-pass --limit &lt;hostname></codeblock><p>For
+            example:<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --ask-vault-pass --limit helion-ccp-swobj5*</codeblock></p></li>
+      </ol></p>
+  </body>
+</topic>

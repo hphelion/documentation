@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="install_kvm_ceph">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for KVM Hypervisor and
+    Ceph</title>
+  <body>
+    <p>This page describes configuration, installation, and the integration of Ceph Block Storage
+      with HP Helion<tm tmtype="reg">OpenStack</tm>2.0. After the installation of Ceph you can
+      perform the OpenStack operations as documented in this page. </p>
+    <section>
+      <title id="preq">Prerequisite</title>
+      <ul id="ul_pmb_s1m_rt">
+        <li>The deployer node must be setup before deploying Ceph. For more details on the
+          installation of deployer node, refer to <xref
+            href="../../install_entryscale_kvm_vsa.dita#install_kvm">installation guide.</xref></li>
+        <li>You can deploy monitor service on a dedicated resource. Ensure to modify your
+          environment after deploying the deployer node. For more details, refer to <xref
+            href="deploy_monitor_stand_alone_node.dita#topic_ah5_4yx_qt">Install a monitor service
+            on a dedicated resource node</xref>.</li>
+      </ul>
+    </section>
+    <section>
+      <title id="install-procedure">Installation Procedure</title>
+      <p>Perform the following procedures to configure, install, and the integrate the Ceph Block
+        Storage with HP Helion OpenStack 2.0.</p>
+    </section>
+    <section>
+      <p>
+        <ol id="ol_evc_k11_gt">
+          <li>Login to the deployer node.</li>
+          <li>Copy the example configuration files into the required setup directory and edit them
+            to contain the details of your environment:
+            <codeblock>cp -r ~/helion/examples/entry-scale-kvm-ceph/* ~/helion/my_cloud/definition/</codeblock>Begin
+            inputting your environment information into the configuration files in the
+              <codeph>~/helion/my_cloud/definition</codeph> directory. Full details of how to do
+            this can be found here: <xref href="input_model.dita">Helion OpenStack 2.0 Input
+              Model</xref>. </li>
+          <li>Edit the file <codeph>disks_osd.yml</codeph> and enter the details for the additional
+            disks meant for OSD data and journal
+              filesystems.<codeblock>vi <codeph>disks_osd.yml</codeph></codeblock><p>A sample of
+                <codeph>disks_osd.yml</codeph> is as
+              follows:</p><codeblock>disk-models:
+  - name: DISK_SET_OSD
+    # two disk node; remainder of disk 1 and all of disk 2 combined in single VG
+    # VG is used to create three logical vols for /var, /var/log, and /var/crash
+    device-groups:
+      - name: ceph-osd-data-and-journal
+        devices:
+          - name: /dev/sdb
+        consumer:
+           name: ceph
+           attrs:
+             usage: data
+             journal_disk: /dev/sdc
+      - name: ceph-osd-data-and-shared-journal-set-1
+        devices:
+          - name: /dev/sdd
+        consumer:
+           name: ceph
+           attrs:
+             usage: data
+             journal_disk: /dev/sdf
+      - name: ceph-osd-data-and-shared-journal-set-2
+        devices:
+          - name: /dev/sde
+        consumer:
+           name: ceph
+           attrs:
+             usage: data
+             journal_disk: /dev/sdf</codeblock><p>The
+              above sample file contains three OSD nodes and two journal disk.</p><p>The disk model
+              has the following fields:</p><p>
+              <simpletable id="simpletable_dmf_dcm_rt">
+                <strow>
+                  <stentry><b>device-groups</b></stentry>
+                  <stentry>There can be several device groups. This allows different sets of disks
+                    to be used for different purposes.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>name</b></stentry>
+                  <stentry>This is an arbitrary name for the device group. The name must be
+                    unique.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>devices</b></stentry>
+                  <stentry>This is a list of devices allocated to the device group. A
+                      <codeph>name</codeph> field containing <codeph>/dev/sdb</codeph>,
+                      <codeph>/dev/sdd</codeph>, and <codeph>/dev/sde</codeph> indicates that the
+                    device group is used by Ceph.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>consumer</b></stentry>
+                  <stentry>This specifies the service that uses the device group. A
+                      <codeph>name</codeph> field containing <b>ceph</b> indicates that the device
+                    group is used by Ceph.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>attrs</b></stentry>
+                  <stentry>This is the list of attributes.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>usage</b></stentry>
+                  <stentry>There can be several use of devices for a particular service. In the
+                    above sample, <codeph>usage</codeph> field contains <b>data</b> which indicates
+                    that the device is used for data storage.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>journal_disk</b></stentry>
+                  <stentry>It is to used to capture journal data. You can share the journal disk
+                    between two nodes.</stentry>
+                </strow>
+              </simpletable>
+            </p><p><!--<b>How to edit osd.yml file</b><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>??<?oxy_custom_end?>--></p><note>Ensure
+              that disks designated to be used for the OSD data and journal storage must be in a
+              clean state (i.e. any existing partitions must be deleted).</note></li>
+          <li>Editable parameters for Ceph are available in the following locations:<ul
+              id="ul_jbn_nj5_kt">
+              <li><codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph><p>In the
+                    <codeph>settings.yml</codeph> file, you can edit the following parameters:<ul
+                    id="ul_ocp_ty5_kt">
+                    <li><codeph>fsid</codeph></li>
+                    <li><codeph>ceph clusters</codeph></li>
+                    <li><codeph>osd_settle_time</codeph></li>
+                    <li><codeph>OSD_journal_size</codeph></li>
+                  </ul></p></li>
+              <li>
+                <p>Add any additional configuration parameters for Ceph in the same file
+                    (<codeph>settings.yml</codeph> file) under the 'extra:' category as
+                  follows:<codeblock>extra:
+  osd:
+    journal max write entries: 200</codeblock></p>
+              </li>
+              <li>
+                <p><codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph></p>
+                <p>The <codeph>user_model.yml</codeph> has the editable values for the different
+                  pools created by HP Helion OpenStack.</p>
+              </li>
+            </ul></li>
+          <li> Commit your
+              configuration<codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message>"</codeblock><note>
+              Enter your commit message &lt;commit message></note></li>
+          <li>Run the configuration
+            processor:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Run the following command to create a deployment
+            directory.<codeblock>cd ~/helion/hos/ansible
+<codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
+          <li>Run the following ansible
+            playbook:<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
+        </ol>
+      </p>
+    </section>
+    <p>Ceph Monitor service is deployed on the Controller Nodes and OSD's are deployed as separate
+      nodes (Resource Nodes).</p>
+    <p id="run-ceph-client-package"><b>Run Ceph Client Packages</b></p>
+    <p>Ceph can be used as backend for <b>nova-compute, glance (i need information of how can we use
+        ceph as nova-compute and glacne) for cinder-vol and cinder backup we have the
+        information??)</b>, cinder-volume and cinder-backup. The nodes running these services should
+      have a client installed on it. Use <codeph>ceph-client-prepare.yml</codeph> to deploy client
+      on respective nodes.</p>
+    <p><!--Execute the following command to install the Ceph client packages on controller nodes. --></p>
+    <p>
+      <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
+    </p>
+    <p>This will also create Ceph users and Ceph pools on the resource nodes.</p>
+  </body>
+</topic>

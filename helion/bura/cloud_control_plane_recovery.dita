@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_tb4_lqy_qt">
+  <title>Recovering the Cloud Control Plane</title>
+  <body>
+    <section><title>Point in time database recovery</title><p>Everything is still running (deployer,
+        cloud controller nodes (CCNs) and compute nodes (CPNs) but you want to restore the MySQL
+        database to an old state.</p></section>
+    <section><title>Restore from a Swift backup</title></section>
+    <ol>
+      <li>On the first Mysql node run the following steps:
+        <codeblock>
+# Become root
+sudo su
+ 
+# Create restore directory
+mkdir /tmp/hlm_mysql_restore/
+ 
+# Source backup environment file
+source /opt/stack/service/freezer-agent/etc/backup.osrc
+ 
+# List jobs
+freezer-scheduler -c &lt;hostname&gt; job-list
+ 
+# Get the id corresponding to the job "HLM Default: Mysql restore from Swift"
+ 
+# Launch the restore
+freezer-scheduler -c &lt;hostname&gt; job-start -j &lt;job-id&gt;
+ 
+# Wait for some time, you can follow the /var/log/freezer-agent/freezer-agent.log</codeblock>
+      </li>
+      <li>From the deployer run the following steps:
+        <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts percona-stop.yml</codeblock></li>
+      <li>On the first Mysql node run the following steps:
+        <codeblock># Clean Mysql directory
+sudo rm -r /var/lib/mysql/*
+ 
+# Copy restored files
+sudo cp -pr /tmp/hlm_mysql_restore/* /var/lib/mysql</codeblock></li>
+      <li>From the deployer node run the following steps:
+        <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts percona-bootstrap.yml</codeblock></li>
+    </ol>
+    <section><title>Restore from an SSH backup</title><p>Follow the same procedure as the one for
+        Swift but select the job "HLM Default: Mysql restore from SSH".</p></section>
+    <section><title>Point in time swift rings recovery</title><p>Everything is still running
+        (deployer, ccn's, cpn's) but you want to restore the Swift rings to an old
+        state.</p><note>Freezer only does backup and restore for swift rings, not swift
+      data.</note></section>
+    <section><title>Restore from a Swift backup</title><ol>
+        <li>On the first Swift Proxy (SWF-PRX[0]) node run the following
+          steps:<codeblock>
+# Become root
+sudo su
+ 
+# Create restore directorie
+mkdir /tmp/hlm_builder_dir_restore/ 
+ 
+# Source backup environment file
+source /opt/stack/service/freezer-agent/etc/backup.osrc
+ 
+# List jobs
+freezer-scheduler -c &lt;hostname&gt; job-list
+ 
+# Get the id corresponding to the job "HLM Default: Swift restore from Swift"
+ 
+# Launch the restore
+freezer-scheduler -c &lt;hostname&gt; job-start -j &lt;job-id&gt;
+ 
+# Wait for some time, you can follow the /var/log/freezer-agent/freezer-agent.log</codeblock></li>
+        <li>On the deployer:
+          <codeblock>
+cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-stop.yml</codeblock></li>
+        <li>On the first Swift Proxy (SWF-PRX[0]) run the following steps:
+          <codeblock>
+# Copy restored files
+cp -pr /tmp/hlm_builder_dir_restore/* /etc/swiftlm/builder_dir/</codeblock></li>
+        <li>On the deployer:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
+      </ol></section>
+    <section><title>Restore from an SSH backup</title><p>Follow the same procedure as the one for
+        Swift but select the job "HLM Default: Swift restore from SSH".</p></section>
+    <section><title>Point in time deployer recovery</title><p>Everything is still running (deployer,
+        ccn's, cpn's) but you want to restore the deployer to an old state.</p></section>
+    <section>
+      <title>Restore from a Swift backup</title><p>On the deployer, run the following steps:
+        <codeblock>
+# Become root
+sudo su
+ 
+# Source backup environment file
+source /opt/stack/service/freezer-agent/etc/backup.osrc
+ 
+# List jobs
+freezer-scheduler -c &lt;deployer hostname&gt; job-list
+ 
+# Get the id corresponding to the job "HLM Default: Deployer restore from swift"
+ 
+# Stop the Dayzero UI
+systemctl stop dayzero
+ 
+# Launch the restore
+freezer-scheduler -c &lt;deployer hostname&gt; job-start -j &lt;job-id&gt;
+ 
+# Wait for some time, you can follow the /var/log/freezer-agent/freezer-agent.log
+ 
+# Start the Dayzero UI
+systemctl start dayzero</codeblock></p>
+    </section>
+    <section><title>Restore from an SSH backup</title><p> Follow the same procedure as the one for
+        Swift but select the job "HLM Default: Deployer restore from SSH"</p></section>
+    <section><title>One or two Ccn disaster recovery</title><p>Everything is still running
+        (deployer, ccn, cpn's) but you lost one or two ccn.</p></section>
+    <section><title>Restore from other nodes</title><p>On the deployer node, let's install the nodes
+        that got destroyed:
+        <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml --limit padawan-ccp-c1-m2-mgmt</codeblock></p></section>
+    <section><title>Restore from a Swift backup</title><p>You shouln't need to restore anything, the
+        mysql database will be recovered automatically from other running nodes.</p></section>
+    <section><title>Restore from an SSH backup </title><p>You shouln't need to restore anything, the
+        mysql database will be recovered automatically from other running nodes.</p></section>
+    <section><title>3 CCN disaster recovery</title><p>All CCNs are destroyed</p><ul>
+        <li><b>Restore from a Swift backup: </b><p>This is not possible (swift is gone).</p></li>
+        <li><b>Restore from an SSH backup: </b><p>
+            <ol>
+              <li>On deployer node, Follow the procedure to deploy your the CCNs:
+                <codeblock>
+cd ~/scratch/ansible/next/hos/ansible
+ 
+ansible-playbook -i hosts/verb_hosts site.yml --limit padawan-ccp-c1-m1-mgmt,padawan-ccp-c1-m2-mgmt,padawan-ccp-c1-m3-mgmt -e freezer_backup_jobs_upload=false</codeblock></li>
+              <li>You can now perform the procedure\: "Point in time database recovery:"</li>
+              <li>Once everything is restored, re-enable the backups: From the deployer:
+                <codeblock>
+cd ~/scratch/ansible/next/hos/ansible
+ 
+ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</codeblock></li>
+            </ol>
+          </p></li>
+      </ul></section>
+    <section><title>Deployer disaster recovery</title><p>Everything is still running (ccn's, cpn's)
+        but you lost the deployer.</p><ul>
+        <li><b>Restore from a Swift backup</b>
+          <ol>
+            <li>On the deployer node, let's install the freezer-agent
+              <codeblock>
+cd ~/helion/hos/ansible/
+ansible-playbook -i hosts/localhost _deployer_restore_helper.yml</codeblock></li>
+            <li>You will need to fetch a few files from any compute or controllerl node and put them
+              in the directory /opt/stack/service/freezer-agent/etc/ of the
+              deployer.<codeblock>
+/opt/stack/service/freezer-agent/etc/backup.osrc
+and
+/opt/stack/service/freezer-agent/etc/systemd_env_vars.cfg</codeblock></li>
+            <li>ou will also need to fetch the /etc/hosts file from any compute or controller node
+              and replace the deployer's one with the retrieved one.
+              <codeblock>
+# Be sure to edit the 127.0.0.1 line so it points to hlinux like
+ 
+127.0.0.1       localhost
+::1             localhost ip6-localhost ip6-loopback
+ff02::1         ip6-allnodes
+ff02::2         ip6-allrouters
+127.0.0.1       hlinux</codeblock></li>
+            <li>On the deployer node:
+              <codeblock>
+# Become root
+sudo su
+ 
+# Source credentials
+source /opt/stack/service/freezer-agent/etc/backup.osrc
+ 
+# List jobs
+freezer-scheduler -c &lt;hostname> job-list
+ 
+# Get the id of the job corresponding to "HLM Default: deployer backup"
+ 
+# Stop that job so the freezer-scheduler doesn't begin to backup when started
+freezer-scheduler -c &lt;hostname> job-stop -j &lt;job-id&gt;
+ 
+# If it is present, also stop the deployer's ssh backup
+ 
+# Stop the dayzero UI
+systemctl stop dayzero
+ 
+# Start the freezer-scheduler
+systemctl start freezer-scheduler
+ 
+# Get the id of the job corresponding to "HLM Default: deployer restore from Swift"
+ 
+# Launch that job
+freezer-scheduler -c &lt;hostname&gt; job-start -j &lt;job-id&gt;
+ 
+# Wait for some time, you can follow the /var/log/freezer-agent/freezer-agent.log
+ 
+# Start the dayzero UI
+systemctl start dayzero</codeblock></li>
+            <li>When the deployer is restored, re-run the deployement to ensure the deployer is in
+              the right state
+              <codeblock>
+cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml --limit localhost</codeblock></li>
+          </ol></li>
+        <li><b>Restore from an SSH backup</b>
+          <ol>
+            <li>On the deployer node, edit the ~/helion/my_cloud/config/freezer/ssh_credentials.yml
+              file so it contains the same informations as before.</li>
+            <li>On the deployer node:
+              <codeblock>
+cp -r ~/hp-ci/padawan/* ~/helion/my_cloud/definition/
+cd ~/helion/hos/ansible/
+ansible-playbook -i hosts/localhost _deployer_restore_helper.yml</codeblock></li>
+            <li>Perform the restore
+              <codeblock>
+sudo su
+cd /root/deployer_restore_helper/
+ 
+# Stop the Dayzero UI
+systemctl stop dayzero
+ 
+# execute the restore
+./deployer_restore_script.sh
+ 
+# Start the Dayzero UI
+systemctl start dayzero</codeblock></li>
+            <li>When the deployer is restored, re-run the deployement to ensure the deployer is in
+              the right state
+              <codeblock>
+cd ~/scratch/ansible/next/hos/ansible
+ 
+ansible-playbook -i hosts/verb_hosts site.yml --limit localhost</codeblock></li>
+          </ol></li>
+      </ul></section>
+    <section><title>Full disaster recovery</title><p>Everything is dead.</p><ul>
+        <li><b>Restore from a Swift backup:</b><p>This is not possible (swift is gone).</p></li>
+        <li><b>Restore from an SSH backup: </b><ol>
+            <li>On the deployer node, edit the ~/helion/my_cloud/config/freezer/ssh_credentials.yml
+              file so it contains the same informations as before.</li>
+            <li>On the deployer node:
+              <codeblock>
+cp -r ~/hp-ci/padawan/* ~/helion/my_cloud/definition/
+cd ~/helion/hos/ansible/
+ansible-playbook -i hosts/localhost _deployer_restore_helper.yml</codeblock></li>
+            <li>Perform the restore:
+              <codeblock>
+sudo su
+cd /root/deployer_restore_helper/
+ 
+# Stop the Dayzero UI
+systemctl stop dayzero
+ 
+# execute the restore
+./deployer_restore_script.sh
+ 
+ 
+# Start the Dayzero UI
+systemctl start dayzero</codeblock></li>
+            <li>Follow the procedure to deploy your cloud:
+              <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ 
+ansible-playbook -i hosts/verb_hosts site.yml -e freezer_backup_jobs_upload=false</codeblock></li>
+            <li>You can now perform the procedures to restore Mysql, Swift.</li>
+            <li>Once everything is restored, re-enable the backups: From the deployer:
+              <codeblock>
+cd ~/scratch/ansible/next/hos/ansible
+ 
+ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</codeblock></li>
+          </ol></li>
+      </ul></section>
+    <section><title>Swift rings recovery</title><ul>
+        <li><b>Restore from the swift deployement backup</b>
+          <p>As long as you have one Swift Proxy or one swift object node still working, you can
+            recover the Swift rings from it. This is made possible because rings are created at the
+            deployement step and then backuped and copied to all swift node in the form of:
+            /etc/swiftlm/swift-rings-tarball.tar.</p><p>To manage rings, make sure the content of
+            that tar file is in the directory /etc/swiftlm/builder_dir/ on the first Swift Proxy
+            node (SWF-PXR[0] role). <ul>
+              <li>Once this is the case, just run swift-reconfigure if rings were corrupted.
+                <codeblock># On the deployer run 
+ 
+cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
+              <li>Or swift-deploy if one node was
+                lost:<codeblock>
+# On the deployer run 
+cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-deploy.yml</codeblock></li>
+            </ul>
+          </p></li>
+      <li><b>Restore from the ssh Freezer backup</b><p>In the very specific usecase where you lost
+            all system disk of all object node and swift proxy node are corrupted, a copy of the
+            Swift rings is stored in Freezer. This means that Swift datas are still there (the disks
+            used by swift needs to be still accessible).</p><ol>
+              <li>First step is to recover the rings. <codeblock>
+# You will need a node with the freezer-agent installed.
+ 
+# Become root
+sudo su
+ 
+# Create the temporary directory to restore files
+mkdir /tmp/hlm_builder_dir_restore/
+ 
+# Create a restore file with the following content
+cat &lt;&lt; EOF &gt; ./restore_config.ini
+[default]
+action = restore
+storage = ssh
+compression = bzip2
+restore_abs_path = /tmp/hlm_builder_dir_restore/
+ssh_key = /etc/freezer/ssh_key
+ssh_host = &lt;freezer_ssh_host&gt;
+ssh_port = &lt;freezer_ssh_port&gt;
+ssh_username = &lt;freezer_ssh_username&gt;
+container = &lt;freezer_ssh_base_dir>/freezer_swift_backup
+backup_name = freezer_swifthlm_builddir_backup
+restore_from_host = &lt;hostname of the old first Swift-Proxy (SWF-PRX[0])&gt;
+EOF
+ 
+# Edit the file and repace all &lt;tags&gt; with the right informations.
+vim ./restore_config.ini
+ 
+# You will also need to put the ssh key used to do the backups in /etc/freezer/ssh_key (don't forget to set the right permissions: 600)
+ 
+# Execute the restore
+freezer-agent --config ./restore_config.ini
+ 
+# You now have the Swift rings in /tmp/hlm_builder_dir_restore/</codeblock></li><li>If the SWF-PRX[0] is already deployed: <codeblock>
+# Copy the content of the restored directory (/tmp/hlm_builder_dir_restore/) to /etc/swiftlm/builder_dir/ on the SWF-PRX[0]
+ 
+# Then from the deployer run
+ 
+cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock><p>If the SWF-PRX[0] is not deployed: <codeblock>
+# From the deployer run
+cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_host guard-deployment.yml
+ansible-playbook -i hosts/verb_host osconfig-run.yml
+ 
+# Copy the content of the restored directory (/tmp/hlm_builder_dir_restore/) to /etc/swiftlm/builder_dir/ on the SWF-PRX[0]
+# You will have to create the directories : /etc/swiftlm/builder_dir/
+ 
+# From the deployer run
+cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_host hlm-deploy.yml</codeblock></p></li>
+            </ol></li>
+
+    
+    
+    </ul></section>
+  </body>
+  
+</topic>

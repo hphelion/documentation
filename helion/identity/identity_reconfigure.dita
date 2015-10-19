@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_m43_2j3_bt">
+  <title>Reconfiguring the Identity Service</title>
+  <body>
+
+    <section><title>Updating the Keystone Identity Service</title>HP Helion OpenStack&#174; allows
+      you to perform updates on the following parts of the Identity service configuration:: </section>
+      
+      <section>
+      
+      <ul>
+      <li> Any content in main keystone configuration file:<b> /etc/keystone/keystone.conf</b>. This
+          allows to manipulate Keystone configuration parameters. Please refer to Updating main
+          Keystone configuration file section below. </li><li>Updating certain configuration options and enabling features, such as:
+      
+      
+      <ul><li>Verbosity of logs being written to keystone log files.
+      </li><li>Process counts for Apache2 WSGI module, separately for admin and public Keystone interfaces
+      </li><li>Enabling/disabling auditing.
+      </li><li>Enabling/disabling Fernet Tokens.</li></ul>
+      
+      Please refer to Enabling Keystone Features section below.</li>
+      <li>Creating and updating domain-specific configuration files:
+            <b>/etc/keystone/domains/keystone.&lt;domain_name>.conf</b>. This allows to integrate
+          Keystone with one or more external authentication sources, such as LDAP server. Please
+          refer to Integrating with an external LDAP server section below. </li>
+      </ul>
+      </section>
+    <section id="updating"><title>Updating the main Identity Service configuration file</title>
+      
+     <ol><li>The main Keystone Identity Service configuration file (<b>/etc/keystone/keystone.conf</b>),
+          located on each control plane server is generated from the following template file located
+          on a deployer: <b>/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2</b>
+          <p>Modify this template file as appropriate. Please refer to <xref
+              href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
+              format="html" scope="external">Keystone Kilo documentation</xref> for full
+            descriptions of all settings: This is a Jinja2 template, which expects certain template
+            variables to be set. Do not change values inside double curly braces: {{ }}. </p></li>
+    <li>Once the template is modified, commit the change to the local git repository, and rerun the
+          configuration processor / deployment area preparation playbooks (as suggested at <xref
+            href="../using_git.dita">Using Git for Configuration Management</xref>):
+          <codeblock>$ cd ~/helion
+$ git checkout site
+$ git add my_cloud/config/keystone/keystone.conf.j2
+$ git commit -m "Adjusting some parameters in keystone.conf"
+$ cd ~/helion/hos/ansible
+$ ansible-playbook -i hosts/localhost config-processor-run.yml
+$ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+       <li>Run reconfiguration playbook in deployment area:
+          <codeblock>$ cd ~/scratch/ansible/next/hos/ansible
+$ ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock>
+        </li></ol>
+    </section>
+    
+    <section id="enable_features"><title>Enabling Identity Service features</title> To enable or
+      disable Keystone features like Fernet Tokens, do the following: <ol>
+        <li>Adjust respective parameters in
+            <b>/home/stack/helion/my_cloud/config/keystone/keystone_deploy_config.ym</b>l. </li>
+        <li>Commit the change into local git repository, and rerun configuration processor /
+          deployment area preparation playbooks (as suggested at <xref href="../using_git.dita"
+            >Using Git for Configuration Management</xref>):
+          <codeblock>$ cd ~/helion
+$ git checkout site
+$ git add my_cloud/config/keystone/keystone_deploy_config.yml
+$ git commit -m "Adjusting some WSGI or logging parameters for keystone"
+$ cd ~/helion/hos/ansible
+$ ansible-playbook -i hosts/localhost config-processor-run.yml
+$ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+
+    <li>Run reconfiguration playbook in deployment area:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+$ ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock></li>
+      </ol>
+    </section>
+    
+    <section><title>Fernet Token</title>
+      
+      
+      <p>HP Helion OpenStack 2.0 supports UUID tokens by default. Fernet Tokens are available as an
+        experimental feature. You can switch to using Fernet tokens instead of UUID tokens by
+        following the above steps. The benefit of using Fernet tokens is that tokens are not
+        persisted in a database, which is helpful if you want to deploy Keystone Identity service as
+        one master and multiple slaves: only roles, projects, etc. will need to be replicated from
+        master to slaves, not the token table. The tradeoff is the cost of token validation.
+        According to our performance testing, although Fernet tokens perform slightly better than
+        UUID on token creation, the degradation is about 400% on token validation when compared to
+        UUID tokens. The performance degradation is caused mainly by database operations; there are
+        39 queries per fernet token validation, while UUID causes only 2 queries per token
+        validation.</p>
+      
+      <note>Tempest doesn't work with Fernet Tokens in HP Helion OpenStack 2.0. If Fernet tokens are
+        enabled, please don't run token tests in Tempest.</note>
+    </section>
+    <section><title>Keystone Identity Auditing</title>Identity Service auditing can be enabled as
+      described in "Enabling Keystone Features". Keystone creates an exchange with the name
+      "keystone" of type "topic" and sends a message to that exchange with the binding_key
+      "notification.info". Keystone also creates a queue with the name "notification.info" and
+      attaches to this exchange. You should not connect to this queue as this queue is used by
+      ceilometer. If some other clients connects to this queue, then ceilometer will no longer have
+      exclusive access to the messages in this queue. So a typical client which likes to consume the
+      audit message should create an exclusive queue for itself, attach the queue to the exchange
+      "keystone" and look for the messages with the binding key "notification.info". Given below is
+      the sample code for a typical client consuming audit messages.<p>Keystone auditing was
+        implemented for Ceilometer. However, since Ceilometer is focused on metrics that support
+        showback/chargebac/billing and there's no product plan for Keystone metrics to be part of
+        the Ceilometer collection.
+      </p><codeblock>###Sample Audit Client code
+#!/usr/bin/env python
+import pika
+      
+# Call back message for processing audit messges
+def callback(ch, method, properties, body):
+    print " [x] %r:%r" % (method.routing_key, body,)
+      
+# Sample code to connect and consume audit messages
+      
+# Username/Password for rabbit
+credentials = pika.PlainCredentials("guest", "guest")
+connection = pika.BlockingConnection(pika.ConnectionParameters(
+         host='192.168.245.3', port=5672, credentials=credentials))
+channel = connection.channel()
+      
+# Keystone sends the message to the exchange=keystone
+channel.exchange_declare(exchange='keystone',
+                         type='topic')
+      
+# Create a random queue and connect to the exchange
+# Make sure this queue is exclusive to auditclient and non persistent.
+# If you make the queue to be persistent, you have to make sure that queue doesn't get saturated with 
+# too many messages
+result = channel.queue_declare(exclusive=True)
+queue_name = result.method.queue
+      
+# Binding keys used by keystone
+binding_keys = ["notifications.info"]
+for binding_key in binding_keys:
+channel.queue_bind(exchange='keystone',
+                   queue=queue_name,
+                   routing_key=binding_key)
+      
+print ' [*] Waiting for audit messages. To exit press CTRL+C'
+      
+channel.basic_consume(callback,
+                      queue=queue_name,
+                      no_ack=True)
+channel.start_consuming()</codeblock></section>
+  </body>
+</topic>

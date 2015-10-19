@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_t1y_vjs_4t">
+  <title>Using the Weight-Step Attributes to Prepare for Ring Changes</title>
+  <body>
+    <p>Rings are build during a deploy and sets the weights of disk drives such that smaller disk
+      drives have a smaller weight than larger disk drives. As explained in <xref
+        href="swift_rebalanced_explained.dita#topic_izw_1mz_4t">Rebalance Explained</xref>, when
+      making changes in the ring it can be useful to limit the amount of change that occurs. This is
+      done by limiting the weights of the new drives to the smaller value and then build new rings.
+      Once the replication process has finished, we can increase the weight and rebuild rings to
+      trigger another round of replication.</p>
+    <p>In addition, it is useful to know how the replication process behaves on your system in
+      normal operation. Before making ring changes, use the <codeph>swift-recon</codeph> command to
+      determine typical oldest replication times for your system. For instructions see <xref
+        href="swift_safe-rebalance-deploy-ring.dita#topic_ohx_j1t_4t"
+        >swift_safe-rebalance-deploy-ring.html</xref>.</p>
+    <p>In HP Helion OpenStack, the weight-step attribute is set in the ring specification of the
+      input model. The weight-step value specifies a maximum value for the change of the weight of a
+      drive in any single rebalance. For example, if you add a drive of 4TB in size, you would
+      normally assign a weight of 4096. However, if the weight-step attribute is set to 1024, when
+      you add a drive, the weight is initially set to 1024. Then next time you  rebalance the ring,
+      the weight is set to 2048. Yet another rebalance sets the weight to the final value of
+      4096.</p>
+    <p>The value of weight-step is dependent on the size of the drives and number of the servers
+      being added and your experience period of time of the replication process. A common starting
+      value is to use 20% of the size of the drives. For example, for 4TB drives a value of 820
+      would be appropriate. As you gain more experience with your system, you may increase or reduce
+      this value.</p>
+    <section id="setting-weight-step-attribute"><sectiondiv><b>Setting the weight-step attribute</b></sectiondiv><p>Perform the
+        following steps to set the weight-step attribute:<note>You can set the weight-step
+          attributes for Account, Container, Object-0, etc in the similar way.</note><ol
+          id="ol_dl2_bdy_4t">
+          <li>Edit the <codeph>data/swift/rings.yml</codeph> file containing the ring-specifications
+            in the input model.</li>
+          <li>Search the attributes of a ring. In the following example we are setting the attribute
+            for Account Ring. Similar procedure needs to be performed for Container and Object
+            Rings.<codeblock>- name: account
+  display-name: Account Ring
+  min-part-time: 16
+  ...</codeblock></li>
+          <li>Add the weight-step attribute.
+              <codeblock>- name: account
+  <b>weight-step: &lt;value></b>
+  display-name: Account Ring
+  min-part-time: 16
+  ...</codeblock><p>For example: to set to 820 as weight-step, add the attribute as
+              follows:<codeblock>- name: account
+  weight-step: <b>820</b>
+  display-name: Account Ring
+  min-part-time: 16
+  ...</codeblock></p></li>
+          <li>Repeat step <b>3</b> for other rings (container, Object-0, etc).</li>
+          <li>Run the configuration processor:
+            <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Use the playbook below to create a deployment directory:
+            <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        </ol></p></section>
+  </body>
+</topic>

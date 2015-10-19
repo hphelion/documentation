@@ -1,0 +1,1244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="HP2.0KiloFeatures">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: OpenStack Kilo Features</title>
+  <body>
+    <section id="KiloFeatures">
+      <title>HP Helion OpenStack 2.0 Kilo Features</title>
+      <p>
+        <ul id="KiloFeatureJumplist">
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/NovaFeatures">Nova
+            Features</xref></li>
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/NeutronFeatures">Neutron
+              Features</xref></li>
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/GlanceFeatures">Glance
+              Features</xref></li>
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/SwiftFeatures">Swift
+            Features</xref></li>
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/CinderFeatures">Cinder
+              Features</xref></li>
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/KeystoneFeatures">Keystone
+              Features</xref></li>
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/CeilometerFeatures">Ceilometer
+              Features</xref></li>
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/HeatFeatures">Heat
+            Features</xref></li>
+          <!-- <li><xref href="kilo_features.dita#HP2.0KiloFeatures/IronicFeatures">Ironic
+              Features</xref></li> -->
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/HorizonFeatures">Horizon
+              Features</xref></li>
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/MonascaFeatures">Monasca
+              Features</xref></li>
+        </ul>
+      </p>
+    </section>
+
+    <section id="NovaFeatures">
+      <title>Compute Features</title>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="NovaTable">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4"/>
+            <thead>
+              <row>
+                <entry>Category</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Disabled</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Networking</entry>
+                <entry>Neutron</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Volumes</entry>
+                <entry>Cinder</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Local Ephemeral Disk</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="4">Libvirt KVM (x86)Hypervisor Features</entry>
+                <entry>NUMA topology</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>CPU Pinning</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Large pages</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>PCI Pass-Through</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>SR-IOV</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="1">Server Groups</entry>
+                <entry>Affinity</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Anti-Affinity</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Aggregates</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Quotas</entry>
+                <entry>Tenant &amp; User</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="4">Live Migration</entry>
+                <entry>Ephemeral Disks</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Cinder Volumes</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Config Drive (ISO9660)</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Migration to Specified Host</entry>
+                <entry>Paused &amp; Rescued States</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>CPU Pinning with NUMA</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Rescue</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Evacuate</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Shelve</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Consoles</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Live Interface Update</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Live Volume Update</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="1">Hypervisors</entry>
+                <entry>Libvirt KVM (x86) - Host Linux Only</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>VMWare vCenter/ESXi</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>Delayed Delete</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry>Resize</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry>Hyper-V</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry>Cells</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+
+    <section id="NeutronFeatures">
+      <title>Networking Features</title>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="NeutronTable">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="newCol2" colnum="2" colwidth="1*"/>
+            <colspec colname="newCol3" colnum="3" colwidth="1*"/>
+            <colspec colname="newCol4" colnum="4" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>Category</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Dsiabled</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Networking v2 API</entry>
+                <entry>Network, Subnet, Port</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="10">Networking v2 Extensions</entry>
+                <entry>Quotas</entry>
+                <entry>Metering</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Routers</entry>
+                <entry>Networks Multiple Provider Extension</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Floating IPs</entry>
+                <entry>MTU</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Security groups and rules</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Port Binding</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Provider Networks</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Agent</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Allowed address pairs</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Extra DHCP opt</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Subnet allocation</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>VLAN transparency</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="2">Service</entry>
+                <entry>LBaaS v2.0</entry>
+                <entry>LBaaS v1.0</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>FWaaS</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>VPNaaS</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Hypervisor</entry>
+                <entry>ESX Support</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="1">Tenant Network Types</entry>
+                <entry>VxLAN</entry>
+                <entry>GRE</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>VLAN</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="1">Provider Networks</entry>
+                <entry>flat</entry>
+                <entry>VxLAN</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>VLAN</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Tenant Router Default</entry>
+                <entry>Distributed routers (DVR)</entry>
+                <entry>Centralized routers</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="4">Functional Components</entry>
+                <entry>ML2 Plugin</entry>
+                <entry>Metering Agent</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>OVS Agent</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>DHCP Agent</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>L3 Agent with DVR</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Metadata Proxy/Agent</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Tenant Networks</entry>
+                <entry/>
+                <entry>IPv6</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>SR-IOV</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>L2 Gateway</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+
+    <section id="GlanceFeatures">
+      <title>Glance Features</title>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="GlanceTable">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Category</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Disabled</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Authentication</entry>
+                <entry>Keystone</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Notifications</entry>
+                <entry>Rabbit</entry>
+                <entry>qpid</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Backend</entry>
+                <entry>Swift</entry>
+                <entry>All Backend Stores except Swift</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Images API v1 &amp; v2</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Registry v1 &amp; v2</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>Healthcheck</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>Delayed delete</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>Replication</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>Image Direct URL</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>Storage Quotas</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>Images API v2 - Direct Access to Database</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>OSProfiler</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>Image Cache</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry>Catalog and Index Service Experimental API</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry>Tasks</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+
+    <section id="SwiftFeatures">
+      <title>Object Storage Features</title>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="SwiftTable">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Category</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Disabled</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry morerows="2">API</entry>
+                <entry>Container API</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Object API</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Static &amp; Dynamic Large Objects API</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Bulk Upload</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Bulk Delete</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Crossdomain Filter</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Temporary URL's</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>FormPOST</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Static Web</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Access Control List on Containers</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="1">Quotas</entry>
+                <entry>Container</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Account</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>CORS</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Proxy Logging Filter</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Recon</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>Container to Container Synchronization</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>Erasure Coding</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>Ratelimit</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>Dispersion Report</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>Ssync replication</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>Separate/Dedicated Replication Network</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>Geographically Distributed Clusters</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry>Composite Tokens</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry>Cname Filter</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry>Domain Remap Filter</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry>List Endpoint Filter</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry>Local Disk File</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+
+    <section id="CinderFeatures">
+      <title>Block Storage Features</title>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="CinderTable">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Category</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Disabled</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry morerows="2">Volumes</entry>
+                <entry>Encrypted</entry>
+                <entry>Add/Remove Volumes from an existing consistency group</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Private</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Volume Descriptions</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Configuration</entry>
+                <entry>Local lvm.conf</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>New database schema upgrades will not require restarting Cinder services
+                  right away.</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Backup</entry>
+                <entry>Incremental Backup</entry>
+                <entry>NFS Export Filesystem</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Thin Provisioning</entry>
+                <entry/>
+                <entry>Oversubscription Configurable</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Consistency Group</entry>
+                <entry/>
+                <entry>Create a Consistency Group from an existing Consistency Group
+                  snapshot</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>iSCSI</entry>
+                <entry/>
+                <entry>Return multiple iSCSI path information</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Filters/Weighers</entry>
+                <entry/>
+                <entry>Fine tuned how the scheduler will choose a volume backend</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+
+    <section id="KeystoneFeatures">
+      <title>Keystone Features</title>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="KeystoneTable">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Category</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Disabled</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry/>
+                <entry>Domains</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Fernet Token</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>LDAP Integration</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>SSO IdP Support</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Keystone Modifications</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Multi-factor Authentication (MFA)</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>Keystone-to-Keystone (K2K) Federation</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>LDAP Administration with DB backend via new Domain admin API</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>Heirarchical Multitenancy</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry>Endpoint Filtering</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry>Endpoint Policy</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry>OATH 1.0a</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry>Revocation Events</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry>OS CERT</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry>PKI Token</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry>Driver Level Caching</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+
+    <section id="CeilometerFeatures">
+      <title>Ceilometer Features</title>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="CeilometerTable">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Category</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Disabled</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry morerows="1">Agent</entry>
+                <entry>Ceilometer Central Agent</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Notification Agent</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Ceilometer Expirer</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Poll-based Account Level Meters</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Flexible Configuration</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Centralized Monitoring &amp; Logging</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Flexible Deployment</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Upgrade &amp; Patch Support</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="1">API</entry>
+                <entry/>
+                <entry>Alarms API</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Post Meter API</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+
+    <section id="HeatFeatures">
+      <title>Heat Features</title>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="HeatTable">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Category</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Disabled</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry morerows="1">Cloud Infrastructure</entry>
+                <entry>Stack create/update/restore</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Stack snapshot/restore</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="2">Cloud Application</entry>
+                <entry>Deployment</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Configuration Management</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Auto-scaling with Ceilometer</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="1">Template</entry>
+                <entry>HOT &amp; CFN</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Validate &amp; Preview Stack</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Heat Engine</entry>
+                <entry>Monitor the Deployed Heat Engine Status</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="1">Stack</entry>
+                <entry>Hidden</entry>
+                <entry>Multi-Region Stack</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Keystone Based Stack</entry>
+                <entry>Abandon &amp; Adopt</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Resource</entry>
+                <entry>Nova, Cinder, Neutron, etc</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Scheduler</entry>
+                <entry/>
+                <entry>Hints</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+
+    <!--
+    <section id="IronicFeatures">
+      <title>Ironic Features</title>
+      <p>Ironic Description</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="IronicTable">
+          <title>Ironic Features in Kilo</title>
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Category</entry>
+                <entry>Core (Included)</entry>
+                <entry>Non-core (Included)</entry>
+                <entry>Not Included</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry morerows="5">Drivers</entry>
+                <entry>agent_ilo</entry>
+                <entry>Amt</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>agent_ipmitool</entry>
+                <entry>Drac</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>pxe_ilo</entry>
+                <entry>Irmc</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>pxe_ipmitool</entry>
+                <entry>Fake</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Seamicro</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>ssh</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+    -->
+
+    <section id="HorizonFeatures">
+      <title>Horizon Features</title>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="HorizonTable">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Category</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Disabled</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry/>
+                <entry>Keystone v2 for Horizon enabled by default</entry>
+                <entry/>
+                <entry>Keystone v3 for Horizon</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry>Angular-based Launch Instance Wizard</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Logging set to INFO</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry>Lock and Unlock Nova Instances</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+
+    <section id="MonascaFeatures">
+      <title>Monitoring Features</title>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="MonascaTable">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Category</entry>
+                <entry>Included</entry>
+                <entry>Included but not enabled</entry>
+                <entry>Disabled</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Metrics</entry>
+                <entry>Store and Query</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Statistics</entry>
+                <entry>Query</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="1">Alarm</entry>
+                <entry>Alarm Definitions</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Alarm Evaluate</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Notifications</entry>
+                <entry>Send Notifications</entry>
+                <entry/>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+
+    <section id="MoreInfo">
+      <title>More Information</title>
+      <p>For more information on OpenStack Kilo, see the OpenStack Kilo release page: <xref
+          href="https://www.openstack.org/software/kilo/" scope="external" format="html"/></p>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_wbn_td3_pt">
+  <title>Ceph Operations : Start, Stop, Status Operation</title>
+  <body>
+    <p>After the successful deployment of Ceph, you can perform the following Ceph operations:<ul
+        id="ul_j45_td3_pt">
+        <li>Check the status of Ceph OSD and Monitor Services</li>
+        <li>Start OSD Nodes and Monitor Services</li>
+        <li>Stop OSD Nodes and Monitor Services<p><b>Check the status of Ceph OSD and Monitor
+              Services</b>
+          </p><p>Perform the following steps to check the stays of Ceph OSD Nodes and Monitor
+              Services:<ol id="ol_np5_td3_pt">
+              <li>Login to Deployer Node.</li>
+              <li>Change to the following
+                directory:<codeblock>~/scratch/ansible/next/hos/ansible</codeblock></li>
+              <li>Run the ansible
+                playbook:<codeblock>ansible-playbook -i hosts/verb_hosts ceph-status.yml</codeblock></li>
+            </ol></p><p><b>Start OSD and Monitor Services</b></p><p>Perform the following steps to
+            start OSD Nodes and Monitor Services:<ol id="ol_hq5_td3_pt">
+              <li>Login to Deployer Node.</li>
+              <li>Change to the following
+                directory:<codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock></li>
+              <li>Run the ansible
+                playbook:<codeblock>ansible-playbook -i hosts/verb_hosts ceph-start.yml</codeblock></li>
+            </ol></p><p><b>Stop OSD Nodes and Monitor Services</b></p><p>Perform the following steps
+            to stop OSD Nodes and Monitor Services:</p><p>
+            <ol id="ol_br5_td3_pt">
+              <li>Login to Deployer Node.</li>
+              <li>Change to the following
+                directory:<codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock></li>
+              <li>Run the ansible
+                playbook:<codeblock>ansible-playbook -i hosts/verb_hosts ceph-stop.yml</codeblock></li>
+            </ol>
+          </p>
+        </li>
+      </ul></p>
+  </body>
+</topic>
