@@ -13,7 +13,8 @@ body {
 </head>
   <title></title>
   <body>   
-<h3>control_plane.yml</h3>                          <h3><a href="#" onClick="history.go(-1); return false;">Return to Upgrade</a></h3>                                                        
+    <h4><a href="#" onClick="history.go(-1); return false;">Return to Upgrade</a></h4> 
+<h3>control_plane.yml</h3>                                                                                 
     <pre> 
 
 <b>Before</b>                                                         <b>After</b>
@@ -24,7 +25,7 @@ body {
     - name: control-plane                                              - name: control-plane
       region-name: RegionOne                                             region-name: RegionOne
       common-service-components:                                         common-service-components:
-                                                                >          <span class="hlt">- lifecycle-manager-target</span>
+   <span class="hlt">                                                             >          - lifecycle-manager-target</span>
         - logging-producer                                                 - logging-producer
         - monasca-agent                                                    - monasca-agent
         - freezer-agent                                                    - freezer-agent
@@ -36,7 +37,7 @@ body {
           member-count: 3                                                    member-count: 3
           allocation-policy: strict                                          allocation-policy: strict
           service-components:                                                service-components:
-                                                                >              <span class="hlt">- lifecycle-manager</span>
+<span class="hlt">                                                                >              - lifecycle-manager</span>
             - ntp-server                                                       - ntp-server
             - mysql                                                            - mysql
             - ip-cluster                                                       - ip-cluster
@@ -101,7 +102,7 @@ body {
             - ops-console-monitor                                              - ops-console-monitor
             - cmc-service                                                      - cmc-service
             - freezer-api                                                      - freezer-api
-      resource-nodes:                                           |        <span class="hlt">resources:</span>
+      <span class="hlt">resource-nodes:                                           |        resources:</span>
         - name: compute                                                    - name: compute
           resource-prefix: comp                                              resource-prefix: comp
           server-role: ROLE-COMPUTE                                          server-role: ROLE-COMPUTE
@@ -109,7 +110,7 @@ body {
           min-count: 0                                                       min-count: 0
           service-components:                                                service-components:
             - ntp-client                                                       - ntp-client
-            - nova-kvm                                          <             <span class="hlt">            </span>
+ <span class="hlt">           - nova-kvm                                          <                         </span>
             - nova-compute                                                     - nova-compute
             - nova-compute-kvm                                                 - nova-compute-kvm
             - neutron-openvswitch-agent                                        - neutron-openvswitch-agent
@@ -121,5 +122,9 @@ body {
           min-count: 3                                                       min-count: 3
           service-components:                                                service-components:
             - vsa                                                              - vsa
-</pre></body>
+</pre>
+
+
+ <h4><a href="#" onClick="history.go(-1); return false;">Return to Upgrade</a></h4> 
+ </body>
 </html>
