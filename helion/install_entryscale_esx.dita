@@ -86,7 +86,7 @@
 mechanism_drivers = ovsvapp, openvswitch, l2population
 [agent]
 enable_distributed_routing = False</codeblock></li>--></p></li>
-        <li>Enable EON logs in the central server, refer to <xref
+        <li>(<b>Optional</b>) Enable EON logs in the central server, refer to <xref
             href="esx/change_log_level_debug.dita#topic_rq3_mxh_rt/enable-eon-service-centralized-logging"
             >Enable EON Service for Centralized Logging</xref> for more details.</li>
       </ol>

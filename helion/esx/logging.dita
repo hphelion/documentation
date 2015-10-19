@@ -24,11 +24,14 @@ level: DEBUG</codeblock></li>
           <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock></li>
+        <li>Run the configuration processor, as follows:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <li>Prepare your environment for
-          deployment:<codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml;
-cd /home/stack/scratch/ansible/next/hos/ansible;</codeblock></li>
+          deployment:<codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml;</codeblock></li>
         <li>Execute EON reconfigure
-          playbook<codeblock>ansible-playbook -i hosts/verb_hosts eon-reconfigure.yml</codeblock></li>
+          playbook<codeblock>cd /home/stack/scratch/ansible/next/hos/ansible;
+ansible-playbook -i hosts/verb_hosts eon-reconfigure.yml</codeblock></li>
       </ol>
     </p>
     <p id="enable-eon-service-centralized-logging"><b>Enable EON Service for Centralized Logging</b></p>
@@ -57,6 +60,18 @@ log_rotate:
   - centralized_logging:
       <b>enabled: true</b>
       format: rawjson</codeblock></li>
+      <li>Commit your configuration
+        <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message>"</codeblock></li>
+      <li>Run the configuration processor, as follows:
+        <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+      <li>Prepare your environment for
+        deployment:<codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml;</codeblock></li>
+      <li>Execute EON reconfigure
+        playbook<codeblock>cd /home/stack/scratch/ansible/next/hos/ansible;
+ansible-playbook -i hosts/verb_hosts eon-reconfigure.yml</codeblock></li>
     </ol>
   </body>
 </topic>
