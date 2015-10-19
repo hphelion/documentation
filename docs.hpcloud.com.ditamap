@@ -183,6 +183,7 @@
       <topicref href="helion/operations/repair_node.dita"/>
       <topicref href="helion/operations/remove_node.dita"/>
       <topicref href="helion/operations/replace_controller.dita"/>
+      <topicref href="helion/blockstorage/vsa/remove_node.dita"/>
       <topicref href="helion/blockstorage/vsa/vsa_create_multiple_clusters.dita"/>
       <topicref href="helion/blockstorage/ceph/adding_new_osd_node.dita"/>
       <topicref href="helion/blockstorage/ceph/remove_osd_node.dita"/>
@@ -292,6 +293,7 @@
         <topicref href="helion/esx/enable_new_cluster_compute_resource.dita"/>
         <topicref href="helion/esx/remove_existing_cluster_compute_resource_pool.dita"/>
         <topicref href="helion/esx/removing_esx_host_from_cluster.dita"/>
+        <topicref href="helion/esx/logging.dita"/>
       </topicref>
       <topicref href="helion/esx/scale_config_changes.dita"/>
       <!-- END HORIZON -->

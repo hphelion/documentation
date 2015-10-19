@@ -67,21 +67,22 @@
           <codeph>servers.yml</codeph> file on the deployer node with a list of VSA nodes that are
         currently offline so that these nodes get excluded from any further reconfiguration or
         upgrades. This prevents a VSA node that is offline from being included in deployments.</p>
-      <p>The format of servers.yml file would be <codeph>!&lt;VSA node-name>*</codeph>, where VSA
-        node-name matched the interface used to access this node during deployment, i.e.
-          <codeph>!padawan-ccp-vsa001* (VSA host as given in hosts/verb_hosts)</codeph>. </p>
-      <p/>
-      <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
-      <p>The format of this file would be!&lt;VSA node-name>*Where the "VSA node-name" matches the
-        interfaces used to access this node during deployments, i.e.e.g., !padawan-ccp-vsa001* (VSA
-        host as given in hosts/verb_hosts). Add this VSA host name to a file, say "offline-vsa"When
-        performing HLM deployments specify the name of this file in a --limit option to prevent the
-        deployment process trying to access the VSA nodes that are offline.ansible-playbook -i
-        hosts/localhost config-processor-run.yml (from ~/helion/hos/ansible
-        directory)ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit
-        @offline-vsaansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e
-        elasticsearch_cluster_name=hlm-001 --limit @offline-vsa</p>
+      <p>The format of servers.yml file would be <codeph>!&lt;VSA node-name>*</codeph></p>
+      <p> where VSA node-name matched the interface used to access this node during deployment. For
+        example<codeblock>!padawan-ccp-vsa001* (VSA host as given in hosts/verb_hosts)</codeblock></p>
+      <p>When performing HLM deployments specify the name of this file in a --limit option to
+        prevent the deployment process trying to access the VSA nodes that are offline.</p>
+      <p>Run the configuration
+        processor<codeblock>cd /home/stack/helion/hos/ansible;
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></p>
+      <p>Execute the following command
+        <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit &lt;hostname></codeblock></p>
+      <p>For example: Adding  "offline-vsa" to the VSA host name
+        <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit @offline-vsa</codeblock></p>
+      <p>Run the following
+        playbook<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e elasticsearch_cluster_name=hlm-001 --limit @offline-vsa</codeblock></p>
     </section>
+    <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
     <section>
       <title><?oxy_custom_end?><b>Remove VSA storage system from cloud </b></title>
       <p>You can remove the VSA storage system from the cloud after it is removed from cluster
