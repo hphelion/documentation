@@ -3,7 +3,7 @@
 <topic id="min_hardware">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Hardware Requirements</title>
   <body>
-    <section id="supported_hardware">
+    <section id="supported_hardware"><title>Hardware Support Matrix</title>
       <p>For information about the supported hardware in HP Helion OpenStack 2.0, see the <xref
           href="http://helionready.hpcloud.com/ihv/category/Server" format="html" scope="external"
           >HP Helion Ready Solution Catalog</xref>.</p>
