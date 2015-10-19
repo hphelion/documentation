@@ -201,6 +201,10 @@
       <topicref href="helion/objectstorage/add_new_storage_policy.dita"
         navtitle="Adding a New Storage Policy - Swift" locktitle="yes"/>
       <topicref href="helion/bura/bura_overview.dita" navtitle="Backing up and Restoring Your Data">
+        <topicref href="helion/bura/cloud_control_plane_backup.dita" type="topic" format="dita"/>
+        <topicref href="helion/bura/cloud_control_plane_recovery.dita" type="topic" format="dita"/>
+        <topicref href="helion/bura/freezer_scheduler_overview.dita" type="topic" format="dita"/>
+        <topicref href="helion/bura/create_freezer_scheduler_job.dita" type="topic" format="dita"/>
         <topicref href="helion/bura/backup.dita"/>
         <topicref href="helion/bura/restore.dita"/>
       </topicref>
