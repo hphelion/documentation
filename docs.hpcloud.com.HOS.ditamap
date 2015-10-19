@@ -213,8 +213,6 @@
         <topicref href="helion/bura/supported_services.dita" type="topic" format="dita"/>
         <topicref href="helion/bura/troubleshooting_limitations.dita" type="topic" format="dita"/>
       </topicref>
-      <topicref href="helion/bura/cloud_control_plane_backup.dita" type="topic" format="dita"
-        scope="local"/>
       <!-- OBJECT STORAGE -->
       <topicref href="helion/objectstorage/check_objectstorage_operation.dita">
         <topicref href="helion/objectstorage/validating_swift_recon.dita"/>
