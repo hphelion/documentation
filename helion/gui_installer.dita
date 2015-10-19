@@ -40,18 +40,17 @@
           that the only option for the Cloud model on KVM with VSA is the have 3 VSA nodes; there is
           no option to have 0 VSA nodes. Note also that you cannot put the deployer on a control
           plane node using the GUI installer.</li>
-        <li>Before you use the GUI to install your cloud, you must install the operating system, HP
-          Linux for HP Helion OpenStack, on your nodes (servers) based on your hypervisor. You must
-          do so by following the appropriate installation instructions. <ul>
+        <li>Before you use the GUI to install your cloud, you may install the operating system, HP
+          Linux for HP Helion OpenStack, on your nodes (servers) based on your hypervisor, if you
+          prefer. Otherwise the installer will install it for you. Te option is available in the
+          GUI. If you deci You must do so by following the appropriate installation instructions. <ul>
             <li><xref href="gui_install_on_kvm.dita">KVM</xref></li>
             <li><xref href="gui_install_on_esx.dita">ESX</xref></li>
           </ul>
-          <p id="chooseHypervisor"
-          /><!--<note>You will follow the installation instructions found on the installation page,
-            stopping before the step "Run the Configuration Processor" and skipping the "Configure
-            Your Environment" steps. Therefore, your last OS install step will be
-            <codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock>
-          </note>-->
+          <p id="chooseHypervisor"/><note>Before starting the GUI, you will also need to change the
+            file permissions of hlm-ux-implementation/server/ansible/hosts/localhost to not
+            executable. Execute the following command to do so:
+            <codeblock>chmod -x ~/hlm-ux-implementation/server/ansible/hosts/localhost </codeblock></note>
         </li>
 
       </ol>
