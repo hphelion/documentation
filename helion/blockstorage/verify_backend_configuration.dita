@@ -60,6 +60,10 @@
               is mapped to the backend, you can create volumes with this volume type.</note></li>
         </ol></p>
     </section>
+    <p><b>(This is only for VSA</b>) You can configure extra specs (provision type and RAID
+      protection level) on the volume type for VSA. For more details, refer to <xref
+        href="http://docs.openstack.org/kilo/config-reference/content/hp-lefthand-supported-ops-rest.html"
+        format="html" scope="external"/>.</p>
     <section id="create-volume">
       <title>Create Volume </title>
       <p>Perform the following steps to create a volume using Horizon dashboard. <ol
