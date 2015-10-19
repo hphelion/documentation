@@ -6,7 +6,7 @@
     <section><title>Introduction</title><p> As of HP Helion <tm tmtype="reg">OpenStack</tm> 2.0, you must do the following in order to
         restore data after a backup: <ol>
           <li>Select a backup to restore.</li>
-          <li>2. Define a mode for the restore: The following modes are available:<ul>
+          <li>Define a mode for the restore: The following modes are available:<ul>
               <li>fs (filesystem) (default)</li>
               <li>mysql</li>
               <li>sqlserver</li>
