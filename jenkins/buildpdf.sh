@@ -1,4 +1,6 @@
- 
+
+DITAMAP="$1"
+
 export DOC_HOME="`pwd`"
 export ANT_HOME="/usr/bin/ant"
 export JAVA_HOME="/usr/lib/jvm/java-1.7.0-openjdk-amd64" 
