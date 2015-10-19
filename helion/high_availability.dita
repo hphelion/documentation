@@ -205,8 +205,8 @@
       <sectiondiv id="singleton_services">
         <p><b>Singletone Services</b></p>
         
-        <sectiondiv id="cinder_volume">
-          <p><b>Cinder-Volume</b></p>
+        <sectiondiv>
+          <p id="cinder_volume"><b>Cinder-Volume</b></p>
           <p>Due to the single threading required in both cinder-volume and the drivers, 
             the Cinder volume service is run as a singleton in the control plane. </p>
         </sectiondiv>
