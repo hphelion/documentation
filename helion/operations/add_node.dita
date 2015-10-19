@@ -14,7 +14,7 @@ git checkout site</codeblock> Add
             <b>servers.yml
           </b><codeblock>---
   product:
-    version: 2
+    version: 2  
 
   baremetal:
     # NOTE: These values need to be changed to match your environment.
