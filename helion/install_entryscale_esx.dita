@@ -86,11 +86,10 @@
 mechanism_drivers = ovsvapp, openvswitch, l2population
 [agent]
 enable_distributed_routing = False</codeblock></li>--></p></li>
-        <li>(<b>Optional</b>) Enable EON logs in the central server, refer to <xref
-            href="esx/change_log_level_debug.dita#topic_rq3_mxh_rt/enable-eon-service-centralized-logging"
-            >Enable EON Service for Centralized Logging</xref> for more details.</li>
+        <li>(<b>Optional</b>) Enable EON logs in the central server, do the following:</li>
       </ol>
     </section>
+    <section conref="esx/logging.dita#topic_rq3_mxh_rt/enable-eon-service-centralized-logging"/>
         <ol id="ol_a14_jy4_st">
         <li>Commit your cloud deploy configuration to the<xref href="using_git.dita"> local git
             repo</xref>, as follows: <codeblock>cd ~/helion/hos/ansible
@@ -219,7 +218,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
 | username   | administrator@vsphere.local          |
 +------------+--------------------------------------+</codeblock></p></li>
       </ol></section>
-    <p id="register-network"><b>Register ESX Cloud Network Configuration</b></p>
+    <section id="register-network"><b>Register ESX Cloud Network Configuration</b>
     <p>This involve getting a sample network information template. Fill the details of the template
       and use that template to register cloud network configuration for the vCenter.</p>
     <p>
@@ -362,7 +361,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
 | domain-c21 | Cluster1 | DC1        | not_imported  |
 +------------+----------+------------+---------------+</codeblock></li>
       </ol>
-    </p>
+    </p></section>
     <section id="import-cluster"><b>Import Cluster </b><p>You can use one or more ESX clusters for ESX Cloud Deployment.
         When a Import Cluster is invoked, required ESX Compute Proxy and OVSvApp nodes are
         deployed.</p>
@@ -428,10 +427,8 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       </ol>
     </p></section>
     <section id="modify-volume-config"><b>Modify the Volume Configuration File</b>
-    <p>Once the cluster is activated you must configure the volume.</p>
-    <p>Perform the following steps to modify the volume configuration files:</p>
-    <p>
-      <ol>
+      <p>Once the cluster is activated you must configure the volume.</p><p>Perform the following
+        steps to modify the volume configuration files:</p><ol id="ol_bhx_n5p_st">
         <li>Change the directory. The <codeph>cinder.conf.j2</codeph> is present in following
           directories
             :<codeblock>cd /home/stack/helion/hos/ansible/roles/_CND-CMN/templates</codeblock><p>OR<codeblock>cd /home/stack/helion/my_cloud/config/cinder</codeblock></p><p>It
@@ -462,8 +459,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
 #volume_backend_name = &lt;vmdk-backend-name>
 #
 # End of section for VMDK block storage</codeblock></li>
-      </ol>
-    </p></section>
+      </ol></section>
     <section id="commit-your-cloud"><b>Commit your Cloud Definition</b>
     <p>
       <ol>

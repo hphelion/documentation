@@ -4,31 +4,36 @@
   <title>Enabling a New Cluster as a Compute Resource </title>
   <body>
     <p>When a new cluster is created in vCenter, EONs periodic pooling task fetches the new cluster
-      information and updates the inventory. At present the state of  a new cluster is
+      information and updates the inventory. At present the state of a new cluster is
         <b>not_imported</b>.</p>
-    <p>Perform the following to enable a new cluster as a compute resource.<ol id="ol_ipn_jvf_rt">
-        <li>List the
-            clusters.<codeblock># eon cluster-list --vcenter-id &lt;vCenter ID></codeblock><p>For
-            example:<codeblock># eon cluster-list --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674
+    <section><b>Enable a new cluster</b><p>Perform the following to enable a new cluster as a
+        compute resource.<ol id="ol_ipn_jvf_rt">
+          <li>List the
+              clusters.<codeblock># eon cluster-list --vcenter-id &lt;vCenter ID></codeblock><p>For
+              example:<codeblock># eon cluster-list --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674
 +------------+----------+------------+---------------+
 | MOID       | Name     | Datacenter | Import Status |
 +------------+----------+------------+---------------+
 | domain-c21 | Cluster1 | DC1        | activated     |
 | domain-c24 | Cluster2 | DC1        | not_imported  |
 | domain-c25 | Cluster3 | DC2        | not_imported  |
-+------------+----------+------------+---------------+</codeblock></p><!--<p>The newly added cluster appears in the </p> (need to add cross ref )--></li>
-      <li>Once the newly added cluster appears after executing <codeph>cluster-list</codeph>
-        command, refer from <xref href="../install_entryscale_esx.dita#install_esx/import-cluster"
-          >Import Cluster</xref> in <i>Prepare and Deploy ESX Computes and OVSvAPPs</i>
-        section.<p>OR (<b>need to add some more content)</b></p><p>If the newly added cluster is
-          in a new Datacenter on which no activated clusters exists, refer from <xref
-            href="../install_entryscale_esx.dita#install_esx/register-network">Register ESX Cloud
-            Network Configuration</xref> in <i>Prepare and Deploy ESX Computes and OVSvAPPs</i>
-          section.</p></li>
-    
-    </ol></p>
-      
-        
-     
++------------+----------+------------+---------------+</codeblock></p><p>Once
+              the newly added cluster appears after executing <codeph>cluster-list</codeph> command,
+              do the following:</p></li>
+        </ol></p></section>
+    <section conref="../install_entryscale_esx.dita#install_esx/import-cluster"/>
+    <section conref="../install_entryscale_esx.dita#install_esx/activate-cluster"/>
+    <section conref="../install_entryscale_esx.dita#install_esx/modify-volume-config"/>
+    <section conref="../install_entryscale_esx.dita#install_esx/commit-your-cloud"/>
+    <section conref="../install_entryscale_esx.dita#install_esx/deploy-compute-proxy-ovsvapps"/>
+    <p><b>OR</b></p>
+    <p>If the newly added cluster is in a new Datacenter on which no activated clusters exists then
+      do the following:</p>
+    <section conref="../install_entryscale_esx.dita#install_esx/register-network"/>
+    <section conref="../install_entryscale_esx.dita#install_esx/import-cluster"/>
+    <section conref="../install_entryscale_esx.dita#install_esx/activate-cluster"/>
+    <section conref="../install_entryscale_esx.dita#install_esx/modify-volume-config"/>
+    <section conref="../install_entryscale_esx.dita#install_esx/commit-your-cloud"/>
+    <section conref="../install_entryscale_esx.dita#install_esx/deploy-compute-proxy-ovsvapps"/>
   </body>
 </topic>

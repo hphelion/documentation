@@ -5,7 +5,7 @@
   <body>
     <p>This page describe the procedure to enable EON service for centralised logging and changing
       EON log level to DEBUG.</p>
-    <p><b>Change EON Log Level to DEBUG</b></p>
+    <section><b>Change EON Log Level to DEBUG</b>
     <p>To change the EON log level to DEBUG, do the following:</p>
     <p>
       <ol id="ol_ydx_4xh_rt">
@@ -33,8 +33,8 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           playbook<codeblock>cd /home/stack/scratch/ansible/next/hos/ansible;
 ansible-playbook -i hosts/verb_hosts eon-reconfigure.yml</codeblock></li>
       </ol>
-    </p>
-    <p id="enable-eon-service-centralized-logging"><b>Enable EON Service for Centralized Logging</b></p>
+    </p></section>
+    <section id="enable-eon-service-centralized-logging"><b>Enable EON Service for Centralized Logging</b>
     <p>To enable EON Service for centralised logging:</p>
     <ol>
       <li>Change the directory<codeblock>~/helion/my_cloud/config/logging/vars</codeblock></li>
@@ -72,6 +72,6 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       <li>Execute EON reconfigure
         playbook<codeblock>cd /home/stack/scratch/ansible/next/hos/ansible;
 ansible-playbook -i hosts/verb_hosts eon-reconfigure.yml</codeblock></li>
-    </ol>
+    </ol></section>
   </body>
 </topic>
