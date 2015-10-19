@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_bxm_gxr_st">
+  <title>Supported Services</title>
+  <body>
+    <p>By default backups include: <ul>
+        <li>All important informations on the deployer</li>
+        <li>Mysql database</li>
+        <li>Swift rings</li>
+      </ul></p>
+    <p>This means that the following services will be effectively backuped. The critical data that
+      will be backed up are the databases and the configuration related files. Service-specific
+      limitations are listed as well. <ul>
+        <li>Ceilometer - No backup of metrics data</li>
+        <li>Cinder - No backup of the volumes</li>
+        <li>Glance - No backup of the images</li>
+        <li>Heat</li>
+        <li>Horizon</li>
+        <li>Keystone</li>
+        <li>Neutron</li>
+        <li>Nova - No backup of the images</li>
+        <li>Swift - No backup of the objects</li>
+        <li>Operations Console</li>
+        <li>Monasca - No backup of the metrics</li>
+      </ul></p>
+  </body>
+</topic>
