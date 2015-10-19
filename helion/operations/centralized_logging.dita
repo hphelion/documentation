@@ -366,13 +366,12 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                 <entry>ceph-mon <p>ceph-osd</p></entry>
                 <entry>INFO</entry>
                 <entry>Ceph log levels are configurable both during initial deployment and after the
-                  deployment. Use the following variables (default is <b>INFO</b>, case-sensitive): <codeblock>ansible-playbook -i hosts/verb_hosts site.yml -e "ceph_mon_log_level=DEBUG,
-                      ceph_osd_log_level=DEBUG"</codeblock>
-                  <p>You can also use <b>-e "helion_loglevel=DEBUG"</b> to specify the log level,
+                  deployment. Use the following variables (default is <b>INFO</b>, case-sensitive): <codeblock>ansible-playbook -i hosts/verb_hosts site.yml -e "ceph_mon_log_level=DEBUG, ceph_osd_log_level=DEBUG"</codeblock>
+                  <!--<p>You can also use <b>-e "helion_loglevel=DEBUG"</b> to specify the log level,
                     which sets the log level across multiple HLM services (this includes both OSD
                     and MON). However the former two take higher precedence than
                       <b>helion_loglevel</b> variable. The same variables can be used while running
-                      <b>ceph-deploy.yml</b> play also.</p>
+                      <b>ceph-deploy.yml</b> play also.</p>-->
                 </entry>
               </row>
               <row>
