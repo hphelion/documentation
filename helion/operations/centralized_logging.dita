@@ -268,6 +268,185 @@
             <li><b>compress</b> indicates that the file will be compressed</li>
           </ul></li>
       </ul>
+      <p><b>How to Configure the Log Levels for Specific Services</b></p>
+      <p><table frame="all" rowsep="1" colsep="1" id="loglevel_config">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4"/>
+            <thead>
+              <row>
+                <entry>Service</entry>
+                <entry>Sub-component</entry>
+                <entry>Expected Default Logging Level</entry>
+                <entry>Steps to Change Log Level</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry morerows="5">Ceilometer</entry>
+                <entry>ceilometer-api</entry>
+                <entry>INFO</entry>
+                <entry>Ceilometer log level is configurable in
+                    <b>roles/_CEI-CMN/defaults/main.yml:ceilometer_loglevel: INFO</b>. You can
+                  change the ceilometer_loglevel in <b>roles/_CEI-CMN/defaults/main.yml</b> for all
+                  components during deployment or after deployment. You can also change log level
+                  for <b>ceilometer-api</b> only by changing
+                    <b>roles/CEI-API/templates/api-logging.conf.j2:level: DEBUG</b>
+                  <p>For post deployment log level changes, please re-run the following from
+                    deployer node:
+                    <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p></entry>
+              </row>
+              <row>
+                <entry>ceilometer-collector</entry>
+                <entry>INFO</entry>
+                <entry>Ceilometer log level is configurable in
+                    <b>roles/_CEI-CMN/defaults/main.yml:ceilometer_loglevel: INFO</b>. You can
+                  change the ceilometer_loglevel in <b>roles/_CEI-CMN/defaults/main.yml</b> for all
+                  components during deployment or after deployment. You can also change log level
+                  for <b>ceilometer-collector</b> only by changing
+                    <b>roles/CEI-COL/templates/collector-logging.conf.j2:level: DEBUG</b>
+                  <p>For post deployment log level changes, please re-run the following from
+                    deployer node:
+                    <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p></entry>
+              </row>
+              <row>
+                <entry>ceilometer-alarm-evaluator-json</entry>
+                <entry>INFO</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>ceilometer-agent-notification</entry>
+                <entry>INFO</entry>
+                <entry>Ceilometer log level is configurable in
+                    <b>roles/_CEI-CMN/defaults/main.yml:ceilometer_loglevel: INFO</b>. You can
+                  change the ceilometer_loglevel in <b>roles/_CEI-CMN/defaults/main.yml</b> for all
+                  components during deployment or after deployment. You can also change log level
+                  for <b>ceilometer-agent-notification</b> only by changing
+                    <b>roles/CEI-NAG/templates/agent-notification-logging.conf.j2:level: DEBUG</b>
+                  <p>For post deployment log level changes, please re-run the following from
+                    deployer node:
+                    <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p></entry>
+              </row>
+              <row>
+                <entry>ceilometer-agent-central</entry>
+                <entry>INFO</entry>
+                <entry>Ceilometer log level is configurable in
+                    <b>roles/_CEI-CMN/defaults/main.yml:ceilometer_loglevel: INFO</b>. You can
+                  change the ceilometer_loglevel in <b>roles/_CEI-CMN/defaults/main.yml</b> for all
+                  components during deployment or after deployment. You can also change log level
+                  for <b>ceilometer-agent-central</b> only by changing
+                    <b>roles/CEI-CAG/templates/agent-central-logging.conf.j2:level: DEBUG</b>
+                  <p>For post deployment log level changes, please re-run the following from
+                    deployer node:
+                    <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p></entry>
+              </row>
+              <row>
+                <entry>ceilometer-expirer</entry>
+                <entry>INFO</entry>
+                <entry>Ceilometer log level is configurable in
+                    <b>roles/_CEI-CMN/defaults/main.yml:ceilometer_loglevel: INFO</b>. You can
+                  change the ceilometer_loglevel in <b>roles/_CEI-CMN/defaults/main.yml</b> for all
+                  components during deployment or after deployment. You can also change log level
+                  for <b>ceilometer-expirer</b> only by changing
+                    <b>roles/CEI-EXP/templates/expirer-logging.conf.j2:level: DEBUG</b>
+                  <p>For post deployment log level changes, please re-run the following from
+                    deployer node:
+                    <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p></entry>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>table</p>
     </section>
     <section id="kibana">
       <title>Kibana Configuration</title>
@@ -345,15 +524,15 @@
         <li>Log in to the Operations Console GUI</li>
         <li>Navigate to the Monitoring | Alarm Definitions page</li>
         <li>Find the alarm definitions that are applied to the various hosts. See the <xref
-          href="alarms.dita#alarmdefinitions/logging">Alarm Definitions List</xref> for the Centralized Logging Alarm
-          Definitions.</li>
+            href="alarms.dita#alarmdefinitions/logging">Alarm Definitions List</xref> for the
+          Centralized Logging Alarm Definitions.</li>
         <li>Navigate to the Monitoring | Alarm page</li>
         <li>Find the alarm definitions applied to the various hosts. These should match the alarm
           definitions in the <xref href="alarms.dita#alarmdefinitions/logging">Logging Alarm
             Definitions list</xref> .</li>
         <li>See if the alarm is green (good) or is in a bad state. If any are in a bad state, see
-          the possible actions to perform in the <xref href="alarms.dita#alarmdefinitions/logging">Alarms Definitions
-            list</xref>.</li>
+          the possible actions to perform in the <xref href="alarms.dita#alarmdefinitions/logging"
+            >Alarms Definitions list</xref>.</li>
       </ol>
       <p>You can use this filtering technique in the "Alarms" page to look for the following:</p>
       <ol>
