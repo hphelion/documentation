@@ -361,52 +361,100 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
 ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p></entry>
               </row>
               <row>
-                <entry/>
-                <entry/>
-                <entry/>
+                <entry>Ceph</entry>
+                <entry>ceph-mon
+                <p>ceph-osd</p></entry>
+                <entry>INFO</entry>
+                <entry>Ceph log levels are configurable both during initial deployment and after the
+                    deployment. Use the following variables (default is <b>INFO</b>,
+                    case-sensitive):
+                  <codeblock>ansible-playbook -i hosts/verb_hosts site.yml -e "ceph_mon_log_level=DEBUG,
+                      ceph_osd_log_level=DEBUG"</codeblock>
+                  <p>You can also use <b>-e "helion_loglevel=DEBUG"</b> to specify the log level,
+                    which sets the log level across multiple HLM services (this includes both OSD
+                    and MON). However the former two take higher precedence than
+                      <b>helion_loglevel</b> variable. The same variables can be used while running
+                      <b>ceph-deploy.yml</b> play also.</p>
+                </entry>
+              </row>
+              <row>
+                <entry morerows="2">Freezer</entry>
+                <entry>freezer-agent</entry>
+                <entry>INFO</entry>
+                <entry>Currently the freezer-agent does not support debug logs. INFO level is the
+                  default one used for this component.</entry>
+              </row>
+              <row>
+                <entry>freezer-api</entry>
+                <entry>INFO</entry>
+                <entry>Currently the freezer-api does not support debug logs. INFO level is the
+                  default one used for this component.</entry>
                 <entry/>
               </row>
               <row>
-                <entry/>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
+                <entry>freezer-scheduler</entry>
+                <entry>INFO</entry>
+                <entry>Currently the freezer-api does not support debug logs. INFO level is the
+                  default one used for this component.</entry>
                 <entry/>
               </row>
               <row>
+                <entry>Glance</entry>
                 <entry/>
-                <entry/>
-                <entry/>
-                <entry/>
+                <entry>INFO</entry>
+                <entry>Glance exposes logging configuration templates at deployer under
+                  <codeph>~/helion/my_cloud/config/glance/ glance-[api,registry]-logging.conf</codeph>. After the
+                  needed changes are done (for example logging level changes to local or centralized
+                  logging) glance-reconfigure playbook must be ran targeting relevant nodes to
+                  deploy the configuration change.
+                  <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml</codeblock></entry>
               </row>
               <row>
+                <entry>Heat</entry>
                 <entry/>
-                <entry/>
-                <entry/>
-                <entry/>
+                <entry>INFO</entry>
+                <entry>There are logging config files in my_cloud/config/heat directory[
+                  api-cfn-logging.conf.j2 api-cloudwatch-logging.conf.j2 api-logging.conf.j2
+                  engine-logging.conf.j2 ] . User can edit these files and set the desired log level
+                  for both local as well as centralized logging. After making the changes run
+                  heat-reconfigure playbook from the deployer to apply the changes.
+                  <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts heat-reconfigure.yml</codeblock></entry>
               </row>
               <row>
-                <entry/>
-                <entry/>
-                <entry/>
-                <entry/>
+                <entry>Keystone</entry>
+                <entry>key-api</entry>
+                <entry>INFO</entry>
+                <entry>To configure logging levels, see <xref href="../identity/identity_reconfigure.dita">Identity Service Reconfigure</xref></entry>
               </row>
               <row>
+                <entry>Monasca</entry>
                 <entry/>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-                <entry/>
+                <entry>WARN</entry>
+                <entry>
+                  <p>All of the Monasca logging is defaulted to WARN. To change the level for all of
+                    our services you can run:</p>
+                  <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts monasca-reconfigure.yml -e "monasca_log_level=DEBUG"
+ansible-playbook -i hosts/verb_hosts monasca-agent-reconfigure.yml -e "monasca_log_level=DEBUG"</codeblock>
+                  <p>If you want to change per a service each of the following var files have that
+                    variable that you can set to the desired level:</p>
+                  <ul>
+                    <li>roles/monasca-persister/defaults/main.yml</li>
+                    <li>roles/zookeeper/defaults/main.yml</li>
+                    <li>roles/storm/defaults/main.yml</li>
+                    <li>roles/monasca-notification/defaults/main.yml</li>
+                    <li>roles/monasca-api/defaults/main.yml</li>
+                    <li>roles/kafka/defaults/main.yml</li>
+                    <li>roles/monasca-agent/defaults/main.yml (This one you will need to add the
+                      variable)</li>
+                  </ul>
+                  <p>You will then need to run:</p>
+                  <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts monasca-reconfigure.yml -e "monasca_log_level=DEBUG"
+ansible-playbook -i hosts/verb_hosts monasca-agent-reconfigure.yml -e "monasca_log_level=DEBUG"</codeblock>
+                </entry>
               </row>
               <row>
                 <entry/>
