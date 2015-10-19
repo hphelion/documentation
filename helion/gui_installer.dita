@@ -94,6 +94,12 @@
           <li><xref href="using_git.dita">Using Git for Configuration Management</xref></li>
         </ul>
       </p>
+      <note>Because the GUI installer is disabled after deployment finishes, either via the GUI or
+        via the command line, if you want to re-enable the GUI later but are not re-installing from
+        scratch, run these commands:
+        <codeblock>sudo a2ensite dayzero-apache.conf
+sudo systemctl start dayzero.service</codeblock>
+      </note>
     </section>
 
   </body>
