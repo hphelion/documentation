@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en" linking="none" locktitle="no">
+  <title>HP Helion</title>
+  <topicmeta>
+    <copyright>
+      <copyryear year="2015"/>
+      <copyrholder>HP Helion</copyrholder>
+    </copyright>
+    <prodinfo>
+      <prodname>HP Helion</prodname>
+      <vrmlist>
+        <vrm version="4.1.0"/>
+      </vrmlist>
+    </prodinfo>
+  </topicmeta>
+  <topicref href="home.dita"/>
+  <topicref href="helion/index.dita">
+    <topicref href="helion/technical_overview.dita" navtitle="Technical Overview" locktitle="yes"/>
+    <topicref href="helion/kilo_features.dita" navtitle="HP Helion OpenStack 2.0 Kilo Features"
+      locktitle="yes"/>
+    <topicref href="helion/input_model.dita" navtitle="HP Helion OpenStack 2.0 Input Model"
+      locktitle="yes"/>
+    <topicref href="helion/example_configs.dita" navtitle="Example Configurations" locktitle="yes"/>
+    <topicref href="helion/hardware.dita" navtitle="Hardware Requirements" locktitle="yes"/>
+    <topicref href="helion/releasenotes.dita" navtitle="Release Notes" locktitle="yes"/>
+    <topicref href="helion/faq.dita" navtitle="Frequently Asked Questions" locktitle="yes"/>
+    <topicref href="helion/eula.dita" toc="no"/>
+    <!-- INSTALLATION -->
+    <topicref href="helion/installation_overview.dita" navtitle="Installation" locktitle="yes">
+      <topicref href="helion/administration/wipe_disks.dita"
+        navtitle="Pre-Installation Disk Cleanup" locktitle="yes"/>
+      <topicref href="helion/using_git.dita" navtitle="Using Git for Configuration Management"
+        locktitle="yes"/>
+      <topicref href="helion/preinstall_checklist.dita" navtitle="Pre-Installation Checklist"
+        locktitle="yes"/>
+      <topicref href="helion/install_entryscale_kvm.dita"
+        navtitle="Installation for Helion Entry Scale Cloud
+        with KVM" locktitle="yes">
+        <topicref href="helion/configure_vsa.dita" navtitle="VSA Configuration"
+          locktitle="yes">
+          <topicref href="helion/blockstorage/vsa/vsa.dita" navtitle="VSA Configuration"
+            locktitle="yes" toc="no"/>
+        </topicref>
+        <topicref href="helion/configure_ceph.dita" navtitle="Ceph Configuration"
+          locktitle="yes"/>
+        <topicref href="helion/configure_3par.dita" navtitle="3PAR Configuration"
+          locktitle="yes"/>
+      </topicref>
+      <topicref href="helion/install_entryscale_esx.dita"
+        navtitle="Installation for Helion Entry Scale Cloud with ESX" locktitle="yes"/>
+      <topicref href="helion/install_entryscale_swift.dita"
+        navtitle="Installation for Helion Entry Scale Cloud with Swift Only" locktitle="yes"/>
+      <topicref href="helion/gui_installer.dita" navtitle="Installing via the GUI" locktitle="yes"/>
+      <topicref href="helion/gui_install_on_kvm.dita"
+        navtitle="Installing the Operating System on KVM" locktitle="yes" toc="no"/>
+      <topicref href="helion/gui_install_on_esx.dita"
+        navtitle="Installing the Operating System on ESX" locktitle="yes" toc="no"/>
+      <topicref href="helion/installation_verification.dita" navtitle="Verifying Your Installation"
+        locktitle="yes">
+        <topicref href="helion/blockstorage/verify_backend_configuration.dita"
+          navtitle="Verifying a Backend Configuration" locktitle="yes" toc="no"/>
+      </topicref>
+      <topicref href="helion/installation_troubleshooting.dita"
+        navtitle="Troubleshooting Your Installation" locktitle="yes"/>
+      <topicref href="helion/postinstall_checklist.dita" navtitle="Post-Installation Checklist"
+        locktitle="yes"/>
+    </topicref>
+
+    <!-- SECURITY -->
+    <topichead navtitle="Security">
+      <topicref href="helion/security/tls.dita" navtitle="Enabling TLS for Public Endpoints"
+        locktitle="yes"/>
+      <topicref href="helion/security/secure_network_config.dita"
+        navtitle="Configuring Your Network Securely" locktitle="yes"/>
+      <topicref href="helion/security/encrypted_storage.dita"
+        navtitle="Encryption of Passwords and Sensitive Data" locktitle="yes"/>
+      <topicref href="helion/security/using_apparmor.dita"
+        navtitle="Refining Access Control with AppArmor" locktitle="yes"/>
+    </topichead>
+
+    <!-- ADMINISTRATION -->
+    <topichead navtitle="Administration">
+      <topichead navtitle="Initial Configuration">
+        <topicref href="helion/administration/create_extnet.dita"
+          navtitle="Creating an External Network" locktitle="yes"/>
+        <topicref href="helion/administration/upload_image.dita"
+          navtitle="Uploading an Image for Use" locktitle="yes"/>
+      </topichead>
+      <topicref href="helion/administration/configure_monitoring.dita"
+        navtitle="Configuring Monitoring" locktitle="yes"/>
+
+      <!-- keystone identity -->
+      <topicref href="helion/identity/identity_overview.dita" navtitle="Identity Service"
+        locktitle="yes">
+        <topicref href="helion/identity/identity_roles.dita"
+          navtitle="Creating Domains, Projects, Users, Groups, and Roles" locktitle="yes"> </topicref>
+        <topicref href="helion/identity/identity_init.dita"
+          navtitle="Configuring the Identity Service" locktitle="yes"> </topicref>
+        <topicref href="helion/identity/identity_admin.dita"
+          navtitle="Administering the Identity Service" locktitle="yes"> </topicref>
+        <topicref href="helion/identity/identity_reconfigure.dita"
+          navtitle="Reconfiguring the Identity Service" locktitle="yes"/>
+        <topicref href="helion/identity/identity_ldap.dita"
+          navtitle="Integrating LDAP Integration with the Identity Service" locktitle="yes"> </topicref>
+        <topicref href="helion/horizon/horizon_configure_v3.dita"
+          navtitle="Configuring Horizon for Keystone v3" locktitle="yes" toc="yes"/>
+        <topicref href="helion/identity/identity_limitations.dita" navtitle="Notes and Limitations"
+          locktitle="yes"> </topicref>
+      </topicref>
+
+      <!-- Object Storage -->
+      <topicref href="helion/objectstorage/objectstorage_overview.dita"
+        navtitle="Object Storage Service" locktitle="yes">
+        <topicref href="helion/objectstorage/input_cloud_model.dita" toc="yes"
+          navtitle="Modifying Example Configurations for Object Storage" locktitle="yes">
+          <topicref href="helion/objectstorage/allocate_pac.dita"/>
+          <topicref href="helion/objectstorage/allocating_server.dita"
+            navtitle="Allocating Object Server"/>
+          <topicref href="helion/objectstorage/creating_roles_swift_nodes.dita"/>
+          <topicref href="helion/objectstorage/allocating_disk_drives.dita"
+            navtitle="Allocating Disk Drives">
+            <topicref href="helion/objectstorage/label_on_partition.dita" toc="yes"
+              navtitle="How to Verify if a Partition Labelled" locktitle="yes"/>
+            <topicref href="helion/objectstorage/filesystem_label.dita" toc="yes"
+              navtitle="How to Verify if a Filesystem Label" locktitle="yes"/>
+          </topicref>
+          <topicref href="helion/objectstorage/creating_pac_cluster.dita"/>
+          <topicref href="helion/objectstorage/creating_object_server_resource.dita"/>
+          <topicref href="helion/objectstorage/allocating_network.dita"/>
+          <topicref href="helion/objectstorage/ring_specifications.dita"/>
+          <topicref href="helion/objectstorage/storage_policies.dita"/>
+        </topicref>
+        <topicref href="helion/objectstorage/ring_management.dita">
+          <topicref href="helion/objectstorage/rebalanced_explained.dita"/>
+          <topicref href="helion/objectstorage/setting_up_weight_attributes_ring_changes.dita"/>
+          <topicref href="helion/objectstorage/playbook_linked_ring_management.dita"/>
+          <topicref href="helion/objectstorage/safe_rebalance_deploy_ring.dita"/>
+          <topicref href="helion/objectstorage/input_model_change_existing_rings.dita"/>
+          <topicref href="helion/objectstorage/add_new_storage_policy.dita"/>
+          <topicref href="helion/objectstorage/how_to_change_min_part_time.dita"/>
+        </topicref>
+        <topicref href="helion/objectstorage/modify_swift_service_config_files.dita"/>
+      </topicref>
+
+      <!-- Cinder -->
+      <topicref href="helion/blockstorage/blockstorage_overview.dita"
+        navtitle="Block Storage Service" locktitle="yes">
+        <topicref href="helion/blockstorage/ceph/ceph_overview.dita" navtitle="Ceph Overview"
+          locktitle="yes">
+          <topicref href="helion/blockstorage/ceph/upgrade_ceph_cluster.dita"/>
+          <topicref href="helion/blockstorage/ceph/using_erasure_code_pool.dita"/>
+        </topicref>
+      </topicref>
+
+      <!-- Neutron -->
+      <topicref href="helion/networking/networking_overview.dita" navtitle="Networking Service"
+        locktitle="yes">
+        <topicref href="helion/networking/lbaas_admin.dita"
+          navtitle="Configuring Load Balancing as a Service (LBaaS)" locktitle="yes"/>
+        <topicref href="helion/networking/multinetwork.dita" locktitle="yes">
+          <topicmeta>
+            <navtitle>Multiple External Networks</navtitle>
+          </topicmeta>
+        </topicref>
+      </topicref>
+      <!-- END NEUTRON -->
+    </topichead>
+    <!-- END ADMINISTRATION -->
+
+    <!-- OPERATIONS   left off here 653 pm 10-6 -->
+    <topichead navtitle="Operations">
+      <topicref href="helion/operations/accessing_horizon.dita"
+        navtitle="Accessing the Horizon Dashboard" locktitle="yes"/>
+      <topicref href="helion/operations/opsconsole_overview.dita"
+        navtitle="Accessing the Operations Console" locktitle="yes"/>
+
+      <topicref href="start.stop.check" toc="no">
+        <topicref href="checking.object.storage" toc="no"/>
+      </topicref>
+      <topicref href="helion/operations/add_node.dita"/>
+      <topicref href="helion/operations/repair_node.dita"/>
+      <topicref href="helion/operations/remove_node.dita"/>
+      <topicref href="helion/operations/replace_controller.dita"/>
+      <topicref href="helion/blockstorage/vsa/remove_node.dita"/>
+      <topicref href="helion/blockstorage/vsa/vsa_create_multiple_clusters.dita"/>
+      <topicref href="helion/blockstorage/ceph/adding_new_osd_node.dita"/>
+      <topicref href="helion/blockstorage/ceph/remove_osd_node.dita"/>
+      <topicref href="helion/blockstorage/ceph/adding_new_monitor_node.dita"/>
+      <topicref href="helion/blockstorage/ceph/remove_monitor_node.dita"/>
+      <topicref href="helion/blockstorage/singleton_service_cinder.dita"/>
+      <topicref href="helion/blockstorage/brocade_zone_manager.dita"
+        navtitle="Configuring Brocade Zone Manager" locktitle="yes"/>
+      <!-- BURA -->
+      <topicref href="helion/adding_moonshot_nodes.dita"/>
+      <topicref href="helion/objectstorage/add_new_node.dita"/>
+      <topicref href="helion/objectstorage/replacing_drives_swift_node.dita"/>
+      <topicref href="helion/objectstorage/replacing_swift_node.dita"/>
+      <topicref href="helion/objectstorage/removing_node.dita"/>
+      <topicref href="helion/objectstorage/add_new_storage_policy.dita"
+        navtitle="Adding a New Storage Policy - Swift" locktitle="yes"/>
+      <topicref href="helion/bura/bura_overview.dita" navtitle="Backing up and Restoring Your Data">
+        <topicref href="helion/bura/backup.dita"/>
+        <topicref href="helion/bura/restore.dita"/>
+      </topicref>
+      <topicref href="helion/bura/cloud_control_plane_backup.dita" type="topic" format="dita"
+        scope="local"/>
+      <!-- OBJECT STORAGE -->
+      <topicref href="helion/objectstorage/check_objectstorage_operation.dita">
+        <topicref href="helion/objectstorage/validating_swift_recon.dita"/>
+        <topicref href="helion/objectstorage/lm_scan_metering.dita"/>
+        <topicref href="helion/objectstorage/utility.dita"/>
+      </topicref>
+      <!-- reporting = metering = ceilomter -->
+      <topicref href="helion/metering/metering_overview.dita" navtitle="Metering Service"
+        locktitle="yes">
+        <topicref href="helion/metering/metering_components.dita"
+          navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
+        <topicref href="helion/metering/metering_metertypes.dita" navtitle="Available Meter Types"
+          locktitle="yes"/>
+        <topicref href="helion/metering/metering_rbac.dita"
+          navtitle="Setting Role-based Access Control" locktitle="yes"/>
+        <topicref href="helion/metering/metering_bestpractice.dita"
+          navtitle="Optimizing the Metering Service" locktitle="yes"/>
+      </topicref>
+      <topicref href="helion/operations/monitoring_service.dita" navtitle="Monitoring Service"
+        locktitle="yes">
+        <topicref href="helion/operations/alarms.dita" navtitle="Service Alarm Definitions"
+          locktitle="yes"/>
+      </topicref>
+      <topicref href="helion/operations/centralized_logging.dita"
+        navtitle="Centralized Logging Service" locktitle="yes">
+        <topicref href="helion/operations/logging_settings.dita" navtitle="Logging Settings"
+          locktitle="yes"/>
+      </topicref>
+
+      <!-- OPS CONSOLE PAGES (will be hidden from the TOC) -->
+      <topicref href="helion/operations/opsconsole/dashboard.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/logging.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/alarm_definitions.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/alarm_explorer.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/notification_methods.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/metric_monitoring.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/compute_summary.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/compute_hosts.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/compute_instances.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/networking_summary.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/storage_summary.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/hdp_summary.dita" toc="no"/>
+
+      <!-- TROUBLESHOOTING -->
+      <topichead navtitle="Troubleshooting">
+        <topicref href="helion/objectstorage/troubleshooting.dita"
+          navtitle="Object Storage Troubleshooting" locktitle="yes">
+          <topicref href="helion/objectstorage/deploy_fails_with_msdos_disks.dita"/>
+          <topicref
+            href="helion/objectstorage/examine_details_planned_ring_changes_prior_deploy.dita"/>
+          <topicref href="helion/objectstorage/interpreting_swift_validate_input_model.dita"/>
+          <topicref href="helion/objectstorage/first_proxy_server.dita"/>
+          <topicref href="helion/objectstorage/label_on_partition.dita"/>
+          <topicref href="helion/objectstorage/filesystem_label.dita"/>
+          <topicref href="helion/objectstorage/recovering_builder_file.dita"/>
+          <topicref href="helion/objectstorage/restart_deploy_from_scratch.dita"/>
+        </topicref>
+        <topicref href="helion/metering/metering_troubleshoot.dita"
+          navtitle="Troubleshooting the Ceilometer Metering Service" locktitle="yes"/>
+      </topichead>
+    </topichead>
+    <!-- END OPERATIONS -->
+    <!-- USER GUIDE -->
+    <topichead navtitle="User Guide">
+      <!-- horizon -->
+      <topicref href="helion/horizon/horizon_overview.dita" navtitle="Using the Horizon Dashboard"
+        locktitle="yes" toc="yes"/>
+      <topicref href="helion/userguide/create_network.dita" navtitle="Creating a Private Network"
+        locktitle="yes"/>
+      <topicref href="helion/userguide/lbaas.dita"
+        navtitle="Using Load Balancing as a Service (LBaaS)" locktitle="yes"/>
+      <!--  LBaaS, FWaaS, VPNaaS -->
+      <topicref href="helion/networking/fwaas.dita" locktitle="yes">
+        <topicmeta>
+          <navtitle>Using Firewall as a Service (FWaaS)</navtitle>
+        </topicmeta>
+      </topicref>
+      <topicref href="helion/networking/vpnaas.dita" locktitle="yes">
+        <topicmeta>
+          <navtitle>Using VPN as a Service (VPNaaS)</navtitle>
+        </topicmeta>
+      </topicref>
+      <topicref href="helion/esx/eon_service.dita">
+        <topicref href="helion/esx/esx_host_commissioning.dita"/>
+        <topicref href="helion/esx/enable_new_cluster_compute_resource.dita"/>
+        <topicref href="helion/esx/remove_existing_cluster_compute_resource_pool.dita"/>
+        <topicref href="helion/esx/removing_esx_host_from_cluster.dita"/>
+        <topicref href="helion/esx/logging.dita"/>
+      </topicref>
+      <topicref href="helion/esx/scale_config_changes.dita"/>
+      <!-- END HORIZON -->
+    </topichead>
+    <!-- END USER GUIDE -->
+
+    <!-- CONCEPTS -->
+    <topichead navtitle="Conceptual Overviews">
+      <topicref href="helion/high_availability.dita"/>
+    </topichead>
+  </topicref>
+</map>
