@@ -87,7 +87,7 @@
     <section>
       <title>Deploy the VRSvApp</title>
       <p>The VRSvApp you obtained from DCN must be installed. For more information, see <xref
-          href="carrier-grade-install-vsvapp.dita#topic10581">Deploying the VRS vApp</xref>. </p>
+          href="CGH-2-install-vsvapp.dita#topic10581">Deploying the VRS vApp</xref></p>
     </section>
     <section id="vsd">
       <title>Verify VSD is running</title>
