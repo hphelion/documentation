@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Post-Alpha Release Build 22:
+    Deploying the Networking Role Patch</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>After launching the <codeph>hdeploy</codeph> command,, deploy the following patch to update
+      the nuage role on kenobi-node-configuration.. </p>
+    <p>
+      <ol id="ol_pn3_141_mt">
+        <li>Download the <codeph>knc-nuage-role.patch</codeph> file.</li>
+        <li>Copy the patch file to the <codeph>~/</codeph> directroy on the HLM host. </li>
+        <li> Change to the <codeph>kenobi-configuration-processor</codeph> directory:<p>
+            <codeblock>cd ~/kenobi-configuration-processor</codeblock>
+          </p></li>
+        <li>Execute the following command to deploy the patch:
+          <codeblock>patch -p1 &lt; ../knc-nuage-role.patch </codeblock></li>
+        <li>Execute the following command to integrate the patch into the installation environment:<p>
+            <codeblock>cd ~/cg-hlm/hlm-build
+./hlm_prepare-env.sh</codeblock>
+          </p></li>
+      </ol>
+    </p>
+    <p>When the <codeph>hcfgproc</codeph> command is executed, the updated configuration file will
+      be used. </p>
+    <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/role">the KVM + ESX
+        installation</xref>.</p>
+    </body>
+</topic>

@@ -531,7 +531,7 @@ The cloud &lt;cloudname> was generated successfully.
     </section>
     <section>
       <title>Deploy the Networking Patch</title>
-      <p>After launching the <codeph>hdeploy</codeph> command,, deploy the a networking patch. </p>
+      <p>After launching the <codeph>hdeploy</codeph> command, deploy the networking patch. </p>
       <p>For more information, see <xref href="carrier-grade-install-network-patch.dita#topic10581"
           >Deploy the Networking Patch</xref>.  </p>
     </section>

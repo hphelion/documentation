@@ -285,10 +285,10 @@ StrictHostKeyChecking no </codeblock></li>
                                                   <entry><b>Files within the folder</b></entry>
                                                 </row>
                                                 <row>
-                                                  <entry> Nuage_restproxy</entry>
+                                                  <entry> Nuage_patch</entry>
                                                   <entry>
-                                                  <p>nuage_restproxy.py.diff.gz</p>
-                                                  <p>nuage_restproxy.txt</p>
+                                                  <p>knc-nuage-role.patch</p>
+                                                  <p>knc-nuage-role.txt</p>
                                                   <p> </p>
                                                   </entry>
                                                 </row>
@@ -296,8 +296,8 @@ StrictHostKeyChecking no </codeblock></li>
                                 </tgroup>
                         </table>
                 </section>
-                <section id="debian"><title>Download required Debian packages</title>Download the following
-                        files from the LR4 Jump Server (15.215.66.57) in the
+                <section id="debian"><title>Download required Debian packages</title>Download the
+                        following files from the LR4 Jump Server (15.215.66.57) in the
                                 <codeph>E:\Builds\cg-hos-2-0-builds\build15\HPCSS</codeph>
                                 directory:<ul id="ul_ggl_glr_st">
                                 <li>
@@ -305,6 +305,16 @@ StrictHostKeyChecking no </codeblock></li>
                                 </li>
                                 <li>
                                         <p><codeph>python-setproctitle_1.1.8-1_amd64.deb</codeph></p>
+                                </li>
+                        </ul><p>Download the following files from the LR4 Jump Server (15.215.66.57)
+                                in the
+                                        <codeph>E:\Builds\cg-hos-2-0-builds\build22\Nuage_Debians</codeph>
+                                directory:</p><ul id="ul_lt4_v3s_st">
+                                <li>
+                                        <p><codeph>nuage-neutron_1722-nuage-kilo_all.deb</codeph></p>
+                                </li>
+                                <li>
+                                        <p><codeph>python-nuagenetlib_0.0.-1717-kilo_all.deb</codeph></p>
                                 </li>
                         </ul></section>
                 <section id="download-esx">
@@ -320,8 +330,9 @@ StrictHostKeyChecking no </codeblock></li>
                         <p><b>DCN components</b></p>
                         <p>Download all required DCN packages needed to deploy the DCN environment.
                                 The current supported version is DCN version 3.2 R3.</p>
-                        <p>The files are available on the  from the LR4 FTC jump server
-                                (15.215.66.57) in the specified directories.</p>
+                        <p>The files are available on the from the LR4 FTC jump server
+                                (15.215.66.57) in the <codeph>E:\DCN3.2R4release</codeph>
+                                directory.</p>
                         <table id="table_jl2_lyj_nt">
                                 <tgroup cols="2">
                                         <colspec colnum="1" colname="col2"/>
@@ -343,8 +354,6 @@ StrictHostKeyChecking no </codeblock></li>
                                                   <p> nuage-python-openvswitch_3.2.3-102_all.deb</p>
                                                   <p> python-nuagenetlib_3.2.3-101-kilo_all.deb</p>
                                                   <p> vsc_singledisk.qcow2</p>
-                                                  <p>Note: <b>Jump server location path:
-                                                  E:\DCN\DCN3.2R3\DCN</b></p>
                                                   </entry>
                                                   <entry>
                                                   <p>/root/cg/dcn</p>
@@ -356,28 +365,19 @@ StrictHostKeyChecking no </codeblock></li>
                                                   <entry>
                                                   <p>VSD-3.2.3_105-hp.qcow2</p>
                                                   <p>vsd.xml</p>
-                                                  <p> </p>
-                                                  <p>Note: <b>Jump server location path:
-                                                  E:\DCN\DCN3.2R3\vsd</b></p>
                                                   </entry>
                                                   <entry>
                                                   <p>/var/lib/libvirt/images</p>
-                                                  <p> </p>
-                                                  <p> </p>
                                                   </entry>
                                                 </row>
                                                 <row>
                                                   <entry>
                                                   <p>VRS_3.2.3-104_08282015.ovf</p>
                                                   <p>VRS_3.2.3-104_08282015-disk1.vmdk</p>
-                                                  <p> </p>
-                                                  <p>Note: <b>Jump server location path:
-                                                  </b>E:\DCN\DCN3.2R3\VRS-vAPP\Nuage-VRS-3.2.3-104-vmware\Nuage-VRS-3.2.3-104-vmware</p>
                                                   </entry>
                                                   <entry>
                                                   <p>Any location on the KVM host. Will be copied
                                                   over to VSD VM.</p>
-                                                  <p> </p>
                                                   </entry>
                                                 </row>
                                         </tbody>
