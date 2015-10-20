@@ -307,34 +307,114 @@
     
     <section id="block_storage_vsa">
       <title>Block Storage with StoreVirtual VSA</title>
+      <p>Highly available Cinder block storage volumes are provided by the network 
+        RAID 10 implementation in the HP StoreVirtual VSA software. You can deploy 
+        the VSA nodes in three node cluster and specify Network RAID 10 protection 
+        for Cinder volumes.</p>
+      <p>The underlying SAN/iQ operating system of the StoreVirtual VSA ensures that 
+        the two-way replication maintains two mirrored copies of data for each volume.</p>
+      <p>This Network RAID 10 capability ensures that failure of any single server 
+        does not cause data loss, and maintains data access to the clients.</p>
+      <p>Furthermore, each of the VSA nodes of the cluster can be strategically deployed 
+        in different zones of your data center for maximum redundancy and resiliency. 
+        For more information on how to deploy VSA nodes on desired target servers, 
+        refer to the Deploy VSA document.</p>
+      <p><image href="../media/ha/ha-block-storage.png" id="BlockStorage"/></p>
     </section>
     
     <section id="cinder_availability_zones">
       <title>Cinder Availability Zones</title>
+      <p>Cinder availability zones are not supported for general consumption 
+        in the current release.</p>
     </section>
     
     <section id="object_storage_swift">
       <title>Object Storage with Swift</title>
+      <p>You can configure your Swift Rings by specifying a target zone for each 
+        drive that is added to the ring. Learn more about configuring zones for 
+        various drives using the Ringos tool here. Please refer to the Ringos 
+        document. </p>
+      <p><image href="../media/ha/ha-swift.png" id="HA_Swift"/></p>
     </section>
     
     <section id="highly_available_app_workloads">
       <title>Highly Available Cloud Applications and Workloads</title>
-    </section>
+      
+      
+      
+      
+      <p>Projects writing applications to be deployed in the cloud must be aware 
+        of the cloud architecture and potential points of failure and architect 
+        their applications accordingly for high availability.</p>
+      <p>Some guidelines for consideration:</p>
+      <ol>
+        <li>Assume intermittent failures and plan for retries
+          <ul>
+            <li><b>OpenStack Service APIs</b>: invocations can fail - you should 
+              carefully evaluate the response of each invocation, and retry in 
+              case of failures.</li>
+            <li><b>Compute</b>: VMs can die - monitor and restart them</li>
+            <li><b>Network</b>: Network calls can fail - retry should be successful</li>
+            <li><b>Storage</b>: Storage connection can hiccup - retry should be successful</li>
+          </ul>
+        </li>
+        <li>Build redundancy into your application tiers
+          <ul>
+            <li>
+              <ul>
+                <li>Replicate VMs containing stateless services such as Web application 
+                  tier or Web service API tier and put them behind load balancers 
+                  (you must implement your own HA Proxy type load balancer in your 
+                  application VMs until HP Helion OpenStack delivers the LBaaS service).
+                </li>
+                <li>Boot the replicated VMs into different Nova availability zones.</li>
+                <li>If your VM stores state information on its local disk (Ephemeral Storage), 
+                  and you cannot afford to lose it, then boot the VM off a Cinder volume.</li>
+                <li>Take periodic snapshots of the VM which will back it up to Swift 
+                  through Glance.</li>
+                <li>Your data on ephemeral may get corrupted (but not your backup 
+                  data in Swift and not your data on Cinder volumes).</li>
+                <li>Take regular snapshots of Cinder volumes and also back up 
+                  Cinder volumes or your data exports into Swift.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Instead of rolling your own highly available stateful services, use 
+          readily available HP Helion OpenStack platform services such as:
+          <ul>
+            <li>Database as a Service (DBaaS)</li>
+            <li>DNS as a Service(DNSaaS)</li>
+            <li>Messaging as a Service (MSGaaS)</li>
+          </ul>
+        </li>
+      </ol>
+     </section>
     
     <section id="what_not_ha">
       <title>What is not Highly Available?</title>
       
       <sectiondiv>
         <p id="deployer"><b>Deployer</b></p>
+        <p>The deployer in Helion Openstack is not highly-available. 
+          The deployer state/data are all maintained in filesystem and are backed 
+          up by the Freezer backup. In case a deployer node failure, the deployer 
+          state/data can be recovered from the backup.</p>
       </sectiondiv>
       
       <sectiondiv>
         <p id="control_plane"><b>Control Plane</b></p>
+        <p>High availability is not supported for Stateful L3 Services 
+          (Source-NAT), and Network Services (LBaaS, VPNaaS, FWaaS)</p>
       </sectiondiv>
     </section>
     
     <section id="more_information">
       <title>More Information</title>
+      <ul>
+        <li><xref scope="external" href="http://docs.openstack.org/high-availability-guide/content/ch-intro.html">OpenStack High-availability Guide</xref></li>
+        <li><xref scope="external href="http://12factor.net/">12-Factor Apps</xref></li>
+      </ul>
     </section>
   </body>
 </topic>
