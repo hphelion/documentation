@@ -25,6 +25,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <stentry>1. <b><keyword keyref="quickStartHPcloudStep1"/></b>
      <p>2. <xref href="CFR_step_2.dita#concept_ikh_xgz_st" id="quickStartHPcloudStep2_"><keyword
         keyref="quickStartHPcloudStep2"/></xref></p><p>3. <xref
@@ -81,6 +82,9 @@
       href="CFR_step_5.dita#concept_cw2_thz_st" id="quickStartHPcloudStep5_" format="dita"><keyword
        keyref="quickStartHPcloudStep5" id="quickStartHPcloudStep5"/></xref></stentry>
 >>>>>>> 8f1d23b... Testing
+=======
+    <stentry>1. <b><keyword keyref="quickStartHPcloudStep1"/></b><p>2. </p><p>3. </p><p>4. </p>5. </stentry>
+>>>>>>> 28b0e41... Testing...and why are things not building after a push?
     <stentry><b>Registering for a <keyword keyref="pubCloudShort"/> Account</b><note type="tip">Keep
       your username and password handy. You will need them during
       installation.</note><p>Registration allows you to obtain <xref
