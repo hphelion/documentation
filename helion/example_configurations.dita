@@ -56,11 +56,11 @@
     <section id="example_configs"><title><i>1.0</i> HP Helion OpenStack Example
         Configurations</title>
       <p>This section briefly describes the various example configuration and their capabilities. It
-        also describes in detail (for one of the examples, entry-scale-kvm-vsa), how you may adapt
-        the input model to work in your environment.</p>
+        also describes in detail, for the entry-scale-kvm-vsa example, how you may adapt the input
+        model to work in your environment.</p>
       <p>HP Helion OpenStack 2.0 ships with two classes of sample cloud models: examples and
         tech-preview. The models in the examples directory have been qualified by our Quality
-        Engineering team, whilst the tech-preview models are more experimental.</p>
+        Engineering team, while the tech-preview models are more experimental.</p>
       <p>The following pre-qualified examples are shipped with HP Helion OpenStack 2.0:</p>
       <ul>
         <li>Entry-scale KVM with VSA model (entry-scale-kvm-vsa)</li>
