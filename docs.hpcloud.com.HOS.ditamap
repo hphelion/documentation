@@ -194,32 +194,43 @@
 
       <!-- ADDING / REMOVING / REPAIRING NODES -->
 
-      <!-- COMPUTE -->
-      <topicref href="helion/operations/add_node.dita"/>
-      <topicref href="helion/operations/repair_node.dita"/>
-      <topicref href="helion/operations/remove_node.dita"/>
-      <topicref href="helion/operations/replace_controller.dita"/>
-      <topicref href="helion/administration/adding_moonshot_nodes.dita"/>
+      <!-- node maintenance -->
+      <topichead navtitle="Node Maintenance">
+        <!-- COMPUTE -->
+        <topicref href="helion/operations/add_node.dita"/>
+        <topicref href="helion/operations/repair_node.dita"/>
+        <topicref href="helion/operations/remove_node.dita"/>
+        <topicref href="helion/operations/replace_controller.dita"/>
+        <topicref href="helion/administration/adding_moonshot_nodes.dita"/>
 
+        <!-- BLOCK STORAGE -->
+        <topicref href="helion/blockstorage/vsa/remove_node.dita"/>
+
+        <topicref href="helion/blockstorage/ceph/adding_new_osd_node.dita"/>
+        <topicref href="helion/blockstorage/ceph/remove_osd_node.dita"/>
+        <topicref href="helion/blockstorage/ceph/adding_new_monitor_node.dita"/>
+        <topicref href="helion/blockstorage/ceph/remove_monitor_node.dita"/>
+
+        <!-- OBJECT STORAGE -->
+        <topicref href="helion/objectstorage/add_new_node.dita"/>
+        <topicref href="helion/objectstorage/add_new_pac_node.dita"/>
+        <topicref href="helion/objectstorage/replacing_drives_swift_node.dita"/>
+        <topicref href="helion/objectstorage/replacing_swift_node.dita"/>
+        <topicref href="helion/objectstorage/removing_node.dita"/>
+
+      </topichead>
+      <!-- end node maintenance -->
       <!-- BLOCK STORAGE -->
-      <topicref href="helion/blockstorage/vsa/remove_node.dita"/>
       <topicref href="helion/blockstorage/vsa/vsa_create_multiple_clusters.dita"/>
-      <topicref href="helion/blockstorage/ceph/adding_new_osd_node.dita"/>
-      <topicref href="helion/blockstorage/ceph/remove_osd_node.dita"/>
-      <topicref href="helion/blockstorage/ceph/adding_new_monitor_node.dita"/>
-      <topicref href="helion/blockstorage/ceph/remove_monitor_node.dita"/>
       <topicref href="helion/blockstorage/ceph/deploy_monitor_stand_alone_node.dita"/>
-      <topicref href="helion/blockstorage/ceph/defining_monitor_resource.dita"/>
-      <topicref href="helion/blockstorage/ceph/reconfigure_ceph_services.dita"/>
       <topicref href="helion/blockstorage/ceph/ceph_operation.dita"/>
       <topicref href="helion/blockstorage/singleton_service_cinder.dita"/>
+      <topicref href="helion/blockstorage/ceph/defining_monitor_resource.dita"/>
+      <topicref href="helion/blockstorage/ceph/reconfigure_ceph_services.dita"/>
+      <!-- END BLOCK STORAGE -->
 
       <!-- OBJECT STORAGE -->
-      <topicref href="helion/objectstorage/add_new_node.dita"/>
-      <topicref href="helion/objectstorage/add_new_pac_node.dita"/>
-      <topicref href="helion/objectstorage/replacing_drives_swift_node.dita"/>
-      <topicref href="helion/objectstorage/replacing_swift_node.dita"/>
-      <topicref href="helion/objectstorage/removing_node.dita"/>
+
       <topicref href="helion/objectstorage/add_new_storage_policy.dita"
         navtitle="Adding a New Storage Policy - Swift" locktitle="yes"/>
       <topicref href="helion/objectstorage/check_objectstorage_operation.dita">
