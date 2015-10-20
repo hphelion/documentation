@@ -5,18 +5,26 @@
   <body>
     <!--Needs Edit-->
     <section id="1.0_toc"><title><i>1.0</i> Contents</title>
-      <ol>
-        <li value="1.0">Contents</li>
-        <li value="2.0">HP Helion OpenStack Example Configuration 
-          <ol>
-            <li value="2.1">Entry-scale KVM with VSA model</li>
-            <li>Entry-scale ESX model</li>
-            <li>Entry-scale Swift model</li>
-            <li>Entry-scale KVM with Ceph model</li>
-            <li>Mid-scale KVM with VSA model</li>
-          </ol></li>
-        <li>Modifying the Entry-scale KVM with VSA model for your environment</li>
-      </ol>
+      <sl>
+        <sli>1.0 Contents</sli>
+        <sli>2.0 HP Helion OpenStack Example Configuration</sli>
+        <sli outputclass="listindent">2.1 Entry-scale KVM with VSA model</sli>
+        <sli outputclass="listindent">2.2 Entry-scale ESX model</sli>
+        <sli outputclass="listindent">2.3 Entry-scale Swift model</sli>
+        <sli outputclass="listindent">2.4 Entry-scale KVM with Ceph model</sli>
+        <sli outputclass="listindent">2.5 Mid-scale KVM with VSA model</sli>
+        <sli>3.0 Modifying the Entry-scale KVM with VSA model for your environment</sli>
+        <sli outputclass="listindent">Localizing the Input Model</sli>
+        <sli outputclass="listsubindent">Networks.yml</sli>
+        <sli outputclass="listsubindent">Nic_mappings.yml</sli>
+        <sli outputclass="listsubindent">Net_interfaces.yml</sli>
+        <sli outputclass="listsubindent">Network_groups.yml</sli>
+        <sli outputclass="listsubindent">Servers.yml</sli>
+        <sli outputclass="listindent">Customizing the Input Model</sli>
+        <sli outputclass="listsubindent">Disks_controller.yml</sli>
+        <sli outputclass="listsubindent">Disks_vsa.yml</sli>
+        <sli outputclass="listsubindent">Disks_compute.yml</sli>
+      </sl>
     </section>
     <section id="2.0_example_configs"><title><i>2.0</i> HP Helion OpenStack Example
         Configurations</title>
