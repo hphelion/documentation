@@ -23,10 +23,11 @@
       proxy. </p>
     <p><b>Note:</b> If you are installing the KVM-only deployment, see <xref
         href="carrier-grade-install-kvm.dita#topic10581">Installing the KVM Deployment</xref>.</p>
-    <section id="prereqs"><p>Before starting the HP Helion OpenStack Carrier Grade installation, the
-        VMware vSphere application and HP Distributed Cloud Networking components must be fully
-        installed and functioning:</p><p><b>DCN Requirements</b></p><p>HP Helion Distributed Cloud
-        Networking (DCN) must be deployed before starting the cloud deployment. Please refer to DCN
+    <section id="prereqs"><title>HP Distributed Cloud Networking Requirements</title><p>Before
+        starting the HP Helion OpenStack Carrier Grade installation, the VMware vSphere application
+        and HP Distributed Cloud Networking components must be fully installed and
+          functioning:</p><p><b>DCN Requirements</b></p><p>HP Helion Distributed Cloud Networking
+        (DCN) must be deployed before starting the cloud deployment. Please refer to DCN
         documentation for details. </p><p>For a quick overview of the DCN components, see <xref
           href="carrier-grade-technical-overview-esx.dita#topic3485/dcn">KVM + ESX Deployment
           Architecture Reference</xref></p><p>In production cloud deployments:</p><ul
@@ -480,7 +481,7 @@ volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver</codeblock>
         <li>Save the file to <codeph>cinder_conf</codeph>.</li>
       </ol>
     </section>
-    <section><title>Deploy the the Networking Role Patch</title>Before launching the <codeph>hlm
+    <section id="nuage"><title>Deploy the Networking Role Patch</title>Before launching the <codeph>hlm
         generate</codeph> command, deploy the <xref
         href="carrier-grade-install-network-role-patch.dita#topic10581">following patch to update
         the nuage role</xref> on kenobi-node-configuration.</section>
