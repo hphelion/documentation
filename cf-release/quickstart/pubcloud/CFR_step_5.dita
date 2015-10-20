@@ -129,8 +129,8 @@ cf target -o myOrg -s mySpace</codeblock></note></li>
     <stentry>1. <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep1_"/><p>2.
        <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3. <xref
        conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4. <xref
-       conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5. <b><xref
-        conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></b></p></stentry>
+       conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p>5. <b><xref
+       conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></b></stentry>
     <stentry/>
    </strow>
   </simpletable>
