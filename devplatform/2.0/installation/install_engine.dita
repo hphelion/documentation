@@ -83,11 +83,14 @@
               
               
               <li>If you did not create a <codeph>clouds.yaml</codeph> file earlier, you must <xref
-            href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one now</xref>.</li><li>Add the following values in the <codeph>clouds.yaml</codeph> file. Most of the values can be
-          left at the default value.<note>These parameters are the same as the ones used by the
-            Messaging service, so if you installed Messaging first, you do not have to re-do this
-            step.
-            <codeblock>messaging:
+            href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one now</xref>.</li><li>Add the following values to the <codeph>clouds.yaml</codeph> file. Most of the values can be
+          left at the default value.<note>If you installed the Messaging service first, the HP
+            Helion Code Engine can use the values in the existing <codeph>messaging:</codeph>
+            section. Do not add a new section, just check to ensure that values for all listed
+            variables are
+            provided.<codeblock># header may say messaging or helionci
+# do not duplicate section
+helionci:
   deployer_key: default
   deployer_flavor: 4 
   deployer_name: &lt;service&gt;_deployer_&lt;version&gt;

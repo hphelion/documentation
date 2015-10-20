@@ -24,6 +24,8 @@
       <!--<topicref href="2.0/devplatform.related-topics.dita" locktitle="yes" navtitle="Related Documentation "/>-->
       <topicref href="2.0/installation/devplatform_install_ALS.dita"/>
       <topicref href="2.0/installation/devplatform_install_database.dita"/>
+      <topicref href="2.0/installation/install_engine.dita"
+        navtitle="Install the HP Helion Code Engine (review only)" locktitle="yes"/>
     </topichead>
     <!--uninstallation -->
     <!--  <topichead navtitle="Uninstallation"-->
