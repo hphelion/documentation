@@ -4,7 +4,7 @@
   <title>HP Helion Development Platform Installation Prerequisites</title>
   <body>
     <section id="prerequisites"> <title>General Prerequisites</title>
-      <ul>
+     <note type="important"><ul>
         <li>
           <p>The Cinder block storage service must be configured with either <xref href="../../../commercial/GA1/1.1commercial-vsa-overview.dita" >VSA</xref> or <xref href="../../../commercial/GA1/1.1commercial.install-3par.dita" >3Par</xref>.</p>
         </li>
@@ -13,16 +13,18 @@
         </li>
         <li>
           <p>The system running the installer needs to have Python 2.7. Most modern operating
-            systems include this as part of their base toolkit. This document is geared toward a
-            Linux operating system but this does not preclude the installer from running on other
-            operating systems with some minor modifications to the command-line statements.</p>
+              systems include this as part of their base toolkit. This document is geared toward a
+              Linux operating system, but this does not preclude the installer from running on other
+              operating systems with appropriate modifications to the command-line statements.</p>
         </li>
         <li>
-          <p><!--HOS installation of svc network link goes here if you didn't do it already. Geez, what were you thinking!?--></p>
+          <p>If you did not <xref
+                href="http://docs-staging.hpcloud.com/hos2.0ga/#helion/administration/create_hdp_servicenet.html"
+                format="html" scope="external">create the Service Network</xref> after installing HP
+              Helion <tm tmtype="reg">OpenStack</tm>, you <b>must</b> do so now.</p>
         </li>
-        <li><!--Check version of openstack installer before you start?--></li>
-        
-      </ul>
+        <!--<li>Check version of openstack installer before you start?</li>-->
+              </ul></note>
     </section>
     <section id="preparation">
       <title>Gather Information</title>
@@ -60,7 +62,7 @@
       <codeph>https_proxy</codeph> and <codeph>http_proxy</codeph> shell variables so that the
       installer may download required Python libraries from the <xref
         href="https://pypi.python.org/pypi" scope="external" format="html">pypi</xref> site.</p>  <ol>
-        <li><!--Get location and how to set from Matty--></li>  <li>To
+        <!--<li>Get location and how to set from Matty</li>-->  <li>To
       set the shell variables, enter the following commands:
       <codeblock>export https_proxy={ip address or url of https proxy} 
 export http_proxy={ip address or url of http proxy} </codeblock>Example:
