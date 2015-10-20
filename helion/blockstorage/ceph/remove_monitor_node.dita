@@ -3,7 +3,7 @@
 <topic id="topic_a3t_ptt_rt">
   <?oxy_custom_start type="oxy_content_highlight" color="153,255,255"?>
   <title><?oxy_custom_end?>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing Ceph Monitor Node </title>
-  <body>
+  <body><!--Needs Edit-->
     <p>You must remove the monitor node(s) based on your deployment. For example, if you have
       deployed your monitor node on the controller node, refer the procedure mentioned in <xref
         href="#topic_a3t_ptt_rt/remove-monitor-contorller" format="dita">Remove monitor

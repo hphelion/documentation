@@ -4,7 +4,7 @@
 <topic id="alarmdefinitions">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Alarm Definitions</title>
   <shortdesc>List of service-specific alarms and the recommended troubleshooting steps.</shortdesc>
-  <body>
+  <body><!--Needs Edit-->
     <p>When alarms are triggered it is helpful to review the service logs. Details on how to use the
       logging UI built into the Operations Console can be found here: <xref
         href="centralized_logging.dita#logging/interface">Logging Interface</xref></p>

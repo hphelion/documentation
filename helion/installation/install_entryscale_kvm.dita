@@ -3,7 +3,7 @@
 <topic id="install_kvm">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry Scale Cloud
     with KVM</title>
-  <body>
+  <body><!--Needs Edit-->
     <section id="about">
       <p>This page describes the common installation step requirements for each of the HP Helion
         Entry Scale Cloud models that utilize the KVM hypervisor on the Compute nodes. This includes

@@ -3,7 +3,7 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="configure_monitoring">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring the Monitoring Service</title>
-  <body>
+  <body><!--Needs Edit-->
     <section id="config">
       <p>In HP Helion OpenStack 2.0 you will have the option to specify a SMTP server for email
         notifications and a database platform you want to use for the Metrics Database. These steps

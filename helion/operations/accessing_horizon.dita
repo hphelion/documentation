@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="horizon_access">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Accessing the Horizon Dashboard</title>
-  <body>
+  <body><!--Needs Edit-->
     <p>Horizon is the web GUI for administering your cloud deployment.</p>
     <section id="horizon"><title>Accessing Horizon</title>
       <p>To determine which IP to use to access Horizon you can use this command from your

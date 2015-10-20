@@ -3,7 +3,7 @@
 <topic id="install_kvm_ceph">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for KVM Hypervisor and
     Ceph</title>
-  <body>
+  <body><!--Needs Edit-->
     <p>This page describes configuration, installation, and the integration of Ceph Block Storage
       with HP Helion<tm tmtype="reg">OpenStack</tm>2.0. After the installation of Ceph you can
       perform the OpenStack operations as documented in this page. </p>

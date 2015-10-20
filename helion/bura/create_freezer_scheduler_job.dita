@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_fpv_ltr_st">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating a Freezer Scheduler Job</title>
-  <body>
+  <body><!--Needs Edit-->
     <p><ol>
         <li>Log into any machine (example, Deployer or Controller) and create the job.</li>
         <li>Remember to source the OS variables and use the correct client_id. (The client-id

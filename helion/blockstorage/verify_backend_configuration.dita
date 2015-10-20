@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_q5q_trz_jt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Verify Backend Configuration</title>
-  <body>
+  <body><!--Needs Edit-->
     <p>This page describes the procedure to create volume type, associate volume type to backend,
       create volume, attach volume, detach volume, and delete volume. You perform this operation to
       verify the configuration of backend (VSA, Ceph, and 3PAR).</p>

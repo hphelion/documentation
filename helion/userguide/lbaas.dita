@@ -3,7 +3,7 @@
 <topic id="HP2.0LBaaS">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using Load Balancing as a Service
     (LBaaS)</title>
-  <body>
+  <body><!--Needs Edit-->
     <p><b>HP Helion OpenStack 2.0 LBaaS Configuration</b></p>
     <p> Load Balancing as a Service (LBaaS) is an advanced networking service that allows load
       balancing of multi-node environments. It provides the ability to spread requests across

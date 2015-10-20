@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="bura_overview">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Backup and Restore (BURA) Overview</title>
-  <body>
+  <body><!--Needs Edit-->
     <p>Freezer is a Backup and Restore as a Service platform that helps you automate the backup and
       restore process for your data. Freezer executes backups and restores as jobs, and executes
       these jobs independently and/or as managed sessions (multiple jobs in multiple machines

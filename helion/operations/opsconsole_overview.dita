@@ -3,7 +3,7 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="opsconsole">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Operations Console</title>
-  <body>
+  <body><!--Needs Edit-->
     <section><title>About the Operations Console</title></section>
     <section id="about">
       <p>The Operations Console (Ops Console) for HP Helion OpenStack 2.0 is designed for HP Helion

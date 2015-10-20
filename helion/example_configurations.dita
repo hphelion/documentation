@@ -3,6 +3,8 @@
 <topic id="example_configurations">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Example Configurations</title>
   <body>
+  <title>Helion <tm tmtype="reg">OpenStack</tm> 2.0: Example Configurations</title>
+  <body><!--Needs Edit-->
     <section id="2.0_example_configs"><title><i>2.0</i> HP Helion OpenStack Example
         Configurations</title>
       <p>The HP Helion OpenStack 2.0 system ships with a number of pre-qualified example

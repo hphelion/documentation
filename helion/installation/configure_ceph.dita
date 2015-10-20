@@ -3,7 +3,7 @@
 <topic id="config_ceph">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for Ceph Block Storage
     Backend</title>
-  <body>
+  <body><!--Needs Edit-->
     <p>This page describes how to configure your Ceph backend for the Helion Entry Scale Cloud with
       KVM model.</p>
     <section>

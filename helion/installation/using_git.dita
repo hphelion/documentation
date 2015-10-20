@@ -3,7 +3,7 @@
 <topic id="using_git">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using Git for Configuration
     Management</title>
-  <body>
+  <body><!--Needs Edit-->
     <p>In HP Helion OpenStack 2.0, a local git repository is used to track configuration changes and
       for the config processor to look to for configuration changes. The introduction of a git
       workflow also means that your configuration history is maintained, making rollbacks easier as

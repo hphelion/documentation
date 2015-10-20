@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_overview">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation Overview</title>
-  <body>
+  <body><!--Needs Edit-->
     <section id="about"><title>Helion OpenStack 2.0 Installation</title>
       <p>Beginning with HP Helion OpenStack 2.0 Beta 2, you have two options for installing your
         cloud. You can use a GUI that runs in your web browser or you can install via a CLI that

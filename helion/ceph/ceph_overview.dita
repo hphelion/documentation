@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_e5g_z3h_gt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceph</title>
-  <body>
+  <body><!--Needs Edit-->
     <section>
       <title>What is Ceph?</title>
       <p>Ceph is a Software Defined Storage (SDS) system which comprised of a block storage, object

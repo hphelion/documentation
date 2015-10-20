@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_am4_mjv_pt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Replacing Drives in  a Swift Node</title>
-  <body>
+  <body><!--Needs Edit-->
     <p>There are two different classes of drives in a Swift node that needs to be replaced; the OS
       disk drive (generally <b>/dev/sda</b>) and storage disk drives. There are different procedures
       for the replacement of each classes of drives to bring the node back to normal.</p>

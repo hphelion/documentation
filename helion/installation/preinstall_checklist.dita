@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="preinstall_checklist">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Pre-Installation Checklist</title>
-  <body>
+  <body><!--Needs Edit-->
     <note type="attention">The formatting of this page benefits from you printing this out and
       hand-writing notes.</note>
     <section id="bios"><title>BIOS and iLO Settings</title>
