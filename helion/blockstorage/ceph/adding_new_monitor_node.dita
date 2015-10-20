@@ -42,7 +42,7 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
           processor:<codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <li>Use the playbook below to create a deployment directory:
           <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
-        <li>Run your "verb_host" commands using the following steps: <p>
+        <li>Run the following commands: <p>
             <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts guard-deployment.yml
 ansible-playbook -i hosts/verb_hosts osconfig-run.yml
