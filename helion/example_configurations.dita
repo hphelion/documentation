@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="example_configurations">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Example Configurations</title>
-  <body>
-  <title>Helion <tm tmtype="reg">OpenStack</tm> 2.0: Example Configurations</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Example Configurations</title>
   <body><!--Needs Edit-->
     <section id="2.0_example_configs"><title><i>2.0</i> HP Helion OpenStack Example
         Configurations</title>
