@@ -13,6 +13,16 @@
     </ul>
     <section id="config">
       <title>Configuration Groups</title>
+      <p>Configuration groups are key-value collections of settings that are applied to databases when they are initialized.</p>
+      <p><b>Creating a configuration group</b></p>
+      <p>The following command creates a configuration group:</p>
+      
+    <sl>
+      <sli>2.0: THis is the 2.0 item</sli>
+      <sli outputclass="testIndent">2.1: This is the 2.1 item</sli>
+      
+      
+    </sl>
     </section>
     <section id="databases">
       <title>Databases</title>
