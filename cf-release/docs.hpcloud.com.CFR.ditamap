@@ -14,7 +14,6 @@
             <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_tools.dita"/>
             <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_sandbox.dita"/>
             <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_cluster.dita"/>
-            <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_windows.dita"/>
             <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_explore.dita"/>
             <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_terminate.dita"/>
             <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_troubleshoot.dita"/>
