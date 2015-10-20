@@ -1,8 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="hdp_servicenet">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating the HDP Service Net</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating the HP Helion Development Platform Service Net</title>
   <body>
-    <p></p>
+    <section>Many of the HP Helion Developer Platform services require the creation of a VM service
+      network in order to access the cloud control plane. This service network is a
+      VLAN-encapsulated provider network which is fully routable to the HP Helion OpenStack MGMT
+      network. <note type="important">Create this network before attempting to install the HP Helion
+        Developer Platform. </note><ol>
+        <li>SSH to the Deployer node using admin credentials.</li>
+        <li>Source the admin credentials: <codeblock>source ~/service.osrc</codeblock></li>
+        <li>Configure a Neutron network that will map to an external network for the service net. <ul>
+            <li> For simple configurations, an HLM playbook has been provided for this purpose.</li>
+            <li> For non-trivial network configurations, any additional routes should be added to
+              the subnet definition using the <codeph>--host-route</codeph> option of the neutron
+              subnet-create command. The <codeph>--host-route</codeph> option can be specified
+              multiple times if necessary.
+              <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml \
+    -e PROV_NET_TYPE=&#60;provider_network_type&#62; \
+    -e PROV_PHYS_NET=&#60;physical_network_name&#62; \
+    -e PROV_NET_VLAN_ID=&#60;vlan_id&#62; \
+    -e SVC_NET_CIDR=&#60;provider_network_cidr&#62; \
+    -e SVC_NET_DEST=&#60;svc_net_destination&#62; \
+    -e SVC_NET_GATEWAY="gateway_used_by_the_network"           </codeblock>Example:
+              Given a management network with the following attributes: <sl>
+                <sli>MGMT Net = 192.168.245.1/32</sli>
+                <sli>SVC Net = 10.55.66.0/24</sli>
+                <sli>SVC gateway to MGMT = 10.55.66.3</sli>
+                <sli>SVC Net VLAN = 100</sli>
+              </sl> the playbook command for creating the service network would be:
+              <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml -e PROV_NET_TYPE=vlan -e PROV_PHYS_NET=physnet1 -e PROV_NET_VLAN_ID=100 -e SVC_NET_CIDR=10.55.66.0/24 -e SVC_NET_DEST=192.168.245.1/32 -e SVC_NET_GATEWAY=10.55.66.3</codeblock></li>
+          </ul><note>To configure a service network for flat encapsulation, modify the service
+            network creation statement: <codeph>-e PROV_NET_TYPE flat</codeph> The subnet creation
+            statement does not change.</note></li><li>Configure your <codeph>my_cloud </codeph>definition to include the service network. This is used
+          to provide routing from management (and potentially other networks) back to the newly
+          created service net. <ol>
+            <li>Ensure that the service network is routable from the management network and that the
+              service network is defined in
+                <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph>:
+              <codeblock># Management 
+# 
+# This is the network group that will be used for 
+# management traffic within the cloud. 
+# 
+# The interface used by this group will be presented 
+# to Neutron as physnet1, and used by provider VLANS 
+# 
+# In this example this group is also used for ISCSI 
+# traffic between VMs and the VSA block storage 
+# 
+- name: MANAGEMENT 
+  # removed items 
+  routes:
+    - SERVICE 
+  # removed items 
+# Service 
+# 
+# This is the network group that will be used for in-cloud 
+# service traffic to control plane 
+# 
+- name: SERVICE</codeblock></li>
+            <li>Ensure that there is a valid definition for the service network in
+                <codeph>~/helion/my_cloud/definition/data/networks.yml</codeph>
+              <note>The <codeph>cidr</codeph> and <codeph>gateway</codeph> given must match the
+                values provided when the network was
+              created.</note><codeblock>- name: SERVICE-NET
+  vlanid: 306 
+tagged-vlan: true 
+  cidr: 10.1.6.0/24 
+  gateway-ip: 10.1.6.1 
+  network-group: SERVICE</codeblock></li>
+            <li>Ensure that this network is a member of the server-group listed in
+              ~/helion/my_cloud/definition/data/server_groups.yml:
+              <codeblock>server-groups: 
+- name: CLOUD 
+  server-groups: 
+    - AZ1
+    - AZ2
+    - AZ3
+  networks: 
+    - EXTERNAL-NET
+    - GUEST-NET 
+    - MANAGEMENT-NET
+    - PXE-NET 
+    - SERVICE-NET 
+# 
+# Create a group for each availability zone 
+#
+- name: AZ1 
+  server-groups: 
+    - RACK1 
+- name: AZ2 
+  server-groups: 
+    - RACK2 
+- name: AZ3
+  server-groups: <!--missing rack3?--></codeblock></li>
+            <li>Once these changes have been made, the normal mechanisms should be used
+              (configuration-processor-run.yml, ready-deployment.yml, site.yml) to push this change
+              to production. </li>
+          </ol></li>
+    </ol> </section>
+    
   </body>
 </topic>
