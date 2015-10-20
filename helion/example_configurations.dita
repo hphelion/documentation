@@ -2,7 +2,13 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="example_configurations">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Example Configurations</title>
-  <body><!--Needs Edit-->
+  <body>
+    <!--Needs Edit-->
+    <section id="1.0_toc"><title><i>1.0</i> Contents</title>
+    
+    
+    
+    </section>
     <section id="2.0_example_configs"><title><i>2.0</i> HP Helion OpenStack Example
         Configurations</title>
       <p>The HP Helion OpenStack 2.0 system ships with a number of pre-qualified example
@@ -605,6 +611,50 @@
       <!--- NEED TO FIND THIS LINK -->
       <p> Refer to the "Allocating Disk Drives" section of the Object Storage Service for details of
         how to configure additional Swift Storage.</p>
+    </section>
+    <section id="3.2.2_disksvsa"><title><i>3.2.2</i> Disks_vsa.yml</title>
+      <p>VSA storage is configured as a device-group and has a syntax that allows disks to be
+        allocated for data storage or for adaptive optimization (caching). Disks used for adaptive
+        optimization should be solid state drives (SSD). The example disk configuration for VSA
+        nodes has two disks, one for data and one of adaptive optimization.</p>
+      <codeblock>
+   device-groups:
+       - name: vsa-data
+         consumer:
+           name: vsa
+           usage: data
+         devices:
+           - name: /dev/sdc
+       - name: vsa-cache
+         consumer:
+           name: vsa
+           usage: adaptive-optimization
+         devices:
+            - name: /dev/sdb</codeblock>
+      <p>Additional capacity can be added by adding more disks to the <codeph>vsa-data</codeph>
+        device group. Similarly, caching capacity can be increased by adding more high speed storage
+        devices to the <codeph>vsa-cache</codeph> device group.</p>
+    </section>
+    <section id="3.2.3_diskscompute"><title><i>3.2.3</i> Disks_compute.yml</title>
+      <p>The example disk configuration for compute nodes consists of two volume groups; one for the
+        operating system and one for the ephemeral storage for virtual machines, with one disk
+        allocated to each.</p>
+      <p>Additional virtual machine ephemeral storage capacity can be configured by adding
+        additional disks to the <codeph>vg-comp</codeph> volume group. The following example shows
+        the addition of two more disks, <codeph>/dev/sdc</codeph> and <codeph>/dev/sdd</codeph> to
+        the <codeph>disks_compute.yml</codeph> file:</p>
+      <codeblock>
+   - name: vg-comp
+        physical-volumes:
+          - /dev/sdb
+          - /dev/sdc
+          - /dev/sdd
+        logical-volumes:
+          - name: compute
+            size: 95%
+            mount: /var/lib/nova
+            fstype: ext4
+                  mkfs-opts: -O large_file</codeblock>
     </section>
   </body>
 </topic>
