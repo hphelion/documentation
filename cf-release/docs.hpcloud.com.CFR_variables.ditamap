@@ -203,6 +203,7 @@
       </topicmeta>
    </keydef>
 <<<<<<< HEAD
+<<<<<<< HEAD
    <keydef keys="defaultSysUser">
       <topicmeta>
          <keywords>
@@ -269,4 +270,41 @@
    </keydef>
 =======
 >>>>>>> bc34114... Revised some more variables
+=======
+   <keydef keys="quickStartHPcloudStep1">
+      <topicmeta>
+         <keywords>
+            <keyword>Register an Account</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep2">
+      <topicmeta>
+         <keywords>
+            <keyword>Download and Install Tools</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep3">
+      <topicmeta>
+         <keywords>
+            <keyword>Create a Sandbox Environment</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep4">
+      <topicmeta>
+         <keywords>
+            <keyword>Create a Cluster</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep5">
+      <topicmeta>
+         <keywords>
+            <keyword>Explore a Sample Application</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+>>>>>>> 67bf605... Fixed single-sourced navigation internals
 </map>

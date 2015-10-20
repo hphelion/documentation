@@ -23,6 +23,7 @@
          <topicref href="quickstart/pubcloud/CFR_step_4.dita"/>
          <topicref href="quickstart/pubcloud/CFR_step_5.dita"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
          <topicref href="quickstart/pubcloud/CFR_step_6.dita"/>
       </topichead>
       <topichead navtitle="Reference">
@@ -37,6 +38,9 @@
 >>>>>>> dbe18b3... Adding a new Quick Start section with some temp files to be removed later
 =======
          <topichead navtitle="crap">
+=======
+         <topichead navtitle="DO NOT LOOK HERE--TESTING">
+>>>>>>> 67bf605... Fixed single-sourced navigation internals
             <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_tools.dita"/>
             <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_sandbox.dita"/>
             <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_cluster.dita"/>
