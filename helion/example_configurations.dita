@@ -487,6 +487,7 @@
         ilo-ip: <b>192.168.9.3</b>
         ilo-password: <b>password</b>
         ilo-user: <b>admin</b></codeblock>
+      <p>Here is a description of each of the above bolded sections:</p>
       <p><b>id</b></p>
       <p><codeph>id</codeph> is a name you provide to uniquely identify a server. This can be any
         string which is makes sense in your context, such as an asset tag, descriptive name, etc.
@@ -500,11 +501,43 @@
       <p><codeph>role</codeph> is a string which refers to an entry in
           <codeph>server_roles.yml</codeph> that tells the system how to configure the disks and
         network interfaces for this server. Roles are also used to define which servers can be used
-        for specific purposes. Adding and changing roles is beyond the scope of this walkthrough –
+        for specific purposes. Adding and changing roles is beyond the scope of this walkthrough -
         for more details refer to <xref href="input_model.dita">HPE Helion OpenStack 2.0 Input
           Model</xref>.</p>
       <p><b>server-group</b></p>
-      <p><codeph>server-group</codeph> tells the system how this server is physically related to networks and other servers.  Server groups are used to ensure that servers in a cluster are selected from different physical groups.  The example provides a set of server groups that divide the serves into three sets called “RACK1”, “RACK2”, and “RACK3”.   Modifying the server group structure is beyond the scope of this walk through – for more details refer to the Input Model Document.</p>
+      <p><codeph>server-group</codeph> tells the system how this server is physically related to
+        networks and other servers. Server groups are used to ensure that servers in a cluster are
+        selected from different physical groups. The example provides a set of server groups that
+        divide the servers into three sets called "RACK1", "RACK2", and "RACK3". Modifying the
+        server group structure is beyond the scope of this walkthrough - for more details refer to
+          <xref href="input_model.dita">HPE Helion OpenStack 2.0 Input Model</xref>.</p>
+      <p><b>nic-mapping</b></p>
+      <p><codeph>nic-mapping</codeph> is the name of a network port mapping definition
+        <!--(see 2.3.1.2)-->. You need to set this to the mapping that corresponds to this
+        server.</p>
+      <p><b>mac-addr</b></p>
+      <p><codeph>mac-addr</codeph> is the MAC address of the interface associated with this server
+        that will be used for PXE boot.</p>
+      <p><b>ilo-ip</b></p>
+      <p><codeph>ilo-ip</codeph> is the IP address of the iLO or IPMI port for this server.</p>
+      <p><b>ilo-user and ilo-password</b></p>
+      <p><codeph>ilo-user</codeph> and <codeph>ilo-password</codeph> are the login details used to
+        access the iLO or IPMI port of this server. The iLO password value can be provided as an
+        OpenSSL encrypted string - refer to the <xref
+          href="installation/install_entryscale_kvm.dita#install_kvm/configuration">installation
+          guide</xref> for details on how to generate encrypted passwords.</p>
+    </section>
+    <section id="3.2_customize"><title><i>3.2</i> Customizing the Input Model</title>
+      <p>In this section we look at additional changes that you can make to further adapt the
+        example to your environment.</p>
+      <ul>
+        <li>Update <codeph>disks_controller.yml</codeph> to add additional disk capacity to your
+          controllers</li>
+        <li>Update <codeph>disks_vsa.yml</codeph> to add additional disk capacity to your VSA
+          servers</li>
+        <li>Update <codeph>disks_compute.yml</codeph> to add additional disk capacity to your
+          compute servers</li>
+      </ul>
     </section>
   </body>
 </topic>
