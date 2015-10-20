@@ -163,9 +163,8 @@ enabled_backends=vsa-1</codeblock></li>
                 you set this option as <b>false</b> then no CHAP authentication is required for the
                 ISCSI connection.</li>
               <li>volume_backend_name: Name of the backend.</li>
-              <li>volume_driver:</li>
-              <li>hplefthand_debug: If you set this option as true then it log all the debugs, else
-                vice versa.<p>
+              <li>volume_driver: Cinder volume driver.</li>
+              <li>hplefthand_debug: If you set this option as true then it collects log in the debug mode.<p>
                   <note> Please enter the parameter values which are specific to your environment.
                   </note>
                 </p></li>
