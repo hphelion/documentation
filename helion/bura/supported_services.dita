@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_bxm_gxr_st">
-  <title>Supported Services</title>
+  <title>Supported Services and Limitations</title>
   <body>
     <p>By default backups include: <ul>
         <li>All important informations on the deployer</li>
@@ -23,5 +23,14 @@
         <li>Operations Console</li>
         <li>Monasca - No backup of the metrics</li>
       </ul></p>
+    <section><title>Limitations</title>
+      <p><ul>
+        <li>Recovery of the following services (or cloud topologies) will be partially supported as they need additional data (other than mySQL DB) to return to be fully functional.<ul>
+          <li>ESX Cloud</li>
+          <li>Ceph Cloud</li>
+          <li>Network services - LBaaS, and VPNaaS</li>
+        </ul></li>
+        <li>Logging Data (that is, log files)</li>
+      </ul></p></section>
   </body>
 </topic>
