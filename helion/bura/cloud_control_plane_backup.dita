@@ -3,12 +3,13 @@
 <topic id="topic_jsc_qps_qt">
   <title>Backing up the Cloud Control Plane </title>
   <body>
-    <section><title>Default Backup and Restore</title><p>As part of the installation procedure in HP Helion <tm tmtype="reg">OpenStack</tm> 2.0, automatic
-        backup/restore jobs are uploaded from Swift into the Freezer scheduler. The backup jobs
-        perform scheduled backups of Helion OpenStack control plane data (files/directories/db). The
-        restore jobs can be used to restore appropriate control plane data. Additional automatic
-        jobs can be added to backup/restore from the secure shell (SSH) server. You must use the
-        following procedure to set up SSH backup during installation: </p></section>
+    <section><title>Default Backup and Restore</title><p>As part of the installation procedure in HP
+        Helion <tm tmtype="reg">OpenStack</tm> 2.0, automatic backup/restore jobs are uploaded from
+        Swift into the Freezer scheduler. The backup jobs perform scheduled backups of Helion
+        OpenStack control plane data (files/directories/db). The restore jobs can be used to restore
+        appropriate control plane data. Additional automatic jobs can be added to backup/restore
+        from the secure shell (SSH) server. You must use the following procedure to set up SSH
+        backup during installation:</p></section>
     <section><title>Setting up SSH backup</title>
       <p>By default, during HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 deployment, backup jobs
         are automaticaly deployed to backup to Swift the MySQL database, the deployer, and Swift
@@ -20,8 +21,8 @@
     <section><title>Backing up your Helion control plane to an SSH server</title>
       <p>You must provide the following connection information to this server:<ul>
           <li>The SSH server IP</li>
-          <li>The SSH server port to connect to (usualy 22). You might want to check how to open
-            port on Helion's firewall.</li>
+          <li>The SSH server port to connect to (usually 22). You may want to confirm how to open
+            the port on Helion's firewall.</li>
           <li>The SSH server user to connect to</li>
           <li>The SSH private key authorized to connect to that user (see after to setup one if not
             already done)</li>
@@ -32,13 +33,18 @@
     <section><title>Setting SSH information before deployment</title>
       <p>Before running the configuration processor, edit the following file:
         <codeblock>~/helion/my_cloud/config/freezer/ssh_credentials.yml</codeblock>Please be advised
-        that all parameter are mandatory and be careful in the way you provide SSH private key.</p></section>
-    <section><title>Setting SSH information after deployment</title><p>If you already ran the deployment of your cloud and forgot to configure SSH backups or you wish
-        to modify the setting of where the backup are stored, follow the next instructions.</p><p>Edit the
-        following file:
-        <codeblock>~/helion/my_cloud/config/freezer/ssh_credentials.yml</codeblock></p><p>Please be advised that all parameter are mandatory and be careful in the way you provide SSH
-        private key.</p><p>Then, run the following commands:
-        <codeblock>cd ~/helion
+        that all parameters are mandatory and take care in providing the SSH private
+      key.</p></section>
+    <section><title>Setting SSH information after deployment</title><p>If you already deployed your
+        cloud and forgot to configure SSH backups, or if you wish to modify the settings for where
+        the backups are stored, follow the following instructions:</p>
+      <ol>
+        <li>Edit the following file:
+          <codeblock>~/helion/my_cloud/config/freezer/ssh_credentials.yml</codeblock>Please be
+          advised that all parameters are mandatory and take care in providing the SSH private
+          key.</li>
+        <li>Run the following commands:
+          <codeblock>cd ~/helion
 git add -A
 git commit -m "My config"
 cd ~/helion/hos/ansible/
@@ -46,22 +52,24 @@ ansible-playbook -i hosts/localhost config-processor-run.yml
 ansible-playbook -i hosts/localhost ready-deployment.yml
 cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</codeblock>This
-        will deploy the SSH key and configure SSH backup and restore jobs for you. Remember it might
-        take some time before backup really happen after that point.</p></section>
-    <section><title>Preparing the server that will store the backup</title><p>For the sake of the
-        example my informations will be: <ul>
+          will deploy the SSH key and configure SSH backup and restore jobs for you. It may take
+          some time before the backups occur.</li>
+      </ol></section>
+    <section><title>Preparing the server that will store the backup</title><p>In this example, the
+        information is as follows: <ul>
           <li>IP: 192.168.100.42</li>
           <li>Port: 22</li>
           <li>User: backupuser</li>
           <li>Target directory for backups: /mnt/backups/</li>
         </ul></p>
-      <p>Please replace where appropriate.</p>
-      <p>Connect to the server: <codeblock>ssh -p 22 root@192.168.100.42</codeblock></p>
-      <p>Create the user:
-        <codeblock>useradd backupuser --create-home --home-dir /mnt/backups/</codeblock></p>
-      <p>Switch to that user:<codeblock>su backupuser</codeblock></p>
-      <p>Create the SSH keypair:
-        <codeblock>ssh-keygen -t rsa
+      <p>Please replace these values to use your information, as appropriate.</p>
+      <ol>
+        <li>Connect to the server: <codeblock>ssh -p 22 root@192.168.100.42</codeblock></li>
+        <li>Create the user:
+          <codeblock>useradd backupuser --create-home --home-dir /mnt/backups/</codeblock></li>
+        <li>Switch to that user:<codeblock>su backupuser</codeblock></li>
+        <li>Create the SSH keypair:
+          <codeblock>ssh-keygen -t rsa
 # Just leave the default for the first question and don't set any passphrase
 > Generating public/private rsa key pair.
 > Enter file in which to save the key (/mnt/backups//.ssh/id_rsa): 
@@ -83,12 +91,12 @@ ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</codeblock>This
 > |  o + .          |
 > |.o .             |
 > |++o              |
-> +-----------------+</codeblock></p>
-      <p>Add the public key to the list of the keys authorized to connect to that user on this
-        server:
-        <codeblock>cat /mnt/backups/.ssh/id_rsa.pub >> /mnt/backups/.ssh/authorized_keys</codeblock></p>
-      <p>Print the private key, this is what you will have to use for the Backup configuration:
-        <codeblock>cat /mnt/backups/.ssh/id_rsa
+> +-----------------+</codeblock></li>
+        <li>Add the public key to the list of the keys authorized to connect to that user on this
+          server:
+          <codeblock>cat /mnt/backups/.ssh/id_rsa.pub >> /mnt/backups/.ssh/authorized_keys</codeblock></li>
+        <li>Print the private key, this is what you will have to use for the Backup configuration:
+          <codeblock>cat /mnt/backups/.ssh/id_rsa
 -----BEGIN RSA PRIVATE KEY-----
 MIIEogIBAAKCAQEAvjwKu6f940IVGHpUj3ffl3eKXACgVr3L5s9UJnb15+zV3K5L
 BZuor8MLvwtskSkgdXNrpPZhNCsWSkryJff5I335Jhr/e5o03Yy+RqIMrJAIa0X5
@@ -115,12 +123,18 @@ a/JvgTyFRf9PqIChiH5OCC1fiqXt7v/nKXnR5Hr7yE0ebDSVWrN94nMiRkHsZFvO
 uTOJAoGAPwIJzp2oHH9ec+bfen40ecsqDAmKWf6Izxhe9YzZe4aq+3msIM49V0Bg
 iBKVKGPhOnn4ve3dDqy3q7fS5sivTqCrpaYtByJmPrcJNjb2K7VMLNvgLamK/AbL
 qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
------END RSA PRIVATE KEY-----</codeblock></p><p>
-        You server is now ready to receive backup. If you wish you can check our advices on how to
+-----END RSA PRIVATE KEY-----</codeblock></li>
+      </ol>
+      <p>You server is now ready to receive backups. If you wish, you can check our advice on how to
         secure it.</p></section>
-    <section><title>How to open ports in Helion's firewall </title><p> There is a strict policy of firewaling deployed with Helion. You might need to specifically open
-        the SSH port if you use a non-standard one. Here is how to do it:</p>
-      <p>When creating you model, edit the <codeblock>~/helion/my_cloud/definition/data/firewall_rules.yml</codeblock></p><p>You need to add a new element in the firewall-rules list like: <codeblock>
+    <section><title>Opening ports in Helion's firewall </title><p> There is a strict policy of
+        firewalling deployed with HP Helion. If you use a non-standard SSH port, you may need to
+        specifically open it by using the following process:</p>
+      <ol>
+        <li>When creating your model, edit the following
+          file:<codeblock>~/helion/my_cloud/definition/data/firewall_rules.yml</codeblock></li>
+        <li>You must add a new element in the firewall-rules list, such as:
+          <codeblock>
 - name: BACKUP
   # network-groups is a list of all the network group names
   # that the rules apply to
@@ -134,22 +148,26 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
     port-range-min: 
     port-range-max: 
     # protocol must be one of: null, tcp, udp or icmp
-    protocol: tcp</codeblock></p></section>
-    <section><title>How to secure your SSH backup server</title><p>There is a few things that you can do to harden an SSH server (and that are well documented over the internet):<ul>
-      <li>Disable root login</li>
-      <li>Move SSH to a non-default port (i.e.: something else than 22)</li>
-      <li>Disable password login (only allow rsa keys)</li>
-      <li>Disable SSH v1</li>
-      <li>Authorize only SFTP for that user (disable ssh shell)</li>
-      <li>Firewall SSH traffic to be sure it comes from the Helion address range</li>
-      <li>Install a Fail2Ban solution</li>
-      <li>Restrict users that are allowed to SSH</li>
-    </ul></p><p>Remove the key pair we generated earlier on the backup server, the only thing needed is the .ssh/authorized_keys
-You can remove the .ssh/id_rsa and .ssh/id_rsa.pub files. Be sure to save a backup of them somewhere.</p></section>
+    protocol: tcp</codeblock></li>
+      </ol>
+    </section>
+    <section><title>Securing your SSH backup server</title><p>You can do the following to harden an SSH server (these are well documented over the internet):<ul>
+          <li>Disable root login</li>
+          <li>Move SSH to a non-default port (that is, something other than 22)</li>
+          <li>Disable password login (only allow RSA keys)</li>
+          <li>Disable SSH v1</li>
+          <li>Authorize Secure File Transfer Protocol (SFTP) only for that user (disable SSH
+            shell)</li>
+          <li>Firewall SSH traffic to ensure it comes from the HP Helion address range</li>
+          <li>Install a Fail2Ban solution</li>
+          <li>Restrict users that are allowed to SSH</li>
+        </ul></p><p>Remove the key pair generated earlier on the backup server: the only thing needed is the
+        .ssh/authorized_keys. You can remove the .ssh/id_rsa and .ssh/id_rsa.pub files. Be sure to
+        save a backup of them somewhere.</p></section>
     <section><title>Generic tips</title><ul>
-      <li>You should be careful when sizing the directory that will receive the backup.
-      </li><li>You should monitor the space left on that directory.</li>
-      <li>You should keep the system up-to-date on that server.</li>
-    </ul></section>
+        <li>Take care when sizing the directory that will receive the backup. </li>
+        <li>Monitor the space left on that directory.</li>
+        <li>Keep the system up-to-date on that server.</li>
+      </ul></section>
   </body>
 </topic>

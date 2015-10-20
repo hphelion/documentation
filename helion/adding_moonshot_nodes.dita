@@ -183,9 +183,10 @@ resource-nodes:
       role: <b>ROLE-COMPUTE-MOONSHOT</b>
     # nic-mapping: MY_2PORT_SERVER</codeblock></p><p>In
             the sample file, <b>role: ROLE-COMPUTE-MOONSHOT</b> identifies the role of the Moonshot
-            node.</p><p>Moonshot server comes with only 2 NICs. One is used for PXE and another is
-            used as truck 9. <note>NIC binding is not supported due to limited number of
-              NICs.</note></p></li>
+            node.</p><p>Moonshot server comes with only 2 NICs. One is used for PXE and another is used as truck 9. <note
+              type="important">NIC binding is not supported due to limited number of NICs. Hence,
+              the NIC mapping section in the HP Helion OpenStack  input model should not be present
+              for moonshot nodes.</note></p></li>
         <li><codeph>server_roles.yml</codeph><p>You specify the usage of the server or where you
             want to use a particular server. A sample file of <codeph>server_roles.yml</codeph> is
             shown
