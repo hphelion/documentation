@@ -16,10 +16,10 @@
       <p/>
     </section>
 <section> All of the HP Helion OpenStack 2.0 example cloud models ship with TLS enabled on the
-      public API. After installing, you must decide if you want to use a fully qualified domain name
-      (FQDN) or IP addresses for the Public URLs. Because this can't be changed after deployment we
-      ship the examples in a state where they will fail when the config processor is run unless you
-      take one of these actions: <ul id="ul_sdj_qfq_rt">
+      public API. <p> When logging into the deployer to run the configuration processor and the
+        requisite playbooks, you must decide if you want to configure TLS or if you want to disable
+        it. This can't be changed after deployment. Therefore, you will have to make one of the
+        following changes</p><ul id="ul_sdj_qfq_rt">
         <li>Comment out the "external-name:" line in
           /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that IP addresses are
           used) </li>
@@ -31,7 +31,7 @@
         are using IP addresses, you won't know the IP address until after the config processor has
         run, but you can obtain it after running the config processor and before deployment. So the
         sequence would be:</p>
-      <b>If using a FQDN:</b>
+      <b>If you are using a FQDN:</b>
       <ol id="ol_ngj_qfq_rt">
         <li> Create or obtain a certificate to match the domain name you are going to use </li>
         <li> Copy it to <b>helion/my_cloud/config/tls/certs/</b>
@@ -42,12 +42,12 @@
           <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "My config or other commit message"</codeblock></li>
-         <li>Run the config
+        <li>Run the config
           processor:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <li>Continue with the deployment as usual.</li>
       </ol>
-      <b>If using IP addresses for external ULRs: </b><ol id="ol_y3j_qfq_rt">
+      <b>If you are using IP addresses for external ULRs: </b><ol id="ol_y3j_qfq_rt">
         <li>Edit <b>network_groups.yml</b> to comment out the "external-name" line </li>
         <li>Commit your changes to git and run the configuration processor as in steps 4 and 5
           above</li>
@@ -120,8 +120,17 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       <codeblock>- "ssl-default-bind-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"
 - "ssl-default-server-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"</codeblock>
       Make the changes as needed. It's best to keep the two options identical. </section>
-    
-    
+    <section><title>Accessing public endpoints from an external machine</title>
+     <!-- <ol id="ol_q1b_djg_rt">
+        <li>Have a name resolver for myhelion.test - It could /etc/hosts or dnsmasq reading from a
+          hosts file </li>
+        <li>Install the CA certificate that signed the test server certificate. This file can be
+          found in the deployer under <b>roles/tls-trust/files/frontend_cacert.pem</b>. </li>
+        <li>Make an entry for the VIP inside the /etc/hosts file pointing to myhelion.test </li>
+        <li>Run the playbook below to install the certificate.
+          <codeblock>ansible-playbook -i hosts/verb_hosts tls-trust-deploy.yml</codeblock></li>
+      </ol>--> </section>
+ <!--
     <section><title>Testing public endpoints using the test certificate with a virtual cloud</title>
       The following write up is for people trying to test the public endpoints using the bundled
       test certificate with a virtual cloud. There are three use cases here. <ul id="ul_z51_djg_rt">
@@ -137,24 +146,19 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           not symlinked via the config directory to customers because we generally don't need the CA
           certificate signing the external certificate inside the cloud. </li>
       </ol>
-      <b>Accessing public endpoints from the deployer</b>
-      <ol id="ol_q1b_djg_rt">
-        <li>Make an entry for the VIP inside the /etc/hosts file pointing to myhelion.test </li>
-        <li>Run the playbook below to install the certificate.
-          <codeblock>ansible-playbook -i hosts/verb_hosts tls-trust-deploy.yml</codeblock></li>
-      </ol>
+   
       <b>Accessing public endpoints from the machine hosting the virtual cloud</b>
       <ol id="ol_ddb_djg_rt">
         <li>Make an entry for the VIP inside the /etc/hosts file pointing to myhelion.test </li>
         <li>Copy the CA certificate from the
           deployer:/home/stack/scratch/ansible/next/hos/ansible/roles/tls-trust/files/frontend_cacert.pem
           to /usr/local/share/ca-certificates/helion-ca.crt </li>
-        <li>Run <codeblock>sudo update-ca-certificates --fresh</codeblock></li>
+        <li>Run <codeblock>sudo update-ca-certificates - -fresh</codeblock></li>
       </ol>
-      <b>Accessing public endpoints from a machine other than the machine hosting the virtual
-        cloud</b>
+      
     </section>
-    <section>Start by repeating what was done for the machine hosting the virtual cloud. But this
+    <section><title><b>Accessing public endpoints from a machine other than the machine hosting the virtual
+      cloud</b></title>Start by repeating what was done for the machine hosting the virtual cloud. But this
       time your /etc/hosts entry for myhelion.test should point to the IP address of the host
       running the virtual cloud. After this you need to have something tunnelling the packets to the
       VIP. This is easily accomplished with haproxy in tunnel mode. (mode tcp). But you need to have
@@ -178,6 +182,6 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       16.25.10.10 is the host running the virtual cloud
       192.168.254.10 is the VIP</codeblock></li>
       </ol> One way to generate the list of all public ports behind TLS is to run 'grep "ssl crt"
-      /etc/haproxy/haproxy.cfg' from a controller. </section>
+      /etc/haproxy/haproxy.cfg' from a controller. </section>-->
   </body>
 </topic>
