@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_qch_rmx_st">
+  <title>Configuring OpenStack Services to use Ceph Cluster</title>
+  <body>
+    <p>COnfiguring ceph as a default glance store. Currently. swift is being used as the default
+      glance store. the following stoes need to be done to configure ceph as a default glance
+      store.</p>
+    <section id="configure-ceph-as-cinder-backend">
+      <title>Configure Ceph as Glance Store</title>
+      <p>Perform the following procedure on the Deployer node to configure Ceph as a Cinder
+          backend:<ol id="ol_u12_kd3_pt">
+          <li>Edit <codeph>~/helion/my_cloud/config/glance/glance-api.conf.j2</codeph> to add the
+            following values.
+            <codeblock>default_store = rbd
+stores = rbd
+rbd_store_pool = images
+rbd_store_user = glance
+rbd_store_ceph_conf = /etc/ceph/ceph.conf
+rbd_store_chunk_size = 8</codeblock></li>
+          <li>In the same file comment out the following references to
+            Swift:<codeblock>stores = {{ glance_stores }}
+default_store = {{ glance_default_store }}</codeblock></li>
+          <li> Copy <codeph>ceph.client.glance.keyring</codeph> to all the controller nodes:<ol
+              id="ol_m5r_k23_pt">
+              <li>Login to controller node as a root user and execute the following
+                    command.<codeblock>ceph auth get-or-create client.glance | tee /etc/ceph/ceph.client.glance.keyring</codeblock><p><b>OR</b></p><p>You
+                  can copy the keyring from the deployer
+                  node<codeblock>scp /etc/ceph/ceph.client.glance.keyring</codeblock> to
+                    <codeph>/etc/ceph</codeph> folder on all the controller nodes.</p></li>
+            </ol></li>
+          <li>Commit your configuration to the local repository to configure cinder on the deployer node.<p>
+              <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message>"</codeblock>
+            </p><note> Enter your commit message &lt;commit message></note></li>
+          <li>Run the following command to create a deployment
+            directory.<codeblock>cd ~/helion/hos/ansible
+<codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
+          <li>Run the following ansible
+            playbook:<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml</codeblock></li>
+        </ol></p>
+    </section>
+    <p>Once glance is configured, any image creation will use ceph as the default data store</p>
+  </body>
+</topic>

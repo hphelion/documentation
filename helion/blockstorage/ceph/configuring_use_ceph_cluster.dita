@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_i2z_zc3_pt">
-  <title>Configuring OpenStack Services to use Ceph Cluster</title>
+  <title>Configuring OpenStack Services (Cinder) to use Ceph Cluster</title>
   <body>
     <p>This page contains the following topics :<ul id="ul_vrf_jf3_pt">
         <li><xref href="#topic_i2z_zc3_pt/configure-ceph-as-cinder-backend" format="dita">Configure
