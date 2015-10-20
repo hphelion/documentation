@@ -11,11 +11,8 @@
  <conbody>
   <simpletable id="simpletable_zlb_lpz_st">
    <strow>
-    <stentry>1. <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep1_"/><p>2.
-       <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3. <xref
-       conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4. <xref
-       conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p>5. <b><xref
-       conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></b></stentry>
+    <stentry>1. <p>2. </p><p>3. </p><p>4. </p>5. <b><keyword keyref="quickStartHPcloudStep5"
+       id="quickStartHPcloudStep5"/></b></stentry>
     <stentry/>
    </strow>
   </simpletable>
