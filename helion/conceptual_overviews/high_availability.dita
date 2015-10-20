@@ -69,7 +69,7 @@
         <p>Cloud users are able to provision and manage the compute, storage, and network infrastructure resources 
           at any given point in time and the Horizon Dashboard and the OpenStack APIs must be reachable and be 
           able to fulfill user requests</p>
-        <p><image href="../media/ha/ha-resilient-cloud-infrastructure.png" id="CloudInfrastructure"/></p>
+        <p><image href="../../media/ha/ha-resilient-cloud-infrastructure.png" id="CloudInfrastructure"/></p>
         <p>Once the Compute, Storage, and Network resources are deployed, users expect these resources to be 
           reliable in the following ways:</p>
         <ul>
@@ -130,7 +130,7 @@
           is achieved by running these in a clustered mode across the three nodes of the 
           control plane: RabbitMQ cluster with Mirrored Queues and Percona MySQL Galera cluster.</li>
       </ul>
-      <p><image href="../media/ha/ControlPlaneHA2.0_1.png" id="ControlPlane1"/></p>
+      <p><image href="../../media/ha/ControlPlaneHA2.0_1.png" id="ControlPlane1"/></p>
       <p>The above diagram illustrates the HA architecture with the focus on VIP management 
         and load balancing. It only shows a subset of active-active API instances and does 
         not show examples of other services such as nova-scheduler, cinder-scheduler, etc.</p>
@@ -158,7 +158,7 @@
         <p id="api_request"><b>API Request Message Flow</b></p>
         <p>The diagram below shows the flow for an API request in an HA deployment. All API 
           requests (internal and external) are sent through the VIP.</p>
-        <p><image href="../media/ha/ControlPlaneHA2.0_2.png" id="ControlPlane2"/></p>
+        <p><image href="../../media/ha/ControlPlaneHA2.0_2.png" id="ControlPlane2"/></p>
         <p>The flow of a sample API request is explained below:</p>
         <ul>
           <li>keepalived has currently configured the VIP on the Controller0 node; 
@@ -180,13 +180,13 @@
         <p>With the above HA set up, loss of a controller node is handled as follows:</p>
         <p>Assume that the Controller0, which is currently in control of the VIP, is lost, 
           as shown in the diagram below:</p>
-        <p><image href="../media/ha/ControlPlaneHA2.0_3.png" id="ControlPlane3"/></p>
+        <p><image href="../../media/ha/ControlPlaneHA2.0_3.png" id="ControlPlane3"/></p>
         <p>When this occurs, keepalived immediately moves the VIP on to the Controller1 
           and can now receive API requests, which is load-balanced by HA proxy, as stated 
           earlier.</p>
         <note>Although MySQL and RabbitMQ clusters have lost a node, they still continue 
           to be operational:</note>
-        <p><image href="../media/ha/ControlPlaneHA2.0_4.png" id="ControlPlane4"/></p>
+        <p><image href="../../media/ha/ControlPlaneHA2.0_4.png" id="ControlPlane4"/></p>
         <p>Finally, when Controller0 comes back online, keepalived and HA proxy will 
           resume in standby/slave mode and be ready to take over, should there be a 
           failure of Controller1. The Controller0 rejoins the MySQL and RabbitMQ clusters.</p>
@@ -210,7 +210,7 @@
           below, Controller0 is partitioned from the rest of the control plane. As a 
           result, requests can only be satisfied on Controller1 or Controller2. 
           Controller0 will continue to attempt to rejoin the cluster:</p>
-        <p><image href="../media/ha/ControlPlaneHA2.0_5.png" id="ControlPlane5"/></p>
+        <p><image href="../../media/ha/ControlPlaneHA2.0_5.png" id="ControlPlane5"/></p>
         <p>When HA proxy detects the errors against the mysql instance on Controller0, 
           it removes that node from its pool for future database requests.</p>
       </sectiondiv>
@@ -221,7 +221,7 @@
           <p id="cinder_volume"><b>Cinder-Volume</b></p>
           <p>Due to the single threading required in both cinder-volume and the drivers, 
             the Cinder volume service is run as a singleton in the control plane. 
-            <image href="../media/ha/ha-cinder-volume.png" id="CinderVolume"/></p>
+            <image href="../../media/ha/ha-cinder-volume.png" id="CinderVolume"/></p>
         </sectiondiv>
         <sectiondiv>
           <p id="sherpa"><b>Sherpa</b></p>
@@ -264,7 +264,7 @@
     
     <section id="availability_zones">
       <title>Availability Zones</title>
-      <p><image href="../media/ha/DeploymentZonesHA2.0_1.png" id="DeploymentZones"/></p>
+      <p><image href="../../media/ha/DeploymentZonesHA2.0_1.png" id="DeploymentZones"/></p>
       <p>While planning your OpenStack deployment, you should decide on how to zone 
         various types of nodes - such as compute, block storage, and object storage. 
         For example, you may decide to place all servers in the same rack in the same 
@@ -276,10 +276,12 @@
           services. This section outlines the process to deploy specific types of nodes 
           to specific physical servers, and makes a statement of available support for 
           these types of availability zones in the current release.</p>
-        <note>By default, HP Helion OpenStack is deployed in a single availability 
-          zone upon installation. Multiple availability zones can be configured by an 
-          administrator post-install, if required. Refer to the Chapter 5: Scaling 
-          (in the OpenStack Operations Guide for more information).</note>
+        <note>By default, HP Helion OpenStack is deployed in a single availability zone upon
+        installation. Multiple availability zones can be configured by an administrator
+        post-install, if required. Refer to the <xref
+          href="http://docs.openstack.org/openstack-ops/content/scaling.html" format="html"
+          scope="external">Chapter 5: Scaling</xref> (in the OpenStack Operations Guide for more
+        information).</note>
     </section>
     
     
@@ -289,7 +291,8 @@
         or by adding compute nodes post initial installation.</p>
       <p>While adding compute nodes post initial installation, you can specify the 
         target physical servers for deploying the compute nodes.</p>
-      <p>Learn more about Adding Compute Nodes after Initial Installation.</p>
+      <p>Learn more about <xref href="../operations/add_node.dita">Adding Compute
+          Nodes after Initial Installation</xref>.</p>
     </section>
     
     <section id="nova_availablility_zones">
@@ -319,7 +322,7 @@
         in different zones of your data center for maximum redundancy and resiliency. 
         For more information on how to deploy VSA nodes on desired target servers, 
         refer to the Deploy VSA document.</p>
-      <p><image href="../media/ha/ha-block-storage.png" id="BlockStorage"/></p>
+      <p><image href="../../media/ha/ha-block-storage.png" id="BlockStorage"/></p>
     </section>
     
     <section id="cinder_availability_zones">
@@ -334,7 +337,7 @@
         drive that is added to the ring. Learn more about configuring zones for 
         various drives using the Ringos tool here. Please refer to the Ringos 
         document. </p>
-      <p><image href="../media/ha/ha-swift.png" id="HA_Swift"/></p>
+      <p><image href="../../media/ha/ha-swift.png" id="HA_Swift"/></p>
     </section>
     
     <section id="highly_available_app_workloads">
