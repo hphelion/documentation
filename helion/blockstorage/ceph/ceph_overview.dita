@@ -16,10 +16,9 @@
         YAML files related to ceph.</p><p>You can implementing the input model and perform the
         following Ceph activities:<ul id="ul_yt2_wzl_rt">
           <li><xref href="ceph_deploy.dita#install_kvm_ceph">Ceph Deployment</xref></li>
-          <li><xref href="adding_new_osd_node.dita#topic_drm_rm5_kt">Adding a new node
-                            operations</xref></li>
-                    <li><xref href="adding_new_monitor_node.dita#topic_zbc_pg4_rt">Adding a new
-                            monitor node</xref></li>
+          <li><xref href="adding_new_osd_node.dita#topic_drm_rm5_kt">Adding an OSD Node</xref></li>
+                    <li><xref href="adding_new_monitor_node.dita#topic_zbc_pg4_rt">Adding a New
+                            Monitor Node</xref></li>
           <li><xref href="configuring_use_ceph_cluster.dita#topic_i2z_zc3_pt">Configuring OpenStack
               service(s) to use Ceph cluster</xref></li>
           <li><xref href="deploy_monitor_stand_alone_node.dita#topic_ah5_4yx_qt">Deploying monitor
@@ -37,6 +36,5 @@
           <li><xref href="upgrade_ceph_cluster.dita#topic_gxm_bwt_rt">Upgrade Ceph
             Cluster</xref></li>
         </ul></p></section>
-    <p>You can also monitor ceph components and view the logs.??</p>
   </body>
 </topic>

@@ -29,6 +29,11 @@
 allow rwx pool=vms, allow rwx pool=images, allow rwx pool=cache_tier_for_volumes' --cap mon 'allow r'</codeblock></li>
           <li>Import the keyring, so that the permissions are
             refreshed:<codeblock>sudo ceph auth import -i /etc/ceph/ceph.client.cinder.keyring</codeblock></li>
+          <li>Set the cache tier to use Bloom filter as
+            follows:<codeblock>ceph osd pool set cache_tier_for_volumes hit_set_type bloom</codeblock></li>
+          <li>Define how much time each HitSet should cover, and how many such HitSets to store as
+            follows:<codeblock>ceph osd pool set cache_tier_for_volumes hit_set_count 1
+ceph osd pool set cache_tier_for_volumes hit_set_period 3600</codeblock></li>
         </ol></p></section>
   </body>
 </topic>

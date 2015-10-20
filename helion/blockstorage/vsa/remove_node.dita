@@ -71,8 +71,9 @@
       <p>The format of servers.yml file would be <codeph>!&lt;VSA node-name>*</codeph></p>
       <p> where VSA node-name matched the interface used to access this node during deployment. For
         example<codeblock>!padawan-ccp-vsa001* (VSA host as given in hosts/verb_hosts)</codeblock></p>
-      <p>When performing HLM deployments specify the name of this file in a --limit option to
-        prevent the deployment process trying to access the VSA nodes that are offline.</p>
+      <p>When performing Helion lifecycle management  deployments specify the name of this file in a
+        --limit option to prevent the deployment process trying to access the VSA nodes that are
+        offline.</p>
       <p>Run the configuration
         processor<codeblock>cd /home/stack/helion/hos/ansible;
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></p>
@@ -89,7 +90,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></p>
       <p>You can remove the VSA storage system from the cloud after it is removed from cluster
         management group in CMC. This is done, if you want to remove VSA permanently.</p>
       <p>Perform the following steps to remove the same cluster which has been removed from CMC in
-        cloud. (<b>How do u remove cluster in CMC??)</b><ol id="ol_mdp_qvk_st">
+        cloud. (<b>How do u remove cluster in CMC?)</b><ol id="ol_mdp_qvk_st">
           <li>Delete or comment out the VSA system information at
               <codeph>/home/stack/helion/my_cloud/definition/data/servers.yml </codeph>.</li>
           <li>Commit your
@@ -101,7 +102,7 @@ git commit -m "Remove OSD node &lt;host-name>"</codeblock></li>
           <li>Use the playbook below to create a deployment directory:
             <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
           <li>Verify that the node is removed from <codeph>hosts/verb_hosts</codeph> file.
-              (<b>command to verify??)</b></li>
+              (<b>command to verify?)</b></li>
         </ol></p>
     </section>
   </body>
