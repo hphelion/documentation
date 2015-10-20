@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_kpg_fhz_st">
+<<<<<<< HEAD
  <title>Quick Start Step 3: <keyword keyref="quickStartHPcloudStep3"/></title>
  <shortdesc>During this step you will log into <keyword keyref="pubCloudLong"/> and use the web
     console to create a sandbox environment.</shortdesc>
+=======
+ <title>Quick Start Step 3: Create a Sandbox Environment</title>
+ <shortdesc></shortdesc>
+>>>>>>> 9d80273... Testing theme changes on Linux
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
   </metadata>
  </prolog>
  <conbody>
+<<<<<<< HEAD
   <simpletable>
    <strow>
     <stentry>1. <xref conref="CFR_step_2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
@@ -143,5 +149,8 @@
         </stentry>
    </strow>
   </simpletable>
+=======
+  <p></p>
+>>>>>>> 9d80273... Testing theme changes on Linux
  </conbody>
 </concept>

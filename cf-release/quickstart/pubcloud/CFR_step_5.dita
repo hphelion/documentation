@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_cw2_thz_st">
+<<<<<<< HEAD
  <title>Quick Start Step 5: <keyword keyref="quickStartHPcloudStep5"/></title>
  <shortdesc>The following examples describe a typical process of pushing an application using the
     Cloud Foundry CLI to a Droplet Execution Agent (DEA) running on <keyword keyref="prodLong"
     />.</shortdesc>
+=======
+ <title>Quick Start Step 5: Explore a Sample Application</title>
+ <shortdesc></shortdesc>
+>>>>>>> 9d80273... Testing theme changes on Linux
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
   </metadata>
  </prolog>
  <conbody>
+<<<<<<< HEAD
     <note type="tip">For more information, see the Cloud Foundry documentation on the <xref
         href="https://docs.cloudfoundry.org/concepts/architecture/execution-agent.html"
         format="html" scope="external">Droplet Execution Agent</xref>. For detailed instructions on
@@ -113,5 +119,8 @@ cf target -o myOrg -s mySpace</codeblock></note></li>
           </xref></stentry>
    </strow>
   </simpletable>
+=======
+  <p></p>
+>>>>>>> 9d80273... Testing theme changes on Linux
  </conbody>
 </concept>

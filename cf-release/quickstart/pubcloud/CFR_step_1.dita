@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_s2k_b35_st">
+<<<<<<< HEAD
  <title>Quick Start Step 1: <keyword keyref="quickStartHPcloudStep1"/></title>
  <shortdesc>Deploying an <keyword keyref="prodLong"/> Docker image to <keyword keyref="pubCloudLong"
   /> is the fastest and easiest way to evaluate and to begin working with <keyword
    keyref="prodShort"/>. This process involves downloading and installing the necessary tools,
   configuring your sandbox environment, and deploying the Docker image.</shortdesc>
+=======
+ <title>Quick Start Step 1: Register an Account</title>
+ <shortdesc>Deploying a <keyword keyref="prodShort"/> Docker image to <keyword keyref="prodShort"/>
+  is the fastest and easiest way to evaluate and to begin working with <keyword keyref="prodLong"/>.
+  This process involves downloading and installing the necessary tools, configuring your sandbox
+  environment, and deploying a <keyword keyref="prodShort"/> Docker image.</shortdesc>
+>>>>>>> 9d80273... Testing theme changes on Linux
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
@@ -14,6 +22,7 @@
  <conbody>
   <simpletable>
    <strow>
+<<<<<<< HEAD
     <stentry>1. <b><keyword keyref="quickStartHPcloudStep1"/></b>
      <p>2. <xref href="CFR_step_2.dita#concept_ikh_xgz_st" id="quickStartHPcloudStep2_"><keyword
         keyref="quickStartHPcloudStep2"/></xref></p><p>3. <xref
@@ -33,6 +42,29 @@
        environment</xref>.</note><xref href="CFR_step_2.dita#concept_ikh_xgz_st">
       <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
      </xref></stentry>
+=======
+    <stentry>
+     <ol id="ol_pjf_12z_st">
+      <li><xref href="CFR_step_1.dita#concept_s2k_b35_st" format="dita">Register an Account</xref></li>
+      <li><xref href="CFR_step_2.dita#concept_ikh_xgz_st" format="dita">Download and Install Tools</xref></li>
+      <li><xref href="CFR_step_3.dita#concept_kpg_fhz_st">Create a Sandbox Environment</xref></li>
+      <li><xref href="CFR_step_4.dita#concept_pqc_jhz_st">Create a Cluster</xref></li>
+      <li><xref href="CFR_step_5.dita#concept_cw2_thz_st">Explore a Sample Application</xref></li>
+     </ol>
+    </stentry>
+    <stentry>
+     <p><b>Registering for a <keyword keyref="pubCloudShort"/> Account</b><note type="tip">Keep your
+       username and password handy. You will need them during installation.</note></p>
+     <p>Registration allows you to obtain <xref href="http://www.hpcloud.com/cloud-credit"
+       scope="external" format="html">cloud credit</xref> to help cover hosting costs for your
+      sandbox environment. Review the <xref href="http://www.hpcloud.com/pricing" scope="external"
+       format="html"><keyword keyref="pubCloudShort"/> pricing</xref> to see what charges may be
+      incurred if you exceed your usage limits.</p>
+     <p>
+      <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
+     </p>
+    </stentry>
+>>>>>>> 9d80273... Testing theme changes on Linux
    </strow>
   </simpletable>
  </conbody>

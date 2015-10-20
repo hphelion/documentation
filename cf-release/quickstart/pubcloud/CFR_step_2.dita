@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_ikh_xgz_st">
+<<<<<<< HEAD
  <title>Quick Start Step 2: <keyword keyref="quickStartHPcloudStep2"/></title>
  <shortdesc>During this step you will download and install the tools necessary for creating a
     cluster and pushing applications to your sandbox environment. The download links and
     instructions will open in separate pages.</shortdesc>
+=======
+ <title>Quick Start Step 2: Download and Install Tools</title>
+ <shortdesc></shortdesc>
+>>>>>>> 9d80273... Testing theme changes on Linux
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
   </metadata>
  </prolog>
+<<<<<<< HEAD
  <conbody>
   <simpletable>
    <strow>
@@ -91,4 +97,7 @@
    </strow>
   </simpletable>
  </conbody>
+=======
+ <conbody/>
+>>>>>>> 9d80273... Testing theme changes on Linux
 </concept>
