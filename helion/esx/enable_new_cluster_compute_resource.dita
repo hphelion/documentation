@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_l5t_w5f_rt">
-  <title>Enabling a New Cluster as a Compute Resource </title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Enabling a New Cluster as a Compute Resource </title>
   <body>
     <p>When a new cluster is created in vCenter, EONs periodic pooling task fetches the new cluster
       information and updates the inventory. At present the state of a new cluster is

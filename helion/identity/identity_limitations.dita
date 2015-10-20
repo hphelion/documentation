@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_qtp_cn3_bt">
-  <title>Notes and Limitations</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Notes and Limitations</title>
   <body>
     <section id="notes"><title>Notes</title>
       <b>Domains</b>

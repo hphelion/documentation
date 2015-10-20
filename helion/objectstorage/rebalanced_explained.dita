@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_izw_1mz_4t">
-  <title>Rebalance Explained</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Rebalance Explained</title>
   <body>
     <p>The ring building process tries to distribute data evenly among the available disk drives.
       The data is stored in partitions, as explained in <xref

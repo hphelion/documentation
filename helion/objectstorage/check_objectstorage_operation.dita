@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_bvm_yg2_jt">
-  <title>Checking Object Storage Status</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Checking Object Storage Status</title>
   <body>
     <p>You can verify the Swift Object Storage operational status using:<ul id="ul_v51_hh2_jt">
         <li>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1399">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Networking Operation (Neutron) Administrator Pre and Post Installation Tasks</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Networking Operation (Neutron) Administrator Pre and Post Installation Tasks</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>

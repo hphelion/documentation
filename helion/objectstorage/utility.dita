@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_m13_dgp_nt">
-  <title>Using the Swift CLI</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using the Swift CLI</title>
   <body>
     <p>The swift utility (or CLI) is installed on the deployer node and also on all other nodes
       running the Swift proxy service. To use the Swift utility, set the following environment

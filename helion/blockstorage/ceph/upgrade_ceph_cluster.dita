@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_gxm_bwt_rt">
-  <title>Upgrading Ceph Cluster </title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Upgrading Ceph Cluster </title>
   <body>
     <p>This page describes the upgrade operations of Ceph cluster and Ceph client.</p>
     <p><!--Upgrade is done after ceph deployment.--></p>

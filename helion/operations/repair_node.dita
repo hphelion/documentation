@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_gcv_r4y_lt">
-  <title>Repairing a Compute Node</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Repairing a Compute Node</title>
   <body>
     <section>
       <p>There are a number of routine operations you must perform in the ingoing running and
