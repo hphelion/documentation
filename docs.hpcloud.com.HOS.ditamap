@@ -75,8 +75,7 @@
     <topichead navtitle="Security">
       <topicref href="helion/security/tls.dita" navtitle="Enabling TLS for Public Endpoints"
         locktitle="yes"/>
-      <topicref href="helion/security/secure_network_config.dita"
-        navtitle="Configuring Your Network Securely" locktitle="yes"/>
+    
       <topicref href="helion/security/encrypted_storage.dita"
         navtitle="Encryption of Passwords and Sensitive Data" locktitle="yes"/>
       <topicref href="helion/security/using_apparmor.dita"
