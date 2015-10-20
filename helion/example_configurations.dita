@@ -3,38 +3,40 @@
 <topic id="example_configurations">
   <title>Helion <tm tmtype="reg">OpenStack</tm> 2.0: Example Configurations</title>
   <body>
-    <p>The HP Helion OpenStack 2.0 system ships with a number of pre-qualified example
-      configuration. These are designed to help you to get up and running quickly with a minimum
-      number of configuration changes.</p>
-    <p>The HP Helion OpenStack input model allows a wide variety of configuration parameters that
-      may, at first glance, appear daunting. The example configurations are designed to simplify
-      this process by providing pre-built and pre-qualified examples that need only a minimum number
-      of modifications to get started.</p>
-    <p>This section briefly describes the various example configuration and their capabilities. It
-      also describes in detail (for one of the examples, entry-scale-kvm-vsa), how you may adapt the
-      input model to work in your environment.</p>
-    <p>HP Helion OpenStack 2.0 ships with two classes of sample cloud models: examples and
-      tech-preview. The models in the examples directory have been qualified by our Quality
-      Engineering team, whilst the tech-preview models are more experimental.</p>
-    <p>The following pre-qualified examples are shipped with HP Helion OpenStack 2.0:</p>
-    <ul>
-      <li>Entry-scale KVM with VSA model (entry-scale-kvm-vsa)</li>
-      <li>Entry-scale Swift Only model (entry-scale-swift)</li>
-      <li>Entry-scale KVM with Ceph model (entry-scale-kvm-ceph)</li>
-      <li>Entry-scale ESX model (entry-scale-esx)</li>
-    </ul>
-    <p>These systems are designed to provide an entry-level solution that can be scaled from a small
-      number of nodes to a moderately high node count (approximately 100 compute nodes, for
-      example).</p>
-    <p>The tech-preview configuration include the following model:</p>
-    <ul>
-      <li>Mid-scale KVM with VSA model (mid-scale-kvm-vsa): In this model, the cloud control plane
-        is subdivided into a number of dedicated service clusters to provide more processing power
-        for individual control plane elements. This enables a greater number of resources to be
-        supported (compute nodes, Swift object servers). This model also shows how a segmented
-        network can be expressed in the HP Helion OpenStack model.</li>
-    </ul>
-    <section id="2.1_entryscale_kvm_vsa"><title>Entry-scale KVM with VSA model</title>
+    <section id="2.0_example_configs"><title>2.0 HP Helion OpenStack Example Configurations</title>
+      <p>The HP Helion OpenStack 2.0 system ships with a number of pre-qualified example
+        configuration. These are designed to help you to get up and running quickly with a minimum
+        number of configuration changes.</p>
+      <p>The HP Helion OpenStack input model allows a wide variety of configuration parameters that
+        may, at first glance, appear daunting. The example configurations are designed to simplify
+        this process by providing pre-built and pre-qualified examples that need only a minimum
+        number of modifications to get started.</p>
+      <p>This section briefly describes the various example configuration and their capabilities. It
+        also describes in detail (for one of the examples, entry-scale-kvm-vsa), how you may adapt
+        the input model to work in your environment.</p>
+      <p>HP Helion OpenStack 2.0 ships with two classes of sample cloud models: examples and
+        tech-preview. The models in the examples directory have been qualified by our Quality
+        Engineering team, whilst the tech-preview models are more experimental.</p>
+      <p>The following pre-qualified examples are shipped with HP Helion OpenStack 2.0:</p>
+      <ul>
+        <li>Entry-scale KVM with VSA model (entry-scale-kvm-vsa)</li>
+        <li>Entry-scale Swift Only model (entry-scale-swift)</li>
+        <li>Entry-scale KVM with Ceph model (entry-scale-kvm-ceph)</li>
+        <li>Entry-scale ESX model (entry-scale-esx)</li>
+      </ul>
+      <p>These systems are designed to provide an entry-level solution that can be scaled from a
+        small number of nodes to a moderately high node count (approximately 100 compute nodes, for
+        example).</p>
+      <p>The tech-preview configuration include the following model:</p>
+      <ul>
+        <li>Mid-scale KVM with VSA model (mid-scale-kvm-vsa): In this model, the cloud control plane
+          is subdivided into a number of dedicated service clusters to provide more processing power
+          for individual control plane elements. This enables a greater number of resources to be
+          supported (compute nodes, Swift object servers). This model also shows how a segmented
+          network can be expressed in the HP Helion OpenStack model.</li>
+      </ul>
+    </section>
+    <section id="2.1_entryscale_kvm_vsa"><title>2.1 Entry-scale KVM with VSA model</title>
       <p>This model provides a KVM-based cloud with VSA for volume storage, and has been tested to a
         scale of 100 compute nodes.</p>
       <p>The example is focused on the minimum server count to support a highly-available (HA)
@@ -80,14 +82,65 @@
       </ul>
       <!--link to bottom section here -->
     </section>
-    <section id="2.2_entryscale_esx"><title>Entry-scale ESX model</title>
+    <section id="2.2_entryscale_esx"><title>2.2 Entry-scale ESX model</title>
       <p>This example shows how to integrate HP Helion OpenStack with ESX. The controller
         configuration is essentially the same as in the KVM example, but the resource nodes are
         provided by vCenter. In addition, a number of controller virtual machines are created for
-        each vCenter Cluster; One ESX Compute VM (which provides the nova-compute proxy for vCenter)
-        and one OVSvApp VM per cluster member (which provides network access). These virtual
-        machines are created automatically by HP Helion OpenStack as part of activating the vCenter
-        Cluster, and are therefore not defined in the example.</p>
+        each vCenter cluster; one ESX Compute virtual machine (which provides the nova-compute proxy
+        for vCenter) and one OVSvApp virtual machine per cluster member (which provides network
+        access). These virtual machines are created automatically by HP Helion OpenStack as part of
+        activating the vCenter cluster, and are therefore not defined in the example.</p>
+      <!-- MEDIA DIAGRAM GOES HERE -->
+      <p>The physical networking configuration is also largely the same as the KVM example, with the
+        exception of the GUEST network which uses tenant VLANs as the Neutron networking model
+        rather than VxLAN.</p>
+      <p>A separate configuration network (CONF) is required for configuration access from the
+        deployer. This network must be reachable from the Management network.</p>
+    </section>
+    <section id="2.3_entryscale_swift"><title>2.3 Entry-scale Swift model</title>
+      <p>This example shows how HP Helion OpenStack can be configured to provide a Swift only
+        configuration, consisting of three controllers and one or more Swift object servers.</p>
+      <!-- MEDIA DIAGRAM GOES HERE -->
+      <p>The example requires the following networks:</p>
+      <ul>
+        <li><b>External API</b> - This is the network that users will use to make requests to the
+          cloud</li>
+        <li><b>Swift</b> - This is the network that will be used for all data traffic between the
+          Swift services</li>
+        <li><b>Management</b> - This is the network that will be used for all internal traffic
+          between the cloud services, including node provisioning. This network must be on an
+          untagged VLAN.</li>
+      </ul>
+      <p>All of these networks are configured to be presented via a pair of Bonded NICs. The example
+        also enables provider VLANs to be configured in Neutron on this interface.</p>
+      <p>In the diagram "External Routing" refers to whatever routing you want to provide to allow
+        users to access the External API. "Internal Routing" refers to whatever routing you want to
+        provide to allow administrators to access the Management network.</p>
+      <p>If you are using HP Helion OpenStack to install the operating system then an IPMI/iLO
+        network connected to the IPMI/iLO ports of all servers and routable from the deployer is
+        also required for BIOS and power management of the node during the operating system
+        installation process.</p>
+      <p>In the example the controllers use one disk for the operating system and two disks for
+        Swift Proxy and Account storage. The Swift object servers use one disk for the operating
+        system and four disks for swift storage. These values can be modified to suit your
+        environment.</p>
+    </section>
+    <section id="2.4_entryscale_ceph"><title>2.4 Entry-scale KVM with Ceph model</title>
+      <p>This example provides a KVM based cloud using Ceph for volume storage. This controller and
+        compute configuration are essentially the same as in the KVM example, but the backend Cinder
+        storage is provided by Ceph.</p>
+      <!-- MEDIA DIAGRAM GOES HERE -->
+    </section>
+    <section id="2.5_mid-scale_kvm_vsa"><title>2.5 Mid-scale KVM with VSA model (Tech
+        Preview)</title>
+      <p>The mid-scale model, which is included as a technology preview in HP Helion OpenStack 2.0,
+        illustrates two important aspects of configuring HP Helion OpenStack for increased scale.
+        The controller services are distributed across a greater number of controllers and a number
+        of the networks are configured as multiple L3 segments (implementing per-rack
+        networking).</p>
+      <!-- MEDIA DIAGRAM GOES HERE -->
+      <p>The distribution of services across controllers is only one possible configuration, and
+        other combinations can also be expressed.</p>
     </section>
   </body>
 </topic>
