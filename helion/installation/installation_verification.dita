@@ -433,7 +433,7 @@ ok: [padawan-ccp-c1-m1-mgmt] => {
           You have two options to continue: <ol>
             <li>Repeat the deploy. There are two steps involved as follows: <ol>
                 <li>Delete the ring builder files as described in <xref
-                    href="objectstorage/restart_deploy_from_scratch.dita">Restart Deploy from
+                    href="../objectstorage/restart_deploy_from_scratch.dita">Restart Deploy from
                     Scratch</xref>.</li>
                 <li>Repeat the installation process starting by running the
                     <codeph>site.yml</codeph> playbook as described in the <xref
@@ -444,25 +444,25 @@ ok: [padawan-ccp-c1-m1-mgmt] => {
               This process may take several hours to complete (because you need to wait one hour
               between each rebalance). The steps are as follows: <ol>
                 <li>Change the min-part-time to 1 hour. See <xref
-                    href="objectstorage/how_to_change_min_part_time.dita">How to Change
+                    href="../objectstorage/how_to_change_min_part_time.dita">How to Change
                     mine-part-time</xref>.</li>
                 <li>Use the "First phase of ring rebalance" and "Final rebalance phase" as described
-                  in <xref href="objectstorage/input_model_change_existing_rings.dita">Applying
+                  in <xref href="../objectstorage/input_model_change_existing_rings.dita">Applying
                     Input Model Changes to Existing Rings</xref>. The "Weight change phase of ring
                   rebalance" does not apply because you not set the weight-step attribute at this
                   stage.</li>
                 <li>Set the min-part-time to the recommended 16 hours as described in <xref
-                    href="objectstorage/how_to_change_min_part_time.dita">How to Change
+                    href="../objectstorage/how_to_change_min_part_time.dita">How to Change
                     min-part-time.</xref></li>
               </ol></li>
           </ol></li>
       </ol>
       <p>If you receive errors during the validation, read the <xref
-          href="objectstorage/interpreting_swift_validate_input_model.dita">Interpreting the Swift
+          href="../objectstorage/interpreting_swift_validate_input_model.dita">Interpreting the Swift
           Validate Input Model Output</xref> documentation.</p>
       <p><b>Verify the Object Storage (Swift) Operations</b></p>
       <p>Full details on how to verify the operations can be found in <xref
-          href="objectstorage/check_objectstorage_operation.dita">Checking Object Storage
+          href="../objectstorage/check_objectstorage_operation.dita">Checking Object Storage
           Status</xref>.</p>
     </section>
   </body>

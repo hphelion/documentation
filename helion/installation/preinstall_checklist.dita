@@ -61,7 +61,7 @@
         the networks as documented in these links:</p>
       <p>
         <ul>
-          <li><xref href="example_configs.dita">Example Configurations</xref></li>
+          <li><xref href="../example_configurations.dita">Example Configurations</xref></li>
         </ul>
       </p>
       <p>Use these checklists to confirm and record your network configuration information.</p>
@@ -469,13 +469,13 @@
             <tbody>
               <row>
                 <entry/>
-                <entry>Disk Requirement: Single 8GB disk needed per the <xref href="hardware.dita"
+                <entry>Disk Requirement: Single 8GB disk needed per the <xref href="../hardware.dita"
                     >Minimum Hardware Requirements</xref></entry>
                 <entry/>
               </row>
               <row>
                 <entry/>
-                <entry><xref href="install_entryscale_kvm_vsa.dita#install_kvm/install_deployer">Set up
+                <entry><xref href="install_entryscale_kvm.dita#install_kvm/install_deployer">Set up
                     the Deployer using the hLinux ISO</xref></entry>
                 <entry/>
               </row>
@@ -571,7 +571,7 @@
               </row>
               <row>
                 <entry/>
-                <entry><xref href="administration/wipe_disks.dita">Ensure the disks are
+                <entry><xref href="../administration/wipe_disks.dita">Ensure the disks are
                   wiped</xref></entry>
                 <entry/>
               </row>
@@ -622,7 +622,7 @@
               </row>
               <row>
                 <entry/>
-                <entry><xref href="administration/wipe_disks.dita">Ensure the disks are
+                <entry><xref href="../administration/wipe_disks.dita">Ensure the disks are
                   wiped</xref></entry>
                 <entry/>
               </row>
@@ -673,7 +673,7 @@
               </row>
               <row>
                 <entry/>
-                <entry><xref href="administration/wipe_disks.dita">Ensure the disks are
+                <entry><xref href="../administration/wipe_disks.dita">Ensure the disks are
                   wiped</xref></entry>
                 <entry/>
               </row>
@@ -728,7 +728,7 @@
               </row>
               <row>
                 <entry/>
-                <entry><xref href="administration/wipe_disks.dita">Ensure the disks are
+                <entry><xref href="../administration/wipe_disks.dita">Ensure the disks are
                   wiped</xref></entry>
               </row>
               <row>
@@ -811,7 +811,7 @@
               </row>
               <row>
                 <entry/>
-                <entry><xref href="administration/wipe_disks.dita">Ensure the disks are
+                <entry><xref href="../administration/wipe_disks.dita">Ensure the disks are
                   wiped</xref></entry>
               </row>
               <row>

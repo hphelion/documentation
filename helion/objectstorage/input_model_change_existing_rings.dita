@@ -16,7 +16,7 @@
                   >Setting the weight-step attribute</xref>). </li>
               <li>Edit the Input Model as appropriate. You must edit the YAML file as per your
                 requirement. For more information, refer <xref
-                  href="../input_model.dita#input_model"/></li>
+                  href="../installation/input_model.dita#input_model"/></li>
               <li>Commit your configuration to the <xref href="../using_git.dita">local repo</xref>,
                 as follows:<codeblock>git add -A
 git commit -m "commit message"</codeblock></li>

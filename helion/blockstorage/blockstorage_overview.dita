@@ -13,10 +13,10 @@
       <p>Helion OpenStack 2.0 supports the following storage backends for Block Storage Volumes and Backup Datastore Configuration:</p>
       <ul>
         <li>Volumes <ul>
-            <li><xref href="vsa/vsa.dita">VSA</xref></li>
-            <li><xref href="3Par/3par_configuration.dita#topic_vln_2xy_ht">3PAR FC or
+          <li><xref href="../installation/configure_vsa.dita">VSA</xref></li>
+          <li><xref href="../installation/configure_3par.dita">3PAR FC or
               iSCSI</xref></li>
-             <li><xref href="../install_entryscale_esx.dita#install_esx/modify-volume-config"
+          <li><xref href="../installation/install_entryscale_esx.dita#install_esx/modify-volume-config"
                 >VMDK</xref></li>
             <li><xref href="ceph/ceph_overview.dita">Ceph</xref></li>
           </ul></li>

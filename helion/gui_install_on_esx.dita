@@ -5,14 +5,14 @@
   <body><!--Needs Edit-->
 
 
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm/important_notes"/>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm/prereqs"/>
-    <section conref="install_entryscale_esx.dita#install_esx/prereqs"/>
-    <section conref="install_entryscale_esx.dita#install_esx/deployCloud"/>
+    <section conref="installation/install_entryscale_kvm.dita#install_kvm/important_notes"/>
+    <section conref="installation/install_entryscale_kvm.dita#install_kvm/prereqs"/>
+    <section conref="installation/install_entryscale_esx.dita#install_esx/prereqs"/>
+    <section conref="installation/install_entryscale_esx.dita#install_esx/deployCloud"/>
 
 
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm/install_deployer"/>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm/configure_deployer"/>
+    <section conref="installation/install_entryscale_kvm.dita#install_kvm/install_deployer"/>
+    <section conref="installation/install_entryscale_kvm.dita#install_kvm/configure_deployer"/>
     <section id="Configuration">
       <title>Configure Your Environment</title>
       <ol>
@@ -36,18 +36,18 @@
             <codeph>elasticsearch</codeph> (bolded below): <codeblock>elasticsearch_cluster_name: "{{ LOG_SVR | item('vars.elasticsearch_cluster_name', default='<b>elasticsearch</b>') }}"</codeblock>
           <p>For example, you could use:
             <codeblock>elasticsearch_cluster_name: "{{ LOG_SVR | item('vars.elasticsearch_cluster_name', default='<b>helioncloud</b>') }}"</codeblock></p></li>
-        <li>Commit all of your configuration files to the <xref href="using_git.dita">local git
+        <li>Commit all of your configuration files to the <xref href="installation/using_git.dita">local git
             repo</xref>, as follows: <codeblock>cd ~/helion/hos/ansible
 git add --a .
 git commit -m "My config or other commit message"
 </codeblock>
           <note>This step needs to be repeated any time you make changes to your configuration files
-            before you move onto the following steps. See <xref href="using_git.dita">Using Git for
+            before you move onto the following steps. See <xref href="installation/using_git.dita">Using Git for
               Configuration Management</xref> for more information.</note></li>
       </ol>
     </section>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm/deploy_cobbler"/>
-    <section conref="install_entryscale_kvm_vsa.dita#install_kvm/provision_nodes"/>
+    <section conref="installation/install_entryscale_kvm.dita#install_kvm/deploy_cobbler"/>
+    <section conref="installation/install_entryscale_kvm.dita#install_kvm/provision_nodes"/>
     <p><xref href="gui_installer.dita#install_gui/chooseHypervisor">Return to GUI
         instructions</xref></p>
   </body>

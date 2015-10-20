@@ -12,7 +12,7 @@
       <p id="hosinit"><b>Running the <codeph>hos-init.bash</codeph> script when configuring your
           deployer does not complete</b></p>
       <p>Part of what the <codeph>hos-init.bash</codeph> script does in <xref
-          href="install_entryscale_kvm_vsa.dita#install_kvm/configure_deployer">step 3 of
+          href="install_entryscale_kvm.dita#install_kvm/configure_deployer">step 3 of
           configuring the Deployer</xref> is install git and so if your DNS nameserver is not
         configured or is not functioning properly in your <codeph>/etc/resolv.conf</codeph> file of
         your deployer node then it won't be able to complete.</p>

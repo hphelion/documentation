@@ -14,7 +14,7 @@
         <systemoutput>eon-deploy.yml</systemoutput> file at
         <systemoutput>~/helion/hos/ansible/hlm-deploy.yml</systemoutput> in the deployer node. For
       more details, refer to <xref
-        href="../../../documetation/14/documentation/helion/install_entryscale_esx.dita#install_esx/Prepare-and-Deploy-Cloud-Controllers"
+        href="../../helion/installation/install_entryscale_esx.dita#install_esx/Prepare-and-Deploy-Cloud-Controllers"
         >ESX installation</xref>.</p>
     <section>
       <title><b>Architecture</b></title>
