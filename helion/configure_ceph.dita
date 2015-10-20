@@ -166,5 +166,6 @@ ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
 ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
     </p>
     <p>This will also create Ceph users and Ceph pools on the resource nodes.</p>
+    <section/>
   </body>
 </topic>

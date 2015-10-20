@@ -153,8 +153,8 @@
           locktitle="yes">
           <topicref href="helion/blockstorage/ceph/configuring_use_ceph_cluster_glance.dita"/>
           <topicref href="helion/blockstorage/ceph/configuring_use_ceph_cluster.dita"/>
-          <topicref href="helion/blockstorage/ceph/upgrade_ceph_cluster.dita"/>
           <topicref href="helion/blockstorage/ceph/using_erasure_code_pool.dita"/>
+          <topicref href="helion/blockstorage/ceph/upgrade_ceph_cluster.dita"/>
         </topicref>
       </topicref>
 
@@ -195,6 +195,10 @@
       <topicref href="helion/blockstorage/ceph/remove_osd_node.dita"/>
       <topicref href="helion/blockstorage/ceph/adding_new_monitor_node.dita"/>
       <topicref href="helion/blockstorage/ceph/remove_monitor_node.dita"/>
+      <topicref href="helion/blockstorage/ceph/deploy_monitor_stand_alone_node.dita"/>
+      <topicref href="helion/blockstorage/ceph/defining_monitor_resource.dita"/>
+      <topicref href="helion/blockstorage/ceph/reconfigure_ceph_services.dita"/>
+      <topicref href="helion/blockstorage/ceph/ceph_operation.dita"/>
       <topicref href="helion/blockstorage/singleton_service_cinder.dita"/>
       <topicref href="helion/blockstorage/brocade_zone_manager.dita"
         navtitle="Configuring Brocade Zone Manager" locktitle="yes"/>

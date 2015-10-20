@@ -8,10 +8,10 @@
                 <li>Configure the following parameters available in the
                         <i>~/helion/my_cloud/config/ceph/settings.yml</i> file. <ul
                         id="ul_qsg_dv4_rt">
-                        <li>fsid</li>
-                        <li>ceph clusters</li>
-                        <li>osd_settle_time</li>
-                        <li>OSD_journal_size</li>
+                        <li><codeph>fsid</codeph></li>
+                        <li><codeph>ceph clusters</codeph></li>
+                        <li><codeph>osd_settle_time</codeph></li>
+                        <li><codeph>OSD_journal_size</codeph></li>
                     </ul></li>
                 <li>Any additional configuration parameters for Ceph (beyond those listed in the
                         <i>~/helion/my_cloud/config/ceph/settings.yml</i> file) can be specified in
