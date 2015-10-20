@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_d3l_svr_4t">
-  <title>Managing Object Storage (Swift) Rings</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Managing Object Storage (Swift) Rings</title>
   <body>
     <p>The rings are machine-readable description of which disk drives are used by Swift (for
       example: a drive is used to store account or object data). Rings also specify the policy for

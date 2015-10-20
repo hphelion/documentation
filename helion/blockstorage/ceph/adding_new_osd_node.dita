@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_drm_rm5_kt">
-  <title>Adding an Object Storage Daemon (OSD) Node </title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding an Object Storage Daemon (OSD) Node </title>
   <body>
     <p>The page describes the procedure to add a new OSD Node to an existing Ceph cluster.</p>
     <p><b>Procedure to add a new OSD Node</b></p>

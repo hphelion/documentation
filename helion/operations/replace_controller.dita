@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ijj_45j_nt">
-  <title>Replacing a Controller Node</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Replacing a Controller Node</title>
   <body>
     <section>
       <p>For HP Helion OpenStack 2.0 versions, you must have three controller nodes. Therefore,
