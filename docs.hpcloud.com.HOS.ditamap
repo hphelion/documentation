@@ -203,7 +203,7 @@
       <topicref href="helion/blockstorage/brocade_zone_manager.dita"
         navtitle="Configuring Brocade Zone Manager" locktitle="yes"/>
       <!-- BURA -->
-      <topicref href="helion/adding_moonshot_nodes.dita"/>
+      <topicref href="helion/administration/adding_moonshot_nodes.dita"/>
       <topicref href="helion/objectstorage/add_new_node.dita"/>
       <topicref href="helion/objectstorage/add_new_pac_node.dita"/>
       <topicref href="helion/objectstorage/replacing_drives_swift_node.dita"/>
@@ -318,7 +318,7 @@
 
     <!-- CONCEPTS -->
     <topichead navtitle="Conceptual Overviews">
-      <topicref href="helion/high_availability.dita"/>
+      <topicref href="helion/conceptual_overviews/high_availability.dita"/>
     </topichead>
   </topicref>
 </map>
