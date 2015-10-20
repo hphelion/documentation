@@ -13,7 +13,7 @@
             <title>Prerequisite</title>
             <p>The deployer node must be setup before starting Ceph deployment. For more details on
                 the installation of deployer node, refer to <xref
-                    href="../../install_entryscale_kvm_vsa.dita#install_kvm">installation
+                    href="../../install_entryscale_kvm.dita#install_kvm">installation
                     guide.</xref></p>
         </section>
     <p><b>Procedure to install monitor service(s) on a dedicated resource node(s)</b></p>

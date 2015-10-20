@@ -12,7 +12,7 @@
       <ul id="ul_pmb_s1m_rt">
         <li>The deployer node must be setup before deploying Ceph. For more details on the
           installation of deployer node, refer to <xref
-            href="../../install_entryscale_kvm_vsa.dita#install_kvm">installation guide.</xref></li>
+            href="../../install_entryscale_kvm.dita#install_kvm">installation guide.</xref></li>
         <li>You can deploy monitor service on a dedicated resource. Ensure to modify your
           environment after deploying the deployer node. For more details, refer to <xref
             href="deploy_monitor_stand_alone_node.dita#topic_ah5_4yx_qt">Install a monitor service
