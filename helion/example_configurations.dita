@@ -5,11 +5,11 @@
   <body>
     <!--Needs Edit-->
     <section id="1.0_toc"><title><i>1.0</i> Contents</title>
-      <ol outputclass="decimal start(1)">
-        <li>Contents</li>
-        <li>HP Helion OpenStack Example Configuration 
+      <ol>
+        <li value="1.0">Contents</li>
+        <li value="2.0">HP Helion OpenStack Example Configuration 
           <ol>
-            <li>Entry-scale KVM with VSA model</li>
+            <li value="2.1">Entry-scale KVM with VSA model</li>
             <li>Entry-scale ESX model</li>
             <li>Entry-scale Swift model</li>
             <li>Entry-scale KVM with Ceph model</li>
