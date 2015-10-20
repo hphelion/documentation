@@ -8,8 +8,9 @@
         <li>Right click  and put the host in the maintenance mode. This will automatically migrate
           all the tenant VMs except OVSvApp.  <p><image href="../../media/esx/eon_maintenance.png"
               id="image_qyh_rsw_st"/></p></li>
-        <li>Cancel the maintenance mode task. (<b>how do u cancel?? is there any screen
-          shot??</b>)</li>
+        <li>Cancel the maintenance mode task.<p><image
+              href="../../media/esx/eon_cancel_maintenance%20mode.png" id="image_lpd_qfx_st"
+          /></p></li>
         <li>Right click the <b>ovsvapp VM (IP Address)</b> and select <b>Power Off.</b>
           <p><image href="../../media/esx/eon_poweroff_ovsvapp.png" id="image_nb3_gsw_st"/></p></li>
         <li>Right click and select <b>Delete from Disk</b>.<p><image
