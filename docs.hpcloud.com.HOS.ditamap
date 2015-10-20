@@ -75,8 +75,7 @@
     <topichead navtitle="Security">
       <topicref href="helion/security/tls.dita" navtitle="Enabling TLS for Public Endpoints"
         locktitle="yes"/>
-      <topicref href="helion/security/secure_network_config.dita"
-        navtitle="Configuring Your Network Securely" locktitle="yes"/>
+    
       <topicref href="helion/security/encrypted_storage.dita"
         navtitle="Encryption of Passwords and Sensitive Data" locktitle="yes"/>
       <topicref href="helion/security/using_apparmor.dita"
@@ -225,7 +224,7 @@
       <topicref href="helion/blockstorage/vsa/vsa_create_multiple_clusters.dita"/>
       <topicref href="helion/blockstorage/ceph/deploy_monitor_stand_alone_node.dita"/>
       <topicref href="helion/blockstorage/ceph/ceph_operation.dita"/>
-      
+      <topicref href="helion/blockstorage/singleton_service_cinder.dita"/>
       <topicref href="helion/blockstorage/ceph/defining_monitor_resource.dita"/>
       <topicref href="helion/blockstorage/ceph/reconfigure_ceph_services.dita"/>
       <!-- END BLOCK STORAGE -->
@@ -238,7 +237,6 @@
         <topicref href="helion/objectstorage/validating_swift_recon.dita"/>
         <topicref href="helion/objectstorage/lm_scan_metering.dita"/>
         <topicref href="helion/objectstorage/utility.dita"/>
-        <topicref href="helion/blockstorage/singleton_service_cinder.dita"/>
       </topicref>
 
       <!-- BURA -->
