@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_s2k_b35_st">
- <title>Quick Start Step 1: Register an Account</title>
+ <title>Quick Start Step 1: <keyword keyref="quickStartHPcloudStep1"/></title>
  <shortdesc>Deploying a <keyword keyref="prodShort"/> Docker image to <keyword keyref="prodShort"/>
   is the fastest and easiest way to evaluate and to begin working with <keyword keyref="prodLong"/>.
   This process involves downloading and installing the necessary tools, configuring your sandbox
