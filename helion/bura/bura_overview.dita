@@ -29,7 +29,7 @@
     <section>
       <title>Architecture</title>
       <p>Freezer uses GNU Tar under the hood to execute incremental backup and restore. When a key
-        is provided, it uses OpenSSL to encrypt data (AES-256-CFB).</p>
+        is provided, it uses Open SSL to encrypt data (AES-256-CFB).</p>
       <p>Freezer architecture consists of the following components:</p>
       <table frame="all" rowsep="1" colsep="1" id="table_vkv_st3_dt">
         <tgroup cols="2" align="left">
@@ -86,7 +86,7 @@
                     instances with different credentials, and so on) </li>
                   <li>Execute file-based incremental (such as tar), block-based incremental (such as
                     rsync algorithm), and differential-based backup and restore</li>
-                  <li>Multiplatform: you can run it on hLinux, Windows, *BSD, and OSX </li>
+                  <li>Multi platform: you can run it on hLinux, Windows, *BSD, and OSX </li>
                   <li>Automatic removal of old backups</li>
                 </ul></entry>
             </row>

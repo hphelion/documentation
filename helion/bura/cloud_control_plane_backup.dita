@@ -3,22 +3,22 @@
 <topic id="topic_jsc_qps_qt">
   <title>Backing up the Cloud Control Plane </title>
   <body>
-    <section><title>Default Backup and Restore</title><p>As part of the installation procedure in HP
-        Helion <tm tmtype="reg">OpenStack</tm> 2.0, automatic backup/restore jobs are uploaded from
-        Swift into the Freezer scheduler. The backup jobs perform scheduled backups of Helion
-        OpenStack (HOS) control plane data (files/directories/db). The restore jobs can be used to
-        restore appropriate control plane data. Additional automatic jobs can be added to
-        backup/restore from the secure shell (SSH) server. You must use the following procedure to
-        set up SSH backup during installation: </p></section>
-    <section><title>Setting up SSH Backup</title>
-      <p>By default, during HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 deployement, backup jobs
+    <section><title>Default Backup and Restore</title><p>As part of the installation procedure in HP Helion <tm tmtype="reg">OpenStack</tm> 2.0, automatic
+        backup/restore jobs are uploaded from Swift into the Freezer scheduler. The backup jobs
+        perform scheduled backups of Helion OpenStack control plane data (files/directories/db). The
+        restore jobs can be used to restore appropriate control plane data. Additional automatic
+        jobs can be added to backup/restore from the secure shell (SSH) server. You must use the
+        following procedure to set up SSH backup during installation: </p></section>
+    <section><title>Setting up SSH backup</title>
+      <p>By default, during HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 deployment, backup jobs
         are automaticaly deployed to backup to Swift the MySQL database, the deployer, and Swift
         rings. Restore jobs are also deployed for convenience. It is more secure to store those
-        backup also outside of the Helion infrastructure. If you provide all the values reqired in
-        the file "~/helion/my_cloud/config/freezer/ssh_credentials.yml", jobs will also be deployed
-        to backup and restore to/from an SSH server of your choice.</p></section>
+        backups also outside of the Helion infrastructure. If you provide all the values required in
+        the following file, jobs will also be deployed to backup and restore to/from an SSH server
+        of your choice:<codeblock>~/helion/my_cloud/config/freezer/ssh_credentials.yml</codeblock>
+      </p></section>
     <section><title>Backing up your Helion control plane to an SSH server</title>
-      <p>you will need to know the following connections informations to this server <ul>
+      <p>You must provide the following connection information to this server:<ul>
           <li>The SSH server IP</li>
           <li>The SSH server port to connect to (usualy 22). You might want to check how to open
             port on Helion's firewall.</li>
@@ -32,15 +32,12 @@
     <section><title>Setting SSH information before deployment</title>
       <p>Before running the configuration processor, edit the following file:
         <codeblock>~/helion/my_cloud/config/freezer/ssh_credentials.yml</codeblock>Please be advised
-        that all parameter are mandatory and be carefull in the way you provide SSh private
-      key.</p></section>
-    <section><title>Setting SSH information after deployment</title><p>If you already ran the
-        deployement of your cloud and forgot to configure SSH backups or you wish to modify the
-        setting of where the backup are stored, follow the next instructions.</p><p>Edit the
+        that all parameter are mandatory and be careful in the way you provide SSH private key.</p></section>
+    <section><title>Setting SSH information after deployment</title><p>If you already ran the deployment of your cloud and forgot to configure SSH backups or you wish
+        to modify the setting of where the backup are stored, follow the next instructions.</p><p>Edit the
         following file:
-        <codeblock>~/helion/my_cloud/config/freezer/ssh_credentials.yml</codeblock></p><p>Please be
-        advised that all parameter are mandatory and be carefull in the way you provide SSH private
-        key.</p><p>Then, run the following commands:
+        <codeblock>~/helion/my_cloud/config/freezer/ssh_credentials.yml</codeblock></p><p>Please be advised that all parameter are mandatory and be careful in the way you provide SSH
+        private key.</p><p>Then, run the following commands:
         <codeblock>cd ~/helion
 git add -A
 git commit -m "My config"
@@ -121,9 +118,8 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
 -----END RSA PRIVATE KEY-----</codeblock></p><p>
         You server is now ready to receive backup. If you wish you can check our advices on how to
         secure it.</p></section>
-    <section><title>How to open ports in Helion's firewall </title><p> There is a strict policy of firewaling
-        deployed with Helion. You might need to specificaly open the SSH port if you use a
-        non-standar one. Here is how to do it:</p>
+    <section><title>How to open ports in Helion's firewall </title><p> There is a strict policy of firewaling deployed with Helion. You might need to specifically open
+        the SSH port if you use a non-standard one. Here is how to do it:</p>
       <p>When creating you model, edit the <codeblock>~/helion/my_cloud/definition/data/firewall_rules.yml</codeblock></p><p>You need to add a new element in the firewall-rules list like: <codeblock>
 - name: BACKUP
   # network-groups is a list of all the network group names
@@ -141,7 +137,7 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
     protocol: tcp</codeblock></p></section>
     <section><title>How to secure your SSH backup server</title><p>There is a few things that you can do to harden an SSH server (and that are well documented over the internet):<ul>
       <li>Disable root login</li>
-      <li>Move SSH to a non-default port (ie: something else than 22)</li>
+      <li>Move SSH to a non-default port (i.e.: something else than 22)</li>
       <li>Disable password login (only allow rsa keys)</li>
       <li>Disable SSH v1</li>
       <li>Authorize only SFTP for that user (disable ssh shell)</li>
