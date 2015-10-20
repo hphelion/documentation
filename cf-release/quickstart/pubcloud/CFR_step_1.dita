@@ -16,11 +16,11 @@
    <strow>
     <stentry>
      <ol id="ol_pjf_12z_st">
-      <li><xref href="CFR_step_1.dita#concept_s2k_b35_st" format="dita">Register an Account</xref></li>
-      <li><xref href="CFR_step_2.dita#concept_ikh_xgz_st" format="dita">Download and Install Tools</xref></li>
-      <li><xref href="CFR_step_3.dita#concept_kpg_fhz_st">Create a Sandbox Environment</xref></li>
-      <li><xref href="CFR_step_4.dita#concept_pqc_jhz_st">Create a Cluster</xref></li>
-      <li><xref href="CFR_step_5.dita#concept_cw2_thz_st">Explore a Sample Application</xref></li>
+      <li id="step_1_link"><xref href="CFR_step_1.dita#concept_s2k_b35_st" format="dita">Register an Account</xref></li>
+      <li id="step_2_link"><xref href="CFR_step_2.dita#concept_ikh_xgz_st" format="dita">Download and Install Tools</xref></li>
+      <li id="step_3_link"><xref href="CFR_step_3.dita#concept_kpg_fhz_st">Create a Sandbox Environment</xref></li>
+      <li id="step_4_link"><xref href="CFR_step_4.dita#concept_pqc_jhz_st">Create a Cluster</xref></li>
+      <li id="step_5_link"><xref href="CFR_step_5.dita#concept_cw2_thz_st">Explore a Sample Application</xref></li>
      </ol>
     </stentry>
     <stentry>
@@ -31,9 +31,9 @@
       sandbox environment. Review the <xref href="http://www.hpcloud.com/pricing" scope="external"
        format="html"><keyword keyref="pubCloudShort"/> pricing</xref> to see what charges may be
       incurred if you exceed your usage limits.</p>
-     <p>
-      <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
-     </p>
+     <p><xref href="CFR_step_2.dita#concept_ikh_xgz_st">
+       <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
+      </xref></p>
     </stentry>
    </strow>
   </simpletable>
