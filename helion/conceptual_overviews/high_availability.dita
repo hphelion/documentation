@@ -222,6 +222,18 @@
           <p>Due to the single threading required in both cinder-volume and the drivers, 
             the Cinder volume service is run as a singleton in the control plane. 
             <image href="../../media/ha/ha-cinder-volume.png" id="CinderVolume"/></p>
+          <p>Cinder-volume is deployed on all three controller nodes, but kept active on 
+            only one node at a time. By default, cinder-volume is kept active on the controller. 
+            If the controller fails, you must enable and start the cinder-volume service on 
+            one of the other controller nodes, until it is restored. Once the controller is 
+            restored, you must shut down the Cinder volume service from all other nodes and 
+            start it on the controller to ensure it runs as a singleton.</p>
+          <p>Since cinder.conf is kept synchronized across all the 3 nodes, Cinder volume 
+            can be run on any of the nodes at any given time. Ensure that it is run on only 
+            one node at a time.</p>
+          <p>Details of how to activate Cinder Volume after controller failure is documented in
+              <xref href="../blockstorage/singleton_service_cinder.dita#topic_l1p_vpy_jt">Managing
+              Cinder Volume and Backup Services</xref>.</p>
         </sectiondiv>
         <sectiondiv>
           <p id="sherpa"><b>Sherpa</b></p>
@@ -253,11 +265,12 @@
           protect you against multiple levels of failure. As soon as first-level failure 
           occurs, you must try to fix the symptom/root cause and recover from the failure, 
           as soon as possible.</note>
-        <p>In the unlikely event that one of the controller servers suffers an irreparable 
-          hardware failure, you can decommission and delete it from the cluster. You can 
-          then deploy the failed controller on a new server and connect it back into the 
-          original three node controller cluster. Learn more about Replacing/Rebuilding 
-          Controller Nodes.</p>
+        <p>In the unlikely event that one of the controller servers suffers an irreparable hardware
+          failure, you can decommission and delete it from the cluster. You can then deploy the
+          failed controller on a new server and connect it back into the original three node
+          controller cluster. Learn more about <xref
+            href="../operations/replace_controller.dita#topic_ijj_45j_nt">Replacing/Rebuilding
+            Controller Nodes</xref>.</p>
       </sectiondiv>
     </section>
     
@@ -318,10 +331,11 @@
         the two-way replication maintains two mirrored copies of data for each volume.</p>
       <p>This Network RAID 10 capability ensures that failure of any single server 
         does not cause data loss, and maintains data access to the clients.</p>
-      <p>Furthermore, each of the VSA nodes of the cluster can be strategically deployed 
-        in different zones of your data center for maximum redundancy and resiliency. 
-        For more information on how to deploy VSA nodes on desired target servers, 
-        refer to the Deploy VSA document.</p>
+      <p>Furthermore, each of the VSA nodes of the cluster can be strategically deployed in
+        different zones of your data center for maximum redundancy and resiliency. For more
+        information on how to deploy VSA nodes on desired target servers, refer to the <xref
+          href="../installation/configure_vsa.dita#config_vsa">Configuring for VSA Block Storage
+          Backend</xref> document.</p>
       <p><image href="../../media/ha/ha-block-storage.png" id="BlockStorage"/></p>
     </section>
     
