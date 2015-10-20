@@ -68,8 +68,6 @@
         </topicref>
         <topicref href="carrier-grade-install-post.dita" navtitle="Post-Installation Tasks"
             locktitle="yes">
-            <topicref href="carrier-grade-install-horizon-patch.dita" toc="yes"
-                navtitle="Deploying the Horizon Patch" locktitle="yes"/>
             <topicref href="carrier-grade-install-metadata.dita" toc="yes"
                 navtitle="Configuring the DCN Metadata Agent" locktitle="yes"/>
             <topicref href="carrier-grade-install-ldap-verify.dita"
