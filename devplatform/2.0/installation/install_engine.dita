@@ -3,16 +3,72 @@
 <topic id="topic_gkq_fqy_rt">
   <title>Install the HP Helion Code Engine</title>
   <body>
-    <section><title>Prerequisites</title>Installing services requires that the HDP Installer 2.0,
-      also known as HDPI, has already <xref
-        href="devplatform_install_platform.dita#topic_gly_xmh_ts">been installed</xref>.<p>The
-        images for the individual services will be downloaded when the service installation is
-        started. A separate download step is not necessary.</p><p>The installer retrieves service
-        configuration information from the <codeph>clouds.yaml</codeph> file. If you did not create
-        a <codeph>clouds.yaml</codeph> file earlier, you can <xref
-          href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one now</xref>.</p><p>The HP Helion
-        Code Engine also requires a code repository hosted on GitHub or a private
-      server.</p></section>  
+    <section><title>Prerequisites</title>
+ <ul>
+      <li>Installing services requires that the HDP Installer 2.0, also known as HDPI, has already <xref href="devplatform_install_platform.dita#topic_gly_xmh_ts">been installed</xref>.</li>
+      <li>The installer retrieves service configuration information from the <codeph>clouds.yaml</codeph> file. If you did not create a <codeph>clouds.yaml</codeph> file earlier, you can <xref
+          href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one now</xref>.</li>
+   
+      <li>The HP Helion Code Engine also requires a code repository hosted on GitHub or a private
+          server. <ol>
+            <li>Open a github.com account or create a GitHub Enterprise server.</li>
+            <li>Register a new OAUTH application in Github so that the HP Helion Code Engine can
+              communicate with your version control provider. <ul>
+                <li>Public Github: <xref href="https://github.com/settings/applications/new"
+                    format="html" scope="external"
+                    >https://github.com/settings/applications/new</xref></li>
+                <li>Github Enterprise: https://&lt;hostname>/settings/applications/new </li>
+              </ul></li>
+          </ol></li>
+      <li>The Helion Code Engine must also be registered before users can log in. <ol>
+            <li>Enter values for the following fields. The secrets that describe your application
+              should be in the <codeph>automation/ansible/templates/settings.json</codeph>
+                file.<table frame="all" rowsep="1" colsep="1" id="table_bzl_jt5_st">
+                <tgroup cols="3">
+                  <colspec colname="c1" colnum="1" colwidth="1*"/>
+                  <colspec colname="c2" colnum="2" colwidth="2.51*"/>
+                  <colspec colname="c3" colnum="3" colwidth="1.75*"/>
+                  <thead>
+                    <row>
+                      <entry>Field</entry>
+                      <entry>Value</entry>
+                      <entry>Example</entry>
+                    </row>
+                  </thead>
+                  <tbody>
+                    <row>
+                      <entry>Application name</entry>
+                      <entry>The name you'd like users to see when they authenticate with
+                        Github</entry>
+                      <entry>Helion Code Engine</entry>
+                    </row>
+                    <row>
+                      <entry>Homepage URL </entry>
+                      <entry> The public url to the web role hosting the UX.<note>If this is your
+                          first time deploying to this cluster, you might have to run a deployment
+                          first and then create the Github OAUTH app. </note></entry>
+                      <entry>https://&lt;hostname>/ </entry>
+                    </row>
+                    <row>
+                      <entry>Application description</entry>
+                      <entry>Some text describing the application </entry>
+                      <entry>Helion Code Engine is an integrated CI/CD system. </entry>
+                    </row>
+                    <row>
+                      <entry>Authorization callback URL</entry>
+                      <entry>The public url to the application when the user authenticates with
+                        github </entry>
+                      <entry>https://&lt;hostname>/auth/github/callback</entry>
+                    </row>
+                  </tbody>
+                </tgroup>
+              </table></li>
+            <li>Once the values have been entered, click <b>Register Application</b>. </li>
+            <li>You will be presented with a screen that contains your application's <b>Client
+                Id</b> and secret. Make a note of these.</li>
+          </ol></li>
+</ul>
+    </section>  
     
     <section>
             <title>Install the HP Helion Code Engine</title>
@@ -26,14 +82,53 @@
                 Environment.<codeblock>source .devplatform/bin/activate</codeblock></li>
               
               
-              <li>The installer retrieves service configuration information from the
-            <codeph>clouds.yaml</codeph> file. If you did not create a <codeph>clouds.yaml</codeph>
-          file earlier, you must <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one
-            now</xref>.</li>
+              <li>If you did not create a <codeph>clouds.yaml</codeph> file earlier, you must <xref
+            href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one now</xref>.</li><li>Add the following values in the <codeph>clouds.yaml</codeph> file. Most of the values can be
+          left at the default value.<note>These parameters are the same as the ones used by the
+            Messaging service, so if you installed Messaging first, you do not have to re-do this
+            step.
+            <codeblock>messaging:
+  deployer_key: default
+  deployer_flavor: 4 
+  deployer_name: &lt;service&gt;_deployer_&lt;version&gt;
+  deployer_security_group: default
+  deployer_version: 
+  deployer_image: 
+  deployer_uri: 
+  deployer_net_id: 
+  deployer_cloud: </codeblock></note><ul
+            id="ul_nk3_nzz_st">
+            <li>deployer_key: The keypair to use for the deployer instance. Default value:
+              default</li>
+            <li>deployer_flavor: The flavor to use for the deployer instance, Default value: 4 which
+              is Large.</li>
+            <li>deployer_name: The name of the deployer instance. Default value:
+              &lt;service&gt;_deployer_&lt;version&gt;</li>
+            <li>deployer_security_group: The name of the security group for the deployer. Default
+              value: default</li>
+            <li>deployer_version: The version of the deployer. Default value: if not set, it will
+              use the version in the image name.</li>
+            <li>deployer_image: The image to use for the deployer. It will attempt to find an image
+              with the prefix <i>helionci</i> or <i>msgaas</i> and containing the word
+              <i>hlinux</i>.</li>
+            <li>deployer_uri: The location where the download the deployer tgz can be found. Will be
+              set by the CLI based on information retrieved from Swift.</li>
+            <li>deployer_net_id: Network id for the deployer instance. Default value: The id of the
+              network named <i>SVC</i>. </li>
+            <li>deployer_cloud: The cloud identified in the clouds.yaml where the deployer will be
+              created. Note that while the deployer creation must be performed by an admin, the
+              deployer itself may be owned by someone else.</li>
+          </ul></li>
         <li>Run the installer.
           <codeblock>openstack hdpi helionci install --package wscatalog.3333</codeblock></li>
-        <li>Launch the HP Helion Code Engine.<codeblock>os hdpi helionci launch</codeblock></li>
-            </ol>
+              <li>After the installation is complete, launch the deployer.
+                <codeblock>$ openstack hdpi helionci launch</codeblock>The output should look similar to
+                the
+                following:<codeblock>Searching for container helionci-deployer... 
+Searching for container helionci-launcher... 
+Extracting ... 
+Running scripts... 
+Running launcher.py</codeblock></li>  </ol>
           </section>
   </body>
 </topic>
