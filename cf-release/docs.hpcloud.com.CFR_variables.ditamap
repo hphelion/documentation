@@ -72,4 +72,39 @@
          </keywords>
       </topicmeta>
    </keydef>
+   <keydef keys="quickStartHPcloudStep1">
+      <topicmeta>
+         <keywords>
+            <keyword>Register an Account</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep2">
+      <topicmeta>
+         <keywords>
+            <keyword>Download and Install Tools</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep3">
+      <topicmeta>
+         <keywords>
+            <keyword>Create a Sandbox Environment</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep4">
+      <topicmeta>
+         <keywords>
+            <keyword>Create a Cluster</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep5">
+      <topicmeta>
+         <keywords>
+            <keyword>Explore a Sample Application</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
 </map>

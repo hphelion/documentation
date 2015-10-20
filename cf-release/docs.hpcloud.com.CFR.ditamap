@@ -10,7 +10,7 @@
          <topicref href="quickstart/pubcloud/CFR_step_3.dita"/>
          <topicref href="quickstart/pubcloud/CFR_step_4.dita"/>
          <topicref href="quickstart/pubcloud/CFR_step_5.dita"/>
-         <topichead navtitle="crap">
+         <topichead navtitle="DO NOT LOOK HERE--TESTING">
             <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_tools.dita"/>
             <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_sandbox.dita"/>
             <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_cluster.dita"/>
