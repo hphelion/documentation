@@ -191,7 +191,7 @@
         navtitle="Accessing the Horizon Dashboard" locktitle="yes"/>
       <topicref href="helion/operations/opsconsole_overview.dita"
         navtitle="Accessing the Operations Console" locktitle="yes"/>
-
+      <topicref href="helion/operations/start_stop_services.dita"  navtitle="Starting and Stopping Services" locktitle="yes"/>
       <!-- ADDING / REMOVING / REPAIRING NODES -->
 
       <!-- node maintenance -->
