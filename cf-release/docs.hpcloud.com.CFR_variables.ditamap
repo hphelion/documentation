@@ -195,7 +195,7 @@
          </keywords>
       </topicmeta>
    </keydef>
-   <keydef keys="prodVer">
+   <keydef keys="prodVerShort">
       <topicmeta>
          <keywords>
             <keyword>1.0</keyword>
