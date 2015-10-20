@@ -2,12 +2,16 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_cw2_thz_st">
 <<<<<<< HEAD
+<<<<<<< HEAD
  <title>Quick Start Step 5: <keyword keyref="quickStartHPcloudStep5"/></title>
  <shortdesc>The following examples describe a typical process of pushing an application using the
     Cloud Foundry CLI to a Droplet Execution Agent (DEA) running on <keyword keyref="prodLong"
     />.</shortdesc>
 =======
  <title>Quick Start Step 5: Explore a Sample Application</title>
+=======
+ <title>Quick Start Step 5: <keyword keyref="quickStartHPcloudStep5"/></title>
+>>>>>>> 86ae294... Added new content
  <shortdesc></shortdesc>
 >>>>>>> 9d80273... Testing theme changes on Linux
  <prolog>

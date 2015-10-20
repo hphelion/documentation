@@ -2,6 +2,7 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_s2k_b35_st">
 <<<<<<< HEAD
+<<<<<<< HEAD
  <title>Quick Start Step 1: <keyword keyref="quickStartHPcloudStep1"/></title>
  <shortdesc>Deploying an <keyword keyref="prodLong"/> Docker image to <keyword keyref="pubCloudLong"
   /> is the fastest and easiest way to evaluate and to begin working with <keyword
@@ -9,6 +10,9 @@
   configuring your sandbox environment, and deploying the Docker image.</shortdesc>
 =======
  <title>Quick Start Step 1: Register an Account</title>
+=======
+ <title>Quick Start Step 1: <keyword keyref="quickStartHPcloudStep1"/></title>
+>>>>>>> 86ae294... Added new content
  <shortdesc>Deploying a <keyword keyref="prodShort"/> Docker image to <keyword keyref="prodShort"/>
   is the fastest and easiest way to evaluate and to begin working with <keyword keyref="prodLong"/>.
   This process involves downloading and installing the necessary tools, configuring your sandbox

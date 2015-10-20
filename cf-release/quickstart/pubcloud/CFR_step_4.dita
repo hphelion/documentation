@@ -2,11 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_pqc_jhz_st">
 <<<<<<< HEAD
+<<<<<<< HEAD
  <title>Quick Start Step 4: <keyword keyref="quickStartHPcloudStep4"/></title>
  <shortdesc>During this step you will use Terraform to create an <keyword keyref="prodLong"/>
     cluster on <keyword keyref="pubCloudLong"/>.</shortdesc>
 =======
  <title>Quick Start Step 4: Create a Cluster</title>
+=======
+ <title>Quick Start Step 4: <keyword keyref="quickStartHPcloudStep4"/></title>
+>>>>>>> 86ae294... Added new content
  <shortdesc></shortdesc>
 >>>>>>> 9d80273... Testing theme changes on Linux
  <prolog>

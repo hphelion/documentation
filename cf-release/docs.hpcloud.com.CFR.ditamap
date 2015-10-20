@@ -40,8 +40,11 @@
          <topichead navtitle="crap">
 =======
          <topichead navtitle="DO NOT LOOK HERE--TESTING">
+<<<<<<< HEAD
 >>>>>>> 67bf605... Fixed single-sourced navigation internals
             <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_tools.dita"/>
+=======
+>>>>>>> 86ae294... Added new content
             <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_sandbox.dita"/>
             <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_cluster.dita"/>
             <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_explore.dita"/>
