@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="example_configurations">
-  <title>Helion <tm tmtype="reg">OpenStack</tm> 2.0: Example Configurations</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Example Configurations</title>
   <body>
     <section id="2.0_example_configs"><title><i>2.0</i> HP Helion OpenStack Example
         Configurations</title>
@@ -538,6 +538,73 @@
         <li>Update <codeph>disks_compute.yml</codeph> to add additional disk capacity to your
           compute servers</li>
       </ul>
+    </section>
+    <section id="3.2.1_disks_controller"><title><i>3.2.1</i> Disks_controller.yml</title>
+      <p>The disk configuration of the controllers consists of two sections; a definition of a
+        volume group that provides a number of file-systems for various subsystems and device-group
+        that provides disk capacity for Swift.</p>
+    </section>
+    <section id="3.2.1.1_filesystems"><title><i>3.2.1.1</i> File Systems Storage</title>
+      <p> The root volume group (hlm-vg) is divided into a number of logical volumes that provide
+        separate file systems for the various services that are co-hosted on the controllers in the
+        entry-scale examples. The capacity of each file system is expressed as a percentage of the
+        overall volume group capacity. Because not all file system usage scales linearly, two
+        different disk configurations are provided:</p>
+      <ul>
+        <li><b>CONTROLLER-DISKS</b> is based on a 512GB root volume group</li>
+        <li><b>CONTROLLER-1TB-DISKS</b> provides a higher percentage of space for the logging
+          service</li>
+      </ul>
+      <p>As supplied, the example uses the smaller disk model. To use the larger disk model you need
+        to modify the <codeph>disk-models</codeph> parameter in the
+          <codeph>server_roles.yml</codeph> file, as shown below:</p>
+      <codeblock>
+    server-roles:
+        
+       - name: CONTROLLER-ROLE
+         interface-model: CONTROLLER-INTERFACES
+         disk-model: CONTROLLER-1TB-DISKS</codeblock>
+      <p>To add additional disks to the root volume group you need to modify the volume group
+        definition in whichever disk model you are using. The following exaple shows adding an
+        additional disk, <codeph>/dev/sdd</codeph> to the <codeph>disks_controller.yml</codeph>
+        file:</p>
+      <codeblock>
+   disk-models:
+      - name: CONTROLLER-DISKS
+        
+        volume-groups:
+         - name: hlm-vg
+           physical-volumes:
+        
+              # NOTE: 'sda_root' is a templated value. This value is checked in
+              # os-config and replaced by the partition actually used on sda
+              #e.g. sda1 or sda5
+              - /dev/sda_root
+              <b>- /dev/sdd</b></codeblock>
+    </section>
+    <section id="3.2.1.2_swiftstorage"><title><i>3.2.1.2</i> Swift Storage</title>
+      <p>Swift storage is configured as a device-group and has a syntax that allows disks to be
+        allocated to specific rings. In the examplem two disks are allocated to Swift to be shared
+        by the account, container, and object-0 rings.</p>
+      <codeblock>
+   device-groups:
+       - name: swiftobj
+         devices:
+            - name: /dev/sdb
+            - name: /dev/sdc
+            # Add any additional disks for swift here
+            # -name: /dev/sdd
+            # -name: /dev/sde
+         consumer:
+           name: swift
+           attrs:
+              rings:
+                 - account
+                 - container
+                       - object-0</codeblock>
+      <!--- NEED TO FIND THIS LINK -->
+      <p> Refer to the "Allocating Disk Drives" section of the Object Storage Service for details of
+        how to configure additional Swift Storage.</p>
     </section>
   </body>
 </topic>
