@@ -13,5 +13,81 @@
     <p>This section briefly describes the various example configuration and their capabilities. It
       also describes in detail (for one of the examples, entry-scale-kvm-vsa), how you may adapt the
       input model to work in your environment.</p>
+    <p>HP Helion OpenStack 2.0 ships with two classes of sample cloud models: examples and
+      tech-preview. The models in the examples directory have been qualified by our Quality
+      Engineering team, whilst the tech-preview models are more experimental.</p>
+    <p>The following pre-qualified examples are shipped with HP Helion OpenStack 2.0:</p>
+    <ul>
+      <li>Entry-scale KVM with VSA model (entry-scale-kvm-vsa)</li>
+      <li>Entry-scale Swift Only model (entry-scale-swift)</li>
+      <li>Entry-scale KVM with Ceph model (entry-scale-kvm-ceph)</li>
+      <li>Entry-scale ESX model (entry-scale-esx)</li>
+    </ul>
+    <p>These systems are designed to provide an entry-level solution that can be scaled from a small
+      number of nodes to a moderately high node count (approximately 100 compute nodes, for
+      example).</p>
+    <p>The tech-preview configuration include the following model:</p>
+    <ul>
+      <li>Mid-scale KVM with VSA model (mid-scale-kvm-vsa): In this model, the cloud control plane
+        is subdivided into a number of dedicated service clusters to provide more processing power
+        for individual control plane elements. This enables a greater number of resources to be
+        supported (compute nodes, Swift object servers). This model also shows how a segmented
+        network can be expressed in the HP Helion OpenStack model.</li>
+    </ul>
+    <section id="2.1_entryscale_kvm_vsa"><title>Entry-scale KVM with VSA model</title>
+      <p>This model provides a KVM-based cloud with VSA for volume storage, and has been tested to a
+        scale of 100 compute nodes.</p>
+      <p>The example is focused on the minimum server count to support a highly-available (HA)
+        compute cloud deployment. The first (manually installed) server, often referred to as the
+        deployer, is also used as one of the controller nodes. This model consists of a minimum
+        server count of seven, with three controllers, three VSA storage servers, and one compute
+        server. Swift storage in this example is contained on the controllers.</p>
+      <p>Note that the VSA storage requires a minimum of three servers for a HA configuration,
+        although the deployment will work with as little as one VSA node.</p>
+      <p>This model can also be deployed without the VSA servers and configured to use an external
+        storage device, such as a 3PAR array, which would reduce the minimum server count to
+        four.</p>
+      <!-- MEDIA DIAGRAM GOES HERE -->
+      <p>The example requires the following networks:</p>
+      <ul>
+        <li><b>External API</b> - This is the network that users will use to make requests to the
+          cloud.</li>
+        <li><b>External VM</b> - This is the network that will be used to provide access to virtual
+          machines (via floating IP addresses)</li>
+        <li><b>Guest/VxLAN</b> - This is the network that will carry traffic between virtual
+          machines on private networks within the cloud</li>
+        <li><b>Management</b> - This is the netwrok that will be used for all internal traffic
+          between the cloud services, including node provisioning. This network must be on an
+          untagged VLAN.</li>
+      </ul>
+      <p>All of these networks are configured to be presented via a pair of bonded NICs. The example
+        also enables provider VLANs to be configured in Neutron on this interface.</p>
+      <p>In the diagram, "External Routing" refers to whatever routing you want to provide to allow
+        users to access the External API and External VM networks. Note that the EXTERNAL_API
+        network must be reachable from the EXTERNAL_VM network if you want virtual machines to be
+        able to make API calls to the cloud. "Internal Routing" refers to whatever routing you want
+        to provide to allow administrators to access the Management network.</p>
+      <p>If you are using HP Helion OpenStack to install the operating system, then an IPMI/iLO
+        network connected to the IPMI/iLO ports of all servers and routable from the deployer server
+        is also required for BIOS and power management of the nodes during the operating system
+        installation process.</p>
+      <p>The example uses the following disk configurations:</p>
+      <ul>
+        <li><b>Controllers</b> - One operating system disk and two disks for Swift storage</li>
+        <li><b>VSA</b> - one operating system disk and two disks for VSA storage</li>
+        <li><b>Compute</b> - one operating system disk and one disk for virtual machine ephemeral
+          storage</li>
+      </ul>
+      <!--link to bottom section here -->
+    </section>
+    <section id="2.2_entryscale_esx"><title>Entry-scale ESX model</title>
+      <p>This example shows how to integrate HP Helion OpenStack with ESX. The controller
+        configuration is essentially the same as in the KVM example, but the resource nodes are
+        provided by vCenter. In addition, a number of controller virtual machines are created for
+        each vCenter Cluster; One ESX Compute VM (which provides the nova-compute proxy for vCenter)
+        and one OVSvApp VM per cluster member (which provides network access). These virtual
+        machines are created automatically by HP Helion OpenStack as part of activating the vCenter
+        Cluster, and are therefore not defined in the example.</p>
+    </section>
   </body>
 </topic>
