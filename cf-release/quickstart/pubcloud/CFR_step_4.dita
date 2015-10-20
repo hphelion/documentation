@@ -121,13 +121,11 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
 =======
   <simpletable id="simpletable_zlb_lpz_st">
    <strow>
-    <stentry>
-     <p>1. <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep1_"/></p>
-     <p>2. <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p>
-     <p>3. <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p>
-     <p>4. <b><xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></b></p>
-     <p>5. <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>
-    </stentry>
+    <stentry>1. <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep1_"/><p>2.
+       <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3. <xref
+       conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4. <b><xref
+        conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></b></p><p>5. <xref
+       conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p></stentry>
     <stentry><xref href="CFR_step_5.dita#concept_cw2_thz_st">
       <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
      </xref></stentry>

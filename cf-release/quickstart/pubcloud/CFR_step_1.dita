@@ -23,6 +23,7 @@
   <simpletable>
    <strow>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <stentry>1. <b><keyword keyref="quickStartHPcloudStep1"/></b>
      <p>2. <xref href="CFR_step_2.dita#concept_ikh_xgz_st" id="quickStartHPcloudStep2_"><keyword
         keyref="quickStartHPcloudStep2"/></xref></p><p>3. <xref
@@ -58,6 +59,18 @@
 <<<<<<< HEAD
 >>>>>>> 9d80273... Testing theme changes on Linux
 =======
+=======
+    <stentry>1. <b><xref href="#concept_s2k_b35_st" id="quickStartHPcloudStep1_" format="dita"
+        ><keyword keyref="quickStartHPcloudStep1"/></xref></b><p>2. <xref
+       href="CFR_step_2.dita#concept_ikh_xgz_st" id="quickStartHPcloudStep2_" format="dita"><keyword
+        keyref="quickStartHPcloudStep2" id="quickStartHPcloudStep2"/></xref></p><p>3. <xref
+       href="CFR_step_3.dita#concept_kpg_fhz_st" id="quickStartHPcloudStep3_" format="dita"><keyword
+        keyref="quickStartHPcloudStep3" id="quickStartHPcloudStep3"/></xref></p><p>4. <xref
+       href="CFR_step_4.dita#concept_pqc_jhz_st" id="quickStartHPcloudStep4_" format="dita"><keyword
+        keyref="quickStartHPcloudStep4" id="quickStartHPcloudStep4"/></xref></p><p>5. <xref
+       href="CFR_step_5.dita#concept_cw2_thz_st" id="quickStartHPcloudStep5_" format="dita"><keyword
+        keyref="quickStartHPcloudStep5" id="quickStartHPcloudStep5"/></xref></p></stentry>
+>>>>>>> 59bcc18... More formatting fixes
     <stentry><b>Registering for a <keyword keyref="pubCloudShort"/> Account</b><note type="tip">Keep
       your username and password handy. You will need them during
       installation.</note><p>Registration allows you to obtain <xref
