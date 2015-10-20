@@ -19,36 +19,24 @@
     </section>
     <section id="preparation">
       <title>Gather Information</title>
-      <ol id="ol_w1c_vy1_4t">
-        <li>You will need the following pieces of information in order to run the service updates.
-          <table pgwide="1" id="table_ydc_vy1_4t">
-            <tgroup cols="2">
-              <colspec colname="col1" colwidth="237px" colsep="1"/>
-              <colspec colname="col2" colwidth="1*"/>
-              <thead>
-                <row>
-                  <entry> Identifier </entry>
-                  <entry> Description </entry>
-                </row>
-              </thead>
-              <tbody>
-                <row>
-                  <entry> DEPLOYER</entry>
-                  <entry>IP address of the Deployer.</entry>
-                </row>
-                <row>
-                  <entry> USERNAME </entry>
-                  <entry>The OpenStack username of a cloud admin that has rights to perform a
-                    service update for the selected service.</entry>
-                </row>
-                <row>
-                  <entry> PASSWORD </entry>
-                  <entry>The OpenStack password of a cloud admin that has rights to perform a
-                    service update for the selected service.</entry>
-                </row>
-              </tbody>
-            </tgroup>
-          </table></li></ol></section>
+      <p>You will need the following information:</p>
+      <dl>
+        <dlentry>
+          <dt>Deployer</dt>
+          <dd>IP address of the Deployer.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Username </dt>
+          <dd>The OpenStack username of a cloud admin that has rights to perform a service update
+            for the selected service</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Password</dt>
+          <dd>The OpenStack password of a cloud admin that has rights to perform a service update
+            for the selected service.</dd>
+        </dlentry>
+      </dl>
+    </section>
       
       <section><title>Set Folder Ownership</title>
         Manually set folder ownership where required. [This is an extra step required for the
@@ -71,28 +59,67 @@ $ cat /etc/hosts | grep c1-m3-mgmt
               one:<codeblock>$ sudo chown -R horizon-venv /opt/stack/service/horizon/venv/bin
 $ sudo chown -R horizon-venv /opt/stack/service/horizon/venv/lib</codeblock></li>
           </ol></section>
-    
-    <section><title>Create a VM Service Network</title>
-        The DBaaS, DNSaaS and Cue services rely on the creation of a VM service network. This service network is a VLAN-encapsulated provider network which is fully routable to the HP Helion OpenStack MGMT network. [This is an extra step required for the beta release.]
-        <ol>  <li>SSH to the Deployer node using admin credentials.</li>
-          <li>Source the admin credentials:
-            <!--This step will not be necessary after HOS GA but it is during the beta per Alex--><codeblock>source ~/service.osrc</codeblock></li>
-          <li>Install the Neutron client, if not already available.
-            <codeblock>sudo apt-get install -y python-neutronclient</codeblock></li>
-          <!-- WHEN HOS GA goes live, comment out the following step and uncomment out the step below it: -->
-          <li>To create this network, an administrator should issue the following
-            commands:<codeblock>neutron net-create svc-net --provider:network_type vlan --provider:physical_network physnet1 --provider:segmentation_id &lt;SVC VLAN_ID> </codeblock><codeblock>neutron subnet-create --allocation-pool start=&lt;low address on SVC network>,end=&lt;high address on SVC network> --no-gateway --host-route destination=&lt;CIDR of MGMT network>,nexthop=&lt;gateway from SVC to MGMT net> --enable-dhcp svc-net &lt;SVC network CIDR></codeblock>As
-            an example, given a management network with the following attributes: <sl>
-              <sli> MGMT Net = 10.1.2.0/24</sli>
-              <sli> SVC Net = 10.1.6.0/240</sli>
-              <sli> SVC gateway to MGMT = 10.1.6.1</sli>
-              <sli> SVC Net VLAN = 306</sli>
-            </sl>the commands for creating the service network would
-            be:<codeblock>neutron net-create svc-net --provider:network_type vlan --provider:physical_network physnet1 --provider:segmentation_id 306 </codeblock><codeblock>neutron subnet-create --allocation-pool start=10.1.6.2,end=10.1.6.254 --no-gateway --host-route destination=10.1.2.0/24,nexthop=10.1.6.1 --enable-dhcp svc-net 10.1.6.0/24</codeblock><note>
-              To configure a service network for flat encapsulation, modify the service network
-              creation statement: <codeph>--provider:network_type flat</codeph> The subnet
-              creation statement does not change. </note></li>
-          <!-- THIS IS STEP #3 for after HOS goes to GA, just replace the existing step three above with this info:          
+        
+        <section><title>Verify Connectivity</title>
+          <note>Using <codeph>ping</codeph> (ICMP) for the connectivity check is
+          insufficient because the installer will use TCP.</note>
+          <ol>
+            <li>Verify access to the <codeph>pypi</codeph> site  for downloading required python
+              scripts.<codeblock>curl --connect-timeout 15 -k --head "https://pypi.python.org/pypi" | head -n 1 | grep "HTTP/1.[01][23].." </codeblock></li>
+            <li>Verify Keystone access
+              <codeblock>curl --connect-timeout 15 -k --head "http://10.241.180.11:35357/v3" | head -n 1 | grep "HTTP/1.[01] [23].."</codeblock></li>
+            <li>Test connectivity to the public Sherpa endpoint
+              <codeblock>curl --connect-timeout 15 -k --head "http://10.241.180.11:21131/v1" | head -n 1 | grep "HTTP/1.[01] [23].." </codeblock></li>
+          </ol>
+        </section>   
+    <section><title>Set Proxy Shell Variables</title>
+   <p>If your network uses a proxy, it may be necessary to set the
+      <codeph>https_proxy</codeph> and <codeph>http_proxy</codeph> shell variables so that the
+      installer may download required Python libraries from the <xref
+        href="https://pypi.python.org/pypi" scope="external" format="html">pypi</xref> site.</p>  <ol>  <li>To
+      set the shell variables, enter the following commands:
+      <codeblock>export https_proxy={ip address or url of https proxy} 
+export http_proxy={ip address or url of http proxy} </codeblock>Example:
+      <codeblock>export https_proxy=http://proxy.example.com
+export http_proxy=http://proxy.example.com</codeblock></li>
+      <li> If your network uses a proxy, you must define the proxy exclusion list. Enter the
+        following command:
+        <!--confirm if this setting is still necessary--><codeblock>export no_proxy=localhost,127.0.0.1, &lt;ip address or host name of identity service aka keystone&gt;</codeblock>
+        Example: <codeblock>export no_proxy=localhost,127.0.0.1,10.0.0.10 </codeblock></li>
+      </ol>
+    </section>
+    <section>
+          <title>Download and Install the Python Packages</title><note>Installing a Python package also installs any required dependencies. This may generate several
+            syntax warnings inline as the install occurs. This is expected behavior, and unless the
+            output of the pip install reflects a fatal error, the install is considered "clean".</note>
+          <ol>
+            <li>SSH to the Deployer. </li>
+            <li>Install <codeph>virtualenv</codeph>
+              <codeblock>sudo apt-get install -y virtualenv</codeblock></li>
+            <li> Install <codeph>python-dev</codeph>
+              <codeblock>sudo apt-get install python-dev</codeblock></li>
+            <li>Install
+              <codeph>python-pip</codeph><codeblock>sudo apt-get install -y python-pip</codeblock></li>
+          </ol>
+    </section> <section><title>Create a VM Service Network</title>
+      The DBaaS, DNSaaS and Cue services rely on the creation of a VM service network. This service network is a VLAN-encapsulated provider network which is fully routable to the HP Helion OpenStack MGMT network. [This is an extra step required for the beta release.]
+      <ol>  <li>SSH to the Deployer node using admin credentials.</li>
+        <li>Source the admin credentials:
+          <!--This step will not be necessary after HOS GA but it is during the beta per Alex--><codeblock>source ~/service.osrc</codeblock></li>
+        <!-- WHEN HOS GA goes live, comment out the following step and uncomment out the step below it: -->
+        <li>To create this network, an administrator should issue the following
+          commands:<codeblock>neutron net-create svc-net --provider:network_type vlan --provider:physical_network physnet1 --provider:segmentation_id &lt;SVC VLAN_ID> </codeblock><codeblock>neutron subnet-create --allocation-pool start=&lt;low address on SVC network>,end=&lt;high address on SVC network> --no-gateway --host-route destination=&lt;CIDR of MGMT network>,nexthop=&lt;gateway from SVC to MGMT net> --enable-dhcp svc-net &lt;SVC network CIDR></codeblock>As
+          an example, given a management network with the following attributes: <sl>
+            <sli> MGMT Net = 10.1.2.0/24</sli>
+            <sli> SVC Net = 10.1.6.0/240</sli>
+            <sli> SVC gateway to MGMT = 10.1.6.1</sli>
+            <sli> SVC Net VLAN = 306</sli>
+          </sl>the commands for creating the service network would
+          be:<codeblock>neutron net-create svc-net --provider:network_type vlan --provider:physical_network physnet1 --provider:segmentation_id 306 </codeblock><codeblock>neutron subnet-create --allocation-pool start=10.1.6.2,end=10.1.6.254 --no-gateway --host-route destination=10.1.2.0/24,nexthop=10.1.6.1 --enable-dhcp svc-net 10.1.6.0/24</codeblock><note>
+            To configure a service network for flat encapsulation, modify the service network
+            creation statement: <codeph>--provider:network_type flat</codeph> The subnet
+            creation statement does not change. </note></li>
+        <!-- THIS IS STEP #3 for after HOS goes to GA, just replace the existing step three above with this info:          
               <li>To create this network, an administrator should use the following Ansible
               playbook: <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml \
@@ -113,32 +140,7 @@ ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml -e PROV_NET_T
               <note>To configure a service network for flat encapsulation, modify the service
                 network creation statement: <codeph>-e PROV_NET_TYPE flat</codeph> The subnet
                 creation statement does not change.</note></li>     -->
-        </ol></section>
-        
-        <section><title>Verify Connectivity</title>
-          <note>Using <codeph>ping</codeph> (ICMP) for the connectivity check is
-          insufficient because the installer will use TCP.</note>
-          <ol>
-            <li>Verify access to the <codeph>pypi</codeph> site  for downloading required python
-              scripts.<codeblock>curl --connect-timeout 15 -k --head "https://pypi.python.org/pypi" | head -n 1 | grep "HTTP/1.[01][23].." </codeblock></li>
-            <li>Verify Keystone access
-              <codeblock>curl --connect-timeout 15 -k --head "http://10.241.180.11:35357/v3" | head -n 1 | grep "HTTP/1.[01] [23].."</codeblock></li>
-            <li>Test connectivity to the public Sherpa endpoint
-              <codeblock>curl --connect-timeout 15 -k --head "http://10.241.180.11:21131/v1" | head -n 1 | grep "HTTP/1.[01] [23].." </codeblock></li>
-          </ol>
-        </section>    <section>
-          <title>Download and Install the Python Packages</title><note>Installing a Python package also installs any required dependencies. This may generate several
-            syntax warnings inline as the install occurs. This is expected behavior, and unless the
-            output of the pip install reflects a fatal error, the install is considered "clean".</note>
-          <ol>
-            <li>SSH to the Deployer. </li>
-            <li>Install <codeph>virtualenv</codeph>
-              <codeblock>sudo apt-get install -y virtualenv</codeblock></li>
-            <li> Install <codeph>python-dev</codeph>
-              <codeblock>sudo apt-get install python-dev</codeblock></li>
-            <li>Install
-              <codeph>python-pip</codeph><codeblock>sudo apt-get install -y python-pip</codeblock></li>
-          </ol>
-        </section>
+      </ol></section>
+    
   </body>
 </topic>

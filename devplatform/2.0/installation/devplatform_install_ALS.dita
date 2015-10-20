@@ -2,8 +2,14 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_txg_cnh_ts">
   <title>Install the Application Lifecycle Service (ALS)</title>
-  <body>
-    
+  <body><section><title>Prerequisites</title>Installing services requires that the HDP Installer 2.0, also
+      known as HDPI, has already <xref href="devplatform_install_platform.dita#topic_gly_xmh_ts"
+        >been installed</xref>.<p>The images for the individual services will be downloaded when the
+        service installation is started. A separate download step is not necessary.</p><p>The
+        installer retrieves service configuration information from the <i>clouds.yaml</i> file. If
+        you did not create a clouds.yaml file earlier, you can <xref
+          href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one now</xref>.</p></section>
+   <section><title>Download the RC File</title>
 <ol>
       <li>Download an RC file for the admin user and project. <ol id="ol_bpk_1c1_4t">
           <li> Log in to Horizon using the admin account.</li>
@@ -16,33 +22,10 @@
             password that you used to log in to Horizon. <p>
               <codeblock> source admin-openrc.sh</codeblock>
             </p></li>
-        </ol></li>
-      <li>Create the following directory:<codeblock>mkdir -p ~/.config/openstack/</codeblock></li>
-      <li>Create a file <codeph>~/.config/openstack/clouds.yaml</codeph> and enter the configuration
-        information for your installation in the file. The following sample configuration provides a
-        starting point. For more detailed information, see the OpenStack <xref
-          href="http://docs.openstack.org/developer/python-openstackclient/configuration.html"
-          format="html" scope="external">client configuration documentation</xref>. <note>
-          <sl>
-            <sli>The <codeph>Identity URL</codeph> can be found in Horizon at: <b>Project</b> &gt;
-                <b>Compute</b> &gt; <b>Access &amp; Security</b> &gt; <b>API Access</b>. Note the
-              Service Endpoint URL for the Identity Service.</sli>
-            <sli>The <codeph>CODN</codeph> fields are requesting the HDN (Helion Download Network)
-              username and password. The name of the download network has been changed, but not the
-              variable name.</sli><sli>The <codeph>AUTH</codeph> variable requires the Keystone v3 address found in the <codeph>service.osrc</codeph> file.</sli>
-          </sl>
-        </note><codeblock>clouds:
-  mycloud:
-    codn_username: hdnuser@domain.com
-    codn_password: password
-    horizon_url: http://&lt;horizon-ip-address&gt;/
-    cacert: /etc/ssl/certs/ca-certificates.crt
-    region_name: region1
-    auth:
-      auth_url: &lt;identity url&gt;
-      project_name: &lt;admin project name&gt;
-      username: &lt;admin user name&gt;
-      password: &lt;admin password&gt;</codeblock></li>
+      </ol></li>
+  <li>The installer retrieves service configuration information from the <codeph>clouds.yaml
+          </codeph>file. If you did not create a <codeph>clouds.yaml</codeph> file earlier, you must
+            <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one now</xref>.</li>
       <li>Source the Virtual Environment.<pre>source .devplatform/bin/activate</pre></li>
       <li>List the available ALS versions to
         install.<codeblock>openstack hdpi list --os-cloud mycloud | grep als</codeblock>The output
@@ -69,8 +52,11 @@
 | version       | 2.0.0                                                                                       |
 | webpage       | http://www.hp.com/helion/devplatform                                                        |
 +---------------+---------------------------------------------------------------------------------------------+        </codeblock></li>
-      <li> Install the ALS
-        service.<codeblock>openstack --os-cloud mycloud hdpi als install --package wscatalog.2670</codeblock>
+    </ol></section>
+    <section><title>Install the ALS
+      service.</title></section>
+    
+    <ol><li>Run the following command: <codeblock>openstack --os-cloud mycloud hdpi als install --package wscatalog.2670</codeblock>
         The output will appear similar to:
         <codeblock>Application Lifecycle Service is now downloading
 ...

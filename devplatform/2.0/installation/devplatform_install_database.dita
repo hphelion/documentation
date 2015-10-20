@@ -3,15 +3,14 @@
 <topic id="topic_vsf_hnh_ts">
   <title>Install the Database Service</title>
   <body>
-<section id="install-database">
-<p>This section provides details on installing the Database Service for the Development Platform.<ul
-          id="ul_rt3_x2z_nt">
-  <li><xref href="#topic_vsf_hnh_ts/availability-zones">Configure Availability Zones</xref></li>
-  <li><xref href="#topic_vsf_hnh_ts/quotas">Set Quotas</xref></li>
-  <li><xref href="#topic_vsf_hnh_ts/dbaas_installation">Install the Database Service</xref></li>
-  <li><xref href="#topic_vsf_hnh_ts/configure_haproxy">Configure HAProxy</xref></li>
-        </ul></p>
-</section>
+<section id="install-database"><title>Prerequisites</title>Installing services requires that the HDP
+      Installer 2.0, also known as HDPI, has already <xref
+        href="devplatform_install_platform.dita#topic_gly_xmh_ts">been installed</xref>.<p>The
+        images for the individual services will be downloaded when the service installation is
+        started. A separate download step is not necessary.</p><p>The installer retrieves service
+        configuration information from the clouds.yaml file. If you did not create a clouds.yaml
+        file earlier, you can <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one
+          now</xref>.</p></section>
 
 <section id="availability-zones"> <title>Configure Availability Zones</title>
 <p>To configure the Database Service in a highly available manner, it is necessary to create
@@ -153,57 +152,32 @@ openstack aggregate create --zone AZ-3 aggregate-AZ-3</codeblock></li>
                 <codeblock> source admin-openrc.sh</codeblock>
               </p></li>
           </ol></li>
-        <li> Create the following
-          directory.<codeblock>mkdir -p ~/.config/openstack/</codeblock></li><li>Create a file <codeph>~/.config/openstack/clouds.yaml</codeph> and enter the configuration
-          information for your installation in the file. The following sample configuration provides
-          a starting point. For more detailed information, see the OpenStack <xref
-            href="http://docs.openstack.org/developer/python-openstackclient/configuration.html"
-            format="html" scope="external">client configuration documentation</xref>. <note>
-              <sl><sli>The <codeph>Identity URL </codeph>can be found in Horizon at: <b>Project</b> &gt;
-                  <b>Compute</b> &gt; <b>Access &amp; Security</b> &gt; <b>API Access</b>. Note the
-                Service Endpoint URL for the Identity Service.</sli><sli>The <codeph>CODN</codeph> fields are requesting the HDN (Helion Download Network) username and
-                password. The name of the download network has been changed, but not the variable
-                name.</sli><sli>The <codeph>AUTH</codeph> variable requires the Keystone v3 address found in the <codeph>service.osrc</codeph> file.</sli></sl>
-          </note><codeblock>clouds:
-  mycloud:
-    codn_username: hdnuser@domain.com
-    codn_password: password
-    horizon_url: http://&lt;horizon-ip-address&gt;/
-    cacert: /etc/ssl/certs/ca-certificates.crt
-    region_name: region1
-    auth:
-      auth_url: &lt;identity url&gt;
-      project_name: &lt; admin project name&gt;
-      username: &lt; admin user name&gt;
-      password: &lt; admin password&gt;
-    database:
-      ephemeral_ca_cert: unset
-      external_network: &lt;guid of ext-net&gt;
-      provider_network: &lt;guid of svc-net&gt;
-      ntp_server: &lt;ip address of ntp server&gt;
-      keypair: default
-      enable_ha: true
-      flavor: m1.medium
-      database_flavor: m1.medium
-      messaging_flavor: m1.medium
-      database_volume_size: 10
-      logstash_rabbitmq_host: &lt;ip address of logging service&gt;
-      logstash_rabbitmq_password: &lt;password for logging service&gt;
-      hotpools_enabled: true
-      hotpools_max_instances: 1
-      hotpools_image_name: percona
-      hotpools_flavor_names: "m1.medium,m1.small,m1.large"
-      disable_rollback: true
-      project_id: &lt;project id of user to install service to&gt;   </codeblock></li>
+        <li>The installer retrieves service configuration information from the
+            <codeph>clouds.yaml</codeph> file. If you did not create a <codeph>clouds.yaml</codeph>
+          file earlier, you must <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one
+            now</xref>.</li>
+        
         <li>Source the Virtual Environment.<pre>source .devplatform/bin/activate</pre></li>
          <li>List the available database versions to install:
-          <codeblock>openstack hdpi list --os-cloud mycloud | grep database</codeblock>The output
+          <codeblock>openstack hdpi list --os-cloud mycloud | grep database  </codeblock>The output
           should look similar
           to:<codeblock>database | wscatalog.2655 | 2.0.0.0 | available</codeblock></li>
         <li>Select the database version to install and view the details of the
           package:<codeblock>openstack hdpi show wscatalog.2655 --os-cloud mycloud</codeblock></li>
         <li>Install the database service
-          <codeblock>openstack --os-cloud mycloud hdpi database install --package wscatalog.2655</codeblock></li>
+          <codeblock>openstack --os-cloud mycloud hdpi database install --package wscatalog.2655</codeblock>
+          The output will appear similar to:
+          <codeblock>$ os hdpi als install --package wscatalog.1985
+Database is now downloading
+...
+...
+Database is (downloaded)
+Database is already (available)
+Database is already configured
+Launching stack...
+Stack trove creating
+Completed installing database
+$</codeblock></li>
       </ol>
     </section>
 <section id="configure_haproxy"><sectiondiv><p><b>Configure HAProxy</b></p>The

@@ -3,12 +3,20 @@
 <topic id="topic_gly_xmh_ts">
   <title>Install the HP Helion Development Platform</title>
   <body>
-<section>
+    <section><p>The installation procedure has changed significantly since the last release. The HDP Installer
+        2.0, also known as HDPI, is a plugin for the the python-openstackclient (OSC). It is able to
+        leverage the authentication, configuration and command line option parsing that is already
+        part of OSC to greatly simplify the installation process.</p>
+      <p>
+        <note type="warning">You must have <xref
+            href="devplatform_install_prereq.dita#topic_x54_njh_ts">satisfied all
+            prerequisites</xref> before beginning installation.</note>
+      </p>
 
       <title>Download the Latest Version of HP Helion Development Platform Installation
         Client</title>
       <p>The installation is provided as a small compressed tar file. The images for the individual
-        services will be downloaded at the installer's request.</p>
+        services will be downloaded when the service installation is started.</p>
       <ol id="ol_ogs_qpt_nt">
         <li>Navigate to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
             format="html" scope="external">HP Helion Download Network</xref> (HDN) and log in. If
@@ -25,19 +33,6 @@
       <ol>
         <li>SSH to the Deployer.
           <!--find out whether this works on a windows box or if it needs further explanation; where should this be run from?--></li>
-        <li>If your network uses a proxy, it may be necessary to set the
-            <codeph>https_proxy</codeph> and <codeph>http_proxy</codeph> shell variables so that the
-          installer may download required Python libraries from the <xref
-            href="https://pypi.python.org/pypi" scope="external" format="html">pypi</xref> site. To
-          set the shell variables, enter the following commands:
-          <codeblock>export https_proxy={ip address or url of https proxy} 
-export http_proxy={ip address or url of http proxy} </codeblock>Example:
-          <codeblock>export https_proxy=http://proxy.example.com
-export http_proxy=http://proxy.example.com</codeblock></li>
-        <li> If your network uses a proxy, you must define the proxy exclusion list. Enter the
-          following command:
-          <!--confirm if this setting is still necessary--><codeblock>export no_proxy=localhost,127.0.0.1, &lt;ip address or host name of identity service aka keystone&gt;</codeblock>
-          Example: <codeblock>export no_proxy=localhost,127.0.0.1,10.0.0.10 </codeblock></li>
         <li>Create a Virtual Environment. <codeblock>virtualenv .devplatform</codeblock></li>
         <li>Source the Virtual
           Environment.<codeblock>source .devplatform/bin/activate</codeblock></li>
@@ -47,9 +42,10 @@ export http_proxy=http://proxy.example.com</codeblock></li>
             .<codeblock>pip install DevelopmentPlatformInstaller_2.0.0.0.tar.gz --debug </codeblock><note>While
             the <codeph>debug</codeph> option is optional, the information it returns is critical
             for troubleshooting beta installations.</note></li>
-        <li>After installation completes, verify that the Installer is working. This command will
+        <li>After installation completes, verify that the Installer is working.
+          <!-- This command will
           list all packages currently available for
-          download.<codeblock>openstack hdpi list --os-cloud mycloud </codeblock></li>
+          download.<codeblock>openstack hdpi list dashdashos-cloud mycloud </codeblock>  this is the wrong command, it requires that you have a clouds.yaml file already and at this point the user may not.--></li>
       </ol>
     </section>
   </body>
