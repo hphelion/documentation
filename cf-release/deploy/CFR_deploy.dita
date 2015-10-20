@@ -15,20 +15,6 @@
         <context/>
         <steps>
             <step>
-                <cmd>Install Terraform 0.6.3 or higher on your machine and add it to your
-                        <codeph>PATH</codeph> environment variable.</cmd>
-                <info>
-                    <note type="tip">For detailed instructions, see the <xref
-                            href="https://terraform.io/intro/getting-started/install.html"
-                            format="html" scope="external">Terraform installation
-                        guide</xref>.</note>
-                </info>
-            </step>
-            <step>
-                <cmd>Download the <keyword keyref="prodShort"/> scripts in a
-                        <filepath>.zip</filepath> file.</cmd>
-            </step>
-            <step>
                 <cmd>Navigate to the directory that contains the Terraform scripts.</cmd>
                 <info>
                     <note>The <filepath>.tfvars</filepath> file contains the cluster credentials and
