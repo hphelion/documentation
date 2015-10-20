@@ -86,11 +86,43 @@
 mechanism_drivers = ovsvapp, openvswitch, l2population
 [agent]
 enable_distributed_routing = False</codeblock></li>--></p></li>
-        <li>(<b>Optional</b>) Enable EON logs in the central server, do the following:</li>
-      </ol>
-    </section>
-    <section conref="esx/logging.dita#topic_rq3_mxh_rt/enable-eon-service-centralized-logging"/>
-        <ol id="ol_a14_jy4_st">
+        <li>(<b>Optional</b>) Enable centralised logging for EON service do the following:<ol
+            id="ol_ykv_czv_st">
+            <li>Change the directory to
+              <codeblock>~/helion/my_cloud/config/logging/vars</codeblock></li>
+            <li>Edit <codeph>eon-api-clr.yml</codeph> file to set the value of
+                <b>centralized_logging</b> to <b>true</b> as shown in the following
+              sample:<codeblock> - centralized_logging:
+        enabled: true
+        format: rawjson
+      files:
+      - /var/log/eon/eon-api-json.log
+      log_rotate:
+      - daily
+      - compress
+      - missingok
+      - notifempty
+      - copytruncate
+      - maxsize 45M
+      - rotate 5
+      - create 640 eon eon </codeblock></li>
+            <li>Edit  <codeph>eon-conductor-clr.yml</codeph> file to set the value of
+                <b>centralized_logging</b> to <b>true</b> as shown in the following
+              sample:<codeblock> - centralized_logging:
+        enabled: true
+        format: rawjson
+      files:
+      - /var/log/eon/eon-conductor-json.log
+      log_rotate:
+      - daily
+      - compress
+      - missingok
+      - notifempty
+      - copytruncate
+      - maxsize 45M
+      - rotate 5
+      - create 640 eon eon </codeblock></li>
+          </ol></li>
         <li>Commit your cloud deploy configuration to the<xref href="using_git.dita"> local git
             repo</xref>, as follows: <codeblock>cd ~/helion/hos/ansible
 git add -A
@@ -99,6 +131,7 @@ git commit -m "My config or other commit message"</codeblock>
             before you move onto the following steps. See <xref href="using_git.dita">Using Git for
               Configuration Management</xref> for more information.</note></li>
       </ol>
+    </section>
       <p>Then you need to run the following commands to complete your configuration. These commands
         also verify your configuration is correct.</p>
       <ol id="ol_og4_jy4_st">
