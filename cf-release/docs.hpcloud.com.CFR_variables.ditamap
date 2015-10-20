@@ -16,6 +16,27 @@
          </keywords>
       </topicmeta>
    </keydef>
+   <keydef keys="opnStckLong">
+      <topicmeta>
+         <keywords>
+            <keyword>HPE Helion OpenStack</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="opnStckShort">
+      <topicmeta>
+         <keywords>
+            <keyword>Helion OpenStack</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="opnStckVeryShort">
+      <topicmeta>
+         <keywords>
+            <keyword>OpenStack</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
    <keydef keys="pubCloudLong">
       <topicmeta>
          <keywords>
