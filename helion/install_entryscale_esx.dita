@@ -44,22 +44,17 @@
           <li>Since the file containing the Helion message queue password could appear in the swap
             area of a vCenter server, appropriate controls should be applied to the vCenter cluster
             to prevent discovery of the password via snooping of the swap area or memory dumps.</li>
-          <li>
-            <p>It is recommended to have a common shared storage for all the ESXi hosts in a
-              particular cluster. </p>
-          </li>
-          <li>
-            <p>Ensure that you have enabled HA (High Availability) and DRS (Distributed Resource
-              Scheduler) settings in a cluster configuration before running the installation.
-              DRS/HA is disabled only for OVSvApp. This is done so that it does not move to a
-              different host. If you do not enable DRS/HA prior to installation then you will not be
-              able to disable it only for OVSvApp. As a result DRS/HA can migrate OVSvApp to
-              different host, which will create a network loop.</p>
-            <p>
+          <li>It is recommended to have a common shared storage for all the ESXi hosts in a
+            particular cluster. </li>
+          <li>Ensure that you have enabled HA (High Availability) and DRS (Distributed Resource
+            Scheduler) settings in a cluster configuration before running the installation.  DRS/HA
+            is disabled only for OVSvApp. This is done so that it does not move to a different host.
+            If you do not enable DRS/HA prior to installation then you will not be able to disable
+            it only for OVSvApp. As a result DRS/HA can migrate OVSvApp to different host, which
+            will create a network loop.<p>
               <note>No two clusters should have the same name across datacenters in a given
                 vCenter.</note>
-            </p>
-          </li>
+            </p></li>
         </ul>
       </p>
     </section>
