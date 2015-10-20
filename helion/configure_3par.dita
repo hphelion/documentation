@@ -16,7 +16,12 @@
             management network and 3PAR FC and iSCSI ports configured.</li>
           <li>3PAR management IP and iSCSI port IP's must have connectivity from controller and
             compute nodes.</li>
-          <li>Please refer the system requirements for 3PAR in Openstack configuration guide.</li>
+          <li>Please refer the system requirements for 3PAR in Openstack configuration
+              guide.<note>If you want to enable multipath for cinder volume carved from 3PAR
+              FC/iSCSI storage system, please go through
+                <codeph>/home/stack/helion/hos/ansible/roles/multipath/README.md </codeph> file on
+              the deployer node.  The README.md file contains detailed procedure to configure
+              multipath for 3PAR FC/iSCSI cinder volumes.</note></li>
         </ul>
       </p>
     </section>
