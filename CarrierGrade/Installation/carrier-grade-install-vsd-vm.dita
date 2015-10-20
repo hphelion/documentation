@@ -20,7 +20,7 @@
                 for the required HP DCN Virtualized Services Directory (<i>VSD</i>):</p><ol
                 id="ol_gtd_b1l_2t">
                 <li>Log into the HLM host.</li>
-                <li>Copy the VSD qcow image, named <codeph>VSD-3.2.3_105-hp.qcow2</codeph> and
+                <li>Copy the VSD qcow image, named <codeph>VSD-3.2.4_134-hp.ova</codeph> and
                         <codeph>vsd.xml</codeph>, to the <codeph>var/lib/libvirt/images</codeph>
                     directory.</li>
                 <li>Execute the following
@@ -32,9 +32,10 @@
 Login creds  
 Login: root
 Password: Alcateldc</codeblock>
-                    </p>Where &lt;vsdname&gt; is the name of your VSD. </li>
+                    </p>Where <codeph>&lt;vsdname></codeph> is the name of your VSD. </li>
+                <li/>
                 <li>Edit <i>/etc/sysconfig/network-scripts/ifcfg-eth0</i> file to configure a static
-                    IP address. <p>Use the DCM IP for the VSD that is already configured by your lab
+                    IP address. <p>Use the TUL IP for the VSD that is already configured by your lab
                         admin.</p><p><u>For
                         example</u><codeblock>BOOTPROTO=”static”
 IPADDR=10.20.5.21

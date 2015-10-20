@@ -23,7 +23,7 @@
       ESX host. The VRSvApp installation package is contained in the packages you downloaded from
       DCN.</p>
         <p>The following describes how to install the vSphere Solution. The installation is as
-            simple as deploying the new “vCenter Integration Node”. When using the vSphere Solution
+            simple as deploying the new vCenter Integration Node. When using the vSphere Solution
             method, the VRS-VM will be deployed automatically as Agents on every single ESXi node in
             a Cluster. <!--From HP DCN installation guide.--></p>
         <section>
@@ -53,24 +53,24 @@
             is bundled in the same installable VM as the VSD Node. As such, the installation steps
             for this integration node are the same as for the VSD Standalone Node. Once you install
             this VM as described in the VSD Standalone install instructions, the UI and API can be
-            accessed at &lt;url>:8443/vcenter/ Any further configuration required will be described
-            in the vCenter plugin guide.<!--From HP DCN installation guide.--><p>vCenter Integration
-                Node = standalone VSD deployment Toolbox</p></section>
-    <section><title>About deploying the VRSvApp</title>The HP Helion OpenStack Carrier Grade
-            installation requires a single VSD VM (or HA cluster) to provide VSD functionality. This
-            VSD should have been deployed as a prerequisite step. See <xref
+            accessed at <codeph>&lt;url>:8443/vcenter/</codeph>.Any further configuration required
+            will be described in the vCenter plugin
+            guide.<!--From HP DCN installation guide.--></section>
+        <section><b>About the Deployment Toolbox</b><p>This HP DCN vSphere Solution includes a UI
+                and API called the vCenter Deployment Toolbox.  To access the UI point a browser to
+                    <codeph>https://&lt;VSD_IP&gt;:8443/vcenter/</codeph>.  Only the
+                    <codeph>CSPRoot</codeph> user can log into the vCenter deployment
+            toolbox.</p></section>
+    <section><title>Creating a Virtual Machine for the Deployment Toolbox</title>The HP Helion
+            OpenStack Carrier Grade installation requires you to install a dedicated virtual machine
+            for the HP DCN Virtualized Services Directory (<i>VSD</i>). This VSD should have been
+            deployed as a prerequisite step. See <xref
                 href="carrier-grade-install-vsd-vm.dita#topic7646">Bringing Up Single VSD VM
-                Manually</xref>.<p>The HP DCN vSphere Solution provides a deployment toolbox, which
-                is both an API and a UI. Only the <codeph>CSPRoot</codeph> user can log in and
-                connect to the vCenter deployment toolbox. The UI and API endpoint are separate from
-                the Core VSD UI and API endpoint. The default endpoint is
-                    <codeph>https://&lt;VSD_IP&gt;:8443/vcenter/</codeph>.</p><p>To install the VRS
-                vApp, you will use a provided template file, <codeph>VSD-3.2.3_105-hp.ova</codeph>,
-                to install an additional standalone VSD VM on one ESX node. This VSD VM contains the
-                VRS vApp deployment toolbox that is used to install the VRS vApp on all ESX nodes in
-                that cluster. This VSD VM does not require a VSD license.</p>Use the HP DCN
-            documentation to install this VSD on ESX cluster. <p><b>Note:</b> This VSD VM is used to
-                deploy VRS vApp and does not offer VSD functionality.</p></section>
+                Manually</xref>.<p>To install the VRS vApp, you need another VSD VM that will be
+                used to install the VRS vApp on all ESX nodes in that cluster. This VSD VM does not
+                require a VSD license. This VM will host the HP DCN vSphere Solution, a deployment
+                toolbox,</p><p><b>Note:</b> This VSD VM is used to deploy VRS vApp and does not
+                offer VSD functionality.</p><p>To deploy this VM, refer to </p></section>
         <section><title>Configure the HTTP\DHCP VM setup required by Deployment Toolbox standalone
                 VSD:</title>A OVA template with CentOS 6.5 is created to host HTTP and DHCP service
             required by the Toolbox. Template available on the LR4 Jump Server <codeph>15.215.66.57:
@@ -144,21 +144,25 @@ vc.password =vmware //: vCenter password</codeblock></li>
                 <li>VRS-VM template location</li>
             </ul><p>The data center and cluster configurations require matching the names of the
                 vCenter configuration objects on vCenter.</p><p>The ESX hypervisor inside the
-                cluster is identified based on its IP.</p><p><b>VRS-VM Template
-                Configuration</b></p><p>When adding a new vCenter to the deployment toolbox, make
-                sure the VRS-VM template is configured in vCenter. The template is reuired for all
-                the DCN-enabled hypervisors on that vCenter. The template must be available over an
-                HTTP server, and must allow connection from vCenter and from the Nuage-enabled
-                hypervisors.</p><b>Default Profile Configuration</b><p>The VSD Deployment Toolbox
-                offers the option of setting up a default vApp profile for all the VRS VM Agents.
-                The profile is used for all default parameters, which generally remain the same
-                across all your agents. The configuration on the default profile includes all the
-                VRS vApp nodes, except the ones that are obviously different for each VRS-VM agent
-                (such as the IP address).</p><p><b>Specific Profile Override</b></p><p>Each level of
-                the topology can be overridden in order to provide different parameters at a more
+                cluster is identified based on its IP.</p><p><image
+                    href="../../media/CGH-2-install-vsdvm3.png" width="600" id="image_kbl_cr1_tt"
+                /></p><p><b>VRS-VM Template Configuration</b></p><p>When adding a new vCenter to the
+                deployment toolbox, make sure the VRS-VM template is configured in vCenter. The
+                template is required for all the DCN-enabled hypervisors on that vCenter. The
+                template must be available over an HTTP server, and must allow connection from
+                vCenter and from the Nuage-enabled hypervisors.</p><b>Default Profile
+                Configuration</b><p>The VSD Deployment Toolbox offers the option of setting up a
+                default vApp profile for all the VRS VM Agents. The profile is used for all default
+                parameters, which generally remain the same across all your agents. The
+                configuration on the default profile includes all the VRS vApp nodes, except the
+                ones that are obviously different for each VRS-VM agent (such as the IP
+                address).</p><p><image href="../../media/CGH-2-install-vsdvm1.png" width="600"
+                    id="image_zvq_nq1_tt"/></p><p><b>Specific Profile Override</b></p><p>Each level
+                of the topology can be overridden in order to provide different parameters at a more
                 granular level. If a parameter is configured on the level of the default profile, on
                 the cluster level and also on the ESXi level, then only the ESXi-level parameter
-                will be used.</p></section>
+                will be used.</p><p><image href="../../media/CGH-2-install-vsdvm2.png" width="600"
+                    id="image_jnn_tq1_tt"/></p></section>
         <section>
             <p>
                 <b>Enabling the agent settings on each hypervisor</b></p>

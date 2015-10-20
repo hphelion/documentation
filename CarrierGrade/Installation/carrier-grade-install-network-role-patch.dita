@@ -15,8 +15,8 @@
     </metadata>
   </prolog>
   <body>
-    <p>After launching the <codeph>hdeploy</codeph> command,, deploy the following patch to update
-      the nuage role on kenobi-node-configuration.. </p>
+    <p>Before launching the <codeph>hlm generate</codeph> command, deploy the following patch to
+      update the nuage role on kenobi-node-configuration. </p>
     <p>
       <ol id="ol_pn3_141_mt">
         <li>Download the <codeph>knc-nuage-role.patch</codeph> file.</li>

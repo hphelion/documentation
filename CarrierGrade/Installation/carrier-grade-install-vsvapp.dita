@@ -24,7 +24,7 @@
       DCN.</p>
     <p><b>Important:</b> You must disable vMotion for the VRSvApp to prevent the VRS VM from moving
       from the ESX host. in case of failure of the host in the ESX cluster. </p>
-    <section><title>Disable vMotion></title>
+    <section><title>Disable vMotion</title>
       <p>To disable vMotion for the VRSvApp:</p>
     <ol>
         <li>Iin the vSphere Client, right-click the VRSvApp and select <b>Edit Settings</b>. </li>
