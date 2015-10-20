@@ -12,7 +12,6 @@
       in other ways functions like a remote git repository.</p>
 
     <p>Below is a representation of the typical git workflow in HP Helion OpenStack 2.0. </p>
-    <p><image href="../media/install/gitWorkflow.png" id="image_cbv_wg4_dt"/></p>
     <p/>
     <p>The git repository provides a way for you to merge changes that you pull down as "upstream"
       updates, and allows you to manage your own configuration changes. </p>
