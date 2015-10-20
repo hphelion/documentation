@@ -39,8 +39,6 @@
         with KVM" locktitle="yes">
         <topicref href="helion/configure_vsa.dita" navtitle="VSA Configuration"
           locktitle="yes">
-          <topicref href="helion/blockstorage/vsa/vsa.dita" navtitle="VSA Configuration"
-            locktitle="yes" toc="no"/>
         </topicref>
         <topicref href="helion/configure_ceph.dita" navtitle="Ceph Configuration"
           locktitle="yes"/>
