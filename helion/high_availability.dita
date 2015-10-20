@@ -412,8 +412,8 @@
     <section id="more_information">
       <title>More Information</title>
       <ul>
-        <li><xref scope="external" href="http://docs.openstack.org/high-availability-guide/content/ch-intro.html">OpenStack High-availability Guide</xref></li>
-        <li><xref scope="external href="http://12factor.net/">12-Factor Apps</xref></li>
+        <li><xref format="html" scope="external" href="http://docs.openstack.org/high-availability-guide/content/ch-intro.html">OpenStack High-availability Guide</xref></li>
+        <li><xref format="html" scope="external" href="http://12factor.net/">12-Factor Apps</xref></li>
       </ul>
     </section>
   </body>
