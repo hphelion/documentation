@@ -34,7 +34,9 @@
       <p>The CMC utility requires a GUI to access it. These steps below will allow you to setup a
         VNC connect to your controller node so you can view the GUI.</p>
       <ol>
-        <li>Login to your first controller node.</li>
+        <li>Login to your first controller node. </li>
+        <li>Run the following command to launch CMC
+          application<codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock></li>
         <li>Run the following command to install some packages necessary to launch CMC:
           <codeblock>sudo apt-get install -y xrdp xterm xbase-clients xfonts-base vnc4server</codeblock></li>
         <li>Start <codeph>vnc4server</codeph> using the instructions below. You will be prompted for
