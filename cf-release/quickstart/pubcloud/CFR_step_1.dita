@@ -106,10 +106,14 @@
       to help cover hosting costs for your sandbox environment. Review the <xref
        href="http://www.hpcloud.com/pricing" scope="external" format="html"><keyword
         keyref="pubCloudShort"/> pricing</xref> to see what charges may be incurred if you exceed
+<<<<<<< HEAD
       your usage limits.</p><xref href="CFR_step_2.dita#concept_ikh_xgz_st">
       <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
      </xref></stentry>
 >>>>>>> 67bf605... Fixed single-sourced navigation internals
+=======
+      your usage limits.</p><xref href="CFR_step_2.dita#concept_ikh_xgz_st"><image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/></xref></stentry>
+>>>>>>> c59d3cd... Minor clean-up
    </strow>
   </simpletable>
  </conbody>
