@@ -316,8 +316,8 @@ curl -ks -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "
         <li> Map the organization created in VSD to HCG artifact:<ol id="ol_tdh_s4y_nt">
             <li>Create a net partition with same organization name that <xref href="#topic10581/org"
                 format="dita">you created in VSD</xref>.<p>
-                <codeblock>neutron nuage-netpartition-create &lt;org_name></codeblock>
-              </p><p>Where <codeph>&lt;org_name></codeph> is the name of the organization you
+                <codeblock>neutron nuage-netpartition-create &lt;partition_name></codeblock>
+              </p><p>Where <codeph>&lt;partition_name></codeph> is the name of the organization you
                 created in VSD.</p></li>
             <li>Create a local network <p>
                 <codeblock>neutron net-create localnet1
