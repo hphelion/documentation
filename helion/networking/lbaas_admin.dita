@@ -83,7 +83,7 @@
       <p>Before you modify the control_plane.yml and neutron.conf.j2 files, it is recommended that
         you back up the original versions of those files. Once you have backed them up, modify the
         control_plane.yml and neutron.conf.j2 files – please refer to the chapter <xref
-          href="../using_git.dita#using_git">HP Helion OpenStack®
+          href="../installation/using_git.dita#using_git">HP Helion OpenStack®
             2.0: Using Git for Configuration Management</xref> for details on how to edit
         those configuration files.</p>
       
@@ -95,7 +95,7 @@
         <li>Comment out the LBaaS v2 service_plugin and service_provider lines.</li>
         <li>Uncomment the LBaaS v1 lines.</li>
         <li>Save the file.</li>
-        <li>Follow the steps in <xref href="../using_git.dita#using_git">HP Helion OpenStack® 2.0: Using Git for Configuration Management</xref> to commit and apply the changes.</li>
+        <li>Follow the steps in <xref href="../installation/using_git.dita#using_git">HP Helion OpenStack® 2.0: Using Git for Configuration Management</xref> to commit and apply the changes.</li>
       </ol>
       
  

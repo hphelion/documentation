@@ -21,19 +21,19 @@
               the newly added cluster appears after executing <codeph>cluster-list</codeph> command,
               do the following:</p></li>
         </ol></p></section>
-    <section conref="../install_entryscale_esx.dita#install_esx/import-cluster"/>
-    <section conref="../install_entryscale_esx.dita#install_esx/activate-cluster"/>
-    <section conref="../install_entryscale_esx.dita#install_esx/modify-volume-config"/>
-    <section conref="../install_entryscale_esx.dita#install_esx/commit-your-cloud"/>
-    <section conref="../install_entryscale_esx.dita#install_esx/deploy-compute-proxy-ovsvapps"/>
+    <section conref="../installation/install_entryscale_esx.dita#install_esx/import-cluster"/>
+    <section conref="../installation/install_entryscale_esx.dita#install_esx/activate-cluster"/>
+    <section conref="../installation/install_entryscale_esx.dita#install_esx/modify-volume-config"/>
+    <section conref="../installation/install_entryscale_esx.dita#install_esx/commit-your-cloud"/>
+    <section conref="../installation/install_entryscale_esx.dita#install_esx/deploy-compute-proxy-ovsvapps"/>
     <p><b>OR</b></p>
     <p>If the newly added cluster is in a new Datacenter on which no activated clusters exists then
       do the following:</p>
-    <section conref="../install_entryscale_esx.dita#install_esx/register-network"/>
-    <section conref="../install_entryscale_esx.dita#install_esx/import-cluster"/>
-    <section conref="../install_entryscale_esx.dita#install_esx/activate-cluster"/>
-    <section conref="../install_entryscale_esx.dita#install_esx/modify-volume-config"/>
-    <section conref="../install_entryscale_esx.dita#install_esx/commit-your-cloud"/>
-    <section conref="../install_entryscale_esx.dita#install_esx/deploy-compute-proxy-ovsvapps"/>
+    <section conref="../installation/install_entryscale_esx.dita#install_esx/register-network"/>
+    <section conref="../installation/install_entryscale_esx.dita#install_esx/import-cluster"/>
+    <section conref="../installation/install_entryscale_esx.dita#install_esx/activate-cluster"/>
+    <section conref="../installation/install_entryscale_esx.dita#install_esx/modify-volume-config"/>
+    <section conref="../installation/install_entryscale_esx.dita#install_esx/commit-your-cloud"/>
+    <section conref="../installation/install_entryscale_esx.dita#install_esx/deploy-compute-proxy-ovsvapps"/>
   </body>
 </topic>
