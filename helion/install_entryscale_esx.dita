@@ -515,7 +515,10 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
             is recommended to modify the <codeph>cinder.conf.j2</codeph> present in
               <codeph>/home/stack/helion/my_cloud/config/cinder</codeph></p></li>
         <li>Modify the <codeph>cinder.conf.j2</codeph> as follows:
-          <codeblock># Start of section for VMDK block storage
+          <codeblock># Configure the enabled backends
+enabled_backends=&lt;unique-section-name>
+
+# Start of section for VMDK block storage
 #
 # If you have configured VMDK Block storage for cinder you must
 # uncomment this section, and replace all strings in angle brackets
@@ -523,7 +526,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
 # must also add the section name to the list of values in the
 # 'enabled_backends' variable above. You must provide unique section
 # each time you configure a new backend.
-#
+
 #[&lt;unique-section-name>]
 #vmware_api_retry_count = 10
 #vmware_tmp_dir = /tmp
