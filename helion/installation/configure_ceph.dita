@@ -14,7 +14,7 @@
             href="install_entryscale_kvm.dita#install_kvm">installation guide.</xref></li>
         <li>You can deploy monitor service on a dedicated resource. Ensure to modify your
           environment after deploying the deployer node. For more details, refer to <xref
-            href="../deploy_monitor_stand_alone_node.dita#topic_ah5_4yx_qt">Install a monitor service
+            href="../blockstorage/ceph/deploy_monitor_stand_alone_node.dita#topic_ah5_4yx_qt">Install a monitor service
             on a dedicated resource node</xref>.</li>
       </ul>
     </section>

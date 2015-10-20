@@ -26,7 +26,7 @@
               <codeblock>cp -r ~/helion/examples/entry-scale-swift/* ~/helion/my_cloud/definition/</codeblock></li>
             <li>Begin inputting your environment information into the configuration files in the
                 <codeph>~/helion/my_cloud/definition</codeph> directory. <p>Full details of how to
-                do this can be found here: <xref href="input_model.dita">Helion OpenStack 2.0 Input
+                do this can be found here: <xref href="../input_model.dita">Helion OpenStack 2.0 Input
                   Model</xref>.</p>
               <p>In many cases, the example models provide most of the data you need to create a
                 valid input model. However, there are two important aspects you must plan and
@@ -34,10 +34,10 @@
               <ul>
                 <li>Check the disk model used by your nodes. Specifically, check that all disk
                   drives are correctly named and used as described in <xref
-                    href="objectstorage/allocating_disk_drives.dita#allocating-disk-drives/swift-requirement-disk-device"
+                    href="../objectstorage/allocating_disk_drives.dita#allocating-disk-drives/swift-requirement-disk-device"
                     >Allocating Swift Disk Devices</xref>.</li>
                 <li>Select an appropriate partition power for your rings. Detailed information about
-                  this is provided at <xref href="objectstorage/ring_specifications.dita">Swift Ring
+                  this is provided at <xref href="../objectstorage/ring_specifications.dita">Swift Ring
                     Specifications</xref>.</li>
               </ul>
             </li>

@@ -21,7 +21,7 @@
 
 
     <section>These YAML configuration files are now stored in a local git repository as well, as
-      explained in <xref href="using_git.dita">Using git for Configuration
+      explained in <xref href="installation/using_git.dita">Using git for Configuration
         Manangement</xref>. </section>
     <section><title>Before you begin</title> Before you run the GUI installer to install your cloud,
       there are a number of things you need to do to prepare. <ol>
@@ -82,14 +82,14 @@
     </section>
     <section>
       <p>The GUI is used only once: during the initial installation of your cloud.</p><p>For VSA you
-        must follow the steps outlined in the <xref href="blockstorage/vsa/vsa.dita">VSA
+        must follow the steps outlined in the <xref href="installation/configure_vsa.dita">VSA
           Configuration</xref>page.</p> After deployment, continue to <xref
-        href="installation_verification.dita">Verifying Your Installation</xref> and <xref
-        href="postinstall_checklist.dita">Post-Installation
+        href="installation/installation_verification.dita">Verifying Your Installation</xref> and <xref
+        href="installation/postinstall_checklist.dita">Post-Installation
         Checklist</xref>.<p>To understand a cloud configuration more thoroughly and to learn how to
         make any changes later, visit these documentation pages: <ul id="ul_akt_fv2_lt">
           <li><xref href="input_model.dita">HP Helion OpenStack 2.0 Input Model</xref></li>
-          <li><xref href="using_git.dita">Using Git for Configuration Management</xref></li>
+          <li><xref href="installation/using_git.dita">Using Git for Configuration Management</xref></li>
         </ul>
       </p>
       <note>Because the GUI installer is disabled after deployment finishes, either via the GUI or
