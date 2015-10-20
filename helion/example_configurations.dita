@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="example_configurations">
+  <title>Helion <tm tmtype="reg">OpenStack</tm> 2.0: Example Configurations</title>
+  <body>
+    <p>The HP Helion OpenStack 2.0 system ships with a number of pre-qualified example
+      configuration. These are designed to help you to get up and running quickly with a minimum
+      number of configuration changes.</p>
+    <p>The HP Helion OpenStack input model allows a wide variety of configuration parameters that
+      may, at first glance, appear daunting. The example configurations are designed to simplify
+      this process by providing pre-built and pre-qualified examples that need only a minimum number
+      of modifications to get started.</p>
+    <p>This section briefly describes the various example configuration and their capabilities. It
+      also describes in detail (for one of the examples, entry-scale-kvm-vsa), how you may adapt the
+      input model to work in your environment.</p>
+  </body>
+</topic>

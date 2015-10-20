@@ -186,7 +186,7 @@ api_v3 = false</codeblock>
     </section>
     <section id="list"><title>Run Tests Matching a Series of White and Blacklists</title>
       <p>You can run tests against specific scenarios by editing or creating a run filter file.</p>
-      <p>Run filter files are deployed under <codeph>/opt/stack/tempest/run_fulters</codeph>.</p>
+      <p>Run filter files are deployed under <codeph>/opt/stack/tempest/run_filters</codeph>.</p>
       <p>Use run filters to whitelist or blacklist specific tests or groups of tests:</p>
       <ul>
         <li>lines starting with # or empty are ignored</li>
