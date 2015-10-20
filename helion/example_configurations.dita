@@ -38,7 +38,7 @@
         <sli outputclass="listsubb"><xref href="#example_configurations/disks_controller"
               ><i>3.2.1</i> Disks_controller.yml</xref></sli>
         <sli outputclass="listsubc"><xref href="#example_configurations/filesystems"><i>3.2.1.1</i>
-            Filesystems</xref></sli>
+            File Systems Storage</xref></sli>
         <sli outputclass="listsubc"><xref href="#example_configurations/swiftstorage"><i>3.2.1.2</i>
             Swift Storage</xref></sli>
         <sli outputclass="listsubb"><xref href="#example_configurations/disks_vsa"><i>3.2.2</i>
