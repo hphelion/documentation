@@ -5,6 +5,7 @@
 <<<<<<< HEAD
  <title>Quick Start Step 4: <keyword keyref="quickStartHPcloudStep4"/></title>
 <<<<<<< HEAD
+<<<<<<< HEAD
  <shortdesc>During this step you will use Terraform to create an <keyword keyref="prodLong"/>
     cluster on <keyword keyref="pubCloudLong"/>.</shortdesc>
 =======
@@ -18,6 +19,10 @@
  <shortdesc>During this step you will use Terraform to deploy a <keyword keyref="prodShort"/> Docker
   image to <keyword keyref="pubCloudShort"/>.</shortdesc>
 >>>>>>> 0c75500... Even more content
+=======
+ <shortdesc>During this step you will use Terraform to create a cluster on <keyword
+      keyref="pubCloudShort"/>.</shortdesc>
+>>>>>>> ce22a04... Added info on how to get cf binary
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
@@ -131,37 +136,37 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
   <simpletable id="simpletable_zlb_lpz_st">
    <strow>
     <stentry>1. <xref conref="CFR_step_2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
-       <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3. <xref
-       conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4. <b><keyword
-        keyref="quickStartHPcloudStep4" id="quickStartHPcloudStep4"/></b></p>5. <xref
-      conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></stentry>
+              <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3.
+              <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4.
+                <b><keyword keyref="quickStartHPcloudStep4" id="quickStartHPcloudStep4"/></b></p>5.
+            <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></stentry>
     <stentry><b>Deploying a Docker Image</b><ol id="ol_p2k_vx1_tt">
             <li>Navigate to the <keyword keyref="prodShort"/> directory that contains a
-                <filepath>.tfvars</filepath> file.<note type="tip">The <filepath>.tfvars</filepath>
-                file contains the credentials and keys for your cluster. For more information, see
-                  <xref href="CFR_TF_vars.dita#reference_phl_shc_rt">Terraform
-                Variables</xref>.</note></li>
+                <filepath>.tfvars</filepath> file.</li>
+            <li>The <filepath>.tfvars</filepath> file contains the credentials and keys for your
+              cluster. Add the necessary information to the file.<note type="tip">For more
+                information, see <xref href="CFR_TF_vars.dita#reference_phl_shc_rt">Terraform
+                  Variables</xref>.</note></li>
             <li>Run the following
                 command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><p>Terraform
                 creates the necessary security groups and VM instances, installs Docker, and the
                 installs the Docker images required to run the NATS messaging system.</p></li>
           </ol>After the Docker image is deployed as an instance on <keyword keyref="pubCloudShort"
-          />, you can perform the following actions: <ul id="ul_c3p_3fb_tt">
-            <li>To inspect the state of your infrastructure, run the <filepath>terraform
-                show</filepath> command. </li>
-            <li>To view the cluster core on <keyword keyref="pubCloudShort"/>, click <menucascade>
+          />, you can find out the URL of your <keyword keyref="prodShort"/> core in one of the
+          following ways. The URL will be formatted using the xip.io wildcard DNS, for example,
+            <codeph>api.15.125.91.46.xip.io</codeph><ul id="ul_xzx_1nb_tt">
+            <li>Run the <filepath>terraform show</filepath> command to see the xip.io address.</li>
+            <li>On the <keyword keyref="pubCloudShort"/> web interface, click <menucascade>
                 <uicontrol>Project</uicontrol>
                 <uicontrol>Compute</uicontrol>
-                <uicontrol>Instance</uicontrol>
-                <uicontrol/>
-              </menucascade>.</li>
-            <li>To view the container host security group on <keyword keyref="pubCloudShort"/>,
-              click <menucascade>
-                <uicontrol>Project</uicontrol>
-                <uicontrol>Computer</uicontrol>
-                <uicontrol>Access and Security</uicontrol>
-              </menucascade>.</li>
-          </ul><xref href="CFR_step_5.dita#concept_cw2_thz_st">
+                <uicontrol>Instances</uicontrol>
+              </menucascade>, note the external IP address, and format it as follows:
+                  <codeph>api.<varname>&lt;external IP address></varname>.xip.io</codeph></li>
+          </ul><note type="tip">You can also view the container host security group by clicking <menucascade>
+              <uicontrol>Project</uicontrol>
+              <uicontrol>Computer</uicontrol>
+              <uicontrol>Access and Security</uicontrol>
+            </menucascade>.</note><xref href="CFR_step_5.dita#concept_cw2_thz_st">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
           </xref></stentry>
    </strow>

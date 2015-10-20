@@ -202,6 +202,13 @@
          </keywords>
       </topicmeta>
    </keydef>
+   <keydef keys="prodVerLong">
+      <topicmeta>
+         <keywords>
+            <keyword>1.0.0</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
    <keydef keys="adminUtil">
       <topicmeta>
          <keywords>
@@ -309,7 +316,7 @@
    <keydef keys="quickStartHPcloudStep4">
       <topicmeta>
          <keywords>
-            <keyword>Deploying a Docker Image</keyword>
+            <keyword>Creating a Cluster</keyword>
          </keywords>
       </topicmeta>
    </keydef>

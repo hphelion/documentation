@@ -121,10 +121,32 @@
        conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4. <xref
        conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p>5. <xref
       conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></stentry>
-    <stentry><b>Downloading and Installing Terraform</b><p>You can use Terraform 0.6.3 and higher to
-                        construct, manage, update, or delete <keyword keyref="prodShort"/> clusters.
-                        Click the download link appropriate for your operating system:</p><ul
-                        id="ul_d1k_5k1_tt">
+    <stentry><b>Downloading and Installing the Cloud Foundy Command-Line Interface (CLI)</b><p>You
+                        can use the Cloud Foundry CLI to deploy and manage your applications. Click
+                        the download link appropriate for your operating system:</p><ul
+                        id="ul_bp4_fpb_tt">
+                        <li>Debian <xref
+                                href="https://cli.run.pivotal.io/stable?release=debian32&amp;version=6.13.0&amp;source=github-rel"
+                                format="html" scope="external">x86</xref> | <xref
+                                href="https://cli.run.pivotal.io/stable?release=debian64&amp;version=6.13.0&amp;source=github-rel"
+                                format="html" scope="external">x64</xref></li>
+                        <li>RedHat <xref
+                                href="https://cli.run.pivotal.io/stable?release=redhat32&amp;version=6.13.0&amp;source=github-rel"
+                                format="html" scope="external">x86</xref> | <xref
+                                href="https://cli.run.pivotal.io/stable?release=redhat64&amp;version=6.13.0&amp;source=github-rel"
+                                format="html" scope="external">x64</xref></li>
+                        <li>Mac OS X <xref
+                                href="https://cli.run.pivotal.io/stable?release=macosx64&amp;version=6.13.0&amp;source=github-rel"
+                                format="html" scope="external">x64</xref></li>
+                        <li>Windows <xref
+                                href="https://cli.run.pivotal.io/stable?release=windows32&amp;version=6.13.0&amp;source=github-rel"
+                                format="html" scope="external">x86</xref> | <xref
+                                href="https://cli.run.pivotal.io/stable?release=windows64&amp;version=6.13.0&amp;source=github-rel"
+                                format="html" scope="external">x64</xref></li>
+                    </ul><b>Downloading and Installing the Terraform CLI</b><p>You can use the
+                        Terraform 0.6.3 CLI and higher to construct, manage, update, or delete
+                            <keyword keyref="prodShort"/> clusters. Click the download link
+                        appropriate for your operating system:</p><ul id="ul_d1k_5k1_tt">
                         <li>FreeBSD <xref
                                 href="https://dl.bintray.com/mitchellh/terraform/terraform_0.6.4_freebsd_386.zip"
                                 format="zip" scope="external">x86</xref> | <xref
