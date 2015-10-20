@@ -64,13 +64,23 @@
     <section><title>Creating a Virtual Machine for the Deployment Toolbox</title>The HP Helion
             OpenStack Carrier Grade installation requires you to install a dedicated virtual machine
             for the HP DCN Virtualized Services Directory (<i>VSD</i>). This VSD should have been
-            deployed as a prerequisite step. See <xref
-                href="carrier-grade-install-vsd-vm.dita#topic7646">Bringing Up Single VSD VM
-                Manually</xref>.<p>To install the VRS vApp, you need another VSD VM that will be
-                used to install the VRS vApp on all ESX nodes in that cluster. This VSD VM does not
-                require a VSD license. This VM will host the HP DCN vSphere Solution, a deployment
-                toolbox,</p><p><b>Note:</b> This VSD VM is used to deploy VRS vApp and does not
-                offer VSD functionality.</p><p>To deploy this VM, refer to </p></section>
+            deployed as a prerequisite step.<p>To install the VRS vApp, you need another VSD VM that
+                will be used to install the VRS vApp on all ESX nodes in that cluster. This VSD VM
+                does not require a VSD license. This VM will host the HP DCN vSphere Solution, a
+                deployment toolbox,</p><p><b>Note:</b> This VSD VM is used to deploy VRS vApp and
+                does not offer VSD functionality.</p><p>To deploy this VM:</p><p>
+                <ol conref="CGH-2-conref-vsvapp2.dita#ReusableComponent_l3y_5jb_tt/ol_gtd_b1l_2t"
+                    id="ol_ykm_wjb_tt">
+                    <li/>
+                </ol>
+            </p><p>see  <xref href="carrier-grade-install-vsd-vm.dita#topic7646">Bringing Up Single
+                    VSD VM Manually</xref>. Use Steps 5, <xref
+                    href="carrier-grade-install-vsd-vm.dita#topic7646/5"><i>Edit
+                        /etc/sysconfig/network-scripts/ifcfg-eth0 file to configure a static IP
+                        address.</i></xref>through Step 15, <i>After NTP is properly
+                    synchronized,execute the following command to install VSD:</i> in the <i>Launch
+                    the VSD VM</i> section. You do not need to apply a license or create users for
+                this VSD VM. </p></section>
         <section><title>Configure the HTTP\DHCP VM setup required by Deployment Toolbox standalone
                 VSD:</title>A OVA template with CentOS 6.5 is created to host HTTP and DHCP service
             required by the Toolbox. Template available on the LR4 Jump Server <codeph>15.215.66.57:
