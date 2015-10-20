@@ -12,9 +12,14 @@
 >>>>>>> 9d80273... Testing theme changes on Linux
 =======
  <title>Quick Start Step 3: <keyword keyref="quickStartHPcloudStep3"/></title>
+<<<<<<< HEAD
  <shortdesc>During this tep you will log into <keyword keyref="pubCloudShort"/> and use the web
   console to create a sandbox environment.</shortdesc>
 >>>>>>> 86ae294... Added new content
+=======
+ <shortdesc>During this step you will log into <keyword keyref="pubCloudShort"/> and use the web
+    console to create a sandbox environment.</shortdesc>
+>>>>>>> 0c75500... Even more content
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>

@@ -20,7 +20,9 @@
          <topicref href="quickstart/pubcloud/CFR_step_1.dita"/>
          <topicref href="quickstart/pubcloud/CFR_step_2.dita"/>
          <topicref href="quickstart/pubcloud/CFR_step_3.dita"/>
-         <topicref href="quickstart/pubcloud/CFR_step_4.dita"/>
+         <topicref href="quickstart/pubcloud/CFR_step_4.dita">
+            <topicref href="quickstart/pubcloud/CFR_TF_vars.dita"/>
+         </topicref>
          <topicref href="quickstart/pubcloud/CFR_step_5.dita"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -50,14 +52,10 @@
 =======
 >>>>>>> c59d3cd... Minor clean-up
             <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_cluster.dita"/>
-            <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_explore.dita"/>
             <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_terminate.dita"/>
             <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_troubleshoot.dita"/>
          </topichead>
       </topichead>
-      <topicref href="deploy/CFR_deploy.dita">
-         <topicref href="deploy/CFR_TF_vars.dita"/>
-      </topicref>
       <topicref href="reference/CFR_reference_gato.dita"/>
    </topicref>
 >>>>>>> 9d80273... Testing theme changes on Linux
