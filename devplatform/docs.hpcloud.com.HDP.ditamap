@@ -7,7 +7,6 @@
     locktitle="yes">
     <topicref href="2.0/codeEngine/engine_walkthrough.dita"
       navtitle="Create an Automated Build-Test-Deploy Cycle" locktitle="yes"/>
-    <topicref href="2.0/codeEngine/engine_installation.dita"/>
     <topicref href="2.0/codeEngine/engine_initial_configuration.dita"/>
     <topicref href="2.0/codeEngine/engine_troubleshooting.dita"/>
     <topicref href="2.0/codeEngine/engine_logging.dita" navtitle="Log Files for Continuous Integration"
