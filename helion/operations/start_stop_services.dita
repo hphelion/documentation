@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="stopStartSvcs">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Starting and Stopping Services</title>
+  <body>
+    <section><title>Nova compute</title> To stop the Nova comoute service, you would need to run the
+      playbook associated to the service, i.e.
+      <codeblock>ansible-playbook -i hosts/verb_hosts nova-stop.yml </codeblock> You would stop nova
+      to stop API requests going to a service, to start a service that died, to restart a service
+      that was in a bad state. </section>
+    <p><b>Starting and stopping Freezer</b></p>
+    <section conref="../bura/start_stop_freezer_services.dita#topic_dsm_fbs_st/main"/>
+    <section conref="../bura/start_stop_freezer_services.dita#topic_dsm_fbs_st/manual"/>
+    <section><title>Logging</title>
+      <p><b>To stop Logging: </b>
+        <codeblock>ansible-playbook -i hosts/verb_hosts logging-stop.yml</codeblock>
+        <b>To start Logging:</b>
+        <codeblock>ansible-playbook -i hosts/verb_hosts logging-start.yml</codeblock> Please note
+        that the above steps only impact centralized logging. Logrotate is an essential feature (to
+        keep the service log files from filling the disk) and that will not be affected by these.
+      </p>
+    </section>
+
+  </body>
+
+
+
+
+</topic>
