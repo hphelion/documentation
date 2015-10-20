@@ -313,14 +313,19 @@
         - logical-name: hed4
           type: simple-port
           bus-address: "0000:04:00.1"</codeblock>
-      <p>This defines two sets of NIC mappings, representing two different physical server types.  The name of each mapping is used as a value in the <codeph>servers.yml</codeph> file to associate each server with its required mapping.  This enables the use of different server models or servers with different network hardware.</p>
+      <p>This defines two sets of NIC mappings, representing two different physical server types.
+        The name of each mapping is used as a value in the <codeph>servers.yml</codeph> file to
+        associate each server with its required mapping. This enables the use of different server
+        models or servers with different network hardware.</p>
       <p>Each mapping lists a set of ports with the following information:</p>
       <ul>
         <li><b>Logical name</b> - we use the form <codeph>hedN</codeph></li>
         <li><b>Type</b> - only simple-port types are supported in HP Helion OpenStack 2.0</li>
         <li><b>Bus-address</b> - the PIC bus address of the port</li>
       </ul>
-      <p>The PCI bus address can be found using the <codeph>lspci</codeph> command on one of the servers.  This command can produce a lot of output, so you can use the following command which will limit the output to list ethernet class devices only:</p>
+      <p>The PCI bus address can be found using the <codeph>lspci</codeph> command on one of the
+        servers. This command can produce a lot of output, so you can use the following command
+        which will limit the output to list ethernet class devices only:</p>
       <codeblock>sudo lspci -D |grep -i eth</codeblock>
       <p>Here is an example output:</p>
       <codeblock>$ sudo lspci -D |grep -i eth
@@ -330,7 +335,176 @@
 0000:02:00.3 Ethernet controller: Broadcom Corporation NetXtreme BCM5719 Gigabit Ethernet PCIe (rev 01)
 0000:04:00.0 Ethernet controller: Intel Corporation 82599ES 10-Gigabit SFI/SFP+ Network Connection (rev 01)
 0000:04:00.1 Ethernet controller: Intel Corporation 82599ES 10-Gigabit SFI/SFP+ Network Connection (rev 01)</codeblock>
-      <p>To localize this file, replace the mapping name(s) with the names of your choice and enumerate the ports as required.</p>
+      <p>To localize this file, replace the mapping name(s) with the names of your choice and
+        enumerate the ports as required.</p>
+    </section>
+    <section id="3.1.3_netinterfaces"><title><i>3.1.3</i> Net_interfaces.yml</title>
+      <p>This file is used to fine how the network interfaces are to be configured. The example
+        reflects the slightly different configuration of controller, compute nodes, and VSA
+        nodes.</p>
+      <p>If network bonding is to be used, this file specifies how bonding is to be set up. It also
+        specifies which networks are to be associated with each interface.</p>
+      <p>In the example we use a bond of interfaces <codeph>hed3</codeph> and <codeph>hed4</codeph>.
+        You only need to modify this file if you have mapped your physical ports to different names,
+        or if you need to modify the bond options.</p>
+      <p>The section of configuration file is shown below, which will create a bonded interface
+        using the named <codeph>hed3</codeph> and <codeph>hed4</codeph> NIC mappings described in
+        the previous section.</p>
+      <codeblock>
+    - name: CONTROLLER-INTERFACES
+      network-interfaces:
+        - name: BOND0
+          device:
+              name: bond0
+          bond-data:
+              options:
+                  mode: active-backup
+                  miimon: 200
+                  primary: hed3
+          provider: linux
+          devices:
+              - name: hed3
+              - name: hed4
+          network-groups:
+            - EXTERNAL-API
+            - EXTERNAL-VM
+            - GUEST
+            - MANAGEMENT</codeblock>
+      <p>If your system cannot support bonding then you can modify this specification to specify a
+        non-bonded interface, for example using device <codeph>hed3</codeph>:</p>
+      <codeblock>
+   - name: CONTROLLER-INTERFACES
+     network-interfaces:
+        - name: hed3
+          device:
+             name: hed3
+          network-groups:
+             - EXTERNAL-API
+             - EXTERNAL-VM
+             - GUEST
+             - MANAGEMENT</codeblock>
+    </section>
+    <section id="3.1.4_networkgroups"><title><i>3.1.4</i> Network_groups.yml</title>
+      <p>This file defines the networks groups used in your cloud. A network-group defines the
+        traffic separation model, and all of the properties that are common to the set of L3
+        networks that carry each type of traffic. They define where services and load balancers are
+        attached to the network model and the routing within that model.</p>
+      <p>In this example, the following network groups are defined:</p>
+      <ul>
+        <li><b>EXTERNAL-API</b> - this network group is used for external IP traffic to the cloud.
+          In addition, it defines: <ul>
+            <li>The characteristics of the load balancer to be used for the external API</li>
+            <li>The Transport Layer Security (TLS) attributes</li>
+          </ul></li>
+        <li><b>EXTERNAL-VM</b> - Floating IPs for virtual machines are created on this network
+          group. This is identified by the tag value
+            <codeph>neutron.l3_agent.external_network_bridge</codeph>.</li>
+        <li><b>GUEST</b> - Tenant VxLAN traffic is carried on this network group. This is identified
+          by the tag value <codeph>neutron.networks.vxlan</codeph>.</li>
+        <li><b>MANAGEMENT</b> - This is the default network group for traffic between service
+          components in the cloud. In addition, it defines: <ul>
+            <li>An internal load balancer is defined on this network group for managing internal and
+              administrative API requests.</li>
+          </ul></li>
+      </ul>
+      <p>Most of the values in this file should be left unmodified if you are using the network
+        model defined by the example. More complex modifications are supported but are outside the
+        scope of this document.</p>
+      <p>However, the values related to the external API network are site specific and need to be
+        modified:</p>
+      <ul>
+        <li>Provide an external URL for the cloud</li>
+        <li>Provide the name of the security certificate to use</li>
+      </ul>
+      <p>The example <codeph>network_groups.yml</codeph> file is shown below, modify the bolded
+        fields to reflect your site values.</p>
+      <codeblock>
+   # External API
+   #
+   # This is the network group that users will use to
+   # access the public API endpoints of your cloud
+   #
+   - name: EXTERNAL-API
+     hostname-suffix: extapi
+        
+     load-balancers:
+       - provider: ip-cluster
+         name: extlb
+         # If external-name is set then public urls in keystone
+         # will use this name instead of the IP address
+         # You must either set this to a name that can be resolved
+         # in your network 
+         # or comment out this line to use IP addresses
+         <b>external-name</b>:
+        
+         <b>tls-components</b>:
+            - default
+         roles:
+            - public
+         <b>cert-file: my-public-cert</b></codeblock>
+      <p>Here is a description of each of the above bolded sections:</p>
+      <p><b>external-name</b></p>
+      <p>The external name defines how the public URLs will be registered in Keystone. Users of your
+        cloud will need to be able to resolve this URL to access the cloud APIs, and if you are
+        using the TLS the name must match the certificate used.</p>
+      <p>Because this value is difficult to change after initial deployment, this value is left
+        blank in the supplied example which prevents the configuration processor from running until
+        a value has been supplied. If you want to register the public URLs as IP addresses instead
+        of a name then you can comment out this line.</p>
+      <p><b>cert-file</b></p>
+      <p>Provide the name of the file located in
+          <codeph>~/helion/my_cloud/config/tls/certs/</codeph> that will be used for your cloud
+        endpoints. As shown above, this can be either a single certificate for all endpoints or a
+        default certificate file and a set of service specific certificate files.</p>
+      <p><b>tls-components</b></p>
+      <p>If you do not want to use a TLS for the public URLs then change the entry that says
+        "tls-components" to "components".</p>
+    </section>
+    <section id="3.1.5_servers"><title><i>3.1.5</i> Servers.yml</title>
+      <p>This file where you provide the details of the physical servers that make up your cloud.
+        There are two sections to this file:</p>
+      <codeblock>
+   baremetal:
+      # NOTE: These values need to be changed to match your environment.
+      # Define the network range that contains the ip-addr values for
+      # the individual servers listed below.
+      subnet: <b>192.168.10.0</b>
+      netmask: <b>255.255.255.0</b></codeblock>
+      <p>The two values in this section are used to configure cobbler for operating system
+        installation and must match the network values for the addresses given for the servers.</p>
+      <p>The servers section below provides the details of each individual server. For example, here
+        are the details for the first controller:</p>
+      <codeblock>
+   servers:
+        
+      # Controllers
+      - id: controller1
+        ip-addr: <b>192.168.10.3</b>
+        role: CONTROLLER-ROLE
+        server-group: RACK1
+        nic-mapping: <b>HP-DL360-4PORT</b>
+        mac-addr: <b>b2:72:8d:ac:7c:6f</b>
+        ilo-ip: <b>192.168.9.3</b>
+        ilo-password: <b>password</b>
+        ilo-user: <b>admin</b></codeblock>
+      <p><b>id</b></p>
+      <p><codeph>id</codeph> is a name you provide to uniquely identify a server. This can be any
+        string which is makes sense in your context, such as an asset tag, descriptive name, etc.
+        The system will use this value to remember how the server has been allocated.</p>
+      <p><b>ip-addr</b></p>
+      <p><codeph>ip-addr</codeph> is the IP address that the system will use for SSH connections to
+        the server for deployment and configuration changes. This address must be in the IP range of
+        one of the networks in the model. In the example, the servers are provided with addresses
+        from the MANAGEMENT network.</p>
+      <p><b>role</b></p>
+      <p><codeph>role</codeph> is a string which refers to an entry in
+          <codeph>server_roles.yml</codeph> that tells the system how to configure the disks and
+        network interfaces for this server. Roles are also used to define which servers can be used
+        for specific purposes. Adding and changing roles is beyond the scope of this walkthrough –
+        for more details refer to <xref href="input_model.dita">HPE Helion OpenStack 2.0 Input
+          Model</xref>.</p>
+      <p><b>server-group</b></p>
+      <p><codeph>server-group</codeph> tells the system how this server is physically related to networks and other servers.  Server groups are used to ensure that servers in a cluster are selected from different physical groups.  The example provides a set of server groups that divide the serves into three sets called “RACK1”, “RACK2”, and “RACK3”.   Modifying the server group structure is beyond the scope of this walk through – for more details refer to the Input Model Document.</p>
     </section>
   </body>
 </topic>
