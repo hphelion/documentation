@@ -20,8 +20,8 @@
     <stentry>
      <b>Creating a Sandbox Environment</b><ol id="ol_ur4_yq1_tt">
       <li>Log into the <xref href="https://horizon.hpcloud.com/" format="html" scope="external"
-        >Horizon console</xref> using the <keyword keyref="pubCloudShort"/> username and password
-       that you created during registration.</li>
+                  ><keyword keyref="pubCloudShort"/></xref> with the username and password that you
+              created during registration.</li>
       <li>Create a public-facing network.<ol id="ol_vkh_fr1_tt">
         <li>Click <menucascade>
           <uicontrol>Project</uicontrol>
