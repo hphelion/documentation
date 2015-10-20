@@ -120,6 +120,49 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       <codeblock>- "ssl-default-bind-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"
 - "ssl-default-server-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"</codeblock>
       Make the changes as needed. It's best to keep the two options identical. </section>
+    
+    <section><title>Creating a test certificate for an IP address or FQDN</title> If you want to
+      create a test certificate, follow tese steps: <ol>
+        <li>First get the IP address or FQDN your public endpoint is bound to. </li>
+        <li>you need to get the following files and run a script. <ul>
+            <li>cacert.pem </li>
+            <li>cakey.pem </li>
+            <li>openssl.cnf </li>
+            <li>hlm_cert_generate.sh</li>
+          </ul>
+        </li>
+        <li> Then run <codeblock>bash hlm_cert_generate.sh &lt;public VIP address></codeblock> or
+          <codeblock>bash hlm_cert_generate.sh &lt;public FQDN></codeblock>
+        </li>
+      </ol>
+      <b>Installing the new certificate into a running cloud</b>
+      <ol>
+        <li>Copy the generated my-public-cert to <b>~/helion/my_cloud/config/tls/certs/</b>
+        </li>
+        <li>Commit the changes, run the config processor and deploy cluster playbook.
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
+        </li>
+        <li>Commit your changes to git.
+          <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "My config or other commit message"</codeblock>
+        </li>
+        <li>Rerun the config processor
+          <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
+        </li>
+        <li>Deploy the cluster to refresh the certificate
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts FND-CLU-deploy.yml</codeblock>
+        </li>
+      </ol>
+    </section>
+    
+    
+    
+    
+    
+    
     <section><title>Accessing public endpoints from an external machine</title>
      <!-- <ol id="ol_q1b_djg_rt">
         <li>Have a name resolver for myhelion.test - It could /etc/hosts or dnsmasq reading from a
