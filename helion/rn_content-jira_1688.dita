@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_j4d_c1c_lt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: RN</title>
-  <body>
+  <body><!--Needs Edit-->
     <p>The following table list a high level overview of  the  OpenStack projects/services which are
       included in HP Helion OpenStack  and their status. Only official upstream OpenStack projects
       are included, not non-OpenStack add-ons that originate elsewhere. <note>If the service is not

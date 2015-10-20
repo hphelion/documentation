@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_qch_rmx_st">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring Ceph to use OpenStack Services (Glance) </title>
-  <body>
+  <body><!--Needs Edit-->
     <p>This page describes the procedure to configure Ceph as a default Glance store. Currently,
       Swift is  used as the default Glance store. </p>
     <section id="configure-ceph-as-cinder-backend">

@@ -4,7 +4,7 @@
 <topic xml:lang="en-us" id="HP2.0DNSaaS">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: DNSaaS Installation and
     Configuration</title>
-  <body>
+  <body><!--Needs Edit-->
     <p><b>This document describes the installation process for HP Helion OpenStack 2.0</b></p>
     <p>Our managed DNS service, based on the OpenStack Designate project, is engineered to help you
       create, publish, and manage your DNS zones and records securely and efficiently to either a

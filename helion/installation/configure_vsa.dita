@@ -3,7 +3,7 @@
 <topic id="config_vsa">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for VSA Block Storage
     Backend</title>
-  <body>
+  <body><!--Needs Edit-->
     <section id="about">
       <p>This page describes how to configure your VSA backend for the Helion Entry Scale Cloud with
         KVM model.<note type="attention">Discovery functionality of VSA nodes using CMC controller node is not

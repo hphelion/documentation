@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_s3h_vs3_nt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding, Removing, and Repairing Nodes</title>
-  <body>
+  <body><!--Needs Edit-->
     <p> If you are planning to scale up, have a failed server, or need to remove a node, there are a
       few things to remember. For control plane nodes, right now you need to maintain three.
       Therefore you will not remove a control plane node completely; you will just replace it. If

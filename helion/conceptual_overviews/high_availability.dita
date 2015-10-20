@@ -3,7 +3,7 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="HP2.0HA">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: High Availability (HA)</title>
-  <body>
+  <body><!--Needs Edit-->
     <p>This page covers the following topics:</p>
     <ul>
       <li><xref href="#HP2.0HA/concepts_overview">High Availability Concepts Overview</xref>

@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="troubleshooting_installation">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Troubleshooting the Installation</title>
-  <body>
+  <body><!--Needs Edit-->
     <section id="about">
       <p>We have gathered some of the common issues that occur during installation and organized
         them by when they occur during the installation. These sections will coincide with the steps

@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_jmm_cnz_4t">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Swift Playbooks Linked to Ring Management</title>
-  <body>
+  <body><!--Needs Edit-->
     <p>The following table describes how playbooks relate to ring management.</p>
     <simpletable id="simpletable_mtc_yb1_kt">
       <strow>

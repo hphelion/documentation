@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_r21_rpv_pt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Replacing a Swift Node</title>
-  <body>
+  <body><!--Needs Edit-->
     <p><note type="warning">If it applies to the server, do not skip step 11. If you do so, the
         system will overwrite the existing rings with new rings. This will not cause data loss, but
         potentially will move most objects in your system to new locations and may make data

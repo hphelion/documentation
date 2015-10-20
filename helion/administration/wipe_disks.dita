@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="wipe_disks">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Pre-Installation Disk Cleanup</title>
-  <body>
+  <body><!--Needs Edit-->
     <section id="about">
       <p>You may have a need to wipe the disks of one or more of the nodes in your Cloud. There is
         an Ansible playbook included as part of the installation that will assist in this tasks.</p>

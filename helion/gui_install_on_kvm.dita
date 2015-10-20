@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_zfy_cp4_kt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installing the Operating System on KVM </title>
-  <body>
+  <body><!--Needs Edit-->
     <section conref="install_entryscale_kvm_vsa.dita#install_kvm/important_notes"/>
     <section conref="install_entryscale_kvm_vsa.dita#install_kvm/prereqs"/>
     <section conref="install_entryscale_kvm_vsa.dita#install_kvm/install_deployer"/>

@@ -3,7 +3,7 @@
 <topic id="configure_logging">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring the Centralized Logging
     Service</title>
-  <body>
+  <body><!--Needs Edit-->
     <section id="config">
       <p>In HP Helion OpenStack 2.0 you will have the option to configure the Centralized Logging
         service for your needs. The information contained here will assist in this process.</p>

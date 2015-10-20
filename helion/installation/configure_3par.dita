@@ -3,7 +3,7 @@
 <topic id="config_3par">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for 3PAR Block Storage
     Backend</title>
-  <body>
+  <body><!--Needs Edit-->
     <p>This page describes how to configure your 3PAR backend for the Helion Entry Scale Cloud with
       KVM model.</p>
     <section>
