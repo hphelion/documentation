@@ -3,7 +3,8 @@
 <topic id="example_configurations">
   <title>Helion <tm tmtype="reg">OpenStack</tm> 2.0: Example Configurations</title>
   <body>
-    <section id="2.0_example_configs"><title><i>2.0</i> HP Helion OpenStack Example Configurations</title>
+    <section id="2.0_example_configs"><title><i>2.0</i> HP Helion OpenStack Example
+        Configurations</title>
       <p>The HP Helion OpenStack 2.0 system ships with a number of pre-qualified example
         configuration. These are designed to help you to get up and running quickly with a minimum
         number of configuration changes.</p>
@@ -141,6 +142,195 @@
       <!-- MEDIA DIAGRAM GOES HERE -->
       <p>The distribution of services across controllers is only one possible configuration, and
         other combinations can also be expressed.</p>
+    </section>
+    <section id="3.0_modify_entryscale_kvm"><title><i>3.0</i> Modifying the Entry-scale KVM with VSA
+        model for your Environment</title>
+      <p>In this section we will look at the changes that need to be made to the input model in
+        order to deploy and run this cloud model in your environment.</p>
+      <p>This section is written from the perspective of the <codeph>entry-scale-kvm-vsa</codeph>
+        example, although the same principles apply to all of the examples.</p>
+      <p>There are two categories of modifications that we will look at:</p>
+      <ol>
+        <li><b>Localizations</b> - These are the minimum set of changes that you need to make to
+          adapt the examples to run in your environment. These are mostly concerned with
+          networking.</li>
+        <li><b>Customizations</b> - These describe more general changes that you may wish to make to
+          your model, e.g. changing disk storage layouts.</li>
+      </ol>
+      <p>Note that as a convention the examples use upper case for the object names, but these
+        strings are only used to define the relationships between objects and have no specific
+        significance to the configuration processor. You can change the names to values that are
+        relevant to your context providing you do so consistently across the input model.</p>
+    </section>
+    <section id="3.1_localizing_inputmodel"><title><i>3.1</i> Localizing the Input Model</title>
+      <p>In this section we look at the minimum set of changes needed to localize the cloud for your
+        environment. This assumes you are using other features of the example unchanged.</p>
+      <ul>
+        <li>Update <codeph>networks.yml</codeph> to specify the network addresses (VLAN IDs and CIDR
+          values) for your cloud</li>
+        <li>Update <codeph>nic_mappings.yml</codeph> to specify the PCI bus information for your
+          servers ethernet devices</li>
+        <li>Update <codeph>net_interfaces.yml</codeph> to provide network interface configuration,
+          such as bond settings and bond devices</li>
+        <li>Update <codeph>network_groups.yml</codeph> to provide the public URL for your cloud and
+          to provide security certificates</li>
+        <li>Update <codeph>servers.yml</codeph> to provide information on your servers</li>
+      </ul>
+    </section>
+    <section id="3.1.1_networks">
+      <title><i>3.1.1</i> Networks.yml</title>
+      <p>You will need to allocate site specific CIDRs and VLANs for these networks and update these
+        values in the <codeph>networks.yml</codeph> file. The example models define the following
+        networks:</p>
+      <table frame="all" rowsep="1" colsep="1" id="table_xrn_zzy_st">
+        <tgroup cols="4">
+          <colspec colname="c1" colnum="1"/>
+          <colspec colname="c2" colnum="2"/>
+          <colspec colname="c3" colnum="3"/>
+          <colspec colname="c4" colnum="4"/>
+          <thead>
+            <row>
+              <entry>Network</entry>
+              <entry>CIDR</entry>
+              <entry>VLAN ID</entry>
+              <entry>Tagged / Untagged</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>External API</entry>
+              <entry>10.0.1.0/24</entry>
+              <entry>101</entry>
+              <entry>Tagged</entry>
+            </row>
+            <row>
+              <entry>External VM</entry>
+              <entry>Addresses configured by Neutron, leave blank in the file</entry>
+              <entry>102</entry>
+              <entry>Tagged</entry>
+            </row>
+            <row>
+              <entry>Guest</entry>
+              <entry>10.1.1.0/24</entry>
+              <entry>103</entry>
+              <entry>Tagged</entry>
+            </row>
+            <row>
+              <entry>Management</entry>
+              <entry>192.168.10.0/24</entry>
+              <entry>100</entry>
+              <entry>Un-tagged</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>You will need to edit this file and provide your local values for these networks.</p>
+      <p>The CIDR for the External VM network is configured separately using the Neutron API (see
+            <i><xref href="administration/create_extnet.dita">Creating an External
+          Network</xref></i>. You will only specify its VLAN ID during the installation process.</p>
+      <p>The Management network is shown as untagged. This is required if you are using this network
+        to PXE install the operating system on the cloud nodes.</p>
+      <p>The example <codeph>networks.yml</codeph> file is shown below, modify the bolded fields to
+        reflect your site values.</p>
+      <codeblock>networks:
+   #
+   # This example uses the following networks
+   #
+   # Network       CIDR             VLAN
+   # -------       ----             ----
+   # External API  10.0.1.0/24      101 (tagged)
+   # External VM   see note 1       102 (tagged)
+   # Guest         10.1.1.0/24      103 (tagged)
+   # Management    192.168.10.0/24  100 (untagged)
+   #	
+   # Notes:
+   # 1. Defined as part of Neutron configuration
+   #
+   # Modify these values to match your environment
+   #
+   - name: EXTERNAL-API-NET
+     vlanid: <b>101</b>
+     tagged-vlan: true
+     cidr: <b>10.0.1.0/24</b>
+     gateway-ip: <b>10.0.1.1</b>
+     network-group: EXTERNAL-API
+        
+   - name: EXTERNAL-VM-NET
+     vlanid: <b>102</b>
+     tagged-vlan: true
+     network-group: EXTERNAL-VM
+        
+   - name: GUEST-NET
+     vlanid: <b>103</b>
+     tagged-vlan: true
+     cidr: <b>10.1.1.0/24</b>
+     gateway-ip: <b>10.1.1.1</b>
+     network-group: GUEST
+        
+   - name: MANAGEMENT-NET
+     vlanid: 100
+     tagged-vlan: false
+     cidr: <b>192.168.10.0/24</b>
+     gateway-ip: <b>192.168.10.1</b>
+     network-group: MANAGEMENT</codeblock>
+    </section>
+    <section id="3.1.2_nicmappings"><title><i>3.1.2</i> Nic_mappings.yml</title>
+      <p>This file maps ethernet port names to specific bus slots. Due to inherent race conditions
+        associated with multiple PCI device discovery there is no guarantee that ethernet devices
+        will be named as expected by the operating system, and it is possible that different port
+        naming will exist on different servers with the same physical configuration.</p>
+      <p>In order to provide a deterministic naming pattern, the input model supports an explicit
+        mapping from PCI bus address to a user specified name. HP Helion OpenStack uses the prefix
+        "hed" (Helion Ethernet Device) to name such devices to avoid any name clashes with the "eth"
+        names assigned by the operating system.</p>
+      <p>The example <codeph>nic_mappings.yml</codeph> file is shown below.</p>
+      <codeblock>nic-mappings:
+        
+   - name: HP-DL360-4PORT
+     physical-ports:
+       - logical-name: hed1
+         type: simple-port
+         bus-address: "0000:07:00.0"
+        
+        - logical-name: hed2
+          type: simple-port
+          bus-address: "0000:08:00.0"
+        
+        - logical-name: hed3
+          type: simple-port
+          bus-address: "0000:09:00.0"
+        
+        - logical-name: hed4
+          type: simple-port
+          bus-address: "0000:0a:00.0"
+        
+    - name: MY-2PORT-SERVER
+      physical-ports:
+        - logical-name: hed3
+          type: simple-port
+          bus-address: "0000:04:00.0"
+        
+        - logical-name: hed4
+          type: simple-port
+          bus-address: "0000:04:00.1"</codeblock>
+      <p>This defines two sets of NIC mappings, representing two different physical server types.  The name of each mapping is used as a value in the <codeph>servers.yml</codeph> file to associate each server with its required mapping.  This enables the use of different server models or servers with different network hardware.</p>
+      <p>Each mapping lists a set of ports with the following information:</p>
+      <ul>
+        <li><b>Logical name</b> - we use the form <codeph>hedN</codeph></li>
+        <li><b>Type</b> - only simple-port types are supported in HP Helion OpenStack 2.0</li>
+        <li><b>Bus-address</b> - the PIC bus address of the port</li>
+      </ul>
+      <p>The PCI bus address can be found using the <codeph>lspci</codeph> command on one of the servers.  This command can produce a lot of output, so you can use the following command which will limit the output to list ethernet class devices only:</p>
+      <codeblock>sudo lspci -D |grep -i eth</codeblock>
+      <p>Here is an example output:</p>
+      <codeblock>$ sudo lspci -D |grep -i eth
+0000:02:00.0 Ethernet controller: Broadcom Corporation NetXtreme BCM5719 Gigabit Ethernet PCIe (rev 01)
+0000:02:00.1 Ethernet controller: Broadcom Corporation NetXtreme BCM5719 Gigabit Ethernet PCIe (rev 01)
+0000:02:00.2 Ethernet controller: Broadcom Corporation NetXtreme BCM5719 Gigabit Ethernet PCIe (rev 01)
+0000:02:00.3 Ethernet controller: Broadcom Corporation NetXtreme BCM5719 Gigabit Ethernet PCIe (rev 01)
+0000:04:00.0 Ethernet controller: Intel Corporation 82599ES 10-Gigabit SFI/SFP+ Network Connection (rev 01)
+0000:04:00.1 Ethernet controller: Intel Corporation 82599ES 10-Gigabit SFI/SFP+ Network Connection (rev 01)</codeblock>
+      <p>To localize this file, replace the mapping name(s) with the names of your choice and enumerate the ports as required.</p>
     </section>
   </body>
 </topic>
