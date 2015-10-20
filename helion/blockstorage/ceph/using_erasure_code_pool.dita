@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_psp_vrd_st">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using Erasure Code Pool in Ceph </title>
-  <body>
+  <body><!--Needs Edit-->
     <p>(<b>where does this topic fit??</b>)An erasure coded (EC) Ceph pool cannot be directly used
       as a Cinder backend. This is due to the limitation of Ceph EC pool; since it does not support
       partial writes. To overcome this limitation, create a <b>writeback</b> cache tier in front of

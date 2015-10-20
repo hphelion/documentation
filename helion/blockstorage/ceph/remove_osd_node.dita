@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ipm_gnt_rt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing Object Storage Daemon (OSD) Node </title>
-  <body>
+  <body><!--Needs Edit-->
     <p>Perform the following steps to remove the OSD node:<ol id="ol_v3t_4nt_rt">
         <li> Login to the deployer node.</li>
         <li>Make a note of the OSD numbers on the OSD node to be removed. A sample of OSD node is as

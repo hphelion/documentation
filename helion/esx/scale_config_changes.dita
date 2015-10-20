@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ijt_dyh_rt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: SCALE Configuration Changes</title>
-  <body>
+  <body><!--Needs Edit-->
     <p>The recommended configuration changes to achieve 4K instances are as follows. <b>(what is
         reason to scale the configuration changes??)</b><ol id="ol_zwn_lyh_rt">
         <li>Change the directory. The <systemoutput>nova.conf.j2</systemoutput> is present in

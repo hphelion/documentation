@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_xq2_dw4_nt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: swift-recon</title>
-  <body>
+  <body><!--Needs Edit-->
     <p>The <b>swift-recon</b> command retrieves data from Swift servers and displays the results. </p>
     <p>To use <b>swift-recon</b> perform the following procedure:<ol id="ol_qh4_wx4_nt">
         <li>Log on as a root user to any node which is running the swift-proxy service.</li>

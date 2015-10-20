@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ev4_q2b_kt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Examine Details of Planned Ring Changes Prior to Deploy</title>
-  <body>
+  <body><!--Needs Edit-->
     <!--You must run the <codeph>_swift-validate-input-model.yml</codeph> playbook as mentioned in step <b>1</b> in <b> </b><xref href="../installation.dita#topic_flx_j2b_ws/validate_swift">Validate Object Storage</xref> otherwise the files needed to run the <codeph>swiftlm-ring-supervisor</codeph> will not be in place on the node. -->
     <p>Before making major changes to your rings, you can see the planned layout of Swift rings
       using the following steps: <ol id="ol_icb_kgd_st">

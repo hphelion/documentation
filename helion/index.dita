@@ -16,7 +16,7 @@
       <othermeta name="product-version2" content="HP Helion Openstack 2.0"/>
     </metadata>
   </prolog>
-  <body>
+  <body><!--Needs Edit-->
     <section id="top"/>
     <p>HP Helion OpenStack is a commercial-grade distribution of OpenStack the leading open source
       cloud computing platform. This distribution, backed by HP, enables customers to more easily

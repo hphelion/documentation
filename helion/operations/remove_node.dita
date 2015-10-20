@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_fld_zzy_lt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing a Compute Node</title>
-  <body>
+  <body><!--Needs Edit-->
   <section id="removeNodes"> The process for removing a compute node requires that you run these steps: <ol>
         <li>Disable provisioning to prevent new instances from being created on this node.  </li>
         <li>If possible migrate any instances on the node to other nodes. </li>

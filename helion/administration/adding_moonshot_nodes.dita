@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_h3s_n4t_mt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding Moonshot Nodes</title>
-  <body>
+  <body><!--Needs Edit-->
     <p>
       <note type="important">Moonshots are supported as compute nodes.</note>
     </p>

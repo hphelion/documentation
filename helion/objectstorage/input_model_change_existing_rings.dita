@@ -3,7 +3,7 @@
 <topic id="topic_vyp_cft_4t">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Applying Input Model Changes to Existing
     Rings</title>
-  <body>
+  <body><!--Needs Edit-->
     <p>This section describes a general approach of making changes to the existing rings. This
       applies to actions such as adding and removing a server and replacing and upgrading the disk
       drive(s). There are a number of phases that must be performed when adding and removing a

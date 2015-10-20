@@ -3,7 +3,7 @@
 <topic id="modify-input-model">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Modifying Example Configurations for Object
     Storage</title>
-  <body>
+  <body><!--Needs Edit-->
     <p>This section contains detailed descriptions about the Swift-specific parts of the input model
       . Example input models are described in <xref href="../example_configs.dita#example_configs"
         >example configuration</xref>. General descriptions of the input model are present in the

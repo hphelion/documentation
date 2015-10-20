@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_fkz_yvr_st">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Commonly Used Commands</title>
-  <body>
+  <body><!--Needs Edit-->
     <p>
       <table frame="all" rowsep="1" colsep="1" id="table_fgx_2wr_st">
         <tgroup cols="5">

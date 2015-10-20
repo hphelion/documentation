@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="ceph_overview">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceph Overview</title>
-  <body>
+  <body><!--Needs Edit-->
     <section><title>Ceph Overview</title><p>Ceph is an Open Source, scalable, software defined
         storage running on HP Servers which provides block and object storage with unified
         management.</p><p>The HP Helion OpenStack 2.0 Ceph Storage Solution provides an unified

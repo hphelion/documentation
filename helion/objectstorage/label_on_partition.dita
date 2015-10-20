@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="verify-partition-label">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: How to Verify if a Partition is Labelled</title>
-  <body>
+  <body><!--Needs Edit-->
     <p>
       <note type="warning">For system upgrade <!--rather than an initial deploy--> do NOT clear the
         label before starting the upgrade.</note>

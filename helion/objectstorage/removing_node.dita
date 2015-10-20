@@ -3,7 +3,7 @@
 <topic id="topic_ndn_4bg_pt">
   <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
   <title><?oxy_custom_end?>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing a Swift Node</title>
-  <body>
+  <body><!--Needs Edit-->
     <p>This process is used when you want to remove one or more node permanently from the Swift
       system. This process has three phases as follows:<ul id="ul_vs4_rcg_pt">
         <li>Removing the node's drives from the rings - move data off the node and store it on the

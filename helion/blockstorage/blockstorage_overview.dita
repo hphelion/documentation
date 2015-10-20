@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_e5g_z3h_gt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Block Storage Overview</title>
-  <body>
+  <body><!--Needs Edit-->
     <section id="about"><title>About Block Storage</title>
       <p>The HP Helion OpenStack Block Storage Volume Operations uses the OpenStack Cinder (Block
         Storage) service to manage storage volumes, including creating volumes, creating volume
