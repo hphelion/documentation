@@ -11,50 +11,49 @@
       may, at first glance, appear daunting. The example configurations are designed to simplify
       this process by providing pre-built and pre-qualified examples that need only a minimum
       number of modifications to get started.</p>
-    <section id="contents"><title><i>1.0</i> Contents</title>
+    <section id="contents">
       <sl>
-        <sli><xref href="#example_configurations/contents"><i>1.0</i> Contents</xref></sli>
-        <sli><xref href="#example_configurations/example_configs"><i>2.0</i> HP Helion OpenStack
+        <sli><xref href="#example_configurations/example_configs"><i>1.0</i> HP Helion OpenStack
             Example Configuration</xref></sli>
         <sli outputclass="listsuba"><xref href="#example_configurations/entryscale_kvm_vsa"
-              ><i>2.1</i> Entry-scale KVM with VSA model</xref></sli>
-        <sli outputclass="listsuba"><xref href="#example_configurations/entryscale_esx"><i>2.2</i>
+              ><i>1.1</i> Entry-scale KVM with VSA model</xref></sli>
+        <sli outputclass="listsuba"><xref href="#example_configurations/entryscale_esx"><i>1.2</i>
             Entry-scale ESX model</xref></sli>
-        <sli outputclass="listsuba"><xref href="#example_configurations/entryscale_swift"><i>2.3</i>
+        <sli outputclass="listsuba"><xref href="#example_configurations/entryscale_swift"><i>1.3</i>
             Entry-scale Swift model</xref></sli>
-        <sli outputclass="listsuba"><xref href="#example_configurations/entryscale_ceph"><i>2.4</i>
+        <sli outputclass="listsuba"><xref href="#example_configurations/entryscale_ceph"><i>1.4</i>
             Entry-scale KVM with Ceph model</xref></sli>
-        <sli outputclass="listsuba"><xref href="#example_configurations/midscale_kvm_vsa"><i>2.5</i>
+        <sli outputclass="listsuba"><xref href="#example_configurations/midscale_kvm_vsa"><i>1.5</i>
             Mid-scale KVM with VSA model</xref></sli>
-        <sli><xref href="#example_configurations/modify_entryscale_kvm_vsa"><i>3.0</i> Modifying the
+        <sli><xref href="#example_configurations/modify_entryscale_kvm_vsa"><i>2.0</i> Modifying the
             Entry-scale KVM with VSA model for your environment</xref></sli>
         <sli outputclass="listsuba"><xref href="#example_configurations/localizing_inputmodel"
-              ><i>3.1</i> Localizing the Input Model</xref></sli>
-        <sli outputclass="listsubb"><xref href="#example_configurations/networks"><i>3.1.1</i>
+              ><i>2.1</i> Localizing the Input Model</xref></sli>
+        <sli outputclass="listsubb"><xref href="#example_configurations/networks"><i>2.1.1</i>
             Networks.yml</xref></sli>
-        <sli outputclass="listsubb"><xref href="#example_configurations/nicmappings"><i>3.1.2</i>
+        <sli outputclass="listsubb"><xref href="#example_configurations/nicmappings"><i>2.1.2</i>
             Nic_mappings.yml</xref></sli>
-        <sli outputclass="listsubb"><xref href="#example_configurations/netinterfaces"><i>3.1.3</i>
+        <sli outputclass="listsubb"><xref href="#example_configurations/netinterfaces"><i>2.1.3</i>
             Net_interfaces.yml</xref></sli>
-        <sli outputclass="listsubb"><xref href="#example_configurations/networkgroups"><i>3.1.4</i>
+        <sli outputclass="listsubb"><xref href="#example_configurations/networkgroups"><i>2.1.4</i>
             Network_groups.yml</xref></sli>
-        <sli outputclass="listsubb"><xref href="#example_configurations/servers"><i>3.1.5</i>
+        <sli outputclass="listsubb"><xref href="#example_configurations/servers"><i>2.1.5</i>
             Servers.yml</xref></sli>
         <sli outputclass="listsuba"><xref href="#example_configurations/customizing_inputmodel"
-              ><i>3.2</i> Customizing the Input Model</xref></sli>
+              ><i>2.2</i> Customizing the Input Model</xref></sli>
         <sli outputclass="listsubb"><xref href="#example_configurations/disks_controller"
-              ><i>3.2.1</i> Disks_controller.yml</xref></sli>
-        <sli outputclass="listsubc"><xref href="#example_configurations/filesystems"><i>3.2.1.1</i>
+              ><i>2.1.1</i> Disks_controller.yml</xref></sli>
+        <sli outputclass="listsubc"><xref href="#example_configurations/filesystems"><i>2.2.1.1</i>
             File Systems Storage</xref></sli>
-        <sli outputclass="listsubc"><xref href="#example_configurations/swiftstorage"><i>3.2.1.2</i>
+        <sli outputclass="listsubc"><xref href="#example_configurations/swiftstorage"><i>2.2.1.2</i>
             Swift Storage</xref></sli>
-        <sli outputclass="listsubb"><xref href="#example_configurations/disks_vsa"><i>3.2.2</i>
+        <sli outputclass="listsubb"><xref href="#example_configurations/disks_vsa"><i>2.2.2</i>
             Disks_vsa.yml</xref></sli>
-        <sli outputclass="listsubb"><xref href="#example_configurations/disks_compute"><i>3.2.3</i>
+        <sli outputclass="listsubb"><xref href="#example_configurations/disks_compute"><i>2.2.3</i>
             Disks_compute.yml</xref></sli>
       </sl>
     </section>
-    <section id="example_configs"><title><i>2.0</i> HP Helion OpenStack Example
+    <section id="example_configs"><title><i>1.0</i> HP Helion OpenStack Example
         Configurations</title>
       <p>This section briefly describes the various example configuration and their capabilities. It
         also describes in detail (for one of the examples, entry-scale-kvm-vsa), how you may adapt
@@ -81,7 +80,7 @@
           network can be expressed in the HP Helion OpenStack model.</li>
       </ul>
     </section>
-    <section id="entryscale_kvm_vsa"><title><i>2.1</i> Entry-scale KVM with VSA model</title>
+    <section id="entryscale_kvm_vsa"><title><i>1.1</i> Entry-scale KVM with VSA model</title>
       <p>This model provides a KVM-based cloud with VSA for volume storage, and has been tested to a
         scale of 100 compute nodes.</p>
       <p>The example is focused on the minimum server count to support a highly-available (HA)
@@ -127,7 +126,7 @@
       </ul>
       <!--link to bottom section here -->
     </section>
-    <section id="entryscale_esx"><title>2.2 Entry-scale ESX model</title>
+    <section id="entryscale_esx"><title>1.2 Entry-scale ESX model</title>
       <p>This example shows how to integrate HP Helion OpenStack with ESX. The controller
         configuration is essentially the same as in the KVM example, but the resource nodes are
         provided by vCenter. In addition, a number of controller virtual machines are created for
@@ -142,7 +141,7 @@
       <p>A separate configuration network (CONF) is required for configuration access from the
         deployer. This network must be reachable from the Management network.</p>
     </section>
-    <section id="entryscale_swift"><title>2.3 Entry-scale Swift model</title>
+    <section id="entryscale_swift"><title>1.3 Entry-scale Swift model</title>
       <p>This example shows how HP Helion OpenStack can be configured to provide a Swift only
         configuration, consisting of three controllers and one or more Swift object servers.</p>
       <!-- MEDIA DIAGRAM GOES HERE -->
@@ -170,13 +169,13 @@
         system and four disks for swift storage. These values can be modified to suit your
         environment.</p>
     </section>
-    <section id="entryscale_ceph"><title>2.4 Entry-scale KVM with Ceph model</title>
+    <section id="entryscale_ceph"><title>1.4 Entry-scale KVM with Ceph model</title>
       <p>This example provides a KVM based cloud using Ceph for volume storage. This controller and
         compute configuration are essentially the same as in the KVM example, but the backend Cinder
         storage is provided by Ceph.</p>
       <!-- MEDIA DIAGRAM GOES HERE -->
     </section>
-    <section id="midscale_kvm_vsa"><title>2.5 Mid-scale KVM with VSA model (Tech Preview)</title>
+    <section id="midscale_kvm_vsa"><title>1.5 Mid-scale KVM with VSA model (Tech Preview)</title>
       <p>The mid-scale model, which is included as a technology preview in HP Helion OpenStack 2.0,
         illustrates two important aspects of configuring HP Helion OpenStack for increased scale.
         The controller services are distributed across a greater number of controllers and a number
@@ -186,7 +185,7 @@
       <p>The distribution of services across controllers is only one possible configuration, and
         other combinations can also be expressed.</p>
     </section>
-    <section id="modify_entryscale_kvm_vsa"><title><i>3.0</i> Modifying the Entry-scale KVM with VSA
+    <section id="modify_entryscale_kvm_vsa"><title><i>2.0</i> Modifying the Entry-scale KVM with VSA
         model for your Environment</title>
       <p>In this section we will look at the changes that need to be made to the input model in
         order to deploy and run this cloud model in your environment.</p>
@@ -205,7 +204,7 @@
         significance to the configuration processor. You can change the names to values that are
         relevant to your context providing you do so consistently across the input model.</p>
     </section>
-    <section id="localizing_inputmodel"><title><i>3.1</i> Localizing the Input Model</title>
+    <section id="localizing_inputmodel"><title><i>2.1</i> Localizing the Input Model</title>
       <p>In this section we look at the minimum set of changes needed to localize the cloud for your
         environment. This assumes you are using other features of the example unchanged.</p>
       <ul>
@@ -221,7 +220,7 @@
       </ul>
     </section>
     <section id="networks">
-      <title><i>3.1.1</i> Networks.yml</title>
+      <title><i>2.1.1</i> Networks.yml</title>
       <p>You will need to allocate site specific CIDRs and VLANs for these networks and update these
         values in the <codeph>networks.yml</codeph> file. The example models define the following
         networks:</p>
@@ -317,7 +316,7 @@
      gateway-ip: <b>192.168.10.1</b>
      network-group: MANAGEMENT</codeblock>
     </section>
-    <section id="nicmappings"><title><i>3.1.2</i> Nic_mappings.yml</title>
+    <section id="nicmappings"><title><i>2.1.2</i> Nic_mappings.yml</title>
       <p>This file maps ethernet port names to specific bus slots. Due to inherent race conditions
         associated with multiple PCI device discovery there is no guarantee that ethernet devices
         will be named as expected by the operating system, and it is possible that different port
@@ -381,7 +380,7 @@
       <p>To localize this file, replace the mapping name(s) with the names of your choice and
         enumerate the ports as required.</p>
     </section>
-    <section id="netinterfaces"><title><i>3.1.3</i> Net_interfaces.yml</title>
+    <section id="netinterfaces"><title><i>2.1.3</i> Net_interfaces.yml</title>
       <p>This file is used to fine how the network interfaces are to be configured. The example
         reflects the slightly different configuration of controller, compute nodes, and VSA
         nodes.</p>
@@ -427,7 +426,7 @@
              - GUEST
              - MANAGEMENT</codeblock>
     </section>
-    <section id="networkgroups"><title><i>3.1.4</i> Network_groups.yml</title>
+    <section id="networkgroups"><title><i>2.1.4</i> Network_groups.yml</title>
       <p>This file defines the networks groups used in your cloud. A network-group defines the
         traffic separation model, and all of the properties that are common to the set of L3
         networks that carry each type of traffic. They define where services and load balancers are
@@ -503,7 +502,7 @@
       <p>If you do not want to use a TLS for the public URLs then change the entry that says
         "tls-components" to "components".</p>
     </section>
-    <section id="servers"><title><i>3.1.5</i> Servers.yml</title>
+    <section id="servers"><title><i>2.1.5</i> Servers.yml</title>
       <p>This file where you provide the details of the physical servers that make up your cloud.
         There are two sections to this file:</p>
       <codeblock>
@@ -570,7 +569,7 @@
           href="installation/install_entryscale_kvm.dita#install_kvm/configuration">installation
           guide</xref> for details on how to generate encrypted passwords.</p>
     </section>
-    <section id="customizing_inputmodel"><title><i>3.2</i> Customizing the Input Model</title>
+    <section id="customizing_inputmodel"><title><i>2.2</i> Customizing the Input Model</title>
       <p>In this section we look at additional changes that you can make to further adapt the
         example to your environment.</p>
       <ul>
@@ -582,12 +581,12 @@
           compute servers</li>
       </ul>
     </section>
-    <section id="disks_controller"><title><i>3.2.1</i> Disks_controller.yml</title>
+    <section id="disks_controller"><title><i>2.2.1</i> Disks_controller.yml</title>
       <p>The disk configuration of the controllers consists of two sections; a definition of a
         volume group that provides a number of file-systems for various subsystems and device-group
         that provides disk capacity for Swift.</p>
     </section>
-    <section id="filesystems"><title><i>3.2.1.1</i> File Systems Storage</title>
+    <section id="filesystems"><title><i>2.2.1.1</i> File Systems Storage</title>
       <p> The root volume group (hlm-vg) is divided into a number of logical volumes that provide
         separate file systems for the various services that are co-hosted on the controllers in the
         entry-scale examples. The capacity of each file system is expressed as a percentage of the
@@ -625,7 +624,7 @@
               - /dev/sda_root
               <b>- /dev/sdd</b></codeblock>
     </section>
-    <section id="swiftstorage"><title><i>3.2.1.2</i> Swift Storage</title>
+    <section id="swiftstorage"><title><i>2.2.1.2</i> Swift Storage</title>
       <p>Swift storage is configured as a device-group and has a syntax that allows disks to be
         allocated to specific rings. In the examplem two disks are allocated to Swift to be shared
         by the account, container, and object-0 rings.</p>
@@ -649,7 +648,7 @@
       <p> Refer to the "Allocating Disk Drives" section of the Object Storage Service for details of
         how to configure additional Swift Storage.</p>
     </section>
-    <section id="disks_vsa"><title><i>3.2.2</i> Disks_vsa.yml</title>
+    <section id="disks_vsa"><title><i>2.2.2</i> Disks_vsa.yml</title>
       <p>VSA storage is configured as a device-group and has a syntax that allows disks to be
         allocated for data storage or for adaptive optimization (caching). Disks used for adaptive
         optimization should be solid state drives (SSD). The example disk configuration for VSA
@@ -672,7 +671,7 @@
         device group. Similarly, caching capacity can be increased by adding more high speed storage
         devices to the <codeph>vsa-cache</codeph> device group.</p>
     </section>
-    <section id="disks_compute"><title><i>3.2.3</i> Disks_compute.yml</title>
+    <section id="disks_compute"><title><i>2.2.3</i> Disks_compute.yml</title>
       <p>The example disk configuration for compute nodes consists of two volume groups; one for the
         operating system and one for the ephemeral storage for virtual machines, with one disk
         allocated to each.</p>
