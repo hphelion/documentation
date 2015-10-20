@@ -91,6 +91,7 @@
         <topicref href="helion/administration/upload_image.dita"
           navtitle="Uploading an Image for Use" locktitle="yes"/>
       </topichead>
+      <topicref href="helion/administration/create_hdp_servicenet.dita" toc="no"/>
       <topicref href="helion/administration/configure_monitoring.dita"
         navtitle="Configuring Monitoring" locktitle="yes"/>
       <topicref href="helion/administration/configure_logging.dita"
