@@ -8,7 +8,7 @@
         perform scheduled backups of Helion OpenStack control plane data (files/directories/db). The
         restore jobs can be used to restore appropriate control plane data. Additional automatic
         jobs can be added to backup/restore from the secure shell (SSH) server. You must use the
-        following procedure to set up SSH backup during installation: </p></section>
+        following procedure to set up SSH backup during installation:</p></section>
     <section><title>Setting up SSH backup</title>
       <p>By default, during HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 deployment, backup jobs
         are automaticaly deployed to backup to Swift the MySQL database, the deployer, and Swift
@@ -20,8 +20,8 @@
     <section><title>Backing up your Helion control plane to an SSH server</title>
       <p>You must provide the following connection information to this server:<ul>
           <li>The SSH server IP</li>
-          <li>The SSH server port to connect to (usualy 22). You might want to check how to open
-            port on Helion's firewall.</li>
+          <li>The SSH server port to connect to (usually 22). You may want to confirm how to open
+            the port on Helion's firewall.</li>
           <li>The SSH server user to connect to</li>
           <li>The SSH private key authorized to connect to that user (see after to setup one if not
             already done)</li>
@@ -32,13 +32,14 @@
     <section><title>Setting SSH information before deployment</title>
       <p>Before running the configuration processor, edit the following file:
         <codeblock>~/helion/my_cloud/config/freezer/ssh_credentials.yml</codeblock>Please be advised
-        that all parameter are mandatory and be careful in the way you provide SSH private key.</p></section>
-    <section><title>Setting SSH information after deployment</title><p>If you already ran the deployment of your cloud and forgot to configure SSH backups or you wish
-        to modify the setting of where the backup are stored, follow the next instructions.</p><p>Edit the
-        following file:
-        <codeblock>~/helion/my_cloud/config/freezer/ssh_credentials.yml</codeblock></p><p>Please be advised that all parameter are mandatory and be careful in the way you provide SSH
-        private key.</p><p>Then, run the following commands:
-        <codeblock>cd ~/helion
+        that all parameters are mandatory and take care in providing the SSH private key.</p></section>
+    <section><title>Setting SSH information after deployment</title><p>If you already deployed your cloud and forgot to configure SSH backups, or if you wish to modify
+        the settings for where the backups are stored, follow the following instructions:</p>
+          <ol>
+         <li>Edit the following file:
+          <codeblock>~/helion/my_cloud/config/freezer/ssh_credentials.yml</codeblock>Please be advised that all parameters are mandatory and take care in providing the SSH private key.</li>
+      <li>Run the following commands:
+          <codeblock>cd ~/helion
 git add -A
 git commit -m "My config"
 cd ~/helion/hos/ansible/
@@ -46,8 +47,8 @@ ansible-playbook -i hosts/localhost config-processor-run.yml
 ansible-playbook -i hosts/localhost ready-deployment.yml
 cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</codeblock>This
-        will deploy the SSH key and configure SSH backup and restore jobs for you. Remember it might
-        take some time before backup really happen after that point.</p></section>
+          will deploy the SSH key and configure SSH backup and restore jobs for you. It may take
+          some time before the backups occur.</li> </ol></section>
     <section><title>Preparing the server that will store the backup</title><p>For the sake of the
         example my informations will be: <ul>
           <li>IP: 192.168.100.42</li>
