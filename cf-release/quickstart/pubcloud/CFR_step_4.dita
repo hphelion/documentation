@@ -16,6 +16,7 @@
  </prolog>
  <conbody>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <draft-comment author="michaelk">
       <note type="tip">If you work on Windows, you can make the visual output of your commands more
         readable by <xref
@@ -117,5 +118,25 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
 =======
   <p></p>
 >>>>>>> 9d80273... Testing theme changes on Linux
+=======
+  <simpletable id="simpletable_zlb_lpz_st">
+   <strow>
+    <stentry>
+     <ol id="ol_pjf_12z_st">
+      <li conref="CFR_step_1.dita#concept_s2k_b35_st/step_1_link"/>
+      <li conref="CFR_step_1.dita#concept_s2k_b35_st/step_2_link"/>
+      <li conref="CFR_step_1.dita#concept_s2k_b35_st/step_3_link"/>
+      <li conref="CFR_step_1.dita#concept_s2k_b35_st/step_4_link"/>
+      <li conref="CFR_step_1.dita#concept_s2k_b35_st/step_5_link"/>
+     </ol>
+    </stentry>
+    <stentry>
+     <p><xref href="CFR_step_5.dita#concept_cw2_thz_st">
+       <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
+      </xref></p>
+    </stentry>
+   </strow>
+  </simpletable>
+>>>>>>> e6e046d... Inserting the "Wizard" structure a la HDP docs
  </conbody>
 </concept>

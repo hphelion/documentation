@@ -17,6 +17,7 @@
  </prolog>
  <conbody>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <note type="tip">For more information, see the Cloud Foundry documentation on the <xref
         href="https://docs.cloudfoundry.org/concepts/architecture/execution-agent.html"
         format="html" scope="external">Droplet Execution Agent</xref>. For detailed instructions on
@@ -122,5 +123,21 @@ cf target -o myOrg -s mySpace</codeblock></note></li>
 =======
   <p></p>
 >>>>>>> 9d80273... Testing theme changes on Linux
+=======
+  <simpletable id="simpletable_zlb_lpz_st">
+   <strow>
+    <stentry>
+     <ol id="ol_pjf_12z_st">
+      <li conref="CFR_step_1.dita#concept_s2k_b35_st/step_1_link"/>
+      <li conref="CFR_step_1.dita#concept_s2k_b35_st/step_2_link"/>
+      <li conref="CFR_step_1.dita#concept_s2k_b35_st/step_3_link"/>
+      <li conref="CFR_step_1.dita#concept_s2k_b35_st/step_4_link"/>
+      <li conref="CFR_step_1.dita#concept_s2k_b35_st/step_5_link"/>
+     </ol>
+    </stentry>
+    <stentry/>
+   </strow>
+  </simpletable>
+>>>>>>> e6e046d... Inserting the "Wizard" structure a la HDP docs
  </conbody>
 </concept>
