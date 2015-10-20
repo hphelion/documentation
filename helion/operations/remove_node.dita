@@ -121,11 +121,20 @@ stack@padawan-ccp-c0-m1-mgmt:~$ nova service-list</codeblock><codeblock>+----+--
 | ID | Name | Tenant ID | Status | Task State | Power State | Networks |
 +----+------+-----------+--------+------------+-------------+----------+
 +----+------+-----------+--------+------------+-------------+----------+</codeblock>
-        </li><li> Log into compute node and stop nova service or shutdown node. (alternatively, you may re-image
-          the
-          node)<codeblock>~$ ssh stack@hlm004-ccp-comp0004-mgmt "sudo systemctl stop nova-compute"</codeblock>
-          or to shut it
-          down:<codeblock>~$ ssh stack@hlm004-ccp-comp0004-mgmt "sudo shutdown now"</codeblock>Alternatively,
+        </li><li> Log into the compute node and stop the nova service <note>The specified node "ccp-0004" (which
+            is the node's 'cobbler' name) should match the desired node (hlm004-ccp-comp0004-mgmt).
+            However, ccp-0004 does not necessarily match hlm004-ccp-comp0004-mgmt. This means you
+            could easily power down the wrong node because, for example, ccp-0004 might actually map
+            to hlm004-ccp-comp0008-mgmt. So, to ensure that you are powering down the correct node,
+            you need to map from the hlm004-ccp-comp0004-mgmt system name to the matching cobbler
+            name. To do so, find the IP address of hlm004-ccp-comp0004-mgmt by searching in the
+              <b>/etc/hosts</b> file. Then search for IP address value in the
+              <b>/home/stack/helion/my_cloud/definition/data/servers.yml</b> file and choose the
+            corresponding <b>id field</b> value. That will be the cobbler ID of the node you are
+            looking for.</note>
+          <codeblock>~$ ssh stack@hlm004-ccp-comp0004-mgmt "sudo systemctl stop nova-compute"</codeblock>
+          or shut down the node. (alternatively, you may re-image the
+          node):<codeblock>~$ ssh stack@hlm004-ccp-comp0004-mgmt "sudo shutdown now"</codeblock>Alternatively,
           from the deployer, run the<b>bm-power-down.yml </b>playbook <codeblock>~$ cd ~/helion/hos/ansible
     ~/helion/hos/ansible$ ansible-playbook -i hosts/localhost bm-power-down.yml -e nodelist=cpn-0004</codeblock>
           <codeblock>PLAY [localhost] **************************************************************
@@ -178,8 +187,10 @@ stack@padawan-ccp-c0-m1-mgmt:~$ nova service-list</codeblock><codeblock>+----+--
 | 13 | hlm004-ccp-comp0003-mgmt | up    | enabled |
 | 16 | hlm004-ccp-comp0001-mgmt | up    | enabled |
 +----+--------------------------+-------+---------+</codeblock>
-      </li><li>Then, on the deployer node, remove the node from <b>servers.yml </b>, commit the change, and
-          rerun the config
+      </li><li>Then, on the deployer node, remove the node from <b>servers.yml </b><note>Make sure you are
+            removing the correct node from <b>servers.yml</b> by ensuring you remove the stanza that
+            contains the IP address that matches the node to be removed.</note> Then, commit the
+          change, and rerun the config
           processor:<codeblock>cd ~/helion/my_cloud/definition/data
 git checkout site</codeblock>
         </li><li>Edit <b>servers.yml </b>to remove the entry for removed node.
