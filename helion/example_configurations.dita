@@ -9,8 +9,8 @@
       number of configuration changes.</p>
     <p>The HP Helion OpenStack input model allows a wide variety of configuration parameters that
       may, at first glance, appear daunting. The example configurations are designed to simplify
-      this process by providing pre-built and pre-qualified examples that need only a minimum
-      number of modifications to get started.</p>
+      this process by providing pre-built and pre-qualified examples that need only a minimum number
+      of modifications to get started.</p>
     <section id="contents">
       <sl>
         <sli><xref href="#example_configurations/example_configs"><i>1.0</i> HP Helion OpenStack
@@ -124,8 +124,9 @@
         <li><b>Compute</b> - one operating system disk and one disk for virtual machine ephemeral
           storage</li>
       </ul>
-      <!--link to bottom section here -->
-    </section>
+      <xref href="#example_configurations/modify_entryscale_kvm_vsa">Modifying the Entry-scale KVM
+        with VSA model for your Environment</xref> describes in detail how to modify this example to
+      match your environment. </section>
     <section id="entryscale_esx"><title>1.2 Entry-scale ESX model</title>
       <p>This example shows how to integrate HP Helion OpenStack with ESX. The controller
         configuration is essentially the same as in the KVM example, but the resource nodes are
@@ -554,9 +555,9 @@
         server group structure is beyond the scope of this walkthrough - for more details refer to
           <xref href="input_model.dita">HPE Helion OpenStack 2.0 Input Model</xref>.</p>
       <p><b>nic-mapping</b></p>
-      <p><codeph>nic-mapping</codeph> is the name of a network port mapping definition
-        <!--(see 2.3.1.2)-->. You need to set this to the mapping that corresponds to this
-        server.</p>
+      <p><codeph>nic-mapping</codeph> is the name of a network port mapping definition (see <xref
+          href="#example_configurations/nicmappings">Nic_mappings.yml</xref>). You need to set this
+        to the mapping that corresponds to this server.</p>
       <p><b>mac-addr</b></p>
       <p><codeph>mac-addr</codeph> is the MAC address of the interface associated with this server
         that will be used for PXE boot.</p>
@@ -644,9 +645,8 @@
                  - account
                  - container
                        - object-0</codeblock>
-      <!--- NEED TO FIND THIS LINK -->
-      <p> Refer to the "Allocating Disk Drives" section of the Object Storage Service for details of
-        how to configure additional Swift Storage.</p>
+      <p>Refer to the <xref href="objectstorage/allocating_disk_drives.dita">Allocating Disk
+          Drives</xref> document for details of how to configure additional Swift Storage.</p>
     </section>
     <section id="disks_vsa"><title><i>2.2.2</i> Disks_vsa.yml</title>
       <p>VSA storage is configured as a device-group and has a syntax that allows disks to be
