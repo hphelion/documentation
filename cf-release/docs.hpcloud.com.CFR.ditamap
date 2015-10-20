@@ -3,27 +3,32 @@
 <map>
    <title>HP Helion Cloud Foundry</title>
    <mapref href="docs.hpcloud.com.CFR_variables.ditamap"/>
-   <topicref href="root/CFR_root_documentation.dita"/>
+   <topicref href="root/CFR_root_documentation.dita">
+      <topichead navtitle="Quick Start: Deploying to HP Public Cloud">
+         <topicref href="quickstart/pubcloud/CFR_step_1.dita"/>
+         <topicref href="quickstart/pubcloud/CFR_step_2.dita"/>
+         <topicref href="quickstart/pubcloud/CFR_step_3.dita"/>
+         <topicref href="quickstart/pubcloud/CFR_step_4.dita"/>
+         <topicref href="quickstart/pubcloud/CFR_step_5.dita"/>
+         <topichead navtitle="crap">
+            <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_tools.dita"/>
+            <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_sandbox.dita"/>
+            <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_cluster.dita"/>
+            <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_windows.dita"/>
+            <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_explore.dita"/>
+            <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_terminate.dita"/>
+            <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_troubleshoot.dita"/>
+         </topichead>
+      </topichead>
+      <topicref href="deploy/CFR_deploy.dita">
+         <topicref href="deploy/CFR_TF_vars.dita"/>
+      </topicref>
+      <topicref href="reference/CFR_reference_gato.dita"/>
+   </topicref>
    <!--
    <topicref href="root/HCF_whats_new.dita" navtitle="What's New"/>
    <topicref href="root/HCF_release_notes.dita" navtitle="Release Notes"/>
    <topicref href="root/HCF_license_agreements.dita" navtitle="Open Source and Third-Party Software License Agreements"/>
    <topicref href="root/HCF_software_license_terms.dita" navtitle="Software License Terms"/>
    -->
-   <topicref href="deploy/CFR_deploy.dita">
-      <topicref href="deploy/CFR_TF_vars.dita"/>
-   </topicref>
-   <topichead navtitle="Quick Start">
-      <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_deploying.dita">
-         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_register.dita"/>
-         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_tools.dita"/>
-         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_sandbox.dita"/>
-         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_cluster.dita"/>
-         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_windows.dita"/>
-         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_explore.dita"/>
-         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_terminate.dita"/>
-         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_troubleshoot.dita"/>
-      </topicref>
-   </topichead>
-   <topicref href="reference/CFR_reference_gato.dita"/>
 </map>
