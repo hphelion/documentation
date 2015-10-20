@@ -5,7 +5,18 @@
   <body>
     <!--Needs Edit-->
     <section id="1.0_toc"><title><i>1.0</i> Contents</title>
-    
+    <ol outputclass="decimal">
+      <li>Contents</li>
+      <li>HP Helion OpenStack Example Configuration
+      <ol>
+        <li>Entry-scale KVM with VSA model</li>
+        <li>Entry-scale ESX model</li>
+        <li>Entry-scale Swift model</li>
+        <li>Entry-scale KVM with Ceph model</li>
+        <li>Mid-scale KVM with VSA model</li>
+      </ol></li>
+      <li>Modifying the Entry-scale KVM with VSA model for your environment</li>
+    </ol>
     
     
     </section>
