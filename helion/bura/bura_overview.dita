@@ -60,8 +60,8 @@
                   single node or multiple nodes. The status of the execution of all the nodes is
                   saved through the API. </p>The Freezer scheduler takes care of uploading jobs to
                 the API by reading job files on the file system. It also has its own configuration
-                file where job sessions or other settings like the Freezer API polling interval can
-                be configured.</entry>
+                file where job sessions or other settings such as the Freezer API polling interval
+                can be configured.</entry>
             </row>
             <row>
               <entry>Freezer Agent </entry>
@@ -81,24 +81,24 @@
                   <li>Bandwidth limitation</li>
                   <li>Client side Encryption (AES-256-CFB)</li>
                   <li>Compression (multiple algorithms supported as zlib, bzip2, xz/lzma)</li>
-                  <li>Parallel upload to pluggable storage media (that is, upload backup to swift
-                    and to a remote node by SSH, or upload to two or more independent swift
+                  <li>Parallel upload to pluggable storage media (that is, upload backup to Swift
+                    and to a remote node by SSH, or upload to two or more independent Swift
                     instances with different credentials, and so on) </li>
-                  <li>Execute file-based incremental (like tar), block-based incremental (like rsync
-                    algorithm), and differential-based backup and restore</li>
-                  <li>Multiplatform; can be run on hLinux, Windows, *BSD, and OSX </li>
+                  <li>Execute file-based incremental (such as tar), block-based incremental (such as
+                    rsync algorithm), and differential-based backup and restore</li>
+                  <li>Multiplatform: you can run it on hLinux, Windows, *BSD, and OSX </li>
                   <li>Automatic removal of old backups</li>
                 </ul></entry>
             </row>
             <row>
               <entry>Freezer API </entry>
-              <entry>Used to store and provide metadata to the Freezer Web UI and to the Freezer
-                Scheduler. Also used to store session information for multi node backup
-                synchronization. Workload data is not stored in the API . </entry>
+              <entry>Stores and provides metadata to the Freezer Web UI and to the Freezer
+                Scheduler. Also stores session information for multi node backup synchronization.
+                Workload data is not stored in the API . </entry>
             </row>
             <row>
               <entry>DB Elasticsearch </entry>
-              <entry>Backend used by the API to store and retrieve metrics metadata sessions
+              <entry>API uses the backend to store and retrieve metrics metadata sessions
                 information job status, and so on.</entry>
             </row>
           </tbody>
