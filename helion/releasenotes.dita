@@ -140,7 +140,7 @@
             <codeph>~/scratch/ansible/next/hos/ansible</codeph>.</li>
       </ul>The Configuration Processor uses the config files stored in the repo to apply
       configuration settings. An explanation can be found <xref
-        href="using_git.dita">in this topic</xref>. <p><b>New UEFI support</b></p>
+        href="installation/using_git.dita">in this topic</xref>. <p><b>New UEFI support</b></p>
       <p>Beta 2 introduces support for UEFI (which replaces the BIOS on newer servers), while
         continuing to support Legacy BIOS. Select the required mode on each node through its BIOS
         settings before beginning the install process. The installer will detect and use the mode

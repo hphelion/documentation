@@ -19,14 +19,14 @@
         <li>If you are looking for information about when to use the GUI installer and when to use
           the CLI, see the <xref href="installation_overview.dita#install_overview">Installation
             Overview</xref>.</li>
-        <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met in
+        <li>Ensure the <xref href="../hardware.dita">minimum hardware requirements</xref> are met in
           your environment.</li>
         <li>If you run into issues during installation, we have put together a list of <xref
             href="installation_troubleshooting.dita">Troubleshooting Steps</xref> you can
           reference.</li>
-        <li>Make sure <xref href="administration/wipe_disks.dita">all disks on the system(s) are
+        <li>Make sure <xref href="../administration/wipe_disks.dita">all disks on the system(s) are
             wiped</xref> before you begin the install. (For Swift, refer to <xref
-            href="objectstorage/allocating_disk_drives.dita#allocating-disk-drives/requirement-disk-device"
+            href="../objectstorage/allocating_disk_drives.dita#allocating-disk-drives/requirement-disk-device"
             >Swift Requirements for Device Group Drives</xref>)</li>
         <li>The <codeph>/dev/sda</codeph> disk on your systems will be used for the operating
           system.</li>
@@ -39,7 +39,7 @@
           access.</li>
         <li>There is no requirement to have a dedicated network for OS-install and system
           deployment, this can be shared with the management network. More information can be found
-          on the <xref href="example_configs.dita">Supported Configuration</xref> page.</li>
+          on the <xref href="../example_configurations.dita">Supported Configuration</xref> page.</li>
       </ul>
     </section>
     <section id="prereqs">
@@ -56,7 +56,7 @@
         <li>Ensure that the network interface to be used for PXE installation has PXE enabled.</li>
         <li>Ensure that the other network interfaces have PXE disabled.</li>
         <li>Ensure that any logical drives (LUN) for the servers you will be using are created to
-          meet the disk requirements outlined in the <xref href="hardware.dita">Minimum Hardware
+          meet the disk requirements outlined in the <xref href="../hardware.dita">Minimum Hardware
             Requirements</xref>.</li>
       </ul>
     </section>
@@ -145,7 +145,7 @@ helion/hos/                    Directory contains files used by the installer</c
               <codeblock>cp -r ~/helion/examples/entry-scale-kvm-vsa/* ~/helion/my_cloud/definition/</codeblock></li>
             <li>Begin inputting your environment information into the configuration files in the
                 <codeph>~/helion/my_cloud/definition</codeph> directory. <p>Full details of how to
-                do this can be found here: <xref href="input_model.dita">Helion OpenStack 2.0 Input
+                do this can be found here: <xref href="../input_model.dita">Helion OpenStack 2.0 Input
                   Model</xref>.</p>
             </li>
           </ol>
