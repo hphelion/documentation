@@ -7,7 +7,8 @@
     <section id="1.0_toc"><title><i>1.0</i> Contents</title>
       <ol outputclass="decimal">
         <li>Contents</li>
-        <li>HP Helion OpenStack Example Configuration <ol outputclass="decimal">
+        <li>HP Helion OpenStack Example Configuration 
+          <ol outputclass="decimal(2.1)">
             <li>Entry-scale KVM with VSA model</li>
             <li>Entry-scale ESX model</li>
             <li>Entry-scale Swift model</li>
