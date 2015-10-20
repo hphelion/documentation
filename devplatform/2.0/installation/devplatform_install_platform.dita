@@ -39,13 +39,13 @@
 
 
         <li>Install the Development Platform Installer in the Virtual Environment
-            .<codeblock>pip install DevelopmentPlatformInstaller_2.0.0.0.tar.gz --debug </codeblock><note>While
+            .<codeblock>pip install DevelopmentPlatformInstaller_2.0.0.0.tar.gz  </codeblock><note>While
             the <codeph>debug</codeph> option is optional, the information it returns is critical
             for troubleshooting beta installations.</note></li>
         <li>After installation completes, verify that the Installer is working.
           <!-- This command will
           list all packages currently available for
-          download.<codeblock>openstack hdpi list dashdashos-cloud mycloud </codeblock>  this is the wrong command, it requires that you have a clouds.yaml file already and at this point the user may not.--></li>
+          download.<codeblock>openstack hdpi list dashdashos-cloud mycloud </codeblock>  this is the wrong command, it requires that you have a clouds.yaml file already and at this point the user may not. --></li>
       </ol>
     </section>
   </body>
