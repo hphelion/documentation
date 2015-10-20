@@ -14,11 +14,11 @@
 
 <section id="availability-zones"> <title>Configure Availability Zones</title>
 <p>To configure the Database Service in a highly available manner, it is necessary to create
-        separate availability zones. As a best practice, HP recommends creating three availability
-        zones. All hosts should be placed within one of these availability zones. </p>
-      <p>If a host is not associated with an availability zone, the Database Service will not be
-        able to provision a database instance to it. As a result, the Database Service may run out
-        of capacity even though there are hosts with free capacity.</p>
+        separate availability zones. Best practice is to create three availability zones. <note>All
+          hosts should be associated with one of these availability zones, or the Database Service
+          will not be able to provision a database instance on that host. This may cause the
+          Database Service may run out of capacity even though there are unassociated hosts that
+          still have room.</note></p>
 <p>The following steps show how to create three availability zones and assign a compute host to the zone.</p>
 <ol>
         <li>Source the Virtual Environment.<pre>source .devplatform/bin/activate</pre></li>
