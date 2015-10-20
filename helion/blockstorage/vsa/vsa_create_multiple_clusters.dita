@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_q3v_krq_jt">
-  <title>Modifying Cloud Model to Create Multiple Clusters</title>
+<topic id="creating_multiple_vsa_clusters">
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating Multiple VSA Clusters</title>
   <body>
     <p>You can create multiple VSA clusters of same or different type by specifying the
       configuration in the cloud model. <note type="tip">The term <b>add</b> and <b>update</b> in
@@ -84,13 +84,13 @@
               <simpletable>
                 <strow>
                   <stentry><codeph>node_name</codeph></stentry>
-                  <stentry>The <codeph>node_name</codeph>  must be unique and incremental. For
+                  <stentry>The <codeph>node_name</codeph> must be unique and incremental. For
                     example: <b>StoreVirtual001</b>, <b>StoreVirtual002</b>, <b>StoreVirtual003</b>,
                     and so on. </stentry>
                 </strow>
                 <strow>
                   <stentry><codeph>node_type</codeph></stentry>
-                  <stentry>The <codeph>node_type</codeph>  must be unique as it is associated with
+                  <stentry>The <codeph>node_type</codeph> must be unique as it is associated with
                     roles. For example: <b>ROLE-VSA-1</b> and <b>ROLE-VSA-2</b>.</stentry>
                 </strow>
               </simpletable>
