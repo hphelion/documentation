@@ -23,15 +23,18 @@
       </ol>
     </section>
    <section id="changePostDeploy"><title>Create Post-deployment Actions</title>
-    <p conref="cicd_create_postdeploy.dita#createPostDeploy/createpd"/></section>
+    <p conref="engine_create_postdeploy.dita#createPostDeploy/createpd"/></section>
     
     <section><title>Create Notifications</title>
       <ol><li>Click the <b>Projects</b> tab.</li>
         <li>Find the desired Project in the list and then click <b>View Details</b>.</li>
-        <li>Scroll down to <b>Notification Targets </b>and then click <b>New Target</b>.<image
-            href="../../../media/cicd_edit_notification.png" id="image_k1l_hhs_lt"/></li>
-        <li conref="cicd_create_project.dita#createProject/defineNotifications"/>
-      </ol></section>
+        <li>Scroll down to <b>Notification Targets </b>and then click <b>New Target</b>. </li>
+        <li>Define the Notification Target:<image
+            href="../../../media/cicd_edit_notification.png" id="image_k1l_hhs_lt" placement="break"/><ol>
+            <li conref="engine_create_project.dita#createProject/defineNotifications"/>
+            <li>Click <b>Save</b>.</li>
+          </ol></li>
+        </ol></section>
     
   </body>
 </topic>

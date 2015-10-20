@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_lcx_vtc_dt">
+  <title>Installation</title>
+  <body><section><title>Dependencies</title>The HelionCE system is dependent on the following major
+      projects: <ul id="ul_zsc_ct5_st">
+        <li>RabbitMQ for intersystem communication.</li>
+        <li>NodeJS to run the system.</li>
+        <li>MySQL for object persistence.</li>
+        <li>Git or GitHub for authentication and source management.</li>
+        <li>AngularJS for the single-page web application. </li>
+        <li>Python for cloud deployments or Docker for local deployments.</li>
+      </ul></section><section><title>Prerequisites</title> 
+    
+    <ol><li> The Helion Code Engine uses github auth to authenticate users to the system. The app needs to
+          be registered with Github before users can log in.</li>
+        <li>Open a github.com account or stand up a GitHub Enterprise server on premise.</li>
+        <li>Register a new Oauth application in Github so that HelionCE can communicate with your
+          version control provider. Public Github: https://github.com/settings/applications/new The
+          secrets that describe your application should be in the
+          automation/ansible/templates/settings.json file for your users to authenticate against
+          Github. </li>
+        <li>If you're using Github Enterprise, the url will be
+          https://&lt;hostname>/settings/applications/new </li>
+        <li>Enter values for the following fields.<table frame="all" rowsep="1" colsep="1"
+            id="table_bzl_jt5_st">
+            <tgroup cols="3">
+              <colspec colname="c1" colnum="1" colwidth="1*"/>
+              <colspec colname="c2" colnum="2" colwidth="2.51*"/>
+              <colspec colname="c3" colnum="3" colwidth="1.75*"/>
+              <thead>
+                <row>
+                  <entry>Field</entry>
+                  <entry>Value</entry>
+                  <entry>Example</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>Application name</entry>
+                  <entry>The name you'd like users to see when they authenticate with Github</entry>
+                  <entry>Helion Code Engine</entry>
+                </row>
+                <row>
+                  <entry>Homepage URL </entry>
+                  <entry> The public url to the web role hosting the UX.<note>If this is your first
+                      time deploying to this cluster, you might have to run a deployment first and
+                      then create the Github OAUTH app. </note></entry>
+                  <entry>https://&lt;hostname>/ </entry>
+                </row>
+                <row>
+                  <entry>Application description</entry>
+                  <entry>Some text describing the application </entry>
+                  <entry>Helion Code Engine is an integrated CI/CD system. </entry>
+                </row>
+                <row>
+                  <entry>Authorization callback URL</entry>
+                  <entry>The public url to the application when the user authenticates with github </entry>
+                  <entry>https://&lt;hostname>/auth/github/callback</entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>
+        </li>
+        <li>Once the values are entered and you've hit Register application, you will be presented
+          with a screen that contains your application Client Id and secret.</li>
+        <li>Navigate to the HP Helion Download Network (HDN) and log in. If necessary, create an
+          account first. </li>
+        <li>Download HelionCE CSU </li>
+        <li>Using your CLI run the following command: openstack, hdpi helionci install --package
+          wscatalog. </li>
+        <li>To configure In ~/.config/openstack/clouds.yaml set the following configure the app by
+          entering the following </li> </ol></section></body>
+</topic>

@@ -3,27 +3,25 @@
 <topic id="task_sw4_1zq_dt">
     <title>HP Helion 2.0 Development Platform: Create an Automated Build-Test-Deploy Cycle</title>
     <body>
-    <p>The true advantage of CICD is creating a build-test-deploy cycle which will occur
-            automatically whenever a change is committed.</p>
+    <p>The true advantage of continuous integration is creating a build-test-deploy cycle which will
+            occur automatically whenever a change is committed.</p>
         <p>When a pull request is received, developers can <xref
                 href="cicd_preview_tempdeploy.dita#topic_mpz_ypd_3t">preview a temporary
-                deployment</xref> before approving the proposed changes. Approval will then trigger
-            the full build-test-deploy cycle.</p>
+                deployment</xref> before approving the proposed changes. Approving the pull request
+            triggers the normal build-test-deploy cycle.</p>
     
     <p>You will need: <ul>
                 <li>An application to deploy.</li>
-                <li>An instance of the CICD tool <xref
+                <li>An instance of the Helion Code Engine application <xref
                         href="cicd_installation.dita#topic_lcx_vtc_dt">installed</xref>.</li>
                 <li>The access credentials for a valid target environment.</li>
                                             </ul></p>
      <section><title>Overview</title>
-     <p>Using the CICD tool, specify what will happen each time the application is built: which
-                environment to deploy the application to, which tests to run, who should be
-                notified, and how that notification should be delivered. All this information is
-                contained in a Project.</p>
+     <p>Projects contain information specifying what will happen each time the application is built:
+                which environment to deploy the application to, which tests to run, who should be
+                notified, and how that notification should be delivered.</p>
             <p>After the cycle is defined, each build will automatically deploy the app to the
-                target environment, run the specified tests, and send relevant notifications. All
-                the developers have to do is write, commit, and build.</p>                                       
+                target environment, run the specified tests, and send relevant notifications.</p>                                       
                                             
                                             </section>
         <section><title>Steps</title>
@@ -41,9 +39,9 @@
 </section>
         
         <section id="project"><title>Create a Project</title>
-        <p conref="cicd_create_project.dita#createProject/project_create"/></section> 
+        <p conref="engine_create_project.dita#createProject/project_create"/></section> 
     
-        <section id="post"><title>Add Post-Deployment Tasks</title><p conref="cicd_create_postdeploy.dita#createPostDeploy/createpd"/></section>
+        <section id="post"><title>Add Post-Deployment Tasks</title><p conref="engine_create_postdeploy.dita#createPostDeploy/createpd"/></section>
         <section id="commit">
             <title>Commit and Build</title>
            <note>You can also <xref href="cicd_create_build.dita">perform a manual build</xref> at any time from the CICD tool. </note> <p>Direct commits to the repository trigger the full automated build-test-deploy cycle. Pull
