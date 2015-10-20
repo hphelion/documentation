@@ -3,7 +3,7 @@
 <topic id="example_configurations">
   <title>Helion <tm tmtype="reg">OpenStack</tm> 2.0: Example Configurations</title>
   <body>
-    <section id="2.0_example_configs"><title>2.0 HP Helion OpenStack Example Configurations</title>
+    <section id="2.0_example_configs"><title><i>2.0</i> HP Helion OpenStack Example Configurations</title>
       <p>The HP Helion OpenStack 2.0 system ships with a number of pre-qualified example
         configuration. These are designed to help you to get up and running quickly with a minimum
         number of configuration changes.</p>
@@ -36,7 +36,7 @@
           network can be expressed in the HP Helion OpenStack model.</li>
       </ul>
     </section>
-    <section id="2.1_entryscale_kvm_vsa"><title>2.1 Entry-scale KVM with VSA model</title>
+    <section id="2.1_entryscale_kvm_vsa"><title><i>2.1</i> Entry-scale KVM with VSA model</title>
       <p>This model provides a KVM-based cloud with VSA for volume storage, and has been tested to a
         scale of 100 compute nodes.</p>
       <p>The example is focused on the minimum server count to support a highly-available (HA)
