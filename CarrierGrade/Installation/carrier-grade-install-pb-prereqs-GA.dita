@@ -35,7 +35,7 @@
                         <title>Preparing the HLM host</title>
                         <p>Perform the following tasks on the HLM host:</p>
                         <ul>
-                                <li><?oxy_delete author="burkmich" timestamp="20150727T182909-0400" content="&lt;xref href=&quot;#topic7148/proxy&quot; format=&quot;dita&quot;&gt;Configure proxy information &lt;/xref&gt;"?><?oxy_insert_start author="burkmich" timestamp="20150727T182851-0400"?><xref
+                                <li><?oxy_insert_start author="burkmich" timestamp="20150727T182851-0400"?><xref
                                                 href="#topic7148/proxy" format="dita"
                                         /><?oxy_insert_end?></li>
                                 <li><?oxy_insert_start author="burkmich" timestamp="20150727T183005-0400"?><xref
@@ -56,8 +56,7 @@
                                                 installation packages for the KVM region</xref></li>
                                 <li><xref href="#topic7148/patches" format="dita">Download required
                                                 patches</xref></li>
-                                <li><xref href="#topic7148/download-esx" format="dita"/> This is
-                                        applicable only for KVM + ESX Cloud Deployment. </li>
+                                <!--<li><xref href="#topic7148/download-esx" format="dita"/> This is applicable only for KVM + ESX Cloud Deployment. </li>-->
                                 <!--<li><xref href="#topic7148/verify" format="dita"/></li>-->
                                 <li><xref href="#topic7148/checksum" format="dita"/></li>
                                 <li><xref href="#topic7148/prepbare" format="dita"/></li>
