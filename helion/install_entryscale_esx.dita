@@ -157,6 +157,18 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
     <section conref="install_entryscale_kvm.dita#install_kvm/deploy"/>
     <section id="prepAndDeploy">
       <title>Prepare and Deploy ESX Computes and OVSvAPPs </title>
+      <p><b> Prerequisite -OVSvAPP Installation:</b><ul id="ul_rxr_3tw_st">
+          <li>It is recommended to have a common shared storage for all the ESXi hosts in a
+            particular cluster. </li>
+          <li>Ensure that you have enabled HA (High Availability) and DRS (Distributed Resource
+            Scheduler) settings in a cluster configuration before running the installation.  DRS/HA
+            is disabled only for OVSvApp. This is done so that it does not move to a different host.
+            If you do not enable DRS/HA prior to installation then you will not be able to disable
+            it only for OVSvApp. As a result DRS/HA can migrate OVSvApp to different host, which
+            will create a network loop.</li>
+        </ul></p>
+      <p>This section describes the procedures to prepare and deploy the ESX computes and OVSvAPPs
+        for deployment. </p>
       <p>The following sections describe the procedure to install and configure ESX compute and
         OVSvAPPs on vCenter.</p>
       <ul id="ul_lns_fjl_ft">
@@ -178,9 +190,8 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <li>Follow the instructions in the wizard to specify the data center, cluster, and node to
             install. Refer to the VMWare vSphere documentation as needed.</li>
         </ol></p></section>
-    <section id="prepare_esx_cloud_deployment"><b>Preparation for ESX Cloud Deployment</b><p>This
-        section describes the procedures to prepare and deploy the ESX computes and OVSvAPPs for
-        deployment. <ol id="ol_xpc_zqs_ft">
+    <section id="prepare_esx_cloud_deployment"><b>Preparation for ESX Cloud Deployment</b><p>
+        <ol id="ol_xpc_zqs_ft">
           <li>Login to the deployer node.</li>
           <li>Source <codeph>service.osrc</codeph>.</li>
           <li><xref href="#install_esx/register-vcenter" format="dita">Register a vCenter
@@ -195,7 +206,8 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
               Definition</xref></li>
           <li><xref href="#install_esx/deploy-compute-proxy-ovsvapps" format="dita">Deploy ESX
               Compute Proxy and OVSvApps</xref></li>
-        </ol></p></section>
+        </ol>
+      </p></section>
     <p><b>Manage vCenters and Clusters</b></p>
     <p>The following section describes the detailed procedure on managing the vCenters and
       clusters.</p>
@@ -257,24 +269,24 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
     <p>
       <ol>
         <li>Execute the following command to get the network information
-            template:<codeblock><codeph># eon get-network-info-template --filename &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
-            example:<codeblock># eon get-network-info-template --filename net_conf.json</codeblock></p><p>Sample
-            file of <codeph>net_conf.json</codeph> is shown
-            below:<codeblock>{
+              template:<codeblock><codeph># eon get-network-info-template --filename &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
+              example:<codeblock># eon get-network-info-template --filename net_conf.json</codeblock></p><p>Sample
+              file of <codeph>net_conf.json</codeph> is shown
+              below:<codeblock>{
     "network": {
         # Deployer Network details
         # This network should be reachable from the Deployer node
         "deployer_network": {
-            #Deployer Portgroup Name.
+            #Deployer Portgroup Name. If already exists then we will use it. 	     #If not then we will create it.
             "deployer_pg_name": "hlm-Deployer-PG",
 
             #VLAN id for Deployer Portgroup
             "deployer_vlan": "33",
 
-            #Enable DHCP for Deployer N/W
+#Enable DHCP for Deployer network ?
             "enable_deployer_dhcp": "no",
 
-            #CIDR and gateway for deployer network only when static
+#CIDR and gateway for deployer network only when enable_deployer_dhcp is no
             "deployer_cidr": "10.20.18.0/23",
             "deployer_gateway_ip": "10.20.18.1",
 
@@ -284,80 +296,117 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
 
         #Management Network details
         "management_network": {
-            #Mgmt DVS name.
+#Mgmt DVS name. If already exists then we will use it. If not #then we will create it.
             "mgmt_dvs_name": "hlm-Mgmt",
 
-            #Physical NIC name for Mgmt DVS
+#Physical NIC name(s) for Mgmt DVS. Make sure that this Physical #NIC(s) is/are free/not used across all hosts in that cluster.
             "mgmt_nic_name": "vmnic3",
 
-            #Mgmt Portgroup Name.
+#Mgmt Portgroup Name. If already exists then we will use it. 	     #If not then we will create it.
             "mgmt_pg_name": "hlm-Mgmt-PG",
 
             #Interface order: Example eth1
             "mgmt_interface_order": "eth1",
 
+#Provided physical NIC name(s) will be configured as active #uplink(s) from mgmt_dvs_name. If not provided then the first #entry in mgmt_dvs_name will be configured as active and the #remaining as standby.
             "active_nics": "",
 
-            "load_balancing": "1",
+
+
+
+
+            #Load Balancing. Please choose the corresponding number
+
+#1 -> Route based on the originating virtual port (Choose an            #uplink based on the virtual port where the traffic entered the #virtual switch)
+
+#2 -> Route based on IP hash (Choose an uplink based on a hash #of the source and destination IP addresses of each packet. For #non-IP packets, whatever is at those offsets is used to compute #the hash)
+
+#3 -> Route based on source MAC hash (Choose an uplink based on #a hash of the source Ethernet.)
+
+#4 -> Route based on physical NIC load (Choose an uplink based on #the current loads of physical NICs)
+
+#5 -> Use explicit failover order (Always use the highest order    #uplink, from the list of Active adapters, which passes failover #detection criteria)
+
+	    "load_balancing": "1",
+
+#Network Failover Detection. Please choose the corresponding number
+# 1 -> Link Status. Relies solely on the link status that the #network adapter provides. This option detects failures, such as #cable pulls and physical switch power failures, but not #configuration errors, such as a physical switch port being #blocked by spanning tree or that is misconfigured to the wrong #VLAN or cable pulls on the other side of a physical switch.
+
+# 2-> Beacon Probing. Sends out and listens for beacon probes on all #NICs in the team and uses this information, in addition to link #status, to determine link failure. This detects many of the #failures previously mentioned that are not detected by link #status alone.
 
             "network_failover_detection": "1",
+
+	    #Notify Switches(yes/no).
+#If you select Yes, whenever a virtual NIC is connected to the          #Switch or whenever that virtual NIC’s traffic would be routed #over a different physical NIC in the team because of a failover #event, a notification is sent out over the network to update the #lookup tables on physical switches. In almost all cases, this #process is desirable for the lowest latency of failover #occurrences and migrations with vMotion.
 
             "notify_switches": "yes"
         },
 
         "data_network": {
-            #Tenant network type
+            #Tenant network type. Only vlan is supported for HOS 2.0
             "tenant_network_type": "vlan",
 
+#Data/Uplink DVS name. If already exists then we will use it. If #not then we will create it.
             "data_dvs_name": "hlm-Data",
 
+#Physical NIC name(s) for Data/Uplink DVS. Make sure that this #Physical NIC(s) is/are free/not used across all hosts in that #cluster.
             "data_nic_name": "vmnic2, vmnic1",
 
-            #Data Portgroup Name.
+#Data Portgroup Name. If already exists then we will use it. If      #not then we will create it.
             "data_pg_name": "hlm-Data-PG",
 
             #Interface order: Example eth2
             "data_interface_order": "eth2",
 
-            #If more than one mgmt_nic_name are specified then NIC teaming will be enabled by default
-            #Active uplink NICs for NIC teaming(If this field is empty, first data_nic_name will be "Active" and the rest will be in "Standby")
-            "active_nics": "vmnic2",
+#Provided physical NIC name(s) will be configured as active #uplink(s) from data_dvs_name. If not provided then the first #entry in data_dvs_name will be configured as active and the #remaining as standby.
 
-            #Load Balancing. Please choose the corresponding number
-            #    1 -> Route based on the originating virtual port
-            #    2 -> Route based on IP hash
-            #    3 -> Route based on source MAC hash
-            #    4 -> Route based on physical NIC load
-            #    5 -> Use explicit failover order
+            "active_nics": "vmnic1",
+
+	    #Load Balancing. Please choose the corresponding number
+
+#1 -> Route based on the originating virtual port (Choose an            #uplink based on the virtual port where the traffic entered the #virtual switch)
+
+#2 -> Route based on IP hash (Choose an uplink based on a hash #of the source and destination IP addresses of each packet. For #non-IP packets, whatever is at those offsets is used to compute #the hash)
+
+#3 -> Route based on source MAC hash (Choose an uplink based on #a hash of the source Ethernet.)
+
+#4 -> Route based on physical NIC load (Choose an uplink based on #the current loads of physical NICs)
+
+#5 -> Use explicit failover order (Always use the highest order    #uplink, from the list of Active adapters, which passes failover #detection criteria)
+            
             "load_balancing": "1",
 
-            #Network Failover Detection. Please choose the corresponding number
-            #    1 -> Link Status
-            #    2 -> Beacon Probing
+
+#Network Failover Detection. Please choose the corresponding number
+# 1 -> Link Status. Relies solely on the link status that the #network adapter provides. This option detects failures, such as #cable pulls and physical switch power failures, but not #configuration errors, such as a physical switch port being #blocked by spanning tree or that is misconfigured to the wrong #VLAN or cable pulls on the other side of a physical switch.
+
+# 2-> Beacon Probing. Sends out and listens for beacon probes on all #NICs in the team and uses this information, in addition to link #status, to determine link failure. This detects many of the #failures previously mentioned that are not detected by link #status alone.
+            
             "network_failover_detection": "1",
 
-            #Notify Switches(yes/no)
-            "notify_switches": "yes"
+	    #Notify Switches(yes/no).
+#If you select Yes, whenever a virtual NIC is connected to the          #Switch or whenever that virtual NIC’s traffic would be routed #over a different physical NIC in the team because of a failover #event, a notification is sent out over the network to update the #lookup tables on physical switches. In almost all cases, this #process is desirable for the lowest latency of failover #occurrences and migrations with vMotion.
+
+            “notify_switches”: “yes”
         },
 
-        "hpvcn_trunk_network": {
-            #Trunk DVS name
+        “hpvcn_trunk_network”: {
+#Trunk DVS name. If already exists then we will use it. If not #then we will create it.
             "trunk_dvs_name": "hlm-Trunk",
 
-            #Trunk Portgroup Name.
+#Trunk portgroup name. If already exists then we will use it. If #not then we will create it.
             "trunk_pg_name": "hlm-Trunk-PG",
 
             #Interface order: Example eth3
             "trunk_interface_order": "eth3"
         },
 
-        #VLAN Range for Data &amp; Trunk port group. Please provide the range separated by a hyphen(vlan-vlan).
-        #Multiple vlan or vlan ranges has to be a comma separated value(*OPTIONAL)
+#VLAN Range for Data &amp; Trunk port group. Please provide the range #separated by a hyphen (vlan-vlan). Multiple vlan or vlan ranges should #be provided as comma separated value.
         "vlan_range": "1-4094"
     },
 
     "template": {
-        #Provide the template/appliance name that will be used for cloning Computeproxy and OVSvApp VMs
+#Provide the template name that will be used for cloning Computeproxy #and OVSvApp VMs
         "template_name": "hlm-template"
     },
 
@@ -365,13 +414,12 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         #Number of CPUs for OVSvApp/Computeproxy VM
         "cpu": "4",
 
-        #Amount of RAM in MB
+        #Amount of RAM for OVSvApp/Computeproxy VM(in Mega Byte)
         "memory_in_mb": "4096",
 
-        #SSH public key content for OVSvAPP/Computeproxy password less login.
+#SSH public key content for OVSvAPP/Computeproxy password less login. #Carefully copy the public key and paste it within the double quotes.
         "ssh_key": "&lt;deployer-ssh-pub-key-contents>"
-    },
-        
+    }
 }</codeblock></p></li>
         <li>Modify the template (json file) as per your
             environment.<codeblock>vi &lt;<b>NETWORK_CONF_FILENAME</b>></codeblock><p>For
