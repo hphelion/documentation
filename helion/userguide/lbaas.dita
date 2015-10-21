@@ -50,10 +50,10 @@ nova boot --flavor 1 --image &lt;image&gt; --nic net-id=$(neutron net-list | awk
 nova boot --flavor 1 --image &lt;image&gt; --nic net-id=$(neutron net-list | awk '/private/ {print $2}') vm2</codeblock></li>
         <li>Check if the VMs are active.
           <codeblock>nova list</codeblock></li>
-        <li>You will need to assign floating IP's to the VM's so you can access them from the external network. Get the port
-        id's of the vm1 and vm2 instances.
-          <codeblock>fixedip_vm1=$(nova list | awk ‘/vm1/ {print $12}' | awk -F '=' '{print $2}' | awk -F ',' '{print $1}')
-fixedip_vm2=$(nova list | awk ‘/vm2/ {print $12}' | awk -F '=' '{print $2}' | awk -F ',' '{print $1}')
+        <li>You will need to assign floating IP's to the VM's so you can access them from the
+            external network. Get the port id's of the vm1 and vm2 instances.
+            <codeblock>fixedip_vm1=$(nova list | awk '/vm1/ {print $12}' | awk -F '=' '{print $2}' | awk -F ',' '{print $1}')
+fixedip_vm2=$(nova list | awk '/vm2/ {print $12}' | awk -F '=' '{print $2}' | awk -F ',' '{print $1}')
             
 portuuid_vm1=$(neutron port-list | grep $fixedip_vm1 | awk '{print $2}')
 portuuid_vm2=$(neutron port-list | grep $fixedip_vm2 | awk '{print $2}')</codeblock></li>
