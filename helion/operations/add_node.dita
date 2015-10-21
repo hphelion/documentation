@@ -42,7 +42,7 @@ git checkout site</codeblock> Add
       ilo_password: "whatever"</codeblock>
         </li>
         <li> Commit the changes <codeblock>git commit -a -m "Add node &lt;name>"</codeblock> Then
-          run the configuration processor and the ready deploment
+          run the configuration processor and the ready deployment
           playbooks:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
@@ -52,7 +52,7 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
 ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=compute7</codeblock><b
           > </b>Before proceeding, you may want to take a look at <b>info/server_info.yml</b> to see
           if the assignment of the node you have added is what you expect. It may not be, as nodes
-          will not be numbered consecutively if any have previoulsy been removed. This is to prevent
+          will not be numbered consecutively if any have previously been removed. This is to prevent
           loss of data; the config processor retains data about removed nodes and keeps their ID
           numbers from being reallocated. See the <ph id="_Toc432693223">Persisted Server
             Allocations</ph> section in <xref href="../input_model.dita#input_model">HP Helion
@@ -67,7 +67,7 @@ ansible-playbook -i hosts/verb_hosts site.yml --limit hlm004-ccp-comp0007*</code
     <section><title>Add availability zones</title>When adding a new node, an additional step you'll
       need to take is to add the new node(s) to a Nova availability zone. This can be skipped if you
       have not configured any availability zones. <ol>
-        <li>First get a list of availability zones to get their staus:<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova availability-zone-list</codeblock>
+        <li>First get a list of availability zones to get their status:<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova availability-zone-list</codeblock>
           <codeblock>+------------------------------+----------------------------------------+
 | Name                         | Status                                 |
 +------------------------------+----------------------------------------+
@@ -93,7 +93,7 @@ ansible-playbook -i hosts/verb_hosts site.yml --limit hlm004-ccp-comp0007*</code
 | | |- nova-compute            | enabled :-) 2015-10-12T10:32:21.000000 |
 +------------------------------+----------------------------------------+</codeblock>
         </li>
-        <li>Then run nova-cloud-configure.yml to update the nova availabity zones and effect the
+        <li>Then run nova-cloud-configure.yml to update the nova availability zones and effect the
           changes you made in the previous section:<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ ansible-playbook -i hosts/verb_hosts nova-cloud-configure.yml</codeblock>
           <codeblock>PLAY [NOV-CLI] **************************************************************** 
 
@@ -121,7 +121,7 @@ padawan-ccp-c1-m1-mgmt     : ok=3    changed=1    unreachable=0    failed=0
 padawan-ccp-c1-m2-mgmt     : ok=3    changed=1    unreachable=0    failed=0   
 padawan-ccp-c1-m3-mgmt     : ok=3    changed=1    unreachable=0    failed=0</codeblock>
         </li>
-        <li>Get a list of availability zones again to verify that the new node is in the the right
+        <li>Get a list of availability zones again to verify that the new node is in the right
           availability zone now.<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova availability-zone-list</codeblock>
           <codeblock>+------------------------------+----------------------------------------+
 | Name                         | Status                                 |
