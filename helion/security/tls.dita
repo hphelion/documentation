@@ -7,7 +7,7 @@
     <section id="intro">
       <p/>
       
-      <p>The Transport Layer Security (TLS) protocol, successor of SSL, provides the mechanisms to
+      <p>The Transport Layer Security (TLS) protocol, successor to SSL, provides the mechanisms to
         ensure authentication, non-repudiation, confidentiality, and integrity of user
         communications to the HP Helion OpenStack services from public endpoints.</p>
       <p>OpenStack endpoints are HTTP (REST) services providing APIs to other OpenStack services on the
@@ -26,7 +26,7 @@
         <li>Assign a name to "external-name:" line in
           /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that an FQDN is
           used)</li>
-      </ul><p><note type="warning">TLS keys must adhere to the current <xref
+      </ul><p><note type="warning">TLS certificates must adhere to the current <xref
             href="https://cabforum.org/wp-content/uploads/Baseline_Requirements_V1_3_1.pdf"
             format="pdf" scope="external">Baseline Requirements</xref>. Specifically:<ul>
             <li>IP addresses and DNS names <b>must</b> appear using one or more Subject Alternative
