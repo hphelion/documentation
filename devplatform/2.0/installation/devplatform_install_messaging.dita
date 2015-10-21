@@ -14,16 +14,71 @@
         started. A separate download step is not necessary.</p><p>The installer retrieves service
         configuration information from the clouds.yaml file. If you did not create a clouds.yaml
         file earlier, you can <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one
-          now</xref>.</p></section>
-    <p>Add the following to the clouds.yaml file:</p>
-    <codeblock>deployer_key: keypair to use for the deployer instance (defaults to “default”)
-deployer_flavor: flavor to use for the deployer instance (defaults to “4” a large)
-deployer_name: name of the deployer instance (defaults to &lt;service&gt;_deployer_&lt;version&gt;)
-deployer_security_group: security group for the deployer (defaults to “default”)
-deployer_version: version of the deployer (defaults to version in image name if not set)
-deployer_image: image to use for the deployer (an attempt will be made to find the image using an image prefix “msgaas” or “helionci” and contains the word “hlinux”)
-deployer_uri: location most likely in swift to download the deployer tgz (will be set by the CLI based on where it lands in swift)
-deployer_net_id: Network id for the deployer instance (defaults to the id of the network named “SVC”)
-deployer_cloud: Cloud in clouds.yaml in which to use to create the deployer. The deployer create must be run by admin, but the deployer itself may be owned by someone else.</codeblock>
+          now</xref>.</p></section>  <section>
+            <title>Install the Messaging Service</title>
+            <note type="tip"> For help with the installer, enter the command <codeph>openstack
+              hdpi</codeph>
+            </note>
+            <ol>
+              <li>SSH to the Deployer.                </li>
+              <li>Create a Virtual Environment. <codeblock>virtualenv .devplatform</codeblock></li>
+              <li>Source the Virtual
+                Environment.<codeblock>source .devplatform/bin/activate</codeblock></li>
+              
+              
+              <li>If you did not create a <codeph>clouds.yaml</codeph> file earlier, you must <xref
+                href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one now</xref>.</li><li>Add the following values to the <codeph>clouds.yaml</codeph> file. Most of the values can be
+          left at the default value.<note>If you installed the HP Helion Code Engine service first,
+            the Messaging service can use the values in the existing <codeph>helionci:</codeph>
+            section. Do not add a new section, just check to ensure that values for all listed
+            variables are
+            provided.<codeblock># header may say messaging or helionci
+# do not duplicate section
+messaging:
+  deployer_key: default
+  deployer_flavor: 4 
+  deployer_name: &lt;service&gt;_deployer_&lt;version&gt;
+  deployer_security_group: default
+  deployer_version: 
+  deployer_image: 
+  deployer_uri: 
+  deployer_net_id: 
+  deployer_cloud: </codeblock></note><ul
+            id="ul_nk3_nzz_st">
+            <li>deployer_key: The keypair to use for the deployer instance. Default value:
+              default</li>
+            <li>deployer_flavor: The flavor to use for the deployer instance, Default value: 4 which
+              is Large.</li>
+            <li>deployer_name: The name of the deployer instance. Default value:
+              &lt;service&gt;_deployer_&lt;version&gt;</li>
+            <li>deployer_security_group: The name of the security group for the deployer. Default
+              value: default</li>
+            <li>deployer_version: The version of the deployer. Default value: if not set, it will
+              use the version in the image name.</li>
+            <li>deployer_image: The image to use for the deployer. It will attempt to find an image
+              with the prefix <i>helionci</i> or <i>msgaas</i> and containing the word
+              <i>hlinux</i>.</li>
+            <li>deployer_uri: The location where the download the deployer tgz can be found. Will be
+              set by the CLI based on information retrieved from Swift.</li>
+            <li>deployer_net_id: Network id for the deployer instance. Default value: The id of the
+              network named <i>SVC</i>. </li>
+            <li>deployer_cloud: The cloud identified in the clouds.yaml where the deployer will be
+              created. Note that while the deployer creation must be performed by an admin, the
+              deployer itself may be owned by someone else.</li>
+          </ul></li>
+              <li>Run the installer.
+          <codeblock>openstack hdpi messaging install --package wscatalog.</codeblock></li>
+              <li>After the installation is complete, launch the deployer.
+          <codeblock>$ openstack hdpi messaging launch</codeblock>The output should look similar to
+          the
+          following:<codeblock>Searching for container msgaas-deployer...
+Searching for container msgaas-launcher...
+Extracting ...
+Running scripts...
+Running launcher.py
+
+....
+</codeblock></li>  </ol>
+          </section>
   </body>
 </topic>
