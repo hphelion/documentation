@@ -2,7 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Post-Alpha Release Build 22: Deploying the VRSvApp</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Post-Alpha Release Build 22:
+        Deploying a vApp for DCN/ESX Integration</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -13,21 +14,24 @@
       <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
     </metadata>
   </prolog>
-  <body>
-    <p><i>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
-        Deployment</xref>.</i></p>
-
-    <p>The HP Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires the VRSvApp. One
-      VRSvApp is required for each ESX host. There is a 1-to-1 mapping between each VRSvApp and its
-      ESX host. The VRSvApp installation package is contained in the packages you downloaded from
-      DCN.</p>
-        <p>The following sections describes how to install the HP Distributed Cloud Networking (DCN)
-            vSphere Solution. The installation involves deploying a stand-alone VM, installing the
-            new vCenter Integration Node (called the vCenter Deployment Toolbox). The VRSvApp can be
-            deployed automatically on each ESX node in a cluster.
+  <body><p><i>Return to the Installing the <xref
+                    href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+                    Deployment</xref>.</i></p><p>This document describes how to install the HP
+            Distributed Cloud Networking (DCN) vSphere Solution required to properly integrate the
+            HP Distributed Cloud Networking and VMWare ESX components. </p><p>The HP Helion
+            OpenStack Carrier Grade in the KVM + ESX Deployment requires a VMware vApp, called the
+            VRSvApp, to integrate ESX and HP DCN. One VRSvApp is required for each ESX host. There
+            is a 1-to-1 mapping between each VRSvApp and its ESX host. The VRSvApp installation
+            package is contained in the packages you downloaded from DCN.</p><p>The DCN vSphere
+            Solution addresses this integration. The installation involves deploying a stand-alone
+            VM, installing the new vCenter Integration Node (called the vCenter Deployment Toolbox).
+            The VRSvApp can be deployed automatically on each ESX node in a cluster.
             <!--From HP DCN installation guide.--></p>
-        <section>
+      <p>After installing the vCenter Integration Node
+        VM  and vCenter Deployment Toolbox, you can access the toolbox by pointing a browser to
+            <codeph>https://&lt;VSD_IP&gt;:8443/vcenter/</codeph>.  Only the
+            <codeph>CSPRoot</codeph> user can log into the vCenter deployment toolbox.</p>
+          <section>
             <title>Pre-requisites: </title>
             <!--From Nayana et al. playbook-->
             <ul id="ul_e2r_qf4_rt">
@@ -44,24 +48,19 @@
                             network (TUL Network)</li>
                     </ul></li>
             </ul>
-        </section>
-    <section><title>Creating a Stand-Alone Virtual Machine for the vCenter Deployment
+        </section><section><title>Creating a Stand-Alone Virtual Machine for the vCenter Deployment
                 Toolbox</title>The HP Helion OpenStack Carrier Grade installation requires you to
             install a dedicated virtual machine for the HP DCN vSphere Solution. This VM is called
             the vCenter Integration Node, and includes a UI and API called the vCenter Deployment
-            Toolbox.  .<p>The vCenter Integration Node VM does not require a VSD license and does
-                not offer VSD functionality. </p>After installing the vCenter Integration Node VM
-            and vCenter Deployment Toolbox, you can access the toolbox by pointing a browser to
-                <codeph>https://&lt;VSD_IP&gt;:8443/vcenter/</codeph>.  Only the
-                <codeph>CSPRoot</codeph> user can log into the vCenter deployment toolbox.<p>To
-                deploy the vCenter Integration Node VM:</p><p>
+            Toolbox. <p>The vCenter Integration Node VM does not require a VSD license and does not
+                offer VSD functionality. </p><p>To deploy the vCenter Integration Node VM:</p><p>
                 <ol conref="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/ol_rmq_bnc_tt"
                     id="ol_kz1_dnc_tt">
                     <li/>
                 </ol>
-            </p></section>
-        <section>
+            </p></section><section>
             <title>Configure the HTTP\DHCP VM Setup for the vCenter Integration Node</title>
+            <p>Perform the following step to configure DHCP</p>
             <p>
                 <ol id="ol_v11_wh4_rt">
                     <li>Log into the vCenter Integration Node.</li>
@@ -96,33 +95,28 @@ subnet 10.20.94.0 netmask 255.255.255.0 {
                         needed:<codeblock>Service httpd restart</codeblock></li>
                 </ol>
             </p>
-        </section>
-        <section><title>Configuring the VSD Deployment Toolbox:</title>The vCenter Deployment
-            Toolbox is bundled as a metadata plug-in. <p>To install and configure the metadata
-                plugin:</p><ol id="ol_o4m_w34_rt">
+        </section><section><title>Configuring the VSD Deployment Toolbox:</title>The vCenter
+            Deployment Toolbox is bundled as a metadata plug-in. <p>To install and configure the
+                metadata plugin:</p><ol id="ol_o4m_w34_rt">
                 <li>Log into the vCenter Integration Node VM using SSH.</li>
-                <li>Stop the JBoss application server on the vCenter Integration Node. <ol
-                        id="ol_zj2_g3t_st">
-                        <li>SSH into the vCenter Integration node.</li>
-                        <li>Execute the following command:
-                            <codeblock>monit stop jboss</codeblock></li>
-                    </ol></li>
-                <li>Edit the the <codeph>/opt/vsd/jboss/standalone/configuration
-                        /metadataplugin.properties</codeph>. Enter vCenter properties the in the
-                    fields, as
+                <li>Execute the following command to stop the JBoss application server on the
+                    vCenter Integration Node: <codeblock>monit stop jboss</codeblock></li>
+                <li>Edit the
+                        <codeph>/opt/vsd/jboss/standalone/configuration/metadataplugin.properties</codeph>
+                    file. Enter vCenter properties the in the fields, as
                     follows:<codeblock>vc.host=x.x.x.x //: This is the vCenter IP address:
 vc.http.proxy.port = 80 //: This is the default port. Do not change. 
 vc.https.proxy.port = 443 //: This is the default port. Do not change. 
 vc.user = root //: vCenter username
-vc.password =vmware //: vCenter password</codeblock></li>
+vc.password =vmware //: vCenter password
+vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
                 <li>Start the JBoss application server using the following
                     command::<codeblock>monit start jboss</codeblock></li>
             </ol><p>The <codeph>monit start jboss</codeph> Metadata plugin is automatically deployed
                 and installed upon. The plugin will be listed as registered in
-            vCenter.</p></section>
-        <section><title>Configure the Deployment Toolbox</title><p>You must perform the following
-                tasks.</p><p><b>Configure vCenter Informaton</b></p><p>You must provide the VMWare
-                topology configuration to the deployment toolbox. This includes the
+            vCenter.</p></section><section><title>Configure the Deployment Toolbox</title><p>You must perform the following
+                    tasks.</p><p><b>Configure vCenter Informaton</b></p><p>You must provide the
+                VMWare topology configuration to the Deployment Toolbox. This includes the
                 following:</p><ul id="ul_ucs_444_rt">
                 <li>Each ESX hypervisor in the cluster(s)</li>
                 <li>Each HP DCN cluster(s) in data center(s)</li>
@@ -136,23 +130,23 @@ vc.password =vmware //: vCenter password</codeblock></li>
                 cluster is identified based on its IP.</p><p><image
                     href="../../media/CGH-2-install-vsdvm3.png" width="600" id="image_kbl_cr1_tt"
                 /></p><p><b>VRS-VM Template Configuration</b></p><p>When adding a new vCenter to the
-                deployment toolbox, make sure the VRS-VM template is configured in vCenter. The
-                template is required for all the DCN-enabled hypervisors on that vCenter. The
-                template must be available over an HTTP server, and must allow connection from
-                vCenter and from the Nuage-enabled hypervisors.</p><b>Default Profile
-                Configuration</b><p>The VSD Deployment Toolbox offers the option of setting up a
-                default vApp profile for all the VRS VM Agents. The profile is used for all default
-                parameters, which generally remain the same across all your agents. The
-                configuration on the default profile includes all the VRS vApp nodes, except the
-                ones that are obviously different for each VRS-VM agent (such as the IP
-                address).</p><p><image href="../../media/CGH-2-install-vsdvm1.png" width="600"
-                    id="image_zvq_nq1_tt"/></p><p><b>Specific Profile Override</b></p><p>Each level
-                of the topology can be overridden in order to provide different parameters at a more
-                granular level. If a parameter is configured on the level of the default profile, on
-                the cluster level and also on the ESXi level, then only the ESXi-level parameter
-                will be used.</p><p><image href="../../media/CGH-2-install-vsdvm2.png" width="600"
-                    id="image_jnn_tq1_tt"/></p></section>
-        <section>
+                vCenter Deployment Toolbox, make sure the VRS-VM template,
+                VRS_3.2.4-135_10062015.ovf, is configured in vCenter. The template is required for
+                all the DCN-enabled hypervisors on that vCenter. The template must be available over
+                an HTTP server, and must allow connection from vCenter and from the Nuage-enabled
+                hypervisors.</p><b>Default Profile Configuration</b><p>The vCenter Deployment
+                Toolbox offers the option of setting up a default vApp profile for all the VRS VM
+                Agents. The profile is used for all default parameters, which generally remain the
+                same across all your agents. The configuration on the default profile includes all
+                the VRS vApp nodes, except the ones that are obviously different for each VRS-VM
+                agent (such as the IP address).</p><p><image
+                    href="../../media/CGH-2-install-vsdvm1.png" width="800" id="image_zvq_nq1_tt"
+                /></p><p><b>Specific Profile Override</b></p><p>Each level of the topology can be
+                overridden in order to provide different parameters at a more granular level. If a
+                parameter is configured on the level of the default profile, on the cluster level
+                and also on the ESXi level, then only the ESXi-level parameter will be
+                    used.</p><p><image href="../../media/CGH-2-install-vsdvm2.png" width="800"
+                    id="image_jnn_tq1_tt"/></p></section><section>
             <p>
                 <b>Enabling the agent settings on each hypervisor</b></p>
             <p>Each VM that needs to be configured with the Nuage VRS-VM Agent needs to be
@@ -163,20 +157,20 @@ vc.password =vmware //: vCenter password</codeblock></li>
                     <li>Click <b>Manage</b>, then <b>Settings</b>, then <b>Agent VM
                         Settings</b>.</li>
                     <li>Click the <b>Edit</b> button.</li>
-                    <li>Configure the Datastore and Bootstrap Network settings. <p><image
-                                href="../../media/CGH-2-install-vrsvapp4.png" width="500"
+                    <li>Configure the <b>Datastore and Bootstrap Network</b> settings. <p><image
+                                href="../../media/CGH-2-install-vrsvapp4.png" width="800"
                                 id="image_mpd_qy4_rt"/></p><p>The Bootstrap Network is the network
-                            on which the VRS VM issues DHCP requests and issues requests to the
-                            vCenter integration node in order to receive all its
-                        parameters.</p></li>
+                            on which the vCenter Integration Node VM issues DHCP requests and issues
+                            requests to the vCenter integration node in order to receive all its
+                            parameters.</p></li>
                 </ol></p>
-        </section>
-        <section>
+        </section><section>
             <title>Adding the Cluster to the Agency</title>
             <p>After adding the vCenter topology to the deployment toolbox, configure the cluster on
                 vCenter for Agent use.</p>
-            <p>Note: Make sure that the cluster and hypervisor profiles are properly configured on
-                the deployment toolbox before proceeding to add the cluster to the Agency.</p>
+            <p><b>Note:</b> Make sure that the cluster and hypervisor profiles are properly
+                configured on the deployment toolbox before proceeding to add the cluster to the
+                Agency.</p>
             <p>Perform the following steps using the vSphere web client:</p>
             <p>
                 <ol id="ol_scv_lp4_rt">
@@ -184,18 +178,18 @@ vc.password =vmware //: vCenter password</codeblock></li>
                             IP&gt;:9443/vsphere-client</codeph>.</li>
                     <li>From the <b>Home</b> tab, navigate to <b>vCenter Solutions Manager</b> as
                         shown below:<p><image href="../../media/CGH-2-install-vrsvapp1.png"
-                                width="400" id="image_wd4_hq4_rt"/></p></li>
+                                width="800" id="image_wd4_hq4_rt"/></p></li>
                     <li>Click on the vCenter Solutions Manager to see a list of extensions,
                         including NuageVRS Agent Manager, as shown below:<p><image
-                                href="../../media/CGH-2-install-vrsvapp2.png" width="400"
+                                href="../../media/CGH-2-install-vrsvapp2.png" width="800"
                                 id="image_qs2_xx4_rt"/></p></li>
                     <li>Click the Nuage VRS Agent Manager and navigate to the <b>Solutions</b> tab.
                             <p>If a warning about a certificate issue appears, navigate to
                                 <codeph>https://&lt;vcenter_IP&gt;:8443/EamPlugin-1.6.0/</codeph>.
                             Confirm the security exception and add the certificate. A message
                             indicating that <codeph>EAM is up and running</codeph> appears, and you
-                            can continue with the next step:</p><p><image
-                                href="../../media/CGH-2-install-vrsvapp3.png" width="500"
+                            can continue with the next step.</p><p><image
+                                href="../../media/CGH-2-install-vrsvapp3.png" width="800"
                                 id="image_lfr_zx4_rt"/></p></li>
                     <li>Add the Nuage cluster:<ol id="ol_ndc_r1p_rt">
                             <li>On the left hand side of vCenter, select the cluster managed by
@@ -208,9 +202,7 @@ vc.password =vmware //: vCenter password</codeblock></li>
                             <b>Remove</b>, then <b>Update Configuration</b>.</li>
                 </ol>
             </p>
-        </section>
-      <p><i>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
-          Deployment</xref>.</i></p>
-  </body>
+        </section><p><i>Return to the Installing the <xref
+                    href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+                    Deployment</xref>.</i></p></body>
 </topic>

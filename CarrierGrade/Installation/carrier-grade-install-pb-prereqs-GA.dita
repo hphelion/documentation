@@ -265,10 +265,12 @@ StrictHostKeyChecking no </codeblock></li>
                                         href="http://16.78.71.141/uploads/hcg-2-0-alpha/build22.tar"
                                         format="html" scope="external">HP Helion OpenStack Carrier
                                         Grade V2.0 Alpha Build 22</xref>. HP internal network access
-                                is required.</p>
+                                is
+                                required.<codeblock>http://16.78.71.141/uploads/hcg-2-0-alpha/build22.tar</codeblock></p>
                         <p>The FTP download, <codeph>build22.tar</codeph>, contains all of the files
                                 you will need to install and configure HP Helion OpenStack Carrier
-                                Grade. </p>
+                                Grade. This is a large file that might take a significant amount of
+                                time to download, depending upon the speed of your network.</p>
                         <p><b>Note:</b> For KVM + ESX Cloud Deployments, you will need to obtain the
                                 and install the VMware ESX<tm tmtype="reg"/> and HP Distributed
                                 Cloud Networking (DCN) software through those entities. </p>
@@ -318,7 +320,7 @@ StrictHostKeyChecking no </codeblock></li>
                                                 </row>
                                                 <row>
                                                   <entry>Nuage_Debians</entry>
-                                                  <entry>nuagenetlib_0.0.0-1729-kilo_all.deb<p>nuage-openstack-neutron_2015.1.1729_all.deb</p></entry>
+                                                  <entry>nuagenetlib_0.0.0-1729-kilo_all.deb<p>nuage-openstack-neutron_2015.1.1729_all.deb</p><p>libprotobuf-c0_0.14-1+b1_amd64.deb</p><p>python-setproctitle_1.1.8-1_amd64.deb</p></entry>
                                                 </row>
                                                 <row>
                                                   <entry> Nuage_patch</entry>
@@ -412,18 +414,6 @@ StrictHostKeyChecking no </codeblock></li>
                                         <codeph>controller-0</codeph> in the KVM region during the
                                 installation process. </p>
                 </section>
-                <section id="debian"><title>Download required Debian packages</title>Download the
-                        following files from the LR4 Jump Server (15.215.66.57) in the
-                                <codeph>E:\Builds\cg-hos-2-0-builds\build15\HPCSS</codeph>
-                        directory. You need CDL permissions to access these files:<ul
-                                id="ul_ggl_glr_st">
-                                <li>
-                                        <p><codeph>libprotobuf-c0_0.14-1+b1_amd64.deb</codeph></p>
-                                </li>
-                                <li>
-                                        <p><codeph>python-setproctitle_1.1.8-1_amd64.deb</codeph></p>
-                                </li>
-                        </ul></section>
                 <section>
                         <title>Download the ESX packages for KVM + ESX</title>
                         <p><b>Note:</b> This is applicable only for KVM + ESX Cloud Deployment. </p>

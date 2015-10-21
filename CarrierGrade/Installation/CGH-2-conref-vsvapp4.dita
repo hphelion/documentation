@@ -24,9 +24,13 @@
     <oXygen:ComponentDescription>VSD VM</oXygen:ComponentDescription>
     <oXygen:ComponentDefinition><ol id="ol_rmq_bnc_tt">
             <li id="5">Edit <i>/etc/sysconfig/network-scripts/ifcfg-eth0</i> file to configure a
-                static IP address. <p>Use the DCM IP for the VSD that is already configured by your
-                    lab admin.</p><p><b>Note:</b> For the stand-alone VSD VM required for the
-                    VRSvApp, use the TUL IP.</p><p><u>For
+                static IP address. <p>
+                    <ul id="ul_wf5_bng_tt">
+                        <li>For the VSD VM installed as a prerequisite, use the DCM IP.</li>
+                        <li>For the vCenter Integration Node VM required for the VRSvApp deployment,
+                            use the TUL IP.</li>
+                    </ul>
+                </p><p><u>For
                     example</u><codeblock>BOOTPROTO=”static”
 IPADDR=10.20.5.21
 NETMASK=255.255.255.0
@@ -62,9 +66,14 @@ ntpdate &lt;ntp server>
             <li>Verify that NTP is synchronized. The synchronization process usually takes 10 to 15
                 minutes. <p><image href="../../media/CGH-2-ntp-verify-time.png" height="68"
                         width="328" id="image_ntd_b1l_2t"/></p></li>
-            <li id="15">After NTP is properly synchronized,execute the following command to install
-                        VSD:<codeblock> /opt/vsd/install.sh xmpp.&lt;domain_name> -t s -y</codeblock><p><b>Note:</b>
-                    For the stand-alone VSD VM required for the VRSvApp, use:
-                    <codeblock>/opt/vsd/install.sh</codeblock></p></li>
+            <li id="15">After NTP is properly synchronized,execute one of the following command to
+                install VSD:<p>
+                    <ul id="ul_wnk_lng_tt">
+                        <li>For the VSD VM installed as a prerequisite, use:
+                            <codeblock>/opt/vsd/install.sh xmpp.&lt;domain_name> -t s -y</codeblock></li>
+                        <li>For the vCenter Integration Node VM required for the VRSvApp deployment,
+                            use:<codeblock>/opt/vsd/install.sh</codeblock></li>
+                    </ul>
+                </p></li>
         </ol></oXygen:ComponentDefinition>
 </oXygen:ReusableComponent>
