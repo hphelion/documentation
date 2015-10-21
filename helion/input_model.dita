@@ -105,7 +105,7 @@
         <sli outputclass="listsuba"><i>5.8</i> CloudDiagram.txt</sli>
       </sl>
     </section>
-    <section id="introduction"><title>Introduction</title>
+    <section id="introduction"><title><i>1.0</i> Introduction</title>
       <p>This document describes how the HP Helion OpenStack input model can be used to define and
         configure the cloud.</p>
       <p>HP Helion OpenStack ships with a set of example input models that can be used as starting
@@ -133,14 +133,24 @@
           definitions of some of the more important configuration entities</li>
       </ul>
     </section>
-    <section id="3.0_Concepts"><title>HP Helion OpenStack 2.0 Concepts</title>
-      <p>A HP Helion OpenStack 2.0 system is defined by a declarative model that is described in a
-        series of configuration objects. These objects are stored in YAML files and the product
-        ships with a number of examples. These examples can potentially be used almost as shipped –
-        just modifying to provide site specific IP addresses, or customized to meet site
-        requirements.</p>
+
+    <section id="concepts"><title><i>2.0</i> HP Helion OpenStack 2.0 Concepts</title>
+      <p>An HP Helion OpenStack 2.0 cloud is defined by a declarative model that is described in a
+        series of configuration objects. These configuration objects are represented in YAML files
+        which together constitute the various example configurations provided as templates with this
+        release. These examples can be used nearly unchanged, with the exception of necessary
+        changes to IP addresses and other site and hardware-specific identifiers. Alternatively, the
+        examples may be customized to meet site requirements.</p>
+      <p>The following diagram shows the set of configuration objects and their relationships. All
+        objects have a name that you may set to be something meaningful for your context. In the
+        examples these names are provided in capital letters as a convention. These names have no
+        significance to HP Helion OpenStack, rather it is the relationships between them that define
+        the configuration.</p>
       <p><image href="../media/config/concept_diag.png"/></p>
     </section>
+    
+    
+    
     <section id="3.1_Cloud"><title>Cloud</title>
       <p><i>A cloud consists of one or more control planes.</i></p>
       <p>The <codeph>cloudConfig.yml</codeph> file will define your Cloud name, NTP server
