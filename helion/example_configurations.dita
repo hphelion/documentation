@@ -89,9 +89,9 @@
                 <li><xref href="#example_configurations/disks_controller"
                     >Disks_controller.yml</xref>
                   <ul>
-                    <li outputclass="listsubc"><xref href="#example_configurations/filesystems">File
+                    <li><xref href="#example_configurations/filesystems">File
                         Systems Storage</xref></li>
-                    <li outputclass="listsubc"><xref href="#example_configurations/swiftstorage"
+                    <li><xref href="#example_configurations/swiftstorage"
                         >Swift Storage</xref></li>
                   </ul></li>
                 <li><xref href="#example_configurations/disks_vsa">Disks_vsa.yml</xref></li>
