@@ -269,7 +269,10 @@
     <section id="KnownIssues">
       <title>Limitations in this Release</title>
       <p><b>HP Helion Development Platform</b></p>
-      <p>Helion Development Platform is not supported on Beta 2.</p>
+      <p>Helion Development Platform is not supported on Beta 2.</p><b>Heat autoscaling not
+        supported</b>
+      <p> In HP Helion OpenStack 2.0, the auto-scaling in Heat is not supported because the alarm
+        creation in Ceilometer is disabled</p>
       <p><b>Installing Swift</b></p>
       <p>Swift installs with the following limitations: </p>
       <ul>
@@ -411,6 +414,8 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
       <note>When using the Launch Instance action in the Volumes table, the Launch Instance Wizard
         form doesn't get pre-populated with the Volumes option selected, nor does it select the
         given Volume.</note>
+      <b>Restarting Deployer/lifecycle management node leaves Apache2 down</b>
+      If you restart your Deployer/lifecycle management node, note that Apache2 will not restart on its own. You will need to restart it manually.
     </section>
   </body>
 </topic>
