@@ -92,13 +92,23 @@
 >>>>>>> 28b0e41... Testing...and why are things not building after a push?
 =======
     <stentry>1. <b><keyword keyref="quickStartHPcloudStep1"/></b>
-     <p>2. <xref href="CFR_step_2.dita#concept_ikh_xgz_st" id="quickStartHPcloudStep2_"><keyword keyref="quickStartHPcloudStep2"
-     /></xref></p><p>3. <xref href="CFR_step_3.dita#concept_kpg_fhz_st" id="quickStartHPcloudStep3_"><keyword
+     <p>2. <xref href="CFR_step_2.dita#concept_ikh_xgz_st" id="quickStartHPcloudStep2_"><keyword
+        keyref="quickStartHPcloudStep2"/></xref></p><p>3. <xref
+       href="CFR_step_3.dita#concept_kpg_fhz_st" id="quickStartHPcloudStep3_"><keyword
         keyref="quickStartHPcloudStep3"/></xref></p><p>4. <xref
+<<<<<<< HEAD
          href="CFR_step_4.dita#concept_pqc_jhz_st" id="quickStartHPcloudStep4_"><keyword keyref="quickStartHPcloudStep4"
          /></xref></p> 5. <xref href="CFR_step_5.dita#concept_cw2_thz_st" id="quickStartHPcloudStep5_"><keyword
        keyref="quickStartHPcloudStep5"/></xref></stentry>
 >>>>>>> f428749... Fixing the internal navi
+=======
+       href="CFR_step_4.dita#concept_pqc_jhz_st" id="quickStartHPcloudStep4_"><keyword
+        keyref="quickStartHPcloudStep4"/></xref></p><p>5. <xref
+       href="CFR_step_5.dita#concept_cw2_thz_st" id="quickStartHPcloudStep5_"><keyword
+        keyref="quickStartHPcloudStep5"/></xref></p>6. <xref
+         href="CFR_step_6.dita#concept_m3k_bth_tt" id="quickStartHPcloudStep6_"><keyword keyref="quickStartHPcloudStep6"
+     /></xref></stentry>
+>>>>>>> be539c9... Added Step 6
     <stentry><b>Registering for a <keyword keyref="pubCloudShort"/> Account</b><note type="tip">Keep
       your username and password handy. You will need them during
       installation.</note><p>Registration allows you to obtain <xref

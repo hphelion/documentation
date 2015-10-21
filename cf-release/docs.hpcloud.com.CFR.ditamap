@@ -70,6 +70,7 @@
          <topicref href="quickstart/pubcloud/CFR_TF_vars.dita"/>
       </topicref>
       <topicref href="quickstart/pubcloud/CFR_step_5.dita"/>
+      <topicref href="quickstart/pubcloud/CFR_step_6.dita"/>
    </topichead>
    <topicref href="reference/CFR_reference_gato.dita"/>
 >>>>>>> 3206261... More content reorg
@@ -113,7 +114,6 @@
 >>>>>>> 9d80273... Testing theme changes on Linux
 =======
    <topichead navtitle="DO NOT LOOK HERE--TESTING">
-      <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_cluster.dita"/>
       <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_terminate.dita"/>
       <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_troubleshoot.dita"/>
    </topichead>

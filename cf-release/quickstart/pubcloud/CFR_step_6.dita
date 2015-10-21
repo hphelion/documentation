@@ -2,8 +2,13 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_m3k_bth_tt">
  <title>Quick Start Step 6: <keyword keyref="quickStartHPcloudStep6"/></title>
+<<<<<<< HEAD
  <shortdesc>You can easily take down your <keyword keyref="prodLong"/> instances and security groups
     on <keyword keyref="pubCloudLong"/>.</shortdesc>
+=======
+ <shortdesc>You can easily take down your instances and security groups on <keyword
+   keyref="pubCloudShort"/>.</shortdesc>
+>>>>>>> be539c9... Added Step 6
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
@@ -18,6 +23,7 @@
               <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5.
               <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6.
               <b><keyword keyref="quickStartHPcloudStep6"/></b></stentry>
+<<<<<<< HEAD
        <stentry><b id="connecting_to_your_cluster">Connecting to Your Cluster</b><p>To administer
             and troubleshoot your cluster, you can connect to it using SSH and then run <keyword
               keyref="adminUtil"/> commands. To connect, specify the IP address of your <keyword
@@ -61,6 +67,15 @@
                 <uicontrol>hcf-container-host</uicontrol>.</li>
             <li>Click <uicontrol>Delete Security Groups</uicontrol>.</li>
           </ol></stentry>
+=======
+       <stentry>Congratulations! You are now ready to begin deploying apps to your new sandbox
+         environment. We have provided some sample applications in multiple programming languages for
+         you to examine and deploy. These very simple applications provide insight on how to push
+         applications and connect those applications to <keyword keyref="opnStckLong"/> services.<xref
+           href="CFR_step_6.dita#concept_m3k_bth_tt">
+           <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
+         </xref></stentry>
+>>>>>>> be539c9... Added Step 6
      </strow>
    </simpletable>
  </conbody>

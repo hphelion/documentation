@@ -327,5 +327,15 @@
          </keywords>
       </topicmeta>
    </keydef>
+<<<<<<< HEAD
 >>>>>>> 67bf605... Fixed single-sourced navigation internals
+=======
+   <keydef keys="quickStartHPcloudStep6">
+      <topicmeta>
+         <keywords>
+            <keyword>Terminating Instances and Security Groups</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+>>>>>>> be539c9... Added Step 6
 </map>
