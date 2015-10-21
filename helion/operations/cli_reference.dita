@@ -106,7 +106,7 @@
             </row>
             <row>
               <entry>
-                <pre>ansible-playbook -i hosts/verb_hosts nova-stop.yml </pre>
+                <codeblock>ansible-playbook -i hosts/verb_hosts nova-stop.yml </codeblock>
               </entry>
               <entry>stop nova</entry>
               <entry/>
@@ -115,7 +115,7 @@
             </row>
             <row>
               <entry>
-                <pre>ansible-playbook -i hosts/verb_hosts nova-start.yml</pre>
+                <codeblock>ansible-playbook -i hosts/verb_hosts nova-start.yml</codeblock>
               </entry>
               <entry>start nova</entry>
               <entry/>
@@ -123,7 +123,7 @@
               <entry/>
             </row>   <row>
               <entry>
-                <p>ansible-playbook -i hosts/verb_hosts logging-stop.yml</p>
+                <codeblock>ansible-playbook -i hosts/verb_hosts logging-stop.yml</codeblock>
               </entry>
               <entry>stop centralized logging</entry>
               <entry/>
@@ -131,7 +131,7 @@
               <entry>Only impacts centralized logging. Not Logrotate </entry>
             </row>   <row>
               <entry>
-                <p>ansible-playbook -i hosts/verb_hosts logging-start.yml</p>
+                <codeblock>ansible-playbook -i hosts/verb_hosts logging-start.yml</codeblock>
               </entry>
               <entry>start centralized logging</entry>
               <entry/>
@@ -181,14 +181,14 @@
               <entry/>
             </row>
             <row>
-              <entry> ansible-playbook -i hosts/verb_hosts freezer-stop.yml</entry>
+              <entry> <codeblock>ansible-playbook -i hosts/verb_hosts freezer-stop.yml</codeblock></entry>
               <entry>stop freezer</entry>
               <entry/>
               <entry>--limit</entry>
               <entry/>
             </row>
             <row>
-              <entry> ansible-playbook -i hosts/verb_hosts freezer-start.yml</entry>
+              <entry> <codeblock>ansible-playbook -i hosts/verb_hosts freezer-start.yml</codeblock></entry>
               <entry>start freezer</entry>
               <entry/>
               <entry>--limit</entry>

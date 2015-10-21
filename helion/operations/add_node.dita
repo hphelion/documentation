@@ -2,15 +2,15 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_qsv_h5y_lt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding a Compute Node</title>
-  <body><!--Needs Edit-->
-   <section> To add a new node to your cloud, you will need to add it to <b>servers.yml</b>and then
+  <body>
+   <section> To add a new node to your cloud, you will need to add it to <b>servers.yml</b> and then
       run the scripts that update your cloud configuration. To begin, access the
-      <b>servers.yml</b>file by checking out the git branch where you are required to make the
+      <b>servers.yml</b> file by checking out the git branch where you are required to make the
       changes: <ol>
         <li>Get the <b>servers.yml</b> file stored in
           git:<codeblock>cd ~/helion/my_cloud/definition/data
 git checkout site</codeblock> Add
-          details of new node(s) to <b>severs.yml</b>. For example, if adding new server compute7 in
+          details of new node(s) to <b>severs.yml</b>. For example, if adding new server <codeph>compute7</codeph> in
             <b>servers.yml
           </b><codeblock>---
   product:
