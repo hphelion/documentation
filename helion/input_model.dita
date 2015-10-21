@@ -586,95 +586,129 @@
 
 
 
-    <section id="3.8.1.1_LoadBalancers"><title>Load Balancers</title>
-      <p>Load Balancers provide a specific type of routing and are also defined in network-groups as
-        a relationship between a VIP on a network in one network group and a set of service
-        endpoints (which may be on networks in the same or a different network group).</p>
-      <p>Each load balancer is defined as part of the network group where the virtual IP will be
-        presented – it follows that a network group containing a load balancer can only have one
-        network associated to it.</p>
-      <p>The load balancer definition includes a list of service-elements and roles it will provide
-        A VIP for.</p>
-      <p>The list of service-elements allows service specific load balancers to be defined on
-        networks in different network-groups. As with other service-element relationships, all that
-        is needed in the service-element name, the details of how the load balancer should be
-        configured, are provided in the supplied service definitions. A "default" value is accepted
-        to express "all service-elements which expect to be behind a load balancer and are not
-        explicitly configured in another load balancer configuration". Note that is not necessary to
-        say which network groups the service-elements that are being load balanced are attached to,
-        the Configuration Processor can deduce that information.</p>
-      <p>The endpoint roles make it possible to configure separate load balancers for public and
-        internal access to services, and the Configuration Processor uses this information to both
-        ensure the correct registrations in Keystone and to make sure internal traffic is routed to
-        the correct endpoint. Helion services are configured to only connect to other services via
-        internal VIPs and endpoints, allowing the name and security certificate of public endpoints
-        to be controlled by the customer and set to values that may not be resolvable or accessible
-        from the servers making up the Helion cloud.</p>
-      <p>Note that each load balancer defined in the input model will be allocated a separate VIP,
-        even when the load balancers are part of the same network group. Because of the need to be
-        able to separate public and internal access Helion will not allow a single load balancer to
-        provide both public and internal access. Load balancers in this context are logical entities
-        (sets of rules to transfer traffic from a VIP to one or more endpoints) – multiple load
-        balancers may be implemented by the same service within the cloud (e.g. a ha-proxy
-        cluster).</p>
-      <p>The following diagram shows a possible configuration in which the URL associated with the
-        public endpoint has been set to a name that resolves for customers to a firewall controlling
-        access to the cloud. Helion services use the internal URL to access a separate VIP.</p>
+    <section id="loadbalancers"><title>Load Balancers</title>
+      <p><uicontrol>Load-balancers</uicontrol> provide a specific type of routing and are also
+        defined in <uicontrol>network-groups</uicontrol> as a relationship between the virtual IP
+        address (VIP) on a network in one <uicontrol>network group</uicontrol> and a set of service
+        endpoints (which may be on <uicontrol>networks</uicontrol> in the same or a different
+          <uicontrol>network-group</uicontrol>).</p>
+      <p>Each <uicontrol>load-balancer</uicontrol> is defined as part of the
+          <uicontrol>network-group</uicontrol> where the virtual IP will be presented – it follows
+        that a <uicontrol>network-group</uicontrol> containing a
+          <uicontrol>load-balancer</uicontrol> can only have one <uicontrol>network</uicontrol>
+        associated to it.</p>
+      <p>The <uicontrol>load-balancer</uicontrol> definition includes a list of
+          <uicontrol>service-components</uicontrol> and endpoint roles it will provide A virtual IP
+        for. This model allows service-specific <uicontrol>load-balancers</uicontrol> to be defined
+        on different <uicontrol>network-groups</uicontrol>. A "default" value is used to express
+        "all service-components" which require a virtual IP address and are not explicitly
+        configured in another <uicontrol>load-balancer</uicontrol> configuration. The details of how
+        the <uicontrol>load-balancer</uicontrol> should be configured for each service, such as
+        which ports to use, how to check for service liveness, etc, are provided in the HP Helion
+        OpenStack supplied service definition files.</p>
+      <p>The list of endpoint roles for a <uicontrol>load-balancer</uicontrol> make it possible to
+        configure separate <uicontrol>load-balancers</uicontrol> for public and internal access to
+        services, and the Configuration Processor uses this information to both ensure the correct
+        registrations in Keystone and to make sure the internal traffic is routed to the correct
+        endpoint. HP Helion OpenStack services are configured to only connect to other services via
+        internal virtual IP addresses and endpoints, allowing the name and security certificate of
+        public endpoints to be controlled by the customer and set to values that may not be
+        resolvable/accessible from the servers making up the cloud.</p>
+      <p>Note that each <uicontrol>load-balancer</uicontrol> defined in the input model will be
+        allocated a separate virtual IP address even when the load-balancers are part of the same
+          <uicontrol>network-group</uicontrol>. Because of the need to be able to separate both
+        public and internal access, HP Helion OpenStack will not allow a single
+          <uicontrol>load-balancer</uicontrol> to provide both public and internal access.
+          <uicontrol>Load-balancers</uicontrol> in this context are logical entities (sets of rules
+        to transfer traffic from a virtual IP address to one or more endpoints). Multiple
+          <uicontrol>load-balancers</uicontrol> may be implemented by the same service within the
+        cloud (e.g. a HA Proxy cluster).</p>
+      <p>The following diagram shows a possible configuration in which the hostname associated with
+        the public URL has been configured to resolve to a firewall controlling external access to
+        the cloud. Within the cloud, HP Helion OpenStack services are configured to use the internal
+        URL to access a separate virtual IP address.</p>
+      <!-- NEED TO UPDATE MEDIA -->
       <p><image href="../media/config/load_balancers.png"/></p>
     </section>
-    <section id="3.8.1.2_NetworkTags"><title>Network Tags</title>
-      <!-- need words here on the tags concept -->
-      <p>Network tags are defined by HP Helion OpenStack service components, and are used in the
-        input model to convey information between the model and the service.</p>
-      <p>Network tags convey information about the physical network configuration to services,
-        allowing the dependent aspects of the service to be automatically configured, for example an
-        option in a service configuration file that contains the IP address of the corresponding
-        network device on a server where that service component is installed.</p>
-      <p>Network tags convey requirements a service may have on aspects of the server network
-        configuration, for example that a bridge is required on the corresponding network device on
-        a server where that service component is installed.</p>
-      <p>See <xref href="#input_model/4.9.1_NetworkTags">Network Tags</xref> for more information on
+
+
+
+
+    <section id="networktags"><title>Network Tags</title>
+      <p>Network tags are defined by some HP Helion OpenStack
+          <uicontrol>service-components</uicontrol> and are used to convey information between the
+        network model and the service, allowing the dependent aspects of the service to be
+        automatically configured. For example, an option in a service configuration file that needs
+        the IP address of the corresponding network device on a server where that service-component
+        is installed.</p>
+      <p>Network tags also convey requirements a service may have for aspects of the server network
+        configuration, for example, that a bridge is required on the corresponding network device on
+        a server where that service-component is installed.</p>
+      <p>See <xref href="#input_model/co_networktags">Network Tags</xref> for more information on
         specific tags and their usage.</p>
     </section>
-    <section id="3.8.2_Networks"><title>Networks</title>
-      <p><i>A Network is part of a Network Group</i></p>
-      <p><i>A Network can be associated with a Server Group</i></p>
-      <p>Networks, by comparison, are fairly simple definitions. Each network defines the CIDR,
-        start and end address, gateway, and VLAN ID.</p>
+
+
+
+
+
+    <section id="networks"><title>Networks</title>
+      <p><i>A <uicontrol>network</uicontrol> is part of a
+        <uicontrol>network-group</uicontrol>.</i></p>
+      <p><uicontrol>Networks</uicontrol> are fairly simple definitions. Each
+          <uicontrol>network</uicontrol> defines the details of its VLAN, optional address details
+        (CIDR, start and end address, gateway address), and which
+          <uicontrol>network-group</uicontrol> it is a member of.</p>
     </section>
-    <section id="3.8.3_InterfaceModel"><title>Interface Model</title>
-      <p><i>A server-role identifies an interface model which describes how its network interfaces
-          are to be configured and used.</i>></p>
-      <p>Networks are mapped onto specific network interfaces via an interface-model, which
-        describes the network devices that need to be created (bonds, ovs-bridges, etc) their
-        properties, and the network-groups that are associated with them.</p>
-      <p>An interface model acts like template; it can define how some or all of the network-groups
-        are to be mapped for a particular combination of physical NICs. However, it is the
-        service-elements on each server that determine which network-groups are required and hence
-        which interfaces and networks will be configured.</p>
-      <p>Interface-models can be shared between different server-roles (say an API role and a
-        database role which may still need different disk models) even though these will require a
-        different subset of the network groups providing the servers have the same number of network
-        interfaces.</p>
-      <p>Within an interface-model, physical ports are identified either by their device name
-        (eth0), or where there are multiple interfaces by a port name that is resolved via a NIC
-        mapping.</p>
-      <p>To allow different physical servers to share an interface-model, the NIC mapping is defined
-        as an optional property of each server.</p>
+
+
+    <section id="interfacemodel"><title>Interface Model</title>
+      <p><i>A <uicontrol>server-role</uicontrol> identifies an
+            <uicontrol>interface-model</uicontrol> that describes how its network interfaces are to
+          be configured and used.</i>></p>
+      <p>Networks are mapped onto specific network interfaces via an
+          <uicontrol>interface-model</uicontrol>, which describes the network devices that need to
+        be created (bonds, ovs-bridges, etc), their properties, and the
+          <uicontrol>network-groups</uicontrol> with which they are associated.</p>
+      <p>An <uicontrol>interface-model</uicontrol> acts like a template; it can define how some or
+        all of the <uicontrol>network-groups</uicontrol> are to be mapped for a particular
+        combination of physical NICs. However, it is the <uicontrol>service-components</uicontrol>
+        on each server that determine which <uicontrol>network-groups</uicontrol> are required and
+        hence which interfaces and <uicontrol>networks</uicontrol> will be configured. This means
+        that <uicontrol>interface-models</uicontrol> can be shared between different
+          <uicontrol>server-roles</uicontrol>. For example, an API role and a database role may
+        share an interface model even though they may have different disk models and they will
+        require a different subset of the <uicontrol>network-groups</uicontrol>.</p>
+      <p>Within an <uicontrol>interface-model</uicontrol>, physical ports are identified by a device
+        name, which in turn is resolved to a physical port via a <uicontrol>nic-mapping</uicontrol>.
+        To allow different physical servers to share an <uicontrol>interface-model</uicontrol>, the
+          <uicontrol>nic-mapping</uicontrol> is defined as a property of each
+          <uicontrol>server</uicontrol>.</p>
     </section>
-    <section id="3.8.4_NICMapping"><title>NIC Mapping</title>
-      <p>Where a server has more than a single NIC, or two NICs that are to be a single bond, then
-        we need a NIC mapping to unambiguously identify each individual NIC. Interface enumeration
-        (eth0, eth1, eth2, ...) is not a reliable mechanism, and so we use PCI bus enumeration
-        instead.</p>
-      <p>This level of abstraction will also allow a network function on SRIOV capable network cards
+
+
+
+    <section id="nicmapping"><title>NIC Mapping</title>
+      <p>When a <uicontrol>server</uicontrol> has more than a single NIC, a
+          <uicontrol>nic-mapping</uicontrol> is required to unambiguously identify each individual
+        NIC. Interface enumeration (eth0, eth1, eth2, ...) is not a reliable mechanism, so we use
+        PCI bus enumeration instead.</p>
+      <p>This level of abstraction will also allow network functions on SRIOV-capable network cards
         to be used for network connections and consumed by services in a future release.</p>
     </section>
-    <section id="4.0_ConfigurationObjects"><title>HP Helion OpenStack 2.0 Configuration
-        Objects</title>
+    <section id="firewallconfiguration"><title>Firewall Configuration</title>
+      <p>The Configuration Processor uses the details it has about which networks and ports
+          <uicontrol>service-components</uicontrol> use to create a set of firewall rules for each
+        server. The model allows additional user-defined rules on a per
+          <uicontrol>network-group</uicontrol> basis.</p>
     </section>
-    <section id="4.1_Cloud"><title>Cloud</title>
-      <p>The top level cloud configuration file defines some global values for the Helion Cloud.</p>
+
+
+    <section id="configurationobjects"><title>HP Helion OpenStack 2.0 Configuration Objects</title>
+    </section>
+    <section id="co_cloud"><title>Cloud</title>
+      <p>The top-level cloud configuration file, <uicontrol>cloudConfig.yml</uicontrol>, defines
+        some global values for the HP Helion OpenStack Cloud, as described in the table below.</p>
       <table frame="all" rowsep="1" colsep="1" id="cloud_config">
         <tgroup cols="2">
           <colspec colname="c1" colnum="1"/>
@@ -688,7 +722,7 @@
           <tbody>
             <row>
               <entry>name</entry>
-              <entry>A user-defined name for the cloud</entry>
+              <entry>An administrator-defined name for the cloud</entry>
             </row>
             <row>
               <entry>hostname-data (optional)</entry>
@@ -701,11 +735,10 @@
             </row>
             <row>
               <entry>ntp-servers (optional)</entry>
-              <entry>A list of external NTP servers your cloud has access to. If specified by name,
-                rather than IP, then the names need to be resolvable via the external DNS
-                nameservers you specify in the next section. All servers running the "ntp-server"
-                component will be configured to use these external NTP servers you specify
-                here.</entry>
+              <entry>A list of external NTP servers your cloud has access to. If specified by name
+                then the names need to be resolvable via the external DNS nameservers you specify in
+                the next section. All servers running the "ntp-server" component will be configured
+                to use these external NTP servers.</entry>
             </row>
             <row>
               <entry>dns-settings (optional)</entry>
@@ -717,119 +750,61 @@
               <entry>SMTP client configuration data that will be applied to all servers. See example
                 configurations for a full list of values.</entry>
             </row>
+            <row>
+              <entry>firewall-settings (optional)</entry>
+              <entry>Used to enable/disable the firewall feature and to enable/disable logging of
+                dropped packets.</entry>
+            </row>
           </tbody>
         </tgroup>
       </table>
-      <p>Here is the sample file included with the install:</p>
-      <codeblock>
----
-  product:
-    version: 2
-
-   cloud:
-    <b>name: helion-entry-scale</b>
-
-    # The following values are used when
-    # building hostnames
-    <b>hostname-data:</b>
-        host-prefix: helion
-        member-prefix: -m
-        
-    # Path to the rest of the input model
-    data-dir: data
-
-    # List of ntp servers for your site
-    <b>ntp-servers:</b>
-    #    - "ntp-server1"
-    #    - "ntp-server2"
-
-    # dns resolving configuration for your site
-    # refer to resolv.conf for details on each option
-    <b>dns-settings:</b>
-    #  nameservers:
-    #    - name-server1
-    #    - name-server2
-    #    - name-server3
-    #
-    #  domain: sub1.example.net
-    #
-    #  search:
-    #    - sub1.example.net
-    #    - sub2.example.net
-    #
-    #  sortlist:
-    #    - 192.168.160.0/255.255.240.0
-    #    - 192.168.0.0
-    #
-    #  # option flags are '&lt;name>:' to enable, remove to unset
-    #  # options with values are '&lt;name>:&lt;value>' to set
-    #
-    #  options:
-    #    debug:
-    #    ndots: 2
-    #    timeout: 30
-    #    attempts: 5
-    #    rotate:
-    #    no-check-names:
-    #    inet6:
-    <b>smtp-settings:</b>
-    #  server: smtp1.hp.com
-    #  port: 25</codeblock>
-      <note>Ensure that you remove the <codeph>#</codeph> tags in front of your nameservers so they
-        are recognized.</note>
     </section>
-    <section id="4.2_ControlPlane"><title>Control Plane</title>
-      <p>The snippet below shows the control plane definition file:</p>
-      <codeblock>
----
+    <section id="co_controlplane"><title>Control Plane</title>
+      <p>The snippet below shows the start of the control plane definition file.</p>
+      <codeblock>---
   product:
-    version: 2
+     version: 2
         
   control-planes:
-    - name: ccp
-      region-name: region1
-      failure-zones:
-        - AZ1
-        - AZ2
-        - AZ3
-      common-service-components:
-        - logging-producer
-        - monasca-agent
-        - freezer-agent
-        - stunnel
-      clusters:
-        - id: "1"
-      name: c1
-      server-role: ROLE-CONTROLLER
-      member-count: 3
-      allocation-policy: strict
-      service-components:
-        - ntp-server
-        - swift-ring-builder
-        - mysql
-        - ip-cluster
-        - apache2
-        - keystone-api
-        - keystone-client
-        - rabbitmq
-        - glance-api
-        ...
+     - name: control-plane-1
+       control-plane-prefix: cp1
+       region-name: region1
+       failure-zones:
+         - AZ1
+         - AZ2
+         - AZ3
+       common-service-components:
+         - logging-producer
+         - monasca-agent
+         - freezer-agent
+         - stunnel
+         - lifecycle-manager-target
+       clusters:
+         - name: cluster1
+           cluster-prefix: c1
+           server-role: CONTROLLER-ROLE
+           member-count: 3
+           allocation-policy: strict
+           service-components:
+             - lifecycle-manager
+             - ntp-server
+             - swift-ring-builder
+             - mysql
+             - ip-cluster
+             ...
         
-  resource-nodes:
-    - name: compute
-      resource-prefix: comp
-      server-role: ROLE-COMPUTE
-      allocation-policy: any
-      min-count: 0
-      service-components:
-        - ntp-client
-        - nova-kvm
-        - nova-compute
-        - neutron-l3-agent
-        - neutron-metadata-agent
-        - neutron-openvswitch-agent
-        - neutron-lbaasv2-agent</codeblock>
-      <p>The key values to enter into this document are described in the table below:</p>
+       resources:
+         - name: compute
+           resource-prefix: comp
+           server-role: COMPUTE-ROLE
+           allocation-policy: any
+           min-count: 0
+           service-components:
+              - ntp-client
+              - nova-compute
+              - nova-compute-kvm
+              - neutron-l3-agent
+              ...</codeblock>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="control_plane">
           <tgroup cols="2">
@@ -844,20 +819,20 @@
             <tbody>
               <row>
                 <entry>name</entry>
-                <entry>This name identifies the control plane and will be used as part of the
-                  hostname prefix. (see <xref href="#input_model/5.1_NameGeneration">Name
-                    Generation</xref>)</entry>
+                <entry>This name identifies the control plane. This value is used to persist server
+                  allocations (see <xref href="#input_model/persisteddata">Persisted Data</xref>)
+                  and cannot be changed once servers have been allocated.</entry>
               </row>
               <row>
-                <entry>region-name (optional)</entry>
+                <entry>control-plane-prefix (optional)</entry>
+                <entry>The control-plane-prefix is used as part of the hostname (see <xref
+                    href="#input_model/5.1_NameGeneration">Name Generation</xref>). If not
+                  specified, the control plane name is used.</entry>
+              </row>
+              <row>
+                <entry>region-name</entry>
                 <entry>This name identifies the Keystone region within which services in the control
                   plane will be registered.</entry>
-              </row>
-              <row>
-                <entry>failure-zones (optional)</entry>
-                <entry>A list of Server Group names that servers for this control plane will be
-                  allocated from. If no failure-zones are specified, only servers not associated
-                  with a Server Group will be used.</entry>
               </row>
               <row>
                 <entry>common-service-components (optional)</entry>
@@ -865,22 +840,29 @@
                   plane (clusters and resource pools)</entry>
               </row>
               <row>
-                <entry>clusters</entry>
-                <entry>A list of clusters for this control plane (see <xref
-                    href="#input_model/clusters" type="table">Clusters</xref>)</entry>
+                <entry>failure-zones (optional)</entry>
+                <entry>A list of <uicontrol>server-group</uicontrol> names that servers for this
+                  control plane will be allocated from. If no failure-zones are specified, only
+                  servers not associated with a <uicontrol>server-group</uicontrol> will be used.
+                  (see <xref href="#input_model/servergroups_failurezones">Server Groups and Failure
+                    Zones</xref> for a description of server-groups as failure zones.)</entry>
               </row>
               <row>
-                <entry>resource-nodes</entry>
-                <entry>A list of resource nodes for this control plane (see <xref
-                    href="#input_model/resource_nodes" type="table">Resource Nodes</xref>)</entry>
+                <entry>clusters</entry>
+                <entry>A list of clusters for this control plane (see <xref
+                    href="#input_model/co_clusters">Clusters</xref>).</entry>
+              </row>
+              <row>
+                <entry>resources</entry>
+                <entry>A list of resource groups for this control plane (see <xref
+                    href="#input_model/co_resources">Resources</xref>).</entry>
               </row>
             </tbody>
           </tgroup>
         </table>
       </p>
-      <p><b>Clusters</b></p>
-      <p>To further breakdown what the options are in the <codeph>clusters</codeph> portion of this
-        file, here are some field descriptions:</p>
+    </section>
+    <section id="co_clusters"><title>Clusters</title>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="clusters">
           <tgroup cols="2">
@@ -894,29 +876,30 @@
             </thead>
             <tbody>
               <row>
-                <entry>id</entry>
-                <entry>Each cluster must have a unique ID.</entry>
-              </row>
-              <row>
                 <entry>name</entry>
-                <entry>The cluster name provided is used in the hostname (see <xref
-                    href="#input_model/5.1_NameGeneration">Name Generation</xref>). Cluster and
-                  resource-node names must be unique within a control plane. This value is used to
-                  persist server allocations (see <xref href="#input_model/5.2_PersistedData"
+                <entry>Cluster and resource names must be unique within a control plane. This value
+                  is used to persist server allocations (see <xref href="#input_model/persisteddata"
                     >Persisted Data</xref>) and cannot be changed once servers have been
                   allocated.</entry>
               </row>
               <row>
+                <entry>cluster-prefix (optional)</entry>
+                <entry>The cluster prefix is used in the hostname (see <xref
+                    href="#input_model/namegeneration">Name Generation</xref>). If not supplied then
+                  the cluster name is used.</entry>
+              </row>
+              <row>
                 <entry>server-role</entry>
-                <entry>Only servers matching the specified role will be allocated to this cluster.
-                  (see <xref href="#input_model/3.4_ServerRoles">Server Roles</xref> for a
-                  description of server roles)</entry>
+                <entry>This can either be a string (for a single role) or a list of roles. Only
+                  servers matching one of the specified <uicontrol>server-roles</uicontrol> will be
+                  allocated to this cluster. (see <xref href="#input_model/serverroles">Server
+                    Roles</xref> for a description of server roles)</entry>
               </row>
               <row>
                 <entry>service-components</entry>
-                <entry>The list of service components (together with common-service-components for
-                  the control plane) to be deployed on the servers allocated for the
-                  cluster.</entry>
+                <entry>The list of <uicontrol>service-components</uicontrol> to be deployed on the
+                  servers allocated for the cluster. (The common-service-components for the control
+                  plane are also deployed.)</entry>
               </row>
               <row>
                 <entry>
@@ -926,48 +909,49 @@
                   <p>(all optional)</p>
                 </entry>
                 <entry>
-                  <p>Defines the number of servers to add to the cluster.</p><p>The number of
-                    servers that can be supported in a cluster depends on the services it is
-                    running. For example MySQL and RabbitMQ can only be deployed on clusters on 1
-                    (non-HA) or 3 (HA) servers. Other services may support different sizes of
-                    cluster.</p>
-                  <p>If min-count is specified that at least that number of servers will be
+                  <p>Defines the number of servers to add to the cluster.</p>
+                  <p>The number of servers that can be supported in a cluster depends on the
+                    services it is running. For example MySQL and RabbitMQ can only be deployed on
+                    clusters on 1 (non-HA) or 3 (HA) servers. Other services may support different
+                    sizes of cluster.</p>
+                  <p>If min-count is specified, then at least that number of servers will be
                     allocated to the cluster. If min-count is not specified it defaults to a value
                     of 1.</p>
-                  <p>If max-count is specified then the cluster will be limited to that number of
+                  <p>If max-count is specified, then the cluster will be limited to that number of
                     servers. If max-count is not specified then all servers matching the required
                     role and failure-zones will be allocated to the cluster.</p>
-                  <p>If member-count is specified then it sets min-count and max-count to the
-                    specified value.</p></entry>
+                  <p>Specifying member-count is equivalent to specifying min-count and max-count
+                    with the same value.</p></entry>
               </row>
               <row>
                 <entry>failure-zones (optional)</entry>
-                <entry>A list of Server Groups that servers will be allocated from. If specified,
-                  this overrides the value specified for the control-plane. If not specified, the
-                  control-plane value is used. (see <xref
-                    href="#input_model/3.7.1_ServerGroupsAndFailureZones">Server Groups and Failure
-                    Zones</xref> for a description of server groups as failure zones)</entry>
+                <entry>A list of <uicontrol>server-groups</uicontrol> that servers will be allocated
+                  from. If specified, it overrides the list of values specified for the
+                  control-plane. If not specified, the control-plane value is used. (see <xref
+                    href="#input_model/servergroups_failurezones">Server Groups and Failure
+                    Zones</xref> for a description of server groups as failure zones).</entry>
               </row>
               <row>
                 <entry>allocation-policy (optional)</entry>
                 <entry>
                   <p>Defines how failure zones will be used when allocating servers.</p>
                   <p><b>strict</b>: Server allocations will be distributed across all specified
-                    failure zones. (if max-count is not an exact factor of the number of zones than
-                    some zones may provide one more server than other zones)</p>
+                    failure zones. (if max-count is not a whole number, an exact multiple of the
+                    number of zones, then some zones may provide one more server than other
+                    zones)</p>
                   <p><b>any</b>: Server allocations will be made from any combination of failure
-                    zones</p>
-                  <p>The default allocation-policy for a cluster is <i>strict</i></p>
-                </entry>
+                    zones.</p>
+                  <p>The default allocation-policy for a cluster is <i>strict</i></p>. </entry>
               </row>
             </tbody>
           </tgroup>
         </table>
       </p>
-      <p>To further breakdown what the options are in the <codeph>resource-nodes</codeph> portion of
-        this file, here are some field descriptions:</p>
+    </section>
+
+    <section id="co_resources"><title>Resources</title>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="resource_nodes">
+        <table frame="all" rowsep="1" colsep="1" id="tb_resources">
           <tgroup cols="2">
             <colspec colname="c1" colnum="1"/>
             <colspec colname="c2" colnum="2"/>
@@ -980,27 +964,29 @@
             <tbody>
               <row>
                 <entry>name</entry>
-                <entry><p>The name of this set of resource-nodes. Cluster names and resource-node
-                    names must mutually be unique within a control plane.</p> This value is used to
-                  persist server allocations (see <xref href="#input_model/5.2_PersistedData"
-                    >Persisted Data</xref>), and cannot be changed once servers have been allocated.
-                </entry>
+                <entry><p>The name of this group of resources. Cluster names and resource-node names
+                    must be unique within a control plane. Additionally, clusters and resources
+                    cannot share names within a control-plane.</p> This value is used to persist
+                  server allocations (see <xref href="#input_model/persisteddata">Persisted
+                    Data</xref>) and cannot be changed once servers have been allocated. </entry>
               </row>
               <row>
                 <entry>resource-prefix</entry>
                 <entry>The resource-prefix is used in the name generation. (see <xref
-                    href="#input_model/5.1_NameGeneration">Name Generation</xref>)</entry>
+                    href="#input_model/namegeneration">Name Generation</xref>)</entry>
               </row>
               <row>
                 <entry>server-role</entry>
-                <entry>Only servers matching the specified role will be allocated to this cluster.
-                  (see <xref href="#input_model/3.4_ServerRoles">Server Roles</xref> for a
-                  description of server roles)</entry>
+                <entry>This can either be a string (for a single role) or a list of roles. Only
+                  servers matching one of the specified <uicontrol>server-roles</uicontrol> will be
+                  allocated to this resource group. (see <xref href="#input_model/serverroles"
+                    >Server Roles</xref> for a description of server roles).</entry>
               </row>
               <row>
                 <entry>service-components</entry>
-                <entry>The list of service components (together with common-service-components for
-                  the control plane) to be deployed on the servers in this resource group.</entry>
+                <entry>The list of <uicontrol>service-components</uicontrol> to be deployed on the
+                  servers in this resource group. (The common-service-components for the control
+                  plane are also deployed.)</entry>
               </row>
               <row>
                 <entry>
@@ -1010,46 +996,81 @@
                   <p>(all optional)</p>
                 </entry>
                 <entry>
-                  <p>Defines the number of servers to add to the resource group.</p>
-                  <p>If min-count is specified that at least that number of servers will be
-                    allocated. If min-count is not specified it defaults to a value of 0.</p>
-                  <p>If max-count is specified then the resource group will be limited to that
-                    number of servers. If max-count is not specified then all servers matching the
-                    required role and failure-zones will be allocated to the resource group.</p>
-                  <p>If member-count is specified then it sets min-count and max-count to the
-                    specified value.</p>
+                  <p>Defines the number of servers to add to the cluster.</p>
+                  <p>The number of servers that can be supported in a cluster depends on the
+                    services it is running. For example MySQL and RabbitMQ can only be deployed on
+                    clusters on 1 (non-HA) or 3 (HA) servers. Other services may support different
+                    sizes of cluster.</p>
+                  <p>If min-count is specified, then at least that number of servers will be
+                    allocated to the cluster. If min-count is not specified it defaults to a value
+                    of 1.</p>
+                  <p>If max-count is specified, then the cluster will be limited to that number of
+                    servers. If max-count is not specified then all servers matching the required
+                    role and failure-zones will be allocated to the cluster.</p>
+                  <p>Specifying member-count is equivalent to specifying min-count and max-count
+                    with the same value.</p>
                 </entry>
               </row>
               <row>
                 <entry>failure-zones (optional)</entry>
-                <entry>A list of Server Groups that servers will be allocated from. If specified,
-                  this overrides the value specified for the control-plane. If not specified, the
-                  control-plane value is used. (see <xref
-                    href="#input_model/3.7.1_ServerGroupsAndFailureZones">Server Groups and Failure
-                    Zones</xref> for a description of server groups as failure zones)</entry>
+                <entry>A list of <uicontrol>server-groups</uicontrol> that servers will be allocated
+                  from. If specified, it overrides the list of values specified for the
+                  control-plane. If not specified, the control-plane value is used. (see <xref
+                    href="#input_model/servergroups_failurezones">Server Groups and Failure
+                    Zones</xref> for a description of server groups as failure zones).</entry>
               </row>
               <row>
                 <entry>allocation-policy (optional)</entry>
                 <entry>
                   <p>Defines how failure zones will be used when allocating servers.</p>
                   <p><b>strict</b>: Server allocations will be distributed across all specified
-                    failure zones. (if max-count is not an exact factor of the number of zones than
-                    some zones may provide one more server than other zones)</p>
+                    failure zones. (if max-count is not a whole number, an exact multiple of the
+                    number of zones, then some zones may provide one more server than other
+                    zones)</p>
                   <p><b>any</b>: Server allocations will be made from any combination of failure
-                    zones</p>
-                  <p>The default allocation-policy for a cluster is <i>any</i></p>
-                </entry>
+                    zones.</p>
+                  <p>The default allocation-policy for a cluster is <i>any</i></p>. </entry>
               </row>
             </tbody>
           </tgroup>
         </table>
       </p>
     </section>
-    <section id="4.3_Servers"><title>Servers</title>
-      <p>The servers configuration object is used to list the available servers for deploying the
-        cloud.</p>
-      <p>It can also be used as an input file to the operating system installation process. In this
-        case some additional fields (identified below) will be necessary.</p>
+
+
+    <section id="co_servers"><title>Servers</title>
+      <p>The <uicontrol>servers</uicontrol> configuration object is used to list the available
+        servers for deploying the cloud.</p>
+      <p>Optionally, it can be used as an input file to the operating system installation process,
+        in which case some additional fields (identified below) will be necessary.</p>
+      <codeblock>---
+  product:
+    version: 2
+        
+  baremetal:
+    subnet: 192.168.10.0
+    netmask: 255.255.255.0
+        
+  servers:
+    - id: controller1
+      ip-addr: 192.168.10.3
+      role: CONTROLLER-ROLE
+      server-group: RACK1
+      nic-mapping: HP-DL360-4PORT
+      mac-addr: b2:72:8d:ac:7c:6f
+      ilo-ip: 192.168.9.3
+      ilo-password: password
+      ilo-user: admin
+      
+    - id: controller2
+      ip-addr: 192.168.10.4
+      role: CONTROLLER-ROLE
+      server-group: RACK2
+      nic-mapping: HP-DL360-4PORT
+      mac-addr: 8a:8e:64:55:43:76
+      ilo-ip: 192.168.9.4
+      ilo-password: password
+      ilo-user: admin</codeblock>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="tb_servers">
           <tgroup cols="2">
@@ -1063,169 +1084,130 @@
             </thead>
             <tbody>
               <row>
-                <entry>Id</entry>
-                <entry>A user defined identifier for the server. Id's must be unique and are used to
-                  track server allocations.</entry>
+                <entry>id</entry>
+                <entry>An administrator-defined identifier for the server. IDs must be unique and
+                  are used to track server allocations. (see <xref href="#input_model/persisteddata"
+                    >Persisted Data</xref>).</entry>
               </row>
               <row>
                 <entry>ip-addr</entry>
                 <entry>
-                  <p>The IP address of the server for installation purposes.</p>
-                  <p>This IP address is used by the config-processor to install and configure the
-                    service components on this server.</p>
-                  <p>When the servers.yml file is being used for operating system installation, this
-                    IP address will be assigned to the node by the installation process.</p>
-                  <p>This IP address (and associated NIC) can be re-used within the cloud
-                    infrastructure. To enable this, the following conditions need to be met: <ol>
-                      <li>The IP address must be a member of one of the network CIDRs defined in the
-                        networks.yml file. (see <xref href="#input_model/3.8.2_Networks"
-                          >Networks</xref>)</li>
-                      <li>That network must be on an untagged VLAN.</li>
-                    </ol></p>
+                  <p>The IP address is used by the Configuration Processor to install and configure
+                    the service components on this server.</p>
+                  <p>This IP address must be within the range of a <uicontrol>network</uicontrol>
+                    defined in this model.</p>
+                  <p>When the servers file is being used for operating system installation, this IP
+                    address will be assigned to the node by the installation process, and the
+                    associated <uicontrol>network</uicontrol> must be an untagged VLAN.</p>
                 </entry>
               </row>
               <row>
-                <entry>Role</entry>
-                <entry>Identifies the role of the server. (see <xref
-                    href="#input_model/3.4_ServerRoles">Server Roles</xref> for a description of
-                  server roles)</entry>
+                <entry>role</entry>
+                <entry>Identifies the <uicontrol>server-role</uicontrol> of the server. (see <xref
+                    href="#input_model/serverroles">Server Roles</xref> for a description of server
+                  roles)</entry>
+              </row>
+              <row>
+                <entry>nic-mapping</entry>
+                <entry>Name of the <uicontrol>nic-mappings</uicontrol> entry to apply to this
+                  server. (see <xref href="#input_model/nicmappings">NIC Mappings</xref>)</entry>
               </row>
               <row>
                 <entry>server-group (optional)</entry>
-                <entry>Identifies the server group that this server belongs to. (see <xref
-                    href="#input_model/3.7_ServerGroups">Server Groups</xref>)</entry>
+                <entry>Identifies the <uicontrol>server-groups</uicontrol> entry that this server
+                  belongs to. (see <xref href="#input_model/servergroups">Server
+                  Groups</xref>)</entry>
               </row>
               <row>
                 <entry>mac-addr (optional)</entry>
-                <entry>This identifies the MAC address on the server that will be used to network
-                  install the operating system.</entry>
+                <entry>Needed when servers file is being used for operating system installation.
+                  This identifies the MAC address on the server that will be used to network install
+                  the operating system.</entry>
+              </row>
+              <row>
+                <entry>kopt-extras (optional)</entry>
+                <entry>Provides additional command line arguments to be passed to the booting
+                  network kernel. For example, <codeph>vga=769</codeph> sets the video mode for the
+                  install to low resolution which can be useful for remote console users.</entry>
               </row>
               <row>
                 <entry>ilo-ip (optional)</entry>
-                <entry>This provides the IP address of the power management (e.g. ipmi-ip, iLO)
+                <entry>Needed when servers file is being used for operating system installation.
+                  This provides the IP address of the power management (e.g. IPMI, iLO)
                   subsystem.</entry>
               </row>
               <row>
                 <entry>ilo-user (optional)</entry>
-                <entry>This provides the username of the power management (e.g. ipmi-ip, iLO)
+                <entry>Needed when servers file is being used for operating system installation.
+                  This provides the user name of the power management (e.g. ipmi-ip, iLO)
                   subsystem.</entry>
               </row>
               <row>
                 <entry>ilo-password (optional)</entry>
-                <entry>This provides the user password of the power management (e.g. ipmi-ip, iLO)
+                <entry>Needed when servers file is being used for operating system installation.
+                  This provides the user password of the power management (e.g. ipmi-ip, iLO)
                   subsystem.</entry>
               </row>
               <row>
-                <entry>nic-mapping (optional)</entry>
-                <entry>Name of the entry from the <codeph>nic-mappings.yml</codeph> file to apply to
-                  this server in the <codeph>servers.yml</codeph> file. (see <xref
-                    href="#input_model/4.8_NICMappings">NIC Mappings</xref>)</entry>
+                <entry>ilo-extras (optional)</entry>
+                <entry>Needed when servers file is being used for operating system installation.
+                  Additional options to pass to ipmitool. For example, this may be required if the
+                  servers require additional IPMI addressing parameters.</entry>
+              </row>
+              <row>
+                <entry>moonshot (optional)</entry>
+                <entry>Provides the node identifier for HP Moonshot servers, e.g.
+                    <codeph>c4n1</codeph> where c4 is the cartridge and n1 is node 1.</entry>
               </row>
             </tbody>
           </tgroup>
         </table>
       </p>
-      <p>Here is a snippet of the <codeph>servers.yml</codeph> file included with the install:</p>
+    </section>
+
+
+    <section id="co_servergroups"><title>Server Groups</title>
+      <p>The server-groups configuration object provides a mechanism for organizing servers and
+        networks into a hierarchy that can be used for allocation and network resolution (see <xref
+          href="#input_model/3.7_ServerGroups">Server Groups</xref>).</p>
       <codeblock>---
   product:
-    version: 2
+     version: 2
         
-  baremetal:
-    # NOTE: These values need to be changed to match your environment.
-    # Define the network range that contains the ip-addr values for
-    # the individual servers listed below.
-    subnet: 192.168.10.0
-    netmask: 255.255.255.0
-    # NOTE: This value needs to be changed to match your environment.
-    # Define the interface on the Cobbler server where Cobbler should
-    # be configured to listen.
-    server-interface: eth2
-    
-  servers:
-    # NOTE: Addresses of servers need to be changed to match your environment.
-    #
-    #       Add additional servers as required
-    #
-     
-    # Controllers
-    - id: controller1
-      ip-addr: 192.168.10.3
-      role: CONTROLLER-ROLE
-      server-group: RACK1
-      nic-mapping: HP-DL360-4PORT
-      mac-addr: b2:72:8d:ac:7c:6f
-      ilo-ip: 192.168.9.3
-      ilo-password: password
-      ilo-user: admin
+     - name: CLOUD
+        server-groups:
+         - AZ1
+         - AZ2
+         - AZ3
+        networks:
+         - EXTERNAL-API-NET
+         - EXTERNAL-VM-NET
+         - GUEST-NET
+         - MANAGEMENT-NET
         
-    - id: controller2
-      ip-addr: 192.168.10.4
-      role: CONTROLLER-ROLE
-      server-group: RACK2
-      nic-mapping: HP-DL360-4PORT
-      mac-addr: 8a:8e:64:55:43:76
-      ilo-ip: 192.168.9.4
-      ilo-password: password
-      ilo-user: admin
+     #
+     # Create a group for each failure zone
+     #
+     - name: AZ1
+       server-groups:
+         - RACK1
         
-    - id: controller3
-      ip-addr: 192.168.10.5
-      role: CONTROLLER-ROLE
-      server-group: RACK3
-      nic-mapping: HP-DL360-4PORT
-      mac-addr: 26:67:3e:49:5a:a7
-      ilo-ip: 192.168.9.5
-      ilo-password: password
-      ilo-user: admin
+     - name: AZ2
+       server-groups:
+         - RACK2
         
-    # Compute Nodes
-    - id: compute1
-      ip-addr: 192.168.10.6
-      role: COMPUTE-ROLE
-      server-group: RACK1
-      nic-mapping: MY-2PORT-SERVER
-      mac-addr: d6:70:c1:36:43:f7
-      ilo-ip: 192.168.9.6
-      ilo-password: password
-      ilo-user: admin
+     - name: AZ3
+       server-groups:
+         - RACK3
         
-    # VSA Storage Nodes
-    - id: vsa1
-      ip-addr: 192.168.10.9
-      server-group: RACK1
-      role: VSA-ROLE
-      nic-mapping: MY-2PORT-SERVER
-      mac-addr: 8b:f6:9e:ca:3b:78
-      ilo-ip: 192.168.9.9
-      ilo-password: password
-      ilo-user: admin
-        
-    - id: vsa2
-      ip-addr: 192.168.10.10
-      server-group: RACK2
-      role: VSA-ROLE
-      nic-mapping: MY-2PORT-SERVER
-      mac-addr: 8b:f6:9e:ca:3b:79
-      ilo-ip: 192.168.9.10
-      ilo-password: password
-      ilo-user: admin
-      
-    - id: vsa3
-      ip-addr: 192.168.10.11
-      role: VSA-ROLE
-      server-group: RACK3
-      nic-mapping: MY-2PORT-SERVER
-      mac-addr: 8b:f6:9e:ca:3b:7a
-      ilo-ip: 192.168.9.11
-      ilo-password: password
-      ilo-user: admin</codeblock>
-    </section>
-    <section id="4.4_ServerGroups"><title>Server Groups</title>
-      <p>Server groups provide a mechanism for organizing servers and networks into a hierarchy that
-        can be used for allocation and network resolution (see <xref
-          href="#input_model/3.7_ServerGroups">Server Groups</xref>)</p>
+     #
+     # Create a group for each rack
+     #
+     - name: RACK1
+     - name: RACK2
+     - name: RACK3</codeblock>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="server_groups">
+        <table frame="all" rowsep="1" colsep="1" id="tb_servergroups">
           <tgroup cols="2">
             <colspec colname="c1" colnum="1"/>
             <colspec colname="c2" colnum="2"/>
@@ -1238,115 +1220,61 @@
             <tbody>
               <row>
                 <entry>name</entry>
-                <entry>A user defined name for the server group. The name is used to link
-                  server-groups together, and to identify server-groups to be used as failure zones
-                  in a Control Plane. (see <xref href="#input_model/4.2_ControlPlane">Control
-                    Plane</xref>)</entry>
+                <entry>An administrator-defined name for the server group. The name is used to link
+                  server-groups together and to identify server-groups to be used as failure zones
+                  in a <uicontrol>control-plane</uicontrol>. (see <xref
+                    href="#input_model/controlplane">Control Plane</xref>)</entry>
               </row>
               <row>
                 <entry>server-groups (optional)</entry>
-                <entry>A list of server group names that are nested below this group in the
+                <entry>A list of server-group names that are nested below this group in the
                   hierarchy. Each server group can only be listed in one other server group (i.e. in
                   a strict tree topology).</entry>
               </row>
               <row>
                 <entry>networks (optional)</entry>
-                <entry>A list of network names (see <xref href="#input_model/4.10_Networks"
-                    >Networks</xref>) that will be matched up to the servers via the server groups.
-                  (see <xref href="#input_model/3.7.2_ServerGroupsAndNetworks">Server Groups and
-                    Networks</xref>)</entry>
+                <entry>A list of network names (see <xref href="#input_model/networks"
+                    >Networks</xref>). See <xref href="#input_model/servergroups_networks">Server
+                    Groups and Networks</xref> for a description of how networks are matched to
+                  servers via server groups.</entry>
               </row>
             </tbody>
           </tgroup>
         </table>
       </p>
-      <p>Here is the sample file included with the install:</p>
-      <codeblock>
----
-  product:
-    version: 2
-        
-  server-groups:
-   
-  #
-  # Server Groups provide a mechanism for organizing servers
-  # into a hierarchy that reflected the physical topology.
-  #
-  # When allocating a server the configuration processor
-  # will search down the hierarchy from the list of server
-  # groups identified as the failure-zones for the control
-  # plane until it finds an available server of the requested
-  # role.   If the allocation policy is "strict" servers are
-  # allocated from different failure-zones.
-  #
-  # When determining which network from a network group to
-  # associate with a server the configuration processor will
-  # search up the hierarchy from the server group containing the
-  # server until it finds a network in the required network
-  # group.
-  #
-  
-  #
-  # In this example there is only one network in each network
-  # group and so we put all networks in the top level server
-  # group.   Below this we create server groups for three
-  # failure zones, within which servers are grouped by racks.
-  #
-  # Note: the association of servers to server groups is part
-  # of the server definition (servers.yml)
-  #
-  
-  #
-  # At the top of the tree we have a
-  # group for the global networks
-  #
-  - name: GROUP_GLOBAL_NET
-    server-groups:
-      - AZ1
-      - AZ2
-      - AZ3
-        networks:
-        - NET_EXTERNAL_API
-        - NET_EXTERNAL_VM
-        - NET_GUEST
-        - NET_MGMT
-        
-  #
-  # Create a group for each failure zone
-  #
-  - name: AZ1
-    server-groups:
-      - RACK1
-        
-  - name: AZ2
-    server-groups:
-      - RACK2
-        
-  - name: AZ3
-    server-groups:
-      - RACK3
-   
-  #
-  # Create a group for each rack
-  #
-  - name: RACK1
-  
-  - name: RACK2
-  
-  - name: RACK3</codeblock>
     </section>
-    <section id="4.5_ServerRoles"><title>Server Roles</title>
-      <p>Server roles lists different server roles that you use in your cloud. Each server role is
-        linked to two other configuration objects:</p>
+
+
+
+    <section id="co_serverroles"><title>Server Roles</title>
+      <p>The server-roles configuration object is a list of the various server roles that you can
+        use in your cloud. Each server role is linked to two other configuration objects:</p>
       <p>
         <ul>
-          <li>Disk model (see <xref href="#input_model/4.6_DiskModels">Disk Models</xref>)</li>
-          <li>Interface model (see <xref href="#input_model/4.7_InterfaceModels">Interface
-              Models</xref>)</li>
+          <li>Disk model (see <xref href="#input_model/diskmodels">Disk Models</xref>)</li>
+          <li>Interface model (see <xref href="#input_model/interfacemodels">Interface
+            Models</xref>)</li>
         </ul>
       </p>
-      <p>Server roles are referenced in the servers (see <xref href="#input_model/4.3_Servers"
+      <p>Server roles are referenced in the servers (see <xref href="#input_model/co_servers"
           >Servers</xref>) configuration object above.</p>
+      <codeblock>---
+  product:
+     version: 2
+        
+  server-roles:
+        
+     - name: CONTROLLER-ROLE
+       interface-model: CONTROLLER-INTERFACES
+       disk-model: CONTROLLER-DISKS
+        
+     - name: COMPUTE-ROLE
+       interface-model: COMPUTE-INTERFACES
+       disk-model: COMPUTE-DISKS
+        
+     - name: VSA-ROLE
+       interface-model: VSA-INTERFACES
+       disk-model: VSA-DISKS</codeblock>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="server_roles">
           <tgroup cols="2">
@@ -1361,54 +1289,203 @@
             <tbody>
               <row>
                 <entry>name</entry>
-                <entry>A user defined name for the role.</entry>
+                <entry>An administrator-defined name for the role.</entry>
               </row>
               <row>
                 <entry>interface-model</entry>
-                <entry>A cross reference to the interface model to be used for this server
-                    role.<p>Different server roles can use the same interface model.</p></entry>
+                <entry>The name of the <uicontrol>interface-model</uicontrol> to be used for this
+                  server-role. <p>Different server-roles can use the same
+                  interface-model.</p></entry>
               </row>
               <row>
                 <entry>disk-model</entry>
-                <entry>A cross reference to the disk model to use for this server role.<p>Different
-                    server roles can use the same disk model.</p></entry>
+                <entry>The name of the <uicontrol>disk-model</uicontrol> to use for this
+                  server-role. <p>Different server-roles can use the same disk-model.</p></entry>
               </row>
             </tbody>
           </tgroup>
         </table>
       </p>
-      <p>Here is the sample file included with the install:</p>
-      <codeblock>
----
-  product:
-     version: 2
-        
-  server-roles:
-    
-  - name: ROLE-CONTROLLER
-    interface-model: INTERFACE_SET_CONTROLLER
-    disk-model: DISK_SET_CONTROLLER
-    
-  - name: ROLE-COMPUTE
-    interface-model: INTERFACE_SET_COMPUTE
-    disk-model: DISK_SET_COMPUTE
-  
-  - name: ROLE-VSA
-    interface-model: INTERFACE_SET_VSA
-    disk-model: DISK_SET_VSA</codeblock>
     </section>
-    <section id="4.6_DiskModels"><title>Disk Models</title>
-      <p>The disk model is used to specify how the directly attached disks on the server should be
-        configured. It can also identify which service or service component consumes the disk, e.g.
-        Swift object server, and provide service specific information associated with the disk.</p>
+    <section id="co_diskmodels"><title>Disk Models</title>
+      <p>The disk-models configuration object is used to specify how the directly attached disks on
+        the server should be configured. It can also identify which service or service component
+        consumes the disk, e.g. Swift object server, and provide service-specific information
+        associated with the disk.</p>
       <p>Disks can be used as raw devices or as logical volumes and the disk model provides a
         configuration item for each.</p>
-      <p>If the operating system has been installed by the installation process then the root disk
-        will already have been set up as a Volume Group with a single logical volume. This logical
-        volume will have been created on a partition identified, symbolically, in the configuration
-        files as /dev/sda_root. This is due to the fact that different BIOS systems (UEFI, Legacy)
-        will result in different partition numbers on the root disk.</p>
-      <p><b>Device Groups</b></p>
+      <p>If the operating system has been installed by the HP Helion OpenStack installation process
+        then the root disk will already have been set up as a volume-group with a single
+        logical-volume. This logical-volume will have been created on a partition identified,
+        symbolically, in the configuration files as <codeph>/dev/sda_root</codeph>. This is due to
+        the fact that different BIOS systems (UEFI, Legacy) will result in different partition
+        numbers on the root disk.</p>
+      <codeblock>---
+  product:
+     version: 2
+          
+  disk-models:
+  - name: VSA-DISKS
+          
+    volume-groups:
+       - ...
+    device-groups:
+       - ...</codeblock>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="disk_models">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>The name of the disk-model that is referenced from one or more
+                  server-roles.</entry>
+              </row>
+              <row>
+                <entry>volume-groups</entry>
+                <entry>A list of volume-groups to be configured (see below). There must be at least
+                  one volume-group describing the root file system.</entry>
+              </row>
+              <row>
+                <entry>device-groups (optional)</entry>
+                <entry>A list of device-groups (see below)</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+    <section id="co_volumegroups"><title>Volume Groups</title>
+      <p>The <uicontrol>volume-groups</uicontrol> configuration object is used to define volume
+        groups and their constituent logical volumes.</p>
+      <p>Note that volume-groups are not exact analogs of device-groups. A volume-group specifies a
+        set of physical volumes used to make up a volume-group that is then subdivided into multiple
+        logical volumes.</p>
+      <p>The HP Helion OpenStack operating system installation automatically creates a volume-group
+        name "hlm-vg" on the first drive in the system. It creates a "root" logical volume there.
+        The volume-group can be expanded by adding more physical-volumes (see examples). In
+        addition, it is possible to create more logical-volumes on this volume-group to provide
+        dedicated capacity for different services or file system mounts.</p>
+      <codeblock>
+   volume-groups:
+     - name: hlm-vg
+       physical-volumes:
+         - /dev/sda_root
+        
+       logical-volumes: 
+         - name: root
+           size: 35%
+           fstype: ext4
+           mount: /
+        
+         - name: log
+           size: 50%
+           mount: /var/log
+           fstype: ext4
+           mkfs-opts: -O large_file
+        
+         - ...
+         
+     - name: vg-comp
+       physical-volumes:
+         - /dev/sdb
+       logical-volumes:
+         - name: compute
+           size: 95%
+           mount: /var/lib/nova
+           fstype: ext4
+           mkfs-opts: -O large_file</codeblock>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="volume_groups">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Descriptions</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>The name that will be assigned to the volume-group</entry>
+              </row>
+              <row>
+                <entry>physical-volumes</entry>
+                <entry><p>A list of physical disks that make up the volume group.</p> As installed
+                  by the HP Helion OpenStack operating system install process, the volume group
+                  "hlm-vg" will use a large partition (sda_root) on the first disk. This can be
+                  expanded by adding additional disk(s).</entry>
+              </row>
+              <row>
+                <entry>logical-volumes</entry>
+                <entry>A list of logical volume devices to create from the above named volume
+                  group.</entry>
+              </row>
+              <row>
+                <entry>name</entry>
+                <entry>The name to assign to the logical volume.</entry>
+              </row>
+              <row>
+                <entry>size</entry>
+                <entry>The size, expressed as a percentage of the entire volume group capacity, to
+                  assign to the logical volum.e</entry>
+              </row>
+              <row>
+                <entry>fstype (optional)</entry>
+                <entry>The file system type to create on the logical volume. If non specified the
+                  volume is not formatted.</entry>
+              </row>
+              <row>
+                <entry>mkfs-opts (optional)</entry>
+                <entry>Options, e.g. <codeph>-O large_file</codeph> to pass to the mkfs
+                  command.</entry>
+              </row>
+              <row>
+                <entry>mount (optional)</entry>
+                <entry>Mount point for the file system.</entry>
+              </row>
+              <row>
+                <entry>consumer attributes (optional, consumer dependent)</entry>
+                <entry>
+                  <p>These will vary according to the service consuming the device group. The
+                    examples section provides sample content for the different services.</p>
+                  <p>Note, not all services support the use of logical volumes. VSA requires raw
+                    devices.</p></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+
+
+
+    <section id="co_devicegroups"><title>Device Groups</title>
+      <p>The device-groups configuration object provides the mechanism to make the whole of a
+        physical disk available to a service.</p>
+      <codeblock>
+   device-groups:
+       - name: vsa-data
+         consumer:
+           name: vsa
+           usage: data
+         devices:
+           - name: /dev/sdc
+       - name: vsa-cache
+         consumer:
+           name: vsa
+           usage: adaptive-optimization
+         devices:
+           - name: /dev/sdb</codeblock>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="device_groups">
           <tgroup cols="2">
@@ -1423,7 +1500,7 @@
             <tbody>
               <row>
                 <entry>name</entry>
-                <entry>A user defined name for the device group</entry>
+                <entry>An administrator-defined name for the device group.</entry>
               </row>
               <row>
                 <entry>devices</entry>
@@ -1445,247 +1522,44 @@
           </tgroup>
         </table>
       </p>
-      <p><b>Volume Groups</b></p>
-      <p>The <codeph>volume-groups</codeph> configuration object is used to define volume groups and
-        their constituent logical volumes.</p>
-      <p>Note that the volume groups are not exact analogs of device groups. A volume group
-        specifies a set of physical volumes used to make up a volume group that is then subdivided
-        into multiple logical volumes.</p>
-      <p>The installation process automatically creates a volume group name “hlm-vg” on the first
-        drive in the system. It creates a “root” logical volume on this. The volume group can be
-        expanded by adding more physical volumes (see examples). In addition, it is possible to
-        create more logical volumes on this volume group to provide dedicated capacity for different
-        services or file system mounts.</p>
-      <p>Additional volume groups can also be created using the <codeph>volume-groups</codeph> model
-        specification.</p>
-      <p>Here is a description of the fields in the <codeph>volume-groups</codeph> portion of the
-        disk model files:</p>
-      <p>
-        <table frame="all" rowsep="1" colsep="1" id="volume_groups">
-          <tgroup cols="2">
-            <colspec colname="c1" colnum="1"/>
-            <colspec colname="c2" colnum="2"/>
-            <thead>
-              <row>
-                <entry>Key</entry>
-                <entry>Value Descriptions</entry>
-              </row>
-            </thead>
-            <tbody>
-              <row>
-                <entry>name</entry>
-                <entry>The name that will be assigned to the volume group</entry>
-              </row>
-              <row>
-                <entry>physical-volumes</entry>
-                <entry><p>A list of physical disks that make up the volume group.</p> As installed
-                  by the HP Helion OpenStack operating system install process the volume group
-                  “hlm-vg” will use a large partition (sda_root) on the first disk. This can be
-                  expanded by adding additional disk(s)</entry>
-              </row>
-              <row>
-                <entry>logical-volumes</entry>
-                <entry>A list of logical volume devices to be create from the above named volume
-                  group</entry>
-              </row>
-              <row>
-                <entry>name</entry>
-                <entry>The name to assign to the logical volume</entry>
-              </row>
-              <row>
-                <entry>size</entry>
-                <entry>The size, expressed as a percentage of the entire volume group capacity, to
-                  assign to the logical volume</entry>
-              </row>
-              <row>
-                <entry>fstype (optional)</entry>
-                <entry>The file system type to create on the logical volume. If non specified the
-                  volume is not formatted</entry>
-              </row>
-              <row>
-                <entry>mkfs-opts (optional)</entry>
-                <entry>Options, e.g. “-O large_file” to pass to the mkfs command</entry>
-              </row>
-              <row>
-                <entry>mount (optional)</entry>
-                <entry>Mount point for the file system</entry>
-              </row>
-              <row>
-                <entry>consumer attributes (optional, consumer dependent)</entry>
-                <entry>
-                  <p>These will vary according to the service consuming the device group. The
-                    examples section provides sample content for the different services.</p>
-                  <p>Note, not all services support the use of logical volumes. VSA requires raw
-                    devices.</p></entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </p>
-      <p>Here is the sample file for <codeph>disks_compute.yml</codeph> included with the
-        install:</p>
-      <codeblock>
----
-  product:
-    version: 2
-        
-  disk-models:
-  - name: DISK_SET_COMPUTE
-    # Disk model to be used for compute nodes
-    # /dev/sda_root is used as a volume group for /, /var/log and /var/crash
-    # sda_root is a templated value to align with whatever partition is really used
-    # This value is checked in os config and replaced by the partition actually used
-    # on sda e.g. sda1 or sda5
-    # /dev/sdb is used as a volume group for /var/lib (for VM storage)
-    # Additional discs can be added to either volume group
-    volume-groups:
-    # The policy is not to consume 100% of the space of each volume group.
-    # 5% should be left free for snapshots and to allow for some flexibility.
-        - name: hlm-vg
-          physical-volumes:
-            - /dev/sda_root
-          logical-volumes:
-            - name: root
-              size: 35%
-              fstype: ext4
-              mount: /
-            - name: log
-              size: 50%
-              mount: /var/log
-              fstype: ext4
-              mkfs-opts: -O large_file
-            - name: crash
-              size: 10%
-              mount: /var/crash
-              fstype: ext4
-              mkfs-opts: -O large_file
-        
-        - name: vg-comp
-          # this VG is dedicated to Nova Compute to keep VM IOPS off the operating system disk
-          physical-volumes:
-            - /dev/sdb
-          logical-volumes:
-            - name: compute
-              size: 95%
-              mount: /var/lib/nova
-              fstype: ext4
-              mkfs-opts: -O large_file</codeblock>
-      <p>Here is the sample file for <codeph>disks_controller.yml</codeph> included with the
-        install:</p>
-      <codeblock>
----
-  product:
-    version: 2
-        
-   disk-models:
-   - name: DISK_SET_CONTROLLER
-     # /dev/sda_root is used as a Volume Group for /, /var/log, and /var/crash
-     # sda_root is a templated value to align with whatever partition is really used
-     # This value is checked in os config and replaced by the partition actually used
-     # on sda e.g. sda1 or sda5
-     volume-groups:
-     # The policy is not to consume 100% of the space of each volume group.
-     # 5% should be left free for snapshots and to allow for some flexibility.
-        - name: hlm-vg
-          physical-volumes:
-            - /dev/sda_root
-          logical-volumes:
-            - name: root
-              size: 30%
-              fstype: ext4
-              mount: /
-            - name: log
-              size: 40%
-              mount: /var/log
-              fstype: ext4
-              mkfs-opts: -O large_file
-            - name: crash
-              size: 10%
-              mount: /var/crash
-              fstype: ext4
-              mkfs-opts: -O large_file
-            - name: elasticsearch
-              size: 10%
-              mount: /var/lib/elasticsearch
-              fstype: ext4
-            - name: zookeeper
-              size: 5%
-              mount: /var/lib/zookeeper
-              fstype: ext4
-              consumer:
-              name: os
-        
-      # Additional disk group defined for Swift
-      # Additional disks can be added if availiable
-      device-groups:
-        - name: swiftobj
-          devices:
-            - name: /dev/sdb
-            - name: /dev/sdc
-          consumer:
-            name: swift
-            attrs:
-              rings:
-                - account
-                - container
-                - object-0</codeblock>
-      <p>Here is the sample file for <codeph>disks_vsa.yml</codeph> included with the install:</p>
-      <codeblock>
----
-  product:
-    version: 2
-
-  disk-models:
-  - name: DISK_SET_VSA
-    # Disk model to be used for VSA nodes
-    # /dev/sda_root is used as a Volume Group for /, /var/log, and /var/crash
-    # sda_root is a templated value to align with whatever partition is really used
-    # This value is checked in os config and replaced by the partition actually used
-    # on sda e.g. sda1 or sda5
-    volume-groups:
-    # The policy is not to consume 100% of the space of each volume group.
-    # 5% should be left free for snapshots and to allow for some flexibility.
-      - name: hlm-vg
-        physical-volumes:
-          - /dev/sda_root
-        logical-volumes:
-          - name: root
-            size: 30%
-            fstype: ext4
-            mount: /
-          - name: log
-            size: 45%
-            mount: /var/log
-            fstype: ext4
-            mkfs-opts: -O large_file
-          - name: crash
-            size: 20%
-            mount: /var/crash
-            fstype: ext4
-            mkfs-opts: -O large_file
-         consumer:
-           name: os
-        
-     # Disks to be used by VSA
-     # Additional disks can be added if availiable
-     device_groups:
-       - name: vsa-data
-         consumer:
-           name: vsa
-           usage: data
-         devices:
-           - name: /dev/sdc
-           - name: vsa-cache
-         consumer:
-           name: vsa
-           usage: adaptive-optimization
-         devices:
-           - name: /dev/sdb</codeblock>
     </section>
-    <section id="4.7_InterfaceModels"><title>Interface Models</title>
-      <p>An interface model has the following attributes:</p>
+
+    <section id="co_interfacemodels"><title>Interface Models</title>
+      <p>The interface-models configuration object describes how network interfaces are bonded and
+        the mapping of network groups onto interfaces. Interface devices are identified by name and
+        mapped to a particular physical port by the <uicontrol>nic-mapping</uicontrol> (see <xref
+          href="#input_model/nicmapping">NIC Mapping</xref>).</p>
+      <codeblock>---
+  product:
+     version: 2
+        
+  interface-models:
+     - name: INTERFACE_SET_CONTROLLER
+       network-interfaces:
+          - name: BONDED_INTERFACE
+            device:
+              name: bond0
+            bond-data:
+              provider: linux
+              devices:
+                - name: hed3
+                - name: hed4
+              options:
+                mode: active-backup
+                miimon: 200
+                primary: hed3
+            network-groups:
+               - EXTERNAL_API
+               - EXTERNAL_VM
+               - GUEST
+        
+          - name: UNBONDED_INTERFACE
+            device:
+               name: hed0
+            network-groups:
+               - MGMT</codeblock>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="interface_model">
+        <table frame="all" rowsep="1" colsep="1" id="tb_interface_model">
           <tgroup cols="2">
             <colspec colname="c1" colnum="1"/>
             <colspec colname="c2" colnum="2"/>
@@ -1698,17 +1572,17 @@
             <tbody>
               <row>
                 <entry>name</entry>
-                <entry>A user defined name for the interface model</entry>
+                <entry>An administrator-defined name for the interface model.</entry>
               </row>
               <row>
                 <entry>network-interfaces</entry>
-                <entry>A list of network interface definitions</entry>
+                <entry>A list of network interface definitions.</entry>
               </row>
             </tbody>
           </tgroup>
         </table>
       </p>
-      <p>A network interface in an interface model has the following attributes:</p>
+      <p>The network-interfaces configuration object has the following attributes:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="network_interface">
           <tgroup cols="2">
@@ -1723,34 +1597,55 @@
             <tbody>
               <row>
                 <entry>name</entry>
-                <entry>A user defined name for the interface</entry>
+                <entry>An administrator-defined name for the interface</entry>
               </row>
               <row>
                 <entry>device</entry>
                 <entry>
                   <p>A dictionary containing the network device name as seen on the associated
-                    server. If a NIC mapping is defined for the server, the name may be the
-                    logical-name specified by the mapping (see <xref href="#input_model/4.3_Servers"
-                      >Servers</xref>). When configuring a bond, this is used as the bond device
-                    name.</p></entry>
+                    server.</p>
+                  <p>When configuring a bond, this is used as the bond device name and the names of
+                    the devices to be bonded are specified in the bond-data section.</p>
+                  <p>If the interface is not bonded this must be the name of the device specified by
+                    the <uicontrol>nic-mapping</uicontrol> (see <xref href="#input_model/nicmapping"
+                      >NIC Mapping</xref>).</p>
+                </entry>
               </row>
               <row>
                 <entry>bond-data (optional)</entry>
-                <entry>Used to define a bond. See <xref href="#input_model/bond_data" type="table"
+                <entry>Used to define a bond. See <xref href="#input_model/bonddata" type="table"
                     >Bond Data</xref> for details.</entry>
               </row>
               <row>
-                <entry>network-groups</entry>
-                <entry>A list of one or more network groups (see <xref
-                    href="#input_model/4.9_NetworkGroups">Network Groups</xref>) containing networks
-                  (see <xref href="#input_model/4.10_Networks">Networks</xref>) that will operate on
-                  this interface.</entry>
+                <entry>network-groups (optional if forced-network-groups is defined)</entry>
+                <entry>A list of one or more <uicontrol>network-groups</uicontrol> (see <xref
+                    href="#input_model/co_networkgroups">Network Groups</xref>) containing
+                    <uicontrol>networks</uicontrol> (see <xref href="#input_model/co_networks"
+                    >Networks</xref>) that can be accessed via this interface. Networks in these
+                  groups will only be configured if there is at least one
+                    <uicontrol>service-component</uicontrol> on the server which matches the list of
+                  component-endpoints defined in the <uicontrol>network-group</uicontrol>.</entry>
+              </row>
+              <row>
+                <entry>forced-network-groups (optional if network-groups is defined)</entry>
+                <entry>A list of one or more <uicontrol>network-groups</uicontrol> (see <xref
+                    href="#input_model/co_networkgroups">Network Groups</xref>) containing
+                    <uicontrol>networks</uicontrol> (see <xref href="#input_model/co_networks"
+                    >Networks</xref>) that can be accessed via this interface. Networks in these
+                  groups are always configured on the server.</entry>
               </row>
             </tbody>
           </tgroup>
         </table>
       </p>
-      <p id="4.7.1_BondData"><b>Bond Data</b></p>
+    </section>
+
+<!-- WHERE I LEFT OFF -->
+
+
+
+
+    <section id="bonddata"><title>Bond Data</title>
       <p>A <codeph>bond-data</codeph> definition is used to configure a bond device, and consists of
         the following attributes:</p>
       <p>
