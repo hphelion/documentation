@@ -451,6 +451,17 @@ The cloud &lt;cloudname> was generated successfully.
             successfully complete, there will be 3 controller nodes in the non-KVM region.</p></li>
       </ol>
     </section>
+    <section>
+      <title>Deploy the Icinga Patch</title>
+      <p>After launching the <codeph>hdeploy</codeph> command, deploy three patches to support the
+        monitoring of HP Helion OpenStack. </p>
+      <p>For more information, see <xref href="CGH-2-install-icinga-patch.dita#topic10581">Deploy
+          the Icinga Patch</xref>.</p>
+    </section>
+    <section>
+      <title>Deploy the Infoblox patch</title>
+      <p>Deploy the Infoblox patch.</p>
+    </section>
     <section id="patch-after">
       <title>Configure LDAP to enable CLI and use Keystone v3</title>
       <p>By default, the HP Helion OpenStack Carrier Grade services are configured to use Keystone
