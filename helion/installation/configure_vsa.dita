@@ -69,7 +69,7 @@ will not be shown, you would have to be root to see it all.)
 tcp        0      0 0.0.0.0:6003            0.0.0.0:*               LISTEN      1413/Xvnc4
 tcp6       0      0 :::5903                 :::*                    LISTEN      1413/Xvnc4</codeblock></li>
         <li>You should then be able to connect to your controller node via any remote desktop or VNC
-          client using the IP address, port, and password to access the CMC GUI diplay.</li>
+          client using the IP address, port, and password to access the CMC GUI display.</li>
       </ol>
       <!--
       <p><b> Install (any) X Display Tool to Launch Centralized Management Console (CMC)</b></p>
@@ -109,7 +109,7 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
           <li>Add NTP server information and click <b>Next</b> to display the Domain Name System
             Configuration page.</li>
           <li>Skip the DNS and SMTP sections. To do so, <ul id="ul_g42_ngz_qt">
-              <li>Cllick <b>Next</b> and . A pop box displays and click <b>Accept
+              <li>Click <b>Next</b> and . A pop box displays and click <b>Accept
                 Incomplete</b>.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></li>
             </ul></li>
           <?oxy_custom_end?>
@@ -118,7 +118,7 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
             click <b>Next</b>.</li>
           <li>In the <b>Cluster Name</b> box, enter the name of the cluster and click <b>Next</b>.
             For example: <codeph>hlm003-vsa-cluster</codeph>.</li>
-          <li>In the Assign Virtaula IP's and Subnet Masks page is displayed.</li>
+          <li>In the Assign Virtual IP's and Subnet Masks page is displayed.</li>
           <li>Click Add. Add VIPs and Subnet Masks pop-up box displays, enter the virtual IP and
             Subnet Mask of the cluster in the respective boxes and click <b>OK</b>.
               <!--The details are displayed in a tabular format in the page. --><note>The VIP IP can
@@ -255,7 +255,8 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
                     - name: /dev/sde
                     - name: /dev/sdf</codeblock></p>
       <p>It is recommended to use SSD disk for AO. The minimum VSA deployment with AO is 2 (apart
-        from OS disk) and 1 for VSA without AO. However, the maximum supported disk is 7.</p>
+        from OS disk) and 1 for VSA without AO. However, the maximum supported disks ((with or
+        without AO) is 7.</p>
       <!--, VSA will have 1-6 disks as data disks and 1 disk as VSA with AO configuration. -->
       <!--<p>VSA deployment can done with AO or without AO. AO stands for adoptive optmization which allows in-built storage tiring for VSA. 
         From the deployment perspective, deployment of VSA with or without AO is not having much difference excepy in disk input model.For example: 
