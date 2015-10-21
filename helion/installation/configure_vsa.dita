@@ -242,7 +242,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
                 usage: <b>adaptive-optimization</b>
               devices:
                 - name: /dev/sdb</codeblock></p>
-      <p>VSA without AO consist of data disks as mentioned in the following example:
+      <p>VSA without AO consist of  only data disks as mentioned in the following example:
         <codeblock>Additional disks can be added if available
               device_groups:
                 - name: vsa-data
