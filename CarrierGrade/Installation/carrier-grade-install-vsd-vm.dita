@@ -20,9 +20,12 @@
                 machine for the required HP DCN Virtualized Services Directory (<i>VSD</i>):</p><ol
                 id="ol_gtd_b1l_2t">
                 <li>Log into the HLM host.</li>
-                <li>Copy the VSD qcow image, named <codeph>VSD-3.2.4_134-hp.ova</codeph> and
+                <li>Copy the VSD qcow image, named <codeph>VSD-3.2.4_134-hp.qcow2</codeph> and
                         <codeph>vsd.xml</codeph>, to the <codeph>var/lib/libvirt/images</codeph>
-                    directory.</li>
+                            directory.<p><b>Note:</b> The vsd.xml is a sample created for internal
+                        HP Helion Carrier Grade development quality assurance. For a production
+                        environment, refer to the HP DCN documentation to deploy and configure the
+                        VSD in HA mode.</p></li>
                 <li>Execute the following
                     commands:<codeblock> virsh define vsd.xml
  virsh autostart vsd
