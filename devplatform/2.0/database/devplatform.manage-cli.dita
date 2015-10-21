@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_database_manage_cli">
-  <title>Managing a Database from the Command Line</title>
+  <title>Managing a database from the Command Line</title>
   <body>
     <p>This topic describes database management tasks that can be performed on the command line.</p>
     <ul>
@@ -14,15 +14,16 @@
     <section id="config">
       <title>Configuration Groups</title>
       <p>Configuration groups are key-value collections of settings that are applied to databases when they are initialized.</p>
+      <p><b>Valid configuration settings</b></p>
+      <p>Configuration settings that can be applied to each database are listed here:</p>
+      <ul>
+        <li>MySQL</li>
+        <li>Redis</li>
+        <li>MongoDB</li>
+      </ul>
       <p><b>Creating a configuration group</b></p>
       <p>The following command creates a configuration group:</p>
       
-    <sl>
-      <sli>2.0: This is the 2.0 item</sli>
-      <sli outputclass="listindent">2.1: This is the 2.1 item</sli>
-      
-      
-    </sl>
     </section>
     <section id="databases">
       <title>Databases</title>
