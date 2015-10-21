@@ -411,7 +411,7 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
       <note>When using the Launch Instance action in the Volumes table, the Launch Instance Wizard
         form doesn't get pre-populated with the Volumes option selected, nor does it select the
         given Volume.</note>
-      <p><b>Restarting Deployer/lifecycle management node leaves Apache2 down</b> If you restart
+      <b>Restarting Deployer/lifecycle management node leaves Apache2 down</b> <p>If you restart
         your Deployer/lifecycle management node, note that Apache2 will not restart on its own. You
         will need to restart it manually.</p>
       <b>Heat autoscaling not supported </b>
@@ -420,8 +420,9 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
       <b>A Horizon create a 'bootable volume' fails UI task</b>
       <p>When you navigate to 'volumes' and choose to create a 'bootable volume,' if you do not
         navigate elsewhere, the attempt to launch an instance from that volume will fail. That is,
-        nothing will happen.</p> To work around this issue, after choosing to create a 'bootable
-      volume,' refresh the page in the browser and then proceed. <b>Moonshot remote console goes
+        nothing will happen.</p><p> To work around this issue, after choosing to create a 'bootable
+      volume,' refresh the page in the browser and then proceed. </p>
+      <b>Moonshot remote console goes
         blank after operating system install</b>
       <p>If you are using Moonshot compute nodes you may find that their remote console is blank or
         garbled after the OS install. If affected, you need to make the following change to
