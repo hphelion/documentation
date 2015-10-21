@@ -10,13 +10,15 @@
   </metadata>
  </prolog>
  <conbody>
-  <simpletable id="simpletable_zlb_lpz_st">
+  <simpletable>
    <strow>
     <stentry>1. <xref conref="CFR_step_2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
               <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3.
               <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4.
-                <b><keyword keyref="quickStartHPcloudStep4" id="quickStartHPcloudStep4"/></b></p>5.
-            <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></stentry>
+                <b><keyword keyref="quickStartHPcloudStep4" id="quickStartHPcloudStep4"
+            /></b></p><p>5. <xref
+              conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6. <xref
+            conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
     <stentry><b>Deploying a Docker Image</b><ol id="ol_p2k_vx1_tt">
             <li>Decompress the <keyword keyref="prodShort"/>
               <filepath>.tar.gz</filepath> file into a convenient directory.</li>
@@ -31,10 +33,11 @@
                 command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><p>Terraform
                 creates the necessary security groups and VM instances, installs Docker, and the
                 installs the Docker images required to run the NATS messaging system.</p></li>
-          </ol>After the Docker image is deployed as an instance on <keyword keyref="pubCloudShort"
-          />, the URL of your your <keyword keyref="prodShort"/> core will be formatted using the
-          xip.io wildcard DNS, for example, <codeph>api.15.125.91.46.xip.io</codeph>. You can find
-          out the URL of  in one of the following ways: <ul id="ul_xzx_1nb_tt">
+          </ol><b>Exploring the <keyword keyref="prodShort"/> Core</b>
+          <p>After the Docker image is deployed as an instance on <keyword keyref="pubCloudShort"/>,
+            you can find out the core URL in of the following ways:</p><note type="tip">The URL will
+            be formatted using the xip.io wildcard DNS, for example,
+              <codeph>api.15.125.91.46.xip.io</codeph></note><ul id="ul_xzx_1nb_tt">
             <li>Run the <filepath>terraform show</filepath> command to see the xip.io address.</li>
             <li>On the <keyword keyref="pubCloudShort"/> web interface, click <menucascade>
                 <uicontrol>Project</uicontrol>
@@ -43,13 +46,19 @@
               </menucascade>, note the external IP address (listed under the internal IP address),
               and format it as follows: <codeph>api.<varname>&lt;external IP
                 address></varname>.xip.io</codeph></li>
-          </ul><p>
-            <note type="tip">You can also view the container host security group by clicking <menucascade>
-                <uicontrol>Project</uicontrol>
-                <uicontrol>Computer</uicontrol>
-                <uicontrol>Access and Security</uicontrol>
-              </menucascade>.</note>
-          </p><xref href="CFR_step_5.dita#concept_cw2_thz_st">
+          </ul><p>You can view the container host security group by clicking <menucascade>
+              <uicontrol>Project</uicontrol>
+              <uicontrol>Computer</uicontrol>
+              <uicontrol>Access and Security</uicontrol>
+            </menucascade>.</p><draft-comment author="michaelk"><b>Logging into the <keyword
+                keyref="prodShort"/> Core</b><ol id="ol_ymq_rsh_tt">
+              <li>Navigate to the core URL in your browser.<note type="note">When you first connect
+                  to the core URL, your browser may warn you that the console is attempting to use a
+                  self-signed certificate, or that the site is not trusted. You can safely ignore
+                  these warnings or add the certificate to your certificate store.</note></li>
+              <li>Log into the console using the email and password you specified when you created
+                the cluster.</li>
+            </ol></draft-comment><xref href="CFR_step_5.dita#concept_cw2_thz_st">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
           </xref></stentry>
    </strow>

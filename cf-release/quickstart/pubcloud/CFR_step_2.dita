@@ -11,14 +11,21 @@
   </metadata>
  </prolog>
  <conbody>
-  <simpletable id="simpletable_zlb_lpz_st">
+  <simpletable>
    <strow>
-    <stentry>1. <xref href="CFR_step_1.dita#concept_s2k_b35_st" id="quickStartHPcloudStep1_"><keyword
-       keyref="quickStartHPcloudStep1"/></xref><p>2. <b><keyword keyref="quickStartHPcloudStep2"
-        id="quickStartHPcloudStep2"/></b></p><p>3. <xref
-       conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4. <xref
-       conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p>5. <xref
-      conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></stentry>
+    <stentry>1. <xref href="CFR_step_1.dita#concept_s2k_b35_st" id="quickStartHPcloudStep1_"
+                                                  ><keyword keyref="quickStartHPcloudStep1"
+                                                /></xref><p>2. <b><keyword
+                                                  keyref="quickStartHPcloudStep2"
+                                                  id="quickStartHPcloudStep2"/></b></p><p>3. <xref
+                                                  conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"
+                                                /></p><p>4. <xref
+                                                  conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"
+                                                /></p><p>5. <xref
+                                                  conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"
+                                                /></p>6. <xref
+                                                conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"
+                                        /></stentry>
     <stentry><b>Downloading <keyword keyref="prodShort"/></b><p>You can use <keyword
                             keyref="prodShort"/> to push Docker images and application code to the
                         server, start and stop applications, link <keyword keyref="opnStckShort"/>

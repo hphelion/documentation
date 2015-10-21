@@ -128,4 +128,11 @@
          </keywords>
       </topicmeta>
    </keydef>
+   <keydef keys="quickStartHPcloudStep6">
+      <topicmeta>
+         <keywords>
+            <keyword>Terminating Instances and Security Groups</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
 </map>

@@ -9,18 +9,21 @@
   </metadata>
  </prolog>
  <conbody>
-  <simpletable id="simpletable_zlb_lpz_st">
+  <simpletable>
    <strow>
     <stentry>1. <xref conref="CFR_step_2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
        <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3. <xref
        conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4. <xref
-       conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p>5. <b><keyword
-       keyref="quickStartHPcloudStep5" id="quickStartHPcloudStep5"/></b></stentry>
+       conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5. <b><keyword
+        keyref="quickStartHPcloudStep5" id="quickStartHPcloudStep5"/></b></p>6. <xref
+      conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
     <stentry>Congratulations! You are now ready to begin deploying apps to your new sandbox
      environment. We have provided some sample applications in multiple programming languages for
      you to examine and deploy. These very simple applications provide insight on how to push
-     applications and connect those applications to <keyword keyref="opnStckLong"/>
-     services.</stentry>
+     applications and connect those applications to <keyword keyref="opnStckLong"/> services.<xref
+      href="CFR_step_6.dita#concept_m3k_bth_tt">
+      <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
+     </xref></stentry>
    </strow>
   </simpletable>
  </conbody>
