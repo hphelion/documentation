@@ -421,6 +421,17 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
       <p>When you navigate to 'volumes' and choose to create a 'bootable volume,' if you do not
         navigate elsewhere, the attempt to launch an instance from that volume will fail. That is,
         nothing will happen.</p> To work around this issue, after choosing to create a 'bootable
-      volume,' refresh the page in the browser and then proceed. </section>
+      volume,' refresh the page in the browser and then proceed. <b>Moonshot remote console goes
+        blank after operating system install</b>
+      <p>If you are using Moonshot compute nodes you may find that their remote console is blank or
+        garbled after the OS install. If affected, you need to make the following change to
+        /etc/default/grub on each affected node, run update-grub and reboot:</p>
+      <ol>
+        <li>Find the line starting with GRUB_CMDLINE_LINUX= </li>
+        <li>Add the following at the end of the value i.e. inside the double quotes:
+          <codeblock>vga=788 console=ttyS0,9600 earlyprint=serial,ttyS0,9600</codeblock>
+        </li>
+      </ol>
+    </section>
   </body>
 </topic>
