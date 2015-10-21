@@ -78,10 +78,11 @@ nova boot --flavor 1 --image &lt;id&gt; --nic net-id=$NETA vm1</codeblock></li>
           <li>Start the virtual machine in the privateB subnet.
             <codeblock>NETB=$(neutron net-list | awk '/privateB/ {print $2}')
 nova boot --flavor 1 --image &lt;id&gt; --nic net-id=$NETB vm2</codeblock></li>
-         <li>Create two floating IP's and associate each one to the respective server to gain vm access.
-          <codeblock>vmip1= $(nova list | awk '/vm1/ {print $12}' | awk -F '=' '{print $2}' | awk -F ',' '{print $1}')    
+         <li>Create two floating IP's and associate each one to the respective server to gain vm
+            access.
+            <codeblock>vmip1=$(nova list | awk '/vm1/ {print $12}' | awk -F '=' '{print $2}' | awk -F ',' '{print $1}')    
 vm1portid=$(neutron port-list | grep $vmip1 | awk '{print $2}')
-vmip2= $(nova list | awk '/vm2/ {print $12}' | awk -F '=' '{print $2}' | awk -F ',' '{print $1}')
+vmip2=$(nova list | awk '/vm2/ {print $12}' | awk -F '=' '{print $2}' | awk -F ',' '{print $1}')
 vm2portid=$(neutron port-list | grep $vmip2 | awk '{print $2}')
 neutron floatingip-create ext-net –-port-id $vm1portid
 neutron floatingip-create ext-net –-port-id $vm2portid</codeblock></li>
@@ -138,19 +139,20 @@ neutron vpn-ipsecpolicy-create ipsecpolicy</codeblock></li>
         <p>In the case of non-admin users and non-DVR, you can verify the VPN
           connection by pinging the virtual machines.</p>
         <ol>
-          <li>Check the VPN connections. 
-            <note>fipvm1 and fipvm2 denotes floating IP's for vm1 and vm2 respectively.  The floating
-              IP's are obtained from step 5 under <xref href="vpnaas.dita#HP2.0VPNaaS/StartVirtualMachines">Start Virtual Machines</xref> section.</note>
-              <codeblock>ssh cirros@fipvm1
+          <li>Check the VPN connections. <note>fipvm1 and fipvm2 denotes floating IP's for vm1 and
+              vm2 respectively. The floating IP's are obtained from step 5 under <xref
+                href="vpnaas.dita#HP2.0VPNaaS/StartVirtualMachines">Start Virtual Machines</xref>
+              section.</note>
+            <codeblock>ssh cirros@fipvm1
 password: &lt;password&gt;
             
-# ping the floating IP address of vm2
+# ping the private IP address of vm2
 ping ###.###.###.###</codeblock></li>
           <li>In another terminal.
             <codeblock>ssh cirros@fipvm2
 password: &lt;password&gt;
               
-# ping the floating IP address of vm1
+# ping the private IP address of vm1
 ping ###.###.###.###</codeblock></li>
           <li>You should see ping responses from both virtual machines.</li>
         </ol>
@@ -172,7 +174,7 @@ sudo ip netns qrouter-&lt;router2 namespace&gt; ping &lt;router1 ip&gt;</codeblo
             <codeblock>ssh cirros@fipvm1
 password: &lt;password&gt;
               
-# ping the floating IP address of vm2
+# ping the private IP address of vm2
 ping ###.###.###.###</codeblock></li>
           <li>Repeat for other namespace and right tap interface.
             <codeblock>sudo ip netns exec qrouter-xxxxxxxx tcpdump -i qg-xxxxxx</codeblock></li>
@@ -180,7 +182,7 @@ ping ###.###.###.###</codeblock></li>
             <codeblock>ssh cirros@fipvm2
 password: &lt;password&gt;
               
-# ping the floating IP address of vm1
+# ping the private IP address of vm1
 ping ###.###.###.###</codeblock></li>
           <li>You will find encrypted packets containing ‘ESP’ in the tcpdump trace.</li>
         </ol>

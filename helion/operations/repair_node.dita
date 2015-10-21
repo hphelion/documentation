@@ -2,9 +2,9 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_gcv_r4y_lt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Repairing a Compute Node</title>
-  <body><!--Needs Edit-->
+  <body>
     <section>
-      <p>There are a number of routine operations you must perform in the ingoing running and
+      <p>There are a number of routine operations you must perform in the ongoing running and
         maintenance of your cloud, including the repair of a node when, for example, you need to
         replace part of the server, such as a disk. </p> Typical scenarios in which you will need to
       repair a node include: <ul>
@@ -14,19 +14,19 @@
         <li>The node is fully operational but monitoring indicates a potential issue (such as disk
           errors) that require down time to fix. </li>
       </ul>
-      <p> In the first case all you can do is try and power it up then use hlm-start. </p> If a disk
-      has failed you will need to do bm-reimage and hlm-deploy. <p>In the second case you can't stop
+      <p> In the first case all you can do is try and power it up and then use <codeph>hlm-start</codeph>. </p> If a disk
+      has failed you will need to <codeph>bm-reimage</codeph> and <codeph>hlm-deploy</codeph>. <p>In the second case you can't stop
         or migrate the instances so all you can do is schedule a maintenance window and reboot the
-        node. </p> In the third case you have a choice: stop the instances, repair the node, restart
-      the node and instances or live migrate the instances off the node before actioning the
-      repairs. However, the live migration approach is really the primary course of action. The
+        node. </p> In the third case you have a choice: <ul><li>Stop the instances, repair the node, restart
+      the node and instances or </li><li>Live migrate the instances off the node before actioning the
+      repairs.</li></ul> However, the live migration approach is really the primary course of action. The
       stop/start instances approach is an alternative where appropriate.  <p>To repair a node, you
         will have to take it offline, repair it, and restart it. To do so, follow these steps.</p>
       If the node is being taken offline for maintenance, you will need to disable provisioning to
       prevent new instances from being created on this node. <ol>
         <li>Disable provisioning:
           <codeblock>nova service-disable --reason "&lt;describe reason>" &lt;node name> nova-compute</codeblock>If
-          the node has existing instances runing on it and the nature of the maintenance will impact
+          the node has existing instances running on it and the nature of the maintenance will impact
           these instances, the recommended approach is to stop these instances prior to the
           maintenance activity or migrate them to other compute nodes if possible: </li>
         <li>Stop nova:<codeblock>nova stop &lt;instance uuid></codeblock></li>
@@ -46,7 +46,7 @@
           the actions performed to repair it. If it was simply rebooted to introduce new software,
           etc. then running the <b>hlm-start.yml</b> playbook will suffice. If needed, use
             <b>bm-power-up.yml </b>playbook to restart the node. Specify just the node(s) you want
-          to start in the 'nodelist' parameter aguments, i.e.
+          to start in the 'nodelist' parameter arguments, i.e.
           nodelist=&lt;node1>[,&lt;node2>][,&lt;node3>]
           <codeblock>cd ~/helion/hos/ansible
 ~/helion/hos/ansible$ ansible-playbook -i hosts/localhost bm-power-up.yml -e nodelist=cpn-0004</codeblock>
@@ -58,7 +58,7 @@
 ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit hlm004-ccp-comp0004-mgmt</codeblock>
         </li>
         <li>If the node has undergone repairs that impact disk contents, then running the
-            <b>re-image.yml</b> and <b>hlm-deploy.yml </b>playbooks will be required.
+            <b>bm-reimage.yml</b> and <b>hlm-deploy.yml </b>playbooks will be required.
           Run:<codeblock>cd ~/helion/hos/ansible
 ~/helion/hos/ansible$ ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=cpn-0004</codeblock>
         </li>
