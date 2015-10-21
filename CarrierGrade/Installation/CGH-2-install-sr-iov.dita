@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Post-Alpha Release Build 22:
+        Configuring SR-IOV</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+        <p><i>Return to the Installing the <xref
+                    href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+                    Deployment</xref>.</i></p>
+      <section>
+        <p><b>Configure WR Compute Nodes</b></p>
+            <ol id="ol_qnf_5sg_tt">
+                <li>Log into the KVM region controller-0 node with root privileges.</li>
+                <li>Identify the compute node with Niantic NIC and configure the node. In this
+                    example, <codeph>eth8</codeph> of <codeph>mem17-compute0</codeph> is used as
+                    SR-IOV
+                    NIC.<codeblock>system host-list
+system host-lock mem17-compute0
+system host-if-modify -nt pci-sriov -N 16 -p physnet1 mem17-compute0 eth8
+system host-unlock mem17-compute0</codeblock></li>
+            </ol>
+      </section>
+            <p>Validate Steps</p>
+            <ol id="ol_snf_5sg_tt">
+                <li>Once the compute node comes back online, login to the compute node and validate
+                    if VFs are visible:<codeblock>ip link | grep VF</codeblock></li>
+                <li>Create neutron network, a direct port and launch VM using the port. For example,
+                    here VLAN 810
+            <codeblock>neutron net-create hrushi-sriov-net-810 --provider:network_type vlan --provider:segmentation_id 810  --provider:physical_network physnet1
+neutron subnet-create --name sriov-subnet-810 hrushi-sriov-net-810 31.31.31.0/24 --disable-dhcp --no-gateway  --allocation-pool start=31.31.31.100,end=31.31.31.200
+neutron port-create 125e6f3c-e1aa-49c8-a20a-0ede67d9b6fe --vnic-type direct
+nova boot hrushi-sriov-fixed --image wrl --flavor 2 --nic port-id=abd5b42a-e8f5-4297-91ba-707c01195cc7 </codeblock></li></ol>
+      <p>After successfully launching a VM, ensure that the VF is tagged with VLAN ID
+            810<codeblock>ip link | grep vf</codeblock>For
+            example,<codeblock>vf 15 MAC aa:bb:cc:dd:ee:ff, vlan 810, spoof checking on</codeblock></p>
+    
+      <p>Also see the <xref
+                href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/CGH-2-KVM-Admin.pdf"
+                format="pdf" scope="external">HPE Helion OpenStack® 2.0 Carrier Grade: Administrator
+                Guide</xref>.</p>
+    
+    <related-links>
+        <link href="https://wiki.openstack.org/wiki/SR-IOV-Passthrough-For-Networking" format="html"
+            scope="external"/>
+    </related-links>
+  </body>
+</topic>
