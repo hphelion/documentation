@@ -30,7 +30,7 @@
         <li>Find the desired Project in the list and then click <b>View Details</b>.</li>
         <li>Scroll down to <b>Notification Targets </b>and then click <b>New Target</b>. </li>
         <li>Define the Notification Target:<image
-            href="../../../media/cicd_edit_notification.png" id="image_k1l_hhs_lt" placement="break"/><ol>
+            href="../../../media/engine_edit_notification.png" id="image_k1l_hhs_lt" placement="break"/><ol>
             <li conref="engine_create_project.dita#createProject/defineNotifications"/>
             <li>Click <b>Save</b>.</li>
           </ol></li>

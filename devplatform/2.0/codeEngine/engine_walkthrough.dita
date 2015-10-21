@@ -12,8 +12,7 @@
     
     <p>You will need: <ul>
                 <li>An application to deploy.</li>
-                <li>An instance of the Helion Code Engine application <xref
-                        href="engine_installation.dita#topic_lcx_vtc_dt">installed</xref>.</li>
+                <li>An instance of the Helion Code Engine application installed.</li>
                 <li>The access credentials for a valid target environment.</li>
                                             </ul></p>
      <section><title>Overview</title>
