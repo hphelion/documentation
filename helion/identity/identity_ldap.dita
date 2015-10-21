@@ -89,7 +89,12 @@ keystone_domainldap_conf:
         user_enabled_default: 512
         use_tls: True
         # if you are configuring multiple LDAP domains, and LDAP server certificates are issued
-        # by different authorities, make sure that CA file names are unique for each domain.
+        # by different authorities, make sure that you place certs for all the LDAP backend domains in the 
+        # cacert parameter as seen in this sample yml file so that all the certs are combined in a single CA file 
+        # and every LDAP domain configuration points to the combined CA file.
+        # Note: There is a known issue on one cert per CA file per domain when the system processes 
+        # concurrent requests to multiple LDAP domains. Using the single CA file with all certs combined 
+        # shall get the system working properly.
         tls_cacertfile: /etc/keystone/ssl/certs/domainname_ldapca.pem </codeblock>
     </li>
        <li>As suggested at Using Git for Configuration Management, commit the new file into local git repository,
