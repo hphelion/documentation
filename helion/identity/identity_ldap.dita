@@ -10,18 +10,16 @@
      Integration with an external LDAP server is supported via the Keystone domain-specific configuration.
      <ol>
     <li>Ensure that domain_specific_drivers_enabled option is set to True in main configuration file template (/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2).
-    </li> <li> Create YAML file which contains definition of LDAP server connection. 
-     The sample file below is already provided as part of local git repository. 
-     It is available on a deployer node as /home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_sample.yml. 
-     Save a copy of this file, as, for example, /home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_my.yml. 
-    
-      <note>	
-        Please refer to [ldap] section of Keystone KIlo documentation for full option list and description:
-        http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html .</note>
-    
-    Here is the sample YAML configuration, optimized for Microsoft AD server:
-    
-    <codeblock>---
+    </li> <li> Create YAML file which contains definition of LDAP server connection. The sample file below is
+          already provided as part of local git repository. It is available on a deployer node as
+          /home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_sample.yml. Save a
+          copy of this file, as, for example,
+          /home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_my.yml. <note> Please
+            refer to [ldap] section of Keystone KIlo documentation for full option list and
+            description:
+            http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html
+            .</note> Here is the sample YAML configuration, optimized for Microsoft AD server:
+          <codeblock>---
  
 keystone_domainldap_conf:
  
@@ -88,7 +86,7 @@ keystone_domainldap_conf:
         user_enabled_mask: 2
         user_enabled_default: 512
         use_tls: True
-        # if you are configuring multiple LDAP domains, and LDAP server certificates are issued
+        # If you are configuring multiple LDAP domains, and LDAP server certificates are issued
         # by different authorities, make sure that you place certs for all the LDAP backend domains in the 
         # cacert parameter as seen in this sample yml file so that all the certs are combined in a single CA file 
         # and every LDAP domain configuration points to the combined CA file.
@@ -96,7 +94,7 @@ keystone_domainldap_conf:
         # concurrent requests to multiple LDAP domains. Using the single CA file with all certs combined 
         # shall get the system working properly.
         tls_cacertfile: /etc/keystone/ssl/certs/domainname_ldapca.pem </codeblock>
-    </li>
+        </li>
        <li>As suggested at Using Git for Configuration Management, commit the new file into local git repository,
          and rerun configuration processor / deployment area preparation playbooks :
     
