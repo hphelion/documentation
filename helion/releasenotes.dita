@@ -2,7 +2,8 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="release_notes">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Release Notes</title>
-  <body><!--Needs Edit-->
+  <body>
+    <!--Needs Edit-->
     <p>This document provides an overview of the features contained within HP Helion <tm
         tmtype="reg">OpenStack</tm> 2.0 Beta 2, including known issues and workarounds for this
       release:</p>
@@ -98,8 +99,8 @@
         more information.</p>
       <p><b>Encryption of sensitive data</b></p>
       <p>In this release, connection details and passwords are encrypted and or protected. See <xref
-          href="security/encrypted_storage.dita">Encryption of Passwords and
-          Sensitive Data </xref>for more information.</p>
+          href="security/encrypted_storage.dita">Encryption of Passwords and Sensitive Data
+        </xref>for more information.</p>
       <p><b>AppArmor enabled</b></p>
       <p>...</p>
       <p><b>Dedicated Deployer Node No Longer Required</b></p>
@@ -139,8 +140,8 @@
         <li>All deployment operations should be run from
             <codeph>~/scratch/ansible/next/hos/ansible</codeph>.</li>
       </ul>The Configuration Processor uses the config files stored in the repo to apply
-      configuration settings. An explanation can be found <xref
-        href="installation/using_git.dita">in this topic</xref>. <p><b>New UEFI support</b></p>
+      configuration settings. An explanation can be found <xref href="installation/using_git.dita"
+        >in this topic</xref>. <p><b>New UEFI support</b></p>
       <p>Beta 2 introduces support for UEFI (which replaces the BIOS on newer servers), while
         continuing to support Legacy BIOS. Select the required mode on each node through its BIOS
         settings before beginning the install process. The installer will detect and use the mode
@@ -268,9 +269,6 @@
     <!--<section><title>OpenStack Services inlcuded in HP Helion OpenStack</title><p>The following table list a high level overview of  the OpenStack projects/services which are included in HP Helion OpenStack and their status. Only official upstream OpenStack projects are included, not non-OpenStack add-ons that originate elsewhere. <note>If the service is not listed in the table then it is not present in HP Helion OpenStack.</note></p><p><simpletable frame="all" relcolwidth="1.0* 1.0*" id="simpletable_q2l_d1c_lt"><strow><stentry>Service Name</stentry><stentry>Status in HOS 2.0</stentry></strow><strow><stentry>Barbican</stentry><stentry>Not Included</stentry></strow><strow><stentry>Ceilometer</stentry><stentry>GA</stentry></strow><strow><stentry>Cinder</stentry><stentry>GA</stentry></strow><strow><stentry>Designate</stentry><stentry>In-Cloud Service (Installed Separately)</stentry></strow><strow><stentry>Glance</stentry><stentry>GA</stentry></strow><strow><stentry>Heat</stentry><stentry>GA</stentry></strow><strow><stentry>Horizon</stentry><stentry>GA</stentry></strow><strow><stentry>Ironic</stentry><stentry>Not Included</stentry></strow><strow><stentry>Keystone</stentry><stentry>GA</stentry></strow><strow><stentry>Magnum</stentry><stentry>Not Included</stentry></strow><strow><stentry>Manila</stentry><stentry>Not Included</stentry></strow><strow><stentry>Monasca</stentry><stentry>GA</stentry></strow><strow><stentry>Neutron</stentry><stentry>GA</stentry></strow><strow><stentry>Neutron-FWaaS</stentry><stentry>non-core</stentry></strow><strow><stentry>Neutron-LBaaS v1</stentry><stentry>Not recommended</stentry></strow><strow><stentry>Neutron-LBaaS v2</stentry><stentry>non-core</stentry></strow><strow><stentry>Neutron-Octavia</stentry><stentry>non-core (TBC)</stentry></strow><strow><stentry>Neutron-VPNaaS</stentry><stentry>non-core</stentry></strow><strow><stentry>Nova</stentry><stentry>GA</stentry></strow><strow><stentry>Swift</stentry><stentry>GA</stentry></strow><strow><stentry>Tempest</stentry><stentry>GA</stentry></strow></simpletable></p></section>-->
     <section id="KnownIssues">
       <title>Limitations in this Release</title>
-      <p><b>HP Helion Development Platform</b></p>
-      <p>Helion Development Platform is not supported on Beta 2.</p><b>Heat autoscaling not
-        supported</b>
       <p> In HP Helion OpenStack 2.0, the auto-scaling in Heat is not supported because the alarm
         creation in Ceilometer is disabled</p>
       <p><b>Installing Swift</b></p>
@@ -414,8 +412,8 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
       <note>When using the Launch Instance action in the Volumes table, the Launch Instance Wizard
         form doesn't get pre-populated with the Volumes option selected, nor does it select the
         given Volume.</note>
-      <b>Restarting Deployer/lifecycle management node leaves Apache2 down</b>
-      If you restart your Deployer/lifecycle management node, note that Apache2 will not restart on its own. You will need to restart it manually.
-    </section>
+      <b>Restarting Deployer/lifecycle management node leaves Apache2 down</b> If you restart your
+      Deployer/lifecycle management node, note that Apache2 will not restart on its own. You will
+      need to restart it manually. </section>
   </body>
 </topic>
