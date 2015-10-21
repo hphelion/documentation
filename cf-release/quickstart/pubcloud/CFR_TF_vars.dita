@@ -2,8 +2,8 @@
 <!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
 <reference id="reference_phl_shc_rt">
   <title>Terraform Variables</title>
-  <shortdesc>You can configure the following values in your <filepath>.tfvars</filepath>
-    file.</shortdesc>
+  <shortdesc>You can configure the following values in your <filepath>.tfvars</filepath> file using
+    the included <filepath>overrides.tfvars.sample</filepath> file as a guide.</shortdesc>
   <prolog>
     <metadata>
       <othermeta name="author" content="Michael Khmelnitsky"/>

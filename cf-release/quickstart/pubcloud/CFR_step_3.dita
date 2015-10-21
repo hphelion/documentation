@@ -208,14 +208,15 @@
         provisioned to use US East instead of US West. If <uicontrol>Launch Instance</uicontrol> is
         disabled in the <uicontrol>Instances</uicontrol> pane, try the other region.</note></li>
       <li>To download the configuration file, click <menucascade>
-        <uicontrol>Project</uicontrol>
-        <uicontrol>Compute</uicontrol>
-        <uicontrol>Access and Security</uicontrol>
-        <uicontrol>API Access</uicontrol>
-        <uicontrol>Download OpenStack RC File</uicontrol>
-       </menucascade>.<note type="tip">A configuration <filepath>.rc</filepath> file contains
-        information about a hosted service, including region, tenant, and other information required
-        to create a cluster. This file is pre-configured for your sandbox environment.</note></li>
+                <uicontrol>Project</uicontrol>
+                <uicontrol>Compute</uicontrol>
+                <uicontrol>Access and Security</uicontrol>
+                <uicontrol>API Access</uicontrol>
+                <uicontrol>Download OpenStack RC File</uicontrol>
+              </menucascade>.<note type="tip">A configuration <filepath>.rc</filepath> file contains
+                information about a hosted service, including region, tenant, and other information
+                required to create a cluster. This file is pre-configured for your sandbox
+                environment.</note></li>
       <li>Create a key pair.<ol id="ol_hlp_1v1_tt">
         <li>Click <menucascade>
           <uicontrol>Project</uicontrol>

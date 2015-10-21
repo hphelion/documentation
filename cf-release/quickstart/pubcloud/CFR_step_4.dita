@@ -147,38 +147,40 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
               conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6. <xref
             conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
     <stentry><b>Deploying a Docker Image</b><ol id="ol_p2k_vx1_tt">
-            <li>Decompress the <keyword keyref="prodShort"/>
-              <filepath>.tar.gz</filepath> file into a convenient directory.</li>
+            <li>Decompress the <keyword keyref="prodShort"/> file into a convenient directory.</li>
             <li>Navigate to the <keyword keyref="prodShort"/> directory and ensure that it contains
               a <filepath>.tfvars</filepath> file. Your <filepath>.tfvars</filepath> file should
               contain the credentials and keys for your cluster.</li>
-            <li>Add the necessary information to the <filepath>.tfvars</filepath> file.<note
-                type="tip">For more information, see <xref
-                  href="CFR_TF_vars.dita#reference_phl_shc_rt">Terraform
-              Variables</xref>.</note></li>
+            <li>Configure the necessary values in your <filepath>.tfvars</filepath> file, using the
+              included <filepath>overrides.tfvars.sample</filepath> file as a guide.<note type="tip"
+                >For more information, see <xref href="CFR_TF_vars.dita#reference_phl_shc_rt"
+                  >Terraform Variables</xref>.</note></li>
             <li>Run the following
                 command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><p>Terraform
-                creates the necessary security groups and VM instances, installs Docker, and the
-                installs the Docker images required to run the NATS messaging system.</p></li>
-          </ol><b>Exploring the <keyword keyref="prodShort"/> Core</b>
-          <p>After the Docker image is deployed as an instance on <keyword keyref="pubCloudShort"/>,
-            you can find out the core URL in of the following ways:</p><note type="tip">The URL will
-            be formatted using the xip.io wildcard DNS, for example,
-              <codeph>api.15.125.91.46.xip.io</codeph></note><ul id="ul_xzx_1nb_tt">
-            <li>Run the <filepath>terraform show</filepath> command to see the xip.io address.</li>
-            <li>On the <keyword keyref="pubCloudShort"/> web interface, click <menucascade>
-                <uicontrol>Project</uicontrol>
-                <uicontrol>Compute</uicontrol>
-                <uicontrol>Instances</uicontrol>
-              </menucascade>, note the external IP address (listed under the internal IP address),
-              and format it as follows: <codeph>api.<varname>&lt;external IP
-                address></varname>.xip.io</codeph></li>
-          </ul><p>You can view the container host security group by clicking <menucascade>
-              <uicontrol>Project</uicontrol>
-              <uicontrol>Computer</uicontrol>
-              <uicontrol>Access and Security</uicontrol>
-            </menucascade>.</p><draft-comment author="michaelk"><b>Logging into the <keyword
-                keyref="prodShort"/> Core</b><ol id="ol_ymq_rsh_tt">
+                creates the necessary security groups and VM instances, installs Docker, and
+                installs the Docker images required to run <keyword keyref="prodShort"/>.</p><note
+                type="tip">At the end of the process, Terraform displays the URL of the <keyword
+                  keyref="pubCloudShort"/> core, formatted using the xip.io wildcard DNS, for
+                example:<codeblock>API endpoint:   http://api.15.125.91.46.xip.io</codeblock>You
+                will need this URL to use the Cloud Foundry CLI. You can also run the
+                  <filepath>terraform show</filepath> command to see detailed information about the
+                core.</note><b>Exploring the <keyword keyref="prodShort"/> Core</b><p>After the
+                Docker image is deployed as an instance on <keyword keyref="pubCloudShort"/>, you
+                can view the instance and its security groups on <keyword keyref="pubCloudShort"
+                />:</p><ul id="ul_rqs_v43_tt">
+                <li>To view the instance, click <menucascade>
+                    <uicontrol>Project</uicontrol>
+                    <uicontrol>Compute</uicontrol>
+                    <uicontrol>Instances</uicontrol>
+                  </menucascade>.</li>
+                <li>To view the security group, clicking <menucascade>
+                    <uicontrol>Project</uicontrol>
+                    <uicontrol>Computer</uicontrol>
+                    <uicontrol>Access and Security</uicontrol>
+                  </menucascade>.</li>
+              </ul></li>
+          </ol><draft-comment author="michaelk"><b>Logging into the <keyword keyref="prodShort"/>
+              Core</b><ol id="ol_ymq_rsh_tt">
               <li>Navigate to the core URL in your browser.<note type="note">When you first connect
                   to the core URL, your browser may warn you that the console is attempting to use a
                   self-signed certificate, or that the site is not trusted. You can safely ignore

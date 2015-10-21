@@ -323,7 +323,7 @@
    <keydef keys="quickStartHPcloudStep5">
       <topicmeta>
          <keywords>
-            <keyword>Exploring a Sample Application</keyword>
+            <keyword>Pushing Sample Applications</keyword>
          </keywords>
       </topicmeta>
    </keydef>
@@ -333,7 +333,7 @@
    <keydef keys="quickStartHPcloudStep6">
       <topicmeta>
          <keywords>
-            <keyword>Terminating Instances and Security Groups</keyword>
+            <keyword>Troubleshooting Your Cluster</keyword>
          </keywords>
       </topicmeta>
    </keydef>
