@@ -12,7 +12,7 @@
           <b>SWOBJ-ROLE</b> is mentioned as server-role.<p>Add an entry to the <b>resources</b> item
           in the <b>control-plane</b> as
         follows:</p><codeblock>control-planes:
-- name: ccp
+- name: cp1
   region: region1
   . . .
   resources:
