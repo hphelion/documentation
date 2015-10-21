@@ -5,6 +5,7 @@
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Input Model</title>
   <conbody>
     <section id="toc"><title>Table of Contents</title>
+      <!--
       <sl>
         <sli><xref href="#input_model/Intro"><i>1.0</i> Introduction</xref></sli>
         <sli><xref href="#input_model/3.0_Concepts"><i>2.0</i> HP Helion OpenStack 2.0
@@ -104,8 +105,102 @@
         <sli outputclass="listsuba"><i>5.7</i> Explain.txt</sli>
         <sli outputclass="listsuba"><i>5.8</i> CloudDiagram.txt</sli>
       </sl>
+      -->
+      <ul>
+        <li><xref href="#input_model/introduction">Introduction</xref></li>
+        <li><xref href="#input_model/concepts">HP Helion OpenStack 2.0 Concepts</xref>
+          <ul>
+            <li><xref href="#input_model/cloud">Cloud</xref></li>
+            <li><xref href="#input_model/controlplanes">Control Planes</xref>
+              <ul>
+                <li><xref href="#input_model/controlplanes_regions">Control Planes and
+                    Regions</xref></li>
+              </ul></li>
+            <li><xref href="#input_model/services">Services</xref></li>
+            <li><xref href="#input_model/serverroles">ServerRoles</xref></li>
+            <li><xref href="#input_model/diskmodel">Disk Model</xref></li>
+            <li><xref href="#input_model/servers">Servers</xref></li>
+            <li><xref href="#input_model/servergroups">Server Groups</xref>
+              <ul>
+                <li><xref href="#input_model/servergroups_failurezones">Server Groups and Failure
+                    Zones</xref></li>
+                <li><xref href="#input_model/servergroups_networks">Server Groups and
+                    Networks</xref></li>
+              </ul></li>
+            <li><xref href="#input_model/networking">Networking</xref>
+              <ul>
+                <li><xref href="#input_model/networkgroups">Network Groups</xref></li>
+                <li><xref href="#input_model/networks">Networks</xref></li>
+                <li><xref href="#input_model/interfacemodel">Interface Model</xref></li>
+                <li><xref href="#input_model/nicmapping">NIC Mapping</xref></li>
+                <li>Firewall Configuration</li>
+              </ul></li>
+          </ul></li>
+        <li><xref href="#input_model/configurationobjects">HP Helion OpenStack 2.0 Configuration
+            Objects</xref>
+          <ul>
+            <li><xref href="#input_model/co_cloud">Cloud</xref></li>
+            <li><xref href="#input_model/co_controlplane">Control Plane</xref>
+              <ul>
+                <li><xref href="#input_model/clusters">Clusters</xref></li>
+                <li><xref href="#input_model/resources">Resources</xref></li>
+              </ul></li>
+            <li><xref href="#input_model/co_servers">Servers</xref></li>
+            <li><xref href="#input_model/co_servergroups">Server Groups</xref></li>
+            <li><xref href="#input_model/co_serverroles">Server Roles</xref></li>
+            <li><xref href="#input_model/co_diskmodels">Disk Models</xref>
+              <ul>
+                <li><xref href="#input_model/co_volumegroups">Volume Groups</xref></li>
+                <li><xref href="#input_model/co_devicegroups">Device Groups</xref></li>
+              </ul></li>
+            <li><xref href="#input_model/co_interfacemodels">Interface Models</xref>
+              <ul>
+                <li><xref href="#input_model/co_bonddata">Bond Data</xref></li>
+              </ul></li>
+            <li><xref href="#input_model/co_nicmapping">NIC Mapping</xref></li>
+            <li><xref href="#input_model/co_networkgroups">Network Groups</xref>
+              <ul>
+                <li><xref href="#input_model/co_networktags">Network Tags</xref></li>
+              </ul></li>
+            <li><xref href="#input_model/co_networks">Networks</xref></li>
+            <li>Firewall Rules <ul>
+                <li>Rule</li>
+              </ul></li>
+          </ul></li>
+        <li><xref href="#input_model/othertopics">Other Topics</xref>
+          <ul>
+            <li><xref href="#input_model/namegeneration">Name Generation</xref>
+              <ul>
+                <li><xref href="#input_model/o_clusters"> Clusters</xref></li>
+                <li><xref href="#input_model/o_resourcenodes">Resource Nodes</xref></li>
+              </ul></li>
+            <li><xref href="#input_model/persisteddata">Persisted Data</xref>
+              <ul>
+                <li><xref href="#input_model/persistedserverallocations">Persisted Server
+                    Allocations</xref></li>
+                <li><xref href="#input_model/persistedaddressallocations">Persisted Address
+                    Allocations</xref></li>
+              </ul></li>
+            <li>Server Allocation</li>
+            <li>Server Network Selection</li>
+            <li>Network Route Validation</li>
+            <li>Configuration Neutron Provider VLANs</li>
+          </ul></li>
+        <li><xref href="#input_model/configprocessorinfo">Configuration Processor Information
+            Files</xref>
+          <ul>
+            <li>Address_info.yml</li>
+            <li>Firewall_info.yml</li>
+            <li>Net_info.yml</li>
+            <li>Route_info.yml</li>
+            <li>Server_info.yml</li>
+            <li>Service_info.yml</li>
+            <li>Explain.txt</li>
+            <li>CloudDiagram.txt</li>
+          </ul></li>
+      </ul>
     </section>
-    <section id="introduction"><title><i>1.0</i> Introduction</title>
+    <section id="introduction"><title>Introduction</title>
       <p>This document describes how the HP Helion OpenStack input model can be used to define and
         configure the cloud.</p>
       <p>HP Helion OpenStack ships with a set of example input models that can be used as starting
@@ -134,7 +229,7 @@
       </ul>
     </section>
 
-    <section id="concepts"><title><i>2.0</i> HP Helion OpenStack 2.0 Concepts</title>
+    <section id="concepts"><title>HP Helion OpenStack 2.0 Concepts</title>
       <p>An HP Helion OpenStack 2.0 cloud is defined by a declarative model that is described in a
         series of configuration objects. These configuration objects are represented in YAML files
         which together constitute the various example configurations provided as templates with this
@@ -171,7 +266,7 @@
 
 
 
-    <section id="cloud"><title><i>2.1</i> Cloud</title>
+    <section id="cloud"><title>Cloud</title>
       <p>The Cloud definition includes a few top-level configuration values such as the name of the
         cloud, the host prefix, details of external services (NTP, DNS, SMTP) and the firewall
         settings.</p>
@@ -181,7 +276,7 @@
 
 
 
-    <section id="controlplanes"><title><i>2.2</i> Control Planes</title>
+    <section id="controlplanes"><title>Control Planes</title>
       <p><i>A control-plane runs one or more <uicontrol>services</uicontrol> distributed across
             <uicontrol>clusters</uicontrol> and <uicontrol>resource groups</uicontrol></i>.</p>
       <p><i>A control-plane uses servers with a particular
@@ -229,7 +324,7 @@
 
 
 
-    <section id="controlplanes_regions"><title><i>2.2.1</i>Control Planes and Regions</title>
+    <section id="controlplanes_regions"><title>Control Planes and Regions</title>
       <p>A region in OpenStack terms is a collection of URLs that together provide a set of services
         (Nova, Neutron, Swift, etc). As a user you have to explicitly decide which region you want
         to use.</p>
