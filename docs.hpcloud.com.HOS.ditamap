@@ -155,8 +155,8 @@
         navtitle="Block Storage Service" locktitle="yes">
         <topicref href="helion/blockstorage/ceph/ceph_overview.dita" navtitle="Ceph Overview"
           locktitle="yes">
-          <topicref href="helion/blockstorage/ceph/configuring_use_ceph_cluster_glance.dita"/>
           <topicref href="helion/blockstorage/ceph/configuring_use_ceph_cluster.dita"/>
+          <topicref href="helion/blockstorage/ceph/configuring_use_ceph_cluster_glance.dita"/>
           <topicref href="helion/blockstorage/ceph/using_erasure_code_pool.dita"/>
           <topicref href="helion/blockstorage/ceph/upgrade_ceph_cluster.dita"/>
         </topicref>

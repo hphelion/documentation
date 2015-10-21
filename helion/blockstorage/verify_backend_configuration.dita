@@ -41,13 +41,13 @@
             category.</li>
           <li>Click <b>Volume Type</b> tabs. A list of volume types appear.</li>
           <li>Click the check box next to the name of the volume you want to attach.</li>
-          <li>In the <b>Actions</b> column,  Click <b>Create Encryption</b> drop-down list and
-            select <b>View Extra Specs</b>. <p>The <b>Create Volume Type Extra Specs</b> dialog box
+          <li>In the <b>Actions</b> column, click <!--Create Encryption -->drop-down arrow and
+            select <b>View Extra Specs</b>. <p>The  <b>Volume Type Extra Specs</b> dialog box
               displays. Now map the volume type to the associate backend.</p></li>
           <li>Click <b>Create</b> button.</li>
-          <li>In the <b>Key</b> box, enter <i>volume_backend_name</i> as extra spec key. This is the
-            name of the key used to specify the storage backend when provisioning volumes of this
-            volume type. The volume backend name must match the backend name mentioned in the
+          <li>In the <b>Key</b> box, enter <i>volume_backend_name</i> as extra spec key.
+            <!--This is the name of the key used to specify the storage backend when provisioning volumes of this volume type.-->
+            The volume backend name must match the backend name mentioned in the
               <codeph>cinder.conf.j2</codeph> file. </li>
           <li>In the <b>Value</b> box, enter the name of the backend to which you want to associate
             the volume type. <p>For example: You can enter the following backend name for the
