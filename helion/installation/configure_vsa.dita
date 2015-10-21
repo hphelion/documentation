@@ -13,9 +13,10 @@
     <section id="prereq"><title>Pre-requisites</title>
       <p>
         <ul>
-          <li>The deployer node must be setup before deploying VSA. For more details on the
-            installation of deployer node, refer  <xref href="install_entryscale_kvm.dita"
-              >here</xref>.</li>
+          <li>The Entry Scale Cloud with VSA cloud model should must be deployed. For more details
+            on the installation of Entry Scale Cloud with VSA cloud model refer <xref
+              href="http://docs-staging.hpcloud.com/hos2.0ga/helion/installation/install_entryscale_kvm.html"
+              format="html" scope="external">here</xref></li>
           <li>Collect the IP address of the VSA VM and Cluster VIP allocated from the<codeph>
               ~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph> file. This file is
             generated as part of output of the configuration processor during installation. You need
@@ -250,9 +251,9 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
                     usage: data
                   devices:
                     - name: /dev/sdc
-              - name: /dev/sdd
-              - name: /dev/sde
-              - name: /dev/sdf</codeblock></p>
+                    - name: /dev/sdd
+                    - name: /dev/sde
+                    - name: /dev/sdf</codeblock></p>
       <p>It is recommended to use SSD disk for AO. The minimum VSA deployment with AO is 2 (apart
         from OS disk) and 1 for VSA without AO. However, the maximum supported disk is 7.</p>
       <!--, VSA will have 1-6 disks as data disks and 1 disk as VSA with AO configuration. -->

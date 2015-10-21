@@ -47,9 +47,9 @@ ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=swobj5</codeblock
           example, cp1). This gives you the hostname of the node. Configure the operating system as
             follows.<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit &lt;hostname></codeblock><p>In
-            the following example, for <b>swobj5</b>, the hostname is <b>helion-cp1-swobj5</b>.
+            the following example, for <b>swobj5</b>, the hostname is <b>helion-cp1-swobj0005</b>.
             <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit helion-cp1-swobj5*</codeblock></p></li>
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit helion-cp1-swobj0005*</codeblock></p></li>
         <li>If this is the first server running the swift-proxy service (see <xref
             href="first_proxy_server.dita#topic_rtc_s3t_mt">identifying first proxy server</xref>)
           you need to restore the Swift Ring Builder files to the
