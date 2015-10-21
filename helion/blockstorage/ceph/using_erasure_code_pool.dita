@@ -27,8 +27,8 @@
             pool<codeblock>sudo ceph-authtool /etc/ceph/ceph.client.cinder.keyring -n client.cinder \
 --cap osd 'allow class-read object_prefix rbd_children, allow rwx pool=volumes, \
 allow rwx pool=vms, allow rwx pool=images, allow rwx pool=cache_tier_for_volumes' --cap mon 'allow r'</codeblock></li>
-          <li>Import the keyring, so that the permissions are
-            refreshed:<codeblock>sudo ceph auth import -i /etc/ceph/ceph.client.cinder.keyring</codeblock></li>
+          <li>Import the keyring to refreshed the
+            permissions:<codeblock>sudo ceph auth import -i /etc/ceph/ceph.client.cinder.keyring</codeblock></li>
           <li>Set the cache tier to use Bloom filter as
             follows:<codeblock>ceph osd pool set cache_tier_for_volumes hit_set_type bloom</codeblock></li>
           <li>Define how much time each HitSet should cover, and how many such HitSets to store as

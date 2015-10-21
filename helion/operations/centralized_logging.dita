@@ -3,7 +3,8 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="logging">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Centralized Logging</title>
-  <body><!--Needs Edit-->
+  <body>
+    <!--Needs Edit-->
     <p>A typical HP Helion OpenStack cloud consists of multiple servers which makes locating a
       specific log from a single server difficult. The HP Helion OpenStack Centralized Logging
       feature helps the administrator triage and troubleshoot the distributed cloud deployment from
@@ -286,14 +287,15 @@
         logging, you may wish to monitor the Centralized Logging Alarms. To do so:</p>
       <ol>
         <li>Log in to the Operations Console GUI</li>
-        <li>Navigate to the Monitoring | Alarm Definitions page</li>
+        <li>Navigate to the Alarm Definitions page from the menu button in the upper left
+          corner</li>
         <li>Find the alarm definitions that are applied to the various hosts. See the <xref
             href="alarms.dita#alarmdefinitions/logging">Logging Alarm Definitions List</xref> for
           the Centralized Logging Alarm Definitions.</li>
-        <li>Navigate to the Monitoring | Alarm page</li>
+        <li>Navigate to the Alarms page</li>
         <li>Find the alarm definitions applied to the various hosts. These should match the alarm
           definitions in the <xref href="alarms.dita#alarmdefinitions/logging">Logging Alarm
-            Definitions list</xref> .</li>
+            Definitions list</xref>.</li>
         <li>See if the alarm is green (good) or is in a bad state. If any are in a bad state, see
           the possible actions to perform in the <xref href="alarms.dita#alarmdefinitions/logging"
             >Logging Alarms Definitions list</xref>.</li>

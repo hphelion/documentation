@@ -5,170 +5,326 @@
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Input Model</title>
   <conbody>
     <section id="toc"><title>Table of Contents</title>
-      <ol>
-        <li><xref href="#input_model/Intro">Introduction</xref></li>
-        <li><xref href="#input_model/3.0_Concepts">HP Helion OpenStack 2.0 Concepts</xref>
-          <ol>
-            <li><xref href="#input_model/3.1_Cloud">Cloud</xref></li>
-            <li><xref href="#input_model/3.2_ControlPlanes">Control Planes</xref>
-              <ol>
-                <li><xref href="#input_model/3.2.1_ControlPlanesAndRegions">Control Planes and
+      <!--
+      <sl>
+        <sli><xref href="#input_model/Intro"><i>1.0</i> Introduction</xref></sli>
+        <sli><xref href="#input_model/3.0_Concepts"><i>2.0</i> HP Helion OpenStack 2.0
+            Concepts</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/3.1_Cloud"><i>2.1</i>
+          Cloud</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/3.2_ControlPlanes"><i>2.2</i> Control
+            Planes</xref></sli>
+        <sli outputclass="listsubb"><xref href="#input_model/3.2.1_ControlPlanesAndRegions"
+              ><i>2.2.1</i> Control Planes and Regions</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/3.3_Services"><i>2.3</i>
+            Services</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/3.4_ServerRoles"><i>2.4</i> Server
+            Roles</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/3.5_DiskModel"><i>2.5</i> Disk
+            Model</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/3.6_Servers"><i>2.6</i>
+          Servers</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/3.7_ServerGroups"><i>2.7</i> Server
+            Groups</xref></sli>
+        <sli outputclass="listsubb"><xref href="#input_model/3.7.1_ServerGroupsAndFailureZones"
+              ><i>2.7.1</i> Server Groups and Failure Zones</xref></sli>
+        <sli outputclass="listsubb"><xref href="#input_model/3.7.2_ServerGroupsAndNetworks"
+              ><i>2.7.2</i> Server Groups and Networks</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/3.8_Networking"><i>2.8</i>
+            Networking</xref></sli>
+        <sli outputclass="listsubb"><xref href="#input_model/3.8.1_NetworkGroups"><i>2.8.1</i>
+            Network Groups</xref></sli>
+        <sli outputclass="listsubb"><xref href="#input_model/3.8.2_Networks"><i>2.8.2</i>
+            Networks</xref></sli>
+        <sli outputclass="listsubb"><xref href="#input_model/3.8.3_InterfaceModel"><i>2.8.3</i>
+            Interface Model</xref></sli>
+        <sli outputclass="listsubb"><xref href="#input_model/3.8.4_NICMapping"><i>2.8.4</i> NIC
+            Mapping</xref></sli>
+        <sli outputclass="listsubb"><i>2.8.5</i> Firewall Configuration</sli>
+        <sli><xref href="#input_model/4.0_ConfigurationObjects"><i>3.0</i> HP Helion OpenStack 2.0
+            Configuration Objects</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/4.1_Cloud"><i>3.1</i>
+          Cloud</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/4.2_ControlPlane"><i>3.2</i> Control
+            Plane</xref></sli>
+        <sli outputclass="listsubb"><xref href="#input_model/4.2.1_Clusters"><i>3.2.1</i>
+            Clusters</xref></sli>
+        <sli outputclass="listsubb"><xref href="#input_model/4.2.2_ResourceNodes"><i>3.2.2</i>
+            Resources</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/4.3_Servers"><i>3.3</i>
+          Servers</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/4.4_ServerGroups"><i>3.4</i> Server
+            Groups</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/4.5_ServerRoles"><i>3.5</i> Server
+            Roles</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/4.6_DiskModels"><i>3.6</i> Disk
+            Models</xref></sli>
+        <sli outputclass="listsubb"><xref href="#input_model/4.6.2_VolumeGroups"><i>3.6.1</i> Volume
+            Groups</xref></sli>
+        <sli outputclass="listsubb"><xref href="#input_model/4.6.1_DeviceGroups"><i>3.6.2</i> Device
+            Groups</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/4.7_InterfaceModels"><i>3.7</i>
+            Interface Models</xref></sli>
+        <sli outputclass="listsubb"><xref href="#input_model/4.7.1_BondData" type="p"><i>3.7.1</i>
+            Bond Data</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/4.8_NICMapping"><i>3.8</i> NIC
+            Mapping</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/4.9_NetworkGroups"><i>3.9</i> Network
+            Groups</xref></sli>
+        <sli outputclass="listsubb"><xref href="#input_model/4.9.1_NetworkTags"><i>3.9.1</i> Network
+            Tags</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/4.10_Networks"><i>3.10</i>
+            Networks</xref></sli>
+        <sli outputclass="listsuba"><i>3.11</i> Firewall Rules</sli>
+        <sli outputclass="listsubb"><i>3.11.1</i> Rule</sli>
+        <sli><xref href="#input_model/5.0_OtherTopics"><i>4.0</i> Other Topics</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/5.1_NameGeneration"><i>4.1</i> Name
+            Generation</xref></sli>
+        <sli outputclass="listsubb"><xref href="#input_model/5.1.1_Clusters"><i>4.1.1</i>
+            Clusters</xref></sli>
+        <sli outputclass="listsubb"><xref href="#input_model/5.1.2_ResourceNodes"><i>4.1.2</i>
+            Resource Nodes</xref></sli>
+        <sli outputclass="listsuba"><xref href="#input_model/5.2_PersistedData"><i>4.2</i> Persisted
+            Data</xref></sli>
+        <sli outputclass="listsubb"><xref href="#input_model/5.2.1_PersistedServerAllocations"
+              ><i>4.2.1</i> Persisted Server Allocations</xref></sli>
+        <sli outputclass="listsubb"><xref href="#input_model/5.2.1_PersistedAddressAllocations"
+              ><i>4.2.2</i> Persisted Address Allocations</xref></sli>
+        <sli outputclass="listsuba"><i>4.3</i> Server Allocation</sli>
+        <sli outputclass="listsuba"><i>4.4</i> Server Network Selection</sli>
+        <sli outputclass="listsuba"><i>4.5</i> Network Route Validation</sli>
+        <sli outputclass="listsuba"><i>4.6</i> Configuration Neutron Provider VLANs</sli>
+        <sli><xref href="#input_model/6.0_Examples"><i>5.0</i> Configuration Processor Information
+            Files</xref></sli>
+        <sli outputclass="listsuba"><i>5.1</i> Address_info.yml</sli>
+        <sli outputclass="listsuba"><i>5.2</i> Firewall_info.yml</sli>
+        <sli outputclass="listsuba"><i>5.3</i> Net_info.yml</sli>
+        <sli outputclass="listsuba"><i>5.4</i> Route_info.yml</sli>
+        <sli outputclass="listsuba"><i>5.5</i> Server_info.yml</sli>
+        <sli outputclass="listsuba"><i>5.6</i> Service_info.yml</sli>
+        <sli outputclass="listsuba"><i>5.7</i> Explain.txt</sli>
+        <sli outputclass="listsuba"><i>5.8</i> CloudDiagram.txt</sli>
+      </sl>
+      -->
+      <ul>
+        <li><xref href="#input_model/introduction">Introduction</xref></li>
+        <li><xref href="#input_model/concepts">HP Helion OpenStack 2.0 Concepts</xref>
+          <ul>
+            <li><xref href="#input_model/cloud">Cloud</xref></li>
+            <li><xref href="#input_model/controlplanes">Control Planes</xref>
+              <ul>
+                <li><xref href="#input_model/controlplanes_regions">Control Planes and
                     Regions</xref></li>
-              </ol>
-            </li>
-            <li><xref href="#input_model/3.3_Services">Services</xref></li>
-            <li><xref href="#input_model/3.4_ServerRoles">Server Roles</xref></li>
-            <li><xref href="#input_model/3.5_DiskModel">Disk Model</xref></li>
-            <li><xref href="#input_model/3.6_Servers">Servers</xref></li>
-            <li><xref href="#input_model/3.7_ServerGroups">Server Groups</xref>
-              <ol>
-                <li><xref href="#input_model/3.7.1_ServerGroupsAndFailureZones">Server Groups and
-                    Failure Zones</xref></li>
-                <li><xref href="#input_model/3.7.2_ServerGroupsAndNetworks">Server Groups and
+              </ul></li>
+            <li><xref href="#input_model/services">Services</xref></li>
+            <li><xref href="#input_model/serverroles">ServerRoles</xref></li>
+            <li><xref href="#input_model/diskmodel">Disk Model</xref></li>
+            <li><xref href="#input_model/servers">Servers</xref></li>
+            <li><xref href="#input_model/servergroups">Server Groups</xref>
+              <ul>
+                <li><xref href="#input_model/servergroups_failurezones">Server Groups and Failure
+                    Zones</xref></li>
+                <li><xref href="#input_model/servergroups_networks">Server Groups and
                     Networks</xref></li>
-              </ol></li>
-            <li><xref href="#input_model/3.8_Networking">Networking</xref>
-              <ol>
-                <li><xref href="#input_model/3.8.1_NetworkGroups">Networking</xref></li>
-                <li><xref href="#input_model/3.8.2_Networks">Networks</xref></li>
-                <li><xref href="#input_model/3.8.3_InterfaceModel">Interface Model</xref></li>
-                <li><xref href="#input_model/3.8.4_NICMapping">NIC Mapping</xref></li>
-              </ol></li>
-          </ol>
-        </li>
-        <li><xref href="#input_model/4.0_ConfigurationObjects">HP Helion OpenStack 2.0 Configuration
+              </ul></li>
+            <li><xref href="#input_model/networking">Networking</xref>
+              <ul>
+                <li><xref href="#input_model/networkgroups">Network Groups</xref></li>
+                <li><xref href="#input_model/networks">Networks</xref></li>
+                <li><xref href="#input_model/interfacemodel">Interface Model</xref></li>
+                <li><xref href="#input_model/nicmapping">NIC Mapping</xref></li>
+                <li>Firewall Configuration</li>
+              </ul></li>
+          </ul></li>
+        <li><xref href="#input_model/configurationobjects">HP Helion OpenStack 2.0 Configuration
             Objects</xref>
-          <ol>
-            <li><xref href="#input_model/4.1_Cloud">Cloud</xref></li>
-            <li><xref href="#input_model/4.2_ControlPlane">Control Plane</xref>
-              <ol>
-                <li><xref href="#input_model/4.2.1_Clusters">Clusters</xref></li>
-                <li><xref href="#input_model/4.2.2_ResourceNodes">Resource Nodes</xref></li>
-              </ol></li>
-            <li><xref href="#input_model/4.3_Servers">Servers</xref></li>
-            <li><xref href="#input_model/4.4_ServerGroups">Server Groups</xref></li>
-            <li><xref href="#input_model/4.5_ServerRoles">Server Roles</xref></li>
-            <li><xref href="#input_model/4.6_DiskModels">Disk Models</xref>
-              <ol>
-                <li><xref href="#input_model/4.6.1_DeviceGroups">Device Groups</xref></li>
-                <li><xref href="#input_model/4.6.2_VolumeGroups">Volume Groups</xref></li>
-              </ol></li>
-            <li><xref href="#input_model/4.7_InterfaceModels">Interface Models</xref>
-              <ol>
-                <li><xref href="#input_model/4.7.1_BondData" type="p">Bond Data</xref></li>
-              </ol></li>
-            <li><xref href="#input_model/4.8_NICMapping">NIC Mapping</xref></li>
-            <li><xref href="#input_model/4.9_NetworkGroups">Network Groups</xref>
-              <ol>
-                <li><xref href="#input_model/4.9.1_NetworkTags">Network Tags</xref></li>
-              </ol></li>
-            <li><xref href="#input_model/4.10_Networks">Networks</xref></li>
-          </ol></li>
-        <li><xref href="#input_model/5.0_OtherTopics">Other Topics</xref>
-          <ol>
-            <li><xref href="#input_model/5.1_NameGeneration">Name Generation</xref>
-              <ol>
-                <li><xref href="#input_model/5.1.1_Clusters">Clusters</xref></li>
-                <li><xref href="#input_model/5.1.2_ResourceNodes">Resource Nodes</xref></li>
-              </ol></li>
-            <li><xref href="#input_model/5.2_PersistedData">Persisted Data</xref>
-              <ol>
-                <li><xref href="#input_model/5.2.1_PersistedServerAllocations">Persisted Server
+          <ul>
+            <li><xref href="#input_model/co_cloud">Cloud</xref></li>
+            <li><xref href="#input_model/co_controlplane">Control Plane</xref>
+              <ul>
+                <li><xref href="#input_model/clusters">Clusters</xref></li>
+                <li><xref href="#input_model/resources">Resources</xref></li>
+              </ul></li>
+            <li><xref href="#input_model/co_servers">Servers</xref></li>
+            <li><xref href="#input_model/co_servergroups">Server Groups</xref></li>
+            <li><xref href="#input_model/co_serverroles">Server Roles</xref></li>
+            <li><xref href="#input_model/co_diskmodels">Disk Models</xref>
+              <ul>
+                <li><xref href="#input_model/co_volumegroups">Volume Groups</xref></li>
+                <li><xref href="#input_model/co_devicegroups">Device Groups</xref></li>
+              </ul></li>
+            <li><xref href="#input_model/co_interfacemodels">Interface Models</xref>
+              <ul>
+                <li><xref href="#input_model/co_bonddata">Bond Data</xref></li>
+              </ul></li>
+            <li><xref href="#input_model/co_nicmapping">NIC Mapping</xref></li>
+            <li><xref href="#input_model/co_networkgroups">Network Groups</xref>
+              <ul>
+                <li><xref href="#input_model/co_networktags">Network Tags</xref></li>
+              </ul></li>
+            <li><xref href="#input_model/co_networks">Networks</xref></li>
+            <li>Firewall Rules <ul>
+                <li>Rule</li>
+              </ul></li>
+          </ul></li>
+        <li><xref href="#input_model/othertopics">Other Topics</xref>
+          <ul>
+            <li><xref href="#input_model/namegeneration">Name Generation</xref>
+              <ul>
+                <li><xref href="#input_model/o_clusters"> Clusters</xref></li>
+                <li><xref href="#input_model/o_resourcenodes">Resource Nodes</xref></li>
+              </ul></li>
+            <li><xref href="#input_model/persisteddata">Persisted Data</xref>
+              <ul>
+                <li><xref href="#input_model/persistedserverallocations">Persisted Server
                     Allocations</xref></li>
-                <li><xref href="#input_model/5.2.1_PersistedAddressAllocations">Persisted Address
+                <li><xref href="#input_model/persistedaddressallocations">Persisted Address
                     Allocations</xref></li>
-              </ol></li>
-          </ol></li>
-        <li><xref href="#input_model/6.0_Examples">Examples</xref>
-          <ol>
-            <li><xref href="#input_model/6.1_Networking">Networking</xref>
-              <ol>
-                <li><xref href="#input_model/6.1.4_NeutronProviderVLANs">Configuring Neutron
-                    Provider VLANs</xref></li>
-              </ol>
-            </li>
-          </ol>
-        </li>
-      </ol>
+              </ul></li>
+            <li>Server Allocation</li>
+            <li>Server Network Selection</li>
+            <li>Network Route Validation</li>
+            <li>Configuration Neutron Provider VLANs</li>
+          </ul></li>
+        <li><xref href="#input_model/configprocessorinfo">Configuration Processor Information
+            Files</xref>
+          <ul>
+            <li>Address_info.yml</li>
+            <li>Firewall_info.yml</li>
+            <li>Net_info.yml</li>
+            <li>Route_info.yml</li>
+            <li>Server_info.yml</li>
+            <li>Service_info.yml</li>
+            <li>Explain.txt</li>
+            <li>CloudDiagram.txt</li>
+          </ul></li>
+      </ul>
     </section>
-    <section id="Intro"><title>Introduction</title>
-      <p>This page describes how the HP Helion OpenStack 2.0 Input Model can be used to define and
-        configure your cloud environment.</p>
-      <p>The HP Helion OpenStack 2.0 product ships with a set of sample input-models that can be used
-        as starting points for defining your custom cloud.</p>
-      <p>The input model allows the user to describe the cloud configuration in terms of:</p>
-      <p><ul>
-          <li>Cloud Topology <ul>
-              <li>Which OpenStack services run on which server nodes</li>
-              <li>How individual servers are configured in terms of disk and network adapters</li>
-              <li>Describes the overall network configuration of the cloud</li>
-              <li>Network traffic separation</li>
-              <li>CIDR and VLAN assignments</li>
-            </ul>
-          </li>
-        </ul></p>
+    <section id="introduction"><title>Introduction</title>
+      <p>This document describes how the HP Helion OpenStack input model can be used to define and
+        configure the cloud.</p>
+      <p>HP Helion OpenStack ships with a set of example input models that can be used as starting
+        points for defining a custom cloud.</p>
+      <p>The input model allows you, the cloud administrator, to describe the cloud configuration in
+        terms of:</p>
+      <ul>
+        <li>Which OpenStack services run on which server nodes</li>
+        <li>How individual servers are configured in terms of disk and network adapters</li>
+        <li>The overall network configuration of the cloud</li>
+        <li>Network traffic separation</li>
+        <li>CIDR and VLAN assignments</li>
+      </ul>
+      <p>The input model is consumed by the configuration processor which parses and validates the
+        input model and outputs the effective configuration that will be deployed to each server
+        that makes up your cloud.</p>
       <p>The document is structured as follows:</p>
-      <p><ul>
-          <li><uicontrol>Concepts</uicontrol> - This explains the ideas behind the declarative model
-            approach used in HP Helion OpenStack 2.0 and the core concepts used in describing that
-            model</li>
-          <li><uicontrol>Input Model</uicontrol> - This section provides a description of each of
-            the configuration entities in the input model</li>
-          <li><uicontrol>Core Examples</uicontrol> - In this section we provide samples and meanings
-            of some of the more important configuration entities</li>
-        </ul></p>
+      <ul>
+        <li><uicontrol>Concepts</uicontrol> - This explains the ideas behind the declarative model
+          approach used in HP Helion OpenStack 2.0 and the core concepts used in describing that
+          model</li>
+        <li><uicontrol>Input Model</uicontrol> - This section provides a description of each of the
+          configuration entities in the input model</li>
+        <li><uicontrol>Core Examples</uicontrol> - In this section we provide samples and
+          definitions of some of the more important configuration entities</li>
+      </ul>
     </section>
-    <section id="3.0_Concepts"><title>HP Helion OpenStack 2.0 Concepts</title>
-      <p>A HP Helion OpenStack 2.0 system is defined by a declarative model that is described in a
-        series of configuration objects. These objects are stored in YAML files and the product
-        ships with a number of examples. These examples can potentially be used almost as shipped –
-        just modifying to provide site specific IP addresses, or customized to meet site
-        requirements.</p>
+
+    <section id="concepts"><title>HP Helion OpenStack 2.0 Concepts</title>
+      <p>An HP Helion OpenStack 2.0 cloud is defined by a declarative model that is described in a
+        series of configuration objects. These configuration objects are represented in YAML files
+        which together constitute the various example configurations provided as templates with this
+        release. These examples can be used nearly unchanged, with the exception of necessary
+        changes to IP addresses and other site and hardware-specific identifiers. Alternatively, the
+        examples may be customized to meet site requirements.</p>
+      <p>The following diagram shows the set of configuration objects and their relationships. All
+        objects have a name that you may set to be something meaningful for your context. In the
+        examples these names are provided in capital letters as a convention. These names have no
+        significance to HP Helion OpenStack, rather it is the relationships between them that define
+        the configuration.</p>
+      <!-- UPDATE MEDIA -->
       <p><image href="../media/config/concept_diag.png"/></p>
+      <p>The configuration processor reads and validates the input model described in the YAML files
+        discussed above, combines it with the service definitions provided by HP Helion OpenStack
+        and any persisted state information about the currently deployment to produce a set of
+        Ansible variables that can be used to deploy the cloud. It also produces a set of
+        information files that provide details about the configuration.</p>
+      <p>The relationship between the file systems on the HP Helion OpenStack deployment server and
+        the configuration processor is shown in the following diagram. Below the line are the
+        directories that you, the cloud administrator, interact with. Above the line are the
+        directories that are maintained by HP Helion OpenStack.</p>
+      <p><image href="../media/inputmodel_2.png"/></p>
+      <p>The input model is read from the <codeph>~/helion/my_cloud/definition</codeph> directory.
+        Although the supplied examples use separate files for each type of object in the model, the
+        names and layout of the files have no significance to the Configuration Processor, it simply
+        reads all of the .yml files in this directory. Cloud administrators are therefore free to
+        use whatever structure is best for their context. For example, you may decide to maintain
+        separate files or sub-directories for each physical rack of servers.</p>
+      <p>As mentioned, the examples use the conventional upper casing for object names, but these
+        strings are used only to define the relationship between objects. They have no specific
+        significance to the Configuration Processor.</p>
     </section>
-    <section id="3.1_Cloud"><title>Cloud</title>
-      <p><i>A cloud consists of one or more control planes.</i></p>
-      <p>The <codeph>cloudConfig.yml</codeph> file will define your Cloud name, NTP server
-        configuration, DNS settings, and your SMTP settings.</p>
+
+
+
+    <section id="cloud"><title>Cloud</title>
+      <p>The Cloud definition includes a few top-level configuration values such as the name of the
+        cloud, the host prefix, details of external services (NTP, DNS, SMTP) and the firewall
+        settings.</p>
+      <p>The location of the cloud configuration file also tells the Configuration Processor where
+        to look for the files that define all of the other objects in the input model.</p>
     </section>
-    <section id="3.2_ControlPlanes"><title>Control Planes</title>
-      <p><i>A control plane runs one or more <uicontrol>services</uicontrol> distributed across
-            <uicontrol>clusters</uicontrol> and <uicontrol>resource groups</uicontrol></i></p>
-      <p><i>A control plane uses servers with a particular
-        <uicontrol>server-role</uicontrol></i></p>
-      <p>A Control Plane provides the operating environment for a set of services; normally
-        consisting of set of shared services (MySQL, RabbitMQ, HAproxy, Apache, etc), OpenStack
-        control services (API, schedulers, etc) and the resources they are managing (compute,
-        storage, etc)</p>
-      <p>A simple cloud may have a single control plane which runs all of the services. A more
-        complex cloud may have multiple control planes with a relationship between them. Services
-        that need to consume (use) another service (such as Neutron consuming MySql, Nova consuming
-        Neutron) always use the service within the same control plane before looking in any related
-        control planes. It is the job of the HLM configuration processor to resolve these
-        relationships and make sure that each service is provided with the configuration details to
-        connect to the appropriate service.</p>
-      <p>A Control Plane is structured as <uicontrol>clusters</uicontrol> and
-          <uicontrol>resource-nodes</uicontrol>. The clusters are typically used to host the
-        OpenStack services used to manage the cloud: such as API servers, Database servers, Neutron
-        agents, Swift Proxies; while the Resource servers are used to host those scale out OpenStack
-        services like Nova-Compute or Swift-Object service. This is a representation convenience
-        rather than a strict rule, for example it is possible to locate the Swift-Object service in
-        the management cluster in a smaller scale cloud that is not designed to scale out object
-        serving.</p>
-      <p>A cluster can be one or more servers, and you can have one or more clusters depending on
-        the scale of the cloud that you are building. Spreading services across multiple clusters is
-        more scalable, but of course it requires more servers. A common pattern for a large cloud is
-        to run high data volume services such as monitoring and logging on a separate cluster. A
-        cloud with a high object storage requirement will typically also run the Swift service on
-        its own cluster.</p>
-      <p>Clusters in this context are a mechanism for grouping service components onto physical
-        servers, but all instances of a component in a control plane work collectively. So for
-        example, if ha-proxy is configured into multiple clusters within the same control plane then
-        all of those instances will work as a single instance of the ha-proxy services.</p>
-      <p>In addition to its cluster, a control plane also has a collection of resource servers which
-        provide compute and storage resources.</p>
+
+
+
+    <section id="controlplanes"><title>Control Planes</title>
+      <p><i>A control-plane runs one or more <uicontrol>services</uicontrol> distributed across
+            <uicontrol>clusters</uicontrol> and <uicontrol>resource groups</uicontrol></i>.</p>
+      <p><i>A control-plane uses servers with a particular
+        <uicontrol>server-role</uicontrol></i>.</p>
+      <p>A <uicontrol>control-plane</uicontrol> provides the operating environment for a set of
+          <uicontrol>services</uicontrol>; normally consisting of set of shared services (MySQL,
+        RabbitMQ, HA Proxy, Apache, etc), OpenStack control services (API, schedulers, etc) and the
+          <uicontrol>resources</uicontrol> they are managing (compute, storage, etc).</p>
+      <p>A simple cloud may have a single <uicontrol>control-plane</uicontrol> which runs all of the
+          <uicontrol>services</uicontrol>. A more complex cloud may have multiple
+          <uicontrol>control-planes</uicontrol> with a relationship between them. (Note that HP
+        Helion OpenStack 2.0 only supports a single control-plane). Services that need to consume
+        (use) another service (such as Neutron consuming MySQL, Nova consuming Neutron) always use
+        the service within the same <uicontrol>control-plane</uicontrol> before looking in any
+        related <uicontrol>control-planes</uicontrol>. It is one of the functions of the
+        Configuration Processor to resolve these relationships and make sure that each
+        consumer/service is provided with the configuration details to connect to the appropriate
+        provider/service.</p>
+      <p>Each <uicontrol>control-plane</uicontrol> is structured as <uicontrol>clusters</uicontrol>
+        and <uicontrol>resources</uicontrol>. The <uicontrol>clusters</uicontrol> are typically used
+        to host the OpenStack services that manage the cloud such as API servers, database servers,
+        Neutron agents, and Swift proxies, while the <uicontrol>resources</uicontrol> are used to
+        host the scale-out OpenStack services such as Nova-Compute or Swift-Object services. This is
+        a representation convenience rather than a strict rule, for example it is possible to run
+        the Swift-Object service in the management cluster in a smaller-scale cloud that is not
+        designed for scale-out object serving.</p>
+      <p>A cluster can contain one or more <uicontrol>servers</uicontrol> and you can have one or
+        more <uicontrol>clusters</uicontrol> depending on the capacity and scalability needs of the
+        cloud that you are building. Spreading services across multiple
+          <uicontrol>clusters</uicontrol> provides greater scalability, but it requires a greater
+        number of physical servers. A common pattern for a large cloud is to run high data volume
+        services such as monitoring and logging in a separate cluster. A cloud with a high object
+        storage requirement will typically also run the Swift service in its own cluster.</p>
+      <p>Clusters in this context are a mechanism for grouping service components in physical
+        servers, but all instances of a component in a <uicontrol>control-plane</uicontrol> work
+        collectively. For example, if HA Proxy is configured to run on multiple clusters within the
+        same <uicontrol>control-plane</uicontrol> then all of those instances will work as a single
+        instance of the ha-proxy service.</p>
+      <p>Both <uicontrol>clusters</uicontrol> and <uicontrol>resources</uicontrol> define the type
+        (via a list of <uicontrol>server-roles</uicontrol>) and number of servers (min and max or
+        count) they require.</p>
+      <p>The <uicontrol>control-plane</uicontrol> can also define a list of failure-zones
+          (<uicontrol>server-groups</uicontrol>) from which to allocate servers.</p>
     </section>
-    <section id="3.2.1_ControlPlanesAndRegions"><title>Control Planes and Regions</title>
+
+
+
+    <section id="controlplanes_regions"><title>Control Planes and Regions</title>
       <p>A region in OpenStack terms is a collection of URLs that together provide a set of services
         (Nova, Neutron, Swift, etc). As a user you have to explicitly decide which region you want
         to use.</p>
@@ -182,7 +338,7 @@
       <p>The way we express this in the cloud model is to talk about a Control Plane providing some
         or all of the endpoints for one or more Regions.</p>
     </section>
-    <section id="3.3_Services"><title>Services</title>
+    <section id="services"><title><i>2.3</i> Services</title>
       <p><i>A control plane runs one or more services</i></p>
       <p>A service is the collection of <uicontrol>service-components</uicontrol> that provide a
         particular feature; for example Nova provides the compute service and consists of the
@@ -192,9 +348,9 @@
       <p>All you need to know about services to define your cloud is the names of the service
         components. The details of the services themselves, and how they interact with each other is
         captured in service definition files provided by HP Helion OpenStack.</p>
-      <p>When specifying your HP Helion OpenStack cloud you have to decide where components will run,
-        and how they connect to the networks. For example, should they all run in one control plane
-        sharing common services, or be distributed across multiple control planes to provide
+      <p>When specifying your HP Helion OpenStack cloud you have to decide where components will
+        run, and how they connect to the networks. For example, should they all run in one control
+        plane sharing common services, or be distributed across multiple control planes to provide
         separate instances of some services. The supplied examples provide solutions for some
         typical configurations.</p>
       <p>We'll talk more about how to describe how services connect to the network later.</p>
@@ -249,10 +405,10 @@
     <section id="3.6_Servers"><title>Servers</title>
       <p><i>Servers have a role which determines how they will be used in the cloud</i></p>
       <p>Servers enumerate the resources available for your cloud. A server could be a physical
-        server or a virtual machine, all HP Helion OpenStack requires is that it is capable of booting
-        a supported operating system and that it has an IP address that can be accessed via SSH. In
-        addition to this IP address, each server says what its <uicontrol>server-role</uicontrol>
-        is.</p>
+        server or a virtual machine, all HP Helion OpenStack requires is that it is capable of
+        booting a supported operating system and that it has an IP address that can be accessed via
+        SSH. In addition to this IP address, each server says what its
+          <uicontrol>server-role</uicontrol> is.</p>
     </section>
     <section id="3.7_ServerGroups"><title>Server Groups</title>
       <p><i>A server is associated with a Server Group</i></p>
@@ -263,9 +419,9 @@
         is one that everyone can understand. Such racks generally provide a degree of physical
         isolation such as separate power and/or network connectivity. In a multi-region cloud,
         individual racks or groups of racks will normally be allocated to a specific region.</p>
-      <p>In the HP Helion OpenStack model we support this concept by allowing you to define a hierarchy
-        of server groups. Each server is associated with one server group, normally at the bottom of
-        the hierarchy.</p>
+      <p>In the HP Helion OpenStack model we support this concept by allowing you to define a
+        hierarchy of server groups. Each server is associated with one server group, normally at the
+        bottom of the hierarchy.</p>
       <p>Server groups are an optional part of the input model – if you don’t define any then all
         servers and networks will be allocated as if they are part of the same group.</p>
     </section>
@@ -339,12 +495,12 @@
         need to include a route to this network so that services can access the internal API
         endpoints. Routes may also be required to define how to access external storage network,
         an/or to define a general default route.</p>
-      <p>As part of the HP Helion OpenStack deployment, networks are configured to act as the default
-        route for all traffic that was received via that network (so that response packets always
-        return via the network the request came from).</p>
-      <p>Note that HP Helion OpenStack will configure the routing rules on the servers it deploys, but
-        ensuring that gateways can provide the required routes is the responsibility of your network
-        configuration.</p>
+      <p>As part of the HP Helion OpenStack deployment, networks are configured to act as the
+        default route for all traffic that was received via that network (so that response packets
+        always return via the network the request came from).</p>
+      <p>Note that HP Helion OpenStack will configure the routing rules on the servers it deploys,
+        but ensuring that gateways can provide the required routes is the responsibility of your
+        network configuration.</p>
     </section>
     <section id="3.8.1.1_LoadBalancers"><title>Load Balancers</title>
       <p>Load Balancers provide a specific type of routing and are also defined in network-groups as
@@ -384,8 +540,8 @@
     </section>
     <section id="3.8.1.2_NetworkTags"><title>Network Tags</title>
       <!-- need words here on the tags concept -->
-      <p>Network tags are defined by HP Helion OpenStack service components, and are used in the input
-        model to convey information between the model and the service.</p>
+      <p>Network tags are defined by HP Helion OpenStack service components, and are used in the
+        input model to convey information between the model and the service.</p>
       <p>Network tags convey information about the physical network configuration to services,
         allowing the dependent aspects of the service to be automatically configured, for example an
         option in a service configuration file that contains the IP address of the corresponding
@@ -430,7 +586,8 @@
       <p>This level of abstraction will also allow a network function on SRIOV capable network cards
         to be used for network connections and consumed by services in a future release.</p>
     </section>
-    <section id="4.0_ConfigurationObjects"><title>HP Helion OpenStack 2.0 Configuration Objects</title>
+    <section id="4.0_ConfigurationObjects"><title>HP Helion OpenStack 2.0 Configuration
+        Objects</title>
     </section>
     <section id="4.1_Cloud"><title>Cloud</title>
       <p>The top level cloud configuration file defines some global values for the Helion Cloud.</p>
@@ -856,23 +1013,23 @@
               </row>
               <row>
                 <entry>mac-addr (optional)</entry>
-                <entry>This identifies the MAC address on the server that
-                  will be used to network install the operating system.</entry>
+                <entry>This identifies the MAC address on the server that will be used to network
+                  install the operating system.</entry>
               </row>
               <row>
                 <entry>ilo-ip (optional)</entry>
-                <entry>This provides the IP address of the power
-                  management (e.g. ipmi-ip, iLO) subsystem.</entry>
+                <entry>This provides the IP address of the power management (e.g. ipmi-ip, iLO)
+                  subsystem.</entry>
               </row>
               <row>
                 <entry>ilo-user (optional)</entry>
-                <entry>This provides the username of the power
-                  management (e.g. ipmi-ip, iLO) subsystem.</entry>
+                <entry>This provides the username of the power management (e.g. ipmi-ip, iLO)
+                  subsystem.</entry>
               </row>
               <row>
                 <entry>ilo-password (optional)</entry>
-                <entry>This provides the user password of the power
-                  management (e.g. ipmi-ip, iLO) subsystem.</entry>
+                <entry>This provides the user password of the power management (e.g. ipmi-ip, iLO)
+                  subsystem.</entry>
               </row>
               <row>
                 <entry>nic-mapping (optional)</entry>
@@ -978,7 +1135,7 @@
       ilo-ip: 192.168.9.11
       ilo-password: password
       ilo-user: admin</codeblock>
-       </section>
+    </section>
     <section id="4.4_ServerGroups"><title>Server Groups</title>
       <p>Server groups provide a mechanism for organizing servers and networks into a hierarchy that
         can be used for allocation and network resolution (see <xref
@@ -2634,11 +2791,11 @@ servers:
               name: eth3
           network-groups:
             - NET_GROUP_B</codeblock>
-      <p>A network group used for provider VLANs may contain only a single HP Helion OpenStack network,
-        because that VLAN must span all compute nodes and any Neutron network nodes/controllers
-        (i.e. it is a single L2 segment). The HP Helion OpenStack network must be defined with
-          <codeph>tagged-vlan: false</codeph>, otherwise a linux VLAN network interface will be
-        created. For example:</p>
+      <p>A network group used for provider VLANs may contain only a single HP Helion OpenStack
+        network, because that VLAN must span all compute nodes and any Neutron network
+        nodes/controllers (i.e. it is a single L2 segment). The HP Helion OpenStack network must be
+        defined with <codeph>tagged-vlan: false</codeph>, otherwise a linux VLAN network interface
+        will be created. For example:</p>
       <codeblock>
   networks:
      - name: NET_A
@@ -2647,8 +2804,8 @@ servers:
      - name: NET_B
        tagged-vlan: false
        network-group: NET_GROUP_B</codeblock>
-      <p>When the cloud is deployed, HP Helion OpenStack 2.0 will create the appropriate bridges on the
-        servers, and set the appropriate attributes in the Neutron configuration files (e.g.
+      <p>When the cloud is deployed, HP Helion OpenStack 2.0 will create the appropriate bridges on
+        the servers, and set the appropriate attributes in the Neutron configuration files (e.g.
         bridge_mappings).</p>
       <p>After the cloud has been deployed, create Neutron network objects for each provider VLAN.
         For example, using the Neutron CLI:</p>

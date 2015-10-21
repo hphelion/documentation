@@ -10,7 +10,6 @@
     <p> If Monitor resource is not already defined, please refer the section <xref
         href="defining_monitor_resource.dita#topic_owr_kf4_rt">Defining Monitor resource</xref> and
       proceed further to add the new monitor node.</p>
-    <p>&lt;<b>any prerequisite??</b>></p>
     <p><b>Procedure to add a new monitor node</b></p>
     <p>Perform the following procedure to add a new monitor node to an existing Ceph cluster:<ol
         id="ol_zsj_134_rt">
