@@ -3,13 +3,10 @@
 <topic id="topic_cfn_lvq_dt">
   <title>HP Helion 2.0 Development Platform: Continuous Integration and Deployment Overview</title>
   <body>
-    <p> "Greenfield" software development provides new functionality for new infrastructure, new
-      customers, new owners, or new ideas. </p>
-    <p>Writing enterprise apps in such an undefined arena is fundamentally risky, and best practice
-      is to take an agile, iterative approach. </p>
-    <p>With Continuous Integration and Deployment (CICD), small project teams can build, test, and
-      deploy each functional iteration with little effort, allowing developers to focus on the code,
-      not the process.</p>
+    <p>Helion Code Engine is a continous integration and delivery system designed for small development teams in the enterprise who are interested in building "greenfield" cloud native apps and deploying them into Helion Development Platform. </p>
+    <p>Helion CE is based on git version control technologies and automates build, test and deploy cycles so that developers can quickly bring their ideas to life and get customer validation.</p>
+    <p>More specifically, Helion CE automates unit tests by using the most popular testing frameworks for the supported tech stacks, and it can deploy to specified HDP environments - whether they are testing, staging or production.</p>
+    <p>We expect this CICD tool to work as catalyst in our customers journey to modern development workflows, as it automates processes that traditionally curb agile development in the enterprise.</p>
     <section><title>Highlights</title>
       <ul>
         <li>Automates testing through integration with popular testing frameworks.</li>
