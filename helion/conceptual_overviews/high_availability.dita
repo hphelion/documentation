@@ -49,37 +49,39 @@
 
     <section id="concepts_overview">
       <title>High Availability Concepts Overview</title>
-      <p>Highly Available Cloud ensures that at least a minimum of cloud resources are always available on request, 
-        hich results in uninterrupted operations for users.</p>
-      <p>In order to achieve this high availability of infrastructure and workloads, we define the scope of HA to be 
-        limited to protecting these only against single points of failure (SPOF). Single points of failure include:</p>
+      <p>Highly Available Cloud ensures that at least a minimum of cloud resources are always
+        available on request, which results in uninterrupted operations for users.</p>
+      <p>In order to achieve this high availability of infrastructure and workloads, we define the
+        scope of HA to be limited to protecting these only against single points of failure (SPOF).
+        Single points of failure include:</p>
       <ul>
         <li><b>Hardware SPOFs</b>: Hardware failures can take the form of server failures, memory going bad, power failures, 
           hypervisors crashing, hard disks dying, NIC cards breaking, switch ports failing, network cables loosening, 
           and so forth.</li>
         <li><b>Software SPOFs</b>: Server processes can crash due to software defects, out-of-memory conditions, operating system kernel panic, and so forth.</li>
       </ul>
-      <p>By design, HP Helion OpenStack strives to create a system architecture resilient to SPOFs, and does not 
-        attempt to automatically protect the system against multiple cascading levels of failures; such cascading 
-        failures will result in an unpredictable state.Hence, the cloud operator is encouraged to recover and restore 
-        any failed component, as soon as the first level of failure occurs.</p>
+      <p>By design, HP Helion OpenStack strives to create a system architecture resilient to SPOFs,
+        and does not attempt to automatically protect the system against multiple cascading levels
+        of failures; such cascading failures will result in an unpredictable state.  Hence, the
+        cloud operator is encouraged to recover and restore any failed component, as soon as the
+        first level of failure occurs.</p>
  
       <sectiondiv id="cloud_infrastructure">
         <p><b>Highly Available Cloud Infrastructure</b></p>
-        <p>Cloud users are able to provision and manage the compute, storage, and network infrastructure resources 
-          at any given point in time and the Horizon Dashboard and the OpenStack APIs must be reachable and be 
-          able to fulfill user requests</p>
+        <p>Cloud users are able to provision and manage the compute, storage, and network
+          infrastructure resources at any given point in time and the Horizon Dashboard and the
+          OpenStack APIs must be reachable and be able to fulfill user requests.</p>
         <p><image href="../../media/ha/ha-resilient-cloud-infrastructure.png" id="CloudInfrastructure"/></p>
         <p>Once the Compute, Storage, and Network resources are deployed, users expect these resources to be 
           reliable in the following ways:</p>
         <ul>
-          <li>If the Nova-Compute KVM Hypervisors/servers hosting the project compute virtual machine(VM) dies 
-            and the compute VM is lost along with its local ephemeral storage, the re-launching of the dead 
-            compute VM succeeds because it launches on another Nova-Compute KVM Hypervisor/server.If ephemeral 
-            storage loss is undesirable, the compute VM can be booted from the Cinder volume.</li>
-          <li>Data stored in Block Storage service volumes can be made highly-available by clustering 
-            (Details below in VSA section below)</li>
-          <li>Data stored by the Object service is always available (Details in Swift section below)</li>
+          <li>If the Nova-Compute KVM Hypervisors/servers hosting the project compute virtual
+            machine (VM) dies and the compute VM is lost along with its local ephemeral storage, the
+            re-launching of the dead compute VM succeeds because it launches on another Nova-Compute
+            KVM Hypervisor/server.  If ephemeral storage loss is undesirable, the compute VM can be
+            booted from the Cinder volume.</li>
+          <li>Data stored in Block Storage service volumes can be made highly-available by clustering <xref href="#HP2.0HA/block_storage_vsa">(Details below in VSA section below)</xref></li>
+          <li>Data stored by the Object service is always available <xref href="#HP2.0HA/object_storage_swift">(Details in Swift section below)</xref></li>
           <li>Network resources such as routers, subnets, and floating IP addresses provisioned by the 
             Networking Operation service are made highly-available via Helion Control Plane redundancy and DVR.</li>
         </ul>
@@ -101,10 +103,10 @@
       <title>Highly Available Cloud Infrastructure</title>
       <p>The highly available cloud infrastructure consists of the following:</p>
       <ul>
-        <li>High Avalibility of Controllers</li>
+        <li>High Availability of Controllers</li>
         <li>Availability Zones</li>
         <li>Compute with KVM</li>
-        <li>Nova Availablity Zones</li>
+        <li>Nova Availability Zones</li>
         <li>Compute with ESX</li>
         <li>Clock Storage with StoreVirtual VSA</li>
         <li>Object Storage with Swift</li>
@@ -112,7 +114,7 @@
     </section>
     
     <section id="high_availablity_controllers">
-      <title>High Availablity of Controllers</title>
+      <title>High Availability of Controllers</title>
       <p>The HP Helion OpenStack installer deploys highly available configurations of 
         OpenStack cloud services, resilient against single points of failure.</p>
       <p>The high availability of the controller components comes in two main forms.</p>
@@ -237,8 +239,8 @@
         </sectiondiv>
         <sectiondiv>
           <p id="sherpa"><b>Sherpa</b></p>
-          <p>In HOS 2.0, Sherpa is used by the Helion Development Platform (HDP) and 
-            is not used for HOS Upgrade.</p>
+          <p>In Helion OpenStack 2.0, Sherpa is used by the Helion Development Platform and is not
+            used for Helion OpenStack Upgrade.</p>
           <p>You must take periodic backups of the Sherpa service since it does 
             maintain some state information on local disk storage on the controller. 
             If the controller fails, Sherpa becomes unavailable until you rebuild or 

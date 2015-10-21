@@ -31,13 +31,15 @@
                 <p><b>vCenter ID</b>: ID of the vCenter containing the cluster.</p>
               </li>
             </ul></p></li>
-        <li>Execute the following command to unimport cluster on the respective
-          cluster<codeblock># eon cluster-unimport --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid></codeblock></li>
         <li>Commit your configuration
           <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock></li>
-        <li>Run the following command to create a deployment directory.<codeblock><codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock><p>
+        <li>Run the configuration
+          processor<codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml -e remove_deleted_servers="y" -e free_unused_addresses="y"</codeblock></li>
+        <li>Run the following command to create a deployment
+          directory.<codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml ( this is already available )</codeblock></li>
+        <li>Execute the following command to unimport cluster on the respective cluster<codeblock># eon cluster-unimport --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid></codeblock><p>
             <note> Do not execute <codeph>osconfig-run.yml</codeph> or
                 <codeph>hlm-deploy.yml</codeph> playbooks.</note>
           </p></li>
