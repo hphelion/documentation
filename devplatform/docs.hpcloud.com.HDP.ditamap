@@ -264,7 +264,7 @@
       <topicref href="2.0/database/devplatform.database-create-horizon.dita"
         navtitle="Creating a database from Horizon"/>
       <topicref href="2.0/database/devplatform.database-create-cluster-horizon.dita"
-        navtitle="Creating a database instance from Horizon" locktitle="yes"/>
+        navtitle="Creating a database cluster from Horizon" locktitle="yes"/>
       <topicref href="2.0/database/devplatform.database-create-cli.dita"
         navtitle="Create a database instance from the command line"/>
       <topicref href="2.0/database/devplatform.database-create-cluster-cli.dita"
