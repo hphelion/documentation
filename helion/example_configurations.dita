@@ -55,52 +55,33 @@
       </sl>
       -->
       <ul>
-        <li><xref href="#example_configurations/example_configs">HP Helion OpenStack Example
-            Configuration</xref>
+        <li><xref href="#example_configurations/example_configs">HP Helion OpenStack Example Configuration</xref>
           <ul>
-            <li outputclass="listsuba"><xref href="#example_configurations/entryscale_kvm_vsa"
-                >Entry-scale KVM with VSA model</xref></li>
-            <li outputclass="listsuba"><xref href="#example_configurations/entryscale_esx"
-                >Entry-scale ESX model</xref></li>
-            <li outputclass="listsuba"><xref href="#example_configurations/entryscale_swift"
-                >Entry-scale Swift model</xref></li>
-            <li outputclass="listsuba"><xref href="#example_configurations/entryscale_ceph"
-                >Entry-scale KVM with Ceph model</xref></li>
-            <li outputclass="listsuba"><xref href="#example_configurations/midscale_kvm_vsa"
-                >Mid-scale KVM with VSA model</xref></li>
+            <li outputclass="listsuba"><xref href="#example_configurations/entryscale_kvm_vsa">Entry-scale KVM with VSA model</xref></li>
+            <li outputclass="listsuba"><xref href="#example_configurations/entryscale_esx">Entry-scale ESX model</xref></li>
+            <li outputclass="listsuba"><xref href="#example_configurations/entryscale_swift">Entry-scale Swift model</xref></li>
+            <li outputclass="listsuba"><xref href="#example_configurations/entryscale_ceph">Entry-scale KVM with Ceph model</xref></li>
+            <li outputclass="listsuba"><xref href="#example_configurations/midscale_kvm_vsa">Mid-scale KVM with VSA model</xref></li>
           </ul></li>
-        <li><xref href="#example_configurations/modify_entryscale_kvm_vsa">Modifying the Entry-scale
-            KVM with VSA model for your environment</xref>
+        <li><xref href="#example_configurations/modify_entryscale_kvm_vsa">Modifying the Entry-scale KVM with VSA model for your environment</xref>
           <ul>
-            <li outputclass="listsuba"><xref href="#example_configurations/localizing_inputmodel"
-                >Localizing the Input Model</xref>
+            <li outputclass="listsuba"><xref href="#example_configurations/localizing_inputmodel">Localizing the Input Model</xref>
               <ul>
-                <li outputclass="listsubb"><xref href="#example_configurations/networks"
-                    >Networks.yml</xref></li>
-                <li outputclass="listsubb"><xref href="#example_configurations/nicmappings"
-                    >Nic_mappings.yml</xref></li>
-                <li outputclass="listsubb"><xref href="#example_configurations/netinterfaces"
-                    >Net_interfaces.yml</xref></li>
-                <li outputclass="listsubb"><xref href="#example_configurations/networkgroups"
-                    >Network_groups.yml</xref></li>
-                <li outputclass="listsubb"><xref href="#example_configurations/servers"
-                    >Servers.yml</xref></li>
+                <li outputclass="listsubb"><xref href="#example_configurations/networks">Networks.yml</xref></li>
+                <li outputclass="listsubb"><xref href="#example_configurations/nicmappings">Nic_mappings.yml</xref></li>
+                <li outputclass="listsubb"><xref href="#example_configurations/netinterfaces">Net_interfaces.yml</xref></li>
+                <li outputclass="listsubb"><xref href="#example_configurations/networkgroups">Network_groups.yml</xref></li>
+                <li outputclass="listsubb"><xref href="#example_configurations/servers">Servers.yml</xref></li>
               </ul></li>
-            <li outputclass="listsuba"><xref href="#example_configurations/customizing_inputmodel"
-                >Customizing the Input Model</xref>
+            <li outputclass="listsuba"><xref href="#example_configurations/customizing_inputmodel">Customizing the Input Model</xref>
               <ul>
-                <li outputclass="listsubb"><xref href="#example_configurations/disks_controller"
-                    >Disks_controller.yml</xref>
+                <li outputclass="listsubb"><xref href="#example_configurations/disks_controller">Disks_controller.yml</xref>
                   <ul>
-                    <li outputclass="listsubc"><xref href="#example_configurations/filesystems">File
-                        Systems Storage</xref></li>
-                    <li outputclass="listsubc"><xref href="#example_configurations/swiftstorage"
-                        >Swift Storage</xref></li>
+                    <li outputclass="listsubc"><xref href="#example_configurations/filesystems">File Systems Storage</xref></li>
+                    <li outputclass="listsubc"><xref href="#example_configurations/swiftstorage">Swift Storage</xref></li>
                   </ul></li>
-                <li outputclass="listsubb"><xref href="#example_configurations/disks_vsa"
-                    >Disks_vsa.yml</xref></li>
-                <li outputclass="listsubb"><xref href="#example_configurations/disks_compute"
-                    >Disks_compute.yml</xref></li>
+                <li outputclass="listsubb"><xref href="#example_configurations/disks_vsa">Disks_vsa.yml</xref></li>
+                <li outputclass="listsubb"><xref href="#example_configurations/disks_compute">Disks_compute.yml</xref></li>
               </ul></li>
           </ul></li>
       </ul>
