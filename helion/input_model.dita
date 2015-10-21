@@ -586,95 +586,129 @@
 
 
 
-    <section id="3.8.1.1_LoadBalancers"><title>Load Balancers</title>
-      <p>Load Balancers provide a specific type of routing and are also defined in network-groups as
-        a relationship between a VIP on a network in one network group and a set of service
-        endpoints (which may be on networks in the same or a different network group).</p>
-      <p>Each load balancer is defined as part of the network group where the virtual IP will be
-        presented – it follows that a network group containing a load balancer can only have one
-        network associated to it.</p>
-      <p>The load balancer definition includes a list of service-elements and roles it will provide
-        A VIP for.</p>
-      <p>The list of service-elements allows service specific load balancers to be defined on
-        networks in different network-groups. As with other service-element relationships, all that
-        is needed in the service-element name, the details of how the load balancer should be
-        configured, are provided in the supplied service definitions. A "default" value is accepted
-        to express "all service-elements which expect to be behind a load balancer and are not
-        explicitly configured in another load balancer configuration". Note that is not necessary to
-        say which network groups the service-elements that are being load balanced are attached to,
-        the Configuration Processor can deduce that information.</p>
-      <p>The endpoint roles make it possible to configure separate load balancers for public and
-        internal access to services, and the Configuration Processor uses this information to both
-        ensure the correct registrations in Keystone and to make sure internal traffic is routed to
-        the correct endpoint. Helion services are configured to only connect to other services via
-        internal VIPs and endpoints, allowing the name and security certificate of public endpoints
-        to be controlled by the customer and set to values that may not be resolvable or accessible
-        from the servers making up the Helion cloud.</p>
-      <p>Note that each load balancer defined in the input model will be allocated a separate VIP,
-        even when the load balancers are part of the same network group. Because of the need to be
-        able to separate public and internal access Helion will not allow a single load balancer to
-        provide both public and internal access. Load balancers in this context are logical entities
-        (sets of rules to transfer traffic from a VIP to one or more endpoints) – multiple load
-        balancers may be implemented by the same service within the cloud (e.g. a ha-proxy
-        cluster).</p>
-      <p>The following diagram shows a possible configuration in which the URL associated with the
-        public endpoint has been set to a name that resolves for customers to a firewall controlling
-        access to the cloud. Helion services use the internal URL to access a separate VIP.</p>
+    <section id="loadbalancers"><title>Load Balancers</title>
+      <p><uicontrol>Load-balancers</uicontrol> provide a specific type of routing and are also
+        defined in <uicontrol>network-groups</uicontrol> as a relationship between the virtual IP
+        address (VIP) on a network in one <uicontrol>network group</uicontrol> and a set of service
+        endpoints (which may be on <uicontrol>networks</uicontrol> in the same or a different
+          <uicontrol>network-group</uicontrol>).</p>
+      <p>Each <uicontrol>load-balancer</uicontrol> is defined as part of the
+          <uicontrol>network-group</uicontrol> where the virtual IP will be presented – it follows
+        that a <uicontrol>network-group</uicontrol> containing a
+          <uicontrol>load-balancer</uicontrol> can only have one <uicontrol>network</uicontrol>
+        associated to it.</p>
+      <p>The <uicontrol>load-balancer</uicontrol> definition includes a list of
+          <uicontrol>service-components</uicontrol> and endpoint roles it will provide A virtual IP
+        for. This model allows service-specific <uicontrol>load-balancers</uicontrol> to be defined
+        on different <uicontrol>network-groups</uicontrol>. A "default" value is used to express
+        "all service-components" which require a virtual IP address and are not explicitly
+        configured in another <uicontrol>load-balancer</uicontrol> configuration. The details of how
+        the <uicontrol>load-balancer</uicontrol> should be configured for each service, such as
+        which ports to use, how to check for service liveness, etc, are provided in the HP Helion
+        OpenStack supplied service definition files.</p>
+      <p>The list of endpoint roles for a <uicontrol>load-balancer</uicontrol> make it possible to
+        configure separate <uicontrol>load-balancers</uicontrol> for public and internal access to
+        services, and the Configuration Processor uses this information to both ensure the correct
+        registrations in Keystone and to make sure the internal traffic is routed to the correct
+        endpoint. HP Helion OpenStack services are configured to only connect to other services via
+        internal virtual IP addresses and endpoints, allowing the name and security certificate of
+        public endpoints to be controlled by the customer and set to values that may not be
+        resolvable/accessible from the servers making up the cloud.</p>
+      <p>Note that each <uicontrol>load-balancer</uicontrol> defined in the input model will be
+        allocated a separate virtual IP address even when the load-balancers are part of the same
+          <uicontrol>network-group</uicontrol>. Because of the need to be able to separate both
+        public and internal access, HP Helion OpenStack will not allow a single
+          <uicontrol>load-balancer</uicontrol> to provide both public and internal access.
+          <uicontrol>Load-balancers</uicontrol> in this context are logical entities (sets of rules
+        to transfer traffic from a virtual IP address to one or more endpoints). Multiple
+          <uicontrol>load-balancers</uicontrol> may be implemented by the same service within the
+        cloud (e.g. a HA Proxy cluster).</p>
+      <p>The following diagram shows a possible configuration in which the hostname associated with
+        the public URL has been configured to resolve to a firewall controlling external access to
+        the cloud. Within the cloud, HP Helion OpenStack services are configured to use the internal
+        URL to access a separate virtual IP address.</p>
+      <!-- NEED TO UPDATE MEDIA -->
       <p><image href="../media/config/load_balancers.png"/></p>
     </section>
-    <section id="3.8.1.2_NetworkTags"><title>Network Tags</title>
-      <!-- need words here on the tags concept -->
-      <p>Network tags are defined by HP Helion OpenStack service components, and are used in the
-        input model to convey information between the model and the service.</p>
-      <p>Network tags convey information about the physical network configuration to services,
-        allowing the dependent aspects of the service to be automatically configured, for example an
-        option in a service configuration file that contains the IP address of the corresponding
-        network device on a server where that service component is installed.</p>
-      <p>Network tags convey requirements a service may have on aspects of the server network
-        configuration, for example that a bridge is required on the corresponding network device on
-        a server where that service component is installed.</p>
-      <p>See <xref href="#input_model/4.9.1_NetworkTags">Network Tags</xref> for more information on
+
+
+
+
+    <section id="networktags"><title>Network Tags</title>
+      <p>Network tags are defined by some HP Helion OpenStack
+          <uicontrol>service-components</uicontrol> and are used to convey information between the
+        network model and the service, allowing the dependent aspects of the service to be
+        automatically configured. For example, an option in a service configuration file that needs
+        the IP address of the corresponding network device on a server where that service-component
+        is installed.</p>
+      <p>Network tags also convey requirements a service may have for aspects of the server network
+        configuration, for example, that a bridge is required on the corresponding network device on
+        a server where that service-component is installed.</p>
+      <p>See <xref href="#input_model/co_networktags">Network Tags</xref> for more information on
         specific tags and their usage.</p>
     </section>
-    <section id="3.8.2_Networks"><title>Networks</title>
-      <p><i>A Network is part of a Network Group</i></p>
-      <p><i>A Network can be associated with a Server Group</i></p>
-      <p>Networks, by comparison, are fairly simple definitions. Each network defines the CIDR,
-        start and end address, gateway, and VLAN ID.</p>
+
+
+
+
+
+    <section id="networks"><title>Networks</title>
+      <p><i>A <uicontrol>network</uicontrol> is part of a
+        <uicontrol>network-group</uicontrol>.</i></p>
+      <p><uicontrol>Networks</uicontrol> are fairly simple definitions. Each
+          <uicontrol>network</uicontrol> defines the details of its VLAN, optional address details
+        (CIDR, start and end address, gateway address), and which
+          <uicontrol>network-group</uicontrol> it is a member of.</p>
     </section>
-    <section id="3.8.3_InterfaceModel"><title>Interface Model</title>
-      <p><i>A server-role identifies an interface model which describes how its network interfaces
-          are to be configured and used.</i>></p>
-      <p>Networks are mapped onto specific network interfaces via an interface-model, which
-        describes the network devices that need to be created (bonds, ovs-bridges, etc) their
-        properties, and the network-groups that are associated with them.</p>
-      <p>An interface model acts like template; it can define how some or all of the network-groups
-        are to be mapped for a particular combination of physical NICs. However, it is the
-        service-elements on each server that determine which network-groups are required and hence
-        which interfaces and networks will be configured.</p>
-      <p>Interface-models can be shared between different server-roles (say an API role and a
-        database role which may still need different disk models) even though these will require a
-        different subset of the network groups providing the servers have the same number of network
-        interfaces.</p>
-      <p>Within an interface-model, physical ports are identified either by their device name
-        (eth0), or where there are multiple interfaces by a port name that is resolved via a NIC
-        mapping.</p>
-      <p>To allow different physical servers to share an interface-model, the NIC mapping is defined
-        as an optional property of each server.</p>
+
+
+    <section id="interfacemodel"><title>Interface Model</title>
+      <p><i>A <uicontrol>server-role</uicontrol> identifies an
+            <uicontrol>interface-model</uicontrol> that describes how its network interfaces are to
+          be configured and used.</i>></p>
+      <p>Networks are mapped onto specific network interfaces via an
+          <uicontrol>interface-model</uicontrol>, which describes the network devices that need to
+        be created (bonds, ovs-bridges, etc), their properties, and the
+          <uicontrol>network-groups</uicontrol> with which they are associated.</p>
+      <p>An <uicontrol>interface-model</uicontrol> acts like a template; it can define how some or
+        all of the <uicontrol>network-groups</uicontrol> are to be mapped for a particular
+        combination of physical NICs. However, it is the <uicontrol>service-components</uicontrol>
+        on each server that determine which <uicontrol>network-groups</uicontrol> are required and
+        hence which interfaces and <uicontrol>networks</uicontrol> will be configured. This means
+        that <uicontrol>interface-models</uicontrol> can be shared between different
+          <uicontrol>server-roles</uicontrol>. For example, an API role and a database role may
+        share an interface model even though they may have different disk models and they will
+        require a different subset of the <uicontrol>network-groups</uicontrol>.</p>
+      <p>Within an <uicontrol>interface-model</uicontrol>, physical ports are identified by a device
+        name, which in turn is resolved to a physical port via a <uicontrol>nic-mapping</uicontrol>.
+        To allow different physical servers to share an <uicontrol>interface-model</uicontrol>, the
+          <uicontrol>nic-mapping</uicontrol> is defined as a property of each
+          <uicontrol>server</uicontrol>.</p>
     </section>
-    <section id="3.8.4_NICMapping"><title>NIC Mapping</title>
-      <p>Where a server has more than a single NIC, or two NICs that are to be a single bond, then
-        we need a NIC mapping to unambiguously identify each individual NIC. Interface enumeration
-        (eth0, eth1, eth2, ...) is not a reliable mechanism, and so we use PCI bus enumeration
-        instead.</p>
-      <p>This level of abstraction will also allow a network function on SRIOV capable network cards
+
+
+
+    <section id="nicmapping"><title>NIC Mapping</title>
+      <p>When a <uicontrol>server</uicontrol> has more than a single NIC, a
+          <uicontrol>nic-mapping</uicontrol> is required to unambiguously identify each individual
+        NIC. Interface enumeration (eth0, eth1, eth2, ...) is not a reliable mechanism, so we use
+        PCI bus enumeration instead.</p>
+      <p>This level of abstraction will also allow network functions on SRIOV-capable network cards
         to be used for network connections and consumed by services in a future release.</p>
     </section>
-    <section id="4.0_ConfigurationObjects"><title>HP Helion OpenStack 2.0 Configuration
-        Objects</title>
+    <section id="firewallconfiguration"><title>Firewall Configuration</title>
+      <p>The Configuration Processor uses the details it has about which networks and ports
+          <uicontrol>service-components</uicontrol> use to create a set of firewall rules for each
+        server. The model allows additional user-defined rules on a per
+          <uicontrol>network-group</uicontrol> basis.</p>
     </section>
-    <section id="4.1_Cloud"><title>Cloud</title>
-      <p>The top level cloud configuration file defines some global values for the Helion Cloud.</p>
+
+
+    <section id="configurationobjects"><title>HP Helion OpenStack 2.0 Configuration Objects</title>
+    </section>
+    <section id="co_cloud"><title>Cloud</title>
+      <p>The top-level cloud configuration file, <uicontrol>cloudConfig.yml</uicontrol>, defines
+        some global values for the HP Helion OpenStack Cloud, as described in the table below.</p>
       <table frame="all" rowsep="1" colsep="1" id="cloud_config">
         <tgroup cols="2">
           <colspec colname="c1" colnum="1"/>
@@ -688,7 +722,7 @@
           <tbody>
             <row>
               <entry>name</entry>
-              <entry>A user-defined name for the cloud</entry>
+              <entry>An administrator-defined name for the cloud</entry>
             </row>
             <row>
               <entry>hostname-data (optional)</entry>
@@ -701,11 +735,10 @@
             </row>
             <row>
               <entry>ntp-servers (optional)</entry>
-              <entry>A list of external NTP servers your cloud has access to. If specified by name,
-                rather than IP, then the names need to be resolvable via the external DNS
-                nameservers you specify in the next section. All servers running the "ntp-server"
-                component will be configured to use these external NTP servers you specify
-                here.</entry>
+              <entry>A list of external NTP servers your cloud has access to. If specified by name
+                then the names need to be resolvable via the external DNS nameservers you specify in
+                the next section. All servers running the "ntp-server" component will be configured
+                to use these external NTP servers.</entry>
             </row>
             <row>
               <entry>dns-settings (optional)</entry>
@@ -717,69 +750,17 @@
               <entry>SMTP client configuration data that will be applied to all servers. See example
                 configurations for a full list of values.</entry>
             </row>
+            <row>
+              <entry>firewall-settings (optional)</entry>
+              <entry>Used to enable/disable the firewall feature and to enable/disable logging of
+                dropped packets.</entry>
+            </row>
           </tbody>
         </tgroup>
       </table>
-      <p>Here is the sample file included with the install:</p>
-      <codeblock>
----
-  product:
-    version: 2
-
-   cloud:
-    <b>name: helion-entry-scale</b>
-
-    # The following values are used when
-    # building hostnames
-    <b>hostname-data:</b>
-        host-prefix: helion
-        member-prefix: -m
-        
-    # Path to the rest of the input model
-    data-dir: data
-
-    # List of ntp servers for your site
-    <b>ntp-servers:</b>
-    #    - "ntp-server1"
-    #    - "ntp-server2"
-
-    # dns resolving configuration for your site
-    # refer to resolv.conf for details on each option
-    <b>dns-settings:</b>
-    #  nameservers:
-    #    - name-server1
-    #    - name-server2
-    #    - name-server3
-    #
-    #  domain: sub1.example.net
-    #
-    #  search:
-    #    - sub1.example.net
-    #    - sub2.example.net
-    #
-    #  sortlist:
-    #    - 192.168.160.0/255.255.240.0
-    #    - 192.168.0.0
-    #
-    #  # option flags are '&lt;name>:' to enable, remove to unset
-    #  # options with values are '&lt;name>:&lt;value>' to set
-    #
-    #  options:
-    #    debug:
-    #    ndots: 2
-    #    timeout: 30
-    #    attempts: 5
-    #    rotate:
-    #    no-check-names:
-    #    inet6:
-    <b>smtp-settings:</b>
-    #  server: smtp1.hp.com
-    #  port: 25</codeblock>
-      <note>Ensure that you remove the <codeph>#</codeph> tags in front of your nameservers so they
-        are recognized.</note>
-    </section>
-    <section id="4.2_ControlPlane"><title>Control Plane</title>
-      <p>The snippet below shows the control plane definition file:</p>
+      </section>
+    <section id="co_controlplane"><title>Control Plane</title>
+      <p>The snippet below shows the start of the control plane definition file.  The definitions are found in the table below:</p>
       <codeblock>
 ---
   product:
