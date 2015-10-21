@@ -7,7 +7,7 @@
       <p> AppArmor is a Mandatory Access Control (MAC) system as opposed to a discretionay access
         control system. It is a kernel-level security module for Linux that controls
         access to low-level resources based on rights granted via policies to a program rather than to a
-        user role. It enforces rules at the lowest software layer --the kernel level, preventing
+        user role. It enforces rules at the lowest software layer&#151;the kernel level, preventing
         software from circumventing resource restrictions that reside at levels above the kernel.
         With AppArmor, the final gatekeeper is closest to the hardware.</p>
       <p>Controlling resource access per application vs per user role allows you to enforce rules
@@ -25,7 +25,28 @@
         not prevented. </p>
     </section>
     
-    <section id="apparmor_helion"><title>Using AppArmor in HP Helion&#174; OpenStack</title>
-      <title>TBD...</title></section>
+    <section id="apparmor_helion"><title>AppArmor in HP Helion OpenStack 2.0</title>
+      <p> AppArmor in HP Helion OpenStack 2.0 is installed and enabled on the KVM compute nodes by
+        default. It runs in enforce mode. It enforces mandatory access control policies for the
+        libvirt process. Customers can run 'systemctl status apparmor' command on the compute nodes
+        to check that the service is active.</p> In this implementation it is designed to mitigagte
+      three threat scenarios: <ul>
+        <li>Hypervisor breakout followed by compromise of hosting qemu/kvm process. </li>
+        <li>Malicious manipulation of qemu APIs via Nova compute. </li>
+        <li>Malicious manipulation of libvirt APIs via Nova compute.</li>
+      </ul> The AppArmor profile here: <ul>
+        <li> Use the sVirt mechanism to deliver a very locked down profile for KVM / QEMU processes
+          that guests run under. This enforces strict isolation of the guest VMs, which is
+          significantly more useful than just securing libvirt. </li>
+        <li>Contains important improvements over stock Debian profiles: including<ul>
+            <li>Preventing Libvirt from writing to any system config. </li>
+            <li>Preventing Libivirt from accessing any hardware and device nodes that are not
+              required for Helion-based solutions. While the stock AppArmor profiles are more
+              permissive, as libvirt supports a larger set of functionality than is exposed via Nova
+              compute, the profiles included here only allow access to features exposed through
+              Nova. </li>
+          </ul></li>
+      </ul>
+    </section>
   </body>
 </topic>
