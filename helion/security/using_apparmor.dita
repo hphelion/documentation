@@ -29,12 +29,12 @@
       <p> AppArmor in HP Helion OpenStack 2.0 is installed and enabled on the KVM compute nodes by
         default. It runs in enforce mode. It enforces mandatory access control policies for the
         libvirt process. Customers can run 'systemctl status apparmor' command on the compute nodes
-        to check that the service is active.</p> In this implementation it is designed to mitigagte
+        to check that the service is active.</p> In this implementation it is designed to mitigate
       three threat scenarios: <ul>
         <li>Hypervisor breakout followed by compromise of hosting qemu/kvm process. </li>
         <li>Malicious manipulation of qemu APIs via Nova compute. </li>
         <li>Malicious manipulation of libvirt APIs via Nova compute.</li>
-      </ul> The AppArmor profile here: <ul>
+      </ul> The AppArmor profiles here: <ul>
         <li> Use the sVirt mechanism to deliver a very locked down profile for KVM / QEMU processes
           that guests run under. This enforces strict isolation of the guest VMs, which is
           significantly more useful than just securing libvirt. </li>
