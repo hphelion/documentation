@@ -77,18 +77,10 @@ neutron security-group-rule-create default --protocol tcp --port-range-min 22 --
 nova boot --flavor 1 --image &lt;id&gt; --nic net-id=$NETA vm1</codeblock></li>
           <li>Start the virtual machine in the privateB subnet.
             <codeblock>NETB=$(neutron net-list | awk '/privateB/ {print $2}')
-nova boot --flavor 1 --image &lt;id&gt; --nic net-id=$NETB vm2</codeblock></li>
-         <li>Create two floating IP's and associate each one to the respective server to gain vm
-            access.
-            <codeblock>vmip1=$(nova list | awk '/vm1/ {print $12}' | awk -F '=' '{print $2}' | awk -F ',' '{print $1}')    
-vm1portid=$(neutron port-list | grep $vmip1 | awk '{print $2}')
-vmip2=$(nova list | awk '/vm2/ {print $12}' | awk -F '=' '{print $2}' | awk -F ',' '{print $1}')
-vm2portid=$(neutron port-list | grep $vmip2 | awk '{print $2}')
-neutron floatingip-create ext-net –-port-id $vm1portid
-neutron floatingip-create ext-net –-port-id $vm2portid</codeblock></li>
-          <li>Verify floating IP's are allocated to the respective vms. Take note of IP's for later
-            use.
-            <codeblock>nova show vm1
+nova boot --flavor 1 --image &lt;id&gt; --nic net-id=$NETB vm2</codeblock>
+          <note>The use of floating IP's is not possible with the current version of VPNaaS.</note></li>
+          <li>Verify private IP's are allocated to the respective vms. Take note of IP's for later
+            use. <codeblock>nova show vm1
 nova show vm2</codeblock></li>
         </ol>
       </sectiondiv>
@@ -136,20 +128,20 @@ neutron vpn-ipsecpolicy-create ipsecpolicy</codeblock></li>
       
       <sectiondiv>
         <b>Verify VPN</b>
-        <p>In the case of non-admin users and non-DVR, you can verify the VPN
-          connection by pinging the virtual machines.</p>
+        <p>In the case of non-admin users, you can verify the VPN connection by pinging the virtual
+          machines.</p>
         <ol>
-          <li>Check the VPN connections. <note>fipvm1 and fipvm2 denotes floating IP's for vm1 and
-              vm2 respectively. The floating IP's are obtained from step 5 under <xref
+          <li>Check the VPN connections. <note>vm1-ip and vm2-ip denotes private IP's for vm1 and
+              vm2 respectively. The private IP's are obtained from step 4 under <xref
                 href="vpnaas.dita#HP2.0VPNaaS/StartVirtualMachines">Start Virtual Machines</xref>
               section.</note>
-            <codeblock>ssh cirros@fipvm1
+            <codeblock>ssh cirros@vm1-ip
 password: &lt;password&gt;
             
 # ping the private IP address of vm2
 ping ###.###.###.###</codeblock></li>
           <li>In another terminal.
-            <codeblock>ssh cirros@fipvm2
+            <codeblock>ssh cirros@vm2-ip
 password: &lt;password&gt;
               
 # ping the private IP address of vm1
@@ -158,20 +150,21 @@ ping ###.###.###.###</codeblock></li>
         </ol>
         <p>As the admin user, you should check to make sure that a route exists between the router
           gateways. Once the gateways have been checked, packet encryption can be verified by using
-          traffic analyzer (tcpdump) by tapping on the respective namespace (qrouter-*) and tapping
-          the right interface (qg-***).</p>
+          traffic analyzer (tcpdump) by tapping on the respective namespace (qrouter-* in case of
+          non-DVR and snat-* in case of DVR) and tapping the right interface (qg-***). </p>
+        <note>When using DVR namespaces, qrouter-xxxxxx should be replaced with snat-xxxxxx.</note>
         <ol>
           <li>Check the if the route exists between two router gateways. You can get the right
             qrouter namespace id by executing <i>sudo ip netns</i>. Once you have the qrouter
             namespace id, you can get the interface by executing <i>sudo ip netns qrouter-xxxxxxxx
               ip</i> and from the result the interface can be found.
             <codeblock>sudo ip netns
-sudo ip netns qrouter-&lt;router1 namespace&gt; ping &lt;router2 ip&gt;
-sudo ip netns qrouter-&lt;router2 namespace&gt; ping &lt;router1 ip&gt;</codeblock></li>
+sudo ip netns exec qrouter-&lt;router1 UUID&gt; ping &lt;router2 gateway&gt;
+sudo ip netns exec qrouter-&lt;router2 UUID&gt; ping &lt;router1 gateway&gt;</codeblock></li>
           <li>Initiate a tcpdump on the interface.
             <codeblock>sudo ip netns exec qrouter-xxxxxxxx tcpdump -i qg-xxxxxx</codeblock></li>
           <li>Check the VPN connection.
-            <codeblock>ssh cirros@fipvm1
+            <codeblock>ssh cirros@vm1-ip
 password: &lt;password&gt;
               
 # ping the private IP address of vm2
@@ -179,7 +172,7 @@ ping ###.###.###.###</codeblock></li>
           <li>Repeat for other namespace and right tap interface.
             <codeblock>sudo ip netns exec qrouter-xxxxxxxx tcpdump -i qg-xxxxxx</codeblock></li>
           <li>In another terminal.
-            <codeblock>ssh cirros@fipvm2
+            <codeblock>ssh cirros@vm2-ip
 password: &lt;password&gt;
               
 # ping the private IP address of vm1
