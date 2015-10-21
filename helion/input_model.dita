@@ -243,7 +243,7 @@
       <p>The way we express this in the cloud model is to talk about a Control Plane providing some
         or all of the endpoints for one or more Regions.</p>
     </section>
-    <section id="3.3_Services"><title>Services</title>
+    <section id="services"><title><i>2.3</i> Services</title>
       <p><i>A control plane runs one or more services</i></p>
       <p>A service is the collection of <uicontrol>service-components</uicontrol> that provide a
         particular feature; for example Nova provides the compute service and consists of the
