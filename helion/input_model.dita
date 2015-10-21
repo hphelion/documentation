@@ -146,54 +146,90 @@
         examples these names are provided in capital letters as a convention. These names have no
         significance to HP Helion OpenStack, rather it is the relationships between them that define
         the configuration.</p>
+      <!-- UPDATE MEDIA -->
       <p><image href="../media/config/concept_diag.png"/></p>
+      <p>The configuration processor reads and validates the input model described in the YAML files
+        discussed above, combines it with the service definitions provided by HP Helion OpenStack
+        and any persisted state information about the currently deployment to produce a set of
+        Ansible variables that can be used to deploy the cloud. It also produces a set of
+        information files that provide details about the configuration.</p>
+      <p>The relationship between the file systems on the HP Helion OpenStack deployment server and
+        the configuration processor is shown in the following diagram. Below the line are the
+        directories that you, the cloud administrator, interact with. Above the line are the
+        directories that are maintained by HP Helion OpenStack.</p>
+      <p><image href="../media/inputmodel_2.png"/></p>
+      <p>The input model is read from the <codeph>~/helion/my_cloud/definition</codeph> directory.
+        Although the supplied examples use separate files for each type of object in the model, the
+        names and layout of the files have no significance to the Configuration Processor, it simply
+        reads all of the .yml files in this directory. Cloud administrators are therefore free to
+        use whatever structure is best for their context. For example, you may decide to maintain
+        separate files or sub-directories for each physical rack of servers.</p>
+      <p>As mentioned, the examples use the conventional upper casing for object names, but these
+        strings are used only to define the relationship between objects. They have no specific
+        significance to the Configuration Processor.</p>
     </section>
-    
-    
-    
-    <section id="3.1_Cloud"><title>Cloud</title>
-      <p><i>A cloud consists of one or more control planes.</i></p>
-      <p>The <codeph>cloudConfig.yml</codeph> file will define your Cloud name, NTP server
-        configuration, DNS settings, and your SMTP settings.</p>
+
+
+
+    <section id="cloud"><title><i>2.1</i> Cloud</title>
+      <p>The Cloud definition includes a few top-level configuration values such as the name of the
+        cloud, the host prefix, details of external services (NTP, DNS, SMTP) and the firewall
+        settings.</p>
+      <p>The location of the cloud configuration file also tells the Configuration Processor where
+        to look for the files that define all of the other objects in the input model.</p>
     </section>
-    <section id="3.2_ControlPlanes"><title>Control Planes</title>
-      <p><i>A control plane runs one or more <uicontrol>services</uicontrol> distributed across
-            <uicontrol>clusters</uicontrol> and <uicontrol>resource groups</uicontrol></i></p>
-      <p><i>A control plane uses servers with a particular
-        <uicontrol>server-role</uicontrol></i></p>
-      <p>A Control Plane provides the operating environment for a set of services; normally
-        consisting of set of shared services (MySQL, RabbitMQ, HAproxy, Apache, etc), OpenStack
-        control services (API, schedulers, etc) and the resources they are managing (compute,
-        storage, etc)</p>
-      <p>A simple cloud may have a single control plane which runs all of the services. A more
-        complex cloud may have multiple control planes with a relationship between them. Services
-        that need to consume (use) another service (such as Neutron consuming MySql, Nova consuming
-        Neutron) always use the service within the same control plane before looking in any related
-        control planes. It is the job of the HLM configuration processor to resolve these
-        relationships and make sure that each service is provided with the configuration details to
-        connect to the appropriate service.</p>
-      <p>A Control Plane is structured as <uicontrol>clusters</uicontrol> and
-          <uicontrol>resource-nodes</uicontrol>. The clusters are typically used to host the
-        OpenStack services used to manage the cloud: such as API servers, Database servers, Neutron
-        agents, Swift Proxies; while the Resource servers are used to host those scale out OpenStack
-        services like Nova-Compute or Swift-Object service. This is a representation convenience
-        rather than a strict rule, for example it is possible to locate the Swift-Object service in
-        the management cluster in a smaller scale cloud that is not designed to scale out object
-        serving.</p>
-      <p>A cluster can be one or more servers, and you can have one or more clusters depending on
-        the scale of the cloud that you are building. Spreading services across multiple clusters is
-        more scalable, but of course it requires more servers. A common pattern for a large cloud is
-        to run high data volume services such as monitoring and logging on a separate cluster. A
-        cloud with a high object storage requirement will typically also run the Swift service on
-        its own cluster.</p>
-      <p>Clusters in this context are a mechanism for grouping service components onto physical
-        servers, but all instances of a component in a control plane work collectively. So for
-        example, if ha-proxy is configured into multiple clusters within the same control plane then
-        all of those instances will work as a single instance of the ha-proxy services.</p>
-      <p>In addition to its cluster, a control plane also has a collection of resource servers which
-        provide compute and storage resources.</p>
+
+
+
+    <section id="controlplanes"><title><i>2.2</i> Control Planes</title>
+      <p><i>A control-plane runs one or more <uicontrol>services</uicontrol> distributed across
+            <uicontrol>clusters</uicontrol> and <uicontrol>resource groups</uicontrol></i>.</p>
+      <p><i>A control-plane uses servers with a particular
+        <uicontrol>server-role</uicontrol></i>.</p>
+      <p>A <uicontrol>control-plane</uicontrol> provides the operating environment for a set of
+          <uicontrol>services</uicontrol>; normally consisting of set of shared services (MySQL,
+        RabbitMQ, HA Proxy, Apache, etc), OpenStack control services (API, schedulers, etc) and the
+          <uicontrol>resources</uicontrol> they are managing (compute, storage, etc).</p>
+      <p>A simple cloud may have a single <uicontrol>control-plane</uicontrol> which runs all of the
+          <uicontrol>services</uicontrol>. A more complex cloud may have multiple
+          <uicontrol>control-planes</uicontrol> with a relationship between them. (Note that HP
+        Helion OpenStack 2.0 only supports a single control-plane). Services that need to consume
+        (use) another service (such as Neutron consuming MySQL, Nova consuming Neutron) always use
+        the service within the same <uicontrol>control-plane</uicontrol> before looking in any
+        related <uicontrol>control-planes</uicontrol>. It is one of the functions of the
+        Configuration Processor to resolve these relationships and make sure that each
+        consumer/service is provided with the configuration details to connect to the appropriate
+        provider/service.</p>
+      <p>Each <uicontrol>control-plane</uicontrol> is structured as <uicontrol>clusters</uicontrol>
+        and <uicontrol>resources</uicontrol>. The <uicontrol>clusters</uicontrol> are typically used
+        to host the OpenStack services that manage the cloud such as API servers, database servers,
+        Neutron agents, and Swift proxies, while the <uicontrol>resources</uicontrol> are used to
+        host the scale-out OpenStack services such as Nova-Compute or Swift-Object services. This is
+        a representation convenience rather than a strict rule, for example it is possible to run
+        the Swift-Object service in the management cluster in a smaller-scale cloud that is not
+        designed for scale-out object serving.</p>
+      <p>A cluster can contain one or more <uicontrol>servers</uicontrol> and you can have one or
+        more <uicontrol>clusters</uicontrol> depending on the capacity and scalability needs of the
+        cloud that you are building. Spreading services across multiple
+          <uicontrol>clusters</uicontrol> provides greater scalability, but it requires a greater
+        number of physical servers. A common pattern for a large cloud is to run high data volume
+        services such as monitoring and logging in a separate cluster. A cloud with a high object
+        storage requirement will typically also run the Swift service in its own cluster.</p>
+      <p>Clusters in this context are a mechanism for grouping service components in physical
+        servers, but all instances of a component in a <uicontrol>control-plane</uicontrol> work
+        collectively. For example, if HA Proxy is configured to run on multiple clusters within the
+        same <uicontrol>control-plane</uicontrol> then all of those instances will work as a single
+        instance of the ha-proxy service.</p>
+      <p>Both <uicontrol>clusters</uicontrol> and <uicontrol>resources</uicontrol> define the type
+        (via a list of <uicontrol>server-roles</uicontrol>) and number of servers (min and max or
+        count) they require.</p>
+      <p>The <uicontrol>control-plane</uicontrol> can also define a list of failure-zones
+          (<uicontrol>server-groups</uicontrol>) from which to allocate servers.</p>
     </section>
-    <section id="3.2.1_ControlPlanesAndRegions"><title>Control Planes and Regions</title>
+
+
+
+    <section id="controlplanes_regions"><title><i>2.2.1</i>Control Planes and Regions</title>
       <p>A region in OpenStack terms is a collection of URLs that together provide a set of services
         (Nova, Neutron, Swift, etc). As a user you have to explicitly decide which region you want
         to use.</p>
