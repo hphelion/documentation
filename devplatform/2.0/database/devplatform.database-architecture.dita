@@ -80,7 +80,7 @@
   <section id="Deployment">
     <title>Deployment</title>
     <p>The Database Service uses HP Helion Orchestration (OpenStack Heat) in the OverCloud to orchestrate its deployment. The default configuration sets up the service in a high-availability (HA) model across three AZs. If only a 
-      single AZ exists the service control plane will not be deployed in a HA configuration. The Helion OpenStack post install steps for setting up host aggregates to create AZs are documented and should be carried out before 
+      single AZ exists the service control plane will not be deployed in a HA configuration. The HP Helion OpenStack post install steps for setting up host aggregates to create AZs are documented and should be carried out before 
       deploying the HP Helion Platform services.</p>
     <p>By default, the control plane instances of the Database Service will use 15 medium flavor VMs for a 3 AZ deployment as illustrated in Figure 5. The size of the control plane and of the selected VM flavor are not configurable 
       in this release.</p>
