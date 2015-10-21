@@ -18,13 +18,34 @@
               <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5.
               <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6.
               <b><keyword keyref="quickStartHPcloudStep6"/></b></stentry>
-       <stentry>Congratulations! You are now ready to begin deploying apps to your new sandbox
-         environment. We have provided some sample applications in multiple programming languages for
-         you to examine and deploy. These very simple applications provide insight on how to push
-         applications and connect those applications to <keyword keyref="opnStckLong"/> services.<xref
-           href="CFR_step_6.dita#concept_m3k_bth_tt">
-           <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
-         </xref></stentry>
+       <stentry><b>Terminating an Instance</b><ol id="ol_zqt_ld3_tt">
+            <li>Log into <xref href="https://horizon.hpcloud.com/" format="html" scope="external"
+                  ><keyword keyref="pubCloudShort"/></xref>.</li>
+            <li>Click <menucascade>
+                <uicontrol>Project</uicontrol>
+                <uicontrol>Compute</uicontrol>
+                <uicontrol>Instances</uicontrol>
+              </menucascade>.</li>
+            <li>Click the checkbox next to your instance, for example
+                <uicontrol>cluster1-core</uicontrol>.</li>
+            <li>(Optional) If you have additional Windows DEA or SQL Server services, you have
+              additional instances to delete, for example
+              <uicontrol>cluster-1-windea-1</uicontrol>.</li>
+            <li>Click <uicontrol>Terminate Instances</uicontrol>.</li>
+          </ol><b>Terminating Security Groups</b><ol id="ol_aqw_zd3_tt">
+            <li>Log into <xref href="https://horizon.hpcloud.com/" format="html" scope="external"
+                  ><keyword keyref="pubCloudShort"/></xref>.</li>
+            <li>Click <menucascade>
+                <uicontrol>Project</uicontrol>
+                <uicontrol>Compute</uicontrol>
+                <uicontrol>Access and Security</uicontrol>
+              </menucascade>.</li>
+            <li>Click the checkbox next to the security groups, for example
+                <uicontrol>cluster1-SSH</uicontrol>, <uicontrol>cluster-1-Router</uicontrol>, and
+                <uicontrol>cluster-1-Internal</uicontrol>.</li>
+            <li>Click <uicontrol>Delete Security Groups</uicontrol>.</li>
+          </ol><image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
+        </stentry>
      </strow>
    </simpletable>
  </conbody>
