@@ -19,10 +19,19 @@
        conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4. <xref
        conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p>5. <xref
       conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></stentry>
-    <stentry><b>Downloading and Installing the Cloud Foundy Command-Line Interface (CLI)</b><p>You
-                        can use the Cloud Foundry CLI to deploy and manage your applications. Click
-                        the download link appropriate for your operating system:</p><ul
-                        id="ul_bp4_fpb_tt">
+    <stentry><b>Downloading <keyword keyref="prodShort"/></b><p>You can use <keyword
+                            keyref="prodShort"/> to push Docker images and application code to the
+                        server, start and stop applications, link <keyword keyref="opnStckShort"/>
+                        services to applications, and perform other application management
+                        operations.</p><ul id="ul_cfn_rm1_tt">
+                        <li><xref
+                                href="https://mail.extranet.hp.com/owa/redir.aspx?C=v0h59KxcIUy1Hc_utlLXGp5PUiDk3tII0krQLuLHNfBoStRRSt_njM-ddAbBASH2_l47s0lTGRQ.&amp;URL=https%3a%2f%2fa248.e.akamai.net%2fcdn.hpcloudsvc.com%2fgb0e6744f83898b90eb8ff0a2e16a9529%2fprodae1%2f%2fhcf-1.0.0-branch-master-20151020-013314%2fhcf-1.0.0-20151020_014025.tar.gz"
+                                format="html" scope="external">Download <keyword keyref="prodShort"/>
+                                <keyword keyref="prodVerLong"/></xref></li>
+                    </ul><b>Downloading and Installing the Cloud Foundy Command-Line Interface
+                        (CLI)</b><p>You can use the Cloud Foundry CLI to deploy and manage your
+                        applications. Click the download link appropriate for your operating
+                        system:</p><ul id="ul_bp4_fpb_tt">
                         <li>Debian <xref
                                 href="https://cli.run.pivotal.io/stable?release=debian32&amp;version=6.13.0&amp;source=github-rel"
                                 format="html" scope="external">x86</xref> | <xref
@@ -85,16 +94,7 @@
                         installation instructions, see the <xref
                             href="https://terraform.io/intro/getting-started/install.html"
                             format="html" scope="external">Terraform installation
-                        guide</xref>.</note><b>Downloading <keyword keyref="prodShort"/></b><p>You
-                        can use <keyword keyref="prodShort"/> to push Docker images and application
-                        code to the server, start and stop applications, link <keyword
-                            keyref="opnStckShort"/> services to applications, and perform other
-                        application management operations.</p><ul id="ul_cfn_rm1_tt">
-                        <li><xref
-                                href="https://mail.extranet.hp.com/owa/redir.aspx?C=v0h59KxcIUy1Hc_utlLXGp5PUiDk3tII0krQLuLHNfBoStRRSt_njM-ddAbBASH2_l47s0lTGRQ.&amp;URL=https%3a%2f%2fa248.e.akamai.net%2fcdn.hpcloudsvc.com%2fgb0e6744f83898b90eb8ff0a2e16a9529%2fprodae1%2f%2fhcf-1.0.0-branch-master-20151020-013314%2fhcf-1.0.0-20151020_014025.tar.gz"
-                                format="html" scope="external">Download <keyword keyref="prodShort"/>
-                                <keyword keyref="prodVerLong"/></xref></li>
-                    </ul><xref href="CFR_step_3.dita#concept_kpg_fhz_st">
+                        guide</xref>.</note><xref href="CFR_step_3.dita#concept_kpg_fhz_st">
                         <image href="../../media/NextButton.png" id="image_gqc_sgp_js"
                             placement="break"/>
                     </xref></stentry>
