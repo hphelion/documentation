@@ -22,72 +22,50 @@
       VRSvApp is required for each ESX host. There is a 1-to-1 mapping between each VRSvApp and its
       ESX host. The VRSvApp installation package is contained in the packages you downloaded from
       DCN.</p>
-        <p>The following describes how to install the vSphere Solution. The installation is as
-            simple as deploying the new vCenter Integration Node. When using the vSphere Solution
-            method, the VRS-VM will be deployed automatically as Agents on every single ESXi node in
-            a Cluster. <!--From HP DCN installation guide.--></p>
+        <p>The following sections describes how to install the HP Distributed Cloud Networking (DCN)
+            vSphere Solution. The installation involves deploying a stand-alone VM, installing the
+            new vCenter Integration Node (called the vCenter Deployment Toolbox). The VRSvApp can be
+            deployed automatically on each ESX node in a cluster.
+            <!--From HP DCN installation guide.--></p>
         <section>
             <title>Pre-requisites: </title>
             <!--From Nayana et al. playbook-->
             <ul id="ul_e2r_qf4_rt">
                 <li><b>New VMs:</b><ul id="ul_f2r_qf4_rt">
-                        <li>vCenter Integration Node = standalone VSD deployment Toolbox</li>
                         <li>HTTP_DHCP VM = VM that will host HTTP and DHCP services required for
                             deploying VRSvAPP on each ESXi host.</li>
-                        <li>VRSvAPP on each ESXi host</li>
                     </ul></li>
             </ul>
             <ul id="ul_ihc_tf4_rt">
                 <li><b>Networks:</b><ul id="ul_h2r_qf4_rt">
-                        <li>vCenter Integration Node should have one NIC in the Cloud Lab Management
-                            network.</li>
-                        <li>HTTP server should host VRS vApp vMware template accessible via url.
-                            Server should have one network interface in the DVRS Datapath network
-                            (TUL Network)</li>
+                        <li>The system hosting the vCenter Integration Node must have one NIC in the
+                            Management network.</li>
                         <li>DHCP server should have one network interface in the DVRS Datapath
                             network (TUL Network)</li>
                     </ul></li>
             </ul>
         </section>
-        <section><title>Installing the vCenter Integration Node</title>The vCenter Integration Node
-            is bundled in the same installable VM as the VSD Node. As such, the installation steps
-            for this integration node are the same as for the VSD Standalone Node. Once you install
-            this VM as described in the VSD Standalone install instructions, the UI and API can be
-            accessed at <codeph>&lt;url>:8443/vcenter/</codeph>.Any further configuration required
-            will be described in the vCenter plugin
-            guide.<!--From HP DCN installation guide.--></section>
-        <section><b>About the Deployment Toolbox</b><p>This HP DCN vSphere Solution includes a UI
-                and API called the vCenter Deployment Toolbox.  To access the UI point a browser to
-                    <codeph>https://&lt;VSD_IP&gt;:8443/vcenter/</codeph>.  Only the
-                    <codeph>CSPRoot</codeph> user can log into the vCenter deployment
-            toolbox.</p></section>
-    <section><title>Creating a Virtual Machine for the Deployment Toolbox</title>The HP Helion
-            OpenStack Carrier Grade installation requires you to install a dedicated virtual machine
-            for the HP DCN Virtualized Services Directory (<i>VSD</i>). This VSD should have been
-            deployed as a prerequisite step.<p>To install the VRS vApp, you need another VSD VM that
-                will be used to install the VRS vApp on all ESX nodes in that cluster. This VSD VM
-                does not require a VSD license. This VM will host the HP DCN vSphere Solution, a
-                deployment toolbox,</p><p><b>Note:</b> This VSD VM is used to deploy VRS vApp and
-                does not offer VSD functionality.</p><p>To deploy this VM:</p><p>
+    <section><title>Creating a Stand-Alone Virtual Machine for the vCenter Deployment
+                Toolbox</title>The HP Helion OpenStack Carrier Grade installation requires you to
+            install a dedicated virtual machine for the HP DCN vSphere Solution. This VM is called
+            the vCenter Integration Node, and includes a UI and API called the vCenter Deployment
+            Toolbox.  .<p>The vCenter Integration Node VM does not require a VSD license and does
+                not offer VSD functionality. </p>After installing the vCenter Integration Node VM
+            and vCenter Deployment Toolbox, you can access the toolbox by pointing a browser to
+                <codeph>https://&lt;VSD_IP&gt;:8443/vcenter/</codeph>.  Only the
+                <codeph>CSPRoot</codeph> user can log into the vCenter deployment toolbox.<p>To
+                deploy the vCenter Integration Node VM:</p><p>
                 <ol conref="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/ol_rmq_bnc_tt"
                     id="ol_kz1_dnc_tt">
                     <li/>
                 </ol>
-            </p><p>see  <xref href="carrier-grade-install-vsd-vm.dita#topic7646">Bringing Up Single
-                    VSD VM Manually</xref>. Use Steps 5, <xref
-                    href="carrier-grade-install-vsd-vm.dita#topic7646/5"><i>Edit
-                        /etc/sysconfig/network-scripts/ifcfg-eth0 file to configure a static IP
-                        address.</i></xref>through Step 15, <i>After NTP is properly
-                    synchronized,execute the following command to install VSD:</i> in the <i>Launch
-                    the VSD VM</i> section. You do not need to apply a license or create users for
-                this VSD VM. </p></section>
-        <section><title>Configure the HTTP\DHCP VM setup required by Deployment Toolbox standalone
-                VSD:</title>A OVA template with CentOS 6.5 is created to host HTTP and DHCP service
-            required by the Toolbox. Template available on the LR4 Jump Server <codeph>15.215.66.57:
-                E:\DCN\itoolbox1.ova</codeph>. Deploy a VM from this template above Networks for the
-            VM: TUL network - Setup with a static IP<p>
+            </p></section>
+        <section>
+            <title>Configure the HTTP\DHCP VM Setup for the vCenter Integration Node</title>
+            <p>
                 <ol id="ol_v11_wh4_rt">
-                    <li>Edit /etc/dhcp/dhcpd.conf this VM using the below example:
+                    <li>Log into the vCenter Integration Node.</li>
+                    <li>Edit the <codeph>/etc/dhcp/dhcpd.conf</codeph> file using the below example:
                         <codeblock>######### Config file start 
 # DHCP Server Configuration file.
 #   see /usr/share/doc/dhcp*/dhcpd.conf.sample
@@ -117,12 +95,13 @@ subnet 10.20.94.0 netmask 255.255.255.0 {
                     <li>Check Apache server and make sure it’s running and restart if
                         needed:<codeblock>Service httpd restart</codeblock></li>
                 </ol>
-            </p></section>
-        <section><title>Configuring the VSD Deployment Toolbox:</title>The MetaData Plugin is
-            bundled as part of the vCenter Integration node. The metadata plugin needs to be
-            installed once the vCenter Integration node is up and running.<p>To install and
-                configure the metadata plugin:</p><ol id="ol_o4m_w34_rt">
-                <li>Stop the JBoss application server on the the vCenter Integration node. <ol
+            </p>
+        </section>
+        <section><title>Configuring the VSD Deployment Toolbox:</title>The vCenter Deployment
+            Toolbox is bundled as a metadata plug-in. <p>To install and configure the metadata
+                plugin:</p><ol id="ol_o4m_w34_rt">
+                <li>Log into the vCenter Integration Node VM using SSH.</li>
+                <li>Stop the JBoss application server on the vCenter Integration Node. <ol
                         id="ol_zj2_g3t_st">
                         <li>SSH into the vCenter Integration node.</li>
                         <li>Execute the following command:

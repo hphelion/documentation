@@ -33,13 +33,9 @@ Login creds
 Login: root
 Password: Alcateldc</codeblock>
                     </p>Where <codeph>&lt;vsdname></codeph> is the name of your VSD. </li>
-            </ol><b>Launch the VSD VM</b><p>
-                <ol conref="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/ol_rmq_bnc_tt"
-                    id="ol_qpj_bpc_tt">
-                    <li/>
-                </ol>
-            </p>
-            <b>Verify that VSD is installed</b>
+                <li conref="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/5"
+                    conrefend="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/15"/>
+            </ol><b>Verify that VSD is installed</b>
             <ol id="ol_mgf_hgl_2t">
                 <li>Start a console session to the VSD VM from HLM host using the following command:
                         <codeblock>virsh console &lt;vsdname&gt; </codeblock><p>Where

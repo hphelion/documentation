@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE oXygen:ReusableComponent [
+<!ELEMENT oXygen:ReusableComponent (oXygen:ComponentDescription, oXygen:ComponentDefinition)>
+<!ATTLIST oXygen:ReusableComponent 
+    xmlns:oXygen CDATA #FIXED "http://www.oxygenxml.com/ns/dita/reuse" 
+    id CDATA #IMPLIED
+    domains CDATA "(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)     (topic oXygen-reuse-d) "
+    class CDATA "- topic/topic oXygen:ReusableComponent/oXygen:ReusableComponent "    
+    xmlns:ditaarch CDATA #FIXED "http://dita.oasis-open.org/architecture/2005/"
+    ditaarch:DITAArchVersion CDATA #FIXED "1.2" 
+    >
+<!ELEMENT oXygen:ComponentDescription (#PCDATA)>
+<!ATTLIST oXygen:ComponentDescription 
+ class CDATA "- topic/title oXygen:ReusableComponent/oXygen:ComponentDescription ">
+<!ELEMENT oXygen:ComponentDefinition ANY>
+<!ATTLIST oXygen:ComponentDefinition
+    class CDATA "- topic/body oXygen:ReusableComponent/oXygen:ComponentDefinition ">
+
+<!ENTITY % dtd PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+%dtd;
+
+]>
+<oXygen:ReusableComponent id="ReusableComponent_mmq_bnc_tt">
+    <oXygen:ComponentDescription>VSD VM</oXygen:ComponentDescription>
+    <oXygen:ComponentDefinition><li id="5">Edit <i>/etc/sysconfig/network-scripts/ifcfg-eth0</i> file to configure a static IP address. <p>Use the TUL IP for the VSD that is already configured by your lab admin.</p><p><u>For example</u><codeblock>BOOTPROTO=”static”
+IPADDR=10.20.5.21
+NETMASK=255.255.255.0
+GATEWAY=10.20.5.1</codeblock></p></li><li>Restart the Networking service using the following command: <codeblock>service network restart</codeblock></li><li>Edit the <i>/etc/resolv.conf</i> file with the IP address of the DNS name server:<codeblock>nameserver &lt;ip-address&gt;</codeblock></li><li>Update the <i>/etc/sysconfig/network</i> file with the <b>vsd1</b> host name. The name must be the same that is configured on the DNS server. For example:<codeblock>root@vsd1 ~]# cat /etc/sysconfig/network
+NETWORKING=yes
+HOSTNAME=vsd1.dcn-one.helion.cg</codeblock></li><li>Execute the following command in order for the VSD VM host name to be reflected in the <i>/etc/sysconfig/network</i> file: <codeblock>/etc/init.d/network restart </codeblock></li><li>Exit the VSD VM console session, then log back in. You should see the VSD name in the <i>/etc/sysconfig/network</i> file.</li><li>Configure an NTP Server for the VSD VM by editing the <i>/etc/ntp.conf</i> file. Commenting out other server list and add your DNS servers. For example:<codeblock>server 10.1.64.20
+server 16.110.135.113 </codeblock><p><image href="../../media/CGH-2-ntp-vsd.png" id="image_tth_w2l_2t"/></p></li><li>Execute the following commands to set the NTP time:<codeblock>/etc/init.d/ntpd stop
+ntpdate &lt;ntp server>
+/etc/init.d/ntpd start</codeblock><p>Where <codeph>&lt;ntp server&gt;</codeph> is the address of your NTP server.</p></li><li> Execute the following command to verify that the NTP servers are listed:<codeblock>ntpq –p</codeblock><p> <image href="../../media/CGH-2-ntp-verify.png" id="image_ltd_b1l_2t" width="500"/></p></li><li>Verify that NTP is synchronized. The synchronization process usually takes 10 to 15 minutes. <image href="../../media/CGH-2-ntp-verify-time.png" height="68" width="328" id="image_ntd_b1l_2t"/></li><li id="15">After NTP is properly synchronized,execute the following command to install VSD:<codeblock> /opt/vsd/install.sh xmpp.&lt;domain_name> -t s -y</codeblock></li></oXygen:ComponentDefinition>
+</oXygen:ReusableComponent>
