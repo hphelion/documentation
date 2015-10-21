@@ -7,6 +7,7 @@
     <topicref href="2.0/database/devplatform.database-instance.dita" locktitle="yes"
       navtitle="Using the Database Service"/>
     <topicref href="2.0/database/devplatform.database-releasenotes.dita" navtitle="Release Notes"/>
+    <topicref href="2.0/database/devplatform.database-architecture.dita"/>
     <topicref href="2.0/database/devplatform.database-create-horizon.dita"
       navtitle="Creating a database instance from Horizon"/>
     <topicref href="2.0/database/devplatform.database-create-cli.dita"
