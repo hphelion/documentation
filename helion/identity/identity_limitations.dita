@@ -43,7 +43,6 @@
     <section id="limitations">
       <title>Limitations</title>
       <b>Domains</b><ul id="ul_ks2_jpd_bt">
-
         <li>No Horizon web portal support currently exists for Domains. <ul id="ul_p52_jpd_bt">
             <li>Users cannot currently select a Domain when logging into Horizon</li>
             <li>No domains created by API or CLI will be visible in Horizon</li>
@@ -51,17 +50,13 @@
       </ul>
       <b>Authentication with external authentication systems (LDAP, Active Directory (AD) or
         Identity Providers)</b><ul id="ul_u52_jpd_bt">
-
         <li>No Horizon web portal support currently exists for the creation and management of
           external authentication system configurations.</li>
-
         <li>A new Domain Admin API has been included in the Kilo release of OpenStack but is
           currently an "experimental" function and is not recommended for production use until a
           future OpenStack release.</li>
       </ul>
       <b>Keystone-to-Keystone Federation</b><ul id="ul_xw2_jpd_bt">
-
-
         <li>No Horizon web portal support currently exists for the creation and management of
           federation configurations.</li>
         <li>All end users authentication is available only via the Keystone API and OpenStackClient
@@ -74,8 +69,6 @@
       </ul>
       <b>Multi-Factor Authentication (MFA)</b>
       <ul id="ul_az2_jpd_bt">
-
-
         <li>HP Helion OpenStack MFA support is a custom configuration requiring HP Professional
           Services support.</li>
         <li>MFA drivers are not included with HP Helion OpenStack and need to be provided by a
@@ -87,7 +80,6 @@
       </ul>
       <b>Hierarchical Multitenancy</b>
       <ul id="ul_tbf_jpd_bt">
-
         <li>Requires additional OpenStack service support prior to being used for general use.</li>
         <li>Recommended currently only for test deployments.</li>
         <li>Additional information can be found at <xref
@@ -95,6 +87,13 @@
             format="html" scope="external"
             >http://specs.openstack.org/openstack/keystone-specs/specs/juno/hierarchical_multitenancy.html</xref>.</li>
       </ul>
-    </section>
+      <b>Missing quota information for Compute resources</b>
+      <p>Note that an error message that will appear in the default Horizon page if you are running
+        a Swift-only deployment (no Compute service). In this configuration, you will not see any
+        quota information for Compute resources and will see the following error message: </p><i>
+        <p>The Compute service is not installed or is not configured properly. No information is
+          available for Compute resources.</p>
+      </i> Note: this error message is expected as no Compute service is configured for this
+      deployment. Please ignore the error message. </section>
   </body>
 </topic>
