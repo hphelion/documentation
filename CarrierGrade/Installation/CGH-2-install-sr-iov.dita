@@ -15,9 +15,9 @@
     </metadata>
   </prolog>
   <body>
-        <p><i>Return to the Installing the <xref
-                    href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
-                    Deployment</xref>.</i></p>
+        <p>A SR-IOV Ethernet interface is a physical PCI Ethernet NIC that implements hardware-based
+            virtualization mechanisms to expose multiple virtual network interfaces that can be used
+            by one or more virtual machines simultaneously.</p>
       <section>
         <p><b>Configure WR Compute Nodes</b></p>
             <ol id="ol_qnf_5sg_tt">
@@ -49,10 +49,10 @@ nova boot hrushi-sriov-fixed --image wrl --flavor 2 --nic port-id=abd5b42a-e8f5-
                 href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/CGH-2-KVM-Admin.pdf"
                 format="pdf" scope="external">HPE Helion OpenStack® 2.0 Carrier Grade: Administrator
                 Guide</xref>.</p>
-    
+  </body>
     <related-links>
         <link href="https://wiki.openstack.org/wiki/SR-IOV-Passthrough-For-Networking" format="html"
             scope="external"/>
     </related-links>
-  </body>
+ 
 </topic>

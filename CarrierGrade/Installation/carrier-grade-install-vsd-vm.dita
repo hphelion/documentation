@@ -36,9 +36,25 @@ Login creds
 Login: root
 Password: Alcateldc</codeblock>
                     </p>Where <codeph>&lt;vsdname></codeph> is the name of your VSD. </li>
-                <li conref="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/5"
-                    conrefend="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/15"/>
-            </ol><b>Verify that VSD is installed</b>
+                    <li id="1">Edit <i>/etc/sysconfig/network-scripts/ifcfg-eth0</i> file to configure a
+                        static IP address. <p>
+                            <ul id="ul_wf5_bng_tt">
+                                <li>For the VSD VM installed as a prerequisite, use the DCM IP.</li>
+                                <li>For the vCenter Integration Node VM required for the VRSvApp deployment,
+                                    use the TUL IP.</li>
+                            </ul>
+                        </p><p><u>For
+                            example</u><codeblock>BOOTPROTO=”static”
+                                IPADDR=10.20.5.21
+                                NETMASK=255.255.255.0
+                                GATEWAY=10.20.5.1</codeblock></p></li>
+                <li conref="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/2"
+                    conrefend="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/14"/>
+            
+                    <li id="15">After NTP is properly synchronized,execute the following command to
+                    install
+                    VSD:<codeblock>/opt/vsd/install.sh xmpp.&lt;domain_name> -t s -y</codeblock></li>
+                </ol><b>Verify that VSD is installed</b>
             <ol id="ol_mgf_hgl_2t">
                 <li>Start a console session to the VSD VM from HLM host using the following command:
                         <codeblock>virsh console &lt;vsdname&gt; </codeblock><p>Where

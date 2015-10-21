@@ -22,20 +22,8 @@
 ]>
 <oXygen:ReusableComponent id="ReusableComponent_mmq_bnc_tt">
     <oXygen:ComponentDescription>VSD VM</oXygen:ComponentDescription>
-    <oXygen:ComponentDefinition><ol id="ol_rmq_bnc_tt">
-            <li id="5">Edit <i>/etc/sysconfig/network-scripts/ifcfg-eth0</i> file to configure a
-                static IP address. <p>
-                    <ul id="ul_wf5_bng_tt">
-                        <li>For the VSD VM installed as a prerequisite, use the DCM IP.</li>
-                        <li>For the vCenter Integration Node VM required for the VRSvApp deployment,
-                            use the TUL IP.</li>
-                    </ul>
-                </p><p><u>For
-                    example</u><codeblock>BOOTPROTO=”static”
-IPADDR=10.20.5.21
-NETMASK=255.255.255.0
-GATEWAY=10.20.5.1</codeblock></p></li>
-            <li>Restart the Networking service using the following command:
+    <oXygen:ComponentDefinition>
+            <li id="2">Restart the Networking service using the following command:
                 <codeblock>service network restart</codeblock></li>
             <li>Edit the <i>/etc/resolv.conf</i> file with the IP address of the DNS name
                 server:<codeblock>nameserver &lt;ip-address&gt;</codeblock></li>
@@ -63,7 +51,7 @@ ntpdate &lt;ntp server>
             <li> Execute the following command to verify that the NTP servers are listed:<codeblock>ntpq –p</codeblock><p>
                     <image href="../../media/CGH-2-ntp-verify.png" id="image_ltd_b1l_2t" width="500"
                     /></p></li>
-            <li>Verify that NTP is synchronized. The synchronization process usually takes 10 to 15
+            <li id="14">Verify that NTP is synchronized. The synchronization process usually takes 10 to 15
                 minutes. <p><image href="../../media/CGH-2-ntp-verify-time.png" height="68"
                         width="328" id="image_ntd_b1l_2t"/></p></li>
             <li id="15">After NTP is properly synchronized,execute one of the following command to
@@ -75,5 +63,5 @@ ntpdate &lt;ntp server>
                             use:<codeblock>/opt/vsd/install.sh</codeblock></li>
                     </ul>
                 </p></li>
-        </ol></oXygen:ComponentDefinition>
+        </oXygen:ComponentDefinition>
 </oXygen:ReusableComponent>
