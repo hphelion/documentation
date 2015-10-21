@@ -33,6 +33,7 @@ Login creds
 Login: root
 Password: Alcateldc</codeblock>
                     </p>Where <codeph>&lt;vsdname></codeph> is the name of your VSD. </li>
+                <li conref="CGH-2-conref-vsvapp2.dita#ReusableComponent_l3y_5jb_tt/5"/>
                 <li id="5">Edit <i>/etc/sysconfig/network-scripts/ifcfg-eth0</i> file to configure a static
                     IP address. <p>Use the TUL IP for the VSD that is already configured by your lab
                         admin.</p><p><u>For

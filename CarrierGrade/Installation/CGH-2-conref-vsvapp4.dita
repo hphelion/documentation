@@ -16,13 +16,13 @@
 <!ATTLIST oXygen:ComponentDefinition
     class CDATA "- topic/body oXygen:ReusableComponent/oXygen:ComponentDefinition ">
 
-<!ENTITY % dtd PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<!ENTITY % dtd PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 %dtd;
 
 ]>
-<oXygen:ReusableComponent id="ReusableComponent_l3y_5jb_tt">
-    <oXygen:ComponentDescription>Steps to create VSD VM</oXygen:ComponentDescription>
-    <oXygen:ComponentDefinition><ol id="ol_gtd_b1l_2t"><li id="5">Edit <i>/etc/sysconfig/network-scripts/ifcfg-eth0</i> file to configure a static IP address. <p>Use the TUL IP for the VSD that is already configured by your lab admin.</p><p><u>For example</u><codeblock>BOOTPROTO=”static”
+<oXygen:ReusableComponent id="ReusableComponent_mmq_bnc_tt">
+    <oXygen:ComponentDescription>VSD VM</oXygen:ComponentDescription>
+    <oXygen:ComponentDefinition><ol id="ol_rmq_bnc_tt"><li id="5">Edit <i>/etc/sysconfig/network-scripts/ifcfg-eth0</i> file to configure a static IP address. <p>Use the TUL IP for the VSD that is already configured by your lab admin.</p><p><u>For example</u><codeblock>BOOTPROTO=”static”
 IPADDR=10.20.5.21
 NETMASK=255.255.255.0
 GATEWAY=10.20.5.1</codeblock></p></li><li>Restart the Networking service using the following command: <codeblock>service network restart</codeblock></li><li>Edit the <i>/etc/resolv.conf</i> file with the IP address of the DNS name server:<codeblock>nameserver &lt;ip-address&gt;</codeblock></li><li>Update the <i>/etc/sysconfig/network</i> file with the <b>vsd1</b> host name. The name must be the same that is configured on the DNS server. For example:<codeblock>root@vsd1 ~]# cat /etc/sysconfig/network

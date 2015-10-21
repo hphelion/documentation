@@ -16,7 +16,7 @@
   </prolog>
   <body>
     <p>Before launching the <codeph>hlm generate</codeph> command, deploy the following patch to
-      update the nuage role on kenobi-node-configuration. </p>
+      update the nuage role required to deploy the HP Helion OpenStack Cloud. </p>
     <p>
       <ol id="ol_pn3_141_mt">
         <li>Download the <codeph>knc-nuage-role.patch</codeph> file.</li>

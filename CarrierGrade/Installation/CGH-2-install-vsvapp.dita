@@ -69,8 +69,8 @@
                 does not require a VSD license. This VM will host the HP DCN vSphere Solution, a
                 deployment toolbox,</p><p><b>Note:</b> This VSD VM is used to deploy VRS vApp and
                 does not offer VSD functionality.</p><p>To deploy this VM:</p><p>
-                <ol conref="CGH-2-conref-vsvapp2.dita#ReusableComponent_l3y_5jb_tt/ol_gtd_b1l_2t"
-                    id="ol_ykm_wjb_tt">
+                <ol conref="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/ol_rmq_bnc_tt"
+                    id="ol_kz1_dnc_tt">
                     <li/>
                 </ol>
             </p><p>see  <xref href="carrier-grade-install-vsd-vm.dita#topic7646">Bringing Up Single

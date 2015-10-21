@@ -481,10 +481,11 @@ volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver</codeblock>
         <li>Save the file to <codeph>cinder_conf</codeph>.</li>
       </ol>
     </section>
-    <section id="nuage"><title>Deploy the Networking Role Patch</title>Before launching the <codeph>hlm
-        generate</codeph> command, deploy the <xref
-        href="carrier-grade-install-network-role-patch.dita#topic10581">following patch to update
-        the nuage role</xref> on kenobi-node-configuration.</section>
+    <section id="nuage"><title>Deploy the Networking Role Patch</title>Before launching the
+        <codeph>hlm generate</codeph> command, deploy a patch to update the nuage role required to
+      deploy the HP Helion OpenStack Cloud.<p>For more information, see <xref
+          href="carrier-grade-install-network-patch.dita#topic10581">Deploy the Networking
+          Patch</xref>. </p></section>
     <section id="hos-cloud">
       <title>Deploy the HP Helion OpenStack cloud</title>
       <ol>
@@ -531,10 +532,15 @@ The cloud &lt;cloudname> was generated successfully.
     </section>
     <section><!--<title>Applying the HLM Port Security Patch</title>This patch secures all ports on the HLM VM. The standard protocol ports will allow inbound access only and the only the cloud nodes will have inbound access to the other ports of the HLM VM.<p>For more information, see the README in the download or <xref href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port Security Patch</xref>. </p>--></section>
     <section>
-      <title>Deploy the Networking Patch</title>
-      <p>After launching the <codeph>hdeploy</codeph> command, deploy the networking patch. </p>
-      <p>For more information, see <xref href="carrier-grade-install-network-patch.dita#topic10581"
-          >Deploy the Networking Patch</xref>. </p>
+      <title>Deploy the Icinga Patch</title>
+      <p>After launching the <codeph>hdeploy</codeph> command, deploy three patches to support the
+        monitoring of HP Helion OpenStack. </p>
+      <p>For more information, see <xref href="CGH-2-install-icinga-patch.dita#topic10581">Deploy
+          the Icinga Patch</xref>.</p>
+    </section>
+    <section>
+      <title>Deploy the Infoblox patch</title>
+      <p>Deploy the Infoblox patch.</p>
     </section>
     <section id="patch-after">
       <title>Configure LDAP to enable CLI and use Keystone v3</title>
