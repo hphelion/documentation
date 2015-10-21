@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_gui">
-  <title>Installing HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Using the Day Zero Installer</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installing via the GUI </title>
   <body><!--Needs Edit-->
     <section> HP Helion OpenStack 2.0 comes with a UI, the Dayzero Installer, for installing your
       cloud. Rather than searching through and editing a number of YAML files to input your specific
@@ -73,12 +73,14 @@
         is complete, the Ansible log will be displayed on the final page.</p>
     </section>
     <section><title>Using the installer securely</title>
-      <p>The Dayzero Installer is a web-based application . It runs on the deployer and is
-        implemented in nodejs. Currently this application runs behind Apache 2.0 where requests are
-        proxied to the nodejs Express Web Server. The nodejs Express Server runs on port 3000 and
-        Apache runs on port 79. You should access the installer through Apache and not directly from
-        the Express server. An Example URL looks like this: http://&lt;deployer-host-ip>:79/dayzero.
-        When you finish installing, the Installer will be disabled via Ansible.</p>
+      <p> The GUI installer is a web-based application that runs on the deployer/lifecycle manager
+        node and is implemented in nodejs. Currently this application runs behind Apache 2.0 where
+        requests are proxied to the nodejs Express Web Server. The nodejs Express Server runs on
+        port 3000 and Apache runs on port 79. </p>
+      <p>You should access the installer through Apache and not directly from the Express server. An
+        Example URL looks like this: http://&lt;deployer-host-ip>:79/dayzero When you finish
+        installing, the Installer will be disabled via Ansible. It is also disabled once deployment
+        is completed following the CLI instructions..</p>
     </section>
     <section>
       <p>The GUI is used only once: during the initial installation of your cloud.</p><p>For VSA you
