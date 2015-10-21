@@ -26,11 +26,20 @@
         <li>Assign a name to "external-name:" line in
           /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that an FQDN is
           used)</li>
-      </ul>
-      <p>You must also supply the name of a certificate file that matches your choice above. If you
-        are using IP addresses, you won't know the IP address until after the config processor has
-        run, but you can obtain it after running the config processor and before deployment. So the
-        sequence would be:</p>
+      </ul><p><note type="warning">TLS keys must adhere to the current <xref
+            href="https://cabforum.org/wp-content/uploads/Baseline_Requirements_V1_3_1.pdf"
+            format="pdf" scope="external">Baseline Requirements</xref>. Specifically:<ul>
+            <li>IP addresses and DNS names <b>must</b> appear using one or more Subject Alternative
+              Name (<codeph>subjectAltName</codeph>) extension attributes. If this attribute is not
+              included, services may fail to install or may not function as expected.</li>
+            <li>The Common Name attribute (<codeph>commonName</codeph>) has been deprecated and it
+              is recommended that you do not use it. The Common Name attribute must not contain an
+              IP address per <xref href="https://tools.ietf.org/html/rfc2818" format="html"
+                scope="external">RFC 2818</xref>.</li>
+          </ul></note>You must also supply the name of a certificate file that matches your choice
+        above. If you are using IP addresses, you won't know the IP address until after the config
+        processor has run, but you can obtain it after running the config processor and before
+        deployment. So the sequence would be:</p>
       <b>If you are using a FQDN:</b>
       <ol id="ol_ngj_qfq_rt">
         <li> Create or obtain a certificate to match the domain name you are going to use </li>
@@ -93,8 +102,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
             load balancer in question, which is the external load balancer. The components in
             'default' are those services defined under service-components in data/control_plane.yml.
             If you want to have a finer granularity, you can replace default with a list of
-            individual components, such as: <codeblock>tls-components: - 'horizon' </codeblock>
-          </dd>
+            individual components, such as: <codeblock>tls-components: - 'horizon' </codeblock></dd>
         </dlentry>
         <dlentry>
           <dt>cert-file:</dt>
