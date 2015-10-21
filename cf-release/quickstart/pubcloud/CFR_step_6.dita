@@ -24,6 +24,7 @@
               <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6.
               <b><keyword keyref="quickStartHPcloudStep6"/></b></stentry>
 <<<<<<< HEAD
+<<<<<<< HEAD
        <stentry><b id="connecting_to_your_cluster">Connecting to Your Cluster</b><p>To administer
             and troubleshoot your cluster, you can connect to it using SSH and then run <keyword
               keyref="adminUtil"/> commands. To connect, specify the IP address of your <keyword
@@ -48,6 +49,9 @@
               keyref="pubCloudShort"/></b><p>Using <keyword keyref="pubCloudShort"/> to terminate
             instances or security groups is not recommended. Use the following steps only if you run
             into difficulties with Terraform.</p><ol id="ol_zqt_ld3_tt">
+=======
+       <stentry><b>Terminating an Instance</b><ol id="ol_zqt_ld3_tt">
+>>>>>>> 3296354... Added new content
             <li>Log into <xref href="https://horizon.hpcloud.com/" format="html" scope="external"
                   ><keyword keyref="pubCloudShort"/></xref>.</li>
             <li>Click <menucascade>
@@ -56,13 +60,25 @@
                 <uicontrol>Instances</uicontrol>
               </menucascade>.</li>
             <li>Click the checkbox next to your instance, for example
+<<<<<<< HEAD
                 <uicontrol>hcf-core</uicontrol>.</li>
             <li>Click <uicontrol>Terminate Instances</uicontrol>.</li>
+=======
+                <uicontrol>cluster1-core</uicontrol>.</li>
+            <li>(Optional) If you have additional Windows DEA or SQL Server services, you have
+              additional instances to delete, for example
+              <uicontrol>cluster-1-windea-1</uicontrol>.</li>
+            <li>Click <uicontrol>Terminate Instances</uicontrol>.</li>
+          </ol><b>Terminating Security Groups</b><ol id="ol_aqw_zd3_tt">
+            <li>Log into <xref href="https://horizon.hpcloud.com/" format="html" scope="external"
+                  ><keyword keyref="pubCloudShort"/></xref>.</li>
+>>>>>>> 3296354... Added new content
             <li>Click <menucascade>
                 <uicontrol>Project</uicontrol>
                 <uicontrol>Compute</uicontrol>
                 <uicontrol>Access and Security</uicontrol>
               </menucascade>.</li>
+<<<<<<< HEAD
             <li>Click the checkbox next to your security group, for example
                 <uicontrol>hcf-container-host</uicontrol>.</li>
             <li>Click <uicontrol>Delete Security Groups</uicontrol>.</li>
@@ -76,6 +92,14 @@
            <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
          </xref></stentry>
 >>>>>>> be539c9... Added Step 6
+=======
+            <li>Click the checkbox next to the security groups, for example
+                <uicontrol>cluster1-SSH</uicontrol>, <uicontrol>cluster-1-Router</uicontrol>, and
+                <uicontrol>cluster-1-Internal</uicontrol>.</li>
+            <li>Click <uicontrol>Delete Security Groups</uicontrol>.</li>
+          </ol><image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
+        </stentry>
+>>>>>>> 3296354... Added new content
      </strow>
    </simpletable>
  </conbody>

@@ -140,11 +140,11 @@ cf target -o myOrg -s mySpace</codeblock></note></li>
        conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5. <b><keyword
         keyref="quickStartHPcloudStep5" id="quickStartHPcloudStep5"/></b></p>6. <xref
       conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
-    <stentry>Congratulations! You are now ready to begin deploying apps to your new sandbox
-     environment. We have provided some sample applications in multiple programming languages for
-     you to examine and deploy. These very simple applications provide insight on how to push
-     applications and connect those applications to <keyword keyref="opnStckLong"/> services.<xref
-      href="CFR_step_6.dita#concept_m3k_bth_tt">
+    <stentry><p>Congratulations! You are now ready to begin deploying apps to your new sandbox
+      environment. We have provided some sample applications in multiple programming languages for
+      you to examine and deploy. These very simple applications provide insight on how to push
+      applications and connect those applications to <keyword keyref="opnStckLong"/>
+      services.</p><xref href="CFR_step_6.dita#concept_m3k_bth_tt">
       <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
      </xref></stentry>
    </strow>

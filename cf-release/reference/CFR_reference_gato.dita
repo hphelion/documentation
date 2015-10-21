@@ -9,7 +9,7 @@
       <note type="note">The following commands apply to <filepath><keyword keyref="adminUtilCLI"/></filepath> version
         0.0.0.</note>
       <title>Usage</title>
-      <codeblock><keyword keyref="adminUtil"/> <varname>[global options]</varname> <varname>command</varname> <varname>[command options]</varname> <varname>[arguments...]</varname></codeblock>
+      <codeblock><keyword keyref="adminUtilCLI"/> <varname>[global options]</varname> <varname>command</varname> <varname>[command options]</varname> <varname>[arguments...]</varname></codeblock>
     </section>
     <section>
       <title>Global Options</title>
