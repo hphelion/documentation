@@ -6,9 +6,8 @@
     <p>Perform the following steps to identify the first node which is running the swift-proxy
         service:<ol id="ol_tqx_qjt_mt">
         <li>Log on to the deployer node.</li>
-        <li>Change to the
-          directory.<codeblock>cd ~/scratch/ansible/next/hos/ansible/host/verb_hosts</codeblock></li>
-        <li>Edit the following file.<codeblock>vi host/verb_hosts </codeblock></li>
+        <li>Edit the following
+          file.<codeblock>vi  ~/scratch/ansible/next/hos/ansible/hosts/verb_hosts </codeblock></li>
         <li>Search the entry with the name
             <codeph>SWF-PRX-&lt;cloud-name>-&lt;control-plane-name>-&lt;cluster-name>:children</codeph>.<p>The
             server which appears first in the SWF-PRX list is the first Swift Proxy
