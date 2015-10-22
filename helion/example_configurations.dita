@@ -152,8 +152,8 @@
       <p>This model can also be deployed without the VSA servers and configured to use an external
         storage device, such as a 3PAR array, which would reduce the minimum server count to
         four.</p>
-      <p><image href="../media/entry_scale_kvm_vsa.png"/></p>
-      <p><xref href="../media/entry_scale_kvm_vsa_lg.png" scope="external" format="html">Download a
+      <p><image href="../media/examples/entry_scale_kvm_vsa.png"/></p>
+      <p><xref href="../media/examples/entry_scale_kvm_vsa_lg.png" scope="external" format="html">Download a
           high-res version</xref></p>
       <p>The example requires the following networks:</p>
       <ul>
@@ -196,12 +196,12 @@
         for vCenter) and one OVSvApp virtual machine per cluster member (which provides network
         access). These virtual machines are created automatically by HP Helion OpenStack as part of
         activating the vCenter cluster, and are therefore not defined in the example.</p>
-      <p><image href="../media/entry_scale_esx.png"/></p>
+      <p><image href="../media/examples/entry_scale_esx.png"/></p>
       <!-- HPE
-        <p><image href="../media/entry_scale_esx_hpe.png"/></p>
-        <p><xref href="../media/entry_scale_esx_hpe_lg.png" scope="external" format="html">Download a high-res version</xref></p>
+        <p><image href="../media/examples/entry_scale_esx_hpe.png"/></p>
+        <p><xref href="../media/examples/entry_scale_esx_hpe_lg.png" scope="external" format="html">Download a high-res version</xref></p>
         -->
-      <p><xref href="../media/entry_scale_esx_lg.png" scope="external" format="html">Download a
+      <p><xref href="../media/examples/entry_scale_esx_lg.png" scope="external" format="html">Download a
           high-res version</xref></p>
       <p>The physical networking configuration is also largely the same as the KVM example, with the
         exception of the GUEST network which uses tenant VLANs as the Neutron networking model
@@ -212,8 +212,8 @@
     <section id="entryscale_swift"><title>Entry-scale Swift model</title>
       <p>This example shows how HP Helion OpenStack can be configured to provide a Swift only
         configuration, consisting of three controllers and one or more Swift object servers.</p>
-      <p><image href="../media/entry_scale_swift.png"/></p>
-      <p><xref href="../media/entry_scale_swift_lg.png" scope="external" format="html">Download a
+      <p><image href="../media/examples/entry_scale_swift.png"/></p>
+      <p><xref href="../media/examples/entry_scale_swift_lg.png" scope="external" format="html">Download a
           high-res version</xref></p>
       <p>The example requires the following networks:</p>
       <ul>
@@ -243,8 +243,8 @@
       <p>This example provides a KVM based cloud using Ceph for volume storage. This controller and
         compute configuration are essentially the same as in the KVM example, but the backend Cinder
         storage is provided by Ceph.</p>
-      <p><image href="../media/entry_scale_kvm_ceph.png"/></p>
-      <p><xref href="../media/entry_scale_kvm_ceph_lg.png" scope="external" format="html">Download a
+      <p><image href="../media/examples/entry_scale_kvm_ceph.png"/></p>
+      <p><xref href="../media/examples/entry_scale_kvm_ceph_lg.png" scope="external" format="html">Download a
           high-res version</xref></p>
     </section>
     <section id="midscale_kvm_vsa"><title>Mid-scale KVM with VSA model (Tech Preview)</title>
@@ -253,9 +253,9 @@
         The controller services are distributed across a greater number of controllers and a number
         of the networks are configured as multiple L3 segments (implementing per-rack
         networking).</p>
-      <p><image href="../media/mid_scale_kvm_vsa.png"/></p>
-      <p><image href="../media/mid_scale_kvm_vsa_notes.png"/></p>
-      <p><xref href="../media/mid_scale_kvm_vsa_lg.png" scope="external" format="html">Download a
+      <p><image href="../media/examples/mid_scale_kvm_vsa.png"/></p>
+      <p><image href="../media/examples/mid_scale_kvm_vsa_notes.png"/></p>
+      <p><xref href="../media/examples/mid_scale_kvm_vsa_lg.png" scope="external" format="html">Download a
           high-res version</xref></p>
       <p>The distribution of services across controllers is only one possible configuration, and
         other combinations can also be expressed.</p>
@@ -769,8 +769,8 @@
     <section id="standalone"><title>Using a standalone lifecycle-manager node</title>
       <p>All of the examples described above host the lifecycle-manager on one of the control nodes.
         It is also possible to deploy this service on a dedicated node, as shown below: </p>
-      <p><image href="../media/entry_scale_kvm_vsa_shared.png"/></p>
-      <p><xref href="../media/entry_scale_kvm_vsa_shared_lg.png" scope="external" format="html"
+      <p><image href="../media/examples/entry_scale_kvm_vsa_shared.png"/></p>
+      <p><xref href="../media/examples/entry_scale_kvm_vsa_shared_lg.png" scope="external" format="html"
           >Download a high-res version</xref></p>
       <p>A typical use case for wanting to run the dedicated lifecycle-manager is to be able to test
         the deployment of different configurations without having to re-install the first server.
