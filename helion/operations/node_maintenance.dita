@@ -8,8 +8,8 @@
       Therefore you will not remove a control plane node completely; you will just replace it. If
       you are swapping out the hardware for that control plane node, and the same is true for
       compute nodes, the process is to keep the entry you have in the <b>servers.yml</b> file but
-      change hardware-specific iinformation, such the MAC addresses, IMPI username, IPMI IP address
-      (if changed) and IPMI pasword.</p>
+      change hardware-specific information, such the MAC addresses, IPMI username, IPMI IP address
+      (if changed) and IPMI password.</p>
      <p> To add compute nodes, which can total up to 100 at this point, the process is to add
       entries to the <b>servers.yml</b> file.</p>
     <p>To remove compute nodes, you will remove their entries in <b>servers.yml</b> after you
@@ -18,7 +18,7 @@
       storage sections:</p>
     <ul>
       <li><xref href="../blockstorage/ceph/adding_new_osd_node.dita#topic_drm_rm5_kt">Adding a New Object
-          Storage Device Node</xref></li>
+        Storage Daemon Node</xref></li>
 
             
     </ul>
@@ -33,7 +33,7 @@
           Node</xref></li>
       <li><xref href="../operations/repair_node.dita#topic_gcv_r4y_lt">Repairing a Compute
           Node</xref></li>
-      <li><xref href="replace_controller.dita#topic_ijj_45j_nt">Repairing a Controller
+      <li><xref href="replace_controller.dita#topic_ijj_45j_nt">Replacing a Controller
         Node</xref></li>
     </ul>
   </body>
