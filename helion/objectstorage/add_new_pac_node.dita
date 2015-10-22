@@ -13,7 +13,8 @@
         make the changes:
         <!--You must add a new node details in the <codeph>server.yml</codeph> file. --></p>
       <p>Perform the following steps to add a new node:<ol id="ol_p4w_gbr_4t">
-          <li><!--Log in to the deployer node.--> Get the <codeph>server.yml</codeph> file stored in
+          <li><!--Log in to the deployer node.--> Get the <codeph>servers.yml</codeph> file stored
+            in
             git:<codeblock>cd ~/helion/my_cloud/definition/data
 git checkout site</codeblock></li>
           <li>If not already done, set the weight-step attribute. See <xref
@@ -31,31 +32,26 @@ git checkout site</codeblock></li>
   ilo-ip: &lt;ilo-ip-address>
   ilo-user: &lt;ilo-username> 
   ilo-password: &lt;ilo-password></codeblock><p>
-              In the above example only one new server <b>swpac4 </b> is added. However, you can add
+              In the above example only one new server <b>swpac6 </b> is added. However, you can add
               multiple servers by providing the server details in the <codeph>servers.yml</codeph>
               file.</p></li>
-          <li>In the entry-scale configurations, there is no Swift PAC cluster. If your system does
-            not have a Swift PAC cluster, you need to add it to the input model as explained in
-              <xref href="creating_pac_cluster.dita#topic_rvj_21c_jt"/></li>
-          <li>
-            <p>In the entry-scale configurations, there is no <b>dedicated</b> Swift PAC cluster.
-              Instead there is a cluster using servers of role CONTROLLER-ROLE. You cannot add
-                <b>swpac4</b> to this cluster because that would change the member count. If your
-              system does not already have a dedicated Swift PAC cluster, you need to add it to the
-              input model as explained in <xref
-                href="http://docs-staging.hpcloud.com/hos2.0ga/helion/objectstorage/creating_pac_cluster.html#topic_rvj_21c_jt"
-                format="html" scope="external">HPE Helion OpenStack 2.0: Creating a Proxy, Account,
-                Container (PAC) Cluster</xref>. The following steps assume that you have already
-              created a dedicated Swift PAC cluster and that by way of example, it has two members
-              (swobj4 and swobj5)</p>
-            <!--<p>In the entry-scale configurations, the Swift PAC servers are co-located with other services on the first control plane cluster. If you want to extend the Swift PAC servers, i.e, more than 3 Swift PAC, then you need to add dedicated servers for the Swift PAC service. You have an option to leave the first 3 Swift PAC servers on the first control plane cluster and add a new dedicated Swift PAC server; or you can have all the Swift PAC servers on the dedicated servers.</p><p>If you want to move the Swift PAC services from the first control plane cluster onto dedicated servers then remove all Swift services from the first control plane cluster. For example remove the following services from the first control plane cluster in <codeph>data/control_plane.yml</codeph>:</p>-->
-            <?oxy_custom_start type="oxy_content_highlight" color="153,255,255"?>
-            <p><?oxy_custom_end?><!--  <codeblock>- swift-ring-builder
+          <!--In the entry-scale configurations, there is no Swift PAC cluster. If your system does not have a Swift PAC cluster, you need to add it to the input model as explained in <xref href="creating_pac_cluster.dita#topic_rvj_21c_jt"/>-->
+          <li>In the entry-scale configurations, there is no <b>dedicated</b> Swift PAC cluster.
+            Instead there is a cluster using servers of role CONTROLLER-ROLE. You cannot add
+              <b>swpac4</b> to this cluster because that would change the member count. If your
+            system does not already have a dedicated Swift PAC cluster, you need to add it to the
+            input model as explained in <xref
+              href="http://docs-staging.hpcloud.com/hos2.0ga/helion/objectstorage/creating_pac_cluster.html#topic_rvj_21c_jt"
+              format="html" scope="external">HPE Helion OpenStack 2.0: Creating a Proxy, Account,
+              Container (PAC) Cluster</xref>. The following steps assume that you have already
+            created a dedicated Swift PAC cluster and as per this
+            <?oxy_custom_start type="oxy_content_highlight" color="140,255,140"?>example it has two
+            members (swpac4 and
+              swpac5)<?oxy_custom_end?>.<!--<p>In the entry-scale configurations, the Swift PAC servers are co-located with other services on the first control plane cluster. If you want to extend the Swift PAC servers, i.e, more than 3 Swift PAC, then you need to add dedicated servers for the Swift PAC service. You have an option to leave the first 3 Swift PAC servers on the first control plane cluster and add a new dedicated Swift PAC server; or you can have all the Swift PAC servers on the dedicated servers.</p><p>If you want to move the Swift PAC services from the first control plane cluster onto dedicated servers then remove all Swift services from the first control plane cluster. For example remove the following services from the first control plane cluster in <codeph>data/control_plane.yml</codeph>:</p>--><?oxy_custom_start type="oxy_content_highlight" color="153,255,255"?><p><?oxy_custom_end?><!--  <codeblock>- swift-ring-builder
 - swift-proxy
 - swift-account
 - swift-container
-- swift-client</codeblock>--></p>
-          </li>
+- swift-client</codeblock>--></p></li>
           <li>Increase the member count of the Swift PAC cluster as appropriate. For example, if you
             are adding <b>swpac6</b> and you previously had 2 Swift PAC nodes, the increased member
             count should be 3 as shown in the following sample.<p>
@@ -66,18 +62,19 @@ git checkout site</codeblock></li>
   . . .
   clusters:
   . . .
-     - name: &lt;cluster name>
+     - name: ....
        cluster-prefix: c2
        server-role: SWPAC-ROLE
        member-count: 3
-       allocation-policy: strict
+   . . .
+       <!--allocation-policy: strict
        service-components:
          - ntp-client
          - swift-ring-builder
          - swift-proxy
          - swift-account
          - swift-container
-         - swift-client</codeblock>
+         - swift-client--></codeblock>
             </p></li>
           <li>Commit your
             changes.<codeblock>git add -A
