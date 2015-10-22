@@ -1640,14 +1640,9 @@
       </p>
     </section>
 
-<!-- WHERE I LEFT OFF -->
-
-
-
-
     <section id="bonddata"><title>Bond Data</title>
-      <p>A <codeph>bond-data</codeph> definition is used to configure a bond device, and consists of
-        the following attributes:</p>
+      <p>A <uicontrol>bond-data</uicontrol> definition is used to configure a bond device, and
+        consists of the following attributes:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="bond_data">
           <tgroup cols="2">
@@ -1663,103 +1658,119 @@
               <row>
                 <entry>provider</entry>
                 <entry>Identifies the software used to instantiate the bond device. The only
-                  supported value is “linux”, which uses the linux bonding driver. Other providers
+                  supported value is “linux”, which uses the Linux bonding driver. Other providers
                   may be supported in a future release.</entry>
               </row>
               <row>
                 <entry>devices</entry>
-                <entry>A dictionary containing network device names used to form the bond. If a NIC
-                  mapping is defined for the server, a name may be the logical-name specified by the
-                  mapping.</entry>
+                <entry>A dictionary containing network device names used to form the bond. The
+                  device names must be the logical-name specified by the
+                    <uicontrol>nic-mapping</uicontrol> (see <xref href="#input_model/nicmapping">NIC
+                    mapping</xref>.</entry>
               </row>
               <row>
                 <entry>options</entry>
-                <entry>A dictionary containing bond configuration options. The note below describes
-                  options for the “<i>linux”</i> provider.</entry>
+                <entry>A dictionary containing bond configuration options. The “<i>linux”</i>
+                  provider options are described in the <xref href="#input_model/bonddataoptions"
+                    >Bond Data Options</xref> section.</entry>
               </row>
             </tbody>
           </tgroup>
         </table>
       </p>
-      <p><b>Bond Data Options for the "linux" Provider</b></p>
-      <p>The linux bonding driver supports a large number of parameters that control the operation
+    </section>
+    <section id="bonddataoptions"><title>Bond Data Options for the "linux" Provider</title>
+      <p>The Linux bonding driver supports a large number of parameters that control the operation
         of the bond, as described in the <xref
           href="https://www.kernel.org/doc/Documentation/networking/bonding.txt" scope="external"
           format="html">Linux Ethernet Bonding Driver HOWTO</xref> document. The parameter names and
         values may be specified as key-value pairs in the <codeph>options</codeph> section of
           <codeph>bond-data</codeph>.</p>
-      <p>Here is the sample file included with the install:</p>
-      <codeblock>
----
+      <p>Options used in the HP Helion OpenStack examples are:</p><table frame="all" rowsep="1"
+        colsep="1" id="table_cj5_llk_tt">
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1"/>
+          <colspec colname="c2" colnum="2"/>
+          <thead>
+            <row>
+              <entry>Key</entry>
+              <entry>Value Descriptions</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>mode</entry>
+              <entry>Specifies the bonding policy. Possible values are: <ul>
+                  <li>balance-rr - Transmit packets in sequential order from the first available
+                    slave through the last.</li>
+                  <li>active-backup - Only one slave in the bond is active. A different slave
+                    becomes active if, and only if, the active slave fails.</li>
+                  <li>balance-xor - Transmit based on the selected transmit hash policy.</li>
+                  <li>broadcast - Transmits everything on all slave interfaces.</li>
+                  <li>802.3ad - IEEE 802.3ad Dynamic link aggregation.</li>
+                  <li>balance-tlb - Adaptive transmit load balancing: channel bonding that does not
+                    require any special switch support.</li>
+                  <li>balance-alb - Adaptive load balancing: includes balance-tlb plus receive load
+                    balancing (rlb) for IPV4 traffic and does not require any special switch
+                    support.</li>
+                </ul>
+              </entry>
+            </row>
+            <row>
+              <entry>miimon</entry>
+              <entry>Specifies the MII link monitoring frequency in milliseconds. This determines
+                how often the link state of each slave is inspected for link failures. Accepts
+                values in milliseconds.</entry>
+            </row>
+            <row>
+              <entry>primary</entry>
+              <entry>The device to use as the primary when the mode is one of the possible values
+                below: <ul>
+                  <li>active-backup</li>
+                  <li>balance-tlb</li>
+                  <li>balance-alb</li>
+                </ul></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+
+
+
+    <section id="co_nicmappings"><title>NIC Mappings</title>
+      <p>The <uicontrol>nic-mappings</uicontrol> configuration object is used to ensure that the
+        network device name used by the operating system always maps to the same physical device. A
+          <uicontrol>nic-mapping</uicontrol> is associated to a <uicontrol>server</uicontrol> in the
+        server definition file. (see <xref href="#input_model/co_servers">Servers</xref>). Devices
+        should be named <codeph>hedN</codeph> to avoid name clashes with any other devices
+        configured during the operating system install as well as any interfaces that are not being
+        managed by HP Helion OpenStack.</p>
+      <codeblock>---
   product:
     version: 2
-
-  interface-models:
-     # These examples uses eth3 and eth4 as a bonded
-     # pair for all networks on all three server roles
-     #
-     # Edit the device names and bond options
-     # to match your environment
-     #
-   - name: INTERFACE_SET_CONTROLLER
-     network-interfaces:
-       - name: BOND0
-         device:
-           name: bond0
-         bond-data:
-           options:
-             bond-mode: active-backup
-             bond-miimon: 200
-           provider: linux
-           devices:
-             - name: eth3
-             - name: eth4
-         network-groups:
-           - EXTERNAL_API
-           - EXTERNAL_VM
-           - GUEST
-           - MGMT
         
-   - name: INTERFACE_SET_COMPUTE
-     network-interfaces:
-       - name: BOND0
-         device:
-           name: bond0
-           bond-data:
-             options:
-               bond-mode: active-backup
-               bond-miimon: 200
-           provider: linux
-           devices:
-              - name: eth3
-              - name: eth4
-          network-groups:
-              - EXTERNAL_VM
-              - GUEST
-              - MGMT
+  nic-mappings:
+       
+    - name: HP-DL360-4PORT
+      physical-ports:
+        - logical-name: hed1
+          type: simple-port
+          bus-address: "0000:07:00.0"
         
-    - name: INTERFACE_SET_VSA
-      network-interfaces:
-        - name: BOND0
-          device:
-             name: bond0
-             bond-data:
-               options:
-                  bond-mode: active-backup
-                  bond-miimon: 200
-               provider: linux
-               devices:
-                  - name: eth3
-                  - name: eth4
-             network-groups:
-               - MGMT</codeblock>
-    </section>
-    <section id="4.8_NICMappings"><title>NIC Mappings</title>
-      <p>NIC mappings are used to ensure that the network device name used by the operating system
-        always maps to the same physical device. A NIC mapping is associated to a server in the
-          <codeph>servers.yml</codeph> definition file. (see <xref href="#input_model/4.3_Servers"
-          >Servers</xref>)</p>
-      <p>Each entry in the <codeph>nic-mappings</codeph> list has the following attributes:</p>
+        - logical-name: hed2
+          type: simple-port
+          bus-address: "0000:08:00.0"
+        
+        - logical-name: hed3
+          type: simple-port
+          bus-address: "0000:09:00.0"
+        
+        - logical-name: hed4
+          type: simple-port
+          bus-address: "0000:0a:00.0"</codeblock>
+      <p>Each entry in the <uicontrol>nic-mappings</uicontrol> list has the following
+        attributes:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="nic_mappings">
           <tgroup cols="2">
@@ -1774,9 +1785,9 @@
             <tbody>
               <row>
                 <entry>name</entry>
-                <entry>A user-specified name for the mapping. This name may be used in a server
-                  definition (see <xref href="#input_model/4.3_Servers">Servers</xref>) to apply the
-                  mapping to that server.</entry>
+                <entry>An administrator-defined name for the mapping. This name may be used in a
+                  server definition (see <xref href="#input_model/co_servers">Servers</xref>) to
+                  apply the mapping to that server.</entry>
               </row>
               <row>
                 <entry>physical-ports</entry>
@@ -1786,7 +1797,8 @@
           </tgroup>
         </table>
       </p>
-      <p>Each entry in the <codeph>physical-ports</codeph> list has the following attributes:</p>
+      <p>Each entry in the <uicontrol>physical-ports</uicontrol> list has the following
+        attributes:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="physical_ports">
           <tgroup cols="2">
@@ -1804,11 +1816,11 @@
                 <entry>The network device name that will be associated with the device at the
                   specified <i>bus-address</i>. The logical-name specified here can be used as a
                   device name in network interface model definitions. (see <xref
-                    href="#input_model/4.7_InterfaceModels">Interface Models</xref>)</entry>
+                    href="#input_model/co_interfacenodels">Interface Models</xref>)</entry>
               </row>
               <row>
                 <entry>type</entry>
-                <entry>The type of port. The current implementation supports only “simple-port”;
+                <entry>The type of port. The current implementation supports only "simple-port";
                   other port types may be added in a future release.</entry>
               </row>
               <row>
@@ -1820,59 +1832,66 @@
           </tgroup>
         </table>
       </p>
-      <p>Here is the sample file included with the install:</p>
-      <codeblock>
----
-  product:
-    version: 2
-  
-  # nic-mappings are used to ensure that the device name used by the
-  # operating system always maps to the same physical device.
-  # A nic-mapping is associated to a server in the server definition.
-  # The logical-name specified here can be used as a device name in
-  # the network interface-models definitions.
-  #
-  # - name               user-defined name for each mapping
-  #   physical-ports     list of ports for this mapping
-  #     - logical-name   device name to be used by the operating system
-  #       type           physical port type
-  #       bus-address    bus address of the physical device
-  #
-  # Notes:
-  # - enclose the bus address in quotation marks so yaml does not
-  #   misinterpret the embedded colon (:) characters
-  # - simple-port is the only currently supported port type
-  
-  nic-mappings:
-  
-  - name: HP_DL360_3PORT
-    physical-ports:
-  - logical-name: eth1
-    type: simple-port
-    bus-address: "0000:07:00.0"
-  
-  - logical-name: eth2
-    type: simple-port
-    bus-address: "0000:08:00.0"
-  
-  - logical-name: eth3
-    type: simple-port
-    bus-address: "0000:09:00.0"
-        
-  - name: MY_2PORT_SERVER
-    physical-ports:
-  - logical-name: eth3
-    type: simple-port
-    bus-address: "0000:04:00.0"
-  
-  - logical-name: eth4
-    type: simple-port
-    bus-address: "0000:04:00.1"</codeblock>
-      <note>You can remove the NIC information examples that do not pertain to your environment from
-        this file.</note>
     </section>
-    <section id="4.9_NetworkGroups"><title>Network Groups</title>
-      <p>A network group definition has the following attributes:</p>
+
+
+
+    <section id="co_networkgroups"><title>Network Groups</title>
+      <p>Network-groups define the overall network topology, including where service-components
+        connect, what load balancers are to be deployed, which connections use TLS, and network
+        routing. They also provide the data needed to map Neutron's network configuration to the
+        physical networking.</p>
+      <codeblock>---
+  product:
+     version: 2
+        
+  network-groups:
+        
+     - name: EXTERNAL-API
+       hostname-suffix: extapi
+        
+       load-balancers:
+         - provider: ip-cluster
+           name: extlb
+           external-name:
+        
+           tls-components:
+             - default
+           roles:
+            - public
+           cert-file: my-public-cert
+        
+      - name: EXTERNAL-VM
+        tags:
+          - neutron.l3_agent.external_network_bridge
+        
+      - name: GUEST
+        hostname-suffix: guest
+        tags:
+          - neutron.networks.vxlan
+        
+      - name: MANAGEMENT
+        hostname-suffix: mgmt
+        hostname: true
+        
+        component-endpoints:
+          - default
+        
+        routes:
+          - default
+        
+        load-balancers:
+          - provider: ip-cluster
+            name: lb
+            components:
+              - default
+            roles:
+              - internal
+              - admin
+        
+        tags:
+          - neutron.networks.vlan:
+              provider-physical-network: physnet1</codeblock>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="network_groups">
           <tgroup cols="2">
@@ -1887,13 +1906,13 @@
             <tbody>
               <row>
                 <entry>name</entry>
-                <entry>A user defined name for the network group. The name is used to make
-                  references from other configuration files.</entry>
+                <entry>An administrator-defined name for the network group. The name is used to make
+                  references from other parts of the input model.</entry>
               </row>
               <row>
                 <entry>component-endpoints (optional)</entry>
-                <entry>The list of service components that will bind to, or need direct access to
-                  networks in this network group.</entry>
+                <entry>The list of <uicontrol>service-components</uicontrol> that will bind to or
+                  need direct access to networks in this network-group.</entry>
               </row>
               <row>
                 <entry>hostname (optional)</entry>
@@ -1903,25 +1922,26 @@
               <row>
                 <entry>hostname-suffix (optional)</entry>
                 <entry>If supplied, this string will be used in the name generation (see <xref
-                    href="#input_model/5.1_NameGeneration">Name Generation</xref>). If not
-                  specified, the name of the network group will be used.</entry>
+                    href="#input_model/namegeneration">Name Generation</xref>). If not specified,
+                  the name of the network-group will be used.</entry>
               </row>
               <row>
                 <entry>load-balancers (optional)</entry>
-                <entry>A list of load balancers to be configured on networks in this network group.
-                  Because load balances need a VIP any network group that contains a load balance
-                  can only have one network associated with it.</entry>
+                <entry>A list of load balancers to be configured on networks in this network-group.
+                  Because load balances need a virtual IP address, any network group that contains a
+                  load balancer can only have one network associated with it.</entry>
               </row>
               <row>
                 <entry>routes (optional)</entry>
-                <entry><p>A list of network groups that networks in this group provide access to via
-                    their gateway. This can include “default” to define the default route. </p> A
-                  network group with no services attached to it can be used to define routes to
-                  external networks.</entry>
+                <entry><p>A list of <uicontrol>network-groups</uicontrol> that networks in this
+                    group provide access to via their gateway. This can include the value “default”
+                    to define the default route.</p> A network group with no services attached to it
+                  can be used to define routes to external networks.</entry>
               </row>
               <row>
                 <entry>tags (optional)</entry>
-                <entry>A list of network tags.</entry>
+                <entry>A list of network tags. Tags provide the linkage between the physical network
+                  configuration and the Neutron network configuration.</entry>
               </row>
             </tbody>
           </tgroup>
@@ -1942,36 +1962,38 @@
             <tbody>
               <row>
                 <entry>name</entry>
-                <entry>A user defined name for the load balancer.</entry>
+                <entry>An administrator-defined name for the load balancer.</entry>
               </row>
               <row>
                 <entry>provider</entry>
                 <entry>The service component that implements the load balancer. Currently only
-                  “ip-cluster” (haproxy) is supported. Future releases will provide support for
+                  "ip-cluster" (ha-proxy) is supported. Future releases will provide support for
                   external load balancers.</entry>
               </row>
               <row>
                 <entry>roles</entry>
                 <entry>The list of endpoint roles that this load balancer provides (see below).
-                  Valid roles are “public”, “internal”, and “admin”. To ensure separation of public
-                  cannot be combined with internal/admin. (see <xref
-                    href="#input_model/3.8.1.1_LoadBalancers">Load Balancers</xref> for an example
-                  of how the role provides endpoint separation)</entry>
+                  Valid roles are "public", "internal", and "admin'. To ensure separation of
+                  concerns, the role "public" cannot be combined with any other role. See <xref
+                    href="#input_model/loadbalancers">Load Balancers</xref> for an example of how
+                  the role provides endpoint separation.</entry>
               </row>
               <row>
                 <entry>components (optional)</entry>
-                <entry>The list of service components the load balancer provides an unencrypted VIP
-                  for.</entry>
+                <entry>The list of <uicontrol>service-components</uicontrol> for which the load
+                  balancer provides a non-encrypted virtual IP address for.</entry>
               </row>
               <row>
                 <entry>tls-components (optional)</entry>
-                <entry>The list of service components the load balancer provides TLS terminated VIP
-                  for.</entry>
+                <entry>The list of <uicontrol>service-components</uicontrol> for which the load
+                  balancer provides TLS-terminated virtual IP addresses for. In HP Helion OpenStack
+                  2.0 TLS is only supported for public endpoints.</entry>
               </row>
               <row>
                 <entry>external-name (optional)</entry>
-                <entry>The name to be registered in Keystone for the publicURL. If not specified the
-                  IP address of the VIP will be registered.</entry>
+                <entry>The name to be registered in Keystone for the publicURL. If not specified,
+                  the virtual IP address will be registered. Note that this value cannot be changed
+                  after the initial deployment.</entry>
               </row>
               <row>
                 <entry>cert-file (optional)</entry>
@@ -1982,7 +2004,10 @@
         </table>
       </p>
     </section>
-    <section id="4.9.1_NetworkTags"><title>Network Tags</title>
+
+
+
+    <section id="co_networktags"><title>Network Tags</title>
       <p>HP Helion OpenStack supports a small number of network tags which may be used to convey
         information between the input model and the service components. A network tag consists
         minimally of a tag name; some network tags have additional attributes, described below:</p>
