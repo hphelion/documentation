@@ -32,9 +32,9 @@
                 example:<codeblock>root@vsd1 ~]# cat /etc/sysconfig/network
 NETWORKING=yes
 HOSTNAME=vsd1.dcn-one.helion.cg</codeblock></li>
-            <li>Execute the following command in order for the VSD VM host name to be reflected in
-                the <i>/etc/sysconfig/network</i> file:
-                <codeblock>/etc/init.d/network restart </codeblock></li>
+            <li>Execute the following command to add the VSD VM host name to the
+                <i>/etc/sysconfig/network</i> file:
+            <codeblock>/etc/init.d/network restart </codeblock></li>
             <li>Exit the VSD VM console session, then log back in. You should see the VSD name in
                 the <i>/etc/sysconfig/network</i> file.</li>
             <li>Configure an NTP Server for the VSD VM by editing the <i>/etc/ntp.conf</i> file.
