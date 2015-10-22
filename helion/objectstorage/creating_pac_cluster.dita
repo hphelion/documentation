@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_rvj_21c_jt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating a Proxy, Account, Container (PAC) Cluster</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating a Proxy, Account, and Container
+    (PAC) Cluster</title>
   <body><!--Needs Edit-->
     <p>You must identify the control plane and node type/role when creating a cluster for Swift
       proxy, account, and container servers. </p>
