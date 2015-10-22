@@ -138,7 +138,7 @@
       <p>This model can also be deployed without the VSA servers and configured to use an external
         storage device, such as a 3PAR array, which would reduce the minimum server count to
         four.</p>
-      <!-- MEDIA DIAGRAM GOES HERE -->
+      <p><image href="../media/entry_scale_kvm_vsa.png"/></p>
       <p>The example requires the following networks:</p>
       <ul>
         <li><b>External API</b> - This is the network that users will use to make requests to the
