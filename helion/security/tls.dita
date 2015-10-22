@@ -182,7 +182,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       <codeblock>- "ssl-default-bind-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"
 - "ssl-default-server-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"</codeblock>
       Make the changes as needed. It's best to keep the two options identical. </section>
-    
+    <!--
     <section id="rfcs"><title>Critical Standards for Certificates in Production Environments</title>
       
       <note type="warning">TLS certificates must adhere to the current <xref
@@ -228,7 +228,7 @@ DNS:servername-api.ftc.hp.com</codeblock>
           deployment. </p>
       
       
-    </section>
+    </section>-->
     <!--
     <section><title>Creating a test certificate for an IP address or FQDN</title> If you want to
       create a test certificate, follow tese steps: <ol>
