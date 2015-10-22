@@ -27,7 +27,7 @@
         environment.</p> However, the full range of customizations is not possible via the GUI as
       some configuration items are not exposed. Below is the list of what can and cannot be changed: </section>
     <section><b>Changes to the following items may be made:</b><ul id="ul_hsd_bym_tt">
-        <li>servers (including OS installation configuration) </li>
+        <li>servers (including Linuxfor HP Helion  installation configuration) </li>
         <li>networks </li>
         <li>disk models </li>
         <li>interface models </li>
