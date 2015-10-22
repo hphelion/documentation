@@ -13,13 +13,18 @@
       <p>OpenStack endpoints are HTTP (REST) services providing APIs to other OpenStack services on the
         management network. All traffic to OpenStack services coming in on the public endpoints are
         secured using TLS connections.</p>
+      <p>All of the HP Helion OpenStack 2.0 example cloud models ship with TLS enabled on the public
+        API. Note that because TLS is enabled by default, a test certificate is bundled with the
+        release. Having this default cert allows you to bring up a cloud without having to worry
+        about certificates. It will not match your IP address, but you can ignore the warnings.
+        Later, when you require a trusted certificate, you can add your own certificate and
+        redeploy.</p>
       <p/>
     </section>
-<section> All of the HP Helion OpenStack 2.0 example cloud models ship with TLS enabled on the
-      public API. <p> When logging into the deployer to run the configuration processor and the
-        requisite playbooks, you must decide if you want to configure TLS or if you want to disable
-        it. This can't be changed after deployment. Therefore, you will have to make one of the
-        following changes</p><ul id="ul_sdj_qfq_rt">
+<section> When logging into the deployer to run the configuration processor and the requisite
+      playbooks, you must decide if you want to configure TLS or if you want to disable it. This
+      can't be changed after deployment. Therefore, you will have to make one of the following
+        changes<ul id="ul_sdj_qfq_rt">
         <li>Comment out the "external-name:" line in
           /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that IP addresses are
           used) </li>
@@ -48,7 +53,7 @@
 DNS:servername-api.ftc.hp.com, DNS:10.241.20.5, IP Address:10.241.20.5</codeblock></dd>
           </dlentry>
           <dlentry>
-            <dt>If Using DNS</dt>
+            <dt>If Using DNS/FQDN</dt>
             <dd>The Common Name attribute (<codeph>commonName</codeph>) has been deprecated and it
               is recommended that you do not use it. The Common Name attribute must not contain an
               IP address per <xref href="https://tools.ietf.org/html/rfc2818" format="html"
@@ -56,25 +61,28 @@ DNS:servername-api.ftc.hp.com, DNS:10.241.20.5, IP Address:10.241.20.5</codebloc
             <dd>If the Common Name attribute is specified, there must also be an alternative name
               entry specified which contains the DNS information. (At least one Subject Alternative
               Name (<codeph>subjectAltName</codeph>) extension attributes must be specified, or some
-              services will fail to install or to function.)</dd><dd><codeblock>CN=servername-api.ftc.hp.com/emailAddress=email-address@hp.com
+              services will fail to install or to function.)</dd>
+            <dd>
+              <codeblock>CN=servername-api.ftc.hp.com/emailAddress=email-address@hp.com
 X509v3 Subject Alternative Name:
-DNS:servername-api.ftc.hp.com</codeblock></dd>
+DNS:servername-api.ftc.hp.com</codeblock>
+            </dd>
           </dlentry>
         </dl></note><p>You must also supply the name of a certificate file that matches your choice
         above. If you are using IP addresses, you won't know the IP address until after the config
         processor has run, but you can obtain it after running the config processor and before
         deployment. </p></section>
-      <section><title>Creating a self-signed certificate for testing</title> Follow these steps to create a
-      certificate for non-production environments. <ol>
+      <section><title>Creating a self-signed certificate for testing</title> Follow these steps to
+      create a certificate for non-production environments. <ol>
         <li> Make sure you have OpenSSL installed.
           <codeblock>openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.crt</codeblock>
           You must provide details when prompted. Make sure you provide your FQDN or IP address of
           the VIP when prompted for Common Name. </li>
         <li>Append the certificate to the key for haproxy-required format.
           <codeblock>cat my-public-cert.key my-public-cert.crt > my-public-cert</codeblock></li>
-      </ol> You can now use my-public-cert as your certificate. <p>Follow the steps below to install
-        the certificate in the cloud. </p>
-      <b>If you are using a FQDN:</b>
+      </ol> You can now use my-public-cert as your certificate. <p><b>Installing the
+        Certificate</b></p> Follow the steps below to install the certificate in the cloud.  <b>If
+        you are using a FQDN:</b>
       <ol id="ol_ngj_qfq_rt">
         <li> Create or obtain a certificate to match the domain name you are going to use </li>
         <li> Copy it to <b>helion/my_cloud/config/tls/certs/</b>
@@ -109,14 +117,21 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       will have to use the "--insecure" flag to avoid "certificate mismatch" errors.</section>
     <section> Here is the relevant section of
       <b>network_groups.yml</b>.<codeblock> load-balancers: 
-     - provider: ip-cluster
-     name: extlb                      # This is the external load balancer.
-     external-name: myhelion.test     # change this to a resolvable FQDN or comment out if not using
+   - provider: ip-cluster
+     name: extlb   # This is the external load balancer.
+         # If external-name is set then public urls in keystone
+         # will use this name instead of the IP address.
+         # You must either set this to a name that can be resolved in your network
+         # or comment out this line to use IP addresses
+
+         external-name:
+
      tls-components:
         - default
      roles:
         - public
-          cert-file: my-public-cert   # this cert should match the FQDN for authenticated TLS to work</codeblock></section>
+          cert-file: my-public-cert   # this cert should match the FQDN for authenticated TLS to work. 
+                                      # The bundled test certificate is for myhelion.test</codeblock></section>
     <section id="TLS_termination">
       <title>Definitions</title>
       <dl>
@@ -128,7 +143,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <dt>external-name:</dt>
           <dd>This name will be used in place of the external VIP address. This name can be an FQDN.
             This will be registered in the public endpoints of the services. As noted above,
-            myhelion.test should be changed to your FQDN</dd>
+            myhelion.test should be changed to your FQDN.</dd>
         </dlentry>
         <dlentry>
           <dt>tls-components:</dt>
