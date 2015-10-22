@@ -88,6 +88,8 @@
         </li>
         <li>Ensure your deployer has a valid DNS nameserver in the <codeph>/etc/resolv.conf</codeph>
           file</li>
+        <li>Set the environment variable LC_ALL: <codeph>export LC_ALL=C</codeph>
+          <note>This can be added to ~stack/.bashrc or /etc/bash.bashrc</note></li>
       </ol>
       <p>At the end of this section you should have a node set up with Linux for HP Helion on
         it.</p>
