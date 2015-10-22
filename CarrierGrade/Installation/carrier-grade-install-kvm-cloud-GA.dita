@@ -98,7 +98,7 @@ sudo wrs-patch apply  TS_15.05_PATCH_0002
 sudo wrs-patch apply TS_15.05_DESIGN_PATCH_HEAT
 sudo wrs-patch apply TS_15.05_DESIGN_PATCH_HORIZON
 sudo wrs-patch install-local /opt/branding
-</li>
+</codeblock></li>
         <li>Reboot <codeph>controller-0</codeph>.<codeblock>sudo reboot       </codeblock></li>
     </ol>
     </section><section><title>Install the KVM region cloud</title>
