@@ -156,8 +156,8 @@ ansible-playbook -i hosts/verb_hosts hlm-deploy.yml</codeblock></li>
           <li>Wait until replication has finished. See <xref href="safe_rebalance_deploy_ring.dita"
             /> for more details.</li>
           <li>Further rebalances of the rings are necessary. Use the process described in <b>Final
-              rebalance phase </b> at <xref href="ring_management.dita#topic_d3l_svr_4t"> Managing
-              Object Storage (Swift) Rings</xref>.</li>
+              rebalance phase </b> at  <xref
+              href="input_model_change_existing_rings.dita#topic_vyp_cft_4t"/>.</li>
         </ol></p>
     </section>
   </body>

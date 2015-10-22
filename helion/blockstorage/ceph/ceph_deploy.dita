@@ -39,37 +39,50 @@
             disks meant for OSD data and journal
               filesystems.<codeblock>vi <codeph>disks_osd.yml</codeph></codeblock><p>A sample of
                 <codeph>disks_osd.yml</codeph> is as
-              follows:</p><codeblock>disk-models:
-  - name: DISK_SET_OSD
-    # two disk node; remainder of disk 1 and all of disk 2 combined in single VG
-    # VG is used to create three logical vols for /var, /var/log, and /var/crash
+              follows:</p><codeblock> disk-models:
+  - name: OSD-DISKS
+    # Disk model to be used for Ceph OSD nodes
+    # /dev/sda_root is used as a volume group for /, /var/log and /var/crash
+    # sda_root is a templated value to align with whatever partition is really used
+    # This value is checked in os config and replaced by the partition actually used
+    # on sda e.g. sda1 or sda5
+
+    # Disks to be used by Ceph
+    # Additional disks can be added if available
     device-groups:
-      - name: ceph-osd-data-and-journal
+      - name: ceph-osd-data-only
         devices:
           - name: /dev/sdb
         consumer:
            name: ceph
            attrs:
              usage: data
-             journal_disk: /dev/sdc
-      - name: ceph-osd-data-and-shared-journal-set-1
+      - name: ceph-osd-data-and-journal
         devices:
-          - name: /dev/sdd
+          - name: /dev/sdc
         consumer:
            name: ceph
            attrs:
              usage: data
-             journal_disk: /dev/sdf
-      - name: ceph-osd-data-and-shared-journal-set-2
+             journal_disk: /dev/sdd
+      - name: ceph-osd-data-and-shared-journal-set-1
         devices:
           - name: /dev/sde
         consumer:
            name: ceph
            attrs:
              usage: data
-             journal_disk: /dev/sdf</codeblock><p>The
-              above sample file contains three OSD nodes and two journal disk.</p><p>The disk model
-              has the following fields:</p><p>
+             journal_disk: /dev/sdg
+      - name: ceph-osd-data-and-shared-journal-set-2
+        devices:
+          - name: /dev/sdf
+        consumer:
+           name: ceph
+           attrs:
+             usage: data
+             journal_disk: /dev/sdg</codeblock><p>The
+              above sample file defines supported combinations of OSD data and journal
+              disks.</p><p>The disk model has the following fields:</p><p>
               <simpletable id="simpletable_dmf_dcm_rt">
                 <strow>
                   <stentry><b>device-groups</b></stentry>
@@ -85,8 +98,9 @@
                   <stentry><b>devices</b></stentry>
                   <stentry>This is a list of devices allocated to the device group. A
                       <codeph>name</codeph> field containing <codeph>/dev/sdb</codeph>,
-                      <codeph>/dev/sdd</codeph>, and <codeph>/dev/sde</codeph> indicates that the
-                    device group is used by Ceph.</stentry>
+                      <codeph>/dev/sdc</codeph>,  <codeph>/dev/sde</codeph> and
+                      <codeph>/dev/sdf</codeph> indicates that the device group is used by
+                    Ceph.</stentry>
                 </strow>
                 <strow>
                   <stentry><b>consumer</b></stentry>
@@ -156,11 +170,12 @@ ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
     <p>Ceph Monitor service is deployed on the Controller Nodes and OSD's are deployed as separate
       nodes (Resource Nodes).</p>
     <p id="run-ceph-client-package"><b>Run Ceph Client Packages</b></p>
-    <p>Ceph can be used as backend for <b>nova-compute, glance (i need information of how can we use
-        ceph as nova-compute and glacne) for cinder-vol and cinder backup we have the
-        information??)</b>, cinder-volume and cinder-backup. The nodes running these services should
-      have a client installed on it. Use <codeph>ceph-client-prepare.yml</codeph> to deploy client
-      on respective nodes.</p>
+    <p>Ceph can be used as backend for<xref
+        href="configuring_use_ceph_cluster.dita#topic_i2z_zc3_pt"> cinder-volume and
+        cinder-backup</xref> and a <xref
+        href="configuring_use_ceph_cluster_glance.dita#topic_qch_rmx_st">default glance
+      store</xref>. The nodes running these services should have a client installed on it. Use
+        <codeph>ceph-client-prepare.yml</codeph> to deploy client on respective nodes.</p>
     <p><!--Execute the following command to install the Ceph client packages on controller nodes. --></p>
     <p>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible

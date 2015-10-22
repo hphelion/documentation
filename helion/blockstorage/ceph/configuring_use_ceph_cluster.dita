@@ -11,17 +11,19 @@
         <li><xref href="#topic_i2z_zc3_pt/attach-ceph-volume-instance" format="dita">Attach Ceph
             Volume to an Instance</xref></li>
       </ul></p>
+    <note>If you want to attach a volume to an instance which was created before the creation of
+      Ceph cluster then you must reboot the instance before attaching the volume</note>
     <section id="configure-ceph-as-cinder-backend">
       <title>Configure Ceph as Cinder Backend</title>
       <p>Perform the following procedure on the Deployer node to configure Ceph as a Cinder
-          backend:<ol id="ol_u12_kd3_pt">
+        backend:</p>
+      <p>
+        <ol id="ol_u12_kd3_pt">
           <li>Edit <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> to add ceph
             configuration data as shown below:<codeblock>enabled_backends=ceph1</codeblock></li>
           <li>Copy the following
               configurations:<codeblock id="ceph-cinder-conf">[ceph1]
-rbd_max_clone_depth = 5
-rbd_flatten_volume_from_snapshot = False
-rbd_uuid = 457eb676-33da-42ec-9a8c-9293d545c337
+rbd_secret_uuid = 457eb676-33da-42ec-9a8c-9293d545c337
 rbd_user = cinder
 rbd_pool = volumes
 rbd_ceph_conf = /etc/ceph/ceph.conf
@@ -49,13 +51,15 @@ git commit -m "&lt;commit message>"</codeblock>
           <li>Run the following ansible
             playbook:<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
-        </ol></p>
+        </ol>
+      </p>
     </section>
-    <p>Once cinder is configured, launch the Horizon dashboard to create a cinder volume type to
-      verify the ceph configuration as backend . Once you are able to create the volume, you can
-      delete the created volume. For more information on verify the ceph configuration, refer to
-        <xref href="../verify_backend_configuration.dita#topic_q5q_trz_jt">Verify Backend
-        Configuration</xref>.</p>
+    <p>After the successful configuration of cinder you can launch the
+      <!--Hence, cinder is successfully configured. Now launch the--> Horizon dashboard to create a
+      cinder volume type for Ceph as backend. Once you are able to create the volume you can perform
+      the OpenStack Operations. Also, you can verify the cinder volume creation for Ceph by logging
+      in <xref href="../verify_backend_configuration.dita#topic_q5q_trz_jt">Horizon
+        Dashboard.</xref></p>
     <p>The volumes are created on the ceph pool -volumes.</p>
     <section id="configure-ceph-cinder-backup">
       <title>Configure Ceph as a Cinder Backup</title>
@@ -70,11 +74,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
 backup_driver = cinder.backup.drivers.ceph
 backup_ceph_conf = /etc/ceph/ceph.conf
 backup_ceph_user = cinder-backup
-backup_ceph_chunk_size = 134217728
-backup_ceph_pool = backups
-backup_ceph_stripe_unit = 0
-backup_ceph_stripe_count = 0
-restore_discard_excess_bytes = true</codeblock><note>You
+backup_ceph_pool = backups</codeblock><note>You
               can add a comment (<b># Ceph backup </b>) as shown above so that the ceph backup
               content can be easily identified in the<codeph> cinder.conf.j2</codeph>
             file.</note></li>
@@ -96,14 +96,13 @@ git commit -m "&lt;commit message>"</codeblock>
 <codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
           <li>Run the following ansible
               playbook:<codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock><p>Once
-              cinder is configured, launch the Horizon dashboard to create a cinder volume type and
-              take a backup of the same to Ceph.
-              <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>For more
-              information on verify the ceph configuration, refer to <xref
-                href="../verify_backend_configuration.dita#topic_q5q_trz_jt">Verify Backend
-                Configuration</xref>.<?oxy_custom_end?></p><p>This backup volume is stored in the
-              Ceph pool backups.</p></li>
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock><p><?oxy_custom_start type="oxy_content_highlight" color="140,255,140"?>Now,
+              you can launch the Horizon Dashbaord to create a volume type and create a backup for
+              the same.Once you are able to create the volume you can perform the OpenStack
+              Operations. Also, you can verify the Ceph configuration by logging in <xref
+                href="../verify_backend_configuration.dita#topic_q5q_trz_jt">Horizon
+                Dashboard.</xref><?oxy_custom_end?></p><p>This backup volume is stored in the Ceph
+              pool backups.</p></li>
         </ol>
       </p>
     </section>

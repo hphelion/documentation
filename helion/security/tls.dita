@@ -39,7 +39,17 @@
           </ul></note>You must also supply the name of a certificate file that matches your choice
         above. If you are using IP addresses, you won't know the IP address until after the config
         processor has run, but you can obtain it after running the config processor and before
-        deployment. So the sequence would be:</p>
+        deployment. </p>
+      <title>Creating a self-signed certificate for testing</title> Follow these steps to create a
+      certificate for non-production environments. <ol>
+        <li> Make sure you have OpenSSL installed.
+          <codeblock>openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.crt</codeblock>
+          You must provide details when prompted. Make sure you provide your FQDN or IP address of
+          the VIP when prompted for Common Name. </li>
+        <li>Append the certificate to the key for haproxy-required format.
+          <codeblock>cat my-public-cert.key my-public-cert.crt > my-public-cert</codeblock></li>
+      </ol> You can now use my-public-cert as your certificate. <p>Follow the steps below to install
+        the certificate in the cloud. </p>
       <b>If you are using a FQDN:</b>
       <ol id="ol_ngj_qfq_rt">
         <li> Create or obtain a certificate to match the domain name you are going to use </li>
@@ -113,6 +123,9 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       </dl>
       <note>Do not enable TLS to the internal load balancer. </note>
     </section>
+    
+    
+
     <section><title>Disabling TLS</title>If you don't want to use TLS, then you should change "tls-components" to "components"
       in <b>network_groups.yml</b>. Additionally, if you have a <b>network_groups.yml</b> file from
       a previous installation, you won't have TLS enabled unless you change "components" to

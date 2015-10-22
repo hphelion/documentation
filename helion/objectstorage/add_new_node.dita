@@ -53,17 +53,17 @@ ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=swobj4</codeblock
               field &lt;extra_vars></note></li>
           <li>Examine the <codeph>cloudConfig.yml</codeph> and<codeph>
               data/control_plane.yml</codeph> files to get the host prefix (for example, helion) and
-            the control plane name (for example, ccp). This gives you the hostname of the node.
+            the control plane name (for example, cp1). This gives you the hostname of the node.
             Configure the operating system as
               follows.<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit &lt;hostname></codeblock><p>For
-              example, for <b>swobj4</b>, the hostname is <b>helion-ccp-swobj4-mgmt</b>.
+              example, for <b>swobj4</b>, the hostname is <b>helion-cp1-swobj4-mgmt</b>.
               <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit helion-ccp-swobj4-mgmt</codeblock></p></li>
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit helion-cp1-swobj4-mgmt</codeblock></p></li>
           <li>Validate that the disk drives of the new node are compatible with the disk model used
             by the node as
             follows.<codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit SWF*</codeblock>If
+ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml --limit SWF*</codeblock>If
             any errors occur, review <xref
               href="interpreting_swift_validate_input_model.dita#topic_avw_22b_kt">Interpreting
               _swift-validate-input-model.yml Errors</xref>.</li>
@@ -71,14 +71,13 @@ ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit SWF*</codeblock>If
             node, deploy the rings and to configure the new node. Do not limit to just the node
               (<b>swobj4</b>) that you are
             adding.<codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit SWF*</codeblock></li>
-          <li>Further rebalances of the rings may be necessary. Use the process described in weight
-            change phase of ring rebalance and final Rebalance phase at <xref
-              href="input_model_change_existing_rings.dita#topic_vyp_cft_4t">Applying Input Model
-              Changes to Existing
-              Rings</xref>.<p><!--Once you have added a new node/server to the system, you must enure that the Swift rings are updated with the new node/server(s) details and the rings are distributed to all Swift servers.-->
+ansible-playbook -i hosts/verb_hosts hlm-deploy.yml </codeblock></li>
+          <li>
+            <!--Further rebalances of the rings may be necessary. Use the process described in weight change phase of ring rebalance and final Rebalance phase at <xref href="input_model_change_existing_rings.dita#topic_vyp_cft_4t">Applying Input Model Changes to Existing Rings</xref>.-->
+            <p><!--Once you have added a new node/server to the system, you must enure that the Swift rings are updated with the new node/server(s) details and the rings are distributed to all Swift servers.-->
               Run the following
-              command:<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit SWF* </codeblock></p></li>
+              command:<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit SWF* </codeblock></p>
+          </li>
         </ol></p>
     </section>
   </body>
