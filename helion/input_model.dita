@@ -2531,42 +2531,43 @@
 
 
     <section id="persisteddata"><title>Persisted Data</title>
-      <p>Because the Configuration Processor is making allocation decisions on servers and IP
-        addresses it needs to be able to persist (remember) those decisions between successive runs,
-        so that if new servers are added to the input model they don’t disrupt the previous
-        (deployed) allocations.</p>
-      <p>To allow users to make multiple iterations of the input model before deployment Helion will
-        only persist data when the user confirms that they are about to deploy the results via the
-        “ready-deployment” operation.</p>
-      <p>To understand this better consider the following example:</p>
-      <p>Imagine you have a completed Helion deployment with servers A, B, and C and you want to add
-        two new compute nodes by adding servers D and E to the input model.</p>
+      <p>The Configuration Processor is making allocation decisions on servers and needs to remember
+        IP addresses between successive runs so that if new servers are added to the input model
+        they don’t disrupt the previously deployed allocations.</p>
+      <p>To allow users to make multiple iterations of the input model before deployment HP Helion
+        OpenStack will only persist data when the administrator confirms that they are about to
+        deploy the results via the "ready-deployment" operation. To under this better, consider the
+        following example:</p>
+      <p>Imagine you have completed your HP Helion OpenStack deployment with servers A, B, and C and
+        you want to add two new compute nodes by adding servers D and E to the input model.</p>
       <p>When you add these to the input model and re-run the Configuration Processor it will read
         the persisted data for A, B, and C and allocate D and E as new servers. The Configuration
-        Processor now has allocation data for A, B, C, D, and E – which it keeps in a staging area
+        Processor now has allocation data for A, B, C, D, and E –- which it keeps in a staging area
         (actually a special branch in git) until we get confirmation that the Configuration
         Processor has done what you intended and you are ready to deploy the revised
         configuration.</p>
-      <p>If you noticed that the role of E was wrong and it became a swift node instead of a nova
+      <p>If you noticed that the role of E was wrong and it became a Swift node instead of a Nova
         node you need to be able to change the input mode and re-run the Configuration Processor.
         This is fine because the allocations of D and E have not been confirmed, and so the
         Configuration Processor will re-read the data about A, B, C and re-allocate D and E now to
-        the correct clusters, updating the persisted data in staging area.</p>
-      <p>You can loop though this as many times as you need, and each time the Configuration
-        Processor is processing the deltas to what is deployed, now the results of the previous run.
-        When you are ready to use the results of the Configuration Processor, you run
-          <codeph>ready-deployment.yml</codeph> which commits the data in staging area into the
+        the correct clusters, updating the persisted data in the staging area.</p>
+      <p>You can loop though this as many times as needed. Each time, the Configuration Processor is
+        processing the deltas to what is deployed, not the results of the previous run. When you are
+        ready to use the results of the Configuration Processor, you run
+          <codeph>ready-deployment.yml</codeph> which commits the data in the staging area into the
         persisted data. The next run of the Configuration Processor will then start from the
         persisted data for A, B, C, D, and E.</p>
     </section>
-    <section id="5.2.1_PersistedServerAllocations"><title>Persisted Server Allocations</title>
-      <p>Server allocations are persisted by the customer defined server ID (see <xref
-          href="#input_model/4.3_Servers">Servers</xref>), and include the control plane,
+
+
+    <section id="persistedserverallocations"><title>Persisted Server Allocations</title>
+      <p>Server allocations are persisted by the administrator-defined server ID (see <xref
+          href="#input_model/co_servers">Servers</xref>), and include the control plane,
         cluster/resource name, and ordinal within the cluster or resource group.</p>
       <p>To guard against data loss, the Configuration Processor persists server allocations even
-        when the server ID no longer exists in the input model – for example if a server was removed
-        by accident and Configuration Processor allocated a new server to the same ordinal then it
-        would be very difficult to recover from that situation.</p>
+        when the server ID no longer exists in the input model –- for example, if a server was
+        removed accidentally and the Configuration Processor allocated a new server to the same
+        ordinal, then it would be very difficult to recover from that situation.</p>
       <p>The following example illustrates the behavior:</p>
       <p>A cloud is deployed with four servers with IDs of A, B, C, and D that can all be used in a
         resource group with <codeph>min-size=0</codeph> and <codeph>max-size=3</codeph>. At the end
@@ -2627,9 +2628,10 @@
           </tgroup>
         </table>
       </p>
-      <p>(In this example Server D has not been allocated because the group is at its max size, and
+      <p>(In this example server D has not been allocated because the group is at its max size, and
         there are no other groups that required this server)</p>
-      <p>If server B is removed from the input model the state is changed to:</p>
+      <p>If server B is removed from the input model and the Configuration Processor is re-run, the
+        state is changed to:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="persist_exam_2">
           <tgroup cols="6">
@@ -2686,10 +2688,10 @@
           </tgroup>
         </table>
       </p>
-      <p>The details associated with server “B” are still kept, but the Configuration Processor will
-        not generate any deployment data for this server. Server “D” has been added to the group to
-        meet the minimum size requirement, but has been given a different ordinal and hence will get
-        different names and IP addresses.</p>
+      <p>The details associated with server B are still retained, but the Configuration Processor
+        will not generate any deployment data for this server. Server D has been added to the group
+        to meet the minimum size requirement but has been given a different ordinal and hence will
+        get different names and IP addresses than were given to server B.</p>
       <p>If server B is added back into the input model the resulting state will be:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="persist_exam_3">
@@ -2748,28 +2750,263 @@
         </table>
       </p>
       <p>The Configuration Processor will issue a warning that server B cannot be returned to the
-        group because it would exceed the max-size constraint. However, because the Configuration
-        Processor knows that server B is associated with this group it won’t allocate it to any
-        other group that could use it, since that might lead to data loss on that server.</p>
-      <p>If the max-size value of the group was increased then server B would be allocated back to
-        the group, with its previous name and addresses.</p>
+        compute group because it would exceed the max-size constraint. However, because the
+        Configuration Processor knows that server B is associated with this group it won’t allocate
+        it to any other group that could use it, since that might lead to data loss on that
+        server.</p>
+      <p>If the max-size value of the group was increased, then server B would be allocated back to
+        the group, with its previous name and addresses
+        (<codeph>mycloud-cp1-compute0002</codeph>).</p>
       <p>Note that the Configuration Processor relies on the server ID to identify a physical
         server. If the ID value of a server is changed the Configuration Processor will treat it as
         a new server. Conversely, if a different physical server is added with the same ID as a
         deleted server the Configuration Processor will assume that it is the original server being
         returned to the model.</p>
+      <p>You can force the removal of persisted data for server that are no longer in the input
+        model by running the Configuration Processor with the
+          <codeph>remove_deleted_servers</codeph> option, like below:</p>
+      <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml -e remove_deleted_servers="y"</codeblock>
     </section>
-    <section id="6.0_Examples"><title>Examples</title></section>
-    <section id="6.1_Networking"><title>Networking</title></section>
-    <section id="6.1.4_NeutronProviderVLANs"><title>Configuring Neutron Provider VLANs</title>
-      <p>Neutron provider VLANs are Neutron networks that map directly to an 802.1Q VLAN in the
-        cloud provider’s physical network infrastructure. There are four aspects to a provider VLAN
+    <section id="persistedaddressallocations"><title>Persisted Address Allocations</title>
+      <p>The Configuration Processor persists IP address allocations by the generated name (see
+          <xref href="#input_model/namegernation">Name Generation</xref> for how names are
+        generated). As with servers once an address has been allocated, that address will remain
+        allocated until the Configuration Processor is explicitly told that it is no longer
+        required. The Configuration Processor will generate warnings for addresses that are
+        persisted but no longer used.</p>
+      <p>You can remove persisted address allocations that are no longer used in the input model by
+        running the Configuration Processor with the <codeph>free_unused_addresses</codeph> option,
+        like below:</p>
+      <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml -e free_unused_addresses="y"</codeblock>
+    </section>
+    <section id="serverallocation"><title>Server Allocation</title>
+      <p>The Configuration Processor allocates servers to a cluster or resource group in the
+        following sequence:</p>
+      <ol>
+        <li>Any <uicontrol>servers</uicontrol> that are persisted with a state of "allocated" are
+          first returned to the <uicontrol>cluster</uicontrol> or <uicontrol>resource
+            group</uicontrol>. Such servers are always allocated even if this contradicts the
+          cluster size, failure-zones, or list of server roles since it is assumed that these
+          servers are actively deployed.</li>
+        <li>If the <uicontrol>cluster</uicontrol> or <uicontrol>resource group</uicontrol> is still
+          below its minimum size, then any <uicontrol>servers</uicontrol> that are persisted with a
+          state of "deleted", but where the server is now listed in the input model (i.e. the server
+          was removed but is now back), are added to the group providing they meet the
+            <uicontrol>failure-zone</uicontrol> and <uicontrol>server-role</uicontrol> criteria. If
+          they do not meet the criteria then a warning is given and the
+            <uicontrol>server</uicontrol> remains in a deleted state (i.e. it is still not allocated
+          to any other cluster or group). These <uicontrol>servers</uicontrol> are not part of the
+          current deployment, and so you must resolve any conflicts before they can be
+          redeployed.</li>
+        <li>If the <uicontrol>cluster</uicontrol> or <uicontrol>resource group</uicontrol> is still
+          below its minimum size, the Configuration Processor will allocate additional
+            <uicontrol>servers</uicontrol> that meet the <uicontrol>failure-zone</uicontrol> and
+            <uicontrol>server-role</uicontrol> criteria. If the allocation policy is set to "strict"
+          then the failure zones of servers already in the cluster or resource group are not
+          considered until an equal number of servers has been allocated from each zone.</li>
+      </ol>
+    </section>
+    <section id="servernetworkselection"><title>Server Network Selection</title>
+      <p>Once the Configuration Processor has allocated a <uicontrol>server</uicontrol> to a
+          <uicontrol>cluster</uicontrol> or <uicontrol>resource group</uicontrol> it uses the
+        information in the associated <uicontrol>interface-model</uicontrol> to determine which
+          <uicontrol>networks</uicontrol> need to be configured. It does this by:</p>
+      <ol>
+        <li>Looking at the <uicontrol>service-components</uicontrol> that are to run on the server
+          (from the <uicontrol>control-plane</uicontrol> definition)</li>
+        <li>Looking to see which <uicontrol>network-group</uicontrol> each of those components is
+          attached to (from the <uicontrol>network-groups</uicontrol> definition)</li>
+        <li>Looking to see if there are any <uicontrol>network-tags</uicontrol> related to a
+            <uicontrol>service-component</uicontrol> running on this server, and if so, adding those
+            <uicontrol>network-groups</uicontrol> to the list (also from the
+            <uicontrol>network-groups</uicontrol> definition)</li>
+        <li>Looking to see if there are any <uicontrol>network-groups</uicontrol> that the
+            <uicontrol>interface-model</uicontrol> says should be forced onto the server</li>
+        <li>It then searches the <uicontrol>server-group</uicontrol> hierarchy (as described in
+            <xref href="#input_model/servergroups_networks">Server Groups and Networks</xref>) to
+          find a <uicontrol>network</uicontrol> in each of the <uicontrol>network-groups</uicontrol>
+          it needs to attach to</li>
+      </ol>
+      <p>If there is no <uicontrol>network</uicontrol> available to a server, either because the
+          <uicontrol>interface-model</uicontrol> doesn't include the required
+          <uicontrol>network-group</uicontrol>, or there is no <uicontrol>network</uicontrol> from
+        that group in the appropriate part of the <uicontrol>server-groups</uicontrol> hierarchy,
+        then the Configuration Processor will generate an error.</p>
+      <p>The Configuration Processor will also generate an error if the
+          <uicontrol>server</uicontrol> address does not match any of the networks it will be
+        connected to.</p>
+    </section>
+    <section id="networkroutevalidation"><title>Network Route Validation</title>
+      <p>Once the Configuration Processor has allocated all of the required
+          <uicontrol>servers</uicontrol> and matched them to the appropriate
+          <uicontrol>networks</uicontrol>, it validates that all
+          <uicontrol>service-components</uicontrol> have the required network routes to other
+          <uicontrol>service-components</uicontrol>.</p>
+      <p>It does this by using the data in the services section of the input model which provides
+        details of which <uicontrol>service-components</uicontrol> need to connect to each other.
+        This data is not configurable by the administrator; however, it is provided as part of the
+        HP Helion OpenStack release.</p>
+      <p>For each <uicontrol>server</uicontrol>, the Configuration Processor looks at the list of
+          <uicontrol>service-components</uicontrol> it runs and determines the network addresses of
+        every other <uicontrol>service-component</uicontrol> it needs to connect to (depending on
+        the service, this might be a virtual IP address on a load balancer or a set of addresses for
+        the service).</p>
+      <p>If the target address is on a <uicontrol>network</uicontrol> that this
+          <uicontrol>server</uicontrol> is connected to, then there is no routing required. If the
+        target address is on a different <uicontrol>network</uicontrol>, then the Configuration
+        Processor looks at each <uicontrol>network</uicontrol> the server is connected to and looks
+        at the routes defined in the corresponding <uicontrol>network-group</uicontrol>. If the
+          <uicontrol>network-group</uicontrol> provides a route to the
+          <uicontrol>network-group</uicontrol> of the target address, then that route is considered
+        valid.</p>
+      <p><uicontrol>Networks</uicontrol> within the same <uicontrol>network-group</uicontrol> are
+        always considered as routed to each other; <uicontrol>networks</uicontrol> from different
+          <uicontrol>network-groups</uicontrol> must have an explicit entry in the
+          <codeph>routes</codeph> stanza of the <uicontrol>network-group</uicontrol> definition.
+        Routes to a named <uicontrol>network-group</uicontrol> are always considered before a
+        "default" route.</p>
+      <p>A warning is given for any routes which are using the "default" route since it is possible
+        that the user did not intend to route this traffic. Such warning can be removed by adding
+        the appropriate <uicontrol>network-group</uicontrol> to the list of routes.</p>
+      <p>The Configuration Processor provides details of all routes between networks that it is
+        expecting to be configured in the <codeph>info/route_info.yml</codeph> file.</p>
+      <p>To illustrate how network routing is defined in the input model, consider the following
+        example:</p>
+      <p>A compute server is configured to run nova-compute which requires access to the Neutron API
+        servers and the VSA block storage service. The Neutron API servers have a virtual IP address
+        provided by a load balancer in the INTERNAL-API network-group and the VSA service is
+        connected to the ISCSI network-group. Nova-compute itself is part of the set of components
+        attached by default to the MANAGEMENT network-group. The intention is to have virtual
+        machines on the compute server connect to the VSA storage via the ISCSI network.</p>
+      <p>The physical network is shown below:</p>
+      <!-- INSERT DIAG HERE -->
+      <p>The corresponding entries in the <uicontrol>network-groups</uicontrol> are:</p>
+      <codeblock>
+  - name: INTERNAL-API  
+    hostname-suffix: intapi
+        
+    load-balancers:
+       - provider: ip-cluster
+         name: lb
+         components:
+           - default
+         roles:
+           - internal
+           - admin
+        
+       - name: MANAGEMENT
+         hostname-suffix: mgmt
+         hostname: true
+        
+         component-endpoints:
+           - default
+        
+         routes:
+           - INTERNAL-API
+           - default
+        
+       - name: ISCSI
+         hostname-suffix: iscsi
+         
+         component-endpoints:
+            - vsa</codeblock>
+      <p>And the <uicontrol>interface-model</uicontrol> for the compute server looks like this:</p>
+      <codeblock>
+  - name: INTERFACE_SET_COMPUTE
+    network-interfaces:
+      - name: BOND0
+        device:
+           name: bond0
+        bond-data:
+           options:
+              mode: active-backup
+              miimon: 200
+              primary: hed5
+           provider: linux
+           devices:
+              - name: hed4
+              - name: hed5
+        network-groups:
+          - MANAGEMENT
+          - ISCSI</codeblock>
+      <p>When validating the route from nova-compute to the Neutron API, the Configuration Processor
+        will detect that the target address is on a network in the INTERNAL-API network group, and
+        that the MANAGEMENT network (which is connected to the compute server) provides a route to
+        this network, and thus considers this route valid.</p>
+      <p>When validating the route from nova-compute to VSA, the Configuration Processor will detect
+        that the target address is on a network in the ISCSI network group. However, because there
+        is no service component on the compute server connected to the ISCSI network (according to
+        the network-group definition) the ISCSI network will not have been configured on the compute
+        server (see <xref href="#input_model/servernetworkselection">Server Network
+        Selection</xref>. The Configuration Processor will detect that the MANAGEMENT network-group
+        provides a "default" route and thus considers the route as valid (it is, of course, valid to
+        route ISCSI traffic); however, because this is using the default route, a warning will be
+        issued:</p>
+      <codeblock>#   route-generator-2.0       WRN: Default routing used between networks
+The following networks are using a 'default' route rule. To remove this warning either add an explicit route in the source network group or force the network to attach in the interface model used by the servers.
+  MANAGEMENT-NET-RACK1 to ISCSI-NET
+    helion-ccp-comp0001
+  MANAGEMENT-NET-RACK 2 to ISCSI-NET
+    helion-ccp-comp0002
+  MANAGEMENT-NET-RACK 3 to SCSI-NET
+    helion-ccp-comp0003</codeblock>
+      <p>To remove this warning, you can either add ISCSI to the list of routes in the MANAGEMENT
+        network group (routed ISCSI traffic is still a valid configuration) or force the compute
+        server to attach to the ISCSI network-group by adding it as a forced-network-group in the
+        interface-model, like this:</p>
+      <codeblock>
+  - name: INTERFACE_SET_COMPUTE
+      network-interfaces:
+        - name: BOND0
+          device:
+            name: bond0
+          bond-data:
+            options:
+               mode: active-backup
+               miimon: 200
+               primary: hed5
+            provider: linux
+            devices:
+               - name: hed4
+               - name: hed5
+          network-groups:
+             - MANAGEMENT
+          forced-network-groups:
+             - ISCSI</codeblock>
+      <p>With the attachment to the ISCSI network group forced, the Configuration Processor will
+        attach the compute server to a network in that group and validate the route as either being
+        direct or between networks in the same network-group.</p>
+      <p>The generated <codeph>route_info.yml</codeph> file will include entries such as the
+        following, showing the routes that are still expected to be configured between networks in
+        the MANAGEMENT network group and the INTERNAL-API network group.</p>
+      <codeblock>
+  MANAGEMENT-NET-RACK1:
+     INTERNAL-API-NET:
+        default: false
+        used_by:
+           nova-compute:
+              neutron-server:
+              - helion-ccp-comp0001
+   MANAGEMENT-NET-RACK2:
+     INTERNAL-API-NET:
+        default: false
+        used_by:
+          nova-compute:
+            neutron-server:
+            - helion-ccp-comp0003</codeblock>
+    </section>
+
+    <section id="neutronprovidervlans"><title>Configuring Neutron Provider VLANs</title>
+      <p>Neutron provider VLANs are networks that map directly to an 802.1Q VLAN in the cloud
+        provider’s physical network infrastructure. There are four aspects to a provider VLAN
         configuration:</p>
       <ul>
         <li>Network infrastructure configuration (e.g. the top-of-rack switch)</li>
-        <li>Server networking configuration (for compute nodes and neutron network nodes)</li>
+        <li>Server networking configuration (for compute nodes and Neutron network nodes)</li>
         <li>Neutron configuration file settings</li>
-        <li>Create the corresponding network objects in Neutron</li>
+        <li>Creation of the corresponding network objects in Neutron</li>
       </ul>
       <p>The physical network infrastructure must be configured to convey the provider VLAN traffic
         as tagged VLANs to the cloud compute nodes and Neutron network nodes. Configuration of the
@@ -2778,9 +3015,10 @@
       <p>HP Helion OpenStack 2.0 automates the server networking configuration and the Neutron
         configuration based on information in the cloud definition. To configure the system for
         provider VLANs, specify the <codeph>neutron.networks.vlan</codeph> tag with a
-          <codeph>provider-physical-network</codeph> attribute on one or more network groups as
-        described in the <xref href="#input_model/4.9.1.2_neutron.networks.vlan">Network
-          Groups</xref> section. For example (some attributes omitted for brevity):</p>
+          <codeph>provider-physical-network</codeph> attribute on one or more
+          <uicontrol>network-groups</uicontrol> as described in the <xref
+          href="#input_model/neutron.networks.vlan">Network Groups</xref> section. For example (some
+        attributes omitted for brevity):</p>
       <codeblock>
   network-groups:
 
@@ -2793,9 +3031,10 @@
       tags:
         - neutron.networks.vlan:
               provider-physical-network: physnet2</codeblock>
-      <p>A network group is associated with a server network interface via an interface model as
-        described in the <xref href="#input_model/4.7_InterfaceModels">Interface Models</xref>
-        section. For example (some attributes omitted for brevity):</p>
+      <p>A <uicontrol>network-group</uicontrol> is associated with a server network interface via an
+          <uicontrol>interface-model</uicontrol> as described in the <xref
+          href="#input_model/co_interfacemodels">Interface Models</xref> section. For example (some
+        attributes omitted for brevity):</p>
       <codeblock>
   interface-models:
      - name: INTERFACE_SET_X
@@ -2805,14 +3044,14 @@
           network-groups:
             - NET_GROUP_A
         - device:
-              name: eth3
+              name: hed3
           network-groups:
             - NET_GROUP_B</codeblock>
-      <p>A network group used for provider VLANs may contain only a single HP Helion OpenStack
-        network, because that VLAN must span all compute nodes and any Neutron network
-        nodes/controllers (i.e. it is a single L2 segment). The HP Helion OpenStack network must be
-        defined with <codeph>tagged-vlan: false</codeph>, otherwise a linux VLAN network interface
-        will be created. For example:</p>
+      <p>A <uicontrol>network-group</uicontrol> used for provider VLANs may contain only a single HP
+        Helion OpenStack <uicontrol>network</uicontrol>, because that VLAN must span all compute
+        nodes and any Neutron network nodes/controllers (i.e. it is a single L2 segment). The HP
+        Helion OpenStack <uicontrol>network</uicontrol> must be defined with <codeph>tagged-vlan:
+          false</codeph>, otherwise a linux VLAN network interface will be created. For example:</p>
       <codeblock>
   networks:
      - name: NET_A
@@ -2824,10 +3063,236 @@
       <p>When the cloud is deployed, HP Helion OpenStack 2.0 will create the appropriate bridges on
         the servers, and set the appropriate attributes in the Neutron configuration files (e.g.
         bridge_mappings).</p>
-      <p>After the cloud has been deployed, create Neutron network objects for each provider VLAN.
-        For example, using the Neutron CLI:</p>
+      <p>After the cloud has been deployed, create Neutron network objects for each provider VLAN
+        using the Neutron CLI:</p>
       <codeblock>neutron net-create --provider:network_type vlan --provider:physical_network physnet1 --provider:segmentation_id 101 mynet101</codeblock>
       <codeblock>neutron net-create --provider:network_type vlan --provider:physical_network physnet2 --provider:segmentation_id 234 mynet234</codeblock>
     </section>
+    <section id="cpinfofiles">
+      <title>Configuration Processor Information Files</title>
+      <p>In addition to producing all of the data needed to deploy and configure the cloud, the
+        Configuration Processor also creates a number of information files that provide details of
+        the resulting configuration.</p>
+      <p>These files can be found in <codeph>~/helion/my_cloud/info</codeph> after the first
+        Configuration Processor run. This directory is also rebuilt each time the Configuration
+        Processor is run.</p>
+      <p>Most of the files are in YAML format, allowing them to be used in further automation tasks
+        if required.</p>
+      <table frame="all" rowsep="1" colsep="1" id="table">
+        <tgroup cols="2">
+          <colspec colnum="1" colname="col1"/>
+          <colspec colnum="2" colname="col2"/>
+          <thead>
+            <row>
+              <entry>File</entry>
+              <entry>Provides details of</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>address_info.yml </entry>
+              <entry>IP address assignments on each network</entry>
+            </row>
+            <row>
+              <entry>net_info.yml </entry>
+              <entry>IP addresses assigned to services. For example, this provides the data needed
+                to complete the configuration of VSA clusters.</entry>
+            </row>
+            <row>
+              <entry>server_info.yml</entry>
+              <entry>How servers have been allocated, including their network configuration. Allows
+                details of a server to be found from its ID</entry>
+            </row>
+            <row>
+              <entry>firewall_info.yml </entry>
+              <entry>All ports that are open on each network by the firewall configuration. Can be
+                used if you want to configure an additional firewall in front of the API network,
+                for example.</entry>
+            </row>
+            <row>
+              <entry>route_info.yml </entry>
+              <entry>Routes that need to be configured between networks. </entry>
+            </row>
+            <row>
+              <entry>service_info.yml</entry>
+              <entry>Details of where components of each service are deployed</entry>
+            </row>
+            <row>
+              <entry>CloudDiagram.txt</entry>
+              <entry>A pictorial representation of the cloud</entry>
+            </row>
+            <row>
+              <entry>explain.txt </entry>
+              <entry>An explanation of the decisions the Configuration Processor has made when
+                allocating servers and networks</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>The following examples are taken from the <codeph>entry-scale-kvm-vsa</codeph> example:</p>
+    </section>
+    <section id="address_info_yml"><title>Address_info.yml</title>
+      <p>This file provides details of all the IP addresses allocated by the Configuration
+        Processor:</p>
+      <codeblock>
+  &#60;Network Groups>
+     &#60;List of Networks>
+        &#60;IP Address>
+           &#60;List of Aliases></codeblock>
+      <p>Example:</p>
+      <codeblock>
+  EXTERNAL-API:
+     EXTERNAL-API-NET:
+        10.0.1.2:
+           - helion-cp1-c1-m1-extapi
+        10.0.1.3:
+           - helion-cp1-c1-m2-extapi
+        10.0.1.4:
+           - helion-cp1-c1-m3-extapi
+        10.0.1.5:
+           - helion-cp1-vip-public-SWF-PRX-extapi
+           - helion-cp1-vip-public-FRE-API-extapi
+           - helion-cp1-vip-public-GLA-API-extapi
+           - helion-cp1-vip-public-HEA-ACW-extapi
+           - helion-cp1-vip-public-HEA-ACF-extapi
+           - helion-cp1-vip-public-NEU-SVR-extapi
+           - helion-cp1-vip-public-KEY-API-extapi
+           - helion-cp1-vip-public-MON-API-extapi
+           - helion-cp1-vip-public-HEA-API-extapi
+           - helion-cp1-vip-public-NOV-API-extapi
+           - helion-cp1-vip-public-CND-API-extapi
+           - helion-cp1-vip-public-CEI-API-extapi
+           - helion-cp1-vip-public-SHP-API-extapi
+           - helion-cp1-vip-public-OPS-WEB-extapi
+           - helion-cp1-vip-public-HZN-WEB-extapi
+           - helion-cp1-vip-public-NOV-VNC-extapi
+  EXTERNAL-VM:
+     EXTERNAL-VM-NET: {}
+  GUEST:
+     GUEST-NET:
+        10.1.1.2:
+           - helion-cp1-c1-m1-guest
+        10.1.1.3:
+           - helion-cp1-c1-m2-guest
+        10.1.1.4:
+           - helion-cp1-c1-m3-guest
+        10.1.1.5:
+           - helion-cp1-comp0001-guest
+  MANAGEMENT:
+  ...</codeblock>
+    </section>
+    <section id="firewall_info_yml"><title>Firewall_info.yml</title>
+      <p>This file provides details of all the network ports that will be opened on the deployed
+        cloud. Data is ordered by network. If you want to configure an external firewall in front of
+        the External API network, then you would need to open the ports listed in that section.</p>
+      <codeblock>
+  &#60;Network Name>
+     List of:
+        &#60;Port>
+        &#60;Protocol>
+        &#60;List of IP Addresses>
+        &#60;List of Components></codeblock>
+      <p>Example:</p>
+      <codeblock>
+  EXTERNAL-API:
+  -   addresses:
+      - 10.0.1.5
+      components:
+      - horizon
+      port: '443'
+      protocol: tcp
+  -   addresses:
+      - 10.0.1.5
+      components:
+      - keystone-api
+      port: '5000'
+      protocol: tcp</codeblock>
+      <p><i>Port 443 (tcp) is open on network EXTERNAL-API for address 10.0.1.5 because it is used
+          by Horizon</i></p>
+      <p><i>Port 5000 (tcp) is open on network EXTERNAL-API for address 10.0.1.5 because it is used
+          by Keystone API</i></p>
+    </section>
+    <section id="net_info_yml"><title>Net_info.yml</title>
+      <p>This file provides details of IP addresses that have been allocated for a service. This
+        data is typically used for service configuration after the initial deployment.</p>
+      <codeblock>
+   service_ips:
+      &#60;Service-Name>
+          control_plane:  &#60;Control Plane Name>
+          cluster: &#60;Cluster or Resource Name>
+          network:  &#60;Network Name>
+          cluster_ip:
+              hostname:  &#60;Hostname alias of address allocated for the cluster>
+              ip_address: &#60;IP address allocated for the cluster>
+          hosts: (list)
+              hostname:  &#60;Hostname of server in the cluster>
+              ip_address: &#60;IP address of server the cluster></codeblock>
+      <p>Example:</p>
+      <codeblock>
+   service_ips:
+      vsa:
+      -   cluster: vsa
+          cluster_ip:
+              hostname: helion-cp1-vsa-VSA-BLK-mgmt
+              ip_address: 192.168.10.7
+          control_plane: control-plane-1
+          hosts:
+          -   hostname: helion-cp1-vsa0001-VSA-BLK-mgmt
+              ip_address: 192.168.10.2
+          -   hostname: helion-cp1-vsa0002-VSA-BLK-mgmt
+              ip_address: 192.168.10.8
+          -   hostname: helion-cp1-vsa0003-VSA-BLK-mgmt
+              ip_address: 192.168.10.12
+          network: MANAGEMENT-NET</codeblock>
+      <p><i>Resource group "vsa" in "control-plane-1" has been allocated 192.168.10.7 on network
+          MANAGEMENT-NET as a cluster address and consists of 3 servers with addresses 192.168.10.2,
+          192.168.192.8, and 192.168.10.12.</i></p>
+    </section>
+    <section id="route_info_yml"><title>Route_info.yml</title>
+      <p>This file provides details of routes between networks that need to be configured. Available
+        routes are defined in the input model as part of the <uicontrol>network-groups</uicontrol>
+        data; this file shows which routes will actually be used. HP Helion OpenStack will
+        reconfigure routing rules on the servers, you must configure the corresponding routes within
+        your physical network. Routes must be configured to be symmetrical -- only the direction in
+        which a connection is initiated is captured in this file.</p>
+      <p>Note that simple models may not require any routes, with all servers being attached to
+        common L3 networks. The following example is taken from the
+          <codeph>tech-preview/mid-scale-kvm-vsa</codeph> example.</p>
+      <codeblock>
+  &#60;Source-Network-Name>
+      &#60;Target-Network-Name>
+           default:   &#60;true if this is this the result of a "default" route rule>
+           used_by:
+                &#60;source-service>
+                     &#60;target-service>
+                     &#60;list of hosts using this route></codeblock>
+      <p>Example:</p>
+      <codeblock>
+MANAGEMENT-NET-RACK1:
+    INTERNAL-API-NET:
+         default: false
+         used_by:
+            ceilometer-client:
+            ceilometer-api:
+            - helion-cp1-mtrmon-m1
+            keystone-api:
+            - helion-cp1-mtrmon-m1
+     MANAGEMENT-NET-RACK2:
+         default: false
+         used_by:
+            cinder-backup:
+            rabbitmq:
+            - helion-cp1-core-m1</codeblock>
+      <p><i>A route is required from network <b>MANAGEMENT-NET-RACK1</b> to network
+            <b>INTERNAL-API-NET</b> so that <b>ceilometer-client</b> can connect to
+            <b>ceilometer-api</b> from server <b>helion-cp1-mtrmon-m1</b> and to <b>keystone-api
+          </b>from the same server.</i></p>
+      <p><i>A route is required from network <b>MANAGEMENT-NET-RACK1</b> to network
+            <b>MANAGEMENT-NET-RACK2</b> so that <b>cinder-backup</b> can connect to <b>rabbitmq</b>
+          from server <b>helion-cp1-core-m1</b></i></p>
+    </section>
+
+
+
   </conbody>
 </concept>
