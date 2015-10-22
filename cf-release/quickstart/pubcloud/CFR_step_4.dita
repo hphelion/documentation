@@ -147,6 +147,33 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
               conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6. <xref
             conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
     <stentry><b>Deploying a Docker Image</b><ol id="ol_p2k_vx1_tt">
+            <li>Add the variables from the
+                <filepath><varname>&lt;number></varname>-Project-openrc.sh</filepath> file that you
+              have downloaded in <b>Step 3</b> to your terminal session.<ul id="ul_ptr_bwp_tt">
+                <li>On a Linux machine, navigate to the directory that contains the
+                    <filepath>.sh</filepath> file and source the file, for
+                    example:<codeblock>source <filepath>12345678901234-Project-openrc.sh</filepath></codeblock><p>Enter
+                    your OpenStack password when prompted.</p></li>
+                <li>On a Windows machine, add variables from the <filepath>.sh</filepath> file at
+                  the command prompt, or add the commands to a batch file, for
+                  example:<codeblock>set OS_AUTH_URL=https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/
+set OS_USERNAME=myUsername
+set OS_PASSWORD=myPassword123
+set OS_TENANT_ID=12345678901234
+set OS_TENANT_NAME=MySandbox
+set OS_REGION_NAME=region-a.geo-1</codeblock></li>
+              </ul><note type="tip">When you close your terminal session, your variables will be
+                discarded. To prevent this, you can do the following: <ul id="ul_myk_1xp_tt">
+                  <li>On a Linux machine, add the variables to your <filepath>~/.bashrc</filepath>
+                    file and run the <filepath>source ~/.bashrc</filepath> command.</li>
+                  <li>On a Windows machine, <menucascade>
+                      <uicontrol>Control Panel</uicontrol>
+                      <uicontrol>System</uicontrol>
+                      <uicontrol>Advanced system settings</uicontrol>
+                      <uicontrol>Environment Variables</uicontrol>
+                    </menucascade> and add the variables to your <uicontrol>System
+                      variables.</uicontrol></li>
+                </ul></note></li>
             <li>Decompress the <keyword keyref="prodShort"/> file into a convenient directory.</li>
             <li>Navigate to the <keyword keyref="prodShort"/> directory and ensure that it contains
               a <filepath>.tfvars</filepath> file. Your <filepath>.tfvars</filepath> file should
@@ -157,8 +184,8 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
                   >Terraform Variables</xref>.</note></li>
             <li>Run the following
                 command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><p>Terraform
-                creates the necessary security groups and VM instances, installs Docker, and
-                installs the Docker images required to run <keyword keyref="prodShort"/>.</p><note
+                creates the necessary security groups and instances, installs Docker, and installs
+                the Docker images required to run <keyword keyref="prodShort"/>.</p><note
                 type="important">If Terraform displays errors, ensure that all variables have values
                 and that the values are correct.</note><note type="tip">At the end of the process,
                 Terraform displays the URL of the <keyword keyref="pubCloudShort"/> core, formatted
