@@ -20,7 +20,9 @@
             <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
     <stentry><b>Getting Ready to Push Your First Application</b><ol id="ol_zdy_p53_tt">
             <li>Ensure you are targeting the desired
-              cluster:<codeblock>cf api http://api.api.15.125.91.46.xip.io</codeblock></li>
+                cluster:<codeblock>cf api http://api.15.125.91.46.xip.io</codeblock><note>If you
+                cannot connect to <keyword keyref="pubCloudShort"/>, ensure that your connection has
+                no proxy settings.</note></li>
             <li>Ensure that you are logged into the desired
               cluster:<codeblock>cf login</codeblock>You are prompted for your username and
                 password.<note type="tip">To skip SSL validation, you can add the

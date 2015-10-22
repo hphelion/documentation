@@ -12,7 +12,8 @@
   <refbody>
     <table frame="all" rowsep="1" colsep="1" id="table_fjz_c3c_rt">
       <desc>
-        <note type="remember">Specify the variable values in quotation marks.</note>
+        <note type="important">Specify the variable values in quotation marks. Values are
+          case-sensitive.</note>
       </desc>
       <tgroup cols="3">
         <colspec colname="c1" colnum="1" colwidth="1.0*"/>

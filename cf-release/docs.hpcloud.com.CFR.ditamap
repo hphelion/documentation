@@ -21,7 +21,4 @@
    <topicref href="root/HCF_license_agreements.dita" navtitle="Open Source and Third-Party Software License Agreements"/>
    <topicref href="root/HCF_software_license_terms.dita" navtitle="Software License Terms"/>
    -->
-   <topichead navtitle="DO NOT LOOK HERE--TESTING">
-      <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_troubleshoot.dita"/>
-   </topichead>
 </map>
