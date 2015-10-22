@@ -13,7 +13,8 @@
         make the changes:
         <!--You must add a new node details in the <codeph>server.yml</codeph> file. --></p>
       <p>Perform the following steps to add a new node:<ol id="ol_p4w_gbr_4t">
-          <li><!--Log in to the deployer node.--> Get the <codeph>server.yml</codeph> file stored in
+          <li><!--Log in to the deployer node.--> Get the <codeph>servers.yml</codeph> file stored
+            in
             git:<codeblock>cd ~/helion/my_cloud/definition/data
 git checkout site</codeblock></li>
           <li>If not already done, set the weight-step attribute. See <xref
@@ -61,7 +62,7 @@ git checkout site</codeblock></li>
   . . .
   clusters:
   . . .
-     - name: &lt;cluster name>
+     - name: ....
        cluster-prefix: c2
        server-role: SWPAC-ROLE
        member-count: 3
