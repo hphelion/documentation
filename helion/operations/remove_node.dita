@@ -18,9 +18,9 @@
     
     <section id="removeAZ"><title>Remove Hosts from Host Aggregates</title> When removing a compute
       node, if availability zones have been configured, either manually or using the Nova playbook
-      nova-cloud-configure.yml, or you have manually configured any host aggregates, then before
-      executing the the service-delete command you need to remove the host(s) being deleted from any
-      host aggregates. For example... <ol>
+      <b>nova-cloud-configure.yml</b>, or you have manually configured any host aggregates, then before
+      executing the <codeph>service-delete</codeph> command you need to remove the host(s) being deleted from any
+      host aggregates. For example: <ol>
         <li>Disable the
           service<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova service-disable --reason="HNOV-240 - removed" padawan-ccp-comp0002-mgmt nova-compute</codeblock><codeblock>+---------------------------+--------------+----------+--------------------+
 | Host                      | Binary       | Status   | Disabled Reason    |
@@ -62,8 +62,8 @@
 +----+------+-------------------+-------+-------------------------+
 | 4  | AZ2  | AZ2               |       | 'availability_zone=AZ2' |
 +----+------+-------------------+-------+-------------------------+</codeblock></li>
-        <li>Delete service ID 22 (AZ2) and check that is is deleted using nova
-          service-list<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova service-delete 22
+        <li>Delete service ID 22 (AZ2) and check that is deleted using <codeph>nova
+          service-list</codeph><codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova service-delete 22
 stack@padawan-ccp-c0-m1-mgmt:~$ nova service-list</codeblock><codeblock>+----+------------------+---------------------------+----------+---------+-------+----------------------------+-----------------+
 | Id | Binary           | Host                      | Zone     | Status  | State | Updated_at                 | Disabled Reason |
 +----+------------------+---------------------------+----------+---------+-------+----------------------------+-----------------+
@@ -83,7 +83,7 @@ stack@padawan-ccp-c0-m1-mgmt:~$ nova service-list</codeblock><codeblock>+----+--
     <section><title>Remove the Nodes</title>
     <ol>
     <li>For example, using a cloud administrator account first disable provisioning and then run
-      nova service-list
+      <codeph>nova service-list</codeph>
       <codeblock>~$ nova service-disable --reason="HNOV-240 - removed" hlm004-ccp-comp0004-mgmt nova-compute
 ~$ nova service-list</codeblock>
       to see the
@@ -135,7 +135,7 @@ stack@padawan-ccp-c0-m1-mgmt:~$ nova service-list</codeblock><codeblock>+----+--
           <codeblock>~$ ssh stack@hlm004-ccp-comp0004-mgmt "sudo systemctl stop nova-compute"</codeblock>
           or shut down the node. (alternatively, you may re-image the
           node):<codeblock>~$ ssh stack@hlm004-ccp-comp0004-mgmt "sudo shutdown now"</codeblock>Alternatively,
-          from the deployer, run the<b>bm-power-down.yml </b>playbook <codeblock>~$ cd ~/helion/hos/ansible
+          from the deployer, run the <b>bm-power-down.yml </b>playbook <codeblock>~$ cd ~/helion/hos/ansible
     ~/helion/hos/ansible$ ansible-playbook -i hosts/localhost bm-power-down.yml -e nodelist=cpn-0004</codeblock>
           <codeblock>PLAY [localhost] **************************************************************
     GATHERING FACTS *************************************************************** 
@@ -189,11 +189,12 @@ stack@padawan-ccp-c0-m1-mgmt:~$ nova service-list</codeblock><codeblock>+----+--
 +----+--------------------------+-------+---------+</codeblock>
       </li><li>Then, on the deployer node, remove the node from <b>servers.yml </b><note>Make sure you are
             removing the correct node from <b>servers.yml</b> by ensuring you remove the stanza that
-            contains the IP address that matches the node to be removed.</note> Then, commit the
-          change, and rerun the config
-          processor:<codeblock>cd ~/helion/my_cloud/definition/data
+        contains the IP address that matches the node to be removed.</note> Edit <b>servers.yml </b>to remove the entry for removed node.
+          <codeblock>cd ~/helion/my_cloud/definition/data
 git checkout site</codeblock>
-        </li><li>Edit <b>servers.yml </b>to remove the entry for removed node.
+      </li><li>Then, commit the
+        change, and rerun the config
+        processor:
           <codeblock>git commit -a -m "Removed node &lt;name>"
 cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml
