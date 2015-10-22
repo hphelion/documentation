@@ -83,6 +83,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    <topicref href="deploy/CFR_deploy.dita"/>
 >>>>>>> 603ec39... Added the initial files per Colin Henry's demo
 =======
@@ -117,4 +118,6 @@
       <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_troubleshoot.dita"/>
    </topichead>
 >>>>>>> 3206261... More content reorg
+=======
+>>>>>>> 6a42967... Added more content; removed temp content
 </map>
