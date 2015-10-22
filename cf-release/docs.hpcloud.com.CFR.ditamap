@@ -4,13 +4,14 @@
    <title>HP Helion Cloud Foundry</title>
    <mapref href="docs.hpcloud.com.CFR_variables.ditamap"/>
    <topicref href="root/CFR_root_documentation.dita"/>
-   <!--<topichead navtitle="Quick Start: Deploying to HPE Public Cloud"/>-->
-   <topicref href="quickstart/pubcloud/CFR_step_1.dita"/>
-   <topicref href="quickstart/pubcloud/CFR_step_2.dita"/>
-   <topicref href="quickstart/pubcloud/CFR_step_3.dita"/>
-   <topicref href="quickstart/pubcloud/CFR_step_4.dita"/>
-   <topicref href="quickstart/pubcloud/CFR_step_5.dita"/>
-   <topicref href="quickstart/pubcloud/CFR_step_6.dita"/>
+   <topichead navtitle="Quick Start: Deploying to HPE Public Cloud">
+      <topicref href="quickstart/pubcloud/CFR_step_1.dita"/>
+      <topicref href="quickstart/pubcloud/CFR_step_2.dita"/>
+      <topicref href="quickstart/pubcloud/CFR_step_3.dita"/>
+      <topicref href="quickstart/pubcloud/CFR_step_4.dita"/>
+      <topicref href="quickstart/pubcloud/CFR_step_5.dita"/>
+      <topicref href="quickstart/pubcloud/CFR_step_6.dita"/>
+   </topichead>
    <!--
    <topicref href="root/HCF_whats_new.dita" navtitle="What's New"/>
    <topicref href="root/HCF_release_notes.dita" navtitle="Release Notes"/>

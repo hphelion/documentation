@@ -4,6 +4,11 @@
   <title><keyword keyref="adminUtil"/> Command Reference</title>
   <shortdesc><filepath><keyword keyref="adminUtilCLI"/></filepath> is the <keyword keyref="prodShort"/> administration
     utility.</shortdesc>
+  <prolog>
+    <metadata>
+      <othermeta name="author" content="Michael Khmelnitsky"/>
+    </metadata>
+  </prolog>
   <refbody>
     <section>
       <note type="note">The following commands apply to <filepath><keyword keyref="adminUtilCLI"/></filepath> version
