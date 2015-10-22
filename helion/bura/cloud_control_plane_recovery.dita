@@ -353,7 +353,7 @@ cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_host hlm-deploy.yml</codeblock></p></li>
           </ol></li>
       </ul></section>
-    <section><title>Manually Restore MySQL</title>
+    <section><title>Restore MySQL Manually </title>
       <p>If restoring MySQL fails during the percona-bootstrap procedure, you can use the following
         procedure instead:</p>
       <ol>
