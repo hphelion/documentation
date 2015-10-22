@@ -13,22 +13,17 @@
         DO NOT CHANGE THE FOLLOWING TWO PARAGRAPHS
         
         -->
-      
-      <p>Core features in the <tm tmtype="reg">OpenStack</tm> Foundation’s Kilo release (as identified below) 
-        are enabled in the HPE Helion OpenStack 2.0 standard settings and are included 
-        in Helion standard product support.
-      </p>
-      
-      <p>Non-core services (listed in the Features tables below) are provided as-is.  
-        Some non-core services are included in this release to provide early access to 
-        features that HPE may support fully in future releases, but HPE cannot guarantee 
-        that support will be provided or issues resolved in a future release.  Other 
-        non-core features are provided in this release for a limited time and may be 
-        deprecated in future releases.  HPE will attempt to provide guidance and telephone 
-        support for these features at its discretion. If you need additional support on 
-        any of these features for a specific use case, please contact the Helion 
-        professional services team.
-      </p>
+      <p>Core features in the <tm tmtype="reg">OpenStack</tm> Foundation’s Kilo release (as
+        identified below) are enabled in the HPE Helion OpenStack 2.0 standard settings and are
+        included in Helion standard product support. </p>
+      <p>Non-core services (listed in the Features tables below) are provided as-is. Some non-core
+        services are included in this release to provide early access to features that HPE may
+        support fully in future releases, but HPE cannot guarantee that support will be provided or
+        issues resolved in a future release. Other non-core features are provided in this release
+        for a limited time and may be deprecated in future releases. HPE will attempt to provide
+        guidance and telephone support for these features at its discretion. If you need additional
+        support on any of these features for a specific use case, please contact the Helion
+        professional services team. </p>
       <table>
         <tgroup cols="2">
           <tbody>
@@ -100,31 +95,33 @@
         </tgroup>
       </table>
       <p><b>New GUI Installer</b></p>
-      <p>HP Helion OpenStack 2.0  introduces a GUI installer for configuring and installing the
+      <p>HP Helion OpenStack 2.0 introduces a GUI installer for configuring and installing the
         operating system, the cloud, and OpenStack services. It provides an easy way to populate the
         configuration files needed to define the <xref href="input_model.dita">Input Model</xref>,
         and uses them to configure and install your cloud. For help using the installer, see the
         page <xref href="gui_installer.dita"/>.</p><p>Note that in Beta 2, the GUI does not have
         final help text and has placeholder text on screens.</p>
       <p><b>Transport Layer Security (TLS) Support</b>
-      </p>
-      <p>TLS is now supported for public endpoints. See <xref
+      </p><p>TLS is now supported for public endpoints. See <xref
           href="security/tls.dita#topic_yym_nps_4t">Enabling TLS for Public Endpoints</xref> for
         more information.</p>
-      <p><b>Encryption of sensitive data</b></p>
+      <b>Encryption of sensitive data</b>
       <p>In this release, connection details and passwords are encrypted and or protected. See <xref
           href="security/encrypted_storage.dita">Encryption of Passwords and Sensitive Data
-        </xref>for more information.</p>
-      <p><b>AppArmor enabled</b></p>
-      <p>...</p>
-      <p><b>Dedicated Deployer Node No Longer Required</b></p>
-      <p>You can now use either a dedicated deployer node or setup the deployer on your first
-        controller node. If you choose to use your first controller node as your deployer, ensure
-        that your <codeph>servers.yml</codeph> file contains the <codeph>is-deployer: true</codeph>
-        notation in the options. If you are using a dedicated deployer node you can omit this. Here
-        is an example snippet of a <codeph>servers.yml</codeph> file where a user is using their
-        first controller node as their deployer:
-        <codeblock># Controllers
+        </xref>for more information.</p><p><b>AppArmor enabled</b></p>  AppArmor in HP Helion
+      OpenStack 2.0 is installed and enabled on the KVM compute nodes by default. It runs in enforce
+      mode. It enforces mandatory access control policies for the libvirt process. See <xref
+        href="security/using_apparmor.dita#topic_rmq_j1v_4t">AppArmor in HP Helion OpenStack
+        2.0</xref> for more information.<p/><p>
+          
+          
+          <!--<b>Dedicated Deployer Node No Longer Required</b></p>
+      You can now use either a dedicated deployer node or setup the deployer on your first
+      controller node. If you choose to use your first controller node as your deployer, ensure that
+      your <codeph>servers.yml</codeph> file contains the <codeph>is-deployer: true</codeph>
+      notation in the options. If you are using a dedicated deployer node you can omit this. Here is
+      an example snippet of a <codeph>servers.yml</codeph> file where a user is using their first
+      controller node as their deployer: <codeblock># Controllers
 - id: controller1
   ip-addr: 192.168.10.3
   role: CONTROLLER-ROLE
@@ -134,16 +131,13 @@
   ilo-ip: 192.168.9.3
   ilo-password: password
   ilo-user: admin
-  <b>is-deployer: true</b></codeblock></p>
-      <p><b>The Installer only supports English language</b></p>
-      <p>The deployer installation process prompts you to select a language, however only the
-        English language as been tested. Therefore, at this time that is the only supported
-        language.</p>
-      <p><b>Local Git repository for config tracking</b></p>
-      <p>In HP Helion OpenStack 2.0, a local git repository is used to track configuration changes
-        and for the config processor to gather configuration settings from. The operations work as
-        explained below:</p>
-      <ul>
+  <b>is-deployer: true</b></codeblock>--></p>
+      <p><b>The Installer only supports English language</b></p> The deployer installation process
+      prompts you to select a language, however only the English language as been tested. Therefore,
+      at this time that is the only supported language. <p><b>Local Git repository for config
+          tracking</b></p> In HP Helion OpenStack 2.0, a local git repository is used to track
+      configuration changes and for the config processor to gather configuration settings from. The
+      operations work as explained below: <ul>
         <li>Operations under <codeph>~/helion</codeph> are under the aegis of git. You’ll need to
           commit any config into git (on the "site" branch) before the Configuration Processor can
           run it. The script that runs the config processor now guards against uncommitted
@@ -155,23 +149,19 @@
             <codeph>~/scratch/ansible/next/hos/ansible</codeph>.</li>
       </ul>The Configuration Processor uses the config files stored in the repo to apply
       configuration settings. An explanation can be found <xref href="installation/using_git.dita"
-        >in this topic</xref>. <p><b>New UEFI support</b></p>
-      <p>Beta 2 introduces support for UEFI (which replaces the BIOS on newer servers), while
-        continuing to support Legacy BIOS. Select the required mode on each node through its BIOS
-        settings before beginning the install process. The installer will detect and use the mode
-        you have selected for each node.</p>
-      <p><b>Updated HP Helion OpenStack Services</b></p>
-      <p>We have included the core set of OpenStack services from the <xref
-          href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo" scope="external" format="html"
-          >Kilo release</xref> with the exception of limitations notated in this document.</p>
-      <p><b>More Cinder Backend Options Available</b></p>
-      <p>You can now choose between Ceph, VSA, and 3PAR for Cinder backends.</p>
-      <p>See: <xref href="blockstorage/blockstorage_overview.dita">Cinder Overview</xref> for more
-        details</p>
-      <p><b>Neutron LBaaS and FWaaS Extensions</b></p>
-      <p>We have implemented networking extensions for load balancing and firewalls. Here is a
-        description of each of these:</p>
-      <ul>
+        >in this topic</xref>. <p><b>New UEFI support</b></p><p>HP Helion OpenStack 2.0 includes
+        support for UEFI (which replaces the BIOS on newer servers), while continuing to support
+        Legacy BIOS. Select the required mode on each node through its BIOS settings before
+        beginning the install process. The installer will detect and use the mode you have selected
+        for each node.</p>
+      <p><b>Updated HP Helion OpenStack Services</b></p> We have included the core set of OpenStack
+      services from the <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo"
+        scope="external" format="html">Kilo release</xref> with the exception of limitations notated
+      in this document. <p><b>More Cinder Backend Options Available</b></p> You can now choose
+      between Ceph, VSA, and 3PAR for Cinder backends. <p>See: <xref
+          href="blockstorage/blockstorage_overview.dita">Cinder Overview</xref> for more details</p>
+      <p><b>Neutron LBaaS and FWaaS Extensions</b></p> We have implemented networking extensions for
+      load balancing and firewalls. Here is a description of each of these: <ul>
         <li>
           <p>LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a load
             balancing feature set. HP Helion OpenStack 2.0 includes the V2 version which allows
@@ -224,21 +214,20 @@
           For example, traffic can be separated into management, tenant, external, and services
           neworks.</li>
       </ul>
-      <p><b>NIC Mapping Feature</b></p>
-      <p>The new NIC mappings feature in HP Helion OpenStack Beta 2 allows the cloud administrator
-        to map network interface names to PCI bus addresses. This is important because for
-        well-understood reasons, Linux can sometimes name the network interfaces in a pseudo-random
-        order. So in a cluster of identical machines, the <b>eth3</b> device can appear as
-          <b>eth4</b> on one or more machines in the cluster. Once this erroneous name is determined
-        by the operating system, it will use persistence rules to ensure that the NIC device is
-        called <b>eth4</b> thereafter. This makes cluster configuration using Helion quite difficult
-        if not impossible, if most machines understand the Management Network to be <b>eth3</b>, but
-        some subset of machines understand that network to be on <b>eth4</b>( and whatever was on
-        eth4 is similarly swapped to <b>eth3</b>).</p>
-      <p>To resolve this, and to ensure that all NIC devices have consistent naming across the
-        entire cloud, Beta 2 includes NIC Mapping facilities. This is a mechanism in the Input Model
-        to define a specific NIC interface for a given PCI address for a given class of machine.
-        Generally, when all of the network interfaces are defined in the <xref
+      <p><b>NIC Mapping Feature</b></p> The new NIC mappings feature in HP Helion OpenStack Beta 2
+      allows the cloud administrator to map network interface names to PCI bus addresses. This is
+      important because for well-understood reasons, Linux can sometimes name the network interfaces
+      in a pseudo-random order. So in a cluster of identical machines, the <b>eth3</b> device can
+      appear as <b>eth4</b> on one or more machines in the cluster. Once this erroneous name is
+      determined by the operating system, it will use persistence rules to ensure that the NIC
+      device is called <b>eth4</b> thereafter. This makes cluster configuration using Helion quite
+      difficult if not impossible, if most machines understand the Management Network to be
+        <b>eth3</b>, but some subset of machines understand that network to be on <b>eth4</b>( and
+      whatever was on eth4 is similarly swapped to <b>eth3</b>). <p>To resolve this, and to ensure
+        that all NIC devices have consistent naming across the entire cloud, Beta 2 includes NIC
+        Mapping facilities. This is a mechanism in the Input Model to define a specific NIC
+        interface for a given PCI address for a given class of machine. Generally, when all of the
+        network interfaces are defined in the <xref
           href="input_model.dita#input_model/4.8_NICMappings" type="section">Input Model</xref>, it
         is advisable to use the traditional naming, ie <b>ethN</b>. However, if one or more
         interfaces are not defined in the Input Model (perhaps because the Ansible network is not
@@ -248,12 +237,11 @@
         definitions could use <b>hos0</b>through <b>hosN</b> rather than <b>eth0</b> through
           <b>ethN</b>. Bearing in mind that the new naming must be consistent across the entire
         Input Model.</p>
-      <p><b>Monasca-based Monitoring</b></p>
-      <p>Monasca is a multi-tenant, scalable, fault-tolerant, monitoring service. It uses a REST API
-        for high-speed metrics processing and querying, and has a streaming alarm and notification
-        engine. In the HP Helion OpenStack 2.0 release, the OpenStack monitoring standard, Monasca,
-        is supported as the HP Helion OpenStack monitoring solution with the following exceptions
-        (which are not implemented):</p>
+      <p><b>Monasca-based Monitoring</b></p><p>Monasca is a multi-tenant, scalable, fault-tolerant,
+        monitoring service. It uses a REST API for high-speed metrics processing and querying, and
+        has a streaming alarm and notification engine. In the HP Helion OpenStack 2.0 release, the
+        OpenStack monitoring standard, Monasca, is supported as the HP Helion OpenStack monitoring
+        solution with the following exceptions (which are not implemented):</p>
       <ul>
         <li>Transform Engine</li>
         <li>Events Engine </li>
@@ -263,18 +251,16 @@
         Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HP Linux for HP
         Helion OpenStack.</p><p>Learn more about Monasca here: <xref
           href="operations/monitoring_service.dita">Monasca Overview</xref></p>
-      <p><b>Monitoring Configuration Options Available for Metrics Database</b></p>
-      <p>In Beta 2 you will have the option to specify which database platform you want to use for
-        the Metrics Database. The default option with the installation is Vertica. The opensource
-        alternative is InfluxDB.</p>
-      <p>Learn more about these options here: <xref href="administration/configure_monitoring.dita"
-          >Configuring the Monitoring Service</xref></p>
-      <p><b>Centralized Logging</b></p>
-      <p>Logging for the services below is enabled in the default configuration. You will have the
-        ability to disable per-service logging as needed.</p>
-      <p>Logging is integrated for the following services: Nova, Glance, Swift, Neutron, Ceilometer,
-        Monasca, Horizon, Keystone, Cinder, Heat, OpsConsole, DNSaaS, LBaaS, FWaaS, and Trove.</p>
-      <p>Learn more about Centralized Logging here: <xref href="operations/centralized_logging.dita"
+      <p><b>Monitoring Configuration Options Available for Metrics Database</b></p><p>In this
+        release you will have the option to specify which database platform you want to use for the
+        Metrics Database. The default option with the installation is Vertica. The opensource
+        alternative is InfluxDB.</p> Learn more about these options here: <xref
+        href="administration/configure_monitoring.dita">Configuring the Monitoring Service</xref>
+      <p><b>Centralized Logging</b></p> Logging for the services below is enabled in the default
+      configuration. You will have the ability to disable per-service logging as needed. <p>Logging
+        is integrated for the following services: Nova, Glance, Swift, Neutron, Ceilometer, Monasca,
+        Horizon, Keystone, Cinder, Heat, OpsConsole, DNSaaS, LBaaS, FWaaS, and Trove.</p><p>Learn
+        more about Centralized Logging here: <xref href="operations/centralized_logging.dita"
           >Centralized Logging Overview</xref></p>
       <!--
 <p><b>Backup and Restore Capabilities for the Control Plane</b> &#154; Allows you to backup and recover your HP Helion OpenStack</tm> environment with RPO=0.</p>
@@ -285,14 +271,11 @@
       <title>Limitations in this Release</title><b>Heat autoscaling not supported</b>
       <p> In HP Helion OpenStack 2.0, the auto-scaling in Heat is not supported because the alarm
         creation in Ceilometer is disabled</p>
-      <p><b>Installing Swift</b></p>
-      <p>Swift installs with the following limitations: </p>
-      <ul>
+      <p><b>Installing Swift</b></p><p>Swift installs with the following limitations: </p><ul>
         <li>Only one Swift zone is supported.</li>
       </ul>
-      <p><b>Helion Cloud Monitoring (Monasca) Limitations</b></p>
-      <p>Basic Monitoring is complete for Beta 2 with the following limitations:</p>
-      <ul>
+      <p><b>Helion Cloud Monitoring (Monasca) Limitations</b></p> Basic Monitoring is complete for
+      Beta 2 with the following limitations: <ul>
         <li>Vertica is the default metrics database option in the install. If you want to use
           InfluxDB then read <xref href="administration/configure_monitoring.dita#monitoring/config"
             type="section">Configuring Monasca</xref> for more details.</li>
@@ -300,10 +283,9 @@
           cluster.</li>
         <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
       </ul>
-      <p><b>Operations Console (Ops Console)</b></p>
-      <p>The Operations Console is available on port 9095 on the first controller node IP. There are
-        some limitations to note and they are listed below by menu option in the console:</p>
-      <ul>
+      <p><b>Operations Console (Ops Console)</b></p> The Operations Console is available on port
+      9095 on the first controller node IP. There are some limitations to note and they are listed
+      below by menu option in the console: <ul>
         <li>Dashboard <ul>
             <li>There are two notification sections for the Storage services. The one in the upper
               left is the Compute service mislabeled as Storage.</li>
@@ -345,36 +327,34 @@
               address or password.</li>
           </ul></li>
       </ul>
-      <p id="logging"><b>Centralized Logging Limitations</b></p>
-      <p>Logging support is complete for Beta 2 with the following limitations:</p>
-      <ul>
+      <p id="logging"><b>Centralized Logging Limitations</b></p> Logging support is complete for
+      Beta 2 with the following limitations: <ul>
         <li>Alarm definition and generation for Kibana and curator are not integrated.</li>
         <li>Logging-monitor 'stop' playbook is not integrated.</li>
-      </ul>
-      <p><b>The Elasticsearch Cluster Name Must Be Unique</b></p>
-      <p>The default Elasticsearch cluster name is set to <codeph>elasticsearch</codeph> in the
-        Logging configuration files. It is necessary during installation to change this value to a
-        unique name. This step is included in our installation documentation.</p>
-      <p><b>Issue: Logrotate Settings for MySQL, keepalived, and RabbitMQ are Invalid</b></p>
-      <p>There is currently a workaround needed on the controller nodes to fix the logrotate
-        settings for the MySQL, keepalived, and RabbitMQ services.</p>
-      <p>The logrotate for MySQL, keepalived and RabbitMQ is being overwritten by an invalid
-        logrotate configuration supplied in the logging-server component. A valid logrotate
-        configuration for these services is supplied in the following files on the deployer:</p>
-      <codeblock>/home/stack/scratch/ansible/next/hos/ansible</codeblock>
-      <p>The files in that directory are:</p>
-      <codeblock>
+      </ul><b> Issues in this release</b><p><b>The Elasticsearch Cluster Name Must Be
+        Unique</b></p><p>The default Elasticsearch cluster name is set to
+          <codeph>elasticsearch</codeph> in the Logging configuration files. It is necessary during
+        installation to change this value to a unique name. This step is included in our
+        installation documentation.</p>
+      <p><b>Issue: Logrotate Settings for MySQL, keepalived, and RabbitMQ are
+        Invalid</b></p><p>There is currently a workaround needed on the controller nodes to fix the
+        logrotate settings for the MySQL, keepalived, and RabbitMQ services.</p> The logrotate for
+      MySQL, keepalived and RabbitMQ is being overwritten by an invalid logrotate configuration
+      supplied in the logging-server component. A valid logrotate configuration for these services
+      is supplied in the following files on the deployer:
+        <codeblock>/home/stack/scratch/ansible/next/hos/ansible</codeblock><p>The files in that
+        directory are:</p><codeblock>
 mysql: ./roles/FND-MDB/templates/etc/logrotate.d/mysql
 keepalived: ./roles/keepalived/templates/keepalived.logrotate.j2
 rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
       <p>To correct this problem if the above configuration is copied manually into
           <codeph>/etc/logrotate.d</codeph> on the controller nodes to replace the existing
-        configuration then this should correct the logrotate configuration for these services.</p>
-      <p>Note any variables such as <codeph>{{ }}</codeph> need to be replaced correctly.</p>
-      <p>In the case of RabbitMQ and keepalived this can be achieved by editing the
-          <codeph>logrotate.j2</codeph> with a comment and running a reconfigure
-        (rabbitmq-reconfigure.yml and FND-CLU-reconfigure.yml on the deployer)</p>
-      <p>In the case of MySQL this needs to be corrected manually as below: <codeblock>File ./roles/FND-MDB/templates/etc/logrotate.d/mysql</codeblock>
+        configuration then this should correct the logrotate configuration for these
+        services.</p><p>Note any variables such as <codeph>{{ }}</codeph> need to be replaced
+        correctly.</p> In the case of RabbitMQ and keepalived this can be achieved by editing the
+        <codeph>logrotate.j2</codeph> with a comment and running a reconfigure
+      (rabbitmq-reconfigure.yml and FND-CLU-reconfigure.yml on the deployer) <p>In the case of MySQL
+        this needs to be corrected manually as below: <codeblock>File ./roles/FND-MDB/templates/etc/logrotate.d/mysql</codeblock>
         <codeblock>
 { log_dir }}/*.log {
         daily
@@ -415,9 +395,9 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
                   fi
           endscript
 }</codeblock>
-      <p><b>Issue: Unable to Launch Instance from Volume on Horizon Dashboard</b></p>
-      <p>In Beta 2 you will not be able to launch an instance from a volume in Horizon. To work
-        around this issue you have two options:</p>
+      <p><b>Issue: Unable to Launch Instance from Volume on Horizon Dashboard</b></p><p>In Beta 2
+        you will not be able to launch an instance from a volume in Horizon. To work around this
+        issue you have two options:</p>
       <ul>
         <li>From Horizon Dashboard | Instances page: Launch an Instance and select source as
           Bootable volume.</li>
@@ -425,10 +405,9 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
       </ul>
       <note>When using the Launch Instance action in the Volumes table, the Launch Instance Wizard
         form doesn't get pre-populated with the Volumes option selected, nor does it select the
-        given Volume.</note>
-      <b>Restarting Deployer/lifecycle management node leaves Apache2 down</b> <p>If you restart
-        your Deployer/lifecycle management node, note that Apache2 will not restart on its own. You
-        will need to restart it manually.</p>
+        given Volume.</note><b>Restarting Deployer/lifecycle management node leaves Apache2 down</b>
+      <p>If you restart your Deployer/lifecycle management node, note that Apache2 will not restart
+        on its own. You will need to restart it manually.</p>
       <b>Heat autoscaling not supported </b>
       <p>In HP Helion OpenStack 2.0, the auto-scaling in Heat is not supported because the alarm
         creation in Ceilometer is disabled.</p>
@@ -436,18 +415,30 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
       <p>When you navigate to 'volumes' and choose to create a 'bootable volume,' if you do not
         navigate elsewhere, the attempt to launch an instance from that volume will fail. That is,
         nothing will happen.</p><p> To work around this issue, after choosing to create a 'bootable
-      volume,' refresh the page in the browser and then proceed. </p>
-      <b>Moonshot remote console goes
-        blank after operating system install</b>
+        volume,' refresh the page in the browser and then proceed. </p>
+      <b>Moonshot remote console goes blank after operating system install</b>
       <p>If you are using Moonshot compute nodes you may find that their remote console is blank or
         garbled after the OS install. If affected, you need to make the following change to
-        /etc/default/grub on each affected node, run update-grub and reboot:</p>
-      <ol>
+        /etc/default/grub on each affected node, run update-grub and reboot:</p><ol>
         <li>Find the line starting with GRUB_CMDLINE_LINUX= </li>
         <li>Add the following at the end of the value i.e. inside the double quotes:
           <codeblock>vga=788 console=ttyS0,9600 earlyprint=serial,ttyS0,9600</codeblock>
         </li>
       </ol>
+      <b>IPv6 Traffic Not Supported</b>
+      <p>The HP Helion OpenStack 2.0 release includes firewall rules to prevent non-essential
+        traffic from accessing the physical systems. However, these rules are limited to IPv4
+        traffic only. In order to prevent unsolicited or nefarious IPv6 traffic, you will need to
+        block IPv6 at your router, or within the infrastructure.</p><p> You can disable IPv6 on your
+        operating systems by adding the following lines to <b>/etc/sysctl.conf</b>:
+        <codeblock>net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.lo.disable_ipv6 = 1</codeblock>
+        Once these have been added, you can either reboot the node or run the following command (as
+        root): <codeblock># sysctl -p</codeblock> Please refer to your router documentation to block
+        IPv6 traffic from reaching your network at the router.</p>
+      <xref href="http://docs-staging.hpcloud.com/hos2.0ga/helion/releasenotes.html" format="html"
+        scope="external">Print this page</xref>
     </section>
   </body>
 </topic>

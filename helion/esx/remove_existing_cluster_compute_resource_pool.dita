@@ -14,8 +14,8 @@
 +--------------------------------------+---------+--------+------------+-------------+------------------+</codeblock><p>where:<ul
               id="ul_zr4_tqh_rt">
               <li>
-                <p><b>hostname</b>: hostname of the compute proxy present in that cluster. <b>Is of
-                    the form &lt;*esx-comp000#-mgmt> (how to get hostname??)</b></p>
+                <p><b>hostname</b>: hostname of the compute proxy present in that cluster.
+                  <!--<b>Is of the form &lt;*esx-comp000#-mgmt> (how to get hostname??)</b>--></p>
               </li>
             </ul></p></li>
         <li>Delete all instances spawned in that

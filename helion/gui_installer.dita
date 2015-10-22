@@ -22,7 +22,28 @@
 
     <section>These YAML configuration files are now stored in a local git repository as well, as
       explained in <xref href="installation/using_git.dita">Using git for Configuration
-        Manangement</xref>. </section>
+        Manangement</xref>. <p>When installing via the GUI, you are starting with a model (example
+        cloud configuration) and can and must edit the underlying example to reflect your
+        environment.</p> However, the full range of customizations is not possible via the GUI as
+      some configuration items are not exposed. Below is the list of what can and cannot be changed: </section>
+    <section><b>Changes to the following items may be made:</b><ul id="ul_hsd_bym_tt">
+        <li>servers (including Linuxfor HP Helion  installation configuration) </li>
+        <li>networks </li>
+        <li>disk models </li>
+        <li>interface models </li>
+        <li>NIC mappings </li>
+        <li>NTP servers (cloudConfig.yml) </li>
+        <li>tags in network groups</li>
+      </ul>
+      <b>Changes to the following items cannot be made: </b><ul id="ul_b5d_bym_tt">
+        <li>server groups</li>
+        <li>server roles</li>
+        <li>network groups</li>
+        <li>firewall rules</li>
+        <li>cloudConfig.yml (i.e. DNS, SMTP, firewall settings)</li>
+        <li>control planes</li>
+      </ul>
+    </section>
     <section><title>Before you begin</title> Before you run the GUI installer to install your cloud,
       there are a number of things you need to do to prepare. <ol>
         <li>Prepare your servers</li>

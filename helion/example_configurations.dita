@@ -96,7 +96,21 @@
                 <li><xref href="#example_configurations/disks_vsa">Disks_vsa.yml</xref></li>
                 <li><xref href="#example_configurations/disks_compute">Disks_compute.yml</xref></li>
               </ul></li>
+            <li><xref href="#example_configuration/standalone">Using a standalone lifecycle-manager
+                node</xref>
+              <ul>
+                <li><xref href="#example_configuration/control_plane_yml"
+                  >Control_plane.yml</xref></li>
+                <li><xref href="#example_configuration/server_roles_yml"
+                  >Server_roles.yml</xref></li>
+                <li><xref href="#example_configuration/net_interfaces_yml"
+                  >Net_interfaces.yml</xref></li>
+                <li><xref href="#example_configuration/disks_lifecycle_manager_yml"
+                    >Disks_lifecycle_manager.yml</xref></li>
+                <li><xref href="#example_configuration/servers_yml">Servers.yml</xref></li>
+              </ul></li>
           </ul></li>
+
       </ul>
     </section>
     <section id="example_configs"><title>HP Helion OpenStack Example Configurations</title>
@@ -138,7 +152,9 @@
       <p>This model can also be deployed without the VSA servers and configured to use an external
         storage device, such as a 3PAR array, which would reduce the minimum server count to
         four.</p>
-      <!-- MEDIA DIAGRAM GOES HERE -->
+      <p><image href="../media/examples/entry_scale_kvm_vsa.png"/></p>
+      <p><xref href="../media/examples/entry_scale_kvm_vsa_lg.png" scope="external" format="html">Download a
+          high-res version</xref></p>
       <p>The example requires the following networks:</p>
       <ul>
         <li><b>External API</b> - This is the network that users will use to make requests to the
@@ -180,7 +196,13 @@
         for vCenter) and one OVSvApp virtual machine per cluster member (which provides network
         access). These virtual machines are created automatically by HP Helion OpenStack as part of
         activating the vCenter cluster, and are therefore not defined in the example.</p>
-      <!-- MEDIA DIAGRAM GOES HERE -->
+      <p><image href="../media/examples/entry_scale_esx.png"/></p>
+      <!-- HPE
+        <p><image href="../media/examples/entry_scale_esx_hpe.png"/></p>
+        <p><xref href="../media/examples/entry_scale_esx_hpe_lg.png" scope="external" format="html">Download a high-res version</xref></p>
+        -->
+      <p><xref href="../media/examples/entry_scale_esx_lg.png" scope="external" format="html">Download a
+          high-res version</xref></p>
       <p>The physical networking configuration is also largely the same as the KVM example, with the
         exception of the GUEST network which uses tenant VLANs as the Neutron networking model
         rather than VxLAN.</p>
@@ -190,7 +212,9 @@
     <section id="entryscale_swift"><title>Entry-scale Swift model</title>
       <p>This example shows how HP Helion OpenStack can be configured to provide a Swift only
         configuration, consisting of three controllers and one or more Swift object servers.</p>
-      <!-- MEDIA DIAGRAM GOES HERE -->
+      <p><image href="../media/examples/entry_scale_swift.png"/></p>
+      <p><xref href="../media/examples/entry_scale_swift_lg.png" scope="external" format="html">Download a
+          high-res version</xref></p>
       <p>The example requires the following networks:</p>
       <ul>
         <li><b>External API</b> - This is the network that users will use to make requests to the
@@ -219,7 +243,9 @@
       <p>This example provides a KVM based cloud using Ceph for volume storage. This controller and
         compute configuration are essentially the same as in the KVM example, but the backend Cinder
         storage is provided by Ceph.</p>
-      <!-- MEDIA DIAGRAM GOES HERE -->
+      <p><image href="../media/examples/entry_scale_kvm_ceph.png"/></p>
+      <p><xref href="../media/examples/entry_scale_kvm_ceph_lg.png" scope="external" format="html">Download a
+          high-res version</xref></p>
     </section>
     <section id="midscale_kvm_vsa"><title>Mid-scale KVM with VSA model (Tech Preview)</title>
       <p>The mid-scale model, which is included as a technology preview in HP Helion OpenStack 2.0,
@@ -227,7 +253,10 @@
         The controller services are distributed across a greater number of controllers and a number
         of the networks are configured as multiple L3 segments (implementing per-rack
         networking).</p>
-      <!-- MEDIA DIAGRAM GOES HERE -->
+      <p><image href="../media/examples/mid_scale_kvm_vsa.png"/></p>
+      <p><image href="../media/examples/mid_scale_kvm_vsa_notes.png"/></p>
+      <p><xref href="../media/examples/mid_scale_kvm_vsa_lg.png" scope="external" format="html">Download a
+          high-res version</xref></p>
       <p>The distribution of services across controllers is only one possible configuration, and
         other combinations can also be expressed.</p>
     </section>
@@ -736,6 +765,149 @@
             mount: /var/lib/nova
             fstype: ext4
                   mkfs-opts: -O large_file</codeblock>
+    </section>
+    <section id="standalone"><title>Using a standalone lifecycle-manager node</title>
+      <p>All of the examples described above host the lifecycle-manager on one of the control nodes.
+        It is also possible to deploy this service on a dedicated node, as shown below: </p>
+      <p><image href="../media/examples/entry_scale_kvm_vsa_shared.png"/></p>
+      <p><xref href="../media/examples/entry_scale_kvm_vsa_shared_lg.png" scope="external" format="html"
+          >Download a high-res version</xref></p>
+      <p>A typical use case for wanting to run the dedicated lifecycle-manager is to be able to test
+        the deployment of different configurations without having to re-install the first server.
+        Some administrators might also prefer the additional security of keeping all of the
+        configuration data on a separate server from those that users of the cloud connect to --
+        although all of the data can be encrypted and SSH keys can be password protected.</p>
+      <p>This requires the following changes to the configuration files:</p>
+      <ul>
+        <li>Update <uicontrol>control_plane.yml</uicontrol> to add the lifecycle-manager node</li>
+        <li>Update <uicontrol>server_roles.yml</uicontrol> to add a lifecycle-manager role</li>
+        <li>Update <uicontrol>net_interfaces.yml</uicontrol> to add the interface definition for the
+          lifecycle-manager node</li>
+        <li>Create a <uicontrol>disks_lifecycle_manager.yml</uicontrol> file to define the disk
+          layout for the lifecycle-manager node</li>
+        <li>Update <uicontrol>servers.yml</uicontrol> to add the dedicated lifecycle-manager
+          node</li>
+      </ul>
+    </section>
+    <section id="control_plane_yml"><title>Control_plane.yml</title>
+      <p>The snippet below shows the addition of a single node cluster into the control plane to
+        host the lifecycle-manager service. Note that in addition to adding the new cluster you also
+        have to remove the lifecycle-manager component from the <codeph>cluster1</codeph> in the
+        examples:</p>
+      <codeblock>
+  clusters:
+     - name: cluster0
+       cluster-prefix: c0
+       server-role: LIFECYCLE-MANAGER-ROLE
+       member-count: 1	
+       allocation-policy: strict
+       service-components:
+         - lifecycle-manager
+     - name: cluster1
+       cluster-prefix: c1
+       server-role: CONTROLLER-ROLE
+       member-count: 3
+       allocation-policy: strict
+       service-components:
+         - lifecycle-manager
+            - ntp-server</codeblock>
+      <p>This specifies a single node of role <codeph>LIFECYCLE-MANAGER-ROLE</codeph> hosting the
+        lifecycle-manager.</p>
+    </section>
+    <section id="server_roles_yml"><title>Server_roles.yml</title>
+      <p>The snippet below shows the insertion of the new server roles definition:</p>
+      <codeblock>
+   server-roles:
+      
+      - name: LIFECYCLE-MANAGER-ROLE
+        interface-model: LIFECYCLE-MANAGER-INTERFACES
+        disk-model: LIFECYCLE-MANAGER-DISKS	
+      
+      - name: CONTROLLER-ROLE</codeblock>
+      <p>This defines a new server role which references a new interface-model and disk-model to be
+        used when configuring the server.</p>
+    </section>
+    <section id="net_interfaces_yml"><title>Net-interfaces.yml</title>
+      <p>The snippet below shows the insertion of the network-interface info:</p>
+      <codeblock>
+    - name: LIFECYCLE-MANAGER-INTERFACES
+      network-interfaces:
+        - name: BOND0
+          device:
+             name: bond0
+          bond-data:
+             options:
+                 mode: active-backup
+                 miimon: 200
+                 primary: hed3
+             provider: linux
+             devices:
+                 - name: hed3
+                 - name: hed4
+          network-groups:
+             - MANAGEMENT</codeblock>
+      <p>This assumes that the server uses the same physical networking layout as the other servers
+        in the example. See <xref href="#example_configurations/netinterfaces"
+          >Net_interfaces.yml</xref> for details on how to modify this to match your
+        configuration.</p>
+    </section>
+    <section id="disks_lifecycle_manager_yml"><title>Disks_lifecycle_manager.yml</title>
+      <p>In the examples, disk-models are provided as separate files (this is just a convention, not
+        a limitation) so the following should be added as a new file named
+          <codeph>disks_lifecycle_manager.yml</codeph>:</p>
+      <codeblock>---
+   product:
+      version: 2
+        
+   disk-models:
+   - name: LIFECYCLE-MANAGER-DISKS
+     # Disk model to be used for Lifecycle Managers nodes
+     # /dev/sda_root is used as a volume group for /, /var/log and /var/crash
+     # sda_root is a templated value to align with whatever partition is really used
+     # This value is checked in os config and replaced by the partition actually used
+     # on sda e.g. sda1 or sda5
+        
+     volume-groups:
+       - name: hlm-vg
+         physical-volumes:
+           - /dev/sda_root
+        
+       logical-volumes:
+       # The policy is not to consume 100% of the space of each volume group.
+       # 5% should be left free for snapshots and to allow for some flexibility.
+          - name: root
+            size: 80%
+            fstype: ext4
+            mount: /
+          - name: crash
+            size: 15%
+            mount: /var/crash
+            fstype: ext4
+            mkfs-opts: -O large_file
+        consumer:
+              name: os</codeblock>
+    </section>
+    <section id="servers_yml"><title>Servers.yml</title>
+      <p>The snippet below shows the insertion of an additional server used for hosting the
+        lifecycle-manager. Provide the address information here for the server you are running on,
+        i.e. the node where you have installed the HP Helion OpenStack ISO.</p>
+      <codeblock>
+  servers:
+     # NOTE: Addresses of servers need to be changed to match your environment.
+     #
+     #       Add additional servers as required
+        
+     #Lifecycle-manager
+     - id: lifecycle-manager
+       ip-addr: &#60;your IP address here>
+       role: LIFECYCLE-MANAGER-ROLE
+       server-group: RACK1
+       # ipmi information is not needed 
+          
+     # Controllers
+     - id: controller1
+       ip-addr: 192.168.10.3
+       role: CONTROLLER-ROLE</codeblock>
     </section>
   </body>
 </topic>

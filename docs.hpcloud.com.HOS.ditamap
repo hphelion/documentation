@@ -158,7 +158,6 @@
           <topicref href="helion/blockstorage/ceph/configuring_use_ceph_cluster.dita"/>
           <topicref href="helion/blockstorage/ceph/configuring_use_ceph_cluster_glance.dita"/>
           <topicref href="helion/blockstorage/ceph/using_erasure_code_pool.dita"/>
-          <topicref href="helion/blockstorage/ceph/upgrade_ceph_cluster.dita"/>
         </topicref>
       </topicref>
 
@@ -244,11 +243,10 @@
       <topicref href="helion/bura/bura_overview.dita" navtitle="Backing up and Restoring Your Data">
         <topicref href="helion/bura/cloud_control_plane_backup.dita" type="topic" format="dita"/>
         <topicref href="helion/bura/cloud_control_plane_recovery.dita" type="topic" format="dita"/>
-        <topicref href="helion/bura/freezer_scheduler_overview.dita" type="topic" format="dita"/>
-        <topicref href="helion/bura/create_freezer_scheduler_job.dita" type="topic" format="dita"/>
-        <topicref href="helion/bura/backup.dita"/>
-        <topicref href="helion/bura/restore.dita"/>
         <topicref href="helion/bura/supported_services.dita" type="topic" format="dita"/>
+        <topicref href="helion/bura/freezer_scheduler.dita" type="topic" format="dita"/>
+        <topicref href="helion/bura/freezer_agent.dita" type="topic" format="dita"/>
+        <topicref href="helion/bura/disable_bura_before_deployment.dita" type="topic" format="dita"/>
         <topicref href="helion/bura/start_stop_freezer_services.dita" type="topic" format="dita"/>
         <topicref href="helion/bura/troubleshooting.dita" type="topic" format="dita"/>
       </topicref>

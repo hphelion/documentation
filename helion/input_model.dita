@@ -214,7 +214,7 @@
         <li>Network traffic separation</li>
         <li>CIDR and VLAN assignments</li>
       </ul>
-      <p>The input model is consumed by the configuration processor which parses and validates the
+      <p>The input model is consumed by the Configuration Processor which parses and validates the
         input model and outputs the effective configuration that will be deployed to each server
         that makes up your cloud.</p>
       <p>The document is structured as follows:</p>
@@ -243,13 +243,13 @@
         the configuration.</p>
       <!-- UPDATE MEDIA -->
       <p><image href="../media/config/concept_diag.png"/></p>
-      <p>The configuration processor reads and validates the input model described in the YAML files
+      <p>The Configuration Processor reads and validates the input model described in the YAML files
         discussed above, combines it with the service definitions provided by HP Helion OpenStack
         and any persisted state information about the currently deployment to produce a set of
         Ansible variables that can be used to deploy the cloud. It also produces a set of
         information files that provide details about the configuration.</p>
       <p>The relationship between the file systems on the HP Helion OpenStack deployment server and
-        the configuration processor is shown in the following diagram. Below the line are the
+        the Configuration Processor is shown in the following diagram. Below the line are the
         directories that you, the cloud administrator, interact with. Above the line are the
         directories that are maintained by HP Helion OpenStack.</p>
       <p><image href="../media/inputmodel_2.png"/></p>
@@ -1640,14 +1640,9 @@
       </p>
     </section>
 
-<!-- WHERE I LEFT OFF -->
-
-
-
-
     <section id="bonddata"><title>Bond Data</title>
-      <p>A <codeph>bond-data</codeph> definition is used to configure a bond device, and consists of
-        the following attributes:</p>
+      <p>A <uicontrol>bond-data</uicontrol> definition is used to configure a bond device, and
+        consists of the following attributes:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="bond_data">
           <tgroup cols="2">
@@ -1663,103 +1658,119 @@
               <row>
                 <entry>provider</entry>
                 <entry>Identifies the software used to instantiate the bond device. The only
-                  supported value is “linux”, which uses the linux bonding driver. Other providers
+                  supported value is “linux”, which uses the Linux bonding driver. Other providers
                   may be supported in a future release.</entry>
               </row>
               <row>
                 <entry>devices</entry>
-                <entry>A dictionary containing network device names used to form the bond. If a NIC
-                  mapping is defined for the server, a name may be the logical-name specified by the
-                  mapping.</entry>
+                <entry>A dictionary containing network device names used to form the bond. The
+                  device names must be the logical-name specified by the
+                    <uicontrol>nic-mapping</uicontrol> (see <xref href="#input_model/nicmapping">NIC
+                    mapping</xref>.</entry>
               </row>
               <row>
                 <entry>options</entry>
-                <entry>A dictionary containing bond configuration options. The note below describes
-                  options for the “<i>linux”</i> provider.</entry>
+                <entry>A dictionary containing bond configuration options. The “<i>linux”</i>
+                  provider options are described in the <xref href="#input_model/bonddataoptions"
+                    >Bond Data Options</xref> section.</entry>
               </row>
             </tbody>
           </tgroup>
         </table>
       </p>
-      <p><b>Bond Data Options for the "linux" Provider</b></p>
-      <p>The linux bonding driver supports a large number of parameters that control the operation
+    </section>
+    <section id="bonddataoptions"><title>Bond Data Options for the "linux" Provider</title>
+      <p>The Linux bonding driver supports a large number of parameters that control the operation
         of the bond, as described in the <xref
           href="https://www.kernel.org/doc/Documentation/networking/bonding.txt" scope="external"
           format="html">Linux Ethernet Bonding Driver HOWTO</xref> document. The parameter names and
         values may be specified as key-value pairs in the <codeph>options</codeph> section of
           <codeph>bond-data</codeph>.</p>
-      <p>Here is the sample file included with the install:</p>
-      <codeblock>
----
+      <p>Options used in the HP Helion OpenStack examples are:</p><table frame="all" rowsep="1"
+        colsep="1" id="table_cj5_llk_tt">
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1"/>
+          <colspec colname="c2" colnum="2"/>
+          <thead>
+            <row>
+              <entry>Key</entry>
+              <entry>Value Descriptions</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>mode</entry>
+              <entry>Specifies the bonding policy. Possible values are: <ul>
+                  <li>balance-rr - Transmit packets in sequential order from the first available
+                    slave through the last.</li>
+                  <li>active-backup - Only one slave in the bond is active. A different slave
+                    becomes active if, and only if, the active slave fails.</li>
+                  <li>balance-xor - Transmit based on the selected transmit hash policy.</li>
+                  <li>broadcast - Transmits everything on all slave interfaces.</li>
+                  <li>802.3ad - IEEE 802.3ad Dynamic link aggregation.</li>
+                  <li>balance-tlb - Adaptive transmit load balancing: channel bonding that does not
+                    require any special switch support.</li>
+                  <li>balance-alb - Adaptive load balancing: includes balance-tlb plus receive load
+                    balancing (rlb) for IPV4 traffic and does not require any special switch
+                    support.</li>
+                </ul>
+              </entry>
+            </row>
+            <row>
+              <entry>miimon</entry>
+              <entry>Specifies the MII link monitoring frequency in milliseconds. This determines
+                how often the link state of each slave is inspected for link failures. Accepts
+                values in milliseconds.</entry>
+            </row>
+            <row>
+              <entry>primary</entry>
+              <entry>The device to use as the primary when the mode is one of the possible values
+                below: <ul>
+                  <li>active-backup</li>
+                  <li>balance-tlb</li>
+                  <li>balance-alb</li>
+                </ul></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+
+
+
+    <section id="co_nicmappings"><title>NIC Mappings</title>
+      <p>The <uicontrol>nic-mappings</uicontrol> configuration object is used to ensure that the
+        network device name used by the operating system always maps to the same physical device. A
+          <uicontrol>nic-mapping</uicontrol> is associated to a <uicontrol>server</uicontrol> in the
+        server definition file. (see <xref href="#input_model/co_servers">Servers</xref>). Devices
+        should be named <codeph>hedN</codeph> to avoid name clashes with any other devices
+        configured during the operating system install as well as any interfaces that are not being
+        managed by HP Helion OpenStack.</p>
+      <codeblock>---
   product:
     version: 2
-
-  interface-models:
-     # These examples uses eth3 and eth4 as a bonded
-     # pair for all networks on all three server roles
-     #
-     # Edit the device names and bond options
-     # to match your environment
-     #
-   - name: INTERFACE_SET_CONTROLLER
-     network-interfaces:
-       - name: BOND0
-         device:
-           name: bond0
-         bond-data:
-           options:
-             bond-mode: active-backup
-             bond-miimon: 200
-           provider: linux
-           devices:
-             - name: eth3
-             - name: eth4
-         network-groups:
-           - EXTERNAL_API
-           - EXTERNAL_VM
-           - GUEST
-           - MGMT
         
-   - name: INTERFACE_SET_COMPUTE
-     network-interfaces:
-       - name: BOND0
-         device:
-           name: bond0
-           bond-data:
-             options:
-               bond-mode: active-backup
-               bond-miimon: 200
-           provider: linux
-           devices:
-              - name: eth3
-              - name: eth4
-          network-groups:
-              - EXTERNAL_VM
-              - GUEST
-              - MGMT
+  nic-mappings:
+       
+    - name: HP-DL360-4PORT
+      physical-ports:
+        - logical-name: hed1
+          type: simple-port
+          bus-address: "0000:07:00.0"
         
-    - name: INTERFACE_SET_VSA
-      network-interfaces:
-        - name: BOND0
-          device:
-             name: bond0
-             bond-data:
-               options:
-                  bond-mode: active-backup
-                  bond-miimon: 200
-               provider: linux
-               devices:
-                  - name: eth3
-                  - name: eth4
-             network-groups:
-               - MGMT</codeblock>
-    </section>
-    <section id="4.8_NICMappings"><title>NIC Mappings</title>
-      <p>NIC mappings are used to ensure that the network device name used by the operating system
-        always maps to the same physical device. A NIC mapping is associated to a server in the
-          <codeph>servers.yml</codeph> definition file. (see <xref href="#input_model/4.3_Servers"
-          >Servers</xref>)</p>
-      <p>Each entry in the <codeph>nic-mappings</codeph> list has the following attributes:</p>
+        - logical-name: hed2
+          type: simple-port
+          bus-address: "0000:08:00.0"
+        
+        - logical-name: hed3
+          type: simple-port
+          bus-address: "0000:09:00.0"
+        
+        - logical-name: hed4
+          type: simple-port
+          bus-address: "0000:0a:00.0"</codeblock>
+      <p>Each entry in the <uicontrol>nic-mappings</uicontrol> list has the following
+        attributes:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="nic_mappings">
           <tgroup cols="2">
@@ -1774,9 +1785,9 @@
             <tbody>
               <row>
                 <entry>name</entry>
-                <entry>A user-specified name for the mapping. This name may be used in a server
-                  definition (see <xref href="#input_model/4.3_Servers">Servers</xref>) to apply the
-                  mapping to that server.</entry>
+                <entry>An administrator-defined name for the mapping. This name may be used in a
+                  server definition (see <xref href="#input_model/co_servers">Servers</xref>) to
+                  apply the mapping to that server.</entry>
               </row>
               <row>
                 <entry>physical-ports</entry>
@@ -1786,7 +1797,8 @@
           </tgroup>
         </table>
       </p>
-      <p>Each entry in the <codeph>physical-ports</codeph> list has the following attributes:</p>
+      <p>Each entry in the <uicontrol>physical-ports</uicontrol> list has the following
+        attributes:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="physical_ports">
           <tgroup cols="2">
@@ -1804,11 +1816,11 @@
                 <entry>The network device name that will be associated with the device at the
                   specified <i>bus-address</i>. The logical-name specified here can be used as a
                   device name in network interface model definitions. (see <xref
-                    href="#input_model/4.7_InterfaceModels">Interface Models</xref>)</entry>
+                    href="#input_model/co_interfacenodels">Interface Models</xref>)</entry>
               </row>
               <row>
                 <entry>type</entry>
-                <entry>The type of port. The current implementation supports only “simple-port”;
+                <entry>The type of port. The current implementation supports only "simple-port";
                   other port types may be added in a future release.</entry>
               </row>
               <row>
@@ -1820,59 +1832,66 @@
           </tgroup>
         </table>
       </p>
-      <p>Here is the sample file included with the install:</p>
-      <codeblock>
----
-  product:
-    version: 2
-  
-  # nic-mappings are used to ensure that the device name used by the
-  # operating system always maps to the same physical device.
-  # A nic-mapping is associated to a server in the server definition.
-  # The logical-name specified here can be used as a device name in
-  # the network interface-models definitions.
-  #
-  # - name               user-defined name for each mapping
-  #   physical-ports     list of ports for this mapping
-  #     - logical-name   device name to be used by the operating system
-  #       type           physical port type
-  #       bus-address    bus address of the physical device
-  #
-  # Notes:
-  # - enclose the bus address in quotation marks so yaml does not
-  #   misinterpret the embedded colon (:) characters
-  # - simple-port is the only currently supported port type
-  
-  nic-mappings:
-  
-  - name: HP_DL360_3PORT
-    physical-ports:
-  - logical-name: eth1
-    type: simple-port
-    bus-address: "0000:07:00.0"
-  
-  - logical-name: eth2
-    type: simple-port
-    bus-address: "0000:08:00.0"
-  
-  - logical-name: eth3
-    type: simple-port
-    bus-address: "0000:09:00.0"
-        
-  - name: MY_2PORT_SERVER
-    physical-ports:
-  - logical-name: eth3
-    type: simple-port
-    bus-address: "0000:04:00.0"
-  
-  - logical-name: eth4
-    type: simple-port
-    bus-address: "0000:04:00.1"</codeblock>
-      <note>You can remove the NIC information examples that do not pertain to your environment from
-        this file.</note>
     </section>
-    <section id="4.9_NetworkGroups"><title>Network Groups</title>
-      <p>A network group definition has the following attributes:</p>
+
+
+
+    <section id="co_networkgroups"><title>Network Groups</title>
+      <p>Network-groups define the overall network topology, including where service-components
+        connect, what load balancers are to be deployed, which connections use TLS, and network
+        routing. They also provide the data needed to map Neutron's network configuration to the
+        physical networking.</p>
+      <codeblock>---
+  product:
+     version: 2
+        
+  network-groups:
+        
+     - name: EXTERNAL-API
+       hostname-suffix: extapi
+        
+       load-balancers:
+         - provider: ip-cluster
+           name: extlb
+           external-name:
+        
+           tls-components:
+             - default
+           roles:
+            - public
+           cert-file: my-public-cert
+        
+      - name: EXTERNAL-VM
+        tags:
+          - neutron.l3_agent.external_network_bridge
+        
+      - name: GUEST
+        hostname-suffix: guest
+        tags:
+          - neutron.networks.vxlan
+        
+      - name: MANAGEMENT
+        hostname-suffix: mgmt
+        hostname: true
+        
+        component-endpoints:
+          - default
+        
+        routes:
+          - default
+        
+        load-balancers:
+          - provider: ip-cluster
+            name: lb
+            components:
+              - default
+            roles:
+              - internal
+              - admin
+        
+        tags:
+          - neutron.networks.vlan:
+              provider-physical-network: physnet1</codeblock>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="network_groups">
           <tgroup cols="2">
@@ -1887,13 +1906,13 @@
             <tbody>
               <row>
                 <entry>name</entry>
-                <entry>A user defined name for the network group. The name is used to make
-                  references from other configuration files.</entry>
+                <entry>An administrator-defined name for the network group. The name is used to make
+                  references from other parts of the input model.</entry>
               </row>
               <row>
                 <entry>component-endpoints (optional)</entry>
-                <entry>The list of service components that will bind to, or need direct access to
-                  networks in this network group.</entry>
+                <entry>The list of <uicontrol>service-components</uicontrol> that will bind to or
+                  need direct access to networks in this network-group.</entry>
               </row>
               <row>
                 <entry>hostname (optional)</entry>
@@ -1903,25 +1922,26 @@
               <row>
                 <entry>hostname-suffix (optional)</entry>
                 <entry>If supplied, this string will be used in the name generation (see <xref
-                    href="#input_model/5.1_NameGeneration">Name Generation</xref>). If not
-                  specified, the name of the network group will be used.</entry>
+                    href="#input_model/namegeneration">Name Generation</xref>). If not specified,
+                  the name of the network-group will be used.</entry>
               </row>
               <row>
                 <entry>load-balancers (optional)</entry>
-                <entry>A list of load balancers to be configured on networks in this network group.
-                  Because load balances need a VIP any network group that contains a load balance
-                  can only have one network associated with it.</entry>
+                <entry>A list of load balancers to be configured on networks in this network-group.
+                  Because load balances need a virtual IP address, any network group that contains a
+                  load balancer can only have one network associated with it.</entry>
               </row>
               <row>
                 <entry>routes (optional)</entry>
-                <entry><p>A list of network groups that networks in this group provide access to via
-                    their gateway. This can include “default” to define the default route. </p> A
-                  network group with no services attached to it can be used to define routes to
-                  external networks.</entry>
+                <entry><p>A list of <uicontrol>network-groups</uicontrol> that networks in this
+                    group provide access to via their gateway. This can include the value “default”
+                    to define the default route.</p> A network group with no services attached to it
+                  can be used to define routes to external networks.</entry>
               </row>
               <row>
                 <entry>tags (optional)</entry>
-                <entry>A list of network tags.</entry>
+                <entry>A list of network tags. Tags provide the linkage between the physical network
+                  configuration and the Neutron network configuration.</entry>
               </row>
             </tbody>
           </tgroup>
@@ -1942,36 +1962,38 @@
             <tbody>
               <row>
                 <entry>name</entry>
-                <entry>A user defined name for the load balancer.</entry>
+                <entry>An administrator-defined name for the load balancer.</entry>
               </row>
               <row>
                 <entry>provider</entry>
                 <entry>The service component that implements the load balancer. Currently only
-                  “ip-cluster” (haproxy) is supported. Future releases will provide support for
+                  "ip-cluster" (ha-proxy) is supported. Future releases will provide support for
                   external load balancers.</entry>
               </row>
               <row>
                 <entry>roles</entry>
                 <entry>The list of endpoint roles that this load balancer provides (see below).
-                  Valid roles are “public”, “internal”, and “admin”. To ensure separation of public
-                  cannot be combined with internal/admin. (see <xref
-                    href="#input_model/3.8.1.1_LoadBalancers">Load Balancers</xref> for an example
-                  of how the role provides endpoint separation)</entry>
+                  Valid roles are "public", "internal", and "admin'. To ensure separation of
+                  concerns, the role "public" cannot be combined with any other role. See <xref
+                    href="#input_model/loadbalancers">Load Balancers</xref> for an example of how
+                  the role provides endpoint separation.</entry>
               </row>
               <row>
                 <entry>components (optional)</entry>
-                <entry>The list of service components the load balancer provides an unencrypted VIP
-                  for.</entry>
+                <entry>The list of <uicontrol>service-components</uicontrol> for which the load
+                  balancer provides a non-encrypted virtual IP address for.</entry>
               </row>
               <row>
                 <entry>tls-components (optional)</entry>
-                <entry>The list of service components the load balancer provides TLS terminated VIP
-                  for.</entry>
+                <entry>The list of <uicontrol>service-components</uicontrol> for which the load
+                  balancer provides TLS-terminated virtual IP addresses for. In HP Helion OpenStack
+                  2.0 TLS is only supported for public endpoints.</entry>
               </row>
               <row>
                 <entry>external-name (optional)</entry>
-                <entry>The name to be registered in Keystone for the publicURL. If not specified the
-                  IP address of the VIP will be registered.</entry>
+                <entry>The name to be registered in Keystone for the publicURL. If not specified,
+                  the virtual IP address will be registered. Note that this value cannot be changed
+                  after the initial deployment.</entry>
               </row>
               <row>
                 <entry>cert-file (optional)</entry>
@@ -1982,10 +2004,14 @@
         </table>
       </p>
     </section>
-    <section id="4.9.1_NetworkTags"><title>Network Tags</title>
+
+
+
+    <section id="co_networktags"><title>Network Tags</title>
       <p>HP Helion OpenStack supports a small number of network tags which may be used to convey
-        information between the input model and the service components. A network tag consists
-        minimally of a tag name; some network tags have additional attributes, described below:</p>
+        information between the input model and the service components (currently only Neutron uses
+        network tags). A network tag consists minimally of a tag name; but some network tags have
+        additional attributes.</p>
       <p><b>neutron.networks.vxlan</b></p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="neutron_networks_vxlan">
@@ -2017,14 +2043,14 @@
       </p>
       <p>Example using the default ID range:
         <codeblock>
-tags:
-  - neutron.networks.vxlan</codeblock></p>
+  tags:
+    - neutron.networks.vxlan</codeblock></p>
       <p>Example using a user-defined ID range:
         <codeblock>
-tags:
-  - neutron.networks.vxlan:
-      tenant-vxlan-id-range: “1:20000”</codeblock></p>
-      <p id="4.9.1.2_neutron.networks.vlan"><b>neutron.networks.vlan</b></p>
+  tags:
+    - neutron.networks.vxlan:
+        tenant-vxlan-id-range: “1:20000”</codeblock></p>
+      <p id="neutron.networks.vlan"><b>neutron.networks.vlan</b></p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="neutron_networks_vlan">
           <tgroup cols="2">
@@ -2041,9 +2067,9 @@ tags:
                 <entry>neutron.networks.vlan</entry>
                 <entry>
                   <p>This tag causes Neutron to be configured for provider VLAN networks, and
-                    optionally be configured to use VLAN as the underlay for tenant networks. The
-                    associated network group will carry the VLAN traffic. This tag can be specified
-                    on multiple network groups.</p>
+                    optionally to use VLAN as the underlay for tenant networks. The associated
+                    network group will carry the VLAN traffic. This tag can be specified on multiple
+                    network groups.</p>
                   <p>NOTE: this tag does not cause any Neutron networks to be created, that must be
                     done in Neutron after the cloud is deployed.</p></entry>
               </row>
@@ -2065,15 +2091,15 @@ tags:
       </p>
       <p>Example using a provider vlan only (may be used with tenant VxLAN:
         <codeblock>
-tags:
-  - neutron.networks.vlan:
-      provider-physical-network: physnet1</codeblock></p>
+  tags:
+    - neutron.networks.vlan:
+        provider-physical-network: physnet1</codeblock></p>
       <p>Example using a tenant and provider VLAN:
         <codeblock>
-tags:
-  - neutron.networks.vlan:
-      provider-physical-network: physnet1
-      tenant-vlan-id-range: “100:200”</codeblock></p>
+  tags:
+    - neutron.networks.vlan:
+        provider-physical-network: physnet1
+        tenant-vlan-id-range: “100:200”</codeblock></p>
       <p><b>neutron.networks.flat</b></p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="neutron_networks_flat">
@@ -2110,9 +2136,9 @@ tags:
       </p>
       <p>Example using a provider flat network:
         <codeblock>
-tags:
-  - neutron.networks.flat:
-       provider-physical-network: flatnet1</codeblock></p>
+  tags:
+    - neutron.networks.flat:
+         provider-physical-network: flatnet1</codeblock></p>
       <p><b>neutron.l3_agent.external_network_bridge</b></p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="neutron_l3_agent">
@@ -2144,102 +2170,43 @@ tags:
       </p>
       <p>Example using neutron.l3_agent.external_network_bridge:
         <codeblock>
-tags:
-  - neutron.l3_agent.external_network_bridge</codeblock></p>
-      <p>Here is the sample file included with the install:</p>
-      <codeblock>
----
-  product:
-    version: 2
-        
-  network-groups:
-        
-    #
-    # External API
-    #
-    # This is the network group that users will use to
-    # access the public API endpoints of your cloud
-    #
-    - name: EXTERNAL_API
-      hostname-suffix: extapi
-        
-      load-balancers:
-        - provider: ip-cluster
-        name: extlb
-        # If external-name is set then public urls in keystone
-        # will use this name instead of the IP address
-        #external-name: mycloud.org
-        components:
-          - default
-        roles:
-          - public
-        
-     #
-     # External VM
-     #
-     # This is the network group that will be used to provide
-     # external access to VMs (via floating IP Addresses)
-     #
-     - name: EXTERNAL_VM
-       tags:
-        - neutron.l3_agent.external_network_bridge
-        
-        
-     #
-     # GUEST
-     #
-     # This is the network group that will be used to provide
-     # private networks to VMs
-     #
-     - name: GUEST
-        hostname-suffix: guest
-        tags:
-          - neutron.networks.vxlan
-        
-        
-     #
-     # Management
-     #
-     # This is the network group that will be used to for
-     # management traffic within the cloud.
-     #
-     # The interface used by this group will be presented
-     # to Neutron as physnet1, and used by provider VLANS
-     #
-     # In this example this group is also used for ISCSI
-     # traffic between VMs and the VSA block storage
-     #
-     - name: MGMT
-        hostname-suffix: mgmt
-        hostname: true
-        
-        component-endpoints:
-          - default
-        
-        routes:
-          - default
-        
-        load-balancers:
-          - provider: ip-cluster
-            name: lb
-            components:
-              - default
-            roles:
-              - internal
-              - admin
-        
-        tags:
-          - neutron.networks.vlan:
-             provider-physical-network: physnet1
-          - vsa.iscsi
-          - nova.compute.iscsi</codeblock>
+  tags:
+    - neutron.l3_agent.external_network_bridge</codeblock></p>
     </section>
-    <section id="4.10_Networks"><title>Networks</title>
-      <p>A network definition represents a network used by the cloud infrastructure; these are not
-        Neutron networks, although some of the networks may be used by Neutron.</p>
-      <p>The key values to enter into this document are described in the table below:</p>
+
+
+
+    <section id="co_networks"><title>Networks</title>
+      <p>A network definition represents a physical L3 network used by the cloud infrastructure.
+        Note that these are different from the network definitions that are created/configured in
+        Neutron, although some of the networks may be used by Neutron.</p>
+      <codeblock>---
+   product:
+     version: 2
+        
+   networks:
+     - name: NET_EXTERNAL_VM
+       vlanid: 102
+       tagged-vlan: true
+       network-group: EXTERNAL_VM
+        
+     - name: NET_GUEST
+       vlanid: 103
+       tagged-vlan: true
+       cidr: 10.1.1.0/24
+       gateway-ip: 10.1.1.1
+       network-group: GUEST
+        
+     - name: NET_MGMT
+       vlanid: 100
+       tagged-vlan: false
+       cidr: 10.2.1.0/24
+       start-address: 10.2.1.10
+       end-address: 10.2.1.40
+       gateway-ip: 10.2.1.1
+       network-group: MGMT</codeblock>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_vd3_lzt_jt">
+        <table frame="all" rowsep="1" colsep="1" id="tb_networks">
           <tgroup cols="2">
             <colspec colname="c1" colnum="1"/>
             <colspec colname="c2" colnum="2"/>
@@ -2253,8 +2220,9 @@ tags:
               <row>
                 <entry>name</entry>
                 <entry>The name of this network. The network <i>name</i> may be used in a
-                  server-group definition to specify a particular network from within a network
-                  group to be associated with a set of servers.</entry>
+                  server-group definition (see <xref href="#input_model/co_servergroups">Server
+                    Groups</xref>) to specify a particular network from within a network-group to be
+                  associated with a set of servers.</entry>
               </row>
               <row>
                 <entry>network-group</entry>
@@ -2277,84 +2245,142 @@ tags:
               </row>
               <row>
                 <entry>start-address (optional)</entry>
-                <entry>An IP address within the <i>cidr</i> which will be used as the start of the
+                <entry>An IP address within the <i>CIDR</i> which will be used as the start of the
                   range of IP addresses from which server addresses may be allocated. The default
-                  value is the first host address within the <i>cidr </i>(e.g. the .1
+                  value is the first host address within the <i>CIDR</i> (e.g. the .1
                   address).</entry>
               </row>
               <row>
                 <entry>end-address (optional)</entry>
-                <entry>An IP address within the <i>cidr</i> which will be used as the end of the
+                <entry>An IP address within the <i>CIDR</i> which will be used as the end of the
                   range of IP addresses from which server addresses may be allocated. The default
-                  value is the last host address within the <i>cidr </i>(e.g. the .254 address of a
+                  value is the last host address within the <i>CIDR</i> (e.g. the .254 address of a
                   /24).</entry>
               </row>
               <row>
                 <entry>gateway-ip (optional)</entry>
-                <entry>The IP address of the default gateway.</entry>
+                <entry>The IP address of the gateway for this network. Gateway addresses must be
+                  specified if the associated <uicontrol>network-group</uicontrol> provides
+                  routes.</entry>
               </row>
             </tbody>
           </tgroup>
         </table>
       </p>
-      <p>Here is an example network definition:</p>
-      <codeblock>
----
-  product:
-    version: 2
-        
-  networks:
-    #
-    # This example uses the following networks
-    #
-    # Network       CIDR             VLAN
-    # -------       ----             ----
-    # External API  10.0.1.0/24      101 (tagged)
-    # External VM   see note 1       102 (tagged)
-    # Guest         10.1.1.0/24      103 (tagged)
-    # Mgmt          10.2.1.0/24      100 (untagged)
-    #
-    # Notes:
-    # 1. Defined as part of Neutron configuration
-    #
-    # Modify these values to match your environment
-    #
-    - name: NET_EXTERNAL_API
-      vlanid: 101
-      tagged-vlan: true
-      cidr: 10.0.1.0/24
-      gateway-ip: 10.0.1.1
-      network-group: EXTERNAL_API
-     #start-address: 10.0.1.4
-        
-    - name: NET_EXTERNAL_VM
-      vlanid: 102
-      tagged-vlan: true
-      network-group: EXTERNAL_VM
-        
-    - name: NET_GUEST
-      vlanid: 103
-      tagged-vlan: true
-      cidr: 10.1.1.0/24
-      gateway-ip: 10.1.1.1
-      network-group: GUEST
-        
-    - name: NET_MGMT
-      vlanid: 100
-      tagged-vlan: false
-      cidr: 10.2.1.0/24
-      gateway-ip: 10.2.1.1
-      network-group: MGMT</codeblock>
     </section>
-    <section id="4.11_PassThrough"><title>Pass Through</title>
-      <p>Through pass_through definition certain configuration values can be assigned and availed at
-        cloud level or specific servers
-        level.<codeblock>product:
-version: 2
-pass-through:
-global:
-esx_cloud: true
-servers:
+
+    <section id="firewallrules">
+      <title>Firewall Rules</title>
+      <p>The Configuration Processor will automatically generate "allow" firewall rules for each
+        server based on the services deployed and block all other ports. The firewall rules in the
+        input model allow the customer to define additional rules for each network group.</p>
+      <p>Administrator-defined rules are applied after all rules generated by the Configuration
+        Processor.</p>
+      <codeblock>---
+  product:
+     version: 2
+        
+  firewall-rules:
+        
+     - name: PING
+       network-groups:
+       - MANAGEMENT
+       - GUEST
+       - EXTERNAL-API
+       rules:
+       # open ICMP echo request (ping)
+       - type: allow
+         remote-ip-prefix:  0.0.0.0/0
+         # icmp type
+         port-range-min: 8
+         # icmp code
+         port-range-max: 0
+         protocol: icmp</codeblock>
+      <table frame="all" rowsep="1" colsep="1" id="table_zxz_yrk_tt">
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1"/>
+          <colspec colname="c2" colnum="2"/>
+          <thead>
+            <row>
+              <entry>Key</entry>
+              <entry>Value Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>name</entry>
+              <entry>An administrator-defined name for the group of rules.</entry>
+            </row>
+            <row>
+              <entry>network-groups</entry>
+              <entry>A list of <uicontrol>network-group</uicontrol> names that the rules apply to. A
+                value of "all" matches all network-groups.</entry>
+            </row>
+            <row>
+              <entry>final (optional)</entry>
+              <entry>If "true", these rules are applied at the end of any other user-defined rules.
+                If not specified, this defaults to <b>false</b>. The deny-all rule, which turns the
+                firewall on, must have this value set to true.</entry>
+            </row>
+            <row>
+              <entry>rules</entry>
+              <entry>A list of rules. Rules are applied in the order in which they appear in the
+                list, apart from the control provided by the "final" option (see above). The order
+                between sets of rules is indeterminate.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="rule">
+      <title>Rule</title>
+      <p>Each rule in the list takes the following parameters (which match the parameters of a
+        Neutron security group rule):</p>
+      <table frame="all" rowsep="1" colsep="1" id="table_uvr_lsk_tt">
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1"/>
+          <colspec colname="c2" colnum="2"/>
+          <thead>
+            <row>
+              <entry>Key</entry>
+              <entry>Value Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>type</entry>
+              <entry>Must be one of "allow" or "deny"</entry>
+            </row>
+            <row>
+              <entry>remote-ip-prefix</entry>
+              <entry>Range of remote addresses in CIDR format that this rule applies to.</entry>
+            </row>
+            <row>
+              <entry>port-range-min<p>port-range-max</p></entry>
+              <entry>Defines the range of ports covered by the rule. Note that if the protocol is
+                "icmp" then port-range-min is the ICMP type and port-range-max is the ICMP
+                code.</entry>
+            </row>
+            <row>
+              <entry>protocol</entry>
+              <entry>Must be one of "tcp", "udp", or "icmp".</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+
+
+
+    <section id="passthrough"><title>Pass Through</title>
+      <p>Through pass_through definitions, certain configuration values can be assigned and
+        used.</p>
+      <codeblock>product:
+  version: 2
+  pass-through:
+  global:
+  esx_cloud: true
+  servers:
       data:
       vmware:
       cert_check: false
@@ -2363,7 +2389,7 @@ servers:
       vcenter_ip: 10.1.200.41
       vcenter_port: 443
       vcenter_username: administrator@vsphere.local
-      id: 7d8c415b541ca9ecf9608b35b32261e6c0bf275a</codeblock></p>
+      id: 7d8c415b541ca9ecf9608b35b32261e6c0bf275a</codeblock>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="table_dnf_c5f_pt">
           <tgroup cols="2">
@@ -2378,11 +2404,11 @@ servers:
             <tbody>
               <row>
                 <entry>global</entry>
-                <entry>It mentions the values to be assigned at cloud level.</entry>
+                <entry>These values will be used at the cloud level.</entry>
               </row>
               <row>
                 <entry>servers </entry>
-                <entry>It holds values to be assigned to a specific server(s) using the
+                <entry>These values will be assigned to a specific server(s) using the
                   server-id.</entry>
               </row>
             </tbody>
@@ -2391,18 +2417,19 @@ servers:
       </p>
     </section>
 
-    <section id="5.0_OtherTopics"><title>Other Topics</title></section>
-    <section id="5.1_NameGeneration"><title>Name Generation</title>
-      <p>Names are generated by the configuration processor for all allocated IP addresses. A server
+
+    <section id="othertopics"><title>Other Topics</title></section>
+    <section id="namegeneration"><title>Name Generation</title>
+      <p>Names are generated by the Configuration Processor for all allocated IP addresses. A server
         connected to multiple networks will have multiple names associated with it. One of these may
         be assigned as the hostname for a server via the network-group configuration (see <xref
-          href="#input_model/4.8_NICMappings">NIC Mappings</xref>). Names are generated from data
+          href="#input_model/co_nicmappings">NIC Mappings</xref>). Names are generated from data
         taken from various parts of the input model as described in the following sections.</p>
     </section>
-    <section id="5.1.1_Clusters"><title>Clusters</title>
+    <section id="o_clusters"><title>Clusters</title>
       <p>Names generated for servers in a cluster have the following form:</p>
       <p><codeblock>&lt;cloud>-&lt;control-plane>-&lt;cluster>&lt;member-prefix>&lt;member_id>-&lt;network></codeblock></p>
-      <p>Example: <codeph>helion-ccp-core-m1-mgmt</codeph></p>
+      <p>Example: <codeph>helion-cp1-core-m1-mgmt</codeph></p>
       <table frame="all" rowsep="1" colsep="1" id="cluster_node_names">
         <tgroup cols="2">
           <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -2416,23 +2443,23 @@ servers:
           <tbody>
             <row>
               <entry>&lt;cloud></entry>
-              <entry>Comes from the hostname-data section of the Cloud object (see <xref
-                  href="#input_model/4.1_Cloud">Cloud</xref>)</entry>
+              <entry>Comes from the hostname-data section of the <uicontrol>cloud</uicontrol> object
+                (see <xref href="#input_model/co_cloud">Cloud</xref>)</entry>
             </row>
             <row>
               <entry>&lt;control-plane></entry>
-              <entry>is the control-plane name (see <xref href="#input_model/4.2_ControlPlane"
-                  >Control Plane</xref>)</entry>
+              <entry>is the <uicontrol>control-plane</uicontrol> prefix or name (see <xref
+                  href="#input_model/co_controlplane">Control Plane</xref>)</entry>
             </row>
             <row>
               <entry>&lt;cluster></entry>
-              <entry>is the cluster name (see <xref href="#input_model/clusters" type="table"
-                  >Clusters</xref>)</entry>
+              <entry>is the <uicontrol>cluster-prefix</uicontrol> name (see <xref
+                  href="#input_model/clusters" type="table">Clusters</xref>)</entry>
             </row>
             <row>
               <entry>&lt;member-prefix></entry>
-              <entry>comes from the hostname-data section of the Cloud object (see <xref
-                  href="#input_model/4.1_Cloud">Cloud</xref>)</entry>
+              <entry>comes from the hostname-data section of the <uicontrol>cloud</uicontrol> object
+                (see <xref href="#input_model/co_cloud">Cloud</xref>)</entry>
             </row>
             <row>
               <entry>&lt;member_id></entry>
@@ -2441,17 +2468,21 @@ servers:
             </row>
             <row>
               <entry>&lt;network></entry>
-              <entry>comes from the hostname-suffix of the network group the network belongs to (see
-                  <xref href="#input_model/4.8_NICMappings">NIC Mappings</xref>)</entry>
+              <entry>comes from the <uicontrol>hostname-suffix</uicontrol> of the network group to
+                which the network belongs (see <xref href="#input_model/co_nicmappings">NIC
+                  Mappings</xref>).</entry>
             </row>
           </tbody>
         </tgroup>
       </table>
     </section>
-    <section id="5.1.2_ResourceNodes"><title>Resource Nodes</title>
+
+
+
+    <section id="o_resourceodes"><title>Resource Nodes</title>
       <p>Names generated for servers in a resource group have the following form:</p>
       <p><codeblock>&lt;cloud>-&lt;control-plane>-&lt;resource-prefix>&lt;member_id>-&lt;network></codeblock></p>
-      <p>Example: <codeph>helion-ccp-comp0001-mgmt</codeph></p>
+      <p>Example: <codeph>helion-cp1-comp0001-mgmt</codeph></p>
       <table frame="all" rowsep="1" colsep="1" id="resource_node_names">
         <tgroup cols="2">
           <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -2465,34 +2496,41 @@ servers:
           <tbody>
             <row>
               <entry>&lt;cloud></entry>
-              <entry>Comes from the hostname-data section of the Cloud object (see <xref
-                  href="#input_model/4.1_Cloud">Cloud</xref>)</entry>
+              <entry>Comes from the hostname-data section of the <uicontrol>cloud</uicontrol> object
+                (see <xref href="#input_model/co_cloud">Cloud</xref>).</entry>
             </row>
             <row>
               <entry>&lt;control-plane></entry>
-              <entry>is the control-plane name (see <xref href="#input_model/4.2_ControlPlane"
-                  >Control Plane</xref>)</entry>
+              <entry>is the <uicontrol>control-plane</uicontrol> prefix or name (see <xref
+                  href="#input_model/co_controlplane">Control Plane</xref>).</entry>
             </row>
             <row>
               <entry>&lt;resource-prefix></entry>
-              <entry>is the resource-prefix value name (see <xref href="#input_model/resource_nodes"
-                  type="table">Resource Nodes</xref>)</entry>
+              <entry>is the <uicontrol>resource-prefix</uicontrol> value name (see <xref
+                  href="#input_model/co_resources" type="table">Resources</xref>).</entry>
             </row>
             <row>
               <entry>&lt;member_id></entry>
               <entry>is the ordinal within the cluster, generated by the Configuration Processor as
-                servers are allocated to the cluster</entry>
+                servers are allocated to the cluster, padded with leading zeroes to four
+                digits.</entry>
             </row>
             <row>
               <entry>&lt;network></entry>
-              <entry>comes from the hostname-suffix of the network group the network belongs to (see
-                  <xref href="#input_model/4.8_NICMappings">NIC Mappings</xref>)</entry>
+              <entry>comes from the <uicontrol>hostname-suffix</uicontrol> of the network group to
+                which the network belongs to (see <xref href="#input_model/co_nicmappings">NIC
+                  Mappings</xref>)</entry>
             </row>
           </tbody>
         </tgroup>
       </table>
     </section>
-    <section id="5.2_PersistedData"><title>Persisted Data</title>
+
+
+
+
+
+    <section id="persisteddata"><title>Persisted Data</title>
       <p>Because the Configuration Processor is making allocation decisions on servers and IP
         addresses it needs to be able to persist (remember) those decisions between successive runs,
         so that if new servers are added to the input model they don’t disrupt the previous
