@@ -8,16 +8,17 @@
    <topicref href="quickstart/pubcloud/CFR_step_1.dita"/>
    <topicref href="quickstart/pubcloud/CFR_step_2.dita"/>
    <topicref href="quickstart/pubcloud/CFR_step_3.dita"/>
-   <topicref href="quickstart/pubcloud/CFR_step_4.dita">
-      <topicref href="quickstart/pubcloud/CFR_TF_vars.dita"/>
-   </topicref>
+   <topicref href="quickstart/pubcloud/CFR_step_4.dita"/>
    <topicref href="quickstart/pubcloud/CFR_step_5.dita"/>
    <topicref href="quickstart/pubcloud/CFR_step_6.dita"/>
-   <topicref href="reference/CFR_reference_gato.dita"/>
    <!--
    <topicref href="root/HCF_whats_new.dita" navtitle="What's New"/>
    <topicref href="root/HCF_release_notes.dita" navtitle="Release Notes"/>
    <topicref href="root/HCF_license_agreements.dita" navtitle="Open Source and Third-Party Software License Agreements"/>
    <topicref href="root/HCF_software_license_terms.dita" navtitle="Software License Terms"/>
    -->
+   <topichead navtitle="Reference">
+      <topicref href="quickstart/pubcloud/CFR_TF_vars.dita"/>
+      <topicref href="reference/CFR_reference_gato.dita"/>
+   </topichead>
 </map>

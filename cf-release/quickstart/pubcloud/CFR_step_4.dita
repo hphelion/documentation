@@ -57,17 +57,7 @@
                       <uicontrol>cluster-1-Router</uicontrol>, and
                       <uicontrol>cluster-1-Internal</uicontrol></note></li>
               </ul></li>
-          </ol><b>Pushing Your First Application</b><ol id="ol_ag5_qt3_tt">
-            <li>Run the</li>
-          </ol><draft-comment author="michaelk"><b>Logging into the <keyword keyref="prodShort"/>
-              Core</b><ol id="ol_ymq_rsh_tt">
-              <li>Navigate to the core URL in your browser.<note type="note">When you first connect
-                  to the core URL, your browser may warn you that the console is attempting to use a
-                  self-signed certificate, or that the site is not trusted. You can safely ignore
-                  these warnings or add the certificate to your certificate store.</note></li>
-              <li>Log into the console using the email and password you specified when you created
-                the cluster.</li>
-            </ol></draft-comment><xref href="CFR_step_5.dita#concept_cw2_thz_st">
+          </ol><xref href="CFR_step_5.dita#concept_cw2_thz_st">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
           </xref></stentry>
    </strow>

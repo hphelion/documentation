@@ -72,23 +72,7 @@
                                                 Terraform 0.6.3 CLI and higher to construct, manage,
                                                 update, or delete <keyword keyref="prodShort"/>
                                                 clusters. Click the download link appropriate for
-                                                your operating system:</p><draft-comment
-                                                author="michaelk">
-                                                <ul id="ul_ih4_b43_tt">
-                                                  <li>FreeBSD <xref
-                                                  href="https://dl.bintray.com/mitchellh/terraform/terraform_0.6.4_freebsd_386.zip"
-                                                  format="zip" scope="external">x86</xref> | <xref
-                                                  href="https://dl.bintray.com/mitchellh/terraform/terraform_0.6.4_freebsd_amd64.zip"
-                                                  format="zip" scope="external">x64</xref> | <xref
-                                                  href="https://dl.bintray.com/mitchellh/terraform/terraform_0.6.4_freebsd_arm.zip"
-                                                  format="zip" scope="external">Arm</xref></li>
-                                                  <li>OpenBSD <xref
-                                                  href="https://dl.bintray.com/mitchellh/terraform/terraform_0.6.4_openbsd_386.zip"
-                                                  format="zip" scope="external">x86</xref> | <xref
-                                                  href="https://dl.bintray.com/mitchellh/terraform/terraform_0.6.4_openbsd_amd64.zip"
-                                                  format="zip" scope="external">x64</xref></li>
-                                                </ul>
-                                        </draft-comment><ul id="ul_d1k_5k1_tt">
+                                                your operating system:</p><ul id="ul_d1k_5k1_tt">
                                                 <li>Linux <xref
                                                   href="https://dl.bintray.com/mitchellh/terraform/terraform_0.6.4_linux_386.zip"
                                                   format="zip" scope="external">x86</xref> | <xref
