@@ -47,13 +47,15 @@
 
 
 </section>
-      <section><title>Creating a self-signed certificate</title>
-      <ol>
+      <section><title>Creating a self-signed certificate</title> If you want to install a
+      self-signed certificate that meets the needs of a production environment, as well as HP Helion
+      OpenStack and HP Helion Development Platform, follow these steps to create the cert, and then
+      install it by following the installation steps.<ol id="ol_wmt_wsp_tt">
         <li>Create a Certificate Signing Request (CSR) with a defined subject:
           <codeblock>openssl req -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.csr -text \
         -subj '/C=US/O=Helion Test Certificate/CN=your.domain.com/emailAddress=test@ficticious.org/'</codeblock>
         </li>
-        <li>create a file containing v3 extensions Ensure that the DNS entry matches any CN entry
+        <li>Create a file containing v3 extensions Ensure that the DNS entry matches any CN entry
           above and provide your IP
           <codeblock>cat > v3_ext.cnf &lt;&lt; *EOF*
 [ v3_req ]
@@ -82,7 +84,8 @@ subjectAltName=DNS:your.domain.com,DNS: IP:10.0.0.1, IP:10.0.0.1
             
       </ol> You can now use my-public-cert as your certificate. -->
       <p><b>Installing the Certificate</b></p> Follow the steps below to install the certificate in
-      the cloud. <b>If you are using a FQDN:</b>
+      the cloud.</section>
+    <section><b>If you are using a FQDN:</b>
       <ol id="ol_ngj_qfq_rt">
         <li> Create or obtain a certificate to match the domain name you are going to use </li>
         <li> Copy it to <b>helion/my_cloud/config/tls/certs/</b>
@@ -180,7 +183,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       <codeblock>- "ssl-default-bind-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"
 - "ssl-default-server-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"</codeblock>
       Make the changes as needed. It's best to keep the two options identical. </section>
-    
+    <!--
     <section id="rfcs"><title>Critical Standards for Certificates in Production Environments</title>
       
       <note type="warning">TLS certificates must adhere to the current <xref
@@ -226,7 +229,7 @@ DNS:servername-api.ftc.hp.com</codeblock>
           deployment. </p>
       
       
-    </section>
+    </section>-->
     <!--
     <section><title>Creating a test certificate for an IP address or FQDN</title> If you want to
       create a test certificate, follow tese steps: <ol>
