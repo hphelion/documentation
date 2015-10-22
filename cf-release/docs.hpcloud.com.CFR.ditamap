@@ -62,6 +62,7 @@
 >>>>>>> 9d80273... Testing theme changes on Linux
 =======
    <topicref href="root/CFR_root_documentation.dita"/>
+<<<<<<< HEAD
    <!--<topichead navtitle="Quick Start: Deploying to HPE Public Cloud"/>-->
    <topicref href="quickstart/pubcloud/CFR_step_1.dita"/>
    <topicref href="quickstart/pubcloud/CFR_step_2.dita"/>
@@ -74,6 +75,16 @@
 >>>>>>> 3206261... More content reorg
 =======
 >>>>>>> 58d9d55... Even more content reorg
+=======
+   <topichead navtitle="Quick Start: Deploying to HPE Public Cloud">
+      <topicref href="quickstart/pubcloud/CFR_step_1.dita"/>
+      <topicref href="quickstart/pubcloud/CFR_step_2.dita"/>
+      <topicref href="quickstart/pubcloud/CFR_step_3.dita"/>
+      <topicref href="quickstart/pubcloud/CFR_step_4.dita"/>
+      <topicref href="quickstart/pubcloud/CFR_step_5.dita"/>
+      <topicref href="quickstart/pubcloud/CFR_step_6.dita"/>
+   </topichead>
+>>>>>>> 746ce9d... More structure reorg
    <!--
    <topicref href="root/HCF_whats_new.dita" navtitle="What's New"/>
    <topicref href="root/HCF_release_notes.dita" navtitle="Release Notes"/>
