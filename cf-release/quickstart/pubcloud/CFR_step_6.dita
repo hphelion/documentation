@@ -27,9 +27,10 @@
               <filepath>terraform.tfstate</filepath> file and run the command
             again.</note><p>Terraform cleanly terminates the instance and the security groups
             associated with it.</p><b>Terminating Instances and Security Groups from <keyword
-              keyref="pubCloudShort"/></b><note type="caution">Using <keyword keyref="pubCloudShort"
-            /> to terminate instances or security groups is not recommended. Use the following steps
-            if you run into difficulties with Terraform.</note><ol id="ol_zqt_ld3_tt">
+              keyref="pubCloudShort"/></b><note type="important">Using <keyword
+              keyref="pubCloudShort"/> to terminate instances or security groups is not recommended.
+            Use the following steps if you run into difficulties with Terraform.</note><ol
+            id="ol_zqt_ld3_tt">
             <li>Log into <xref href="https://horizon.hpcloud.com/" format="html" scope="external"
                   ><keyword keyref="pubCloudShort"/></xref>.</li>
             <li>Click <menucascade>

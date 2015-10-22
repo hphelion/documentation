@@ -10,6 +10,10 @@
   </metadata>
  </prolog>
  <conbody>
+    <note type="tip">For detailed instructions on using the <filepath>cf push</filepath> command and
+      deploying applications, see the <xref
+        href="http://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html" format="html"
+        scope="external">Cloud Foundry Documentation</xref>.</note>
   <simpletable>
    <strow>
     <stentry>1. <xref conref="CFR_step_2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
