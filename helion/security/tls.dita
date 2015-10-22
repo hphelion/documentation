@@ -55,7 +55,7 @@
           <codeblock>openssl req -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.csr -text \
         -subj '/C=US/O=Helion Test Certificate/CN=your.domain.com/emailAddress=test@ficticious.org/'</codeblock>
         </li>
-        <li>create a file containing v3 extensions Ensure that the DNS entry matches any CN entry
+        <li>Create a file containing v3 extensions Ensure that the DNS entry matches any CN entry
           above and provide your IP
           <codeblock>cat > v3_ext.cnf &lt;&lt; *EOF*
 [ v3_req ]
