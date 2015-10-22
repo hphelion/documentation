@@ -62,7 +62,10 @@
                     file creates the vCenter Integration Node VM.<p>For instructions, refer to the
                         ESX documentation.</p></li>
                 <li>Login to the vCenter Integration Node VM using username <codeph>root</codeph>
-                    and password <codeph>Alcateldc</codeph>.</li>
+                    and password <codeph>Alcateldc</codeph>.  You assigned the IP address when
+                    importing the OVA template file.<p><b>Important:</b> After logging in with the
+                        default password, make sure you change the password for the
+                            <systemoutput>root</systemoutput> user. </p></li>
                 <li id="1">Edit <i>/etc/sysconfig/network-scripts/ifcfg-eth0</i> file to configure a
                     static IP address for the vCenter Integration Node VM, using the TUL
                             IP.<p><u>For
@@ -80,14 +83,17 @@ GATEWAY=10.20.5.1</codeblock></p></li>
             <p>Perform the following step create a VM for HTTP and DHCP services.</p>
             <p>
                 <ol id="ol_v11_wh4_rt">
-                    <li>In the vCenter client, import the <codeph>itoolbox1.ova</codeph> file. You
-                        should have <xref
+                    <li>In the vCenter client, import the <codeph>itoolbox1.ova</codeph> template
+                        file. You should have <xref
                             href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/getinstall"
                             >downloaded this file during the prerequisites</xref>. Importing the OVA
                         file creates the HTTP\DHCP VM.<p>For instructions, refer to the ESX
                             documentation.</p></li>
                     <li>Login to the HTTP\DHCP VM using username <codeph>root</codeph> and password
-                            <codeph>cghelion</codeph>.</li>
+                            <codeph>cghelion</codeph>. You assigned the IP address when importing
+                        the OVA template file.<p><b>Important:</b> After logging in with the default
+                            password, make sure you change the password for the
+                                <systemoutput>root</systemoutput> user. </p></li>
                     <li>Edit <i>/etc/sysconfig/network-scripts/ifcfg-eth0</i> file to configure a
                         static IP address. For the vCenter Integration Node VM, use the HP OpenStack
                         Carrier Grade TUL IP.<p><u>For
