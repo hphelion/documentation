@@ -163,9 +163,9 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
                 and that the values are correct.</note><note type="tip">At the end of the process,
                 Terraform displays the URL of the <keyword keyref="pubCloudShort"/> core, formatted
                 using the xip.io wildcard DNS, for
-                example:<codeblock>API endpoint:   http://api.15.125.91.46.xip.io</codeblock>You
-                will need this URL to use the Cloud Foundry CLI. You can also run the
-                  <filepath>terraform show</filepath> command to see detailed information about the
+                example:<codeblock>API endpoint:   http://api.203.0.113.0.xip.io</codeblock>You will
+                need this URL to use the Cloud Foundry CLI. You can also run the <filepath>terraform
+                  show</filepath> command to see detailed information about the
                 core.</note><b>Exploring the <keyword keyref="prodShort"/> Core</b><p>After the
                 Docker image is deployed as an instance on <keyword keyref="pubCloudShort"/>, you
                 can view the instance and its security groups on <keyword keyref="pubCloudShort"
