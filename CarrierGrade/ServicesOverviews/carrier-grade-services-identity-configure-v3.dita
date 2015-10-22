@@ -28,8 +28,10 @@
 <p>To switch Horizon from Keystone v2 to Keystone v3:</p>
 <ol>
 <li>
-<p>In each controller node, navigate to the <codeph>local_settings.py</codeph> file located in <codeph>/opt/stack/venvs/openstack/lib/python2.7/site-packages/openstack_dashboard/local/local_settings.py</codeph>
-</p>
+<p>In each controller node, navigate to the <codeph>local_settings.py</codeph> file located in
+            <codeph>/opt/stack/service/horizon-&lt;build-label>/etc/local_settings.py</codeph>.</p>
+        <p>Where: <codeph>horizon-&lt;build-label></codeph> is the label for the current build. For
+          example: <codeph>horizon-20150920T124340Z </codeph>.</p>
 </li>
 <li>
 <p>Edit the file as follows:</p>
