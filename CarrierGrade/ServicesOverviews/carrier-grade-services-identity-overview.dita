@@ -118,6 +118,10 @@
       <p>You can use the <xref
           href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita"
           >HP Helion Dashboard</xref> to work with the Identity service.</p>
+      <p>Horizon does not support Keystone v3 or domains by default. However, you can manually
+        configure Horizon to use v3. For more information see: <xref
+          href="carrier-grade-services-identity-configure-v3.dita#topic1810">Configuring Horizon for
+          Keystone v3</xref>.</p>
     </section>
     <section id="API">
       <title>Using the API</title>
