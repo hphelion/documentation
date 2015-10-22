@@ -25,6 +25,7 @@
         <li>You should assume 172.16.0.0/16 as the ext-net CIDR in this document.</li>
       </ol>
     </section>
+    
     <section id="Considerations">
       <title>Considerations</title>
       <p>Using the Neutron plugin-based VPNaaS causes additional processes to be run on the Network
@@ -34,6 +35,7 @@
         using a VPN solution other than the Neutron plugin-based VPNaaS and/or deploying additional
         protection mechanisms.</p>
     </section>
+    
     <section id="Configuration">
       <title>Configuration</title>
       <sectiondiv>
