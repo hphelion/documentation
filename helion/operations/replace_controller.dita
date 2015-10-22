@@ -39,29 +39,26 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
         <li>Remove the ssh key of the old controller node from the known hosts file. Here's an
           example:
           <codeblock>ssh-keygen -f "/home/stack/.ssh/known_hosts" -R 10.123.12.3</codeblock></li>
-        <li>Re-run the cobbler deploy playbook to re-add the removed node
-          <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
+        <li>Run the cobbler deploy playbook to add the replacement node
+          <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
         </li>
         <li> Re-image the new nodes by running <b>bm-reimage.yml</b>: ansible-playbook -i
           hosts/localhost bm-reimage.yml -e nodelist=&lt;node-name>. Note: Note: you must ensure
-          thta the old controller node is powered off before completing this step. This is because
+          that the old controller node is powered off before completing this step. This is because
           the new controller node will re-use the original IP address.
-          <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=controller2</codeblock></li>
-        <li>Re-deploy the services on the node using ansible-playbook -i hosts/verb_hosts site.yml
-          -e rebuild=True --limit=&lt;node_name>. Here's an example:
-          <codeblock>ansible-playbook -i hosts/verb_hosts site.yml -e rebuild=True --limit=controller2</codeblock></li>
+          <codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=controller2</codeblock></li>
         <li>Configure the necessary keys used for the database etc using:
           <codeblock>ansible-playbook -i hosts/verb_hosts monasca-rebuild-pretasks.yml</codeblock></li>
-        <li>Log into the 2 controller nodes as "dbadmin" and run the following command:
+        <li>Log into the 2 original controller nodes as "dbadmin" and run the following command:
           <codeblock>ssh-keygen -f "/home/dbadmin/.ssh/known_hosts" -R {{ip_of_node_to_replace}}</codeblock></li>
         <li>Run osconfig on the replacement controller node. For example:
           <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml  -e rebuild=True --limit=hlm-cp1-c1-m2-mgmt</codeblock>
           If the controller being replaced is the first server running the swift-proxy service (see
-          'identifying first proxy server') you need to restore the Swift Ring Builder files to the
-          /etc/swiftlm/builder_dir directory. See 'recovering builder files' for details. Run
-          swift-deploy across all controllers using:
+            <xref href="../objectstorage/first_proxy_server.dita">Identifying the First Proxy
+            Server</xref>) you need to restore the Swift Ring Builder files to the
+          /etc/swiftlm/builder_dir directory. See <xref
+            href="../objectstorage/recovering_builder_file.dita#topic_gbz_13t_mt">Recovering Builder
+            Files</xref> for details. Run swift-deploy across all controllers using:
           <codeblock>ansible-playbook -i hosts/verb_hosts swift-deploy.yml</codeblock></li>
         <li> Run hlm-deploy on the replacement controller
           <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e rebuild=True --limit=hlm-cp1-c1-m2-mgmt</codeblock>
