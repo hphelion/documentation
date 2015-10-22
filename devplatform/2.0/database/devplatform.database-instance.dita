@@ -3,7 +3,7 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="DatabaseService">
 <title>HP Helion 2.0 Development Platform: Using the Database Service</title>
 <body>
-<p>The database service provides lifecycle services for MySQL, Redis, or MongoDB database instances.
+<p>The database service provides lifecycle services for MySQL, Vertica, Redis, or MongoDB database instances.
       Lifecycle services include provisioning, configuration, patching, backups, restores, and
       monitoring that can be administered from either a CLI interface, RESTful APIs or the Horizon
       dashboard.</p>
