@@ -39,7 +39,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
         <li>Remove the ssh key of the old controller node from the known hosts file. Here's an
           example:
           <codeblock>ssh-keygen -f "/home/stack/.ssh/known_hosts" -R 10.123.12.3</codeblock></li>
-        <li>Run the cobbler deploy playbook to re-add the replacement node
+        <li>Run the cobbler deploy playbook to add the replacement node
           <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
         </li>
         <li> Re-image the new nodes by running <b>bm-reimage.yml</b>: ansible-playbook -i
