@@ -111,8 +111,8 @@ freezer-scheduler -c &lt;deployer hostname&gt; job-start -j &lt;job-id&gt;
 # Start the Dayzero UI
 systemctl start dayzero</codeblock></p>
     </section>
-    <section><title>Restore from an SSH backup</title><p> Follow the same procedure as for Swift but select the job "HLM Default: Deployer restore from
-        SSH".</p></section>
+    <section><title>Restore from an SSH backup</title><p> Follow the same procedure as for Swift but
+        select the job "HLM Default: Deployer restore from SSH".</p></section>
     <section><title>One or two CCN disaster recovery</title><p>Everything is still running
         (deployer, CCN, CPNs) but you lost one or two CCNs.</p></section>
     <section><title>Restore from other nodes</title><p>On the deployer node, install the nodes that
@@ -356,7 +356,8 @@ ansible-playbook -i hosts/verb_host hlm-deploy.yml</codeblock></p></li>
     <section><title>Manually Restore MySQL</title>
       <p>If restoring MySQL fails during the percona-bootstrap procedure, you can use the following
         procedure instead:</p>
-      <ol><li>From the deployer, launch the following commands to stop the MySQL
+      <ol>
+        <li>From the deployer, launch the following commands to stop the MySQL
           cluster:<codeblock>
 cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts percona-stop.yml</codeblock></li>
@@ -364,10 +365,11 @@ ansible-playbook -i hosts/verb_hosts percona-stop.yml</codeblock></li>
           database:<codeblock>
 sudo rm -r /var/lib/mysql/*</codeblock></li>
         <li>On the first MySQL node, restore the backup as follows:<ol>
-          <li>If you already restored to a temporary directory, just copy the files again:
+            <li>If you already restored to a temporary directory, copy the files again:
               <codeblock>
 sudo cp -pr /tmp/hlm_mysql_restore/* /var/lib/mysql</codeblock></li>
-          <li>If you need to restore the files manualy from SSH, follow the next steps <codeblock># Become root
+            <li>If you need to restore the files manually from SSH, follow the next
+              steps:<codeblock># Become root
 sudo su
  
 # Create the /root/mysql_restore.ini file containing the following: (Be carefull to substitute the {{ value }} )
@@ -386,8 +388,9 @@ log_file = /var/log/freezer-agent/freezer-agent.log
 restore_from_host = {{ hostname of the first MySQL node }}
  
 # Execute the restore
-freezer-agent --config /root/mysql_restore.ini</codeblock>:</li>
-          <li>On the first MySQL node, follow the next steps to start the cluster:<codeblock># Become root
+freezer-agent --config /root/mysql_restore.ini</codeblock></li>
+            <li>On the first MySQL node, follow the next steps to start the
+              cluster:<codeblock># Become root
 sudo su
  
 # When the last step executed succesfuly, start the MySQL cluster
@@ -398,17 +401,35 @@ systemctl start mysql
  
 # Make sure the mysql process started successfully
 systemctl status mysql</codeblock></li>
-          <li>From the deployer launch the following commands to start all MySQLs:<codeblock>
+
+          </ol></li>
+        <li>From the deployer, launch the following commands to start all
+          MySQLs:<codeblock>
 cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts percona-start.yml
  
 # Mysql cluster status can be checked using 
 ansible-playbook -i hosts/verb_hosts percona-status.yml</codeblock></li>
-          
-          
-          
-
-        </ol></li>
+        <li>On all MySQL nodes run the following
+          commands:<codeblock>
+sudo su
+touch /var/lib/mysql/galera.initialised
+chown mysql:mysql /var/lib/mysql/galera.initialised</codeblock></li>
+        <li>After aprox. 10-15 minutes the output of percona-status should show all the MySQL nodes
+          in
+          sync:<codeblock># Mysql cluster status can be checked using 
+ansible-playbook -i hosts/verb_hosts percona-status.yml
+ 
+TASK: [FND-MDB | status | Report status of "{{ mysql_service }}"] ************* 
+ok: [helion-cp1-c1-m1-mgmt] => {
+    "msg": "mysql is synced."
+}
+ok: [helion-cp1-c1-m2-mgmt] => {
+    "msg": "mysql is synced."
+}
+ok: [helion-cp1-c1-m3-mgmt] => {
+    "msg": "mysql is synced."
+}</codeblock></li>
       </ol>
     </section>
   </body>
