@@ -422,6 +422,18 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
           <codeblock>vga=788 console=ttyS0,9600 earlyprint=serial,ttyS0,9600</codeblock>
         </li>
       </ol>
+      <b>IPv6 Traffic Not Supported</b>
+      <p>The HP Helion OpenStack 2.0 release includes firewall rules to prevent non-essential
+        traffic from accessing the physical systems. However, these rules are limited to IPv4
+        traffic only. In order to prevent unsolicited or nefarious IPv6 traffic, you will need to
+        block IPv6 at your router, or within the infrastructure.</p><p> You can disable IPv6 on your
+        operating systems by adding the following lines to <b>/etc/sysctl.conf</b>:
+        <codeblock>net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.lo.disable_ipv6 = 1</codeblock>
+        Once these have been added, you can either reboot the node or run the following command (as
+        root): <codeblock># sysctl -p</codeblock> Please refer to your router documentation to block
+        IPv6 traffic from reaching your network at the router.</p>
     </section>
   </body>
 </topic>
