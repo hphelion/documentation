@@ -70,13 +70,13 @@
         and imported via COPY LOCAL.</p>
       <p>For more information on these procedures, see the following topics:</p>
       <ul>
-        <li><xref type="external" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/AdministratorsGuide/CopyExportData/CopyingAndExportingData.htm">
+        <li><xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/AdministratorsGuide/CopyExportData/CopyingAndExportingData.htm">
             Copying and Exporting Data
         </xref></li>
-        <li><xref type="external" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/SQLReferenceManual/Statements/SELECT/SELECT.htm">
+        <li><xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/SQLReferenceManual/Statements/SELECT/SELECT.htm">
           SELECT
         </xref></li>
-        <li><xref type="external" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/SQLReferenceManual/Statements/COPY/COPYLOCAL.htm">
+        <li><xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/SQLReferenceManual/Statements/COPY/COPYLOCAL.htm">
           COPY LOCAL
         </xref></li>
       </ul>

@@ -91,7 +91,7 @@
     <p>Once a new database becomes active users connect to it via the MySQL command line client, MySQL tools, or MySQL libraries used by applications.  Users can also assign a floating IP address to the database and update the security 
       group to allow for connection from outside the external-network.</p>
   </section>
-  <section id="Data Durability">
+  <section id="Data_Durability">
     <title>Data Durability</title>
     <p>The Database service ensures database content is protected through its integration with the HP Helion OpenStack Block Storage. HP Helion Openstack offers two cinder block storage plugins choices that provide Highly Available 
       RAID protected Storage volumes for use by the user databases</p>
