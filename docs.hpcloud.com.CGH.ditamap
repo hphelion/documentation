@@ -60,9 +60,6 @@
           <topicref
             href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.managing.dita"
             navtitle="Using the Helion Dashboard to Manage Your Cloud" locktitle="yes"/>
-          <topicref
-            href="CarrierGrade/ServicesOverviews/carrier-grade-services-identity-configure-v3.dita"
-            navtitle="Configuring Horizon for Keystone v3" locktitle="yes"/>
         </topicref>
       </topicref>
     </topicref>

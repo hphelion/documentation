@@ -7,11 +7,11 @@
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carrier Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carrier Grade 1.1"/>
     </metadata>
   </prolog>
   <body>
@@ -85,7 +85,7 @@
         information, see <xref href="carrier-grade-install-vsphere-switch.dita#topic10581">Deploying
           the VMware vSphere Distributed Switch</xref>. </p>
     </section>
-    <section>
+    <section id="vapp">
       <title>Deploy the VRSvApp</title>
       <p>The VRSvApp you obtained from DCN must be installed. For more information, see <xref
           href="CGH-2-install-vsvapp.dita#topic10581">Deploying the VRS vApp</xref></p>

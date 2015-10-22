@@ -7,15 +7,15 @@
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carrier Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carrier Grade 1.1"/>
     </metadata>
   </prolog>
   <body><p><i>Return to the Installing the <xref
-                    href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+                    href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vapp">KVM + ESX
                     Deployment</xref>.</i></p><p>This document describes how to install the HP
             Distributed Cloud Networking (DCN) vSphere Solution required to properly integrate the
             HP Distributed Cloud Networking and VMWare ESX components. </p><p>The HP Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires a VMware vApp, called
@@ -42,7 +42,7 @@
                             Management network.</li>
                         <li>DHCP server should have one network interface in the DVRS Datapath
                             network (TUL Network)</li>
-                        <li>DHCP server requires atleast 20 TUL ip addresses for the DHCP
+                        <li>DHCP server requires atleast 20 TUL IP addresses for the DHCP
                             scope.</li>
                     </ul></li>
             </ul>
@@ -54,7 +54,7 @@
                 functionality. </p><p>To deploy the vCenter Integration Node VM:</p><ol
                 id="ol_wtp_x4h_tt">
                 <li>Launch the vCenter client, at <codeph>https://&lt;vcenter
-                        IP&gt;:9443/vsphere-client</codeph>..</li>
+                        IP&gt;:9443/vsphere-client</codeph>.</li>
                 <li>Import the <codeph>VSD-3.2.4_134-hp.ova</codeph> file into vCenter server. You
                     should have <xref
                         href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/getinstall"
@@ -80,7 +80,7 @@ GATEWAY=10.20.5.1</codeblock></p></li>
             <p>Perform the following step create a VM for HTTP and DHCP services.</p>
             <p>
                 <ol id="ol_v11_wh4_rt">
-                    <li>Import the <codeph>itoolbox1.ova</codeph> file into vcenter server. You
+                    <li>In the vCenter client, import the <codeph>itoolbox1.ova</codeph> file. You
                         should have <xref
                             href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/getinstall"
                             >downloaded this file during the prerequisites</xref>. Importing the OVA
@@ -147,8 +147,8 @@ vc.password =vmware //: vCenter password
 vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
                 <li>Start the JBoss application server using the following
                     command::<codeblock>monit start jboss</codeblock></li>
-            </ol><p>The <codeph>monit start jboss</codeph> metadata plugin is automatically deployed
-                and installed. The plugin will be listed as registered in vCenter.</p></section><section><title>Configure the Deployment Toolbox</title><p>You must perform the following
+            </ol><p>The <codeph>monit</codeph> metadata plugin is automatically deployed and
+                installed. The plugin will be listed as registered in vCenter.</p></section><section><title>Configure the Deployment Toolbox</title><p>You must perform the following
                     tasks.</p><p><b>Configure vCenter Informaton</b></p><p>You must provide the
                 VMWare topology configuration to the Deployment Toolbox. This includes the
                 following:</p><ul id="ul_ucs_444_rt">
@@ -238,6 +238,6 @@ vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
                 </ol>
             </p>
         </section><p><i>Return to the Installing the <xref
-                    href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+                    href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vapp">KVM + ESX
                     Deployment</xref>.</i></p></body>
 </topic>

@@ -29,9 +29,7 @@
 <ol>
 <li>
 <p>In each controller node, navigate to the <codeph>local_settings.py</codeph> file located in
-            <codeph>/opt/stack/service/horizon-&lt;build-label>/etc/local_settings.py</codeph>.</p>
-        <p>Where: <codeph>horizon-&lt;build-label></codeph> is the label for the current build. For
-          example: <codeph>horizon-20150920T124340Z </codeph>.</p>
+            <codeph>/opt/stack/service/horizon-20151019T060521Z/etc/local_settings.py</codeph></p>
 </li>
 <li>
 <p>Edit the file as follows:</p>

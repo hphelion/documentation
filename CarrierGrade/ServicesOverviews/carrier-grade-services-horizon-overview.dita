@@ -32,10 +32,6 @@
 <p>The Horizon dashboard includes several tabs, including <b>Project</b>, <b>Admin</b>,
         <b>System</b> tabs. These tabs provide administrators and users with a graphical interface
       to access, provision and automate cloud-based resources.</p>
-    <p>Horizon does not support Keystone v3 or domains by default. However, you can manually
-      configure Horizon to use v3. For more information see: <xref
-        href="carrier-grade-services-identity-configure-v3.dita#topic1810">Configuring Horizon for
-        Keystone v3</xref>.</p>
 <section id="for-more-information"> <title>For more information</title>
 <p>For information on using the dashboards, see <xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita" >HP Helion OpenStack Dashboard</xref>.</p>
 </section>

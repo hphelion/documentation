@@ -39,10 +39,7 @@
   <image href="../../../media/CGH-Horizon-Login.png"/>
         </p></li>
 <li>If you are a non-admin user, you will only be able to select a project from the list at the top
-        of the screen.<p><b>Note:</b> Horizon does not support Keystone v3 or domains by default.
-          However, you can manually configure Horizon to use v3. For more information see: <xref
-            href="../../ServicesOverviews/carrier-grade-services-identity-configure-v3.dita#topic1810"
-            >Configuring Horizon for Keystone v3</xref>.</p><p>
+        of the screen.<p>
           <xref type="section" href="#topic1160"> Return to Top </xref>
         </p></li>
 </ol>
