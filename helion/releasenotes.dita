@@ -436,8 +436,9 @@ net.ipv6.conf.default.disable_ipv6 = 1
 net.ipv6.conf.lo.disable_ipv6 = 1</codeblock>
         Once these have been added, you can either reboot the node or run the following command (as
         root): <codeblock># sysctl -p</codeblock> Please refer to your router documentation to block
-        IPv6 traffic from reaching your network at the router.</p><xref href="release_notes"
-        format="dita"> Print this page </xref></section>
-    
+        IPv6 traffic from reaching your network at the router.</p>
+      <xref href="http://docs-staging.hpcloud.com/hos2.0ga/helion/releasenotes.html" format="html"
+        scope="external">Print this page</xref>
+    </section>
   </body>
 </topic>
