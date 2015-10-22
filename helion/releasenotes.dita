@@ -112,7 +112,10 @@
       OpenStack 2.0 is installed and enabled on the KVM compute nodes by default. It runs in enforce
       mode. It enforces mandatory access control policies for the libvirt process. See <xref
         href="security/using_apparmor.dita#topic_rmq_j1v_4t">AppArmor in HP Helion OpenStack
-        2.0</xref> for more information.<p/><p><b>Dedicated Deployer Node No Longer Required</b></p>
+        2.0</xref> for more information.<p/><p>
+          
+          
+          <!--<b>Dedicated Deployer Node No Longer Required</b></p>
       You can now use either a dedicated deployer node or setup the deployer on your first
       controller node. If you choose to use your first controller node as your deployer, ensure that
       your <codeph>servers.yml</codeph> file contains the <codeph>is-deployer: true</codeph>
@@ -128,7 +131,7 @@
   ilo-ip: 192.168.9.3
   ilo-password: password
   ilo-user: admin
-  <b>is-deployer: true</b></codeblock>
+  <b>is-deployer: true</b></codeblock>--></p>
       <p><b>The Installer only supports English language</b></p> The deployer installation process
       prompts you to select a language, however only the English language as been tested. Therefore,
       at this time that is the only supported language. <p><b>Local Git repository for config
@@ -434,6 +437,8 @@ net.ipv6.conf.lo.disable_ipv6 = 1</codeblock>
         Once these have been added, you can either reboot the node or run the following command (as
         root): <codeblock># sysctl -p</codeblock> Please refer to your router documentation to block
         IPv6 traffic from reaching your network at the router.</p>
+      <xref href="http://docs-staging.hpcloud.com/hos2.0ga/helion/releasenotes.html" format="html"
+        scope="external">Print this page</xref>
     </section>
   </body>
 </topic>
