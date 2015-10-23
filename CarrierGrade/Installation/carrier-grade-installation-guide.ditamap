@@ -56,7 +56,6 @@
                     navtitle="Configuring LDAP 3" locktitle="yes"/>
                 <topicref href="carrier-grade-install-secure-port-patch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-rabbitmq-patch.dita" toc="no"/>
-                <topicref href="carrier-grade-install-services-netcan.dita" toc="no"/>
                 <topicref href="carrier-grade-install-helion-password-patch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-nic-patch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-esx-proxy-patch.dita" toc="no"/>
