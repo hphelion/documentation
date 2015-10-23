@@ -28,6 +28,8 @@
             VM, installing the new vCenter Integration Node (called the vCenter Deployment Toolbox).
             The VRSvApp can be deployed automatically on each ESX node in a cluster.
             <!--From HP DCN installation guide.--></p>
+        <p><image href="../../media/CGH-2-install-vsdvm-arch.png" width="600" id="image_cjh_y45_tt"
+            /></p>
       <p>After installing the vCenter Integration Node
         VM  and vCenter Deployment Toolbox, you can access the toolbox by pointing a browser to
             <codeph>https://&lt;VSD_IP&gt;:8443/vcenter/</codeph>.  Only the
