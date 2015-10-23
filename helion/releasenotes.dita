@@ -461,8 +461,8 @@ Oct  7 12:49:09 hlm kernel: [31181.133060] Modules linked in: dm_service_time xt
 Oct  7 12:49:09 hlm kernel: [31181.133114] CPU: 23 PID: 554 Comm: systemd-udevd Not tainted 3.14.51-1-amd64-hlinux #hlinux1
 Oct  7 12:49:09 hlm kernel: [31181.133115] Hardware name: HP ProLiant BL460c Gen9, BIOS I36 05/06/2015
 Oct  7 12:49:09 hlm kernel: [31181.133117] task: ffff883fcf0262c0 ti: ffff883f979ca000 task.ti: ffff883f979ca000
-Oct  7 12:49:09 hlm kernel: [31181.133118] RIP: 0010:[&lt;ffffffff81514f5b>]  [&lt;ffffffff81514f5b>] _raw_spin_trylock+0xb/0x40</codeblock>
-      The associated stack from the softlockup will show the instruction point either holding or
+Oct  7 12:49:09 hlm kernel: [31181.133118] RIP: 0010:[&lt;ffffffff81514f5b>]  [&lt;ffffffff81514f5b>] _raw_spin_trylock+0xb/0x40</codeblock>The
+      associated stack from the softlockup will show the instruction point either holding or
       attempting to acquire a spinlock. After all the LUNs have successfully detached and the
       devices have been flushed, the messages will subside. It is recommended that you include a
       delay when detaching multiple LUNs to avoid the softlockup and RCU stall messages.</section>
