@@ -162,8 +162,8 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
             as follows:
               <codeblock># Configure the enabled backends
 enabled_backends=vsa-1</codeblock><p>If
-              you created a fully provisioned volume type in section &lt;reference&gt; add the
-              following data to the [DEFAULT] section of<codeph>
+              you created a fully provisioned volume type <!--in section &lt;reference&gt;--> add
+              the following data to the [DEFAULT] section of<codeph>
               cinder.conf.j2</codeph>:<codeblock># Set the default volume type
 default_volume_type = &lt;your new volume type></codeblock></p></li>
           <li>Uncomment VSA section of <codeph>cinder.conf.j2</codeph> and fill the values as per
