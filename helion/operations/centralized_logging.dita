@@ -22,36 +22,33 @@
     <p>This document describes the Centralized Logging feature and contains the following
       sections:</p>
     <ul>
+      <li><xref href="#logging/install">Installation</xref></li>
+      <li><xref href="#logging/components">Centralized Logging Components</xref></li>
+      <li><xref href="#logging/retaining_logs">Log Retention Information</xref></li>
       <li>
-        <xref type="section" href="#logging/install">Installation</xref>
+        <xref href="#logging/types">Centralized Logging Data</xref>
       </li>
       <li>
-        <xref type="section" href="#logging/components">Centralized Logging Components</xref>
-      </li>
-      <li>
-        <xref type="section" href="#logging/types">Centralized Logging Data</xref>
-      </li>
-      <li>
-        <xref type="section" href="#logging/kibana">Kibana Configuration</xref>
+        <xref href="#logging/kibana">Kibana Configuration</xref>
         <ul>
           <li>
-            <xref type="section" href="#logging/interface">Logging into Kibana</xref>
+            <xref href="#logging/interface">Logging into Kibana</xref>
           </li>
         </ul>
       </li>
       <li>
-        <xref type="section" href="#logging/troubleshooting">Using Centralized Logging to
+        <xref href="#logging/troubleshooting">Using Centralized Logging to
           Troubleshoot Issues</xref>
       </li>
       <li>
-        <xref type="section" href="#logging/monitoring">Monitoring Centralized Logging</xref>
+        <xref href="#logging/monitoring">Monitoring Centralized Logging</xref>
       </li>
       <li>
-        <xref type="section" href="#logging/troubleshooting_issues">Troubleshooting Centralized
+        <xref href="#logging/troubleshooting_issues">Troubleshooting Centralized
           Logging Issues</xref>
       </li>
       <li>
-        <xref type="section" href="#logging/info">For More Information</xref>
+        <xref href="#logging/info">For More Information</xref>
       </li>
     </ul>
     <section id="install">
