@@ -44,7 +44,7 @@
       <p><b> RDP/VNC connect</b></p>
       <p>The following steps will allow you to setup a VNC connect to your controller node so you
         can view the GUI.</p>
-      <ol>
+      <ol id="ol_xmq_p25_tt">
         <li>Login to your first controller node. </li>
         <li>Run the following command to install the package that is required to launch CMC:
           <codeblock>sudo apt-get install -y xrdp </codeblock></li>
@@ -122,8 +122,11 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
           <li>SSH to first control plane node.<codeblock>ssh -X</codeblock><p>and enter the CMC
               command (as mentioned below) to launch CMC.</p></li>
         </ol></p>
+    </section>
+    <section>
+      <title><b>Creating a StoreVirtual Cluster and adding it to a new Management Group</b></title>
       <p>Perform the following steps to create the cluster.<ol id="ol_yln_fhl_jt">
-          <li>Open
+          <li>Run the following command to open
               CMC.<codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock><p>By
               default, the CMC is configured to discover the StoreVirtual nodes in the subnet in
               which it is installed. You can manually add the nodes also.<note type="attention"
@@ -172,6 +175,7 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
             Home page of CMC.<p>Wait till the cluster is displayed in the Home Page of CMC.</p></li>
         </ol></p>
     </section>
+
     <section>
       <title>Configure VSA as a Cinder Backend</title>
       <note>

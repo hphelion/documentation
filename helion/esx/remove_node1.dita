@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_fld_zzy_lt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing a Compute Node</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing an Existing ESX Cluster from the
+    Compute Resource Pool</title>
   <body><!--Needs Edit-->
   <section id="removeNodes"> The process for removing a compute node requires that you run these steps: <ol>
-        <li>Disable provisioning to prevent new instances from being created on this node.  </li>
-        <li>If possible migrate any instances on the node to other nodes. </li>
+        <li>Disable provisioning to prevent new instances from being created on this cluster. </li>
+        <li>If possible migrate any instances on the clusters to other clusters. </li>
         <li>Shut down the node or stop the nova-compute service. </li>
         <li>Delete the compute node from nova </li>
         <li>Amend servers.yml in the cloud configuration to remove entry for this node, commit the
@@ -16,68 +17,9 @@
       </ol> 
   </section>
     
-    <section id="removeAZ"><title>Remove Hosts from Host Aggregates</title> When removing a compute
-      node, if availability zones have been configured, either manually or using the Nova playbook
-      <b>nova-cloud-configure.yml</b>, or you have manually configured any host aggregates, then before
-      executing the <codeph>service-delete</codeph> command you need to remove the host(s) being deleted from any
-      host aggregates. For example: <ol>
-        <li>Disable the
-          service<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova service-disable --reason="HNOV-240 - removed" padawan-ccp-comp0002-mgmt nova-compute</codeblock><codeblock>+---------------------------+--------------+----------+--------------------+
-| Host                      | Binary       | Status   | Disabled Reason    |
-+---------------------------+--------------+----------+--------------------+
-| padawan-ccp-comp0002-mgmt | nova-compute | disabled | HNOV-240 - removed |
-+---------------------------+--------------+----------+--------------------+</codeblock></li>
-        <li>Get nova service
-          list<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova service-list</codeblock><codeblock>+----+------------------+---------------------------+----------+----------+-------+----------------------------+--------------------+
-| Id | Binary           | Host                      | Zone     | Status   | State | Updated_at                 | Disabled Reason    |
-+----+------------------+---------------------------+----------+----------+-------+----------------------------+--------------------+
-| 1  | nova-conductor   | padawan-ccp-c1-m1-mgmt    | internal | enabled  | up    | 2015-10-12T08:46:12.000000 | -                  |
-| 4  | nova-scheduler   | padawan-ccp-c1-m1-mgmt    | internal | enabled  | up    | 2015-10-12T08:46:13.000000 | -                  |
-| 7  | nova-conductor   | padawan-ccp-c1-m3-mgmt    | internal | enabled  | up    | 2015-10-12T08:46:14.000000 | -                  |
-| 10 | nova-conductor   | padawan-ccp-c1-m2-mgmt    | internal | enabled  | up    | 2015-10-12T08:46:12.000000 | -                  |
-| 13 | nova-scheduler   | padawan-ccp-c1-m3-mgmt    | internal | enabled  | up    | 2015-10-12T08:46:13.000000 | -                  |
-| 16 | nova-consoleauth | padawan-ccp-c1-m1-mgmt    | internal | enabled  | up    | 2015-10-12T08:46:14.000000 | -                  |
-| 19 | nova-scheduler   | padawan-ccp-c1-m2-mgmt    | internal | enabled  | up    | 2015-10-12T08:46:13.000000 | -                  |
-| 22 | nova-compute     | padawan-ccp-comp0002-mgmt | AZ2      | disabled | up    | 2015-10-12T08:46:12.000000 | HNOV-240 - removed |
-| 25 | nova-compute     | padawan-ccp-comp0001-mgmt | AZ1      | enabled  | up    | 2015-10-12T08:46:11.000000 | -                  |
-| 28 | nova-compute     | padawan-ccp-comp0003-mgmt | AZ3      | enabled  | up    | 2015-10-12T08:46:11.000000 | -                  |
-+----+------------------+---------------------------+----------+----------+-------+----------------------------+--------------------+</codeblock></li>
-        <li>Get availability
-          zones<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova aggregate-list</codeblock><codeblock>+----+------+-------------------+
-| Id | Name | Availability Zone |
-+----+------+-------------------+
-| 1  | AZ1  | AZ1               |
-| 4  | AZ2  | AZ2               |
-| 7  | AZ3  | AZ3               |
-+----+------+-------------------+</codeblock></li>
-        <li>Check that the AZ has been
-          ???<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova aggregate-remove-host AZ2 padawan-ccp-comp0002-mgmt</codeblock><codeblock>Host padawan-ccp-comp0002-mgmt has been successfully removed from aggregate 4</codeblock><codeblock>+----+------+-------------------+-------+-------------------------+
-| Id | Name | Availability Zone | Hosts | Metadata                |
-+----+------+-------------------+-------+-------------------------+
-| 4  | AZ2  | AZ2               |       | 'availability_zone=AZ2' |
-+----+------+-------------------+-------+-------------------------+</codeblock></li>
-        <li>Get Availability Zone aggregate
-          details<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova aggregate-details AZ2</codeblock><codeblock>+----+------+-------------------+-------+-------------------------+
-| Id | Name | Availability Zone | Hosts | Metadata                |
-+----+------+-------------------+-------+-------------------------+
-| 4  | AZ2  | AZ2               |       | 'availability_zone=AZ2' |
-+----+------+-------------------+-------+-------------------------+</codeblock></li>
-        <li>Delete service ID 22 (AZ2) and check that is deleted using <codeph>nova
-          service-list</codeph><codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova service-delete 22
-stack@padawan-ccp-c0-m1-mgmt:~$ nova service-list</codeblock><codeblock>+----+------------------+---------------------------+----------+---------+-------+----------------------------+-----------------+
-| Id | Binary           | Host                      | Zone     | Status  | State | Updated_at                 | Disabled Reason |
-+----+------------------+---------------------------+----------+---------+-------+----------------------------+-----------------+
-| 1  | nova-conductor   | padawan-ccp-c1-m1-mgmt    | internal | enabled | up    | 2015-10-12T08:47:56.000000 | -               |
-| 4  | nova-scheduler   | padawan-ccp-c1-m1-mgmt    | internal | enabled | up    | 2015-10-12T08:47:53.000000 | -               |
-| 7  | nova-conductor   | padawan-ccp-c1-m3-mgmt    | internal | enabled | up    | 2015-10-12T08:47:54.000000 | -               |
-| 10 | nova-conductor   | padawan-ccp-c1-m2-mgmt    | internal | enabled | up    | 2015-10-12T08:47:52.000000 | -               |
-| 13 | nova-scheduler   | padawan-ccp-c1-m3-mgmt    | internal | enabled | up    | 2015-10-12T08:47:53.000000 | -               |
-| 16 | nova-consoleauth | padawan-ccp-c1-m1-mgmt    | internal | enabled | up    | 2015-10-12T08:47:54.000000 | -               |
-| 19 | nova-scheduler   | padawan-ccp-c1-m2-mgmt    | internal | enabled | up    | 2015-10-12T08:47:53.000000 | -               |
-| 25 | nova-compute     | padawan-ccp-comp0001-mgmt | AZ1      | enabled | up    | 2015-10-12T08:47:51.000000 | -               |
-| 28 | nova-compute     | padawan-ccp-comp0003-mgmt | AZ3      | enabled | up    | 2015-10-12T08:47:51.000000 | -               |
-+----+------------------+---------------------------+----------+---------+-------+----------------------------+-----------------+</codeblock>
-        </li>
+    <section id="removeAZ">
+      <ol>
+        <li> </li>
       </ol>
     </section>
     <section><title>Remove the Nodes</title>
