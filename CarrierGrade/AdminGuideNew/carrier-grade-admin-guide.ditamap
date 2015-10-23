@@ -1,0 +1,70 @@
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en" linking="none" locktitle="no">
+    
+    <title> HP Helion  OpenStack  Carrier Grade 1.1: Admin Topics</title>
+       <!--PDFTITLE "HP Helion OpenStack Carrier Grade 1.1 Installation Guide"-->
+    <topicmeta>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>HP Helion</copyrholder>
+        </copyright>
+        <prodinfo>
+            <prodname >HP Helion OpenStack Carrier Grade</prodname>
+            <vrmlist>
+                <vrm release="1.1" version=""/>
+            </vrmlist>
+        </prodinfo>
+        <!-- bookid ixia_locid="133">
+            <edition ixia_locid="134">Patch 0003</edition>
+        </bookid -->
+    </topicmeta>
+    <topicref href="Dashboard/carrier-grade.dashboard.how-works.dita" toc="no"/>
+    <topicref href="Dashboard/carrier-grade.dashboard.launch.dita" toc="no"/>
+    <topicref href="Dashboard/carrier-grade.dashboard.managing.dita" toc="no"/>
+    <topicref href="HostManagement/carrier-grade-admin-wr-host-management.dita" toc="no"/>
+    <topicref href="HostManagement/carrier-grade-admin-wr-host-management-active.dita" toc="no"/>
+    <topicref href="HostManagement/carrier-grade-admin-wr-host-management-active-compute.dita" toc="no"/>
+    <topicref href="HostManagement/carrier-grade-admin-wr-host-management-active-controller.dita" toc="no"/>
+    <topicref href="HostManagement/carrier-grade-admin-wr-host-management-active-storage.dita" toc="no"/>
+    <topicref href="HostManagement/carrier-grade-admin-wr-host-management-clusters.dita" toc="no"/>
+    <topicref href="HostManagement/carrier-grade-admin-wr-host-management-controller-HA.dita" toc="no"/>
+    <topicref
+        href="HostManagement/carrier-grade-admin-wr-host-management-controller-hostaggregate.dita" toc="no"/>
+    <topicref href="HostManagement/carrier-grade-admin-wr-host-management-hardware-inventory.dita" toc="no"/>
+    <topicref href="HostManagement/carrier-grade-admin-wr-host-management-host-clusters.dita" toc="no"/>
+    <topicref href="HostManagement/carrier-grade-admin-wr-host-management-host-hardware.dita" toc="no"/>
+    <topicref
+        href="HostManagement/carrier-grade-admin-wr-host-management-host-initialize-compute.dita" toc="no"/>
+    <topicref
+        href="HostManagement/carrier-grade-admin-wr-host-management-host-initialize-controller.dita" toc="no"/>
+    <topicref
+        href="HostManagement/carrier-grade-admin-wr-host-management-host-initialize-storage.dita" toc="no"/>
+    <topicref href="HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" toc="no"/>
+    <topicref href="HostManagement/carrier-grade-admin-wr-host-management-inventory.cluster.dita" toc="no"/>
+    <topicref href="HostManagement/carrier-grade-admin-wr-host-management-inventory.dita" toc="no"/>
+    <topicref href="HostManagement/carrier-grade-admin-wr-host-management-inventory-detail.dita" toc="no"/>
+    <topicref
+        href="HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita" toc="no"/>
+    <topicref
+        href="HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-memory.dita" toc="no"/>
+    <topicref
+        href="HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-ports.dita" toc="no"/>
+    <topicref
+        href="HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-processor.dita" toc="no"/>
+    <topicref
+        href="HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-storage.dita" toc="no"/>
+    <topicref href="HostManagement/carrier-grade-admin-wr-host-management-lifecycle.dita" toc="no"/>
+    <topicref href="HostManagement/carrier-grade-admin-wr-host-management-resource.dita" toc="no"/>
+    <topicref href="Networks/carrier-grade.dashboard.network.admin.create.dita" toc="no"/>
+    <topicref href="Networks/carrier-grade.dashboard.network.admin.create.provider.dita" toc="no"/>
+    <topicref href="Networks/carrier-grade.dashboard.network.admin.create.segment.dita" toc="no"/>
+    <topicref href="Networks/carrier-grade.dashboard.network.create.dita" toc="no"/>
+    <topicref href="Networks/carrier-grade.dashboard.network.enable.tenant.dita" toc="no"/>
+    <topicref href="Networks/carrier-grade.dashboard.network.guest.vlan.dita" toc="no"/>
+    <topicref href="Networks/carrier-grade.dashboard.network.ports2.dita" toc="no"/>
+    <topicref href="Networks/carrier-grade.dashboard.network.qos.dita" toc="no"/>
+    <topicref href="Networks/carrier-grade.dashboard.network.subnet.dita" toc="no"/>
+    <topicref href="Networks/carrier-grade.dashboard.network.viewing.dita" toc="no"/>
+    <topicref href="Networks/carrier-grade.managing.network.dita" toc="no"/>
+    <topicref href="carrier-grade-admin-guide.dita" toc="no"/>
+    <topicref href="carrier-grade-install-post-install.dita" toc="no"/></map>
