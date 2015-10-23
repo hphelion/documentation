@@ -208,7 +208,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
       <title>Deploy Cobbler</title>
       <p>This phase of the install process takes the baremetal information that was provided in
           <codeph>servers.yml</codeph> and installs the Cobbler provisioning tool and loads this
-        information into Cobbler. This sets each node to <codeph>netboot-enabled: true</codeph>.
+        information into Cobbler. This sets each node to <codeph>netboot-enabled: true</codeph> in Cobbler.
         Each node will be automatically marked as <codeph>netboot-enabled: false</codeph> when it
         completes its operating system install successfully. Even if the node tries to PXE boot
         subsequently, Cobbler will not serve it. This is deliberate so that you can't reimage a live
@@ -224,7 +224,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
           your nodes so that they are accessible to be re-imaged in a later step:
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost bm-power-status.yml</codeblock></li>
-        <li>Run the following playbook to deploy Cobbler. <codeblock>cd ~/helion/hos/ansible
+        <li>Run the following playbook to deploy Cobbler: <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
           <!--
           <p>The cobbler-deploy stage of the installation now prompts for a password. The entered
