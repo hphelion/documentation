@@ -22,7 +22,7 @@
     <topicref href="helion/input_model.dita" navtitle="Input Model" locktitle="yes"/>
     <topicref href="helion/example_configurations.dita" navtitle="Example Configurations"
       locktitle="yes"/>
-    <topicref href="helion/hardware.dita" navtitle="Hardware Requirements" locktitle="yes"/>
+    <topicref href="helion/hardware.dita" navtitle="Recommended Minimum Hardware Requirements" locktitle="yes"/>
     <topicref href="helion/releasenotes.dita" navtitle="Release Notes" locktitle="yes"/>
     <topicref href="helion/faq.dita" navtitle="Frequently Asked Questions" locktitle="yes"/>
     <topicref href="helion/eula.dita" toc="no"/>

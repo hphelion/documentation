@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="min_hardware">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Hardware Requirements</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Recommended Minimum Hardware
+    Requirements</title>
   <body><!--Needs Edit-->
     <section id="supported_hardware"><title>Hardware Support Matrix</title>
       <p>For information about the supported hardware in HP Helion OpenStack 2.0, see the <xref
@@ -19,7 +20,7 @@
       </ul>
     </section>
     <section id="MinimumRequirements">
-      <title>Minimum Hardware Requirements</title>
+      <title>Recommended Minimum Hardware Requirements</title>
       <table>
         <tgroup cols="5">
           <colspec colname="c1" colnum="1"/>
