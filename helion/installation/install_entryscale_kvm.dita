@@ -214,20 +214,17 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
         subsequently, Cobbler will not serve it. This is deliberate so that you can't reimage a live
         node by accident.</p>
       <p>The <codeph>cobbler-deploy.yml</codeph> playbook prompts for a password - this is the
-        password, associated with the user running the command on the deployer, to be able to log in
-        to the nodes via their consoles after install. The username is the same as the user set up
-        in the initial dialogue when installing the deployer from the iso, and is the same user that
-        is running the cobbler-deploy play.</p>
+        password that will be encrypted and stored in Cobbler, which is associated with the user
+        running the command on the deployer, that you will use to log in to the nodes via their
+        consoles after install. The username is the same as the user set up in the initial dialogue
+        when installing the deployer from the iso, and is the same user that is running the
+        cobbler-deploy play.</p>
       <ol>
         <li>Run the following playbook which confirms that there is iLo connectivity for each of
           your nodes so that they are accessible to be re-imaged in a later step:
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost bm-power-status.yml</codeblock></li>
-        <li>Run the following playbook to deploy Cobbler. The cobbler-deploy stage of the
-          installation now prompts for a password. The entered value is used to set a user-defined
-          password for subsequent node installs so that a user can gain console/terminal access to
-          the nodes. For example, if a node maintenance is required or if the SSH keys are lost. The
-          value is encrypted and placed in the kickstart for the node installs. <codeblock>cd ~/helion/hos/ansible
+        <li>Run the following playbook to deploy Cobbler. <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
           <!--
           <p>The cobbler-deploy stage of the installation now prompts for a password. The entered
