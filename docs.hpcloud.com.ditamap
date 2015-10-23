@@ -194,6 +194,7 @@
       <topicref href="commercial/GA1/1.1commerical.services-object-overview.dita"
         navtitle="Swift Object Storage Overview" locktitle="yes">
         <!-- All Things Swift-->
+        <topicref href="commercial/GA1/1.1commercial.replacing_starter_swift_node.dita"/>
         <topicref href="commercial/GA1/1.1commerical.services-scale-out-swift.dita"
           navtitle="About Scale-out Object Storage" locktitle="yes">
           <topicref
