@@ -2,6 +2,7 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en" linking="none" locktitle="no">
   <title>HP Helion</title>
+  <!--PDFTITLE "HP Helion OpenStack 2.0 Complete Documentation-->
   <topicmeta>
     <copyright>
       <copyryear year="2015"/>
