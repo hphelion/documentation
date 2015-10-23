@@ -1069,7 +1069,7 @@
               <row>
                 <entry>nic-mapping</entry>
                 <entry>Name of the <uicontrol>nic-mappings</uicontrol> entry to apply to this
-                  server. (see <xref href="#input_model/nicmappings">NIC Mappings</xref>)</entry>
+                  server. (see <xref href="#input_model/co_nicmappings">NIC Mappings</xref>)</entry>
               </row>
               <row>
                 <entry>server-group (optional)</entry>
@@ -1180,7 +1180,7 @@
                 <entry>An administrator-defined name for the server group. The name is used to link
                   server-groups together and to identify server-groups to be used as failure zones
                   in a <uicontrol>control-plane</uicontrol>. (see <xref
-                    href="#input_model/controlplane">Control Plane</xref>)</entry>
+                    href="#input_model/co_controlplane">Control Plane</xref>)</entry>
               </row>
               <row>
                 <entry>server-groups (optional)</entry>
@@ -1205,8 +1205,8 @@
         use in your cloud. Each server role is linked to two other configuration objects:</p>
       <p>
         <ul>
-          <li>Disk model (see <xref href="#input_model/diskmodels">Disk Models</xref>)</li>
-          <li>Interface model (see <xref href="#input_model/interfacemodels">Interface
+          <li>Disk model (see <xref href="#input_model/co_diskmodels">Disk Models</xref>)</li>
+          <li>Interface model (see <xref href="#input_model/co_interfacemodels">Interface
             Models</xref>)</li>
         </ul>
       </p>
@@ -1563,7 +1563,7 @@
               </row>
               <row>
                 <entry>bond-data (optional)</entry>
-                <entry>Used to define a bond. See <xref href="#input_model/bonddata" type="table"
+                <entry>Used to define a bond. See <xref href="#input_model/co_bonddata" type="table"
                     >Bond Data</xref> for details.</entry>
               </row>
               <row>
@@ -1762,7 +1762,7 @@
                 <entry>The network device name that will be associated with the device at the
                   specified <i>bus-address</i>. The logical-name specified here can be used as a
                   device name in network interface model definitions. (see <xref
-                    href="#input_model/co_interfacenodels">Interface Models</xref>)</entry>
+                    href="#input_model/co_interfacemodels">Interface Models</xref>)</entry>
               </row>
               <row>
                 <entry>type</entry>
@@ -2705,7 +2705,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml -e remove_deleted_s
     </section>
     <section id="persistedaddressallocations"><title>Persisted Address Allocations</title>
       <p>The Configuration Processor persists IP address allocations by the generated name (see
-          <xref href="#input_model/namegernation">Name Generation</xref> for how names are
+          <xref href="#input_model/namegeneration">Name Generation</xref> for how names are
         generated). As with servers once an address has been allocated, that address will remain
         allocated until the Configuration Processor is explicitly told that it is no longer
         required. The Configuration Processor will generate warnings for addresses that are
