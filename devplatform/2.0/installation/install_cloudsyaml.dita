@@ -3,8 +3,8 @@
 <topic id="topic_wzw_r4w_rt">
   <title>clouds.yaml Configuration File</title>
   <body>
-    <p>The installer gets its configuration information from the os-client-config
-      ~/.config/openstack/clouds.yaml file. </p>
+    <p>The installer gets its configuration information from the <codeph>os-client-config
+        ~/.config/openstack/clouds.yam</codeph>l file. </p>
     <ol id="ol_apx_khy_rt">
       <li> Create this directory: <codeblock>mkdir -p ~/.config/openstack/</codeblock></li>
       <li>Create a plaintext file called <codeph>clouds.yaml</codeph> in that directory.</li>
