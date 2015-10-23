@@ -184,13 +184,14 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
                   >Terraform Variables</xref>.</note></li>
             <li>Run the following
                 command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><p>Terraform
-                creates the necessary security groups and instances, installs Docker, and installs
-                the Docker images required to run <keyword keyref="prodShort"/>.</p><note
+                creates the necessary security groups and instances, installs Docker, installs the
+                Docker images required to run <keyword keyref="prodShort"/>, and saves the state of
+                your infrastructure to <filepath>terraform.tfstate</filepath>.</p><note
                 type="important">If Terraform displays errors, ensure that all variables have values
                 and that the values are correct.</note><note type="tip">At the end of the process,
                 Terraform displays the URL of the <keyword keyref="pubCloudShort"/> core, formatted
                 using the xip.io wildcard DNS, for
-                example:<codeblock>API endpoint:   http://api.203.0.113.0.xip.io</codeblock>You will
+                example:<codeblock>api_endpoint = http://api.203.0.113.0.xip.io</codeblock>You will
                 need this URL to use the Cloud Foundry CLI. You can also run the <filepath>terraform
                   show</filepath> command to see detailed information about the
                 core.</note><b>Exploring the <keyword keyref="prodShort"/> Core</b><p>After the
