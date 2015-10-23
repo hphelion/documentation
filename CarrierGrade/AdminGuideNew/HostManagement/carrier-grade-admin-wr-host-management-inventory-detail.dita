@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1947">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Managing Host Systems</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail.md-->
+ <!--permalink: /helion/openstack/carrier/admin/host/management/inventory/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>From the <b>Inventory Detail</b> page you can see detailed information about a host, and use it to define hardware profiles that can be used across the cluster.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>You access the <b>Inventory Detail</b> page by clicking the host name on the <b>Hosts</b> tab of the <b>Systems Inventory</b> page. The inventory detail for a host consists of multiple tabs, each addressing a different aspect of the host.</p>
+<p>They include:</p>
+<ul>
+<li>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-processor.dita" >Working with Host CPUs</xref>
+</li>
+<li>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-inventory.dita" >Working with Host Memory</xref>
+</li>
+<li>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-storage.dita" >Working with Host Storage</xref>
+</li>
+<li>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-ports.dita" >Viewing Host Port Details</xref>
+</li>
+<li>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita" >Working with Host Interfaces</xref>
+</li>
+</ul>
+<section id="overview"> <title>Overview</title>
+<p>The <b>Overview</b> tab on the <b>Inventory Detail</b> page summarizes core details about a host object.</p>
+<p>To view the host CPUs:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
+</li>
+<li>
+<p>Click the <b>Hosts</b> tab.</p>
+</li>
+<li>
+<p>In the Host Name column, click the name of the locked host to open the <b>Inventory Detail</b> page for that host.</p>
+</li>
+</ol>
+<p>The following items are included in the summary:</p>
+<ul>
+<li>host name, personality, and the internal UUID and host ID reference numbers</li>
+<li>MAC and IP addresses on the internal management network</li>
+<li>serial ID, if known. Use the command system host-modify &lt;hostname&gt; serialid=xxx to update it.</li>
+<li>location, as entered by the operator using the Edit Host window. For more information, see <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita" >Host Inventory</xref>
+</li>
+<li>time stamps of when the host was created and last updated</li>
+<li>the host's state</li>
+<li>board management (iLO) information, if available, including controller type, MAC address, and IP address.</li>
+</ul>
+<p>
+  <xref type="section" href="#topic1947"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

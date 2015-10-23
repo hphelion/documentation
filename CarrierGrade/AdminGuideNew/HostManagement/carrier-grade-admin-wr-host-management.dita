@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic11233">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Working with Host Inventory</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.md-->
+ <!--permalink: /helion/openstack/carrier/admin/host/management/inventory/host/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>The <b>Hosts</b> tab on the <b>System Inventory</b> page provides an overview of the current state of all hosts in the HP Helion OpenStack Carrier Grade cluster. From this tab, you can obtain detailed information about the hosts, and execute maintenance operations.</p>
+<ul>
+<li>
+<xref type="section" href="#topic11233/view">Viewing information on Hosts</xref>
+</li>
+<li>
+<xref type="section" href="#topic11233/unlock">Locking and Unlocking a Host</xref>
+</li>
+<li>
+<xref type="section" href="#topic11233/poweroff">Power Off and On a Host</xref>
+</li>
+<li>
+<xref type="section" href="#topic11233/reboot">Reboot a Host</xref>
+</li>
+<li>
+<xref type="section" href="#topic11233/reset">Reset a Host</xref>
+</li>
+<li>
+<xref type="section" href="#topic11233/reinstall">Reinstall a Host</xref>
+</li>
+<li>
+<xref type="section" href="#topic11233/delete">Delete Host</xref>
+</li>
+<li>
+<xref type="section" href="#topic11233/swact">Swact a Host</xref>
+</li>
+<li>
+<xref type="section" href="#topic11233/life">The life cycle of a host</xref>
+</li>
+</ul>
+<section id="view"> <title>Viewing information on Hosts</title>
+<p>To view information on a host:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+
+<ul>
+<li>Use the IP address for the appropriate region where you want to make the change, either: the Non-KVM region or the KVM region.</li>
+</ul>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
+</li>
+<li>
+<p>Click the <b>Hosts</b> tab.</p>
+</li>
+</ol>
+<p>The information is refreshed periodically to reflect the ongoing changes on the cluster. It consists of the following
+columns:</p>
+<ul>
+<li>
+<b>Host Name</b> - The name assigned to the host. This is an active link pointing to the detailed inventory page for the host. </li>
+<li>
+<b>Personality</b> - The personality of the host (controller, compute, or storage).</li>
+<li>
+<b>Admin State</b> - The administrative state of the host. It can be in one of two states:
+
+<ul>
+<li>
+<b>Locked</b> - The host is administratively prohibited from performing services. This is the initial state for hosts autodiscovered in the cluster.</li>
+<li>
+<b>Unlocked</b> -  The host is administratively in service. A controller node in this state, and not in the failed state, is active in its HA role, and is running the assigned controller services.</li>
+</ul>
+</li>
+<li>
+<b>Operational State</b> - The operational state of the host. It can be in one of two states:
+
+<ul>
+<li>
+<b>Disabled</b> - Indicates that the host is not providing the expected services. This may be due to the fact that it is in the process of being unlocked, a failure has occurred, or it is being automatically recovered due to a failure.</li>
+<li>
+<b>Enabled</b> - Indicates that the host is providing the expected services, even if its operational environment is compromised. In the latter case, the host is reported to be in the degraded availability state, in which case, state maintenance is constantly trying to recover the host to fully available state through in-service testing.</li>
+</ul>
+</li>
+<li>
+<b>Availability State</b> - The availability state of the host. It can be in one of the following states:
+
+<ul>
+<li>
+<b>Offline</b> - The host is known to the HP Helion OpenStack Carrier Grade, but is not reachable for maintenance purposes.</li>
+<li>
+<b>Online</b> -  The host is reachable and ready to be unlocked.</li>
+<li>
+<b>InTest</b> - A transient state that occurs when transitioning from locked, or from a failed operational state, to unlocked states. While in this state, the host is executing a series of tests to validate its hardware and software integrity.</li>
+<li>
+<b>Available</b> - The host is fully operational and providing services.</li>
+<li>
+<b>Degraded</b> - The host is experiencing compromised operational conditions, such as low memory, but is still providing the expected services. Details about the compromised conditions are available through the alarms subsystem. See System Alarms on page 139 for details.</li>
+<li>
+<b>Failed</b> -  A major fault has occurred and the host is no longer providing any services. The HP Helion OpenStack Carrier Grade maintenance system automatically tries to recover hosts in this state.</li>
+<li>
+<b>Power-off</b> -  The host is known to have been powered off by a previous maintenance action.</li>
+</ul>
+</li>
+<li>
+<b>Uptime</b> - The uptime of the host, as reported by the system maintenance service.</li>
+<li>
+<b>Status</b> - An indicator of the immediate activity occurring on the host. It reports transitory steps such as booting, initializing, configuration out of date, and in-test, which a host goes through as it transitions from one administrative or availability state to another.</li>
+</ul>
+</section>
+<section id="unlock"> <title>Locking and Unlocking a Host</title>
+<p>Unlocking a host brings the host into service. The first step is to reset the target host to ensure that it starts from a wellknown state.</p>
+<p>Locking a host brings the host out of service.</p>
+<p>Force locking a host takes the host out of service if for the Lock Host option does not work.</p>
+<p>For more information, see <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Locking and Unlocking a System</xref>.</p>
+</section>
+<section id="poweroff"> <title>Power Off and On a Host</title>
+<p>You can use the Hosts page to power on or gracefully power off a host, ensuring that all system processes are properly shut off first.</p>
+<p>These selections are available if board management is configured on the system, the host is equipped with an iLO module, and the host is in a powered-on state.</p>
+<p>To power on/off a host:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
+</li>
+<li>
+<p>In the <b>Hosts</b> list, for the system to power on or off, select <b>Power On</b> or <b>Power Off</b> from the <b>More</b> menu.</p>
+</li>
+</ol>
+<p>You can power off and on a host from the controller's command line, as follows:</p>
+<codeblock>
+  <codeph>system host-power-off &lt;hostname&gt;
+system host-power-off &lt;hostname&gt;
+
+Where &lt;hostname&gt; is the name of the system.
+</codeph>
+</codeblock>
+</section>
+<section id="reboot"> <title>Reboot a Host</title>
+<p>Gracefully shuts down the host, ensuring that all system processes are properly shut off first. The host then reboots automatically.</p>
+<p>To reboot a host:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
+</li>
+<li>
+<p>In the <b>Hosts</b> list, for the system to reboot, select <b>Reboot Host</b> from the <b>More</b> menu.</p>
+</li>
+</ol>
+<p>You can reboot a host from the controller's command line, as follows:</p>
+<codeblock>
+  <codeph>system host-reboot &lt;hostname&gt;
+
+Where &lt;hostname&gt; is the name of the system.
+</codeph>
+</codeblock>
+</section>
+<section id="reset"> <title>Reset a Host</title>
+<p>Use this selection only if Reboot Host fails. It performs an out-of-band reset, stopping and restarting the host without ensuring that all system processes are shut off first.</p>
+<p>To reset a host:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
+</li>
+<li>
+<p>In the <b>Hosts</b> list, for the system to reset, select <b>Reset Host</b> from the <b>More</b> menu.</p>
+
+<p>
+<b>Note:</b> This selection is available if board management is configured on the system, the host is equipped with an iLO module, and the host is in a powered-on state.</p>
+</li>
+</ol>
+<p>You can reset a host from the controller's command line, as follows:</p>
+<codeblock>
+  <codeph>system host-reset &lt;hostname&gt;
+
+Where &lt;hostname&gt; is the name of the system.
+</codeph>
+</codeblock>
+</section>
+<section id="reinstall"> <title>Reinstall a Host</title>
+<p>Forces a full re-installation of the HP Helion OpenStack Carrier Grade software on the host. The host's hard drive is erased, and the installation process is started afresh.</p>
+<p>To reinstall a host:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
+</li>
+<li>
+<p>In the <b>Hosts</b> list, for the system to reinstall, select <b>Reinstall Host</b> from the <b>More</b> menu.</p>
+</li>
+</ol>
+</section>
+<section id="delete"> <title>Delete Host</title>
+<p>Removes the host from the inventory database, and its hard drive is erased.</p>
+<p>To delete a host:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
+</li>
+<li>
+<p>In the <b>Hosts</b> list, for the system to delete, select <b>Delete Host</b> from the <b>More</b> menu.</p>
+</li>
+</ol>
+<p>You can delete a host from the controller's command line, as follows:</p>
+<codeblock>
+  <codeph>system host-delete &lt;hostname&gt;
+
+Where &lt;hostname&gt; is the name of the system.
+</codeph>
+</codeblock>
+</section>
+<section id="swact"> <title>Swact a Host</title>
+<p>This operation is available on controller nodes only, and should be run on the active controller to initiate a switch of the active/standby roles.</p>
+<p>Swact is an abbreviated form of the term Switch Active (host). When selected, this option forces the other controller to become the active one in the HA cluster. This means that all active system services on this controller move to standby operation, and that the corresponding services on the other controller become active.
+Use this option when you need to lock the currently active controller, or do any kind of maintenance procedures, for example, when updating hardware or replacing faulty components.</p>
+<p>To swact a host:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
+</li>
+<li>
+<p>In the <b>Hosts</b> list, for the system to switch to active, select <b>Swact Host</b> from the <b>More</b> menu.</p>
+</li>
+</ol>
+<p>You can swact a host from the controller's command line, as follows:</p>
+<codeblock>
+  <codeph>system host-swact --force &lt;hostname&gt;
+
+Where &lt;hostname&gt; is the name of the system.
+</codeph>
+</codeblock>
+</section>
+<section id="life"> <title>The life cycle of a host</title>
+<p>The life cycle of a host is the set of state transitions the host goes through as its current state changes. The host states in the HP Helion OpenStack Carrier Grade are based on the ITU X.731 State Management Function Specification for Open Systems.</p>
+<p>The current state of a host is determined by the allowed combinations of the administrative, operational, and availability states at any given time.</p>
+<p>The life cycle of a new host starts when it is discovered by the active controller on the internal management network.</p>
+<p>A new host is initially reported as <codeph>Offline</codeph>. As an exception, the first controller, controller-0, is automatically set to available during initial commissioning.</p>
+<p>The following are the available transitions:</p>
+<ul>
+<li>
+<b>Offline to Online</b> - This transition takes place once the administrator configures the host name and personality of the host. During the transition, the HP Helion OpenStack Carrier Grade software is installed and the host reboots. The transition concludes when the controller establishes maintenance and inventory connectivity with the new host.</li>
+<li>
+<b>Online to InTest</b> - This transition takes place when the administrator requests to move the host from the locked to the unlocked administrative states. The host reboots first. After it finishes booting, it establishes maintenance communication and enters the transient InTest state. While in this state, the configuration is applied, and a set of hardware and software tests are executed to ensure the integrity of the host.</li>
+<li>
+<b>InTest to Available, Degraded, or Failed</b> - The transition is initiated automatically after the activities in the transient state inTest are complete. Depending on the outcome, the host goes into one the three states.</li>
+<li>Failed to InTest - This is a value-added maintenance transition that the HA framework executes automatically to recover failed hosts.</li>
+<li>
+<b>Available to/from Degraded, Available to Failed, and Degraded to Failed</b> - These are transitions that may occur at any time due to changes on the operational state and faults on unlocked hosts.</li>
+<li>
+<b>Available, Degraded, or Failed, to Offline</b> - These are maintenance transitions that take place automatically to reflect the operational state of a host. On a compute node in Available or Degraded state, the transition triggers the live migration of the active
+instances to another available compute node.</li>
+</ul>
+<p>
+  <xref type="section" href="#topic11233"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

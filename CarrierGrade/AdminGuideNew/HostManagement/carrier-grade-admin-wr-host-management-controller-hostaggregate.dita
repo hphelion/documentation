@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2139">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Working with Host Aggregates</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-controller-hostaggregate.md-->
+ <!--permalink: /helion/openstack/carrier/admin/host/management/hostaggregate/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>Host aggregates are collections of hosts that share common attributes for the purposes of VM scheduling.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>To view host aggregates, open the Host Aggregates page from the Admin menu.</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Host Aggregates</b> link.</p>
+</li>
+</ol>
+<p>When the Nova Scheduler selects a compute node to instantiate a VM, it can use host aggregates to narrow the selection.</p>
+<p>For example:</p>
+<ul>
+<li>If the VM requires local storage, the Nova scheduler selects a host from the <codeph>local_storage_hosts</codeph> host aggregate. </li>
+<li>Or, if the VM requires remote storage, the scheduler selects from
+the <codeph>remote_storage_hosts</codeph> host aggregate. This ensures that the instance is instantiated on a host that meets the requirements of the VM.</li>
+</ul>
+<p>The Nova scheduler does not always use host aggregates. For example, if a VM does not specify either local or remote storage, the Nova scheduler can instantiate it on any resource.</p>
+<p>Some host aggregates are managed automatically by HP Helion OpenStack Carrier Grade.</p>
+<p>
+<b>Caution:</b> Do not make manual changes to host aggregates that are managed automatically.</p>
+<p>The <codeph>local_storage_hosts</codeph> and <codeph>remote_storage_hosts</codeph> memberships are updated automatically whenever a local volume group is added or removed on a compute host. For more information, see Configuring a Compute Host to Provide Local Storage.</p>
+<p>You can use host aggregates to meet special requirements. For example, you can create a pool of compute hosts to offer dedicated resources such as pinned NUMA nodes or specific huge page sizes, while grouping the remaining compute hosts to offer shared resources.</p>
+<p>
+  <xref type="section" href="#topic2139"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

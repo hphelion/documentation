@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6151">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Working with Host Interfaces</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.md-->
+ <!--permalink: /helion/openstack/carrier/admin/host/management/inventory/interfaces/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>The <b>Interfaces</b> tab on the <b>Inventory Detail</b> page presents details about the logical L2 network interfaces on a node, as illustrated below for an unlocked controller node.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>On a properly configured compute node, the Interfaces tab presents additional logical interfaces, for a locked node.</p>
+<p>This topic covers the following:</p>
+<ul>
+<li>
+<xref type="section" href="#topic6151/view">Viewing interface details</xref>
+</li>
+<li>
+<xref type="section" href="#topic6151/creating">Creating an Interface Profile</xref>
+</li>
+<li>
+        <xref type="section" href="#topic6151/create">Creating a new interface</xref>
+      </li>
+<li>
+<xref type="section" href="#topic6151/editing">Editing Interface Details</xref>
+</li>
+</ul>
+<section id="view"> <title>Viewing interface details</title>
+<p>To view host interface information:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
+</li>
+<li>
+<p>Click the <b>Hosts</b> tab.</p>
+</li>
+<li>
+<p>In the Host Name column, click the name of the locked host to open the <b>Inventory Detail</b> page for that host.</p>
+</li>
+<li>
+<p>Click the <b>Interfaces</b> tab.</p>
+</li>
+</ol>
+<p>Information about interfaces is presented in several columns, as follows:</p>
+<ul>
+<li>
+<b>Name</b> - The name given to the logical L2 interface.</li>
+<li>
+<b>Network Type</b> - The type of network the logical network interface is connected to. The options are:
+
+<ul>
+<li>
+<b>data</b> for a compute node data interface</li>
+<li>
+<b>infra</b> for the optional infrastructure network</li>
+<li>
+<b>mgmt</b> for the internal management network</li>
+<li>
+<b>oam</b> for the OAM network</li>
+<li>
+<b>pci-passthrough</b> for a PCI passthrough interface</li>
+</ul>
+</li>
+<li>
+<b>Type</b> - Ethernet, or aggregated Ethernet (LAG).</li>
+<li>
+<b>Vlan ID</b> - The VLAN ID of the network listed in the Network Type column, if the network uses a shared interface. For more information about shared interfaces, see Shared (VLAN) Ethernet Interfaces.</li>
+<li>
+<b>Port(s)</b> - The physical ports on top of which the logical interface is built. Multiple ports are displayed when the logical interface uses LAG.</li>
+<li>
+<b>Uses</b> - The interface used by the network listed in the Network Type column, if the network uses a shared interface. The VLAN ID of the network is shown in the Vlan ID field.</li>
+<li>
+<b>Used By</b> - The networks that share the interface using VLAN tagging, if the interface is shared. For more information about shared interfaces, see Shared (VLAN) Ethernet Interfaces.</li>
+<li>
+<b>Provider Networks</b> - This option is relevant for compute nodes only, and for interfaces of the data network type. It lists the provider networks associated with the data interface.</li>
+<li>
+<b>Attributes</b> The current MTU size for the interface.</li>
+<li>
+<b>Actions</b> - On a locked node, you can modify a logical interface, and execute management operations on it. This is implemented using the buttons Edit Interface and More. These buttons are not available when the node is unlocked.</li>
+</ul>
+</section>
+<section id="creating"> <title>Creating an Interface Profile</title>
+<p>You can create a new interface profile out of the currently defined node interfaces.</p>
+<p>To create a host interface profile:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
+</li>
+<li>
+<p>Click the <b>Hosts</b> tab.</p>
+</li>
+<li>
+<p>In the Host Name column, click the name of the locked host to open the <b>Inventory Detail</b> page for that host.</p>
+</li>
+<li>
+<p>Click the <b>Interfaces</b> tab.</p>
+</li>
+<li>
+<p>Click <b>Create Interface Profile</b>.</p>
+</li>
+<li>
+<p>Enter a name for the new profile.</p>
+
+<p>Available interface profiles are listed, and can be removed, from the System Inventory page, as described in <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-hardware.dita" >Working with Hardware Profiles</xref>.</p>
+</li>
+<li>
+<p>Click <b>Create Interface Profile</b> to create the profile based on the interface and port configuration of the selected host.</p>
+</li>
+</ol>
+</section>
+<section id="create"> <title>Creating a new interface </title>
+<p>You can create new logical interfaces.</p>
+<p>To create a host interface:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
+</li>
+<li>
+<p>Click the <b>Hosts</b> tab.</p>
+</li>
+<li>
+<p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the host</xref> to make changes. Click <b>More</b> then select <b>Lock Host</b>.</p>
+
+<p>Wait for the host to be reported as Locked.</p>
+</li>
+<li>
+<p>In the Host Name column, click the name of the locked host to open the <b>Inventory Detail</b> page for that host.</p>
+</li>
+<li>
+<p>Click the <b>Interfaces</b> tab.</p>
+</li>
+<li>
+<p>Click <b>Create Interface</b>.</p>
+
+<p>This button is available only on nodes in the locked state.</p>
+</li>
+<li>
+<p>Specify the following in the <b>Create Interface</b> screen:</p>
+
+<ul>
+<li>
+<b>Interface Name</b> - Enter the name to be assigned to the new logical interface.</li>
+<li>
+<b>Interface Type</b> - Select the type of network interface: Ethernet or aggregated Ethernet (LAG).</li>
+<li>
+<b>Ports</b> - Select the physical ports for the new logical interface. Physical ports already allocated to other interfaces are not listed.</li>
+<li>
+<b>Network Type</b> - Select the type of network to attach the new logical interface to (<codeph>data</codeph> or <codeph>infra</codeph>, for compute node data interfaces and infrastructure network connections respectively). Note that connections to the OAM and internal management networks are auto-provisioned during the software installation process.</li>
+<li>
+<b>Provider Network(s)</b> - Select one or more provider networks for the new logical interface, for networks of type data. Provider networks already allocated to other data interfaces are not listed, since no provider network can be associated with more than a single data interface.</li>
+<li>
+<b>MTU</b> - Enter the MTU size in bytes for the interface. For compute nodes, values between 1500 and 9000 are supported. For controller and storage nodes, the MTU size cannot exceed 1500.</li>
+</ul>
+</li>
+<li>
+<p>Click <b>Create Interface</b>.</p>
+</li>
+</ol>
+<p>
+<b>Note:</b> Logical interfaces of network types <codeph>oam</codeph> and <codeph>mgmt</codeph> cannot be deleted. They can only be <xref type="section" href="#topic6151/editing">modified to use different physical ports</xref> when required.</p>
+</section>
+<section id="editing"> <title>Editing Interface Details</title>
+<p>You can edit existing logical interfaces.</p>
+<p>To edit a host interface:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
+</li>
+<li>
+<p>Click the <b>Hosts</b> tab.</p>
+</li>
+<li>
+<p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the host</xref> to make changes. Click <b>More</b> then select <b>Lock Host</b>.</p>
+
+<p>Wait for the host to be reported as Locked.</p>
+</li>
+<li>
+<p>For the interface to change, click <b>More</b> then <b>Edit</b>.</p>
+</li>
+<li>
+<p>In the Edit Interface screen, make changes to the fields, as described in <xref type="section" href="#topic6151/create">Creating a new interface details</xref>.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic6151"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

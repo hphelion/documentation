@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2992">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: The Life Cycle of a Host System</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-lifecycle.md-->
+ <!--permalink: /helion/openstack/carrier/admin/host/management/lifecycle/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>The life cycle of a host is the set of state transitions the host goes through as its current state changes. The host states in the HP Helion OpenStack Carrier Grade are based on the ITU X.731 State Management Function Specification for Open Systems.</p>
+<p>The current state of a host is determined by the allowed combinations of the administrative, operational, and availability states at any given time. The following figure illustrates the life cycle of a host.</p>
+<p>The description that follows uses the availability states only.</p>
+<p>The life cycle of a new host starts when it is discovered by the active controller on the internal management network.</p>
+<p>A new host is initially reported as Offline. As an exception, the first controller, controller-0, is automatically set to available during initial commissioning. The following are the available transitions. Numbers are attached to them for easier reference:</p>
+<ul>
+<li>
+<b>Offline to Online</b> -  This transition takes place once the administrator configures the host name and personality of the host. During the transition, the HP Helion OpenStack Carrier Grade software is installed and the host reboots. The transition concludes when the controller establishes maintenance and inventory connectivity with the new host.</li>
+<li>
+<b>Online to InTest</b> - This transition takes place when the administrator requests to move the host from the locked to the unlocked
+administrative states. The host reboots first. After it finishes booting, it establishes maintenance communication and enters the transient InTest state. 
+While in this state, the configuration is applied, and a set of hardware and software tests are executed to ensure the integrity of the host.</li>
+<li>
+<b>InTest to Available, Degraded, or Failed</b> - The transition is initiated automatically after the activities in the transient state inTest are complete. Depending on the outcome, the host goes into one the three states.</li>
+<li>
+<b>Failed to InTest</b> - This is a value-added maintenance transition that the HA framework executes automatically to recover failed
+hosts.</li>
+<li>
+<b>Available to/from Degraded, Available to Failed, and Degraded to Failed</b> These are transitions that may occur at any time due to changes on the operational state and faults on unlocked hosts.</li>
+<li>
+<b>Available, Degraded, or Failed, to Offline</b> - These are maintenance transitions that take place automatically to reflect the operational state of a host.
+On a compute node in Available or Degraded state, the transition triggers the live migration of the active instances to another available compute node.</li>
+</ul>
+<p>
+  <xref type="section" href="#topic2992"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>
