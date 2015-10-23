@@ -84,6 +84,16 @@
               </ol><note>Due to load balancing, your account may be provisioned to use US East
                 instead of US West. If <uicontrol>Launch Instance</uicontrol> is disabled in the
                   <uicontrol>Instances</uicontrol> pane, try the other region.</note></li>
+            <li>Ensure that you have at least 16GB of RAM.<ol id="ol_m1h_dmv_tt">
+                <li>To view your current limits, click <menucascade>
+                    <uicontrol>Project</uicontrol>
+                    <uicontrol>Compute</uicontrol>
+                    <uicontrol>Overview</uicontrol>
+                  </menucascade>.</li>
+                <li>If you have fewer than 15GB of RAM, request additional resources by emailing
+                    <xref href="mailto:billing@hpcloud.com" format="html" scope="external"
+                    >billing@hpcloud.com</xref>.</li>
+              </ol></li>
           </ol><b>Downloading the Configuration File and Key Pair</b><ol id="ol_gy1_f1q_tt">
             <li>To download the <filepath>.sh</filepath> configuration file, click <menucascade>
                 <uicontrol>Project</uicontrol>

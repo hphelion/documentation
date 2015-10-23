@@ -32,8 +32,14 @@
           </row>
           <row>
             <entry><codeph>openstack_keypair</codeph></entry>
-            <entry>The location and name of the key pair file you have obtained from <keyword
-                keyref="pubCloudShort"/></entry>
+            <entry>The location and name of the key pair you have created on <keyword
+                keyref="pubCloudShort"/><note type="tip">To find your key pair, on the left panel
+                click <menucascade>
+                  <uicontrol>Project</uicontrol>
+                  <uicontrol>Computer</uicontrol>
+                  <uicontrol>Access &amp; Security</uicontrol>
+                  <uicontrol>Key Pairs</uicontrol>
+                </menucascade>.</note></entry>
           </row>
           <row>
             <entry><codeph>openstack_network_id</codeph></entry>
@@ -45,8 +51,25 @@
                 </menucascade> and then click the name of your network.</note></entry>
           </row>
           <row>
+            <entry><codeph>openstack_network_name</codeph></entry>
+            <entry>The name of your network</entry>
+          </row>
+          <row>
+            <entry><codeph>openstack_region</codeph></entry>
+            <entry>Your region, <codeph>us-east</codeph> by default</entry>
+          </row>
+          <row>
+            <entry><codeph>cluster_admin_username</codeph></entry>
+            <entry>The username for your cluster</entry>
+          </row>
+          <row>
+            <entry><codeph>cluster_admin_password</codeph></entry>
+            <entry>The password for your cluster</entry>
+          </row>
+          <row>
             <entry><codeph>key_file</codeph></entry>
-            <entry>The location and name of your private key file</entry>
+            <entry>The location and name of the private key file that you have downloaded after
+              creating your key pair on <keyword keyref="pubCloudShort"/></entry>
           </row>
           <row>
             <entry><codeph>router_ssl_cert_file</codeph></entry>
@@ -54,7 +77,7 @@
           </row>
           <row>
             <entry><codeph>router_ssl_key_file</codeph></entry>
-            <entry>The location qand name of the router SSL key file</entry>
+            <entry>The location and name of the router SSL key file</entry>
           </row>          
         </tbody>
       </tgroup>
@@ -62,9 +85,13 @@
     <example>
       <title>A sample <codeph>.tfvars</codeph> file</title>
       <codeblock>openstack_availability_zone = "az1"
-openstack_keypair = "myKeyPair.key"
+openstack_keypair = "myKeyPair"
 openstack_network_id = "738e0ea9-98f9-471f-8c46-f2796c367b87"
-key_file = "/home/myUsername/.ssh/id_rsa"           
+openstack_network_name = "myNetwork"
+openstack_region = "us-west"
+cluster_admin_username = "myClusterUsername"
+cluster_admin_password = "myClusterPassword123"
+key_file = "myKeyFile.pem"           
 router_ssl_cert_file = "/etc/ssl/certs/SSL.crt"
 router_ssl_key_file = "/etc/ssl/private/SSL.key"</codeblock>
     </example>
