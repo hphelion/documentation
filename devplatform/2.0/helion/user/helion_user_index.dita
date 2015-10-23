@@ -135,9 +135,6 @@ web server, application dependencies, databases, and other services.</p>
 <li>
 <xref href="../user/deploy/app-logs.dita">Application Logs</xref>
 </li>
-<li>
-<xref href="../user/deploy/newrelic.dita">New Relic Monitoring</xref>
-</li>
 </ul>
 </section>
 <section id="management-console"> <title>Management Console</title>

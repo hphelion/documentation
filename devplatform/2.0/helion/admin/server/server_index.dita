@@ -99,11 +99,7 @@ status checks. For a complete list of options, see the <xref href="../reference/
                     href="operations.dita#topic4410/management-console"
                     type="section">Management Console</xref>
                 </li>
-                <li>
-                  <xref
-                    href="operations.dita#topic4410/new-relic"
-                    type="section">New Relic</xref>
-                </li>
+       
                 <li>
                   <xref
                     href="operations.dita#topic4410/creating-an-admin-user"

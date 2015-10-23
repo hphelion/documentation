@@ -140,9 +140,7 @@ web server, application dependencies, databases, and other services.</p>
 <li>
           <xref href="app-logs.dita#topic5165" type="section"  >Application Logs</xref>
         </li>
-<li>
-          <xref href="newrelic.dita#topic5392" type="section"  >New Relic Monitoring</xref>
-        </li>
+
 </ul>
 </section>
 <section id="management-console"> <title>Management Console</title>

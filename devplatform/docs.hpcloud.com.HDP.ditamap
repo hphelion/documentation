@@ -215,8 +215,6 @@
       <topicref href="2.0/helion/user/deploy/buildpack.dita" locktitle="yes" navtitle="Buildpacks"/>
       <topicref href="2.0/helion/user/deploy/manifestyml.dita" locktitle="yes"
         navtitle="Manifest.yml Options"/>
-      <topicref href="2.0/helion/user/deploy/newrelic.dita" locktitle="yes"
-        navtitle="New Relic Monitoring"/>
       <topicref href="2.0/helion/user/deploy/orgs-spaces.dita" locktitle="yes"
         navtitle="Organizations and Spaces"/>
     </topicref>

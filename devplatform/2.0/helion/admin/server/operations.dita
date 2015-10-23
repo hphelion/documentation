@@ -28,9 +28,6 @@
         <xref type="section" href="#topic4410/management-console">Management Console</xref>
       </li>
       <li>
-        <xref type="section" href="#topic4410/new-relic">New Relic</xref>
-      </li>
-      <li>
         <xref type="section" href="#topic4410/creating-an-admin-user">Creating an Admin User</xref>
       </li>
       <li>
@@ -116,12 +113,7 @@ kato node setup micro</codeblock>
         </xref>has a Settings page that allows an administrator to monitor the server component and
         services, and restart or stop services as necessary.</p>
     </section>
-    <section id="new-relic">
-      <title>New Relic</title>
-      <p>Please see <xref href="../best-practices/best_practices_index.dita#topic16169"><i>New Relic
-            Server Monitoring</i></xref> . New Relic can also be used to <xref
-          href="../../user/deploy/newrelic.dita" type="section">monitor apps</xref>.</p>
-    </section>
+
     <section id="creating-an-admin-user">
       <title>Creating an Admin User</title>
       <p>The easiest way to add admin users to Application Lifecycle Service is via the Management

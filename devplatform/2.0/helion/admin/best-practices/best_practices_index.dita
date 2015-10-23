@@ -85,9 +85,6 @@
           </li>
         </ul></li>
 <li>
-<xref type="section" href="#topic16169/server-monitoring-with-new-relic">Server Monitoring with New Relic</xref>
-</li>
-<li>
 <xref type="section" href="#topic16169/system-monitoring-with-nagios">System Monitoring with Nagios</xref>
 </li>
 </ul>
@@ -322,9 +319,7 @@ some shell operations performed in the export require <codeph>sudo</codeph> when
 <li>snapshot all nodes simultaneously</li>
 </ul>
 </section>
-<section id="server-monitoring-with-new-relic"> <title>Server Monitoring with New Relic</title>
-<p>To use New Relic for server monitoring, you'll need a <xref href="http://newrelic.com/" scope="external" format="html" >New Relic account</xref> and a License Key. Install the <codeph>newrelic-sysmond</codeph> package and start the monitoring daemon on each Application Lifecycle Service VM as per the <xref href="http://docs.newrelic.com/docs/server/server-monitor-installation-ubuntu-and-debian" scope="external" format="html" >New Relic Server Monitor installation (Ubuntu)</xref> instructions.</p>
-</section>
+
 <section id="system-monitoring-with-nagios"> <title>System Monitoring with Nagios</title>
 <p>Though Application Lifecycle Service has an internal mechanism for supervising processes on a server or cluster (<xref href="http://supervisord.org/" scope="external" format="html" >Supervisor</xref>), it is
 advisable to add some external monitoring for production systems. <xref href="http://www.nagios.org/" scope="external" format="html" >Nagios</xref> is a free, open source system monitoring tool that can provide this external monitoring.</p>
