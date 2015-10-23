@@ -162,7 +162,7 @@
               <ul>
                 <li><xref href="#input_model/co_bonddata">Bond Data</xref></li>
               </ul></li>
-            <li><xref href="#input_model/co_nicmapping">NIC Mapping</xref></li>
+            <li><xref href="#input_model/co_nicmappings">NIC Mappings</xref></li>
             <li><xref href="#input_model/co_networkgroups">Network Groups</xref>
               <ul>
                 <li><xref href="#input_model/co_networktags">Network Tags</xref></li>
@@ -188,7 +188,7 @@
                 <li><xref href="#input_model/persistedaddressallocations">Persisted Address
                     Allocations</xref></li>
               </ul></li>
-            <li><xref href="#input_model/serverallocations">Server Allocation</xref></li>
+            <li><xref href="#input_model/serverallocation">Server Allocation</xref></li>
             <li><xref href="#input_model/servernetworkselection">Server Network
               Selection</xref></li>
             <li><xref href="#input_model/networkroutevalidation">Network Route
@@ -689,7 +689,7 @@
             <row>
               <entry>hostname-data (optional)</entry>
               <entry>Provides control over some parts of the generated names (see <xref
-                  href="#input_model/5.1_NameGeneration">Name Generation</xref>) <p>Consists of two
+                  href="#input_model/namegeneration">Name Generation</xref>) <p>Consists of two
                   values: <ul>
                     <li>host-prefix - default is to use the cloud name (above)</li>
                     <li>member-prefix - default is "-m"</li>
@@ -788,7 +788,7 @@
               <row>
                 <entry>control-plane-prefix (optional)</entry>
                 <entry>The control-plane-prefix is used as part of the hostname (see <xref
-                    href="#input_model/5.1_NameGeneration">Name Generation</xref>). If not
+                    href="#input_model/namegeneration">Name Generation</xref>). If not
                   specified, the control plane name is used.</entry>
               </row>
               <row>
@@ -1589,7 +1589,7 @@
         </table>
       </p>
     </section>
-    <section id="bonddata"><title>Bond Data</title>
+    <section id="co_bonddata"><title>Bond Data</title>
       <p>A <uicontrol>bond-data</uicontrol> definition is used to configure a bond device, and
         consists of the following attributes:</p>
       <p>
@@ -2270,7 +2270,7 @@
       </table>
       </p>
     </section>
-    <section id="rule">
+    <section id="co_rule">
       <title>Rule</title>
       <p>Each rule in the list takes the following parameters (which match the parameters of a
         Neutron security group rule):</p>
@@ -2414,7 +2414,7 @@
 
 
 
-    <section id="o_resourceodes"><title>Resource Nodes</title>
+    <section id="o_resourcenodes"><title>Resource Nodes</title>
       <p>Names generated for servers in a resource group have the following form:</p>
       <p><codeblock>&lt;cloud>-&lt;control-plane>-&lt;resource-prefix>&lt;member_id>-&lt;network></codeblock></p>
       <p>Example: <codeph>helion-cp1-comp0001-mgmt</codeph></p>
@@ -2937,7 +2937,7 @@ attach in the interface model used by the servers.
             - helion-ccp-comp0003</codeblock>
     </section>
 
-    <section id="neutronprovidervlans"><title>Configuring Neutron Provider VLANs</title>
+    <section id="configneutronprovidervlans"><title>Configuring Neutron Provider VLANs</title>
       <p>Neutron provider VLANs are networks that map directly to an 802.1Q VLAN in the cloud
         provider’s physical network infrastructure. There are four aspects to a provider VLAN
         configuration:</p>
