@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_jv4_q1t_tt">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Troubleshooting the VSA</title>
+  <body>
+    <p>You can use this guide to help you identify and resolve basic problems you may be
+      experiencing with VSA. It contains following troubleshooting scenarios:</p>
+    <section>Boot from volume fails if you are using a separate iSCSI network.<p>Description: When
+        using a separate iSCSI network, if that network is not associated with the controllers (now
+        using the force_network_groups option) then boot from the volumes would fail (Cinder post
+        installation troubleshooting)</p></section>
+    <section>dd<p><b>Description</b>:  If the VSA cluster name is not defined correctly or using the
+        wrong VSA cluster name/IP then  cinder volume creation will
+        fail</p><p>Resolution:</p><p>Perform the following steps:<ol id="ol_od3_xct_tt">
+          <li>Using the following command, login to CMC
+            console.<codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock></li>
+          <li>Enter the login credentials to login to Management Group.<p><image
+                href="../../media/vsa/login_id_cmc.png" id="image_lgp_12t_tt"/></p></li>
+          <li>Click Log In. The following page is displayed:<p><image
+                href="../../media/vsa/login_screen_mgmt.png" id="image_cf4_mft_tt"/></p></li>
+          <li>Click <b>mgmt1</b> on the left hand side of  the HP Store Virtual Centralized
+            Management Console screen.</li>
+        </ol></p></section>
+  </body>
+</topic>

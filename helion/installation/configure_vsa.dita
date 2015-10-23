@@ -6,17 +6,14 @@
   <body><!--Needs Edit-->
     <section id="about">
       <p>This page describes how to configure your VSA backend for the Helion Entry Scale Cloud with
-        KVM model.<note type="attention">Discovery functionality of VSA nodes using CMC controller node is not
-          recommended in HP Helion OpenStack 2.0. User needs to manually add VSA and create a
-          cluster.</note></p>
+        KVM model.</p>
     </section>
     <section id="prereq"><title>Pre-requisites</title>
       <p>
         <ul>
-          <li>The Entry Scale Cloud with VSA cloud model should must be deployed. For more details
-            on the installation of Entry Scale Cloud with VSA cloud model refer <xref
-              href="http://docs-staging.hpcloud.com/hos2.0ga/helion/installation/install_entryscale_kvm.html"
-              format="html" scope="external">here</xref></li>
+          <li>The Entry Scale Cloud with VSA cloud model should be deployed. For more details on the
+            installation of Entry Scale Cloud with VSA cloud model refer <xref
+              href="install_entryscale_kvm.dita#install_kvm">here</xref></li>
           <li>Collect the IP address of the VSA VM and Cluster VIP allocated from the<codeph>
               ~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph> file. This file is
             generated as part of output of the configuration processor during installation. You need
@@ -61,9 +58,9 @@ Starting applications specified in /home/stack/.vnc/xstartup
 Log file is /home/stack/.vnc/helion-cp1-c1-m1-mgmt:3.log</codeblock><note>If
             you directly use xrdp to connect to the first controller node without using the VNC
             server then a remote session is created whenever you login. To avoid this, a dedicated
-            VNC server instance is launched and connected to that instance by xrdp. This helps
-            session to remain
-          maintained.</note><!--NOte that you can directly use xrdp to connect to he first controller withput using vnc server but this result in  creating a remote sessioneverytime u login. In order to avoid this we launch a dedicated VNC server instance and connct to that instance by xrdp. This way the session will be maintained.--></li>
+            VNC server instance is launched and connected to that instance by xrdp. This helps to
+            maintain the
+          session.</note><!--NOte that you can directly use xrdp to connect to he first controller withput using vnc server but this result in  creating a remote sessioneverytime u login. In order to avoid this we launch a dedicated VNC server instance and connct to that instance by xrdp. This way the session will be maintained.--></li>
         <li>Run <codeph>netstat -anp | grep vnc</codeph> to determine the public port. In the
           example below, the port is 5903: <codeblock>stack@helion-cp1-c1-m1-mgmt:~$ netstat -anp | grep vnc
 (Not all processes could be identified, non-owned process info
@@ -110,7 +107,10 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
           <li>Open
               CMC.<codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock><p>By
               default, the CMC is configured to discover the StoreVirtual nodes in the subnet in
-              which it is installed. You can manually add the nodes also.</p></li>
+              which it is installed. You can manually add the nodes also.<note type="attention"
+                >Discovery functionality of VSA nodes using CMC controller node is not recommended
+                in HP Helion OpenStack 2.0. User needs to manually add VSA and create a
+                cluster.</note></p></li>
           <li>In the CMC UI, click <b>Find</b> and then click <b>Find Systems</b> from the left
             panel. Find Systems dialogue box is displayed.</li>
           <li>You can choose <b>Add</b> or <b>Find</b> option to search the system. Find option
@@ -155,14 +155,26 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
     </section>
     <section>
       <title>Configure VSA as a Cinder Backend</title>
-      <note>The default volume type created by VSA will be thin provisioned and will have no fault
-        tolerance. You should configure cinder to fully provision volumes, and you may also want to
-        configure fault tolerance. Follow the instructions detailed at <xref
-          href="../blockstorage/verify_backend_configuration.dita#topic_q5q_trz_jt">Creating Volume
-          type</xref> to create a new volume type which is fully provisioned and fault
-        tolerant.</note>
-      <p>You must modify <codeph>cinder.conf.j2</codeph> to update VSA cluster. </p>
-      <p>Perform the following steps to update the VSA cluster: <ol>
+      <note>
+        <ul id="ul_l2l_kpt_tt">
+          <li>The default volume type created by VSA will be thin provisioned and will have no fault
+            tolerance (RAID 0). You should configure cinder to fully provision volumes, and you may
+            also want to configure fault tolerance. Follow the instructions detailed at <xref
+              href="../blockstorage/verify_backend_configuration.dita#topic_q5q_trz_jt">Creating
+              Volume type</xref> to create a new volume type which is fully provisioned and fault
+            tolerant.</li>
+          <li>You can create different volume types with different attributes.</li>
+        </ul>
+      </note>
+      <p><b>Prerequisite</b>:</p>
+      <p>The license for the StoreVirtual VSA license is bundled with HP Helion OpenStack and has a
+        maximum limit of 50 TB per node. Hence the total amount of the configured storage on an
+        individual StoreVirtual node should not exceed 50 TB. To extend the 50 TB per node limit,
+        you can add nodes. A VSA cluster can support up to 16 nodes, which means configured storage
+        on a VSA cluster can be as much as 800 TB.</p>
+      <p>To update your cinder configuration to add VSA storage you must modify
+          <codeph>cinder.conf.j2</codeph> .</p>
+      <p>Perform the following steps to update <codeph>cinder.conf.j2</codeph> with VSA cluster: <ol>
           <li>Login to deployer node.</li>
           <li>Edit <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> to add VSA data
             as follows:
@@ -197,8 +209,28 @@ default_volume_type = &lt;your new volume type></codeblock></p></li>
                 ISCSI connection.</li>
               <li>volume_backend_name: Name of the backend.</li>
               <li>volume_driver: Cinder volume driver.</li>
-              <li>hplefthand_debug: If you set this option as true then it collects log in the debug mode.<p>
-                  <note> Please enter the parameter values which are specific to your environment.
+              <li>hplefthand_debug: If you set this option as true then the cinder driver for the
+                VSA will generate logging in debug mode; these logging entries can be found in
+                  <b>cinder-volume.log</b>.<p>
+                  <note>
+                    <ul id="ul_dt5_5jt_tt">
+                      <li>Please enter the parameter values which are specific to your environment.  </li>
+                      <li>Suppose you forget the cluster name/IP after creating the cluster then
+                        perform the following steps:<ol id="ol_mjs_wjt_tt">
+                          <li>Login to CMC console using <codeph>
+                              /opt/HP/StoreVirtual/UI/jre/bin/java -jar
+                              /opt/HP/StoreVirtual/UI/UI.jar</codeph> command.</li>
+                          <li>Login to Management group.</li>
+                          <li>On the left side of the  <b>HP Store Virtual Centralized Management
+                              Console</b> screen, click <b>mgmt</b>.  It expands and you will be
+                            able to see the cluster name.</li>
+                          <li>Click  cluster name.  The page in the right hand side gets loaded with
+                            the cluster information.</li>
+                          <li>Click iSCSI on the right hand side of the page. Virtual IP address
+                            will be displayed in the tabular form. Therefore, you can view your
+                            cluster ID here.</li>
+                        </ol></li>
+                    </ul>
                   </note>
                 </p></li>
             </ul><note type="important">HP Helion OpenStack 2.0 supports VSA deployment for KVM only
@@ -245,23 +277,19 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
     </p>
-    <p>After the successful configuration of VSA as a cinder backend you can launch the
-      <!--Hence, cinder is successfully configured. Now launch the--> Horizon dashboard to create a
-      cinder volume type for VSA as backend. Once you are able to create the volume you can perform
-      the OpenStack Operations. Also, you can verify the cinder volume creation for VSA by logging
-      in <xref href="../blockstorage/verify_backend_configuration.dita">Horizon
-      Dashboard</xref>.</p>
+    <p><!--After the successful configuration of VSA as a cinder backend you can launch the Hence, cinder is successfully configured. Now launch the Horizon dashboard to create a cinder volume type for VSA as backend.-->
+      <!--Once you are able to create the volume you can perform the OpenStack Operations. Also, you can verify the cinder volume creation for VSA by logging in <xref href="../blockstorage/verify_backend_configuration.dita">Horizon Dashboard</xref>.--></p>
     <note type="important">You can create more than one VSA cluster of same or different type by
       specifying the configuration in cloud model. For more details, refer <xref
         href="../blockstorage/vsa/vsa_create_multiple_clusters.dita">Modifying Cloud Model to Create
         Multiple Clusters</xref>.</note>
     <section id="deploy-vsa-with-ao-without-ao">
       <title>VSA with AO and without AO</title>
-      <p>VSA is deployed with adoptive optimization (AO) and without AO. AO allows built-in storage
+      <p>VSA is deployed with adaptive optimization (AO) or without AO. AO allows built-in storage
         tiering for VSA. While deploying VSA with or without AO you must ensure to use the
         appropriate disk input model.</p>
-      <p>VSA with AO will have extra disk section with the marked usage of adoptive-optimization as
-        mentioned in the following example:
+      <p>If you are using VSA with AO, you will have an extra device group section where the usage
+        is identified as adaptive-optimization as described in the following example:
         <codeblock>Additional disks can be added if available
           device_groups:
             - name: vsa-data
@@ -280,7 +308,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
                 usage: <b>adaptive-optimization</b>
               devices:
                 - name: /dev/sdb</codeblock></p>
-      <p>VSA without AO consist of  only data disks as mentioned in the following example:
+      <p>VSA without AO consists of only data disks as described in the following example:
         <codeblock>Additional disks can be added if available
               device_groups:
                 - name: vsa-data
