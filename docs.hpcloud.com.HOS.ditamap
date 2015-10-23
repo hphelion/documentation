@@ -14,7 +14,7 @@
       </vrmlist>
     </prodinfo>
   </topicmeta>
-  <topicref href="home.dita"/>
+  
   <topicref href="helion/index.dita">
     <topicref href="helion/technical_overview.dita" navtitle="Technical Overview" locktitle="yes"/>
     <topicref href="helion/kilo_features.dita" navtitle="Kilo Features"
@@ -126,7 +126,7 @@
           <topicref href="helion/objectstorage/creating_roles_swift_nodes.dita"/>
           <topicref href="helion/objectstorage/allocating_disk_drives.dita"
             navtitle="Allocating Disk Drives">
-            <b>Swift Device Groups</b>
+           
             <topicref href="helion/objectstorage/label_on_partition.dita" toc="yes"
               navtitle="How to Verify if a Partition Labelled" locktitle="yes"/>
             <topicref href="helion/objectstorage/filesystem_label.dita" toc="yes"

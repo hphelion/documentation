@@ -3,7 +3,7 @@
 <topic id="install_overview">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation Overview</title>
   <body>
-    <!--Needs Edit-->
+    
     <section id="about"><title>Helion OpenStack 2.0 Installation</title>
       <p>Beginning with HP Helion OpenStack 2.0 Beta 2, you have two options for installing your
         cloud. You can use a GUI that runs in your web browser or you can install via a CLI that
@@ -25,7 +25,7 @@
       <li><xref href="../gui_installer.dita#install_gui">Installing via the GUI</xref></li>
     </ul>
     <section>Note that reconfiguration of your cloud, at the moment, is done via the CLI. The GUI
-      installer is for first-time installation. </section>
+      installer is for first-time installation only. </section>
     <section>You should use the CLI if: <ul id="ul_wbl_2lw_kt">
         <li>You are installing a more complex or large-scale cloud. </li>
         <li>You have more than about 15 nodes. </li>
@@ -35,7 +35,7 @@
         <li>You want to customize the cloud configuration beyond the tuned defaults that HP provides
           out of the box. </li>
         <li>You need deeper customizations than are possible to express using the GUI.</li>
-      </ul> Instructions for installing via the CLI are here</section>
+      </ul> Instructions for installing via the CLI are here:</section>
     <section>
       <ul>
         <li><xref href="install_entryscale_kvm.dita">Baremetal Install for KVM
@@ -46,13 +46,13 @@
       <p>Other useful documents that will help you understand, plan, configure, and install your
         cloud are listed below.</p>
       <ul id="ul_adl_2lw_kt">
-        <li><xref href="beta1_to_beta2_upgrade.dita">Upgrading from Beta 1 to Beta 2</xref></li>
-        <li><xref href="using_git.dita">Using Git for Configuration Manqagement</xref></li>
+        <!--<li><xref href="beta1_to_beta2_upgrade.dita">Upgrading from Beta 1 to Beta 2</xref></li>-->
+        <li><xref href="using_git.dita">Using Git for Configuration Management</xref></li>
         <li><xref href="preinstall_checklist.dita">Pre-Installation Checklist</xref></li>
-        <li><xref href="install_entryscale_kvm.dita">Baremetal Install for KVM
+        <!--<li><xref href="install_entryscale_kvm.dita">Baremetal Install for KVM
           Hypervisor</xref></li>
         <li><xref href="install_entryscale_esx.dita">Baremetal Install for ESX
-          Hypervisor</xref></li>
+          Hypervisor</xref></li>-->
         <li><xref href="installation_troubleshooting.dita">Troubleshooting Your
           Installation</xref></li>
         <li><xref href="installation_verification.dita">Verifying Your Installation</xref></li>

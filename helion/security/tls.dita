@@ -48,9 +48,9 @@
 
 </section>
       <section><title>Creating a self-signed certificate</title> If you want to install a
-      self-signed certificate that meets the needs of a production environment, as well as HP Helion
-      OpenStack and HP Helion Development Platform, follow these steps to create the cert, and then
-      install it by following the installation steps.<ol id="ol_wmt_wsp_tt">
+      self-signed certificate that meets the needs of  HP Helion OpenStack and HP Helion Development
+      Platform, follow these steps to create the cert, and then install it by following the
+      installation steps.<ol id="ol_wmt_wsp_tt">
         <li>Create a Certificate Signing Request (CSR) with a defined subject:
           <codeblock>openssl req -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.csr -text \
         -subj '/C=US/O=Helion Test Certificate/CN=your.domain.com/emailAddress=test@ficticious.org/'</codeblock>
