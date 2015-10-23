@@ -2,7 +2,7 @@
 <!--This work by HP Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.-->
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="input_model">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Input Model</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Input Model</title>
   <conbody>
     <section id="toc"><title>Table of Contents</title>
       <!--
@@ -465,7 +465,8 @@
         a failure zone consisting of multiple racks, each of which in turn contains a number of
           <uicontrol>servers</uicontrol>.</p>
       <p><image href="../media/inputmodel/hphelionopenstack_servergroups.png"/></p>
-      <!-- NEED DOWNLOAD LINK -->
+      <p><xref href="../media/inputmodel/hphelionopenstack_servergroups_lg.png" scope="external"
+          format="html">Download a high-res version</xref></p>
       <p>When allocating <uicontrol>servers</uicontrol>, the Configuration Processor will traverse
         down the hierarchy of <uicontrol>server-groups</uicontrol> listed as failure zones until it
         can find an available server with the required <uicontrol>server-role</uicontrol>. If the
@@ -788,8 +789,8 @@
               <row>
                 <entry>control-plane-prefix (optional)</entry>
                 <entry>The control-plane-prefix is used as part of the hostname (see <xref
-                    href="#input_model/namegeneration">Name Generation</xref>). If not
-                  specified, the control plane name is used.</entry>
+                    href="#input_model/namegeneration">Name Generation</xref>). If not specified,
+                  the control plane name is used.</entry>
               </row>
               <row>
                 <entry>region-name</entry>
@@ -1207,7 +1208,7 @@
         <ul>
           <li>Disk model (see <xref href="#input_model/co_diskmodels">Disk Models</xref>)</li>
           <li>Interface model (see <xref href="#input_model/co_interfacemodels">Interface
-            Models</xref>)</li>
+              Models</xref>)</li>
         </ul>
       </p>
       <p>Server roles are referenced in the servers (see <xref href="#input_model/co_servers"
@@ -2233,41 +2234,41 @@
          port-range-max: 0
          protocol: icmp</codeblock>
       <p>
-      <table frame="all" rowsep="1" colsep="1" id="table_zxz_yrk_tt">
-        <tgroup cols="2">
-          <colspec colname="c1" colnum="1"/>
-          <colspec colname="c2" colnum="2"/>
-          <thead>
-            <row>
-              <entry>Key</entry>
-              <entry>Value Description</entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry>name</entry>
-              <entry>An administrator-defined name for the group of rules.</entry>
-            </row>
-            <row>
-              <entry>network-groups</entry>
-              <entry>A list of <uicontrol>network-group</uicontrol> names that the rules apply to. A
-                value of "all" matches all network-groups.</entry>
-            </row>
-            <row>
-              <entry>final (optional)</entry>
-              <entry>If "true", these rules are applied at the end of any other user-defined rules.
-                If not specified, this defaults to <b>false</b>. The deny-all rule, which turns the
-                firewall on, must have this value set to true.</entry>
-            </row>
-            <row>
-              <entry>rules</entry>
-              <entry>A list of rules. Rules are applied in the order in which they appear in the
-                list, apart from the control provided by the "final" option (see above). The order
-                between sets of rules is indeterminate.</entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table>
+        <table frame="all" rowsep="1" colsep="1" id="table_zxz_yrk_tt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>An administrator-defined name for the group of rules.</entry>
+              </row>
+              <row>
+                <entry>network-groups</entry>
+                <entry>A list of <uicontrol>network-group</uicontrol> names that the rules apply to.
+                  A value of "all" matches all network-groups.</entry>
+              </row>
+              <row>
+                <entry>final (optional)</entry>
+                <entry>If "true", these rules are applied at the end of any other user-defined
+                  rules. If not specified, this defaults to <b>false</b>. The deny-all rule, which
+                  turns the firewall on, must have this value set to true.</entry>
+              </row>
+              <row>
+                <entry>rules</entry>
+                <entry>A list of rules. Rules are applied in the order in which they appear in the
+                  list, apart from the control provided by the "final" option (see above). The order
+                  between sets of rules is indeterminate.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
       </p>
     </section>
     <section id="co_rule">
