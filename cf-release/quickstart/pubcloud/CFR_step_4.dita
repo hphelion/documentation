@@ -53,7 +53,7 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
               contain the credentials and keys for your cluster.</li>
             <li>Configure the necessary values in your <filepath>.tfvars</filepath> file, using the
               included <filepath>overrides.tfvars.sample</filepath> file as a guide.<note type="tip"
-                >For more information, see <xref href="CFR_TF_vars.dita#reference_phl_shc_rt"
+                >For more information, see <xref href="../../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt"
                   >Terraform Variables</xref>.</note></li>
             <li>Run the following
                 command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><p>Terraform
