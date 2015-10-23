@@ -208,12 +208,10 @@ cf target -o <varname>&lt;organization></varname> -s <varname>&lt;space></varnam
                   scope="external">Show Environment Variables</xref> (Node.js)</li>
               <li><xref href="https://github.com/Stackato-Apps/go-env" format="html"
                   scope="external">Show Environment Variables</xref> (Go)</li>
-            </ul></p><draft-comment author="michaelk">
-            <ul id="ul_sx2_bzw_tt">
+            </ul></p><draft-comment author="michaelk">This does not work.<ul id="ul_sx2_bzw_tt">
               <li><xref href="https://github.com/hpcloud/python-env" format="html" scope="external"
                   >Show Environment Variables</xref> (Python)</li>
-            </ul>
-          </draft-comment><xref href="CFR_step_6.dita#concept_m3k_bth_tt">
+            </ul></draft-comment><xref href="CFR_step_6.dita#concept_m3k_bth_tt">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
           </xref></stentry>
    </strow>
