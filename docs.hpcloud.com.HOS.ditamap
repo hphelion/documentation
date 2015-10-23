@@ -126,11 +126,13 @@
           <topicref href="helion/objectstorage/creating_roles_swift_nodes.dita"/>
           <topicref href="helion/objectstorage/allocating_disk_drives.dita"
             navtitle="Allocating Disk Drives">
+            <b>Swift Device Groups</b>
             <topicref href="helion/objectstorage/label_on_partition.dita" toc="yes"
               navtitle="How to Verify if a Partition Labelled" locktitle="yes"/>
             <topicref href="helion/objectstorage/filesystem_label.dita" toc="yes"
               navtitle="How to Verify if a Filesystem Label" locktitle="yes"/>
           </topicref>
+          <topicref href="helion/objectstorage/swift_device_group.dita"/>
           <topicref href="helion/objectstorage/creating_pac_cluster.dita"/>
           <topicref href="helion/objectstorage/creating_object_server_resource.dita"/>
           <topicref href="helion/objectstorage/allocating_network.dita"/>

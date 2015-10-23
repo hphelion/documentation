@@ -6,6 +6,10 @@
             <serialized version="16.1" xml:space="preserve">
                 <serializableOrderedMap>
                     <entry>
+                        <String>keys.context</String>
+                        <String>${pdu}/docs.hpcloud.com.HOS.ditamap</String>
+                    </entry>
+                    <entry>
                         <String>validation.scenarios</String>
                         <validationScenario-array/>
                     </entry>
@@ -26,6 +30,6 @@
         <folder path="pdf_sources/"/>
         <folder path="publiccloud/"/>
         <folder path="unusedgraphics/"/>
- <folder path="cloudsystem/"/>
+        <folder path="cloudsystem/"/>
     </projectTree>
 </project>
