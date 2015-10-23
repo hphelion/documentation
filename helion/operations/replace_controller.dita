@@ -53,12 +53,12 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
           <codeblock>ssh-keygen -f "/home/dbadmin/.ssh/known_hosts" -R {{ip_of_node_to_replace}}</codeblock></li>
         <li>Run osconfig on the replacement controller node. For example:
           <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml  -e rebuild=True --limit=hlm-cp1-c1-m2-mgmt</codeblock>
-          If the controller being replaced is the first server running the swift-proxy service (see
+</li><li>          If the controller being replaced is the first server running the swift-proxy service (see
             <xref href="../objectstorage/first_proxy_server.dita">Identifying the First Proxy
             Server</xref>) you need to restore the Swift Ring Builder files to the
           /etc/swiftlm/builder_dir directory. See <xref
             href="../objectstorage/recovering_builder_file.dita#topic_gbz_13t_mt">Recovering Builder
-            Files</xref> for details. Run swift-deploy across all controllers using:
+            Files</xref> for details. <p/></li><li>Run swift-deploy across all controllers using:
           <codeblock>ansible-playbook -i hosts/verb_hosts swift-deploy.yml</codeblock></li>
         <li> Run hlm-deploy on the replacement controller
           <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e rebuild=True --limit=hlm-cp1-c1-m2-mgmt</codeblock>
