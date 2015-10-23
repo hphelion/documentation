@@ -77,6 +77,9 @@
                 locktitle="yes"/>
             <topicref href="carrier-grade-install-verify-vrsg.dita"
                 navtitle="Verifying the VRS-G Node" locktitle="yes"/>
+            <topicref href="CGH-2-install-sr-iov.dita" navtitle="Configuring SR-IOV" locktitle="yes"/>
+            <topicref href="CGH-2-install-pci-pass.dita" navtitle="Configuring PCI-Passthrough"
+                locktitle="yes"/>
         </topicref>
         <topicref href="carrier-grade-install-config-dcn.dita"
             navtitle="Configuring Your Cloud with DCN VSD" locktitle="yes">
