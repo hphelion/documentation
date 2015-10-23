@@ -443,8 +443,7 @@ net.ipv6.conf.lo.disable_ipv6 = 1</codeblock>
       <b>Softlockup is observed when attempting to remove many LUNs simultaneously</b>
     </section>
     <section>If many multipath LUNs are detached from a compute host in rapid succession a
-      softlockup and RCU (read-copy-update) stall may be observed in the kernel log file
-      as follows:
+      softlockup and RCU (read-copy-update) stall may be observed in the kernel log file as follows:
       <codeblock>Oct  7 12:48:52 hlm kernel: [31164.262063]  rport-0:0-2: blocked FC remote port time out: removing target and saving binding
 Oct  7 12:48:52 hlm kernel: [31164.262859]  rport-0:0-0: blocked FC remote port time out: removing target and saving binding
 Oct  7 12:49:09 hlm kernel: [31181.132369] BUG: soft lockup - CPU#23 stuck for 22s! [systemd-udevd:554]
@@ -466,8 +465,9 @@ Oct  7 12:49:09 hlm kernel: [31181.133118] RIP: 0010:[&lt;ffffffff81514f5b>]  [&
       The associated stack from the softlockup will show the instruction point either holding or
       attempting to acquire a spinlock. After all the LUNs have successfully detached and the
       devices have been flushed, the messages will subside. It is recommended that you include a
-      delay when detaching multiple LUNs to avoid the softlockup and RCU stall messages. <xref
-        href="http://docs-staging.hpcloud.com/hos2.0ga/helion/releasenotes.html" format="html"
+      delay when detaching multiple LUNs to avoid the softlockup and RCU stall messages.</section>
+    <section>
+      <xref href="http://docs-staging.hpcloud.com/hos2.0ga/helion/releasenotes.html" format="html"
         scope="external">Printer friendly page</xref>
     </section>
   </body>
