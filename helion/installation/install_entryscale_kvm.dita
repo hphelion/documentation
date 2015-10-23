@@ -6,9 +6,9 @@
   <body>
     <!--Needs Edit-->
     <section id="about">
-      <p>This page describes the common installation steps that are required for each of the HP Helion OpenStack
-        Entry-scale cloud models that utilize the KVM hypervisor on the Compute nodes. This includes
-        the following example configurations: <ul>
+      <p>This page describes the common installation steps that are required for each of the HP
+        Helion OpenStack Entry-scale cloud models that utilize the KVM hypervisor on the Compute
+        nodes. This includes the following example configurations: <ul>
           <li>Entry-scale KVM with VSA model</li>
           <li>Entry-scale KVM with Ceph model</li>
         </ul>
@@ -19,26 +19,18 @@
         <li>If you are looking for information about when to use the GUI installer and when to use
           the CLI, see the <xref href="installation_overview.dita#install_overview">Installation
             Overview</xref>.</li>
-        <li>Ensure the <xref href="../hardware.dita">hardware requirements</xref> are met in your
-          environment.</li>
+        <li>Review the <xref href="../hardware.dita">recommended minimum hardware
+            requirements</xref> that we have listed.</li>
         <li>The installation process can occur in different phases. For example, you can install the
           control plane only and then add Compute nodes afterwards if you would like.</li>
+        <!-- consider including steps to achieve this -->
         <li>If you run into issues during installation, we have put together a list of <xref
-            href="installation_troubleshooting.dita">Troubleshooting Steps</xref> you can
-          reference.</li>
-        <li>Make sure <xref href="../administration/wipe_disks.dita">all disks on the system(s) are
-            wiped</xref> before you begin the install. (For Swift, refer to <xref
+            href="installation_troubleshooting.dita">Installation Troubleshooting Steps</xref> you
+          can reference.</li>
+        <li>Make sure all disks on the system(s) are wiped before you begin the install. (For Swift,
+          refer to <xref
             href="../objectstorage/allocating_disk_drives.dita#allocating-disk-drives/requirement-disk-device"
             >Swift Requirements for Device Group Drives</xref>)</li>
-        <li>The <codeph>/dev/sda</codeph> disk on your systems will be used for the operating
-          system.</li>
-        <li>All machines of a given role should be the same configuration.</li>
-        <li>The machine hosting the deployer and all baremetal systems must be connected to a
-          management network. Nodes on this management network must be able to reach the iLO
-          subsystem of each baremetal system to enable host reboots as part of the install process.
-          The HP Helion OpenStack architecture requires that the IPMI network is a separate network
-          and that a route exists from the management network to the IPMI network for iLO
-          access.</li>
         <li>There is no requirement to have a dedicated network for OS-install and system
           deployment, this can be shared with the management network. More information can be found
           on the <xref href="../example_configurations.dita">Example Configuration</xref> page.</li>
