@@ -42,12 +42,11 @@
           Checklist</xref> that should help with the recommended pre-installation tasks.</p>
     </section>
     <section id="setup_deployer">
-      <title>Set up the Deployer</title>
-      <p>The deployer will contain the installation scripts and configuration files for your cloud.
-        You can use a dedicated deployer node or you can run these instructions on your first
-        controller node. There is only one difference in these approaches and thats in the
-        configuration files. This will be discussed in each models page along with the rest of the
-        unique configurations.</p>
+      <title>Set up the Lifecycle-manager</title>
+      <p>The lifecycle-manager will contain the installation scripts and configuration files to
+        deploy your cloud. You can set up the lifecycle-manager on a dedicated node or you do so on
+        your first controller node. The default choice is to use the first controller node as the
+        lifecycle-manager..</p>
       <ol>
         <li>Download the HP Helion OpenStack 2.0.0 product from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
@@ -59,31 +58,35 @@
         <li>Select the location.</li>
         <li>Select the keyboard layout.</li>
         <li>Select the primary network interface, if prompted:<ul>
-            <li>Assign IP address, netmask, default gateway</li>
+            <li>Assign IP address, subnet mask, and default gateway</li>
           </ul></li>
         <li>Create new account:<ul>
             <li>Enter a username.</li>
             <li>Enter a password.</li>
-            <li>Enter time zone if prompted to do so.</li>
+            <li>Enter time zone.</li>
           </ul>
         </li>
-        <li>Ensure your deployer has a valid DNS nameserver in the <codeph>/etc/resolv.conf</codeph>
-          file</li>
+      </ol>
+      <p>Once the initial installation is complete, complete the lifecycle-manager setup with these
+        steps:</p>
+      <ol>
+        <li>Ensure your lifecycle-manager node has a valid DNS nameserver specified in
+            <codeph>/etc/resolv.conf</codeph>.</li>
         <li>Set the environment variable LC_ALL: <codeph>export LC_ALL=C</codeph>
-          <note>This can be added to ~stack/.bashrc or /etc/bash.bashrc</note></li>
+          <note>This can be added to <codeph>~stack/.bashrc</codeph> or
+              <codeph>/etc/bash.bashrc</codeph>.</note></li>
       </ol>
       <p>At the end of this section you should have a node set up with Linux for HP Helion on
         it.</p>
     </section>
     <section id="configure_deployer">
-      <title>Configure and Run the Deployer</title>
-      <note type="important">It's critical that you don't run any of the commands in these
-        instructions as the root user. Run as the user you just created (or stack if you left the
-        default of "stack"), but do not run as root and don't use sudo except when it's given
-        explicitly in the steps.</note>
+      <title>Configure and Run the Lifecycle-manager</title>
+      <note type="important">It's critical that you don't run any of the commands below as the root
+        user or use sudo, unless it's given explicitly in the steps. Run then as the user you just
+        created (or stack if you left the default of "stack").</note>
       <ol>
-        <li>Log into your deployer node as the user you created and mount the install media at
-            <codeph>/media/cdrom</codeph>. It may be necessary to use <codeph>wget</codeph> or
+        <li>Log into your lifecycle-manager node as the user you created and mount the install media
+          at <codeph>/media/cdrom</codeph>. It may be necessary to use <codeph>wget</codeph> or
           another file transfer method to transfer the install media to the deployer before
           completing this step. Here is the command to mount the media:
           <codeblock>sudo mount Helion-OpenStack-2.0.0.iso /media/cdrom</codeblock></li>
