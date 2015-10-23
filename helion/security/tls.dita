@@ -19,7 +19,15 @@
         about certificates. It will not match your IP address, but you can ignore the warnings.
         Later, when you require a trusted certificate, you can add your own certificate and
         redeploy.</p>
-      <p/>
+      <!--<p>
+        <note type="warning">Here we are configuring and installing a test certificate. It is
+          recommended that you create and sign certifcates properly for a production environment.
+          TLS certificates used in production must adhere to the current Baseline Requirements.
+          Furthermore, due to a known limitation in the Python codebase, you must ensure additional
+          standards are met, all of which are outlined at the end of this document in <xref
+            href="#topic_yym_nps_4t/rfcs" format="dita">Critical Standards for Certificates in
+            Production Environments</xref>.</note>
+      </p>-->
     </section>
 <section> When logging into the deployer to run the configuration processor and the requisite
       playbooks, you must decide if you want to configure TLS or if you want to disable it. This
@@ -31,48 +39,41 @@
         <li>Assign a name to "external-name:" line in
           /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that an FQDN is
           used)</li>
-      </ul><note type="warning">TLS certificates must adhere to the current <xref
-          href="https://cabforum.org/wp-content/uploads/Baseline_Requirements_V1_3_1.pdf"
-          format="pdf" scope="external">Baseline Requirements</xref>. Furthermore, due to a known
-        limitation in the Python codebase, you must ensure the following standards are met:<dl>
-          <dlentry>
-            <dt>If Using IP Addresses</dt>
-            <dd>The Common Name attribute (<codeph>commonName</codeph>) <xref
-                href="https://cabforum.org/wp-content/uploads/Baseline_Requirements_V1_3_1.pdf"
-                format="pdf" scope="external">has been deprecated</xref> and it is recommended that
-              you do not use it.</dd>
-            <dd>The Common Name attribute must not contain an IP address per <xref
-                href="https://tools.ietf.org/html/rfc2818" format="html" scope="external">RFC
-                2818</xref>.</dd>
-            <dd>Create an <codeph>IP Address</codeph> alternative name entry
-                (<codeph>SubjectAltName</codeph>) attribute that contains the IP address.</dd>
-            <dd>Create an additional <codeph>DNS</codeph> alternative name entry attribute that
-              contains the same IP address. </dd>
-            <dd>Example:
-              <codeblock>X509v3 Subject Alternative Name:
-DNS:servername-api.ftc.hp.com, DNS:10.241.20.5, IP Address:10.241.20.5</codeblock></dd>
-          </dlentry>
-          <dlentry>
-            <dt>If Using DNS/FQDN</dt>
-            <dd>The Common Name attribute (<codeph>commonName</codeph>) has been deprecated and it
-              is recommended that you do not use it. The Common Name attribute must not contain an
-              IP address per <xref href="https://tools.ietf.org/html/rfc2818" format="html"
-                scope="external">RFC 2818</xref>.</dd>
-            <dd>If the Common Name attribute is specified, there must also be an alternative name
-              entry specified which contains the DNS information. (At least one Subject Alternative
-              Name (<codeph>subjectAltName</codeph>) extension attributes must be specified, or some
-              services will fail to install or to function.)</dd>
-            <dd>
-              <codeblock>CN=servername-api.ftc.hp.com/emailAddress=email-address@hp.com
-X509v3 Subject Alternative Name:
-DNS:servername-api.ftc.hp.com</codeblock>
-            </dd>
-          </dlentry>
-        </dl></note><p>You must also supply the name of a certificate file that matches your choice
-        above. If you are using IP addresses, you won't know the IP address until after the config
-        processor has run, but you can obtain it after running the config processor and before
-        deployment. </p></section>
-      <section><title>Creating a self-signed certificate for testing</title> Follow these steps to
+      </ul>
+
+
+
+
+
+
+</section>
+      <section><title>Creating a self-signed certificate</title> If you want to install a
+      self-signed certificate that meets the needs of a production environment, as well as HP Helion
+      OpenStack and HP Helion Development Platform, follow these steps to create the cert, and then
+      install it by following the installation steps.<ol id="ol_wmt_wsp_tt">
+        <li>Create a Certificate Signing Request (CSR) with a defined subject:
+          <codeblock>openssl req -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.csr -text \
+        -subj '/C=US/O=Helion Test Certificate/CN=your.domain.com/emailAddress=test@ficticious.org/'</codeblock>
+        </li>
+        <li>Create a file containing v3 extensions Ensure that the DNS entry matches any CN entry
+          above and provide your IP
+          <codeblock>cat > v3_ext.cnf &lt;&lt; *EOF*
+[ v3_req ]
+subjectAltName=DNS:your.domain.com,DNS: IP:10.0.0.1, IP:10.0.0.1
+*EOF*</codeblock>
+        </li>
+        <li>Self-sign your certificate
+          <codeblock>openssl x509 -extfile v3_ext.cnf -extensions v3_req -in my-public-cert.csr -signkey my-public-cert.key -req –text -out my-public-cert.crt</codeblock>
+          Note that the domain name in the certificate signing request in step 1 and the DNS entry
+          in step 2 must match, although the domain does not have to exist. <p>In step 2 you need
+            the same IP address listed for bot the DNS and the IP entries. The IP address is what is
+            used by HP Helion Development Platform and the DNS is used by HP Helion OpenStack. Note
+            that is you examine the output certificate, the issuer will match the subject because
+            the cert is self-signed. The requirement for the DNS entry stems from a low-level Python
+            bug.</p>
+        </li>
+      </ol>
+      <!--Follow these steps to
       create a certificate for non-production environments. <ol>
         <li> Make sure you have OpenSSL installed.
           <codeblock>openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.crt</codeblock>
@@ -80,9 +81,11 @@ DNS:servername-api.ftc.hp.com</codeblock>
           the VIP when prompted for Common Name. </li>
         <li>Append the certificate to the key for haproxy-required format.
           <codeblock>cat my-public-cert.key my-public-cert.crt > my-public-cert</codeblock></li>
-      </ol> You can now use my-public-cert as your certificate. <p><b>Installing the
-        Certificate</b></p> Follow the steps below to install the certificate in the cloud.  <b>If
-        you are using a FQDN:</b>
+            
+      </ol> You can now use my-public-cert as your certificate. -->
+      <p><b>Installing the Certificate</b></p> Follow the steps below to install the certificate in
+      the cloud.</section>
+    <section><b>If you are using a FQDN:</b>
       <ol id="ol_ngj_qfq_rt">
         <li> Create or obtain a certificate to match the domain name you are going to use </li>
         <li> Copy it to <b>helion/my_cloud/config/tls/certs/</b>
@@ -180,6 +183,53 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       <codeblock>- "ssl-default-bind-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"
 - "ssl-default-server-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"</codeblock>
       Make the changes as needed. It's best to keep the two options identical. </section>
+    <!--
+    <section id="rfcs"><title>Critical Standards for Certificates in Production Environments</title>
+      
+      <note type="warning">TLS certificates must adhere to the current <xref
+        href="https://cabforum.org/wp-content/uploads/Baseline_Requirements_V1_3_1.pdf"
+        format="pdf" scope="external">Baseline Requirements</xref>. Furthermore, due to a known
+        limitation in the Python codebase, you must ensure the following standards are met:<dl>
+          <dlentry>
+            <dt>If Using IP Addresses</dt>
+            <dd>The Common Name attribute (<codeph>commonName</codeph>) <xref
+              href="https://cabforum.org/wp-content/uploads/Baseline_Requirements_V1_3_1.pdf"
+              format="pdf" scope="external">has been deprecated</xref> and it is recommended that
+              you do not use it.</dd>
+            <dd>The Common Name attribute must not contain an IP address per <xref
+              href="https://tools.ietf.org/html/rfc2818" format="html" scope="external">RFC
+              2818</xref>.</dd>
+            <dd>Create an <codeph>IP Address</codeph> alternative name entry
+              (<codeph>SubjectAltName</codeph>) attribute that contains the IP address.</dd>
+            <dd>Create an additional <codeph>DNS</codeph> alternative name entry attribute that
+              contains the same IP address. </dd>
+            <dd>Example:
+              <codeblock>X509v3 Subject Alternative Name:
+DNS:servername-api.ftc.hp.com, DNS:10.241.20.5, IP Address:10.241.20.5</codeblock></dd>
+          </dlentry>
+          <dlentry>
+            <dt>If Using DNS/FQDN</dt>
+            <dd>The Common Name attribute (<codeph>commonName</codeph>) has been deprecated and it
+              is recommended that you do not use it. The Common Name attribute must not contain an
+              IP address per <xref href="https://tools.ietf.org/html/rfc2818" format="html"
+                scope="external">RFC 2818</xref>.</dd>
+            <dd>If the Common Name attribute is specified, there must also be an alternative name
+              entry specified which contains the DNS information. (At least one Subject Alternative
+              Name (<codeph>subjectAltName</codeph>) extension attributes must be specified, or some
+              services will fail to install or to function.)</dd>
+            <dd>
+              <codeblock>CN=servername-api.ftc.hp.com/emailAddress=email-address@hp.com
+X509v3 Subject Alternative Name:
+DNS:servername-api.ftc.hp.com</codeblock>
+            </dd>
+          </dlentry>
+        </dl></note><p>You must also supply the name of a certificate file that matches your choice
+          above. If you are using IP addresses, you won't know the IP address until after the config
+          processor has run, but you can obtain it after running the config processor and before
+          deployment. </p>
+      
+      
+    </section>-->
     <!--
     <section><title>Creating a test certificate for an IP address or FQDN</title> If you want to
       create a test certificate, follow tese steps: <ol>
