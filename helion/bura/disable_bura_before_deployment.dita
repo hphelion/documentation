@@ -9,14 +9,10 @@
     <p>To disable Freezer's deployement, comment out the following lines in the following files:
           <note>This action is required even if you already removed Freezer lines from your model
           (control_plane.yml).</note></p>
-    <p>In hlm-deploy.ym:<codeblock>
-# - include: freezer-deploy.yml</codeblock></p>
-    <p>In hlm-status.ym:<codeblock>
-# - include: freezer-status.yml</codeblock></p>
-    <p>In hlm-stop.ym:<codeblock>
-# - include: freezer-stop.yml</codeblock></p>
-    <p>In hlm-start.ym:<codeblock>
-# - include: freezer-start.yml</codeblock></p>
+    <p>In hlm-deploy.ym:<codeblock># - include: freezer-deploy.yml</codeblock></p>
+    <p>In hlm-status.ym:<codeblock># - include: freezer-status.yml</codeblock></p>
+    <p>In hlm-stop.ym:<codeblock># - include: freezer-stop.yml</codeblock></p>
+    <p>In hlm-start.ym:<codeblock># - include: freezer-start.yml</codeblock></p>
     <p>In hlm-upgrade.ym:<codeblock># - include: freezer-upgrade.yml</codeblock></p>
   </section>
   <section><title>Disable backup/restore jobs creation completely:</title><p>It is possible to
@@ -27,8 +23,7 @@
           <li>Swift rings</li>
         </ul></p>You can disable the creation of those jobs while launching the deployment process,
       as
-        follows:<codeblock>
-ansible-playbook -i hosts/verb_hosts site.yml -e "freezer_backup_jobs_upload=false" -e "freezer_restore_jobs_upload=false"</codeblock><p>When
+        follows:<codeblock>ansible-playbook -i hosts/verb_hosts site.yml -e '{ "freezer_backup_jobs_upload": false }' -e '{ "freezer_restore_jobs_upload": false }'</codeblock><p>When
         using those options, the Freezer infrastucture will still be deployed but will not execute
         any backups.</p></section>
   <section><title>Disable the backup/restore jobs of a specific service:</title>
@@ -232,8 +227,9 @@ ansible-playbook -i hosts/verb_hosts site.yml -e "freezer_backup_jobs_upload=fal
     <p>If some fine tuning is required, you can edit the following file before running the
         configuration processor and ready deployment
         scripts:<codeblock>~/helion/hos/ansible/_freezer_manage_jobs.yml</codeblock></p>
-    <p>You can disable Swift jobs only, for example, if an SSH backup is configured and you want to
-        spare some storage space on the Swift cluster.<codeblock>---
+    <p>The following example shows how to disable Swift jobs only. This could be done for example
+      so that no space is used in Swift to store backups (in that case,
+      be sure to have some SSH backups configured).<codeblock>---
  
 - hosts: FRE-AGN
   roles:
@@ -263,9 +259,9 @@ ansible-playbook -i hosts/verb_hosts site.yml -e "freezer_backup_jobs_upload=fal
 #      when: ready_to_upload and freezer_backup_jobs_upload
 #    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_restore_swift.json.j2
 #      when: ready_to_upload and freezer_restore_jobs_upload
-    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_backup_ssh.json.j2
+     - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_backup_ssh.json.j2
       when: ready_to_upload and freezer_backup_jobs_upload and freezer_ssh_ready
-    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_restore_ssh.json.j2
+     - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_restore_ssh.json.j2
       when: ready_to_upload and freezer_restore_jobs_upload and freezer_ssh_ready
   serial: "{{ freezer_serialization | default(3) | int }}"
  
@@ -277,9 +273,9 @@ ansible-playbook -i hosts/verb_hosts site.yml -e "freezer_backup_jobs_upload=fal
 #      when: ready_to_upload and freezer_backup_jobs_upload
 #    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_restore_swift.json.j2
 #      when: ready_to_upload and freezer_restore_jobs_upload
-    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_backup_ssh.json.j2
+     - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_backup_ssh.json.j2
       when: ready_to_upload and freezer_backup_jobs_upload and freezer_ssh_ready
-   - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_restore_ssh.json.j2
+     - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_restore_ssh.json.j2
       when: ready_to_upload and freezer_restore_jobs_upload and freezer_ssh_ready
   serial: "{{ freezer_serialization | default(3) | int }}"
  
@@ -292,9 +288,9 @@ ansible-playbook -i hosts/verb_hosts site.yml -e "freezer_backup_jobs_upload=fal
 #      when: ready_to_upload and freezer_backup_jobs_upload
 #    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_swift.json.j2
 #      when: ready_to_upload and freezer_restore_jobs_upload
-    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_backup_ssh.json.j2
+     - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_backup_ssh.json.j2
       when: ready_to_upload and freezer_backup_jobs_upload and freezer_ssh_ready
-    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_ssh.json.j2
+     - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_ssh.json.j2
       when: ready_to_upload and freezer_restore_jobs_upload and freezer_ssh_ready</codeblock></p></section>
 
   </body>

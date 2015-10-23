@@ -210,7 +210,7 @@ ansible-playbook -i hosts/verb_hosts site.yml --limit padawan-ccp-c1-m2-mgmt</co
                 <codeblock>
 cd ~/scratch/ansible/next/hos/ansible
  
-ansible-playbook -i hosts/verb_hosts site.yml --limit padawan-ccp-c1-m1-mgmt,padawan-ccp-c1-m2-mgmt,padawan-ccp-c1-m3-mgmt -e freezer_backup_jobs_upload=false</codeblock></li>
+ansible-playbook -i hosts/verb_hosts site.yml --limit padawan-ccp-c1-m1-mgmt,padawan-ccp-c1-m2-mgmt,padawan-ccp-c1-m3-mgmt -e '{ "freezer_backup_jobs_upload": false }'</codeblock></li>
               <li>You can now perform the procedure: "Point in time database recovery:"</li>
               <li>Once everything is restored, re-enable the backups. From the deployer:
                 <codeblock>
@@ -321,13 +321,11 @@ ansible-playbook -i hosts/verb_hosts site.yml --limit localhost</codeblock></li>
               previously:
               <codeblock>~/helion/my_cloud/config/freezer/ssh_credentials.yml file</codeblock></li>
             <li>On the deployer node:
-              <codeblock>
-cp -r ~/hp-ci/padawan/* ~/helion/my_cloud/definition/
+              <codeblock>cp -r ~/hp-ci/padawan/* ~/helion/my_cloud/definition/
 cd ~/helion/hos/ansible/
 ansible-playbook -i hosts/localhost _deployer_restore_helper.yml</codeblock></li>
             <li>Perform the restore:
-              <codeblock>
-sudo su
+              <codeblock>sudo su
 cd /root/deployer_restore_helper/
  
 # Stop the Dayzero UI
@@ -342,11 +340,10 @@ systemctl start dayzero</codeblock></li>
             <li>Follow the procedure to deploy your cloud:
               <codeblock>cd ~/scratch/ansible/next/hos/ansible
  
-ansible-playbook -i hosts/verb_hosts site.yml -e freezer_backup_jobs_upload=false</codeblock></li>
+ansible-playbook -i hosts/verb_hosts site.yml -e '{ "freezer_backup_jobs_upload": false }'</codeblock></li>
             <li>You can now perform the procedures to restore MySQL and Swift.</li>
             <li>Once everything is restored, re-enable the backups from the deployer:
-              <codeblock>
-cd ~/scratch/ansible/next/hos/ansible
+              <codeblock>cd ~/scratch/ansible/next/hos/ansible
  
 ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</codeblock></li>
           </ol></li>
@@ -365,8 +362,7 @@ ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</codeblock></li>
 cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
               <li>Or swift-deploy if one node was
-                lost:<codeblock>
-# On the deployer run 
+                lost:<codeblock># On the deployer run 
 cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-deploy.yml</codeblock></li>
             </ul>
@@ -376,8 +372,7 @@ ansible-playbook -i hosts/verb_hosts swift-deploy.yml</codeblock></li>
             the Swift rings is stored in Freezer. This means that Swift data is still there (the
             disks used by Swift needs to be still accessible).</p><ol>
             <li>Recover the rings, as
-              follows:<codeblock>
-# You will need a node with the freezer-agent installed.
+              follows:<codeblock># You will need a node with the freezer-agent installed.
  
 # Become root
 sudo su
@@ -410,16 +405,14 @@ freezer-agent --config ./restore_config.ini
  
 # You now have the Swift rings in /tmp/hlm_builder_dir_restore/</codeblock></li>
             <li>If the SWF-PRX[0] is already deployed:
-                <codeblock>
-# Copy the content of the restored directory (/tmp/hlm_builder_dir_restore/) to /etc/swiftlm/builder_dir/ on the SWF-PRX[0]
- 
+                <codeblock># Copy the content of the restored directory (/tmp/hlm_builder_dir_restore/) to /etc/swiftlm/builder_dir/ on the SWF-PRX[0]
+
 # Then from the deployer run
  
 cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock><p>If
                 the SWF-PRX[0] is<b> not </b>deployed:
-                <codeblock>
-# From the deployer run
+                <codeblock># From the deployer run
 cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_host guard-deployment.yml
 ansible-playbook -i hosts/verb_host osconfig-run.yml
