@@ -9,13 +9,20 @@
   </metadata>
  </prolog>
  <conbody>
+<<<<<<< HEAD
   <section>
    <title><!--Updates-->Features and Functionality</title>
    <p>The following features and functionality have been added to <keyword keyref="prodLong"/>:</p>
+=======
+  <p>This is the first release of <keyword keyref="prodLong"/>.</p>
+  <section>
+   <title>Updates</title>
+>>>>>>> 963943a... Added "What's New" section
    <dl>
     <dlentry>
      <dt>Terraform</dt>
      <dd>If you have worked with Cloud Foundry before, <keyword keyref="prodShort"/> will allow you
+<<<<<<< HEAD
       to work in a familiar environment where instead of BOSH, <keyword keyref="prodShort"/> uses
        <xref href="https://terraform.io/" format="html" scope="external">Terraform</xref>, a service
       management command-line tool.</dd>
@@ -35,6 +42,21 @@
        Controller and runs within the Docker overlay Virtual Extensible LAN
        (VXLAN).</draft-comment><draft-comment author="michaelk">Link to the Dev Center:
        http://dev.hpcloud.com/</draft-comment></dd>
+=======
+      to work in a familiar environment that uses <xref href="https://terraform.io/" format="html"
+       scope="external">Terraform</xref>, a service management command-line tool, instead of
+      BOSH.</dd>
+    </dlentry>
+    <dlentry>
+     <dt><keyword keyref="adminUtil"/></dt>
+     <dd>If you have worked with the <xref
+       href="http://www8.hp.com/us/en/cloud/helion-devplatform-overview.html" format="html"
+       scope="external">HP Helion Development Platform</xref> before, <keyword keyref="prodShort"/>
+      will allow you to work in a familiar environment that uses <filepath>gato</filepath>, a new
+      command-line administration utility, instead of <filepath>kato</filepath>. For more
+      information, see the <xref href="../reference/CFR_reference_gato.dita#reference_cd3_bs3_rt"
+      />.</dd>
+>>>>>>> 963943a... Added "What's New" section
     </dlentry>
    </dl>
   </section>
