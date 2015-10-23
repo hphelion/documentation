@@ -38,21 +38,8 @@
     </section>
     <section id="prereqs">
       <title>Before You Start</title>
-      <note type="important">We have put together a <xref href="preinstall_checklist.dita"
-          >Pre-Installation Checklist</xref> that should help with the recommended pre-installation
-        tasks.</note>
-      <p>Prepare your baremetal hardware, as follows, on all nodes:</p>
-      <ul>
-        <li>Set up the iLO Advanced license in the iLO configuration. Make sure the iLO user has
-          admin privileges.</li>
-        <li>The installer will detect and use the "BIOS" mode you have selected for each node;
-          either UEFI or legacy BIOS.</li>
-        <li>Ensure that the network interface to be used for PXE installation has PXE enabled.</li>
-        <li>Ensure that the other network interfaces have PXE disabled.</li>
-        <li>Ensure that any logical drives (LUN) for the servers you will be using are created to
-          meet the disk requirements outlined in the <xref href="../hardware.dita">Minimum Hardware
-            Requirements</xref>.</li>
-      </ul>
+      <p>We have put together a <xref href="preinstall_checklist.dita">Pre-Installation
+          Checklist</xref> that should help with the recommended pre-installation tasks.</p>
     </section>
     <section id="setup_deployer">
       <title>Set up the Deployer</title>
