@@ -2,7 +2,7 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en" linking="none" locktitle="no">
   <title>HP Helion</title>
-  <!--PDFTITLE "HP Helion OpenStack 2.0 Complete Documentation-->
+  <!--PDFTITLE "HP Helion OpenStack 2.0 Complete Documentation"-->
   <topicmeta>
     <copyright>
       <copyryear year="2015"/>
@@ -15,13 +15,11 @@
       </vrmlist>
     </prodinfo>
   </topicmeta>
-  
+
   <topicref href="helion/index.dita">
     <topicref href="helion/technical_overview.dita" navtitle="Technical Overview" locktitle="yes"/>
-    <topicref href="helion/kilo_features.dita" navtitle="Kilo Features"
-      locktitle="yes"/>
-    <topicref href="helion/input_model.dita" navtitle="Input Model"
-      locktitle="yes"/>
+    <topicref href="helion/kilo_features.dita" navtitle="Kilo Features" locktitle="yes"/>
+    <topicref href="helion/input_model.dita" navtitle="Input Model" locktitle="yes"/>
     <topicref href="helion/example_configurations.dita" navtitle="Example Configurations"
       locktitle="yes"/>
     <topicref href="helion/hardware.dita" navtitle="Hardware Requirements" locktitle="yes"/>
@@ -75,7 +73,7 @@
     <topichead navtitle="Security">
       <topicref href="helion/security/tls.dita" navtitle="Enabling TLS for Public Endpoints"
         locktitle="yes"/>
-    
+
       <topicref href="helion/security/encrypted_storage.dita"
         navtitle="Encryption of Passwords and Sensitive Data" locktitle="yes"/>
       <topicref href="helion/security/using_apparmor.dita"
@@ -127,13 +125,13 @@
           <topicref href="helion/objectstorage/creating_roles_swift_nodes.dita"/>
           <topicref href="helion/objectstorage/allocating_disk_drives.dita"
             navtitle="Allocating Disk Drives">
-           
+
             <topicref href="helion/objectstorage/label_on_partition.dita" toc="yes"
               navtitle="How to Verify if a Partition Labelled" locktitle="yes"/>
             <topicref href="helion/objectstorage/filesystem_label.dita" toc="yes"
               navtitle="How to Verify if a Filesystem Label" locktitle="yes"/>
           </topicref>
-          <topicref href="helion/objectstorage/swift_device_group.dita"/>
+          <topicref href="helion/objectstorage/swift_device_groups.dita"/>
           <topicref href="helion/objectstorage/creating_pac_cluster.dita"/>
           <topicref href="helion/objectstorage/creating_object_server_resource.dita"/>
           <topicref href="helion/objectstorage/allocating_network.dita"/>
@@ -159,7 +157,6 @@
           locktitle="yes">
           <topicref href="helion/blockstorage/ceph/configuring_use_ceph_cluster.dita"/>
           <topicref href="helion/blockstorage/ceph/configuring_use_ceph_cluster_glance.dita"/>
-          <topicref href="helion/blockstorage/ceph/using_erasure_code_pool.dita"/>
         </topicref>
       </topicref>
 
@@ -193,7 +190,8 @@
         navtitle="Accessing the Horizon Dashboard" locktitle="yes"/>
       <topicref href="helion/operations/opsconsole_overview.dita"
         navtitle="Accessing the Operations Console" locktitle="yes"/>
-      <topicref href="helion/operations/start_stop_services.dita"  navtitle="Starting and Stopping Services" locktitle="yes"/>
+      <topicref href="helion/operations/start_stop_services.dita"
+        navtitle="Starting and Stopping Services" locktitle="yes"/>
       <!-- ADDING / REMOVING / REPAIRING NODES -->
 
       <!-- node maintenance -->

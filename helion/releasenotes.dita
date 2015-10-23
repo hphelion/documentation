@@ -3,7 +3,7 @@
 <topic xml:lang="en-us" id="release_notes">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Release Notes</title>
   <body><!--Needs Edit-->
-    <note type="warning">Be advised that this document has not yet been updated for GA</note>
+    <note type="warning">Be advised that this document has not yet been fully updated for GA</note>
     <p>This document provides an overview of the features contained within HP Helion <tm
         tmtype="reg">OpenStack</tm> 2.0 Beta 2, including known issues and workarounds for this
       release:</p>
@@ -272,11 +272,12 @@
       <title>Limitations in this Release</title><b>Heat autoscaling not supported</b>
       <p> In HP Helion OpenStack 2.0, the auto-scaling in Heat is not supported because the alarm
         creation in Ceilometer is disabled</p>
-      <p><b>Installing Swift</b></p><p>Swift installs with the following limitations: </p><ul>
+      <p><b>Installing Swift</b></p><p>Swift installs with the following limitations: </p><ul
+        id="ul_p21_d45_tt">
         <li>Only one Swift zone is supported.</li>
       </ul>
       <p><b>Helion Cloud Monitoring (Monasca) Limitations</b></p> Basic Monitoring is complete for
-      Beta 2 with the following limitations: <ul>
+      Beta 2 with the following limitations: <ul id="ul_fn1_d45_tt">
         <li>Vertica is the default metrics database option in the install. If you want to use
           InfluxDB then read <xref href="administration/configure_monitoring.dita#monitoring/config"
             type="section">Configuring Monasca</xref> for more details.</li>
@@ -286,8 +287,8 @@
       </ul>
       <p><b>Operations Console (Ops Console)</b></p> The Operations Console is available on port
       9095 on the first controller node IP. There are some limitations to note and they are listed
-      below by menu option in the console: <ul>
-        <li>Dashboard <ul>
+      below by menu option in the console: <ul id="ul_wv1_d45_tt">
+        <li>Dashboard <ul id="ul_s2b_d45_tt">
             <li>There are two notification sections for the Storage services. The one in the upper
               left is the Compute service mislabeled as Storage.</li>
             <li>The New Alarms section uses the UTC timezone to determine timeframes regardless of
@@ -298,29 +299,29 @@
               the menu and thus will not populate if selected.</li>
           </ul>
         </li>
-        <li>Logging Dashboard <ul>
+        <li>Logging Dashboard <ul id="ul_jfb_d45_tt">
             <li>There is no auto-logon function, users must use the credentials in the <xref
                 href="operations/centralized_logging.dita#logging/interface">Logging Overview</xref>
               to access the UI.</li>
           </ul></li>
-        <li>Alarms <ul>
+        <li>Alarms <ul id="ul_egb_d45_tt">
             <li>The tile view of alarms with lengthy dimensions does not render cleanly.</li>
           </ul></li>
-        <li>Compute Instances <ul>
+        <li>Compute Instances <ul id="ul_rgb_d45_tt">
             <li>Compute instance utilization metrics are not available in Beta 2</li>
           </ul>
         </li>
-        <li>Networking - Alarm Summary <ul>
+        <li>Networking - Alarm Summary <ul id="ul_dhb_d45_tt">
             <li>Alarms may be limited to only those with the dimension "service=networking".</li>
           </ul></li>
-        <li>Storage - Alarm Summary <ul>
+        <li>Storage - Alarm Summary <ul id="ul_shb_d45_tt">
             <li>Alarms with the dimension "service=compute" sometimes appear in this list in
               addition to the "service=block-storage" and "service=object-storage" ones.</li>
           </ul></li>
-        <li>HDP - Alarm Summary <ul>
+        <li>HDP - Alarm Summary <ul id="ul_h3b_d45_tt">
             <li>This section is not implemented in Beta 2</li>
           </ul></li>
-        <li>Masthead Items <ul>
+        <li>Masthead Items <ul id="ul_v3b_d45_tt">
             <li>The Help and EULA links will not work properly. You can view the Help files here:
                 <xref href="operations/opsconsole_overview.dita">Operations Console
               Overview</xref></li>
@@ -329,7 +330,7 @@
           </ul></li>
       </ul>
       <p id="logging"><b>Centralized Logging Limitations</b></p> Logging support is complete for
-      Beta 2 with the following limitations: <ul>
+      Beta 2 with the following limitations: <ul id="ul_jjb_d45_tt">
         <li>Alarm definition and generation for Kibana and curator are not integrated.</li>
         <li>Logging-monitor 'stop' playbook is not integrated.</li>
       </ul><b> Issues in this release</b><p><b>The Elasticsearch Cluster Name Must Be
@@ -399,7 +400,7 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
       <p><b>Issue: Unable to Launch Instance from Volume on Horizon Dashboard</b></p><p>In Beta 2
         you will not be able to launch an instance from a volume in Horizon. To work around this
         issue you have two options:</p>
-      <ul>
+      <ul id="ul_vrb_d45_tt">
         <li>From Horizon Dashboard | Instances page: Launch an Instance and select source as
           Bootable volume.</li>
         <li>Use the OpenStack or Nova client to create the instance.</li>
@@ -420,7 +421,8 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
       <b>Moonshot remote console goes blank after operating system install</b>
       <p>If you are using Moonshot compute nodes you may find that their remote console is blank or
         garbled after the OS install. If affected, you need to make the following change to
-        /etc/default/grub on each affected node, run update-grub and reboot:</p><ol>
+        /etc/default/grub on each affected node, run update-grub and reboot:</p><ol
+        id="ol_p1c_d45_tt">
         <li>Find the line starting with GRUB_CMDLINE_LINUX= </li>
         <li>Add the following at the end of the value i.e. inside the double quotes:
           <codeblock>vga=788 console=ttyS0,9600 earlyprint=serial,ttyS0,9600</codeblock>
@@ -437,9 +439,36 @@ net.ipv6.conf.default.disable_ipv6 = 1
 net.ipv6.conf.lo.disable_ipv6 = 1</codeblock>
         Once these have been added, you can either reboot the node or run the following command (as
         root): <codeblock># sysctl -p</codeblock> Please refer to your router documentation to block
-        IPv6 traffic from reaching your network at the router.</p>
+        IPv6 traffic from reaching your network at the router.</p></section>
+    <section><b>Softlockup is observed when attempting to remove many LUNs simultaneously</b>
+    </section>
+    <section>If many multipath LUNs are detached from a compute host in rapid succession a
+      softlockup and RCU (read-copy-update) stall may be observed in the kernel log file as follows:
+      <codeblock>Oct  7 12:48:52 hlm kernel: [31164.262063]  rport-0:0-2: blocked FC remote port time out: removing target and saving binding
+Oct  7 12:48:52 hlm kernel: [31164.262859]  rport-0:0-0: blocked FC remote port time out: removing target and saving binding
+Oct  7 12:49:09 hlm kernel: [31181.132369] BUG: soft lockup - CPU#23 stuck for 22s! [systemd-udevd:554]
+Oct  7 12:49:09 hlm kernel: [31181.133060] Modules linked in: dm_service_time xt_mac xt_physdev xt_set iptable_mangle xt_comment 
+     iptable_nat nf_nat_ipv4 nf_nat iptable_raw ip_set_hash_net ip_set nfnetlink vhost_net vhost macvtap macvlan tun veth bridge 
+     ib_iser rdma_cm iw_cm ib_cm ib_sa ib_mad ib_core ib_addr iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi md_mod 
+     fuse binfmt_misc xt_tcpudp xt_multiport xt_LOG xt_limit xt_conntrack xt_pkttype ip6table_filter ip6_tables iptable_filter 
+     ip_tables x_tables 8021q garp stp mrp llc bonding openvswitch gre libcrc32c nf_conntrack_ipv6 nf_defrag_ipv6 nf_conntrack_ipv4 
+     nf_defrag_ipv4 nf_conntrack dm_multipath scsi_dh evdev iTCO_wdt iTCO_vendor_support x86_pkg_temp_thermal intel_powerclamp 
+     coretemp kvm_intel kvm crc32_pclmul crc32c_intel ghash_clmulni_intel aesni_intel psmouse aes_x86_64 lrw gf128mul glue_helper 
+     ablk_helper cryptd pcspkr serio_raw ioatdma mgag200 dca ttm ipmi_si drm_kms_helper ipmi_msghandler hpilo drm lpc_ich wmi mfd_core 
+     agpgart i2c_algo_bit syscopyarea sysfillrect sysimgblt processor i2c_core thermal_sys acpi_power_meter hpwdt button autofs4 ext4 
+     crc16 mbcache jbd2 dm_mod sd_mod sg lpfc qla2xxx crc_t10dif uhci_hcd ehci_pci crct10dif_generic xhci_hcd ehci_hcd scsi_transport_fc 
+     hpsa usbcore usb_common scsi_mod be2net crct10dif_common
+Oct  7 12:49:09 hlm kernel: [31181.133114] CPU: 23 PID: 554 Comm: systemd-udevd Not tainted 3.14.51-1-amd64-hlinux #hlinux1
+Oct  7 12:49:09 hlm kernel: [31181.133115] Hardware name: HP ProLiant BL460c Gen9, BIOS I36 05/06/2015
+Oct  7 12:49:09 hlm kernel: [31181.133117] task: ffff883fcf0262c0 ti: ffff883f979ca000 task.ti: ffff883f979ca000
+Oct  7 12:49:09 hlm kernel: [31181.133118] RIP: 0010:[&lt;ffffffff81514f5b>]  [&lt;ffffffff81514f5b>] _raw_spin_trylock+0xb/0x40</codeblock>The
+      associated stack from the softlockup will show the instruction point either holding or
+      attempting to acquire a spinlock. After all the LUNs have successfully detached and the
+      devices have been flushed, the messages will subside. It is recommended that you include a
+      delay when detaching multiple LUNs to avoid the softlockup and RCU stall messages.</section>
+    <section>
       <xref href="http://docs-staging.hpcloud.com/hos2.0ga/helion/releasenotes.html" format="html"
-        scope="external">Print this page</xref>
+        scope="external">Printer friendly page</xref>
     </section>
   </body>
 </topic>

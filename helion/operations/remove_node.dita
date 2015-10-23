@@ -3,18 +3,20 @@
 <topic id="topic_fld_zzy_lt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing a Compute Node</title>
   <body><!--Needs Edit-->
-  <section id="removeNodes"> The process for removing a compute node requires that you run these steps: <ol>
-        <li>Disable provisioning to prevent new instances from being created on this node.  </li>
+  <section id="removeNodes"> The process for removing a compute node requires that you run these
+      steps. Note that to run any playbooks whatsoever for cloud maintenance, you will always run
+      from the deployer node.<ol>
+        <li>Disable provisioning to prevent new instances from being created on this node. </li>
         <li>If possible migrate any instances on the node to other nodes. </li>
         <li>Shut down the node or stop the nova-compute service. </li>
         <li>Delete the compute node from nova </li>
         <li>Amend servers.yml in the cloud configuration to remove entry for this node, commit the
           change and re run the config processor </li>
         <li>Remove the node from cobbler</li>
-    <li>If you have availability zones configured, first remove nodes in availability zones steps
-          first.</li>
-      </ol> 
-  </section>
+        <li>If you have availability zones configured, first remove nodes in availability zones
+          steps first.</li>
+      </ol>
+    </section>
     
     <section id="removeAZ"><title>Remove Hosts from Host Aggregates</title> When removing a compute
       node, if availability zones have been configured, either manually or using the Nova playbook
