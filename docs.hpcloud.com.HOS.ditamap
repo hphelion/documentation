@@ -14,7 +14,7 @@
       </vrmlist>
     </prodinfo>
   </topicmeta>
-  <topicref href="home.dita"/>
+  
   <topicref href="helion/index.dita">
     <topicref href="helion/technical_overview.dita" navtitle="Technical Overview" locktitle="yes"/>
     <topicref href="helion/kilo_features.dita" navtitle="Kilo Features"
