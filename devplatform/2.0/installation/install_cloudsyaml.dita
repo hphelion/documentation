@@ -74,7 +74,8 @@
             <codeph>service.osrc</codeph> file.</sli>
         <sli><codeph>auth_url</codeph>: This URL can be found in Horizon at: Project Compute &gt;
           Access &amp; Security &gt; API Access. Copy the Service Endpoint URL for the Identity
-          Service.</sli>
+          Service. Note that this must be <codeph>https</codeph>, not simply
+          <codeph>http</codeph>.</sli>
         <sli><codeph>project_name</codeph>: The Name of the admin project in Horizon. </sli>
         <sli><codeph>username</codeph>: The Username of an account with installation privileges
           (administrator). </sli>
