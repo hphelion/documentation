@@ -23,13 +23,36 @@
             to the Volumes screen without completing the action.<p>The newly created volume displays
               in the <b>Volumes</b>><b>Volume Types</b> page.</p></li>
         </ol></p>
-      <p><b>(This is only for VSA</b>) VSA supports volumes creation with varying attributes like
-        thin provisioning enable, raid type, ao enabled volume etc. All these attributes can be
-        specified using extra spec of volume type. Admin is expected to define appropriate extra
-        spec for VSA volume type as per the guidelines provided at <xref
+      <p><b>(This is applicable only for VSA</b>) VSA supports volumes creation with varying
+        attributes like thin provisioning enable, raid type, ao enabled volume etc. All these
+        attributes can be specified using extra spec of volume type. Admin is expected to define
+        appropriate extra spec for VSA volume type as per the guidelines provided at <xref
           href="http://docs.openstack.org/kilo/config-reference/content/hp-lefthand-supported-ops-rest.html"
           format="html" scope="external"/>.</p>
     </section>
+    <section><b>Extra Specifications Options</b> (<b>Applicable only for VSA</b>)<p>The following
+        Cinder Volume Type extra-specs options enable control over the VSA storage provisioning type
+        (thin or full) and specify protection for backend
+        volumes:<codeblock>hplh:provisioning thin or full
+hplh:data_pl r-0 or r-5 or r-10-2 or r-10-3 or r-10-4 or r-6</codeblock></p><p>For
+        example:<codeblock>hplh:provisioning thin
+hplh:data_pl r-5 
+volume_backend_name MyVolumeBackend</codeblock></p><p>The
+        protection level options enable different data protection configurations. Supported data
+        protection options are:<ul id="ul_sxb_4cs_tt">
+          <li>r-0 (RAID 0) provides the best data capacity and processing performance, but offers no
+            data protection (no fault tolerance) in the event of a failure.</li>
+          <li>r-5 (RAID 5) consists of three or more physical disk drives in an array. Stores parity
+            data across all drives. If one drive fails, the remaining drives use the parity data to
+            allow the array to continue to operate until the failed drive is replaced. If more than
+            one drive fails, the array fails.</li>
+          <li>r-10-2 (RAID 10+2) stripes and mirrors data across four or more disks.</li>
+          <li>r-10-3 (RAID 10+3) stripes and mirrors data across five or more disks.</li>
+          <li>r-10-4 RAID 10+4) stripes and mirrors data across six or more disks.</li>
+          <li>r-6 (RAID 6) is based on and extends RAID5. It requires a minimum of four drives and
+            creates multiple parity sets such that the array can function with up to two drives
+            failing at the same time.</li>
+        </ul></p></section>
     <section id="associate-volume-backend">
       <title>Associate the Volume Type to a Backend</title>
       <p> After the volume type names have been created, you can assign extra_specs to the volumes

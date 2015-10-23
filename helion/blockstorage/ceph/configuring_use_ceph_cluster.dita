@@ -17,9 +17,9 @@
     <section id="configure-ceph-as-cinder-backend">
       <title>Configure Ceph as Cinder Backend</title>
       <p>
-        <note>This playbook is executed  <codeph>ansible-playbook -i hosts/verb_hosts
-            ceph-client-prepare.yml</codeph> so that the rings files are set up properly before
-          configuring Cinder Backend.</note>
+        <note>The playbook ( <codeph>ansible-playbook -i hosts/verb_hosts
+            ceph-client-prepare.yml</codeph>)  is executed so that the rings files are set up
+          properly before configuring Cinder Backend.</note>
       </p>
       <p>Perform the following procedure on the Deployer node to configure Ceph as a Cinder
         backend:</p>

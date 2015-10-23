@@ -160,8 +160,12 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
           <li>Login to deployer node.</li>
           <li>Edit <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> to add VSA data
             as follows:
-            <codeblock># Configure the enabled backends
-enabled_backends=vsa-1</codeblock></li>
+              <codeblock># Configure the enabled backends
+enabled_backends=vsa-1</codeblock><p>If
+              you created a fully provisioned volume type in section &lt;reference&gt; add the
+              following data to the [DEFAULT] section of<codeph>
+              cinder.conf.j2</codeph>:<codeblock># Set the default volume type
+default_volume_type = &lt;your new volume type></codeblock></p></li>
           <li>Uncomment VSA section of <codeph>cinder.conf.j2</codeph> and fill the values as per
             your cluster information. If you have more than one cluster, you need to add another
             similar section with its respective values. In the following example only one cluster is
@@ -231,12 +235,16 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
     </p>
-    <p>After the successful configuration of cinder you can launch the
+    <p>After the successful configuration of VSA as a cinder backend you can launch the
       <!--Hence, cinder is successfully configured. Now launch the--> Horizon dashboard to create a
       cinder volume type for VSA as backend. Once you are able to create the volume you can perform
       the OpenStack Operations. Also, you can verify the cinder volume creation for VSA by logging
       in <xref href="../blockstorage/verify_backend_configuration.dita">Horizon
       Dashboard</xref>.</p>
+    <p>The default volume type created by VSA will be thin provisioned and will have no fault
+      tolerance. You should configure cinder to fully provision volumes, and you may want to
+      configure fault tolerance. Follow the instructions here to create a new volume type which is
+      fully provisioned and fault tolerant: &lt;URL to volume type instructions&gt;</p>
     <note type="important">You can create more than one VSA cluster of same or different type by
       specifying the configuration in cloud model. For more details, refer <xref
         href="../blockstorage/vsa/vsa_create_multiple_clusters.dita">Modifying Cloud Model to Create
