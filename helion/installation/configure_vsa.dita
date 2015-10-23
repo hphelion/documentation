@@ -278,9 +278,9 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
                     - name: /dev/sdd
                     - name: /dev/sde
                     - name: /dev/sdf</codeblock></p>
-      <p>It is recommended to use SSD disk for AO. The minimum VSA deployment with AO is 2 (apart
-        from OS disk) and 1 for VSA without AO. However, the maximum supported disks (with or
-        without AO) is 7.</p>
+      <p>It is recommended to use SSD disk for AO. The minimum VSA deployment with AO uses 2 disks
+        (apart from OS disk) and 1 disks for VSA without AO. The maximum supported number of disks
+        is 7.</p>
       <!--, VSA will have 1-6 disks as data disks and 1 disk as VSA with AO configuration. -->
       <!--<p>VSA deployment can done with AO or without AO. AO stands for adoptive optmization which allows in-built storage tiring for VSA. 
         From the deployment perspective, deployment of VSA with or without AO is not having much difference excepy in disk input model.For example: 
