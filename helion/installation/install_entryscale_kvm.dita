@@ -58,18 +58,23 @@
         <li>Select the location.</li>
         <li>Select the keyboard layout.</li>
         <li>Select the primary network interface, if prompted:<ul>
-            <li>Assign IP address, netmask, default gateway</li>
+            <li>Assign IP address, subnet mask, and default gateway</li>
           </ul></li>
         <li>Create new account:<ul>
             <li>Enter a username.</li>
             <li>Enter a password.</li>
-            <li>Enter time zone if prompted to do so.</li>
+            <li>Enter time zone.</li>
           </ul>
         </li>
+      </ol>
+      <p>Once the initial installation is complete, complete the lifecycle-manager setup with these
+        steps:</p>
+      <ol>
         <li>Ensure your deployer has a valid DNS nameserver in the <codeph>/etc/resolv.conf</codeph>
           file</li>
         <li>Set the environment variable LC_ALL: <codeph>export LC_ALL=C</codeph>
-          <note>This can be added to ~stack/.bashrc or /etc/bash.bashrc</note></li>
+          <note>This can be added to <codeph>~stack/.bashrc</codeph> or
+              <codeph>/etc/bash.bashrc</codeph>.</note></li>
       </ol>
       <p>At the end of this section you should have a node set up with Linux for HP Helion on
         it.</p>
