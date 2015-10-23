@@ -38,6 +38,7 @@
    <topicref href="root/CFR_documentation.dita" navtitle="Helion Cloud Foundry 1.0: Documentation"/>
 =======
    <topicref href="root/CFR_root_documentation.dita"/>
+<<<<<<< HEAD
 >>>>>>> dbe18b3... Adding a new Quick Start section with some temp files to be removed later
 =======
          <topichead navtitle="crap">
@@ -77,6 +78,9 @@
 >>>>>>> 58d9d55... Even more content reorg
 =======
    <topichead navtitle="Quick Start: Deploying to HPE Public Cloud">
+=======
+   <topichead navtitle="Quick Start: Deploying to HP Public Cloud">
+>>>>>>> e175940... Revised the instructions more
       <topicref href="quickstart/pubcloud/CFR_step_1.dita"/>
       <topicref href="quickstart/pubcloud/CFR_step_2.dita"/>
       <topicref href="quickstart/pubcloud/CFR_step_3.dita"/>
@@ -134,7 +138,7 @@
 >>>>>>> 6a42967... Added more content; removed temp content
 =======
    <topichead navtitle="Reference">
-      <topicref href="quickstart/pubcloud/CFR_TF_vars.dita"/>
+      <topicref href="reference/CFR_reference_TF_vars.dita"/>
       <topicref href="reference/CFR_reference_gato.dita"/>
    </topichead>
 >>>>>>> 58d9d55... Even more content reorg
