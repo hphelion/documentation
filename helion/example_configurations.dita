@@ -14,116 +14,112 @@
     <section id="contents">
       <!--
       <sl>
-        <sli><xref href="example_configurations.dita/#example_configurations/example_configs"><i>1.0</i> HP Helion OpenStack
+        <sli><xref href="example_configurations.dita#example_configurations/example_configs"><i>1.0</i> HP Helion OpenStack
             Example Configuration</xref></sli>
-        <sli outputclass="listsuba"><xref href="example_configurations.dita/#example_configurations/entryscale_kvm_vsa"
+        <sli outputclass="listsuba"><xref href="example_configurations.dita#example_configurations/entryscale_kvm_vsa"
               ><i>1.1</i> Entry-scale KVM with VSA model</xref></sli>
-        <sli outputclass="listsuba"><xref href="example_configurations.dita/#example_configurations/entryscale_esx"><i>1.2</i>
+        <sli outputclass="listsuba"><xref href="example_configurations.dita#example_configurations/entryscale_esx"><i>1.2</i>
             Entry-scale ESX model</xref></sli>
-        <sli outputclass="listsuba"><xref href="example_configurations.dita/#example_configurations/entryscale_swift"><i>1.3</i>
+        <sli outputclass="listsuba"><xref href="example_configurations.dita#example_configurations/entryscale_swift"><i>1.3</i>
             Entry-scale Swift model</xref></sli>
-        <sli outputclass="listsuba"><xref href="example_configurations.dita/#example_configurations/entryscale_ceph"><i>1.4</i>
+        <sli outputclass="listsuba"><xref href="example_configurations.dita#example_configurations/entryscale_ceph"><i>1.4</i>
             Entry-scale KVM with Ceph model</xref></sli>
-        <sli outputclass="listsuba"><xref href="example_configurations.dita/#example_configurations/midscale_kvm_vsa"><i>1.5</i>
+        <sli outputclass="listsuba"><xref href="example_configurations.dita#example_configurations/midscale_kvm_vsa"><i>1.5</i>
             Mid-scale KVM with VSA model</xref></sli>
-        <sli><xref href="example_configurations.dita/#example_configurations/modify_entryscale_kvm_vsa"><i>2.0</i> Modifying the
+        <sli><xref href="example_configurations.dita#example_configurations/modify_entryscale_kvm_vsa"><i>2.0</i> Modifying the
             Entry-scale KVM with VSA model for your environment</xref></sli>
-        <sli outputclass="listsuba"><xref href="example_configurations.dita/#example_configurations/localizing_inputmodel"
+        <sli outputclass="listsuba"><xref href="example_configurations.dita#example_configurations/localizing_inputmodel"
               ><i>2.1</i> Localizing the Input Model</xref></sli>
-        <sli outputclass="listsubb"><xref href="example_configurations.dita/#example_configurations/networks"><i>2.1.1</i>
+        <sli outputclass="listsubb"><xref href="example_configurations.dita#example_configurations/networks"><i>2.1.1</i>
             Networks.yml</xref></sli>
-        <sli outputclass="listsubb"><xref href="example_configurations.dita/#example_configurations/nicmappings"><i>2.1.2</i>
+        <sli outputclass="listsubb"><xref href="example_configurations.dita#example_configurations/nicmappings"><i>2.1.2</i>
             Nic_mappings.yml</xref></sli>
-        <sli outputclass="listsubb"><xref href="example_configurations.dita/#example_configurations/netinterfaces"><i>2.1.3</i>
+        <sli outputclass="listsubb"><xref href="example_configurations.dita#example_configurations/netinterfaces"><i>2.1.3</i>
             Net_interfaces.yml</xref></sli>
-        <sli outputclass="listsubb"><xref href="example_configurations.dita/#example_configurations/networkgroups"><i>2.1.4</i>
+        <sli outputclass="listsubb"><xref href="example_configurations.dita#example_configurations/networkgroups"><i>2.1.4</i>
             Network_groups.yml</xref></sli>
-        <sli outputclass="listsubb"><xref href="example_configurations.dita/#example_configurations/servers"><i>2.1.5</i>
+        <sli outputclass="listsubb"><xref href="example_configurations.dita#example_configurations/servers"><i>2.1.5</i>
             Servers.yml</xref></sli>
-        <sli outputclass="listsuba"><xref href="example_configurations.dita/#example_configurations/customizing_inputmodel"
+        <sli outputclass="listsuba"><xref href="example_configurations.dita#example_configurations/customizing_inputmodel"
               ><i>2.2</i> Customizing the Input Model</xref></sli>
-        <sli outputclass="listsubb"><xref href="example_configurations.dita/#example_configurations/disks_controller"
+        <sli outputclass="listsubb"><xref href="example_configurations.dita#example_configurations/disks_controller"
               ><i>2.1.1</i> Disks_controller.yml</xref></sli>
-        <sli outputclass="listsubc"><xref href="example_configurations.dita/#example_configurations/filesystems"><i>2.2.1.1</i>
+        <sli outputclass="listsubc"><xref href="example_configurations.dita#example_configurations/filesystems"><i>2.2.1.1</i>
             File Systems Storage</xref></sli>
-        <sli outputclass="listsubc"><xref href="example_configurations.dita/#example_configurations/swiftstorage"><i>2.2.1.2</i>
+        <sli outputclass="listsubc"><xref href="example_configurations.dita#example_configurations/swiftstorage"><i>2.2.1.2</i>
             Swift Storage</xref></sli>
-        <sli outputclass="listsubb"><xref href="example_configurations.dita/#example_configurations/disks_vsa"><i>2.2.2</i>
+        <sli outputclass="listsubb"><xref href="example_configurations.dita#example_configurations/disks_vsa"><i>2.2.2</i>
             Disks_vsa.yml</xref></sli>
-        <sli outputclass="listsubb"><xref href="example_configurations.dita/#example_configurations/disks_compute"><i>2.2.3</i>
+        <sli outputclass="listsubb"><xref href="example_configurations.dita#example_configurations/disks_compute"><i>2.2.3</i>
             Disks_compute.yml</xref></sli>
       </sl>
       -->
       <ul>
-        <li><xref
-            href="example_configurations.dita/example_configurations.dita/#example_configurations/example_configs"
-            >HP Helion OpenStack Example Configuration</xref>
+        <li><xref href="example_configurations.dita#example_configurations/example_configs">HP
+            Helion OpenStack Example Configuration</xref>
           <ul>
-            <li><xref href="example_configurations.dita/#example_configurations/entryscale_kvm_vsa"
+            <li><xref href="example_configurations.dita#example_configurations/entryscale_kvm_vsa"
                 >Entry-scale KVM with VSA model</xref></li>
-            <li><xref href="example_configurations.dita/#example_configurations/entryscale_esx"
+            <li><xref href="example_configurations.dita#example_configurations/entryscale_esx"
                 >Entry-scale ESX model</xref></li>
-            <li><xref href="example_configurations.dita/#example_configurations/entryscale_swift"
+            <li><xref href="example_configurations.dita#example_configurations/entryscale_swift"
                 >Entry-scale Swift model</xref></li>
-            <li><xref href="example_configurations.dita/#example_configurations/entryscale_ceph"
+            <li><xref href="example_configurations.dita#example_configurations/entryscale_ceph"
                 >Entry-scale KVM with Ceph model</xref></li>
-            <li><xref href="example_configurations.dita/#example_configurations/midscale_kvm_vsa"
+            <li><xref href="example_configurations.dita#example_configurations/midscale_kvm_vsa"
                 >Mid-scale KVM with VSA model</xref></li>
           </ul></li>
         <li><xref
-            href="example_configurations.dita/#example_configurations/modify_entryscale_kvm_vsa"
+            href="example_configurations.dita#example_configurations/modify_entryscale_kvm_vsa"
             >Modifying the Entry-scale KVM with VSA model for your environment</xref>
           <ul>
             <li><xref
-                href="example_configurations.dita/#example_configurations/localizing_inputmodel"
+                href="example_configurations.dita#example_configurations/localizing_inputmodel"
                 >Localizing the Input Model</xref>
               <ul>
-                <li><xref href="example_configurations.dita/#example_configurations/networks"
+                <li><xref href="example_configurations.dita#example_configurations/networks"
                     >Networks.yml</xref></li>
-                <li><xref href="example_configurations.dita/#example_configurations/nicmappings"
+                <li><xref href="example_configurations.dita#example_configurations/nicmappings"
                     >Nic_mappings.yml</xref></li>
-                <li><xref href="example_configurations.dita/#example_configurations/netinterfaces"
+                <li><xref href="example_configurations.dita#example_configurations/netinterfaces"
                     >Net_interfaces.yml</xref></li>
-                <li><xref href="example_configurations.dita/#example_configurations/networkgroups"
+                <li><xref href="example_configurations.dita#example_configurations/networkgroups"
                     >Network_groups.yml</xref></li>
-                <li><xref href="example_configurations.dita/#example_configurations/servers"
+                <li><xref href="example_configurations.dita#example_configurations/servers"
                     >Servers.yml</xref></li>
               </ul></li>
             <li><xref
-                href="example_configurations.dita/#example_configurations/customizing_inputmodel"
+                href="example_configurations.dita#example_configurations/customizing_inputmodel"
                 >Customizing the Input Model</xref>
               <ul>
-                <li><xref
-                    href="example_configurations.dita/#example_configurations/disks_controller"
+                <li><xref href="example_configurations.dita#example_configurations/disks_controller"
                     >Disks_controller.yml</xref>
                   <ul>
-                    <li><xref href="example_configurations.dita/#example_configurations/filesystems"
+                    <li><xref href="example_configurations.dita#example_configurations/filesystems"
                         >File Systems Storage</xref></li>
-                    <li><xref
-                        href="example_configurations.dita/#example_configurations/swiftstorage"
+                    <li><xref href="example_configurations.dita#example_configurations/swiftstorage"
                         >Swift Storage</xref></li>
                   </ul></li>
-                <li><xref href="example_configurations.dita/#example_configurations/disks_vsa"
+                <li><xref href="example_configurations.dita#example_configurations/disks_vsa"
                     >Disks_vsa.yml</xref></li>
-                <li><xref href="example_configurations.dita/#example_configurations/disks_compute"
+                <li><xref href="example_configurations.dita#example_configurations/disks_compute"
                     >Disks_compute.yml</xref></li>
               </ul></li>
-            <li><xref href="example_configurations.dita/#example_configurations/standalone">Using a
+            <li><xref href="example_configurations.dita#example_configurations/standalone">Using a
                 standalone lifecycle-manager node</xref>
               <ul>
                 <li><xref
-                    href="example_configurations.dita/#example_configurations/control_plane_yml"
+                    href="example_configurations.dita#example_configurations/control_plane_yml"
                     >Control_plane.yml</xref></li>
-                <li><xref
-                    href="example_configurations.dita/#example_configurations/server_roles_yml"
+                <li><xref href="example_configurations.dita#example_configurations/server_roles_yml"
                     >Server_roles.yml</xref></li>
                 <li><xref
-                    href="example_configurations.dita/#example_configurations/net_interfaces_yml"
+                    href="example_configurations.dita#example_configurations/net_interfaces_yml"
                     >Net_interfaces.yml</xref></li>
                 <li><xref
-                    href="example_configurations.dita/#example_configurations/disks_lifecycle_manager_yml"
+                    href="example_configurations.dita#example_configurations/disks_lifecycle_manager_yml"
                     >Disks_lifecycle_manager.yml</xref></li>
-                <li><xref href="example_configurations.dita/#example_configurations/servers_yml"
+                <li><xref href="example_configurations.dita#example_configurations/servers_yml"
                     >Servers.yml</xref></li>
               </ul></li>
           </ul></li>
@@ -202,7 +198,7 @@
         <li><b>Compute</b> - one operating system disk and one disk for virtual machine ephemeral
           storage</li>
       </ul>
-      <xref href="example_configurations.dita/#example_configurations/modify_entryscale_kvm_vsa"
+      <xref href="example_configurations.dita#example_configurations/modify_entryscale_kvm_vsa"
         >Modifying the Entry-scale KVM with VSA model for your Environment</xref> describes in
       detail how to modify this example to match your environment. </section>
     <section id="entryscale_esx"><title>Entry-scale ESX model</title>
@@ -647,7 +643,7 @@
           <xref href="input_model.dita">HPE Helion OpenStack 2.0 Input Model</xref>.</p>
       <p><b>nic-mapping</b></p>
       <p><codeph>nic-mapping</codeph> is the name of a network port mapping definition (see <xref
-          href="example_configurations.dita/#example_configurations/nicmappings"
+          href="example_configurations.dita#example_configurations/nicmappings"
           >Nic_mappings.yml</xref>). You need to set this to the mapping that corresponds to this
         server.</p>
       <p><b>mac-addr</b></p>
@@ -866,7 +862,7 @@
              - MANAGEMENT</codeblock>
       <p>This assumes that the server uses the same physical networking layout as the other servers
         in the example. See <xref
-          href="example_configurations.dita/#example_configurations/netinterfaces"
+          href="example_configurations.dita#example_configurations/netinterfaces"
           >Net_interfaces.yml</xref> for details on how to modify this to match your
         configuration.</p>
     </section>
