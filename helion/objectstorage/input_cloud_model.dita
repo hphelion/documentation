@@ -4,22 +4,20 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Modifying Example Configurations for Object
     Storage</title>
   <body>
-    <!--Needs Edit-->
-    <p>This section contains detailed descriptions about the Swift-specific parts of the input model
-      . Example input models are described in <xref href="../example_configurations.dita">example
-        configuration</xref>. General descriptions of the input model are present in the section
-        <xref href="../input_model.dita#input_model">input model</xref>. In addition, the Swift ring
-      specifications are available in <codeph>data/swift/rings.yml</codeph> file.</p>
+    <p>This section contains detailed descriptions about the Swift-specific parts of the input
+      model. For example input models, see <xref href="../example_configurations.dita">Example
+        Configurations</xref>. For general descriptions of the input model, see <xref
+        href="../input_model.dita#input_model">Input Model</xref>. In addition, the Swift ring
+      specifications are available in the <codeph>data/swift/rings.yml</codeph> file.</p>
     <p>Usually, the example models provide most of the data that is required to create a valid input
-      model. However, there are two important aspects you must plan and configure before starting a
-      deploy. They are as follows:</p>
+      model. However, before you start to deploy, you must do the following:</p>
     <ul id="ul_xxq_ht1_rt">
-      <li>Check the disk model used by your nodes. Specifically, check that all disk drives are
-        correctly named and used as described in <xref
+      <li>Check the disk model used by your nodes and that all disk drives are correctly named and
+        used as described in <xref
           href="allocating_disk_drives.dita#allocating-disk-drives/swift-requirement-disk-device"
-          >Swift requirement for device group drives</xref>.</li>
-      <li>Select an appropriate partition power for your rings. Detailed information is available at
-          <xref href="ring_specifications.dita#ring-specification">ring specifications</xref>.</li>
+          >Swift Requirements for Device Group Drives</xref>.</li>
+      <li>Select an appropriate partition power for your rings. For more information, see <xref
+          href="ring_specifications.dita#ring-specification">Ring Specifications</xref>.</li>
     </ul>
     <section>
       <title><!--Example Configurations--></title>
