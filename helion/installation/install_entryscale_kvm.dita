@@ -208,11 +208,11 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
       <title>Deploy Cobbler</title>
       <p>This phase of the install process takes the baremetal information that was provided in
           <codeph>servers.yml</codeph> and installs the Cobbler provisioning tool and loads this
-        information into Cobbler. This sets each node to <codeph>netboot-enabled: true</codeph> in Cobbler.
-        Each node will be automatically marked as <codeph>netboot-enabled: false</codeph> when it
-        completes its operating system install successfully. Even if the node tries to PXE boot
-        subsequently, Cobbler will not serve it. This is deliberate so that you can't reimage a live
-        node by accident.</p>
+        information into Cobbler. This sets each node to <codeph>netboot-enabled: true</codeph> in
+        Cobbler. Each node will be automatically marked as <codeph>netboot-enabled: false</codeph>
+        when it completes its operating system install successfully. Even if the node tries to PXE
+        boot subsequently, Cobbler will not serve it. This is deliberate so that you can't reimage a
+        live node by accident.</p>
       <p>The <codeph>cobbler-deploy.yml</codeph> playbook prompts for a password - this is the
         password that will be encrypted and stored in Cobbler, which is associated with the user
         running the command on the deployer, that you will use to log in to the nodes via their
@@ -254,9 +254,8 @@ ansible-playbook -i hosts/localhost bm-reimage.yml [-e nodelist=node1,node2,node
           <codeph>netboot-enabled: True</codeph> is selected. The playbook pauses at the start to
         give you a chance to review the set of nodes that it is targeting and to confirm that it's
         correct.</p>
-      <p>You can use <codeph>sudo cobbler system report</codeph> which will give you a synopsis of
-        the nodes' information including whether the <codeph>netboot-enabled</codeph> flag is
-        set.</p>
+      <p>You can use <codeph>sudo cobbler system find --netbook-enabled=1</codeph> which will list
+        all of your nodes with the <codeph>netboot-enabled: True</codeph> flag.</p>
     </section>
     <section id="deploy"><title>Deploy the Cloud</title>
       <ol>
