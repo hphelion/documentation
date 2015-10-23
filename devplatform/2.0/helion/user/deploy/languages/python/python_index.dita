@@ -369,7 +369,7 @@ repository.</p>
 <p>Then add the following <codeph>BUILDPACK_URL</codeph> to the
 <i>manifest.yml</i> file:</p>
 <codeblock>env:
-  BUILDPACK_URL: git://github.com/HP/heroku-buildpack-pypy.git</codeblock>
+  BUILDPACK_URL: github.com/mtigas/heroku-buildpack-pypy.git</codeblock>
 <p>Finally, push the app to Application Lifecycle Service:</p>
 <codeblock>helion push -n</codeblock>
 </section>
