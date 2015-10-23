@@ -123,16 +123,22 @@
       <p>Elasticsearch, by itself, doesn't prevent this from happening.</p>
       <p>HP Helion OpenStack uses a tool called "curator" that is developed by the Elasticsearch
         community to handle these situations. HP Helion OpenStack ships with an hourly cron job that
-        uses curator in conjunction with several configurable settings.</p>
-      <p>The hourly cron job checks if the current used Elasticsearch parition size is over the
-          <codeph>curator_low_watermark_percent</codeph> value. If it is, then curator will be run
-        to delete old indices per the <codeph>curator_num_of_indices_to_keep</codeph> setting. Then
-        a check is made again to see if the partition size is below the high watermark percent. If
-        it is still too high, curator will be run again to delete all indices except the current one
-        that is over the <codeph>curator_max_index_size_in_gb</codeph> size. A third check is made
-        and if it is still high, curator will be run to delete all indices except the current one.
-        If the usage is still high, a final check is run and an error message is written to the log
-        file but the current index is NOT deleted.</p>
+        uses curator in conjunction with several configurable settings. This cron job does the
+        following checks:</p>
+      <ul>
+        <li>First Check - The hourly cron job checks if the current used Elasticsearch partition
+          size is over the <codeph>curator_low_watermark_percent</codeph> value. If it is, then
+          curator will be run to delete old indices per the
+            <codeph>curator_num_of_indices_to_keep</codeph> setting.</li>
+        <li>Second Check - Another check is made to verify the partition size is below the high
+          watermark percent. If it is still too high, curator will be run again to delete all
+          indices except the current one that is over the
+            <codeph>curator_max_index_size_in_gb</codeph> size.</li>
+        <li>Third Check - A third check is made and if the partition size is still too high, curator
+          will be run to delete all indices except the current one.</li>
+        <li>Final Check - A final check is made and if the partition size is still high an error
+          message is written to the log file but the current index is NOT deleted.</li>
+      </ul>
     </section>
     <section id="types">
       <title>Centralized Logging Data</title>
