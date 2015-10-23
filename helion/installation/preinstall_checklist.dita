@@ -3,7 +3,10 @@
 <topic id="preinstall_checklist">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Pre-Installation Checklist</title>
   <body>
-    <note type="attention">The formatting of this page facilitates printing it out and using it to record details of your setup.</note>
+    <note type="attention">The formatting of this page facilitates printing it out and using it to
+      record details of your setup.</note>
+    <p>This checklist is focused on the Entry-scale KVM with VSA model but you can alter it to fit
+      the example configuration you chose for your cloud.</p>
     <section id="bios"><title>BIOS and iLO Settings</title>
       <p>Ensure that the following BIOS and iLO settings are applied to each baremetal server, with
         the exception of the Deployer.</p>
@@ -57,15 +60,9 @@
     <section id="network"><title>Network Setup and Configuration</title>
       <p>Before installing HP Helion OpenStack, the following networks must be provisioned and
         tested. The networks are not installed or managed by the Cloud. You must install and manage
-        the networks as documented in this link:</p>
-      <p>
-        <ul>
-          <li><xref href="../example_configurations.dita">Example Configurations</xref></li>
-        </ul>
-      </p>
+        the networks as documented in the <xref href="../example_configurations.dita">Example
+          Configurations</xref>.</p>
       <p>Use these checklists to confirm and record your network configuration information.</p>
-      
-      
       <p><b>Router</b></p>
       <p>The IP router used with HP Helion OpenStack must support the updated of its ARP table
         through gratuitous ARP packets.</p>
@@ -397,9 +394,9 @@
         </table>
       </p>
       <p><b>External VM Network</b></p>
-      <p>The External VM network is used to connect cloud instances to an external public network such
-        as a company’s intranet or the public internet in the case of a public cloud provider. The
-        external network has a predefined range of Floating IPs which are assigned to individual
+      <p>The External VM network is used to connect cloud instances to an external public network
+        such as a company’s intranet or the public internet in the case of a public cloud provider.
+        The external network has a predefined range of Floating IPs which are assigned to individual
         instances to enable communications to and from the instance to the assigned corporate
         intranet/internet. There should be a route between the External VM and External API networks
         so that instances provisioned in the cloud, may access the Cloud API endpoints, using the
@@ -470,8 +467,8 @@
             <tbody>
               <row>
                 <entry/>
-                <entry>Disk Requirement: Single 8GB disk needed per the <xref href="../hardware.dita"
-                    >Minimum Hardware Requirements</xref></entry>
+                <entry>Disk Requirement: Single 8GB disk needed per the <xref
+                    href="../hardware.dita">Minimum Hardware Requirements</xref></entry>
                 <entry/>
               </row>
               <row>
@@ -573,7 +570,7 @@
               <row>
                 <entry/>
                 <entry><xref href="../administration/wipe_disks.dita">Ensure the disks are
-                  wiped</xref></entry>
+                    wiped</xref></entry>
                 <entry/>
               </row>
               <row>
@@ -624,7 +621,7 @@
               <row>
                 <entry/>
                 <entry><xref href="../administration/wipe_disks.dita">Ensure the disks are
-                  wiped</xref></entry>
+                    wiped</xref></entry>
                 <entry/>
               </row>
               <row>
@@ -675,7 +672,7 @@
               <row>
                 <entry/>
                 <entry><xref href="../administration/wipe_disks.dita">Ensure the disks are
-                  wiped</xref></entry>
+                    wiped</xref></entry>
                 <entry/>
               </row>
               <row>
@@ -730,7 +727,7 @@
               <row>
                 <entry/>
                 <entry><xref href="../administration/wipe_disks.dita">Ensure the disks are
-                  wiped</xref></entry>
+                    wiped</xref></entry>
               </row>
               <row>
                 <entry/>
@@ -813,7 +810,7 @@
               <row>
                 <entry/>
                 <entry><xref href="../administration/wipe_disks.dita">Ensure the disks are
-                  wiped</xref></entry>
+                    wiped</xref></entry>
               </row>
               <row>
                 <entry/>
