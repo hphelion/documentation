@@ -417,6 +417,18 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                 </entry>
               </row>
               <row>
+                <entry>Cinder</entry>
+                <entry/>
+                <entry>INFO</entry>
+                <entry>To set the local logging level for Cinder services, run the following
+                  command: <codeblock>cd ~/scratch/ansible/next/hos/ansible/
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml -e cinder_loglevel=DEBUG</codeblock>
+                  <p>To set the centralized logging level for Cinder services, run the following
+                    command:</p>
+                  <codeblock>cd ~/scratch/ansible/next/hos/ansible/
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml -e cinder_logstash_loglevel=DEBUG</codeblock></entry>
+              </row>
+              <row>
                 <entry morerows="2">Freezer</entry>
                 <entry>freezer-agent</entry>
                 <entry>INFO</entry>
