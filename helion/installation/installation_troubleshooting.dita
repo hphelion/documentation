@@ -20,6 +20,7 @@
       <p>To resolve this issue, double check your nameserver in your
           <codeph>/etc/resolv.conf</codeph> file on your deployer.</p>
     </section>
+    <!--
     <section id="config_processor"><title>Issues during Configuring Your Environment</title>
       <p id="configproc"><b>Change needed to configuration files after you've run the
             <codeph>config-processor-run.yml</codeph> playbook</b></p>
@@ -32,6 +33,7 @@
 ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
       </p>
     </section>
+    -->
     <section id="deploy_cobbler"><title>Issues during Cobbler Deploy</title>
       <p id="cobblerchange"><b>Configuration changes needed after Cobbler deploy</b></p>
       <p>If you've made a mistake or wish to change your <codeph>servers.yml</codeph> configuration

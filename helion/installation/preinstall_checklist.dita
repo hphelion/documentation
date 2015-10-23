@@ -2,9 +2,8 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="preinstall_checklist">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Pre-Installation Checklist</title>
-  <body><!--Needs Edit-->
-    <note type="attention">The formatting of this page benefits from you printing this out and
-      hand-writing notes.</note>
+  <body>
+    <note type="attention">The formatting of this page facilitates printing it out and using it to record details of your setup.</note>
     <section id="bios"><title>BIOS and iLO Settings</title>
       <p>Ensure that the following BIOS and iLO settings are applied to each baremetal server, with
         the exception of the Deployer.</p>
@@ -58,15 +57,17 @@
     <section id="network"><title>Network Setup and Configuration</title>
       <p>Before installing HP Helion OpenStack, the following networks must be provisioned and
         tested. The networks are not installed or managed by the Cloud. You must install and manage
-        the networks as documented in these links:</p>
+        the networks as documented in this link:</p>
       <p>
         <ul>
           <li><xref href="../example_configurations.dita">Example Configurations</xref></li>
         </ul>
       </p>
       <p>Use these checklists to confirm and record your network configuration information.</p>
+      
+      
       <p><b>Router</b></p>
-      <p>The IP router used with HP Helion OpenStack must support the updated of it's ARP table
+      <p>The IP router used with HP Helion OpenStack must support the updated of its ARP table
         through gratuitous ARP packets.</p>
       <p><b>PXE Installation Network</b></p>
       <p>When provisioning the IP range, allocate sufficient IP addresses to cover both the current
@@ -297,7 +298,7 @@
               </row>
               <row>
                 <entry/>
-                <entry>Routable to the Managemenet Network</entry>
+                <entry>Routable to the Management Network</entry>
                 <entry/>
               </row>
               <row>
@@ -396,11 +397,11 @@
         </table>
       </p>
       <p><b>External VM Network</b></p>
-      <p>The External network is used to connect cloud instances to an external public network such
+      <p>The External VM network is used to connect cloud instances to an external public network such
         as a company’s intranet or the public internet in the case of a public cloud provider. The
         external network has a predefined range of Floating IPs which are assigned to individual
         instances to enable communications to and from the instance to the assigned corporate
-        intranet/internet. There should be route between the External VM and External API networks
+        intranet/internet. There should be a route between the External VM and External API networks
         so that instances provisioned in the cloud, may access the Cloud API endpoints, using the
         instance floating IPs.</p>
       <p>

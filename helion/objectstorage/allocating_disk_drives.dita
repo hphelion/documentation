@@ -33,7 +33,7 @@
           this case, delete <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> and replace them
           with <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>.<note>Disk drives must not
             contain labels or file systems from a prior usage. For more information, see <xref
-              href="#allocating-disk-drives/swift-requirement-disk-device" format="dita">Swift
+              href="swift_device_groups.dita">Swift
               Requirements for Device Group Drives</xref>.</note><note type="tip">The terms
               <b>add</b> and <b>delete</b> in the document means editing the respective YAML files
             to add or delete the configurations/values.</note></li>
