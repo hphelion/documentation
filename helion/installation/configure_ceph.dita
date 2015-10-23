@@ -168,7 +168,9 @@ ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
       </p>
     </section>
     <p>Ceph Monitor service is deployed on the Controller Nodes and OSD's are deployed as separate
-      nodes (Resource Nodes).</p>
+      nodes (Resource Nodes).<note>While executing <codeph>site.yml</codeph> playbook with the
+          <codeph>–-limit</codeph> option, it is also expected to include the controller nodes in
+        the list of restricted nodes if the cloud is deployed with a Ceph cluster.</note></p>
     <p><b>Run Ceph Client Packages</b></p>
     <p>Ceph can be used as backend for <xref
         href="../blockstorage/ceph/configuring_use_ceph_cluster.dita#topic_i2z_zc3_pt"
