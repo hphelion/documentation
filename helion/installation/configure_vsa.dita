@@ -155,6 +155,12 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
     </section>
     <section>
       <title>Configure VSA as a Cinder Backend</title>
+      <note>The default volume type created by VSA will be thin provisioned and will have no fault
+        tolerance. You should configure cinder to fully provision volumes, and you may also want to
+        configure fault tolerance. Follow the instructions detailed at <xref
+          href="../blockstorage/verify_backend_configuration.dita#topic_q5q_trz_jt">Creating Volume
+          type</xref> to create a new volume type which is fully provisioned and fault
+        tolerant.</note>
       <p>You must modify <codeph>cinder.conf.j2</codeph> to update VSA cluster. </p>
       <p>Perform the following steps to update the VSA cluster: <ol>
           <li>Login to deployer node.</li>
@@ -245,11 +251,6 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
       the OpenStack Operations. Also, you can verify the cinder volume creation for VSA by logging
       in <xref href="../blockstorage/verify_backend_configuration.dita">Horizon
       Dashboard</xref>.</p>
-    <p>The default volume type created by VSA will be thin provisioned and will have no fault
-      tolerance. You should configure cinder to fully provision volumes, and you may also want to
-      configure fault tolerance. Follow the instructions detailed at  <xref
-        href="../blockstorage/verify_backend_configuration.dita#topic_q5q_trz_jt">Creating Volume
-        type</xref> to create a new volume type which is fully provisioned and fault tolerant.</p>
     <note type="important">You can create more than one VSA cluster of same or different type by
       specifying the configuration in cloud model. For more details, refer <xref
         href="../blockstorage/vsa/vsa_create_multiple_clusters.dita">Modifying Cloud Model to Create
