@@ -32,6 +32,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> feab192... Added a caveat about terraform CLI on Windows
     <draft-comment author="michaelk">
       <note type="tip">If you work on Windows, you can make the visual output of your commands more
         readable by <xref
@@ -41,6 +44,7 @@
           >Cygwin</xref> or <xref href="https://git-for-windows.github.io/" format="html"
           scope="external">Git Bash</xref>.</note>
     </draft-comment>
+<<<<<<< HEAD
   <simpletable>
    <strow>
     <stentry>1. <xref conref="CFR_step_2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
@@ -136,6 +140,8 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
 =======
   <simpletable id="simpletable_zlb_lpz_st">
 =======
+=======
+>>>>>>> feab192... Added a caveat about terraform CLI on Windows
   <simpletable>
 >>>>>>> be539c9... Added Step 6
    <strow>
@@ -183,14 +189,17 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
                 >For more information, see <xref href="../../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt"
                   >Terraform Variables</xref>.</note></li>
             <li>Run the following
-                command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><p>Terraform
-                creates the necessary security groups and instances, installs Docker, installs the
-                Docker images required to run <keyword keyref="prodShort"/>, and saves the state of
-                your infrastructure to <filepath>terraform.tfstate</filepath>.</p><note
-                type="important">If Terraform displays errors, ensure that all variables have values
-                and that the values are correct.</note><note type="tip">At the end of the process,
-                Terraform displays the URL of the <keyword keyref="pubCloudShort"/> core, formatted
-                using the xip.io wildcard DNS, for
+                command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
+                type="tip">On Windows, add the <filepath>-no-color</filepath> flag to your
+                command.</note><p>Terraform creates the necessary security groups and instances,
+                installs Docker, installs the Docker images required to run <keyword
+                  keyref="prodShort"/>, and saves the state of your infrastructure to
+                  <filepath>terraform.tfstate</filepath>. The process takes about 10 minutes,
+                depending on your configuration.</p><note type="important">If Terraform displays
+                errors, ensure that all variables have values and that the values are
+                correct.</note><note type="tip">At the end of the process, Terraform displays the
+                URL of the <keyword keyref="pubCloudShort"/> core, formatted using the xip.io
+                wildcard DNS, for
                 example:<codeblock>api_endpoint = http://api.203.0.113.0.xip.io</codeblock>You will
                 need this URL to use the Cloud Foundry CLI. You can also run the <filepath>terraform
                   show</filepath> command to see detailed information about the
