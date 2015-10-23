@@ -112,6 +112,28 @@
         also be seen as coming from the credential holder to the application requiring
         authentication.</note>
     </section>
+    <section id="retaining_logs"><title>Log Retention Information</title>
+      <p>The logs that are centrally stored are saved to persistent storage as Elasticsearch
+        indices. These indices are stored in the partition <codeph>/var/lib/elasticsearch</codeph>
+        on each of the Elasticsearch cluster nodes. Out of the box, each days worth of logs is
+        stored in one Elasticsearch index. As days goes by, the number of indices stored in this
+        disk partition grows, eventually filling up the partition. Each of these indices takes up
+        CPU and memory if they are "open," so if they are left unattended these indices could
+        continue to consume system resources and eventually deplete them.</p>
+      <p>Elasticsearch, by itself, doesn't prevent this from happening.</p>
+      <p>HP Helion OpenStack uses a tool called "curator" that is developed by the Elasticsearch
+        community to handle these situations. HP Helion OpenStack ships with an hourly cron job that
+        uses curator in conjunction with several configurable settings.</p>
+      <p>The hourly cron job checks if the current used Elasticsearch parition size is over the
+          <codeph>curator_low_watermark_percent</codeph> value. If it is, then curator will be run
+        to delete old indices per the <codeph>curator_num_of_indices_to_keep</codeph> setting. Then
+        a check is made again to see if the partition size is below the high watermark percent. If
+        it is still too high, curator will be run again to delete all indices except the current one
+        that is over the <codeph>curator_max_index_size_in_gb</codeph> size. A third check is made
+        and if it is still high, curator will be run to delete all indices except the current one.
+        If the usage is still high, a final check is run and an error message is written to the log
+        file but the current index is NOT deleted.</p>
+    </section>
     <section id="types">
       <title>Centralized Logging Data</title>
       <p>The following table lists the types of logs collected by Centralized Logging and provides
