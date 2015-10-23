@@ -8,7 +8,7 @@
       <p>This page describes how to configure your VSA backend for the Helion Entry Scale Cloud with
         KVM model.</p>
     </section>
-    <section id="prereq"><title>Pre-requisites</title>
+    <section id="prereq"><title>Prerequisites</title>
       <p><ul>
           <li>The Entry Scale Cloud with VSA cloud model should be deployed. For more details on the
             installation of Entry Scale Cloud with VSA cloud model refer <xref
