@@ -70,7 +70,7 @@
       <p>This section provides user authentication for performing installation. This section is
         required for installation of the Application Lifecycle Service.</p>
       <sl>
-        <sli><codeph>auth</codeph>: The Keystone v3 address found in the
+        <sli><codeph>auth</codeph>: The Keystone v2 address found in the
             <codeph>service.osrc</codeph> file.</sli>
         <sli><codeph>auth_url</codeph>: This URL can be found in Horizon at: Project Compute &gt;
           Access &amp; Security &gt; API Access. Copy the Service Endpoint URL for the Identity
