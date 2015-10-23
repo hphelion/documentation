@@ -2,42 +2,43 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="allocating-disk-drives">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Allocating Disk Drives</title>
-  <body><!--Needs Edit-->
-    <p>The disk model describes the configuration of disk drives,
-      <!--the number of disk present on a particular server-->, and their usage. The examples
-      include several disk models.
-      <!--The disk model used by any given server is determined as follows:--> You must always
-      review the disk devices before making any changes to the existing the disk model.
-      <!--If you want to make changes to the disk model--> see <i><xref
-          href="#allocating-disk-drives/making-changes-disk-model" format="dita">Making Changes to a
-          Swift Disk Model</xref></i> for details. </p>
-    <p>This page contains the following topics:<ul id="ul_prc_vgc_jt">
+  <body><!--Needs Edit; edited 10/22; needs additional edits by Binamra to address Donagh's feedback-->
+    <p>The disk model describes the configuration of disk drives
+      <!--the number of disk present on a particular server--> and their usage. The examples include
+      several disk models. <!--The disk model used by any given server is determined as follows:-->
+      You must always review the disk devices before making any changes to the existing the disk
+      model. <!--If you want to make changes to the disk model--> For more information, see <xref
+        href="#allocating-disk-drives/making-changes-disk-model" format="dita">Making Changes to a
+        Swift Disk Model</xref>. </p>
+    <p>This topic contains the following sections:<ul id="ul_prc_vgc_jt">
         <li><xref href="#allocating-disk-drives/making-changes-disk-model" format="dita">Making
             Changes to a Swift Disk Model</xref></li>
         <li><xref href="#allocating-disk-drives/swift-consumer-syntax" format="dita">Swift Consumer
             Syntax</xref></li>
-        <li><xref href="#allocating-disk-drives/swift-requirement-disk-device" format="dita">Swift
-            Requirements for Device Group Drives</xref></li>
         <li><xref href="#allocating-disk-drives/swift-device-groups" format="dita">Swift Device
             Groups</xref></li>
+        <li><xref href="#allocating-disk-drives/swift-requirement-disk-device" format="dita">Swift
+            Requirements for Device Group Drives</xref></li>
         <li><xref href="#allocating-disk-drives/swift-logical-vol" format="dita">Swift Logical
             Volume</xref></li>
       </ul></p>
     <section id="making-changes-disk-model">
       <title>Making Changes to a Swift Disk Model</title>
-      <p>There are several reasons for changing the disk model.</p>
+      <p>There are several reasons for changing the disk model:</p>
       <ul id="ul_d5y_255_dt">
-        <li>If you have additional drives available then you can add the drives to the devices
-          list.</li>
-        <li>The disk devices listed in the example disk model have different names on your servers.
-          This may be due to different hardware drives. Edit the disk model
+        <li>If you have additional drives available, you can add them to the devices list.</li>
+        <li>If the disk devices listed in the example disk model have different names on your
+          servers. This may be due to different hardware drives. Edit the disk model
           <!--(<codeph>DISK_SET_SWPAC</codeph> or <codeph>DISK_SET_SWOBJ</codeph>) -->and change the
           device names to the correct names.</li>
-        <li>You prefer a different disk drive than the one listed in the model. For example, if
+        <li>If you prefer a different disk drive than the one listed in the model. For example, if
             <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> are slow hard drives and you
           have SDD drives available in <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>. In
-          this case, delete <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> and replace with
-            <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>.<note type="tip">The term
+          this case, delete <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> and replace them
+          with <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>.<note>Disk drives must not
+            contain labels or file systems from a prior usage. For more information, see <xref
+              href="#allocating-disk-drives/swift-requirement-disk-device" format="dita">Swift
+              Requirements for Device Group Drives</xref>.</note><note type="tip">The terms
               <b>add</b> and <b>delete</b> in the document means editing the respective YAML files
             to add or delete the configurations/values.</note></li>
       </ul>
@@ -54,54 +55,54 @@
         - name: &lt;ring-name>
         - etc...</codeblock></p>
     </section>
-    <p>The consumer field are as follows:<simpletable id="simpletable_c35_5rb_jt">
+    <p>The fields for consumer are defined as follows:<simpletable id="simpletable_c35_5rb_jt">
         <strow>
-          <stentry><b><codeph>consumer</codeph></b></stentry>
-          <stentry>This specifies the service that uses the device group. A <codeph>name</codeph>
-            field containing <b>swift</b> indicates that the drives or logical volumes are used by
+          <stentry><b><codeph>name</codeph></b></stentry>
+          <stentry>Specifies the service that uses the device group. A <codeph>name</codeph> field
+            containing <b>swift</b> indicates that the drives or logical volumes are used by
             Swift.</stentry>
         </strow>
         <strow>
           <stentry><b><codeph>attrs</codeph></b></stentry>
-          <stentry>This lists the rings that the devices are allocated to. It must contain a
+          <stentry>Lists the rings that the devices are allocated to. It must contain a
               <codeph>rings</codeph> item.</stentry>
         </strow>
         <strow>
           <stentry><b><codeph>rings</codeph></b></stentry>
-          <stentry> It contains a list of ring names. In the <codeph>rings</codeph> list, the
+          <stentry>Contains a list of ring names. In the <codeph>rings</codeph> list, the
               <codeph>name</codeph> field is optional.</stentry>
         </strow>
       </simpletable></p>
     <!--<p><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>There are a number of patterns, corresponding to different configurations of the proxy, account, container and object services.<?oxy_custom_end?> These are as follows:</p>-->
-    <p>The following are the different configurations (pattern) of the proxy, account, container,
+    <p>The following are the different configurations (patterns) of the proxy, account, container,
       and object services:</p>
     <ul id="ul_dvq_kyb_jt">
-      <li>Proxy, account, container and object (PACO) run on same node type.</li>
+      <li>Proxy, account, container, and object (PACO) run on same node type.</li>
       <li>Proxy, account, and container run on a node type (PAC) and the object services run on a
         dedicated object server (OBJ).</li>
     </ul>
     <p>
       <note>The proxy service does not have any rings associated with it.</note>
     </p>
-    <example>Example:<b>PACO</b> – proxy, account, container and object run on the same node
-      type<codeblock>consumer:
+    <example>Example: <b>PACO</b> – proxy, account, container, and object run on the same node
+      type.<codeblock>consumer:
     name: swift
     attrs:
         rings:
         - name: account
         - name: container
         - name: object-0</codeblock></example>
-    <example>Example:<b>PAC</b> – proxy, account, container run on the same node
-      type<codeblock>consumer:
+    <example>Example: <b>PAC</b> – proxy, account, and container run on the same node
+      type.<codeblock>consumer:
     name: swift
     attrs:
         rings:
         - name: account
         - name: container</codeblock></example>
-    <example>Example:<b>OBJ</b> - Dedicated object server. The following example shows two Storage
-      Policies (object-0 and object-1). See <i><xref href="storage_policies.dita">Designing Storage
-          Policies</xref></i> for more
-      information.<codeblock>consumer:
+    <example>Example: <b>OBJ</b> - Dedicated object server. The following example shows two Storage
+      Policies (object-0 and object-1). For more information, see <xref href="storage_policies.dita"
+        >Designing Storage
+      Policies</xref>.<codeblock>consumer:
     name: swift
     attrs:
         rings:
@@ -111,7 +112,7 @@
       <title><b>Swift Device Groups</b></title>
       <p> A device-group is used when the same consumer uses a number of disk drives. </p>
     </section>
-    <example>In the following example, 4 disk drives are used by both the object-0 and object-1
+    <example>In the following example, four disk drives are used by both the object-0 and object-1
       rings.<codeblock>device-groups:
 - name: swiftobj
   devices:
@@ -126,7 +127,7 @@
           - name: object-0
           - name: object-1</codeblock></example>
     <p>You may have several device groups if you have several different uses for different sets of
-      drive. </p>
+      drives. </p>
     <example>The following example shows a configuration where one drive is used for account and
       container rings and the other drives are used by the object-0
       ring:<codeblock>device-groups:
@@ -184,23 +185,22 @@
     <p><!--You should review the disk devices in the disk model before making any changes to the existing model. See <xref href="#allocating-disk-drives/making-changes-to-swift" format="dita">Making Changes to a Swift Disk Model</xref>.--></p>
     <p id="swift-requirement-disk-device"><b><b>Swift Requirements for Device Group
       Drives</b></b></p>
-    <p>In order to install and deploy, Swift requires that the disk drives listed in the devices
-      list of the device-groups item in a disk model must meet the following criteria. If not,
-      deploy will fail.</p>
+    <p>To install and deploy, Swift requires that the disk drives listed in the devices list of the
+      device-groups item in a disk model meet the following criteria (if not, the deployment will
+      fail):</p>
     <ul id="ul_fsy_255_dt">
       <li>The disk device must exist on the server. For example, if you add
-          <codeph>/dev/sdx</codeph> to a server with only 3 devices then the deploy process
-        fails.</li>
+          <codeph>/dev/sdx</codeph> to a server with only three devices, then the deploy process
+        will fail.</li>
       <li>The disk device must be unpartitioned or have a single partition that uses the whole
         drive.</li>
-      <li>Do not have a label on the partition. To check whether your disk is labelled, execute the
-        procedure mentioned in <xref href="label_on_partition.dita#verify-partition-label"/>.</li>
-      <li>Do not have an XFS filesystem that contains a filesystem label. To check that the
-        filesystem has a label, execute the procedure described in <xref
+      <li>The partition must not be labelled. For instructions, see <xref
+          href="label_on_partition.dita#verify-partition-label"/>.</li>
+      <li>The XFS file system must not contain a file system label. For instructions, see <xref
           href="filesystem_label.dita#verify-the-filesystem-label"/>.</li>
       <li>If the disk drive is already labeled as described above, the
           <codeph>swiftlm-drive-provision</codeph> process will assume that the drive has valuable
-        data and refuses to use or modify the drive.</li>
+        data and will not use or modify the drive.</li>
     </ul>
     <section id="swift-logical-vol">
       <title>Swift Logical Volumes</title>
@@ -209,7 +209,8 @@
         logical volumes you must ensure that you only reimage one server at a time. This is to allow
         the data from the other replicas to be replicated back to the logical volume once the
         reimage is complete.</note>
-      <p>Swift may use a logical volume. Ensure you meet the requirements listed in the table below:<simpletable>
+      <p>Swift can use a logical volume. To do this, ensure you meet the requirements listed in the
+        table below:<simpletable>
           <strow>
             <stentry>
               <ul id="ul_whq_2sc_jt">
@@ -217,7 +218,7 @@
                 <li><codeph><b>mkfs-opts</b></codeph></li>
               </ul>
             </stentry>
-            <stentry>Do not specify any of the these attributes.</stentry>
+            <stentry>Do not specify these attributes.</stentry>
           </strow>
           <strow>
             <stentry>
@@ -242,7 +243,7 @@
                 <li><codeph><b>consumer</b></codeph></li>
               </ul>
             </stentry>
-            <stentry> This attribute must have <codeph>name</codeph> field containing
+            <stentry> This attribute must have a <codeph>name</codeph> field set to
               <b>swift</b>.</stentry>
           </strow>
         </simpletable></p>

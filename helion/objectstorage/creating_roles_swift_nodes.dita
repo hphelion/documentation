@@ -2,9 +2,9 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_uh2_td1_kt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating Roles for Swift Nodes</title>
-  <body><!--Needs Edit-->
-    <p>You must edit the <codeph>data/server_roles.yml</codeph> file and add an entry to the
-      server-roles list using the following
+  <body>
+    <p>To create roles for Swift nodes, you must edit the <codeph>data/server_roles.yml</codeph>
+      file and add an entry to the server-roles list using the following
       syntax:<codeblock>server-roles:
 .
 .
@@ -12,25 +12,25 @@
 - name: &lt;pick-a-name>
   interface-model: &lt;specify-a-name>
   disk-model: &lt;specify-a-name></codeblock></p>
-    <p>The server roles have the following fields:<simpletable id="simpletable_c35_5rb_jt">
+    <p>The fields for server roles are defined as follows:<simpletable id="simpletable_c35_5rb_jt">
         <strow>
           <stentry><b><codeph>name</codeph></b></stentry>
-          <stentry>This is a name assigned for the role. In the following example, <b>SWOBJ-ROLE</b>
-            is the role name.</stentry>
+          <stentry>Specifies a name assigned for the role. In the following example,
+              <b>SWOBJ-ROLE</b> is the role name.</stentry>
         </strow>
         <strow>
           <stentry><b><codeph>interface-model</codeph></b></stentry>
-          <stentry> You can either select an existing interface model or create one specifically for
-            Swift object servers. In the following example <b>SWOBJ-INTERFACES</b> is used. See
-              <xref href="allocating_network.dita#topic_pcj_hzv_dt">Swift Network and Service
-              Requirements</xref> for more information.</stentry>
+          <stentry>You can either select an existing interface model or create one specifically for
+            Swift object servers. In the following example <b>SWOBJ-INTERFACES</b> is used. For more
+            information, see <xref href="allocating_network.dita#topic_pcj_hzv_dt">Swift Network and
+              Service Requirements</xref>.</stentry>
         </strow>
         <strow>
           <stentry><b><codeph>disk-model</codeph></b></stentry>
           <stentry>You can either select an existing model or create one specifically for Swift
-            object servers. In the following example <b>SWOBJ-DISKS</b> is used. See <xref
-              href="allocating_disk_drives.dita#allocating-disk-drives">Allocating Disk
-              Drives</xref> for more information.</stentry>
+            object servers. In the following example <b>SWOBJ-DISKS</b> is used. For more
+            information, see <xref href="allocating_disk_drives.dita#allocating-disk-drives"
+              >Allocating Disk Drives</xref>.</stentry>
         </strow>
       </simpletable></p>
     <example>
