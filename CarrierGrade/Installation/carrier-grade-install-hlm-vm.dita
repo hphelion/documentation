@@ -121,7 +121,7 @@ upstream_ntp_servers:
         <li>Copy the following Debian packages to <codeph>/var/cache/hlm/repo/debian/</codeph>. You
           should have <xref href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/debian"
             >downloaded these files in the
-          Prerequisites</xref>.<codeblock>protobuf-c0_0.14-1+b1_amd64.deb
+          Prerequisites</xref>.<codeblock>libprotobuf-c0_0.14-1+b1_amd64.deb
 python-setproctitle_1.1.8-1_amd64.deb
 nuagenetlib_0.0.0-1729-kilo_all.deb
 nuage-openstack-neutron_2015.1.1729_all.deb</codeblock></li>
