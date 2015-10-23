@@ -120,12 +120,13 @@
                 <strow>
                   <stentry><b>journal_disk</b></stentry>
                   <stentry>It is to used to capture journal data. You can share the journal disk
-                    between two nodes.</stentry>
+                    between two devices.</stentry>
                 </strow>
               </simpletable>
             </p><p><!--<b>How to edit osd.yml file</b><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>??<?oxy_custom_end?>--></p><note>Ensure
               that disks designated to be used for the OSD data and journal storage must be in a
-              clean state (i.e. any existing partitions must be deleted).</note></li>
+              clean state (i.e. any existing partitions must be deleted). If you do not perform this
+              step, Ceph configuration fails with errors.</note></li>
           <li>Editable parameters for Ceph are available in the following locations:<ul
               id="ul_zrr_blx_st">
               <li><codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph><p>In the
@@ -141,7 +142,7 @@
                     (<codeph>settings.yml</codeph> file) under the 'extra:' category as
                   follows:<codeblock>extra:
   osd:
-    journal max write entries: 200</codeblock></p>
+    journal_max_write_entries: 200</codeblock></p>
               </li>
               <li>
                 <p><codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph></p>
@@ -169,14 +170,14 @@ ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
     <p>Ceph Monitor service is deployed on the Controller Nodes and OSD's are deployed as separate
       nodes (Resource Nodes).</p>
     <p><b>Run Ceph Client Packages</b></p>
-    <p>Ceph can be used as backend for  <xref
-        href="../blockstorage/ceph/configuring_use_ceph_cluster.dita#topic_i2z_zc3_pt">cinder-volume
-        and cinder-backup</xref> and a <xref
+    <p>Ceph can be used as backend for <xref
+        href="../blockstorage/ceph/configuring_use_ceph_cluster.dita#topic_i2z_zc3_pt"
+        >cinder-volume</xref> and a <xref
         href="../blockstorage/ceph/configuring_use_ceph_cluster_glance.dita#topic_qch_rmx_st"
         >default glance store</xref>. The nodes running these services should have a client
       installed on it. Use <codeph>ceph-client-prepare.yml</codeph> to deploy client on respective
       nodes.</p>
-    <p><!--Execute the following command to install the Ceph client packages on controller nodes. --></p>
+    <p>Execute the following playbook so that the rings files are set up properly:</p>
     <p>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>

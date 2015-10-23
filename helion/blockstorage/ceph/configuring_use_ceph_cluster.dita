@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_i2z_zc3_pt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring Ceph to use OpenStack Services (Cinder) </title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring OpenStack Services (Cinder) to
+    use Ceph </title>
   <body><!--Needs Edit-->
     <p>This page contains the following topics :<ul id="ul_vrf_jf3_pt">
         <li><xref href="#topic_i2z_zc3_pt/configure-ceph-as-cinder-backend" format="dita">Configure
@@ -15,6 +16,11 @@
       Ceph cluster then you must reboot the instance before attaching the volume</note>
     <section id="configure-ceph-as-cinder-backend">
       <title>Configure Ceph as Cinder Backend</title>
+      <p>
+        <note>This playbook is executed  <codeph>ansible-playbook -i hosts/verb_hosts
+            ceph-client-prepare.yml</codeph> so that the rings files are set up properly before
+          configuring Cinder Backend.</note>
+      </p>
       <p>Perform the following procedure on the Deployer node to configure Ceph as a Cinder
         backend:</p>
       <p>
@@ -78,8 +84,9 @@ backup_ceph_pool = backups</codeblock><note>You
               can add a comment (<b># Ceph backup </b>) as shown above so that the ceph backup
               content can be easily identified in the<codeph> cinder.conf.j2</codeph>
             file.</note></li>
-          <li> Copy <codeph>client.cinder-backup.keyring</codeph> to the controller nodes:<ol
-              id="ol_xx5_51x_gt">
+          <li> Copy <codeph>client.cinder-backup.keyring</codeph> to the controller nodes.  Ensure
+            you have previously ran <codeph>ceph-client-prepare.yml</codeph> file before you run
+            this step.<ol id="ol_xx5_51x_gt">
               <li>Login to controller node as a root user and execute the following
                     command.<codeblock>ceph auth get-or-create client.cinder-backup | tee /etc/ceph/ceph.client.cinder-backup.keyring</codeblock><p><b>OR</b></p><p>You
                   can copy the keyring from the deployer
@@ -108,6 +115,9 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock><p><?oxy_
     </section>
     <section id="attach-ceph-volume-instance">
       <title>Attach Ceph Volume to an Instance</title>
+      <p>If you want to attach a volume from a newly-added ceph backend to an existing Nova virtual
+        machine, you must first reboot your virtual machine after the new backend has been
+        added.</p>
       <p>Perform the following steps to attach Ceph volume to an instance: <ol id="ol_vx4_4gv_kt">
           <li>On the deployer node, edit <codeph>kvm-hypervisor.conf.j2</codeph> at
               <codeph>~/helion/my_cloud/config/nova/kvm-hypervisor.conf.j2</codeph> to add the
