@@ -6,28 +6,31 @@
     <section>
       <p>There are a number of routine operations you must perform in the ongoing running and
         maintenance of your cloud, including the repair of a node when, for example, you need to
-        replace part of the server, such as a disk. </p> Typical scenarios in which you will need to
-      repair a node include: <ul>
+        replace part of the server, such as a disk. Note that to run any playbooks whatsoever for
+        cloud maintenance, you will always run from the deployer node.</p> Typical scenarios in
+      which you will need to repair a node include: <ul>
         <li>The node has already failed; i.e., it is down. </li>
         <li>The node is working but the Nova compute process is not responding, so instances are
           working but you can't manage them, for example to delete, reboot, attach/detach volumes. </li>
         <li>The node is fully operational but monitoring indicates a potential issue (such as disk
           errors) that require down time to fix. </li>
       </ul>
-      <p> In the first case all you can do is try and power it up and then use <codeph>hlm-start</codeph>. </p> If a disk
-      has failed you will need to <codeph>bm-reimage</codeph> and <codeph>hlm-deploy</codeph>. <p>In the second case you can't stop
-        or migrate the instances so all you can do is schedule a maintenance window and reboot the
-        node. </p> In the third case you have a choice: <ul><li>Stop the instances, repair the node, restart
-      the node and instances or </li><li>Live migrate the instances off the node before actioning the
-      repairs.</li></ul> However, the live migration approach is really the primary course of action. The
-      stop/start instances approach is an alternative where appropriate.  <p>To repair a node, you
+      <p> In the first case all you can do is try and power it up and then use
+          <codeph>hlm-start</codeph>. </p> If a disk has failed you will need to
+        <codeph>bm-reimage</codeph> and <codeph>hlm-deploy</codeph>. <p>In the second case you can't
+        stop or migrate the instances so all you can do is schedule a maintenance window and reboot
+        the node. </p> In the third case you have a choice: <ul>
+        <li>Stop the instances, repair the node, restart the node and instances or </li>
+        <li>Live migrate the instances off the node before actioning the repairs.</li>
+      </ul> However, the live migration approach is really the primary course of action. The
+      stop/start instances approach is an alternative where appropriate. <p>To repair a node, you
         will have to take it offline, repair it, and restart it. To do so, follow these steps.</p>
       If the node is being taken offline for maintenance, you will need to disable provisioning to
       prevent new instances from being created on this node. <ol>
         <li>Disable provisioning:
           <codeblock>nova service-disable --reason "&lt;describe reason>" &lt;node name> nova-compute</codeblock>If
-          the node has existing instances running on it and the nature of the maintenance will impact
-          these instances, the recommended approach is to stop these instances prior to the
+          the node has existing instances running on it and the nature of the maintenance will
+          impact these instances, the recommended approach is to stop these instances prior to the
           maintenance activity or migrate them to other compute nodes if possible: </li>
         <li>Stop nova:<codeblock>nova stop &lt;instance uuid></codeblock></li>
         <li> Then start them again after the repair:
