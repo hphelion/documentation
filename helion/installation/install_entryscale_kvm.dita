@@ -3,7 +3,8 @@
 <topic id="install_kvm">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry Scale Cloud
     with KVM</title>
-  <body><!--Needs Edit-->
+  <body>
+    <!--Needs Edit-->
     <section id="about">
       <p>This page describes the common installation step requirements for each of the HP Helion
         Entry Scale Cloud models that utilize the KVM hypervisor on the Compute nodes. This includes
@@ -19,8 +20,10 @@
         <li>If you are looking for information about when to use the GUI installer and when to use
           the CLI, see the <xref href="installation_overview.dita#install_overview">Installation
             Overview</xref>.</li>
-        <li>Ensure the <xref href="../hardware.dita">minimum hardware requirements</xref> are met in
-          your environment.</li>
+        <li>Ensure the <xref href="../hardware.dita">hardware requirements</xref> are met in your
+          environment.</li>
+        <li>The installation process can occur in different phases. For example, you can install the
+          control plane only and then add Compute nodes afterwards if you would like.</li>
         <li>If you run into issues during installation, we have put together a list of <xref
             href="installation_troubleshooting.dita">Troubleshooting Steps</xref> you can
           reference.</li>
@@ -32,14 +35,14 @@
           system.</li>
         <li>All machines of a given role should be the same configuration.</li>
         <li>The machine hosting the deployer and all baremetal systems must be connected to a
-          management network (MGMT). Nodes on this management network must be able to reach the iLO
+          management network. Nodes on this management network must be able to reach the iLO
           subsystem of each baremetal system to enable host reboots as part of the install process.
           The HP Helion OpenStack architecture requires that the IPMI network is a separate network
           and that a route exists from the management network to the IPMI network for iLO
           access.</li>
         <li>There is no requirement to have a dedicated network for OS-install and system
           deployment, this can be shared with the management network. More information can be found
-          on the <xref href="../example_configurations.dita">Supported Configuration</xref> page.</li>
+          on the <xref href="../example_configurations.dita">Example Configuration</xref> page.</li>
       </ul>
     </section>
     <section id="prereqs">
@@ -147,8 +150,8 @@ helion/hos/                    Directory contains files used by the installer</c
               <codeblock>cp -r ~/helion/examples/entry-scale-kvm-vsa/* ~/helion/my_cloud/definition/</codeblock></li>
             <li>Begin inputting your environment information into the configuration files in the
                 <codeph>~/helion/my_cloud/definition</codeph> directory. <p>Full details of how to
-                do this can be found here: <xref href="../input_model.dita">Helion OpenStack 2.0 Input
-                  Model</xref>.</p>
+                do this can be found here: <xref href="../input_model.dita">Helion OpenStack 2.0
+                  Input Model</xref>.</p>
             </li>
           </ol>
           <!--
