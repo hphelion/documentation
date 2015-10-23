@@ -13,12 +13,12 @@
         make the changes:
         <!--You must add a new node details in the <codeph>server.yml</codeph> file. --></p>
       <p>Perform the following steps to add a new node:<ol id="ol_p4w_gbr_4t">
-          <li><!--Log in to the deployer node.--> Get the<codeph> server.yml</codeph> file stored in
+          <li><!--Log in to the deployer node.--> Get the<codeph> servers.yml</codeph> file stored
+            in
             git:<codeblock>cd ~/helion/my_cloud/definition/data
 git checkout site</codeblock></li>
           <li>If not already done, set the weight-step attribute. See <xref
-              href="preparing_ring_changes.dita#topic_t1y_vjs_4t/setting-weight-step-attribute"
-              >Setting the weight-step attribute </xref>.</li>
+              href="input_model_change_existing_rings.dita#topic_vyp_cft_4t"/> .</li>
           <li>Add details of new node(s) to <codeph>servers.yml</codeph> file. In the following
             example only one new server <b>swobj4</b> is added. However, you can add multiple
             servers by providing the server details in the <codeph>servers.yml</codeph>
@@ -34,8 +34,13 @@ git checkout site</codeblock></li>
   ilo-user: &lt;ilo-username> 
   ilo-password: &lt;ilo-password></codeblock></li>
           <li>Commit your
-            changes.<codeblock>git add -A
-git commit -m "Add Node &lt;name>"</codeblock></li>
+              changes.<codeblock>git add -A
+git commit -m "Add Node &lt;name>"</codeblock><note>Before
+              you run any playbooks, remember that you need to export the encryption key in the
+              following environment variable: <codeph>export
+                HOS_USER_PASSWORD_ENCRYPT_KEY=&lt;encryption key></codeph> See <xref
+                href="../installation/install_entryscale_swift.dita#install_swift"/> for
+              reference.</note></li>
           <li>Run the configuration
             processor:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
@@ -50,16 +55,16 @@ ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=&lt;server-idd></
               3).<codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml
 ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=swobj4</codeblock></p><note>You
               must use the server id as it appears in the <codeph>servers.yml</codeph> file in the
-              field &lt;extra_vars></note></li>
+              field &lt;server-id></note></li>
           <li>Examine the <codeph>cloudConfig.yml</codeph> and<codeph>
               data/control_plane.yml</codeph> files to get the host prefix (for example, helion) and
             the control plane name (for example, cp1). This gives you the hostname of the node.
             Configure the operating system as
               follows.<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit &lt;hostname></codeblock><p>For
-              example, for <b>swobj4</b>, the hostname is <b>helion-cp1-swobj4-mgmt</b>.
+              example, for <b>swobj4</b>, the hostname is <b>helion-cp1-swobj0004-mgmt</b>.
               <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit helion-cp1-swobj4-mgmt</codeblock></p></li>
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit helion-cp1-swobj0004-mgmt</codeblock></p></li>
           <li>Validate that the disk drives of the new node are compatible with the disk model used
             by the node as
             follows.<codeblock>cd ~/scratch/ansible/next/hos/ansible
@@ -75,8 +80,7 @@ ansible-playbook -i hosts/verb_hosts hlm-deploy.yml </codeblock></li>
           <li>Further rebalances of the rings may be necessary. Use the process described in weight
             change phase of ring rebalance and final Rebalance phase at <xref
               href="input_model_change_existing_rings.dita#topic_vyp_cft_4t"
-              /><p><!--Once you have added a new node/server to the system, you must enure that the Swift rings are updated with the new node/server(s) details and the rings are distributed to all Swift servers.-->
-            </p></li>
+              /><p><!--Once you have added a new node/server to the system, you must enure that the Swift rings are updated with the new node/server(s) details and the rings are distributed to all Swift servers.--></p></li>
         </ol></p>
     </section>
   </body>
