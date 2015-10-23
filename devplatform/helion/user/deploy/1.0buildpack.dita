@@ -54,12 +54,12 @@ set a top-level <codeph>buildpack:</codeph> key in <i>manifest.yml</i> to the UR
 <codeblock>
   <codeph>name: myrubyapp
 mem: 256MB
-buildpack: https://github.com/ActiveState/stackato-buildpack-ruby.git
+buildpack: https://github.com/hpcloud/stackato-buildpack-ruby.git
 </codeph>
 </codeblock>
 <p>You can use a specific branch by specifying it at the end of the URL using the following format:</p>
 <codeblock>
-  <codeph>buildpack: https://github.com/ActiveState/stackato-buildpack-ruby.git#branchname
+  <codeph>buildpack: https://github.com/hpcloud/stackato-buildpack-ruby.git#branchname
 </codeph>
 </codeblock>
 <p>There are hundreds of buildpacks available on Github. Searching Github for the term "buildpack" and the name of the language or framework you wish to deploy may provide you with a working solution, or at least the starting point for your own custom buildpack.</p>

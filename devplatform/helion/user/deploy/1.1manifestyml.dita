@@ -248,7 +248,7 @@ order.</p>
   <codeph>applications:
   .:
     name: celery-demo
-    buildpack: https://github.com/ActiveState/stackato-buildpack-python.git
+    buildpack: https://github.com/hpcloud/stackato-buildpack-python.git
     mem: 128
     helion:
       env:

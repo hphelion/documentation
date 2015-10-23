@@ -24,7 +24,7 @@
 <p>Application Lifecycle Services (ALS), a Cloud Foundry-based Platform as a Service, provides a
         means to execute Python applications on a managed platform. Deploying Python applications to
         the platform is normally done using a built-in <xref
-          href="https://github.com/ActiveState/stackato-buildpack-python" scope="external"
+          href="https://github.com/hpcloud/stackato-buildpack-python" scope="external"
           format="html">Python buildpack</xref>. In order to deploy an application user a Python
         buildpack, you will need the following at the top level of your application:</p>
       <ul id="ul_myg_1ll_ls">
@@ -125,7 +125,7 @@ Application Lifecycle Service sample has the following simple <i>Procfile</i>:</
 a <i>runtime.txt</i> file setting the version (i.e. <codeph>python-3.3</codeph>) and use the \$PYTHON_VERSION environment variable in the
 Procfile <codeph>web:</codeph> command. For example:</p>
 <codeblock>web: python$PYTHON_VERSION app.py</codeblock>
-<p>See also: <xref href="https://github.com/ActiveState/stackato-buildpack-python" scope="external" format="html" >https://github.com/ActiveState/stackato-buildpack-python</xref>
+<p>See also: <xref href="https://github.com/hpcloud/stackato-buildpack-python" scope="external" format="html" >https://github.com/hpcloud/stackato-buildpack-python</xref>
 </p>
 </section>
 <section id="python-with-the-legacy-buildpack"> <title>Python with the Legacy Buildpack</title> 
@@ -371,7 +371,7 @@ repository.</p>
 <p>Then add the following <codeph>BUILDPACK_URL</codeph> to the
 <i>manifest.yml</i> file:</p>
 <codeblock>env:
-  BUILDPACK_URL: git://github.com/HP/heroku-buildpack-pypy.git</codeblock>
+  BUILDPACK_URL: github.com/mtigas/heroku-buildpack-pypy.git </codeblock>
 <p>Finally, push the app to Application Lifecycle Service:</p>
 <codeblock>helion push -n</codeblock>
 </section>

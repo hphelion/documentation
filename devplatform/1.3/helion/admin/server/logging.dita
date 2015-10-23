@@ -249,7 +249,7 @@ respectively).</p>
 <p>You can add custom drains to Logyard to look for certain events or parse
 certain log messages (e.g. tracking application push requests or user
 logins). Examples of custom drains and more advanced usage of Logyard
-can be found in the <xref href="https://github.com/ActiveState/logyard-devguide/blob/master/README.md" scope="external" format="html" >Logyard Developer
+can be found in the <xref href="https://github.com/hpcloud/logyard-devguide/blob/master/README.md" scope="external" format="html" >Logyard Developer
 Guide</xref>
 </p>
 </section>

@@ -51,9 +51,9 @@ framework:
 set a top-level <codeph>buildpack:</codeph> key in <i>manifest.yml</i> to the URL of the buildpack's Git repository. For example:</p>
 <codeblock>name: myrubyapp
 mem: 256MB
-buildpack: https://github.com/ActiveState/stackato-buildpack-ruby.git</codeblock>
+buildpack: https://github.com/hpcloud/stackato-buildpack-ruby.git</codeblock>
 <p>You can use a specific branch by specifying it at the end of the URL using the following format:</p>
-<codeblock>buildpack: https://github.com/ActiveState/stackato-buildpack-ruby.git#branchname</codeblock>
+<codeblock>buildpack: https://github.com/hpcloud/stackato-buildpack-ruby.git#branchname</codeblock>
 <p>There are hundreds of buildpacks available on Github. Searching Github for the term "buildpack" and the name of the language or framework you wish to deploy may provide you with a working solution, or at least the starting point for your own custom buildpack.</p>
 <p>
         <note type="caution">Not all Heroku buildpacks work with ALS due to environmental differences such as

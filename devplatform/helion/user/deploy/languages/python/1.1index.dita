@@ -28,7 +28,7 @@ to enable successful development are available in Python.</p>
 <p>Application Lifecycle Services (ALS), a CloudFoundry-based Platform as a
 Service, provides a means to execute Python applications on a managed platform.
 Deploying Python applications to the platform is normally done using a built-in
-<xref href="https://github.com/ActiveState/stackato-buildpack-python" scope="external" format="html" >Python buildpack</xref>.
+<xref href="https://github.com/hpcloud/stackato-buildpack-python" scope="external" format="html" >Python buildpack</xref>.
 In order to deploy an application user a Python buildpack, you will need the
 following at the top level of your application:</p>
 <ul>
@@ -340,7 +340,7 @@ repository.</p>
 <p>Then add the following BUILDPACK_URL to the
 <i>manifest.yml</i> file:</p>
 <codeblock>  env:
-  BUILDPACK_URL: git://github.com/HP/heroku-buildpack-pypy.git</codeblock>
+  BUILDPACK_URL: github.com/mtigas/heroku-buildpack-pypy.git </codeblock>
 <p>Finally, push the app to Application Lifecycle Service:</p>
 <codeblock>  helion push -n</codeblock>
 </section>
