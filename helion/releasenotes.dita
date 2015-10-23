@@ -439,8 +439,8 @@ net.ipv6.conf.default.disable_ipv6 = 1
 net.ipv6.conf.lo.disable_ipv6 = 1</codeblock>
         Once these have been added, you can either reboot the node or run the following command (as
         root): <codeblock># sysctl -p</codeblock> Please refer to your router documentation to block
-        IPv6 traffic from reaching your network at the router.</p>
-      <b>Softlockup is observed when attempting to remove many LUNs simultaneously</b>
+        IPv6 traffic from reaching your network at the router.</p></section>
+    <section><b>Softlockup is observed when attempting to remove many LUNs simultaneously</b>
     </section>
     <section>If many multipath LUNs are detached from a compute host in rapid succession a
       softlockup and RCU (read-copy-update) stall may be observed in the kernel log file as follows:
