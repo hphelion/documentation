@@ -129,7 +129,7 @@ ansible-playbook -i hosts/verb_hosts swift-stop.yml --limit <b>&lt;hostname></b>
 ansible-playbook -i hosts/verb_hosts swift-stop.yml --limit <b>helion-cp1-swobj0004</b></codeblock></p><note>When
               using the <codeph>--limit</codeph>
               <!--with ansible-playbooks--> you must specify the full hostname (for example:<codeph>
-                helion-cp1-swobj4</codeph>) or use the wildcard * (for example:
+                helion-cp1-swobj0004</codeph>) or use the wildcard * (for example:
             *swobj4*).</note></li>
           <li>Remove configuration files as follows. This assumes you are logged onto the
               deployer:<codeblock>ssh helion-cp1-swobj4-mgmt sudo rm -R /etc/swift</codeblock><note>Do
@@ -165,8 +165,8 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
 ansible-playbook -i hosts/verb_hosts hlm-deploy.yml</codeblock></li>
           <li>Wait until replication has finished. See <xref href="safe_rebalance_deploy_ring.dita"
             /> for more details.</li>
-          <li>Further rebalances of the rings are necessary. Use the process described in <b>Final
-              rebalance phase </b> at  <xref
+          <li>Further rebalances of the rings may be necessary. Use the process described in
+              <b>Final rebalance phase </b> at <xref
               href="input_model_change_existing_rings.dita#topic_vyp_cft_4t"/>.</li>
         </ol></p>
     </section>
