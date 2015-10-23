@@ -42,12 +42,11 @@
           Checklist</xref> that should help with the recommended pre-installation tasks.</p>
     </section>
     <section id="setup_deployer">
-      <title>Set up the Deployer</title>
-      <p>The deployer will contain the installation scripts and configuration files for your cloud.
-        You can use a dedicated deployer node or you can run these instructions on your first
-        controller node. There is only one difference in these approaches and thats in the
-        configuration files. This will be discussed in each models page along with the rest of the
-        unique configurations.</p>
+      <title>Set up the Lifecycle-manager</title>
+      <p>The lifecycle-manager will contain the installation scripts and configuration files to
+        deploy your cloud. You can set up the lifecycle-manager on a dedicated node or you do so on
+        your first controller node. The default choice is to use the first controller node as the
+        lifecycle-manager..</p>
       <ol>
         <li>Download the HP Helion OpenStack 2.0.0 product from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
