@@ -158,8 +158,8 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
               have downloaded in <b>Step 3</b> to your terminal session.<ul id="ul_ptr_bwp_tt">
                 <li>On a Linux machine, navigate to the directory that contains the
                     <filepath>.sh</filepath> file and source the file, for
-                    example:<codeblock>source <filepath>12345678901234-Project-openrc.sh</filepath></codeblock><p>Enter
-                    your OpenStack password when prompted.</p></li>
+                  example:<codeblock>source <filepath>12345678901234-Project-openrc.sh</filepath></codeblock>Enter
+                  your OpenStack password when prompted.</li>
                 <li>On a Windows machine, add variables from the <filepath>.sh</filepath> file at
                   the command prompt, or add the commands to a batch file, for
                   example:<codeblock>set OS_AUTH_URL=https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/
@@ -185,9 +185,10 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
               a <filepath>.tfvars</filepath> file. Your <filepath>.tfvars</filepath> file should
               contain the credentials and keys for your cluster.</li>
             <li>Configure the necessary values in your <filepath>.tfvars</filepath> file, using the
-              included <filepath>overrides.tfvars.sample</filepath> file as a guide.<note type="tip"
-                >For more information, see <xref href="../../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt"
-                  >Terraform Variables</xref>.</note></li>
+              included <filepath>overrides.tfvars.sample</filepath> file as a guide.<note>For more
+                information, see <xref
+                  href="../../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt">Terraform
+                  Variables</xref>.</note></li>
             <li>Run the following
                 command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
                 type="tip">On Windows, add the <filepath>-no-color</filepath> flag to your
@@ -195,11 +196,9 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
                 installs Docker, installs the Docker images required to run <keyword
                   keyref="prodShort"/>, and saves the state of your infrastructure to
                   <filepath>terraform.tfstate</filepath>. The process takes about 10 minutes,
-                depending on your configuration.</p><note type="important">If Terraform displays
-                errors, ensure that all variables have values and that the values are
-                correct.</note><note type="tip">At the end of the process, Terraform displays the
-                URL of the <keyword keyref="pubCloudShort"/> core, formatted using the xip.io
-                wildcard DNS, for
+                depending on your configuration.</p><note type="tip">At the end of the process,
+                Terraform displays the URL of the <keyword keyref="pubCloudShort"/> core, formatted
+                using the xip.io wildcard DNS, for
                 example:<codeblock>api_endpoint = http://api.203.0.113.0.xip.io</codeblock>You will
                 need this URL to use the Cloud Foundry CLI. You can also run the <filepath>terraform
                   show</filepath> command to see detailed information about the
@@ -216,11 +215,10 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
                     <uicontrol>Project</uicontrol>
                     <uicontrol>Computer</uicontrol>
                     <uicontrol>Access and Security</uicontrol>
-                  </menucascade>.<note type="tip">Ensure that all three security groups are
-                    available, for example <uicontrol>cluster1-SSH</uicontrol>,
-                      <uicontrol>cluster-1-Router</uicontrol>, and
-                      <uicontrol>cluster-1-Internal</uicontrol>.</note></li>
-              </ul></li>
+                  </menucascade>.</li>
+              </ul><p>Ensure that all three security groups are available, for example
+                  <uicontrol>cluster1-SSH</uicontrol>, <uicontrol>cluster-1-Router</uicontrol>, and
+                  <uicontrol>cluster-1-Internal</uicontrol>.</p></li>
           </ol><xref href="CFR_step_5.dita#concept_cw2_thz_st">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
           </xref></stentry>

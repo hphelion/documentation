@@ -71,7 +71,7 @@
 =======
               keyref="pubCloudShort"/></b><note type="important">Using <keyword
               keyref="pubCloudShort"/> to terminate instances or security groups is not recommended.
-            Use the following steps if you run into difficulties with Terraform.</note><ol
+            Use the following steps only if you run into difficulties with Terraform.</note><ol
             id="ol_zqt_ld3_tt">
 >>>>>>> 076fff9... Modified instruction steps 5 & 6
             <li>Log into <xref href="https://horizon.hpcloud.com/" format="html" scope="external"

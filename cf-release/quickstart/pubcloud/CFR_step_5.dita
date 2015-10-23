@@ -179,16 +179,16 @@ cf target -o <varname>&lt;organization></varname> -s <varname>&lt;space></varnam
               example:<codeblock>cf target http://api.203.0.113.0.xip.io</codeblock></li>
             <li>Ensure you are logged into the cluster:<codeblock>cf login</codeblock>You are
               prompted for your username and password.</li>
-            <li>Push the application:<codeblock>cf push</codeblock><note type="tip">At the end of
-                the process, Cloud Foundry displays the URL of the application, formatted using the
-                xip.io wildcard DNS, for
+            <li>Push the application:<codeblock>cf push</codeblock><p>At the end of the process,
+                Cloud Foundry displays the URL of the application, formatted using the xip.io
+                wildcard DNS, for
                 example:<codeblock><b>urls:</b> myAppName.203.0.113.0.xip.io</codeblock>You will
                 need this URL to use the Cloud Foundry CLI. You can also run the <filepath>cf
-                  apps</filepath> command to see detailed information about your application.<p>If
-                  you experience a problem, run the <filepath>cf delete
-                      <varname>&lt;appName></varname></filepath> command, make the necessary
-                  adjustments, and then push the application again.</p></note><note type="tip">For
-                detailed instructions, see the Cloud Foundry documentation:<ul id="ul_yyr_c5w_tt">
+                  apps</filepath> command to see detailed information about your
+                application.</p><note type="tip">If you experience a problem, run the <filepath>cf
+                  delete <varname>&lt;appName></varname></filepath> command, make the necessary
+                adjustments, and then push the application again. For detailed instructions, see the
+                Cloud Foundry documentation:<ul id="ul_yyr_c5w_tt">
                   <li><xref
                       href="https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html"
                       format="html" scope="external">Deploying an Application</xref></li>
