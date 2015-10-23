@@ -335,7 +335,22 @@
         clean up logs from <codeph>logstash</codeph> to only keep logs of interest. You should only
         do a full backup if you need to preserve logs. In most cases, the exclude option is
         appropriate.</p>
-      <b>Logs can fill the control plane node</b>
+      <p><b>Situations In Which Logs Might Not Be Collected</b></p>
+      <p>Centralized logging might not collect log data under the following circumstances:</p>
+      <ul>
+        <li>If the Beaver service is not running on one or more of the nodes (controller or
+          compute), logs from these nodes will not be collected.</li>
+        <li>Beaver watches the log files for any additions and only pushes the incremental log
+          records for centralized logging. It does not parse all the existing log records in the log
+          files that were added <b>before</b> Beaver started watching those files. Similarly, if
+          Beaver was stopped for some reason and then started again later, the logs that were added
+          during the time span that Beaver was not running will not be collected for centralized
+          logging.</li>
+        <li>The logging service uses a RabbitMQ queue and this queue is not persistent. This means,
+          if the RabbitMQ service on the master node is restarted for some reason, all messages that
+          are not yet consumed by the logstash workers might be lost.</li>
+      </ul>
+      <p><b>Logs can fill the control plane node</b></p>
       <p>Logs are stored in one index per day in the Elasticsearch database but are not rotated.</p>
       <p>Because logs are not rotated, the logs can accumulate and consume significant space on the
         control plane.</p>

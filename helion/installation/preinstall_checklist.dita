@@ -34,6 +34,10 @@
               </row>
               <row>
                 <entry/>
+                <entry>Ensure that Wake-on-LAN is disabled in the BIOS</entry>
+              </row>
+              <row>
+                <entry/>
                 <entry>Ensure that the NIC port to be used for PXE installation has PXE enabled in
                   the BIOS</entry>
               </row>
@@ -45,10 +49,6 @@
                 <entry/>
                 <entry>Ensure all hardware in the server not directly used by Helion is
                   disabled</entry>
-              </row>
-              <row>
-                <entry/>
-                <entry>Disable SR-IOV in the BIOS</entry>
               </row>
             </tbody>
           </tgroup>

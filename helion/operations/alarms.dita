@@ -514,11 +514,22 @@
               <entry>Elasticsearch unassigned shards count is greater than 0</entry>
               <entry>Environment could be misconfigured</entry>
               <entry>
-                <p>If you have unassigned shards, make sure that all servers are at the same version
-                  of Elasticsearch.</p>
-                <p>Make sure local (true) is set.</p>
-                <p>You may need to change the number_of_replicas to a different value, then back
-                  (e.g. from 2 to 1 and back to 2)</p>
+                <p>To find the unassigned shards, run the following command on the lifecycle-manager node
+                  from the <codeph>~/scratch/ansible/next/hos/ansible</codeph> directory:</p>
+                <codeblock>ansible -i hosts/verb_hosts LOG-SVR[0] -m shell -a "curl localhost:9200/_cat/shards?pretty -s" | grep UNASSIGNED</codeblock>
+                  <p>This should show which shards are unassigned, like this:</p>
+                 <codeblock>logstash-2015.10.21 4 p UNASSIGNED 11412371  3.2gb 10.241.67.11 Keith Kilham</codeblock>
+                  <p>The last column shows the name that Elasticsearch uses for the node that the
+                  unassigned shards are on. To find the actual hostname, run:</p>
+                <codeblock>ansible -i hosts/verb_hosts LOG-SVR -m shell -a "curl localhost:9200/_nodes/_all/name?'pretty' -s" --limit LOG-SVR[0]</codeblock>
+                <p>Once you find the hostname, you can try the following:</p>
+                <ol>
+                  <li>Make sure the node is not out of disk space, and free up space if needed.</li>
+                  <li>Restart the node (use caution, as this may affect other services as well)</li>
+                  <li>Check to make sure all versions of Elasticsearch are the same with this:
+                 <codeblock>ansible -i hosts/verb_hosts LOG-SVR -m shell -a "curl localhost:9200/_nodes/_local/name?pretty -s" | grep version</codeblock></li>
+                  <li>Contact customer support.</li>
+                </ol>
               </entry>
             </row>
             <row>
@@ -527,43 +538,44 @@
               <entry>Elasticsearch Field Data Evictions count is greater than 0</entry>
               <entry>Field Data Evictions may be found even though it is nowhere near the limit
                 set.</entry>
-              <entry>Field Data Evictions may be found even though it is nowhere near the limit set.
-                This could be because the maximum cache size specified is split between the
-                partitions, so for 16 partitions, any given field data inserted would actually have
-                a maximum size of indices.fielddata.cache.size / 16. This value may need to be
-                increased.</entry>
+              <entry>The elasticsearch_indices_fielddata_cache_size is tuned out-of-the box, but if
+                it is insufficient, you may need to increase this configuration parameter and run a
+                reconfigure.</entry>
             </row>
             <row>
               <entry>Elasticsearch Bulk Pool Rejected</entry>
               <entry>Elasticsearch</entry>
               <entry>Elasticsearch Bulk Pool Rejected count is greater than 0</entry>
               <entry>Thread pool size could be too small.</entry>
-              <entry>You may need to increase the threadpool.bulk.queue_size (from 50 to 100, for
-                example).</entry>
+              <entry>You may need to increase the threadpool.bulk.queue_size (from 50 to 100, or
+                even 3000, for example). This is found in the config/logging/elasticsearch.yml.j2
+                file.</entry>
             </row>
             <row>
               <entry>Elasticsearch Number of Log Entries</entry>
               <entry>Elasticsearch</entry>
               <entry>Elasticsearch Number of Log Entries</entry>
               <entry>The number of log entries may get too large</entry>
-              <entry>Kibana may hang if the number of log entries is too large (e.g. above 40,000).
-                You may need to keep the page size small enough (about 20,000 results), because if
-                it is larger (e.g. 200,000), it may hang the browser.</entry>
+              <entry>Older versions of Kibana (version 3 and earlier) may hang if the number of log
+                entries is too large (e.g. above 40,000), and the page size would need to be small
+                enough (about 20,000 results), because if it is larger (e.g. 200,000), it may hang
+                the browser, but Kibana 4 should not have this issue.</entry>
             </row>
             <row>
               <entry>Elasticsearch Open File Descriptors </entry>
               <entry>Elasticsearch</entry>
               <entry>Elasticsearch Open File Descriptors is greater than 90%</entry>
               <entry>Configured to allow too many file descriptors to be opened.</entry>
-              <entry>Make sure that the limits.conf settings are being used, and adjust them if
-                needed. A "ulimit" statement could cause this value to be ignored (overwriting the
-                value passed by the ulimit statement).</entry>
+              <entry>Close some old indices. This can be performed by setting the
+                curator_close_indices_after_days value from the default of 0, which does not close
+                indicies, to a specific number of days. This is located in the
+                config/logging-common/main.yml file.</entry>
             </row>
             <row>
               <entry>Elasticsearch Max Total Indices Size</entry>
               <entry>Elasticsearch</entry>
               <entry>Elasticsearch Total Indices size is greater than
-                elasticsearch_max_total_indices_size_in_bytesdefined by user</entry>
+                elasticsearch_max_total_indices_size_in_bytes defined by user</entry>
               <entry>elasticsearch_max_total_indices_size_in_bytes may be set too low, or you may
                 have insufficient resources.</entry>
               <entry>If the total size of all the indices exceeds the size of the
@@ -594,8 +606,8 @@
               <entry>Beaver</entry>
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
-              <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
-                  systemctl restart beaver</codeph>
+              <entry>If the Beaver process goes down, try restarting it with: <codeph>sudo systemctl
+                  restart beaver</codeph>
               </entry>
             </row>
             <row>
@@ -603,8 +615,8 @@
               <entry>Apache</entry>
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
-              <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
-                  systemctl restart apache2</codeph>
+              <entry>If the Apache process goes down, try restarting it with: <codeph>sudo systemctl
+                  restart apache2</codeph>
               </entry>
             </row>
             <row>
@@ -612,8 +624,8 @@
               <entry>Kibana</entry>
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
-              <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
-                  systemctl restart kibana</codeph>
+              <entry>If the Kibana process goes down, try restarting it with: <codeph>sudo systemctl
+                  restart kibana</codeph>
               </entry>
             </row>
           </tbody>
