@@ -95,7 +95,7 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
                   </menucascade>.<note type="tip">Ensure that all three security groups are
                     available, for example <uicontrol>cluster1-SSH</uicontrol>,
                       <uicontrol>cluster-1-Router</uicontrol>, and
-                      <uicontrol>cluster-1-Internal</uicontrol></note></li>
+                      <uicontrol>cluster-1-Internal</uicontrol>.</note></li>
               </ul></li>
           </ol><xref href="CFR_step_5.dita#concept_cw2_thz_st">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_uvz_1cx_tt">
+ <title>What's New</title>
+ <shortdesc></shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <p>This is the first release of <keyword keyref="prodLong"/>.</p>
+  <section>
+   <title>Updates</title>
+   <dl>
+    <dlentry>
+     <dt>Terraform</dt>
+     <dd>If you have worked with Cloud Foundry before, <keyword keyref="prodShort"/> will allow you
+      to work in a familiar environment that uses <xref href="https://terraform.io/" format="html"
+       scope="external">Terraform</xref>, a service management command-line tool, instead of
+      BOSH.</dd>
+    </dlentry>
+    <dlentry>
+     <dt><keyword keyref="adminUtil"/></dt>
+     <dd>If you have worked with the <xref
+       href="http://www8.hp.com/us/en/cloud/helion-devplatform-overview.html" format="html"
+       scope="external">HP Helion Development Platform</xref> before, <keyword keyref="prodShort"/>
+      will allow you to work in a familiar environment that uses <filepath>gato</filepath>, a new
+      command-line administration utility, instead of <filepath>kato</filepath>. For more
+      information, see the <xref href="../reference/CFR_reference_gato.dita#reference_cd3_bs3_rt"
+      />.</dd>
+    </dlentry>
+   </dl>
+  </section>
+ </conbody>
+</concept>

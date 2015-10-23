@@ -14,22 +14,11 @@
         href="http://www.cloudfoundry.org/" format="html" scope="external">Cloud Foundry</xref>.</p>
     <p>
       <keyword keyref="prodShort"/> uses containers for bundling all major functions, for
-      representing roles and for providing simple update and upgrade workflows. It also uses <xref
+      representing roles, and for providing simple update and upgrade workflows. It also uses <xref
         href="https://www.consul.io/" format="html" scope="external">Consul</xref> for centralized
       configuration storage that runs on each instance.</p>
-    <ul id="ul_zrh_ll3_rt">
-      <li>If you have worked with Cloud Foundry before, <keyword keyref="prodShort"/> will allow you
-        to work in a familiar environment that uses <xref href="https://terraform.io/" format="html"
-          scope="external">Terraform</xref>, a service management command-line tool, instead of
-        BOSH.</li>
-      <li>If you have worked with the <xref
-          href="http://www8.hp.com/us/en/cloud/helion-devplatform-overview.html" format="html"
-          scope="external">HP Helion Development Platform</xref> before, <keyword keyref="prodShort"
-        /> will allow you to work in a familiar environment that uses <filepath>gato</filepath>, a
-        new command-line administration utility, instead of <filepath>kato</filepath>.</li>
-    </ul>
     <p>The following sections will help you get started with exploring <keyword keyref="prodShort"/>
-      and pushing your first apps:</p>
+      and pushing your first apps.</p>
     <section>
       <title>Quick Start: Deploying to <keyword keyref="pubCloudLong"/></title>
       <ul id="ul_ack_nwv_tt">
