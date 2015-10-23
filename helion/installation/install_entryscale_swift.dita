@@ -24,6 +24,24 @@
             <li>Copy the example configuration files into the required setup directory and edit them
               to contain the details of your environment:
               <codeblock>cp -r ~/helion/examples/entry-scale-swift/* ~/helion/my_cloud/definition/</codeblock></li>
+            <li>Update the <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph>
+              file and add the <codeph>swift-rsync</codeph> service to the component-endpoints for
+              the SWIFT network group. For
+              example:<codeblock>    #
+    # SWIFT
+    #
+    # This is the network group that will be used to for
+    # Swift back-end traffic bewtween proxy, container, account
+    # and object servers
+    #
+    - name: SWIFT
+      hostname-suffix: swift
+
+      component-endpoints:
+        - swift-container
+        - swift-account
+        - swift-object
+        - swift-rsync</codeblock></li>
             <li>Begin inputting your environment information into the configuration files in the
                 <codeph>~/helion/my_cloud/definition</codeph> directory. <p>Full details of how to
                 do this can be found here: <xref href="../input_model.dita">Helion OpenStack 2.0 Input
