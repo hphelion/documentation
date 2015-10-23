@@ -40,7 +40,7 @@
             Features</xref></li>
           <li><xref href="kilo_features.dita#HP2.0KiloFeatures/CinderFeatures">Cinder
               Features</xref></li>
-          <li><xref href="#HP2.0KiloFeatures/KeystoneFeatures" format="dita">Keystone
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/KeystoneFeatures">Keystone
             Features</xref></li>
           <li><xref href="kilo_features.dita#HP2.0KiloFeatures/CeilometerFeatures">Ceilometer
               Features</xref></li>
