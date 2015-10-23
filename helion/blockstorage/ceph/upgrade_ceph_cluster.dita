@@ -17,8 +17,8 @@ ansible-playbook -i hosts/verb_hosts hlm-upgrade.yml</codeblock></li>
             report the health status as <b>HEALTH_OK</b>.</p></li>
         <li>Verify the Ceph version by logging on the Monitor and/or OSD node(s) and executing
           following command:<codeblock>ceph --version</codeblock><p>The above command should return
-            the version string of the latest package installed on the system. (<b>any example, would
-              be good??)</b></p></li>
+            the version string of the latest package installed on the system.
+            <!--(<b>any example, would be good??)</b>--></p></li>
       </ol></p>
   </body>
 </topic>
