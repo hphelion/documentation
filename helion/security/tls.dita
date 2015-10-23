@@ -59,7 +59,7 @@
           above and provide your IP
           <codeblock>cat > v3_ext.cnf &lt;&lt; *EOF*
 [ v3_req ]
-subjectAltName=DNS:your.domain.com,DNS: IP:10.0.0.1, IP:10.0.0.1
+subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
 *EOF*</codeblock>
         </li>
         <li>Self-sign your certificate
