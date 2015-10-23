@@ -2205,7 +2205,7 @@
         </table>
       </p>
     </section>
-    <section id="firewallrules">
+    <section id="co_firewallrules">
       <title>Firewall Rules</title>
       <p>The Configuration Processor will automatically generate "allow" firewall rules for each
         server based on the services deployed and block all other ports. The firewall rules in the
@@ -2232,6 +2232,7 @@
          # icmp code
          port-range-max: 0
          protocol: icmp</codeblock>
+      <p>
       <table frame="all" rowsep="1" colsep="1" id="table_zxz_yrk_tt">
         <tgroup cols="2">
           <colspec colname="c1" colnum="1"/>
@@ -2267,6 +2268,7 @@
           </tbody>
         </tgroup>
       </table>
+      </p>
     </section>
     <section id="rule">
       <title>Rule</title>
@@ -2880,7 +2882,9 @@ ansible-playbook -i hosts/localhost config-processor-run.yml -e free_unused_addr
         route ISCSI traffic); however, because this is using the default route, a warning will be
         issued:</p>
       <codeblock>#   route-generator-2.0       WRN: Default routing used between networks
-The following networks are using a 'default' route rule. To remove this warning either add an explicit route in the source network group or force the network to attach in the interface model used by the servers.
+The following networks are using a 'default' route rule. To remove this warning 
+either add an explicit route in the source network group or force the network to 
+attach in the interface model used by the servers.
   MANAGEMENT-NET-RACK1 to ISCSI-NET
     helion-ccp-comp0001
   MANAGEMENT-NET-RACK 2 to ISCSI-NET
