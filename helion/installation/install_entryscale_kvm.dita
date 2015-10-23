@@ -6,12 +6,11 @@
   <body>
     <!--Needs Edit-->
     <section id="about">
-      <p>This page describes the common installation step requirements for each of the HP Helion
-        Entry Scale Cloud models that utilize the KVM hypervisor on the Compute nodes. This includes
-        the following: <ul>
-          <li>Entry Scale Cloud with VSA</li>
-          <li>Entry Scale Cloud with Ceph</li>
-          <li>Entry Scale Cloud with 3PAR</li>
+      <p>This page describes the common installation steps that are required for each of the HP Helion OpenStack
+        Entry-scale cloud models that utilize the KVM hypervisor on the Compute nodes. This includes
+        the following example configurations: <ul>
+          <li>Entry-scale KVM with VSA model</li>
+          <li>Entry-scale KVM with Ceph model</li>
         </ul>
       </p>
     </section>
