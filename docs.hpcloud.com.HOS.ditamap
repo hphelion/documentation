@@ -21,7 +21,6 @@
       locktitle="yes"/>
     <topicref href="helion/input_model.dita" navtitle="Input Model"
       locktitle="yes"/>
-    <topicref href="helion/example_configs.dita" navtitle="*Example Configurations" locktitle="yes" toc="no"/>
     <topicref href="helion/example_configurations.dita" navtitle="Example Configurations"
       locktitle="yes"/>
     <topicref href="helion/hardware.dita" navtitle="Hardware Requirements" locktitle="yes"/>
