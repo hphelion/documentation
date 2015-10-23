@@ -18,8 +18,7 @@
             git:<codeblock>cd ~/helion/my_cloud/definition/data
 git checkout site</codeblock></li>
           <li>If not already done, set the weight-step attribute. See <xref
-              href="preparing_ring_changes.dita#topic_t1y_vjs_4t/setting-weight-step-attribute"
-              >Setting the weight-step attribute </xref>.</li>
+              href="setting_up_weight_attributes_ring_changes.dita#topic_t1y_vjs_4t"/> .</li>
           <li>Add details of new node(s) to <codeph>servers.yml</codeph> file as
               follows.<codeblock>servers:
 ...

@@ -218,9 +218,13 @@ san_ssh_port=16022
 san_clustername=&lt;vsa-cluster-name>
 volume_backend_name: &lt;vsa-backend-name></codeblock></note></li>
           <li>Commit your configuration to a <xref href="using_git.dita">local repository</xref>:
-            <codeblock>cd ~/helion/hos/ansible
+              <codeblock>cd ~/helion/hos/ansible
 git add -A
-git commit -m "&lt;your commit message>"</codeblock></li>
+git commit -m "&lt;your commit message>"</codeblock><note>Before
+              you run any playbooks, remember that you need to export the encryption key in the
+              following environment variable:<codeph> export
+                HOS_USER_PASSWORD_ENCRYPT_KEY=&lt;encryption key></codeph> See <xref
+                href="install_entryscale_kvm.dita#install_kvm"/> for reference.</note></li>
           <li>Run the configuration processor:
             <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
@@ -242,9 +246,10 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
       in <xref href="../blockstorage/verify_backend_configuration.dita">Horizon
       Dashboard</xref>.</p>
     <p>The default volume type created by VSA will be thin provisioned and will have no fault
-      tolerance. You should configure cinder to fully provision volumes, and you may want to
-      configure fault tolerance. Follow the instructions here to create a new volume type which is
-      fully provisioned and fault tolerant: &lt;URL to volume type instructions&gt;</p>
+      tolerance. You should configure cinder to fully provision volumes, and you may also want to
+      configure fault tolerance. Follow the instructions detailed at  <xref
+        href="../blockstorage/verify_backend_configuration.dita#topic_q5q_trz_jt">Creating Volume
+        type</xref> to create a new volume type which is fully provisioned and fault tolerant.</p>
     <note type="important">You can create more than one VSA cluster of same or different type by
       specifying the configuration in cloud model. For more details, refer <xref
         href="../blockstorage/vsa/vsa_create_multiple_clusters.dita">Modifying Cloud Model to Create

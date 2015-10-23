@@ -30,7 +30,7 @@
           href="http://docs.openstack.org/kilo/config-reference/content/hp-lefthand-supported-ops-rest.html"
           format="html" scope="external"/>.</p>
     </section>
-    <section><b>Extra Specifications Options</b> (<b>Applicable only for VSA</b>)<p>The following
+    <section id="extra-spec"><b>Extra Specifications Options</b> (<b>Applicable only for VSA</b>)<p>The following
         Cinder Volume Type extra-specs options enable control over the VSA storage provisioning type
         (thin or full) and specify protection for backend
         volumes:<codeblock>hplh:provisioning thin or full
