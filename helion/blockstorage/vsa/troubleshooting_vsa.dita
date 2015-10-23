@@ -8,7 +8,29 @@
     <section>Boot from volume fails if you are using a separate iSCSI network.<p>Description: When
         using a separate iSCSI network, if that network is not associated with the controllers (now
         using the force_network_groups option) then boot from the volumes would fail (Cinder post
-        installation troubleshooting)</p></section>
+        installation troubleshooting)</p><p>REsolution</p><p>When you are using a separate iSCSI
+        network that network needs to be assigned to the following nodes:<ul id="ul_ijh_dh5_tt">
+          <li>Controller nodes</li>
+          <li>Compute nodes</li>
+          <li>VSA nodes (in the case of StoreVirtual VSA being used)</li>
+        </ul></p></section>
+    <p>If you want to use a separate iSCSI network then you must define the network in the interface
+      model of the above listed nodes. Following files must be updated with iSCSI network.<ul
+        id="ul_qpr_c35_tt">
+        <li>
+          <p>networks.yml</p>
+          <p>Sample of the network file is as
+            follows:<codeblock>- name: NET_ISCSI
+  vlanid: 3287
+  tagged-vlan: true
+  cidr: 172.16.13.0/24 &lt; isics network cidr>
+  gateway-ip: 172.16.13.1 &lt;gateway IP>
+  network-group: ISCSI  &lt;>this name should remain consistence in all the files.</codeblock></p>
+        </li>
+      </ul></p>
+    <p>For example if the network name is 'ISCSI-NET' and the corresponding network_group name is
+      'ISCSI' then that network_group has to be defined in the interface model of the above nodes
+      under 'forced-network-groups:</p>
     <section>dd<p><b>Description</b>:  If the VSA cluster name is not defined correctly or using the
         wrong VSA cluster name/IP then  cinder volume creation will
         fail</p><p>Resolution:</p><p>Perform the following steps:<ol id="ol_od3_xct_tt">
