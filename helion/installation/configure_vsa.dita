@@ -9,8 +9,7 @@
         KVM model.</p>
     </section>
     <section id="prereq"><title>Pre-requisites</title>
-      <p>
-        <ul>
+      <p><ul>
           <li>The Entry Scale Cloud with VSA cloud model should be deployed. For more details on the
             installation of Entry Scale Cloud with VSA cloud model refer <xref
               href="install_entryscale_kvm.dita#install_kvm">here</xref></li>
@@ -18,8 +17,11 @@
               ~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph> file. This file is
             generated as part of output of the configuration processor during installation. You need
             these IP address to discover deployed VSA and to create storage cluster.</li>
-        </ul>
-      </p>
+        </ul>The license for the StoreVirtual VSA license is bundled with HP Helion OpenStack and
+        has a maximum limit of 50 TB per node. Hence the total amount of the configured storage on
+        an individual StoreVirtual node should not exceed 50 TB. To extend the 50 TB per node limit,
+        you can add nodes. A VSA cluster can support up to 16 nodes, which means configured storage
+        on a VSA cluster can be as much as 800 TB.</p>
       <note>A single VSA can have maximum 7 raw disks (excluding OS disks) attached to it, which is
         defined in disk input model of VSA node. It is expected not to specify more than 7 disks
         (including AO disks) for VSA. Suppose if you want to deploy VSA with 2 disks for AO then
@@ -34,8 +36,14 @@
     <section>
       <title>Creating a StoreVirtual Cluster and adding it to a new Management Group Cluster using
         CMC</title>
-      <p>The CMC utility requires a GUI to access it. The following steps will allow you to setup a
-        VNC connect to your controller node so you can view the GUI.</p>
+      <p>The CMC utility requires a GUI to access it. You can install either of the following tool
+        to launch CMC.<ul id="ul_icy_xyt_tt">
+          <li>RDP/VNC connect</li>
+          <li>Install (any) X Display Tool </li>
+        </ul></p>
+      <p><b> RDP/VNC connect</b></p>
+      <p>The following steps will allow you to setup a VNC connect to your controller node so you
+        can view the GUI.</p>
       <ol>
         <li>Login to your first controller node. </li>
         <li>Run the following command to install the package that is required to launch CMC:
@@ -103,6 +111,17 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
         </ol>
       </p>
       -->
+      <p><b>Install (any) X Display Tool </b><note>You can use ssh to an X server but the
+          performance may be poor.</note></p>
+      <p>You must configure X display tool to launch CMC. User can select <b>any</b> X display tool.
+        In this section we are using <b>Xming</b> tool as an example to launch CMC. The following
+        example provides the steps to install Xming and launch CMC.<ol id="ol_cxw_lzt_tt">
+          <li>Install <b>Xming</b> on Windows Box from where you can access the deployer node.</li>
+          <li>Select <b>Enable X11 forwarding</b> checkbox on the putty session for deployer
+            node.</li>
+          <li>SSH to first control plane node.<codeblock>ssh -X</codeblock><p>and enter the CMC
+              command (as mentioned below) to launch CMC.</p></li>
+        </ol></p>
       <p>Perform the following steps to create the cluster.<ol id="ol_yln_fhl_jt">
           <li>Open
               CMC.<codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock><p>By
@@ -166,12 +185,6 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
           <li>You can create different volume types with different attributes.</li>
         </ul>
       </note>
-      <p><b>Prerequisite</b>:</p>
-      <p>The license for the StoreVirtual VSA license is bundled with HP Helion OpenStack and has a
-        maximum limit of 50 TB per node. Hence the total amount of the configured storage on an
-        individual StoreVirtual node should not exceed 50 TB. To extend the 50 TB per node limit,
-        you can add nodes. A VSA cluster can support up to 16 nodes, which means configured storage
-        on a VSA cluster can be as much as 800 TB.</p>
       <p>To update your cinder configuration to add VSA storage you must modify
           <codeph>cinder.conf.j2</codeph> .</p>
       <p>Perform the following steps to update <codeph>cinder.conf.j2</codeph> with VSA cluster: <ol>
