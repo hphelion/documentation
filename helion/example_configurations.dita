@@ -738,9 +738,9 @@
     </section>
     <section id="disks_vsa"><title>Disks_vsa.yml</title>
       <p>VSA storage is configured as a device-group and has a syntax that allows disks to be
-        allocated for data storage or for adaptive optimization (caching). Disks used for adaptive
-        optimization should be solid state drives (SSD). The example disk configuration for VSA
-        nodes has two disks, one for data and one of adaptive optimization.</p>
+        allocated for data storage or for adaptive optimization (caching). It is recommended to use
+        solid state drives for adoptive optimization. The example disk configuration for VSA nodes
+        has two disks, one for data and one of adaptive optimization.</p>
       <codeblock>
    device-groups:
        - name: vsa-data
