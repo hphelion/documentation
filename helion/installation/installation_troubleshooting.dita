@@ -60,6 +60,36 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
       </ol>
     </section>
     <section id="provision_nodes"><title>Issues during Node Provisioning</title>
+      <p><b>Playbook Doesn't Find Any Nodes to Image</b></p>
+      <p>You may receive this error when running the <codeph>bm-reimage.yml</codeph> playbook:</p>
+      <codeblock>TASK: [cobbler | get-nodelist | Check we have targets] ************************
+failed: [localhost] => {"failed": true}
+msg: There is no default set of nodes for this command, use -e nodelist
+        
+FATAL: all hosts have already failed -- aborting</codeblock>
+      <p>This behavior occurs when you don't specify the <codeph>-e nodelist</codeph> switch to your
+        command and all of your nodes are marked as <codeph>netboot-enabled: false</codeph> in
+        Cobbler. By default, without the <codeph>-e nodelist</codeph> switch, the
+          <codeph>bm-reimage.yml</codeph> playbook will only reimage the nodes marked as
+          <codeph>netboot-enabled: True</codeph>, which you can verify which nodes you have that are
+        marked as such with this command:</p>
+      <codeblock>sudo cobbler system find --netboot-enabled=1</codeblock>
+      <p>If this is on a fresh install and none of your nodes have been imaged with the HP Helion
+        OpenStack ISO, then you should be able to remove all of your nodes from Cobbler and re-run
+        the <codeph>cobbler-deploy.yml</codeph> playbook. You can do so with these commands:</p>
+      <ol>
+        <li>Get a list of your nodes in Cobbler:
+          <codeblock>sudo cobbler system list</codeblock></li>
+        <li>Remove each of them with this command:
+          <codeblock>sudo cobbler system remove --name SYSTEM_NAME</codeblock></li>
+        <li>Confirm they are all removed in Cobbler:
+          <codeblock>sudo cobbler system list</codeblock></li>
+        <li>Re-run <codeph>cobbler-deploy.yml</codeph>:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
+        <li>Confirm they are all now set to <codeph>netboot-enabled: True</codeph>:
+          <codeblock>sudo cobbler system find --netboot-enabled=1</codeblock></li>
+      </ol>
       <p id="install_fail"><b>Dealing With Nodes that Fail to Install</b></p>
       <p>The <codeph>bm-reimage.yml</codeph> playbook will take every node as far as it can through
         the baremetal install process. Nodes that fail will not prevent the others from continuing

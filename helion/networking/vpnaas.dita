@@ -77,10 +77,11 @@ neutron security-group-rule-create default --protocol tcp --port-range-min 22 --
             become active.
             <codeblock>NETA=$(neutron net-list | awk '/privateA/ {print $2}')
 nova boot --flavor 1 --image &lt;id&gt; --nic net-id=$NETA vm1</codeblock></li>
-          <li>Start the virtual machine in the privateB subnet.
-            <codeblock>NETB=$(neutron net-list | awk '/privateB/ {print $2}')
+          <li>Start the virtual machine in the privateB subnet. <codeblock>NETB=$(neutron net-list | awk '/privateB/ {print $2}')
 nova boot --flavor 1 --image &lt;id&gt; --nic net-id=$NETB vm2</codeblock>
-          <note>The use of floating IP's is not possible with the current version of VPNaaS.</note></li>
+            <note>The use of floating IP's is not possible with the current version of VPNaaS when
+              DVR is enabled.  However Non-DVR routers will work with or without floating
+              IPs.</note></li>
           <li>Verify private IP's are allocated to the respective vms. Take note of IP's for later
             use. <codeblock>nova show vm1
 nova show vm2</codeblock></li>
@@ -136,7 +137,8 @@ neutron vpn-ipsecpolicy-create ipsecpolicy</codeblock></li>
           <li>Check the VPN connections. <note>vm1-ip and vm2-ip denotes private IP's for vm1 and
               vm2 respectively. The private IP's are obtained from step 4 under <xref
                 href="vpnaas.dita#HP2.0VPNaaS/StartVirtualMachines">Start Virtual Machines</xref>
-              section.</note>
+              section.  If you are unable to SSH to the private network due to a lack of direct
+              access, the VM console can be accessed through Horizon.</note>
             <codeblock>ssh cirros@vm1-ip
 password: &lt;password&gt;
             
@@ -154,13 +156,14 @@ ping ###.###.###.###</codeblock></li>
           gateways. Once the gateways have been checked, packet encryption can be verified by using
           traffic analyzer (tcpdump) by tapping on the respective namespace (qrouter-* in case of
           non-DVR and snat-* in case of DVR) and tapping the right interface (qg-***). </p>
-        <note>When using DVR namespaces, qrouter-xxxxxx should be replaced with snat-xxxxxx.</note>
+        <note>When using DVR namespaces, all the occurrences of qrouter-xxxxxx in the following
+          commands should be replaced with respective snat-xxxxxx.</note>
         <ol>
           <li>Check the if the route exists between two router gateways. You can get the right
             qrouter namespace id by executing <i>sudo ip netns</i>. Once you have the qrouter
             namespace id, you can get the interface by executing <i>sudo ip netns qrouter-xxxxxxxx
-              ip</i> and from the result the interface can be found.
-            <codeblock>sudo ip netns
+              ip addr</i> and from the result the interface can be
+            found.<codeblock>sudo ip netns
 sudo ip netns exec qrouter-&lt;router1 UUID&gt; ping &lt;router2 gateway&gt;
 sudo ip netns exec qrouter-&lt;router2 UUID&gt; ping &lt;router1 gateway&gt;</codeblock></li>
           <li>Initiate a tcpdump on the interface.
