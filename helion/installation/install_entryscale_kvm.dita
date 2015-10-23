@@ -126,14 +126,14 @@ helion/tech-preview            Directory contains the config input files of the 
                 <codeph>~/helion/examples/</codeph> directory. Each set will have an accompanying
               README.md file that explains the contents of each of the configuration files.</li>
             <li>Copy the example configuration files into the required setup directory and edit them
-              to contain the details of your environment. For example, if you wanted to use the
-              Helion Entry Scale Cloud with VSA model, you could use this command to copy the files
-              to your cloud definition directory:
+              to contain the details of your environment. <p>For example, if you wanted to use the
+                Helion Entry-scale KVM with VSA model, you could use this command to copy the files
+                to your cloud definition directory:</p>
               <codeblock>cp -r ~/helion/examples/entry-scale-kvm-vsa/* ~/helion/my_cloud/definition/</codeblock></li>
             <li>Begin inputting your environment information into the configuration files in the
                 <codeph>~/helion/my_cloud/definition</codeph> directory. <p>Full details of how to
-                do this can be found here: <xref href="../input_model.dita">Helion OpenStack 2.0
-                  Input Model</xref>.</p>
+                do this can be found here: <xref href="../example_configurations.dita">Example
+                  Configurations</xref>.</p>
             </li>
           </ol>
           <!--
