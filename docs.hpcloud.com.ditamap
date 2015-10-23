@@ -1890,5 +1890,7 @@
   <topicref href="automation/csa.index.dita"/>
   <topicref href="codar-landing-page.dita" navtitle="HP Codar"/>
   <topicref href="helion.rack.solution.dita" navtitle="HP Helion Cloud Solutions" locktitle="yes"/>
+  <topicref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap" navtitle="Test"
+    locktitle="yes" format="ditamap"/>
 
 </map>
