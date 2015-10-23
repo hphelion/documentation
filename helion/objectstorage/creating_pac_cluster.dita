@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_rvj_21c_jt">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating a Proxy, Account, and Container
+    (PAC) Cluster</title>
+  <body><!--Needs Edit-->
+    <p>You must identify the control plane and node type/role when creating a cluster for Swift
+      proxy, account, and container servers. </p>
+    <ul id="ul_r4r_r1c_jt">
+      <li>In the <codeph>data/control_plane.yml</codeph> file, identity the control plane that the
+        PAC serves are associated with. </li>
+      <li>Identity the node type/role used by the Swift PAC servers. In the following example,
+          <b>SWPAC-ROLE</b> is mentioned as server-role.<p>Add an entry to the <b>clusters</b> item in the <b>control-plane</b>
+          as
+          follows:<codeblock>control-planes:
+    - name: control-plane-1
+      control-plane-prefix: cp1
+
+  . . .
+  clusters:
+  . . .
+     - name: swpac
+       cluster-prefix: c2
+       server-role: SWPAC-ROLE
+       member-count: 3
+       allocation-policy: strict
+       service-components:
+         - ntp-client
+         - swift-ring-builder
+         - swift-proxy
+         - swift-account
+         - swift-container
+         - swift-client</codeblock></p></li>
+    </ul>
+    <ul id="ul_s5v_rmg_rt">
+      <li>
+        <p>You must change the <b>member-count</b> to match the number of servers, for example is
+          you have 4 servers with a role of <b>SWPAC-ROLE</b> then the <b>member-count</b> should be
+          4.</p>
+      </li>
+    </ul>
+    <p><b>Service Components</b></p>
+    <p>A Swift proxy, account, container server requires the following service components:</p>
+    <ul id="ul_etg_k1c_jt">
+      <li>ntp-client</li>
+      <li>swift-proxy</li>
+      <li>swift-account</li>
+      <li>swift-container</li>
+      <li>swift-ring-builder</li>
+      <li>swift-client</li>
+    </ul>
+  </body>
+</topic>

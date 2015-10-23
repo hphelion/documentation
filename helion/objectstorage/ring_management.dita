@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_d3l_svr_4t">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Managing Object Storage (Swift) Rings</title>
+  <body><!--Needs Edit-->
+    <p>The rings are machine-readable description of which disk drives are used by Swift (for
+      example: a drive is used to store account or object data). Rings also specify the policy for
+      data storage (for example: defining the number of replicas). The rings are automatically built
+      during the initial deployment of the system with the configuration provided during the setting
+      up your HP Helion OpenStack Input Model (for more information, refer to <xref
+        href="../input_model.dita#input_model"/>). </p>
+    <p>After successful deployment of cloud, you may want to change or modify your cloud
+      configuration for Swift, like:<ul id="ul_yxs_dzr_4t">
+        <li><xref href="input_model_change_existing_rings.dita#topic_vyp_cft_4t/system-change"
+            >Adding or removing Swift nodes</xref></li>
+        <li><xref href="add_new_storage_policy.dita#topic_evl_wln_pt">Adding additional storage
+            policies</xref></li>
+        <li><xref href="input_model_change_existing_rings.dita#topic_vyp_cft_4t/system-change"
+            >Upgrading the size of disk drives used by Swift</xref></li>
+      </ul></p>
+    <p>Some of the above changes require the rebuild of the rings.</p>
+    <p>
+      <note>The process of modifying or adding a configuration is similar to other configuration or
+        topology change in the cloud. Generally, you make the changes to the input model files at
+          <codeph>~/helion/my_cloud/definition/</codeph> and run ansible playbooks to reconfigure
+        the system.</note>
+    </p>
+    <p>Changes to the rings require several phases to complete the process of deployment
+      <!--after modification or adding of new Swift configuration in the YAML file-->. Therefore,
+      you need to run the playbooks several times over several days. </p>
+    <p>The following topic covers the details about ring management:</p>
+    <p>
+      <!--The following section explains the reason for the requirement of several phases for the change of the ring.-->
+      <ul id="ul_pgc_plz_4t">
+        <li><xref href="rebalanced_explained.dita">Rebalance Explained</xref></li>
+        <li><xref href="preparing_ring_changes.dita">Preparing for Ring Changes</xref></li>
+        <li><xref href="playbook_linked_ring_management.dita">Swift Playbooks Linked to Ring
+            Management</xref></li>
+        <li><xref href="safe_rebalance_deploy_ring.dita">When it is safe to rebalance and deploy a
+            new ring?</xref></li>
+        <li><xref href="input_model_change_existing_rings.dita">Applying Input Model Changes to
+            Existing Rings</xref></li>
+      </ul>
+    </p>
+  </body>
+</topic>

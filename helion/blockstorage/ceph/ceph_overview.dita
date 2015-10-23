@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ceph_overview">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceph Overview</title>
+  <body><!--Needs Edit-->
+    <section><title>Ceph Overview</title><p>Ceph is an Open Source, scalable, software defined
+        storage running on HP Servers which provides block and object storage with unified
+        management.</p><p>The HP Helion OpenStack 2.0 Ceph Storage Solution provides an unified
+        scaleable and stable storage solution for the management of HP Helion OpenStack Volume
+        Storage (Cinder persistent Volumes) service. </p> The installation, configuration, and
+      integration between HP Helion OpenStack: 2.0 and Ceph Firefly 0.80.7 running on the hlinux
+      kernel 3.14.44-1 is detailed in<xref href="ceph_deploy.dita#install_kvm_ceph"> ceph
+        deployment</xref> page.<p>HP Helion OpenStack introduces the concept of cloud models, where
+        the user can modify the YAML to provide the required configuration based on their
+        environment. Therefore to deploy ceph and make configuration changes you must modify the
+        YAML files related to ceph.</p><p>You can implementing the input model and perform the
+        following Ceph activities:<ul id="ul_yt2_wzl_rt">
+          <li><xref href="../../installation/configure_ceph.dita#config_ceph">Ceph Deployment</xref></li>
+          <li><xref href="adding_new_osd_node.dita#topic_drm_rm5_kt">Adding an OSD Node</xref></li>
+                    <li><xref href="adding_new_monitor_node.dita#topic_zbc_pg4_rt">Adding a New Ceph
+                            Monitor Node</xref></li>
+          <li><xref href="configuring_use_ceph_cluster.dita#topic_i2z_zc3_pt">Configuring  Ceph to
+                            use OpenStack service (Cinder) </xref></li>
+                    <li><xref href="configuring_use_ceph_cluster_glance.dita#topic_qch_rmx_st"
+                            >Configuring Ceph to use OpenStack service (Glance)</xref></li>
+          <li><xref href="deploy_monitor_stand_alone_node.dita#topic_ah5_4yx_qt">Deploying monitor
+              on standalone independent node</xref></li>
+                    <li><xref href="defining_monitor_resource.dita#topic_owr_kf4_rt">Defining Monitor
+                            Resource Node</xref></li>
+          <li><xref href="using_erasure_code_pool.dita#topic_psp_vrd_st">Using Erasure Code Pool in
+              Ceph </xref></li>
+          <li><xref href="reconfigure_ceph_services.dita#topic_bl1_bfx_qt">Reconfigure Ceph
+                            service</xref></li>
+          <li><xref href="remove_osd_node.dita#topic_ipm_gnt_rt">Remove OSD Node </xref></li>
+          <li><xref href="remove_monitor_node.dita#topic_a3t_ptt_rt">Remove Ceph Monitor Node
+                        </xref></li>
+          <li><xref href="ceph_operation.dita#topic_wbn_td3_pt">Ceph operations</xref></li>
+          <li><xref href="upgrade_ceph_cluster.dita#topic_gxm_bwt_rt">Upgrade Ceph
+            Cluster</xref></li>
+        </ul></p></section>
+  </body>
+</topic>

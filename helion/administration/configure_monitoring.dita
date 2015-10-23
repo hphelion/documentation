@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="configure_monitoring">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring the Monitoring Service</title>
+  <body><!--Needs Edit-->
+    <section id="config">
+      <p>In HP Helion OpenStack 2.0 you will have the option to specify a SMTP server for email
+        notifications and a database platform you want to use for the Metrics Database. These steps
+        will assist in this process.</p>
+    </section>
+    <section id="email"><title>Specifying a SMTP Server for Email Notifications</title>
+      <p>In order for the Monitoring service to be able to send email notifications about alarms, it
+        needs to be configured with an email server. The email server not be provided by Helion
+        OpenStack. The email server must support SMTP.</p>
+      <p>To configure the SMTP server, edit the <codeph>cloudConfig.yml</codeph> file during
+        installation. There should be a section at the bottom for <codeph>smtp-settings</codeph>
+        that looks like this below. If it doesn't exist, you can add it:</p>
+      <codeblock>smtp-settings:
+  #  server: mailserver.examplecloud.com
+  #  port: 25
+  #  timeout: 15
+  # These are only needed if your server requires authentication
+  #  user:
+  #  password:</codeblock>
+      <p>This table explains each of these values: <table frame="all" rowsep="1" colsep="1"
+          id="smtp_settings">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Value</entry>
+                <entry>Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Server (required)</entry>
+                <entry>The server entry must be uncommented and set to a valid hostname or IP
+                  Address.</entry>
+              </row>
+              <row>
+                <entry>Port (optional)</entry>
+                <entry>If your SMTP server is running on a port other than the standard 25, then
+                  uncomment the port line and set it your port.</entry>
+              </row>
+              <row>
+                <entry>Timeout (optional)</entry>
+                <entry>If your email server is heavily loaded, the timeout parameter can be
+                  uncommented and set to a larger value. 15 seconds is the default.</entry>
+              </row>
+              <row>
+                <entry>User / Password (optional)</entry>
+                <entry>If your SMTP server requires authentication, then you can configure user and
+                  password. Use double quotes around the password to avoid issues with special
+                  characters.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+    <section id="database"><title>Choosing a Metrics Database Options</title>
+      <p>The Monitoring service supports two different database options. The default metrics
+        database is <b>Vertica</b>, which is a highly-scalable analytics database from HP. Vertica
+        is free to use, up to 12TB, for all paid Helion customers as a Helion operational database
+        <!--(please see <xref href="http://docs-staging.hpcloud.com/hos2.0beta1/#helion/eula.html"
+          format="html" scope="external">Helion EULA</xref>)-->.
+        Vertica is the recommended database for HP Helion OpenStack.</p>
+      <p>You can learn more about Vertica here: <xref
+          href="https://www.vertica.com/hp-vertica-documentation/" scope="external" format="html"
+          >Vertica Documentation</xref></p>
+      <p>The alternative opensource database option is <b>InfluxDB</b>. InfluxDB is an emerging
+        opensource monitoring database, however the current release contains the following
+        limitation:</p>
+      <ul>
+        <li>InfluxDB cluster does not recover upon node failure.</li>
+      </ul>
+      <sectiondiv id="install_influxdb">
+        <p>In order to replace the default database option with InfluxDB as the metrics database,
+          you need to follow these steps:</p>
+        <p>During the <xref href="../installation/install_entryscale_kvm.dita#install_kvm/configuration"
+            >Configure Your Environment</xref> portion of the installation, ensure you make these
+          configuration file edits:</p>
+        <ol>
+          <li>On your deployer, edit the following two files: <ol>
+              <li>Edit the <codeph>~/helion/my_cloud/definition/data/control_plane.yml</codeph> file
+                and under your control plane cluster <codeph>service-clusters</codeph> section, edit
+                the entry for <codeph>vertica</codeph> to read <codeph>influxdb</codeph>.</li>
+              <li>Edit the <codeph>~/helion/my_cloud/definition/data/disks_controller.yml</codeph>
+                and either replace the existing <codeph>vertica</codeph> information or insert the
+                information for InfluxDB as seen below in the section labeled for
+                  <codeph>logical-volumes</codeph> on the <codeph>DISK_SET_CONTROLLER</codeph>:
+                <codeblock>
+  - name: influxdb
+    size: 5%
+    mount: /var/opt/influxdb
+    fstype: ext4
+    mkfs-opts: -O large_file
+    consumer:
+        name: influxdb</codeblock></li>
+            </ol></li>
+        </ol>
+        <p>Then, before you run the <codeph>site.yml</codeph> playbook as part of the <xref
+          href="../installation/install_entryscale_kvm.dita#install_kvm/deploy">Deploy the Cloud</xref>
+          installation step, make these changes:</p>
+        <ol>
+          <li>Edit the
+              <codeph>~/helion/hos/ansible/roles/monasca-api/templates/api-config.yml.j2</codeph>
+            file to remove information referencing Vertica: <p>Section to remove or comment out:</p>
+            <codeblock>
+{% set vertica_api_user = [] %}
+{% if vertica_users is defined %}
+{% for item in vertica_users %}
+{% if item.role == 'monasca_api'%}
+{% if vertica_api_user.append(item) %}{% endif %}
+{% endif %}
+{% endfor %}
+{% endif %}</codeblock>
+            <p>Replace a portion of this text in this file with the replacement text below:</p>
+            <codeblock>
+vertica:
+  driverClass: com.vertica.jdbc.Driver
+  url: "{{ vertica_url | default('jdbc:vertica://localhost:5433/mon')}}"
+{% if vertica_api_user|count == 0%}
+  user: mon_api
+  password: password
+{% else %}
+  user: "{{ vertica_api_user[0].username }}"
+  password: "{{ vertica_api_user[0].password }}"
+{% endif %}</codeblock>
+            <p>Replace the above with the text with this:</p>
+            <codeblock>
+vertica:
+  driverClass: com.vertica.jdbc.Driver
+{% if database_type == 'vertica' %}
+  url: "{{ vertica_url | default('jdbc:vertica://localhost:5433/mon')}}"
+  user: "{{ vertica_api_user }}"
+  password: "{{ vertica_api_password }}"
+{% else %}
+  url:
+  user:
+  password:
+  {% endif %}</codeblock>
+          </li>
+          <li>Edit the
+              <codeph>~/helion/hos/ansible/roles/monasca-persister/templates/persister-config.yml.j2</codeph>
+            file to remove information referencing Vertica: <p>Section to remove or comment out:</p>
+            <codeblock>
+{% set vertica_api_user = [] %}
+{% if vertica_users is defined %}
+{% for item in vertica_users %}
+{% if item.role == 'monasca_api'%}
+{% if vertica_api_user.append(item) %}{% endif %}
+{% endif %}
+{% endfor %}
+{% endif %}</codeblock>
+            <p>Replace a portion of this text in this file with the replacement text below:</p>
+            <codeblock>
+dataSourceFactory:
+  driverClass: com.vertica.jdbc.Driver
+  url: "{{ vertica_url | default('jdbc:vertica://localhost:5433/mon') }}"
+{% if vertica_persister_user|count == 0%}
+  user: mon_persister
+  password: password
+{% else %}
+  user: "{{ vertica_persister_user[0].username }}"
+  password: "{{ vertica_persister_user[0].password }}"
+{% endif %}</codeblock>
+            <p>Replace the above with the text with this:</p>
+            <codeblock>
+dataSourceFactory:
+  driverClass: com.vertica.jdbc.Driver
+{% if database_type == 'vertica' %}
+  url: "{{ vertica_url | default('jdbc:vertica://localhost:5433/mon') }}"
+  user: "{{ vertica_persister_user }}"
+  password: "{{ vertica_persister_password }}"
+{% else %}
+  url:
+  user:
+  password:
+{% endif %}</codeblock>
+          </li>
+          <li>Edit the
+              <codeph>~/helion/hos/ansible/roles/monasca-variables/defaults/main.yml</codeph> file
+            and add the lines below between the <codeph>vertica_users</codeph> and
+              <codeph>vertica_resource_pools_limits</codeph> entries near the bottom of the file:
+            <codeblock>
+vertica_api_user: "{{ MON_API.consumes_FND_VDB.vars.vertica_monasca_api_user }}"
+vertica_api_password: "{{ MON_API.consumes_FND_VDB.vars.vertica_monasca_api_password }}"
+vertica_persister_user: "{{ MON_PST.consumes_FND_VDB.vars.vertica_monasca_persister_user }}"
+vertica_persister_password: "{{ MON_PST.consumes_FND_VDB.vars.vertica_monasca_persister_password }}"</codeblock></li>
+        </ol>
+        <p>Then, when running your <codeph>site.yml</codeph> playbook as part of the <xref
+          href="../installation/install_entryscale_kvm.dita#install_kvm/deploy">Deploy the Cloud</xref>
+          installation step, ensure that you use the <codeph>-e database_type=influxdb</codeph>
+          switch. For example:</p>
+        <codeblock>ansible-playbook -i hosts/verb_hosts site.yml -e database_type=influxdb</codeblock>
+        <note type="important">Ensure you use any other necessary switches based on your setup that
+          may be included in other parts of the installation documentation.</note>
+      </sectiondiv>
+    </section>
+  </body>
+</topic>

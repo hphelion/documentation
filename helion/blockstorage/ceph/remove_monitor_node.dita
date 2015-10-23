@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_a3t_ptt_rt">
+  <?oxy_custom_start type="oxy_content_highlight" color="153,255,255"?>
+  <title><?oxy_custom_end?>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing Ceph Monitor Node </title>
+  <body><!--Needs Edit-->
+    <p>You must remove the monitor node(s) based on your deployment. For example, if you have
+      deployed your monitor node on the controller node, refer the procedure mentioned in <xref
+        href="#topic_a3t_ptt_rt/remove-monitor-contorller" format="dita">Remove monitor
+        node(s)</xref> from controller node and if you have deployed monitor node on a dedicated
+      resource node, refer procedure mentioned in <xref
+        href="#topic_a3t_ptt_rt/remove-monitor-separate" format="dita">Remove monitor node from a
+        separate/dedicated node(s)</xref>.</p>
+    <section id="remove-monitor-contorller">
+      <title>Remove monitor node(s) from controller node</title>
+      <p>Permanent removal of a monitor is not supported when the monitor service is installed on a
+        controller node. However, to temporarily bring down the service on the controller node (for
+        maintenance purposes), perform the following steps:<ol id="ol_gkx_h5t_rt">
+          <li>Login to the deployer node.</li>
+          <li>Create a file name <codeph>mon-node-to-remove</codeph> and add the monitor hostname(s)
+            (say in above example <i>padawan-ceph-ccp-c1-m1-mgmt</i>) to the file. (<b>sample is
+              required like OSD removal</b>)</li>
+          <li>Stop the monitor service running on the specific host by executing the following
+            commands:<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ceph-stop.yml --limit @mon-node-to-remove</codeblock></li>
+          <li>Remove the monitor service from the
+            cluster<codeblock>ceph mon remove &lt;ceph-mon-host&gt;</codeblock></li>
+        </ol></p>
+    </section>
+    <section id="remove-monitor-separate">
+      <title>Remove monitor node from a separate/dedicated node</title>
+      <p>Perform the following steps to remove monitor node from a separate/dedicated node.<ol
+          id="ol_ypw_55t_rt">
+          <li>Login to the monitor node to be removed. (<b>command to login??</b>)</li>
+          <li>Stop the monitor service running on the specific host by executing the following
+            commands :<codeblock>service ceph-mon@&lt;ceph-mon-host> stop</codeblock></li>
+          <li>Remove the monitor
+            service<codeblock>ceph mon remove &lt;ceph-mon-host></codeblock></li>
+          <li>Login to the deployer node.</li>
+          <li>Edit <codeph>servers.yml</codeph> file and remove the host section from
+            file.<codeblock>vim  ~/helion/my_cloud/definition/data/servers.yml</codeblock></li>
+          <li>Commit your
+            configuration<codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "Remove monitor node &lt;host-name>"</codeblock></li>
+          <li>Run the configuration
+            processor:<codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Use the playbook below to create a deployment directory:
+              <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock><note>Replace
+              the string &lt;host-name> in the above commit message with the actual host
+              name.</note></li>
+        </ol></p>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_srg_d5h_rt">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing an Existing ESX Host from a Cluster</title>
+  <body><!--Needs Edit-->
+    <p>The process for removing an existing ESX host from cluster is as follows:<ol
+        id="ol_ilq_k5h_rt">
+        <li>Right click  and put the host in the maintenance mode. This will automatically migrate
+          all the tenant VMs except OVSvApp.  <p><image href="../../media/esx/eon_maintenance.png"
+              id="image_qyh_rsw_st"/></p></li>
+        <li>Cancel the maintenance mode task.<p><image
+              href="../../media/esx/eon_cancel_maintenance%20mode.png" id="image_lpd_qfx_st"
+          /></p></li>
+        <li>Right click the <b>ovsvapp VM (IP Address)</b> and select <b>Power Off.</b>
+          <p><image href="../../media/esx/eon_poweroff_ovsvapp.png" id="image_nb3_gsw_st"/></p></li>
+        <li>Right click and select <b>Delete from Disk</b>.<p><image
+              href="../../media/esx/eon_delete_ovsvapp.png" id="image_eq4_3sw_st"/></p></li>
+        <li><?oxy_custom_start type="oxy_content_highlight" color="140,255,140"?>Right click the
+            <b>Host</b> and select <b>Enter Maintenance Mode</b>.<?oxy_custom_end?><p><image
+              href="../../media/esx/eon_maintenance.png" id="image_jxq_22n_rt"/></p></li>
+        <li>Disconnect the VM, Right click and select <b>Disconnect</b>.<p><image
+              href="../../media/esx/eon_disconnect_maintenance.png" id="image_zx3_j2n_rt"/></p></li>
+      </ol></p>
+  </body>
+</topic>

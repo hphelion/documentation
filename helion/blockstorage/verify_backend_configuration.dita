@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_q5q_trz_jt">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Verify Backend Configuration</title>
+  <body><!--Needs Edit-->
+    <p>This page describes the procedure to create volume type, associate volume type to backend,
+      create volume, attach volume, detach volume, and delete volume. You perform this operation to
+      verify the configuration of backend (VSA, Ceph, and 3PAR).</p>
+    <section>
+      <title>Create Volume Type to Verify the Configuration of Backend</title>
+      <p><!--Volumes are the Block Storage devices that you attach to instances to enable persistent storage.-->
+        <!--You can attach a volume or detach a volume and attach it to another instance at any time. You can also create and delete volume type and volumes.--></p>
+      <p>Perform the following steps to create a volume using Horizon dashboard: <ol
+          id="ol_vr4_rb1_rt">
+          <li>Log into the Horizon dashboard<!-- as  an<i>Admin</i> user-->. The Horizon dashboard
+            displays with the options in the left panel.</li>
+          <li>On the <b>Admin</b> tab, open the <b>System</b> tab and click the <b>Volumes</b>
+            category.</li>
+          <li>Click <b>Volume Types</b> tab and click <b>Create Volume Type</b> button to display a
+            dialog box.</li>
+          <li>Enter a unique name for the volume type. </li>
+          <li>Click<b> Create Volume Type</b> to complete the action. Clicking <b>Cancel</b> returns
+            to the Volumes screen without completing the action.<p>The newly created volume displays
+              in the <b>Volumes</b>><b>Volume Types</b> page.</p></li>
+        </ol></p>
+      <p><b>(This is applicable only for VSA</b>) VSA supports volumes creation with varying
+        attributes like thin provisioning enable, raid type, ao enabled volume etc. All these
+        attributes can be specified using extra spec of volume type. Admin is expected to define
+        appropriate extra spec for VSA volume type as per the guidelines provided at <xref
+          href="http://docs.openstack.org/kilo/config-reference/content/hp-lefthand-supported-ops-rest.html"
+          format="html" scope="external"/>.</p>
+    </section>
+    <section id="extra-spec"><b>Extra Specifications Options</b> (<b>Applicable only for VSA</b>)<p>The following
+        Cinder Volume Type extra-specs options enable control over the VSA storage provisioning type
+        (thin or full) and specify protection for backend
+        volumes:<codeblock>hplh:provisioning thin or full
+hplh:data_pl r-0 or r-5 or r-10-2 or r-10-3 or r-10-4 or r-6</codeblock></p><p>For
+        example:<codeblock>hplh:provisioning thin
+hplh:data_pl r-5 
+volume_backend_name MyVolumeBackend</codeblock></p><p>The
+        protection level options enable different data protection configurations. Supported data
+        protection options are:<ul id="ul_sxb_4cs_tt">
+          <li>r-0 (RAID 0) provides the best data capacity and processing performance, but offers no
+            data protection (no fault tolerance) in the event of a failure.</li>
+          <li>r-5 (RAID 5) consists of three or more physical disk drives in an array. Stores parity
+            data across all drives. If one drive fails, the remaining drives use the parity data to
+            allow the array to continue to operate until the failed drive is replaced. If more than
+            one drive fails, the array fails.</li>
+          <li>r-10-2 (RAID 10+2) stripes and mirrors data across four or more disks.</li>
+          <li>r-10-3 (RAID 10+3) stripes and mirrors data across five or more disks.</li>
+          <li>r-10-4 RAID 10+4) stripes and mirrors data across six or more disks.</li>
+          <li>r-6 (RAID 6) is based on and extends RAID5. It requires a minimum of four drives and
+            creates multiple parity sets such that the array can function with up to two drives
+            failing at the same time.</li>
+        </ul></p></section>
+    <section id="associate-volume-backend">
+      <title>Associate the Volume Type to a Backend</title>
+      <p> After the volume type names have been created, you can assign extra_specs to the volumes
+        types.</p>
+      <p>To map a volume type to a backend, do the following: <ol id="ol_owv_krv_3t">
+          <li>Login to the Horizon dashboard. The Horizon dashboard displays with the options in the
+            left panel.</li>
+          <li>On the <b>Admin</b> tab, open the <b>System</b> tab and click the <b>Volumes</b>
+            category.</li>
+          <li>Click <b>Volume Type</b> tabs. A list of volume types appear.</li>
+          <li>Click the check box next to the name of the volume you want to attach.</li>
+          <li>In the <b>Actions</b> column, click <!--Create Encryption -->drop-down arrow and
+            select <b>View Extra Specs</b>. <p>The  <b>Volume Type Extra Specs</b> dialog box
+              displays. Now map the volume type to the associate backend.</p></li>
+          <li>Click <b>Create</b> button.</li>
+          <li>In the <b>Key</b> box, enter <i>volume_backend_name</i> as extra spec key.
+            <!--This is the name of the key used to specify the storage backend when provisioning volumes of this volume type.-->
+            The volume backend name must match the backend name mentioned in the
+              <codeph>cinder.conf.j2</codeph> file. </li>
+          <li>In the <b>Value</b> box, enter the name of the backend to which you want to associate
+            the volume type. <p>For example: You can enter the following backend name for the
+              respective backend used. The backend name is mentioned in the
+                <codeph>cinder.conf.j2</codeph> file.<ul id="ul_u4j_1vz_jt">
+                <li>VSA: You can enter <codeph>vsa-backend-hlm003</codeph> in the <b>Value</b>
+                  field. In value is taken from <b>VSA cinder.conf.j2</b>.</li>
+                <li>Ceph: You can enter <codeph>ceph</codeph> in the <b>Value</b> field. In value is
+                  taken from <b>Ceph cinder.conf.j2</b>.</li>
+                <li>3PAR FC: You can enter <codeph>3par_FC</codeph> in the <b>Value</b> field. In
+                  value is taken from <b>3PAR FC cinder.conf.j2</b>.</li>
+                <li>3PAR iSCSI : You can enter <codeph>3par_iscsi</codeph> in the <b>Value</b>
+                  field. In value is taken from <b>3PAR iSCSI cinder.conf.j2</b>.</li>
+              </ul></p></li>
+          <li>Click <b>Create</b> to create the extra volume type specs. <note> Once the volume type
+              is mapped to the backend, you can create volumes with this volume type.</note></li>
+        </ol></p>
+    </section>
+    <section id="create-volume">
+      <title>Create Volume </title>
+      <p>Perform the following steps to create a volume using Horizon dashboard. <ol
+          id="ol_syw_xw3_jt">
+          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
+            left panel. </li>
+          <li>On the <b>Project</b> tab, open the <b>Compute</b> tab and click the <b>Volumes</b>
+            category.</li>
+          <li>Click <b>Volumes</b> tabs.</li>
+          <li>Click <b>Create Volume</b> button to create a volume. Create Volume dialog box
+            displays.</li>
+          <li>Enter the required details in the corresponding fields. </li>
+          <li>Click<b> Create Volume </b> to complete the action. Clicking <b>Cancel</b> returns to
+            the Volumes screen without completing the action.<p>The dashboard shows the volume on
+              the Volumes tab.</p></li>
+        </ol></p>
+    </section>
+    <section>
+      <title>Attach Volume to an Instance</title>
+      <p>Perform the following steps to attach a volume to an instance:<ol id="ol_myj_2jj_jt">
+          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
+            left panel. </li>
+          <li>On the <b>Project</b> tab, open the <b>Compute</b> tab and click the <b>Instances</b>
+            category.</li>
+          <li>Click the check box next to the name of the volume you want to attach. </li>
+          <li>In the <b>Action</b> column, click <b>Edit Attachments</b> The Manage Volume
+            Attachments screen is displayed.</li>
+          <li>In the <b>Attach To Instance</b> drop-down, select the instance that you want to
+            attach to the volume. </li>
+          <li> Edit the <b>Device Name</b> if necessary.</li>
+          <li>Click <b>Attach Volume</b> to complete the action. Clicking <b>Cancel</b> returns to
+            the <b>Volumes</b> screen without completing the action. </li>
+          <li>Verify that the volume you attached is displayed in the <b>Attached To </b>columns on
+            the <b>Volumes</b> screen.<p>
+              <!--Zones are created and activated in switch effective configuration after the successful attachment of volume to an instance.--></p></li>
+        </ol></p>
+    </section>
+    <section>
+      <title>Detach Volume from Instance</title>
+      <p>Perform the following steps to detach the volume from instance:<ol id="ol_edq_pkj_jt">
+          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
+            left panel. </li>
+          <li>On the <b>Project</b> tab, open the <b>Compute</b> tab and click the <b>Instances</b>
+            category.</li>
+          <li>Click the check box next to the name of the volume you want to detach. </li>
+          <li>In the Action column, click <b>Edit Attachments</b> The Manage Volume Attachments
+            screen is displayed.</li>
+          <li>Click <b>Detach Attachment</b>. A confirmation dialog box appears.</li>
+          <li>Click <b>Detach Attachment</b> to confirm the detachment of the volume from the
+            associated instance. Clicking <b>Cancel</b> returns to the Volumes screen without
+            completing the action.<p>When you detach the last volume from an instance running on the
+              compute host, zones are deleted and removed from the effective configuration.</p></li>
+        </ol></p>
+    </section>
+    <section>
+      <title>Delete Volume </title>
+      <p>Perform the following steps to delete a volume using Horizon dashboard:</p>
+      <p>
+        <ol id="ol_sdl_vy3_jt">
+          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
+            left panel. </li>
+          <li>On the <b>Project</b> tab, open the <b>Compute</b> tab and click the <b>Instances</b>
+            category.</li>
+          <li>Check the box in the row of the volume to delete.</li>
+          <li>Click <b>Delete Volume</b> to display the dialog box.</li>
+          <li>To confirm and delete the volume, click <b>Delete Volume</b>.<p>To exit without
+              deleting the volume and to close the screen, click <b>Cancel</b> before
+            deleting</p></li>
+          <li>Verify that the volume was removed from the <b>Volumes</b> screen.</li>
+        </ol>
+      </p>
+    </section>
+  </body>
+</topic>

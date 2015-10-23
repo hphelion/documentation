@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="config_3par">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for 3PAR Block Storage
+    Backend</title>
+  <body><!--Needs Edit-->
+    <p>This page describes how to configure your 3PAR backend for the Helion Entry Scale Cloud with
+      KVM model.</p>
+    <section>
+      <title id="preq">Pre-requisites</title>
+      <p>
+        <ul>
+          <li>Your HP Helion Entry Scale Cloud should be up and running. Installation steps can be
+            found <xref href="install_entryscale_kvm.dita">here</xref>.</li>
+          <li>3PAR Storage Array should be available in cloud management network or routed to cloud
+            management network and 3PAR FC and iSCSI ports configured.</li>
+          <li>3PAR management IP and iSCSI port IP's must have connectivity from controller and
+            compute nodes.</li>
+          <li>Please refer the system requirements for 3PAR in Openstack configuration
+              guide.<note>If you want to enable multipath for cinder volume carved from 3PAR
+              FC/iSCSI storage system, please go through
+                <codeph>/home/stack/helion/hos/ansible/roles/multipath/README.md </codeph> file on
+              the deployer node.  The README.md file contains detailed procedure to configure
+              multipath for 3PAR FC/iSCSI cinder volumes.</note></li>
+        </ul>
+      </p>
+    </section>
+    <section id="configure-3par-fc">
+      <title>Configure 3PAR FC as Cinder backend</title>
+      <p>You must modify <codeph>cinder.conf.j2</codeph> to configure FC details.</p>
+      <p>Perform the following steps to configure 3PAR FC as Cinder backend:<ol id="ol_dj2_qcz_ht">
+          <li>Login to deployer node.</li>
+          <li>Edit <codeph>my_cloud/config/cinder/cinder.conf.j2</codeph> to add 3PAR FC
+            backend:</li>
+          <li>Modify enabled_backends section in <codeph>cinder.conf.j2</codeph> as shown in the
+            following example:<codeblock>enabled_backends=3par_FC</codeblock><note>Append this
+              change with the exiting backend, if you have already added VSA as backend.</note></li>
+          <li>Copy 3PAR FC section, uncomment it, and modify the values in the
+              <codeph>cinder.conf.j2</codeph> file as shown in the following
+              example:<codeblock id="3par-fc">[3par_FC]
+hp3par_api_url=https://10.1.192.10:8080/api/v1
+hp3par_username=helionadmin
+hp3par_password=helion
+hp3par_cpg=FC_r5,FC_r1
+san_ip=10.1.192.10
+san_login=helionadmin
+san_password=helion
+volume_driver=cinder.volume.drivers.san.hp.hp_3par_fc.HP3PARFCDriver
+volume_backend_name=3par_FC</codeblock><note>
+              Please enter the values which are specific to your environment. </note></li>
+          <li>Commit your configuration to a <xref href="using_git.dita">local
+              repository</xref>:<codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message>"</codeblock><note>
+              Enter your commit message &lt;commit message></note></li>
+          <li>Run the configuration
+              processor:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock><p>When
+              you run the Configuration Processor you will be prompted for two passwords. Enter the
+              first password to make the Configuration Processor encrypt its sensitive data, which
+              is comprised of the random inter-service passwords that it generates and the Ansible
+              group_vars and host_vars that it produces for subsequent deploy runs. You will need
+              this key for subsequent Ansible deploy runs and subsequent Configuration Processor
+              runs. If you wish to change an encryption password that you have already used when
+              running the Configuration Processor then enter the new password at the second prompt,
+              otherwise just press carriage return.</p><p>For CI purposes you can specify the
+              required passwords on the ansible command line. For example, the command below will
+              disable encryption by the configuration processor
+              <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml -e encrypt="" -e rekey=""</codeblock>
+              If you receive an error during either of these steps then there is an issue with one
+              or more of your configuration files. We recommend that you verify that all of the
+              information in each of your configuration files is correct for your environment and
+              then commit those changes to git using the instructions above.</p><p>Before re-running
+              the Configuration Processor after fixing an error you need to run the clean script
+              detailed in the <xref
+                href="installation_troubleshooting.dita#troubleshooting_installation/configproc"
+                >Installation Troubleshooting</xref> document.</p></li>
+          <li>Run the following command to create a deployment
+            directory.<codeblock><codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
+          <li>Run the following command to configure 3PAR FC as a Cinder
+            backend.<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
+        </ol></p>
+    </section>
+    <section>
+      <title>Configure 3PAR iSCSI as Cinder backend</title>
+      <p>You must modify <codeph>cinder.conf.j2</codeph> to configure iSCSI details.</p>
+      <p>
+        <ol>
+          <li>Login to deployer node.</li>
+          <li>Change the directory as shown below:<codeblock>cd ~/helion</codeblock></li>
+          <li>Edit <codeph>cinder.conf.j2</codeph> file at
+              <codeph>my_cloud/config/cinder/cinder.conf.j2</codeph> to add 3PAR iSCSI backend:</li>
+          <li>Modify enabled_backends section in <codeph>cinder.conf.j2</codeph> as shown in the
+            following example:<codeblock>enabled_backends=3par_iSCSI</codeblock><note>Append this
+              change with the exiting backend, if you have already added VSA as backend.</note></li>
+          <li>Copy 3PAR iSCSI section, uncomment it, and modify the values in the
+              <codeph>cinder.conf.j2</codeph> file as shown in the following
+              example:<codeblock id="3par-iscsi">[3par_iSCSI]
+hp3par_api_url=https://10.1.192.10:8080/api/v1
+hp3par_username=helionadmin
+hp3par_password=helion
+hp3par_cpg=FC_r1 (valid cpg name. User need to get from system admin)
+san_ip=10.1.192.10
+san_login=helionadmin
+san_password=helion
+volume_driver=cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver
+volume_backend_name=3par_iSCSI
+hp3par_iscsi_ips=172.32.0.9 (user can provide multiple IP separated by comma)
+hp3par_iscsi_chap_enabled=true</codeblock><note>
+              Please enter the values of all the parameters specific to your environment.
+            </note></li>
+          <li>Execute the steps (<b>5 -9</b>) mentioned in <xref
+              href="#topic_vln_2xy_ht/configure-3par-fc" format="dita">Configure 3PAR FC as Cinder
+              backend </xref> as mentioned above.</li>
+        </ol>
+      </p>
+    </section>
+    <p>To verify the 3PAR FC and iSCSI backends are configured successfully, please refer to <xref
+        href="../blockstorage/verify_backend_configuration.dita">Verify Backend
+      Configuration</xref>.</p>
+  </body>
+</topic>

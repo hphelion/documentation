@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="min_hardware">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Hardware Requirements</title>
+  <body><!--Needs Edit-->
+    <section id="supported_hardware"><title>Hardware Support Matrix</title>
+      <p>For information about the supported hardware in HP Helion OpenStack 2.0, see the <xref
+        href="http://helionready.hpcloud.com/ihv/" format="html" scope="external"
+          >HP Helion Ready Solution Catalog</xref>.</p>
+    </section>
+    <section id="supported_configs">
+      <title>Supported Hardware Configurations</title>
+      <p>Helion OpenStack 2.0 supports the following hardware configurations for a Helion <tm
+          tmtype="reg">OpenStack</tm> deployment.</p>
+      <p>Storage Interconnects/Protocols</p>
+      <ul>
+        <li>1Gb or 10Gb Ethernet.</li>
+        <li>Software iSCSi</li>
+      </ul>
+    </section>
+    <section id="MinimumRequirements">
+      <title>Minimum Hardware Requirements</title>
+      <table>
+        <tgroup cols="5">
+          <colspec colname="c1" colnum="1"/>
+          <colspec colname="c2" colnum="2"/>
+          <colspec colname="c2" colnum="3"/>
+          <colspec colname="c2" colnum="4"/>
+          <colspec colname="c2" colnum="5"/>
+          <thead>
+            <row>
+              <entry>Node Type</entry>
+              <entry>Role Name</entry>
+              <entry>Required Number</entry>
+              <entry>Server Hardware</entry>
+              <entry>Minimum Requirements and Recommendations</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry morerows="3">Deployer (optional, you can also use your first controller node as
+                your deployer if desired.)</entry>
+              <entry morerows="3">Deployer</entry>
+              <entry morerows="3">1</entry>
+              <entry>Disk </entry>
+              <entry>8 GB</entry>
+            </row>
+            <row>
+              <entry>Memory</entry>
+              <entry> 1 GB</entry>
+            </row>
+            <row>
+              <entry>Network</entry>
+              <entry>
+                <p>Options:</p>
+                <ul>
+                  <li>1 x 1 Gb with PXE Support</li>
+                  <li>2 x 1 Gb or 2 x10 Gb</li>
+                </ul>
+                <p>or</p>
+                <ul>
+                  <li>2 x 1 Gb or 2 x10 Gb (with one PXE enabled NIC)</li>
+                </ul>
+              </entry>
+            </row>
+            <row>
+              <entry>CPU </entry>
+              <entry>8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
+            </row>
+            <row>
+              <entry morerows="3">Control Plane</entry>
+              <entry morerows="3">Controller</entry>
+              <entry morerows="3">3</entry>
+              <entry>Disk</entry>
+              <entry>
+                <ul>
+                  <li>1 x 512 GB (Min.) – OS drive</li>
+                  <li>2 x 512 GB (Min.) – Data drive</li>
+                </ul>
+              </entry>
+            </row>
+            <row>
+              <entry>Memory</entry>
+              <entry>32 GB</entry>
+            </row>
+            <row>
+              <entry>Network</entry>
+              <entry><p>Options:</p>
+                <ul>
+                  <li>1 x 1 Gb with PXE Support</li>
+                  <li>2 x 1 Gb or 2 x10 Gb</li>
+                </ul>
+                <p>or</p>
+                <ul>
+                  <li>2 x 1 Gb or 2 x10 Gb (with one PXE enabled NIC)</li>
+                </ul></entry>
+            </row>
+            <row>
+              <entry>CPU </entry>
+              <entry>8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
+            </row>
+            <row>
+              <entry morerows="3">Compute</entry>
+              <entry morerows="3">Compute</entry>
+              <entry morerows="3">1-100</entry>
+              <entry>Disk</entry>
+              <entry>2 X 512 GB (Min.)</entry>
+            </row>
+            <row>
+              <entry>Memory</entry>
+              <entry>32 GB (Memory must be sized based on the VM instances hosted on the Compute
+                node)</entry>
+            </row>
+            <row>
+              <entry>Network</entry>
+              <entry><p>Options:</p>
+                <ul>
+                  <li>1 x 1 Gb with PXE Support</li>
+                  <li>2 x 1 Gb or 2 x10 Gb</li>
+                </ul>
+                <p>or</p>
+                <ul>
+                  <li>2 x 1 Gb or 2 x10 Gb (with one PXE enabled NIC)</li>
+                </ul></entry>
+            </row>
+            <row>
+              <entry>CPU </entry>
+              <entry>8 CPU (64-bit) cores total (can be Intel or AMD) with hardware virtualization
+                support. The CPU cores must be sized based on the VM instances hosted by the Compute
+                node.</entry>
+            </row>
+            <row>
+              <entry morerows="3">Block Storage (Optional)</entry>
+              <entry morerows="3">VSA or OSD (Ceph)</entry>
+              <entry morerows="3">0 or 3</entry>
+              <entry>Disk</entry>
+              <entry>3 X 512 GB (Min.)</entry>
+            </row>
+            <row>
+              <entry>Memory</entry>
+              <entry>32 GB</entry>
+            </row>
+            <row>
+              <entry>Network</entry>
+              <entry><p>Options:</p>
+                <ul>
+                  <li>1 x 1 Gb with PXE Support</li>
+                  <li>2 x 1 Gb or 2 x10 Gb</li>
+                </ul>
+                <p>or</p>
+                <ul>
+                  <li>2 x 1 Gb or 2 x10 Gb (with one PXE enabled NIC)</li>
+                </ul></entry>
+            </row>
+            <row>
+              <entry>CPU </entry>
+              <entry>8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>For more details about the supported network requirements, see <xref
+          href="example_configs.dita">Example Configuration</xref></p>
+    </section>
+    <section id="minimum-node-esx"><b>Minimum Node Requirements For ESX</b></section>
+    <table id="table_ixh_np2_dt">
+      <tgroup cols="7">
+        <colspec colname="c1" colnum="1" colwidth="1.19*"/>
+        <colspec colname="c2" colnum="2" colwidth="1.47*"/>
+        <colspec colname="c2" colnum="3" colwidth="1*"/>
+        <colspec colname="c2" colnum="4" colwidth="1.28*"/>
+        <colspec colname="c2" colnum="5" colwidth="1.26*"/>
+        <colspec colname="c2" colnum="6" colwidth="1.73*"/>
+        <colspec colname="c2" colnum="7" colwidth="1.32*"/>
+        <thead>
+          <row>
+            <entry>Node Type</entry>
+            <entry>Role Name</entry>
+            <entry>Required Number</entry>
+            <entry>Disk</entry>
+            <entry>Memory</entry>
+            <entry>Network</entry>
+            <entry>CPU</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>Deployer, (optional, you can also use your first controller node as your deployer
+              if desired.)</entry>
+            <entry>Deployer</entry>
+            <entry>1</entry>
+            <entry> 8 GB</entry>
+            <entry>1 GB</entry>
+            <entry>
+              <ul id="ul_ob3_np2_dt">
+                <li>1 x 1 GB with PXE Support</li>
+                <li>2 x 1 GB or 2 x10 GB</li>
+              </ul>
+            </entry>
+            <entry>8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
+          </row>
+          <row>
+            <entry>Control Plane</entry>
+            <entry>Controller</entry>
+            <entry>3</entry>
+            <entry>3 X 512 GB (Min.)</entry>
+            <entry>32 GB</entry>
+            <entry>
+              <ul id="ul_sc3_np2_dt">
+                <li>1 x 1 GB with PXE Support</li>
+                <li>2 x 1 GB or 2 x10 GB</li>
+              </ul>
+            </entry>
+            <entry>8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
+          </row>
+          <row>
+            <entry>Compute</entry>
+            <entry>1 vCenter with 2 ESX nodes under one cluster</entry>
+            <entry>2</entry>
+            <entry>1 TB (min) (Shared across all nodes)</entry>
+            <entry>128 GB</entry>
+            <entry>2 x 1 GB or 2 x10 GB</entry>
+            <entry>
+              <p>16 CPU (64-bit) cores total (can be Intel or AMD)</p>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </body>
+</topic>

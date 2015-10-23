@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="monitoring">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Monitoring Service</title>
+  <body><!--Needs Edit-->
+    <section id="about">
+      <p>The HP Helion OpenStack Monitoring service leverages Monasca, which is a multi-tenant,
+        scalable, fault-tolerant OpenStack monitoring service.</p>
+      <p>This document describes the Monasca service and contains the following sections:</p>
+      <ul>
+        <li>
+          <xref type="section" href="#monitoring/installation">Installation</xref>
+        </li>
+        <li>
+          <xref type="section" href="#monitoring/differences">Differences Between Upstream and HP
+            Helion OpenStack Implementations</xref>
+        </li>
+        <li>
+          <xref type="section" href="#monitoring/diagram">Diagram of Monasca Service</xref>
+        </li>
+        <li>
+          <xref type="section" href="#monitoring/working">Working with Monasca</xref>
+        </li>
+        <li>
+          <xref type="section" href="#monitoring/servicealarms">Service Alarm Definitions</xref>
+        </li>
+        <li>
+          <xref type="section" href="#monitoring/info">For More Information</xref>
+        </li>
+      </ul>
+    </section>
+    <section id="installation"><title>Installation</title>
+      <p>The Monasca service is automatically installed as part of the HP Helion OpenStack
+        installation.</p>
+      <p>No specific configuration is required to use Monasca. However, you can configure the
+        database for storing metrics as detailed in the <xref
+          href="../administration/configure_monitoring.dita">Monitoring Configuration</xref>
+        document.</p>
+    </section>
+    <section id="differences"><title>Differences Between Upstream and HP Helion OpenStack
+        Implementations</title>
+      <p>In the HP Helion OpenStack 2.0 release, the OpenStack monitoring service, Monasca, is
+        included as the HP Helion OpenStack monitoring solution with the following exceptions:</p>
+      <ul>
+        <li>Transform Engine</li>
+        <li>Events Engine </li>
+        <li>Anomaly and Prediction Engine</li>
+      </ul>
+      <note>Icinga was supported in previous Helion versions but it has been deprecated in HP Helion
+        OpenStack 2.0.</note>
+    </section>
+    <section id="diagram">
+      <title>Diagram of Monasca Service</title>
+      <p><image placement="break" href="../../media/monasca_diagram.png"/></p>
+    </section>
+    <section id="working"><title>Working with Monasca</title>
+      <p><b>Monasca-Agent</b></p>
+      <p>The <b>monasca-agent</b> is a Python program that runs on the control plane nodes. It runs
+        the defined checks and then sends data onto the API. The checks that the agent runs include: <ul>
+          <li>System Metrics: CPU utilization, memory usage, disk I/O, network I/O, and filesystem
+            utilization on Control Plane and Resource Nodes.</li>
+          <li>Service Metrics: the agent supports plugins such as MySQL, RabbitMQ, Kafka, and many
+            others.</li>
+          <li>VM Metrics: CPU utilization, disk I/O, network I/O, and memory usage of hosted virtual
+            machines on Compute nodes. Full details of these can be found <xref
+              href="https://github.com/openstack/monasca-agent/blob/master/docs/Plugins.md#per-instance-metrics"
+              format="html" scope="external">here</xref>.</li>
+        </ul></p>
+      <p>For a full list of packaged plugins that are included HPE Helion OpenStack, see <xref
+          href="https://github.com/stackforge/monasca-agent/blob/master/docs/Plugins.md"
+          format="html" scope="external">Monasca Plugins</xref></p>
+      <p>You can further customize the monasca-agent to suit your needs, see <xref
+          href="https://github.com/stackforge/monasca-agent/blob/master/docs/Customizations.md"
+          format="html" scope="external">Customizing the Agent</xref></p>
+    </section>
+    <section id="access"><title>Access to Monasca</title>
+      <p>Access to Monasca is available through the <xref
+          href="https://github.com/stackforge/python-monascaclient/blob/master/README.rst"
+          format="html" scope="external">command-line interface (CLI)</xref>, the low-level <xref
+          href="https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md"
+          format="html" scope="external">REST API</xref>, or the Web UI (Operations Console).</p>
+      <p><b>Command-Line Interface</b></p>
+      <p>For users who prefer using the command line, there is the python-monascaclient.</p>
+      <p>For details on the CLI, including installation instructions, see <xref
+          href="https://github.com/stackforge/python-monascaclient/blob/master/README.rst"
+          format="html" scope="external">Python-Monasca Client</xref></p>
+      <p><b>Monasca API</b></p>
+      <p>If low-level access is desired, there is the Monasca REST API.</p>
+      <p>Full details of the Monasca API can be found <xref
+          href="https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md"
+          format="html" scope="external">on GitHub</xref></p>
+      <p><b>Operations Console (OpsConsole) GUI</b></p></section>
+    <section conref="opsconsole_overview.dita#opsconsole/about"/>
+    <section conref="opsconsole_overview.dita#opsconsole/connecting"/>
+    <section id="servicealarms"><title>Service Alarm Definitions</title>
+      <p>Helion OpenStack comes with some predefined monitoring alarms for the services
+        installed.</p>
+      <p>Full details of all service alarms can be found here: <xref href="alarms.dita">Service
+          Alarm Definitions</xref>.</p>
+      <p>When alarms are triggered it is helpful to review the service logs. Details on how to use
+        the logging UI built into the Operations Console can be found here: <xref type="section"
+          href="centralized_logging.dita#logging/interface">Logging Interface</xref></p>
+    </section>
+    <section id="info"><title>For More Information</title>
+      <p>For details on OpenStack Monasca, see <xref href="http://monasca.io/" format="html"
+          scope="external">Monasca.io</xref></p>
+    </section>
+  </body>
+</topic>

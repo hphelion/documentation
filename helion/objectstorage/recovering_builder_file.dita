@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_gbz_13t_mt">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Recovering Builder Files</title>
+  <body><!--Needs Edit-->
+    <p>When you execute the deploy process for a system, a copy of the builder files is also stored
+      on every Object Storage node in the
+        <codeph>/etc/swiftlm/buiilder_dir/region-&lt;region-name></codeph> directory. You can
+      restore the builder files as follows:<ol id="ol_smw_g3t_mt">
+        <li>Log into the first proxy server node .<note>To identify the first proxy node, refer to
+              <xref href="first_proxy_server.dita"/></note></li>
+        <li>Copy the <b>swift-rings-tarball.tar</b> file from any other
+          node:<codeblock>scp &lt;username>@&lt;nodename>:/etc/swiftlm/swift-rings-tarball.tar /tmp</codeblock></li>
+        <li>Unpack the tarball to <codeph>/etc/swiftlm/builder_dir</codeph> using the following
+            commands:<codeblock>cd  /etc/swiftlm/builder_dir
+sudo tar -xpf /tmp/swiftlm-rings-tarball.tar</codeblock><p>
+            For example: if the Keystone region is called region2, use the following
+            commands:<codeblock>cd  /etc/swiftlm/builder_dir/region-region2
+sudo tar -xpf /tmp/swiftlm-rings-tarball.tar</codeblock></p></li>
+        <li>Log into the deployer and run the <codeph>swift-deploy.yml</codeph> playbook as
+          follows::<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-deploy.yml</codeblock></li>
+      </ol></p>
+  </body>
+</topic>

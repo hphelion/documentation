@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ly3_yyr_st">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Troubleshooting </title>
+  <body><!--Needs Edit-->
+    <p>Logs can be used to troubleshoot Freezer functionality <table>
+        <tgroup cols="2">
+          <tbody>
+            <row>
+              <entry>Component</entry>
+              <entry>Description</entry>
+            </row>
+            <row>
+              <entry>Freezer Client</entry><entry>/var/log/freezer.log</entry>
+            </row>
+            <row><entry>Freezer Scheduler</entry><entry>/var/log/freezer-scheduler.log</entry></row>
+            <row>
+              <entry>Freezer API</entry><entry>/var/log/freezer-api.log</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table></p>
+    
+  </body>
+</topic>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="config_vsa">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for VSA Block Storage
+    Backend</title>
+  <body><!--Needs Edit-->
+    <section id="about">
+      <p>This page describes how to configure your VSA backend for the Helion Entry Scale Cloud with
+        KVM model.<note type="attention">Discovery functionality of VSA nodes using CMC controller node is not
+          recommended in HP Helion OpenStack 2.0. User needs to manually add VSA and create a
+          cluster.</note></p>
+    </section>
+    <section id="prereq"><title>Pre-requisites</title>
+      <p>
+        <ul>
+          <li>The Entry Scale Cloud with VSA cloud model should must be deployed. For more details
+            on the installation of Entry Scale Cloud with VSA cloud model refer <xref
+              href="http://docs-staging.hpcloud.com/hos2.0ga/helion/installation/install_entryscale_kvm.html"
+              format="html" scope="external">here</xref></li>
+          <li>Collect the IP address of the VSA VM and Cluster VIP allocated from the<codeph>
+              ~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph> file. This file is
+            generated as part of output of the configuration processor during installation. You need
+            these IP address to discover deployed VSA and to create storage cluster.</li>
+        </ul>
+      </p>
+      <note>A single VSA can have maximum 7 raw disks (excluding OS disks) attached to it, which is
+        defined in disk input model of VSA node. It is expected not to specify more than 7 disks
+        (including AO disks) for VSA. Suppose if you want to deploy VSA with 2 disks for AO then
+        your disk input model should not specify more than 5 raw disks for data and 2 raw disks for
+        adoptive optimization. Exceeding the disk limit causes VSA deployment failure.</note>
+      <p>You can deploy VSA with adoptive optimization (AO) or without. The process to deploy VSA
+        with AO and without AO is similar with the exception of a change in the disk input model.
+        For more detailed information, refer to the <xref
+          href="#config_vsa/deploy-vsa-with-ao-without-ao" format="dita">VSA with AO and without
+          AO</xref> section below.</p>
+    </section>
+    <section>
+      <title>Creating a StoreVirtual Cluster and adding it to a new Management Group Cluster using
+        CMC</title>
+      <p>The CMC utility requires a GUI to access it. The following steps will allow you to setup a
+        VNC connect to your controller node so you can view the GUI.</p>
+      <ol>
+        <li>Login to your first controller node. </li>
+        <li>Run the following command to install the package that is required to launch CMC:
+          <codeblock>sudo apt-get install -y xrdp </codeblock></li>
+        <li>Start <codeph>vnc4server</codeph> using the instructions below. You will be prompted for
+          a password (min 6 characters). Enter a password and proceed. A sample output is shown
+          below:
+            <codeblock>stack@helion-cp1-c1-m1-mgmt:~$ vnc4server
+            
+You will require a password to access your desktops.
+            
+Password:
+Verify:
+xauth:  file /home/stack/.Xauthority does not exist
+            
+New 'helion-cp1-c1-m1-mgmt:3 (stack)' desktop is helion-cp1-c1-m1-mgmt:3
+            
+Creating default startup script /home/stack/.vnc/xstartup
+Starting applications specified in /home/stack/.vnc/xstartup
+Log file is /home/stack/.vnc/helion-cp1-c1-m1-mgmt:3.log</codeblock><note>If
+            you directly use xrdp to connect to the first controller node without using the VNC
+            server then a remote session is created whenever you login. To avoid this, a dedicated
+            VNC server instance is launched and connected to that instance by xrdp. This helps
+            session to remain
+          maintained.</note><!--NOte that you can directly use xrdp to connect to he first controller withput using vnc server but this result in  creating a remote sessioneverytime u login. In order to avoid this we launch a dedicated VNC server instance and connct to that instance by xrdp. This way the session will be maintained.--></li>
+        <li>Run <codeph>netstat -anp | grep vnc</codeph> to determine the public port. In the
+          example below, the port is 5903: <codeblock>stack@helion-cp1-c1-m1-mgmt:~$ netstat -anp | grep vnc
+(Not all processes could be identified, non-owned process info
+will not be shown, you would have to be root to see it all.)
+tcp        0      0 0.0.0.0:6003            0.0.0.0:*               LISTEN      1413/Xvnc4
+tcp6       0      0 :::5903                 :::*                    LISTEN      1413/Xvnc4</codeblock><p>
+            <note>If you reboot the controller node then you must repeat the steps <b>3</b> and
+                <b>4</b>.<!--The above steps is not required to repeat unneed not be repeated unless u reboot the controller.--></note>
+          </p></li>
+        <li>Connect to your controller node through any remote desktop or VNC client. <ol
+            id="ol_n1m_mw2_tt">
+            <li>Connecting through remote desktop client<ol id="ol_vnt_4w2_tt">
+                <li>Login to remote desktop. You will be prompted with xrdp login screen.<p><image
+                      href="../../media/vsa/xrdp1.PNG" id="image_b3v_wbf_tt"/></p></li>
+                <li>Click <b>Module</b> drop-down list and select vnc-any.<p><image
+                      href="../../media/vsa/xrdp2.PNG" id="image_utm_dcf_tt"/></p></li>
+                <li>Enter the IP address, port and password in the respective fields.<p><image
+                      href="../../media/vsa/xrdp3.PNG" id="image_fyk_hcf_tt"/></p></li>
+                <li>Click <b>Ok</b>.</li>
+              </ol></li>
+            <li>Connecting through VNC client<ol id="ol_mss_nw2_tt">
+                <li>Enter the IP address, port and password.</li>
+              </ol></li>
+          </ol> A terminal emulator will be displayed where you can enter the CMC launch
+          command.</li>
+      </ol>
+      <!--
+      <p><b> Install (any) X Display Tool to Launch Centralized Management Console (CMC)</b></p>
+      <p>You must configure X display tool to launch CMC. User can select <b>any</b> X display tool.
+        In this section we are using <b>Xming</b> tool for Windows as an example to launch CMC. The
+        following example provides the steps to install Xming and launch CMC.</p>
+      <p>
+        <ol>
+          <li>Install <b>Xming</b> on Windows Box from where you can access the deployer node.</li>
+          <li>Select <b>Enable X11 forwarding</b> checkbox on the putty session for deployer node. </li>
+          <li>SSH to first control plane node.<codeblock>ssh -X</codeblock></li>
+          <li>Execute the following command:
+            <codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock>CMC
+            will be launch successfully.</li>
+        </ol>
+      </p>
+      -->
+      <p>Perform the following steps to create the cluster.<ol id="ol_yln_fhl_jt">
+          <li>Open
+              CMC.<codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock><p>By
+              default, the CMC is configured to discover the StoreVirtual nodes in the subnet in
+              which it is installed. You can manually add the nodes also.</p></li>
+          <li>In the CMC UI, click <b>Find</b> and then click <b>Find Systems</b> from the left
+            panel. Find Systems dialogue box is displayed.</li>
+          <li>You can choose <b>Add</b> or <b>Find</b> option to search the system. Find option
+            starts searching for the nodes in the same subnet as that of CMC. Add option displays an
+              <b>Enter IP</b> pop-up box to enter the IP of the StoreVirtual system.</li>
+          <li>In the CMC UI, click <b>Tasks</b> then point to <b>Management Group</b> and click<b>
+              New Management Group</b>.</li>
+          <li>In the <b>New Management Group Name</b> box, enter a name for the management group.
+            For example: <codeph>hlm003-vsa-mg</codeph></li>
+          <li>Click <b>Next</b> to display the Add Administrative User page.</li>
+          <li>Enter the required information (username/password) for the Administrative User. For
+              example:<ul id="ul_rsk_fn2_tt">
+              <li>username- stack </li>
+              <li>password-stack</li>
+            </ul></li>
+          <li>Click <b>Next</b> to display the Management Group Time page. </li>
+          <li>Add NTP server information and click <b>Next</b> to display the Domain Name System
+            Configuration page.</li>
+          <li>Skip the DNS and SMTP sections. To do so, <ul id="ul_g42_ngz_qt">
+              <li>Click <b>Next</b> . A pop box displays and click <b>Accept Incomplete</b>. Repeat
+                this to skip SMTP section
+                too.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></li>
+            </ul></li>
+          <?oxy_custom_end?>
+          <li>Click <b>Next</b> to display a Wizard in the Create a Cluster page.</li>
+          <li>Select the cluster type as <i>Standard Cluster</i> from the displayed options and
+            click <b>Next</b>.</li>
+          <li>In the <b>Cluster Name</b> box, enter the name of the cluster and click <b>Next</b>.
+            For example: <codeph>hlm003-vsa-cluster</codeph>.</li>
+          <li>In the Assign Virtual IP's and Subnet Masks page is displayed.</li>
+          <li>Click Add. Add VIPs and Subnet Masks pop-up box displays, enter the virtual IP and
+            Subnet Mask of the cluster in the respective boxes and click <b>OK</b>.
+              <!--The details are displayed in a tabular format in the page. --><note>The VIP IP can
+              be found as the cluster IP value in the
+                <codeph>~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph>
+              file.</note></li>
+          <li>Click <b>Next</b> to go to the next page.</li>
+          <li>Select the checkbox displayed against <b>Skip Volume Creation</b>.</li>
+          <li>Click <b>Finish</b>. The Management Group and Cluster is created and displays in the
+            Home page of CMC.<p>Wait till the cluster is displayed in the Home Page of CMC.</p></li>
+        </ol></p>
+    </section>
+    <section>
+      <title>Configure VSA as a Cinder Backend</title>
+      <note>The default volume type created by VSA will be thin provisioned and will have no fault
+        tolerance. You should configure cinder to fully provision volumes, and you may also want to
+        configure fault tolerance. Follow the instructions detailed at <xref
+          href="../blockstorage/verify_backend_configuration.dita#topic_q5q_trz_jt">Creating Volume
+          type</xref> to create a new volume type which is fully provisioned and fault
+        tolerant.</note>
+      <p>You must modify <codeph>cinder.conf.j2</codeph> to update VSA cluster. </p>
+      <p>Perform the following steps to update the VSA cluster: <ol>
+          <li>Login to deployer node.</li>
+          <li>Edit <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> to add VSA data
+            as follows:
+              <codeblock># Configure the enabled backends
+enabled_backends=vsa-1</codeblock><p>If
+              you created a fully provisioned volume type <!--in section &lt;reference&gt;--> add
+              the following data to the [DEFAULT] section of<codeph>
+              cinder.conf.j2</codeph>:<codeblock># Set the default volume type
+default_volume_type = &lt;your new volume type></codeblock></p></li>
+          <li>Uncomment VSA section of <codeph>cinder.conf.j2</codeph> and fill the values as per
+            your cluster information. If you have more than one cluster, you need to add another
+            similar section with its respective values. In the following example only one cluster is
+            added.<codeblock>[vsa-1]
+#hplefthand_password: &lt;vsa-cluster-password>
+#hplefthand_clustername: &lt;vsa-cluster-name>
+#hplefthand_api_url: https://&lt;vsa-cluster-vip>:8081/lhos
+#hplefthand_username: &lt;vsa-cluster-username>
+#hplefthand_iscsi_chap_enabled: true
+#volume_backend_name: &lt;vsa-backend-name>
+#volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
+#hplefthand_debug: false
+#</codeblock>
+              where,<ul id="ul_swt_2mb_lt">
+              <li>hplefthand_password : Password given during cluster creation.</li>
+              <li>hplefthand_clustername: Name of the VSA cluster provided while creating a
+                cluster.</li>
+              <li>hplefthand_api_url: Virtual IP of Store Virtual.</li>
+              <li>hplefthand_username: Username given during cluster creation.</li>
+              <li>hplefthand_iscsi_chap_enabled : If you set this option as <b>true</b> then the
+                hosts will not be able to access the storage without the generated secrets. And if
+                you set this option as <b>false</b> then no CHAP authentication is required for the
+                ISCSI connection.</li>
+              <li>volume_backend_name: Name of the backend.</li>
+              <li>volume_driver: Cinder volume driver.</li>
+              <li>hplefthand_debug: If you set this option as true then it collects log in the debug mode.<p>
+                  <note> Please enter the parameter values which are specific to your environment.
+                  </note>
+                </p></li>
+            </ul><note type="important">HP Helion OpenStack 2.0 supports VSA deployment for KVM only
+              but it can be used as pre-deployed (or out of the band deployed) Lefthand storage
+              boxes or VSA appliances (running on ESX/hyper-v/KVM hypervisor). It also supports
+              cinder configuration of physical Lefthand storage device and VSA appliances. Depending
+              upon your setup, you have to edit the below section if your StoreVirtual Storage array
+              is running LeftHand OS lower than version
+              11.<codeblock>[&lt;unique-section-name>]
+volume_driver=cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
+volume_backend_name=lefthand-cliq
+san_ip=&lt;san-ip>
+san_login=&lt;san_username>
+If adding a password here, then the password can be encrypted using the
+mechanism specified in the documentation. If the password has been encrypted
+add the value and the hos_user_password_decrypt filter like so:
+san_password= {{ '&lt;encrypted san_password>' | hos_user_password_decrypt }}
+Note that the encrypted value has to be enclosed in quotes
+If you choose not to encrypt the password then the unencrypted password
+must be set as follows:
+san_password=&lt;san_password>
+san_ssh_port=16022
+san_clustername=&lt;vsa-cluster-name>
+volume_backend_name: &lt;vsa-backend-name></codeblock></note></li>
+          <li>Commit your configuration to a <xref href="using_git.dita">local repository</xref>:
+              <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;your commit message>"</codeblock><note>Before
+              you run any playbooks, remember that you need to export the encryption key in the
+              following environment variable:<codeph> export
+                HOS_USER_PASSWORD_ENCRYPT_KEY=&lt;encryption key></codeph> See <xref
+                href="install_entryscale_kvm.dita#install_kvm"/> for reference.</note></li>
+          <li>Run the configuration processor:
+            <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Run the following command to create a deployment directory.
+            <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        </ol></p>
+    </section>
+    <p id="run-ceph-client-package"><b>Run Cinder Reconfigure Packages</b></p>
+    <p>Execute the following command to configure VSA. </p>
+    <p>
+      <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
+    </p>
+    <p>After the successful configuration of VSA as a cinder backend you can launch the
+      <!--Hence, cinder is successfully configured. Now launch the--> Horizon dashboard to create a
+      cinder volume type for VSA as backend. Once you are able to create the volume you can perform
+      the OpenStack Operations. Also, you can verify the cinder volume creation for VSA by logging
+      in <xref href="../blockstorage/verify_backend_configuration.dita">Horizon
+      Dashboard</xref>.</p>
+    <note type="important">You can create more than one VSA cluster of same or different type by
+      specifying the configuration in cloud model. For more details, refer <xref
+        href="../blockstorage/vsa/vsa_create_multiple_clusters.dita">Modifying Cloud Model to Create
+        Multiple Clusters</xref>.</note>
+    <section id="deploy-vsa-with-ao-without-ao">
+      <title>VSA with AO and without AO</title>
+      <p>VSA is deployed with adoptive optimization (AO) and without AO. AO allows built-in storage
+        tiering for VSA. While deploying VSA with or without AO you must ensure to use the
+        appropriate disk input model.</p>
+      <p>VSA with AO will have extra disk section with the marked usage of adoptive-optimization as
+        mentioned in the following example:
+        <codeblock>Additional disks can be added if available
+          device_groups:
+            - name: vsa-data
+              consumer:
+                name: vsa
+                usage: data
+              devices:
+                - name: /dev/sdc
+          - name: /dev/sdd
+          - name: /dev/sde
+          - name: /dev/sdf
+          
+            - name: vsa-cache
+              consumer:
+                name: vsa
+                usage: <b>adaptive-optimization</b>
+              devices:
+                - name: /dev/sdb</codeblock></p>
+      <p>VSA without AO consist of  only data disks as mentioned in the following example:
+        <codeblock>Additional disks can be added if available
+              device_groups:
+                - name: vsa-data
+                  consumer:
+                    name: vsa
+                    usage: data
+                  devices:
+                    - name: /dev/sdc
+                    - name: /dev/sdd
+                    - name: /dev/sde
+                    - name: /dev/sdf</codeblock></p>
+      <p>It is recommended to use SSD disk for AO. The minimum VSA deployment with AO uses 2 disks
+        (apart from OS disk) and 1 disks for VSA without AO. The maximum supported number of disks
+        is 7.</p>
+      <!--, VSA will have 1-6 disks as data disks and 1 disk as VSA with AO configuration. -->
+      <!--<p>VSA deployment can done with AO or without AO. AO stands for adoptive optmization which allows in-built storage tiring for VSA. 
+        From the deployment perspective, deployment of VSA with or without AO is not having much difference excepy in disk input model.For example: 
+        a VSA with AO will have to have extra disk section with the marked usage of adoptive-optimization mentioned below. Additional disks can 
+        be added if availiable device_groups:   - name: vsa-data     consumer:       name: vsa       usage: data     devices:       
+        - name: /dev/sdc - name: /dev/sdd - name: /dev/sde - name: /dev/sdf   - name: vsa-cache     consumer:       
+        name: vsa       usage: adaptive-optimization     devices:       - name: /dev/sdb For VSA without AO, 
+        we do need to describe only data disks as mentioned below: Additional disks can be added if availiable device_groups:   
+        - name: vsa-data     consumer:       name: vsa       usage: data     devices:       - name: /dev/sdc - name: /dev/sdd 
+        - name: /dev/sde - name: /dev/sdf idealy, it is recommended to use SSD disk for adoptive-optimization purpose. 
+        So, a typical VSA will have 1-6 disks as data disks and 1 disks as VSA with AO configuration. From above it is clear 
+        that minimum disk for VSA deployment with AO is 2 (apart from OS disk) and 1 for VSA without AO </p>-->
+    </section>
+  </body>
+</topic>

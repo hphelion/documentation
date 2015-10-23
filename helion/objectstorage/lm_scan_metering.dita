@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_pcv_fy4_nt">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Gathering Swift Monasca Metrics</title>
+  <body><!--Needs Edit-->
+    <p>The <b>swiftlm-scan</b> program is the mechanism used to gather metrics for the Monasca
+      system. These metrics are used to derive alarms. See <xref
+        href="../operations/alarms.dita#alarmdefinitions/objectstorage">alarm definitions</xref> for
+      a list of alarms that can be generated from this data.</p>
+    <p>You execute the <b>swiftlm-scan</b> command directly to view the metrics. Log on to the Swift
+      node as the root user. The following example shows a snippet of the output.
+        <codeblock>$ sudo swiftlm-scan --pretty
+. . .
+  {
+    "dimensions": {
+      "device": "sdc", 
+      "hostname": "padawan-ccp-c1-m2-mgmt", 
+      "service": "object-storage"
+    }, 
+    "metric": "swiftlm.swift.drive_audit", 
+    "timestamp": 1442248083, 
+    "value": 0, 
+    "value_meta": {
+      "msg": "No errors found on device: sdc"
+    }
+  }, 
+. . .</codeblock><note>Use
+          the<b> --pretty</b> option. This makes the JSON file easier to read.</note></p>
+    <p>The fields are as follows:</p>
+    <p>
+      <simpletable>
+        <strow>
+          <stentry><b>metric</b></stentry>
+          <stentry>This is the name of the metric.</stentry>
+        </strow>
+        <strow>
+          <stentry><b>dimensions</b></stentry>
+          <stentry>This provides information about the source or location of the metric. The
+            dimensions differ depending on the metric in question. The following dimensions are used
+              by<b> swiftlm-scan</b>:<ul id="ul_vdp_km2_jt">
+              <li><b>service</b> : This is always "object-storage".</li>
+              <li><b>component</b> : This identifies the component. For example,
+                "swift-object-server" indicates that the metric is about the swift-object-server
+                process.</li>
+              <li><b>hostname</b> : This is the name of the node the metric relates to. This is not
+                necessarily the name of the current node.</li>
+              <li><b>url</b> : If the metric is associated with a URL, this is the URL.</li>
+              <li><b>port</b> : If the metric relates to connectivity to a node, this is the port
+                used.</li>
+              <li><b>device</b> : This is the block device a metric relates to.</li>
+            </ul></stentry>
+        </strow>
+        <strow>
+          <stentry><b>value</b></stentry>
+          <stentry>This is the value of the metric. For many metrics, this is simply the value of
+            the metric. But for other metrics, the value indicates a status. If the
+              <b>value_meta</b> contains a <b>msg</b> field, the value is a status. The following
+            status values are used:<ul id="ul_rjy_hm2_jt">
+              <li>0 - no error</li>
+              <li>1 - warning</li>
+              <li>2 - failure</li>
+            </ul></stentry>
+        </strow>
+        <strow>
+          <stentry><b>value_meta</b></stentry>
+          <stentry>This contains additional information. The <b>msg</b> field is the most useful of
+            this information. </stentry>
+        </strow>
+      </simpletable>
+    </p>
+    <section>
+      <title>Optional Parameters</title>
+      <p>You can focus on specific sets of metrics by using one of the following optional
+        parameters: </p>
+      <p>
+        <simpletable>
+          <strow>
+            <stentry><b>--replication</b></stentry>
+            <stentry>Checks replication and health status.</stentry>
+          </strow>
+          <strow>
+            <stentry><b>--file-ownership</b></stentry>
+            <stentry>Check that Swift owns its relevant files and directories.</stentry>
+          </strow>
+          <strow>
+            <stentry><b>--drive-audit</b></stentry>
+            <stentry>Checks for logged events about corrupted sectors (unrecoverable read errors) on
+              drives.</stentry>
+          </strow>
+          <strow>
+            <stentry><b>--connectivity</b></stentry>
+            <stentry>Checks connectivity to various servers used by the Swift system, including:<ul
+                id="ul_owk_pp2_jt">
+                <li>Checks this node can connect to all memcachd servers</li>
+                <li>Checks that this node can connect to the Keystone service (only applicable if
+                  this is a proxy server node)</li>
+                <li>Checks that this node can ping all other Swift nodes</li>
+              </ul></stentry>
+          </strow>
+          <strow>
+            <stentry><b>--swift-services</b></stentry>
+            <stentry>Check that the relevant Swift processes are running.</stentry>
+          </strow>
+          <strow>
+            <stentry><b>--network-interface</b></stentry>
+            <stentry>Check NIC speed and reports statistics for each interface.</stentry>
+          </strow>
+          <strow>
+            <stentry><b>--check-mounts</b></stentry>
+            <stentry>Checks that the node has correctly mounted drives used by Swift.</stentry>
+          </strow>
+          <strow>
+            <stentry><b>--hpssacli</b></stentry>
+            <stentry>If this server uses a Smart Array Controller, this checks the operation of the
+              controller and disk drives.</stentry>
+          </strow>
+        </simpletable>
+      </p>
+    </section>
+  </body>
+</topic>

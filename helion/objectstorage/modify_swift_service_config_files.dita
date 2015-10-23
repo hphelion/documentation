@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_rdf_hkp_rt">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Customizing Swift Service Configuration Files </title>
+  <body><!--Needs Edit-->
+    <p>HP Helion OpenStack 2.0 allows you to modify various Swift service configuration files. The
+      following Swift Service Configuration files are located on a deployer node in
+        /<codeph>home/stack/helion/my_cloud/config/swift/</codeph>.<ul id="ul_i2n_clp_rt">
+        <li><codeph>account-server.conf.j2</codeph></li>
+        <li><codeph>container-reconciler.conf.j2</codeph></li>
+        <li><codeph>container-server.conf.j2</codeph></li>
+        <li><codeph>container-sync-realms.conf.j2</codeph></li>
+        <li><codeph>object-expirer.conf.j2</codeph></li>
+        <li><codeph>object-server.conf.j2</codeph></li>
+        <li><codeph>proxy-server.conf.j2</codeph></li>
+        <li><codeph>rsyncd.conf.j2</codeph></li>
+        <li><codeph>swift.conf.j2</codeph></li>
+        <li><codeph>swift-recon.j2</codeph></li>
+      </ul></p>
+    <p>There are many configuration options that can be set or changed. For example:<ul
+        id="ul_pq4_mlp_rt">
+        <li>Container Rate Limit</li>
+        <li>Log level</li>
+      </ul></p>
+    <section id="configuring-swift-contianer-rate-limit"><b>Configuring Swift Container Rate Limit</b><p>The Swift container rate limit allows
+        you to limit the number of <b>PUT</b> and <b>DELETE</b> requests of an object based on the
+        number of objects in a container. For example, suppose the <b>container_ratelimit_x = r
+        </b>. It means that for containers of size <b>x</b>, limit requests per second to
+        <b>r</b>.</p><p>Perform the following steps to enable container rate limiting:</p><ol
+        id="ol_a23_tlp_rt">
+        <li>Login to the deployer.</li>
+        <li>Edit the <b>DEFAULT</b> section of
+            <codeph>/home/stack/helion/my_cloud/config/swift/proxy-server.conf.j2</codeph> as shown
+          below.
+          <codeblock>container_ratelimit_0 = 100
+container_ratelimit_1000000 = 100
+container_ratelimit_5000000 = 50</codeblock>This
+          will set the <b>PUT</b> and <b>DELETE</b> object rate limit to 100 requests per second for
+          containers with up to 1,000,000 objects. Also, the <b>PUT</b> and <b>DELETE</b> rate for
+          containers with between 1,000,000 and 5,000,000 objects will vary linearly from between
+          100 and 50 requests per second as the container object count increases.</li>
+        <li>Commit your
+          changes.<codeblock>git add -A
+git commit -m "&lt;commit message>"</codeblock></li>
+        <li>Run the configuration
+          processor:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+        <li>Run the following command to create a deployment
+          directory.<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        <li>Run reconfiguration playbook to reconfigure the swift
+          servers:<codeblock>cd ~/scratch/ansible/next/hos/ansible 
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
+      </ol></section>
+    <section id="modifying-swift-account-server-logging-level"><b>Customizing Swift Account Server
+        Logging Level</b><p>By default the Swift logging level is set to <b>INFO</b>. <note>It is
+          recommended not to set log level for a long period.</note></p><p>Perform the following
+        steps to set the logging level of the <codeph>account-server</codeph> to <b>DEBUG</b>:<ol
+          id="ol_ff4_mnp_rt">
+          <li>Login to the deployer.</li>
+          <li>Edit the <b>DEFAULT</b> section of <codeph>
+              /home/stack/helion/my_cloud/config/swift/account-server.conf.j2</codeph> as shown
+            below. <codeblock>[DEFAULT]
+.
+.
+log_level = DEBUG</codeblock></li>
+          <li>Commit your
+            changes.<codeblock>git add -A
+git commit -m "&lt;commit message>"</codeblock></li>
+          <li>Run the configuration
+            processor:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Run the following command to create a deployment
+            directory.<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+          <li>Run reconfiguration playbook to reconfigure the swift
+            servers:<codeblock>cd ~/scratch/ansible/next/hos/ansible 
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
+        </ol></p></section>
+  </body>
+</topic>

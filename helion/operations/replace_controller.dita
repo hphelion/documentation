@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ijj_45j_nt">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Replacing a Controller Node</title>
+  <body><!--Needs Edit-->
+    <section>
+      <p>For HP Helion OpenStack 2.0 versions, you must have three controller nodes. Therefore,
+        adding and removing nodes are not options. However, if you need to repair or replace a
+        controller node, you may do so by following the steps outlined here.</p>
+      <note>Do not add entries for a new server; instead, just update the entries for the broken
+        one. Also note that if you are replacing a control plane node that also happens to be
+        running the deployer, that process is different. You’ll need to restore you deployer data
+        first. </note>
+      <b>Update your model with replacement server information</b>
+      <ol>
+        <li> Update your cloud model (<b>servers.yml </b>) Update your cloud model (servers.yml )
+          with new mac-addr, ilo-ip, ilo-password, ilo-user fields where these have changed. Do not
+          change the id, ip-addr, role, server-group settings. (Please follow the procedure for
+          updating your cloud model/ git repo)</li>
+        <li> Get the <b>servers.yml</b> file stored in git:
+          <codeblock>cd ~/helion/my_cloud/definition/data
+git checkout site</codeblock> then change,
+          as necessary, the mac-addr, ilo-ip, ilo-password, and ilo-user fields of this existing
+          controller node. Save and commit the change
+          <codeblock>git commit -a -m "repaired node X"</codeblock></li>
+        <li>Run the configuration processor as follows:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
+          Then run ready-deployment:
+          <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
+        </li>
+      </ol>
+      <b>Image the new node</b>
+      <ol>
+        <li>Log onto the node that is running the deployer. Remove the broken control plane node
+          from cobbler by running sudo cobbler system remove --name &lt;server-id>. Here's an
+          example:<codeblock> sudo cobbler system remove --name controller2</codeblock>
+        </li>
+        <li>Remove the ssh key of the old controller node from the known hosts file. Here's an
+          example:
+          <codeblock>ssh-keygen -f "/home/stack/.ssh/known_hosts" -R 10.123.12.3</codeblock></li>
+        <li>Run the cobbler deploy playbook to add the replacement node
+          <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
+        </li>
+        <li> Re-image the new nodes by running <b>bm-reimage.yml</b>: ansible-playbook -i
+          hosts/localhost bm-reimage.yml -e nodelist=&lt;node-name>. Note: Note: you must ensure
+          that the old controller node is powered off before completing this step. This is because
+          the new controller node will re-use the original IP address.
+          <codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=controller2</codeblock></li>
+        <li>Configure the necessary keys used for the database etc using:
+          <codeblock>ansible-playbook -i hosts/verb_hosts monasca-rebuild-pretasks.yml</codeblock></li>
+        <li>Log into the 2 original controller nodes as "dbadmin" and run the following command:
+          <codeblock>ssh-keygen -f "/home/dbadmin/.ssh/known_hosts" -R {{ip_of_node_to_replace}}</codeblock></li>
+        <li>Run osconfig on the replacement controller node. For example:
+          <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml  -e rebuild=True --limit=hlm-cp1-c1-m2-mgmt</codeblock>
+          If the controller being replaced is the first server running the swift-proxy service (see
+            <xref href="../objectstorage/first_proxy_server.dita">Identifying the First Proxy
+            Server</xref>) you need to restore the Swift Ring Builder files to the
+          /etc/swiftlm/builder_dir directory. See <xref
+            href="../objectstorage/recovering_builder_file.dita#topic_gbz_13t_mt">Recovering Builder
+            Files</xref> for details. Run swift-deploy across all controllers using:
+          <codeblock>ansible-playbook -i hosts/verb_hosts swift-deploy.yml</codeblock></li>
+        <li> Run hlm-deploy on the replacement controller
+          <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e rebuild=True --limit=hlm-cp1-c1-m2-mgmt</codeblock>
+        </li>
+      </ol>
+      <!--
+      <ul>
+      <li>When the node is ready to be restored, the process for re-introducing it will depend on the
+        actions performed to repair it. If it was simply rebooted to introduce new software, etc.
+        then running the <b>hlm-start.yml</b> playbook will suffice. If needed, use
+        <b>bm-power-up.yml </b>playbook to restart the node. Specify just the node(s) you want
+        to start in the 'nodelist' parameter aguments, i.e.
+        nodelist=&lt;node1>[,&lt;node2>][,&lt;node3>]
+        <codeblock>cd ~/helion/hos/ansible
+~/helion/hos/ansible$ ansible-playbook -i hosts/localhost bm-power-up.yml -e nodelist=cpn-0004</codeblock>
+      </li><li>Execute the <b>hlm-start.yml </b>playbook. Specifying the node(s) you want to start in the
+        'limit' parameter arguments. This parameter accepts wildcard arguments and also
+        '@&lt;filename>' to process all hosts listed in the file.
+        <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts hlm-start.yml - -limit hlm004-ccp-comp0004-mgmt</codeblock>
+      </li><li>If the node has undergone repairs that impact disk contents, then running the
+        <b>re-image.yml</b> and <b>hlm-deploy.yml </b>playbooks will be required.
+        Run:<codeblock>cd ~/helion/hos/ansible
+~/helion/hos/ansible$ ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=cpn-0004</codeblock>
+      </li><li>Then execute the <b>hlm-start.yml</b> playbook.
+        <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts hlm-deploy.yml - -limit hlm004-ccp-comp0004-mgmt</codeblock>
+      </li>
+      </ul>
+      -->
+    </section>
+  </body>
+</topic>

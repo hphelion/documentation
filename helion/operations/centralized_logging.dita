@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="logging">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Centralized Logging</title>
+  <body>
+    <!--Needs Edit-->
+    <p>A typical HP Helion OpenStack cloud consists of multiple servers which makes locating a
+      specific log from a single server difficult. The HP Helion OpenStack Centralized Logging
+      feature helps the administrator triage and troubleshoot the distributed cloud deployment from
+      a single location.</p>
+    <p>The Centralized Logging feature collects logs on a central system, rather than leaving the
+      logs scattered across the network. The administrator can use a single Kibana interface to view
+      log information in charts, graphs, tables, histograms, and other forms.</p>
+    <p>In addition to each of the HP Helion OpenStack services, Centralized Logging also processes
+      logs for the following features:</p>
+    <ul>
+      <li>HAProxy</li>
+      <li>syslog</li>
+      <li>keepalived</li>
+    </ul>
+    <p>This document describes the Centralized Logging feature and contains the following
+      sections:</p>
+    <ul>
+      <li><xref href="#logging/install">Installation</xref></li>
+      <li><xref href="#logging/components">Centralized Logging Components</xref></li>
+      <li><xref href="#logging/retaining_logs">Log Retention Information</xref></li>
+      <li>
+        <xref href="#logging/types">Centralized Logging Data</xref>
+      </li>
+      <li>
+        <xref href="#logging/kibana">Kibana Configuration</xref>
+        <ul>
+          <li>
+            <xref href="#logging/interface">Logging into Kibana</xref>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <xref href="#logging/troubleshooting">Using Centralized Logging to Troubleshoot
+          Issues</xref>
+      </li>
+      <li>
+        <xref href="#logging/monitoring">Monitoring Centralized Logging</xref>
+      </li>
+      <li>
+        <xref href="#logging/troubleshooting_issues">Troubleshooting Centralized Logging
+          Issues</xref>
+      </li>
+      <li>
+        <xref href="#logging/info">For More Information</xref>
+      </li>
+    </ul>
+    <section id="install">
+      <title>Installation</title>
+      <p>The Centralized Logging feature is automatically installed as part of the HP Helion
+        OpenStack installation. The base logging levels will be tuned during installation according
+        to the amount of RAM allocated to your control plane nodes to ensure optimum
+        performance.</p>
+      <p>No specific configuration is required to use Centralized Logging. However, you can tune or
+        configure the individual components as needed for your environment as detailed in the <xref
+          href="../administration/configure_logging.dita">Configuration the Centralized Logging
+          Service</xref> page.</p>
+    </section>
+    <section id="components">
+      <title>Centralized Logging Components</title>
+      <p>Centralized logging consists of several components, detailed below:</p>
+      <ul>
+        <li>
+          <p>
+            <b>Beaver</b> is a python daemon that takes information in log files and sends the
+            content to RabbitMQ.</p>
+        </li>
+        <li>
+          <p>
+            <b>RabbitMQ</b> is a message broker for collection of logging data across nodes.</p>
+        </li>
+        <li>
+          <p>
+            <b>logstash</b> is a log processing system for receiving, processing and outputting
+            logs. logstash retrieves logs from RabbitMQ, processes and enriches the data, then
+            stores the data in Elasticsearch.</p>
+        </li>
+        <li>
+          <p>
+            <b>Elasticsearch</b> is a data store offering fast indexing and querying.</p>
+        </li>
+        <li>
+          <p>
+            <b>Kibana</b> is a client-side JavaScript application to visualize the data in
+            Elasticsearch through a web browser. Kibana enables you to create charts and graphs
+            using the log data.</p>
+        </li>
+        <li><b>Curator</b> is a tool provided by Elasticsearch to manage indices.</li>
+      </ul>
+      <p>These components are configured to work out-of-the-box and the admin should be able to view
+        log data using the default configurations.</p>
+      <p>At a high level, the Helion services forward logs to Beaver. Then, Beaver forwards JSON
+        messages to RabbitMQ on the controller0 (management controller) node. Logstash connects to
+        RabbitMQ to read queued messages and process the messages according to the Logstash
+        configuration file. Logstash then forwards the processed log files in Elasticsearch. Users
+        can use the Kibana interface to view and analyze the information, as shown in the following
+        figure:</p>
+      <p>
+        <image href="../../media/centralized_logging_diagram.png" placement="break"/>
+      </p>
+      <note>The arrows come <b>from</b> the active (requesting) side <b>to</b> the passive
+        (listening) side. The active side is always the one providing credentials, so the arrows may
+        also be seen as coming from the credential holder to the application requiring
+        authentication.</note>
+    </section>
+    <section id="retaining_logs"><title>Log Retention Information</title>
+      <p>The logs that are centrally stored are saved to persistent storage as Elasticsearch
+        indices. These indices are stored in the partition <codeph>/var/lib/elasticsearch</codeph>
+        on each of the Elasticsearch cluster nodes. Out of the box, each days worth of logs is
+        stored in one Elasticsearch index. As days goes by, the number of indices stored in this
+        disk partition grows, eventually filling up the partition. Each of these indices takes up
+        CPU and memory if they are "open," so if they are left unattended these indices could
+        continue to consume system resources and eventually deplete them.</p>
+      <p>Elasticsearch, by itself, doesn't prevent this from happening.</p>
+      <p>HP Helion OpenStack uses a tool called "curator" that is developed by the Elasticsearch
+        community to handle these situations. HP Helion OpenStack ships with an hourly cron job that
+        uses curator in conjunction with several configurable settings. This cron job does the
+        following checks:</p>
+      <ul>
+        <li>First Check - The hourly cron job checks if the current used Elasticsearch partition
+          size is over the <codeph>curator_low_watermark_percent</codeph> value. If it is, then
+          curator will be run to delete old indices per the
+            <codeph>curator_num_of_indices_to_keep</codeph> setting.</li>
+        <li>Second Check - Another check is made to verify the partition size is below the high
+          watermark percent. If it is still too high, curator will be run again to delete all
+          indices except the current one that is over the
+            <codeph>curator_max_index_size_in_gb</codeph> size.</li>
+        <li>Third Check - A third check is made and if the partition size is still too high, curator
+          will be run to delete all indices except the current one.</li>
+        <li>Final Check - A final check is made and if the partition size is still high an error
+          message is written to the log file but the current index is NOT deleted.</li>
+      </ul>
+    </section>
+    <section id="types">
+      <title>Centralized Logging Data</title>
+      <p>The following table lists the types of logs collected by Centralized Logging and provides
+        information on how the logs are maintained.</p>
+      <table>
+        <tgroup cols="6">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <colspec colname="col3"/>
+          <colspec colname="col4"/>
+          <colspec colname="col5"/>
+          <colspec colname="col6"/>
+          <thead>
+            <row>
+              <entry>Data name</entry>
+              <entry>Confidentiality</entry>
+              <entry>Integrity</entry>
+              <entry>Availability</entry>
+              <entry>Backup?</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Log records</entry>
+              <entry>Restricted</entry>
+              <entry>High</entry>
+              <entry>Medium</entry>
+              <entry>No</entry>
+              <entry>Log records have a limited life, and are not archived. The log file on the
+                local filesystem provides a fallback source of logging data (up to 20GB or 45 days)
+                if the logging system fails.</entry>
+            </row>
+            <row>
+              <entry>Log metadata</entry>
+              <entry>Restricted</entry>
+              <entry>High</entry>
+              <entry>Medium</entry>
+              <entry>No</entry>
+              <entry>Elasticsearch indexes logged data to allow flexible searching.</entry>
+            </row>
+            <row>
+              <entry>Credentials</entry>
+              <entry>Confidential</entry>
+              <entry>High</entry>
+              <entry>Medium</entry>
+              <entry>No</entry>
+              <entry>Credentials for access to Elasticsearch and RabbitMQ are stored in
+                configuration files owned by root with mode 0600.</entry>
+            </row>
+            <row>
+              <entry>Kibana metadata</entry>
+              <entry>Confidential</entry>
+              <entry>High</entry>
+              <entry>High</entry>
+              <entry>No</entry>
+              <entry>Kibana stores its search queries, visualizations and dashboards in the
+                ".kibana" index. This index will be replicated across Elasticsearch cluster nodes
+                and is highly available.</entry>
+            </row>
+            <row>
+              <entry>Monitoring metrics</entry>
+              <entry>Restricted</entry>
+              <entry>High</entry>
+              <entry>High</entry>
+              <entry>Yes</entry>
+              <entry>Monasca Server stores the various logging metrics and alarm-definitions. These
+                are managed by Monasca.</entry>
+            </row>
+            <row>
+              <entry>Beaver configuration</entry>
+              <entry>Restricted</entry>
+              <entry>High</entry>
+              <entry>High</entry>
+              <entry>Yes</entry>
+              <entry>These are backed up as part of deployer repo changes maintained by the
+                administrator.</entry>
+            </row>
+            <row>
+              <entry>Logrotate configuration</entry>
+              <entry>Restricted</entry>
+              <entry>High</entry>
+              <entry>High</entry>
+              <entry>Yes</entry>
+              <entry>These are backed up as part of deployer repo changes maintained by the
+                administrator.</entry>
+            </row>
+            <row>
+              <entry>Curator configuration</entry>
+              <entry>Restricted</entry>
+              <entry>High</entry>
+              <entry>Medium</entry>
+              <entry>Yes</entry>
+              <entry>Cron job to periodically run and keep the old Elasticsearch indices
+                pruned/closed. These are backed up as part of deployer repos changes maintained by
+                the administrator.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="kibana">
+      <title>Kibana Configuration</title>
+      <p>You can use the Kibana dashboards to view log data. Kibana is a tool developed to create
+        charts, graphs, tables, and histograms based on logs send to Elasticsearch by logstash.</p>
+      <p>While creating Kibana dashboards is beyond the scope of this document, it is important to
+        know that you can use the default Kibana dashboards or create custom dashboards. The
+        dashboards are JSON files that you can modify or create new dashboards based on existing
+        dashboards.</p>
+      <note>Kibana is client-side software. To operate properly, the browser must be able to access
+        port 5601 on the control plane.</note>
+    </section>
+    <section id="interface">
+      <title>Logging into Kibana</title>
+      <p>There are two ways to access Kibana:</p>
+      <ul>
+        <li>Through the <b>Logging Dashboard</b> option in the Operations Console</li>
+        <li>Direct link via port 5601 on the Horizon VIP address</li>
+      </ul>
+      <p>Details:</p>
+      <p><b>Operations Console method</b> - Access the <xref
+          href="monitoring_service.dita#monitoring/working" type="section">Operations
+        Console</xref>.</p>
+      <p>Navigate to the <b>Logging Dashboard</b> via the menu.</p>
+      <p><b>Direct Access method</b> - From either your deployer or controller node, run the
+        following command to find your Horizon VIP:</p>
+      <codeblock>grep vip-HZN-WEB /etc/hosts</codeblock>
+      <p>Access to Kibana will be over port 5601 of your Horizon VIP address. Example:</p>
+      <codeblock>http://&lt;VIP&gt;:5601</codeblock>
+      <b>Login Credentials</b>
+      <p>Log in with these credentials:</p>
+      <ul>
+        <li>Username: kibana</li>
+        <li>Password: 1f3pNxQmXXELJn/MJ4jOHixePSXlu4eZzhi1gJjr7mI=</li>
+      </ul>
+    </section>
+    <section id="troubleshooting"><title>Using Centralized Logging to Troubleshoot Issues</title>
+      <p>You can troubleshoot service-specific issues by reviewing the logs. After logging into
+        Kibana, follow these steps to load the logs for viewing:</p>
+      <ol>
+        <li>Navigate to the <b>Settings</b> menu to configure an index pattern to search for.</li>
+        <li>In the <b>Index name or pattern</b> field, you can enter <codeph>logstash-*</codeph> to
+          query all elasticsearch indices.</li>
+        <li>Click the green <b>Create</b> button to create and load the index.</li>
+        <li>Navigate to the <b>Discover</b> menu to load the index and make it available to
+          search.</li>
+      </ol>
+      <note>If you want to search specific elasticsearch indices, you can run <codeph>curl
+          localhost:9200/_cat/indices?v</codeph> from the control plane to get a full list of
+        available indices.</note>
+      <p>Once the logs load you can change the timeframe from the dropdown in the upper-righthand
+        corner of the Kibana window. You have the following options to choose from:</p>
+      <ul>
+        <li>Quick - a variety of timeframe choices will be available here</li>
+        <li>Relative - allows you to select a start time relative to the current time to show this
+          range</li>
+        <li>Absolute - allows you to select a date range to query</li>
+      </ul>
+      <p>When searching there are common fields you will want to use, such as:</p>
+      <ul>
+        <li>type - this will include the service name, such as <codeph>keystone</codeph> or
+            <codeph>ceilometer</codeph></li>
+        <li>host - you can specify a specific host to search for in the logs</li>
+        <li>file - you can specify a specific log file to search</li>
+      </ul>
+      <p>For more details on using Kibana and Elasticsearch to query logs, see <xref
+          href="https://www.elastic.co/guide/en/kibana/3.0/working-with-queries-and-filters.html"
+          scope="external" format="html"
+          >https://www.elastic.co/guide/en/kibana/3.0/working-with-queries-and-filters.html</xref></p>
+    </section>
+    <section id="monitoring"><title>Monitoring Centralized Logging</title>
+      <p>To help keep abreast of potential logging issues and resolve issues before they affect
+        logging, you may wish to monitor the Centralized Logging Alarms. To do so:</p>
+      <ol>
+        <li>Log in to the Operations Console GUI</li>
+        <li>Navigate to the Alarm Definitions page from the menu button in the upper left
+          corner</li>
+        <li>Find the alarm definitions that are applied to the various hosts. See the <xref
+            href="alarms.dita#alarmdefinitions/logging">Logging Alarm Definitions List</xref> for
+          the Centralized Logging Alarm Definitions.</li>
+        <li>Navigate to the Alarms page</li>
+        <li>Find the alarm definitions applied to the various hosts. These should match the alarm
+          definitions in the <xref href="alarms.dita#alarmdefinitions/logging">Logging Alarm
+            Definitions list</xref>.</li>
+        <li>See if the alarm is green (good) or is in a bad state. If any are in a bad state, see
+          the possible actions to perform in the <xref href="alarms.dita#alarmdefinitions/logging"
+            >Logging Alarms Definitions list</xref>.</li>
+      </ol>
+      <p>You can use this filtering technique in the "Alarms" page to look for the following:</p>
+      <ol>
+        <li>To look for Processes that may be down, filter for "Process" then make sure the process
+          are up: <ol>
+            <li>Elasticsearch</li>
+            <li>Logstash</li>
+            <li>RabbitMQ</li>
+            <li>Beaver</li>
+            <li>Apache</li>
+          </ol></li>
+      </ol>
+      <p>To look for sufficient Disk space, filter for "Disk"</p>
+      <p>To look for sufficient RAM Memory, filter for "Memory"</p>
+    </section>
+    <section id="troubleshooting_issues"><title>Troubleshooting Centralized Logging Issues</title>
+      <p><b>Situations In Which Logs Might Not Be Collected</b></p>
+      <p>Centralized logging might not collect log data under the following circumstances:</p>
+      <ul>
+        <li>If the Beaver service is not running on one or more of the nodes (controller or
+          compute), logs from these nodes will not be collected.</li>
+        <li>Beaver watches the log files for any additions and only pushes the incremental log
+          records for centralized logging. It does not parse all the existing log records in the log
+          files that were added <b>before</b> Beaver started watching those files. Similarly, if
+          Beaver was stopped for some reason and then started again later, the logs that were added
+          during the time span that Beaver was not running will not be collected for centralized
+          logging.</li>
+        <li>The logging service uses a RabbitMQ queue and this queue is not persistent. This means,
+          if the RabbitMQ service on the master node is restarted for some reason, all messages that
+          are not yet consumed by the logstash workers might be lost.</li>
+      </ul>
+    </section>
+    <section id="info">
+      <title>For More Information</title>
+      <p>For information the centralized logging components, use the following links:</p>
+      <ul>
+        <li><xref href="http://logstash.net/docs" scope="external" format="html"
+          >Logstash</xref></li>
+        <li><xref href="http://www.elasticsearch.org/guide" scope="external" format="html"
+            >Elasticsearch</xref></li>
+        <li><xref href="http://www.elasticsearch.org/blog/scripting-security" scope="external"
+            format="html">Elasticsearch Scripting and Security</xref></li>
+        <li><xref href="http://beaver.readthedocs.org" scope="external" format="html"
+          >Beaver</xref></li>
+        <li><xref href="http://www.rabbitmq.com/" scope="external" format="html"
+          >RabbitMQ</xref></li>
+        <li><xref href="http://www.elasticsearch.org/guide/en/kibana/current/index.html"
+            scope="external" format="html">Kibana Dashboard</xref></li>
+      </ul>
+    </section>
+  </body>
+</topic>

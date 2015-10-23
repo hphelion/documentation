@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ah5_4yx_qt">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Deploying  Ceph Monitor Service(s) on Dedicated Resource Node(s)</title>
+  <body><!--Needs Edit-->
+    <p>In HP Helion OpenStack 2.0, monitor service is installed on the controller nodes by default.
+      But you can provide a dedicated resource node(s) as a monitor service(s) by modifying the
+      cloud input model. <note type="attention">If you want to deploy monitor service(s) as a
+        standalone node(s) then you must decide prior to the deployment of Ceph. HP Helion OpenStack
+        2.0 does not support deployment transition. Once Ceph is deployed, you cannot migrate
+        monitor service(s) from controller to standalone node(s). </note></p>
+    <section>
+            <title>Prerequisite</title>
+            <p>The deployer node must be setup before starting Ceph deployment. For more details on
+                the installation of deployer node, refer to <xref
+                    href="../../installation/install_entryscale_kvm.dita#install_kvm">installation
+                    guide.</xref></p>
+        </section>
+    <p><b>Procedure to install monitor service(s) on a dedicated resource node(s)</b></p>
+    <p>Perform the following procedure to install monitor on dedicated nodes:<ol id="ol_thh_pxn_rt">
+        <li>Login to the deployer node.</li>
+        <li>Ensure that your cloud definition
+            (<codeph>~/helion/examples/entry-scale-kvm-ceph/*</codeph>) is placed under
+            <i>~/helion/my_cloud/definition/</i> directory. </li>
+        <li>From <b>server-role: CONTROLLER-ROLE</b> in
+            <i>~/helion/my_cloud/definition/data/control_plane.yml</i> file, remove the line
+            <codeph>- ceph-monitor</codeph>. (<b>can i get the sample file??</b>)</li>
+        <li>Edit <codeph>~/helion/my_cloud/definition/data/control_plane.yml</codeph> file to add
+                    monitor node as shown
+                        below.<codeblock>- name: mon
+  resource-prefix: ceph-mon
+  server-role: MON-ROLE
+  service-components:
+  - ntp-client
+  - ceph-monitor</codeblock><note>Ensure
+                        that the section is correctly indented.</note></li>
+        <li>Define the monitor resource as detailed in <xref
+            href="defining_monitor_resource.dita#topic_owr_kf4_rt">Defining Monitor Resource
+            Node</xref>.</li>
+        <li>Edit <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> file to define all
+                    the monitor nodes in the cloud as shown below. You must repeat this for each
+                    monitor
+                        node.<codeblock>- id: mon4
+  ip-addr: 192.168.10.11
+  role: MON-ROLE
+  server-group: RACK3
+  nic-mapping: MY-2PORT-SERVER
+  mac-addr: 8b:f6:9e:ca:3b:7a
+  ilo-ip: 192.168.9.11
+  ilo-password: password
+  ilo-user: admin</codeblock><note>
+                        Substitute the values in above sample, as per your environment, for each of
+                        the monitor nodes being added.</note></li>
+        <li>Commit your configuration
+          <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message>"</codeblock></li>
+        <li>Execute the following
+          command:<codeblock>cd ~/helion/hos/ansible/
+ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
+        <li>Run the following command, which will reimage all the nodes using
+          PXE.<codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
+        <li>Run the configuration
+          processor:<codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+        <li>Use the playbook below to create a deployment directory:
+          <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        <li>Run your "verb_host" commands using the following steps: <p>
+            <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
+          </p></li>
+      </ol></p>
+  </body>
+</topic>

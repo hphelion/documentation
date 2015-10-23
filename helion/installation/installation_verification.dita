@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="install_verification">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Verifying the Installation</title>
+  <body><!--Needs Edit-->
+    <section id="about">
+      <p>The verification process has two parts:</p>
+      <ul>
+        <li><xref href="#install_verification/tempest">Verifying the Install Using Embedded
+            Tests</xref></li>
+        <li><xref href="#install_verification/volume_verify">Verifying Your Block Storage
+            Backend</xref></li>
+        <li><xref href="#install_verification/swift_verify">Validate Your Object Storage (Swift)
+            Setup</xref></li>
+      </ul>
+    </section>
+    <section id="tempest"><title>Verifying the Install Using Embedded Tests</title>
+      <p>Tempest is a set of integration tests for OpenStack API validation, scenarios, and other
+        specific tests to be run against a live OpenStack cluster.</p>
+      <p>A version of the upstream <xref href="http://docs.openstack.org/developer/tempest/"
+          scope="external" format="html">Tempest</xref> integration tests is pre-deployed on the HP
+        Helion OpenStack deployer node.</p>
+      <p>You can use these embedded tests to verify if the deployed cloud is functional.</p>
+      <ul>
+        <li>
+          <xref href="#tempest/running" type="section">Running the Tests</xref>
+        </li>
+        <li>
+          <xref type="section" href="#tempest/results">Viewing Test Results</xref>
+        </li>
+        <li>
+          <xref type="section" href="#tempest/custom">Customizing the Test Run</xref>
+        </li>
+      </ul>
+      <p>For more information on running Tempest tests, see <xref
+          href="https://git.openstack.org/cgit/openstack/tempest/tree/README.rst" scope="external"
+          format="html">Tempest - The OpenStack Integration Test Suite</xref>. <note
+          type="important">Running these tests requires access to the deployed cloud's identity
+          admin credentials</note></p>
+      <p>Tempest creates and deletes test accounts and test resources for test purposes.</p>
+      <p>In certain cases Tempest might fail to clean-up some of test resources after a test is
+        complete, for example in case of failed tests.</p>
+    </section>
+    <section id="running"><title>Running the Tests</title>
+      <p>To run the default set of Tempest tests:</p>
+      <ol>
+        <li>
+          <p>Login to the deployer node.</p>
+        </li>
+        <li>
+          <p>Navigate to the ansible folder:</p>
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock>
+        </li>
+        <li>
+          <p>Ensure you can access your cloud:</p>
+          <codeblock>
+ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml
+source /etc/environment</codeblock>
+        </li>
+        <li>
+          <p>Run the tests:</p>
+          <codeblock>ansible-playbook -i hosts/verb_hosts tempest-run.yml</codeblock>
+        </li>
+      </ol>
+      <p>Optionally, you can <xref type="section" href="#tempest/custom">customize Tempest to run
+          specific tests</xref>.</p>
+    </section>
+    <section id="results"><title>Viewing Test Results</title>
+      <p>Check the test results by viewing the following log file:</p>
+      <codeblock>/opt/stack/tempest/testr_results.log </codeblock>
+      <p>A detailed log file is written to:
+        <codeblock>/opt/stack/tempest/tempest.log</codeblock></p>
+      <!-- DOCS-1858
+      <p>The results are also stored in the <codeph>testrepository</codeph> database.</p>
+      <p>To access the results after the run:</p>
+      <ol>
+        <li>
+          <p>Login to the deployer node.</p>
+        </li>
+        <li>
+          <p>Change to the <codeph>tempest</codeph> directory and list the test results:</p>
+          <codeblock>
+cd /opt/stack/tempest
+testr last</codeblock>
+        </li>
+             </ol>
+              -->
+      <p>See <xref href="https://testrepository.readthedocs.org/en/latest/" scope="external"
+          format="html">Test Repository Users Manual</xref> for more details on how to manage the
+        test result repository.</p>
+    </section>
+    <section id="custom"><title>Customizing the Test Run</title>
+      <p>There are several ways available to customize which tests will be executed.</p>
+      <p><ul>
+          <!--   <li>
+            <xref type="section" href="#tempest/service">Run Tests for a Specific Service</xref>
+          </li> -->
+          <li>
+            <xref type="section" href="#tempest/services">Run Tests for Specific Services and
+              Exclude Specific Features</xref>
+          </li>
+          <li>
+            <xref type="section" href="#tempest/list">Run Tests Matching a Series of White and
+              Blacklists</xref>
+          </li>
+        </ul>
+      </p>
+    </section>
+    <!--   <section id="service">
+      <title>Run Tests for a Specific Service</title>
+      <p>You can run tests against a specific service, such as Compute, Networking, or Identity.</p>
+      <ol>
+        <li>
+          <p>Login to the seed VM.</p>
+        </li>
+        <li>
+          <p>SSH into the undercloud node:</p>
+          <codeblock>
+            <codeph>ssh heat-admin@${UNDERCLOUD_IP}
+              sudo -i
+            </codeph>
+          </codeblock>
+        </li>
+        <li>
+          <p>Use the following command to specify that tests run on the a specific service.</p>
+          <codeblock>
+            <codeph>OS_TESTPATH=./tempest/{service} run-tempest
+            </codeph>
+          </codeblock>
+          <p>Where <codeph>{service}</codeph> is the name of the service, such as
+              <codeph>api</codeph>, <codeph>compute</codeph>, <codeph>identity</codeph>, or
+              <codeph>network</codeph>.</p>
+          <p>For example, execute the following command to run the Tempest test against the Nova
+            (Compute service) API:</p>
+          <codeblock>
+            <codeph>OS_TESTPATH=./tempest/api/compute run-tempest
+            </codeph>
+          </codeblock>
+        </li>
+      </ol>
+    </section>-->
+    <section id="services"><title>Run Tests for Specific Services and Exclude Specific
+        Features</title>
+      <p>Tempest allows you to test specific services and features using the
+          <codeph>tempest.conf</codeph> configuration file.</p>
+      <p>A working configuration file with inline documentation is deployed under
+          <codeph>/opt/stack/tempest/etc/</codeph>.</p>
+      <p>To use this, follow these steps:</p>
+      <ol>
+        <li>
+          <p>Login to the deployer node.</p>
+        </li>
+        <li>
+          <p>Edit the <codeph>/opt/stack/tempest/etc/tempest.conf</codeph> file</p>
+        </li>
+        <li>
+          <p>To test specific service, edit the <codeph>[service_available]</codeph> section :</p>
+          <p>Clear the comment character <codeph>#</codeph> and set a line to <codeph>true</codeph>
+            to test that service or <codeph>false</codeph> to not test that service.</p>
+          <p>Example:</p>
+          <codeblock>
+cinder = true
+neutron = false</codeblock>
+        </li>
+        <li>
+          <p>To test specific features, edit any of the <codeph>*_feature_enabled</codeph> sections
+            to enable or disable tests on specific features of a service.</p>
+          <codeblock>
+[volume-feature-enabled]
+[compute-feature-enabled]
+[identity-feature-enabled]
+[image-feature-enabled]
+[network-feature-enabled]
+[object-storage-feature-enabled]</codeblock>
+          <p>Clear the comment character <codeph>#</codeph> and set a line to <codeph>true</codeph>
+            to run a test or <codeph>false</codeph> to not run that test.</p>
+          <p>Example:</p>
+          <codeblock>
+#Is the v2 identity API enabled (boolean value)
+api_v2 = true
+#Is the v3 identity API enabled (boolean value)
+api_v3 = false</codeblock>
+        </li>
+        <li>Then run tests normally</li>
+      </ol>
+    </section>
+    <section id="list"><title>Run Tests Matching a Series of White and Blacklists</title>
+      <p>You can run tests against specific scenarios by editing or creating a run filter file.</p>
+      <p>Run filter files are deployed under <codeph>/opt/stack/tempest/run_filters</codeph>.</p>
+      <p>Use run filters to whitelist or blacklist specific tests or groups of tests:</p>
+      <ul>
+        <li>lines starting with # or empty are ignored</li>
+        <li>lines starting with <codeph>+</codeph> are whitelisted</li>
+        <li>lines starting with <codeph>-</codeph> are blacklisted</li>
+        <li>lines not matching any of the above conditions are blacklisted</li>
+      </ul>
+      <p>If whitelist is empty, all available tests are fed to blacklist. If blacklist is empty, all
+        tests from whitelist are returned.</p>
+      <p>Whitelist is applied first. The blacklist is executed against the set of tests returned by
+        the whitelist.</p>
+      <p>To run whitelist and blacklist tests:</p>
+      <ol>
+        <li>
+          <p>Login to the deployer node.</p>
+        </li>
+        <li>
+          <p>Go the ansible folder:</p>
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock>
+        </li>
+        <li>
+          <p>Make sure you can access the cloud:</p>
+          <codeblock>
+ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml
+source /etc/environment</codeblock>
+        </li>
+        <li><p>Run the tests:</p>
+          <codeblock>ansible-playbook -i hosts/verb_hosts tempest-run.yml  -e run_filter &lt;run_filter_name></codeblock></li>
+      </ol>
+      <p>Note that the run_filter_name is the name of the run_filter file except for the extension.
+        For instance, to run using the filter from the file /opt/stack/tempest/run_filters/ci.txt,
+        use the following:</p>
+      <codeblock>ansible-playbook -i hosts/verb_hosts tempest-run.yml -e run_filter=ci</codeblock>
+      <p>Documentation on the format of white and black-lists is available at:
+        <codeblock>/opt/stack/tempest/tests2skip.py</codeblock></p>
+      <p>Example:</p>
+      <p>The following entries run API tests, exclude tests that are less relevant for deployment
+        validation, such as negative, admin, cli and thirdparty (EC2) tests:</p>
+      <codeblock>
++tempest\.api\.*
+*[Aa]dmin.*
+*[Nn]egative.*
+- tempest\.cli.*
+- tempest\.thirdparty\.*</codeblock>
+    </section>
+    <!--
+    <section id="issues">
+      <title>Known issues</title>
+      <p>The following failing tests can be excluded from the test run by adding the following to
+        the <codeph>tests2skip.txt file</codeph>:</p>
+    </section>
+    <section id="exclude">
+      <title>Exclude tests for features that are not available and test not compatible</title>
+      <codeblock>
+        <codeph>tempest\.api\.compute\.certificates\.*
+          tempest\.api\.compute\.servers.test_disk_config\.*
+          tempest\.api\.network\.test_fwaas_extensions\.*
+          tempest\.api\.network\.test_vpnaas_extensions\.*
+          tempest\.api\.network\.test_load_balancer\.*
+          tempest\.api\.image\.v1\.test_image\.CreateRegisterImagesTest\.test_register_http_image
+          tempest\.api\.image\.v1\.test_images\.CreateRegisterImagesTest\.test_register_remote_image
+          tempest.api\.network\.test_metering_extensions\.MeteringTestJSON
+          tempest\.api\.network\.test_metering_extensions\.MeteringIpV6TestJSON
+          tempest\.api\.compute\.test_live_block_migration.LiveBlockMigrationTestJSON\.test_live_block_migration
+          tempest\.api\.compute\.floating_ips\.test_list_floating_ips\.FloatingIPDetailsTestJSON\.test_list_floating_ip_pools
+        </codeph>
+      </codeblock>
+    </section>
+    <section id="fail">
+      <title>Known failures</title>
+      <p>The following tests will result in failure using the installed Tempest library. These known
+        failures can be fixed by installing the <codeph>tempest-lib&gt;=0.2.0</codeph> OpenStack
+        Functional Testing Library.</p>
+      <p>See <xref href="https://pypi.python.org/pypi/tempest-lib/0.2.0" scope="external"
+          format="html">tempest-lib 0.2.0</xref> for information on downloading the library.</p>
+      <codeblock>
+        <codeph>tempest\.api\.object_storage\.test_container_staticweb\.StaticWebTest\.test_web_index      
+          tempest\.api\.object_storage\.test_container_staticweb\.StaticWebTest\.test_web_listing_css
+          tempest\.api\.object_storage\.test_container_services\.ContainerTest\.test_update_container_metadata_with_delete_metadata
+          tempest\.api\.object_storage\.test_container_services\.ContainerTest\.test_update_container_metadata_with_delete_metadata_key
+          tempest\.api\.object_storage\.test_object_slo\.ObjectSloTest\.test_upload_manifest
+          tempest\.api\.object_storage\.test_container_sync_middleware\.ContainerSyncMiddlewareTest\.test_container_synchronization
+        </codeph>
+      </codeblock>
+    </section>
+    -->
+    <section id="volume_verify"><title>Verifying Your Block Storage Backend</title>
+      <p>The sections below will show you the steps to verify that your Block Storage backend was
+        setup properly.</p>
+    </section>
+    <section>
+      <title>Create Volume Type to Verify the Configuration of Backend</title>
+      <p><!--Volumes are the Block Storage devices that you attach to instances to enable persistent storage.-->
+        <!--You can attach a volume or detach a volume and attach it to another instance at any time. You can also create and delete volume type and volumes.--></p>
+      <p>Perform the following steps to create a volume using Horizon dashboard: <ol
+          id="ol_vr4_rb1_rt">
+          <li>Log into the Horizon dashboard<!-- as  an<i>Admin</i> user-->. The Horizon dashboard
+            displays with the options in the left panel.</li>
+          <li>On the <b>Admin</b> tab, open the <b>System</b> tab and click the <b>Volumes</b>
+            category.</li>
+          <li>Click <b>Volume Types</b> tab and click <b>Create Volume Type</b> button to display a
+            dialog box.</li>
+          <li>Enter a unique name for the volume type. </li>
+          <li>Click<b> Create Volume Type</b> to complete the action. Clicking <b>Cancel</b> returns
+            to the Volumes screen without completing the action.<p>The newly created volume displays
+              in the <b>Volumes</b>><b>Volume Types</b> page.</p></li>
+        </ol></p>
+    </section>
+    <section id="associate-volume-backend">
+      <title>Associate the Volume Type to a Backend</title>
+      <p> After the volume type names have been created, you can assign extra_specs to the volumes
+        types.</p>
+      <p>To map a volume type to a backend, do the following: <ol id="ol_owv_krv_3t">
+          <li>Login to the Horizon dashboard. The Horizon dashboard displays with the options in the
+            left panel.</li>
+          <li>On the <b>Admin</b> tab, open the <b>System</b> tab and click the <b>Volumes</b>
+            category.</li>
+          <li>Click <b>Volume Type</b> tabs. A list of volume types appear.</li>
+          <li>Click the check box next to the name of the volume you want to attach.</li>
+          <li>In the <b>Actions</b> column, Click <b>Create Encryption</b> drop-down list and select
+              <b>View Extra Specs</b>. <p>The <b>Create Volume Type Extra Specs</b> dialog box
+              displays. Now map the volume type to the associate backend.</p></li>
+          <li>Click <b>Create</b> button.</li>
+          <li>In the <b>Key</b> box, enter <i>volume_backend_name</i> as extra spec key. This is the
+            name of the key used to specify the storage backend when provisioning volumes of this
+            volume type. The volume backend name must match the backend name mentioned in the
+              <codeph>cinder.conf.j2</codeph> file. </li>
+          <li>In the <b>Value</b> box, enter the name of the backend to which you want to associate
+            the volume type. <p>For example: You can enter the following backend name for the
+              respective backend used. The backend name is mentioned in the
+                <codeph>cinder.conf.j2</codeph> file.<ul id="ul_u4j_1vz_jt">
+                <li>VSA: You can enter <codeph>vsa-backend-hlm003</codeph> in the <b>Value</b>
+                  field. In value is taken from <xref
+                    href="configure_vsa.dita#config_vsa/vsa-config">VSA cinder.conf.j2</xref>.</li>
+                <li>Ceph: You can enter <codeph>ceph</codeph> in the <b>Value</b> field. In value is
+                  taken from <xref href="configure_ceph.dita#config_ceph/ceph-cinder-conf">Ceph
+                    cinder.conf.j2</xref>.</li>
+                <li>3PAR FC: You can enter <codeph>3par_FC</codeph> in the <b>Value</b> field. In
+                  value is taken from <xref href="configure_3par.dita#config_3par/3par-fc">3PAR FC
+                    cinder.conf.j2</xref>.</li>
+                <li>3PAR iSCSI : You can enter <codeph>3par_iscsi</codeph> in the <b>Value</b>
+                  field. In value is taken from <xref
+                    href="configure_3par.dita#config_3par/3par-iscsi">3PAR iSCSI
+                    cinder.conf.j2</xref>.</li>
+              </ul></p></li>
+          <li>Click <b>Create</b> to create the extra volume type specs. <note> Once the volume type
+              is mapped to the backend, you can create volumes with this volume type.</note></li>
+        </ol></p>
+    </section>
+    <section id="create-volume">
+      <title>Create Volume </title>
+      <p>Perform the following steps to create a volume using Horizon dashboard. <ol>
+          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
+            left panel. </li>
+          <li>On the <b>Project</b> tab, open the <b>Compute</b> tab and click the <b>Volumes</b>
+            category.</li>
+          <li>Click <b>Volumes</b> tabs.</li>
+          <li>Click <b>Create Volume</b> button to create a volume. Create Volume dialog box
+            displays.</li>
+          <li>Enter the required details in the corresponding fields. </li>
+          <li>Click<b> Create Volume </b> to complete the action. Clicking <b>Cancel</b> returns to
+            the Volumes screen without completing the action.<p>The dashboard shows the volume on
+              the Volumes tab.</p></li>
+        </ol></p>
+    </section>
+    <section>
+      <title>Attach Volume to an Instance</title>
+      <p>Perform the following steps to attach a volume to an instance: <ol>
+          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
+            left panel. </li>
+          <li>On the <b>Project</b> tab, open the <b>Compute</b> tab and click the <b>Instances</b>
+            category.</li>
+          <li>Click the check box next to the name of the volume you want to attach. </li>
+          <li>In the <b>Action</b> column, click <b>Edit Attachments</b> The Manage Volume
+            Attachments screen is displayed.</li>
+          <li>In the <b>Attach To Instance</b> drop-down, select the instance that you want to
+            attach to the volume. </li>
+          <li> Edit the <b>Device Name</b> if necessary.</li>
+          <li>Click <b>Attach Volume</b> to complete the action. Clicking <b>Cancel</b> returns to
+            the <b>Volumes</b> screen without completing the action. </li>
+          <li>Verify that the volume you attached is displayed in the <b>Attached To </b>columns on
+            the <b>Volumes</b> screen.<p>
+              <!--Zones are created and activated in switch effective configuration after the successful attachment of volume to an instance.--></p></li>
+        </ol></p>
+    </section>
+    <section>
+      <title>Detach Volume from Instance</title>
+      <p>Perform the following steps to detach the volume from instance: <ol>
+          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
+            left panel. </li>
+          <li>On the <b>Project</b> tab, open the <b>Compute</b> tab and click the <b>Instances</b>
+            category.</li>
+          <li>Click the check box next to the name of the volume you want to detach. </li>
+          <li>In the Action column, click <b>Edit Attachments</b> The Manage Volume Attachments
+            screen is displayed.</li>
+          <li>Click <b>Detach Attachment</b>. A confirmation dialog box appears.</li>
+          <li>Click <b>Detach Attachment</b> to confirm the detachment of the volume from the
+            associated instance. Clicking <b>Cancel</b> returns to the Volumes screen without
+            completing the action.<p>When you detach the last volume from an instance running on the
+              compute host, zones are deleted and removed from the effective configuration.</p></li>
+        </ol></p>
+    </section>
+    <section>
+      <title>Delete Volume </title>
+      <p>Perform the following steps to delete a volume using Horizon dashboard:</p>
+      <p>
+        <ol>
+          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
+            left panel. </li>
+          <li>On the <b>Project</b> tab, open the <b>Compute</b> tab and click the <b>Instances</b>
+            category.</li>
+          <li>Check the box in the row of the volume to delete.</li>
+          <li>Click <b>Delete Volume</b> to display the dialog box.</li>
+          <li>To confirm and delete the volume, click <b>Delete Volume</b>.<p>To exit without
+              deleting the volume and to close the screen, click <b>Cancel</b> before
+            deleting</p></li>
+          <li>Verify that the volume was removed from the <b>Volumes</b> screen.</li>
+        </ol>
+      </p>
+    </section>
+    <section id="swift_verify"><title>Verifying Your Object Storage (Swift)</title>
+      <p><b>Validate That All Servers Have Been Added to the Swift Rings</b></p>
+      <ol>
+        <li>Run the _swift-validate-input-model.yml playbook as follows:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml</codeblock></li>
+        <li>Search for output similar to the following. Specifically, look at the number of drives
+          that are proposed to be added.
+          <codeblock>TASK: [swiftlm-ring-supervisor | validate-input-model | Print report] ********* 
+ok: [padawan-ccp-c1-m1-mgmt] => {
+    "var": {
+        "report.stdout_lines": [
+            "Need to add 0 devices", 
+            "Need to remove 0 devices", 
+            "Need to set weight on 0 devices"
+        ]
+     }
+}</codeblock></li>
+        <li>If the text contains "Need to add 0 devices" then the deploy was successful and no
+          further action is needed.</li>
+        <li>If there are more drives need to be added, it indicates that the deploy failed on some
+          nodes and that you restarted the deploy to include those nodes. However, the nodes are not
+          in the Swift rings because enough time has not elapsed to allow the rings to be rebuilt.
+          You have two options to continue: <ol>
+            <li>Repeat the deploy. There are two steps involved as follows: <ol>
+                <li>Delete the ring builder files as described in <xref
+                    href="../objectstorage/restart_deploy_from_scratch.dita">Restart Deploy from
+                    Scratch</xref>.</li>
+                <li>Repeat the installation process starting by running the
+                    <codeph>site.yml</codeph> playbook as described in the <xref
+                    href="install_entryscale_kvm.dita#install_kvm/deploy">Deploy the Cloud</xref>
+                  section of the installation instructions.</li>
+              </ol></li>
+            <li>Rebalance the rings several times until all drives are incorporated in the rings.
+              This process may take several hours to complete (because you need to wait one hour
+              between each rebalance). The steps are as follows: <ol>
+                <li>Change the min-part-time to 1 hour. See <xref
+                    href="../objectstorage/how_to_change_min_part_time.dita">How to Change
+                    mine-part-time</xref>.</li>
+                <li>Use the "First phase of ring rebalance" and "Final rebalance phase" as described
+                  in <xref href="../objectstorage/input_model_change_existing_rings.dita">Applying
+                    Input Model Changes to Existing Rings</xref>. The "Weight change phase of ring
+                  rebalance" does not apply because you not set the weight-step attribute at this
+                  stage.</li>
+                <li>Set the min-part-time to the recommended 16 hours as described in <xref
+                    href="../objectstorage/how_to_change_min_part_time.dita">How to Change
+                    min-part-time.</xref></li>
+              </ol></li>
+          </ol></li>
+      </ol>
+      <p>If you receive errors during the validation, read the <xref
+          href="../objectstorage/interpreting_swift_validate_input_model.dita">Interpreting the Swift
+          Validate Input Model Output</xref> documentation.</p>
+      <p><b>Verify the Object Storage (Swift) Operations</b></p>
+      <p>Full details on how to verify the operations can be found in <xref
+          href="../objectstorage/check_objectstorage_operation.dita">Checking Object Storage
+          Status</xref>.</p>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="install_swift">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry Scale Cloud
+    with Swift Only</title>
+  <body><!--Needs Edit-->
+    <section id="about">
+      <p>This page describes the installation step requirements for the HP Helion Entry Scale Cloud
+        with Swift Only model.</p>
+    </section>
+    <section conref="install_entryscale_kvm.dita#install_kvm/important_notes"/>
+    <section conref="install_entryscale_kvm.dita#install_kvm/prereqs"/>
+    <section conref="install_entryscale_kvm.dita#install_kvm/setup_deployer"/>
+    <section conref="install_entryscale_kvm.dita#install_kvm/configure_deployer"/>
+    <section id="configuration">
+      <title>Configure Your Environment</title>
+      <p>This part of the install is going to depend on the specific cloud configuration you are
+        going to use.</p>
+      <ol>
+        <li>Setup your configuration files, as follows: <ol>
+            <li>See the sample sets of configuration files in the
+                <codeph>~/helion/examples/</codeph> directory. Each set will have an accompanying
+              README.md file that explains the contents of each of the configuration files.</li>
+            <li>Copy the example configuration files into the required setup directory and edit them
+              to contain the details of your environment:
+              <codeblock>cp -r ~/helion/examples/entry-scale-swift/* ~/helion/my_cloud/definition/</codeblock></li>
+            <li>Update the <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph>
+              file and add the <codeph>swift-rsync</codeph> service to the component-endpoints for
+              the SWIFT network group. For
+              example:<codeblock>    #
+    # SWIFT
+    #
+    # This is the network group that will be used to for
+    # Swift back-end traffic bewtween proxy, container, account
+    # and object servers
+    #
+    - name: SWIFT
+      hostname-suffix: swift
+
+      component-endpoints:
+        - swift-container
+        - swift-account
+        - swift-object
+        - swift-rsync</codeblock></li>
+            <li>Begin inputting your environment information into the configuration files in the
+                <codeph>~/helion/my_cloud/definition</codeph> directory. <p>Full details of how to
+                do this can be found here: <xref href="../input_model.dita">Helion OpenStack 2.0 Input
+                  Model</xref>.</p>
+              <p>In many cases, the example models provide most of the data you need to create a
+                valid input model. However, there are two important aspects you must plan and
+                configure before starting a deploy as follows:</p>
+              <ul>
+                <li>Check the disk model used by your nodes. Specifically, check that all disk
+                  drives are correctly named and used as described in <xref
+                    href="../objectstorage/allocating_disk_drives.dita#allocating-disk-drives/swift-requirement-disk-device"
+                    >Allocating Swift Disk Devices</xref>.</li>
+                <li>Select an appropriate partition power for your rings. Detailed information about
+                  this is provided at <xref href="../objectstorage/ring_specifications.dita">Swift Ring
+                    Specifications</xref>.</li>
+              </ul>
+            </li>
+          </ol>
+          <!--
+          <p>If you chose to use your first controller node as your deployer, ensure that your
+              <codeph>servers.yml</codeph> file contains the <codeph>is-deployer: true</codeph>
+            notation in your controller options. If you are using a dedicated deployer node you can
+            omit this. Here is an example snippet of a <codeph>servers.yml</codeph> file where a
+            user is using their first controller node as their deployer:
+            <codeblock># Controllers
+  - id: controller1
+    ip-addr: 192.168.10.3
+    role: CONTROLLER-ROLE
+    server-group: RACK1
+    nic-mapping: HP-DL360-4PORT
+    mac-addr: b2:72:8d:ac:7c:6f
+    ilo-ip: 192.168.9.3
+    ilo-password: password
+    ilo-user: admin
+    <b>is-deployer: true</b></codeblock></p> -->
+          <p>Optionally, you can use the <codeph>hosencrypt.py</codeph> script to encrypt your iLo
+            passwords. This script uses OpenSSL.</p>
+          <ol>
+            <li>Change to the Ansible directory: <codeblock>cd ~/helion/hos/ansible</codeblock></li>
+            <li>Put the encrytion key into the following environment variable:
+              <codeblock>export HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeblock></li>
+            <li>Run the python script below and follow the instructions. Enter a password that you
+              want to encrypt. <codeblock>hosencrypt.py</codeblock></li>
+            <li>Take the string generated and place it in the <codeph>"ilo_password"</codeph> field
+              in your <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> file,
+              remembering to enclose it in quotes.</li>
+            <li>Repeat the above for each server.</li>
+          </ol>
+          <note>Before you run any playbooks, remember that you need to export the encryption key in
+            the following environment variable: <codeph>export
+              HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeph></note></li>
+      </ol>
+      <p>Commit your configuration to the <xref href="using_git.dita">local git repo</xref>, as
+        follows: <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "My config or other commit message"</codeblock>
+        <note type="important">This step needs to be repeated any time you make changes to your
+          configuration files before you move onto the following steps. See <xref
+            href="using_git.dita">Using Git for Configuration Management</xref> for more
+          information.</note></p>
+    </section>
+    <section conref="install_entryscale_kvm.dita#install_kvm/config_processor"/>
+    <section conref="install_entryscale_kvm.dita#install_kvm/deploy_cobbler"/>
+    <section conref="install_entryscale_kvm.dita#install_kvm/provision_nodes"/>
+    <section conref="install_entryscale_kvm.dita#install_kvm/deploy"/>
+    <section conref="install_entryscale_kvm.dita#install_kvm/post-installation"/>
+  </body>
+</topic>

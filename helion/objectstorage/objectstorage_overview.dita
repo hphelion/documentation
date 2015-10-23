@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="object-storage">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Object Storage Overview</title>
+  <body><!--Needs Edit, fnf edits 10/22, a few edits remain for Binamra-->
+    <section><b>What is the Object Storage (Swift)?</b><p>The HPE Helion OpenStack Object Storage
+        leverages Swift from <tm tmtype="reg">OpenStack</tm>. Swift uses software-defined storage
+        (SDS) layered on top of industry-standard servers using native storage devices. Swift
+        presents an object paradigm, using an underlying set of disk drives. The disk drives are
+        managed by a data structure called a "ring." And you can store, retrieve, and delete objects
+        in containers using RESTful APIs.</p>HP Helion OpenStack Object Storage provides a
+      highly-available, resilient, and scalable storage pool for unstructured data. It has a
+      highly-durable architecture, with no single point of failure. In addition, this version of HP
+      Helion OpenStack introduces the concept of cloud models, where the user can modify the cloud
+      input model to provide the configuration required for their environment.</section>
+    <section><b>Object Storage (Swift) Services</b><p>A Swift system is comprised of a number of
+        services: </p><p>
+        <ul>
+          <li>Swift-proxy provides the API for all requests to the Swift system.</li>
+          <li>Account and container services provide storage management of the accounts and
+            containers.</li>
+          <li>Object services provide storage management for object storage.</li>
+        </ul>
+      </p><p>These services can be co-located in a number of ways. The following general pattern
+        exists in the example cloud models distributed in HP Helion OpenStack:</p><p>
+        <ul>
+          <li>The swift-proxy, account, container, and object services run on the same (PACO) node
+            type in the control plane. This is used for smaller clouds or where Swift is a minor
+            element in a larger cloud.</li>
+          <li>The swift-proxy, account, and container services run on one (PAC) node type in a
+            cluster in a control plane and the object services run on another (OBJ) node type in a
+            resource pool. This is used for in larger clouds or where a larger Swift system is in
+            use or planned.</li>
+        </ul>
+      </p><p>Each of these node types can be scaled independently to meet workload and redundancy
+        requirements. The storage service can be scaled up as necessary. It can also be scaled
+        horizontally to handle an increased number of simultaneous connections and a larger number
+        of objects.</p></section>
+    <p>Swift is configured through a number of YAML files in the HP Helion implementation of the
+      OpenStack Object Storage (Swift) service. For more details on the configuration of the YAML
+      files, see <xref href="input_cloud_model.dita#modify-input-model"/>.</p>
+    <!--<section><title>Installation</title></section><section><p>Swift is installed automatically, if your environment meet the basic hardware requirement required for installing Swift. Please refer to <xref href="../supportedconfigs.dita#topic_ckw_kbc_ws">Supported Configuration</xref> for hardware requirement. </p></section>-->
+    <p>You can implement the input model and perform the following Swift tasks: <ul
+        id="ul_vsp_33r_qt">
+        <li><xref href="#modify-input-model" format="dita">Modifying Example Configurations for
+            Object Storage</xref><ul id="ul_fc4_j3r_qt">
+            <li><xref href="allocate_pac.dita"/></li>
+            <li><xref href="allocating_server.dita"/></li>
+            <li><xref href="creating_roles_swift_nodes.dita#topic_uh2_td1_kt"/></li>
+            <li><xref href="allocating_network.dita#topic_pcj_hzv_dt">Allocating Network Traffic</xref></li>
+          </ul></li>
+      </ul><ul id="ul_e34_l3r_qt">
+        <li><xref href="allocating_disk_drives.dita#allocating-disk-drives">Allocating Disk
+            Drives</xref><ul id="ul_zjl_t3r_qt">
+            <li><xref href="label_on_partition.dita#verify-partition-label">How to Verify if a
+                Partition is Labelled</xref></li>
+            <li><xref href="filesystem_label.dita#verify-the-filesystem-label">How to Verify if a
+                File System is Labelled</xref></li>
+          </ul></li>
+      </ul><ul id="ul_ep5_bjr_qt">
+        <li><xref href="creating_pac_cluster.dita"/></li>
+        <li><xref href="creating_object_server_resource.dita"/></li>
+        <li><xref href="ring_specifications.dita"/></li>
+        <li><xref href="storage_policies.dita"/></li>
+        <li><xref href="ring_management.dita"/><ul id="ul_yd4_g44_tt">
+            <li><xref href="rebalanced_explained.dita">Rebalance Explained</xref></li>
+            <li><xref href="setting_up_weight_attributes_ring_changes.dita">Using the Weight-Step
+                Attributes to Prepare for Ring Changes</xref></li>
+            <li><xref href="playbook_linked_ring_management.dita">Swift Playbooks Linked to Ring
+                Management</xref></li>
+            <li><xref href="safe_rebalance_deploy_ring.dita">Determining When it is Safe to
+                Rebalance and Deploy a New Ring</xref></li>
+            <li><xref href="input_model_change_existing_rings.dita">Applying Input Model Changes to
+                Existing Rings</xref></li>
+            <li><xref href="add_new_storage_policy.dita"/></li>
+            <li><xref href="how_to_change_min_part_time.dita#topic_ybt_mhb_kt"/></li>
+          </ul></li>
+        <li><xref href="modify_swift_service_config_files.dita#topic_rdf_hkp_rt"/></li>
+      </ul></p>
+    <ul id="ul_f1l_xjr_qt">
+      <li>Swift Operations<ul id="ul_dzk_njr_qt">
+          <li><xref href="add_new_node.dita"/></li>
+          <li><xref href="replacing_swift_node.dita"/></li>
+          <li><xref href="removing_node.dita"/></li>
+          <li><xref href="replacing_drives_swift_node.dita"/></li>
+        </ul></li>
+      <li><xref href="check_objectstorage_operation.dita"/><ul id="ul_b1x_clr_qt">
+          <li><xref href="validating_swift_recon.dita"/></li>
+          <li><xref href="lm_scan_metering.dita"/></li>
+          <li><xref href="utility.dita"/></li>
+        </ul></li>
+    </ul>
+    <ul id="ul_knx_1js_qt">
+      <li><xref href="troubleshooting.dita"/><ul id="ul_lh5_fjs_qt">
+          <li><xref href="deploy_fails_with_msdos_disks.dita"/></li>
+          <li><xref href="examine_details_planned_ring_changes_prior_deploy.dita"/></li>
+          <li><xref href="interpreting_swift_validate_input_model.dita"/></li>
+          <li><xref href="first_proxy_server.dita"/></li>
+          <li><xref href="label_on_partition.dita"/></li>
+          <li><xref href="filesystem_label.dita"/></li>
+          <li><xref href="recovering_builder_file.dita"/></li>
+          <li><xref href="restart_deploy_from_scratch.dita"/></li>
+        </ul></li>
+    </ul>
+  </body>
+</topic>

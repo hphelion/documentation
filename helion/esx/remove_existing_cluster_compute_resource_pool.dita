@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_lfq_3wf_rt">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing an Existing Cluster from the Compute Resource Pool</title>
+  <body><!--Needs Edit-->
+    <p>Perform the following steps to remove an existing cluster from the compute resource pool
+        requires:<ol id="ol_dq1_pwf_rt">
+        <li>Execute the following command to check for the instances launched in that
+              cluster.<codeblock># nova list --host &lt;hostname>
++--------------------------------------+---------+--------+------------+-------------+------------------+
+| ID                                   | Name    | Status | Task State | Power State | Networks         |
++--------------------------------------+---------+--------+------------+-------------+------------------+
+| 80e54965-758b-425e-901b-9ea756576331 | HLM-VM1 | ACTIVE | -          | Running     | private=10.0.0.2 |
++--------------------------------------+---------+--------+------------+-------------+------------------+</codeblock><p>where:<ul
+              id="ul_zr4_tqh_rt">
+              <li>
+                <p><b>hostname</b>: hostname of the compute proxy present in that cluster.
+                  <!--<b>Is of the form &lt;*esx-comp000#-mgmt> (how to get hostname??)</b>--></p>
+              </li>
+            </ul></p></li>
+        <li>Delete all instances spawned in that
+              cluster.<codeblock># nova delete &lt;server> [&lt;server ...>]</codeblock><p>where:<ul
+              id="ul_ckw_crh_rt">
+              <li><b>server</b>: name or ID of server (s)</li>
+            </ul></p><p>OR</p><p>Migrate all instances spawned in that
+            cluster.<codeblock># nova migrate &lt;server></codeblock></p></li>
+        <li>Execute the following command to deactivate a cluster.
+            <codeblock># eon cluster-deactivate --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid> </codeblock><p>where:
+              <ul id="ul_hll_qrh_rt">
+              <li>
+                <p><b>vCenter ID</b>: ID of the vCenter containing the cluster.</p>
+              </li>
+            </ul></p></li>
+        <li>Commit your configuration
+          <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message>"</codeblock></li>
+        <li>Run the configuration
+          processor<codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml -e remove_deleted_servers="y" -e free_unused_addresses="y"</codeblock></li>
+        <li>Run the following command to create a deployment
+          directory.<codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml ( this is already available )</codeblock></li>
+        <li>Execute the following command to unimport cluster on the respective cluster<codeblock># eon cluster-unimport --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid></codeblock><p>
+            <note> Do not execute <codeph>osconfig-run.yml</codeph> or
+                <codeph>hlm-deploy.yml</codeph> playbooks.</note>
+          </p></li>
+      </ol></p>
+  </body>
+</topic>

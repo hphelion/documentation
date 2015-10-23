@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="opsconsole">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Operations Console</title>
+  <body><!--Needs Edit-->
+    <section><title>About the Operations Console</title></section>
+    <section id="about">
+      <p>The Operations Console (Ops Console) for HP Helion OpenStack 2.0 is designed for HP Helion
+        Openstack Administrators to have a web-based UI they can use to view data about their cloud
+        infrastructure. The Ops Console is a web-based GUI that offers the user access to data such
+        as monitoring alarms data by service, performance data, compute nodes and instances lists,
+        and a drilldown to Kibana for a deep look into logs. The Business Logic Layer is a
+        middleware component that serves as a single point of contact for the UI to communicate with
+        Openstack services such as Monasca, Nova, and others.</p>
+    </section>
+    <section><title>Connecting to the Operations Console</title></section>
+    <section id="connecting">
+      <p>To determine which IP address to use to access the Operations Console you can use this
+        command from your deployer: <codeblock>grep vip-HZN-WEB /etc/hosts</codeblock></p>
+      <p>The output of that command will show you the VIP you should use. It is listening over port
+        9095 on that VIP, so you can use the following syntax to access
+        it:<codeblock>http://VIP:9095</codeblock></p>
+      <p>The default username for the Administrator user is <codeph>admin</codeph>. In order to find
+        the randomized password that is created for this user you will need to look into the
+          <codeph>~/service.osrc</codeph> file on the deployer node. You can do that with this
+        command:</p>
+      <codeblock>cat ~/service.osrc</codeblock>
+      <note type="important">The credentials for your <codeph>admin</codeph> user account can be
+        changed. See <xref href="../identity/identity_init.dita">Keystone Configuration</xref> for
+        more details.</note>
+      <p>For details on the use of the Operations Console, see <xref href="opsconsole_overview.dita"
+          >Operations Console Overview</xref></p>
+    </section>
+  </body>
+</topic>
