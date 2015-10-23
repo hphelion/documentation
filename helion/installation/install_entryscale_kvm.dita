@@ -279,6 +279,16 @@ ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60
           one of the controller nodes.</li>
       </ol>
     </section>
+    <section id="configure_backend"><title>Configure a Block Storage Backend (Optional)</title>
+      <p>If you have chosen to use VSA, Ceph, or 3PAR as your Block Storage backend, there are some
+        additional steps to complete your installation. See these pages below to configure the
+        backend:</p>
+      <ul>
+        <li><xref href="configure_vsa.dita">VSA Configuration</xref></li>
+        <li><xref href="configure_ceph.dita">Ceph Configuration</xref></li>
+        <li><xref href="configure_3par.dita">3PAR Configuration</xref></li>
+      </ul>
+    </section>
     <section id="post-installation"><title>Post-Installation Verification and Administration</title>
       <p>We recommend verifying the installation using <xref href="installation_verification.dita"
           >Tempest's embedded tests</xref>.</p>
