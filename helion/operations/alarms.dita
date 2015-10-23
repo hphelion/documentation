@@ -563,7 +563,7 @@
               <entry>Elasticsearch Max Total Indices Size</entry>
               <entry>Elasticsearch</entry>
               <entry>Elasticsearch Total Indices size is greater than
-                elasticsearch_max_total_indices_size_in_bytesdefined by user</entry>
+                elasticsearch_max_total_indices_size_in_bytes defined by user</entry>
               <entry>elasticsearch_max_total_indices_size_in_bytes may be set too low, or you may
                 have insufficient resources.</entry>
               <entry>If the total size of all the indices exceeds the size of the
@@ -594,8 +594,8 @@
               <entry>Beaver</entry>
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
-              <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
-                  systemctl restart beaver</codeph>
+              <entry>If the Beaver process goes down, try restarting it with: <codeph>sudo systemctl
+                  restart beaver</codeph>
               </entry>
             </row>
             <row>
@@ -603,8 +603,8 @@
               <entry>Apache</entry>
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
-              <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
-                  systemctl restart apache2</codeph>
+              <entry>If the Apache process goes down, try restarting it with: <codeph>sudo systemctl
+                  restart apache2</codeph>
               </entry>
             </row>
             <row>
@@ -612,8 +612,8 @@
               <entry>Kibana</entry>
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
-              <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
-                  systemctl restart kibana</codeph>
+              <entry>If the Kibana process goes down, try restarting it with: <codeph>sudo systemctl
+                  restart kibana</codeph>
               </entry>
             </row>
           </tbody>
