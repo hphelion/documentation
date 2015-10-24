@@ -15,7 +15,7 @@
     version: 2
   disk-models:
   - name: MONITOR-DISKS
-    # Disk model to be used for Ceph OSD nodes
+    # Disk model to be used for Ceph Monitor nodes
     # /dev/sda_root is used as a volume group for /, /var/log and /var/crash
     # sda_root is a templated value to align with whatever partition is really used
     # This value is checked in os config and replaced by the partition actually used

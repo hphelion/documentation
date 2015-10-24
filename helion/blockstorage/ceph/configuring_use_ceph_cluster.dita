@@ -18,8 +18,8 @@
       <title>Configure Ceph as Cinder Backend</title>
       <p>
         <note>The playbook ( <codeph>ansible-playbook -i hosts/verb_hosts
-            ceph-client-prepare.yml</codeph>)  is executed so that the rings files are set up
-          properly before configuring Cinder Backend.</note>
+            ceph-client-prepare.yml</codeph>) must be executed so that the rings files are set up
+          properly before configuring Ceph as a Cinder Backend.</note>
       </p>
       <p>Perform the following procedure on the Deployer node to configure Ceph as a Cinder
         backend:</p>
@@ -103,22 +103,17 @@ git commit -m "&lt;commit message>"</codeblock>
 <codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
           <li>Run the following ansible
               playbook:<codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock><p><?oxy_custom_start type="oxy_content_highlight" color="140,255,140"?>Now,
-              you can launch the Horizon Dashbaord to create a volume type and create a backup for
-              the same.Once you are able to create the volume you can perform the OpenStack
-              Operations. Also, you can verify the Ceph configuration by logging in <xref
-                href="../verify_backend_configuration.dita#topic_q5q_trz_jt">Horizon
-                Dashboard.</xref><?oxy_custom_end?></p><p>This backup volume is stored in the Ceph
-              pool backups.</p></li>
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock><p>This
+              backup volume is stored in the Ceph pool backups.</p></li>
         </ol>
       </p>
     </section>
     <section id="attach-ceph-volume-instance">
-      <title>Attach Ceph Volume to an Instance</title>
+      <title>Configure Nova to allow attachment of Ceph Volumes to instances</title>
       <p>If you want to attach a volume from a newly-added ceph backend to an existing Nova virtual
-        machine, you must first reboot your virtual machine after the new backend has been
-        added.</p>
-      <p>Perform the following steps to attach Ceph volume to an instance: <ol id="ol_vx4_4gv_kt">
+        machine, you must first reboot your virtual machine after the new backend has been added. </p>
+      <p>Perform the following steps to configure nova to allow attachment of  Ceph volume to an
+        instances: <ol id="ol_vx4_4gv_kt">
           <li>On the deployer node, edit <codeph>kvm-hypervisor.conf.j2</codeph> at
               <codeph>~/helion/my_cloud/config/nova/kvm-hypervisor.conf.j2</codeph> to add the
             following for RBD volume
@@ -140,5 +135,9 @@ git commit -m "&lt;commit message>"</codeblock>
 ansible-playbook -i hosts/verb_hosts run nova-reconfigure.yml</codeblock></li>
         </ol></p>
     </section>
+    <p><!--You can also login to <xref href="../verify_backend_configuration.dita#topic_q5q_trz_jt">Horizon dashboard</xref> and perform the OpenStack operations, like creating volume, attaching volume to an instance, etc to verify the backend configuration. --></p>
+    <p>After the successful configuration of Ceph as a cinder backend, you can login to Horizon
+      Dashboard and perform the OpenStack Operations to verify the backend configuration etc. See
+        <xref href="../verify_backend_configuration.dita#topic_q5q_trz_jt"/> for more details.</p>
   </body>
 </topic>

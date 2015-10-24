@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_mnk_sq1_5t">
+  <title>Troubleshooting: Ceph</title>
+  <body>
+    <p>This page describes the troubleshooting scernario of Ceph.<ol id="ol_owp_vq1_5t">
+        <li>When you execute <codeph>site.yml</codeph> playbook, Ceph cloud deployment fails with
+          the following
+          error:<codeblock>TASK: [_CEP-CMN | install | Install ceph] ************************************* 
+        changed: [stratushelion-cp1-ceph0001-mgmt]
+        changed: [stratushelion-cp1-ceph0002-mgmt]
+        changed: [stratushelion-cp1-ceph0005-mgmt]
+        changed: [stratushelion-cp1-ceph0003-mgmt]
+        changed: [stratushelion-cp1-ceph0004-mgmt]
+
+        TASK: [_CEP-CMN | configure | Copy "{{ deployer_ceph_dir }}/ceph.client.admin.keyring" to /etc/ceph directory] *** 
+        fatal: [stratushelion-cp1-ceph0001-mgmt] => input file not found at /etc/ceph/ceph.client.admin.keyring or /etc/ceph/ceph.client.admin.keyring
+        fatal: [stratushelion-cp1-ceph0002-mgmt] => input file not found at /etc/ceph/ceph.client.admin.keyring or /etc/ceph/ceph.client.admin.keyring
+        fatal: [stratushelion-cp1-ceph0003-mgmt] => input file not found at /etc/ceph/ceph.client.admin.keyring or /etc/ceph/ceph.client.admin.keyring
+        fatal: [stratushelion-cp1-ceph0004-mgmt] => input file not found at /etc/ceph/ceph.client.admin.keyring or /etc/ceph/ceph.client.admin.keyring
+        fatal: [stratushelion-cp1-ceph0005-mgmt] => input file not found at /etc/ceph/ceph.client.admin.keyring or /etc/ceph/ceph.client.admin.keyring
+
+        FATAL: all hosts have already failed -- aborting
+</codeblock></li>
+      </ol></p>
+  </body>
+</topic>

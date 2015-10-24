@@ -294,8 +294,11 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
     </p>
-    <p><!--After the successful configuration of VSA as a cinder backend you can launch the Hence, cinder is successfully configured. Now launch the Horizon dashboard to create a cinder volume type for VSA as backend.-->
-      <!--Once you are able to create the volume you can perform the OpenStack Operations. Also, you can verify the cinder volume creation for VSA by logging in <xref href="../blockstorage/verify_backend_configuration.dita">Horizon Dashboard</xref>.--></p>
+    <p>After the successful configuration of VSA as a cinder backend, you can login to Horizon
+      Dashboard and perform the OpenStack Operations to verify the backend configuration etc. See
+        <xref href="../blockstorage/verify_backend_configuration.dita#topic_q5q_trz_jt"/> for more
+      details.</p>
+    <p><!--After the successful configuration of VSA as a cinder backend you can launch the Hence, cinder is successfully configured. Now launch the Horizon dashboard to create a cinder volume type for VSA as backend.Once you are able to create the volume you can perform the OpenStack Operations. Also, you can verify the cinder volume creation for VSA by logging in <xref href="../blockstorage/verify_backend_configuration.dita">Horizon Dashboard</xref>.--></p>
     <note type="important">You can create more than one VSA cluster of same or different type by
       specifying the configuration in cloud model. For more details, refer <xref
         href="../blockstorage/vsa/vsa_create_multiple_clusters.dita">Modifying Cloud Model to Create
