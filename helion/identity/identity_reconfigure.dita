@@ -109,7 +109,7 @@ $ ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock></li>
 #!/usr/bin/env python
 import pika
       
-# Call back message for processing audit messges
+# Callback message for processing audit messges
 def callback(ch, method, properties, body):
     print " [x] %r:%r" % (method.routing_key, body,)
       
