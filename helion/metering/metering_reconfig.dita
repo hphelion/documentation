@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="reconfig_metering">
-  <title>HP Helion OpenStack&#174; 2.0: Configure, Upgrade or Reconfigure Metering</title>
+  <title>HP Helion OpenStack&#174; 2.0: Configure, Upgrade, or Reconfigure Metering</title>
   <body>
 
     <section id="deploy"><title>Deployment</title> Helion OpenStack v2.0 automatically deploys
