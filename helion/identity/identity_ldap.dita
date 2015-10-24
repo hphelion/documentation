@@ -11,14 +11,17 @@
      <ol>
     <li>Ensure that domain_specific_drivers_enabled option is set to True in main configuration file template (/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2).
     </li> <li> Create YAML file which contains definition of LDAP server connection. The sample file below is
-          already provided as part of local git repository. It is available on a deployer node as
-          /home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_sample.yml. Save a
-          copy of this file, as, for example,
-          /home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_my.yml. <note> Please
-            refer to [ldap] section of Keystone KIlo documentation for full option list and
-            description:
+          already provided as part of the installed <xref
+            href="../installation/using_git.dita#using_git">local git repository</xref>. It is
+          available on a deployer node as
+            <b>/home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_sample.yml</b>.
+          Save a copy of this file, as, for example,
+            <b>/home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_my.yml</b>.
+            <note> Please refer to [ldap] section of Keystone KIlo documentation for full option
+            list and description:
             http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html
-            .</note> Here is the sample YAML configuration, optimized for Microsoft AD server:
+            .</note> Here is the sample YAML configuration, optimized for Microsoft Active Directory
+          server:
           <codeblock>---
  
 keystone_domainldap_conf:
@@ -86,26 +89,30 @@ keystone_domainldap_conf:
         user_enabled_mask: 2
         user_enabled_default: 512
         use_tls: True
-        # If you are configuring multiple LDAP domains, and LDAP server certificates are issued
+       tls_req_cert: demand
+        # if you are configuring multiple LDAP domains, and LDAP server certificates are issued
         # by different authorities, make sure that you place certs for all the LDAP backend domains in the 
         # cacert parameter as seen in this sample yml file so that all the certs are combined in a single CA file 
         # and every LDAP domain configuration points to the combined CA file.
         # Note: There is a known issue on one cert per CA file per domain when the system processes 
         # concurrent requests to multiple LDAP domains. Using the single CA file with all certs combined 
-        # shall get the system working properly.
-        tls_cacertfile: /etc/keystone/ssl/certs/domainname_ldapca.pem </codeblock>
+        # shall get the system working properly*.
+        # The issue is in the underlying SSL library. Upstream is not investing in python-ldap package anymore. It is also not python3
+        # compliant. At <xref href="https://etherpad.openstack.org/p/keystone-mitaka-summit-brainstorm" format="html" scope="external">Mitaka summit</xref>, we will be proposing a transition off python-ldap to use python3-ldap.
+        
+        tls_cacertfile: /etc/keystone/ssl/certs/all_ldapca.pem </codeblock>
         </li>
-       <li>As suggested at Using Git for Configuration Management, commit the new file into local git repository,
-         and rerun configuration processor / deployment area preparation playbooks :
-    
-    <codeblock>$ cd ~/helion
+       <li>As suggested at <xref href="../installation/using_git.dita#using_git">Using Git for
+            Configuration Management</xref>, commit the new file into local git repository, and
+          rerun configuration processor / deployment area preparation playbooks :
+          <codeblock>$ cd ~/helion
 $ git checkout site
 $ git add my_cloud/config/keystone/keystone_configure_ldap_my.yml
 $ git commit -m "Adding LDAP server integration config"
 $ cd ~/helion/hos/ansible
 $ ansible-playbook -i hosts/localhost config-processor-run.yml
 $ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
-   </li> <li>
+        </li> <li>
      Run reconfiguration playbook in a deployment area, passing a YAML file created at previous step as command line option:
     <codeblock>$ cd ~/scratch/ansible/next/hos/ansible
 $ ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml -e@/home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_my.yml</codeblock>
