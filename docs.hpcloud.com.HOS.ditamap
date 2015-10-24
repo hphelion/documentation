@@ -254,14 +254,29 @@
       <!-- reporting = metering = ceilomter -->
       <topicref href="helion/metering/metering_overview.dita" navtitle="Metering Service"
         locktitle="yes">
+        
+        <topicref href="helion/metering/metering_apis.dita"
+          navtitle="Ceilometer Metering APIs"  locktitle="yes"/>
+        
+        <topicref href="helion/metering/metering_reconfig.dita"
+          navtitle="Ceilometer Metering Service Config and Upgrade" locktitle="yes"/>
+        
+        <topicref href="helion/metering/metering_notifications.dita"
+          navtitle="Ceilometer Metering Service Notifications"  locktitle="yes"/>
+        
+        <topicref href="helion/metering/metering_failover.dita"
+          navtitle="Ceilometer Metering Failover HA Support" locktitle="yes"/>
+        
+        <!--  old  -->
+        
         <topicref href="helion/metering/metering_components.dita"
-          navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
+          navtitle="Ceilometer Metering Service Components" toc="no" locktitle="yes"/>
         <topicref href="helion/metering/metering_metertypes.dita" navtitle="Available Meter Types"
-          locktitle="yes"/>
+          locktitle="yes" toc="no"/>
         <topicref href="helion/metering/metering_rbac.dita"
-          navtitle="Setting Role-based Access Control" locktitle="yes"/>
+          navtitle="Setting Role-based Access Control" locktitle="yes" toc="no"/>
         <topicref href="helion/metering/metering_bestpractice.dita"
-          navtitle="Optimizing the Metering Service" locktitle="yes"/>
+          navtitle="Optimizing the Metering Service" locktitle="yes" toc="no"/>
       </topicref>
       <topicref href="helion/operations/monitoring_service.dita" navtitle="Monitoring Service"
         locktitle="yes">

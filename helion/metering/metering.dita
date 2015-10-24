@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_icq_hvc_5t">
+  <title>Ceilometer APIs</title>
+  <body>
+    <section id="pipeline"><title>Separate pipeline.yaml for Ceilometer Post Sample API</title> Post
+      Sample API is disabled by default in HOS CM 2.0 and its configured with a pipeline
+      configuration different than the agents. The api pipeline has no meters enabled, so it needs
+      to be configured with meters when the Post sample API is enabled. Exercise caution when adding
+      meters to the API pipeline. Ensure that only those meters are added to this pipeline which are
+      already present in the notification agent and the central agent pipeline. <p>Ceilometer API
+        (ceilometer-api) pipeline.yaml is located at
+          /<b>opt/stack/service/ceilometer-api/etc/pipeline-api.yaml</b></p> Here is a sample of the
+      api pipeline:
+      <codeblock>---
+sources:
+    - name: meter_source
+      interval: 30
+      meters:
+          - "instance"
+          - "ip.floating"
+          - "network"
+          - "network.create"
+          - "network.update"
+      sinks:
+          - meter_sink
+    - name: image_source
+      interval: 30
+      meters:
+          - "image"
+          - "image.size"
+          - "image.upload"
+          - "image.delete"
+      sinks:
+          - meter_sink
+    - name: volume_source
+      interval: 30
+      meters:
+          - "volume"
+          - "volume.size"
+          - "snapshot"
+          - "snapshot.size"
+      sinks:
+          - meter_sink
+    - name: swift_source
+      interval: 3600
+      meters:
+          - "storage.objects"
+          - "storage.objects.size"
+          - "storage.objects.containers"
+      sinks:
+          - meter_sink
+sinks:
+    - name: meter_sink
+      transformers:
+      publishers:
+         - notifier://</codeblock>
+    </section>
+
+    <section id="sampleAPI"><title>Ceilometer Sample API</title>
+      <p>Ceilometer Sample has two APIs: <ul>
+          <li>ceilometer sample-list(/v2/samples) </li>
+          <li>ceilometer query-sample (/v2/query/samples)</li>
+        </ul> ceilometer sample-list allows querying based on <ul>
+          <li>meter name</li>
+          <li>user_id</li>
+          <li>project_id</li>
+          <li>sample source</li>
+          <li>resource_id</li>
+          <li>sample timestamp (range)</li>
+          <li>sample message_id</li>
+          <li>resource metadata attributes</li>
+        </ul> ceilometer sample-list uses AND implicitly. However, query-sample allows finer control
+        over the filter expression by allowing the use of AND, OR, and NOT operators over any of the
+        sample, meter or resource attributes.</p>
+      <b>Limitations:</b>
+      <p> Its been observed that ceilometer query-sample API uses anonymous/alias table to cache the
+        JOIN query results and concurrent requests to this API can use up the disk space and can
+        cause service interruptions; hence it has been disabled for stability of the system.
+        </p><p>Although sample list allows you to query the sample data as well, the limitation here
+        is that it uses the AND operator for all the passed query arguments implicitly; however it
+        allows you to query on resource metadata field of samples as well.</p> The standard format
+      for queries via the CLI:
+      <codeblock>ceilometer sample-list -m METER_NAME -q '&lt;field1>&lt;operator1>&lt;value1>;...;&lt;field_n>&lt;operator_n>&lt;value_n>'</codeblock>
+      where operators can be:<b> &lt;, &lt;=, =, !=, >= ></b>
+      <p>All the key value pairs will be combined with implicit AND operator. Some example usage for
+        the sample list API are</p>
+      <codeblock>ceilometer sample-list --meter image.serve -q 'resource_id=a1ec2585' </codeblock>
+      <codeblock>ceilometer sample-list --meter instance -q 'resource_id=&lt;ResourceID>;metadata.event_type=&lt;eventType>'</codeblock>
+    </section>
+
+    <section id="statAPI"><title>Ceilometer Statistics API</title>
+      <p>Ceilometer Statistics is an open-ended query API and thus can put a significant load on the
+        database leading to unexpected results and or failures. Ceilometer Statistics API performs
+        queries on the sample table and obtains the minimum and maximum timestamp for the meter that
+        is being queried.</p> Based on the minimum and maximum timestamp it returns a few statistics <ul>
+        <li> If a period parameter is not supplied it simply returns few statistics like min, max,
+          avg and sum</li>
+        <li> If a period parameter is supplied then it divides the range into equal periods and
+          finds the count,min, max, avg and sum for each of the periods</li>
+      </ul> It is recommended that you always provide a query parameter with
+      <codeblock>timestamp>={$start-timestamp} and timestamp&lt;{$end-timestamp} </codeblock> to
+      cover a time period of at most 1 day (24 hours) irrespective of whether you provide a period
+      or or not. Here is an example using the period parameter
+      <codeblock>ceilometer statistics -q "timestamp>=2014-12-11T00:00:10;timestamp&lt;2014-12-11T23:00:00" -m "instance" -p 3600</codeblock>
+      Without period parameter:
+      <codeblock>ceilometer statistics -q "timestamp>=2014-12-11T00:00:10;timestamp&lt;2014-12-11T23:00:00" -m "instance"</codeblock>
+      The recommended values for query (-q) parameter and period (-p) parameters are: <dl>
+        <dlentry>
+          <dt>-q</dt>
+          <dd>Always provide a timestamp range, which restricts the query to one day (24 hours). It
+            is not recmmended that you set the timestamp range to greater than a day or provide no
+            time stamp range. An acceptable range looks like
+            this:<codeblock>            -q "timestamp>=2014-12-11T00:00:10;timestamp&lt;2014-12-11T23:00:00"</codeblock>
+            If the query parameter and timestamp are not provided, all the records in the database
+            will be queried. This is not recommended.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>-p</dt>
+          <dd>Provide a fairly large number for period; the recommended value is 3600 or more (1
+            hour or more). Providing a period of less than 3600 is not recommended. e.g. -p 3600
+            Period parameter (value in seconds) is used to divide the overall time range into
+            intervals. A small period value will translate into huge number of queries against the
+            database, which is not recommended.</dd>
+        </dlentry>
+
+
+      </dl>
+    </section>
+    <section id="disabled"><title>Disabled APIs</title> The Ceilometer metering APIs disabled in
+      this release are: <ul>
+        <li>Ceilometer Alarms API</li>
+        <li>Post Meters API</li>
+        <li>Query Sample API</li>
+      </ul> They are disabled via a custom rule, hp_disabled_rule:not_implemented, which is added to
+      each of those APIs in Ceilometer's policy.json. (<b>/etc/ceilometer/policy.json</b> on
+      controller nodes). Attempts to access any of the Alarm APIs, Post Meter API or Query-sample
+      API will result in an HTTP response 501 Not Implemented.<p>To manually enable any of the APIs, remove the corresponding rule and restart Apache</p>
+      <codeblock>{
+	"context_is_admin": "role:admin",
+	"context_is_project": "project_id:%(target.project_id)s",
+	"context_is_owner": "user_id:%(target.user_id)s",
+	"segregation": "rule:context_is_admin",
+	 
+	"telemetry:create_samples": "hp_disabled_rule:not_implemented",
+	 
+	"telemetry:get_alarm": "hp_disabled_rule:not_implemented",
+	"telemetry:change_alarm": "hp_disabled_rule:not_implemented",
+	"telemetry:delete_alarm": "hp_disabled_rule:not_implemented",
+	"telemetry:alarm_history": "hp_disabled_rule:not_implemented",
+	"telemetry:change_alarm_state": "hp_disabled_rule:not_implemented",
+	"telemetry:get_alarm_state": "hp_disabled_rule:not_implemented",
+	"telemetry:create_alarm": "hp_disabled_rule:not_implemented",
+	"telemetry:get_alarms": "hp_disabled_rule:not_implemented",
+	"telemetry:query_sample":"hp_disabled_rule:not_implemented",
+	"default": ""
+}</codeblock>
+      The following Alarm APIs are disabled <ul>
+        <li>POST /v2/alarms </li>
+        <li>GET /v2/alarms </li>
+        <li>GET /v2/alarms/(alarm_id) </li>
+        <li>PUT /v2/alarms/(alarm_id) </li>
+        <li>DELETE /v2/alarms/(alarm_id) </li>
+        <li>GET /v2/alarms/(alarm_id)/history </li>
+        <li>PUT /v2/alarms/(alarm_id)/state </li>
+        <li>GET /v2/alarms/(alarm_id)/state </li>
+        <li>POST /v2/query/alarms </li>
+        <li>POST /v2/query/alarms/history</li></ul>
+      In addition, these APIs are disabled:
+      <ul>
+        <li>Post Meters API: POST /v2/meters/(meter_name)</li>
+        <li>Query Sample API: POST /v2/query/samples</li>
+      </ul>
+    </section>
+  </body>
+</topic>

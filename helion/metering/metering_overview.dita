@@ -27,8 +27,38 @@
       <!--PUBLISHED-->
       <!--./commercial/GA1/1.1commerical.services-reporting-overview.md-->
       <!--permalink: /helion/openstack/1.1/services/reporting/overview/--></p>
-    <p> </p>
-    <note>The deployment of the HP Helion OpenStack Metering service is considered experimental and
+    <section>
+      
+      
+      New Functionality in Helion OpenStack v2.0
+      
+      The default meters and other items configured for the Ceilometer API can now be modified and additional meters can be added.  It is highly recommended that customers test overall Helion OpenStack performance prior to deploying any Ceilometer modifications to ensure the addition of new notifications or polling events does not negatively affect overall system performance.
+      Ceilometer Central Agent (pollster) is now configured to support HA (Active-Active)
+      Notification Agent has built-in HA (Active-Active) with support for pipeline transformers
+      Ceilometer expirer supports native HA and the ability to expirer sample data instead of all data within the retention period.
+      SWIFT Poll-based account level meters will be enabled by default with an hourly collection cycle.
+      Flexible configuration for pollster and notifications. We can list different event types differently for these services.
+      Integrated with centralized monitoring(Monasca) and centralized logging
+      Upgrade and Reconfigure Support
+      Limitations
+      
+      Since Ceilometer is currently deployed with a shared MySQL database only a limited set of metrics are configured by default to ensure overall system availability and performance.
+      The default Ceilometer expiry is configured for 7 days.
+      The Ceilometer Meter list API is configured to return no more than 20 with an open ended, query sample.
+      The Ceilometer Alarms API is disabled by default.  Helion OpenStack v2.0 provides an alternative operations monitoring service that will provide support for operations monitoring, alerts, and notifications use cases.
+      The Ceilometer Post Meter API is disabled by default.
+      No Talligent Openbook support
+      The query sample  API will be disabled and sample-list API can be used as an alternate  solution with limited functionality
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+   <!-- <note>The deployment of the HP Helion OpenStack Metering service is considered experimental and
       targeted at developers investigating integration of external software applications with the
       Ceilometer API for showback, chargeback, and billing applications only. Only a limited set of
       metrics are available. Developers interested in monitoring use cases should refer to the <xref
@@ -69,6 +99,6 @@
           href="http://developer.openstack.org/api-ref-telemetry-v2.html" scope="external"
           format="html">REST API</xref>. A Ceilometer Horizon dashboard panel is not available at
         this time.</p>
-    </section>
+    </section>-->
   </body>
 </topic>
