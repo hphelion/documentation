@@ -68,19 +68,21 @@
               <entry/>
             </row>
             <row>
-              <entry/>
+              <entry>
+                <pre>ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+              </entry>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
             </row><row>
-              <entry/>
+              <entry>bm-reimage</entry>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
             </row><row>
-              <entry/>
+              <entry>bm*</entry>
               <entry/>
               <entry/>
               <entry/>
@@ -106,16 +108,16 @@
             </row>
             <row>
               <entry>
-                <codeblock>ansible-playbook -i hosts/verb_hosts nova-stop.yml </codeblock>
+                <pre>ansible-playbook -i hosts/verb_hosts nova-stop.yml </pre>
               </entry>
               <entry>stop nova</entry>
               <entry/>
-              <entry>--limit</entry>
+              <entry>--limit (target node)</entry>
               <entry/>
             </row>
             <row>
               <entry>
-                <codeblock>ansible-playbook -i hosts/verb_hosts nova-start.yml</codeblock>
+                <pre>ansible-playbook -i hosts/verb_hosts nova-start.yml</pre>
               </entry>
               <entry>start nova</entry>
               <entry/>
@@ -123,7 +125,7 @@
               <entry/>
             </row>   <row>
               <entry>
-                <codeblock>ansible-playbook -i hosts/verb_hosts logging-stop.yml</codeblock>
+                <p>ansible-playbook -i hosts/verb_hosts logging-stop.yml</p>
               </entry>
               <entry>stop centralized logging</entry>
               <entry/>
@@ -131,7 +133,7 @@
               <entry>Only impacts centralized logging. Not Logrotate </entry>
             </row>   <row>
               <entry>
-                <codeblock>ansible-playbook -i hosts/verb_hosts logging-start.yml</codeblock>
+                <p>ansible-playbook -i hosts/verb_hosts logging-start.yml</p>
               </entry>
               <entry>start centralized logging</entry>
               <entry/>
@@ -181,14 +183,14 @@
               <entry/>
             </row>
             <row>
-              <entry> <codeblock>ansible-playbook -i hosts/verb_hosts freezer-stop.yml</codeblock></entry>
+              <entry> ansible-playbook -i hosts/verb_hosts freezer-stop.yml</entry>
               <entry>stop freezer</entry>
               <entry/>
               <entry>--limit</entry>
               <entry/>
             </row>
             <row>
-              <entry> <codeblock>ansible-playbook -i hosts/verb_hosts freezer-start.yml</codeblock></entry>
+              <entry> ansible-playbook -i hosts/verb_hosts freezer-start.yml</entry>
               <entry>start freezer</entry>
               <entry/>
               <entry>--limit</entry>
