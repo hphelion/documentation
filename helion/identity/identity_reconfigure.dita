@@ -11,8 +11,9 @@
       
       <ul>
       <li> Any content in main keystone configuration file:<b> /etc/keystone/keystone.conf</b>. This
-          allows to manipulate Keystone configuration parameters. Please refer to Updating main
-          Keystone configuration file section below. </li><li>Updating certain configuration options and enabling features, such as:
+          allows to manipulate Keystone configuration parameters. Please refer to the <xref
+            href="#topic_m43_2j3_bt/updating" format="dita">Updating the main Identity Service
+            configuration file</xref> section next. </li><li>Updating certain configuration options and enabling features, such as:
       
       
       <ul><li>Verbosity of logs being written to keystone log files.
