@@ -264,7 +264,7 @@
         <topicref href="helion/metering/metering_notifications.dita"
           navtitle="Ceilometer Metering Service Notifications"  locktitle="yes"/>
         
-        <topicref href="helion/metering/metering_failover.dita"
+        <topicref href="helion/metering/metering_failover_ha.dita"
           navtitle="Ceilometer Metering Failover HA Support" locktitle="yes"/>
         
         <!--  old  -->
