@@ -166,9 +166,9 @@ sinks:
       </table> This means that even a very small Swift storage with 10 containers and 100 files will
       store 120,000 samples in 24 hours, generating a grand total of 3.6 million samples! <p>Note
         that the file size of each file does not have any impact on the number of samples collected.
-        The smallest number of samples results from polling when there are a small number of files
-        and a small number of containers. When  there a lot of small files and containers,  the
-        number of samples is the highest. </p></section>
+        As shown above, the smallest number of samples results from polling when there are a small
+        number of files and a small number of containers. When  there a lot of small files and
+        containers,  the number of samples is the highest. </p></section>
     
     <section><title>Updating the Polling Strategy and Swift Considerations</title>
       <p>Polling can be very taxing on the system due to the sheer volume of data that the system
