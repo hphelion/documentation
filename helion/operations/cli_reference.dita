@@ -2,7 +2,8 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_fkz_yvr_st">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Commonly Used Commands</title>
-  <body><!--Needs Edit-->
+  <body>
+    <!--Needs Edit-->
     <p>
       <table frame="all" rowsep="1" colsep="1" id="table_fgx_2wr_st">
         <tgroup cols="5">
@@ -22,9 +23,10 @@
           </thead>
           <tbody>
             <row>
-             
-              <entry> <b>Cloud playbooks</b></entry>
-              
+
+              <entry>
+                <b>Cloud playbooks</b></entry>
+
               <entry/>
               <entry/>
               <entry/>
@@ -75,37 +77,53 @@
               <entry/>
               <entry/>
               <entry/>
-            </row><row>
+            </row>
+            <row>
               <entry>bm-reimage</entry>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
-            </row><row>
+            </row>
+            <row>
               <entry>bm*</entry>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
-            </row><row>
+            </row>
+            <row>
               <entry>clean</entry>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
-            </row><row>
+            </row>
+            <row>
+              <entry><codeblock>ansible-playbook -i hosts/verb_hosts wipe_disks.yml</codeblock></entry>
+              <entry>This playbook will wipe the disks of the specified nodes.</entry>
+              <entry><codeph>~/scratch/ansible/next/hos/ansible</codeph></entry>
+              <entry><codeph>--limit &amp;lt;NODE_NAME></codeph></entry>
+              <entry>This playbook is useful during installation if you've run site.yml but made a
+                mistake and need to go back and make a configuration file change. See <xref
+                  href="../installation/installation_troubleshooting.dita#troubleshooting_installation/wipe"
+                  >Installation Troubleshooting</xref> for more details</entry>
+            </row>
+            <row>
               <entry><b>Stopping and Starting Services</b></entry>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
-            </row><row>
+            </row>
+            <row>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
-            </row><row>
+            </row>
+            <row>
               <entry/>
               <entry/>
               <entry/>
@@ -129,7 +147,8 @@
               <entry/>
               <entry>--limit</entry>
               <entry/>
-            </row>   <row>
+            </row>
+            <row>
               <entry>
                 <p>ansible-playbook -i hosts/verb_hosts logging-stop.yml</p>
               </entry>
@@ -137,7 +156,8 @@
               <entry/>
               <entry>--limit</entry>
               <entry>Only impacts centralized logging. Not Logrotate </entry>
-            </row>   <row>
+            </row>
+            <row>
               <entry>
                 <p>ansible-playbook -i hosts/verb_hosts logging-start.yml</p>
               </entry>
@@ -145,43 +165,50 @@
               <entry/>
               <entry>--limit</entry>
               <entry>Only impacts centralized logging. Not Logrotate </entry>
-            </row>   <row>
+            </row>
+            <row>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
-            </row>   <row>
+            </row>
+            <row>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
-            </row>   <row>
+            </row>
+            <row>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
-            </row>   <row>
+            </row>
+            <row>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
-            </row>   <row>
+            </row>
+            <row>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
-            </row>   <row>
+            </row>
+            <row>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
-            </row>   <row>
+            </row>
+            <row>
               <entry/>
               <entry/>
               <entry/>

@@ -159,6 +159,22 @@ bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------</codeblock>
       <p>This log is updated real time as you run ansible playbooks.</p>
       <note type="tip">Use grep to parse through the log. Usage: <codeph>grep &lt;text>
           ~/.ansible/ansible.log</codeph></note>
+      <p id="wipe"><b>How to Wipe the Disks of your Machines</b></p>
+      <p>If you've had to re-run the <codeph>site.yml</codeph> playbook you may have a need to wipe
+        the disks of your nodes</p>> <p>You would generally run the playbook below after re-running
+        the <codeph>bm-reimage.yml</codeph> playbook but before you re-run the
+          <codeph>site.yml</codeph> playbook.</p>
+      <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts wipe_disks.yml</codeblock>
+      <p>The playbook will show you the disks to be wiped in the output and allow you to confirm
+        that you want to complete this action or abort it if you do not want to proceed. You can
+        optionally use the <codeph>--limit &lt;NODE_NAME></codeph> switch on this playbook to
+        specify on specific nodes.</p>
+      <p>If you receive an error stating that <codeph>osconfig</codeph> has already run on your
+        nodes then you will need to remove the <codeph>/etc/hos/osconfig-ran</codeph> file on each
+        of the nodes you want to wipe with this command:</p>
+      <codeblock>sudo rm /etc/hos/osconfig-ran</codeblock>
+      <p>That will clear this flag and allow the disk to be wiped.</p>
       <p><b>Freezer installation fails if an independent network is used for the
         External_API.</b></p>
       <p> Currently the Freezer installation fails if an independent network is used for the
@@ -169,7 +185,7 @@ bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------</codeblock>
         In <b>roles/freezer-agent/templates/backup.osrc.j2</b> add the following line:
         <codeblock>export OS_FREEZER_URL={{ backup_freezer_api_url }}</codeblock>
       </p>
-      <p><b>Error Receivfed if Root Logical Volume is Too Small</b></p>
+      <p><b>Error Received if Root Logical Volume is Too Small</b></p>
       <p>When running the <codeph>site.yml</codeph> playbook, you may receive the error below if
         your root logical-volume is too small:</p>
       <codeblock>2015-09-29 15:54:02,751 p=26345 u=stack |  TASK: [osconfig | disk config | Extend root LV] *******************************

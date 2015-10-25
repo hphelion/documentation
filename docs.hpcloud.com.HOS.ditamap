@@ -29,8 +29,6 @@
     <!-- INSTALLATION -->
     <topicref href="helion/installation/installation_overview.dita" navtitle="Installation"
       locktitle="yes">
-      <topicref href="helion/administration/wipe_disks.dita"
-        navtitle="Pre-Installation Disk Cleanup" locktitle="yes"/>
       <topicref href="helion/installation/using_git.dita"
         navtitle="Using Git for Configuration Management" locktitle="yes"/>
       <topicref href="helion/installation/preinstall_checklist.dita"
