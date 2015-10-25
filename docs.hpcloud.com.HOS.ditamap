@@ -125,9 +125,9 @@
             navtitle="Allocating Disk Drives">
 
             <topicref href="helion/objectstorage/label_on_partition.dita" toc="yes"
-              navtitle="How to Verify if a Partition Labelled" locktitle="yes"/>
+              navtitle="Verifying a Partition Label" locktitle="yes"/>
             <topicref href="helion/objectstorage/filesystem_label.dita" toc="yes"
-              navtitle="How to Verify if a Filesystem Label" locktitle="yes"/>
+              navtitle="Verifying a File System Label" locktitle="yes"/>
           </topicref>
           <topicref href="helion/objectstorage/swift_device_groups.dita"/>
           <topicref href="helion/objectstorage/creating_pac_cluster.dita" navtitle="Creating a Proxy, Account, and Container Cluster" locktitle="yes" />
