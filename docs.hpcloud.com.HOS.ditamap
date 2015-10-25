@@ -272,7 +272,7 @@
         <topicref href="helion/metering/metering_metertypes.dita" navtitle="Available Meter Types"
           locktitle="yes" toc="no"/>
         <topicref href="helion/metering/metering_rbac.dita"
-          navtitle="Setting Role-based Access Control" locktitle="yes" toc="no"/>
+          navtitle="Setting Role-based Access Control" locktitle="yes" />
         <topicref href="helion/metering/metering_bestpractice.dita"
           navtitle="Optimizing the Metering Service" locktitle="yes" toc="no"/>
       </topicref>
