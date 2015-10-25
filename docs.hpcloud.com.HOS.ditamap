@@ -153,8 +153,8 @@
         navtitle="Block Storage Service" locktitle="yes">
         <topicref href="helion/blockstorage/ceph/ceph_overview.dita" navtitle="Ceph Overview"
           locktitle="yes">
-          <topicref href="helion/blockstorage/ceph/configuring_use_ceph_cluster.dita"/>
-          <topicref href="helion/blockstorage/ceph/configuring_use_ceph_cluster_glance.dita"/>
+          <topicref href="helion/blockstorage/ceph/configuring_use_ceph_cluster.dita" navtitle="Configuring Cinder to Use Ceph" locktitle="yes"/>
+          <topicref href="helion/blockstorage/ceph/configuring_use_ceph_cluster_glance.dita" navtitle="Configuring Glance to Use Ceph" locktitle="yes"/>
         </topicref>
       </topicref>
 
@@ -170,13 +170,13 @@
         </topicref>
       </topicref>
       <!-- END NEUTRON -->
-      <topicref href="helion/esx/eon_service.dita">
-        <topicref href="helion/esx/esx_host_commissioning.dita"/>
-        <topicref href="helion/esx/enable_new_cluster_compute_resource.dita"/>
-        <topicref href="helion/esx/remove_existing_cluster_compute_resource_pool.dita"/>
-        <topicref href="helion/esx/removing_esx_host_from_cluster.dita"/>
-        <topicref href="helion/esx/logging.dita"/>
-        <topicref href="helion/esx/scale_config_changes.dita"/>
+      <topicref href="helion/esx/eon_service.dita" navtitle="ESX ON-Boarding (EON) Service" locktitle="yes">
+        <topicref href="helion/esx/esx_host_commissioning.dita" navtitle="ESX Host Commissioning" locktitle="yes"/>
+        <topicref href="helion/esx/enable_new_cluster_compute_resource.dita" navtitle="Enabling a New Cluster as a Compute Resource" locktitle="yes"/>
+        <topicref href="helion/esx/remove_existing_cluster_compute_resource_pool.dita" navtitle="Removing a Cluster from the Compute Resource Pool" locktitle="yes"/>
+        <topicref href="helion/esx/removing_esx_host_from_cluster.dita" navtitle="Removing an ESX Host from a Cluster" locktitle="yes"/>
+        <topicref href="helion/esx/logging.dita" navtitle="EON Logging" locktitle="yes"/>
+        <topicref href="helion/esx/scale_config_changes.dita" navtitle="Making SCALE Configuration Changes" locktitle="yes"/>
       </topicref>
     </topichead>
     <!-- END ADMINISTRATION -->
