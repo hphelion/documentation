@@ -15,9 +15,9 @@
         notification agent. For exampe, Glance image and Glance image.size are meters that are of
         type pollster AND notification.</p> For example: For notification white listing, we have to
       specify pipeline configuration for the Ceilometer Notification Agent. The pipeline
-      configuration file  is called <b>pipeline-agent-notification.yml</b> and is located in
-        <b>/opt/stack/service/ceilometer-agent-notification/etc/</b>. <p>For Polling white listing,
-        we have to specify pipeline configuration for Ceilometer Central Agent . The pipeline
+      configuration file is called <b>pipeline-agent-notification.yml</b> and is located in
+        <b>/opt/stack/service/ceilometer-agent-notification/etc/</b>. <p>For polling white-listing,
+        we have to specify pipeline configuration for Ceilometer Central Agent. The pipeline
         configuration file is called <b>pipeline-agent-central.yml</b> and located in<b>
           /opt/stack/service/ceilometer-agent-central/etc</b>. </p>The pipeline configuration file
       on all the controller nodes must be changed in order to change the white-listing or polling
