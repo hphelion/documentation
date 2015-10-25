@@ -5,13 +5,14 @@
   <body>
     <p>Horizon is the web GUI for administering your cloud deployment.</p>
     <section id="horizon"><title>Accessing Horizon</title>
-      <p>To determine which IP to use to access Horizon you can use this command from your
-        deployer:</p>
+      <p>If your administrator set a hostname value for <codeph>external_name</codeph> in your <codeph>network_groups.yml</codeph> file during the configuration process for your cloud then Horizon will be accessed over port 80 on that hostname.</p>
+      <p>If your administrator did not set a hostname value then in order to determine which IP address to use to access Horizon you can use this command from your
+        lifecycle-manager node:</p>
       <codeblock>grep vip-HZN-WEB /etc/hosts</codeblock>
-      <p>The output of that command will show you the VIP for Horizon that you should use.</p>
+      <p>The output of that command will show you the virtual IP address for Horizon that you should use.</p>
       <p>The default username for the Administrator user is <codeph>admin</codeph>. In order to
         find the randomized password that is created for this user you will need to look into the
-          <codeph>~/service.osrc</codeph> file on the deployer node. You can do that with this
+          <codeph>~/service.osrc</codeph> file on the lifecycle-manager node. You can do that with this
         command:</p>
       <codeblock>cat ~/service.osrc</codeblock>
       <note type="important">The credentials for your <codeph>admin</codeph> user account can be
