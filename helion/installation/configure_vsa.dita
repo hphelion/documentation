@@ -3,7 +3,8 @@
 <topic id="config_vsa">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for VSA Block Storage
     Backend</title>
-  <body><!--Needs Edit-->
+  <body>
+    <!--Needs Edit-->
     <section id="about">
       <p>This page describes how to configure your VSA backend for the Helion Entry Scale Cloud with
         KVM model.</p>
@@ -116,14 +117,23 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
       -->
       <p><b>Install (any) X Display Tool </b><note>You can use ssh to an X server but the
           performance may be poor.</note></p>
-      <p>You must configure X display tool to launch CMC. User can select <b>any</b> X display tool.
-        In this section we are using <b>Xming</b> tool as an example to launch CMC. The following
-        example provides the steps to install Xming and launch CMC.<ol id="ol_cxw_lzt_tt">
-          <li>Install <b>Xming</b> on Windows Box from where you can access the deployer node.</li>
-          <li>Select <b>Enable X11 forwarding</b> checkbox on the putty session for deployer
-            node.</li>
-          <li>SSH to first control plane node.<codeblock>ssh -X</codeblock><p>and enter the CMC
-              command (as mentioned below) to launch CMC.</p></li>
+      <p>You must configure an X display tool to launch CMC. User can select <b>any</b> X display
+        tool. In this section we are using <b>Xming</b> tool as an example to launch CMC. The
+        following example provides the steps to install Xming and launch CMC.<ol id="ol_cxw_lzt_tt">
+          <li>Download and install <b>Xming</b> on a Windows machine that can access the
+            lifecycle-manager node. You can download Xming <xref
+              href="http://sourceforge.net/projects/xming/" format="html" scope="external"
+              >here</xref>.</li>
+          <li>Select <b>Enable X11 forwarding</b> checkbox on the PuTTy session for deployer node.
+            You can do this in PuTTY by: <ol>
+              <li>Navigate to the <codeph>Connection -> SSH -> X11</codeph> option in PuTTy</li>
+              <li>Click the <codeph>Enable X11 forwarding box to ensure it has a checkmark in
+                  it</codeph></li>
+            </ol>
+            <image href="../../media/vsa/xming1.png"/>
+          </li>
+          <li>SSH to first control plane node.
+            <codeblock>ssh -X</codeblock><p>and enter the CMC command (as mentioned below) to launch CMC.</p></li>
         </ol></p>
     </section>
     <section>
@@ -234,17 +244,17 @@ default_volume_type = &lt;your new volume type></codeblock></p></li>
                   <b>cinder-volume.log</b>.<p>
                   <note>
                     <ul id="ul_dt5_5jt_tt">
-                      <li>Please enter the parameter values which are specific to your environment.  </li>
+                      <li>Please enter the parameter values which are specific to your environment. </li>
                       <li>Suppose you forget the cluster name/IP after creating the cluster then
                         perform the following steps:<ol id="ol_mjs_wjt_tt">
                           <li>Login to CMC console using <codeph>
                               /opt/HP/StoreVirtual/UI/jre/bin/java -jar
                               /opt/HP/StoreVirtual/UI/UI.jar</codeph> command.</li>
                           <li>Login to Management group.</li>
-                          <li>On the left side of the  <b>HP Store Virtual Centralized Management
-                              Console</b> screen, click <b>mgmt</b>.  It expands and you will be
-                            able to see the cluster name.</li>
-                          <li>Click  cluster name.  The page in the right hand side gets loaded with
+                          <li>On the left side of the <b>HP Store Virtual Centralized Management
+                              Console</b> screen, click <b>mgmt</b>. It expands and you will be able
+                            to see the cluster name.</li>
+                          <li>Click cluster name. The page in the right hand side gets loaded with
                             the cluster information.</li>
                           <li>Click iSCSI on the right hand side of the page. Virtual IP address
                             will be displayed in the tabular form. Therefore, you can view your
