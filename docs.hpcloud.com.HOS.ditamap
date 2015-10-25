@@ -232,21 +232,21 @@
 
       <topicref href="helion/objectstorage/add_new_storage_policy.dita"
         navtitle="Adding a New Storage Policy - Swift" locktitle="yes"/>
-      <topicref href="helion/objectstorage/check_objectstorage_operation.dita">
-        <topicref href="helion/objectstorage/validating_swift_recon.dita"/>
-        <topicref href="helion/objectstorage/lm_scan_metering.dita"/>
-        <topicref href="helion/objectstorage/utility.dita"/>
+      <topicref href="helion/objectstorage/check_objectstorage_operation.dita" navtitle="Checking Object Storage Status" locktitle="yes">
+        <topicref href="helion/objectstorage/validating_swift_recon.dita" navtitle="Gathering Swift Data" locktitle="yes"/>
+        <topicref href="helion/objectstorage/lm_scan_metering.dita" navtitle="Gathering Swift Monasca Metrics" locktitle="yes"/>
+        <topicref href="helion/objectstorage/utility.dita" navtitle="Using the Swift CLI" locktitle="yes"/>
       </topicref>
 
       <!-- BURA -->
-      <topicref href="helion/bura/bura_overview.dita" navtitle="Backing up and Restoring Your Data">
-        <topicref href="helion/bura/cloud_control_plane_backup.dita" type="topic" format="dita"/>
-        <topicref href="helion/bura/cloud_control_plane_recovery.dita" type="topic" format="dita"/>
-        <topicref href="helion/bura/supported_services.dita" type="topic" format="dita"/>
-        <topicref href="helion/bura/freezer_scheduler.dita" type="topic" format="dita"/>
-        <topicref href="helion/bura/freezer_agent.dita" type="topic" format="dita"/>
-        <topicref href="helion/bura/disable_bura_before_deployment.dita" type="topic" format="dita"/>
-        <topicref href="helion/bura/start_stop_freezer_services.dita" type="topic" format="dita"/>
+      <topicref href="helion/bura/bura_overview.dita" navtitle="Backing up and Restoring Your Data" locktitle="yes">
+        <topicref href="helion/bura/cloud_control_plane_backup.dita" type="topic" format="dita" navtitle="Backing up the Cloud Control Plane" locktitle="yes"/>
+        <topicref href="helion/bura/cloud_control_plane_recovery.dita" type="topic" format="dita" navtitle="Recovering the Cloud Control Plane" locktitle="yes"/>
+        <topicref href="helion/bura/supported_services.dita" type="topic" format="dita" navtitle="Supported Services and Limitations" locktitle="yes"/>
+        <topicref href="helion/bura/freezer_scheduler.dita" type="topic" format="dita" navtitle="Understanding Freezer Scheduler" locktitle="yes"/>
+        <topicref href="helion/bura/freezer_agent.dita" type="topic" format="dita" navtitle="Understanding Freezer Agent" locktitle="yes"/>
+        <topicref href="helion/bura/disable_bura_before_deployment.dita" type="topic" format="dita" navtitle="Disabling Backup/Restore before Deployment" locktitle="yes"/>
+        <topicref href="helion/bura/start_stop_freezer_services.dita" type="topic" format="dita" navtitle="Troubleshooting Freezer Services" locktitle="yes"/>
         <topicref href="helion/bura/troubleshooting.dita" type="topic" format="dita"/>
       </topicref>
 
