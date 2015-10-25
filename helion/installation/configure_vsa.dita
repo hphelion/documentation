@@ -197,21 +197,15 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
 
     <section>
       <title>Configure VSA as a Cinder Backend</title>
-      <note>
-        <ul id="ul_l2l_kpt_tt">
-          <li>The default volume type created by VSA will be thin provisioned and will have no fault
-            tolerance (RAID 0). You should configure cinder to fully provision volumes, and you may
+      <pThe default volume type created by VSA will be thin provisioned and will have no fault
+            tolerance (RAID 0). You should configure Cinder to fully provision volumes, and you may
             also want to configure fault tolerance. Follow the instructions detailed at <xref
-              href="../blockstorage/verify_backend_configuration.dita#topic_q5q_trz_jt">Creating
+              href="installation_verification.dita#install_verification/volume_verify">Creating
               Volume type</xref> to create a new volume type which is fully provisioned and fault
-            tolerant.</li>
-          <li>You can create different volume types with different attributes.</li>
-        </ul>
-      </note>
-      <p>To update your cinder configuration to add VSA storage you must modify
-          <codeph>cinder.conf.j2</codeph> .</p>
-      <p>Perform the following steps to update <codeph>cinder.conf.j2</codeph> with VSA cluster: <ol>
-          <li>Login to deployer node.</li>
+        tolerant. You can create different volume types with different attributes.</p>
+      <p>To update your Cinder configuration to add VSA storage you must modify the  <codeph>cinder.conf.j2</codeph> file using these steps:</p>
+      <ol>
+          <li>Login to lifecycle-manager node.</li>
           <li>Edit <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> to add VSA data
             as follows:
               <codeblock># Configure the enabled backends
