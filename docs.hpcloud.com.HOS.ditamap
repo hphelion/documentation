@@ -305,15 +305,15 @@
       <topichead navtitle="Troubleshooting">
         <topicref href="helion/objectstorage/troubleshooting.dita"
           navtitle="Object Storage Troubleshooting" locktitle="yes">
-          <topicref href="helion/objectstorage/deploy_fails_with_msdos_disks.dita"/>
+          <topicref href="helion/objectstorage/deploy_fails_with_msdos_disks.dita" navtitle="Deployment Fails With on MSDOS Disks Labels" locktitle="yes"/>
           <topicref
-            href="helion/objectstorage/examine_details_planned_ring_changes_prior_deploy.dita"/>
-          <topicref href="helion/objectstorage/interpreting_swift_validate_input_model.dita"/>
-          <topicref href="helion/objectstorage/first_proxy_server.dita"/>
-          <topicref href="helion/objectstorage/label_on_partition.dita"/>
-          <topicref href="helion/objectstorage/filesystem_label.dita"/>
-          <topicref href="helion/objectstorage/recovering_builder_file.dita"/>
-          <topicref href="helion/objectstorage/restart_deploy_from_scratch.dita"/>
+            href="helion/objectstorage/examine_details_planned_ring_changes_prior_deploy.dita" navtitle="Examining Planned Ring Changes" locktitle="yes" />
+          <topicref href="helion/objectstorage/interpreting_swift_validate_input_model.dita" locktitle="yes" navtitle="Interpreting Swift Input Model Validation Errors" />
+          <topicref href="helion/objectstorage/first_proxy_server.dita" locktitle="yes" navtitle="Identifying the First Swift Proxy Server"/>
+          <topicref href="helion/objectstorage/label_on_partition.dita" locktitle="yes" navtitle="Verifying a Partition Label"/>
+          <topicref href="helion/objectstorage/filesystem_label.dita" locktitle="yes" navtitle="Verifying a File System Label"/>
+          <topicref href="helion/objectstorage/recovering_builder_file.dita" locktitle="yes" navtitle="Recovering Builder Files"/>
+          <topicref href="helion/objectstorage/restart_deploy_from_scratch.dita" locktitle="yes" navtitle="Restarting the Object Storage Deployment"/>
         </topicref>
         <topicref href="helion/metering/metering_troubleshoot.dita"
           navtitle="Troubleshooting the Ceilometer Metering Service" locktitle="yes"/>
