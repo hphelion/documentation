@@ -47,7 +47,7 @@
       </topicref>
       <topicref href="helion/installation/install_entryscale_esx.dita"
         navtitle="Installation for Helion Entry Scale Cloud with ESX" locktitle="yes">
-        <topicref href="helion/esx/network_esx_ovsvapp.dita"/>
+        <topicref href="helion/esx/network_esx_ovsvapp.dita" navtitle="Networking for ESXi Hypervisor" locktitle="yes" />
       </topicref>
       <topicref href="helion/installation/install_entryscale_swift.dita"
         navtitle="Installation for Helion Entry Scale Cloud with Swift Only" locktitle="yes"/>
