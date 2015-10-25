@@ -146,38 +146,39 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
               controller node is not recommended in HP Helion OpenStack. Instead, it is recommended
               that you manually add each VSA node.</p></li>
           <li>In the CMC GUI, click the <b>Find</b> menu and then select the <b>Find Systems</b>
-            options. <image href="../../media/vsa/cmc1.png"/>
+            options. <p><image href="../../media/vsa/cmc1.png"/></p>
           </li>
           <li>Click the <b>Add</b> button which will open the <b>Enter IP Address</b> dialogue box
             where you can enter the IP address of your VSA nodes which you noted earlier from your
-              <codeph>~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph> file. <image
-              href="../../media/vsa/cmc2.png"/></li>
-          <li>Once you have all of your VSA nodes entered, click the <b>Close</b> button. <image
-              href="../../media/vsa/cmc3.png"/></li>
+              <codeph>~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph> file.
+                <p><image href="../../media/vsa/cmc2.png"/></p></li>
+          <li>Once you have all of your VSA nodes entered, click the <b>Close</b> button. <p><image
+                href="../../media/vsa/cmc3.png"/></p></li>
           <li>Next click the <b>Tasks</b> menu and then navigate to the <b>Management Group</b>
-            submenu and select the <b>New Management Group</b> option. <image
-              href="../../media/vsa/cmc4.png"/></li>
+            submenu and select the <b>New Management Group</b> option. <p><image
+                href="../../media/vsa/cmc4.png"/></p></li>
           <li>In the Management Group wizard, click <b>Next</b> and then select <b>New Management
-              Group</b> and then <b>Next</b> again to continue. <image
-              href="../../media/vsa/cmc5.png"/></li>
+              Group</b> and then <b>Next</b> again to continue. <p><image
+                href="../../media/vsa/cmc5.png"/></p></li>
           <li>Enter a name in the <b>New Management Group Name</b> field and then click <b>Next</b>.
-              <image href="../../media/vsa/cmc6.png"/></li>
+                <p><image href="../../media/vsa/cmc6.png"/></p></li>
           <li>On the <b>Add Administrative User</b> you will enter the required information
             (username/password) for the Administrative user. For example: <ul>
               <li>username- stack </li>
               <li>password-stack</li>
             </ul>
-            <image href="../../media/vsa/cmc7.png"/></li>
+            <p><image href="../../media/vsa/cmc7.png"/></p></li>
           <li>Click <b>Next</b> to display the <b>Management Group Time</b> page.</li>
           <li>Add your NTP server information and click <b>Next</b>
-            <image href="../../media/vsa/cmc8.png"/></li>
+            <p><image href="../../media/vsa/cmc8.png"/></p></li>
           <li>Skip the DNS and SMTP sections. To do so, click <b>Next</b> and a popup will display
             where you can choose the <b>Accept Incomplete</b> option. Repeat this to skip SMTP
-            section as well. <image href="../../media/vsa/cmc9.png"/></li>
+            section as well. <p><image href="../../media/vsa/cmc9.png"/></p></li>
           <li>On the <b>Create a Cluster</b> options, select <b>Standard Cluster</b> from the
-            displayed options and click <b>Next</b>. <image href="../../media/vsa/cmc10.png"/></li>
+            displayed options and click <b>Next</b>. <p><image href="../../media/vsa/cmc10.png"
+              /></p></li>
           <li>In the <b>Cluster Name</b> field, enter the name for the cluster and click
-            <b>Next</b>. <image href="../../media/vsa/cmc11.png"/></li>
+            <b>Next</b>. <p><image href="../../media/vsa/cmc11.png"/></p></li>
           <li>On the <b>Assign Virtual IPs and Subnet Masks</b> page, click <b>Add</b> and enter the
             virtual IP address and subnet mask of the cluster in the respective boxes and click
               <b>OK</b>. <note>The virtual IP address will be found as the
@@ -185,12 +186,12 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
                 <codeph>~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph> file and
               your subnet mask will be the subnet address from the network your VSA nodes are
               attached to, usually your <codeph>MANAGEMENT</codeph> network.</note>
-            <image href="../../media/vsa/cmc12.png"/></li>
+            <p><image href="../../media/vsa/cmc12.png"/></p></li>
           <li>The CMC utility will verify the virtual IP address information and then you can click
             the <b>Next</b> button.</li>
           <li>Select the checkbox for <b>Skip Volume Creation</b> and click the <b>Finish</b> button
-            which will display your VSA management cluster. <image href="../../media/vsa/cmc13.png"
-            /></li>
+            which will display your VSA management cluster. <p><image
+                href="../../media/vsa/cmc13.png"/></p></li>
         </ol></p>
     </section>
 
