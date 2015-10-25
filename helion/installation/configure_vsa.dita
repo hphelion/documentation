@@ -10,25 +10,28 @@
     </section>
     <section id="prereq"><title>Prerequisites</title>
       <p><ul>
-          <li>The Entry Scale Cloud with VSA cloud model should be deployed. For more details on the
-            installation of Entry Scale Cloud with VSA cloud model refer <xref
-              href="install_entryscale_kvm.dita#install_kvm">here</xref></li>
-          <li>Collect the IP address of the VSA VM and Cluster VIP allocated from the<codeph>
+          <li>The Entry-scale KVM with VSA cloud model should be deployed. For more details on the
+            installation refer <xref href="install_entryscale_kvm.dita#install_kvm">here</xref></li>
+          <li>Collect the IP address of the VSA virtual machine and cluster virtual IP addresses
+            allocated from the<codeph>
               ~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph> file. This file is
-            generated as part of output of the configuration processor during installation. You need
-            these IP address to discover deployed VSA and to create storage cluster.</li>
+            generated as part of output of the Configuration Processor during installation. You need
+            these IP address to discover deployed VSA servers and to create the storage
+            clusters.</li>
         </ul>The license for the StoreVirtual VSA license is bundled with HP Helion OpenStack and
-        has a maximum limit of 50 TB per node. Hence the total amount of the configured storage on
-        an individual StoreVirtual node should not exceed 50 TB. To extend the 50 TB per node limit,
-        you can add nodes. A VSA cluster can support up to 16 nodes, which means configured storage
-        on a VSA cluster can be as much as 800 TB.</p>
-      <note>A single VSA can have maximum 7 raw disks (excluding OS disks) attached to it, which is
-        defined in disk input model of VSA node. It is expected not to specify more than 7 disks
-        (including AO disks) for VSA. Suppose if you want to deploy VSA with 2 disks for AO then
-        your disk input model should not specify more than 5 raw disks for data and 2 raw disks for
-        adoptive optimization. Exceeding the disk limit causes VSA deployment failure.</note>
-      <p>You can deploy VSA with adoptive optimization (AO) or without. The process to deploy VSA
-        with AO and without AO is similar with the exception of a change in the disk input model.
+        comes with a free trial which allows a maximum limit of 50 TB per node. Hence the total
+        amount of the configured storage on an individual StoreVirtual node should not exceed 50 TB.
+        To extend the 50 TB per node limit, you can add nodes. A VSA cluster can support up to 16
+        nodes, which means configured storage on a VSA cluster can be as much as 800 TB.</p>
+      <note>A single VSA node can have a maximum of seven raw disks (excluding the operating system
+        disks) attached to it, which is defined in the disk input model for your VSA nodes. It is
+        expected that no more than seven disks are specified (including adoptive optimization disks)
+        per VSA node. For example, if you want to deploy VSA with two disks for adoptive
+        optimization then your disk input model should not specify more than five raw disks for data
+        and two raw disks for adoptive optimization. Exceeding the disk limit causes VSA deployment
+        failure.</note>
+      <p>You can deploy VSA with adoptive optimization (AO) or without. The deployment process for
+        each of these options is similar, you just need to make a change in the disk input model.
         For more detailed information, refer to the <xref
           href="#config_vsa/deploy-vsa-with-ao-without-ao" format="dita">VSA with AO and without
           AO</xref> section below.</p>
