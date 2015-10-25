@@ -195,36 +195,37 @@
       <!-- node maintenance -->
       <topichead navtitle="Node Maintenance">
         <!-- COMPUTE -->
-        <topicref href="helion/operations/add_node.dita"/>
-        <topicref href="helion/operations/repair_node.dita"/>
-        <topicref href="helion/operations/remove_node.dita"/>
-        <topicref href="helion/operations/replace_controller.dita"/>
-        <topicref href="helion/administration/adding_moonshot_nodes.dita"/>
+        <topicref href="helion/operations/add_node.dita" navtitle="Adding a Compute Node" locktitle="yes"/>
+        <topicref href="helion/operations/repair_node.dita" navtitle="Repairing a Compute Node" locktitle="yes"/>
+        <topicref href="helion/operations/remove_node.dita"  navtitle="Removing a Compute Node" locktitle="yes"/>
+        <topicref href="helion/operations/replace_controller.dita"  navtitle="Replacing a Controller Node" locktitle="yes"/>
+        <topicref href="helion/administration/adding_moonshot_nodes.dita" navtitle="Adding Moonshot Nodes" locktitle="yes"/>
 
         <!-- BLOCK STORAGE -->
-        <topicref href="helion/blockstorage/vsa/remove_node.dita"/>
+        <topicref href="helion/blockstorage/vsa/remove_node.dita" navtitle="Removing a VSA Node" locktitle="yes"/>
 
-        <topicref href="helion/blockstorage/ceph/adding_new_osd_node.dita"/>
-        <topicref href="helion/blockstorage/ceph/remove_osd_node.dita"/>
-        <topicref href="helion/blockstorage/ceph/adding_new_monitor_node.dita"/>
-        <topicref href="helion/blockstorage/ceph/remove_monitor_node.dita"/>
+        <topicref href="helion/blockstorage/ceph/adding_new_osd_node.dita" navtitle="Adding an Object Storage Daemon (OSD) Node" locktitle="yes"/>
+        <topicref href="helion/blockstorage/ceph/remove_osd_node.dita" navtitle="Removing an Object Storage Daemon (OSD) Node" locktitle="yes"/>
+        <topicref href="helion/blockstorage/ceph/adding_new_monitor_node.dita" navtitle="Adding a New Ceph Monitor Node" locktitle="yes"/>
+        <topicref href="helion/blockstorage/ceph/remove_monitor_node.dita" navtitle="Removing Ceph Monitor Node" locktitle="yes"/>
 
         <!-- OBJECT STORAGE -->
-        <topicref href="helion/objectstorage/add_new_node.dita"/>
-        <topicref href="helion/objectstorage/add_new_pac_node.dita"/>
-        <topicref href="helion/objectstorage/replacing_drives_swift_node.dita"/>
-        <topicref href="helion/objectstorage/replacing_swift_node.dita"/>
-        <topicref href="helion/objectstorage/removing_node.dita"/>
+        <topicref href="helion/objectstorage/add_new_node.dita" navtitle="Adding a Swift Object Node" locktitle="yes"/>
+        
+        <topicref href="helion/objectstorage/add_new_pac_node.dita" navtitle="Adding Proxy, Account, Container (PAC) Node" locktitle="yes"/>
+        <topicref href="helion/objectstorage/replacing_drives_swift_node.dita" navtitle="Replacing Drives in a Swift Node" locktitle="yes"/>
+        <topicref href="helion/objectstorage/replacing_swift_node.dita" navtitle="Replacing a Swift Node" locktitle="yes"/>
+        <topicref href="helion/objectstorage/removing_node.dita" navtitle="Removing a Swift Node" locktitle="yes"/>
 
       </topichead>
       <!-- end node maintenance -->
       <!-- BLOCK STORAGE -->
-      <topicref href="helion/blockstorage/vsa/vsa_create_multiple_clusters.dita"/>
-      <topicref href="helion/blockstorage/ceph/deploy_monitor_stand_alone_node.dita"/>
-      <topicref href="helion/blockstorage/ceph/ceph_operation.dita"/>
-      <topicref href="helion/blockstorage/singleton_service_cinder.dita"/>
-      <topicref href="helion/blockstorage/ceph/defining_monitor_resource.dita"/>
-      <topicref href="helion/blockstorage/ceph/reconfigure_ceph_services.dita"/>
+      <topicref href="helion/blockstorage/vsa/vsa_create_multiple_clusters.dita"  navtitle="Creating Multiple VSA Clusters" locktitle="yes"/>
+      <topicref href="helion/blockstorage/ceph/deploy_monitor_stand_alone_node.dita" navtitle="Deploying Ceph Monitor Services on Dedicated Resource Nodes" locktitle="yes"/>
+      <topicref href="helion/blockstorage/ceph/ceph_operation.dita" navtitle="Starting, Stopping, and Status for Ceph" locktitle="yes"/>
+      <topicref href="helion/blockstorage/singleton_service_cinder.dita" navtitle="Managing Cinder Volume and Backup Services" locktitle="yes"/>
+      <topicref href="helion/blockstorage/ceph/defining_monitor_resource.dita" navtitle="Defining a Ceph Monitor Resource" locktitle="yes"/>
+      <topicref href="helion/blockstorage/ceph/reconfigure_ceph_services.dita" navtitle="Reconfiguring Ceph Services" locktitle="yes"/>
       <!-- END BLOCK STORAGE -->
 
       <!-- OBJECT STORAGE -->
