@@ -132,60 +132,65 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
             </ol>
             <image href="../../media/vsa/xming1.png"/>
           </li>
-          <li>SSH to first control plane node.
-            <codeblock>ssh -X</codeblock><p>and enter the CMC command (as mentioned below) to launch CMC.</p></li>
+          <li>SSH to first control plane node. <codeblock>ssh -X</codeblock><p>and enter the CMC
+              command (as mentioned below) to launch CMC.</p></li>
         </ol></p>
     </section>
     <section>
       <title><b>Creating a StoreVirtual Cluster and adding it to a new Management Group</b></title>
       <p>Perform the following steps to create the cluster.<ol id="ol_yln_fhl_jt">
-          <li>Run the following command to open
-              CMC.<codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock><p>By
-              default, the CMC is configured to discover the StoreVirtual nodes in the subnet in
-              which it is installed. You can manually add the nodes also.<note type="attention"
-                >Discovery functionality of VSA nodes using CMC controller node is not recommended
-                in HP Helion OpenStack 2.0. User needs to manually add VSA and create a
-                cluster.</note></p></li>
-          <li>In the CMC UI, click <b>Find</b> and then click <b>Find Systems</b> from the left
-            panel. Find Systems dialogue box is displayed.</li>
-          <li>You can choose <b>Add</b> or <b>Find</b> option to search the system. Find option
-            starts searching for the nodes in the same subnet as that of CMC. Add option displays an
-              <b>Enter IP</b> pop-up box to enter the IP of the StoreVirtual system.</li>
-          <li>In the CMC UI, click <b>Tasks</b> then point to <b>Management Group</b> and click<b>
-              New Management Group</b>.</li>
-          <li>In the <b>New Management Group Name</b> box, enter a name for the management group.
-            For example: <codeph>hlm003-vsa-mg</codeph></li>
-          <li>Click <b>Next</b> to display the Add Administrative User page.</li>
-          <li>Enter the required information (username/password) for the Administrative User. For
-              example:<ul id="ul_rsk_fn2_tt">
+          <li>Run the following command to open the HP StoreVirtual Centralized Management Console
+            (CMC) GUI: <codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock>
+            <p>By default, the CMC GUI is configured to discover the StoreVirtual nodes in the
+              subnet in which it is installed This discovery functionality of VSA nodes using CMC
+              controller node is not recommended in HP Helion OpenStack. Instead, it is recommended
+              that you manually add each VSA node.</p></li>
+          <li>In the CMC GUI, click the <b>Find</b> menu and then select the <b>Find Systems</b>
+            options. <image href="../../media/vsa/cmc1.png"/>
+          </li>
+          <li>Click the <b>Add</b> button which will open the <b>Enter IP Address</b> dialogue box
+            where you can enter the IP address of your VSA nodes which you noted earlier from your
+              <codeph>~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph> file. <image
+              href="../../media/vsa/cmc2.png"/></li>
+          <li>Once you have all of your VSA nodes entered, click the <b>Close</b> button. <image
+              href="../../media/vsa/cmc3.png"/></li>
+          <li>Next click the <b>Tasks</b> menu and then navigate to the <b>Management Group</b>
+            submenu and select the <b>New Management Group</b> option. <image
+              href="../../media/vsa/cmc4.png"/></li>
+          <li>In the Management Group wizard, click <b>Next</b> and then select <b>New Management
+              Group</b> and then <b>Next</b> again to continue. <image
+              href="../../media/vsa/cmc5.png"/></li>
+          <li>Enter a name in the <b>New Management Group Name</b> field and then click <b>Next</b>.
+              <image href="../../media/vsa/cmc6.png"/></li>
+          <li>On the <b>Add Administrative User</b> you will enter the required information
+            (username/password) for the Administrative user. For example: <ul>
               <li>username- stack </li>
               <li>password-stack</li>
-            </ul></li>
-          <li>Click <b>Next</b> to display the Management Group Time page. </li>
-          <li>Add NTP server information and click <b>Next</b> to display the Domain Name System
-            Configuration page.</li>
-          <li>Skip the DNS and SMTP sections. To do so, <ul id="ul_g42_ngz_qt">
-              <li>Click <b>Next</b> . A pop box displays and click <b>Accept Incomplete</b>. Repeat
-                this to skip SMTP section
-                too.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></li>
-            </ul></li>
-          <?oxy_custom_end?>
-          <li>Click <b>Next</b> to display a Wizard in the Create a Cluster page.</li>
-          <li>Select the cluster type as <i>Standard Cluster</i> from the displayed options and
-            click <b>Next</b>.</li>
-          <li>In the <b>Cluster Name</b> box, enter the name of the cluster and click <b>Next</b>.
-            For example: <codeph>hlm003-vsa-cluster</codeph>.</li>
-          <li>In the Assign Virtual IP's and Subnet Masks page is displayed.</li>
-          <li>Click Add. Add VIPs and Subnet Masks pop-up box displays, enter the virtual IP and
-            Subnet Mask of the cluster in the respective boxes and click <b>OK</b>.
-              <!--The details are displayed in a tabular format in the page. --><note>The VIP IP can
-              be found as the cluster IP value in the
-                <codeph>~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph>
-              file.</note></li>
-          <li>Click <b>Next</b> to go to the next page.</li>
-          <li>Select the checkbox displayed against <b>Skip Volume Creation</b>.</li>
-          <li>Click <b>Finish</b>. The Management Group and Cluster is created and displays in the
-            Home page of CMC.<p>Wait till the cluster is displayed in the Home Page of CMC.</p></li>
+            </ul>
+            <image href="../../media/vsa/cmc7.png"/></li>
+          <li>Click <b>Next</b> to display the <b>Management Group Time</b> page.</li>
+          <li>Add your NTP server information and click <b>Next</b>
+            <image href="../../media/vsa/cmc8.png"/></li>
+          <li>Skip the DNS and SMTP sections. To do so, click <b>Next</b> and a popup will display
+            where you can choose the <b>Accept Incomplete</b> option. Repeat this to skip SMTP
+            section as well. <image href="../../media/vsa/cmc9.png"/></li>
+          <li>On the <b>Create a Cluster</b> options, select <b>Standard Cluster</b> from the
+            displayed options and click <b>Next</b>. <image href="../../media/vsa/cmc10.png"/></li>
+          <li>In the <b>Cluster Name</b> field, enter the name for the cluster and click
+            <b>Next</b>. <image href="../../media/vsa/cmc11.png"/></li>
+          <li>On the <b>Assign Virtual IPs and Subnet Masks</b> page, click <b>Add</b> and enter the
+            virtual IP address and subnet mask of the cluster in the respective boxes and click
+              <b>OK</b>. <note>The virtual IP address will be found as the
+                <codeph>cluster_ip</codeph> value in your
+                <codeph>~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph> file and
+              your subnet mask will be the subnet address from the network your VSA nodes are
+              attached to, usually your <codeph>MANAGEMENT</codeph> network.</note>
+            <image href="../../media/vsa/cmc12.png"/></li>
+          <li>The CMC utility will verify the virtual IP address information and then you can click
+            the <b>Next</b> button.</li>
+          <li>Select the checkbox for <b>Skip Volume Creation</b> and click the <b>Finish</b> button
+            which will display your VSA management cluster. <image href="../../media/vsa/cmc13.png"
+            /></li>
         </ol></p>
     </section>
 
