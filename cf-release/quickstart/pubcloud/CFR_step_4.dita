@@ -33,11 +33,11 @@
                 <filepath><varname>&lt;number></varname>-Project-openrc.sh</filepath> file that you
               have downloaded in <b>Step 3</b> to your terminal session.<ul id="ul_ptr_bwp_tt">
                 <li>On a Linux machine, navigate to the directory that contains the
-                    <filepath>.sh</filepath> file and source the file, for
+                    <filepath>sh</filepath> file and source the file, for
                   example:<codeblock>source <filepath>12345678901234-Project-openrc.sh</filepath></codeblock>Enter
                   your OpenStack password when prompted.</li>
-                <li>On a Windows machine, add variables from the <filepath>.sh</filepath> file at
-                  the command prompt, or add the commands to a batch file, for
+                <li>On a Windows machine, add variables from the <filepath>sh</filepath> file at the
+                  command prompt, or add the commands to a batch file, for
                   example:<codeblock>set OS_AUTH_URL=https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/
 set OS_USERNAME=myUsername
 set OS_PASSWORD=myPassword123
@@ -58,9 +58,9 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
                 </ul></note></li>
             <li>Decompress the <keyword keyref="prodShort"/> file into a convenient directory.</li>
             <li>Navigate to the <keyword keyref="prodShort"/> directory and ensure that it contains
-              a <filepath>.tfvars</filepath> file. Your <filepath>.tfvars</filepath> file should
+              a <filepath>tfvars</filepath> file. Your <filepath>tfvars</filepath> file should
               contain the credentials and keys for your cluster.</li>
-            <li>Configure the necessary values in your <filepath>.tfvars</filepath> file, using the
+            <li>Configure the necessary values in your <filepath>tfvars</filepath> file, using the
               included <filepath>overrides.tfvars.sample</filepath> file as a guide.<note>For more
                 information, see <xref
                   href="../../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt">Terraform
@@ -93,7 +93,7 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
                     <uicontrol>Access and Security</uicontrol>
                   </menucascade>.</li>
               </ul><p>Ensure that the required security group is available, for example
-                  <uicontrol>hcf-container-host</uicontrol>.</p></li>
+                  <uicontrol>hcf-container-host</uicontrol>grep.</p></li>
           </ol><xref href="CFR_step_5.dita#concept_cw2_thz_st">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
           </xref></stentry>
