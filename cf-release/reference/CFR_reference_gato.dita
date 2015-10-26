@@ -19,11 +19,11 @@
       <dl>
         <dlentry>
           <dt><filepath>--help</filepath>, <filepath>-h</filepath></dt>
-          <dd>show help</dd>
+          <dd>Show help.</dd>
         </dlentry>
         <dlentry>
           <dt><filepath>--version</filepath>, <filepath>-v</filepath></dt>
-          <dd>print the version</dd>
+          <dd>Print the version.</dd>
         </dlentry>
       </dl>
     </section>
@@ -34,467 +34,118 @@
           <dt><filepath>config</filepath></dt>
           <dd>Manipulate configuration values of <keyword keyref="prodShort"/> components.<ul
               id="ul_x4n_dtj_rt">
-              <li><filepath>get</filepath></li>
-              <li><filepath>set</filepath></li>
+              <li><xref href="#reference_cd3_bs3_rt/config_get" format="dita"><filepath>config
+                    get</filepath></xref></li>
+              <li><xref href="#reference_cd3_bs3_rt/config_set" format="dita"><filepath>config
+                    set</filepath></xref></li>
             </ul></dd>
         </dlentry>
         <dlentry>
           <dt><filepath>help</filepath></dt>
-          <dd>Shows a list of commands or help for one command</dd>
-        </dlentry>
-        <dlentry>
-          <dt><filepath>info</filepath></dt>
-          <dd>Show information about this node or cluster including assigned and available roles.<dl>
-              <dlentry>
-                <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
-                <dd>Show info on a specific cluster node</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--json</filepath>, <filepath>-j</filepath></dt>
-                <dd>Output as JSON.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--yaml</filepath>, <filepath>-y</filepath></dt>
-                <dd>Output as YAML.</dd>
-              </dlentry>
-            </dl></dd>
-        </dlentry>
-        <dlentry>
-          <dt><filepath>node</filepath></dt>
-          <dd>Node management.<ul id="ul_ypb_hy3_rt">
-              <li><xref href="#reference_cd3_bs3_rt/node_attach" format="dita"><filepath>node
-                    attach</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/node_availabilityzone" format="dita"
-                    ><filepath>node availabilityzone</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/node_list" format="dita"><filepath>node
-                    list</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/node_placementzone" format="dita"><filepath>node
-                    placementzone</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/node_remove" format="dita"><filepath>node
-                    remove</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/node_rename" format="dita"><filepath>node
-                    rename</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/node_retire" format="dita"><filepath>node
-                    retire</filepath></xref></li>
-              <li><filepath>node version</filepath></li>
-            </ul></dd>
-        </dlentry>
-        <dlentry>
-          <dt><filepath>op</filepath></dt>
-          <dd>Various operational commands.<ul id="ul_umg_l2j_rt">
-              <li><xref href="#reference_cd3_bs3_rt/op_dhcp" format="dita"><filepath>op
-                    dhcp</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/op_import_from_yaml_files" format="dita"
-                    ><filepath>op import_from_yaml_files</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/op_import_from_yaml_file" format="dita"
-                    ><filepath>op import_from_yaml_file</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/op_static_ip" format="dita"><filepath>op
-                    static_ip</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/op_update_hostsfile" format="dita"><filepath>op
-                    update_hostsfile</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/op_upstream_proxy" format="dita"><filepath>op
-                    upstream_proxy</filepath></xref></li>
-            </ul></dd>
-        </dlentry>
-        <dlentry>
-          <dt><filepath>process</filepath></dt>
-          <dd>Start, stop, or restart individual processes. Generally not required; use
-            <filepath><keyword keyref="adminUtilCLI"/> start|stop|restart</filepath> on roles (sets of processes) instead.<ul
-              id="ul_u1j_3gj_rt">
-              <li><xref href="#reference_cd3_bs3_rt/process_list" format="dita"><filepath>process
-                    list</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/process_start" format="dita"><filepath>process
-                    start|stop|restart</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/process_ready" format="dita"><filepath>process
-                    ready</filepath></xref></li>
-            </ul></dd>
-        </dlentry>
-        <dlentry>
-          <dt><filepath>report</filepath></dt>
-          <dd>Generate a report that can be sent to <keyword keyref="prodShort"/> support.<dl>
-              <dlentry>
-                <dt><filepath>--cluster</filepath>, <filepath>-c</filepath></dt>
-                <dd>Gather reports from entire cluster into one tarball.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
-                <dd>Gather report from a specific cluster node.</dd>
-              </dlentry>
-            </dl></dd>
-        </dlentry>
-        <dlentry>
-          <dt><filepath>restart</filepath></dt>
-          <dd>Restart <keyword keyref="prodShort"/> or individual roles.<dl>
-              <dlentry>
-                <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
-                <dd>Restart a specific cluster node.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>-verbose</filepath>, <filepath>-v</filepath></dt>
-                <dd>Show process information.</dd>
-              </dlentry>
-            </dl></dd>
+          <dd>Show a list of commands or help for one command</dd>
         </dlentry>
         <dlentry>
           <dt><filepath>role</filepath></dt>
-          <dd>Management of node roles.<ul id="ul_blk_nhj_rt">
-              <li><xref href="#reference_cd3_bs3_rt/role_add" format="dita"><filepath>role
-                    add</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/role_remove" format="dita"><filepath>role
-                    remove</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/role_info" format="dita"><filepath>role
-                    info</filepath></xref></li>
+          <dd>Manage node roles. By default, uses the <codeph>$DOCKER_HOST</codeph> environment
+            variable to determine the docker server endpoint. Use the <filepath>--node</filepath>
+            flag to stop <varname>&lt;role></varname> container on a specific node.<ul
+              id="ul_blk_nhj_rt">
+              <li><xref href="#reference_cd3_bs3_rt/role_start" format="dita"><filepath>role
+                    start</filepath></xref></li>
+              <li><xref href="#reference_cd3_bs3_rt/role_stop_restart" format="dita"><filepath>role
+                    stop</filepath></xref></li>
+              <li><xref href="#reference_cd3_bs3_rt/role_stop_restart" format="dita"><filepath>role
+                    restart</filepath></xref></li>
             </ul></dd>
+        </dlentry>
+      </dl>
+      <dl>
+        <dlentry>
+          <dt><filepath>status</filepath></dt>
+          <dd>Retrieve the status of a <keyword keyref="prodShort"/> cluster.<dl>
+              <dlentry>
+                <dt><filepath>--all</filepath>, <filepath>-a</filepath></dt>
+                <dd>Show each individual process.</dd>
+              </dlentry>
+            </dl></dd>
+        </dlentry>
+        <dlentry>
+          <dt><filepath>target</filepath></dt>
+          <dd>Target a <keyword keyref="prodShort"/> config store.</dd>
         </dlentry>
       </dl>
     </section>
     <section>
       <title>Command Options</title>
       <dl>
-        <dlentry>
+        <dlentry id="config_get">
           <dt><filepath><keyword keyref="adminUtilCLI"/> config get <varname>[command
                 options]</varname>
               <varname>[arguments...]</varname></filepath></dt>
-          <dd>Look up the current and default values of a configuration<dl>
+          <dd>Look up the current and default values of a configuration.<dl>
               <dlentry>
                 <dt><filepath>--quiet</filepath>, <filepath>-q</filepath></dt>
-                <dd>Output only the values  </dd>
+                <dd>Output only the config values.</dd>
               </dlentry>
               <dlentry>
                 <dt><filepath>--role</filepath>, <filepath>-r</filepath></dt>
-                <dd>Get a specific role's config variable</dd>
+                <dd>Get a specific role's config variable.</dd>
               </dlentry>
             </dl></dd>
         </dlentry>
-        <dlentry id="gato_config">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> config set <varname>[options]</varname>
-              <varname>&lt;component></varname>
-              <varname>&lt;key-path></varname>
-              <varname>[&lt;value>]</varname></filepath></dt>
-          <dd><filepath><varname>&lt;component></varname></filepath> can be
-              <filepath>cluster</filepath>, <filepath>local</filepath> or the name of a process.<dl>
+        <dlentry id="config_set">
+          <dt><filepath><keyword keyref="adminUtilCLI"/> config set <varname>[command
+                options]</varname>
+              <varname>[arguments...]</varname></filepath></dt>
+          <dd>Set the current value of a configuration.<dl>
               <dlentry>
-                <dt><filepath>--json</filepath>, <filepath>-j</filepath></dt>
-                <dd>For <filepath>set</filepath>, use JSON format when setting config key values.
-                  For <filepath>get</filepath>, use JSON format for displaying output.</dd>
+                <dt><filepath>--role</filepath>, <filepath>-r</filepath></dt>
+                <dd>Set a specific role's configuration.</dd>
               </dlentry>
               <dlentry>
-                <dt><filepath>--yaml</filepath>, <filepath>-y</filepath></dt>
-                <dd>Use YAML format when retrieving or setting config key values. YAML is the
-                  default output format.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--flat</filepath>, <filepath>-f</filepath></dt>
-                <dd>Use a flat output format <filepath><varname>&lt;full-config-path></varname>
-                    <varname>&lt;value></varname></filepath></dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--force</filepath></dt>
-                <dd>Force updating value to different type.</dd>
+                <dt><filepath>--file</filepath>, <filepath>-f</filepath></dt>
+                <dd>Read values from file or from stdin if followed by dash (-).</dd>
               </dlentry>
             </dl></dd>
         </dlentry>
       </dl>
       <dl>
-        <dlentry id="node_attach">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> node attach <varname>[options]</varname>
-              <varname>&lt;core-ip></varname></filepath></dt>
-          <dd>Attach this node to a <keyword keyref="prodShort"/> core node<dl>
-              <dlentry>
-                <dt><filepath>--enable</filepath>, <filepath>-e</filepath></dt>
-                <dd>Enable the specified roles (comma-separated, no spaces)</dd>
-              </dlentry>
-            </dl><dl>
-              <dlentry>
-                <dt><filepath>--no-start</filepath>, <filepath>-s</filepath></dt>
-                <dd>Do not auto start processes</dd>
-              </dlentry>
-            </dl><dl>
-              <dlentry>
-                <dt><filepath>--verbose</filepath>, <filepath>-v</filepath></dt>
-                <dd>Show process information when starting/stopping roles</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--force</filepath>, <filepath>-f</filepath></dt>
-                <dd>Forces this node to attach to a core node, ignoring any version mismatches</dd>
-              </dlentry>
-            </dl></dd>
-        </dlentry>
-      </dl>
-      <dl>
-        <dlentry id="node_availabilityzone">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> node availabilityzone <varname>[options]</varname>
-              <varname>[&lt;zone>]</varname></filepath></dt>
-          <dd>
-            <dl>
+        <dlentry id="role_start">
+          <dt><filepath><keyword keyref="adminUtilCLI"/> role start <varname>[command
+                options]</varname>
+              <varname>[arguments...]</varname></filepath></dt>
+          <dd>Start the <varname>&lt;role></varname> container.<dl>
               <dlentry>
                 <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
-                <dd>Sets the availability zone on the specified DEA node, local node is used if not
-                  specified</dd>
-              </dlentry>
-            </dl>
-          </dd>
-        </dlentry>
-        <dlentry id="node_list">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> node list <varname>[options]</varname></filepath></dt>
-          <dd>List all nodes known to this cluster<dl>
-              <dlentry>
-                <dt><filepath>--json</filepath>, <filepath>-j</filepath></dt>
-                <dd>Use JSON format for displaying output</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--yaml</filepath>, <filepath>-y</filepath></dt>
-                <dd>Use YAML format for displaying output</dd>
+                <dd>Set  the Docker server endpoint. Schemes and port number are required. Supported
+                  schemes: <codeph>tcp://</codeph>
+                  <codeph>unix://</codeph>
+                  <codeph>http://</codeph>
+                  <codeph>https://</codeph></dd>
               </dlentry>
             </dl></dd>
         </dlentry>
-        <dlentry id="node_placementzone">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> node placementzone <varname>&lt;add|list|remove></varname>
-              <varname>[options]</varname>
-              <varname>[&lt;node-IP>]</varname></filepath></dt>
-          <dd>
-            <note type="attention"><b>&lt;INTERNAL NOTE> The help topic for this option has not been
-                coded yet.</b></note>
-          </dd>
-        </dlentry>
-        <dlentry id="node_remove">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> node remove <varname>[--skip-detach]</varname>
-              <varname>&lt;node-IP></varname>...</filepath></dt>
-          <dd>Remove the node(s) from the cluster<dl>
-              <dlentry>
-                <dt><filepath>--skip-detach</filepath>, <filepath>-s</filepath></dt>
-                <dd>Skips updating the removed nodes config via detaching the node, only use this if
-                  the node has already been destroyed</dd>
-              </dlentry>
-            </dl></dd>
-        </dlentry>
-        <dlentry id="node_rename">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> node rename <varname>[options]</varname> &lt;hostname></filepath></dt>
-          <dd>
-            <dl>
-              <dlentry>
-                <dt><filepath>--skip-remap-hosts</filepath>, <filepath>-s</filepath></dt>
-                <dd>Skip the remapping of existing app URLS to the new domain.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--skip-ssl-regeneration</filepath>, <filepath>-l</filepath></dt>
-                <dd>Skip regenerating the SSL keys.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--no-restart</filepath>, <filepath>-r</filepath></dt>
-                <dd>Do not restart roles.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--verbose</filepath>, <filepath>-v</filepath></dt>
-                <dd>Show process information when restarting roles.</dd>
-              </dlentry>
-            </dl>
-          </dd>
-        </dlentry>
-        <dlentry id="node_retire">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> node retire <varname>[options]</varname></filepath></dt>
-          <dd>Gracefully retires a DEA node from the cluster. New instances of the apps are started
-            on other available DEAs before the retiring DEA is shutdown.<dl>
+        <dlentry id="role_stop_restart">
+          <dt><filepath><keyword keyref="adminUtilCLI"/> role stop <varname>[command
+                options]</varname>
+              <varname>[arguments...]</varname></filepath></dt>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> role restart <varname>[command
+                options]</varname>
+              <varname>[arguments...]</varname></filepath></dt>
+          <dd>Stop or restart the <varname>&lt;role></varname> container.<dl>
               <dlentry>
                 <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
-                <dd>Retire the specified DEA node, local node is used if not specified</dd>
+                <dd>Set  the Docker server endpoint. Schemes and port number are required. Supported
+                  schemes: <codeph>tcp://</codeph>
+                  <codeph>unix://</codeph>
+                  <codeph>http://</codeph>
+                  <codeph>https://</codeph></dd>
+              </dlentry>
+              <dlentry>
+                <dt><filepath>--timeout</filepath>, <filepath>-t "0"</filepath></dt>
+                <dd>Set the number of seconds to wait before killing the container.</dd>
               </dlentry>
             </dl></dd>
-        </dlentry>
-        <dlentry id="op_dhcp">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> op dhcp</filepath></dt>
-          <dd>Configure this node's networking to use DHCP</dd>
-        </dlentry>
-        <dlentry id="op_import_from_yaml_files">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> op import_from_yaml_files <varname>[--upgrade]</varname>
-              <varname>[--new-key-file=&lt;file>]</varname></filepath></dt>
-          <dd>Import configuration from YAML files for all processes, deleting and replacing prior configuration.<dl>
-              <dlentry>
-                <dt><filepath>--new-key-file</filepath></dt>
-                <dd>Override config with a specific YAML file.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--upgrade</filepath></dt>
-                <dd>Merge the new configuration rather than deleting and replacing.</dd>
-              </dlentry>
-            </dl></dd>
-        </dlentry>
-        <dlentry id="op_import_from_yaml_file">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> op import_from_yaml_file <varname>[--upgrade]</varname>
-              <varname>[--new-key-file=&lt;file>]</varname>
-              <varname>&lt;process></varname></filepath></dt>
-          <dd>Import the YAML configuration for a single process, deleting and replacing all prior
-            configuration for that process.<dl>
-              <dlentry>
-                <dt><filepath>--new-key-file</filepath></dt>
-                <dd>Override config with a specific YAML file.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--upgrade</filepath></dt>
-                <dd>Merge the new configuration rather than deleting and replacing.</dd>
-              </dlentry>
-            </dl></dd>
-        </dlentry>
-        <dlentry id="op_static_ip">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> op static_ip <varname>[options]</varname></filepath></dt>
-          <dd>Configures this node to use a static IP. Interactively prompts for inputs if they are
-            not specified as options.<dl>
-              <dlentry>
-                <dt><filepath>--interface</filepath></dt>
-                <dd>Network interface to configure (e.g. <filepath>eth0</filepath>).</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--ip</filepath></dt>
-                <dd>Host IP address.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--netmask</filepath></dt>
-                <dd>Network netmask (e.g. <filepath>255.255.255.0</filepath>).</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--gateway</filepath></dt>
-                <dd>Network gateway (IP address).</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--dns-nameservers</filepath></dt>
-                <dd>Optional list of DNS names servers (e.g. <filepath>10.0.0.252</filepath>,
-                    <filepath>10.0.0.253</filepath>).</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--dns-search-domains</filepath></dt>
-                <dd>Optional list of DNS search domains (e.g. <filepath>example.com</filepath>,
-                    <filepath>example.org</filepath>).</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--restart-network</filepath></dt>
-                <dd>Restart networking.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--no-restart</filepath></dt>
-                <dd>Do not restart processes.</dd>
-              </dlentry>
-            </dl></dd>
-        </dlentry>
-        <dlentry id="op_update_hostsfile">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> op update_hostsfile</filepath></dt>
-          <dd>Updates the <filepath>/etc/hosts</filepath> file with the endpoint URI mapped to the
-            cloud controller's internal IP.</dd>
-        </dlentry>
-        <dlentry id="op_upstream_proxy">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> op upstream_proxy <varname>&lt;set|delete></varname>
-              <varname>[options]</varname></filepath></dt>
-          <dd>
-            <note type="attention"><b>&lt;INTERNAL NOTE> This option has not been coded
-              yet.</b></note>
-          </dd>
-        </dlentry>
-        <dlentry id="process_list">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> process list <varname>[options]</varname>
-              <varname>[&lt;process>...]</varname></filepath></dt>
-          <dd>Lists configured processes and their current running status.<dl>
-              <dlentry>
-                <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
-                <dd>Get status for a specific cluster node (defaults to local node)</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--cluster</filepath>, <filepath>-c</filepath></dt>
-                <dd>Takes action on all nodes in the cluster</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--json</filepath>, <filepath>-j</filepath></dt>
-                <dd>Use JSON format for displaying output</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--yaml</filepath>, <filepath>-y</filepath></dt>
-                <dd>Use YAML format for displaying output</dd>
-              </dlentry>
-            </dl></dd>
-        </dlentry>
-        <dlentry id="process_start">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> process <varname>&lt;start|stop|restart></varname>
-              <varname>[options]</varname>
-              <varname>[&lt;process>...]</varname></filepath></dt>
-          <dd>Starts, stops, or restarts a process.<dl>
-              <dlentry>
-                <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
-                <dd>Take action on a specific cluster node</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--cluster</filepath>, <filepath>-c</filepath></dt>
-                <dd>Takes action on all nodes in the cluster</dd>
-              </dlentry>
-            </dl></dd>
-        </dlentry>
-        <dlentry id="process_ready">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> process ready <varname>[options]</varname>
-              <varname>&lt;process></varname></filepath></dt>
-          <dd>Waits for a process to be ready.<dl>
-              <dlentry>
-                <dt><filepath>--block</filepath>, <filepath>-b "0"</filepath></dt>
-                <dd>Block until ready, for max <filepath>&lt;seconds></filepath> seconds. If
-                    <filepath>&lt;seconds></filepath> is 0, then block forever.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
-                <dd>Check process on a specific cluster node.</dd>
-              </dlentry>
-            </dl></dd>
-        </dlentry>
-        <dlentry id="role_add">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> role add <varname>[options]</varname>
-              <varname>&lt;role></varname>...</filepath></dt>
-          <dd>Enables roles on a node<dl>
-              <dlentry>
-                <dt><filepath>--all</filepath>, <filepath>-a</filepath></dt>
-                <dd>Enable all available roles.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--all-but</filepath>, <filepath>-b</filepath></dt>
-                <dd>Enable all available roles except these.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--only</filepath>, <filepath>-o</filepath></dt>
-                <dd>Enable only these roles, while disabling others.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
-                <dd>Add a role on a specific cluster node.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--no-start</filepath>, <filepath>-s</filepath></dt>
-                <dd>Do not start processes.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--verbose</filepath>, <filepath>-v</filepath></dt>
-                <dd>Show process information.</dd>
-              </dlentry>
-            </dl></dd>
-        </dlentry>
-        <dlentry id="role_remove">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> role remove <varname>[options]</varname>
-              <varname>&lt;role></varname>...</filepath></dt>
-          <dd>Disables roles on a node<dl>
-              <dlentry>
-                <dt><filepath>--all</filepath>, <filepath>-a</filepath></dt>
-                <dd>Enable all available roles.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--all-but</filepath>, <filepath>-b</filepath></dt>
-                <dd>Enable all available roles except these.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
-                <dd>Add a role on a specific cluster node.</dd>
-              </dlentry>
-              <dlentry>
-                <dt><filepath>--verbose</filepath>, <filepath>-v</filepath></dt>
-                <dd>Show process information.</dd>
-              </dlentry>
-            </dl></dd>
-        </dlentry>
-        <dlentry id="role_info">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> role info <varname>&lt;role></varname>...</filepath></dt>
-          <dd>Display info on roles</dd>
         </dlentry>
       </dl>
     </section>
