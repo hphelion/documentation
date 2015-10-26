@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="allocating-disk-drives">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Allocating Disk Drives</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Allocating Disk Drives for Object
+    Storage</title>
   <body><!--Needs Edit; edited 10/22; needs additional edits by Binamra to address Donagh's feedback-->
     <p>The disk model describes the configuration of disk drives
       <!--the number of disk present on a particular server--> and their usage. The examples include
