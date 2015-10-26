@@ -19,7 +19,7 @@
             node</xref>.<note><?oxy_custom_start type="oxy_content_highlight" color="140,255,140"?>The
             cloud with Ceph cluster expects the network group that will be used for management
             traffic within the cloud to be left to its default value i.e. MANAGEMENT. Altering the
-            name will lead  to failures in cloud deployment, therefore should be
+            name will lead to failures in cloud deployment, therefore it should be
             avoided.<?oxy_custom_end?></note></li>
       </ul>
     </section>
