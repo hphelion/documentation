@@ -11,10 +11,8 @@
  <conbody>
   <p>The Open Source and Third-Party Software License Agreements for <keyword keyref="prodLong"/>
    are available as a PDF download.</p>
-  <draft-comment author="michaelk">
-   <p><xref href="http://www.example.com/agreement.pdf" format="pdf" scope="external">Download the
+  <p><xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HPHelion_CloudFoundry_v1_OSRB.pdf" format="pdf" scope="external">Download the
      PDF document</xref></p>
-  </draft-comment>
-  <note>Allow sufficient time for the document to load fully.</note>
+  <note type="tip">Allow sufficient time for the document to load fully.</note>
  </conbody>
 </concept>

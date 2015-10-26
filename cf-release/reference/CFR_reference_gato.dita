@@ -31,15 +31,11 @@
       <title>Commands</title>
       <dl>
         <dlentry>
-          <dt><xref href="#reference_cd3_bs3_rt/gato_config" format="dita"
-                ><filepath>config</filepath></xref></dt>
+          <dt><filepath>config</filepath></dt>
           <dd>Manipulate configuration values of <keyword keyref="prodShort"/> components.<ul
               id="ul_x4n_dtj_rt">
               <li><filepath>get</filepath></li>
               <li><filepath>set</filepath></li>
-              <li><filepath>del</filepath></li>
-              <li><filepath>push</filepath></li>
-              <li><filepath>pop</filepath></li>
             </ul></dd>
         </dlentry>
         <dlentry>
@@ -63,14 +59,6 @@
               </dlentry>
             </dl></dd>
         </dlentry>
-        <!--
-        <dlentry>
-          <dt><filepath>inspect</filepath></dt>
-          <dd>Detect common problems with your <keyword keyref="prodShort"/> install using
-            <filepath><keyword keyref="adminUtilCLI"/> inspect</filepath>.<note type="attention"><b>&lt;INTERNAL NOTE> This
-                option has not been coded yet.</b></note></dd>
-        </dlentry>
-        -->
         <dlentry>
           <dt><filepath>node</filepath></dt>
           <dd>Node management.<ul id="ul_ypb_hy3_rt">
@@ -163,24 +151,26 @@
     <section>
       <title>Command Options</title>
       <dl>
+        <dlentry>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> config get <varname>[command
+                options]</varname>
+              <varname>[arguments...]</varname></filepath></dt>
+          <dd>Look up the current and default values of a configuration<dl>
+              <dlentry>
+                <dt><filepath>--quiet</filepath>, <filepath>-q</filepath></dt>
+                <dd>Output only the values  </dd>
+              </dlentry>
+              <dlentry>
+                <dt><filepath>--role</filepath>, <filepath>-r</filepath></dt>
+                <dd>Get a specific role's config variable</dd>
+              </dlentry>
+            </dl></dd>
+        </dlentry>
         <dlentry id="gato_config">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> config get <varname>[options]</varname>
-              <varname>[&lt;component>]</varname><varname>[&lt;key-path>]</varname></filepath></dt>
           <dt><filepath><keyword keyref="adminUtilCLI"/> config set <varname>[options]</varname>
               <varname>&lt;component></varname>
               <varname>&lt;key-path></varname>
               <varname>[&lt;value>]</varname></filepath></dt>
-          <dt><filepath><keyword keyref="adminUtilCLI"/> config del <varname>[options]</varname>
-              <varname>&lt;component></varname>
-              <varname>&lt;key-path></varname></filepath></dt>
-          <dt><filepath><keyword keyref="adminUtilCLI"/> config push <varname>[options]</varname>
-              <varname>&lt;component></varname>
-              <varname>&lt;key-path></varname>
-              <varname>&lt;value></varname></filepath></dt>
-          <dt><filepath><keyword keyref="adminUtilCLI"/> config pop <varname>[options]</varname>
-              <varname>&lt;component></varname>
-              <varname>&lt;key-path></varname>
-              <varname>&lt;value></varname></filepath></dt>
           <dd><filepath><varname>&lt;component></varname></filepath> can be
               <filepath>cluster</filepath>, <filepath>local</filepath> or the name of a process.<dl>
               <dlentry>
