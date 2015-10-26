@@ -14,6 +14,9 @@
         <li><xref href="#install_verification/swift_verify">Validate Your Object Storage (Swift)
             Setup</xref></li>
       </ul>
+      <note type="important">If you are using the Entry-scale with Swift model, skip to the <xref
+          href="#install_verification/swift_verify">Validate Your Object Storage (Swift)
+          Setup</xref> section and do not run the Tempest verification steps.</note>
     </section>
     <section id="prereqs"><title>Pre-requisites</title>
       <p>The verification tests rely on you having a cloud image in your image (Glance) repository.
