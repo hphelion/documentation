@@ -2,26 +2,30 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Post-Alpha Release Build 22:
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Post-Alpha Release Build 22:
         Configuring SR-IOV</title>
-  <prolog>
-    <metadata>
-      <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
-      <othermeta name="role" content="Storage Administrator"/>
-      <othermeta name="role" content="Storage Architect"/>
-      <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
-    </metadata>
-  </prolog>
-  <body>
+    <prolog>
+        <metadata>
+            <othermeta name="layout" content="default"/>
+            <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+            <othermeta name="role" content="Storage Administrator"/>
+            <othermeta name="role" content="Storage Architect"/>
+            <othermeta name="role" content="Michael B"/>
+            <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+        </metadata>
+    </prolog>
+    <body>
         <p>A SR-IOV Ethernet interface is a physical PCI Ethernet NIC that implements hardware-based
             virtualization mechanisms to expose multiple virtual network interfaces that can be used
             by one or more virtual machines simultaneously.</p>
-      <section>
-        <p><b>Configure WR Compute Nodes</b></p>
+        <p>The process for configuring SR-IOV includes creating a VLAN provider network and subnet,
+            then attaching VMs to that network.</p>
+        <section>
+            <p><b>Configure WR Compute Nodes</b>
+                <!--Beta only!! Remove for GA--></p>
             <ol id="ol_qnf_5sg_tt">
-                <li>Log into the KVM region controller-0 node with root privileges.</li>
+                <li>Log into the KVM region <codeph>controller-0</codeph> node with root
+                    privileges.</li>
                 <li>Identify the compute node with Niantic NIC and configure the node. In this
                     example, <codeph>eth8</codeph> of <codeph>mem17-compute0</codeph> is used as
                     SR-IOV
@@ -30,32 +34,83 @@ system host-lock mem17-compute0
 system host-if-modify -nt pci-sriov -N 16 -p physnet1 mem17-compute0 eth8
 system host-unlock mem17-compute0</codeblock></li>
             </ol>
-      </section>
+            <p>with VLAN ID 810 and uses physnet1 (refer VLAN ID ranges provided in
+                /etc/neutron/plugins/ml2/ml2_conf.ini): </p>
+        </section>
+        <section>
+            <p><b>Create a Provide Network</b></p>
+            <p>Virtual machine instances (VMs) with SR-IOV interfaces require a VLAN provider
+                network that is managed by the HP Networking Service (Neutron), not managed by HP
+                DCN VSD. </p>
+            <p>To create provider network: </p>
+            <ol id="ol_wvw_cyq_5t">
+                <li>Log into the KVM region <codeph>controller-0</codeph> node with root
+                    privileges.</li>
+                <li>Execute the following command to create the network:<p>
+                        <codeblock>neutron net-create &lt;network-name> --provider:network_type vlan --provider:segmentation_id &lt;segmentation_id&gt;  --provider:&lt;physical_network_name&gt;</codeblock>
+                    </p><p>Where:<ul id="ul_ydx_pzq_5t">
+                            <li><codeph>&lt;network-name></codeph> is the name of the network</li>
+                            <li><codeph>&lt;segmentation_id></codeph> is the VLAN ID</li>
+                            <li><codeph>&lt;physical_network_name></codeph> is name of the physical
+                                network over which the virtual network is implemented. </li>
+                        </ul></p><p>The following example creates a neutron provider network with
+                        VLAN ID 810 and uses
+                    <codeph>physnet1</codeph>:</p><pre>neutron net-create sriov-net-810 --provider:network_type vlan --provider:segmentation_id 810  --provider:physical_network physnet1</pre></li>
+                <li>Execute the following command to create a
+                    subnet:<codeblock>neutron subnet-create --name &lt;subnet-name> &lt;network-name> &lt;CIDR> --disable-dhcp --no-gateway  --allocation-pool start=&lt;IP_ADDR>,end=&lt;IP_ADDR></codeblock>
+                        Where:<ul id="ul_krk_m1r_5t">
+                        <li><codeph>&lt;subnet-name></codeph> is the name of the network or
+                            subnet</li>
+                        <li><codeph>&lt;CIDR></codeph> is the CIDR of subnet to create</li>
+                        <li><codeph>&lt;IP_ADDR></codeph> is the start and end allocation pool IP
+                            addresses for this subnet (This option can be repeated). </li>
+                    </ul><p>The following example creates a subnet for the network just
+                        created:<codeblock>neutron subnet-create --name subnet-810 hrushi-sriov-net-810 31.31.31.0/24 --disable-dhcp --no-gateway  --allocation-pool start=31.31.31.100,end=31.31.31.200 </codeblock></p></li></ol> </section>
+        <section><title>Launch a Virtual Machine with an SRiIOV vNIC</title>
+                    <p> There are two options to launch a VM using SRIOV
+                        vNIC: <ul id="ul_xvw_cyq_5t">
+                            <li><b>Option A</b> Create a neutron port with vNIC type direct and
+                        Launch a VM using that port. See the example below:
+                        <codeblock>neutron port-create 125e6f3c-e1aa-49c8-a20a-0ede67d9b6fe --vnic-type direct
+nova boot sriov-fixed --image wrl --flavor 2 --nic port-id=abd5b42a-e8f5-4297-91ba-707c01195cc7 </codeblock></li>
+                            <li><b>Option B</b> Launch a VM with vif-model as <i>pci-sriov</i>. See
+                        the example below:
+                        <codeblock>nova boot sriov-vif-model --image wr-new --flavor m1.small --nic net-id=125e6f3c-e1aa-49c8-a20a-0ede67d9b6fe,vif-model=pci-sriov</codeblock></li>
+                        </ul></p>
+                <p>After the VM launches, make sure that the VF is tagged with correct VLAN ID:
+                <codeblock>ip link | grep vf</codeblock></p>
+            <p>For example,
+                vf 15 MAC aa:bb:cc:dd:ee:ff, vlan 810, spoof checking on</p>
+            
+        </section>
+        <section>
             <p>Validate Steps</p>
             <ol id="ol_snf_5sg_tt">
                 <li>Once the compute node comes back online, login to the compute node and validate
                     if VFs are visible:<codeblock>ip link | grep VF</codeblock></li>
                 <li>Create neutron network, a direct port and launch VM using the port. For example,
                     here VLAN 810
-            <codeblock>neutron net-create hrushi-sriov-net-810 --provider:network_type vlan --provider:segmentation_id 810  --provider:physical_network physnet1
+                    <codeblock>neutron net-create hrushi-sriov-net-810 --provider:network_type vlan --provider:segmentation_id 810  --provider:physical_network physnet1
 neutron subnet-create --name sriov-subnet-810 hrushi-sriov-net-810 31.31.31.0/24 --disable-dhcp --no-gateway  --allocation-pool start=31.31.31.100,end=31.31.31.200
 neutron port-create 125e6f3c-e1aa-49c8-a20a-0ede67d9b6fe --vnic-type direct
-nova boot hrushi-sriov-fixed --image wrl --flavor 2 --nic port-id=abd5b42a-e8f5-4297-91ba-707c01195cc7 </codeblock></li></ol>
-      <p>After successfully launching a VM, ensure that the VF is tagged with VLAN ID
-            810<codeblock>ip link | grep vf</codeblock>For
-            example,<codeblock>vf 15 MAC aa:bb:cc:dd:ee:ff, vlan 810, spoof checking on</codeblock></p>
-    
-      <p>Also see the <xref
+nova boot hrushi-sriov-fixed --image wrl --flavor 2 --nic port-id=abd5b42a-e8f5-4297-91ba-707c01195cc7 </codeblock></li>
+            </ol>
+            <p>After successfully launching a VM, ensure that the VF is tagged with VLAN ID
+                810<codeblock>ip link | grep vf</codeblock>For
+                example:<codeblock>vf 15 MAC aa:bb:cc:dd:ee:ff, vlan 810, spoof checking on</codeblock></p>
+        </section>
+        <p>Also see the <xref
                 href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/CGH-2-KVM-Admin.pdf"
                 format="pdf" scope="external">HPE Helion OpenStack® 2.0 Carrier Grade: Administrator
                 Guide</xref>.</p>
-      
-      
-      <p><b>Related links</b></p>
-      <p>For more information, see <xref
-          href="https://wiki.openstack.org/wiki/SR-IOV-Passthrough-For-Networking"
-          format="html" scope="external">SR-IOV Passthrough for Networking</xref> in the OpenStack wiki.</p>
-      
-  </body>
- 
+
+
+        <p><b>Related links</b></p>
+        <p>For more information, see <xref
+                href="https://wiki.openstack.org/wiki/SR-IOV-Passthrough-For-Networking"
+                format="html" scope="external">SR-IOV Passthrough for Networking</xref> in the
+            OpenStack wiki.</p>
+
+    </body>
+
 </topic>
