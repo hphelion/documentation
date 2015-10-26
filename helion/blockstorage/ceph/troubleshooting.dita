@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_mnk_sq1_5t">
-  <title>Troubleshooting: Ceph (YET TO COMPLETE)</title>
+  <title>Ceph Troubleshooting </title>
   <body>
-    <p>This page describes the troubleshooting scernario of Ceph.<ol id="ol_owp_vq1_5t">
-        <li>When you execute <codeph>site.yml</codeph> playbook, Ceph cloud deployment fails with
-          the following
-            error:<codeblock>TASK: [_CEP-CMN | install | Install ceph] ************************************* 
+    <p>This page describes the troubleshooting scenario of Ceph.</p>
+    <p><b>Scenario 1:</b></p>
+    <p>If no Ceph Monitor nodes are defined for the cloud then Ceph cloud deployment fails with the
+      following error while executing <codeph>site.yml</codeph> playbook.</p>
+    <codeblock>TASK: [_CEP-CMN | install | Install ceph] ************************************* 
         changed: [stratushelion-cp1-ceph0001-mgmt]
         changed: [stratushelion-cp1-ceph0002-mgmt]
         changed: [stratushelion-cp1-ceph0005-mgmt]
@@ -20,23 +21,25 @@
         fatal: [stratushelion-cp1-ceph0004-mgmt] => input file not found at /etc/ceph/ceph.client.admin.keyring or /etc/ceph/ceph.client.admin.keyring
         fatal: [stratushelion-cp1-ceph0005-mgmt] => input file not found at /etc/ceph/ceph.client.admin.keyring or /etc/ceph/ceph.client.admin.keyring
 
-        FATAL: all hosts have already failed -- aborting
-        stack@hlm:~/scratch/ansible/next/hos/ansible $</codeblock><p>
-            Cause: No Ceph Monitor nodes defined for the cloud. Solution: Compare the cloud control
-            plane defined in <codeph>~/helion/my_cloud/definition/data/control_plane.yml</codeph>
-            with the example one. Ensure that there is either: <ol id="ol_mtr_tqj_5t">
-              <li>Service component '- ceph-monitor' included for 'server-role: CONTROLLER-ROLE' or </li>
-              <li>Resource nodes for Ceph Monitor are added to the
-                '~/helion/my_cloud/definition/data/control_plane.yml', which have following
-                service-components defined: - ntp-client - ceph-osd </li>
-            </ol></p></li>
+        FATAL: all hosts have already failed -- aborting</codeblock>
+    <p><b>Resolution:</b></p>
+    <p>Compare the cloud control plane defined in
+        <codeph>~/helion/my_cloud/definition/data/control_plane.yml</codeph> file with the example
+      one. Ensure that there is either: <ol id="ol_ir1_2s4_5t">
+        <li>Service component includes <codeph>- ceph-monitor</codeph> for <codeph>server-role:
+            CONTROLLER-ROLE</codeph>
+          <p>OR</p></li>
+        <li>Resource nodes for Ceph Monitor are added to the
+            <codeph>~/helion/my_cloud/definition/data/control_plane.yml</codeph> file, which have
+          the  service-components (<codeph>- ntp-client</codeph> and <codeph>- ceph-osd</codeph>)
+          defined.</li>
       </ol></p>
-    <ol id="ol_smr_4rj_5t">
-      <li>Ceph cloud deployment fails. <p>Symptoms: Following error traces seen during site.yml
-          playbook
-          execution:<codeblock>
-   
-        TASK: [CEP-OSD | configure | Configure the osds of {{ inventory_hostname }}] *** 
+    <p><b>Scenario 2: </b></p>
+    <p>If the disk presented as OSD data and/or journal disk has some pre-existing partitions then
+      the Ceph cloud deployment fails with the following error while executing
+        <codeph>site.yml</codeph> playbook . </p>
+    <p>
+      <codeblock>TASK: [CEP-OSD | configure | Configure the osds of {{ inventory_hostname }}] *** 
         failed: [stratushelion-cp1-ceph0001-mgmt] => (item={'key': '/dev/sdd', 'value': '/dev/sdc'}) => {"failed": true, "item": {"key": "/dev/sdd", "value": "/dev/sdc"}}
         msg: Exception: 'ceph-disk -v prepare --cluster-uuid 2645bbf6-16d0-4c42-8835-8ba9f5c95a1d --cluster ceph --osd-uuid 41cfdfe8-1c97-4c8c-9561-5ced0e88ebfd --fs-type xfs --zap-disk /dev/sdd /dev/sdc' failed with error DEBUG:ceph-disk:Zapping partition table on /dev/sdd
         INFO:ceph-disk:Running command: /sbin/sgdisk --zap-all -- /dev/sdd
@@ -57,28 +60,36 @@
         Unable to set partition 4's name to 'ceph journal'!
         Could not change partition 4's type code to 45b0969e-9b03-4f30-b4c6-b4b80ceff106!
         Error encountered; not saving changes.
-        ceph-disk: Error: Command '['/sbin/sgdisk', '--new=4:0:+5120M', '--change-name=4:ceph journal', '--partition-guid=4:26d3ce3e-5843-4655-ba3c-26d9383b6fc0', '--typecode=4:45b0969e-9b03-4f30-b4c6-b4b80ceff106', '--mbrtogpt', '--', '/dev/sdc']' returned non-zero exit status 4</codeblock></p><p>
-          Cause:     The disk presented as OSD data and/or journal disk has some pre-existing
-          partitions.        Solution:    Manually delete any partitions on the (failed) disk
-          presented as OSD data and/or journal disk and re-execute the site.yml playbook to resume
-          cloud deployment.<ol id="ol_pwq_xrj_5t">
-            <li>Executing site.yml for a particular node (using --limit &lt;node>) fails.<p>Symptom:
-                Following error traces seen during site.yml playbook
-                execution:</p><codeblock>  
-        TASK: [_CEP-CMN | check_network | Set cluster_network_enabled to True if available] *** 
+        ceph-disk: Error: Command '['/sbin/sgdisk', '--new=4:0:+5120M', '--change-name=4:ceph journal', '--partition-guid=4:26d3ce3e-5843-4655-ba3c-26d9383b6fc0', '--typecode=4:45b0969e-9b03-4f30-b4c6-b4b80ceff106', '--mbrtogpt', '--', '/dev/sdc']' returned non-zero exit status 4
+</codeblock>
+    </p>
+    <p><b>Resolution:</b></p>
+    <p>You must manually delete any partitions on the (failed) disk presented as OSD data and/or
+      journal disk and re-execute the <codeph>site.yml</codeph> playbook to resume the cloud
+      deployment.<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml </codeblock></p>
+    <p><b>Scenario 3:</b></p>
+    <p> If on a entry-scale-kvm-ceph cloud, the controller nodes is not always a part of the
+      actionable nodes then executing <codeph>site.yml</codeph> playbook for a particular node
+      (using --limit &lt;node>) fails with the following error.</p>
+    <codeblock>TASK: [_CEP-CMN | check_network | Set cluster_network_enabled to True if available] *** 
         skipping: [localhost]
 
         TASK: [ceph-deployer | configure | Generate "/etc/ceph/{{ ceph_cluster }}.conf" file] *** 
         fatal: [localhost] => {'msg': "AnsibleUndefinedVariable: One or more undefined variables: 'dict object' has no attribute 'host'", 'failed': True}
         fatal: [localhost] => {'msg': "AnsibleUndefinedVariable: One or more undefined variables: 'dict object' has no attribute 'host'", 'failed': True}
 
-        FATAL: all hosts have already failed -- aborting</codeblock><p>Cause:
-                On a entry-scale-kvm-ceph cloud, the controller nodes should always be a part of the
-                actionable nodes.         Solution:     Edit the limit file or limit string
-                specified while executing the site.yml playbook and include the names of all the
-                Cloud controller hosts in the cloud. <ol id="ol_yp1_fsj_5t">
-                  <li>Ceph client prepare playbook fails while creating placement groups.
-                      <codeblock>Symptom:
+        FATAL: all hosts have already failed -- aborting  
+        </codeblock>
+    <p><b>Resolution</b>:</p>
+    <p>Edit the limit file or limit string specified while executing the <codeph>site.yml</codeph>
+      playbook and include the names of all the Cloud controller hosts in the cloud. <b>(how to
+        edit??</b>)</p>
+    <p><b>Scenario 4:</b></p>
+    <p>If the time required for placement group creation is slower than usual (taking >50 secs for
+      PGs to get created) the <codeph>ceph-client-prepare.yml</codeph> playbook fails with the
+      following error while creating placement
+      groups.<codeblock>Symptom:
     Following error traces seen during site.yml playbook execution:
         TASK: [ceph-client-prepare | prepare-cluster-user | Set pool {{ item.1.name }} pgp_num to {{ item.1.attrs.pg }}] ***
         changed: [localhost] => (item=({'user': {'type': 'openstack', 'name': 'cinder', 'secret_id': '457eb676-33da-42ec-9a8c-9293d545c337'}}, {'usage': {'purpose': 'cinder-volume'}, 'name': 'volumes', 'attrs': {'type': 'replicated', 'creation_policy': 'eager', 'replica_size': 3, 'pg': 100, 'permission': 'rwx'}}))
@@ -89,17 +100,10 @@
         failed: [localhost] => (item=({'user': {'type': 'openstack', 'name': 'cinder-backup'}}, {'usage': {'purpose': 'cinder-backup'}, 'name': 'backups', 'attrs': {'type': 'replicated', 'creation_policy': 'eager', 'replica_size': 3, 'pg': 128, 'permission': 'rwx'}})) => {"changed": true, "cmd": "ceph --cluster bvceph3 osd pool set backups pgp_num 128", "delta": "0:00:00.242184", "end": "2015-10-19 12:08:37.824764", "item": [{"user": {"name": "cinder-backup", "type": "openstack"}}, {"attrs": {"creation_policy": "eager", "permission": "rwx", "pg": 128, "replica_size": 3, "type": "replicated"}, "name": "backups", "usage": {"purpose": "cinder-backup"}}], "rc": 16, "start": "2015-10-19 12:08:37.582580", "warnings": []}
         stderr: Error EBUSY: currently creating pgs, wait
 
-        FATAL: all hosts have already failed -- aborting</codeblock><p>
-                      Cause:     The time required for placement group creation is slower than usual
-                      (taking >50 secs for PGs to get created).      Solution:     Pause for a
-                      minute and check the status of 'ceph --cluster &lt;ceph-cluster> -s |grep
-                      creating' and once there are no results returned by this command, re-executing
-                      the ceph-client-prepare.yml playbook should succeed!</p></li>
-                </ol></p></li>
-          </ol></p><p>
-          <codeblock>
-</codeblock>
-        </p></li>
-    </ol>
+        FATAL: all hosts have already failed -- aborting</codeblock></p>
+    <p><b>Resolution</b>:</p>
+    <p>Pause for a minute and check the status of <codeph>ceph --cluster &lt;ceph-cluster> -s |grep
+        creating</codeph>. If no results are returned by  this command then re-executing the
+        <codeph>ceph-client-prepare.yml</codeph> playbook and this time you should succeed.</p>
   </body>
 </topic>

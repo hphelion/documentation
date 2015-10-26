@@ -163,8 +163,9 @@ volume_backend_name MyVolumeBackend</codeblock></p><p>The
     </section>
     <p>
       <note>All the above steps can be performed using OpenStack CLI. For more details refer to
-        <?oxy_custom_start type="oxy_content_highlight" color="140,255,140"?>OpenStack documentation
-        <!--(need to add link)-->.<?oxy_custom_end?></note>
+          <xref href="http://docs.openstack.org/cli-reference/content/cinderclient_commands.html"
+          format="html" scope="external">OpenStack documentation
+        </xref><?oxy_custom_start type="oxy_content_highlight" color="140,255,140"?><!--(need to add link)-->.<?oxy_custom_end?></note>
     </p>
   </body>
 </topic>
