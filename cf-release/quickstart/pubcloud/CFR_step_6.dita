@@ -18,10 +18,9 @@
               <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5.
               <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6.
               <b><keyword keyref="quickStartHPcloudStep6"/></b></stentry>
-       <stentry><b>Terminating Instances and Security Groups from the Command Line</b><p>To
-            terminate your instance and its security groups, run the following command and enter
-              <userinput>yes</userinput> when prompted.<note type="caution">This action will delete
-              all of your managed infrastructure and it cannot be
+       <stentry><b>Terminating Instances and Security Groups from the Command Line</b><p>To terminate your instance and its security groups, run the following command and enter
+              <userinput>yes</userinput> when prompted.<note type="caution" id="delete_cluster">This
+              action will delete all of your managed infrastructure and it cannot be
             undone.</note></p><codeblock>terraform destroy -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
             type="tip">For more information, see <xref href="CFR_TF_vars.dita#reference_phl_shc_rt"
               >Terraform Variables</xref>.</note><note type="important">If the

@@ -77,11 +77,14 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
                 using the xip.io wildcard DNS, for
                 example:<codeblock>api_endpoint = http://api.203.0.113.0.xip.io</codeblock>You will
                 need this URL to use the Cloud Foundry CLI. You can also run the <filepath>terraform
-                  show</filepath> command to see detailed information about the
-                core.</note><b>Exploring the <keyword keyref="prodShort"/> Core</b><p>After the
-                Docker image is deployed as an instance on <keyword keyref="pubCloudShort"/>, you
-                can view the instance and its security groups on <keyword keyref="pubCloudShort"
-                />:</p><ul id="ul_rqs_v43_tt">
+                  show</filepath> command to see detailed information about the core.</note>If the
+              cluster creation process fails, run the following command to clean up created
+              resources before attempting to create a new
+                cluster.<codeblock>terraform destroy -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
+                conref="CFR_step_6.dita#concept_m3k_bth_tt/delete_cluster"/><b>Exploring the
+                  <keyword keyref="prodShort"/> Core</b><p>After the Docker image is deployed as an
+                instance on <keyword keyref="pubCloudShort"/>, you can view the instance and its
+                security groups on <keyword keyref="pubCloudShort"/>:</p><ul id="ul_rqs_v43_tt">
                 <li>To view the instance, click <menucascade>
                     <uicontrol>Project</uicontrol>
                     <uicontrol>Compute</uicontrol>
