@@ -36,8 +36,7 @@
       <topicref href="helion/installation/preinstall_checklist.dita"
         navtitle="Pre-Installation Checklist" locktitle="yes"/>
       <topicref href="helion/installation/install_entryscale_kvm.dita"
-        navtitle="Installation for Helion Entry Scale Cloud
-        with KVM" locktitle="yes">
+        navtitle="Installation for Helion Entry-scale KVM Cloud" locktitle="yes">
         <topicref href="helion/installation/configure_vsa.dita" navtitle="VSA Configuration"
           locktitle="yes"> </topicref>
         <topicref href="helion/installation/configure_ceph.dita" navtitle="Ceph Configuration"
@@ -48,17 +47,13 @@
           navtitle="Brocade Zone Manager Configuration" locktitle="yes"/>
       </topicref>
       <topicref href="helion/installation/install_entryscale_esx.dita"
-        navtitle="Installation for Helion Entry Scale Cloud with ESX" locktitle="yes">
+        navtitle="Installation for Helion Entry-scale ESX Cloud" locktitle="yes">
         <topicref href="helion/esx/network_esx_ovsvapp.dita"
           navtitle="Networking for ESXi Hypervisor" locktitle="yes"/>
       </topicref>
       <topicref href="helion/installation/install_entryscale_swift.dita"
-        navtitle="Installation for Helion Entry Scale Cloud with Swift Only" locktitle="yes"/>
+        navtitle="Installation for Helion Entry-scale Swift Cloud" locktitle="yes"/>
       <topicref href="helion/gui_installer.dita" navtitle="Installing via the GUI" locktitle="yes"/>
-      <topicref href="helion/gui_install_on_kvm.dita"
-        navtitle="Installing the Operating System on KVM" locktitle="yes" toc="no"/>
-      <topicref href="helion/gui_install_on_esx.dita"
-        navtitle="Installing the Operating System on ESX" locktitle="yes" toc="no"/>
       <topicref href="helion/installation/installation_verification.dita"
         navtitle="Verifying Your Installation" locktitle="yes">
         <topicref href="helion/blockstorage/verify_backend_configuration.dita"
@@ -349,11 +344,11 @@
         <topicref href="helion/operations/opsconsole/storage_summary.dita" toc="no"/>
         <topicref href="helion/operations/opsconsole/hdp_summary.dita" toc="no"/>
       </topichead>
-      <topicref href="helion/operations/sherpa/sherpa_overview.dita"
-        navtitle="Sherpa Catalog Service Overview" locktitle="yes">
-        <topicref href="helion/operations/sherpa/accessing_sherpa.dita"
+      <topicref href="helion/operations/sherpa_overview.dita"
+        navtitle="Sherpa Catalog Service Overview" locktitle="yes">  
+        <topicref href="helion/operations/accessing_sherpa.dita"
           navtitle="Accessing the Sherpa Catalog" locktitle="yes"/>
-        <topicref href="helion/operations/sherpa/validate_sherpa_signatures.dita"
+        <topicref href="helion/operations/validate_sherpa_signatures.dita"
           navtitle="Validating Download Signatures" locktitle="yes"/>
       </topicref>
     </topichead>
