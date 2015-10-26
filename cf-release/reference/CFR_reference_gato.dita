@@ -2,8 +2,8 @@
 <!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
 <reference id="reference_cd3_bs3_rt">
   <title><keyword keyref="adminUtil"/> Command Reference</title>
-  <shortdesc><filepath><keyword keyref="adminUtilCLI"/></filepath> is the <keyword keyref="prodShort"/> administration
-    utility.</shortdesc>
+  <shortdesc><filepath><keyword keyref="adminUtil"/></filepath> is the <keyword keyref="prodLong"/>
+    administration utility.</shortdesc>
   <prolog>
     <metadata>
       <othermeta name="author" content="Michael Khmelnitsky"/>

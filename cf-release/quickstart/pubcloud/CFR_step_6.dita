@@ -27,7 +27,7 @@
               href="../../reference/CFR_reference_gato.dita#reference_cd3_bs3_rt"
             />.</note><b>Terminating Instances and Security Groups from the Command Line</b><p>To
             terminate your instance and its security groups, run the following command and enter
-              <userinput>yes</userinput> when prompted.</p><note type="important"
+              <userinput>yes</userinput> when prompted:</p><note type="important"
             id="delete_cluster">This action will delete all of your managed infrastructure and it
             cannot be
             undone.</note><codeblock>terraform destroy -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
