@@ -96,6 +96,16 @@
         navtitle="Configuring the Monitoring Service" locktitle="yes"/>
       <topicref href="helion/administration/configure_logging.dita"
         navtitle="Configuring the Centralized Logging Service" locktitle="yes"/>
+      
+      
+      <topicref href="helion/operations/sherpa/sherpa_overview.dita"
+        navtitle="Sherpa Catalog Overview" locktitle="yes">
+        <topicref href="helion/operations/sherpa/accessing_sherpa.dita"
+          navtitle=Accessing the Sherpa Catalog" locktitle="yes"/>
+        <topicref href="helion/operations/sherpa/validate_sherpa_signatures.dita"
+          navtitle="Validating Download Signatures" locktitle="yes"/>
+      </topicref>
+      
       <!-- BEGIN - Administration/IDENTITY -->
       <topicref href="helion/identity/identity_overview.dita" navtitle="Identity Service"
         locktitle="yes">
