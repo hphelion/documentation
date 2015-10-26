@@ -9,7 +9,7 @@
     <section>
       <title><b>To Replace the OS Disk Drive</b></title>
       <p>After the OS disk drive is replaced, the node must be reimaged.<ol id="ol_ewb_vjv_pt">
-          <li>Log onto the deployer.</li>
+          <li>Log onto the Deployer.</li>
           <li>Using Ansible, reimage the
               node:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=&lt;server id></codeblock><p>In
@@ -40,7 +40,7 @@ ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit helion-cp1-swobj0
       <title><b>To Replace a Storage Disk Drive</b></title>
       <p>After a storage drive is replaced, there is no need to reimage the server. Instead, run the
           <codeph>swift-reconfigure.yml</codeph> playbook.<ol id="ol_kqj_hkv_pt">
-          <li>Log onto deployer</li>
+          <li>Log onto the Deployer.</li>
           <li>Run the following
               commands:<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml --limit &lt;hostname></codeblock><p>In
