@@ -9,22 +9,22 @@
       highly indicated for big data. <p>You can control the data Ceilometer collects using the
         pipeline configuration files. These configuration files are located in the <b>/etc</b>
         folder of the respective components on all of the controller nodes. Ceilometer Central Agent
-        and Ceilometer Notification agent use different <b>pipeline.yml </b>files to configure
-        meters that are fetched via polling and using notifications. This was done to prevent
-        accidently polling for meters that can be retrieved by both the polling agent and the
-        notification agent. For exampe, Glance image and Glance image.size are meters that are of
-        type pollster AND notification.</p> For example: For notification white listing, we have to
-      specify pipeline configuration for the Ceilometer Notification Agent. The pipeline
-      configuration file is called <b>pipeline-agent-notification.yml</b> and is located in
+        and Ceilometer Notification Agent use different <b>pipeline.yml </b>files to configure
+        meters that are fetched via polling and using notifications. The files were created this way
+        to prevent accidently polling for meters that can be retrieved by both the polling agent and
+        the notification agent. For exampe, Glance image and Glance image.size are both meters that
+        are of type pollster AND type notification.</p> For example, for notification white listing,
+      you have to specify pipeline configuration for the Ceilometer Notification Agent in the
+      pipeline configuration file called <b>pipeline-agent-notification.yml</b> which is located in
         <b>/opt/stack/service/ceilometer-agent-notification/etc/</b>. <p>For polling white-listing,
-        we have to specify pipeline configuration for Ceilometer Central Agent. The pipeline
-        configuration file is called <b>pipeline-agent-central.yml</b> and located in<b>
+        you must specify pipeline configuration for Ceilometer Central Agent in the pipeline
+        configuration file called <b>pipeline-agent-central.yml</b> which is located in<b>
           /opt/stack/service/ceilometer-agent-central/etc</b>. </p>The pipeline configuration file
       on all the controller nodes must be changed in order to change the white-listing or polling
-      strategy. We recommend that you run <b>ceilometer-reconfigure.yml</b> to make those changes.
-        <p>As there are references to the version of the components installed in the respective
-        environment, those needs to be verified appropriately. </p>The pipeline configuration file
-      is comprised of two major elements: Sources and Sinks. Sources represent the data that is
+      strategy. You should run <b>ceilometer-reconfigure.yml</b> to make those changes stick. <p>As
+        there are references to the version of the components installed in the respective
+        environment, those need to be verified appropriately. </p>The pipeline configuration file is
+      comprised of two major elements: Sources and Sinks. Sources represent the data that is
       harvested either from notifications posted by services or collected through polling. Sinks
       represent how the data is modified before it is published to the internal queue for collection
       and storage. <p>In the Sources section there is a list of meters that represent the data that
