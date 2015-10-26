@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_n1v_3hs_5t">
-  <title></title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Validating Download Signatures</title>
   <body>
     <section>The Sherpa service provides a link to the remote web catalog providing a repository of
       software and patches that can be purchased and downloaded into the Helion environment. Users
