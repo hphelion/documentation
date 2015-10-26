@@ -6,6 +6,7 @@
  <title>Quick Start Step 5: <keyword keyref="quickStartHPcloudStep5"/></title>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  <shortdesc>The following examples describe a typical process of pushing an application using the
     Cloud Foundry CLI to a Droplet Execution Agent (DEA) running on <keyword keyref="prodLong"
     />.</shortdesc>
@@ -23,6 +24,10 @@
 =======
  <shortdesc>The following examples describe a typical process of pushing an application to a Droplet
     Execution Agent (DEA) on <keyword keyref="pubCloudShort"/> using <keyword keyref="prodShort"
+=======
+ <shortdesc>The following examples describe a typical process of pushing an application using the
+    Cloud Foundry CLI to a Droplet Execution Agent (DEA) running on <keyword keyref="prodLong"
+>>>>>>> 416fc79... Final check for HCF 1.0 docs before sending for comments
     />.</shortdesc>
 >>>>>>> 675cb02... Correcting the terminology for accuracy
  <prolog>
@@ -161,8 +166,8 @@ cf target -o myOrg -s mySpace</codeblock></note></li>
     <stentry><b>Getting Ready to Push Your First Application</b><ol id="ol_zdy_p53_tt">
             <li>Ensure that you are targeting the desired cluster, for
                 example:<codeblock>cf api http://api.203.0.113.0.xip.io</codeblock><note>If you
-                cannot connect to <keyword keyref="pubCloudShort"/>, ensure that your connection has
-                no proxy settings.</note></li>
+                cannot connect to your cluster, ensure that your connection has no proxy
+                settings.</note></li>
             <li>Ensure that you are logged into the desired
               cluster:<codeblock>cf login</codeblock>You are prompted for your username (email) and
                 password.<note type="tip">To skip SSL validation, you can add the
@@ -173,8 +178,8 @@ cf target -o <varname>&lt;organization></varname></codeblock></li>
             <li>Create a space, attach it to your organization, and target
               it:<codeblock>cf create-space <varname>&lt;space></varname> -o <varname>&lt;organization></varname>
 cf target -o <varname>&lt;organization></varname> -s <varname>&lt;space></varname></codeblock></li>
-          </ol><p>Your application is deployed to the cluster.</p><b>Pushing an Application to Your
-            Cluster</b><ol id="ol_idl_1mw_tt">
+          </ol><p>Your application is deployed to the cluster.</p><b>Pushing a GitHub Application to
+            Your Cluster</b><ol id="ol_idl_1mw_tt">
             <li>Navigate to the GitHub page of the application and click <uicontrol>Download
                 ZIP</uicontrol>.</li>
             <li>Decompress the <filepath>zip</filepath> file into a convenient directory.</li>
@@ -183,18 +188,18 @@ cf target -o <varname>&lt;organization></varname> -s <varname>&lt;space></varnam
               configured correctly.</li>
             <li>Target the cluster, for
               example:<codeblock>cf api http://api.203.0.113.0.xip.io</codeblock></li>
-            <li>Ensure that you are logged into the cluster:<codeblock>cf login</codeblock>You are
-              prompted for your username and password.</li>
+            <li>Ensure that you are logged into the cluster:<codeblock>cf login</codeblock><p>You
+                are prompted for your username and password.</p></li>
             <li>Push the application:<codeblock>cf push</codeblock><p>At the end of the process,
                 Cloud Foundry displays the URL of the application, formatted using the xip.io
                 wildcard DNS, for
-                example:<codeblock><b>urls:</b> myAppName.203.0.113.0.xip.io</codeblock>You will
-                need this URL to use the Cloud Foundry CLI. You can also run the <filepath>cf
-                  apps</filepath> command to see detailed information about your
-                application.</p><note type="tip">If you experience a problem, run the <filepath>cf
-                  delete <varname>&lt;appName></varname></filepath> command, make the necessary
-                adjustments, and then push the application again. For detailed instructions, see the
-                Cloud Foundry documentation:<ul id="ul_yyr_c5w_tt">
+                example:<codeblock><b>urls:</b> myAppName.203.0.113.0.xip.io</codeblock></p><note
+                type="tip">You will need this URL to access the application using a web browser. You
+                can also run the <filepath>cf apps</filepath> command to see detailed information
+                about your application.<p>If you experience a problem, run the <filepath>cf delete
+                      <varname>&lt;appName></varname></filepath> command, make the necessary
+                  adjustments, and then push the application again. For detailed instructions, see
+                  the Cloud Foundry documentation:</p><ul id="ul_yyr_c5w_tt">
                   <li><xref
                       href="https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html"
                       format="html" scope="external">Deploying an Application</xref></li>
@@ -206,7 +211,7 @@ cf target -o <varname>&lt;organization></varname> -s <varname>&lt;space></varnam
                       format="html" scope="external">Troubleshooting Application Deployment and
                       Health</xref></li>
                 </ul></note></li>
-          </ol><b>Sample Applications</b><p>The following are sample applications to get you started:<dl>
+          </ol><b>Sample Applications</b><p>The following sample applications will get your started:<dl>
               <dlentry>
                 <dt><xref href="https://github.com/Stackato-Apps/go-env" format="html"
                     scope="external">go-env</xref> (Go)</dt>

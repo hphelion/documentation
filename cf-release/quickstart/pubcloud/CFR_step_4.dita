@@ -6,6 +6,7 @@
  <title>Quick Start Step 4: <keyword keyref="quickStartHPcloudStep4"/></title>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  <shortdesc>During this step you will use Terraform to create an <keyword keyref="prodLong"/>
     cluster on <keyword keyref="pubCloudLong"/>.</shortdesc>
 =======
@@ -23,6 +24,10 @@
  <shortdesc>During this step you will use Terraform to create a cluster on <keyword
       keyref="pubCloudShort"/>.</shortdesc>
 >>>>>>> ce22a04... Added info on how to get cf binary
+=======
+ <shortdesc>During this step you will use Terraform to create an <keyword keyref="prodLong"/>
+    cluster on <keyword keyref="pubCloudLong"/>.</shortdesc>
+>>>>>>> 416fc79... Final check for HCF 1.0 docs before sending for comments
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
@@ -157,11 +162,11 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
                 <filepath><varname>&lt;number></varname>-Project-openrc.sh</filepath> file that you
               have downloaded in <b>Step 3</b> to your terminal session.<ul id="ul_ptr_bwp_tt">
                 <li>On a Linux machine, navigate to the directory that contains the
-                    <filepath>sh</filepath> file and source the file, for
-                  example:<codeblock>source <filepath>12345678901234-Project-openrc.sh</filepath></codeblock>Enter
-                  your OpenStack password when prompted.</li>
-                <li>On a Windows machine, add variables from the <filepath>sh</filepath> file at the
-                  command prompt, or add the commands to a batch file, for
+                    <filepath>sh</filepath> file and <filepath>source</filepath> the file, for
+                    example:<codeblock>source 12345678901234-Project-openrc.sh</codeblock><p>You are
+                    prompted for your OpenStack password.</p></li>
+                <li>On a Windows machine, add the variables from the <filepath>sh</filepath> file at
+                  the command prompt one by one, or add the commands to a batch file, for
                   example:<codeblock>set OS_AUTH_URL=https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/
 set OS_USERNAME=myUsername
 set OS_PASSWORD=myPassword123
@@ -172,7 +177,7 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
                 discarded. To prevent this, you can do the following: <ul id="ul_myk_1xp_tt">
                   <li>On a Linux machine, add the variables to your <filepath>~/.bashrc</filepath>
                     file and run the <filepath>source ~/.bashrc</filepath> command.</li>
-                  <li>On a Windows machine, <menucascade>
+                  <li>On a Windows machine, click <menucascade>
                       <uicontrol>Control Panel</uicontrol>
                       <uicontrol>System</uicontrol>
                       <uicontrol>Advanced system settings</uicontrol>
@@ -191,14 +196,13 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
                   Variables</xref>.</note></li>
             <li>Run the following
                 command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
-                type="tip">On Windows, add the <filepath>-no-color</filepath> flag to your
-                command.</note><p>Terraform creates the necessary security groups and instances,
-                installs Docker, installs the Docker images required to run <keyword
-                  keyref="prodShort"/>, and saves the state of your infrastructure to
-                  <filepath>terraform.tfstate</filepath>. The process takes about 10 minutes,
-                depending on your configuration.</p><note type="tip">At the end of the process,
-                Terraform displays the URL of the <keyword keyref="pubCloudShort"/> core, formatted
-                using the xip.io wildcard DNS, for
+                type="tip">To improve console output on Windows, add the
+                  <filepath>-no-color</filepath> flag to your command.</note><p>Terraform creates
+                the necessary security groups and instances, installs Docker, installs the Docker
+                images required to run <keyword keyref="prodShort"/>, and saves the state of your
+                infrastructure to <filepath>terraform.tfstate</filepath>.</p><note type="tip">At the
+                end of the process, Terraform displays the URL of the <keyword keyref="prodShort"/>
+                core, formatted using the xip.io wildcard DNS, for
                 example:<codeblock>api_endpoint = http://api.203.0.113.0.xip.io</codeblock>You will
                 need this URL to use the Cloud Foundry CLI. You can also run the <filepath>terraform
                   show</filepath> command to see detailed information about the core.</note>If the
@@ -206,21 +210,21 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
               resources before attempting to create a new
                 cluster.<codeblock>terraform destroy -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
                 conref="CFR_step_6.dita#concept_m3k_bth_tt/delete_cluster"/><b>Exploring the
-                  <keyword keyref="prodShort"/> Core</b><p>After the Docker image is deployed as an
-                instance on <keyword keyref="pubCloudShort"/>, you can view the instance and its
-                security groups on <keyword keyref="pubCloudShort"/>:</p><ul id="ul_rqs_v43_tt">
+                  <keyword keyref="prodShort"/> Core</b><p>After the <keyword keyref="prodShort"/>
+                Docker image is deployed as an instance on <keyword keyref="pubCloudShort"/>, you
+                can view the instance and its security groups:</p><ul id="ul_rqs_v43_tt">
                 <li>To view the instance, click <menucascade>
                     <uicontrol>Project</uicontrol>
                     <uicontrol>Compute</uicontrol>
                     <uicontrol>Instances</uicontrol>
                   </menucascade>.</li>
-                <li>To view the security group, clicking <menucascade>
+                <li>To view the security group, click <menucascade>
                     <uicontrol>Project</uicontrol>
                     <uicontrol>Computer</uicontrol>
                     <uicontrol>Access and Security</uicontrol>
                   </menucascade>.</li>
               </ul><p>Ensure that the required security group is available, for example
-                  <uicontrol>hcf-container-host</uicontrol>grep.</p></li>
+                  <uicontrol>hcf-container-host</uicontrol>.</p></li>
           </ol><xref href="CFR_step_5.dita#concept_cw2_thz_st">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
           </xref></stentry>

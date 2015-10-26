@@ -100,11 +100,16 @@
 =======
             type="tip">For more information, see <xref
               href="../../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt">Terraform
-              Variables</xref>.</note><note type="important">If the <filepath>destroy</filepath>
+              Variables</xref>.</note><p>Terraform cleanly terminates the instance and the security
+            groups associated with it.</p><note type="important">If the <filepath>destroy</filepath>
             process enters a loop, delete the <filepath>terraform.tfstate</filepath> file and run
+<<<<<<< HEAD
             the command again.</note><p>Terraform cleanly terminates the instance and the security
             groups associated with it.</p><b>Terminating Instances and Security Groups from <keyword
 >>>>>>> a979a9b... Added the link to the OSTPSL
+=======
+            the command again.</note><b>Terminating Instances and Security Groups from <keyword
+>>>>>>> 416fc79... Final check for HCF 1.0 docs before sending for comments
               keyref="pubCloudShort"/></b><note type="important">Using <keyword
               keyref="pubCloudShort"/> to terminate instances or security groups is not recommended.
             Use the following steps only if you run into difficulties with Terraform.</note><ol

@@ -17,9 +17,14 @@
  <title>Quick Start Step 2: <keyword keyref="quickStartHPcloudStep2"/></title>
 >>>>>>> 86ae294... Added new content
  <shortdesc>During this step you will download and install Terraform, a tool that allows building,
+<<<<<<< HEAD
   changing, and versioning infrastructure safely and efficiently. The download links and
   instructions will open in a separate page.</shortdesc>
 >>>>>>> 742aba9... Moving along with Colin's "Wizard"
+=======
+    changing, and versioning infrastructure safely and efficiently. The download links and
+    instructions will open in separate pages.</shortdesc>
+>>>>>>> 416fc79... Final check for HCF 1.0 docs before sending for comments
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
@@ -123,9 +128,10 @@
               conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6. <xref
             conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
     <stentry><b>Downloading <keyword keyref="prodShort"/></b><p>You can use <keyword
-              keyref="prodShort"/> to push Docker images and application code to the server, start
-            and stop applications, link <keyword keyref="opnStckShort"/> services to applications,
-            and perform other application management operations.</p><ul id="ul_cfn_rm1_tt">
+              keyref="prodShort"/> to push Docker images and application code to the server, to
+            start and stop applications, to link <keyword keyref="opnStckShort"/> services to
+            applications, and to perform other application management operations. <keyword
+              keyref="prodShort"/> works on Linux, Mac OS X, and Windows.</p><ul id="ul_cfn_rm1_tt">
             <li><xref href="http://bit.ly/1R2QN2U" format="html" scope="external">Download <keyword
                   keyref="prodShort"/>
                 <keyword keyref="prodVerLong"/></xref></li>
