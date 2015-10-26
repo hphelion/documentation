@@ -67,13 +67,17 @@
           <li>migrate Cinder volumes</li>
           <li>get Ceph status</li>
           <li>start and stop logging</li>
-          <li>erase nodes</li>
+          <li>erase nodes to baremetal</li>
           <li>reimage nodes</li>
           <li>reconfigure Swift to add or replace drives</li>
           <li>validate Swift drives against the storage model declared</li>
-          <li/>
+          <li>create networks</li>
         </ul>
       </p>
+      
+      While the internal management of OpenStack services and the configuration of their functionality still occurs via the service APIs and follows the
+      methodology outlined by OpenStack, the high-level management of the services themselves and their interaction with the cloud is accomplshed 
+      via the Ansibe playbooks mentioned here.
     </section>
 
     <section><title>What's New in Documentation</title>
