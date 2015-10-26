@@ -418,9 +418,8 @@
     <!-- END USER GUIDE -->
 
     <!-- CONCEPTS -->
-    <topichead navtitle="Conceptual Overviews">
-      <topicref href="helion/conceptual_overviews/high_availability.dita"
-        navtitle="High Availability" locktitle="yes"/>
-    </topichead>
+    <topicref href="helion/conceptual_overviews/high_availability.dita"
+      navtitle="High Availability Concepts" locktitle="yes"/>
+
   </topicref>
 </map>
