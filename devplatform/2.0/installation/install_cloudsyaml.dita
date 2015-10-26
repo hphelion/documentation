@@ -19,7 +19,6 @@
   &lt;mycloudname&gt;:
     codn_username: &lt; Helion Download Network user name&gt;
     codn_password: &lt; Helion Download Network password&gt;
-    horizon_url: http://&lt;horizon-ip-address&gt;/
     region_name: region1
     cacert: /etc/ssl/certs/ca-certificates.crt
     auth:
@@ -34,8 +33,6 @@
           account. (The name of the download network used to be CODN.)</sli>
         <sli><codeph>codn_password</codeph>: The password for the HDN (Helion Download Network)
           account. (The name of the download network used to be CODN.)</sli>
-        <sli><codeph>horizon_url</codeph>: The URL where the Horizon management console can be
-          accessed.</sli>
         <sli><codeph>region_name</codeph>: Default value is <codeph>region1 </codeph></sli>
         <sli><codeph>cacert</codeph>: The location where the SSL certificates can be accessed.</sli>
         <sli><codeph>auth</codeph>: The Keystone v2 address found in the
