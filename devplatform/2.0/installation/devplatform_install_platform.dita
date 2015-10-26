@@ -27,26 +27,22 @@
 
     <section id="pre-installing-the-hp-helion-development-platform">
       <title>Install the HP Helion Development Platform Installation Client</title>
-      <note type="tip"> For help with the installer, enter the command <codeph>openstack
-          hdpi</codeph>
-      </note>
       <ol>
-        <li>SSH to the Deployer.
-          <!--find out whether this works on a windows box or if it needs further explanation; where should this be run from?--></li>
+        <li>SSH to the Deployer. </li>
         <li>Create a Virtual Environment. <codeblock>virtualenv .devplatform</codeblock></li>
         <li>Source the Virtual
           Environment.<codeblock>source .devplatform/bin/activate</codeblock></li>
-
-
         <li>Install the Development Platform Installer in the Virtual Environment
-            .<codeblock>pip install DevelopmentPlatformInstaller_2.0.0.0.tar.gz  </codeblock><note>While
-            the <codeph>debug</codeph> option is optional, the information it returns is critical
-            for troubleshooting beta installations.</note></li>
-        <li>After installation completes, verify that the Installer is working.
-          <!-- This command will
-          list all packages currently available for
-          download.<codeblock>openstack hdpi list dashdashos-cloud mycloud </codeblock>  this is the wrong command, it requires that you have a clouds.yaml file already and at this point the user may not. --></li>
+          .<codeblock>pip install DevelopmentPlatformInstaller_2.0.0.0.tar.gz  </codeblock></li>
+        <li>You should create the <codeph><xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt"
+              >clouds.yaml</xref></codeph> file at this time. Note that this file contains
+          information for each service to be installed.</li>
+        <li>After creating the <codeph>clouds.yaml</codeph> file, verify that the Installer has been
+          installed properly. This command will list all packages currently available for
+          download.<codeblock>openstack hdpi list --os-cloud mycloud --debug</codeblock></li>
       </ol>
+      <note>While the <codeph>debug</codeph> option is optional, the information it returns is
+        critical for troubleshooting.</note>
     </section>
   </body>
 </topic>

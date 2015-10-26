@@ -8,12 +8,12 @@
     <ol id="ol_apx_khy_rt">
       <li> Create this directory: <codeblock>mkdir -p ~/.config/openstack/</codeblock></li>
       <li>Create a plaintext file called <codeph>clouds.yaml</codeph> in that directory.</li>
-      <li>Enter the configuration information for the service(s) being installed. A sample
-        configuration file is provided here. </li>    </ol>
+      <li>Enter the configuration information for the service(s) being installed, as detailed
+        below.</li>    </ol>
       <p>Information on each field is below the code block. For more detailed information, see the
-        OpenStack <xref
-          href="http://docs.openstack.org/developer/python-openstackclient/configuration.html"
-          format="html" scope="external">client configuration documentation</xref>. </p>
+        OpenStack <xref href="http://docs.openstack.org/developer/python-openstackclient/configuration.html" format="html" scope="external">client configuration documentation</xref>. </p><section><title>General Information</title>
+    <p>This basic information is required for listing the content from HDN, which is a good test to
+      determine if the HDPI was installed correctly.</p>
 
     <codeblock>clouds:
   &lt;mycloudname&gt;:
@@ -26,33 +26,8 @@
       auth_url: &lt;identity url&gt;
       project_name: &lt; admin project name&gt;
       username: &lt; admin user name&gt;
-      password: &lt; admin password&gt;
-    database:
-      ephemeral_ca_cert: unset
-      external_network: &lt;guid of ext-net&gt;
-      provider_network: &lt;guid of svc-net&gt;
-      ntp_server: &lt;ip address of ntp server&gt;
-      keypair: default
-      enable_ha: false
-      flavor: m1.medium
-      database_flavor: m1.medium
-      messaging_flavor: m1.medium
-      database_volume_size: 10<!--
-      ephemeral_ca_host: 10.241.144.4
-      ephemeral_ca_password:
-      ephemeralca_scheme: https-->
-      logstash_rabbitmq_host: &lt;ip address of logging service&gt;
-      logstash_rabbitmq_password: &lt;password for logging service&gt;
-      hotpools_enabled: false
-      hotpools_max_instances: 3
-      hotpools_image_name: percona
-      hotpools_flavor_names: "m1.medium,m1.small,m1.large"
-      disable_rollback: false
-      project_id: &lt;project id of user to install service to&gt;   </codeblock>
-    <section>
-      <title>Server Information</title>
-      <p>This information is for the Deployer server. This section is required for installation of
-        the Application Lifecycle Service.</p>
+      password: &lt; admin password&gt;</codeblock>
+
       <sl>
         <sli><codeph>mycloudname</codeph>: The name of your cloud.</sli>
         <sli><codeph>codn_username</codeph>: The username for the HDN (Helion Download Network)
@@ -63,13 +38,6 @@
           accessed.</sli>
         <sli><codeph>region_name</codeph>: Default value is <codeph>region1 </codeph></sli>
         <sli><codeph>cacert</codeph>: The location where the SSL certificates can be accessed.</sli>
-      </sl>
-    </section>
-    <section>
-      <title>User Authentication Information (AUTH)</title>
-      <p>This section provides user authentication for performing installation. This section is
-        required for installation of the Application Lifecycle Service.</p>
-      <sl>
         <sli><codeph>auth</codeph>: The Keystone v2 address found in the
             <codeph>service.osrc</codeph> file.</sli>
         <sli><codeph>auth_url</codeph>: This URL can be found in Horizon at: Project Compute &gt;
@@ -85,34 +53,88 @@
     </section>
     <section>
       <title>Database Information</title>
-      <p>This information is for the Database Service. This section is required for installation of
-        the Database Service.</p>
+      <p>This additional section is required only if the Database Service is
+        installed.<codeblock> database:
+      ephemeral_ca_cert: unset
+      external_network: &lt;guid of ext-net&gt;
+      provider_network: &lt;guid of svc-net&gt;
+      ntp_server: &lt;ip address of ntp server&gt;
+      keypair: default
+      enable_ha: false
+      flavor: m1.medium
+      database_flavor: m1.medium
+      messaging_flavor: m1.medium
+      database_volume_size: 10
+      logstash_rabbitmq_host: &lt;ip address of logging service&gt;
+      logstash_rabbitmq_password: &lt;password for logging service&gt;
+      hotpools_enabled: false
+      hotpools_max_instances: 3
+      hotpools_image_name: percona
+      hotpools_flavor_names: "m1.medium,m1.small,m1.large"
+      disable_rollback: false
+      project_id: &lt;project id of user to install service to&gt;   </codeblock></p>
       <sl>
-        <sli>ephemeral_ca_cert: Value must be unset </sli>
-        <sli>external_network: &lt;guid of ext-net&gt;</sli>
-        <sli>provider_network: &lt;guid of svc-net&gt; </sli>
-        <sli>ntp_server: &lt;ip address of ntp server&gt; </sli>
-        <sli>keypair: default </sli>
+        <sli><codeph>ephemeral_ca_cert</codeph>: Value must be unset </sli>
+        <sli><codeph>external_network</codeph>: &lt;guid of ext-net&gt;</sli>
+        <sli><codeph>provider_network</codeph>: &lt;guid of svc-net&gt; </sli>
+        <sli><codeph>ntp_server</codeph>: &lt;ip address of ntp server&gt; </sli>
+        <sli><codeph>keypair</codeph>: default </sli>
         <sli><codeph>enable_ha</codeph>: Options are True or False. If True, the database will be
           created with high-availability configurations. Ensure you have enough quota to do
           so.</sli>
-        <sli><codeph>flavor</codeph>: The default is m1.medium Do not create any flavor smaller than
-          medium. Smaller sizes will cause installation to fail.</sli>
+        <sli><codeph>flavor</codeph>: The default is m1.medium. Do not create any flavor smaller
+          than medium. Smaller sizes will cause installation to fail.</sli>
         <sli><codeph>database_flavor</codeph>: The default is m1.medium. Do not create any flavor
           smaller than medium. Smaller sizes will cause installation to fail.</sli>
         <sli><codeph>messaging_flavor: </codeph>The default is m1.medium. Do not create any flavor
           smaller than medium. Smaller sizes will cause installation to fail.</sli>
-        <sli>database_volume_size: 10 </sli>
-        <sli>logstash_rabbitmq_host: &lt;ip address of logging service&gt;<codeph> </codeph></sli>
-        <sli>logstash_rabbitmq_password: &lt;password for logging service&gt; </sli>
-        <sli>hotpools_enabled: Options are True or False. If True, hotpool capabilities are enabled.
+        <sli><codeph>database_volume_size</codeph>: 10 </sli>
+        <sli><codeph>logstash_rabbitmq_host</codeph>: &lt;ip address of logging service&gt;<codeph> </codeph></sli>
+        <sli><codeph>logstash_rabbitmq_password</codeph>: &lt;password for logging service&gt; </sli>
+        <sli><codeph>hotpools_enabled</codeph>: Options are True or False. If True, hotpool capabilities are enabled.
           If False, you can remove all other <i>hotpools</i> configuration variables.</sli>
-        <sli>hotpools_max_instances: 3 </sli>
-        <sli>hotpools_image_name: percona </sli>
-        <sli>hotpools_flavor_names: "m1.medium,m1.small,m1.large" </sli>
-        <sli>disable_rollback: Options are True or False. If True, rollback of patch applications is
+        <sli><codeph>hotpools_max_instances</codeph>: Default is 3. </sli>
+        <sli><codeph>hotpools_image_name</codeph>: percona </sli>
+        <sli><codeph>hotpools_flavor_names</codeph>: "m1.medium,m1.small,m1.large" Do not
+          change.</sli>
+        <sli><codeph>disable_rollback</codeph>: Options are True or False. If True, rollback of patch applications is
           disabled.</sli>
-        <sli>project_id: &lt;project id of user to install service to&gt; </sli>
+        <sli><codeph>project_id</codeph>: Project id to install service to</sli></sl></section>
+    
+    <section><title>Messaging / Code Engine</title>This additional section is required only if the
+      HP Helion Code Engine, the Messaging Service, or both are installed. <note type="important"
+        >The HP Helion Code Engine and the Messaging service both use the values in this section. It
+        can be labeled either <codeph>messaging</codeph> or <codeph>helionci</codeph>. Do not add a
+        duplicate section; just check to ensure that values for all listed variables are provided. </note><codeblock># header may say messaging or helionci 
+# if section already exists do not duplicate just verify values 
+messaging:   
+deployer_key: default   
+deployer_flavor: 4
+deployer_name: &lt;service>_deployer_&lt;version>   deployer_security_group: default
+deployer_version:    
+deployer_image:    
+deployer_uri:    
+deployer_net_id:
+deployer_cloud: </codeblock><sl>
+        <sli><codeph>deployer_key</codeph>: The keypair to use for the deployer instance. Default
+          value: default</sli>
+        <sli><codeph>deployer_flavor</codeph>: The flavor to use for the deployer instance, Default
+          value: 4 which is Large.</sli>
+        <sli><codeph>deployer_name</codeph>: The name of the deployer instance. Default value:
+            <i>service</i>_deployer_<i>version</i></sli>
+        <sli><codeph>deployer_security_group</codeph>: The name of the security group for the
+          deployer. Default value: default</sli>
+        <sli><codeph>deployer_version</codeph>: The version of the deployer. Default value: if not
+          set, it will use the version in the image name.</sli>
+        <sli><codeph>deployer_image</codeph>: The image to use for the deployer. It will attempt to
+          find an image with the prefix helionci or msgaas and containing the word hlinux.</sli>
+        <sli><codeph>deployer_uri</codeph>: The location where the download the deployer tgz can be
+          found. Will be set by the CLI based on information retrieved from Swift.</sli>
+        <sli><codeph>deployer_net_id</codeph>: Network id for the deployer instance. Default value:
+          The id of the network named SVC. </sli>
+        <sli><codeph>deployer_cloud</codeph>: The cloud identified in the clouds.yaml where the
+          deployer will be created. Note that while the deployer creation must be performed by an
+          admin, the deployer itself may be owned by someone else.</sli>
       </sl>
     </section>
   </body>
