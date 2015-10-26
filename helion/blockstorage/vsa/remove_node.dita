@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_e32_tm2_rt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing a VSA Node </title>
-  <body><!--Needs Edit-->
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing a VSA Node  For Maintenance</title>
+  <body>
+    <!--Needs Edit-->
     <p>This process is used when you want to remove storage system/VSA node from a
       cluster/management group for maintenance using HP Storevirtual Management Console(CMC). After
       maintenance the VSA node is added back to the cluster. <note type="caution">
@@ -67,73 +68,27 @@
           <codeph>servers.yml</codeph> file on the deployer node with a list of VSA nodes that are
         currently offline so that these nodes get excluded from any further reconfiguration or
         upgrades. This prevents a VSA node that is offline from being included in deployments.</p>
-      <p><b>&lt;DETAILED INFORMATION IS REQUIRED></b></p>
-      <p>Perform the following steps to remove the VSA node:<ol id="ol_dy4_g4j_5t">
+      <p>Perform the following steps to remove the VSA node for maintenance.<ol id="ol_xft_3hp_5t">
           <li>Login to deployer node.</li>
-          <li>Edit the definition of the server (usually in<codeph> data/servers.yml</codeph> file)
-            to remove the VSA node. For example, if the entry for the server looks
-              like:<codeblock># VSA Storage Nodes
-    - id: vsa1
-      ip-addr: 192.168.60.16
-      role: VSA-1-ROLE
-    # nic-mapping: MY_2PORT_SERVER
-
-    - id: vsa2
-      ip-addr: 192.168.60.17
-      role: VSA-2-ROLE
-    # nic-mapping: MY_2PORT_SERVER
-
-    - id: vsa3
-      ip-addr: 192.168.60.18
-      role: VSA-3-ROLE
-    # nic-mapping: MY_2PORT_SERVER</codeblock><p>Select
-              the VSA node to be removed. For example: if you wan to remove vsa1 node then the
-              servers.yml file looks like
-              below:<codeblock># VSA Storage Nodes
-    - id: vsa2
-      ip-addr: 192.168.60.17
-      role: VSA-2-ROLE
-    # nic-mapping: MY_2PORT_SERVER
-
-    - id: vsa3
-      ip-addr: 192.168.60.18
-      role: VSA-3-ROLE
-    # nic-mapping: MY_2PORT_SERVER</codeblock></p></li>
-        </ol></p>
-      <p> where VSA node-name matched the interface used to access this node during deployment. For
-        example<codeblock>!padawan-ccp-vsa001* (VSA host as given in hosts/verb_hosts)</codeblock></p>
-      <p>When performing Helion lifecycle management  deployments specify the name of this file in a
-        --limit option to prevent the deployment process trying to access the VSA nodes that are
-        offline.</p>
-      <p>Run the configuration
-        processor<codeblock>cd /home/stack/helion/hos/ansible;
-ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></p>
-      <p>Execute the following command
-        <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit &lt;hostname></codeblock></p>
-      <p>For example: Adding  "offline-vsa" to the VSA host name
-        <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit @offline-vsa</codeblock></p>
-      <p>Run the following
-        playbook<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e elasticsearch_cluster_name=hlm-001 --limit @offline-vsa</codeblock></p>
-    </section>
-    <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
-    <section>
-      <title><?oxy_custom_end?><b>Remove VSA storage system from cloud </b></title>
-      <p>You can remove the VSA storage system from the cloud after it is removed from cluster
-        management group in CMC. This is done, if you want to remove VSA permanently.</p>
-      <p>Perform the following steps to remove the same cluster which has been removed from CMC in
-        cloud. (<b>How do u remove cluster in CMC?)</b><ol id="ol_mdp_qvk_st">
-          <li>Delete or comment out the VSA system information at
-              <codeph>/home/stack/helion/my_cloud/definition/data/servers.yml </codeph>.</li>
-          <li>Commit your
-            configuration<codeblock>cd ~/helion/hos/ansible
-git add -A
-git commit -m "Remove OSD node &lt;host-name>"</codeblock></li>
-          <li>Run the configuration
-            processor:<codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
-          <li>Use the playbook below to create a deployment directory:
-            <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
-          <li>Verify that the node is removed from <codeph>hosts/verb_hosts</codeph> file.
-              (<b>command to verify?)</b></li>
+          <li>Verify that the node that needs to be  kept under maintenance from
+              <codeph>hosts/verb_hosts</codeph>
+            file.<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts</codeblock></li>
+          <li>Create a file and enter the node information that needs to be placed under
+            maintenance. Suppose you want to place <codeph>padawan-ccp-vsa001</codeph> under
+            maintenance then you must use the full host name along with ! and * (for example:
+              <codeph>!padawan-ccp-vsa001*</codeph>)</li>
+          <li>Execute the following command
+              <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit &lt;hostname></codeblock><p>In
+              the following example <b>offline-vsa</b> file  is created to the VSA host name
+              <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit @offline-vsa</codeblock></p><p>The
+              node which is inlcuded in the offline-vsa is placed under maintenance.</p></li>
+          <li>Run the following command
+              <codeblock>ansible-playbook -i hosts/verb_hosts site.yml --limit &lt;hostname></codeblock><p>For
+              example:</p><codeblock>ansible-playbook -i hosts/verb_hosts site.yml --limit @offline-vsa</codeblock><p>When
+              performing Helion lifecycle management deployments specify the name of this file in a
+              --limit option to prevent the deployment process trying to access the VSA nodes that
+              are offline.</p></li>
         </ol></p>
     </section>
   </body>
