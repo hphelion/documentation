@@ -310,45 +310,31 @@ source /etc/environment</codeblock>
       <p> After the volume type names have been created, you can assign extra_specs to the volumes
         types.</p>
       <p>To map a volume type to a backend, do the following: <ol id="ol_owv_krv_3t">
-        <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
-          >Accessing Horizon</xref> for details.</li>
-        <li>Ensure that you are scoped to your <b>admin</b> Project. Then under the <b>Admin</b>
-          menu in the navigation pane, click on <b>Volumes</b> under the <b>System</b> subheading.
-          <p><image href="../../media/vsa/createvoltype1.png"/></p></li>
-          <li>Click <b>Volume Type</b> tabs. A list of volume types appear.</li>
-          <li>Click the check box next to the name of the volume you want to attach.</li>
-          <li>In the <b>Actions</b> column, Click <b>Create Encryption</b> drop-down list and select
-              <b>View Extra Specs</b>. <p>The <b>Create Volume Type Extra Specs</b> dialog box
-              displays. Now map the volume type to the associate backend.</p></li>
-          <li>Click <b>Create</b> button.</li>
-          <li>In the <b>Key</b> box, enter <i>volume_backend_name</i> as extra spec key. This is the
-            name of the key used to specify the storage backend when provisioning volumes of this
-            volume type. The volume backend name must match the backend name mentioned in the
-              <codeph>cinder.conf.j2</codeph> file. </li>
-          <li>In the <b>Value</b> box, enter the name of the backend to which you want to associate
-            the volume type. <p>For example: You can enter the following backend name for the
-              respective backend used. The backend name is mentioned in the
-                <codeph>cinder.conf.j2</codeph> file.<ul id="ul_u4j_1vz_jt">
-                <li>VSA: You can enter <codeph>vsa-backend-hlm003</codeph> in the <b>Value</b>
-                  field. In value is taken from <xref
-                    href="configure_vsa.dita#config_vsa/vsa-config">VSA cinder.conf.j2</xref>.</li>
-                <li>Ceph: You can enter <codeph>ceph</codeph> in the <b>Value</b> field. In value is
-                  taken from <xref href="configure_ceph.dita#config_ceph/ceph-cinder-conf">Ceph
-                    cinder.conf.j2</xref>.</li>
-                <li>3PAR FC: You can enter <codeph>3par_FC</codeph> in the <b>Value</b> field. In
-                  value is taken from <xref href="configure_3par.dita#config_3par/3par-fc">3PAR FC
-                    cinder.conf.j2</xref>.</li>
-                <li>3PAR iSCSI : You can enter <codeph>3par_iscsi</codeph> in the <b>Value</b>
-                  field. In value is taken from <xref
-                    href="configure_3par.dita#config_3par/3par-iscsi">3PAR iSCSI
-                    cinder.conf.j2</xref>.</li>
-              </ul></p></li>
-          <li>Click <b>Create</b> to create the extra volume type specs. <note> Once the volume type
-              is mapped to the backend, you can create volumes with this volume type.</note></li>
+          <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
+              >Accessing Horizon</xref> for details.</li>
+          <li>Ensure that you are scoped to your <b>admin</b> Project. Then under the <b>Admin</b>
+            menu in the navigation pane, click on <b>Volumes</b> under the <b>System</b> subheading.
+                <p><image href="../../media/vsa/createvoltype1.png"/></p></li>
+          <li>Click the <b>Volume Type</b> tab to list the volume types. <p><image
+                href="../../media/vsa/associatevoltype2.png"/></p></li>
+          <li>In the <b>Actions</b> column of the Volume Type you created earlier, click the
+            drop-down option and select <b>View Extra Specs</b> which will bring up the <b>Volume
+              Type Extra Specs</b> options. <p><image href="../../media/vsa/associatevoltype3.png"
+              /></p></li>
+          <li>Click the <b>Create</b> button on the <b>Volume Type Extra Specs</b> screen. <p><image
+                href="../../media/vsa/associatevoltype4.png"/></p></li>
+          <li>In the <b>Key</b> field, enter the volume backend name that you specified earlier in
+            the <codeph>cinder.conf.j2</codeph> file. In the <b>Value</b> box, enter the name of the
+            backend to which you want to associate the volume type, which you also specified earlier
+            in the <codeph>cinder.conf.j2</codeph> file. Once you have completed that, click the
+              <b>Create</b> button to create the extra volume type specs. <p><image
+                href="../../media/vsa/associatevoltype5.png"/></p></li>
         </ol></p>
+      <p>Once the volume type is mapped to the backend, you can create volumes with this volume
+        type.</p>
     </section>
     <section id="create-volume">
-      <title>Create Volume </title>
+      <title>Create a Volume</title>
       <p>Perform the following steps to create a volume using Horizon dashboard. <ol>
           <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
             left panel. </li>
