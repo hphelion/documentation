@@ -29,7 +29,8 @@
     projects to provide the functionality you need. Visit the HP Helion OpenStack Services Overview page for a complete list of services.</p>-->
     <section id="getstart">
       <title>Get Started with HP Helion OpenStack</title>
-      <p>Use the following links and tools to begin working with HP Helion OpenStack</p>
+      <p>The following links and tools will help you understand, deploy, and run your HP Helion
+        OpenStack 2.0 cloud.</p>
       <ul>
         <li><xref href="releasenotes.dita">Release Notes</xref></li>
         <li><xref href="example_configs.dita">Example Configurations</xref></li>
