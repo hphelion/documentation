@@ -10,8 +10,8 @@
 
     <section><title>Installation, Configuration, and Management</title>
       <p>With the release of HP Helion OpenStack 2.0 comes an easy installation and configuration
-        workflow. Installation of the basic cloud requires that you run approximately 14 commands,
-        or use the new installation GUI to step through installation in a wizard-like fashion.</p>
+        workflow. Installation of the basic cloud requires that you run a handful of commands, or
+        use the new installation GUI to step through installation in a wizard-like fashion.</p>
       <p>OpenStack services are installed during the installation process, so there is no need to
         install and configure them individually. Instead, in HP Helion OpenStack 2.0, configuration,
         including which services to install, how many servers or nodes, what their individual roles
