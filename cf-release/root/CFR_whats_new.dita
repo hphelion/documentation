@@ -9,9 +9,9 @@
   </metadata>
  </prolog>
  <conbody>
-  <p>This is the first release of <keyword keyref="prodLong"/>.</p>
   <section>
    <title>Updates</title>
+   <p>The following features and functionality have been added to <keyword keyref="prodLong"/>:</p>
    <dl>
     <dlentry>
      <dt>Terraform</dt>

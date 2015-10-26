@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_qlr_s3c_nt">
- <title><keyword keyref="prodLong"/>
-    <keyword keyref="prodVerShort"/>: Documentation</title>
+ <title><keyword keyref="prodLong"/> <keyword keyref="prodVerShort"/>: Documentation</title>
+  <titlealts><navtitle>HPE Helion Cloud Foundry 1.0</navtitle></titlealts>
  <shortdesc/>
  <prolog>
    <metadata>
