@@ -3,7 +3,7 @@
 <topic id="topic_rdf_hkp_rt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Customizing Swift Service Configuration Files </title>
   <body>
-    <p>HP Helion OpenStack 2.0 allows you to modify various Swift service configuration files. The
+    <p>HP Helion OpenStack 2.0 enables you to modify various Swift service configuration files. The
       following Swift service configuration files are located on a deployer node in the location
         /<codeph>home/stack/helion/my_cloud/config/swift/</codeph>:<ul id="ul_i2n_clp_rt">
         <li><codeph>account-server.conf.j2</codeph></li>
