@@ -521,7 +521,7 @@
                  <codeblock>logstash-2015.10.21 4 p UNASSIGNED 11412371  3.2gb 10.241.67.11 Keith Kilham</codeblock>
                   <p>The last column shows the name that Elasticsearch uses for the node that the
                   unassigned shards are on. To find the actual hostname, run:</p>
-                <codeblock>ansible -i hosts/verb_hosts LOG-SVR -m shell -a "curl localhost:9200/_nodes/_all/name?'pretty' -s" --limit LOG-SVR[0]</codeblock>
+                <codeblock>ansible -i hosts/verb_hosts LOG-SVR[0] -m shell -a "curl localhost:9200/_nodes/_all/name?pretty -s"</codeblock>
                 <p>Once you find the hostname, you can try the following:</p>
                 <ol>
                   <li>Make sure the node is not out of disk space, and free up space if needed.</li>
