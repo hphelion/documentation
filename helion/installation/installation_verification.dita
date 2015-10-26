@@ -310,10 +310,11 @@ source /etc/environment</codeblock>
       <p> After the volume type names have been created, you can assign extra_specs to the volumes
         types.</p>
       <p>To map a volume type to a backend, do the following: <ol id="ol_owv_krv_3t">
-          <li>Login to the Horizon dashboard. The Horizon dashboard displays with the options in the
-            left panel.</li>
-          <li>On the <b>Admin</b> tab, open the <b>System</b> tab and click the <b>Volumes</b>
-            category.</li>
+        <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
+          >Accessing Horizon</xref> for details.</li>
+        <li>Ensure that you are scoped to your <b>admin</b> Project. Then under the <b>Admin</b>
+          menu in the navigation pane, click on <b>Volumes</b> under the <b>System</b> subheading.
+          <p><image href="../../media/vsa/createvoltype1.png"/></p></li>
           <li>Click <b>Volume Type</b> tabs. A list of volume types appear.</li>
           <li>Click the check box next to the name of the volume you want to attach.</li>
           <li>In the <b>Actions</b> column, Click <b>Create Encryption</b> drop-down list and select
