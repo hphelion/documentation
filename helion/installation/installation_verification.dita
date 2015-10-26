@@ -345,7 +345,7 @@ source /etc/environment</codeblock>
         <li>On the <b>Volumes</b> tabs, click the <b>Create Volume</b> button to create a volume.
               <p><image href="../../media/vsa/createvol2.png"/></p></li>
         <li>In the <b>Create Volume</b> options, enter the required details into the fields and then
-          click the <b>Create Volume</b> button: <ul>
+          click the <b>Create Volume</b> button: <ol>
             <li>Volume Name - This is the name you specify for your volume.</li>
             <li>Description (optional) - This is an optional description for the volume.</li>
             <li>Type - Select the volume type you have created for your volumes from the drop
@@ -353,7 +353,7 @@ source /etc/environment</codeblock>
             <li>Size (GB) - Enter the size, in GB, you would like the volume to be.</li>
             <li>Availability Zone - You can either leave this at the default option of <b>Any
                 Availability Zone</b> or select a specific zone from the drop down.</li>
-          </ul>
+          </ol>
           <p><image href="../../media/vsa/createvol3.png"/></p></li>
       </ol>
       <p>The dashboard will then show the volume you have just created.</p>
