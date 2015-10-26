@@ -42,7 +42,7 @@
 set OS_USERNAME=myUsername
 set OS_PASSWORD=myPassword123
 set OS_TENANT_ID=12345678901234
-set OS_TENANT_NAME=MySandbox
+set OS_TENANT_NAME=MyCluster
 set OS_REGION_NAME=region-a.geo-1</codeblock></li>
               </ul><note type="tip">When you close your terminal session, your variables will be
                 discarded. To prevent this, you can do the following: <ul id="ul_myk_1xp_tt">
