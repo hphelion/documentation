@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ohx_j1t_4t">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Determining When it is Safe to Rebalance and
-    Deploy a New Ring</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Determining When to Rebalance and Deploy a
+    New Ring</title>
   <body><!--Needs Edit-->
     <p>Before deploying a new ring, you must know the change that has been applied to the last ring,
       i.e., all the partitions are in their correct location (for example: replication) is complete.

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_zx2_mmd_5t">
-  <title><b>HP Helion OpenStack&#174; 2.0: Failover Support in the Metering Service(High Availability)</b></title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Metering Failover HA Support</title>
   <body>
     <section> In the HP Helion OpenStack environment, the Ceilometer metering service supports
       native Active-Active HA for notification agent and central agent. Agent HA support includes

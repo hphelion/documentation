@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ah5_4yx_qt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Deploying  Ceph Monitor Service(s) on Dedicated Resource Node(s)</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Deploying Ceph Monitor Services on Dedicated
+        Resource Nodes</title>
   <body><!--Needs Edit-->
     <p>In HP Helion OpenStack 2.0, Ceph monitor service is installed on the controller nodes by
             default. But you can provide a dedicated resource node(s) as a monitor service(s) by

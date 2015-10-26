@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="notifications">
-  <title>HP Helion OpenStack &#174; 2.0: Notification White-listing and Polling Strategies</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Metering Service Notifications</title>
   <body>
    
    <section> In HP Helion 2.0 we have adopted a strategy to reduce the amount of data that is sent

@@ -17,7 +17,7 @@
   </topicmeta>
   <topicref href="helion/index.dita">
     <topicref href="helion/technical_overview.dita" navtitle="Technical Overview" locktitle="yes"/>
-    <topicref href="helion/kilo_features.dita" navtitle="Kilo Features" locktitle="yes"/>
+    <topicref href="helion/kilo_features.dita" navtitle="OpenStack Kilo Features" locktitle="yes"/>
     <topicref href="helion/input_model.dita" navtitle="Input Model" locktitle="yes"/>
     <topicref href="helion/example_configurations.dita" navtitle="Example Configurations"
       locktitle="yes"/>
@@ -70,7 +70,7 @@
 
     <!-- SECURITY -->
     <topichead navtitle="Security">
-      <topicref href="helion/security/tls.dita" navtitle="Enabling TLS for Public Endpoints"
+      <topicref href="helion/security/tls.dita" navtitle="Configuring TLS for Public Endpoints"
         locktitle="yes"/>
 
       <topicref href="helion/security/encrypted_storage.dita"
@@ -87,12 +87,14 @@
         <topicref href="helion/administration/upload_image.dita"
           navtitle="Uploading an Image for Use" locktitle="yes"/>
       </topichead>
+      <topicref href="helion/conceptual_overviews/high_availability.dita"
+        navtitle="High Availability Concepts" locktitle="yes"/>
       <topicref href="helion/administration/create_hdp_servicenet.dita" toc="no"
         navtitle="Creating the Helion Development Platform Service Net" locktitle="yes"/>
       <topicref href="helion/administration/configure_monitoring.dita"
-        navtitle="Configuring Monitoring" locktitle="yes"/>
+        navtitle="Configuring the Monitoring Service" locktitle="yes"/>
       <topicref href="helion/administration/configure_logging.dita"
-        navtitle="Configuring Centralized Logging" locktitle="yes"/>
+        navtitle="Configuring the Centralized Logging Service" locktitle="yes"/>
 
       <!-- keystone identity -->
       <topicref href="helion/identity/identity_overview.dita" navtitle="Identity Service"
@@ -106,7 +108,7 @@
         <topicref href="helion/identity/identity_reconfigure.dita"
           navtitle="Reconfiguring the Identity Service" locktitle="yes"/>
         <topicref href="helion/identity/identity_ldap.dita"
-          navtitle="Integrating LDAP Integration with the Identity Service" locktitle="yes"> </topicref>
+          navtitle="Integrating LDAP with the Identity Service" locktitle="yes"> </topicref>
         <topicref href="helion/horizon/horizon_configure_v3.dita"
           navtitle="Configuring Horizon for Keystone v3" locktitle="yes" toc="yes"/>
         <topicref href="helion/identity/identity_limitations.dita"
@@ -150,7 +152,7 @@
         <topicref href="helion/objectstorage/ring_management.dita"
           navtitle="Managing Object Storage Rings" locktitle="yes">
           <topicref href="helion/objectstorage/rebalanced_explained.dita"
-            navtitle="Rebalancing Rings" locktitle="yes"/>
+            navtitle="Rebalancing Object Storage Rings" locktitle="yes"/>
           <topicref href="helion/objectstorage/setting_up_weight_attributes_ring_changes.dita"
             navtitle="Using the Weight-Step Attributes to Prepare for Ring Changes" locktitle="yes"/>
           <topicref href="helion/objectstorage/playbook_linked_ring_management.dita"
@@ -242,7 +244,7 @@
         <topicref href="helion/blockstorage/ceph/adding_new_monitor_node.dita"
           navtitle="Adding a New Ceph Monitor Node" locktitle="yes"/>
         <topicref href="helion/blockstorage/ceph/remove_monitor_node.dita"
-          navtitle="Removing Ceph Monitor Node" locktitle="yes"/>
+          navtitle="Removing a Ceph Monitor Node" locktitle="yes"/>
 
 
         <!-- OBJECT STORAGE -->
@@ -250,7 +252,7 @@
           navtitle="Adding a Swift Object Node" locktitle="yes"/>
 
         <topicref href="helion/objectstorage/add_new_pac_node.dita"
-          navtitle="Adding Proxy, Account, Container (PAC) Node" locktitle="yes"/>
+          navtitle="Adding a Proxy, Account, Container (PAC) Node" locktitle="yes"/>
         <topicref href="helion/objectstorage/replacing_drives_swift_node.dita"
           navtitle="Replacing Drives in a Swift Node" locktitle="yes"/>
         <topicref href="helion/objectstorage/replacing_swift_node.dita"
@@ -263,14 +265,14 @@
       <!-- OBJECT STORAGE -->
       <topichead navtitle="Object Storage">
         <topicref href="helion/objectstorage/add_new_storage_policy.dita"
-          navtitle="Adding a New Storage Policy - Swift" locktitle="yes"/>
+          navtitle="Adding a New Swift Storage Policy" locktitle="yes"/>
         <topicref href="helion/objectstorage/check_objectstorage_operation.dita"
           navtitle="Checking Object Storage Status" locktitle="yes">
           <topicref href="helion/objectstorage/validating_swift_recon.dita"
             navtitle="Gathering Swift Data" locktitle="yes"/>
           <topicref href="helion/objectstorage/lm_scan_metering.dita"
-            navtitle="Gathering Swift Monasca Metrics" locktitle="yes"/>
-          <topicref href="helion/objectstorage/utility.dita" navtitle="Using the Swift CLI"
+            navtitle="Gathering Swift Monitoring Metrics" locktitle="yes"/>
+          <topicref href="helion/objectstorage/utility.dita" navtitle="Using the Swift Command-line Client (CLI)"
             locktitle="yes"/>
         </topicref>
       </topichead>
@@ -303,9 +305,9 @@
         <topicref href="helion/bura/supported_services.dita" type="topic" format="dita"
           navtitle="Supported Services and Limitations for Backup" locktitle="yes"/>
         <topicref href="helion/bura/freezer_scheduler.dita" type="topic" format="dita"
-          navtitle="Understanding Freezer Scheduler" locktitle="yes"/>
+          navtitle="Understanding the Freezer Scheduler" locktitle="yes"/>
         <topicref href="helion/bura/freezer_agent.dita" type="topic" format="dita"
-          navtitle="Understanding Freezer Agent" locktitle="yes"/>
+          navtitle="Understanding the Freezer Agent" locktitle="yes"/>
         <topicref href="helion/bura/disable_bura_before_deployment.dita" type="topic" format="dita"
           navtitle="Disabling Backup/Restore before Deployment" locktitle="yes"/>
         <topicref href="helion/bura/start_stop_freezer_services.dita" type="topic" format="dita"
@@ -326,7 +328,7 @@
         <topicref href="helion/metering/metering_failover_ha.dita"
           navtitle="Ceilometer Metering Failover HA Support" locktitle="yes"/>
         <topicref href="helion/metering/metering_rbac.dita"
-          navtitle="Setting Role-based Access Control" locktitle="yes"/>
+          navtitle="Ceilometer Metering Setting Role-based Access Control" locktitle="yes"/>
 
         <!--  old  -->
         <topicref href="helion/metering/metering_components.dita"
@@ -345,7 +347,7 @@
       </topicref>
       <topicref href="helion/operations/centralized_logging.dita"
         navtitle="Centralized Logging Service" locktitle="yes">
-        <topicref href="helion/operations/logging_settings.dita" navtitle="Logging Settings"
+        <topicref href="helion/operations/logging_settings.dita" navtitle="Default Logging Settings"
           locktitle="yes"/>
       </topicref>
 
@@ -374,7 +376,7 @@
       <topicref href="helion/objectstorage/troubleshooting.dita"
         navtitle="Troubleshooting the Object Storage Service" locktitle="yes">
         <topicref href="helion/objectstorage/deploy_fails_with_msdos_disks.dita"
-          navtitle="Deployment Fails With on MSDOS Disks Labels" locktitle="yes"/>
+          navtitle="Deployment Fails with a MSDOS Disks Labels Error" locktitle="yes"/>
         <topicref href="helion/objectstorage/examine_details_planned_ring_changes_prior_deploy.dita"
           navtitle="Examining Planned Ring Changes" locktitle="yes"/>
         <topicref href="helion/objectstorage/interpreting_swift_validate_input_model.dita"
@@ -382,11 +384,11 @@
         <topicref href="helion/objectstorage/first_proxy_server.dita" locktitle="yes"
           navtitle="Identifying the First Swift Proxy Server"/>
         <topicref href="helion/objectstorage/label_on_partition.dita" locktitle="yes"
-          navtitle="Verifying a Partition Label"/>
+          navtitle="Verifying a Swift Partition Label"/>
         <topicref href="helion/objectstorage/filesystem_label.dita" locktitle="yes"
-          navtitle="Verifying a File System Label"/>
+          navtitle="Verifying a Swift File System Label"/>
         <topicref href="helion/objectstorage/recovering_builder_file.dita" locktitle="yes"
-          navtitle="Recovering Builder Files"/>
+          navtitle="Recovering Swift Builder Files"/>
         <topicref href="helion/objectstorage/restart_deploy_from_scratch.dita" locktitle="yes"
           navtitle="Restarting the Object Storage Deployment"/>
       </topicref>
@@ -416,10 +418,5 @@
       </topicref>
     </topichead>
     <!-- END USER GUIDE -->
-
-    <!-- CONCEPTS -->
-    <topicref href="helion/conceptual_overviews/high_availability.dita"
-      navtitle="High Availability Concepts" locktitle="yes"/>
-
-  </topicref>
+      </topicref>
 </map>

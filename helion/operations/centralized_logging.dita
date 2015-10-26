@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="logging">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Centralized Logging</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Centralized Logging Service</title>
   <body>
     <!--Needs Edit-->
     <p>A typical HP Helion OpenStack cloud consists of multiple servers which makes locating a

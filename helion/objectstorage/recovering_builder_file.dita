@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_gbz_13t_mt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Recovering Builder Files</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Recovering Swift Builder Files</title>
   <body><!--Needs Edit-->
     <p>When you execute the deploy process for a system, a copy of the builder files is also stored
       on every Object Storage node in the

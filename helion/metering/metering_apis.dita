@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_icq_hvc_5t">
-  <title>HP Helion OpenStack&#174; 2.0: Metering APIs</title>
+  <title>HP Helion OpenStack&#174; 2.0: Ceilometer Metering APIs</title>
   <body>
     <section id="pipeline"><title>Separate pipeline.yml for Ceilometer Post Sample API</title> Post
       Sample API is disabled by default in HOS CM 2.0 and its configured with a pipeline

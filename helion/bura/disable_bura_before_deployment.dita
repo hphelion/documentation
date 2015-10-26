@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_i4l_xhn_tt">
-  <title><b><xref href="https://wiki.hpcloud.net/pages/viewpage.action?pageId=54739797"
-        format="html" scope="external">HP Helion OpenStack 2.0: Disable Backup/Restore before
-        Deployment</xref></b></title>
+  <title>HP Helion OpenStack 2.0: Disabling Backup/Restore before Deployment</title>
 <body>
+  <!-- https://wiki.hpcloud.net/pages/viewpage.action?pageId=54739797 -->
   <section><title>Disable backup/restore jobs creation completely:</title>
     <p>To disable Freezer's deployement, comment out the following lines in the following files:
           <note>This action is required even if you already removed Freezer lines from your model

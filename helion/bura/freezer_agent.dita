@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_pgq_mnw_dt">
-    <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Freezer Agent</title>
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Understanding the Freezer Agent</title>
     <body>
         <!--Needs Edit-->
         <section><title>Backing up your Data</title></section>
