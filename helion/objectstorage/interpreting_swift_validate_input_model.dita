@@ -3,17 +3,15 @@
 <topic id="topic_avw_22b_kt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Interpreting Swift Input Model Validation
     Errors</title>
-  <body><!--Needs Edit-->
-    <section><b>List of errors</b></section>
-    <p>The following example provides an error message, description, and the resolution.<note>To
-        resolve an error, you must first modify the cloud model and re-run the configuration
-        processor as described in <xref
+  <body>
+    <p>The following examples provide an error message, description, and resolution.<note>To resolve
+        an error, you must first modify the input model and re-run the configuration processor. (For
+        instructions, see <xref
           href="../installation/using_git.dita#using_git/updating-configuration-including-default-config"
-          >Updating any configuration, including the default configuration</xref> and continue with
-        the deploy.</note></p>
+        />.) Then, continue with the deployment.</note></p>
     <p>
       <ol id="ol_vnh_g2b_kt">
-        <li><b>Example Message - Model Missmatch: Cannot find drive /dev/sdt on padawan-ccp-c1-m2
+        <li><b>Example Message - Model Mismatch: Cannot find drive /dev/sdt on padawan-ccp-c1-m2
             (192.168.245.3))</b><simpletable id="simpletable_crn_x2j_2t">
             <strow>
               <stentry><b>Description</b>
@@ -26,18 +24,18 @@
             <strow>
               <stentry><b>Resolution</b></stentry>
               <stentry>If a drive or controller is failed on a node, the operating system does not
-                see the drive and hence the corresponding block device may not exist. Sometimes this
-                is transitory and a reboot may resolve the problem. The problem may not be with
+                see the drive and so the corresponding block device may not exist. Sometimes this is
+                transitory and a reboot may resolve the problem. The problem may not be with
                   <codeph>/dev/sdt</codeph>, but with another drive. For example, if
                   <codeph>/dev/sds</codeph> is failed, when you boot the node, the drive that you
                 expect to be called <codeph>/dev/sdt</codeph> is actually called
                   <codeph>/dev/sds</codeph>. <p>Alternatively, there may not be enough drives
                   installed in the server. You can add drives. Another option is to remove
                     <codeph>/dev/sdt</codeph> from the appropriate disk model. However, this removes
-                  the drive for all servers using the disk model .</p></stentry>
+                  the drive for all servers using the disk model.</p></stentry>
             </strow>
           </simpletable></li>
-        <li><b>Example Message - Model Missmatch: Cannot find drive /dev/sdd2 on padawan-ccp-c1-m2
+        <li><b>Example Message - Model Mismatch: Cannot find drive /dev/sdd2 on padawan-ccp-c1-m2
             (192.168.245.3)</b><simpletable id="simpletable_wz4_jgj_2t">
             <strow>
               <stentry><b>Description</b>
@@ -59,7 +57,7 @@
               <stentry><b>Description</b></stentry>
               <stentry>The service (in this example, swift-account) is running on the node
                   <b>padawan-ccp-c1-m3</b>. However, this node does not have a connection to the
-                network designated for the swift-account service (i.e., the SWIFT
+                network designated for the <codeph>swift-account</codeph> service (i.e., the SWIFT
                 network).</stentry>
             </strow>
             <strow>
@@ -75,8 +73,9 @@
             <strow>
               <stentry><b>Description</b>
               </stentry>
-              <stentry>Only one of replication-policy or erasure-coding-policy may be used in a
-                ring-specification.</stentry>
+              <stentry>Only either <codeph>replication-policy</codeph> or
+                  <codeph>erasure-coding-policy</codeph> may be used in
+                  <codeph>ring-specifications</codeph>.</stentry>
             </strow>
             <strow>
               <stentry><b>Resolution</b></stentry>
@@ -88,8 +87,9 @@
             <strow>
               <stentry><b>Description</b>
               </stentry>
-              <stentry>There is no replication-policy or erasure-coding-policy section in the
-                ring-specifications for the object-0 ring.</stentry>
+              <stentry>There is no <codeph>replication-policy</codeph> or
+                  <codeph>erasure-coding-policy</codeph> section in
+                  <codeph>ring-specifications</codeph> for the object-0 ring.</stentry>
             </strow>
             <strow>
               <stentry><b>Resolution</b></stentry>

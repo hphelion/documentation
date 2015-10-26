@@ -2,51 +2,50 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_am4_mjv_pt">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Replacing Drives in a Swift Node</title>
-  <body><!--Needs Edit-->
+  <body>
     <p>There are two different classes of drives in a Swift node that needs to be replaced; the OS
       disk drive (generally <b>/dev/sda</b>) and storage disk drives. There are different procedures
-      for the replacement of each classes of drives to bring the node back to normal.</p>
+      for the replacement of each class of drive to bring the node back to normal.</p>
     <section>
-      <title><b>Replacing OS disk drive</b></title>
+      <title><b>To Replace the OS Disk Drive</b></title>
       <p>After the OS disk drive is replaced, the node must be reimaged.<ol id="ol_ewb_vjv_pt">
           <li>Log onto the deployer.</li>
-          <li>Using ansible, reimage the
+          <li>Using Ansible, reimage the
               node:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=&lt;server id></codeblock><p>In
               the example below <b>swobj2</b> server is
-              reimaged.<codeblock>cd ~/helion/hos/ansible
+              reimaged:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=swobj2</codeblock></p></li>
-          <li>Examine the <codeph>cloudConfig.yml</codeph> and<codeph>
-              data/control_plane.yml</codeph> files to get the host prefix (for example, helion) and
-            the control plane name (for example, cp1). This gives you the hostname of the node.
-            Configure the operating system as
-              follows.<codeblock>cd ~/scratch/ansible/next/hos/ansible
+          <li>Review the <codeph>cloudConfig.yml</codeph> and
+              <codeph>data/control_plane.yml</codeph> files to get the host prefix (for example,
+            helion) and the control plane name (for example, cp1). This gives you the hostname of
+            the node. Configure the operating
+              system:<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts osconfig-run.yml –-limit &lt;hostname></codeblock><p>In
-              the following example, for <b>swobj2</b>, the hostname is <b>helion-cp1-swobj0002</b>.
-              <codeblock>cd ~/scratch/ansible/next/hos/ansible
+              the following example, for <b>swobj2</b>, the hostname is
+              <b>helion-cp1-swobj0002</b>:<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit helion-cp1-swobj0002*</codeblock></p></li>
-          <li>If this is the first server running the swift-proxy service (see <xref
-              href="first_proxy_server.dita#topic_rtc_s3t_mt">identifying first proxy server</xref>)
-            you need to restore the Swift Ring Builder files to the
-              <codeph>/etc/swiftlm/builder_dir</codeph> directory. See <xref
-              href="recovering_builder_file.dita#topic_gbz_13t_mt">recovering builder files</xref>
-            for details.</li>
-          <li>Configuring services on the node using the <codeph>site.yml </codeph>playbook. If you
+          <li>If this is the first server running the swift-proxy service, restore the Swift Ring
+            Builder files to the <codeph>/etc/swiftlm/builder_dir</codeph> directory. (For more
+            information and instructions, see <xref href="first_proxy_server.dita#topic_rtc_s3t_mt"/>
+            <xref href="recovering_builder_file.dita#topic_gbz_13t_mt"/>.)</li>
+          <li>Configure services on the node using the <codeph>site.yml</codeph> playbook. If you
             have used an encryption password when running the Configuration processor include the
-              <b>--ask-vault-pass
-              </b>argument.<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --ask-vault-pass --limit &lt;hostname></codeblock><p>For
+              <codeph>--ask-vault-pass</codeph>
+              argument.<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --ask-vault-pass --limit &lt;hostname></codeblock><p>For
               example:<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --ask-vault-pass --limit helion-cp1-swobj0002*</codeblock></p></li>
         </ol></p>
     </section>
     <section>
-      <title><b>Replacing a storage disk drive</b></title>
-      <p>After a storage drive is replaced, there is no need to reimage the server. Now, you must
-        run the <codeph>swift-reconfigure.yml</codeph> playbook.<ol id="ol_kqj_hkv_pt">
+      <title><b>To Replace a Storage Disk Drive</b></title>
+      <p>After a storage drive is replaced, there is no need to reimage the server. Instead, run the
+          <codeph>swift-reconfigure.yml</codeph> playbook.<ol id="ol_kqj_hkv_pt">
           <li>Log onto deployer</li>
-          <li>Run the following commands
-              <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml --limit &lt;hostname></codeblock><p>In following example, <b>swobj2</b> the server is
-              used.<codeblock>cd ~/scratch/ansible/next/hos/ansible
+          <li>Run the following
+              commands:<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml --limit &lt;hostname></codeblock><p>In
+              following example, the server used is
+              <b>swobj2</b>:<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml --limit helion-cp1-swobj0002-mgmt </codeblock></p></li>
         </ol></p>
     </section>
