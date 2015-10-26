@@ -7,7 +7,7 @@
 %[^Mac] OS %=Write OS as operating system.%OS type: Linux
 %guestt%=Correct the typo.
 %lbass[^-]%=Use LBaaS.
-%ÎíÎñ%=this is an en-dash. Use only dashes.
+%–%=this is an en-dash. Use only dashes, especially in code samples
 % are have%= incorrect word grouping.
 % a [oO]bject%= object requires the article an.
 % a [iI]nstance%= instance requires the article an.
