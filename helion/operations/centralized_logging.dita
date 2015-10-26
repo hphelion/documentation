@@ -330,10 +330,10 @@
         <li>Navigate to the Alarms page</li>
         <li>Find the alarm definitions applied to the various hosts. These should match the alarm
           definitions in the <xref href="alarms.dita#alarmdefinitions/logging">Logging Alarm
-            Definitions list</xref>.</li>
+            Definitions List</xref>.</li>
         <li>See if the alarm is green (good) or is in a bad state. If any are in a bad state, see
           the possible actions to perform in the <xref href="alarms.dita#alarmdefinitions/logging"
-            >Logging Alarms Definitions list</xref>.</li>
+            >Logging Alarms Definitions List</xref>.</li>
       </ol>
       <p>You can use this filtering technique in the "Alarms" page to look for the following:</p>
       <ol>
