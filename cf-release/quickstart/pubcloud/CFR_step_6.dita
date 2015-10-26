@@ -83,10 +83,14 @@
               </menucascade>.</li>
             <li>Click the checkbox next to your instance, for example
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <uicontrol>hcf-core</uicontrol>.</li>
             <li>Click <uicontrol>Terminate Instances</uicontrol>.</li>
 =======
                 <uicontrol>cluster1-core</uicontrol>.</li>
+=======
+                <uicontrol>hcf-core</uicontrol>.</li>
+>>>>>>> 14a0149... Revised minor errors per Rob's feedback
             <li>Click <uicontrol>Terminate Instances</uicontrol>.</li>
 <<<<<<< HEAD
           </ol><b>Terminating Security Groups</b><ol id="ol_aqw_zd3_tt">
@@ -100,6 +104,7 @@
                 <uicontrol>Compute</uicontrol>
                 <uicontrol>Access and Security</uicontrol>
               </menucascade>.</li>
+<<<<<<< HEAD
 <<<<<<< HEAD
             <li>Click the checkbox next to your security group, for example
                 <uicontrol>hcf-container-host</uicontrol>.</li>
@@ -127,6 +132,12 @@
           </ol><image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"
           /></stentry>
 >>>>>>> 6151c83... Added instructions for pushing an application
+=======
+            <li>Click the checkbox next to your security group, for example
+                <uicontrol>hcf-container-host</uicontrol>.</li>
+            <li>Click <uicontrol>Delete Security Groups</uicontrol>.</li>
+          </ol></stentry>
+>>>>>>> 14a0149... Revised minor errors per Rob's feedback
      </strow>
    </simpletable>
  </conbody>
