@@ -339,9 +339,8 @@ source /etc/environment</codeblock>
       <ol>
         <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
             >Accessing Horizon</xref> for details.</li>
-        <li>Ensure that you are scoped to your <b>admin</b> Project. Then under the <b>Project</b>
-          menu in the navigation pane, click on <b>Volumes</b> under the <b>Compute</b> subheading.
-              <p><image href="../../media/vsa/createvol1.png"/></p></li>
+        <li>Under the <b>Project</b> menu in the navigation pane, click on <b>Volumes</b> under the
+            <b>Compute</b> subheading. <p><image href="../../media/vsa/createvol1.png"/></p></li>
         <li>On the <b>Volumes</b> tabs, click the <b>Create Volume</b> button to create a volume.
               <p><image href="../../media/vsa/createvol2.png"/></p></li>
         <li>In the <b>Create Volume</b> options, enter the required details into the fields and then
@@ -360,39 +359,35 @@ source /etc/environment</codeblock>
     </section>
     <section>
       <title>Attach Volume to an Instance</title>
-      <p>Perform the following steps to attach a volume to an instance: <ol>
-          <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
-              >Accessing Horizon</xref> for details.</li>
-          <li>On the <b>Project</b> tab, open the <b>Compute</b> tab and click the <b>Instances</b>
-            category.</li>
-          <li>Click the check box next to the name of the volume you want to attach. </li>
-          <li>In the <b>Action</b> column, click <b>Edit Attachments</b> The Manage Volume
-            Attachments screen is displayed.</li>
-          <li>In the <b>Attach To Instance</b> drop-down, select the instance that you want to
-            attach to the volume. </li>
-          <li> Edit the <b>Device Name</b> if necessary.</li>
-          <li>Click <b>Attach Volume</b> to complete the action. Clicking <b>Cancel</b> returns to
-            the <b>Volumes</b> screen without completing the action. </li>
-          <li>Verify that the volume you attached is displayed in the <b>Attached To </b>columns on
-            the <b>Volumes</b> screen.<p>
-              <!--Zones are created and activated in switch effective configuration after the successful attachment of volume to an instance.--></p></li>
-        </ol></p>
+      <p>Perform the following steps to attach a volume to an instance:</p>
+      <ol>
+        <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
+            >Accessing Horizon</xref> for details.</li>
+        <li>Under the <b>Project</b> menu in the navigation pane, click the <b>Instances</b> under
+          the <b>Compute</b> subheading.</li>
+        <li>In the <b>Action</b> column, choose the <b>Edit Attachments</b> in the menu drop down
+          box next to the instance you want to attach the volume to.</li>
+        <li>In the <b>Attach To Instance</b> drop-down, select the volume that you want to
+          attach.</li>
+        <li>Edit the <b>Device Name</b> if necessary.</li>
+        <li>Click <b>Attach Volume</b> to complete the action.</li>
+        <li>Verify that the volume you attached is displayed in the <b>Attached To </b>columns on
+          the <b>Volumes</b> screen.</li>
+      </ol>
     </section>
     <section>
       <title>Detach Volume from Instance</title>
       <p>Perform the following steps to detach the volume from instance: <ol>
           <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
               >Accessing Horizon</xref> for details.</li>
-          <li>On the <b>Project</b> tab, open the <b>Compute</b> tab and click the <b>Instances</b>
-            category.</li>
+          <li>Under the <b>Project</b> menu in the navigation pane, click the <b>Instances</b> under
+            the <b>Compute</b> subheading.</li>
           <li>Click the check box next to the name of the volume you want to detach. </li>
-          <li>In the Action column, click <b>Edit Attachments</b> The Manage Volume Attachments
-            screen is displayed.</li>
+          <li>In the <b>Action</b> column, choose the <b>Edit Attachments</b> in the menu drop down
+            box next to the instance you want to attach the volume to.</li>
           <li>Click <b>Detach Attachment</b>. A confirmation dialog box appears.</li>
           <li>Click <b>Detach Attachment</b> to confirm the detachment of the volume from the
-            associated instance. Clicking <b>Cancel</b> returns to the Volumes screen without
-            completing the action.<p>When you detach the last volume from an instance running on the
-              compute host, zones are deleted and removed from the effective configuration.</p></li>
+            associated instance.</li>
         </ol></p>
     </section>
     <section>
@@ -402,13 +397,12 @@ source /etc/environment</codeblock>
         <ol>
           <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
               >Accessing Horizon</xref> for details.</li>
-          <li>On the <b>Project</b> tab, open the <b>Compute</b> tab and click the <b>Instances</b>
-            category.</li>
-          <li>Check the box in the row of the volume to delete.</li>
-          <li>Click <b>Delete Volume</b> to display the dialog box.</li>
-          <li>To confirm and delete the volume, click <b>Delete Volume</b>.<p>To exit without
-              deleting the volume and to close the screen, click <b>Cancel</b> before
-            deleting</p></li>
+          <li>Under the <b>Project</b> menu in the navigation pane, click on <b>Volumes</b> under
+            the <b>Compute</b> subheading. <p><image href="../../media/vsa/createvol1.png"
+            /></p></li>
+          <li>In the <b>Actions</b> colum, click <b>Delete Volume</b> next to the volume you would
+            like to delete..</li>
+          <li>To confirm and delete the volume, click <b>Delete Volume</b> again.</li>
           <li>Verify that the volume was removed from the <b>Volumes</b> screen.</li>
         </ol>
       </p>
