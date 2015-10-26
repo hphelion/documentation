@@ -62,12 +62,15 @@
         processor means that you can reconfigure your cloud easily after deployment.</p>
       <p>By executing pre-written, supplied Ansible playbooks you may perform these and many other tasks<ul>
           <li>start, stop, and get the satus of OpenStack services</li>
-          <li>add and remove nodes </li>
+          <li>add and remove controller, compute, and storage nodes </li>
           <li>back up or restore control plane nodes </li>
           <li>migrate Cinder volumes</li>
           <li>get Ceph status</li>
           <li>start and stop logging</li>
           <li>erase nodes</li>
+          <li>reimage nodes</li>
+          <li>reconfigure Swift to add or replace drives</li>
+          <li>validate Swift drives against the storage model declared</li>
           <li/>
         </ul>
       </p>
