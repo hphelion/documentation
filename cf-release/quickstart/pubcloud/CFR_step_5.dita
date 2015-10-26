@@ -25,13 +25,13 @@
             <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
     <stentry><b>Getting Ready to Push Your First Application</b><ol id="ol_zdy_p53_tt">
             <li>Ensure that you are targeting the desired cluster, for
-                example:<codeblock>cf api http://api.203.0.113.0.xip.io</codeblock><note>If you
-                cannot connect to your cluster, ensure that your connection has no proxy
-                settings.</note></li>
+                example:<codeblock>cf api http://api.203.0.113.0.xip.io</codeblock><note type="tip"
+                >To skip SSL validation, you can add the <filepath>--skip-ssl-validation</filepath>
+                option to your command.</note><note>If you cannot connect to your cluster, ensure
+                that your connection has no proxy settings.</note></li>
             <li>Ensure that you are logged into the desired
-              cluster:<codeblock>cf login</codeblock>You are prompted for your username (email) and
-                password.<note type="tip">To skip SSL validation, you can add the
-                  <filepath>--skip-ssl-validation</filepath> option.</note></li>
+              cluster:<codeblock>cf login</codeblock>When prompted, enter your username (email) and
+              password.</li>
             <li>Create and target an
               organization:<codeblock>cf create-org <varname>&lt;organization></varname>
 cf target -o <varname>&lt;organization></varname></codeblock></li>
@@ -48,8 +48,8 @@ cf target -o <varname>&lt;organization></varname> -s <varname>&lt;space></varnam
               configured correctly.</li>
             <li>Target the cluster, for
               example:<codeblock>cf api http://api.203.0.113.0.xip.io</codeblock></li>
-            <li>Ensure that you are logged into the cluster:<codeblock>cf login</codeblock><p>You
-                are prompted for your username and password.</p></li>
+            <li>Ensure that you are logged into the cluster:<codeblock>cf login</codeblock>When
+              prompted, enter your username (email) and password.</li>
             <li>Push the application:<codeblock>cf push</codeblock><p>At the end of the process,
                 Cloud Foundry displays the URL of the application, formatted using the xip.io
                 wildcard DNS, for

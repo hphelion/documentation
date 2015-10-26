@@ -119,7 +119,7 @@
                     <uicontrol>Key Pairs</uicontrol>
                   </menucascade> and then click <uicontrol>Create Key Pair</uicontrol> on the
                   right.</li>
-                <li>Enter a key pair name and click <uicontrol>Create Key Pair</uicontrol></li>
+                <li>Enter a key pair name and click <uicontrol>Create Key Pair</uicontrol>.</li>
                 <li>If the key pair does not download automatically, click the link and save the
                     <filepath>pem</filepath> file in a convenient location.</li>
               </ol><note type="tip">The <filepath>pem</filepath> file contains the RSA private key
