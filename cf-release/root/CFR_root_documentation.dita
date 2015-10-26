@@ -20,6 +20,15 @@
     <p>The following sections will help you get started with exploring <keyword keyref="prodShort"/>
       and pushing your first apps.</p>
     <section>
+      <title><keyword keyref="prodLong"/>
+        <keyword keyref="prodVerShort"/></title>
+      <ul id="ul_awd_1xs_5t">
+        <li><xref href="CFR_whats_new.dita#concept_uvz_1cx_tt"/></li>
+        <li><xref href="CFR_relnotes.dita#CFR_relnotes"/></li>
+        <li><xref href="CFR_TP_licensing.dita#CFR_TP_licensing"/></li>
+      </ul>
+    </section>
+    <section>
       <title>Quick Start: Deploying to <keyword keyref="pubCloudLong"/></title>
       <ul id="ul_ack_nwv_tt">
         <li><xref href="../quickstart/pubcloud/CFR_step_1.dita#concept_s2k_b35_st"/></li>
