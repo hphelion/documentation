@@ -377,7 +377,7 @@
     <topichead navtitle="User Guide">
       <!-- HORIZON -->
       <topicref href="helion/horizon/horizon_overview.dita" navtitle="Using the Horizon Dashboard"
-        locktitle="yes" toc="yes"/>
+        locktitle="yes"/>
       <topicref href="helion/userguide/create_network.dita" navtitle="Creating a Private Network"
         locktitle="yes"/>
       <topicref href="helion/userguide/lbaas.dita"
