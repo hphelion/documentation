@@ -3,6 +3,8 @@
 <topic id="tech_overview">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Overview</title>
   <body><!--Needs Edit-->
-    <p></p>
+    <p>HP Helion OpenStack 2.0 is the latest OpenStack-based infrastructure-as-a-service cloud
+      platform release from HP. It is based on the OpenStack Kilo release and implements core
+      features of Kilo while providing new installation and management features.</p>
   </body>
 </topic>
