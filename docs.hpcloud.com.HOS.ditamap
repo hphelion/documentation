@@ -348,11 +348,11 @@
         <topicref href="helion/operations/opsconsole/storage_summary.dita" toc="no"/>
         <topicref href="helion/operations/opsconsole/hdp_summary.dita" toc="no"/>
       </topichead>
-      <topicref href="helion/operations/sherpa/sherpa_overview.dita"
+      <topicref href="helion/operations/sherpa_overview.dita"
         navtitle="Sherpa Catalog Service Overview" locktitle="yes">  
-        <topicref href="helion/operations/sherpa/accessing_sherpa.dita"
+        <topicref href="helion/operations/accessing_sherpa.dita"
           navtitle="Accessing the Sherpa Catalog" locktitle="yes"/>
-        <topicref href="helion/operations/sherpa/validate_sherpa_signatures.dita"
+        <topicref href="helion/operations/validate_sherpa_signatures.dita"
           navtitle="Validating Download Signatures" locktitle="yes"/>
       </topicref>
     </topichead>
