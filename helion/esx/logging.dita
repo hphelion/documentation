@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_rq3_mxh_rt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Logging</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: EON Logging</title>
   <body><!--Needs Edit-->
     <p>This page describe the procedure to enable EON service for centralised logging and changing
       EON log level to DEBUG.</p>

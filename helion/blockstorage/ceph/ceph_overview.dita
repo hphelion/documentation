@@ -24,20 +24,16 @@
               use OpenStack service (Cinder) </xref></li>
           <li><xref href="configuring_use_ceph_cluster_glance.dita#topic_qch_rmx_st">Configuring
               Ceph to use OpenStack service (Glance)</xref></li>
-          <li><xref href="deploy_monitor_stand_alone_node.dita#topic_ah5_4yx_qt">Deploying monitor
-              on standalone independent node</xref></li>
+          <li><xref href="deploy_monitor_stand_alone_node.dita#topic_ah5_4yx_qt">Deploying Ceph
+                            Monitor Service(s) on Dedicated Resource Node(s)</xref></li>
           <li><xref href="defining_monitor_resource.dita#topic_owr_kf4_rt">Defining Monitor Resource
               Node</xref></li>
-          <li><xref href="using_erasure_code_pool.dita#topic_psp_vrd_st">Using Erasure Code Pool in
-              Ceph </xref></li>
           <li><xref href="reconfigure_ceph_services.dita#topic_bl1_bfx_qt">Reconfigure Ceph
               service</xref></li>
           <li><xref href="remove_osd_node.dita#topic_ipm_gnt_rt">Remove OSD Node </xref></li>
           <li><xref href="remove_monitor_node.dita#topic_a3t_ptt_rt">Remove Ceph Monitor Node
             </xref></li>
           <li><xref href="ceph_operation.dita#topic_wbn_td3_pt">Ceph operations</xref></li>
-          <li><xref href="upgrade_ceph_cluster.dita#topic_gxm_bwt_rt">Upgrade Ceph
-            Cluster</xref></li>
         </ul></p></section>
     <note>Ceph upgrade is built in integral part of Helion Lifecycle Management upgrade and is in
       line with rest of supported services. Supported version of Ceph is 0.80.7 firefly in HOS 2.0.

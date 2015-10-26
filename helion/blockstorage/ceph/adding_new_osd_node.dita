@@ -18,9 +18,9 @@
   mac-addr: 8b:f6:9e:ca:3b:7a
   ilo-ip: 192.168.9.11
   ilo-password: password
-  ilo-user: admin</codeblock><note>Replace
-            the <codeph>id</codeph> and<codeph> ip-addr</codeph> in the above snippet with
-            appropriate values.</note></li>
+  ilo-user: admin</codeblock><note>Enter
+            the appropriate values in the above sample as per your environment for the server being
+            added.</note></li>
       <li>Commit your configuration to the <xref href="../../installation/using_git.dita">local git
           repo</xref>, as follows:
             <codeblock>cd ~/helion/hos/ansible

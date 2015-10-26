@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="HP2.0LBaaS">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Multiple External Network
-    Configuration</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring Multiple External
+    Networks</title>
   <body><!--Needs Edit-->
     <p>HP Helion OpenStack 2.0 Multiple External Network Configuration</p>
     <p>This document describes the configuration process and requirements for the HP Helion
@@ -24,7 +24,7 @@
     <section id="Configuration">
       <title>Configuration</title>
       <p>HP Helion OpenStack 2.0 Multiple External Network Configuration</p>
-      <p>Neutron provider VLANs are neutron networks that map directly to an 802.1Q VLAN in the
+      <p>Neutron provider VLANs are Neutron networks that map directly to an 802.1Q VLAN in the
         cloud provider’s physical network infrastructure. There are four aspects to provider vlan
         configuration:</p>
       <ul>
@@ -92,7 +92,7 @@ neutron net-create --provider:network_type vlan --provider:physical_network phys
 
 
     <section id="MoreInfo">
-      <title>More Information</title>For more information on the neutron command-line interface
+      <title>More Information</title>For more information on the Neutron command-line interface
       (CLI), see the OpenStack networking command-line client reference: <xref
         href="http://docs.openstack.org/cli-reference/content/neutronclient_commands.html"
         scope="external" format="html"/></section>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_qmz_fg3_bt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Initial Configuration of the Identity Service</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring the Identity Service</title>
   <body><!--Needs Edit-->
     <section id="intro"><p>The Keystone identity service is a vital part of HP Helion OpenStack&#174;, and as such it is
         installed automatically by the HP Helion OpenStack installer (just after MySQL and

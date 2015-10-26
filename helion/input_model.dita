@@ -254,9 +254,9 @@
           format="html">Download a high-res version</xref></p>
       <p>The Configuration Processor reads and validates the input model described in the YAML files
         discussed above, combines it with the service definitions provided by HP Helion OpenStack
-        and any persisted state information about the currently deployment to produce a set of
-        Ansible variables that can be used to deploy the cloud. It also produces a set of
-        information files that provide details about the configuration.</p>
+        and any persisted state information about the current deployment to produce a set of Ansible
+        variables that can be used to deploy the cloud. It also produces a set of information files
+        that provide details about the configuration.</p>
       <p>The relationship between the file systems on the HP Helion OpenStack deployment server and
         the Configuration Processor is shown in the following diagram. Below the line are the
         directories that you, the cloud administrator, interact with. Above the line are the
@@ -287,7 +287,7 @@
       <p><i>A control-plane uses servers with a particular
         <uicontrol>server-role</uicontrol></i>.</p>
       <p>A <uicontrol>control-plane</uicontrol> provides the operating environment for a set of
-          <uicontrol>services</uicontrol>; normally consisting of set of shared services (MySQL,
+          <uicontrol>services</uicontrol>; normally consisting of a set of shared services (MySQL,
         RabbitMQ, HA Proxy, Apache, etc), OpenStack control services (API, schedulers, etc) and the
           <uicontrol>resources</uicontrol> they are managing (compute, storage, etc).</p>
       <p>A simple cloud may have a single <uicontrol>control-plane</uicontrol> which runs all of the
@@ -356,7 +356,7 @@
         and how they connect to the networks. For example, should they all run in one
           <uicontrol>control-plane</uicontrol> sharing common services or be distributed across
         multiple <uicontrol>control-planes</uicontrol> to provide separate instances of some
-        services. The HP Helion OpenStack supplied examples provide solutions for some typical
+        services? The HP Helion OpenStack supplied examples provide solutions for some typical
         configurations.</p>
       <p>Where services run is defined in the <uicontrol>control-plane</uicontrol>. How they connect
         to networks is defined in the <uicontrol>network-groups</uicontrol>.</p>

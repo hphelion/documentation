@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="reconfig_metering">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Metering Service Config and Upgrade</title>
+  <body>
+
+    <section id="deploy"><title>Deployment</title> Helion OpenStack v2.0 automatically deploys
+      Ceilometer to use the shared MySQL database along with other OpenStack services such as
+      Keystone. Ceilometer is configured to use a common MySQL database and deployed on the same
+      control plane nodes along with other OpenStack services such as Keystone, Nova, Neutron,
+      Glance, Swift etc. </section>
+
+    <section id="apache"><title>Configure Apache2 for the Ceilometer API</title> The first step to
+      execute is to add the ceilometer_modwsgi.conf file in the /etc/apache2/sites-available folder.
+      The ceilometer_modwsgi.conf should have added the following data: ceilometer.conf
+      <codeblock>Listen &lt;ipaddress>:8777 
+&lt;VirtualHost *:8777>
+  WSGIScriptAlias / /opt/stack/service/ceilometer-api-20151021T030442Z/venv/bin/../lib/python2.7/site-packages/ceilometer/api/app.wsgi
+  WSGIDaemonProcess ceilometer user=ceilometer group=ceilometer processes=4 threads=5 socket-timeout=600 python-path=/opt/stack/service/ceilometer-api-20151021T030442Z/venv/bin/../:/opt/stack/service/ceilometer-api-20151021T030442Z/venv/bin/../lib/python2.7/site-packages
+  WSGIApplicationGroup ceilometer
+  WSGIProcessGroup ceilometer
+  ErrorLog /var/log/ceilometer/ceilometer_modwsgi.log
+  LogLevel INFO
+  CustomLog /var/log/ceilometer/ceilometer_access.log combined
+  &lt;Directory /opt/stack/service/ceilometer-api-20151021T030442Z/venv/bin/../lib/python2.7/site-packages/ceilometer>
+    Options Indexes FollowSymLinks MultiViews
+    Require all granted
+    AllowOverride None
+    Order allow,deny
+    allow from all
+    LimitRequestBody 102400
+  &lt;/Directory>
+&lt;/VirtualHost>&lt;/ipaddress></codeblock>
+      The Ceilometer APIs are running as WSGI processes. Each process can have a certain number of
+      threads taking care of the filters and applications comprising the processing pipeline. This
+      file is configured during HP Helion OpeStack deployment and preferably should be changed by
+      running the <b>ceilometer-reconfigure.yml</b> playbook (see the <xref
+        href="#reconfig_metering/reconfig" format="dita">Reconfigure</xref> section below). This
+      configuration refers to installed ceilometer api version and needs to be referenced
+      appropriately based on the version installed and needs to be used. The main parameters that
+      can be altered to increase the responsiveness is processes and threads in the above mentioned
+      config file. <note>WSGIDaemon Recommended Settings The best, and hence, recommended
+        configuration is to have four processes running in parallel: Recommended number of processes
+        to be set in <b>ceilometer.conf </b><codeblock>processes=4</codeblock> and for each process,
+        a maximum of 5 threads: Recommended number of threads per process
+        <codeblock>threads=5</codeblock></note>
+    </section>
+
+
+    <section id="softlink"><title>Add softlink for config file</title> Next, create/add a softlink
+      for the ceilometer_modwsgi.conf in the /etc/apache2/sites-enabled folder. Add softlink to
+      celiometer.conf
+      <codeblock>ln -s /etc/apache2/sites-available/ceilometer_modwsgi.conf /etc/apache2/sites-enabled</codeblock>
+      or alternatively you can run <codeblock>a2ensite ceilometer_modwsgi.conf  </codeblock>
+    </section>
+
+
+    <section id="apachereload"><title>Reload Apache2</title>
+      <p> For the changes to take effect, the apache2 service needs to be reloaded. This ensures
+        that all the configuration changes are considered and the service has applied them. The
+        system administrator can change the configuration of processes and threads and experiment if
+        alternative settings if necessary.</p> The command to reload the apache2 service is the
+      following: <codeblock>sudo service apache2 reload</codeblock>
+    </section>
+
+    <section id="verify"><title>Verification</title> Once the Apache2 service has been reloaded it
+      will be possible to test that the Ceilometer APIs are running and able to receive incoming
+      traffic. The Ceilometer APIs listen on port 8777. Verification can be performed using the
+      following command to get Apache2 with Ceilometer running instances :
+      <codeblock>ps -ef | grep apache </codeblock> This should generate an output similar to the one
+      below if everything is in order:
+      <codeblock>ceilome+ 31430 31427 10 16:29 ? 00:02:40 /usr/sbin/apache2 -k start
+ceilome+ 31431 31427 10 16:29 ? 00:02:41 /usr/sbin/apache2 -k start
+ceilome+ 31432 31427 10 16:29 ? 00:02:42 /usr/sbin/apache2 -k start
+ceilome+ 31433 31427 10 16:29 ? 00:02:43 /usr/sbin/apache2 -k start </codeblock>
+      The list of entries in the above output SHOULD match the number of processors set in the
+      configuration file, in the recommended case 4. Also it is possible to verify that Apache2 is
+      accepting incoming traffic on port 8777: <codeblock>netstat -tulpn | grep 8777 </codeblock>
+      This should produce the following output:
+      <codeblock>tcp6 0 0 :::8777 :::* LISTEN 8959/apache2 </codeblock> If Ceilometer fails to
+      deploy, check the proxy setting, and unset https_proxy http_proxy HTTP_PROXY HTTPS_PROXY </section>
+
+    <section id="metering_services"><title>Enabling Services for Messaging Notifications</title>
+      Nova, Cinder, Glance, Neutron and Swift are already enabled to send notifications out of the
+      box in HP Helion OpenStack 2.0. The list of meters supported out of the box for these services
+      are listed in the Notification Agent or Central Agent's pipeline coniguration. </section>
+
+    <section id="upgrade">
+      <title>Upgrade</title> Follow Standard Service upgrade mechanism available in HLM
+      distribution. For ceilometer the playbook included with HOS is ceilometer-upgrade.yml </section>
+
+
+    <section id="reconfig"><title>Reconfigure</title> Make changes in the ceilometer available
+      configuration files at on deployer machine. Make changes in the target configuration file
+      found is these directories. <p>For a temporary change go
+      to:</p><codeblock>cd /home/stack/scratch/ansible/next/my_cloud/config/ceilometer/</codeblock>
+      For a persistent change, go to
+      <codeblock>cd /home/stack/helion/my_cloud/config/ceilometer/</codeblock> After making your
+      changes, run the <b>ceilometer-reconfigure.yml
+      </b>playbook<codeblock>cd /home/stack/scratch/ansible/next/hos/ansible/
+ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</codeblock>
+    </section>
+  </body>
+</topic>

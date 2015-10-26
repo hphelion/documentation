@@ -15,7 +15,12 @@
         <li>You can deploy the Ceph monitor service on a dedicated resource. Ensure you modify your
           environment after deploying the deployer node. For more details, refer to <xref
             href="../blockstorage/ceph/deploy_monitor_stand_alone_node.dita#topic_ah5_4yx_qt"
-            >Install a monitor service on a dedicated resource node</xref>.</li>
+            >Install a monitor service on a dedicated resource
+            node</xref>.<note><?oxy_custom_start type="oxy_content_highlight" color="140,255,140"?>The
+            cloud with Ceph cluster expects the network group that will be used for management
+            traffic within the cloud to be left to its default value i.e. MANAGEMENT. Altering the
+            name will lead to failures in cloud deployment, therefore it should be
+            avoided.<?oxy_custom_end?></note></li>
       </ul>
     </section>
     <section>
@@ -119,8 +124,9 @@
                 </strow>
                 <strow>
                   <stentry><b>journal_disk</b></stentry>
-                  <stentry>It is to used to capture journal data. You can share the journal disk
-                    between two devices.</stentry>
+                  <stentry>Disk to be used for storing the journal data. When running multiple Ceph
+                    OSD daemons on a single node, a journal disk can be shared between OSDs of the
+                    node.</stentry>
                 </strow>
               </simpletable>
             </p><p><!--<b>How to edit osd.yml file</b><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>??<?oxy_custom_end?>--></p><note>Ensure
@@ -130,13 +136,38 @@
           <li>Editable parameters for Ceph are available in the following locations:<ul
               id="ul_zrr_blx_st">
               <li><codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph><p>In the
-                    <codeph>settings.yml</codeph> file, you can edit the following parameters:<ul
-                    id="ul_mvr_blx_st">
-                    <li><codeph>fsid</codeph></li>
-                    <li><codeph>ceph clusters</codeph></li>
-                    <li><codeph>osd_settle_time</codeph></li>
-                    <li><codeph>OSD_journal_size</codeph></li>
-                  </ul></p></li>
+                    <codeph>settings.yml</codeph> file, you can edit the following
+                    parameters:<simpletable frame="all" relcolwidth="1.0* 1.0*"
+                    id="simpletable_pt2_cf4_5t">
+                    <strow>
+                      <stentry>Parameters</stentry>
+                      <stentry>Descriptions</stentry>
+                    </strow>
+                    <strow>
+                      <stentry><codeph>fsid</codeph></stentry>
+                      <stentry>It is a unique identifier for the Ceph cluster.</stentry>
+                    </strow>
+                    <strow>
+                      <stentry><codeph>ceph clusters</codeph></stentry>
+                      <stentry>
+                        <p>Ceph clusters have a cluster name. The default cluster name is ceph, but
+                          you may specify a different cluster name.</p>
+                      </stentry>
+                    </strow>
+                    <strow>
+                      <stentry><codeph>osd_settle_time</codeph></stentry>
+                      <stentry>
+                        <p>Time in seconds to wait for after starting/restarting the Ceph OSD
+                          services.</p>
+                      </stentry>
+                    </strow>
+                    <strow>
+                      <stentry><codeph>osd_journal_size</codeph></stentry>
+                      <stentry>
+                        <p>The size of the journal in megabytes.</p>
+                      </stentry>
+                    </strow>
+                  </simpletable></p></li>
               <li>
                 <p>Add any additional configuration parameters for Ceph in the same file
                     (<codeph>settings.yml</codeph> file) under the 'extra:' category as
@@ -167,18 +198,17 @@ ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
         </ol>
       </p>
     </section>
-    <p>Ceph Monitor service is deployed on the Controller Nodes and OSD's are deployed as separate
+    <p>Ceph Monitor service is deployed on the Controller Nodes and OSDs are deployed as separate
       nodes (Resource Nodes).<note>While executing <codeph>site.yml</codeph> playbook with the
           <codeph>–-limit</codeph> option, it is also expected to include the controller nodes in
         the list of restricted nodes if the cloud is deployed with a Ceph cluster.</note></p>
     <p><b>Run Ceph Client Packages</b></p>
     <p>Ceph can be used as backend for <xref
         href="../blockstorage/ceph/configuring_use_ceph_cluster.dita#topic_i2z_zc3_pt"
-        >cinder-volume</xref> and a <xref
-        href="../blockstorage/ceph/configuring_use_ceph_cluster_glance.dita#topic_qch_rmx_st"
-        >default glance store</xref>. The nodes running these services should have a client
-      installed on it. Use <codeph>ceph-client-prepare.yml</codeph> to deploy client on respective
-      nodes.</p>
+        >cinder-volume</xref>
+      <!--and a <xref href="../blockstorage/ceph/configuring_use_ceph_cluster_glance.dita#topic_qch_rmx_st">default glance store</xref>-->.
+      The nodes running these services should have a client installed on it. Use
+        <codeph>ceph-client-prepare.yml</codeph> to deploy the Ceph client on respective nodes.</p>
     <p>Execute the following playbook so that the rings files are set up properly:</p>
     <p>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible

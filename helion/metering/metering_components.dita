@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic4362">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Metering Service (Ceilometer)
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Metering Service
     Components</title>
   <prolog>
     <metadata>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_owr_kf4_rt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Defining Ceph Monitor Resource</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Defining a Ceph Monitor Resource</title>
   <body><!--Needs Edit-->
     <p>Perform the following procedure to define a monitor resource:</p>
     <p>
@@ -15,7 +15,7 @@
     version: 2
   disk-models:
   - name: MONITOR-DISKS
-    # Disk model to be used for Ceph OSD nodes
+    # Disk model to be used for Ceph Monitor nodes
     # /dev/sda_root is used as a volume group for /, /var/log and /var/crash
     # sda_root is a templated value to align with whatever partition is really used
     # This value is checked in os config and replaced by the partition actually used

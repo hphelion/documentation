@@ -1,40 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_jv4_q1t_tt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Troubleshooting the VSA</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configure Separate iSCSI Network to use with
+    VSA</title>
   <body>
-    <p>You can use this guide to help you identify and resolve basic problems you may be
-      experiencing with VSA. It contains following troubleshooting scenarios:</p>
-    <section><b>Boot from volume fails if you are using a separate iSCSI
-          network</b><p><b>Description</b>: When using a separate iSCSI network, if that network is
-        not associated with the controllers (now using the force_network_groups option) then boot
-        from the volumes would fail (Cinder post installation
-          troubleshooting)</p><p><b>Resolution</b></p><p>When you are using a separate iSCSI network
-        that network needs to be assigned to the following nodes:<ul id="ul_ijh_dh5_tt">
-          <li>Controller nodes</li>
-          <li>Compute nodes</li>
-          <li>VSA nodes (in the case of StoreVirtual VSA being used)</li>
-        </ul></p></section>
-    <p>If you want to use a separate iSCSI network then you must define the network in the cloud
-      input model of the above listed nodes. Following files must be updated with iSCSI network.<ul
-        id="ul_qpr_c35_tt">
-        <li>
-          <p>networks.yml</p>
-          <p>Update the <codeph>network.yml</codeph> file as shown in the sample
-            below:<codeblock>- name: NET_ISCSI
+    <p>This page describes the procedure to assign a separate iSCSI network to use with VSA nodes.
+      You must configure controller and compute nodes along with VSA to use a separate iSCSI
+      network.</p>
+    <p>Perform the following procedure to assign a separate iSCSI network:</p>
+    <section>
+      <p>
+        <ol id="ol_g4m_wyn_5t">
+          <li>Login in to the deployer node.</li>
+          <li>Edit the following files at <codeph>~/helion/my_cloud/definition/data</codeph> to
+            assign a separate iSCSI network to Controller nodes, Compute nodes, and VSA nodes:<ol
+              id="ol_pz5_214_5t">
+              <li><codeph>networks.yml</codeph>: Enter the name of the network-group as shown in the
+                sample below. In the following sample, the name of the network-group is "ISCSI" and
+                this name should remain consistent in other files
+                too.<codeblock>- name: NET_ISCSI
   vlanid: 3287
   tagged-vlan: true
   cidr: 172.16.13.0/24 
   gateway-ip: 172.16.13.1 
-  network-group: <b>ISCSI</b>  &lt;>this name should remain consistence in all the files.</codeblock></p>
-          <p>The network-group name should remain consistent in all the files, in cloud input model,
-            which require changes in to implement separate iSCSI network.</p>
-        </li>
-      </ul></p>
-    <ul id="ul_wxs_mbv_tt">
-      <li>net_interfaces.yml <p>Update the <codeph>net_interfaces.yml</codeph> file as shown in the
-          sample
-          below.<codeblock>Interface-models
+  network-group: <b>ISCSI</b> </codeblock></li>
+              <li><codeph>net_interfaces.yml</codeph>: A new field (forced-network-groups) is added
+                in this file, as shown in the sample
+                below.<codeblock> Interface-models
     - name: INTERFACE_SET_CONTROLLER
       network-interfaces:
         - name: BOND0
@@ -52,41 +44,59 @@
             - MGMT
             - TENANT
           <b>forced-network-groups:
-            - ISCSI</b></codeblock></p><p>You
-          must added the highlighted lines to controller, compute and vsa interfaces. The name of
-          network group, i.e. ISCSI should remain consistent in all the files. </p></li>
-    </ul>
-    <ul id="ul_jld_dcv_tt">
-      <li>
-        <p>firewall_rules.yml</p>
-        <p>Update the <codeph>firewall_rules.yml</codeph> file as shown in the sample
-          below.<codeblock>firewall-rules
+            - ISCSI</b>
+
+    - name: INTERFACE_SET_COMPUTE
+      network-interfaces:
+        - name: BOND0
+          device:
+              name: bond0
+          bond-data:
+             options:
+                 mode: "802.3ad"
+                 miinon: 200
+             provider: linux
+             devices:
+               - name: Port0_10G1
+               - name: Port1_10G1
+          network-groups:
+            - MGMT
+            - TENANT
+          <b>forced-network-groups:
+            - ISCSI</b>
+
+    - name: INTERFACE_SET_VSA
+      network-interfaces:
+        - name: BOND0
+          device:
+              name: bond0
+          bond-data:
+             options:
+                 mode: "802.3ad"
+                 miinon: 200
+             provider: linux
+             devices:
+               - name: Port0_10G1
+               - name: Port1_10G1
+          network-groups:
+            - MGMT
+            - TENANT
+          <b>forced-network-groups:
+            - ISCSI</b></codeblock></li>
+              <li><codeph>firewall_rules.yml</codeph><codeblock>firewall-rules
     - name: PING 
       network-groups:
       - MGMT
       - TENANT
       - EXTERNAL_API
       - <b>ISCSI</b>
-      - SWIFT</codeblock></p>
-      </li>
-    </ul>
-    <ul id="ul_dq2_3cv_tt">
-      <li>
-        <p>network_groups.yml</p>
-        <p>Update the <codeph>network_groups.yml</codeph> file as shown in the sample below.</p>
-        <p>
-          <codeblock>network-groups:
+      - SWIFT</codeblock></li>
+              <li><codeph>network_groups.yml</codeph><codeblock>network-groups:
     - name: ISCSI
       hostname-suffix: iscsi
       component-endpoints:
-        - vsa</codeblock>
-        </p>
-      </li>
-    </ul>
-    <ul id="ul_w5w_mcv_tt">
-      <li>server_groups.yml<p>Update the <codeph>server_groups.yml</codeph> file as shown in the
-          sample
-        below.</p><codeblock>server_groups.yml
+        - vsa</codeblock></li>
+              <li><codeph>server_groups.yml</codeph><codeblock>server_groups.yml
       networks:
 #       Define the Global networks shared across all the Racks
         - NET_EXTERNAL_API
@@ -95,6 +105,29 @@
         - NET_MGMT
         - NET_SWIFT
         <b>- NET_ISCSI</b></codeblock></li>
-    </ul>
+            </ol></li>
+          <li>Commit your
+            changes.<codeblock>git add -A
+git commit -m "Add Node &lt;name>"</codeblock></li>
+          <li>Run the configuration
+            processor:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Run the following command to create a deployment
+            directory.<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+          <li>Run the <codeph>site.yml</codeph> playbook using the command below. The <codeph>-e
+              elasticsearch_cluster_name</codeph> switch is used to set a unique name for your
+            elasticsearch cluster. This should be set to a value other than
+              <codeph>elasticsearch</codeph>.
+            <codeblock>cd ~/scratch/ansible/next/hos/ansible 
+ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60;name></codeblock></li>
+          <li>Run the following
+                playbook<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml </codeblock><p><b>Note:</b>
+              If the iSCSI network is not explicitly configured on the controller nodes then boot
+              from cinder volumes would fail.</p></li>
+        </ol>
+      </p>
+    </section>
   </body>
 </topic>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_am4_mjv_pt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Replacing Drives in  a Swift Node</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Replacing Drives in a Swift Node</title>
   <body><!--Needs Edit-->
     <p>There are two different classes of drives in a Swift node that needs to be replaced; the OS
       disk drive (generally <b>/dev/sda</b>) and storage disk drives. There are different procedures
@@ -21,7 +21,7 @@ ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=swobj2</codeblock
             the control plane name (for example, cp1). This gives you the hostname of the node.
             Configure the operating system as
               follows.<codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit &lt;hostname></codeblock><p>In
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml –-limit &lt;hostname></codeblock><p>In
               the following example, for <b>swobj2</b>, the hostname is <b>helion-cp1-swobj0002</b>.
               <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit helion-cp1-swobj0002*</codeblock></p></li>

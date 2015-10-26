@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="notifications">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Metering Service Notifications</title>
+  <body>
+   
+   <section> In HP Helion 2.0 we have adopted a strategy to reduce the amount of data that is sent
+      to storage. The main reason is that we are currently using a SQL-based cluster, which is not
+      highly indicated for big data. <p>You can control the data Ceilometer collects using the
+        pipeline configuration files. These configuration files are located in the <b>/etc</b>
+        folder of the respective components on all of the controller nodes. Ceilometer Central Agent
+        and Ceilometer Notification Agent use different <b>pipeline.yml </b>files to configure
+        meters that are fetched via polling and using notifications. The files were created this way
+        to prevent accidently polling for meters that can be retrieved by both the polling agent and
+        the notification agent. For exampe, Glance image and Glance image.size are both meters that
+        are of type pollster AND type notification.</p> For example, for notification white listing,
+      you have to specify pipeline configuration for the Ceilometer Notification Agent in the
+      pipeline configuration file called <b>pipeline-agent-notification.yml</b> which is located in
+        <b>/opt/stack/service/ceilometer-agent-notification/etc/</b>. <p>For polling white-listing,
+        you must specify pipeline configuration for Ceilometer Central Agent in the pipeline
+        configuration file called <b>pipeline-agent-central.yml</b> which is located in<b>
+          /opt/stack/service/ceilometer-agent-central/etc</b>. </p>The pipeline configuration file
+      on all the controller nodes must be changed in order to change the white-listing or polling
+      strategy. You should run <b>ceilometer-reconfigure.yml</b> to make those changes stick. <p>As
+        there are references to the version of the components installed in the respective
+        environment, those need to be verified appropriately. </p>The pipeline configuration file is
+      comprised of two major elements: Sources and Sinks. Sources represent the data that is
+      harvested either from notifications posted by services or collected through polling. Sinks
+      represent how the data is modified before it is published to the internal queue for collection
+      and storage. <p>In the Sources section there is a list of meters that represent the data that
+        is going to be collected. For a full list please refer to the Ceilometer documentation
+        available at <xref
+          href="http://docs.openstack.org/admin-guide-cloud/telemetry-measurements.html"
+          format="html" scope="external"
+          >http://docs.openstack.org/admin-guide-cloud/telemetry-measurements.html</xref>
+      </p>The following is an example of the default pipeline configuration for Central Agent
+        <b>pipeline-agent-central.yml
+      </b><codeblock>---
+sources:
+    - name: swift_source
+      interval: 3600
+      meters:
+          - "storage.objects"
+          - "storage.objects.size"
+          - "storage.objects.containers"
+      resources:
+      discovery:
+      sinks:
+          - meter_sink
+sinks:
+    - name: meter_sink
+      transformers:
+      publishers:
+         - notifier://</codeblock>
+      The following is an example of the default pipeline configuration for Agent Notification:
+      <codeblock>---
+sources:
+    - name: meter_source
+      interval: 30
+      meters:
+          - "instance"
+          - "ip.floating"
+          - "network"
+          - "network.create"
+          - "network.update"
+      sinks:
+          - meter_sink
+    - name: image_source
+      interval: 30
+      meters:
+          - "image"
+          - "image.size"
+          - "image.upload"
+          - "image.delete"
+      sinks:
+          - meter_sink
+    - name: volume_source
+      interval: 30
+      meters:
+          - "volume"
+          - "volume.size"
+          - "snapshot"
+          - "snapshot.size"
+      sinks:
+          - meter_sink
+sinks:
+    - name: meter_sink
+      transformers:
+      publishers:
+         - notifier://</codeblock>
+      The interval attribute dictates the frequency of the data polling whenever the meter can be
+      polled. In general the meters that are available as notification and polling (indicated as
+      both in <xref href="http://docs.openstack.org/admin-guide-cloud/telemetry-measurements.html"
+        format="html" scope="external"
+        >http://docs.openstack.org/admin-guide-cloud/telemetry-measurements.html</xref>) are going
+      to be polled at the specified interval. This combination of meters and polling interval is the
+      most performant compromise that we found using the SQL cluster back-end. In our setting, since
+      we limited the polling meters to Swift only, the interval is set to 3600 (1 hour expressed in
+      seconds). In our setting, since we want to rely on notifications rather than polling, we have
+      limited the meters to be polled to be only Swift. </section>
+   
+    <section id="list"><title>Editing the List of Meters</title> The list of meters can be easily
+      reduced or increased by editing the pipeline configuration of the respective components (which
+      are notification or central/polling agent) and subsequently restarting the respectrive agent.
+      If pollsters are modified then the Central Agent requires a restart and if notifications are
+      added, then the Notification Agent requires a restart. Also, Collector needs to be restarted.
+      Here it is an example of compute only <b>pipeline.yml </b>with the daily polling interval:
+      <codeblock>---
+sources:
+    - name: meter_source
+      interval: 86400
+      meters:
+          - "instance"
+          - "memory"
+          - "vcpus"
+          - "compute.instance.create.end"
+          - "compute.instance.delete.end"
+          - "compute.instance.update"
+          - "compute.instance.exists"
+      sinks:
+          - meter_sink
+sinks:
+    - name: meter_sink
+      transformers:
+      publishers:
+          - notifier://</codeblock>
+      If changes are made to this configuration to enable meters at container level, every time the
+      polling interval is due for polling at least 5 messages per existing object/container in Swift
+      are collected. The following table illustrate the amount of data will be produce hourly in
+      different scenarios: Swift Containers Swift Objects per container Number of Samples/hr Samples
+      Stored in a 24H Period <table>
+        <tgroup cols="4">
+          <tbody>
+            <row>
+              <entry>Swift Containers</entry>
+              <entry>Swift Objects per container</entry>
+              <entry>Samples per Hour</entry>
+              <entry>Samples stored per 24 hours</entry>
+            </row>
+            <row>
+              <entry>10</entry>
+              <entry>10</entry>
+              <entry>500</entry>
+              <entry>12000</entry>
+            </row>
+            <row>
+              <entry>10</entry>
+              <entry>100</entry>
+              <entry>5000</entry>
+              <entry>120000</entry>
+            </row>
+            <row>
+              <entry>100</entry>
+              <entry>100</entry>
+              <entry>50000</entry>
+              <entry>1200000</entry>
+            </row>
+            <row>
+              <entry>100</entry>
+              <entry>1000</entry>
+              <entry>500000</entry>
+              <entry>12000000</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table> This means that even a very small Swift storage with 10 containers and 100 files will
+      store 120,000 samples in 24 hours, generating a grand total of 3.6 million samples! <p>Note
+        that the file size of each file does not have any impact on the number of samples collected.
+        As shown above, the smallest number of samples results from polling when there are a small
+        number of files and a small number of containers. When  there a lot of small files and
+        containers,  the number of samples is the highest. </p></section>
+    
+    <section><title>Updating the Polling Strategy and Swift Considerations</title>
+      <p>Polling can be very taxing on the system due to the sheer volume of data that the system
+        may have to process. It also has a severe impact on queries since the database will now have
+        a very large amount of data to scan to respond to the query. This consumes a great amount of
+        cpu and memory. This can result in long wait times for query responses, and in extreme cases
+        can result in timeouts.</p> There are 3 polling meters in Swift: <ul>
+        <li>storage.objects </li>
+        <li>storage.objects.size </li>
+        <li>storage.objects.containers</li>
+      </ul> Here is an example of <b>pipeline.yml </b>in which Swift polling is set to occur hourly.
+      <codeblock>---
+      sources:
+      - name: swift_source
+      interval: 3600
+      meters:
+      - "storage.objects"
+      - "storage.objects.size"
+      - "storage.objects.containers"
+      resources:
+      discovery:
+      sinks:
+      - meter_sink
+      sinks:
+      - name: meter_sink
+      transformers:
+      publishers:
+      - notifier://</codeblock></section>
+   
+   
+   
+  </body>
+</topic>
