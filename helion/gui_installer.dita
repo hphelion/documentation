@@ -57,7 +57,7 @@
             <li>IPMI/iLO IP address, username, password </li>
           </ul>
         </li>
-        <li>Choose your <xref href="example_configs.dita">cloud model/example</xref> template. Note
+        <li>Choose your <xref href="example_configurations.dita">cloud model/example</xref> template. Note
           that the only option for the Cloud model on KVM with VSA is to have 0 or 3 VSA nodes;
           there is no option to have 0 VSA nodes. Note also that you cannot put the
           deployer/lifecycle manager on a dedicated node using the GUI installer; it can only run in
@@ -67,7 +67,7 @@
           prefer. Otherwise the installer will install it for you. Te option is available in the
           GUI. If you deci You must do so by following the appropriate installation instructions. <ul>
             <li><xref href="gui_install_on_kvm.dita">KVM</xref></li>
-            <li><xref href="gui_install_on_esx.dita">ESX</xref></li>
+            <li><xref href="installation/install_entryscale_esx.html#install_esx__prereqs">ESX</xref></li>
           </ul>
           <p id="chooseHypervisor"/><note>Before starting the GUI, you will also need to change the
             file permissions of hlm-ux-implementation/server/ansible/hosts/localhost to not
