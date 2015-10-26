@@ -7,25 +7,30 @@
       platform release from HP. It is based on the OpenStack Kilo release and implements core
       features of Kilo while providing new installation and management features.</p>
     
-    <p>With the release of HP Helion OpenStack 2.0 comes an easy istallation and configuration workflow. Installtion of the basic cloud requires that you run approximately 
-    14 commands, or use the new installation GUI to step through installation in a wizard-like fashion.</p>
+    <p>With the release of HP Helion OpenStack 2.0 comes an easy installation and configuration
+      workflow. Installation of the basic cloud requires that you run approximately 14 commands, or
+      use the new installation GUI to step through installation in a wizard-like fashion.</p>
     
     <p>OpenStack services are installed during the installation process, so there is no need to
       install and configure them individually. Instead, in HP Helion OpenStack 2.0, configuration,
       including which services to install, how many servers or nodes, what their individual roles
-      will be, what storage wll be used, and installation and configuration of the underlying
+      will be, what storage will be used, and installation and configuration of the underlying
       operating system on each node is declared in configuration objects stored in YAML files. </p>
     <p>These files allow customization, and HP Helion OpenStack 2.0 ships with complete sets
       describing a few common configurations so that you may base your deployment on a template and
-      customize from there.</p>
+      customize from there if you wish.</p>
     <p>This installation and configuration is made possible by a new feature in HP Helion OpenStack
       2.0, the configuration processor, a Python-based set of configuration scripts that consume the
-      data stored in the configuration YAML files </p>
+      data stored in the configuration YAML files and output Ansible variables used to configure
+      networks, services, servers, and the other applications upon which the cloud runs.</p>
     <p>As you will read in the HP Helion OpenStack 2.0 <xref href="input_model.dita#input_model/toc"
-        >Input Model</xref> topic, The Configuration Processor reads and validates the input model
+        >Input Model</xref> topic, the Configuration Processor reads and validates the input model
       described in the YAML files discussed above, combines it with the service definitions provided
-      by HPE Helion OpenStack and any persisted state information about the current deployment to
+      by HP Helion OpenStack and any persisted state information about the current deployment to
       produce a set of Ansible variables that can be used to deploy the cloud. It also produces a
-      set of information files that provide details about the configuration.</p>
+      set of information files that provide details about the configuration. Reading this document
+      you will gain a thorough understanding of how HP Helion OpenStack 2.0 allows you to deploy and
+      manage your cloud via this comprehensive "wrapper" around cloud configuration.</p>
+    <p/>
   </body>
 </topic>
