@@ -12,9 +12,14 @@
   <p>This is the first release of <keyword keyref="prodLong"/>. For information on features and
    functionality, see <xref href="CFR_whats_new.dita#concept_uvz_1cx_tt"/>.</p>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <draft-comment author="michaelk">The following are release notes for <keyword keyref="prodLong"/>
    released in <varname>&lt;DATE></varname>.</draft-comment>
 =======
 >>>>>>> 6eb154a... Added placeholder for relnotes + xref to What's New
+=======
+  <draft-comment author="michaelk">The following are release notes for <keyword keyref="prodLong"/>
+   released in <varname>&lt;DATE></varname>.</draft-comment>
+>>>>>>> ce13b09... Revised release notes
  </conbody>
 </concept>
