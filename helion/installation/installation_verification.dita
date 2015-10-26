@@ -401,8 +401,9 @@ source /etc/environment</codeblock>
             the <b>Compute</b> subheading. <p><image href="../../media/vsa/createvol1.png"
             /></p></li>
           <li>In the <b>Actions</b> colum, click <b>Delete Volume</b> next to the volume you would
-            like to delete..</li>
-          <li>To confirm and delete the volume, click <b>Delete Volume</b> again.</li>
+            like to delete. <p><image href="../../media/vsa/delvol1.png"/></p></li>
+          <li>To confirm and delete the volume, click <b>Delete Volume</b> again. <p><image
+                href="../../media/vsa/delvol2.png"/></p></li>
           <li>Verify that the volume was removed from the <b>Volumes</b> screen.</li>
         </ol>
       </p>
