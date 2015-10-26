@@ -158,7 +158,7 @@ cf target -o myOrg -s mySpace</codeblock></note></li>
                 cannot connect to <keyword keyref="pubCloudShort"/>, ensure that your connection has
                 no proxy settings.</note></li>
             <li>Ensure that you are logged into the desired
-              cluster:<codeblock>cf login</codeblock>You are prompted for your username and
+              cluster:<codeblock>cf login</codeblock>You are prompted for your username (email) and
                 password.<note type="tip">To skip SSL validation, you can add the
                   <filepath>--skip-ssl-validation</filepath> option.</note></li>
             <li>Create and target an
@@ -200,18 +200,33 @@ cf target -o <varname>&lt;organization></varname> -s <varname>&lt;space></varnam
                       format="html" scope="external">Troubleshooting Application Deployment and
                       Health</xref></li>
                 </ul></note></li>
-          </ol><b>Sample Applications</b><p>The following are sample applications to get you
-              started:<ul id="ul_qvp_lmw_tt">
-              <li><xref href="https://github.com/hpcloud/cf-demo-dashboard" format="html"
-                  scope="external">GitHub Stats Widget for Dashing</xref> (Ruby)</li>
-              <li><xref href="https://github.com/Stackato-Apps/node-env" format="html"
-                  scope="external">Show Environment Variables</xref> (Node.js)</li>
-              <li><xref href="https://github.com/Stackato-Apps/go-env" format="html"
-                  scope="external">Show Environment Variables</xref> (Go)</li>
-            </ul></p><draft-comment author="michaelk">This does not work.<ul id="ul_sx2_bzw_tt">
-              <li><xref href="https://github.com/hpcloud/python-env" format="html" scope="external"
-                  >Show Environment Variables</xref> (Python)</li>
-            </ul></draft-comment><xref href="CFR_step_6.dita#concept_m3k_bth_tt">
+          </ol><b>Sample Applications</b><p>The following are sample applications to get you started:<dl>
+              <dlentry>
+                <dt><xref href="https://github.com/Stackato-Apps/go-env" format="html"
+                    scope="external">go-env</xref> (Go)</dt>
+                <dd>A simple Go application to display environment variables</dd>
+              </dlentry>
+              <dlentry>
+                <dt><xref href="https://github.com/Stackato-Apps/node-env" format="html"
+                    scope="external">node-env</xref> (Node.js)</dt>
+                <dd>A simple demo that prints the server's environment variables</dd>
+              </dlentry>
+              <dlentry>
+                <dt><xref href="https://github.com/hpcloud/cf-demo-dashboard" format="html"
+                    scope="external">cf-demo-dashboard</xref> (Ruby)</dt>
+                <dd>Github stats widget for dashing</dd>
+              </dlentry>
+              <dlentry>
+                <dt><xref href="https://github.com/Stackato-Apps/phpinfo" format="html"
+                    scope="external">phpinfo</xref> (PHP)</dt>
+                <dd>Outputs information about PHP's configuration</dd>
+              </dlentry>
+              <dlentry>
+                <dt><xref href="https://github.com/hpcloud/python-env" format="html"
+                    scope="external">python-env</xref> (Python)</dt>
+                <dd>A simple Python app to show environment variables</dd>
+              </dlentry>
+            </dl></p><xref href="CFR_step_6.dita#concept_m3k_bth_tt">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
           </xref></stentry>
    </strow>
