@@ -3,8 +3,9 @@
 <map>
    <title>HP Helion Cloud Foundry</title>
    <mapref href="docs.hpcloud.com.CFR_variables.ditamap"/>
-   <topicref href="root/CFR_root_documentation.dita">
-      <topicref href="root/CFR_whats_new.dita"/>      
+   <topicref href="root/CFR_root_documentation.dita" navtitle="HPE Helion Cloud Foundry 1.0">
+      <topicref href="root/CFR_whats_new.dita"/>
+      <topicref href="root/CFR_TP_licensing.dita"/>      
    </topicref>
    <topichead navtitle="Quick Start: Deploying to HP Public Cloud">
       <topicref href="quickstart/pubcloud/CFR_step_1.dita"/>

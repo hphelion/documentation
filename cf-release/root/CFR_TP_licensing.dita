@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="CFR_TP_licensing">
+ <title>Open Source and Third-Party Software License Agreements</title>
+ <shortdesc></shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <p>The Open Source and Third-Party Software License Agreements for <keyword keyref="prodLong"/>
+   are available as a PDF download.</p>
+  <draft-comment author="michaelk">
+   <p><xref href="http://www.example.com/agreement.pdf" format="pdf" scope="external">Download the
+     PDF document</xref></p>
+  </draft-comment>
+  <note>Allow sufficient time for the document to load fully.</note>
+ </conbody>
+</concept>
