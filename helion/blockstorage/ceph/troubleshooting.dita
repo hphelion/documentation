@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_mnk_sq1_5t">
-  <title>Ceph Troubleshooting </title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceph Troubleshooting </title>
   <body>
-    <p>This page describes the troubleshooting scenario of Ceph.</p>
+    <p>This page describes the troubleshooting scenarios of Ceph.</p>
     <p><b>Scenario 1:</b></p>
     <p>If no Ceph Monitor nodes are defined for the cloud then Ceph cloud deployment fails with the
       following error while executing <codeph>site.yml</codeph> playbook.</p>
