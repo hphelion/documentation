@@ -335,25 +335,34 @@ source /etc/environment</codeblock>
     </section>
     <section id="create-volume">
       <title>Create a Volume</title>
-      <p>Perform the following steps to create a volume using Horizon dashboard. <ol>
-          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
-            left panel. </li>
-          <li>On the <b>Project</b> tab, open the <b>Compute</b> tab and click the <b>Volumes</b>
-            category.</li>
-          <li>Click <b>Volumes</b> tabs.</li>
-          <li>Click <b>Create Volume</b> button to create a volume. Create Volume dialog box
-            displays.</li>
-          <li>Enter the required details in the corresponding fields. </li>
-          <li>Click<b> Create Volume </b> to complete the action. Clicking <b>Cancel</b> returns to
-            the Volumes screen without completing the action.<p>The dashboard shows the volume on
-              the Volumes tab.</p></li>
-        </ol></p>
+      <p>Perform the following steps to create a volume using Horizon dashboard.</p>
+      <ol>
+        <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
+            >Accessing Horizon</xref> for details.</li>
+        <li>Ensure that you are scoped to your <b>admin</b> Project. Then under the <b>Project</b>
+          menu in the navigation pane, click on <b>Volumes</b> under the <b>Compute</b> subheading.
+              <p><image href="../../media/vsa/createvol1.png"/></p></li>
+        <li>On the <b>Volumes</b> tabs, click the <b>Create Volume</b> button to create a volume.
+              <p><image href="../../media/vsa/createvol2.png"/></p></li>
+        <li>In the <b>Create Volume</b> options, enter the required details into the fields and then
+          click the <b>Create Volume</b> button: <ul>
+            <li>Volume Name - This is the name you specify for your volume.</li>
+            <li>Description (optional) - This is an optional description for the volume.</li>
+            <li>Type - Select the volume type you have created for your volumes from the drop
+              down.</li>
+            <li>Size (GB) - Enter the size, in GB, you would like the volume to be.</li>
+            <li>Availability Zone - You can either leave this at the default option of <b>Any
+                Availability Zone</b> or select a specific zone from the drop down.</li>
+          </ul>
+          <p><image href="../../media/vsa/createvol3.png"/></p></li>
+      </ol>
+      <p>The dashboard will then show the volume you have just created.</p>
     </section>
     <section>
       <title>Attach Volume to an Instance</title>
       <p>Perform the following steps to attach a volume to an instance: <ol>
-          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
-            left panel. </li>
+          <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
+              >Accessing Horizon</xref> for details.</li>
           <li>On the <b>Project</b> tab, open the <b>Compute</b> tab and click the <b>Instances</b>
             category.</li>
           <li>Click the check box next to the name of the volume you want to attach. </li>
@@ -372,8 +381,8 @@ source /etc/environment</codeblock>
     <section>
       <title>Detach Volume from Instance</title>
       <p>Perform the following steps to detach the volume from instance: <ol>
-          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
-            left panel. </li>
+          <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
+              >Accessing Horizon</xref> for details.</li>
           <li>On the <b>Project</b> tab, open the <b>Compute</b> tab and click the <b>Instances</b>
             category.</li>
           <li>Click the check box next to the name of the volume you want to detach. </li>
@@ -391,8 +400,8 @@ source /etc/environment</codeblock>
       <p>Perform the following steps to delete a volume using Horizon dashboard:</p>
       <p>
         <ol>
-          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
-            left panel. </li>
+          <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
+              >Accessing Horizon</xref> for details.</li>
           <li>On the <b>Project</b> tab, open the <b>Compute</b> tab and click the <b>Instances</b>
             category.</li>
           <li>Check the box in the row of the volume to delete.</li>
