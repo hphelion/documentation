@@ -10,9 +10,12 @@
     <section conref="installation/install_entryscale_esx.dita#install_esx/prereqs"/>
     <section conref="installation/install_entryscale_esx.dita#install_esx/deployCloud"/>
 
-
-    <section conref="installation/install_entryscale_kvm.dita#install_kvm/install_deployer"/>
+    <section conref="installation/install_entryscale_kvm.dita#install_kvm/setup_deployer"/>
+   
     <section conref="installation/install_entryscale_kvm.dita#install_kvm/configure_deployer"/>
+    
+    
+    
     <section id="Configuration">
       <title>Configure Your Environment</title>
       <ol>

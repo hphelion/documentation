@@ -3,22 +3,22 @@
 <topic id="topic_ohx_j1t_4t">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Determining When to Rebalance and Deploy a
     New Ring</title>
-  <body><!--Needs Edit-->
-    <p>Before deploying a new ring, you must know the change that has been applied to the last ring,
-      i.e., all the partitions are in their correct location (for example: replication) is complete.
-      There are three aspects to this:</p>
+  <body>
+    <p>Before deploying a new ring, you must be sure the change that has been applied to the last
+      ring is complete (i.e., all the partitions are in their correct location). There are three
+      aspects to this:</p>
     <ul id="ul_dnm_m1t_4t">
       <li>
         <p>Is the replication system busy? </p>
-        <p>You might want to postpone a ring change until after the system settles down. If the
+        <p>You might want to postpone a ring change until after replication has finished. If the
           replication system is busy repairing a failed drive, a ring change will place additional
           load on the system. To check that replication has finished, use the
-            <codeph>swift-recon</codeph> command with the <b>--replication</b> argument. See <xref
-            href="validating_swift_recon.dita"> swift-recon</xref> for more information. The oldest
-          completion time can indicate that the replication process is very busy. If it is more than
-          15-20 minutes then the object replication process are probably still very busy. The
-          following example indicates that the oldest completion is 120 seconds. This indicates that
-          the replication process is probably not
+            <codeph>swift-recon</codeph> command with the <b>--replication</b> argument. (For more
+          information, see <xref href="validating_swift_recon.dita"/>.) The oldest completion time
+          can indicate that the replication process is very busy. If it is more than 15 or 20
+          minutes then the object replication process are probably still very busy. The following
+          example indicates that the oldest completion is 120 seconds, so that the replication
+          process is probably not
           busy:<codeblock>$ sudo swift-recon --replication
 ===============================================================================
 --> Starting reconnaissance on 3 hosts
@@ -35,15 +35,15 @@ Most recent completion was 2015-10-02 15:31:43 (10 seconds ago) by 192.168.245.3
         <li>
           <p>Are there drive or server failures? </p>
           <p>A drive failure does not preclude deploying a new ring. In principal, there should be
-            two copies elsewhere. However, <i>another</i> drive failure in the middle of replication
-            might make data temporary unavailable. If possible, postpone ring changes until all
-            servers and drives are operating normally.</p>
+            two copies elsewhere. However, another drive failure in the middle of replication might
+            make data temporary unavailable. If possible, postpone ring changes until all servers
+            and drives are operating normally.</p>
         </li>
-        <li>Has min-part-time elapsed? <p>The <codeph>swift-ring-builder</codeph> will refuse to
-            build a new ring until min-part-time hours has elapsed since the last time it built
-            rings. You must postpone changes until this time has elapsed. Alternatively you can
-            change the value of min-part-time (See <xref href="how_to_change_min_part_power.dita"
-              >Changing min-part-time</xref>).</p></li>
+        <li>Has <codeph>min-part-time</codeph> elapsed? <p>The <codeph>swift-ring-builder</codeph>
+            will refuse to build a new ring until <codeph>min-part-time</codeph> hours has elapsed
+            since the last time it built rings. You must postpone changes until this time has
+            elapsed. Alternatively you can change the value of min-part-time. (For instructions, see
+              <xref href="how_to_change_min_part_time.dita#topic_ybt_mhb_kt"/>).</p></li>
       </ul>
     </p>
   </body>

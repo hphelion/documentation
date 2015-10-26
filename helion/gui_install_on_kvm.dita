@@ -5,7 +5,9 @@
   <body><!--Needs Edit-->
     <section conref="installation/install_entryscale_kvm.dita#install_kvm/important_notes"/>
     <section conref="installation/install_entryscale_kvm.dita#install_kvm/prereqs"/>
-    <section conref="installation/install_entryscale_kvm.dita#install_kvm/install_deployer"/>
+    
+    <section/>
+    <section conref="installation/install_entryscale_kvm.dita#install_kvm/setup_deployer"/>
     <section conref="installation/install_entryscale_kvm.dita#install_kvm/configure_deployer"/>
     
     <section id="Configuration">
