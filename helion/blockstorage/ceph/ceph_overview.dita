@@ -34,8 +34,6 @@
           <li><xref href="remove_monitor_node.dita#topic_a3t_ptt_rt">Remove Ceph Monitor Node
             </xref></li>
           <li><xref href="ceph_operation.dita#topic_wbn_td3_pt">Ceph operations</xref></li>
-          <li><xref href="upgrade_ceph_cluster.dita#topic_gxm_bwt_rt">Upgrade Ceph
-            Cluster</xref></li>
         </ul></p></section>
     <note>Ceph upgrade is built in integral part of Helion Lifecycle Management upgrade and is in
       line with rest of supported services. Supported version of Ceph is 0.80.7 firefly in HOS 2.0.
