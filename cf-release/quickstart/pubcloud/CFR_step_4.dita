@@ -92,9 +92,8 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
                     <uicontrol>Computer</uicontrol>
                     <uicontrol>Access and Security</uicontrol>
                   </menucascade>.</li>
-              </ul><p>Ensure that all three security groups are available, for example
-                  <uicontrol>cluster1-SSH</uicontrol>, <uicontrol>cluster-1-Router</uicontrol>, and
-                  <uicontrol>cluster-1-Internal</uicontrol>.</p></li>
+              </ul><p>Ensure that the required security group is available, for example
+                  <uicontrol>hcf-container-host</uicontrol>.</p></li>
           </ol><xref href="CFR_step_5.dita#concept_cw2_thz_st">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
           </xref></stentry>

@@ -39,19 +39,17 @@
                 <uicontrol>Instances</uicontrol>
               </menucascade>.</li>
             <li>Click the checkbox next to your instance, for example
-                <uicontrol>cluster1-core</uicontrol>.</li>
+                <uicontrol>hcf-core</uicontrol>.</li>
             <li>Click <uicontrol>Terminate Instances</uicontrol>.</li>
             <li>Click <menucascade>
                 <uicontrol>Project</uicontrol>
                 <uicontrol>Compute</uicontrol>
                 <uicontrol>Access and Security</uicontrol>
               </menucascade>.</li>
-            <li>Click the checkbox next to the security groups, for example
-                <uicontrol>cluster1-SSH</uicontrol>, <uicontrol>cluster-1-Router</uicontrol>, and
-                <uicontrol>cluster-1-Internal</uicontrol>.</li>
+            <li>Click the checkbox next to your security group, for example
+                <uicontrol>hcf-container-host</uicontrol>.</li>
             <li>Click <uicontrol>Delete Security Groups</uicontrol>.</li>
-          </ol><image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"
-          /></stentry>
+          </ol></stentry>
      </strow>
    </simpletable>
  </conbody>
