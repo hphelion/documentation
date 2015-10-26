@@ -310,94 +310,84 @@ source /etc/environment</codeblock>
       <p> After the volume type names have been created, you can assign extra_specs to the volumes
         types.</p>
       <p>To map a volume type to a backend, do the following: <ol id="ol_owv_krv_3t">
-        <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
-          >Accessing Horizon</xref> for details.</li>
-        <li>Ensure that you are scoped to your <b>admin</b> Project. Then under the <b>Admin</b>
-          menu in the navigation pane, click on <b>Volumes</b> under the <b>System</b> subheading.
-          <p><image href="../../media/vsa/createvoltype1.png"/></p></li>
-          <li>Click <b>Volume Type</b> tabs. A list of volume types appear.</li>
-          <li>Click the check box next to the name of the volume you want to attach.</li>
-          <li>In the <b>Actions</b> column, Click <b>Create Encryption</b> drop-down list and select
-              <b>View Extra Specs</b>. <p>The <b>Create Volume Type Extra Specs</b> dialog box
-              displays. Now map the volume type to the associate backend.</p></li>
-          <li>Click <b>Create</b> button.</li>
-          <li>In the <b>Key</b> box, enter <i>volume_backend_name</i> as extra spec key. This is the
-            name of the key used to specify the storage backend when provisioning volumes of this
-            volume type. The volume backend name must match the backend name mentioned in the
-              <codeph>cinder.conf.j2</codeph> file. </li>
-          <li>In the <b>Value</b> box, enter the name of the backend to which you want to associate
-            the volume type. <p>For example: You can enter the following backend name for the
-              respective backend used. The backend name is mentioned in the
-                <codeph>cinder.conf.j2</codeph> file.<ul id="ul_u4j_1vz_jt">
-                <li>VSA: You can enter <codeph>vsa-backend-hlm003</codeph> in the <b>Value</b>
-                  field. In value is taken from <xref
-                    href="configure_vsa.dita#config_vsa/vsa-config">VSA cinder.conf.j2</xref>.</li>
-                <li>Ceph: You can enter <codeph>ceph</codeph> in the <b>Value</b> field. In value is
-                  taken from <xref href="configure_ceph.dita#config_ceph/ceph-cinder-conf">Ceph
-                    cinder.conf.j2</xref>.</li>
-                <li>3PAR FC: You can enter <codeph>3par_FC</codeph> in the <b>Value</b> field. In
-                  value is taken from <xref href="configure_3par.dita#config_3par/3par-fc">3PAR FC
-                    cinder.conf.j2</xref>.</li>
-                <li>3PAR iSCSI : You can enter <codeph>3par_iscsi</codeph> in the <b>Value</b>
-                  field. In value is taken from <xref
-                    href="configure_3par.dita#config_3par/3par-iscsi">3PAR iSCSI
-                    cinder.conf.j2</xref>.</li>
-              </ul></p></li>
-          <li>Click <b>Create</b> to create the extra volume type specs. <note> Once the volume type
-              is mapped to the backend, you can create volumes with this volume type.</note></li>
+          <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
+              >Accessing Horizon</xref> for details.</li>
+          <li>Ensure that you are scoped to your <b>admin</b> Project. Then under the <b>Admin</b>
+            menu in the navigation pane, click on <b>Volumes</b> under the <b>System</b> subheading.
+                <p><image href="../../media/vsa/createvoltype1.png"/></p></li>
+          <li>Click the <b>Volume Type</b> tab to list the volume types. <p><image
+                href="../../media/vsa/associatevoltype2.png"/></p></li>
+          <li>In the <b>Actions</b> column of the Volume Type you created earlier, click the
+            drop-down option and select <b>View Extra Specs</b> which will bring up the <b>Volume
+              Type Extra Specs</b> options. <p><image href="../../media/vsa/associatevoltype3.png"
+              /></p></li>
+          <li>Click the <b>Create</b> button on the <b>Volume Type Extra Specs</b> screen. <p><image
+                href="../../media/vsa/associatevoltype4.png"/></p></li>
+          <li>In the <b>Key</b> field, enter the volume backend name that you specified earlier in
+            the <codeph>cinder.conf.j2</codeph> file. In the <b>Value</b> box, enter the name of the
+            backend to which you want to associate the volume type, which you also specified earlier
+            in the <codeph>cinder.conf.j2</codeph> file. Once you have completed that, click the
+              <b>Create</b> button to create the extra volume type specs. <p><image
+                href="../../media/vsa/associatevoltype5.png"/></p></li>
         </ol></p>
+      <p>Once the volume type is mapped to the backend, you can create volumes with this volume
+        type.</p>
     </section>
     <section id="create-volume">
-      <title>Create Volume </title>
-      <p>Perform the following steps to create a volume using Horizon dashboard. <ol>
-          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
-            left panel. </li>
-          <li>On the <b>Project</b> tab, open the <b>Compute</b> tab and click the <b>Volumes</b>
-            category.</li>
-          <li>Click <b>Volumes</b> tabs.</li>
-          <li>Click <b>Create Volume</b> button to create a volume. Create Volume dialog box
-            displays.</li>
-          <li>Enter the required details in the corresponding fields. </li>
-          <li>Click<b> Create Volume </b> to complete the action. Clicking <b>Cancel</b> returns to
-            the Volumes screen without completing the action.<p>The dashboard shows the volume on
-              the Volumes tab.</p></li>
-        </ol></p>
+      <title>Create a Volume</title>
+      <p>Perform the following steps to create a volume using Horizon dashboard.</p>
+      <ol>
+        <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
+            >Accessing Horizon</xref> for details.</li>
+        <li>Under the <b>Project</b> menu in the navigation pane, click on <b>Volumes</b> under the
+            <b>Compute</b> subheading. <p><image href="../../media/vsa/createvol1.png"/></p></li>
+        <li>On the <b>Volumes</b> tabs, click the <b>Create Volume</b> button to create a volume.
+              <p><image href="../../media/vsa/createvol2.png"/></p></li>
+        <li>In the <b>Create Volume</b> options, enter the required details into the fields and then
+          click the <b>Create Volume</b> button: <ol>
+            <li>Volume Name - This is the name you specify for your volume.</li>
+            <li>Description (optional) - This is an optional description for the volume.</li>
+            <li>Type - Select the volume type you have created for your volumes from the drop
+              down.</li>
+            <li>Size (GB) - Enter the size, in GB, you would like the volume to be.</li>
+            <li>Availability Zone - You can either leave this at the default option of <b>Any
+                Availability Zone</b> or select a specific zone from the drop down.</li>
+          </ol>
+          <p><image href="../../media/vsa/createvol3.png"/></p></li>
+      </ol>
+      <p>The dashboard will then show the volume you have just created.</p>
     </section>
     <section>
       <title>Attach Volume to an Instance</title>
-      <p>Perform the following steps to attach a volume to an instance: <ol>
-          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
-            left panel. </li>
-          <li>On the <b>Project</b> tab, open the <b>Compute</b> tab and click the <b>Instances</b>
-            category.</li>
-          <li>Click the check box next to the name of the volume you want to attach. </li>
-          <li>In the <b>Action</b> column, click <b>Edit Attachments</b> The Manage Volume
-            Attachments screen is displayed.</li>
-          <li>In the <b>Attach To Instance</b> drop-down, select the instance that you want to
-            attach to the volume. </li>
-          <li> Edit the <b>Device Name</b> if necessary.</li>
-          <li>Click <b>Attach Volume</b> to complete the action. Clicking <b>Cancel</b> returns to
-            the <b>Volumes</b> screen without completing the action. </li>
-          <li>Verify that the volume you attached is displayed in the <b>Attached To </b>columns on
-            the <b>Volumes</b> screen.<p>
-              <!--Zones are created and activated in switch effective configuration after the successful attachment of volume to an instance.--></p></li>
-        </ol></p>
+      <p>Perform the following steps to attach a volume to an instance:</p>
+      <ol>
+        <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
+            >Accessing Horizon</xref> for details.</li>
+        <li>Under the <b>Project</b> menu in the navigation pane, click the <b>Instances</b> under
+          the <b>Compute</b> subheading.</li>
+        <li>In the <b>Action</b> column, choose the <b>Edit Attachments</b> in the menu drop down
+          box next to the instance you want to attach the volume to.</li>
+        <li>In the <b>Attach To Instance</b> drop-down, select the volume that you want to
+          attach.</li>
+        <li>Edit the <b>Device Name</b> if necessary.</li>
+        <li>Click <b>Attach Volume</b> to complete the action.</li>
+        <li>Verify that the volume you attached is displayed in the <b>Attached To </b>columns on
+          the <b>Volumes</b> screen.</li>
+      </ol>
     </section>
     <section>
       <title>Detach Volume from Instance</title>
       <p>Perform the following steps to detach the volume from instance: <ol>
-          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
-            left panel. </li>
-          <li>On the <b>Project</b> tab, open the <b>Compute</b> tab and click the <b>Instances</b>
-            category.</li>
+          <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
+              >Accessing Horizon</xref> for details.</li>
+          <li>Under the <b>Project</b> menu in the navigation pane, click the <b>Instances</b> under
+            the <b>Compute</b> subheading.</li>
           <li>Click the check box next to the name of the volume you want to detach. </li>
-          <li>In the Action column, click <b>Edit Attachments</b> The Manage Volume Attachments
-            screen is displayed.</li>
+          <li>In the <b>Action</b> column, choose the <b>Edit Attachments</b> in the menu drop down
+            box next to the instance you want to attach the volume to.</li>
           <li>Click <b>Detach Attachment</b>. A confirmation dialog box appears.</li>
           <li>Click <b>Detach Attachment</b> to confirm the detachment of the volume from the
-            associated instance. Clicking <b>Cancel</b> returns to the Volumes screen without
-            completing the action.<p>When you detach the last volume from an instance running on the
-              compute host, zones are deleted and removed from the effective configuration.</p></li>
+            associated instance.</li>
         </ol></p>
     </section>
     <section>
@@ -405,15 +395,15 @@ source /etc/environment</codeblock>
       <p>Perform the following steps to delete a volume using Horizon dashboard:</p>
       <p>
         <ol>
-          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
-            left panel. </li>
-          <li>On the <b>Project</b> tab, open the <b>Compute</b> tab and click the <b>Instances</b>
-            category.</li>
-          <li>Check the box in the row of the volume to delete.</li>
-          <li>Click <b>Delete Volume</b> to display the dialog box.</li>
-          <li>To confirm and delete the volume, click <b>Delete Volume</b>.<p>To exit without
-              deleting the volume and to close the screen, click <b>Cancel</b> before
-            deleting</p></li>
+          <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
+              >Accessing Horizon</xref> for details.</li>
+          <li>Under the <b>Project</b> menu in the navigation pane, click on <b>Volumes</b> under
+            the <b>Compute</b> subheading. <p><image href="../../media/vsa/createvol1.png"
+            /></p></li>
+          <li>In the <b>Actions</b> colum, click <b>Delete Volume</b> next to the volume you would
+            like to delete. <p><image href="../../media/vsa/delvol1.png"/></p></li>
+          <li>To confirm and delete the volume, click <b>Delete Volume</b> again. <p><image
+                href="../../media/vsa/delvol2.png"/></p></li>
           <li>Verify that the volume was removed from the <b>Volumes</b> screen.</li>
         </ol>
       </p>
