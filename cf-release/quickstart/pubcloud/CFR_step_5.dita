@@ -5,6 +5,7 @@
 <<<<<<< HEAD
  <title>Quick Start Step 5: <keyword keyref="quickStartHPcloudStep5"/></title>
 <<<<<<< HEAD
+<<<<<<< HEAD
  <shortdesc>The following examples describe a typical process of pushing an application using the
     Cloud Foundry CLI to a Droplet Execution Agent (DEA) running on <keyword keyref="prodLong"
     />.</shortdesc>
@@ -19,6 +20,11 @@
  <shortdesc>The following examples describe a typical process of pushing an application to <keyword
       keyref="pubCloudShort"/> using <keyword keyref="prodShort"/>.</shortdesc>
 >>>>>>> 6151c83... Added instructions for pushing an application
+=======
+ <shortdesc>The following examples describe a typical process of pushing an application to a Droplet
+    Execution Agent (DEA) on <keyword keyref="pubCloudShort"/> using <keyword keyref="prodShort"
+    />.</shortdesc>
+>>>>>>> 675cb02... Correcting the terminology for accuracy
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
@@ -167,15 +173,15 @@ cf target -o <varname>&lt;organization></varname></codeblock></li>
             <li>Create a space, attach it to your organization, and target
               it:<codeblock>cf create-space <varname>&lt;space></varname> -o <varname>&lt;organization></varname>
 cf target -o <varname>&lt;organization></varname> -s <varname>&lt;space></varname></codeblock></li>
-          </ol><p>Your application is deployed to the cluster.</p><b>Pushing an Application to the
-            Sandbox Deployment</b><ol id="ol_idl_1mw_tt">
+          </ol><p>Your application is deployed to the cluster.</p><b>Pushing an Application to Your
+            Cluster</b><ol id="ol_idl_1mw_tt">
             <li>Navigate to the GitHub page of the application and click <uicontrol>Download
                 ZIP</uicontrol>.</li>
             <li>Decompress the <filepath>zip</filepath> file into a convenient directory.</li>
             <li>Navigate to the directory that contains your application and its
                 <filepath>yml</filepath> file, and ensure that the <filepath>yml</filepath> file is
               configured correctly.</li>
-            <li>Target the sandbox deployment, for
+            <li>Target the cluster, for
               example:<codeblock>cf api http://api.203.0.113.0.xip.io</codeblock></li>
             <li>Ensure that you are logged into the cluster:<codeblock>cf login</codeblock>You are
               prompted for your username and password.</li>
