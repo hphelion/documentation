@@ -163,8 +163,8 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
               have downloaded in <b>Step 3</b> to your terminal session.<ul id="ul_ptr_bwp_tt">
                 <li>On a Linux machine, navigate to the directory that contains the
                     <filepath>sh</filepath> file and <filepath>source</filepath> the file, for
-                    example:<codeblock>source 12345678901234-Project-openrc.sh</codeblock><p>You are
-                    prompted for your OpenStack password.</p></li>
+                    example:<codeblock>source 12345678901234-Project-openrc.sh</codeblock><p>When
+                    prompted, enter your OpenStack password.</p></li>
                 <li>On a Windows machine, add the variables from the <filepath>sh</filepath> file at
                   the command prompt one by one, or add the commands to a batch file, for
                   example:<codeblock>set OS_AUTH_URL=https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/

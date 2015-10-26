@@ -3,12 +3,17 @@
 <concept id="concept_m3k_bth_tt">
  <title>Quick Start Step 6: <keyword keyref="quickStartHPcloudStep6"/></title>
 <<<<<<< HEAD
+<<<<<<< HEAD
  <shortdesc>You can easily take down your <keyword keyref="prodLong"/> instances and security groups
     on <keyword keyref="pubCloudLong"/>.</shortdesc>
 =======
  <shortdesc>You can easily take down your instances and security groups on <keyword
    keyref="pubCloudShort"/>.</shortdesc>
 >>>>>>> be539c9... Added Step 6
+=======
+ <shortdesc>You can easily take down your <keyword keyref="prodLong"/> instances and security groups
+    on <keyword keyref="pubCloudLong"/>.</shortdesc>
+>>>>>>> 62e2344... Corrected typos and restructured notes
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
@@ -75,14 +80,16 @@
             connect, specify the IP address of your <keyword keyref="prodShort"/> core and the
             location of your RSA private key, for
             example:<codeblock>ssh ubuntu@203.0.113.0 -i ~/.ssh/myPrivateKey.pem</codeblock></p><note
-            type="tip">For more information, see the <xref
+            type="note">For more information, see the <xref
               href="../../reference/CFR_reference_gato.dita#reference_cd3_bs3_rt"
             />.</note><b>Terminating Instances and Security Groups from the Command Line</b><p>To
 >>>>>>> a979a9b... Added the link to the OSTPSL
             terminate your instance and its security groups, run the following command and enter
-              <userinput>yes</userinput> when prompted.</p><note type="caution" id="delete_cluster"
-            >This action will delete all of your managed infrastructure and it cannot be
+              <userinput>yes</userinput> when prompted.</p><note type="important"
+            id="delete_cluster">This action will delete all of your managed infrastructure and it
+            cannot be
             undone.</note><codeblock>terraform destroy -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 7d18ccf... Added placeholder for licensing
             type="tip">For more information, see <xref href="CFR_TF_vars.dita#reference_phl_shc_rt"
@@ -99,9 +106,12 @@
 =======
 =======
             type="tip">For more information, see <xref
+=======
+            type="note">For more information, see <xref
+>>>>>>> 62e2344... Corrected typos and restructured notes
               href="../../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt">Terraform
               Variables</xref>.</note><p>Terraform cleanly terminates the instance and the security
-            groups associated with it.</p><note type="important">If the <filepath>destroy</filepath>
+            groups associated with it.</p><note type="tip">If the <filepath>destroy</filepath>
             process enters a loop, delete the <filepath>terraform.tfstate</filepath> file and run
 <<<<<<< HEAD
             the command again.</note><p>Terraform cleanly terminates the instance and the security
@@ -109,12 +119,18 @@
 >>>>>>> a979a9b... Added the link to the OSTPSL
 =======
             the command again.</note><b>Terminating Instances and Security Groups from <keyword
+<<<<<<< HEAD
 >>>>>>> 416fc79... Final check for HCF 1.0 docs before sending for comments
               keyref="pubCloudShort"/></b><note type="important">Using <keyword
               keyref="pubCloudShort"/> to terminate instances or security groups is not recommended.
             Use the following steps only if you run into difficulties with Terraform.</note><ol
             id="ol_zqt_ld3_tt">
 >>>>>>> 076fff9... Modified instruction steps 5 & 6
+=======
+              keyref="pubCloudShort"/></b><p>Using <keyword keyref="pubCloudShort"/> to terminate
+            instances or security groups is not recommended. Use the following steps only if you run
+            into difficulties with Terraform.</p><ol id="ol_zqt_ld3_tt">
+>>>>>>> 62e2344... Corrected typos and restructured notes
             <li>Log into <xref href="https://horizon.hpcloud.com/" format="html" scope="external"
                   ><keyword keyref="pubCloudShort"/></xref>.</li>
             <li>Click <menucascade>
