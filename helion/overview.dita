@@ -7,9 +7,10 @@
       platform release from HP. It is based on the OpenStack Kilo release and implements core
       services and features of Kilo while providing new installation and management features.</p>
     
+    <section><title>New Installation, Configuration, and Management</title>
     <p>With the release of HP Helion OpenStack 2.0 comes an easy installation and configuration
-      workflow. Installation of the basic cloud requires that you run approximately 14 commands, or
-      use the new installation GUI to step through installation in a wizard-like fashion.</p>
+        workflow. Installation of the basic cloud requires that you run a handful of commands, or
+        use the new installation GUI to step through installation in a wizard-like fashion.</p>
     
     <p>OpenStack services are installed during the installation process, so there is no need to
       install and configure them individually. Instead, in HP Helion OpenStack 2.0, configuration,
@@ -54,5 +55,18 @@
             format="html" scope="external">Mid-scale KVM with VSA model</xref></li>
       </ul>
     </p>
+    </section>
+    <section><title>Post-deployment Configuration</title>
+      <p>In addition to initial installation and deployment, the addition of the configuration
+        processor means that you can reconfigure your cloud easily after deployment.</p>
+      <p>By executing pre-written, supplied Ansible playbooks you may start, stop, and get the
+        status of OpenStack services, add and remove nodes, </p>
+    </section>
+    
+    <section><title>What's New in Documentation</title>
+    
+    
+    
+    </section>
   </body>
 </topic>
