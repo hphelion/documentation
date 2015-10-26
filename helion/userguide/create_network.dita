@@ -17,9 +17,8 @@
     <section id="create_router"><title>Creating a Router</title>
       <p>
         <ol>
-          <li>Access Horizon and login with the following credentials:
-            <codeblock>Username: demo
-Password: demo</codeblock></li>
+          <li>Access Horizon and log in with your credentials.  Contact your Administrator if you do
+            not know your login credentials.</li>
           <li>Open the Create Router wizard by following these steps: <ol>
               <li>Navigate to <b>Routers</b> under the Network menu.</li>
               <li>Click on the <b>Create Router</b> button.</li>
