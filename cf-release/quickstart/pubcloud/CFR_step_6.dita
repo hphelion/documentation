@@ -32,10 +32,10 @@
             undone.</note><codeblock>terraform destroy -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
             type="tip">For more information, see <xref
               href="../../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt">Terraform
-              Variables</xref>.</note><note type="important">If the <filepath>destroy</filepath>
+              Variables</xref>.</note><p>Terraform cleanly terminates the instance and the security
+            groups associated with it.</p><note type="important">If the <filepath>destroy</filepath>
             process enters a loop, delete the <filepath>terraform.tfstate</filepath> file and run
-            the command again.</note><p>Terraform cleanly terminates the instance and the security
-            groups associated with it.</p><b>Terminating Instances and Security Groups from <keyword
+            the command again.</note><b>Terminating Instances and Security Groups from <keyword
               keyref="pubCloudShort"/></b><note type="important">Using <keyword
               keyref="pubCloudShort"/> to terminate instances or security groups is not recommended.
             Use the following steps only if you run into difficulties with Terraform.</note><ol

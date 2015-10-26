@@ -2,7 +2,7 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_kpg_fhz_st">
  <title>Quick Start Step 3: <keyword keyref="quickStartHPcloudStep3"/></title>
- <shortdesc>During this step you will log into <keyword keyref="pubCloudShort"/> and use the web
+ <shortdesc>During this step you will log into <keyword keyref="pubCloudLong"/> and use the web
     console to create a sandbox environment.</shortdesc>
  <prolog>
   <metadata>
@@ -23,7 +23,8 @@
           <b>Creating a Sandbox Environment</b><ol id="ol_ur4_yq1_tt">
             <li>Log into the <xref href="https://horizon.hpcloud.com/" format="html"
                 scope="external"><keyword keyref="pubCloudShort"/></xref> with the username and
-              password that you created during registration.</li>
+              password that you created <xref href="CFR_step_1.dita#concept_s2k_b35_st">during
+                registration</xref>.</li>
             <li>Create a network.<ol id="ol_xvb_qyp_tt">
                 <li>On the left panel, click <menucascade>
                     <uicontrol>Project</uicontrol>
@@ -62,7 +63,7 @@
                     <uicontrol>Routers</uicontrol>
                   </menucascade> and then click the name of your router.</li>
                 <li>Click <uicontrol>Add Interface</uicontrol> on the right.</li>
-                <li>Select the <uicontrol>Subnet</uicontrol> you have created when you created your
+                <li>Select the <uicontrol>Subnet</uicontrol> you created when you have created your
                   network and click <uicontrol>Add Interface</uicontrol>.</li>
               </ol></li>
             <li>Confirm that your sandbox environment is configured correctly.<ol id="ol_bf3_qzp_tt">
@@ -71,19 +72,23 @@
                     <uicontrol>Network</uicontrol>
                     <uicontrol>Network Topology</uicontrol>
                   </menucascade>.</li>
-                <li>Ensure that your router is connected to your network and the external
+                <li>Ensure that your router is shown connected to your network and the external
                   network.</li>
               </ol></li>
             <li>Activate the Compute service required for creating instances.<ol id="ol_kpw_4sp_tt">
                 <li>Click <menucascade>
                     <uicontrol>Manage Services</uicontrol>
-                    <uicontrol>US West</uicontrol>
+                    <uicontrol>Activate Services</uicontrol>
                   </menucascade>.</li>
-                <li>Click <uicontrol>Activate</uicontrol> in the <uicontrol>Computer</uicontrol> row
-                  of your service's row. </li>
+                <li>In the <uicontrol>US West</uicontrol> section, click
+                    <uicontrol>Activate</uicontrol> in the <uicontrol>Actions</uicontrol> column of
+                  the <uicontrol>Compute</uicontrol> row. </li>
               </ol><note>Due to load balancing, your account may be provisioned to use US East
-                instead of US West. If <uicontrol>Launch Instance</uicontrol> is disabled in the
-                  <uicontrol>Instances</uicontrol> pane, try the other region.</note></li>
+                instead of US West. If <uicontrol>Launch Instance</uicontrol> is disabled in the <menucascade>
+                  <uicontrol>Project</uicontrol>
+                  <uicontrol>Computer</uicontrol>
+                  <uicontrol>Instances</uicontrol>
+                </menucascade> pane, try the other region.</note></li>
             <li>Ensure that you have at least 16GB of RAM.<ol id="ol_m1h_dmv_tt">
                 <li>To view your current limits, click <menucascade>
                     <uicontrol>Project</uicontrol>
@@ -117,8 +122,8 @@
                 <li>Enter a key pair name and click <uicontrol>Create Key Pair</uicontrol></li>
                 <li>If the key pair does not download automatically, click the link and save the
                     <filepath>pem</filepath> file in a convenient location.</li>
-              </ol><note>The <filepath>pem</filepath> file contains the RSA private key that you
-                will need to SSH into your cluster.</note></li>
+              </ol><note type="tip">The <filepath>pem</filepath> file contains the RSA private key
+                that you will need to SSH into your cluster.</note></li>
           </ol><xref href="CFR_step_4.dita#concept_pqc_jhz_st">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
           </xref>

@@ -2,8 +2,9 @@
 <!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
 <reference id="reference_phl_shc_rt">
   <title>Terraform Variables</title>
-  <shortdesc>You can configure the following values in your <filepath>.tfvars</filepath> file using
-    the included <filepath>overrides.tfvars.sample</filepath> file as a guide.</shortdesc>
+  <shortdesc>You can configure the following values in your <filepath>tfvars</filepath> file using
+    the <filepath>overrides.tfvars.sample</filepath> file included with <keyword keyref="prodLong"/>
+    as a guide.</shortdesc>
   <prolog>
     <metadata>
       <othermeta name="author" content="Michael Khmelnitsky"/>
@@ -32,7 +33,7 @@
           </row>
           <row>
             <entry><codeph>openstack_keypair</codeph></entry>
-            <entry>The location and name of the key pair you have created on <keyword
+            <entry>The location and name of the key pair that you created on <keyword
                 keyref="pubCloudShort"/><note type="tip">To find your key pair, on the left panel
                 click <menucascade>
                   <uicontrol>Project</uicontrol>
@@ -43,7 +44,7 @@
           </row>
           <row>
             <entry><codeph>openstack_network_id</codeph></entry>
-            <entry>The ID of the network you have created on <keyword keyref="pubCloudShort"/><note
+            <entry>The ID of the network that you created on <keyword keyref="pubCloudShort"/><note
                 type="tip">To find the network ID, on the left panel click <menucascade>
                   <uicontrol>Project</uicontrol>
                   <uicontrol>Network</uicontrol>
@@ -68,8 +69,8 @@
           </row>
           <row>
             <entry><codeph>key_file</codeph></entry>
-            <entry>The location and name of the private key file that you have downloaded after
-              creating your key pair on <keyword keyref="pubCloudShort"/></entry>
+            <entry>The location and name of the private key file that you downloaded after creating
+              your key pair on <keyword keyref="pubCloudShort"/></entry>
           </row>
           <row>
             <entry><codeph>router_ssl_cert_file</codeph></entry>
