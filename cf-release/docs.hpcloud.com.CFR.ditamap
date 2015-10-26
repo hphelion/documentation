@@ -9,6 +9,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    <topicref href="root/CFR_root_documentation.dita">
       <topicref href="root/CFR_whats_new.dita"/>
       <topicref href="root/CFR_relnotes.dita"/>
@@ -86,7 +87,11 @@
       <topicref href="root/CFR_whats_new.dita"/>      
 =======
    <topicref href="root/CFR_root_documentation.dita" navtitle="HPE Helion Cloud Foundry 1.0">
+=======
+   <topicref href="root/CFR_root_documentation.dita">
+>>>>>>> 6eb154a... Added placeholder for relnotes + xref to What's New
       <topicref href="root/CFR_whats_new.dita"/>
+      <topicref href="root/CFR_relnotes.dita"/>
       <topicref href="root/CFR_TP_licensing.dita"/>      
 >>>>>>> 7d18ccf... Added placeholder for licensing
    </topicref>
