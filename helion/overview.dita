@@ -10,19 +10,19 @@
 
     <section><title>Installation, Configuration, and Management</title>
       <p>With the release of HP Helion OpenStack 2.0 comes an easy installation and configuration
-        workflow. Installation of the basic cloud requires that you run approximately 14 commands,
-        or use the new installation GUI to step through installation in a wizard-like fashion.</p>
+        workflow. Installation of the basic cloud requires that you run a handful of commands, or
+        use the new installation GUI to step through installation in a wizard-like fashion.</p>
       <p>OpenStack services are installed during the installation process, so there is no need to
         install and configure them individually. Instead, in HP Helion OpenStack 2.0, configuration,
         including which services to install, how many servers or nodes, what their individual roles
-        will be, what storage will be used, which networks will hadle which traffic, and
+        will be, what storage will be used, which networks will handle which traffic, and
         installation and configuration of the underlying operating system on each node is declared
         in configuration objects stored in YAML files. </p>
       <p>These files allow customization, and HP Helion OpenStack 2.0 ships with complete sets
         describing a few common configurations so that you may base your deployment on a template
         and customize from there if you wish.</p>
       <p>This installation and configuration is made possible by a new feature in HP Helion
-        OpenStack 2.0, the configuration processor, a set of Python scripts that consume the data
+        OpenStack 2.0, the Configuration Processor, a set of Python scripts that consume the data
         stored in the configuration YAML files and output Ansible variables used to configure
         networks, services, servers, and the other applications upon which the cloud runs.</p>
       <p>As you will read in the HP Helion OpenStack 2.0 <xref
@@ -60,25 +60,31 @@
     <section><title>Post-deployment Configuration</title>
       <p>In addition to initial installation and deployment, the addition of the configuration
         processor means that you can reconfigure your cloud easily after deployment.</p>
-      <p>By executing pre-written, supplied Ansible playbooks you may perform management tasks such as those below, along with many others.
-        <ul>
-          <li>start, stop, and get the satus of OpenStack services</li>
+      <p>By executing pre-written, supplied Ansible playbooks in the form of a single command, you
+        may perform management tasks such as those below, along with many others. <ul>
+          <li>start, stop, and get the status of OpenStack services</li>
           <li>add and remove controller, compute, and storage nodes </li>
           <li>back up or restore control plane nodes </li>
           <li>migrate Cinder volumes</li>
           <li>get Ceph status</li>
           <li>start and stop logging</li>
           <li>erase nodes to baremetal</li>
-          <li>reimage nodes</li>
+          <li>re-image nodes</li>
           <li>reconfigure Swift to add or replace drives</li>
           <li>validate Swift drives against the storage model declared</li>
           <li>create networks</li>
         </ul>
-      </p>
-      
-      While the internal management of OpenStack services and the configuration of their functionality still occurs via the service APIs and follows the
-      methodology outlined by OpenStack, the high-level management of the services themselves and their interaction with the cloud is accomplshed 
-      via the Ansibe playbooks mentioned here.
+      </p> While the internal management of OpenStack services and the configuration of their
+      functionality still occurs via the service APIs and follows the methodology outlined by
+      OpenStack, the high-level management of the services themselves and their interaction with the
+      cloud is accomplished via the Ansible playbooks mentioned here. 
+    
+        </section>
+    <section><title>Configuration Versioning</title>
+    In HP Helion OpenStack 2.0, the YAML files that define your cloud configuration are stored in a local git repository that is installed along with the cloud. 
+    The cloud deployment Ansible playbooks look in the appropriate git directories and execute changes when run. This allows you to keep track of config changes and
+    provides the ability to roll back to previous configurations as well.
+    
     </section>
 
     <section><title>What's New in Documentation</title>

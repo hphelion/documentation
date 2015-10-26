@@ -120,10 +120,11 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
             elasticsearch cluster. This should be set to a value other than
               <codeph>elasticsearch</codeph>.
             <codeblock>cd ~/scratch/ansible/next/hos/ansible 
-ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60;name></codeblock></li>
+ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60;name>
+ansible-playbook -i hosts/verb_hosts site.yml </codeblock></li>
           <li>Run the following
                 playbook<codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml </codeblock><p><b>Note:</b>
+</codeblock><p><b>Note:</b>
               If the iSCSI network is not explicitly configured on the controller nodes then boot
               from cinder volumes would fail.</p></li>
         </ol>
