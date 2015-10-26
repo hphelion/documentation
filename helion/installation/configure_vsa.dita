@@ -224,15 +224,14 @@ default_volume_type = &lt;your new volume type></codeblock></p></li>
           cluster information. If you have more than one cluster, you need to add another similar
           section with its respective values. In the following example only one cluster is
           added.<codeblock>[vsa-1]
-#hplefthand_password: &lt;vsa-cluster-password>
-#hplefthand_clustername: &lt;vsa-cluster-name>
-#hplefthand_api_url: https://&lt;vsa-cluster-vip>:8081/lhos
-#hplefthand_username: &lt;vsa-cluster-username>
-#hplefthand_iscsi_chap_enabled: true
-#volume_backend_name: &lt;vsa-backend-name>
-#volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
-#hplefthand_debug: false
-#</codeblock>
+hplefthand_password: &lt;vsa-cluster-password>
+hplefthand_clustername: &lt;vsa-cluster-name>
+hplefthand_api_url: https://&lt;vsa-cluster-vip>:8081/lhos
+hplefthand_username: &lt;vsa-cluster-username>
+hplefthand_iscsi_chap_enabled: false
+volume_backend_name: &lt;vsa-backend-name>
+volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
+hplefthand_debug: false</codeblock>
             where,<ul id="ul_swt_2mb_lt">
             <li>hplefthand_password : Password given during cluster creation.</li>
             <li>hplefthand_clustername: Name of the VSA cluster provided while creating a

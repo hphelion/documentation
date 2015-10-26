@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2031">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Sherpa Catalog Service Overview</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./commercial/GA1/1.1commerical.services-sherpa-overview.md-->
+ <!--permalink: /helion/openstack/1.1/services/sherpa/overview/--></p>
+<p>
+
+</p>
+<p>The HP Helion OpenStack Sherpa Service provides a link to the remote web catalog containing a repository of software available for purchase and download into the HP Helion environment.</p>
+<p>You can make purchases using a self-service account on the public web server. Once a purchase is made, you can use the Sherpa UI and back-end service to download the content from the web catalog using your self-service account. The content is then published into the various cloud repositories within HP Helion so that the end users can deploy virtual machines and other content from within the cloud.</p>
+<p>Content may include patches, plugins, images, models, and so forth that may be used to update, improve, extend, or provide content for the cloud.</p>
+
+<section id="working-with-the-sherpa-service"> <title>Working with the Sherpa Service</title>
+<p>To perform tasks using the Sherpa service, you can use the Horizon dashboards.</p>
+</section>
+<section id="UI"> <title>Using the dashboards </title>
+<p>You can use the <xref href="../../commercial/GA1/1.1commercial.undercloud-admin-updates-and-extensions.dita" >HP Helion OpenStack Dashboard</xref> to work with the Sherpa service.</p>
+
+
+<p>The Dashboard presents different options depending on the installation, location within the cloud, and the role of the Sherpa user currently logged in. Cloud Architects or Administrators, for example, can use the dashboard to update their clouds.</p>
+<p>When Sherpa is deployed in the undercloud and connected to the remote catalog web service, it pulls overcloud images and other support content down into the undercloud so that the images are deployed or upgraded properly.</p>
+<p>Sherpa may also be deployed in the overcloud to provide new content or workloads to be deployed within the overcloud. <!-- how?? --></p>
+
+
+</section>
+</body>
+</topic>
