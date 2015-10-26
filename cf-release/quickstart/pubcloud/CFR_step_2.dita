@@ -24,7 +24,7 @@
               keyref="prodShort"/> to push Docker images and application code to the server, start
             and stop applications, link <keyword keyref="opnStckShort"/> services to applications,
             and perform other application management operations.</p><ul id="ul_cfn_rm1_tt">
-            <li><xref href="http://bit.ly/1QYXzXt" format="html" scope="external">Download <keyword
+            <li><xref href="http://bit.ly/1R2QN2U" format="html" scope="external">Download <keyword
                   keyref="prodShort"/>
                 <keyword keyref="prodVerLong"/></xref></li>
           </ul><note type="tip">To decompress <filepath>tar.gz</filepath> files on Windows, you can
