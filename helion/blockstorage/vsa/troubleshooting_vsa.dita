@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_jv4_q1t_tt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Troubleshooting the VSA</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configure Separate iSCSI Network to use with
+    VSA</title>
   <body>
-    <p>This page describes the procedure to assign a separate iSCSI network for VSA, Compute and
-      Controller  nodes.</p>
+    <p>This page describes the procedure to assign a separate iSCSI network to use with VSA nodes.
+      You must configure controller and compute nodes along with VSA to use a separate iSCSI
+      network.</p>
     <p>Perform the following procedure to assign a separate iSCSI network:</p>
     <section>
       <p>
@@ -122,9 +124,8 @@ ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60
           <li>Run the following
                 playbook<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml </codeblock><p><b>Note:</b>
-              If you are using a separate iSCSI network and that network is not associated with the
-              controllers<!-- (now using the force_network_groups option)--> then boot from the
-              volumes would fail.</p></li>
+              If the iSCSI network is not explicitly configured on the controller nodes then boot
+              from cinder volumes would fail.</p></li>
         </ol>
       </p>
     </section>

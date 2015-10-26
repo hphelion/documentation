@@ -41,10 +41,13 @@
       <title>Creating a StoreVirtual Cluster and adding it to a new Management Group Cluster using
         CMC</title>
       <p>The CMC utility requires a GUI to access it. You can install either of the following tool
-        to launch CMC.<ul id="ul_icy_xyt_tt">
+        to launch CMC.</p>
+      <p>
+        <ul id="ul_icy_xyt_tt">
           <li>RDP/VNC connect</li>
           <li>Install (any) X Display Tool </li>
-        </ul></p>
+        </ul>
+      </p>
       <p><b> RDP/VNC connect</b></p>
       <p>The following steps will allow you to setup a VNC connect to your controller node so you
         can view the GUI.</p>
@@ -96,8 +99,10 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
             <li>Connecting through VNC client<ol id="ol_mss_nw2_tt">
                 <li>Enter the IP address, port and password.</li>
               </ol></li>
-          </ol> A terminal emulator will be displayed where you can enter the CMC launch
-          command.</li>
+          </ol> A terminal emulator will be displayed where you can enter the CMC launch command.
+          Note that CMC launch with this method will have the following limitations: <note type="important">By
+            default CMC- xterm disables all  the title bars and borders. This is an expected
+            behavior.</note></li>
       </ol>
       <!--
       <p><b> Install (any) X Display Tool to Launch Centralized Management Console (CMC)</b></p>
