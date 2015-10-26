@@ -111,6 +111,7 @@
 >>>>>>> be539c9... Added Step 6
     <stentry><b>Registering for a <keyword keyref="pubCloudShort"/> Account</b><note type="tip">Keep
 <<<<<<< HEAD
+<<<<<<< HEAD
       your username and password handy. You will need them during
       installation.</note><p>Registration allows you to obtain <xref
        href="http://www.hpcloud.com/cloud-credit" scope="external" format="html">cloud credit</xref>
@@ -134,6 +135,10 @@
          keyref="pubCloudShort"/> pricing</xref> to see what charges may be incurred if you exceed
        your usage limits.</draft-comment>
      </p><xref href="CFR_step_2.dita#concept_ikh_xgz_st">
+=======
+      your username and password handy. You will need them during installation.</note><xref
+      href="CFR_step_2.dita#concept_ikh_xgz_st">
+>>>>>>> 327a60e... Revised filenames; added info RE: terraform destroy
       <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
      </xref></stentry>
 >>>>>>> 3e4078d... Revised setup instructions

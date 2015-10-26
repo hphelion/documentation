@@ -153,7 +153,7 @@ cf target -o myOrg -s mySpace</codeblock></note></li>
                 <b><keyword keyref="quickStartHPcloudStep5" id="quickStartHPcloudStep5"/></b></p>6.
             <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
     <stentry><b>Getting Ready to Push Your First Application</b><ol id="ol_zdy_p53_tt">
-            <li>Ensure you are targeting the desired cluster, for
+            <li>Ensure that you are targeting the desired cluster, for
                 example:<codeblock>cf api http://api.203.0.113.0.xip.io</codeblock><note>If you
                 cannot connect to <keyword keyref="pubCloudShort"/>, ensure that your connection has
                 no proxy settings.</note></li>
@@ -167,20 +167,17 @@ cf target -o <varname>&lt;organization></varname></codeblock></li>
             <li>Create a space, attach it to your organization, and target
               it:<codeblock>cf create-space <varname>&lt;space></varname> -o <varname>&lt;organization></varname>
 cf target -o <varname>&lt;organization></varname> -s <varname>&lt;space></varname></codeblock></li>
-          </ol><p>Your application is deployed to the cluster.</p><draft-comment author="michaelk">
-            <ol id="ol_nf2_vqq_5t">
-              <li>Target the sandbox deployment, for
-                example:<codeblock>cf target http://api.203.0.113.0.xip.io</codeblock></li>
-            </ol>
-          </draft-comment><b>Pushing an Application to the Sandbox Deployment</b><ol
-            id="ol_idl_1mw_tt">
+          </ol><p>Your application is deployed to the cluster.</p><b>Pushing an Application to the
+            Sandbox Deployment</b><ol id="ol_idl_1mw_tt">
             <li>Navigate to the GitHub page of the application and click <uicontrol>Download
                 ZIP</uicontrol>.</li>
-            <li>Decompress the <filepath>.zip</filepath> file into a convenient directory.</li>
+            <li>Decompress the <filepath>zip</filepath> file into a convenient directory.</li>
             <li>Navigate to the directory that contains your application and its
-                <filepath>.yml</filepath> file, and ensure that the <filepath>.yml</filepath> file
-              is configured correctly.</li>
-            <li>Ensure you are logged into the cluster:<codeblock>cf login</codeblock>You are
+                <filepath>yml</filepath> file, and ensure that the <filepath>yml</filepath> file is
+              configured correctly.</li>
+            <li>Target the sandbox deployment, for
+              example:<codeblock>cf api http://api.203.0.113.0.xip.io</codeblock></li>
+            <li>Ensure that you are logged into the cluster:<codeblock>cf login</codeblock>You are
               prompted for your username and password.</li>
             <li>Push the application:<codeblock>cf push</codeblock><p>At the end of the process,
                 Cloud Foundry displays the URL of the application, formatted using the xip.io
