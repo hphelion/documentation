@@ -101,7 +101,7 @@
       <topicref href="helion/operations/sherpa/sherpa_overview.dita"
         navtitle="Sherpa Catalog Overview" locktitle="yes">
         <topicref href="helion/operations/sherpa/accessing_sherpa.dita"
-          navtitle=Accessing the Sherpa Catalog" locktitle="yes"/>
+          navtitle="Accessing the Sherpa Catalog" locktitle="yes"/>
         <topicref href="helion/operations/sherpa/validate_sherpa_signatures.dita"
           navtitle="Validating Download Signatures" locktitle="yes"/>
       </topicref>
