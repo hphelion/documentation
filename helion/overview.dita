@@ -18,5 +18,14 @@
     <p>These files allow customization, and HP Helion OpenStack 2.0 ships with complete sets
       describing a few common configurations so that you may base your deployment on a template and
       customize from there.</p>
+    <p>This installation and configuration is made possible by a new feature in HP Helion OpenStack
+      2.0, the configuration processor, a Python-based set of configuration scripts that consume the
+      data stored in the configuration YAML files </p>
+    <p>As you will read in the HP Helion OpenStack 2.0 <xref href="input_model.dita#input_model/toc"
+        >Input Model</xref> topic, The Configuration Processor reads and validates the input model
+      described in the YAML files discussed above, combines it with the service definitions provided
+      by HPE Helion OpenStack and any persisted state information about the current deployment to
+      produce a set of Ansible variables that can be used to deploy the cloud. It also produces a
+      set of information files that provide details about the configuration.</p>
   </body>
 </topic>
