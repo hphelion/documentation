@@ -3,14 +3,14 @@
 <topic id="topic_q5q_trz_jt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Verify Backend Configuration</title>
   <body><!--Needs Edit-->
-    <p>This page describes the procedure to create volume type, associate volume type to backend,
-      create volume, attach volume, detach volume, and delete volume. You perform this operation to
-      verify the configuration of backend (VSA, Ceph, and 3PAR).</p>
+    <p>This page describes the procedure to create volume type, associate a volume type to a
+      backend, create volume, attach volume, detach volume, and delete volume. You perform this
+      operation to verify the configuration of backend (VSA, Ceph, and 3PAR).</p>
     <section>
       <title>Create Volume Type to Verify the Configuration of Backend</title>
       <p><!--Volumes are the Block Storage devices that you attach to instances to enable persistent storage.-->
         <!--You can attach a volume or detach a volume and attach it to another instance at any time. You can also create and delete volume type and volumes.--></p>
-      <p>Perform the following steps to create a volume using Horizon dashboard: <ol
+      <p>Perform the following steps to create a volume type using the Horizon dashboard: <ol
           id="ol_vr4_rb1_rt">
           <li>Log into the Horizon dashboard<!-- as  an<i>Admin</i> user-->. The Horizon dashboard
             displays with the options in the left panel.</li>
@@ -77,13 +77,13 @@ volume_backend_name MyVolumeBackend</codeblock></p><p>The
               respective backend used. The backend name is mentioned in the
                 <codeph>cinder.conf.j2</codeph> file.<ul id="ul_u4j_1vz_jt">
                 <li>VSA: You can enter <codeph>vsa-backend-hlm003</codeph> in the <b>Value</b>
-                  field. In value is taken from <b>VSA cinder.conf.j2</b>.</li>
-                <li>Ceph: You can enter <codeph>ceph</codeph> in the <b>Value</b> field. In value is
-                  taken from <b>Ceph cinder.conf.j2</b>.</li>
-                <li>3PAR FC: You can enter <codeph>3par_FC</codeph> in the <b>Value</b> field. In
+                  field. The value is taken from <b>VSA cinder.conf.j2</b>.</li>
+                <li>Ceph: You can enter <codeph>ceph</codeph> in the <b>Value</b> field. The value
+                  is taken from <b>Ceph cinder.conf.j2</b>.</li>
+                <li>3PAR FC: You can enter <codeph>3par_FC</codeph> in the <b>Value</b> field. The
                   value is taken from <b>3PAR FC cinder.conf.j2</b>.</li>
                 <li>3PAR iSCSI : You can enter <codeph>3par_iscsi</codeph> in the <b>Value</b>
-                  field. In value is taken from <b>3PAR iSCSI cinder.conf.j2</b>.</li>
+                  field. The value is taken from <b>3PAR iSCSI cinder.conf.j2</b>.</li>
               </ul></p></li>
           <li>Click <b>Create</b> to create the extra volume type specs. <note> Once the volume type
               is mapped to the backend, you can create volumes with this volume type.</note></li>
@@ -161,5 +161,10 @@ volume_backend_name MyVolumeBackend</codeblock></p><p>The
         </ol>
       </p>
     </section>
+    <p>
+      <note>All the above steps can be performed using OpenStack CLI. For more details refer to
+        <?oxy_custom_start type="oxy_content_highlight" color="140,255,140"?>OpenStack documentation
+        <!--(need to add link)-->.<?oxy_custom_end?></note>
+    </p>
   </body>
 </topic>

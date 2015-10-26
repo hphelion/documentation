@@ -24,12 +24,12 @@
                         example, to remove the OSD node
                             <codeph>padawan-ceph-ccp-ceph0001-mgmt</codeph>, the OSD numbers 1, 4
                         and 7 are relevant.</p></li>
-        <li>Create a file name <i>osd-node-to-remove</i> and add the OSD hostname(s) (say in above
-                    example <i>padawan-ceph-ccp-ceph0001-mgmt</i>) to the file. (<b>what is meant by
-                        create a file name??. command required?</b>)</li>
         <li>Stop the OSDs running on the specific host by executing the following command
-          :<codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts ceph-stop.yml --limit @osd-node-to-remove</codeblock></li>
+                        :<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ceph-stop.yml --limit &lt;osd-node-to-remove></codeblock><note>Replace
+                        the string (<codeph>osd-node-to-remove</codeph>) in above command with the
+                        OSD host to be removed from cluster (for example:
+                            <codeph>stratushelion-ccp-ceph0001-mgmt </codeph>).</note></li>
         <li> Execute the following command for each OSD number (obtained from step #2
                         above):<codeblock>ceph osd out &lt;osd-number> --cluster &lt;ceph_cluster>
 ceph auth del osd.&lt;osd-number> --cluster &lt;ceph_cluster>
@@ -54,9 +54,7 @@ git commit -m "Remove OSD node &lt;host-name>"</codeblock></li>
                         name (i.e. <codeph>padawan-ceph-ccp-ceph0001-mgmt</codeph> as mentioned in
                         the above example).</note></li>
         <li>Log in to the OSD node and un-mount the data and journal disks. Also remove the mount
-                    instructions for the same disks from the <i>/etc/fstab</i> file. <b>(command to
-                        login to OSD node? command to un-mount data and journal disks??)</b><p
-                    > </p></li>
+                    instructions for the same disks from the <i>/etc/fstab</i> file. <p> </p></li>
       </ol></p>
   </body>
 </topic>

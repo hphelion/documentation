@@ -68,7 +68,38 @@
         currently offline so that these nodes get excluded from any further reconfiguration or
         upgrades. This prevents a VSA node that is offline from being included in deployments.</p>
       <p><b>&lt;DETAILED INFORMATION IS REQUIRED></b></p>
-      <p>The format of servers.yml file would be <codeph>!&lt;VSA node-name>*</codeph></p>
+      <p>Perform the following steps to remove the VSA node:<ol id="ol_dy4_g4j_5t">
+          <li>Login to deployer node.</li>
+          <li>Edit the definition of the server (usually in<codeph> data/servers.yml</codeph> file)
+            to remove the VSA node. For example, if the entry for the server looks
+              like:<codeblock># VSA Storage Nodes
+    - id: vsa1
+      ip-addr: 192.168.60.16
+      role: VSA-1-ROLE
+    # nic-mapping: MY_2PORT_SERVER
+
+    - id: vsa2
+      ip-addr: 192.168.60.17
+      role: VSA-2-ROLE
+    # nic-mapping: MY_2PORT_SERVER
+
+    - id: vsa3
+      ip-addr: 192.168.60.18
+      role: VSA-3-ROLE
+    # nic-mapping: MY_2PORT_SERVER</codeblock><p>Select
+              the VSA node to be removed. For example: if you wan to remove vsa1 node then the
+              servers.yml file looks like
+              below:<codeblock># VSA Storage Nodes
+    - id: vsa2
+      ip-addr: 192.168.60.17
+      role: VSA-2-ROLE
+    # nic-mapping: MY_2PORT_SERVER
+
+    - id: vsa3
+      ip-addr: 192.168.60.18
+      role: VSA-3-ROLE
+    # nic-mapping: MY_2PORT_SERVER</codeblock></p></li>
+        </ol></p>
       <p> where VSA node-name matched the interface used to access this node during deployment. For
         example<codeblock>!padawan-ccp-vsa001* (VSA host as given in hosts/verb_hosts)</codeblock></p>
       <p>When performing Helion lifecycle management  deployments specify the name of this file in a
