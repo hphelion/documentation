@@ -60,7 +60,8 @@
     <section><title>Post-deployment Configuration</title>
       <p>In addition to initial installation and deployment, the addition of the configuration
         processor means that you can reconfigure your cloud easily after deployment.</p>
-      <p>By executing pre-written, supplied Ansible playbooks you may perform these and many other tasks<ul>
+      <p>By executing pre-written, supplied Ansible playbooks you may perform management tasks such as those below, along with many others.
+        <ul>
           <li>start, stop, and get the satus of OpenStack services</li>
           <li>add and remove controller, compute, and storage nodes </li>
           <li>back up or restore control plane nodes </li>
