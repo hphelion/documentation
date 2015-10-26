@@ -64,7 +64,7 @@
       <topicref href="helion/installation/installation_troubleshooting.dita"
         navtitle="Troubleshooting Your Installation" locktitle="yes"/>
       <topicref href="helion/installation/postinstall_checklist.dita"
-        navtitle="Post-Installation Checklist" locktitle="yes"/>
+        navtitle="Common Post-Installation Tasks" locktitle="yes"/>
     </topicref>
 
     <!-- SECURITY -->
