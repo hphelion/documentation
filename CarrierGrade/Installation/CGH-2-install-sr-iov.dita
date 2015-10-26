@@ -15,9 +15,11 @@
         </metadata>
     </prolog>
     <body>
-        <p>A SR-IOV Ethernet interface is a physical PCI Ethernet NIC that implements hardware-based
-            virtualization mechanisms to expose multiple virtual network interfaces that can be used
-            by one or more virtual machines simultaneously.</p>
+        <p>An SR-IOV Ethernet interface is a physical PCI Ethernet NIC that implements
+            hardware-based virtualization mechanisms to expose multiple virtual network interfaces
+            that can be used by one or more virtual machines simultaneously.</p>
+        <p>With SR-IOV based NICs, the traditional virtual bridge is no longer required. Each SR-IOV
+            port is associated with a virtual function (VF).</p>
         <p>The process for configuring SR-IOV includes creating a VLAN provider network and subnet,
             then attaching VMs to that network.</p>
         <section>

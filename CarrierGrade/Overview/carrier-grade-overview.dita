@@ -135,18 +135,34 @@
           <li>Has the same requirements regarding the VLAN configuration of the access switches. </li>
           <li>Provides a similar configuration workflow.</li>
         </ul></p><p>Refer to the KVM Region Administrator Guide for more information on PCI
-        Pass-through and SR-IOV.</p><p><b>PCI Pass-through</b>. A passthrough Ethernet interface is
-        a physical PCI Ethernet NIC on a compute node to which a virtual machine is granted direct
+        Pass-through and SR-IOV.</p><p><b>PCI Passthrough</b>. A passthrough Ethernet interface is a
+        physical PCI Ethernet NIC on a compute node to which a virtual machine is granted direct
         access. This minimizes packet processing delays but at the same time demands special
         operational considerations. For all purposes, a PCI passthrough interface behaves as if it
-        were physically attached to the virtual machine.</p><p><b>SR-IOV</b>. A Single-Root I/O
-        Virtualization (SR-IOV) Ethernet interface is a physical PCI Ethernet NIC that implements
-        hardware-based virtualization mechanisms to expose multiple virtual network interfaces that
-        can be used by one or more virtual machines simultaneously.</p><title>Installation
-        Options</title>HP Helion OpenStack Carreir Grade has two baremetal installation options
-      depending on your system configuration. It allows you to manage the KVM and VMware ESX<tm
-        tmtype="reg"/> hypervisors and provision virtual machines.<p>You can find more information
-        on the hypervisor options in the <xref
+        were physically attached to the virtual machine.</p><p>Instructions for configuring SR-IOV
+        are available after for installation, see <xref
+          href="../Installation/CGH-2-install-pci-pass.dita#topic10581">Configuring
+          PCI-Passthrough</xref></p><p><b>SR-IOV</b>. A Single-Root I/O Virtualization (SR-IOV)
+        Ethernet interface is a physical PCI Ethernet NIC that implements hardware-based
+        virtualization mechanisms to expose multiple virtual network interfaces that can be used by
+        one or more virtual machines simultaneously.</p><p>When compared with a PCI Passthtrough
+        Ethernet interface, a SR-IOV Ethernet interface:  <!--From WR admin--><ul id="ul_b3l_y2r_5t">
+          <li>Provides benefits similar to those of a PCI Passthtrough Ethernet interface, including
+            lower latency packet processing.</li>
+          <li>Scales up more easily in a virtualized environment by providing multiple VFs that can
+            be attached to multiple virtual machine interfaces.</li>
+          <li>Shares the same limitations, including the lack of support for LAG, QoS, ACL, and live
+            migration.</li>
+          <li>Has the same requirements regarding the VLAN configuration of the access
+            switches.</li>
+          <li>Provides a similar configuration workflow when used on HP Helion OpenStack Carrier
+            Grade.</li>
+        </ul></p><p>Instructions for configuring SR-IOV are available after for installation, see
+          <xref href="../Installation/CGH-2-install-sr-iov.dita#topic10581">Configuring
+          SR-IOV</xref>.</p><title>Installation Options</title>HP Helion OpenStack Carreir Grade has
+      two baremetal installation options depending on your system configuration. It allows you to
+      manage the KVM and VMware ESX<tm tmtype="reg"/> hypervisors and provision virtual
+        machines.<p>You can find more information on the hypervisor options in the <xref
           href="../Installation/carrier-grade-technical-overview.dita#topic3485">Technical
           Overview</xref>.</p>
       <b>KVM Topology</b>
