@@ -179,7 +179,7 @@ git commit -m "My config or other commit message"</codeblock>
             href="using_git.dita">Using Git for Configuration Management</xref> for more
           information.</note></p>
     </section>
-    
+
     <section id="deploy_cobbler">
       <title>Deploy Cobbler</title>
       <p>This phase of the install process takes the baremetal information that was provided in
@@ -210,7 +210,7 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
             for the node installs.</p> --></li>
       </ol>
     </section>
-    
+
     <section id="provision_nodes"><title>Provision the Nodes</title>
       <p>This phase of the install process goes through a number of distinct steps: <ol>
           <li>Powers down the nodes to be installed</li>
@@ -234,14 +234,14 @@ ansible-playbook -i hosts/localhost bm-reimage.yml [-e nodelist=node1,node2,node
       <p>You can use <codeph>sudo cobbler system find --netbook-enabled=1</codeph> which will list
         all of your nodes with the <codeph>netboot-enabled: True</codeph> flag.</p>
     </section>
-    
+
     <section id="config_processor"><title>Run the Configuration Processor</title>
       <p>Once you have your configuration files setup you need to run the configuration processor to
         complete your configuration.</p>
       <p>When you run the configuration processor you will be prompted for two passwords. Enter the
         first password to make the configuration processor encrypt its sensitive data, which is
         comprised of the random inter-service passwords that it generates and the ansible
-        <codeph>group_vars</codeph> and <codeph>host_vars</codeph> that it produces for subsequent
+          <codeph>group_vars</codeph> and <codeph>host_vars</codeph> that it produces for subsequent
         deploy runs. You will need this key for subsequent ansible deploy and configuration
         processor runs. If you wish to change an encryption password that you have already used when
         running the configuration processor then enter the new password at the second prompt,
@@ -260,7 +260,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
         changes to git using the instructions in the previous section before re-running the
         configuration processor again.</p>
     </section>
-    
+
     <section id="deploy"><title>Deploy the Cloud</title>
       <ol>
         <li>Use the playbook below to create a deployment directory:
@@ -283,7 +283,7 @@ ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60
           one of the controller nodes.</li>
       </ol>
     </section>
-    
+
     <section id="configure_backend"><title>Configure a Block Storage Backend (Optional)</title>
       <p>If you have chosen to use VSA, Ceph, or 3PAR as your Block Storage backend, there are some
         additional steps to complete your installation. See these pages below to configure the
@@ -294,10 +294,12 @@ ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60
         <li><xref href="configure_3par.dita">3PAR Configuration</xref></li>
       </ul>
     </section>
-    
+
     <section id="post-installation"><title>Post-Installation Verification and Administration</title>
       <p>We recommend verifying the installation using <xref href="installation_verification.dita"
           >Tempest's embedded tests</xref>.</p>
+      <p>There are also a list of other common post-installation administrative tasks listed in the
+          <xref href="postinstall_checklist.dita">Common Post-Installation Tasks</xref> list.</p>
     </section>
   </body>
 </topic>

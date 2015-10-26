@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_x2x_vy4_lt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Esx ON-Boarding (EON) Service</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: ESX ON-Boarding Service (EON)</title>
   <body><!--Needs Edit-->
     <p>The HP Helion OpenStack 2.0 EON (ESX on boarding) Service is an inventory, which interacts
       with the VMware vCenter server and collects available information from data centers, clusters,

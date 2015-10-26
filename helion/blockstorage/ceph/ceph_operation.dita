@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_wbn_td3_pt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceph Operations : Start, Stop, Status Operation</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Starting, Stopping, and Status for
+    Ceph</title>
   <body><!--Needs Edit-->
     <p>After the successful deployment of Ceph, you can perform the following Ceph operations:<ul
         id="ul_j45_td3_pt">

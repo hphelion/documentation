@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_i2z_zc3_pt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring OpenStack Services (Cinder) to
-    use Ceph </title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring Cinder to Use Ceph </title>
   <body><!--Needs Edit-->
     <p>This page contains the following topics :<ul id="ul_vrf_jf3_pt">
         <li><xref href="#topic_i2z_zc3_pt/configure-ceph-as-cinder-backend" format="dita">Configure

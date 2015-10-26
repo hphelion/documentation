@@ -5,7 +5,7 @@
   <body>
     <!--Needs Edit-->
     <p>The HP Helion OpenStack 2.0 system ships with a number of pre-qualified example
-      configuration. These are designed to help you to get up and running quickly with a minimum
+      configurations. These are designed to help you to get up and running quickly with a minimum
       number of configuration changes.</p>
     <p>The HP Helion OpenStack input model allows a wide variety of configuration parameters that
       may, at first glance, appear daunting. The example configurations are designed to simplify
@@ -127,7 +127,7 @@
       </ul>
     </section>
     <section id="example_configs"><title>HP Helion OpenStack Example Configurations</title>
-      <p>This section briefly describes the various example configuration and their capabilities. It
+      <p>This section briefly describes the various example configurations and their capabilities. It
         also describes in detail, for the entry-scale-kvm-vsa example, how you may adapt the input
         model to work in your environment.</p>
       <p>HP Helion OpenStack 2.0 ships with two classes of sample cloud models: examples and
@@ -143,7 +143,7 @@
       <p>These systems are designed to provide an entry-level solution that can be scaled from a
         small number of nodes to a moderately high node count (approximately 100 compute nodes, for
         example).</p>
-      <p>The tech-preview configuration include the following model:</p>
+      <p>The tech-preview configuration includes the following model:</p>
       <ul>
         <li>Mid-scale KVM with VSA model (mid-scale-kvm-vsa): In this model, the cloud control plane
           is subdivided into a number of dedicated service clusters to provide more processing power
@@ -360,7 +360,7 @@
           Network</xref></i>. You will only specify its VLAN ID during the installation process.</p>
       <p>The Management network is shown as untagged. This is required if you are using this network
         to PXE install the operating system on the cloud nodes.</p>
-      <p>The example <codeph>networks.yml</codeph> file is shown below, modify the bolded fields to
+      <p>The example <codeph>networks.yml</codeph> file is shown below. Modify the bolded fields to
         reflect your site values.</p>
       <codeblock>networks:
    #
@@ -469,7 +469,7 @@
         enumerate the ports as required.</p>
     </section>
     <section id="netinterfaces"><title>Net_interfaces.yml</title>
-      <p>This file is used to fine how the network interfaces are to be configured. The example
+      <p>This file is used to define how the network interfaces are to be configured. The example
         reflects the slightly different configuration of controller, compute nodes, and VSA
         nodes.</p>
       <p>If network bonding is to be used, this file specifies how bonding is to be set up. It also
