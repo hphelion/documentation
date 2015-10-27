@@ -280,7 +280,7 @@ hplefthand_debug: false</codeblock>
               </tbody>
             </tgroup>
           </table>
-          <p>If you have forgeten the cluster name or IP address after creating the cluster then you
+          <p>If you have forgotten the cluster name or IP address after creating the cluster then you
             can perform the following steps to retrieve them:</p>
           <ol>
             <li>Login to CMC console using the <codeph>/opt/HP/StoreVirtual/UI/jre/bin/java -jar
