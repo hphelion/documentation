@@ -19,9 +19,11 @@
           <codeph>~/service.osrc</codeph> file on the lifecycle-manager node. You can do that with
         this command:</p>
       <codeblock>cat ~/service.osrc</codeblock>
+      <!--
       <note type="important">The credentials for your <codeph>admin</codeph> user account can be
         changed. See <xref href="../identity/identity_init.dita">Keystone Configuration</xref> for
         more details.</note>
+        -->
     </section>
   </body>
 </topic>
