@@ -3,7 +3,7 @@
 <topic id="topic_i2z_zc3_pt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring Cinder to Use Ceph </title>
   <body>
-    <!--Needs Edit; fnf edits on 10/26; not sure about backend as 1 word-->
+    <!--Needs Work; fnf edits on 10/26; not sure about backend as 1 word-->
     <p>This topic covers the following:<ul id="ul_vrf_jf3_pt">
         <li><xref href="#topic_i2z_zc3_pt/configure-ceph-as-cinder-backend" format="dita">To
             Configure Ceph as a Cinder Backend</xref></li>
