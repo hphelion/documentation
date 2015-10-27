@@ -153,7 +153,7 @@
 sudo systemctl start dayzero.service</codeblock>
       </note>
     </section>
-<section><title>FInal Steps</title>
+<section><title>Final Steps</title>
 
 <ul><li>The public Horizon Dashboard connection is over TLS, thus please use HTTPS:// to navigate to
           Horizon with the IP address the installer presents once install is complete.</li>
