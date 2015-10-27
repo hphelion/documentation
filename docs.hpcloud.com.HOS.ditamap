@@ -204,7 +204,7 @@
     <!-- END - ADMINISTRATION -->
     <!-- BEGIN - OPERATIONS -->
     <topichead navtitle="Operations">
-      <topicref href="helion/operations/cli_reference.dita" navtitle="CLI Reference" locktitle="yes"/>
+      <topicref href="helion/operations/cli_reference.dita" navtitle="CLI Reference" locktitle="yes" toc="no"/>
       <topicref href="helion/operations/accessing_horizon.dita"
         navtitle="Accessing the Horizon Dashboard" locktitle="yes"/>
       <topicref href="helion/operations/opsconsole_overview.dita"
