@@ -209,8 +209,10 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
         the alarm does not automatically return to the normal state even if the condition that
         caused it has been resolved. To confirm this, run the following command:</p>
       <codeblock>monasca measurement-list swiftlm.swift.swift_services -3 --merge_metrics --dimensions hostname=&#60;hostname></codeblock>
-      <p><note>The <codeph>hostname</codeph> value is the host reporting the 'swiftlm-scan' monitor
-          alarm.</note></p>
+      <p>
+        <note>The <codeph>hostname</codeph> value is the host reporting the 'swiftlm-scan' monitor
+          alarm.</note>
+      </p>
       <p>If the command output reports that the metrics are being reported then the system is fine
         and the alarm can be ignored.</p>
       <p><b>Operations Console (Ops Console)</b></p> The Operations Console has the following
@@ -408,25 +410,33 @@ virtualenv cinder_venv</codeblock></li>
           <codeblock>source &#60;some-dir>/cinder_venv/bin/activate
 cinder --version</codeblock></li>
       </ol>
-      <p><b>Issue: Unable to Launch Instance from Volume on Horizon Dashboard</b></p><p>You will not
-        be able to launch an instance from a volume in Horizon. To work around this issue you have
-        two options:</p>
-      <ul id="ul_vrb_d45_tt">
+      <b>Cannot open Launch Instance from Volume on Horizon Dashboard</b>
+      <p>User cannot open the Launch Instance wizard from a newly created bootable volume’s actions
+        dropdown on the Volumes Page. </p><p>The workaround is to refresh the page.</p>
+      <b>Launch Instance form in Horizon not populated when choosing volumes</b>
+      <p>When using the Launch Instance action in the Volumes table, the Launch Instance Wizard form
+        doesn't get pre-populated with the Volumes option selected, nor does it select the given
+        Volume. The workaround is to select an available bootable volume by selecting the Volume
+        option from the Select Boot Source dropdown on Launch Instance wizard.</p>
+      <b>Start Instances in Horizon enabled</b>
+      <p>Note that for Start Instances at Instances table level in Horizon, the More Actions
+        dropdown is enabled even if an instance status is Active.</p>
+      <!--<ul id="ul_vrb_d45_tt">
         <li>From Horizon Dashboard | Instances page: Launch an Instance and select source as
           Bootable volume.</li>
         <li>Use the OpenStack or Nova client to create the instance.</li>
       </ul>
       <note>When using the Launch Instance action in the Volumes table, the Launch Instance Wizard
         form doesn't get pre-populated with the Volumes option selected, nor does it select the
-        given Volume.</note>
+        given Volume.</note>-->
       <p><b>Issue: The <codeph>Start Instances</codeph> Option is Available In Horizon for Instances
           that are Already Started</b></p>
       <p>There is currently an OpenStack bug where the <codeph>Start Instances</codeph> option is
         available in the instance action drop-down even if your instances are already in an Active
         state.</p>
       <p><b>Restarting lifecycle-manager node leaves Apache2 down</b></p>
-      <p>If you restart your Deployer/lifecycle management node, note that Apache2 will not restart
-        on its own. You will need to restart it manually.</p>
+      <p>If you restart your lifecycle management node, note that Apache2 will not restart on its
+        own. You will need to restart it manually.</p>
       <b>Heat autoscaling not supported </b>
       <p>In HP Helion OpenStack 2.0, the auto-scaling in Heat is not supported because the alarm
         creation in Ceilometer is disabled.</p>
