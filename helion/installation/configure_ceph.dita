@@ -203,8 +203,7 @@
           <li>Commit your
               configuration<codeblock>cd ~/helion/hos/ansible
 git add -A
-git commit -m "&lt;commit message>"</codeblock><note>
-              Enter your commit message &lt;commit message></note></li>
+git commit -m "&lt;commit message>"</codeblock></li>
         </ol></p>
     </section>
     <section id="install_ceph"><title>Run Ceph Client Packages</title>
