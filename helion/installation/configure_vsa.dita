@@ -4,7 +4,7 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for VSA Block Storage
     Backend</title>
   <body>
-    <!--Needs Edit-->
+
     <section id="about">
       <p>This page describes how to configure your VSA backend for the Helion Entry-scale with KVM
         Cloud model.</p>
@@ -33,12 +33,12 @@
         means configured storage on a VSA cluster can be as much as 800 TB.</p>
       <p><note>A single VSA node can have a maximum of seven raw disks (excluding the operating
           system disks) attached to it, which is defined in the disk input model for your VSA nodes.
-          It is expected that no more than seven disks are specified (including adoptive
-          optimization disks) per VSA node. For example, if you want to deploy VSA with two disks
-          for adoptive optimization then your disk input model should not specify more than five raw
-          disks for data and two raw disks for adoptive optimization. Exceeding the disk limit
+          It is expected that no more than seven disks are specified (including Adaptive
+          Optimization disks) per VSA node. For example, if you want to deploy VSA with two disks
+          for Adaptive Optimization then your disk input model should not specify more than five raw
+          disks for data and two raw disks for Adaptive Optimization. Exceeding the disk limit
           causes VSA deployment failure.</note></p>
-      <p>You can deploy VSA with adoptive optimization (AO) or without. The deployment process for
+      <p>You can deploy VSA with Adaptive Optimization (AO) or without. The deployment process for
         each of these options is similar, you just need to make a change in the disk input model.
         For more detailed information, refer to the <xref
           href="#config_vsa/deploy-vsa-with-ao-without-ao" format="dita">VSA with AO or without
@@ -161,8 +161,8 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
                 href="../../media/vsa/cmc5.png"/></p></li>
           <li>Enter a name in the <b>New Management Group Name</b> field and then click <b>Next</b>.
                 <p><image href="../../media/vsa/cmc6.png"/></p></li>
-          <li>On the <b>Add Administrative User</b> you will enter a username and password you will
-            to admnister the CMC utility. <p><note type="important">You will need to remember these
+          <li>On the <b>Add Administrative User</b> you will enter a username and password you will use
+            to administer the CMC utility. <p><note type="important">You will need to remember these
                 values as you will input them into your <codeph>cinder.conf.j2</codeph> file
                 later.</note></p>
             <p><image href="../../media/vsa/cmc7.png"/></p></li>
@@ -198,7 +198,7 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
     <note>
       <ul id="ul_esy_ntv_5t">
         <li>The default volume type created by VSA will be thin provisioned and will have no fault
-          tolerance (RAID 0). You should configure cinder to fully provision volumes, and you may
+          tolerance (RAID 0). You should configure Cinder to fully provision volumes, and you may
           also want to configure fault tolerance. Follow the instructions detailed at <xref
             href="installation_verification.dita#install_verification/create_volumetype">Creating
             Volume type</xref> to create a new volume type which is fully provisioned and fault
@@ -287,7 +287,7 @@ hplefthand_debug: false</codeblock>
                     </row>
                     <row>
                       <entry>hplefthand_debug</entry>
-                      <entry>If you set this option as true then the cinder driver for the VSA will
+                      <entry>If you set this option as true then the Cinder driver for the VSA will
                         generate logging in debug mode; these logging entries can be found in
                           <b>cinder-volume.log</b>.</entry>
                     </row>
@@ -308,12 +308,12 @@ hplefthand_debug: false</codeblock>
                   address will be displayed in the tabular form. You can view your cluster ID
                   here.</li>
               </ol>
-              <p><note type="important">HP Helion OpenStack 2.0 supports VSA deployment for KVM only
+              <p><note type="important"><p>HP Helion OpenStack 2.0 supports VSA deployment for KVM only
                   but it can be used as pre-deployed (or out of the band deployed) Lefthand storage
                   boxes or VSA appliances (running on ESX/hyper-v/KVM hypervisor). It also supports
                   Cinder configuration of physical Lefthand storage device and VSA appliances.
                   Depending upon your setup, you will have to edit the below section if your
-                  StoreVirtual Storage array is running LeftHand OS lower than version 11.
+                  StoreVirtual Storage array is running LeftHand OS lower than version 11.</p>
                   <codeblock>[&lt;unique-section-name>]
 volume_driver=cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
 volume_backend_name=lefthand-cliq
@@ -353,7 +353,7 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
     </p>
-    <p>After the successful configuration of VSA as a cinder backend, you can login to Horizon
+    <p>After the successful configuration of VSA as a Cinder backend, you can login to Horizon
       Dashboard and perform the OpenStack Operations to verify the backend configuration etc. See
         <xref href="installation_verification.dita"/> for more details.</p>
     <note type="important">You can create more than one VSA cluster of same or different type by
