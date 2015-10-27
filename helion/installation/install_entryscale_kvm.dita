@@ -44,6 +44,7 @@
     </section>
     <section id="setup_deployer">
       <title>Set up the Lifecycle-manager</title>
+      <p><b>Installing the Lifecycle-manager</b></p>
       <p>The lifecycle-manager will contain the installation scripts and configuration files to
         deploy your cloud. You can set up the lifecycle-manager on a dedicated node or you do so on
         your first controller node. The default choice is to use the first controller node as the
@@ -79,9 +80,7 @@
       </ol>
       <p>At the end of this section you should have a node set up with Linux for HP Helion on
         it.</p>
-    </section>
-    <section id="configure_deployer">
-      <title>Configure and Run the Lifecycle-manager</title>
+      <p><b>Configure and Run the Lifecycle-manager</b></p>
       <note type="important">It is critical that you don't run any of the commands below as the
           <codeph>root</codeph> user or use <codeph>sudo</codeph>, unless it is stated explicitly in
         the steps. Run then as the user you just created (or <codeph>stack</codeph> if you left the
