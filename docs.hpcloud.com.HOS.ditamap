@@ -26,7 +26,7 @@
       locktitle="yes"/>
     <topicref href="helion/releasenotes.dita" navtitle="Release Notes" locktitle="yes"/>
     <topicref href="helion/faq.dita" navtitle="Frequently Asked Questions" locktitle="yes"/>
-    <topicref href="helion/eula.dita" toc="no" navtitle="Software License Terms" locktitle="yes"/>
+    <topicref href="helion/eula.dita" navtitle="Software License Terms" locktitle="yes"/>
     <topicref href="commercial/GA1/3rd-party-license-agreements.dita"
       navtitle="Open Source and Third-Party Licensing" locktitle="yes"/>
     <!-- END - TOP LEVEL -->
@@ -226,6 +226,8 @@
           navtitle="Adding Moonshot Nodes" locktitle="yes"/>
         <topicref href="helion/blockstorage/vsa/remove_node.dita" navtitle="Removing VSA Node"
           locktitle="yes"/>
+        <topicref href="helion/blockstorage/vsa/remove_vsa_maintenance.dita"
+          navtitle="Removing a VSA Node For Maintenance" locktitle="yes"/>
         <!-- BLOCK STORAGE -->
         <topicref href="helion/blockstorage/ceph/adding_new_osd_node.dita"
           navtitle="Adding an Object Storage Daemon (OSD) Node" locktitle="yes"/>
@@ -389,7 +391,7 @@
       <topicref href="helion/userguide/create_network.dita" navtitle="Creating a Private Network"
         locktitle="yes"/>
       <topicref href="helion/blockstorage/vsa/configure_vsa_separate_iscsi_network.dita"
-        navtitle=" Configuring a Separate iSCSI Network to use with VSA" locktitle="yes"/>
+        navtitle="Configuring a Separate iSCSI Network to use with VSA" locktitle="yes"/>
       <topicref href="helion/userguide/lbaas.dita"
         navtitle="Using Load Balancing as a Service (LBaaS)" locktitle="yes"/>
       <!--  LBaaS, FWaaS, VPNaaS -->

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_e32_tm2_rt">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing a VSA Node For Maintenance</title>
+  <body>
+    <!--Needs Edit-->
+    <p>This process is used when you want to remove storage system/VSA node from a
+      cluster/management group for maintenance using HP StoreVirtual Management Console(CMC). After
+      maintenance the VSA node is added back to the cluster. <note type="caution">
+        <ul id="ul_a2n_kp2_rt">
+          <li>To have the volumes available even after the VSA storage node goes offline, you must
+            ensure that the VSA network RAID configuration/data protection aspects are taken care
+            prior to removing a VSA node. </li>
+          <li>See <i>Using disk RAID with Network RAID in a cluster</i>, <i>Planning the RAID
+            configuration</i>, and the <i>Data protection</i> sections of HP StoreVirtual Storage
+            Online help (available in <b>StoreVirtual Management Console</b>) before configuring
+            RAID. You must configure RAID before adding the storage system to the management group.
+            Refer the online help of <b>HP StoreVirtual CMC for configuring the network RAID for
+              storage systems.</b> link required...</li>
+          <li>You must set the Data protection level while creating the volume type for the VSA
+            volumes in OpenStack Cinder.  For more details refer <xref
+              href="http://docs.openstack.org/kilo/config-reference/content/HP-LeftHand-StoreVirtual-driver.html"
+              format="html" scope="external">OpenStack Cinder configuration guide(Kilo) for HP
+              LeftHand/StoreVirtual driver.</xref></li>
+        </ul>
+      </note></p>
+    <section>
+      <title>Removing VSA Storage System for maintenance</title>
+      <p>Perform the following steps to remove VSA storage system for maintenance:<ol
+        id="ol_rpx_wp2_rt">
+        <li>Review <i>Determining volume and snapshot availability</i> section in <b>HP
+          StoreVirtual Storage Online help</b> and ensure that the volume is available if the
+          storage system/VSA node that is planned to remove for maintenance goes offline.</li>
+        <li>If the repair option is available for the VSA storage system, choose the appropriate
+          option in repair. For detail, refer to <i>Using Repair Storage System</i> in <b> HP
+            StoreVirtual Storage Online help in CMC.</b><p>OR</p><p>If the repair option is
+              unavailable, perform either of the below operations to remove the VSA storage system
+              for maintenance:</p><p>Refer<i> Maintaining storage systems in clusters</i> section in
+                HP StoreVirtual Storage Online help in CMC and perform any of the below operations to
+                ensure that the cluster functions normally and the volumes continue to be available
+                even after the storage system is removed/replaced.</p><p>
+                  <ul id="ul_dmj_sq2_rt">
+                    <li>Add and remove storage systems for an existing cluster (The new storage system
+                      from the list of available VSA storage systems as shown in CMC). </li>
+                    <li>Exchange a storage system in a cluster. </li>
+                    <li>Removing a storage system from a cluster (provided the remaining storage system
+                      is sufficient for the data availability, a minimum of 3 nodes should be available
+                      after the remove operation). Once the maintenance is done, the storage system may
+                      be added back to the cluster. Follow the instructions for <b>"Adding a storage
+                        system to a cluster"</b> to add the VSA storage system back to the cluster.</li>
+                  </ul>
+                </p></li>
+      </ol></p>
+    </section>
+    <p>
+      <note type="important">While removing VSA storage system permanently, the operator needs to
+        ensure there is odd number of managers running to avoid split brain syndrome. For example,
+        if there are five nodes and one node is getting removed the operator needs to stop the
+        manager running on any of the remaining four nodes</note>
+    </p>
+    <section>
+      <title><b>Exclude the VSA node that's offline(removed for maintenance purpose) for further
+        reconfiguration/updates until it's back online</b></title>
+      <p>Even after the removable of a VSA node, it should continue to remain in
+        <codeph>data/servers.yml</codeph> file. It is also recommended to create a
+        <codeph>servers.yml</codeph> file on the deployer node with a list of VSA nodes that are
+        currently offline so that these nodes get excluded from any further reconfiguration or
+        upgrades. This prevents a VSA node that is offline from being included in deployments.</p>
+      <p>Perform the following steps to remove the VSA node for maintenance.<ol id="ol_xft_3hp_5t">
+        <li>Login to deployer node.</li>
+        <li>Verify that the node that needs to be  kept under maintenance from
+          <codeph>hosts/verb_hosts</codeph>
+          file.<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts</codeblock></li>
+        <li>Create a file ( for example: @offline-vsa)  and enter the node information that needs
+          to be placed under maintenance. Suppose you want to place
+          <codeph>padawan-ccp-vsa001</codeph> under maintenance then you must use the host name
+          along with ! and * (for example: <codeph>!padawan-ccp-vsa001*</codeph>)</li>
+        <li>Execute the following command
+          <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit &lt;hostname></codeblock><p>In
+            the following example <b>offline-vsa</b> file is created with the VSA host name
+            <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit @offline-vsa</codeblock></p><p>The
+              node which is included in the offline-vsa is placed under maintenance.</p></li>
+        <li>Run the following command
+          <codeblock>ansible-playbook -i hosts/verb_hosts site.yml --limit &lt;hostname></codeblock><p>For
+            example:</p><codeblock>ansible-playbook -i hosts/verb_hosts site.yml --limit @offline-vsa</codeblock><p>When
+              performing Helion lifecycle management deployments specify the name of this file in a
+              --limit option to prevent the deployment process trying to access the VSA nodes that
+              are offline.</p></li>
+      </ol></p>
+    </section>
+  </body>
+</topic>
+
