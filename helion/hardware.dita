@@ -3,20 +3,32 @@
 <topic id="min_hardware">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Recommended Minimum Hardware
     Requirements</title>
-  <body><!--Needs Edit-->
+  <body>
+    <!--Needs Edit-->
     <section id="supported_hardware"><title>Hardware Support Matrix</title>
       <p>For information about the supported hardware in HP Helion OpenStack 2.0, see the <xref
-        href="http://helionready.hpcloud.com/ihv/" format="html" scope="external"
-          >HP Helion Ready Solution Catalog</xref>.</p>
+          href="http://helionready.hpcloud.com/ihv/" format="html" scope="external">HP Helion Ready
+          Solution Catalog</xref>.</p>
     </section>
     <section id="supported_configs">
       <title>Supported Hardware Configurations</title>
-      <p>Helion OpenStack 2.0 supports the following hardware configurations for a Helion <tm
-          tmtype="reg">OpenStack</tm> deployment.</p>
+      <p>Helion OpenStack 2.0 supports the following hardware configurations for a Helion OpenStack
+        deployment.</p>
       <p>Storage Interconnects/Protocols</p>
       <ul>
         <li>1Gb or 10Gb Ethernet.</li>
         <li>Software iSCSi</li>
+      </ul>
+    </section>
+    <section id="perf_notes"><title>Notes about Performance</title>
+      <p>We have the following recommendations to ensure good performance of your cloud
+        environment:</p>
+      <ul>
+        <li>On the control plane nodes, you will want good I/O performance. Your array controllers
+          must have cache controllers and we advise against the use of RAID-5.</li>
+        <li>On compute nodes, the I/O performance will influence the virtual machine start-up
+          performance. We also recommend the use of cache controllers in your storage arrays here as
+          well.</li>
       </ul>
     </section>
     <section id="MinimumRequirements">
@@ -39,9 +51,9 @@
           </thead>
           <tbody>
             <row>
-              <entry morerows="3">Deployer (optional, you can also use your first controller node as
-                your deployer if desired.)</entry>
-              <entry morerows="3">Deployer</entry>
+              <entry morerows="3">Dedicated Lifecycle-manager (optional, the default configuration
+                uses the first controller node as the lifecycle-manager)</entry>
+              <entry morerows="3">Lifecycle-manager</entry>
               <entry morerows="3">1</entry>
               <entry>Disk </entry>
               <entry>8 GB</entry>
@@ -186,9 +198,9 @@
         </thead>
         <tbody>
           <row>
-            <entry>Deployer, (optional, you can also use your first controller node as your deployer
-              if desired.)</entry>
-            <entry>Deployer</entry>
+            <entry>Dedicated Lifecycle-manager (optional, the default configuration uses the first
+              controller node as the lifecycle-manager)</entry>
+            <entry>Lifecycle-manager</entry>
             <entry>1</entry>
             <entry> 8 GB</entry>
             <entry>1 GB</entry>
