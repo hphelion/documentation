@@ -41,7 +41,7 @@
       <p>You can deploy VSA with adoptive optimization (AO) or without. The deployment process for
         each of these options is similar, you just need to make a change in the disk input model.
         For more detailed information, refer to the <xref
-          href="#config_vsa/deploy-vsa-with-ao-without-ao" format="dita">VSA with AO and without
+          href="#config_vsa/deploy-vsa-with-ao-without-ao" format="dita">VSA with AO or without
           AO</xref> section below.</p>
     </section>
     <section>
