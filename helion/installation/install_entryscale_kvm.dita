@@ -41,22 +41,6 @@
       <title>Before You Start</title>
       <p>We have put together a <xref href="preinstall_checklist.dita">Pre-Installation
           Checklist</xref> that should help with the recommended pre-installation tasks.</p>
-      <p>Each one of your baremetal nodes in your cloud environment need to meet the following
-        requirements:</p>
-      <ul>
-        <li>The operating system must be installed via the HP Linux for HP Helion OpenStack ISO
-          provided on the <xref
-            href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
-            format="html" scope="external">Helion Downloads</xref> page.</li>
-        <li>Each node must have SSH keys in place that allow the user who will be doing the
-          deployment to SSH to each node without a password.</li>
-        <li>Passwordless sudo needs to be enabled for the user.</li>
-        <li>There should be a LVM volume as <codeph>/root</codeph> on each node.</li>
-        <li>Ensure that <codeph>openssh-server</codeph>, <codeph>python</codeph>, and
-            <codeph>rsync</codeph> are installed.</li>
-      </ul>
-      <p>You can either perform those steps manually or via an automation tool, or you can follow
-        the steps in the following section to use our instructions.</p>
     </section>
     <section id="setup_deployer">
       <title>Set up the Lifecycle-manager</title>
@@ -183,7 +167,30 @@ git commit -m "My config or other commit message"</codeblock>
             href="using_git.dita">Using Git for Configuration Management</xref> for more
           information.</note></p>
     </section>
-
+    <section id="thirdparty"><title>Using 3rd Party Baremetal Installers</title>
+      <p>If you do not wish to use the automated operating system installation tooling included with
+        HP Helion OpenStack 2.0 then the requirements that have to be met using the installation
+        tooling of your choice are:</p>
+      <ul>
+        <li>The operating system must be installed via the HP Linux for HP Helion OpenStack ISO
+          provided on the <xref
+            href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
+            format="html" scope="external">Helion Downloads</xref> page.</li>
+        <li>Each node must have SSH keys in place that allow the user who will be doing the
+          deployment to SSH to each node without a password.</li>
+        <li>Passwordless sudo needs to be enabled for the user.</li>
+        <li>There should be a LVM volume as <codeph>/root</codeph> on each node.</li>
+        <li>If the LVM volume group name for the volume group holding the "root" LVM logical volume
+          is hlm-vg then it will align with the disk input models in the examples.</li>
+        <li>Ensure that <codeph>openssh-server</codeph>, <codeph>python</codeph>, and
+            <codeph>rsync</codeph> are installed.</li>
+      </ul>
+      <p>If you chose this method for installing your baremetal hardware, skip forward to the <xref
+          href="install_entryscale_kvm.dita#install_kvm/config_processor">Run the Configuration
+          Processor</xref> step.</p>
+      <p>If you would like to use the automated operating system installation tools provided by HP
+        Helion OpenStack 2.0 then complete all of the steps below.</p>
+    </section>
     <section id="deploy_cobbler">
       <title>Deploy Cobbler</title>
       <p>This phase of the install process takes the baremetal information that was provided in
