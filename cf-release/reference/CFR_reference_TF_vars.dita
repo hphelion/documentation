@@ -72,6 +72,7 @@
             <entry>The location and name of the private key file that you downloaded after creating
               your key pair on <keyword keyref="pubCloudShort"/></entry>
           </row>
+          <!--
           <row>
             <entry><codeph>router_ssl_cert_file</codeph></entry>
             <entry>The location and name of the router SSL certificate file</entry>
@@ -79,7 +80,13 @@
           <row>
             <entry><codeph>router_ssl_key_file</codeph></entry>
             <entry>The location and name of the router SSL key file</entry>
-          </row>          
+          </row>
+          -->
+          <row>
+            <entry><codeph>dea_count</codeph></entry>
+            <entry>The number of Droplet Execition Agent (DEA) hosts that you want to
+              create.</entry>
+          </row>        
         </tbody>
       </tgroup>
     </table>
@@ -93,8 +100,9 @@ openstack_region = "us-west"
 cluster_admin_username = "myClusterUsername"
 cluster_admin_password = "myClusterPassword123"
 key_file = "myKeyFile.pem"           
-router_ssl_cert_file = "/etc/ssl/certs/SSL.crt"
-router_ssl_key_file = "/etc/ssl/private/SSL.key"</codeblock>
+<draft-comment author="michaelk">router_ssl_cert_file = "/etc/ssl/certs/SSL.crt"
+router_ssl_key_file = "/etc/ssl/private/SSL.key"</draft-comment>
+dea_count = "1"</codeblock>
     </example>
   </refbody>
 </reference>
