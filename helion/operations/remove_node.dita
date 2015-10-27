@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_fld_zzy_lt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing a Compute Node</title>
-  <body><!--Needs Edit-->
+  <body><!--Needs Work-->
   <section id="removeNodes"> The process for removing a compute node requires that you run these
       steps. Note that to run any playbooks whatsoever for cloud maintenance, you will always run
       from the deployer/lifecycle-manager node.<ol>
@@ -52,6 +52,7 @@
 | 4  | AZ2  | AZ2               |
 | 7  | AZ3  | AZ3               |
 +----+------+-------------------+</codeblock></li>
+        <!--  TODO missing content here -->
         <li>Check that the AZ has been
           ???<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova aggregate-remove-host AZ2 padawan-ccp-comp0002-mgmt</codeblock><codeblock>Host padawan-ccp-comp0002-mgmt has been successfully removed from aggregate 4</codeblock><codeblock>+----+------+-------------------+-------+-------------------------+
 | Id | Name | Availability Zone | Hosts | Metadata                |

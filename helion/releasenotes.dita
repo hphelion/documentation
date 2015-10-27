@@ -29,7 +29,7 @@
         default. It runs in enforce mode. It enforces mandatory access control policies for the
         libvirt process. See <xref href="security/using_apparmor.dita#topic_rmq_j1v_4t">AppArmor in
           HP Helion OpenStack 2.0</xref> for more information.</p>
-      <p><b>The lifecycle-manager only supports American English language</b></p>
+      <p><b>The lifecycle manager only supports American English language</b></p>
       <p>The lifecycle-manager installation process prompts you to select a language. The only
         supported language at this time is American English.</p>
       <p><b>Local Git repository for config tracking</b></p>
@@ -129,18 +129,18 @@
       impossible, if most machines understand the Management Network to be <b>eth3</b>, but some
       subset of machines understand that network to be on <b>eth4</b> ( and whatever was on eth4 is
       similarly swapped to <b>eth3</b>). <p>To resolve this, and to ensure that all NIC devices have
-        consistent naming across the entire cloud, Beta 2 includes NIC Mapping facilities. This is a
-        mechanism in the Input Model to define a specific NIC interface for a given PCI address for
-        a given class of machine. Generally, when all of the network interfaces are defined in the
-          <xref href="input_model.dita#input_model/co_nicmappings" type="section">Input Model</xref>,
-        it is advisable to use the traditional naming, ie <b>ethN</b>. However, if one or more
-        interfaces are not defined in the Input Model (perhaps because the Ansible network is not
-        defined, or because there is a customer-specific network which is outside the scope of
-        Helion), then it is recommended that a different naming convention is used, to prevent the
-        definitions from colliding with existing configuration data. For example, the NIC mapping
-        definitions could use <b>hos0</b> through <b>hosN</b> rather than <b>eth0</b> through
-          <b>ethN</b>, bearing in mind that the new naming must be consistent across the entire
-        Input Model.</p>
+        consistent naming across the entire cloud, HP Helion OpenStack 2.0 includes NIC Mapping
+        facilities. This is a mechanism in the Input Model to define a specific NIC interface for a
+        given PCI address for a given class of machine. Generally, when all of the network
+        interfaces are defined in the <xref href="input_model.dita#input_model/co_nicmappings"
+          type="section">Input Model</xref>, it is advisable to use the traditional naming, ie
+          <b>ethN</b>. However, if one or more interfaces are not defined in the Input Model
+        (perhaps because the Ansible network is not defined, or because there is a customer-specific
+        network which is outside the scope of Helion), then it is recommended that a different
+        naming convention is used, to prevent the definitions from colliding with existing
+        configuration data. For example, the NIC mapping definitions could use <b>hos0</b> through
+          <b>hosN</b> rather than <b>eth0</b> through <b>ethN</b>, bearing in mind that the new
+        naming must be consistent across the entire Input Model.</p>
       <p><b>Monasca-based Monitoring</b></p><p>Monasca is a multi-tenant, scalable, fault-tolerant,
         monitoring service. It uses a REST API for high-speed metrics processing and querying, and
         has a streaming alarm and notification engine. In the HP Helion OpenStack 2.0 release, the
@@ -166,15 +166,7 @@
         Horizon, Keystone, Cinder, Heat, OpsConsole, DNSaaS, LBaaS, FWaaS, and Trove.</p><p>Learn
         more about Centralized Logging here: <xref href="operations/centralized_logging.dita"
           >Centralized Logging Overview</xref></p>
-      <!--
-<p><b>Backup and Restore Capabilities for the Control Plane</b> &#154; Allows you to backup and recover your HP Helion OpenStack</tm> environment with RPO=0.</p>
--->
     </section>
-
-
-
-
-    <!--<section><title>OpenStack Services inlcuded in HP Helion OpenStack</title><p>The following table list a high level overview of  the OpenStack projects/services which are included in HP Helion OpenStack and their status. Only official upstream OpenStack projects are included, not non-OpenStack add-ons that originate elsewhere. <note>If the service is not listed in the table then it is not present in HP Helion OpenStack.</note></p><p><simpletable frame="all" relcolwidth="1.0* 1.0*" id="simpletable_q2l_d1c_lt"><strow><stentry>Service Name</stentry><stentry>Status in HOS 2.0</stentry></strow><strow><stentry>Barbican</stentry><stentry>Not Included</stentry></strow><strow><stentry>Ceilometer</stentry><stentry>GA</stentry></strow><strow><stentry>Cinder</stentry><stentry>GA</stentry></strow><strow><stentry>Designate</stentry><stentry>In-Cloud Service (Installed Separately)</stentry></strow><strow><stentry>Glance</stentry><stentry>GA</stentry></strow><strow><stentry>Heat</stentry><stentry>GA</stentry></strow><strow><stentry>Horizon</stentry><stentry>GA</stentry></strow><strow><stentry>Ironic</stentry><stentry>Not Included</stentry></strow><strow><stentry>Keystone</stentry><stentry>GA</stentry></strow><strow><stentry>Magnum</stentry><stentry>Not Included</stentry></strow><strow><stentry>Manila</stentry><stentry>Not Included</stentry></strow><strow><stentry>Monasca</stentry><stentry>GA</stentry></strow><strow><stentry>Neutron</stentry><stentry>GA</stentry></strow><strow><stentry>Neutron-FWaaS</stentry><stentry>non-core</stentry></strow><strow><stentry>Neutron-LBaaS v1</stentry><stentry>Not recommended</stentry></strow><strow><stentry>Neutron-LBaaS v2</stentry><stentry>non-core</stentry></strow><strow><stentry>Neutron-Octavia</stentry><stentry>non-core (TBC)</stentry></strow><strow><stentry>Neutron-VPNaaS</stentry><stentry>non-core</stentry></strow><strow><stentry>Nova</stentry><stentry>GA</stentry></strow><strow><stentry>Swift</stentry><stentry>GA</stentry></strow><strow><stentry>Tempest</stentry><stentry>GA</stentry></strow></simpletable></p></section>-->
     <section id="KnownIssues">
       <title>Limitations in this Release</title><p><b>Installing Swift</b></p><p>Swift installs with
         the following limitations: </p><ul id="ul_p21_d45_tt">
@@ -183,7 +175,8 @@
       <p><b>Monitoring (Monasca) Limitations</b></p> The monitoring service has the following
       limitations: <ul id="ul_fn1_d45_tt">
         <li>Vertica is the default metrics database option in the install. If you want to use
-          InfluxDB then read <xref href="administration/configure_monitoring.dita#configure_monitoring/config"
+          InfluxDB then read <xref
+            href="administration/configure_monitoring.dita#configure_monitoring/config"
             type="section">Configuring Monasca</xref> for more details.</li>
         <li>InfluxDB is not configured behind a VIP. It must directly access one node in the
           cluster.</li>
@@ -204,6 +197,14 @@
 monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
       <p>This is due to an issue where the monasca-agent is attempting to authenticate when it's
         token has expired. These can be ignored.</p>
+      <p><b>Issue: The 'Cinderlm diagnostics monitor' alarm alerts with an 'UNDETERMINED'
+        state</b></p>
+      <p>This alert is not always reported but may occur after the system has been running for some
+        time.</p>
+      <p>Check if any other Cinder related alarms are alerting. If no other other Cinder related
+        alarms are alerting then this alert for the Cinderlm diagnostics monitor alarm can be
+        ignored. If other Cinder related alarms are alerting then follow the mitigation steps
+        described in the Service Alarm Definitions section.</p>
       <p><b>Operations Console (Ops Console)</b></p> The Operations Console has the following
       limitations (listed below by menu option in the console): <ul id="ul_wv1_d45_tt">
         <li>Dashboard <ul id="ul_s2b_d45_tt">
@@ -213,8 +214,8 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
               what timezone is in the settings.</li>
             <li>The New Alarms section will only display alarms that have a service dimension
               defined.</li>
-            <li>Platform Services (HDP Summary) alarm panels are not yet implemented but appear in
-              the menu and thus will not populate if selected.</li>
+            <li>Platform Services (HDP Summary) alarm panels will only contain data if the Helion
+              Development Platform services are installed.</li>
           </ul>
         </li>
         <li>Logging Dashboard <ul id="ul_jfb_d45_tt">
@@ -229,7 +230,7 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
             <li>The tile view of alarms with lengthy dimensions does not render cleanly.</li>
           </ul></li>
         <li>Compute Instances <ul id="ul_rgb_d45_tt">
-            <li>Compute instance utilization metrics are not available in Beta 2</li>
+            <li>Compute instance utilization metrics are not available.</li>
           </ul>
         </li>
         <li>Networking - Alarm Summary <ul id="ul_dhb_d45_tt">
@@ -240,7 +241,8 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
               addition to the "service=block-storage" and "service=object-storage" ones.</li>
           </ul></li>
         <li>HDP - Alarm Summary <ul id="ul_h3b_d45_tt">
-            <li>This section is not implemented in Beta 2</li>
+            <li>This section will only contain data if the Helion Development Platform services are
+              installed.</li>
           </ul></li>
         <li>Masthead Items <ul id="ul_v3b_d45_tt">
             <li>The Help and EULA links will not work properly. You can view the Help files here:
@@ -270,11 +272,54 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
         “Undefined” section instead of in the "Logging" section.</p>
       <p><b>Issue: The Heap parameters for Elasticsearch and Logstash are auto-tuned
         incorrectly</b></p>
-      <p>There is an issue where the Heap paramters for Elasticsearch and Logstash are incorrectly
-        auto-tuned. We recommend that for a system with only 32GB of RAM that you manually modify
-        the heap values on the lifecycle-manager node to <codeph>8g</codeph> for Elasticsearch and
-          <codeph>2g</codeph> for Logstash in the following file:</p>
+      <p>There is an issue where the Heap parameters for Elasticsearch and Logstash are incorrectly
+        auto-tuned. The default values are listed in <xref
+          href="administration/configure_logging.dita#configure_logging/general_config">Configuring
+          the Centralized Logging Service</xref>. There is a bug where Ansible is reporting the
+        memory values incorrectly as values that are slightly less than what they actually are. So,
+        for example, if you have 32GB of RAM you should fall into the "Small" auto-tuning category
+        but because of this incorrectly reported value you are actually falling into the "Demo"
+        category. We recommend that you manually modify the heap values on the lifecycle-manager
+        node for systems with the specified amount of RAM in the table below to the values listed.
+        You will edit these values in the <codeph>logging_possible_tunings</codeph> section of the
+        file below:</p>
       <codeblock>~/helion/my_cloud/config/logging/main.yml</codeblock>
+      <table frame="all" rowsep="1" colsep="1" id="table_pbd_k2y_5t">
+        <tgroup cols="4">
+          <colspec colname="c1" colnum="1"/>
+          <colspec colname="c2" colnum="2"/>
+          <colspec colname="c3" colnum="3"/>
+          <colspec colname="c4" colnum="4"/>
+          <thead>
+            <row>
+              <entry>RAM</entry>
+              <entry>Key</entry>
+              <entry>elasticsearch_heap_size</entry>
+              <entry>logstash_heap_size</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>32GB</entry>
+              <entry>demo</entry>
+              <entry>from 256m to 8g</entry>
+              <entry>from 256m to 2g</entry>
+            </row>
+            <row>
+              <entry>64GB</entry>
+              <entry>small</entry>
+              <entry>from 8g to 16g</entry>
+              <entry>from 2g to 4g</entry>
+            </row>
+            <row>
+              <entry>128GB</entry>
+              <entry>medium</entry>
+              <entry>from 16g to 32g</entry>
+              <entry>from 4g to 8g</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
       <p><b>Issue: Logrotate Settings for MySQL, keepalived, and RabbitMQ are Invalid</b></p>
       <p>There is currently a workaround needed on the controller nodes to fix the logrotate
         settings for the MySQL, keepalived, and RabbitMQ services.</p> The logrotate for MySQL,
@@ -350,7 +395,7 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
       <p>There is currently an OpenStack bug where the <codeph>Start Instances</codeph> option is
         available in the instance action drop-down even if your instances are already in an Active
         state.</p>
-      <p><b>Restarting Deployer/lifecycle management node leaves Apache2 down</b></p>
+      <p><b>Restarting lifecycle-manager node leaves Apache2 down</b></p>
       <p>If you restart your Deployer/lifecycle management node, note that Apache2 will not restart
         on its own. You will need to restart it manually.</p>
       <b>Heat autoscaling not supported </b>

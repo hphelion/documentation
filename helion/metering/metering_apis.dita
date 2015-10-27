@@ -3,12 +3,12 @@
 <topic id="topic_icq_hvc_5t">
   <title>HP Helion OpenStack&#174; 2.0: Ceilometer Metering APIs</title>
   <body>
-    <section id="pipeline"><title>Separate pipeline.yml for Ceilometer Post Samples API</title> Post
-      Sample API is disabled by default in HOS CM 2.0 and its configured with a pipeline
-      configuration different than the agents. The api pipeline has no meters enabled, so it needs
-      to be configured with meters when the Post Samples API is enabled. Exercise caution when
-      adding meters to the API pipeline. Ensure that only those meters are added to this pipeline
-      which are already present in the notification agent and the central agent pipeline.
+    <section id="pipeline"><title>Separate pipeline.yml for Ceilometer Post Samples API</title> The
+      Post Sample API is disabled by default in HP Helion OpenStack 2.0 and its configured with a
+      pipeline configuration different than the agents. The API pipeline has no meters enabled, so
+      it needs to be configured with meters when the Post Samples API is enabled. Exercise caution
+      when adding meters to the API pipeline. Ensure that only those meters are added to this
+      pipeline which are already present in the notification agent and the central agent pipeline.
         <p>Ceilometer API (ceilometer-api) pipeline.yml is located at
           /<b>opt/stack/service/ceilometer-api/etc/pipeline-api.yml</b></p> Here is a sample of the
       API pipeline:

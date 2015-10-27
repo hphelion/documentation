@@ -4,16 +4,16 @@
 <topic xml:lang="en-us" id="opsconsole">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Operations Console</title>
   <body>
-    <!--Needs Edit-->
+    <!--Needs Work-->
     <section><title>About the Operations Console</title></section>
     <section id="about">
       <p>The Operations Console (Ops Console) for HP Helion OpenStack 2.0 is designed for HP Helion
-        Openstack Administrators to have a web-based UI they can use to view data about their cloud
+        OpenStack Administrators to have a web-based UI they can use to view data about their cloud
         infrastructure. The Ops Console is a web-based GUI that offers the user access to data such
         as monitoring alarms data by service, performance data, compute nodes and instances lists,
         and a drilldown to Kibana for a deep look into logs. The Business Logic Layer is a
         middleware component that serves as a single point of contact for the UI to communicate with
-        Openstack services such as Monasca, Nova, and others.</p>
+        OpenStack services such as Monasca, Nova, and others.</p>
     </section>
     <section><title>Connecting to the Operations Console</title></section>
     <section id="connecting">
@@ -34,6 +34,7 @@
       <note type="important">The credentials for your <codeph>admin</codeph> user account can be
         changed. See <xref href="../identity/identity_init.dita">Keystone Configuration</xref> for
         more details.</note>
+      <!-- TODO self-referential link here - should it go somewhere else -->
       <p>For details on the use of the Operations Console, see <xref href="opsconsole_overview.dita"
           >Operations Console Overview</xref></p>
     </section>

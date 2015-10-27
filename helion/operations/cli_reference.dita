@@ -3,7 +3,7 @@
 <topic id="topic_fkz_yvr_st">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Commonly Used Commands</title>
   <body>
-    <!--Needs Edit-->
+    <!--Needs Work-->
     <p>
       <table frame="all" rowsep="1" colsep="1" id="table_fgx_2wr_st">
         <tgroup cols="5">
@@ -273,7 +273,7 @@
             </row>
             <row>
               <entry/>
-              <entry/>
+              <entry/>  
               <entry/>
               <entry/>
               <entry/>
