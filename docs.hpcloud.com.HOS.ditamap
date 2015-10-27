@@ -388,10 +388,10 @@
         locktitle="yes"/>
       <topicref href="helion/userguide/create_network.dita" navtitle="Creating a Private Network"
         locktitle="yes"/>
-      <topicset href="helion/blockstorage/vsa/configure_vsa_separate_iscsi_network.dita"
-        navtitle=" Configuring a Separate iSCSI Network to use with VSA" locktitle="yes"/>
       <topicref href="helion/userguide/lbaas.dita"
         navtitle="Using Load Balancing as a Service (LBaaS)" locktitle="yes"/>
+      <topicref href="helion/blockstorage/vsa/configure_vsa_separate_iscsi_network.dita"
+        navtitle="Configuring a Separate iSCSI Network to use with VSA" locktitle="yes"/>
       <!--  LBaaS, FWaaS, VPNaaS -->
       <topicref href="helion/networking/fwaas.dita" locktitle="yes">
         <topicmeta>
