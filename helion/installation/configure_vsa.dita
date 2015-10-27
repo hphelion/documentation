@@ -189,7 +189,82 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
             what you have completed.</li>
         </ol></p>
     </section>
-    <section conref="installation_verification.dita#install_verification/create_volumetype"/>
+    <section id="create_volumetype">
+      <title>Create a Volume Type for your Volume Backend</title>
+      <p id="creating_volumetype">If you haven't done so already, perform the following steps to
+        create a volume type using the Horizon GUI: <ol id="ol_k5n_5xv_5t">
+          <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
+            >Accessing Horizon</xref> for details.</li>
+          <li>Ensure that you are scoped to your <b>admin</b> Project. Then under the <b>Admin</b>
+            menu in the navigation pane, click on <b>Volumes</b> under the <b>System</b> subheading.
+            <p><image href="../../media/vsa/createvoltype1.png" id="image_avn_5xv_5t"/></p></li>
+          <li>Select the <b>Volume Types</b> tab and then click the <b>Create Volume Type</b> button
+            to display a dialog box. <p><image href="../../media/vsa/createvoltype2.png"
+              id="image_qvn_5xv_5t"/></p>
+          </li>
+          <li>Enter a unique name for the volume type and then click the <b>Create Volume Type</b>
+            button to complete the action. <p><image href="../../media/vsa/createvoltype3.png"
+              id="image_rvn_5xv_5t_new"/></p></li>
+        </ol></p>
+      <p>The newly created volume type will be displayed in the <b>Volume Types</b> list confirming
+        its creation.</p>
+    </section>
+    <section><b>Applicable only for VSA</b><p>VSA supports volumes creation with varying attributes
+      like thin provisioning enable, raid type, AO enabled volume etc. All these attributes can be
+      specified using extra spec of volume type. Admin is expected to define appropriate extra
+      spec for VSA volume type as per the guidelines provided at <xref
+        href="http://docs.openstack.org/kilo/config-reference/content/hp-lefthand-supported-ops-rest.html"
+        format="html" scope="external"/>.</p></section>
+    <section id="extra-spec"><b>Extra Specifications Options</b> (<b>Applicable only for
+      VSA</b>)<p>The following Cinder Volume Type extra-specs options enable control over the VSA
+        storage provisioning type (thin or full) and specify protection for backend
+        volumes:<codeblock>hplh:provisioning thin or full
+          hplh:data_pl r-0 or r-5 or r-10-2 or r-10-3 or r-10-4 or r-6</codeblock></p><p>For
+            example:<codeblock>hplh:provisioning thin
+              hplh:data_pl r-5 
+              volume_backend_name MyVolumeBackend</codeblock></p><p>The
+                protection level options enable different data protection configurations. Supported data
+                protection options are:<ul id="ul_sxb_4cs_tt">
+                  <li>r-0 (RAID 0) provides the best data capacity and processing performance, but offers no
+                    data protection (no fault tolerance) in the event of a failure.</li>
+                  <li>r-5 (RAID 5) consists of three or more physical disk drives in an array. Stores parity
+                    data across all drives. If one drive fails, the remaining drives use the parity data to
+                    allow the array to continue to operate until the failed drive is replaced. If more than
+                    one drive fails, the array fails.</li>
+                  <li>r-10-2 (RAID 10+2) stripes and mirrors data across four or more disks.</li>
+                  <li>r-10-3 (RAID 10+3) stripes and mirrors data across five or more disks.</li>
+                  <li>r-10-4 RAID 10+4) stripes and mirrors data across six or more disks.</li>
+                  <li>r-6 (RAID 6) is based on and extends RAID5. It requires a minimum of four drives and
+                    creates multiple parity sets such that the array can function with up to two drives
+                    failing at the same time.</li>
+                </ul></p></section>
+    <section id="associate-volume-backend">
+      <title>Associate the Volume Type to a Backend</title>
+      <p> After the volume type names have been created, you can assign extra_specs to the volumes
+        types.</p>
+      <p>To map a volume type to a backend, do the following: <ol id="ol_owv_krv_3t">
+        <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
+          >Accessing Horizon</xref> for details.</li>
+        <li>Ensure that you are scoped to your <b>admin</b> Project. Then under the <b>Admin</b>
+          menu in the navigation pane, click on <b>Volumes</b> under the <b>System</b> subheading.
+          <p><image href="../../media/vsa/createvoltype1.png"/></p></li>
+        <li>Click the <b>Volume Type</b> tab to list the volume types. <p><image
+          href="../../media/vsa/associatevoltype2.png"/></p></li>
+        <li>In the <b>Actions</b> column of the Volume Type you created earlier, click the
+          drop-down option and select <b>View Extra Specs</b> which will bring up the <b>Volume
+            Type Extra Specs</b> options. <p><image href="../../media/vsa/associatevoltype3.png"
+            /></p></li>
+        <li>Click the <b>Create</b> button on the <b>Volume Type Extra Specs</b> screen. <p><image
+          href="../../media/vsa/associatevoltype4.png"/></p></li>
+        <li>In the <b>Key</b> field, enter <codeph>volume_backend_name</codeph>. In the <b>Value</b> box, enter the name of the
+          backend to which you want to associate the volume type, which you also specified earlier
+          in the <codeph>cinder.conf.j2</codeph> file. Once you have completed that, click the
+          <b>Create</b> button to create the extra volume type specs. <p><image
+            href="../../media/vsa/associatevoltype5.png"/></p></li>
+      </ol></p>
+      <p>Once the volume type is mapped to the backend, you can create volumes with this volume
+        type.</p>
+    </section>
     <note>
       <ul id="ul_esy_ntv_5t">
         <li>The default volume type created by VSA will be thin provisioned and will have no fault
@@ -216,8 +291,8 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
             <li>Add your VSA backend to the <codeph>enabled_backends</codeph> section:
               <codeblock># Configure the enabled backends
 enabled_backends=vsa-1</codeblock></li>
-            <li>Enter the volume type you created earlier to the <codeph>[DEFAULT]</codeph> section
-              with the syntax below:
+            <li>If you want a specify a default volume type, then enter it in the
+                <codeph>[DEFAULT]</codeph> section with the syntax below:
               <codeblock>[DEFAULT]
 # Set the default volume type
 default_volume_type = &lt;your new volume type></codeblock></li>
