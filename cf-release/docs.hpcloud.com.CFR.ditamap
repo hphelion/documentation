@@ -15,6 +15,7 @@
       <topicref href="root/CFR_relnotes.dita"/>
       <topicref href="root/CFR_TP_licensing.dita"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <!--
       <topicref href="root/CFR_license_terms.dita"/>
       -->
@@ -23,6 +24,9 @@
 >>>>>>> 9d80273... Testing theme changes on Linux
 =======
 >>>>>>> 62e2344... Corrected typos and restructured notes
+=======
+      <topicref href="root/CFR_license_terms.dita"/>
+>>>>>>> 0c7cc4c... Added EULA to HCF 1.0 docs
       <topichead navtitle="Quick Start: Deploying to HP Public Cloud">
          <topicref href="quickstart/pubcloud/CFR_step_1.dita"/>
          <topicref href="quickstart/pubcloud/CFR_step_2.dita"/>

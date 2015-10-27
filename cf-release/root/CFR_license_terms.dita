@@ -2,8 +2,12 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_xzh_3f1_vt">
  <title>Software License Terms</title>
+<<<<<<< HEAD
  <shortdesc><draft-comment author="michaelk">This document needs to be verified by
    Legal.</draft-comment><b>HP Helion Product Evaluation Agreement</b></shortdesc>
+=======
+ <shortdesc><b>HP Helion Product Evaluation Agreement</b></shortdesc>
+>>>>>>> 0c7cc4c... Added EULA to HCF 1.0 docs
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
@@ -12,7 +16,11 @@
  <conbody>
   <p>This HP Product Evaluation Agreement (the "Agreement") is entered into between the HP entity
    identified below ("HP") and the entity receiving the Product ("Company"), as of the date of
+<<<<<<< HEAD
    receipt of the Product a(the "Effective Date").</p>
+=======
+   receipt of the Product (the "Effective Date").</p>
+>>>>>>> 0c7cc4c... Added EULA to HCF 1.0 docs
   <ol>
    <li><b>Products.</b> HP shall provide the object code version of generally available or
     pre-release software products (“Software”) and/or hardware (“Hardware”) as set forth in the
