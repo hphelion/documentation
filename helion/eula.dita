@@ -29,9 +29,9 @@
           software licenses and similar content ("Supporting Material"). Additional license
           authorizations are at: <xref href="http://www.hp.com/go/SWLicensing" format="html"
             scope="external">http://www.hp.com/go/SWLicensing</xref>.<note> Additional license
-            authorizations are below and at: <xref href="1.03rd-party-license-agreements.dita">HP
-              Helion OpenStack Open Source and Third-Party Software License
-            Agreements</xref>.</note></li>
+            authorizations are below and at: <xref
+              href="../commercial/GA1/3rd-party-license-agreements.dita">HP Helion OpenStack Open
+              Source and Third-Party Software License Agreements</xref>.</note></li>
       <li>
           <b>Authorization</b>. If you agree to this Agreement on behalf of another person or
           entity, you warrant you have authority to do so.</li>
@@ -271,7 +271,10 @@
             </ol></li></ol>
     </section>
     <section id="ancilliary"> <title>Part 3: Ancillary and Open Source Software for Software</title>
-      <p>Additional license authorizations related to ancillary, third party and open source software components are available at: <xref href="3rd-party-license-agreements.dita" >HP Helion OpenStack Open Source and Third-Party Software License Agreements</xref>.</p>
+      <p>Additional license authorizations related to ancillary, third party and open source
+        software components are available at: <xref
+          href="../commercial/GA1/3rd-party-license-agreements.dita">HP Helion OpenStack Open Source
+          and Third-Party Software License Agreements</xref>.</p>
     </section>
   </body>
 </topic>
