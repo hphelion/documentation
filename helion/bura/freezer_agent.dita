@@ -8,19 +8,19 @@
                 you must follow these steps to perform backups: <ol>
                     <li>Define what you want to backup.</li>
                     <li>Define a mode for that backup. The following modes are available: <ul>
-                            <li>fs (filesystem) (default)</li>
-                            <li>mysql</li>
-                            <li>sqlserver</li>
-                            <li>mongo</li>
-                        </ul><note>It is recommended that you use snapshots if the mode is mysql,
-                            sqlserver, or mongo.</note></li>
-                    <li>Define whether to use a snapshot in the file system for the backup. <ul>
+                            <li>FS (filesystem) (default)</li>
+                            <li>MySQL</li>
+                            <li>SQL Server</li>
+                            <li>Mongo</li>
+                        </ul><note>It is recommended that you use snapshots if the mode is MySQL,
+                            SQL Server, or Mongo.</note></li>
+                    <li>Define whether to use a snapshot in the file system for the backup:<ul>
                             <li>In Unix systems LVM is used (when available). </li>
                             <li>In Windows systems virtual shadow copies are used.</li>
                         </ul></li>
                     <li>Define a storage media in a job from the following list: <ul>
-                            <li>swift (requires OpenStack credentials)(default)</li>
-                            <li>local (no credentials required)</li>
+                            <li>Swift (requires OpenStack credentials)(default)</li>
+                            <li>Local (no credentials required)</li>
                             <li>SSH (no credentials required) (not implemented on Windows)</li>
                         </ul></li>
                 </ol></p>
@@ -31,10 +31,10 @@
                     <li>Mode (fs by default)</li>
                     <li>Path-to-backup</li>
                     <li>Backup-name</li>
-                    <li>Container (swift container or local path)</li>
-                    <li>Storage (swift by default)</li>
+                    <li>Container (Swift container or local path)</li>
+                    <li>Storage (Swift by default)</li>
                 </ul></p> For HP Helion OpenStack 2.0, you can create a backup using only mandatory
-            values as in the following example:
+            values, as in the following example:
             <codeblock>- freezerc --action backup --mode fs --storage swift --path-to-backup /home/user/tmp --container tmp_backups --backup-name backup1</codeblock>
             The translation to a configuration file for this backup execution would be as follows:
             <codeblock>
@@ -68,25 +68,25 @@
                 backup: <ol>
                     <li>Select a backup to restore.</li>
                     <li>Define a mode for the restore: The following modes are available:<ul>
-                            <li>fs (filesystem) (default)</li>
-                            <li>mysql</li>
-                            <li>sqlserver</li>
-                            <li>mongo</li>
+                            <li>FS (filesystem) (default)</li>
+                            <li>MySQL</li>
+                            <li>SQL Server</li>
+                            <li>Mongo</li>
                         </ul></li>
-                    <li>If the restore involves an application (such as mysql) remember to shut down
+                    <li>If the restore involves an application (such as MySQL) remember to shut down
                         the application or service and start it again after the restore.</li>
                 </ol></p></section>
         <section>
             <title>Basic Configuration</title>
             <p>To restore from a backup, note that in some cases you must stop the service (for
-                instance MySQL) before the restore.</p>
+                instance, MySQL) before the restore.</p>
             <p>There are several mandatory options to execute a restore: <ul>
                     <li>action (backup by default)</li>
                     <li>mode (fs by default)</li>
                     <li>restore-abs-path</li>
                     <li>backup-name</li>
-                    <li>container (swift container or local path)</li>
-                    <li>storage (swift by default)</li>
+                    <li>container (Swift container or local path)</li>
+                    <li>storage (Swift by default)</li>
                     <li>restore-from-host</li>
                     <li>restore-from-date (optional)</li>
                 </ul></p>

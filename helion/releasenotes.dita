@@ -4,7 +4,6 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Release Notes</title>
   <body>
     <!--Needs Edit-->
-    <note type="warning">Be advised that this document has not yet been fully updated for GA</note>
     <p>This document provides an overview of the features contained within HP Helion <tm
         tmtype="reg">OpenStack</tm> 2.0, including known issues and workarounds for this
       release:</p>
@@ -550,9 +549,6 @@ Oct  7 12:49:09 hlm kernel: [31181.133118] RIP: 0010:[&lt;ffffffff81514f5b>]  [&
       <!-- End Section "CoreFeatures"-->
     </section>
 
-    <section>
-      <xref href="http://docs-staging.hpcloud.com/hos2.0ga/helion/releasenotes.html" format="html"
-        scope="external">Printer friendly page</xref>
-    </section>
+
   </body>
 </topic>
