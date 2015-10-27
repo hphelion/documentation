@@ -7,8 +7,8 @@
       as the default Glance store. </p>
     <section id="configure-ceph-as-cinder-backend">
       <title>To Configure Ceph as a Glance Store</title>
-      <p>Perform the following procedure on the Deployer node to configure Ceph as a default Glance
-          store:<ol id="ol_u12_kd3_pt">
+      <p>Perform the following procedure on the deployer/lifecycle-manager node to configure Ceph as
+        a default Glance store:<ol id="ol_u12_kd3_pt">
           <li>Edit <codeph>~/helion/my_cloud/config/glance/glance-api.conf.j2</codeph> to add the
             following
             values:<codeblock>default_store = rbd
@@ -24,11 +24,12 @@ default_store = {{ glance_default_store }}</codeblock></li>
               id="ol_m5r_k23_pt">
               <li>Login to the controller nodes as a root user and run the following
                     command:<codeblock>ceph auth get-or-create client.glance | tee /etc/ceph/ceph.client.glance.keyring</codeblock><p><b>OR</b></p></li>
-              <li>You can copy the keyring from the Deployer node to <codeph>/etc/ceph</codeph>
-                folder on all the controller
+              <li>You can copy the keyring from the deployer/lifecycle-manager node to
+                  <codeph>/etc/ceph</codeph> folder on all the controller
                 nodes:<codeblock>scp /etc/ceph/ceph.client.glance.keyring</codeblock></li>
             </ol></li>
-          <li>Commit your configuration to the local repository to configure Cinder on the Deployer node.<p>
+          <li>Commit your configuration to the local repository to configure Cinder on the
+            deployer/lifecycle-manager node.<p>
               <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock>

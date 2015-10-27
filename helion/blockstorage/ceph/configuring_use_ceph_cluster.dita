@@ -21,8 +21,8 @@
             ceph-client-prepare.yml</codeph> to properly set up the rings files before configuring
           Ceph as a Cinder backend.</note>
       </p>
-      <p>Perform the following procedure on the Deployer node to configure Ceph as a Cinder
-        backend:</p>
+      <p>Perform the following procedure on the deployer/lifecycle-manager node to configure Ceph as
+        a Cinder backend:</p>
       <p>
         <ol id="ol_u12_kd3_pt">
           <li>Edit <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> to add the Ceph
@@ -43,12 +43,12 @@ volume_backend_name = ceph</codeblock><note>The
               id="ol_m5r_k23_pt">
               <li>Login to the controller nodes as a root user and run the following
                     command:<codeblock>ceph auth get-or-create client.cinder | tee /etc/ceph/ceph.client.cinder.keyring</codeblock><p><b>OR</b></p></li>
-              <li>You can copy the keyring from the deployer node to <codeph>/etc/ceph</codeph>
-                folder on all the controller
+              <li>You can copy the keyring from the deployer/lifecycle-manager node to
+                  <codeph>/etc/ceph</codeph> folder on all the controller
                 nodes:<codeblock>scp /etc/ceph/ceph.client.cinder.keyring</codeblock></li>
             </ol></li>
           <li>Commit your configuration to the local Git repository to configure Cinder on the
-            deployer node:<p>
+            deployer/lifecycle-manager node:<p>
               <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock>
@@ -72,8 +72,8 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
     <p>The volumes are created on the Ceph pool volumes.</p>
     <section id="configure-ceph-cinder-backup">
       <title>To Configure Ceph as a Cinder Backup</title>
-      <p>Perform the following procedure on the Deployer node to configure Ceph as a Cinder
-        backup:</p>
+      <p>Perform the following procedure on the deployer/lifecycle-manager node to configure Ceph as
+        a Cinder backup:</p>
       <p>
         <ol id="ol_pvb_pf3_pt">
           <li>To enable Cinder to backup to Ceph, modify <codeph>cinder.conf.j2</codeph> at
@@ -92,11 +92,12 @@ backup_ceph_pool = backups</codeblock><note>You
             this step.<ol id="ol_xx5_51x_gt">
               <li>Login to controller node as a root user and run the following
                     command:<codeblock>ceph auth get-or-create client.cinder-backup | tee /etc/ceph/ceph.client.cinder-backup.keyring</codeblock><p><b>OR</b></p></li>
-              <li>You can copy the keyring from the deployer node to <codeph>/etc/ceph</codeph>
-                folder on all the controller
+              <li>You can copy the keyring from the deployer/lifecycle-manager node to
+                  <codeph>/etc/ceph</codeph> folder on all the controller
                 nodes:<codeblock>scp /etc/ceph/ceph.client.cinder.keyring</codeblock></li>
             </ol></li>
-          <li>Commit your configuration to the local repository to configure Cinder on the Deployer node:<p>
+          <li>Commit your configuration to the local repository to configure Cinder on the
+            deployer/lifecycle-manager node:<p>
               <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock>
@@ -117,8 +118,8 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock><p>This
         machine, you must reboot your virtual machine after the new backend has been added. </p>
       <p>Perform the following steps to configure Nova to allow attachment of a Ceph volume to an
         instance: <ol id="ol_vx4_4gv_kt">
-          <li>On the Deployer node, edit <codeph>kvm-hypervisor.conf.j2</codeph> at
-              <codeph>~/helion/my_cloud/config/nova/kvm-hypervisor.conf.j2</codeph> to add the
+          <li>On the deployer/lifecycle-manager node, edit <codeph>kvm-hypervisor.conf.j2</codeph>
+            at <codeph>~/helion/my_cloud/config/nova/kvm-hypervisor.conf.j2</codeph> to add the
             following for the RBD volume
               attach:<codeblock>[libvirt]
 rbd_user = cinder
@@ -126,7 +127,8 @@ rbd_secret_uuid = 457eb676-33da-42ec-9a8c-9293d545c337</codeblock><note>The
                 <codeph>rbd_secret_uuid</codeph> command is the same as <codeph>secret_id</codeph>
               which is available at
               <codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph>.</note></li>
-          <li>Commit your configuration to the local repository to configure Cinder on the Deployer node:<p>
+          <li>Commit your configuration to the local repository to configure Cinder on the
+            deployer/lifecycle-manager node:<p>
               <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock>
