@@ -1,3 +1,4 @@
+%Entry Scale%=Use Entry-scale
 % HLM[ \.,]%=Do not abbreviate. Use Helion lifecycle management (The case is correct as shown.)
  HOS%[ \.,]=Do not abbreviate. Use HP Helion OpenStack
 %[^P] Helion OpenStack%=Change to HP Helion OpenStack
