@@ -12,14 +12,14 @@
       cluster in a compute resource. You must execute a few EON CLI commands to do so.</p>
     <p>Moreover, EON is not installed by default. To install EON service, you must uncomment
         <systemoutput>eon-deploy.yml</systemoutput> file at
-        <systemoutput>~/helion/hos/ansible/hlm-deploy.yml</systemoutput> in the deployer node. For
-      more details, refer to <xref href="../installation/install_entryscale_esx.dita#install_esx"
-        >ESX installation.</xref></p>
+        <systemoutput>~/helion/hos/ansible/hlm-deploy.yml</systemoutput> in the
+      deployer/lifecycle-manager node. For more details, refer to <xref
+        href="../installation/install_entryscale_esx.dita#install_esx">ESX installation.</xref></p>
     <section>
       <title><b>Architecture</b></title>
       <p>EON is installed on the master control plane node and the Eon CLI is installed on the HLM
-        Deployer node which is used by the Cloud Admin to setup vCenter Compute Proxy and OvsvApp
-        nodes.</p>
+        deployer/lifecycle-manager node which is used by the Cloud Admin to setup vCenter Compute
+        Proxy and OvsvApp nodes.</p>
       <p><image href="../../media/esx/eon_arch_diagram.png"/></p>
     </section>
     <section><title>EON CLI Operations</title><p>The EON client CLI package provides an http-client
