@@ -3,10 +3,11 @@
 <topic id="topic_srg_d5h_rt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing an ESX Host from a Cluster</title>
   <body><!--Needs Edit-->
-    <p>The process for removing an existing ESX host from cluster is as follows:<ol
+    <p>The process for removing an existing ESX host from cluster is as follows:<note>Wait until
+        VCenter migrates all the tenant VMs to other active hosts in that same cluster.</note><ol
         id="ol_ilq_k5h_rt">
-        <li>Right click  and put the host in the maintenance mode. This will automatically migrate
-          all the tenant VMs except OVSvApp.  <p><image href="../../media/esx/eon_maintenance.png"
+        <li>Right click and put the host in the maintenance mode. This will automatically migrate
+          all the tenant VMs except OVSvApp. <p><image href="../../media/esx/eon_maintenance.png"
               id="image_qyh_rsw_st"/></p></li>
         <li>Cancel the maintenance mode task.<p><image
               href="../../media/esx/eon_cancel_maintenance%20mode.png" id="image_lpd_qfx_st"
