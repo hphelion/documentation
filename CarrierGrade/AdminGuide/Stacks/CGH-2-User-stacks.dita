@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1631">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Post-Alpha Release Build 22: Using Stacks</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Using Stacks</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -23,7 +23,7 @@
       <li><xref href="CGH-2-User-stacks-create.dita#topic1631">Creating a Stack</xref></li>
     </ul>
   <p>For information on peforming the following tasks related to Orchestration stacks, see the <i>HP
-        Helion OpenStack® 2.0 Carrier Grade: Administrator Guide</i>.</p>
+        Helion OpenStack® 2.0 Carrier Grade Beta: Administrator Guide</i>.</p>
   <ul>
       <li>Customizing Guest Images with User Data</li>
       <li>Resource Scaling (Autoscaling)</li>

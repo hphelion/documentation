@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic2139">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Post-Alpha Release Build 22: Changing the OAM IP
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Changing the OAM IP
     Configuration</title>
   <prolog>
     <metadata>
@@ -88,6 +88,6 @@
           unlock each compute node</xref>.</li>
     </ol>
     <p>For more information on system configuration, see the <i>HP Helion <tm tmtype="reg"
-          >OpenStack</tm> 2.0 Carrier Grade: Administrator Guide</i>.</p>
+          >OpenStack</tm> 2.0 Carrier Grade Beta: Administrator Guide</i>.</p>
   </body>
 </topic>

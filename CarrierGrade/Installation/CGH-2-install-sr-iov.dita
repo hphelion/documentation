@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Post-Alpha Release Build 22:
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta:
         Configuring SR-IOV</title>
     <prolog>
         <metadata>
@@ -110,7 +110,7 @@ nova boot sriov-fixed --image wrl --flavor 2 --nic port-id=abd5b42a-e8f5-4297-91
                 <codeblock>vf 15 MAC aa:bb:cc:dd:ee:ff, vlan 810, spoof checking on</codeblock>
             </p>Also see the <xref
                 href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/CGH-2-KVM-Admin.pdf"
-                format="pdf" scope="external">HPE Helion OpenStack® 2.0 Carrier Grade: Administrator
+                format="pdf" scope="external">HPE Helion OpenStack® 2.0 Carrier Grade Beta: Administrator
                 Guide</xref>.</section>
 
 
