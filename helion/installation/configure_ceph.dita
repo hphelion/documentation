@@ -131,10 +131,13 @@
             <p><note>Ensure that disks designated to be used for the OSD data and journal storage
                 must be in a clean state (i.e. any existing partitions must be deleted). If you do
                 not perform this step, Ceph configuration fails with errors.</note></p></li>
-          <li>Editable parameters for Ceph are available in the following locations: <ul>
+          <li><p>Editable parameters for Ceph are available in the following locations:</p>
+            <ul>
               <li><codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph>
-                <p>In the <codeph>settings.yml</codeph> file, you can edit the following parameters:
-                    <simpletable frame="all" relcolwidth="1.0* 1.0*" id="simpletable_pt2_cf4_5t">
+                <p>In the <codeph>settings.yml</codeph> file, you can edit the following
+                  parameters:</p>
+                <p>
+                  <simpletable frame="all" relcolwidth="1.0* 1.0*" id="simpletable_pt2_cf4_5t">
                     <strow>
                       <stentry>Parameters</stentry>
                       <stentry>Descriptions</stentry>
