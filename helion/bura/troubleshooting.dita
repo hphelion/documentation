@@ -3,7 +3,7 @@
 <topic id="topic_ly3_yyr_st">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Troubleshooting </title>
   <body><!--Needs Edit-->
-    <p>Logs can be used to troubleshoot Freezer functionality <table>
+    <p>You can use the following logs to troubleshoot Freezer functionality:<table>
         <tgroup cols="2">
           <tbody>
             <row>
@@ -11,11 +11,16 @@
               <entry>Description</entry>
             </row>
             <row>
-              <entry>Freezer Client</entry><entry>/var/log/freezer.log</entry>
+              <entry>Freezer Client</entry>
+              <entry>/var/log/freezer.log</entry>
             </row>
-            <row><entry>Freezer Scheduler</entry><entry>/var/log/freezer-scheduler.log</entry></row>
             <row>
-              <entry>Freezer API</entry><entry>/var/log/freezer-api.log</entry>
+              <entry>Freezer Scheduler</entry>
+              <entry>/var/log/freezer-scheduler.log</entry>
+            </row>
+            <row>
+              <entry>Freezer API</entry>
+              <entry>/var/log/freezer-api.log</entry>
             </row>
           </tbody>
         </tgroup>
