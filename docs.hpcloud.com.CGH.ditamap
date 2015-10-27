@@ -72,41 +72,45 @@
       <topicref href="CarrierGrade/CGHRelNotes/jow1404333831977.xml"
         navtitle="Known Problems and Limitations" locktitle="yes"/>
     </topicref>
-    <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita"
-      navtitle="Technical Overview" locktitle="yes">
-      <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-kvm-only.dita"
-        navtitle="KVM Deployment Architecture Reference" locktitle="yes"/>
-      <!--<topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-tahoe.dita" navtitle="KVM with DCN Deployment Architecture Reference " locktitle="yes" toc="no"/>-->
-      <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-esx.dita"
-        navtitle="KVM + ESX Deployment Architecture Reference" locktitle="yes"/>
-    </topicref>
-    <topicref href="CarrierGrade/Installation/carrier-grade-technical-specs.dita"
-      navtitle="Technical Specifications" locktitle="yes"/>
-    <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix2.dita"
-      navtitle="Support Matrix" locktitle="yes"/>
-    <mapref href="CarrierGrade/Installation/carrier-grade-installation-guide.ditamap"
-      format="ditamap" navtitle="Installation Guide" locktitle="yes"/>
+    <topichead navtitle="Installation" locktitle="yes">
+      <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita"
+        navtitle="Technical Overview" locktitle="yes">
+        <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-kvm-only.dita"
+          navtitle="KVM Deployment Architecture Reference" locktitle="yes"/>
+        <!--<topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-tahoe.dita" navtitle="KVM with DCN Deployment Architecture Reference " locktitle="yes" toc="no"/>-->
+        <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-esx.dita"
+          navtitle="KVM + ESX Deployment Architecture Reference" locktitle="yes"/>
+      </topicref>
+      <topicref href="CarrierGrade/Installation/carrier-grade-technical-specs.dita"
+        navtitle="Technical Specifications" locktitle="yes"/>
+      <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix2.dita"
+        navtitle="Support Matrix" locktitle="yes"/>
+      <mapref href="CarrierGrade/Installation/carrier-grade-installation-guide.ditamap"
+        format="ditamap" navtitle="Installation Guide" locktitle="yes"/>
+    </topichead>
+    <topichead navtitle="Administration" locktitle="yes">
+      <topicref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.dita"
+        navtitle="KVM Region Administrator Guide (PDF)" locktitle="yes"/>
+      <topicref href="CarrierGrade/AdminGuideKVM/CGH-2-KVM-Admin.ditamap"
+        navtitle="KVM Region Administrator Guide (On Line)" locktitle="yes" format="ditamap"/>
+      <topicref href="CarrierGrade/AdminGuide/Logging/CHG-2-logging-overview.dita"
+        navtitle="Centralized Logging" locktitle="yes"/>
+      <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2-backup-restore.dita" toc="yes"
+        navtitle="Backup and Restore Configuration Files and MySQL Clusters" locktitle="yes">
+        <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2--backup-restore-cli.dita"
+          navtitle="Attis Backup and Restore CLI" locktitle="yes"/>
+        <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2--backup-configure.dita"
+          navtitle="Configuring the Backup and Restore Location " locktitle="yes"/>
+      </topicref>
+      <topicref href="CarrierGrade/API/carrier-grade-api.dita" navtitle="API and SDK Reference"
+        locktitle="yes"/>
+      <topicref href="CarrierGrade/HLMCLI/CGH-2-hlm-cli.dita"
+        navtitle="Helion Lifecycle Managment CLI Reference" locktitle="yes"/>
+    </topichead>
     <topicref href="CarrierGrade/AdminGuide/carrier-grade-User-guide.ditamap" format="ditamap"
-      navtitle="User Guide" locktitle="yes"/>
-    <topicref href="CarrierGrade/AdminGuideKVM/CGH-2-KVM-Admin.ditamap"
-      navtitle="KVM Region Administrator Guide" locktitle="yes" format="ditamap"/>
-    <topicref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.dita"
-      navtitle="Administrator Guide" locktitle="yes"/>
-    <topicref href="CarrierGrade/AdminGuide/Logging/CHG-2-logging-overview.dita"
-      navtitle="Centralized Logging" locktitle="yes"/>
+      navtitle="Operations" locktitle="yes"/>
     <topicref href="CarrierGrade/Troubleshooting/CGH-2-troubleshooting.dita"
       navtitle="Troubleshooting" locktitle="yes"/>
-    <topicref href="CarrierGrade/API/carrier-grade-api.dita" navtitle="API and SDK Reference"
-      locktitle="yes"/>
-    <topicref href="CarrierGrade/HLMCLI/CGH-2-hlm-cli.dita"
-      navtitle="Helion Lifecycle Managment CLI Reference" locktitle="yes"/>
-    <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2-backup-restore.dita" toc="yes"
-      navtitle="Backup and Restore Configuration Files and MySQL Clusters" locktitle="yes">
-      <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2--backup-restore-cli.dita"
-        navtitle="Attis Backup and Restore CLI" locktitle="yes"/>
-      <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2--backup-configure.dita"
-        navtitle="Configuring the Backup and Restore Location " locktitle="yes"/>
-    </topicref>
     <topichead navtitle=" License Files">
       <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"
         navtitle="Open Source and Third-Party Software License Agreement" locktitle="yes"/>
