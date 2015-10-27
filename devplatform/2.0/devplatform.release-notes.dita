@@ -97,8 +97,8 @@ $ openstack endpoint create database public 'http://<i>&lt;public-VIP-IP-address
           <dd>When creating a new ALS cluster, the creation fails. The
               <codeph>/tmp/als_installer.txt</codeph> logfile, located on the constructor VM,
             contains EOF errors. To fix this error, open the configuration management tool and enter
-              <codeph>cf-mgmt --disable-connection-reuse</codeph>. This setting ensures a new HTTP
-            connection every time a request is made.</dd>
+              <codeph>cf-mgmt --disable-connection-reuse true</codeph>. This setting ensures a new
+            HTTP connection every time a request is made.</dd>
         </dlentry><dlentry>
           <dt>Cluster Creation Fails with "Disambiguate Network" Error</dt>
           <dd>Creating a cluster fails and the following error message is received:
