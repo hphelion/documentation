@@ -1,304 +1,79 @@
-./commercial/GA1/1.1commcerical.install-TLS.dita:<p>If the deployer does not wish to generate the key/cert pair, the installer software will generate this pair and place the generated key and certificate at /root/eca.key and /root/eca.crt, respectively, on the seed.</p>
-./commercial/GA1/1.1commcerical.install-TLS.dita:<p>If the deployer wishes to provide an intermediary CA cert/key pair, they should be placed on the seed before deployment at /root/eca.key and /root/eca.crt by running the following copy commands:</p>
-./commercial/GA1/1.1commcerical.install-TLS.dita:<p>It is generally recommended that the deployer provide an intermediary CA key and certificate generated from a well-known certificate authority during the installation process, so trust can be established using the certificate chain. This can be either a specific certificate/key generated for this deployment, a general certificate/key that is used for test deployments by that organization, or a delegated signing certificate from another PKI to enable the use of existing trust relationships between users and that PKI. Either way, the deployer must provide the CA certificate to the Helion users, to enable secure TLS and prevent certificate errors and warnings.</p>
-./commercial/GA1/1.1commcerical.install-TLS.dita:<p>If the deployer has not provided a key/cert pair, the self-signed certificate created during the installation process must be retrieved from the seed at /root/eca.crt after deployment. This certificate can then be used to authenticate the TLS connection when connecting to any of the overcloud OpenStack services in the Helion OpenStack cloud. This can be retrieved using the following command:</p>
-./commercial/GA1/1.1commercial.install-GA-overview.dita:<p>Users and client software must be able to verify the TLS certificates used on the Helion APIs and web interface, so the deployer must make the CA certificate available to users. For more information see <xref href="../../commercial/GA1/1.1commcerical.install-TLS.dita" >HP Helion OpenStack TLS Support</xref>.</p>
-./helion/administration/configure_logging.dita:          <codeph>~/helion/my_cloud/config/logging/</codeph> directory on the deployer. These files
-./helion/administration/configure_logging.dita:                    deployer/lifecycle-manager node:
-./helion/administration/configure_logging.dita:                    deployer/lifecycle-manager node:
-./helion/administration/configure_logging.dita:                    deployer node:
-./helion/administration/configure_logging.dita:                    deployer/lifecycle-manager node:
-./helion/administration/configure_logging.dita:                    deployer/lifecycle-manager node:
-./helion/administration/configure_logging.dita:                <entry>Glance exposes logging configuration templates at deployer under
-./helion/administration/configure_logging.dita:                  heat-reconfigure playbook from the deployer to apply the changes.
-./helion/administration/configure_monitoring.dita:          <li>On your deployer, edit the following two files: <ol>
-./helion/administration/create_hdp_servicenet.dita:        <li>SSH to the deployer/lifecycle-manager node using admin credentials.</li>
-./helion/administration/postinstall_checklist.dita:            deployer:</p>
-./helion/administration/postinstall_checklist.dita:        and stored in <codeph>~/.ssh</codeph> on your deployer node.</p>
-./helion/administration/postinstall_checklist.dita:        <li><p>From your deployer node, source the admin creds setup during the installation:</p>
-./helion/administration/postinstall_checklist.dita:        deployer:</p>
-./helion/administration/postinstall_checklist.dita:        your deployer:</p>
-./helion/blockstorage/brocade_zone_manager.dita:          <li>Login to deployer/lifecycle-manager node.</li>
-./helion/blockstorage/ceph/adding_new_monitor_node.dita:        <li>Login to the deployer/lifecycle-manager node.</li>
-./helion/blockstorage/ceph/adding_new_monitor_node.dita:    <p>From the deployer/lifecycle-manager node, execute the following
-./helion/blockstorage/ceph/adding_new_osd_node.dita:        <li>Login to the deployer/lifecycle-manager node.</li>
-./helion/blockstorage/ceph/adding_new_osd_node.dita:            deployer/lifecycle-manager node, execute the following
-./helion/blockstorage/ceph/ceph_operation.dita:              <li>Login to deployer/lifecycle-manager node.</li>
-./helion/blockstorage/ceph/ceph_operation.dita:              <li>Login to deployer/lifecycle-manager node.</li>
-./helion/blockstorage/ceph/ceph_operation.dita:              <li>Login to deployer/lifecycle-manager node.</li>
-./helion/blockstorage/ceph/configuring_use_ceph_cluster.dita:      <p>Perform the following procedure on the deployer/lifecycle-manager node to configure Ceph as
-./helion/blockstorage/ceph/configuring_use_ceph_cluster.dita:              <li>You can copy the keyring from the deployer/lifecycle-manager node to
-./helion/blockstorage/ceph/configuring_use_ceph_cluster.dita:            deployer/lifecycle-manager node:<p>
-./helion/blockstorage/ceph/configuring_use_ceph_cluster.dita:      <p>Perform the following procedure on the deployer/lifecycle-manager node to configure Ceph as
-./helion/blockstorage/ceph/configuring_use_ceph_cluster.dita:              <li>You can copy the keyring from the deployer/lifecycle-manager node to
-./helion/blockstorage/ceph/configuring_use_ceph_cluster.dita:            deployer/lifecycle-manager node:<p>
-./helion/blockstorage/ceph/configuring_use_ceph_cluster.dita:          <li>On the deployer/lifecycle-manager node, edit <codeph>kvm-hypervisor.conf.j2</codeph>
-./helion/blockstorage/ceph/configuring_use_ceph_cluster.dita:            deployer/lifecycle-manager node:<p>
-./helion/blockstorage/ceph/configuring_use_ceph_cluster_glance.dita:      <p>Perform the following procedure on the deployer/lifecycle-manager node to configure Ceph as
-./helion/blockstorage/ceph/configuring_use_ceph_cluster_glance.dita:              <li>You can copy the keyring from the deployer/lifecycle-manager node to
-./helion/blockstorage/ceph/configuring_use_ceph_cluster_glance.dita:            deployer/lifecycle-manager node.<p>
-./helion/blockstorage/ceph/defining_monitor_resource.dita:        <li>Login to the deployer/lifecycle-manager node.</li>
-./helion/blockstorage/ceph/deploy_monitor_stand_alone_node.dita:            <p>The deployer/lifecycle-manager node must be setup before starting Ceph deployment.
-./helion/blockstorage/ceph/deploy_monitor_stand_alone_node.dita:                For more details on the installation of deployer/lifecycle-manager node, refer to
-./helion/blockstorage/ceph/deploy_monitor_stand_alone_node.dita:                <li>Login to the deployer/lifecycle-manager node.</li>
-./helion/blockstorage/ceph/reconfigure_ceph_services.dita:                <li>Login to the deployer/lifecycle-manager node </li>
-./helion/blockstorage/ceph/remove_monitor_node.dita:          <li>Login to the deployer/lifecycle-manager node.</li>
-./helion/blockstorage/ceph/remove_monitor_node.dita:          <li>Login to the deployer/lifecycle-manager node.</li>
-./helion/blockstorage/ceph/remove_osd_node.dita:        <li> Login to the deployer/lifecycle-manager node.</li>
-./helion/blockstorage/ceph/troubleshooting.dita:        TASK: [_CEP-CMN | configure | Copy "{{ deployer_ceph_dir }}/ceph.client.admin.keyring" to /etc/ceph directory] *** 
-./helion/blockstorage/ceph/troubleshooting.dita:        TASK: [ceph-deployer | configure | Generate "/etc/ceph/{{ ceph_cluster }}.conf" file] *** 
-./helion/blockstorage/ceph/upgrade_ceph_cluster.dita:        <li>Login to deployer node.</li>
-./helion/blockstorage/ceph/upgrade_ceph_cluster.dita:        <li>Login to deployer node.</li>
-./helion/blockstorage/vsa/configure_vsa_separate_iscsi_network.dita:          <li>Login in to the deployer/lifecycle-manager node.</li>
-./helion/blockstorage/vsa/remove_vsa_maintenance.dita:          <codeph>servers.yml</codeph> file on the deployer/lifecycle-manager node with a list of
-./helion/blockstorage/vsa/remove_vsa_maintenance.dita:        <li>Login to deployer/lifecycle-manager node.</li>
-./helion/blockstorage/vsa/troubleshooting_vsa.dita:          <li>Login in to the deployer node.</li>
-./helion/bura/cloud_control_plane_backup.dita:        are automaticaly deployed to backup to Swift the MySQL database, the deployer, and Swift
-./helion/bura/cloud_control_plane_recovery.dita:    <section><title>Point in time database recovery</title><p>Everything is still running (deployer,
-./helion/bura/cloud_control_plane_recovery.dita:      <li>From the deployer run the following steps:
-./helion/bura/cloud_control_plane_recovery.dita:      <li>From the deployer/lifecycle-manager node run the following steps:
-./helion/bura/cloud_control_plane_recovery.dita:        <li>From the deployer, launch the following commands to stop the MySQL
-./helion/bura/cloud_control_plane_recovery.dita:        <li>From the deployer, launch the following commands to start all
-./helion/bura/cloud_control_plane_recovery.dita:        (deployer, CCNs, CPNs) but you want to restore the Swift rings to an old
-./helion/bura/cloud_control_plane_recovery.dita:        <li>On the deployer:
-./helion/bura/cloud_control_plane_recovery.dita:        <li>On the deployer:
-./helion/bura/cloud_control_plane_recovery.dita:    <section><title>Point in time deployer recovery</title><p>Everything is still running (deployer,
-./helion/bura/cloud_control_plane_recovery.dita:        CCNs, CPNs) but you want to restore the deployer to an old state.</p></section>
-./helion/bura/cloud_control_plane_recovery.dita:      <title>Restore from a Swift backup</title><p>On the deployer, run the following steps:
-./helion/bura/cloud_control_plane_recovery.dita:freezer-scheduler -c &lt;deployer hostname&gt; job-list
-./helion/bura/cloud_control_plane_recovery.dita:# Get the id corresponding to the job "HLM Default: Deployer restore from swift"
-./helion/bura/cloud_control_plane_recovery.dita:freezer-scheduler -c &lt;deployer hostname&gt; job-start -j &lt;job-id&gt;
-./helion/bura/cloud_control_plane_recovery.dita:        select the job "HLM Default: Deployer restore from SSH".</p></section>
-./helion/bura/cloud_control_plane_recovery.dita:        (deployer, CCN, CPNs) but you lost one or two CCNs.</p></section>
-./helion/bura/cloud_control_plane_recovery.dita:    <section><title>Restore from other nodes</title><p>On the deployer/lifecycle-manager node, install the nodes that got destroyed:
-./helion/bura/cloud_control_plane_recovery.dita:              <li>On deployer/lifecycle-manager node, follow the procedure to deploy the CCNs:
-./helion/bura/cloud_control_plane_recovery.dita:              <li>Once everything is restored, re-enable the backups. From the deployer:
-./helion/bura/cloud_control_plane_recovery.dita:    <section><title>Deployer disaster recovery</title><p>Everything is still running (CCNs, CPNs)
-./helion/bura/cloud_control_plane_recovery.dita:        but you lost the deployer.</p><ul>
-./helion/bura/cloud_control_plane_recovery.dita:            <li>On the deployer/lifecycle-manager node, install the
-./helion/bura/cloud_control_plane_recovery.dita:ansible-playbook -i hosts/localhost _deployer_restore_helper.yml</codeblock></li>
-./helion/bura/cloud_control_plane_recovery.dita:              deployer.<codeblock>
-./helion/bura/cloud_control_plane_recovery.dita:              replace the deployer's one with the retrieved one.
-./helion/bura/cloud_control_plane_recovery.dita:            <li>On the deployer/lifecycle-manager node:
-./helion/bura/cloud_control_plane_recovery.dita:# Get the id of the job corresponding to "HLM Default: deployer backup"
-./helion/bura/cloud_control_plane_recovery.dita:# If it is present, also stop the deployer's ssh backup
-./helion/bura/cloud_control_plane_recovery.dita:# Get the id of the job corresponding to "HLM Default: deployer restore from Swift"
-./helion/bura/cloud_control_plane_recovery.dita:            <li>When the deployer is restored, re-run the deployment to ensure the deployer is in
-./helion/bura/cloud_control_plane_recovery.dita:            <li>On the deployer/lifecycle-manager node, edit the following file so it contains the
-./helion/bura/cloud_control_plane_recovery.dita:            <li>On the deployer/lifecycle-manager node:
-./helion/bura/cloud_control_plane_recovery.dita:ansible-playbook -i hosts/localhost _deployer_restore_helper.yml</codeblock></li>
-./helion/bura/cloud_control_plane_recovery.dita:cd /root/deployer_restore_helper/
-./helion/bura/cloud_control_plane_recovery.dita:./deployer_restore_script.sh
-./helion/bura/cloud_control_plane_recovery.dita:            <li>When the deployer is restored, re-run the deployment to ensure the deployer is in
-./helion/bura/cloud_control_plane_recovery.dita:            <li>On the deployer/lifecycle-manager node, edit the following file so it contains the
-./helion/bura/cloud_control_plane_recovery.dita:            <li>On the deployer/lifecycle-manager node:
-./helion/bura/cloud_control_plane_recovery.dita:ansible-playbook -i hosts/localhost _deployer_restore_helper.yml</codeblock></li>
-./helion/bura/cloud_control_plane_recovery.dita:cd /root/deployer_restore_helper/
-./helion/bura/cloud_control_plane_recovery.dita:./deployer_restore_script.sh
-./helion/bura/cloud_control_plane_recovery.dita:            <li>Once everything is restored, re-enable the backups from the deployer:
-./helion/bura/cloud_control_plane_recovery.dita:                corrupted:<codeblock># On the deployer run 
-./helion/bura/cloud_control_plane_recovery.dita:                lost:<codeblock># On the deployer run 
-./helion/bura/cloud_control_plane_recovery.dita:# Then from the deployer run
-./helion/bura/cloud_control_plane_recovery.dita:                <codeblock># From the deployer run
-./helion/bura/cloud_control_plane_recovery.dita:# From the deployer run
-./helion/bura/create_freezer_scheduler_job.dita:        <li>Log into any machine (example, Deployer or Controller) and create the job.</li>
-./helion/bura/disable_bura_before_deployment.dita:          <li>Deployer/Lifecycle-manager node</li>
-./helion/bura/disable_bura_before_deployment.dita:          <li>To disable the deployer's jobs, comment-out all localhost paragraphs, as follows:
-./helion/bura/disable_bura_before_deployment.dita:#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_backup_swift.json.j2
-./helion/bura/disable_bura_before_deployment.dita:#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_swift.json.j2
-./helion/bura/disable_bura_before_deployment.dita:#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_backup_ssh.json.j2
-./helion/bura/disable_bura_before_deployment.dita:#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_ssh.json.j2
-./helion/bura/disable_bura_before_deployment.dita:    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_backup_swift.json.j2
-./helion/bura/disable_bura_before_deployment.dita:    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_swift.json.j2
-./helion/bura/disable_bura_before_deployment.dita:    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_backup_ssh.json.j2
-./helion/bura/disable_bura_before_deployment.dita:    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_ssh.json.j2
-./helion/bura/disable_bura_before_deployment.dita:    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_backup_swift.json.j2
-./helion/bura/disable_bura_before_deployment.dita:    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_swift.json.j2
-./helion/bura/disable_bura_before_deployment.dita:    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_backup_ssh.json.j2
-./helion/bura/disable_bura_before_deployment.dita:    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_ssh.json.j2
-./helion/bura/disable_bura_before_deployment.dita:#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_backup_swift.json.j2
-./helion/bura/disable_bura_before_deployment.dita:#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_swift.json.j2
-./helion/bura/disable_bura_before_deployment.dita:     - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_backup_ssh.json.j2
-./helion/bura/disable_bura_before_deployment.dita:     - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_ssh.json.j2
-./helion/bura/freezer_agent.dita:        <section><title>Deployer Restore</title></section>
-./helion/bura/freezer_agent.dita:            <li>Connect to deployer.</li>
-./helion/bura/freezer_agent.dita:                jobs:<codeblock>freezer-scheduler -c &lt;deployer hostname (generaly hLinux)> job-list</codeblock></li>
-./helion/bura/freezer_agent.dita:            <li>Get the id corresponding to the job "HLM Default: Deployer restore";</li>
-./helion/bura/freezer_agent.dita:                <codeblock>freezer-scheduler -c &lt;deployer hostname (generaly hLinux)&gt; job-start -j &lt;job-id&gt;</codeblock></li>
-./helion/bura/freezer_scheduler.dita:      <p>In HOS 2.0, Freezer Scheduler is automatically installed on deployer/lifecycle-manager node
-./helion/bura/freezer_scheduler.dita:        <li>Log into any machine (example, Deployer or Controller) and create the job.</li>
-./helion/bura/freezer_scheduler_overview.dita:      <p>In HOS 2.0, Freezer Scheduler is automatically installed on Deployer Node and Controller nodes.</p>
-./helion/bura/freezer_scheduler_overview.dita:        <li>Log into any machine (example, Deployer or Controller) and create the job.</li>
-./helion/bura/restore.dita:    <section><title>Deployer Restore</title></section>
-./helion/bura/restore.dita:      <li>Connect to deployer.</li>
-./helion/bura/restore.dita:        jobs:<codeblock>freezer-scheduler -c &lt;deployer hostname (generaly hLinux)> job-list</codeblock></li>
-./helion/bura/restore.dita:      <li>Get the id corresponding to the job "HLM Default: Deployer restore";</li>
-./helion/bura/restore.dita:        <codeblock>freezer-scheduler -c &lt;deployer hostname (generaly hLinux)&gt; job-start -j &lt;job-id&gt;</codeblock></li>
-./helion/bura/start_stop_freezer_services.dita:    <section id="main"><p>To stop freezer globally launch the following playbook from the deployer (This will stop all
-./helion/bura/start_stop_freezer_services.dita:      deployer:<codeblock>
-./helion/bura/supported_services.dita:        <li>All important informations on the deployer</li>
-./helion/conceptual_overviews/high_availability.dita:          <li><xref href="#HP2.0HA/deployer">Deployer</xref></li>
-./helion/conceptual_overviews/high_availability.dita:        <p id="deployer"><b>Deployer</b></p>
-./helion/conceptual_overviews/high_availability.dita:        <p>The deployer in Helion Openstack is not highly-available. The deployer state/data are all
-./helion/conceptual_overviews/high_availability.dita:          deployer/lifecycle-manager node failure, the deployer state/data can be recovered from the
-./helion/esx/eon_service.dita:      deployer/lifecycle-manager node. For more details, refer to <xref
-./helion/esx/eon_service.dita:        deployer/lifecycle-manager node which is used by the Cloud Admin to setup vCenter Compute
-./helion/esx/eon_service.dita:      "deployer_network": {
-./helion/esx/eon_service.dita:        "deployer_cidr": "172.170.2.0/24",
-./helion/esx/eon_service.dita:        "deployer_gateway_ip": "172.170.2.1",
-./helion/esx/eon_service.dita:        "deployer_node_ip": "172.170.1.10",
-./helion/esx/eon_service.dita:        "deployer_pg_name": "hlm-Deployer-PG",
-./helion/esx/eon_service.dita:        "deployer_vlan": "1702",
-./helion/esx/eon_service.dita:        "enable_deployer_dhcp": "no"
-./helion/esx/eon_service.dita:      "deployer_network": {
-./helion/esx/eon_service.dita:        "deployer_cidr": "172.170.2.0/24",
-./helion/esx/eon_service.dita:        "deployer_gateway_ip": "172.170.2.1",
-./helion/esx/eon_service.dita:        "deployer_node_ip": "172.170.1.10",
-./helion/esx/eon_service.dita:        "deployer_pg_name": "hlm-Deployer-PG",
-./helion/esx/eon_service.dita:        "deployer_vlan": "1702",
-./helion/esx/eon_service.dita:        "enable_deployer_dhcp": "no"
-./helion/esx/eon_service.dita:      "deployer_network": {
-./helion/esx/eon_service.dita:        "deployer_cidr": "172.170.2.0/24",
-./helion/esx/eon_service.dita:        "deployer_gateway_ip": "172.170.2.1",
-./helion/esx/eon_service.dita:        "deployer_node_ip": "172.170.1.10",
-./helion/esx/eon_service.dita:        "deployer_pg_name": "hlm-Deployer-PG",
-./helion/esx/eon_service.dita:        "deployer_vlan": "1702",
-./helion/esx/eon_service.dita:        "enable_deployer_dhcp": "no"
-./helion/esx/eon_service.dita:      "deployer_network": {
-./helion/esx/eon_service.dita:        "deployer_cidr": "172.170.2.0/24",
-./helion/esx/eon_service.dita:        "deployer_gateway_ip": "172.170.2.1",
-./helion/esx/eon_service.dita:        "deployer_node_ip": "172.170.1.10",
-./helion/esx/eon_service.dita:        "deployer_pg_name": "hlm-Deployer-PG",
-./helion/esx/eon_service.dita:        "deployer_vlan": "1702",
-./helion/esx/eon_service.dita:        "enable_deployer_dhcp": "no"
-./helion/example_configurations.dita:        deployer, is also used as one of the controller nodes. This model consists of a minimum
-./helion/example_configurations.dita:        network connected to the IPMI/iLO ports of all servers and routable from the deployer server
-./helion/example_configurations.dita:        deployer. This network must be reachable from the Management network.</p>
-./helion/example_configurations.dita:        network connected to the IPMI/iLO ports of all servers and routable from the deployer is
-./helion/faq.dita:        line client using these commands on your deployer node after installation:
-./helion/gui_installer.dita:          deployer/lifecycle manager on a dedicated node using the GUI installer; it can only run in
-./helion/gui_installer.dita:        be what was set in "Set up the Deployer" in the installation instructions. For example:</p>
-./helion/gui_installer.dita:      <p> The GUI installer is a web-based application that runs on the deployer/lifecycle manager
-./helion/hardware.dita:              <entry morerows="3">Deployer (optional, you can also use your first controller node as
-./helion/hardware.dita:                your deployer if desired.)</entry>
-./helion/hardware.dita:              <entry morerows="3">Deployer</entry>
-./helion/hardware.dita:            <entry>Deployer, (optional, you can also use your first controller node as your deployer
-./helion/hardware.dita:            <entry>Deployer</entry>
-./helion/identity/identity_admin.dita:        OpenStack command line utility. The utility is installed by the deployer onto
-./helion/identity/identity_admin.dita:        deployer/lifecycle-manager node. Also, HP Helion OpenStack installs convenient *.osrc files
-./helion/identity/identity_init.dita:        deployer/lifecycle-manager node. Also, the installer installs convenient *.osrc files which
-./helion/identity/identity_ldap.dita:          available on a deployer/lifecycle-manager node as
-./helion/identity/identity_reconfigure.dita:          on a deployer: <b>/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2</b>
-./helion/installation/configure_3par.dita:              the deployer node.  The README.md file contains detailed procedures to configure
-./helion/installation/configure_3par.dita:          <li>Login to deployer/lifecycle-manager node.</li>
-./helion/installation/configure_3par.dita:          <li>Login to deployer/lifecycle-manager node.</li>
-./helion/installation/configure_ceph.dita:          <li>Log in to the deployer/lifecycle-manager node.</li>
-./helion/installation/configure_vsa.dita:            deployer/lifecycle-manager node. You can do this in PuTTY by: <ol>
-./helion/installation/installation_troubleshooting.dita:    <section id="deployer_setup"><title>Issues during Deployer Setup</title>
-./helion/installation/installation_troubleshooting.dita:          deployer does not complete</b></p>
-./helion/installation/installation_troubleshooting.dita:          href="install_entryscale_kvm.dita#install_kvm/setup_deployer">step 3 of configuring the
-./helion/installation/installation_troubleshooting.dita:          Deployer</xref> is install git and so if your DNS nameserver is not configured or is not
-./helion/installation/installation_troubleshooting.dita:        deployer/lifecycle-manager node then it won't be able to complete.</p>
-./helion/installation/installation_troubleshooting.dita:          <codeph>/etc/resolv.conf</codeph> file on your deployer.</p>
-./helion/installation/installation_verification_old.dita:        Helion OpenStack deployer node.</p>
-./helion/installation/installation_verification_old.dita:          <p>Login to the deployer node.</p>
-./helion/installation/installation_verification_old.dita:          <p>Login to the deployer node.</p>
-./helion/installation/installation_verification_old.dita:          <p>Login to the deployer node.</p>
-./helion/installation/installation_verification_old.dita:          <p>Login to the deployer node.</p>
-./helion/installation/install_entryscale_esx.dita:    <section conref="install_entryscale_kvm.dita#install_kvm/setup_deployer"/>
-./helion/installation/install_entryscale_esx.dita:        <!--The configuration files for editing are available at <codeph>~/helion/my_cloud/definition/</codeph>. Refer to the <b><xref href="input_model.dita">Helion OpenStack 2.0 Input Model</xref></b> document for assistance with the configuration files. <note type="important">If you chose to use your first controller node as your deployer, ensure that your <codeph>servers.yml</codeph> file contains the <codeph>is-deployer: true</codeph> notation in your controller options. If you are using a dedicated deployer node you can omit this. Here is an example snippet of a <codeph>servers.yml</codeph> file where a user is using their first controller node as their deployer: <codeblock># Controllers
-./helion/installation/install_entryscale_esx.dita:  <b>is_deployer: true</b></codeblock></note>-->
-./helion/installation/install_entryscale_esx.dita:          <li>Login to the deployer/lifecycle-manager node.</li>
-./helion/installation/install_entryscale_esx.dita:        # Deployer Network details
-./helion/installation/install_entryscale_esx.dita:        # This network should be reachable from the Deployer node
-./helion/installation/install_entryscale_esx.dita:        "deployer_network": {
-./helion/installation/install_entryscale_esx.dita:            #Deployer Portgroup Name. If already exists then we will use it. 	     #If not then we will create it.
-./helion/installation/install_entryscale_esx.dita:            "deployer_pg_name": "hlm-Deployer-PG",
-./helion/installation/install_entryscale_esx.dita:            #VLAN id for Deployer Portgroup
-./helion/installation/install_entryscale_esx.dita:            "deployer_vlan": "33",
-./helion/installation/install_entryscale_esx.dita:#Enable DHCP for Deployer network ?
-./helion/installation/install_entryscale_esx.dita:            "enable_deployer_dhcp": "no",
-./helion/installation/install_entryscale_esx.dita:#CIDR and gateway for deployer network only when enable_deployer_dhcp is no
-./helion/installation/install_entryscale_esx.dita:            "deployer_cidr": "10.20.18.0/23",
-./helion/installation/install_entryscale_esx.dita:            "deployer_gateway_ip": "10.20.18.1",
-./helion/installation/install_entryscale_esx.dita:            #Deployer Node's PXE IP Address
-./helion/installation/install_entryscale_esx.dita:            "deployer_node_ip": "10.20.16.2"
-./helion/installation/install_entryscale_esx.dita:        "ssh_key": "&lt;deployer-ssh-pub-key-contents>"
-./helion/installation/install_entryscale_kvm.dita:    <section id="setup_deployer">
-./helion/installation/install_entryscale_kvm.dita:        <li>Boot your deployer from the ISO contained in the download.</li>
-./helion/installation/install_entryscale_kvm.dita:          another file transfer method to transfer the install media to the deployer before
-./helion/installation/install_entryscale_kvm.dita:        running the command on the deployer, that you will use to log in to the nodes via their
-./helion/installation/install_entryscale_kvm.dita:        when installing the deployer from the iso, and is the same user that is running the
-./helion/installation/install_entryscale_swift.dita:    <section conref="install_entryscale_kvm.dita#install_kvm/setup_deployer"/>
-./helion/installation/install_entryscale_swift.dita:          <p>If you chose to use your first controller node as your deployer, ensure that your
-./helion/installation/install_entryscale_swift.dita:              <codeph>servers.yml</codeph> file contains the <codeph>is-deployer: true</codeph>
-./helion/installation/install_entryscale_swift.dita:            notation in your controller options. If you are using a dedicated deployer node you can
-./helion/installation/install_entryscale_swift.dita:            user is using their first controller node as their deployer:
-./helion/installation/install_entryscale_swift.dita:    <b>is-deployer: true</b></codeblock></p> -->
-./helion/installation/postinstall_checklist.dita:            deployer:</p>
-./helion/installation/postinstall_checklist.dita:        and stored in <codeph>~/.ssh</codeph> on your deployer/lifecycle-manager node.</p>
-./helion/installation/postinstall_checklist.dita:        <li><p>From your deployer/lifecycle-manager node, source the admin creds setup during the
-./helion/installation/preinstall_checklist.dita:        the exception of the Deployer.</p>
-./helion/installation/preinstall_checklist.dita:                <entry>Deployer O/S</entry>
-./helion/installation/preinstall_checklist.dita:    <section id="deployer"><title>Deployer</title>
-./helion/installation/preinstall_checklist.dita:                <entry><xref href="install_entryscale_kvm.dita#install_kvm/setup_deployer">Set up
-./helion/installation/preinstall_checklist.dita:                    the Deployer using the hLinux ISO</xref></entry>
-./helion/installation/preinstall_checklist.dita:      <p>From your deployer, run the following command and use this information for your
-./helion/installation/using_git.dita:    <p>The git repository is installed by the deployer on the deployer node.</p>
-./helion/installation/using_git.dita:      <p>On a system new to HP Helion OpenStack 2.0, the deployer will prepare a git repository
-./helion/installation/using_git.dita:        under <codeph>~/helion</codeph>. The deployer provisioning runs the <codeph>hlm-init-deployer</codeph> script automatically -
-./helion/installation/using_git.dita:      <p>When you are ready to deploy a new deployer image, you must merge any configuration changes
-./helion/installation/using_git.dita:      <p>Behind the scenes, the deployer provisioning runs the following playbooks: <ol>
-./helion/installation/using_git.dita:          <li>deployer-init.yml ansible-playbook</li>
-./helion/installation/using_git.dita:        you will notice a new commit on the 'hos' branch with the latest upstream deployer content
-./helion/installation/using_git.dita:        it on the 'site' branch in ~/helion repository. Note that the deployer simply copies a
-./helion/metering/metering_reconfig.dita:      configuration files at on deployer machine. Make changes in the target configuration file
-./helion/networking/lbaas_admin.dita:          <li>You can run commands from the deployer or from a shell with access to the API nodes.
-./helion/networking/networking_overview.dita:      <p>On the deployer/lifecycle-manager node:</p>
-./helion/networking/vpnaas.dita:          In the included examples, the commands are executed from the deployer, however you could
-./helion/networking/vpnaas.dita:          <li>From the deployer, create first private network, subnet and router assuming that
-./helion/networking/vpnaas.dita:          <li>From the deployer run the following to start the virtual machines. Begin with adding
-./helion/networking/vpnaas.dita:          <li>You can set up the VPN by executing the below commands from the deployer or any shell
-./helion/networking/vpnaas.dita:          <li>On the deployer, run the <codeph>ipsec-site-connection-list</codeph> command to see
-./helion/objectstorage/add_new_node.dita:          <li><!--Log in to the deployer node.-->Get the<codeph> servers.yml</codeph> file stored in
-./helion/objectstorage/add_new_pac_node.dita:          <li><!--Log in to the deployer node.-->Get the <codeph>servers.yml</codeph> file stored in
-./helion/objectstorage/first_proxy_server.dita:        <li>Log on to the deployer/lifecycle-manager node.</li>
-./helion/objectstorage/modify_swift_service_config_files.dita:      following Swift service configuration files are located on a deployer/lifecycle-manager node
-./helion/objectstorage/modify_swift_service_config_files.dita:        <li>Login to the Deployer.</li>
-./helion/objectstorage/modify_swift_service_config_files.dita:          <li>Login to the Deployer.</li>
-./helion/objectstorage/recovering_builder_file.dita:        <li>Log into the Deployer and run the <codeph>swift-deploy.yml</codeph>
-./helion/objectstorage/removing_node.dita:              Deployer:<codeblock>ssh helion-cp1-swobj4-mgmt sudo rm -R /etc/swift</codeblock><note>Do
-./helion/objectstorage/replacing_drives_swift_node.dita:          <li>Log onto the deployer/lifecycle-manager node.</li>
-./helion/objectstorage/replacing_drives_swift_node.dita:          <li>Log onto the deployer/lifecycle-manager node.</li>
-./helion/objectstorage/replacing_swift_node.dita:        <li>Log onto the deployer/lifecycle-manager node.</li>
-./helion/objectstorage/utility.dita:    <p>The <codeph>swift</codeph> utility (or CLI) is installed on the deployer/lifecycle-manager
-./helion/operations/add_node.dita:      whatsoever for cloud maintenance, you will always run from the deployer/lifecycle-manager
-./helion/operations/alarms.dita:                    following commands on the deployer:</p>
-./helion/operations/alarms.dita:                    by running the following commands on the deployer:</p>
-./helion/operations/alarms.dita:                <p>Then, on the deployer, run the _swift-configure.yml playbook. This will reformat
-./helion/operations/centralized_logging.dita:              <entry>These are backed up as part of deployer repo changes maintained by the
-./helion/operations/centralized_logging.dita:              <entry>These are backed up as part of deployer repo changes maintained by the
-./helion/operations/centralized_logging.dita:                pruned/closed. These are backed up as part of deployer repos changes maintained by
-./helion/operations/opsconsole_overview.dita:          <codeph>~/service.osrc</codeph> file on the deployer/lifecycle-manager node. You can do
-./helion/operations/remove_node.dita:      from the deployer/lifecycle-manager node.<ol>
-./helion/operations/remove_node.dita:          from the deployer, run the <b>bm-power-down.yml </b>playbook <codeblock>~$ cd ~/helion/hos/ansible
-./helion/operations/remove_node.dita:      </li><li>Then, on the deployer/lifecycle-manager node, remove the node from <b>servers.yml </b><note>Make
-./helion/operations/repair_node.dita:        cloud maintenance, you will always run from the deployer/lifecycle-manager node.</p> Typical
-./helion/operations/replace_controller.dita:        deployer/lifecycle-manager node.</p>
-./helion/operations/replace_controller.dita:        running the deployer, that process is different. You’ll need to restore you deployer data
-./helion/operations/replace_controller.dita:        deployer is running. </note>
-./helion/operations/replace_controller.dita:        <li>Log onto the node that is running the deployer. Remove the broken control plane node
-./helion/releasenotes.dita:      in the following files on the deployer:
-./helion/releasenotes.dita:      (rabbitmq-reconfigure.yml and FND-CLU-reconfigure.yml on the deployer) <p>In the case of MySQL
-./helion/releasenotes.dita:      <p><b>Restarting Deployer/lifecycle management node leaves Apache2 down</b></p>
-./helion/releasenotes.dita:      <p>If you restart your Deployer/lifecycle management node, note that Apache2 will not restart
-./helion/security/encrypted_storage.dita:        <li>The SSH private key used by Ansible to connect to client nodes from the deployer is
-./helion/security/encrypted_storage.dita:       <section id="protection"><title>Protecting Sensitive Data on the Deployer</title>
-./helion/security/encrypted_storage.dita:        passwords, some Ansible inputs, and the SSH key used by Ansible on the deployer. See the
-./helion/security/tls.dita:<section> When logging into the deployer to run the configuration processor and the requisite
-./helion/security/tls.dita:              <b>~/helion/my_cloud/config/tls/certs</b> on the deployer, as notd above. </dd>
-./helion/security/tls.dita:          found in the deployer under <b>roles/tls-trust/files/frontend_cacert.pem</b>. </li>
-./helion/security/tls.dita:        <li>Access public endpoints from the deployer </li>
-./helion/security/tls.dita:          found in the deployer under <b>roles/tls-trust/files/frontend_cacert.pem</b>. This file is
-./helion/security/tls.dita:          deployer:/home/stack/scratch/ansible/next/hos/ansible/roles/tls-trust/files/frontend_cacert.pem
-./helion/userguide/lbaas.dita:        <p>You can create the new network and router by executing the following command from the deployer or a shell with access to the API nodes.</p>
+./commercial/GA1/1.0commercial.glossary.dita:<!-- Not in Commercial beta
+./commercial/GA1/1.0commercial.glossary.dita:<!-- Not in Commercial beta
+./commercial/GA1/1.0commercial.glossary.dita:<!-- Not in Commercial beta
+./commercial/GA1/1.0commercial.install-GA-supportmatrix.dita:<entry>Debian 8 (Jessie Beta 2)
+./commercial/GA1/1.1commercial.glossary.dita:<!-- Not in Commercial beta
+./commercial/GA1/1.1commercial.glossary.dita:<!-- Not in Commercial beta
+./commercial/GA1/1.1commercial.glossary.dita:<!-- Not in Commercial beta
+./commercial/GA1/1.1commercial.install-GA-supportmatrix.dita:              <entry>Debian 8 (Jessie Beta 2) </entry>
+./commercial/GA1/neutron/1.1commercial_neutron-pre-installation-hardware-software.dita:<entry>Debian 8 (Jessie Beta 2)
+./devplatform/1.0devplatform.index.dita:<section id="messaging-service-beta"> <title>Messaging Service (Beta)</title>
+./devplatform/1.0devplatform.index.dita:<section id="the-marketplace-beta"> <title>The Marketplace (Beta)</title>
+./devplatform/1.0devplatform.index.dita:<p>The <xref href="../devplatform/1.0devplatform.marketplace.install.dita" >Marketplace</xref> (Beta) is a product catalog that will be used to deliver the best of breed applications and services required to support world-class, enterprise-grade applications.</p>
+./devplatform/1.0devplatform.index.dita:<li>The Beta version allows you to install an instance of Vertica Community Edition.</li>
+./devplatform/1.0devplatform.marketplace.install.dita:<title>HP Helion 1.0 Development Platform: The Marketplace (Beta)</title>
+./devplatform/1.0devplatform.marketplace.install.dita:The Marketplace, currently in beta, is a repository where teams can download the latest services they need to accelerate development of their applications. In its beta incarnation, the Marketplace has a single application: the Vertica 7 Community Edition.</p>
+./devplatform/1.0devplatform.using-the-messaging-service.dita:<p>The Messaging service (beta) provisions RabbitMQ clusters that can be used for robust messaging in applications.</p>
+./devplatform/1.0devplatform.using-the-messaging-service.dita:<li>Log into Horizon and open the <b>Messaging (Beta)</b> panel under your project. Click on the <b>RabbitMQ</b> tab.</li>
+./devplatform/1.0devplatform.using-the-messaging-service.dita:<p>Open the <b>RabbitMQ</b> tab under the <b>Messaging (Beta)</b> panel and identify the <b>RabbitMQ</b> cluster from the list that was created in the previous step. Wait for the cluster to go to the <b>Complete</b> state<!--A BR tag was used here in the original source.--><image href="../media/usingRMQ2.png" placement="break"/>
+./devplatform/1.0devplatform.using-the-messaging-service.dita:<li>Log in to Horizon and open the <b>Messaging (Beta)</b> panel under your project. Click on the <b>RabbitMQ</b> tab.</li>
+./devplatform/1.0devplatform.using-the-messaging-service.dita:<li>Log in to Horizon and open the <b>Messaging (Beta)</b> panel under you project. Click on the <b>RabbitMQ</b> tab.</li>
+./devplatform/1.1devplatform.marketplace.install.dita:<title>HP Helion 1.1 Development Platform: The Marketplace (Beta)</title>
+./devplatform/1.1devplatform.marketplace.install.dita:The Marketplace, currently in beta, is a repository where teams can download the latest services they need to accelerate development of their applications. In its beta incarnation, the Marketplace has a single application: the Vertica 7 Community Edition.</p>
+./devplatform/1.1devplatform.using-the-messaging-service.dita:<p>The Messaging service (beta) provisions RabbitMQ clusters that can be used for robust messaging in applications.</p>
+./devplatform/1.1devplatform.using-the-messaging-service.dita:<li>Log into Horizon and open the <b>Messaging (Beta)</b> panel under your project. Click on the <b>RabbitMQ</b> tab.</li>
+./devplatform/1.1devplatform.using-the-messaging-service.dita:<p>Open the <b>RabbitMQ</b> tab under the <b>Messaging (Beta)</b> panel and identify the <b>RabbitMQ</b> cluster from the list that was created in the previous step. Wait for the cluster to go to the <b>Complete</b> state<!--A BR tag was used here in the original source.--><image href="../media/usingRMQ2.png" placement="break"/>
+./devplatform/1.1devplatform.using-the-messaging-service.dita:<li>Log in to Horizon and open the <b>Messaging (Beta)</b> panel under your project. Click on the <b>RabbitMQ</b> tab.</li>
+./devplatform/1.1devplatform.using-the-messaging-service.dita:<li>Log in to Horizon and open the <b>Messaging (Beta)</b> panel under you project. Click on the <b>RabbitMQ</b> tab.</li>
+./devplatform/1.2/1.2devplatform.marketplace.install.dita:<title>HP Helion 1.2 Development Platform: The Marketplace (Beta)</title>
+./devplatform/1.2/1.2devplatform.marketplace.install.dita:<p>The Marketplace, currently in beta, is a repository where teams can download the latest services they need to accelerate development of their applications. In its beta incarnation, the Marketplace has a single application: the Vertica 7 Community Edition.</p>
+./devplatform/1.2/1.2devplatform.using-the-messaging-service.dita:<li>Log in to Horizon and open the <b>Messaging (Beta)</b> panel under your project. Click on the <b>RabbitMQ</b> tab.</li>
+./devplatform/1.2/1.2devplatform.using-the-messaging-service.dita:<li>Log in to Horizon and open the <b>Messaging (Beta)</b> panel under you project. Click on the <b>RabbitMQ</b> tab.</li>
+./devplatform/1.2/helion/CLI/1.2constructor_vm.dita:                tailored for the public beta.</p>
+./devplatform/1.2/helion/user/deploy/languages/python/1.2index.dita:  pip: ["http://www.djangoproject.com/download/1.4-beta-1/tarball#egg=django-1.4b1"]</codeblock>
+./devplatform/1.3/devplatform.using-the-messaging-service.dita:<p>The Messaging service (beta) provisions RabbitMQ clusters that can be used for robust messaging in applications.</p>
+./devplatform/1.3/devplatform.using-the-messaging-service.dita:<li>Log into Horizon and open the <b>Messaging (Beta)</b> panel under your project. Click on the <b>RabbitMQ</b> tab.</li>
+./devplatform/1.3/devplatform.using-the-messaging-service.dita:<p>Open the <b>RabbitMQ</b> tab under the <b>Messaging (Beta)</b> panel and identify the <b>RabbitMQ</b> cluster from the list that was created in the previous step. Wait for the cluster to go to the <b>Complete</b> state<!--A BR tag was used here in the original source.--><image href="../../media/usingRMQ2.png" placement="break"/>
+./devplatform/1.3/devplatform.using-the-messaging-service.dita:<li>Log in to Horizon and open the <b>Messaging (Beta)</b> panel under your project. Click on the <b>RabbitMQ</b> tab.</li>
+./devplatform/1.3/devplatform.using-the-messaging-service.dita:<li>Log in to Horizon and open the <b>Messaging (Beta)</b> panel under you project. Click on the <b>RabbitMQ</b> tab.</li>
+./devplatform/1.3/helion/CLI/constructor_vm.dita:                tailored for the public beta.</p>
+./devplatform/1.3/helion/user/deploy/languages/python/python_index.dita:  pip: ["http://www.djangoproject.com/download/1.4-beta-1/tarball#egg=django-1.4b1"]</codeblock>
+./devplatform/1.3/installation/devplatform.vertica.install.dita:<title>HP Helion 1.3 Development Platform: The Marketplace (Beta)</title> 
+./devplatform/1.3/installation/devplatform.vertica.install.dita:<p>The Marketplace, currently in beta, is a repository where teams can download the latest services they need to accelerate development of their applications. In its beta incarnation, the Marketplace has a single application: the Vertica 7 Community Edition.</p>
+./devplatform/helion/CLI/1.1constructor_vm.dita:        which will create a configuration file specifically tailored for the public beta.</p>
+./devplatform/helion/user/deploy/languages/python/1.1index.dita:  pip: ["http://www.djangoproject.com/download/1.4-beta-1/tarball#egg=django-1.4b1"]</codeblock>
+./helion/administration/configure_monitoring.dita:        <!--(please see <xref href="http://docs-staging.hpcloud.com/hos2.0beta1/#helion/eula.html"
+./helion/installation/installation_overview.dita:      <p>Beginning with HP Helion OpenStack 2.0 Beta 2, you have two options for installing your
+./helion/installation/installation_overview.dita:        <!--<li><xref href="beta1_to_beta2_upgrade.dita">Upgrading from Beta 1 to Beta 2</xref></li>-->
+./helion/installation/installation_troubleshooting.dita:        External_API. If you intend to deploy the External API <!--in Beta 2--> on an independent network,
+./helion/installation/using_git.dita:      <note>The steps for new drops will only be run on HP Helion OpenStack 2.0 Beta 1 and later.
+./helion/installation/using_git.dita:        The git repository is not present in Beta 0.</note>
+./helion/operations/opsconsole/dashboard.dita:<?xml version="1.0" encoding="UTF-8"?> <!--This work by HP Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.--> <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd"> <concept id="dashboard">   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Dashboard</title>   <shortdesc>This page displays a high level overview of all cloud resources and their alarm     status.</shortdesc>   <conbody>     <section><title>New Alarms</title>       <p>The New Alarms section shows you the alarms that have triggered since the timeframe         indicated. You can select the timeframe using the <uicontrol>View</uicontrol> control with         options ranging from the Last Minute to Last 30 Days. This section refreshes every 60         seconds.</p>       <note>In later releases the refresh rate will vary based on the selected interval but it is a         static time in this beta release.</note>       <p>The new alarms will be separated into the following categories:</p>       <ul>         <li><uicontrol>Critical</uicontrol> - Open alarms, identified by red indicator</li>         <li><uicontrol>Warning</uicontrol> - Open alarms, identified by yellow indicator</li>         <li><uicontrol>Unknown</uicontrol> - Open alarms, identified by gray indicator</li>         <li><uicontrol>Open</uicontrol> - Complete list of open alarms</li>         <li><uicontrol>Total</uicontrol> - Complete list of alarms, may include Acknowledged and           Resolved alarms</li>       </ul></section>     <section><title>Alarms: Infrastructure Services</title><p>Each infrastructure service will have         a table displayed with their alarms indicated.</p>       <ul>         <li><uicontrol>Critical</uicontrol> - Open alarms, identified by red indicator</li>         <li><uicontrol>Warning</uicontrol> - Open alarms, identified by yellow indicator</li>         <li><uicontrol>Unknown</uicontrol> - Open alarms, inditified by gray indicator</li>         <li><uicontrol>Open</uicontrol> - Complete list of open alarms</li>         <li><uicontrol>Total</uicontrol> - Complete list of alarms, may include Acknowledged and           Resolved alarms</li>       </ul>     </section>     <section><title>Alarms: Platform Services</title><p>Each platform service will have a table         displayed with their alarms indicated.</p>       <ul>         <li><uicontrol>Critical</uicontrol> - Open alarms, identified by red indicator</li>         <li><uicontrol>Warning</uicontrol> - Open alarms, identified by yellow indicator</li>         <li><uicontrol>Unknown</uicontrol> - Open alarms, inditified by gray indicator</li>         <li><uicontrol>Open</uicontrol> - Complete list of open alarms</li>         <li><uicontrol>Total</uicontrol> - Complete list of alarms, may include Acknowledged and           Resolved alarms</li>       </ul>     </section>   </conbody> </concept>
+./publiccloud/api/cinder-api.dita:        <li>Block Storage API status has changed from <i>Public Beta</i> to <i>General
+./publiccloud/api/dbaas-api.dita:<b>Maturity Level</b>: Public Beta</p>
+./publiccloud/api/glance-api.dita:<p>Beta. The functions and features are available publically. While HP expects the feature to operate as advertised, we do not offer a Service Level Agreement (SLA) for the service or feature.</p>
+./publiccloud/api/keystone-api.dita:<p>The service catalog provides the service information with its region specific endpoints. Returned service endpoint depends on token scoping and user roles associated with a project. The interface in endpoint data indicates if that endpoint is in public, beta or preview release state.</p>
+./publiccloud/api/keystonev2-api.dita:<p>The service catalog provides the service information with its region specific endpoints. Returned service endpoint depends on token scoping and user roles associated with a project. The interface in endpoint data indicates if that endpoint is in public, beta or preview release state.</p>
+./publiccloud/api/lbaas-api.dita:<p>This API definition represents the Load Balancer as a Service (LBaaS) in Beta release form.</p>
+./publiccloud/api/lbaas-api.dita:<b>Maturity Level</b>: <i>Exploratory</i> (Load Balancer service is currently in Private Beta)</p>
+./publiccloud/api/lbaas-api.dita:<b>Version API Status</b>: <i>BETA</i>
+./publiccloud/api/lbaas-api.dita:        region_id: "region-a.geo-1.private-beta"
+./publiccloud/api/lbaas-api.dita:        region: "region-a.geo-1.private-beta"
+./publiccloud/api/lbaas-api.dita:        region_id: "region-b.geo-1.private-beta"
+./publiccloud/api/lbaas-api.dita:        region: "region-b.geo-1.private-beta"
+./publiccloud/api/swift-api.dita:<p>Beta. The functions and features are available publically. While HP Helion expects the feature to operate as advertised, we do not offer a Service Level Agreement (SLA) for the service or feature.</p>
+./publiccloud/api/swift-api.dita:<section id="1121-features-in-public-beta"> <title>1.1.2.1 Features in Public Beta</title>
+./publiccloud/api/swift-api.dita:<b>Maturity Level</b>: Public Beta.</p>
+./publiccloud/api/swift-api.dita:<b>Version API Status</b>: BETA</p>
+./publiccloud/api/swift-api.dita:  <entry align="left">Removed references to Beta program account names that were prefixed with "AUTH_". Your service catalog now contains the project/tenant Id. However, legacy references that use the older "AUTH_" account will still work.</entry>
+./publiccloud/api.dita:<p>We offer a number of HP Helion Public Cloud APIs. In addition, we have some public beta and private beta APIs that you can put to use, so please give them a try.</p>
+./publiccloud/api.dita:<xref type="section" href="#topic2806/privbeta">APIs in private beta</xref>
+./publiccloud/api.dita:<section id="privbeta"> <title>APIs in Private Beta</title>
+./publiccloud/api.dita:<p>You can also avail yourself of one of the following APIs now in private beta; follow the links to sign up and begin trying them out!</p>
+./publiccloud/api.dita:<b>Note</b>: This service requires activation while in private beta; please <xref href="https://horizon.hpcloud.com/landing/pbr/hpext:lbaas" scope="external" format="html" >request access on our sign-up page</xref>.  Service use is free of charge during the private beta period.    </li>
+./publiccloud/cli.windows.2.containers-and-folders.dita:Beta                                HP-Objects. . .  /
+./publiccloud/cli.windows.2.containers-and-folders.dita:Beta2                               HP-Objects. . .  /
+./publiccloud/dbaas.tutorial.introduction.dita:        Relational Database enters public beta, you will also be able to create database servers
+./publiccloud/lbaas.dita:<p>The HP Helion Public Cloud Load Balancer Service is currently in private beta.  Please <xref href="https://horizon.hpcloud.com/landing/pbr/hpext:lbaas" scope="external" format="html" >request access on our sign-up page</xref>.  Service use is free of charge during the private beta period.</p>
+./publiccloud/services.dita:<p>The following HP Helion Public Cloud services are now in private beta; follow the links to sign up and begin trying them out!</p>
+./publiccloud/services.dita:<xref href="../publiccloud/lbaas.dita" >Load Balancer</xref> -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.<!--A BR tag was used here in the original source.--><b>Note</b>: This service requires activation while in private beta; please <xref href="https://horizon.hpcloud.com/landing/pbr/hpext:lbaas" scope="external" format="html" >request access on our sign-up page</xref>.  Service use is free of charge during the private beta period.</li>

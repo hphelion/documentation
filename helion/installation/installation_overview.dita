@@ -5,9 +5,9 @@
   <body>
     
     <section id="about"><title>Helion OpenStack 2.0 Installation</title>
-      <p>Beginning with HP Helion OpenStack 2.0 Beta 2, you have two options for installing your
-        cloud. You can use a GUI that runs in your web browser or you can install via a CLI that
-        exposes the full power and flexibility of HP Helion OpenStack 2.0.</p>
+      <p>In  HP Helion OpenStack 2.0, you have two options for installing your cloud. You can use a
+        GUI that runs in your web browser or you can install via a CLI that exposes the full power
+        and flexibility of HP Helion OpenStack 2.0.</p>
     </section>
     <section>
       <p>You should use the GUI if: <ul>
