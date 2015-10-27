@@ -387,6 +387,27 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
                   fi
           endscript
 }</codeblock>
+      <p><b>Issue: The Kilo version of the python-cinderclient does not support incremental
+          backup</b></p>
+      <p>The version of the python-cinderclient available in HP Helion OpenStack 2.0 does not
+        support incremental backup.</p>
+      <p>The workaround for this is the following:</p>
+      <ol>
+        <li>Create a new virtual environment in a suitable directory:
+          <codeblock>cd &#60;dir>
+virtualenv cinder_venv</codeblock></li>
+        <li>Activate the new virtual environment:
+          <codeblock>source ./cinder_venv/bin/activate</codeblock></li>
+        <li>Use pip to install the python-cinderclient: <codeblock>pip install python-cinderclient</codeblock>
+          <p>or if the machine is behind a proxy, use:</p>
+          <codeblock>pip install --proxy [user:passwd@]proxy.server:port python-cinderclient</codeblock></li>
+        <li>Verify the version you have installed is version 1.4.0 or newer:
+          <codeblock>cinder --version</codeblock></li>
+        <li>To use this virtual environment at a later time, or from a different shell session, you
+          must activate the virtual environment as stated in step #2 above:
+          <codeblock>source &#60;some-dir>/cinder_venv/bin/activate
+cinder --version</codeblock></li>
+      </ol>
       <p><b>Issue: Unable to Launch Instance from Volume on Horizon Dashboard</b></p><p>You will not
         be able to launch an instance from a volume in Horizon. To work around this issue you have
         two options:</p>
@@ -462,7 +483,7 @@ Oct  7 12:49:09 hlm kernel: [31181.133118] RIP: 0010:[&lt;ffffffff81514f5b>]  [&
       associated stack from the softlockup will show the instruction point either holding or
       attempting to acquire a spinlock. After all the LUNs have successfully detached and the
       devices have been flushed, the messages will subside. It is recommended that you include a
-      delay when detaching multiple LUNs to avoid the softlockup and RCU stall messages. </section>
+      delay when detaching multiple LUNs to avoid the softlockup and RCU stall messages.</section>
 
     <section id="CoreFeatures">
       <title>Features in HP Helion OpenStack 2.0</title>
