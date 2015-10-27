@@ -29,7 +29,7 @@
         default. It runs in enforce mode. It enforces mandatory access control policies for the
         libvirt process. See <xref href="security/using_apparmor.dita#topic_rmq_j1v_4t">AppArmor in
           HP Helion OpenStack 2.0</xref> for more information.</p>
-      <p><b>The lifecycle-manager only supports American English language</b></p>
+      <p><b>The lifecycle manager only supports American English language</b></p>
       <p>The lifecycle-manager installation process prompts you to select a language. The only
         supported language at this time is American English.</p>
       <p><b>Local Git repository for config tracking</b></p>
@@ -129,18 +129,18 @@
       impossible, if most machines understand the Management Network to be <b>eth3</b>, but some
       subset of machines understand that network to be on <b>eth4</b> ( and whatever was on eth4 is
       similarly swapped to <b>eth3</b>). <p>To resolve this, and to ensure that all NIC devices have
-        consistent naming across the entire cloud, Beta 2 includes NIC Mapping facilities. This is a
-        mechanism in the Input Model to define a specific NIC interface for a given PCI address for
-        a given class of machine. Generally, when all of the network interfaces are defined in the
-          <xref href="input_model.dita#input_model/co_nicmappings" type="section">Input Model</xref>,
-        it is advisable to use the traditional naming, ie <b>ethN</b>. However, if one or more
-        interfaces are not defined in the Input Model (perhaps because the Ansible network is not
-        defined, or because there is a customer-specific network which is outside the scope of
-        Helion), then it is recommended that a different naming convention is used, to prevent the
-        definitions from colliding with existing configuration data. For example, the NIC mapping
-        definitions could use <b>hos0</b> through <b>hosN</b> rather than <b>eth0</b> through
-          <b>ethN</b>, bearing in mind that the new naming must be consistent across the entire
-        Input Model.</p>
+        consistent naming across the entire cloud, HP Helion OpenStack 2.0 includes NIC Mapping
+        facilities. This is a mechanism in the Input Model to define a specific NIC interface for a
+        given PCI address for a given class of machine. Generally, when all of the network
+        interfaces are defined in the <xref href="input_model.dita#input_model/co_nicmappings"
+          type="section">Input Model</xref>, it is advisable to use the traditional naming, ie
+          <b>ethN</b>. However, if one or more interfaces are not defined in the Input Model
+        (perhaps because the Ansible network is not defined, or because there is a customer-specific
+        network which is outside the scope of Helion), then it is recommended that a different
+        naming convention is used, to prevent the definitions from colliding with existing
+        configuration data. For example, the NIC mapping definitions could use <b>hos0</b> through
+          <b>hosN</b> rather than <b>eth0</b> through <b>ethN</b>, bearing in mind that the new
+        naming must be consistent across the entire Input Model.</p>
       <p><b>Monasca-based Monitoring</b></p><p>Monasca is a multi-tenant, scalable, fault-tolerant,
         monitoring service. It uses a REST API for high-speed metrics processing and querying, and
         has a streaming alarm and notification engine. In the HP Helion OpenStack 2.0 release, the
