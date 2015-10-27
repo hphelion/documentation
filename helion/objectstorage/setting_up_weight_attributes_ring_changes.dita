@@ -7,7 +7,7 @@
       that smaller disk drives have a smaller weight than larger disk drives. When making changes in
       the ring, you should limit the amount of change that occurs. HP Helion OpenStack 2.0 does this
       by limiting the weights of the new drives to a smaller value and then building new rings. Once
-      the replication process has finished, Helion OpenStack 2.0 will increase the weight and
+      the replication process has finished, HP Helion OpenStack 2.0 will increase the weight and
       rebuild rings to trigger another round of replication. (For more information, see <xref
         href="rebalanced_explained.dita#topic_izw_1mz_4t"/>.)</p>
     <p>In addition, you should become familiar with how the replication process behaves on your
@@ -31,7 +31,7 @@
             in the input model.</li>
           <li>Search the attributes of a ring. In the following example we are setting the attribute
             for the account ring. Repeat this procedure for the container and object
-            Rings.<codeblock>- name: account
+            rings.<codeblock>- name: account
   display-name: Account Ring
   min-part-time: 16
   ...</codeblock></li>
