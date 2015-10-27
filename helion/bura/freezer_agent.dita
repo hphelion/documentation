@@ -3,25 +3,24 @@
 <topic id="topic_pgq_mnw_dt">
     <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Freezer Agent</title>
     <body>
-        <!--Needs Edit-->
         <section><title>Backing up your Data</title></section>
         <section><title>Introduction </title><p>As of HP Helion <tm tmtype="reg">OpenStack</tm> 2.0,
                 you must follow these steps to perform backups: <ol>
                     <li>Define what you want to backup.</li>
                     <li>Define a mode for that backup. The following modes are available: <ul>
-                            <li>fs (filesystem) (default)</li>
-                            <li>mysql</li>
-                            <li>sqlserver</li>
-                            <li>mongo</li>
+                            <li>FS (filesystem) (default)</li>
+                            <li>MySQL</li>
+                            <li>SQL Server</li>
+                            <li>Mongo</li>
                         </ul><note>It is recommended that you use snapshots if the mode is mysql,
                             sqlserver, or mongo.</note></li>
-                    <li>Define whether to use a snapshot in the file system for the backup. <ul>
+                    <li>Define whether to use a snapshot in the file system for the backup:<ul>
                             <li>In Unix systems LVM is used (when available). </li>
                             <li>In Windows systems virtual shadow copies are used.</li>
                         </ul></li>
                     <li>Define a storage media in a job from the following list: <ul>
-                            <li>swift (requires OpenStack credentials)(default)</li>
-                            <li>local (no credentials required)</li>
+                            <li>Swift (requires OpenStack credentials)(default)</li>
+                            <li>Local (no credentials required)</li>
                             <li>SSH (no credentials required) (not implemented on Windows)</li>
                         </ul></li>
                 </ol></p>
@@ -32,8 +31,8 @@
                     <li>Mode (fs by default)</li>
                     <li>Path-to-backup</li>
                     <li>Backup-name</li>
-                    <li>Container (swift container or local path)</li>
-                    <li>Storage (swift by default)</li>
+                    <li>Container (Swift container or local path)</li>
+                    <li>Storage (Swift by default)</li>
                 </ul></p> For HP Helion OpenStack 2.0, you can create a backup using only mandatory
             values as in the following example:
             <codeblock>- freezerc --action backup --mode fs --storage swift --path-to-backup /home/user/tmp --container tmp_backups --backup-name backup1</codeblock>
@@ -64,15 +63,14 @@
                 omitted.</note> As of HP Helion OpenStack 2.0, we can define the schedule rules that
             this job will follow (only available through the configuration file) and a brief
             description of the job. </section>
-        <section><title>Restoring your Data</title><p> As of HP Helion <tm tmtype="reg"
-                    >OpenStack</tm> 2.0, you must do the following in order to restore data after a
-                backup: <ol>
+        <section><title>Restoring your Data</title><p> As of HP Helion <tm tmtype="reg">OpenStack</tm> 2.0, you must do the following to restore data
+                after a backup: <ol>
                     <li>Select a backup to restore.</li>
                     <li>Define a mode for the restore: The following modes are available:<ul>
-                            <li>fs (filesystem) (default)</li>
-                            <li>mysql</li>
-                            <li>sqlserver</li>
-                            <li>mongo</li>
+                            <li>FS (Filesystem) (default)</li>
+                            <li>MySQL</li>
+                            <li>SQL Server</li>
+                            <li>Mongo</li>
                         </ul></li>
                     <li>If the restore involves an application (such as mysql) remember to shut down
                         the application or service and start it again after the restore.</li>
@@ -86,8 +84,8 @@
                     <li>mode (fs by default)</li>
                     <li>restore-abs-path</li>
                     <li>backup-name</li>
-                    <li>container (swift container or local path)</li>
-                    <li>storage (swift by default)</li>
+                    <li>container (Swift container or local path)</li>
+                    <li>storage (Swift by default)</li>
                     <li>restore-from-host</li>
                     <li>restore-from-date (optional)</li>
                 </ul></p>
@@ -118,28 +116,28 @@
         <section><title>HP Helion OpenStack Restore Process</title></section>
         <section><title>Deployer Restore</title></section>
         <ol>
-            <li>Connect to deployer.</li>
+            <li>Connect to the deployer.</li>
             <li>Become root:<codeblock>sudo su</codeblock></li>
-            <li>Source backup environment
+            <li>Source the backup environment
                 file:<codeblock>source /etc/freezer/backup.osrc</codeblock></li>
             <li>List
                 jobs:<codeblock>freezer-scheduler -c &lt;deployer hostname (generaly hLinux)> job-list</codeblock></li>
-            <li>Get the id corresponding to the job "HLM Default: Deployer restore";</li>
+            <li>Get the ID corresponding to the job "HLM Default: Deployer restore";</li>
             <li>Launch the restore:
                 <codeblock>freezer-scheduler -c &lt;deployer hostname (generaly hLinux)&gt; job-start -j &lt;job-id&gt;</codeblock></li>
-            <li>Wait for some time, you can follow the
-                <codeblock>/var/log/freezer-agent/freezer-agent.log</codeblock></li>
+            <li>Wait for some time, you can follow
+                the<codeblock>/var/log/freezer-agent/freezer-agent.log</codeblock></li>
         </ol>
         <section><title>Nova Compute Restore</title></section>
         <ol>
             <li>Stop Nova.</li>
             <li>On each compute node you want to restore, run the following steps: <ol>
-                    <li>Become root <codeblock>sudo su</codeblock></li>
-                    <li>Source backup environment
+                    <li>Become root:<codeblock>sudo su</codeblock></li>
+                    <li>Source the backup environment
                         file:<codeblock>source /etc/freezer/backup.osrc</codeblock></li>
                     <li>List
                         jobs:<codeblock>freezer-scheduler -c &lt;hostname&gt; job-list</codeblock></li>
-                    <li>Get the id corresponding to the job "HLM Default: Nova restore".</li>
+                    <li>Get the ID corresponding to the job "HLM Default: Nova restore".</li>
                     <li>Launch the
                         restore:<codeblock>freezer-scheduler -c &lt;hostname&gt; job-start -j &lt;job-id&gt;</codeblock></li>
                     <li>Wait for some time, you can follow the
