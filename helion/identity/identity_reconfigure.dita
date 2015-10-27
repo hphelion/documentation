@@ -2,12 +2,15 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_m43_2j3_bt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Reconfiguring the Identity Service</title>
-  <body><!--Needs Edit-->
+  <body>
 
-    <section><title>Updating the Keystone Identity Service</title>HP Helion OpenStack&#174; allows
-      you to perform updates on the following parts of the Identity service configuration:: </section>
+    <section>
+      <title>Updating the Keystone Identity Service</title>
+      <p>HP Helion <tm tmtype="reg">OpenStack</tm> allows you to perform updates on 
+      the following parts of the Identity service configuration::</p>
+    </section>
       
-      <section>
+    <section>
       
       <ul>
       <li> Any content in main keystone configuration file:<b> /etc/keystone/keystone.conf</b>. This
@@ -27,8 +30,10 @@
           Keystone with one or more external authentication sources, such as LDAP server. Please
           refer to Integrating with an external LDAP server section below. </li>
       </ul>
-      </section>
-    <section id="updating"><title>Updating the main Identity Service configuration file</title>
+    </section>
+    
+    <section id="updating">
+      <title>Updating the main Identity Service configuration file</title>
       
      <ol><li>The main Keystone Identity Service configuration file (<b>/etc/keystone/keystone.conf</b>),
           located on each control plane server is generated from the following template file located

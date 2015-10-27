@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_t1y_vjs_4t">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using the Weight-Step Attributes to Prepare for Ring Changes</title>
-  <body><!--Needs Edit; fnf edits on 10/23; a few remaining tasks for Binamra-->
+  <body><!--Needs Work; fnf edits on 10/23-->
     <p>Rings are built during a deployment and this process sets the weights of disk drives such
       that smaller disk drives have a smaller weight than larger disk drives. When making changes in
       the ring, you should limit the amount of change that occurs. HP Helion OpenStack 2.0 does this

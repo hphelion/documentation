@@ -379,9 +379,9 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
                   fi
           endscript
 }</codeblock>
-      <p><b>Issue: Unable to Launch Instance from Volume on Horizon Dashboard</b></p><p>In Beta 2
-        you will not be able to launch an instance from a volume in Horizon. To work around this
-        issue you have two options:</p>
+      <p><b>Issue: Unable to Launch Instance from Volume on Horizon Dashboard</b></p><p>You will not
+        be able to launch an instance from a volume in Horizon. To work around this issue you have
+        two options:</p>
       <ul id="ul_vrb_d45_tt">
         <li>From Horizon Dashboard | Instances page: Launch an Instance and select source as
           Bootable volume.</li>
@@ -465,13 +465,13 @@ Oct  7 12:49:09 hlm kernel: [31181.133118] RIP: 0010:[&lt;ffffffff81514f5b>]  [&
         
         -->
       <p>Core features in the <tm tmtype="reg">OpenStack</tm> Foundation’s Kilo release (as
-        identified below) are enabled in the HPE Helion OpenStack 2.0 standard settings and are
+        identified below) are enabled in the HP Helion OpenStack 2.0 standard settings and are
         included in Helion standard product support. </p>
       <p>Non-core services (listed in the Features tables below) are provided as-is. Some non-core
-        services are included in this release to provide early access to features that HPE may
-        support fully in future releases, but HPE cannot guarantee that support will be provided or
+        services are included in this release to provide early access to features that HP may
+        support fully in future releases, but HP cannot guarantee that support will be provided or
         issues resolved in a future release. Other non-core features are provided in this release
-        for a limited time and may be deprecated in future releases. HPE will attempt to provide
+        for a limited time and may be deprecated in future releases. HP will attempt to provide
         guidance and telephone support for these features at its discretion. If you need additional
         support on any of these features for a specific use case, please contact the Helion
         professional services team. </p>
