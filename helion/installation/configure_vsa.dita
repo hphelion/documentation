@@ -44,22 +44,21 @@
       <p>The CMC utility requires a GUI to access it. You can use either of the following methods to
         launch the CMC GUI.</p>
       <p>
-        <ul id="ul_icy_xyt_tt">
+        <ul>
           <li>RDP/VNC connect</li>
-          <li>Install (any) X Display Tool </li>
+          <li>Any X Display Tool</li>
         </ul>
       </p>
-      <p><b> RDP/VNC connect</b></p>
+      <p><b>RDP/VNC connect method</b></p>
       <p>The following steps will allow you to setup a VNC connect to your controller node so you
         can view the GUI.</p>
-      <ol id="ol_xmq_p25_tt">
+      <ol>
         <li>Log in to your first controller node. </li>
         <li>Run the following command to install the package that is required to launch CMC:
-          <codeblock>sudo apt-get install -y xrdp </codeblock></li>
+          <codeblock>sudo apt-get install -y xrdp</codeblock></li>
         <li>Start <codeph>vnc4server</codeph> using the instructions below. You will be prompted for
           a password (min 6 characters). Enter a password and proceed. A sample output is shown
-          below:
-            <codeblock>stack@helion-cp1-c1-m1-mgmt:~$ vnc4server
+          below: <codeblock>stack@helion-cp1-c1-m1-mgmt:~$ vnc4server
             
 You will require a password to access your desktops.
             
@@ -71,36 +70,37 @@ New 'helion-cp1-c1-m1-mgmt:3 (stack)' desktop is helion-cp1-c1-m1-mgmt:3
             
 Creating default startup script /home/stack/.vnc/xstartup
 Starting applications specified in /home/stack/.vnc/xstartup
-Log file is /home/stack/.vnc/helion-cp1-c1-m1-mgmt:3.log</codeblock><note>If
-            you directly use xrdp to connect to the first controller node without using the VNC
-            server then a remote session is created whenever you login. To avoid this, a dedicated
-            VNC server instance is launched and connected to that instance by xrdp. This helps to
-            maintain the
-          session.</note><!--NOte that you can directly use xrdp to connect to he first controller withput using vnc server but this result in  creating a remote sessioneverytime u login. In order to avoid this we launch a dedicated VNC server instance and connct to that instance by xrdp. This way the session will be maintained.--></li>
-        <li>Run <codeph>netstat -anp | grep vnc</codeph> to determine the public port. In the
-          example below, the port is 5903: <codeblock>stack@helion-cp1-c1-m1-mgmt:~$ netstat -anp | grep vnc
+Log file is /home/stack/.vnc/helion-cp1-c1-m1-mgmt:3.log</codeblock>
+          <note>If you directly use xrdp to connect to the first controller node without using the
+            VNC server then a remote session is created whenever you login. To avoid this, a
+            dedicated VNC server instance is launched and connected to that instance by xrdp. This
+            helps to maintain the session.</note></li>
+        <li>Run <codeph>netstat -anp | grep vnc</codeph> to determine the public port that VNC is
+          using. In the example below, the port is 5903: <codeblock>stack@helion-cp1-c1-m1-mgmt:~$ netstat -anp | grep vnc
 (Not all processes could be identified, non-owned process info
 will not be shown, you would have to be root to see it all.)
 tcp        0      0 0.0.0.0:6003            0.0.0.0:*               LISTEN      1413/Xvnc4
 tcp6       0      0 :::5903                 :::*                    LISTEN      1413/Xvnc4</codeblock><p>
             <note>If you reboot the controller node then you must repeat the steps <b>3</b> and
-                <b>4</b>.<!--The above steps is not required to repeat unneed not be repeated unless u reboot the controller.--></note>
+                <b>4</b>.</note>
           </p></li>
-        <li>Connect to your controller node through any remote desktop or VNC client. <ol
-            id="ol_n1m_mw2_tt">
-            <li>Connecting through remote desktop client<ol id="ol_vnt_4w2_tt">
-                <li>Login to remote desktop. You will be prompted with xrdp login screen.<p><image
-                      href="../../media/vsa/xrdp1.PNG" id="image_b3v_wbf_tt"/></p></li>
-                <li>Click <b>Module</b> drop-down list and select vnc-any.<p><image
-                      href="../../media/vsa/xrdp2.PNG" id="image_utm_dcf_tt"/></p></li>
+        <li>Connect to your controller node through any remote desktop or VNC client. We will show
+          the xrdp method first and the VNC method is below it: <ol>
+            <li>Connecting through remote desktop client <ol>
+                <li>Login to your remote desktop. You will be prompted with xrdp login screen.<p>
+                    <image href="../../media/vsa/xrdp1.PNG"/></p></li>
+                <li>Click the <b>Module</b> drop-down list and select
+                      <codeph>vnc-any</codeph>.<p><image href="../../media/vsa/xrdp2.PNG"/></p></li>
                 <li>Enter the IP address, port and password in the respective fields.<p><image
-                      href="../../media/vsa/xrdp3.PNG" id="image_fyk_hcf_tt"/></p></li>
+                      href="../../media/vsa/xrdp3.PNG"/></p></li>
                 <li>Click <b>Ok</b>.</li>
               </ol></li>
-            <li>Connecting through VNC client, such as <xref
+            <li>Connecting through a VNC client, such as <xref
                 href="https://www.realvnc.com/download/viewer/" format="html" scope="external">VNC
                 Viewer</xref>: <ol>
-                <li>Enter the IP address, port and password.</li>
+                <li>Enter the IP address and port and click <b>Connect</b>. You will be prompted for
+                  your password once the connection is established. <p><image
+                      href="../../media/vsa/vncview1.png"/></p></li>
               </ol></li>
           </ol>A terminal emulator will be displayed where you can enter the CMC launch command.
           Note that the CMC launch with this method will have the following limitations: by default,
@@ -114,9 +114,9 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
         (not shown in the documentation) is <xref href="http://mobaxterm.mobatek.net/"
           scope="external" format="html">MobaXterm</xref>. <ol>
           <li>Download and install <b>Xming</b> on a Windows machine that can access the
-            lifecycle-manager node. You can download Xming <xref
+            lifecycle-manager node. You can download Xming from <xref
               href="http://sourceforge.net/projects/xming/" format="html" scope="external"
-              >here</xref>.</li>
+              >Sourceforge.net</xref>.</li>
           <li>Select <b>Enable X11 forwarding</b> checkbox on the PuTTy session for deployer node.
             You can do this in PuTTY by: <ol>
               <li>Navigate to the <codeph>Connection -> SSH -> X11</codeph> option in PuTTy</li>
@@ -215,48 +215,81 @@ hplefthand_iscsi_chap_enabled: false
 volume_backend_name: &lt;vsa-backend-name>
 volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
 hplefthand_debug: false</codeblock>
-          where, <ul id="ul_swt_2mb_lt">
-            <li>hplefthand_password : Password given during cluster creation.</li>
-            <li>hplefthand_clustername: Name of the VSA cluster provided while creating a
-              cluster.</li>
-            <li>hplefthand_api_url: Virtual IP of Store Virtual.</li>
-            <li>hplefthand_username: Username given during cluster creation.</li>
-            <li>hplefthand_iscsi_chap_enabled : If you set this option as <b>true</b> then the hosts
-              will not be able to access the storage without the generated secrets. And if you set
-              this option as <b>false</b> then no CHAP authentication is required for the ISCSI
-              connection.</li>
-            <li>volume_backend_name: Name of the backend.</li>
-            <li>volume_driver: Cinder volume driver.</li>
-            <li>hplefthand_debug: If you set this option as true then the cinder driver for the VSA
-              will generate logging in debug mode; these logging entries can be found in
-                <b>cinder-volume.log</b>.<p>
-                <note>
-                  <ul id="ul_dt5_5jt_tt">
-                    <li>Please enter the parameter values which are specific to your environment. </li>
-                    <li>Suppose you forget the cluster name/IP after creating the cluster then
-                      perform the following steps:<ol id="ol_mjs_wjt_tt">
-                        <li>Login to CMC console using <codeph> /opt/HP/StoreVirtual/UI/jre/bin/java
-                            -jar /opt/HP/StoreVirtual/UI/UI.jar</codeph> command.</li>
-                        <li>Login to Management group.</li>
-                        <li>On the left side of the <b>HP Store Virtual Centralized Management
-                            Console</b> screen, click <b>mgmt</b>. It expands and you will be able
-                          to see the cluster name.</li>
-                        <li>Click cluster name. The page in the right hand side gets loaded with the
-                          cluster information.</li>
-                        <li>Click iSCSI on the right hand side of the page. Virtual IP address will
-                          be displayed in the tabular form. Therefore, you can view your cluster ID
-                          here.</li>
-                      </ol></li>
-                  </ul>
-                </note>
-              </p></li>
-          </ul><note type="important">HP Helion OpenStack 2.0 supports VSA deployment for KVM only
-            but it can be used as pre-deployed (or out of the band deployed) Lefthand storage boxes
-            or VSA appliances (running on ESX/hyper-v/KVM hypervisor). It also supports cinder
+            where:<table frame="all" rowsep="1" colsep="1" id="table_gc4_c5t_5t">
+            <tgroup cols="2">
+              <colspec colname="c1" colnum="1"/>
+              <colspec colname="c2" colnum="2"/>
+              <thead>
+                <row>
+                  <entry>Value</entry>
+                  <entry>Description</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>hplefthand_password</entry>
+                  <entry>Password entered during cluster creation in the CMC utility.</entry>
+                </row>
+                <row>
+                  <entry>hplefthand_clustername</entry>
+                  <entry>Name of the VSA cluster provided while creating a cluster in the CMC
+                    utility.</entry>
+                </row>
+                <row>
+                  <entry>hplefthand_api_url</entry>
+                  <entry>Virtual IP address of your VSA cluster, found in your
+                      <codeph>~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph>
+                    file.</entry>
+                </row>
+                <row>
+                  <entry>hplefthand_username</entry>
+                  <entry>Username given during cluster creation in the CMC utility.</entry>
+                </row>
+                <row>
+                  <entry>hplefthand_iscsi_chap_enabled</entry>
+                  <entry>If you set this option as <b>true</b> then the hosts will not be able to
+                    access the storage without the generated secrets. And if you set this option as
+                      <b>false</b> then no CHAP authentication is required for the ISCSI
+                    connection.</entry>
+                </row>
+                <row>
+                  <entry>volume_backend_name</entry>
+                  <entry>Name given to the VSA backend.</entry>
+                </row>
+                <row>
+                  <entry>volume_driver</entry>
+                  <entry>Cinder volume driver. Usually you will leave this at the default
+                    value.</entry>
+                </row>
+                <row>
+                  <entry>hplefthand_debug</entry>
+                  <entry>If you set this option as true then the cinder driver for the VSA will
+                    generate logging in debug mode; these logging entries can be found in
+                      <b>cinder-volume.log</b>.</entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>
+          <p>If you have forgeten the cluster name or IP address after creating the cluster then you
+            can perform the following steps to retrieve them:</p>
+          <ol>
+            <li>Login to CMC console using the <codeph>/opt/HP/StoreVirtual/UI/jre/bin/java -jar
+                /opt/HP/StoreVirtual/UI/UI.jar</codeph> command.</li>
+            <li>Login to the Management group.</li>
+            <li>On the left side of the CMC console screen, click <b>mgmt</b>. It expands and you
+              will be able to see the cluster name.</li>
+            <li>Click the cluster name. The page on the right hand side will populate with the
+              cluster information.</li>
+            <li>Click <codeph>iSCSI</codeph> on the right hand side of the page. The virtual IP
+              address will be displayed in the tabular form. You can view your cluster ID here.</li>
+          </ol>
+          <note type="important">HP Helion OpenStack 2.0 supports VSA deployment for KVM only but it
+            can be used as pre-deployed (or out of the band deployed) Lefthand storage boxes or VSA
+            appliances (running on ESX/hyper-v/KVM hypervisor). It also supports Cinder
             configuration of physical Lefthand storage device and VSA appliances. Depending upon
-            your setup, you have to edit the below section if your StoreVirtual Storage array is
-            running LeftHand OS lower than version
-            11.<codeblock>[&lt;unique-section-name>]
+            your setup, you will have to edit the below section if your StoreVirtual Storage array
+            is running LeftHand OS lower than version 11.
+            <codeblock>[&lt;unique-section-name>]
 volume_driver=cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
 volume_backend_name=lefthand-cliq
 san_ip=&lt;san-ip>
@@ -288,7 +321,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
       </ol>
     </section>
-    <p id="run-ceph-client-package"><b>Run Cinder Reconfigure Packages</b></p>
+    <p id="run-ceph-client-package"><b>Run the Cinder Reconfigure Playbook</b></p>
     <p>Execute the following command to configure VSA. </p>
     <p>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
@@ -298,7 +331,6 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
       Dashboard and perform the OpenStack Operations to verify the backend configuration etc. See
         <xref href="../blockstorage/verify_backend_configuration.dita#topic_q5q_trz_jt"/> for more
       details.</p>
-    <p><!--After the successful configuration of VSA as a cinder backend you can launch the Hence, cinder is successfully configured. Now launch the Horizon dashboard to create a cinder volume type for VSA as backend.Once you are able to create the volume you can perform the OpenStack Operations. Also, you can verify the cinder volume creation for VSA by logging in <xref href="../blockstorage/verify_backend_configuration.dita">Horizon Dashboard</xref>.--></p>
     <note type="important">You can create more than one VSA cluster of same or different type by
       specifying the configuration in cloud model. For more details, refer <xref
         href="../blockstorage/vsa/vsa_create_multiple_clusters.dita">Modifying Cloud Model to Create
@@ -343,18 +375,6 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
       <p>It is recommended to use SSD disk for AO. The minimum VSA deployment with AO uses 2 disks
         (apart from OS disk) and 1 disks for VSA without AO. The maximum supported number of disks
         is 7.</p>
-      <!--, VSA will have 1-6 disks as data disks and 1 disk as VSA with AO configuration. -->
-      <!--<p>VSA deployment can done with AO or without AO. AO stands for adoptive optmization which allows in-built storage tiring for VSA. 
-        From the deployment perspective, deployment of VSA with or without AO is not having much difference excepy in disk input model.For example: 
-        a VSA with AO will have to have extra disk section with the marked usage of adoptive-optimization mentioned below. Additional disks can 
-        be added if availiable device_groups:   - name: vsa-data     consumer:       name: vsa       usage: data     devices:       
-        - name: /dev/sdc - name: /dev/sdd - name: /dev/sde - name: /dev/sdf   - name: vsa-cache     consumer:       
-        name: vsa       usage: adaptive-optimization     devices:       - name: /dev/sdb For VSA without AO, 
-        we do need to describe only data disks as mentioned below: Additional disks can be added if availiable device_groups:   
-        - name: vsa-data     consumer:       name: vsa       usage: data     devices:       - name: /dev/sdc - name: /dev/sdd 
-        - name: /dev/sde - name: /dev/sdf idealy, it is recommended to use SSD disk for adoptive-optimization purpose. 
-        So, a typical VSA will have 1-6 disks as data disks and 1 disks as VSA with AO configuration. From above it is clear 
-        that minimum disk for VSA deployment with AO is 2 (apart from OS disk) and 1 for VSA without AO </p>-->
     </section>
   </body>
 </topic>

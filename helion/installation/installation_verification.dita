@@ -26,7 +26,8 @@
     </section>
     <section id="create_volumetype">
       <title>Create a Volume Type for your Volume Backend</title>
-      <p id="creating_volumetype">Perform the following steps to create a volume type using the Horizon GUI: <ol>
+      <p id="creating_volumetype">If you haven't done so already, perform the following steps to
+        create a volume type using the Horizon GUI: <ol>
           <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
               >Accessing Horizon</xref> for details.</li>
           <li>Ensure that you are scoped to your <b>admin</b> Project. Then under the <b>Admin</b>
@@ -60,8 +61,7 @@
               /></p></li>
           <li>Click the <b>Create</b> button on the <b>Volume Type Extra Specs</b> screen. <p><image
                 href="../../media/vsa/associatevoltype4.png"/></p></li>
-          <li>In the <b>Key</b> field, enter the volume backend name that you specified earlier in
-            the <codeph>cinder.conf.j2</codeph> file. In the <b>Value</b> box, enter the name of the
+          <li>In the <b>Key</b> field, enter <codeph>volume_backend_name</codeph>. In the <b>Value</b> box, enter the name of the
             backend to which you want to associate the volume type, which you also specified earlier
             in the <codeph>cinder.conf.j2</codeph> file. Once you have completed that, click the
               <b>Create</b> button to create the extra volume type specs. <p><image
