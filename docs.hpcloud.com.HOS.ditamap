@@ -314,7 +314,7 @@
           navtitle="Ceilometer Metering Setting Role-based Access Control" locktitle="yes"/>
         <!--  old  -->
         <topicref href="helion/metering/metering_components.dita"
-          navtitle="Ceilometer Metering Service Components" toc="no" locktitle="yes"/>
+          navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
         <topicref href="helion/metering/metering_metertypes.dita" navtitle="Available Meter Types"
           locktitle="yes" toc="no"/>
         <topicref href="helion/metering/metering_bestpractice.dita"
