@@ -73,6 +73,15 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
         <li>Confirm they are all now set to <codeph>netboot-enabled: True</codeph>:
           <codeblock>sudo cobbler system find --netboot-enabled=1</codeblock></li>
       </ol>
+      <p><b>Issue: The <codeph>--limit</codeph> switch does not do anything</b></p>
+      <p>If the <codeph>cobbler-deploy.yml</codeph> playbook fails, it makes a mention that to retry
+        you should use the <codeph>--limit</codeph> switch, as seen below:</p>
+      <codeblock>to retry, use: --limit @/home/headmin/cobbler-deploy.retry</codeblock>
+      <p>This is a standard Ansible message but it is not needed in this context. Please use our
+        instructions described above to remove your systems, if necessary, from Cobbler before
+        re-running the playbook as the <codeph>--limit</codeph> is not needed. Note that using the
+          <codeph>--limit</codeph> switch does not cause any harm and won't prevent the playbook
+        from completing, it's just not a necessary step.</p>
       <p id="install_fail"><b>Issue: Dealing With Nodes that Fail to Install</b></p>
       <p>The <codeph>bm-reimage.yml</codeph> playbook will take every node as far as it can through
         the baremetal install process. Nodes that fail will not prevent the others from continuing
@@ -130,6 +139,13 @@ bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------</codeblock>
         system.</p>
       <p>This is normal and nothing to be concerned with. The imaging process will continue on after
         this pause.</p>
+      <p><b>Issue: The <codeph>--limit</codeph> switch does not do anything</b></p>
+      <p>If the <codeph>bm-reimage.yml</codeph> playbook fails, it makes a mention that to retry you
+        should use the <codeph>--limit</codeph> switch, as seen below:</p>
+      <codeblock>to retry, use: --limit @/home/stack/bm-reimage.retry</codeblock>
+      <p>This is a standard Ansible message but it is not needed in this context. Note that using
+        the <codeph>--limit</codeph> switch does not cause any harm and won't prevent the playbook
+        from completing, it's just not a necessary step.</p>
     </section>
 
     <section id="config_processor"><title>Issues while Updating Configuration Files</title>
