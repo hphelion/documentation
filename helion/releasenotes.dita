@@ -379,9 +379,9 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
                   fi
           endscript
 }</codeblock>
-      <p><b>Issue: Unable to Launch Instance from Volume on Horizon Dashboard</b></p><p>In Beta 2
-        you will not be able to launch an instance from a volume in Horizon. To work around this
-        issue you have two options:</p>
+      <p><b>Issue: Unable to Launch Instance from Volume on Horizon Dashboard</b></p><p>You will not
+        be able to launch an instance from a volume in Horizon. To work around this issue you have
+        two options:</p>
       <ul id="ul_vrb_d45_tt">
         <li>From Horizon Dashboard | Instances page: Launch an Instance and select source as
           Bootable volume.</li>
