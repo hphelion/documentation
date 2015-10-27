@@ -226,6 +226,8 @@
           navtitle="Adding Moonshot Nodes" locktitle="yes"/>
         <topicref href="helion/blockstorage/vsa/remove_node.dita" navtitle="Removing VSA Node"
           locktitle="yes"/>
+        <topicref href="helion/blockstorage/vsa/remove_vsa_maintenance.dita"
+          navtitle="Removing a VSA Node For Maintenance" locktitle="yes"/>
         <!-- BLOCK STORAGE -->
         <topicref href="helion/blockstorage/ceph/adding_new_osd_node.dita"
           navtitle="Adding an Object Storage Daemon (OSD) Node" locktitle="yes"/>
@@ -388,10 +390,10 @@
         locktitle="yes"/>
       <topicref href="helion/userguide/create_network.dita" navtitle="Creating a Private Network"
         locktitle="yes"/>
-      <topicref href="helion/userguide/lbaas.dita"
-        navtitle="Using Load Balancing as a Service (LBaaS)" locktitle="yes"/>
       <topicref href="helion/blockstorage/vsa/configure_vsa_separate_iscsi_network.dita"
         navtitle="Configuring a Separate iSCSI Network to use with VSA" locktitle="yes"/>
+      <topicref href="helion/userguide/lbaas.dita"
+        navtitle="Using Load Balancing as a Service (LBaaS)" locktitle="yes"/>
       <!--  LBaaS, FWaaS, VPNaaS -->
       <topicref href="helion/networking/fwaas.dita" locktitle="yes">
         <topicmeta>
