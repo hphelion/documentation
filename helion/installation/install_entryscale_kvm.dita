@@ -41,10 +41,25 @@
       <title>Before You Start</title>
       <p>We have put together a <xref href="preinstall_checklist.dita">Pre-Installation
           Checklist</xref> that should help with the recommended pre-installation tasks.</p>
+      <p>Each one of your baremetal nodes in your cloud environment need to meet the following
+        requirements:</p>
+      <ul>
+        <li>The operating system must be installed via the HP Linux for HP Helion OpenStack ISO
+          provided on the <xref
+            href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
+            format="html" scope="external">Helion Downloads</xref> page.</li>
+        <li>Each node must have SSH keys in place that allow the user who will be doing the
+          deployment to SSH to each node without a password.</li>
+        <li>Passwordless sudo needs to be enabled for the user.</li>
+        <li>There should be a LVM volume as <codeph>/root</codeph> on each node.</li>
+        <li>Ensure that <codeph>openssh-server</codeph>, <codeph>python</codeph>, and
+            <codeph>rsync</codeph> are installed.</li>
+      </ul>
+      <p>You can either perform those steps manually or via an automation tool, or you can follow
+        the steps in the following section to use our instructions.</p>
     </section>
     <section id="setup_deployer">
       <title>Set up the Lifecycle-manager</title>
-      <p>3rd party baremetal installer info here</p>
       <p><b>Installing the Lifecycle-manager</b></p>
       <p>The lifecycle-manager will contain the installation scripts and configuration files to
         deploy your cloud. You can set up the lifecycle-manager on a dedicated node or you do so on
