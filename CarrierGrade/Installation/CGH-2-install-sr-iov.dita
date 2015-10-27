@@ -37,7 +37,7 @@ system host-unlock &lt;compute-name></codeblock>
                     </p><p>Where:<ul id="ul_znr_lqx_5t">
                             <li><codeph>&lt;compute-name></codeph> is the compute node with the
                                 Niantic NIC</li>
-                            <li>&lt;number-VFs> is the number of VFs to use</li>
+                            <li><codeph>&lt;number-VFs></codeph> is the number of VFs to use</li>
                             <li><codeph>&lt;provider-network></codeph> is the network to connect the
                                 interface to</li>
                             <li><codeph>&lt;interface-name></codeph> is the name Niantic NIC</li>

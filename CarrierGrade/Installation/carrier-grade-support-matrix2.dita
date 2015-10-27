@@ -308,6 +308,19 @@
         installation process installs the required software.</p>
     <p><b><i>For a KVM and ESX cloud topology</i></b>, VMware vSphere must be fully installed and
         operational before installing HP Helion OpenStack Carrier Grade.</p></section>
+    <section>
+      <title>External Storage</title>
+      <p>The following back-end drivers are supported to enable management of the OpenStack Block
+        Storage volumes in the non-KVM region.</p>
+      <p>
+        <ul id="ul_oh5_dyx_5t">
+          <li>HP 3PAR StoreServ, version 3.2.1 (MU3) or 3.2.1 (MU2).</li>
+          <li>HP StoreVirtual VSA</li>
+        </ul>
+      </p>
+      <p>You will configure the installer to integrate one or both of these drivers during the
+        installation process. </p>
+    </section>
   
   <section id="guestOS"><title>Supported Guest Operating Systems</title> The following guest
       operating systems (guest OSs) are supported for the HP Helion OpenStack Carrier Grade servers.
