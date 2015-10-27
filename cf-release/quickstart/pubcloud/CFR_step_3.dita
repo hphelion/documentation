@@ -237,7 +237,7 @@
                 <li>Ensure that your router is shown connected to your network and the external
                   network.</li>
               </ol></li>
-            <li>Activate the Compute service required for creating instances.<ol id="ol_kpw_4sp_tt">
+            <li>Activate the Compute service required for creating clusters.<ol id="ol_kpw_4sp_tt">
                 <li>Click <menucascade>
                     <uicontrol>Manage Services</uicontrol>
                     <uicontrol>Activate Services</uicontrol>
