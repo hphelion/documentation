@@ -221,6 +221,9 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
             <li>There is no auto-logon function, users must use the credentials in the <xref
                 href="operations/centralized_logging.dita#logging/interface">Logging Overview</xref>
               to access the UI.</li>
+            <li>The Kibana console intermittently will not function correctly if Kibana is on a
+              different network than the Operations Console. If both Kibana and the Operations
+              Console are on the same network then this issue should not present itself.</li>
           </ul></li>
         <li>Alarms <ul id="ul_egb_d45_tt">
             <li>The tile view of alarms with lengthy dimensions does not render cleanly.</li>
@@ -247,6 +250,11 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
               address or password.</li>
           </ul></li>
       </ul>
+      <p><b>Issue: The Operations Console does not support alarm pagination</b></p>
+      <p>The Operations Console UI does not support >10,000 simultaneous alarm instances.
+        Configuring alarm definitions such that the number of alarms instances exceeeds the 10,000
+        mark may cause some alarms to not show in the UI. The workaround for this issue is to access
+        those alarms via either the API or the command-line clients.</p>
       <p id="logging"><b>Centralized Logging Limitations</b></p>
       <p>The Centralized Logging service has the following limitations:</p>
       <ul>
