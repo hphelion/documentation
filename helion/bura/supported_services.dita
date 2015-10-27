@@ -3,15 +3,15 @@
 <topic id="topic_bxm_gxr_st">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Supported Services and Limitations for
     Backup and Restore</title>
-  <body><!--Needs Edit-->
-    <p>By default backups include: <ul>
-        <li>All important informations on the deployer</li>
-        <li>Mysql database</li>
+  <body>
+    <p>By default, backups include the following: <ul>
+        <li>All important information on the deployer</li>
+        <li>MySQL database</li>
         <li>Swift rings</li>
       </ul></p>
-    <p>This means that the following services will be effectively backuped. The critical data that
-      will be backed up are the databases and the configuration related files. Service-specific
-      limitations are listed as well. <ul>
+    <p>The following services will be effectively backed up. The critical data that will be backed
+      up are the databases and the configuration related files. Service-specific limitations are
+      also listed. <ul>
         <li>Ceilometer - No backup of metrics data</li>
         <li>Cinder - No backup of the volumes</li>
         <li>Glance - No backup of the images</li>
@@ -26,12 +26,13 @@
       </ul></p>
     <section><title>Limitations</title>
       <p><ul>
-        <li>Recovery of the following services (or cloud topologies) will be partially supported as they need additional data (other than mySQL DB) to return to be fully functional.<ul>
-          <li>ESX Cloud</li>
-          <li>Ceph Cloud</li>
-          <li>Network services - LBaaS, and VPNaaS</li>
-        </ul></li>
-        <li>Logging Data (that is, log files)</li>
+        <li>Recovery of the following services (or cloud topologies) will be partially supported as
+            they need additional data (other than MySQL DB) to return to fully functional.<ul>
+              <li>ESX Cloud</li>
+              <li>Ceph Cloud</li>
+              <li>Network services - LBaaS and VPNaaS</li>
+            </ul></li>
+        <li>Logging data (that is, log files)</li>
       </ul></p></section>
   </body>
 </topic>
