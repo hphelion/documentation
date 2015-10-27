@@ -92,7 +92,7 @@
               following environment variable: <codeph>export
                 HOS_USER_PASSWORD_ENCRYPT_KEY=&lt;encryption key></codeph>. For more information,
               see <xref href="../installation/install_entryscale_swift.dita#install_swift"
-                >Installation for Helion Entry Scale Cloud with Swift Only</xref>.</note></li>
+            />.</note></li>
           <li>Commit the changes to
             Git:<codeblock>cd ~/helion
 git commit -a -m "&lt;commit message>"</codeblock></li>
