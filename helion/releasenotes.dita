@@ -257,6 +257,9 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
       <p>The default Elasticsearch cluster name is set to <codeph>elasticsearch</codeph> in the
         logging configuration files. It is necessary during installation to change this value to a
         unique name. This step is included in our installation documentation.</p>
+      <p><b>The Elasticsearch high/low watermark alarms will show up in "Undefined"</b></p>
+      <p>In the Operations Console, the Elasticsearch high/low watermark alarms will show up in the
+        “Undefined” section instead of in the "Logging" section.</p>
       <p><b>Issue: The Heap parameters for Elasticsearch and Logstash are auto-tuned
         incorrectly</b></p>
       <p>There is an issue where the Heap paramters for Elasticsearch and Logstash are incorrectly
