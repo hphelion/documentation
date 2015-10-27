@@ -3,7 +3,7 @@
 <topic id="topic_bxm_gxr_st">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Supported Services and Limitations</title>
   <body>
-    <p>By default, backups include: <ul>
+    <p>By default, backups include the following: <ul>
         <li>All important information on the deployer</li>
         <li>MySQL database</li>
         <li>Swift rings</li>
