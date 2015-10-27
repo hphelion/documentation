@@ -7,6 +7,14 @@ Options +FollowSymLinks
 RewriteEngine on
 #
 #
+RewriteRule ^permalink/helion-openstack/2.0/identity/ identity_ldap.html?$ #helion/identity/identity_ldap.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/monasca?$ #helion/operations/monitoring_service.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/administration/configure_monitoring.html?$ #helion/operations/opsconsole_overview.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/bare_installation_esx?$ #helion/installation/install_entryscale_esx.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/cinder_vsa?$ #helion/installation/configure_vsa.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/installation_troubleshooting?$ #helion/installation/installation_troubleshooting.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/helion/input_model?$ #helion/input_model.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/supportedconfigs?$ /#helion/example_configurations.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/blockstorage_ceph_ceph_overview?$ http://docs-staging.hpcloud.com/hos2.0ga/#helion/blockstorage/ceph/ceph_overview.html  [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/opsconsole_overview?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/overview.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/opsconsole_dashboard?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/dashboard.html [NE,R=301,L]
