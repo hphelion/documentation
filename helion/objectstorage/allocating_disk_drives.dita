@@ -3,7 +3,7 @@
 <topic id="allocating-disk-drives">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Allocating Disk Drives for Object
     Storage</title>
-  <body><!--Needs Edit; edited 10/22; needs additional edits by Binamra to address Donagh's feedback-->
+  <body><!--Needs Work; fnf edit on 10/22-->
     <p>The disk model describes the configuration of disk drives
       <!--the number of disk present on a particular server--> and their usage. The examples include
       several disk models. <!--The disk model used by any given server is determined as follows:-->
