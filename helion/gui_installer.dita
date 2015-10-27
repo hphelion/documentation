@@ -2,27 +2,33 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_gui">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installing via the GUI </title>
-  <body><!--Needs Work-->
-    <section> HP Helion OpenStack 2.0 comes with a UI, the Dayzero Installer, for first-time installation of your
-      cloud. Rather than editing a number of YAML files to input your specific
-      configuration data, the UI presents forms in which you may enter this information. This can simplify the process of 
-      manually finding specific fields and can help avoid syntax errors in the YAML files.</section>
-    <section>In addition, rather than having to run a series of commands to execute the Cobbler and
-      Ansible scripts that initiate the installation of HP Helion OpenStack, the UI application automates much of the installation process. </section>
-    <section>You can use the UI to inspect the configuration data at any time. Any edits made via the UI are written to the configuration files when 
-      you click the Deploy button. If you simultaneously edit the configuration files manually outside the UI, any changes you have made will be overwritten 
-      when you click the Deploy button in the GUI.</section>
+  <body>
+    <!--Needs Edit-->
+    <section> HP Helion OpenStack 2.0 comes with a UI, the Dayzero Installer, for installing your
+      cloud. Rather than searching through and editing a number of YAML files to input your specific
+      configuration data, finding the correct location, and maintaing the format of the files, the
+      UI presents fields in which you may enter your information. </section>
+    <section>In addition, rather than having to run a series of commands to execute the cobbler and
+      ansible scripts that initiate the installation of HP Helion OpenStack, the UI application runs
+      them behind the scenes. </section>
+    <section>While the UI app does more than simply popoulate the configuration files that the
+      configuration processor uses as input to its processses, it does populate them. Therefore you
+      can inspect the files whenever you like, or before reconfiguing your cloud. </section>
+    <section>Note, however, that if you decide to look at or try to modify configuration files
+      during the process, none of your values are actually written to the configuration files until
+      you cick the Deploy button at the end of the process. That would mean too that if you were to
+      try to change anything in the files themselves mid process, the values would get overwritten
+      by values you have entered in the GUI before cicking the Deploy button.</section>
 
 
-    <section>The YAML configuration files are stored in a local git repository, as
+    <section>These YAML configuration files are now stored in a local git repository as well, as
       explained in <xref href="installation/using_git.dita">Using git for Configuration
-        Management</xref>. <p>When installing via the GUI, you are starting with a model (example
+        Manangement</xref>. <p>When installing via the GUI, you are starting with a model (example
         cloud configuration) and can and must edit the underlying example to reflect your
         environment.</p> However, the full range of customizations is not possible via the GUI as
       some configuration items are not exposed. Below is the list of what can and cannot be changed: </section>
-    <section><b>Changes to the following items may be made:</b>
-      <ul id="ul_hsd_bym_tt">
-        <li>servers (including Linux for HP Helion  installation configuration) </li>
+    <section><b>Changes to the following items may be made:</b><ul id="ul_hsd_bym_tt">
+        <li>servers (including Linuxfor HP Helion installation configuration) </li>
         <li>networks </li>
         <li>disk models </li>
         <li>interface models </li>
@@ -30,8 +36,7 @@
         <li>NTP servers (cloudConfig.yml) </li>
         <li>tags in network groups</li>
       </ul>
-      <b>Changes to the following items cannot be made: </b>
-      <ul id="ul_b5d_bym_tt">
+      <b>Changes to the following items cannot be made: </b><ul id="ul_b5d_bym_tt">
         <li>server groups</li>
         <li>server roles</li>
         <li>network groups</li>
@@ -51,41 +56,52 @@
             <li>PXE IP addresses </li>
             <li>PXE interfaces </li>
             <li>IPMI/iLO IP address, username, password </li>
-          </ul>
-        </li>
-        <li>Choose your <xref href="example_configurations.dita">cloud model/example</xref> template. Note
-          that the only option for the Cloud model on KVM with VSA is to have 0 or 3 VSA nodes;
-          there is no option to have 0 VSA nodes. Note also that you cannot put the
+          </ul></li>
+        <li>Choose your <xref href="example_configurations.dita">cloud model/example</xref>
+          template. Note that the only option for the Cloud model on KVM with VSA is to have 0 or 3
+          VSA nodes; there is no option to have 0 VSA nodes. Note also that you cannot put the
           deployer/lifecycle manager on a dedicated node using the GUI installer; it can only run in
           the control plane using the models exposed here.</li>
         <li>Before you use the GUI to install your cloud, you may install the operating system, HP
           Linux for HP Helion OpenStack, on your nodes (servers) based on your hypervisor, if you
-          prefer. Otherwise the installer will install it for you. The option is available in the
-          GUI. <!--  TODO this doesn't make sense -->If you decide to install the operating system yourself,you must do so by 
-          following the appropriate installation instructions. </li>
-            <!-- TDOD Fix link for KVM -->
-            
-          
-          <li> For ESX installations, modify  <codeph>~/helion/hos/ansible/hlm-deploy.yml</codeph> to uncomment
-          the line containing eon-deploy.yml. You must then comment out the line containing
-          ceph-deploy.yml, vsa-deploy.yml, and cmc-deploy.yml. Then if you need to, follow the
-          instructions in <xref
+          prefer. Otherwise the installer will install it for you. <p>If you are installing the
+            operating system on all yuor nodes yourself, nite that you must do so using the included
+            Linux for HP Helio image that is included. You may find the instructions on these pages
+            helpful even when using your own tools to install the operating systems:</p>
+          <ul>
+            <li><xref
+                href="../git/documentation/helion/installation/install_entryscale_kvm.dita#install_kvm"
+                >Operating system install help for KVM-based clouds</xref></li>
+            <li><xref
+                href="../git/documentation/helion/installation/install_entryscale_esx.dita#install_esx"
+                >Operating system install help for ESX-based clouds</xref></li>
+          </ul>
+          <note>When following the guidance for operating system installation on those pages, stop
+            before the secions for Running the Configuration Processor</note></li>
+        
+      
+        
+        
+        <li> For <b>ESX installations</b>, at this point you must modify the<b>
+            ~/helion/hos/ansible/hlm-deploy.yml</b> to uncomment the line containing eon-deploy.yml.
+          You must then comment out the line containing ceph-deploy.yml, vsa-deploy.yml, and
+          cmc-deploy.yml. Then if you need to, follow the instructions in <xref
             href="installation/install_entryscale_esx.dita#install_esx/optional-eon">Step 4
             here</xref><p id="chooseHypervisor"/><note>Before starting the GUI, you will also need
-            to remove executable permission on <codeph>~/hlm-ux-implementation/server/ansible/hosts/localhost</codeph>.
-            Execute the following command to do so:
+            to change the file permissions of hlm-ux-implementation/server/ansible/hosts/localhost
+            to not executable. Execute the following command to do so:
             <codeblock>chmod -x ~/hlm-ux-implementation/server/ansible/hosts/localhost </codeblock>This
-            will set the correct permission on the localhost file so that the <codeph>ready-install-os.yml</codeph>
+            will set the correct permission on the localhost file so that the ready-install-os.yml
             playbook can run and install the operating system on the nodes.</note>
         </li>
 
       </ol>
     </section>
     <section><title>Running the GUI to install your cloud</title>
-      <p>Now that the operating system, HP Linux for HP Helion OpenStack, is installed on all your servers
+      <p>Now that the OS, HP Linux for HP Helion OpenStack, is installed on all your servers
         (nodes), you will configure and install your cloud using the GUI.</p>
       <p>The GUI is found on the deployer node at: <b>http://&lt;Deployer_IP>:79/dayzero</b></p>
-      <p>To create a secure tunnel/port forwarding into Apache from the deployer to enable use of
+      <p>To create a secure tunnel/port forwarding into Apache from the deployer to be able to use
         the GUI in a browser, SSH tunnel into the deployer with the username/password set up when
         installing the deployer. Username and password should be what was set in "Set up the
         Deployer" in the installation instructions. For example:</p>
@@ -102,24 +118,25 @@
         requests are proxied to the nodejs Express Web Server. The nodejs Express Server runs on
         port 3000 and Apache runs on port 79. </p>
       <p>You should access the installer through Apache and not directly from the Express server. An
-        Example URL looks like this: <codeph>http://&lt;deployer-host-ip>:79/dayzero</codeph>. When you finish
-        installing, the Installer will be disabled via Ansible. The GUI installer will also be disabled 
-        if you complete a deployment using the CLI. </p>
+        Example URL looks like this: http://&lt;deployer-host-ip>:79/dayzero When you finish
+        installing, the Installer will be disabled via Ansible. It is also disabled once deployment
+        is completed following the CLI instructions..</p>
     </section>
     <section>
       <p>The GUI is used only once: during the initial installation of your cloud.</p><p>For VSA you
         must follow the steps outlined in the <xref href="installation/configure_vsa.dita">VSA
-          Configuration</xref> page.</p> After deployment, continue to <xref
-        href="installation/installation_verification.dita">Verifying Your Installation</xref> and <xref
-        href="installation/postinstall_checklist.dita">Post-Installation
+          Configuration</xref>page.</p> After deployment, continue to <xref
+        href="installation/installation_verification.dita">Verifying Your Installation</xref> and
+        <xref href="installation/postinstall_checklist.dita">Post-Installation
         Checklist</xref>.<p>To understand a cloud configuration more thoroughly and to learn how to
         make any changes later, visit these documentation pages: <ul id="ul_akt_fv2_lt">
           <li><xref href="input_model.dita">HP Helion OpenStack 2.0 Input Model</xref></li>
-          <li><xref href="installation/using_git.dita">Using Git for Configuration Management</xref></li>
+          <li><xref href="installation/using_git.dita">Using Git for Configuration
+            Management</xref></li>
         </ul>
       </p>
-      <note>The GUI installer is disabled after deployment finishes - either via the GUI or
-        via the command line. If you want to re-enable the GUI later but are not re-installing from
+      <note>Because the GUI installer is disabled after deployment finishes, either via the GUI or
+        via the command line, if you want to re-enable the GUI later but are not re-installing from
         scratch, run these commands:
         <codeblock>sudo a2ensite dayzero-apache.conf
 sudo systemctl start dayzero.service</codeblock>
