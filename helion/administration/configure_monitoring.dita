@@ -11,8 +11,9 @@
     </section>
     <section id="email"><title>Specifying a SMTP Server for Email Notifications</title>
       <p>In order for the Monitoring service to be able to send email notifications about alarms, it
-        needs to be configured with an email server. The email server not be provided by Helion
-        OpenStack. The email server must support SMTP.</p>
+        needs to be configured with an email server. The email server is not be provided by HP
+        Helion OpenStack, but must be specified in the configuration file described below. The email
+        server must support SMTP.</p>
       <p>To configure the SMTP server, edit the <codeph>cloudConfig.yml</codeph> file during
         installation. There should be a section at the bottom for <codeph>smtp-settings</codeph>
         that looks like this below. If it doesn't exist, you can add it:</p>
