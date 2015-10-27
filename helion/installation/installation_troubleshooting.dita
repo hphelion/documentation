@@ -3,7 +3,7 @@
 <topic id="troubleshooting_installation">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Troubleshooting the Installation</title>
   <body>
-    <!--Needs Edit-->
+    
     <section id="about">
       <p>We have gathered some of the common issues that occur during installation and organized
         them by when they occur during the installation. These sections will coincide with the steps
@@ -160,8 +160,8 @@ bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------</codeblock>
       <note type="tip">Use grep to parse through the log. Usage: <codeph>grep &lt;text>
           ~/.ansible/ansible.log</codeph></note>
       <p id="wipe"><b>How to Wipe the Disks of your Machines</b></p>
-      <p>If you've had to re-run the <codeph>site.yml</codeph> playbook you may have a need to wipe
-        the disks of your nodes</p>> <p>You would generally run the playbook below after re-running
+      <p>If you have re-run the <codeph>site.yml</codeph> playbook, you may need to wipe
+        the disks of your nodes</p> <p>You would generally run the playbook below after re-running
         the <codeph>bm-reimage.yml</codeph> playbook but before you re-run the
           <codeph>site.yml</codeph> playbook.</p>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
@@ -169,7 +169,7 @@ ansible-playbook -i hosts/verb_hosts wipe_disks.yml</codeblock>
       <p>The playbook will show you the disks to be wiped in the output and allow you to confirm
         that you want to complete this action or abort it if you do not want to proceed. You can
         optionally use the <codeph>--limit &lt;NODE_NAME></codeph> switch on this playbook to
-        specify on specific nodes.</p>
+        restrict it to specific nodes.</p>
       <p>If you receive an error stating that <codeph>osconfig</codeph> has already run on your
         nodes then you will need to remove the <codeph>/etc/hos/osconfig-ran</codeph> file on each
         of the nodes you want to wipe with this command:</p>
@@ -178,11 +178,11 @@ ansible-playbook -i hosts/verb_hosts wipe_disks.yml</codeblock>
       <p><b>Freezer installation fails if an independent network is used for the
         External_API.</b></p>
       <p> Currently the Freezer installation fails if an independent network is used for the
-        External_API. If you intend to deploy the External API in Beta 2 on an independent network,
+        External_API. If you intend to deploy the External API <!--in Beta 2--> on an independent network,
         the following changes need to be made: </p>
-      <p>In <b>roles/freezer-agent/defaults/main.yml</b> add the following line:
+      <p>In <codeph>roles/freezer-agent/defaults/main.yml</codeph> add the following line:
         <codeblock>backup_freezer_api_url: "{{ FRE_API | item('advertises.vips.private[0].url', default=' ') }}"</codeblock>
-        In <b>roles/freezer-agent/templates/backup.osrc.j2</b> add the following line:
+        In <codeph>roles/freezer-agent/templates/backup.osrc.j2</codeph> add the following line:
         <codeblock>export OS_FREEZER_URL={{ backup_freezer_api_url }}</codeblock>
       </p>
       <p><b>Error Received if Root Logical Volume is Too Small</b></p>
