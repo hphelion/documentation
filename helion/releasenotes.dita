@@ -197,6 +197,13 @@
 'ascii' codec can't encode characters in position 1058218-1058219: ordinal not in range(128)</codeblock></p>
       <p>Workaround:
         <codeblock>PYTHONIOENCODING=utf-8 monasca metric-list | grep hostname</codeblock></p>
+      <p><b>Monasca Forwarder Log Reporting False Errors</b></p>
+      <p>There is an issue where the <codeph>/var/log/monasca/agent/forwarder.log</codeph> log file
+        will contain many lines containing text like this:</p>
+      <codeblock>2015-09-23 17:33:34 UTC | ERROR | forwarder |
+monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
+      <p>This is due to an issue where the monasca-agent is attempting to authenticate when it's
+        token has expired. These can be ignored.</p>
       <p><b>Operations Console (Ops Console)</b></p> The Operations Console has the following
       limitations (listed below by menu option in the console): <ul id="ul_wv1_d45_tt">
         <li>Dashboard <ul id="ul_s2b_d45_tt">
