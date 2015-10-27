@@ -70,11 +70,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock><p>When
               If you receive an error during either of these steps then there is an issue with one
               or more of your configuration files. We recommend that you verify that all of the
               information in each of your configuration files is correct for your environment and
-              then commit those changes to git using the instructions above.</p><p>Before re-running
-              the Configuration Processor after fixing an error you need to run the clean script
-              detailed in the <xref
-                href="installation_troubleshooting.dita#troubleshooting_installation/configproc"
-                >Installation Troubleshooting</xref> document.</p></li>
+              then commit those changes to git using the instructions above.</p></li>
           <li>Run the following command to create a deployment
             directory.<codeblock><codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
           <li>Run the following command to configure 3PAR FC as a Cinder
@@ -111,13 +107,13 @@ hp3par_iscsi_chap_enabled=true</codeblock><note>
               Please enter the values of all the parameters specific to your environment.
             </note></li>
           <li>Execute the steps (<b>5 -9</b>) mentioned in <xref
-              href="#topic_vln_2xy_ht/configure-3par-fc" format="dita">Configure 3PAR FC as Cinder
+              href="#config_3par/configure-3par-fc" format="dita">Configure 3PAR FC as Cinder
               backend </xref> as mentioned above.</li>
         </ol>
       </p>
     </section>
     <p>To verify the 3PAR FC and iSCSI backends are configured successfully, please refer to <xref
-        href="../blockstorage/verify_backend_configuration.dita">Verify Backend
+      href="installation_verification.dita#install_verification/volume_verify">Verify Backend
       Configuration</xref>.</p>
   </body>
 </topic>
