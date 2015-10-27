@@ -2,15 +2,15 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_owr_kf4_rt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Defining a Ceph Monitor Resource</title>
-  <body><!--Needs Edit-->
+  <body>
     <p>Perform the following procedure to define a monitor resource:</p>
     <p>
       <ol>
-        <li>Login to the deployer/lifecycle-manager node.</li>
-        <li>Copy the following snippet in
+        <li>Login to the Deployer/lifecycle-manager node.</li>
+        <li>Copy the following snippet in the
             <codeph>~/helion/my_cloud/definition/data/disks_monitor.yml</codeph> file to define the
-          disk required for monitor resource.
-          <codeblock>---
+          disk required for monitor
+          resource:<codeblock>---
   product:
     version: 2
   disk-models:
@@ -43,10 +43,10 @@
             mkfs-opts: -O large_file
         consumer:
            name: os</codeblock></li>
-        <li>Add the following section in
+        <li>Add the following section in the
             <codeph>~/helion/my_cloud/definition/data/net_interfaces.yml</codeph> file to define the
           network interfaces for monitor
-          servers.<codeblock>- name: MONITOR-INTERFACES
+          servers:<codeblock>- name: MONITOR-INTERFACES
   network-interfaces:
     - name: BOND0
       device:
@@ -66,7 +66,7 @@
         - MANAGEMENT</codeblock></li>
         <li>Edit <codeph>~/helion/my_cloud/definition/data/server_roles.yml</codeph> file to define
           a new resource type as shown
-          below.<codeblock>- name: MON-ROLE
+          below:<codeblock>- name: MON-ROLE
   interface-model: MONITOR-INTERFACES
   disk-model: MONITOR-DISKS</codeblock></li>
       </ol>

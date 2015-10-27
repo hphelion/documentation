@@ -42,17 +42,14 @@
     <!--<section><title>Installation</title></section><section><p>Swift is installed automatically, if your environment meet the basic hardware requirement required for installing Swift. Please refer to <xref href="../supportedconfigs.dita#topic_ckw_kbc_ws">Supported Configuration</xref> for hardware requirement. </p></section>-->
     <p>You can implement the input model and perform the following Swift tasks: <ul
         id="ul_vsp_33r_qt">
-        <li><xref href="input_cloud_model.dita#modify-input-model">Modifying Example Configurations
-            for Object Storage</xref><ul id="ul_fc4_j3r_qt">
+        <li><xref href="input_cloud_model.dita#modify-input-model"/><ul id="ul_fc4_j3r_qt">
             <li><xref href="allocate_pac.dita"/></li>
             <li><xref href="allocating_server.dita"/></li>
             <li><xref href="creating_roles_swift_nodes.dita#topic_uh2_td1_kt"/></li>
-            <li><xref href="allocating_network.dita#topic_pcj_hzv_dt">Allocating Network
-                Traffic</xref></li>
+            <li><xref href="allocating_network.dita#topic_pcj_hzv_dt"/></li>
           </ul></li>
       </ul><ul id="ul_e34_l3r_qt">
-        <li><xref href="allocating_disk_drives.dita#allocating-disk-drives">Allocating Disk
-            Drives</xref><ul id="ul_zjl_t3r_qt">
+        <li><xref href="allocating_disk_drives.dita#allocating-disk-drives"/><ul id="ul_zjl_t3r_qt">
             <li><xref href="label_on_partition.dita#verify-partition-label">How to Verify if a
                 Partition is Labelled</xref></li>
             <li><xref href="filesystem_label.dita#verify-the-filesystem-label">How to Verify if a
@@ -64,15 +61,11 @@
         <li><xref href="ring_specifications.dita"/></li>
         <li><xref href="storage_policies.dita"/></li>
         <li><xref href="ring_management.dita"/><ul id="ul_yd4_g44_tt">
-            <li><xref href="rebalanced_explained.dita">Rebalance Explained</xref></li>
-            <li><xref href="setting_up_weight_attributes_ring_changes.dita">Using the Weight-Step
-                Attributes to Prepare for Ring Changes</xref></li>
-            <li><xref href="playbook_linked_ring_management.dita">Swift Playbooks Linked to Ring
-                Management</xref></li>
-            <li><xref href="safe_rebalance_deploy_ring.dita">Determining When it is Safe to
-                Rebalance and Deploy a New Ring</xref></li>
-            <li><xref href="input_model_change_existing_rings.dita">Applying Input Model Changes to
-                Existing Rings</xref></li>
+            <li><xref href="rebalanced_explained.dita"/></li>
+            <li><xref href="setting_up_weight_attributes_ring_changes.dita"/></li>
+            <li><xref href="playbook_linked_ring_management.dita"/></li>
+            <li><xref href="safe_rebalance_deploy_ring.dita"/></li>
+            <li><xref href="input_model_change_existing_rings.dita"/></li>
             <li><xref href="add_new_storage_policy.dita"/></li>
             <li><xref href="how_to_change_min_part_time.dita#topic_ybt_mhb_kt"/></li>
           </ul></li>

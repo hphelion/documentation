@@ -53,39 +53,28 @@
     
     <section>
       <ol>
-        <li>
-          <p>Open a web browser that has both JavaScript and cookies enabled.</p>
-        </li>
-        <li>
-          <p>In the address bar, enter the host name or IP address for the dashboard.</p>
-          <note> If a certificate warning appears when you try to access the URL for the first time,
-            a self-signed certificate is in use. These certificates are not considered trustworthy
-            by default. Verify the certificate or add an exception in the browser to bypass the
-            warning.</note>
-        </li>
-        <li>
-          <p>On the <b>Log In</b> page, enter your user name and password and then click <b>Sign
-              In</b>.</p>
-          <p>
+        <li>Open a web browser that has both JavaScript and cookies enabled.</li>
+        <li>In the address bar, enter the host name or IP address for the dashboard.<note> If a
+            certificate warning appears when you try to access the URL for the first time, a
+            self-signed certificate is in use. These certificates are not considered trustworthy by
+            default. Verify the certificate or add an exception in the browser to bypass the
+            warning.</note></li>
+        <li>On the <b>Log In</b> page, enter your user name and password and then click <b>Sign
+            In</b>.<p>
             <image href="../../media/horizon/HelionLogin.png">
               <alt/>
             </image>
-          </p>
-        </li>
-      <li>
-        <p>The UserID with the <codeph>admin</codeph> role is provided with a special tab called Admin. The menu options
-            underneath this tab are similar to the non-admin user views but cover all projects as
-            well as some additional panels not available to general users. </p>
-        <p>The Overview page provides a summary by project of the current 
-        utilization of major OpenStack resources.  The information on this 
-        screen is drawn directly from the Compute or Nova service API and provides 
-        the ability to filter the query by date range and an option to download results 
-        into a CSV file that is compatible with Microsoft Excel or can be imported 
-        into a database.</p>
-      </li>
-        <li>
-          <p>If you are a non-admin user, you will only be able to select a Project from the list at
-            the top of the screen.</p></li>
+          </p></li>
+      <li>The UserID with the <codeph>admin</codeph> role is provided with a special tab called
+          Admin. The menu options underneath this tab are similar to the non-admin user views but
+          cover all projects as well as some additional panels not available to general users.
+            <p>The Overview page provides a summary by project of the current utilization of major
+            OpenStack resources. The information on this screen is drawn directly from the Compute
+            or Nova service API and provides the ability to filter the query by date range and an
+            option to download results into a CSV file that is compatible with Microsoft Excel or
+            can be imported into a database.</p></li>
+        <li>If you are a non-admin user, you will only be able to select a Project from the list at
+          the top of the screen.</li>
       </ol>
     </section>
 
@@ -150,7 +139,10 @@
         <ul>
           <li>The <b>Updates and Extensions </b>panel provides a list of available files that can be
             downloaded and installed. This view is also only available to UserIDs with the <codeph>admin</codeph> 
-            role.</li>
+            role. <note>Administrators should be cautious
+              to ensure that Horizon Extensions they install come from a trusted source and/or have undergone appropriate review and testing.
+              Administrators should be aware of the risk of spear phishing, by which they may receive an offer to install an apparently 
+              useful application which also performs malicious actions.</note></li>
           <li>
             <b>Host aggregates </b>are a grouping of physical servers or hosts with associated
             metadata. A host can belong to multiple aggregates.</li>
