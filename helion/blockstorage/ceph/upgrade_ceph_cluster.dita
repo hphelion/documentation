@@ -2,22 +2,22 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_gxm_bwt_rt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Upgrading Ceph Cluster </title>
-  <body><!--Needs Edit-->
-    <p>This page describes the upgrade operations of Ceph cluster and Ceph client.</p>
+  <body><!--Needs Work; fnf edit on 10/27; topic look like a draft.-->
+    <p>This topic describes how to upgrade a Ceph cluster and Ceph client.</p>
     <p><!--Upgrade is done after ceph deployment.--></p>
     <p>Perform the following steps to upgrade:<ol id="ol_xdj_hwt_rt">
-        <li>Login to deployer node.</li>
-        <li>Execute the following playbook to upgrade Ceph
+        <li>Login to the Deployer node.</li>
+        <li>Run the following playbook to upgrade the Ceph
           cluster:<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts hlm-upgrade.yml</codeblock></li>
       </ol></p>
-    <p><b>Verify the cluster after upgrade</b><ol id="ol_agx_swt_rt">
-        <li>Login to deployer node.</li>
-        <li>Execute the following command<codeblock>ceph -s</codeblock><p>The above command should
+    <p><b>To Verify the Cluster After Upgrade</b><ol id="ol_agx_swt_rt">
+        <li>Login to the Deployer node.</li>
+        <li>Run the following command:<codeblock>ceph -s</codeblock><p>The above command should
             report the health status as <b>HEALTH_OK</b>.</p></li>
-        <li>Verify the Ceph version by logging on the Monitor and/or OSD node(s) and executing
-          following command:<codeblock>ceph --version</codeblock><p>The above command should return
-            the version string of the latest package installed on the system.
+        <li>Verify the Ceph version by logging on the monitor and/or OSD nodes and running following
+            command:<codeblock>ceph --version</codeblock><p>The above command should return the
+            version string of the latest package installed on the system.
             <!--(<b>any example, would be good??)</b>--></p></li>
       </ol></p>
   </body>
