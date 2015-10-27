@@ -121,6 +121,7 @@
 >>>>>>> 746ce9d... More structure reorg
 =======
    </topicref>
+<<<<<<< HEAD
 >>>>>>> 62e2344... Corrected typos and restructured notes
    <!--
    <topicref href="root/HCF_release_notes.dita" navtitle="Release Notes"/>
@@ -177,4 +178,6 @@
 >>>>>>> 58d9d55... Even more content reorg
 =======
 >>>>>>> 62e2344... Corrected typos and restructured notes
+=======
+>>>>>>> 262dd0e... Trying to fix TOC display
 </map>
