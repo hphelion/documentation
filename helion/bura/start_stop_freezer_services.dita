@@ -10,7 +10,7 @@ ansible-playbook -i hosts/verb_hosts freezer-stop.yml</codeblock></p>
     <p>To start freezer globally launch the following playbook from the
       deployer:<codeblock>
 ansible-playbook -i hosts/verb_hosts freezer-start.yml</codeblock></p>
-    <p>It is possible to target only specific nodes using the ansible --limit paramater.</p></section>
+    <p>It is possible to target only specific nodes using the ansible --limit parameter.</p></section>
     <section id="manual"><title>Manually</title><p><i>For the freezer-agent: </i><ol>
           <li>Connect to the concerned host</li>
           <li>Run the following command to stop the
