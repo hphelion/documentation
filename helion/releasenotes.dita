@@ -29,23 +29,6 @@
         default. It runs in enforce mode. It enforces mandatory access control policies for the
         libvirt process. See <xref href="security/using_apparmor.dita#topic_rmq_j1v_4t">AppArmor in
           HP Helion OpenStack 2.0</xref> for more information.</p>
-      <!--<p><b>Dedicated Deployer Node No Longer Required</b></p>
-      You can now use either a dedicated deployer node or setup the deployer on your first
-      controller node. If you choose to use your first controller node as your deployer, ensure that
-      your <codeph>servers.yml</codeph> file contains the <codeph>is-deployer: true</codeph>
-      notation in the options. If you are using a dedicated deployer node you can omit this. Here is
-      an example snippet of a <codeph>servers.yml</codeph> file where a user is using their first
-      controller node as their deployer: <codeblock># Controllers
-- id: controller1
-  ip-addr: 192.168.10.3
-  role: CONTROLLER-ROLE
-  server-group: RACK1
-  nic-mapping: HP-DL360-4PORT
-  mac-addr: b2:72:8d:ac:7c:6f
-  ilo-ip: 192.168.9.3
-  ilo-password: password
-  ilo-user: admin
-  <b>is-deployer: true</b></codeblock></p>-->
       <p><b>The lifecycle-manager only supports American English language</b></p>
       <p>The lifecycle-manager installation process prompts you to select a language. The only
         supported language at this time is American English.</p>
@@ -206,6 +189,14 @@
           cluster.</li>
         <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
       </ul>
+      <p><b>Issue: Monasca Command-line Client (CLI) Redirect Fails</b></p>
+      <p>If you are using the Monasca CLI and you receive the error below, we have included a
+        workaround:</p>
+      <p>Error:
+        <codeblock>$ monasca metric-list|grep hostname
+'ascii' codec can't encode characters in position 1058218-1058219: ordinal not in range(128)</codeblock></p>
+      <p>Workaround:
+        <codeblock>PYTHONIOENCODING=utf-8 monasca metric-list | grep hostname</codeblock></p>
       <p><b>Operations Console (Ops Console)</b></p> The Operations Console has the following
       limitations (listed below by menu option in the console): <ul id="ul_wv1_d45_tt">
         <li>Dashboard <ul id="ul_s2b_d45_tt">
