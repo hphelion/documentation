@@ -159,9 +159,10 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
           <li>Enter a name in the <b>New Management Group Name</b> field and then click <b>Next</b>.
                 <p><image href="../../media/vsa/cmc6.png"/></p></li>
           <li>On the <b>Add Administrative User</b> you will enter a username and password you will
-            to admnister the CMC utility. You will need to remember these values as you will input
-            them into your <codeph>cinder.conf.j2</codeph> file later. <p><image
-                href="../../media/vsa/cmc7.png"/></p></li>
+            to admnister the CMC utility. <p><note type="important">You will need to remember these
+                values as you will input them into your <codeph>cinder.conf.j2</codeph> file
+                later.</note></p>
+            <p><image href="../../media/vsa/cmc7.png"/></p></li>
           <li>Click <b>Next</b> to display the <b>Management Group Time</b> page.</li>
           <li>Add your NTP server information and click <b>Next</b>
             <p><image href="../../media/vsa/cmc8.png"/></p></li>
