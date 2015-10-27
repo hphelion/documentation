@@ -202,6 +202,8 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
         lifecycle-manager node as follows:</p>
       <ol>
         <li>Log in to the lifecycle-manager node.</li>
+        <li>Make the following changes to the <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file:
+        <ol>
         <li>Add your VSA backend to the <codeph>enabled_backends</codeph> section:
           <codeblock># Configure the enabled backends
 enabled_backends=vsa-1</codeblock></li>
@@ -313,6 +315,7 @@ san_password=&lt;san_password>
 san_ssh_port=16022
 san_clustername=&lt;vsa-cluster-name>
 volume_backend_name: &lt;vsa-backend-name></codeblock></note></p></li>
+        </ol></li>
         <li>Commit your configuration to a <xref href="using_git.dita">local repository</xref>:
             <codeblock>cd ~/helion/hos/ansible
 git add -A
