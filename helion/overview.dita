@@ -14,8 +14,8 @@
         use the new installation GUI to step through installation in a wizard-like fashion.</p>
       <p>OpenStack services are installed during the installation process, so there is no need to
         install and configure them individually. Instead, in HP Helion OpenStack 2.0, configuration,
-        including which services to install, how many servers or nodes, what their individual roles
-        will be, what storage will be used, which networks will handle which traffic, and
+        including which services to install, how many nodes you will have, what their individual
+        roles will be, what storage will be used, which networks will handle which traffic, and
         installation and configuration of the underlying operating system on each node is declared
         in configuration objects stored in YAML files. </p>
       <p>These files allow customization, and HP Helion OpenStack 2.0 ships with complete sets
