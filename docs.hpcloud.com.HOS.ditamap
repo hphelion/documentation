@@ -297,7 +297,7 @@
         <topicref href="helion/bura/start_stop_freezer_services.dita" type="topic" format="dita"
           navtitle="Enabling and Disabling Freezer Services" locktitle="yes"/>
         <topicref href="helion/bura/troubleshooting.dita"
-          navtitle="Troubleshooting Freezer Services" locktitle="yes" toc="no"/>
+          navtitle="Troubleshooting Freezer Services" locktitle="yes"/>
       </topicref>
       <!-- BEGIN - OPERATIONS/Metering -->
       <topicref href="helion/metering/metering_overview.dita" navtitle="Metering Service"
