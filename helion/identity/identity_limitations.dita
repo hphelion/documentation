@@ -4,8 +4,8 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Identity Service Notes and
     Limitations</title>
   <body>
-    <!--Needs Edit-->
-    <section id="notes"><title>Notes</title>
+    <section id="notes">
+      <title>Notes</title>
       <b>Domains</b>
       <ul>
         <li>Domains can be created and managed by the Keystone API and OpenStackClient CLI.</li>
@@ -90,12 +90,12 @@
             >http://specs.openstack.org/openstack/keystone-specs/specs/juno/hierarchical_multitenancy.html</xref>.</li>
       </ul>
       <b>Missing quota information for Compute resources</b>
-      <p>Note that an error message that will appear in the default Horizon page if you are running
+      <p><note>An error message that will appear in the default Horizon page if you are running
         a Swift-only deployment (no Compute service). In this configuration, you will not see any
-        quota information for Compute resources and will see the following error message: </p>
+        quota information for Compute resources and will see the following error message: </note></p>
       <p><i>The Compute service is not installed or is not configured properly. No information is
           available for Compute resources.</i></p>
-      <p>Note: this error message is expected as no Compute service is configured for this
+      <p>This error message is expected as no Compute service is configured for this
         deployment. Please ignore the error message.</p>
     </section>
   </body>
