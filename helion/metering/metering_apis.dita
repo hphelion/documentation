@@ -11,7 +11,7 @@
       which are already present in the notification agent and the central agent pipeline.
         <p>Ceilometer API (ceilometer-api) pipeline.yml is located at
           /<b>opt/stack/service/ceilometer-api/etc/pipeline-api.yml</b></p> Here is a sample of the
-      api pipeline:
+      API pipeline:
       <codeblock>---
 sources:
     - name: meter_source
