@@ -19,7 +19,7 @@
       <p>Permanent removal of a monitor is not supported when the monitor service is installed on a
         controller node. However, to temporarily bring down the service on the controller node (for
         maintenance purposes), perform the following steps:<ol id="ol_gkx_h5t_rt">
-          <li>Login to the deployer node.</li>
+          <li>Login to the deployer/lifecycle-manager node.</li>
           <li>Stop the monitor service running on the specific host by executing the following
               commands:<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts ceph-stop.yml --limit &lt;mon-node-to-remove></codeblock><note>Replace
@@ -39,7 +39,7 @@ ansible-playbook -i hosts/verb_hosts ceph-stop.yml --limit &lt;mon-node-to-remov
             commands :<codeblock>service ceph-mon@&lt;ceph-mon-host> stop</codeblock></li>
           <li>Remove the monitor
             service<codeblock>ceph mon remove &lt;ceph-mon-host></codeblock></li>
-          <li>Login to the deployer node.</li>
+          <li>Login to the deployer/lifecycle-manager node.</li>
           <li>Edit <codeph>servers.yml</codeph> file and remove the host section from
             file.<codeblock>vim  ~/helion/my_cloud/definition/data/servers.yml</codeblock></li>
           <li>Commit your

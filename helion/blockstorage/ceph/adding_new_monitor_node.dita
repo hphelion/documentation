@@ -13,7 +13,7 @@
     <p><b>Procedure to add a new monitor node</b></p>
     <p>Perform the following procedure to add a new monitor node to an existing Ceph cluster:<ol
         id="ol_zsj_134_rt">
-        <li>Login to the deployer node.</li>
+        <li>Login to the deployer/lifecycle-manager node.</li>
         <li>Edit <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> to define a new
           monitor node as shown
             below:<codeblock>- id: mon4

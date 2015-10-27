@@ -6,9 +6,9 @@
     <p><note type="warning">If it applies to the server, do not skip step 11. If you do, the system
         will overwrite the existing rings with new rings. This will not cause data loss, but,
         potentially, will move most objects in your system to new locations and may make data
-        unavailable until the replication process has completed.</note>To replace a Swift node in a
+        unavailable until the replication process has completed. </note>To replace a Swift node in a
       system, do the following:<ol id="ol_mbn_5pv_pt">
-        <li>Log onto the Deployer.</li>
+        <li>Log onto the deployer/lifecycle-manager node.</li>
         <li>Update the cloud model (<codeph>data/servers.yml</codeph> file) with a new MAC address,
           iLO/IPMI user, password, and IP address (iLO) if these have changed. Do not change the
           server's IP address (i.e.,<codeph> ip-add IP</codeph>). For

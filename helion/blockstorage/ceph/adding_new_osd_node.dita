@@ -7,7 +7,7 @@
     <p><b>Procedure to add a new OSD Node</b></p>
     <p>Perform the following steps to add a new OSD Node to an existing Ceph cluster:<ol
         id="ol_v2t_xm5_kt">
-        <li>Login to the deployer node.</li>
+        <li>Login to the deployer/lifecycle-manager node.</li>
         <li>Edit <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> to define a new OSD
           node as shown
             below:<codeblock>- id: osd4
