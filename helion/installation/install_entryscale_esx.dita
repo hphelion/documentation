@@ -66,7 +66,6 @@
     </section>
     <p>The following topics in this section explain how to deploy ESX cloud.</p>
     <section conref="install_entryscale_kvm.dita#install_kvm/setup_deployer"/>
-    <section conref="install_entryscale_kvm.dita#install_kvm/configure_deployer"/>
     <section id="Configure">
       <title>Prepare and Deploy Cloud Controllers</title>
       <ol id="ol_c1w_pfl_ft">

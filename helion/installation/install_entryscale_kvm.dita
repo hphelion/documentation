@@ -44,11 +44,12 @@
     </section>
     <section id="setup_deployer">
       <title>Set up the Lifecycle-manager</title>
+      <p>3rd party baremetal installer info here</p>
       <p><b>Installing the Lifecycle-manager</b></p>
       <p>The lifecycle-manager will contain the installation scripts and configuration files to
         deploy your cloud. You can set up the lifecycle-manager on a dedicated node or you do so on
         your first controller node. The default choice is to use the first controller node as the
-        lifecycle-manager..</p>
+        lifecycle-manager.</p>
       <ol>
         <li>Download the HP Helion OpenStack 2.0.0 product from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
@@ -130,7 +131,10 @@ helion/tech-preview            Directory contains the config input files of the 
               to contain the details of your environment. <p>For example, if you wanted to use the
                 Helion Entry-scale KVM with VSA model, you could use this command to copy the files
                 to your cloud definition directory:</p>
-              <codeblock>cp -r ~/helion/examples/entry-scale-kvm-vsa/* ~/helion/my_cloud/definition/</codeblock></li>
+              <codeblock>cp -r ~/helion/examples/entry-scale-kvm-vsa/* ~/helion/my_cloud/definition/</codeblock>
+              <p><note>If you are using the Entry-scale KVM with Ceph model, see <xref
+                    href="configure_ceph.dita#config_ceph/config">Ceph Configuration</xref> for
+                  details.</note></p></li>
             <li>Begin inputting your environment information into the configuration files in the
                 <codeph>~/helion/my_cloud/definition</codeph> directory. <p>Full details of how to
                 do this can be found here: <xref href="../example_configurations.dita">Example
