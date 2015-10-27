@@ -214,8 +214,6 @@
       <p>This example provides a KVM based cloud using Ceph for volume storage. This controller and
         compute configuration are essentially the same as in the KVM example, but the backend Cinder
         storage is provided by Ceph.</p>
-      <p>Although HP recommends Swift and VSA as our recommended object and block storage offerings,
-        respectively, we are pleased to offer and support Ceph as well, for those who prefer it.</p>
       <p><image href="../media/examples/entry_scale_kvm_ceph.png"/></p>
       <p><xref href="../media/examples/entry_scale_kvm_ceph_lg.png" scope="external" format="html"
           >Download a high-res version</xref></p>
