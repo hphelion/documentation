@@ -483,7 +483,23 @@ Oct  7 12:49:09 hlm kernel: [31181.133118] RIP: 0010:[&lt;ffffffff81514f5b>]  [&
       associated stack from the softlockup will show the instruction point either holding or
       attempting to acquire a spinlock. After all the LUNs have successfully detached and the
       devices have been flushed, the messages will subside. It is recommended that you include a
-      delay when detaching multiple LUNs to avoid the softlockup and RCU stall messages.</section>
+      delay when detaching multiple LUNs to avoid the softlockup and RCU stall messages.
+       
+    
+    </section>
+    
+    <section><title>Horizon throws an error when Nova compute is not present</title> On Swift-only
+      deployments, that is, clouds not running the Nova compute service, Horizon displays the error
+      "Invalid Service Catalog service: compute." To avoid this error, you may alter the default
+      panel (this changes the default for both admins and normal users to the object storage page
+      and doesn't raise an error, although the problematic pages are still available to be chosen).
+      To alter the default: On eachccontroller node, <b>edit
+        /opt/stack/service/horizon/etc/local_settings.py</b>. Under line 37 (which reads
+      'HORIZON_CONFIG['help_url'] = "http://docs.hpcloud.com/helion/openstack"') add this
+      line:<codeblock>HORIZON_CONFIG['user_home'] = "/project/containers"</codeblock> Then run the
+      following command to restart Apache to have Horizon pick up the change (again, on each
+      controller): <codeblock>sudo service apache2 reload</codeblock> These steps will need to be
+      performed after reinstall or upgrade. </section>
 
     <section id="CoreFeatures">
       <title>Features in HP Helion OpenStack 2.0</title>
