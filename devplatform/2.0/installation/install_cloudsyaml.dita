@@ -16,7 +16,7 @@
       determine if the HDPI was installed correctly.</p>
 
     <codeblock>clouds:
-  &lt;mycloudname&gt;:
+  mycloud:
     codn_username: &lt; Helion Download Network user name&gt;
     codn_password: &lt; Helion Download Network password&gt;
     region_name: region1
@@ -28,7 +28,6 @@
       password: &lt; admin password&gt;</codeblock>
 
       <sl>
-        <sli><codeph>mycloudname</codeph>: The name of your cloud.</sli>
         <sli><codeph>codn_username</codeph>: The username for the HDN (Helion Download Network)
           account. (The name of the download network used to be CODN.)</sli>
         <sli><codeph>codn_password</codeph>: The password for the HDN (Helion Download Network)
@@ -51,27 +50,47 @@
     <section>
       <title>Database Information</title>
       <p>This additional section is required only if the Database Service is
-        installed.<codeblock> database:
-      ephemeral_ca_cert: unset
-      external_network: &lt;guid of ext-net&gt;
-      provider_network: &lt;guid of svc-net&gt;
-      ntp_server: &lt;ip address of ntp server&gt;
-      keypair: default
-      enable_ha: false
-      flavor: m1.medium
-      database_flavor: m1.medium
-      messaging_flavor: m1.medium
-      database_volume_size: 10
-      logstash_rabbitmq_host: &lt;ip address of logging service&gt;
-      logstash_rabbitmq_password: &lt;password for logging service&gt;
-      hotpools_enabled: false
-      hotpools_max_instances: 3
-      hotpools_image_name: percona
-      hotpools_flavor_names: "m1.medium,m1.small,m1.large"
-      disable_rollback: false
-      project_id: &lt;project id of user to install service to&gt;   </codeblock></p>
+        installed.<codeblock>clouds:
+    dbaas:
+        cacert: /usr/local/share/ca-certificates/hpes_cacert.crt
+        codn_username: 
+        codn_password: 
+        region_name: region1
+        database:
+            trove_enable_ssl: False
+            ephemeral_ca_cert: 
+            external_network: 
+            provider_network:
+            ntp_server: 
+            keypair: default
+            enable_ha: False
+            flavor: m1.medium
+            database_flavor: m1.medium
+            messaging_flavor: m1.medium
+            database_volume_size: 10
+            logstash_rabbitmq_host: 10.241.180.6
+            logstash_rabbitmq_password: guest
+            hotpools_enabled: true
+            hotpools_max_instances: 1
+            hotpools_image_name: percona
+            hotpools_flavor_names:
+                - 'm1.small'
+                - 'm1.medium'
+                - 'm1.large'
+            disable_rollback: true
+            project_id: 
+    auth:
+        auth_url: 
+        project_name: admin
+        username: admin
+        password: admin</codeblock></p>
       <sl>
-        <sli><codeph>ephemeral_ca_cert</codeph>: Value must be unset </sli>
+        <sli><codeph>cacert</codeph>: The location where the SSL certificates can be accessed.</sli>
+        <sli><codeph>codn_username</codeph>: &lt; Helion Download Network user name&gt;<codeph>
+            codn_password</codeph>: &lt; Helion Download Network password&gt;</sli>
+        <sli><codeph>trove_enable_ssl</codeph>: Must be False.</sli>
+        <sli><codeph>ephemeral_ca_cert</codeph>: Location where SSL certificates can be accessed. If
+          SSL is not enabled, leave blank.</sli>
         <sli><codeph>external_network</codeph>: &lt;guid of ext-net&gt;</sli>
         <sli><codeph>provider_network</codeph>: &lt;guid of svc-net&gt; </sli>
         <sli><codeph>ntp_server</codeph>: &lt;ip address of ntp server&gt; </sli>
@@ -88,15 +107,25 @@
         <sli><codeph>database_volume_size</codeph>: 10 </sli>
         <sli><codeph>logstash_rabbitmq_host</codeph>: &lt;ip address of logging service&gt;<codeph> </codeph></sli>
         <sli><codeph>logstash_rabbitmq_password</codeph>: &lt;password for logging service&gt; </sli>
-        <sli><codeph>hotpools_enabled</codeph>: Options are True or False. If True, hotpool capabilities are enabled.
-          If False, you can remove all other <i>hotpools</i> configuration variables.</sli>
+        <sli><codeph>hotpools_enabled</codeph>: Options are True or False. If True, hotpool
+          capabilities are enabled. If False, leave all other <i>hotpools</i> configuration
+          variables blank.</sli>
         <sli><codeph>hotpools_max_instances</codeph>: Default is 3. </sli>
         <sli><codeph>hotpools_image_name</codeph>: percona </sli>
         <sli><codeph>hotpools_flavor_names</codeph>: "m1.medium,m1.small,m1.large" Do not
           change.</sli>
         <sli><codeph>disable_rollback</codeph>: Options are True or False. If True, rollback of patch applications is
           disabled.</sli>
-        <sli><codeph>project_id</codeph>: Project id to install service to</sli></sl></section>
+        <sli><codeph>project_id</codeph>: Project id to install service to.</sli>
+        <sli><codeph>auth_url</codeph>: This URL can be found in Horizon at: Project Compute &gt;
+          Access &amp; Security &gt; API Access. Copy the Service Endpoint URL for the Identity
+          Service. Note that this must be <codeph>https</codeph>, not simply
+          <codeph>http</codeph>.</sli>
+        <sli><codeph>project_name</codeph>: The Name of the admin project in Horizon. </sli>
+        <sli><codeph>username</codeph>: The Username of an account with installation privileges
+          (administrator role). </sli>
+        <sli><codeph>password</codeph>: The Password for the same account with installation
+          privileges (administrator role). </sli></sl></section>
     
     <section><title>Messaging / Code Engine</title>This additional section is required only if the
       HP Helion Code Engine, the Messaging Service, or both are installed. <note type="important"
