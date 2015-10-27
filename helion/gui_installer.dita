@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_gui">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installing via the GUI </title>
-  <body><!--Needs Edit-->
+  <body><!--Needs Work-->
     <section> HP Helion OpenStack 2.0 comes with a UI, the Dayzero Installer, for first-time installation of your
       cloud. Rather than editing a number of YAML files to input your specific
       configuration data, the UI presents forms in which you may enter this information. This can simplify the process of 
