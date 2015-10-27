@@ -4,11 +4,11 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry Scale Cloud
     with ESX</title>
   <body>
-    <!--Needs Edit-->
-    <p>This document describes the procedure for the deployment of ESX cloud using input model and
-      adding additional ESX hosts to an already activated cluster.</p>
+    
+    <p>This document describes the procedure for the deployment of an ESX cloud using input model and
+      adding more ESX hosts to an already activated cluster.</p>
     <p> It contains the following topics:<ul id="ul_wrs_dwq_lt">
-        <li><xref href="#install_esx/prereqs" format="dita">Prerequisite</xref></li>
+        <li><xref href="#install_esx/prereqs" format="dita">Prerequisites</xref></li>
         <li><xref href="#install_esx/deployCloud" format="dita">Deploy ESX Cloud</xref></li>
         <li><xref href="#install_esx/prepAndDeploy" format="dita">Prepare and Deploy ESX Computes
             and OVSvAPPs</xref></li>
@@ -87,7 +87,7 @@
   ilo-password: password
   ilo-user: admin
   <b>is_deployer: true</b></codeblock></note>-->
-        <li>Modify the <codeph>~/helion/hos/ansible/hlm-deploy.yml</codeph> to uncomment the line
+        <li>Modify <codeph>~/helion/hos/ansible/hlm-deploy.yml</codeph> to uncomment the line
           containing <codeph>eon-deploy.yml</codeph>. You must comment the line containing
             <codeph>ceph-deploy.yml</codeph>, <codeph>vsa-deploy.yml</codeph>, and
             <codeph>cmc-deploy.yml</codeph>.
@@ -216,8 +216,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
               <li>vCenter Username - the admin privilege username for the vCenter.</li>
               <li>vCenter Password - the password for the above username.</li>
               <li>vCenter Port - the vCenter server port. By default it is 443. <note
-                  type="important">Please do not change the port unless you are sure about the
-                  vCenter Port.</note></li>
+                type="important">Please do not change the vCenter Port unless you are certain it is required to do so.</note></li>
             </ul></p><p><b>Sample
             Output:</b><codeblock><codeph># eon vcenter-add --name vc01 --ip-address 10.1.200.41 --username administrator@vsphere.local --password password --port 443</codeph>
 +------------+--------------------------------------+
@@ -258,8 +257,8 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
 +------------+--------------------------------------+</codeblock></p></li>
       </ol></section>
     <section id="register-network"><b>Register ESX Cloud Network Configuration</b>
-      <p>This involve getting a sample network information template. Fill the details of the
-        template and use that template to register cloud network configuration for the vCenter.</p>
+      <p>This involves getting a sample network information template. Fill the details of the
+        template and use that template to register the cloud network configuration for the vCenter.</p>
       <p>
         <ol>
           <li>Execute the following command to get the network information
@@ -438,7 +437,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         </ol>
       </p></section>
     <section id="import-cluster"><b>Import Cluster </b><p>You can use one or more ESX clusters for
-        ESX Cloud Deployment. When a Import Cluster is invoked, required ESX Compute Proxy and
+        ESX Cloud Deployment. When an Import Cluster is invoked, required ESX Compute Proxy and
         OVSvApp nodes are deployed.</p>
       <p>
         <ol>
@@ -446,7 +445,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
               <ul id="ul_r4g_rjs_ft">
                 <li>vCenter ID - ID of the vcenter containing the cluster.</li>
                 <li>Cluster Name - the name of the cluster that needs to be imported.</li>
-                <li>cluster Moid - Moid of the cluster that needs to be imported.</li>
+                <li>Cluster Moid - Moid of the cluster that needs to be imported.</li>
               </ul>
             </p><p><b>Sample
               Output</b><codeblock># eon cluster-import --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-name Cluster1 --cluster-moid domain-c21
@@ -541,7 +540,7 @@ enabled_backends=&lt;unique-section-name>
     <section id="commit-your-cloud"><b>Commit your Cloud Definition</b>
       <p>
         <ol>
-          <li> Add the cloud deployment definition to the git
+          <li> Add the cloud deployment definition to git
             :<codeblock>cd /home/stack/helion/hos/ansible;
 git add -A;
 git commit -m 'Adding ESX Configurations or other commit message';</codeblock></li>
@@ -552,14 +551,14 @@ cd /home/stack/scratch/ansible/next/hos/ansible;</codeblock></li>
         </ol>
       </p></section>
     <section id="deploy-compute-proxy-ovsvapps"><b>Deploy ESX Compute Proxy and OVSvApps</b>
-      <p>Execute the following command to deploy a esx compute and
+      <p>Execute the following command to deploy an esx compute and
         OVSvApps:<codeblock>ansible-playbook -i hosts/verb_hosts guard-deployment.yml
 ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit '*<b>esx-ovsvapp:*esx-compute</b>' 
 ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit NOV-ESX:NEU-OVSVAPP
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></p>
       <note>The variable <b>esx-ovsvapp</b> and <b>esx-compute</b> must be taken from the
           <b>name</b> key in the <codeph>resource-nodes</codeph> section in the
-          <codeph>/data/control_plane.yml</codeph> file
+          <codeph>data/control_plane.yml</codeph> file
           (<codeph>/home/stack/helion/my_cloud/definition/data/control_plane.yml</codeph>).
       </note></section>
   </body>
