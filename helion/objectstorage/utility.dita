@@ -3,10 +3,10 @@
 <topic id="topic_m13_dgp_nt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using the Swift Command-line Client
     (CLI)</title>
-  <body><!--Needs Edit-->
-    <p>The swift utility (or CLI) is installed on the deployer node and also on all other nodes
-      running the Swift proxy service. To use the Swift utility, set the following environment
-      variables. </p>
+  <body>
+    <p>The <codeph>swift</codeph> utility (or CLI) is installed on the Deployer node and also on all
+      other nodes running the Swift proxy service. To use this utility, set the following
+      environment variables:</p>
     <note>You do not need to be the root user.</note>
     <codeblock>OS_USERNAME=demo
 OS_PASSWORD=&lt;redacted>
@@ -14,8 +14,8 @@ OS_TENANT_NAME=demo
 OS_AUTH_URL=http://&lt;cluster-name>-vip-admin-KEY-API-mgmt:35357/v2.0
 OS_CACERT=/etc/ssl/certs/ca-certificates.crt</codeblock>
     <p>You must enter the appropriate password for the demo user and select the correct endpoint for
-      the <b>OS_AUTH_URL</b> value. You can then examine the account data as
-      follows:<codeblock>$ swift stat
+      the <b>OS_AUTH_URL</b> value. You can then examine the following account
+      data:<codeblock>$ swift stat
         Account: AUTH_205804d000a242d385b8124188284998
      Containers: 0
         Objects: 0
@@ -25,7 +25,7 @@ X-Put-Timestamp: 1442249536.31989
     X-Timestamp: 1442249536.31989
      X-Trans-Id: tx5493faa15be44efeac2e6-0055f6fb3f
    Content-Type: text/plain; charset=utf-8</codeblock></p>
-    <p>In the above stats, there are no containers. Execute the following command and create a
+    <p>In the above example, there are no containers. Execute the following command and create a
       container:<codeblock>swift post documents</codeblock></p>
     <p>The newly created container appears. But there are no
       objects:<codeblock>$ swift stat documents
@@ -43,14 +43,13 @@ X-Storage-Policy: General
      X-Timestamp: 1442249637.69486
       X-Trans-Id: tx1f59d5f7750f4ae8a3929-0055f6fbcc
     Content-Type: text/plain; charset=utf-8</codeblock></p>
-    <p>Upload a document as
-      follows:<codeblock>$ swift upload documents mydocument
+    <p>Upload a document:<codeblock>$ swift upload documents mydocument
 mydocument</codeblock></p>
     <p>List objects in the container:<codeblock>$ swift list documents
 mydocument</codeblock></p>
     <p>
-      <note>This is a brief introduction to the swift CLI. Use<b> --help</b> command for more
-        information.</note>
+      <note>This is a brief introduction to the <codeph>swift</codeph> CLI. Use
+          <codeph>--help</codeph> command for more information.</note>
     </p>
   </body>
 </topic>

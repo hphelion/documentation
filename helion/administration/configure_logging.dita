@@ -132,8 +132,8 @@
       <p>These values can be viewed and changed in the
           <codeph>~/helion/my_cloud/config/logging/main.yml</codeph> file if you wish but you will
         need to run a reconfigure of the Centralized Logging service if changes are made.</p>
-      <note type="warning">Total process memory consumption for Elasticsearech will be the above
-        allocated heap value plus any JVM overhead.</note>
+      <note type="warning">The total process memory consumption for Elasticsearech will be the above
+        allocated heap value plus any Java Virtual Machine (JVM) overhead.</note>
     </section>
     <section id="kibana_config">
       <title>Kibana Configuration</title>
@@ -359,7 +359,7 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
               <row>
                 <entry>ceilometer-alarm-evaluator-json</entry>
                 <entry>INFO</entry>
-                <entry/>
+                <entry>This alarm functionality has been disabled.</entry>
               </row>
               <row>
                 <entry>ceilometer-agent-notification</entry>
@@ -427,6 +427,12 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml -e cinder_loglevel=D
                     command:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible/
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml -e cinder_logstash_loglevel=DEBUG</codeblock></entry>
+              </row>
+              <row>
+                <entry>EON</entry>
+                <entry/>
+                <entry/>
+                <entry>See <xref href="../esx/logging.dita">EON Logging</xref> for more details.</entry>
               </row>
               <row>
                 <entry morerows="2">Freezer</entry>

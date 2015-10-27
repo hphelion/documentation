@@ -4,8 +4,8 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry Scale Cloud
     with KVM</title>
   <body>
-    <!--Needs Edit-->
-    <!-- wait on edit -->
+    <!--Needs Work  -->
+    <!-- Link for Helion Download page, file name,  -->
     <section id="about">
       <p>This page describes the common installation steps that are required for each of the HP
         Helion OpenStack Entry-scale cloud models that utilize the KVM hypervisor on the Compute
@@ -41,13 +41,30 @@
       <title>Before You Start</title>
       <p>We have put together a <xref href="preinstall_checklist.dita">Pre-Installation
           Checklist</xref> that should help with the recommended pre-installation tasks.</p>
+      <p>Each one of your baremetal nodes in your cloud environment need to meet the following
+        requirements:</p>
+      <ul>
+        <li>The operating system must be installed via the HP Linux for HP Helion OpenStack ISO
+          provided on the <xref
+            href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
+            format="html" scope="external">Helion Downloads</xref> page.</li>
+        <li>Each node must have SSH keys in place that allow the user who will be doing the
+          deployment to SSH to each node without a password.</li>
+        <li>Passwordless sudo needs to be enabled for the user.</li>
+        <li>There should be a LVM volume as <codeph>/root</codeph> on each node.</li>
+        <li>Ensure that <codeph>openssh-server</codeph>, <codeph>python</codeph>, and
+            <codeph>rsync</codeph> are installed.</li>
+      </ul>
+      <p>You can either perform those steps manually or via an automation tool, or you can follow
+        the steps in the following section to use our instructions.</p>
     </section>
     <section id="setup_deployer">
       <title>Set up the Lifecycle-manager</title>
+      <p><b>Installing the Lifecycle-manager</b></p>
       <p>The lifecycle-manager will contain the installation scripts and configuration files to
         deploy your cloud. You can set up the lifecycle-manager on a dedicated node or you do so on
         your first controller node. The default choice is to use the first controller node as the
-        lifecycle-manager..</p>
+        lifecycle-manager.</p>
       <ol>
         <li>Download the HP Helion OpenStack 2.0.0 product from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
@@ -68,7 +85,7 @@
           </ul>
         </li>
       </ol>
-      <p>Once the initial installation is complete, complete the lifecycle-manager setup with these
+      <p>Once the initial installation is finished, complete the lifecycle-manager setup with these
         steps:</p>
       <ol>
         <li>Ensure your lifecycle-manager node has a valid DNS nameserver specified in
@@ -79,12 +96,11 @@
       </ol>
       <p>At the end of this section you should have a node set up with Linux for HP Helion on
         it.</p>
-    </section>
-    <section id="configure_deployer">
-      <title>Configure and Run the Lifecycle-manager</title>
-      <note type="important">It's critical that you don't run any of the commands below as the root
-        user or use sudo, unless it's given explicitly in the steps. Run then as the user you just
-        created (or stack if you left the default of "stack").</note>
+      <p><b>Configure and Run the Lifecycle-manager</b></p>
+      <note type="important">It is critical that you don't run any of the commands below as the
+          <codeph>root</codeph> user or use <codeph>sudo</codeph>, unless it is stated explicitly in
+        the steps. Run then as the user you just created (or <codeph>stack</codeph> if you left the
+        default of "stack").</note>
       <ol>
         <li>Log into your lifecycle-manager node as the user you created and mount the install media
           at <codeph>/media/cdrom</codeph>. It may be necessary to use <codeph>wget</codeph> or
@@ -92,7 +108,7 @@
           completing this step. Here is the command to mount the media:
           <codeblock>sudo mount Helion-OpenStack-2.0.0.iso /media/cdrom</codeblock></li>
         <li>Unpack the tarball that is in the <codeph>/media/cdrom/hos2.0.0/</codeph> directory:
-          <codeblock>tar xvf /media/cdrom/hos/hos-2.0.0-rc2-20151014T095848Z.tar</codeblock></li>
+          <codeblock>tar xvf /media/cdrom/hos/hos-2.0.0-20151022T082820Z.tar</codeblock></li>
         <li>Run the following included script: <codeblock>~/hos-2.0.0/hos-init.bash</codeblock>
           <p>You will be prompted to enter an optional SSH passphrase when running
               <codeph>hos-init.bash</codeph>. This passphrase is used to protect the key used by
@@ -130,35 +146,21 @@ helion/tech-preview            Directory contains the config input files of the 
               to contain the details of your environment. <p>For example, if you wanted to use the
                 Helion Entry-scale KVM with VSA model, you could use this command to copy the files
                 to your cloud definition directory:</p>
-              <codeblock>cp -r ~/helion/examples/entry-scale-kvm-vsa/* ~/helion/my_cloud/definition/</codeblock></li>
+              <codeblock>cp -r ~/helion/examples/entry-scale-kvm-vsa/* ~/helion/my_cloud/definition/</codeblock>
+              <p><note>If you are using the Entry-scale KVM with Ceph model, see <xref
+                    href="configure_ceph.dita#config_ceph/config">Ceph Configuration</xref> for
+                  details.</note></p></li>
             <li>Begin inputting your environment information into the configuration files in the
                 <codeph>~/helion/my_cloud/definition</codeph> directory. <p>Full details of how to
                 do this can be found here: <xref href="../example_configurations.dita">Example
                   Configurations</xref>.</p>
             </li>
           </ol>
-          <!--
-          <p>If you chose to use your first controller node as your deployer, ensure that your
-              <codeph>servers.yml</codeph> file contains the <codeph>is-deployer: true</codeph>
-            notation in your controller options. If you are using a dedicated deployer node you can
-            omit this. Here is an example snippet of a <codeph>servers.yml</codeph> file where a
-            user is using their first controller node as their deployer:
-            <codeblock># Controllers
-  - id: controller1
-    ip-addr: 192.168.10.3
-    role: CONTROLLER-ROLE
-    server-group: RACK1
-    nic-mapping: HP-DL360-4PORT
-    mac-addr: b2:72:8d:ac:7c:6f
-    ilo-ip: 192.168.9.3
-    ilo-password: password
-    ilo-user: admin
-    <b>is-deployer: true</b></codeblock></p> -->
           <p>Optionally, you can use the <codeph>hosencrypt.py</codeph> script to encrypt your iLo
             passwords. This script uses OpenSSL.</p>
           <ol>
             <li>Change to the Ansible directory: <codeblock>cd ~/helion/hos/ansible</codeblock></li>
-            <li>Put the encrytion key into the following environment variable:
+            <li>Put the encryption key into the following environment variable:
               <codeblock>export HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeblock></li>
             <li>Run the python script below and follow the instructions. Enter a password that you
               want to encrypt. <codeblock>~/hosencrypt.py</codeblock></li>
@@ -171,6 +173,7 @@ helion/tech-preview            Directory contains the config input files of the 
             the following environment variable: <codeph>export
               HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeph></note></li>
       </ol>
+      <!--  TODO What branch? is it set automatically to "site"? is there a need to change directory? -->
       <p>Commit your configuration to the <xref href="using_git.dita">local git repo</xref>, as
         follows: <codeblock>cd ~/helion/hos/ansible
 git add -A
@@ -232,7 +235,7 @@ ansible-playbook -i hosts/localhost bm-reimage.yml [-e nodelist=node1,node2,node
           <codeph>netboot-enabled: True</codeph> is selected. The playbook pauses at the start to
         give you a chance to review the set of nodes that it is targeting and to confirm that it's
         correct.</p>
-      <p>You can use <codeph>sudo cobbler system find --netbook-enabled=1</codeph> which will list
+      <p>You can use <codeph>sudo cobbler system find --netboot-enabled=1</codeph> which will list
         all of your nodes with the <codeph>netboot-enabled: True</codeph> flag.</p>
     </section>
 
@@ -273,15 +276,16 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
             <codeph>elasticsearch</codeph>. <codeblock>cd ~/scratch/ansible/next/hos/ansible 
 ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60;name></codeblock>
           <p>If you have used an encryption password when running the configuration processor use
-            the command below and enter the encryption password when prompted:
+            the command below and enter the encryption password when prompted: <!-- TODO does this need the -e switch as well? -->
             <codeblock>ansible-playbook -i hosts/verb_hosts site.yml --ask-vault-pass</codeblock>
           </p>
-          <note>The step above runs osconfig to configure the cloud and hlm-deploy to deploy the
-            cloud. Therefore, this step may run for a while, perhaps 45 minutes or more, depending
-            on the number of nodes in your environment.</note>
+          <note>The step above runs <codeph>osconfig</codeph> to configure the cloud and
+              <codeph>hlm-deploy</codeph> to deploy the cloud. Therefore, this step may run for a
+            while, perhaps 45 minutes or more, depending on the number of nodes in your
+            environment.</note>
         </li>
-        <li>Verify that the network is working correctly. Ping each IP from the /etc/hosts file from
-          one of the controller nodes.</li>
+        <li>Verify that the network is working correctly. Ping each IP in the
+            <codeph>/etc/hosts</codeph> file from one of the controller nodes.</li>
       </ol>
     </section>
 
@@ -297,8 +301,9 @@ ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60
     </section>
 
     <section id="post-installation"><title>Post-Installation Verification and Administration</title>
-      <p>We recommend verifying the installation using <xref href="installation_verification.dita"
-          >Tempest's embedded tests</xref>.</p>
+      <p>We recommend verifying the installation using the <xref
+          href="installation_verification.dita">post-installation verification steps</xref>
+        page.</p>
       <p>There are also a list of other common post-installation administrative tasks listed in the
           <xref href="postinstall_checklist.dita">Common Post-Installation Tasks</xref> list.</p>
     </section>

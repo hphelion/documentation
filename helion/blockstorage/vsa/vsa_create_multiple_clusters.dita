@@ -3,7 +3,7 @@
 <topic id="creating_multiple_vsa_clusters">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating Multiple VSA Clusters</title>
   <body><!--Needs Edit-->
-    <p>You can create multiple VSA clusters of same or different type by specifying the
+    <p>The inputYou can create multiple VSA clusters of same or different type by specifying the
       configuration in the cloud model. <note type="tip">The term <b>add</b> and <b>update</b> in
         the document means editing the respective YAML files to add or update the
             configurations/values.<p><b>Prerequisites</b></p><p>You must have minimum three nodes

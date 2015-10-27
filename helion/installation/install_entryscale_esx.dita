@@ -65,8 +65,7 @@
       <title>Procedure to Deploy ESX cloud</title>
     </section>
     <p>The following topics in this section explain how to deploy ESX cloud.</p>
-    <section conref="install_entryscale_kvm.dita#install_kvm/install_deployer"/>
-    <section conref="install_entryscale_kvm.dita#install_kvm/configure_deployer"/>
+    <section conref="install_entryscale_kvm.dita#install_kvm/setup_deployer"/>
     <section id="Configure">
       <title>Prepare and Deploy Cloud Controllers</title>
       <ol id="ol_c1w_pfl_ft">
@@ -95,9 +94,9 @@
 mechanism_drivers = ovsvapp, openvswitch, l2population
 [agent]
 enable_distributed_routing = False</codeblock></li>--></p></li>
-        <li>(<b>Optional</b>) Enable centralised logging for EON service do the following:<ol
+        <li id="optional-eon">(<b>Optional</b>) To enable centralised logging for EON service, do the following:<ol
             id="ol_ykv_czv_st">
-            <li>Change the directory to
+            <li>Change your directory to
               <codeblock>~/helion/my_cloud/config/logging/vars</codeblock></li>
             <li>Edit <codeph>eon-api-clr.yml</codeph> file to set the value of
                 <b>centralized_logging</b> to <b>true</b> as shown in the following
@@ -115,7 +114,7 @@ enable_distributed_routing = False</codeblock></li>--></p></li>
       - maxsize 45M
       - rotate 5
       - create 640 eon eon </codeblock></li>
-            <li>Edit  <codeph>eon-conductor-clr.yml</codeph> file to set the value of
+            <li>Edit <codeph>eon-conductor-clr.yml</codeph> file to set the value of
                 <b>centralized_logging</b> to <b>true</b> as shown in the following
               sample:<codeblock> - centralized_logging:
         enabled: true

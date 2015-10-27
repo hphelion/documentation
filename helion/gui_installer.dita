@@ -67,11 +67,16 @@
           prefer. Otherwise the installer will install it for you. Te option is available in the
           GUI. If you deci You must do so by following the appropriate installation instructions. <ul>
             <li><xref href="gui_install_on_kvm.dita">KVM</xref></li>
-            <li><xref href="installation/install_entryscale_esx.html#install_esx__prereqs">ESX</xref></li>
-          </ul>
-          <p id="chooseHypervisor"/><note>Before starting the GUI, you will also need to change the
-            file permissions of hlm-ux-implementation/server/ansible/hosts/localhost to not
-            executable. Execute the following command to do so:
+            <li><xref href="installation/install_entryscale_esx.html#install_esx__prereqs"
+                >ESX</xref></li>
+          </ul> For ESX installations, modify the ~/helion/hos/ansible/hlm-deploy.yml to uncomment
+          the line containing eon-deploy.yml. You must then comment out the line containing
+          ceph-deploy.yml, vsa-deploy.yml, and cmc-deploy.yml. Then if you need to, follow the
+          instructions in <xref
+            href="installation/install_entryscale_esx.dita#install_esx/optional-eon">Step 4
+            here</xref><p id="chooseHypervisor"/><note>Before starting the GUI, you will also need
+            to change the file permissions of hlm-ux-implementation/server/ansible/hosts/localhost
+            to not executable. Execute the following command to do so:
             <codeblock>chmod -x ~/hlm-ux-implementation/server/ansible/hosts/localhost </codeblock>This
             will set the correct permission on the localhost file so that the ready-install-os.yml
             playbook can run and install the operating system on the nodes.</note>

@@ -2,12 +2,12 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="create_network">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating a Private Network</title>
-  <body><!--Needs Edit-->
-    <section id="prereqs"><title>Pre-requisites</title>
-      <p>These steps assume the following has been completed:</p>
+  <body>
+    <section id="prereqs"><title>Prerequisites</title>
+      <p>These steps assume the following have been completed:</p>
       <ul>
         <li>Your Administrator has created a valid External Network for your environment.</li>
-        <li>Your Administrator has provided you with the IP address or Hostname for the Horizon
+        <li>Your Administrator has provided you with the IP address or hostname for the Horizon
           Dashboard.</li>
       </ul>
       <p>These steps use the pre-setup <codeph>demo</codeph> user account in HP Helion OpenStack 2.0.
@@ -31,12 +31,12 @@
               <li>Click on the <b>Create Router</b> button.</li>
             </ol>
             <p><image href="../../media/networking/create_router_2.png"/></p>
-            <p>Here is what a successsful outcome looks like:</p>
+            <p>Here is what a successful outcome looks like:</p>
             <p><image href="../../media/networking/create_router_3.png"/></p>
           </li>
           <li>To confirm your router is setup properly you can: <ol>
               <li>Click on the <b>Network Topology</b> menu option and ensure it looks like the
-                screenshot below:</li>
+                screen shot below:</li>
             </ol>
             <p><image href="../../media/networking/create_router_4.png"/></p></li>
         </ol></p>
@@ -70,7 +70,7 @@ Password: demo</codeblock></li>
             <li>Select <b>Create</b> when finished.</li>
           </ol>
           <p><image href="../../media/networking/create_network_4.png"/></p>
-          <p>Here is what a successsful outcome looks like:</p>
+          <p>Here is what a successful outcome looks like:</p>
           <p><image href="../../media/networking/create_network_5.png"/></p>
         </li>
         <li>Next step is to attach your subnet to your router. <ol>
@@ -88,11 +88,11 @@ Password: demo</codeblock></li>
             <li>select the <b>Add Interface</b> button.</li>
           </ol>
           <p><image href="../../media/networking/create_network_8.png"/></p>
-          <note>Do NOT enter a value for the <codeph>IP Address (Optional)</codeph> field as this
+          <note type="caution">Do not enter a value for the <codeph>IP Address (Optional)</codeph> field as this
             can cause other issues.</note></li>
         <li>To confirm your router is setup properly you can: <ol>
-            <li>Click on the <b>Network Topology</b> menu option and ensure it looks like the
-              screenshot below:</li>
+            <li>Click on the <b>Network Topology</b> menu option and ensure it looks like the screen
+              shot below:</li>
           </ol>
           <p><image href="../../media/networking/create_network_9.png"/></p></li>
       </ol>
