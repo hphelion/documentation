@@ -17,10 +17,14 @@
   <p>This HP Product Evaluation Agreement (the "Agreement") is entered into between the HP entity
    identified below ("HP") and the entity receiving the Product ("Company"), as of the date of
 <<<<<<< HEAD
+<<<<<<< HEAD
    receipt of the Product a(the "Effective Date").</p>
 =======
    receipt of the Product (the "Effective Date").</p>
 >>>>>>> 0c7cc4c... Added EULA to HCF 1.0 docs
+=======
+   receipt of the Product a(the "Effective Date").</p>
+>>>>>>> 3a18111... Added EULA as-is
   <ol>
    <li><b>Products.</b> HP shall provide the object code version of generally available or
     pre-release software products (“Software”) and/or hardware (“Hardware”) as set forth in the
