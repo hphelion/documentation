@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_dsm_fbs_st">
+  <!-- Needs Work -->
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Enabling and Disabling Freezer Services</title>
   <body>
     <section id="main"><p>To stop freezer globally launch the following playbook from the deployer (This will stop all
@@ -17,6 +18,7 @@ ansible-playbook -i hosts/verb_hosts freezer-start.yml</codeblock></p>
             freezer-agent:<codeblock>
 sudo systemctl stop freezer-scheduler</codeblock> or run the
             following commands to start the freezer-agent:
+            <!-- TODO - Are both these necessary? -->
             <codeblock>
 sudo systemctl start freezer-scheduler</codeblock><codeblock>sudo systemctl stop freezer-scheduler</codeblock></li>
         </ol></p>
