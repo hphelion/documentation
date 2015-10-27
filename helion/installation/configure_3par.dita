@@ -3,25 +3,25 @@
 <topic id="config_3par">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for 3PAR Block Storage
     Backend</title>
-  <body><!--Needs Edit-->
+  <body>
     <p>This page describes how to configure your 3PAR backend for the Helion Entry Scale Cloud with
       KVM model.</p>
     <section>
-      <title id="preq">Pre-requisites</title>
+      <title id="preq">Prerequisites</title>
       <p>
         <ul>
           <li>Your HP Helion Entry Scale Cloud should be up and running. Installation steps can be
             found <xref href="install_entryscale_kvm.dita">here</xref>.</li>
           <li>3PAR Storage Array should be available in cloud management network or routed to cloud
             management network and 3PAR FC and iSCSI ports configured.</li>
-          <li>3PAR management IP and iSCSI port IP's must have connectivity from controller and
+          <li>3PAR management IP and iSCSI port IPs must have connectivity from controller and
             compute nodes.</li>
-          <li>Please refer the system requirements for 3PAR in Openstack configuration
-              guide.<note>If you want to enable multipath for cinder volume carved from 3PAR
+          <li>Please refer to the system requirements for 3PAR in OpenStack configuration
+              guide.<note>If you want to enable multipath for Cinder volume carved from 3PAR
               FC/iSCSI storage system, please go through
                 <codeph>/home/stack/helion/hos/ansible/roles/multipath/README.md </codeph> file on
-              the deployer node.  The README.md file contains detailed procedure to configure
-              multipath for 3PAR FC/iSCSI cinder volumes.</note></li>
+              the deployer node.  The README.md file contains detailed procedures to configure
+              multipath for 3PAR FC/iSCSI Cinder volumes.</note></li>
         </ul>
       </p>
     </section>
@@ -30,7 +30,7 @@
       <p>You must modify <codeph>cinder.conf.j2</codeph> to configure FC details.</p>
       <p>Perform the following steps to configure 3PAR FC as Cinder backend:<ol id="ol_dj2_qcz_ht">
           <li>Login to deployer node.</li>
-          <li>Edit <codeph>my_cloud/config/cinder/cinder.conf.j2</codeph> to add 3PAR FC
+          <li>Edit <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> to add 3PAR FC
             backend:</li>
           <li>Modify enabled_backends section in <codeph>cinder.conf.j2</codeph> as shown in the
             following example:<codeblock>enabled_backends=3par_FC</codeblock><note>Append this
