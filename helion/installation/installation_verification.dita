@@ -3,7 +3,7 @@
 <topic id="install_verification">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Verifying the Installation</title>
   <body>
-    <!--Needs Edit-->
+    
     <section id="about">
       <p>You can use these post-installation verification steps to confirm your installation:</p>
       <ul>
@@ -38,14 +38,14 @@
                 id="image_qvn_5xv_5t"/></p>
           </li>
           <li>Enter a unique name for the volume type and then click the <b>Create Volume Type</b>
-            button to complete the action. <p><image href="../../media/vsa/createvoltype2.png"
-                id="image_rvn_5xv_5t"/></p></li>
+            button to complete the action. <p><image href="../../media/vsa/createvoltype3.png"
+                id="image_rvn_5xv_5t_new"/></p></li>
         </ol></p>
       <p>The newly created volume type will be displayed in the <b>Volume Types</b> list confirming
-        it's creation.</p>
+        its creation.</p>
     </section>
     <section><b>Applicable only for VSA</b><p>VSA supports volumes creation with varying attributes
-        like thin provisioning enable, raid type, ao enabled volume etc. All these attributes can be
+        like thin provisioning enable, raid type, AO enabled volume etc. All these attributes can be
         specified using extra spec of volume type. Admin is expected to define appropriate extra
         spec for VSA volume type as per the guidelines provided at <xref
           href="http://docs.openstack.org/kilo/config-reference/content/hp-lefthand-supported-ops-rest.html"
@@ -167,7 +167,7 @@ volume_backend_name MyVolumeBackend</codeblock></p><p>The
           <li>Under the <b>Project</b> menu in the navigation pane, click on <b>Volumes</b> under
             the <b>Compute</b> subheading. <p><image href="../../media/vsa/createvol1.png"
             /></p></li>
-          <li>In the <b>Actions</b> colum, click <b>Delete Volume</b> next to the volume you would
+          <li>In the <b>Actions</b> column, click <b>Delete Volume</b> next to the volume you would
             like to delete. <p><image href="../../media/vsa/delvol1.png"/></p></li>
           <li>To confirm and delete the volume, click <b>Delete Volume</b> again. <p><image
                 href="../../media/vsa/delvol2.png"/></p></li>
@@ -201,8 +201,8 @@ ok: [padawan-ccp-c1-m1-mgmt] => {
           You have two options to continue: <ol>
             <li>Repeat the deploy. There are two steps involved as follows: <ol>
                 <li>Delete the ring builder files as described in <xref
-                    href="../objectstorage/restart_deploy_from_scratch.dita">Restart Deploy from
-                    Scratch</xref>.</li>
+                    href="../objectstorage/restart_deploy_from_scratch.dita">Restarting the Object Storage Deployment
+                    </xref>.</li>
                 <li>Repeat the installation process starting by running the
                     <codeph>site.yml</codeph> playbook as described in the <xref
                     href="install_entryscale_kvm.dita#install_kvm/deploy">Deploy the Cloud</xref>
@@ -212,12 +212,12 @@ ok: [padawan-ccp-c1-m1-mgmt] => {
               This process may take several hours to complete (because you need to wait one hour
               between each rebalance). The steps are as follows: <ol>
                 <li>Change the min-part-time to 1 hour. See <xref
-                    href="../objectstorage/how_to_change_min_part_time.dita">How to Change
-                    mine-part-time</xref>.</li>
+                    href="../objectstorage/how_to_change_min_part_time.dita">Changing
+                    min-part-time in Swift</xref>.</li>
                 <li>Use the "First phase of ring rebalance" and "Final rebalance phase" as described
                   in <xref href="../objectstorage/input_model_change_existing_rings.dita">Applying
                     Input Model Changes to Existing Rings</xref>. The "Weight change phase of ring
-                  rebalance" does not apply because you not set the weight-step attribute at this
+                  rebalance" does not apply because you have not set the weight-step attribute at this
                   stage.</li>
                 <li>Set the min-part-time to the recommended 16 hours as described in <xref
                     href="../objectstorage/how_to_change_min_part_time.dita">How to Change
