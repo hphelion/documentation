@@ -183,7 +183,8 @@
       <p><b>Monitoring (Monasca) Limitations</b></p> The monitoring service has the following
       limitations: <ul id="ul_fn1_d45_tt">
         <li>Vertica is the default metrics database option in the install. If you want to use
-          InfluxDB then read <xref href="administration/configure_monitoring.dita#configure_monitoring/config"
+          InfluxDB then read <xref
+            href="administration/configure_monitoring.dita#configure_monitoring/config"
             type="section">Configuring Monasca</xref> for more details.</li>
         <li>InfluxDB is not configured behind a VIP. It must directly access one node in the
           cluster.</li>
@@ -270,12 +271,55 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
         “Undefined” section instead of in the "Logging" section.</p>
       <p><b>Issue: The Heap parameters for Elasticsearch and Logstash are auto-tuned
         incorrectly</b></p>
-      <p>There is an issue where the Heap paramters for Elasticsearch and Logstash are incorrectly
-        auto-tuned. We recommend that for a system with only 32GB of RAM that you manually modify
-        the heap values on the lifecycle-manager node to <codeph>8g</codeph> for Elasticsearch and
-          <codeph>2g</codeph> for Logstash in the following file:</p>
+      <p>There is an issue where the Heap parameters for Elasticsearch and Logstash are incorrectly
+        auto-tuned. The default values are listed in <xref
+          href="administration/configure_logging.dita#configure_logging/general_config">Configuring
+          the Centralized Logging Service</xref>. There is a bug where Ansible is reporting the
+        memory values in incorrectly as values that are slightly less than what they actually are.
+        So, for example, if you have 32GB of RAM you should fall into the "Small" auto-tuning
+        category but because of this incorrectly reported value you are actually falling into the
+        "Demo" category. We recommend that you manually modify the heap values on the
+        lifecycle-manager node for systems with the specified amount of RAM in the table below to
+        the values listed. You will edit these values in the
+          <codeph>logging_possible_tunings</codeph> section of the file below:</p>
       <codeblock>~/helion/my_cloud/config/logging/main.yml</codeblock>
-      <p><b>Issue: Logrotate Settings for MySQL, keepalived, and RabbitMQ are Invalid</b></p>
+      <table frame="all" rowsep="1" colsep="1" id="table_pbd_k2y_5t">
+        <tgroup cols="4">
+          <colspec colname="c1" colnum="1"/>
+          <colspec colname="c2" colnum="2"/>
+          <colspec colname="c3" colnum="3"/>
+          <colspec colname="c4" colnum="4"/>
+          <thead>
+            <row>
+              <entry>RAM</entry>
+              <entry>Key</entry>
+              <entry>elasticsearch_heap_size</entry>
+              <entry>logstash_heap_size</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>32GB</entry>
+              <entry>demo</entry>
+              <entry>from 256m to 8g</entry>
+              <entry>from 256m to 2g</entry>
+            </row>
+            <row>
+              <entry>64GB</entry>
+              <entry>small</entry>
+              <entry>from 8g to 16g</entry>
+              <entry>from 2g to 4g</entry>
+            </row>
+            <row>
+              <entry>128GB</entry>
+              <entry>medium</entry>
+              <entry>from 16g to 32g</entry>
+              <entry>from 4g to 8g</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>table <p><b>Issue: Logrotate Settings for MySQL, keepalived, and RabbitMQ are
+          Invalid</b></p>
       <p>There is currently a workaround needed on the controller nodes to fix the logrotate
         settings for the MySQL, keepalived, and RabbitMQ services.</p> The logrotate for MySQL,
       keepalived and RabbitMQ is being overwritten by an invalid logrotate configuration supplied in
