@@ -17,7 +17,7 @@
   <section><title>Disable backup/restore jobs creation completely:</title><p>It is possible to
         continue deploying Freezer and prevent HLM from creating automatic backup jobs.</p><p>By
         defaut, HLM deployment automatically creates jobs for the backup and restore of the following:<ul>
-          <li>Deployer node</li>
+          <li>Deployer/Lifecycle-manager node</li>
           <li>MySQL Database</li>
           <li>Swift rings</li>
         </ul></p>You can disable the creation of those jobs while launching the deployment process,

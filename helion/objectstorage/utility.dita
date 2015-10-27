@@ -4,9 +4,9 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using the Swift Command-line Client
     (CLI)</title>
   <body>
-    <p>The <codeph>swift</codeph> utility (or CLI) is installed on the Deployer node and also on all
-      other nodes running the Swift proxy service. To use this utility, set the following
-      environment variables:</p>
+    <p>The <codeph>swift</codeph> utility (or CLI) is installed on the deployer/lifecycle-manager
+      node and also on all other nodes running the Swift proxy service. To use this utility, set the
+      following environment variables:</p>
     <note>You do not need to be the root user.</note>
     <codeblock>OS_USERNAME=demo
 OS_PASSWORD=&lt;redacted>
