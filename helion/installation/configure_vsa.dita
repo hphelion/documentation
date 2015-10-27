@@ -265,17 +265,6 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
       <p>Once the volume type is mapped to the backend, you can create volumes with this volume
         type.</p>
     </section>
-    <note>
-      <ul id="ul_esy_ntv_5t">
-        <li>The default volume type created by VSA will be thin provisioned and will have no fault
-          tolerance (RAID 0). You should configure Cinder to fully provision volumes, and you may
-          also want to configure fault tolerance. Follow the instructions detailed at <xref
-            href="installation_verification.dita#install_verification/create_volumetype">Creating
-            Volume type</xref> to create a new volume type which is fully provisioned and fault
-          tolerant.</li>
-        <li>You can create different volume types with different attributes.</li>
-      </ul>
-    </note>
     <section>
       <title>Configure VSA as a Cinder Backend</title>
       <p>You will use the information you input to the CMC utility as well as the volume type you
