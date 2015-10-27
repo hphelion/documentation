@@ -48,10 +48,7 @@
           navtitle="Brocade Zone Manager Configuration" locktitle="yes"/>
       </topicref>
       <topicref href="helion/installation/install_entryscale_esx.dita"
-        navtitle="Installation for Helion Entry Scale Cloud with ESX" locktitle="yes">
-        <topicref href="helion/esx/network_esx_ovsvapp.dita"
-          navtitle="Networking for ESXi Hypervisor" locktitle="yes"/>
-      </topicref>
+        navtitle="Installation for Helion Entry Scale Cloud with ESX" locktitle="yes"/>
       <topicref href="helion/installation/install_entryscale_swift.dita"
         navtitle="Installation for Helion Entry Scale Cloud with Swift Only" locktitle="yes"/>
       <topicref href="helion/gui_installer.dita" navtitle="Installing via the GUI" locktitle="yes"/>
@@ -197,6 +194,8 @@
           navtitle="Removing a Cluster from the Compute Resource Pool" locktitle="yes"/>
         <topicref href="helion/esx/removing_esx_host_from_cluster.dita"
           navtitle="Removing an ESX Host from a Cluster" locktitle="yes"/>
+        <topicref href="helion/esx/network_esx_ovsvapp.dita"
+          navtitle="Networking for ESXi Hypervisor" locktitle="yes"/>
         <topicref href="helion/esx/logging.dita" navtitle="EON Logging" locktitle="yes"/>
         <topicref href="helion/esx/scale_config_changes.dita"
           navtitle="Making SCALE Configuration Changes" locktitle="yes"/>
