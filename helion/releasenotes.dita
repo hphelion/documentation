@@ -204,6 +204,15 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
         alarms are alerting then this alert for the Cinderlm diagnostics monitor alarm can be
         ignored. If other Cinder related alarms are alerting then follow the mitigation steps
         described in the Service Alarm Definitions section.</p>
+      <p><b>Issue: The 'Swiftlm-scan' alarm sticks</b></p>
+      <p>The <codeph>swiftlm-scan</codeph> monitor alarm may be triggered. However, once triggered,
+        the alarm does not automatically return to the normal state even if the condition that
+        caused it has been resolved. To confirm this, run the following command:</p>
+      <codeblock>monasca measurement-list swiftlm.swift.swift_services -3 --merge_metrics --dimensions hostname=&#60;hostname></codeblock>
+      <p><note>The <codeph>hostname</codeph> value is the host reporting the 'swiftlm-scan' monitor
+          alarm.</note></p>
+      <p>If the command output reports that the metrics are being reported then the system is fine
+        and the alarm can be ignored.</p>
       <p><b>Operations Console (Ops Console)</b></p> The Operations Console has the following
       limitations (listed below by menu option in the console): <ul id="ul_wv1_d45_tt">
         <li>Dashboard <ul id="ul_s2b_d45_tt">
