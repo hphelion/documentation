@@ -150,5 +150,66 @@ padawan-ccp-c1-m3-mgmt     : ok=3    changed=1    unreachable=0    failed=0</cod
         </li>
       </ol>
     </section>
+    <section><title>Server names and IDs</title> The server id is a name you, the user assign to an
+      entry in the servers.yml file. This entry will usually represent a physical machine and may be
+      the corporate asset number for example. When the configuration processor is run against the
+      servers.yml file it will generate a <b>server_info.yml</b> file in
+        <b>/helion/my_cloud/info</b> which contains the mapping between the entry in the<b>
+        servers.yml</b> file and the machine entity created in your cloud as seen in the output from
+      nova service-list. For example, for following entry in <b>servers.yml
+      </b><codeblock>- id: COMPUTE-0003
+      ip-addr: 192.168.10.8
+      role: COMPUTE-ROLE
+      server-group: RACK3
+      mac-addr: 22:f1:9d:ba:2c:2d
+      ilo-ip: 192.168.9.8
+      ilo-password: password
+      ilo-user: admin
+      In the server_info.yml file it is mapped to padawan-ccp-comp0003-mgmt
+      COMPUTE-0003:
+      failure-zone: AZ3
+      hostname: padawan-ccp-comp0003-mgmt
+      net_data:
+      eth1:
+      MANAGEMENT-NET:
+      addr: 192.168.245.8
+      tagged-vlan: false
+      vlan-id: 102
+      eth2:
+      HLM-NET:
+      addr: 192.168.10.8
+      tagged-vlan: false
+      vlan-id: 101
+      eth3:
+      EXTERNAL-VM-NET:
+      addr: null
+      tagged-vlan: true
+      vlan-id: 103
+      state: allocated</codeblock>
+      So when doing a nova service-list or nova hypervisor-list you can map the hosts shown there to
+      items in the servers.yml by looking for them in the server_info.yml <codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova service-list</codeblock>
+      <codeblock>+----+------------------+---------------------------+----------+---------+-------+----------------------------+-----------------+
+      | Id | Binary           | Host                      | Zone     | Status  | State | Updated_at                 | Disabled Reason |
+      +----+------------------+---------------------------+----------+---------+-------+----------------------------+-----------------+
+      | 1  | nova-conductor   | padawan-ccp-c1-m1-mgmt    | internal | enabled | up    | 2015-10-26T05:23:13.000000 | -               |
+      | 4  | nova-scheduler   | padawan-ccp-c1-m1-mgmt    | internal | enabled | up    | 2015-10-26T05:23:20.000000 | -               |
+      | 7  | nova-conductor   | padawan-ccp-c1-m3-mgmt    | internal | enabled | up    | 2015-10-26T05:23:14.000000 | -               |
+      | 13 | nova-conductor   | padawan-ccp-c1-m2-mgmt    | internal | enabled | up    | 2015-10-26T05:23:23.000000 | -               |
+      | 16 | nova-scheduler   | padawan-ccp-c1-m2-mgmt    | internal | enabled | up    | 2015-10-26T05:23:20.000000 | -               |
+      | 19 | nova-consoleauth | padawan-ccp-c1-m1-mgmt    | internal | enabled | up    | 2015-10-26T05:23:21.000000 | -               |
+      | 22 | nova-scheduler   | padawan-ccp-c1-m3-mgmt    | internal | enabled | up    | 2015-10-26T05:23:20.000000 | -               |
+      | 25 | nova-compute     | padawan-ccp-comp0002-mgmt | AZ2      | enabled | up    | 2015-10-26T05:23:15.000000 | -               |
+      | 28 | nova-compute     | padawan-ccp-comp0003-mgmt | AZ3      | enabled | up    | 2015-10-26T05:23:18.000000 | -               |
+      | 31 | nova-compute     | padawan-ccp-comp0001-mgmt | AZ1      | enabled | up    | 2015-10-26T05:23:17.000000 | -               |
+      +----+------------------+---------------------------+----------+---------+-------+----------------------------+-----------------+
+      stack@padawan-ccp-c0-m1-mgmt:~$ nova hypervisor-list
+      +----+---------------------------+-------+---------+
+      | ID | Hypervisor hostname       | State | Status  |
+      +----+---------------------------+-------+---------+
+      | 1  | padawan-ccp-comp0002-mgmt | up    | enabled |
+      | 4  | padawan-ccp-comp0003-mgmt | up    | enabled |
+      | 7  | padawan-ccp-comp0001-mgmt | up    | enabled |
+      +----+---------------------------+-------+---------+</codeblock>
+    </section>
   </body>
 </topic>
