@@ -91,8 +91,8 @@
       ilo-password: gone2far
       ilo-user: Administrator
       mac-addr: 5C:B9:01:78:2D:00</codeblock></p></li>
-        <li>Commit your configuration
-          <pre>cd ~/helion/hos/ansible
+        <li>Commit your
+          configuration:<pre>cd ~/helion/hos/ansible
 git add -A
 git commit -m &lt;"commit message"></pre></li>
         <li>Run the configuration
