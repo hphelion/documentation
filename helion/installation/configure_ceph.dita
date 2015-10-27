@@ -4,7 +4,7 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for Ceph Block Storage
     Backend</title>
   <body>
-    <!--Needs Edit-->
+    
     <p>This page describes how to configure your Ceph backend for the Helion Entry-scale with KVM
       Cloud model.</p>
     <section>
@@ -122,11 +122,11 @@
                     </row>
                     <row>
                       <entry><b>attrs</b></entry>
-                      <entry>This is the list of attributes.</entry>
+                      <entry>These are the attributes associated with the consumer.</entry>
                     </row>
                     <row>
                       <entry><b>usage</b></entry>
-                      <entry>There can be several use of devices for a particular service. In the
+                      <entry>There can be several uses of devices for a particular service. In the
                         above sample, <codeph>usage</codeph> field contains <b>data</b> which
                         indicates that the device is used for data storage.</entry>
                     </row>
@@ -165,7 +165,7 @@
                           <entry>It is a unique identifier for the Ceph cluster.</entry>
                         </row>
                         <row>
-                          <entry><codeph>ceph clusters</codeph></entry>
+                          <entry><codeph>ceph_cluster</codeph></entry>
                           <entry>
                             <p>Ceph clusters have a cluster name. The default cluster name is ceph,
                               but you may specify a different cluster name.</p>
