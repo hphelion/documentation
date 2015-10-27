@@ -30,7 +30,7 @@
       <title>Configuring Your Ceph Environment Input Files</title>
       <p>
         <ol>
-          <li>Log in to the lifecycle-manager node.</li>
+          <li>Log in to the deployer/lifecycle-manager node.</li>
           <li>Copy the example configuration files into the required setup directory and edit them
             to contain the details of your environment: <codeblock>cp -r ~/helion/examples/entry-scale-kvm-ceph/* ~/helion/my_cloud/definition/</codeblock>
             <p>Begin inputting your environment information into the configuration files in the
