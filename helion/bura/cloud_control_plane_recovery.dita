@@ -3,7 +3,7 @@
 <topic id="topic_tb4_lqy_qt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Recovering the Cloud Control Plane</title>
   <body>
-    <!--Needs Edit-->
+   
     <section><title>Point in time database recovery</title><p>Everything is still running (deployer,
         cloud controller nodes (CCNs), and compute nodes (CPNs) but you want to restore the MySQL
         database to an old state.</p></section>
