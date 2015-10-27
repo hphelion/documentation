@@ -4,7 +4,7 @@
 <topic xml:lang="en-us" id="logging">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Centralized Logging Service</title>
   <body>
-    <!--Needs Edit-->
+
     <p>A typical HP Helion OpenStack cloud consists of multiple servers which makes locating a
       specific log from a single server difficult. The HP Helion OpenStack Centralized Logging
       feature helps the administrator triage and troubleshoot the distributed cloud deployment from
@@ -300,7 +300,7 @@
       <p>Once the logs load you can change the timeframe from the dropdown in the upper-righthand
         corner of the Kibana window. You have the following options to choose from:</p>
       <ul>
-        <li>Quick - a variety of timeframe choices will be available here</li>
+        <li>Quick - a variety of time frame choices will be available here</li>
         <li>Relative - allows you to select a start time relative to the current time to show this
           range</li>
         <li>Absolute - allows you to select a date range to query</li>

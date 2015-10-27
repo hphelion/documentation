@@ -69,8 +69,7 @@
     </section>
     <!--    <section>
       <title>When receiving a new Helion drop</title>
-      <note>The steps for new drops will only be run on HP Helion OpenStack 2.0 Beta 1 and later.
-        The git repository is not present in Beta 0.</note>
+   
       <p>When you are ready to deploy a new deployer image, you must merge any configuration changes
         into your own previous config; this is a manual step, although the standard git tools may be
         brought to bear to achieve this. </p>

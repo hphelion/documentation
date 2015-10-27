@@ -5,9 +5,15 @@
   <body>
     
     <section id="about"><title>Helion OpenStack 2.0 Installation</title>
-      <p>Beginning with HP Helion OpenStack 2.0 Beta 2, you have two options for installing your
-        cloud. You can use a GUI that runs in your web browser or you can install via a CLI that
-        exposes the full power and flexibility of HP Helion OpenStack 2.0.</p>
+
+      <p>In  HP Helion OpenStack 2.0, you have two options for installing your cloud. You can use a
+        GUI that runs in your web browser or you can install via a CLI that exposes the full power
+        and flexibility of HP Helion OpenStack 2.0.</p>
+
+      <p>There are two options for installing your cloud. You can use a GUI that runs in your web
+        browser or you can install via the command-line that exposes the full power and flexibility
+        of HP Helion OpenStack 2.0.</p>
+
     </section>
     <section>
       <p>You should use the GUI if: <ul>
@@ -24,9 +30,9 @@
     <ul>
       <li><xref href="../gui_installer.dita#install_gui">Installing via the GUI</xref></li>
     </ul>
-    <section>Note that reconfiguration of your cloud, at the moment, is done via the CLI. The GUI
-      installer is for first-time installation only. </section>
-    <section>You should use the CLI if: <ul id="ul_wbl_2lw_kt">
+    <section>Note that reconfiguration of your cloud, at the moment, is done via the command-line.
+      The GUI installer is for first-time installation only. </section>
+    <section>You should use the command-line if: <ul id="ul_wbl_2lw_kt">
         <li>You are installing a more complex or large-scale cloud. </li>
         <li>You have more than about 15 nodes. </li>
         <li>You need to use availability zones or the server groups functionality of the cloud
@@ -35,7 +41,7 @@
         <li>You want to customize the cloud configuration beyond the tuned defaults that HP provides
           out of the box. </li>
         <li>You need deeper customizations than are possible to express using the GUI.</li>
-      </ul> Instructions for installing via the CLI are here:</section>
+      </ul> Instructions for installing via the command-line are here:</section>
     <section>
       <ul>
         <li><xref href="install_entryscale_kvm.dita">Baremetal Install for KVM

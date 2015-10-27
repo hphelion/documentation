@@ -72,10 +72,10 @@
             pages helpful even when using your own tools to install the operating systems:</p>
           <ul>
             <li><xref
-                href="../git/documentation/helion/installation/install_entryscale_kvm.dita#install_kvm"
+                href="installation/install_entryscale_kvm.dita#install_kvm"
                 >Operating system install help for KVM-based clouds</xref></li>
             <li><xref
-                href="../git/documentation/helion/installation/install_entryscale_esx.dita#install_esx"
+                href="installation/install_entryscale_esx.dita#install_esx"
                 >Operating system install help for ESX-based clouds</xref></li>
           </ul>
           <note>When following the guidance for operating system installation on those pages, stop
