@@ -3,8 +3,8 @@
 <topic id="topic_ijt_dyh_rt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Making SCALE Configuration Changes</title>
   <body><!--Needs Edit-->
-    <p>The recommended configuration changes to achieve 4K instances are as follows. <b>(what is
-        reason to scale the configuration changes??)</b><ol id="ol_zwn_lyh_rt">
+    <p>The recommended configuration changes to achieve 4K instances are as follows. <ol
+        id="ol_zwn_lyh_rt">
         <li>Change the directory. The <systemoutput>nova.conf.j2</systemoutput> is present in
           following
           directories:<codeblock>cd /home/stack/helion/hos/ansible/roles/nova-common/templates</codeblock></li>

@@ -14,11 +14,11 @@
     <p>The OVSvApp VM will be orchestrated using EON. For more detail information  on EON service,
       refer to <xref href="eon_service.dita#topic_x2x_vy4_lt"/>.</p>
     <p>In order to facilitate Fault Tolerance and mitigation of data path loss for tenant VM’s, run
-      the process named <b>neutron-ovsvapp-agent-montior</b> as part of <b>neutron-ovsvapp-agent
-        service</b>  which is responsible for monitoring Open vSwitch module within the OVSvApp VM.
+      the process named <b>neutron-ovsvapp-agent-monitor</b> as part of <b>neutron-ovsvapp-agent
+        service</b> which is responsible for monitoring Open vSwitch module within the OVSvApp VM.
       It also uses <codeph>nginx</codeph> server to inform health status of Open vSwitch module to
       the neutron server for mitigation actions. There is a mechanism to keep alive the
-        <b>neutron-ovsvapp-agent service</b> through  <codeph>systemd</codeph> script.</p>
+        <b>neutron-ovsvapp-agent service</b> through <codeph>systemd</codeph> script.</p>
     <p>When OVSvApp Service VM crashes, agent monitoring mechanism kick in a ‘cluster mitigation’
       process. You can mitigate data path traffic loss for VMs on the failed ESX host in that
       cluster by putting the failed ESX host in the maintenance mode; which in turn triggers the
@@ -67,8 +67,7 @@
                 format="html" scope="external"
                 >http://&lt;ip&gt;:9696/v2.0/ovsvapp_mitigated_clusters</xref> -H "User-Agent:
               python-neutronclient" -H "Accept: application/json" -H "X-Auth-Token:
-              &lt;token_id&gt;"  (<b>unable to understand this section?? )</b>
-            </li>
+              &lt;token_id&gt;"<!-- (<b>unable to understand this section?? ) need clarification</b> --></li>
           </ul></li>
       </ol></p>
   </body>

@@ -3,7 +3,7 @@
 <topic id="topic_rq3_mxh_rt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: EON Logging</title>
   <body><!--Needs Edit-->
-    <p>This page describe the procedure to enable EON service for centralised logging and changing
+    <p>This page describe the procedure to enable EON service for centralized logging and changing
       EON log level to DEBUG.</p>
     <section><b>Modify EON Log Level </b>
       <p>To change the EON log level to DEBUG, do the following:</p><p>
