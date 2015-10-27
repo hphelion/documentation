@@ -21,9 +21,4 @@
          <topicref href="reference/CFR_reference_gato.dita"/>
       </topichead>      
    </topicref>
-   <!--
-   <topicref href="root/HCF_release_notes.dita" navtitle="Release Notes"/>
-   <topicref href="root/HCF_license_agreements.dita" navtitle="Open Source and Third-Party Software License Agreements"/>
-   <topicref href="root/HCF_software_license_terms.dita" navtitle="Software License Terms"/>
-   -->
 </map>
