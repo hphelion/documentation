@@ -2,14 +2,15 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_x2x_vy4_lt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: ESX ON-Boarding Service (EON)</title>
-  <body><!--Needs Work; fnf edit on 10/27; overview needs clarification.-->
-    <p>The HP Helion OpenStack 2.0 EON (ESX on boarding) service is an inventory, which interacts
-      with the VMware vCenter server, and collects available information from data centers,
-      clusters, datastore, dvSwitch and portgroup details. When a cloud admin wants a particular
-      cluster to be a compute resource in HP Helion Openstack 2.0, Eon provisions nova proxy service
-      VM for each cluster and OVSvApp service VM for each ESX host in that cluster.</p>
+  <body><!--Needs Work; fnf edit on 10/27; overview needs clarification; what's an activate cluster (lower down)?-->
+    <p>The HP Helion OpenStack 2.0 EON (ESX on boarding) service is an inventory service, which
+      interacts with the VMware vCenter server, and collects available information from data
+      centers, clusters, datastore, dvSwitch and portgroup details. When a cloud administrator wants
+      a particular cluster to be a compute resource in HP Helion Openstack 2.0, EON provisions the
+      Nova proxy service VM for each cluster, and OVSvApp service VM, for each ESX host in that
+      cluster.</p>
     <p>The integration of EON with HP Helion OpenStack 2.0 automates the steps for moving/adding a
-      cluster in a compute resource. You must run a few EON commands to do so.</p>
+      cluster in a compute resource. To use this functionality, you must run a few EON commands.</p>
     <p>Moreover, EON is not installed by default. To install EON service, you must uncomment the
         <systemoutput>eon-deploy.yml</systemoutput> file at
         <systemoutput>~/helion/hos/ansible/hlm-deploy.yml</systemoutput> in the
@@ -17,37 +18,38 @@
         href="../installation/install_entryscale_esx.dita#install_esx"/>.</p>
     <section>
       <title><b>Architecture</b></title>
-      <p>EON is installed on the master control plane node and the EON CLI is installed on the HLM
-        deployer/lifecycle-manager node which is used by the Cloud Admin to setup vCenter Compute
-        Proxy and OvsvApp nodes.</p>
+      <p>EON is installed on the master control plane node, and the EON CLI is installed on the HLM
+        deployer/lifecycle-manager node, used by the Cloud Admin to setup vCenter Compute Proxy and
+        OvsvApp nodes.</p>
       <p><image href="../../media/esx/eon_arch_diagram.png"/></p>
     </section>
-    <section><title>EON CLI Operations</title><p>The EON client CLI package provides an http-client
-        coupled command-line tool for managing EON (ESX management) services.<ol id="ol_d1l_ygf_rt">
+    <section><title>EON CLI Operations</title><p>The EON client CLI package provides an http-client coupled command-line tool for managing EON
+        (ESX management) services. This topic contains information about the following:<ol
+          id="ol_d1l_ygf_rt">
           <li><xref href="#topic_x2x_vy4_lt/vcenter-operations" format="dita">vCenter
               Operations</xref></li>
           <li><xref href="#topic_x2x_vy4_lt/cluster-operations" format="dita">Cluster
               Operations</xref></li>
           <li><xref href="#topic_x2x_vy4_lt/network-operations" format="dita">Network
               Operations</xref></li>
-        </ol></p><sectiondiv id="vcenter-operations"><b>vCenter Operation</b></sectiondiv><p>VMware
+        </ol></p><sectiondiv id="vcenter-operations"><b>vCenter Operations</b></sectiondiv><p>VMware
         vCenter is an appliance that is used to manage multiple ESXi hosts through a single console
         application. VMware ESXi is a visualization platform on which you create and run virtual
         machines. VMware vCenter acts as a central administrator for ESXi hosts that are connected
         on a network. You can pool and manage the resources of multiple ESXi hosts while monitoring
         and managing your physical and virtual infrastructure.<ul id="ul_uwj_4hf_rt">
           <li>Register/Add a vCenter<p>You can add the vCenter using EON python client. You must
-              enter all the arguments to add the vCenter; otherwise you will be prompted to enter
+              enter all of the arguments to add the vCenter; otherwise you will be prompted to enter
               them.<codeblock># eon vcenter-add --name &lt;vCenter Name&gt; --ip-address &lt;vCenter IP address&gt; --username &lt;vCenter Username&gt; --password &lt;vCenter Password&gt; --port &lt;vCenter Port&gt;</codeblock></p>where:<ul
               id="ul_xzl_23f_rt">
-              <li>vCenter Name - the identical name of the vCenter server.</li>
-              <li>vCenter IP address - the IP address of the vCenter server.</li>
-              <li>vCenter Username - the admin privilege username for the vCenter.</li>
-              <li>vCenter Password - the password for the above username.</li>
-              <li>vCenter Port - the vCenter server port. By default it is 443. <note
+              <li>vCenter Name - The identical name of the vCenter server.</li>
+              <li>vCenter IP address - The IP address of the vCenter server.</li>
+              <li>vCenter Username - The admin privilege username for the vCenter.</li>
+              <li>vCenter Password - The password for the above username.</li>
+              <li>vCenter Port - The vCenter server port. By default it is 443. <note
                   type="important">Please do not change the port unless you are sure about the
                   vCenter Port.</note></li>
-            </ul><p><b>Sample
+            </ul><p><b>Example
               Output</b>:<codeblock><codeph># eon vcenter-add --name vc01 --ip-address 10.1.200.41 --username administrator@vsphere.local --password password --port 443</codeph>
 +------------+--------------------------------------+
 | Property   | Value                                |
@@ -66,7 +68,7 @@
 +------------+--------------------------------------+</codeblock></p></li>
         </ul></p><ul id="ul_x3d_p3f_rt">
         <li>List the vCenter<p>Lists all the vCenters in your cloud
-            environment.<codeblock># eon vcenter-list</codeblock></p><p><b>Sample
+            environment.<codeblock># eon vcenter-list</codeblock></p><p><b>Example
             Output:</b><codeblock># eon vcenter-list
 +--------------------------------------+------+-------------+---------------------+---------------------+
 | ID                                   | Name | IP Address  | Created             | Modified            |
@@ -78,10 +80,10 @@
         <li>Show a vCenter details<p>Shows the details of the specific
             vCenter.<codeblock># eon vcenter-show &lt;vCenter ID></codeblock></p><p>where:<ul
               id="ul_ajm_rjf_rt">
-              <li>vCenter ID - the UUID of the vCenter (shown in the output of eon
+              <li>vCenter ID - The UUID of the vCenter (shown in the output of eon
                 vcenter-list).</li>
-            </ul></p><p><b>Sample
-            output</b><codeblock><codeph># eon vcenter-show BC9DED4E-1639-481D-B190-2B54A2BF5674 </codeph>
+            </ul></p><p><b>Example
+            Output</b><codeblock><codeph># eon vcenter-show BC9DED4E-1639-481D-B190-2B54A2BF5674 </codeph>
 +------------+--------------------------------------+
 | Property   | Value                                |
 +------------+--------------------------------------+
@@ -99,10 +101,10 @@
 | username   | administrator@vsphere.local          |
 +------------+--------------------------------------+</codeblock></p></li>
       </ul><ul id="ul_hyl_yjf_rt">
-        <li>Update a vCenter<p>Updates the registered vCenter’s attribute (like name, username,
+        <li>Update a vCenter<p>Updates the registered vCenter’s attribute (such as name, username,
             password,
-            port)<codeblock># eon vcenter-update --name &lt;vCenter Name&gt; --ip-address &lt;vCenter IP address&gt; --username &lt;vCenter Username&gt; --password &lt;vCenter Password&gt; --port &lt;vCenter Port&gt; &lt;vCenter ID&gt;</codeblock></p><p><b>Sample
-              output</b>:<codeblock># eon vcenter-update --name vc02 --ip-address 10.1.200.41 --username administrator@vsphere.local --password password --port 443 BC9DED4E-1639-481D-B190-2B54A2BF5674
+            port).<codeblock># eon vcenter-update --name &lt;vCenter Name&gt; --ip-address &lt;vCenter IP address&gt; --username &lt;vCenter Username&gt; --password &lt;vCenter Password&gt; --port &lt;vCenter Port&gt; &lt;vCenter ID&gt;</codeblock></p><p><b>Example
+              Output</b>:<codeblock># eon vcenter-update --name vc02 --ip-address 10.1.200.41 --username administrator@vsphere.local --password password --port 443 BC9DED4E-1639-481D-B190-2B54A2BF5674
 +------------+--------------------------------------+
 | Property   | Value                                |
 +------------+--------------------------------------+
@@ -120,19 +122,19 @@
 +------------+--------------------------------------+</codeblock></p></li>
       </ul><ul id="ul_bxf_mkf_rt">
         <li>Delete a vCenter<p>
-            <note type="important">If you have any imported cluster ensure that you have deactivated
-              them and then un-import the cluster(s) before executing the delete command.</note>
-          </p><p>Unregisters the specific vCenter. vCenter delete fails, if you have any imported
+            <note type="important">If you have any imported clusters, ensure that you have
+              deactivated them and then un-import the cluster(s) before running the delete
+              command.</note>
+          </p><p>Unregisters the specific vCenter. vCenter delete fails if you have any imported
             clusters that are activate
-            clusters.<codeblock># eon vcenter-delete &lt;vCenter ID></codeblock></p><p><b>Sample
-              output</b>:<codeblock># eon vcenter-delete BC9DED4E-1639-481D-B190-2B54A2BF5674</codeblock></p></li>
+            clusters.<codeblock># eon vcenter-delete &lt;vCenter ID></codeblock></p><p><b>Example
+              Output</b>:<codeblock># eon vcenter-delete BC9DED4E-1639-481D-B190-2B54A2BF5674</codeblock></p></li>
       </ul></section>
-    <section><sectiondiv id="cluster-operations"><b>Cluster Operations</b></sectiondiv><p>This
-        section lists the cluster operations performed in a vcenter.<note>No two clusters should
+    <section><sectiondiv id="cluster-operations"><b>Cluster Operations</b></sectiondiv><p>This section lists the cluster operations performed in a vCenter.<note>No two clusters should
           have the same name across datacenters in a given vCenter.</note><ul id="ul_dvm_rlf_rt">
           <li>List clusters in a vCenter<p>Displays a list of clusters in a specific
-              vCenter.<codeblock># eon cluster-list --vcenter-id &lt;vCenter ID></codeblock></p><p><b>Sample
-                output</b>:</p><p>
+              vCenter.<codeblock># eon cluster-list --vcenter-id &lt;vCenter ID></codeblock></p><p><b>Example
+                Output</b>:</p><p>
               <codeblock># eon cluster-list --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674
 +------------+----------+------------+---------------+
 | MOID       | Name     | Datacenter | Import Status |
@@ -143,16 +145,15 @@
         </ul></p><ul id="ul_hlw_ylf_rt">
         <li>Import cluster in a vCenter<p>Import cluster allows you to import the clusters using EON
             CLI under the given vCenter. This operation provisions (creates) the plain shell VMs for
-            compute proxy node and Ovsvapp nodes which are configured later in stages through HLM.
-            The cluster state changes from “not_imported” to “imported”when you execute the
-            following
+            compute proxy node and Ovsvapp nodes which are configured in later stages through HLM.
+            The cluster state changes from not_imported to imported when you run the following
             command.<codeblock># eon cluster-import --vcenter-id &lt;vCenter ID> --cluster-name &lt;Cluster Name> --cluster-moid &lt;Cluster Moid></codeblock></p><p>Where:<ul
               id="ul_tzq_mmf_rt">
               <li>vCenter ID - ID of the vcenter containing the cluster.</li>
-              <li>Cluster Name - the name of the cluster that needs to be imported.</li>
+              <li>Cluster Name - The name of the cluster that needs to be imported.</li>
               <li>cluster Moid - Moid of the cluster that needs to be imported.</li>
-            </ul></p><p>Sample
-            output:<codeblock># eon cluster-import --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-name Cluster1 --cluster-moid domain-c21
+            </ul></p><p><b>Example
+            Output</b>:<codeblock># eon cluster-import --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-name Cluster1 --cluster-moid domain-c21
 +--------------+-----------+
 | Property     | Value     |
 +--------------+-----------+
@@ -174,17 +175,17 @@
         <li>Unimport cluster in a vCenter<p>Unimports the cluster in a specific vCenter. This
             operation de-provisions (deletes) the compute proxy node and Ovsvapp nodes. The cluster
             state changes from “imported” to “not_imported” when you execute the following
-            command.<codeblock># eon cluster-unimport --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid></codeblock></p><p>Sample
-            output:<codeblock># eon cluster-unimport --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-moid domain-c21
+            command.<codeblock># eon cluster-unimport --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid></codeblock></p><p><b>Example
+              Output</b>:<codeblock># eon cluster-unimport --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-moid domain-c21
 Cluster domain-c21 unimport initiated</codeblock></p></li>
       </ul><ul id="ul_n5v_snf_rt">
         <li>Activate cluster in a vCenter<p>Activates the cluster in a specific vCenter. This
-            operation updates the cloud definition (includes the node details in
+            operation updates the cloud definition (includes the node details in the
               <codeph>server.yml</codeph> and <codeph>passthrough.yml</codeph> files) for compute
-            proxy node and Ovsvapp nodes. The cluster state changes from “imported” to “activated”
-            when you execute the following
-            command.<codeblock># eon cluster-activate --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid> </codeblock></p><p>Sample
-            output:<codeblock># eon cluster-activate --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-moid domain-c22 
+            proxy node and Ovsvapp nodes. The cluster state changes from imported to activated when
+            you run the following
+            command.<codeblock># eon cluster-activate --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid> </codeblock></p><p><b>Example
+              Output</b>:<codeblock># eon cluster-activate --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-moid domain-c22 
 +---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Property      | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 +---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -198,8 +199,8 @@ Cluster domain-c21 unimport initiated</codeblock></p></li>
               <codeph>server.yml</codeph> and <codeph>passthrough.yml</codeph> files) for compute
             proxy node and Ovsvapp nodes. The cluster state changes from “activated” to “imported”
             when you execute the following
-            command.<codeblock># eon cluster-deactivate --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid> </codeblock></p><p>Sample
-            output:<codeblock># eon cluster-activate --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-moid domain-c22 
+            command.<codeblock># eon cluster-deactivate --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid> </codeblock></p><p><b>Example
+              Output</b>:<codeblock># eon cluster-activate --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-moid domain-c22 
 +---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Property      | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 +---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -208,25 +209,24 @@ Cluster domain-c21 unimport initiated</codeblock></p></li>
 | resource_name | Cluster1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | state         | imported                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 +---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</codeblock></p></li>
-      </ul><sectiondiv id="network-operations"><b>Network Operations</b></sectiondiv><p>This involve
-        getting a sample network information template.<ul id="ul_u3m_t4f_rt">
+      </ul><sectiondiv id="network-operations"><b>Network Operations</b></sectiondiv><p>This process involves getting a sample network information template.<ul id="ul_u3m_t4f_rt">
           <li>Get network info template<p>Saves the sample network <codeph>config. json</codeph>
               file to the mentioned file
-              (NETWORK_CONF_FILENAME).<codeblock># eon get-network-info-template --filename &lt;NETWORK_CONF_FILENAME></codeblock></p><p>Sample
-              output:<codeblock># eon get-network-info-template --filename net_conf.json
+              (NETWORK_CONF_FILENAME).<codeblock># eon get-network-info-template --filename &lt;NETWORK_CONF_FILENAME></codeblock></p><p><b>Example
+                Output</b>:<codeblock># eon get-network-info-template --filename net_conf.json
 ---------------------------------------------------------------
 Saved the sample file to net_conf.json
 ---------------------------------------------------------------</codeblock></p></li>
         </ul></p><ul id="ul_m5q_hqf_rt">
-        <li>List the network details for a Datacenter<p> Shows the persisted network details for a
-            Datacenter in the
+        <li>List the network details for a datacenter<p> Shows the persisted network details for a
+            datacenter in the
             vCenter.<codeblock># eon list-network-info –vcenter-id &lt;vCenter ID> --datacenter-name &lt;Datacenter Name></codeblock></p><p>where:<ul
               id="ul_aqv_4qf_rt">
               <li>vCenter ID - ID of the vcenter containing the cluster.</li>
               <li>Datacenter Name – Datacenter name of the vCenter where the clusters (to be used
                 for compute resource) resides.</li>
-            </ul></p><p>Sample
-            output:<codeblock># eon list-network-info –vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --datacenter-name DC1
+            </ul></p><p><b>Example
+            Output</b>:<codeblock># eon list-network-info –vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --datacenter-name DC1
 ---------------------------------------------------------------
 {
   "computeproxy": {
@@ -311,12 +311,12 @@ Saved the sample file to net_conf.json
 }
 ---------------------------------------------------------------</codeblock></p></li>
         <li>
-          <p> Create network for a Datacenter</p>
-          <p>Creates the required Distributed Virtual Switches and Portgroups as per in the inputted
-            network json
+          <p> Create network for a datacenter</p>
+          <p>Creates the required distributed virtual switches and portgroups as per the network
+            json
             file.<codeblock># eon set-network-info --vcenter-id &lt;vCenter ID> --datacenter-name &lt;datacenter name> --config-json &lt;NETWORK_CONF_FILENAME></codeblock></p>
-          <p>Sample
-            output:<codeblock># eon set-network-info –vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --datacenter-name DC1 --config-json net_conf.json
+          <p><b>Example
+            Output</b>:<codeblock># eon set-network-info –vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --datacenter-name DC1 --config-json net_conf.json
 ---------------------------------------------------------------
 {
   "computeproxy": {
@@ -402,10 +402,10 @@ Saved the sample file to net_conf.json
 ---------------------------------------------------------------</codeblock></p>
         </li>
       </ul><ul id="ul_hd1_zqf_rt">
-        <li>Delete network for a Datacenter<p>Deletes the Distributed Virtual Switches and
-            Portgroups created for Compute proxy and Ovsvapp
-            nodes.<codeblock># eon delete-network-info --vcenter-id &lt;vCenter ID> --datacenter-name &lt;datacenter name> </codeblock></p><p>Sample
-            output:<codeblock># eon delete-network-info --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --datacenter-name DC1 
+        <li>Delete network for a datacenter<p>Deletes the distributed virtual switches and
+            portgroups created for the Compute proxy and Ovsvapp
+            nodes.<codeblock># eon delete-network-info --vcenter-id &lt;vCenter ID> --datacenter-name &lt;datacenter name> </codeblock></p><p><b>Example
+              Output</b>:<codeblock># eon delete-network-info --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --datacenter-name DC1 
 Successfully deleted network info of vCenter: BC9DED4E-1639-481D-B190-2B54A2BF5674</codeblock></p></li>
       </ul></section>
     <section>
@@ -475,15 +475,11 @@ Successfully deleted network info of vCenter: BC9DED4E-1639-481D-B190-2B54A2BF56
       </p>
     </section>
     <p>Using EON CLI you can perform the following functions:<ul id="ul_hbv_qtf_rt">
-        <li><xref href="esx_host_commissioning.dita#topic_nfp_xtf_rt">Adding a new ESX host to a
-            cluster which is already enabled as a compute resource </xref></li>
-        <li><xref href="enable_new_cluster_compute_resource.dita#topic_l5t_w5f_rt">Enabling a new
-            cluster as a compute resource</xref></li>
-        <li><xref href="remove_existing_cluster_compute_resource_pool.dita#topic_lfq_3wf_rt"
-            >Removing an existing cluster from the compute resource pool</xref></li>
-        <li><xref href="removing_esx_host_from_cluster.dita#topic_srg_d5h_rt">Removing an existing
-            ESX host from cluster</xref></li>
-        <li><xref href="logging.dita#topic_rq3_mxh_rt">Logging</xref></li>
+        <li><xref href="esx_host_commissioning.dita#topic_nfp_xtf_rt"/></li>
+        <li><xref href="enable_new_cluster_compute_resource.dita#topic_l5t_w5f_rt"/></li>
+        <li><xref href="remove_existing_cluster_compute_resource_pool.dita#topic_lfq_3wf_rt"/></li>
+        <li><xref href="removing_esx_host_from_cluster.dita#topic_srg_d5h_rt"/></li>
+        <li><xref href="logging.dita#topic_rq3_mxh_rt"/></li>
       </ul></p>
   </body>
 </topic>
