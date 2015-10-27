@@ -5,107 +5,6 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Input Model</title>
   <conbody>
     <section id="toc"><title>Table of Contents</title>
-      <!--
-      <sl>
-        <sli><xref href="#input_model/Intro"><i>1.0</i> Introduction</xref></sli>
-        <sli><xref href="#input_model/3.0_Concepts"><i>2.0</i> HP Helion OpenStack 2.0
-            Concepts</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/3.1_Cloud"><i>2.1</i>
-          Cloud</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/3.2_ControlPlanes"><i>2.2</i> Control
-            Planes</xref></sli>
-        <sli outputclass="listsubb"><xref href="#input_model/3.2.1_ControlPlanesAndRegions"
-              ><i>2.2.1</i> Control Planes and Regions</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/3.3_Services"><i>2.3</i>
-            Services</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/3.4_ServerRoles"><i>2.4</i> Server
-            Roles</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/3.5_DiskModel"><i>2.5</i> Disk
-            Model</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/3.6_Servers"><i>2.6</i>
-          Servers</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/3.7_ServerGroups"><i>2.7</i> Server
-            Groups</xref></sli>
-        <sli outputclass="listsubb"><xref href="#input_model/3.7.1_ServerGroupsAndFailureZones"
-              ><i>2.7.1</i> Server Groups and Failure Zones</xref></sli>
-        <sli outputclass="listsubb"><xref href="#input_model/3.7.2_ServerGroupsAndNetworks"
-              ><i>2.7.2</i> Server Groups and Networks</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/3.8_Networking"><i>2.8</i>
-            Networking</xref></sli>
-        <sli outputclass="listsubb"><xref href="#input_model/3.8.1_NetworkGroups"><i>2.8.1</i>
-            Network Groups</xref></sli>
-        <sli outputclass="listsubb"><xref href="#input_model/3.8.2_Networks"><i>2.8.2</i>
-            Networks</xref></sli>
-        <sli outputclass="listsubb"><xref href="#input_model/3.8.3_InterfaceModel"><i>2.8.3</i>
-            Interface Model</xref></sli>
-        <sli outputclass="listsubb"><xref href="#input_model/3.8.4_NICMapping"><i>2.8.4</i> NIC
-            Mapping</xref></sli>
-        <sli outputclass="listsubb"><i>2.8.5</i> Firewall Configuration</sli>
-        <sli><xref href="#input_model/4.0_ConfigurationObjects"><i>3.0</i> HP Helion OpenStack 2.0
-            Configuration Objects</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/4.1_Cloud"><i>3.1</i>
-          Cloud</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/4.2_ControlPlane"><i>3.2</i> Control
-            Plane</xref></sli>
-        <sli outputclass="listsubb"><xref href="#input_model/4.2.1_Clusters"><i>3.2.1</i>
-            Clusters</xref></sli>
-        <sli outputclass="listsubb"><xref href="#input_model/4.2.2_ResourceNodes"><i>3.2.2</i>
-            Resources</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/4.3_Servers"><i>3.3</i>
-          Servers</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/4.4_ServerGroups"><i>3.4</i> Server
-            Groups</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/4.5_ServerRoles"><i>3.5</i> Server
-            Roles</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/4.6_DiskModels"><i>3.6</i> Disk
-            Models</xref></sli>
-        <sli outputclass="listsubb"><xref href="#input_model/4.6.2_VolumeGroups"><i>3.6.1</i> Volume
-            Groups</xref></sli>
-        <sli outputclass="listsubb"><xref href="#input_model/4.6.1_DeviceGroups"><i>3.6.2</i> Device
-            Groups</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/4.7_InterfaceModels"><i>3.7</i>
-            Interface Models</xref></sli>
-        <sli outputclass="listsubb"><xref href="#input_model/4.7.1_BondData" type="p"><i>3.7.1</i>
-            Bond Data</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/4.8_NICMapping"><i>3.8</i> NIC
-            Mapping</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/4.9_NetworkGroups"><i>3.9</i> Network
-            Groups</xref></sli>
-        <sli outputclass="listsubb"><xref href="#input_model/4.9.1_NetworkTags"><i>3.9.1</i> Network
-            Tags</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/4.10_Networks"><i>3.10</i>
-            Networks</xref></sli>
-        <sli outputclass="listsuba"><i>3.11</i> Firewall Rules</sli>
-        <sli outputclass="listsubb"><i>3.11.1</i> Rule</sli>
-        <sli><xref href="#input_model/5.0_OtherTopics"><i>4.0</i> Other Topics</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/5.1_NameGeneration"><i>4.1</i> Name
-            Generation</xref></sli>
-        <sli outputclass="listsubb"><xref href="#input_model/5.1.1_Clusters"><i>4.1.1</i>
-            Clusters</xref></sli>
-        <sli outputclass="listsubb"><xref href="#input_model/5.1.2_ResourceNodes"><i>4.1.2</i>
-            Resource Nodes</xref></sli>
-        <sli outputclass="listsuba"><xref href="#input_model/5.2_PersistedData"><i>4.2</i> Persisted
-            Data</xref></sli>
-        <sli outputclass="listsubb"><xref href="#input_model/5.2.1_PersistedServerAllocations"
-              ><i>4.2.1</i> Persisted Server Allocations</xref></sli>
-        <sli outputclass="listsubb"><xref href="#input_model/5.2.1_PersistedAddressAllocations"
-              ><i>4.2.2</i> Persisted Address Allocations</xref></sli>
-        <sli outputclass="listsuba"><i>4.3</i> Server Allocation</sli>
-        <sli outputclass="listsuba"><i>4.4</i> Server Network Selection</sli>
-        <sli outputclass="listsuba"><i>4.5</i> Network Route Validation</sli>
-        <sli outputclass="listsuba"><i>4.6</i> Configuration Neutron Provider VLANs</sli>
-        <sli><xref href="#input_model/6.0_Examples"><i>5.0</i> Configuration Processor Information
-            Files</xref></sli>
-        <sli outputclass="listsuba"><i>5.1</i> Address_info.yml</sli>
-        <sli outputclass="listsuba"><i>5.2</i> Firewall_info.yml</sli>
-        <sli outputclass="listsuba"><i>5.3</i> Net_info.yml</sli>
-        <sli outputclass="listsuba"><i>5.4</i> Route_info.yml</sli>
-        <sli outputclass="listsuba"><i>5.5</i> Server_info.yml</sli>
-        <sli outputclass="listsuba"><i>5.6</i> Service_info.yml</sli>
-        <sli outputclass="listsuba"><i>5.7</i> Explain.txt</sli>
-        <sli outputclass="listsuba"><i>5.8</i> CloudDiagram.txt</sli>
-      </sl>
-      -->
       <ul>
         <li><xref href="#input_model/introduction">Introduction</xref></li>
         <li><xref href="#input_model/concepts">HP Helion OpenStack 2.0 Concepts</xref>
@@ -654,10 +553,11 @@
           <uicontrol>server</uicontrol>.</p>
     </section>
     <section id="nicmapping"><title>NIC Mapping</title>
-      <p>When a <uicontrol>server</uicontrol> has more than a single NIC, a
-          <uicontrol>nic-mapping</uicontrol> is required to unambiguously identify each individual
-        NIC. Interface enumeration (eth0, eth1, eth2, ...) is not a reliable mechanism, so we use
-        PCI bus enumeration instead.</p>
+      <p>When a <uicontrol>server</uicontrol> has more than a single physical network port, a
+          <uicontrol>nic-mapping</uicontrol> is required to unambiguously identify each port.
+        Standard Linux mapping of ports to interface names at the time of initial discovery (e.g.
+        eth0, eth1, eth2, ...) is not uniformly consister from server to server, so a mapping of PCI
+        bus address to interface name is instead.</p>
       <p>This level of abstraction will also allow network functions on SRIOV-capable network cards
         to be used for network connections and consumed by services in a future release.</p>
     </section>

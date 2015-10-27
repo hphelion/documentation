@@ -31,12 +31,12 @@
           <codeph>~/service.osrc</codeph> file on the deployer/lifecycle-manager node. You can do
         that with this command:</p>
       <codeblock>cat ~/service.osrc</codeblock>
+      <!-- 
       <note type="important">The credentials for your <codeph>admin</codeph> user account can be
         changed. See <xref href="../identity/identity_init.dita">Keystone Configuration</xref> for
         more details.</note>
+        -->
       <!-- TODO self-referential link here - should it go somewhere else -->
-      <p>For details on the use of the Operations Console, see <xref href="opsconsole_overview.dita"
-          >Operations Console Overview</xref></p>
     </section>
   </body>
 </topic>

@@ -2,7 +2,8 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="faq">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Frequently Asked Questions</title>
-  <body><!--Needs Edit-->
+  <body>
+    <!--Needs Edit-->
     <section id="Customization"><title>Customization</title>
       <p><b>What level of customization will be possible via modifying the configuration files and
           using them to deploy?</b></p>
@@ -11,18 +12,11 @@
     </section>
     <section>
       <title>How do I change my service passwords from the default?</title>
-      <p>By default the user name and password to administer the services (such as Horizon) are:
-        <codeblock>
-username: admin
-password: admin</codeblock></p>
-      <p>Service accounts are within default domain, so they are stored in MySQL.</p>
-      <p>The default password can be changed via the Keystone API, or by using the OpenStack command
-        line client using these commands on your deployer node after installation:
-        <codeblock>
-source ~/keystone.osrc
-openstack user password set -password &lt;one_password></codeblock></p>
-      <p>However, this password will also need to be updated in the respective service
-        configurations (for example, in <codeph>/etc/nova/nova.conf</codeph> file for Nova).</p>
+      <p>By default there is an Administrator user (username "admin") created during the
+        installation process. To retrieve the random password set you can use this command:</p>
+      <codeblock>source ~/service.osrc</codeblock>
+      <p>See <xref href="operations/accessing_horizon.dita">Accessing Horizon</xref> for more
+        details.</p>
     </section>
     <section id="Neutron">
       <title>Neutron Features</title>
