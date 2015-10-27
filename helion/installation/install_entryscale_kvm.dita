@@ -244,8 +244,9 @@ ansible-playbook -i hosts/localhost bm-reimage.yml [-e nodelist=node1,node2,node
           <codeph>netboot-enabled: True</codeph> is selected. The playbook pauses at the start to
         give you a chance to review the set of nodes that it is targeting and to confirm that it's
         correct.</p>
-      <p>You can use <codeph>sudo cobbler system find --netboot-enabled=1</codeph> which will list
-        all of your nodes with the <codeph>netboot-enabled: True</codeph> flag.</p>
+      <p>You can use the command below which will list all of your nodes with the
+          <codeph>netboot-enabled: True</codeph> flag set:</p>
+      <codeblock>sudo cobbler system find --netboot-enabled=1</codeblock>
     </section>
 
     <section id="config_processor"><title>Run the Configuration Processor</title>
