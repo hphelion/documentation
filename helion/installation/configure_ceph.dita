@@ -4,22 +4,12 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for Ceph Block Storage
     Backend</title>
   <body>
-    
     <p>This page describes how to configure your Ceph backend for the Helion Entry-scale with KVM
       Cloud model.</p>
-    <section>
-      <title>Prerequisites</title>
-      <ul>
-        <li>The Entry-scale KVM Cloud model should be deployed. For more details on the
-          installation refer to the <xref href="install_entryscale_kvm.dita#install_kvm">Entry-scale
-            with KVM installation</xref> instructions.</li>
-      </ul>
-      <note type="caution">The Ceph cluster expects the network group that will be used for
-        management network traffic within the cloud to be left to its default value i.e. MANAGEMENT.
-        Altering the name will lead to failures in the cloud deployment, therefore it should be
-        avoided.</note>
-    </section>
     <section id="notes"><title>Notes</title>
+      <p>The Ceph cluster expects the network group that will be used for management network traffic
+        within the cloud to be left to its default value i.e. MANAGEMENT. Altering the name will
+        lead to failures in the cloud deployment, therefore it should be avoided.</p>
       <p>You can deploy the Ceph monitor service on a dedicated resource. Ensure you modify your
         environment after installing the lifecycle-manager.</p>
       <p>For more details, refer to <xref
@@ -205,6 +195,8 @@
 git add -A
 git commit -m "&lt;commit message>"</codeblock></li>
         </ol></p>
+      <p>After your configuration files are setup, continue with the <xref
+          href="install_entryscale_kvm.dita">Entry-scale KVM Cloud installation</xref> steps.</p>
     </section>
     <section id="install_ceph"><title>Run Ceph Client Packages</title>
       <p>The Ceph Monitor service is deployed on the controller nodes and OSD disks are deployed as
