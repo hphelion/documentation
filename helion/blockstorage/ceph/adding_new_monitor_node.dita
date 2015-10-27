@@ -2,20 +2,20 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_zbc_pg4_rt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding a New Ceph Monitor Node</title>
-  <body><!--Needs Edit-->
-    <p>In HP Helion OpenStack 2.0, Ceph Monitor Node is installed on the Controller nodes by
+  <body>
+    <p>In HP Helion OpenStack 2.0, a Ceph monitor node is installed on the Controller nodes by
       default. A new monitor node cannot be added to an existing Ceph cluster, if Ceph is deployed
       with the default configuration. However, if monitor nodes are added on a dedicated resource
-      node then you can add a new monitor node.</p>
-    <p> If Monitor resource is not already defined, please refer the section <xref
-        href="defining_monitor_resource.dita#topic_owr_kf4_rt">Defining Monitor resource</xref> and
-      proceed further to add the new monitor node.</p>
-    <p><b>Procedure to add a new monitor node</b></p>
+      node, then you can add a new monitor node.</p>
+    <p>If a monitor resource is not already defined, you will need to first define one and then add
+      the new monitor node. For instructions, see <xref
+        href="defining_monitor_resource.dita#topic_owr_kf4_rt"/>.</p>
+    <p><b>To Add a New Monitor Node</b></p>
     <p>Perform the following procedure to add a new monitor node to an existing Ceph cluster:<ol
         id="ol_zsj_134_rt">
-        <li>Login to the deployer/lifecycle-manager node.</li>
-        <li>Edit <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> to define a new
-          monitor node as shown
+        <li>Login to the Deployer/lifecycle-manager node.</li>
+        <li>Edit the <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> file to define a
+          new monitor node as shown
             below:<codeblock>- id: mon4
   ip-addr: 192.168.10.11
   role: MON-ROLE
@@ -31,12 +31,13 @@
             <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "Added monitor node {node-id}"</codeblock><note>Replace
-            the {node-id} in the commit message with appropriate value (example: mon4).</note></li>
-        <li>Execute the following
+            the <codeph>{node-id}</codeph> in the commit message with appropriate value (for
+            example, <b>mon4</b>).</note></li>
+        <li>Run the following
           command:<codeblock>cd ~/helion/hos/ansible/
 ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
-        <li>Run the following command, which will reimage all the nodes using
-          PXE.<codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
+        <li>To reimage all the nodes using PXE, run the following
+          command:<codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
         <li>Run the configuration
           processor:<codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <li>Use the playbook below to create a deployment directory:
@@ -48,13 +49,13 @@ ansible-playbook -i hosts/verb_hosts osconfig-run.yml
 ansible-playbook -i hosts/verb_hosts ceph-deploy.yml</codeblock>
           </p></li>
       </ol></p>
-    <p>Therefore, the new monitor node is deployed in an existing ceph cluster.</p>
-    <p><b>Verify the newly added monitor node</b></p>
-    <p>From the deployer/lifecycle-manager node, execute the following
+    <p>The new monitor node is deployed in an existing Ceph cluster.</p>
+    <p><b>To Verify the Newly-Added Monitor Node</b></p>
+    <p>From the Deployer/lifecycle-manager node, run the following
         command:<codeblock>ceph --cluster ceph -f json quorum_status</codeblock><note>If the Ceph
         cluster name is different than the default (i.e. ceph), you need to modify the above command
         accordingly.</note></p>
-    <p>Observe that the newly added monitor's host name appears in the <b>quorum_names</b> section
-      of the output of above command.</p>
+    <p>The newly-added monitor's host name appears in the <codeph>quorum_names</codeph> section of
+      the output of above command.</p>
   </body>
 </topic>

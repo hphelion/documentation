@@ -2,11 +2,12 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ipm_gnt_rt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing Object Storage Daemon (OSD) Node </title>
-  <body><!--Needs Edit-->
-    <p>Perform the following steps to remove the OSD node:<ol id="ol_v3t_4nt_rt">
-        <li> Login to the deployer/lifecycle-manager node.</li>
+  <body>
+    <p>Perform the following steps to remove the object storage daemon (OSD) node:<ol
+        id="ol_v3t_4nt_rt">
+        <li> Login to the Deployer/lifecycle-manager node.</li>
         <li>Make a note of the OSD numbers on the OSD node to be removed. A sample of OSD node is as
-                        follows:<codeblock>$ ceph osd tree
+            follows:<codeblock>$ ceph osd tree
 # id    weight  type name       up/down reweight
 -1      6       root default
 -2      3               host padawan-ceph-ccp-ceph0003-mgmt
@@ -21,40 +22,39 @@
 2       1                       osd.2   up      1
 5       1                       osd.5   up      1
 8       1                       osd.8   up      1</codeblock><p>For
-                        example, to remove the OSD node
-                            <codeph>padawan-ceph-ccp-ceph0001-mgmt</codeph>, the OSD numbers 1, 4
-                        and 7 are relevant.</p></li>
-        <li>Stop the OSDs running on the specific host by executing the following command
-                        :<codeblock>cd ~/scratch/ansible/next/hos/ansible
+            example, to remove the OSD node <codeph>padawan-ceph-ccp-ceph0001-mgmt</codeph>, the OSD
+            numbers 1, 4, and 7 are relevant.</p></li>
+        <li>Run the following command to stop the OSDs running on the specific
+            host:<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts ceph-stop.yml --limit &lt;osd-node-to-remove></codeblock><note>Replace
-                        the string (<codeph>osd-node-to-remove</codeph>) in above command with the
-                        OSD host to be removed from cluster (for example:
-                            <codeph>stratushelion-ccp-ceph0001-mgmt </codeph>).</note></li>
-        <li> Execute the following command for each OSD number (obtained from step #2
-                        above):<codeblock>ceph osd out &lt;osd-number> --cluster &lt;ceph_cluster>
+            the string (<codeph>osd-node-to-remove</codeph>) in above command with the OSD host to
+            be removed from the cluster (for example,
+              <codeph>stratushelion-ccp-ceph0001-mgmt</codeph>).</note></li>
+        <li> Run the following command for each OSD number (obtained from step #2
+            above):<codeblock>ceph osd out &lt;osd-number> --cluster &lt;ceph_cluster>
 ceph auth del osd.&lt;osd-number> --cluster &lt;ceph_cluster>
 ceph osd crush remove osd.&lt;osd-number> --cluster &lt;ceph_cluster> 
 ceph osd rm &lt;osd-number> --cluster &lt;ceph_cluster></codeblock><note>Replace
-                        the string &lt;ceph_cluster> with the name of your Ceph cluster (default
-                        cluster name is <b>ceph</b>).</note></li>
-        <li>Run the following command to remove the OSD host from the Ceph CRUSH map
-                        :<codeblock>ceph osd crush remove &lt;host-name></codeblock><note> Replace
-                        the string &lt;host-name> in the above command.</note></li>
-        <li>Remove the section for the OSD host from
-                        <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> file.</li>
+            the string <codeph>&lt;ceph_cluster></codeph> with the name of your Ceph cluster
+            (default cluster name is <b>ceph</b>).</note></li>
+        <li>To remove the OSD host from the Ceph CRUSH map, run the following
+            command:<codeblock>ceph osd crush remove &lt;host-name></codeblock><note> Replace the
+            string <codeph>&lt;host-name></codeph> in the above command.</note></li>
+        <li>Remove the section for the OSD host from the
+            <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> file.</li>
         <li>Commit your
-          configuration<codeblock>cd ~/helion/hos/ansible
+          configuration:<codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "Remove OSD node &lt;host-name>"</codeblock></li>
         <li>Run the configuration
           processor:<codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <li>Use the playbook below to create a deployment directory:
-                        <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock><note>Replace
-                        the string &lt;host-name> in the above commit message with the actual host
-                        name (i.e. <codeph>padawan-ceph-ccp-ceph0001-mgmt</codeph> as mentioned in
-                        the above example).</note></li>
-        <li>Log in to the OSD node and un-mount the data and journal disks. Also remove the mount
-                    instructions for the same disks from the <i>/etc/fstab</i> file. <p> </p></li>
+            <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock><note>Replace
+            the string <codeph>&lt;host-name></codeph> in the above commit message with the actual
+            host name (e.g., <codeph>padawan-ceph-ccp-ceph0001-mgmt</codeph> as mentioned in the
+            above example).</note></li>
+        <li>Log in to the OSD node and un-mount the data and journal disks. Also, remove the mount
+          instructions for the same disks from the <i>/etc/fstab</i> file. <p> </p></li>
       </ol></p>
   </body>
 </topic>

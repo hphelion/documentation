@@ -2,15 +2,16 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_drm_rm5_kt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding an Object Storage Daemon (OSD) Node </title>
-  <body><!--Needs Edit-->
-    <p>The page describes the procedure to add a new OSD Node to an existing Ceph cluster.</p>
-    <p><b>Procedure to add a new OSD Node</b></p>
-    <p>Perform the following steps to add a new OSD Node to an existing Ceph cluster:<ol
+  <body>
+    <p>The page describes how to add a new object storage daemon (OSD) node to an existing Ceph
+      cluster.</p>
+    <p><b>To Add a New OSD Node</b></p>
+    <p>Perform the following steps to add a new OSD node to an existing Ceph cluster:<ol
         id="ol_v2t_xm5_kt">
-        <li>Login to the deployer/lifecycle-manager node.</li>
-        <li>Edit <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> to define a new OSD
-          node as shown
-            below:<codeblock>- id: osd4
+        <li>Login to the Deployer/lifecycle-manager node.</li>
+        <li>Edit the <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> file to define a
+          new OSD
+            node:<codeblock>- id: osd4
   ip-addr: 192.168.10.11
   role: OSD-ROLE
   server-group: RACK3
@@ -21,18 +22,18 @@
   ilo-user: admin</codeblock><note>Enter
             the appropriate values in the above sample as per your environment for the server being
             added.</note></li>
-      <li>Commit your configuration to the <xref href="../../installation/using_git.dita">local git
-          repo</xref>, as follows:
+        <li>Commit your configuration to the local Git repository (for instructions, see <xref
+            href="../../installation/using_git.dita"/>):
             <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "Added OSD node &lt;node-id>"</codeblock><note>Replace
             the &lt;node-id> in the commit message with appropriate value (example:
           con-004).</note></li>
-        <li>Execute the following
+        <li>Run the following
           command:<codeblock>cd ~/helion/hos/ansible/
 ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
-        <li>Run the following command, which will reimage all the nodes using
-          PXE.<codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
+        <li>Reimage all the nodes using
+          PXE:<codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
         <li>Run the configuration
           processor:<codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <li>Use the playbook below to create a deployment directory:
@@ -42,14 +43,14 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
 ansible-playbook -i hosts/verb_hosts guard-deployment.yml
 ansible-playbook -i hosts/verb_hosts osconfig-run.yml
 ansible-playbook -i hosts/verb_hosts ceph-deploy.yml</codeblock>
-          </p><p>Therefore, the new OSD node is deployed in an existing ceph
-              cluster.</p><p><b>Verify the newly added OSD node</b></p><p>From the
-            deployer/lifecycle-manager node, execute the following
-              command:<codeblock>$ceph --cluster ceph  osd tree</codeblock><note>If the Ceph cluster
-              name is different than the default (i.e. ceph), you need to modify the above command
-                accordingly.<p>When you execute the above command the hostname of the newly added
-                OSD must appear in the output, if the OSD node is successfully added to the existing
-                ceph cluster.</p></note></p></li>
+          </p><p>The new OSD node is deployed in an existing Ceph cluster.</p><p><b>To Verify the
+              Newly Added OSD Node</b></p><p>From the Deployer/lifecycle-manager node, run the
+            following command:<codeblock>$ceph --cluster ceph  osd tree</codeblock>
+                <note><p>If the Ceph
+              cluster name is different than the default (i.e. <b>ceph</b>), you need to modify the
+              above command accordingly.</p><p>When you run the above command, if the OSD node has been
+                successfully added to the existing Ceph cluster, the hostname of the newly added OSD
+                should appear in the output.</p></note></p></li>
       </ol></p>
   </body>
 </topic>
