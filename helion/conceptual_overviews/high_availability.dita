@@ -310,7 +310,7 @@
           Nodes after Initial Installation</xref>.</p>
     </section>
     
-    <section id="nova_availablility_zones">
+    <section id="nova_availability_zones">
       <title>Nova Availability Zones</title>
       <p>Nova host aggregates and  Nova availability zones can be used to segregate 
         Nova compute nodes across different failure zones.</p>
