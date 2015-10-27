@@ -6,8 +6,8 @@
   <body>
     <!--Needs Edit-->
     <section id="about">
-      <p>This page describes how to configure your VSA backend for the Helion Entry Scale Cloud with
-        KVM model.</p>
+      <p>This page describes how to configure your VSA backend for the Helion Entry-scale with KVM
+        Cloud model.</p>
     </section>
     <section id="prereq"><title>Prerequisites</title>
       <p><ul>
@@ -23,18 +23,21 @@
             generated as part of output of the Configuration Processor during installation. You need
             these IP address to discover deployed VSA servers and to create the storage
             clusters.</li>
-        </ul>The license for the StoreVirtual VSA license is bundled with HP Helion OpenStack and
-        comes with a free trial which allows a maximum limit of 50 TB per node. Hence the total
-        amount of the configured storage on an individual StoreVirtual node should not exceed 50 TB.
-        To extend the 50 TB per node limit, you can add nodes. A VSA cluster can support up to 16
-        nodes, which means configured storage on a VSA cluster can be as much as 800 TB.</p>
-      <note>A single VSA node can have a maximum of seven raw disks (excluding the operating system
-        disks) attached to it, which is defined in the disk input model for your VSA nodes. It is
-        expected that no more than seven disks are specified (including adoptive optimization disks)
-        per VSA node. For example, if you want to deploy VSA with two disks for adoptive
-        optimization then your disk input model should not specify more than five raw disks for data
-        and two raw disks for adoptive optimization. Exceeding the disk limit causes VSA deployment
-        failure.</note>
+        </ul>
+      </p></section>
+    <section id="notes"><title>Notes</title>
+      <p>The license for the StoreVirtual VSA license is bundled with HP Helion OpenStack and comes
+        with a free trial which allows a maximum limit of 50 TB per node. Hence the total amount of
+        the configured storage on an individual StoreVirtual node should not exceed 50 TB. To extend
+        the 50 TB per node limit, you can add nodes. A VSA cluster can support up to 16 nodes, which
+        means configured storage on a VSA cluster can be as much as 800 TB.</p>
+      <p><note>A single VSA node can have a maximum of seven raw disks (excluding the operating
+          system disks) attached to it, which is defined in the disk input model for your VSA nodes.
+          It is expected that no more than seven disks are specified (including adoptive
+          optimization disks) per VSA node. For example, if you want to deploy VSA with two disks
+          for adoptive optimization then your disk input model should not specify more than five raw
+          disks for data and two raw disks for adoptive optimization. Exceeding the disk limit
+          causes VSA deployment failure.</note></p>
       <p>You can deploy VSA with adoptive optimization (AO) or without. The deployment process for
         each of these options is similar, you just need to make a change in the disk input model.
         For more detailed information, refer to the <xref
@@ -202,21 +205,21 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
         lifecycle-manager node as follows:</p>
       <ol>
         <li>Log in to the lifecycle-manager node.</li>
-        <li>Make the following changes to the <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file:
-        <ol>
-        <li>Add your VSA backend to the <codeph>enabled_backends</codeph> section:
-          <codeblock># Configure the enabled backends
+        <li>Make the following changes to the
+            <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file: <ol>
+            <li>Add your VSA backend to the <codeph>enabled_backends</codeph> section:
+              <codeblock># Configure the enabled backends
 enabled_backends=vsa-1</codeblock></li>
-        <li>Enter the volume type you created earlier to the <codeph>[DEFAULT]</codeph> section with
-          the syntax below:
-          <codeblock>[DEFAULT]
+            <li>Enter the volume type you created earlier to the <codeph>[DEFAULT]</codeph> section
+              with the syntax below:
+              <codeblock>[DEFAULT]
 # Set the default volume type
 default_volume_type = &lt;your new volume type></codeblock></li>
-        <li>Uncomment the <codeph>StoreVirtual (VSA) cluster</codeph> section and fill the values as
-          per your cluster information. If you have more than one cluster, you will need to add
-          another similar section with its respective values. In the following example only one
-          cluster is added.
-          <codeblock>[vsa-1]
+            <li>Uncomment the <codeph>StoreVirtual (VSA) cluster</codeph> section and fill the
+              values as per your cluster information. If you have more than one cluster, you will
+              need to add another similar section with its respective values. In the following
+              example only one cluster is added.
+              <codeblock>[vsa-1]
 hplefthand_password: &lt;vsa-cluster-password>
 hplefthand_clustername: &lt;vsa-cluster-name>
 hplefthand_api_url: https://&lt;vsa-cluster-vip>:8081/lhos
@@ -225,81 +228,82 @@ hplefthand_iscsi_chap_enabled: false
 volume_backend_name: &lt;vsa-backend-name>
 volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
 hplefthand_debug: false</codeblock>
-            where:<table frame="all" rowsep="1" colsep="1" id="table_gc4_c5t_5t">
-            <tgroup cols="2">
-              <colspec colname="c1" colnum="1"/>
-              <colspec colname="c2" colnum="2"/>
-              <thead>
-                <row>
-                  <entry>Value</entry>
-                  <entry>Description</entry>
-                </row>
-              </thead>
-              <tbody>
-                <row>
-                  <entry>hplefthand_password</entry>
-                  <entry>Password entered during cluster creation in the CMC utility.</entry>
-                </row>
-                <row>
-                  <entry>hplefthand_clustername</entry>
-                  <entry>Name of the VSA cluster provided while creating a cluster in the CMC
-                    utility.</entry>
-                </row>
-                <row>
-                  <entry>hplefthand_api_url</entry>
-                  <entry>Virtual IP address of your VSA cluster, found in your
-                      <codeph>~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph>
-                    file.</entry>
-                </row>
-                <row>
-                  <entry>hplefthand_username</entry>
-                  <entry>Username given during cluster creation in the CMC utility.</entry>
-                </row>
-                <row>
-                  <entry>hplefthand_iscsi_chap_enabled</entry>
-                  <entry>If you set this option as <b>true</b> then the hosts will not be able to
-                    access the storage without the generated secrets. And if you set this option as
-                      <b>false</b> then no CHAP authentication is required for the ISCSI
-                    connection.</entry>
-                </row>
-                <row>
-                  <entry>volume_backend_name</entry>
-                  <entry>Name given to the VSA backend.</entry>
-                </row>
-                <row>
-                  <entry>volume_driver</entry>
-                  <entry>Cinder volume driver. Usually you will leave this at the default
-                    value.</entry>
-                </row>
-                <row>
-                  <entry>hplefthand_debug</entry>
-                  <entry>If you set this option as true then the cinder driver for the VSA will
-                    generate logging in debug mode; these logging entries can be found in
-                      <b>cinder-volume.log</b>.</entry>
-                </row>
-              </tbody>
-            </tgroup>
-          </table>
-          <p>If you have forgotten the cluster name or IP address after creating the cluster then you
-            can perform the following steps to retrieve them:</p>
-          <ol>
-            <li>Log in to CMC console using the <codeph>/opt/HP/StoreVirtual/UI/jre/bin/java -jar
-                /opt/HP/StoreVirtual/UI/UI.jar</codeph> command.</li>
-            <li>Log in to the Management group.</li>
-            <li>On the left side of the CMC console screen, click <b>mgmt</b>. It expands and you
-              will be able to see the cluster name.</li>
-            <li>Click the cluster name. The page on the right hand side will populate with the
-              cluster information.</li>
-            <li>Click <codeph>iSCSI</codeph> on the right hand side of the page. The virtual IP
-              address will be displayed in the tabular form. You can view your cluster ID here.</li>
-          </ol>
-          <p><note type="important">HP Helion OpenStack 2.0 supports VSA deployment for KVM only but
-              it can be used as pre-deployed (or out of the band deployed) Lefthand storage boxes or
-              VSA appliances (running on ESX/hyper-v/KVM hypervisor). It also supports Cinder
-              configuration of physical Lefthand storage device and VSA appliances. Depending upon
-              your setup, you will have to edit the below section if your StoreVirtual Storage array
-              is running LeftHand OS lower than version 11.
-              <codeblock>[&lt;unique-section-name>]
+                where:<table frame="all" rowsep="1" colsep="1" id="table_gc4_c5t_5t">
+                <tgroup cols="2">
+                  <colspec colname="c1" colnum="1"/>
+                  <colspec colname="c2" colnum="2"/>
+                  <thead>
+                    <row>
+                      <entry>Value</entry>
+                      <entry>Description</entry>
+                    </row>
+                  </thead>
+                  <tbody>
+                    <row>
+                      <entry>hplefthand_password</entry>
+                      <entry>Password entered during cluster creation in the CMC utility.</entry>
+                    </row>
+                    <row>
+                      <entry>hplefthand_clustername</entry>
+                      <entry>Name of the VSA cluster provided while creating a cluster in the CMC
+                        utility.</entry>
+                    </row>
+                    <row>
+                      <entry>hplefthand_api_url</entry>
+                      <entry>Virtual IP address of your VSA cluster, found in your
+                          <codeph>~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph>
+                        file.</entry>
+                    </row>
+                    <row>
+                      <entry>hplefthand_username</entry>
+                      <entry>Username given during cluster creation in the CMC utility.</entry>
+                    </row>
+                    <row>
+                      <entry>hplefthand_iscsi_chap_enabled</entry>
+                      <entry>If you set this option as <b>true</b> then the hosts will not be able
+                        to access the storage without the generated secrets. And if you set this
+                        option as <b>false</b> then no CHAP authentication is required for the ISCSI
+                        connection.</entry>
+                    </row>
+                    <row>
+                      <entry>volume_backend_name</entry>
+                      <entry>Name given to the VSA backend.</entry>
+                    </row>
+                    <row>
+                      <entry>volume_driver</entry>
+                      <entry>Cinder volume driver. Usually you will leave this at the default
+                        value.</entry>
+                    </row>
+                    <row>
+                      <entry>hplefthand_debug</entry>
+                      <entry>If you set this option as true then the cinder driver for the VSA will
+                        generate logging in debug mode; these logging entries can be found in
+                          <b>cinder-volume.log</b>.</entry>
+                    </row>
+                  </tbody>
+                </tgroup>
+              </table>
+              <p>If you have forgotten the cluster name or IP address after creating the cluster
+                then you can perform the following steps to retrieve them:</p>
+              <ol>
+                <li>Log in to CMC console using the <codeph>/opt/HP/StoreVirtual/UI/jre/bin/java
+                    -jar /opt/HP/StoreVirtual/UI/UI.jar</codeph> command.</li>
+                <li>Log in to the Management group.</li>
+                <li>On the left side of the CMC console screen, click <b>mgmt</b>. It expands and
+                  you will be able to see the cluster name.</li>
+                <li>Click the cluster name. The page on the right hand side will populate with the
+                  cluster information.</li>
+                <li>Click <codeph>iSCSI</codeph> on the right hand side of the page. The virtual IP
+                  address will be displayed in the tabular form. You can view your cluster ID
+                  here.</li>
+              </ol>
+              <p><note type="important">HP Helion OpenStack 2.0 supports VSA deployment for KVM only
+                  but it can be used as pre-deployed (or out of the band deployed) Lefthand storage
+                  boxes or VSA appliances (running on ESX/hyper-v/KVM hypervisor). It also supports
+                  Cinder configuration of physical Lefthand storage device and VSA appliances.
+                  Depending upon your setup, you will have to edit the below section if your
+                  StoreVirtual Storage array is running LeftHand OS lower than version 11.
+                  <codeblock>[&lt;unique-section-name>]
 volume_driver=cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
 volume_backend_name=lefthand-cliq
 san_ip=&lt;san-ip>
@@ -315,7 +319,7 @@ san_password=&lt;san_password>
 san_ssh_port=16022
 san_clustername=&lt;vsa-cluster-name>
 volume_backend_name: &lt;vsa-backend-name></codeblock></note></p></li>
-        </ol></li>
+          </ol></li>
         <li>Commit your configuration to a <xref href="using_git.dita">local repository</xref>:
             <codeblock>cd ~/helion/hos/ansible
 git add -A
