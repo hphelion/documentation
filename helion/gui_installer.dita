@@ -153,6 +153,15 @@
 sudo systemctl start dayzero.service</codeblock>
       </note>
     </section>
+<section><title>FInal Steps</title>
 
+<ul><li>The public Horizon Dashboard connection is over TLS, thus please use HTTPS:// to navigate to
+          Horizon with the IP address the installer presents once install is complete.</li>
+<li><xref href="installation/configure_ceph.dita#config_ceph">Visit the Ceph configuration page for
+            Ceph post-install steps</xref>.</li>
+
+</ul>
+
+</section>
   </body>
 </topic>

@@ -1012,14 +1012,6 @@ ansible-playbook -i hosts/verb_hosts ops-console-start.yml</codeblock></entry>
               <entry>Process crashed.</entry>
               <entry>Restart process on affected node. Review logs.</entry>
             </row>
-            <row>
-              <entry>RabbitMQ Queue Depth</entry>
-              <entry>Alarms when the depth of the message queue is high.</entry>
-              <entry>System load or a slow/failed consumer.</entry>
-              <entry>Look for high load in the system. This alarm can fire for multiple queues and
-                multiple machines. Which ones it fired on can indicate the cause. If only a single
-                queue is slowing, the cause could be that the consumer is down.</entry>
-            </row>
           </tbody>
         </tgroup>
       </table>

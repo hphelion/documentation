@@ -10,7 +10,7 @@
     <section>
       <title>Prerequisites</title>
       <ul>
-        <li>The Entry-scale KVM with VSA cloud model should be deployed. For more details on the
+        <li>The Entry-scale KVM Cloud model should be deployed. For more details on the
           installation refer to the <xref href="install_entryscale_kvm.dita#install_kvm">Entry-scale
             with KVM installation</xref> instructions.</li>
       </ul>
