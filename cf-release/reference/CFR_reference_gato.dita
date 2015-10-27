@@ -133,46 +133,23 @@
                 options]</varname>
               <varname>[arguments...]</varname></filepath></dt>
           <dd>Stop or restart the <varname>&lt;role></varname> container. The available
-              <varname>&lt;role></varname> containers are:<table frame="none" rowsep="0" colsep="0"
-              id="table_kg2_qrz_5t">
-              <tgroup cols="3">
-                <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-                <colspec colname="c2" colnum="2" colwidth="1.0*"/>
-                <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-                <thead/>
-                <tbody>
-                  <row>
-                    <entry>
-                      <ul id="ul_y3t_nrz_5t">
-                        <li>uaa</li>
-                        <li>stats</li>
-                        <li>runner</li>
-                        <li>router</li>
-                        <li>postgres</li>
-                      </ul>
-                    </entry>
-                    <entry>
-                      <ul id="ul_h4w_qrz_5t">
-                        <li>nats</li>
-                        <li>loggregator_trafficcontroller</li>
-                        <li>hm9000</li>
-                        <li>ha_proxy</li>
-                        <li>etcd</li>
-                      </ul>
-                    </entry>
-                    <entry>
-                      <ul id="ul_tts_5qz_5t">
-                        <li>doppler</li>
-                        <li>consul</li>
-                        <li>clock_global</li>
-                        <li>api_worker</li>
-                        <li>api</li>
-                      </ul>
-                    </entry>
-                  </row>
-                </tbody>
-              </tgroup>
-            </table><dl>
+              <varname>&lt;role></varname> containers are: <ul id="ul_y3t_nrz_5t">
+              <li>uaa</li>
+              <li>stats</li>
+              <li>runner</li>
+              <li>router</li>
+              <li>postgres</li>
+              <li>nats</li>
+              <li>loggregator_trafficcontroller</li>
+              <li>hm9000</li>
+              <li>ha_proxy</li>
+              <li>etcd</li>
+              <li>doppler</li>
+              <li>consul</li>
+              <li>clock_global</li>
+              <li>api_worker</li>
+              <li>api</li>
+            </ul><dl>
               <dlentry>
                 <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
                 <dd>Set the Docker server endpoint. Schemes and port number are required. Supported
