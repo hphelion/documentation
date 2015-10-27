@@ -205,6 +205,14 @@
 monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
       <p>This is due to an issue where the monasca-agent is attempting to authenticate when it's
         token has expired. These can be ignored.</p>
+      <p><b>Issue: The 'Cinderlm diagnostics monitor' alarm alerts with an 'UNDETERMINED'
+        state</b></p>
+      <p>This alert is not always reported but may occur after the system has been running for some
+        time.</p>
+      <p>Check if any other Cinder related alarms are alerting. If no other other Cinder related
+        alarms are alerting then this alert for the Cinderlm diagnostics monitor alarm can be
+        ignored. If other Cinder related alarms are alerting then follow the mitigation steps
+        described in the Service Alarm Definitions section.</p>
       <p><b>Operations Console (Ops Console)</b></p> The Operations Console has the following
       limitations (listed below by menu option in the console): <ul id="ul_wv1_d45_tt">
         <li>Dashboard <ul id="ul_s2b_d45_tt">
