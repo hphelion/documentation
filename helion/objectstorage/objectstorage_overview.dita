@@ -42,12 +42,13 @@
     <!--<section><title>Installation</title></section><section><p>Swift is installed automatically, if your environment meet the basic hardware requirement required for installing Swift. Please refer to <xref href="../supportedconfigs.dita#topic_ckw_kbc_ws">Supported Configuration</xref> for hardware requirement. </p></section>-->
     <p>You can implement the input model and perform the following Swift tasks: <ul
         id="ul_vsp_33r_qt">
-        <li><xref href="#modify-input-model" format="dita">Modifying Example Configurations for
-            Object Storage</xref><ul id="ul_fc4_j3r_qt">
+        <li><xref href="input_cloud_model.dita#modify-input-model">Modifying Example Configurations
+            for Object Storage</xref><ul id="ul_fc4_j3r_qt">
             <li><xref href="allocate_pac.dita"/></li>
             <li><xref href="allocating_server.dita"/></li>
             <li><xref href="creating_roles_swift_nodes.dita#topic_uh2_td1_kt"/></li>
-            <li><xref href="allocating_network.dita#topic_pcj_hzv_dt">Allocating Network Traffic</xref></li>
+            <li><xref href="allocating_network.dita#topic_pcj_hzv_dt">Allocating Network
+                Traffic</xref></li>
           </ul></li>
       </ul><ul id="ul_e34_l3r_qt">
         <li><xref href="allocating_disk_drives.dita#allocating-disk-drives">Allocating Disk

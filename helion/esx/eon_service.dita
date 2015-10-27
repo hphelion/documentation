@@ -13,9 +13,8 @@
     <p>Moreover, EON is not installed by default. To install EON service, you must uncomment
         <systemoutput>eon-deploy.yml</systemoutput> file at
         <systemoutput>~/helion/hos/ansible/hlm-deploy.yml</systemoutput> in the deployer node. For
-      more details, refer to <xref
-        href="../../helion/installation/install_entryscale_esx.dita#install_esx/Prepare-and-Deploy-Cloud-Controllers"
-        >ESX installation</xref>.</p>
+      more details, refer to <xref href="../installation/install_entryscale_esx.dita#install_esx"
+        >ESX installation.</xref></p>
     <section>
       <title><b>Architecture</b></title>
       <p>EON is installed on the master control plane node and the Eon CLI is installed on the HLM
