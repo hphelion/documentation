@@ -3,20 +3,25 @@
 <topic id="creating_multiple_vsa_clusters">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating Multiple VSA Clusters</title>
   <body><!--Needs Edit-->
-    <p>The inputYou can create multiple VSA clusters of same or different type by specifying the
-      configuration in the cloud model. <note type="tip">The term <b>add</b> and <b>update</b> in
-        the document means editing the respective YAML files to add or update the
-            configurations/values.<p><b>Prerequisites</b></p><p>You must have minimum three nodes
-          per VSA cluster.</p></note></p>
+    <p>The HPE Helion OpenStack input model comes with one cluster and three VSA nodes. This is the
+      default configuration available in the input model. But the input models allows you to create
+      multiple VSA clusters of same or different type by modifying the YAML file. </p>
+    <p>
+      <note type="tip">The term <b>add</b> and <b>update</b> in the document means editing the
+        respective YAML files to add or update the
+          configurations/values.<p><b>Prerequisites</b></p><p>You must have minimum three nodes per
+          VSA cluster.</p></note>
+    </p>
     <section>
       <title>Cloud Configuration Changes to Create More Than One Cluster </title>
-      <p>You must edit the YAML files to create more than one cluster. In this cloud configuration,
-        you are modifying the YAML files for a same set of disk.</p>
+      <p>In this cloud configuration, you are modifying the YAML files for a same set of disk. </p>
       <p>
         <ol id="ol_szq_ltq_jt">
           <li>Add new nodes in <codeph>servers.yml</codeph> file with unique name and
-              <codeph>node_id</codeph> for each cluster. <p>Example: The following
-                <codeph>servers.yml</codeph> file list six nodes for two
+              <codeph>node_id</codeph> for each cluster. <p>Example: In the following example we are
+              adding one more cluster. Similarly you can keep adding the cluster based on your
+              requirement.  </p><p>The following <codeph>servers.yml</codeph> file list six nodes
+              for two
             clusters.</p><codeblock>- id: vsa1
       ip-addr: 192.168.61.15
       role: VSA-ROLE
@@ -48,7 +53,7 @@
       mac-addr: 5C:B9:01:78:2D:00
 
 - id: vsa4
-      ip-addr: 192.168.62.15
+      ip-addr: 192.168.62.18
       role: VSA-ROLE-1
       server-group: RACK1
       nic-mapping: HP-BL460c-4PORT
@@ -58,7 +63,7 @@
       mac-addr: 5C:B9:01:78:8C:B0
 
     - id: vsa5
-      ip-addr: 192.168.63.16
+      ip-addr: 192.168.63.19
       role: VSA-ROLE-1
       server-group: RACK2
       nic-mapping: HP-BL460c-4PORT
@@ -68,7 +73,7 @@
       mac-addr: 5C:B9:01:78:0E:30
 
     - id: vsa6
-      ip-addr: 192.168.64.17
+      ip-addr: 192.168.64.20
       role: VSA-ROLE-1
       server-group: RACK3
       nic-mapping: HP-BL460c-4PORT
@@ -77,40 +82,34 @@
       ilo-user: Administrator
       mac-addr: 5C:B9:01:78:2D:00
 </codeblock></li>
-          <li>Add new resource in <codeph>control_plane.yml</codeph> file with name,
+          <li>Add a new resource in <codeph>control_plane.yml</codeph> file with name,
             resource-prefix, and server-role. <p>Example: The following
                 <codeph>control_plane.yml</codeph> file contains the information of the newly added
               resource
-              nodes.</p><codeblock>
----
-  product:
-    version: 2
-  
-      resources:
-        - name: vsa
-          resource-prefix: vsa
-          server-role: ROLE-VSA
-          allocation-policy: strict
-          min-count: 0
-          service-components:
-            - ntp-client
-            - vsa
+              nodes.</p><codeblock>resources:
+     - name: vsa
+       resource-prefix: vsa
+       server-role: ROLE-VSA
+       allocation-policy: strict
+       min-count: 0
+       service-components:
+          - ntp-client
+          - vsa
 
-
-        - name: vsa1
-          resource-prefix: vsa1
-          server-role: ROLE-VSA-1
-          allocation-policy: strict
-          min-count: 0
-          service-components:
-            - ntp-client
-            - vsa</codeblock><p>The
+      - name: vsa1
+        resource-prefix: vsa1
+        server-role: ROLE-VSA-1
+        allocation-policy: strict
+        min-count: 0
+        service-components:
+           - ntp-client
+           - vsa</codeblock><p>The
               control plane have the following fields:</p><p>
               <simpletable>
                 <strow>
                   <stentry><codeph>name</codeph></stentry>
-                  <stentry>This is a name assigned for the cluster. In the above example
-                      <b>vsacluster1</b> and <b>vsacluster2</b>.</stentry>
+                  <stentry>This is a name assigned for the cluster. In the above example <b>vsa</b>
+                    and <b>vsa1</b>.</stentry>
                 </strow>
                 <strow>
                   <stentry><codeph>resource-prefix</codeph></stentry>
@@ -118,17 +117,13 @@
                 </strow>
                 <strow>
                   <stentry><codeph>server-role</codeph></stentry>
-                  <stentry>Role assigned to that cluster.</stentry>
+                  <stentry>Role must be unique for each cluster.</stentry>
                 </strow>
               </simpletable>
             </p></li>
           <li>Update <codeph>server_roles.yml</codeph> with new VSA nodes.<p>Example: In the
               following <codeph>server_roles.yml</codeph> file new VSA nodes are added/updated.
-              <codeblock>---
-  product:
-    version: 2
-
-  server-roles:
+              <codeblock>server-roles:
 
     - name: ROLE-VSA
       interface-model: INTERFACE_SET_VSA
@@ -141,14 +136,14 @@
               <simpletable id="simpletable_ofj_mgz_jt">
                 <strow>
                   <stentry><codeph>name</codeph></stentry>
-                  <stentry>This is a name assigned for the cluster. In the above example
-                      <b>vsacluster1</b> and <b>vsacluster2</b>.</stentry>
+                  <stentry>This is a name assigned for the cluster. In the above example <b>vsa</b>
+                    and <b>vsa1</b>.</stentry>
                 </strow>
                 <strow>
                   <stentry><codeph>disk-model</codeph></stentry>
                   <stentry>The type of disk available for the clusters. It can be same set of disk
                     or different set of disks. In the above example only one set of disk model is
-                    shown ,i.e., <b>DISK_SET_VSA</b>.</stentry>
+                    shown (for example:<b>DISK_SET_VSA</b>).</stentry>
                 </strow>
               </simpletable>
             </p></li>
@@ -161,16 +156,17 @@
         you are adding or updating the YAML files for a different set of disks, i.e., one with
         adoptive optimization (AO) enabled and another without adoptive optimization.</p>
       <ol id="ol_ugh_z2x_jt">
-        <li>Add new nodes in <codeph>severs.yml</codeph> with unique name .</li>
-        <li>Add new resource node under  <b>resources</b> in <codeph>control_plane.yml</codeph> with
-          a unique name, resource-prefix, and server-role.</li>
+        <li>Add new nodes in <codeph>severs.yml</codeph> with a unique name .</li>
+        <li>Add a new resource node under  <b>resources</b> in <codeph>control_plane.yml</codeph>
+          with  a unique name, resource-prefix, and server-role.</li>
         <li>Modify the <codeph>disk_set</codeph> for AO and without AO. Ensure that you use
-          different files and different <codeph>disk_set</codeph>.
-            <note><?oxy_custom_start type="oxy_content_highlight" color="140,255,140"?>In the
-            example inout model you will find only <codeph>disks_vsa.yml</codeph> file, which
-            contains the information for both AO and without AO. You must create a separate YAML
-            file and enter the configuration information of AO in that file. for creating  non ao
-            disk eg-link<?oxy_custom_end?></note></li>
+          different files and different <codeph>disk_set</codeph>. <note>In the HPE Helion OpenStack
+            input model you will find only <codeph>disks_vsa.yml</codeph> file, which contains the
+            information for both AO and without AO. You must create a separate YAML file and enter
+            the configuration information of AO in that file. For creating  non AO disk, refer to
+              <xref
+              href="../../installation/configure_vsa.dita#config_vsa/deploy-vsa-with-ao-without-ao"
+            />.</note></li>
         <li>Update <codeph>server_roles.yml</codeph> with new VSA nodes and appropriate
             <codeph>disk_set</codeph> used for that node.<p>Example: In the following
               <codeph>servers_roles.yml</codeph> file you can see both AO and without AO assigned
