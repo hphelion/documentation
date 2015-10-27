@@ -3,15 +3,15 @@
 <topic id="topic_icq_hvc_5t">
   <title>HP Helion OpenStack&#174; 2.0: Ceilometer Metering APIs</title>
   <body>
-    <section id="pipeline"><title>Separate pipeline.yml for Ceilometer Post Sample API</title> Post
+    <section id="pipeline"><title>Separate pipeline.yml for Ceilometer Post Samples API</title> Post
       Sample API is disabled by default in HOS CM 2.0 and its configured with a pipeline
       configuration different than the agents. The api pipeline has no meters enabled, so it needs
-      to be configured with meters when the Post sample API is enabled. Exercise caution when adding
-      meters to the API pipeline. Ensure that only those meters are added to this pipeline which are
-      already present in the notification agent and the central agent pipeline. <p>Ceilometer API
-        (ceilometer-api) pipeline.yml is located at
+      to be configured with meters when the Post Samples API is enabled. Exercise caution when
+      adding meters to the API pipeline. Ensure that only those meters are added to this pipeline
+      which are already present in the notification agent and the central agent pipeline.
+        <p>Ceilometer API (ceilometer-api) pipeline.yml is located at
           /<b>opt/stack/service/ceilometer-api/etc/pipeline-api.yml</b></p> Here is a sample of the
-      api pipeline:
+      API pipeline:
       <codeblock>---
 sources:
     - name: meter_source
@@ -130,7 +130,7 @@ sinks:
     <section id="disabled"><title>Disabled APIs</title> The Ceilometer metering APIs disabled in
       this release are: <ul>
         <li>Ceilometer Alarms API</li>
-        <li>Post Meters API</li>
+        <li>Post Samples API</li>
         <li>Query Sample API</li>
       </ul> They are disabled via a custom rule, hp_disabled_rule:not_implemented, which is added to
       each of those APIs in Ceilometer's policy.json. (<b>/etc/ceilometer/policy.json</b> on
@@ -168,7 +168,7 @@ sinks:
         <li>POST /v2/query/alarms/history</li></ul>
       In addition, these APIs are disabled:
       <ul>
-        <li>Post Meters API: POST /v2/meters/(meter_name)</li>
+        <li>Post Sampes API: POST /v2/meters/(meter_name)</li>
         <li>Query Sample API: POST /v2/query/samples</li>
       </ul>
     </section>

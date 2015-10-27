@@ -180,7 +180,7 @@ sinks:
         <li>storage.objects.size </li>
         <li>storage.objects.containers</li>
       </ul> Here is an example of <b>pipeline.yml </b>in which Swift polling is set to occur hourly.
-      <codeblock>---
+        <codeblock>---
       sources:
       - name: swift_source
       interval: 3600
@@ -196,7 +196,12 @@ sinks:
       - name: meter_sink
       transformers:
       publishers:
-      - notifier://</codeblock></section>
+      - notifier://</codeblock><p>With
+        this configuration above, we did not enable polling of container based meters and we only
+        collect 3 messages for any given tenant, one for each meter listed in the configuration
+        files. Since we have 3 messages only per tenant, it doesn't create a heavy load on the MySQL
+        database as it would have if container-based meters were enabled. Hence, other APIs doesn't
+        get hit because of this data collection configuration. </p></section>
    
    
    
