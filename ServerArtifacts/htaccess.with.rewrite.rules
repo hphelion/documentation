@@ -7,7 +7,7 @@ Options +FollowSymLinks
 RewriteEngine on
 #
 #
-RewriteRule ^permalink/helion-openstack/2.0/identity/ identity_ldap.html?$ #helion/identity/identity_ldap.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/identity/identity_ldap.html?$ #helion/identity/identity_ldap.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/monasca?$ #helion/operations/monitoring_service.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/administration/configure_monitoring.html?$ #helion/operations/opsconsole_overview.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/bare_installation_esx?$ #helion/installation/install_entryscale_esx.html [NE,R=301,L]
