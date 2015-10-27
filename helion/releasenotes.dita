@@ -214,8 +214,8 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
               what timezone is in the settings.</li>
             <li>The New Alarms section will only display alarms that have a service dimension
               defined.</li>
-            <li>Platform Services (HDP Summary) alarm panels are not yet implemented but appear in
-              the menu and thus will not populate if selected.</li>
+            <li>Platform Services (HDP Summary) alarm panels will only contain data if the Helion
+              Development Platform services are installed.</li>
           </ul>
         </li>
         <li>Logging Dashboard <ul id="ul_jfb_d45_tt">
@@ -241,7 +241,8 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
               addition to the "service=block-storage" and "service=object-storage" ones.</li>
           </ul></li>
         <li>HDP - Alarm Summary <ul id="ul_h3b_d45_tt">
-            <li>This section is not implemented in Beta 2</li>
+            <li>This section will only contain data if the Helion Development Platform services are
+              installed.</li>
           </ul></li>
         <li>Masthead Items <ul id="ul_v3b_d45_tt">
             <li>The Help and EULA links will not work properly. You can view the Help files here:
