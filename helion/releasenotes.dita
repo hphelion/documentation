@@ -63,8 +63,8 @@
       <p>See: <xref href="blockstorage/blockstorage_overview.dita">Cinder Overview</xref> for more
         details</p>
       <p><b>Neutron Advanced Network Services</b></p>
-      <p>We have implemented networking extensions for load balancing, firewalls and VPN's. Here is a
-        description of each of these: <ul>
+      <p>We have implemented networking extensions for load balancing, firewalls and VPN's. Here is
+        a description of each of these: <ul>
           <li>
             <p>LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a load
               balancing feature set. HP Helion OpenStack 2.0 comes with LBaaS v2 which uses an
@@ -483,11 +483,8 @@ Oct  7 12:49:09 hlm kernel: [31181.133118] RIP: 0010:[&lt;ffffffff81514f5b>]  [&
       associated stack from the softlockup will show the instruction point either holding or
       attempting to acquire a spinlock. After all the LUNs have successfully detached and the
       devices have been flushed, the messages will subside. It is recommended that you include a
-      delay when detaching multiple LUNs to avoid the softlockup and RCU stall messages.
-       
-    
-    </section>
-    
+      delay when detaching multiple LUNs to avoid the softlockup and RCU stall messages. </section>
+
     <section><title>Horizon throws an error when Nova compute is not present</title> On Swift-only
       deployments, that is, clouds not running the Nova compute service, Horizon displays the error
       "Invalid Service Catalog service: compute." To avoid this error, you may alter the default
@@ -501,6 +498,20 @@ Oct  7 12:49:09 hlm kernel: [31181.133118] RIP: 0010:[&lt;ffffffff81514f5b>]  [&
       controller): <codeblock>sudo service apache2 reload</codeblock> These steps will need to be
       performed after reinstall or upgrade. </section>
 
+    <section><title>Error: Failed to consume message from queue</title> If RabbitMQ or QPID is
+      chosen as the messaging service backend, OpenStack services might display an error-level log
+      message when an application exits, stating: “Failed to consume message from queue.” Since this
+      log mesage is benign and since the fix depends on other changes including new features, any
+      attempt to fix the issue will cause instability. For these reasons, the OpenStack community
+      has decided not to backport the fix from stable/liberty into stable/kilo release.<p> The
+        solution is to ignore the following error message in the log for both Nova and Ceilometer:
+        <codeblock>(oslo_messaging._drivers.impl_rabbit): 2015-08-20 01:18:21,280 ERROR impl_rabbit _error_callback Failed 
+      to consume message from queue:(amqp): 2015-08-20 01:18:21,282 DEBUG channel _do_close Closed channel #1</codeblock></p>
+    </section>
+    <section><title>In the Cinder CLI no more than 1000 Cinder volumes can be displayed</title>Due
+      to a known issue with the version of the OpenStack python-cinderclient in HP Helion OpenStack
+      2.0 (1.1.3), the maximum number of volumes that can be displayed is 1000. The fixed client is
+      1.3.1. The workaround is to use python-cinderclient 1.3.1. </section>
     <section id="CoreFeatures">
       <title>Features in HP Helion OpenStack 2.0</title>
       <!-- 
