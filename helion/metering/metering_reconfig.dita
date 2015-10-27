@@ -4,7 +4,7 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Metering Service Config and Upgrade</title>
   <body>
 
-    <section id="deploy"><title>Deployment</title> Helion OpenStack v2.0 automatically deploys
+    <section id="deploy"><title>Deployment</title> HP Helion OpenStack v2.0 automatically deploys
       Ceilometer to use the shared MySQL database along with other OpenStack services such as
       Keystone. Ceilometer is configured to use a common MySQL database and deployed on the same
       control plane nodes along with other OpenStack services such as Keystone, Nova, Neutron,
@@ -48,8 +48,8 @@
 
 
     <section id="softlink"><title>Add softlink for config file</title> Next, create/add a softlink
-      for the ceilometer_modwsgi.conf in the /etc/apache2/sites-enabled folder. Add softlink to
-      celiometer.conf
+      for the <b>ceilometer_modwsgi.conf</b> in the<b> /etc/apache2/sites-enabled</b> folder. Add
+      softlink to celiometer.conf
       <codeblock>ln -s /etc/apache2/sites-available/ceilometer_modwsgi.conf /etc/apache2/sites-enabled</codeblock>
       or alternatively you can run <codeblock>a2ensite ceilometer_modwsgi.conf  </codeblock>
     </section>
