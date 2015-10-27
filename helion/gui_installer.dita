@@ -20,7 +20,8 @@
         cloud configuration) and can and must edit the underlying example to reflect your
         environment.</p> However, the full range of customizations is not possible via the GUI as
       some configuration items are not exposed. Below is the list of what can and cannot be changed: </section>
-    <section><b>Changes to the following items may be made:</b><ul id="ul_hsd_bym_tt">
+    <section><b>Changes to the following items may be made:</b>
+      <ul id="ul_hsd_bym_tt">
         <li>servers (including Linux for HP Helion  installation configuration) </li>
         <li>networks </li>
         <li>disk models </li>
@@ -29,7 +30,8 @@
         <li>NTP servers (cloudConfig.yml) </li>
         <li>tags in network groups</li>
       </ul>
-      <b>Changes to the following items cannot be made: </b><ul id="ul_b5d_bym_tt">
+      <b>Changes to the following items cannot be made: </b>
+      <ul id="ul_b5d_bym_tt">
         <li>server groups</li>
         <li>server roles</li>
         <li>network groups</li>
@@ -59,12 +61,12 @@
         <li>Before you use the GUI to install your cloud, you may install the operating system, HP
           Linux for HP Helion OpenStack, on your nodes (servers) based on your hypervisor, if you
           prefer. Otherwise the installer will install it for you. The option is available in the
-          GUI. <!--  TODO this doesn't make sense -->If you deci You must do so by following the appropriate installation instructions. <ul>
+          GUI. <!--  TODO this doesn't make sense -->If you decide to install the operating system yourself,you must do so by 
+          following the appropriate installation instructions. </li>
             <!-- TDOD Fix link for KVM -->
-            <li><xref href="gui_install_on_kvm.dita">KVM</xref></li>
-            <li><xref href="installation/install_entryscale_esx.dita#install_esx/prereqs"
-                >ESX</xref></li>
-          </ul> For ESX installations, modify  <codeph>~/helion/hos/ansible/hlm-deploy.yml</codeph> to uncomment
+            
+          
+          <li> For ESX installations, modify  <codeph>~/helion/hos/ansible/hlm-deploy.yml</codeph> to uncomment
           the line containing eon-deploy.yml. You must then comment out the line containing
           ceph-deploy.yml, vsa-deploy.yml, and cmc-deploy.yml. Then if you need to, follow the
           instructions in <xref
