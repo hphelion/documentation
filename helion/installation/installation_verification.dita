@@ -27,29 +27,29 @@
     <section id="create_volumetype">
       <title>Create a Volume Type for your Volume Backend</title>
       <p id="creating_volumetype">If you haven't done so already, perform the following steps to
-        create a volume type using the Horizon GUI: <ol>
+        create a volume type using the Horizon GUI: <ol id="ol_k5n_5xv_5t">
           <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
               >Accessing Horizon</xref> for details.</li>
           <li>Ensure that you are scoped to your <b>admin</b> Project. Then under the <b>Admin</b>
             menu in the navigation pane, click on <b>Volumes</b> under the <b>System</b> subheading.
-                <p><image href="../../media/vsa/createvoltype1.png"/></p></li>
+                <p><image href="../../media/vsa/createvoltype1.png" id="image_avn_5xv_5t"/></p></li>
           <li>Select the <b>Volume Types</b> tab and then click the <b>Create Volume Type</b> button
-            to display a dialog box. <p><image href="../../media/vsa/createvoltype2.png"/></p>
+            to display a dialog box. <p><image href="../../media/vsa/createvoltype2.png"
+                id="image_qvn_5xv_5t"/></p>
           </li>
           <li>Enter a unique name for the volume type and then click the <b>Create Volume Type</b>
             button to complete the action. <p><image href="../../media/vsa/createvoltype2.png"
-            /></p></li>
+                id="image_rvn_5xv_5t"/></p></li>
         </ol></p>
       <p>The newly created volume type will be displayed in the <b>Volume Types</b> list confirming
         it's creation.</p>
-      <p><b>Applicable only for VSA</b></p>
-      <p>VSA supports volumes creation with varying attributes like thin provisioning enable, raid
-        type, ao enabled volume etc. All these attributes can be specified using extra spec of
-        volume type. Admin is expected to define appropriate extra spec for VSA volume type as per
-        the guidelines provided at <xref
-          href="http://docs.openstack.org/kilo/config-reference/content/hp-lefthand-supported-ops-rest.html"
-          format="html" scope="external"/>.</p>
     </section>
+    <section><b>Applicable only for VSA</b><p>VSA supports volumes creation with varying attributes
+        like thin provisioning enable, raid type, ao enabled volume etc. All these attributes can be
+        specified using extra spec of volume type. Admin is expected to define appropriate extra
+        spec for VSA volume type as per the guidelines provided at <xref
+          href="http://docs.openstack.org/kilo/config-reference/content/hp-lefthand-supported-ops-rest.html"
+          format="html" scope="external"/>.</p></section>
     <section id="extra-spec"><b>Extra Specifications Options</b> (<b>Applicable only for
         VSA</b>)<p>The following Cinder Volume Type extra-specs options enable control over the VSA
         storage provisioning type (thin or full) and specify protection for backend
