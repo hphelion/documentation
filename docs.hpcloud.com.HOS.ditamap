@@ -55,10 +55,7 @@
         navtitle="Installation for Helion Entry-scale Swift Cloud" locktitle="yes"/>
       <topicref href="helion/gui_installer.dita" navtitle="Installing via the GUI" locktitle="yes"/>
       <topicref href="helion/installation/installation_verification.dita"
-        navtitle="Verifying Your Installation" locktitle="yes">
-        <topicref href="helion/blockstorage/verify_backend_configuration.dita"
-          navtitle="Verifying a Backend Configuration" locktitle="yes" toc="no"/>
-      </topicref>
+        navtitle="Verifying Your Installation" locktitle="yes"/>
       <topicref href="helion/installation/installation_troubleshooting.dita"
         navtitle="Troubleshooting Your Installation" locktitle="yes"/>
       <topicref href="helion/installation/postinstall_checklist.dita"
