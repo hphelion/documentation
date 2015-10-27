@@ -38,11 +38,13 @@
           for Adaptive Optimization then your disk input model should not specify more than five raw
           disks for data and two raw disks for Adaptive Optimization. Exceeding the disk limit
           causes VSA deployment failure.</note></p>
-      <p>You can deploy VSA with Adaptive Optimization (AO) or without. The deployment process for
-        each of these options is similar, you just need to make a change in the disk input model.
-        For more detailed information, refer to the <xref
-          href="#config_vsa/deploy-vsa-with-ao-without-ao" format="dita">VSA with AO or without
-          AO</xref> section below.</p>
+      <p>
+        <note type="important">You can deploy VSA with Adaptive Optimization (AO) or without. The deployment process
+          for each of these options is similar, you just need to make a change in the disk input
+          model. For more detailed information, refer to the <xref
+            href="#config_vsa/deploy-vsa-with-ao-without-ao" format="dita">VSA with AO or without
+            AO</xref> section below.</note>
+      </p>
     </section>
     <section>
       <title>Creating a StoreVirtual Cluster and adding it to a new Management Group Cluster using

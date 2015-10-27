@@ -740,7 +740,9 @@
       <p>VSA storage is configured as a device-group and has a syntax that allows disks to be
         allocated for data storage or for adaptive optimization (caching). It is recommended to use
         solid state drives for adoptive optimization. The example disk configuration for VSA nodes
-        has two disks, one for data and one of adaptive optimization.</p>
+        has two disks, one for data and one of adaptive optimization. Refer to <xref
+          href="installation/configure_vsa.dita#config_vsa/deploy-vsa-with-ao-without-ao">VSA with
+          AO or without AO</xref> section for details.</p>
       <codeblock>
    device-groups:
        - name: vsa-data
