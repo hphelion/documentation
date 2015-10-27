@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_swift">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry Scale Cloud
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for HP Helion Entry Scale Cloud
     with Swift Only</title>
-  <body><!--Needs Edit-->
+  <body>
     <section id="about">
       <p>This page describes the installation step requirements for the HP Helion Entry Scale Cloud
         with Swift Only model.</p>
@@ -30,7 +30,7 @@
     # SWIFT
     #
     # This is the network group that will be used to for
-    # Swift back-end traffic bewtween proxy, container, account
+    # Swift back-end traffic between proxy, container, account
     # and object servers
     #
     - name: SWIFT
@@ -80,7 +80,7 @@
             passwords. This script uses OpenSSL.</p>
           <ol>
             <li>Change to the Ansible directory: <codeblock>cd ~/helion/hos/ansible</codeblock></li>
-            <li>Put the encrytion key into the following environment variable:
+            <li>Put the encryption key into the following environment variable:
               <codeblock>export HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeblock></li>
             <li>Run the python script below and follow the instructions. Enter a password that you
               want to encrypt. <codeblock>hosencrypt.py</codeblock></li>
