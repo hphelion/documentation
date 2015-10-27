@@ -3,10 +3,10 @@
 <topic id="topic_mnk_sq1_5t">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceph Service: Troubleshooting</title>
   <body>
-    <p>This page describes the troubleshooting scenarios of Ceph.</p>
-    <p><b>Scenario 1:</b></p>
-    <p>If no Ceph Monitor nodes are defined for the cloud then Ceph cloud deployment fails with the
-      following error while executing <codeph>site.yml</codeph> playbook.</p>
+    <p>This page describes troubleshooting scenarios for Ceph.</p>
+    <p><b>Issue 1:</b></p>
+    <p>If no Ceph monitor nodes are defined for the cloud, then Ceph cloud deployment fails with the
+      following error while executing the <codeph>site.yml</codeph> playbook:</p>
     <codeblock>TASK: [_CEP-CMN | install | Install ceph] ************************************* 
         changed: [stratushelion-cp1-ceph0001-mgmt]
         changed: [stratushelion-cp1-ceph0002-mgmt]
@@ -23,21 +23,21 @@
 
         FATAL: all hosts have already failed -- aborting</codeblock>
     <p><b>Resolution:</b></p>
-    <p>Compare the cloud control plane defined in
+    <p>Compare the cloud control plane defined in the
         <codeph>~/helion/my_cloud/definition/data/control_plane.yml</codeph> file with the example
-      one. Ensure that there is either: <ol id="ol_ir1_2s4_5t">
-        <li>Service component includes <codeph>- ceph-monitor</codeph> for <codeph>server-role:
+      one. Ensure that either: <ol id="ol_ir1_2s4_5t">
+        <li>The service component includes <codeph>- ceph-monitor</codeph> for <codeph>server-role:
             CONTROLLER-ROLE</codeph>
           <p>OR</p></li>
-        <li>Resource nodes for Ceph Monitor are added to the
+        <li>The resource nodes for Ceph Monitor are added to the
             <codeph>~/helion/my_cloud/definition/data/control_plane.yml</codeph> file, which have
           the service-components (<codeph>- ntp-client</codeph> and <codeph>- ceph-monitor</codeph>)
           defined.</li>
       </ol></p>
-    <p><b>Scenario 2: </b></p>
-    <p>If the disk presented as OSD data and/or journal disk has some pre-existing partitions then
-      the Ceph cloud deployment fails with the following error while executing
-        <codeph>site.yml</codeph> playbook . </p>
+    <p><b>Issue 2: </b></p>
+    <p>If the disk presented as OSD data and/or a journal disk has some pre-existing partitions,
+      then the Ceph cloud deployment fails with the following error while executing
+        <codeph>site.yml</codeph> playbook:</p>
     <p>
       <codeblock>TASK: [CEP-OSD | configure | Configure the osds of {{ inventory_hostname }}] *** 
         failed: [stratushelion-cp1-ceph0001-mgmt] => (item={'key': '/dev/sdd', 'value': '/dev/sdc'}) => {"failed": true, "item": {"key": "/dev/sdd", "value": "/dev/sdc"}}
@@ -68,10 +68,10 @@
       journal disk and re-execute the <codeph>site.yml</codeph> playbook to resume the cloud
       deployment.<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml </codeblock></p>
-    <p><b>Scenario 3:</b></p>
-    <p> If on a entry-scale-kvm-ceph cloud, the controller nodes is not always a part of the
-      actionable nodes then executing <codeph>site.yml</codeph> playbook for a particular node
-      (using --limit &lt;node>) fails with the following error.</p>
+    <p><b>Issue 3:</b></p>
+    <p>If on a entry-scale-kvm-ceph cloud, the controller nodes is not always a part of the
+      actionable nodes then executing the <codeph>site.yml</codeph> playbook for a particular node
+      (using --limit &lt;node>) fails with the following error:</p>
     <codeblock>TASK: [_CEP-CMN | check_network | Set cluster_network_enabled to True if available] *** 
         skipping: [localhost]
 
@@ -83,12 +83,12 @@ ansible-playbook -i hosts/verb_hosts site.yml </codeblock></p>
         </codeblock>
     <p><b>Resolution</b>:</p>
     <p>Edit the limit file or limit string specified while executing the <codeph>site.yml</codeph>
-      playbook and include the hostnames of all the <b>Ceph Monitor nodes</b> in the cloud.  You can
-      execute  <codeph>site.yml</codeph> option with  either of the following ways:<ol
+      playbook and include the hostnames of all the <b>Ceph monitor nodes</b> in the cloud. You can
+      execute the <codeph>site.yml</codeph> option in either of the following ways:<ol
         id="ol_jxh_bfq_5t">
         <li><codeph>ansible-playbook -i hosts/verb_hosts site.yml –-limit new-compute</codeph><p>You
-            must add  monitor nodes in the above command
-            :<codeblock>ansible-playbook -i hosts/verb_hosts site.yml –-limit new-compute,monitor-1,monitor-2,monitor-3</codeblock></p></li>
+            must add monitor nodes in the above
+            command:<codeblock>ansible-playbook -i hosts/verb_hosts site.yml –-limit new-compute,monitor-1,monitor-2,monitor-3</codeblock></p></li>
         <li><codeph>ansible-playbook -i hosts/verb_hosts site.yml –limit
             @new_nodes.txt</codeph><p>You can add the monitor hosts to the text file (named
               <codeph>new_nodes.txt</codeph>), which specifies the new compute host (along with
@@ -99,11 +99,11 @@ ansible-playbook -i hosts/verb_hosts site.yml </codeblock></p>
               <li>monitor-3</li>
             </ul></p></li>
       </ol></p>
-    <p><b>Scenario 4:</b></p>
-    <p>If the time required for placement group creation is slower than usual (taking >50 secs for
-      PGs to get created) the <codeph>ceph-client-prepare.yml</codeph> playbook fails with the
-      following error while creating placement
-      groups.<codeblock>Symptom:
+    <p><b>Issue 4:</b></p>
+    <p>If the time required for placement group creation is slower than usual (>50 secs for PGs to
+      get created), the <codeph>ceph-client-prepare.yml</codeph> playbook fails with the following
+      error while creating placement
+      groups:<codeblock>Symptom:
     Following error traces seen during site.yml playbook execution:
         TASK: [ceph-client-prepare | prepare-cluster-user | Set pool {{ item.1.name }} pgp_num to {{ item.1.attrs.pg }}] ***
         changed: [localhost] => (item=({'user': {'type': 'openstack', 'name': 'cinder', 'secret_id': '457eb676-33da-42ec-9a8c-9293d545c337'}}, {'usage': {'purpose': 'cinder-volume'}, 'name': 'volumes', 'attrs': {'type': 'replicated', 'creation_policy': 'eager', 'replica_size': 3, 'pg': 100, 'permission': 'rwx'}}))
@@ -117,7 +117,7 @@ ansible-playbook -i hosts/verb_hosts site.yml </codeblock></p>
         FATAL: all hosts have already failed -- aborting</codeblock></p>
     <p><b>Resolution</b>:</p>
     <p>Pause for a minute and check the status of <codeph>ceph --cluster &lt;ceph-cluster> -s |grep
-        creating</codeph>. If no results are returned by  this command then re-executing the
-        <codeph>ceph-client-prepare.yml</codeph> playbook and this time you should succeed.</p>
+        creating</codeph>. If no results are returned by this command then re-execute the
+        <codeph>ceph-client-prepare.yml</codeph> playbook.</p>
   </body>
 </topic>
