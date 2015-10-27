@@ -4,7 +4,7 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Metering Service Config and Upgrade</title>
   <body>
 
-    <section id="deploy"><title>Deployment</title> HP Helion OpenStack v2.0 automatically deploys
+    <section id="deploy"><title>Deployment</title> HP Helion OpenStack 2.0 automatically deploys
       Ceilometer to use the shared MySQL database along with other OpenStack services such as
       Keystone. Ceilometer is configured to use a common MySQL database and deployed on the same
       control plane nodes along with other OpenStack services such as Keystone, Nova, Neutron,
@@ -36,7 +36,7 @@
       file is configured during HP Helion OpeStack deployment and preferably should be changed by
       running the <b>ceilometer-reconfigure.yml</b> playbook (see the <xref
         href="#reconfig_metering/reconfig" format="dita">Reconfigure</xref> section below). This
-      configuration refers to installed ceilometer api version and needs to be referenced
+      configuration refers to the  installed Ceilometer API version and needs to be referenced
       appropriately based on the version installed and needs to be used. The main parameters that
       can be altered to increase the responsiveness is processes and threads in the above mentioned
       config file. <note>WSGIDaemon Recommended Settings The best, and hence, recommended
@@ -87,10 +87,11 @@ ceilome+ 31433 31427 10 16:29 ? 00:02:43 /usr/sbin/apache2 -k start </codeblock>
 
     <section id="upgrade">
       <title>Upgrade</title> Follow Standard Service upgrade mechanism available in HLM
-      distribution. For ceilometer the playbook included with HOS is ceilometer-upgrade.yml </section>
+      distribution. For Ceilometer, the playbook included with HP Helion OpenStack is
+      ceilometer-upgrade.yml </section>
 
 
-    <section id="reconfig"><title>Reconfigure</title> Make changes in the ceilometer available
+    <section id="reconfig"><title>Reconfigure</title> Make changes in the Ceilometer available
       configuration files at on deployer machine. Make changes in the target configuration file
       found is these directories. <p>For a temporary change go
       to:</p><codeblock>cd /home/stack/scratch/ansible/next/my_cloud/config/ceilometer/</codeblock>

@@ -4,10 +4,10 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Metering Service Notifications</title>
   <body>
    
-   <section> In HP Helion 2.0 we have adopted a strategy to reduce the amount of data that is sent
-      to storage. The main reason is that we are currently using a SQL-based cluster, which is not
-      highly indicated for big data. <p>You can control the data Ceilometer collects using the
-        pipeline configuration files. These configuration files are located in the <b>/etc</b>
+   <section> In HP Helion OpenStack 2.0 we have adopted a strategy to reduce the amount of data that
+      is sent to storage. The main reason is that we are currently using a SQL-based cluster, which
+      is not highly indicated for big data. <p>You can control the data Ceilometer collects using
+        the pipeline configuration files. These configuration files are located in the <b>/etc</b>
         folder of the respective components on all of the controller nodes. Ceilometer Central Agent
         and Ceilometer Notification Agent use different <b>pipeline.yml </b>files to configure
         meters that are fetched via polling and using notifications. The files were created this way
