@@ -100,7 +100,7 @@
       locktitle="yes"/>
     <topicref href="CarrierGrade/HLMCLI/CGH-2-hlm-cli.dita"
       navtitle="Helion Lifecycle Managment CLI Reference" locktitle="yes"/>
-    <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2--backup-restore.dita" toc="yes"
+    <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2-backup-restore.dita" toc="yes"
       navtitle="Backup and Restore Configuration Files and MySQL Clusters" locktitle="yes">
       <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2--backup-restore-cli.dita"
         navtitle="Attis Backup and Restore CLI" locktitle="yes"/>

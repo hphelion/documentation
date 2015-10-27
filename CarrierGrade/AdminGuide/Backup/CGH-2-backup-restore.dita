@@ -92,11 +92,26 @@ But the CLI, REST API etc should all be same -->
         KVM Host. </p>
     </section>
     <section>
+      <title>Backup and Restore the MySQL cluster</title>
+      <p>This section deals with the disaster recovery scenarios of the three node MySQL cluster
+        (Percona XtraDB Cluster) that runs in cloud controller nodes. The HP Helion OpenStack
+        Carrier Grade backup/restore process includes the MySQL cluster.</p>
+      <p>If an entire cluster goes down, due to an issue (such as data corruption or MySQL defect),
+        and the cluster does not come back up, you must restore the cluster to a previous well-known
+        state (backup) and start the cluster from that point.</p>
+      <p>You should use to take full backups of the MySQL cluster frequently, such as on a daily
+        basis. Backing up the node on any single controller will backup the full cluster.</p>
+      <p>If the full cluster goes down or some data corruption occurs, delete the current data in
+        all of the three nodes of MySQL and restore the backup copy on the same node from which
+        backup was taken. Then, bootstrap the cluster and bring up rest of the nodes to synchronize
+        the data with the recovered node of cluster.</p>
+    </section>
+    <section>
       <title>Backup and Restore CLI</title>
       <p>For more information on the Attis backup and restore CLI see <xref
           href="CGH-2--backup-restore-cli.dita#topic10581">Backup and Restore CLI</xref>.</p>
     </section>
-    <section><title>Backing up the HP Helion OpenStack Carrier Grade controllers</title>
+    <section><title>Backing up the HP Helion OpenStack Carrier Grade</title>
       <p>To back up an HP Helion OpenStack Carrier Grade controller, use the following steps:</p>
       <ol>
         <li>Log in to the controller.</li>
@@ -119,7 +134,7 @@ export OS_AUTH_URL=http://127.0.0.1:5000/v2.0</codeblock>Optionally
       </ol>
     </section>
     <section>
-      <title>Restore the HP Helion OpenStack Carrier Grade controllers</title>
+      <title>Restore the HP Helion OpenStack Carrier Grade</title>
       <p>To restore an HP Helion OpenStack Carrier Grade controller, use the following steps:</p>
       <ol id="ol_vlq_wm3_pt">
         <li>Log in to the controller.</li>
