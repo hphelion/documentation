@@ -100,8 +100,10 @@ openstack_region = "us-west"
 cluster_admin_username = "myClusterUsername"
 cluster_admin_password = "myClusterPassword123"
 key_file = "myKeyFile.pem"           
-<draft-comment author="michaelk">router_ssl_cert_file = "/etc/ssl/certs/SSL.crt"
-router_ssl_key_file = "/etc/ssl/private/SSL.key"</draft-comment>
+<!--
+router_ssl_cert_file = "/etc/ssl/certs/SSL.crt"
+router_ssl_key_file = "/etc/ssl/private/SSL.key"
+-->
 dea_count = 1</codeblock>
     </example>
   </refbody>
