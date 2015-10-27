@@ -359,7 +359,7 @@
         requests as long as at least one Swift proxy server is running.</p>
       <p>If a Swift proxy node fails in the middle of a transaction, the transaction fails. However
         it is standard practice for Swift clients to retry operations. This is transparent to
-        applications that use the python-swift client library.</p>
+        applications that use the python-swiftclient library.</p>
       <p>The entry-scale example cloud models contain three Swift proxy nodes. 
         However, it is possible to add additional clusters with additional Swift 
         proxy nodes to handle a larger workload or to provide additional resiliency.</p>
@@ -369,7 +369,7 @@
         count of three. However, you may change this to a higher value if needed.</p>
       <p>When Swift stores different replicas of the same item on disk, it ensures 
         that as far as possible, each replica is stored in a different zone, 
-        server or disk. This means that if a single server of disk drives fails, 
+        server or drive. This means that if a single server of disk drives fails, 
         there should be two copies of the item on other servers or disk drives.</p>
       <p>In this release, only a single zone is supported.</p>
       <p>If a disk drive is failed, Swift will continue to store three replicas. 
