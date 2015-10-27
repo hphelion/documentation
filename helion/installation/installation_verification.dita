@@ -24,6 +24,7 @@
       <p>The sections below will show you the steps to verify that your Block Storage backend was
         setup properly.</p>
     </section>
+    <!--
     <section id="create_volumetype">
       <title>Create a Volume Type for your Volume Backend</title>
       <p id="creating_volumetype">If you haven't done so already, perform the following steps to
@@ -100,6 +101,7 @@ volume_backend_name MyVolumeBackend</codeblock></p><p>The
       <p>Once the volume type is mapped to the backend, you can create volumes with this volume
         type.</p>
     </section>
+    -->
     <section id="create-volume">
       <title>Create a Volume</title>
       <p>Perform the following steps to create a volume using Horizon dashboard.</p>

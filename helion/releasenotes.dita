@@ -166,15 +166,7 @@
         Horizon, Keystone, Cinder, Heat, OpsConsole, DNSaaS, LBaaS, FWaaS, and Trove.</p><p>Learn
         more about Centralized Logging here: <xref href="operations/centralized_logging.dita"
           >Centralized Logging Overview</xref></p>
-      <!--
-<p><b>Backup and Restore Capabilities for the Control Plane</b> &#154; Allows you to backup and recover your HP Helion OpenStack</tm> environment with RPO=0.</p>
--->
     </section>
-
-
-
-
-    <!--<section><title>OpenStack Services inlcuded in HP Helion OpenStack</title><p>The following table list a high level overview of  the OpenStack projects/services which are included in HP Helion OpenStack and their status. Only official upstream OpenStack projects are included, not non-OpenStack add-ons that originate elsewhere. <note>If the service is not listed in the table then it is not present in HP Helion OpenStack.</note></p><p><simpletable frame="all" relcolwidth="1.0* 1.0*" id="simpletable_q2l_d1c_lt"><strow><stentry>Service Name</stentry><stentry>Status in HOS 2.0</stentry></strow><strow><stentry>Barbican</stentry><stentry>Not Included</stentry></strow><strow><stentry>Ceilometer</stentry><stentry>GA</stentry></strow><strow><stentry>Cinder</stentry><stentry>GA</stentry></strow><strow><stentry>Designate</stentry><stentry>In-Cloud Service (Installed Separately)</stentry></strow><strow><stentry>Glance</stentry><stentry>GA</stentry></strow><strow><stentry>Heat</stentry><stentry>GA</stentry></strow><strow><stentry>Horizon</stentry><stentry>GA</stentry></strow><strow><stentry>Ironic</stentry><stentry>Not Included</stentry></strow><strow><stentry>Keystone</stentry><stentry>GA</stentry></strow><strow><stentry>Magnum</stentry><stentry>Not Included</stentry></strow><strow><stentry>Manila</stentry><stentry>Not Included</stentry></strow><strow><stentry>Monasca</stentry><stentry>GA</stentry></strow><strow><stentry>Neutron</stentry><stentry>GA</stentry></strow><strow><stentry>Neutron-FWaaS</stentry><stentry>non-core</stentry></strow><strow><stentry>Neutron-LBaaS v1</stentry><stentry>Not recommended</stentry></strow><strow><stentry>Neutron-LBaaS v2</stentry><stentry>non-core</stentry></strow><strow><stentry>Neutron-Octavia</stentry><stentry>non-core (TBC)</stentry></strow><strow><stentry>Neutron-VPNaaS</stentry><stentry>non-core</stentry></strow><strow><stentry>Nova</stentry><stentry>GA</stentry></strow><strow><stentry>Swift</stentry><stentry>GA</stentry></strow><strow><stentry>Tempest</stentry><stentry>GA</stentry></strow></simpletable></p></section>-->
     <section id="KnownIssues">
       <title>Limitations in this Release</title><p><b>Installing Swift</b></p><p>Swift installs with
         the following limitations: </p><ul id="ul_p21_d45_tt">
@@ -205,6 +197,14 @@
 monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
       <p>This is due to an issue where the monasca-agent is attempting to authenticate when it's
         token has expired. These can be ignored.</p>
+      <p><b>Issue: The 'Cinderlm diagnostics monitor' alarm alerts with an 'UNDETERMINED'
+        state</b></p>
+      <p>This alert is not always reported but may occur after the system has been running for some
+        time.</p>
+      <p>Check if any other Cinder related alarms are alerting. If no other other Cinder related
+        alarms are alerting then this alert for the Cinderlm diagnostics monitor alarm can be
+        ignored. If other Cinder related alarms are alerting then follow the mitigation steps
+        described in the Service Alarm Definitions section.</p>
       <p><b>Operations Console (Ops Console)</b></p> The Operations Console has the following
       limitations (listed below by menu option in the console): <ul id="ul_wv1_d45_tt">
         <li>Dashboard <ul id="ul_s2b_d45_tt">
@@ -214,8 +214,8 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
               what timezone is in the settings.</li>
             <li>The New Alarms section will only display alarms that have a service dimension
               defined.</li>
-            <li>Platform Services (HDP Summary) alarm panels are not yet implemented but appear in
-              the menu and thus will not populate if selected.</li>
+            <li>Platform Services (HDP Summary) alarm panels will only contain data if the Helion
+              Development Platform services are installed.</li>
           </ul>
         </li>
         <li>Logging Dashboard <ul id="ul_jfb_d45_tt">
@@ -230,7 +230,7 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
             <li>The tile view of alarms with lengthy dimensions does not render cleanly.</li>
           </ul></li>
         <li>Compute Instances <ul id="ul_rgb_d45_tt">
-            <li>Compute instance utilization metrics are not available in Beta 2</li>
+            <li>Compute instance utilization metrics are not available.</li>
           </ul>
         </li>
         <li>Networking - Alarm Summary <ul id="ul_dhb_d45_tt">
@@ -241,7 +241,8 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
               addition to the "service=block-storage" and "service=object-storage" ones.</li>
           </ul></li>
         <li>HDP - Alarm Summary <ul id="ul_h3b_d45_tt">
-            <li>This section is not implemented in Beta 2</li>
+            <li>This section will only contain data if the Helion Development Platform services are
+              installed.</li>
           </ul></li>
         <li>Masthead Items <ul id="ul_v3b_d45_tt">
             <li>The Help and EULA links will not work properly. You can view the Help files here:
@@ -275,13 +276,13 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
         auto-tuned. The default values are listed in <xref
           href="administration/configure_logging.dita#configure_logging/general_config">Configuring
           the Centralized Logging Service</xref>. There is a bug where Ansible is reporting the
-        memory values in incorrectly as values that are slightly less than what they actually are.
-        So, for example, if you have 32GB of RAM you should fall into the "Small" auto-tuning
-        category but because of this incorrectly reported value you are actually falling into the
-        "Demo" category. We recommend that you manually modify the heap values on the
-        lifecycle-manager node for systems with the specified amount of RAM in the table below to
-        the values listed. You will edit these values in the
-          <codeph>logging_possible_tunings</codeph> section of the file below:</p>
+        memory values incorrectly as values that are slightly less than what they actually are. So,
+        for example, if you have 32GB of RAM you should fall into the "Small" auto-tuning category
+        but because of this incorrectly reported value you are actually falling into the "Demo"
+        category. We recommend that you manually modify the heap values on the lifecycle-manager
+        node for systems with the specified amount of RAM in the table below to the values listed.
+        You will edit these values in the <codeph>logging_possible_tunings</codeph> section of the
+        file below:</p>
       <codeblock>~/helion/my_cloud/config/logging/main.yml</codeblock>
       <table frame="all" rowsep="1" colsep="1" id="table_pbd_k2y_5t">
         <tgroup cols="4">
@@ -378,9 +379,9 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
                   fi
           endscript
 }</codeblock>
-      <p><b>Issue: Unable to Launch Instance from Volume on Horizon Dashboard</b></p><p>In Beta 2
-        you will not be able to launch an instance from a volume in Horizon. To work around this
-        issue you have two options:</p>
+      <p><b>Issue: Unable to Launch Instance from Volume on Horizon Dashboard</b></p><p>You will not
+        be able to launch an instance from a volume in Horizon. To work around this issue you have
+        two options:</p>
       <ul id="ul_vrb_d45_tt">
         <li>From Horizon Dashboard | Instances page: Launch an Instance and select source as
           Bootable volume.</li>
@@ -394,7 +395,7 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
       <p>There is currently an OpenStack bug where the <codeph>Start Instances</codeph> option is
         available in the instance action drop-down even if your instances are already in an Active
         state.</p>
-      <p><b>Restarting Deployer/lifecycle management node leaves Apache2 down</b></p>
+      <p><b>Restarting lifecycle-manager node leaves Apache2 down</b></p>
       <p>If you restart your Deployer/lifecycle management node, note that Apache2 will not restart
         on its own. You will need to restart it manually.</p>
       <b>Heat autoscaling not supported </b>
@@ -464,13 +465,13 @@ Oct  7 12:49:09 hlm kernel: [31181.133118] RIP: 0010:[&lt;ffffffff81514f5b>]  [&
         
         -->
       <p>Core features in the <tm tmtype="reg">OpenStack</tm> Foundation’s Kilo release (as
-        identified below) are enabled in the HPE Helion OpenStack 2.0 standard settings and are
+        identified below) are enabled in the HP Helion OpenStack 2.0 standard settings and are
         included in Helion standard product support. </p>
       <p>Non-core services (listed in the Features tables below) are provided as-is. Some non-core
-        services are included in this release to provide early access to features that HPE may
-        support fully in future releases, but HPE cannot guarantee that support will be provided or
+        services are included in this release to provide early access to features that HP may
+        support fully in future releases, but HP cannot guarantee that support will be provided or
         issues resolved in a future release. Other non-core features are provided in this release
-        for a limited time and may be deprecated in future releases. HPE will attempt to provide
+        for a limited time and may be deprecated in future releases. HP will attempt to provide
         guidance and telephone support for these features at its discretion. If you need additional
         support on any of these features for a specific use case, please contact the Helion
         professional services team. </p>
