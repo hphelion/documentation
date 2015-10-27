@@ -23,6 +23,16 @@
                 format="html" scope="external">create the Service Network</xref> after installing HP
               Helion <tm tmtype="reg">OpenStack</tm>, you <b>must</b> do so now.</p>
         </li>
+       <li>
+         <p>For Windows and .NET support, due to licensing requirements, you must create and deploy your own Windows and SQL Server images. This requires the following:</p>
+         <ul>
+           <li>Windows images must be created in a MacOS or Linux environment.</li>
+           <li>You must have a Windows Server 2012 Enterprise (non-evaluation) image.</li>
+           <li>A volume license for Windows Server 2012 Enterprise is strongly recommended.</li>
+           <li>Additional tools (VirtIO and Virtual Box) are also required. See <xref format="dita" type="local" href="../windows/windows_building_and_deploying.dita">Building and Deploying Windows DEA and SQL Server Express Images</xref>
+           for more information.</li>
+         </ul>
+       </li>
               </ul></note>
     </section>
     <section id="preparation">
