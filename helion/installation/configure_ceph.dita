@@ -21,7 +21,8 @@
     </section>
     <section id="notes"><title>Notes</title>
       <p>You can deploy the Ceph monitor service on a dedicated resource. Ensure you modify your
-        environment after deploying the deployer node. For more details, refer to <xref
+        environment after installing the lifecycle-manager.</p>
+      <p>For more details, refer to <xref
           href="../blockstorage/ceph/deploy_monitor_stand_alone_node.dita">Install a monitor service
           on a dedicated resource node</xref>.</p>
     </section>
@@ -29,19 +30,17 @@
       <title>Configuring Your Ceph Environment Input Files</title>
       <p>
         <ol>
-          <li>Login to the deployer node.</li>
+          <li>Log in to the lifecycle-manager node.</li>
           <li>Copy the example configuration files into the required setup directory and edit them
-            to contain the details of your environment:
-            <codeblock>cp -r ~/helion/examples/entry-scale-kvm-ceph/* ~/helion/my_cloud/definition/</codeblock>Begin
-            inputting your environment information into the configuration files in the
-              <codeph>~/helion/my_cloud/definition</codeph> directory. Full details of how to do
-            this can be found here: <xref href="../input_model.dita">Helion OpenStack 2.0 Input
-              Model</xref>.</li>
-          <li>Edit the file <codeph>disks_osd.yml</codeph> and enter the details for the additional
-            disks meant for OSD data and journal
-              filesystems.<codeblock>vi <codeph>disks_osd.yml</codeph></codeblock><p>A sample of
-                <codeph>disks_osd.yml</codeph> is as
-              follows:</p><codeblock>disk-models:
+            to contain the details of your environment: <codeblock>cp -r ~/helion/examples/entry-scale-kvm-ceph/* ~/helion/my_cloud/definition/</codeblock>
+            <p>Begin inputting your environment information into the configuration files in the
+                <codeph>~/helion/my_cloud/definition</codeph> directory.</p>
+            <p>Full details of how to do this can be found here: <xref href="../input_model.dita"
+                >Helion OpenStack 2.0 Input Model</xref>.</p></li>
+          <li>Edit the <codeph>~/helion/my_cloud/definition/data/disks_osd.yml</codeph> file and
+            enter the details for the additional disks meant for OSD data and journal filesystems.
+              <p>A sample <codeph>disks_osd.yml</codeph> is as follows:</p>
+            <codeblock>disk-models:
   - name: OSD-DISKS
     # Disk model to be used for Ceph OSD nodes
     # /dev/sda_root is used as a volume group for /, /var/log and /var/crash
@@ -82,9 +81,10 @@
            name: ceph
            attrs:
              usage: data
-             journal_disk: /dev/sdg</codeblock><p>The
-              above sample file contains three OSD nodes and two journal disk.</p><p>The disk model
-              has the following fields:</p><p>
+             journal_disk: /dev/sdg</codeblock>
+            <p>The above sample file contains three OSD nodes and two journal disks.</p>
+            <p>The disk model has the following fields:</p>
+            <p>
               <simpletable id="simpletable_iqr_blx_st">
                 <strow>
                   <stentry><b>device-groups</b></stentry>
