@@ -41,8 +41,8 @@
     <section>
       <title>Creating a StoreVirtual Cluster and adding it to a new Management Group Cluster using
         CMC</title>
-      <p>The CMC utility requires a GUI to access it. You can install either of the following tool
-        to launch CMC.</p>
+      <p>The CMC utility requires a GUI to access it. You can use either of the following methods to
+        launch the CMC GUI.</p>
       <p>
         <ul id="ul_icy_xyt_tt">
           <li>RDP/VNC connect</li>
@@ -110,7 +110,9 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
           performance may be poor.</note></p>
       <p>You must configure an X display tool to launch CMC. User can select <b>any</b> X display
         tool. In this section we are using <b>Xming</b> tool as an example to launch CMC. The
-        following example provides the steps to install Xming and launch CMC.<ol id="ol_cxw_lzt_tt">
+        following example provides the steps to install Xming and launch CMC. Another alternative
+        (not shown in the documentation) is <xref href="http://mobaxterm.mobatek.net/"
+          scope="external" format="html">MobaXterm</xref>. <ol>
           <li>Download and install <b>Xming</b> on a Windows machine that can access the
             lifecycle-manager node. You can download Xming <xref
               href="http://sourceforge.net/projects/xming/" format="html" scope="external"
@@ -153,8 +155,10 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
                 href="../../media/vsa/cmc5.png"/></p></li>
           <li>Enter a name in the <b>New Management Group Name</b> field and then click <b>Next</b>.
                 <p><image href="../../media/vsa/cmc6.png"/></p></li>
-          <li>On the <b>Add Administrative User</b> you will enter a username and password you will to admnister the CMC utility.  You will need to remember these values as you will input them into your <codeph>cinder.conf.j2</codeph> file later.
-            <p><image href="../../media/vsa/cmc7.png"/></p></li>
+          <li>On the <b>Add Administrative User</b> you will enter a username and password you will
+            to admnister the CMC utility. You will need to remember these values as you will input
+            them into your <codeph>cinder.conf.j2</codeph> file later. <p><image
+                href="../../media/vsa/cmc7.png"/></p></li>
           <li>Click <b>Next</b> to display the <b>Management Group Time</b> page.</li>
           <li>Add your NTP server information and click <b>Next</b>
             <p><image href="../../media/vsa/cmc8.png"/></p></li>
@@ -179,7 +183,8 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
           <li>Select the checkbox for <b>Skip Volume Creation</b> and click the <b>Finish</b> button
             which will display your VSA management cluster. <p><image
                 href="../../media/vsa/cmc13.png"/></p></li>
-        <li>If this process is successful you will see a summary page at the end which outlines what you have completed.</li>
+          <li>If this process is successful you will see a summary page at the end which outlines
+            what you have completed.</li>
         </ol></p>
     </section>
     <section conref="installation_verification.dita#install_verification/create_volumetype"/>
@@ -189,19 +194,18 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
         created in the previous step to configure your Cinder backend to use your VSA
         environment.</p>
       <p>To update your Cinder configuration to add VSA storage you must modify the
-        <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file as follows:</p>
+          <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file as follows:</p>
       <ol>
         <li>Log in to the lifecycle-manager node.</li>
         <li>Add your VSA backend to the <codeph>enabled-backends</codeph>:
-            <codeblock># Configure the enabled backends
+          <codeblock># Configure the enabled backends
 enabled_backends=vsa-1</codeblock></li>
         <li>Enter the volume type you created earlier to the <codeph>[DEFAULT]</codeph> section:
           <codeblock># Set the default volume type
 default_volume_type = &lt;your new volume type></codeblock></li>
-        <li>Uncomment the VSA section and fill the values as per your
-          cluster information. If you have more than one cluster, you need to add another similar
-          section with its respective values. In the following example only one cluster is
-          added.
+        <li>Uncomment the VSA section and fill the values as per your cluster information. If you
+          have more than one cluster, you need to add another similar section with its respective
+          values. In the following example only one cluster is added.
           <codeblock>[vsa-1]
 hplefthand_password: &lt;vsa-cluster-password>
 hplefthand_clustername: &lt;vsa-cluster-name>
@@ -211,8 +215,7 @@ hplefthand_iscsi_chap_enabled: false
 volume_backend_name: &lt;vsa-backend-name>
 volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
 hplefthand_debug: false</codeblock>
-            where,
-          <ul id="ul_swt_2mb_lt">
+          where, <ul id="ul_swt_2mb_lt">
             <li>hplefthand_password : Password given during cluster creation.</li>
             <li>hplefthand_clustername: Name of the VSA cluster provided while creating a
               cluster.</li>
