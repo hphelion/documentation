@@ -2,10 +2,10 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ugs_fnd_bt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: The Identity Service</title>
-  <body><!--Needs Edit-->
+  <body>
     <section id="intro">
       <title>What is the Identity service?</title>
-      <p>The HP Helion OpenStack&#174; Identity service, based on the OpenStack Keystone API, is
+      <p>The HP Helion <tm tmtype="reg">OpenStack</tm> Identity service, based on the OpenStack Keystone API, is
         responsible for providing UserID authentication and access authorization to enable
         organizations to achieve their access security and compliance objectives and successfully
         deploy OpenStack. In short, the Identity Service is the gateway to the rest of the OpenStack
@@ -61,8 +61,8 @@
         identity sources such as Active Directory and provides a single authentication API against
         multiple types of downstream identity sources. This means that an organization could have
         multiple identity storage sources but a single authentication source. In addition, if a user
-        has logged into one such source during a defined session timeframe, they do not need to
-        reauthenticate within the defined session. Instead, the IdP will automatically validate the
+        has logged into one such source during a defined session time frame, they do not need to
+        re-authenticate within the defined session. Instead, the IdP will automatically validate the
         user to requesting applications and services. </p>
       <p>A SAML-based IdP authentication source is configured with Keystone on a per-domain basis
         similar to the manner in which native LDAP directories are configured. Extra mapping rules
@@ -122,9 +122,8 @@
         service but can be assigned via the Horizon user interface in the Projects section; thus, this
         function is often associated with the Keystone API. <!--Insert screen shot of
         the Horizon interface used to configure upper limit quotas for specific
-        infrastructure-related functions.--> Quotas are assigned per each project.</p><p/>
+        infrastructure-related functions.--> Quotas are assigned per each project.</p>
     </section>
-
 
   </body>
 </topic>
