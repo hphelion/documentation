@@ -25,9 +25,17 @@
             start and stop applications, to link <keyword keyref="opnStckShort"/> services to
             applications, and to perform other application management operations. <keyword
               keyref="prodShort"/> works on Linux, Mac OS X, and Windows.</p><ul id="ul_cfn_rm1_tt">
-                <li><xref href="http://bit.ly/1H5yhkG" format="html" scope="external">Download <keyword
-                  keyref="prodShort"/>
-                <keyword keyref="prodVerLong"/></xref></li>
+                <li><xref href="http://bit.ly/1H5yhkG" format="html" scope="external">Download
+                  <keyword keyref="prodShort"/>
+                <keyword keyref="prodVerLong"/></xref> (Current)</li>
+            <li><xref
+                href="https://a248.e.akamai.net/cdn.hpcloudsvc.com/gb0e6744f83898b90eb8ff0a2e16a9529/prodae1/hcf-1.0.0.94_master/hcf-1.0.0.94_master.tar.gz"
+                format="gz" scope="external">Download <keyword keyref="prodShort"/>
+              1.0.0.94</xref></li>
+            <li><xref href="http://bit.ly/1R2QN2U" format="html" scope="external">Download <keyword
+                  keyref="prodShort"/> 1.0.0.91</xref></li>
+            <li><xref href="http://bit.ly/1QYXzXt" format="html" scope="external">Download <keyword
+                  keyref="prodShort"/> 1.0.0.84</xref></li>
           </ul><note type="tip">To decompress <filepath>tar.gz</filepath> files on Windows, you can
             use a file archiver such as <xref href="http://www.7-zip.org/" format="html"
               scope="external">7zip</xref>.</note><b>Downloading and Installing the Cloud Foundy
