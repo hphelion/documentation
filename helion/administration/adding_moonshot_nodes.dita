@@ -3,7 +3,7 @@
 <topic id="topic_h3s_n4t_mt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding Moonshot Nodes</title>
   <body>
-    <!--Needs Edit-->
+    <!--Needs Work-->
     <p>
       <note type="important">Moonshots are supported as compute nodes.</note>
     </p>
@@ -51,7 +51,7 @@
     </section>
     <section><sectiondiv><b>YAML Files</b></sectiondiv><p>Ensure that you modify the following YAML
         files before provisioning Moonshot nodes:<ul id="ul_qbb_ln1_nt">
-          <li><!--<codeph>baremetalConfig.yml</codeph><p>The <codeph>baremetalConfig.yml</codeph> provides a detail about each of the servers in your environment. You must add the iLO information and Moonshot identifier to this file. A sample file of <codeph>baremetalConfig.yml</codeph> is shown below:<codeblock>baremetal_servers:
+          <!--<li><codeph>baremetalConfig.yml</codeph><p>The <codeph>baremetalConfig.yml</codeph> provides a detail about each of the servers in your environment. You must add the iLO information and Moonshot identifier to this file. A sample file of <codeph>baremetalConfig.yml</codeph> is shown below:<codeblock>baremetal_servers:
     - 
       node_name: Compute005
       role: ROLE-COMPUTE-MOONSHOT
@@ -62,7 +62,7 @@
       <b>kopt_extras: vga=788 console=ttyS0,9600 earlyprint=serial,ttyS0,9600</b>
       ilo_ip: 10.1.196.27
       ilo_user: Administrator
-      ilo_password: password</codeblock></p>In the sample file, <b>moonshot: c39n1</b> is an identifier for Moonshot node.--></li>
+      ilo_password: password</codeblock></p>In the sample file, <b>moonshot: c39n1</b> is an identifier for Moonshot node.</li>-->
           <li><codeph>control_plane.yml</codeph><p>A control plane uses a server with a particular
               server-role. A sample file of <codeph>control_plane.yml</codeph> is shown
               below:<codeblock>---
@@ -86,13 +86,13 @@ resource-nodes:
         </ul></p></section>
     <section>
       <ul id="ul_n51_lp1_nt">
-        <li><codeph>disks_compute.yml</codeph><note> The minimum size of the root device used in
+        <li><codeph>disks_compute.yml</codeph><note> The minimum size of the root device used in the
             input model is 32GB. You can increase the % value so that the size is greater than 32GB.
             This is a generic requirement but is specifically relevant to moonshots since the disk
             is relatively small. </note><p>A disk model defines how local storage is to be
             configured and presented to services. Disk models are identified by a name, which can be
             specified by the user.
-            <!--Since, Moonshot has only one disk, you must specify one or more disk before provisioning the Moonshot nodes-->.
+              <!--Since, Moonshot has only one disk, you must specify one or more disk before provisioning the Moonshot nodes.-->
             A sample file of <codeph>disks_compute.yml</codeph> is shown
             below:<codeblock>---
   product:
@@ -135,7 +135,7 @@ resource-nodes:
             mkfs-opts: -O large_file</codeblock></p><p>In
             the sample file, the name of the disk model is
           <b>DISK_SET_COMPUTE_MOONSHOT</b>.</p></li>
-        <li><codeph>net_interfaces.yml</codeph><p>Interface model describes how its network
+        <li><codeph>net_interfaces.yml</codeph><p>The interface model describes how its network
             interfaces are to be configured and used. <!--You need not modify this YAML file.--> A
             sample file of <codeph>net_interfaces.yml</codeph> is shown
             below:<codeblock>---
@@ -184,7 +184,7 @@ resource-nodes:
       role: <b>ROLE-COMPUTE-MOONSHOT</b>
     # nic-mapping: MY_2PORT_SERVER</codeblock></p><p>In
             the sample file, <b>role: ROLE-COMPUTE-MOONSHOT</b> identifies the role of the Moonshot
-            node.</p><p>Moonshot server comes with only 2 NICs. One is used for PXE and another is
+            node.</p><!-- TODO What is "truck 9"? is this a typo? --><p>Moonshot server comes with only 2 NICs. One is used for PXE and another is
             used as truck 9. <note type="important">NIC binding is not supported due to limited
               number of NICs. Hence, the NIC mapping section in the HP Helion OpenStack input model
               should not be present for moonshot nodes.</note></p></li>
