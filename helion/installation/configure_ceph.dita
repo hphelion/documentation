@@ -201,23 +201,22 @@
               </li>
             </ul></li>
           <li>Commit your
-              configuration<codeblock>cd ~/helion/hos/ansible
+            configuration<codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock></li>
         </ol></p>
     </section>
     <section id="install_ceph"><title>Run Ceph Client Packages</title>
-      <p>Ceph Monitor service is deployed on the Controller Nodes and OSDs are deployed as separate
-        nodes (Resource Nodes).<note>While executing <codeph>site.yml</codeph> playbook with the
+      <p>The Ceph Monitor service is deployed on the controller bodes and OSD disks are deployed as
+        separate nodes (resource nodes).</p>
+      <p><note>While executing the <codeph>site.yml</codeph> playbook with the
             <codeph>–-limit</codeph> option, it is also expected to include the controller nodes in
           the list of restricted nodes if the cloud is deployed with a Ceph cluster.</note></p>
       <p><b>Run Ceph Client Packages</b></p>
-      <p>Ceph can be used as backend for <xref
-          href="../blockstorage/ceph/configuring_use_ceph_cluster.dita#topic_i2z_zc3_pt"
-          >cinder-volume</xref> The nodes running these services should have a client installed on
-        it. Use <codeph>ceph-client-prepare.yml</codeph> to deploy the Ceph client on respective
+      <p>In order for Ceph to be used as a backend for volumes, the nodes running these services
+        should have the Ceph client installed on them. Use the
+          <codeph>ceph-client-prepare.yml</codeph> playbook to deploy the Ceph client on these
         nodes.</p>
-      <p>Execute the following playbook so that the rings files are set up properly:</p>
       <p>
         <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>

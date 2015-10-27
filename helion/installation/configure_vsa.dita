@@ -129,7 +129,7 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
               <li>Click the <codeph>Enable X11 forwarding box to ensure it has a checkmark in
                   it</codeph></li>
             </ol>
-            <image href="../../media/vsa/xming1.png"/>
+            <p><image href="../../media/vsa/xming1.png"/></p>
           </li>
           <li>SSH to first control plane node. <codeblock>ssh -X</codeblock><p>and enter the CMC
               command (as mentioned below) to launch CMC.</p></li>
