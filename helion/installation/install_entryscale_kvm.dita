@@ -167,7 +167,11 @@ git commit -m "My config or other commit message"</codeblock>
             href="using_git.dita">Using Git for Configuration Management</xref> for more
           information.</note></p>
     </section>
-    <section id="thirdparty"><title>Using 3rd Party Baremetal Installers</title>
+    <section id="provision"><title>Provision Your Baremetal Nodes</title>
+      <p>To provision the baremetal nodes in your cloud deployment you can either use the automated
+        operating system installation process provided by HP Helion OpenStack or you can use the 3rd
+        party installation tooling of your choice. We will outline both methods below:</p>
+      <p id="thirdparty"><b>Using 3rd Party Baremetal Installers</b></p>
       <p>If you do not wish to use the automated operating system installation tooling included with
         HP Helion OpenStack 2.0 then the requirements that have to be met using the installation
         tooling of your choice are:</p>
@@ -190,9 +194,9 @@ git commit -m "My config or other commit message"</codeblock>
           Processor</xref> step.</p>
       <p>If you would like to use the automated operating system installation tools provided by HP
         Helion OpenStack 2.0 then complete all of the steps below.</p>
-    </section>
-    <section id="deploy_cobbler">
-      <title>Deploy Cobbler</title>
+      <p><b>Using the Automated Operating System Installation Provided by HP Helion
+        OpenStack</b></p>
+      <p><b>Part One: Deploy Cobbler</b></p>
       <p>This phase of the install process takes the baremetal information that was provided in
           <codeph>servers.yml</codeph> and installs the Cobbler provisioning tool and loads this
         information into Cobbler. This sets each node to <codeph>netboot-enabled: true</codeph> in
@@ -220,9 +224,7 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
             required or if the SSH keys are lost. The value is encrypted and placed in the kickstart
             for the node installs.</p> --></li>
       </ol>
-    </section>
-
-    <section id="provision_nodes"><title>Provision the Nodes</title>
+      <p><b>Part Two: Provision the Nodes</b></p>
       <p>This phase of the install process goes through a number of distinct steps: <ol>
           <li>Powers down the nodes to be installed</li>
           <li>Sets the nodes hardware boot order so that the first option is a network boot.</li>
