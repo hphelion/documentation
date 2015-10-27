@@ -24,12 +24,11 @@
       <p>In this release, connection details and passwords are encrypted and or protected. See <xref
           href="security/encrypted_storage.dita">Encryption of Passwords and Sensitive Data
         </xref>for more information.</p>
-      <p><b>AppArmor enabled</b></p> 
-      <p>AppArmor in HP Helion OpenStack 2.0 is installed and enabled on the KVM compute nodes 
-        by default. It runs in enforce mode. It enforces mandatory access control policies for 
-        the libvirt process. See <xref
-        href="security/using_apparmor.dita#topic_rmq_j1v_4t">AppArmor in HP Helion OpenStack
-        2.0</xref> for more information.</p>
+      <p><b>AppArmor enabled</b></p>
+      <p>AppArmor in HP Helion OpenStack 2.0 is installed and enabled on the KVM compute nodes by
+        default. It runs in enforce mode. It enforces mandatory access control policies for the
+        libvirt process. See <xref href="security/using_apparmor.dita#topic_rmq_j1v_4t">AppArmor in
+          HP Helion OpenStack 2.0</xref> for more information.</p>
       <!--<p><b>Dedicated Deployer Node No Longer Required</b></p>
       You can now use either a dedicated deployer node or setup the deployer on your first
       controller node. If you choose to use your first controller node as your deployer, ensure that
@@ -175,7 +174,7 @@
           href="operations/monitoring_service.dita">Monasca Overview</xref></p>
       <p><b>Monitoring Configuration Options Available for Metrics Database</b></p><p>In this
         release you will have the option to specify which database platform you want to use for the
-        Metrics Database. The default option with the installation is Vertica. The opensource
+        metrics database. The default option with the installation is Vertica. The opensource
         alternative is InfluxDB.</p> Learn more about these options here: <xref
         href="administration/configure_monitoring.dita">Configuring the Monitoring Service</xref>
       <p><b>Centralized Logging</b></p> Logging for the services below is enabled in the default
@@ -198,8 +197,8 @@
         the following limitations: </p><ul id="ul_p21_d45_tt">
         <li>Only one Swift zone is supported.</li>
       </ul>
-      <p><b>Helion Cloud Monitoring (Monasca) Limitations</b></p> Basic Monitoring is complete for
-      Beta 2 with the following limitations: <ul id="ul_fn1_d45_tt">
+      <p><b>Monitoring (Monasca) Limitations</b></p> The monitoring service has the following
+      limitations: <ul id="ul_fn1_d45_tt">
         <li>Vertica is the default metrics database option in the install. If you want to use
           InfluxDB then read <xref href="administration/configure_monitoring.dita#monitoring/config"
             type="section">Configuring Monasca</xref> for more details.</li>
@@ -207,9 +206,8 @@
           cluster.</li>
         <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
       </ul>
-      <p><b>Operations Console (Ops Console)</b></p> The Operations Console is available on port
-      9095 on the first controller node IP. There are some limitations to note and they are listed
-      below by menu option in the console: <ul id="ul_wv1_d45_tt">
+      <p><b>Operations Console (Ops Console)</b></p> The Operations Console has the following
+      limitations (listed below by menu option in the console): <ul id="ul_wv1_d45_tt">
         <li>Dashboard <ul id="ul_s2b_d45_tt">
             <li>There are two notification sections for the Storage services. The one in the upper
               left is the Compute service mislabeled as Storage.</li>
@@ -251,21 +249,29 @@
               address or password.</li>
           </ul></li>
       </ul>
-      <p id="logging"><b>Centralized Logging Limitations</b></p> Logging support is complete for
-      Beta 2 with the following limitations: <ul id="ul_jjb_d45_tt">
+      <p id="logging"><b>Centralized Logging Limitations</b></p>
+      <p>The Centralized Logging service has the following limitations:</p>
+      <ul>
         <li>Alarm definition and generation for Kibana and curator are not integrated.</li>
         <li>Logging-monitor 'stop' playbook is not integrated.</li>
-      </ul><b> Issues in this release</b><p><b>The Elasticsearch Cluster Name Must Be
-        Unique</b></p><p>The default Elasticsearch cluster name is set to
-          <codeph>elasticsearch</codeph> in the Logging configuration files. It is necessary during
-        installation to change this value to a unique name. This step is included in our
-        installation documentation.</p>
-      <p><b>Issue: Logrotate Settings for MySQL, keepalived, and RabbitMQ are
-        Invalid</b></p><p>There is currently a workaround needed on the controller nodes to fix the
-        logrotate settings for the MySQL, keepalived, and RabbitMQ services.</p> The logrotate for
-      MySQL, keepalived and RabbitMQ is being overwritten by an invalid logrotate configuration
-      supplied in the logging-server component. A valid logrotate configuration for these services
-      is supplied in the following files on the deployer:
+      </ul>
+      <p><b>Issue: The Elasticsearch Cluster Name Must Be Unique</b></p>
+      <p>The default Elasticsearch cluster name is set to <codeph>elasticsearch</codeph> in the
+        logging configuration files. It is necessary during installation to change this value to a
+        unique name. This step is included in our installation documentation.</p>
+      <p><b>Issue: The Heap parameters for Elasticsearch and Logstash are auto-tuned
+        incorrectly</b></p>
+      <p>There is an issue where the Heap paramters for Elasticsearch and Logstash are incorrectly
+        auto-tuned. We recommend that for a system with only 32GB of RAM that you manually modify
+        the heap values on the lifecycle-manager node to <codeph>8g</codeph> for Elasticsearch and
+          <codeph>2g</codeph> for Logstash in the following file:</p>
+      <codeblock>~/helion/my_cloud/config/logging/main.yml</codeblock>
+      <p><b>Issue: Logrotate Settings for MySQL, keepalived, and RabbitMQ are Invalid</b></p>
+      <p>There is currently a workaround needed on the controller nodes to fix the logrotate
+        settings for the MySQL, keepalived, and RabbitMQ services.</p> The logrotate for MySQL,
+      keepalived and RabbitMQ is being overwritten by an invalid logrotate configuration supplied in
+      the logging-server component. A valid logrotate configuration for these services is supplied
+      in the following files on the deployer:
         <codeblock>/home/stack/scratch/ansible/next/hos/ansible</codeblock><p>The files in that
         directory are:</p><codeblock>
 mysql: ./roles/FND-MDB/templates/etc/logrotate.d/mysql
