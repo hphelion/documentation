@@ -29,8 +29,10 @@
             terminate your instance and its security groups, run the following command and enter
               <userinput>yes</userinput> when prompted:</p><note type="important"
             id="delete_cluster">This action will delete all of your managed infrastructure and it
-            cannot be
-            undone.</note><codeblock>terraform destroy -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
+            cannot be undone. For more information, see the Terraform documentatio on <xref
+              href="https://terraform.io/docs/commands/destroy.html" format="html" scope="external"
+              >Command:
+            Destroy</xref>.</note><codeblock>terraform destroy -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
             type="note">For more information, see <xref
               href="../../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt">Terraform
               Variables</xref>.</note><p>Terraform cleanly terminates the instance and the security

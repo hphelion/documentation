@@ -11,10 +11,13 @@
   </metadata>
  </prolog>
  <conbody>
-    <note type="tip">For detailed instructions on using the <filepath>cf push</filepath> command and
-      deploying applications, see the <xref
+    <note type="tip">For more information, see the Cloud Foundry documentation on the <xref
+        href="https://docs.cloudfoundry.org/concepts/architecture/execution-agent.html"
+        format="html" scope="external">Droplet Execution Agent</xref>. For detailed instructions on
+      using the <filepath>cf push</filepath> command and deploying applications, see the Cloud
+      Foundry documentation on <xref
         href="http://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html" format="html"
-        scope="external">Cloud Foundry Documentation</xref>.</note>
+        scope="external">deploying an application</xref>.</note>
   <simpletable>
    <strow>
     <stentry>1. <xref conref="CFR_step_2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.

@@ -13,8 +13,8 @@
   <refbody>
     <table frame="all" rowsep="1" colsep="1" id="table_fjz_c3c_rt">
       <desc>
-        <note type="important">Specify the variable values in quotation marks. Values are
-          case-sensitive.</note>
+        <note type="important">Except for <codeph>dea_count</codeph>, specify all variable values in
+          quotation marks. These values are case-sensitive.</note>
       </desc>
       <tgroup cols="3">
         <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -102,7 +102,7 @@ cluster_admin_password = "myClusterPassword123"
 key_file = "myKeyFile.pem"           
 <draft-comment author="michaelk">router_ssl_cert_file = "/etc/ssl/certs/SSL.crt"
 router_ssl_key_file = "/etc/ssl/private/SSL.key"</draft-comment>
-dea_count = "1"</codeblock>
+dea_count = 1</codeblock>
     </example>
   </refbody>
 </reference>
