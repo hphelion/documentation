@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_rmq_j1v_4t">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Refining Access Control with AppArmor</title>
-  <body><!--Needs Edit-->
+  <body>
    <section id="intro">
       <p> AppArmor is a Mandatory Access Control (MAC) system as opposed to a discretionary access
         control system. It is a kernel-level security module for Linux that controls access to
