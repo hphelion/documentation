@@ -318,8 +318,8 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
             </row>
           </tbody>
         </tgroup>
-      </table>table <p><b>Issue: Logrotate Settings for MySQL, keepalived, and RabbitMQ are
-          Invalid</b></p>
+      </table>
+      <p><b>Issue: Logrotate Settings for MySQL, keepalived, and RabbitMQ are Invalid</b></p>
       <p>There is currently a workaround needed on the controller nodes to fix the logrotate
         settings for the MySQL, keepalived, and RabbitMQ services.</p> The logrotate for MySQL,
       keepalived and RabbitMQ is being overwritten by an invalid logrotate configuration supplied in
