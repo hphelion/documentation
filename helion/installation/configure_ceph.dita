@@ -213,10 +213,11 @@ git commit -m "&lt;commit message>"</codeblock></li>
             <codeph>–-limit</codeph> option, it is also expected to include the controller nodes in
           the list of restricted nodes if the cloud is deployed with a Ceph cluster.</note></p>
       <p><b>Run Ceph Client Packages</b></p>
-      <p>In order for Ceph to be used as a backend for volumes, the nodes running these services
-        should have the Ceph client installed on them. Use the
-          <codeph>ceph-client-prepare.yml</codeph> playbook to deploy the Ceph client on these
-        nodes.</p>
+      <p>In order for Ceph to be used as a <xref
+          href="installation_verification.dita#install_verification/volume_verify">backend for
+          volumes</xref>, the nodes running these services should have the Ceph client installed on
+        them. Use the <codeph>ceph-client-prepare.yml</codeph> playbook to deploy the Ceph client on
+        these nodes.</p>
       <p>
         <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
