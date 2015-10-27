@@ -5,13 +5,14 @@
   <body>
     <section id="NovaCompute">
       <title>Nova compute</title> 
+      <p>You can stop API requests going to a service using Nova stop script, or start a service that
+        had died or was in a bad state with Nova start script.</p>      
       <p>To stop the Nova compute service, you must run the playbook associated with 
         the service:</p>
       <codeblock>ansible-playbook -i hosts/verb_hosts nova-stop.yml</codeblock> 
       <p>Similarly, to start the Nova compute service:</p>
       <codeblock>ansible-playbook -i hosts/verb_hosts nova-start.yml</codeblock>
-      <p>You can stop API requests going to a service using Nova stop script, or start a service that
-      had died or was in a bad state with Nova start script.</p>
+      <p>It is possible to target only specific nodes using the ansible <codeph>--limit</codeph> parameter.</p>
      </section>
     
     
