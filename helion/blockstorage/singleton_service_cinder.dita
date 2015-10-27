@@ -2,66 +2,67 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_l1p_vpy_jt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Managing Cinder Volume and Backup Services</title>
-  <body><!--Needs Edit-->
-    <p>Due to the single threading required in both cinder-volume and the drivers, the Cinder volume
-      service is run as a singleton in the control plane.</p>
+  <body><!--Needs Work; fnf edit 10/27; intro text to first procedure needs clarifying-->
+    <p>Due to the single threading required in both <codeph>cinder-volume</codeph> and the drivers,
+      the Cinder volume service is run as a singleton in the control plane.</p>
     <section>
       <title>Prerequisite</title>
       <p>Helion OpenStack cloud must be successfully deployed. </p>
     </section>
     <section>
       <title>Migrating the Cinder Volume and Backup Services</title>
-      <p>Due to the single threading required in both cinder volume and the drivers and because
-        cinder backups  have a dependency on cinder volume, the cinder volume and backup services
-        are started on one controller node only at a time. By default cinder volume and cinder
-        backup are started on the first node in the cinder volume and backup hostgroup. If needed,
-        the volume and backup services can be migrated to a different node in the hostgroup. The
-        following steps explain how to migrate the services to a specified host.<ol
+      <p>Due to the single threading required in both <codeph>cinder-volume</codeph> and the
+        drivers, and because Cinder backups have a dependency on <codeph>cinder-volume</codeph>, the
+        Cinder volume and backup services are started on one controller node at a time. By default,
+        these services are started on the first node in the Cinder volume and backup hostgroup. If
+        needed, the volume and backup services can be migrated to a different node in the hostgroup.
+        The following steps describe how to migrate the services to a specified host.<ol
           id="ol_mmx_mkb_kt">
-          <li>Get the hostname of the node cinder volume and backup are to be migrated to. <p>For
+          <li>Get the hostname of the node Cinder volume and backup are to be migrated to. <p>For
               example: <codeblock>$ hostname
 padawan-ccp-c1-m2-mgmt</codeblock></p></li>
           <li>Run the <codeph>cinder-migrate-volume.yml</codeph> playbook specifying the node to
-            migrate to in the "migrate_host"
-            argument.<codeblock>cd ~/scratch/ansible/next/hos/ansible 
+            migrate to in the <codeph>migrate_host</codeph>
+            argument:<codeblock>cd ~/scratch/ansible/next/hos/ansible 
 ansible-playbook -i hosts/verb_hosts cinder-migrate-volume.yml --extra-vars "migrate_host=padawan-ccp-c1-m2-mgmt"</codeblock>After
-            successful running of the <codeph>cinder-migrate-volume.yml</codeph> playbook, the
-            cinder volume and backup services should be running on the specified node. For example:
+            successfully running the <codeph>cinder-migrate-volume.yml</codeph> playbook, the Cinder
+            volume and backup services should be running on the specified node. For example:
               <codeph>padawan-ccp-c1-m2-mgmt</codeph>. <p>If the original node where the services
-              were running is restarted, the cinder volume and backup services will not restart on
-              this node. For example: it will not start on <codeph> padawan-ccp-c1-m1-mgmt</codeph>.
-              To get the cinder volume and backup services running again on
-                <codeph>padawan-ccp-c1-m1-mgmt</codeph>, run the
+              were running is restarted, the Cinder volume and backup services will not restart on
+              this node. For example, they will not start on <codeph>
+                padawan-ccp-c1-m1-mgmt</codeph>. To get the Cinder volume and backup services
+              running again on <codeph>padawan-ccp-c1-m1-mgmt</codeph>, run the
                 <codeph>cinder-migrate-volume.yml</codeph> playbook again by setting the
-              "migrate_host" value to <codeph>padawan-ccp-c1-m1-mgmt</codeph>.</p></li>
+                <codeph>migrate_host</codeph> value to
+            <codeph>padawan-ccp-c1-m1-mgmt</codeph>.</p></li>
         </ol></p>
     </section>
     <section>
       <title>Managing Cinder Volume and Backup Services During a Node Reboot </title>
-      <p>If the controller node is running cinder volume and backup reboots, perform the following
+      <p>If the controller node is running Cinder volume and backup reboots, perform the following
         steps: <ol id="ol_o3k_1ff_pt">
           <li>Run the <codeph>hlm-start.yml</codeph> playbook on the node that has just rebooted
-            using the "--limit &lt;hostname>" option. <p>For example:
+            using the <codeph>--limit &lt;hostname></codeph> option. <p>For example:
             </p><codeblock> cd ~/scratch/ansible/next/hos/ansible/
  ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit padawan-ccp-c1-m1-mgmt </codeblock></li>
-          <li>Migrate the cinder volume and backup services using the<codeph>
-              cinder-migrate-volume.yml</codeph> playbook .<p>The node to migrate to may be the node
-              that has just rebooted or it can be one of the other nodes in the cinder volume
-              hostgroup. </p></li>
+          <li>Migrate the Cinder volume and backup services using the
+              <codeph>cinder-migrate-volume.yml</codeph> playbook.<p>The node to migrate to may be
+              the node that has just rebooted, or it can be one of the other nodes in the Cinder
+              volume hostgroup. </p></li>
         </ol></p>
     </section>
     <section>
       <title>Managing Cinder Volume and Backup Services During a Node Replacement</title>
-      <p>If the controller node running cinder volume and backup is going to be replaced with a new
+      <p>If the controller node running Cinder volume and backup is going to be replaced with a new
         node, perform the following steps: <ol id="ol_b1c_ngf_pt">
-          <li>Migrate the cinder volume and backup services to another controller node using the
+          <li>Migrate the Cinder volume and backup services to another controller node using the
               <codeph>cinder-migrate-volume.yml</codeph> playbook.</li>
-          <li>Follow the <xref href="../operations/replace_controller.dita#topic_ijj_45j_nt"
-              >replacement procedure </xref>for control plane nodes. </li>
+          <li>For control plane nodes, follow the steps in <xref
+              href="../operations/replace_controller.dita#topic_ijj_45j_nt"/>. </li>
           <li>Run the <codeph>cinder-migrate-volume.yml</codeph> playbook again to ensure the new
-            node has an up to date view of the volume service location. <p>When running
-                <codeph>cinder-migrate-volume.yml</codeph> the volume service can optionally be
-              migrated on to the new node or on to one of the other nodes in the cinder volume
+            node has an up-to-date view of the volume service location. <p>When running
+                <codeph>cinder-migrate-volume.yml</codeph>, the volume service can optionally be
+              migrated on to the new node or on to one of the other nodes in the Cinder volume
               hostgroup.</p></li>
         </ol></p>
     </section>
