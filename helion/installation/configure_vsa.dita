@@ -118,8 +118,8 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
             lifecycle-manager node. You can download Xming from <xref
               href="http://sourceforge.net/projects/xming/" format="html" scope="external"
               >Sourceforge.net</xref>.</li>
-          <li>Select <b>Enable X11 forwarding</b> checkbox on the PuTTy session for deployer node.
-            You can do this in PuTTY by: <ol>
+          <li>Select <b>Enable X11 forwarding</b> checkbox on the PuTTy session for
+            deployer/lifecycle-manager node. You can do this in PuTTY by: <ol>
               <li>Navigate to the <codeph>Connection -> SSH -> X11</codeph> option in PuTTy</li>
               <li>Click the <codeph>Enable X11 forwarding box to ensure it has a checkmark in
                   it</codeph></li>

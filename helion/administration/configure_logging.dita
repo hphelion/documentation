@@ -338,7 +338,7 @@
                   for <b>ceilometer-api</b> only by changing
                     <b>roles/CEI-API/templates/api-logging.conf.j2:level: DEBUG</b>
                   <p>For post deployment log level changes, please re-run the following from
-                    deployer node:
+                    deployer/lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p></entry>
               </row>
@@ -352,7 +352,7 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                   for <b>ceilometer-collector</b> only by changing
                     <b>roles/CEI-COL/templates/collector-logging.conf.j2:level: DEBUG</b>
                   <p>For post deployment log level changes, please re-run the following from
-                    deployer node:
+                    deployer/lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p></entry>
               </row>
@@ -385,7 +385,7 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                   for <b>ceilometer-agent-central</b> only by changing
                     <b>roles/CEI-CAG/templates/agent-central-logging.conf.j2:level: DEBUG</b>
                   <p>For post deployment log level changes, please re-run the following from
-                    deployer node:
+                    deployer/lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p></entry>
               </row>
@@ -399,7 +399,7 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                   for <b>ceilometer-expirer</b> only by changing
                     <b>roles/CEI-EXP/templates/expirer-logging.conf.j2:level: DEBUG</b>
                   <p>For post deployment log level changes, please re-run the following from
-                    deployer node:
+                    deployer/lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p></entry>
               </row>

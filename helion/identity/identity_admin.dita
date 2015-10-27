@@ -5,9 +5,9 @@
   <body><!--Needs Edit-->
     <section id="administration"><title>Post-Installation Verification and Administration</title>
       <p>Keystone identity service query and administration tasks can be performed using the
-        OpenStack command line utility. The utility is installed by the deployer onto deployer node.
-        Also, HP Helion OpenStack installs convenient *.osrc files which contain exports of
-        environment variables used by the OpenStack CLI.</p><p>
+        OpenStack command line utility. The utility is installed by the deployer onto
+        deployer/lifecycle-manager node. Also, HP Helion OpenStack installs convenient *.osrc files
+        which contain exports of environment variables used by the OpenStack CLI.</p><p>
         <note>Keystone administration tasks should be performed by an <i>admin</i> user with a token
           scoped to the <i>default</i> domain via the Keystone v3 identity API. These settings are
           preconfigured in the <i>keystone.osrc</i> file. By default, keystone.osrc is configured

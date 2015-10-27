@@ -4,10 +4,10 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Refining Access Control with AppArmor</title>
   <body><!--Needs Edit-->
    <section id="intro">
-      <p> AppArmor is a Mandatory Access Control (MAC) system as opposed to a discretionay access
-        control system. It is a kernel-level security module for Linux that controls
-        access to low-level resources based on rights granted via policies to a program rather than to a
-        user role. It enforces rules at the lowest software layer&#151;the kernel level, preventing
+      <p> AppArmor is a Mandatory Access Control (MAC) system as opposed to a discretionary access
+        control system. It is a kernel-level security module for Linux that controls access to
+        low-level resources based on rights granted via policies to a program rather than to a user
+        role. It enforces rules at the lowest software layer&#151;the kernel level, preventing
         software from circumventing resource restrictions that reside at levels above the kernel.
         With AppArmor, the final gatekeeper is closest to the hardware.</p>
       <p>Controlling resource access per application vs per user role allows you to enforce rules

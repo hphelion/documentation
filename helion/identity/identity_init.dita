@@ -10,13 +10,13 @@
         customize Keystone in a number of ways, including integration with LDAP servers. </p>
     </section>
     <section id="settings"><title>Default Settings</title>
-      <b>Identity Service Configuration Settings</b> The  identity service configuration options are
+      <b>Identity Service Configuration Settings</b> The identity service configuration options are
       described in the OpenStack documentation on the <xref
         href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
         format="html" scope="external">identity service configuration file (for Kilo) page</xref> on
       the OpenStack site. <p> </p>
       <b>Default Domain and Service Accounts</b><p>The "default" domain is automatically created
-        during the  installation to contain the various, required OpenStack service accounts
+        during the installation to contain the various, required OpenStack service accounts
         including the following:</p><ul id="ul_tzb_lpd_bt">
         <li>neutron</li>
         <li>glance</li>
@@ -37,9 +37,9 @@
         accounts should not be removed or reassigned to a different domain. The "default" domain
         should only be used for these service accounts.</p><p/><b>Post-Installation Verification and
         Administration</b><p>Keystone query and administration tasks can be performed using the
-        OpenStack command line utility. The utility is installed by the installer onto the deployer
-        node. Also, the installer installs convenient *.osrc files which contain exports of
-        environment variables used by OpenStack CLI.</p><p>
+        OpenStack command line utility. The utility is installed by the installer onto the
+        deployer/lifecycle-manager node. Also, the installer installs convenient *.osrc files which
+        contain exports of environment variables used by OpenStack CLI.</p><p>
         <note/>The identity service administration tasks should be performed by an <i>admin</i> user
         with a token scoped to the <i>default</i> domain via the Keystone v3 identity API. These
         settings are preconfigured in the <i>keystone.osrc</i> file. </p></section>

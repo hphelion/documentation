@@ -8,7 +8,7 @@
       VLAN-encapsulated provider network which is fully routable to the HP Helion OpenStack MGMT
       network. <note type="important">Create this network before attempting to install the HP Helion
         Developer Platform. </note><ol>
-        <li>SSH to the Deployer node using admin credentials.</li>
+        <li>SSH to the deployer/lifecycle-manager node using admin credentials.</li>
         <li>Source the admin credentials: <codeblock>source ~/service.osrc</codeblock></li>
         <li>Configure a Neutron network that will map to an external network for the service net. <ul>
             <li> For simple configurations, an HLM playbook has been provided for this purpose.</li>

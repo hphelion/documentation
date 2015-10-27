@@ -37,14 +37,15 @@ ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml</codeblock>
     </section>
     <section id="sshkeys"><title>Backup Your SSH Keys</title>
       <p>As part of the cloud deployment setup process, SSH keys to access the systems are generated
-        and stored in <codeph>~/.ssh</codeph> on your deployer node.</p>
+        and stored in <codeph>~/.ssh</codeph> on your deployer/lifecycle-manager node.</p>
       <p>These SSH keys allow access to the subsequently deployed systems and should be included in
         the list of content to be archived in any backup strategy.</p>
     </section>
     <section id="endpoints"><title>Retrieving Service Endpoints</title>
       <p>text</p>
       <ol>
-        <li><p>From your deployer node, source the admin creds setup during the installation:</p>
+        <li><p>From your deployer/lifecycle-manager node, source the admin creds setup during the
+            installation:</p>
           <p><codeblock>unset OS_TENANT_NAME
 source ~/keystone.osrc</codeblock></p></li>
         <li><p>Using the OpenStack command-line tool you can then query the Keystone service for

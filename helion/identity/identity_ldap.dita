@@ -14,7 +14,7 @@
     </li> <li> Create YAML file which contains definition of LDAP server connection. The sample file below is
           already provided as part of the installed <xref
             href="../installation/using_git.dita#using_git">local git repository</xref>. It is
-          available on a deployer node as
+          available on a deployer/lifecycle-manager node as
             <b>/home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_sample.yml</b>.
           Save a copy of this file, as, for example,
             <b>/home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_my.yml</b>.

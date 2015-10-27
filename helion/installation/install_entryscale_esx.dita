@@ -186,7 +186,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         section describes the procedures to prepare and deploy the ESX computes and OVSvAPPs for
         deployment. </p><p>
         <ol id="ol_xpc_zqs_ft">
-          <li>Login to the deployer node.</li>
+          <li>Login to the deployer/lifecycle-manager node.</li>
           <li>Source <codeph>service.osrc</codeph>.</li>
           <li><xref href="#install_esx/register-vcenter" format="dita">Register a vCenter
               Server</xref></li>
