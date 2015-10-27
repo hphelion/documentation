@@ -13,9 +13,8 @@
       model. However, before you start to deploy, you must do the following:</p>
     <ul id="ul_xxq_ht1_rt">
       <li>Check the disk model used by your nodes and that all disk drives are correctly named and
-        used as described in <xref
-          href="allocating_disk_drives.dita#allocating-disk-drives/swift-requirement-disk-device"
-          >Swift Requirements for Device Group Drives</xref>.</li>
+        used as described in <xref href="swift_device_groups.dita">Swift Requirements for Device
+          Group Drives</xref>.</li>
       <li>Select an appropriate partition power for your rings. For more information, see <xref
           href="ring_specifications.dita#ring-specification">Ring Specifications</xref>.</li>
     </ul>

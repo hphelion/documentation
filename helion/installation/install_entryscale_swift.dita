@@ -51,7 +51,7 @@
               <ul>
                 <li>Check the disk model used by your nodes. Specifically, check that all disk
                   drives are correctly named and used as described in <xref
-                    href="../objectstorage/allocating_disk_drives.dita#allocating-disk-drives/swift-requirement-disk-device"
+                    href="../objectstorage/swift_device_groups.dita"
                     >Allocating Swift Disk Devices</xref>.</li>
                 <li>Select an appropriate partition power for your rings. Detailed information about
                   this is provided at <xref href="../objectstorage/ring_specifications.dita">Swift Ring

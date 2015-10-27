@@ -183,7 +183,7 @@
       <p><b>Monitoring (Monasca) Limitations</b></p> The monitoring service has the following
       limitations: <ul id="ul_fn1_d45_tt">
         <li>Vertica is the default metrics database option in the install. If you want to use
-          InfluxDB then read <xref href="administration/configure_monitoring.dita#monitoring/config"
+          InfluxDB then read <xref href="administration/configure_monitoring.dita#configure_monitoring/config"
             type="section">Configuring Monasca</xref> for more details.</li>
         <li>InfluxDB is not configured behind a VIP. It must directly access one node in the
           cluster.</li>
