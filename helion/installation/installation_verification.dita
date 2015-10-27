@@ -24,11 +24,9 @@
       <p>The sections below will show you the steps to verify that your Block Storage backend was
         setup properly.</p>
     </section>
-    <section>
-      <title>Create Volume Type to Verify the Configuration of Backend</title>
-      <p><!--Volumes are the Block Storage devices that you attach to instances to enable persistent storage.-->
-        <!--You can attach a volume or detach a volume and attach it to another instance at any time. You can also create and delete volume type and volumes.--></p>
-      <p>Perform the following steps to create a volume type using the Horizon GUI: <ol>
+    <section id="create_volumetype">
+      <title>Create a Volume Type for your Volume Backend</title>
+      <p id="creating_volumetype">Perform the following steps to create a volume type using the Horizon GUI: <ol>
           <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
               >Accessing Horizon</xref> for details.</li>
           <li>Ensure that you are scoped to your <b>admin</b> Project. Then under the <b>Admin</b>
