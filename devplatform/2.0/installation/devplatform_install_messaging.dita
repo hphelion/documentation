@@ -16,11 +16,14 @@
         file earlier, you can <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one
           now</xref>.</p></section>  <section>
             <title>Install the Messaging Service</title>
-            <note type="tip"> For help with the installer, enter the command <codeph>openstack
-              hdpi</codeph>
-            </note>
+            <note type="tip"> For help with the installer, enter the command <codeph>openstack hdpi
+          -help</codeph>
+      </note>
             <ol>
-              <li>SSH to the Deployer.                </li>
+              <li>Create a new user with the Messaging Admin role; credentials for the user+tenant
+          where the service is to be deployed.</li>
+        <li>download the HDN package into swift.</li>
+        <li>SSH to the HP Helion <tm tmtype="reg">OpenStack</tm> Deployer. </li>
               <li>Create a Virtual Environment. <codeblock>virtualenv .devplatform</codeblock></li>
               <li>Source the Virtual
                 Environment.<codeblock>source .devplatform/bin/activate</codeblock></li>
@@ -30,7 +33,7 @@
                 href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one now</xref>.</li>
               <li>Run the installer.
           <codeblock>openstack hdpi messaging install --package wscatalog.</codeblock></li>
-              <li>After the installation is complete, launch the deployer.
+              <li>After the installation is complete, launch the Messaging deployer.
           <codeblock>$ openstack hdpi messaging launch</codeblock>The output should look similar to
           the
           following:<codeblock>Searching for container msgaas-deployer...
@@ -39,8 +42,7 @@ Extracting ...
 Running scripts...
 Running launcher.py
 
-....
-</codeblock></li>  </ol>
+....</codeblock></li>  </ol>
           </section>
   </body>
 </topic>

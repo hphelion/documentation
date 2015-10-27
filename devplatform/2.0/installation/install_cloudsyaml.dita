@@ -43,9 +43,9 @@
           <codeph>http</codeph>.</sli>
         <sli><codeph>project_name</codeph>: The Name of the admin project in Horizon. </sli>
         <sli><codeph>username</codeph>: The Username of an account with installation privileges
-          (administrator). </sli>
+          (administrator role). </sli>
         <sli><codeph>password</codeph>: The Password for the same account with installation
-          privileges (administrator). </sli>
+          privileges (administrator role). </sli>
       </sl>
     </section>
     <section>
