@@ -2,22 +2,22 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_x2x_vy4_lt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: ESX ON-Boarding Service (EON)</title>
-  <body><!--Needs Edit-->
-    <p>The HP Helion OpenStack 2.0 EON (ESX on boarding) Service is an inventory, which interacts
-      with the VMware vCenter server and collects available information from data centers, clusters,
-      datastore, dvSwitch and portgroup details. When a cloud admin wants a particular cluster to be
-      a compute resource in HP Helion Openstack 2.0, Eon provisions nova proxy service VM for each
-      cluster and OVSvApp service VM for each ESX host in that cluster.</p>
+  <body><!--Needs Work; fnf edit on 10/27; overview needs clarification.-->
+    <p>The HP Helion OpenStack 2.0 EON (ESX on boarding) service is an inventory, which interacts
+      with the VMware vCenter server, and collects available information from data centers,
+      clusters, datastore, dvSwitch and portgroup details. When a cloud admin wants a particular
+      cluster to be a compute resource in HP Helion Openstack 2.0, Eon provisions nova proxy service
+      VM for each cluster and OVSvApp service VM for each ESX host in that cluster.</p>
     <p>The integration of EON with HP Helion OpenStack 2.0 automates the steps for moving/adding a
-      cluster in a compute resource. You must execute a few EON CLI commands to do so.</p>
-    <p>Moreover, EON is not installed by default. To install EON service, you must uncomment
+      cluster in a compute resource. You must run a few EON commands to do so.</p>
+    <p>Moreover, EON is not installed by default. To install EON service, you must uncomment the
         <systemoutput>eon-deploy.yml</systemoutput> file at
         <systemoutput>~/helion/hos/ansible/hlm-deploy.yml</systemoutput> in the
-      deployer/lifecycle-manager node. For more details, refer to <xref
-        href="../installation/install_entryscale_esx.dita#install_esx">ESX installation.</xref></p>
+      deployer/lifecycle-manager node. For instructions, see <xref
+        href="../installation/install_entryscale_esx.dita#install_esx"/>.</p>
     <section>
       <title><b>Architecture</b></title>
-      <p>EON is installed on the master control plane node and the Eon CLI is installed on the HLM
+      <p>EON is installed on the master control plane node and the EON CLI is installed on the HLM
         deployer/lifecycle-manager node which is used by the Cloud Admin to setup vCenter Compute
         Proxy and OvsvApp nodes.</p>
       <p><image href="../../media/esx/eon_arch_diagram.png"/></p>

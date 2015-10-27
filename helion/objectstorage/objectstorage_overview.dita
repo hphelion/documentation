@@ -50,10 +50,8 @@
           </ul></li>
       </ul><ul id="ul_e34_l3r_qt">
         <li><xref href="allocating_disk_drives.dita#allocating-disk-drives"/><ul id="ul_zjl_t3r_qt">
-            <li><xref href="label_on_partition.dita#verify-partition-label">How to Verify if a
-                Partition is Labelled</xref></li>
-            <li><xref href="filesystem_label.dita#verify-the-filesystem-label">How to Verify if a
-                File System is Labelled</xref></li>
+            <li><xref href="label_on_partition.dita#verify-partition-label"/></li>
+            <li><xref href="filesystem_label.dita#verify-the-filesystem-label"/></li>
           </ul></li>
       </ul><ul id="ul_ep5_bjr_qt">
         <li><xref href="creating_pac_cluster.dita"/></li>

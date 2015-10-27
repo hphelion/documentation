@@ -2,14 +2,14 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_l5t_w5f_rt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Enabling a New Cluster as a Compute Resource </title>
-  <body><!--Needs Edit-->
-    <p>When a new cluster is created in vCenter, EONs periodic pooling task fetches the new cluster
-      information and updates the inventory. At present the state of a new cluster is
+  <body>
+    <p>When a new cluster is created in vCenter, EON's periodic pooling task fetches the new cluster
+      information and updates the inventory. Currently, the state of a new cluster is
         <b>not_imported</b>.</p>
-    <section><b>Enable a new cluster</b><p>Perform the following to enable a new cluster as a
+    <section><b>To Enable a New Cluster</b><p>Perform the following to enable a new cluster as a
         compute resource.<ol id="ol_ipn_jvf_rt">
           <li>List the
-              clusters.<codeblock># eon cluster-list --vcenter-id &lt;vCenter ID></codeblock><p>For
+              clusters:<codeblock># eon cluster-list --vcenter-id &lt;vCenter ID></codeblock><p>For
               example:<codeblock># eon cluster-list --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674
 +------------+----------+------------+---------------+
 | MOID       | Name     | Datacenter | Import Status |
@@ -18,7 +18,7 @@
 | domain-c24 | Cluster2 | DC1        | not_imported  |
 | domain-c25 | Cluster3 | DC2        | not_imported  |
 +------------+----------+------------+---------------+</codeblock></p><p>Once
-              the newly added cluster appears after executing <codeph>cluster-list</codeph> command,
+              the newly-added cluster appears after running <codeph>cluster-list</codeph> command,
               do the following:</p></li>
         </ol></p></section>
     <section conref="../installation/install_entryscale_esx.dita#install_esx/import-cluster"/>
@@ -27,7 +27,7 @@
     <section conref="../installation/install_entryscale_esx.dita#install_esx/commit-your-cloud"/>
     <section conref="../installation/install_entryscale_esx.dita#install_esx/deploy-compute-proxy-ovsvapps"/>
     <p><b>OR</b></p>
-    <p>If the newly added cluster is in a new Datacenter on which no activated clusters exists then
+    <p>If the newly-added cluster is in a new datacenter on which no activated clusters exist, then
       do the following:</p>
     <section conref="../installation/install_entryscale_esx.dita#install_esx/register-network"/>
     <section conref="../installation/install_entryscale_esx.dita#install_esx/import-cluster"/>
