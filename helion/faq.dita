@@ -14,12 +14,9 @@
       <title>How do I change my service passwords from the default?</title>
       <p>By default there is an Administrator user (username "admin") created during the
         installation process. To retrieve the random password set you can use this command:</p>
-      <codeblock>source ~/keystone.osrc</codeblock>
-      <p>The default password can be changed via the Keystone API, or by using the OpenStack command
-        line client using these commands on your lifecycle-manager node after installation:</p>
-      <codeblock>openstack user password set -password &lt;one_password></codeblock>
-      <p>However, this password will also need to be updated in the respective service
-        configurations (for example, in <codeph>/etc/nova/nova.conf</codeph> file for Nova).</p>
+      <codeblock>source ~/service.osrc</codeblock>
+      <p>See <xref href="operations/accessing_horizon.dita">Accessing Horizon</xref> for more
+        details.</p>
     </section>
     <section id="Neutron">
       <title>Neutron Features</title>
