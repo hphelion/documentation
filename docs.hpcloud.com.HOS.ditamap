@@ -131,7 +131,7 @@
               navtitle="Verifying a Swift File System Label" locktitle="yes"/>
           </topicref>
           <topicref href="helion/objectstorage/swift_device_groups.dita"
-            navtitle="Swift Device Groups" locktitle="yes"/>
+            navtitle="Swift Requirements for Device Group Drives" locktitle="yes"/>
           <topicref href="helion/objectstorage/creating_pac_cluster.dita"
             navtitle="Creating a Proxy, Account, and Container Cluster for Object Storage"
             locktitle="yes"/>
