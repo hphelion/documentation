@@ -14,6 +14,9 @@
           <li>The Entry-scale KVM with VSA cloud model should be deployed. For more details on the
             installation refer to the <xref href="install_entryscale_kvm.dita#install_kvm"
               >Entry-scale with KVM installation</xref> instructions.</li>
+          <li>It's important that all of your systems have the correct date/time because the Vertica
+            license has a start date. If the start date is later than the system time then the
+            installation will fail.</li>
           <li>Collect the IP addresses of the VSA virtual machines and cluster virtual IP addresses
             allocated from the<codeph>
               ~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph> file. This file is
@@ -283,13 +286,13 @@ hplefthand_debug: false</codeblock>
             <li>Click <codeph>iSCSI</codeph> on the right hand side of the page. The virtual IP
               address will be displayed in the tabular form. You can view your cluster ID here.</li>
           </ol>
-          <note type="important">HP Helion OpenStack 2.0 supports VSA deployment for KVM only but it
-            can be used as pre-deployed (or out of the band deployed) Lefthand storage boxes or VSA
-            appliances (running on ESX/hyper-v/KVM hypervisor). It also supports Cinder
-            configuration of physical Lefthand storage device and VSA appliances. Depending upon
-            your setup, you will have to edit the below section if your StoreVirtual Storage array
-            is running LeftHand OS lower than version 11.
-            <codeblock>[&lt;unique-section-name>]
+          <p><note type="important">HP Helion OpenStack 2.0 supports VSA deployment for KVM only but
+              it can be used as pre-deployed (or out of the band deployed) Lefthand storage boxes or
+              VSA appliances (running on ESX/hyper-v/KVM hypervisor). It also supports Cinder
+              configuration of physical Lefthand storage device and VSA appliances. Depending upon
+              your setup, you will have to edit the below section if your StoreVirtual Storage array
+              is running LeftHand OS lower than version 11.
+              <codeblock>[&lt;unique-section-name>]
 volume_driver=cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
 volume_backend_name=lefthand-cliq
 san_ip=&lt;san-ip>
@@ -304,7 +307,7 @@ must be set as follows:
 san_password=&lt;san_password>
 san_ssh_port=16022
 san_clustername=&lt;vsa-cluster-name>
-volume_backend_name: &lt;vsa-backend-name></codeblock></note></li>
+volume_backend_name: &lt;vsa-backend-name></codeblock></note></p></li>
         <li>Commit your configuration to a <xref href="using_git.dita">local repository</xref>:
             <codeblock>cd ~/helion/hos/ansible
 git add -A
@@ -329,8 +332,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
     </p>
     <p>After the successful configuration of VSA as a cinder backend, you can login to Horizon
       Dashboard and perform the OpenStack Operations to verify the backend configuration etc. See
-        <xref href="../blockstorage/verify_backend_configuration.dita#topic_q5q_trz_jt"/> for more
-      details.</p>
+        <xref href="installation_verification.dita"/> for more details.</p>
     <note type="important">You can create more than one VSA cluster of same or different type by
       specifying the configuration in cloud model. For more details, refer <xref
         href="../blockstorage/vsa/vsa_create_multiple_clusters.dita">Modifying Cloud Model to Create
