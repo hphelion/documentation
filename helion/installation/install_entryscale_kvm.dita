@@ -183,7 +183,7 @@ git commit -m "My config or other commit message"</codeblock>
         <li>Each node must have SSH keys in place that allow the user who will be doing the
           deployment to SSH to each node without a password.</li>
         <li>Passwordless sudo needs to be enabled for the user.</li>
-        <li>There should be a LVM volume as <codeph>/root</codeph> on each node.</li>
+        <li>There should be a LVM logical volume as <codeph>/root</codeph> on each node.</li>
         <li>If the LVM volume group name for the volume group holding the "root" LVM logical volume
           is hlm-vg then it will align with the disk input models in the examples.</li>
         <li>Ensure that <codeph>openssh-server</codeph>, <codeph>python</codeph>, and
@@ -224,7 +224,7 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
             required or if the SSH keys are lost. The value is encrypted and placed in the kickstart
             for the node installs.</p> --></li>
       </ol>
-      <p><b>Part Two: Provision the Nodes</b></p>
+      <p><b>Part Two: Image the Nodes</b></p>
       <p>This phase of the install process goes through a number of distinct steps: <ol>
           <li>Powers down the nodes to be installed</li>
           <li>Sets the nodes hardware boot order so that the first option is a network boot.</li>
@@ -244,8 +244,9 @@ ansible-playbook -i hosts/localhost bm-reimage.yml [-e nodelist=node1,node2,node
           <codeph>netboot-enabled: True</codeph> is selected. The playbook pauses at the start to
         give you a chance to review the set of nodes that it is targeting and to confirm that it's
         correct.</p>
-      <p>You can use <codeph>sudo cobbler system find --netboot-enabled=1</codeph> which will list
-        all of your nodes with the <codeph>netboot-enabled: True</codeph> flag.</p>
+      <p>You can use the command below which will list all of your nodes with the
+          <codeph>netboot-enabled: True</codeph> flag set:</p>
+      <codeblock>sudo cobbler system find --netboot-enabled=1</codeblock>
     </section>
 
     <section id="config_processor"><title>Run the Configuration Processor</title>

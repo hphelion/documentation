@@ -224,9 +224,9 @@
           navtitle="Replacing a Controller Node" locktitle="yes"/>
         <topicref href="helion/administration/adding_moonshot_nodes.dita"
           navtitle="Adding Moonshot Nodes" locktitle="yes"/>
+        <topicset href="helion/blockstorage/vsa/remove_vsa_node_%20maintenance.dita"
+          navtitle="Removing VSA Node for Maintenance" locktitle="yes"/>
         <!-- BLOCK STORAGE -->
-        <topicref href="helion/blockstorage/vsa/remove_node.dita" navtitle="Removing a VSA Node"
-          locktitle="yes"/>
         <topicref href="helion/blockstorage/ceph/adding_new_osd_node.dita"
           navtitle="Adding an Object Storage Daemon (OSD) Node" locktitle="yes"/>
         <topicref href="helion/blockstorage/ceph/remove_osd_node.dita"
