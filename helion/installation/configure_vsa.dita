@@ -198,18 +198,22 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
         created in the previous step to configure your Cinder backend to use your VSA
         environment.</p>
       <p>To update your Cinder configuration to add VSA storage you must modify the
-          <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file as follows:</p>
+          <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file on your
+        lifecycle-manager node as follows:</p>
       <ol>
         <li>Log in to the lifecycle-manager node.</li>
-        <li>Add your VSA backend to the <codeph>enabled-backends</codeph>:
+        <li>Add your VSA backend to the <codeph>enabled_backends</codeph> section:
           <codeblock># Configure the enabled backends
 enabled_backends=vsa-1</codeblock></li>
-        <li>Enter the volume type you created earlier to the <codeph>[DEFAULT]</codeph> section:
-          <codeblock># Set the default volume type
+        <li>Enter the volume type you created earlier to the <codeph>[DEFAULT]</codeph> section with
+          the syntax below:
+          <codeblock>[DEFAULT]
+# Set the default volume type
 default_volume_type = &lt;your new volume type></codeblock></li>
-        <li>Uncomment the VSA section and fill the values as per your cluster information. If you
-          have more than one cluster, you need to add another similar section with its respective
-          values. In the following example only one cluster is added.
+        <li>Uncomment the <codeph>StoreVirtual (VSA) cluster</codeph> section and fill the values as
+          per your cluster information. If you have more than one cluster, you will need to add
+          another similar section with its respective values. In the following example only one
+          cluster is added.
           <codeblock>[vsa-1]
 hplefthand_password: &lt;vsa-cluster-password>
 hplefthand_clustername: &lt;vsa-cluster-name>
