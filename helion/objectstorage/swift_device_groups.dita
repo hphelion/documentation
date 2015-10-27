@@ -6,7 +6,7 @@
     <p>A device-group is used when the same consumer uses a number of disk drives. </p>
     
     <example>In the following example, four disk drives are used by both the object-0 and object-1
-        rings.<codeblock>device-groups:
+      rings.<codeblock>device-groups:
 - name: swiftobj
   devices:
   - name: /dev/sdb
@@ -18,12 +18,8 @@
       attrs:
           rings:
           - name: object-0
-          - name: object-1</codeblock><p>You
-        may have several device groups if you have several different uses for different sets of
-        drives. </p></example>
-    <example>The following example shows a configuration where one drive is used for account and
-      container rings and the other drives are used by the object-0
-      ring:<codeblock>device-groups:
+          - name: object-1</codeblock><!--<p>You may have several device groups if you have several different uses for different sets of drives. </p>--></example>
+    <!--<example>The following example shows a configuration where one drive is used for account and container rings and the other drives are used by the object-0 ring:<codeblock>device-groups:
 - name: swiftpac
   devices:
   - name: /dev/sdb
@@ -41,7 +37,7 @@
       name: swift
       attrs:
           rings:
-          - name: object-0 </codeblock></example>
+          - name: object-0 </codeblock></example>-->
    
     <p id="swift-requirement-disk-device"><b><b>Swift Requirements for Device Group
       Drives</b></b></p>

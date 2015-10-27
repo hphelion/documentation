@@ -11,7 +11,7 @@
     <section>
       <p>
         <ol id="ol_g4m_wyn_5t">
-          <li>Login in to the lifecycle-manager node.</li>
+          <li>Login in to the deployer/lifecycle-manager node.</li>
           <li>Edit the following files at <codeph>~/helion/my_cloud/definition/data</codeph> to
             assign a separate iSCSI network to Controller nodes, Compute nodes, and VSA
               nodes:<note>The input YAML files need to be changed during the cloud

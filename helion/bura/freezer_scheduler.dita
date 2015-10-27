@@ -14,7 +14,8 @@
           <li>Writes to the freezer API the outcome of the freezer-agent execution</li>
       </ul></p><note>Freezer API maintains information about jobs in Elastic Search Database.</note>
     <section><title>Freezer Scheduler Client-ID</title>
-      <p>In HOS 2.0, Freezer Scheduler is automatically installed on Deployer Node and Controller nodes.</p>
+      <p>In HOS 2.0, Freezer Scheduler is automatically installed on deployer/lifecycle-manager node
+                and controller nodes.</p>
       <p>There is a  client_id for each node and its corresponds to the hostname. The client_id is created at registration time. The registration is done automatically when the scheduler execute any request to the API. If the user wants to execute the registration explicitly, then scheduler option --register can be used.</p>
       <p>Here is an example that lists all the freezer scheduler clients.</p><codeblock> root@padawan-ccp-c0-m1-mgmt:/home/stack/scratch/ansible/next/hos/ansible# freezer-scheduler  client-list
 +---------------------------+---------------------------+-------------+
