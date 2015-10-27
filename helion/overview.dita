@@ -19,8 +19,8 @@
         installation and configuration of the underlying operating system on each node is declared
         in configuration objects stored in YAML files. </p>
       <p>These files allow customization, and HP Helion OpenStack 2.0 ships with complete sets
-        describing a few common configurations so that you may base your deployment on a template
-        and customize from there if you wish.</p>
+        describing a few common configurations. You may base your deployment on one of these
+        templates and customize from there if you wish.</p>
       <p>This installation and configuration is made possible by a new feature in HP Helion
         OpenStack 2.0, the Configuration Processor, a set of Python scripts that consume the data
         stored in the configuration YAML files and output Ansible variables used to configure
@@ -72,7 +72,6 @@
           <li>re-image nodes</li>
           <li>reconfigure Swift to add or replace drives</li>
           <li>validate Swift drives against the storage model declared</li>
-          <li>create networks</li>
         </ul>
       </p> While the internal management of OpenStack services and the configuration of their
       functionality still occurs via the service APIs and follows the methodology outlined by
@@ -80,12 +79,11 @@
       cloud is accomplished via the Ansible playbooks mentioned here. 
     
         </section>
-    <section><title>Configuration Versioning</title>
-    In HP Helion OpenStack 2.0, the YAML files that define your cloud configuration are stored in a local git repository that is installed along with the cloud. 
-    The cloud deployment Ansible playbooks look in the appropriate git directories and execute changes when run. This allows you to keep track of config changes and
-    provides the ability to roll back to previous configurations as well.
-    
-    </section>
+    <section><title>Configuration Versioning</title> In HP Helion OpenStack 2.0, the YAML files that
+      define your cloud configuration are stored in a local git repository that is installed along
+      with the cloud. The cloud deployment Ansible playbooks look in the appropriate git directories
+      and execute changes when run. This allows you to keep an historical record of config changes
+      as well as help you identify issues that arise later.</section>
 
     <section><title>What's New in Documentation</title>
     </section>
