@@ -29,8 +29,8 @@
                     <li><xref href="remove_monitor_node.dita#topic_a3t_ptt_rt"/></li>
                     <li><xref href="ceph_operation.dita#topic_wbn_td3_pt"/></li>
                 </ul></p></section>
-    <note>Ceph upgrade is a built-in, integral part of the Helion Lifecycle Management upgrade, and
-            is in line with rest of the supported services. In Helion OpenStack 2.0, the supported
+    <note>Ceph upgrade is a built-in, integral part of the HP Helion Lifecycle Management upgrade, and
+            is in line with rest of the supported services. In HP Helion OpenStack 2.0, the supported
             version of Ceph is Firefly 0.80.7. In upcoming HP Helion OpenStack releases, new
             versions of Ceph will be supported and the cluster can be upgraded to new releases. You
             should not use other releases of Ceph (for example, Firefly 0.80.10) and run Ceph

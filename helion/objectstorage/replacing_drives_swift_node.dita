@@ -3,12 +3,14 @@
 <topic id="topic_am4_mjv_pt">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Replacing Drives in a Swift Node</title>
   <body>
-    <p>There are two different classes of drives in a Swift node that needs to be replaced; the OS
-      disk drive (generally <b>/dev/sda</b>) and storage disk drives. There are different procedures
-      for the replacement of each class of drive to bring the node back to normal.</p>
+    <p>There are two different classes of drives in a Swift node that needs to be replaced; the
+      operating system disk drive (generally <b>/dev/sda</b>) and storage disk drives. There are
+      different procedures for the replacement of each class of drive to bring the node back to
+      normal.</p>
     <section>
-      <title><b>To Replace the OS Disk Drive</b></title>
-      <p>After the OS disk drive is replaced, the node must be reimaged.<ol id="ol_ewb_vjv_pt">
+      <title><b>To Replace the Operating System Disk Drive</b></title>
+      <p>After the operating system disk drive is replaced, the node must be reimaged.<ol
+          id="ol_ewb_vjv_pt">
           <li>Log onto the deployer/lifecycle-manager node.</li>
           <li>Using Ansible, reimage the
               node:<codeblock>cd ~/helion/hos/ansible
