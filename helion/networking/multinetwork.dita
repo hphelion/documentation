@@ -3,7 +3,7 @@
 <topic id="HP2.0multinetwork">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring Multiple External
     Networks</title>
-  <body><!--Needs Edit-->
+  <body>
     <p>HP Helion OpenStack 2.0 Multiple External Network Configuration</p>
     <p>This document describes the configuration process and requirements for the HP Helion
       OpenStack 2.0 Multiple External Network.</p>
@@ -25,7 +25,7 @@
       <title>Configuration</title>
       <p>HP Helion OpenStack 2.0 Multiple External Network Configuration</p>
       <p>Neutron provider VLANs are Neutron networks that map directly to an 802.1Q VLAN in the
-        cloud provider’s physical network infrastructure. There are four aspects to provider vlan
+        cloud provider’s physical network infrastructure. There are four aspects to provider VLAN
         configuration:</p>
       <ul>
         <li>Network infrastructure configuration (e.g. the top-of-rack switch)</li>
