@@ -102,19 +102,19 @@
             <row>
               <entry>Elasticsearch</entry>
               <entry>elasticsearch_heap_size</entry>
-              <entry>256m</entry>
-              <entry>8g</entry>
-              <entry>16g</entry>
-              <entry>32g</entry>
+              <entry>256 MB</entry>
+              <entry>8 GB</entry>
+              <entry>16 GB</entry>
+              <entry>32 GB</entry>
               <entry>Amount of heap allocated to Elasticsearch</entry>
             </row>
             <row>
               <entry>Logstash</entry>
               <entry>logstash_heap_size</entry>
-              <entry>256m</entry>
-              <entry>2g</entry>
-              <entry>4g</entry>
-              <entry>8g</entry>
+              <entry>256 MB</entry>
+              <entry>2 GB</entry>
+              <entry>4 GB</entry>
+              <entry>8 GB</entry>
               <entry>Amount of heap allocated to Logstash</entry>
             </row>
             <row>
@@ -132,7 +132,7 @@
       <p>These values can be viewed and changed in the
           <codeph>~/helion/my_cloud/config/logging/main.yml</codeph> file if you wish but you will
         need to run a reconfigure of the Centralized Logging service if changes are made.</p>
-      <note type="warning">The total process memory consumption for Elasticsearech will be the above
+      <note type="warning">The total process memory consumption for Elasticsearch will be the above
         allocated heap value plus any Java Virtual Machine (JVM) overhead.</note>
     </section>
     <section id="kibana_config">
@@ -171,7 +171,7 @@
     </section>
     <section id="elasticsearch_config">
       <title>Elasticsearch Configuration</title>
-      <p>Elasticsearch has a number of tunable options exposed in it's configuration that we have
+      <p>Elasticsearch has a number of tunable options exposed in its configuration that we have
         taken advantage of to tune Elasticsearch in HP Helion OpenStack in such a way that we favor
         indexing speed over search speed. We have also tuned it for optimal performance in low RAM
         environments. The options that we've modified are listed below along with an explanation as
@@ -248,16 +248,16 @@
             <row>
               <entry>elasticsearch_indices_memory_min_index_buffer_size</entry>
               <entry>indices.memory.min_index_buffer_size</entry>
-              <entry>200mb</entry>
-              <entry>48mb</entry>
+              <entry>200 MB</entry>
+              <entry>48 MB</entry>
               <entry>Slanting performance in favor of heavier indexing usage over search
                 usage.</entry>
             </row>
             <row>
               <entry>elasticsearch_indices_memory_min_shard_index_buffer_size</entry>
               <entry>indices.memory.min_shard_index_buffer_size</entry>
-              <entry>12mb</entry>
-              <entry>4mb</entry>
+              <entry>12 MB</entry>
+              <entry>4 MB</entry>
               <entry>Slanting performance in favor of heavier indexing usage over search
                 usage.</entry>
             </row>
@@ -271,8 +271,8 @@
             <row>
               <entry>elasticsearch_indices_store_throttle_max_bytes_per_sec</entry>
               <entry>indices.store.throttle.max_bytes_per_sec</entry>
-              <entry>80mb</entry>
-              <entry>20mb</entry>
+              <entry>80 MB</entry>
+              <entry>20 MB</entry>
               <entry>Slanting performance in favor of heavier indexing usage over search
                 usage.</entry>
             </row>
@@ -301,8 +301,8 @@
             <row>
               <entry>elasticsearch_index_translog_flush_threashhold_size</entry>
               <entry>index.translog.flush_threshhold_size</entry>
-              <entry>1gb</entry>
-              <entry>512mb</entry>
+              <entry>1 GB</entry>
+              <entry>512 MB</entry>
               <entry>Increasing this setting decreases fsync.</entry>
             </row>
           </tbody>
@@ -331,30 +331,31 @@
                 <entry morerows="5">Ceilometer</entry>
                 <entry>ceilometer-api</entry>
                 <entry>INFO</entry>
-                <entry>Ceilometer log level is configurable in
-                    <b>roles/_CEI-CMN/defaults/main.yml:ceilometer_loglevel: INFO</b>. You can
-                  change the ceilometer_loglevel in <b>roles/_CEI-CMN/defaults/main.yml</b> for all
-                  components during deployment or after deployment. You can also change log level
-                  for <b>ceilometer-api</b> only by changing
-                    <b>roles/CEI-API/templates/api-logging.conf.j2:level: DEBUG</b>
-                  <p>For post deployment log level changes, please re-run the following from
-                    deployer/lifecycle-manager node:
+                <entry><p>You can change the <codeph>ceilometer_loglevel</codeph> in the file below
+                    for all components during deployment or after deployment.</p>
+                  <codeblock>~/helion/hos/ansible/roles/_CEI-CMN/defaults/main.yml</codeblock>
+                  <p>You can also change the log level for <codeph>ceilometer-api</codeph> only by
+                    changing the file below:</p>
+                  <codeblock>~/helion/hos/ansible/roles/CEI-API/templates/api-logging.conf.j2</codeblock>
+                  <p>For post-deployment log level changes, please commit your changes to git and
+                    re-run the following from the lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p></entry>
               </row>
               <row>
                 <entry>ceilometer-collector</entry>
                 <entry>INFO</entry>
-                <entry>Ceilometer log level is configurable in
-                    <b>roles/_CEI-CMN/defaults/main.yml:ceilometer_loglevel: INFO</b>. You can
-                  change the ceilometer_loglevel in <b>roles/_CEI-CMN/defaults/main.yml</b> for all
-                  components during deployment or after deployment. You can also change log level
-                  for <b>ceilometer-collector</b> only by changing
-                    <b>roles/CEI-COL/templates/collector-logging.conf.j2:level: DEBUG</b>
-                  <p>For post deployment log level changes, please re-run the following from
-                    deployer/lifecycle-manager node:
+                <entry><p>You can change the <codeph>ceilometer_loglevel</codeph> in the file below
+                    for all components during deployment or after deployment.</p>
+                  <codeblock>~/helion/hos/ansible/roles/_CEI-CMN/defaults/main.yml</codeblock>
+                  <p>You can also change the log level for <codeph>ceilometer-collector</codeph>
+                    only by changing the file below:</p>
+                  <codeblock>~/helion/hos/ansible/roles/CEI-COL/templates/collector-logging.conf.j2</codeblock>
+                  <p>For post-deployment log level changes, please commit your changes to git and
+                    re-run the following from the lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p></entry>
+                      ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
+                </entry>
               </row>
               <row>
                 <entry>ceilometer-alarm-evaluator-json</entry>
@@ -364,56 +365,60 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
               <row>
                 <entry>ceilometer-agent-notification</entry>
                 <entry>INFO</entry>
-                <entry>Ceilometer log level is configurable in
-                    <b>roles/_CEI-CMN/defaults/main.yml:ceilometer_loglevel: INFO</b>. You can
-                  change the ceilometer_loglevel in <b>roles/_CEI-CMN/defaults/main.yml</b> for all
-                  components during deployment or after deployment. You can also change log level
-                  for <b>ceilometer-agent-notification</b> only by changing
-                    <b>roles/CEI-NAG/templates/agent-notification-logging.conf.j2:level: DEBUG</b>
-                  <p>For post deployment log level changes, please re-run the following from
-                    deployer node:
+                <entry><p>You can change the <codeph>ceilometer_loglevel</codeph> in the file below
+                    for all components during deployment or after deployment.</p>
+                  <codeblock>~/helion/hos/ansible/roles/_CEI-CMN/defaults/main.yml</codeblock>
+                  <p>You can also change the log level for
+                      <codeph>ceilometer-agent-notification</codeph> only by changing the file
+                    below:</p>
+                  <codeblock>~/helion/hos/ansible/roles/CEI-NAG/templates/agent-notification-logging.conf.j2</codeblock>
+                  <p>For post-deployment log level changes, please commit your changes to git and
+                    re-run the following from the lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p></entry>
+                      ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
+                </entry>
               </row>
               <row>
                 <entry>ceilometer-agent-central</entry>
                 <entry>INFO</entry>
-                <entry>Ceilometer log level is configurable in
-                    <b>roles/_CEI-CMN/defaults/main.yml:ceilometer_loglevel: INFO</b>. You can
-                  change the ceilometer_loglevel in <b>roles/_CEI-CMN/defaults/main.yml</b> for all
-                  components during deployment or after deployment. You can also change log level
-                  for <b>ceilometer-agent-central</b> only by changing
-                    <b>roles/CEI-CAG/templates/agent-central-logging.conf.j2:level: DEBUG</b>
-                  <p>For post deployment log level changes, please re-run the following from
-                    deployer/lifecycle-manager node:
+                <entry><p>You can change the <codeph>ceilometer_loglevel</codeph> in the file below
+                    for all components during deployment or after deployment.</p>
+                  <codeblock>~/helion/hos/ansible/roles/_CEI-CMN/defaults/main.yml</codeblock>
+                  <p>You can also change the log level for <codeph>ceilometer-agent-central</codeph>
+                    only by changing the file below:</p>
+                  <codeblock>~/helion/hos/ansible/roles/CEI-CAG/templates/agent-central-logging.conf.j2</codeblock>
+                  <p>For post-deployment log level changes, please commit your changes to git and
+                    re-run the following from the lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p></entry>
+                      ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
+                </entry>
               </row>
               <row>
                 <entry>ceilometer-expirer</entry>
                 <entry>INFO</entry>
-                <entry>Ceilometer log level is configurable in
-                    <b>roles/_CEI-CMN/defaults/main.yml:ceilometer_loglevel: INFO</b>. You can
-                  change the ceilometer_loglevel in <b>roles/_CEI-CMN/defaults/main.yml</b> for all
-                  components during deployment or after deployment. You can also change log level
-                  for <b>ceilometer-expirer</b> only by changing
-                    <b>roles/CEI-EXP/templates/expirer-logging.conf.j2:level: DEBUG</b>
-                  <p>For post deployment log level changes, please re-run the following from
-                    deployer/lifecycle-manager node:
+                <entry>
+                  <p>You can change the <codeph>ceilometer_loglevel</codeph> in the file below for
+                    all components during deployment or after deployment.</p>
+                  <codeblock>~/helion/hos/ansible/roles/_CEI-CMN/defaults/main.yml</codeblock>
+                  <p>You can also change the log level for <codeph>ceilometer-expirer</codeph> only
+                    by changing the file below:</p>
+                  <codeblock>~/helion/hos/ansible/roles/CEI-EXP/templates/expirer-logging.conf.j2</codeblock>
+                  <p>For post-deployment log level changes, please commit your changes to git and
+                    re-run the following from the lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p></entry>
+                      ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
+                </entry>
               </row>
               <row>
                 <entry>Ceph</entry>
                 <entry>ceph-mon <p>ceph-osd</p></entry>
                 <entry>INFO</entry>
-                <entry>Ceph log levels are configurable both during initial deployment and after the
-                  deployment. Use the following variables (default is <b>INFO</b>, case-sensitive): <codeblock>ansible-playbook -i hosts/verb_hosts site.yml -e "ceph_mon_log_level=DEBUG, ceph_osd_log_level=DEBUG"</codeblock>
-                  <!--<p>You can also use <b>-e "helion_loglevel=DEBUG"</b> to specify the log level,
-                    which sets the log level across multiple HLM services (this includes both OSD
-                    and MON). However the former two take higher precedence than
-                      <b>helion_loglevel</b> variable. The same variables can be used while running
-                      <b>ceph-deploy.yml</b> play also.</p>-->
+                <entry>
+                  <p>You can change the Ceph logging levels using the Ansible playbook, specifically
+                    the switches, below for all components during deployment or after
+                    deployment.</p>
+                  <codeblock>cd ~/scratch/ansible/next/hos/ansible/
+ansible-playbook -i hosts/verb_hosts site.yml -e "ceph_mon_log_level=DEBUG, ceph_osd_log_level=DEBUG"</codeblock>
                 </entry>
               </row>
               <row>
@@ -432,7 +437,8 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml -e cinder_logstash_l
                 <entry>EON</entry>
                 <entry/>
                 <entry/>
-                <entry>See <xref href="../esx/logging.dita">EON Logging</xref> for more details.</entry>
+                <entry>See <xref href="../esx/logging.dita">EON Logging</xref> for more
+                  details.</entry>
               </row>
               <row>
                 <entry morerows="2">Freezer</entry>
@@ -457,12 +463,13 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml -e cinder_logstash_l
                 <entry>Glance</entry>
                 <entry/>
                 <entry>INFO</entry>
-                <entry>Glance exposes logging configuration templates at deployer under
-                    <codeph>~/helion/my_cloud/config/glance/
-                    glance-[api,registry]-logging.conf</codeph>. After the needed changes are done
-                  (for example logging level changes to local or centralized logging)
-                  glance-reconfigure playbook must be ran targeting relevant nodes to deploy the
-                  configuration change.
+                <entry>
+                  <p>Glance exposes the logging configuration templates on the lifecycle-manager in
+                    the following file:</p>
+                  <codeblock>~/helion/my_cloud/config/glance/ glance-[api,registry]-logging.conf</codeblock>.
+                    <p>After the needed changes are done (for example logging level changes to local
+                    or centralized logging) the <codeph>glance-reconfigure.yml</codeph> playbook
+                    must be run targeting relevant nodes to deploy the configuration change.</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml</codeblock></entry>
               </row>
@@ -470,11 +477,14 @@ ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml</codeblock></entry>
                 <entry>Heat</entry>
                 <entry/>
                 <entry>INFO</entry>
-                <entry>There are logging config files in my_cloud/config/heat directory[
-                  api-cfn-logging.conf.j2 api-cloudwatch-logging.conf.j2 api-logging.conf.j2
-                  engine-logging.conf.j2 ] . User can edit these files and set the desired log level
-                  for both local as well as centralized logging. After making the changes run
-                  heat-reconfigure playbook from the deployer to apply the changes.
+                <entry><p>The Heat logging configuration files in the following locations:</p>
+                  <codeblock>~/helion/my_cloud/config/heat/api-cfn-logging.conf.j2
+~/helion/my_cloud/config/heat/api-cloudwatch-logging.conf.j2 
+~/helion/my_cloud/config/heat/api-logging.conf.j2
+~/helion/my_cloud/config/heat/engine-logging.conf.j2</codeblock>
+                  <p>Users can edit these files and set the desired log level for both local as well
+                    as centralized logging. After making the changes run heat-reconfigure playbook
+                    from the deployer to apply the changes, as shown below:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts heat-reconfigure.yml</codeblock></entry>
               </row>
@@ -494,20 +504,17 @@ ansible-playbook -i hosts/verb_hosts heat-reconfigure.yml</codeblock></entry>
                   <p>All of the Monasca logging is defaulted to WARN. To change the level for all of
                     our services you can run:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
-                    ansible-playbook -i hosts/verb_hosts monasca-reconfigure.yml -e "monasca_log_level=DEBUG"
-                    ansible-playbook -i hosts/verb_hosts monasca-agent-reconfigure.yml -e "monasca_log_level=DEBUG"</codeblock>
-                  <p>If you want to change per a service each of the following var files have that
-                    variable that you can set to the desired level:</p>
-                  <ul>
-                    <li>roles/monasca-persister/defaults/main.yml</li>
-                    <li>roles/zookeeper/defaults/main.yml</li>
-                    <li>roles/storm/defaults/main.yml</li>
-                    <li>roles/monasca-notification/defaults/main.yml</li>
-                    <li>roles/monasca-api/defaults/main.yml</li>
-                    <li>roles/kafka/defaults/main.yml</li>
-                    <li>roles/monasca-agent/defaults/main.yml (This one you will need to add the
-                      variable)</li>
-                  </ul>
+ansible-playbook -i hosts/verb_hosts monasca-reconfigure.yml -e "monasca_log_level=DEBUG"
+ansible-playbook -i hosts/verb_hosts monasca-agent-reconfigure.yml -e "monasca_log_level=DEBUG"</codeblock>
+                  <p>If you want to change the logging level per service, each of the following
+                    files have the variable that you can set to the desired level:</p>
+                  <codeblock>~/helion/hos/ansible/roles/monasca-persister/defaults/main.yml
+~/helion/hos/ansible/roles/zookeeper/defaults/main.yml
+~/helion/hos/ansible/roles/storm/defaults/main.yml
+~/helion/hos/ansible/roles/monasca-notification/defaults/main.yml
+~/helion/hos/ansible/roles/monasca-api/defaults/main.yml
+~/helion/hos/ansible/roles/kafka/defaults/main.yml
+~/helion/hos/ansible/roles/monasca-agent/defaults/main.yml (This one you will need to add the variable)</codeblock>
                   <p>You will then need to run:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts monasca-reconfigure.yml -e "monasca_log_level=DEBUG"
@@ -518,53 +525,34 @@ ansible-playbook -i hosts/verb_hosts monasca-agent-reconfigure.yml -e "monasca_l
                 <entry morerows="1">Nova</entry>
                 <entry>nova-api</entry>
                 <entry>INFO</entry>
-                <entry>Nova service log levels are configurable in
-                    <b>~/helion/my_cloud/config/nova/*-logging.conf.j2</b>. After you edit the
-                  specify the level you would like, you will need to run the following series of
-                  commands to commit them to the environment:<p>
-                    <codeblock>cd ~/helion/hos/ansible
-git add -A
-git commit -m "Change Nova logging"
-cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-run.yml
-ansible-playbook -i hosts/localhost ready-deployment.yml
-cd ~/scratch/ansible/next/hos/ansible
+                <entry>
+                  <p>Nova service log levels are configurable in the following file:</p>
+                  <codeblock>~/helion/my_cloud/config/nova/*-logging.conf.j2</codeblock>
+                  <p>If you make edits to this file, you will need to run the
+                      <codeph>nova-reconfigure.yml</codeph> playbook:</p>
+                  <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml nova-reconfigure.yml</codeblock>
-                  </p>
                 </entry>
               </row>
               <row>
                 <entry>nova-compute</entry>
                 <entry>INFO</entry>
-                <entry>Nova service log levels are configurable in
-                    <b>~/helion/my_cloud/config/nova/*-logging.conf.j2</b>. After you edit the
-                  specify the level you would like, you will need to run the following series of
-                  commands to commit them to the environment:<p>
-                    <codeblock>cd ~/helion/hos/ansible
-git add -A
-git commit -m "Change Nova logging"
-cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-run.yml
-ansible-playbook -i hosts/localhost ready-deployment.yml
-cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml nova-reconfigure.yml</codeblock>
-                  </p></entry>
+                <entry><p>Nova service log levels are configurable in the following file:</p>
+                  <codeblock>~/helion/my_cloud/config/nova/*-logging.conf.j2</codeblock>
+                  <p>If you make edits to this file, you will need to run the
+                      <codeph>nova-reconfigure.yml</codeph> playbook:</p>
+                  <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml nova-reconfigure.yml</codeblock></entry>
               </row>
               <row>
                 <entry>Operations Console</entry>
                 <entry>ops-web <p>ops-mon</p></entry>
                 <entry>INFO</entry>
                 <entry>
-                  <p>Operations Console server log levels are configurable both during initial
-                    deployment and after the deployment. Use the following variable (default is
-                      <b>INFO</b>, case-sensitive):</p>
+                  <p>You can change the Operations Console logging levels using the playbook below
+                    during deployment or after deployment.</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml -e "ops_console_loglevel=DEBUG"</codeblock>
-                  <!--<p>You can also use <b>-e "helion_loglevel=DEBUG"</b> to specify the log level,
-                    which sets the log level across multiple services. However the
-                      <b>ops_console_loglevel</b> takes higher precedence than the
-                      <b>helion_loglevel</b> variable. The same variables can be used while running
-                    the <b>ops-console-deploy.yml</b> playbook as well.</p>-->
                 </entry>
               </row>
               <row>
@@ -572,9 +560,10 @@ ansible-playbook -i hosts/verb_hosts site.yml -e "ops_console_loglevel=DEBUG"</c
                 <entry/>
                 <entry>INFO</entry>
                 <entry>
-                  <p>Logging level is set in <codeph>/etc/sherpa/sherpa.conf</codeph>. To change the
-                    logging level, just change from INFO to DEBUG in the following line in
-                    sherpa.conf:</p>
+                  <p>The logging level is set in the file below:</p>
+                  <codeblock>/etc/sherpa/sherpa.conf</codeblock>
+                  <p>To change the logging level, just change from INFO to DEBUG in the following
+                    line in sherpa.conf:</p>
                   <codeblock>'sherpa': {'level': 'INFO', 'handlers': ['file', 'json']}</codeblock>
                 </entry>
               </row>
@@ -582,19 +571,13 @@ ansible-playbook -i hosts/verb_hosts site.yml -e "ops_console_loglevel=DEBUG"</c
                 <entry>Swift</entry>
                 <entry/>
                 <entry>INFO</entry>
-                <entry>Swift service log levels are configurable in
-                    <b>~/stack/helion/my_cloud/config/swift/account-server.conf.j2</b>. After you
-                  edit the specify the level you would like, you will need to run the following
-                  series of commands to commit them to the environment:<p>
-                    <codeblock>cd ~/helion/hos/ansible
-git add -A
-git commit -m "Change Swift logging"
-cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-run.yml
-ansible-playbook -i hosts/localhost ready-deployment.yml
-cd ~/scratch/ansible/next/hos/ansible
+                <entry><p>The Swift service log levels are configurable in the file below:</p>
+                  <codeblock>~/helion/my_cloud/config/swift/account-server.conf.j2</codeblock>
+                  <p>If you make edits to this file, you will need to run the
+                      <codeph>swift-reconfigure.yml</codeph> playbook to commit them to the
+                    environment:</p>
+                  <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml swift-reconfigure.yml</codeblock>
-                  </p>
                 </entry>
               </row>
               <row>
@@ -602,15 +585,10 @@ ansible-playbook -i hosts/verb_hosts site.yml swift-reconfigure.yml</codeblock>
                 <entry>vsa-installer</entry>
                 <entry>INFO</entry>
                 <entry>
-                  <p>VSA log levels are configurable for<b> vsa-installer</b> module. Use the
-                    following variables (default is <b>INFO</b>, case-sensitive):</p>
+                  <p>The VSA logging levels are configurable for the <b>vsa-installer</b> module.
+                    Use the following variables (default is <b>INFO</b>, case-sensitive):</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml -e "vsa_installer_log_level=DEBUG"</codeblock>
-                  <!--<p>You can also use <b>-e "helion_loglevel=DEBUG"</b> to specify the log level,
-                    which sets the log level across multiple HLM services. However the
-                      <b>vsa_installer_log_level</b> take higher precedence than
-                      <b>helion_loglevel</b> variable. The same variables can be used while running
-                      <b>vsa-deploy.yml</b> play also.</p>-->
                 </entry>
               </row>
             </tbody>
