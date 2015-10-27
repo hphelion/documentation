@@ -3,34 +3,34 @@
 <topic id="topic_wbn_td3_pt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Starting, Stopping, and Status for
     Ceph</title>
-  <body><!--Needs Edit-->
+  <body>
     <p>After the successful deployment of Ceph, you can perform the following Ceph operations:<ul
         id="ul_j45_td3_pt">
-        <li>Check the status of Ceph OSD and Monitor Services</li>
-        <li>Start OSD Nodes and Monitor Services</li>
-        <li>Stop OSD Nodes and Monitor Services<p><b>Check the status of Ceph OSD and Monitor
+        <li>Check the status of the Ceph object storage daemon (OSD) and monitor services</li>
+        <li>Start OSD nodes and monitor services</li>
+        <li>Stop OSD nodes and monitor services<p><b>Check the Status of Ceph OSD and Monitor
               Services</b>
-          </p><p>Perform the following steps to check the stays of Ceph OSD Nodes and Monitor
-              Services:<ol id="ol_np5_td3_pt">
-              <li>Login to deployer/lifecycle-manager node.</li>
+          </p><p>Perform the following steps to check the stays of Ceph OSD nodes and monitor
+              services:<ol id="ol_np5_td3_pt">
+              <li>Login to the Deployer/lifecycle-manager node.</li>
               <li>Change to the following
                 directory:<codeblock>~/scratch/ansible/next/hos/ansible</codeblock></li>
-              <li>Run the ansible
+              <li>Run the Ansible
                 playbook:<codeblock>ansible-playbook -i hosts/verb_hosts ceph-status.yml</codeblock></li>
-            </ol></p><p><b>Start OSD and Monitor Services</b></p><p>Perform the following steps to
-            start OSD Nodes and Monitor Services:<ol id="ol_hq5_td3_pt">
-              <li>Login to deployer/lifecycle-manager node.</li>
+            </ol></p><p><b>Start the OSD and Monitor Services</b></p><p>Perform the following steps
+            to start the OSD nodes and monitor services:<ol id="ol_hq5_td3_pt">
+              <li>Login to the Deployer/lifecycle-manager node.</li>
               <li>Change to the following
                 directory:<codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock></li>
-              <li>Run the ansible
+              <li>Run the Ansible
                 playbook:<codeblock>ansible-playbook -i hosts/verb_hosts ceph-start.yml</codeblock></li>
-            </ol></p><p><b>Stop OSD Nodes and Monitor Services</b></p><p>Perform the following steps
-            to stop OSD Nodes and Monitor Services:</p><p>
+            </ol></p><p><b>Stop the OSD Nodes and Monitor Services</b></p><p>Perform the following
+            steps to stop OSD nodes and monitor services:</p><p>
             <ol id="ol_br5_td3_pt">
-              <li>Login to deployer/lifecycle-manager node.</li>
+              <li>Login to the Deployer/lifecycle-manager node.</li>
               <li>Change to the following
                 directory:<codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock></li>
-              <li>Run the ansible
+              <li>Run the Ansible
                 playbook:<codeblock>ansible-playbook -i hosts/verb_hosts ceph-stop.yml</codeblock></li>
             </ol>
           </p>
