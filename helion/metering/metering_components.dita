@@ -21,18 +21,15 @@
     <p>The Metering service is installed during the HP Helion OpenStack installation process. During
       installation, the Metering service is automatically configured to collect data from the Nova,
       Cinder, Glance and Neutron services.</p>
-    <p>All the metering processes have a unified configuration file that can be found at
-        <b>/etc/ceilometer/ceilometer.conf</b> on the specific overcloud controller you are logged
-      in to.</p>
+    <p>Each of the metering processes has a configuration file.</p>
     <p>The installation creates several management nodes running different metering components.</p>
-    <p>
+   <!-- <p>
       <image href="../../media/metering/ceil_overallarchi.png" id="image_mbd_c5t_ct"
-        placement="break"/></p>
+        placement="break"/></p> -->
     <section id="controller1_components">
-      <title>Ceilometer Components on Controller node 1</title>
+      <title>Ceilometer Components on Controller nodes</title>
       <p>This controller node is the first of the High Available (HA) cluster. In this node there is
-        an instance of the Ceilometer API running under the HA Proxy Virtual IP address. The Alarm
-        services run on controller node 1.</p>
+        an instance of the Ceilometer API running under the HA Proxy Virtual IP address. </p>
       <p>
         <b>Note</b>: When a configuration change is made to an API running under the HA Proxy, that
         change needs to be replicated in <b>all</b> controllers.</p>
@@ -51,22 +48,13 @@
           terminate or complete.<codeblock>sudo  /etc/init.d/apache2 force-reload</codeblock></li>
       </ol>
     </section>
-    <section id="controller2_components">
-      <title>Ceilometer Components on Controller node 2</title>
-      <p>Just like Controller node 1, Controller node 2 has an instance of the Ceilometer API
-        running under the HA Proxy.</p>
-    </section>
-    <section id="controller3_components">
-      <title>Ceilometer Components on Controller node 3</title>
-      <p>This node is where all other Ceilometer components are running.</p>
-    </section>
     <section id="ceilometer-sample-polling">
       <title>Ceilometer Sample Polling</title>
       <p>The Sample Polling is part of the Central Agent. Once sent to the RabbitMQ service, they
         are consumed by the Collector and stored in the database. The Collector is also responsible
         for consuming and storing notifications. Here there is a high level picture of the overall
         polling/collecting cycle.</p>
-      <p><image href="../../media/metering/ceil_collectorandagents.png" id="image_u42_fvt_ct"/></p>
+     <!-- <p><image href="../../media/metering/ceil_collectorandagents.png" id="image_u42_fvt_ct"/></p>-->
     </section>
     <section id="centralagent">
       <title>Ceilometer Central Agent</title>

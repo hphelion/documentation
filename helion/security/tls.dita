@@ -2,10 +2,9 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_yym_nps_4t">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring TLS for Public Endpoints</title>
-  <body><!--Needs Edit-->
+  <body>
 
     <section id="intro">
-      <p/>
       
       <p>The Transport Layer Security (TLS) protocol, successor to SSL, provides the mechanisms to
         ensure authentication, non-repudiation, confidentiality, and integrity of user
@@ -29,10 +28,10 @@
             Production Environments</xref>.</note>
       </p>-->
     </section>
-<section> When logging into the deployer to run the configuration processor and the requisite
+    <section> When logging into the deployer to run the configuration processor and the requisite
       playbooks, you must decide if you want to configure TLS or if you want to disable it. This
       can't be changed after deployment. Therefore, you will have to make one of the following
-        changes<ul id="ul_sdj_qfq_rt">
+        changes:<ul id="ul_sdj_qfq_rt">
         <li>Comment out the "external-name:" line in
           /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that IP addresses are
           used) </li>
@@ -40,14 +39,11 @@
           /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that an FQDN is
           used)</li>
       </ul>
+    </section>
 
-
-
-
-
-
-</section>
-      <section><title>Creating a self-signed certificate</title> If you want to install a
+    <section>
+      <title>Creating a self-signed certificate</title>
+      If you want to install a
       self-signed certificate that meets the needs of  HP Helion OpenStack and HP Helion Development
       Platform, follow these steps to create the cert, and then install it by following the
       installation steps.<ol id="ol_wmt_wsp_tt">
@@ -65,8 +61,8 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
         <li>Self-sign your certificate
           <codeblock>openssl x509 -extfile v3_ext.cnf -extensions v3_req -in my-public-cert.csr -signkey my-public-cert.key -req –text -out my-public-cert.crt</codeblock>
           Note that the domain name in the certificate signing request in step 1 and the DNS entry
-          in step 2 must match, although the domain does not have to exist. <p>In step 2 you need
-            the same IP address listed for bot the DNS and the IP entries. The IP address is what is
+          in step 2 must match, although the domain do not have to exist. <p>In step 2 you need the
+            same IP address listed for both the DNS and the IP entries. The IP address is what is
             used by HP Helion Development Platform and the DNS is used by HP Helion OpenStack. Note
             that is you examine the output certificate, the issuer will match the subject because
             the cert is self-signed. The requirement for the DNS entry stems from a low-level Python
@@ -87,7 +83,7 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
       the cloud.</section>
     <section><b>If you are using a FQDN:</b>
       <ol id="ol_ngj_qfq_rt">
-        <li> Create or obtain a certificate to match the domain name you are going to use </li>
+        <li> Create or obtain a certificate to match the domain name you are going to use. </li>
         <li> Copy it to <b>helion/my_cloud/config/tls/certs/</b>
         </li>
         <li>Edit <b>network_groups.yml </b>(as part of the general set of edits they have to make to
@@ -160,7 +156,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <dt>cert-file:</dt>
           <dd> the default my-public-cert is already part of the playbook but you can specify your
             own name. When you specify your own you also need to have the certificate copied in
-              <b>~/helion/my_cloud/config/tls/certs</b> on the deployer, as notd above. </dd>
+              <b>~/helion/my_cloud/config/tls/certs</b> on the deployer, as noted above. </dd>
         </dlentry>
       </dl>
       <note>Do not enable TLS to the internal load balancer. </note>

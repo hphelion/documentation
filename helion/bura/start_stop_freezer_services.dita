@@ -4,16 +4,16 @@
   <!-- Needs Work -->
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Enabling and Disabling Freezer Services</title>
   <body>
-    <section id="main"><p>To stop freezer globally launch the following playbook from the deployer (This will stop all
-      freezer-api and all freezer-agent running on your
-      clusters):<codeblock>
+    <section id="main"><p>To stop Freezer globally, launch the following playbook from the deployer (this will stop all
+        freezer-api and all freezer-agent running on your
+        clusters):<codeblock>
 ansible-playbook -i hosts/verb_hosts freezer-stop.yml</codeblock></p>
-    <p>To start freezer globally launch the following playbook from the
-      deployer:<codeblock>
+    <p>To start Freezer globally, launch the following playbook from the
+        deployer:<codeblock>
 ansible-playbook -i hosts/verb_hosts freezer-start.yml</codeblock></p>
     <p>It is possible to target only specific nodes using the ansible --limit parameter.</p></section>
     <section id="manual"><title>Manually</title><p><i>For the freezer-agent: </i><ol>
-          <li>Connect to the concerned host</li>
+          <li>Connect to the concerned host.</li>
           <li>Run the following command to stop the
             freezer-agent:<codeblock>
 sudo systemctl stop freezer-scheduler</codeblock> or run the
@@ -23,7 +23,7 @@ sudo systemctl stop freezer-scheduler</codeblock> or run the
 sudo systemctl start freezer-scheduler</codeblock><codeblock>sudo systemctl stop freezer-scheduler</codeblock></li>
         </ol></p>
       <p><i>For the freezer-api:</i><ol>
-          <li>Connect to the concerned host</li>
+          <li>Connect to the concerned host.</li>
           <li>Run the following commands to stop the freezer-api:
             <codeblock>
 sudo a2dissite freezer-modwsgi</codeblock><codeblock>sudo systemctl reload apache2</codeblock>or
