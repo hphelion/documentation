@@ -174,14 +174,14 @@
     <p> Following is an example of Swift logical
       volumes:<codeblock>.
 .
-   - name: swiftpac
+   - name: swift
      size: 50%
      fstype: xfs
-    consumer:
-     name: swift
-     attrs:
-     rings:
-      - account
-      - container</codeblock></p>
+     consumer:
+         name: swift
+         attrs:
+             rings:
+             - name: object-0
+             - name: object-1</codeblock></p>
   </body>
 </topic>
