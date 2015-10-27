@@ -230,7 +230,7 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
             <li>The tile view of alarms with lengthy dimensions does not render cleanly.</li>
           </ul></li>
         <li>Compute Instances <ul id="ul_rgb_d45_tt">
-            <li>Compute instance utilization metrics are not available in Beta 2</li>
+            <li>Compute instance utilization metrics are not available.</li>
           </ul>
         </li>
         <li>Networking - Alarm Summary <ul id="ul_dhb_d45_tt">
