@@ -8,7 +8,7 @@
         potentially, will move most objects in your system to new locations and may make data
         unavailable until the replication process has completed.</note>To replace a Swift node in a
       system, do the following:<ol id="ol_mbn_5pv_pt">
-        <li>Log onto the deployer.</li>
+        <li>Log onto the Deployer.</li>
         <li>Update the cloud model (<codeph>data/servers.yml</codeph> file) with a new MAC address,
           iLO/IPMI user, password, and IP address (iLO) if these have changed. Do not change the
           server's IP address (i.e.,<codeph> ip-add IP</codeph>). For

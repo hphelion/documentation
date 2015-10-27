@@ -23,8 +23,8 @@
         is built and deployed. The new rings will not contain the node's drives.</p>
       <p>
         <ol id="ol_lnw_cdg_pt">
-          <li>Edit the definition of the server (usually in<codeph> data/servers.yml</codeph> file).
-            For example, if the entry for the server looks
+          <li>Edit the definition of the server (usually in the <codeph>data/servers.yml</codeph>
+            file). For example, if the entry for the server looks
               like:<codeblock>- name: SWOBJ-DISKS
 - id: swobj4
   ip-addr: 192.168.10.5
@@ -130,7 +130,7 @@ ansible-playbook -i hosts/verb_hosts swift-stop.yml --limit <b>helion-cp1-swobj0
               specify the full hostname (for example: <b>helion-cp1-swobj0004</b>) or use the wild
               card * (for example: <b>*swobj4*</b>).</note></li>
           <li>Remove the configuration files. This process assumes you are logged onto the
-              deployer:<codeblock>ssh helion-cp1-swobj4-mgmt sudo rm -R /etc/swift</codeblock><note>Do
+              Deployer:<codeblock>ssh helion-cp1-swobj4-mgmt sudo rm -R /etc/swift</codeblock><note>Do
               not run any other playbooks until you have finished the process described in <b>To
                 Remove a Node from the Input Model</b>. Otherwise, these playbooks may recreate
                 <codeph>/etc/swift</codeph> and restart Swift on <b>swobj4</b>. If you accidentally
