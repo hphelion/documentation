@@ -224,7 +224,7 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
             required or if the SSH keys are lost. The value is encrypted and placed in the kickstart
             for the node installs.</p> --></li>
       </ol>
-      <p><b>Part Two: Provision the Nodes</b></p>
+      <p><b>Part Two: Image the Nodes</b></p>
       <p>This phase of the install process goes through a number of distinct steps: <ol>
           <li>Powers down the nodes to be installed</li>
           <li>Sets the nodes hardware boot order so that the first option is a network boot.</li>
