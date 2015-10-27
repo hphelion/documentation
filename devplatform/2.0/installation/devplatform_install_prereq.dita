@@ -66,7 +66,7 @@ echo 'KEYSTONE PUBLIC IP: ' $KEYSTONE_IP_PUBLIC </codeblock></li>
 echo 'KEYSTONE INTERNAL IP: ' $KEYSTONE_IP_INTERNAL </codeblock></li>
             <li>Set the IP address values for <codeph>no_proxy</codeph>. This list also includes the
               IP address where the Horizon management console can be accessed.
-              <codeblock>export no_proxy=localhost,127.0.0.1,$KEYSTONE_IP_PUBLIC,$KEYSTONE_IP_INTERNAL,&lt;Horizon Console IP address&gt; </codeblock></li>
+              <codeblock>export no_proxy=localhost,127.0.0.1,$KEYSTONE_IP_PUBLIC,$KEYSTONE_IP_INTERNAL </codeblock></li>
           </ol></li>
       </ol>
     </section><section><title>Verify Connectivity</title>
