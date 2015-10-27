@@ -183,7 +183,7 @@ git commit -m "My config or other commit message"</codeblock>
         <li>Each node must have SSH keys in place that allow the user who will be doing the
           deployment to SSH to each node without a password.</li>
         <li>Passwordless sudo needs to be enabled for the user.</li>
-        <li>There should be a LVM volume as <codeph>/root</codeph> on each node.</li>
+        <li>There should be a LVM logical volume as <codeph>/root</codeph> on each node.</li>
         <li>If the LVM volume group name for the volume group holding the "root" LVM logical volume
           is hlm-vg then it will align with the disk input models in the examples.</li>
         <li>Ensure that <codeph>openssh-server</codeph>, <codeph>python</codeph>, and
