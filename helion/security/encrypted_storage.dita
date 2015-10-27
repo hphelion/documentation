@@ -86,7 +86,7 @@
         <li><b>Configuration Processor Key</b> - If you wish to change an encryption password that
           you have already used when running the Configuration Processor then enter the existing
           password at the first prompt and the new password at the second prompt when running the
-          Configuration Processor playbook. See <xref href="#install_kvm/encrypt">Encrypting
+          Configuration Processor playbook. See <xref href="../installation/install_entryscale_kvm.dita#install_kvm/encrypt">Encrypting
             Password during Configuration Processor</xref> for more details.</li>
         <li><b>iLO passwords, VSA password if encrypted with <codeph>hosencrypt.py</codeph></b> -
           Rerun the utility specifying a new encryption key when prompted. You will need to enter

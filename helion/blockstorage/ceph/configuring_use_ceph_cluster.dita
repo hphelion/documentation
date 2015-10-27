@@ -2,7 +2,8 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_i2z_zc3_pt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring Cinder to Use Ceph </title>
-  <body><!--Needs Edit; fnf edits on 10/26; not sure about backend as 1 word-->
+  <body>
+    <!--Needs Edit; fnf edits on 10/26; not sure about backend as 1 word-->
     <p>This topic covers the following:<ul id="ul_vrf_jf3_pt">
         <li><xref href="#topic_i2z_zc3_pt/configure-ceph-as-cinder-backend" format="dita">To
             Configure Ceph as a Cinder Backend</xref></li>
@@ -34,8 +35,8 @@ rbd_pool = volumes
 rbd_ceph_conf = /etc/ceph/ceph.conf
 volume_driver = cinder.volume.drivers.rbd.RBDDriver
 volume_backend_name = ceph</codeblock><note>The
-                <codeph>rbd_secret_uuid</codeph> command is same as <codeph>secret_id</codeph>
-              which is available at
+                <codeph>rbd_secret_uuid</codeph> command is same as <codeph>secret_id</codeph> which
+              is available at
               <codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph>.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></note></li>
           <?oxy_custom_end?>
           <li> Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes:<ol
@@ -66,7 +67,8 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
       Cinder volume type for Ceph as a backend. Once you are able to create the volume, you can
       perform the OpenStack operations. Also, you can verify the Cinder volume created for Ceph by
       logging in. For instructions, see <xref
-        href="../verify_backend_configuration.dita#topic_q5q_trz_jt"/>.</p>
+        href="../../installation/installation_verification.dita#install_verification/volume_verify"
+      />.</p>
     <p>The volumes are created on the Ceph pool volumes.</p>
     <section id="configure-ceph-cinder-backup">
       <title>To Configure Ceph as a Cinder Backup</title>
@@ -140,6 +142,8 @@ ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</codeblock></li>
     <p><!--You can also login to <xref href="../verify_backend_configuration.dita#topic_q5q_trz_jt">Horizon dashboard</xref> and perform the OpenStack operations, like creating volume, attaching volume to an instance, etc to verify the backend configuration. --></p>
     <p>After successfully configuring Ceph as a Cinder backend, you can login to the Horizon
       Dashboard and perform the OpenStack Operations to verify the backend configuration. For more
-      information, see <xref href="../verify_backend_configuration.dita#topic_q5q_trz_jt"/>.</p>
+      information, see <xref
+        href="../../installation/installation_verification.dita#install_verification/volume_verify"
+      />.</p>
   </body>
 </topic>

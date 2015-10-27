@@ -103,8 +103,7 @@ git commit -m "My config or other commit message"</codeblock>
           information.</note></p>
     </section>
     <section conref="install_entryscale_kvm.dita#install_kvm/config_processor"/>
-    <section conref="install_entryscale_kvm.dita#install_kvm/deploy_cobbler"/>
-    <section conref="install_entryscale_kvm.dita#install_kvm/provision_nodes"/>
+    <section conref="install_entryscale_kvm.dita#install_kvm/provision"/>
     <section conref="install_entryscale_kvm.dita#install_kvm/deploy"/>
     <section conref="install_entryscale_kvm.dita#install_kvm/post-installation"/>
   </body>

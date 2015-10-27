@@ -161,7 +161,7 @@
         </tgroup>
       </table>
       <p>For more details about the supported network requirements, see <xref
-          href="example_configs.dita">Example Configuration</xref></p>
+          href="example_configurations.dita">Example Configuration</xref></p>
     </section>
     <section id="minimum-node-esx"><b>Minimum Node Requirements For ESX</b></section>
     <table id="table_ixh_np2_dt">

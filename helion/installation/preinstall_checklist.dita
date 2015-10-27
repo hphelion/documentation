@@ -473,7 +473,7 @@
               </row>
               <row>
                 <entry/>
-                <entry><xref href="install_entryscale_kvm.dita#install_kvm/install_deployer">Set up
+                <entry><xref href="install_entryscale_kvm.dita#install_kvm/setup_deployer">Set up
                     the Deployer using the hLinux ISO</xref></entry>
                 <entry/>
               </row>

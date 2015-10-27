@@ -97,7 +97,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
         </ol></p>
     </section>
     <p>To verify the brocade zone manager are configured successfully, please refer to <xref
-        href="verify_backend_configuration.dita">Verify Backend Configuration</xref>.</p>
+      href="../installation/installation_verification.dita#install_verification/volume_verify">Verify Backend Configuration</xref>.</p>
     <p> </p>
     <section>
       <title>Known Limitations:</title>

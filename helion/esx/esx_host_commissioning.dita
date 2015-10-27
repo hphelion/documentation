@@ -64,7 +64,7 @@
 | domain-c21 | Cluster1 | DC1        | activated           |
 +------------+----------+------------+---------------------+</codeblock></li>
         <li>Commit your cloud deploy configuration to the<xref
-            href="../installation/using_git.dita#topic_u3v_1yz_ct"> local git repo</xref>, as follows:
+            href="../installation/using_git.dita"> local git repo</xref>, as follows:
           <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "My config or other commit message"</codeblock></li>
