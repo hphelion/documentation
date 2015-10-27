@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_dsm_fbs_st">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Enabling and Disabling Freezer Services</title>
-  <body><!--Needs Edit-->
+  <body>
     <section id="main"><p>To stop freezer globally launch the following playbook from the deployer (This will stop all
       freezer-api and all freezer-agent running on your
       clusters):<codeblock>

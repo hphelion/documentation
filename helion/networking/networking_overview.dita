@@ -3,7 +3,7 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="neutron_overview">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Networking Service Overview</title>
-  <body><!--Needs Edit-->
+  <body>
     <p>HP Helion OpenStack Networking is a virtual networking service that leverages the OpenStack
       Neutron service to provide network connectivity and addressing to HP Helion OpenStack Compute
       service devices.</p>
