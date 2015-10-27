@@ -6,7 +6,7 @@
     <p>Perform the following procedure to define a monitor resource:</p>
     <p>
       <ol>
-        <li>Login to the deployer node.</li>
+        <li>Login to the deployer/lifecycle-manager node.</li>
         <li>Copy the following snippet in
             <codeph>~/helion/my_cloud/definition/data/disks_monitor.yml</codeph> file to define the
           disk required for monitor resource.

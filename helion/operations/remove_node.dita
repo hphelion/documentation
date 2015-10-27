@@ -189,12 +189,13 @@ stack@padawan-ccp-c0-m1-mgmt:~$ nova service-list</codeblock><codeblock>+----+--
 | 13 | hlm004-ccp-comp0003-mgmt | up    | enabled |
 | 16 | hlm004-ccp-comp0001-mgmt | up    | enabled |
 +----+--------------------------+-------+---------+</codeblock>
-      </li><li>Then, on the deployer node, remove the node from <b>servers.yml </b><note>Make sure you are
-            removing the correct node from <b>servers.yml</b> by ensuring you remove the stanza that
-        contains the IP address that matches the node to be removed.</note> Edit <b>servers.yml </b>to remove the entry for removed node.
+      </li><li>Then, on the deployer/lifecycle-manager node, remove the node from <b>servers.yml </b><note>Make
+            sure you are removing the correct node from <b>servers.yml</b> by ensuring you remove
+            the stanza that contains the IP address that matches the node to be removed.</note> Edit
+            <b>servers.yml </b>to remove the entry for removed node.
           <codeblock>cd ~/helion/my_cloud/definition/data
 git checkout site</codeblock>
-      </li><li>Then, commit the
+        </li><li>Then, commit the
         change, and rerun the config
         processor:
           <codeblock>git commit -a -m "Removed node &lt;name>"

@@ -13,15 +13,15 @@
                 dedicated resource node(s). </note></p>
     <section>
             <title>Prerequisite</title>
-            <p>The deployer node must be setup before starting Ceph deployment. For more details on
-                the installation of deployer node, refer to <xref
+            <p>The deployer/lifecycle-manager node must be setup before starting Ceph deployment.
+                For more details on the installation of deployer node, refer to <xref
                     href="../../installation/install_entryscale_kvm.dita#install_kvm">installation
                     guide.</xref></p>
         </section>
     <p><b>Procedure to install Ceph monitor service(s) on a dedicated resource node(s)</b></p>
     <p>Perform the following procedure to install Ceph monitor on dedicated nodes:<ol
                 id="ol_thh_pxn_rt">
-                <li>Login to the deployer node.</li>
+                <li>Login to the deployer/lifecycle-manager node.</li>
                 <li>Ensure that your cloud definition
                         (<codeph>~/helion/examples/entry-scale-kvm-ceph/*</codeph>) is placed under
                         <i>~/helion/my_cloud/definition/</i> directory . </li>

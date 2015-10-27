@@ -28,8 +28,8 @@
         access it:<codeblock>http://VIP:9095</codeblock></p>
       <p>The default username for the Administrator user is <codeph>admin</codeph>. In order to find
         the randomized password that is created for this user you will need to look into the
-          <codeph>~/service.osrc</codeph> file on the deployer node. You can do that with this
-        command:</p>
+          <codeph>~/service.osrc</codeph> file on the deployer/lifecycle-manager node. You can do
+        that with this command:</p>
       <codeblock>cat ~/service.osrc</codeblock>
       <note type="important">The credentials for your <codeph>admin</codeph> user account can be
         changed. See <xref href="../identity/identity_init.dita">Keystone Configuration</xref> for

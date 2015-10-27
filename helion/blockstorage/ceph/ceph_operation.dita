@@ -12,14 +12,14 @@
               Services</b>
           </p><p>Perform the following steps to check the stays of Ceph OSD Nodes and Monitor
               Services:<ol id="ol_np5_td3_pt">
-              <li>Login to Deployer Node.</li>
+              <li>Login to deployer/lifecycle-manager node.</li>
               <li>Change to the following
                 directory:<codeblock>~/scratch/ansible/next/hos/ansible</codeblock></li>
               <li>Run the ansible
                 playbook:<codeblock>ansible-playbook -i hosts/verb_hosts ceph-status.yml</codeblock></li>
             </ol></p><p><b>Start OSD and Monitor Services</b></p><p>Perform the following steps to
             start OSD Nodes and Monitor Services:<ol id="ol_hq5_td3_pt">
-              <li>Login to Deployer Node.</li>
+              <li>Login to deployer/lifecycle-manager node.</li>
               <li>Change to the following
                 directory:<codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock></li>
               <li>Run the ansible
@@ -27,7 +27,7 @@
             </ol></p><p><b>Stop OSD Nodes and Monitor Services</b></p><p>Perform the following steps
             to stop OSD Nodes and Monitor Services:</p><p>
             <ol id="ol_br5_td3_pt">
-              <li>Login to Deployer Node.</li>
+              <li>Login to deployer/lifecycle-manager node.</li>
               <li>Change to the following
                 directory:<codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock></li>
               <li>Run the ansible

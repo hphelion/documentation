@@ -50,7 +50,7 @@ ansible-playbook -i hosts/verb_hosts ceph-deploy.yml</codeblock>
       </ol></p>
     <p>Therefore, the new monitor node is deployed in an existing ceph cluster.</p>
     <p><b>Verify the newly added monitor node</b></p>
-    <p>From the deployer node, execute the following
+    <p>From the deployer/lifecycle-manager node, execute the following
         command:<codeblock>ceph --cluster ceph -f json quorum_status</codeblock><note>If the Ceph
         cluster name is different than the default (i.e. ceph), you need to modify the above command
         accordingly.</note></p>

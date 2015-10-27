@@ -5,7 +5,8 @@
   <body>
    <section> To add a new node to your cloud, you will need to add it to <b>servers.yml</b> and then
       run the scripts that update your cloud configuration. Note that to run any playbooks
-      whatsoever for cloud maintenance, you will always run from the deployer node.</section>
+      whatsoever for cloud maintenance, you will always run from the deployer/lifecycle-manager
+      node.</section>
     <section>To begin, access the <b>servers.yml</b> file by checking out the git branch where you
       are required to make the changes: <ol id="ol_bw1_rg5_tt">
         <li>Get the <b>servers.yml</b> file stored in

@@ -43,8 +43,8 @@ ansible-playbook -i hosts/verb_hosts guard-deployment.yml
 ansible-playbook -i hosts/verb_hosts osconfig-run.yml
 ansible-playbook -i hosts/verb_hosts ceph-deploy.yml</codeblock>
           </p><p>Therefore, the new OSD node is deployed in an existing ceph
-              cluster.</p><p><b>Verify the newly added OSD node</b></p><p>From the deployer node,
-            execute the following
+              cluster.</p><p><b>Verify the newly added OSD node</b></p><p>From the
+            deployer/lifecycle-manager node, execute the following
               command:<codeblock>$ceph --cluster ceph  osd tree</codeblock><note>If the Ceph cluster
               name is different than the default (i.e. ceph), you need to modify the above command
                 accordingly.<p>When you execute the above command the hostname of the newly added
