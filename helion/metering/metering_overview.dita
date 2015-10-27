@@ -22,30 +22,30 @@
       <othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
     </metadata>
   </prolog>
-  <body><!--Needs Edit-->
-    <p>
-      <!--PUBLISHED-->
-      <!--./commercial/GA1/1.1commerical.services-reporting-overview.md-->
-      <!--permalink: /helion/openstack/1.1/services/reporting/overview/--></p>
+  <body>
     <section id="newfunct">
       <title>New Metering Functionality in HP Helion OpenStack 2.0</title>
       
       
-<ul>      
-     <li> The default meters and other items configured for the Ceilometer API can now be modified and additional meters can be added.  It is highly recommended that customers test overall Helion OpenStack performance prior to deploying any Ceilometer modifications to ensure the addition of new notifications or polling events does not negatively affect overall system performance.
+      <ul>      
+     <li> The default meters and other items configured for the Ceilometer API can now be modified and 
+       additional meters can be added.  It is highly recommended that customers test overall Helion 
+       OpenStack performance prior to deploying any Ceilometer modifications to ensure the addition of 
+       new notifications or polling events does not negatively affect overall system performance.
       </li><li>Ceilometer Central Agent (pollster) is now configured to support HA (Active-Active)
       </li><li>Notification Agent has built-in HA (Active-Active) with support for pipeline transformers
-      </li><li>Ceilometer expirer supports native HA and the ability to expirer sample data instead of all data within the retention period.
-      </li><li>SWIFT Poll-based account level meters will be enabled by default with an hourly collection cycle.
+      </li><li>Ceilometer expirer supports native HA and the ability to expire sample data instead of all data
+          within the retention period. </li><li>SWIFT Poll-based account level meters will be enabled by default with an hourly collection cycle.
       </li><li>Flexible configuration for pollster and notifications. We can list different event types differently for these services.
       </li><li>Integrated with centralized monitoring(Monasca) and centralized logging
       </li><li>Upgrade and Reconfigure Support </li>
       
-</ul>
+    </ul>
     </section>
-    <section id="limitations"><title>Limitations</title>
-     
-      
+    
+    <section id="limitations">
+      <title>Limitations</title>
+          
       <ul><li>Since Ceilometer is currently deployed with a shared MySQL database only a limited set of metrics are configured by default to ensure overall system availability and performance.
       </li><li>The default Ceilometer expiry is configured for 7 days.
       </li><li>The Ceilometer Meter list API is configured to return no more than 20 with an open ended, query sample.
@@ -65,12 +65,12 @@
           <dd>the textual name of the meter</dd>
         </dlentry>
         <dlentry>
-          <dt>Unit of measuremen</dt>
+          <dt>Unit of measurement</dt>
           <dd>example: storage meters are defined in Gigabytes (GB) and network bandwidth is
             measured in Gigabits (Gb)</dd>
         </dlentry>
         <dlentry>
-          <dt>Type, which can be cumulative, delta, or guage</dt>
+          <dt>Type, which can be cumulative, delta, or gauge</dt>
           <dd/>
         </dlentry>
         <dlentry>
