@@ -63,8 +63,8 @@
                 omitted.</note> As of HP Helion OpenStack 2.0, we can define the schedule rules that
             this job will follow (only available through the configuration file) and a brief
             description of the job. </section>
-        <section><title>Restoring your Data</title><p> As of HP Helion <tm tmtype="reg">OpenStack</tm> 2.0, you must do the following to restore data
-                after a backup: <ol>
+        <section><title>Restoring your Data</title><p> As of HP Helion <tm tmtype="reg"
+                    >OpenStack</tm> 2.0, you must do the following to restore data after a backup: <ol>
                     <li>Select a backup to restore.</li>
                     <li>Define a mode for the restore: The following modes are available:<ul>
                             <li>FS (Filesystem) (default)</li>
@@ -113,38 +113,6 @@
   }
 </codeblock></p>
         </section>
-        <section><title>HP Helion OpenStack Restore Process</title></section>
-        <section><title>Deployer Restore</title></section>
-        <ol>
-            <li>Connect to the deployer.</li>
-            <li>Become root:<codeblock>sudo su</codeblock></li>
-            <li>Source the backup environment
-                file:<codeblock>source /etc/freezer/backup.osrc</codeblock></li>
-            <li>List
-                jobs:<codeblock>freezer-scheduler -c &lt;deployer hostname (generaly hLinux)> job-list</codeblock></li>
-            <li>Get the ID corresponding to the job "HLM Default: Deployer restore";</li>
-            <li>Launch the restore:
-                <codeblock>freezer-scheduler -c &lt;deployer hostname (generaly hLinux)&gt; job-start -j &lt;job-id&gt;</codeblock></li>
-            <li>Wait for some time, you can follow
-                the<codeblock>/var/log/freezer-agent/freezer-agent.log</codeblock></li>
-        </ol>
-        <section><title>Nova Compute Restore</title></section>
-        <ol>
-            <li>Stop Nova.</li>
-            <li>On each compute node you want to restore, run the following steps: <ol>
-                    <li>Become root:<codeblock>sudo su</codeblock></li>
-                    <li>Source the backup environment
-                        file:<codeblock>source /etc/freezer/backup.osrc</codeblock></li>
-                    <li>List
-                        jobs:<codeblock>freezer-scheduler -c &lt;hostname&gt; job-list</codeblock></li>
-                    <li>Get the ID corresponding to the job "HLM Default: Nova restore".</li>
-                    <li>Launch the
-                        restore:<codeblock>freezer-scheduler -c &lt;hostname&gt; job-start -j &lt;job-id&gt;</codeblock></li>
-                    <li>Wait for some time, you can follow the
-                        <codeblock>/var/log/freezer-agent/freezer-agent.log</codeblock></li>
-                    <li>Once OK, restart Nova.</li>
-                </ol></li>
-        </ol>
         <p/>
     </body>
 </topic>
