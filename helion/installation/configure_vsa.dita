@@ -31,13 +31,6 @@
         the configured storage on an individual StoreVirtual node should not exceed 50 TB. To extend
         the 50 TB per node limit, you can add nodes. A VSA cluster can support up to 16 nodes, which
         means configured storage on a VSA cluster can be as much as 800 TB.</p>
-      <p><note>A single VSA node can have a maximum of seven raw disks (excluding the operating
-          system disks) attached to it, which is defined in the disk input model for your VSA nodes.
-          It is expected that no more than seven disks are specified (including Adaptive
-          Optimization disks) per VSA node. For example, if you want to deploy VSA with two disks
-          for Adaptive Optimization then your disk input model should not specify more than five raw
-          disks for data and two raw disks for Adaptive Optimization. Exceeding the disk limit
-          causes VSA deployment failure.</note></p>
       <p>
         <note type="important">You can deploy VSA with Adaptive Optimization (AO) or without. The deployment process
           for each of these options is similar, you just need to make a change in the disk input
@@ -399,9 +392,13 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
                     - name: /dev/sdd
                     - name: /dev/sde
                     - name: /dev/sdf</codeblock></p>
-      <p>It is recommended to use SSD disk for AO. The minimum VSA deployment with AO uses 2 disks
-        (apart from OS disk) and 1 disks for VSA without AO. The maximum supported number of disks
-        is 7.</p>
+      <p>It is recommended to use SSD disk for AO. <note>A single VSA node can have a maximum of
+          seven raw disks (excluding the operating system disks) attached to it, which is defined in
+          the disk input model for your VSA nodes. It is expected that no more than seven disks are
+          specified (including Adaptive Optimization disks) per VSA node. For example, if you want
+          to deploy VSA with two disks for Adaptive Optimization then your disk input model should
+          not specify more than five raw disks for data and two raw disks for Adaptive Optimization.
+          Exceeding the disk limit causes VSA deployment failure.</note>.</p>
     </section>
   </body>
 </topic>
