@@ -30,8 +30,7 @@
           can reference.</li>
         <li>Make sure all disks on the system(s) are wiped before you begin the install. (For Swift,
           refer to <xref
-            href="../objectstorage/allocating_disk_drives.dita#allocating-disk-drives/requirement-disk-device"
-            >Swift Requirements for Device Group Drives</xref>)</li>
+            href="../objectstorage/swift_device_groups.dita">Swift Requirements for Device Group Drives</xref>)</li>
         <li>There is no requirement to have a dedicated network for OS-install and system
           deployment, this can be shared with the management network. More information can be found
           on the <xref href="../example_configurations.dita">Example Configuration</xref> page.</li>
