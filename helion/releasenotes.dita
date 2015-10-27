@@ -395,7 +395,7 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
       <p>There is currently an OpenStack bug where the <codeph>Start Instances</codeph> option is
         available in the instance action drop-down even if your instances are already in an Active
         state.</p>
-      <p><b>Restarting Deployer/lifecycle management node leaves Apache2 down</b></p>
+      <p><b>Restarting lifecycle-manager node leaves Apache2 down</b></p>
       <p>If you restart your Deployer/lifecycle management node, note that Apache2 will not restart
         on its own. You will need to restart it manually.</p>
       <b>Heat autoscaling not supported </b>
