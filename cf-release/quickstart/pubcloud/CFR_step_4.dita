@@ -197,12 +197,15 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
             <li>Run the following
                 command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
                 type="tip">To improve console output on Windows, add the
-                  <filepath>-no-color</filepath> flag to your command.</note><p>Terraform creates
-                the necessary security groups and instances, installs Docker, installs the Docker
-                images required to run <keyword keyref="prodShort"/>, and saves the state of your
-                infrastructure to <filepath>terraform.tfstate</filepath>.</p><note type="tip">At the
-                end of the process, Terraform displays the URL of the <keyword keyref="prodShort"/>
-                core, formatted using the xip.io wildcard DNS, for
+                  <filepath>-no-color</filepath> flag to your command. For more information, see the
+                Terraform documentation on <xref
+                  href="https://terraform.io/docs/commands/apply.html" format="html"
+                  scope="external">Command: Apply</xref>.</note><p>Terraform creates the necessary
+                security groups and instances, installs Docker, installs the Docker images required
+                to run <keyword keyref="prodShort"/>, and saves the state of your infrastructure to
+                  <filepath>terraform.tfstate</filepath>.</p><note type="tip">At the end of the
+                process, Terraform displays the URL of the <keyword keyref="prodShort"/> core,
+                formatted using the xip.io wildcard DNS, for
                 example:<codeblock>api_endpoint = http://api.203.0.113.0.xip.io</codeblock>You will
                 need this URL to use the Cloud Foundry CLI. You can also run the <filepath>terraform
                   show</filepath> command to see detailed information about the core.</note>If the

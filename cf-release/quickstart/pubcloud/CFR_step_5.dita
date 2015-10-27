@@ -40,11 +40,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fccff96... Added external docs references
     <note type="tip">For more information, see the Cloud Foundry documentation on the <xref
         href="https://docs.cloudfoundry.org/concepts/architecture/execution-agent.html"
         format="html" scope="external">Droplet Execution Agent</xref>. For detailed instructions on
       using the <filepath>cf push</filepath> command and deploying applications, see the Cloud
       Foundry documentation on <xref
+<<<<<<< HEAD
         href="http://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html" format="html"
         scope="external">deploying an application</xref>.</note>
   <simpletable>
@@ -154,6 +158,10 @@ cf target -o myOrg -s mySpace</codeblock></note></li>
         href="http://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html" format="html"
         scope="external">Cloud Foundry Documentation</xref>.</note>
 >>>>>>> 076fff9... Modified instruction steps 5 & 6
+=======
+        href="http://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html" format="html"
+        scope="external">deploying an application</xref>.</note>
+>>>>>>> fccff96... Added external docs references
   <simpletable>
 >>>>>>> be539c9... Added Step 6
    <strow>
