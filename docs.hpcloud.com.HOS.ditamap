@@ -378,7 +378,7 @@
       </topicref>
       <topicref href="helion/metering/metering_troubleshoot.dita"
         navtitle="Troubleshooting the Ceilometer Metering Service" locktitle="yes"/>
-      <topicset href="helion/blockstorage/ceph/troubleshooting.dita"
+      <topicref href="helion/blockstorage/ceph/troubleshooting.dita"
         navtitle="Troubleshooting the Ceph Service" locktitle="yes"/>
     </topichead>
     <!-- BEGIN - USER GUIDE -->
