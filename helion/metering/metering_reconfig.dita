@@ -11,9 +11,9 @@
       Glance, Swift etc. </section>
 
     <section id="apache"><title>Configure Apache2 for the Ceilometer API</title> The first step to
-      execute is to add the ceilometer_modwsgi.conf file in the /etc/apache2/sites-available folder.
-      The ceilometer_modwsgi.conf should have added the following data: ceilometer.conf
-      <codeblock>Listen &lt;ipaddress>:8777 
+      execute is to add the <b>ceilometer_modwsgi.conf </b>file in the /etc/apache2/sites-available
+      folder. The <b>ceilometer_modwsgi.conf</b> should have added the
+      following:<codeblock>Listen &lt;ipaddress>:8777 
 &lt;VirtualHost *:8777>
   WSGIScriptAlias / /opt/stack/service/ceilometer-api-20151021T030442Z/venv/bin/../lib/python2.7/site-packages/ceilometer/api/app.wsgi
   WSGIDaemonProcess ceilometer user=ceilometer group=ceilometer processes=4 threads=5 socket-timeout=600 python-path=/opt/stack/service/ceilometer-api-20151021T030442Z/venv/bin/../:/opt/stack/service/ceilometer-api-20151021T030442Z/venv/bin/../lib/python2.7/site-packages
