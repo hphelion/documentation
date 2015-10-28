@@ -34,7 +34,8 @@
           <codeblock>FROM opensuse:13.2  
 MAINTAINER Troy Topnik &lt;troyt@activestate.com&gt;
 
-RUN zypper -n up \ &amp;&amp; zypper -n install python python-pip ca-certificates-mozilla vim git curl wget</codeblock>  
+RUN zypper -n up &amp;&amp; zypper -n install python python-pip ca-certificates-mozilla vim 
+git curl wget</codeblock>  
         <p>The openSUSE base image is intentionally minimal, so this also installs:
           <dl><dlentry>
             <dt>python</dt>
