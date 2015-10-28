@@ -105,6 +105,6 @@ git commit -m "My config or other commit message"</codeblock>
     <section conref="install_entryscale_kvm.dita#install_kvm/config_processor"/>
     <section conref="install_entryscale_kvm.dita#install_kvm/provision"/>
     <section conref="install_entryscale_kvm.dita#install_kvm/deploy"/>
-    <section conref="install_entryscale_kvm.dita#install_kvm/post-installation"/>
+    <section conref="install_entryscale_kvm.dita#install_kvm/post_installation"/>
   </body>
 </topic>

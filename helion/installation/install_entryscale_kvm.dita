@@ -267,7 +267,7 @@ ansible-playbook -i hosts/localhost bm-reimage.yml [-e nodelist=node1,node2,node
           <codeph>netboot-enabled: True</codeph> flag set:</p>
       <codeblock>sudo cobbler system find --netboot-enabled=1</codeblock>
       <p>For any troubleshooting information regarding these steps, see <xref
-          href="installation_troubleshooting.dita#troubleshooting_installation/deployer_cobbler"
+          href="installation_troubleshooting.dita#troubleshooting_installation/deploy_cobbler"
           >Troubleshooting Your Installation</xref></p>
     </section>
 
