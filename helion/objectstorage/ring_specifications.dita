@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="ring-specification">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Understanding Ring Specifications</title>
-  <body><!--Needs Work; fnf edit on 10/23; remaining issue: link to Product Support-->
+  <body><!--Needs Work; fnf edit on 10/23; remaining issue: link to Product Support. [Binamra- unable to understand the comment]-->
     <p><b>Overview of Ring Management</b></p>
     <p>In Swift, the ring is responsible for mapping data on particular disks. There is a separate
       ring for account databases, container databases, and  each object storage policy, but each
