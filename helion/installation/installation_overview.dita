@@ -3,23 +3,36 @@
 <topic id="install_overview">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation Overview</title>
   <body>
-    
-    <section id="about"><title>Helion OpenStack 2.0 Installation</title>
-
-      <p>In  HP Helion OpenStack 2.0, you have two options for installing your cloud. You can use a
-        GUI that runs in your web browser or you can install via a CLI that exposes the full power
-        and flexibility of HP Helion OpenStack 2.0.</p>
-
-      <p>There are two options for installing your cloud. You can use a GUI that runs in your web
-        browser or you can install via the command-line that exposes the full power and flexibility
-        of HP Helion OpenStack 2.0.</p>
-
+    <section id="overview">
+      <p>Before jumping into your installation, we recommend taking the time to read through our
+          <xref href="../example_configurations.dita">Example Configurations</xref> documentation to
+        get an overview of the sample configurations HP Helion OpenStack 2.0 offers. We have highly
+        tuned example configurations for each of these Cloud models:</p>
+      <ul>
+        <li><xref href="../example_configurations.dita#example_configurations/entryscale_kvm_vsa"
+            >Entry-scale KVM with VSA model</xref></li>
+        <li><xref href="../example_configurations.dita#example_configurations/entryscale_esx"
+            >Entry-scale ESX model</xref></li>
+        <li><xref href="../example_configurations.dita#example_configurations/entryscale_swift"
+            >Entry-scale Swift model</xref></li>
+        <li><xref href="../example_configurations.dita#example_configurations/entryscale_ceph"
+            >Entry-scale KVM with Ceph model</xref></li>
+        <li><xref href="../example_configurations.dita#example_configurations/midscale_kvm_vsa"
+            >Mid-scale KVM with VSA model</xref></li>
+      </ul>
+      <p>We also have a <xref href="preinstall_checklist.dita">Pre-Installation Checklist</xref> we
+        recommend going through to ensure your environment meets the requirements of the Cloud model
+        you choose.</p>
     </section>
-    <section>
+    <section id="about"><title>Helion OpenStack 2.0 Installation</title>
+      <p>Once you have an idea of the configuration you want to choose for your cloud and you have
+        gone through the pre-installation steps, you have two options for installation. You can use
+        a GUI that runs in your web browser or you can install via the command-line that exposes the
+        full power and flexibility of HP Helion OpenStack 2.0.</p>
       <p>You should use the GUI if: <ul>
           <li>You are installing a simple demo or proof-of-concept cloud. </li>
-          <li>You have less than about 15 nodes (it will work for larger numbers but entering all
-            that data in the GUI will get tiresome). </li>
+          <li>You have less than 15 nodes (it will work for larger numbers but entering all that
+            data in the GUI will get tiresome). </li>
           <li>You are not planning to deploy availability zones or use L3 segmentation in your
             initial deployment. </li>
           <li>You are happy with the tuned HP default OpenStack configuration.</li>
@@ -30,39 +43,35 @@
     <ul>
       <li><xref href="../gui_installer.dita#install_gui">Installing via the GUI</xref></li>
     </ul>
-    <section>Note that reconfiguration of your cloud, at the moment, is done via the command-line.
-      The GUI installer is for first-time installation only. </section>
+    <section>Note that reconfiguration of your cloud, at the moment, can only be done via the
+      command-line. The GUI installer is for initial installation only. </section>
     <section>You should use the command-line if: <ul id="ul_wbl_2lw_kt">
         <li>You are installing a more complex or large-scale cloud. </li>
-        <li>You have more than about 15 nodes. </li>
+        <li>You have more than 15 nodes. </li>
         <li>You need to use availability zones or the server groups functionality of the cloud
           model. See the <xref href="../input_model.dita#input_model">Input Model page</xref> for
           more information. </li>
         <li>You want to customize the cloud configuration beyond the tuned defaults that HP provides
           out of the box. </li>
         <li>You need deeper customizations than are possible to express using the GUI.</li>
-      </ul> Instructions for installing via the command-line are here:</section>
+      </ul>
+    </section>
     <section>
+      <p>Instructions for installing via the command-line are here:</p>
       <ul>
-        <li><xref href="install_entryscale_kvm.dita">Baremetal Install for KVM
-          Hypervisor</xref></li>
-        <li><xref href="install_entryscale_esx.dita">Baremetal Install for ESX
-          Hypervisor</xref></li>
+        <li><xref href="install_entryscale_kvm.dita">Installation for Helion Entry-scale KVM
+            Cloud</xref></li>
+        <li><xref href="install_entryscale_esx.dita">Installation for Helion Entry-scale ESX
+            Cloud</xref></li>
       </ul>
       <p>Other useful documents that will help you understand, plan, configure, and install your
         cloud are listed below.</p>
-      <ul id="ul_adl_2lw_kt">
-        <!--<li><xref href="beta1_to_beta2_upgrade.dita">Upgrading from Beta 1 to Beta 2</xref></li>-->
+      <ul>
         <li><xref href="using_git.dita">Using Git for Configuration Management</xref></li>
-        <li><xref href="preinstall_checklist.dita">Pre-Installation Checklist</xref></li>
-        <!--<li><xref href="install_entryscale_kvm.dita">Baremetal Install for KVM
-          Hypervisor</xref></li>
-        <li><xref href="install_entryscale_esx.dita">Baremetal Install for ESX
-          Hypervisor</xref></li>-->
         <li><xref href="installation_troubleshooting.dita">Troubleshooting Your
           Installation</xref></li>
         <li><xref href="installation_verification.dita">Verifying Your Installation</xref></li>
-        <li><xref href="postinstall_checklist.dita">Post-Installation Checklist</xref></li>
+        <li><xref href="postinstall_checklist.dita">Common Post-Installation Steps</xref></li>
       </ul>
     </section>
   </body>
