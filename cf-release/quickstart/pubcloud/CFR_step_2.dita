@@ -2,8 +2,8 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_ikh_xgz_st">
  <title>Quick Start Step 2: <keyword keyref="quickStartHPcloudStep2"/></title>
- <shortdesc>During this step you will download and install Terraform, a tool that allows building,
-    changing, and versioning infrastructure safely and efficiently. The download links and
+ <shortdesc>During this step you will download and install the tools necessary for creating a
+    cluster and pushing applications to your sandbox environment. The download links and
     instructions will open in separate pages.</shortdesc>
  <prolog>
   <metadata>
@@ -25,9 +25,11 @@
             start and stop applications, to link <keyword keyref="opnStckShort"/> services to
             applications, and to perform other application management operations. <keyword
               keyref="prodShort"/> works on Linux, Mac OS X, and Windows.</p><ul id="ul_cfn_rm1_tt">
-                <li><xref href="https://a248.e.akamai.net/cdn.hpcloudsvc.com/gb0e6744f83898b90eb8ff0a2e16a9529/prodae1/hcf-1.0.0.102_master/hcf-1.0.0.102_master.tar.gz" format="html" scope="external">Download
-                  <keyword keyref="prodShort"/>
-                <keyword keyref="prodVerLong"/></xref> (Current)</li>
+            <li><xref
+                href="https://a248.e.akamai.net/cdn.hpcloudsvc.com/gb0e6744f83898b90eb8ff0a2e16a9529/prodae1/hcf-1.0.0.102_master/hcf-1.0.0.102_master.tar.gz"
+                format="html" scope="external">Download <keyword keyref="prodShort"/>
+                <keyword keyref="prodVerLong"/></xref>
+            </li>
           </ul><note type="tip">To decompress <filepath>tar.gz</filepath> files on Windows, you can
             use a file archiver such as <xref href="http://www.7-zip.org/" format="html"
               scope="external">7zip</xref>.</note><b>Downloading and Installing the Cloud Foundy
@@ -52,11 +54,11 @@
                 format="html" scope="external">x86</xref> | <xref
                 href="https://cli.run.pivotal.io/stable?release=windows64&amp;version=6.13.0&amp;source=github-rel"
                 format="html" scope="external">x64</xref></li>
-          </ul><note type="tip">Ensure that you add the Cloud Foundry CLI to your
-              <codeph>PATH</codeph> environment variable.</note><b>Downloading and Installing the
-            Terraform CLI</b><p>You can use the Terraform 0.6.3 CLI and higher to construct, manage,
-            update, or delete <keyword keyref="prodShort"/> clusters. Click the download link
-            appropriate for your operating system:</p><ul id="ul_d1k_5k1_tt">
+          </ul><note>Ensure that you add the Cloud Foundry CLI to your <codeph>PATH</codeph>
+            environment variable.</note><b>Downloading and Installing the Terraform CLI</b><p>You
+            can use the Terraform 0.6.3 CLI and higher to construct, manage, update, or delete
+              <keyword keyref="prodShort"/> clusters. Click the download link appropriate for your
+            operating system:</p><ul id="ul_d1k_5k1_tt">
             <li>Linux <xref
                 href="https://dl.bintray.com/mitchellh/terraform/terraform_0.6.4_linux_386.zip"
                 format="zip" scope="external">x86</xref> | <xref
@@ -74,8 +76,8 @@
                 format="zip" scope="external">x86</xref> | <xref
                 href="https://dl.bintray.com/mitchellh/terraform/terraform_0.6.4_windows_amd64.zip"
                 format="zip" scope="external">x64</xref></li>
-          </ul><note type="tip">Ensure that you add Terraform to your <codeph>PATH</codeph>
-            environment variable. To set the variable on Linux and Mac OS X, <xref
+          </ul><note>Ensure that you add Terraform to your <codeph>PATH</codeph> environment
+            variable. To set the variable on Linux and Mac OS X, <xref
               href="http://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux"
               format="html" scope="external">see this page</xref>. To set it on Windows, <xref
               href="http://stackoverflow.com/questions/1618280/where-can-i-set-path-to-make-exe-on-windows"
