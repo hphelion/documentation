@@ -8,7 +8,7 @@ RewriteEngine on
 #
 #
 RewriteRule ^permalink/helion-openstack/2.0/identity/identity_ldap.html?$ http://docs.hpcloud.com/#helion/identity/identity_ldap.html [NE,R=301,L]
-RewriteRule ^permalink/helion-openstack/2.0/monasca?$ http://docs.hpcloud.com/#helion/operations/monitoring_service.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/monasca?$ http://15.126.26.158/#helion/operations/monitoring_service.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/administration/configure_monitoring.html?$ #helion/operations/opsconsole_overview.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/bare_installation_esx?$ #helion/installation/install_entryscale_esx.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/cinder_vsa?$ #helion/installation/configure_vsa.html [NE,R=301,L]
