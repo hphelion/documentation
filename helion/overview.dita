@@ -52,7 +52,7 @@
         </ul>
       </p>
     </section>
-    <section><title>Post-deployment Configuration</title>
+    <section><title>Post-deployment Reonfiguration and Management</title>
       <p>In addition to initial installation and deployment, the addition of the Configuration
         Processor means that you can reconfigure your cloud easily after deployment. Note that due
         to its combination of deployment and lifecycle-management features, we may use the terms
