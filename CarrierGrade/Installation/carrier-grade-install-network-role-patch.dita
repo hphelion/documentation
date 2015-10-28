@@ -20,20 +20,20 @@
     <p>
       <ol id="ol_pn3_141_mt">
         <li>Download the <codeph>knc-nuage-role.patch</codeph> file.</li>
-        <li>Copy the patch file to the <codeph>~/</codeph> directroy on the HLM host. </li>
+        <li>Copy the patch file to the <codeph>~/</codeph> directory on the HLM host. </li>
         <li> Change to the <codeph>kenobi-configuration-processor</codeph> directory:<p>
             <codeblock>cd ~/kenobi-configuration-processor</codeblock>
           </p></li>
         <li>Execute the following command to deploy the patch:
-          <codeblock>patch -p1 &lt; ../knc-nuage-role.patch </codeblock></li>
+          <codeblock>patch --binary -p1 &lt; ../knc-nuage-role.patch</codeblock></li>
         <li>Execute the following command to integrate the patch into the installation environment:<p>
             <codeblock>cd ~/cg-hlm/hlm-build
 ./hlm_prepare-env.sh</codeblock>
           </p></li>
       </ol>
     </p>
-    <p>When the <codeph>hcfgproc</codeph> command is executed, the updated configuration file will
-      be used. </p>
+    <p>When the <codeph>hlm generate</codeph> command is executed, the updated configuration file
+      will be used. </p>
     <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/role">the KVM + ESX
         installation</xref>.</p>
     </body>
