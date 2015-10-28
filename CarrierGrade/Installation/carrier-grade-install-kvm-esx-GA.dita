@@ -293,7 +293,7 @@ Password: cghelion</codeblock>
       <p>Modify the <codeph>ldap.json</codeph> file in the
           <codeph>/var/hlm/clouds/&lt;cloudname&gt;/vars</codeph> directory of the HLM VM.</p>
       <p>To see a sample <codeph>ldap.json</codeph> file, see <xref
-          href="carrier-grade-install-pb-kvm-ldap-json.dita">Sample ldap.json File for Installing
+          href="carrier-grade-install-kvm-ldap-json.dita">Sample ldap.json File for Installing
           the KVM + ESX Topology</xref>. </p>
     </section>
     <section id="dcn-json">
