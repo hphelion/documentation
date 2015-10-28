@@ -267,8 +267,8 @@ Password: cghelion</codeblock>
               },        </codeblock><p><b>Note:</b>
               In the example, the IP addresses are masked for security purposes. Use values
               appropriate for your environment.</p></li>
-          <li><xref href="carrier-grade-install-kvm-env-json-bonded.dita#topic4797">For a Bonded
-              NIC Environment</xref></li>
+          <li><xref href="carrier-grade-install-kvm-env-json-bonded.dita#topic4797">For a Bonded NIC
+              Environment</xref></li>
         </ul></p>
     </section>
     <section id="configure-ansible-json">
@@ -285,7 +285,7 @@ Password: cghelion</codeblock>
           <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory on the HLM VM. This file is
         called by the script that installs the HP Helion OpenStack cloud, later in the installation. </p>
       <p>To see a sample <codeph>esx.json</codeph> file, see <xref
-          href="carrier-grade-install-pb-kvm-esx-json.dita">Sample esx.json File for Installing the
+          href="carrier-grade-install-kvm-esx-json.dita">Sample esx.json File for Installing the
           KVM + ESX Topology</xref>.</p>
     </section>
     <section id="configure-ldap-json">

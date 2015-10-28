@@ -246,7 +246,7 @@ Password: cghelion</codeblock>
         on the HLM VM. This file is called by the script that installs the HP Helion OpenStack
         cloud, later in the installation. </p>
       <p>To see a sample <codeph>esx.json</codeph> file, see <xref
-          href="carrier-grade-install-pb-kvm-esx-json.dita">Sample esx.json File for Installing the
+          href="carrier-grade-install-kvm-esx-json.dita">Sample esx.json File for Installing the
           KVM + ESX Topology</xref>.</p>
     </section>
     <section id="configure-ldap-json">
