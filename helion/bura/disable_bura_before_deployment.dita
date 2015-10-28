@@ -2,21 +2,22 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_i4l_xhn_tt">
   <title>HP Helion OpenStack 2.0: Disabling Backup/Restore before Deployment</title>
-<body>
-  <!-- https://wiki.hpcloud.net/pages/viewpage.action?pageId=54739797 -->
-  <section><title>Disable backup/restore jobs creation completely:</title>
-    <p>To disable Freezer's deployment, comment out the following lines in the following files:
+  <body>
+    <!-- https://wiki.hpcloud.net/pages/viewpage.action?pageId=54739797 -->
+    <section><title>Disable backup/restore jobs creation completely:</title>
+      <p>To disable Freezer's deployment, comment out the following lines in the following files:
           <note>This action is required even if you already removed Freezer lines from your model
           (control_plane.yml).</note></p>
-    <p>In hlm-deploy.ym:<codeblock># - include: freezer-deploy.yml</codeblock></p>
-    <p>In hlm-status.ym:<codeblock># - include: freezer-status.yml</codeblock></p>
-    <p>In hlm-stop.ym:<codeblock># - include: freezer-stop.yml</codeblock></p>
-    <p>In hlm-start.ym:<codeblock># - include: freezer-start.yml</codeblock></p>
-    <p>In hlm-upgrade.ym:<codeblock># - include: freezer-upgrade.yml</codeblock></p>
-  </section>
-  <section><title>Disable backup/restore jobs creation completely:</title><p>It is possible to
-        continue deploying Freezer and prevent HLM from creating automatic backup jobs.</p><p>By
-        default, HLM deployment automatically creates jobs for the backup and restore of the following:<ul>
+      <p>In hlm-deploy.ym:<codeblock># - include: freezer-deploy.yml</codeblock></p>
+      <p>In hlm-status.ym:<codeblock># - include: freezer-status.yml</codeblock></p>
+      <p>In hlm-stop.ym:<codeblock># - include: freezer-stop.yml</codeblock></p>
+      <p>In hlm-start.ym:<codeblock># - include: freezer-start.yml</codeblock></p>
+      <p>In hlm-upgrade.ym:<codeblock># - include: freezer-upgrade.yml</codeblock></p>
+    </section>
+    <section><title>Disable backup/restore jobs creation completely:</title><p>It is possible to
+        continue deploying Freezer and prevent the lifecycle-manager from creating automatic backup
+        jobs.</p><p>By default, the lifecycle-manager deployment automatically creates jobs for the
+        backup and restore of the following:<ul>
           <li>Deployer/Lifecycle-manager node</li>
           <li>MySQL database</li>
           <li>Swift rings</li>
@@ -25,11 +26,12 @@
         follows:<codeblock>ansible-playbook -i hosts/verb_hosts site.yml -e '{ "freezer_backup_jobs_upload": false }' -e '{ "freezer_restore_jobs_upload": false }'</codeblock><p>When
         using those options, the Freezer infrastructure will still be deployed but will not execute
         any backups.</p></section>
-  <section><title>Disable the backup/restore jobs of a specific service:</title>
-    <p>If some fine tuning is required, you can edit the following file before running the
+    <section><title>Disable the backup/restore jobs of a specific service:</title>
+      <p>If some fine tuning is required, you can edit the following file before running the
         configuration processor and ready deployment scripts:
         <codeblock>~/helion/hos/ansible/_freezer_manage_jobs.yml</codeblock></p>
-    <p>You can combine the following instructions to disable the creation of multiple service jobs. <ul>
+      <p>You can combine the following instructions to disable the creation of multiple service
+        jobs. <ul>
           <li>To disable the deployer's jobs, comment-out all localhost paragraphs, as follows:
             <codeblock>---
  
@@ -223,13 +225,13 @@
     - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_ssh.json.j2
       when: ready_to_upload and freezer_restore_jobs_upload and freezer_ssh_ready</codeblock></li>
         </ul></p>
-  </section>
-  <section><title>Disable the creation of one specific job:</title>
-    <p>If some fine tuning is required, you can edit the following file before running the
+    </section>
+    <section><title>Disable the creation of one specific job:</title>
+      <p>If some fine tuning is required, you can edit the following file before running the
         configuration processor and ready deployment
         scripts:<codeblock>~/helion/hos/ansible/_freezer_manage_jobs.yml</codeblock></p>
-    <p>The following example shows how to disable Swift jobs only. You can do this, for example, to
-        ensure no space is used in Swift to store backups (in that case, be sure to have some SSH
+      <p>The following example shows how to disable Swift jobs only. You can do this, for example,
+        to ensure no space is used in Swift to store backups (in that case, be sure to have some SSH
         backups
         configured).<codeblock>---
  

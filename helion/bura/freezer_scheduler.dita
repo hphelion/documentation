@@ -17,7 +17,7 @@
                 <li>Write to the freezer API the outcome of the freezer-agent execution</li>
             </ul></p>
         <note>Freezer API maintains information about jobs in Elastic Search Database.</note>
-        <section><title>Freezer Scheduler Client-ID</title><p>In HOS 2.0, Freezer Scheduler is
+        <section><title>Freezer Scheduler Client-ID</title><p>In HP Helion OpenStack 2.0, Freezer Scheduler is
                 automatically installed on the deployer/lifecycle-manager node and controller
                 nodes.</p><p>There is a client_id for each node and its corresponds to the hostname.
                 The client_id is created at registration time. The registration is done
@@ -43,7 +43,7 @@
             <ol>
                 <li>Log into any machine (for example, deployer or controller) and create the
                     job.</li>
-                <li>Remember to source the OS variables and use the correct client_id. (The
+                <li>Remember to source the operating system variables and use the correct client_id. (The
                     client-id corresponds to the node where the backup files/directory/database
                     resides.)
                     <codeblock>
