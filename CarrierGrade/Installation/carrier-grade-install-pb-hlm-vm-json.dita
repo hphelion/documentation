@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4797">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Sample JSON File for the Helion lifecycle management Virtual Machine Installation</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Sample JSON File for the HLM Virtual Machine Installation</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,7 +12,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
-    <p>The <xref href="carrier-grade-install-non-kvm-GA.dita#topic10581">process for installing the Helion lifecycle management VM</xref>
+    <p>The <xref href="carrier-grade-install-non-kvm-GA.dita#topic10581">process for installing the HLM VM</xref>
             requires a JSON file that will be used when deploying VM.</p>
 <p>The <codeph>node-provision.json</codeph> file contains the following fields:</p>
 <table>
@@ -179,7 +179,7 @@
         "data_partition_size": "80"
     }
 ]</codeblock>
-    <p>Return to <xref href="carrier-grade-install-non-kvm-GA.dita#topic10581">Create the Helion lifecycle management Virtual
+    <p>Return to <xref href="carrier-grade-install-non-kvm-GA.dita#topic10581">Create the HLM Virtual
                     Machine</xref>.</p>
 <p>
   <xref type="section" href="#topic4797"> Return to Top </xref>

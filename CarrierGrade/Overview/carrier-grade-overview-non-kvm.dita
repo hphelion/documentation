@@ -24,37 +24,37 @@
 
 <section><title>HP Helion Lifecycle Management</title>
   <p>The Non-KVM environment includes a full installation of HP Helion Lifecycle Management (HLM).
-    Helion lifecycle management is an application that is used to deploy HP Helion OpenStack Carrier
+    HLM is an application that is used to deploy HP Helion OpenStack Carrier
     Grade and can be used for ongoing operations and maintenance of the system.</p>
   <ul id="ul_bhj_clv_ls">
     <li>
       <p>
-            <b>Physical Node Preparation.</b> Helion lifecycle management can configure nodes prior to installation of a
+            <b>Physical Node Preparation.</b> HLM can configure nodes prior to installation of a
             base operating system, including node discovery/inventory, BIOS configuration,
             (specifically setting PXE boot on primary interface), GRUB settings, RAID setup for
             local disks, iLO/IPMI set up and firmware upgrades.</p>
     </li>
     <li>
       <p>
-            <b>OS Install.</b> Helion lifecycle management can take a PXE bootable node and installs a base operating
+            <b>OS Install.</b> HLM can take a PXE bootable node and installs a base operating
             system.</p>
     </li>
     <li>
       <p>
-            <b>Cloud Configuration.</b> Helion lifecycle management can provide detailed information about the cloud
+            <b>Cloud Configuration.</b> HLM can provide detailed information about the cloud
             topology, such as the structure of control plane, assignment of services to nodes, and
             service configuration. You can also specify environment-specific configurations.</p>
     </li>
     <li>
       <p>
-        <b>OS Configuration.</b> Helion lifecycle management can automatically execute operating system configuration
+        <b>OS Configuration.</b> HLM can automatically execute operating system configuration
         values, such as NIC assignments, NTP settings, DNS settings, NIC bonding, sysctl settings,
-        VLAN creation etc. Helion lifecycle management uses the Ansible data model output and Helion lifecycle management server playbooks to
+        VLAN creation etc. HLM uses the Ansible data model output and HLM server playbooks to
         automatically apply the per-node configurations.</p>
     </li>
     <li>
       <p>
-            <b>Helion Operation &amp; Maintenance.</b> Helion lifecycle management is responsible for the deploy, upgrade
+            <b>Helion Operation &amp; Maintenance.</b> HLM is responsible for the deploy, upgrade
             and maintenance lifecycle of the HP Helion OpenStack Carrier Grade system.</p>
     </li>
   </ul>

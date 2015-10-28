@@ -37,7 +37,7 @@ tar -zxvf hoscg-update.tgz</codeblock></li></ol>
         that control the supported services and the repositories used to download the source for
         those services.</p>
     <ol>
-      <li>On the Helion lifecycle management host, use the following commands to modify the <codeph>/root/stackrc</codeph>
+      <li>On the HLM host, use the following commands to modify the <codeph>/root/stackrc</codeph>
           file with values appropriate to your environment, using the following example.
           <codeblock>export OS_PASSWORD=admin
 export OS_USERNAME=admin
@@ -96,14 +96,14 @@ export OS_REGION_NAME=regionone </codeblock></p></li>
   <section><title>Install the HP Identity Operations (Keystone) package on all the
         controllers</title>
       <ol>
-        <li>On the Helion lifecycle management host, change to the to the <codeph>~/&lt;cloudname></codeph>
+        <li>On the HLM host, change to the to the <codeph>~/&lt;cloudname></codeph>
           directory.<codeblock>cd ~/&lt;cloudname&gt; </codeblock></li>
         <li>Execute the following command, using your cloudname and failure-zone:
             <codeblock>hupdate -c &lt;cloudname> -f &lt;failureZone> hoscg-update.tgz</codeblock><p>Where:&lt;ul
             id="ul_lcw_gbs_bt"></p><ul>
             <li>&lt;cloudname> is the name of your cloud;</li>
             <li>&lt;failurezone> is controller mapping can be obtained from
-              &lt;cloud-directory&gt;/nodes.json file on Helion lifecycle management node.</li>
+              &lt;cloud-directory&gt;/nodes.json file on HLM node.</li>
           </ul></li>
       </ol> Execute this command on all three non-KVM controllers, using a different failure zone
       for each. The command output ends with the following upon
@@ -121,7 +121,7 @@ localhost                    : ok=6    changed=2    unreachable=0    failed=0   
  <p>On each of the three non-KVM region conrollers, you meed to perform the following tasks:</p>    
   <ol>
         <li>Replace the <codeph>/etc/keystone/keystone-paste.ini</codeph> file on all three
-          controllers. From the Helion lifecycle management host, execute the following command for each
+          controllers. From the HLM host, execute the following command for each
             controller:<codeblock>scp ~/~/patch_cghelion1.1/keystone-paste.ini cghelion@&lt;controller-ip&gt;</codeblock><p>Where:
               <codeph>&lt;controller-ip&gt;</codeph> is the IP address for each controller.</p></li>
   <li>Edit the <codeph>/etc/nova/nova.conf</codeph> file to comment out the following line:

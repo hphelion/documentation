@@ -28,7 +28,7 @@
       <p>The installation process creates virtual machines for VSC. Use the following steps to
         verify that the VSC VMs are installed and are operational:</p>
       <ol id="ol_fkv_xjj_1t">
-        <li>SSH to your VSC VM from Helion lifecycle management Host using the DCM IP. The default username and password:
+        <li>SSH to your VSC VM from HLM Host using the DCM IP. The default username and password:
             <codeph>admin/admin</codeph></li>
         <li>Execute the following command: <codeblock>admin display-config</codeblock></li>
         <li>Execute the following commands to verify the VMs are active:
@@ -64,7 +64,7 @@ Destination/Mask    Proto  Pre  Cost         NextHop         Interface
 10.200.70.64/26     Static 60   0            10.200.70.2     Vlan1553
 10.200.70.128/26    Static 60   0            10.200.70.2     Vlan1553
 10.200.70.192/26    Static 60   0            10.200.70.2     Vlan1553</codeblock><ol>
-        <li>From the Helion lifecycle management VM, SSH into any controller node using the default credentials: <p>
+        <li>From the HLM VM, SSH into any controller node using the default credentials: <p>
             <codeblock>User Name: cghelion
 Password: cghelion</codeblock>
           </p></li>
@@ -109,7 +109,7 @@ source stackrc</codeblock></li>
       <p>Use the following command to change <codeph>eth0</codeph> from network to access and allow
         VLANs.</p>
       <ol>
-        <li>From the Helion lifecycle management VM, SSH to the VRS-G nodes using the default username and password.<p>
+        <li>From the HLM VM, SSH to the VRS-G nodes using the default username and password.<p>
             <codeblock>User Name: cghelion
 Password: cghelion</codeblock>
           </p></li>
@@ -212,7 +212,7 @@ VSD Server : auto </codeblock>
       <p>This script creates the uplink on the VRS-G, which is a requirement for the EXT-NET to
         function with HP Helion OpenStack Carrier Grade. </p>
       <ol id="ol_ks4_zhj_1t">
-        <li>From the Helion lifecycle management host, copy the following code to create a cURL script.</li>
+        <li>From the HLM host, copy the following code to create a cURL script.</li>
         <li>Modify the cURL script for your environment:<ul id="ul_bzs_r1c_1t">
             <li>FIP_NAME is the one that is retrieved from previous step.</li>
             <li>GW_NAME is the redundant gateway name.</li>

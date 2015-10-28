@@ -24,7 +24,7 @@
         <p><i>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing the
                     KVM + ESX deployment</xref>.</i></p>
 <p>The <codeph>node-provision.json</codeph> file in the <codeph>&lt;cloudname></codeph> directory of
-            the Helion lifecycle management VM contains the following fields:</p>
+            the HLM VM contains the following fields:</p>
 <table>
 <tgroup cols="2">
                 <colspec colname="col1" colsep="1" rowsep="1"/>

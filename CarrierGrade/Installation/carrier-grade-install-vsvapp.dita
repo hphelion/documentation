@@ -36,7 +36,7 @@
     <section>
       <p> To install the VRSvApp:</p>
       <ol id="ol_hf4_nvy_zs">
-        <li>Copy the downloaded <codeph>DCN-VRS-VMware-3.0R7.zip</codeph> file from Helion lifecycle management host to VSD
+        <li>Copy the downloaded <codeph>DCN-VRS-VMware-3.0R7.zip</codeph> file from HLM host to VSD
           node in the <codeph>/opt/vsd</codeph> directory. For more information on downloading DCN
           files, see <xref href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/download-esx"
             >Download packages for KVM + ESX</xref>.</li>

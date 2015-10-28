@@ -128,7 +128,7 @@
     <section id="first-step">
       <title>First Step</title>
       <p>Perform the <xref href="carrier-grade-install-pb-prereqs-GA.dita#topic7148">prerequisite
-          steps and one time setup</xref> on your Helion lifecycle management host required to install HP Helion OpenStack
+          steps and one time setup</xref> on your HLM host required to install HP Helion OpenStack
         Carrier Grade in a baremetal environment.</p>
       <!-- ===================== horizontal rule ===================== -->
     </section>

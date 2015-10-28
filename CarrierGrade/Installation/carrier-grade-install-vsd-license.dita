@@ -18,10 +18,10 @@
           href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
         Deployment</xref>.</i></p>
     <p>You should have recevied a license file when you purchased DCN. You need to apply that
-      license on the Helion lifecycle management host. If you do not have the license file, through the DCN post-sales
+      license on the HLM host. If you do not have the license file, through the DCN post-sales
       process, you received a confirmation email. Use a browser and go to the link in the email to
       obtain the license.</p>
-    <p>To apply the VSD license, on the Helion lifecycle management host:</p>
+    <p>To apply the VSD license, on the HLM host:</p>
     <ol id="ol_oyq_vjw_dt">
       <li>Use a web browser such as Chrome/FireFox to launch the VSD Architect dashboard using the
         DCM IP and port 8443. For example:

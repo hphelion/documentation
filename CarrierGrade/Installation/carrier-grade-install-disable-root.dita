@@ -17,11 +17,11 @@
   <body>
     <p>For security purposes, we strongly recommend disabling root. After the <codeph>root</codeph>
       user is disabled, you can use another default user account, <codeph>cghelion</codeph> to
-      access the Helion lifecycle management VM and any actions that require root access should be done using
+      access the HLM VM and any actions that require root access should be done using
         <codeph>sudo</codeph>.</p>
     
       <ol id="ol_vrv_zsg_ft">
-        <li>Log into the Helion lifecycle management host.</li>
+        <li>Log into the HLM host.</li>
         <li>Execute the following command to run a script that disables the <codeph>root</codeph>
           user. 
           <codeblock>sudo /root/cg-hlm/dev-tools/disable-root.sh</codeblock></li>
