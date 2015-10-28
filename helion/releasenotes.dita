@@ -389,10 +389,14 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
                   fi
           endscript
 }</codeblock>
-      <p><b>Issue: The Kilo version of the python-cinderclient does not support incremental
-          backup</b></p>
-      <p>The version of the python-cinderclient available in HP Helion OpenStack 2.0 does not
-        support incremental backup.</p>
+      <p><b>Issue: Kilo functionality not supported by the Kilo version of
+        python-cinderclient</b></p>
+      <p>The version of the python-cinderclient available in HP Helion OpenStack 
+        2.0 does not support some functionality available from the cinder services, including incremental backup and private volume types.</p>
+      If you install a new version of python-cinderclient, and if you have OS_ENDPOINT_TYPE defined, you must also define CINDER_ENDPOINT_TYPE.
+      
+      For example:
+      <codeblock>export CINDER_ENDPOINT_TYPE=${OS_ENDPOINT_TYPE}</codeblock>
       <p>The workaround for this is the following:</p>
       <ol>
         <li>Create a new virtual environment in a suitable directory:
@@ -420,17 +424,9 @@ cinder --version</codeblock></li>
         option from the Select Boot Source dropdown on Launch Instance wizard.</p>
       <b>Start Instances in Horizon enabled</b>
       <p>Note that for Start Instances at Instances table level in Horizon, the More Actions
-        dropdown is enabled even if an instance status is Active.</p>
-      <!--<ul id="ul_vrb_d45_tt">
-        <li>From Horizon Dashboard | Instances page: Launch an Instance and select source as
-          Bootable volume.</li>
-        <li>Use the OpenStack or Nova client to create the instance.</li>
-      </ul>
-      <note>When using the Launch Instance action in the Volumes table, the Launch Instance Wizard
-        form doesn't get pre-populated with the Volumes option selected, nor does it select the
-        given Volume.</note>-->
-      <p><b>Issue: The <codeph>Start Instances</codeph> Option is Available In Horizon for Instances
-          that are Already Started</b></p>
+        dropdown is enabled even if an instance status is Active.</p><p><b>Issue: The <codeph>Start
+            Instances</codeph> Option is Available In Horizon for Instances that are Already
+          Started</b></p>
       <p>There is currently an OpenStack bug where the <codeph>Start Instances</codeph> option is
         available in the instance action drop-down even if your instances are already in an Active
         state.</p>
