@@ -354,7 +354,7 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                   <p>For post-deployment log level changes, please commit your changes to git and
                     re-run the following from the lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
-                      ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
+ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
                 </entry>
               </row>
               <row>
@@ -375,7 +375,7 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                   <p>For post-deployment log level changes, please commit your changes to git and
                     re-run the following from the lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
-                      ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
+ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
                 </entry>
               </row>
               <row>
@@ -390,7 +390,7 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                   <p>For post-deployment log level changes, please commit your changes to git and
                     re-run the following from the lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
-                      ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
+ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
                 </entry>
               </row>
               <row>
@@ -406,7 +406,7 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                   <p>For post-deployment log level changes, please commit your changes to git and
                     re-run the following from the lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
-                      ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
+ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
                 </entry>
               </row>
               <row>
@@ -522,6 +522,17 @@ ansible-playbook -i hosts/verb_hosts monasca-agent-reconfigure.yml -e "monasca_l
                 </entry>
               </row>
               <row>
+                <entry>Neutron</entry>
+                <entry>dhcp-agent<p>l3-agent</p><p>lbaas-agent</p><p>metadata-agent</p><p>openvswitch-agent</p><p>vpn-agent</p></entry>
+                <entry>INFO</entry>
+                <entry><p>Neutron service log levels are configurable in the following file:</p>
+                  <codeblock>~/helion/my_cloud/config/neutron/&lt;component>-logging.conf.j2</codeblock>
+                  <p>If you make edits to this file, you will need to run the
+                      <codeph>neutron-reconfigure.yml</codeph> playbook:</p>
+                  <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml neutron-reconfigure.yml</codeblock></entry>
+              </row>
+              <row>
                 <entry morerows="1">Nova</entry>
                 <entry>nova-api</entry>
                 <entry>INFO</entry>
@@ -585,8 +596,8 @@ ansible-playbook -i hosts/verb_hosts site.yml swift-reconfigure.yml</codeblock>
                 <entry>vsa-installer</entry>
                 <entry>INFO</entry>
                 <entry>
-                  <p>The VSA logging levels are configurable for the <codeph>vsa-installer</codeph> module.
-                    Use the following variables (default is INFO, case-sensitive):</p>
+                  <p>The VSA logging levels are configurable for the <codeph>vsa-installer</codeph>
+                    module. Use the following variables (default is INFO, case-sensitive):</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml -e "vsa_installer_log_level=DEBUG"</codeblock>
                 </entry>
