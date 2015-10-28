@@ -25,7 +25,7 @@
                 scope="external"><keyword keyref="pubCloudShort"/></xref> with the username and
               password that you created <xref href="CFR_step_1.dita#concept_s2k_b35_st">during
                 registration</xref>.</li>
-            <li>Create a network.<ol id="ol_xvb_qyp_tt">
+            <li id="create_a_network">Create a network.<ol id="ol_xvb_qyp_tt">
                 <li>On the left panel, click <menucascade>
                     <uicontrol>Project</uicontrol>
                     <uicontrol>Network</uicontrol>
@@ -37,9 +37,14 @@
                 <li>Enter a <uicontrol>Subnet Name</uicontrol>, a <uicontrol>Network
                     Address</uicontrol> (for example, <codeph>10.0.0.0/24</codeph>), and click
                     <uicontrol>Next</uicontrol>.</li>
-                <li>Enter  <uicontrol>Allocation Pools</uicontrol> (for example,
+                <li>Enter <uicontrol>Allocation Pools</uicontrol> (for example,
                     <codeph>10.0.0.2,10.0.0.254</codeph>), and click
-                  <uicontrol>Create</uicontrol>.</li>
+                    <uicontrol>Create</uicontrol>.<note type="tip">To find the network ID, click the
+                    name of your network. You will need it to <xref
+                      href="../../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt"
+                      >configure your <filepath>tfvars</filepath> file</xref> and <xref
+                      href="CFR_step_4.dita#concept_pqc_jhz_st">run terraform
+                    commands</xref>.</note></li>
               </ol></li>
             <li>Create a router.<ol id="ol_vkh_fr1_tt">
                 <li>On the left panel, click <menucascade>
@@ -99,7 +104,7 @@
                     <xref href="mailto:billing@hpcloud.com" format="html" scope="external"
                     >billing@hpcloud.com</xref>.</li>
               </ol></li>
-          </ol><b>Downloading the Configuration File and Key Pair</b><ol id="ol_gy1_f1q_tt">
+          </ol><b id="create_key_pair">Downloading the Configuration File and Key Pair</b><ol id="ol_gy1_f1q_tt">
             <li>To download the <filepath>sh</filepath> configuration file, click <menucascade>
                 <uicontrol>Project</uicontrol>
                 <uicontrol>Compute</uicontrol>
@@ -123,7 +128,10 @@
                 <li>If the key pair does not download automatically, click the link and save the
                     <filepath>pem</filepath> file in a convenient location.</li>
               </ol><note type="tip">The <filepath>pem</filepath> file contains the RSA private key
-                that you will need to SSH into your cluster.</note></li>
+                that you will need to <xref href="CFR_step_4.dita#concept_pqc_jhz_st">run Terraform
+                  commands</xref> and to <xref
+                  href="CFR_step_6.dita#concept_m3k_bth_tt/connecting_to_your_cluster">SSH into your
+                  cluster</xref>.</note></li>
           </ol><xref href="CFR_step_4.dita#concept_pqc_jhz_st">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
           </xref>

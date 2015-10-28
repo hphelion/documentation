@@ -18,10 +18,10 @@
               <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5.
               <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6.
               <b><keyword keyref="quickStartHPcloudStep6"/></b></stentry>
-       <stentry><b>Connecting to Your Cluster</b><p>To administer and troubleshoot your cluster, you
-            can connect to it using SSH and then run <keyword keyref="adminUtil"/> commands. To
-            connect, specify the IP address of your <keyword keyref="prodShort"/> core and the
-            location of your RSA private key, for
+       <stentry><b id="connecting_to_your_cluster">Connecting to Your Cluster</b><p>To administer
+            and troubleshoot your cluster, you can connect to it using SSH and then run <keyword
+              keyref="adminUtil"/> commands. To connect, specify the IP address of your <keyword
+              keyref="prodShort"/> core and the location of your RSA private key, for
             example:<codeblock>ssh ubuntu@203.0.113.0 -i ~/.ssh/myPrivateKey.pem</codeblock></p><note
             type="note">For more information, see the <xref
               href="../../reference/CFR_reference_gato.dita#reference_cd3_bs3_rt"

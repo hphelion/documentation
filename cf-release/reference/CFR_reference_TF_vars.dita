@@ -33,8 +33,10 @@
           </row>
           <row>
             <entry><codeph>openstack_keypair</codeph></entry>
-            <entry>The name of the key pair that you created on <keyword keyref="pubCloudShort"
-                /><note type="tip">To find your key pair, on the left panel click <menucascade>
+            <entry>The name of <xref
+                href="../quickstart/pubcloud/CFR_step_3.dita#concept_kpg_fhz_st/create_key_pair">the
+                key pair that you created on <keyword keyref="pubCloudShort"/></xref><note
+                type="tip">To find your key pair, on the left panel click <menucascade>
                   <uicontrol>Project</uicontrol>
                   <uicontrol>Computer</uicontrol>
                   <uicontrol>Access &amp; Security</uicontrol>
@@ -43,7 +45,9 @@
           </row>
           <row>
             <entry><codeph>openstack_network_id</codeph></entry>
-            <entry>The ID of the network that you created on <keyword keyref="pubCloudShort"/><note
+            <entry>The ID of <xref
+                href="../quickstart/pubcloud/CFR_step_3.dita#concept_kpg_fhz_st/create_a_network"
+                >the network that you created on <keyword keyref="pubCloudShort"/></xref><note
                 type="tip">To find the network ID, on the left panel click <menucascade>
                   <uicontrol>Project</uicontrol>
                   <uicontrol>Network</uicontrol>
