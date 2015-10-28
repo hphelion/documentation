@@ -18,7 +18,7 @@
         <li><xref href="../example_configurations.dita#example_configurations/entryscale_ceph"
             >Entry-scale KVM with Ceph model</xref></li>
         <li><xref href="../example_configurations.dita#example_configurations/midscale_kvm_vsa"
-            >Mid-scale KVM with VSA model</xref></li>
+            >Mid-scale KVM with VSA model (Tech-preview)</xref></li>
       </ul>
       <p>We also have a <xref href="preinstall_checklist.dita">Pre-Installation Checklist</xref> we
         recommend going through to ensure your environment meets the requirements of the Cloud model
@@ -29,6 +29,7 @@
         gone through the pre-installation steps, you have two options for installation. You can use
         a GUI that runs in your web browser or you can install via the command-line that exposes the
         full power and flexibility of HP Helion OpenStack 2.0.</p>
+      <p><b>Using the GUI</b></p>
       <p>You should use the GUI if: <ul>
           <li>You are installing a simple demo or proof-of-concept cloud. </li>
           <li>You have less than 15 nodes (it will work for larger numbers but entering all that
@@ -45,7 +46,10 @@
     </ul>
     <section>Note that reconfiguration of your cloud, at the moment, can only be done via the
       command-line. The GUI installer is for initial installation only. </section>
-    <section>You should use the command-line if: <ul id="ul_wbl_2lw_kt">
+    <section>
+      <p><b>Using the Command-line</b></p>
+      <p>You should use the command-line if:</p>
+      <ul id="ul_wbl_2lw_kt">
         <li>You are installing a more complex or large-scale cloud. </li>
         <li>You have more than 15 nodes. </li>
         <li>You need to use availability zones or the server groups functionality of the cloud
@@ -64,6 +68,8 @@
         <li><xref href="install_entryscale_esx.dita">Installation for Helion Entry-scale ESX
             Cloud</xref></li>
       </ul>
+    </section>
+    <section id="moreinfo"><title>For More Information</title>
       <p>Other useful documents that will help you understand, plan, configure, and install your
         cloud are listed below.</p>
       <ul>
