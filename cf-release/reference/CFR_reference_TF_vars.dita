@@ -33,9 +33,8 @@
           </row>
           <row>
             <entry><codeph>openstack_keypair</codeph></entry>
-            <entry>The location and name of the key pair that you created on <keyword
-                keyref="pubCloudShort"/><note type="tip">To find your key pair, on the left panel
-                click <menucascade>
+            <entry>The name of the key pair that you created on <keyword keyref="pubCloudShort"
+                /><note type="tip">To find your key pair, on the left panel click <menucascade>
                   <uicontrol>Project</uicontrol>
                   <uicontrol>Computer</uicontrol>
                   <uicontrol>Access &amp; Security</uicontrol>
