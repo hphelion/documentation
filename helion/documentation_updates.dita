@@ -12,34 +12,33 @@
     <section id="changelog">
       <p>
         <table frame="all" rowsep="1" colsep="1" id="changelog_tb">
-          <title>Significant Changes</title>
-          <tgroup cols="3">
+          <title>Documentation Revision History</title>
+          <tgroup cols="4">
             <colspec colname="c1" colnum="1"/>
-            <colspec colname="c2" colnum="2"/>
-            <colspec colname="c3" colnum="3"/>
+            <colspec colname="newCol2" colnum="2" colwidth="1*"/>
+            <colspec colname="c2" colnum="3"/>
+            <colspec colname="c3" colnum="4"/>
             <thead>
               <row>
+                <entry>Version</entry>
                 <entry>Date</entry>
-                <entry>Change</entry>
+                <entry>Description</entry>
                 <entry>Topic URL</entry>
               </row>
             </thead>
             <tbody>
               <row>
-                <entry>10/28/2015</entry>
+                <entry>1.0</entry>
+                <entry>October 27, 2015</entry>
+                <entry>Initial Creation</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>October 28, 2015</entry>
                 <entry>Added steps for Neutron service logging level configuration</entry>
                 <entry><xref href="administration/configure_logging.dita">Configuring the
                     Centralized Logging Service</xref></entry>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
               </row>
             </tbody>
           </tgroup>
