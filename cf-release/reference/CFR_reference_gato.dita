@@ -132,7 +132,7 @@
           <dt><filepath><keyword keyref="adminUtilCLI"/> role restart <varname>[command
                 options]</varname>
               <varname>[arguments...]</varname></filepath></dt>
-          <dd>Stop or restart the <varname>&lt;role></varname> container. The available
+          <dd>Stop or restart the <varname>&lt;role></varname> container.<!-- The available
               <varname>&lt;role></varname> containers are: <ul id="ul_y3t_nrz_5t">
               <li>uaa</li>
               <li>stats</li>
@@ -149,7 +149,7 @@
               <li>clock_global</li>
               <li>api_worker</li>
               <li>api</li>
-            </ul><dl>
+            </ul>--><dl>
               <dlentry>
                 <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
                 <dd>Set the Docker server endpoint. Schemes and port number are required. Supported
