@@ -16,7 +16,7 @@
       <title>Download the Latest Version of HP Helion Development Platform Installation
         Client</title>
       <p>The installation is provided as a small compressed tar file. The images for the individual
-        services will be downloaded when the service installation is started.</p>
+        services will be downloaded during each service installation.</p>
       <ol id="ol_ogs_qpt_nt">
         <li>Navigate to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
             format="html" scope="external">HP Helion Download Network</xref> (HDN) and log in. If
