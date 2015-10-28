@@ -3,8 +3,8 @@
 <topic id="topic_jsc_qps_qt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Backing up the Cloud Control Plane </title>
   <body>
-    <section><title>Default Backup and Restore</title><p>As part of the installation procedure in HP
-        Helion <tm tmtype="reg">OpenStack</tm> 2.0, automatic backup/restore jobs are uploaded from
+    <section><title>Default Backup and Restore</title><p>As part of the installation procedure in 
+      HP Helion <tm tmtype="reg">OpenStack</tm> 2.0, automatic backup/restore jobs are uploaded from
         Swift into the Freezer scheduler. The backup jobs perform scheduled backups of Helion
         OpenStack control plane data (files/directories/db). The restore jobs can be used to restore
         appropriate control plane data. Additional automatic jobs can be added to backup/restore

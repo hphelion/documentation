@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="reconfig_metering">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Metering Service Config and Upgrade</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Metering Service Config and
+    Upgrade</title>
   <body>
 
     <section id="deploy"><title>Deployment</title> HP Helion OpenStack 2.0 automatically deploys
@@ -36,7 +37,7 @@
       file is configured during HP Helion OpeStack deployment and preferably should be changed by
       running the <b>ceilometer-reconfigure.yml</b> playbook (see the <xref
         href="#reconfig_metering/reconfig" format="dita">Reconfigure</xref> section below). This
-      configuration refers to the  installed Ceilometer API version and needs to be referenced
+      configuration refers to the installed Ceilometer API version and needs to be referenced
       appropriately based on the version installed and needs to be used. The main parameters that
       can be altered to increase the responsiveness is processes and threads in the above mentioned
       config file. <note>WSGIDaemon Recommended Settings The best, and hence, recommended
@@ -86,9 +87,9 @@ ceilome+ 31433 31427 10 16:29 ? 00:02:43 /usr/sbin/apache2 -k start </codeblock>
       are listed in the Notification Agent or Central Agent's pipeline coniguration. </section>
 
     <section id="upgrade">
-      <title>Upgrade</title> Follow Standard Service upgrade mechanism available in HLM
-      distribution. For Ceilometer, the playbook included with HP Helion OpenStack is
-      ceilometer-upgrade.yml </section>
+      <title>Upgrade</title> Follow Standard Service upgrade mechanism available in the
+      lifecycle-manager distribution. For Ceilometer, the playbook included with HP Helion OpenStack
+      is ceilometer-upgrade.yml </section>
 
 
     <section id="reconfig"><title>Reconfigure</title> Make changes in the Ceilometer available

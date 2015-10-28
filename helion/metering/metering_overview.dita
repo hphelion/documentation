@@ -25,36 +25,45 @@
   <body>
     <section id="newfunct">
       <title>New Metering Functionality in HP Helion OpenStack 2.0</title>
-      
-      
-      <ul>      
-     <li> The default meters and other items configured for the Ceilometer API can now be modified and 
-       additional meters can be added.  It is highly recommended that customers test overall Helion 
-       OpenStack performance prior to deploying any Ceilometer modifications to ensure the addition of 
-       new notifications or polling events does not negatively affect overall system performance.
-      </li><li>Ceilometer Central Agent (pollster) is now configured to support HA (Active-Active)
-      </li><li>Notification Agent has built-in HA (Active-Active) with support for pipeline transformers
-      </li><li>Ceilometer expirer supports native HA and the ability to expire sample data instead of all data
-          within the retention period. </li><li>SWIFT Poll-based account level meters will be enabled by default with an hourly collection cycle.
-      </li><li>Flexible configuration for pollster and notifications. We can list different event types differently for these services.
-      </li><li>Integrated with centralized monitoring(Monasca) and centralized logging
-      </li><li>Upgrade and Reconfigure Support </li>
-      
-    </ul>
+      <ul>
+        <li> The default meters and other items configured for the Ceilometer API can now be
+          modified and additional meters can be added. It is highly recommended that customers test
+          overall Helion OpenStack performance prior to deploying any Ceilometer modifications to
+          ensure the addition of new notifications or polling events does not negatively affect
+          overall system performance. </li>
+        <li>Ceilometer Central Agent (pollster) is now configured to support HA (Active-Active) </li>
+        <li>Notification Agent has built-in HA (Active-Active) with support for pipeline
+          transformers </li>
+        <li>Ceilometer expirer supports native HA and the ability to expire sample data instead of
+          all data within the retention period. </li>
+        <li>SWIFT Poll-based account level meters will be enabled by default with an hourly
+          collection cycle. </li>
+        <li>Flexible configuration for pollster and notifications. We can list different event types
+          differently for these services. </li>
+        <li>Integrated with centralized monitoring(Monasca) and centralized logging </li>
+        <li>Upgrade and Reconfigure Support </li>
+      </ul>
     </section>
-    
+
     <section id="limitations">
       <title>Limitations</title>
-          
-      <ul><li>Since Ceilometer is currently deployed with a shared MySQL database only a limited set of metrics are configured by default to ensure overall system availability and performance.
-      </li><li>The default Ceilometer expiry is configured for 7 days.
-      </li><li>The Ceilometer Meter list API is configured to return no more than 20 with an open ended, query sample.
-      </li><li>The Ceilometer Alarms API is disabled by default.  Helion OpenStack v2.0 provides an alternative operations monitoring service that will provide support for operations monitoring, alerts, and notifications use cases.
-      </li><li>The Ceilometer Post Meter API is disabled by default.
-      </li><li>No Talligent Openbook support
-      </li><li>The query sample  API will be disabled and sample-list API can be used as an alternate  solution with limited functionality </li></ul>
+      <ul>
+        <li>Since Ceilometer is currently deployed with a shared MySQL database only a limited set
+          of metrics are configured by default to ensure overall system availability and
+          performance. </li>
+        <li>The default Ceilometer expiry is configured for 7 days. </li>
+        <li>The Ceilometer Meter list API is configured to return no more than 20 with an open
+          ended, query sample. </li>
+        <li>The Ceilometer Alarms API is disabled by default. HP Helion OpenStack 2.0 provides an
+          alternative operations monitoring service that will provide support for operations
+          monitoring, alerts, and notifications use cases. </li>
+        <li>The Ceilometer Post Meter API is disabled by default. </li>
+        <li>No Talligent Openbook support </li>
+        <li>The query sample API will be disabled and sample-list API can be used as an alternate
+          solution with limited functionality </li>
+      </ul>
     </section>
-    
+
     <section><title>Meters</title>
       <p>The basic elements of information collected by the Ceilometer API are known as meters. A
         meter is a unique measurement of a particular OpenStack service resource usage and each
@@ -89,8 +98,8 @@
       </dl> A meter is defined for every measurable resource. A meter can exist beyond the actual
       existence of a particular resource, like an active instance, to provision long-cycle uses
       cases like billing. <p>The most common meter submission method is via notifications. With this
-      method, each service emits their respective meters on a periodic basis to a common,
-      notifications bus. </p>Ceilometer in turn pulls all of the events from the bus and saves the
+        method, each service emits their respective meters on a periodic basis to a common,
+        notifications bus. </p>Ceilometer in turn pulls all of the events from the bus and saves the
       notifications in a Ceilometer-specific database. The period of time that the data is collected
       and saved is known as the ceilometer expiry and is configured during the Ceilometer
       installation. Each meter is collected from one or more samples (gathered from the messaging
@@ -130,8 +139,8 @@
           <dd>Other data transmitted in the metering notification payload.</dd>
         </dlentry>
       </dl></section>
-    
-    
+
+
     <section><title>Samples</title> Samples are discrete collections of a particular meter or the
       actual usage data defined by a meter description. Each sample is time-stamped and includes a
       variety of data that varies per meter but usually includes the project ID and UserID of the
@@ -154,9 +163,9 @@ metering_time_to_live=604800  ##(in seconds) = 7 Days</codeblock>
         Swift and Ceph currently only provide metered data via this function and some of the other
         OpenStack services provide specific metrics only via a polling action.</p>
     </section>
-    
-    
-    
+
+
+
     <section><title>Statistics, or metering the meters</title> The Ceilometer API also provides a
       set of statistics functions that can perform basic aggregation functions for meter specific
       samples over a time period-defined set of samples including: <dl>
@@ -181,28 +190,25 @@ metering_time_to_live=604800  ##(in seconds) = 7 Days</codeblock>
           <dd>the sum value of all samples within a selected time perio</dd>
         </dlentry>
       </dl></section>
-    
-    
-    
-    <section><title>Role Based Access Control (RBAC)</title>
-    
-    A user with the admin role can access all API functions across all projects by default.  Ceilometer also supports the ability to 
-    assign who can access specific Ceilometer API functions by project and UserID.  This assignment is configured via the Ceilometer
-    policy file and enables the ability to specifically grant API functions to specific users for a specific project.
-    
-    
-    </section>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   <!--
+
+
+
+    <section><title>Role Based Access Control (RBAC)</title> A user with the admin role can access
+      all API functions across all projects by default. Ceilometer also supports the ability to
+      assign who can access specific Ceilometer API functions by project and UserID. This assignment
+      is configured via the Ceilometer policy file and enables the ability to specifically grant API
+      functions to specific users for a specific project. </section>
+
+
+
+
+
+
+
+
+
+
+    <!--
     <p>The HP Helion OpenStack Metering service leverages the OpenStack Ceilometer service. A
       metering service takes specified measurements of both physical and virtual resources,
       including physical servers and network devices such as switches and firewalls. No matter what

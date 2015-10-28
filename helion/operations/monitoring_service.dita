@@ -13,8 +13,8 @@
           <xref type="section" href="#monitoring/installation">Installation</xref>
         </li>
         <li>
-          <xref type="section" href="#monitoring/differences">Differences Between Upstream and HP
-            Helion OpenStack Implementations</xref>
+          <xref type="section" href="#monitoring/differences">Differences Between Upstream and 
+            HP Helion OpenStack Implementations</xref>
         </li>
         <li>
           <xref type="section" href="#monitoring/diagram">Diagram of Monasca Service</xref>

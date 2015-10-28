@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_zx2_mmd_5t">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Metering Failover HA Support</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Metering Failover HA
+    Support</title>
   <body>
     <section> In the HP Helion OpenStack environment, the Ceilometer metering service supports
-      native Active-Active HA for notification agent and central agent. Agent HA support includes
-      workload-balancing/distribution and failover. <p> Tooz is the coordination engine that is used
-        to coordinate workload among mulltiple active agent instances and maintain the knowledge of
-        active instance to handle failover and group membership using hearbeats(pings).</p>
+      native Active-Active high-availability (HA) for notification agent and central agent. Agent HA
+      support includes workload-balancing/distribution and failover. <p> Tooz is the coordination
+        engine that is used to coordinate workload among multiple active agent instances and
+        maintain the knowledge of active instance to handle failover and group membership using
+        hearbeats(pings).</p>
       <p>Zookeeper is the coordination backend used but the internals of that is encapsulated using
         Tooz which exposes APIs to manage group membership and retrieve workload specific to each
-        agent.</p> The following section in conf is used to configure HA:
+        agent.</p>
+      <p>The following section in conf is used to configure high-availability (HA):</p>
       <codeblock>[coordination]
       
 backend_url = &lt;IP address of Zookeeper host: port> (port is usually 2181 as a zookeeper default)
@@ -18,28 +21,26 @@ backend_url = &lt;IP address of Zookeeper host: port> (port is usually 2181 as a
 heartbeat = 1.0
         
 check_watchers = 10.0</codeblock>
-      For the notification agent to be configured in HA mode, additional configuration is needed:
+      <p>For the notification agent to be configured in HA mode, additional configuration is
+        needed:</p>
       <codeblock>[notification]
         
-workload_partitioning = true  </codeblock> The notification
-      agent HA distributes workload among multiple queues that are created based on the number of
-      unique source:sink combinations in the notification agent pipeline configuration file. If
-      there are additional services to be metered using notifications, then the recommendation is to
-      use a separate source for those events, especially if the expected load of data from that
-      source is considered high. This should lead to better workload balancing among multiple active
-      notification agents. <p>Ceilometer-expirer is also Active-Active HA, but it is critical that
-        you ensure that a single expirer process runs when multiple processes are scheduled to run
-        at the same time (using cron-based scheduling) on multiple controller nodes. Tooz is used to
-        pick an expirer process that acquires a lock when there are mutiple contenders and the
-        winning process runs. There is no failover support, as expirer is not a daemon anyway and is
-        scheduled to run at pre-determined intervals. The following configuration is needed to
-        enable expirer HA:</p><codeblock>[database] expirer_ha = true 
+workload_partitioning = true</codeblock>
+      <p>The notification agent HA distributes workload among multiple queues that are created based
+        on the number of unique source:sink combinations in the notification agent pipeline
+        configuration file. If there are additional services to be metered using notifications, then
+        the recommendation is to use a separate source for those events, especially if the expected
+        load of data from that source is considered high. This should lead to better workload
+        balancing among multiple active notification agents.</p>
+      <p>Ceilometer-expirer is also Active-Active HA, but it is critical that you ensure that a
+        single expirer process runs when multiple processes are scheduled to run at the same time
+        (using cron-based scheduling) on multiple controller nodes. Tooz is used to pick an expirer
+        process that acquires a lock when there are multiple contenders and the winning process
+        runs. There is no failover support, as expirer is not a daemon anyway and is scheduled to
+        run at pre-determined intervals. The following configuration is needed to enable expirer
+        HA:</p>
+      <codeblock>[database] expirer_ha = true 
 expirer_ha_backend_url = &lt;IP address of coordination backend url></codeblock>
     </section>
-    
-    
-    
-    
-    
   </body>
 </topic>
