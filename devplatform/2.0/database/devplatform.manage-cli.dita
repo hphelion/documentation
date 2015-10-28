@@ -15,15 +15,19 @@
       <title>Configuration Groups</title>
       <p>Configuration groups are key-value collections of settings that are applied to databases when they are initialized.</p>
       <p><b>Valid configuration settings</b></p>
-      <p>Configuration settings that can be applied to each database are listed here:</p>
+      <p>Configuration settings that can be applied to each database can be found at these locations:</p>
       <ul>
-        <li>MySQL</li>
-        <li>Redis</li>
-        <li>MongoDB</li>
+        <li><xref type="external" format="html" href="https://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html">MySQL</xref></li>
+        <li><xref type="external" format="html" href="http://redis.io/topics/config">Redis</xref></li>
+        <li><xref href="https://docs.mongodb.org/manual/administration/configuration/" type="external" format="html">MongoDB</xref></li>
       </ul>
+      <p><b>List configuration groups</b></p>
+      <p>The following command lists configuration groups:</p>
+      <p><codeblock>trove configuration-list</codeblock></p>
+      
       <p><b>Creating a configuration group</b></p>
       <p>The following command creates a configuration group:</p>
-      
+      <p></p>
     </section>
     <section id="databases">
       <title>Databases</title>
