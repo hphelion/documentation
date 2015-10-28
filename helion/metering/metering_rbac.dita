@@ -13,11 +13,8 @@
       <othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
     </metadata>
   </prolog>
-  <body><!--Needs Edit-->
-    <p>
-      <!--PUBLISHED-->
-      <!--./commercial/GA1/ceilometer/1.1commerical.services-reporting-RBAC.md-->
-      <!--permalink: /helion/openstack/1.1/services/reporting/RBAC/--></p>
+  <body>
+  
     <p>Role Base Access Control (RBAC) is a technique that limits access to resources based on a
       specific set of role(s) associated with each user's credentials.</p>
     <p>Keystone has a set of users that are associated with each project. Each user has one or more
@@ -189,9 +186,9 @@
     <section id="access_policies">
       <title>Access Policies</title>
       <p>Before introducing RBAC, Ceilometer had very simple access control. There were two types of
-        user: admins and users. Admins could access any API and perform any operation. Users could
-        only access non-admin API and perform operations only on the Project/Tenant where they
-        belonged.</p>
+        user: admins and users. Admins will be able to access any API and perform any operation.
+        Users will only be able to access non-admin APIs and perform operations only on the
+        Project/Tenant where they belonged.</p>
     </section>
     <section id="newfile">
       <title>New RBAC Policy File</title>
