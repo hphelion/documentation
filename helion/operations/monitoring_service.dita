@@ -67,7 +67,7 @@
               href="https://github.com/openstack/monasca-agent/blob/master/docs/Plugins.md#per-instance-metrics"
               format="html" scope="external">here</xref>.</li>
         </ul></p>
-      <p>For a full list of packaged plugins that are included HPE Helion OpenStack, see <xref
+      <p>For a full list of packaged plugins that are included HP Helion OpenStack, see <xref
           href="https://github.com/stackforge/monasca-agent/blob/master/docs/Plugins.md"
           format="html" scope="external">Monasca Plugins</xref></p>
       <p>You can further customize the monasca-agent to suit your needs, see <xref
