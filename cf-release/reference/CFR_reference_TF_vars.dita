@@ -34,8 +34,8 @@
           <row>
             <entry><codeph>openstack_keypair</codeph></entry>
             <entry>The name of <xref
-                href="../quickstart/pubcloud/CFR_step_3.dita#concept_kpg_fhz_st/create_key_pair">the
-                key pair that you created on <keyword keyref="pubCloudShort"/></xref><note
+                href="../quickstart/pubcloud/CFR_step_3.dita#concept_kpg_fhz_st/create_a_key_pair"
+                >the key pair that you created on <keyword keyref="pubCloudShort"/></xref><note
                 type="tip">To find your key pair, on the left panel click <menucascade>
                   <uicontrol>Project</uicontrol>
                   <uicontrol>Computer</uicontrol>

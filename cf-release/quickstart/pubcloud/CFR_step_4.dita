@@ -160,8 +160,8 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
     <stentry><b>Deploying a Docker Image</b><ol id="ol_p2k_vx1_tt">
             <li>Add the variables from the
                 <filepath><varname>&lt;number></varname>-Project-openrc.sh</filepath> file <xref
-                href="CFR_step_3.dita#concept_kpg_fhz_st/ol_gy1_f1q_tt">that you have downloaded
-                earlier</xref> to your terminal session.<ul id="ul_ptr_bwp_tt">
+                href="CFR_step_3.dita#concept_kpg_fhz_st/download_config_file">that you have
+                downloaded earlier</xref> to your terminal session.<ul id="ul_ptr_bwp_tt">
                 <li>On a Linux machine, navigate to the directory that contains the
                     <filepath>sh</filepath> file and <filepath>source</filepath> the file, for
                     example:<codeblock>source 12345678901234-Project-openrc.sh</codeblock><p>When
@@ -194,7 +194,7 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
                 <filepath>tfvars</filepath> file.<note>For more information, see <xref
                   href="../../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt">Terraform
                   Variables</xref>.</note></li>
-            <li>Run the following
+            <li id="run_terraform_command">Run the following
                 command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
                 type="tip">To improve console output on Windows, add the
                   <filepath>-no-color</filepath> flag to your command. For more information, see the
