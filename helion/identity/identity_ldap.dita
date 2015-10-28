@@ -6,23 +6,23 @@
   <body>
     <section><title>Integrating with an external LDAP server</title>
       <p>If your organization, like most, uses an LDAP directory service such as Active Directory,
-        you can integrate it with Keystone by following the steps outlined below. </p>
-     
-     Integration with an external LDAP server is supported via the Keystone domain-specific configuration.
-     <ol>
-    <li>Ensure that domain_specific_drivers_enabled option is set to True in main configuration file template (/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2).
-    </li> <li> Create YAML file which contains definition of LDAP server connection. The sample file below is
-          already provided as part of the installed <xref
+        you can integrate it with Keystone by following the steps outlined below. </p> Integration
+      with an external LDAP server is supported via the Keystone domain-specific configuration. <ol>
+        <li>Ensure that domain_specific_drivers_enabled option is set to True in main configuration
+          file template (/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2). </li>
+        <li> Create YAML file which contains definition of LDAP server connection. The sample file
+          below is already provided as part of the installed <xref
             href="../installation/using_git.dita#using_git">local git repository</xref>. It is
           available on a deployer/lifecycle-manager node as
             <b>/home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_sample.yml</b>.
           Save a copy of this file, as, for example,
             <b>/home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_my.yml</b>.
-            <note> Please refer to [ldap] section of Keystone KIlo documentation for full option
-            list and description:
-            http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html
-            .</note> Here is the sample YAML configuration, optimized for Microsoft Active Directory
-          server:
+            <note>Please refer to [ldap] section of the <xref
+              href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
+              scope="external" format="html">Keystone</xref> documentation for OpenStack Kilo for
+            full option list and description.</note>
+          <p>Here is the sample YAML configuration, optimized for Microsoft Active Directory
+            server:</p>
           <codeblock>---
  
 keystone_domainldap_conf:
@@ -103,7 +103,7 @@ keystone_domainldap_conf:
         
         tls_cacertfile: /etc/keystone/ssl/certs/all_ldapca.pem </codeblock>
         </li>
-       <li>As suggested at <xref href="../installation/using_git.dita#using_git">Using Git for
+        <li>As suggested at <xref href="../installation/using_git.dita#using_git">Using Git for
             Configuration Management</xref>, commit the new file into local git repository, and
           rerun configuration processor / deployment area preparation playbooks :
           <codeblock>$ cd ~/helion
@@ -113,16 +113,16 @@ $ git commit -m "Adding LDAP server integration config"
 $ cd ~/helion/hos/ansible
 $ ansible-playbook -i hosts/localhost config-processor-run.yml
 $ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
-        </li> <li>
-     Run reconfiguration playbook in a deployment area, passing a YAML file created at previous step as command line option:
-    <codeblock>$ cd ~/scratch/ansible/next/hos/ansible
+        </li>
+        <li> Run reconfiguration playbook in a deployment area, passing a YAML file created at
+          previous step as command line option:
+          <codeblock>$ cd ~/scratch/ansible/next/hos/ansible
 $ ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml -e@/home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_my.yml</codeblock>
-   </li>
-       <li>
-         Follow these same steps for each LDAP domain with which you are integrating Keystone, 
-         creating a yaml file for each and running the reconfigure playbook once for each additional domain.
-       </li>
-       <li>Ensure that a new domain was created for LDAP (Microsoft AD in this example): <codeblock># Set environment variables for admin level access
+        </li>
+        <li> Follow these same steps for each LDAP domain with which you are integrating Keystone,
+          creating a yaml file for each and running the reconfigure playbook once for each
+          additional domain. </li>
+        <li>Ensure that a new domain was created for LDAP (Microsoft AD in this example): <codeblock># Set environment variables for admin level access
 $ source keystone.osrc
  
 # Get list of domains
@@ -145,10 +145,10 @@ $ openstack group list --domain ad
 +------------------------------------------------------------------+------------+</codeblock>
           <note>LDAP domain is read-only. This means that you can not create new user or group
             record in it.</note>
-        </li> 
-     <li>
-       Once LDAP user is granted appropriate role, it can authenticate within specified domain:
-       <codeblock># Set environment variables for admin level access
+        </li>
+        <li> Once LDAP user is granted appropriate role, it can authenticate within specified
+          domain:
+          <codeblock># Set environment variables for admin level access
 $ source keystone.osrc
  
 # Get user record within ad domain
@@ -200,12 +200,10 @@ $ openstack --os-identity-api-version 3 \
 | id        | 6f8f9f1a932a4d01b7ad9ab061eb0917                                 |
 | user_id   | e6d8c90abdc4510621271b73cc4dda8bc6009f263e421d8735d5f850f002f607 |
 +-----------+------------------------------------------------------------------+</codeblock>
-       
-     </li>
-     
-       <li>Users can also have a project within domain and get a project-scoped token:
-       
-       <codeblock># Set environment variables for admin level access
+        </li>
+
+        <li>Users can also have a project within domain and get a project-scoped token:
+          <codeblock># Set environment variables for admin level access
 $ source keystone.osrc
  
 # Create a new project within domain
@@ -252,27 +250,24 @@ $ openstack --os-identity-api-version 3 \
 | project_id | d065394842d34abd87167ab12759f107                                 |
 | user_id    | e6d8c90abdc4510621271b73cc4dda8bc6009f263e421d8735d5f850f002f607 |
 +------------+------------------------------------------------------------------+</codeblock>
-       
-       </li>
-      
-     
-     
-     </ol>
+        </li>
+
+
+
+      </ol>
     </section>
     <section id="encrypt"><title>Transport Layer Security (TLS) Support</title>
-    <p>
-    The Identity service supports various encryption options when an external LDAP or Microsoft Active Directory 
-    is configured for external authentication including:
-    </p>
-    <ul>
-      <li>External authentication with LDAP and Microsoft Active Directory systems</li>
-      <li>LDAPS specific support</li>
-      <li>STARTTLS</li>
-    
-    </ul>
+      <p> The Identity service supports various encryption options when an external LDAP or
+        Microsoft Active Directory is configured for external authentication including: </p>
+      <ul>
+        <li>External authentication with LDAP and Microsoft Active Directory systems</li>
+        <li>LDAPS specific support</li>
+        <li>STARTTLS</li>
+
+      </ul>
     </section>
-    
-   <!-- <section><title>Support and Troubleshooting</title>
+
+    <!-- <section><title>Support and Troubleshooting</title>
     
     </section>-->
   </body>
