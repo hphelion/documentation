@@ -253,7 +253,7 @@ Password: cghelion</codeblock>
         (management), CAN (api), and BLS (blockstore) networks.</p>
       <p><b>Note:</b> To see a sample <codeph>environment.json</codeph> file, see one of the
         following: <ul id="ul_smq_yqt_bt">
-          <li><xref href="carrier-grade-install-pb-kvm-env-json.dita">For an Unbonded NIC
+          <li><xref href="carrier-grade-install-kvm-env-json.dita">For an Unbonded NIC
               Environment</xref>. <p>For each network provide:
                 </p><codeblock>{
               "name": "management",
@@ -267,7 +267,7 @@ Password: cghelion</codeblock>
               },        </codeblock><p><b>Note:</b>
               In the example, the IP addresses are masked for security purposes. Use values
               appropriate for your environment.</p></li>
-          <li><xref href="carrier-grade-install-pb-kvm-env-json-bonded.dita#topic4797">For a Bonded
+          <li><xref href="carrier-grade-install-kvm-env-json-bonded.dita#topic4797">For a Bonded
               NIC Environment</xref></li>
         </ul></p>
     </section>
@@ -339,7 +339,7 @@ Password: cghelion</codeblock>
         hardware model. You have to gather the correct PCI SLOT INFO and add ports accordingly on
         the hardware slots or cards used for networking.</p>
       <p><b>Note:</b> To see a sample <codeph>machine_architecture.json</codeph> file, see <xref
-          href="carrier-grade-install-pb-kvm-env-json-bonded.dita#topic4797">Sample enviroment.json
+          href="carrier-grade-install-kvm-env-json-bonded.dita#topic4797">Sample enviroment.json
           File for Installing the KVM + ESX Topology in an Bonded NIC Environment</xref>.</p>
     </section>
     <section id="verify-json">
