@@ -134,14 +134,19 @@
         duplicate section; just check to ensure that values for all listed variables are provided. </note><codeblock># header may say messaging or helionci 
 # if section already exists do not duplicate just verify values 
 messaging:   
-deployer_key: default   
-deployer_flavor: 4
-deployer_name: &lt;service>_deployer_&lt;version>   deployer_security_group: default
-deployer_version:    
-deployer_image:    
-deployer_uri:    
-deployer_net_id:
-deployer_cloud: </codeblock><sl>
+    deployer_key: default   
+    deployer_flavor: 4
+    deployer_name: &lt;service>_deployer_&lt;version>   deployer_security_group: default
+    deployer_version:    
+    deployer_image:    
+    deployer_uri:    
+    deployer_net_id:
+    deployer_cloud: 
+    deployer_ntp_servers: NTP servers, can be the same as the one used by HOS 
+    deployer_dns_servers: DNS servers, can be the same as the one used by HOS
+    deployer_ext_net_id: external network id
+    deployer_cacert: CA cert to send over to the deployer
+    deployer_cname: CN name used to generate the certificate file.             </codeblock><sl>
         <sli><codeph>deployer_key</codeph>: The keypair to use for the deployer instance. Default
           value: default</sli>
         <sli><codeph>deployer_flavor</codeph>: The flavor to use for the deployer instance, Default
@@ -161,6 +166,13 @@ deployer_cloud: </codeblock><sl>
         <sli><codeph>deployer_cloud</codeph>: The cloud identified in the clouds.yaml where the
           deployer will be created. Note that while the deployer creation must be performed by an
           admin, the deployer itself may be owned by someone else.</sli>
+        <sli><codeph>deployer_ntp_servers</codeph>: NTP servers, can be the same as the one used by
+          HP Helion OpenStack </sli>
+        <sli><codeph>deployer_dns_servers</codeph>: DNS servers, can be the same as the one used by
+          HP Helion OpenStack </sli>
+        <sli><codeph>deployer_ext_net_id</codeph>: external network id</sli>
+        <sli><codeph>deployer_cacert</codeph>: CA cert to send over to the deployer</sli>
+        <sli><codeph>deployer_cname</codeph>: CN name used to generate the certificate file.</sli>
       </sl>
     </section>
   </body>
