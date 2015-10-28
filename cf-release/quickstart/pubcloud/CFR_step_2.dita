@@ -54,7 +54,7 @@
                 format="html" scope="external">x86</xref> | <xref
                 href="https://cli.run.pivotal.io/stable?release=windows64&amp;version=6.13.0&amp;source=github-rel"
                 format="html" scope="external">x64</xref></li>
-          </ul><note>Ensure that you add the Cloud Foundry CLI to your <codeph>PATH</codeph>
+          </ul><note>Ensure that the Cloud Foundry CLI is added to your <codeph>PATH</codeph>
             environment variable.</note><b>Downloading and Installing the Terraform CLI</b><p>You
             can use the Terraform 0.6.3 CLI and higher to construct, manage, update, or delete
               <keyword keyref="prodShort"/> clusters. Click the download link appropriate for your
@@ -76,7 +76,7 @@
                 format="zip" scope="external">x86</xref> | <xref
                 href="https://dl.bintray.com/mitchellh/terraform/terraform_0.6.4_windows_amd64.zip"
                 format="zip" scope="external">x64</xref></li>
-          </ul><note>Ensure that you add Terraform to your <codeph>PATH</codeph> environment
+          </ul><note>Ensure that Terraform is added to your <codeph>PATH</codeph> environment
             variable. To set the variable on Linux and Mac OS X, <xref
               href="http://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux"
               format="html" scope="external">see this page</xref>. To set it on Windows, <xref

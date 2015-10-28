@@ -7,7 +7,6 @@
       <topicref href="root/CFR_whats_new.dita"/>
       <topicref href="root/CFR_relnotes.dita"/>
       <topicref href="root/CFR_TP_licensing.dita"/>
-      <topicref href="root/CFR_license_terms.dita"/>
       <topichead navtitle="Quick Start: Deploying to HP Public Cloud">
          <topicref href="quickstart/pubcloud/CFR_step_1.dita"/>
          <topicref href="quickstart/pubcloud/CFR_step_2.dita"/>
