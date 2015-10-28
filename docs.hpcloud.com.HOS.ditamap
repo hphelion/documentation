@@ -407,5 +407,6 @@
       </topicref>
     </topichead>
     <!-- END USER GUIDE -->
+    <topicref href="helion/documentation_updates.dita"/>
   </topicref>
 </map>
