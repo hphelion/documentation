@@ -21,7 +21,7 @@
 >>>>>>> 963943a... Added "What's New" section
 =======
   <section>
-   <title>Updates</title>
+   <title><!--Updates-->Features and Functionality</title>
    <p>The following features and functionality have been added to <keyword keyref="prodLong"/>:</p>
 >>>>>>> 6eb154a... Added placeholder for relnotes + xref to What's New
    <dl>
