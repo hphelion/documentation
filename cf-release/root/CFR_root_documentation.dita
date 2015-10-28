@@ -11,7 +11,7 @@
    </metadata>
  </prolog>
  <conbody>
-    <p><keyword keyref="prodLong"/> Technical Preview (TP) is a certified distribution of <xref
+    <p><keyword keyref="prodLong"/> Technical Preview (TP) is a <!--certified-->distribution of <xref
         href="http://www.cloudfoundry.org/" format="html" scope="external">Cloud Foundry</xref>.</p>
     <p>
       <keyword keyref="prodShort"/> uses containers for bundling all major functions, for
