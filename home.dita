@@ -39,7 +39,7 @@
         <stentry>
           <xref href="devplatform/1.3/devplatform.index.dita">HP Helion Development Platform</xref>
         </stentry>
-        <stentry>Based on <tm tmtype="tm">Cloud Foundry</tm>, this add-on for Helion OpenStack
+        <stentry>Based on <tm tmtype="tm">Cloud Foundry</tm>, this add-on for HP Helion OpenStack
           empowers developers and IT professionals by providing an open development platform
           designed for agility. </stentry>
       </strow>
