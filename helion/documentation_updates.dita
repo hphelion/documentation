@@ -43,6 +43,92 @@
           </tgroup>
         </table>
       </p>
+      
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="changelog_tb2">
+          <tgroup cols="3">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <thead>
+              <row>
+                <entry>Version</entry>
+                <entry>Date</entry>
+                <entry>Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>1.0</entry>
+                <entry>October 27, 2015</entry>
+                <entry>Initial Creation</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry>October 28, 2015</entry>
+                <entry>Added steps for Neutron service logging level configuration (<xref
+                    href="administration/configure_logging.dita">Link</xref>)</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="changelog_tb3">
+          <tgroup cols="3">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <thead>
+              <row>
+                <entry>Version</entry>
+                <entry>Date</entry>
+                <entry>Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>1.0</entry>
+                <entry>October 27, 2015</entry>
+                <entry>Initial Creation</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry>October 28, 2015</entry>
+                <entry>Added steps for <xref
+                  href="administration/configure_logging.dita">Neutron service logging level configuration</xref></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="changelog_tb4">
+          <tgroup cols="2">
+            <colspec colname="c2" colnum="1"/>
+            <colspec colname="c3" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Date</entry>
+                <entry>Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>October 27, 2015</entry>
+                <entry>Initial Creation</entry>
+              </row>
+              <row>
+                <entry>October 28, 2015</entry>
+                <entry>Added steps for <xref href="administration/configure_logging.dita">Neutron
+                    service logging level configuration</xref></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
     </section>
   </body>
 </topic>
