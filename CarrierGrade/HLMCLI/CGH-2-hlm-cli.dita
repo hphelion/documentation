@@ -40,7 +40,7 @@ hlm define -l </codeblock>
       </p></section>
     <section><title>hlm provision</title><p>Provision nodes to be used in a cloud. </p><p>Before
         executing the command, <xref
-          href="../Installation/carrier-grade-install-pb-kvm-node-json.dita#topic4797">edit the
+          href="../Installation/carrier-grade-install-kvm-node-json.dita#topic4797">edit the
             <codeph>node-provision.json</codeph> file</xref> in the <codeph>&lt;cloudname></codeph>
         directory of the HLM VM for an existing cloud. This command provisions/installs the
         operation system on the servers specified in <codeph>node-provision.json</codeph>

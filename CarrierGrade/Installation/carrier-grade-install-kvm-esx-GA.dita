@@ -154,7 +154,7 @@ Password: cghelion</codeblock>
           <codeph>/var/hlm/clouds/&lt;cloudname></codeph> directory of the HLM VM. This file
         supplies input values to the <codeph>hprovision</codeph> script, later in the installation. </p>
       <p><b>Note:</b> To see a sample <codeph>node-provision.json</codeph> file, see <xref
-          href="carrier-grade-install-pb-kvm-node-json.dita">Sample node-provision.json File for
+          href="carrier-grade-install-kvm-node-json.dita">Sample node-provision.json File for
           Installing the KVM + ESX Topology</xref>.</p>
       <ol id="ol_ub2_xfl_zs">
         <li>Change to the <codeph>&lt;cloudname&gt;</codeph>

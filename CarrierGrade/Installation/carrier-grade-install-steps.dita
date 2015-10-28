@@ -130,7 +130,7 @@ Password: cghelion</codeblock>
         directory of the HLM VM. This file supplies input values to the <codeph>hprovision</codeph>
         script, later in the installation. </p>
       <p><b>Note:</b> To see a sample <codeph>node-provision.json</codeph> file, see <xref
-          href="carrier-grade-install-pb-kvm-node-json.dita">Sample node-provision.json File for
+          href="carrier-grade-install-kvm-node-json.dita">Sample node-provision.json File for
           Installing the KVM + ESX Topology</xref>.</p>
       <ol id="ol_ub2_xfl_zs">
         <li>Edit <codeph>node-provision.json</codeph> file to change only the following fields: 
