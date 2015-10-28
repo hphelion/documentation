@@ -54,7 +54,7 @@
 +----+------+-------------------+</codeblock></li>
         <!--  TODO missing content here -->
         <li>Check that the AZ has been
-          ???<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova aggregate-remove-host AZ2 padawan-ccp-comp0002-mgmt</codeblock><codeblock>Host padawan-ccp-comp0002-mgmt has been successfully removed from aggregate 4</codeblock><codeblock>+----+------+-------------------+-------+-------------------------+
+          removed:<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova aggregate-remove-host AZ2 padawan-ccp-comp0002-mgmt</codeblock><codeblock>Host padawan-ccp-comp0002-mgmt has been successfully removed from aggregate 4</codeblock><codeblock>+----+------+-------------------+-------+-------------------------+
 | Id | Name | Availability Zone | Hosts | Metadata                |
 +----+------+-------------------+-------+-------------------------+
 | 4  | AZ2  | AZ2               |       | 'availability_zone=AZ2' |

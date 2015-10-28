@@ -11,8 +11,8 @@
         <li>SSH to the deployer/lifecycle-manager node using admin credentials.</li>
         <li>Source the admin credentials: <codeblock>source ~/service.osrc</codeblock></li>
         <li>Configure a Neutron network that will map to an external network for the service net. <ul>
-            <li> For simple configurations, an HLM playbook has been provided for this purpose.</li>
-            <li> For non-trivial network configurations, any additional routes should be added to
+            <li>For simple configurations, a lifecycle-manager playbook has been provided for this purpose.</li>
+            <li>For non-trivial network configurations, any additional routes should be added to
               the subnet definition using the <codeph>--host-route</codeph> option of the neutron
               subnet-create command. The <codeph>--host-route</codeph> option can be specified
               multiple times if necessary.
