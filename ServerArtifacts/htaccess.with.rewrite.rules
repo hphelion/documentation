@@ -13,7 +13,7 @@ RewriteRule ^permalink/helion-openstack/2.0/administration/configure_monitoring.
 RewriteRule ^permalink/helion-openstack/2.0/bare_installation_esx?$ http://15.126.26.158/#helion/installation/install_entryscale_esx.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/cinder_vsa?$ http://15.126.26.158/#helion/installation/configure_vsa.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/installation_troubleshooting?$ http://15.126.26.158/#helion/installation/installation_troubleshooting.html [NE,R=301,L]
-RewriteRule ^permalink/helion-openstack/2.0/helion/input_model?$ http://15.126.26.158/helion/input_model.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/helion/input_model?$ http://15.126.26.158/#helion/input_model.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/supportedconfigs?$ http://15.126.26.158/#helion/example_configurations.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/blockstorage_ceph_ceph_overview?$ http://docs-staging.hpcloud.com/hos2.0ga/#helion/blockstorage/ceph/ceph_overview.html  [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/opsconsole_overview?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/overview.html [NE,R=301,L]
