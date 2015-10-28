@@ -138,8 +138,8 @@ helion/tech-preview            Directory contains the config input files of the 
               <codeblock>cp -r ~/helion/examples/entry-scale-kvm-vsa/* ~/helion/my_cloud/definition/</codeblock>
             </li>
             <li>Begin inputting your environment information into the configuration files in the
-                <codeph>~/helion/my_cloud/definition</codeph> directory. <p>For the Entry-scale KVM
-                with VSA model, see <xref
+                <codeph>~/helion/my_cloud/definition</codeph> directory. <p>If you are using the
+                Entry-scale KVM with VSA model, see <xref
                   href="../example_configurations.dita#example_configurations/modify_entryscale_kvm_vsa"
                   >Modifying the Entry-scale KVM with VSA model for your Environment</xref> for
                 details.</p>
