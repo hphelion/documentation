@@ -39,21 +39,16 @@
           2.0: Example Configurations</xref></p>
       <p>
         <ul id="ul_ykn_41q_5t">
-          <li><xref
-              href="http://docs-staging.hpcloud.com/bundle-2015-may/helion/example_configurations.html#example_configurations__entryscale_kvm_vsa"
-              format="html" scope="external">Entry-scale KVM with VSA model</xref></li>
-          <li><xref
-              href="http://docs-staging.hpcloud.com/bundle-2015-may/helion/example_configurations.html#example_configurations__entryscale_esx"
-              format="html" scope="external">Entry-scale ESX model</xref></li>
-          <li><xref
-              href="http://docs-staging.hpcloud.com/bundle-2015-may/helion/example_configurations.html#example_configurations__entryscale_swift"
-              format="html" scope="external">Entry-scale Swift model</xref></li>
-          <li><xref
-              href="http://docs-staging.hpcloud.com/bundle-2015-may/helion/example_configurations.html#example_configurations__entryscale_ceph"
-              format="html" scope="external">Entry-scale KVM with Ceph model</xref></li>
-          <li><xref
-              href="http://docs-staging.hpcloud.com/bundle-2015-may/helion/example_configurations.html#example_configurations__midscale_kvm_vsa"
-              format="html" scope="external">Mid-scale KVM with VSA model</xref></li>
+          <li><xref href="example_configurations.dita#example_configurations/entryscale_kvm_vsa"
+              >Entry-scale KVM with VSA model</xref></li>
+          <li><xref href="example_configurations.dita#example_configurations/entryscale_esx"
+              >Entry-scale ESX model</xref></li>
+          <li><xref href="example_configurations.dita#example_configurations/entryscale_swift"
+              >Entry-scale Swift model</xref></li>
+          <li><xref href="example_configurations.dita#example_configurations/entryscale_ceph"
+              >Entry-scale KVM with Ceph model</xref></li>
+          <li><xref href="example_configurations.dita#example_configurations/midscale_kvm_vsa"
+              >Mid-scale KVM with VSA model</xref></li>
         </ul>
       </p>
     </section>
