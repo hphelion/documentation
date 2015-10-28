@@ -43,8 +43,8 @@
                     name of your network. You will need it to <xref
                       href="../../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt"
                       >configure your <filepath>tfvars</filepath> file</xref> and <xref
-                      href="CFR_step_4.dita#concept_pqc_jhz_st">run terraform
-                    commands</xref>.</note></li>
+                      href="CFR_step_4.dita#concept_pqc_jhz_st/run_terraform_command">run terraform
+                      commands.</xref></note></li>
               </ol></li>
             <li>Create a router.<ol id="ol_vkh_fr1_tt">
                 <li>On the left panel, click <menucascade>
@@ -104,7 +104,7 @@
                     <xref href="mailto:billing@hpcloud.com" format="html" scope="external"
                     >billing@hpcloud.com</xref>.</li>
               </ol></li>
-          </ol><b id="create_key_pair">Downloading the Configuration File and Key Pair</b><ol id="ol_gy1_f1q_tt">
+          </ol><b id="download_config_file">Downloading the Configuration File and Key Pair</b><ol id="ol_gy1_f1q_tt">
             <li>To download the <filepath>sh</filepath> configuration file, click <menucascade>
                 <uicontrol>Project</uicontrol>
                 <uicontrol>Compute</uicontrol>
@@ -116,7 +116,7 @@
                 contains information about the hosted service, including region, tenant, and other
                 information required to create a cluster. This file is pre-configured for your
                 sandbox environment.</note></li>
-            <li>Create a key pair.<ol id="ol_hlp_1v1_tt">
+            <li id="create_a_key_pair">Create a key pair.<ol id="ol_hlp_1v1_tt">
                 <li>Click <menucascade>
                     <uicontrol>Project</uicontrol>
                     <uicontrol>Compute</uicontrol>
@@ -128,7 +128,8 @@
                 <li>If the key pair does not download automatically, click the link and save the
                     <filepath>pem</filepath> file in a convenient location.</li>
               </ol><note type="tip">The <filepath>pem</filepath> file contains the RSA private key
-                that you will need to <xref href="CFR_step_4.dita#concept_pqc_jhz_st">run Terraform
+                that you will need to <xref
+                  href="CFR_step_4.dita#concept_pqc_jhz_st/run_terraform_command">run Terraform
                   commands</xref> and to <xref
                   href="CFR_step_6.dita#concept_m3k_bth_tt/connecting_to_your_cluster">SSH into your
                   cluster</xref>.</note></li>
