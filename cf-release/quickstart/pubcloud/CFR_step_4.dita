@@ -159,8 +159,9 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
             conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
     <stentry><b>Deploying a Docker Image</b><ol id="ol_p2k_vx1_tt">
             <li>Add the variables from the
-                <filepath><varname>&lt;number></varname>-Project-openrc.sh</filepath> file that you
-              have downloaded in <b>Step 3</b> to your terminal session.<ul id="ul_ptr_bwp_tt">
+                <filepath><varname>&lt;number></varname>-Project-openrc.sh</filepath> file <xref
+                href="CFR_step_3.dita#concept_kpg_fhz_st/ol_gy1_f1q_tt">that you have downloaded
+                earlier</xref> to your terminal session.<ul id="ul_ptr_bwp_tt">
                 <li>On a Linux machine, navigate to the directory that contains the
                     <filepath>sh</filepath> file and <filepath>source</filepath> the file, for
                     example:<codeblock>source 12345678901234-Project-openrc.sh</codeblock><p>When

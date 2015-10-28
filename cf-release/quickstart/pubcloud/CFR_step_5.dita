@@ -173,13 +173,13 @@ cf target -o myOrg -s mySpace</codeblock></note></li>
             <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
     <stentry><b>Getting Ready to Push Your First Application</b><ol id="ol_zdy_p53_tt">
             <li>Ensure that you are targeting the desired cluster, for
-                example:<codeblock>cf api http://api.203.0.113.0.xip.io</codeblock><note type="tip"
-                >To skip SSL validation, you can add the <filepath>--skip-ssl-validation</filepath>
-                option to your command.</note><note>If you cannot connect to your cluster, ensure
-                that your connection has no proxy settings.</note></li>
+                example:<codeblock id="target_cluster">cf api http://api.203.0.113.0.xip.io</codeblock><note>If
+                you cannot connect to your cluster, ensure that your connection has no proxy
+                settings. To skip SSL validation, you can add the
+                  <filepath>--skip-ssl-validation</filepath> option to your command.</note></li>
             <li>Ensure that you are logged into the desired
-              cluster:<codeblock>cf login</codeblock>When prompted, enter your username (email) and
-              password.</li>
+                cluster:<codeblock>cf login</codeblock><p id="user_pass">When prompted, enter your
+                username (email) and password.</p></li>
             <li>Create and target an
               organization:<codeblock>cf create-org <varname>&lt;organization></varname>
 cf target -o <varname>&lt;organization></varname></codeblock></li>
@@ -195,19 +195,19 @@ cf target -o <varname>&lt;organization></varname> -s <varname>&lt;space></varnam
                 <filepath>yml</filepath> file, and ensure that the <filepath>yml</filepath> file is
               configured correctly.</li>
             <li>Target the cluster, for
-              example:<codeblock>cf api http://api.203.0.113.0.xip.io</codeblock></li>
-            <li>Ensure that you are logged into the cluster:<codeblock>cf login</codeblock>When
-              prompted, enter your username (email) and password.</li>
+              example:<codeblock conref="#concept_cw2_thz_st/target_cluster"/></li>
+            <li>Ensure that you are logged into the cluster:<codeblock>cf login</codeblock><p
+                conref="#concept_cw2_thz_st/user_pass"/></li>
             <li>Push the application:<codeblock>cf push</codeblock><p>At the end of the process,
                 Cloud Foundry displays the URL of the application, formatted using the xip.io
                 wildcard DNS, for
                 example:<codeblock><b>urls:</b> myAppName.203.0.113.0.xip.io</codeblock></p><note
                 type="tip">You will need this URL to access the application using a web browser. You
                 can also run the <filepath>cf apps</filepath> command to see detailed information
-                about your application.<p>If you experience a problem, run the <filepath>cf delete
-                      <varname>&lt;appName></varname></filepath> command, make the necessary
-                  adjustments, and then push the application again. For detailed instructions, see
-                  the Cloud Foundry documentation:</p><ul id="ul_yyr_c5w_tt">
+                about your application.</note><note>If you experience a problem, run the
+                  <filepath>cf delete <varname>&lt;appName></varname></filepath> command, make the
+                necessary adjustments, and then push the application again. For detailed
+                instructions, see the Cloud Foundry documentation:<ul id="ul_yyr_c5w_tt">
                   <li><xref
                       href="https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html"
                       format="html" scope="external">Deploying an Application</xref></li>
