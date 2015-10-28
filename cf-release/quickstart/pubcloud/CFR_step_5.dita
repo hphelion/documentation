@@ -173,10 +173,10 @@ cf target -o myOrg -s mySpace</codeblock></note></li>
             <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
     <stentry><b>Getting Ready to Push Your First Application</b><ol id="ol_zdy_p53_tt">
             <li>Ensure that you are targeting the desired cluster, for
-                example:<codeblock id="target_cluster">cf api http://api.203.0.113.0.xip.io</codeblock><note>If
-                you cannot connect to your cluster, ensure that your connection has no proxy
-                settings. To skip SSL validation, you can add the
-                  <filepath>--skip-ssl-validation</filepath> option to your command.</note></li>
+                example:<codeblock id="target_cluster">cf api http://api.203.0.113.0.xip.io</codeblock><note>To
+                skip SSL validation, add the <filepath>--skip-ssl-validation</filepath> option to
+                your command. If you cannot connect to your cluster, ensure that your connection has
+                no proxy settings.</note></li>
             <li>Ensure that you are logged into the desired
                 cluster:<codeblock>cf login</codeblock><p id="user_pass">When prompted, enter your
                 username (email) and password.</p></li>
@@ -219,7 +219,8 @@ cf target -o <varname>&lt;organization></varname> -s <varname>&lt;space></varnam
                       format="html" scope="external">Troubleshooting Application Deployment and
                       Health</xref></li>
                 </ul></note></li>
-          </ol><b>Sample Applications</b><p>The following sample applications will get your started:<dl>
+          </ol><b>Sample Applications</b><p>The following sample applications will get your started
+            with the <codeph>cf push</codeph> workflow:<dl>
               <dlentry>
                 <dt><xref href="https://github.com/Stackato-Apps/go-env" format="html"
                     scope="external">go-env</xref> (Go)</dt>
