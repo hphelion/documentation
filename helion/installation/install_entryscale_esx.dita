@@ -193,13 +193,15 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <li><xref href="#install_esx/register-network" format="dita">Register ESX Cloud Network
               Configuration</xref></li>
           <li><xref href="#install_esx/import-cluster" format="dita">Import Clusters</xref></li>
-          <li><xref href="#install_esx/activate-cluster" format="dita">Activate Clusters</xref></li>
-          <li><xref href="#install_esx/modify-volume-config" format="dita">Modify the Volume
-              Configuration File</xref></li>
-          <li><xref href="#install_esx/commit-your-cloud" format="dita">Commit your Cloud
-              Definition</xref></li>
-          <li><xref href="#install_esx/deploy-compute-proxy-ovsvapps" format="dita">Deploy ESX
-              Compute Proxy and OVSvApps</xref></li>
+          <li><xref href="#install_esx/activate-cluster" format="dita">Activate Clusters</xref><ol
+              id="ol_isb_wcc_vt">
+              <li><xref href="#install_esx/modify-volume-config" format="dita">Modify the Volume
+                  Configuration File</xref></li>
+              <li><xref href="#install_esx/commit-your-cloud" format="dita">Commit your Cloud
+                  Definition</xref></li>
+              <li><xref href="#install_esx/deploy-compute-proxy-ovsvapps" format="dita">Deploy ESX
+                  Compute Proxy and OVSvApps</xref></li>
+            </ol></li>
         </ol>
       </p></section>
     <p><b>Manage vCenters and Clusters</b></p>
@@ -423,8 +425,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
               <codeblock><codeph># eon set-network-info --vcenter-id &lt;vCenter ID> --datacenter-name &lt;datacenter name> --config-json &lt;NETWORK_CONF_FILENAME></codeph></codeblock><p>For
               example:
               <codeblock># eon set-network-info --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --datacenter DC1 --config-json net_conf.json</codeblock></p><p>
-              <note>The vcenter ID is generated when you execute the above (<b>step 2</b>)
-                command.</note>
+              <note>The vcenter ID is generated when you register a vCenter.</note>
             </p></li>
           <li>Execute the following command to view the list of clusters for the given
               vCenter.<codeblock><codeph># eon cluster-list --vcenter-id &lt;vCenter ID></codeph></codeblock><b>Sample
@@ -438,8 +439,10 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       </p></section>
     <section id="import-cluster"><b>Import Cluster </b><p>You can use one or more ESX clusters for
         ESX Cloud Deployment. When an Import Cluster is invoked, required ESX Compute Proxy and
-        OVSvApp nodes are deployed.</p>
-      <p>
+        OVSvApp nodes are deployed.</p><p>vCenter can have multiple clusters, but the current
+        release of HP Helion OpenStack supports only sequential import of clusters (one-by-one).
+        Therefore, you can import only one cluster at a time using the <codeph>eon
+          cluster-import</codeph> command.</p><p>
         <ol>
           <li> Import the cluster for the EON database under the given vCenter. <codeblock><codeph># eon cluster-import --vcenter-id &lt;vCenter ID> --cluster-name &lt;Cluster Name> --cluster-moid &lt;Cluster Moid></codeph></codeblock>where:<p>
               <ul id="ul_r4g_rjs_ft">
