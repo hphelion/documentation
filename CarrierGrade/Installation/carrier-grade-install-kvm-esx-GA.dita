@@ -484,8 +484,8 @@ volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver</codeblock>
     <section id="nuage"><title>Deploy the Networking Role Patch</title>Before launching the
         <codeph>hlm generate</codeph> command, deploy a patch to update the nuage role required to
       deploy the HP Helion OpenStack Cloud.<p>For more information, see <xref
-          href="carrier-grade-install-network-patch.dita#topic10581">Deploy the Networking
-          Patch</xref>. </p></section>
+          href="carrier-grade-install-network-role-patch.dita#topic10581">Deploy the Networking Role
+          Patch</xref>.</p></section>
     <section id="hos-cloud">
       <title>Deploy the HP Helion OpenStack cloud</title>
       <ol>
