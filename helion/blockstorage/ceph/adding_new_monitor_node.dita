@@ -48,6 +48,10 @@ ansible-playbook -i hosts/verb_hosts guard-deployment.yml
 ansible-playbook -i hosts/verb_hosts osconfig-run.yml
 ansible-playbook -i hosts/verb_hosts ceph-deploy.yml</codeblock>
           </p></li>
+        <li>If you want the new Ceph monitor node to be included in the monitoring service checks,
+          there is an additional playbook that must be run to ensure this happens:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i verb/hosts monasca-deploy.yml --tags monasca_agent_plugin</codeblock></li>
       </ol></p>
     <p>The new monitor node is deployed in an existing Ceph cluster.</p>
     <p><b>To Verify the Newly-Added Monitor Node</b></p>

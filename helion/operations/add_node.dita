@@ -3,7 +3,7 @@
 <topic id="topic_qsv_h5y_lt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding a Compute Node</title>
   <body>
-   <section> To add a new compute node to your cloud, you will need to add it to the
+    <section> To add a new compute node to your cloud, you will need to add it to the
         <b>servers.yml</b> file and then run the playbooks that update your cloud configuration.
       Note that to run any playbooks whatsoever for cloud maintenance, you will always run them from
       the deployer/lifecycle-manager node.</section>
@@ -63,12 +63,13 @@ ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=compute7</codeblo
           deployment actions only to the target node(s).
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml --limit hlm004-ccp-comp0007*</codeblock></li>
-        <li>If you want the new compute node to be included in the monitoring service checks, there is an additional playbook that must be run to ensure this happens:
+        <li>If you want the new compute node to be included in the monitoring service checks, there
+          is an additional playbook that must be run to ensure this happens:
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i verb/hosts monasca-deploy.yml --tags monasca_agent_plugin</codeblock></li>
       </ol>
     </section>
-    
+
     <section><title>Add availability zones</title>When adding a new node, an additional step you'll
       need to take is to add the new node(s) to a Nova availability zone. This can be skipped if you
       have not configured any availability zones. <ol>
