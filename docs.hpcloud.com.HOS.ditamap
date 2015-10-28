@@ -186,6 +186,8 @@
       <!-- BEGIN - Administration/EON -->
       <topicref href="helion/esx/eon_service.dita" navtitle="ESX ON-Boarding (EON) Service"
         locktitle="yes">
+        <topicref href="helion/esx/network_esx_ovsvapp.dita"
+          navtitle="Networking for ESXi Hypervisor" locktitle="yes"/>
         <topicref href="helion/esx/esx_host_commissioning.dita" navtitle="ESX Host Commissioning"
           locktitle="yes"/>
         <topicref href="helion/esx/enable_new_cluster_compute_resource.dita"
@@ -194,9 +196,7 @@
           navtitle="Removing a Cluster from the Compute Resource Pool" locktitle="yes"/>
         <topicref href="helion/esx/removing_esx_host_from_cluster.dita"
           navtitle="Removing an ESX Host from a Cluster" locktitle="yes"/>
-        <topicref href="helion/esx/network_esx_ovsvapp.dita"
-          navtitle="Networking for ESXi Hypervisor" locktitle="yes"/>
-        <topicref href="helion/esx/logging.dita" navtitle="EON Logging" locktitle="yes"/>
+        <topicref href="helion/esx/logging.dita" navtitle="Enabling Debug Logging" locktitle="yes"/>
         <topicref href="helion/esx/scale_config_changes.dita"
           navtitle="Making SCALE Configuration Changes" locktitle="yes"/>
       </topicref>

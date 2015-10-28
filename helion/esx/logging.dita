@@ -77,5 +77,6 @@ ansible-playbook -i hosts/verb_hosts eon-reconfigure.yml</codeblock></li>
       </ol></section>
     <note>To disable the centralized logging, set the value of <codeph>centralized_logging</codeph>
       to <b>False</b> (See Step <b>2</b>).</note>
+    <p/>
   </body>
 </topic>
