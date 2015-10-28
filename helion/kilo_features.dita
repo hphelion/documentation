@@ -40,8 +40,8 @@
             Features</xref></li>
           <li><xref href="kilo_features.dita#HP2.0KiloFeatures/CinderFeatures">Cinder
               Features</xref></li>
-          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/KeystoneFeatures">Keystone
-            Features</xref></li>
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/KeystoneFeatures">Keystone and
+            Barbican Features</xref></li>
           <li><xref href="kilo_features.dita#HP2.0KiloFeatures/CeilometerFeatures">Ceilometer
               Features</xref></li>
           <li><xref href="kilo_features.dita#HP2.0KiloFeatures/HeatFeatures">Heat
@@ -825,7 +825,7 @@
     </section>
 
     <section id="KeystoneFeatures">
-      <title>Keystone Features</title>
+      <title>Keystone and Barbican Features</title>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="KeystoneTable">
           <tgroup cols="4">
