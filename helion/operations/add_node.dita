@@ -3,10 +3,10 @@
 <topic id="topic_qsv_h5y_lt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding a Compute Node</title>
   <body>
-   <section> To add a new node to your cloud, you will need to add it to <b>servers.yml</b> and then
-      run the scripts that update your cloud configuration. Note that to run any playbooks
-      whatsoever for cloud maintenance, you will always run from the deployer/lifecycle-manager
-      node.</section>
+   <section> To add a new compute node to your cloud, you will need to add it to the
+        <b>servers.yml</b> file and then run the playbooks that update your cloud configuration.
+      Note that to run any playbooks whatsoever for cloud maintenance, you will always run them from
+      the deployer/lifecycle-manager node.</section>
     <section>To begin, access the <b>servers.yml</b> file by checking out the git branch where you
       are required to make the changes: <ol id="ol_bw1_rg5_tt">
         <li>Get the <b>servers.yml</b> file stored in
@@ -59,10 +59,13 @@ ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=compute7</codeblo
           numbers from being reallocated. See the <ph id="_Toc432693223">Persisted Server
             Allocations</ph> section in <xref href="../input_model.dita#input_model">HP Helion
             OpenStack 2.0 Input Model</xref> for information on how this works.</li>
-        <li>Finally, run the following deployment step specifying the '--limit' option to apply the
+        <li>Run the following deployment step specifying the '--limit' option to apply the
           deployment actions only to the target node(s).
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml --limit hlm004-ccp-comp0007*</codeblock></li>
+        <li>If you want the new compute node to be included in the monitoring service checks, there is an additional playbook that must be run to ensure this happens:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i verb/hosts monasca-deploy.yml --tags monasca_agent_plugin</codeblock></li>
       </ol>
     </section>
     
