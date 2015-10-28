@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_odg_33x_rt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Networking Solution for ESXi Hypervisor</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Networking for ESXi Hypervisor
+    (OVSvApp)</title>
   <body><!--Needs Work; fnf edit on 10/27; some of the explanation below needs clarification-->
     <p>To provide the network as a service for tenant VM's hosted on ESXi Hypervisor, a service VM
       named OVSvApp VM is deployed on each ESXi Hypervisor within a cluster managed by OpenStack
@@ -70,5 +71,29 @@
               &lt;token_id&gt;"<!-- (<b>unable to understand this section?? ) need clarification</b> --></li>
           </ul></li>
       </ol></p>
+    <section><b>More Information</b><p>For more information on the Networking for ESXi Hypervisor
+        (OVSvApp), see the following references:<ul id="ul_b2c_n2c_vt">
+          <li>
+            <p>VBrownBag session in Vancouver OpenStack Liberty Summit:</p>
+            <p><xref href="https://www.youtube.com/watch?v=icYA_ixhwsM&amp;feature=youtu.be"
+                format="html" scope="external"/></p>
+          </li>
+          <li>
+            <p>Wiki Link:</p>
+            <p><xref href="https://wiki.openstack.org/wiki/Neutron/Networking-vSphere" format="html"
+                scope="external"/></p>
+          </li>
+          <li>
+            <p>Codebase:</p>
+            <p><xref href="https://github.com/openstack/networking-vsphere/" format="html"
+                scope="external"/></p>
+          </li>
+          <li>
+            <p>Whitepaper:</p>
+            <p><xref
+                href="https://github.com/hp-networking/ovsvapp/blob/master/OVSvApp_Solution.pdf"
+                format="pdf" scope="external"/></p>
+          </li>
+        </ul></p></section>
   </body>
 </topic>
