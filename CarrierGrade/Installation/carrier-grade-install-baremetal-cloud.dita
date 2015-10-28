@@ -17,336 +17,317 @@
     <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-cloud.md-->
     <!--permalink: /helion/openstack/carrier/install/pb/hlm-cloud/-->
     <p><b>Configure Baremetal Cloud</b></p>
-    <p>1. On HLM VM Copy ironic-standalone topology from
-      /root/kenobi-node-configuration/dev-samples/ironic-standalone to /opt/share/hlm/1/topologies/.
-      hnewcloud -l should then list ironic-standalone as one of the templates.</p>
-    <p>2. hnewCloud &lt;cloudname&gt; ironic-standalone</p>
-    <p>3. Disable ldap in /root/&lt;cloudname&gt;/vars/ldap.json</p>
-    <ul id="ul_umb_1rf_vt">
-      <li>Set <b>"ldap_enabled": 0</b></li>
-    </ul>
-    <p>4. Configure vlan ranges in /root/&lt;cloudname&gt;/vars/ironic.json. Specify enough ranges
-      so that provisioning network can be on a separate VLAN other than the tenant VLAN ranges.</p>
-    <p>5. Copy /root/cg-hlm/dev-tools/ilopxebootonce.py to /root/&lt;cloudname&gt;</p>
-    <p>6. Configure environment.json specifying the networks for management(CLM), API(CAN),
-      baremetal management(BM-CLM) as exposed to the HLM VM.7.Configure node-provision.json to
-      include 3 controllers in CCN control plane and 1 Baremetal controller(BAR) in baremetal
-      plane.</p>
-    <p>8. Execute the following command to ensure that all the controllers are configured to boot
-      from PXE.</p>
-    <ul id="ul_vmb_1rf_vt">
-      <li>python ilopxebootonce.py node-provision.json</li>
-    </ul>
-    <p><b>Provision controllers with base hLinux OS through cobbler:</b></p>
-    <p>9. hprovision &lt;cloud name&gt;While hprovision is executing you can see the cobbler status
-      at http://&lt;PXE STATIC IP&gt;/cobbler_web.</p>
-    <p><b>Generate Baremetal Cloud Definition</b></p>
-    <p>Execute the following from cloud base directory:</p>
-    <ul id="ul_wmb_1rf_vt">
-      <li>
-        <codeblock>hcfgproc -d definition.json
-              &lt;cloudname&gt;</codeblock>
-      </li>
-    </ul>
-    <p><b>Deploy Baremetal Cloud</b></p>
+    <ol id="ol_syf_5sg_vt">
+      <li>On HLM VM Copy ironic-standalone topology from
+        /root/kenobi-node-configuration/dev-samples/ironic-standalone to
+        /opt/share/hlm/1/topologies/. hnewcloud -l should then list ironic-standalone as one of the
+        templates.</li>
+      <li>hnewCloud &lt;cloudname&gt; ironic-standalone</li>
+      <li>Disable ldap in
+        /root/&lt;cloudname&gt;/vars/ldap.json<codeblock>Set <b>"ldap_enabled": 0</b></codeblock></li>
+      <li>Configure vlan ranges in /root/&lt;cloudname&gt;/vars/ironic.json. Specify enough ranges
+        so that provisioning network can be on a separate VLAN other than the tenant VLAN
+        ranges.</li>
+      <li>Copy /root/cg-hlm/dev-tools/ilopxebootonce.py to /root/&lt;cloudname&gt;</li>
+      <li>Configure environment.json specifying the networks for management(CLM), API(CAN),
+        baremetal management(BM-CLM) as exposed to the HLM VM.</li>
+      <li>Configure node-provision.json to include 3 controllers in CCN control plane and 1
+        Baremetal controller(BAR) in baremetal plane.</li>
+      <li>Execute the following command to ensure that all the controllers are configured to boot
+        from PXE.<codeblock>python ilopxebootonce.py node-provision.json</codeblock></li>
+      <li>Provision controllers with base hLinux OS through
+        cobbler:<codeblock>hprovision &lt;cloud name&gt;</codeblock>While hprovision is executing
+        you can see the cobbler status at http://&lt;PXE STATIC IP&gt;/cobbler_web.</li>
+    </ol>
+    <section>
+      <title>Generate Baremetal Cloud Definition</title>
+      <p>Execute the following from cloud base
+        directory:<codeblock>hcfgproc -d definition.json &lt;cloudname&gt;</codeblock></p>
+    </section>
+    <section>
+      <title>Deploy Baremetal Cloud</title>
+    </section>
+    <p/>
     <p><b>Network Initialization on Control Plane</b></p>
-    <p>Execute from cloud base directory:</p>
-    <ul id="ul_xmb_1rf_vt">
-      <li>
-        <codeblock>hnetinit
-          &lt;cloudname&gt;</codeblock>
-      </li>
-    </ul>
-    <p>Verify that all controllers are pingable using</p>
-    <ul id="ul_ymb_1rf_vt">
-      <li>
-        <codeblock>hnetping
-          &lt;cloudname&gt;</codeblock>
-      </li>
-    </ul>
+    <p>Execute from cloud base directory:<codeblock>hnetinit &lt;cloudname&gt;</codeblock></p>
+    <p>Verify that all controllers are pingable
+      using<codeblock>hnetping &lt;cloudname&gt;</codeblock></p>
     <p><b>Deploy Services and Bring up the Cloud</b></p>
     <p>Execute from cloud base directory:</p>
-    <p>hdeploy &lt;cloudname&gt;</p>
+    <p>
+      <codeblock>hdeploy &lt;cloudname&gt;</codeblock>
+    </p>
     <p><b>Configure bridges on Baremetal Controller:</b></p>
-    <p>1. Login to Baremetal Controller through HLM VM by executing ssh cghelion@&lt;baremetal
-      controller ip&gt;</p>
-    <p>2. On baremetal Controller Node: Create a bridge br-eth1 (this will change to br-bm in later
-      builds)</p>
-    <ul id="ul_zmb_1rf_vt">
-      <li>sudo ovs-vsctl add-br br-eth1</li>
-    </ul>
-    <ul id="ul_anb_1rf_vt">
-      <li>sudo ovs-vsctl add-port br-eth1 eth1 # assuming eth1 is the interface where BM-CLM is
-        connected.</li>
-    </ul>
-    <ul id="ul_bnb_1rf_vt">
-      <li>ifconfig eth1 up</li>
-    </ul>
-    <ul id="ul_cnb_1rf_vt">
-      <li>ifconfig br-eth1 up</li>
-    </ul>
-    <p> Restart the ovs-agent on the Controller.</p>
-    <ul id="ul_dnb_1rf_vt">
-      <li>sudo service neutron-plugin-openvswitch-agent restart</li>
-    </ul>
-    <p>3. Update ml2 conf with vlan ranges and specify the BM-CLM vlan in the bridge:
-      [ml2_type_vlan]network_vlan_ranges = physnet1:3405:3413</p>
-    <p>Adjust 3405:3413 vlan range to your environment</p>
-    <p>4. Edit /etc/neutron/neutron.conf and update credential secret:</p>
-    <p>[ironic]credential_secret = 1d0b38f0632af45c9a125aeb38c98418</p>
-    <p>service neutron-l3-agent restartservice neutron-dhcp-agent restartservice
-      neutron-metadata-agent restartservice neutron-server restartservice
-      neutron-plugin-openvswitch-agent restart</p>
-    <p>4. Verify whether stackrcv3 and stackrc role are as follows - </p>
-    <ul id="ul_enb_1rf_vt">
-      <li>
-        <codeblock>stackrcv3 role
-            - </codeblock>
-      </li>
-    </ul>
-    <ul id="ul_fnb_1rf_vt">
-      <li/>
-    </ul>
-    <ul id="ul_gnb_1rf_vt">
-      <li>export OS_USERNAME=admin </li>
-    </ul>
-    <ul id="ul_hnb_1rf_vt">
-      <li>export OS_PASSWORD=9YL8BgNAVZ7 </li>
-    </ul>
-    <ul id="ul_inb_1rf_vt">
-      <li>export OS_TENANT_NAME=admin </li>
-    </ul>
-    <ul id="ul_jnb_1rf_vt">
-      <li>export OS_PROJECT_NAME=admin </li>
-    </ul>
-    <ul id="ul_knb_1rf_vt">
-      <li>export OS_PROJECT_DOMAIN_NAME=Default </li>
-    </ul>
-    <ul id="ul_lnb_1rf_vt">
-      <li>export OS_USER_DOMAIN_ID=default </li>
-    </ul>
-    <ul id="ul_mnb_1rf_vt">
-      <li>export OS_IDENTITY_API_VERSION=3 </li>
-    </ul>
-    <ul id="ul_nnb_1rf_vt">
-      <li>export OS_AUTH_VERSION=3 </li>
-    </ul>
-    <ul id="ul_onb_1rf_vt">
-      <li>export OS_REGION_NAME=baremetal </li>
-    </ul>
-    <ul id="ul_pnb_1rf_vt">
-      <li>export OS_AUTH_URL=<xref href="http://BASE-CCP-T2-VIP-KEY-API-NETCLM:35357/v3"
-          format="html" scope="external">http://BASE-CCP-T2-VIP-KEY-API-NETCLM:35357/v3</xref>
-      </li>
-    </ul>
-    <ul id="ul_qnb_1rf_vt">
-      <li>export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt </li>
-    </ul>
-    <ul id="ul_rnb_1rf_vt">
-      <li>export OS_ENDPOINT_URL=adminURL </li>
-    </ul>
-    <ul id="ul_snb_1rf_vt">
-      <li/>
-    </ul>
-    <ul id="ul_tnb_1rf_vt">
-      <li/>
-    </ul>
-    <ul id="ul_unb_1rf_vt">
-      <li>stackrc role - </li>
-    </ul>
-    <ul id="ul_vnb_1rf_vt">
-      <li/>
-    </ul>
-    <ul id="ul_wnb_1rf_vt">
-      <li>export OS_PASSWORD=9YL8BgNAVZ7 </li>
-    </ul>
-    <ul id="ul_xnb_1rf_vt">
-      <li>export OS_USERNAME=admin </li>
-    </ul>
-    <ul id="ul_ynb_1rf_vt">
-      <li>export OS_TENANT_NAME=admin </li>
-    </ul>
-    <ul id="ul_znb_1rf_vt">
-      <li>export OS_AUTH_URL=<xref href="http://BASE-CCP-T2-VIP-KEY-API-NETCLM:35357/v2.0"
-          format="html" scope="external">http://BASE-CCP-T2-VIP-KEY-API-NETCLM:35357/v2.0</xref>
-      </li>
-    </ul>
-    <ul id="ul_a4b_1rf_vt">
-      <li>export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt </li>
-    </ul>
-    <ul id="ul_b4b_1rf_vt">
-      <li>export OS_REGION_NAME=baremetal </li>
-    </ul>
-    <ul id="ul_c4b_1rf_vt">
-      <li>unset OS_PROJECT_DOMAIN_NAME </li>
-    </ul>
-    <ul id="ul_d4b_1rf_vt">
-      <li>unset OS_PROJECT_NAME </li>
-    </ul>
-    <ul id="ul_e4b_1rf_vt">
-      <li>unset OS_USER_DOMAIN_ID </li>
-    </ul>
-    <ul id="ul_f4b_1rf_vt">
-      <li>unset OS_IDENTITY_API_VERSION </li>
-    </ul>
-    <ul id="ul_g4b_1rf_vt">
-      <li>unset OS_AUTH_VERSION </li>
-    </ul>
-    <ul id="ul_h4b_1rf_vt">
-      <li/>
-    </ul>
-    <p>5. source stackrcv3</p>
-    <ul id="ul_i4b_1rf_vt">
-      <li>source stackrc</li>
-    </ul>
-    <ul id="ul_j4b_1rf_vt">
-      <li/>
-    </ul>
-    <ul id="ul_k4b_1rf_vt">
-      <li/>
-    </ul>
-    <ul id="ul_l4b_1rf_vt">
-      <li> </li>
-    </ul>
-    <p>6.Execute CLI commands relating to provisioning of networks and baremetal nodes.</p>
-    <p>Create baremetal provisioning network:</p>
-    <p>$ neutron net-create provisioning-network --provider:segmentation_id &lt;bm-clm-vlan-id&gt;
-      --provider:network_type vlan --provider:physical_network physnet1 </p>
-    <p>Create tenant vlan network:</p>
-    <p>$ neutron net-create tenant-network</p>
-    <p>7. Edit /etc/ironic/ironic-conductor.conf and specify the following in DEFAULT namespace:</p>
-    <p>provisioning_network_uuid = &lt;prov-network-id&gt;network_provider= neutron_plugin </p>
-    <p>Run ironic-dbsync --config-file /etc/ironic/ironic-conductor.conf</p>
-    <p>service ironic-conductor restartservice ironic-api restart</p>
-    <p>Create entry for switch connected to the baremetal nodes:</p>
-    <p>neutron switch-create --host &lt;switch_ip&gt; --username &lt;user&gt; --password
-      &lt;password&gt; --type s5930 --id &lt;mac_address_of_switch&gt;</p>
-    <p>neutron subnet-create --name prov-subnet --gateway 192.168.61.1 --allocation-pool
-      start=192.168.61.100,end=192.168.61.200 provisioning-network 192.168.61.0/24 </p>
-    <p>neutron subnet-create --name tenant-subnet --gateway 192.68.61.1 --allocation-pool
-      start=192.68.61.100,end=192.68.61.200 tenant-network 192.68.61.0/24 </p>
-    <p>root@BMCLOUD-RCP02-T1-M1-NETCLM:/var/log# nova
-      list+--------------------------------------+-------+--------+------------+-------------+----------------------------+|
-      ID | Name | Status | Task State | Power State | Networks
-      |+--------------------------------------+-------+--------+------------+-------------+----------------------------+|
-      1b9f1f2b-4bcb-4363-bcf4-49d6a550460a | test1 | ACTIVE | - | Running |
-      tenant-network=192.68.9.54
-      |+--------------------------------------+-------+--------+------------+-------------+----------------------------+root@BMCLOUD-RCP02-T1-M1-NETCLM:/var/log#
-      nova show
-      1b9f1f2b-4bcb-4363-bcf4-49d6a550460a+--------------------------------------+-------------------------------------------------------------------+|
-      Property | Value
-      |+--------------------------------------+-------------------------------------------------------------------+|
-      OS-EXT-AZ:availability_zone | nova || OS-EXT-SRV-ATTR:host | BMCLOUD-RCP02-T1-M1-NETCLM ||
-      OS-EXT-SRV-ATTR:hypervisor_hostname | 5564213e-1e39-465b-be2e-5933c43650a0 ||
-      OS-EXT-SRV-ATTR:instance_name | instance-00000013 || OS-EXT-STS:power_state | 1 ||
-      OS-EXT-STS:task_state | - || OS-EXT-STS:vm_state | active || OS-SRV-USG:launched_at |
-      2015-10-16T15:40:21.000000 || OS-SRV-USG:terminated_at | - || accessIPv4 | || accessIPv6 | ||
-      config_drive | || created | 2015-10-16T15:34:21Z || flavor | baremetal (6) || hostId |
-      dde2258e0d29285416349bfb26c71c23915a510b24681675f32005c1 || id |
-      1b9f1f2b-4bcb-4363-bcf4-49d6a550460a || image | ubuntu-14.04.02-amd64-disk
-      (4b6b5bbe-39c8-4398-b2e6-1854496ef28f) || key_name | - || metadata | {} || name | test1 ||
-      os-extended-volumes:volumes_attached | [] || progress | 0 || security_groups | default ||
-      status | ACTIVE || tenant-network network | 192.68.9.54 || tenant_id |
-      c288a2816237465c8ea6efc16dc05b88 || updated | 2015-10-16T15:40:21Z || user_id |
-      2c34ae0b4cbd47a193a597bf5248c2db
-      |+--------------------------------------+-------------------------------------------------------------------+root@BMCLOUD-RCP02-T1-M1-NETCLM:/var/log#
-      neutron net-show
-      tenant-network+---------------------------+--------------------------------------+| Field |
-      Value |+---------------------------+--------------------------------------+| admin_state_up |
-      True || id | 2c4f260c-507a-47a7-a0f4-7faebfe312b0 || mtu | 0 || name | tenant-network ||
-      provider:network_type | vlan || provider:physical_network | physnet1 ||
-      provider:segmentation_id | 102 || router:external | False || shared | True || status | ACTIVE
-      || subnets | 6a952e6b-903f-41db-b31d-62dc52c65dd0 || tenant_id |
-      c288a2816237465c8ea6efc16dc05b88
-      |+---------------------------+--------------------------------------+root@BMCLOUD-RCP02-T1-M1-NETCLM:/var/log#
-      ironic --insecure node-show
-      5564213e-1e39-465b-be2e-5933c43650a0+------------------------+--------------------------------------------------------------------------+|
-      Property | Value
-      |+------------------------+--------------------------------------------------------------------------+|
-      target_power_state | None || extra | {} || last_error | None || updated_at |
-      2015-10-19T05:19:14+00:00 || maintenance_reason | None || provision_state | active || uuid |
-      5564213e-1e39-465b-be2e-5933c43650a0 || console_enabled | False || target_provision_state |
-      None || maintenance | False || inspection_started_at | None || inspection_finished_at | None
-      || power_state | power on || driver | pxe_ipmitool || reservation | None || properties |
-      {u'memory_mb': 8192, u'local_gb': 40, u'cpus': 8, u'capabilities': || |
-      u'boot_mode:bios,boot_option:local'} || instance_uuid | 1b9f1f2b-4bcb-4363-bcf4-49d6a550460a
-      || name | None || driver_info | {u'ipmi_terminal_port': 9091, u'ipmi_username': u'admin', || |
-      u'deploy_kernel': u'8c21423c-eedf-4f9d-84c5-25e03f35fd76', || | u'ipmi_address':
-      u'10.1.67.60', u'deploy_ramdisk': u'93de142f-62a3-4a7e- || | 8b94-2145c860523a',
-      u'ipmi_password': u'******'} || created_at | 2015-10-16T04:10:30+00:00 || driver_internal_info
-      | {u'clean_steps': None, u'agent_url': u'<xref href="http://10.243.176.45:9999" format="html"
-        scope="external">http://10.243.176.45:9999</xref>', || | u'root_uuid_or_disk_id':
-      u'0x00000000', u'is_whole_disk_image': True, || | u'agent_last_heartbeat': 1445009962} ||
-      chassis_uuid | || instance_info | {u'root_gb': u'40', u'deploy_key':
-      u'9BLPWR1PDTX3S5IYPNMP9FGZ9WFFIAJD', || | u'image_source':
-      u'4b6b5bbe-39c8-4398-b2e6-1854496ef28f', u'swap_mb': || | u'0', u'capabilities':
-      u'{"boot_option": "local"}'}
-      |+------------------------+--------------------------------------------------------------------------+root@BMCLOUD-RCP02-T1-M1-NETCLM:/var/log#
-      ironic --insecure port-show
-      0142fb06-a425-4b6d-a41e-481a5b54b8a2+-----------------------+----------------------------------------------------------------------+|
-      Property | Value
-      |+-----------------------+----------------------------------------------------------------------+|
-      local_link_connection | {u'switch_info': u'ToR', u'port_id': u'Ten-GigabitEthernet1/0/12:2',
-      || | u'switch_id': u'aa:bb:cc:dd:ee:ff'} || node_uuid | 5564213e-1e39-465b-be2e-5933c43650a0
-      || uuid | 0142fb06-a425-4b6d-a41e-481a5b54b8a2 || extra | {u'vif_port_id':
-      u'ce2014de-cf35-44a4-9255-2975c99b7f1c'} || pxe_enabled | True || created_at |
-      2015-10-16T13:41:48+00:00 || updated_at | 2015-10-16T15:40:03+00:00 || address |
-      f0:92:1c:05:5b:60 || portgroup_uuid |
-      |+-----------------------+----------------------------------------------------------------------+[R2N6640S1FTC]display
-      current-configuration interface Ten-GigabitEthernet1/0/12:2#interface
-      Ten-GigabitEthernet1/0/12:2port link-mode bridgedescription
-      CUST-5564213e-1e39-465b-be2e-5933c43650a0-hostport access vlan 102stp
-      edged-port#returnroot@BMCLOUD-RCP02-T1-M1-NETCLM:/var/log# glance
-      image-list+--------------------------------------+----------------------------+-------------+------------------+-----------+--------+|
-      ID | Name | Disk Format | Container Format | Size | Status
-      |+--------------------------------------+----------------------------+-------------+------------------+-----------+--------+|
-      93de142f-62a3-4a7e-8b94-2145c860523a | deploy-initrd | ari | ari | 227564499 | active ||
-      8c21423c-eedf-4f9d-84c5-25e03f35fd76 | deploy-kernel | aki | aki | 3204496 | active ||
-      4b6b5bbe-39c8-4398-b2e6-1854496ef28f | ubuntu-14.04.02-amd64-disk | qcow2 | bare | 372047872 |
-      active
-      |+--------------------------------------+----------------------------+-------------+------------------+-----------+--------+cghelion@BMCLOUD-RCP02-T1-M1-NETCLM:~$
-      nova hypervisor-show
-      5564213e-1e39-465b-be2e-5933c43650a0+-------------------------+--------------------------------------+|
-      Property | Value |+-------------------------+--------------------------------------+| cpu_info
-      | || current_workload | 0 || disk_available_least | 0 || free_disk_gb | 0 || free_ram_mb | 0
-      || host_ip | 192.168.102.8 || hypervisor_hostname | 5564213e-1e39-465b-be2e-5933c43650a0 ||
-      hypervisor_type | ironic || hypervisor_version | 1 || id | 4 || local_gb | 40 || local_gb_used
-      | 40 || memory_mb | 8192 || memory_mb_used | 8192 || running_vms | 1 ||
-      service_disabled_reason | - || service_host | BMCLOUD-RCP02-T1-M1-NETCLM || service_id | 19 ||
-      state | up || status | enabled || vcpus | 8 || vcpus_used | 8
-      |+-------------------------+--------------------------------------+cghelion@BMCLOUD-RCP02-T1-M1-NETCLM:~$
-      nova
-      service-list+----+------------------+----------------------------+----------+---------+-------+----------------------------+-----------------+|
-      Id | Binary | Host | Zone | Status | State | Updated_at | Disabled Reason
-      |+----+------------------+----------------------------+----------+---------+-------+----------------------------+-----------------+|
-      1 | nova-cert | BMCLOUD-RCP02-T1-M1-NETCLM | internal | enabled | up |
-      2015-10-19T05:39:46.000000 | - || 4 | nova-conductor | BMCLOUD-RCP02-T1-M1-NETCLM | internal |
-      enabled | up | 2015-10-19T05:39:41.000000 | - || 13 | nova-scheduler |
-      BMCLOUD-RCP02-T1-M1-NETCLM | internal | enabled | up | 2015-10-19T05:39:43.000000 | - || 16 |
-      nova-consoleauth | BMCLOUD-RCP02-T1-M1-NETCLM | internal | enabled | up |
-      2015-10-19T05:39:47.000000 | - || 19 | nova-compute | BMCLOUD-RCP02-T1-M1-NETCLM | nova |
-      enabled | up | 2015-10-19T05:39:41.000000 | -
-      |+----+------------------+----------------------------+----------+---------+-------+----------------------------+-----------------+cghelion@BMCLOUD-RCP02-T1-M1-NETCLM:~$
-      neutron port-show
-      ce2014de-cf35-44a4-9255-2975c99b7f1c+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+|
-      Field | Value
-      |+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+|
-      admin_state_up | True || allowed_address_pairs | || binding:host_id |
-      5564213e-1e39-465b-be2e-5933c43650a0 || binding:profile | {"local_link_information":
-      [{"switch_info": "ToR", "port_id": "Ten-GigabitEthernet1/0/12:2", "switch_id":
-      "aa:bb:cc:dd:ee:ff"}]} || binding:vif_details | {"port_filter": false} || binding:vif_type |
-      hp-ironic || binding:vnic_type | baremetal || commit | False || device_id |
-      1b9f1f2b-4bcb-4363-bcf4-49d6a550460a || device_owner | baremetal:none || extra_dhcp_opts | ||
-      fixed_ips | {"subnet_id": "6a952e6b-903f-41db-b31d-62dc52c65dd0", "ip_address": "192.68.9.54"}
-      || id | ce2014de-cf35-44a4-9255-2975c99b7f1c || mac_address | f0:92:1c:05:5b:60 || name | ||
-      network_id | 2c4f260c-507a-47a7-a0f4-7faebfe312b0 || security_groups |
-      50a66dab-7b87-45bd-96e3-f90b988e541f || status | ACTIVE || switch:hardware_id |
-      5564213e-1e39-465b-be2e-5933c43650a0 || switch:ports | {"name": "ToR", "hardware_id":
-      "5564213e-1e39-465b-be2e-5933c43650a0", "switch_id": "aa:bb:cc:dd:ee:ff", "port":
-      "Ten-GigabitEthernet1/0/12:2", "mac_address": null, "id":
-      "9e98b38d-22f8-4d45-bbc2-972eb709ee30"} || tenant_id | c288a2816237465c8ea6efc16dc05b88 ||
-      trunked | False
-      |+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</p>
+    <ol id="ol_hjg_ntg_vt">
+      <li>Login to Baremetal Controller through HLM VM by executing ssh cghelion@&lt;baremetal
+        controller ip&gt;</li>
+      <li>On baremetal Controller Node: <ol id="ol_ksr_rtg_vt">
+          <li>Create a bridge br-eth1 (this will change to br-bm in later
+            builds)<codeblock>sudo ovs-vsctl add-br br-eth1
+sudo ovs-vsctl add-port br-eth1 eth1 # assuming eth1 is the interface where BM-CLM is connected.
+ifconfig eth1 up
+ifconfig br-eth1 up</codeblock></li>
+          <li>Restart the ovs-agent on the
+            Controller.<codeblock>sudo service neutron-plugin-openvswitch-agent restart</codeblock></li>
+        </ol></li>
+      <li>Update ml2 conf with vlan ranges and specify the BM-CLM vlan in the bridge:
+        <codeblock>[ml2_type_vlan]network_vlan_ranges = physnet1:3405:3413</codeblock></li>
+      <li>Adjust 3405:3413 vlan range to your environment</li>
+      <li>Edit /etc/neutron/neutron.conf and update credential
+        secret:<codeblock>[ironic]
+credential_secret = 1d0b38f0632af45c9a125aeb38c98418
+service neutron-l3-agent restart
+service neutron-dhcp-agent restart
+service neutron-metadata-agent restart
+service neutron-server restart
+service neutron-plugin-openvswitch-agent restart</codeblock></li>
+      <li>Verify whether stackrcv3 and stackrc role are as
+        follows:<codeblock>stackrcv3 role
+
+export OS_USERNAME=admin 
+export OS_PASSWORD=9YL8BgNAVZ7 
+export OS_TENANT_NAME=admin 
+export OS_PROJECT_NAME=admin 
+export OS_PROJECT_DOMAIN_NAME=Default 
+export OS_USER_DOMAIN_ID=default 
+export OS_IDENTITY_API_VERSION=3 
+export OS_AUTH_VERSION=3 
+export OS_REGION_NAME=baremetal 
+export OS_AUTH_URL=http://BASE-CCP-T2-VIP-KEY-API-NETCLM:35357/v3
+export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt 
+export OS_ENDPOINT_URL=adminURL 
+
+stackrc role - 
+
+export OS_PASSWORD=9YL8BgNAVZ7 
+export OS_USERNAME=admin 
+export OS_TENANT_NAME=admin 
+export OS_AUTH_URL=http://BASE-CCP-T2-VIP-KEY-API-NETCLM:35357/v2.0 
+export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt 
+export OS_REGION_NAME=baremetal 
+unset OS_PROJECT_DOMAIN_NAME 
+unset OS_PROJECT_NAME 
+unset OS_USER_DOMAIN_ID 
+unset OS_IDENTITY_API_VERSION 
+unset OS_AUTH_VERSION </codeblock></li>
+      <li>source stackrcv3<codeblock>source stackrc</codeblock></li>
+      <li>Execute CLI commands relating to provisioning of networks and baremetal nodes.</li>
+      <li>Create baremetal provisioning
+        network:<codeblock>neutron net-create provisioning-network --provider:segmentation_id &lt;bm-clm-vlan-id&gt; --provider:network_type vlan --provider:physical_network physnet1 </codeblock></li>
+      <li>Create tenant vlan network:<codeblock>neutron net-create tenant-network</codeblock></li>
+      <li>Edit /etc/ironic/ironic-conductor.conf and specify the following in DEFAULT
+        namespace:<codeblock>provisioning_network_uuid = &lt;prov-network-id&gt;network_provider= neutron_plugin </codeblock></li>
+      <li>Run ironic-dbsync --config-file
+        /etc/ironic/ironic-conductor.conf<codeblock>service ironic-conductor restartservice ironic-api restart</codeblock></li>
+      <li>Create entry for switch connected to the baremetal
+        nodes:<codeblock>neutron switch-create --host &lt;switch_ip&gt; --username &lt;user&gt; --password &lt;password&gt; --type s5930 --id &lt;mac_address_of_switch&gt;
+neutron subnet-create --name prov-subnet --gateway 192.168.61.1 --allocation-pool start=192.168.61.100,end=192.168.61.200 provisioning-network 192.168.61.0/24 
+neutron subnet-create --name tenant-subnet --gateway 192.68.61.1 --allocation-pool start=192.68.61.100,end=192.68.61.200 tenant-network 192.68.61.0/24 </codeblock></li>
+      <li>View the active servers:<codeblock>nova list</codeblock><p>The output should appear
+          similar to the
+          following:<codeblock>+--------------------------------------+-------+--------+------------+-------------+----------------------------+
+| ID                                   | Name  | Status | Task State | Power State | Networks                   |
++--------------------------------------+-------+--------+------------+-------------+----------------------------+
+| 1b9f1f2b-4bcb-4363-bcf4-49d6a550460a | test1 | ACTIVE | -          | Running     | tenant-network=192.68.9.54 |
++--------------------------------------+-------+--------+------------+-------------+----------------------------+</codeblock></p></li>
+      <li>View details about the
+          server:<codeblock>nova show 1b9f1f2b-4bcb-4363-bcf4-49d6a550460a</codeblock><p>The output
+          should appear similar to the
+          following:<codeblock>+--------------------------------------+-------------------------------------------------------------------+
+| Property                             | Value                                                             |
++--------------------------------------+-------------------------------------------------------------------+
+| OS-EXT-AZ:availability_zone          | nova                                                              |
+| OS-EXT-SRV-ATTR:host                 | BMCLOUD-RCP02-T1-M1-NETCLM                                        |
+| OS-EXT-SRV-ATTR:hypervisor_hostname  | 5564213e-1e39-465b-be2e-5933c43650a0                              |
+| OS-EXT-SRV-ATTR:instance_name        | instance-00000013                                                 |
+| OS-EXT-STS:power_state               | 1                                                                 |
+| OS-EXT-STS:task_state                | -                                                                 |
+| OS-EXT-STS:vm_state                  | active                                                            |
+| OS-SRV-USG:launched_at               | 2015-10-16T15:40:21.000000                                        |
+| OS-SRV-USG:terminated_at             | -                                                                 |
+| accessIPv4                           |                                                                   |
+| accessIPv6                           |                                                                   |
+| config_drive                         |                                                                   |
+| created                              | 2015-10-16T15:34:21Z                                              |
+| flavor                               | baremetal (6)                                                     |
+| hostId                               | dde2258e0d29285416349bfb26c71c23915a510b24681675f32005c1          |
+| id                                   | 1b9f1f2b-4bcb-4363-bcf4-49d6a550460a                              |
+| image                                | ubuntu-14.04.02-amd64-disk (4b6b5bbe-39c8-4398-b2e6-1854496ef28f) |
+| key_name                             | -                                                                 |
+| metadata                             | {}                                                                |
+| name                                 | test1                                                             |
+| os-extended-volumes:volumes_attached | []                                                                |
+| progress                             | 0                                                                 |
+| security_groups                      | default                                                           |
+| status                               | ACTIVE                                                            |
+| tenant-network network               | 192.68.9.54                                                       |
+| tenant_id                            | c288a2816237465c8ea6efc16dc05b88                                  |
+| updated                              | 2015-10-16T15:40:21Z                                              |
+| user_id                              | 2c34ae0b4cbd47a193a597bf5248c2db                                  |
++--------------------------------------+-------------------------------------------------------------------+</codeblock></p></li>
+      <li>View details about the network
+          <codeblock>neutron net-show tenant-network</codeblock><p>The output should appear similar
+          to the
+          following:<codeblock>+---------------------------+--------------------------------------+
+| Field                     | Value                                |
++---------------------------+--------------------------------------+
+| admin_state_up            | True                                 |
+| id                        | 2c4f260c-507a-47a7-a0f4-7faebfe312b0 |
+| mtu                       | 0                                    |
+| name                      | tenant-network                       |
+| provider:network_type     | vlan                                 |
+| provider:physical_network | physnet1                             |
+| provider:segmentation_id  | 102                                  |
+| router:external           | False                                |
+| shared                    | True                                 |
+| status                    | ACTIVE                               |
+| subnets                   | 6a952e6b-903f-41db-b31d-62dc52c65dd0 |
+| tenant_id                 | c288a2816237465c8ea6efc16dc05b88     |
++---------------------------+--------------------------------------+</codeblock></p></li>
+      <li>View detailed information about a
+          node:<codeblock>ironic --insecure node-show 5564213e-1e39-465b-be2e-5933c43650a0</codeblock><p>The
+          output should appear similar to the
+          following:<codeblock>+------------------------+--------------------------------------------------------------------------+
+| Property               | Value                                                                    |
++------------------------+--------------------------------------------------------------------------+
+| target_power_state     | None                                                                     |
+| extra                  | {}                                                                       |
+| last_error             | None                                                                     |
+| updated_at             | 2015-10-19T05:19:14+00:00                                                |
+| maintenance_reason     | None                                                                     |
+| provision_state        | active                                                                   |
+| uuid                   | 5564213e-1e39-465b-be2e-5933c43650a0                                     |
+| console_enabled        | False                                                                    |
+| target_provision_state | None                                                                     |
+| maintenance            | False                                                                    |
+| inspection_started_at  | None                                                                     |
+| inspection_finished_at | None                                                                     |
+| power_state            | power on                                                                 |
+| driver                 | pxe_ipmitool                                                             |
+| reservation            | None                                                                     |
+| properties             | {u'memory_mb': 8192, u'local_gb': 40, u'cpus': 8, u'capabilities':       |
+|                        | u'boot_mode:bios,boot_option:local'}                                     |
+| instance_uuid          | 1b9f1f2b-4bcb-4363-bcf4-49d6a550460a                                     |
+| name                   | None                                                                     |
+| driver_info            | {u'ipmi_terminal_port': 9091, u'ipmi_username': u'admin',           |
+|                        | u'deploy_kernel': u'8c21423c-eedf-4f9d-84c5-25e03f35fd76',               |
+|                        | u'ipmi_address': u'10.1.67.60', u'deploy_ramdisk': u'93de142f-62a3-4a7e- |
+|                        | 8b94-2145c860523a', u'ipmi_password': u'******'}                         |
+| created_at             | 2015-10-16T04:10:30+00:00                                                |
+| driver_internal_info   | {u'clean_steps': None, u'agent_url': u'http://10.243.176.45:9999',       |
+|                        | u'root_uuid_or_disk_id': u'0x00000000', u'is_whole_disk_image': True,    |
+|                        | u'agent_last_heartbeat': 1445009962}                                     |
+| chassis_uuid           |                                                                          |
+| instance_info          | {u'root_gb': u'40', u'deploy_key': u'9BLPWR1PDTX3S5IYPNMP9FGZ9WFFIAJD',  |
+|                        | u'image_source': u'4b6b5bbe-39c8-4398-b2e6-1854496ef28f', u'swap_mb':    |
+|                        | u'0', u'capabilities': u'{"boot_option": "local"}'}                      |
++------------------------+--------------------------------------------------------------------------+</codeblock></p></li>
+      <li>View detailed information about a
+          port:<codeblock>ironic --insecure port-show 0142fb06-a425-4b6d-a41e-481a5b54b8a2</codeblock><p>The
+          output should appear similar to the
+          following:<codeblock>+-----------------------+----------------------------------------------------------------------+
+| Property              | Value                                                                |
++-----------------------+----------------------------------------------------------------------+
+| local_link_connection | {u'switch_info': u'ToR', u'port_id': u'Ten-GigabitEthernet1/0/12:2', |
+|                       | u'switch_id': u'aa:bb:cc:dd:ee:ff'}                                  |
+| node_uuid             | 5564213e-1e39-465b-be2e-5933c43650a0                                 |
+| uuid                  | 0142fb06-a425-4b6d-a41e-481a5b54b8a2                                 |
+| extra                 | {u'vif_port_id': u'ce2014de-cf35-44a4-9255-2975c99b7f1c'}            |
+| pxe_enabled           | True                                                                 |
+| created_at            | 2015-10-16T13:41:48+00:00                                            |
+| updated_at            | 2015-10-16T15:40:03+00:00                                            |
+| address               | f0:92:1c:05:5b:60                                                    |
+| portgroup_uuid        |                                                                      |
++-----------------------+----------------------------------------------------------------------+
+[R2N6640S1FTC]display current-configuration interface Ten-GigabitEthernet1/0/12:
+2
+#
+interface Ten-GigabitEthernet1/0/12:2
+port link-mode bridge
+description CUST-5564213e-1e39-465b-be2e-5933c43650a0-host
+port access vlan 102
+stp edged-port
+#
+return</codeblock></p></li>
+      <li>View detailed information about an instance:<codeblock>glance image-list</codeblock><p>The
+          output should appear similar to the
+          following:<codeblock>+--------------------------------------+----------------------------+-------------+------------------+-----------+--------+
+| ID                                   | Name                       | Disk Format | Container Format | Size      | Status |
++--------------------------------------+----------------------------+-------------+------------------+-----------+--------+
+| 93de142f-62a3-4a7e-8b94-2145c860523a | deploy-initrd              | ari         | ari              | 227564499 | active |
+| 8c21423c-eedf-4f9d-84c5-25e03f35fd76 | deploy-kernel              | aki         | aki              | 3204496   | active |
+| 4b6b5bbe-39c8-4398-b2e6-1854496ef28f | ubuntu-14.04.02-amd64-disk | qcow2       | bare             | 372047872 | active |
++--------------------------------------+----------------------------+-------------+------------------+-----------+--------+</codeblock></p></li>
+      <li>View detailed information about a
+          hypervisor:<codeblock>nova hypervisor-show 5564213e-1e39-465b-be2e-5933c43650a0</codeblock><p>The
+          output should appear similar to the
+          following:<codeblock>+-------------------------+--------------------------------------+
+| Property                | Value                                |
++-------------------------+--------------------------------------+
+| cpu_info                |                                      |
+| current_workload        | 0                                    |
+| disk_available_least    | 0                                    |
+| free_disk_gb            | 0                                    |
+| free_ram_mb             | 0                                    |
+| host_ip                 | 192.168.102.8                        |
+| hypervisor_hostname     | 5564213e-1e39-465b-be2e-5933c43650a0 |
+| hypervisor_type         | ironic                               |
+| hypervisor_version      | 1                                    |
+| id                      | 4                                    |
+| local_gb                | 40                                   |
+| local_gb_used           | 40                                   |
+| memory_mb               | 8192                                 |
+| memory_mb_used          | 8192                                 |
+| running_vms             | 1                                    |
+| service_disabled_reason | -                                    |
+| service_host            | BMCLOUD-RCP02-T1-M1-NETCLM           |
+| service_id              | 19                                   |
+| state                   | up                                   |
+| status                  | enabled                              |
+| vcpus                   | 8                                    |
+| vcpus_used              | 8                                    |
++-------------------------+--------------------------------------+</codeblock></p></li>
+      <li>View a list of all running services.<codeblock>nova service-list</codeblock><p>
+          <codeblock>+----+------------------+----------------------------+----------+---------+-------+----------------------------+-----------------+
+| Id | Binary           | Host                       | Zone     | Status  | State | Updated_at                 | Disabled Reason |
++----+------------------+----------------------------+----------+---------+-------+----------------------------+-----------------+
+| 1  | nova-cert        | BMCLOUD-RCP02-T1-M1-NETCLM | internal | enabled | up    | 2015-10-19T05:39:46.000000 | -               |
+| 4  | nova-conductor   | BMCLOUD-RCP02-T1-M1-NETCLM | internal | enabled | up    | 2015-10-19T05:39:41.000000 | -               |
+| 13 | nova-scheduler   | BMCLOUD-RCP02-T1-M1-NETCLM | internal | enabled | up    | 2015-10-19T05:39:43.000000 | -               |
+| 16 | nova-consoleauth | BMCLOUD-RCP02-T1-M1-NETCLM | internal | enabled | up    | 2015-10-19T05:39:47.000000 | -               |
+| 19 | nova-compute     | BMCLOUD-RCP02-T1-M1-NETCLM | nova     | enabled | up    | 2015-10-19T05:39:41.000000 | -               |
++----+------------------+----------------------------+----------+---------+-------+----------------------------+-----------------+</codeblock>
+        </p></li>
+      <li>View nformation of a given port.
+          <codeblock>neutron port-show ce2014de-cf35-44a4-9255-2975c99b7f1c</codeblock><p>The output
+          should appear similar to the
+          following:<codeblock>+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Field                 | Value                                                                                                                                                                                                              |
++-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| admin_state_up        | True                                                                                                                                                                                                               |
+| allowed_address_pairs |                                                                                                                                                                                                                    |
+| binding:host_id       | 5564213e-1e39-465b-be2e-5933c43650a0                                                                                                                                                                               |
+| binding:profile       | {"local_link_information": [{"switch_info": "ToR", "port_id": "Ten-GigabitEthernet1/0/12:2", "switch_id": "aa:bb:cc:dd:ee:ff"}]}                                                                                   |
+| binding:vif_details   | {"port_filter": false}                                                                                                                                                                                             |
+| binding:vif_type      | hp-ironic                                                                                                                                                                                                          |
+| binding:vnic_type     | baremetal                                                                                                                                                                                                          |
+| commit                | False                                                                                                                                                                                                              |
+| device_id             | 1b9f1f2b-4bcb-4363-bcf4-49d6a550460a                                                                                                                                                                               |
+| device_owner          | baremetal:none                                                                                                                                                                                                     |
+| extra_dhcp_opts       |                                                                                                                                                                                                                    |
+| fixed_ips             | {"subnet_id": "6a952e6b-903f-41db-b31d-62dc52c65dd0", "ip_address": "192.68.9.54"}                                                                                                                                 |
+| id                    | ce2014de-cf35-44a4-9255-2975c99b7f1c                                                                                                                                                                               |
+| mac_address           | f0:92:1c:05:5b:60                                                                                                                                                                                                  |
+| name                  |                                                                                                                                                                                                                    |
+| network_id            | 2c4f260c-507a-47a7-a0f4-7faebfe312b0                                                                                                                                                                               |
+| security_groups       | 50a66dab-7b87-45bd-96e3-f90b988e541f                                                                                                                                                                               |
+| status                | ACTIVE                                                                                                                                                                                                             |
+| switch:hardware_id    | 5564213e-1e39-465b-be2e-5933c43650a0                                                                                                                                                                               |
+| switch:ports          | {"name": "ToR", "hardware_id": "5564213e-1e39-465b-be2e-5933c43650a0", "switch_id": "aa:bb:cc:dd:ee:ff", "port": "Ten-GigabitEthernet1/0/12:2", "mac_address": null, "id": "9e98b38d-22f8-4d45-bbc2-972eb709ee30"} |
+| tenant_id             | c288a2816237465c8ea6efc16dc05b88                                                                                                                                                                                   |
+| trunked               | False                                                                                                                                                                                                              |
++-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</codeblock></p></li>
+    </ol>
     <section id="next-step">
       <title>Next Steps</title>
       <p><xref href="carrier-grade-install-post.dita#topic1107">Post-Installation Tasks</xref></p>
