@@ -29,7 +29,8 @@
               <row>
                 <entry>October 28, 2015</entry>
                 <entry>Added steps for Neutron service logging level configuration (<xref
-                    href="administration/configure_logging.dita">Link</xref>)</entry>
+                    href="administration/configure_logging.dita">Link</xref>)
+                <p>Added step to ensure new Compute nodes that you add to your environemtn are included in monitoring (<xref href="operations/add_node.dita">Link</xref>)</p></entry>
               </row>
             </tbody>
           </tgroup>
