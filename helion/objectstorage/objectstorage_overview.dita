@@ -3,7 +3,7 @@
 <topic id="object-storage">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Object Storage Overview</title>
   <body><!--Needs Work, fnf edit on 10/22-->
-    <section><b>What is the Object Storage (Swift)?</b><p>The HPE Helion OpenStack Object Storage
+    <section><b>What is the Object Storage (Swift)?</b><p>The HP Helion OpenStack Object Storage
         leverages Swift from <tm tmtype="reg">OpenStack</tm>. Swift uses software-defined storage
         (SDS) layered on top of industry-standard servers using native storage devices. Swift
         presents an object paradigm, using an underlying set of disk drives. The disk drives are

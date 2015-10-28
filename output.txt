@@ -1,1 +1,35 @@
-./helion/administration/configure_monitoring.dita:        <!--(please see <xref href="http://docs-staging.hpcloud.com/hos2.0beta1/#helion/eula.html"
+./cloudsystem/thirdparty.licensing.dita:                    href="http://h20564.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04647291"
+./commercial/GA1/1.0commercial.install-GA-ovsvapp.dita:<p>Use the vShpere client to select <b>Disable: Allow VM power on operations that violate availability constraints</b> as a part of cluster settings, as shaown. If not, ESX host might hang at 2% during transition to maintenance mode.</p>
+./commercial/GA1/1.1commercial.install-GA-ovsvapp.dita:<p>Use the vShpere client to select <b>Disable: Allow VM power on operations that violate availability constraints</b> as a part of cluster settings, as shaown. If not, ESX host might hang at 2% during transition to maintenance mode.</p>
+./devplatform/1.2/1.2devplatform_uninstall.dita:<!--DOCS1299 and HPES197-->
+./devplatform/1.3/uninstallation/devplatform_uninstall.dita:<!--DOCS1299 and HPES197-->
+./helion/blockstorage/brocade_zone_manager.dita:    <p>HPE Helion OpenStack 2.0 supports Brocade FC Zone Manager. Block Storage (Cinder) needs to be
+./helion/blockstorage/brocade_zone_manager.dita:          <li>HPE Helion Cloud must be successfully deployed. </li>
+./helion/bura/cloud_control_plane_backup.dita:nhPeIm/nXcpWMaM18vCGd7//LY5BWEr5nZJGNx87422YhYCPPrTSqiTbNknakw3q
+./helion/example_configurations.dita:      <!-- HPE
+./helion/example_configurations.dita:        <p><image href="../media/examples/entry_scale_esx_hpe.png"/></p>
+./helion/example_configurations.dita:        <p><xref href="../media/examples/entry_scale_esx_hpe_lg.png" scope="external" format="html">Download a high-res version</xref></p>
+./helion/example_configurations.dita:        for more details refer to <xref href="input_model.dita">HPE Helion OpenStack 2.0 Input
+./helion/example_configurations.dita:          <xref href="input_model.dita">HPE Helion OpenStack 2.0 Input Model</xref>.</p>
+./helion/kilo_features.dita:        Core and Non-core descriptions provided by Carolyn Adler (cadler@hpe.com) in Legal.
+./helion/objectstorage/objectstorage_overview.dita:    <section><b>What is the Object Storage (Swift)?</b><p>The HPE Helion OpenStack Object Storage
+./helion/objectstorage/replacing_drives_swift_node.dita:  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Replacing Drives in a Swift Node</title>
+./helion/releasenotes.dita:        Core and Non-core descriptions provided by Carolyn Adler (cadler@hpe.com) in Legal.
+./publiccloud/api/cdn-api.dita:    "type": "hpext:cdn",
+./publiccloud/api/dbaas-api.dita:      "type": "hpext:dbaas",
+./publiccloud/api/dns-api.dita:      "type": "hpext:dns",
+./publiccloud/api/dns-api.dita:    "type": "hpext:dns",
+./publiccloud/api/keystone-api.dita:        "type": "hpext:cdn",  
+./publiccloud/api/keystone-api.dita:        &lt;service type="hpext:cdn" id="150"&gt;  
+./publiccloud/api/keystone-api.dita:        "type": "hpext:cdn",  
+./publiccloud/api/keystone-api.dita:        &lt;service type="hpext:cdn" id="150"&gt;  
+./publiccloud/api/keystone-api.dita:            &lt;hpext&gt;  
+./publiccloud/api/keystone-api.dita:            &lt;/hpext&gt;               
+./publiccloud/api/keystonev2-api.dita:&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;access xmlns="http://docs.openstack.org/identity/api/v2.0" xmlns:hpext="http://www.hp.com/identity/api/ext/HP-IDM/v1.0" xmlns:ns3="http://docs.openstack.org/common/api/v1.0" xmlns:ns4="http://www.w3.org/2005/Atom"&gt;&lt;token id="HPAuth_767eaf4d50bee574eefb8e3b1081bde75edf31c59f806e35a8793296247aa7f9" expires="2012-10-10T11:09:38.813Z"&gt;&lt;tenant id="62424047631429" name="conser4301_swift"/&gt;&lt;/token&gt;&lt;user id="97539030347757" name="conser4301" domainStatus="enabled"&gt;&lt;roles&gt;&lt;role id="00000000004004" name="domainuser" serviceId="100"/&gt;&lt;role id="00000000004022" name="Admin" serviceId="110" tenantId="62424047631429"/&gt;&lt;role id="00000000004003" name="domainadmin" serviceId="100"/&gt;&lt;/roles&gt;&lt;/user&gt;&lt;/access&gt;
+./publiccloud/api/nova-api.dita:        "private_key": "-----BEGIN RSA PRIVATE KEY-----\nMIICXAIBAAKBgQChJO5vnbzIRU45LFdm5ohdFtIDQo1jPB1xSnWu2vJtyw5wGFjo\nclpuFLstPMRDixloNTh36ff3XnW6Nb4CTpm5Vwz0V6Im2q56vTbS246Lw0+3fDSr\nnmwFkuJ7rqI5AKZkN4zJg/iJdsuJ768K7yVzwMHP/FWy6bUdRZm5ETjM2wIDAQAB\nAoGAae+pgF8mWFKXliZ8Xv128BusfNAnuvEuOehFbWoqrdsr5q1a5ZUnte6TDq5A\nKFctoMA8GzkI9up2YrAp9cJOc+qYwNakMq1IQ/psxH7uga3Ey8aa3sTjUFK+rxMW\nZF5swcatcKiu7TzEgg5vcmfQr4r+547cihhWBKApEknt56ECQQDPEOq+aYhtthzg\ngisuYsOlB4bUpLTJUNZDLeO9UM7R5sIELblmOIfvoyqCY8bU4ZiPvMdFfkcajCva\nk51TIjcFAkEAxznWHyUfJEud5k2nJ8UUIAzDFv4YQEL25halw8tkl6bXxqnQ1Z44\njTVDAdsaIi9fVz8/0hQYDBlks41g6XZ6XwJBAK5uadGNxUfmqdzWytmAiZ9z/7kS\nJtmQJ27gMYFBmXhpE/fBLPVXmevdX+oHc2/Ru1sahCOehPdwLWEsCNQHdqECQGEg\nulp+z5rzXqzcKOVDuNcTQb2g7ZPO0e5FFlXJgGZLCiGpws2SkMGPOPbbqfcGn3W6\nuVOjRkIH00eSYrAPegMCQBpXlXHyLLNzmvnqQtSuC+efX90wcvsVPd1ytT7EHTSX\nv4gpK7hK3EyKStTsaADbYNjlh/mrMU2Q8Zlu7ybUI2Q=\n-----END RSA PRIVATE KEY-----\n",
+./publiccloud/api.dita:<b>Note</b>: This service requires activation while in private beta; please <xref href="https://horizon.hpcloud.com/landing/pbr/hpext:lbaas" scope="external" format="html" >request access on our sign-up page</xref>.  Service use is free of charge during the private beta period.    </li>
+./publiccloud/cli.windows.2.containers-and-folders.dita:hpext:cdn           CDN                     Unknown
+./publiccloud/cli.windows.2.containers-and-folders.dita:hpext:cdn           CDN                     Unknown
+./publiccloud/cli.windows.2.containers-and-folders.dita:Type            : hpext:cdn
+./publiccloud/lbaas.dita:<p>The HP Helion Public Cloud Load Balancer Service is currently in private beta.  Please <xref href="https://horizon.hpcloud.com/landing/pbr/hpext:lbaas" scope="external" format="html" >request access on our sign-up page</xref>.  Service use is free of charge during the private beta period.</p>
+./publiccloud/services.dita:<xref href="../publiccloud/lbaas.dita" >Load Balancer</xref> -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.<!--A BR tag was used here in the original source.--><b>Note</b>: This service requires activation while in private beta; please <xref href="https://horizon.hpcloud.com/landing/pbr/hpext:lbaas" scope="external" format="html" >request access on our sign-up page</xref>.  Service use is free of charge during the private beta period.</li>

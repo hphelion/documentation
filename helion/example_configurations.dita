@@ -168,7 +168,7 @@
         access). These virtual machines are created automatically by HP Helion OpenStack as part of
         activating the vCenter cluster, and are therefore not defined in the example.</p>
       <p><image href="../media/examples/entry_scale_esx.png"/></p>
-      <!-- HPE
+      <!-- HP
         <p><image href="../media/examples/entry_scale_esx_hpe.png"/></p>
         <p><xref href="../media/examples/entry_scale_esx_hpe_lg.png" scope="external" format="html">Download a high-res version</xref></p>
         -->
@@ -590,7 +590,7 @@
           <codeph>server_roles.yml</codeph> that tells the system how to configure the disks and
         network interfaces for this server. Roles are also used to define which servers can be used
         for specific purposes. Adding and changing roles is beyond the scope of this walkthrough -
-        for more details refer to <xref href="input_model.dita">HPE Helion OpenStack 2.0 Input
+        for more details refer to <xref href="input_model.dita">HP Helion OpenStack 2.0 Input
           Model</xref>.</p>
       <p><b>server-group</b></p>
       <p><codeph>server-group</codeph> tells the system how this server is physically related to
@@ -598,7 +598,7 @@
         selected from different physical groups. The example provides a set of server groups that
         divide the servers into three sets called "RACK1", "RACK2", and "RACK3". Modifying the
         server group structure is beyond the scope of this walkthrough - for more details refer to
-          <xref href="input_model.dita">HPE Helion OpenStack 2.0 Input Model</xref>.</p>
+          <xref href="input_model.dita">HP Helion OpenStack 2.0 Input Model</xref>.</p>
       <p><b>nic-mapping</b></p>
       <p><codeph>nic-mapping</codeph> is the name of a network port mapping definition (see <xref
           href="example_configurations.dita#example_configurations/nicmappings"
