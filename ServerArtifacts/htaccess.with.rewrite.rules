@@ -7,6 +7,7 @@ Options +FollowSymLinks
 RewriteEngine on
 #
 #
+RewriteRule ^permalink/helion-openstack/brokenfortest?$ http://dixocs.hpcloud.com/#helion/identity/identity_ldap.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/identity/identity_ldap?$ http://docs.hpcloud.com/#helion/identity/identity_ldap.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/monasca?$ http://docs.hpcloud.com/#helion/operations/monitoring_service.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/administration/configure_monitoring.html?$ http://docs.hpcloud.com/#helion/operations/opsconsole_overview.html [NE,R=301,L]
@@ -15,7 +16,7 @@ RewriteRule ^permalink/helion-openstack/2.0/cinder_vsa?$ http://docs.hpcloud.com
 RewriteRule ^permalink/helion-openstack/2.0/installation_troubleshooting?$ http://docs.hpcloud.com/#helion/installation/installation_troubleshooting.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/helion/input_model?$ http://docs.hpcloud.com/#helion/input_model.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/supportedconfigs?$ http://docs.hpcloud.com/#helion/example_configurations.html [NE,R=301,L]
-RewriteRule ^permalink/helion-openstack/2.0/blockstorage_ceph_ceph_overview?$ http://docs-staging.hpcloud.com/hos2.0ga/#helion/blockstorage/ceph/ceph_overview.html  [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/blockstorage_ceph_ceph_overview?$ http://docs.hpcloud.com/hos2.0ga/#helion/blockstorage/ceph/ceph_overview.html  [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/opsconsole_overview?$ http://docs.hpcloud.com/#helion/operations/opsconsole/overview.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/opsconsole_dashboard?$ http://docs.hpcloud.com/#helion/operations/opsconsole/dashboard.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/opsconsole_logging?$ http://docs.hpcloud.com/#helion/operations/opsconsole/logging.html [NE,R=301,L]
