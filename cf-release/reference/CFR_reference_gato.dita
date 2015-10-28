@@ -31,6 +31,10 @@
       <title>Commands</title>
       <dl>
         <dlentry>
+          <dt><filepath>api</filepath></dt>
+          <dd>Set  a <keyword keyref="prodShort"/> config store.</dd>
+        </dlentry>
+        <dlentry>
           <dt><filepath>config</filepath></dt>
           <dd>Manipulate configuration values of <keyword keyref="prodShort"/> components.<ul
               id="ul_x4n_dtj_rt">
@@ -68,10 +72,6 @@
                 <dd>Show each individual process.</dd>
               </dlentry>
             </dl></dd>
-        </dlentry>
-        <dlentry>
-          <dt><filepath>target</filepath></dt>
-          <dd>Target a <keyword keyref="prodShort"/> config store.</dd>
         </dlentry>
       </dl>
     </section>

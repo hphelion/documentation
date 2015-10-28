@@ -58,11 +58,18 @@
      <dd>If you have worked with the <xref
        href="http://www8.hp.com/us/en/cloud/helion-devplatform-overview.html" format="html"
        scope="external">HPE Helion Development Platform</xref> before, <keyword keyref="prodShort"/>
-      will allow you to work in a familiar environment that uses <filepath>gato</filepath>, a new
-      command-line administration utility, instead of <filepath>kato</filepath>. For more
+      will allow you to work in a familiar environment that uses <keyword keyref="adminUtil"/>, a
+      new command-line administration utility, instead of <filepath>kato</filepath>. For more
       information, see the <xref href="../reference/CFR_reference_gato.dita#reference_cd3_bs3_rt"
+<<<<<<< HEAD
       />.</dd>
 >>>>>>> 963943a... Added "What's New" section
+=======
+       />.<draft-comment author="michaelk"><keyword keyref="adminUtil"/> communicates with <xref
+        href="https://www.consul.io/" format="html" scope="external">Consul</xref> instead of Cloud
+       Controller and runs within the Docker overlay Virtual Extensible LAN
+      (VXLAN).</draft-comment></dd>
+>>>>>>> f8e0eef... Renamed gato target to gato api + draft comment in What's New
     </dlentry>
    </dl>
   </section>
