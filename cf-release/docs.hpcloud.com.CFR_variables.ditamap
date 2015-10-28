@@ -12,7 +12,7 @@
    <keydef keys="corpShort">
       <topicmeta>
          <keywords>
-            <keyword>HP Enterprise</keyword>
+            <keyword>HPE</keyword>
          </keywords>
       </topicmeta>
    </keydef>
@@ -75,7 +75,7 @@
    <keydef keys="prodVerLong">
       <topicmeta>
          <keywords>
-            <keyword>1.0.0.96</keyword>
+            <keyword>1.0.0.102</keyword>
          </keywords>
       </topicmeta>
    </keydef>
