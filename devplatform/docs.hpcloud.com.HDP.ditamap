@@ -36,6 +36,7 @@
     <topichead navtitle="Service Monitoring">
       <topicref href="2.0/monitoring/devplatform.database-monitor.dita"/>
       <topicref href="2.0/monitoring/devplatform.database-monitor-cli.dita"/>
+      <topicref href="2.0/monitoring/devplatform.messaging-monitor.dita"/>
     </topichead>
     <topichead navtitle="Windows Reference">
       <topicref href="2.0/windows/windows_overview.dita" locktitle="yes" navtitle="Windows Overview"/>
