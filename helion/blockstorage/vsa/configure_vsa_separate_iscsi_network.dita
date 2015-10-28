@@ -11,14 +11,14 @@
     <section>
       <p>
         <ol id="ol_g4m_wyn_5t">
-          <li>Login in to the deployer/lifecycle-manager node.</li>
+          <li>Log in to the deployer/lifecycle-manager node.</li>
           <li>Edit the following files at <codeph>~/helion/my_cloud/definition/data</codeph> to
-            assign a separate iSCSI network to Controller nodes, Compute nodes, and VSA
+            assign a separate iSCSI network to controller nodes, compute nodes, and VSA
               nodes:<note>The input YAML files need to be changed during the cloud
               deployment.</note><ol id="ol_pz5_214_5t">
               <li><codeph>networks.yml</codeph>: Enter the name of the network-group as shown in the
-                sample below. In the following sample, the name of the network-group is "ISCSI" and
-                this name should remain consistent in other files
+                example below. In the following example, the name of the network-group is "ISCSI"
+                and this name should remain consistent in other files
                 too.<codeblock>- name: NET_ISCSI
   vlanid: 3287
   tagged-vlan: true
@@ -99,7 +99,7 @@
         - vsa</codeblock></li>
               <li><codeph>server_groups.yml</codeph><codeblock>server_groups.yml
       networks:
-#       Define the Global networks shared across all the Racks
+     #Define the Global networks shared across all the Racks
         - NET_EXTERNAL_API
         - NET_EXTERNAL_VM
         - NET_TENANT
@@ -110,8 +110,8 @@
           <li>Commit your
             changes.<codeblock>git add -A
 git commit -m "Add Node &lt;name>"</codeblock></li>
-          <li>Run the configuration
-            processor:<codeblock>cd ~/helion/hos/ansible
+          <li>Run the Configuration
+            Processor:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <li>Run the following command to create a deployment
             directory.<codeblock>cd ~/helion/hos/ansible

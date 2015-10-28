@@ -182,13 +182,19 @@
                 <entry>HTTP Status</entry>
                 <entry>component=cue-api</entry>
                 <entry>API is unresponsive</entry>
-                <entry/>
+                <entry>Restart Apache</entry>
               </row>
               <row>
                 <entry>Process Check</entry>
-                <entry>process_name=cue-api</entry>
-                <entry>Process crashed</entry>
-                <entry/>
+                <entry>process_name=cue-worker</entry>
+                <entry>Supervisor stopped</entry>
+                <entry>Use supervisor to start all workers</entry>
+              </row>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=cue-monitor</entry>
+                <entry>cue-monitor process crashed</entry>
+                <entry>Restart cue-monitor service</entry>
               </row>
             </tbody>
           </tgroup>
@@ -211,13 +217,13 @@
             </thead>
             <tbody>
               <row>
-                <entry>Process Check</entry>
+                <entry>HTTP Status</entry>
                 <entry>component=glance-api</entry>
                 <entry>The API is unresponsive</entry>
                 <entry>Restart process on affected node. Review logs.</entry>
               </row>
               <row>
-                <entry>Process Check</entry>
+                <entry>HTTP Status</entry>
                 <entry>component=glance-registry</entry>
                 <entry>The Glance registry is unresponsive</entry>
                 <entry>Restart process on affected node. Review logs.</entry>
@@ -246,7 +252,7 @@
             <row>
               <entry>Process Check</entry>
               <entry>process_name=haproxy</entry>
-              <entry>Haproxy is not running on this machine.</entry>
+              <entry>HA Proxy is not running on this machine.</entry>
               <entry>Restart haproxy on the alarming host.</entry>
             </row>
           </tbody>

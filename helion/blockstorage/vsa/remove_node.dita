@@ -95,8 +95,8 @@
           configuration:<pre>cd ~/helion/hos/ansible
 git add -A
 git commit -m &lt;"commit message"></pre></li>
-        <li>Run the configuration
-          processor:<codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+        <li>Run the Configuration
+          Processor:<codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <li>Use the playbook below to create a deployment directory:
           <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
         <li>Verify that the node is removed from <codeph>hosts/verb_hosts</codeph> file.</li>
