@@ -121,26 +121,31 @@ helion/tech-preview            Directory contains the config input files of the 
     </section>
     <section id="configuration">
       <title>Configure Your Environment</title>
-      <p>This part of the install is going to depend on the specific cloud configuration you are
-        going to use.</p>
+      <p>During the configuration phase of the installation you will be making modifications to the
+        example configuration input files to match your cloud environment. You should use the <xref
+          href="../example_configurations.dita">Example Configurations</xref> documentation for
+        detailed information on how to do this. There is also a README.md file included in each of
+        the example directories on the lifecycle-manager that has useful information about the
+        models.</p>
+      <p>In the steps below we show how to set up the directory structure with the example input
+        files as well as use the optional encryption methods for your sensitive data.</p>
       <ol>
         <li>Setup your configuration files, as follows: <ol>
-            <li>See the sample sets of configuration files in the
-                <codeph>~/helion/examples/</codeph> directory. Each set will have an accompanying
-              README.md file that explains the contents of each of the configuration files.</li>
             <li>Copy the example configuration files into the required setup directory and edit them
               to contain the details of your environment. <p>For example, if you wanted to use the
                 Helion Entry-scale KVM with VSA model, you could use this command to copy the files
                 to your cloud definition directory:</p>
               <codeblock>cp -r ~/helion/examples/entry-scale-kvm-vsa/* ~/helion/my_cloud/definition/</codeblock>
-              <p><note>If you are using the Entry-scale KVM with Ceph model, see <xref
-                    href="configure_ceph.dita#config_ceph/config_files">Ceph Configuration</xref>
-                  for details.</note></p></li>
-            <li>Begin inputting your environment information into the configuration files in the
-                <codeph>~/helion/my_cloud/definition</codeph> directory. <p>Full details of how to
-                do this can be found here: <xref href="../example_configurations.dita">Example
-                  Configurations</xref>.</p>
             </li>
+            <li>Begin inputting your environment information into the configuration files in the
+                <codeph>~/helion/my_cloud/definition</codeph> directory. <p>For the Entry-scale KVM
+                with VSA model, see <xref
+                  href="../example_configurations.dita#example_configurations/modify_entryscale_kvm_vsa"
+                  >Modifying the Entry-scale KVM with VSA model for your Environment</xref> for
+                details.</p>
+              <p>If you are using the Entry-scale KVM with Ceph model, see <xref
+                  href="configure_ceph.dita#config_ceph/config_files">Configuring Your Ceph
+                  Environment Input Files</xref> for details.</p></li>
           </ol>
           <p>Optionally, you can use the <codeph>hosencrypt.py</codeph> script to encrypt your iLo
             passwords. This script uses OpenSSL.</p>
