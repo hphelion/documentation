@@ -1,12 +1,16 @@
 # HPE Helion Cloud Foundry Documentation
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 This is the documentation for Helion Cloud Foundry. It is written in [DITA XML](http://dita.xml.org/) and is stored in this version branch. For any questions, contact Michael Khmelnitsky ([mig281](mailto:https://github.com/mig281)) at <michael.khmelnitsky@hpe.com>.
 
 ## Navigating the Document
 * `docs.hpcloud.com.ditamap` The ditamap that links to the main <docs.hpcloud.com> TOC
 =======
 This is the documentation for Helion Cloud Foundry. It is written in [DITA XML](http://dita.xml.org/) and is stored in a version branch. For any questions, contact Michael Khmelnitsky ([mig281](mailto:https://github.com/mig281)) at <michael.khmelnitsky@hpe.com>.
+=======
+This is the documentation for Helion Cloud Foundry. It is written in [DITA XML](http://dita.xml.org/) and is stored in this version branch. For any questions, contact Michael Khmelnitsky ([mig281](mailto:https://github.com/mig281)) at <michael.khmelnitsky@hpe.com>.
+>>>>>>> 0461b78... Update README.md
 
 ## Navigating the Document
 * `docs.hpcloud.com.ditamap` The ditamap that links to the <docs.hpcloud.com> TOC
