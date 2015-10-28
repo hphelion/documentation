@@ -58,12 +58,11 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
                       variables.</uicontrol></li>
                 </ul></note></li>
             <li>Decompress the <keyword keyref="prodShort"/> file into a convenient directory.</li>
-            <li>Navigate to the <keyword keyref="prodShort"/> directory and ensure that it contains
-              a <filepath>tfvars</filepath> file. Your <filepath>tfvars</filepath> file should
-              contain the credentials and keys for your cluster.</li>
-            <li>Configure the necessary values in your <filepath>tfvars</filepath> file, using the
-              included <filepath>overrides.tfvars.sample</filepath> file as a guide.<note>For more
-                information, see <xref
+            <li>Navigate to the <keyword keyref="prodShort"/> directory and copy the
+                <filepath>overrides.tfvars.sample</filepath> file, for example to
+                <filepath>myVars.tfvars</filepath>.</li>
+            <li>Add the necessary keys and credentials for your cluster to your
+                <filepath>tfvars</filepath> file.<note>For more information, see <xref
                   href="../../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt">Terraform
                   Variables</xref>.</note></li>
             <li>Run the following
