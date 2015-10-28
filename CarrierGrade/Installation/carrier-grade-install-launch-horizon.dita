@@ -26,7 +26,7 @@
       <ol>
         <li>Locate the <codeph>hcg_1.1.0_horizon_patch1.tar</codeph> file you downloaded to the HLM
           host and extract the files.</li>
-        <li>From the HLM VM, SSH into any controller node using the default credentials: <p>
+        <li>From the Helion lifecycle management VM, SSH into any controller node using the default credentials: <p>
           <codeblock>User Name: cghelion
 Password: cghelion</codeblock>
         </p></li>
@@ -46,7 +46,7 @@ Password: cghelion</codeblock>
       <title>Import the Horizon browser certificate</title>
       <p>After applying the Horizon patch, you need to import the Horizon security certificate
         (<codeph>ca.crt</codeph>) into your browser. The <codeph>ca.crt</codeph> is available in
-        the HLM VM in the <codeph>~/&lt;cloudname></codeph> folder.</p>
+        the Helion lifecycle management VM in the <codeph>~/&lt;cloudname></codeph> folder.</p>
       <p>Use the instructions provided by the browser manufacturer to import the
         <codeph>ca.crt</codeph> file. For a list of browsers supported by OpenStack, see <xref
           href="https://wiki.openstack.org/wiki/Horizon/BrowserSupport" format="html"
@@ -57,7 +57,7 @@ Password: cghelion</codeblock>
     <section><title>Disabling the root user</title>
       <p>For security purposes, we strongly recommend disabling root. After the <codeph>root</codeph>
         user is disabled, you can use another default user account, <codeph>cghelion</codeph> to
-        access the HLM VM and any actions that require root access should be done using
+        access the Helion lifecycle management VM and any actions that require root access should be done using
         <codeph>sudo</codeph>.</p>
       <p>Execute the following command to run a script that disables the <codeph>root</codeph> user. </p>
       <codeblock>sudo /root/cg-hlm/dev-tools/disable-root.sh</codeblock>

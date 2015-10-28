@@ -34,19 +34,19 @@
   
 </section>
 <section id="prepare"> <title>Prepare the system for deployment</title>
-<p>Use the following steps to prepare the server on which the HLM VM will be deployed (the HLM host):</p>
+<p>Use the following steps to prepare the server on which the Helion lifecycle management VM will be deployed (the Helion lifecycle management host):</p>
 <ol>
-        <li>Log into the HLM host using the default credentials</li>
+        <li>Log into the Helion lifecycle management host using the default credentials</li>
 
   <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your
           environment. For information on each variable, refer to the comments in the file with each
           variable. <p>The <codeph>group_vars/all</codeph> file should appear similar to the
             following for a KVM + ESX
           deployment:</p><codeblock>
-    ############################################# Variables for HLM  #################################################################
+    ############################################# Variables for Helion lifecycle management  #################################################################
     #These variables are relevant in both All Virtual and BareMetal scenarios.
     
-    #Set this to 1 if you will not deploy a dcn cloud via this HLM node and will deploy only ovs cloud
+    #Set this to 1 if you will not deploy a dcn cloud via this Helion lifecycle management node and will deploy only ovs cloud
     ovs_cloud_only:  0
     
     #Set this to 'bm' if cloud is being deployed over baremetal.
@@ -81,16 +81,16 @@
   192.168.122.1 </codeblock>
 </section>
 <section id="deploy-the-hlm-and-vsd-vm">
-      <title>Deploy the HLM Virtual Machine</title>
-      <p>Use the following steps on the HLM host to deploy the HLM VM on the HLM Host using Ansible
+      <title>Deploy the Helion lifecycle management Virtual Machine</title>
+      <p>Use the following steps on the Helion lifecycle management host to deploy the Helion lifecycle management VM on the Helion lifecycle management Host using Ansible
         playbooks.</p>
       <ol>
-        <li>Execute the following command:<codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock><!-- The command will do the following:<ul><li>Copy both installation files (tar balls) to the HLM host, decrypt, and extract the files.</li><li>Execute the <codeph>updatepackages</codeph> command.</li><li>Execute the <codeph>prepareenv</codeph> command.</li><li>Execute the <codeph>Init cobbler</codeph> command.</li><li>Execute the <codeph>Importiso</codeph> command.<p>You will see a message similar to the following image when the playbook is run successful:</p></li></ul>-->
+        <li>Execute the following command:<codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock><!-- The command will do the following:<ul><li>Copy both installation files (tar balls) to the Helion lifecycle management host, decrypt, and extract the files.</li><li>Execute the <codeph>updatepackages</codeph> command.</li><li>Execute the <codeph>prepareenv</codeph> command.</li><li>Execute the <codeph>Init cobbler</codeph> command.</li><li>Execute the <codeph>Importiso</codeph> command.<p>You will see a message similar to the following image when the playbook is run successful:</p></li></ul>-->
           <image href="../../media/CGH-ansible-playbook-run.png" id="image_bfp_pjm_vs">
             <alt>Sample Ansible Playbook run output</alt>
           </image></li>
-        <li>Locate the IP address for the HLM VM in the
-            <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the HLM host under
+        <li>Locate the IP address for the Helion lifecycle management VM in the
+            <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the Helion lifecycle management host under
             <codeph>hlm_clmstaticip</codeph> field. You will use this IP address to SSH into the HLM
           VM during the HP Helion OpenStack Carrier Grade installation process.</li> 
       </ol>

@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Applying the HLM Port Security
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Applying the Helion lifecycle management Port Security
     Patch</title>
   <prolog>
     <metadata>
@@ -16,13 +16,13 @@
   </prolog>
   <body>
     <p><!--Based on https://wiki.hpcloud.net/display/HCG/.Helion+CG+1.1+GA+Patch+Instructions--></p>
-    <p>The HLM VM has all its ports open for inbound and outbound access after it has been deployed.
-      The HLM ports must be open for inbound access from all the cloud nodes</p>
-    <p>If security is a concern, all ports on HLM except for the standard ports like SSH, HTTP,
+    <p>The Helion lifecycle management VM has all its ports open for inbound and outbound access after it has been deployed.
+      The Helion lifecycle management ports must be open for inbound access from all the cloud nodes</p>
+    <p>If security is a concern, all ports on Helion lifecycle management except for the standard ports like SSH, HTTP,
       HTTPS etc must be blocked for inbound access.</p>
-    <p>This patch secures all ports on the HLM VM. The standard protocol ports will allow inbound
+    <p>This patch secures all ports on the Helion lifecycle management VM. The standard protocol ports will allow inbound
       access only and the only the cloud nodes will have inbound access to the other ports of the
-      HLM VM.</p>
+      Helion lifecycle management VM.</p>
     <p>If your HP Helion OpenStack Carrier Grade cloud is being used in a production environment, we
       recommend applying this patch. If your cloud is in a proof-of-concept (POC) environment, where
       external access is not a concern, this patch is not recommended and is not necessary.</p>
@@ -31,7 +31,7 @@
       >Prerequisites</xref>.</p>
     <p>Use the following steps to apply this patch:</p>
     <ol>
-      <li>Log into the HLM host.</li>
+      <li>Log into the Helion lifecycle management host.</li>
       <li>Copy the <codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph> file to the
           <codeph>~/patch_cghelion1.1</codeph> directory.
         <codeblock>cp secure_HLM_ports_patch_1.1.tar.gz ~/patch_cghelion1.1</codeblock></li>
@@ -60,7 +60,7 @@ ssl_cert_file: /root/ovs/ca.crt
 --------</codeblock></li>
       <li>Run following command:
         <codeblock>cd ~/&lt;cloudname&gt;/clouds/&lt;cloudname&gt;/001/stage/ansible/ansible-playbook -i hosts secureHLM.yml --ask-pass</codeblock></li>
-      <li> Enter the password for the HLM root user (by default, <codeph>cghelion</codeph>) and hit
+      <li> Enter the password for the Helion lifecycle management root user (by default, <codeph>cghelion</codeph>) and hit
         enter.</li>
       <li>This should run the hlmiptables role which will secure all ports on HLM</li>
     </ol>

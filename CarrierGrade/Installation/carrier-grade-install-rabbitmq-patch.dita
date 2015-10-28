@@ -33,11 +33,11 @@ rmq_service_user: guest          </codeblock><p>The
         <li>The Nova and Neutron services will be set to use the password
             <codeph>metada_shared_secret</codeph>.</li>
       </ul><p>The services will communicate with RabbitMQ using the newly defined password.
-        </p><b>Note:</b> You need the Ubuntu patch utility installed on the HLM host. If you do not
+        </p><b>Note:</b> You need the Ubuntu patch utility installed on the Helion lifecycle management host. If you do not
       have the utility installed, use the following
         command:<codeblock>apt-get install patch</codeblock><p>To apply the patch:</p><ol
         id="ol_dhy_1pj_dt">
-        <li>Log into the HLM host.</li>
+        <li>Log into the Helion lifecycle management host.</li>
         <li>Copy the <codeph>random-password.tar.gz</codeph> to the
             <codeph>~/patch_cghelion1.1</codeph> directory.
           <codeblock>cp random-password.tar.gz ~/patch_cghelion1.1</codeblock></li>

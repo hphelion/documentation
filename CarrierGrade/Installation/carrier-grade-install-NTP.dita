@@ -22,7 +22,7 @@
       (NTP) and <xref type="section" href="#topic4740/server">instlling an NTP server on the HLM
         host</xref>.</p>
 <p>HP Helion OpenStack Carrier Grade requires that all servers point to the same NTP server. You can
-      use an external NTP server or configure the HLM host as a server.</p>
+      use an external NTP server or configure the Helion lifecycle management host as a server.</p>
 <p>
   <b>Notes:</b>
 </p>
@@ -30,10 +30,10 @@
 <li>NTP clients should use only stratum 2 and higher servers (meaning stratum 1 or stratum 0).</li>
 <li>All the Helion servers use UTC as a time zone.</li>
 </ul>
-<section id="server"> <title>Install an NTP server on the HLM host</title>
+<section id="server"> <title>Install an NTP server on the Helion lifecycle management host</title>
 <p>To configure an NTP server, follow these steps:</p>
 <ol>
-<li>Log in to the HLM host.<codeblock><codeph>sudo su -
+<li>Log in to the Helion lifecycle management host.<codeblock><codeph>sudo su -
 </codeph></codeblock></li>
 <li>Install the NTP package using the following
           command:<codeblock><codeph>sudo apt-get install ntp

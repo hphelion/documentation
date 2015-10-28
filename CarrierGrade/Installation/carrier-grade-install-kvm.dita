@@ -27,12 +27,12 @@
         Deployment</xref>.</p>
     
     <section>
-      <title>Log into the HLM VM</title>
-      <p>Log into the HLM VM you created in the previous page.</p>
+      <title>Log into the Helion lifecycle management VM</title>
+      <p>Log into the Helion lifecycle management VM you created in the previous page.</p>
       <ol>
-        <li>Login to HLM VM.
+        <li>Login to Helion lifecycle management VM.
             <codeblock>ssh &lt;HLM_VM_IP>
-where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
+where: HLM_VM_IP is the CLM IP of the Helion lifecycle management VM. </codeblock><p>Use
             the <codeph>cghelion</codeph> credentials:
             <codeblock>User Name: cghelion
 Password: cghelion</codeblock></p><p><b>Important:</b>
@@ -40,7 +40,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
               <codeph>cghelion</codeph> user. </p></li>
         <li>Execute the following command to switch to the root
           user:<codeblock>sudo su -</codeblock></li>
-        <li>On the HLM VM, change to the home directory.<codeblock>cd ~</codeblock></li>
+        <li>On the Helion lifecycle management VM, change to the home directory.<codeblock>cd ~</codeblock></li>
       </ol></section>
     
     <section id="configure-a-json-file-for-installation">
@@ -106,7 +106,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
             </tgroup>
           </table><p>To see a sample <codeph>node-provision.json</codeph> file, see<xref
             href="carrier-grade-install-pb-kvm-only-json.dita">Sample JSON File for the
-              HLM Virtual Machine Installation</xref>. </p></li>
+              Helion lifecycle management Virtual Machine Installation</xref>. </p></li>
         <li>Modify the <codeph>environment.json</codeph> file to configure the VLANs and network
           addresses as appropriate for your environment. Set the following for the CLM, CAN, and BLS
           network:<codeblock>"cidr": 
@@ -280,7 +280,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
     <section id="pxe-boot">
       <title>Configure PXE boot</title>
       <p>After you edit the <codeph>node-provision.json</codeph> file, you must enable one-time PXE
-        boot on the servers set the correct boot order. Execute the following on the HLM VM:</p>
+        boot on the servers set the correct boot order. Execute the following on the Helion lifecycle management VM:</p>
       <ol>
         <li>Copy the <codeph>ilopxebootonce.py</codeph> from the
             <systemoutput>/root/cg-hlm/dev-tools/ilopxebootonce.py</systemoutput> to the directory
@@ -479,17 +479,17 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
         controller nodes in the non-KVM region. </p>
       <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581">Configuring LDAP CLI Support</xref></p>
     </section>
-    <section><title>Applying the HLM Port Security Patch</title>This patch secures all ports on the
-      HLM VM. The standard protocol ports will allow inbound access only and the only the cloud
-      nodes will have inbound access to the other ports of the HLM VM.<p>For more information, see
+    <section><title>Applying the Helion lifecycle management Port Security Patch</title>This patch secures all ports on the
+      Helion lifecycle management VM. The standard protocol ports will allow inbound access only and the only the cloud
+      nodes will have inbound access to the other ports of the Helion lifecycle management VM.<p>For more information, see
         the README in the download or <xref
-          href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port
+          href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the Helion lifecycle management Port
           Security Patch</xref>.</p></section>    
     <section>
       <title>Disable the Root User</title>
       <p>For security purposes, we strongly recommend disabling root. After the
         <codeph>root</codeph> user is disabled, you can use another default user account,
-        <codeph>cghelion</codeph> to access the HLM VM and any actions that require root access
+        <codeph>cghelion</codeph> to access the Helion lifecycle management VM and any actions that require root access
         should be done using <codeph>sudo</codeph>.</p>
       <p>For more information, see <xref href="carrier-grade-install-disable-root.dita#topic10581"
         >Disabling the Root User</xref>.</p>

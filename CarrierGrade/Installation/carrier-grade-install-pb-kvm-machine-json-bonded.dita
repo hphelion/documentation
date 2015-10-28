@@ -20,10 +20,10 @@
  <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
     <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing the
                 KVM + ESX deployment</xref> requires several JSON files that will be used when
-            deploying the HLM VM.</p>
+            deploying the Helion lifecycle management VM.</p>
 <section id="sample-node-provisionjson-file">
   <p>The following represents a sample <codeph>machine_architecture.json</codeph> file in the
-                    <codeph>/opt/share/hlm/1/site/</codeph> directory of the HLM VM for <xref
+                    <codeph>/opt/share/hlm/1/site/</codeph> directory of the Helion lifecycle management VM for <xref
                     href="carrier-grade-install-pb-overview.dita#topic1925/nic">a bonded NIC
                     installation</xref>. Use values appropriate for your environment.</p>
             <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
@@ -69,7 +69,7 @@
     
     
     <p> NOTE: The Helion Configuration Processor assigns the first address of the CLM address range to itself for serving python 
-        and debian repositories. Make sure that you set the first IP address of the CLM range for the eth2 (CLM) address of the HLM node.</p>
+        and debian repositories. Make sure that you set the first IP address of the CLM range for the eth2 (CLM) address of the Helion lifecycle management node.</p>
     
         </section>
 </body>

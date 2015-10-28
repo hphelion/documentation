@@ -32,12 +32,12 @@
       information on these topologies.</p>
     <section id="hardware">
       <title>Supported Hardware</title>
-      <p>The following servers are supported for the HLM host, and for the controllers and compute
+      <p>The following servers are supported for the Helion lifecycle management host, and for the controllers and compute
         servers.</p>
       <p><b>Note:</b>
         <i><b>For the KVM + ESX cloud</b></i>, consult the DCN and ESX documentation for the
         supported hardware.</p>
-      <p><b id="hlm">HLM Host</b> The HLM host is a single server with at least a 40 GB disk size
+      <p><b id="hlm">HLM Host</b> The Helion lifecycle management host is a single server with at least a 40 GB disk size
         and 8,192 MB RAM.</p>
       <p id="controllers"><b>Comtrollers and compute servers</b> The following servers are supported
         for the controllers and compute servers in both the <xref
@@ -280,7 +280,7 @@
                 </p><p><b>Note:</b> These systems are not required for a KVM-only cloud.</p></li></ul></p>
     </section>
 
-  <section id="software"><title>Software Requirements</title><p><b>HLM Host</b>. The HLM host
+  <section id="software"><title>Software Requirements</title><p><b>HLM Host</b>. The Helion lifecycle management host
         requires the Ubuntu Server 14.04.2 LTS operating system. </p>
     <p><b>HP Helion OpenStack Controllers</b>. The servers should be baremetal. The HP Helion
         OpenStack Carrier Grade installation process installs the required software.</p>
@@ -293,7 +293,7 @@
   
   <section id="guestOS"><title>Supported Guest Operating Systems</title> The following guest
       operating systems (guest OSs) are supported for the HP Helion OpenStack Carrier Grade servers.
-          <p><b>HLM Host</b>. There are no supported guest OSs for the HLM host server. </p><p><b>HP
+          <p><b>HLM Host</b>. There are no supported guest OSs for the Helion lifecycle management host server. </p><p><b>HP
           Helion OpenStack Controllers</b>. There are no supported guest OSs for the servers that
         host the HP Helion OpenStack Controllers.</p><p><b>KVM compute and controllers</b>. The
         following Guest OSs are supported for the servers in the KVM region for both cloud

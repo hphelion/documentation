@@ -32,8 +32,8 @@
                                         Helion OpenStack Support Matrix</xref>.</p>
                 </section>
                 <section id="kvm">
-                        <title>Preparing the HLM host</title>
-                        <p>Perform the following tasks on the HLM host:</p>
+                        <title>Preparing the Helion lifecycle management host</title>
+                        <p>Perform the following tasks on the Helion lifecycle management host:</p>
                         <ul>
                                 <li><?oxy_delete author="burkmich" timestamp="20150727T182909-0400" content="&lt;xref href=&quot;#topic7148/proxy&quot; format=&quot;dita&quot;&gt;Configure proxy information &lt;/xref&gt;"?><?oxy_insert_start author="burkmich" timestamp="20150727T182851-0400"?><xref
                                                 href="#topic7148/proxy" format="dita"
@@ -59,28 +59,28 @@
                                 <li><xref href="#topic7148/prepbare" format="dita"/></li>
                         </ul>
                         <title>Install Ubuntu Server 14.04.2 LTS</title>
-                        <p>The HLM host must have Ubuntu Server 14.04.2 LTS installed before
+                        <p>The Helion lifecycle management host must have Ubuntu Server 14.04.2 LTS installed before
                                 performing the HP Helion OpenStack Carrier Grade installation.</p>
                 </section>
                 <!--<section id="pub-key"> <title>Obtain a public key</title>
-<p>On the HLM host, the user <codeph>root</codeph> must have a public key.</p>
+<p>On the Helion lifecycle management host, the user <codeph>root</codeph> must have a public key.</p>
 <ol>
-<li>Launch a terminal and log in to your HLM host as root:<p>sudo su -</p></li>
+<li>Launch a terminal and log in to your Helion lifecycle management host as root:<p>sudo su -</p></li>
 <li>Use the following command to create the key. Accept the default
           values.<p>/root/.ssh/id_rsa</p></li>
 <li>Install the public key into the authorized keys on the HLM
             host:<codeblock><codeph>ssh-copy-id &lt;IP_address&gt;
 </codeph></codeblock><p>Enter the
-            IP address of the default network gateway on the HLM host.</p></li>
+            IP address of the default network gateway on the Helion lifecycle management host.</p></li>
 </ol>
 </section>
 -->
                 <section id="proxy">
                         <title>Configure proxy information</title>
-                        <p>Before you begin your installation on the HLM host, configure the proxy
+                        <p>Before you begin your installation on the Helion lifecycle management host, configure the proxy
                                 information for your environment using the following steps:</p>
                         <ol>
-                                <li>Launch a terminal and log in to your HLM host as
+                                <li>Launch a terminal and log in to your Helion lifecycle management host as
                                         root:<codeblock><codeph>sudo su -
 </codeph></codeblock></li>
                                 <li>Edit the <codeph>/etc/environment</codeph> file to add the
@@ -89,7 +89,7 @@
 export http_proxy=http://&lt;web_proxy_IP&gt;/
 export https_proxy=http://&lt;web_proxy_IP&gt;/
 </codeph></codeblock><p>Where:</p><codeblock>&lt;web_proxy_IP> is your web proxy IP address.
-&lt;HLM_host_IP_address> is the IP address of the HLM Host</codeblock></li>
+&lt;HLM_host_IP_address> is the IP address of the Helion lifecycle management Host</codeblock></li>
                                 <li>Source the <codeph>environments</codeph>
                                         file:<codeblock><codeph>source /etc/environment
 </codeph></codeblock></li>
@@ -133,7 +133,7 @@ export https_proxy=http://&lt;web_proxy_IP&gt;/
                                         network.<codeblock><codeph>sudo su -c 'echo "8021q" &gt;&gt; /etc/modules'
 </codeph></codeblock></li>
                                 <li>Reboot the server</li>
-                                <li>Log out and re-login to the HLM host to activate the proxy
+                                <li>Log out and re-login to the Helion lifecycle management host to activate the proxy
                                         configuration.</li>
                         </ol>
                 </section>
@@ -177,20 +177,20 @@ fi
                         </image></section>
                 <section id="ntp">
                         <title>Install and configure NTP</title>
-                        <p>You must configure the HLM Host as an NTP client.</p>
-                        <p>You can install NTP on the HLM host and configure it as an NTP server.
+                        <p>You must configure the Helion lifecycle management Host as an NTP client.</p>
+                        <p>You can install NTP on the Helion lifecycle management host and configure it as an NTP server.
                                 Or, you can use a pre-existing NTP server that is reachable from the
                                 management network. </p>
-                        <p>For information on configuring the HLM host as an NTP client, see <xref
+                        <p>For information on configuring the Helion lifecycle management host as an NTP client, see <xref
                                         href="carrier-grade-install-NTP.dita#topic4740/client"
                                 />.</p>
-                        <p>For information on installing NTP on the HLM host, see <xref
+                        <p>For information on installing NTP on the Helion lifecycle management host, see <xref
                                         href="../../CarrierGrade/Installation/carrier-grade-install-NTP.dita"
                                         >Installing an NTP Server</xref>.</p>
                 </section>
                 <section id="ssh">
                         <title>Configure SSH</title>
-                        <p>On the HLM host, the OpenSSH server must be running and the firewall
+                        <p>On the Helion lifecycle management host, the OpenSSH server must be running and the firewall
                                 configuration should allow access to the SSH ports.</p>
                         <ol>
                                 <li>Enable root login in the <codeph>/etc/ssh/sshd_config</codeph>
@@ -293,7 +293,7 @@ StrictHostKeyChecking no </codeblock></li>
                                                   file is named
                                                   <codeph>gre_patch_1.1.tar.gz</codeph>. </li>
                                                 <li>
-                                                  <b>Helion Carrier Grade 1.1.0 secure HLM ports
+                                                  <b>Helion Carrier Grade 1.1.0 secure Helion lifecycle management ports
                                                   patch</b>. The file is named
                                                   <codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph>.</li>
                                                 <li><b>Helion Carrier Grade 1.1.0 random
@@ -322,7 +322,7 @@ StrictHostKeyChecking no </codeblock></li>
                         <title>Verify the downloaded signature</title>
                         <p>After downloading the installation packages, you should verify the
                                 signature of the download. You can use the GPG utility, which is
-                                already installed on the HLM node. Signed by the signature file.</p>
+                                already installed on the Helion lifecycle management node. Signed by the signature file.</p>
                         <p>A set of GPG public keys are available on <xref
                                         href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
                                         format="html" scope="external">Helion Download
@@ -337,7 +337,7 @@ StrictHostKeyChecking no </codeblock></li>
                                         directory:<codeblock>mkdir /root/cg/</codeblock></li>
                                 <li>Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph>
                                         file.<codeblock> tar xvf GPG-HPCSS-Public-Keys.tar </codeblock></li>
-                                <li>Copy the public keys to the HLM host server, extract the keys
+                                <li>Copy the public keys to the Helion lifecycle management host server, extract the keys
                                         from the compressed files. <p>The following keys are
                                                 included in the download:</p><ul id="ul_uzg_xmq_bt">
                                                 <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-1.pub</li>
@@ -466,7 +466,7 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   <entry><codeph>cg-hlm.qcow2</codeph></entry>
                                                   <entry><codeph>hcg_1.1.0.tar</codeph></entry>
                                                   <entry><codeph>/var/lib/libvirt/images</codeph> on
-                                                  the HLM host</entry>
+                                                  the Helion lifecycle management host</entry>
                                                   </row>
                                                   <row>
                                                   <entry><codeph>cg-infra-playbooks.tar.gz.gpg</codeph></entry>
@@ -485,41 +485,41 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   hoscg-update.tgz </codeph></entry>
                                                   <entry>N/A</entry>
                                                   <entry><codeph>~/patch_cghelion1.1/</codeph>
-                                                  directory on the HLM host. You must first create
+                                                  directory on the Helion lifecycle management host. You must first create
                                                   this directory.</entry>
                                                   </row>
                                                   <row>
                                                   <entry><codeph>gre_patch_1.1.tar.gz</codeph></entry>
                                                   <entry>N/A</entry>
-                                                  <entry>Any directory on the HLM host. Make note of
+                                                  <entry>Any directory on the Helion lifecycle management host. Make note of
                                                   the location.</entry>
                                                   </row>
                                                   <row>
                                                   <entry><codeph>compute_proxy_patch_1.1.tar.gz</codeph></entry>
                                                   <entry>N/A</entry>
                                                   <entry><codeph>~/patch_cghelion1.1</codeph>
-                                                  directory on the HLM host. You must first create
+                                                  directory on the Helion lifecycle management host. You must first create
                                                   this directory.</entry>
                                                   </row>
                                                 <row>
                                                   <entry><codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph></entry>
                                                   <entry>N/A</entry>
                                                   <entry><codeph>~/patch_cghelion1.1</codeph>
-                                                  directory on the HLM host. You must first create
+                                                  directory on the Helion lifecycle management host. You must first create
                                                   this directory.</entry>
                                                 </row>
                                                 <row>
                                                   <entry><codeph>random-password.tar.gz</codeph></entry>
                                                   <entry>N/A</entry>
                                                   <entry><codeph>~/patch_cghelion1.1</codeph>
-                                                  directory on the HLM host. You must first create
+                                                  directory on the Helion lifecycle management host. You must first create
                                                   this directory.</entry>
                                                 </row>
                                                 <row>
                                                   <entry><codeph>horizon_web_patch_1.1.tar.gz</codeph></entry>
                                                   <entry>N/A</entry>
                                                   <entry><codeph>~/patch_cghelion1.1</codeph>
-                                                  directory on the HLM host. You must first create
+                                                  directory on the Helion lifecycle management host. You must first create
                                                   this directory.</entry>
                                                 </row>
                                                 <row>
@@ -711,7 +711,7 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                         <title>Next Step</title>
                         <p>
                                 <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Deploying
-                                        the HLM VM and installation services</xref>. </p>
+                                        the Helion lifecycle management VM and installation services</xref>. </p>
                 </section>
         </body>
 </topic>

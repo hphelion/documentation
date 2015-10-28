@@ -22,7 +22,7 @@
       >Prerequisites</xref>.</p>
     <p>To apply the patch:</p>
     <ol id="ol_xr5_4sg_ft">
-      <li>Log in to n the HLM node</li>
+      <li>Log in to n the Helion lifecycle management node</li>
       <li>Copy the patch files to the <codeph>&lt;cloudname></codeph> directory.
           <codeblock>cp hoscg-patchCG-1345.patch hoscg-patchCG-1345.tar.gz ~/&lt;cloudname&gt;</codeblock><p>Where
             <codeph>&lt;cloudname&gt;</codeph> is the name of your cloud.</p></li>
