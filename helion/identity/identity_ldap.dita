@@ -6,21 +6,24 @@
   <body>
     <section><title>Integrating with an external LDAP server</title>
       <p>If your organization, like most, uses an LDAP directory service such as Active Directory,
-        you can integrate it with Keystone by following the steps outlined below. </p> Integration
-      with an external LDAP server is supported via the Keystone domain-specific configuration. <ol>
-        <li>Ensure that domain_specific_drivers_enabled option is set to True in main configuration
-          file template (/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2). </li>
-        <li> Create YAML file which contains definition of LDAP server connection. The sample file
-          below is already provided as part of the installed <xref
+        you can integrate it with Keystone by following the steps outlined below.</p>
+      <p>Integration with an external LDAP server is supported via the Keystone domain-specific
+        configuration.</p>
+      <ol>
+        <li>Ensure that the <codeph>domain_specific_drivers_enabled</codeph> option is set to
+            <codeph>True</codeph> in the main configuration file template in this file:
+          <codeblock>/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2</codeblock></li>
+        <li>Create a YAML file which contains the definition of the LDAP server connection. The
+          sample file below is already provided as part of the lifecycle-managers <xref
             href="../installation/using_git.dita#using_git">local git repository</xref>. It is
-          available on a deployer/lifecycle-manager node as
-            <b>/home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_sample.yml</b>.
-          Save a copy of this file, as, for example,
-            <b>/home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_my.yml</b>.
-            <note>Please refer to [ldap] section of the <xref
+          available on a deployer/lifecycle-manager node in the following file:
+          <codeblock>/home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_sample.yml</codeblock>.
+            <p>Save a copy of this file with a new name, for example:</p>
+          <codeblock>/home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_my.yml</codeblock>
+          <note>Please refer to [ldap] section of the <xref
               href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
               scope="external" format="html">Keystone</xref> documentation for OpenStack Kilo for
-            full option list and description.</note>
+            the full option list and description.</note>
           <p>Here is the sample YAML configuration, optimized for Microsoft Active Directory
             server:</p>
           <codeblock>---
@@ -101,7 +104,7 @@ keystone_domainldap_conf:
         # The issue is in the underlying SSL library. Upstream is not investing in python-ldap package anymore. It is also not python3
         # compliant. At <xref href="https://etherpad.openstack.org/p/keystone-mitaka-summit-brainstorm" format="html" scope="external">Mitaka summit</xref>, we will be proposing a transition off python-ldap to use python3-ldap.
         
-        tls_cacertfile: /etc/keystone/ssl/certs/all_ldapca.pem </codeblock>
+        tls_cacertfile: /etc/keystone/ssl/certs/all_ldapca.pem</codeblock>
         </li>
         <li>As suggested at <xref href="../installation/using_git.dita#using_git">Using Git for
             Configuration Management</xref>, commit the new file into local git repository, and
