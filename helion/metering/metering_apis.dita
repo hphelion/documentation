@@ -185,7 +185,23 @@ sinks:
     
     
     
-    
     </section>
+    <section><title>Improving Reporting API responsiveness</title> Reporting APIs are the main
+      access to the Metering data stored in Ceilometer. These APIs are accessed by Horizon to
+      provide basic usage data and information. However, Horizon Resources Usage Overview / Stats
+      panel shows usage metrics with the following limitations: <ul>
+        <li>No metric option is available until you actually create a resource (such as an instance,
+          Swift container, etc). </li>
+        <li>Only specific meters are displayed for a selection after resources have been created.
+          For example, only the Cinder volume and volume.size meters are displayed if only a Cinder
+          volume has been created (for example, if no compute instance or Swift containers were
+          created yet) </li>
+        <li>Only the top 20 meters associated with the sample query results are displayed. </li>
+        <li>Period duration selection should be much less than the default retention period
+          (currently 7 days), to get statistics for multiple groups. </li>
+      </ul> HP Helion uses the Apache2 Web Server to provide API access. It is possible to tune
+      performance to optimize the front end as well as the back-end database. Experience indicates
+      that an excessive increase of concurrent access to the front-end tends to put a strain in the
+      database. </section>
   </body>
 </topic>
