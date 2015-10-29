@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cloudDatabase">
+  <title>Database Configuration</title>
+  <body>
+    <section>
+      <p>This additional section is required only if the Database Service is
+        installed.<codeblock>clouds:
+  dbaas:
+    cacert: /usr/local/share/ca-certificates/hpes_cacert.crt
+    codn_username: 
+    codn_password: 
+    region_name: region1
+    database:
+      trove_enable_ssl: False
+      ephemeral_ca_cert: 
+      external_network: 
+      provider_network:
+      ntp_server: 
+      keypair: default
+      enable_ha: False
+      flavor: m1.medium
+      database_flavor: m1.medium
+      messaging_flavor: m1.medium
+      database_volume_size: 10
+      logstash_rabbitmq_host: 10.241.180.6
+      logstash_rabbitmq_password: guest
+      hotpools_enabled: true
+      hotpools_max_instances: 1
+      hotpools_image_name: percona
+      hotpools_flavor_names:
+        - 'm1.small'
+        - 'm1.medium'
+        - 'm1.large'
+      disable_rollback: true
+      project_id: 
+  auth:
+    auth_url: 
+    project_name: admin
+    username: admin
+    password: admin</codeblock></p>
+      <dl>
+        <dlentry><dt>cacert</dt><dd>The location where the SSL certificates can be accessed.</dd></dlentry>
+        <dlentry><dt>codn_username</dt><dd>&lt; Helion Download Network user name&gt;</dd></dlentry>
+        <dlentry>
+          <dt> codn_password</dt>
+          <dd>Helion Download Network password.</dd>
+        </dlentry>
+        <dlentry><dt>trove_enable_ssl</dt><dd> Must be False.</dd></dlentry>
+        <dlentry><dt>ephemeral_ca_cert</dt><dd> Location where SSL certificates can be accessed. If
+          SSL is not enabled, leave blank.</dd></dlentry>
+        <dlentry><dt>external_network</dt><dd> GUID of ext-net</dd></dlentry>
+        <dlentry><dt>provider_network</dt><dd> GUID of svc-net</dd></dlentry>
+        <dlentry><dt>ntp_server</dt><dd> IP address of ntp server</dd></dlentry>
+        <dlentry><dt>keypair</dt><dd> default </dd></dlentry>
+        <dlentry><dt>enable_ha</dt><dd> Options are True or False. If True, the database will be
+          created with high-availability configurations. Ensure you have enough quota to do
+          so.</dd></dlentry>
+        <dlentry><dt>flavor</dt><dd> The default is m1.medium. Do not create any flavor smaller
+          than medium. Smaller sizes will cause installation to fail.</dd></dlentry>
+        <dlentry><dt>database_flavor</dt><dd> The default is m1.medium. Do not create any flavor
+          smaller than medium. Smaller sizes will cause installation to fail.</dd></dlentry>
+        <dlentry><dt>messaging_flavor: </dt><dd>The default is m1.medium. Do not create any flavor
+          smaller than medium. Smaller sizes will cause installation to fail.</dd></dlentry>
+        <dlentry><dt>database_volume_size</dt><dd> 10 </dd></dlentry>
+        <dlentry><dt>logstash_rabbitmq_host</dt><dd> IP address of logging service</dd></dlentry>
+        <dlentry><dt>logstash_rabbitmq_password</dt><dd> Password for logging service</dd></dlentry>
+        <dlentry><dt>hotpools_enabled</dt><dd> Options are True or False. If True, hotpool
+          capabilities are enabled. If False, leave all other <i>hotpools</i> configuration
+          variables blank.</dd></dlentry>
+        <dlentry><dt>hotpools_max_instances</dt><dd> Default is 3. </dd></dlentry>
+        <dlentry><dt>hotpools_image_name</dt><dd> percona </dd></dlentry>
+        <dlentry><dt>hotpools_flavor_names</dt><dd> "m1.medium,m1.small,m1.large" Do not
+          change.</dd></dlentry>
+        <dlentry><dt>disable_rollback</dt><dd> Options are True or False. If True, rollback of patch applications is
+          disabled.</dd></dlentry>
+        <dlentry><dt>project_id</dt><dd> Project id to install service to.</dd></dlentry>
+        <dlentry><dt>auth_url</dt><dd> This URL can be found in Horizon at: Project Compute &gt;
+          Access &amp; Security &gt; API Access. Copy the Service Endpoint URL for the Identity
+          Service. Note that this must be <codeph>https</codeph>, not simply
+          <codeph>http</codeph>.</dd></dlentry>
+        <dlentry><dt>project_name</dt><dd> The Name of the admin project in Horizon. </dd></dlentry>
+        <dlentry><dt>username</dt><dd> The Username of an account with installation privileges
+          (administrator role). </dd></dlentry>
+        <dlentry><dt>password</dt><dd> The Password for the same account with installation
+          privileges (administrator role). </dd></dlentry></dl></section>
+    
+  </body>
+</topic>

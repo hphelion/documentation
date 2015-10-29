@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cloudPlatform">
+  <title>Platform Configuration</title>
+  <body>
+    <section>
+      <p>This basic information is required for listing the content from HDN, which is a good test to
+        determine if the HDPI was installed correctly.</p>
+      
+      <codeblock>clouds:
+  mycloud:
+    codn_username: 
+    codn_password: 
+    region_name: region1
+    cacert: /etc/ssl/certs/ca-certificates.crt
+    auth:
+      auth_url: &lt;identity url&gt;
+      project_name: &lt; admin project name&gt;
+      username: &lt; admin user name&gt;
+      password: &lt; admin password&gt;</codeblock>
+      
+      <dl>
+        <dlentry>
+          <dt>codn_username</dt> <dd>The username for the HDN (Helion Download Network)
+          account. (The name of the download network used to be CODN.)</dd></dlentry>
+        <dlentry><dt>codn_password</dt><dd> The password for the HDN (Helion Download Network)
+          account. (The name of the download network used to be CODN.)</dd></dlentry>
+        <dlentry><dt>region_name</dt><dd>Default value is <codeph>region1 </codeph></dd></dlentry>
+        <dlentry><dt>cacert</dt><dd>The location where the SSL certificates can be accessed.</dd></dlentry>
+        <dlentry><dt>auth</dt><dd>The Keystone v2 address found in the <codeph>service.osrc</codeph> file.</dd></dlentry>
+        <dlentry><dt>auth_url</dt><dd>This URL can be found in Horizon at: Project Compute &gt; Access &amp; Security &gt; API Access.
+            Copy the Service Endpoint URL for the Identity Service. Note that this must be
+              <codeph>https</codeph>, not simply <codeph>http</codeph>.</dd></dlentry>
+        <dlentry><dt>project_name</dt><dd>The Name of the admin project in Horizon. </dd></dlentry>
+        <dlentry><dt>username</dt><dd>The Username of an account with installation privileges (administrator role). </dd></dlentry>
+        <dlentry><dt>password</dt><dd>The Password for the same account with installation privileges (administrator role).</dd> </dlentry>
+      </dl>
+    </section>
+  </body>
+</topic>
