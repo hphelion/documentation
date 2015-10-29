@@ -51,7 +51,7 @@
                         <codeph>VRS_3.2.3-104_08282015-disk1.vmdk</codeph> files from HLM host to
                     VSD node in the <codeph>/opt/vsd/</codeph> directory. For more information on
                     downloading DCN files, see <xref
-                        href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/download-esx"
+                        href="carrier-grade-install-prereqs-GA.dita#topic7148/download-esx"
                         >Download packages for KVM + ESX</xref>.</li>
                 <li>In the vSpenere client, click <b>Open File</b> then <b>Deploy OVF
                     Template</b>.</li>

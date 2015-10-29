@@ -22,7 +22,7 @@
         <li>Download the <codeph>kcp-windriver-build-15-only.patch</codeph> file, the
             <codeph>knc-icinga-heat-ceilometer.patch</codeph> file and the
             <codeph>kcp-icinga-monitor-subservices.patch</codeph> file. You should have downloaded
-          these file <xref href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/patches">in the
+          these file <xref href="carrier-grade-install-prereqs-GA.dita#topic7148/patches">in the
             prerequisites</xref>.</li>
         <li>Copy the patch file to the <codeph>~/</codeph> directroy on the HLM host. </li>
         <li> Change to the <codeph>kenobi-configuration-processor</codeph> directory:<p>

@@ -16,7 +16,7 @@
     </topicmeta>
     <topicref href="carrier-grade-install-overview.dita" navtitle="Installation Guide"
         locktitle="yes">
-        <topicref href="carrier-grade-install-pb-prereqs-GA.dita"
+        <topicref href="carrier-grade-install-prereqs-GA.dita"
             navtitle="Installation Prerequisites" locktitle="yes">
             <topicref href="carrier-grade-install-network-prepare.dita" toc="no"
                 navtitle="Preparing the Network for Installation" locktitle="yes"/>

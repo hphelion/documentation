@@ -26,7 +26,7 @@
         <li>Copy the new Horizon debian you downloaded to
             <codeph>/var/cache/hlm/repo/debian</codeph> on HLM host. You should have downloaded the
             <codeph>hoscg-horizon-2015.1.2.487-1.deb</codeph> file <xref
-            href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/patches">in the
+            href="carrier-grade-install-prereqs-GA.dita#topic7148/patches">in the
             prerequisites</xref>.</li>
         <li>Change to the following directory:<p>
             <codeblock>cd /var/cache/hlm/repo/debian </codeblock>
