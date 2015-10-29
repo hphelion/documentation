@@ -131,7 +131,7 @@
                       >Helion user interface</xref>.</li>
                   <li>Configure <xref href="carrier-grade-install-config-dcn.dita#topic10581"
                       >required DCN components</xref>.</li>
-                  <li>Install the <xref href="carrier-grade-install-kvm-cloud-GA.dita#topic1107"
+                  <li>Install the <xref href="carrier-grade-install-kvm-cloud.dita#topic1107"
                       >carrier grade cloud</xref>. The carrier grade cloud is deployed into what is
                     called the <i>KVM region</i>
                   </li>
@@ -152,7 +152,7 @@
                     >Helion user interface</xref>.</li>
                 <li>Configure <xref href="carrier-grade-install-config-dcn.dita#topic10581">required
                     DCN components</xref>.</li>
-                <li>Install the <xref href="carrier-grade-install-kvm-cloud-GA.dita#topic1107"
+                <li>Install the <xref href="carrier-grade-install-kvm-cloud.dita#topic1107"
                     >carrier grade cloud</xref>. The carrier grade cloud is deployed into what is
                   called the <i>KVM region</i>
                 </li>

@@ -588,7 +588,7 @@ ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
       <title>Next Step</title>
       <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon
           Interface</xref></p>
-      <!--<p><xref href="carrier-grade-install-kvm-cloud-GA.dita">Deploying the KVM Region</xref></p>-->
+      <!--<p><xref href="carrier-grade-install-kvm-cloud.dita">Deploying the KVM Region</xref></p>-->
     </section>
   </body>
 </topic>

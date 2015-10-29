@@ -400,7 +400,7 @@ start=10.51.77.50,end=10.51.77.250 --nuagenet &lt;UUID> --net-partition &lt;part
     <section id="next-step">
       <title>Next Step</title>
 
-<p><xref href="carrier-grade-install-kvm-cloud-GA.dita">Deploying the KVM Region</xref></p>
+<p><xref href="carrier-grade-install-kvm-cloud.dita">Deploying the KVM Region</xref></p>
     </section>
   </body>
 </topic>

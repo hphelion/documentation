@@ -63,7 +63,7 @@
         </topicref>
         <topicref href="carrier-grade-install-launch-horizon.dita"
             navtitle="Launching the Horizon Interface" locktitle="yes"/>
-        <topicref href="carrier-grade-install-kvm-cloud-GA.dita" navtitle="Deploying the KVM Region"
+        <topicref href="carrier-grade-install-kvm-cloud.dita" navtitle="Deploying the KVM Region"
             locktitle="yes">
             <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
         </topicref>

@@ -109,7 +109,7 @@
     
     <section id="next-step">
       <title>Next Step</title>
-      <p>For KVM-only deployments, proceed to <xref href="carrier-grade-install-kvm-cloud-GA.dita"
+      <p>For KVM-only deployments, proceed to <xref href="carrier-grade-install-kvm-cloud.dita"
           >Deploying the KVM Region</xref>.</p>
       <p>For KVM + ESX deployments, proceed to <xref
           href="carrier-grade-install-config-dcn.dita#topic10581">Configuring the DCN
