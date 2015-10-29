@@ -95,6 +95,15 @@ git commit -m "My config or other commit message"</codeblock></li>
         <li>Run the config
           processor:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+        <li>Now, in order for the certificate to be enabled, you must take one of the following
+          actions. Run: <ul>
+            <li>A site deploy play</li>
+            <li>An upgrade play</li>
+            <li>or redeploy FND_CLU like so:
+              <codeblock>ansible-playbook -i hosts/verb_hosts FND-CLU-deploy.yml</codeblock>
+            </li>
+          </ul>
+        </li>
         <li>Continue with the deployment as usual.</li>
       </ol>
       <b>If you are using IP addresses for external ULRs: </b><ol id="ol_y3j_qfq_rt">
