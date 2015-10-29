@@ -96,7 +96,7 @@
         <li>Review the <xref href="carrier-grade-support-matrix2.dita#topic1773">Support
             Matrix</xref> to make sure your environment meets the minimum requirements.</li>
         <li> Perform any required or optional <xref
-            href="../../CarrierGrade/Installation/carrier-grade-install-prereqs-GA.dita"
+            href="../../CarrierGrade/Installation/carrier-grade-install-prereqs.dita"
             >installation prerequisites</xref>. </li>
         <li>
           <xref
@@ -163,7 +163,7 @@
 
     <section id="first-step">
       <title>First Step</title>
-      <p>Perform the <xref href="carrier-grade-install-prereqs-GA.dita#topic7148">prerequisite
+      <p>Perform the <xref href="carrier-grade-install-prereqs.dita#topic7148">prerequisite
           steps and one time setup</xref> on your HLM host required to install HP Helion OpenStack
         Carrier Grade in a baremetal environment.</p>
     </section>

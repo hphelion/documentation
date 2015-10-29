@@ -431,7 +431,7 @@ ifup br-clm
 ifup br-dcm</codeph></codeblock></li>
 </ol>
 <p>Networking will be restored through the OVS Bridge.</p>
-            <p><b>Return to the <xref href="carrier-grade-install-prereqs-GA.dita#topic7148"
+            <p><b>Return to the <xref href="carrier-grade-install-prereqs.dita#topic7148"
                         >prerequisites</xref>.</b></p>
 <!-- Hide this; might not be needed 
 

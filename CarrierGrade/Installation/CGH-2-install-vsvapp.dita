@@ -22,7 +22,7 @@
             the VRSvApp, to integrate ESX and HP DCN. One VRSvApp is required for each ESX host.
             There is a 1-to-1 mapping between each VRSvApp and its ESX host. The VRSvApp
             installation package is contained in the packages you <xref
-                href="carrier-grade-install-prereqs-GA.dita#topic7148/getinstall">downloaded in
+                href="carrier-grade-install-prereqs.dita#topic7148/getinstall">downloaded in
                 the Prerequisites</xref>.</p><p>The DCN vSphere
             Solution addresses this integration. The installation involves deploying a stand-alone
             VM, installing the new vCenter Integration Node (called the vCenter Deployment Toolbox).
@@ -59,7 +59,7 @@
                         IP&gt;:9443/vsphere-client</codeph>.</li>
                 <li>Import the <codeph>VSD-3.2.4_134-hp.ova</codeph> file into vCenter server. You
                     should have <xref
-                        href="carrier-grade-install-prereqs-GA.dita#topic7148/getinstall"
+                        href="carrier-grade-install-prereqs.dita#topic7148/getinstall"
                         >downloaded this file during the prerequisites</xref>. Importing the OVA
                     file creates the vCenter Integration Node VM.<p>For instructions, refer to the
                         ESX documentation.</p></li>
@@ -87,7 +87,7 @@ GATEWAY=10.20.5.1</codeblock></p></li>
                 <ol id="ol_v11_wh4_rt">
                     <li>In the vCenter client, import the <codeph>itoolbox1.ova</codeph> template
                         file. You should have <xref
-                            href="carrier-grade-install-prereqs-GA.dita#topic7148/getinstall"
+                            href="carrier-grade-install-prereqs.dita#topic7148/getinstall"
                             >downloaded this file during the prerequisites</xref>. Importing the OVA
                         file creates the HTTP\DHCP VM.<p>For instructions, refer to the ESX
                             documentation.</p></li>

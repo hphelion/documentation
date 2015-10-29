@@ -20,7 +20,7 @@
       execute OpenStack CLI commands until the following changes are made on all three controller
       nodes in the non-KVM region. </p>
     <p>You should have downloaded the patch files in the <xref
-        href="carrier-grade-install-prereqs-GA.dita#topic7148/getinstall"
+        href="carrier-grade-install-prereqs.dita#topic7148/getinstall"
       >Prerequisites</xref>.</p>
   <p>To configure HP Helion OpenStack Carrier Grade services to use Keystone v3: </p>
   <ol>
