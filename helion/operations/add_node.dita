@@ -70,9 +70,11 @@ ansible-playbook -i hosts/verb_hosts monasca-deploy.yml --tags active_ping_check
       </ol>
     </section>
 
-    <section><title>Add availability zones</title>When adding a new node, an additional step you'll
+    <section><title>Add availability zones</title>
+      <p>When adding a new node, an additional step you'll
       need to take is to add the new node(s) to a Nova availability zone. This can be skipped if you
-      have not configured any availability zones. <ol>
+      have not configured any availability zones.</p>
+      <ol>
         <li>First get a list of availability zones to get their status:<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova availability-zone-list</codeblock>
           <codeblock>+------------------------------+----------------------------------------+
 | Name                         | Status                                 |
