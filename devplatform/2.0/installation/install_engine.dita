@@ -21,40 +21,41 @@
     </section>  
     
     <section><title>Installation</title>
-      <ol><li>Create an instance of the Deployer VM
-      <ol>
-        <li>Source the Virtual Environment.<codeblock>source .devplatform/bin/activate</codeblock></li>
-        <li>Create the instance. <codeblock>openstack --debug --os-cloud hce hdpi helionce install
+      <ol><li>Create an instance of the Deployer VM.<ol>
+            <li>Source the Virtual
+              Environment.<codeblock>source .devplatform/bin/activate</codeblock></li>
+            <li>Create the instance.
+              <codeblock>openstack --debug --os-cloud hce hdpi helionce install
 openstack hdpi helionce launch --os-cloud hce
-deactivate
-</codeblock></li></ol></li>
-        <li>List all available machines to verify that the HP Helion Code Engine VM is running. 
+deactivate</codeblock></li>
+          </ol></li>
+        <li>List all available machines to verify that the HP Helion Code Engine VM is running.
           <codeblock>source ./services.osrc
-nova list
-</codeblock>You should see an instance named <codeph>helionce_deployer</codeph>". Make a note of its IP address.</li>
-      <li>Log in to and initialize the VM <codeblock>ssh -i helionce-shared stack@10.241.157.74 # helionce_deployer, use the address from the previous step
+nova list</codeblock>You should see an instance named
+            <codeph>helionce_deployer</codeph>". Make a note of its IP address.</li>
+      <li>Log in to and initialize the
+          VM.<codeblock>ssh -i helionce-shared stack@&lt;IP ADDRESS FROM PREVIOUS STEP> # helionce_deployer, use the address from the previous step
 ...
 stack@helionce-deployer:~$ ls
 helionce-1.0.0-rc1
 ...
 stack@helionce-deployer:~$ cd helionce-1.0.0-rc1/
 stack@helionce-deployer:~/helionce-1.0.0-rc1$ ./helionci-init.bash
-...
-</codeblock></li>
-      <li>Copy the helionce deployment model<codeblock>stack@helionce-deployer:~/helionce-1.0.0-rc1$ cd ~/helion/
+...</codeblock></li>
+      <li>Copy the helionce deployment
+          model.<codeblock>stack@helionce-deployer:~/helionce-1.0.0-rc1$ cd ~/helion/
 stack@helionce-deployer:~/helion$ cp -r examples/helionce/* my_cloud/definition/
 stack@helionce-deployer:~/helion$ cp ~/platform-pass-through.yml my_cloud/definition/data/pass-through/platform-pass-through.yml
  
 stack@helionce-deployer:~/helion$ git add -A
-stack@helionce-deployer:~/helion$ git commit -a -m "Add HelionCE default model"
-</codeblock></li>
+stack@helionce-deployer:~/helion$ git commit -a -m "Add HelionCE default model"</codeblock></li>
 <li>Create a Github OAuth Application.
 <ol>
   <li>Create a new application at <xref href="https://github.com/settings/applications/new" format="html" scope="external">https://github.com/settings/applications/new</xref></li>
   <li>Include the following values:     <table frame="all" rowsep="1" colsep="1">
     <tgroup cols="2">
       <colspec colname="c1" colnum="1" colwidth="1*"/>
-      <colspec colname="c2" colnum="2" colwidth="2.51*"/>
+      <colspec colname="c2" colnum="2" colwidth="2.66*"/>
             <thead>
         <row>
           <entry>Field</entry>
@@ -81,7 +82,8 @@ stack@helionce-deployer:~/helion$ git commit -a -m "Add HelionCE default model"
   <li>Register the application.</li>
   <li>Make a note of its <codeph>Client ID</codeph> and <codeph>Client Secret</codeph>.</li>
 </ol></li>   
-        <li>Populate server addresses and commit the changes.<codeblock>stack@helionce-deployer:~/helion$ vim ~/helion/my_cloud/definition/data/pass-through/kickstart.yml
+        <li>Populate the server addresses and commit the
+          changes.<codeblock>stack@helionce-deployer:~/helion$ vim ~/helion/my_cloud/definition/data/pass-through/kickstart.yml
  
 # update the following values in the file:
     github_client_id: "the Client ID from github application you created in an earlier step"
@@ -95,52 +97,46 @@ stack@helionce-deployer:~/helion$ git commit -a -m "Add HelionCE default model"
 # if your installation does NOT use http proxies, configure
     use_proxy: false
  
- 
 # save the file and exit.
- 
  
 stack@helionce-deployer:~/helion$ vim ~/helion/my_cloud/definition/cloudConfig.yml
  
 # Update the values for nameservers and ntp servers, save the file and exit.
  
- 
-stack@helionce-deployer:~/helion$ git commit -a -m "Configured Deployment Model"
-</codeblock> </li>
+stack@helionce-deployer:~/helion$ git commit -a -m "Configured Deployment Model" </codeblock></li>
         
-      <li>Run the Playbooks
-        <note type="important">At the end of each playbook, ensure
-          both <codeph>unreachable</codeph> and <codeph>failed</codeph> are zero.</note>
-        <ol>
-          <li> Run the Pre-Installation Play 
-  <codeblock>stack@helionce-deployer:~/helion$ source ~/service.osrc
+      <li>Run the Playbooks <note type="important">At the end of each playbook, ensure both
+              <codeph>unreachable</codeph> and <codeph>failed</codeph> are zero.</note><ol>
+            <li> Run the Pre-Installation Play
+              <codeblock>stack@helionce-deployer:~/helion$ source ~/service.osrc
 stack@helionce-deployer:~/helion$ cd hos/ansible/
 stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -vvv -i hosts/localhost hlm-pre-install.yml
  
-[ OUTPUT TRIMMED ]
-</codeblock></li>
-          <li>Run the Config Processor Play <codeblock>stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -vvv -i hosts/localhost config-processor-run.yml
+[ OUTPUT TRIMMED ]</codeblock></li>
+            <li>Run the Config Processor Play
+              <codeblock>stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -vvv -i hosts/localhost config-processor-run.yml
  
-[ OUTPUT TRIMMED ]
-</codeblock></li><li>Run the Ready Deployment Play <codeblock>stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost ready-deployment.yml
+[ OUTPUT TRIMMED ]</codeblock></li>
+            <li>Run the Ready Deployment Play
+              <codeblock>stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost ready-deployment.yml
  
 [ OUTPUT TRIMMED ]
  
 TASK: [git-operations | ready-deployment-tree-help | Tell the user what to expect] *** 
 ok: [localhost] => {
     "msg": "The directory /home/stack/scratch/ansible/next/hos/ansible contains a prepared ansible tree ready to run your deployment. You should cd into that directory and run: ansible-playbook -i hosts/verb_hosts site.yml"
-}
-</codeblock></li>
-      
-        </ol></li>
+}</codeblock></li>
+          
      
-        <li>Run the Boot Infrastructure Play <note>This step takes approximately 5 minutes.</note> Once this is complete, all in-cloud infrastructure (VMs, Networks, Routers, Floating IPs, ports, security groups, etc) will have been created. <codeblock>stack@helionce-deployer:~/helion/hos/ansible$ cd ~/scratch/ansible/next/hos/ansible
+        <li>Run the Boot Infrastructure Play <note>This step takes approximately 5 minutes.</note>
+              Once this is complete, all in-cloud infrastructure (VMs, Networks, Routers, Floating
+              IPs, ports, security groups, etc) will have been created.
+              <codeblock>stack@helionce-deployer:~/helion/hos/ansible$ cd ~/scratch/ansible/next/hos/ansible
 stack@helionce-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -vvv -i hosts/localhost hlm-boot-infra.yml
  
-[ OUTPUT TRIMMED ]
-</codeblock>
-        </li>
-        <li>Run the "Site" or Deployment Play <note>This step takes approximately 10 to 15 minutes. </note>
-          <codeblock>stack@helionce-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -i hosts/verb_hosts site.yml -vvvv
+[ OUTPUT TRIMMED ]</codeblock></li>
+        <li>Run the "Site" or Deployment Play <note>This step takes approximately 10 to 15 minutes.
+          </note><codeblock>stack@helionce-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -i hosts/verb_hosts site.yml -vvvv
 ...
 PLAY [HELION-CI-WEBUX[0]] *****************************************************
 TASK: [debug msg="Congratulations on installing Helion Code Engine!"] *********
@@ -153,10 +149,9 @@ TASK: [debug msg="Browse to the web site at {{ HELION_CI_WEBUX.advertises.vips.p
 ok: [hci-helionci-ccp-c1-m1-mgmt] => {
     "msg": "Browse to the web site at http://10.241.26.126:80"
 }
-...
-</codeblock></li>
+...</codeblock></li>
         
-        <li>Make a note of the IP address in the final messages from the log. This is the web site you will want to access.</li>
+                <li>Make a note of the IP address in the final messages from the log. This is the web site you will want to access.</li></ol></li>
       </ol></section>
        
   </body>
