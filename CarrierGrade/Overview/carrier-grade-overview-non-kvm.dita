@@ -16,10 +16,11 @@
 </metadata>
 </prolog>
 <body>
-    <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two logical
-      or conceptual <i>regions</i>: Non-KVM and KVM. The Non-KVM region contains the HP Helion
-      Lifecycle Management (HLM), to deploy and maintain HP Helion OpenStack Carrier Grade; and HP
-      Helion OpenStack, a commercial-grade distribution of OpenStack.</p>
+    <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of three logical
+      or conceptual <i>regions</i>: Non-KVM, KVM, and baremetal. </p>
+    <p>The Non-KVM region contains the HP Helion Lifecycle Management (HLM), to deploy and maintain
+      HP Helion OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade distribution of
+      OpenStack.</p>
     <p><b>Note:</b> These regions do not function as OpenStack regions. </p>
 
 <section><title>HP Helion Lifecycle Management</title>

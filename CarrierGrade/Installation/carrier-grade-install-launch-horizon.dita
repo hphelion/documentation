@@ -38,10 +38,10 @@
     <section>
       <title>Login to Horizon</title>
       <p>At this point, you can log into the Horizon interface, a web-interface you can use to
-        manage and maintain HP Helion OpenStack Carrier Grade. Use the <xref href="#topic10581/CAN"
-          format="dita">CAN IP address</xref> to launch Horizon. You can locate the CAN IP address
-        in the <codeph>/root/stackrc</codeph> file on any of the controller nodes in the non-KVM
-        region.</p>
+        manage and maintain HP Helion OpenStack Carrier Grade. Use the <xref
+          href="carrier-grade-technical-overview.dita#topic3485">CAN IP address</xref> to launch
+        Horizon. You can locate the CAN IP address in the <codeph>/root/stackrc</codeph> file on any
+        of the controller nodes in the non-KVM region.</p>
       <p>The CAN IP address contains port <codeph>5000</codeph>. </p>
       <p>
         <codeblock>https://&lt;CAN_IP></codeblock>

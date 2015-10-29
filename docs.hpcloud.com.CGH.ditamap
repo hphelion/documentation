@@ -28,6 +28,8 @@
         navtitle="Non-KVM Region Overview" locktitle="yes"/>
       <topicref href="CarrierGrade/Overview/carrier-grade-overview-kvm.dita"
         navtitle="KVM Region Overview" locktitle="yes"/>
+      <topicref href="CarrierGrade/Overview/carrier-grade-overview-baremetal.dita"
+        navtitle="Baremetal Region Overview" locktitle="yes"/>
       <topicref href="CarrierGrade/Overview/carrier-grade.services-overview.dita"
         navtitle="Services Overview" locktitle="yes">
         <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-compute-overview.dita"

@@ -34,7 +34,7 @@
     </p>
     <p>When the <codeph>hcfgproc</codeph> command is executed, the updated configuration file will
       be used. </p>
-    <p>Return to <xref href="carrier-grade-install-kvm-esx.dita#topic10581/role">the KVM + ESX
+    <p>Return to <xref href="carrier-grade-install-kvm-esx.dita#topic10581/hdeploy">the KVM + ESX
         installation</xref>.</p>
     </body>
 </topic>

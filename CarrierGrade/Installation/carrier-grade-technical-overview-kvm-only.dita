@@ -134,8 +134,8 @@
         prevent access to the CLM network from DCM, CTL, or EXT.</p>
     </section>
     <section><title>Regions</title>
-      <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two logical
-        or conceptual <i>regions</i>: Non-KVM and KVM. You will see these terms used in the
+      <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of three logical
+        or conceptual <i>regions</i>: Non-KVM, KVM, and Baremetal. You will see these terms used in the
         installation process. The <xref
           href="carrier-grade-technical-overview.dita#topic3485/deploy-arch">Deployment Architecture
           diagram</xref> shows an illustration of these two zones. </p>

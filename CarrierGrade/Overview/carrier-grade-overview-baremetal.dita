@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1743">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Baremetal Region
+    Overview</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="All"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+    <p><!--UNDER REVISION--><!--./CarrierGrade/Overview/carrier-grade-overview-wr.md--><!--permalink: /helion/openstack/carrier/wr/overview/--></p>
+    <!-- Taken from http://www.windriver.com/products/titanium-server/ -->
+    <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of three logical
+      or conceptual <i>regions</i>: Non-KVM, KVM, and baremetal.</p>
+    <p>The Baremetal region leverages the OpenStack Ironic service, which aims to provision bare
+      metal machines instead of virtual machines.</p>
+    <p><b>Note:</b> These regions do not function as OpenStack regions. </p>
+    <p>
+      <xref type="section" href="#topic1743"> Return to Top </xref>
+    </p>
+    <!-- ===================== horizontal rule ===================== -->
+  </body>
+</topic>

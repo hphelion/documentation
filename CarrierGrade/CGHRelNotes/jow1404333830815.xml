@@ -19,11 +19,20 @@
     <body>
         <section>
             <title>Enhancements</title>
-            <ul>
-                <li>Support for ESX  </li>
+            <p>The following enhancements were added for the HP Helion OpenStack Carrier Grade 2.0
+                Beta release:</p>
+            <ul id="ul_ccj_3wm_vt">
+                <li>Ironic Baremetal Region</li>
+                <li>Support for Unbonded or Bonded NIC</li>
+                <li>Support for Multiple NIC VMs</li>
+            </ul>
+            <p>The following enhancements were added for the HP Helion OpenStack Carrier Grade 2.0
+                Alpha release:</p>
+            <ul id="ul_dcj_3wm_vt">
+                <li>Support for ESX </li>
                 <li>
                     <p>Virtual machine instantiation is enhanced to support:</p>
-                    <ul>
+                    <ul id="ul_ecj_3wm_vt">
                         <li>
                             <p>CPU pinning</p>
                         </li>
@@ -46,25 +55,24 @@
                 </li>
                 <li>
                     <p>To use shared VCPUs, a shared physical CPU must be designated. For more
-                        information, see the <cite>HP Helion OpenStack Carrier Grade Administration Guide: Designating
-                            Shared Physical CPUs on  Compute Host</cite>.</p>
+                        information, see the <cite>HP Helion OpenStack Carrier Grade Administration
+                            Guide: Designating Shared Physical CPUs on Compute Host</cite>.</p>
                 </li>
                 <li>
                     <p>Extra-specification commands are revised for improved OpenStack
                         compatibility:</p>
-                    <ul>
+                    <ul id="ul_fcj_3wm_vt">
                         <li>
                             <p>Custom <cmdname>nova flavor-create</cmdname> options are replaced by
-                                    <b>nova flavor-key</b> options as
-                                follows:</p>
-                            <simpletable>
+                                    <b>nova flavor-key</b> options as follows:</p>
+                            <simpletable id="simpletable_gcj_3wm_vt">
                                 <sthead>
                                     <stentry>
                                         <p>nova flavor-create (removed)</p>
                                     </stentry>
                                     <stentry>
                                         <p>nova flavor-key (added)</p>
-                                    </stentry>                                    
+                                    </stentry>
                                 </sthead>
                                 <strow>
                                     <stentry>
@@ -104,7 +112,7 @@
                         <li>
                             <p>HP Helion OpenStack Carrier Grade-specific options are identified
                                 using the string <b>wrs</b>:</p>
-                            <ul>
+                            <ul id="ul_hcj_3wm_vt">
                                 <li>
                                     <p>hw:wrs:min_vcpus</p>
                                 </li>
@@ -123,10 +131,10 @@
                 </li>
                 <li>
                     <p>Networking capabilities are enhanced to support:</p>
-                    <ul>
+                    <ul id="ul_icj_3wm_vt">
                         <li>
-                            <p>Consolidated interfaces for OAM, management,
-                                infrastructure, and data networks</p>
+                            <p>Consolidated interfaces for OAM, management, infrastructure, and data
+                                networks</p>
                         </li>
                         <li>
                             <p>Accelerated virtual routing</p>
@@ -152,7 +160,7 @@
                 </li>
                 <li>
                     <p>Management facilities are enhanced for:</p>
-                    <ul>
+                    <ul id="ul_jcj_3wm_vt">
                         <li>
                             <p>Historical alarms</p>
                         </li>
@@ -171,8 +179,7 @@
                     </ul>
                 </li>
                 <li>
-                    <p>REST API extensions are added for Nova, Neutron, Cinder, and
-                        Ceilometer.</p>
+                    <p>REST API extensions are added for Nova, Neutron, Cinder, and Ceilometer.</p>
                 </li>
                 <li>
                     <p>HTTPS support is added for REST API access</p>

@@ -18,8 +18,8 @@
  <!--./CarrierGrade/Overview/carrier-grade-overview-wr.md-->
  <!--permalink: /helion/openstack/carrier/wr/overview/--></p>
 <!-- Taken from http://www.windriver.com/products/titanium-server/ -->
-    <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two logical
-      or conceptual <i>regions</i>: Non-KVM and KVM.</p>
+    <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of three logical
+      or conceptual <i>regions</i>: Non-KVM, KVM, and baremetal.</p>
     <p><b>Note:</b> These regions do not function as OpenStack regions. </p>
 <p>The HP Helion OpenStack Carrier Grade KVM region is a high-performance, high-availability, cloud
       operating system that enables telecommunications operators to use Commercial-off-the-shelf
