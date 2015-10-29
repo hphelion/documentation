@@ -29,7 +29,24 @@
                 <li>Log into the KVM region <codeph>controller-0</codeph> node with root
                     privileges.</li>
                 <li>Identify the compute node with Niantic NIC and configure the node.
-                    <codeblock>system host-list </codeblock></li>
+                        <codeblock>system host-list &lt;compute-name> </codeblock><p>The Niantic NIC
+                        is displayed in the device column as <codeph>82599ES 10-Gigabit SFI/SFP+
+                        </codeph>.</p><p>For
+                        example:<codeblock>[root@controller-0 ~(keystone_admin)]# system host-port-list tb4c1
++--------------------------------------+------+----------+--------------+--------+-----------+-------------+------------------------------------------------+
+| uuid                                 | name | type     | pci address  | device | processor | accelerated | device type                                    |
++--------------------------------------+------+----------+--------------+--------+-----------+-------------+------------------------------------------------+
+| c64c1a38-8583-4912-bb48              | eth0 | ethernet | 0000:04:00.0 | 0      | 0         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
+| 93595f54-1125-4c4d-b1e9              | eth1 | ethernet | 0000:04:00.1 | 0      | 0         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
+| b51cfd2f-6986-44a2-bfba              | eth2 | ethernet | 0000:05:00.0 | 0      | 0         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
+| 077ae91a-62df-4f82-a7bc              | eth3 | ethernet | 0000:05:00.1 | 0      | 0         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
+| cdfdc700-bf4b-4850-83c5              | eth4 | ethernet | 0000:08:00.0 | 0      | 0         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
+| fb3f8504-2dfd-4aec-8963              | eth5 | ethernet | 0000:08:00.1 | 0      | 0         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
+| 8d49e7c4-b88f-4ada-969b              | eth6 | ethernet | 0000:81:00.0 | 0      | 1         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
+| 318b6db3-2fa9-4a30-9ecd              | eth7 | ethernet | 0000:81:00.1 | 0      | 1         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
+| 4e8f8a8f-18ad-4e40-bde8              | eth8 | ethernet | 0000:84:00.0 | 0      | 1         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
+| 8cc8cfb5-8794-451d-bf36              | eth9 | ethernet | 0000:84:00.1 | 0      | 1         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
++--------------------------------------+------+----------+--------------+--------+-----------+-------------+------------------------------------------------+</codeblock></p></li>
                 <li>Use the following commands to configure the NIC interface for SR-IOV.<p>
                         <codeblock>system host-lock &lt;compute-name>
 system host-if-modify -nt pci-sriov -N &lt;number-VFs> -p &lt;provider-network> &lt;compute-name> &lt;interface>
