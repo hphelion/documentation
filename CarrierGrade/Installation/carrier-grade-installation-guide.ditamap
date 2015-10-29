@@ -37,7 +37,7 @@
             <topicref href="carrier-grade-install-kvm-esx-GA.dita"
                 navtitle="Installing the KVM + ESX Deployment" locktitle="yes">
                 <topicref href="carrier-grade-install-kvm-node-json.dita" toc="no"/>
-                <topicref href="carrier-grade-install-pb-kvm-def-json.dita" toc="no"/>
+                <topicref href="carrier-grade-install-kvm-def-json.dita" toc="no"/>
                 <topicref href="carrier-grade-install-kvm-ansible-json.dita" toc="no"/>
                 <topicref href="carrier-grade-install-kvm-env-json.dita" toc="no"/>
                 <topicref href="carrier-grade-install-kvm-machine-json-bonded.dita" toc="no"/>

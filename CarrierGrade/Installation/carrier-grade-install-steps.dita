@@ -199,7 +199,7 @@ Password: cghelion</codeblock>
         2<!--set this value to the number of vCenters you have.-->, as shown in the following
         example.</p>
       <p><b>Note:</b> To see a sample <codeph>definition.json</codeph> file, see <xref
-          href="carrier-grade-install-pb-kvm-def-json.dita#topic4797">Sample definition.json File
+          href="carrier-grade-install-kvm-def-json.dita#topic4797">Sample definition.json File
           for Installing the KVM + ESX Topology</xref>.<ol id="ol_zzr_khl_zs">
           <li>Set the number of compute systems to
             1<!--2 for an HA VRS-G installation-->.<codeblock>"file": ".hos/ccp-vrsg.json",
