@@ -67,7 +67,7 @@
             <row>
               <entry>Firefox </entry>
               <entry>very good</entry>
-              <entry>31+ Earlerier versions ?</entry>
+              <entry>31+ Earlier versions ?</entry>
             </row>
             <row>
               <entry>Firefox ESR</entry>
@@ -172,10 +172,9 @@
       <p><b>Viewing System Info</b></p>
       <p><image href="../../media/horizon/sysinfo.png" id="image_avw_nb3_ps"/></p>
       <p>The System Info panel provides a list of all currently installed OpenStack services
-        and their operation status.</p><p/><p>Additional panels on the System Info display sub
-        service status for services like Compute, Block Storage, and Network services. This is a
-        view of the Compute Services tab. There is also a Block Storages Services tab and a tab for
-        Network Agents.</p>
+        and their operation status.</p><p/><p>Additional panels on the System Info display sub service status for services like Compute, Block
+        Storage, and Network services. This is a view of the Compute Services tab. There is also a
+        Block Storage Services tab and a tab for Network Agents.</p>
       
       <p><b>Managing Quotas</b></p>
       <p><image href="../../media/horizon/quotas2.png" id="image_lnv_rb3_ps"/></p>
@@ -251,9 +250,9 @@
             and <xref href="http://docs.openstack.org/openstack-ops/content/scaling.html"
             format="html" scope="external"
             >http://docs.openstack.org/openstack-ops/content/scaling.html</xref>.</p></li>
-        <li><b>The Instances panel</b> provides a view of all deployed enduser instances across all
-            projects, the images applied to those instances, the status of each instance, flavor
-            type, and network information. This information is also supplied by the Nova API.</li>
+        <li><b>The Instances panel</b> provides a view of all deployed end user instances across all
+          projects, the images applied to those instances, the status of each instance, flavor type,
+          and network information. This information is also supplied by the Nova API.</li>
         <li><b>The Volumes panel</b> is displayed if the OpenStack Cinder service is available.
             Cinder provides block storage infrastructure. Block storage provides the ability for end
             users to attach storage as discrete drives to a compute instance. These drives are
