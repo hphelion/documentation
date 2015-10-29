@@ -30,7 +30,7 @@
             locktitle="yes">
             <topicref href="carrier-grade-install-kvm.dita" navtitle="Installing the KVM Deployment"
                 locktitle="yes">
-                <topicref href="carrier-grade-install-pb-kvm-only-json.dita"
+                <topicref href="carrier-grade-install-kvm-only-json"
                     navtitle="Sample JSON File for Installing the KVM Deployment" locktitle="yes"
                     toc="no"/>
             </topicref>

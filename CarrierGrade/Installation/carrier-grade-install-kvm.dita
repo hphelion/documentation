@@ -106,7 +106,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
               </tbody>
             </tgroup>
           </table><p>To see a sample <codeph>node-provision.json</codeph> file, see<xref
-            href="carrier-grade-install-pb-kvm-only-json.dita">Sample JSON File for the
+            href="carrier-grade-install-kvm-only-json">Sample JSON File for the
               HLM Virtual Machine Installation</xref>. </p></li>
         <li>Modify the <codeph>environment.json</codeph> file to configure the VLANs and network
           addresses as appropriate for your environment. Set the following for the CLM, CAN, and BLS
