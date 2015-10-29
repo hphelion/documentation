@@ -8,6 +8,8 @@
       dashboards.</p>
     <p>The dashboards provide a web-based user interface to HP Helion OpenStack services including
       Compute, Volume Operations, Networking, and Identity.</p>
+    <p>Note that for Ceilometer metering, only a limited set of meters are selectable from the
+      Metric option. This option does not currently provide access to all available meters.</p>
  
     <section>
       <p/>
@@ -20,11 +22,97 @@
     
     <section conref="../operations/accessing_horizon.dita#horizon_access/horizon"/>
     
+
+    <section><title>Browser support for Horizon</title> According to OpenStack.org, Horizon is
+      tested and supported on the latest versions of Firefox and Chrome, and IE9+. Below is a smmary
+      of browser support for Horizon <dl>
+        <dlentry>
+          <dt>Very good</dt>
+          <dd>Very well tested; should work as expected</dd>
+        </dlentry>
+        <dlentry>
+          <dt> Good</dt>
+          <dd>Moderately tested; should look nice and work fine, may have a few visual issues</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Poor</dt>
+          <dd>Visually inferior</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Broken</dt>
+          <dd>Essential functionality not working</dd>
+        </dlentry>
+        <dlentry>
+          <dt>No</dt>
+          <dd>Not supported</dd>
+        </dlentry>
+      </dl><table frame="all" rowsep="1" colsep="1" id="table_svx_qfm_vt">
+        <tgroup cols="3">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Browser</entry>
+              <entry>Status</entry>
+              <entry>Versions </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Chrome</entry>
+              <entry>very good</entry>
+              <entry>43.0.2357.81</entry>
+            </row>
+            <row>
+              <entry>Firefox </entry>
+              <entry>very good</entry>
+              <entry>31+ Earlerier versions ?</entry>
+            </row>
+            <row>
+              <entry>Firefox ESR</entry>
+              <entry>very good</entry>
+              <entry>31+</entry>
+            </row>
+            <row>
+              <entry>Internet Explorer 11</entry>
+              <entry>good</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>Internet Explorer 10</entry>
+              <entry>good</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>Internet Explorer 9</entry>
+              <entry>?</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>Internet Explorer 8 and below</entry>
+              <entry>Not supported</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>Safari</entry>
+              <entry>?</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>Opera</entry>
+              <entry>?</entry>
+              <entry/>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
     <section>
       <p>At the bottom of this page, you can see some of the services you can manage right from the
-        dashboard.</p>
+        dashboard. Remember that Horizon runs over TLS so you will need to use the HTTPS protocol
+        with your Horizon IP address.</p>
     </section>
-    
     <section id="DashProject">
       <title>Project dashboard</title>
       <p>Use the <b>Project</b> dashboard to implement and build out your cloud. This dashboard
@@ -40,7 +128,6 @@
       <p>The Admin dashboard allows you to manage instances, define flavors, create and configure
         images, manage networks, view system resources, manage projects, and manage users.</p>
     </section>
-
     <section id="DashSettings">
       <title>Settings dashboard</title>
       <p>Use the <b>Settings</b> dashboard to change your display language and settings, your time
@@ -58,7 +145,8 @@
             certificate warning appears when you try to access the URL for the first time, a
             self-signed certificate is in use. These certificates are not considered trustworthy by
             default. Verify the certificate or add an exception in the browser to bypass the
-            warning.</note></li>
+            warning. You can manage certificates by visiting the topic <xref
+              href="../security/tls.dita#topic_yym_nps_4t">Enabling TLS</xref></note></li>
         <li>On the <b>Log In</b> page, enter your user name and password and then click <b>Sign
             In</b>.<p>
             <image href="../../media/horizon/HelionLogin.png">
@@ -78,11 +166,8 @@
       </ol>
     </section>
 
-    <section id="horizon-dashboard-examples"><title>Horizon Dashboard Examples</title><p>The
-        following screen shots illustrate some of the services you can manage in the Horizon
-        dashboard. There is both an overcloud Horizon dashboard and an undercloud dashboard, both of
-        which are accessible via a URL in a browser.
-        <!--Removed anchor point images--><!-- id="images" --></p>
+    <section id="horizon-dashboard-examples"><title>Horizon Dashboard Examples</title><p>The following screen shots illustrate some of the services you can manage in the Horizon
+        dashboard. <!--Removed anchor point images--><!-- id="images" --></p>
           
       <p><b>Viewing System Info</b></p>
       <p><image href="../../media/horizon/sysinfo.png" id="image_avw_nb3_ps"/></p>
