@@ -81,11 +81,11 @@ room="145"
 CONSOLE=${BUILD_URL}console
 
  
-if [[ $1 == ""]]
+if [[ $1 == "" ]]
 then
 WHERE="Files in all folders were checked."
 else
-WHERE="Only files in these directories were checked: $1"
+WHERE="Only files in these directories were checked: $@"
 fi 
     
 MESSAGE="Redfaced reports <b>$EXIT typos in the $BRANCH branch</b> that should be corrected. $WHERE"
