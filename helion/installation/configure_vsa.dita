@@ -51,6 +51,47 @@
         </ul>
       </p>
       <p><b>RDP/VNC connect method</b></p>
+      <p><b>Setup the Local Firewall</b></p>
+      <p>If you are going to use this method you will need to open up ports 5900-5905 in your HP
+        Helion OpenStack firewall to ensure this traffic is allowed. These steps walk you through
+        this process:</p>
+      <ol>
+        <li>Log in to your lifecycle-manager node.</li>
+        <li>Edit your <codeph>~/helion/my_cloud/definition/data/firewall_rules.yml</codeph> file and
+          add the lines below to ensure the VNC ports are allowed through the firewall: <codeblock>
+  - name: VNC
+    network-groups:
+    - MANAGEMENT
+    rules:
+    - type: allow
+      remote-ip-prefix:  0.0.0.0/0
+      port-range-min: 5900
+      port-range-max: 5905
+      protocol: tcp</codeblock>
+          <note>The example above shows a <codeph>remote-ip-prefix</codeph> of
+              <codeph>0.0.0.0/0</codeph> which opens the ports up to all IP ranges. To be more
+            secure you can specify your local IP address CIDR you will be running the VNC connect
+            from.</note></li>
+        <li>Commit those changes to your local git:
+          <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "firewall rule update"</codeblock></li>
+        <li>Run the Configuration Processor:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+        <li>Create the deployment directory structure:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        <li>Change to the deployment directory and run the
+            <codeph>osconfig-iptables-deploy.yml</codeph> playbook to update your iptable rules to
+          allow VNC:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts osconfig-iptables-deploy.yml</codeblock></li>
+      </ol>
+      <note type="important">If you want to close these ports after setting up VSA just go through
+        these steps again after commenting out or removing the ports from your
+          <codeph>firewall_rules.yml</codeph> file.</note>
+      <p><b>Setup VNC connect on the Controller Node</b></p>
       <p>The following steps will allow you to setup a VNC connect to your controller node so you
         can view the GUI.</p>
       <ol>
@@ -205,8 +246,9 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
             <li>Add your VSA backend to the <codeph>enabled_backends</codeph> section:
               <codeblock># Configure the enabled backends
 enabled_backends=vsa-1</codeblock></li>
-            <li>If you want a specify a default volume type, then enter it in the
-                <codeph>[DEFAULT]</codeph> section with the syntax below:
+            <li>[OPTIONAL] If you want a use a default volume type, then enter it in the
+                <codeph>[DEFAULT]</codeph> section with the syntax below. You will want to remember
+              this value when you create your volume type in the next section.
               <codeblock>[DEFAULT]
 # Set the default volume type
 default_volume_type = &lt;your new volume type></codeblock></li>
@@ -262,7 +304,9 @@ hplefthand_debug: false</codeblock>
                     </row>
                     <row>
                       <entry>volume_backend_name</entry>
-                      <entry>Name given to the VSA backend.</entry>
+                      <entry>Name given to the VSA backend. You will specify this value later in the
+                          <xref href="configure_vsa.dita#config_vsa/associate_volume_backend"
+                          >Associate the Volume Type to a Backend</xref> steps.</entry>
                     </row>
                     <row>
                       <entry>volume_driver</entry>
@@ -439,7 +483,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
             creates multiple parity sets such that the array can function with up to two drives
             failing at the same time.</li>
         </ul></p></section>
-    <section id="associate-volume-backend">
+    <section id="associate_volume_backend">
       <title>Associate the Volume Type to a Backend</title>
       <p> After the volume type names have been created, you can assign extra_specs to the volumes
         types.</p>
