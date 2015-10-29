@@ -18,7 +18,7 @@
         locktitle="yes">
         <topicref href="carrier-grade-install-pb-prereqs-GA.dita"
             navtitle="Installation Prerequisites" locktitle="yes">
-            <topicref href="carrier-grade-install-pb-network-prepare-GA.dita" toc="no"
+            <topicref href="carrier-grade-install-network-prepare.dita" toc="no"
                 navtitle="Preparing the Network for Installation" locktitle="yes"/>
             <topicref href="carrier-grade-install-NTP.dita" toc="no" navtitle="Configuring NTP"
                 locktitle="yes"/>

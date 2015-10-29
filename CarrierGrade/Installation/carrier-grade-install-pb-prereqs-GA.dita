@@ -247,7 +247,7 @@ StrictHostKeyChecking no </codeblock></li>
                         <p>Before installing HP Helion OpenStack Carrier Grade, you are responsible
                                 for preparing the network for all installations.</p>
                         <p>See <xref
-                                        href="carrier-grade-install-pb-network-prepare-GA.dita#topic7646"
+                                        href="carrier-grade-install-network-prepare.dita#topic7646"
                                         >Preparing the Network for Installation</xref></p>
                 </section>
                 <section>

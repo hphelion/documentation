@@ -100,7 +100,7 @@
             >installation prerequisites</xref>. </li>
         <li>
           <xref
-            href="../../CarrierGrade/Installation/carrier-grade-install-pb-network-prepare-GA.dita"
+            href="../../CarrierGrade/Installation/carrier-grade-install-network-prepare.dita"
             >Prepare the network for installation</xref>
         </li>
         <li>Install the cloud topologies: <ul>
