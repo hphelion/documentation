@@ -3,11 +3,11 @@
 <topic id="topic_t3w_fnh_ts">
   <title>Install the Messaging Service</title>
   <body>
-    <section id="install-messaging">
+    <section id="hdpi"><title>Insatlling the Messaging Service with HDPI</title>
       <p>This section provides details on installing the Messaging service for the Development
-        Platform.</p>
-    </section>
-    <section><title>Prerequisites</title>Installing services requires that the HDP Installer 2.0,
+        Platform using the Helion Development Platform Installer</p>
+    <p>Prerequisites</p>
+        Installing services requires that the HDP Installer 2.0,
       also known as HDPI, has already <xref
         href="devplatform_install_platform.dita#topic_gly_xmh_ts">been installed</xref>.<p>The
         images for the individual services will be downloaded when the service installation is
@@ -44,5 +44,9 @@ Running launcher.py
 
 ....</codeblock></li>  </ol>
           </section>
+    <section id="manual">
+      <title>Installing the Messaging Service manually</title>
+      
+    </section>
   </body>
 </topic>
