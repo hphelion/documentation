@@ -2,19 +2,19 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_bkr_qjh_ht">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Default Logging Settings</title>
-  <body><!--Needs Edit-->
-    <p>The table below describes the default logging policies for each service. Here is a
-      description of each column:</p>
+  <body><!--Needs Work; 'Plane' is missing from the list of columns; Should paths/files be surrounded by codeph tags?; also what are M and G abbreviations for? MB and GB, or something else?-->
+    <p>The table below describes the default logging policies for each service. The columns are as
+      follows:</p>
     <p>
       <ul>
         <li><b>Service</b> - The name of the service the logs belong to.</li>
         <li><b>Rotated Log Files</b> - These files are kept locally on the server and will be
-          rotated out but will only be centrally logged if notated in the last column.</li>
+          rotated out, but will only be centrally logged if notated in the last column.</li>
         <li><b>Frequency</b> - The timing of when the logs are rotated.</li>
         <li><b>Max Size</b> - The maximum file size the log can be before it is rotated out.</li>
         <li><b>Rotation</b> - The number of log files that are rotated.</li>
-        <li><b>Centrally Logged Files</b> - These files will be indexed by elasticsearch and will be
-          available for searching in the Kibana UI.</li>
+        <li><b>Centrally Logged Files</b> - These files will be indexed by Elasticsearch and will be
+          available for searching in the Kibana user interface.</li>
       </ul>
     </p>
     <p>
@@ -59,7 +59,7 @@
                 <p>Daily</p>
               </entry>
               <entry>
-                <p>32M</p>
+                <p>32 M</p>
               </entry>
               <entry>
                 <p>7</p>
@@ -127,7 +127,7 @@
                 <p>Daily</p>
               </entry>
               <entry>
-                <p>1G</p>
+                <p>1 G</p>
               </entry>
               <entry>
                 <p>7</p>
@@ -152,7 +152,7 @@
                 <p>/var/log/cinder/cinder-volume-json.log</p>
               </entry>
               <entry><p>Daily</p></entry>
-              <entry><p>45M</p></entry>
+              <entry><p>45 M</p></entry>
               <entry><p>7</p></entry>
               <entry>
                 <p>/var/log/cinder/cinder-api-json.log</p>
@@ -203,7 +203,7 @@
                 <p>/var/log/glance/registry.log</p>
               </entry>
               <entry><p>Daily</p></entry>
-              <entry><p>1G</p></entry>
+              <entry><p>1 G</p></entry>
               <entry><p>14</p></entry>
               <entry>
                 <p>/var/log/glance/glance-api-json.log</p>
@@ -222,7 +222,7 @@
                 <p>/var/log/heat/heat-api-cloudwatch-json.log</p>
               </entry>
               <entry><p>Daily</p></entry>
-              <entry><p>45M</p></entry>
+              <entry><p>45 M</p></entry>
               <entry><p>7</p></entry>
               <entry>
                 <p>/var/log/heat/heat-api-json.log</p>
@@ -244,7 +244,7 @@
                 <p>/var/log/heat/heat-api-cloudwatch-json.log</p>
               </entry>
               <entry><p>Daily</p></entry>
-              <entry><p>45M</p></entry>
+              <entry><p>45 M</p></entry>
               <entry><p>7</p></entry>
               <entry>
                 <p>/var/log/heat/heat-engine-json.log</p>
@@ -262,7 +262,7 @@
                 <p>/var/log/horizon/horizon-json.log</p>
               </entry>
               <entry><p>Daily</p></entry>
-              <entry><p>45M</p></entry>
+              <entry><p>45 M</p></entry>
               <entry><p>7</p></entry>
               <entry>
                 <p>/var/log/horizon/horizon-json.log</p>
@@ -273,7 +273,7 @@
               <entry><p>Control</p></entry>
               <entry><p>/var/log/keepalived/keepalived.log</p></entry>
               <entry><p>Daily</p></entry>
-              <entry><p>45M</p></entry>
+              <entry><p>45 M</p></entry>
               <entry><p>7</p></entry>
               <entry/>
             </row>
@@ -285,7 +285,7 @@
                 <p>/var/log/keystone/keystone-json.log</p>
               </entry>
               <entry><p>Daily</p></entry>
-              <entry><p>45M</p></entry>
+              <entry><p>45 M</p></entry>
               <entry><p>7</p></entry>
               <entry>
                 <p>/var/log/keystone/keystone-json.log</p>
@@ -342,7 +342,7 @@
                 <p>/var/log/mysql/*.log</p>
               </entry>
               <entry><p>Daily</p></entry>
-              <entry><p>45M</p></entry>
+              <entry><p>45 M</p></entry>
               <entry><p>7</p></entry>
               <entry/>
             </row>
@@ -362,7 +362,7 @@
                 <p>/var/log/neutron/neutron-metadata-agent-json.log</p>
               </entry>
               <entry><p>Daily</p></entry>
-              <entry><p>45M</p></entry>
+              <entry><p>45 M</p></entry>
               <entry><p>7</p></entry>
               <entry>
                 <p>/var/log/neutron/neutron-server-json.log</p>
@@ -394,7 +394,7 @@
                 <p>/var/log/nova/nova-baremetal-deploy-helper-json.log</p>
               </entry>
               <entry><p>Daily</p></entry>
-              <entry><p>45M</p></entry>
+              <entry><p>45 M</p></entry>
               <entry><p>7</p></entry>
               <entry>
                 <p>/var/log/nova/nova-api-json.log</p>
@@ -423,7 +423,7 @@
                 <p>Weekly</p>
               </entry>
               <entry>
-                <p>5M</p>
+                <p>5 M</p>
               </entry>
               <entry/>
               <entry>
@@ -450,7 +450,7 @@
                 <p>/var/log/messages</p>
               </entry>
               <entry><p>Daily</p></entry>
-              <entry><p>45M</p></entry>
+              <entry><p>45 M</p></entry>
               <entry><p>7</p></entry>
               <entry>
                 <p>/var/log/syslog</p>
@@ -495,7 +495,7 @@
                 <p>/var/log/swift/swift-json.log</p>
               </entry>
               <entry><p>Daily</p></entry>
-              <entry><p>45M</p></entry>
+              <entry><p>45 M</p></entry>
               <entry><p>7</p></entry>
               <entry>
                 <p>/var/log/swift/swift-json.log</p>
@@ -533,7 +533,7 @@
                 <p>Daily</p>
               </entry>
               <entry>
-                <p>10M</p>
+                <p>10 M</p>
               </entry>
               <entry>
                 <p>7</p>

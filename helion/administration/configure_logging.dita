@@ -331,8 +331,8 @@
                 <entry morerows="5"><p>Ceilometer</p></entry>
                 <entry><p>ceilometer-api</p></entry>
                 <entry><p>INFO</p></entry>
-                <entry><p>You can change the <codeph>ceilometer_loglevel</codeph> in the file below
-                    for all components during deployment or after deployment.</p>
+                <entry><p>You can change the <codeph>ceilometer_loglevel</codeph> in the file below for all components
+                    during deployment or after deployment:</p>
                   <codeblock>~/helion/hos/ansible/roles/_CEI-CMN/defaults/main.yml</codeblock>
                   <p>You can also change the log level for <codeph>ceilometer-api</codeph> only by
                     changing the file below:</p>
@@ -345,8 +345,8 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
               <row>
                 <entry><p>ceilometer-collector</p></entry>
                 <entry><p>INFO</p></entry>
-                <entry><p>You can change the <codeph>ceilometer_loglevel</codeph> in the file below
-                    for all components during deployment or after deployment.</p>
+                <entry><p>You can change the <codeph>ceilometer_loglevel</codeph> in the file below for all components
+                    during deployment or after deployment:</p>
                   <codeblock>~/helion/hos/ansible/roles/_CEI-CMN/defaults/main.yml</codeblock>
                   <p>You can also change the log level for <codeph>ceilometer-collector</codeph>
                     only by changing the file below:</p>
@@ -365,8 +365,8 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
               <row>
                 <entry><p>ceilometer-agent-notification</p></entry>
                 <entry><p>INFO</p></entry>
-                <entry><p>You can change the <codeph>ceilometer_loglevel</codeph> in the file below
-                    for all components during deployment or after deployment.</p>
+                <entry><p>You can change the <codeph>ceilometer_loglevel</codeph> in the file below for all components
+                    during deployment or after deployment:</p>
                   <codeblock>~/helion/hos/ansible/roles/_CEI-CMN/defaults/main.yml</codeblock>
                   <p>You can also change the log level for
                       <codeph>ceilometer-agent-notification</codeph> only by changing the file
@@ -381,8 +381,8 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
               <row>
                 <entry><p>ceilometer-agent-central</p></entry>
                 <entry><p>INFO</p></entry>
-                <entry><p>You can change the <codeph>ceilometer_loglevel</codeph> in the file below
-                    for all components during deployment or after deployment.</p>
+                <entry><p>You can change the <codeph>ceilometer_loglevel</codeph> in the file below for all components
+                    during deployment or after deployment:</p>
                   <codeblock>~/helion/hos/ansible/roles/_CEI-CMN/defaults/main.yml</codeblock>
                   <p>You can also change the log level for <codeph>ceilometer-agent-central</codeph>
                     only by changing the file below:</p>
@@ -398,7 +398,7 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                 <entry><p>INFO</p></entry>
                 <entry>
                   <p>You can change the <codeph>ceilometer_loglevel</codeph> in the file below for
-                    all components during deployment or after deployment.</p>
+                    all components during deployment or after deployment:</p>
                   <codeblock>~/helion/hos/ansible/roles/_CEI-CMN/defaults/main.yml</codeblock>
                   <p>You can also change the log level for <codeph>ceilometer-expirer</codeph> only
                     by changing the file below:</p>
@@ -417,7 +417,7 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                 <entry>
                   <p>You can change the Ceph logging levels using the Ansible playbook, specifically
                     the switches, below for all components during deployment or after
-                    deployment.</p>
+                    deployment:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible/
 ansible-playbook -i hosts/verb_hosts site.yml -e "ceph_mon_log_level=DEBUG, ceph_osd_log_level=DEBUG"</codeblock>
                 </entry>
@@ -470,8 +470,8 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml -e cinder_logstash_l
                     the following file:</p>
                   <codeblock>~/helion/my_cloud/config/glance/ glance-[api,registry]-logging.conf</codeblock>.
                     <p>After the needed changes are done (for example logging level changes to local
-                    or centralized logging) the <codeph>glance-reconfigure.yml</codeph> playbook
-                    must be run targeting relevant nodes to deploy the configuration change.</p>
+                    or centralized logging), run the <codeph>glance-reconfigure.yml</codeph>
+                    playbook, targeting relevant nodes to deploy the configuration change:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml</codeblock></entry>
               </row>
@@ -485,8 +485,9 @@ ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml</codeblock></entry>
 ~/helion/my_cloud/config/heat/api-logging.conf.j2
 ~/helion/my_cloud/config/heat/engine-logging.conf.j2</codeblock>
                   <p>Users can edit these files and set the desired log level for both local as well
-                    as centralized logging. After making the changes, run the heat-reconfigure playbook
-                    from the deployer to apply the changes, as shown below:</p>
+                    as centralized logging. After making the changes, run the
+                      <codeph>heat-reconfigure</codeph> playbook from the lifecycle-manager to apply
+                    the changes:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts heat-reconfigure.yml</codeblock></entry>
               </row>
@@ -504,7 +505,7 @@ ansible-playbook -i hosts/verb_hosts heat-reconfigure.yml</codeblock></entry>
                 <entry><p>WARN</p></entry>
                 <entry>
                   <p>All of the Monasca logging is defaulted to WARN. To change the level for all of
-                    our services you can run:</p>
+                    the services run:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts monasca-reconfigure.yml -e "monasca_log_level=DEBUG"
 ansible-playbook -i hosts/verb_hosts monasca-agent-reconfigure.yml -e "monasca_log_level=DEBUG"</codeblock>
@@ -546,7 +547,7 @@ ansible-playbook -i hosts/verb_hosts site.yml neutron-reconfigure.yml</codeblock
                 <entry>
                   <p>Nova service log levels are configurable in the following file:</p>
                   <codeblock>~/helion/my_cloud/config/nova/*-logging.conf.j2</codeblock>
-                  <p>If you make edits to this file, you will need to run the
+                  <p>If you make edits to this file, then run the
                       <codeph>nova-reconfigure.yml</codeph> playbook:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml nova-reconfigure.yml</codeblock>
@@ -557,7 +558,7 @@ ansible-playbook -i hosts/verb_hosts site.yml nova-reconfigure.yml</codeblock>
                 <entry><p>INFO</p></entry>
                 <entry><p>Nova service log levels are configurable in the following file:</p>
                   <codeblock>~/helion/my_cloud/config/nova/*-logging.conf.j2</codeblock>
-                  <p>If you make edits to this file, you will need to run the
+                  <p>If you make edits to this file, then run the
                       <codeph>nova-reconfigure.yml</codeph> playbook:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml nova-reconfigure.yml</codeblock></entry>
@@ -569,7 +570,7 @@ ansible-playbook -i hosts/verb_hosts site.yml nova-reconfigure.yml</codeblock></
                 <entry><p>INFO</p></entry>
                 <entry>
                   <p>You can change the Operations Console logging levels using the playbook below
-                    during deployment or after deployment.</p>
+                    during deployment or after deployment:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml -e "ops_console_loglevel=DEBUG"</codeblock>
                 </entry>
@@ -581,8 +582,8 @@ ansible-playbook -i hosts/verb_hosts site.yml -e "ops_console_loglevel=DEBUG"</c
                 <entry>
                   <p>The logging level is set in the file below:</p>
                   <codeblock>/etc/sherpa/sherpa.conf</codeblock>
-                  <p>To change the logging level, just change from INFO to DEBUG in the following
-                    line in <codeph>sherpa.conf</codeph>:</p>
+                  <p>To change the logging level, change from INFO to DEBUG in the following line in
+                      <codeph>sherpa.conf</codeph>:</p>
                   <codeblock>'sherpa': {'level': 'INFO', 'handlers': ['file', 'json']}</codeblock>
                 </entry>
               </row>
@@ -592,7 +593,7 @@ ansible-playbook -i hosts/verb_hosts site.yml -e "ops_console_loglevel=DEBUG"</c
                 <entry><p>INFO</p></entry>
                 <entry><p>The Swift service log levels are configurable in the file below:</p>
                   <codeblock>~/helion/my_cloud/config/swift/account-server.conf.j2</codeblock>
-                  <p>If you make edits to this file, you will need to run the
+                  <p>If you make edits to this file, then run the
                       <codeph>swift-reconfigure.yml</codeph> playbook to commit them to the
                     environment:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
