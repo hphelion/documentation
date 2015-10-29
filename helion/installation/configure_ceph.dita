@@ -197,7 +197,7 @@ git commit -m "&lt;commit message>"</codeblock></li>
         </ol></p>
       <p>After your configuration files are setup, continue with the <xref
           href="install_entryscale_kvm.dita#install_kvm/provision">Entry-scale KVM Cloud
-          installation steps</xref>.</p>
+          installation steps.</xref></p>
     </section>
     <section id="install_ceph"><title>Run Ceph Client Packages</title>
       <p>The Ceph Monitor service is deployed on the controller nodes and OSD disks are deployed as
