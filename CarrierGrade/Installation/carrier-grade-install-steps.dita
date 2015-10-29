@@ -258,7 +258,7 @@ Password: cghelion</codeblock>
           the KVM + ESX Topology</xref>. </p>
     </section>
     <section id="configure-wr-json"
-      ><!--Hide for 8/28 release <title>Configure the wr.json file</title><p>Modify the <codeph>wr.json</codeph> file in the <codeph>&lt;cloudname>/vars</codeph> directory on the HLM VM.</p><p>To see a sample <codeph>wr.json</codeph> file, see <xref href="carrier-grade-install-pb-kvm-wr-json.dita">Sample wr.json File for Installing the KVM + ESX Topology</xref>. </p>--></section>
+      ><!--Hide for 8/28 release <title>Configure the wr.json file</title><p>Modify the <codeph>wr.json</codeph> file in the <codeph>&lt;cloudname>/vars</codeph> directory on the HLM VM.</p><p>To see a sample <codeph>wr.json</codeph> file, see <xref href="carrier-grade-install-kvm-wr-json.dita">Sample wr.json File for Installing the KVM + ESX Topology</xref>. </p>--></section>
     <section>
       <title>Configure the dcn.json file</title>
       <p>Modify the <codeph>dcn.json</codeph> file in the

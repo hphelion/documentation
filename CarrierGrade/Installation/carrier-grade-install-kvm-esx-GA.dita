@@ -329,7 +329,7 @@ Password: cghelion</codeblock>
           <codeph>/var/hlm/clouds/&lt;cloudname&gt;/&lt;cloudname>/vars</codeph> directory on the
         HLM VM.</p>
       <p>To see a sample <codeph>wr.json</codeph> file, see <xref
-          href="carrier-grade-install-pb-kvm-wr-json.dita">Sample wr.json File for Installing the
+          href="carrier-grade-install-kvm-wr-json.dita">Sample wr.json File for Installing the
           KVM + ESX Topology</xref>. </p>
     </section>
     <section id="configure-mach-json">
