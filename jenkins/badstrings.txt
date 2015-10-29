@@ -19,7 +19,7 @@
 % in in %= delete repeated word (in).
 % by it's %= Don't use a apostrophe in this instance.
 %??%= If is a comment or reminder, place it in a comment.
-% HDP %= do not abbreviate. Use Helion Development Platform.
+% HDP %= do not abbreviate. Use Helion Development Platform.%=HDPI
 %[bB]are [mM]etal %= use baremetal (one word, no caps)
 %[bB]are-[mM]etal %= use baremetal (one word, no caps)
 %Fiber Channel%= use Fibre Channel.
