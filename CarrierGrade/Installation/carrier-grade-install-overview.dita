@@ -124,7 +124,7 @@
                   region is installed.</p><ul id="ul_nzq_bgk_lt">
                   <li>Install <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Helion
                       Lifecycle Management and Installation Services</xref>.</li>
-                  <li>Install <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">the HP
+                  <li>Install <xref href="carrier-grade-install-kvm-esx.dita#topic10581">the HP
                       Helion OpenStack cloud and install the HP Distributed Cloud Networking (DCN)
                       components</xref> into what is called the non-KVM region </li>
                   <li>Launch the <xref href="carrier-grade-install-launch-horizon.dita#topic10581"
@@ -143,7 +143,7 @@
                 first. Then the KVM region is installed.</p><ul>
                 <li>Install <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Helion
                     Lifecycle Management and Installation Services</xref>.</li>
-                <li>Install <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">the HP
+                <li>Install <xref href="carrier-grade-install-kvm-esx.dita#topic10581">the HP
                     Helion OpenStack cloud and install the HP Distributed Cloud Networking (DCN)
                     components</xref>. You will also install the VMware ESX compute proxy. These
                   components will be installed into what is called the non-KVM region and connect to

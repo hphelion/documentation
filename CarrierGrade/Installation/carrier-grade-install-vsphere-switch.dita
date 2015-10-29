@@ -15,7 +15,7 @@
 </prolog>
 <body>
   <p><i>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+          href="carrier-grade-install-kvm-esx.dita#topic10581/vmware">KVM + ESX
         Deployment</xref>.</i></p>
   
   <p>The HP Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires the VMWare vSphere
@@ -50,7 +50,7 @@
               href="../../media/CGH-install-portgroup-name.png" id="image_eqm_ngz_zs"/></p></li>
       </ol>
       <p>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+          href="carrier-grade-install-kvm-esx.dita#topic10581/vmware">KVM + ESX
         Deployment</xref>.</p>
     </section>
 </body>

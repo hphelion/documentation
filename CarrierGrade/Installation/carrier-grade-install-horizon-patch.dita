@@ -47,7 +47,7 @@ DJANGO_SETTINGS_MODULE=openstack_dashboard.settings /opt/stack/venvs/horizon/bin
     
     <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/patches">KVM
         installation</xref>.</p>
-    <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/patches">the KVM + ESX
+    <p>Return to <xref href="carrier-grade-install-kvm-esx.dita#topic10581/patches">the KVM + ESX
         installation</xref>.</p>
   </body>
 </topic>

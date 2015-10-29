@@ -57,7 +57,7 @@
     <li>Execute the <codeph>hdeploy</codeph> script on the HLM VM using the <codeph>-t</codeph>
           option: <codeblock>hdeploy –t &lt;cloudname&gt;</codeblock></li>
         </ol>
-      <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/hdeploy">the KVM +
+      <p>Return to <xref href="carrier-grade-install-kvm-esx.dita#topic10581/hdeploy">the KVM +
           ESX installation</xref>.</p>
     </section>
     <section id="vrg"><title>VRG Failure During hdeploy</title>
@@ -86,7 +86,7 @@
 </codeblock></li>
     <li>Execute the <codeph>hdeploy</codeph> script on the HLM VM using the <codeph>-t</codeph>
           option: <codeblock>hdeploy –t &lt;cloudname&gt;</codeblock></li></ol>
-      <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/hdeploy">the KVM + ESX installation</xref>.</p>
+      <p>Return to <xref href="carrier-grade-install-kvm-esx.dita#topic10581/hdeploy">the KVM + ESX installation</xref>.</p>
     </section>
     <section id="nova"><title>nova-compute is down after cloud deploy</title> As a workaround, comment the
       line <codeph>log_config_append = /etc/nova/logging.conf</codeph> in
@@ -181,7 +181,7 @@ network=CLM            </codeblock></li>
           <li>Execute the following command to set the hdeploy to restart from the failing RMQ step.<p>
               <codeblock>echo "FND-RMO" &gt; /tmp/deploy.role</codeblock>
             </p></li>
-          <li><xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/hdeploy">Restart the
+          <li><xref href="carrier-grade-install-kvm-esx.dita#topic10581/hdeploy">Restart the
               hdeploy process</xref>. <codeblock>hdeploy -t &lt;cloudname&gt;</codeblock></li>
         </ol></p>
       

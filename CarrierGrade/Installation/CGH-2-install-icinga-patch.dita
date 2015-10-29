@@ -57,7 +57,7 @@ ansible -i /root/&lt;cloudname>/clouds/&lt;cloudname>/001/stage/ansible/hosts -s
 [CLOUDNAME_IN_CAPS]-CCP-T2-M3-NETCLM | success | rc=0 >> patching file check_horizon.sh </codeblock></li>
       </ol>
     </p>
-    <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/role">the KVM + ESX
+    <p>Return to <xref href="carrier-grade-install-kvm-esx.dita#topic10581/role">the KVM + ESX
         installation</xref>.</p>
   </body>
 </topic>

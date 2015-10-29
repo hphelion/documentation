@@ -34,7 +34,7 @@
                     navtitle="Sample JSON File for Installing the KVM Deployment" locktitle="yes"
                     toc="no"/>
             </topicref>
-            <topicref href="carrier-grade-install-kvm-esx-GA.dita"
+            <topicref href="carrier-grade-install-kvm-esx.dita"
                 navtitle="Installing the KVM + ESX Deployment" locktitle="yes">
                 <topicref href="carrier-grade-install-kvm-node-json.dita" toc="no"/>
                 <topicref href="carrier-grade-install-kvm-def-json.dita" toc="no"/>

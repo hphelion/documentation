@@ -15,7 +15,7 @@
 </prolog>
 <body>
   <p><i>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"
+          href="carrier-grade-install-kvm-esx.dita#topic10581/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"
           >KVM + ESX Deployment</xref>.</i></p>
   
     <p>The HP Helion OpenStack Carrier Grade vCenter ESX compute proxy (compute proxy) is a driver
@@ -79,7 +79,7 @@
         process.</p>
     </section>
   <p><i>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"
+          href="carrier-grade-install-kvm-esx.dita#topic10581/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"
           >KVM + ESX Deployment</xref>.</i></p>
   </body>
 </topic>

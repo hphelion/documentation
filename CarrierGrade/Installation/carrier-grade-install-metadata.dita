@@ -36,6 +36,6 @@ NOVA_API_ENDPOINT_TYPE=internalURL</codeblock></li>
     </section>
   <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/patches">KVM
     installation</xref>.</p>
-  <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/patches">the KVM + ESX
+  <p>Return to <xref href="carrier-grade-install-kvm-esx.dita#topic10581/patches">the KVM + ESX
     installation</xref>.</p>  </body>
 </topic>

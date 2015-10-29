@@ -23,7 +23,7 @@
         href="carrier-grade-install-overview.dita#topic1925/install-option">KVM topology</xref>
       is to deploy the HP Helion Openstack cloud.</p>
     <p><b>Note:</b> If you are installing the KVM + ESX deployment, see <xref
-        href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing the KVM + ESX
+        href="carrier-grade-install-kvm-esx.dita#topic10581">Installing the KVM + ESX
         Deployment</xref>.</p>
     
     <section>

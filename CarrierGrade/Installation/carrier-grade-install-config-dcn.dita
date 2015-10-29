@@ -15,7 +15,7 @@
     </metadata>
   </prolog>
   <body>
-    <p>After <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">the HP Helion OpenStack
+    <p>After <xref href="carrier-grade-install-kvm-esx.dita#topic10581">the HP Helion OpenStack
         cloud is installed</xref>, you must perform the following tasks to prepare your cloud for
       use. These tasks use CLI commands, the HP Helion OpenStack Carrier Grade Horizon interface,
       and the HP Virtualized Services Directory Architect (VSD Architect) interface.  </p>

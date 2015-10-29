@@ -16,7 +16,7 @@
   </prolog>
   <body>
     <p><i>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+          href="carrier-grade-install-kvm-esx.dita#topic10581/vmware">KVM + ESX
         Deployment</xref>.</i></p>
     <section id="create-user-for-plugin-login"><p>You must create an administrative user called
         OSadmin and add it to CMS Group.</p>To create the OSadmin user: <ol>
@@ -47,7 +47,7 @@ VSD Server : auto</codeblock><p>The
       </ol></section>
     <section>
       <p><i>Return to the Installing the <xref
-            href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+            href="carrier-grade-install-kvm-esx.dita#topic10581/vmware">KVM + ESX
             Deployment</xref>.</i></p>
     </section>
   </body>

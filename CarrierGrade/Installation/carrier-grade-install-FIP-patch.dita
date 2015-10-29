@@ -38,7 +38,7 @@ patch -p1 &lt; ../knc-horizon-helion-theme-dashboard.patch</codeblock>
     </p>
     <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/hos-cloud">KVM
       installation</xref>.</p>
-    <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/hos-cloud">the KVM + ESX
+    <p>Return to <xref href="carrier-grade-install-kvm-esx.dita#topic10581/hos-cloud">the KVM + ESX
       installation</xref>.</p>
     </body>
 </topic>

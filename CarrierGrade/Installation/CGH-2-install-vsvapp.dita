@@ -15,7 +15,7 @@
     </metadata>
   </prolog>
   <body><p><i>Return to the Installing the <xref
-                    href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vapp">KVM + ESX
+                    href="carrier-grade-install-kvm-esx.dita#topic10581/vapp">KVM + ESX
                     Deployment</xref>.</i></p><p>This document describes how to install the HP
             Distributed Cloud Networking (DCN) vSphere Solution required to properly integrate the
             HP Distributed Cloud Networking and VMWare ESX components. </p><p>The HP Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires a VMware vApp, called
@@ -246,6 +246,6 @@ vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
                 </ol>
             </p>
         </section><p><i>Return to the Installing the <xref
-                    href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vapp">KVM + ESX
+                    href="carrier-grade-install-kvm-esx.dita#topic10581/vapp">KVM + ESX
                     Deployment</xref>.</i></p></body>
 </topic>

@@ -19,7 +19,7 @@
             <!--UNDER REVISION-->
             <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
             <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
-        <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing
+        <p>The <xref href="carrier-grade-install-kvm-esx.dita#topic10581">process for installing
                 the KVM + ESX deployment</xref> requires several JSON files that will be used when
             deploying the HLM VM.</p>
         <p>The <codeph>ansible.json</codeph> file in the
@@ -155,7 +155,7 @@ _vars.vsc_dcm_ip_subnet}}
         <section id="sample-node-provisionjson-file">
             <p>The following represents a sample <codeph>ansible.json</codeph> file. Use values
                 appropriate for your environment. The IP addresses are masked for security purposes.</p>
-            <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
+            <p>Return to <xref href="carrier-grade-install-kvm-esx.dita#topic10581">Installing
                     the KVM + ESX Deployment</xref>.</p>
 <codeblock>{
     "product": {

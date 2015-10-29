@@ -16,7 +16,7 @@
   </prolog>
   <body>
     <p><i>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+          href="carrier-grade-install-kvm-esx.dita#topic10581/vmware">KVM + ESX
         Deployment</xref>.</i></p>
 
     <p>After deploying the KVM region, you must perform the following steps to configure the  </p>

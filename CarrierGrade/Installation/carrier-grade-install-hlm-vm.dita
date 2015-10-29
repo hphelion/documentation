@@ -142,7 +142,7 @@ nuage-openstack-neutron_2015.1.1725_all.deb</codeblock></li>
           deployment</xref></p>
       <p>See either:</p>
       <p>
-        <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing the KVM + ESX
+        <xref href="carrier-grade-install-kvm-esx.dita#topic10581">Installing the KVM + ESX
           Deployment</xref></p>
       <p><xref href="carrier-grade-install-kvm.dita#topic10581">Installing the KVM
         Deployment</xref></p>

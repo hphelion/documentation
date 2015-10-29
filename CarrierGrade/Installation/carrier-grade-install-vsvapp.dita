@@ -15,7 +15,7 @@
   </prolog>
   <body>
     <p><i>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+          href="carrier-grade-install-kvm-esx.dita#topic10581/vmware">KVM + ESX
         Deployment</xref>.</i></p>
 
     <p>The HP Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires the VRSvApp. One
@@ -113,7 +113,7 @@
                 </ol></li>
             </ol>
             <p><i>Return to the Installing the <xref
-                        href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+                        href="carrier-grade-install-kvm-esx.dita#topic10581/vmware">KVM + ESX
                         Deployment</xref>.</i></p>
         </section>
   </body>
