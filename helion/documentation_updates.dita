@@ -36,6 +36,10 @@
                     are included in monitoring (<xref
                       href="blockstorage/ceph/adding_new_monitor_node.dita">Link</xref>)</p></entry>
               </row>
+              <row>
+                <entry>October 29.2015</entry>
+                <entry>Added web browser support information to the Horizon Overview (<xref href="horizon/horizon_overview.dita">Link</xref>)</entry>
+              </row>
             </tbody>
           </tgroup>
         </table>
