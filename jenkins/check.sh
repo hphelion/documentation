@@ -80,9 +80,15 @@ room="145"
 #Set the URL to the console output for this build
 CONSOLE=${BUILD_URL}console
 
-  
+ 
+if [[ $1 == ""]]a
+then
+WHERE="Files in all folders were checked."
+else
+WHERE="Only files in these directories were checked: $1"
+fi 
     
-MESSAGE="Redfaced reports <b>$EXIT typos in the $BRANCH branch</b> that should be corrected."
+MESSAGE="Redfaced reports <b>$EXIT typos in the $BRANCH branch</b> that should be corrected. $WHERE"
 
  
  
