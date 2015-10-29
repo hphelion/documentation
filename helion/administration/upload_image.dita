@@ -3,19 +3,18 @@
 <topic id="upload_image">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Uploading an Image for Use</title>
   <body>
-    <!--Needs Edit-->
     <section id="about">
-      <p>In order to properly create a Compute instance you need an image to use. The HP Helion
-        OpenStack lifecycle-manager provides an Ansible playbook that will download a Cirros linux
-        image and upload it as a public image to your image repository for use across your
-        Projects.</p>
+      <p>To create a Compute instance, you need to obtain an image that you can use. The HP Helion
+        OpenStack lifecycle-manager provides an Ansible playbook that will download a CirrOS Linux
+        image, and then upload it as a public image to your image repository for use across your
+        projects.</p>
     </section>
     <section id="playbook"><title>Running the Playbook</title>
-      <p>Use this command to run this playbook:</p>
+      <p>Use the following command to run this playbook:</p>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts glance-cloud-configure.yml -e proxy=&#60;PROXY></codeblock>
-      <p>The table below shows the optional switches you can use as part of this playbook to specify
-        environment-specific information:</p>
+      <p>The table below shows the optional switch that you can use as part of this playbook to
+        specify environment-specific information:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="ansible2">
           <tgroup cols="2">
@@ -33,8 +32,8 @@ ansible-playbook -i hosts/verb_hosts glance-cloud-configure.yml -e proxy=&#60;PR
                   <p><codeph>-e proxy="&lt;proxy_address:port>"</codeph></p>
                 </entry>
                 <entry>
-                  <p>If your environment requires a proxy in order to reach out over the internet,
-                    you would enter that here.</p>
+                  <p>Optional. If your environment requires a proxy for the internet, use this
+                    switch to specify the proxy information.</p>
                 </entry>
               </row>
             </tbody>
@@ -43,8 +42,8 @@ ansible-playbook -i hosts/verb_hosts glance-cloud-configure.yml -e proxy=&#60;PR
       </p>
     </section>
     <section id="custom_image"><title>How to Curate Your Own Images</title>
-      <p>OpenStack has put together a guide to show you how to obtain, create, and modify images
-        that will be compatible with your cloud:</p>
+      <p>OpenStack has created a guide to show you how to obtain, create, and modify images that
+        will be compatible with your cloud:</p>
       <p><xref href="http://docs.openstack.org/image-guide/content/" scope="external" format="html"
           >OpenStack Virtual Machine Image Guide</xref></p>
     </section>

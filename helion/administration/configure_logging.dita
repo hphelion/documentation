@@ -4,10 +4,10 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring the Centralized Logging
     Service</title>
   <body>
-    <!--Needs Edit-->
+    <!--Needs Work; do all the file names, variables, parameters, etc. need to be surrounded by codeph tags?-->
     <section id="config">
-      <p>In HP Helion OpenStack 2.0 you will have the option to configure the Centralized Logging
-        service for your needs. The information contained here will assist in this process.</p>
+      <p>In HP Helion OpenStack 2.0, you have the option to configure the Centralized Logging
+        service for your specific needs. This topic covers the following:</p>
       <ul>
         <li><xref href="#configure_logging/config_files">Main Configuration Files</xref></li>
         <li><xref href="#configure_logging/general_config">General Configuration</xref></li>
@@ -20,8 +20,8 @@
     </section>
     <section id="config_files"><title>Main Configuration Files</title>
       <p>Centralized Logging can be configured via the configuration files in the
-          <codeph>~/helion/my_cloud/config/logging/</codeph> directory on the deployer. These files
-        and their use are:</p>
+          <codeph>~/helion/my_cloud/config/logging/</codeph> directory on the lifecycle-manager.
+        These files and their use are described below:</p>
       <table frame="all" rowsep="1" colsep="1" id="table_wtv_rc5_st">
         <tgroup cols="2">
           <colspec colname="c1" colnum="1"/>
@@ -35,49 +35,49 @@
           <tbody>
             <row>
               <entry>main.yml</entry>
-              <entry>Main configuration file for all centralized logging components</entry>
+              <entry>Main configuration file for all centralized logging components.</entry>
             </row>
             <row>
               <entry>elasticsearch.yml.j2</entry>
-              <entry>Main configuration file for elasticsearch</entry>
+              <entry>Main configuration file for Elasticsearch.</entry>
             </row>
             <row>
               <entry>elasticsearch-default.j2</entry>
-              <entry>Default overrides for the elasticsearch init script</entry>
+              <entry>Default overrides for the Elasticsearch init script.</entry>
             </row>
             <row>
               <entry>kibana.yml.j2</entry>
-              <entry>Main configuration file for Kibana</entry>
+              <entry>Main configuration file for Kibana.</entry>
             </row>
             <row>
               <entry>kibana-apache2.conf.j2</entry>
-              <entry>Apache configuration for Kibana</entry>
+              <entry>Apache configuration file for Kibana.</entry>
             </row>
             <row>
               <entry>logstash.conf.j2</entry>
-              <entry>Logstash inputs/outputs configuration</entry>
+              <entry>Logstash inputs/outputs configuration.</entry>
             </row>
             <row>
               <entry>logstash-default.j2</entry>
-              <entry>Default overrides for the logstash init script</entry>
+              <entry>Default overrides for the Logstash init script.</entry>
             </row>
             <row>
               <entry>beaver.conf.j2</entry>
-              <entry>Main configuration file for Beaver</entry>
+              <entry>Main configuration file for Beaver.</entry>
             </row>
             <row>
               <entry>vars</entry>
-              <entry>Path to logrotate configuration files</entry>
+              <entry>Path to logrotate configuration files.</entry>
             </row>
           </tbody>
         </tgroup>
       </table>
     </section>
     <section id="general_config"><title>General Configuration</title>
-      <p>The Centralized Logging service needs to have the proper amount of resources available to
-        it in order to perform adequately for different scale environments. The base logging levels
-        will be tuned during installation according to the amount of RAM allocated to your control
-        plane nodes to ensure optimum performance.</p>
+      <p>The Centralized Logging service needs to have enough resources available to it to perform
+        adequately for different scale environments. The base logging levels are tuned during
+        installation according to the amount of RAM allocated to your control plane nodes to ensure
+        optimum performance.</p>
       <table frame="all" rowsep="1" colsep="1" id="table_grx_2f5_st">
         <tgroup cols="7">
           <colspec colname="c1" colnum="1"/>
@@ -91,10 +91,10 @@
             <row>
               <entry>Component</entry>
               <entry>Ansible Variable</entry>
-              <entry>Demo (&lt;32GB)</entry>
-              <entry>Small (&lt;64GB)</entry>
-              <entry>Medium (&lt;128GB)</entry>
-              <entry>Large (>= 128GB)</entry>
+              <entry>Demo (&lt;32 GB)</entry>
+              <entry>Small (&lt;64 GB)</entry>
+              <entry>Medium (&lt;128 GB)</entry>
+              <entry>Large (>= 128 GB)</entry>
               <entry>Description</entry>
             </row>
           </thead>
@@ -106,7 +106,7 @@
               <entry>8 GB</entry>
               <entry>16 GB</entry>
               <entry>32 GB</entry>
-              <entry>Amount of heap allocated to Elasticsearch</entry>
+              <entry>Amount of heap allocated to Elasticsearch.</entry>
             </row>
             <row>
               <entry>Logstash</entry>
@@ -115,32 +115,32 @@
               <entry>2 GB</entry>
               <entry>4 GB</entry>
               <entry>8 GB</entry>
-              <entry>Amount of heap allocated to Logstash</entry>
+              <entry>Amount of heap allocated to Logstash.</entry>
             </row>
             <row>
               <entry>Logstash</entry>
               <entry>logstash_num_workers</entry>
-              <entry>10</entry>
-              <entry>10</entry>
-              <entry>20</entry>
-              <entry>30</entry>
-              <entry>Number of logstash threads to spawn</entry>
+              <entry>10 threads</entry>
+              <entry>10 threads</entry>
+              <entry>20 threads</entry>
+              <entry>30 threads</entry>
+              <entry>Number of Logstash threads to spawn.</entry>
             </row>
           </tbody>
         </tgroup>
       </table>
       <p>These values can be viewed and changed in the
-          <codeph>~/helion/my_cloud/config/logging/main.yml</codeph> file if you wish but you will
-        need to run a reconfigure of the Centralized Logging service if changes are made.</p>
+          <codeph>~/helion/my_cloud/config/logging/main.yml</codeph> file, but you will need to run
+        a reconfigure of the Centralized Logging service if changes are made.</p>
       <note type="warning">The total process memory consumption for Elasticsearch will be the above
         allocated heap value plus any Java Virtual Machine (JVM) overhead.</note>
     </section>
     <section id="kibana_config">
       <title>Kibana Configuration</title>
-      <p>The access information for Kibana is defined in
-          <codeph>~/helion/my_cloud/config/logging/main.yml</codeph> and implemented in the Kibana
-        configuration file
-        <codeph>~/helion/my_cloud/config/logging/kibana-apache2.conf.j2</codeph>.</p>
+      <p>The access information for Kibana is defined in the
+          <codeph>~/helion/my_cloud/config/logging/main.yml</codeph> file and implemented in the
+        Kibana configuration file
+          <codeph>~/helion/my_cloud/config/logging/kibana-apache2.conf.j2</codeph>.</p>
       <table frame="all" rowsep="1" colsep="1" id="table_spl_rg5_st">
         <tgroup cols="3">
           <colspec colname="c1" colnum="1"/>
@@ -157,13 +157,13 @@
             <row>
               <entry>kibana_user</entry>
               <entry>kibana</entry>
-              <entry>Username that will be required for logging into the Kibana UI</entry>
+              <entry>Username that will be required for logging into the Kibana UI.</entry>
             </row>
             <row>
               <entry>kibana_pass</entry>
               <entry>random password is generated</entry>
               <entry>Password generated during installation that is used to login to the Kibana
-                UI</entry>
+                UI.</entry>
             </row>
           </tbody>
         </tgroup>
@@ -172,12 +172,12 @@
     <section id="elasticsearch_config">
       <title>Elasticsearch Configuration</title>
       <p>Elasticsearch has a number of tunable options exposed in its configuration that we have
-        taken advantage of to tune Elasticsearch in HP Helion OpenStack in such a way that we favor
-        indexing speed over search speed. We have also tuned it for optimal performance in low RAM
-        environments. The options that we've modified are listed below along with an explanation as
-        to why they were modified.</p>
-      <p>These configurations are defined in
-          <codeph>~/helion/my_cloud/config/logging/main.yml</codeph> and are implemented in the
+        utilized to tune Elasticsearch in HP Helion OpenStack so that we favor indexing speed over
+        search speed. We have also tuned it for optimal performance in low RAM environments. The
+        options that we have modified are listed below along with an explanation as to why they were
+        modified.</p>
+      <p>These configurations are defined in the
+          <codeph>~/helion/my_cloud/config/logging/main.yml</codeph> file and are implemented in the
         Elasticsearch configuration file
           <codeph>~/helion/my_cloud/config/logging/elasticsearch.yml.j2</codeph>.</p>
       <table frame="all" rowsep="1" colsep="1" id="table_qsd_3h5_st">
@@ -210,7 +210,7 @@
               <entry>indices.fielddata.cache.size</entry>
               <entry>15%</entry>
               <entry>unbounded</entry>
-              <entry>By default, this setting is <i>unbounded</i>—Elasticsearch will never evict
+              <entry>By default, this setting is <b>unbounded</b>—Elasticsearch will never evict
                 data from fielddata, which is less than ideal when trying to conserve on memory
                 usage.</entry>
             </row>
@@ -219,9 +219,9 @@
               <entry>indices.breaker.fielddata.limit</entry>
               <entry>25%</entry>
               <entry>60%</entry>
-              <entry>The field data circuit breaker allows Elasticsearch to estimate the amount of
+              <entry>The field data circuit breaker enables Elasticsearch to estimate the amount of
                 memory a field will require to be loaded into memory. This value must be greater
-                than <i><b>cache.size</b></i> to evict data properly.</entry>
+                than <b>cache.size</b> to evict data properly.</entry>
             </row>
             <row>
               <entry>elasticsearch_indices_ttl_bulk_size</entry>
@@ -235,7 +235,7 @@
               <entry>indices.cache.filter.expire</entry>
               <entry>6h</entry>
               <entry>-1</entry>
-              <entry>By default, this setting is -1 (i.e. never expires).</entry>
+              <entry>By default, this setting is -1 (i.e., never expires).</entry>
             </row>
             <row>
               <entry>elasticsearch_indices_memory_index_buffer_size</entry>
@@ -288,7 +288,7 @@
               <entry>index.merge.scheduler.max_thread_count</entry>
               <entry>1</entry>
               <entry>cores/2</entry>
-              <entry>Elasticsearch recommends 1 if using spinning disks</entry>
+              <entry>Elasticsearch recommends 1 if using spinning disks.</entry>
             </row>
             <row>
               <entry>elasticsearch_index_translog_flush_threashhold_ops</entry>
@@ -337,7 +337,7 @@
                   <p>You can also change the log level for <codeph>ceilometer-api</codeph> only by
                     changing the file below:</p>
                   <codeblock>~/helion/hos/ansible/roles/CEI-API/templates/api-logging.conf.j2</codeblock>
-                  <p>For post-deployment log level changes, please commit your changes to git and
+                  <p>For post-deployment log level changes, commit your changes to Git and
                     re-run the following from the lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p></entry>
@@ -351,7 +351,7 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                   <p>You can also change the log level for <codeph>ceilometer-collector</codeph>
                     only by changing the file below:</p>
                   <codeblock>~/helion/hos/ansible/roles/CEI-COL/templates/collector-logging.conf.j2</codeblock>
-                  <p>For post-deployment log level changes, please commit your changes to git and
+                  <p>For post-deployment log level changes, commit your changes to Git and
                     re-run the following from the lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
@@ -372,7 +372,7 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                       <codeph>ceilometer-agent-notification</codeph> only by changing the file
                     below:</p>
                   <codeblock>~/helion/hos/ansible/roles/CEI-NAG/templates/agent-notification-logging.conf.j2</codeblock>
-                  <p>For post-deployment log level changes, please commit your changes to git and
+                  <p>For post-deployment log level changes, commit your changes to Git and
                     re-run the following from the lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
@@ -387,7 +387,7 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                   <p>You can also change the log level for <codeph>ceilometer-agent-central</codeph>
                     only by changing the file below:</p>
                   <codeblock>~/helion/hos/ansible/roles/CEI-CAG/templates/agent-central-logging.conf.j2</codeblock>
-                  <p>For post-deployment log level changes, please commit your changes to git and
+                  <p>For post-deployment log level changes, commit your changes to Git and
                     re-run the following from the lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
@@ -403,7 +403,7 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                   <p>You can also change the log level for <codeph>ceilometer-expirer</codeph> only
                     by changing the file below:</p>
                   <codeblock>~/helion/hos/ansible/roles/CEI-EXP/templates/expirer-logging.conf.j2</codeblock>
-                  <p>For post-deployment log level changes, please commit your changes to git and
+                  <p>For post-deployment log level changes, commit your changes to Git and
                     re-run the following from the lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
@@ -446,20 +446,20 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml -e cinder_logstash_l
                 <entry morerows="2"><p>Freezer</p></entry>
                 <entry><p>freezer-agent</p></entry>
                 <entry><p>INFO</p></entry>
-                <entry><p>Currently the freezer-agent does not support debug logs. INFO level is the
+                <entry><p>Currently the <codeph>freezer-agent</codeph> does not support debug logs. INFO level is the
                     default one used for this component.</p></entry>
               </row>
               <row>
                 <entry><p>freezer-api</p></entry>
                 <entry><p>INFO</p></entry>
-                <entry><p>Currently the freezer-api does not support debug logs. INFO level is the
-                    default one used for this component.</p></entry>
+                <entry><p>Currently the <codeph>freezer-api </codeph>does not support debug logs. INFO level is the default
+                    one used for this component.</p></entry>
               </row>
               <row>
                 <entry><p>freezer-scheduler</p></entry>
                 <entry><p>INFO</p></entry>
-                <entry><p>Currently the freezer-scheduler does not support debug logs. INFO level is
-                    the default one used for this component.</p></entry>
+                <entry><p>Currently the <codeph>freezer-scheduler</codeph> does not support debug logs. INFO level is the
+                    default one used for this component.</p></entry>
               </row>
               <row>
                 <entry><p>Glance</p></entry>
@@ -485,7 +485,7 @@ ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml</codeblock></entry>
 ~/helion/my_cloud/config/heat/api-logging.conf.j2
 ~/helion/my_cloud/config/heat/engine-logging.conf.j2</codeblock>
                   <p>Users can edit these files and set the desired log level for both local as well
-                    as centralized logging. After making the changes run heat-reconfigure playbook
+                    as centralized logging. After making the changes, run the heat-reconfigure playbook
                     from the deployer to apply the changes, as shown below:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts heat-reconfigure.yml</codeblock></entry>
@@ -516,8 +516,8 @@ ansible-playbook -i hosts/verb_hosts monasca-agent-reconfigure.yml -e "monasca_l
 ~/helion/hos/ansible/roles/monasca-notification/defaults/main.yml
 ~/helion/hos/ansible/roles/monasca-api/defaults/main.yml
 ~/helion/hos/ansible/roles/kafka/defaults/main.yml
-~/helion/hos/ansible/roles/monasca-agent/defaults/main.yml (This one you will need to add the variable)</codeblock>
-                  <p>You will then need to run:</p>
+~/helion/hos/ansible/roles/monasca-agent/defaults/main.yml (For this file, you will need to add the variable)</codeblock>
+                  <p>Then run:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts monasca-reconfigure.yml -e "monasca_log_level=DEBUG"
 ansible-playbook -i hosts/verb_hosts monasca-agent-reconfigure.yml -e "monasca_log_level=DEBUG"</codeblock>
@@ -582,7 +582,7 @@ ansible-playbook -i hosts/verb_hosts site.yml -e "ops_console_loglevel=DEBUG"</c
                   <p>The logging level is set in the file below:</p>
                   <codeblock>/etc/sherpa/sherpa.conf</codeblock>
                   <p>To change the logging level, just change from INFO to DEBUG in the following
-                    line in sherpa.conf:</p>
+                    line in <codeph>sherpa.conf</codeph>:</p>
                   <codeblock>'sherpa': {'level': 'INFO', 'handlers': ['file', 'json']}</codeblock>
                 </entry>
               </row>
