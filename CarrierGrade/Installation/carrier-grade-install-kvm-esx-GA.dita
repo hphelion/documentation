@@ -276,7 +276,7 @@ Password: cghelion</codeblock>
       <p>Modify the <codeph>ansible.json</codeph> file in the
           <codeph>/var/hlm/clouds/&lt;cloudname&gt;/vars</codeph> directory of the HLM VM.</p>
       <p>To see a sample <codeph>ansible.json</codeph> file, see <xref
-          href="carrier-grade-install-pb-kvm-ansible-json.dita">Sample ansible.json File for
+          href="carrier-grade-install-kvm-ansible-json.dita">Sample ansible.json File for
           Installing the KVM + ESX Topology</xref>.</p>
     </section>
     <section id="configure-esx-json">
