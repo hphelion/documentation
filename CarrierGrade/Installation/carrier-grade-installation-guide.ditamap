@@ -71,8 +71,6 @@
             navtitle="Deploying the Baremetal Region" locktitle="yes"/>
         <topicref href="carrier-grade-install-post.dita" navtitle="Post-Installation Tasks"
             locktitle="yes">
-            <topicref href="carrier-grade-install-metadata.dita" toc="yes"
-                navtitle="Configuring the DCN Metadata Agent" locktitle="yes"/>
             <topicref href="carrier-grade-install-ldap-verify.dita"
                 navtitle="Verifying the LDAP Deployment" locktitle="yes" toc="yes"/>
             <topicref href="carrier-grade-install-verify-vsc.dita" navtitle="Verifying the VSC VMs"
