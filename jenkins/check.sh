@@ -81,7 +81,7 @@ room="145"
 CONSOLE=${BUILD_URL}console
 
  
-if [[ $1 == ""]]a
+if [[ $1 == ""]]
 then
 WHERE="Files in all folders were checked."
 else
