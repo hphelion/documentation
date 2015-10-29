@@ -4,15 +4,15 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Recommended Minimum Hardware
     Requirements</title>
   <body>
-    <!--Needs Edit-->
+    <!--Needs Work; 'Supported Hardware Configurations' section is confusing and seems incomplete; Notes about performance should maybe be rewritten as actual notes and/or recommendations~this section is kind of fuzzy;-->
     <section id="supported_hardware"><title>Hardware Support Matrix</title>
-      <p>For information about the supported hardware in HP Helion OpenStack 2.0, see the <xref
+      <p>For information about the supported hardware in HP Helion OpenStack 2.0, see <xref
           href="http://helionready.hpcloud.com/ihv/" format="html" scope="external">HP Helion Ready
           Solution Catalog</xref>.</p>
     </section>
     <section id="supported_configs">
       <title>Supported Hardware Configurations</title>
-      <p>Helion OpenStack 2.0 supports the following hardware configurations for a Helion OpenStack
+      <p>HP Helion OpenStack 2.0 supports the following hardware configurations for a
         deployment.</p>
       <p>Storage Interconnects/Protocols</p>
       <ul>
@@ -27,8 +27,7 @@
         <li>On the control plane nodes, you will want good I/O performance. Your array controllers
           must have cache controllers and we advise against the use of RAID-5.</li>
         <li>On compute nodes, the I/O performance will influence the virtual machine start-up
-          performance. We also recommend the use of cache controllers in your storage arrays here as
-          well.</li>
+          performance. We also recommend the use of cache controllers in your storage arrays.</li>
       </ul>
     </section>
     <section id="MinimumRequirements">
@@ -51,7 +50,7 @@
           </thead>
           <tbody>
             <row>
-              <entry morerows="3">Dedicated Lifecycle-manager (optional, the default configuration
+              <entry morerows="3">Dedicated lifecycle-manager (optional, the default configuration
                 uses the first controller node as the lifecycle-manager)</entry>
               <entry morerows="3">Lifecycle-manager</entry>
               <entry morerows="3">1</entry>
@@ -60,19 +59,19 @@
             </row>
             <row>
               <entry>Memory</entry>
-              <entry> 1 GB</entry>
+              <entry>1 GB</entry>
             </row>
             <row>
               <entry>Network</entry>
               <entry>
                 <p>Options:</p>
                 <ul>
-                  <li>1 x 1 Gb with PXE Support</li>
-                  <li>2 x 1 Gb or 2 x10 Gb</li>
+                  <li>1 x 1 GB with PXE Support</li>
+                  <li>2 x 1 GB or 2 x 10 GB</li>
                 </ul>
                 <p>or</p>
                 <ul>
-                  <li>2 x 1 Gb or 2 x10 Gb (with one PXE enabled NIC)</li>
+                  <li>2 x 1 GB or 2 x 10 GB (with one PXE enabled NIC)</li>
                 </ul>
               </entry>
             </row>
@@ -87,8 +86,8 @@
               <entry>Disk</entry>
               <entry>
                 <ul>
-                  <li>1 x 512 GB (Min.) – OS drive</li>
-                  <li>2 x 512 GB (Min.) – Data drive</li>
+                  <li>1 x 512 GB (minimum) – operating system drive</li>
+                  <li>2 x 512 GB (minimum) – Data drive</li>
                 </ul>
               </entry>
             </row>
@@ -100,12 +99,12 @@
               <entry>Network</entry>
               <entry><p>Options:</p>
                 <ul>
-                  <li>1 x 1 Gb with PXE Support</li>
-                  <li>2 x 1 Gb or 2 x10 Gb</li>
+                  <li>1 x 1 GB with PXE Support</li>
+                  <li>2 x 1 GB or 2 x 10 GB</li>
                 </ul>
                 <p>or</p>
                 <ul>
-                  <li>2 x 1 Gb or 2 x10 Gb (with one PXE enabled NIC)</li>
+                  <li>2 x 1 GB or 2 x10 GB (with one PXE enabled NIC)</li>
                 </ul></entry>
             </row>
             <row>
@@ -117,23 +116,23 @@
               <entry morerows="3">Compute</entry>
               <entry morerows="3">1-100</entry>
               <entry>Disk</entry>
-              <entry>2 X 512 GB (Min.)</entry>
+              <entry>2 X 512 GB (minimum)</entry>
             </row>
             <row>
               <entry>Memory</entry>
-              <entry>32 GB (Memory must be sized based on the VM instances hosted on the Compute
+              <entry>32 GB (memory must be sized based on the VM instances hosted on the Compute
                 node)</entry>
             </row>
             <row>
               <entry>Network</entry>
               <entry><p>Options:</p>
                 <ul>
-                  <li>1 x 1 Gb with PXE Support</li>
-                  <li>2 x 1 Gb or 2 x10 Gb</li>
+                  <li>1 x 1 GB with PXE Support</li>
+                  <li>2 x 1 GB or 2 x 10 GB</li>
                 </ul>
                 <p>or</p>
                 <ul>
-                  <li>2 x 1 Gb or 2 x10 Gb (with one PXE enabled NIC)</li>
+                  <li>2 x 1 GB or 2 x 10 GB (with one PXE enabled NIC)</li>
                 </ul></entry>
             </row>
             <row>
@@ -147,7 +146,7 @@
               <entry morerows="3">VSA or OSD (Ceph)</entry>
               <entry morerows="3">0 or 3</entry>
               <entry>Disk</entry>
-              <entry>3 X 512 GB (Min.)</entry>
+              <entry>3 X 512 GB (minimum)</entry>
             </row>
             <row>
               <entry>Memory</entry>
@@ -157,12 +156,12 @@
               <entry>Network</entry>
               <entry><p>Options:</p>
                 <ul>
-                  <li>1 x 1 Gb with PXE Support</li>
-                  <li>2 x 1 Gb or 2 x10 Gb</li>
+                  <li>1 x 1 GB with PXE Support</li>
+                  <li>2 x 1 GB or 2 x 10 GB</li>
                 </ul>
                 <p>or</p>
                 <ul>
-                  <li>2 x 1 Gb or 2 x10 Gb (with one PXE enabled NIC)</li>
+                  <li>2 x 1 GB or 2 x10 GB (with one PXE enabled NIC)</li>
                 </ul></entry>
             </row>
             <row>
@@ -173,7 +172,7 @@
         </tgroup>
       </table>
       <p>For more details about the supported network requirements, see <xref
-          href="example_configurations.dita">Example Configuration</xref></p>
+          href="example_configurations.dita"/>.</p>
     </section>
     <section id="minimum-node-esx"><b>Minimum Node Requirements For ESX</b></section>
     <table id="table_ixh_np2_dt">
@@ -198,7 +197,7 @@
         </thead>
         <tbody>
           <row>
-            <entry>Dedicated Lifecycle-manager (optional, the default configuration uses the first
+            <entry>Dedicated lifecycle-manager (optional, the default configuration uses the first
               controller node as the lifecycle-manager)</entry>
             <entry>Lifecycle-manager</entry>
             <entry>1</entry>
@@ -207,7 +206,7 @@
             <entry>
               <ul id="ul_ob3_np2_dt">
                 <li>1 x 1 GB with PXE Support</li>
-                <li>2 x 1 GB or 2 x10 GB</li>
+                <li>2 x 1 GB or 2 x 10 GB</li>
               </ul>
             </entry>
             <entry>8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
@@ -216,12 +215,12 @@
             <entry>Control Plane</entry>
             <entry>Controller</entry>
             <entry>3</entry>
-            <entry>3 X 512 GB (Min.)</entry>
+            <entry>3 X 512 GB (minimum)</entry>
             <entry>32 GB</entry>
             <entry>
               <ul id="ul_sc3_np2_dt">
                 <li>1 x 1 GB with PXE Support</li>
-                <li>2 x 1 GB or 2 x10 GB</li>
+                <li>2 x 1 GB or 2 x 10 GB</li>
               </ul>
             </entry>
             <entry>8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
@@ -230,7 +229,7 @@
             <entry>Compute</entry>
             <entry>1 vCenter with 2 ESX nodes under one cluster</entry>
             <entry>2</entry>
-            <entry>1 TB (min) (Shared across all nodes)</entry>
+            <entry>1 TB (minimum) (shared across all nodes)</entry>
             <entry>128 GB</entry>
             <entry>2 x 1 GB or 2 x10 GB</entry>
             <entry>

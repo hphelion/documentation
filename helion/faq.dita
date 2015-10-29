@@ -3,20 +3,18 @@
 <topic xml:lang="en-us" id="faq">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Frequently Asked Questions</title>
   <body>
-    <!--Needs Edit-->
     <section id="Customization"><title>Customization</title>
       <p><b>What level of customization will be possible via modifying the configuration files and
           using them to deploy?</b></p>
-      <p>Full details about the input model and what options are available can be found here: <xref
-          href="input_model.dita">Input Model</xref></p>
+      <p>For full details about the input model and what options are available can be found, see
+          <xref href="input_model.dita"/>.</p>
     </section>
     <section>
       <title>How do I change my service passwords from the default?</title>
       <p>By default there is an Administrator user (username "admin") created during the
-        installation process. To retrieve the random password set you can use this command:</p>
+        installation process. To retrieve the random password set, use this command:</p>
       <codeblock>source ~/service.osrc</codeblock>
-      <p>See <xref href="operations/accessing_horizon.dita">Accessing Horizon</xref> for more
-        details.</p>
+      <p>For more details, see <xref href="operations/accessing_horizon.dita"/>.</p>
     </section>
     <section id="Neutron">
       <title>Neutron Features</title>
@@ -39,21 +37,21 @@ The modes are generally further classified as those that require switch side con
   -->
       <p><b>How does network separation work and what benefit does it provide?</b></p>
       <p>Network separation is the name given for the practice of segregation of traffic by types.
-        The primary driver for this is performance and security. Having a dedicated channel enables
-        a network admin to exercise better control over the SLA offered to the tenant. It is often
-        implemented as part of a security policy that is enforced by the security practice in the
-        company.</p>
-      <p>There are two types of network separation: physical and logical. Both are identical in that
+        The primary drivers for this are performance and security. Having a dedicated channel
+        enables a network administrator to exercise better control over the SLA offered to the
+        tenant. It is often implemented as part of a security policy that is enforced by the
+        security practice in the company.</p>
+      <p>There are two types of network separation: physical and logical. Both are the same in that
         they create separate channels for traffic types. For example, a best practice deployment is
         to create separate channel for storage (iSCSI) traffic. This can be done by creating a
         logical separation using VLAN on a single NIC or by dedicating a NIC for this type of
         traffic. In the cloud today, management, tenant, external and services traffic types are
         segregated into their own channels.</p>
       <p><b>How does the Multiple-Network feature work?</b></p>
-      <p>Multiple networks is a feature in Helion <tm tmtype="reg">OpenStack</tm> 2.0 that enables
-        bridging of multiple external physical networks to neutron network. Using this functionality
-        a tenant can dictate the path taken by the data in the physical network outside the cloud.
-        It can also be used for multi-homing to two physical networks.</p>
+      <p>Multiple networks is a feature in HP Helion OpenStack 2.0 that enables bridging of multiple
+        external physical networks to neutron network. Using this functionality, a tenant can
+        dictate the path taken by the data in the physical network outside the cloud. It can also be
+        used for multihoming to two physical networks.</p>
     </section>
   </body>
 </topic>
