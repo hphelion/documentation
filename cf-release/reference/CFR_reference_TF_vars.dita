@@ -97,7 +97,7 @@
       <title>A sample <codeph>.tfvars</codeph> file</title>
       <codeblock>openstack_availability_zone = "az1"
 openstack_keypair = "myKeyPair"
-openstack_network_id = "738e0ea9-98f9-471f-8c46-f2796c367b87"
+openstack_network_id = "123a1ab1-12a1-123a-1a12-a1234a123a12"
 openstack_network_name = "myNetwork"
 openstack_region = "us-west"
 cluster_admin_username = "myClusterUsername"
