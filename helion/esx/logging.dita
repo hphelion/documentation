@@ -5,8 +5,10 @@
   <body><!--Needs Work; fnf edit on 10/27; clarify procedure1/step2-->
     <p>This topic describes how to enable the EON service for centralized logging, and changing the
       EON log level to DEBUG.</p>
-    <section><b>To Modify the EON Log Level </b>
-      <p>To change the EON log level to DEBUG, do the following:</p><p>
+    <section>
+      <title>To Modify the EON Log Level</title>
+      <p>To change the EON log level to DEBUG, do the following:</p>
+      <p>
         <ol id="ol_ydx_4xh_rt">
           <li>Change the directory to:
             <codeblock>cd ~/helion/hos/ansible/roles/eon-common/templates</codeblock></li>
@@ -33,7 +35,8 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
             playbook<codeblock>cd /home/stack/scratch/ansible/next/hos/ansible;
 ansible-playbook -i hosts/verb_hosts eon-reconfigure.yml</codeblock></li>
         </ol>
-      </p></section>
+      </p>
+    </section>
     <section id="enable-eon-service-centralized-logging"><b> To Enable EON Service for Centralized
         Logging</b>
       <p>To enable EON Service for centralized logging:</p><ol>
@@ -77,5 +80,35 @@ ansible-playbook -i hosts/verb_hosts eon-reconfigure.yml</codeblock></li>
       </ol></section>
     <note>To disable the centralized logging, set the value of <codeph>centralized_logging</codeph>
       to <b>False</b> (See Step <b>2</b>).</note>
+    <section>
+      <title>To Modify the OVSVAPP VM Log Level</title>
+      <p>To change the OVSVAPP log level to DEBUG, do the following:<ol id="ol_alb_vnj_vt">
+          <li>Change the directory
+            to:<codeblock>cd ~/helion/hos/ansible/roles/neutron-common/templates</codeblock></li>
+          <li>Edit the <b>logger_root</b> section in
+            <codeph>ovsvapp-agent-logging.conf.j2</codeph>:<codeblock>[logger_root]
+qualname: root
+handlers: watchedfile, logstash
+level: DEBUG</codeblock></li>
+          <li>Commit your
+            configuration:<codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message>"</codeblock></li>
+          <li>Run the configuration processor, as follows:
+            <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Prepare your environment for
+            deployment:<codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml;</codeblock></li>
+          <li>Run the Neutron reconfigure
+            playbook:<codeblock>cd /home/stack/scratch/ansible/next/hos/ansible;
+ansible-playbook -i hosts/verb_hosts neutron-reconfigure.yml</codeblock></li>
+        </ol></p>
+    </section>
+    <section>
+      <p><b>To Enable OVSVAPP Service for Centralized Logging</b></p>
+      <p>To enable OVSVAPP Service for centralized logging:<ol id="ol_zzb_z4j_vt">
+          <li>Change the directory to:</li>
+        </ol></p>
+    </section>
   </body>
 </topic>
