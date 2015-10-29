@@ -579,11 +579,6 @@ ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
         href="../../media/CGH-install-resolv-conf.jpg" id="image_idc_5wp_vs">
         <alt>Verify VRS-G </alt>
       </image></section>
-    <section id="kibana">
-      <title>Launch the Kibana interface</title>
-      <p>To launch Kibana, see <xref href="carrier-grade-install-access-kibana.dita#topic10581"
-          >Accessing Kibana</xref>.</p>
-    </section>
     <section id="next-step">
       <title>Next Step</title>
       <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon

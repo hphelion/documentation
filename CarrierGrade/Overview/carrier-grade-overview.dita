@@ -17,7 +17,8 @@
       <!-- From QuickSpec Asawa, Manjari <manjari.asawa@hp.com> -->
       <p><b>HP Helion OpenStack Carrier Grade </b> is a carrier grade OpenStack solution plus
         compute and network functions virtualization (NFV) offering that enables CSPs to deploy
-        applications on open source software platforms.  </p>
+        applications on open source software platforms. HP Helion OpenStack Carrier Grade is based
+        on OpenStack Kilo.</p>
       <p>Some key examples include the host operating system (for example, Linux), server
         virtualization (KVM), network virtualization (vSwitch and SDN controllers), an installer and
         cloud lifecycle management framework, fault and performance management, and

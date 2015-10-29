@@ -29,10 +29,10 @@
                 <li>Log into the KVM region <codeph>controller-0</codeph> node with root
                     privileges.</li>
                 <li>Identify the compute node with Niantic NIC and configure the node.
-                        <codeblock>system host-list &lt;compute-name> </codeblock><p>The Niantic NIC
-                        is displayed in the device column as <codeph>82599ES 10-Gigabit SFI/SFP+
-                        </codeph>.</p><p>For
-                        example:<codeblock>[root@controller-0 ~(keystone_admin)]# system host-port-list tb4c1
+                        <codeblock>system host-port-list &lt;compute-name> </codeblock><p>The
+                        Niantic NIC is displayed in the device column as <codeph>82599ES 10-Gigabit
+                            SFI/SFP+ </codeph>.</p><p>For
+                        example:<codeblock>system host-port-list tb4c1
 +--------------------------------------+------+----------+--------------+--------+-----------+-------------+------------------------------------------------+
 | uuid                                 | name | type     | pci address  | device | processor | accelerated | device type                                    |
 +--------------------------------------+------+----------+--------------+--------+-----------+-------------+------------------------------------------------+

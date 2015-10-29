@@ -59,7 +59,6 @@
                 <topicref href="CGH-2-install-icinga-patch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-network-role-patch.dita" toc="no"/>
             </topicref>
-            <topicref href="carrier-grade-install-access-kibana.dita" toc="no"/>
         </topicref>
         <topicref href="carrier-grade-install-launch-horizon.dita"
             navtitle="Launching the Horizon Interface" locktitle="yes"/>
