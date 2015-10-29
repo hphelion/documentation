@@ -26,7 +26,7 @@ level: DEBUG</codeblock></li>
             <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock></li>
-          <li>Run the configuration processor, as follows:
+          <li>Run the configuration processor as follows:
             <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <li>Prepare your environment for
@@ -39,7 +39,7 @@ ansible-playbook -i hosts/verb_hosts eon-reconfigure.yml</codeblock></li>
     </section>
     <section id="enable-eon-service-centralized-logging"><b> To Enable EON Service for Centralized
         Logging</b>
-      <p>To enable EON Service for centralized logging:</p><ol>
+      <p>To enable EON Service for centralized logging, do the following:</p><ol>
         <li>Change the directory
           to:<codeblock>~/helion/my_cloud/config/logging/vars</codeblock></li>
         <li>Edit the <codeph>eon-api-clr.yml</codeph> and <codeph>eon-conductor-clr.yml</codeph>
@@ -69,8 +69,8 @@ log_rotate:
           configuration:<codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock></li>
-        <li>Run the configuration processor, as follows:
-          <codeblock>cd ~/helion/hos/ansible
+        <li>Run the configuration
+          processor:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <li>Prepare your environment for
           deployment:<codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml;</codeblock></li>
@@ -94,8 +94,8 @@ level: DEBUG</codeblock></li>
             configuration:<codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock></li>
-          <li>Run the configuration processor, as follows:
-            <codeblock>cd ~/helion/hos/ansible
+          <li>Run the configuration
+            processor:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <li>Prepare your environment for
             deployment:<codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml;</codeblock></li>
@@ -107,7 +107,46 @@ ansible-playbook -i hosts/verb_hosts neutron-reconfigure.yml</codeblock></li>
     <section>
       <p><b>To Enable OVSVAPP Service for Centralized Logging</b></p>
       <p>To enable OVSVAPP Service for centralized logging:<ol id="ol_zzb_z4j_vt">
-          <li>Change the directory to:</li>
+          <li>Change the directory
+            to:<codeblock>~/helion/my_cloud/config/logging/vars</codeblock></li>
+          <li>Edit the <codeph>neutron-ovsvapp-clr.yml</codeph> file to set the value of
+              <codeph>centralized_logging</codeph> to <b>true</b> as shown in the following
+            sample:<codeblock>logr_services:
+  neutron-ovsvapp:
+    logging_options:
+    - centralized_logging:
+        enabled: <b>true</b>
+        format: json
+      files:
+     - /var/log/neutron/ovsvapp-agent/ovsvapp_agent.log
+     log_rotate:
+     - daily
+     - compress
+     - missingok
+     - notifempty
+     - copytruncate
+     - maxsize 45M
+     - rotate 7
+     - create 640 eon eon
+   - centralized_logging:
+       enabled: true
+        format: rawjson
+    files:
+    -/var/log/neutron/ovsvapp-agent/ovsvapp_agent-json.log</codeblock></li>
+          <li>Commit your
+            configuration:<codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message>"</codeblock></li>
+          <li>Run the configuration processor:
+            <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Prepare your environment for
+            deployment:<codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml;</codeblock></li>
+          <li>Run the Neutron reconfigure playbook:<codeblock>cd /home/stack/scratch/ansible/next/hos/ansible;
+ansible-playbook -i hosts/verb_hosts neutron-reconfigure.yml --limit NEU-OVSVAPP</codeblock><p>
+              <note>To disable the centralized logging, set the value of
+                  <codeph>centralized_logging</codeph> to <b>False</b> (See Step <b>2</b>).</note>
+            </p></li>
         </ol></p>
     </section>
   </body>
