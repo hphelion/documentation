@@ -20,7 +20,7 @@
       <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.md-->
       <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
     <p>After Helion lifecycle management is installed, the next task in installing the <xref
-        href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM topology</xref>
+        href="carrier-grade-install-overview.dita#topic1925/install-option">KVM topology</xref>
       is to deploy the HP Helion Openstack cloud.</p>
     <p><b>Note:</b> If you are installing the KVM + ESX deployment, see <xref
         href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing the KVM + ESX

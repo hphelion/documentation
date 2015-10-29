@@ -14,7 +14,7 @@
             </vrmlist>
         </prodinfo>
     </topicmeta>
-    <topicref href="carrier-grade-install-pb-overview.dita" navtitle="Installation Guide"
+    <topicref href="carrier-grade-install-overview.dita" navtitle="Installation Guide"
         locktitle="yes">
         <topicref href="carrier-grade-install-pb-prereqs-GA.dita"
             navtitle="Installation Prerequisites" locktitle="yes">

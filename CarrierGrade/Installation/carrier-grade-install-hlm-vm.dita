@@ -138,7 +138,7 @@ nuage-openstack-neutron_2015.1.1725_all.deb</codeblock></li>
   <section id="next-step"> <title>Next Step</title>
 <p>The next step depends upon the HP Helion OpenStack Carrier Grade deployment model you are
         installing: KVM or KVM + ESX. For more information on each deployment model, see <xref
-          href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM
+          href="carrier-grade-install-overview.dita#topic1925/install-option">KVM
           deployment</xref></p>
       <p>See either:</p>
       <p>

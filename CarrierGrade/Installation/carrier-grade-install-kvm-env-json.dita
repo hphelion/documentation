@@ -24,7 +24,7 @@
 <section id="sample-node-provisionjson-file">
   <p>The following represents a sample <codeph>environment.json</codeph> file in the
                     <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the HLM VM for
-                    <xref href="carrier-grade-install-pb-overview.dita#topic1925/nic">an unbonded
+                    <xref href="carrier-grade-install-overview.dita#topic1925/nic">an unbonded
                     NIC installation</xref>. The IP addresses are masked for security purposes. Use
                 values appropriate for your environment.</p>
             <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
