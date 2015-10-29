@@ -63,10 +63,10 @@ ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=compute7</codeblo
           deployment actions only to the target node(s).
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml --limit hlm004-ccp-comp0007*</codeblock></li>
-        <!-- removed until DOCS-1968 is resolved <li>If you want the new compute node to be included in the monitoring service checks, there
+        <li>If you want the new compute node to be included in the monitoring service checks, there
           is an additional playbook that must be run to ensure this happens:
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts monasca-deploy.yml tags monasca_agent_plugin</codeblock></li> -->
+ansible-playbook -i hosts/verb_hosts monasca-deploy.yml --tags active_ping_checks</codeblock></li>
       </ol>
     </section>
 
