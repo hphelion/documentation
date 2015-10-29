@@ -16,7 +16,7 @@ cc_normal=`echo -en "${esc}[m\017"`
 
 cat ./jenkins/badstrings.txt ./jenkins/badstrings.LOCAL.txt > ./jenkins/allbad.txt || cat ./jenkins/badstrings.txt > ./jenkins/allbad.txt
 
-for i in `find $1 -name "*.dita"`
+for i in `find "$@" -name "*.dita"`
 do
 	while IFS='' read -r line  || [[ -n "$line" ]]
 	do
