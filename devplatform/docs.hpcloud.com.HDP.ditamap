@@ -261,21 +261,23 @@
     <topichead navtitle="Database Service Reference">
       <topicref href="2.0/database/devplatform.database-instance.dita" locktitle="yes"
         navtitle="Using the Database Service"/>
+      <topicref href="2.0/database/devplatform.database-releasenotes.dita"/>
+      <topicref href="2.0/database/devplatform.database-architecture.dita"/>
       <topicref href="2.0/database/devplatform.database-create-horizon.dita"
         navtitle="Creating a database from Horizon"/>
-      <topicref href="2.0/database/devplatform.database-create-cluster-horizon.dita"
-        navtitle="Creating a database cluster from Horizon" locktitle="yes"/>
       <topicref href="2.0/database/devplatform.database-create-cli.dita"
         navtitle="Create a database instance from the command line"/>
+      <topicref href="2.0/database/devplatform.database-create-cluster-horizon.dita"
+        navtitle="Creating a database cluster from Horizon" locktitle="yes"/>
       <topicref href="2.0/database/devplatform.database-create-cluster-cli.dita"
         navtitle="Creating a database cluster from the command line"/>
-      <topicref href="2.0/database/devplatform.database-monitor.dita"
-        navtitle="Monitoring a database from the Operations Console"/>
-      <topicref href="2.0/database/devplatform.database-monitor-cli.dita"/>
+      <topicref href="2.0/database/devplatform.manage-cli.dita"/>
+      <topicref href="2.0/database/devplatform.database-vertica.dita"/>
       <topicref href="2.0/database/devplatform.database-attach-ip.dita"
         navtitle="Attach a floating IP to a database instance"/>
       <topicref href="2.0/database/devplatform.database-replicate.dita"/>
       <topicref href="2.0/database/devplatform.database-backup.dita" navtitle="Back up a database"/>
+      <topicref href="2.0/database/devplatform.database-create-loadbalancer.dita"/>
       <topicref href="2.0/database/devplatform.database-ALS.dita" locktitle="yes"
         navtitle="Connecting the Database Service with the Application Lifecycle Service"/>
     </topichead>
