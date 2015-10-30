@@ -55,8 +55,8 @@ system host-unlock &lt;compute-name></codeblock>
                             <li><codeph>&lt;compute-name></codeph> is the compute node with the
                                 Niantic NIC</li>
                             <li><codeph>&lt;number-VFs></codeph> is the number of VFs to use</li>
-                            <li><codeph>&lt;provider-network></codeph> is the network to connect the
-                                interface to</li>
+                            <li><codeph>&lt;provider-network></codeph> is the physical network VLAN
+                                range presented to this port</li>
                             <li><codeph>&lt;interface-name></codeph> is the name Niantic NIC</li>
                         </ul></p>In this example, Ethernet interface <codeph>eth8</codeph> is
                     assigned the network type SR-IOV, enabled to use 16 VFs, and configured as
@@ -121,14 +121,13 @@ nova boot sriov-fixed --image wrl --flavor 2 --nic port-id=abd5b42a-e8f5-4297-91
                     <li><b>Option B</b> Launch a VM with vif-model as <i>pci-sriov</i>. See the
                         example below:
                                 <codeblock>nova boot &lt;vm-name> --image &lt;image-name> --flavor &lt;flavor-name> --nic port-id=&lt;port-uuid></codeblock><p><b>Example:</b></p><codeblock>nova boot sriov-vif-model --image wr-new --flavor m1.small --nic net-id=125e6f3c-e1aa-49c8-a20a-0ede67d9b6fe,vif-model=pci-sriov</codeblock></li>
-                </ul></p><p>After the VM launches, make sure that the VF is tagged with correct VLAN
-                ID: <codeblock>ip link | grep vf</codeblock></p><p>The output should appear similar
-                to the following: </p><p>
-                <codeblock>vf 15 MAC aa:bb:cc:dd:ee:ff, vlan 810, spoof checking on</codeblock>
-            </p>Also see the <xref
+                </ul></p><p><b>NOTE:</b> The SR-IOV vNIC is not assigned an IP address
+                automatically. The IP will be provided through the ToR switch and orchestrated by
+                NFV-D. If you do not use the Orchestrator must manually assign IP. </p>Also see the
+                <xref
                 href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/CGH-2-KVM-Admin.pdf"
-                format="pdf" scope="external">HPE Helion OpenStack® 2.0 Carrier Grade Beta: Administrator
-                Guide</xref>.</section>
+                format="pdf" scope="external">HPE Helion OpenStack® 2.0 Carrier Grade Beta:
+                Administrator Guide</xref>.</section>
 
 
         <p><b>Related links</b></p>
