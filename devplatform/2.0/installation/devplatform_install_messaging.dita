@@ -3,27 +3,127 @@
 <topic id="topic_t3w_fnh_ts">
   <title>Install the Messaging Service</title>
   <body>
-    <section id="install-messaging">
-      <p>This section provides details on installing the Messaging service for the Development
-        Platform.</p>
+    <p>This section provides details on installing the Messaging service for the Development
+      Platform.</p>
+    <section>
+      <title>Prerequisites</title>
+      <p>
+        <ul>
+          <li>The HDP Installer 2.0, also known as HDPI, must already <xref
+              href="devplatform_install_platform.dita#topic_gly_xmh_ts">be installed</xref>.</li>
+          <li>A properly configured <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt"
+              >clouds.yaml</xref> file.</li>
+          <li>HP Helion OpenStack 2.0 installation must be completed. You must know the location of
+            the services.osrc file containing its configuration information</li>
+          <li>A SSH public and private keypair, uploaded to openstack, configured in clouds.yml, and
+            used as ssh keys on the deployer machine </li>
+          <li>You must know the NTP server and DNS server IP addresses.</li>
+        </ul>
+      </p>
     </section>
-    <section><title>Prerequisites</title>Installing services requires that the HDP Installer 2.0,
-      also known as HDPI, has already <xref
-        href="devplatform_install_platform.dita#topic_gly_xmh_ts">been installed</xref>.<p>The
-        images for the individual services will be downloaded when the service installation is
-        started. A separate download step is not necessary.</p><p>The installer retrieves service
-        configuration information from the clouds.yaml file. If you did not create a clouds.yaml
-        file earlier, you can <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one
-          now</xref>.</p></section>
-    <p>Add the following to the clouds.yaml file:</p>
-    <codeblock>deployer_key: keypair to use for the deployer instance (defaults to “default”)
-deployer_flavor: flavor to use for the deployer instance (defaults to “4” a large)
-deployer_name: name of the deployer instance (defaults to &lt;service&gt;_deployer_&lt;version&gt;)
-deployer_security_group: security group for the deployer (defaults to “default”)
-deployer_version: version of the deployer (defaults to version in image name if not set)
-deployer_image: image to use for the deployer (an attempt will be made to find the image using an image prefix “msgaas” or “helionci” and contains the word “hlinux”)
-deployer_uri: location most likely in swift to download the deployer tgz (will be set by the CLI based on where it lands in swift)
-deployer_net_id: Network id for the deployer instance (defaults to the id of the network named “SVC”)
-deployer_cloud: Cloud in clouds.yaml in which to use to create the deployer. The deployer create must be run by admin, but the deployer itself may be owned by someone else.</codeblock>
+    <section><title>Installation</title>
+      <ol>
+        <li>Create an instance of the Deployer VM.<ol>
+            <li>Source the Virtual
+              Environment.<codeblock>stack@hlm:~$ source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate </codeblock></li>
+            <li>Install and launch the Deployer
+              VM.<codeblock>(dev_platform_installer-devplat_installer-1.0.0)stack@hlm:~$ openstack --os-cloud mycloud hdpi messaging 
+install --path msgaas_1.0.0-rc2-UNKNOWN-20151028T172302Z.csu 
+
+(dev_platform_installer-devplat_installer-1.0.0)stack@hlm:~$ openstack --os-cloud mycloud hdpi messaging launch </codeblock></li>
+          </ol></li>
+        <li>Copy the <codeph>msgaas</codeph> deployment model.<note>The <codeph>cp</codeph> command
+            must be used <b>exactly</b> as shown - including the /* on the end of the example model
+            path.
+          </note><codeblock>stack@msgaas-deployer:~/msgaas-1.0.0-rc1$ cd ~/helion/
+stack@msgaas-deployer:~/helion$ cp -r examples/msgaas/* my_cloud/definition/
+stack@msgaas-deployer:~/helion$ cp ~/platform-pass-through.yml my_cloud/definition/data/pass-through/platform-pass-through.yml
+stack@msgaas-deployer:~/helion$ git add -A
+stack@msgaas-deployer:~/helion$ git commit -a -m "Add MSGaaS Default Model"</codeblock></li>
+        <li id="customize">Customize the deployment model. <note>Values for this step can be retrieved from the
+              <codeph>platform-pass-through.yml</codeph>
+          file.</note><codeblock>stack@msgaas-deployer:~/helion$ cdmy_cloud/definition/
+stack@msgaas-deployer:~/helion/my_cloud/definition$ ls
+cloudConfig.yml  data
+stack@msgaas-deployer:~/helion/my_cloud/definition$ nano cloudConfig.yml 
+
+# Please fill inappropriate NTP/DNSservers and save - e.g. use hos-deployer ntp/dnsservers
+# defined in: ~/helion/my_cloud/definition/cloudConfig.yml or IP addresses of HOS control plane nodes
+
+stack@msgaas-deployer:~/helion/my_cloud/definition$ cddata 
+stack@msgaas-deployer:~/helion/my_cloud/definition/data$ nano network_groups.yml 
+
+# OPTIONAL - required only for supporting TLS (Cue API public endpoint URL with SSL support (https))
+# comment out 'external-name:'field, 
+# add 'msgaas-hpes-cert'for'cert-file:'field, 
+# uncomment 'tls-components:'list and comment out 'components:'list 
+
+stack@msgaas-deployer:~/helion/my_cloud/definition/data/pass-through$ cd~/helionstack@msgaas-deployer:~/helion$
+git commit -a -m "Configured Deployment Model"</codeblock></li>
+        <li>Run the Playbooks <note type="important">At the end of each playbook, ensure both
+              <codeph>unreachable</codeph> and <codeph>failed</codeph> are zero.</note><ol>
+            <li> Run the Pre-Installation Play<note> If the External Network is not named
+                  <codeph>ext-net</codeph>, update the value of the <b>external_net_name</b>
+                variable in
+                  <codeph>~/helion/hos/ansible/roles/openstack-operations/defaults/main.yml</codeph>
+                to the correct
+              value.</note><codeblock>stack@msgaas-deployer:~/helion$ source~/msgaas.osrc
+stack@msgaas-deployer:~/helion$ cdhos/ansible/
+stack@msgaas-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhosthlm-pre-install.yml 
+
+[ OUTPUT TRIMMED ]</codeblock></li>
+            <li>Configure the Input Model for TLS Support (optional) <note>This step is required for
+                Cue API public endpoint URL with SSL support (https). The deployment model <xref
+                  href="#topic_t3w_fnh_ts" format="dita">customization</xref> must include the TLS
+                configuration
+              step.</note><codeblock># substitute '10.241.178.91' below with 'external-ip' address from 'extlb' dict
+# found in ~/helion/my_cloud/definition/data/network_groups.yml
+ 
+stack@msgaas-deployer:~/helion/hos/ansible$ openssl req -newkey rsa:2048 -nodes -keyout msgaas-hpes.key -subj '/CN=10.241.178.91/emailAddress=hpcs-hes@hp.com/subjectAltName=IP.1.10.241.178.91' -out msgaas-hpes.csr
+Generating a 2048 bit RSA private key
+................................................................+++
+..........................+++
+writing new private key to 'msgaas-hpes.key'
+-----
+stack@msgaas-deployer:~/helion/hos/ansible$ openssl x509 -signkey msgaas-hpes.key -in msgaas-hpes.csr -req -days 365 -out msgaas-hpes.crt
+Signature ok
+subject=/CN=10.241.178.91/emailAddress=hpcs-hes@hp.com/subjectAltName=IP.1.10.241.178.91
+Getting Private key
+stack@msgaas-deployer:~/helion/hos/ansible$ cat msgaas-hpes.key msgaas-hpes.crt > ~/helion/my_cloud/config/tls/certs/msgaas-hpes-cert
+ 
+stack@msgaas-deployer:~/helion/hos/ansible$ git add -A
+stack@msgaas-deployer:~/helion/hos/ansible$ git commit -a -m "Configured Deployment Model"</codeblock></li>
+            <li>Run the Config Processor Play
+              <codeblock>stack@msgaas-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhostconfig-processor-run.yml 
+
+[ OUTPUT TRIMMED ]                                  </codeblock></li>
+            <li>Run the Ready Deployment Play
+              <codeblock>stack@msgaas-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost ready-deployment.yml 
+
+[ OUTPUT TRIMMED ] 
+TASK: [git-operations | ready-deployment-tree-help | Tell the user what to expect] ***
+ok: [localhost] => {
+    "msg": "The directory /home/stack/scratch/ansible/next/hos/ansible contains a prepared ansible tree 
+ready to run your deployment. You should cd into that directory and run: ansible-playbook -i
+hosts/verb_hosts site.yml"
+}</codeblock></li>
+            <li>Run the Boot Infrastructure Play <note>This step takes approximately 5
+                minutes.</note> Once this is complete, all in-cloud infrastructure (VMs, Networks,
+              Routers, Floating IPs, ports, security groups, etc) will have been created.
+              <codeblock>stack@msgaas-deployer:~/helion/hos/ansible$ cd~/scratch/ansible/next/hos/ansible
+stack@msgaas-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -i hosts/localhosthlm-boot-infra.yml 
+
+[ OUTPUT TRIMMED ]</codeblock></li>
+            <li>Run the "Site" or Deployment Play <note type="caution">Unlike all the previous
+                ansible plays, the inventory file supplied to this play is
+                  <codeph>hosts/verb_hosts</codeph> and not
+                <codeph>hosts/localhost</codeph></note><note>This step takes approximately 10 to 15
+                minutes.
+              </note><codeblock>stack@msgaas-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -i hosts/verb_hosts site.yml -vvvv
+ 
+[ OUTPUT TRIMMED ]</codeblock></li>
+          </ol></li>
+      </ol></section>
+    
   </body>
 </topic>

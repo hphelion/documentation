@@ -83,14 +83,6 @@ $ openstack endpoint create database public 'http://<i>&lt;public-VIP-IP-address
             will not function properly.</dd>
         </dlentry>
         <dlentry>
-          <dt>An ALS cluster cannot be created with an existing MySQL database.</dt>
-          <dd>Attempting to create an ALS cluster with an existing MySQL database triggers the error
-              message:<codeph> "validating 'services' failed, reason: The EnabledServices flag does
-              not specify the database service used by the trove database. 'mysql' was expected to
-              be specified if a trove database is used.".</codeph> The cluster will not be created.
-            This is a current limitation in the Helion Development Platform.</dd>
-        </dlentry>
-        <dlentry>
           <dt>Multiple Admin Password Prompts During Patch</dt>
           <dd>When patching, the admin will be prompted for the password at least once and usually
             multiple times. This is a known issue.</dd>
@@ -99,6 +91,28 @@ $ openstack endpoint create database public 'http://<i>&lt;public-VIP-IP-address
           <dt>Disk Allocation Min/Max for <codeph>helion push --disk</codeph></dt>
           <dd>The application disk reservation setting has a minimum value of 512 MB and a maximum
             of 2 GB. This is a per-instance limit.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Cluster Creation Fails, Log File Contains EOF Error</dt>
+          <dd>When creating a new ALS cluster, the creation fails. The
+              <codeph>/tmp/als_installer.txt</codeph> logfile, located on the constructor VM,
+            contains EOF errors. To fix this error, open the configuration management tool and enter
+              <codeph>cf-mgmt --disable-connection-reuse true</codeph>. This setting ensures a new
+            HTTP connection every time a request is made.</dd>
+        </dlentry><dlentry>
+          <dt>Cluster Creation Fails with "Disambiguate Network" Error</dt>
+          <dd>Creating a cluster fails and the following error message is received:
+            <codeblock>validating 'Network' failed, reason: More than one external network, disambiguate with external-network-name or external-network-id</codeblock>
+            If an environment has multiple external networks, cluster creation may require a
+            specific identifier to determine which to use. <ol id="ol_bcl_b31_vt">
+              <li>Determine which network you wish to use. Either use Horizon to view the entire
+                list or use a command line argument such as
+                <codeblock>neutron net-list</codeblock></li>
+              <li>Then pass that external network's name or id using the configuration management
+                tool as follows:
+                <codeblock>cf-mgmt cc --external​-network-n​ame &lt;mynetworkName></codeblock><codeblock>cf-mgmt cc --external​-network-id &lt;mynetworkID></codeblock></li>
+            </ol>
+          </dd>
         </dlentry>
       </dl>
     </section>
