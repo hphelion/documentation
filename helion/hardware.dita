@@ -144,7 +144,7 @@
             <row>
               <entry morerows="3">Block Storage (Optional)</entry>
               <entry morerows="3">VSA or OSD (Ceph)</entry>
-              <entry morerows="3">0 or 3</entry>
+              <entry morerows="3">0 or 3 (which will provide the recommended redundancy)</entry>
               <entry>Disk</entry>
               <entry>3 X 512 GB (minimum)</entry>
             </row>

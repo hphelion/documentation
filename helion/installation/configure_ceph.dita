@@ -314,9 +314,9 @@ pools:
                       </row>
                       <row>
                         <entry>volume_backend_name</entry>
-                        <entry>Name given to the VSA backend. You will specify this value later in
+                        <entry>Name given to the Ceph backend. <!--You will specify this value later in
                           the <xref href="configure_vsa.dita#config_vsa/associate_volume_backend"
-                            >Associate the Volume Type to a Backend</xref> steps.</entry>
+                            >Associate the Volume Type to a Backend</xref> steps.--></entry>
                       </row>
                     </tbody>
                   </tgroup>
