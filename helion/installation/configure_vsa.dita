@@ -247,7 +247,9 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
             the <b>Next</b> button.</li>
           <li>Select the checkbox for <b>Skip Volume Creation</b> and click the <b>Finish</b> button
             which will display your VSA management cluster. <p><image
-                href="../../media/vsa/cmc13.png"/></p></li>
+                href="../../media/vsa/cmc13.png"/></p>
+            <note type="attention">You may get a pop-up notice telling you that your hostnames are
+              not unique. This can be ignored by clicking the OK button.</note></li>
           <li>If this process is successful you will see a summary page at the end which outlines
             what you have completed.</li>
         </ol></p>
