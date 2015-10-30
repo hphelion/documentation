@@ -5,7 +5,7 @@
   <body><section>
     <p>This Helion Development Platform release introduces the ability to deploy Docker images. This example takes an existing app and creates a
       Docker image that will run in ALS and take advantage of the provisioned services. </p></section><section>
-      <title>Start With a New "Stack" </title>
+      <title>Start With a New Stack</title>
       <p>One of the advantages to using Docker is the ability to run different flavors of Linux.
         While ALS is based on Ubuntu 12.04 LTS, Docker images can be based on a different distro,
         such as Debian, CentOS, or even Alpine Linux images. This example uses the openSUSE base
@@ -37,8 +37,7 @@
           <codeblock>FROM opensuse:13.2  
 MAINTAINER Troy Topnik &lt;troyt@activestate.com&gt;
 
-RUN
-\ zypper -n up \ &amp;&amp; zypper -n install python python-pip ca-certificates-mozilla \ vim
+RUN zypper -n up &amp;&amp; zypper -n install python python-pip ca-certificates-mozilla vim 
 git curl wget</codeblock>  
         <p>The openSUSE base image is intentionally minimal, so this also installs:
           <dl><dlentry>
@@ -87,9 +86,10 @@ sh-4.2# exit </codeblock>
     <section><title>Create an Application Container:<i> bottle-currency-suse</i></title><p>First,
         clone the Docker version of the example app (bottle-currency). This app is based on Ubuntu
         12.04, so the Dockerfile can be adapted to work with an opensuse-python image.</p><p>
-        <codeblock> git clone <xref href="https://github.com/Stackato-Apps/bottle-currency.git" format="html" scope="external">https://github.com/Stackato-Apps/bottle-currency.git</xref></codeblock>
-      </p><p> Once the project is cloned, create a Docker file following the steps below
-      .</p><codeblock>FROM <i>&lt;myrepo></i>/opensuse-python MAINTAINER <i>&lt;myname> &lt;myemail></i></codeblock>Use
+        <codeblock>git clone <xref href="https://github.com/Stackato-Apps/bottle-currency.git" format="html" scope="external">https://github.com/Stackato-Apps/bottle-currency.git</xref></codeblock>
+      </p><p> Once the project is cloned, create a Docker file using the following the
+      steps:</p><codeblock>FROM <i>&lt;myrepo></i>/opensuse-python 
+MAINTAINER <i>&lt;myname> &lt;myemail></i></codeblock>Use
       a different container as a starting point and identify yourself as the maintainer.
       <codeblock>RUN useradd -d /home/www -m -s /bin/bash www 
 USER www 
@@ -117,27 +117,21 @@ WORKDIR /home/www</codeblock>This
       browser will show the running web app, but the error message "An error occurred while
       contacting the server" will appear. The conversion app does not function yet because it
       requires a Redis data service. <p>Push the new image to the Docker Hub:
-      </p><codeblock>sudo docker push &lt;myrepo&gt;/bottle-currency-suse</codeblock></section><section><title>Deploying the App</title><p>The bottle-currency app looks for a Redis data service exposed by a REDIS_URL environment
-        variable. <xref href="../reference/environment.dita#topic7631">Environment variables</xref>
+      </p><codeblock>sudo docker push &lt;myrepo&gt;/bottle-currency-suse</codeblock></section><section><title>Deploying the App</title><p>The bottle-currency app looks for a Redis data service
+        exposed by a REDIS_URL environment variable. <xref
+          href="../reference/environment.dita#topic7631">Environment variables</xref>
         (VCAP_SERVICES) are injected into the Docker containers to provide connection information
         for any services that have been bound to the app. This is the <xref
           href="http://12factor.net/config" format="html" scope="external">12-Factor method</xref>,
-        which has always been standard practice for Cloud Foundry. </p>
-      <ol id="ol_t2v_1fx_ft">
-        <li>Deploy the
-          app:<codeblock>helion push -n --docker-image &lt;myrepo&gt;/bottle-currency-suse --mem 128 --as docker-currency</codeblock>This
-          fetches the Docker image from the Hub and deploys it, but without a database.</li>
-        <li> To add a database, create a new Redis data service and bind it to the app:
-          <codeblock>helion create-service --plan free redis currency-data docker-currency</codeblock>This
-          step will recreate the container with the necessary REDIS_URL variable in it. The app
-          should now function properly.</li>
-        <li> Start the application:<codeblock>helion start docker-currency</codeblock></li>
-      </ol>
-      <note>There are a number of ways to parse environment variables when connecting to the data
-        services. If you are deploying a Docker image written by a third party, the credentials
-        provided by ALS will need to be reformatted into variables that the app can understand. To
-        do this, add another layer on top of the third-party image which parses the provided
-        environment variables, reformats them in a way the app will understand, and reiterates the
-        CMD / ENTRYPOINT line from the original image.</note></section>
+        which has always been standard practice for Cloud Foundry. </p>Deploy the app with the
+      following
+      command:<codeblock>helion push -n --docker-image &lt;myrepo&gt;/bottle-currency-suse --mem 128 --as docker-currency</codeblock>This
+      fetches the Docker image from the Hub and deploys it, but without a database.<note>There are a
+        number of ways to parse environment variables when connecting to the data services. If you
+        are deploying a Docker image written by a third party, the credentials provided by ALS will
+        need to be reformatted into variables that the app can understand. To do this, add another
+        layer on top of the third-party image which parses the provided environment variables,
+        reformats them in a way the app will understand, and reiterates the CMD / ENTRYPOINT line
+        from the original image.</note></section>
   </body>
 </topic>

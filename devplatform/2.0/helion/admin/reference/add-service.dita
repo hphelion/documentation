@@ -6,7 +6,7 @@
 <metadata>
 <othermeta name="layout" content="default"/>
 <othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.3"/>
+<othermeta name="product-version" content="HP Helion Development Platform 2.0"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Security Engineer"/>
 <othermeta name="role" content="ISV Developer"/>
@@ -15,8 +15,6 @@
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Application Architect"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.3"/>
 </metadata>
 </prolog>
 <body>
@@ -50,7 +48,7 @@
 <p>You can install the library with <i>npm install cf-services-connector</i> or include it in the <i>package.json</i> file of your service broker implementation.</p>
 </section>
 <section id="example-echo-service"> <title>Example Echo Service</title>
-<p>The <i>cf-services-connector-nodejs</i> repository provides an example service broker called <xref href="https://github.com/ActiveState/cf-services-connector-nodejs/tree/master/example/echo-service" scope="external" format="html" >
+<p>The <i>cf-services-connector-nodejs</i> repository provides an example service broker called <xref href="https://github.com/hpcloud/cf-services-connector-nodejs/tree/master/example/echo-service" scope="external" format="html" >
 <b>echo-service</b>
 </xref>.</p>
 <p>Review the echo-service.json file and change the <b>authUser</b>, <b>authPassword</b>, and <b>database: encryptionKey</b>  settings before deploying it.</p>

@@ -14,6 +14,7 @@
       <li>
         <xref type="section" href="#topic13234/global">Global Options</xref>
       </li>
+      <li>Debugging</li>
       <li><xref href="#topic13234/update-the-cf-mgmt-tool" format="dita"/></li>
       <li>
         <xref type="section" href="#topic13234/commands">Cluster Commands</xref>
@@ -90,7 +91,7 @@
             <row>
               <entry>--debug</entry>
               <entry>Enables additional debug information.</entry>
-              <entry>CFMGMT_DEBUG</entry>
+              <entry>$CFMGMT_DEBUG</entry>
               <entry>No</entry>
             </row>
             <row>
@@ -170,6 +171,23 @@
         </tgroup>
       </table>
     </section>
+  <section><title>Debugging</title>
+    <p><b>Syntax</b>: <codeph>--debug [option]</codeph></p>
+      <p>This command provides debug information and can be very helpful when creating clusters. </p>
+      <p>The options are <codeph>general</codeph>, <codeph>cpi</codeph>, <codeph>shell</codeph>,
+          <codeph>kato</codeph>, <codeph>timing</codeph>, <codeph>all</codeph>.</p>
+<p>Example: <codeblock>cf-mgmt --debug all cc</codeblock></p>
+         <!--   <p>The possible values are:    </p>
+      <dl>
+        <dlentry><dt>general</dt><dd></dd></dlentry>
+        <dlentry><dt>cpi</dt><dd>This stands for Cloud Provider Interface, which will </dd></dlentry>
+        <dlentry><dt>shell</dt><dd></dd></dlentry>
+        <dlentry><dt>kato</dt><dd></dd></dlentry>
+        <dlentry><dt>timing</dt><dd></dd></dlentry>
+        <dlentry><dt>all</dt><dd></dd></dlentry>
+      </dl>   -->
+   
+  </section>
     <section id="commands">
       <title>Cluster Commands</title>
       <p>These commands are available from the command line interface.</p>
@@ -441,7 +459,7 @@
               <entry>No</entry>
             </row>
             <row>
-              <entry>--ftpproxy</entry>
+              <entry>--ftp-proxy</entry>
               <entry>FTP proxy. (Protocol://hostname:port. For example:
                   <codeph>ftp://proxy.comp.net:8080</codeph>)</entry>
               <entry>No</entry>

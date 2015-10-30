@@ -6,7 +6,7 @@
 <metadata>
 <othermeta name="layout" content="default"/>
 <othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.3"/>
+<othermeta name="product-version" content="HP Helion Development Platform 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="System Engineer"/>
 <othermeta name="role" content="Cloud Administrator"/>
@@ -16,8 +16,6 @@
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Storage Engineer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.3"/>
 </metadata>
 </prolog>
 <body>
@@ -86,9 +84,6 @@
               Quotas</xref>
           </li>
         </ul></li>
-<li>
-<xref type="section" href="#topic16169/server-monitoring-with-new-relic">Server Monitoring with New Relic</xref>
-</li>
 <li>
 <xref type="section" href="#topic16169/system-monitoring-with-nagios">System Monitoring with Nagios</xref>
 </li>
@@ -324,9 +319,7 @@ some shell operations performed in the export require <codeph>sudo</codeph> when
 <li>snapshot all nodes simultaneously</li>
 </ul>
 </section>
-<section id="server-monitoring-with-new-relic"> <title>Server Monitoring with New Relic</title>
-<p>To use New Relic for server monitoring, you'll need a <xref href="http://newrelic.com/" scope="external" format="html" >New Relic account</xref> and a License Key. Install the <codeph>newrelic-sysmond</codeph> package and start the monitoring daemon on each Application Lifecycle Service VM as per the <xref href="http://docs.newrelic.com/docs/server/server-monitor-installation-ubuntu-and-debian" scope="external" format="html" >New Relic Server Monitor installation (Ubuntu)</xref> instructions.</p>
-</section>
+
 <section id="system-monitoring-with-nagios"> <title>System Monitoring with Nagios</title>
 <p>Though Application Lifecycle Service has an internal mechanism for supervising processes on a server or cluster (<xref href="http://supervisord.org/" scope="external" format="html" >Supervisor</xref>), it is
 advisable to add some external monitoring for production systems. <xref href="http://www.nagios.org/" scope="external" format="html" >Nagios</xref> is a free, open source system monitoring tool that can provide this external monitoring.</p>
