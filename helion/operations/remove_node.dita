@@ -124,7 +124,7 @@ stack@padawan-ccp-c0-m1-mgmt:~$ nova service-list</codeblock><codeblock>+----+--
 | ID | Name | Tenant ID | Status | Task State | Power State | Networks |
 +----+------+-----------+--------+------------+-------------+----------+
 +----+------+-----------+--------+------------+-------------+----------+</codeblock>
-        </li><li> Log into the compute node and stop the nova service <note>The specified node "ccp-0004" (which
+        </li><li> Log into the compute node and stop the nova service <!--<note>The specified node "ccp-0004" (which
             is the node's 'cobbler' name) should match the desired node (hlm004-ccp-comp0004-mgmt).
             However, ccp-0004 does not necessarily match hlm004-ccp-comp0004-mgmt. This means you
             could easily power down the wrong node because, for example, ccp-0004 might actually map
@@ -134,7 +134,15 @@ stack@padawan-ccp-c0-m1-mgmt:~$ nova service-list</codeblock><codeblock>+----+--
               <b>/etc/hosts</b> file. Then search for IP address value in the
               <b>/home/stack/helion/my_cloud/definition/data/servers.yml</b> file and choose the
             corresponding <b>id field</b> value. That will be the cobbler ID of the node you are
-            looking for.</note>
+            looking for.</note>-->
+          <note>Before proceeding, you may want to take a look at <b>info/server_info.yml</b> to see
+            if the assignment of the node you have added is what you expect. It may not be, as nodes
+            will not be numbered consecutively if any have previously been removed. This is to
+            prevent loss of data; the config processor retains data about removed nodes and keeps
+            their ID numbers from being reallocated. See the <xref
+              href="../input_model.dita#input_model/persistedserverallocations">Persisted Server
+              Allocations</xref> section in HP Helion OpenStack 2.0 Input Model for information on
+            how this works.</note>
           <codeblock>~$ ssh stack@hlm004-ccp-comp0004-mgmt "sudo systemctl stop nova-compute"</codeblock>
           or shut down the node. (alternatively, you may re-image the
           node):<codeblock>~$ ssh stack@hlm004-ccp-comp0004-mgmt "sudo shutdown now"</codeblock>Alternatively,
