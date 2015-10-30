@@ -27,22 +27,25 @@
 
     <section id="pre-installing-the-hp-helion-development-platform">
       <title>Install the HP Helion Development Platform Installation Client</title>
+      <note type="important">DO NOT source <codeph>service.osrc</codeph></note>
       <ol>
+        <li>Check to ensure that all Keystone AUTH_URL IP addresses have been added to the <xref
+            href="devplatform_install_prereq.dita#topic_x54_njh_ts/proxy">no-proxy </xref>list.</li>
         <li>SSH to the Deployer. </li>
         <li>Create a Virtual Environment. <codeblock>virtualenv .devplatform</codeblock></li>
-        <li>Source the Virtual
-          Environment.<codeblock>source .devplatform/bin/activate</codeblock></li>
-        <li>Install the Development Platform Installer in the Virtual Environment
-          .<codeblock>pip install DevelopmentPlatformInstaller_2.0.0.0.tar.gz  </codeblock></li>
-        <li>You should create the <codeph><xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt"
-              >clouds.yaml</xref></codeph> file at this time. Note that this file contains
-          information for each service to be installed.</li>
-        <li>After creating the <codeph>clouds.yaml</codeph> file, verify that the Installer has been
-          installed properly. This command will list all packages currently available for
-          download.<codeblock>openstack hdpi list --os-cloud mycloud --debug</codeblock></li>
+        <li>Source the Virtual Environment. In this example, <codeph>&lt;dpi-venv&gt;.tgz</codeph>
+          is the name of the
+          installer.<codeblock>mkdir -p /opt/stack/venv/&lt;dpi-venv&gt; 
+tar -C /opt/stack/venv/&lt;dpi-venv&gt; -xzf &lt;dpi-venv&gt;.tgz
+source /opt/stack/venv/&lt;dpi-venv&gt;/bin/activate</codeblock></li>
+        <li>Run the HDPI plugin to install, deploy, and
+          launch.<codeblock>openstack hdpi --os-cloud mycloud hdpi list --debug</codeblock></li>
       </ol>
-      <note>While the <codeph>debug</codeph> option is optional, the information it returns is
-        critical for troubleshooting.</note>
+      <note type="tip">
+        <ul><li>While the <codeph>debug</codeph> option is optional, the information it returns is critical for troubleshooting.</li>
+          <li>If you get an error during installation, check to ensure that <codeph>OS_</codeph>
+            variables are unset. To check this, run <codeblock>env | grep OSX_</codeblock> and then
+            unset any <codeph>OS</codeph> variables which appear in the list of results. </li></ul></note>
     </section>
   </body>
 </topic>
