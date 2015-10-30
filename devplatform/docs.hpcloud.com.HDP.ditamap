@@ -38,13 +38,24 @@
     <topichead navtitle="Installation">
       <topicref href="2.0/installation/devplatform_install_prereq.dita"
         navtitle="Installation Prerequisites" locktitle="yes"/>
-      <topicref href="2.0/installation/install_cloudsyaml.dita"/>
+      <topicref href="2.0/installation/install_cloudsyaml.dita"
+        navtitle="Create the clouds.yaml File"/>
       <topicref href="2.0/installation/devplatform_install_platform.dita"
-        navtitle="Install the HP Helion Development Platform Service Installer" locktitle="yes"/>
+        navtitle="Install the HPE Helion Development Platform Service Installer" locktitle="yes"/>
       <topicref href="2.0/installation/devplatform_install_ALS.dita"
-        navtitle="Install the Application Lifecycle Service" locktitle="yes"/>
+        navtitle="Install the Application Lifecycle Service (ALS)" locktitle="yes"/>
       <topicref href="2.0/installation/devplatform_install_database.dita"
         navtitle="Install the Database Service" locktitle="yes"/>
+      <topicref href="2.0/installation/install_engine.dita"
+        navtitle="Install the HPE Helion Code Engine (review only)"/>
+      <topicref href="2.0/installation/devplatform_install_messaging.dita"
+        navtitle="Install the Messaging Service (review only)"/>
+    </topichead>
+    <topichead navtitle="Service Monitoring">
+      <topicref href="2.0/monitoring/devplatform.database-monitor.dita"/>
+      <topicref href="2.0/monitoring/devplatform.database-monitor-cli.dita">
+        <topicref href="2.0/monitoring/devplatform.messaging-monitor.dita"/>
+      </topicref>
     </topichead>
 
     <!--uninstallation -->
@@ -281,6 +292,22 @@
       <topicref href="2.0/database/devplatform.database-create-loadbalancer.dita"/>
       <topicref href="2.0/database/devplatform.database-ALS.dita" locktitle="yes"
         navtitle="Connecting the Database Service with the Application Lifecycle Service"/>
+    </topichead>
+    <topichead navtitle="Messaging Service Reference">
+      <topicref href="2.0/messaging/devplatform.using-the-messaging-service.dita"
+        navtitle="Using Messaging as a Service"/>
+      <topicref href="2.0/messaging/devplatform.using-messaging-service-with-ALS.dita"
+        navtitle="Using the Messaging Service with ALS"/>
+      <topicref href="2.0/messaging/cue_dev_createCluster.dita"
+        navtitle="Create a Cluster from the Command Line"/>
+      <topicref href="2.0/messaging/cue_ops_manageCluster.dita"
+        navtitle="Manage a Cluster from the Command Line"/>
+      <topicref href="2.0/installation/devplatform_install_messaging.dita"
+        navtitle="Install Messaging as a Service"/>
+      <topicref href="2.0/messaging/cue_ops_referenceArchitecture.dita"
+        navtitle="Cue Reference Architecture"/>
+      <topicref href="2.0/messaging/cue_ops_bestPractices.dita" navtitle="Cue Best Practices"/>
+      <topicref href="2.0/monitoring/devplatform.messaging-monitor.dita"/>
     </topichead>
     <!--IT Ops-->
     <topicref href="2.0/devplatform.sysadmin.dita" locktitle="yes" navtitle="Resources for IT Ops">
