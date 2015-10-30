@@ -13,8 +13,8 @@
     </prolog>
     <conbody>
         <p>For more information on HP Helion OpenStack Carrier Grade architecture, see the <xref
-                href="../../Users/burkmich/documentation/documentation/CarrierGrade/Installation/carrier-grade-technical-overview.dita#topic3485"
-            >Technical Overview</xref>.</p>
+                href="../Installation/carrier-grade-technical-overview.dita#topic3485">Technical
+                Overview</xref>.</p>
         <dl>
             <dlentry ixia_locid="8">
                 <dt ixia_locid="9">Controller Nodes</dt>
