@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="changelog">
-  <title>Changes to HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Documentation</title>
+  <title>Updates to HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Documentation</title>
   <body>
     <section id="about">
       <p>The HP Helion OpenStack documentation team continuously updates the documents in this web
@@ -23,22 +23,23 @@
             </thead>
             <tbody>
               <row>
-                <entry>October 27, 2015</entry>
-                <entry>Initial Creation</entry>
+                <entry>October 29, 2015</entry>
+                <entry>Added web browser support information to the Horizon Overview (<xref href="horizon/horizon_overview.dita">Link</xref>)</entry>
               </row>
+
               <row>
                 <entry>October 28, 2015</entry>
                 <entry>Added steps for Neutron service logging level configuration (<xref
                     href="administration/configure_logging.dita">Link</xref>) <p>Added step to
                     ensure new Compute nodes that you add to your environment are included in
-                    monitoring (<xref href="operations/add_node.dita">Link</xref>)</p>
-                  <p>Added step to ensure new Ceph monitor nodes that you add to your environment
-                    are included in monitoring (<xref
-                      href="blockstorage/ceph/adding_new_monitor_node.dita">Link</xref>)</p></entry>
+                    monitoring (<xref href="operations/add_node.dita">Link</xref>)</p> Added step to
+                  ensure new Ceph monitor nodes that you add to your environment are included in
+                  monitoring (<xref href="blockstorage/ceph/adding_new_monitor_node.dita"
+                    >Link</xref>)</entry>
               </row>
               <row>
-                <entry>October 29, 2015</entry>
-                <entry>Added web browser support information to the Horizon Overview (<xref href="horizon/horizon_overview.dita">Link</xref>)</entry>
+                <entry>October 27, 2015</entry>
+                <entry>Initial Creation</entry>
               </row>
             </tbody>
           </tgroup>
