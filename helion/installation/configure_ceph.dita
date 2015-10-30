@@ -238,12 +238,12 @@ git commit -m "&lt;commit message>"</codeblock></li>
               <li>Add your Ceph backend to the <codeph>enabled_backends</codeph> section:
                 <codeblock># Configure the enabled backends
 enabled_backends=ceph1</codeblock></li>
-              <li>[OPTIONAL] If you want a use a default volume type, then enter it in the
+              <!--<li>[OPTIONAL] If you want a use a default volume type, then enter it in the
                   <codeph>[DEFAULT]</codeph> section with the syntax below. You will want to
                 remember this value when you create your volume type in the next section.
                 <codeblock>[DEFAULT]
 # Set the default volume type
-default_volume_type = &lt;your new volume type></codeblock></li>
+default_volume_type = &lt;your new volume type></codeblock></li> -->
               <li>Uncomment the <codeph>ceph</codeph> section and fill the values as per your
                 cluster information. If you have more than one cluster, you will need to add another
                 similar section with its respective values. In the following example only one
