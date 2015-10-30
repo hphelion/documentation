@@ -7,7 +7,18 @@
 
     <section id="about">
       <p>This page describes how to configure your VSA backend for the Helion Entry-scale with KVM
-        Cloud model.</p>
+        Cloud model. It consists of the following steps:</p>
+      <ul>
+        <li><xref href="configure_vsa.dita#config_vsa/prereq">Prerequisites</xref></li>
+        <li><xref href="configure_vsa.dita#config_vsa/createcluster">Create Your VSA Cluster using
+            the CMC Utility</xref></li>
+        <li><xref href="configure_vsa.dita#config_vsa/config_backend">Configure VSA as the
+            Backend</xref></li>
+        <li><xref href="configure_vsa.dita#config_vsa/create_volumetype">Create a Volume Type for
+            your Volumes</xref></li>
+        <li><xref href="configure_vsa.dita#config_vsa/associate_volumetype">Associate the Volume
+            Type to the Backend</xref></li>
+      </ul>
     </section>
     <section id="prereq"><title>Prerequisites</title>
       <p><ul>
@@ -39,9 +50,18 @@
             AO</xref> section below.</note>
       </p>
     </section>
-    <section>
-      <title>Creating a StoreVirtual Cluster and adding it to a new Management Group Cluster using
-        CMC</title>
+    <section id="createcluster">
+      <title>Create Your VSA Cluster using the CMC Utility</title>
+      <p>Creating your VSA cluster consists of the following steps:</p>
+      <ol>
+        <li><xref href="configure_vsa.dita#config_vsa/launch_cmc">Launching the CMC utility
+            GUI</xref></li>
+        <li><xref href="configure_vsa.dita#config_vsa/create_cluster">Creating the cluster and
+            adding it to the management group</xref></li>
+      </ol>
+    </section>
+    <section id="launch_cmc">
+      <p id="launch"><b>Launching the CMC utility GUI</b></p>
       <p>The CMC utility requires a GUI to access it. You can use either of the following methods to
         launch the CMC GUI.</p>
       <p>
@@ -171,8 +191,8 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
               command (as mentioned below) to launch CMC.</p></li>
         </ol></p>
     </section>
-    <section>
-      <title><b>Creating a StoreVirtual Cluster and adding it to a new Management Group</b></title>
+    <section id="create_cluster">
+      <p><b>Creating the cluster and adding it to the management group</b></p>
       <p>Perform the following steps to create the cluster.<ol id="ol_yln_fhl_jt">
           <li>Run the following command from your first controller node which will open the HP
             StoreVirtual Centralized Management Console (CMC) GUI on your local machine:<codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock>
@@ -230,9 +250,8 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
             what you have completed.</li>
         </ol></p>
     </section>
-
-    <section>
-      <title>Configure VSA as a Cinder Backend</title>
+    <section id="config_backend">
+      <title>Configure VSA as the Backend</title>
       <p>You will use the information you input to the CMC utility as well as the volume type you
         created in the previous step to configure your Cinder backend to use your VSA
         environment.</p>
@@ -435,7 +454,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
           Exceeding the disk limit causes VSA deployment failure.</note></p>
     </section>
     <section id="create_volumetype">
-      <title>Create a Volume Type for your Volume Backend</title>
+      <title>Create a Volume Type for your Volumes</title>
       <p>The default volume type created by VSA will be thin provisioned and will have no fault
         tolerance. You should configure cinder to fully provision volumes, and you may want to
         configure fault tolerance. Follow the instructions below to create a new volume type which
@@ -490,8 +509,8 @@ volume_backend_name MyVolumeBackend</codeblock>
           failing at the same time.</li>
       </ul>
     </section>
-    <section id="associate_volume_backend">
-      <title>Associate the Volume Type to a Backend</title>
+    <section id="associate_volumetype">
+      <title>Associate the Volume Type to the Backend</title>
       <p> After the volume type names have been created, you can assign extra_specs to the volumes
         types.</p>
       <p>To map a volume type to a backend, do the following: <ol id="ol_owv_krv_3t">
