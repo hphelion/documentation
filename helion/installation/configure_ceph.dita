@@ -7,7 +7,10 @@
     <p>This page describes how to configure your Ceph backend for the Helion Entry-scale with KVM
       Cloud model. It consists of the following steps:</p>
     <ul>
-      <li>Step 1</li>
+      <li>Prequisites</li>
+      <li>Configuring your Ceph Envirenment Input Files</li>
+      <li>Configure Ceph as the Backend</li>
+      <li>Verifying your Ceph backend</li>
     </ul>
     <section id="prereqs"><title>Prerequisites</title>
       <p>In order for Ceph to be used as a backend for volumes, the nodes running these services
@@ -253,8 +256,8 @@ volume_backend_name = &#60;ceph-backend-name></codeblock>
                 <p>where:</p>
                 <table frame="all" rowsep="1" colsep="1" id="ceph_volume">
                   <tgroup cols="2">
-                    <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-                    <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+                    <colspec colname="c1" colnum="1"/>
+                    <colspec colname="c2" colnum="2"/>
                     <thead>
                       <row>
                         <entry>Value</entry>
@@ -328,8 +331,8 @@ backup_ceph_pool = &#60;ceph-backup-pool></codeblock>
                     <p>where:</p>
                     <table frame="all" rowsep="1" colsep="1" id="ceph_backup">
                       <tgroup cols="2">
-                        <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-                        <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+                        <colspec colname="c1" colnum="1"/>
+                        <colspec colname="c2" colnum="2"/>
                         <thead>
                           <row>
                             <entry>Value</entry>
