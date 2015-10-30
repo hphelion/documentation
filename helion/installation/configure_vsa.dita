@@ -56,8 +56,8 @@
       <ol>
         <li><xref href="configure_vsa.dita#config_vsa/launch_cmc">Launching the CMC utility
             GUI</xref></li>
-        <li><xref href="configure_vsa.dita#config_vsa/create_cluster">Creating the cluster and
-            adding it to the management group</xref></li>
+        <li><xref href="configure_vsa.dita#config_vsa/create_cluster">Use the CMC utility to create
+            a cluster and add it to the management group</xref></li>
       </ol>
     </section>
     <section id="launch_cmc">
@@ -192,7 +192,7 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
         </ol></p>
     </section>
     <section id="create_cluster">
-      <p><b>Creating the cluster and adding it to the management group</b></p>
+      <p><b>Use the CMC utility to create a cluster and add it to the management group</b></p>
       <p>Perform the following steps to create the cluster.<ol id="ol_yln_fhl_jt">
           <li>Run the following command from your first controller node which will open the HP
             StoreVirtual Centralized Management Console (CMC) GUI on your local machine:<codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock>
