@@ -43,6 +43,9 @@
               for MySql databases).</p>
             <codeblock>trove create MyReplicatedInstance 4 --replica_of 18afdf3c-3f38-4bda-b40a-13b675c7f857</codeblock>
           </li>
+          <li><b>Example 5:</b> Create a Vertica instance
+          <p>The following command creates a single Vertica instance called <b>MyVerticaInstance</b> with flavor m1.large, allocating 2 GB of space.</p>
+          <codeblock>trove create --size 2 --datastore vertica_preview --datastore_version 7.1 MyVerticaInstance 4</codeblock></li>
         </ul>
         <dl>
           <dlentry>

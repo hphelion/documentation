@@ -64,6 +64,22 @@
         <li><b>Restore a database from a backup: </b>To restore a backup (that is, create a new instance from a backup), use the <codeph>trove create --backup &lt;backup ID&gt;</codeph> command</li>
       </ol>
     </section>
-   
+    <section id="vertica"><title>Backing up a Vertica database</title>
+      <p>Vertica backups can be performed by taking advantage of Vertica's export and import capabilities via the VSQL interface. 
+        The Vertica documentation provides details on exporting data. Data can also be exported to an external file via SELECT 
+        and imported via COPY LOCAL.</p>
+      <p>For more information on these procedures, see the following topics:</p>
+      <ul>
+        <li><xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/AdministratorsGuide/CopyExportData/CopyingAndExportingData.htm">
+            Copying and Exporting Data
+        </xref></li>
+        <li><xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/SQLReferenceManual/Statements/SELECT/SELECT.htm">
+          SELECT
+        </xref></li>
+        <li><xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/SQLReferenceManual/Statements/COPY/COPYLOCAL.htm">
+          COPY LOCAL
+        </xref></li>
+      </ul>
+    </section>
   </body>
 </topic>
