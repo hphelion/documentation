@@ -1,33 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE bookmap-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River BookMap//EN" "bookmap-wr.dtd">
-<bookmap-wr domains="(map bookmap bookmap-wr)                          (topic delay-d)                          (map mapgroup-d)                          (topic indexing-d)                           (topic xnal-d)                          (topic hi-d)                           (topic pr-d)                           (topic sw-d)                          (topic ui-d)                          (topic wr-sw-d)                          (topic xml-d)                          a(loc  ixia_locid)                         " id="jow1404333828882" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en" linking="none" locktitle="no">
     <!-- Modification History
  -->
-    <booktitle>
-        <mainbooktitle>HP Helion OpenStack Carrier Grade 2.0 Beta: Administration Guide
-            (On-Line)</mainbooktitle>
-    </booktitle>
-    <bookmeta>
+    <title>HP Helion OpenStack Carrier Grade 2.0 Beta: Administration Guide
+            (On-Line)
+    </title>
+    <topicmeta>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>HP Helion</copyrholder>
+        </copyright>
         <prodinfo>
-            <prodname>HP Helion OpenStack Carrier Grade</prodname>
+            <prodname>HP Helion</prodname>
             <vrmlist>
-                <vrm release="15.x" version=""/>
+                <vrm version="4.1."/>
             </vrmlist>
         </prodinfo>
-        <!-- bookid">
-            <edition">Patch 0003</edition>
-        </bookid -->
-    </bookmeta>
-    <frontmatter>
-        <preface href="psa1420762251633.xml" locktitle="yes" toc="no">
-            <topicmeta>
-                <navtitle>Preface (TiS Admin)</navtitle>
-            </topicmeta>
-        </preface>
-        <booklists>
-            <toc/>
-        </booklists></frontmatter>
-    <chapter href="jow1404333560080.xml">
+    </topicmeta>
+    <topicref href="jow1404333560080.xml">
         <topicmeta>
             <navtitle>HP Helion OpenStack Carrier Grade Overview</navtitle>
         </topicmeta>
@@ -35,8 +26,8 @@
         <topicref href="jow1404333563834.xml"/>
         <topicref href="jow1404333564380.xml"/>
         <topicref href="jow1404333566955.xml" navtitle="Dashboard Controls" locktitle="yes"/>
-    </chapter>
-    <chapter href="jow1404333731418.xml">
+    </topicref>
+    <topicref href="jow1404333731418.xml">
         <topicmeta>
             <navtitle>Configuration Planning</navtitle>
         </topicmeta>
@@ -94,9 +85,9 @@
             <!-- topicref href="jow1443470248818.xml"/ -->
         </topicref>
         <mapref format="ditamap" href="jow1425584355871.ditamap"/>
-    </chapter>
+    </topicref>
 
-    <chapter href="jow1413726521641.xml">
+    <topicref href="jow1413726521641.xml">
         <topicmeta>
             <navtitle>System Configuration Management</navtitle>
         </topicmeta>
@@ -109,9 +100,9 @@
             <!-- Adding an Infrastructure Network Using the CLI : ToC entry suppressed -->
             <topicref href="jow1420473404578.xml" toc="no"/>
         </topicref>
-    </chapter>
+    </topicref>
 
-    <chapter href="jow1404333751142.xml">
+    <topicref href="jow1404333751142.xml">
         <topicmeta>
             <navtitle>Managing Hardware Resources</navtitle>
         </topicmeta>
@@ -162,8 +153,8 @@
         <topicref href="jow1404333798721.xml"/>
         <topicref href="jow1426182913166.xml"
             ><!-- Managing Host Aggregates --><!-- topicref href="jow1426182838839.xml"/ --></topicref>
-    </chapter>
-    <chapter href="jow1404333800036.xml">
+    </topicref>
+    <topicref href="jow1404333800036.xml">
         <topicmeta>
             <navtitle>Managing Virtual Machines</navtitle>
         </topicmeta>
@@ -204,9 +195,9 @@
             ><!-- Create Volume Options --><!-- topicref href="jow1439393574682.xml"/ --></topicref>
         <topicref href="jow1439388437367.xml"
             ><!-- Launch Instance Options --><!-- topicref href="jow1439389700095.xml"/ --></topicref>
-    </chapter>
+    </topicref>
     
-    <chapter href="jow1432045490465.xml">
+    <topicref href="jow1432045490465.xml">
         <topicmeta>
             <navtitle>Fault Management</navtitle>
         </topicmeta>
@@ -221,8 +212,8 @@
             <topicref href="jow1432045421799.xml"/>
             <topicref href="jow1432045469285.xml"/>
         </topicref>
-    </chapter>
-    <chapter href="psa1410446455735.xml">
+    </topicref>
+    <topicref href="psa1410446455735.xml">
         <topicmeta>
             <navtitle>Managing Software Patches</navtitle>
         </topicmeta>
@@ -231,8 +222,8 @@
         <topicref href="psa1414084582159.xml"/>
         <topicref href="psa1410446902796.xml"/>
         <topicref href="psa1420733173602.xml"/>
-    </chapter>
-    <chapter href="psa1410807758201.xml">
+    </topicref>
+    <topicref href="psa1410807758201.xml">
         <topicmeta>
             <navtitle>System Backups</navtitle>
         </topicmeta>
@@ -243,8 +234,8 @@
         </topicref>
         <topicref href="psa1410807838150.xml"/>
         <topicref href="jow1437657423737.xml" product="tis_small"/>
-    </chapter>
-<chapter href="jow1404333804266.xml">
+    </topicref>
+    <topicref href="jow1404333804266.xml">
         <topicmeta>
             <navtitle>Managing Stacks</navtitle>
         </topicmeta>
@@ -264,12 +255,12 @@
         </topicref>
         <topicref href="jow1409777224536.xml"/>
         <topicref href="jow1404333813579.xml"/>
-    </chapter>
-    <appendix href="jow1440781663850.xml">
+    </topicref>
+    <topicref href="jow1440781663850.xml">
         <!-- The vSwitch Function -->
         <topicref href="jow1440626167721.xml">
             <topicref href="jow1440626361437.xml"/>
             <topicref href="jow1440626472262.xml"/>
         </topicref>
-    </appendix>
-</bookmap-wr>
+    </topicref>
+</map>
