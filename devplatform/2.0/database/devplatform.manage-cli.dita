@@ -67,6 +67,11 @@
       <codeblock>trove configuration-attach &lt;instance_id&gt; &lt;config_id&gt;</codeblock>
       <p>Example:</p>
       <codeblock>trove configuration-attach 35ef6f16-e4ee-463b-b254-5331e5b72d00 052dc61d-ed5b-4051-956d-14d53c6e4830</codeblock>
+      <p><b>Edit a configuration group</b></p>
+      <p>The following command adds another key-value pair to a configuration group:</p>
+      <codeblock>trove configuration-patch &lt;config_id&gt; &lt;value_pairs&gt;</codeblock>
+      <p>Example: The following example adds a new configuration setting to an existing configuration:</p>
+      <codeblock>trove configuration-patch 052dc61d-ed5b-4051-956d-14d53c6e4830 '{systemlog.destination</codeblock>
     </section>
     
     <section id="users">
