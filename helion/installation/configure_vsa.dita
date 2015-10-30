@@ -432,10 +432,14 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
           specified (including Adaptive Optimization disks) per VSA node. For example, if you want
           to deploy VSA with two disks for Adaptive Optimization then your disk input model should
           not specify more than five raw disks for data and two raw disks for Adaptive Optimization.
-          Exceeding the disk limit causes VSA deployment failure.</note>.</p>
+          Exceeding the disk limit causes VSA deployment failure.</note></p>
     </section>
     <section id="create_volumetype">
       <title>Create a Volume Type for your Volume Backend</title>
+      <p>The default volume type created by VSA will be thin provisioned and will have no fault
+        tolerance. You should configure cinder to fully provision volumes, and you may want to
+        configure fault tolerance. Follow the instructions below to create a new volume type which
+        is fully provisioned and fault tolerant:</p>
       <p id="creating_volumetype">Perform the following steps to create a volume type using the
         Horizon GUI: <ol id="ol_k5n_5xv_5t">
           <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
@@ -462,27 +466,30 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
           href="http://docs.openstack.org/kilo/config-reference/content/hp-lefthand-supported-ops-rest.html"
           format="html" scope="external"/>.</p>
       <p>The following Cinder Volume Type extra-specs options enable control over the VSA storage
-        provisioning type (thin or full) and specify protection for backend
-        volumes:<codeblock>hplh:provisioning thin or full
-          hplh:data_pl r-0 or r-5 or r-10-2 or r-10-3 or r-10-4 or r-6</codeblock></p><p>For
-        example:<codeblock>hplh:provisioning thin
-              hplh:data_pl r-5 
-              volume_backend_name MyVolumeBackend</codeblock></p><p>The
-        protection level options enable different data protection configurations. Supported data
-        protection options are:<ul id="ul_sxb_4cs_tt">
-          <li>r-0 (RAID 0) provides the best data capacity and processing performance, but offers no
-            data protection (no fault tolerance) in the event of a failure.</li>
-          <li>r-5 (RAID 5) consists of three or more physical disk drives in an array. Stores parity
-            data across all drives. If one drive fails, the remaining drives use the parity data to
-            allow the array to continue to operate until the failed drive is replaced. If more than
-            one drive fails, the array fails.</li>
-          <li>r-10-2 (RAID 10+2) stripes and mirrors data across four or more disks.</li>
-          <li>r-10-3 (RAID 10+3) stripes and mirrors data across five or more disks.</li>
-          <li>r-10-4 RAID 10+4) stripes and mirrors data across six or more disks.</li>
-          <li>r-6 (RAID 6) is based on and extends RAID5. It requires a minimum of four drives and
-            creates multiple parity sets such that the array can function with up to two drives
-            failing at the same time.</li>
-        </ul></p></section>
+        provisioning type (thin or full) and specify protection for backend volumes:</p>
+      <codeblock>hplh:provisioning thin or full
+hplh:data_pl r-0 or r-5 or r-10-2 or r-10-3 or r-10-4 or r-6</codeblock>
+      <p>For example:</p>
+      <codeblock>hplh:provisioning thin
+hplh:data_pl r-5 
+volume_backend_name MyVolumeBackend</codeblock>
+      <p>The protection level options enable different data protection configurations. Supported
+        data protection options are:</p>
+      <ul>
+        <li>r-0 (RAID 0) provides the best data capacity and processing performance, but offers no
+          data protection (no fault tolerance) in the event of a failure.</li>
+        <li>r-5 (RAID 5) consists of three or more physical disk drives in an array. Stores parity
+          data across all drives. If one drive fails, the remaining drives use the parity data to
+          allow the array to continue to operate until the failed drive is replaced. If more than
+          one drive fails, the array fails.</li>
+        <li>r-10-2 (RAID 10+2) stripes and mirrors data across four or more disks.</li>
+        <li>r-10-3 (RAID 10+3) stripes and mirrors data across five or more disks.</li>
+        <li>r-10-4 RAID 10+4) stripes and mirrors data across six or more disks.</li>
+        <li>r-6 (RAID 6) is based on and extends RAID5. It requires a minimum of four drives and
+          creates multiple parity sets such that the array can function with up to two drives
+          failing at the same time.</li>
+      </ul>
+    </section>
     <section id="associate_volume_backend">
       <title>Associate the Volume Type to a Backend</title>
       <p> After the volume type names have been created, you can assign extra_specs to the volumes
