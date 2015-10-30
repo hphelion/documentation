@@ -10,10 +10,10 @@
         <li>Log into the first proxy server node.<note>To identify the first proxy node, see <xref
               href="first_proxy_server.dita"/>.</note></li>
         <li>Copy the <b>swift-rings-tarball.tar</b> file from any other
-          node:<codeblock>scp &lt;username>@&lt;nodename>:/etc/swiftlm/swift-rings-tarball.tar /tmp</codeblock></li>
+          node:<codeblock>- scp &lt;username>@&lt;nodename>:/etc/swiftlm/deploy_dir/swift-rings-tarball.tar /tmp</codeblock></li>
         <li>Unpack the tarball to
-            <codeph>/etc/swiftlm/builder_dir</codeph>::<codeblock>cd  /etc/swiftlm/builder_dir
-sudo tar -xpf /tmp/swiftlm-rings-tarball.tar</codeblock><p><!--For example: if the Keystone region is called region2, use the following commands:<codeblock>cd  /etc/swiftlm/builder_dir/
+            <codeph>/etc/swiftlm/builder_dir</codeph>:<codeblock>cd  /etc/swiftlm/builder_dir
+sudo tar -xpf /tmp/swift-rings-tarball.tar</codeblock><p><!--For example: if the Keystone region is called region2, use the following commands:<codeblock>cd  /etc/swiftlm/builder_dir/
 sudo tar -xpf /tmp/swiftlm-rings-tarball.tar</codeblock>--></p></li>
         <li>Log into the Deployer and run the <codeph>swift-deploy.yml</codeph>
           playbook::<codeblock>cd ~/scratch/ansible/next/hos/ansible
