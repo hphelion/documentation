@@ -32,10 +32,9 @@
         <li>Check to ensure that all Keystone AUTH_URL IP addresses have been added to the <xref
             href="devplatform_install_prereq.dita#topic_x54_njh_ts/proxy">no-proxy </xref>list.</li>
         <li>SSH to the Deployer. </li>
-        <li>Create a Virtual Environment. <codeblock>virtualenv .devplatform</codeblock></li>
-        <li>Source the Virtual Environment. In this example, <codeph>&lt;dpi-venv&gt;.tgz</codeph>
-          is the name of the
-          installer.<codeblock>mkdir -p /opt/stack/venv/&lt;dpi-venv&gt; 
+        <li>Create and source the Virtual Environment. In this example,
+            <codeph>&lt;dpi-venv&gt;.tgz</codeph> is the name of the
+          installer.<codeblock>mkdir -p /opt/stack/venv/&lt;dpi-venv> 
 tar -C /opt/stack/venv/&lt;dpi-venv&gt; -xzf &lt;dpi-venv&gt;.tgz
 source /opt/stack/venv/&lt;dpi-venv&gt;/bin/activate</codeblock></li>
         <li>Run the HDPI plugin to install, deploy, and
