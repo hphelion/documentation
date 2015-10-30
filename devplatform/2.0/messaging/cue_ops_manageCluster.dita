@@ -124,5 +124,8 @@ list_response = cue_client.clusters.list()</codeblock></dd>
         </dlentry>
       </dl>
     </section>
+    <p>For more details on working with Cue clusters from the command line, see <xref
+      href="http://python-cueclient.readthedocs.org/en/latest/command-line.html#cluster-create"
+      format="html" scope="external">Cue Command Line Tool</xref>.</p>
   </body>
 </topic>

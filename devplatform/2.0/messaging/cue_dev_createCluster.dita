@@ -42,7 +42,11 @@ create_response = cue_client.clusters.create(name="test_binding5", nic="55555", 
         </dlentry>
       </dl>
     </section>
+    <p>For more details on working with Cue clusters from the command line, see <xref
+        href="http://python-cueclient.readthedocs.org/en/latest/command-line.html#cluster-create"
+        format="html" scope="external">Cue Command Line Tool</xref>.</p>
   </body>
 </topic>
+
 <!--add the cue client from the read the docs here, that's what the "command line" concept is about, using the cue client
 this example is more for an app developer perspective.-->

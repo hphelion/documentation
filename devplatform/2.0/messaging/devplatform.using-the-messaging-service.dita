@@ -5,8 +5,16 @@
 <body>
 
 <p>The Messaging service is a key aspect of applications architected for the cloud as it helps to create scalable and distributed applications. This is achieved by enabling your software applications and services to communicate with each other as sub-components of a larger-scale application while allowing you to incorporate data from users, devices, and data streams.</p>
-<p>The Messaging service provisions clusters that can be used for robust messaging in
-      applications.</p>
+<p>The Messaging service provisions RabbitMQ clusters that can be used for robust messaging in
+      applications. For more information about RabbitMQ, see <xref
+        href="https://www.rabbitmq.com/admin-guide.html" format="html" scope="external">RabbitMQ
+        Server Documentation</xref>.</p>
+  <p>For information on managing the Messaging Service via Rest API, see <xref
+        href="http://cue.readthedocs.org/en/latest/rest.html" format="html" scope="external">Cue
+        Rest API Documentation</xref>.</p>
+  <p>For information on managing the Messaging Service via the Python client, see <xref
+        href="https://github.com/openstack/python-cueclient" format="html" scope="external"
+        >openstack/python-cueclient on GitHub</xref>.</p>
 <p>The following topics explain how to create and manage a RabbitMQ instance:</p>
 <ul>
 <li>
