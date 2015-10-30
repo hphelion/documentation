@@ -512,6 +512,8 @@
         <topicref href="2.0/monitoring/devplatform.database-monitor.dita"/>
         <topicref href="2.0/monitoring/devplatform.database-monitor-cli.dita"/>
       </topichead>
+      <topicref href="2.0/installation/install_dnsaas.dita" navtitle="DNS Configuration"
+        locktitle="yes"/>
     </topicref>
   </topicref>
  </map>
