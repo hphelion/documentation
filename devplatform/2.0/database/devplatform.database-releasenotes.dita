@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_database_release_notes">
+  <title>Database as a Service: 2.0 Beta Release Notes</title>
+  <body>
+    <section id="monasca"><title>Monasca</title>
+        <p>The following instructions will enable the monasca agent on the DBaaS control plane for beta. These instructions require that you are able to ssh onto the control plane.</p>
+        <ol>
+          <li>Secure copy the following packages onto each control plane instance:
+            <ul>
+              <li>Six-1.9.0</li>
+              <li>Python-keystoneclinet-0.10.1</li>
+              <li>Oslo.i18n-1.5.0</li>
+              <li>Pbr-0.11.0</li>
+              <li>Oslo.utils-1.4.0</li>
+              <li>Oslo.serialization-1.4.0</li>
+              <li>Stevedore-1.3.0</li>
+              <li>Oslo.config-1.3.0</li>
+            </ul>
+          </li>
+          <li>Use pip install to install the packages in the order listed above</li>
+          <li>Run <codeph>bash /etc/monasca/start-monasca</codeph>. This will setup the monasca agent on the machine.</li>
+        </ol>
+    </section>
+    <section id="failure_to_create_database_endpoint"><title>Failure to create the database endpoint</title>
+      <p>
+        In some cases, the beta installer may fail to create the database endpoint at the end of the installation. If you hit this issue, you can create a database endpoint 
+        by running the following commands (replace the IP address of the VIP as appropriate):
+      </p>
+      <codeblock>$ openstack service create --name database database
+$ openstack endpoint create database admin 'http://&lt;public-VIP-IP-address&gt;:8779/v1.0/$(tenant_id)s’
+$ openstack endpoint create database internal 'http://&lt;public-VIP-IP-address&gt;:8779/v1.0/$(tenant_id)s’
+$ openstack endpoint create database public 'http://&lt;public-VIP-IP-address&gt;:8779/v1.0/$(tenant_id)s’
+      </codeblock>
+    </section>
+  </body>
+</topic>
