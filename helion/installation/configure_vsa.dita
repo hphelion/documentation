@@ -397,21 +397,15 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <li>Run the following command to create a deployment directory.
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        <li>Run the Cinder Reconfigure Playbook:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
       </ol>
+      <note type="important">You can create more than one VSA cluster of same or different type by
+        specifying the configuration in cloud model. For more details, refer <xref
+          href="../blockstorage/vsa/vsa_create_multiple_clusters.dita">Modifying Cloud Model to
+          Create Multiple Clusters</xref>.</note>
     </section>
-    <p id="run-ceph-client-package"><b>Run the Cinder Reconfigure Playbook</b></p>
-    <p>Execute the following command to configure VSA. </p>
-    <p>
-      <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
-    </p>
-    <p>After the successful configuration of VSA as a Cinder backend, you can login to Horizon
-      Dashboard and perform the OpenStack Operations to verify the backend configuration etc. See
-        <xref href="installation_verification.dita"/> for more details.</p>
-    <note type="important">You can create more than one VSA cluster of same or different type by
-      specifying the configuration in cloud model. For more details, refer <xref
-        href="../blockstorage/vsa/vsa_create_multiple_clusters.dita">Modifying Cloud Model to Create
-        Multiple Clusters</xref>.</note>
     <section id="deploy-vsa-with-ao-without-ao">
       <title>VSA with AO or without AO</title>
       <p>VSA is deployed with adaptive optimization (AO) or without AO. AO allows built-in storage
