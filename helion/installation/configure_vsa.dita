@@ -288,7 +288,8 @@ hplefthand_iscsi_chap_enabled: false
 volume_backend_name: &lt;vsa-backend-name>
 volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
 hplefthand_debug: false</codeblock>
-                where:<table frame="all" rowsep="1" colsep="1" id="table_gc4_c5t_5t">
+                <p>where:</p>
+              <table frame="all" rowsep="1" colsep="1" id="table_gc4_c5t_5t">
                 <tgroup cols="2">
                   <colspec colname="c1" colnum="1"/>
                   <colspec colname="c2" colnum="2"/>
@@ -333,8 +334,7 @@ hplefthand_debug: false</codeblock>
                     </row>
                     <row>
                       <entry>volume_driver</entry>
-                      <entry>Cinder volume driver. Usually you will leave this at the default
-                        value.</entry>
+                      <entry>Cinder volume driver. Leave this as the default value for VSA.</entry>
                     </row>
                     <row>
                       <entry>hplefthand_debug</entry>
@@ -394,8 +394,8 @@ git commit -m "&lt;your commit message>"</codeblock><note>Before
         <li>Run the configuration processor:
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
-        <li>Run the following command to create a deployment directory.
-          <codeblock>cd ~/helion/hos/ansible
+        <li>Run the following command to create a deployment
+          directory:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
         <li>Run the Cinder Reconfigure Playbook:
           <codeblock>cd ~/scratch/ansible/next/hos/ansible

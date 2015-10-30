@@ -88,11 +88,7 @@
         navtitle="Configuring the Monitoring Service" locktitle="yes"/>
       <topicref href="helion/administration/configure_logging.dita"
         navtitle="Configuring the Centralized Logging Service" locktitle="yes"/>
-
-
-
-
-      <!-- BEGIN - Administration/IDENTITY -->
+<!-- BEGIN - Administration/IDENTITY -->
       <topicref href="helion/identity/identity_overview.dita" navtitle="Identity Service"
         locktitle="yes">
         <topicref href="helion/identity/identity_roles.dita"
@@ -168,8 +164,6 @@
         navtitle="Block Storage Service" locktitle="yes">
         <topicref href="helion/blockstorage/ceph/ceph_overview.dita" navtitle="Ceph Overview"
           locktitle="yes">
-          <topicref href="helion/blockstorage/ceph/configuring_use_ceph_cluster.dita"
-            navtitle="Configuring Cinder to Use Ceph" locktitle="yes"/>
           <topicref href="helion/blockstorage/ceph/configuring_use_ceph_cluster_glance.dita"
             navtitle="Configuring Glance to Use Ceph" locktitle="yes"/>
         </topicref>
