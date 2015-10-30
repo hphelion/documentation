@@ -13,7 +13,7 @@
     region_name: region1
     database:
       trove_enable_ssl: False
-      ephemeral_ca_cert: 
+      ephemeral_ca_cert: /home/stack/ca/cacert.pem  
       external_network: 
       provider_network:
       ntp_server: 
