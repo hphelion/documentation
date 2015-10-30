@@ -52,10 +52,9 @@
         navtitle="Install the Messaging Service (review only)"/>
     </topichead>
     <topichead navtitle="Service Monitoring">
+      <topicref href="2.0/monitoring/devplatform.messaging-monitor.dita"/>
       <topicref href="2.0/monitoring/devplatform.database-monitor.dita"/>
-      <topicref href="2.0/monitoring/devplatform.database-monitor-cli.dita">
-        <topicref href="2.0/monitoring/devplatform.messaging-monitor.dita"/>
-      </topicref>
+      <topicref href="2.0/monitoring/devplatform.database-monitor-cli.dita"/>
     </topichead>
 
     <!--uninstallation -->
