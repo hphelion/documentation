@@ -240,54 +240,166 @@ enabled_backends=ceph1</codeblock></li>
                 <codeblock>[DEFAULT]
 # Set the default volume type
 default_volume_type = &lt;your new volume type></codeblock></li>
-              <li>Uncomment the <codeph>StoreVirtual (VSA) cluster</codeph> section and fill the
-                values as per your cluster information. If you have more than one cluster, you will
-                need to add another similar section with its respective values. In the following
-                example only one cluster is added. <codeblock>[ceph1]
-rbd_secret_uuid = 457eb676-33da-42ec-9a8c-9293d545c337
-rbd_user = cinder
-rbd_pool = volumes
-rbd_ceph_conf = /etc/ceph/ceph.conf
+              <li>Uncomment the <codeph>ceph</codeph> section and fill the values as per your
+                cluster information. If you have more than one cluster, you will need to add another
+                similar section with its respective values. In the following example only one
+                cluster is added. <codeblock>[ceph1]
+rbd_secret_uuid = &#60;secret-uuid>
+rbd_user = &#60;ceph-cinder-user>
+rbd_pool = &#60;ceph-cinder-volume-pool>
+rbd_ceph_conf = &#60;ceph-config-file>
 volume_driver = cinder.volume.drivers.rbd.RBDDriver
-volume_backend_name = ceph</codeblock>
-                <note>The <codeph>rbd_secret_uuid</codeph> entry is same as
-                    <codeph>secret_id</codeph> which is available at
-                    <codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph>.</note></li>
-              <li>To enable Cinder to backup to Ceph, modify <codeph>cinder.conf.j2</codeph> at
-                  <codeph>~/helion/my_cloud/config/cinder</codeph> in the [<b>Default</b>] section
-                with the following values: <codeblock># Ceph backup
+volume_backend_name = &#60;ceph-backend-name></codeblock>
+                <p>where:</p>
+                <table frame="all" rowsep="1" colsep="1" id="ceph_volume">
+                  <tgroup cols="2">
+                    <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                    <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+                    <thead>
+                      <row>
+                        <entry>Value</entry>
+                        <entry>Description</entry>
+                      </row>
+                    </thead>
+                    <tbody>
+                      <row>
+                        <entry>rbd_secret_uuid</entry>
+                        <entry>Use the secret_id value from the
+                            <codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph> file,
+                          highlighted below::
+                          <codeblock>- user:
+    name: <b>cinder</b>
+    type: openstack
+    secret_id: <b>457eb676-33da-42ec-9a8c-9293d545c337</b>
+pools:
+    - name: volumes</codeblock></entry>
+                      </row>
+                      <row>
+                        <entry>rbd_user</entry>
+                        <entry>Use the username value from the
+                            <codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph> file,
+                          highlighted below::
+                          <codeblock>- user:
+    name: <b>cinder</b>
+    type: openstack
+    secret_id: 457eb676-33da-42ec-9a8c-9293d545c337
+pools:
+    - name: volumes</codeblock></entry>
+                      </row>
+                      <row>
+                        <entry>rbd_pool</entry>
+                        <entry>Use the pool name value from the
+                            <codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph> file,
+                          highlighted below:
+                          <codeblock>- user:
+    name: cinder
+    type: openstack
+    secret_id: 457eb676-33da-42ec-9a8c-9293d545c337
+pools:
+    - name: <b>volumes</b></codeblock></entry>
+                      </row>
+                      <row>
+                        <entry>rbd_ceph_conf</entry>
+                        <entry>Enter your Ceph configuration file location, usually
+                            <codeph>/etc/ceph/ceph.conf</codeph></entry>
+                      </row>
+                      <row>
+                        <entry>volume_driver</entry>
+                        <entry>Cinder volume driver. Leave this as the default value specified for
+                          Ceph.</entry>
+                      </row>
+                      <row>
+                        <entry>volume_backend_name</entry>
+                        <entry>Name given to the VSA backend. You will specify this value later in
+                          the <xref href="configure_vsa.dita#config_vsa/associate_volume_backend"
+                            >Associate the Volume Type to a Backend</xref> steps.</entry>
+                      </row>
+                    </tbody>
+                  </tgroup>
+                </table>
+              </li>
+              <li>To enable Cinder to backup to Ceph, make the following changes to the
+                  <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file: <ol>
+                  <li>Uncomment the <codeph>ceph backup</codeph> section and fill the values: <codeblock>[DEFAULT]
 backup_driver = cinder.backup.drivers.ceph
-backup_ceph_conf = /etc/ceph/ceph.conf
-backup_ceph_user = cinder-backup
-backup_ceph_pool = backups</codeblock>
-                <note>You can add a comment (<b># Ceph backup </b>) as shown above so that the Ceph
-                  backup content can be easily identified in the <codeph>cinder.conf.j2</codeph>
-                  file.</note></li>
-            </ol>
-          </li>
-          <li>Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes: <ol>
-              <li>Login to the controller nodes as a root user and run the following
-                    command:<codeblock>ceph auth get-or-create client.cinder | tee /etc/ceph/ceph.client.cinder.keyring</codeblock><p><b>OR</b></p></li>
-              <li>You can copy the keyring from the deployer/lifecycle-manager node to
-                  <codeph>/etc/ceph</codeph> folder on all the controller
-                nodes:<codeblock>scp /etc/ceph/ceph.client.cinder.keyring</codeblock></li>
-            </ol></li>
-          <li>Commit your configuration to a <xref href="using_git.dita">local repository</xref>: <codeblock>cd ~/helion/hos/ansible
+backup_ceph_conf = &#60;ceph-config-file>
+backup_ceph_user = &#60;ceph-backup-user>
+backup_ceph_pool = &#60;ceph-backup-pool></codeblock>
+                    <p>where:</p>
+                    <table frame="all" rowsep="1" colsep="1" id="ceph_backup">
+                      <tgroup cols="2">
+                        <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                        <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+                        <thead>
+                          <row>
+                            <entry>Value</entry>
+                            <entry>Description</entry>
+                          </row>
+                        </thead>
+                        <tbody>
+                          <row>
+                            <entry>backup_driver</entry>
+                            <entry>Cinder volume driver. Leave this as the default value specified
+                              for Ceph.</entry>
+                          </row>
+                          <row>
+                            <entry>backup_ceph_conf</entry>
+                            <entry>Enter your Ceph configuration file location, usually
+                                <codeph>/etc/ceph/ceph.conf</codeph></entry>
+                          </row>
+                          <row>
+                            <entry>backup_ceph_user</entry>
+                            <entry>Use the user name value from the
+                                <codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph> file,
+                              highlighted below::
+                              <codeblock>- user:
+    name: <b>cinder-backup</b>
+    type: openstack
+pools:
+    - name: backups</codeblock></entry>
+                          </row>
+                          <row>
+                            <entry>backup_ceph_pool</entry>
+                            <entry>Use the pool name value from the
+                                <codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph> file,
+                              highlighted below::
+                              <codeblock>- user:
+    name: <b>cinder-backup</b>
+    type: openstack
+pools:
+    - name: <b>backups</b></codeblock></entry>
+                          </row>
+                        </tbody>
+                      </tgroup>
+                    </table></li>
+                </ol>
+              </li>
+              <li>Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes: <ol>
+                  <li>Login to the controller nodes as a root user and run the following
+                        command:<codeblock>ceph auth get-or-create client.cinder | tee /etc/ceph/ceph.client.cinder.keyring</codeblock><p><b>OR</b></p></li>
+                  <li>You can copy the keyring from the deployer/lifecycle-manager node to
+                      <codeph>/etc/ceph</codeph> folder on all the controller
+                    nodes:<codeblock>scp /etc/ceph/ceph.client.cinder.keyring</codeblock></li>
+                </ol></li>
+              <li>Commit your configuration to a <xref href="using_git.dita">local
+                repository</xref>: <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;your commit message>"</codeblock>
-            <note>Before you run any playbooks, remember that you need to export the encryption key
-              in the following environment variable:<codeph> export
-                HOS_USER_PASSWORD_ENCRYPT_KEY=&lt;encryption key></codeph> See <xref
-                href="install_entryscale_kvm.dita#install_kvm"/> for reference.</note></li>
-          <li>Run the configuration processor:
-            <codeblock>cd ~/helion/hos/ansible
+                <note>Before you run any playbooks, remember that you need to export the encryption
+                  key in the following environment variable:<codeph> export
+                    HOS_USER_PASSWORD_ENCRYPT_KEY=&lt;encryption key></codeph> See <xref
+                    href="install_entryscale_kvm.dita#install_kvm"/> for reference.</note></li>
+              <li>Run the configuration processor:
+                <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
-          <li>Run the following command to create a deployment directory:
-            <codeblock>cd ~/helion/hos/ansible
+              <li>Run the following command to create a deployment directory:
+                <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
-          <li>Run the Cinder Reconfigure Playbook:
-            <codeblock>cd ~/scratch/ansible/next/hos/ansible
+              <li>Run the Cinder Reconfigure Playbook:
+                <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
+            </ol>
+          </li>
         </ol>
       </p>
     </section>
