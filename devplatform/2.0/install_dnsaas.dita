@@ -154,7 +154,7 @@ EOF</codeblock>
             step.<codeblock>$ neutron security-group-list --tenant-id &lt;value of the owner parameter></codeblock></li>
           <li>Create security group rules.
             <codeblock>$ neutron security-group-rule-create \
-          --tenant-id &lt;value of the owner parameter> \
+          --tenant-id &lt;value of the owner parameter from OpenStack Project Create command> \
           --protocol TCP \
           --remote-ip-prefix 0.0.0.0/0 \
           --port-range-min 22 \
@@ -162,7 +162,7 @@ EOF</codeblock>
           &lt;default security group rule ID>
 
 $ neutron security-group-rule-create \
-          --tenant-id &lt;value of the owner parameter> \
+          --tenant-id &lt;value of the project ID parameter from the OpenStack Project Create command> \
           --protocol TCP \
           --remote-ip-prefix 0.0.0.0/0 \
           --port-range-min 79 \
@@ -247,56 +247,49 @@ $ nano cloudConfig.yml                                           </codeblock></l
           <li>Run the ansible-playbook on the HP Helion OpenStack
             deployer.<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts platform-pass-through.yml -e pass_through_key=""        </codeblock></li>
-          <li> Copy the pass-through.yml file as
-            follows:<ul><li>Copy <b>from</b>: &lt;HOS deployer&gt;:~/platform-pass-through.yml </li>
-              <li>Copy <b>to</b>: &lt;DNSaaS deployer&gt;
-                ~/helion/my_cloud/definition/data/pass-through/hos.yml</li></ul></li>
+          <li> Copy the contents of the <codeph>pass-through.yml</codeph> file as follows:<ul>
+              <li>Copy <b>from</b>: &lt;<b>HOS</b> deployer&gt;:~/platform-pass-through.yml </li>
+              <li>Copy <b>to</b>: &lt;<b>DNSaaS</b> deployer&gt;
+                ~/helion/my_cloud/definition/data/pass-through/hos.yml</li>
+            </ul></li>
           <li>Add your changes to Git.
-            <codeblock>$ cd ~/helion
-$ git commit -a -m "Configured Deployment Model"             </codeblock></li>
+              <codeblock>$ cd ~/helion
+$ git commit -a -m "Configured Deployment Model"      
+$ git status </codeblock><note>Make
+              sure that there are no other files which are not committed to the Git repository. If
+              there are, begin troubleshooting.</note></li>
         </ol></sectiondiv><sectiondiv>
-        <p id="RunPreInstallPlaybook"><b>Run the Pre-Installation Playbook</b></p>
-        <p>At the end of each playbook, ensure both "unreachable" and "failed" are zero.</p>
-        <codeblock>$ source ~/dnsaas.osrc
+        <b>Run the Pre-Installation Playbook</b>
+        <p>At the end of each playbook, ensure both "unreachable" and "failed" are
+        zero.</p><codeblock>$ source ~/dnsaas.osrc
 $ cd ~/helion/hos/ansible/
-$ ansible-playbook -i hosts/localhost hlm-pre-install.yml</codeblock>
-      </sectiondiv>
-      <sectiondiv>
-        <p id="RunConfigProcessor"><b>Run the Configuration Processor</b></p>
-        <p>At the end of each playbook, ensure both "unreachable" and "failed" are zero.</p>
-        <note>When asked for a encryption key, simply leave the value blank, pressing enter 4 times
-          to proceed.</note>
-        <codeblock>$ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
-      </sectiondiv>
-      <sectiondiv>
-        <p id="RunReadyDeploymentPlay"><b>Run the Ready Deployment Playbook</b></p>
-        <p>At the end of each playbook, ensure both "unreachable" and "failed" are zero.</p>
-        <codeblock>$ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
-      </sectiondiv>
-    </section>
+$ ansible-playbook -i hosts/localhost hlm-pre-install.yml</codeblock></sectiondiv><sectiondiv>
+        <b>Run the Configuration Processor</b>
+        <p>At the end of each playbook, ensure both "unreachable" and "failed" are
+          zero.</p><note>When asked for a encryption key, simply leave the value blank, pressing
+          enter 4 times to
+        proceed.</note><codeblock>$ ansible-playbook -i hosts/localhost config-processor-run.yml </codeblock></sectiondiv><b>Run
+        the Ready Deployment Playbook</b>
+      <p>At the end of each playbook, ensure both "unreachable" and "failed" are
+      zero.</p><codeblock>$ ansible-playbook -i hosts/localhost ready-deployment.yml </codeblock></section>
     
     <section id="PerformDeployment">
-      <title>Perform the Deployment</title>
-      
-      <sectiondiv>
-        <p id="RunBootInfrastructure"><b>Run the Boot Infrastructure Playbook</b></p>
-        <p>Once this is complete, all in-cloud infrastructure (VMs, Networks, Routers, Floating 
-          IPs etc) will have been created.</p>
-        <note>This step takes approximately 15 minutes to run.</note>
-        <codeblock>$ cd ~/scratch/ansible/next/hos/ansible
-          
+      <title>Perform the Deployment</title><sectiondiv>
+        <b>Run the Boot Infrastructure Playbook</b>
+        <p>Once this is complete, all in-cloud infrastructure (VMs, Networks, Routers, Floating IPs
+          etc) will have been created.</p><note>This step takes approximately 15 minutes to
+          run.</note><codeblock>$ cd ~/scratch/ansible/next/hos/ansible
+
+# Choose either the multiple or single control plane option; these configurations are mutually exclusive.          
+
 # Multiple control plane nodes
 $ ansible-playbook -i hosts/localhost hlm-boot-infra.yml
           
 # Single control plane
-$ ansible-playbook -i hosts/localhost hlm-boot-infra.yml -e neutron_router_ha=False
-        </codeblock>
-      </sectiondiv>
-      
-      <sectiondiv>
+$ ansible-playbook -i hosts/localhost hlm-boot-infra.yml -e neutron_router_ha=False</codeblock></sectiondiv><sectiondiv>
         <p id="RunSitePlay"><b>Run the Site Playbook</b></p>
-        <note type="caution">Unlike all the previous ansible play's, the inventory file 
-          supplied to this play is <b>hosts/verb_hosts</b> and not <b>hosts/localhost</b>.</note>
+        <note type="caution">Unlike all the previous ansible play's, the inventory file supplied to
+          this play is <b>hosts/verb_hosts</b> and not <b>hosts/localhost</b>.</note>
         <note>This step take approximately 15 to 20 minutes to complete.</note>
         <codeblock>$ ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
       </sectiondiv>
