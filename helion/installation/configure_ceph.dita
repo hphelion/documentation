@@ -6,7 +6,7 @@
   <body>
     <p>This page describes how to configure your Ceph backend for the Helion Entry-scale with KVM
       Cloud model.</p>
-    <section id="notes"><title>Notes</title>
+    <section id="notes1"><title>Notes</title>
       <p>The Ceph cluster expects the network group that will be used for management network traffic
         within the cloud to be left to its default value i.e. MANAGEMENT. Altering the name will
         lead to failures in the cloud deployment, therefore it should be avoided.</p>
@@ -199,12 +199,10 @@ git commit -m "&lt;commit message>"</codeblock></li>
           href="install_entryscale_kvm.dita#install_kvm/provision">Entry-scale KVM Cloud
           installation steps.</xref></p>
     </section>
-    <section id="install_ceph"><title>Run Ceph Client Packages</title>
-      <p>The Ceph Monitor service is deployed on the controller nodes and OSD disks are deployed as
-        separate nodes (resource nodes).</p>
-      <p><note>While executing the <codeph>site.yml</codeph> playbook with the
-            <codeph>–-limit</codeph> option, it is also expected to include the controller nodes in
-          the list of restricted nodes if the cloud is deployed with a Ceph cluster.</note></p>
+
+
+
+    <section id="prereqs"><title>Prerequisites</title>
       <p>In order for Ceph to be used as a <xref
           href="installation_verification.dita#install_verification/volume_verify">backend for
           volumes</xref>, the nodes running these services should have the Ceph client installed on
@@ -216,39 +214,64 @@ ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
       </p>
       <p>This will also create Ceph users and Ceph pools on the resource nodes.</p>
     </section>
-    <section id="configure-ceph-as-cinder-backend">
+    <section id="notes"><title>Notes</title>
+      <p>While executing the <codeph>site.yml</codeph> playbook with the <codeph>–-limit</codeph>
+        option, it is also expected to include the controller nodes in the list of restricted nodes
+        if the cloud is deployed with a Ceph cluster.</p>
+    </section>
+    <section id="configure_backend">
       <title>Configure Ceph as the Backend</title>
-      <p>
-        <note>You must run the playbook <codeph>ansible-playbook -i hosts/verb_hosts
-          ceph-client-prepare.yml</codeph> to properly set up the rings files before configuring
-          Ceph as a Cinder backend.</note>
-      </p>
+      <p>You can use Ceph as either the backend for volumes or volume backups or both. These steps
+        will show you how to do this.</p>
       <p>Perform the following procedure on the deployer/lifecycle-manager node to configure Ceph as
-        a Cinder backend:</p>
+        a volume backend:</p>
       <p>
-        <ol id="ol_u12_kd3_pt">
-          <li>Edit <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> to add the Ceph
-            configuration data:<codeblock>enabled_backends=ceph1</codeblock></li>
-          <li>Copy the following
-            configurations:<codeblock id="ceph-cinder-conf">[ceph1]
-              rbd_secret_uuid = 457eb676-33da-42ec-9a8c-9293d545c337
-              rbd_user = cinder
-              rbd_pool = volumes
-              rbd_ceph_conf = /etc/ceph/ceph.conf
-              volume_driver = cinder.volume.drivers.rbd.RBDDriver
-              volume_backend_name = ceph</codeblock><note>The
-                <codeph>rbd_secret_uuid</codeph> command is same as <codeph>secret_id</codeph> which
-                is available at
-                <codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph>.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></note></li>
-          <?oxy_custom_end?>
-          <li> Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes:<ol
-            id="ol_m5r_k23_pt">
-            <li>Login to the controller nodes as a root user and run the following
-              command:<codeblock>ceph auth get-or-create client.cinder | tee /etc/ceph/ceph.client.cinder.keyring</codeblock><p><b>OR</b></p></li>
-            <li>You can copy the keyring from the deployer/lifecycle-manager node to
-              <codeph>/etc/ceph</codeph> folder on all the controller
-              nodes:<codeblock>scp /etc/ceph/ceph.client.cinder.keyring</codeblock></li>
-          </ol></li>
+        <ol>
+          <li>Log in to the lifecycle-manager node.</li>
+          <li>Make the following changes to the
+              <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file: <ol>
+              <li>Add your Ceph backend to the <codeph>enabled_backends</codeph> section:
+                <codeblock># Configure the enabled backends
+                  enabled_backends=ceph1</codeblock></li>
+              <li>[OPTIONAL] If you want a use a default volume type, then enter it in the
+                  <codeph>[DEFAULT]</codeph> section with the syntax below. You will want to
+                remember this value when you create your volume type in the next section.
+                <codeblock>[DEFAULT]
+                  # Set the default volume type
+                  default_volume_type = &lt;your new volume type></codeblock></li>
+              <li>Uncomment the <codeph>StoreVirtual (VSA) cluster</codeph> section and fill the
+                values as per your cluster information. If you have more than one cluster, you will
+                need to add another similar section with its respective values. In the following
+                example only one cluster is added. <codeblock>[ceph1]
+rbd_secret_uuid = 457eb676-33da-42ec-9a8c-9293d545c337
+rbd_user = cinder
+rbd_pool = volumes
+rbd_ceph_conf = /etc/ceph/ceph.conf
+volume_driver = cinder.volume.drivers.rbd.RBDDriver
+volume_backend_name = ceph</codeblock>
+                <note>The <codeph>rbd_secret_uuid</codeph> entry is same as
+                    <codeph>secret_id</codeph> which is available at
+                    <codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph>.</note></li>
+                <li>To enable Cinder to backup to Ceph, modify <codeph>cinder.conf.j2</codeph> at
+                  <codeph>~/helion/my_cloud/config/cinder</codeph> in the [<b>Default</b>] section with
+                  the following values:
+                  <codeblock># Ceph backup
+                    backup_driver = cinder.backup.drivers.ceph
+                    backup_ceph_conf = /etc/ceph/ceph.conf
+                    backup_ceph_user = cinder-backup
+                    backup_ceph_pool = backups</codeblock><note>You
+                      can add a comment (<b># Ceph backup </b>) as shown above so that the Ceph backup
+                      content can be easily identified in the <codeph>cinder.conf.j2</codeph>
+                      file.</note></li>
+            </ol>
+          </li>
+          <li>Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes: <ol>
+              <li>Login to the controller nodes as a root user and run the following
+                    command:<codeblock>ceph auth get-or-create client.cinder | tee /etc/ceph/ceph.client.cinder.keyring</codeblock><p><b>OR</b></p></li>
+              <li>You can copy the keyring from the deployer/lifecycle-manager node to
+                  <codeph>/etc/ceph</codeph> folder on all the controller
+                nodes:<codeblock>scp /etc/ceph/ceph.client.cinder.keyring</codeblock></li>
+            </ol></li>
           <li>Commit your configuration to the local Git repository to configure Cinder on the
             deployer/lifecycle-manager node:<p>
               <codeblock>cd ~/helion/hos/ansible
@@ -264,11 +287,13 @@ ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
         </ol>
       </p>
     </section>
-    
-    
+
+
     <section id="post_install"><title>Verifying your Ceph backend</title>
-      <p>After you have configured Ceph as your Block Storage backend, you can verify this all completed successfully by creating a new volume.</p>
-      <p>See <xref href="installation_verification.dita">Verifying your Installation</xref> for more details.</p>
+      <p>After you have configured Ceph as your Block Storage backend, you can verify this all
+        completed successfully by creating a new volume.</p>
+      <p>See <xref href="installation_verification.dita">Verifying your Installation</xref> for more
+        details.</p>
     </section>
   </body>
 </topic>
