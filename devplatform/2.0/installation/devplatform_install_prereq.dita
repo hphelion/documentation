@@ -69,10 +69,8 @@ export http_proxy=http://proxy.example.com</codeblock></li>
             (<codeph>no_proxy</codeph>)<ol>
             <li>Source the keystone RC file.<codeblock>source keystone.osrc</codeblock></li>
             <li>Get the Keystone <b>public</b> endpoint IP
-
-              address.<codeblock>KEYSTONE_IP_PUBLIC='openstack endpoint list | grep keystone | grep public | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'' 
-echo 'KEYSTONE PUBLIC IP: ' $KEYSTONE_IP_PUBLIC </codeblock></li>
-
+              address.<codeblock>KEYSTONE_IP_PUBLIC=$(openstack endpoint list | grep keystone | grep public | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
+echo 'KEYSTONE PUBLIC IP: ' $KEYSTONE_IP_PUBLIC  </codeblock></li>
             <li>Get the Keystone <b>internal</b> endpoint IP address.
               <codeblock>KEYSTONE_IP_INTERNAL='openstack endpoint list | grep keystone | grep internal | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'' 
 echo 'KEYSTONE INTERNAL IP: ' $KEYSTONE_IP_INTERNAL </codeblock></li>
