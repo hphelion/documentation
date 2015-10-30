@@ -17,14 +17,6 @@
     <p>After HP Helion OpenStack Carrier Grade is fully installed and deployed, perform the tasks in
       this section.</p>
     <section>
-      <title>Deploy the Horizon Patch</title>
-      <p>After deploying the KVM cloud, on each controller node, apply a patch to incorporate
-        specific UI rebranding changes. </p>
-      <p>For more information, see <xref href="carrier-grade-install-horizon-patch.dita#topic10581"
-          >Deploying the Horizon Patch</xref></p>
-    </section>
-    <section>
-      <title>Configure the DCN Metadata Agent</title>
       <p><b>KVM + ESX deployments only</b></p>
       <p>After deploying the KVM cloud, on each compute node, update the following lines in the
           <codeph>/etc/default/nuage-metadata-agent</codeph>. </p>
