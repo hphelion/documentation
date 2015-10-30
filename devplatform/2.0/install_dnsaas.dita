@@ -129,13 +129,22 @@ EOF</codeblock>
         <p>You must publish the DNSaaS Cloud Image to the target project/tenant before proceeding to
           the next step. </p><ol>
           <li>Update your environment. <codeblock>$ source dnsaas.osrc</codeblock></li>
-          <li>Create image. Make a note of the value of the <codeph>owner</codeph>
-            parameter.<codeblock>$ glance image-create --name "dnsaas-2.0.0-b.1_cloud-1.0.20151005T152959Z" \
+          <li>Create image. Make a note of the value of the <codeph>owner</codeph> parameter and the
+              <codeph>DNS Cloud Image ID</codeph>
+            value.<codeblock>$ glance image-create --name "dnsaas-2.0.0-b.1_cloud-1.0.20151005T152959Z" \
 --file "dnsaas-2.0.0-b.1_cloud-1.0.20151005T152959Z.qcow2" \
 --is-public False \
 --disk-format qcow2 \
 --container-format bare       </codeblock></li>
-          <li>Identify the SVC network ID. <codeblock>$ neutron net-show SVC</codeblock></li>
+          <li>Identify the SVC network ID.  Make a note of the SVC ID
+            value.<codeblock>$ neutron net-show SVC 
++---------------------------+--------------------------------------+
+| Field                     | Value                                |
++---------------------------+--------------------------------------+
+| admin_state_up            | True                                 |
+| id                        | &lt;service ID Value>                   |
+
+[ OUTPUT TRIMMED ] </codeblock></li>
           <li>Upload the SSH keypair.
             <codeblock>$ nova keypair-add --pub-key dns_shared.pub dns-shared</codeblock></li>
           <li>You can view the keypair information with <codeph>keypair-show</codeph>.
@@ -166,14 +175,15 @@ $ neutron security-group-rule-create \
         <ol>
           <li>Boot the Deployer VM.
             <codeblock>$ nova boot --poll \
-          --nic net-id=eb9834e4-f25a-49dc-b0d4-1f140dbda7af \   # SVC Network ID
-          --image 1b9ea18d-26e4-4933-9a3d-4f43ea283302 \        # DNSaaS Cloud Image ID
-          --key-name dns-shared \                               # Keypair Name
+          --nic net-id=&lt;SVC ID Value> \   # SVC Network ID
+          --image &lt;DNS Cloud Image ID>\   # DNSaaS Cloud Image ID
+          --key-name dns-shared \         # Keypair Name
           --flavor m1.small \
           dnsaas-deployer        </codeblock></li>
-          <li>Display the dnsaas-deployer. <codeblock>$ nova show dnsaas-deployer</codeblock></li>
+          <li>Display the dnsaas-deployer. Make a note of the SVC-NET IP
+            Address.<codeblock>$ nova show dnsaas-deployer</codeblock></li>
           <li>Copy the dnsaas image.
-            <codeblock>$ scp -i dns_shared dnsaas-2.0.0-b.1-20151005T183829Z.tgz stack@192.168.245.125:~</codeblock></li>
+            <codeblock>$ scp -i dns_shared dnsaas-2.0.0-b.1-20151005T183829Z.tgz stack@&lt;SVC-NET IP Address>:~</codeblock></li>
         </ol></sectiondiv><sectiondiv>
         <b>Login and Initialize the Deployer VM</b>
         <ol>
@@ -191,13 +201,17 @@ Enter same passphrase again:
 
 [ OUTPUT TRIMMED ]
 
-To continue installation copy your cloud layout to:
-/home/stack/helion/my_cloud/definition      </codeblock></li>
+# Do not continue with the installation steps that appear here
+# Ignore this next line.
+To continue installation copy your cloud layout to: /home/stack/helion/my_cloud/definition      </codeblock></li>
           <li>You will need to change directory to the ansible directory and add your configuration
-            to the git repository.
-            <codeblock>cd /home/stack/helion/hos/ansible
+            to the Git repository.
+              <codeblock>cd /home/stack/helion/hos/ansible
 git add -A
-git commit -m 'My config'     </codeblock></li>
+git commit -m 'My config'     
+git status </codeblock><note>Make
+              sure that there are no other files which are not committed to the Git repository. If
+              there are, begin troubleshooting.</note></li>
           <li>Execute the installation playbooks.
             <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml
 ansible-playbook -i hosts/localhost bm-reimage.yml
@@ -229,29 +243,23 @@ $ git commit -a -m "Add DNSaaS Example Model" </codeblock></sectiondiv><sectiond
           <li>You will need to change directories to the my_cloud/definition directory and run nano
             to configure your DNS and NTP servers.
             <codeblock>$ cd my_cloud/definition/
-$ nano cloudConfig.yml                          </codeblock></li>
-          <li>Configure the deployer.
-            <codeblock>$ cd data/pass-through/
-$ nano hos.yml                    </codeblock></li>
-          <li>On the deployer run the platofrm-paas-through playbook and copy the contents of
-            /home/stack/platform-paas-through.yml into hos.yml
-            <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts platform-paas-through.yml  -e pass_through_key=""       </codeblock>
-          </li>
-          <li>Add your changes to git.
+$ nano cloudConfig.yml                                           </codeblock></li>
+          <li>Run the ansible-playbook on the HP Helion OpenStack
+            deployer.<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts platform-pass-through.yml -e pass_through_key=""        </codeblock></li>
+          <li> Copy the pass-through.yml file as
+            follows:<ul><li>Copy <b>from</b>: &lt;HOS deployer&gt;:~/platform-pass-through.yml </li>
+              <li>Copy <b>to</b>: &lt;DNSaaS deployer&gt;
+                ~/helion/my_cloud/definition/data/pass-through/hos.yml</li></ul></li>
+          <li>Add your changes to Git.
             <codeblock>$ cd ~/helion
-$ git commit -a -m "Configured Deployment Model"
-            </codeblock>
-          </li>
-        </ol>
-      </sectiondiv>
-      <sectiondiv>
+$ git commit -a -m "Configured Deployment Model"             </codeblock></li>
+        </ol></sectiondiv><sectiondiv>
         <p id="RunPreInstallPlaybook"><b>Run the Pre-Installation Playbook</b></p>
         <p>At the end of each playbook, ensure both "unreachable" and "failed" are zero.</p>
         <codeblock>$ source ~/dnsaas.osrc
 $ cd ~/helion/hos/ansible/
-$ ansible-playbook -i hosts/localhost hlm-pre-install.yml
-        </codeblock>
+$ ansible-playbook -i hosts/localhost hlm-pre-install.yml</codeblock>
       </sectiondiv>
       <sectiondiv>
         <p id="RunConfigProcessor"><b>Run the Configuration Processor</b></p>
