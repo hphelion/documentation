@@ -38,6 +38,7 @@
     <topichead navtitle="Installation">
       <topicref href="2.0/installation/devplatform_install_prereq.dita"
         navtitle="Installation Prerequisites" locktitle="yes"/>
+      <topicref href="2.0/installation/install_cloudsyaml.dita"/>
       <topicref href="2.0/installation/devplatform_install_platform.dita"
         navtitle="Install the HP Helion Development Platform Service Installer" locktitle="yes"/>
       <topicref href="2.0/installation/devplatform_install_ALS.dita"
