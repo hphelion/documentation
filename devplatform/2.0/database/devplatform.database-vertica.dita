@@ -3,7 +3,7 @@
 <topic id="topic_q1p_nnp_tt">
   <title>Managing a Vertica Cluster from the Management Console </title>
   <body>
-    <p>(Ops console docs go here)</p>
+    <p></p>
     <section id="logs"><title>Viewing Logs</title>
       <p>The Vertica and Vertica AgentTools logs for each node can be accessed via the Vertica Management Console. To view these, 
         navigate to the node details page for a node. In the upper right-hand side of the node details page, select Vertica or AgentTools logs,

@@ -19,6 +19,7 @@
               <li><b>mongodb</b> version 3.0</li>
               <li><b>redis</b> version 3.0</li>
               <li><b>mysql</b> version 5.5 (A single instance of MySql)</li>
+              <li><b>vertica_preview</b> version 7.1</li>
             </ul> MongoDB and Redis instances can be used for single-instance or clustered
             databases; for a MySql database, using the single-instance version provides some
             performance enhancements over the clustered version. </li>

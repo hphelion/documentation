@@ -5,12 +5,12 @@
   <body>
     <p>This topic describes database management tasks that can be performed on the command line.</p>
     <ul>
-      <li>Working with databases</li>
+      <li><xref href="#topic_database_manage_cli/database" format="dita">Working with
+          databases</xref></li>
       <li><xref href="#topic_database_manage_cli/config" format="dita">Configuration
         Groups</xref></li>
       <li><xref href="#topic_database_manage_cli/users" format="dita">Users</xref></li>
       <li><xref href="#topic_database_manage_cli/metadata" format="dita">Metadata</xref></li>
-      <li><xref href="#topic_database_manage_cli/security" format="dita">Security Groups</xref></li>
       
     </ul>
     <p>For a comprehensive list of Trove commands, see <xref
@@ -22,17 +22,15 @@
           href="devplatform.database-create-cli.dita#topic_create_database_cli">Creating a Database
           Instance from the command line</xref> or <xref
           href="devplatform.database-create-horizon.dita#topic_create_database_horizon">Creating a
-          database instance from Horizon</xref>.</p>
+          database instance from Horizon</xref>. You can also add databases to database instances as part of the instance creation process.</p>
     <p><b>Adding a database</b></p>
     <p>The following command creates a database on an instance:</p>
       <codeblock>trove database-create &lt;instance&gt; &lt;name&gt;
                              [--character_set &lt;character_set&gt;]
                              [--collate &lt;collate&gt;]</codeblock>
-    <p>Example:</p>
-      <codeblock></codeblock>
     <p><b>Removing a database</b></p>
     <p>The following command removes a database from a database instance:</p>
-    
+    <codeblock>trove database-delete &lt;instance&gt; &lt;database&gt;</codeblock>
     </section>
     <section id="config">
       <title>Configuration Groups</title>
@@ -83,6 +81,7 @@
     <section id="users">
       <title>Users</title>
       <p>This section describes how to create and delete user accounts from database instances.</p>
+      
       <p><b>Create a user</b></p>
       <p>The following command adds a user to an instance:</p>
       <codeblock>trove user-create &lt;instance&gt; &lt;name&gt; &lt;password&gt;
@@ -90,17 +89,30 @@
                          [--databases &lt;databases&gt; [&lt;databases&gt; ...]]</codeblock>
       <p>Example: The following example creates a user on a database instance:</p>
       <codeblock>trove user-create 35ef6f16-e4ee-463b-b254-5331e5b72d00 userOne p@ssw0rd! </codeblock>
+      
       <p><b>Delete a user</b></p>
       <p>The following command deletes a user from an instance:</p>
       <codeblock>trove user-delete [--host &lt;host&gt;] &lt;instance&gt; &lt;name&gt;</codeblock>
       <p>Example: The following example deletes a user:</p>
       <codeblock>trove user-delete 35ef6f16-e4ee-463b-b254-5331e5b72d00 MongoDB_sample.userOne</codeblock>
     </section>
+    
     <section id="metadata">
       <title>Metadata</title>
-    </section>
-    <section id="security">
-      <title>Security Groups</title>
+      <p>This section describes how to add, remove, and modify metadata associated with instances. Instance metadata is a name-value collection that has meaning to the
+      applications using a database instance, but does not affect the functionality of the database itself.</p>
+      
+      <p><b>Add metadata to an instance</b></p>
+      <p>The following command adds metadata to an instance:</p>
+      <codeblock>trove metadata-create &lt;instance_id&gt; &lt;key&gt; &lt;value&gt;</codeblock>
+      
+      <p><b>Remove metadata from an instance</b></p>
+      <p>The following command removes metadata from an instance:</p>
+      <codeblock>trove metadata-delete &lt;instance_id&gt; &lt;key&gt;</codeblock>
+      
+      <p><b>Modify instance metadata</b></p>
+      <p>The following command modifies metadata on an instance:</p>
+      <codeblock>trove metadata-edit &lt;instance_id&gt; &lt;key&gt; &lt;value&gt;</codeblock>
     </section>
   </body>
 </topic>
