@@ -13,6 +13,9 @@
       <li><xref href="#topic_database_manage_cli/security" format="dita">Security Groups</xref></li>
       
     </ul>
+    <p>For a comprehensive list of Trove commands, see <xref
+        href="http://docs.openstack.org/cli-reference/content/troveclient_commands.html"
+        format="html" scope="external">Database service command line client</xref>.</p>
     <section id="database"><title>Working with Databases</title>
       <p>This section describes how to add or remove a database from a database instance. For
         information on creating a database instance, see <xref
@@ -56,7 +59,7 @@
       <p>The following command creates a configuration group:</p>
       <codeblock>trove configuration-create &lt;name&gt; &lt;values&gt; [--datastore &lt;datastore&gt;] [--datastore_version &lt;datastore_version&gt;] [--description &lt;description&gt;]</codeblock>
       <p>Example:</p>
-      <codeblock>trove configuration-create MyMongoDBDebugConfig '{"systemlog.verbosity":1,"systemlog.traceAllExceptions":true}' --description "Debug Config" --datastore MongoDB</codeblock>
+      <codeblock>trove configuration-create MyMongoDBDebugConfig '{"systemLog.verbosity":1,"systemLog.traceAllExceptions":true}' --description "Debug Config" --datastore MongoDB</codeblock>
       <p>To list valid values for <i>datastore</i>, enter the following:</p>
       <codeblock>trove datastore-list</codeblock>
       <p>To list valid values for <i>datastore-version</i>, enter the following:</p>
@@ -67,15 +70,31 @@
       <codeblock>trove configuration-attach &lt;instance_id&gt; &lt;config_id&gt;</codeblock>
       <p>Example:</p>
       <codeblock>trove configuration-attach 35ef6f16-e4ee-463b-b254-5331e5b72d00 052dc61d-ed5b-4051-956d-14d53c6e4830</codeblock>
+      
       <p><b>Edit a configuration group</b></p>
-      <p>The following command adds another key-value pair to a configuration group:</p>
+      <p>The following command adds or modifies a key-value pair in a configuration group:</p>
       <codeblock>trove configuration-patch &lt;config_id&gt; &lt;value_pairs&gt;</codeblock>
-      <p>Example: The following example adds a new configuration setting to an existing configuration:</p>
-      <codeblock>trove configuration-patch 052dc61d-ed5b-4051-956d-14d53c6e4830 '{systemlog.destination</codeblock>
+      <p>Example: The following example updates a configuration setting in an existing configuration:</p>
+      <codeblock>trove configuration-patch 052dc61d-ed5b-4051-956d-14d53c6e4830 '{"systemLog.verbosity":2}'</codeblock>
+      <p>Example: The following example adds a configuration setting to an existing configuration:</p>
+      <codeblock>trove configuration-patch 052dc61d-ed5b-4051-956d-14d53c6e4830 '{"systemLog.logAppend":true}'</codeblock>
     </section>
     
     <section id="users">
       <title>Users</title>
+      <p>This section describes how to create and delete user accounts from database instances.</p>
+      <p><b>Create a user</b></p>
+      <p>The following command adds a user to an instance:</p>
+      <codeblock>trove user-create &lt;instance&gt; &lt;name&gt; &lt;password&gt;
+                         [--host &lt;host&gt;]
+                         [--databases &lt;databases&gt; [&lt;databases&gt; ...]]</codeblock>
+      <p>Example: The following example creates a user on a database instance:</p>
+      <codeblock>trove user-create 35ef6f16-e4ee-463b-b254-5331e5b72d00 userOne p@ssw0rd! </codeblock>
+      <p><b>Delete a user</b></p>
+      <p>The following command deletes a user from an instance:</p>
+      <codeblock>trove user-delete [--host &lt;host&gt;] &lt;instance&gt; &lt;name&gt;</codeblock>
+      <p>Example: The following example deletes a user:</p>
+      <codeblock>trove user-delete 35ef6f16-e4ee-463b-b254-5331e5b72d00 MongoDB_sample.userOne</codeblock>
     </section>
     <section id="metadata">
       <title>Metadata</title>
