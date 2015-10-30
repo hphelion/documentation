@@ -334,8 +334,7 @@ hplefthand_debug: false</codeblock>
                     </row>
                     <row>
                       <entry>volume_driver</entry>
-                      <entry>Cinder volume driver. Usually you will leave this at the default
-                        value.</entry>
+                      <entry>Cinder volume driver. Leave this as the default value for VSA.</entry>
                     </row>
                     <row>
                       <entry>hplefthand_debug</entry>
