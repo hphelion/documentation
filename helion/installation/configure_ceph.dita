@@ -232,13 +232,13 @@ ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
               <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file: <ol>
               <li>Add your Ceph backend to the <codeph>enabled_backends</codeph> section:
                 <codeblock># Configure the enabled backends
-                  enabled_backends=ceph1</codeblock></li>
+enabled_backends=ceph1</codeblock></li>
               <li>[OPTIONAL] If you want a use a default volume type, then enter it in the
                   <codeph>[DEFAULT]</codeph> section with the syntax below. You will want to
                 remember this value when you create your volume type in the next section.
                 <codeblock>[DEFAULT]
-                  # Set the default volume type
-                  default_volume_type = &lt;your new volume type></codeblock></li>
+# Set the default volume type
+default_volume_type = &lt;your new volume type></codeblock></li>
               <li>Uncomment the <codeph>StoreVirtual (VSA) cluster</codeph> section and fill the
                 values as per your cluster information. If you have more than one cluster, you will
                 need to add another similar section with its respective values. In the following
@@ -252,17 +252,17 @@ volume_backend_name = ceph</codeblock>
                 <note>The <codeph>rbd_secret_uuid</codeph> entry is same as
                     <codeph>secret_id</codeph> which is available at
                     <codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph>.</note></li>
-                <li>To enable Cinder to backup to Ceph, modify <codeph>cinder.conf.j2</codeph> at
-                  <codeph>~/helion/my_cloud/config/cinder</codeph> in the [<b>Default</b>] section with
-                  the following values:
+              <li>To enable Cinder to backup to Ceph, modify <codeph>cinder.conf.j2</codeph> at
+                  <codeph>~/helion/my_cloud/config/cinder</codeph> in the [<b>Default</b>] section
+                with the following values:
                   <codeblock># Ceph backup
-                    backup_driver = cinder.backup.drivers.ceph
-                    backup_ceph_conf = /etc/ceph/ceph.conf
-                    backup_ceph_user = cinder-backup
-                    backup_ceph_pool = backups</codeblock><note>You
-                      can add a comment (<b># Ceph backup </b>) as shown above so that the Ceph backup
-                      content can be easily identified in the <codeph>cinder.conf.j2</codeph>
-                      file.</note></li>
+backup_driver = cinder.backup.drivers.ceph
+backup_ceph_conf = /etc/ceph/ceph.conf
+backup_ceph_user = cinder-backup
+backup_ceph_pool = backups</codeblock>
+                <note>You can add a comment (<b># Ceph backup </b>) as shown above so that the Ceph backup
+                  content can be easily identified in the <codeph>cinder.conf.j2</codeph>
+                  file.</note></li>
             </ol>
           </li>
           <li>Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes: <ol>
@@ -272,18 +272,23 @@ volume_backend_name = ceph</codeblock>
                   <codeph>/etc/ceph</codeph> folder on all the controller
                 nodes:<codeblock>scp /etc/ceph/ceph.client.cinder.keyring</codeblock></li>
             </ol></li>
-          <li>Commit your configuration to the local Git repository to configure Cinder on the
-            deployer/lifecycle-manager node:<p>
+          <li>Commit your configuration to a <xref href="using_git.dita">local repository</xref>:
               <codeblock>cd ~/helion/hos/ansible
-                git add -A
-                git commit -m "&lt;commit message>"</codeblock>
-            </p><note> Enter your commit message &lt;commit message>.</note></li>
-          <li>Create a deployment
-            directory:<codeblock>cd ~/helion/hos/ansible
-              <codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
-          <li>Run the Ansible
-            playbook:<codeblock>cd ~/scratch/ansible/next/hos/ansible
-              ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
+git add -A
+git commit -m "&lt;your commit message>"</codeblock>
+            <note>Before you run any playbooks, remember that you need to export the encryption key in the
+              following environment variable:<codeph> export
+                HOS_USER_PASSWORD_ENCRYPT_KEY=&lt;encryption key></codeph> See <xref
+                href="install_entryscale_kvm.dita#install_kvm"/> for reference.</note></li>
+          <li>Run the configuration processor:
+            <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Run the following command to create a deployment directory:
+            <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+          <li>Run the Cinder Reconfigure Playbook:
+            <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
         </ol>
       </p>
     </section>
