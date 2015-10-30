@@ -14,64 +14,10 @@
       </ul></p>
     <note>If you want to attach a volume to an instance that was created before the creation of a
       Ceph cluster, then you must reboot the instance before attaching the volume</note>
-    <section id="configure-ceph-as-cinder-backend">
-      <title>To Configure Ceph as a Cinder Backend</title>
-      <p>
-        <note>You must run the playbook <codeph>ansible-playbook -i hosts/verb_hosts
-            ceph-client-prepare.yml</codeph> to properly set up the rings files before configuring
-          Ceph as a Cinder backend.</note>
-      </p>
-      <p>Perform the following procedure on the deployer/lifecycle-manager node to configure Ceph as
-        a Cinder backend:</p>
-      <p>
-        <ol id="ol_u12_kd3_pt">
-          <li>Edit <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> to add the Ceph
-            configuration data:<codeblock>enabled_backends=ceph1</codeblock></li>
-          <li>Copy the following
-              configurations:<codeblock id="ceph-cinder-conf">[ceph1]
-rbd_secret_uuid = 457eb676-33da-42ec-9a8c-9293d545c337
-rbd_user = cinder
-rbd_pool = volumes
-rbd_ceph_conf = /etc/ceph/ceph.conf
-volume_driver = cinder.volume.drivers.rbd.RBDDriver
-volume_backend_name = ceph</codeblock><note>The
-                <codeph>rbd_secret_uuid</codeph> command is same as <codeph>secret_id</codeph> which
-              is available at
-              <codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph>.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></note></li>
-          <?oxy_custom_end?>
-          <li> Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes:<ol
-              id="ol_m5r_k23_pt">
-              <li>Login to the controller nodes as a root user and run the following
-                    command:<codeblock>ceph auth get-or-create client.cinder | tee /etc/ceph/ceph.client.cinder.keyring</codeblock><p><b>OR</b></p></li>
-              <li>You can copy the keyring from the deployer/lifecycle-manager node to
-                  <codeph>/etc/ceph</codeph> folder on all the controller
-                nodes:<codeblock>scp /etc/ceph/ceph.client.cinder.keyring</codeblock></li>
-            </ol></li>
-          <li>Commit your configuration to the local Git repository to configure Cinder on the
-            deployer/lifecycle-manager node:<p>
-              <codeblock>cd ~/helion/hos/ansible
-git add -A
-git commit -m "&lt;commit message>"</codeblock>
-            </p><note> Enter your commit message &lt;commit message>.</note></li>
-          <li>Create a deployment
-            directory:<codeblock>cd ~/helion/hos/ansible
-<codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
-          <li>Run the Ansible
-            playbook:<codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
-        </ol>
-      </p>
-    </section>
-    <p>After the successful configuration of Cinder, you can launch the
-      <!--Hence, cinder is successfully configured. Now launch the-->Horizon dashboard to create a
-      Cinder volume type for Ceph as a backend. Once you are able to create the volume, you can
-      perform the OpenStack operations. Also, you can verify the Cinder volume created for Ceph by
-      logging in. For instructions, see <xref
-        href="../../installation/installation_verification.dita#install_verification/volume_verify"
-      />.</p>
-    <p>The volumes are created on the Ceph pool volumes.</p>
+
+   
     <section id="configure-ceph-cinder-backup">
-      <title>To Configure Ceph as a Cinder Backup</title>
+      <title>Configure Ceph as the Block Storage Backup</title>
       <p>Perform the following procedure on the deployer/lifecycle-manager node to configure Ceph as
         a Cinder backup:</p>
       <p>
