@@ -5,11 +5,10 @@
 <body>
 <p>Welcome! The HP Helion Development Platform is a Platform-as-a-Service (PaaS) that helps
       developers build great cloud-native applications across private and public clouds. Based on
-        <xref href="http://cloudfoundry.org/" scope="external" format="html"><tm tmtype="tm">Cloud
-          Foundry</tm></xref> and fully integrated with <xref
-        href="../../commercial/GA1/1.1commercial.index.dita">HP Helion <tm tmtype="reg"
-          >OpenStack</tm></xref>, the HP Helion Development Platform is open and interoperable,
-      ensuring that developers can focus on building the right app for any environment. </p>
+        <xref href="http://cloudfoundry.org/" scope="external" format="html"><tm
+          tmtype="tm">Cloud Foundry</tm></xref> and fully integrated with <xref
+        href="../../commercial/GA1/1.1commercial.index.dita">HP Helion <tm tmtype="reg">OpenStack</tm></xref>, the HP Helion Development Platform is open and interoperable,
+      ensuring that developers can focus on building the right app for any environment.</p>
 <section id="platform-overview"> <title>Platform Overview</title>
 <p>The Helion Development Platform is a Cloud Foundry-based, managed runtime environment for applications.</p>
 <ul>

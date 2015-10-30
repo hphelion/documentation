@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_mhg_f2n_vt">
+  <title>Full clouds.yaml Sample File</title>
+  <body>
+    <codeblock>clouds:
+  mycloud:
+    codn_username: 
+    codn_password: 
+    region_name: region1
+    cacert: /etc/ssl/certs/ca-certificates.crt
+    auth:
+    auth_url: 
+      project_name: 
+      username:
+      password: 
+clouds: 
+  helionce:   
+    deployer_key: default    
+    deployer_flavor: 4
+    deployer_name: 
+    deployer_security_group: default
+    deployer_version:    
+    deployer_image:    
+    deployer_uri:    
+    deployer_net_id:
+    deployer_cloud: 
+    deployer_ntp_servers: 
+    deployer_dns_servers: 
+    deployer_ext_net_id: 
+    deployer_cacert: 
+    deployer_cname: 
+clouds:
+  dbaas:
+    cacert: /usr/local/share/ca-certificates/hpes_cacert.crt
+    codn_username: 
+    codn_password: 
+    region_name: region1
+    database:
+      trove_enable_ssl: False
+      ephemeral_ca_cert: 
+      external_network: 
+      provider_network:
+      ntp_server: 
+      keypair: default
+      enable_ha: False
+      flavor: m1.medium
+      database_flavor: m1.medium
+      messaging_flavor: m1.medium
+      database_volume_size: 10
+      logstash_rabbitmq_host: 
+      logstash_rabbitmq_password: guest
+      hotpools_enabled: true
+      hotpools_max_instances: 1
+      hotpools_image_name: percona
+      hotpools_flavor_names:
+        - 'm1.small'
+        - 'm1.medium'
+        - 'm1.large'
+      disable_rollback: true
+      project_id: 
+  auth:
+    auth_url: 
+    project_name: admin
+    username: admin
+    password: admin
+    </codeblock>
+  </body>
+</topic>

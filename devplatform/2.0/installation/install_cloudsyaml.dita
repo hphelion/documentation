@@ -3,118 +3,35 @@
 <topic id="topic_wzw_r4w_rt">
   <title>clouds.yaml Configuration File</title>
   <body>
-    <p>The installer gets its configuration information from the os-client-config
-      ~/.config/openstack/clouds.yaml file. </p>
+    <p>The installer gets its configuration information from the <codeph>
+        /.config/openstack/clouds.yam</codeph>l file. </p>
+    <p>Note that although the sections are separated here &#151; one for each service &#151; there
+      is only one clouds.yaml file. <xref href="cloud/fullFile.dita">A sample of a complete
+        file</xref>.</p>
+    <p>Information on each field follows the code block. For highly-detailed information, see the
+      OpenStack <xref
+        href="http://docs.openstack.org/developer/python-openstackclient/configuration.html"
+        format="html" scope="external">client configuration documentation</xref>. </p><section><title>Create the clouds.yaml File</title>
     <ol id="ol_apx_khy_rt">
       <li> Create this directory: <codeblock>mkdir -p ~/.config/openstack/</codeblock></li>
       <li>Create a plaintext file called <codeph>clouds.yaml</codeph> in that directory.</li>
-      <li>Enter the configuration information for the service(s) being installed. A sample
-        configuration file is provided here. </li>    </ol>
-      <p>Information on each field is below the code block. For more detailed information, see the
-        OpenStack <xref
-          href="http://docs.openstack.org/developer/python-openstackclient/configuration.html"
-          format="html" scope="external">client configuration documentation</xref>. </p>
-
-    <codeblock>clouds:
-  &lt;mycloudname&gt;:
-    codn_username: &lt; Helion Download Network user name&gt;
-    codn_password: &lt; Helion Download Network password&gt;
-    horizon_url: http://&lt;horizon-ip-address&gt;/
-    region_name: region1
-    cacert: /etc/ssl/certs/ca-certificates.crt
-    auth:
-      auth_url: &lt;identity url&gt;
-      project_name: &lt; admin project name&gt;
-      username: &lt; admin user name&gt;
-      password: &lt; admin password&gt;
-    database:
-      ephemeral_ca_cert: unset
-      external_network: &lt;guid of ext-net&gt;
-      provider_network: &lt;guid of svc-net&gt;
-      ntp_server: &lt;ip address of ntp server&gt;
-      keypair: default
-      enable_ha: false
-      flavor: m1.medium
-      database_flavor: m1.medium
-      messaging_flavor: m1.medium
-      database_volume_size: 10<!--
-      ephemeral_ca_host: 10.241.144.4
-      ephemeral_ca_password:
-      ephemeralca_scheme: https-->
-      logstash_rabbitmq_host: &lt;ip address of logging service&gt;
-      logstash_rabbitmq_password: &lt;password for logging service&gt;
-      hotpools_enabled: false
-      hotpools_max_instances: 3
-      hotpools_image_name: percona
-      hotpools_flavor_names: "m1.medium,m1.small,m1.large"
-      disable_rollback: false
-      project_id: &lt;project id of user to install service to&gt;   </codeblock>
-    <section>
-      <title>Server Information</title>
-      <p>This information is for the Deployer server. This section is required for installation of
-        the Application Lifecycle Service.</p>
-      <sl>
-        <sli><codeph>mycloudname</codeph>: The name of your cloud.</sli>
-        <sli><codeph>codn_username</codeph>: The username for the HDN (Helion Download Network)
-          account. (The name of the download network used to be CODN.)</sli>
-        <sli><codeph>codn_password</codeph>: The password for the HDN (Helion Download Network)
-          account. (The name of the download network used to be CODN.)</sli>
-        <sli><codeph>horizon_url</codeph>: The URL where the Horizon management console can be
-          accessed.</sli>
-        <sli><codeph>region_name</codeph>: Default value is <codeph>region1 </codeph></sli>
-        <sli><codeph>cacert</codeph>: The location where the SSL certificates can be accessed.</sli>
-      </sl>
-    </section>
-    <section>
-      <title>User Authentication Information (AUTH)</title>
-      <p>This section provides user authentication for performing installation. This section is
-        required for installation of the Application Lifecycle Service.</p>
-      <sl>
-        <sli><codeph>auth</codeph>: The Keystone v3 address found in the
-            <codeph>service.osrc</codeph> file.</sli>
-        <sli><codeph>auth_url</codeph>: This URL can be found in Horizon at: Project Compute &gt;
-          Access &amp; Security &gt; API Access. Copy the Service Endpoint URL for the Identity
-          Service.</sli>
-        <sli><codeph>project_name</codeph>: The Name of the admin project in Horizon. </sli>
-        <sli><codeph>username</codeph>: The Username of an account with installation privileges
-          (administrator). </sli>
-        <sli><codeph>password</codeph>: The Password for the same account with installation
-          privileges (administrator). </sli>
-      </sl>
-    </section>
-    <section>
-      <title>Database Information</title>
-      <p>This information is for the Database Service. This section is required for installation of
-        the Database Service.</p>
-      <sl>
-        <sli>ephemeral_ca_cert: Value must be unset </sli>
-        <sli>external_network: &lt;guid of ext-net&gt;</sli>
-        <sli>provider_network: &lt;guid of svc-net&gt; </sli>
-        <sli>ntp_server: &lt;ip address of ntp server&gt; </sli>
-        <sli>keypair: default </sli>
-        <sli><codeph>enable_ha</codeph>: Options are True or False. If True, the database will be
-          created with high-availability configurations. Ensure you have enough quota to do
-          so.</sli>
-        <sli><codeph>flavor</codeph>: The default is m1.medium Do not create any flavor smaller than
-          medium. Smaller sizes will cause installation to fail.</sli>
-        <sli><codeph>database_flavor</codeph>: The default is m1.medium. Do not create any flavor
-          smaller than medium. Smaller sizes will cause installation to fail.</sli>
-        <sli><codeph>messaging_flavor: </codeph>The default is m1.medium. Do not create any flavor
-          smaller than medium. Smaller sizes will cause installation to fail.</sli>
-        <sli>database_volume_size: 10 </sli>
-        <sli>logstash_rabbitmq_host: &lt;ip address of logging service&gt;<codeph> </codeph></sli>
-        <sli>logstash_rabbitmq_password: &lt;password for logging service&gt; </sli>
-        <sli>hotpools_enabled: Options are True or False. If True, hotpool capabilities are enabled.
-          If False, you can remove all other <i>hotpools</i> configuration variables.</sli>
-        <sli>hotpools_max_instances: 3 </sli>
-        <sli>hotpools_image_name: percona </sli>
-        <sli>hotpools_flavor_names: "m1.medium,m1.small,m1.large" </sli>
-        <sli>disable_rollback: Options are True or False. If True, rollback of patch applications is
-          disabled.</sli>
-        <sli>project_id: &lt;project id of user to install service to&gt; </sli>
-      </sl>
+      <li>Enter the configuration information for the service(s) being installed, as detailed
+        below.</li>
+    </ol>
     </section>
   </body>
-
-
+  <topic id="id_ufp_fdn_vt" conref="cloud/cloud_platform.dita#cloudPlatform">
+    <title/>
+  </topic>
+  <topic id="id_h4q_gdn_vt" conref="cloud/cloud_database.dita#cloudDatabase">
+    <title/>
+  </topic>
+  <topic id="id_s4f_hdn_vt" conref="cloud/cloud_messaging.dita#cloudMessaging">
+    <title/>
+  </topic>
+  <topic id="id_xnd_3dn_vt" conref="cloud/cloud_codeengine.dita#cloudCodeEngine">
+    <title/>
+  </topic>
+  
+  
 </topic>

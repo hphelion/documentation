@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="HP2.0DNSaaS">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: DNSaaS Installation and Configuration</title>
+  <body>
+    <p><b>This document describes the installation process for HP Helion OpenStack 2.0</b></p>
+    <p>Our managed DNS service, based on the OpenStack Designate project, is engineered to help you
+      create, publish, and manage your DNS zones and records securely and efficiently to either a
+      public or private DNS server network.</p>
+    <p>It is important to read through this page before starting your installation as it explains
+      how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack</p>
+    
+    <section id="LinkList">
+      <ul>
+        <li><xref type="section" href="#HP2.0DNSaaS/Prerequisites">Prerequisites</xref></li>
+        <li><xref type="section" href="#HP2.0DNSaaS/PrerequisitesCredentials">Creating Prerequisites Credentials</xref></li>
+        <li><xref type="section" href="#HP2.0DNSaaS/CredentialsFile">DNSaaS User and Project Credentials</xref></li>
+        <li><xref type="section" href="#HP2.0DNSaaS/PreparingTheDeplopyer">Prepare the Deployer
+            VM</xref>
+          <ul>
+            <li><xref href="#HP2.0DNSaaS/PrepareDeployer">Preparing to boot the Deployer
+              VM</xref></li>
+            <li><xref href="#HP2.0DNSaaS/BootDeployer">Booting the Deployer VM and Uploading the
+                Deployer Tarball</xref></li>
+            <li><xref href="#HP2.0DNSaaS/LoginDeployer">Login and Initialize the Deployer
+              VM</xref></li>
+          </ul></li>
+        <li><xref type="section" href="#HP2.0DNSaaS/PrepareDeplopyment">Prepare the
+            Deployment</xref>
+          <ul>
+            <li><xref href="#HP2.0DNSaaS/ExampleDeployment">Select an Example Deployment
+                Model</xref></li>
+            <li><xref href="#HP2.0DNSaaS/CustomizeExample">Customize the Example Deployment
+                Model</xref></li>
+            <li><xref href="#HP2.0DNSaaS/RunPreInstallPlaybook">Run the Pre-Installation
+                Playbook</xref></li>
+            <li><xref href="#HP2.0DNSaaS/RunConfigProcessor">Run the Configuration
+              Processor</xref></li>
+            <li><xref href="#HP2.0DNSaaS/RunReadyDeploymentPlay">Run the Ready Deployment
+                Playbook</xref></li>
+          </ul></li>
+        <li><xref type="section" href="#HP2.0DNSaaS/PerformDeployment">Perform the Deployment</xref>
+          <ul>
+            <li><xref href="#HP2.0DNSaaS/RunBootInfrastructure">Run the Boot Infrastructure
+                Playbook</xref></li>
+            <li><xref href="#HP2.0DNSaaS/RunSitePlay">Run the Site Playbook</xref></li>
+          </ul></li>
+      </ul>
+    </section>
+    
+    <section id="Prerequisites">
+      <title>Prerequisites</title>
+      <ul>
+        <li>HP Helion Openstack 2.0 Installation</li>
+        <li>Download the <xref scope="external" format="html"
+            href="http://pinafore.usa.hp.com/paas-2.0/dnsaas-2.0/QA1/dnsaas-2.0.0-b.1-20151005T183829Z.tgz"
+            >DNSaaS Deployer Tarball</xref>. Check against this value to ensure that you have the
+          right file: f68a9829081f864ed6414631da5e9697 dnsaas-2.0.0-b.1-20151005T183829Z.tgz</li>
+        <li>Download the <xref scope="external" format="html"
+            href="http://pinafore.usa.hp.com/paas-2.0/dnsaas-2.0/QA1/dnsaas-2.0.0-b.1_cloud-1.0.20151005T152959Z.qcow2"
+            >DNSaaS Cloud Image</xref>. Check against this value to ensure that you have the right
+          file: 48a0ae226bc0f64396c4c959b1853b75
+          dnsaas-2.0.0-b.1_cloud-1.0.20151005T152959Z.qcow2</li>
+        <li>Credentials of the user+tenant where the service is to be deployed ("Target Credentials")</li>
+        <li>The SVC network correctly configured within HOS</li>
+        <li>A SSH public and private keypair</li>
+        <li>"openrc" credentials file for the Target user and project</li>
+        <li>NTP Server Addresses</li>
+        <li>The v2 CLI must be installed on all nodes due to client differences</li>
+      </ul>
+    </section>
+    
+    <section id="PrerequisiteCredentials">
+      <title>Creating the Prerequisite Credentials</title>
+      <p>Target credentials are the credentials of the user+tenant where the service is to be
+        deployed. Target credentials include a tenant and a username. Service credentials can only
+        be created after the Target credentials have been successfully created. <note>These commands
+          should be run from the HP Helion OpenStack deployer.</note></p>
+      <ol>
+        <li>You will need to update your environment by sourcing the keystone.osrc file.
+          <codeblock>$ source keystone.osrc</codeblock></li>
+        <li>Create the DNSaaS project. Make a note of the ID field
+          value.<codeblock>$ openstack project create dnsaas
++-------------+----------------------------------+
+| Field       | Value                            |
++-------------+----------------------------------+
+| description |                                  |
+| domain_id   | default                          |
+| enabled     | True                             |
+| id          | a6c8339e816c4f4fb9118b31e2e101ad |
+
+[ OUPUT TRIMMED]</codeblock></li>
+        <li>Create a dnsaas user.
+          <codeblock>$ openstack user create dnsaas --password password --email dnsaas@example.com --project dnsaas</codeblock></li>
+        <li>Add roles to the dnsaas user.
+          <codeblock>$ openstack role add --project dnsaas --user dnsaas _member_
+$ openstack role add --project dnsaas --user dnsaas admin</codeblock></li>
+        <li>You can view the roles with <codeph>role list</codeph>.
+          <codeblock>$ openstack role list</codeblock></li>
+        <li>You can also check the role assignment list for the dnsaas user.
+          <codeblock>$ openstack role assignment list --user dnsaas --project dnsaas</codeblock></li> 
+      </ol>
+    </section>
+    
+    <section id="CredentialsFile">
+      <title>DNSaaS User and Project Credentials</title>
+      <p>Prepare the credentials files for the DNSaaS user and project.</p>
+      <codeblock>$ cat &lt;&lt;EOF &gt; dnsaas.osrc
+unset OS_DOMAIN_NAME
+export OS_IDENTITY_API_VERSION=3
+export OS_AUTH_VERSION=3
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USER_DOMAIN_NAME=Default
+export OS_ENDPOINT_TYPE=internalURL
+export OS_INTERFACE=internal
+export OS_CACERT=/etc/ssl/certs/ca-certificates.crt
+export OS_PROJECT_NAME=dnsaas
+export OS_USERNAME=dnsaas
+export OS_PASSWORD=password
+export OS_AUTH_URL=http://192.168.245.5:35357/v3
+EOF</codeblock>
+    </section>
+    
+    <section id="PreparingTheDeployer">
+      <title>Prepare the Deployer VM</title>
+      <sectiondiv>
+        <b>Preparing to boot the Deployer VM</b>
+        <p>You must publish the DNSaaS Cloud Image to the target project/tenant before proceeding to
+          the next step. </p><ol>
+          <li>Update your environment. <codeblock>$ source dnsaas.osrc</codeblock></li>
+          <li>Create image. Make a note of the value of the <codeph>owner</codeph> parameter and the
+              <codeph>DNS Cloud Image ID</codeph>
+            value.<codeblock>$ glance image-create --name "dnsaas-2.0.0-b.1_cloud-1.0.20151005T152959Z" \
+--file "dnsaas-2.0.0-b.1_cloud-1.0.20151005T152959Z.qcow2" \
+--is-public False \
+--disk-format qcow2 \
+--container-format bare       </codeblock></li>
+          <li>Identify the SVC network ID.  Make a note of the SVC ID
+            value.<codeblock>$ neutron net-show SVC 
++---------------------------+--------------------------------------+
+| Field                     | Value                                |
++---------------------------+--------------------------------------+
+| admin_state_up            | True                                 |
+| id                        | &lt;service ID Value>                   |
+
+[ OUTPUT TRIMMED ] </codeblock></li>
+          <li>Upload the SSH keypair.
+            <codeblock>$ nova keypair-add --pub-key dns_shared.pub dns-shared</codeblock></li>
+          <li>You can view the keypair information with <codeph>keypair-show</codeph>.
+            <codeblock>$ nova keypair-show dns-shared</codeblock></li>
+          <li>Ensure the default security group is correctly configured. You will need the ID value
+            from the "create the project"
+            step.<codeblock>$ neutron security-group-list --tenant-id &lt;value of the owner parameter></codeblock></li>
+          <li>Create security group rules.
+            <codeblock>$ neutron security-group-rule-create \
+          --tenant-id &lt;value of the owner parameter from OpenStack Project Create command> \
+          --protocol TCP \
+          --remote-ip-prefix 0.0.0.0/0 \
+          --port-range-min 22 \
+          --port-range-max 22 \
+          &lt;default security group rule ID>
+
+$ neutron security-group-rule-create \
+          --tenant-id &lt;value of the project ID parameter from the OpenStack Project Create command> \
+          --protocol TCP \
+          --remote-ip-prefix 0.0.0.0/0 \
+          --port-range-min 79 \
+          --port-range-max 79 \
+          &lt;default security group rule ID>        </codeblock></li>
+          <li>You can view the security groups with <codeph>security_group_list</codeph>
+            <codeblock>$ neutron security-group-list --tenant-id &lt;project ID></codeblock></li>
+        </ol></sectiondiv><sectiondiv>
+        <b>Booting the Deployer VM and Uploading the Deployer Tarball</b>
+        <ol>
+          <li>Boot the Deployer VM.
+            <codeblock>$ nova boot --poll \
+          --nic net-id=&lt;SVC ID Value> \   # SVC Network ID
+          --image &lt;DNS Cloud Image ID>\   # DNSaaS Cloud Image ID
+          --key-name dns-shared \         # Keypair Name
+          --flavor m1.small \
+          dnsaas-deployer        </codeblock></li>
+          <li>Display the dnsaas-deployer. Make a note of the SVC-NET IP
+            Address.<codeblock>$ nova show dnsaas-deployer</codeblock></li>
+          <li>Copy the dnsaas image.
+            <codeblock>$ scp -i dns_shared dnsaas-2.0.0-b.1-20151005T183829Z.tgz stack@&lt;SVC-NET IP Address>:~</codeblock></li>
+        </ol></sectiondiv><sectiondiv>
+        <b>Login and Initialize the Deployer VM</b>
+        <ol>
+          <li>Login to the deployer.
+            <codeblock>$ ssh -i dns_shared stack@192.168.245.125</codeblock> You will need to
+            extract the dnsaas tar file and execute the dns-init.bash script.
+            <codeblock>$ tar xf dnsaas-2.0.0-b.1-20151005T183829Z.tar
+$ cd dnsaas-2.0.0-b.1/
+$ ./dnsaas-init.bash 
+[ OUTPUT TRIMMED ]
+
++ ssh-keygen -q -t rsa -f id_rsa
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+
+[ OUTPUT TRIMMED ]
+
+# Do not continue with the installation steps that appear here
+# Ignore this next line.
+To continue installation copy your cloud layout to: /home/stack/helion/my_cloud/definition      </codeblock></li>
+          <li>You will need to change directory to the ansible directory and add your configuration
+            to the Git repository.
+              <codeblock>cd /home/stack/helion/hos/ansible
+git add -A
+git commit -m 'My config'     
+git status </codeblock><note>Make
+              sure that there are no other files which are not committed to the Git repository. If
+              there are, begin troubleshooting.</note></li>
+          <li>Execute the installation playbooks.
+            <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml
+ansible-playbook -i hosts/localhost bm-reimage.yml
+ansible-playbook -i hosts/localhost config-processor-run.yml
+ansible-playbook -i hosts/localhost ready-deployment.yml
+cd /home/stack/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml       </codeblock></li>
+        </ol></sectiondiv></section>
+    
+    <section id="PrepareDeployment">
+      <title>Prepare the Deployment</title><sectiondiv>
+        <b>Select an Example Deployment Model</b>
+        <p>HP Helion OpenStack DNSaaS has several example models that can be deployed. In the
+          following example, the <i>powerdns</i> example deployment model is used.</p><note
+          type="important">The <codeph>cp</codeph> command must be used exactly as shown - including
+          the /* on the end of the example model
+        path.</note><codeblock>$ cd ~/helion
+$ cp -r examples/powerdns/* my_cloud/definition/
+$ git add -A
+$ git commit -a -m "Add DNSaaS Example Model" </codeblock></sectiondiv><sectiondiv>
+        <b>Customize the Example Deployment Model</b>
+        <p>You will need to populate the
+            <codeph>~/helion/my_cloud/definition/data/pass-through/hos.yml</codeph> file with the
+          appropriate URLs for your deployment. You can find the URLs in the service catalog
+            <codeph>openstack catalog list</codeph> and the Keystone admin token in
+            <codeph>/etc/keystone/keystone.conf</codeph> on one of the HP Helion OpenStack control
+          plane nodes. Other values may be left invalid, they will not prevent the deployment from
+          completing.</p><ol>
+          <li>You will need to change directories to the my_cloud/definition directory and run nano
+            to configure your DNS and NTP servers.
+            <codeblock>$ cd my_cloud/definition/
+$ nano cloudConfig.yml                                           </codeblock></li>
+          <li>Run the ansible-playbook on the HP Helion OpenStack
+            deployer.<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts platform-pass-through.yml -e pass_through_key=""        </codeblock></li>
+          <li> Copy the contents of the <codeph>pass-through.yml</codeph> file as follows:<ul>
+              <li>Copy <b>from</b>: &lt;<b>HOS</b> deployer&gt;:~/platform-pass-through.yml </li>
+              <li>Copy <b>to</b>: &lt;<b>DNSaaS</b> deployer&gt;
+                ~/helion/my_cloud/definition/data/pass-through/hos.yml</li>
+            </ul></li>
+          <li>Add your changes to Git.
+              <codeblock>$ cd ~/helion
+$ git commit -a -m "Configured Deployment Model"      
+$ git status </codeblock><note>Make
+              sure that there are no other files which are not committed to the Git repository. If
+              there are, begin troubleshooting.</note></li>
+        </ol></sectiondiv><sectiondiv>
+        <b>Run the Pre-Installation Playbook</b>
+        <p>At the end of each playbook, ensure both "unreachable" and "failed" are
+        zero.</p><codeblock>$ source ~/dnsaas.osrc
+$ cd ~/helion/hos/ansible/
+$ ansible-playbook -i hosts/localhost hlm-pre-install.yml</codeblock></sectiondiv><sectiondiv>
+        <b>Run the Configuration Processor</b>
+        <p>At the end of each playbook, ensure both "unreachable" and "failed" are
+          zero.</p><note>When asked for a encryption key, simply leave the value blank, pressing
+          enter 4 times to
+        proceed.</note><codeblock>$ ansible-playbook -i hosts/localhost config-processor-run.yml </codeblock></sectiondiv><b>Run
+        the Ready Deployment Playbook</b>
+      <p>At the end of each playbook, ensure both "unreachable" and "failed" are
+      zero.</p><codeblock>$ ansible-playbook -i hosts/localhost ready-deployment.yml </codeblock></section>
+    
+    <section id="PerformDeployment">
+      <title>Perform the Deployment</title><sectiondiv>
+        <b>Run the Boot Infrastructure Playbook</b>
+        <p>Once this is complete, all in-cloud infrastructure (VMs, Networks, Routers, Floating IPs
+          etc) will have been created.</p><note>This step takes approximately 15 minutes to
+          run.</note><codeblock>$ cd ~/scratch/ansible/next/hos/ansible
+
+# Choose either the multiple or single control plane option; these configurations are mutually exclusive.          
+
+# Multiple control plane nodes
+$ ansible-playbook -i hosts/localhost hlm-boot-infra.yml
+          
+# Single control plane
+$ ansible-playbook -i hosts/localhost hlm-boot-infra.yml -e neutron_router_ha=False</codeblock></sectiondiv><sectiondiv>
+        <p id="RunSitePlay"><b>Run the Site Playbook</b></p>
+        <note type="caution">Unlike all the previous ansible play's, the inventory file supplied to
+          this play is <b>hosts/verb_hosts</b> and not <b>hosts/localhost</b>.</note>
+        <note>This step take approximately 15 to 20 minutes to complete.</note>
+        <codeblock>$ ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
+      </sectiondiv>
+    </section>
+    
+  </body>
+</topic>
