@@ -18,6 +18,8 @@
             your Volumes</xref></li>
         <li><xref href="configure_vsa.dita#config_vsa/associate_volumetype">Associate the Volume
             Type to the Backend</xref></li>
+        <li><xref href="configure_vsa.dita#config_vsa/post_install">Verifying your VSA
+            backend</xref></li>
       </ul>
     </section>
     <section id="prereq"><title>Prerequisites</title>
@@ -535,6 +537,12 @@ volume_backend_name MyVolumeBackend</codeblock>
         </ol></p>
       <p>Once the volume type is mapped to the backend, you can create volumes with this volume
         type.</p>
+    </section>
+    <section id="post_install"><title>Verifying your VSA backend</title>
+      <p>After you have configured VSA as your Block Storage backend, you can verify this all
+        completed successfully by creating a new volume.</p>
+      <p>See <xref href="installation_verification.dita">Verifying your Installation</xref> for more
+        details.</p>
     </section>
   </body>
 </topic>
