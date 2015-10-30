@@ -29,12 +29,12 @@
       <title>Install the HP Helion Development Platform Installation Client</title>
       <note type="important">Do not source <codeph>service.osrc</codeph>, <codeph>keystone.osrc</codeph>, or any other <codeph>*rc</codeph> file before you begin.</note>
       <ol>
+        <li>SSH to the HP Helion OpenStack Deployer. </li>
         <li>Check to ensure that all Keystone AUTH_URL IP addresses have been added to the <xref
             href="devplatform_install_prereq.dita#topic_x54_njh_ts/proxy">no-proxy </xref>list.</li>
-        <li> Check to ensure that all OS_ variables are unset. To check this, run
+        <li>Check to ensure that all OS_ variables are unset. To check this, run
           <codeblock>env | grep OSX_ </codeblock>and then unset any OS_ variables which appear in
           the list of results. </li>
-        <li>SSH to the Deployer. </li>
         <li>Create and source the Virtual Environment. In this example,
             <codeph>&lt;dpi-venv&gt;.tgz</codeph> is the name of the
           installer.<codeblock>mkdir -p /opt/stack/venv/&lt;dpi-venv> 
