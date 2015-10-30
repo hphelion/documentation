@@ -109,4 +109,3 @@ wget -t3 --timeout=5 -O/dev/null -q $SHERPA_URL_PUBLIC &amp;&amp; echo exists OK
     </section> 
   </body>
 </topic>
-<!--configure the .net stuff ask patrick-->

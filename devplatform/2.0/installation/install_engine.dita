@@ -32,7 +32,7 @@ deactivate</codeblock></li>
         <li>List all available machines to verify that the HP Helion Code Engine VM is running.
           <codeblock>source ./services.osrc
 nova list</codeblock>You should see an instance named
-            <codeph>helionce_deployer</codeph>". Make a note of its IP address.</li>
+            <codeph>helionce_deployer</codeph>. Make a note of its IP address.</li>
       <li>Log in to and initialize the
           VM.<codeblock>ssh -i helionce-shared stack@&lt;IP ADDRESS FROM PREVIOUS STEP> # helionce_deployer, use the address from the previous step
 ...

@@ -13,7 +13,7 @@
     region_name: region1
     database:
       trove_enable_ssl: False
-      ephemeral_ca_cert: 
+      ephemeral_ca_cert: /home/stack/ca/cacert.pem  
       external_network: 
       provider_network:
       ntp_server: 
@@ -23,9 +23,9 @@
       database_flavor: m1.medium
       messaging_flavor: m1.medium
       database_volume_size: 10
-      logstash_rabbitmq_host: 10.241.180.6
+      logstash_rabbitmq_host:
       logstash_rabbitmq_password: guest
-      hotpools_enabled: true
+      hotpools_enabled: True
       hotpools_max_instances: 1
       hotpools_image_name: percona
       hotpools_flavor_names:
@@ -40,15 +40,18 @@
     username: admin
     password: admin</codeblock></p>
       <dl>
-        <dlentry><dt>cacert</dt><dd>The location where the SSL certificates can be accessed.</dd></dlentry>
-        <dlentry><dt>codn_username</dt><dd>&lt; Helion Download Network user name&gt;</dd></dlentry>
+        <dlentry><dt>cacert</dt><dd>The file that enables SSL access via the public endpoints. If SSL has not been enabled, leave
+            blank.</dd></dlentry>
+        <dlentry><dt>codn_username</dt><dd>Username for the Helion Download Network user account.</dd></dlentry>
         <dlentry>
           <dt> codn_password</dt>
           <dd>Helion Download Network password.</dd>
         </dlentry>
-        <dlentry><dt>trove_enable_ssl</dt><dd> Must be False.</dd></dlentry>
-        <dlentry><dt>ephemeral_ca_cert</dt><dd> Location where SSL certificates can be accessed. If
-          SSL is not enabled, leave blank.</dd></dlentry>
+        <dlentry><dt>trove_enable_ssl</dt><dd>This variable only defines whether SSL is available internally to Trove. It does not indicate
+            whether or not SSL is enabled to the public endpoints. This value must be <b>False</b>. </dd></dlentry>
+        <dlentry><dt>ephemeral_ca_cert</dt><dd>If SSL has been enabled on the public endpoints, this value needs to be identical to the
+              <codeph>cacert</codeph> value provided previously. If SSL has not been enabled,
+            provide a non-blank value such as <b>unset</b>.  Do not leave blank.</dd></dlentry>
         <dlentry><dt>external_network</dt><dd> GUID of ext-net</dd></dlentry>
         <dlentry><dt>provider_network</dt><dd> GUID of svc-net</dd></dlentry>
         <dlentry><dt>ntp_server</dt><dd> IP address of ntp server</dd></dlentry>
@@ -74,7 +77,7 @@
           change.</dd></dlentry>
         <dlentry><dt>disable_rollback</dt><dd> Options are True or False. If True, rollback of patch applications is
           disabled.</dd></dlentry>
-        <dlentry><dt>project_id</dt><dd> Project id to install service to.</dd></dlentry>
+        <dlentry><dt>project_id</dt><dd> Project id of the project where the service will be installed.</dd></dlentry>
         <dlentry><dt>auth_url</dt><dd> This URL can be found in Horizon at: Project Compute &gt;
           Access &amp; Security &gt; API Access. Copy the Service Endpoint URL for the Identity
           Service. Note that this must be <codeph>https</codeph>, not simply

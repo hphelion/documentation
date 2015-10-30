@@ -6,11 +6,15 @@
 <section id="install-database"><title>Prerequisites</title>Installing services requires that the HDP
       Installer 2.0, also known as HDPI, has already <xref
         href="devplatform_install_platform.dita#topic_gly_xmh_ts">been installed</xref>.<p>The
-        images for the individual services will be downloaded when the service installation is
-        started. A separate download step is not necessary.</p><p>The installer retrieves service
-        configuration information from the clouds.yaml file. If you did not create a clouds.yaml
-        file earlier, you can <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one
-          now</xref>.</p></section>
+        installer retrieves service configuration information from the clouds.yaml file. If you did
+        not create a clouds.yaml file earlier, you can <xref
+          href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one now</xref>.</p><title>Download
+        the Latest Version </title><ol id="ol_ogs_qpt_nt">
+        <li>Navigate to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
+            format="html" scope="external">HP Helion Download Network</xref> (HDN) and log in. If
+          necessary, create an account first.</li>
+        <li>Download the Database Service package.</li>
+      </ol></section>
 
 <section id="availability-zones"> <title>Configure Availability Zones</title>
 <p>To configure the Database Service in a highly available manner, it is necessary to create
@@ -140,34 +144,20 @@ openstack aggregate create --zone AZ-3 aggregate-AZ-3</codeblock></li>
 <section id="dbaas_installation">
       <title>Install the Database Service </title>
       <ol id="ol_xct_5dz_nt">
-        <li> Source a stack RC file for the admin user and project. <ol>
-            <li> Log in to Horizon using the admin account.</li>
-            <li> Download the OpenStack RC file. <p>
-                <image placement="break" href="../../../media/quickstartDownloadRCFile.png"
-                  id="image_asb_jvy_nt"/>
-              </p></li>
-            <li>Use <codeph>scp</codeph> to copy the RC file over to the Deployer.</li>
-            <li>SSH to the Deployer and source the RC file. You will need to provide the same admin
-              password that you used to log in to Horizon. <p>
-                <codeblock> source admin-openrc.sh</codeblock>
-              </p></li>
-          </ol></li>
-        <li>The installer retrieves service configuration information from the
-            <codeph>clouds.yaml</codeph> file. If you did not create a <codeph>clouds.yaml</codeph>
-          file earlier, you must <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one
-            now</xref>.</li>
+        <!--<li> Source a stack RC file for the admin user and project. <ol><li> Log in to Horizon using the admin account.</li><li> Download the OpenStack RC file. <p><image placement="break" href="../../../media/quickstartDownloadRCFile.png" id="image_asb_jvy_nt"/></p></li><li>Use <codeph>scp</codeph> to copy the RC file over to the Deployer.</li><li>SSH to the Deployer and source the RC file. You will need to provide the same admin password that you used to log in to Horizon. <p><codeblock> source admin-openrc.sh</codeblock></p></li></ol></li>-->
         
-        <li>Source the Virtual Environment.<pre>source .devplatform/bin/activate</pre></li>
+        <li>Source the Virtual
+          Environment.<codeblock>stack@hlm:~$ source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate </codeblock></li>
          <li>List the available database versions to install:
           <codeblock>openstack hdpi list --os-cloud mycloud | grep database  </codeblock>The output
           should look similar
-          to:<codeblock>database | wscatalog.2655 | 2.0.0.0 | available</codeblock></li>
+          to:<codeblock>database | wscatalog.#### | 2.0.0.0 | available</codeblock></li>
         <li>Select the database version to install and view the details of the
-          package:<codeblock>openstack hdpi show wscatalog.2655 --os-cloud mycloud</codeblock></li>
-        <li>Install the database service
-          <codeblock>openstack --os-cloud mycloud hdpi database install --package wscatalog.2655</codeblock>
+          package:<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock></li>
+        <li>Install the database
+          service.<codeblock>openstack --os-cloud mycloud hdpi database install --package wscatalog.####</codeblock>
           The output will appear similar to:
-          <codeblock>$ os hdpi als install --package wscatalog.1985
+          <codeblock>$ os hdpi database install --package wscatalog.####
 Database is now downloading
 ...
 ...
@@ -192,19 +182,30 @@ $</codeblock></li>
           <li> Update configuration on each of the HP Helion OpenStack controller nodes by connecting
             to the controller and doing the following: <ol>
               <li>Edit the <i>/etc/haproxy/haproxy.cfg</i> file and add the following lines. The
-                last line should be repeated once for each API server identified in step
-                1.<codeblock>listen trove_api
-bind &lt;virtual IP from step 2&gt;:8779
+                last line should be repeated once for each API server identified in step 1.
+                  <note>The <codeph>ssl cert</codeph> information in the <b>bind</b> statement only
+                  applies if SSL has been enabled for public endpoints. If SSL has not been enabled,
+                  omit this section of the statement. To locate the filepath, navigate to
+                    <codeph>~/helion/hos/ansible/roles/tls-frontend/defaults/main.yml</codeph> and
+                  find the value of the <codeph>frontend_server_cert_directory</codeph> parameter.
+                  To find the file name, open the
+                    <codeph>/home/stack/helion/my_cloud/definition/data/network_groups.yml</codeph>
+                  file and find the value for the <codeph>cert-file</codeph> parameter.
+                </note><codeblock>listen trove_api
+bind &lt;virtual IP from step 2&gt;:8779 ssl crt <i>&lt;path to certificate file/certFileName&gt; </i>
 option httpchk GET /
 server trove-trove&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&gt; check inter 2000 rise 2 fall 5</codeblock></li>
-              <li>Run the following command as
-                root:<codeblock>sudo iptables -I INPUT -p tcp --dport 8779 -j ACCEPT</codeblock></li>
+              <li>Add the following command to the <codeph>/etc/iptables/rules.v4</codeph> file.
+                This will ensure that this rule persists.
+                <codeblock>-I INPUT -p tcp --dport 8779 -j ACCEPT</codeblock></li>
+              <li>Run the following
+                command:<codeblock>sudo iptables -I INPUT -p tcp --dport 8779 -j ACCEPT</codeblock></li>
               <li>Reload the haproxy service
-                configuration<codeblock>sudo service haproxy reload</codeblock></li>
+                configuration.<codeblock>sudo service haproxy reload</codeblock></li>
             </ol></li>
           <li> The installation is complete. Return to the Horizon dashboard (you may log out and
-            log in with a non-Admin account if desired), and click on the <b>Database</b> panel
-            under the current Project to begin using the Database Service. </li>
+            log in with a non-Admin account if desired), and click the <b>Database</b> panel under
+            the current Project to begin using the Database Service. </li>
         </ol></sectiondiv></section>
 
  
