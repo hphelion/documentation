@@ -7,23 +7,15 @@
     <p>This page describes how to configure your Ceph backend for the Helion Entry-scale with KVM
       Cloud model. It consists of the following steps:</p>
     <ul>
-      <li>Prequisites</li>
-      <li>Configuring your Ceph Envirenment Input Files</li>
-      <li>Configure Ceph as the Backend</li>
-      <li>Configure Nova to Allow Attachment of Ceph Volumes to Instances</li>
-      <li>Verifying your Ceph backend</li>
+      <li><xref href="configure_ceph.dita#config_ceph/config_files">Editing your Ceph Envirenment
+          Input Files</xref></li>
+      <li><xref href="configure_ceph.dita#config_ceph/configure_backend">Configure Ceph as the
+          Backend</xref></li>
+      <li><xref href="configure_ceph.dita#config_ceph/attach_ceph">Configure Nova to Allow
+          Attachment of Ceph Volumes to Instances</xref></li>
+      <li><xref href="configure_ceph.dita#config_ceph/post_install">Verifying your Ceph
+          backend</xref></li>
     </ul>
-    <section id="prereqs"><title>Prerequisites</title>
-      <p>In order for Ceph to be used as a backend for volumes, the nodes running these services
-        should have the Ceph client installed on them. Use the
-          <codeph>ceph-client-prepare.yml</codeph> playbook to deploy the Ceph client on these
-        nodes.</p>
-      <p>
-        <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
-      </p>
-      <p>This will also create Ceph users and Ceph pools on the resource nodes.</p>
-    </section>
     <section id="notes"><title>Notes</title>
       <p>The Ceph cluster expects the network group that will be used for management network traffic
         within the cloud to be left to its default value i.e. MANAGEMENT. Altering the name will
@@ -38,7 +30,7 @@ ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
         if the cloud is deployed with a Ceph cluster.</p>
     </section>
     <section id="config_files">
-      <title>Configuring Your Ceph Environment Input Files</title>
+      <title>Edit Your Ceph Environment Input Files</title>
       <p>
         <ol>
           <li>Log in to the deployer/lifecycle-manager node.</li>
@@ -230,6 +222,18 @@ git commit -m "&lt;commit message>"</codeblock></li>
         will show you how to do this.</p>
       <p>Perform the following procedure on the deployer/lifecycle-manager node to configure Ceph as
         a volume backend:</p>
+      <p><b>Prerequisites</b></p>
+      <p>In order for Ceph to be used as a backend for volumes, the nodes running these services
+        should have the Ceph client installed on them. Use the
+          <codeph>ceph-client-prepare.yml</codeph> playbook to deploy the Ceph client on these
+        nodes.</p>
+      <p>
+        <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
+      </p>
+      <p>This will also create Ceph users and Ceph pools on the resource nodes.</p>
+      <p><b>Ceph Configuration</b></p>
+      <p>Continue with the Ceph configuration with the steps below:</p>
       <p>
         <ol>
           <li>Log in to the lifecycle-manager node.</li>
@@ -238,12 +242,12 @@ git commit -m "&lt;commit message>"</codeblock></li>
               <li>Add your Ceph backend to the <codeph>enabled_backends</codeph> section:
                 <codeblock># Configure the enabled backends
 enabled_backends=ceph1</codeblock></li>
-              <li>[OPTIONAL] If you want a use a default volume type, then enter it in the
+              <!--<li>[OPTIONAL] If you want a use a default volume type, then enter it in the
                   <codeph>[DEFAULT]</codeph> section with the syntax below. You will want to
                 remember this value when you create your volume type in the next section.
                 <codeblock>[DEFAULT]
 # Set the default volume type
-default_volume_type = &lt;your new volume type></codeblock></li>
+default_volume_type = &lt;your new volume type></codeblock></li> -->
               <li>Uncomment the <codeph>ceph</codeph> section and fill the values as per your
                 cluster information. If you have more than one cluster, you will need to add another
                 similar section with its respective values. In the following example only one
@@ -314,9 +318,10 @@ pools:
                       </row>
                       <row>
                         <entry>volume_backend_name</entry>
-                        <entry>Name given to the VSA backend. You will specify this value later in
+                        <entry>Name given to the Ceph backend.
+                          <!--You will specify this value later in
                           the <xref href="configure_vsa.dita#config_vsa/associate_volume_backend"
-                            >Associate the Volume Type to a Backend</xref> steps.</entry>
+                            >Associate the Volume Type to a Backend</xref> steps.--></entry>
                       </row>
                     </tbody>
                   </tgroup>

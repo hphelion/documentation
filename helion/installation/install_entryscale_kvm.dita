@@ -4,8 +4,6 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry-scale Cloud
     with KVM</title>
   <body>
-    <!--Needs Work  -->
-    <!-- Link for Helion Download page, file name,  -->
     <section id="about"><p>This page describes the common installation steps that are required for
         each of the HP Helion OpenStack Entry-scale cloud models that utilize the KVM hypervisor on
         the Compute nodes. This includes the following example configurations: <ul>
@@ -234,14 +232,9 @@ git commit -m "My config or other commit message"</codeblock>
           your nodes so that they are accessible to be re-imaged in a later step:
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost bm-power-status.yml</codeblock></li>
-        <li>Run the following playbook to deploy Cobbler: <codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
-          <!--
-          <p>The cobbler-deploy stage of the installation now prompts for a password. The entered
-            value is used to set a user-defined password for subsequent node installs so that a user
-            can gain console/terminal access to the nodes. For example, if a node maintenance is
-            required or if the SSH keys are lost. The value is encrypted and placed in the kickstart
-            for the node installs.</p> --></li>
+        <li>Run the following playbook to deploy Cobbler:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
       </ol>
       <p><b>Part Two: Image the Nodes</b></p>
       <p>This phase of the install process goes through a number of distinct steps: <ol>
@@ -305,6 +298,11 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
         <li>Use the playbook below to create a deployment directory:
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        <li>[OPTIONAL] - Run the <codeph>wipe_disks.yml</codeph> playbook to ensure all of your
+          partitions on your nodes are completely wiped before continuing with the installation. If
+          you are using fresh machines this step may not be necessary.
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts wipe_disks.yml</codeblock></li>
         <li>Run the <codeph>site.yml</codeph> playbook using the command below. The <codeph>-e
             elasticsearch_cluster_name</codeph> switch is used to set a unique name for your
           elasticsearch cluster. This should be set to a value other than
