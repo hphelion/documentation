@@ -268,7 +268,7 @@
       </topichead>
     </topicref>
       
-
+<!--database -->
     <topichead navtitle="Database Service Reference">
       <topicref href="2.0/database/devplatform.database-instance.dita" locktitle="yes"
         navtitle="Using the Database Service"/>
@@ -292,6 +292,10 @@
       <topicref href="2.0/database/devplatform.database-ALS.dita" locktitle="yes"
         navtitle="Connecting the Database Service with the Application Lifecycle Service"/>
     </topichead>
+    
+<!-- messaging -->
+
+<!--
     <topichead navtitle="Messaging Service Reference">
       <topicref href="2.0/messaging/devplatform.using-the-messaging-service.dita"
         navtitle="Using Messaging as a Service"/>
@@ -308,8 +312,13 @@
       <topicref href="2.0/messaging/cue_ops_bestPractices.dita" navtitle="Cue Best Practices"/>
       <topicref href="2.0/monitoring/devplatform.messaging-monitor.dita"/>
     </topichead>
+-->    
+    
+    
     <!--IT Ops-->
     <topicref href="2.0/devplatform.sysadmin.dita" locktitle="yes" navtitle="Resources for IT Ops">
+      <topicref href="2.0/installation/install_dnsaas.dita" navtitle="DNS Configuration"
+        locktitle="yes"/>
       <topicref href="2.0/helion/admin/server/network_port_configuration.dita"/>
       <topicref href="2.0/helion/admin/server/docker.dita" navtitle="Docker and Fence"
         locktitle="yes"/>
@@ -512,8 +521,6 @@
         <topicref href="2.0/monitoring/devplatform.database-monitor.dita"/>
         <topicref href="2.0/monitoring/devplatform.database-monitor-cli.dita"/>
       </topichead>
-      <topicref href="2.0/installation/install_dnsaas.dita" navtitle="DNS Configuration"
-        locktitle="yes"/>
     </topicref>
   </topicref>
  </map>
