@@ -329,7 +329,7 @@ hplefthand_debug: false</codeblock>
                     <row>
                       <entry>volume_backend_name</entry>
                       <entry>Name given to the VSA backend. You will specify this value later in the
-                          <xref href="configure_vsa.dita#config_vsa/associate_volume_backend"
+                          <xref href="configure_vsa.dita#config_vsa/associate_volumetype"
                           >Associate the Volume Type to a Backend</xref> steps.</entry>
                     </row>
                     <row>
