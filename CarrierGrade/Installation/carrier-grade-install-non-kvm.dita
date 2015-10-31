@@ -21,11 +21,21 @@
       <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
     <p>After the Helion Lifecycle Management (HLM) is installed, the next task is to deploy the HP
       Helion OpenStack cloud into the non-KVM region.</p>
-    <p>If you are installing the KVM deployment, see  <xref
-      href="carrier-grade-install-kvm.dita#topic10581">Installing the KVM Deployment</xref></p>
-    <p><!--If you are installing the KVM with DCN deployment, see<xref href="carrier-grade-install-kvm-dcn.dita#topic10581">Installing the KVM with DCN Deployment</xref>--></p>
-    <p>If you are installing the KVM + ESX deployment, see <xref
-        href="carrier-grade-install-kvm-esx.dita#topic10581">Installing the KVM + ESX
-        Deployment</xref>.</p>
+    <p>Use one of the following links, depending upon which deployment model you are using:<ul
+        id="ul_r4h_zgx_vt">
+        <li><codeph>denver</codeph>. The <codeph>denver</codeph> deployment includes a KVM region
+          and uses AVS networking. See <xref href="CGH-2-install-denver.dita#topic10581">Deploying
+            the denver template</xref>. </li>
+        <li><codeph>tahoe</codeph>. The <codeph>tahoe</codeph> deployment includes a KVM region and
+          uses HP DCN VRS networking. See <xref href="CGH-2-install-tahoe.dita#topic10581">Deploying
+            the tahoe template</xref>.</li>
+        <li><codeph>memphis</codeph>. The <codeph>memphis</codeph> deployment includes the KVM
+          region, ESX storage, and uses HP DCN VRS networking. See <xref
+            href="CGH-2-install-memphis.dita#topic10581">Deploying the memphis template</xref>.  </li>
+        <li><codeph>sacramento</codeph>. The <codeph>sacramento</codeph> deployment includes the KVM
+          region, the baremetal region, ESX storage, and uses HP DCN VRS networking. See <xref
+            href="CGH-2-install-sacramento.dita#topic10581">Deploying the sacramento
+          template</xref>.</li>
+      </ul></p>
   </body>
 </topic>
