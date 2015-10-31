@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE oXygen:ReusableComponent [
+<!ELEMENT oXygen:ReusableComponent (oXygen:ComponentDescription, oXygen:ComponentDefinition)>
+<!ATTLIST oXygen:ReusableComponent 
+    xmlns:oXygen CDATA #FIXED "http://www.oxygenxml.com/ns/dita/reuse" 
+    id CDATA #IMPLIED
+    domains CDATA "(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)     (topic oXygen-reuse-d) "
+    class CDATA "- topic/topic oXygen:ReusableComponent/oXygen:ReusableComponent "    
+    xmlns:ditaarch CDATA #FIXED "http://dita.oasis-open.org/architecture/2005/"
+    ditaarch:DITAArchVersion CDATA #FIXED "1.2" 
+    >
+<!ELEMENT oXygen:ComponentDescription (#PCDATA)>
+<!ATTLIST oXygen:ComponentDescription 
+ class CDATA "- topic/title oXygen:ReusableComponent/oXygen:ComponentDescription ">
+<!ELEMENT oXygen:ComponentDefinition ANY>
+<!ATTLIST oXygen:ComponentDefinition
+    class CDATA "- topic/body oXygen:ReusableComponent/oXygen:ComponentDefinition ">
+
+<!ENTITY % dtd PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+%dtd;
+
+]>
+<oXygen:ReusableComponent id="ReusableComponent_t4b_wzw_vt">
+    <oXygen:ComponentDescription>PXE boot</oXygen:ComponentDescription>
+    <oXygen:ComponentDefinition><section id="section_apb_wzw_vt"><title>Configure PXE boot</title><p>After you edit the <codeph>node-provision.json</codeph> file, you must enable one-time PXE boot on the servers to set the correct boot order. Execute the following on the HLM VM:</p><ol><li>Copy the <codeph>ilopxebootonce.py</codeph> from the <systemoutput>/root/cg-hlm/dev-tools/ilopxebootonce.py</systemoutput> to the <codeph>&lt;cloudname></codeph> directory where you have the <codeph>node-provision.json</codeph> file.</li><li>Execute the following script: <codeblock>python ilopxebootonce.py node-provision.json</codeblock></li></ol><p>After the script is run, the <codeph>Current One-Time Boot Option</codeph> is set to <codeph>Network Device 1</codeph> on all the servers listed in <codeph>node-provision.json</codeph> file.</p></section></oXygen:ComponentDefinition>
+</oXygen:ReusableComponent>

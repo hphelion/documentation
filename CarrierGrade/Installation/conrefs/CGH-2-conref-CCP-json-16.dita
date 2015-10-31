@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE oXygen:ReusableComponent [
+<!ELEMENT oXygen:ReusableComponent (oXygen:ComponentDescription, oXygen:ComponentDefinition)>
+<!ATTLIST oXygen:ReusableComponent 
+    xmlns:oXygen CDATA #FIXED "http://www.oxygenxml.com/ns/dita/reuse" 
+    id CDATA #IMPLIED
+    domains CDATA "(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)     (topic oXygen-reuse-d) "
+    class CDATA "- topic/topic oXygen:ReusableComponent/oXygen:ReusableComponent "    
+    xmlns:ditaarch CDATA #FIXED "http://dita.oasis-open.org/architecture/2005/"
+    ditaarch:DITAArchVersion CDATA #FIXED "1.2" 
+    >
+<!ELEMENT oXygen:ComponentDescription (#PCDATA)>
+<!ATTLIST oXygen:ComponentDescription 
+ class CDATA "- topic/title oXygen:ReusableComponent/oXygen:ComponentDescription ">
+<!ELEMENT oXygen:ComponentDefinition ANY>
+<!ATTLIST oXygen:ComponentDefinition
+    class CDATA "- topic/body oXygen:ReusableComponent/oXygen:ComponentDefinition ">
+
+<!ENTITY % dtd PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+%dtd;
+
+]>
+<oXygen:ReusableComponent id="ReusableComponent_art_q1x_vt">
+    <oXygen:ComponentDescription>CCP JSON</oXygen:ComponentDescription>
+    <oXygen:ComponentDefinition><section id="ccp-dcn-esx-json"><title>Configure the ccp-dcn-esx.json file</title><p>Modify the <codeph>member-count</codeph> field in the <codeph>ccp-dcn-esx.json</codeph> in the <codeph>/var/hlm/clouds/&lt;cloudname&gt;/.hos/</codeph> directory of the HLM VM. Make sure the <codeph>member-count</codeph> field in the <codeph>tiers</codeph> section is set to <b>1</b> as shown:</p><p><!--By default it will be “2”, change to “1” for Build#15.--></p><codeblock>"tiers": [
+  {
+    "id": "1",
+    "member-count": 1,      </codeblock></section></oXygen:ComponentDefinition>
+</oXygen:ReusableComponent>

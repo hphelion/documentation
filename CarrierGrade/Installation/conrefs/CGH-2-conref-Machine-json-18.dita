@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE oXygen:ReusableComponent [
+<!ELEMENT oXygen:ReusableComponent (oXygen:ComponentDescription, oXygen:ComponentDefinition)>
+<!ATTLIST oXygen:ReusableComponent 
+    xmlns:oXygen CDATA #FIXED "http://www.oxygenxml.com/ns/dita/reuse" 
+    id CDATA #IMPLIED
+    domains CDATA "(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)     (topic oXygen-reuse-d) "
+    class CDATA "- topic/topic oXygen:ReusableComponent/oXygen:ReusableComponent "    
+    xmlns:ditaarch CDATA #FIXED "http://dita.oasis-open.org/architecture/2005/"
+    ditaarch:DITAArchVersion CDATA #FIXED "1.2" 
+    >
+<!ELEMENT oXygen:ComponentDescription (#PCDATA)>
+<!ATTLIST oXygen:ComponentDescription 
+ class CDATA "- topic/title oXygen:ReusableComponent/oXygen:ComponentDescription ">
+<!ELEMENT oXygen:ComponentDefinition ANY>
+<!ATTLIST oXygen:ComponentDefinition
+    class CDATA "- topic/body oXygen:ReusableComponent/oXygen:ComponentDefinition ">
+
+<!ENTITY % dtd PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+%dtd;
+
+]>
+<oXygen:ReusableComponent id="ReusableComponent_a5m_v1x_vt">
+    <oXygen:ComponentDescription>Machine JSON</oXygen:ComponentDescription>
+    <oXygen:ComponentDefinition><section id="configure-mach-json"><title>Configure the machine_architecture.json file</title><p><b>For bonded NIC environments</b>, modify the <codeph>machine_architecture.json</codeph> file in the <codeph>/opt/share/hlm/1/site/</codeph> directory of the HLM VM to fit your hardware model. You have to gather the correct PCI SLOT INFO and add ports accordingly on the hardware slots or cards used for networking.</p><p><b>Note:</b> To see a sample <codeph>machine_architecture.json</codeph> file, see <xref href="../carrier-grade-install-kvm-env-json-bonded.dita#topic4797">Sample enviroment.json File for Installing the KVM + ESX Topology in an Bonded NIC Environment</xref>.</p></section></oXygen:ComponentDefinition>
+</oXygen:ReusableComponent>

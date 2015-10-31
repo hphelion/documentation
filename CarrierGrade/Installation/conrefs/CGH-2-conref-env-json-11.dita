@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE oXygen:ReusableComponent [
+<!ELEMENT oXygen:ReusableComponent (oXygen:ComponentDescription, oXygen:ComponentDefinition)>
+<!ATTLIST oXygen:ReusableComponent 
+    xmlns:oXygen CDATA #FIXED "http://www.oxygenxml.com/ns/dita/reuse" 
+    id CDATA #IMPLIED
+    domains CDATA "(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)     (topic oXygen-reuse-d) "
+    class CDATA "- topic/topic oXygen:ReusableComponent/oXygen:ReusableComponent "    
+    xmlns:ditaarch CDATA #FIXED "http://dita.oasis-open.org/architecture/2005/"
+    ditaarch:DITAArchVersion CDATA #FIXED "1.2" 
+    >
+<!ELEMENT oXygen:ComponentDescription (#PCDATA)>
+<!ATTLIST oXygen:ComponentDescription 
+ class CDATA "- topic/title oXygen:ReusableComponent/oXygen:ComponentDescription ">
+<!ELEMENT oXygen:ComponentDefinition ANY>
+<!ATTLIST oXygen:ComponentDefinition
+    class CDATA "- topic/body oXygen:ReusableComponent/oXygen:ComponentDefinition ">
+
+<!ENTITY % dtd PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+%dtd;
+
+]>
+<oXygen:ReusableComponent id="ReusableComponent_wlx_d1x_vt">
+    <oXygen:ComponentDescription>Environment JSON</oXygen:ComponentDescription>
+    <oXygen:ComponentDefinition><section id="configure-env-json"><title>Configure the environment.json file</title><p>Modify the <codeph>environment.json</codeph> file in the <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the HLM VM to configure the VLANs and network addresses as appropriate for your environment. Configure the CLM (management), CAN (api), and BLS (blockstore) networks.</p><p><b>Note:</b> To see a sample <codeph>environment.json</codeph> file, see one of the following: <ul id="ul_smq_yqt_bt"><li><xref href="../carrier-grade-install-kvm-env-json.dita">For an Unbonded NIC Environment</xref>. <p>For each network provide: </p><codeblock>{
+              "name": "management",
+              "type": "vlan",
+              "segment-id": "1551",
+              "network-address": {
+              "cidr": "10.x.x.x/24",
+              "start-address": "10.x.x.x",
+              "gateway": "10.x.x.x"
+              }
+              },        </codeblock><p><b>Note:</b> In the example, the IP addresses are masked for security purposes. Use values appropriate for your environment.</p></li><li><xref href="../carrier-grade-install-kvm-env-json-bonded.dita#topic4797">For a Bonded NIC Environment</xref></li></ul></p></section></oXygen:ComponentDefinition>
+</oXygen:ReusableComponent>

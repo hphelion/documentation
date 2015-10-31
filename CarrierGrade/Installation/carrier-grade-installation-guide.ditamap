@@ -28,14 +28,14 @@
             navtitle="Deploying the HLM VM and Installation Services" locktitle="yes"/>
         <topicref href="carrier-grade-install-non-kvm.dita" navtitle="Deploying the Non-KVM Region"
             locktitle="yes">
-            <topicref href="carrier-grade-install-kvm.dita" navtitle="Installing the KVM Deployment"
+            <topicref href="CGH-2-install-denver.dita" navtitle="Deploying the denver Template"
                 locktitle="yes">
                 <topicref href="carrier-grade-install-kvm-only-json"
                     navtitle="Sample JSON File for Installing the KVM Deployment" locktitle="yes"
                     toc="no"/>
             </topicref>
-            <topicref href="carrier-grade-install-kvm-esx.dita"
-                navtitle="Installing the KVM + ESX Deployment" locktitle="yes">
+            <topicref href="CGH-2-install-tahoe.dita" navtitle="Deploying the tahoe Template"
+                locktitle="yes">
                 <topicref href="carrier-grade-install-kvm-node-json.dita" toc="no"/>
                 <topicref href="carrier-grade-install-kvm-def-json.dita" toc="no"/>
                 <topicref href="carrier-grade-install-kvm-ansible-json.dita" toc="no"/>
@@ -59,6 +59,10 @@
                 <topicref href="CGH-2-install-icinga-patch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-network-role-patch.dita" toc="no"/>
             </topicref>
+            <topicref href="CGH-2-install-memphis.dita" navtitle="Deploying the memphis Template"
+                locktitle="yes"/>
+            <topicref href="CGH-2-install-sacramento.dita"
+                navtitle="Deploying the sacramento Template" locktitle="yes"/>
         </topicref>
         <topicref href="carrier-grade-install-launch-horizon.dita"
             navtitle="Launching the Horizon Interface" locktitle="yes"/>

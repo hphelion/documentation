@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE oXygen:ReusableComponent [
+<!ELEMENT oXygen:ReusableComponent (oXygen:ComponentDescription, oXygen:ComponentDefinition)>
+<!ATTLIST oXygen:ReusableComponent 
+    xmlns:oXygen CDATA #FIXED "http://www.oxygenxml.com/ns/dita/reuse" 
+    id CDATA #IMPLIED
+    domains CDATA "(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)     (topic oXygen-reuse-d) "
+    class CDATA "- topic/topic oXygen:ReusableComponent/oXygen:ReusableComponent "    
+    xmlns:ditaarch CDATA #FIXED "http://dita.oasis-open.org/architecture/2005/"
+    ditaarch:DITAArchVersion CDATA #FIXED "1.2" 
+    >
+<!ELEMENT oXygen:ComponentDescription (#PCDATA)>
+<!ATTLIST oXygen:ComponentDescription 
+ class CDATA "- topic/title oXygen:ReusableComponent/oXygen:ComponentDescription ">
+<!ELEMENT oXygen:ComponentDefinition ANY>
+<!ATTLIST oXygen:ComponentDefinition
+    class CDATA "- topic/body oXygen:ReusableComponent/oXygen:ComponentDefinition ">
+
+<!ENTITY % dtd PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+%dtd;
+
+]>
+<oXygen:ReusableComponent id="ReusableComponent_hyj_bbx_vt">
+    <oXygen:ComponentDescription>ESX Compute Proxy</oXygen:ComponentDescription>
+    <oXygen:ComponentDefinition><section id="esx-proxy"><title>Configure the ESX Compute Proxy</title><p>The HP Helion OpenStack Carrier Grade vCenter ESX compute proxy (compute proxy) is a driver that enables the Compute service to communicate with a VMware vCenter server. The HP Helion OpenStack Compute Service (Nova) requires this driver to interface with VMware ESX hypervisor APIs. You can download the proxy installation files from the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Download Network</xref>. <!-- Review with Michael Duncan all JSON files and proxy re: bonded set up --></p><p>For instructions on installing the ESX compute proxy, see <xref href="../carrier-grade-install-esx-proxy.dita#topic10581">Deploy the ESX Compute Proxy</xref>.</p></section></oXygen:ComponentDefinition>
+</oXygen:ReusableComponent>

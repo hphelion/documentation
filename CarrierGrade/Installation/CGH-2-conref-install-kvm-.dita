@@ -2,8 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Installing the KVM + ESX<tm
-      tmtype="reg"/> Deployment</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Conref Installing the KVM
+    + ESX<tm tmtype="reg"/> Deployment</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -15,14 +15,6 @@
     </metadata>
   </prolog>
   <body>
-    <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Helion Lifecycle
-        Management (HLM) VM is installed</xref>, the next task in installing the <xref
-        href="carrier-grade-install-overview.dita#topic1925/install-option">KVM + ESX
-        deployment</xref> is to deploy the HP Helion OpenStack cloud and install the HP Distributed
-      Cloud Networking (DCN) components. You must install the VMware ESX<tm tmtype="reg"/> compute
-      proxy. </p>
-    <p><b>Note:</b> If you are installing the KVM-only deployment, see <xref
-        href="carrier-grade-install-kvm.dita#topic10581">Installing the KVM Deployment</xref>.</p>
     <section id="prereqs"><title>HP Distributed Cloud Networking Requirements</title><p>Before
         starting the HP Helion OpenStack Carrier Grade installation, the VMware vSphere application
         and HP Distributed Cloud Networking components must be fully installed and
@@ -200,9 +192,9 @@ Password: cghelion</codeblock>
         <li>Save and close the file.</li>
       </ol>
     </section>
-    <p>
-      <b>Configure PXE boot</b>
-    </p>
+    <section>
+      <title>Configure PXE boot</title>
+    
     <p>After you edit the <codeph>node-provision.json</codeph> file, you must enable one-time PXE
       boot on the servers to set the correct boot order. Execute the following on the HLM VM:</p>
     <ol>
@@ -216,6 +208,7 @@ Password: cghelion</codeblock>
     <p>After the script is run, the <codeph>Current One-Time Boot Option</codeph> is set to
         <codeph>Network Device 1</codeph> on all the servers listed in
         <codeph>node-provision.json</codeph> file.</p>
+    </section>
     <section id="configure-def-json">
       <title>Configure the definition.json file</title>
       <p>Modify the <codeph>definition.json</codeph> file in the
@@ -515,6 +508,7 @@ The cloud &lt;cloudname> was generated successfully.
               </p><p><image href="../../media/CGH-2-install-hnetinit-ping.png" width="300"
               id="image_qrd_3gw_rt"/></p></li>
       </ol>
+      <p></p>
     </section>
     <section id="hdeploy">
       <title>Deploy HP Helion OpenStack</title>

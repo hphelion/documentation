@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying the sacramento
+    Template</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carrier Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Helion Lifecycle
+        Management (HLM) VM is installed</xref>, the next task in installing the <xref
+        href="carrier-grade-install-overview.dita#topic1925/install-option">KVM + ESX
+        deployment</xref> is to deploy the HP Helion OpenStack cloud and install the HP Distributed
+      Cloud Networking (DCN) components. You must install the VMware ESX<tm tmtype="reg"/> compute
+      proxy. </p>
+    <p>If you are installing the <codeph>sacramento</codeph> template, which includes the KVM
+      region, the baremetal region, ESX storage, and uses HP DCN VRS networking, follow these
+      instructions. If you are installing a different deployment, disregard these instructions. </p>
+    <section conref="conrefs/CGH-2-conref-DCN-1.dita#ReusableComponent_nms_qyw_vt/prereqs"/>
+    <section
+      conref="conrefs/CGH-2-conref-ESX-2.dita#ReusableComponent_z2y_tyw_vt/section_efy_tyw_vt"/>
+    <section conref="conrefs/CGH-2-conref-VDS-3.dita#ReusableComponent_gbx_czw_vt/vmware"/>
+    <section conref="conrefs/CGH-2-conref-VRSvApp-4.dita#ReusableComponent_dqy_2zw_vt/vapp"/>
+    <section conref="conrefs/CGH-2-conref-VSD-5.dita#ReusableComponent_tlk_hzw_vt/vsd"/>
+    <section
+      conref="conrefs/CGH-2-conref-VSD-license-6.dita#ReusableComponent_u1w_jzw_vt/vsd-license"/>
+    <section
+      conref="conrefs/CGH-2-conref-VSD-User-7.dita#ReusableComponent_ull_mzw_vt/create-user-for-plugin-login"/>
+    <section
+      conref="conrefs/CGH-2-conref-HLM-Define-8.dita#ReusableComponent_swm_qzw_vt/hos-install"/>
+    <section
+      conref="conrefs/CGH-2-conref-PXE-Boot-9.dita#ReusableComponent_t4b_wzw_vt/section_apb_wzw_vt"/>
+    <section
+      conref="conrefs/CGH-2-conref-definition-json-10.dita#ReusableComponent_zsb_b1x_vt/configure-def-json"/>
+    <section
+      conref="conrefs/CGH-2-conref-env-json-11.dita#ReusableComponent_wlx_d1x_vt/configure-env-json"/>
+    <section
+      conref="conrefs/CGH-2-conref-ansible-json-12.dita#ReusableComponent_dkh_g1x_vt/configure-ansible-json"/>
+    <section
+      conref="conrefs/CGH-2-conref-esx-json-13.dita#ReusableComponent_oy4_31x_vt/configure-esx-json"/>
+    <section
+      conref="conrefs/CGH-2-conref-LDAP-json-14.dita#ReusableComponent_vjm_l1x_vt/configure-ldap-json"/>
+    <section conref="conrefs/CGH-2-conref-DCN-json-15.dita#ReusableComponent_cjk_41x_vt/dcn-json"/>
+    <section
+      conref="conrefs/CGH-2-conref-CCP-json-16.dita#ReusableComponent_art_q1x_vt/ccp-dcn-esx-json"/>
+    <section
+      conref="conrefs/CGH-2-conref-WR-json-17.dita#ReusableComponent_m5f_t1x_vt/configure-wr-json"/>
+    <section
+      conref="conrefs/CGH-2-conref-Machine-json-18.dita#ReusableComponent_a5m_v1x_vt/configure-mach-json"/>
+    <section
+      conref="conrefs/CGH-2-conref-Verify-json-19.dita#ReusableComponent_upw_x1x_vt/verify-json"/>
+    <section conref="conrefs/CGH-2-conref-esx-proxy-20.dita#ReusableComponent_hyj_bbx_vt/esx-proxy"/>
+    <section
+      conref="conrefs/CGH-2-conref-HLM-provision-21.dita#ReusableComponent_vds_dbx_vt/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"/>
+    <section
+      conref="conrefs/CGH-2-conref-backend-drivers-22.dita#ReusableComponent_fd1_hbx_vt/back-end"/>
+    <section
+      conref="conrefs/CGH-2-conref-generate-init-23.dita#ReusableComponent_q43_nbx_vt/hos-cloud"/>
+    <section conref="conrefs/CGH-2-conref-hlm-deploy-24.dita#ReusableComponent_urx_xbx_vt/hdeploy"/>
+    <section
+      conref="conrefs/CGH-2-conref-ldap-config-25.dita#ReusableComponent_y3j_1cx_vt/patch-after"/>
+    <section
+      conref="conrefs/CGH-2-conref-verify-vsc-26.dita#ReusableComponent_cyy_ccx_vt/section_jyy_ccx_vt"/>
+    <section
+      conref="conrefs/CGH-2-conref-verify-vrsg-27.dita#ReusableComponent_ich_gcx_vt/section_mch_gcx_vt"/>
+    <section id="next-step">
+      <title>Next Step</title>
+      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon
+          Interface</xref></p>
+      <!--<p><xref href="carrier-grade-install-kvm-cloud.dita">Deploying the KVM Region</xref></p>-->
+    </section>
+  </body>
+</topic>

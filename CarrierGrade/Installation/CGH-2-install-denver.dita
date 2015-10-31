@@ -2,8 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Installing the KVM
-    Deployment</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying the denver
+    Template</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -22,9 +22,9 @@
     <p>After Helion lifecycle management is installed, the next task in installing the <xref
         href="carrier-grade-install-overview.dita#topic1925/install-option">KVM topology</xref>
       is to deploy the HP Helion Openstack cloud.</p>
-    <p><b>Note:</b> If you are installing the KVM + ESX deployment, see <xref
-        href="carrier-grade-install-kvm-esx.dita#topic10581">Installing the KVM + ESX
-        Deployment</xref>.</p>
+    <p>If you are installing the <codeph>denver</codeph> template, which includes the KVM region and
+      uses AVS networking, follow these instructions. If you are installing a different deployment,
+      disregard these instructions. </p>
     
     <section>
       <title>Log into the Helion lifecycle management VM (VM)</title>
@@ -278,27 +278,10 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
           </ol></li>
       </ol>
     </section>
-    <section id="verify-json">
-      <title>Verify the JSON files</title>
-      <p>After editing the JSON files, validate each JSON file to make sure there are no syntax
-        errors using the tool of your preference. For example, using the Python json.tool: </p>
-      <codeblock>python -m json.tool &lt;filename>.json</codeblock>
-    </section>
-    <section id="pxe-boot">
-      <title>Configure PXE boot</title>
-      <p>After you edit the <codeph>node-provision.json</codeph> file, you must enable one-time PXE
-        boot on the servers set the correct boot order. Execute the following on the HLM VM:</p>
-      <ol>
-        <li>Copy the <codeph>ilopxebootonce.py</codeph> from the
-            <systemoutput>/root/cg-hlm/dev-tools/ilopxebootonce.py</systemoutput> to the directory
-          where you have the <codeph>node-provision.json</codeph> file.</li>
-        <li>Execute the following script:
-          <codeblock>python ilopxebootonce.py node-provision.json</codeblock></li>
-      </ol>
-      <p>After the script is run, the <codeph>Current One-Time Boot Option</codeph> is set to
-          <codeph>Network Device 1</codeph> on all the servers listed in
-          <codeph>node-provision.json</codeph> file.</p>
-    </section>
+    <section
+      conref="conrefs/CGH-2-conref-Verify-json-19.dita#ReusableComponent_upw_x1x_vt/verify-json"/>
+    <section
+      conref="conrefs/CGH-2-conref-PXE-Boot-9.dita#ReusableComponent_t4b_wzw_vt/section_apb_wzw_vt"/>
     <section id="create-a-new-cloud-template-and-bring-the-cloud-nodes-up">
       <title>Provision the cloud nodes</title>
       <ol>
@@ -426,50 +409,11 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
           </ol></li>
       </ol>
     </section>
-    
-    <section>
-      <title>Deploy the HP Helion OpenStack cloud</title>
-      <ol>
-        <li>Once you have correctly edited all the json files and applied the appropriate patches,
-          run the HP Helion OpenStack Configuration Processor:
-            <codeblock>hlm generate –c &lt;cloudname&gt;</codeblock><p>This command runs the HP
-            Helion OpenStack Configuration Processor, a script (<codeph>hcfgproc</codeph>) that is
-            incorporated into the installation environment.</p><p>When the command completes, you
-            will see the following:
-          message:</p><codeblock>#################################################################################
-The cloud &lt;cloudname> was generated successfully.
-################################################################################</codeblock></li>
-        <li>Review the CloudDiagram, <codeph>hosts.hf</codeph>, and
-            <codeph>net/interfaces.d/eth.cfg</codeph> files to make sure the network settings are
-          correct.</li>
-        <li>Initialize network interfaces on all the cloud nodes using the following command:
-            <codeblock>hlm netinit –c &lt;cloud name&gt;</codeblock><p>You can run this command from
-            any directory.</p><p>After this command completes, all cloud nodes and CLM network
-            interfaces should be set correctly.</p></li>
-        <li>Use the following command to deploy the cloud:
-            <codeblock>hlm deploy –c &lt;cloudname&gt;</codeblock><p>Once cloud deployment is
-            successfully complete, there will be 3 controller nodes in the non-KVM region.</p></li>
-      </ol>
-    </section>
-    <section>
-      <title>Deploy the Icinga Patch</title>
-      <p>After launching the <codeph>hdeploy</codeph> command, deploy three patches to support the
-        monitoring of HP Helion OpenStack. </p>
-      <p>For more information, see <xref href="CGH-2-install-icinga-patch.dita#topic10581">Deploy
-          the Icinga Patch</xref>.</p>
-    </section>
-    <section>
-      <title>Deploy the Infoblox patch</title>
-      <p>Deploy the Infoblox patch.</p>
-    </section>
-    <section id="patch-after">
-      <title>Configure LDAP to enable CLI and use Keystone v3</title>
-      <p>By default, the HP Helion OpenStack Carrier Grade services are configured to use Keystone
-        v2 authorization. The services need to be modified to use Keystone v3.  Users will not be
-        able to execute OpenStack CLI commands until the specific changes are made on all three
-        controller nodes in the non-KVM region. </p>
-      <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581">Configuring LDAP CLI Support</xref></p>
-    </section>
+    <section
+      conref="conrefs/CGH-2-conref-generate-init-23.dita#ReusableComponent_q43_nbx_vt/hos-cloud"/>
+    <section conref="conrefs/CGH-2-conref-hlm-deploy-24.dita#ReusableComponent_urx_xbx_vt/hdeploy"/>
+    <section
+      conref="conrefs/CGH-2-conref-ldap-config-25.dita#ReusableComponent_y3j_1cx_vt/patch-after"/>
     <section id="next-step">
       <title>Next Step</title>
       <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon Interface</xref></p>

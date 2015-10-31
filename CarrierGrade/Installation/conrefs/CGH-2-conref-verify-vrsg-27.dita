@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE oXygen:ReusableComponent [
+<!ELEMENT oXygen:ReusableComponent (oXygen:ComponentDescription, oXygen:ComponentDefinition)>
+<!ATTLIST oXygen:ReusableComponent 
+    xmlns:oXygen CDATA #FIXED "http://www.oxygenxml.com/ns/dita/reuse" 
+    id CDATA #IMPLIED
+    domains CDATA "(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)     (topic oXygen-reuse-d) "
+    class CDATA "- topic/topic oXygen:ReusableComponent/oXygen:ReusableComponent "    
+    xmlns:ditaarch CDATA #FIXED "http://dita.oasis-open.org/architecture/2005/"
+    ditaarch:DITAArchVersion CDATA #FIXED "1.2" 
+    >
+<!ELEMENT oXygen:ComponentDescription (#PCDATA)>
+<!ATTLIST oXygen:ComponentDescription 
+ class CDATA "- topic/title oXygen:ReusableComponent/oXygen:ComponentDescription ">
+<!ELEMENT oXygen:ComponentDefinition ANY>
+<!ATTLIST oXygen:ComponentDefinition
+    class CDATA "- topic/body oXygen:ReusableComponent/oXygen:ComponentDefinition ">
+
+<!ENTITY % dtd PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+%dtd;
+
+]>
+<oXygen:ReusableComponent id="ReusableComponent_ich_gcx_vt">
+    <oXygen:ComponentDescription>Verify the VRS-G Node</oXygen:ComponentDescription>
+    <oXygen:ComponentDefinition><section id="section_mch_gcx_vt"><title>Verify the VRS-G Node</title> The installation creates a VRS-G node as part of the cloud deployment. Use the following command to verify that the VRS-G is active: <codeblock>show vswitch-controller vswitches  </codeblock><p>The output for the command should appear similar to the following image:</p> <image href="../../../media/CGH-2-verify-vrsg-alpha.png" width="400" id="image_ip4_jnq_nt"/> <!-- <image href="../../media/CGH-install-verify-vrsg.png" id="image_x3t_jvp_vs"/> --> <p>Verify that the domain name and DNS server are listed in the <codeph>/etc/resolv.conf</codeph> file on all the cloud nodes,.</p><codeblock>cat etc/resolv.conf          </codeblock><image href="../../../media/CGH-install-resolv-conf.jpg" id="image_idc_5wp_vs"><alt>Verify VRS-G </alt></image></section></oXygen:ComponentDefinition>
+</oXygen:ReusableComponent>

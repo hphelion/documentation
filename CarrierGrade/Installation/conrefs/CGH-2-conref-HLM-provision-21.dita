@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE oXygen:ReusableComponent [
+<!ELEMENT oXygen:ReusableComponent (oXygen:ComponentDescription, oXygen:ComponentDefinition)>
+<!ATTLIST oXygen:ReusableComponent 
+    xmlns:oXygen CDATA #FIXED "http://www.oxygenxml.com/ns/dita/reuse" 
+    id CDATA #IMPLIED
+    domains CDATA "(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)     (topic oXygen-reuse-d) "
+    class CDATA "- topic/topic oXygen:ReusableComponent/oXygen:ReusableComponent "    
+    xmlns:ditaarch CDATA #FIXED "http://dita.oasis-open.org/architecture/2005/"
+    ditaarch:DITAArchVersion CDATA #FIXED "1.2" 
+    >
+<!ELEMENT oXygen:ComponentDescription (#PCDATA)>
+<!ATTLIST oXygen:ComponentDescription 
+ class CDATA "- topic/title oXygen:ReusableComponent/oXygen:ComponentDescription ">
+<!ELEMENT oXygen:ComponentDefinition ANY>
+<!ATTLIST oXygen:ComponentDefinition
+    class CDATA "- topic/body oXygen:ReusableComponent/oXygen:ComponentDefinition ">
+
+<!ENTITY % dtd PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+%dtd;
+
+]>
+<oXygen:ReusableComponent id="ReusableComponent_vds_dbx_vt">
+    <oXygen:ComponentDescription>HLM Provision</oXygen:ComponentDescription>
+    <oXygen:ComponentDefinition><section id="create-a-new-cloud-template-and-bring-the-cloud-nodes-up"><title>Provision the cloud nodes and bring the cloud nodes up</title><ol><li>On the HLM host, use the following script to start the provisioning of the HP Helion OpenStack cloud: <codeblock>hlm provision &lt;cloudname&gt;          </codeblock><p>Where: <codeph>&lt;cloudname&gt;</codeph> is the name of the cloud you created. The script takes approximately 15 to 30 minutes.</p><p>This script prepares the bare metal servers for the HP Helion OpenStack Carrier Grade cloud installation including the hLinux operating system. The script also PXE boots the nodes specified in <codeph>node-provision.json</codeph> file and tracks the PXE boot completion process. The script also creates the <codeph>nodes.json</codeph> file in the directory. </p><p>You can log in to the iLO server management tool for each of the nodes to monitor the boot process. Consult yout iLO documentation for information on how to log into iLO. </p></li><li>Make sure the nodes are booted up using iLO. For example:<p><image href="../../../media/CGH-2-install-cobbler.png" width="600" id="image_c5k_d4b_kt"/></p>Once the baremetal nodes are provisioned, make sure the <codeph>nodes.json</codeph> file is generated. The <codeph>nodes.json</codeph> file will have entries of 3 controllers, 1 DCN Hosts, 1 VRS-G and the 2 compute proxy nodes.</li><li>Verify that each node in the <codeph>nodes.json</codeph> file is installed and active. <ol><li>Ping proxy node from HLM VM with the IP using IP specified in <codeph>nodes.json</codeph> file.</li><li>SSH to the compute proxy node from the HLM VM using IP specified in <codeph>nodes.json</codeph> file.</li></ol></li></ol></section></oXygen:ComponentDefinition>
+</oXygen:ReusableComponent>
