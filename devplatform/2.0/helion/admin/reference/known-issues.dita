@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6051">
-<title>HP Helion 2.0 Development Platform: Known Issues</title>
+<title>HPE Helion 2.0 Development Platform: Known Issues</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 2.0"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Security Engineer"/>
 <othermeta name="role" content="ISV Developer"/>
@@ -41,10 +41,10 @@
         the new MBUS IP.</p>
 </section>
 
-<section id="php-55-repositories"> <title>PHP 5.5 Repositories</title>
-<p>PHP 5.5 in contained in the default Docker image. This version is more recent than the one available in the standard Ubuntu repositories.</p>
-<p>To get updates for PHP 5.5 or add additional modules (globally or as user-defined requirements for applications), a third-party package repository must be added to the Allowed Repos list.</p>
-<p>Administrators can add the <xref href="https://launchpad.net/~ondrej/+archive/php5" scope="external" format="html" >PPA for PHP 5.5</xref> or import from a  repository supporting compatible packages via kato:</p>
+<section id="php-55-repositories"> <title>PHPE 5.5 Repositories</title>
+<p>PHPE 5.5 in contained in the default Docker image. This version is more recent than the one available in the standard Ubuntu repositories.</p>
+<p>To get updates for PHPE 5.5 or add additional modules (globally or as user-defined requirements for applications), a third-party package repository must be added to the Allowed Repos list.</p>
+<p>Administrators can add the <xref href="https://launchpad.net/~ondrej/+archive/php5" scope="external" format="html" >PPA for PHPE 5.5</xref> or import from a  repository supporting compatible packages via kato:</p>
 <codeblock>kato config push cloud_controller_ng allowed_repos \
 "deb http://ppa.launchpad.net/ondrej/php5/ubuntu precise main"</codeblock>
 </section>
