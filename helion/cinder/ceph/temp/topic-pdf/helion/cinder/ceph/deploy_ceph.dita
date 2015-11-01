@@ -2,7 +2,7 @@
   <title id="install-ceph" class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita" xtrc="title:1;4:28"> Ceph Configuration </title>
   <body class="- topic/body " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita" xtrc="body:1;5:9">
     <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita" xtrc="p:1;6:8">This page describes configuration, installation, and the integration of Ceph Block Storage
-      with HP Helion<tm tmtype="reg" class="- topic/tm " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita" xtrc="tm:1;7:38">OpenStack</tm>2.0. After the installation of Ceph you can
+      with HPE Helion<tm tmtype="reg" class="- topic/tm " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita" xtrc="tm:1;7:38">OpenStack</tm>2.0. After the installation of Ceph you can
       perform the cinder operation as documented in this page.
       <!--It also provides the procedure to perform cinder operation after Ceph deployment.--></p>
     <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita" xtrc="p:2;10:8">
@@ -28,7 +28,7 @@ cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-&lt;time&gt;
     <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita" xtrc="section:2;33:14">
       <title id="install-procedure" class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita" xtrc="title:3;34:37">Installation Procedure</title>
       <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita" xtrc="p:6;35:10">Perform the following procedures to configure, install, and the integrate the Ceph Block
-        Storage with HP Helion OpenStack 2.0.</p>
+        Storage with HPE Helion OpenStack 2.0.</p>
     </section>
     <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita" xtrc="section:3;38:14">
       <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita" xtrc="p:7;39:10">

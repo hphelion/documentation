@@ -69,7 +69,7 @@
           federation configurations.</li>
         <li>All end users authentication is available only via the Keystone API and OpenStackClient
           CLI.</li>
-        <li>No current HP documentation is available for this function.</li>
+        <li>No current HPE documentation is available for this function.</li>
         <li>Additional information can be found at <xref
             href="http://docs.openstack.org/developer/keystone/configure_federation.html"
             format="html" scope="external"
@@ -81,7 +81,7 @@
       <ul id="ul_az2_jpd_bt">
 
         
-        <li>Helion OpenStack MFA support is a custom configuration requiring HP Professional
+        <li>Helion OpenStack MFA support is a custom configuration requiring HPE Professional
           Services support.</li>
         <li>MFA drivers are not included with Helion OpenStack and need to be provided by a specific
           MFA vendor.</li>

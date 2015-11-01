@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_flx_j2b_ws">
-  <title>Beta 1: Installing HP Helion <tm tmtype="reg">OpenStack</tm> on Baremetal</title>
+  <title>Beta 1: Installing HPE Helion <tm tmtype="reg">OpenStack</tm> on Baremetal</title>
   <body>
     <section id="important-notes"><title>Important Notes</title>
       <ul>
         <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met.</li>
         <li>Make sure <b>all disks on the system(s) are wiped</b> before you begin the install.</li>
         <li>/dev/sda will be used for the OS.</li>
-        <li>Both Linux for HP Helion and HP Helion OpenStack are part of the ISO you
+        <li>Both Linux for HPE Helion and HPE Helion OpenStack are part of the ISO you
           will download from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
             format="html" scope="external">Helion Downloads</xref> page. There is only one download;
@@ -20,7 +20,7 @@
         <li>The machine hosting the deployer and all baremetal systems must be connected to a
           management network. Nodes on this management network must be able to reach the iLO
           subsystem of each baremetal system to enable host reboots as part of the install process.
-          The HP Helion OpenStack architecture requires that the IPMI network is a separate network
+          The HPE Helion OpenStack architecture requires that the IPMI network is a separate network
           and that a route exists from the management network to the IPMI network for iLO
           access.</li>
         <li>Note that the requirement to have a dedicated network for OS-install and system
@@ -34,7 +34,7 @@
       <ul>
         <li>Set up the iLO Advanced license in the iLO configuration. Make sure the iLO user has
           admin privileges.</li>
-        <li> HP Helion OpenStack 2.0 Beta 1 will detect and use the "BIOS" mode you have selected
+        <li> HPE Helion OpenStack 2.0 Beta 1 will detect and use the "BIOS" mode you have selected
           for each node; UEFI or legacy BIOS. UEFI support is new in Beta 1.</li>
         <li>Ensure that the network interface to be used for PXE installation has PXE enabled.</li>
         <li>Ensure that the other network interfaces have PXE disabled.</li>
@@ -46,7 +46,7 @@
     <section id="DeployerInstall">
       <title>Set up the Deployer</title>
       <ol>
-        <li>Download the HP Helion OpenStack Deployer ISO from the <xref
+        <li>Download the HPE Helion OpenStack Deployer ISO from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
             format="html" scope="external">Helion Downloads</xref> page after signing up and being
           approved for the program.</li>

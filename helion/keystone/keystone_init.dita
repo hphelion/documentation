@@ -4,7 +4,7 @@
   <title>Keystone Initial Configuration</title>
   <body>
     <section id="installation"><title>Installing Keystone</title>
-      <p>Keystone is a vital part of HP Helion OpenStack&#174;, and as such it is installed
+      <p>Keystone is a vital part of HPE Helion OpenStack&#174;, and as such it is installed
         automatically by the Helion OpenStack installer (just after MySQL and RabbitMQ). The
         recommended way of installing Keystone is to allow the default configuration used by the
         installer. Once your cloud is up and running, you can add features (like LDAP integration)

@@ -28,7 +28,7 @@
               <li>Installing and configuring vCenter Server</li>
               <li>Installing and configuring ESX server and ESX cluster</li>
               <li>Installing and configuring shared datastores</li>
-              <li>Establishing network connectivity between the ESX network and the HP Helion
+              <li>Establishing network connectivity between the ESX network and the HPE Helion
                 management network</li>
             </ul></li>
           <li>The VMware administration staff is responsible for the review of vCenter logs. These

@@ -2,7 +2,7 @@
   <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\hardware.dita" xtrc="title:1;4:10">Beta 1: Minimum Hardware Requirements</title>
   <body class="- topic/body " xtrf="C:\Users\sharmabi\git\documentation\helion\hardware.dita" xtrc="body:1;5:9">
     <section id="SupportedConfigs" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\hardware.dita" xtrc="section:1;6:36"> <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\hardware.dita" xtrc="title:2;6:44">Supported Configurations</title>
-      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\hardware.dita" xtrc="p:1;7:10">HP supports the following configurations for HP Helion <tm tmtype="reg" class="- topic/tm " xtrf="C:\Users\sharmabi\git\documentation\helion\hardware.dita" xtrc="tm:1;7:82">OpenStack</tm> deployment:</p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\hardware.dita" xtrc="p:1;7:10">HPE supports the following configurations for HPE Helion <tm tmtype="reg" class="- topic/tm " xtrf="C:\Users\sharmabi\git\documentation\helion\hardware.dita" xtrc="tm:1;7:82">OpenStack</tm> deployment:</p>
       <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\hardware.dita" xtrc="p:2;8:10">Storage Interconnects/Protocols</p>
       <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\hardware.dita" xtrc="ul:1;9:11">
         <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\hardware.dita" xtrc="li:1;10:13">1Gb or 10Gb Eth.</li>

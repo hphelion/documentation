@@ -3,16 +3,16 @@
 <topic xml:lang="en-us" id="topic12031">
   <title>Beta 1: Release Notes</title>
   <body>
-    <p>This document provides an overview of the features contained within HP Helion <tm
+    <p>This document provides an overview of the features contained within HPE Helion <tm
         tmtype="reg">OpenStack</tm> 2.0 Beta 1, including known issues and workarounds for this
       release:</p>
-    <section id="Features"><title>Features in HP Helion OpenStack 2.0 Beta 1</title>
+    <section id="Features"><title>Features in HPE Helion OpenStack 2.0 Beta 1</title>
       <p><b>New UEFI support</b></p>
       <p>Beta 1 introduces support for UEFI (which replaces the BIOS on newer servers), while
         continuing to support Legacy BIOS. Select the required mode on each node through its BIOS
         settings before beginning the install process. HOS 2.0 will detect and use the mode you have
         selected for each node.</p>
-      <p><b>Updated HP Helion OpenStack Services</b></p>
+      <p><b>Updated HPE Helion OpenStack Services</b></p>
       <p>We have included the core set of OpenStack services from the <xref
           href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo" scope="external" format="html"
           >Kilo release</xref> with the exception of limitations notated in this document.</p>
@@ -62,7 +62,7 @@
         <li>Anomaly and Prediction Engine</li>
       </ul><p>Monitoring is integrated for the following services: Logging, Neutron, Swift,
         Ceilometer, Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HP
-        Linux for HP Helion OpenStack.</p><p>Learn more about Monasca here: <xref
+        Linux for HPE Helion OpenStack.</p><p>Learn more about Monasca here: <xref
           href="monasca/monasca.dita">Monasca Overview</xref></p><p><b>Centralized Logging</b>
         &#151; Logging for the services below is enabled in the default configuration. You will have
         the ability to disable per-service logging as needed.</p><p>Logging is integrated for the
@@ -74,7 +74,7 @@
             href="supportedconfigs.dita">Supported Configurations</xref> and the installer will set
           up your environment.</li>
         <li>Manage the different phases of your cloud deployment with ease.</li>
-      </ul><p><b>Local Git repository for config tracking</b></p><p>In HP Helion OpenStack 2.0
+      </ul><p><b>Local Git repository for config tracking</b></p><p>In HPE Helion OpenStack 2.0
         versions, a local git repository is used to track configuration changes and for the config
         processor to gather configuration settings from. The operations work as explained below:</p><ul>
         <li>Operations under ~/helion are under the aegis of git. You’ll need to commit any config
@@ -90,7 +90,7 @@
           <!--
 <p><b>Backup and Restore Capabilities for the Control Plane</b> &#154; Allows you to backup and recover your Helion OpenStack</tm> environment with RPO=0.</p>
 --><p><b>NIC
-          Mapping Feature</b></p><p>The new NIC mappings feature in HP Helion OpenStack Beta 1
+          Mapping Feature</b></p><p>The new NIC mappings feature in HPE Helion OpenStack Beta 1
         allows the cloud administrator to map network interface names to PCI bus addresses. This is
         important because for well-understood reasons, Linux can sometimes name the network
         interfaces in a pseudo-random order. So in a cluster of identical machines, the <b>eth3</b>
@@ -115,11 +115,11 @@
       <title>Limitations in this Release</title>
       <p><b>Helion examples</b></p>
       <p> The examples directly shipped with Beta1 inadvertently include a directory named
-        "mid-size." This example is known not to work with the Beta 1 version of HP Helion OpenStack
+        "mid-size." This example is known not to work with the Beta 1 version of HPE Helion OpenStack
         and should not be deployed.</p>
       <p><b>TLS is not supported</b></p>
       <p>TLS is not supported for any traffic in Beta1.</p>
-      <p><b>HP Helion Development Platform</b></p>
+      <p><b>HPE Helion Development Platform</b></p>
       <p>Helion Development Platform is not supported on Beta 1.</p>
       <p><b>Installing Swift</b></p>
       <p>Swift installs with the following limitations: </p>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?><?workdir /C:\Users\sharmabi\git\documentation\helion\cinder\ceph\temp\topic-pdf\helion?><?workdir-uri file:/C:/Users/sharmabi/git/documentation/helion/cinder/ceph/temp/topic-pdf/helion/?><?path2project out\topic-pdf\?><?path2project-uri out/topic-pdf/?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="topic_u3v_1yz_ct" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\Users\sharmabi\git\documentation\helion\using_git.dita" xtrc="topic:1;3:30">
   <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\using_git.dita" xtrc="title:1;4:10">Using the local git repository for configuration</title>
   <body class="- topic/body " xtrf="C:\Users\sharmabi\git\documentation\helion\using_git.dita" xtrc="body:1;5:9">
-    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\using_git.dita" xtrc="p:1;6:8">In HP Helion <tm tmtype="reg" class="- topic/tm " xtrf="C:\Users\sharmabi\git\documentation\helion\using_git.dita" xtrc="tm:1;6:38">OpenStack</tm> 2.0 versions, inclusding Beta1, a local git
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\using_git.dita" xtrc="p:1;6:8">In HPE Helion <tm tmtype="reg" class="- topic/tm " xtrf="C:\Users\sharmabi\git\documentation\helion\using_git.dita" xtrc="tm:1;6:38">OpenStack</tm> 2.0 versions, inclusding Beta1, a local git
       repository is used to track configuration changes and for the config processor to look to for
       configuration changes. The introduction of a git workflow also means that your configuration
       history is maintained, making rollbacks easier as well as keeping a record of previous
@@ -9,14 +9,14 @@
     <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\using_git.dita" xtrc="p:2;11:8">The git repository, which is installed by the deployer, is local to your cloud servers, but
       in other ways functions like a remote git repository.</p>
  
-    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\using_git.dita" xtrc="p:3;14:8">Below is a representation of the typical git workflow in HP Helion OpenStack 2.0. </p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\using_git.dita" xtrc="p:3;14:8">Below is a representation of the typical git workflow in HPE Helion OpenStack 2.0. </p>
     <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\using_git.dita" xtrc="p:4;15:8"><image href="../media/install/gitWorkflow.png" id="image_cbv_wg4_dt" placement="inline" class="- topic/image " xtrf="C:\Users\sharmabi\git\documentation\helion\using_git.dita" xtrc="image:1;15:78"/></p>
     <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\using_git.dita" xtrc="p:5;16:9"/>
     <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\using_git.dita" xtrc="p:6;17:8">The git repository provides a way for you to merge changes that you pull down as "upstream"
       updates, and allows you to manage your own configuration changes. </p>
     <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\using_git.dita" xtrc="section:1;19:14">
       <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\using_git.dita" xtrc="title:2;20:14">Initialization on a new deployment</title>
-      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\using_git.dita" xtrc="p:7;21:10">On a system new to HP Helion OpenStack 2.0, the deployer will prepare a git repository
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\using_git.dita" xtrc="p:7;21:10">On a system new to HPE Helion OpenStack 2.0, the deployer will prepare a git repository
         under ~/helion. The deployer provisioning runs the hlm-init-deployer script automatically;
         this calls ansible-playbook -i hosts/localhost git-00-initialise.yml.</p>
       <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\using_git.dita" xtrc="p:8;24:10">As a result, the ~/helion directory is initialized as a git repo (if it's empty). It is
@@ -69,7 +69,7 @@
     </section>
     <!--    <section>
       <title>When receiving a new Helion drop</title>
-      <note>The steps for new drops will only be run on HP Helion OpenStack 2.0 Beta 1 and later.
+      <note>The steps for new drops will only be run on HPE Helion OpenStack 2.0 Beta 1 and later.
         The git repository is not present in Beta 0.</note>
       <p>When you are ready to deploy a new deployer image, you must merge any configuration changes
         into your own previous config; this is a manual step, although the standard git tools may be

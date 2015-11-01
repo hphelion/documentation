@@ -2,11 +2,11 @@
   <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="title:1;4:10">Beta 1: Supported Configuration</title>
   <body class="- topic/body " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="body:1;5:9">
     <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="p:1;6:8">The following list summaries the qualified configurations and their purpose.</p>
-    <note class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="note:1;7:11">While the hardware requirements are similar to those of HP Helion <tm tmtype="reg" class="- topic/tm " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="tm:1;8:10">OpenStack</tm> 1.1, this is a completely new installation, not an upgrade or update
+    <note class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="note:1;7:11">While the hardware requirements are similar to those of HPE Helion <tm tmtype="reg" class="- topic/tm " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="tm:1;8:10">OpenStack</tm> 1.1, this is a completely new installation, not an upgrade or update
       operation.</note>
     <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="section:1;10:14"><title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="title:2;10:21">Entry Scale Cloud</title> This is very similar to the Beta0 example but has a
       more complex network configuration. At minimum scale it can be used as a POC (3-4 nodes) but
-      can also be scaled up to HP Helion OpenStack 1.1 levels, that is, up to 100 compute nodes. The
+      can also be scaled up to HPE Helion OpenStack 1.1 levels, that is, up to 100 compute nodes. The
       network configuration supports separation of networks for: <ul id="ul_l1v_nbz_2t" class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="ul:1;13:89">
         <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="li:1;14:13">Management</li>
         <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="li:2;15:13">External API</li>

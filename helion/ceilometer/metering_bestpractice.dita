@@ -2,15 +2,15 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic11470">
-    <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Best Practices and
+    <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Best Practices and
         Optimization</title>
     <prolog>
         <metadata>
             <othermeta name="layout" content="default"/>
-            <othermeta name="product-version" content="HP Helion Openstack"/>
-            <othermeta name="product-version" content="HP Helion Openstack 1.1"/>
-            <othermeta name="product-version1" content="HP Helion Openstack"/>
-            <othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+            <othermeta name="product-version" content="HPE Helion Openstack"/>
+            <othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
+            <othermeta name="product-version1" content="HPE Helion Openstack"/>
+            <othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
         </metadata>
     </prolog>
     <body>
@@ -139,7 +139,7 @@ instance_usage_audit_period=hour</codeblock>
             <title><b>Improving Reporting API responsiveness</b></title>
             <p>Reporting APIs are the main access to the Metering data stored in Ceilometer. These
                 APIs are access by Horizon to provide basic usage data and information.</p>
-            <p>HP Helion OpenStack uses Apache2 Web Server to serve the API access. It is possible
+            <p>HPE Helion OpenStack uses Apache2 Web Server to serve the API access. It is possible
                 to tune performance to optimize the front-end and back-end (database). Our
                 experience indicates that an excessive increase of concurrent access to the
                 front-end tends to put strain in the database. We are striving to improve
@@ -208,7 +208,7 @@ ceilome+ 31433 31427 10 16:29 ? 00:02:43 /usr/sbin/apache2 -k start</codeblock>
                 http_proxy HTTP_PROXY HTTPS_PROXY</note>
         </section>
         <section><title>Notification White-listing and Polling Strategies</title>
-            <p>In HP Helion 2.0 we have adopted a strategy to reduce the amount of data that is sent
+            <p>In HPE Helion 2.0 we have adopted a strategy to reduce the amount of data that is sent
                 to the storage. The main reason is that we are currently using a SQL based cluster
                 that is not highly indicated for big data. Ceilometer can be controlled for the data
                 that collects using the pipeline.yaml file. This configuration file is located in

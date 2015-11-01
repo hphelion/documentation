@@ -13,7 +13,7 @@
       <ul>
         <li><xref href="#alarmdefinitions/haproxy">HAProxy</xref></li>
         <li><xref href="#alarmdefinitions/heat">Heat</xref></li>
-        <li><xref href="#alarmdefinitions/hlinux">Linux for HP Helion</xref></li>
+        <li><xref href="#alarmdefinitions/hlinux">Linux for HPE Helion</xref></li>
         <li><xref href="#alarmdefinitions/logging">Logging</xref></li>
         <li><xref href="#alarmdefinitions/monasca">Monasca</xref></li>
         <li><xref href="#alarmdefinitions/mysql">MySQL</xref></li>
@@ -120,7 +120,7 @@
       </table>
     </section>
     <section id="hlinux">
-      <title>Linux for HP Helion</title>
+      <title>Linux for HPE Helion</title>
       <table frame="all" rowsep="1" colsep="1" id="table_ik5_3km_zs">
         <tgroup cols="4">
           <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -797,7 +797,7 @@
                 <p>If the server is running and memcached is running, there may be a network problem
                   blocking port 11211.</p>
                 <p>If you see sporadic alarms on different servers, the system may be running out of
-                  resources. Contact HP Support for advise.</p>
+                  resources. Contact HPE Support for advise.</p>
               </entry>
             </row>
             <row>
