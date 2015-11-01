@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic18277">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Back Up and Restore</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.0: Back Up and Restore</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.01"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.01"/>
 <othermeta name="role" content="System Engineer"/>
 <othermeta name="role" content="Systems Administrator"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.01"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion Openstack 1.01"/>
 </metadata>
 </prolog>
 <body>
@@ -21,7 +21,7 @@
 <p>
 
 </p>
-<p>The default HP Helion OpenStack environment consists of a three-node cluster for most of the services plus other services such as RabbitMQ and MySQL. It is resilient to individual node failures as well as network split-brain situations.</p>
+<p>The default HPE Helion OpenStack environment consists of a three-node cluster for most of the services plus other services such as RabbitMQ and MySQL. It is resilient to individual node failures as well as network split-brain situations.</p>
 <p>However, as part of your maintenance of the environment, you should create a back up of each component and be prepared to restore any component, should it become necessary.</p>
 <ul>
 <li>
@@ -140,7 +140,7 @@ export UNDERCLOUD_CODN_HTTPS_PROXY=http://&lt;proxy.server.ip&gt;
 <p>A message similar to the following displays:</p>
 
 <codeblock>
-<codeph>HP Helion Community Edition Version Backup Procedure
+<codeph>HPE Helion Community Edition Version Backup Procedure
 
 Destination Host Folder: /root/backup/
 Starting backup procedure for Seed...
@@ -208,7 +208,7 @@ Restore Procedure Completed
 <codeblock>
 <codeph>root@kvmhost:~/tripleo/tripleo-incubator/scripts# ./hp_ced_restore.sh --seed -f /root/backup/backup_14-09-02-12-32 -c /root/export.prop
 
-HP Helion Community Edition Version Restore Procedure
+HPE Helion Community Edition Version Restore Procedure
 
 Source Host Folder: /root/backup/backup_14-09-02-12-32
 Backup from local host. Local Backup Folder is set to: /root/backup/backup_14-09-02-12-32
@@ -275,7 +275,7 @@ Backup procedure completed.
 <codeblock>
   <codeph>    root@kvmhost:~/tripleo/tripleo-incubator/scripts# ./hp_ced_backup.sh --undercloud -f /root/backup/
 
-    HP Helion Community Edition Version (unknown) Backup Procedure
+    HPE Helion Community Edition Version (unknown) Backup Procedure
 
     Destination Host Folder: /root/backup/
     Starting of Backup procedure for undercloud...
@@ -419,7 +419,7 @@ Backup procedure completed
 <codeblock>
 <codeph>./hp_ced_backup.sh --overcloud -f /root/backup/
 
-HP Helion Community Edition Version Backup Procedure
+HPE Helion Community Edition Version Backup Procedure
 
 Destination Host Folder: /root/backup/
 Starting of Backup procedure for overcloud...
@@ -476,7 +476,7 @@ Restore procedure completed
 <codeblock>
 <codeph>./hp_ced_restore.sh --overcloud -f /root/backup/backup_14-09-03-12-30
 
-HP Helion Community Edition Version Restore Procedure
+HPE Helion Community Edition Version Restore Procedure
 
 Source Host Folder: /root/backup/backup_14-09-03-12-30
 Backup from local host. Local Backup Folder is set to: /root/backup/backup_14-09-03-12-30
@@ -533,7 +533,7 @@ Backup procedure completed
 <codeblock>
 <codeph>./hp_ced_backup.sh --database -f /root/backup/
 
-HP Helion Community Edition Version Backup Procedure
+HPE Helion Community Edition Version Backup Procedure
 
 Destination Host Folder: /root/backup/
 Starting of Backup procedure for overcloud database...
@@ -604,7 +604,7 @@ Restore procedure completed
 <codeblock>
 <codeph>./hp_ced_restore.sh --database -f /root/backup/backup_14-09-03-12-46
 
-HP Helion Community Edition Version Restore Procedure
+HPE Helion Community Edition Version Restore Procedure
 
 Source Host Folder: /root/backup/backup_14-09-03-12-46
 Backup from local host. Local Backup Folder is set to: /root/backup/backup_14-09-03-12-46
@@ -653,7 +653,7 @@ After the management controller is rebuilt, use the following steps below to dis
 <p>The following lists all of the command options for the backup script, <codeph>hp_ced_backup.sh</codeph>.</p>
 <codeblock>
   <codeph>    root@kvmhost:~/tripleo/tripleo-incubator/scripts# ./hp_ced_backup.sh --help
-    HP Helion Community Edition Version Backup Procedure
+    HPE Helion Community Edition Version Backup Procedure
     Usage: hp_ced_backup.sh [options]
     The Backup tool can back up the following:
         1. seed
@@ -680,7 +680,7 @@ After the management controller is rebuilt, use the following steps below to dis
 <codeblock>
   <codeph>    root@kvmhost:~/tripleo/tripleo-incubator/scripts# ./hp_ced_restore.sh --help
 
-    HP Helion Community Edition Version Restore Procedure
+    HPE Helion Community Edition Version Restore Procedure
 
     Usage: hp_ced_restore.sh [options]
 

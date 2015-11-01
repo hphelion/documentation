@@ -2,11 +2,11 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="neutron_overview">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Networking Service (Neutron)
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Networking Service (Neutron)
     Overview</title>
   <body>
-    <p>HP Helion OpenStack Networking is a virtual networking service that leverages the OpenStack
-      Neutron service to provide network connectivity and addressing to HP Helion OpenStack Compute
+    <p>HPE Helion OpenStack Networking is a virtual networking service that leverages the OpenStack
+      Neutron service to provide network connectivity and addressing to HPE Helion OpenStack Compute
       service devices.</p>
     <p>The Networking service also provides an API to configure and manage a variety of network
       services.</p>
@@ -70,7 +70,7 @@ ansible-playbook -i hosts/verb_hosts neutron-reconfigure.yml</codeblock>
       <p>For information on how to operate your cloud we suggest you read the <xref
           href="http://docs.openstack.org/ops/" scope="external" format="html">OpenStack Operations
           Guide</xref>. The <i>Architecture</i> section contains useful information about how an
-        OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these
+        OpenStack Cloud is put together. However, the HPE Helion OpenStack takes care of these
         details for you. The <i>Operations</i> section contains information on how to manage the
         system.</p>
     </section>

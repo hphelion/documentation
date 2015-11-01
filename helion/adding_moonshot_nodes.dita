@@ -6,18 +6,18 @@
     <p>
       <note type="important">Moonshots are supported as compute nodes.</note>
     </p>
-    <p>HP Moonshot Servers are designed and tailored for specific workloads to deliver optimum
+    <p>HPE Moonshot Servers are designed and tailored for specific workloads to deliver optimum
       performance. These support a wide range of complex IT demands right from cloud based
-      applications to Social Media, Big Data and Mobility. HP Moonshot Server is the world’s first
+      applications to Social Media, Big Data and Mobility. HPE Moonshot Server is the world’s first
       software defined web server that will accelerate innovation while delivering breakthrough
       efficiency and scale.</p>
     <section>
       <title>Supported Moonshot Servers</title>
     </section>
-    <p>The HP Moonshot Servers are now verified hardware to run HP Helion OpenStack. The supported
+    <p>The HPE Moonshot Servers are now verified hardware to run HPE Helion OpenStack. The supported
       Moonshot Servers are :<ul id="ul_m44_rpt_mt">
-        <li>HP ProLiant m710 Server Cartridge</li>
-        <li>HP ProLiant m300 Server Cartridge</li>
+        <li>HPE ProLiant m710 Server Cartridge</li>
+        <li>HPE ProLiant m300 Server Cartridge</li>
       </ul></p>
     <section>
       <title>Configure Moonshot Nodes</title>

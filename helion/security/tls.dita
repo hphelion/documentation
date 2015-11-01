@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_yym_nps_4t">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Enabling TLS for Public Endpoints</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Enabling TLS for Public Endpoints</title>
   <body>
 
     <section id="intro">
@@ -9,13 +9,13 @@
       
       <p>The Transport Layer Security (TLS) protocol, successor of SSL, provides the mechanisms to
         ensure authentication, non-repudiation, confidentiality, and integrity of user
-        communications to the HP Helion OpenStack services from public endpoints.</p>
+        communications to the HPE Helion OpenStack services from public endpoints.</p>
       <p>OpenStack endpoints are HTTP (REST) services providing APIs to other OpenStack services on the
         management network. All traffic to OpenStack services coming in on the public endpoints are
         secured using TLS connections.</p>
       <p/>
     </section>
-<section> All of the HP Helion OpenStack 2.0 example cloud models ship with TLS enabled on the
+<section> All of the HPE Helion OpenStack 2.0 example cloud models ship with TLS enabled on the
       public API. After installing, you must decide if you want to use a fully qualified domain name
       (FQDN) or IP addresses for the Public URLs. Because this can't be changed after deployment we
       ship the examples in a state where they will fail when the config processor is run unless you

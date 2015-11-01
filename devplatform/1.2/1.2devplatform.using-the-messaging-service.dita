@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3880">
-<title>HP Helion 1.2 Development Platform: Using the Messaging Service</title>
+<title>HPE Helion 1.2 Development Platform: Using the Messaging Service</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.2"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="System Engineer"/>
 <othermeta name="role" content="Cloud Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.2"/>
 </metadata>
 </prolog>
 <body>
@@ -45,7 +45,7 @@
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ol>
-<li>Install the <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >HP Helion Development Platform</xref>. </li>
+<li>Install the <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >HPE Helion Development Platform</xref>. </li>
 <li>
           <xref href="1.2devplatform_commercial_install.dita#topic24073/installing-services" type="section" >Configure the services</xref>.</li>
 </ol>
@@ -107,7 +107,7 @@
 <li>Click on <b>Manage Cluster</b> next to your cluster.<!--A BR tag was used here in the original source.--><image href="../../media/usingRMQ3.png" placement="break"/>
 </li>
 <li>A new browser window will open with the log-in screen for the RabbitMQ cluster. Enter the same
-          username and password you used to log in to HP Helion <tm tmtype="reg">OpenStack</tm> when
+          username and password you used to log in to HPE Helion <tm tmtype="reg">OpenStack</tm> when
           creating the RabbitMQ cluster and select <b>Login</b>.<image
             href="../../media/usingRMQ4.png" placement="break" scale="50"/>
         </li>
@@ -124,7 +124,7 @@
 <p>For more information on using RabbitMQ and managing the RabbitMQ cluster, visit the <xref href="https://www.rabbitmq.com/documentation.html" scope="external" format="html" >RabbitMQ documentation site</xref>.</p>
 </li>
 <li>
-  <p>For more information using HP Helion OpenStack visit the <xref href="../../commercial/GA1/1.1commercial.index.dita" >documentation page</xref>.</p>
+  <p>For more information using HPE Helion OpenStack visit the <xref href="../../commercial/GA1/1.1commercial.index.dita" >documentation page</xref>.</p>
 </li>
 </ul>
 <p>

@@ -7,7 +7,7 @@
       restore process for your data. Freezer executes backups and restores as jobs, and executes
       these jobs independently and/or as managed sessions (multiple jobs in multiple machines
       sharing a state).</p>
-    <p>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 supports backup and restore of control plane
+    <p>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0 supports backup and restore of control plane
       services. It comes with playbooks and procedures to recover the control plane from various
       disaster scenarios.</p>
     <p>The following features are supported:</p>
@@ -138,7 +138,7 @@
       <ul id="ul_glx_gt3_dt">
         <li>Backup and Restore of the data on the control plane nodes were tested (Compute nodes and
           Deployer node backups are in the build, but not tested)</li>
-        <li>Upgrade from HP Helion OpenStack 2.0 Beta 1 to HP Helion OpenStack 2.0 Beta 2 is not
+        <li>Upgrade from HPE Helion OpenStack 2.0 Beta 1 to HPE Helion OpenStack 2.0 Beta 2 is not
           supported.</li>
         <li>ESX Cloud deployment is not supported.</li>
         <li>The Freezer Web UI Horizon panels are not in this release.</li>

@@ -2,9 +2,9 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
  
 <map xml:lang="en" linking="none" locktitle="no">
-<title>HP Helion Development Platform</title>
+<title>HPE Helion Development Platform</title>
   <topicref href="1.3/devplatform.index.dita"
-    navtitle="HP Helion Development Platform 1.3" locktitle="yes">
+    navtitle="HPE Helion Development Platform 1.3" locktitle="yes">
     <!--permalink: /helion/devplatform/eula/-->
     <!--permalink: /helion/devplatform/whatsnew/-->
     <topicref href="1.3/devplatform.whatsnew.dita" locktitle="yes" navtitle="What's New"/>
@@ -43,7 +43,7 @@
         <topicref href="1.3/installation/devplatform.horizonui.install.dita"
           navtitle="Install the Horizon UI Panels" locktitle="yes"/>
         <topicref href="1.3/installation/devplatform_install_platform.dita"
-          navtitle="Install the HP Helion Development Platform (no services)" locktitle="yes"/>
+          navtitle="Install the HPE Helion Development Platform (no services)" locktitle="yes"/>
         <topicref href="1.3/installation/devplatform_install_ALS.dita"
           navtitle="Install the Application Lifecycle Service" locktitle="yes"/>
         <topicref href="1.3/installation/devplatform_install_database.dita"
@@ -209,13 +209,13 @@
         <topicref href="1.3/workbook/messaging/messaging.node.dita" locktitle="yes"
           navtitle="Node RabbitMQ Messaging Sample"/>
       </topichead>
-      <topichead navtitle="PHP Code Samples">
+      <topichead navtitle="PHPE Code Samples">
         <topicref href="1.3/workbook/helloworld/helloworld.php.dita" locktitle="yes"
-          navtitle="PHP Hello World Sample "/>
+          navtitle="PHPE Hello World Sample "/>
         <topicref href="1.3/workbook/database/database.php.dita" locktitle="yes"
-          navtitle="PHP MySQL Database Sample"/>
+          navtitle="PHPE MySQL Database Sample"/>
         <topicref href="1.3/workbook/messaging/messaging.php.dita" locktitle="yes"
-          navtitle="PHP RabbitMQ Messaging Sample"/>
+          navtitle="PHPE RabbitMQ Messaging Sample"/>
       </topichead>
       <!--permalink: /helion/devplatform/workbook/database/node/-->
       <!--permalink: /helion/devplatform/workbook/database/php/-->

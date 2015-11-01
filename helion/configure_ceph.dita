@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="config_ceph">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for Ceph Block Storage
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for Ceph Block Storage
     Backend</title>
   <body>
     <p>This page describes how to configure your Ceph backend for the Helion Entry Scale Cloud with
@@ -108,7 +108,7 @@
         <li>
           <p><codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph></p>
           <p>The <codeph>user_model.yml</codeph> has the editable values for the different pools
-            created by HP Helion OpenStack.</p>
+            created by HPE Helion OpenStack.</p>
         </li>
       </ul>
       <p>Commit your configuration to a <xref href="using_git.dita">local repository</xref>: <codeblock>cd ~/helion/hos/ansible

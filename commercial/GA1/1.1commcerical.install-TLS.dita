@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic6223">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: TLS Support</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1: TLS Support</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion 1.1"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Security Architect"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Application Architect"/>
 <othermeta name="role" content="Thom L, Tom C, Nancy M"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -30,7 +30,7 @@
 * Lynne Christofanelli  for HW Support qualified with hLinux
 * Marty Duey for third party HW support (IHV Support)
 -->
-<p>The Transport Layer Security (TLS) protocol, successor of SSL, provides the mechanisms to ensure authentication, non-repudiation, confidentiality, and integrity of user communications to the HP Helion OpenStack services and between the HP Helion OpenStack services themselves.</p>
+<p>The Transport Layer Security (TLS) protocol, successor of SSL, provides the mechanisms to ensure authentication, non-repudiation, confidentiality, and integrity of user communications to the HPE Helion OpenStack services and between the HPE Helion OpenStack services themselves.</p>
 <p>OpenStack endpoints are HTTP services providing APIs to other OpenStack services on the management network. All traffic to OpenStack services, both internal and external, are secured using  TLS connections.</p>
 <p>The following secure service endpoints and their associated ports use TLS:</p>
 <codeblock>
@@ -52,7 +52,7 @@ sherpa              21131
 swift-proxy         8080
 </codeph>
 </codeblock>
-<p>The TLS connections are facilitated by providing each node with a signed certificate from an internal certificate authority server (Ephemeral CA server) that is built into HP Helion OpenStack and installed on the Overcloud Controller nodes. These certificates are regenerated frequently - typically at least every 12 hours. The Helion Ephemeral certificate authority (CA) server uses a private key to sign these certificates provided to the OpenStack services, and an associated public certificate can be used to validate these newly signed certs. This key/cert pair can either be generated at installation time or be provided by the installer as an input to the installation process.  If you would like to use certificates from your own CA, please see <xref href="../../commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita">Configuring support for customer-provided certificates</xref>.</p>
+<p>The TLS connections are facilitated by providing each node with a signed certificate from an internal certificate authority server (Ephemeral CA server) that is built into HPE Helion OpenStack and installed on the Overcloud Controller nodes. These certificates are regenerated frequently - typically at least every 12 hours. The Helion Ephemeral certificate authority (CA) server uses a private key to sign these certificates provided to the OpenStack services, and an associated public certificate can be used to validate these newly signed certs. This key/cert pair can either be generated at installation time or be provided by the installer as an input to the installation process.  If you would like to use certificates from your own CA, please see <xref href="../../commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita">Configuring support for customer-provided certificates</xref>.</p>
 <p>If the deployer does not wish to generate the key/cert pair, the installer software will generate this pair and place the generated key and certificate at /root/eca.key and /root/eca.crt, respectively, on the seed.</p>
 <p>If the deployer wishes to provide an intermediary CA cert/key pair, they should be placed on the seed before deployment at /root/eca.key and /root/eca.crt by running the following copy commands:</p>
 <codeblock>

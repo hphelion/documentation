@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13345">
-<title>HP Helion Public Cloud CLI Software for Windows PowerShell Compute Examples</title>
+<title>HPE Helion Public Cloud CLI Software for Windows PowerShell Compute Examples</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,7 +12,7 @@
 <!--PUBLISHED-->
  <!--./publiccloud/cli.windows.2.compute.md-->
  <!--permalink: /publiccloud/cli/windows/compute/--></p>
-<p>This page provides you some examples of how to use the various commands (sometimes called "cmdlets") for HP Helion Public Cloud CLI software for Windows PowerShell implementation of Compute.</p>
+<p>This page provides you some examples of how to use the various commands (sometimes called "cmdlets") for HPE Helion Public Cloud CLI software for Windows PowerShell implementation of Compute.</p>
 <ul>
 <li>
 <xref type="section" href="#topic13345/Navigation">Navigation</xref>
@@ -41,7 +41,7 @@
 </ul>
 <p><b>Note</b>: Use <codeph>get-help CMDLET -detailed</codeph> for details about the syntax of each of the cmdlets shown.  Just replace <codeph>CMDLET</codeph> with the command you want to learn about.  For example, to find the syntax for the <codeph>New-Server</codeph> cmdlet you could use <codeph>get-help New-Server -detailed</codeph>.</p>
 <section id="Navigation"> <title>Navigation</title>
-<p>To execute commands in Windows PowerShell, first open a Windows PowerShell window as Administrator.  Under the Start menu, it is typically under <codeph>All Programs &gt; Accessories &gt; Windows PowerShell</codeph>.  Select the shell appropriate to your system, either the 64-bit or 32-bit version.  If the prompt is not already at <codeph>PS HPCS:\&gt;</codeph> then enter the HP Helion Public Cloud Services CLI by entering:</p>
+<p>To execute commands in Windows PowerShell, first open a Windows PowerShell window as Administrator.  Under the Start menu, it is typically under <codeph>All Programs &gt; Accessories &gt; Windows PowerShell</codeph>.  Select the shell appropriate to your system, either the 64-bit or 32-bit version.  If the prompt is not already at <codeph>PS HPCS:\&gt;</codeph> then enter the HPE Helion Public Cloud Services CLI by entering:</p>
 <codeblock>
 PS C:\&gt; cd HPCS:
 </codeblock>

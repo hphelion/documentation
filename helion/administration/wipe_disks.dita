@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="wipe_disks">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Pre-Installation Disk Cleanup</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Pre-Installation Disk Cleanup</title>
   <body>
     <section id="about">
       <p>You may have a need to wipe the disks of one or more of the nodes in your Cloud. There is
         an Ansible playbook included as part of the installation that will assist in this tasks.</p>
     </section>
     <section id="prereq"><title>Pre-requisites</title>
-      <p>If you're wanting to wipe your disks but you've previously run through a HP Helion OpenStack
+      <p>If you're wanting to wipe your disks but you've previously run through a HPE Helion OpenStack
         installation, chances are you will get an error telling you that <codeph>osconfig</codeph>
         has already run on your nodes. In order to successfully use the
           <codeph>wipe_disks.yml</codeph> playbook below you will need to SSH to each of the nodes

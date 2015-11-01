@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en" linking="none" locktitle="no">
-  <title>HP Helion</title>
+  <title>HPE Helion</title>
   <topicmeta>
     <copyright>
       <copyryear year="2015"/>
-      <copyrholder>HP Helion</copyrholder>
+      <copyrholder>HPE Helion</copyrholder>
     </copyright>
     <prodinfo>
-      <prodname>HP Helion</prodname>
+      <prodname>HPE Helion</prodname>
       <vrmlist>
         <vrm version="4.1.0"/>
       </vrmlist>
@@ -17,9 +17,9 @@
   <topicref href="home.dita"/>
   <topicref href="helion/index.dita">
     <topicref href="helion/technical_overview.dita" navtitle="Technical Overview" locktitle="yes"/>
-    <topicref href="helion/kilo_features.dita" navtitle="HP Helion OpenStack 2.0 Kilo Features"
+    <topicref href="helion/kilo_features.dita" navtitle="HPE Helion OpenStack 2.0 Kilo Features"
       locktitle="yes"/>
-    <topicref href="helion/input_model.dita" navtitle="HP Helion OpenStack 2.0 Input Model"
+    <topicref href="helion/input_model.dita" navtitle="HPE Helion OpenStack 2.0 Input Model"
       locktitle="yes"/>
     <topicref href="helion/example_configs.dita" navtitle="Example Configurations" locktitle="yes"/>
     <topicref href="helion/hardware.dita" navtitle="Hardware Requirements" locktitle="yes"/>

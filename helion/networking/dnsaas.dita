@@ -2,15 +2,15 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="HP2.0DNSaaS">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: DNSaaS Installation and
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: DNSaaS Installation and
     Configuration</title>
   <body>
-    <p><b>This document describes the installation process for HP Helion OpenStack 2.0</b></p>
+    <p><b>This document describes the installation process for HPE Helion OpenStack 2.0</b></p>
     <p>Our managed DNS service, based on the OpenStack Designate project, is engineered to help you
       create, publish, and manage your DNS zones and records securely and efficiently to either a
       public or private DNS server network.</p>
     <p>It is important to read through this page before starting your installation as it explains
-      how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack</p>
+      how to install and configure DNS as a service (DNSaaS) for HPE Helion OpenStack</p>
     <note>These installation instructions assume that the associated project currently contains no
       instances (VMs). If this is not the case, see the instructions for <xref type="section"
         href="#HP2.0DNSaaS/increasequotas">increasing quotas</xref> to ensure you have enough space
@@ -64,7 +64,7 @@
           href="#HP2.0DNSaaS/increasequotas">increasing quotas</xref> to ensure you have enough
         space before you begin.</note>
       <ul>
-        <li>HP Helion OpenStack is successfully installed</li>
+        <li>HPE Helion OpenStack is successfully installed</li>
         <li>Download <xref type="section" href="#HP2.0DNSaaS/publication">DNSaaS Installer
             Image</xref>
         </li>
@@ -237,15 +237,15 @@
             <li>Click <b>Configure</b> in the top-right corner of the page to display the Configure
               dialog box.</li>
             <li>Click <b>Sign up Now</b> below the description in the Configure dialog box. The page
-              navigates to the HP Helion Product Catalog.</li>
-            <li>Click <b>Sign In</b> in the top of the page to open the HP Web ID dialog box.</li>
-            <li>Click <b>Sign Up for Web ID</b> to create log-in credentials. The HP WEB ID dialog
+              navigates to the HPE Helion Product Catalog.</li>
+            <li>Click <b>Sign In</b> in the top of the page to open the HPE Web ID dialog box.</li>
+            <li>Click <b>Sign Up for Web ID</b> to create log-in credentials. The HPE WEB ID dialog
               box is displayed.</li>
             <li>Enter the required details.</li>
             <li>Select the check box next to <b>I agree to the Terms of Use</b> to accept the terms
               and conditions.</li>
             <li>Click <b>Submit</b>. The credentials are authenticated and the account is created.
-              Once you register on the HP Helion Product Catalog, you are required to configure your
+              Once you register on the HPE Helion Product Catalog, you are required to configure your
               credentials.</li>
           </ol>
         </li>
@@ -447,7 +447,7 @@ iptables-save &gt; /etc/iptables/iptables </codeblock>
           <p>The installer for the agent is in <codeph>/opt/stack/designate-msdnsagent/OpenStack</codeph> on the DNSaaS Installer VM; this is the one that you booted to install DNSaaS. Download this file and distribute it to all the target Microsoft DNS Servers.</p>
           <ol>
             <li>Run the install.</li>
-            <li>Open the DNS Configuration (in <b>Start &gt; Programs &gt; HP &gt; DNS Configuration</b>) and select <b>Run as Administrator</b>.</li>
+            <li>Open the DNS Configuration (in <b>Start &gt; Programs &gt; HPE &gt; DNS Configuration</b>) and select <b>Run as Administrator</b>.</li>
             <li>In the window that displays:
               <ul>
                 <li><b>RabbitMQ Hosts</b> - Enter the IP address for the Messaging Outputs, each entry on a line, with no commas. </li>
@@ -615,14 +615,14 @@ iptables-save &gt; /etc/iptables/iptables </codeblock>
       <title>More Information</title>
       <p>For more information, see:</p>
       <ul>
-        <li><xref href="../../publiccloud/api/dns-api.dita">HP Helion Public Cloud DNS API
+        <li><xref href="../../publiccloud/api/dns-api.dita">HPE Helion Public Cloud DNS API
             Specifications</xref>
         </li>
         <li><xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html"
             >Designate DNSaaS services for OpenStack</xref>
         </li>
       </ul>
-      <note>Public Cloud API and HP Helion Openstack API details are similar.</note>
+      <note>Public Cloud API and HPE Helion Openstack API details are similar.</note>
       <p>
         <xref href="#HP2.0DNSaaS"> Return to Top </xref>
       </p>

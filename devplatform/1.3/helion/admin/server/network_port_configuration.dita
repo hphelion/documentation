@@ -78,7 +78,7 @@
       safely by using the security group / security policy tools provided by
       your hypervisor. <!-- :      
       * :ref:`EC2 Security Group Settings server-vm-ec2-firewall`
-        * :ref:`HP Cloud ServicesSecurity Group Settings server-vm-hpcs-firewall` --></p>
+        * :ref:`HPE Cloud ServicesSecurity Group Settings server-vm-hpcs-firewall` --></p>
           
          <p> If you wish to restrict ports between some nodes, for example, if you do not
           have the option to use security groups, the following summary describes

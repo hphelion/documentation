@@ -128,7 +128,7 @@
         file.</p><p>Each service has its own service policy file with the <b>/etc/[SERVICE_CODENAME]/policy.json</b>
         file name format where [SERVICE_CODENAME] represents a specific OpenStack service name. For
         example, the OpenStack Nova service would have a policy file called
-          <b>/etc/nova/policy.json</b>.</p><p>HP Helion OpenStack is deployed with 3 redundant control plane servers. If modified, the policy
+          <b>/etc/nova/policy.json</b>.</p><p>HPE Helion OpenStack is deployed with 3 redundant control plane servers. If modified, the policy
         files for each service need to be replicated in each control plane server. Service restarts
         are NOT required for policy file changes.</p>
     </section>

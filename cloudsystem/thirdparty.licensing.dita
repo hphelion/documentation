@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_mqk_j4l_xs">
-  <title>HP Helion CloudSystem: Open Source and Third-Party Software License Agreements</title>
+  <title>HPE Helion CloudSystem: Open Source and Third-Party Software License Agreements</title>
   <body>
     <p>Open Source and Third-Party Software License Agreements are available here as a PDF download.</p>
 <ul>
@@ -25,7 +25,7 @@
                     format="pdf" scope="external">Vertica Analytic Database</xref></li>
             <li><xref
                     href="http://h20564.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04647291"
-                    format="html" scope="external">VAN SDN Controller and HP Converged Control SDN
+                    format="html" scope="external">VAN SDN Controller and HPE Converged Control SDN
                     Application</xref></li>
 <li>Codar 1.5: There are no additional license requirements for this product.</li>
 </ul> 

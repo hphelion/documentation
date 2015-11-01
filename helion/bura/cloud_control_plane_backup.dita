@@ -11,7 +11,7 @@
         backup/restore from the secure shell (SSH) server. You must use the following procedure to
         set up SSH backup during installation: </p></section>
     <section><title>Setting up SSH Backup</title>
-      <p>By default, during HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 deployement, backup jobs
+      <p>By default, during HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0 deployement, backup jobs
         are automaticaly deployed to backup to Swift the MySQL database, the deployer, and Swift
         rings. Restore jobs are also deployed for convenience. It is more secure to store those
         backup also outside of the Helion infrastructure. If you provide all the values reqired in

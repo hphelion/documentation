@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="ceph_overview">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceph Overview</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceph Overview</title>
   <body>
     <section><title>Ceph Overview</title><p>Ceph is an Open Source, scalable, software defined
-        storage running on HP Servers which provides block and object storage with unified
-        management.</p><p>The HP Helion OpenStack 2.0 Ceph Storage Solution provides an unified
-        scaleable and stable storage solution for the management of HP Helion OpenStack Volume
+        storage running on HPE Servers which provides block and object storage with unified
+        management.</p><p>The HPE Helion OpenStack 2.0 Ceph Storage Solution provides an unified
+        scaleable and stable storage solution for the management of HPE Helion OpenStack Volume
         Storage (Cinder persistent Volumes) service. </p> The installation, configuration, and
-      integration between HP Helion OpenStack: 2.0 and Ceph Firefly 0.80.7 running on the hlinux
+      integration between HPE Helion OpenStack: 2.0 and Ceph Firefly 0.80.7 running on the hlinux
       kernel 3.14.44-1 is detailed in<xref href="ceph_deploy.dita#install_kvm_ceph"> ceph
-        deployment</xref> page.<p>HP Helion OpenStack introduces the concept of cloud models, where
+        deployment</xref> page.<p>HPE Helion OpenStack introduces the concept of cloud models, where
         the user can modify the YAML to provide the required configuration based on their
         environment. Therefore to deploy ceph and make configuration changes you must modify the
         YAML files related to ceph.</p><p>You can implementing the input model and perform the

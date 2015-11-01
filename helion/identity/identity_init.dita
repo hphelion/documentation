@@ -3,8 +3,8 @@
 <topic id="topic_qmz_fg3_bt">
   <title>Initial Configuration of the Identity Service</title>
   <body>
-    <section id="intro"><p>The Keystone identity service is a vital part of HP Helion OpenStack&#174;, and as such it is
-        installed automatically by the HP Helion OpenStack installer (just after MySQL and
+    <section id="intro"><p>The Keystone identity service is a vital part of HPE Helion OpenStack&#174;, and as such it is
+        installed automatically by the HPE Helion OpenStack installer (just after MySQL and
         RabbitMQ). The recommended way of installing the identity service is to allow the installer
         to install it with the default configuration. Once your cloud is up and running, you can
         customize Keystone in a number of ways, including integration with LDAP servers. </p>

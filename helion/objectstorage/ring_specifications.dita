@@ -7,7 +7,7 @@
       account databases, container databases and for each object storage policy, but each ring works
       similarly. The swift-ring-builder utility is used to build and manage rings. The
       swift-ring-builder utility uses a builder file to contain ring information and additional data
-      required to build future rings. In HP Helion OpenStack 2.0, you use the cloud model to specify
+      required to build future rings. In HPE Helion OpenStack 2.0, you use the cloud model to specify
       how the rings are configured and used. This model is used to automatically invoke the
       swift-ring-builder utility as part of the deploy process. Normally, you will not run the
       swift-ring-builder utility directly.</p>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2261">
-<title>HP Cloud Service Automation</title>
+<title>HPE Cloud Service Automation</title>
   
   
 <prolog>
@@ -14,7 +14,7 @@
 <!--PUBLISHED-->
  <!--./automation/csa.index.md-->
  <!--permalink: /automation/--></p>
-<p>HP Cloud Service Automation (CSA) provides open, heterogeneous, extensible enterprise-grade cloud service lifecycle management to design and orchestrate full stack services. CSA embraces existing automation assets with an 
+<p>HPE Cloud Service Automation (CSA) provides open, heterogeneous, extensible enterprise-grade cloud service lifecycle management to design and orchestrate full stack services. CSA embraces existing automation assets with an 
   enhanced orchestration engine, which provides IT with an informed, transparent delivery of secure compliant services for the hybrid cloud.</p>
 <section id="core-features"> <title>Core Features</title>
 <p>Consists of platform-level core capabilities such as subscriber portal, service designer, and role-based access and includes:</p>
@@ -31,7 +31,7 @@
 <b>Advanced service modeling tools</b>
 </p>
 
-<p>Build sophisticated services for the entire stack (IaaS, PaaS, SaaS) or simplified topology-based infrastructure services with HP Helion <tm tmtype="reg">OpenStack</tm></p>
+<p>Build sophisticated services for the entire stack (IaaS, PaaS, SaaS) or simplified topology-based infrastructure services with HPE Helion <tm tmtype="reg">OpenStack</tm></p>
 </li>
 <li>
 <p>
@@ -43,10 +43,10 @@
 </ul>
 </section>
 <section id="documentation-library"><title>Documentation Library</title>
-  <p>The HP Cloud Service Automation (CSA) Dcoumentation Library provides the most up-to-date version of CSA documents available on the <xref type="external" format="html" href="http://softwaresupport.hp.com/">HP Software Support Portal</xref>. The 
+  <p>The HPE Cloud Service Automation (CSA) Dcoumentation Library provides the most up-to-date version of CSA documents available on the <xref type="external" format="html" href="http://softwaresupport.hp.com/">HPE Software Support Portal</xref>. The 
 table below shows new and updated documents for CSA.</p> 
   <note outputclass="lightgrey">If the file download cell is blank for a release, the documentation for the previous release applies.</note>
-  <p><b>HP Cloud Service Automation (CSA) Documents</b></p>
+  <p><b>HPE Cloud Service Automation (CSA) Documents</b></p>
   <table>
     <tgroup cols="7">
       <colspec colnum="1" colname="DocumentName" />
@@ -155,7 +155,7 @@ table below shows new and updated documents for CSA.</p>
           <entry></entry>
         </row>
         <row>
-          <entry>Configuring an HP CSA Linux Cluster for High Availability Using a Load Balancer</entry>
+          <entry>Configuring an HPE CSA Linux Cluster for High Availability Using a Load Balancer</entry>
           <entry></entry>
           <entry></entry>
           <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01091935">go</xref></entry>
@@ -164,7 +164,7 @@ table below shows new and updated documents for CSA.</p>
           <entry></entry>
         </row>
         <row>
-          <entry>Configuring an HP CSA Windows Cluster for High Availability Using a Load Balancer</entry>
+          <entry>Configuring an HPE CSA Windows Cluster for High Availability Using a Load Balancer</entry>
           <entry></entry>
           <entry></entry>
           <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01091936">go</xref></entry>
@@ -173,7 +173,7 @@ table below shows new and updated documents for CSA.</p>
           <entry></entry>
         </row>
         <row>
-          <entry>Configuring an HP CSA Linux Cluster for High Availability Using an Apache Web Server as a Proxy</entry>
+          <entry>Configuring an HPE CSA Linux Cluster for High Availability Using an Apache Web Server as a Proxy</entry>
           <entry></entry>
           <entry></entry>
           <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01061726">go</xref></entry>
@@ -182,7 +182,7 @@ table below shows new and updated documents for CSA.</p>
           <entry></entry>
         </row>
         <row>
-          <entry>Configuring an HP CSA Windows Cluster for High Availability Using an Apache Web Server</entry>
+          <entry>Configuring an HPE CSA Windows Cluster for High Availability Using an Apache Web Server</entry>
           <entry></entry>
           <entry></entry>
           <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01061727">go</xref></entry>
@@ -329,7 +329,7 @@ table below shows new and updated documents for CSA.</p>
           <entry></entry>
         </row>
         <row>
-          <entry>Integration with HP Operations Orchestration </entry>
+          <entry>Integration with HPE Operations Orchestration </entry>
           <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00731468">go</xref></entry>
           <entry></entry>
           <entry></entry>
@@ -438,12 +438,12 @@ table below shows new and updated documents for CSA.</p>
           <entry namest="4.50" nameend="Comment"><i>Replaced by the new API Guide in 4.5</i></entry>
         </row>
         <row>
-          <entry>Configuring an HP CSA Linux Cluster for Server Failover</entry>
+          <entry>Configuring an HPE CSA Linux Cluster for Server Failover</entry>
           <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00731448">go</xref></entry>
           <entry></entry>
           <entry namest="4.10" nameend="Comment"><i>obsolete</i></entry>
         </row><row>
-          <entry>Configuring an HP CSA Windows Cluster for Server Failover</entry>
+          <entry>Configuring an HPE CSA Windows Cluster for Server Failover</entry>
           <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00731449">go</xref></entry>
           <entry></entry>
           <entry namest="4.10" nameend="Comment"><i>obsolete</i></entry>
@@ -483,19 +483,19 @@ table below shows new and updated documents for CSA.</p>
   <section><title>Additional Information</title>
   <p><b>Online Documentation</b></p>
     <p>To check for recent updates or to verify that you are using the most recent edition of a document, go to: <xref type="external" format="html" href="https://softwaresupport.hp.com">https://softwaresupport.hp.com</xref></p>
-    <note outputclass="lightgrey">If you have reached this library, you have already signed in with your HP Passport credentials. You can also receive updated documentation if you subscribe to the appropriate product support service. Contact your HP sales representative for details. See Document Change Notes within the document for a list of any revisions. </note>
+    <note outputclass="lightgrey">If you have reached this library, you have already signed in with your HPE Passport credentials. You can also receive updated documentation if you subscribe to the appropriate product support service. Contact your HPE sales representative for details. See Document Change Notes within the document for a list of any revisions. </note>
   </section>
 <section><title>Support</title>
-  <p>You can visit the HP Software Support web site at: <xref type="external" format="html" href="https://softwaresupport.hp.com/">https://softwaresupport.hp.com/</xref></p>
-  <p>This web site provides contact information and details about the products, services, and support that HP offers.
-    Most of the support areas require that you register as an HP Passport user and sign in. Many also require an active support contract. To find more information about support access levels, go to: 
+  <p>You can visit the HPE Software Support web site at: <xref type="external" format="html" href="https://softwaresupport.hp.com/">https://softwaresupport.hp.com/</xref></p>
+  <p>This web site provides contact information and details about the products, services, and support that HPE offers.
+    Most of the support areas require that you register as an HPE Passport user and sign in. Many also require an active support contract. To find more information about support access levels, go to: 
   </p>
   <p><xref type="external" format="html" href="https://softwaresupport.hp.com/web/softwaresupport/access-levels">https://softwaresupport.hp.com/web/softwaresupport/access-levels</xref></p>
-  <p>To register for an HP Passport ID, go to: <xref type="external" format="html" href=" https://ovrd.external.hp.com/rd/register"> https://ovrd.external.hp.com/rd/register</xref></p></section>
+  <p>To register for an HPE Passport ID, go to: <xref type="external" format="html" href=" https://ovrd.external.hp.com/rd/register"> https://ovrd.external.hp.com/rd/register</xref></p></section>
   <section><title>Support Matrices</title>
-    <p>For complete support and compatibility information, see the support matrix for the relevant product release. All support matrices and product manuals are available here on the HP Software Support Online website:</p>
+    <p>For complete support and compatibility information, see the support matrix for the relevant product release. All support matrices and product manuals are available here on the HPE Software Support Online website:</p>
     <p><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/support-matrices">https://softwaresupport.hp.com/group/softwaresupport/support-matricesa</xref></p>
-    <p>You can also download the Support Matrix for this release from the HP Self-solve documentation portal:</p>
+    <p>You can also download the Support Matrix for this release from the HPE Self-solve documentation portal:</p>
     <p><xref type="external" format="html" href="https://softwaresupport.hp.com/">https://softwaresupport.hp.com/</xref></p>
   </section>
 </body>

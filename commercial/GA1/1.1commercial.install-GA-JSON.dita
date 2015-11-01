@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic20151">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Editing the Installation Configuration JSON File</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Editing the Installation Configuration JSON File</title>
 <titlealts>
-<searchtitle>HP Helion Openstack 1.1: Editing the Installation Configuration JSON File</searchtitle>
+<searchtitle>HPE Helion Openstack 1.1: Editing the Installation Configuration JSON File</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B,"/>
-<othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -21,11 +21,11 @@
  <!--./commercial/GA1/1.1commercial.install-GA-JSON.md-->
  <!--permalink: /helion/openstack/1.1/install/envars/--></p>
 <p>
-  <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
+  <b>This document describes the installation process for HPE Helion OpenStack 1.1 and HPE Helion OpenStack 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
-<p>The HP Helion OpenStack Installation process requires various configuration parameters to be specified. This is achieved through environment variables.</p>
-<p>A user who is installing HP Helion OpenStack can enter all required environment variables using a JSON (JavaScript Object Notation) file that comes with the installation package.</p>
+<p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HPE Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
+<p>The HPE Helion OpenStack Installation process requires various configuration parameters to be specified. This is achieved through environment variables.</p>
+<p>A user who is installing HPE Helion OpenStack can enter all required environment variables using a JSON (JavaScript Object Notation) file that comes with the installation package.</p>
 <p>This document contains the following information:</p>
 <ul>
 <li>
@@ -66,11 +66,11 @@ After you modify a JSON file, you might want to validate the structure by runnin
 
 <ul>
 <li>
-<codeph>esx-custom-ips.json</codeph> - Use this file for installing HP Helion OpenStack with ESX hypervisor support.</li>
+<codeph>esx-custom-ips.json</codeph> - Use this file for installing HPE Helion OpenStack with ESX hypervisor support.</li>
 <li>
-<codeph>esx-custom-ips-vlan.json</codeph> - Use this file for installing HP Helion OpenStack with ESX hypervisor support with a VLAN provider network.</li>
+<codeph>esx-custom-ips-vlan.json</codeph> - Use this file for installing HPE Helion OpenStack with ESX hypervisor support with a VLAN provider network.</li>
 <li>
-<codeph>kvm-custom-ips.json</codeph> - Use this file for installing HP Helion OpenStack with KVM hypervisor support.</li>
+<codeph>kvm-custom-ips.json</codeph> - Use this file for installing HPE Helion OpenStack with KVM hypervisor support.</li>
 </ul>
 </li>
 <li>
@@ -92,7 +92,7 @@ After you modify a JSON file, you might want to validate the structure by runnin
 <p>Save the file on the seed cloud host.</p>
 </li>
 <li>
-  <xref href="1.1commercial.install-GA-prereqs.dita#topic9786/csv">Return to HP Helion OpenStack Installation Prerequisites</xref></li>
+  <xref href="1.1commercial.install-GA-prereqs.dita#topic9786/csv">Return to HPE Helion OpenStack Installation Prerequisites</xref></li>
      </ol>
 </section>
 <section id="definition-of-environment-variables"> <title>Definition of Environment variables</title>
@@ -138,14 +138,14 @@ After you modify a JSON file, you might want to validate the structure by runnin
 </codeph>
 </codeblock>
 <p>
-<codeph>control_virtual_router_id</codeph> - Use this variable to set a unique idenitifier for the HP Helion OpenStack installation.</p>
-<p>HP Helion OpenStack uses keepalived to manage virtual IPs. keepalived uses a unique id to synchronise its activities. If you plan to run multiple installations of HP Helion OpenStack on the same network, each installation must be configured with a unique id by setting the environment variable <codeph>control_virtual_router_id</codeph> to a unique number (from 0 to 255) before running the installation. The default value, if unset, is 51.</p>
+<codeph>control_virtual_router_id</codeph> - Use this variable to set a unique idenitifier for the HPE Helion OpenStack installation.</p>
+<p>HPE Helion OpenStack uses keepalived to manage virtual IPs. keepalived uses a unique id to synchronise its activities. If you plan to run multiple installations of HPE Helion OpenStack on the same network, each installation must be configured with a unique id by setting the environment variable <codeph>control_virtual_router_id</codeph> to a unique number (from 0 to 255) before running the installation. The default value, if unset, is 51.</p>
 <codeblock>
   <codeph>"control_virtual_router_id": "202",
 </codeph>
 </codeblock>
 <p>
-<codeph>cloud_type</codeph> - Use this variable to specify whether the HP Helion OpenStack will be installed with KVM or ESX hypervisor support.</p>
+<codeph>cloud_type</codeph> - Use this variable to specify whether the HPE Helion OpenStack will be installed with KVM or ESX hypervisor support.</p>
       <note> If set to <codeph>ESX</codeph>, the <codeph>compute_scale</codeph> variable and DVR
         variables are not required.</note>
 <p>
@@ -443,7 +443,7 @@ If this is the same value as <codeph>neutron/overcloud_public_interface</codeph>
 </codeph>
 </codeblock>
 <p>
-  <xref href="1.1commercial.install-GA-prereqs.dita#topic9786/envars">Return to HP Helion OpenStack Installation Prerequisites</xref></p>
+  <xref href="1.1commercial.install-GA-prereqs.dita#topic9786/envars">Return to HPE Helion OpenStack Installation Prerequisites</xref></p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="config_vsa">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for VSA Block Storage
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for VSA Block Storage
     Backend</title>
   <body>
     <section id="about">
       <p>This page describes how to configure your VSA backend for the Helion Entry Scale Cloud with
         KVM model.<note type="attention">Discovery functionality of VSA nodes using CMC controller node is not
-          recommended in HP Helion OpenStack 2.0. User needs to manually add VSA and create a
+          recommended in HPE Helion OpenStack 2.0. User needs to manually add VSA and create a
           cluster.</note></p>
     </section>
     <section id="prereq"><title>Pre-requisites</title>

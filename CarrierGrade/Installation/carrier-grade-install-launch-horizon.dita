@@ -2,16 +2,16 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Launching the Horizon
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Launching the Horizon
     Interface</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
     </metadata>
   </prolog>
   <body>
@@ -19,7 +19,7 @@
       <!--UNDER REVISION-->
       <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.md-->
       <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
-    <p>After the HP Helion Openstack cloud is installed, you can launch the Horizon interface to
+    <p>After the HPE Helion Openstack cloud is installed, you can launch the Horizon interface to
       verify that the installation was successful.</p>
     <section>
       <title> Apply the Horizon interface patch:</title>
@@ -77,7 +77,7 @@ Password: cghelion</codeblock>
     <section>
       <title>Login to Horizon</title>
       <p>At this point, you can log into the Horizon interface, a web-interface you can use to
-        manage and maintain HP Helion OpenStack Carrier Grade. Use the <xref href="#topic10581/CAN"
+        manage and maintain HPE Helion OpenStack Carrier Grade. Use the <xref href="#topic10581/CAN"
           format="dita">CAN IP address</xref> to launch Horizon. </p>
       <p>
         <codeblock>https://&lt;CAN_IP></codeblock>
@@ -109,7 +109,7 @@ Password: cghelion</codeblock>
       <p>For <xref href="carrier-grade-install-pb-overview.dita#topic1925/install-option"><b>the KVM
             deployment</b></xref>, proced to the <xref href="#topic10581/next-step" format="dita"
           >Next Step</xref>.</p>
-      <p>In order to create VM instances in HP Helion OpenStack Carrier Grade, you need to supply at
+      <p>In order to create VM instances in HPE Helion OpenStack Carrier Grade, you need to supply at
         least on ISO image file, and import that file into Horizon. </p>
       <ol id="ol_yd1_ckj_1t">
         <li>Launch the Horizon dashboard.</li>

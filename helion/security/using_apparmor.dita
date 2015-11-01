@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_rmq_j1v_4t">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Refining Access Control with AppArmor</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Refining Access Control with AppArmor</title>
   <body>
    <section id="intro">
       <p> AppArmor is a Mandatory Access Control (MAC) system as opposed to a discretionay access
@@ -25,7 +25,7 @@
         not prevented. </p>
     </section>
     
-    <section id="apparmor_helion"><title>Using AppArmor in HP Helion&#174; OpenStack</title>
+    <section id="apparmor_helion"><title>Using AppArmor in HPE Helion&#174; OpenStack</title>
       <title>TBD...</title></section>
   </body>
 </topic>

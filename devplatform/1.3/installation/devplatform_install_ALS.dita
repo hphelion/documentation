@@ -12,7 +12,7 @@
         then click <b>Configure Services</b>.<image
           href="../../../media/devplat_configure_services.png" id="image_klm_hbq_ft"
           placement="break"/></li>
-      <li>If you are not already connected to the HP Download Network (HDN), click <b>Connect</b> in
+      <li>If you are not already connected to the HPE Download Network (HDN), click <b>Connect</b> in
         the Configure Services panel and enter your username and password. If you don't have a
         username and pasword yet, click <b>Sign-up</b> and follow the prompts.</li>
       <li>In the <b>Configure Services</b> table, locate the <b>Application Lifecycle Service</b>
@@ -21,7 +21,7 @@
           type="important">Do not download multiple services at the same time. This is unsupported
           and will cause errors.</note></li>
       <li>When the download is complete, click <b>Project</b> > <b>Compute</b> > <b>Images</b> and
-        verify that two images with the prefix "HP Helion Development Platform - Application
+        verify that two images with the prefix "HPE Helion Development Platform - Application
         Lifecycle Service" are now available for use.</li>
       </ol>
   </body>

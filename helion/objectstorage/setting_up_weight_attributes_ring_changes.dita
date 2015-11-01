@@ -15,7 +15,7 @@
       determine typical oldest replication times for your system. For instructions see <xref
         href="swift_safe-rebalance-deploy-ring.dita#topic_ohx_j1t_4t"
         >swift_safe-rebalance-deploy-ring.html</xref>.</p>
-    <p>In HP Helion OpenStack, the weight-step attribute is set in the ring specification of the
+    <p>In HPE Helion OpenStack, the weight-step attribute is set in the ring specification of the
       input model. The weight-step value specifies a maximum value for the change of the weight of a
       drive in any single rebalance. For example, if you add a drive of 4TB in size, you would
       normally assign a weight of 4096. However, if the weight-step attribute is set to 1024, when
