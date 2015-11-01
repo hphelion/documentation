@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4893">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Installing HP StoreVirtual VSA</title>
+<title>HPE Helion OpenStack(R) Carrier Grade (Beta): Installing HPE StoreVirtual VSA</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) Carrier Grade"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) Carrier Grade"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B, Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) Carrier Grade"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R) Carrier Grade"/>
 </metadata>
 </prolog>
 <body>
@@ -18,7 +18,7 @@
  <!--./CarrierGrade/AdminGuideNew/VSA/carrier.install-vsa.md-->
  <!--permalink:         --></p>
 <!-- From Installing HPStoreVirtual.docx at https://wiki.hpcloud.net/pages/viewpage.action?pageId=49097241 -->
-<p>This page provides detailed instructions on installing HP StoreVirtual VSA Centralized Management Console (CMC) and deploying HP StoreVirtual VSA Storage Nodes in your HP Helion OpenStack(R) Carrier Grade cloud.</p>
+<p>This page provides detailed instructions on installing HPE StoreVirtual VSA Centralized Management Console (CMC) and deploying HPE StoreVirtual VSA Storage Nodes in your HPE Helion OpenStack(R) Carrier Grade cloud.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
 <li>
@@ -53,9 +53,9 @@ virsh net-list --all
 </li>
 </ul>
 </section>
-<section id="install-hp-storevirtual-cmc"> <title>Installing HP StoreVirtual VSA Centralized Management Console (CMC) on Linux</title>
-<p>In order to configure the HP StoreVirtual VSA nodes, you must first install the CMC. You can manage all connected StoreVirtual VSA instances from single CMC connected to HP Helion OpenStack(R) management network.</p>
-<p>We recommend that you install CMC on the same KVM host. This host has direct network connectivity to servers running HP StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HP Helion OpenStack(R) management network.</p>
+<section id="install-hp-storevirtual-cmc"> <title>Installing HPE StoreVirtual VSA Centralized Management Console (CMC) on Linux</title>
+<p>In order to configure the HPE StoreVirtual VSA nodes, you must first install the CMC. You can manage all connected StoreVirtual VSA instances from single CMC connected to HPE Helion OpenStack(R) management network.</p>
+<p>We recommend that you install CMC on the same KVM host. This host has direct network connectivity to servers running HPE StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HPE Helion OpenStack(R) management network.</p>
 <p>
 <b>Note</b>: These changes are required for 64-bit operating system only.</p>
 <ul>
@@ -73,7 +73,7 @@ virsh net-list --all
 <p>To install CMC:</p>
 <ol>
 <li>
-<p>Verify if the CMC installer file inside <codeph>tripleo</codeph> directory (packaged with the HP Helion OpenStack(R) installer) has executable permission. If not, execute the following command:</p>
+<p>Verify if the CMC installer file inside <codeph>tripleo</codeph> directory (packaged with the HPE Helion OpenStack(R) installer) has executable permission. If not, execute the following command:</p>
 
 <codeblock>
 <codeph># chmod +x CMC_11.5.01.0079.0_Installer_Linux.bin
@@ -93,19 +93,19 @@ virsh net-list --all
 </li>
 <li>
 <p>To start the CMC, if you have direct GUI access:<!--A BR tag was used here in the original source.-->
-From the directory in which the files are installed, click the <b>HP Store Virtual Centralized Management Console</b> to launch CMC.</p>
+From the directory in which the files are installed, click the <b>HPE Store Virtual Centralized Management Console</b> to launch CMC.</p>
 
 <p>
 <b>Note</b>: To launch the CMC from command line (CLI), navigate to the location where it is installed and enter:</p>
 
 <codeblock>
-<codeph># ./"HP Store Virtual Centralized Management Console".
+<codeph># ./"HPE Store Virtual Centralized Management Console".
 </codeph>
 </codeblock>
 </li>
 </ol>
 </section>
-<section id="deploying-hp-storevirtual-vsa"> <title>Deploying HP StoreVirtual VSA</title>
+<section id="deploying-hp-storevirtual-vsa"> <title>Deploying HPE StoreVirtual VSA</title>
 <!-- From the StoreVirtual_VSA_for_HP_Helion_OpenStack(R)-11.5.01.0079 readme -->
 <p>To install KVM VSA:</p>
 <ol>

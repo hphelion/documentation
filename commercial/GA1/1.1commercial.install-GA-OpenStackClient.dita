@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3381">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Configuring for OpenStack(R)</title>
+<title>HPE Helion OpenStack(R) 1.1 and 1.1.1: Configuring for OpenStack(R)</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Configuring for OpenStack(R)</searchtitle>
+<searchtitle>HPE Helion OpenStack(R) 1.1: Configuring for OpenStack(R)</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B, Michael T,"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -22,13 +22,13 @@
  <!--permalink: /helion/openstack/1.1/install/openstack-client/--></p>
 <p> <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#ldap" >▲ Prerequisites</xref> </p>
 <p>
-  <b>This document describes the installation process for HP Helion OpenStack(R) 1.1 and HP Helion OpenStack(R) 1.1.1.</b>
+  <b>This document describes the installation process for HPE Helion OpenStack(R) 1.1 and HPE Helion OpenStack(R) 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion OpenStack(R) from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack(R) 1.1.1 Update Guide</xref>.)</p>
+<p>(If you already have 1.1 installed, you can update Helion OpenStack(R) from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HPE Helion OpenStack(R) 1.1.1 Update Guide</xref>.)</p>
 <p>The OpenStack(R) (OSC) is a command-line client for OpenStack(R) that brings the command set for Compute, Identity, Image, Object Store and Volume APIs together in a single shell with a uniform command structure.</p>
 <p>OSC is also known as the <b>OpenStack(R) unified command line utility</b>. For more information on using OpenStack(R) see OpenStack(R) documentation's on <xref href="http://docs.openstack.org/developer/python-openstackclient/" scope="external" format="html" >OpenStack(R)</xref>.</p>
-<p>To use OSC with HP Helion OpenStack(R) you need to change some environment variables that are set by the stackrc file.</p>
-<p>To configure HP Helion OpenStack(R) to use the OpenStack(R)</p>
+<p>To use OSC with HPE Helion OpenStack(R) you need to change some environment variables that are set by the stackrc file.</p>
+<p>To configure HPE Helion OpenStack(R) to use the OpenStack(R)</p>
 <ol>
 <li>
 <p>Log in to the seed cloud host.</p>

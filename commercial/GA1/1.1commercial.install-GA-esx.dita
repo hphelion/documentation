@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8545">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Installation and Configuration for ESX Hypervisor</title>
+<title>HPE Helion OpenStack(R) 1.1 and 1.1.1: Installation and Configuration for ESX Hypervisor</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Installation and Configuration for ESX Hypervisor</searchtitle>
+<searchtitle>HPE Helion OpenStack(R) 1.1: Installation and Configuration for ESX Hypervisor</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B,"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -21,11 +21,11 @@
  <!--./commercial/GA1/1.1commercial.install-GA-esx.md-->
  <!--permalink: /helion/openstack/1.1/install/esx/--></p>
 <p>
-  <b>This document describes the installation process for HP Helion OpenStack(R) 1.1 and HP Helion OpenStack(R) 1.1.1.</b>
+  <b>This document describes the installation process for HPE Helion OpenStack(R) 1.1 and HPE Helion OpenStack(R) 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion OpenStack(R) from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack(R) 1.1.1 Update Guide</xref>.)</p>
-<p>HP Helion OpenStack(R) allows you to manage the ESX hypervisor, manage the VMware vCenter, and provision virtual machines. This document provides installation instructions for HP Helion OpenStack(R) on a suitably specified and prepared system.</p>
-<section id="installing-hp-helion-openstack"> <title>Installing HP Helion OpenStack(R)</title>
+<p>(If you already have 1.1 installed, you can update Helion OpenStack(R) from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HPE Helion OpenStack(R) 1.1.1 Update Guide</xref>.)</p>
+<p>HPE Helion OpenStack(R) allows you to manage the ESX hypervisor, manage the VMware vCenter, and provision virtual machines. This document provides installation instructions for HPE Helion OpenStack(R) on a suitably specified and prepared system.</p>
+<section id="installing-hp-helion-openstack"> <title>Installing HPE Helion OpenStack(R)</title>
 <p>Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through the steps to be executed on the seed cloud host:</p>
 <ul>
 <li>
@@ -46,7 +46,7 @@ These responsibilities include:
 <li>Installing and configuring vCenter Server</li>
 <li>Installing and configuring ESX server and ESX cluster</li>
 <li>Installing and configuring shared datastores</li>
-<li>Establishing network connectivity between the ESX network and the HP Helion management network</li>
+<li>Establishing network connectivity between the ESX network and the HPE Helion management network</li>
 </ul>
 </li>
 <li>The VMware administration staff is responsible for the review of vCenter logs.  These logs are not automatically included in Helion centralized logging.</li>
@@ -231,7 +231,7 @@ Output messages will indicate when the undercloud and overcloud controllers beco
 <p>If your installation is successful, a message similar to the following is displayed:</p>
 
 <codeblock>
-<codeph>"HP - completed - Tue Oct 23 16:20:20 UTC 2014"
+<codeph>"HPE - completed - Tue Oct 23 16:20:20 UTC 2014"
 </codeph>
 </codeblock>
 
@@ -242,7 +242,7 @@ Output messages will indicate when the undercloud and overcloud controllers beco
 <p>If possible, leave this console display open as you will need the passwords to verify the installation.</p>
 </section>
 <section id="verifying-your-installation"> <title>Verify your installation</title>
-<p>To verify that the installation is successful, connect to the HP Helion OpenStack(R) dashboard and the undercloud dashboard as shown in <xref href="../../commercial/GA1/1.1commercial.install-GA-verify.dita" >Verifying your installation</xref>.</p>
+<p>To verify that the installation is successful, connect to the HPE Helion OpenStack(R) dashboard and the undercloud dashboard as shown in <xref href="../../commercial/GA1/1.1commercial.install-GA-verify.dita" >Verifying your installation</xref>.</p>
 <!-- Not needed in 1.1
 ## Create projects for LDAP users {#ldap}
 

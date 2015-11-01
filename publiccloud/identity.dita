@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3393">
-<title>HP Helion Public Cloud Identity Service Overview</title>
+<title>HPE Helion Public Cloud Identity Service Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -18,7 +18,7 @@
 <alt/>
 </image>
 </p>
-<p>Based on <xref href="http://keystone.openstack.org/" scope="external" format="html" >Keystone, the OpenStack(R) Identity Service</xref>, the HP Helion Public Cloud Identity Service provides one-stop authentication for all HP Helion Public Cloud offerings.  Key terms include:</p>
+<p>Based on <xref href="http://keystone.openstack.org/" scope="external" format="html" >Keystone, the OpenStack(R) Identity Service</xref>, the HPE Helion Public Cloud Identity Service provides one-stop authentication for all HPE Helion Public Cloud offerings.  Key terms include:</p>
 <dl>
 <dlentry>
 <dt>
@@ -26,7 +26,7 @@
 <b>User</b>
 </xref>
 </dt>
-<dd>A digital representation of a person, system, or service who uses HP Helion Public Cloud. The Identity Service validates that incoming requests are being made by the user who claims to be making the call. Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a tenant which then limits where and how their tokens can be used to interact with services. Users are associated with tenants based on roles assigned to them with that tenant.</dd>
+<dd>A digital representation of a person, system, or service who uses HPE Helion Public Cloud. The Identity Service validates that incoming requests are being made by the user who claims to be making the call. Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a tenant which then limits where and how their tokens can be used to interact with services. Users are associated with tenants based on roles assigned to them with that tenant.</dd>
 </dlentry>
 
 
@@ -66,7 +66,7 @@
 <b>Tenant</b>
 </xref>
 </dt>
-<dd>A collection of HP service subscriptions and/or resources (Compute, Object Storage, etc).</dd>
+<dd>A collection of HPE service subscriptions and/or resources (Compute, Object Storage, etc).</dd>
 </dlentry>
 
 
@@ -90,10 +90,10 @@
 </dlentry>
 
 </dl>
-<p>To jump right in and start using the service yourself, go to the <xref href="https://horizon.hpcloud.com/" scope="external" format="html" >HP Helion Public Cloud Console</xref>.  If you have any questions, try our <xref href="https://community.hpcloud.com" scope="external" format="html" >Forums</xref> where you can learn from our own internal experts as well as other users in the HP Helion Public Cloud community.</p>
-<!-- To help you get started with the service, we've got some introductory getting started material at our [Introduction to the HP Helion Public Cloud Identity Service page](https://community.hpcloud.com/article/identity-service-introduction), and we've also provided you with a use case for [Migrating to the HP Helion Public Cloud Identity Service](https://community.hpcloud.com/article/identity-service-change-guide).  And of course, if you want to jump right and start using the service yourself, you should go to the [Manage Console](https://console.hpcloud.com).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Helion Public Cloud community.-->
+<p>To jump right in and start using the service yourself, go to the <xref href="https://horizon.hpcloud.com/" scope="external" format="html" >HPE Helion Public Cloud Console</xref>.  If you have any questions, try our <xref href="https://community.hpcloud.com" scope="external" format="html" >Forums</xref> where you can learn from our own internal experts as well as other users in the HPE Helion Public Cloud community.</p>
+<!-- To help you get started with the service, we've got some introductory getting started material at our [Introduction to the HPE Helion Public Cloud Identity Service page](https://community.hpcloud.com/article/identity-service-introduction), and we've also provided you with a use case for [Migrating to the HPE Helion Public Cloud Identity Service](https://community.hpcloud.com/article/identity-service-change-guide).  And of course, if you want to jump right and start using the service yourself, you should go to the [Manage Console](https://console.hpcloud.com).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HPE Helion Public Cloud community.-->
 <section id="api"> <title>API</title>
-<p>Do you need low level, raw REST API access to HP Identity Services?  Take a look at our Compute API page for the version of HP Helion Public Cloud you are using:</p>
+<p>Do you need low level, raw REST API access to HPE Identity Services?  Take a look at our Compute API page for the version of HPE Helion Public Cloud you are using:</p>
 <ul>
 <li>
 <xref href="../publiccloud/apidocs/c1.1/keystonev2-api.dita" >
@@ -108,7 +108,7 @@
 </ul>
 </section>
 <section id="bindings"> <title>Bindings</title>
-<p>If you are looking for an easier to use, language-specific way of using HP Identity Services, check out our <xref href="/publiccloud/bindings" >Bindings section</xref>.</p>
+<p>If you are looking for an easier to use, language-specific way of using HPE Identity Services, check out our <xref href="/publiccloud/bindings" >Bindings section</xref>.</p>
 </section>
 <section id="cli"> <title>CLI</title>
 <p>Want scriptable access you can put in a cron job or something similar?  Go on over to our <xref href="/publiccloud/cli" >CLI documentation</xref>.</p>

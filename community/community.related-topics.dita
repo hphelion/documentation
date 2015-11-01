@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1067">
-<title>HP Helion OpenStack(R) Community Related Documentation</title>
+<title>HPE Helion OpenStack(R) Community Related Documentation</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,7 +12,7 @@
 <!--PUBLISHED-->
  <!--./community/community.related-topics.md-->
  <!--permalink: /helion/community/related-links/--></p>
-<p>HP Helion OpenStack(R) Community edition is based on OpenStack(R) technology and an HP configured LinuxÂ(R) operating system.</p>
+<p>HPE Helion OpenStack(R) Community edition is based on OpenStack(R) technology and an HPE configured LinuxÂ(R) operating system.</p>
 <p>For more information, refer to the OpenStack(R) documentation site:</p>
 <ul>
 <li>

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; 1.1: Services Map"
+title: "HPE Helion OpenStack&#174; 1.1: Services Map"
 permalink: /helion/openstack/1.1/services/mapHeat
 product: commercial.ga
 
@@ -22,7 +22,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/faq/">NEXT &#9654; </a></p> -->
 
-# HP Helion OpenStack&#174; 1.1: Services Map
+# HPE Helion OpenStack&#174; 1.1: Services Map
 <br />
 
 <img src="media/heat_diagram.png" alt=""><br />
@@ -30,7 +30,7 @@ PageRefresh();
 
 ##Heat orchestration service
 
-The HP Helion OpenStack Orchestration service leverages OpenStack Heat to provide template-based orchestration for describing a cloud application. It executes OpenStack API calls to generate running cloud applications.
+The HPE Helion OpenStack Orchestration service leverages OpenStack Heat to provide template-based orchestration for describing a cloud application. It executes OpenStack API calls to generate running cloud applications.
 
 Heat is a service to orchestrate multiple composite cloud applications using the AWS CloudFormation template format, through both an OpenStack-native ReST API and a CloudFormation-compatible Query API.
 

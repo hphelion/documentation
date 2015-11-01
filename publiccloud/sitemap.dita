@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2078">
-<title>HP Helion Public Cloud Documentation Site Map</title>
+<title>HPE Helion Public Cloud Documentation Site Map</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -14,62 +14,62 @@
  <!--permalink: /publiccloud/sitemap/--></p>
 <p>Having a bit of trouble navigating our site, and so you're looking for a single list of what we cover?  You've come to the right place.</p>
 <p>
-<xref href="../publiccloud/publiccloud-overview.dita" >Getting Started with HP Helion Public Cloud</xref>
+<xref href="../publiccloud/publiccloud-overview.dita" >Getting Started with HPE Helion Public Cloud</xref>
 <!--A BR tag was used here in the original source.-->
     <xref href="../publiccloud/site-overview.dita" >Documentation Site Overview</xref>
 <!--A BR tag was used here in the original source.-->
-    HP Helion Public Cloud Console<!--A BR tag was used here in the original source.-->
-        <xref href="../publiccloud/hpcloudconsole.dita" >Getting Started with HP Helion Public Cloud Console</xref>
+    HPE Helion Public Cloud Console<!--A BR tag was used here in the original source.-->
+        <xref href="../publiccloud/hpcloudconsole.dita" >Getting Started with HPE Helion Public Cloud Console</xref>
 <!--A BR tag was used here in the original source.-->
-        <xref href="../publiccloud/hz.whatsnewjan.2014.dita" >What's new with the HP Helion Public Cloud Console</xref>
+        <xref href="../publiccloud/hz.whatsnewjan.2014.dita" >What's new with the HPE Helion Public Cloud Console</xref>
 <!--A BR tag was used here in the original source.-->
     <xref href="../publiccloud/release-notes.dita" >Software release notes</xref>
 <!--A BR tag was used here in the original source.-->
-<xref href="../publiccloud/services.dita" >HP Helion Public Cloud Available Services</xref>
+<xref href="../publiccloud/services.dita" >HPE Helion Public Cloud Available Services</xref>
 <!--A BR tag was used here in the original source.--> 
-    <xref href="../publiccloud/compute.dita" >HP Helion Public Cloud Compute Services Overview</xref>
+    <xref href="../publiccloud/compute.dita" >HPE Helion Public Cloud Compute Services Overview</xref>
 <!--A BR tag was used here in the original source.-->
 <!-- Hiding until we can find the file
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using the Compute Service](/compute/using/)<br /> -->
         <xref href="../publiccloud/apidocs/c1.1/nova-api.dita" >Compute Services API</xref>
 <!--A BR tag was used here in the original source.-->
-    <xref href="../publiccloud/identity.dita" >HP Helion Public Cloud Identity Service Overview</xref>
+    <xref href="../publiccloud/identity.dita" >HPE Helion Public Cloud Identity Service Overview</xref>
 <!--A BR tag was used here in the original source.-->
         <xref href="../publiccloud/apidocs/c1.1/keystone-api.dita" >Identity Service API</xref>
 <!--A BR tag was used here in the original source.-->
         <xref href="../publiccloud/apidocs/c1.1/neutron-api.dita" >Networking Service API</xref>
 <!--A BR tag was used here in the original source.-->
-    <xref href="../publiccloud/object-storage.dita" >HP Helion Public Cloud Object Storage Overview</xref>
+    <xref href="../publiccloud/object-storage.dita" >HPE Helion Public Cloud Object Storage Overview</xref>
 <!--A BR tag was used here in the original source.-->
         <xref href="../publiccloud/apidocs/c1.1/swift-api.dita" >Object Storage API</xref>
 <!--A BR tag was used here in the original source.-->
-    <xref href="../publiccloud/block-storage.dita" >HP Helion Public Cloud Block Storage Overview</xref>
+    <xref href="../publiccloud/block-storage.dita" >HPE Helion Public Cloud Block Storage Overview</xref>
 <!--A BR tag was used here in the original source.-->
         <xref href="../publiccloud/apidocs/c1.1/cinder-api.dita" >Block Storage API</xref>
 <!--A BR tag was used here in the original source.-->
-    <xref href="../publiccloud/cdn.dita" >HP Helion Public Cloud Content Delivery Network (CDN) Overview</xref>
+    <xref href="../publiccloud/cdn.dita" >HPE Helion Public Cloud Content Delivery Network (CDN) Overview</xref>
 <!--A BR tag was used here in the original source.-->
         <xref href="../publiccloud/apidocs/c1.1/cdn-api.dita" >CDN API</xref>
 <!--A BR tag was used here in the original source.-->
-    <xref href="../publiccloud/rdb.dita" >HP Helion Public Cloud Relational Database (RDB) Overview</xref>
+    <xref href="../publiccloud/rdb.dita" >HPE Helion Public Cloud Relational Database (RDB) Overview</xref>
 <!--A BR tag was used here in the original source.-->
         <xref href="../publiccloud/apidocs/c1.1/dbaas-api.dita" >RDB API</xref>
 <!--A BR tag was used here in the original source.-->
-    <xref href="../publiccloud/lbaas.dita" >HP Helion Public Cloud Load Balancer as a Service (LBaaS) Overview</xref>
+    <xref href="../publiccloud/lbaas.dita" >HPE Helion Public Cloud Load Balancer as a Service (LBaaS) Overview</xref>
 <!--A BR tag was used here in the original source.-->
         <xref href="../publiccloud/apidocs/c1.1/lbaas-api.dita" >LBaaS API</xref>
 <!--A BR tag was used here in the original source.-->
-    <xref href="../publiccloud/dns.dita" >HP Helion Public Cloud Domain Name Service (DNS) Overview</xref>
+    <xref href="../publiccloud/dns.dita" >HPE Helion Public Cloud Domain Name Service (DNS) Overview</xref>
 <!--A BR tag was used here in the original source.-->
         <xref href="../publiccloud/apidocs/c1.1/dns-api.dita" >DNS API</xref>
 <!--A BR tag was used here in the original source.-->
-    <xref href="../publiccloud/maas.dita" >HP Helion Public Cloud Monitoring as a Service (MaaS) Overview</xref>
+    <xref href="../publiccloud/maas.dita" >HPE Helion Public Cloud Monitoring as a Service (MaaS) Overview</xref>
 <!--A BR tag was used here in the original source.-->
         <xref href="../publiccloud/apidocs/c1.1/maas-api.dita" >MaaS API</xref>
 <!--A BR tag was used here in the original source.-->
-<xref href="../publiccloud/bindings.dita" >HP Helion Public Cloud Bindings</xref>
+<xref href="../publiccloud/bindings.dita" >HPE Helion Public Cloud Bindings</xref>
 <!--A BR tag was used here in the original source.-->
-<xref href="../publiccloud/cli.dita" >HP Helion Public Cloud CLI Documentation</xref>
+<xref href="../publiccloud/cli.dita" >HPE Helion Public Cloud CLI Documentation</xref>
 <!--A BR tag was used here in the original source.-->
     <xref href="../publiccloud/cli.windows.2.dita" >Windows Powershell CLI Overview</xref>
 <!--A BR tag was used here in the original source.-->
@@ -90,7 +90,7 @@
 <!--A BR tag was used here in the original source.-->
         <xref href="../publiccloud/cli.windows.2.release-notes.dita" >Release Notes</xref>
 <!--A BR tag was used here in the original source.-->
-<xref href="../publiccloud/api.dita" >HP Helion Public Cloud APIs Overview</xref>
+<xref href="../publiccloud/api.dita" >HPE Helion Public Cloud APIs Overview</xref>
 <!--A BR tag was used here in the original source.-->
     <xref href="../publiccloud/apidocs/c1.1/keystone-api.dita" >Identity Service</xref>
 <!--A BR tag was used here in the original source.-->

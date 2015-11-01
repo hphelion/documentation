@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4897">
-<title>Copyright for HP Helion Public Cloud APIs</title>
+<title>Copyright for HPE Helion Public Cloud APIs</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -21,7 +21,7 @@
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="object-storage"> <title>Object Storage</title>
-<p>Modifications Copyright (C) 2013 Hewlett-Packard Development Company, L.P.</p>
+<p>Modifications Copyright (C) 2013 Hewlett Packard Enterprise Development Company, L.P.</p>
 <p>Copyright (C) 2010-2013 OpenStack(R) Foundation.   All rights reserved.</p>
 <p>This reference is for software developers who develop applications by using the OpenStack(R) Object Storage Application Programming Interface (API) v1.</p>
 <p>
@@ -34,11 +34,11 @@
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="cdn"> <title>CDN</title>
-<p>Copyright (C) 2013 Hewlett-Packard Development Company, L.P.</p>
+<p>Copyright (C) 2013 Hewlett Packard Enterprise Development Company, L.P.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="compute"> <title>Compute</title>
-<p>Modifications Copyright (C) 2013 Hewlett-Packard Development Company, L.P.</p>
+<p>Modifications Copyright (C) 2013 Hewlett Packard Enterprise Development Company, L.P.</p>
 <p>Copyright (C) 2013 OpenStack(R) Foundation.  All rights reserved.</p>
 <p>
   <b>OpenStack(R) Compute API v2 and Extensions Reference</b>
@@ -50,7 +50,7 @@
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="block-storage"> <title>Block Storage (Bock)</title>
-<p>Copyright (C) 2013 Hewlett-Packard Development Company, L.P.</p>
+<p>Copyright (C) 2013 Hewlett Packard Enterprise Development Company, L.P.</p>
 <p>Copyright (C) 2013 OpenStack(R) Foundation</p>
 <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
 <xref href="http://www.apache.org/licenses/LICENSE-2.0" scope="external" format="html" >http://www.apache.org/licenses/LICENSE-2.0</xref>
@@ -67,7 +67,7 @@
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="lbaas"> <title>Load Balancing as a Service (LBaaS)</title>
-<p>Copyright (C) 2013 Hewlett-Packard Development Company, L.P.</p>
+<p>Copyright (C) 2013 Hewlett Packard Enterprise Development Company, L.P.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="dnsaas"> <title>Domain Name Service (DNS)</title>
@@ -80,7 +80,7 @@
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="monitoring"> <title>Monitoring as a Service (MaaS)</title>
-<p>Copyright (C) 2013 Hewlett-Packard Development Company, L.P.</p>
+<p>Copyright (C) 2013 Hewlett Packard Enterprise Development Company, L.P.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>

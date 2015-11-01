@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Reference Deployment Scenarios Overview"
+title: "HPE Helion OpenStack&#174; Carrier Grade (Beta): Reference Deployment Scenarios Overview"
 permalink: /helion/openstack/carrier/deploy/
 product: carrier-grade
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
+product-version1: HPE Helion OpenStack
+product-version2: HPE Helion OpenStack 1.1
 role1: All
 
 authors: Paul F
@@ -24,9 +24,9 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Reference Deployment Scenarios Overview
+# HPE Helion OpenStack&#174; Carrier Grade (Beta): Reference Deployment Scenarios Overview
 
-You can use the deployment scenarios to familiarize yourself with HP Helion OpenStack Carrier Grade and evaluate its performance.
+You can use the deployment scenarios to familiarize yourself with HPE Helion OpenStack Carrier Grade and evaluate its performance.
 
 <hr>
 **Note:** This feature applies only to servers in the VNF Region.
@@ -36,7 +36,7 @@ You can use the deployment scenarios to familiarize yourself with HP Helion Open
 Both scenarios use AVP network drivers for the test path. For each VM, an additional connection is established, using Linux virtio drivers, to a management network used for provisioning.
 With each scenario in place, you can attach testing equipment to the private tenant networks in order to evaluate throughput, latency, and other statistics of interest. Traffic generators can be used to send packets along the test path to exercise the different virtual applications and networks. For more information, see Running Traffic Through the Test Paths on page 60.
 
-The scenarios demonstrate several aspects of HP Helion OpenStack Carrier Grade, including:
+The scenarios demonstrate several aspects of HPE Helion OpenStack Carrier Grade, including:
 
 * a multi-tenant environment
 * vlan-tagged tenant networks

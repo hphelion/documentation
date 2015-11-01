@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic26455">
-<title>HP Helion Public Cloud DNS API Specifications</title>
+<title>HPE Helion Public Cloud DNS API Specifications</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -18,8 +18,8 @@
 <b>Document version:</b> 1.1</p>
 <section id="1-overview"> <title>1. Overview</title>
 <p>st checked in by:</p>
-<p>This guide is intended for software developers who wish to create applications using the HP Helion Public Cloud DNS set of APIs. It assumes the reader has a general understanding of cloud APIs, DNS concepts, RESTful web services, HTTP/1.1 conventions and JSON serialization formats. The HP Helion Public Cloud DNS set of APIs utilize and take advantage of a variety of Openstack cloud API patterns which are described in detail.</p>
-<p>We will be referring to HP Helion Public Cloud DNS in this document as simply DNS.</p>
+<p>This guide is intended for software developers who wish to create applications using the HPE Helion Public Cloud DNS set of APIs. It assumes the reader has a general understanding of cloud APIs, DNS concepts, RESTful web services, HTTP/1.1 conventions and JSON serialization formats. The HPE Helion Public Cloud DNS set of APIs utilize and take advantage of a variety of Openstack cloud API patterns which are described in detail.</p>
+<p>We will be referring to HPE Helion Public Cloud DNS in this document as simply DNS.</p>
 </section>
 <section id="11-api-maturity-level"> <title>1.1 API Maturity Level</title>
 <p>
@@ -74,7 +74,7 @@
 <row>
 <entry align="left"/>
   <entry align="left"/>
-  <entry align="left">Updated formatting to be in line with other HP Helion API documentation</entry>
+  <entry align="left">Updated formatting to be in line with other HPE Helion API documentation</entry>
 </row>
 <row>
 <entry align="left">1.0</entry>
@@ -84,7 +84,7 @@
 <row>
 <entry align="left">1.1</entry>
   <entry align="left">May 2014</entry>
-  <entry align="left">HP Helion updates</entry>
+  <entry align="left">HPE Helion updates</entry>
 </row>
 </tbody>
 </tgroup>
@@ -106,7 +106,7 @@
 <p>A domain name is an identification string that defines a realm of administrative autonomy, authority, or control on the Internet. An example of this is mytestdomain.com</p>
 </section>
 <section id="23-infrastructure-architecture-view"> <title>2.3 Infrastructure Architecture View</title>
-<p>DNS fits into the HP Helion ecosystem of APIs by utilizing the common authentication mechanisms as other HP Helion services. In order to use DNS, a user account must have activated the DNS service . All API calls require a valid HP Helion authentication token.</p>
+<p>DNS fits into the HPE Helion ecosystem of APIs by utilizing the common authentication mechanisms as other HPE Helion services. In order to use DNS, a user account must have activated the DNS service . All API calls require a valid HPE Helion authentication token.</p>
 </section>
 <section id="3-account-level-view"> <title>3. Account-level View</title>
 <p>Once the account is activated, the DNS service will show up in the service catalog returned during user login. In addition, the DNS endpoint to be used will also be presented.</p>

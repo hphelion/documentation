@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5798">
-<title>HP Helion OpenStack(R) 1.1: Network Administrator Notes</title>
+<title>HPE Helion OpenStack(R) 1.1: Network Administrator Notes</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Michael B"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -25,7 +25,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.network-administrator-notes.md-->
  <!--permalink: /helion/openstack/1.1/network/administrator/notes/--></p>
-<p>The HP Helion OpenStack(R) cloud networking platform is based on the OpenStack(R) standard. OpenStack(R) defines an architecture and compliant vendors (of which HP is one) create the implementations. HP Helion is one of these OpenStack(R) implementations.</p>
+<p>The HPE Helion OpenStack(R) cloud networking platform is based on the OpenStack(R) standard. OpenStack(R) defines an architecture and compliant vendors (of which HPE is one) create the implementations. HPE Helion is one of these OpenStack(R) implementations.</p>
 <p>The OpenStack(R) Cloud Administrator Notes describe the common administrator tasks required to enable and maintain the primary OpenStack(R) services. These primary services are shown below.</p>
 <p>
   <image href="../../media/commercial_openstack-services.png"/>
@@ -66,11 +66,11 @@
 </li>
 </ul>
 <section id="managing-the-identity-service-managing-the-identity-service"> <title>Managing the Identity service (#Managing-the-Identity-service)</title>
-<p>OpenStack(R) Identity, code-named keystone, is the default identity management system for OpenStack(R) Configuring the OpenStack(R) Identity service is sufficient for Helion administrators. No additional work is required to support HP Helion OpenStack(R)</p>
+<p>OpenStack(R) Identity, code-named keystone, is the default identity management system for OpenStack(R) Configuring the OpenStack(R) Identity service is sufficient for Helion administrators. No additional work is required to support HPE Helion OpenStack(R)</p>
 </section>
 <section id="managing-the-dashboard-managing-the-dashboard"> <title>Managing the Dashboard (Managing-the-Dashboard)</title>
 <p>The OpenStack(R) dashboard, code named Horizon, is a Web-based interface that allows you to manage OpenStack(R) resources and services. The dashboard allows you to interact with the OpenStack(R) Compute cloud controller using the OpenStack(R) APIs. 
-In the Helion environment, HP uses HP Badge and the Helion undercloud dashboard in addition to Horizon.</p>
+In the Helion environment, HPE uses HPE Badge and the Helion undercloud dashboard in addition to Horizon.</p>
 </section>
 <section id="managing-the-compute-service-managing-the-compute-service"> <title>Managing the Compute service (Managing-the-Compute-service)</title>
 <p>The OpenStack(R) Compute service (code named Nova) allows you to control an Infrastructure-as-a-Service (IaaS) cloud computing platform. It gives you control over instances and networks, and allows you to manage access to the cloud through users and projects.

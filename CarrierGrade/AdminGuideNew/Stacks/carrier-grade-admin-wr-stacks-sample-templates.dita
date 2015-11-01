@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic44623">
-    <title>HP Helion OpenStack&#174; Carrier Grade (Beta): Sample Templates for HP Helion OpenStack Carrier Grade</title>
+    <title>HPE Helion OpenStack&#174; Carrier Grade (Beta): Sample Templates for HPE Helion OpenStack Carrier Grade</title>
     <prolog>
         <metadata>
             <othermeta name="layout" content="default"/>
-            <othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-            <othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+            <othermeta name="product-version" content="HPE Helion OpenStack(R)"/>
+            <othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
             <othermeta name="role" content="All"/>
             <othermeta name="role" content="Paul F"/>
-            <othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-            <othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+            <othermeta name="product-version1" content="HPE Helion OpenStack(R)"/>
+            <othermeta name="product-version2" content="HPE Helion OpenStack(R) 1.1"/>
         </metadata>
     </prolog>
     <body>
         <!--UNDER REVISION-->
         <!--permalink: /helion/openstack/carrier/admin/stacks/sample/template/-->
-        <p>You can evaluate selected features of Heat using sample templates included with HP Helion
-            OpenStack Carrier Grade. The samples also demonstrate some HP Helion OpenStack Carrier
+        <p>You can evaluate selected features of Heat using sample templates included with HPE Helion
+            OpenStack Carrier Grade. The samples also demonstrate some HPE Helion OpenStack Carrier
             Grade extensions.</p>
         <!--<hr>
 **Note: This feature applies only to servers in the VNF Region.
 <hr>-->
-        <p>The templates are distributed on DVD and are available online as part of the HP Helion
+        <p>The templates are distributed on DVD and are available online as part of the HPE Helion
             OpenStack Carrier Grade release.</p>
         <p><b>HOT Templates: Simple</b></p>
         <p>he templates in the hot/simple directory use the OpenStack HOT Template File Format. Each
@@ -134,7 +134,7 @@
                 applications.</li>
             <li>
                 <b>Launch2NamedVMs.yaml</b> - Creates a static service containing two virtual
-                machines attached to the same network. This template illustrates the HP Helion
+                machines attached to the same network. This template illustrates the HPE Helion
                 OpenStack Carrier Grade extension for simplified VM instance naming, as described in
                     <xref href="carrier-grade-admin-wr-stacks-wr.dita#topic9186"/>. The template is
                 used as an example in Creating a Static Resource.</li>
@@ -174,7 +174,7 @@
         <ul>
             <li>
                 <b>AutoScaleWithNamePattern.yaml</b> - Creates an in/out autoscaling service with
-                simplified names for VM instances, using a HP Helion OpenStack Carrier Grade
+                simplified names for VM instances, using a HPE Helion OpenStack Carrier Grade
                 extension. The service responds to CPU load as reported by a platform-generated
                 metric.</li>
             <li>
@@ -188,13 +188,13 @@
             <li>
                 <b>MemScale.yaml</b> - Creates an in/out autoscaling service that responds to memory
                 usage as reported by the guest VM, using a custom metric generated within the guest.
-                To push the metric to the HP Helion OpenStack Carrier Grade platform, the guest must
+                To push the metric to the HPE Helion OpenStack Carrier Grade platform, the guest must
                 contain cloud-init and heatcfntools.</li>
             <li>
                 <b>TenantScale.yaml</b> - Demonstrates the use of a parameter to supply user
                 credentials. This template can be run by a tenant user. It creates an in/out
                 autoscaling service that responds to CPU load as reported by the guest VM. To push
-                the metric to the HP Helion OpenStack Carrier Grade platform, the guest must contain
+                the metric to the HPE Helion OpenStack Carrier Grade platform, the guest must contain
                 cloud-init and heatcfntools.</li>
         </ul>
         <p>

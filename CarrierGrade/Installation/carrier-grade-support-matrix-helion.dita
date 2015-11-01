@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5769">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Support Matrix for HP Helion OpenStack(R)</title>
+<title>HPE Helion OpenStack(R) Carrier Grade (Beta): Support Matrix for HPE Helion OpenStack(R)</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) Carrier Grade: Support Matrix</searchtitle>
+<searchtitle>HPE Helion OpenStack(R) Carrier Grade: Support Matrix</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B,"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -20,8 +20,8 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-support-matrix-helion.md-->
  <!--permalink: /helion/openstack/carrier/support-matrix/helion/--></p>
-<p>To ensure the performance and stability of the HP Helion OpenStack(R) environment, it is very important to meet the requirements and conform to the following recommendations.</p>
-<p>This page provides an overview of the hardware and software that is supported for HP Helion OpenStack(R) including setup and configuration information.</p>
+<p>To ensure the performance and stability of the HPE Helion OpenStack(R) environment, it is very important to meet the requirements and conform to the following recommendations.</p>
+<p>This page provides an overview of the hardware and software that is supported for HPE Helion OpenStack(R) including setup and configuration information.</p>
 <ul>
 <li>
 <xref type="section" href="#topic5769/supportedhw">Supported Hardware</xref>
@@ -41,16 +41,16 @@
 
 The following diagram depicts simplified deployment scenarios:
 
-* <a href="javascript:window.open('/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack(R)</a> (opens in a new window)
-* <a href="javascript:window.open('/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">ESX deployment of HP Helion OpenStack(R)</a> (opens in a new window)
+* <a href="javascript:window.open('/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HPE Helion OpenStack(R)</a> (opens in a new window)
+* <a href="javascript:window.open('/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">ESX deployment of HPE Helion OpenStack(R)</a> (opens in a new window)
 -->
 <section id="supportedhw"> <title>Supported Hardware</title>
-<p>The following hardware has been tested and verified to work with HP Helion OpenStack(R)</p>
+<p>The following hardware has been tested and verified to work with HPE Helion OpenStack(R)</p>
 </section>
-<section id="hp-helion-openstack-region"> <title>HP Helion OpenStack(R) Region</title>
-<p>For the HP Helion OpenStack(R) Region, the following servers are supported for the current release.</p>
+<section id="hp-helion-openstack-region"> <title>HPE Helion OpenStack(R) Region</title>
+<p>For the HPE Helion OpenStack(R) Region, the following servers are supported for the current release.</p>
 <p>
-  <b>HP ProLiant BladeSystem</b>
+  <b>HPE ProLiant BladeSystem</b>
 </p>
 <ul>
 <li>
@@ -64,7 +64,7 @@ The following diagram depicts simplified deployment scenarios:
 </li>
 </ul>
 <p>
-  <b>HP ProLiant Rack Servers</b>
+  <b>HPE ProLiant Rack Servers</b>
 </p>
 <ul>
 <li>
@@ -90,7 +90,7 @@ The following diagram depicts simplified deployment scenarios:
 </li>
 </ul>
 <!-- Hiding until confirmation
-**HP Moonshot Servers**
+**HPE Moonshot Servers**
 
 - [m710 Server Cartridge](http://www8.hp.com/in/en/products/proliant-servers/product-detail.html?oid=7398911)
 - [m300 Server Cartridge](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6488204#!tab=features)
@@ -99,7 +99,7 @@ For more information, see [Managing Moonshot Servers](/helion/openstack/1.1/inst
 
 -->
 <p>
-  <b>HP ProLiant Scalable Systems</b>
+  <b>HPE ProLiant Scalable Systems</b>
 </p>
 <ul>
 <li>
@@ -134,7 +134,7 @@ For more information, see [Managing Moonshot Servers](/helion/openstack/1.1/inst
 <!--
 ## Supported Configurations {#supportedconfigurations}
 
-HP supports the following configurations for HP Helion OpenStack(R) deployment:
+HPE supports the following configurations for HPE Helion OpenStack(R) deployment:
 
 - Host Interconnects/Protocols: 
    
@@ -150,7 +150,7 @@ HP supports the following configurations for HP Helion OpenStack(R) deployment:
 
 - 3PAR InForm OS Version: 3.1.3 MU1 to 3.2.1 MU1
 
-    * HP StoreVirtual 4000 series: driver 11.5.01.0079.0 (Helion Embedded)
+    * HPE StoreVirtual 4000 series: driver 11.5.01.0079.0 (Helion Embedded)
 -->
 </section>
 <section id="baremetal"> <title>Hardware Requirements</title>
@@ -174,7 +174,7 @@ HP supports the following configurations for HP Helion OpenStack(R) deployment:
 <p>On the controller and compute nodes, make sure the RAID array is configured to reflect a total size of less than 4TB.</p>
 </li>
 <li>
-<p>The <xref href="http://h18013.www1.hp.com/products/servers/proliantstorage/arraycontrollers/dynamicsmartarray/index.html?jumpid=reg_r1002_usen_c-001_title_r0001" scope="external" format="html" >HP Dynamic Smart Array (B120i and B320i) controllers</xref> use a proprietary driver that is not included in Helion OpenStack(R) HP recommends the use of the full featured <xref href="http://www8.hp.com/us/en/products/iss-controllers/index.html" scope="external" format="html" >Smart Array adapters</xref> (such as p220, p440, etc.) in order to achive the best set of features and performance.</p>
+<p>The <xref href="http://h18013.www1.hp.com/products/servers/proliantstorage/arraycontrollers/dynamicsmartarray/index.html?jumpid=reg_r1002_usen_c-001_title_r0001" scope="external" format="html" >HPE Dynamic Smart Array (B120i and B320i) controllers</xref> use a proprietary driver that is not included in Helion OpenStack(R) HPE recommends the use of the full featured <xref href="http://www8.hp.com/us/en/products/iss-controllers/index.html" scope="external" format="html" >Smart Array adapters</xref> (such as p220, p440, etc.) in order to achive the best set of features and performance.</p>
 
 <p>To use the Dynamic Smart Array adapter, enter the system ROM-Based Setup Utility (RBSU) and set the adapter to <codeph>Enable SATA AHCI Support</codeph> to allow the use of the adapter in non-RAID mode. However, for reliability this is not recommended.</p>
 </li>
@@ -263,7 +263,7 @@ HP supports the following configurations for HP Helion OpenStack(R) deployment:
 <entry morerows="3">Overcloud Compute</entry>
 <entry morerows="3">1</entry>
 <entry>Disk </entry>
-<entry> 512GB. 100GB is required for HP Moonshot Servers.</entry>
+<entry> 512GB. 100GB is required for HPE Moonshot Servers.</entry>
 
 </row>
 <row>
@@ -350,15 +350,15 @@ or
 -->
 </section>
 <section id="software-requirements"> <title>Software Requirements</title>
-<p>There are no software requirements for the servers where the HP Helion OpenStack(R) region will be installed because all required software is contained within the images deployed on the system.</p>
+<p>There are no software requirements for the servers where the HPE Helion OpenStack(R) region will be installed because all required software is contained within the images deployed on the system.</p>
 <p>The servers should be baremetal before installation.</p>
 </section>
 <section id="guestOS"> <title>Guest OS Support Matrix</title>
-<p>HP Helion OpenStack(R) Guest OS support is based on the hypervisor vendor.</p>
+<p>HPE Helion OpenStack(R) Guest OS support is based on the hypervisor vendor.</p>
 <p>For ESX, refer to the <xref href="http://www.vmware.com/resources/compatibility/search.php?action=search&amp;deviceCategory=software&amp;advancedORbasic=advanced&amp;maxDisplayRows=50&amp;key=&amp;productId=4&amp;gos_vmw_product_release%5B%5D=90&amp;datePosted=-1&amp;partnerId%5B%5D=-1&amp;os_bits=-1&amp;os_use%5B%5D=-1&amp;os_family%5B%5D=-1&amp;os_type%5B%5D=-1&amp;rorre=0" scope="external" format="html" >VMware Compatibility Guide</xref>.</p>
 <p>For KVM refer to the following table:</p>
-<p>A <b>Verified</b> Guest OS has been tested by HP and appears to function properly as a Nova compute VM on HP Helion OpenStack(R)</p>
-<p>A <b>Certified</b> Guest OS has been officially tested by the OS vendor, or by HP under the vendor's authorized program, and will be supported by the OS vendor as a Nova compute VM on HP Helion OpenStack(R)</p>
+<p>A <b>Verified</b> Guest OS has been tested by HPE and appears to function properly as a Nova compute VM on HPE Helion OpenStack(R)</p>
+<p>A <b>Certified</b> Guest OS has been officially tested by the OS vendor, or by HPE under the vendor's authorized program, and will be supported by the OS vendor as a Nova compute VM on HPE Helion OpenStack(R)</p>
 <table>
 <tgroup cols="3">
 <colspec colname="col1"/>

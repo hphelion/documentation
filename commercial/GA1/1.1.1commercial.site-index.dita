@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; 1.1: Site Index"
+title: "HPE Helion OpenStack&#174; 1.1: Site Index"
 permalink: /helion/openstack/1.1/siteindex/
 product: commercial.ga
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
+product-version1: HPE Helion OpenStack
+product-version2: HPE Helion OpenStack 1.1
 role1: All
 
 authors: Paul F
@@ -24,31 +24,31 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
 
-# HP Helion OpenStack&#174; 1.1: Site Index
+# HPE Helion OpenStack&#174; 1.1: Site Index
 
 
 A list of all the pages on docs.hpcloud.com can be found in the [Master TOC](/master-toc/)
 
-The documentation for HP Helion OpenStack includes the following:
+The documentation for HPE Helion OpenStack includes the following:
 
 <!-- Trying something
 * [Release Notes](#release)
-* [Getting started with HP Helion OpenStack](#getstart)
+* [Getting started with HPE Helion OpenStack](#getstart)
 * [Related documentation](#related)
-* [Installing HP Helion OpenStack](#install)
-* [Updating HP Helion OpenStack](#update)
+* [Installing HPE Helion OpenStack](#install)
+* [Updating HPE Helion OpenStack](#update)
 * [Undercloud Horizon Dashboard](#underdash)
 * [Horizon Dashboard](#dash)
-* [HP Helion OpenStack Services](#services)
+* [HPE Helion OpenStack Services](#services)
 * [Object Storage (Swift) Deployment](#swift)
 * [License files](#license)
 * [Related documentation](#related)
 -->
 
 
-## Getting started with HP Helion OpenStack {#getstart}
+## Getting started with HPE Helion OpenStack {#getstart}
 
-The following topics as needed contain information about HP Helion OpenStack:
+The following topics as needed contain information about HPE Helion OpenStack:
 
 - [Release Notes](/helion/openstack/1.1/release-notes/11) 
 - [FAQs](/helion/openstack/1.1/faq/)  
@@ -57,7 +57,7 @@ The following topics as needed contain information about HP Helion OpenStack:
 - [Glossary](/helion/openstack/1.1/glossary/)
 
 
-## Installing HP Helion OpenStack {#install}
+## Installing HPE Helion OpenStack {#install}
 
 Review the following topics before you start the installation:
 
@@ -74,8 +74,8 @@ Review the following topics before you start the installation:
 Review the following topics related to installing on KVM:
 
 - [Installation and Configuration for KVM Hypervisor](/helion/openstack/1.1/install/kvm/)
-- [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/1.1/install/vsa/)
-- [HP StoreServ (3PAR) Support](/helion/openstack/1.1/install/3par/)
+- [Configuring HPE StoreVirtual VSA for Block Storage](/helion/openstack/1.1/install/vsa/)
+- [HPE StoreServ (3PAR) Support](/helion/openstack/1.1/install/3par/)
 - [Integrating LDAP](/helion/openstack/1.1/services/identity/integrate-ldap/)
 - [Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors](/helion/openstack/1.1/install/add/nodes/)
 
@@ -85,11 +85,11 @@ Review the following topics related to installing on ESX:
 
 - [Installation and Configuration for ESX Hypervisor](/helion/openstack/1.1/install/esx/)
 - [Deploy vCenter ESX compute proxy](/helion/openstack/1.1/install/esx/proxy/)
-- [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/1.1/install/ovsvapp/)
+- [Deploying and configuring OVSvApp for HPE Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/1.1/install/ovsvapp/)
 
 ### Installing on a laptop
 
-*  [HP Helion OpenStack&#174; 1.1: Virtual demo installation]( /helion/openstack/1.1/install/laptop/demo/)
+*  [HPE Helion OpenStack&#174; 1.1: Virtual demo installation]( /helion/openstack/1.1/install/laptop/demo/)
 
 ### Post-Installation Steps
 
@@ -106,8 +106,8 @@ Review the following topics related to optional and required post-installation s
 - [Tracking masked IP addresses when using network address translation](/helion/openstack/1.1/maskedIP/)
 - [Configuring your network securely](/helion/openstack/1.1/install/security/)
 - [Removing and Replacing a Failed Overcloud Controller]( /helion/openstack/1.1/removing/failedovercloud/)
-* [HP Helion OpenStack&#174; Neutron Administrator Pre and Post Installation Tasks]( /helion/openstack/1.1/services/neutron/installation/intro/)
-*  [How to build a Microsoft Windows Server guest image for HP Helion OpenStack]( /helion/openstack/1.1/create-deploy/certified-microsoft-windows/guest-image/)
+* [HPE Helion OpenStack&#174; Neutron Administrator Pre and Post Installation Tasks]( /helion/openstack/1.1/services/neutron/installation/intro/)
+*  [How to build a Microsoft Windows Server guest image for HPE Helion OpenStack]( /helion/openstack/1.1/create-deploy/certified-microsoft-windows/guest-image/)
 
 
 ## Undercloud Horizon Dashboard {#underdash}
@@ -122,10 +122,10 @@ Review the following topics related to the undercloud Horizon dashboard:
 - [Updates and Extensions](/helion/openstack/1.1/undercloud/admin/updates-and-extension/)
 - [Working with Virtual Environment(s)](/helion/openstack/1.1/undercloud/resource/esx/)
 - [Working with Storage](/helion/openstack/1.1/undercloud/manage/resources/storage/)
-- [Working with HP StoreVirtual VSA](/helion/openstack/1.1/undercloud/storage/storevirtual/)
+- [Working with HPE StoreVirtual VSA](/helion/openstack/1.1/undercloud/storage/storevirtual/)
 - [Working with ESX Clusters](/helion/openstack/1.1/undercloud/oc/config/esx/)
 - [Working with StoreServ Backends](/helion/openstack/1.1/undercloud/oc/config/storeserv/)
-- [Working with HP 3PAR StoreServ](/helion/openstack/1.1/undercloud/storage/storeserv/)
+- [Working with HPE 3PAR StoreServ](/helion/openstack/1.1/undercloud/storage/storeserv/)
 - [Working With StoreVirtual Backends](/helion/openstack/1.1/undercloud/oc/config/storevirtual/)
 - [Command Line Interface- EON](/helion/openstack/1.1/undercloud/eon/cli/)
 
@@ -137,9 +137,9 @@ Review the following topics related to the Horizon dashboard:
 - [Logging into the Helion Dashboards](/helion/openstack/1.1/dashboard/login/)
 
 
-## HP Helion OpenStack Services ## {#services}
+## HPE Helion OpenStack Services ## {#services}
 
-Review the following topics related to the HP Horizon OpenStack services:
+Review the following topics related to the HPE Horizon OpenStack services:
 
 
 - [Services Overview](/helion/openstack/1.1/services/overview/)
@@ -224,7 +224,7 @@ Review the following license files, as needed:
  
 ## Related documentation {#related}
 
-This topic provides you links to OpenStack documentation that you might find helpful when working with HP Helion OpenStack.\:
+This topic provides you links to OpenStack documentation that you might find helpful when working with HPE Helion OpenStack.\:
 
 * [Related documentation](/helion/openstack/1.1/related-links/)
 

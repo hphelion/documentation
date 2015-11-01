@@ -3,13 +3,13 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic492">
 <title>For more information</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) Carrier Grade (Beta): DNS as a Service (DNSaaS) Overview</searchtitle>
+<searchtitle>HPE Helion OpenStack(R) Carrier Grade (Beta): DNS as a Service (DNSaaS) Overview</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -19,8 +19,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -29,9 +29,9 @@
  <!--./CarrierGrade/ServicesOverviews/carrier-grade-services-dns-overview.md-->
  <!--permalink: /helion/openstack/carrier/services/dns/overview/--></p>
 <!--
-# HP Helion OpenStack(R) Carrier Grade (Beta): DNS as a Service (DNSaaS) Overview#
+# HPE Helion OpenStack(R) Carrier Grade (Beta): DNS as a Service (DNSaaS) Overview#
 
-Based on the OpenStack(R) Designate project, the HP Helion OpenStack(R) DNS-as-a-service feature (DNSaaS) provides a Domain Name System (DNS) service for use by HP Helion OpenStack(R) users.
+Based on the OpenStack(R) Designate project, the HPE Helion OpenStack(R) DNS-as-a-service feature (DNSaaS) provides a Domain Name System (DNS) service for use by HPE Helion OpenStack(R) users.
 
 DNSaaS includes a set of RESTful APIs for the display, creation, modification and deletion of DNS records.
 
@@ -45,7 +45,7 @@ DNSaaS for the OpenStack(R) platform includes:
 
 For example, if a user wants to access *mytestdomain.com* in a web browser, DNS provides the mechanism the browser uses to locate the server's IP address (for example, `1.2.3.4`).
 
-**Note:** Installing HP Helion OpenStack(R) DNSaaS is optional. Before you attempt the DNSaaS installation, you must have already installed HP Helion OpenStack(R) and verified that it is  correctly configured and operational.
+**Note:** Installing HPE Helion OpenStack(R) DNSaaS is optional. Before you attempt the DNSaaS installation, you must have already installed HPE Helion OpenStack(R) and verified that it is  correctly configured and operational.
 
 Learn how to [install DNS as a service](/helion/openstack/carrier/install/dnsaas/).
 
@@ -67,7 +67,7 @@ To [perform tasks using DNSaaS](#howto), you can use the API or CLI.
 
 ###Using the API to access DNSaaS<a name="API"></a>
  
-You can use a low-level, raw REST API access to DNSaaS. See the [HP Helion Public Cloud DNS API Specifications](https://docs.hpcloud.com/api/dns/).
+You can use a low-level, raw REST API access to DNSaaS. See the [HPE Helion Public Cloud DNS API Specifications](https://docs.hpcloud.com/api/dns/).
 
 ###Using the CLI<a name="cli"></a>
 
@@ -76,9 +76,9 @@ You can use the *python-designateclient* command line tool to access DNSaaS. See
 For more information on installing the CLI, see [Install the OpenStack(R) command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 -->
 <!--
-## How To's with the HP Helion DNSaaS<a name="howto"></a>
+## How To's with the HPE Helion DNSaaS<a name="howto"></a>
 
-The HP DNSaaS provides a way to display, create, modify, and delete DNS records. 
+The HPE DNSaaS provides a way to display, create, modify, and delete DNS records. 
 
 The following lists of tasks can be performed by a user or administrator through the [API](http://docs.hpcloud.com/api/dns), or [CLI](http://python-designateclient.readthedocs.org/en/latest/shell.html).
 

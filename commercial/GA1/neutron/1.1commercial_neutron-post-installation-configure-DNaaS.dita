@@ -1,12 +1,12 @@
 /helion/openstack/1.1/fcp/backup.restore/---
 layout: default
-title: "HP Helion OpenStack&#174; 1.1: DNSaaS Configuration (Optional)"
+title: "HPE Helion OpenStack&#174; 1.1: DNSaaS Configuration (Optional)"
 permalink: /helion/openstack/1.1/services/neutron/post/installation/configure-dnsaas/
 product: commercial.ga
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.0
-product-version3: HP Helion OpenStack 1.0.1
-product-version4: HP Helion OpenStack 1.1
+product-version1: HPE Helion OpenStack
+product-version2: HPE Helion OpenStack 1.0
+product-version3: HPE Helion OpenStack 1.0.1
+product-version4: HPE Helion OpenStack 1.1
 role1: Network Administrator
 role2: Network Architect
 authors: Vikas Deolaliker, Paul Farley
@@ -26,13 +26,13 @@ PageRefresh();
 </script>
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/install/ovsvapp/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/related-links/">NEXT &#9654;</a> </p> -->
 
-# HP Helion OpenStack&#174; 1.1: DNSaaS Configuration (Optional)
+# HPE Helion OpenStack&#174; 1.1: DNSaaS Configuration (Optional)
 
 Configuring Domain Name System as a service (DNSaaS) is optional.
 
 Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network. 
 
-It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack.
+It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HPE Helion OpenStack.
 
 <p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.01, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.01 over the previous version. </p>
 
@@ -54,7 +54,7 @@ To configure DNSaaS review:
 ##Prerequisites {#preq}
 <p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.01, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.01 over the previous version. </p>
 
-* HP Helion OpenStack is successfully installed
+* HPE Helion OpenStack is successfully installed
 * Download [DNSaaS Installer Image](#publication) <br /> 
 * Obtain [Target Credentials](#target-cred): credentials of the user+tenant where the service is to be deployed.
 	* This user should have the **admin** and  **\_member_** roles.
@@ -148,17 +148,17 @@ Before proceeding with the DNaaS installation, ensure that you have met all the 
 	c. Click **Configure** in the top-right corner of the page to display the Configure dialog box.
 
 	d. Click **Sign up Now** below the description in the Configure dialog box.<br /> 
-       The page navigates to the HP Helion Product Catalog. Then, do the following:<br />  
+       The page navigates to the HPE Helion Product Catalog. Then, do the following:<br />  
     
-	e. Click **Sign In** in the top of the page to open the HP Web ID dialog box.
+	e. Click **Sign In** in the top of the page to open the HPE Web ID dialog box.
 
-	f. Click **Sign Up for Web ID** to create log-in credentials. The HP WEB ID dialog box is displayed. 
+	f. Click **Sign Up for Web ID** to create log-in credentials. The HPE WEB ID dialog box is displayed. 
     
 	g. Enter the required details.
   
 	h. Select the check box next to **I agree to the Terms of Use** to accept the terms and conditions.
 
-	i. Click **Submit**.<br /> The credentials are authenticated and the account is created. <br /> Once you register on the HP Helion Product Catalog, you are required to configure your credentials.
+	i. Click **Submit**.<br /> The credentials are authenticated and the account is created. <br /> Once you register on the HPE Helion Product Catalog, you are required to configure your credentials.
 6. Click **Download** against the package that you want to download on your local system from a  list of .csu file. 
 8. Select the appropriate file (for example: **dns.csu**) from the list and click **Publish**. 
 9. Click **Publish** to install the package. 
@@ -408,10 +408,10 @@ The Keystone service and endpoints will not be deleted, if you want to remove th
 ##More Information {#moreinfo}
 For more information, see:
 
-* [HP Helion Public Cloud DNS API Specifications](https://docs.hpcloud.com/api/dns/)
+* [HPE Helion Public Cloud DNS API Specifications](https://docs.hpcloud.com/api/dns/)
 * [Designate DNSaaS services for OpenStack](https://wiki.openstack.org/wiki/Designate)
 
-**Note**: Public Cloud API and HP Helion Openstack API details are similar.
+**Note**: Public Cloud API and HPE Helion Openstack API details are similar.
 
 
 

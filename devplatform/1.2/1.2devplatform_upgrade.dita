@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3949">
-<title>HP Helion 1.2 Development Platform: Upgrading from HP Helion Development Platform 1.1</title>
+<title>HPE Helion 1.2 Development Platform: Upgrading from HPE Helion Development Platform 1.1</title>
 <titlealts>
-<searchtitle>HP Helion 1.2 Development Platform: Commercial Installation and Configuration</searchtitle>
+<searchtitle>HPE Helion 1.2 Development Platform: Commercial Installation and Configuration</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.2"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="System Engineer"/>
 <othermeta name="role" content="Cloud Administrator"/>
@@ -19,8 +19,8 @@
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Jayme P, Patrick F"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.2"/>
 </metadata>
 </prolog>
 <body>
@@ -29,7 +29,7 @@
  <!--./devplatform/1.2/1.2devplatform_upgrade.md-->
  <!--permalink: /helion/devplatform/1.2/upgrade/--></p>
 <p>If Helion Development Platform 1.1 is installed on Helion OpenStack(R) 1.1, and the Helion OpenStack(R) environment is updated to version 1.1.1, the Helion Developer Platform services must be stopped, and the control plane VMs must be restarted to complete the upgrade.</p>
-<p>If Helion OpenStack(R) version 1.1 is upgraded to version 1.1.1 without Helion Development Platform installed, no upgrade is necessary, and Helion Development Platform 1.2 can be installed normally. See <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >HP Helion 1.2 Development Platform: Installation and Configuration</xref> for instructions for a new installation.</p>
+<p>If Helion OpenStack(R) version 1.1 is upgraded to version 1.1.1 without Helion Development Platform installed, no upgrade is necessary, and Helion Development Platform 1.2 can be installed normally. See <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >HPE Helion 1.2 Development Platform: Installation and Configuration</xref> for instructions for a new installation.</p>
 <p>When Helion OpenStack(R) is updated from 1.1. to 1.1.1, the Marketplace, Messaging, and Database services will automatically be updated to version 1.2. To update the Application Lifecycle Service, version 1.2 of the service must be downloaded and installed.</p>
 <ul>
 <li>

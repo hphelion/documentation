@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1469">
-<title>HP Helion OpenStack(R) 1.1: Related OpenStack(R) Documentation</title>
+<title>HPE Helion OpenStack(R) 1.1: Related OpenStack(R) Documentation</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Michael B"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -21,9 +21,9 @@
 <p>
 
 </p>
-<p>This topic provides you links to OpenStack(R) documentation that you might find helpful when working with HP Helion OpenStack(R)</p>
+<p>This topic provides you links to OpenStack(R) documentation that you might find helpful when working with HPE Helion OpenStack(R)</p>
 <section id="openstack-links"> <title>OpenStack(R) Links</title>
-<p>The HP Helion OpenStack(R) product contains OpenStack(R) technology coupled with a LinuxÂ(R) operating system.</p>
+<p>The HPE Helion OpenStack(R) product contains OpenStack(R) technology coupled with a LinuxÂ(R) operating system.</p>
 <p>For more information, refer to the official open source OpenStack(R) documentation site:</p>
 <ul>
 <li>

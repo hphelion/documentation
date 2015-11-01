@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8887">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Deploy vCenter ESX compute proxy</title>
+<title>HPE Helion OpenStack(R) 1.1 and 1.1.1: Deploy vCenter ESX compute proxy</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Deploy vCenter ESX compute proxy</searchtitle>
+<searchtitle>HPE Helion OpenStack(R) 1.1: Deploy vCenter ESX compute proxy</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B,"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -23,10 +23,10 @@
 <p> <xref href="../../commercial/GA1/1.1commercial.install-GA-post-esx.dita" >▲ Post-Installation for ESX Hypervisor | </xref>
 <xref href="../../commercial/GA1/1.1commercial.install-GA-ovsvapp.dita" >Deploy the Open vSwitch vApp ▶ </xref> </p>
 <p>
-  <b>This document describes the installation process for HP Helion OpenStack(R) 1.1 and HP Helion OpenStack(R) 1.1.1.</b>
+  <b>This document describes the installation process for HPE Helion OpenStack(R) 1.1 and HPE Helion OpenStack(R) 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion OpenStack(R) from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack(R) 1.1.1 Update Guide</xref>.)</p>
-<p>The HP Helion OpenStack(R) vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server managing one or more ESX hosts. The HP Helion OpenStack(R) Compute Service (Nova) requires this driver to interface with VMWare ESX hypervisor APIs.</p>
+<p>(If you already have 1.1 installed, you can update Helion OpenStack(R) from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HPE Helion OpenStack(R) 1.1.1 Update Guide</xref>.)</p>
+<p>The HPE Helion OpenStack(R) vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server managing one or more ESX hosts. The HPE Helion OpenStack(R) Compute Service (Nova) requires this driver to interface with VMWare ESX hypervisor APIs.</p>
 <p>The general process for deploying the vCenter ESX compute proxy involves the following:</p>
 <ul>
 <li>Verify prerequisites</li>
@@ -221,7 +221,7 @@ gateway = enter the compute proxy gateway
 </codeblock>
 </li>
 <li>
-<p>Use the <xref href="../../commercial/GA1/1.1commerical.services-eon-overview.dita" >HP EON servcie CLI</xref> to deploy the ESX compute by executing the following steps from the undercloud node: <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->For details, refer to the <xref href="../../commercial/GA1/1.1commercial.undercloud-eon-cli.dita" >EON CLI</xref> reference.</p>
+<p>Use the <xref href="../../commercial/GA1/1.1commerical.services-eon-overview.dita" >HPE EON servcie CLI</xref> to deploy the ESX compute by executing the following steps from the undercloud node: <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->For details, refer to the <xref href="../../commercial/GA1/1.1commercial.undercloud-eon-cli.dita" >EON CLI</xref> reference.</p>
 
 <codeblock>
 <codeph>source /root/stackrc eon vcenter-add --name &lt;VCENTER_NAME&gt; --ip-address=&lt;VCENTER_IP_ADDRESS&gt; --username=&lt;VCENTER_USERNAME&gt; --password=&lt;VCENTER_PASSWORD&gt; --port=&lt;VCENTER_PORT&gt; eon cluster-import --vcenter-id=&lt;VCENTER_ID&gt; --cluster-moid=&lt;CLUSTER_MOID&gt; --cluster-name=&lt;CLUSTER_NAME&gt; eon cluster-activate --vcenter-id=&lt;VCENTER_ID&gt; --clusters &lt;CLUSTER_MOIDS&gt; [&lt;CLUSTER_MOIDS&gt; ...] 
@@ -294,9 +294,9 @@ Use the following steps to configure SSL between vCenter and the ESX computer pr
 <li>
 <p>Deploy the Open vSwitch vApp <b>(REQUIRED)</b>.</p>
 
-<p>If you have not deployed the HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp), see the <xref href="../../commercial/GA1/1.1commercial.install-GA-ovsvapp.dita" >Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts</xref> document for complete instructions.</p>
+<p>If you have not deployed the HPE Virtual Cloud Networking's Open vSwitch vApp (OVSvApp), see the <xref href="../../commercial/GA1/1.1commercial.install-GA-ovsvapp.dita" >Deploying and configuring OVSvApp for HPE Virtual Cloud Networking (VCN) on ESX hosts</xref> document for complete instructions.</p>
 
-<p>OVSvApp must be installed for HP Helion OpenStack(R) environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).</p>
+<p>OVSvApp must be installed for HPE Helion OpenStack(R) environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).</p>
 </li>
 </ul>
 <p>

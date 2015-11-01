@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic30945">
-<title>HP Helion Public Cloud CLI Software for Windows PowerShell Command Line Reference</title>
+<title>HPE Helion Public Cloud CLI Software for Windows PowerShell Command Line Reference</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,7 +13,7 @@
  <!--./publiccloud/cli.windows.2.reference.md-->
  <!--permalink: /publiccloud/cli/windows/reference/--></p>
 <!-- Removed all html tags -->
-<p>Below you can find a full reference of supported HP Helion Public Cloud CLI software for Windows PowerShell commands (sometimes called "cmdlets").  The commands are broken up into separate sections by functional area:</p>
+<p>Below you can find a full reference of supported HPE Helion Public Cloud CLI software for Windows PowerShell commands (sometimes called "cmdlets").  The commands are broken up into separate sections by functional area:</p>
 <ul>
 <li>
 <xref type="section" href="#topic30945/Nonservicespecific">Non-service-specific</xref>
@@ -29,14 +29,14 @@
 <!-- * [CDN](#CDN) --></li>
 </ul>
 <p>
-<b>Note</b>: The HP Helion Public Cloud CLI software for Windows PowerShell cmdlets are not case specific; in other words, <codeph>Get-Catalog</codeph> and <codeph>get-catalog</codeph> function identically. When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:</p>
+<b>Note</b>: The HPE Helion Public Cloud CLI software for Windows PowerShell cmdlets are not case specific; in other words, <codeph>Get-Catalog</codeph> and <codeph>get-catalog</codeph> function identically. When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:</p>
 <codeblock>
   <codeph> PS: HPCS:\&gt; cd "my container:"
  PS: HPCS:\&gt; new-container -name "my new container"
 </codeph>
 </codeblock>
 <section id="Nonservicespecific"> <title>Non-service-specific</title>
-<p>Following is the complete list of HP Helion Public Cloud Windows CLI commands that are not applicable to a specific service (compute, object storage, etc.).   To issue these commands, you need to navigate to a container or the HP Helion Public Cloud Services (HPCS) provider, issuing the following command:</p>
+<p>Following is the complete list of HPE Helion Public Cloud Windows CLI commands that are not applicable to a specific service (compute, object storage, etc.).   To issue these commands, you need to navigate to a container or the HPE Helion Public Cloud Services (HPCS) provider, issuing the following command:</p>
 <codeblock>
   <codeph>cd HPCS:
 </codeph>
@@ -355,7 +355,7 @@ PS HPCS:\\&gt;
 <p>Sets the availability zone to "az-2-region-a.geo-1".</p>
 </section>
 <section id="Compute"> <title>Compute CLI Commands</title>
-<p>Following is the complete list of HP Helion Public Cloud Windows Compute CLI commands.</p>
+<p>Following is the complete list of HPE Helion Public Cloud Windows Compute CLI commands.</p>
 </section>
 <section id="Add-Rule"> <title>Add-Rule</title>
 <p>Creates a new security group rule and assigns it to an existing security group.</p>
@@ -496,7 +496,7 @@ PS HPCS:\\&gt;
 <section id="ls"> <title>Ls</title>
 <p>Lists the currently-available servers, flavors, images, networking, and security group and their associated information.  The information listed is dependent on the directory in which you execute the command.  For example, if you are in the directory "\Servers", the server information is listed.</p>
 <p>
-<b>Note</b>: The HP Helion Public Cloud environment CLI software for Windows PowerShell supports the <xref href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx" scope="external" format="html" >standard Windows wildcard</xref> characters asterix (<codeph>*</codeph>), question mark (<codeph>?</codeph>), and range brackets (<codeph>[]</codeph>).</p>
+<b>Note</b>: The HPE Helion Public Cloud environment CLI software for Windows PowerShell supports the <xref href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx" scope="external" format="html" >standard Windows wildcard</xref> characters asterix (<codeph>*</codeph>), question mark (<codeph>?</codeph>), and range brackets (<codeph>[]</codeph>).</p>
 </section>
 <section id="syntax"> <title>Syntax</title>
 <p>ls</p>
@@ -1569,7 +1569,7 @@ unassign-ip <i>address</i> -sid  <i>server-ID</i>
 Reassigns the Subnet(12857174-99cf-40e9-999e-fb0fa2e84898) to the designated External Network with the new name of "NewSubnetName".</p>
 </section>
 <section id="ObjectStorage"> <title>Object Storage CLI Commands</title>
-<p>Following is the complete list of HP Helion Public Cloud Windows Object Storage CLI commands.</p>
+<p>Following is the complete list of HPE Helion Public Cloud Windows Object Storage CLI commands.</p>
 </section>
 <section id="Cd"> <title>Cd</title>
 <p>Allows you to traverse through a directory structure (along both ascendant and descendant axis).</p>
@@ -1782,7 +1782,7 @@ Maps the `rgtest2` container to your list of available drives. -->
 <p>This examples creates another sub-folder but this time the target location is two levels deep from the current location (root).</p>
 </section>
 <section id="Migrate-Drive"> <title>Migrate-Drive</title>
-<p>Migrates existing stores of data from external sources like S3, Dropbox and Skydrive to a target Container within HP Object Storage.</p>
+<p>Migrates existing stores of data from external sources like S3, Dropbox and Skydrive to a target Container within HPE Object Storage.</p>
 </section>
 <section id="syntax"> <title>Syntax</title>
 <p>migrate-drive -p "<i>bucket</i>" -sk "<i>secret-key</i>" -ak "<i>access-key</i>"</p>
@@ -1816,7 +1816,7 @@ Maps the `rgtest2` container to your list of available drives. -->
 <dt>
 <b>b</b>
 </dt>
-<dd>Comma-deliniated bucket names to be copied to the HP Helion Public Cloud system.</dd>
+<dd>Comma-deliniated bucket names to be copied to the HPE Helion Public Cloud system.</dd>
 </dlentry>
 
 </dl>
@@ -1827,7 +1827,7 @@ Maps the `rgtest2` container to your list of available drives. -->
   <codeph>migrate-drive -p "S3" -sk "aa78676dhhh100" -ak "jhjhgu64332" -b "testb1", "testb2"
 </codeph>
 </codeblock>
-<p>Copies the <codeph>testb1</codeph> and <codeph>testb2</codeph> S3 buckets to the HP object storage containers of the same name, using a secret-key value of "<codeph>aa78676dhhh100</codeph>" and an access-key value of "<codeph>jhjhgu64332</codeph>".</p>
+<p>Copies the <codeph>testb1</codeph> and <codeph>testb2</codeph> S3 buckets to the HPE object storage containers of the same name, using a secret-key value of "<codeph>aa78676dhhh100</codeph>" and an access-key value of "<codeph>jhjhgu64332</codeph>".</p>
 </section>
 <section id="New-Container"> <title>New-Container</title>
 <p>Creates a new storage container.</p>

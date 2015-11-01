@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; 1.1: Undercloud Horizon Overview"
+title: "HPE Helion OpenStack&#174; 1.1: Undercloud Horizon Overview"
 permalink: /helion/openstack/1.1/undercloud/horizon/overview/
 product: commercial.ga
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
+product-version1: HPE Helion OpenStack
+product-version2: HPE Helion OpenStack 1.1
 role1: Systems Administrator 
 role2: Cloud Architect 
 role3: Storage Administrator 
@@ -30,7 +30,7 @@ PageRefresh();
 </script>
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/install-beta/prereqs/">NEXT &#9654;</a> </p> -->
 
-# HP Helion OpenStack&#174; 1.1: Undercloud Horizon Overview
+# HPE Helion OpenStack&#174; 1.1: Undercloud Horizon Overview
 
 Once you complete the undercloud and the overcloud installations, you can access the undercloud Horizon dashboard, which is the management interface for the undercloud. 
 

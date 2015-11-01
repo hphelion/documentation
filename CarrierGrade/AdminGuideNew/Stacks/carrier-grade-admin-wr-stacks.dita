@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5192">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Working Stacks, Templates, and Parameters
+<title>HPE Helion OpenStack(R) Carrier Grade (Beta): Working Stacks, Templates, and Parameters
         (Orchestration)</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -24,7 +24,7 @@
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>Service resources can be flavors, images, instances, tenant networks, volumes, security groups, users, floating IP addresses, or any other entities defined and configured in templates. Most types of resources offered by BHP Helion OpenStack(R) Carrier Grade can be defined in templates and included in services.</p>
+<p>Service resources can be flavors, images, instances, tenant networks, volumes, security groups, users, floating IP addresses, or any other entities defined and configured in templates. Most types of resources offered by BHPE Helion OpenStack(R) Carrier Grade can be defined in templates and included in services.</p>
 <p>See the following topics on using stacks:</p>
 <ul>
 <li>
@@ -40,7 +40,7 @@
 <xref href="../../../CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-sample-templates.dita" >Reporting a Guest Metric</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-sample-templates.dita" >Sample Templates for HP Helion OpenStack(R) Carrier Grade</xref>
+<xref href="../../../CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-sample-templates.dita" >Sample Templates for HPE Helion OpenStack(R) Carrier Grade</xref>
 </li>
 <li>
 <xref href="../../../CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-sample-resource-types.dita" >Supported Heat Resource Types</xref>

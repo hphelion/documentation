@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8339">
-<title>HP Helion OpenStack(R) 1.1: Troubleshooting VSA</title>
+<title>HPE Helion OpenStack(R) 1.1: Troubleshooting VSA</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -25,8 +25,8 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.troubleshooting.vsa.md-->
  <!--permalink: /helion/openstack/1.1/services/troubleshooting/vsa/--></p>
-<p>HP Helion OpenStack(R) is an OpenStack(R) technology coupled with a version of LinuxÂ(R) provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
-<p>Troubleshooting issues related to HP StoreVirtual VSA environments.</p>
+<p>HPE Helion OpenStack(R) is an OpenStack(R) technology coupled with a version of LinuxÂ(R) provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
+<p>Troubleshooting issues related to HPE StoreVirtual VSA environments.</p>
 <ul>
 <li>
 <xref type="section" href="#topic8339/fails-retrieve-netmask">Failure to retrieve netmask from vsa-bridge</xref>
@@ -111,7 +111,7 @@
 <p>Perform the following steps:</p>
 <ul>
 <li>
-<p>HP StoreVirtual VSA supports up to 7 disks</p>
+<p>HPE StoreVirtual VSA supports up to 7 disks</p>
 </li>
 <li>
 <p>Execute <codeph>fdisk &amp;#45;l</codeph> and check for number of available drives in the machine other than <codeph>/dev/sda</codeph>

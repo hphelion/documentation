@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic526">
-<title>HP Helion Public Cloud Domain Name Service (DNS) Overview</title>
+<title>HPE Helion Public Cloud Domain Name Service (DNS) Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,9 +12,9 @@
 <!--PUBLISHED-->
  <!--./publiccloud/dns.md-->
  <!--permalink: /publiccloud/dns/--></p>
-<p>The HP Helion Public Cloud Domain Name service (DNS) provides you with a managed domain name service that features anycast routing hosted by HP Helion Public Cloud.</p>
+<p>The HPE Helion Public Cloud Domain Name service (DNS) provides you with a managed domain name service that features anycast routing hosted by HPE Helion Public Cloud.</p>
 <section id="api"> <title>API</title>
-<p>Do you need low level, raw REST API access to HP Helion Public Cloud DNS?  Take a look at the <xref href="../publiccloud/apidocs/c1.1/dns-api.dita" >DNS API page</xref>.</p>
+<p>Do you need low level, raw REST API access to HPE Helion Public Cloud DNS?  Take a look at the <xref href="../publiccloud/apidocs/c1.1/dns-api.dita" >DNS API page</xref>.</p>
 </section>
 </body>
 </topic>

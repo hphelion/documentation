@@ -2,15 +2,15 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic24073_1">	
-<title>HP Helion 1.1 Development Platform: Installation and Configuration</title>
+<title>HPE Helion 1.1 Development Platform: Installation and Configuration</title>
 <titlealts>
-	<searchtitle>HP Helion 1.1 Development Platform: Commercial Installation and Configuration</searchtitle>
+	<searchtitle>HPE Helion 1.1 Development Platform: Commercial Installation and Configuration</searchtitle>
 </titlealts>
 <prolog>
 	<metadata>
 		<othermeta name="layout" content="default"/>
-		<othermeta name="product-version" content="HP Helion Development Platform"/>
-		<othermeta name="product-version" content="HP Helion Development Platform 1.1"/>
+		<othermeta name="product-version" content="HPE Helion Development Platform"/>
+		<othermeta name="product-version" content="HPE Helion Development Platform 1.1"/>
 		<othermeta name="role" content="Systems Administrator"/>
 		<othermeta name="role" content="System Engineer"/>
 		<othermeta name="role" content="Cloud Administrator"/>
@@ -20,21 +20,21 @@
 		<othermeta name="role" content="ISV Developer"/>
 		<othermeta name="role" content="Service Developer"/>
 		<othermeta name="role" content="Jayme P, Patrick F"/>
-		<othermeta name="product-version1" content="HP Helion Development Platform"/>
-		<othermeta name="product-version2" content="HP Helion Development Platform 1.1"/>
+		<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+		<othermeta name="product-version2" content="HPE Helion Development Platform 1.1"/>
 	</metadata>
 </prolog>
 <body>
 
 <!--PUBLISH-->
 
-<p>The HP Helion Development Platform currently contains four components: Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service.</p>
+<p>The HPE Helion Development Platform currently contains four components: Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service.</p>
 
-<p>The following topics explain how to install and configure the HP Helion Development Platform. There is also <xref href="../../devplatform/1.2/1.2devplatform.troubleshooting.dita" >Troubleshooting</xref> documentation to handle issues that may occur.
+<p>The following topics explain how to install and configure the HPE Helion Development Platform. There is also <xref href="../../devplatform/1.2/1.2devplatform.troubleshooting.dita" >Troubleshooting</xref> documentation to handle issues that may occur.
 </p>
 <ul>
 	<li><xref type="section" href="#topic24073_1/prerequisites">Prerequisites</xref></li>
-	<li><xref type="section" href="#topic24073_1/installing-the-hp-helion-development-platform">Installing the HP Helion Development Platform</xref></li>
+	<li><xref type="section" href="#topic24073_1/installing-the-hp-helion-development-platform">Installing the HPE Helion Development Platform</xref></li>
 	<li><xref type="section" href="#topic24073_1/installing-messaging">Installing Messaging</xref></li>
 	<li><xref type="section" href="#topic24073_1/install-als">Install the Application Lifecycle Service</xref></li>
 	<li><xref type="section" href="#topic24073_1/install-database">Install the Database Service</xref></li>
@@ -42,7 +42,7 @@
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
 
-	<p>The HP Helion Development Platform is installed in the overcloud of HP Helion OpenStack&#174;.</p> 
+	<p>The HPE Helion Development Platform is installed in the overcloud of HPE Helion OpenStack&#174;.</p> 
 
 	<p>Before you begin installation:</p>
 <ul>
@@ -50,7 +50,7 @@
 
 	<li>The Cinder block storage service must be configured with either [VSA](/helion/openstack/1.1/install/vsa/overview/) or [3Par](/helion/openstack/1.1/install/3par/).</li>
  
-	<li>If you installed HP Helion OpenStack&#174; with <b>KVM</b> hypervisor support, configure HP StoreVirtual VSA for Block Storage or configure HP 3PAR StoreServ Storage.</li>
+	<li>If you installed HPE Helion OpenStack&#174; with <b>KVM</b> hypervisor support, configure HPE StoreVirtual VSA for Block Storage or configure HPE 3PAR StoreServ Storage.</li>
 
 	<li>The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements.</li>
 
@@ -65,17 +65,17 @@
 	</li>
 </ul>
 </section>
-<section id="installing-the-hp-helion-development-platform"> <title>Installing the HP Helion Development Platform</title>
+<section id="installing-the-hp-helion-development-platform"> <title>Installing the HPE Helion Development Platform</title>
 </section>
 
 <section id="downloading-the-latest-version-of-hp-helion-development-platform"> <title>Downloading and unpacking the installation file</title>
-	<p>The installation of the HP Helion Development Platform for the HP Helion OpenStack Commercial Edition is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installer's request.</p>
+	<p>The installation of the HPE Helion Development Platform for the HPE Helion OpenStack Commercial Edition is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installer's request.</p>
 
 	<p><b>Note</b>: Should you need more assistance during installation, the install script also has a help feature.</p>
 	<codeblock>
 	./DevelopmentPlatform_Setup.sh -h
 	</codeblock>
-	<p>Register at and download the package from the [HP Helion Development Platform](https://helion.hpwsportal.com/catalog.html#/Home/Show) (HDN).</p>
+	<p>Register at and download the package from the [HPE Helion Development Platform](https://helion.hpwsportal.com/catalog.html#/Home/Show) (HDN).</p>
 	<ol>
 		<li>Before you begin the installation, unpack the tar file.
  <codeblock><codeph>
@@ -152,7 +152,7 @@ This section provides details on installing the Messaging service from the Devel
 <ol>
 	<li>Open Horizon and login as the "admin" user. Then click on the <b>Admin</b> panel in Horizon and select <b>Development Platform</b>. Finally, click <b>Configure Services</b>.
 </li>
-	<li>Click the <b>Connect</b> button on the <b>Configure Services</b> screen and enter your username and password for the HP Download Network (HPN). Select the Sign-up button if you do not have an account.
+	<li>Click the <b>Connect</b> button on the <b>Configure Services</b> screen and enter your username and password for the HPE Download Network (HPN). Select the Sign-up button if you do not have an account.
 </li>
 </ol>
 </section>
@@ -185,7 +185,7 @@ For ALS to install dependencies for deployed applications, you must provide ALS 
 <ol>
 	<li>Open Horizon and login as the "Admin" user. Then click on the <b>Admin</b> panel in Horizon and select <b>Development Platform</b>. Finally, click on <b>Configure Services</b>.
 </li>
-	<li>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username and password for the HP Download Network (HPN). Select the Sign-up button if you do not have an account.
+	<li>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username and password for the HPE Download Network (HPN). Select the Sign-up button if you do not have an account.
 </li></ol></section>
 	<section id="download-als"><title>Download and Configure the Application Lifecycle Service</title>
 <ol>
@@ -213,7 +213,7 @@ This section provides details on installing the Database Service from the Develo
 </section>
 	<section id="availability_zones-database"><title>Availability Zones</title>
 
-<p>To configure the Database Service in a highly available manner, it is necessary to create separate availability zones. As a best practice, HP recommends creating three availability zones. All compute hosts should be placed within one of these availability zones. If a compute host is not associated with an availability zone, the Database Service will not be able to provision a database instance to it. As a result, the Database Service may run out of capacity even though there are compute hosts with free capacity.
+<p>To configure the Database Service in a highly available manner, it is necessary to create separate availability zones. As a best practice, HPE recommends creating three availability zones. All compute hosts should be placed within one of these availability zones. If a compute host is not associated with an availability zone, the Database Service will not be able to provision a database instance to it. As a result, the Database Service may run out of capacity even though there are compute hosts with free capacity.
 </p>
 <p>The following steps show how to create three availability zones and assign a compute host to the zone.
 </p>
@@ -323,7 +323,7 @@ If you have set up Availability Zones and plan to install the Database Service i
 	<section id="connect-database"><title>Connect to the Download Service</title>
 		<ol><li>Open Horizon and log in as the "admin" user. Then click on the admin panel in Horizon and select the <p>Development Platform</p> panel under Admin. Then click on the <b>Configure Services</b> sub-panel.
 </li>
-			<li>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username and password for the HP Download Network (HPN). Select the Sign-up button if you do not have an account.
+			<li>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username and password for the HPE Download Network (HPN). Select the Sign-up button if you do not have an account.
 </li>
 </ol>
 	</section>
@@ -340,8 +340,8 @@ Once the download is complete, click the <b>Configure Service</b> button to begi
 <ul>
 	<li><b>Service User Password</b> (Required) - The password for the Admin user that is currently logged in. This password MUST match the password used to log in to Horizon.</li>
 	<li><b>Key Pair</b> (Required) - Key Pair to install on all instances created as part of the database service. The public key can be used by an admin to get SSH access to all instances.</li>
-	<li><b>External Network</b> (Required) - Network Name for the network that has external network access. For HP Helion OpenStack Commercial Edition this network is named <b>ext-net</b> .</li>
-	<li><b>Provider Network</b> (Required) - Network Name for the network that has network access to cloud infrastructure services. For HP Helion OpenStack Commercial Edition this network is named <b>SVC</b>.</li>
+	<li><b>External Network</b> (Required) - Network Name for the network that has external network access. For HPE Helion OpenStack Commercial Edition this network is named <b>ext-net</b> .</li>
+	<li><b>Provider Network</b> (Required) - Network Name for the network that has network access to cloud infrastructure services. For HPE Helion OpenStack Commercial Edition this network is named <b>SVC</b>.</li>
 	<li><b>NTP Server IP</b> - IP Address to an NTP server to use if instances will not have outbound access to the internet.</li>
 	<li><b>Logstash RabbitMQ IP Address</b> (Required) - Specify the IP address of the RabbitMQ Server publishing to the central Logstash server.</li>
 	<li><b>Logstash RabbitMQ Password</b> (Required) - Specify the password for the RabbitMQ Server publishing to the central Logstash server.</li>
@@ -449,7 +449,7 @@ Increase the Ports quota to at least 100 using the following command in the [Net
 <ol>
 <li>Open Horizon and log in as the "admin" user. Then click on the admin panel in Horizon and select the <b>Development Platform</b> Panel under Admin. Then click on the <b>Configure Services</b> sub-panel.
 </li>
-<li>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username and password for the HP Download Network (HDN). Select the Sign-up button if you do not have an account.
+<li>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username and password for the HPE Download Network (HDN). Select the Sign-up button if you do not have an account.
 </li>
 </ol>	</section>
 	<section id="download-marketplace"><title>Download the Marketplace Service</title>
@@ -465,8 +465,8 @@ Increase the Ports quota to at least 100 using the following command in the [Net
 		<ul>
 		<li> <b>Service User Password</b> (Required) -  The password for the Admin user that is currently logged in. This password MUST match the password used to log in to Horizon.</li>
 		<li> <b>Key Pair</b> (Required) -  Key Pair to install on all instances created as part of the database service. The public key can be used by an admin to get SSH access to all instances.</li>
-		<li> <b>External Network</b> (Required) - Network Name for the network that has external network access. For HP Helion OpenStack Commercial Edition this network is named 'ext-net'</li>
-		<li> <b>Provider Network</b> (Required) - Network Name for the network that has network access to cloud infrastructure services. For HP Helion OpenStack Commercial Edition this network is named 'SVC'</li>
+		<li> <b>External Network</b> (Required) - Network Name for the network that has external network access. For HPE Helion OpenStack Commercial Edition this network is named 'ext-net'</li>
+		<li> <b>Provider Network</b> (Required) - Network Name for the network that has network access to cloud infrastructure services. For HPE Helion OpenStack Commercial Edition this network is named 'SVC'</li>
 		<li> <b>NTP Server IP</b> - IP Address to an NTP server to use if instances will not have outbound access to the internet.</li>
 		<li> <b>Logstash RabbitMQ IP Address</b> (Required) - This is the undercloud IP address.</li>
 		<li> <b>Logstash RabbitMQ Password</b> (Required) -  This is the undercloud RabbitMQ password.</li>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6490">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Helion Lifecycle Management (HLM) Network Topology</title>
+<title>HPE Helion OpenStack(R) Carrier Grade (Beta): Helion Lifecycle Management (HLM) Network Topology</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,7 +13,7 @@
  <!--./CarrierGrade/Overview/carrier-grade-overview-hlm-network.md-->
  <!--permalink: /helion/openstack/carrier/hlm/network/--></p>
 <!-- From https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/Kenobi+Networking -->
-<p>Kenobi allows for the flexible configuration of networks for the cloud to fit with the actual configuration of a data center. This helps to accomodate customer preferences and existing installations of equipment. HP will provide a recommendation for how a customer should wire their data center to support clouds.</p>
+<p>Kenobi allows for the flexible configuration of networks for the cloud to fit with the actual configuration of a data center. This helps to accomodate customer preferences and existing installations of equipment. HPE will provide a recommendation for how a customer should wire their data center to support clouds.</p>
 <p>The networks defined below are traffic groups. Network traffic groups are mapped to physical networking infrastructure as follows:</p>
 <p>1 or more network traffic groups are carried over a logical network. 1 or more logical networks are carried over a network interface. A network interface may be bonded or single.
 Definitions

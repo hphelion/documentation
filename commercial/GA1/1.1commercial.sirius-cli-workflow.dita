@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic21033">
-<title>HP Helion OpenStack(R) 1.1: Sirius CLI Workflow</title>
+<title>HPE Helion OpenStack(R) 1.1: Sirius CLI Workflow</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.0.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Sunitha K, Deepali V, Vandana S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HPE Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version3" content="HPE Helion OpenStack(R) 1.0.1"/>
+<othermeta name="product-version4" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -26,7 +26,7 @@
 <p>
 
 </p>
-<p>This page describes the workflow for adding HP StoreVirtual and HP 3PAR StoreServ integration to your cloud using the Sirius CLI.</p>
+<p>This page describes the workflow for adding HPE StoreVirtual and HPE 3PAR StoreServ integration to your cloud using the Sirius CLI.</p>
 <ul>
 <li>
 <xref type="section" href="#topic21033/before-you-begin">Before you begin</xref>
@@ -35,13 +35,13 @@
 <xref type="section" href="#topic21033/process-flow">Process flow</xref>
 </li>
 <li>
-<xref type="section" href="#topic21033/add-configure-storevirtual">Add and configure HP StoreVirtual to your cloud inventory</xref>
+<xref type="section" href="#topic21033/add-configure-storevirtual">Add and configure HPE StoreVirtual to your cloud inventory</xref>
 </li>
 <li>
-<xref type="section" href="#topic21033/add-configure-storeserv">Add and configure HP 3PAR StoreServ</xref>
+<xref type="section" href="#topic21033/add-configure-storeserv">Add and configure HPE 3PAR StoreServ</xref>
 </li>
 <li>
-<xref type="section" href="#topic21033/config-brocade">Configure HP 3PAR Storeserv as a storage backend with Brocade Zone Manager</xref> </li>
+<xref type="section" href="#topic21033/config-brocade">Configure HPE 3PAR Storeserv as a storage backend with Brocade Zone Manager</xref> </li>
 <li>
 <xref type="section" href="#topic21033/reconfigure-update">Reconfigure and update cloud</xref>
 </li>
@@ -49,8 +49,8 @@
 <section id="before-you-begin"> <title>Before you begin</title>
 <p>Ensure the following prerequisites are fulfilled before you start:</p>
 <ul>
-<li>HP Helion Cloud is deployed </li>
-<li>The block storage devices (HP StoreVirtual, HP 3PAR StoreServ) are accessible from the undercloud</li>
+<li>HPE Helion Cloud is deployed </li>
+<li>The block storage devices (HPE StoreVirtual, HPE 3PAR StoreServ) are accessible from the undercloud</li>
 </ul>
 </section>
 <section id="process-flow"> <title>Process Flow</title>
@@ -66,7 +66,7 @@
   <xref type="section" href="#topic21033/top"> Return to Top </xref>
 </p>
 </section>
-<section id="add-configure-storevirtual"> <title>Add and configure HP StoreVirtual to your cloud inventory</title>
+<section id="add-configure-storevirtual"> <title>Add and configure HPE StoreVirtual to your cloud inventory</title>
 <p>Perform the following steps to add and configure Storevirtual.</p>
 <ul>
 <li>
@@ -173,7 +173,7 @@ hplefthand_username=shausy
   <xref type="section" href="#topic21033/top"> Return to Top </xref>
 </p>
 </section>
-<section id="add-configure-storeserv"> <title>Add HP 3PAR StoreServ to your cloud inventory and configure</title>
+<section id="add-configure-storeserv"> <title>Add HPE 3PAR StoreServ to your cloud inventory and configure</title>
 <p>Perform the following steps to add and configure StoreServ.</p>
 <ul>
 <li>
@@ -323,9 +323,9 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
   <xref type="section" href="#topic21033/top"> Return to Top </xref>
 </p>
 </section>
-<section id="config-brocade"> <title>Configure HP 3PAR Storeserv as a storage backend with Brocade Zone Manager</title>
-<p>HP Helion OpenStack(R) 1.1 supports Brocade FC Zone Manager. You can add the Brocade Zone Manager to <codeph>cinder.conf</codeph> to enable Fibre Channel Zone Manager. Also, you can configure HP 3PAR as storage backend with Brocade Zone Manager.</p>
-<p>For more information, see  <xref href="../../commercial/GA1/1.1commercial.services-volume-fibre.dita" >HP Helion OpenStack(R) 1.1 Block Storage (Cinder): Auto-zoning - Brocade Fibre Channel Zone Manager</xref>
+<section id="config-brocade"> <title>Configure HPE 3PAR Storeserv as a storage backend with Brocade Zone Manager</title>
+<p>HPE Helion OpenStack(R) 1.1 supports Brocade FC Zone Manager. You can add the Brocade Zone Manager to <codeph>cinder.conf</codeph> to enable Fibre Channel Zone Manager. Also, you can configure HPE 3PAR as storage backend with Brocade Zone Manager.</p>
+<p>For more information, see  <xref href="../../commercial/GA1/1.1commercial.services-volume-fibre.dita" >HPE Helion OpenStack(R) 1.1 Block Storage (Cinder): Auto-zoning - Brocade Fibre Channel Zone Manager</xref>
 </p>
 </section>
 <section id="reconfigure-update"> <title>Reconfigure and update cloud</title>
@@ -348,7 +348,7 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 <p>The backends configured in the undercloud Sirius database will not be effective until the overcloud Cinder configuration is updated.</p>
 </section>
 <section id="generate-storevirtual-backend-configuration-json-generate-storevirtual-config"> <title>Generate StoreVirtual backend configuration JSON {generate-storevirtual-config}</title>
-<p>You can download the Cinder configuration relevant to HP StoreVirtual for your cloud once you create the backend.</p>
+<p>You can download the Cinder configuration relevant to HPE StoreVirtual for your cloud once you create the backend.</p>
 <p>To generate StoreVirtual backend configuration JSON, enter the following command</p>
 <codeblock>
   <codeph># sirius storevirtual-backend-list --format json
@@ -388,7 +388,7 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 </codeblock>
 </section>
 <section id="generate-storeserv-config"> <title>Generate StoreServ backend configuration JSON</title>
-<p>You can download the Cinder configuration relevant to HP StoreServ for your cloud once you create the backend.</p>
+<p>You can download the Cinder configuration relevant to HPE StoreServ for your cloud once you create the backend.</p>
 <p>To generate StoreServ backend configuration JSON, enter the following command</p>
 <codeblock>
   <codeph># sirius storeserv-backend-list --format json

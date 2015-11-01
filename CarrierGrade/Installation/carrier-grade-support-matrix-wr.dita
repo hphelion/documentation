@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8886">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta):Support Matrix for the Wind RiverÂ(R) Linux Region</title>
+<title>HPE Helion OpenStack(R) Carrier Grade (Beta):Support Matrix for the Wind RiverÂ(R) Linux Region</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) Carrier Grade: Support Matrix</searchtitle>
+<searchtitle>HPE Helion OpenStack(R) Carrier Grade: Support Matrix</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B,"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -20,9 +20,9 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-support-matrix-wr.md-->
  <!--permalink: /helion/openstack/carrier/support-matrix/wr/--></p>
-<p> <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >â–² HP Helion OpenStack(R) Carrier Grade (Beta): Support Matrix</xref>  </p>
+<p> <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >â–² HPE Helion OpenStack(R) Carrier Grade (Beta): Support Matrix</xref>  </p>
 <!-- Taken from Titanium Server Software Installation Guide, 15.x -->
-<p>To ensure the performance and stability of the systems running Wind River Linux in the HP Helion OpenStack(R) Carrier Grade environment, it is very important to meet the requirements and conform to the following recommendations.</p>
+<p>To ensure the performance and stability of the systems running Wind River Linux in the HPE Helion OpenStack(R) Carrier Grade environment, it is very important to meet the requirements and conform to the following recommendations.</p>
 <section id="hard"> <title>Hardware Requirements</title>
 <p>For successful software installation and operation, the server hardware platform must meet specific requirements.</p>
 <p>The servers running Wind River Linux consist of a set of hosts connected to internal and external networks:</p>
@@ -152,7 +152,7 @@ must be identical.</entry>
 <p>In the basic scenario, a single Ethernet port is used to attach the host to each of the networks. In the LAG scenario, two Ethernet ports are used for each connection.</p>
 </section>
 <section id="board-management-modules"> <title>Board Management Modules</title>
-<p>For out-of-band reset and power-on/power-off capabilities, HP360 or HP380 servers equipped with HP iLO (Integrated Lights Out) board management modules are required. Each module must be connected using port-based VLAN to a switch that has access to the internal management network.</p>
+<p>For out-of-band reset and power-on/power-off capabilities, HP360 or HP380 servers equipped with HPE iLO (Integrated Lights Out) board management modules are required. Each module must be connected using port-based VLAN to a switch that has access to the internal management network.</p>
 </section>
 <section id="usb-interface"> <title>USB Interface</title>
 <p>For the controller, a USB interface is required for backup and restore operations, and for software installation if a DVD is not available.</p>

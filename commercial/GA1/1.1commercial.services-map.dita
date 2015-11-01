@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; 1.1: Services Map"
+title: "HPE Helion OpenStack&#174; 1.1: Services Map"
 permalink: /helion/openstack/1.1/services/map
 product: commercial.ga
 
@@ -22,14 +22,14 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/faq/">NEXT &#9654; </a></p> -->
 
-# HP Helion OpenStack&#174; 1.1: Services Map
+# HPE Helion OpenStack&#174; 1.1: Services Map
 <br />
 
 <img src="media/serviceflow.png" border="0"  usemap="#mainHOS" alt="">
 <map name="mainHOS"> 
-<area  alt="" title="The HP Helion OpenStack Sirius Service is a REST-based web service for storage device management. It is used to configure of storage services such as Cinder and Swift that run in the overcloud and manage various storage devices." href="/helion/openstack/1.1/services/mapSirius/" shape="rect" coords="18,27,59,74" style="outline:none;" target="_self">
+<area  alt="" title="The HPE Helion OpenStack Sirius Service is a REST-based web service for storage device management. It is used to configure of storage services such as Cinder and Swift that run in the overcloud and manage various storage devices." href="/helion/openstack/1.1/services/mapSirius/" shape="rect" coords="18,27,59,74" style="outline:none;" target="_self">
 <area  alt="" title="Kibana is an open source Apache Licensed, browser based analytics and search dashboard for ElasticSearch." href="/helion/openstack/1.1/services/mapKibana/" shape="rect" coords="71,27,112,74" style="outline:none;" target="_self">
-<area  alt="" title="The HP Helion OpenStack Sherpa Service provides a link to the remote web catalog containing a repository of software available for purchase and download into the HP Helion environment." href="/helion/openstack/1.1/services/mapSherpa/" shape="rect" coords="121,30,158,77" style="outline:none;" target="_self">
+<area  alt="" title="The HPE Helion OpenStack Sherpa Service provides a link to the remote web catalog containing a repository of software available for purchase and download into the HPE Helion environment." href="/helion/openstack/1.1/services/mapSherpa/" shape="rect" coords="121,30,158,77" style="outline:none;" target="_self">
 <area  alt="" title="The Icinga service runs in the undercloud and helps cloud admins monitor the disk usage of Swift storage nodes." href="/helion/openstack/1.1/services/mapIcinga/" shape="rect" coords="171,27,208,74" style="outline:none;" target="_self">
 <area  alt="" title="EON is a service sub component that captures details of the vCenter server in a Cloud Controller and provides the details of the clusters for configuring the list of clusters managed by ESX Proxy Compute node." href="/helion/openstack/1.1/services/mapEon/" shape="rect" coords="217,27,254,74" style="outline:none;" target="_self">
 <area  alt="" title="Heat is the orchestration component of OpenStack. It implements an orchestration engine to launch multiple composite cloud applications based on templates in the form of text files that can be treated like code" href="/helion/openstack/1.1/services/mapHeat/" shape="rect" coords="314,27,364,77" style="outline:none;" target="_self">

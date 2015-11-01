@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic843">
-<title>HP Helion Developer Platform 1.2: Client Downloads</title>
+<title>HPE Helion Developer Platform 1.2: Client Downloads</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.2"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Security Engineer"/>
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.2"/>
 </metadata>
 </prolog>
 <body>
@@ -21,7 +21,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/CLI/1.2ALS_Client_Downloads.md-->
  <!--permalink: /helion/devplatform/1.2/als/client/download/--></p>
-<section id="hp-helion-application-lifecycle-service-als-client"> <title>HP Helion Application Lifecycle Service (ALS) Client</title>
+<section id="hp-helion-application-lifecycle-service-als-client"> <title>HPE Helion Application Lifecycle Service (ALS) Client</title>
 <p>Click the download link that is appropriate for your operating system.</p>
 <ul>
 <li>
@@ -34,7 +34,7 @@
 </ul>
 <p>For more information, see the full Application Lifecycle Service (ALS) Client <xref href="../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita" >command reference</xref>.</p>
 </section>
-<section id="hp-helion-als-cluster-management-tool-cf-mgmt"> <title>HP Helion ALS Cluster Management Tool (<i>cf-mgmt</i>)</title>
+<section id="hp-helion-als-cluster-management-tool-cf-mgmt"> <title>HPE Helion ALS Cluster Management Tool (<i>cf-mgmt</i>)</title>
 <p>Click the download link that is appropriate for your operating system.</p>
 <ul>
 <li>

@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
 <bookmap>
     <booktitle>
-        <mainbooktitle>HP Helion OpenStack Carrier Grade Administrator Guide</mainbooktitle>
+        <mainbooktitle>HPE Helion OpenStack Carrier Grade Administrator Guide</mainbooktitle>
     </booktitle>
     <chapter href="ConfigPlanning/carrier-grade-admin-wr-config-planning.dita">
         <topicref href="ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet.dita">

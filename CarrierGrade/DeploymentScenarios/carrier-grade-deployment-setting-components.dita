@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10109">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Components of the Scenario Environment</title>
+<title>HPE Helion OpenStack(R) Carrier Grade (Beta): Components of the Scenario Environment</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -27,13 +27,13 @@
 <ul>
 <li>
 <p>
-<b>System Administrator</b> - Has access to the administration components of HP Helion OpenStack(R) Carrier Grade to manage users and resources.</p>
+<b>System Administrator</b> - Has access to the administration components of HPE Helion OpenStack(R) Carrier Grade to manage users and resources.</p>
 
-<p>The scenario environment has only one system administrator, identified as the admin user. This user is defined as part of the HP Helion OpenStack(R) Carrier Grade installation.</p>
+<p>The scenario environment has only one system administrator, identified as the admin user. This user is defined as part of the HPE Helion OpenStack(R) Carrier Grade installation.</p>
 </li>
 <li>
 <p>
-<b>End Users</b> - Have access to the user components of HP Helion OpenStack(R) Carrier Grade to manage a set of system resources under the quotas and constraints set up by the system administrator.</p>
+<b>End Users</b> - Have access to the user components of HPE Helion OpenStack(R) Carrier Grade to manage a set of system resources under the quotas and constraints set up by the system administrator.</p>
 
 <p>The scenario environment has two end users identified as user1 and user2. They are created by the admin user (see Creating Users on page 16).</p>
 </li>
@@ -44,7 +44,7 @@
 <li>
 <b>Tenant (or Project)</b> - An isolated resource container consisting of networks, storage volumes, images, instances (guest applications), authentication keys, and users. Tenants are the core resource structure on which all end user services are managed.</li>
 </ul>
-<p>The scenario environment has three tenants, identified as admin, tenant1, and tenant2. For convenience, the latter two are referred to as user tenants. The admin tenant is created as part of the HP Helion OpenStack(R) Carrier Greade installation. The user tenants are created by the admin user. See Creating Tenants and Updating Quotas.</p>
+<p>The scenario environment has three tenants, identified as admin, tenant1, and tenant2. For convenience, the latter two are referred to as user tenants. The admin tenant is created as part of the HPE Helion OpenStack(R) Carrier Greade installation. The user tenants are created by the admin user. See Creating Tenants and Updating Quotas.</p>
 <codeblock>
   <codeph>**Note:** The identifier admin is used for both the system administrator and the admin tenant. They can be differentiated by context.
 </codeph>
@@ -54,7 +54,7 @@
 <p>
 <b>Provider Network</b> - A logical transport mechanism for the tenant networks. Provider networks are realized over physical transport resources.</p>
 
-<p>For the deployment scenarios, an operational HP Helion OpenStack(R) Carrier Grade system is assumed, implying that provider networks have already been established. Until at least one provider network has been defined and associated with <codeph>compute-node</codeph> data interfaces, it is not possible to unlock the compute nodes or make the system operational.</p>
+<p>For the deployment scenarios, an operational HPE Helion OpenStack(R) Carrier Grade system is assumed, implying that provider networks have already been established. Until at least one provider network has been defined and associated with <codeph>compute-node</codeph> data interfaces, it is not possible to unlock the compute nodes or make the system operational.</p>
 
 <p>Provider networks are created by the admin user.</p>
 
@@ -272,7 +272,7 @@ IP subnet. They are configured as follows:</p>
 </li>
 <li>
 <p>
-<b>Glance Guest Image</b> - The example guest image provided with HP Helion OpenStack(R) Carrier Grade must be imported into the OpenStack(R)
+<b>Glance Guest Image</b> - The example guest image provided with HPE Helion OpenStack(R) Carrier Grade must be imported into the OpenStack(R)
 Glance service for use. Images can be imported by the admin user(see Setting Up the Example Guest Image) or by end users.</p>
 </li>
 <li>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic24073">
-<title>HP Helion 1.2 Development Platform: Installation and Configuration</title>
+<title>HPE Helion 1.2 Development Platform: Installation and Configuration</title>
 <titlealts>
-<searchtitle>HP Helion 1.2 Development Platform: Commercial Installation and Configuration</searchtitle>
+<searchtitle>HPE Helion 1.2 Development Platform: Commercial Installation and Configuration</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.2"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="System Engineer"/>
 <othermeta name="role" content="Cloud Administrator"/>
@@ -19,8 +19,8 @@
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Jayme P, Patrick F"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.2"/>
 </metadata>
 </prolog>
 <body>
@@ -28,14 +28,14 @@
 <!--UNDER REVISION-->
  <!--./devplatform/1.2/1.2devplatform_commercial_install.md-->
  <!--permalink: /helion/devplatform/1.2/install/--></p>
-<p>HP Helion Development Platform version 1.2 currently contains the Application Lifecycle Service, Database, Marketplace, and Messaging services.</p>
-<p>The following topics explain how to install and configure a new deployment of the HP Helion Development Platform version 1.2. There is also <xref href="../../devplatform/1.2/1.2devplatform.troubleshooting.dita" >Troubleshooting</xref> documentation to handle issues that may occur.</p>
+<p>HPE Helion Development Platform version 1.2 currently contains the Application Lifecycle Service, Database, Marketplace, and Messaging services.</p>
+<p>The following topics explain how to install and configure a new deployment of the HPE Helion Development Platform version 1.2. There is also <xref href="../../devplatform/1.2/1.2devplatform.troubleshooting.dita" >Troubleshooting</xref> documentation to handle issues that may occur.</p>
 <ul>
 <li>
 <xref type="section" href="#topic24073/prerequisites">Prerequisites</xref>
 </li>
 <li>
-<xref type="section" href="#topic24073/installing-the-hp-helion-development-platform">Downloading, Installing, and Updating the HP Helion Development Platform</xref>
+<xref type="section" href="#topic24073/installing-the-hp-helion-development-platform">Downloading, Installing, and Updating the HPE Helion Development Platform</xref>
 </li>
 <li>
 <xref type="section" href="#topic24073/installing-services">Installing Services</xref>
@@ -54,7 +54,7 @@
 </li>
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
-<p>The HP Helion Development Platform is installed in the overcloud of HP Helion OpenStack(R)</p>
+<p>The HPE Helion Development Platform is installed in the overcloud of HPE Helion OpenStack(R)</p>
 <p>
 <b>Note:</b> Helion OpenStack(R) version 1.1.1 is required for Helion Development Platform 1.2. Installing Helion Development Platform 1.2 on Helion OpenStack(R) versions 1.1 or 1.0 is not supported. If you currently have Helion OpenStack(R) version 1.1 with Helion Development Platform 1.1 installed, you will need to do the following to install Helion Development Platform 1.2:</p>
 <ul>
@@ -67,13 +67,13 @@
 <p>The Cinder block storage service must be configured with either <xref href="../../commercial/GA1/1.1commercial.-vsa-overview.dita" >VSA</xref> or <xref href="../../commercial/GA1/1.1commercial.install-3par.dita" >3Par</xref>.</p>
 </li>
 <li>
-<p>If you installed HP Helion OpenStack(R) with <b>KVM</b> hypervisor support, configure HP StoreVirtual VSA for Block Storage or configure HP 3PAR StoreServ Storage.</p>
+<p>If you installed HPE Helion OpenStack(R) with <b>KVM</b> hypervisor support, configure HPE StoreVirtual VSA for Block Storage or configure HPE 3PAR StoreServ Storage.</p>
 </li>
 <li>
 <p>The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements.</p>
 </li>
 <li>
-<p>The HP Helion Development Platform installer (<codeph>DevelopmentPlatform_Enable.sh</codeph>) must be run on either the base or seed node of the Helion OpenStack(R) environment. It is strongly recommended to run the installer  on the seed node. The seed node will already have the requisite key (/root/.ssh/id_rsa) for access to the overcloud; if the installation is run on the base node, this key will need to be provided to the installer (see below).</p>
+<p>The HPE Helion Development Platform installer (<codeph>DevelopmentPlatform_Enable.sh</codeph>) must be run on either the base or seed node of the Helion OpenStack(R) environment. It is strongly recommended to run the installer  on the seed node. The seed node will already have the requisite key (/root/.ssh/id_rsa) for access to the overcloud; if the installation is run on the base node, this key will need to be provided to the installer (see below).</p>
 </li>
 <li>
 <p>The installer requires the following packages. If they are not found, it will prompt you to install them.</p>
@@ -95,10 +95,10 @@
 </li>
 </ul>
 </section>
-<section id="installing-the-hp-helion-development-platform"> <title>Downloading, Installing, and Updating HP Helion Development Platform</title>
+<section id="installing-the-hp-helion-development-platform"> <title>Downloading, Installing, and Updating HPE Helion Development Platform</title>
 </section>
-<section id="downloading-the-latest-version-of-hp-helion-development-platform"> <title>Downloading the Latest Version of HP Helion Development Platform</title>
-<p>The installation of the HP Helion Development Platform for HP Helion OpenStack(R) is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installer's request.</p>
+<section id="downloading-the-latest-version-of-hp-helion-development-platform"> <title>Downloading the Latest Version of HPE Helion Development Platform</title>
+<p>The installation of the HPE Helion Development Platform for HPE Helion OpenStack(R) is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installer's request.</p>
 <p>
 <b>Note</b>: Should you need more assistance during installation, the install script also has a help feature.</p>
 <codeblock>
@@ -107,7 +107,7 @@
 </codeblock>
 <ol>
 <li>
-<p>Register at and download the package from the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" scope="external" format="html" >HP Helion Download Network</xref> (HDN). Verify that the package you download is 1.2.0.4 or later.</p>
+<p>Register at and download the package from the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" scope="external" format="html" >HPE Helion Download Network</xref> (HDN). Verify that the package you download is 1.2.0.4 or later.</p>
 </li>
 <li>
 <p>Before you begin the installation, unpack the tar file.</p>
@@ -119,7 +119,7 @@
 </li>
 </ol>
 </section>
-<section id="pre-installing-the-hp-helion-development-platform"> <title>Installing the HP Helion Development Platform</title>
+<section id="pre-installing-the-hp-helion-development-platform"> <title>Installing the HPE Helion Development Platform</title>
 <ol>
 <li>
 <p>Navigate to the <i>dev-platform-installer</i> directory inside the dev-platform-installer.</p>
@@ -290,7 +290,7 @@ Minimum required Helion OpenStack(R) build number for this install is 85.
 <p>Click on the <b>Admin</b> panel in Horizon and select <b>Development Platform</b>. Finally, click <b>Configure Services</b>.</p>
 </li>
 <li>
-<p>Click the <b>Connect</b> button on the <b>Configure Services</b> screen and enter your username and password for the HP Download Network (HDN). Select the Sign-up button if you do not have an account.</p>
+<p>Click the <b>Connect</b> button on the <b>Configure Services</b> screen and enter your username and password for the HPE Download Network (HDN). Select the Sign-up button if you do not have an account.</p>
 </li>
 </ol>
 </section>
@@ -321,7 +321,7 @@ leave the server in an error state.</p>
 <section id="db-prerequisites"> <title>Prerequisites</title>
 </section>
 <section id="availability-zones"> <title>Availability Zones</title>
-<p>To configure the Database Service in a highly available manner, it is necessary to create separate availability zones. As a best practice, HP recommends creating three availability zones. All compute hosts should be placed within one of these availability zones. If a compute host is not associated with an availability zone, the Database Service will not be able to provision a database instance to it. As a result, the Database Service may run out of capacity even though there are compute hosts with free capacity.</p>
+<p>To configure the Database Service in a highly available manner, it is necessary to create separate availability zones. As a best practice, HPE recommends creating three availability zones. All compute hosts should be placed within one of these availability zones. If a compute host is not associated with an availability zone, the Database Service will not be able to provision a database instance to it. As a result, the Database Service may run out of capacity even though there are compute hosts with free capacity.</p>
 <p>The following steps show how to create three availability zones and assign a compute host to the zone.</p>
 <ol>
 <li>
@@ -465,7 +465,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 <p>Click on the admin panel in Horizon and select the <b>Development Platform</b> panel under Admin. Then click on the <b>Configure Services</b> sub-panel.</p>
 </li>
 <li>
-<p>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username and password for the HP Download Network (HDN). Select the Sign-up button if you do not have an account.</p>
+<p>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username and password for the HPE Download Network (HDN). Select the Sign-up button if you do not have an account.</p>
 </li>
 </ol>
 </section>
@@ -495,9 +495,9 @@ leave the server in an error state.</p>
 <li>
 <b>Key Pair</b> (Required) - Key Pair to install on all instances created as part of the database service. The public key can be used by an admin to get SSH access to all instances.</li>
 <li>
-<b>External Network</b> (Required) - Network Name for the network that has external network access. For HP Helion OpenStack(R) Commercial Edition this network is named <b>ext-net</b> .</li>
+<b>External Network</b> (Required) - Network Name for the network that has external network access. For HPE Helion OpenStack(R) Commercial Edition this network is named <b>ext-net</b> .</li>
 <li>
-<b>Provider Network</b> (Required) - Network Name for the network that has network access to cloud infrastructure services. For HP Helion OpenStack(R) Commercial Edition this network is named <b>SVC</b>.</li>
+<b>Provider Network</b> (Required) - Network Name for the network that has network access to cloud infrastructure services. For HPE Helion OpenStack(R) Commercial Edition this network is named <b>SVC</b>.</li>
 <li>
 <b>NTP Server IP</b> - IP Address to an NTP server to use if instances will not have outbound access to the internet.</li>
 <li>
@@ -687,7 +687,7 @@ Increase the Ports quota to at least 100 using the following command in the <xre
 <p>Click on the admin panel in Horizon and select the <b>Development Platform</b> Panel under Admin. Then click on the <b>Configure Services</b> sub-panel.</p>
 </li>
 <li>
-<p>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username and password for the HP Download Network (HDN). Select the Sign-up button if you do not have an account.</p>
+<p>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username and password for the HPE Download Network (HDN). Select the Sign-up button if you do not have an account.</p>
 </li>
 </ol>
 </section>
@@ -717,9 +717,9 @@ leave the server in an error state.</p>
 <li>
 <b>Key Pair</b> (Required) -  Key Pair to install on all instances created as part of the database service. The public key can be used by an admin to get SSH access to all instances.</li>
 <li>
-<b>External Network</b> (Required) - Network Name for the network that has external network access. For HP Helion OpenStack(R) Commercial Edition this network is named 'ext-net'</li>
+<b>External Network</b> (Required) - Network Name for the network that has external network access. For HPE Helion OpenStack(R) Commercial Edition this network is named 'ext-net'</li>
 <li>
-<b>Provider Network</b> (Required) - Network Name for the network that has network access to cloud infrastructure services. For HP Helion OpenStack(R) Commercial Edition this network is named 'SVC'</li>
+<b>Provider Network</b> (Required) - Network Name for the network that has network access to cloud infrastructure services. For HPE Helion OpenStack(R) Commercial Edition this network is named 'SVC'</li>
 <li>
 <b>NTP Server IP</b> - IP Address to an NTP server to use if instances will not have outbound access to the internet.</li>
 <li>

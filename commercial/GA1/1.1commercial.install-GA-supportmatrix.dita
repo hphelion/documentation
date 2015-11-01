@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic12282">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Support Matrix</title>
+<title>HPE Helion OpenStack(R) 1.1 and 1.1.1: Support Matrix</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Support Matrix</searchtitle>
+<searchtitle>HPE Helion OpenStack(R) 1.1: Support Matrix</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B,"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -30,11 +30,11 @@
 Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.duey@hp.com>; Brebner, Gavin <gavin.brebner@hp.com>
 -->
 <p>
-  <b>This document describes the installation process for HP Helion OpenStack(R) 1.1 and HP Helion OpenStack(R) 1.1.1.</b>
+  <b>This document describes the installation process for HPE Helion OpenStack(R) 1.1 and HPE Helion OpenStack(R) 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion OpenStack(R) from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack(R) 1.1.1 Update Guide</xref>.)</p>
-<p>To ensure the performance and stability of the HP Helion OpenStack(R) environment, it is very important to meet the requirements and conform to the recommendations.</p>
-<p>This page provides an overview of the hardware and software that is supported for HP Helion OpenStack(R) including setup and configuration information.</p>
+<p>(If you already have 1.1 installed, you can update Helion OpenStack(R) from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HPE Helion OpenStack(R) 1.1.1 Update Guide</xref>.)</p>
+<p>To ensure the performance and stability of the HPE Helion OpenStack(R) environment, it is very important to meet the requirements and conform to the recommendations.</p>
+<p>This page provides an overview of the hardware and software that is supported for HPE Helion OpenStack(R) including setup and configuration information.</p>
 <ul>
 <li>
 <xref type="section" href="#topic12282/os">OpenStack(R) version information</xref>
@@ -68,28 +68,28 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 </li>
 </ul>
 <section id="os"> <title>OpenStack(R) version information</title>
-<p>All of the <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#OpenStack(R)" >HP Helion OpenStack(R) services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" >OpenStack(R) Juno</xref>.</p>
+<p>All of the <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#OpenStack(R)" >HPE Helion OpenStack(R) services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" >OpenStack(R) Juno</xref>.</p>
 </section>
 <section id="deploy-arch"> <title>Deployment Architecture</title>
 <p>The following diagrams depict simplified deployment scenarios:</p>
 <ul>
 <li>
-<xref format="html" href="javascript:window.open('/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >KVM deployment of HP Helion OpenStack(R)</xref> (opens in a new window)</li>
+<xref format="html" href="javascript:window.open('/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >KVM deployment of HPE Helion OpenStack(R)</xref> (opens in a new window)</li>
 <li>
-<xref format="html" href="javascript:window.open('/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >ESX deployment of HP Helion OpenStack(R)</xref> (opens in a new window)</li>
+<xref format="html" href="javascript:window.open('/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >ESX deployment of HPE Helion OpenStack(R)</xref> (opens in a new window)</li>
 </ul>
 </section>
 <section id="supportedhw"> <title>Supported Hardware</title>
-<p>The following hardware has been tested and verified to work with HP Helion OpenStack(R)</p>
+<p>The following hardware has been tested and verified to work with HPE Helion OpenStack(R)</p>
 </section>
-<section id="hp-proliant-bladesystem"> <title>HP ProLiant BladeSystem</title>
+<section id="hp-proliant-bladesystem"> <title>HPE ProLiant BladeSystem</title>
 <ul>
 <li>BL460c Gen8</li>
 <li>BL460c Gen9</li>
 <li>BL660c Gen8</li>
 </ul>
 </section>
-<section id="hp-proliant-rack-servers"> <title>HP ProLiant Rack Servers</title>
+<section id="hp-proliant-rack-servers"> <title>HPE ProLiant Rack Servers</title>
 <ul>
 <li>DL360 Gen9</li>
 <li>DL380 Gen9</li>
@@ -100,14 +100,14 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <li>DL580 Gen8</li>
 </ul>
 </section>
-<section id="hp-moonshot-servers"> <title>HP Moonshot Servers</title>
+<section id="hp-moonshot-servers"> <title>HPE Moonshot Servers</title>
 <ul>
 <li>m300 Server Cartridges (compute node only)</li>
 <li>m710 Server Cartridges (compute node only)</li>
 </ul>
 <p>For more information, see <xref href="../../commercial/GA1/1.1commercial.install-GA-Moonshot.dita" >Managing Moonshot Servers</xref>.</p>
 </section>
-<section id="hp-proliant-scalable-systems"> <title>HP ProLiant Scalable Systems</title>
+<section id="hp-proliant-scalable-systems"> <title>HPE ProLiant Scalable Systems</title>
 <ul>
 <li>SL230s Gen8</li>
 <li>SL250s Gen8</li>
@@ -116,7 +116,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <li>SL4540 Gen8</li>
 </ul>
 </section>
-<section id="hp-proliant-xl-servers"> <title>HP ProLiant XL Servers</title>
+<section id="hp-proliant-xl-servers"> <title>HPE ProLiant XL Servers</title>
 <ul>
 <li>XL230a Gen9</li>
 <li>XL250a Gen9</li>
@@ -138,93 +138,93 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 </section>
 <section id="flexiblelom"> <title>FlexibleLOM</title>
 <ul>
-<li>HP Ethernet 10Gb 2-port 530FLR-SFP+ Adapter</li>
-<li>HP FlexFabric 10Gb 2-port 533FLR-T Adapter</li>
-<li>HP FlexFabric 10Gb 2-port 534FLR-SFP+ Adapter</li>
-<li>HP FlexFabric 10Gb 2-port 554FLR-SFP+ Adapter</li>
-<li>HP FlexFabric 10Gb 2-port 556FLR-SFP+ FIO Adapter</li>
-<li>HP Ethernet 10Gb 2-port 560FLR-SFP+ Adapter </li>
+<li>HPE Ethernet 10Gb 2-port 530FLR-SFP+ Adapter</li>
+<li>HPE FlexFabric 10Gb 2-port 533FLR-T Adapter</li>
+<li>HPE FlexFabric 10Gb 2-port 534FLR-SFP+ Adapter</li>
+<li>HPE FlexFabric 10Gb 2-port 554FLR-SFP+ Adapter</li>
+<li>HPE FlexFabric 10Gb 2-port 556FLR-SFP+ FIO Adapter</li>
+<li>HPE Ethernet 10Gb 2-port 560FLR-SFP+ Adapter </li>
 </ul>
 </section>
 <section id="nic"> <title>NIC</title>
 <ul>
 <li>Dell: Broadcom Corporation NetXtreme II BCM57810 10 Gigabit Ethernet (rev 10)</li>
-<li>HP Ethernet 10Gb 2-port 530SFP+ Adapter</li>
-<li>HP Ethernet 10Gb 2-port 530T Adapter</li>
-<li>HP NC552SFP 10Gb 2-port Ethernet Server Adapter</li>
-<li>HP Ethernet 10Gb 2-port 560SFP+ Adapter </li>
+<li>HPE Ethernet 10Gb 2-port 530SFP+ Adapter</li>
+<li>HPE Ethernet 10Gb 2-port 530T Adapter</li>
+<li>HPE NC552SFP 10Gb 2-port Ethernet Server Adapter</li>
+<li>HPE Ethernet 10Gb 2-port 560SFP+ Adapter </li>
 </ul>
 </section>
 <section id="sas"> <title>SAS</title>
 <ul>
-<li>HP Smart Array P222/512 FBWC 6Gb 1-port Int/1-port Ext SAS Controller</li>
-<li>HP Smart Array P420/2GB FBWC 6Gb 2-ports Int SAS Controller</li>
-<li>HP Smart Array P421/2GB FBWC 6Gb 2-ports Ext SAS Controller</li>
-<li>HP Smart Array P430/4GB FBWC 6Gb 1-port Int SAS Controller</li>
-<li>HP Smart Array P431/4GB FBWC 6Gb 2-ports Ext SAS Controller</li>
-<li>HP Smart Array P440/4GB FBWC 12Gb 1-port Int SAS Controller</li>
-<li>HP Smart Array P440ar/2GB FBWC 12Gb 2-ports Int SAS Controller</li>
-<li>HP Smart Array P441/4GB FBWC 12Gb 2-ports Ext SAS Controller</li>
-<li>HP Smart Array P822/2GB FBWC 6Gb 2-ports-Int/4-ports Ext SAS Controller</li>
-<li>HP Smart Array P830/4GB FBWC 6Gb 2-ports Int SAS Controller</li>
-<li>HP Smart Array P840/4GB FBWC 12Gb 2-ports Int SAS Controller</li>
-<li>HP Smart Array P841/4GB FBWC 12Gb 4-ports Ext SAS Controller</li>
-<li>HP H240 12Gb 2-port Int Smart Host Bus Adapter</li>
-<li>HP H240ar 12Gb 1-port Int Smart Host Bus Adapter</li>
-<li>HP H241 12Gb 2-ports Ext Smart Host Bus Adapter</li>
-<li>HP H244br 12Gb 2-ports Int Smart Host Bus Adapter </li>
+<li>HPE Smart Array P222/512 FBWC 6Gb 1-port Int/1-port Ext SAS Controller</li>
+<li>HPE Smart Array P420/2GB FBWC 6Gb 2-ports Int SAS Controller</li>
+<li>HPE Smart Array P421/2GB FBWC 6Gb 2-ports Ext SAS Controller</li>
+<li>HPE Smart Array P430/4GB FBWC 6Gb 1-port Int SAS Controller</li>
+<li>HPE Smart Array P431/4GB FBWC 6Gb 2-ports Ext SAS Controller</li>
+<li>HPE Smart Array P440/4GB FBWC 12Gb 1-port Int SAS Controller</li>
+<li>HPE Smart Array P440ar/2GB FBWC 12Gb 2-ports Int SAS Controller</li>
+<li>HPE Smart Array P441/4GB FBWC 12Gb 2-ports Ext SAS Controller</li>
+<li>HPE Smart Array P822/2GB FBWC 6Gb 2-ports-Int/4-ports Ext SAS Controller</li>
+<li>HPE Smart Array P830/4GB FBWC 6Gb 2-ports Int SAS Controller</li>
+<li>HPE Smart Array P840/4GB FBWC 12Gb 2-ports Int SAS Controller</li>
+<li>HPE Smart Array P841/4GB FBWC 12Gb 4-ports Ext SAS Controller</li>
+<li>HPE H240 12Gb 2-port Int Smart Host Bus Adapter</li>
+<li>HPE H240ar 12Gb 1-port Int Smart Host Bus Adapter</li>
+<li>HPE H241 12Gb 2-ports Ext Smart Host Bus Adapter</li>
+<li>HPE H244br 12Gb 2-ports Int Smart Host Bus Adapter </li>
 </ul>
 </section>
 <section id="fc"> <title>FC</title>
 <ul>
-<li>HP 81E PCIe FC HBA Single Port</li>
-<li>HP 82E PCIe FC HBA Dual Port</li>
-<li>HP SN1100E 16Gb Single-Port Fibre Channel Host Bus Adapter</li>
-<li>HP SN1100E 16Gb Dual-Port Fibre Channel Host Bus Adapter</li>
-<li>HP 81Q PCIe FC HBA Single Port</li>
-<li>HP 82Q PCIe FC HBA Dual Port</li>
-<li>HP StoreFabric SN1000Q 16GB 1-port PCIe Fibre Channel Host Bus Adapter</li>
-<li>HP StoreFabric SN1000Q 16GB 2-port PCIe Fibre Channel Host Bus Adapter </li>
+<li>HPE 81E PCIe FC HBA Single Port</li>
+<li>HPE 82E PCIe FC HBA Dual Port</li>
+<li>HPE SN1100E 16Gb Single-Port Fibre Channel Host Bus Adapter</li>
+<li>HPE SN1100E 16Gb Dual-Port Fibre Channel Host Bus Adapter</li>
+<li>HPE 81Q PCIe FC HBA Single Port</li>
+<li>HPE 82Q PCIe FC HBA Dual Port</li>
+<li>HPE StoreFabric SN1000Q 16GB 1-port PCIe Fibre Channel Host Bus Adapter</li>
+<li>HPE StoreFabric SN1000Q 16GB 2-port PCIe Fibre Channel Host Bus Adapter </li>
 </ul>
 </section>
 <section id="mezzanine-adapters"> <title>Mezzanine Adapters:</title>
 </section>
 <section id="flexiblelom"> <title>FlexibleLOM</title>
 <ul>
-<li>HP Flex-10 10Gb 2-port 530FLB Adapter</li>
-<li>HP Flex Fabric 10Gb 2-port 534FLB Adapter</li>
-<li>HP FlexFabric 10Gb 2-port 554FLB Adapter</li>
-<li>HP Ethernet 10Gb 2-port 560FLB Adapter</li>
-<li>HP FlexFabric 20Gb 2-port 650FLB Adapter </li>
+<li>HPE Flex-10 10Gb 2-port 530FLB Adapter</li>
+<li>HPE Flex Fabric 10Gb 2-port 534FLB Adapter</li>
+<li>HPE FlexFabric 10Gb 2-port 554FLB Adapter</li>
+<li>HPE Ethernet 10Gb 2-port 560FLB Adapter</li>
+<li>HPE FlexFabric 20Gb 2-port 650FLB Adapter </li>
 </ul>
 </section>
 <section id="nic"> <title>NIC</title>
 <ul>
-<li>HP Flex-10 10Gb 2-port 530M Adapter</li>
-<li>HP FlexFabric 10Gb 2-port 534M Adapter</li>
-<li>HP Flex-10 10Gb 2-port 552M Adapter</li>
-<li>HP FlexFabric 10Gb 2-port 554M Adapter</li>
-<li>HP Ethernet 10Gb 2-port 560M Adapter</li>
-<li>HP FlexFabric 20Gb 2-port 650M Adapter </li>
+<li>HPE Flex-10 10Gb 2-port 530M Adapter</li>
+<li>HPE FlexFabric 10Gb 2-port 534M Adapter</li>
+<li>HPE Flex-10 10Gb 2-port 552M Adapter</li>
+<li>HPE FlexFabric 10Gb 2-port 554M Adapter</li>
+<li>HPE Ethernet 10Gb 2-port 560M Adapter</li>
+<li>HPE FlexFabric 20Gb 2-port 650M Adapter </li>
 </ul>
 </section>
 <section id="sas"> <title>SAS</title>
 <ul>
-<li>HP Smart Array P244br/ 1GB FBWC 12 Gb 2-ports Int SAS Controller</li>
-<li>HP Smart Array P721m/2GB FBWC 6Gb 4-ports Ext Mezzanine SAS Controller</li>
-<li>HP Smart Array P731m/2GB FBWC 6Gb 4-ports Ext Mezzanine SAS Controller </li>
+<li>HPE Smart Array P244br/ 1GB FBWC 12 Gb 2-ports Int SAS Controller</li>
+<li>HPE Smart Array P721m/2GB FBWC 6Gb 4-ports Ext Mezzanine SAS Controller</li>
+<li>HPE Smart Array P731m/2GB FBWC 6Gb 4-ports Ext Mezzanine SAS Controller </li>
 </ul>
 </section>
 <section id="fc"> <title>FC</title>
 <ul>
-<li>HP LPe1205A 8Gb Fibre Channel Host Bus Adapter for BladeSystem c-Class</li>
-<li>HP LPe1605 16Gb Fibre Channel HBA for BladeSystem c-Class</li>
-<li>HP QMH2572 8Gb Fibre Channel Host Bus Adapter for BladeSystem c-Class</li>
-<li>HP QMH2672 16Gb Fibre Channel Host Bus Adapter </li>
+<li>HPE LPe1205A 8Gb Fibre Channel Host Bus Adapter for BladeSystem c-Class</li>
+<li>HPE LPe1605 16Gb Fibre Channel HBA for BladeSystem c-Class</li>
+<li>HPE QMH2572 8Gb Fibre Channel Host Bus Adapter for BladeSystem c-Class</li>
+<li>HPE QMH2672 16Gb Fibre Channel Host Bus Adapter </li>
 </ul>
 </section>
 <section id="supportedconfigurations"> <title>Supported Configurations</title>
-<p>HP supports the following configurations for HP Helion OpenStack(R) deployment:</p>
+<p>HPE supports the following configurations for HPE Helion OpenStack(R) deployment:</p>
 <ul>
 <li>
 <p>Host Interconnects/Protocols:</p>
@@ -247,7 +247,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <p>3PAR InForm OS Version: 3.1.3 MU1 to 3.2.1 MU1</p>
 
 <ul>
-<li>HP StoreVirtual 4000 series: driver 11.5.01.0079.0 (Helion Embedded)</li>
+<li>HPE StoreVirtual 4000 series: driver 11.5.01.0079.0 (Helion Embedded)</li>
 </ul>
 </li>
 </ul>
@@ -274,7 +274,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <p>On the controller and compute nodes, make sure the RAID array is configured to reflect a total size of less than 4TB.</p>
 </li>
 <li>
-<p>The <xref href="http://h18013.www1.hp.com/products/servers/proliantstorage/arraycontrollers/dynamicsmartarray/index.html?jumpid=reg_r1002_usen_c-001_title_r0001" scope="external" format="html" >HP Dynamic Smart Array (B120i and B320i) controllers</xref> use a proprietary driver that is not included in Helion OpenStack(R) HP recommends the use of the full featured <xref href="http://www8.hp.com/us/en/products/iss-controllers/index.html" scope="external" format="html" >Smart Array adapters</xref> (such as p220, p440, etc.) in order to achive the best set of features and performance.</p>
+<p>The <xref href="http://h18013.www1.hp.com/products/servers/proliantstorage/arraycontrollers/dynamicsmartarray/index.html?jumpid=reg_r1002_usen_c-001_title_r0001" scope="external" format="html" >HPE Dynamic Smart Array (B120i and B320i) controllers</xref> use a proprietary driver that is not included in Helion OpenStack(R) HPE recommends the use of the full featured <xref href="http://www8.hp.com/us/en/products/iss-controllers/index.html" scope="external" format="html" >Smart Array adapters</xref> (such as p220, p440, etc.) in order to achive the best set of features and performance.</p>
 
 <p>To use the Dynamic Smart Array adapter, enter the system ROM-Based Setup Utility (RBSU) and set the adapter to <codeph>Enable SATA AHCI Support</codeph> to allow the use of the adapter in non-RAID mode. However, for reliability this is not recommended.</p>
 </li>
@@ -360,7 +360,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <entry morerows="3">OvercloudCompute</entry>
 <entry morerows="3">1-100</entry>
 <entry>Disk </entry>
-<entry> 512GB. 100GB is required for HP Moonshot Servers.</entry>
+<entry> 512GB. 100GB is required for HPE Moonshot Servers.</entry>
 
 </row>
 <row>
@@ -571,11 +571,11 @@ or
 <p>There are no software requirements for the undercloud and overcloud servers because all required software is contained within the images deployed on the system.</p>
 </section>
 <section id="guestOS"> <title>Guest OS Support Matrix</title>
-<p>HP Helion OpenStack(R) Guest OS support is based on the hypervisor vendor.</p>
+<p>HPE Helion OpenStack(R) Guest OS support is based on the hypervisor vendor.</p>
 <p>For ESX, refer <xref href="http://www.vmware.com/resources/compatibility/search.php?action=search&amp;deviceCategory=software&amp;advancedORbasic=advanced&amp;maxDisplayRows=50&amp;key=&amp;productId=4&amp;gos_vmw_product_release%5B%5D=90&amp;datePosted=-1&amp;partnerId%5B%5D=-1&amp;os_bits=-1&amp;os_use%5B%5D=-1&amp;os_family%5B%5D=-1&amp;os_type%5B%5D=-1&amp;rorre=0" scope="external" format="html" >VMware Compatibility Guide</xref>.</p>
 <p>For KVM refer to the following table:</p>
-<p>A <b>Verified</b> Guest OS has been tested by HP and appears to function properly as a Nova compute VM on HP Helion OpenStack(R)</p>
-<p>A <b>Certified</b> Guest OS has been officially tested by the OS vendor, or by HP under the vendor's authorized program, and will be supported by the OS vendor as a Nova compute VM on HP Helion OpenStack(R)</p>
+<p>A <b>Verified</b> Guest OS has been tested by HPE and appears to function properly as a Nova compute VM on HPE Helion OpenStack(R)</p>
+<p>A <b>Certified</b> Guest OS has been officially tested by the OS vendor, or by HPE under the vendor's authorized program, and will be supported by the OS vendor as a Nova compute VM on HPE Helion OpenStack(R)</p>
 <table>
 <tgroup cols="3">
 <colspec colname="col1"/>

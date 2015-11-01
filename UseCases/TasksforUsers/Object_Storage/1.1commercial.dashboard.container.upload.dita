@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1681">
-<title>HP Helion OpenStack(R) 1.1: Uploading and Downloading Objects</title>
+<title>HPE Helion OpenStack(R) 1.1: Uploading and Downloading Objects</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -17,7 +17,7 @@
 <ol>
 <li>
 <p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HPE Helion OpenStack(R) Helion Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Object Store</b> tab on the dashboard <b>Project</b> panel.</p>
@@ -49,7 +49,7 @@
 <ol>
 <li>
 <p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HPE Helion OpenStack(R) Helion Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Object Store</b> tab on the dashboard <b>Project</b> panel.</p>

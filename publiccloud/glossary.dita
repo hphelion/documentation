@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic12432">
-<title>Glossary of HP Helion Public Cloud Terms</title>
+<title>Glossary of HPE Helion Public Cloud Terms</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,7 +12,7 @@
 <!--PUBLISHED-->
  <!--./publiccloud/glossary.md-->
  <!--permalink: /publiccloud/glossary/--></p>
-<p>Sometimes it's a little easy to become lost in the weeds of the cloud nomenclature; for such times, we've created this glossary to help you through.  While this glossary concentrates primarily on terms that are more specific to the HP Helion Public Cloud environment, we have tried to include a salad of general cloud computing terms to help you along.  If you need additional definitions, we suggest going on over to the <xref href="http://cloudglossary.com/" scope="external" format="html" >Open Stack Glossary</xref> and checking there.</p>
+<p>Sometimes it's a little easy to become lost in the weeds of the cloud nomenclature; for such times, we've created this glossary to help you through.  While this glossary concentrates primarily on terms that are more specific to the HPE Helion Public Cloud environment, we have tried to include a salad of general cloud computing terms to help you along.  If you need additional definitions, we suggest going on over to the <xref href="http://cloudglossary.com/" scope="external" format="html" >Open Stack Glossary</xref> and checking there.</p>
 <p>For a quick search of the <xref href="https://community.hpcloud.com/knowledge-base" scope="external" format="html" >Knowledge Base</xref>, just click on the blue highlighted term!</p>
 <section id="a"> <title>A</title>
 <dl>
@@ -185,7 +185,7 @@
 </section>
 </dt>
 <dd>
-<p>Content delivery network; an HP Helion Public Cloud service that provides distributed caching of object storage objects on geographically dispersed caching servers. Copies of the object are stored at a location more convenient to the end user system, allowing for better performance.</p>
+<p>Content delivery network; an HPE Helion Public Cloud service that provides distributed caching of object storage objects on geographically dispersed caching servers. Copies of the object are stored at a location more convenient to the end user system, allowing for better performance.</p>
 </dd>
 </dlentry>
 
@@ -229,7 +229,7 @@
 </section>
 </dt>
 <dd>
-<p>An HP Helion Public Cloud Compute Unit (CCU) is a unit of CPU capacity that describes the amount of compute power that a virtual core has available to it. Thus 6.5 CCUs are roughly equivalent to the minimum power of one logical core (a hardware hyper-thread) of an IntelÂ(R) 2012 XeonÂ(R) 2.60 GHz CPU.</p>
+<p>An HPE Helion Public Cloud Compute Unit (CCU) is a unit of CPU capacity that describes the amount of compute power that a virtual core has available to it. Thus 6.5 CCUs are roughly equivalent to the minimum power of one logical core (a hardware hyper-thread) of an IntelÂ(R) 2012 XeonÂ(R) 2.60 GHz CPU.</p>
 </dd>
 </dlentry>
 
@@ -456,7 +456,7 @@
 </section>
 </dt>
 <dd>
-<p>A server volume made available by HP partners. <i>See</i> <xref type="section" href="#topic12432/Image">Image</xref>.</p>
+<p>A server volume made available by HPE partners. <i>See</i> <xref type="section" href="#topic12432/Image">Image</xref>.</p>
 </dd>
 </dlentry>
 
@@ -514,7 +514,7 @@
 </section>
 </dt>
 <dd>
-<p>An open source library that provides clojure and java functionality in the HP Helion Public Cloud environment.</p>
+<p>An open source library that provides clojure and java functionality in the HPE Helion Public Cloud environment.</p>
 </dd>
 </dlentry>
 
@@ -555,7 +555,7 @@
 </section>
 </dt>
 <dd>
-<p>The primary access location for the HP Helion Public Cloud interface.  The console consists of a main dashboard panel, along with compute, storage, and account panels.</p>
+<p>The primary access location for the HPE Helion Public Cloud interface.  The console consists of a main dashboard panel, along with compute, storage, and account panels.</p>
 </dd>
 </dlentry>
 
@@ -892,7 +892,7 @@
 </section>
 </dt>
 <dd>
-<p>A collection of HP service subscriptions and/or resources (Compute, Object Storage, etc).</p>
+<p>A collection of HPE service subscriptions and/or resources (Compute, Object Storage, etc).</p>
 </dd>
 </dlentry>
 
@@ -928,7 +928,7 @@
 </section>
 </dt>
 <dd>
-<p>A digital representation of a person, system, or service who uses HP Helion Public Cloud. The Identity Service will validate that incoming request are being made by the user who claims to be making the call. Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a tenant which then limits where and how their tokens can be used to interact with services. Users are associated with tenants based on roles assigned to them with that tenant.</p>
+<p>A digital representation of a person, system, or service who uses HPE Helion Public Cloud. The Identity Service will validate that incoming request are being made by the user who claims to be making the call. Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a tenant which then limits where and how their tokens can be used to interact with services. Users are associated with tenants based on roles assigned to them with that tenant.</p>
 </dd>
 </dlentry>
 

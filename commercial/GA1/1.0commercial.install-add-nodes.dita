@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4649">
-<title>HP Helion OpenStack(R) 1.0: Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors</title>
+<title>HPE Helion OpenStack(R) 1.0: Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Binamra S,"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -21,7 +21,7 @@
 
 </p>
 <p>
-By default, HP Helion Openstack cloud deploys a two node (termed as start-up swift nodes) Swift cluster as part of its deployment.</p>
+By default, HPE Helion Openstack cloud deploys a two node (termed as start-up swift nodes) Swift cluster as part of its deployment.</p>
 <p>This document describes the steps to add (Scale Out) or remove (Scale In) nodes (KVM Compute Nodes) to an already-installed overcloud on a KVM hypervisor.</p>
 <ul>
 <li>
@@ -37,7 +37,7 @@ By default, HP Helion Openstack cloud deploys a two node (termed as start-up swi
 <section id="pre"> <title>Prerequisites</title>
 <p>Before you begin, ensure the following:</p>
 <ul>
-<li>The seed VM, undercloud and overcloud are installed using the HP Helion OpenStack(R) installer.</li>
+<li>The seed VM, undercloud and overcloud are installed using the HPE Helion OpenStack(R) installer.</li>
 </ul>
 </section>
 <section id="add"> <title>Add compute nodes</title>

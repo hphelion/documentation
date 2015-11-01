@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5163">
-<title>HP Helion OpenStack(R) 1.0: Site Index</title>
+<title>HPE Helion OpenStack(R) 1.0: Site Index</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,22 +15,22 @@
 <p>
 
 </p>
-<p>The documentation for HP Helion OpenStack(R) includes the following:</p>
+<p>The documentation for HPE Helion OpenStack(R) includes the following:</p>
 <ul>
 <li>
 <xref type="section" href="#topic5163/release">Release Notes</xref>
 </li>
 <li>
-<xref type="section" href="#topic5163/getstart">Getting started with HP Helion OpenStack(R)</xref>
+<xref type="section" href="#topic5163/getstart">Getting started with HPE Helion OpenStack(R)</xref>
 </li>
 <li>
 <xref type="section" href="#topic5163/related">Related documentation</xref>
 </li>
 <li>
-<xref type="section" href="#topic5163/install">Installing HP Helion OpenStack(R)</xref>
+<xref type="section" href="#topic5163/install">Installing HPE Helion OpenStack(R)</xref>
 </li>
 <li>
-<xref type="section" href="#topic5163/update">Updating HP Helion OpenStack(R)</xref>
+<xref type="section" href="#topic5163/update">Updating HPE Helion OpenStack(R)</xref>
 </li>
 <li>
 <xref type="section" href="#topic5163/underdash">Undercloud Horizon Dashboard</xref>
@@ -39,7 +39,7 @@
 <xref type="section" href="#topic5163/dash">Horizon Dashboard</xref>
 </li>
 <li>
-<xref type="section" href="#topic5163/services">HP Helion OpenStack(R) Services</xref>
+<xref type="section" href="#topic5163/services">HPE Helion OpenStack(R) Services</xref>
 </li>
 <li>
 <xref type="section" href="#topic5163/swift">Swift Deployment</xref>
@@ -56,8 +56,8 @@
   <xref href="../../commercial/GA1/1.0commercial.release-notes.dita" >Release Notes</xref>
 </p>
 </section>
-<section id="getstart"> <title>Getting started with HP Helion OpenStack(R)</title>
-<p>The following topics as needed contain information about HP Helion OpenStack(R)</p>
+<section id="getstart"> <title>Getting started with HPE Helion OpenStack(R)</title>
+<p>The following topics as needed contain information about HPE Helion OpenStack(R)</p>
 <ul>
 <li>
 <xref href="../../commercial/GA1/1.0commercial.faq.dita" >FAQs</xref>  </li>
@@ -72,7 +72,7 @@
 </li>
 </ul>
 </section>
-<section id="install"> <title>Installing HP Helion OpenStack(R)</title>
+<section id="install"> <title>Installing HPE Helion OpenStack(R)</title>
 <p>Review the following topics before you start the installation:</p>
 <ul>
 <li>
@@ -101,10 +101,10 @@
 <xref href="../../commercial/GA1/1.0commercial.install-GA-kvm.dita" >Installation and Configuration for KVM Hypervisor</xref>
 </li>
 <li>
-<xref href="../../commercial/GA1/1.0commercial.install-GA-vsa.dita" >Configuring HP StoreVirtual VSA for Block Storage</xref>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-vsa.dita" >Configuring HPE StoreVirtual VSA for Block Storage</xref>
 </li>
 <li>
-<xref href="../../commercial/GA1/1.0commercial.install-3par.dita" >HP StoreServ (3PAR) Support</xref>
+<xref href="../../commercial/GA1/1.0commercial.install-3par.dita" >HPE StoreServ (3PAR) Support</xref>
 </li>
 <li>
 <xref href="../../commercial/GA1/1.0commercial.install-GA-LDAP.dita" >Integrating LDAP</xref>
@@ -124,7 +124,7 @@
 <xref href="../../commercial/GA1/1.0commercial.install-GA-ESX-Proxy.dita" >Deploy vCenter ESX compute proxy</xref>
 </li>
 <li>
-<xref href="../../commercial/GA1/1.0commercial.install-GA-ovsvapp.dita" >Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts</xref>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-ovsvapp.dita" >Deploying and configuring OVSvApp for HPE Virtual Cloud Networking (VCN) on ESX hosts</xref>
 </li>
 </ul>
 </section>
@@ -157,7 +157,7 @@
 </li>
 </ul>
 </section>
-<section id="update"> <title>Updating HP Helion OpenStack(R)</title>
+<section id="update"> <title>Updating HPE Helion OpenStack(R)</title>
 <p>Review the following topics before you start an update:</p>
 <ul>
 <li>
@@ -220,7 +220,7 @@
 <xref href="../../commercial/GA1/1.0commercial.undercloud-resources-storage.dita" >Working with Storage</xref>
 </li>
 <li>
-<xref href="../../commercial/GA1/1.0commercial.undercloud-storage-storevirtual.dita" >Working with HP StoreVirtual VSA</xref>
+<xref href="../../commercial/GA1/1.0commercial.undercloud-storage-storevirtual.dita" >Working with HPE StoreVirtual VSA</xref>
 </li>
 <li>
 <xref href="../../commercial/GA1/1.0commercial.undercloud-oc-config-esx.dita" >Working with ESX Clusters</xref>
@@ -229,7 +229,7 @@
 <xref href="../../commercial/GA1/1.0commercial.undercloud-oc-config-storeserv.dita" >Working with StoreServ Backends</xref>
 </li>
 <li>
-<xref href="../../commercial/GA1/1.0commercial.undercloud-storage-storeserv.dita" >Working with HP 3PAR StoreServ</xref>
+<xref href="../../commercial/GA1/1.0commercial.undercloud-storage-storeserv.dita" >Working with HPE 3PAR StoreServ</xref>
 </li>
 <li>
 <xref href="../../commercial/GA1/1.0commercial.undercloud-oc-config-storevirtual.dita" >Working With StoreVirtual Backends</xref>
@@ -250,8 +250,8 @@
 </li>
 </ul>
 </section>
-<section id="services"> <title>HP Helion OpenStack(R) Services</title>
-<p>Review the following topics related to the HP Horizon OpenStack(R) services:</p>
+<section id="services"> <title>HPE Helion OpenStack(R) Services</title>
+<p>Review the following topics related to the HPE Horizon OpenStack(R) services:</p>
 <ul>
 <li>
 <xref href="../../commercial/GA1/1.0commerical.services-overview.dita" >Services Overview</xref>
@@ -397,7 +397,7 @@
 <xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-monitor-health-check.dita" >Service health</xref>
 </li>
 <li>
-<xref href="../../commercial/GA1/1.0commerical.services-swift-diagnosis-disk-health-hpssacli.dita" >Diagnosis of disk health using hpssacli utility for HP servers</xref>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-diagnosis-disk-health-hpssacli.dita" >Diagnosis of disk health using hpssacli utility for HPE servers</xref>
 </li>
 </ul>
 </li>
@@ -420,7 +420,7 @@
 </ul>
 </section>
 <section id="related"> <title>Related documentation</title>
-<p>This topic provides you links to OpenStack(R) documentation that you might find helpful when working with HP Helion OpenStack(R)</p>
+<p>This topic provides you links to OpenStack(R) documentation that you might find helpful when working with HPE Helion OpenStack(R)</p>
 <ul>
 <li>
 <xref href="../../commercial/GA1/1.0commercial.related-topics.dita" >Related documentation</xref>

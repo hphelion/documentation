@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1856">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Reference Deployment Scenarios Guide</title>
+<title>HPE Helion OpenStack(R) Carrier Grade (Beta): Reference Deployment Scenarios Guide</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -18,7 +18,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/DeploymentScenarios/carrier-grade-deployment.md-->
  <!--permalink: /helion/openstack/carrier/deploy/--></p>
-<p>You can use the deployment scenarios to familiarize yourself with HP Helion OpenStack(R) Carrier Grade and evaluate its performance.</p>
+<p>You can use the deployment scenarios to familiarize yourself with HPE Helion OpenStack(R) Carrier Grade and evaluate its performance.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic50538">
-<title>HP Helion Public Cloud Load Balancer Service API</title>
+<title>HPE Helion Public Cloud Load Balancer Service API</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -17,8 +17,8 @@
 <p>
 <b>Document Version:</b> 1.2</p>
 <section id="1-overview"> <title>1. Overview</title>
-<p>This guide is intended for software developers who wish to create applications using the HP Helion Public Cloud Load Balancer as a Service (LBaaS) set of APIs. It assumes the reader has a general understanding of cloud APIs, load balancing concepts, RESTful web services, HTTP/1.1 conventions and JSON serialization formats. The LBaaS set of APIs utilize and take advantage of a variety of Openstack cloud API patterns which are described in detail.</p>
-<p>We will be referring to HP Helion Public Cloud Load Balancer in this document as simply Load Balancer.</p>
+<p>This guide is intended for software developers who wish to create applications using the HPE Helion Public Cloud Load Balancer as a Service (LBaaS) set of APIs. It assumes the reader has a general understanding of cloud APIs, load balancing concepts, RESTful web services, HTTP/1.1 conventions and JSON serialization formats. The LBaaS set of APIs utilize and take advantage of a variety of Openstack cloud API patterns which are described in detail.</p>
+<p>We will be referring to HPE Helion Public Cloud Load Balancer in this document as simply Load Balancer.</p>
 </section>
 <section id="11-api-maturity-level"> <title>1.1 API Maturity Level</title>
 <p>This API definition represents the Load Balancer as a Service (LBaaS) in Beta release form.</p>
@@ -53,7 +53,7 @@
 <row>
 <entry align="left">1.1</entry>
   <entry align="left">May 2014</entry>
-  <entry align="left">HP Helion updates</entry>
+  <entry align="left">HPE Helion updates</entry>
 </row>
 <row>
 <entry align="left">1.2</entry>
@@ -67,7 +67,7 @@
 <section id="2-architecture-view"> <title>2. Architecture View</title>
 </section>
 <section id="21-overview"> <title>2.1 Overview</title>
-<p>The Load Balancer as a Service (LBaaS) is a set of APIs that provide a RESTful interface for the creation and management of load balancers in the cloud. Currently only application servers hosted in the HP Helion Public Cloud are supported. The LBaaS APIs defined are integrated within the HP Helion API ecosystem including integration with the Identity management system, billing and monitoring systems.</p>
+<p>The Load Balancer as a Service (LBaaS) is a set of APIs that provide a RESTful interface for the creation and management of load balancers in the cloud. Currently only application servers hosted in the HPE Helion Public Cloud are supported. The LBaaS APIs defined are integrated within the HPE Helion API ecosystem including integration with the Identity management system, billing and monitoring systems.</p>
 </section>
 <section id="22-conceptuallogical-architecture-view"> <title>2.2 Conceptual/Logical Architecture View</title>
 <p>To use the Load Balancers API effectively, you should understand several key concepts.</p>
@@ -98,7 +98,7 @@ For both options, a user may configure the time delay between monitoring checks,
 <p>Active health monitoring, by default is configured to use CONNECT type monitoring with a 30 second delay, 30 second timeout, and 2 retries, and it cannot be disabled. The caller may configure one health monitor per load balancer and the same configuration is used to monitor all of the back-end nodes.</p>
 </section>
 <section id="23-infrastructure-architecture-view"> <title>2.3 Infrastructure Architecture View</title>
-<p>LBaaS fits into the HP Helion ecosystem of APIs by utilizing the same common authentication mechanisms as other HP Helion services. In order to use LBaaS, a user account must have activated "Load Balancer" service. All API calls require a valid HP Helion authentication token.</p>
+<p>LBaaS fits into the HPE Helion ecosystem of APIs by utilizing the same common authentication mechanisms as other HPE Helion services. In order to use LBaaS, a user account must have activated "Load Balancer" service. All API calls require a valid HPE Helion authentication token.</p>
 </section>
 <section id="3-account-level-view"> <title>3. Account-level View</title>
 <p>Once the account is activated, the LBaaS service will show up in the service catalog returned during user login. In addition, LBaaS endpoints to be used will also be presented. Availability zone information may vary based on region.</p>
@@ -140,7 +140,7 @@ For both options, a user may configure the time delay between monitoring checks,
 <p>This section describes operations and guidelines that are common to all LBaaS APIs.</p>
 </section>
 <section id="41-authentication"> <title>4.1 Authentication</title>
-<p>The LBaaS API uses standard defined by OpenStack(R) Keystone project and used by the HP Helion for authentication. Please refer to the Identity service for more details on all authentication methods currently supported.</p>
+<p>The LBaaS API uses standard defined by OpenStack(R) Keystone project and used by the HPE Helion for authentication. Please refer to the Identity service for more details on all authentication methods currently supported.</p>
 </section>
 <section id="42-service-accessendpoints"> <title>4.2 Service Access/Endpoints</title>
 <p>As shown in the example above, logging into your region will provide you with the appropriate LBaaS endpoints to use. In addition, all supported versions are published within the service catalog. A client may choose to use any LBaaS API version listed.</p>

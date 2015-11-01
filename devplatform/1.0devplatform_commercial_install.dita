@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic15281">
-<title>HP Helion 1.0 Development Platform: Commercial Installation and Configuration</title>
+<title>HPE Helion 1.0 Development Platform: Commercial Installation and Configuration</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,16 +15,16 @@
 <p>
 
 </p>
-<p>The HP Helion Development Platform currently contains four products: Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service.</p>
-<p>The following topics explain how to install and configure the HP Helion Development Platform.</p>
+<p>The HPE Helion Development Platform currently contains four products: Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service.</p>
+<p>The following topics explain how to install and configure the HPE Helion Development Platform.</p>
 <p>
-<b>NOTE</b>: If you are installing the HP Helion Development Platform <b>Community</b> edition, follow the <xref href="../devplatform/1.0devplatform_community_install.dita" >HP Helion Development Community Installation and Configuration</xref> instructions instead.</p>
+<b>NOTE</b>: If you are installing the HPE Helion Development Platform <b>Community</b> edition, follow the <xref href="../devplatform/1.0devplatform_community_install.dita" >HPE Helion Development Community Installation and Configuration</xref> instructions instead.</p>
 <ul>
 <li>
 <xref type="section" href="#topic15281/prerequisites">Prerequisites</xref>
 </li>
 <li>
-<xref type="section" href="#topic15281/installing-the-hp-helion-development-platform">Installing the HP Helion Development Platform</xref>
+<xref type="section" href="#topic15281/installing-the-hp-helion-development-platform">Installing the HPE Helion Development Platform</xref>
 </li>
 <li>
 <xref type="section" href="#topic15281/install-messaging">Install the Messaging Service</xref>
@@ -43,7 +43,7 @@
 </li>
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
-<p>The HP Helion Development Platform is installed in the overcloud of HP Helion OpenStack(R)</p>
+<p>The HPE Helion Development Platform is installed in the overcloud of HPE Helion OpenStack(R)</p>
 <p>The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements herein.</p>
 <p>The installer requires the following packages. If they are not found, it will prompt you to install them.</p>
 <ul>
@@ -54,10 +54,10 @@
 <li>python-pip</li>
 </ul>
 </section>
-<section id="installing-the-hp-helion-development-platform"> <title>Installing the HP Helion Development Platform</title>
+<section id="installing-the-hp-helion-development-platform"> <title>Installing the HPE Helion Development Platform</title>
 </section>
 <section id="downloading-and-unpacking-the-installation-file"> <title>Downloading and unpacking the installation file</title>
-<p>The installation of the HP Helion Development Platform for the HP Helion OpenStack(R) Commercial Edition is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installer's request.</p>
+<p>The installation of the HPE Helion Development Platform for the HPE Helion OpenStack(R) Commercial Edition is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installer's request.</p>
 <p>
 <b>Note</b>: Should you need more assistance during installation, the install script also has a help feature.</p>
 <codeblock>
@@ -66,7 +66,7 @@
 </codeblock>
 <ol>
 <li>
-<p>Register and download the package from the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" scope="external" format="html" >HP Helion Development Platform</xref>
+<p>Register and download the package from the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" scope="external" format="html" >HPE Helion Development Platform</xref>
 </p>
 </li>
 <li>
@@ -128,7 +128,7 @@
 <p>Open Horizon and log in as the "admin" user. Then click on the <b>Admin</b> panel in Horizon and select <b>Development Platform</b>. Finally, click <b>Configure Services</b>.</p>
 </li>
 <li>
-<p>Click the <b>Connect</b> button on the <b>Configure Services</b> screen and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.</p>
+<p>Click the <b>Connect</b> button on the <b>Configure Services</b> screen and enter your username and password for the HPE Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.</p>
 </li>
 </ol>
 </section>
@@ -157,7 +157,7 @@
 <p>Open Horizon and log in as the "Admin" user. Then click on the <b>Admin</b> panel in Horizon and select <b>Development Platform</b>. Finally, click on <b>Configure Services</b>.</p>
 </li>
 <li>
-<p>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.</p>
+<p>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username and password for the HPE Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.</p>
 </li>
 </ol>
 </section>
@@ -322,7 +322,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 <p>Open Horizon and login as the "admin" user. Then click on the admin panel in Horizon and select the <b>Development Platform</b> panel under Admin. Then click on the <b>Configure Services</b> sub-panel.</p>
 </li>
 <li>
-<p>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.</p>
+<p>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username and password for the HPE Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.</p>
 </li>
 </ol>
 </section>
@@ -338,7 +338,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 <b>Key Pair (Required)</b> - Key Pair to install on all instances created as part of the database service. The public key can be used by an admin to get SSH access to all instances.</p>
 
 <p>
-<b>External Network (Required)</b> - Network Name for the network that has external network access. For HP Helion OpenStack(R) Commercial Edition this network is named 'ext-net'</p>
+<b>External Network (Required)</b> - Network Name for the network that has external network access. For HPE Helion OpenStack(R) Commercial Edition this network is named 'ext-net'</p>
 
 <p>
 <b>NTP Server IP</b> - IP Address to an NTP server to use if instances will not have outbound access to the internet.</p>
@@ -473,7 +473,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 <p>Open Horizon and log in as the "admin" user. Then click on the admin panel in Horizon and select the <b>Development Platform</b> Panel under Admin. Then click on the <b>Configure Services</b> sub-panel.</p>
 </li>
 <li>
-<p>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.</p>
+<p>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username and password for the HPE Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.</p>
 </li>
 </ol>
 </section>
@@ -489,7 +489,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 <b>Key Pair (Required)</b> - Key Pair to install on all instances created as part of the marketplace service. The public key can be used by an admin to get SSH access to all instances.</p>
 
 <p>
-<b>External Network (Required)</b> - Network Name for the network that has external network access. For HP Helion OpenStack(R) Commercial Edition this network is named 'ext-net'</p>
+<b>External Network (Required)</b> - Network Name for the network that has external network access. For HPE Helion OpenStack(R) Commercial Edition this network is named 'ext-net'</p>
 
 <p>
 <b>NTP Server IP</b> - IP Address to an NTP server to use if instances will not have outbound access to the internet.</p>

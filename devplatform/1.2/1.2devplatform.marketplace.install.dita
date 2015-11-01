@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6367">
-<title>HP Helion 1.2 Development Platform: The Marketplace (Beta)</title>
+<title>HPE Helion 1.2 Development Platform: The Marketplace (Beta)</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.2"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="System Engineer"/>
 <othermeta name="role" content="Cloud Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.2"/>
 </metadata>
 </prolog>
 <body>
@@ -62,7 +62,7 @@
 <section id="prerequisites"> <title>
 <!--Removed anchor point prereq-->
 <!-- id="prereq" -->Prerequisites</title>
-<p>Install the Marketplace component of the <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >HP Helion Development Platform</xref> during the Development Platform install process.</p>
+<p>Install the Marketplace component of the <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >HPE Helion Development Platform</xref> during the Development Platform install process.</p>
 </section>
 <section id="installing-a-package"> <title>
 <!--Removed anchor point install-->

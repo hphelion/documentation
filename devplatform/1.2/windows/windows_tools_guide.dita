@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic_w5z_kcw_js">
- <title>HP Helion 1.2 Development Platform: Windows and .NET Applications Tools Guide</title>
+ <title>HPE Helion 1.2 Development Platform: Windows and .NET Applications Tools Guide</title>
  <prolog>
   <metadata>
    <othermeta name="layout" content="default-devplatform"/>
-    <othermeta name="product-version" content="HP Helion Development Platform"/>
-    <othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+    <othermeta name="product-version" content="HPE Helion Development Platform"/>
+    <othermeta name="product-version" content="HPE Helion Development Platform 1.2"/>
     <othermeta name="role" content="Systems Administrator"/>
     <othermeta name="role" content="System Engineer"/>
     <othermeta name="role" content="Cloud Administrator"/>
@@ -15,12 +15,12 @@
     <othermeta name="role" content="ISV Developer"/>
     <othermeta name="role" content="Service Developer"/>
     <othermeta name="role" content="Patrick F"/>
-    <othermeta name="product-version1" content="HP Helion Development Platform"/>
-    <othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+    <othermeta name="product-version1" content="HPE Helion Development Platform"/>
+    <othermeta name="product-version2" content="HPE Helion Development Platform 1.2"/>
    </metadata>
  </prolog>
 <body>
- <section><title>HP Helion 1.2 Development Platform: <tm tmtype="reg">Windows</tm> and .NET Tools Guide</title>
+ <section><title>HPE Helion 1.2 Development Platform: <tm tmtype="reg">Windows</tm> and .NET Tools Guide</title>
    <ph><i>*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of
      Microsoft Corporation in the United States and/or other countries.*</i></ph> Helion Development
    Platform 1.2 adds tooling support for deploying Windows images and .NET Framework HTTP-based
@@ -218,7 +218,7 @@ To add a SQL Server role to a Windows instance, use the following syntax:
 
   <codeph>cf-mgmt add-service mssql2014 --load &lt;filename>.yml</codeph>
 
-For more information on the ALS cluster management tool, see http://docs.hpcloud.com/helion/devplatform/1.2/als/client/reference">HP Helion ALS Cluster Management Tool Reference.
+For more information on the ALS cluster management tool, see http://docs.hpcloud.com/helion/devplatform/1.2/als/client/reference">HPE Helion ALS Cluster Management Tool Reference.
 
 The ALS cluster management tool can be downloaded from the following location: http://docs.hpcloud.com/helion/devplatform/1.2/als/client/download">Download
 
@@ -233,7 +233,7 @@ To deploy a .NET application to a Windows instance, use the following syntax fro
 		helion login
 		helion push --stack win2012r2 </codeblock>
 
-For more information on the Helion client, see "/helion/devplatform/1.2/als/user/reference/client-ref">HP Helion 1.2 Development Platform: Application Lifecycle Service Client Command Reference
+For more information on the Helion client, see "/helion/devplatform/1.2/als/user/reference/client-ref">HPE Helion 1.2 Development Platform: Application Lifecycle Service Client Command Reference
 
 The Helion client tool can be downloaded from the following locations: 
 

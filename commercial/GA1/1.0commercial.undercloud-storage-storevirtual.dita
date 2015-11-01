@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5728">
-<title>HP Helion OpenStack(R) 1.0: Working with HP StoreVirtual VSA</title>
+<title>HPE Helion OpenStack(R) 1.0: Working with HPE StoreVirtual VSA</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,7 +15,7 @@
 <p>
 
 </p>
-<p>The StoreVirtual option allows you to configure HP StoreVirtual VSA cluster as storage.You can configure your StoreVirtual by either using the Horizon undercloud dashboard(<i>Recommended</i>) or <xref href="../../commercial/GA1/1.0commercial.sirius-cli-workflow.dita" >Sirius client</xref>.</p>
+<p>The StoreVirtual option allows you to configure HPE StoreVirtual VSA cluster as storage.You can configure your StoreVirtual by either using the Horizon undercloud dashboard(<i>Recommended</i>) or <xref href="../../commercial/GA1/1.0commercial.sirius-cli-workflow.dita" >Sirius client</xref>.</p>
 <p>This page describes the different tasks that you can perform using the StoreVirtual option in the Horizon undercloud dashboard.</p>
 <ul>
 <li>
@@ -54,15 +54,15 @@
 </p>
 </li>
 </ul>
-<!---Configuration of HP StoreServ/3PAR as Cinder back end using Sirius service involves the following steps:-->
+<!---Configuration of HPE StoreServ/3PAR as Cinder back end using Sirius service involves the following steps:-->
 <section id="before-you-begin"> <title>Before you begin</title>
 <p>Before you start working with StoreVirtual, ensure that the following prerequisites have been fulfilled:</p>
 <ol>
 <li>
-<p>HP Helion Cloud is deployed</p>
+<p>HPE Helion Cloud is deployed</p>
 </li>
 <li>
-<p>HP StoreVirtual VSA cluster is created and is accessible by Cinder</p>
+<p>HPE StoreVirtual VSA cluster is created and is accessible by Cinder</p>
 </li>
 </ol>
 </section>
@@ -78,10 +78,10 @@
 <p>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the Overview page.</p>
 </li>
 <li>
-<p>Select the <b>StoreVirtual</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreVirtual  VSA page is displayed.</p>
+<p>Select the <b>StoreVirtual</b> option to activate it.<!--A BR tag was used here in the original source.--> The HPE StoreVirtual  VSA page is displayed.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-register.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP StoreVirtual VSA Page (opens in a new window)</xref>
+<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-register.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HPE StoreVirtual VSA Page (opens in a new window)</xref>
 </p>
 </li>
 <li>
@@ -122,7 +122,7 @@
 <p>On successful registration, the cluster is added and is listed as <i>Registered</i>.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-registered-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Registered Cluster Displays in the HP StoreVirtual VSA Page (opens in a new window)</xref>
+<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-registered-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Registered Cluster Displays in the HPE StoreVirtual VSA Page (opens in a new window)</xref>
 </p>
 </li>
 </ol>
@@ -142,7 +142,7 @@
 <p>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the Overview page.</p>
 </li>
 <li>
-<p>Select the <b>StoreVirtual</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreVirtual  VSA page is displayed.</p>
+<p>Select the <b>StoreVirtual</b> option to activate it.<!--A BR tag was used here in the original source.--> The HPE StoreVirtual  VSA page is displayed.</p>
 </li>
 <li>
 <p>Click <b>Edit Cluster</b> to display the Edit StoreVirtual Cluster dialog box.</p>
@@ -172,7 +172,7 @@
 <p>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the Overview page.</p>
 </li>
 <li>
-<p>Select the <b>StoreVirtual</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreVirtual  VSA page is displayed.</p>
+<p>Select the <b>StoreVirtual</b> option to activate it.<!--A BR tag was used here in the original source.--> The HPE StoreVirtual  VSA page is displayed.</p>
 </li>
 <li>
 <p>Click the <b>More</b> drop-down list next to the cluster you want to unregister and select <b>Unregister Cluster</b>.<!--A BR tag was used here in the original source.--> A confirmation box is displayed.</p>
@@ -201,7 +201,7 @@
 <p>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the Overview page.</p>
 </li>
 <li>
-<p>Select the <b>StoreVirtual</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreVirtual VSA page is displayed.</p>
+<p>Select the <b>StoreVirtual</b> option to activate it.<!--A BR tag was used here in the original source.--> The HPE StoreVirtual VSA page is displayed.</p>
 </li>
 <li>
 <p>Click the checkbox next to the <b>Name</b> column to select all the clusters.</p>
@@ -215,7 +215,7 @@
 </ol>
 </section>
 <section id="view-configuration"> <title>View configuration</title>
-<p>Use this option to view the cluster configuration (as defined in the HP Helion OpenStack(R) Configuration Manual for HP LeftHand/StoreVirtual Block Storage Volume Driver).</p>
+<p>Use this option to view the cluster configuration (as defined in the HPE Helion OpenStack(R) Configuration Manual for HPE LeftHand/StoreVirtual Block Storage Volume Driver).</p>
 <ol>
 <li>
 <p>Log in to the Horizon undercloud dashboard.</p>
@@ -224,7 +224,7 @@
 <p>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the Overview page.</p>
 </li>
 <li>
-<p>Select the <b>StoreVirtual</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreVirtual VSA page is displayed.</p>
+<p>Select the <b>StoreVirtual</b> option to activate it.<!--A BR tag was used here in the original source.--> The HPE StoreVirtual VSA page is displayed.</p>
 </li>
 <li>
 <p>Click the <b>More</b> drop-down list for the cluster whose configuration you want to view.</p>

@@ -2,15 +2,15 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic24073_2">	
-    <title>HP Helion 1.2 Development Platform: Windows Overview</title>
+    <title>HPE Helion 1.2 Development Platform: Windows Overview</title>
     <titlealts>
-        <searchtitle>HP Helion 1.2 Development Platform: Windows Overview</searchtitle>
+        <searchtitle>HPE Helion 1.2 Development Platform: Windows Overview</searchtitle>
     </titlealts>
     <prolog>
         <metadata>
             <othermeta name="layout" content="default-devplatform"/>
-            <othermeta name="product-version" content="HP Helion Development Platform"/>
-            <othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+            <othermeta name="product-version" content="HPE Helion Development Platform"/>
+            <othermeta name="product-version" content="HPE Helion Development Platform 1.2"/>
             <othermeta name="role" content="Systems Administrator"/>
             <othermeta name="role" content="System Engineer"/>
             <othermeta name="role" content="Cloud Administrator"/>
@@ -20,13 +20,13 @@
             <othermeta name="role" content="ISV Developer"/>
             <othermeta name="role" content="Service Developer"/>
             <othermeta name="role" content="Patrick F"/>
-            <othermeta name="product-version1" content="HP Helion Development Platform"/>
-            <othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+            <othermeta name="product-version1" content="HPE Helion Development Platform"/>
+            <othermeta name="product-version2" content="HPE Helion Development Platform 1.2"/>
         </metadata>
     </prolog>
     <body>
 <!--PUBLISH-->
-<section id="introduction"><title>HP Helion 1.2 Development Platform: Windows Overview</title>
+<section id="introduction"><title>HPE Helion 1.2 Development Platform: Windows Overview</title>
 
     <p><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i></p>
 
@@ -66,7 +66,7 @@
     <li>Windows Server 2012 R2 with SQL Server 2012 Express</li>
     <li>Windows Server 2012 R2 with SQL Server 2014 Express</li>
 </ul>
-        <p>Helion Development Platform treats deployment of .NET applications in the same way as Linux applications (such as Java or PHP appplications). .NET applications require a <xref href="buildpack">buildpack</xref> to specify the dependencies and <xref href="adding_services">services</xref> that can be bound to the application. .NET applications are deployed into a sandbox environment similar to Warden in Cloud Foundry. </p>
+        <p>Helion Development Platform treats deployment of .NET applications in the same way as Linux applications (such as Java or PHPE appplications). .NET applications require a <xref href="buildpack">buildpack</xref> to specify the dependencies and <xref href="adding_services">services</xref> that can be bound to the application. .NET applications are deployed into a sandbox environment similar to Warden in Cloud Foundry. </p>
         </section>
     <section id="apps"><title>Supported .NET Application Types</title>
 
@@ -94,7 +94,7 @@
         </section>
         <section id="tools_imaging"><title>Imaging tool</title>
 
-            <ul><li> Glazier: This tool creates Windows images for deployment to Helion OpenStack. This tool is not needed for using Windows images in HP Helion Public Cloud.</li></ul>
+            <ul><li> Glazier: This tool creates Windows images for deployment to Helion OpenStack. This tool is not needed for using Windows images in HPE Helion Public Cloud.</li></ul>
         </section>
         <section id="tools_management"><title>Management tool set</title>
 <ul>
@@ -140,7 +140,7 @@
 
         <p>Windows support has software requirements including the following:</p>
 <ul>
-    <li> A deployment of Helion OpenStack 1.1.1 or an HP Helion Public Cloud account. To try HP Helion Public Cloud, see <xref format="html" href="http://www.hpcloud.com/cloud-credit">HP Cloud Signup</xref>. Helion Development Platform 1.2 is not supported on Helion OpenStack 1.0 or 1.1.</li>
+    <li> A deployment of Helion OpenStack 1.1.1 or an HPE Helion Public Cloud account. To try HPE Helion Public Cloud, see <xref format="html" href="http://www.hpcloud.com/cloud-credit">HPE Cloud Signup</xref>. Helion Development Platform 1.2 is not supported on Helion OpenStack 1.0 or 1.1.</li>
     <li> A licensed, retail, English-language Windows 2012 R2 ISO image. Evaluation versions and non-English versions are not supported. This image can be obtained through a MSDN subscription for development and test purposes, but images for use in a production environment must be obtained through the OEM channel. See [Windows Instance Licensing](#licensing) for details.</li>
     <li> Virtual Box version 4.3.26 or later: <xref format="html" href="https://www.virtualbox.org/wiki/Downloads">Download</xref></li>
     <li> Virtio drivers version 0.1-81: <xref format="html" href="https://fedorapeople.org/groups/virt/virtio-win/deprecated-isos/stable/virtio-win-0.1-81.iso">Download</xref></li>

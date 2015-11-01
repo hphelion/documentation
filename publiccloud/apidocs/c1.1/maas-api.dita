@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic89696">
-<title>HP Helion Public Cloud Monitoring API Specifications</title>
+<title>HPE Helion Public Cloud Monitoring API Specifications</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -17,10 +17,10 @@
 <p>
 <b>Document Version:</b> 2.0</p>
 <p>
-<b>Note:</b> If you are using HP Helion v12.12, see the <xref href="/api/monitoring/" >Monitoring API v1.0</xref>.</p>
+<b>Note:</b> If you are using HPE Helion v12.12, see the <xref href="/api/monitoring/" >Monitoring API v1.0</xref>.</p>
 <section id="Section1_"> <title>1. Overview</title>
-<p>This document describes the HP Helion Public Cloud Monitoring API v1.1, which allows you to monitor resources in HP Helion Public Cloud.</p>
-<p>We will be referring to HP Helion Public Cloud Monitoring in this document as simply Monitoring.</p>
+<p>This document describes the HPE Helion Public Cloud Monitoring API v1.1, which allows you to monitor resources in HPE Helion Public Cloud.</p>
+<p>We will be referring to HPE Helion Public Cloud Monitoring in this document as simply Monitoring.</p>
 </section>
 <section id="Section1_1"> <title>1.1 API Maturity Level</title>
 <p>
@@ -145,7 +145,7 @@
 <row>
 <entry align="left">2.0</entry>
   <entry align="left">May 2014</entry>
-  <entry align="left">HP Helion updates</entry>
+  <entry align="left">HPE Helion updates</entry>
 </row>
 </tbody>
 </tgroup>
@@ -221,8 +221,8 @@
 <ul>
 <li>Message subscription - This allows AMQP message queue access to the current metric stream.</li>
 <li>Alarming - Sends a notification when a metric passes a threshold.</li>
-<li>Metric Post - Sends a metric to HP Monitoring.</li>
-<li>Metric Query - Queries all of the metrics sent to and/or captured by HP Monitoring.</li>
+<li>Metric Post - Sends a metric to HPE Monitoring.</li>
+<li>Metric Query - Queries all of the metrics sent to and/or captured by HPE Monitoring.</li>
 </ul>
 <p>
 <b>Note:</b> Access to these functions are also available through the <xref href="https://horizon.hpcloud.com/" scope="external" format="html" >Console</xref> and it is the preferred method. You do NOT need to obtain an auth token when working from the console. However, when accessing the REST interface directly, you are required to include the auth token.</p>
@@ -245,7 +245,7 @@
   <xref type="section" href="#topic89696/ServiceDetailsCreateSubscription">Subscription Creation Details</xref>
 </p>
 <p>From the above link, use the Curl Example, changing the X-Auth-Token to the auth token value. Change "endpoint_id" to the id value returned from the Endpoint call and "instance_id" with a valid compute instance ID that you own. The data feed should start soon after.</p>
-<p>The metric json format (HP Helion Metrics JSON) received is the same format used for creating user defined metrics in 4.4.6.1 <xref type="section" href="#topic89696/ServiceDetailsCreateMetric">Create a New Metric</xref>.</p>
+<p>The metric json format (HPE Helion Metrics JSON) received is the same format used for creating user defined metrics in 4.4.6.1 <xref type="section" href="#topic89696/ServiceDetailsCreateMetric">Create a New Metric</xref>.</p>
 </section>
 <section id="AlarmExample"> <title>2.2.4 Setting Up an Alarm Example</title>
 <p>Alarms send notifications when a metric value exceeds a user defined threshold.</p>
@@ -302,7 +302,7 @@ API call to create a new notification address, and then the <xref type="section"
 <p>Namespaces define the high-level logical partition to monitor.  This restricts what metrics will be used.</p>
 
 <p>
-<b>Note:</b> All namespaces starting with hpcs. are reserved by HP and cannot be used for user defined namespaces.</p>
+<b>Note:</b> All namespaces starting with hpcs. are reserved by HPE and cannot be used for user defined namespaces.</p>
 </li>
 <li>
 <p>Dimensions place restrictions on the namespace to further narrow what is monitored.</p>
@@ -319,7 +319,7 @@ API call to create a new notification address, and then the <xref type="section"
 <b>Supported dimensions:</b> Any</p>
 <p>
 <b>Note:</b> Dimensions must currently match exactly for subscriptions using user defined namespaces.</p>
-<p>A user-defined namespace is a logical grouping of metrics for a customer that the customer defines. Performing a metric post call with a new namespace automatically creates the new namespace. The HP namespace (hpcs. prefixed namepaces) are restricted and cannot be used. Any other name can be used for a user defined namespace and there are no limits on the number that a customer can create.</p>
+<p>A user-defined namespace is a logical grouping of metrics for a customer that the customer defines. Performing a metric post call with a new namespace automatically creates the new namespace. The HPE namespace (hpcs. prefixed namepaces) are restricted and cannot be used. Any other name can be used for a user defined namespace and there are no limits on the number that a customer can create.</p>
 <p>See <xref type="section" href="#topic89696/ServiceDetailsMetrics">Metrics Operations Details</xref>.</p>
 </section>
 <section id="NamespaceHpcsCompute"> <title>2.3.2 Namespace: hpcs.compute</title>
@@ -629,7 +629,7 @@ API call to create a new notification address, and then the <xref type="section"
 </tgroup>
 </table>
 </section>
-<section id="MetricFormat"> <title>2.4 HP Helion Metrics JSON Format Schema</title>
+<section id="MetricFormat"> <title>2.4 HPE Helion Metrics JSON Format Schema</title>
 <ul>
 <li>namespace : string (64 char max)</li>
 <li>dimensions : (optional) map &lt;string (50 char max), string (300 char max)&gt;</li>
@@ -875,7 +875,7 @@ userspace
          "errorcode": "&lt;text error code&gt;"
 }}}
 </codeblock>
-<p>If you encounter this error, please retry the request. If the error persists or occurs at an unacceptable rate, please contact HP Customer Support and be sure to include in your report the full body of the response and the region and time you received this response.</p>
+<p>If you encounter this error, please retry the request. If the error persists or occurs at an unacceptable rate, please contact HPE Customer Support and be sure to include in your report the full body of the response and the region and time you received this response.</p>
 </section>
 <section id="SupportSoftwareAndOtherTools"> <title>2.7 Support Software and Other Tools</title>
 </section>
@@ -924,10 +924,10 @@ userspace
 <p>Requests to the Monitoring API are required to present a valid token which must be obtained from the Identity service prior to making a Monitoring API request.</p>
 <p>More information about the Identity service:</p>
 <p>
-  <xref href="https://community.hpcloud.com/article/identity-service-introduction" scope="external" format="html" >Introduction to HP Helion Identity Service</xref>
+  <xref href="https://community.hpcloud.com/article/identity-service-introduction" scope="external" format="html" >Introduction to HPE Helion Identity Service</xref>
 </p>
 <p>
-  <xref href="https://community.hpcloud.com/knowledge-base-categories/cloud-identity-service" scope="external" format="html" >HP Helion Identity Service Overview</xref>
+  <xref href="https://community.hpcloud.com/knowledge-base-categories/cloud-identity-service" scope="external" format="html" >HPE Helion Identity Service Overview</xref>
 </p>
 </section>
 <section id="Accounts"> <title>3.1 Accounts</title>
@@ -1056,7 +1056,7 @@ https://region-b.geo-1.monitoring.hpcloudsvc.com/v1.1/
 <p>
   <b>Curl Example</b>
 </p>
-<p>Replace <codeph>tenantName</codeph> with your Project ID value from the API Keys web page. Replace <codeph>username</codeph> and <codeph>password</codeph> with your credentials for logging in to HP Helion.</p>
+<p>Replace <codeph>tenantName</codeph> with your Project ID value from the API Keys web page. Replace <codeph>username</codeph> and <codeph>password</codeph> with your credentials for logging in to HPE Helion.</p>
 <codeblock>
   <codeph>$ curl -i -X POST \
   https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/tokens \
@@ -1589,7 +1589,7 @@ https://region-b.geo-1.monitoring.hpcloudsvc.com/v1.1/
 <i>X-Auth-Token</i>
 </p>
 
-<p>HP Helion authorization token.</p>
+<p>HPE Helion authorization token.</p>
 </li>
 </ul>
 <p>
@@ -4740,7 +4740,7 @@ X-Auth-Token: ${Auth_Token}
 </tgroup>
 </table>
 <p>JSON</p>
-<p>The HP Helion Metrics JSON format is used for publishing new user defined metrics and for receiving all metrics from a subscription.</p>
+<p>The HPE Helion Metrics JSON format is used for publishing new user defined metrics and for receiving all metrics from a subscription.</p>
 <p>
   <b>
     <i>Scalar Metric</i>
@@ -4875,7 +4875,7 @@ X-Auth-Token: ${Auth_Token}
 </p>
 <p>Common attributes described in <xref type="section" href="#topic89696/ServiceDetailsCreateMetric">4.4.7.1 Create a New Metric</xref>.</p>
 <p>JSON</p>
-<p>The HP Helion Metrics JSON format is used for publishing new user defined metrics and for receiving all metrics from a subscription.</p>
+<p>The HPE Helion Metrics JSON format is used for publishing new user defined metrics and for receiving all metrics from a subscription.</p>
 <p>
   <b>
     <i>Scalar Aggregate Metric</i>

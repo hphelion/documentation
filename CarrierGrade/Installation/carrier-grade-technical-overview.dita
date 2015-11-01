@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3485">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Technical Overview</title>
+<title>HPE Helion OpenStack(R) Carrier Grade (Beta): Technical Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.0.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Sameer V, Pranoy R, Michael B"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HPE Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version3" content="HPE Helion OpenStack(R) 1.0.1"/>
+<othermeta name="product-version4" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -25,10 +25,10 @@
  <!--permalink: /helion/openstack/carrier/technical-overview/--></p>
 <p> <xref href="../../CarrierGrade/Installation/carrier-grade-install-playbook-overview.dita" >▲ Installation Overview</xref> | <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >Support Matrix ▶</xref>
 </p>
-<p>This page introduces you to HP Helion OpenStack(R) Carrier Grade, a carrier-grade distribution of OpenStack(R) the leading open source cloud computing platform.</p>
+<p>This page introduces you to HPE Helion OpenStack(R) Carrier Grade, a carrier-grade distribution of OpenStack(R) the leading open source cloud computing platform.</p>
 <ul>
 <li>
-<xref type="section" href="#topic3485/Helion-services">HP Helion OpenStack(R) services</xref>
+<xref type="section" href="#topic3485/Helion-services">HPE Helion OpenStack(R) services</xref>
 </li>
 <li>
 <xref type="section" href="#topic3485/deploy-arch">Deployment architecture</xref>
@@ -40,11 +40,11 @@
 <xref type="section" href="#topic3485/next">Hardware requirement</xref>
 </li>
 </ul>
-<section id="Helion-services"> <title>HP Helion OpenStack(R) Carrier Grade services- functional overview</title>
-<p>The following table outlines the functionality of HP Helion OpenStack(R)  Carrier Grade services based on the type of users - Users and Administrators. For a complete description of these services, see the <xref href="//helion/openstack/carrier/services/overview/" >Services Overview</xref> page.</p>
+<section id="Helion-services"> <title>HPE Helion OpenStack(R) Carrier Grade services- functional overview</title>
+<p>The following table outlines the functionality of HPE Helion OpenStack(R)  Carrier Grade services based on the type of users - Users and Administrators. For a complete description of these services, see the <xref href="//helion/openstack/carrier/services/overview/" >Services Overview</xref> page.</p>
 </section>
 <section id="deploy-arch"> <title>Deployment architecture</title>
-<p>You can deploy HP Helion OpenStack(R) Carrier Grade on a <xref href="http://www.linux-kvm.org/page/Main_Page" scope="external" format="html" >KVM hypervisor</xref>.</p>
+<p>You can deploy HPE Helion OpenStack(R) Carrier Grade on a <xref href="http://www.linux-kvm.org/page/Main_Page" scope="external" format="html" >KVM hypervisor</xref>.</p>
 <p>The following diagram depicts a simplified deployment scenario using KVM.</p>
 <!-- This image is for beta release only. Replace for beta -->
 <p>
@@ -193,7 +193,7 @@ Backup and restore scripts and procedures are provided for the seed VM, underclo
 
 Backup and Restore of VM instances/snapshots and volumes/snapshots for workloads in the cloud is supported using the Object Storage service.
 
-For more information see [HP Helion OpenStack(R) Back Up and Restore](/helion/openstack/1.1/backup.restore/)
+For more information see [HPE Helion OpenStack(R) Back Up and Restore](/helion/openstack/1.1/backup.restore/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top </a>
 -->

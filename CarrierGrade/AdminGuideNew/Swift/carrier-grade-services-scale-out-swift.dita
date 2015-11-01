@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2102">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): About Scale-out Object Storage (Swift)</title>
+<title>HPE Helion OpenStack(R) Carrier Grade (Beta): About Scale-out Object Storage (Swift)</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.0.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
-<othermeta name="role" content="Keshava HP, Sameer V, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="Keshava HPE Sameer V, Binamra S"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HPE Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version3" content="HPE Helion OpenStack(R) 1.0.1"/>
+<othermeta name="product-version4" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -26,7 +26,7 @@
 <!--
 <a href="/helion/openstack/carrier/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a>
 -->
-<p>HP Helion OpenStack(R) Object Storage includes two starter Swift All-in-One servers that are deployed by the initial installation. The installer auto-configures a portion of the first device recognized by the operating system and assigns it to the Swift entities (account, container and object rings).</p>
+<p>HPE Helion OpenStack(R) Object Storage includes two starter Swift All-in-One servers that are deployed by the initial installation. The installer auto-configures a portion of the first device recognized by the operating system and assigns it to the Swift entities (account, container and object rings).</p>
 <p>It is recommended to use these Starter servers as host for the following Swift services for scaled out Swift cluster:</p>
 <ol>
 <li>Swift Proxy </li>
@@ -38,14 +38,14 @@
 <!--
 We recommend you use these Starter servers as Swift Proxy Servers for the scaled out Swift cluster. To do this, you can use the *ringos* utility to add additional drives on that server to the Swift Account and Container rings. 
 -->
-- <xref href="../../../CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment.dita" >Step by step instructions for deploying additional Scale-out Object Storage (Swift) Nodes with HP Helion OpenStack(R)</xref>
+- <xref href="../../../CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment.dita" >Step by step instructions for deploying additional Scale-out Object Storage (Swift) Nodes with HPE Helion OpenStack(R)</xref>
 </p>
 <section id="diagrams"> <title>Diagrams</title>
-<p>The HP Helion OpenStack(R) scale-out Object Storage (Swift) architecture.</p>
+<p>The HPE Helion OpenStack(R) scale-out Object Storage (Swift) architecture.</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion OpenStack(R) Scale-out (opens in a new window)</xref>
+  <xref format="html" href="javascript:window.open('/media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HPE Helion OpenStack(R) Scale-out (opens in a new window)</xref>
 </p>
-<p>The HP Helion OpenStack(R) life-cycle diagram.</p>
+<p>The HPE Helion OpenStack(R) life-cycle diagram.</p>
 <p>
   <xref format="html" href="javascript:window.open('/media/swift-cluster-lifecycle.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Swift cluster lifecycle(opens in a new window) </xref>
 </p>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic602">
-<title>HP Helion Public Cloud CLI</title>
+<title>HPE Helion Public Cloud CLI</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,9 +15,9 @@
 <p>We provide you with the following software packages that give you command-line interface (CLI) access to the Public Cloud:</p>
 <ul>
 <li>
-<xref href="../publiccloud/cli.windows.2.dita" >Windows Powershell CLI for HP Helion Public Cloud</xref> - Control the HP Helion Public Cloud from a Windows Powershell environment</li>
+<xref href="../publiccloud/cli.windows.2.dita" >Windows Powershell CLI for HPE Helion Public Cloud</xref> - Control the HPE Helion Public Cloud from a Windows Powershell environment</li>
 <li>
-<xref href="../publiccloud/cli.openstack.dita" >OpenStack(R) CLI tools</xref> - Work with HP Helion Public Cloud using the native OpenStack(R) Command Line Interface tools</li>
+<xref href="../publiccloud/cli.openstack.dita" >OpenStack(R) CLI tools</xref> - Work with HPE Helion Public Cloud using the native OpenStack(R) Command Line Interface tools</li>
 </ul>
 </body>
 </topic>

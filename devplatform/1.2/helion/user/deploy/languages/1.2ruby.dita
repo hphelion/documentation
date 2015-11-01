@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5273">
-<title>HP Helion 1.2 Development Platform: Developing In Ruby</title>
+<title>HPE Helion 1.2 Development Platform: Developing In Ruby</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.2"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.2"/>
 </metadata>
 </prolog>
 <body>
@@ -20,9 +20,9 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/user/deploy/languages/1.2ruby.md-->
  <!--permalink: /helion/devplatform/1.2/als/user/deploy/languages/ruby/--></p>
-<p>Whether you're deploying an application to the HP Helion Development Platform, a
+<p>Whether you're deploying an application to the HPE Helion Development Platform, a
 Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
-advantage of HP Helion OpenStack(R) to manage infrastructure or software services, tools
+advantage of HPE Helion OpenStack(R) to manage infrastructure or software services, tools
 to enable successful development are available in Ruby.</p>
 <section id="application-lifecycle-services"> <title>Application Lifecycle Services</title>
 <p>Application Lifecycle Services (ALS), a cloud foundry based Platform as a Service,
@@ -56,7 +56,7 @@ To learn more see:</p>
 <li>The <xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita" >manifest.yml</xref> reference.</li>
 </ul>
 </section>
-<section id="hp-helion-sdk"> <title>HP Helion SDK</title>
+<section id="hp-helion-sdk"> <title>HPE Helion SDK</title>
 <p>Ruby applications can communicate directly with the <xref href="../../../../../../publiccloud/api.dita" >Helion APIs</xref> through a REST client or use the SDK. The SDK is designed to have a simple well documented API to simplify working with the services.
 To understand how it works, here is an example of writing and reading from object storage:</p>
 <codeblock>

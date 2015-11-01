@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5788">
-<title>HP Helion OpenStack(R) 1.0: Diagnosis of disk health using hpssacli utility for HP servers</title>
+<title>HPE Helion OpenStack(R) 1.0: Diagnosis of disk health using hpssacli utility for HPE servers</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.0.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Karthik P, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HPE Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version3" content="HPE Helion OpenStack(R) 1.0.1"/>
+<othermeta name="product-version4" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -26,11 +26,11 @@
 <p>
 
 </p>
-<p>The health of the disk  of the HP servers can be diagnosed using the <b>
+<p>The health of the disk  of the HPE servers can be diagnosed using the <b>
 <i>hpsacli</i>
 </b> utility.</p>
-<section id="hp-smart-storage-administrator-cli-20220-hpssacli"> <title>HP Smart Storage Administrator CLI 2.0.22.0 (HPSSACLI)</title>
-<p>The HP Smart Storage Administrator CLI (HPSSACLI) is a command line disk configuration program for Smart Array Controllers.</p>
+<section id="hp-smart-storage-administrator-cli-20220-hpssacli"> <title>HPE Smart Storage Administrator CLI 2.0.22.0 (HPSSACLI)</title>
+<p>The HPE Smart Storage Administrator CLI (HPSSACLI) is a command line disk configuration program for Smart Array Controllers.</p>
 </section>
 <section id="deployment"> <title>Deployment</title>
 <p>The <b>

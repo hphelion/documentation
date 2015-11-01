@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic14511">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Reference Deployment Scenarios - Administrative Tasks</title>
+<title>HPE Helion OpenStack(R) Carrier Grade (Beta): Reference Deployment Scenarios - Administrative Tasks</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -137,7 +137,7 @@ This exercise creates the users <codeph>user1</codeph> and <codeph>user2</codeph
 <ol>
 <li>
 <p>
-<xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HPE Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Identity</b> dashboard, then the <b>Users</b> link to 1. list the users currently defined on the system.</p>
@@ -160,7 +160,7 @@ This exercise creates the users <codeph>user1</codeph> and <codeph>user2</codeph
 <ol>
 <li>
 <p>
-<xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HPE Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Networks</b> link.</p>
@@ -196,7 +196,7 @@ This exercise creates the users <codeph>user1</codeph> and <codeph>user2</codeph
 <ol>
 <li>
 <p>
-<xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HPE Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Networks</b> link.</p>
@@ -269,7 +269,7 @@ On the <b>Provider Network Overview</b> page, click <b>Create Range</b> to open 
 <ol>
 <li>
 <p>
-<xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HPE Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Networks</b> link.</p>
@@ -404,8 +404,8 @@ for the provider network.</p>
 <p>Note: The flavor <codeph>example-guest.tiny</codeph> is not used in the scenarios. All the instances in the scenarios require the extra CPU provided by <codeph>example-guest.small</codeph> to support AVP network interfaces.</p>
 </section>
 <section id="guest"> <title>Setting Up the Example Guest Image</title>
-<p>You can import guest images for use with the HP Helion OpenStack(R) Carrier Grade server.</p>
-<p>This example assumes that a guest disk image named <codeph>example-guest.img</codeph> is available on the file system of the active controller. The guest image is available as part of HP Helion OpenStack(R) Carrier Grade.</p>
+<p>You can import guest images for use with the HPE Helion OpenStack(R) Carrier Grade server.</p>
+<p>This example assumes that a guest disk image named <codeph>example-guest.img</codeph> is available on the file system of the active controller. The guest image is available as part of HPE Helion OpenStack(R) Carrier Grade.</p>
 <p>The image must be uploaded to the Image Operations (Glance) service, the OpenStack(R) image deployment service, so that it can be used to launch new virtual machines.</p>
 <ol>
 <li>

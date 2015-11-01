@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7877">
-<title>HP Helion OpenStack(R) 1.0: Configuring Your Storage Using Sirius</title>
+<title>HPE Helion OpenStack(R) 1.0: Configuring Your Storage Using Sirius</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.0.1"/>
+<othermeta name="product-version" content="HPE Helion OpenStack(R) 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Sunitha K, Deepali V, Vandana S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HPE Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HPE Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version3" content="HPE Helion OpenStack(R) 1.0.1"/>
+<othermeta name="product-version4" content="HPE Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -36,10 +36,10 @@ Once you complete the undercloud and overcloud installation, you can use the Sir
 <xref type="section" href="#topic7877/api-commands">API Commands</xref>
 </li>
 <li>
-<xref type="section" href="#topic7877/storevirtual-commands">HP StoreVirual Commands</xref>
+<xref type="section" href="#topic7877/storevirtual-commands">HPE StoreVirual Commands</xref>
 </li>
 <li>
-<xref type="section" href="#topic7877/hp-storeserv-commands">HP StoreServ Commands</xref>
+<xref type="section" href="#topic7877/hp-storeserv-commands">HPE StoreServ Commands</xref>
 </li>
 <li>
 <xref type="section" href="#topic7877/required-options">Required Options</xref>
@@ -87,7 +87,7 @@ Once you complete the undercloud and overcloud installation, you can use the Sir
   <xref type="section" href="#topic7877/top"> Return to Top </xref>
 </p>
 </section>
-<section id="hp-storevirtual-commands"> <title>HP StoreVirtual Commands<!--Removed anchor point storevirtual-commands--><!-- id="storevirtual-commands" --></title>
+<section id="hp-storevirtual-commands"> <title>HPE StoreVirtual Commands<!--Removed anchor point storevirtual-commands--><!-- id="storevirtual-commands" --></title>
 </section>
 <section id="list-storevirtual-cluster"> <title>List StoreVirtual cluster</title>
 <p>You can list the clusters in StoreVirtual which are registered with Sirius.</p>
@@ -155,7 +155,7 @@ Once you complete the undercloud and overcloud installation, you can use the Sir
   <xref type="section" href="#topic7877/top"> Return to Top </xref>
 </p>
 </section>
-<section id="hp-storeserv-commands"> <title>HP StoreServ Commands<!--Removed anchor point hp-storeserv-commands--><!-- id="hp-storeserv-commands" --></title>
+<section id="hp-storeserv-commands"> <title>HPE StoreServ Commands<!--Removed anchor point hp-storeserv-commands--><!-- id="hp-storeserv-commands" --></title>
 </section>
 <section id="list-storeserv"> <title>List StoreServ</title>
 <p>You can list the StoreServ clusters registered with the Sirius database.</p>

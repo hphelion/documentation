@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic_amr_q3w_js">
-  <title>HP Helion 1.2 Development Platform: Deploying your first .NET Application</title>
+  <title>HPE Helion 1.2 Development Platform: Deploying your first .NET Application</title>
 <prolog>
       <metadata>
         <othermeta name="layout" content="default-devplatform"/>
-        <othermeta name="product-version" content="HP Helion Development Platform"/>
-        <othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+        <othermeta name="product-version" content="HPE Helion Development Platform"/>
+        <othermeta name="product-version" content="HPE Helion Development Platform 1.2"/>
         <othermeta name="role" content="Systems Administrator"/>
         <othermeta name="role" content="System Engineer"/>
         <othermeta name="role" content="Cloud Administrator"/>
@@ -15,17 +15,17 @@
         <othermeta name="role" content="ISV Developer"/>
         <othermeta name="role" content="Service Developer"/>
         <othermeta name="role" content="Patrick F"/>
-        <othermeta name="product-version1" content="HP Helion Development Platform"/>
-        <othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+        <othermeta name="product-version1" content="HPE Helion Development Platform"/>
+        <othermeta name="product-version2" content="HPE Helion Development Platform 1.2"/>
       </metadata>
     </prolog>
     <body>
 <!--permalink: /helion/devplatform/1.2/windows/deployingnet/-->
-<section><title>HP Helion 1.2 Development Platform: Deploying your first .NET Application</title>
+<section><title>HPE Helion 1.2 Development Platform: Deploying your first .NET Application</title>
 
 <ph>*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</ph>
 
-This tutorial demonstrates how to deploy an application to a Windows Server instance running in an HP Helion OpenStack environment using the toolset provided. For the purposes of this tutorial, you'll deploy Microsoft's Contoso University sample application.
+This tutorial demonstrates how to deploy an application to a Windows Server instance running in an HPE Helion OpenStack environment using the toolset provided. For the purposes of this tutorial, you'll deploy Microsoft's Contoso University sample application.
 </section>
 <section><title>System requirements</title>
 
@@ -72,7 +72,7 @@ to:
 <li>Right click the project and select <b>Publish to Cloud Foundry</b>.
 	img src="media/windows_deploy_contextmenu.png"
 </li> 
-<li>In the <b>Login Wizard</b> dialog, enter the URL for the ALS cluster, and a user and password with sufficient privileges. Check the <b>Skip SSL Validation</b> checkbox if your Helion OpenStack installation uses self-signed certificates (as it does in HP Helion Public Cloud):
+<li>In the <b>Login Wizard</b> dialog, enter the URL for the ALS cluster, and a user and password with sufficient privileges. Check the <b>Skip SSL Validation</b> checkbox if your Helion OpenStack installation uses self-signed certificates (as it does in HPE Helion Public Cloud):
 img src="media/windows_publish_credentials.png"
  </li>
 <li> In the <b>Cloud Foundry Publish Profile</b> dialog, enter the following values and click <b>Publish</b>:
