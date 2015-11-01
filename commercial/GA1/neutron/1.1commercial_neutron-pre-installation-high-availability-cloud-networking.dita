@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic21968">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Networking Operation (Neutron): High Availability</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1: Networking Operation (Neutron): High Availability</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.0"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.0.1"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.0"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.0.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
 <othermeta name="role" content="Network Administrator"/>
 <othermeta name="role" content="Network Architect"/>
 <othermeta name="role" content="Vikas Deolaliker, Paul Kevin"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.0"/>
-<othermeta name="product-version3" content="HP Helion Openstack 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion Openstack 1.0"/>
+<othermeta name="product-version3" content="HPE Helion Openstack 1.0.1"/>
+<othermeta name="product-version4" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -30,7 +30,7 @@
 <section id="neutron-preq"> <title>Completion of Helion OpenStack Neutron Prerequisites</title>
 <p>Once Helion OpenStack Neutron networking prerequisite tasks have been completed, Helion OpenStack is ready to be installed. Once installed, the Network Administrator can configure the cloud network to support the OpenStack networking. These configuration requirements, options, and dependencies are discussed in Post Installation Tasks.</p>
 <p>
-<b>Note</b>: All the tasks listed in this section depend on networking prerequisite tasks having been correctly completed. Configuring Helion OpenStack networking is not complicated but it requires that steps be completed exactly as shown. If you have questions about alternate steps, please contact HP Helion Customer Support:</p>
+<b>Note</b>: All the tasks listed in this section depend on networking prerequisite tasks having been correctly completed. Configuring Helion OpenStack networking is not complicated but it requires that steps be completed exactly as shown. If you have questions about alternate steps, please contact HPE Helion Customer Support:</p>
 <p>Email: support@hpcloud.com</p>
 <p>In US 1 855 61CLOUD</p>
 <p>Worldwide +1 678 745 9010</p>

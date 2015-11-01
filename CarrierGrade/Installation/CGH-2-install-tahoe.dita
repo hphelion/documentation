@@ -2,26 +2,26 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying the tahoe
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying the tahoe
     Template</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="product-version" content="HPE Helion Openstack Carrier Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HP Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack Carrier Grade 1.1"/>
     </metadata>
   </prolog>
   <body>
     <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Helion Lifecycle
         Management (HLM) VM is installed</xref>, the next task in installing the <xref
         href="carrier-grade-install-overview.dita#topic1925/install-option">KVM + ESX
-        deployment</xref> is to deploy the HP Helion OpenStack cloud and install the HP Distributed
+        deployment</xref> is to deploy the HPE Helion OpenStack cloud and install the HPE Distributed
       Cloud Networking (DCN) components. </p>
     <p>If you are installing the <codeph>tahoe</codeph> template, which includes the KVM region and
-      uses HP DCN VRS networking, follow these instructions. If you are installing a different
+      uses HPE DCN VRS networking, follow these instructions. If you are installing a different
       deployment, disregard these instructions. </p>
     <section conref="conrefs/CGH-2-conref-DCN-1.dita#ReusableComponent_nms_qyw_vt/prereqs"/>
     <section conref="conrefs/CGH-2-conref-VSD-5.dita#ReusableComponent_tlk_hzw_vt/vsd"/>

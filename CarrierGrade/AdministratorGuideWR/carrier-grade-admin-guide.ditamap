@@ -22,7 +22,7 @@
             <copyryear year="2015"/>
 
 
-            <copyrholder>HP Helion</copyrholder>
+            <copyrholder>HPE Helion</copyrholder>
 
 
         </copyright>
@@ -31,7 +31,7 @@
         <prodinfo>
 
 
-            <prodname>HP Helion</prodname>
+            <prodname>HPE Helion</prodname>
 
 
             <vrmlist>
@@ -51,7 +51,7 @@
 
     <topicref href="jow1404333560080.xml" navtitle="Administrator Guide" locktitle="yes">
         <topicmeta>
-            <navtitle>HP Helion OpenStack Carrier Grade 1.1: Administrator Guide</navtitle>
+            <navtitle>HPE Helion OpenStack Carrier Grade 1.1: Administrator Guide</navtitle>
         </topicmeta>
         <topicref href="jow1404333563170.xml"/>
         <topicref href="jow1404333563834.xml"/>

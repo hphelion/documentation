@@ -2,16 +2,16 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta:
+    <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta:
         Configuring SR-IOV</title>
     <prolog>
         <metadata>
             <othermeta name="layout" content="default"/>
-            <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+            <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
             <othermeta name="role" content="Storage Administrator"/>
             <othermeta name="role" content="Storage Architect"/>
             <othermeta name="role" content="Michael B"/>
-            <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+            <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
         </metadata>
     </prolog>
     <body>
@@ -69,7 +69,7 @@ system host-unlock mem17-compute0</codeblock></li>
         <section>
             <p><b>Create a Provider Network</b></p>
             <p>Virtual machine instances (VMs) with SR-IOV interfaces require a VLAN provider
-                network that is managed by the HP Networking Service (Neutron), not managed by HP
+                network that is managed by the HPE Networking Service (Neutron), not managed by HP
                 DCN VSD. Provider networks are the payload-carrying networks used implicitly by end
                 users when they move traffic over their tenant networks.
                 <!--2nd sentence from WR admin--></p>

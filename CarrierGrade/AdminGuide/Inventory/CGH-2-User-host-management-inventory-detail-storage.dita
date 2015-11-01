@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6164">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Working with Host Storage
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Working with Host Storage
         Profiles</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion OpenStack Carrier Grade 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -17,8 +17,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion OpenStack Carrier Grade 2.0"/>
 </metadata>
 </prolog>
 <body>
@@ -82,7 +82,7 @@ following information is included:</p>
 <li>Name - The name assigned to the volume, if any.</li>
 <li>Function - The type of storage backend handling the storage volume. The type OSD indicates that the storage volume is using the Ceph backend.</li>
 </ul>
-<p>For information about creating storage volumes or adding storage profiles, see the HP Helion OpenStack Carrier Grade Software Installation Guide: Creating Storage Volumes.</p>
+<p>For information about creating storage volumes or adding storage profiles, see the HPE Helion OpenStack Carrier Grade Software Installation Guide: Creating Storage Volumes.</p>
 </li>
 <li>
 <p>Local Volume Groups - This list is presented for compute nodes. It shows groups that provide local storage for use by VMs. For more

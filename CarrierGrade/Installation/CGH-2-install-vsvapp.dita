@@ -2,24 +2,24 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta:
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta:
         Deploying a vApp for DCN/ESX Integration</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="product-version" content="HPE Helion Openstack Carrier Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HP Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack Carrier Grade 1.1"/>
     </metadata>
   </prolog>
   <body><p><i>Return to the Installing the <xref
                     href="carrier-grade-install-kvm-esx.dita#topic10581/vapp">KVM + ESX
                     Deployment</xref>.</i></p><p>This document describes how to install the HP
             Distributed Cloud Networking (DCN) vSphere Solution required to properly integrate the
-            HP Distributed Cloud Networking and VMWare ESX components. </p><p>The HP Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires a VMware vApp, called
-            the VRSvApp, to integrate ESX and HP DCN. One VRSvApp is required for each ESX host.
+            HPE Distributed Cloud Networking and VMWare ESX components. </p><p>The HPE Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires a VMware vApp, called
+            the VRSvApp, to integrate ESX and HPE DCN. One VRSvApp is required for each ESX host.
             There is a 1-to-1 mapping between each VRSvApp and its ESX host. The VRSvApp
             installation package is contained in the packages you <xref
                 href="carrier-grade-install-prereqs.dita#topic7148/getinstall">downloaded in
@@ -27,7 +27,7 @@
             Solution addresses this integration. The installation involves deploying a stand-alone
             VM, installing the new vCenter Integration Node (called the vCenter Deployment Toolbox).
             The VRSvApp can be deployed automatically on each ESX node in a cluster.
-            <!--From HP DCN installation guide.--></p>
+            <!--From HPE DCN installation guide.--></p>
         <p><image href="../../media/CGH-2-install-vsdvm-arch.png" width="600" id="image_cjh_y45_tt"
             /></p>
       <p>After installing the vCenter Integration Node
@@ -49,8 +49,8 @@
                     </ul></li>
             </ul>
         </section><section><title>Creating a Stand-Alone Virtual Machine for the vCenter Deployment Toolbox</title>The
-            HP Helion OpenStack Carrier Grade installation requires that you install a dedicated
-            virtual machine on an ESX server for the HP DCN vSphere Solution. This VM is called the
+            HPE Helion OpenStack Carrier Grade installation requires that you install a dedicated
+            virtual machine on an ESX server for the HPE DCN vSphere Solution. This VM is called the
             vCenter Integration Node, and includes the vCenter Deployment Toolbox. <p>The vCenter
                 Integration Node VM does not require a VSD license and does not offer VSD
                 functionality. </p><p>To deploy the vCenter Integration Node VM:</p><ol
@@ -97,7 +97,7 @@ GATEWAY=10.20.5.1</codeblock></p></li>
                             password, make sure you change the password for the
                                 <systemoutput>root</systemoutput> user. </p></li>
                     <li>Edit <i>/etc/sysconfig/network-scripts/ifcfg-eth0</i> file to configure a
-                        static IP address. For the vCenter Integration Node VM, use the HP OpenStack
+                        static IP address. For the vCenter Integration Node VM, use the HPE OpenStack
                         Carrier Grade TUL IP.<p><u>For
                             example</u><codeblock>BOOTPROTO=”static”
 IPADDR=10.20.5.21
@@ -161,7 +161,7 @@ vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
                 VMWare topology configuration to the Deployment Toolbox. This includes the
                 following:</p><ul id="ul_ucs_444_rt">
                 <li>Each ESX hypervisor in the cluster(s)</li>
-                <li>Each HP DCN cluster(s) in data center(s)</li>
+                <li>Each HPE DCN cluster(s) in data center(s)</li>
                 <li>Data center(s) inside vCenter(s)</li>
             </ul><p>The vCenter configuration requires the following:</p><ul id="ul_vcs_444_rt">
                 <li>vCenter credential</li>

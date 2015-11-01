@@ -50,7 +50,7 @@
                     <p>The initial password must be changed immediately when you log in to
                             <b>controller-0</b> for the first time. For details, see <xref
                             href="http://docs-staging.hpcloud.com/DRAFT/#CarrierGrade/Installation/carrier-grade-install-pb-overview.html"
-                            format="html" scope="external">Installing HP Helion OpenStack Carrier
+                            format="html" scope="external">Installing HPE Helion OpenStack Carrier
                             Grade</xref>..</p>
                 </li>
 
@@ -129,7 +129,7 @@
 
         <section id="section_N100E3_N1001A_N10001">
             <title>LDAP User Accounts</title>
-            <p>You can create regular Linux user accounts using the HP Helion OpenStack Carrier
+            <p>You can create regular Linux user accounts using the HPE Helion OpenStack Carrier
                 Grade LDAP service. LDAP accounts are centrally managed; changes made on any host
                 are propagated automatically to all hosts on the cluster. </p>
             <p>In other respects, LDAP user accounts behave as any local user account. They can be
@@ -228,7 +228,7 @@
                         <p>This user account operates on a restricted Linux shell, with very limited
                             access to native Linux commands. However, the shell is preconfigured to
                             have administrative access to OpenStack commands, including the
-                            available HP Helion OpenStack Carrier Grade CLI extensions.</p>
+                            available HPE Helion OpenStack Carrier Grade CLI extensions.</p>
                     </dd>
 
 

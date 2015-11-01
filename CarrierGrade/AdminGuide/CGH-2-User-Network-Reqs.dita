@@ -19,7 +19,7 @@
     <title >Network Requirements</title>
 
 
-    <shortdesc >The networking environment of the HP Helion OpenStack Carrier Grade incorporates up to
+    <shortdesc >The networking environment of the HPE Helion OpenStack Carrier Grade incorporates up to
 
 
         five types of network: the internal management network, the OAM network, one or more
@@ -55,16 +55,16 @@
             <p >The PXE network must be implemented as a single, dedicated, Layer 2
 
 
-                broadcast domain for the exclusive use of each HP Helion OpenStack Carrier Grade
+                broadcast domain for the exclusive use of each HPE Helion OpenStack Carrier Grade
 
 
-                cluster. Sharing of this network by more than one HP Helion OpenStack Carrier Grade
+                cluster. Sharing of this network by more than one HPE Helion OpenStack Carrier Grade
 
 
                 cluster is not a supported configuration.</p>
 
 
-            <p >During the HP Helion OpenStack Carrier Grade software installation
+            <p >During the HPE Helion OpenStack Carrier Grade software installation
 
 
                 process, several network services such as BOOTP, DHCP, and PXE, are expected to run
@@ -118,7 +118,7 @@
          <p>This network must be implemented as a single, dedicated, Layer2 broadcase domain for the  exclusive use of each 
 
 
-            HP Helion OpenStack Carrier Grade cluster. Sharing of this network by more than one HP Helion OpenStack Carrier Grade cluster 
+            HPE Helion OpenStack Carrier Grade cluster. Sharing of this network by more than one HPE Helion OpenStack Carrier Grade cluster 
 
 
             is not a supported configuration.  This is typically configured by installer as a VLAN sub interface on PXE network. 
@@ -139,10 +139,10 @@
             <p >The infrastructure network must be implemented as a single,
 
 
-                dedicated, Layer 2 broadcast domain for the exclusive use of each HP Helion
+                dedicated, Layer 2 broadcast domain for the exclusive use of each HPE Helion
 
 
-                OpenStack Carrier Grade cluster. Sharing of this network by more than one HP Helion
+                OpenStack Carrier Grade cluster. Sharing of this network by more than one HPE Helion
 
 
                 OpenStack Carrier Grade cluster is not a supported configuration.</p>
@@ -190,7 +190,7 @@
                         <p >Needed to facilitate the name resolution of servers reachable on the OAM Network. </p>
 
 
-                        <p >The HP Helion OpenStack Carrier Grade can operate without a configured DNS
+                        <p >The HPE Helion OpenStack Carrier Grade can operate without a configured DNS
 
 
                             service. However,  a DNS service should be in place to ensure that links
@@ -217,7 +217,7 @@
                     <dd >
 
 
-                        <p >The Network Time Protocol (NTP) can be optionally used by the HP Helion OpenStack Carrier Grade controller
+                        <p >The Network Time Protocol (NTP) can be optionally used by the HPE Helion OpenStack Carrier Grade controller
 
 
        nodes to synchronize their local clocks with a reliable external time reference. However, it
@@ -229,10 +229,10 @@
        system-wide log reports present a unified view of the day-to-day operations.</p>
 
 
-                        <p >The HP Helion OpenStack Carrier Grade compute nodes always use the controller nodes as the de-facto time server for the
+                        <p >The HPE Helion OpenStack Carrier Grade compute nodes always use the controller nodes as the de-facto time server for the
 
 
-       entire HP Helion OpenStack Carrier Grade cluster. </p>
+       entire HPE Helion OpenStack Carrier Grade cluster. </p>
 
 
                     </dd>

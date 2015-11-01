@@ -2,21 +2,21 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic_qdt_cs1_4s">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1.1: High Availability (HA)</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1.1: High Availability (HA)</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack"/>
-      <othermeta name="product-version" content="HP Helion Openstack 1.0"/>
-      <othermeta name="product-version" content="HP Helion Openstack 1.0.1"/>
-      <othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+      <othermeta name="product-version" content="HPE Helion Openstack"/>
+      <othermeta name="product-version" content="HPE Helion Openstack 1.0"/>
+      <othermeta name="product-version" content="HPE Helion Openstack 1.0.1"/>
+      <othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Sameer V, Vandana S"/>
-      <othermeta name="product-version1" content="HP Helion Openstack"/>
-      <othermeta name="product-version2" content="HP Helion Openstack 1.0"/>
-      <othermeta name="product-version3" content="HP Helion Openstack 1.0.1"/>
-      <othermeta name="product-version4" content="HP Helion Openstack 1.1"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack"/>
+      <othermeta name="product-version2" content="HPE Helion Openstack 1.0"/>
+      <othermeta name="product-version3" content="HPE Helion Openstack 1.0.1"/>
+      <othermeta name="product-version4" content="HPE Helion Openstack 1.1"/>
     </metadata>
   </prolog>
   <body>
@@ -163,7 +163,7 @@
     </section>
     <section>
       <title>Highly Available cloud-aware tenant workloads</title>
-      <p>HP Helion OpenStack Compute hypervisors do not support transparent high availability for
+      <p>HPE Helion OpenStack Compute hypervisors do not support transparent high availability for
         user applications; as such, the project application provider is responsible for deploying
         their applications in a redundant and highly available manner, using multiple VMs spread
         appropriately across availability zones, routed through the load balancers and made highly
@@ -185,7 +185,7 @@
           <b>Software SPOFs</b>: Server processes can crash due to software defects, out-of-memory
           conditions, operating system kernel panic, and so forth.</li>
       </ol>
-      <p>By design, HP Helion OpenStack strives to create a system architecture resilient to SPOFs,
+      <p>By design, HPE Helion OpenStack strives to create a system architecture resilient to SPOFs,
         and does not attempt to automatically protect the system against multiple cascading levels
         of failures; such cascading failures will result in an unpredictable state.</p>
       <p>Hence, the cloud operator is encouraged to recover and restore any failed component, as
@@ -193,7 +193,7 @@
     </section>
     <section>
       <title>Highly Available cloud services</title>
-      <p>The HP Helion OpenStack installer deploys highly available configurations of OpenStack
+      <p>The HPE Helion OpenStack installer deploys highly available configurations of OpenStack
         cloud services, resilient against single points of failure.</p>
     </section>
     <section>
@@ -314,7 +314,7 @@
           <li>nona-consoleauth</li>
         </ul>
       </p>
-      <p>HP Helion OpenStack defines three Controllers:</p>
+      <p>HPE Helion OpenStack defines three Controllers:</p>
       <ol id="ol_ydv_cs1_4s">
         <li>OvercloudController0 </li>
         <li>OvercloudController1</li>
@@ -455,12 +455,12 @@ overcloud-controller1-px7gyh74dccx
         more elaborate redundancy schemes for redundant power, network ISP connection, and even
         physical firewalling between zones (<i>this aspect is outside the scope of this
         document</i>).</p>
-      <p>HP Helion OpenStack offers APIs, CLIs and Horizon UIs for the administrator to define and
+      <p>HPE Helion OpenStack offers APIs, CLIs and Horizon UIs for the administrator to define and
         user to consume, availability zones for each of Nova, Cinder and Swift services. This
         section outlines the process to deploy specific types of nodes to specific physical servers,
         and makes a statement of available support for these types of availability zones in the
         current release.</p>
-      <note>By default, HP Helion OpenStack is deployed in a single availability zone upon
+      <note>By default, HPE Helion OpenStack is deployed in a single availability zone upon
         installation. Multiple availability zones can be configured by an administrator
         post-install, if required. Refer to the <xref
           href="http://docs.openstack.org/openstack-ops/content/scaling.html" format="html"
@@ -481,8 +481,8 @@ overcloud-controller1-px7gyh74dccx
       <title>Nova availability zones</title>
       <p>Nova host aggregates and availability zones are not supported for general consumption in
         the current release.</p>
-      <p>However, Nova availability zones will be supported for the narrow use of the HP Helion
-        OpenStack Platform Services deployed on HP Helion OpenStack Please refer to the Platform
+      <p>However, Nova availability zones will be supported for the narrow use of the HPE Helion
+        OpenStack Platform Services deployed on HPE Helion OpenStack Please refer to the Platform
         Service documentation for further information.</p>
     </section>
     <section>
@@ -492,7 +492,7 @@ overcloud-controller1-px7gyh74dccx
         documentation.</p>
     </section>
     <section><title>Block Storage with StoreVirtual VSA</title><p>Highly available Cinder block
-        storage volumes are provided by the network RAID 10 implementation in the HP StoreVirtual
+        storage volumes are provided by the network RAID 10 implementation in the HPE StoreVirtual
         VSA software. You can deploy the VSA nodes in three node cluster and specify Network RAID 10
         protection for Cinder volumes.</p><p>The underlying SAN/iQ operating system of the
         StoreVirtual VSA ensures that the two-way replication maintains two mirrored copies of data
@@ -574,7 +574,7 @@ Neutron Netwoking in HA covers the following:
                 <li>
                   <p>Replicate VMs containing stateless services such as Web application tier or Web
                     service API tier and put them behind load balancers (you must implement your own
-                    HA Proxy type load balancer in your application VMs until HP Helion OpenStack
+                    HA Proxy type load balancer in your application VMs until HPE Helion OpenStack
                     delivers the LBaaS service).</p>
                 </li>
                 <li>

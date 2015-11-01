@@ -2,16 +2,16 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying the denver
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying the denver
     Template</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="product-version" content="HPE Helion Openstack Carrier Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HP Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack Carrier Grade 1.1"/>
     </metadata>
   </prolog>
   <body>
@@ -21,7 +21,7 @@
       <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
     <p>After Helion lifecycle management is installed, the next task in installing the <xref
         href="carrier-grade-install-overview.dita#topic1925/install-option">KVM topology</xref>
-      is to deploy the HP Helion Openstack cloud.</p>
+      is to deploy the HPE Helion Openstack cloud.</p>
     <p>If you are installing the <codeph>denver</codeph> template, which includes the KVM region and
       uses AVS networking, follow these instructions. If you are installing a different deployment,
       disregard these instructions. </p>
@@ -47,7 +47,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
     <section id="configure-a-json-file-for-installation">
           <title>Provision the new cloud</title>
           <ol>
-        <li>Provision and configure your HP Helion OpenStack
+        <li>Provision and configure your HPE Helion OpenStack
             VM.<codeblock>hlm define -t denver &lt;cloudname&gt;</codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create: <p>The cloud
                 name can be any combination of up to 63 digits, letters, and the <codeph>-</codeph>
@@ -68,7 +68,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
             contain a JSON template file <codeph>node-provision.json</codeph>. This template
             supplies input values to the <codeph>hprovision</codeph> script, later in the
             installation.</p></li>
-        <li>The HP Helion OpenStack deployment requires a JSON file. Edit
+        <li>The HPE Helion OpenStack deployment requires a JSON file. Edit
             <codeph>node-provision.json</codeph> file to change only the following fields:<table
             id="table_ycw_qrn_xs">
             <tgroup cols="2">
@@ -285,7 +285,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
     <section id="create-a-new-cloud-template-and-bring-the-cloud-nodes-up">
       <title>Provision the cloud nodes</title>
       <ol>
-        <li>Use the following script to start the provisioning of the HP Helion OpenStack cloud:
+        <li>Use the following script to start the provisioning of the HPE Helion OpenStack cloud:
             <codeblock>hlm provision &lt;cloudname&gt; </codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create</li>
           </ul><p>This script will PXE boot the nodes specified in
@@ -298,7 +298,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
             that you can establish a password-less SSH connection to these nodes from HLM
           VM.</p></li>
         <li>Configure the back-end drivers to enable management of the OpenStack Block Storage
-          volumes in the KVM region equipped with 3PAR and/or VSA storage arrays. The HP Block
+          volumes in the KVM region equipped with 3PAR and/or VSA storage arrays. The HPE Block
           Storage (Cinder) service allows you to configure multiple storage back-ends. Use the
           following steps to configure back-end support:<ol>
             <li>Change to the <codeph>cinder/blocks</codeph> directory:
@@ -308,11 +308,11 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
               using.</li>
             <li>Depending upon they type of storage you are using, edit one of the following files:
                 <ul id="ul_xcf_v24_1t">
-                <li>3PAR - if you plan to have only HP StoreServ (3PAR) storage attached to the KVM
+                <li>3PAR - if you plan to have only HPE StoreServ (3PAR) storage attached to the KVM
                   region, edit the <codeph>cinder_conf.hp3parSample</codeph> file.</li>
-                <li>VSA - if you plan to have only HP StoreVirtual VSA storage attached to the KVM
+                <li>VSA - if you plan to have only HPE StoreVirtual VSA storage attached to the KVM
                   region, edit the <codeph>cinder_conf.vsasample</codeph> file.</li>
-                <li>3PAR and VSA - if you plan to have HP StoreServ (3PAR) and HP StoreVirtual VSA
+                <li>3PAR and VSA - if you plan to have HPE StoreServ (3PAR) and HPE StoreVirtual VSA
                   storage attached to the KVM region, edit the
                     <codeph>cinder_conf.multiBackendSample</codeph> file, which contains variables
                   for both storage types. </li>

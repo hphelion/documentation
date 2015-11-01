@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Post-Alpha Release Build 22:
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Post-Alpha Release Build 22:
     Deploying the Baremetal Region</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
-    <othermeta name="product-version" content="HP Helion Openstack Carrier Grade 1.1"/>
+    <othermeta name="product-version" content="HPE Helion Openstack Carrier Grade 1.1"/>
     <othermeta name="role" content="Storage Administrator"/>
     <othermeta name="role" content="Storage Architect"/>
     <othermeta name="role" content="Michael B"/>
-    <othermeta name="product-version1" content="HP Helion Openstack Carrier Grade 1.1"/>
+    <othermeta name="product-version1" content="HPE Helion Openstack Carrier Grade 1.1"/>
   </metadata>
 </prolog>
 <body>
     <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-cloud.md-->
     <!--permalink: /helion/openstack/carrier/install/pb/hlm-cloud/-->
     <p>If you are installing the <codeph>sacramento</codeph> template, which includes the KVM
-      region, the baremetal region, ESX storage, and uses HP DCN VRS networking, follow these
+      region, the baremetal region, ESX storage, and uses HPE DCN VRS networking, follow these
       instructions. If you are installing a different deployment, disregard these instructions.</p>
     <p><b>Configure Baremetal Cloud</b></p>
     <ol id="ol_syf_5sg_vt">

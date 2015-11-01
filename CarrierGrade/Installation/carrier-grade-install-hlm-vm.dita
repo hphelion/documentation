@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying the HLM VM and
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying the HLM VM and
     Installation Services</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
-    <othermeta name="product-version" content="HP Helion Openstack Carrier Grade 1.1"/>
+    <othermeta name="product-version" content="HPE Helion Openstack Carrier Grade 1.1"/>
     <othermeta name="role" content="Storage Administrator"/>
     <othermeta name="role" content="Storage Architect"/>
     <othermeta name="role" content="Michael B"/>
-    <othermeta name="product-version1" content="HP Helion Openstack Carrier Grade 1.1"/>
+    <othermeta name="product-version1" content="HPE Helion Openstack Carrier Grade 1.1"/>
   </metadata>
 </prolog>
 <body>
-  <p>The first phase of the HP Helion OpenStack Carrier Grade installation involves creating a
-      bootstrapping the HP Helion Lifecycle Management virtual machine and installation services. </p>
+  <p>The first phase of the HPE Helion OpenStack Carrier Grade installation involves creating a
+      bootstrapping the HPE Helion Lifecycle Management virtual machine and installation services. </p>
     <p>The installation uses Ansible playbooks, which are files that contain scripts that execute
       required installation processes.</p>
 
@@ -107,7 +107,7 @@ upstream_ntp_servers:
         <li>Locate the IP address for the HLM VM in the
             <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the HLM host under
             <codeph>hlm_clmstaticip</codeph> field. You will use this IP address to SSH into the HLM
-          VM during the HP Helion OpenStack Carrier Grade installation process.</li> 
+          VM during the HPE Helion OpenStack Carrier Grade installation process.</li> 
       </ol>
 </section>
     <section>
@@ -133,7 +133,7 @@ upstream_ntp_servers:
     </section>
     <section>
       <title>Update the Debain Repository Index File</title>
-      <p>HP Helion OpenStack Carrier Grade maintains a local Debian repository on the HLM host from
+      <p>HPE Helion OpenStack Carrier Grade maintains a local Debian repository on the HLM host from
         where Debain packages are installed. The <codeph>dpkg-scanpackages</codeph> script creates a
         package index that enables package installation in such way that if someone executes the
           <codeph>apt-get install &lt;packagename></codeph> command, the index would indicate the
@@ -157,7 +157,7 @@ nuage-openstack-neutron_2015.1.1725_all.deb</codeblock></li>
     </section>
 
   <section id="next-step"> <title>Next Step</title>
-<p>The next step depends upon the HP Helion OpenStack Carrier Grade deployment model you are
+<p>The next step depends upon the HPE Helion OpenStack Carrier Grade deployment model you are
         installing: KVM or KVM + ESX. For more information on each deployment model, see <xref
           href="carrier-grade-install-overview.dita#topic1925/install-option">KVM
           deployment</xref></p>

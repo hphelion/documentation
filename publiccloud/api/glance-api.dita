@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic35632">
-<title>HP Helion Public Cloud Image Service API Specifications</title>
+<title>HPE Helion Public Cloud Image Service API Specifications</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -17,8 +17,8 @@
 <p>
 <b>Document Version:</b> 1.5</p>
 <section id="1-overview"> <title>1. Overview</title>
-<p>This document describes the HP Helion Public Cloud Image service, which is based on <tm tmtype="reg">OpenStack</tm> Glance.</p>
-<p>We will be referring to HP Helion Public Cloud Image Service in this document as simply the Image service.</p>
+<p>This document describes the HPE Helion Public Cloud Image service, which is based on <tm tmtype="reg">OpenStack</tm> Glance.</p>
+<p>We will be referring to HPE Helion Public Cloud Image Service in this document as simply the Image service.</p>
 </section>
 <section id="11-api-maturity-level"> <title>1.1 API Maturity Level</title>
 </section>
@@ -26,7 +26,7 @@
 <p>The maturity levels are defined as follows:</p>
 <ul>
 <li>
-<p>Beta. The functions and features are available publically. While HP expects the feature to operate as advertised, we do not offer a Service Level Agreement (SLA) for the service or feature.</p>
+<p>Beta. The functions and features are available publically. While HPE expects the feature to operate as advertised, we do not offer a Service Level Agreement (SLA) for the service or feature.</p>
 </li>
 <li>
 <p>Release to General Availability (GA). At this level of maturity, all features and functions are expected to operate as advertised. In particular, there is a Service Level Agreement (SLA) defined and in place.</p>
@@ -102,7 +102,7 @@
 <row>
 <entry align="left">1.5</entry>
   <entry align="left">May 2014</entry>
-  <entry align="left">HP Helion updates</entry>
+  <entry align="left">HPE Helion updates</entry>
 </row>
 </tbody>
 </tgroup>
@@ -239,10 +239,10 @@
 <p>The MD5 checksum of the image file data.</p>
 </section>
 <section id="2227-min-ram"> <title>2.2.2.7 Min-ram</title>
-<p>The minimum ram required in megabytes to run this image on a HP Compute server. Please refer to HP Compute document for more details about this property.</p>
+<p>The minimum ram required in megabytes to run this image on a HPE Compute server. Please refer to HPE Compute document for more details about this property.</p>
 </section>
 <section id="2228-min-disk"> <title>2.2.2.8 Min-disk</title>
-<p>The minimum disk space required in gigabytes to run this image on a HP Compute server. Please refer to HP Compute document for more details about this property.</p>
+<p>The minimum disk space required in gigabytes to run this image on a HPE Compute server. Please refer to HPE Compute document for more details about this property.</p>
 </section>
 <section id="2229-owner"> <title>2.2.2.9 Owner</title>
 <p>The Image service normally sets the owner of an image to be the Project ID of the authenticated user adding the image.</p>
@@ -251,7 +251,7 @@
 <p>The Image service allows a set of custom, free-form image properties stored with the image metadata. There is no limit on the number of free-form key/value attributes that can be attached to the image. However, keep in mind that the 8K limit on the size of all HTTP headers sent in a request will effectively limit the number of image properties.</p>
 </section>
 <section id="properties-added-by-the-compute-service-when-creating-a-snapshot"> <title>Properties added by the Compute service when creating a snapshot</title>
-<p>HP Compute adds some or all of the following custom properties to instance snapshots it creates.</p>
+<p>HPE Compute adds some or all of the following custom properties to instance snapshots it creates.</p>
 <table>
 <tgroup cols="4">
 <colspec colname="col1"/>
@@ -389,7 +389,7 @@
   <entry align="left">WHO provides the image</entry>
   <entry align="left">string</entry>
   <entry align="left">com.hp, com.canonical, com.activestate etc.</entry>
-  <entry align="left">note a ubuntu image built by HP would have com.hp as the provider</entry>
+  <entry align="left">note a ubuntu image built by HPE would have com.hp as the provider</entry>
 </row>
 <row>
 <entry align="left">com.hp_1_bootable_volume</entry>
@@ -403,10 +403,10 @@
 </table>
 </section>
 <section id="hp-image-license-property"> <title>hp_image_license property</title>
-<p>The hp_image_license property is custom to HP Helion and has the following semantics:</p>
+<p>The hp_image_license property is custom to HPE Helion and has the following semantics:</p>
 <ul>
 <li>
-<p>Value is private to HP Helion;</p>
+<p>Value is private to HPE Helion;</p>
 </li>
 <li>
 <p>Not removable once set;</p>
@@ -418,7 +418,7 @@
 <p>Applicable to non-public Windows images (snapshots);</p>
 </li>
 <li>
-<p>Applied to Windows images only by HP Helion</p>
+<p>Applied to Windows images only by HPE Helion</p>
 </li>
 </ul>
 </section>
@@ -444,7 +444,7 @@
 <section id="31-accounts"> <title>3.1 Accounts</title>
 <ul>
 <li>Authenticated Users -- Any user that has authenticated against an authentication service (e.g. Control Services) and does not have the admin role</li>
-<li>Admin Users -- Any user that has authenticated against an authentication service and has the admin role returned by the authentication service in that Project's list of roles. The Admin role is HP restricted.</li>
+<li>Admin Users -- Any user that has authenticated against an authentication service and has the admin role returned by the authentication service in that Project's list of roles. The Admin role is HPE restricted.</li>
 </ul>
 </section>
 <section id="32-regions"> <title>3.2 Regions</title>
@@ -1428,7 +1428,7 @@ Then a key/value pair of "architecture"/"amd64" will be stored as image metadata
 </section>
 <section id="5-additional-notes"> <title>5. Additional Notes</title>
 </section>
-<section id="51-apiv1-differences-between-hp-helion-public-cloud-135-and-1212"> <title>5.1 APIv1 Differences between HP Helion Public Cloud 13.5 and 12.12</title>
+<section id="51-apiv1-differences-between-hp-helion-public-cloud-135-and-1212"> <title>5.1 APIv1 Differences between HPE Helion Public Cloud 13.5 and 12.12</title>
 <table>
 <tgroup cols="3">
 <colspec colname="col1"/>

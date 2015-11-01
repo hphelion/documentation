@@ -22,5 +22,5 @@
 ]>
 <oXygen:ReusableComponent id="ReusableComponent_oy4_31x_vt">
     <oXygen:ComponentDescription>ESX JSON</oXygen:ComponentDescription>
-    <oXygen:ComponentDefinition><section id="configure-esx-json"><title>Configure the esx.json file</title><p>Modify the <codeph>esx.json</codeph> file in the <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory on the HLM VM. This file is called by the script that installs the HP Helion OpenStack cloud, later in the installation. </p><p>To see a sample <codeph>esx.json</codeph> file, see <xref href="../carrier-grade-install-kvm-esx-json.dita">Sample esx.json File for Installing the KVM + ESX Topology</xref>.</p></section></oXygen:ComponentDefinition>
+    <oXygen:ComponentDefinition><section id="configure-esx-json"><title>Configure the esx.json file</title><p>Modify the <codeph>esx.json</codeph> file in the <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory on the HLM VM. This file is called by the script that installs the HPE Helion OpenStack cloud, later in the installation. </p><p>To see a sample <codeph>esx.json</codeph> file, see <xref href="../carrier-grade-install-kvm-esx-json.dita">Sample esx.json File for Installing the KVM + ESX Topology</xref>.</p></section></oXygen:ComponentDefinition>
 </oXygen:ReusableComponent>

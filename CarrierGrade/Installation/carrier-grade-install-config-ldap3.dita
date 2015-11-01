@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Configuring LDAP CLI
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Configuring LDAP CLI
     Support</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
-    <othermeta name="product-version" content="HP Helion Openstack Carrier Grade 1.1"/>
+    <othermeta name="product-version" content="HPE Helion Openstack Carrier Grade 1.1"/>
     <othermeta name="role" content="Storage Administrator"/>
     <othermeta name="role" content="Storage Architect"/>
     <othermeta name="role" content="Michael B"/>
-    <othermeta name="product-version1" content="HP Helion Openstack Carrier Grade 1.1"/>
+    <othermeta name="product-version1" content="HPE Helion Openstack Carrier Grade 1.1"/>
   </metadata>
 </prolog>
 <body>
     <p><!--Based on https://wiki.hpcloud.net/pages/viewpage.action?pageId=53516567--></p>
-  <p>By default, the HP Helion OpenStack Carrier Grade services are configured to use Keystone v2
+  <p>By default, the HPE Helion OpenStack Carrier Grade services are configured to use Keystone v2
       authorization. The services need to be modified to use Keystone v3. You will not be able to
       execute OpenStack CLI commands until the following changes are made on all three controller
       nodes in the non-KVM region. </p>
     <p>You should have downloaded the patch files in the <xref
         href="carrier-grade-install-prereqs.dita#topic7148/getinstall"
       >Prerequisites</xref>.</p>
-  <p>To configure HP Helion OpenStack Carrier Grade services to use Keystone v3: </p>
+  <p>To configure HPE Helion OpenStack Carrier Grade services to use Keystone v3: </p>
   <ol>
       <li>Copy the <codeph>ldap_patch_1.1.tar.gz</codeph> and <codeph>hoscg-update.tgz</codeph>
         files to the <codeph>~/patch_cghelion1.1</codeph> directory.
@@ -93,7 +93,7 @@ export OS_REGION_NAME=regionone </codeblock></p></li>
         <li> Save the files as <codeph>stackrcv3</codeph>, replacing the existing file. </li>
     </ol>
   </section>
-  <section><title>Install the HP Identity Operations (Keystone) package on all the
+  <section><title>Install the HPE Identity Operations (Keystone) package on all the
         controllers</title>
       <ol>
         <li>On the HLM host, change to the to the <codeph>~/&lt;cloudname></codeph>

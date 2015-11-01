@@ -2,21 +2,21 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic3485">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: KVM Deployment Architecture
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: KVM Deployment Architecture
     Reference</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
     </metadata>
   </prolog>
   <body>
     <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-technical-overview.md--><!--permalink: /helion/openstack/carrier/technical-overview/--></p>
-    <p>This page introduces deployment and network architectures of the KVM deployment of HP Helion
+    <p>This page introduces deployment and network architectures of the KVM deployment of HPE Helion
       OpenStack Carrier Grade. During the installation, use the <codeph>denver</codeph> template
       that comes with the installation package to create the KVM deployment. </p>
     <p><b>Network/Component Architecture</b></p>
@@ -31,7 +31,7 @@
     </ul>
     <section id="deploy-arch">
       <title>Deployment architecture</title>
-      <p>The following diagram depicts a simplified deployment scenario of HP Helion OpenStack
+      <p>The following diagram depicts a simplified deployment scenario of HPE Helion OpenStack
         Carrier Grade.</p>
       <p>
         <image href="../../media/CGH-architecture-rc0.png" width="800"/></p>
@@ -134,17 +134,17 @@
         prevent access to the CLM network from DCM, CTL, or EXT.</p>
     </section>
     <section><title>Regions</title>
-      <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of three logical
+      <p>For installation and maintenance, HPE Helion OpenStack Carrier Grade consists of three logical
         or conceptual <i>regions</i>: Non-KVM, KVM, and Baremetal. You will see these terms used in the
         installation process. The <xref
           href="carrier-grade-technical-overview.dita#topic3485/deploy-arch">Deployment Architecture
           diagram</xref> shows an illustration of these two zones. </p>
         <p><b>Non-KVM</b></p>
-        <p>The Non-KVM region contains the HP Helion Lifecycle Management (HLM), to deploy and
-        maintain HP Helion OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade
+        <p>The Non-KVM region contains the HPE Helion Lifecycle Management (HLM), to deploy and
+        maintain HPE Helion OpenStack Carrier Grade; and HPE Helion OpenStack, a commercial-grade
         distribution of OpenStack.   </p>
         <p><b>KVM</b></p>
-        <p>The KVM region is the heart of HP Helion OpenStack Carrier Grade. The KVM region consists
+        <p>The KVM region is the heart of HPE Helion OpenStack Carrier Grade. The KVM region consists
           of a software platform, providing ultra-reliability and exceptional performance efficiencies
           for telecommunications networks. </p>
       

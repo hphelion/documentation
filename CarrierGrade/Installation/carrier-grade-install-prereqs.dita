@@ -2,27 +2,27 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic7148">
-        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Installation
+        <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Installation
                 Prerequisites</title>
         <titlealts>
-                <searchtitle>HP Helion Openstack Installation Prerequisites</searchtitle>
+                <searchtitle>HPE Helion Openstack Installation Prerequisites</searchtitle>
         </titlealts>
         <prolog>
                 <metadata>
                         <othermeta name="layout" content="default"/>
                         <othermeta name="product-version"
-                                content="HP Helion Openstack Carrier Grade 1.1"/>
+                                content="HPE Helion Openstack Carrier Grade 1.1"/>
                         <othermeta name="role" content="Storage Administrator"/>
                         <othermeta name="role" content="Storage Architect"/>
                         <othermeta name="role" content="Michael B"/>
                         <othermeta name="product-version1"
-                                content="HP Helion Openstack Carrier Grade 1.1"/>
+                                content="HPE Helion Openstack Carrier Grade 1.1"/>
                 </metadata>
         </prolog>
         <body>
                 <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-install-pb-prereqs.md--><!--permalink: /helion/openstack/carrier/install/pb/prereqs/--></p>
                 <p>This document describes the prerequisite steps and one time setup on your HLM
-                        host required to install HP Helion OpenStack Carrier Grade in a baremetal
+                        host required to install HPE Helion OpenStack Carrier Grade in a baremetal
                         environment.</p>
                 <section id="hardware">
                         <title>Hardware and software requirements</title>
@@ -63,7 +63,7 @@
                         </ul>
                         <title>Install Ubuntu Server 14.04.2 LTS</title>
                         <p>The HLM host must have Ubuntu Server 14.04.2 LTS installed before
-                                performing the HP Helion OpenStack Carrier Grade installation.</p>
+                                performing the HPE Helion OpenStack Carrier Grade installation.</p>
                 </section>
                 <!--<section id="pub-key"> <title>Obtain a public key</title>
 <p>On the HLM host, the user <codeph>root</codeph> must have a public key.</p>
@@ -244,7 +244,7 @@ StrictHostKeyChecking no </codeblock></li>
                 </section>
                 <section>
                         <title>Preparing the Network for Installation</title>
-                        <p>Before installing HP Helion OpenStack Carrier Grade, you are responsible
+                        <p>Before installing HPE Helion OpenStack Carrier Grade, you are responsible
                                 for preparing the network for all installations.</p>
                         <p>See <xref
                                         href="carrier-grade-install-network-prepare.dita#topic7646"
@@ -252,32 +252,32 @@ StrictHostKeyChecking no </codeblock></li>
                 </section>
                 <section>
                         <title>Integrating LDAP</title>
-                        <p><b>OPTIONAL:</b> The HP Helion OpenStack Identity service can use
+                        <p><b>OPTIONAL:</b> The HPE Helion OpenStack Identity service can use
                                 Lightweight Directory Access Protocol (LDAP) to integrate your
                                 organization's existing directory service and user account
                                 management processes.</p>
                 </section>
                 <section id="getinstall">
                         <title>Download and unpack the installation packages</title>
-                        <p>Before you begin, you must download the required HP Helion OpenStack
+                        <p>Before you begin, you must download the required HPE Helion OpenStack
                                 installation package(s). For the 10/16 POC release, the installation
                                 packages are located using FTP at <xref
                                         href="http://16.78.71.141/uploads/hcg-2-0-alpha/build22.tar"
-                                        format="html" scope="external">HP Helion OpenStack Carrier
-                                        Grade V2.0 Alpha Build 22</xref>. HP internal network access
+                                        format="html" scope="external">HPE Helion OpenStack Carrier
+                                        Grade V2.0 Alpha Build 22</xref>. HPE internal network access
                                 is
                                 required.<codeblock>http://16.78.71.141/uploads/hcg-2-0-alpha/build22.tar</codeblock></p>
                         <p>The FTP download, <codeph>build22.tar</codeph>, contains all of the files
-                                you will need to install and configure HP Helion OpenStack Carrier
+                                you will need to install and configure HPE Helion OpenStack Carrier
                                 Grade. This is a large file that might take a significant amount of
                                 time to download, depending upon the speed of your network.</p>
                         <p><b>Note:</b> For KVM + ESX Cloud Deployments, you will need to obtain the
-                                and install the VMware ESX<tm tmtype="reg"/> and HP Distributed
+                                and install the VMware ESX<tm tmtype="reg"/> and HPE Distributed
                                 Cloud Networking (DCN) software through those entities. </p>
                 
-                        <p><b>HP Helion OpenStack Carrier Grade installation files</b></p>
+                        <p><b>HPE Helion OpenStack Carrier Grade installation files</b></p>
                         <p>The <codeph>build22.tar</codeph> file contains the installation files for
-                                HP Helion OpenStack Carrier Grade in the
+                                HPE Helion OpenStack Carrier Grade in the
                                         <codeph>build22/HLM/</codeph> directory. The installation
                                 instructions indicate when and how to deploy the patches:</p>
                         <p>
@@ -389,7 +389,7 @@ StrictHostKeyChecking no </codeblock></li>
                 
                 <p id="kvm-region"><b>KVM Region Installation files</b></p>
                         <p>The <codeph>build22.tar</codeph> file contains the following files
-                                requried to install the KVM region of HP Helion OpenStack Carrier
+                                requried to install the KVM region of HPE Helion OpenStack Carrier
                                 Grade, in the <codeph>build22/WR/</codeph> directory. The
                                 installation instructions indicate when and how to deploy the
                                 patches </p>
@@ -445,11 +445,11 @@ StrictHostKeyChecking no </codeblock></li>
                                                   above form the link provided in the email.</li>
                                                   </ol></li>
                                         </ul><ul id="ul_whv_rcf_bt">
-                                                <li>Internal HP partners will follow DCN Pre-Sales
+                                                <li>Internal HPE partners will follow DCN Pre-Sales
                                                   Process:<ol id="ol_xhv_rcf_bt">
-                                                  <li>Internal HP partners can contact HP Helion
+                                                  <li>Internal HPE partners can contact HPE Helion
                                                   OpenStack Carrier Grade team for help.</li>
-                                                  <li>Internal HP partners can refer to HP Helion
+                                                  <li>Internal HPE partners can refer to HPE Helion
                                                   OpenStack Carrier Grade Engineering Wiki under the
                                                   <i>HOS CG 1.1 GA: ESX (non-KVM region) DCN package
                                                   details</i> section.</li>
@@ -597,36 +597,36 @@ StrictHostKeyChecking no </codeblock></li>
                                                 </tgroup>
                                         </table></li>
                         </ol>--></section>
-                <section><!--<p>Launch the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Distribution Network (HDN)</xref>. You must <xref href="https://idm.pod1.prod-core.hpwsportal.com/webid/" format="html" scope="external">obtain a user account on HDN</xref> in order to download these files. </p><p>Click the <b>Downloads</b> tab and locate the following downloads. <ul id="ul_dcw_yld_gt"><li><b>Helion Carrier Grade 1.1.0</b>. Installation files for HP Helion OpenStack Carrier Grade. This link will download the <codeph>hcg.1.1.0.tar</codeph> file. Also download the <b> Helion Carrier Grade 1.1.0 Checksum File</b> and <b id="productShow_appName">Helion Carrier Grade 1.1.0 Signature File</b>.</li><li><b>Helion Carrier Grade 1.1.0 Wind River License Patch</b>. Required license file for the KVM region servers. Also download the <b> Helion Carrier Grade 1.1.0 Windriver License patch checksum file</b> and <b> Helion Carrier Grade 1.1.0 Windriver License patch signature file</b>.</li><li><b>Horizon Patch Tar File for Helion Carrier Grade 1.1.0</b>. Required patch for the Horizon UI. Also download the <b> Helion Carrier Grade 1.1.0 Horizon Patch Checksum File</b> and <b>Helion Carrier Grade 1.1.0 Horizon Patch Signature File</b>.</li><li><b>GPG keys to verify signature files</b>. A set of GPG keys to verify download signatures. GPG-HPCSS-Public-Keys(1).tar</li></ul></p><p><b>Note:</b> When downloading installation files, always download and verify the signature file before installing. </p>--><!--<ol>
+                <section><!--<p>Launch the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Distribution Network (HDN)</xref>. You must <xref href="https://idm.pod1.prod-core.hpwsportal.com/webid/" format="html" scope="external">obtain a user account on HDN</xref> in order to download these files. </p><p>Click the <b>Downloads</b> tab and locate the following downloads. <ul id="ul_dcw_yld_gt"><li><b>Helion Carrier Grade 1.1.0</b>. Installation files for HPE Helion OpenStack Carrier Grade. This link will download the <codeph>hcg.1.1.0.tar</codeph> file. Also download the <b> Helion Carrier Grade 1.1.0 Checksum File</b> and <b id="productShow_appName">Helion Carrier Grade 1.1.0 Signature File</b>.</li><li><b>Helion Carrier Grade 1.1.0 Wind River License Patch</b>. Required license file for the KVM region servers. Also download the <b> Helion Carrier Grade 1.1.0 Windriver License patch checksum file</b> and <b> Helion Carrier Grade 1.1.0 Windriver License patch signature file</b>.</li><li><b>Horizon Patch Tar File for Helion Carrier Grade 1.1.0</b>. Required patch for the Horizon UI. Also download the <b> Helion Carrier Grade 1.1.0 Horizon Patch Checksum File</b> and <b>Helion Carrier Grade 1.1.0 Horizon Patch Signature File</b>.</li><li><b>GPG keys to verify signature files</b>. A set of GPG keys to verify download signatures. GPG-HPCSS-Public-Keys(1).tar</li></ul></p><p><b>Note:</b> When downloading installation files, always download and verify the signature file before installing. </p>--><!--<ol>
                                 
-                                <li>In a browser, navigate to <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Download Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs"><li>Click <b>Sign In</b> to log in using your account. </li><li>After signing in, click the <b>Downloads</b> link in the menu on the left side of the page.</li><li>On the <b>Downloads</b> page, locate HP Helion OpenStack Carrier Grade and click <b>Download</b>.</li></ul></li><li>Download the following files: <ul><li><b>Helion Carrier Grade 2.0.0</b>. The file is named <codeph>hcg_1.1.0.tar</codeph>. Also download the <b>Helion Carrier Grade 2.0.0 Checksum</b> and <b>Helion Carrier Grade 2.0.0 Signature</b> files.</li><li><b>Horizon Patch Tar File for Helion Carrier Grade</b>. The file is named <codeph>hcg_1.1.0_horizon_patch1.tar</codeph>. Also download the <b>Horizon Patch Tar File for Helion Carrier Grade Checksum</b> and <b>Horizon Patch Tar File for Helion Carrier Grade Signature</b> files.</li><li><b id="productShow_apcodeph">Helion Carrier Grade 1.1.0 Windriver License patch signature file</b> and the <b>Helion Carrier Grade 2.0.0 Windriver License patch</b> signature file signature and <b>Helion Carrier Grade 2.0.0 Windriver License patch</b> signature file checksum files.</li><li>LDAP patch. Download the <codeph>ldap_patch_1.1.tar.gz and hoscg-update.tgz</codeph> file. </li><li>Compute Proxy patch. Dowload the <codeph>compute_proxy_patch_1.1.tar.gz</codeph> file.</li><li>GRE tunnel. Download the <codeph>gre_patch_1.1.tar.gz</codeph> file. </li><li>HLM port security patch. Download the <codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph> file.</li><li>Rabbit MQ Random Password patch. Download the <codeph>random-password.tar.gz</codeph> file.</li><li>Helion Dynamic Password patch. Download the <codeph>horizon_web_patch_1.1.tar.gz</codeph> file.</li><li>NIC Bonding Patch. If you are using bonded NIC, download the <codeph>cg-hos-nic-bonding.patch</codeph> file.</li><li><b>GPG keys to verify signature files</b>. This file is named <codeph>GPG-HPCSS-Public-Keys.tar</codeph>.</li></ul></li>
-                        --><!--<li><b>vCenter Proxy Appliance</b>. For the KVM + ESX deployment, download this file, named <codeph>overcloud_vcenter_compute_proxy.tar</codeph>. Also download the Signature files. This file will need to be moved to the system that hosts the VMware vCenter client. You can move the file to that system or download the file later.</li><li><b id="productShow_apcodeph">VCN OVSvApp Appliance</b>.  For the KVM + ESX deployment, download this file, named   Also download the Signature files. HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).</li>--><!--  <li><xref href="#topic7148/verify" format="dita">Verify the
+                                <li>In a browser, navigate to <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Download Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs"><li>Click <b>Sign In</b> to log in using your account. </li><li>After signing in, click the <b>Downloads</b> link in the menu on the left side of the page.</li><li>On the <b>Downloads</b> page, locate HPE Helion OpenStack Carrier Grade and click <b>Download</b>.</li></ul></li><li>Download the following files: <ul><li><b>Helion Carrier Grade 2.0.0</b>. The file is named <codeph>hcg_1.1.0.tar</codeph>. Also download the <b>Helion Carrier Grade 2.0.0 Checksum</b> and <b>Helion Carrier Grade 2.0.0 Signature</b> files.</li><li><b>Horizon Patch Tar File for Helion Carrier Grade</b>. The file is named <codeph>hcg_1.1.0_horizon_patch1.tar</codeph>. Also download the <b>Horizon Patch Tar File for Helion Carrier Grade Checksum</b> and <b>Horizon Patch Tar File for Helion Carrier Grade Signature</b> files.</li><li><b id="productShow_apcodeph">Helion Carrier Grade 1.1.0 Windriver License patch signature file</b> and the <b>Helion Carrier Grade 2.0.0 Windriver License patch</b> signature file signature and <b>Helion Carrier Grade 2.0.0 Windriver License patch</b> signature file checksum files.</li><li>LDAP patch. Download the <codeph>ldap_patch_1.1.tar.gz and hoscg-update.tgz</codeph> file. </li><li>Compute Proxy patch. Dowload the <codeph>compute_proxy_patch_1.1.tar.gz</codeph> file.</li><li>GRE tunnel. Download the <codeph>gre_patch_1.1.tar.gz</codeph> file. </li><li>HLM port security patch. Download the <codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph> file.</li><li>Rabbit MQ Random Password patch. Download the <codeph>random-password.tar.gz</codeph> file.</li><li>Helion Dynamic Password patch. Download the <codeph>horizon_web_patch_1.1.tar.gz</codeph> file.</li><li>NIC Bonding Patch. If you are using bonded NIC, download the <codeph>cg-hos-nic-bonding.patch</codeph> file.</li><li><b>GPG keys to verify signature files</b>. This file is named <codeph>GPG-HPCSS-Public-Keys.tar</codeph>.</li></ul></li>
+                        --><!--<li><b>vCenter Proxy Appliance</b>. For the KVM + ESX deployment, download this file, named <codeph>overcloud_vcenter_compute_proxy.tar</codeph>. Also download the Signature files. This file will need to be moved to the system that hosts the VMware vCenter client. You can move the file to that system or download the file later.</li><li><b id="productShow_apcodeph">VCN OVSvApp Appliance</b>.  For the KVM + ESX deployment, download this file, named   Also download the Signature files. HPE Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HPE Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).</li>--><!--  <li><xref href="#topic7148/verify" format="dita">Verify the
                                                 signature and checksums</xref>. </li>
                         </ol>--></section>
-                <!--<section id="verify"><title>Verify the downloaded signature</title><p>After downloading the installation packages, you should verify the signature of the download. You can use the GPG utility, which is already installed on the HLM node. Signed by the signature file.</p><p>A set of GPG public keys are available on <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Download Network(HDN)</xref> . If you did not download the public keys in the previous section, click the <b>GPG keys to verify signature files</b> link in HDN to download the <codeph>cg-hos.tar.gz.</codeph> file. </p><ol><li>Copy the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file to the <codeph>/root/cg/</codeph> directory. You wlll need to create this directory:<codeblock>mkdir /root/cg/</codeblock></li><li>Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file.<codeblock> tar xvf GPG-HPCSS-Public-Keys.tar </codeblock></li><li>Copy the public keys to the HLM host server, extract the keys from the compressed files. <p>The following keys are included in the download:</p><ul id="ul_uzg_xmq_bt"><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-1.pub</li><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-2.pub</li><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-3.pub</li><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-4.pub</li><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-5.pub</li><li>hpPublicKey.pub</li><li>hpPublicKey2048.pub</li></ul></li><li>Execute the following command to import the keys: <codeblock>gpg -\-import "&lt;filename>"</codeblock><p>Where &lt;filename> is the name of the extracted file.</p><p>The keys are then imported into the gpgp key share: <codeblock>gpg -\-import hpPublicKey.pub 
-gpg -\-import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-1.pub 
-gpg -\-import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-2.pub 
-gpg -\-import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-3.pub 
-gpg -\-import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-4.pub 
-gpg -\-import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-5.pub 
+                <!--<section id="verify"><title>Verify the downloaded signature</title><p>After downloading the installation packages, you should verify the signature of the download. You can use the GPG utility, which is already installed on the HLM node. Signed by the signature file.</p><p>A set of GPG public keys are available on <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Download Network(HDN)</xref> . If you did not download the public keys in the previous section, click the <b>GPG keys to verify signature files</b> link in HDN to download the <codeph>cg-hos.tar.gz.</codeph> file. </p><ol><li>Copy the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file to the <codeph>/root/cg/</codeph> directory. You wlll need to create this directory:<codeblock>mkdir /root/cg/</codeblock></li><li>Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file.<codeblock> tar xvf GPG-HPCSS-Public-Keys.tar </codeblock></li><li>Copy the public keys to the HLM host server, extract the keys from the compressed files. <p>The following keys are included in the download:</p><ul id="ul_uzg_xmq_bt"><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-1.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-2.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-3.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-4.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-5.pub</li><li>hpPublicKey.pub</li><li>hpPublicKey2048.pub</li></ul></li><li>Execute the following command to import the keys: <codeblock>gpg -\-import "&lt;filename>"</codeblock><p>Where &lt;filename> is the name of the extracted file.</p><p>The keys are then imported into the gpgp key share: <codeblock>gpg -\-import hpPublicKey.pub 
+gpg -\-import Hewlett Packard EnterpriseCompanyRSA\(HPCodesigningService\)-1.pub 
+gpg -\-import Hewlett Packard EnterpriseCompanyRSA\(HPCodesigningService\)-2.pub 
+gpg -\-import Hewlett Packard EnterpriseCompanyRSA\(HPCodesigningService\)-3.pub 
+gpg -\-import Hewlett Packard EnterpriseCompanyRSA\(HPCodesigningService\)-4.pub 
+gpg -\-import Hewlett Packard EnterpriseCompanyRSA\(HPCodesigningService\)-5.pub 
 gpg -\-import hpPublicKey2048.pub </codeblock></p></li><li>Use the following command to view the keys in the key store: <codeblock>gpg -\-list-keys</codeblock><p>The key store appears similar to the following:</p><codeblock>/home/sad/.gnupg/pubring.gpg
   -\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
 pub   2048R/F7191CB9 2014-12-19
 pub   1024D/2689B887 2005-03-11 [expired: 2015-03-09]
-uid                  Hewlett-Packard Company (HP Codesigning Service)
+uid                  Hewlett Packard Enterprise Company (HPE Codesigning Service)
 pub   2048R/B1275EA3 2014-11-19 [expires: 2024-11-16]
-uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 1
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 1
 pub   2048R/B564A643 2014-11-19 [expires: 2024-11-16]
-uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 2
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 2
 pub   2048R/FF94BC78 2014-11-19 [expires: 2024-11-16]
-uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 3
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 3
 pub   2048R/BA849975 2014-11-19 [expires: 2024-11-16]
-uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 4
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 4
 pub   2048R/C6978F0C 2014-11-19 [expires: 2024-11-16]
-uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 5
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 5
 pub   2048R/5CE2D476 2012-12-04 [expires: 2022-12-02]
-uid                  Hewlett-Packard Company RSA (HP Codesigning Service)        </codeblock></li><li>Use the following command to verify the signature: <codeblock>gpg -\-verify ./hcg_1.1.0.tar.sig ./hcg_1.1.0.tar  </codeblock><p>The output for the command appears similar to the following. This indicates the signature is verified: <b>Good signature from "Hewlett-Packard Company RSA (HP Codesigning Service)</b>.</p><codeblock>gpg: Signature made Wed 22 Jul 2015 01:23:24 PM EDT using RSA key ID C6978F0C
-gpg: Good signature from "Hewlett-Packard Company RSA (HP Codesigning Service) - 5"
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service)        </codeblock></li><li>Use the following command to verify the signature: <codeblock>gpg -\-verify ./hcg_1.1.0.tar.sig ./hcg_1.1.0.tar  </codeblock><p>The output for the command appears similar to the following. This indicates the signature is verified: <b>Good signature from "Hewlett Packard Enterprise Company RSA (HPE Codesigning Service)</b>.</p><codeblock>gpg: Signature made Wed 22 Jul 2015 01:23:24 PM EDT using RSA key ID C6978F0C
+gpg: Good signature from "Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 5"
 gpg: WARNING: This key is not certified with a trusted signature!
 gpg: There is no indication that the signature belongs to the owner.
 Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</codeblock></li><li>Perform this verification for each file you downloaded.</li></ol></section>-->
@@ -659,7 +659,7 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                 </section>
                 <section id="extract"><title>Extract and copy the installation files and
                                 patches</title><p>Extract the downloaded files as
-                                        indicated.</p><p><b>HP Helion OpenStack Carrier
+                                        indicated.</p><p><b>HPE Helion OpenStack Carrier
                                 Grade</b></p><p>Extract the downloaded files as indicated in the
                                 following table.</p><table id="table_rkj_yyk_2t">
                                 <tgroup cols="3">
@@ -814,7 +814,7 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                 <section>
                         <title>Bring Up Single VSD VM Manually</title>
                         <p><b>Note:</b> This is applicable only for KVM + ESX Cloud Deployment. </p>
-                        <p>You must launch a virtual machine for the required HP DCN Virtualized
+                        <p>You must launch a virtual machine for the required HPE DCN Virtualized
                                 Services Directory (<i>VSD</i>) and create required users.</p>
                         <p>For more information, see <xref
                                         href="carrier-grade-install-vsd-vm.dita#topic7646">Bringing
@@ -827,7 +827,7 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                         <ul id="ul_jy1_tvp_rs">
                                 <li>Configure the boot order with Network/PXE boot as the first
                                                 option:<p>For example, to set the boot order for a
-                                                HP SL390, from the iLO prompt enter <codeph>set
+                                                HPE SL390, from the iLO prompt enter <codeph>set
                                                   system1/bootconfig1/bootsource5
                                                   bootorder=1</codeph>.</p></li>
                                 <li>
