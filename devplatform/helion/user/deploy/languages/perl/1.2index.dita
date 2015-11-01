@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8895">
-<title>HP Helion 1.2 Development Platform: Perl</title>
+<title>HPE Helion 1.2 Development Platform: Perl</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.2"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.2"/>
 </metadata>
 </prolog>
 <body>
@@ -171,7 +171,7 @@ specified explicitly in <i>requirements.txt</i>, <i>manifest.yml</i> or
 packed in the application droplet.</p>
 </section>
 <section id="cpan-modules-via-cpanm"> <title>CPAN Modules via cpanm</title>
-<p>If the module you require is not available in the HP PPM
+<p>If the module you require is not available in the HPE PPM
 repositories, or if you need a
 specific version (PPM provides only the current release), you can use
 <xref href="http://search.cpan.org/dist/App-cpanminus/bin/cpanm" scope="external" format="html" >cpanm</xref> to install

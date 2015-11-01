@@ -2,7 +2,7 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_vrb_bgj_rs">
  <title>Uninstall the Database Service</title>
- <shortdesc>Process for uninstalling the Database Service from the HP Helion Development Platform.</shortdesc>
+ <shortdesc>Process for uninstalling the Database Service from the HPE Helion Development Platform.</shortdesc>
  <conbody>
   <section id="uninstall-database">     <note type="restriction">These services cannot be uninstalled from the Horizon console.</note><note type="notice">The uninstall instructions listed here do not delete existing database
    instances. Perform all backups as necessary and then delete your existing database instances
