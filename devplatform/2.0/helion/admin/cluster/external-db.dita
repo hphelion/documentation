@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4533">
-<title>HP Helion 2.0 Development Platform: External Data Services</title>
+<title>HPE Helion 2.0 Development Platform: External Data Services</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.3"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.3"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Security Engineer"/>
 <othermeta name="role" content="ISV Developer"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Net Ops Engineer"/>
 <othermeta name="role" content="NOC Engineer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.3"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.3"/>
 </metadata>
 </prolog>
 <body>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_x54_njh_ts">
-  <title>HP Helion Development Platform Installation Prerequisites</title>
+  <title>HPE Helion Development Platform Installation Prerequisites</title>
   <body>
     <section id="prerequisites"> <title>General Prerequisites</title>
       <ul>
@@ -9,7 +9,7 @@
           <p>The Cinder block storage service must be configured with either <xref href="../../../commercial/GA1/1.1commercial-vsa-overview.dita" >VSA</xref> or <xref href="../../../commercial/GA1/1.1commercial.install-3par.dita" >3Par</xref>.</p>
         </li>
         <li>
-          <p>If you installed HP Helion OpenStack with <b>KVM</b> hypervisor support, configure HP StoreVirtual VSA for Block Storage or configure HP 3PAR StoreServ Storage.</p>
+          <p>If you installed HPE Helion OpenStack with <b>KVM</b> hypervisor support, configure HPE StoreVirtual VSA for Block Storage or configure HPE 3PAR StoreServ Storage.</p>
         </li>
         <li>
           <p>The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements.</p>
@@ -102,7 +102,7 @@ export http_proxy=http://proxy.example.com</codeblock></li>
               <codeph>python-pip</codeph><codeblock>sudo apt-get install -y python-pip</codeblock></li>
           </ol>
     </section> <section><title>Create a VM Service Network</title>
-      The DBaaS, DNSaaS and Cue services rely on the creation of a VM service network. This service network is a VLAN-encapsulated provider network which is fully routable to the HP Helion OpenStack MGMT network. [This is an extra step required for the beta release.]
+      The DBaaS, DNSaaS and Cue services rely on the creation of a VM service network. This service network is a VLAN-encapsulated provider network which is fully routable to the HPE Helion OpenStack MGMT network. [This is an extra step required for the beta release.]
       <ol>  <li>SSH to the Deployer node using admin credentials.</li>
         <li>Source the admin credentials:
           <!--This step will not be necessary after HOS GA but it is during the beta per Alex--><codeblock>source ~/service.osrc</codeblock></li>

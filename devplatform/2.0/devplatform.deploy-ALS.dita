@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2870">
-<title>HP Helion 2.0 Development Platform: Configuring and Deploying an Application Lifecycle Service Cluster</title>
+<title>HPE Helion 2.0 Development Platform: Configuring and Deploying an Application Lifecycle Service Cluster</title>
 <body>
 <p>This document explains the process to configure and deploy an Application Lifecycle Service (ALS) cluster from the Horizon user interface.</p>
 <p>The document covers the following sections:</p>

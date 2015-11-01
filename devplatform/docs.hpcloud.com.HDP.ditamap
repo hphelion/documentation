@@ -2,8 +2,8 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
  
 <map xml:lang="en" linking="none" locktitle="no">
-<title>HP Helion Development Platform</title>
-  <topicref href="2.0/devplatform.index.dita" navtitle="HP Helion Development Platform 2.0"
+<title>HPE Helion Development Platform</title>
+  <topicref href="2.0/devplatform.index.dita" navtitle="HPE Helion Development Platform 2.0"
     locktitle="yes">
     <!--root level installation-->
     <topicref href="2.0/devplatform.whatsnew.dita" locktitle="yes" navtitle="What's New"/>
@@ -39,7 +39,7 @@
       <topicref href="2.0/installation/devplatform_install_prereq.dita"
         navtitle="Installation Prerequisites" locktitle="yes"/>
       <topicref href="2.0/installation/devplatform_install_platform.dita"
-        navtitle="Install the HP Helion Development Platform Service Installer" locktitle="yes"/>
+        navtitle="Install the HPE Helion Development Platform Service Installer" locktitle="yes"/>
       <topicref href="2.0/installation/devplatform_install_ALS.dita"
         navtitle="Install the Application Lifecycle Service" locktitle="yes"/>
       <topicref href="2.0/installation/devplatform_install_database.dita"
@@ -248,12 +248,12 @@
           navtitle="Node MySQL Database Sample"/>
         <!--<topicref href="2.0/workbook/messaging/messaging.node.dita" locktitle="yes" navtitle="Node RabbitMQ Messaging Sample"/>-->
       </topichead>
-      <topichead navtitle="PHP Code Samples">
+      <topichead navtitle="PHPE Code Samples">
         <topicref href="2.0/workbook/helloworld/helloworld.php.dita" locktitle="yes"
-          navtitle="PHP Hello World Sample "/>
+          navtitle="PHPE Hello World Sample "/>
         <topicref href="2.0/workbook/database/database.php.dita" locktitle="yes"
-          navtitle="PHP MySQL Database Sample"/>
-        <!--<topicref href="2.0/workbook/messaging/messaging.php.dita" locktitle="yes" navtitle="PHP RabbitMQ Messaging Sample"/>-->
+          navtitle="PHPE MySQL Database Sample"/>
+        <!--<topicref href="2.0/workbook/messaging/messaging.php.dita" locktitle="yes" navtitle="PHPE RabbitMQ Messaging Sample"/>-->
       </topichead>
     </topicref>
       

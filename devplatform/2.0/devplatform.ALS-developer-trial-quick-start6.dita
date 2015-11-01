@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1657">
-<title>HP Helion 2.0 Development Platform: Quick Start Developer Trial</title>
+<title>HPE Helion 2.0 Development Platform: Quick Start Developer Trial</title>
 <titlealts>
-<searchtitle>HP Helion 2.0 Development Platform: Quick Start Developer Trial Step 6</searchtitle>
+<searchtitle>HPE Helion 2.0 Development Platform: Quick Start Developer Trial Step 6</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Security Engineer"/>
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
 </metadata>
 </prolog>
 <body>
-<p>We have provided several sample applications in multiple programming languages. Exploring and deploying these simple apps will help you understand how the push process works and how applications can be connected to the other HP Helion <tm tmtype="reg">OpenStack</tm> services.</p>
+<p>We have provided several sample applications in multiple programming languages. Exploring and deploying these simple apps will help you understand how the push process works and how applications can be connected to the other HPE Helion <tm tmtype="reg">OpenStack</tm> services.</p>
 <simpletable>
 <strow>
                         <stentry>1. <xref href="devplatform.ALS-developer-trial-quick-start.dita"
@@ -38,7 +38,7 @@
                                                 applications </xref>in multiple programming
                                         languages for you to examine and deploy. These very simple
                                         applications provide insight on how to push applications and
-                                        connect those applications to HP Helion OpenStack services. <p>If you are interested
+                                        connect those applications to HPE Helion OpenStack services. <p>If you are interested
                                                 in exploring the new functionality, you can jump
                                                 right into <xref
                                                   href="windows/windows_firstapp.dita#topic_amr_q3w_js"

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2457">
-<title>HP Helion 2.0 Development Platform: Resources for Application Developers</title>
+<title>HPE Helion 2.0 Development Platform: Resources for Application Developers</title>
 
 <body>
-<p>HP has created a series of small, simplified sample applications to help you understand and exercise the Development Platform services.</p>
+<p>HPE has created a series of small, simplified sample applications to help you understand and exercise the Development Platform services.</p>
 <p>Each sample builds on the previous one and all source code is provided for you to build, deploy, and take apart. Each sample is provided in multiple languages.</p>
 <section id="prerequisites-before-you-begin"> <title>Prerequisites - Before you begin</title>
 <p>In order to download and deploy these sample applications, you must have the necessary framework installed and configured.</p>
 <ul>
-<li>HP Helion <tm tmtype="reg">OpenStack</tm>
+<li>HPE Helion <tm tmtype="reg">OpenStack</tm>
           <xref href="../../commercial/GA1/1.1commercial.index.dita">cloud [version 1.1.1]
             deployed</xref>.</li>
 <li>Application Lifecycle Service <xref href="devplatform.deploy-ALS.dita">Cluster</xref> available

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_gkq_fqy_rt">
-  <title>Install the HP Helion Code Engine</title>
+  <title>Install the HPE Helion Code Engine</title>
   <body>
     <section><title>Prerequisites</title>
  <ul>
@@ -9,10 +9,10 @@
       <li>The installer retrieves service configuration information from the <codeph>clouds.yaml</codeph> file. If you did not create a <codeph>clouds.yaml</codeph> file earlier, you can <xref
           href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one now</xref>.</li>
    
-      <li>The HP Helion Code Engine also requires a code repository hosted on GitHub or a private
+      <li>The HPE Helion Code Engine also requires a code repository hosted on GitHub or a private
           server. <ol>
             <li>Open a github.com account or create a GitHub Enterprise server.</li>
-            <li>Register a new OAUTH application in Github so that the HP Helion Code Engine can
+            <li>Register a new OAUTH application in Github so that the HPE Helion Code Engine can
               communicate with your version control provider. <ul>
                 <li>Public Github: <xref href="https://github.com/settings/applications/new"
                     format="html" scope="external"
@@ -71,7 +71,7 @@
     </section>  
     
     <section>
-            <title>Install the HP Helion Code Engine</title>
+            <title>Install the HPE Helion Code Engine</title>
             <note type="tip"> For help with the installer, enter the command <codeph>openstack
               hdpi</codeph>
             </note>

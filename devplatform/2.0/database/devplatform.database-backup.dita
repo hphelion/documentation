@@ -45,7 +45,7 @@
     </section>
     <section id="cli"><title>Backing up a database from the command line</title>
       <ol>
-        <li>To work with backups from the command line, log in to the installer node for your HP Helion OpenStack environment and source the service.osrc file:
+        <li>To work with backups from the command line, log in to the installer node for your HPE Helion OpenStack environment and source the service.osrc file:
           <codeblock>. service.osrc</codeblock></li>
         <li><b>Back up a database:</b> To back up a database, use the <codeph>trove backup-create</codeph> command, passing in the database instance (by name or ID) to back up, and the name of the backup to be created.</li>
         <li>

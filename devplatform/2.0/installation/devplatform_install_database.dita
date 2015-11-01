@@ -14,7 +14,7 @@
 
 <section id="availability-zones"> <title>Configure Availability Zones</title>
 <p>To configure the Database Service in a highly available manner, it is necessary to create
-        separate availability zones. As a best practice, HP recommends creating three availability
+        separate availability zones. As a best practice, HPE recommends creating three availability
         zones. All hosts should be placed within one of these availability zones. </p>
       <p>If a host is not associated with an availability zone, the Database Service will not be
         able to provision a database instance to it. As a result, the Database Service may run out
@@ -184,12 +184,12 @@ $</codeblock></li>
         following steps will configure HAProxy to receive and forward HTTP requests to the VM that
         hosts the REST API endpoint for the Database Service.<ol>
           <li> Identify the API server IPs on the SVC network. You should have as many API servers
-            (and IPs) as you have Availability Zones in your HP Helion OpenStack installation.<p>
+            (and IPs) as you have Availability Zones in your HPE Helion OpenStack installation.<p>
               <codeblock>openstack server list | awk '/trove[0-9]*_api/{ print $4,"\t", substr($8,5) }'</codeblock>
             </p></li>
-          <li> Identify the Virtual IP used to load balance the HP Helion OpenStack
+          <li> Identify the Virtual IP used to load balance the HPE Helion OpenStack
             services:<codeblock>openstack endpoint show database -c publicurl --format value</codeblock></li>
-          <li> Update configuration on each of the HP Helion OpenStack controller nodes by connecting
+          <li> Update configuration on each of the HPE Helion OpenStack controller nodes by connecting
             to the controller and doing the following: <ol>
               <li>Edit the <i>/etc/haproxy/haproxy.cfg</i> file and add the following lines. The
                 last line should be repeated once for each API server identified in step

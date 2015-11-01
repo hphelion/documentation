@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_gly_xmh_ts">
-  <title>Install the HP Helion Development Platform</title>
+  <title>Install the HPE Helion Development Platform</title>
   <body>
     <section><p>The installation procedure has changed significantly since the last release. The HDP Installer
         2.0, also known as HDPI, is a plugin for the the python-openstackclient (OSC). It is able to
@@ -13,20 +13,20 @@
             prerequisites</xref> before beginning installation.</note>
       </p>
 
-      <title>Download the Latest Version of HP Helion Development Platform Installation
+      <title>Download the Latest Version of HPE Helion Development Platform Installation
         Client</title>
       <p>The installation is provided as a small compressed tar file. The images for the individual
         services will be downloaded when the service installation is started.</p>
       <ol id="ol_ogs_qpt_nt">
         <li>Navigate to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
-            format="html" scope="external">HP Helion Download Network</xref> (HDN) and log in. If
+            format="html" scope="external">HPE Helion Download Network</xref> (HDN) and log in. If
           necessary, create an account first.</li>
         <li>Download the Development Platform Installer 2.0.0.0 beta package.</li>
       </ol>
     </section>
 
     <section id="pre-installing-the-hp-helion-development-platform">
-      <title>Install the HP Helion Development Platform Installation Client</title>
+      <title>Install the HPE Helion Development Platform Installation Client</title>
       <note type="tip"> For help with the installer, enter the command <codeph>openstack
           hdpi</codeph>
       </note>
