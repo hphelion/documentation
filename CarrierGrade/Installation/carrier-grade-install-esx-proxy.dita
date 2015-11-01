@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Deploying the ESX Compute Proxy</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Deploying the ESX Compute Proxy</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
-    <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
     <othermeta name="role" content="Storage Administrator"/>
     <othermeta name="role" content="Storage Architect"/>
     <othermeta name="role" content="Michael B"/>
-    <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
   </metadata>
 </prolog>
 <body>
-    <p>The HP Helion OpenStack Carrier Grade vCenter ESX compute proxy (compute proxy) is a driver
+    <p>The HPE Helion OpenStack Carrier Grade vCenter ESX compute proxy (compute proxy) is a driver
       that enables the Compute service to communicate with a VMware vCenter server managing one or
-      more ESX hosts. The HP Helion OpenStack Compute Service (Nova) requires this driver to
+      more ESX hosts. The HPE Helion OpenStack Compute Service (Nova) requires this driver to
       interface with VMware ESX hypervisor APIs.</p>
     <p>After installing and configuring the VMware ESX and vCenter Server, use the following
       instructions to install the compute proxy. The compute proxy is distributed as open virtual
@@ -24,9 +24,9 @@
       CLM network, as shown in the <xref href="carrier-grade-technical-overview.dita#topic3485">Technical Overview</xref></p>
     <section>
       <title>Deploy Compute Proxy template on ESX Host</title>
-      <p>The HP Helion OpenStack Carrier Grade installation process includes an open virtual
+      <p>The HPE Helion OpenStack Carrier Grade installation process includes an open virtual
         appliance (OVA) file that you import into vCenter. Compute proxy template needs to be
-        available in the vCenter before the deploying the HP Helion OpenStack cloud (before you run
+        available in the vCenter before the deploying the HPE Helion OpenStack cloud (before you run
         hprovision script).</p>
       <p>Compute proxy is deployed in vCenter using File > Deploy OVF Template > [Path to
         TEMPL-CPV5.ova on 15.242.209.7]</p>
