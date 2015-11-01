@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="beta_upgrade">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Upgrading from Beta 2</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Upgrading from Beta 2</title>
   <body>
 
      <section><title>Before you upgrade</title> There are a number of changes you must make to the
-      cloud configuration that is defined in a number of YAML files. In HP Helion OpenStack Beta 2,
+      cloud configuration that is defined in a number of YAML files. In HPE Helion OpenStack Beta 2,
       you used these files to configure your cloud, and you will ust them again, after
       modifications. <p>Modifications will depend on your particular cloud, but for all clouds you
         will need to merge servers.yml and baremetal.yml.</p>
@@ -44,7 +44,7 @@ git commit -m 'convert baremetal info to new style'</codeblock>
     </section>
     
     <section>
-      <title>Model changes required before upgrading from Beta 2 to HP Helion OpenStack 2.0</title>
+      <title>Model changes required before upgrading from Beta 2 to HPE Helion OpenStack 2.0</title>
       <p>One of the changes from Beta 2 to GA is that the server installed as the deployer and the
         network used for lifecycle management must now be explicitly included in the input model so
         that they can be secured and upgraded. In cases where the deployer has been used as a server
@@ -52,7 +52,7 @@ git commit -m 'convert baremetal info to new style'</codeblock>
         network) the changes are relatively minor. If you have a dedicated deployer node or a
         dedicated deployment network, then additions are more complex.</p><p>After running the
         hos-init.bash script (or vagrant provision in a virtual environment), the cloud model from
-        the original Beta 2 deployment must be updated prior to running the upgrade to HP Helion
+        the original Beta 2 deployment must be updated prior to running the upgrade to HPE Helion
         OpenStack 2.0. The exact changes depend on the original deployed cloud model. </p> Some
       subset of the categories of changes listed below are required, depending on the Beta 2 cloud.
       In the simplest case, when you have installed the deployer in the control plane, you will only
@@ -117,9 +117,9 @@ git commit -m 'convert baremetal info to new style'</codeblock>
       lifecycle-manager-target service components into the cloud model: 
       
       <ol><li>Add lifecycle-manager service component to a control plane cluster. Note that while the
-          lifecycle-manager is depicted as existing across the cluster, for HP Helion OpenStack 2.0,
+          lifecycle-manager is depicted as existing across the cluster, for HPE Helion OpenStack 2.0,
           only one of these nodes can serve as the deployer/HLM node (the first node deployed using
-          the HP Helion OpenStack ISO), i.e. HA of the deployer/HLM is not supported. </li><li>Add lifecycle-manager-target to the list
+          the HPE Helion OpenStack ISO), i.e. HA of the deployer/HLM is not supported. </li><li>Add lifecycle-manager-target to the list
       of common-service-components. 
       
       </li><li>Change the now deprecated resource-nodes section to resources
@@ -193,14 +193,14 @@ disk-models:
       networking requirements of each service on a node; the default is for this to be enabled. see
       file <p><xref href="../html/cloud_config_yml.html" format="html">See changes to
           cloudConfig.yml</xref></p>
-      <p>HP Helion OpenStack 2.0 includes the feature to add firewall rules for enabling access
+      <p>HPE Helion OpenStack 2.0 includes the feature to add firewall rules for enabling access
         between services across the deployed cloud. The following is an example of a firewall rules
         file:</p>
       <codeblock>---
   product:
     version: 2
 #
-# HP Helion OpenStack will create firewall rules to enable the required access for
+# HPE Helion OpenStack will create firewall rules to enable the required access for
 # all of the deployed services. Use this section to define any
 # additional access.
 #

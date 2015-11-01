@@ -4,9 +4,9 @@
   <title>RN</title>
   <body>
     <p>The following table list a high level overview of  the  OpenStack projects/services which are
-      included in HP Helion OpenStack  and their status. Only official upstream OpenStack projects
+      included in HPE Helion OpenStack  and their status. Only official upstream OpenStack projects
       are included, not non-OpenStack add-ons that originate elsewhere. <note>If the service is not
-        listed in the table then it is not present in HP Helion OpenStack.</note></p>
+        listed in the table then it is not present in HPE Helion OpenStack.</note></p>
     <p>
       <simpletable frame="all" relcolwidth="1.0* 1.0*" id="simpletable_q2l_d1c_lt">
         <strow>

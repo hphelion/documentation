@@ -3,7 +3,7 @@
 <topic id="topic_pgq_mnw_dt">
     <title>Backup</title>
     <body>
-        <section><title>Introduction </title><p>As of HP Helion <tm tmtype="reg">OpenStack</tm> 2.0
+        <section><title>Introduction </title><p>As of HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0
                 Beta 1, you must do the following: <ol>
                     <li>Define what you want to backup.</li>
                     <li>Define a mode for that backup. The following modes are available: <ul>
@@ -32,7 +32,7 @@
                     <li>Backup-name</li>
                     <li>Container (swift container or local path)</li>
                     <li>Storage (swift by default)</li>
-                </ul></p> For HP Helion OpenStack 2.0, you can create a backup using only mandatory
+                </ul></p> For HPE Helion OpenStack 2.0, you can create a backup using only mandatory
             values as in the following example:
             <codeblock>- freezerc --action backup --mode fs --storage swift --path-to-backup /home/user/tmp --container tmp_backups --backup-name backup1</codeblock>
             The translation to a configuration file for this backup execution would be as follows:
@@ -59,7 +59,7 @@
 </codeblock>
             In this configuration file (JSON), the freezer command is wrapped in the
             "freezer_action" key. <note>All "-" are translated to "_" and the first "--" are
-                omitted.</note> As of HP Helion OpenStack 2.0, we can define the schedule rules that
+                omitted.</note> As of HPE Helion OpenStack 2.0, we can define the schedule rules that
             this job will follow (only available through the configuration file) and a brief
             description of the job. </section>
     </body>

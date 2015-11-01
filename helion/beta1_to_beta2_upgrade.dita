@@ -5,13 +5,13 @@
   <body>
     <p> Upgrade from Beta 1 to Beta 2 is now supported. To perform the upgrade, you must have a
       working deployment of the Beta 1 release. </p>
-    <p>To perform the upgrade, follow the steps below. The upgrade will apply updates to HP Helion
+    <p>To perform the upgrade, follow the steps below. The upgrade will apply updates to HPE Helion
       OpenStack services, as well as to the underlying cloud platform. </p>
     <p> The upgrade mechanism included in the Beta 2 release is not complete in that it does not
       upgrade the full set of services in the HOS stack. Beta2 will allow users to get experience
       with applying upgrades through HLM. The following set of HOS components are upgraded as part
       of the Beta2 upgrade: <ul>
-        <li> Linux for HP Helion </li>
+        <li> Linux for HPE Helion </li>
         <li> sosreport</li>
         <li> monasca-agent</li>
         <li> Openstack clients</li>

@@ -4,7 +4,7 @@
   <title id="install-ceph"> Ceph Configuration </title>
   <body>
     <p>This page describes configuration, installation, and the integration of Ceph Block Storage
-      with HP Helion<tm tmtype="reg">OpenStack</tm>2.0. After the installation of Ceph you can
+      with HPE Helion<tm tmtype="reg">OpenStack</tm>2.0. After the installation of Ceph you can
       perform the cinder operation as documented in this page. It also provides the procedure to
       perform cinder operation after Ceph deployment.</p>
     <p><!--Ceph has two components, i..e., monitor and OSD. These components require different set of hardware specifications as follows:<ul id="ul_pgh_qjv_kt"><li>For monitor node, storage is not required but it is CPU sensitive. </li><li>For OSD nodes, a significant disk media, RAM and reasonable CPU are required.<p>Therefore, with this requirement we recommend the following:<ul id="ul_rl1_jkv_kt"><li>SL4540 for OSD</li><li>SL230 series of servers for monitor if monitors are not deployed on controller node which is our default configuration. If monitor is deployed on controller node, the server used for controlller node is good neough to support monitor. </li></ul></p></li></ul>--></p>
@@ -18,7 +18,7 @@
     <section>
       <title id="install-procedure">Installation Procedure</title>
       <p>Perform the following procedures to configure, install, and the integrate the Ceph Block
-        Storage with HP Helion OpenStack 2.0.</p>
+        Storage with HPE Helion OpenStack 2.0.</p>
     </section>
     <section>
       <p>
@@ -52,7 +52,7 @@
               <li>
                 <p><codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph></p>
                 <p>The <codeph>user_model.yml</codeph> has the editable values for the different
-                  pools created by HP Helion OpenStack.</p>
+                  pools created by HPE Helion OpenStack.</p>
               </li>
             </ul></li>
           <li> Commit your configuration to a <xref href="../../using_git.dita#topic_u3v_1yz_ct"

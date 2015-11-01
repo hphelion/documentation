@@ -4,7 +4,7 @@
   <title> Installing Ceph </title>
   <body>
     <p>This page describes configuration, installation, and the integration of Ceph Block Storage
-      with HP Helion OpenStack 2.0. It also provides the procedure to perform Ceph operation after
+      with HPE Helion OpenStack 2.0. It also provides the procedure to perform Ceph operation after
       Ceph deployment.</p>
     <section>
       <title>Prerequisite</title>
@@ -13,7 +13,7 @@
     <section>
       <title>Installation Procedure</title>
       <p>Perform the following procedures to configuration, installation, and the integration of
-        Ceph Block Storage with HP Helion OpenStack 2.0</p>
+        Ceph Block Storage with HPE Helion OpenStack 2.0</p>
     </section>
     <section>
       <p>

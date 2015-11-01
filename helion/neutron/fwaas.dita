@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="HP2.0FWaaS">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 FWaaS Configuration</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0 FWaaS Configuration</title>
   <body>
-    <p>HP Helion OpenStack 2.0 FWaaS Configuration</p>
+    <p>HPE Helion OpenStack 2.0 FWaaS Configuration</p>
     <p>Firewall as a Service (FWaaS) is an advance networking service that introduces firewall
       feature set. This document describes the configuration process and requirements for the HP
       Helion OpenStack 2.0 Firewall as a Service module. </p>
@@ -17,11 +17,11 @@
     
     <section id="Prerequisites">
       <title>Prerequisites</title>
-      <p>HP Helion OpenStack must be installed. </p>
+      <p>HPE Helion OpenStack must be installed. </p>
       
     </section>
     <section id="Configuration">
-      <title>HP Helion OpenStack 2.0 FWaaS Configuration</title>
+      <title>HPE Helion OpenStack 2.0 FWaaS Configuration</title>
       
       <p><b>Check for an enabled firewall.</b></p>
       <ol>
