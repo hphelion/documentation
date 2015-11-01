@@ -11,7 +11,7 @@
       
       <p>The Transport Layer Security (TLS) protocol, successor of SSL, provides the mechanisms to
         ensure authentication, non-repudiation, confidentiality, and integrity of user
-        communications to the HP Helion OpenStack services from public endpoints.</p>
+        communications to the HPE Helion OpenStack services from public endpoints.</p>
       <p>OpenStack endpoints are HTTP (REST) services providing APIs to other OpenStack services on the
         management network. All traffic to OpenStack services coming in on the public endpoints are
         secured using TLS connections.</p>

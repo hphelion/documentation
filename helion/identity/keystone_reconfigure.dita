@@ -4,7 +4,7 @@
   <title>Reconfiguring the Identity Service</title>
   <body>
 
-    <section><title>Updating the Keystone Identity Service</title>HP Helion OpenStack&#174; allows
+    <section><title>Updating the Keystone Identity Service</title>HPE Helion OpenStack&#174; allows
       you to perform updates on the following parts of the Identity service configuration:: </section>
       
       <section>

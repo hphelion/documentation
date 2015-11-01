@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="combining">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Combining the baremetalConfig.yml and
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Combining the baremetalConfig.yml and
     servers.yml Files</title>
   <body>
     <!-- This will likely not continue to be it's own separate page before GA, I just staged this for review -->

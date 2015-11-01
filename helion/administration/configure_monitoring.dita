@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="monitoring">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring the Monitoring Service</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring the Monitoring Service</title>
   <body>
     <section id="config">
       <p>In Helion OpenStack 2.0 you will have the option to specify a SMTP server for email

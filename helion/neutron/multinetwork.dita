@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="HP2.0LBaaS">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Multiple External Network
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0 Multiple External Network
     Configuration</title>
   <body>
-    <p>HP Helion OpenStack 2.0 Multiple External Network Configuration</p>
-    <p>This document describes the configuration process and requirements for the HP Helion
+    <p>HPE Helion OpenStack 2.0 Multiple External Network Configuration</p>
+    <p>This document describes the configuration process and requirements for the HPE Helion
       OpenStack 2.0 Multiple External Network.</p>
     <p>  
       
@@ -18,14 +18,14 @@
     
     <section id="Prerequisites">
       <title>Prerequisites</title>
-      <p>HP Helion OpenStack must be installed. </p>
+      <p>HPE Helion OpenStack must be installed. </p>
       
     </section>
     
     
     <section id="Configuration">
       <title>Configuration</title>
-      <p>HP Helion OpenStack 2.0 Multiple External Network Configuration</p>
+      <p>HPE Helion OpenStack 2.0 Multiple External Network Configuration</p>
       
       
       <p>Neutron provider VLANs are neutron networks that map directly to an 802.1Q VLAN in the 
@@ -39,8 +39,8 @@
       </ul>
       <p>The physical network infrastructure must be configured to convey the provider VLAN traffic as 
         tagged VLANs to the cloud compute nodes and neutron network nodes. Configuration of the physical 
-        network infrastructure is outside the scope of the HP Helion OpenStack 2.0 software.</p>
-      <p>HP Helion OpenStack 2.0 automates the server networking configuration and the Neutron
+        network infrastructure is outside the scope of the HPE Helion OpenStack 2.0 software.</p>
+      <p>HPE Helion OpenStack 2.0 automates the server networking configuration and the Neutron
         configuration based on information in the cloud definition. To configure the system for
         provider VLANs, specify the<i> neutron.networks.vlan</i> tag with a
           <i>provider-physical-network</i> attribute on one or more network groups. For example
@@ -86,7 +86,7 @@
     tagged-vlan: false
     network-group: NET_GROUP_B</codeblock>
       
-      <p>When the cloud is deployed, HP Helion OpenStack 2.0 will create the appropriate bridges on
+      <p>When the cloud is deployed, HPE Helion OpenStack 2.0 will create the appropriate bridges on
         the servers, and set the appropriate attributes in the Neutron configuration files (e.g.
         bridge_mappings).</p>
       <p>After the cloud has been deployed, create Neutron network objects for each provider VLAN. 

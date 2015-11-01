@@ -6,12 +6,12 @@
     <p>
       <note type="important">Moonshots are supported as compute nodes.</note>
     </p>
-    <p>The HP Moonshot Servers are now verified hardware to run HP Helion OpenStack. The supported
+    <p>The HPE Moonshot Servers are now verified hardware to run HPE Helion OpenStack. The supported
       Moonshot Servers are :<ul id="ul_m44_rpt_mt">
-        <li>HP ProLiant m710 Server Cartridge</li>
-        <li>HP ProLiant m300 Server Cartridge</li>
+        <li>HPE ProLiant m710 Server Cartridge</li>
+        <li>HPE ProLiant m300 Server Cartridge</li>
       </ul></p>
-    <p>To manage HP Moonshot servers you must know the cartridge address and the node address (these
+    <p>To manage HPE Moonshot servers you must know the cartridge address and the node address (these
       are also known as the <b>transit_address</b> and the <b>target_address</b> respectively).<ul
         id="ul_sk2_vpt_mt">
         <li><b>transit_address</b> and <b>target_address</b> are the values that would be specified

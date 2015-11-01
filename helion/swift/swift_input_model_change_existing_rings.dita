@@ -85,7 +85,7 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
           <strow>
             <stentry>Removing server(s)</stentry>
             <stentry>
-              <p>In HP Helion OpenStack when you remove servers from the Input Model, the disk
+              <p>In HPE Helion OpenStack when you remove servers from the Input Model, the disk
                 drives are removed from the ring – the weight is not gradually reduced using the
                 weight-step attribute. </p>
               <p>Follow the steps mentioned in <xref href="#topic_vyp_cft_4t" format="dita"/> except

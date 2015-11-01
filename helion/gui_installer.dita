@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_gui">
-  <title>Installing HP Helion OpenStack&#174; 2.0 Using the Day Zero Installer</title>
+  <title>Installing HPE Helion OpenStack&#174; 2.0 Using the Day Zero Installer</title>
   <body>
-    <section> HP Helion OpenStack 2.0 comes with a UI, the Dayzero Installer,  for installing your
+    <section> HPE Helion OpenStack 2.0 comes with a UI, the Dayzero Installer,  for installing your
       cloud. Rather than searching through and editing a number of YAML files to input your specific
       configuration data, finding the correct location, and maintaing the format of the files, the
       UI presents fields in which you may enter your information. </section>
     <section>In addition, rather than having to run a series of commands to execute the cobbler and
-      ansible scripts that initiate the installation of HP Helion OpenStack, the UI application runs
+      ansible scripts that initiate the installation of HPE Helion OpenStack, the UI application runs
       them behind the scenes. </section>
     <section>While the UI app does more than simply popoulate the configuration files that the
       configuration processor uses as input to its processses, it does populate them. Therefore you
@@ -41,7 +41,7 @@
           no option to have 0 VSA nodes. Note also that you cannot put the deployer on a control
           plane node using the GUI installer.</li>
         <li>Before you use the GUI to install your cloud, you must install the operating system, HP
-          Linux for HP Helion OpenStack, on your nodes (servers) based on your hypervisor. You must
+          Linux for HPE Helion OpenStack, on your nodes (servers) based on your hypervisor. You must
           do so by following the appropriate installation instructions. <ul>
             <li><xref href="gui_install_on_kvm.dita">KVM</xref></li>
             <li><xref href="gui_install_on_esx.dita">ESX</xref></li>
@@ -56,11 +56,11 @@
 
       </ol>
     </section>
-    <section><title>Running the GUI to install your cloud</title> Now that the OS, HP Linux for HP
+    <section><title>Running the GUI to install your cloud</title> Now that the OS, HPE Linux for HP
       Helion OpenStack, is installed on all your servers (nodes), you will configure and install
       your cloud using the GUI.<p>The GUI is found on the deployer node at:
           <b>http://&lt;Deployer_IP>:79/dayzero</b></p> Make sure you choose "NO" to the question of
-      whether you want the Day0 installer to install the Linux for HP Helion operatig
+      whether you want the Day0 installer to install the Linux for HPE Helion operatig
       system on your nodes.<p>To create a secure tunnel/port forwarding into Apache from the
         deployer to be able to use the GUI in a browser, SSH tunnel into the deployer with the
         username/password set up when installing the deployer. Username and password should be what
@@ -89,7 +89,7 @@
         href="postinstall_checklist.dita#postinstall_checklist">Post-Installation
         Checklist</xref>.<p>To understand a cloud configuration more thoroughly and to learn how to
         make any changes later, visit these documentation pages: <ul id="ul_akt_fv2_lt">
-          <li><xref href="input_model.dita">HP Helion OpenStack 2.0 Input Model</xref></li>
+          <li><xref href="input_model.dita">HPE Helion OpenStack 2.0 Input Model</xref></li>
           <li><xref href="using_git.dita">Using Git for Configuration Management</xref></li>
         </ul>
       </p>

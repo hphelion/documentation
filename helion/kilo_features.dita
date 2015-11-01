@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="HP2.0KiloFeatures">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: OpenStack Kilo Features</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: OpenStack Kilo Features</title>
   <body>
     <section id="KiloFeatures">
-      <title>HP Helion OpenStack 2.0 Kilo Features</title>
-      <p>HP Helion OpenStack 2.0 Core features are enabled by default and supported by HP.</p>
-      <p>HP Helion OpenStack 2.0 Non-core services are provided as-is and supported on a best-effort
-        basis only, but are provided in this release to provide early access to features that HP may
+      <title>HPE Helion OpenStack 2.0 Kilo Features</title>
+      <p>HPE Helion OpenStack 2.0 Core features are enabled by default and supported by HP.</p>
+      <p>HPE Helion OpenStack 2.0 Non-core services are provided as-is and supported on a best-effort
+        basis only, but are provided in this release to provide early access to features that HPE may
         support fully in future releases, as well as legacy features that OpenStack is planning to
         deprecate but may be needed in the short-term for compatibility reasons. If you need
         additional support on any of these features for a specific use case, please contact HP’s
@@ -16,7 +16,7 @@
 
 
     <section id="NeutronCoreFeatures">
-      <title>HP Helion OpenStack Neutron Core Features</title>
+      <title>HPE Helion OpenStack Neutron Core Features</title>
       <p>Neutron - OpenStack Kilo upstream features that are enabled by default in HOS V2.0List high
         level Kilo features here that are enabled in the HOS V2.0 kit. This list is for Product
         Management for use in communication with the field &amp; customers.</p>
@@ -63,9 +63,9 @@
     </section>
 
     <section id="NeutronNonCoreFeatures">
-      <title>HP Helion OpenStack 2.0 Neutron Non-Core Features</title>
+      <title>HPE Helion OpenStack 2.0 Neutron Non-Core Features</title>
       <p>The Non-Core Features provided in this list can be turned on but are not enabled by
-        default. HP Helion OpenStack engineering supports these features.</p>
+        default. HPE Helion OpenStack engineering supports these features.</p>
       <ul>
         <li>Networking API v2 extensions <ul>
             <li>metering</li>

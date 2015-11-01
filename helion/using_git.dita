@@ -3,7 +3,7 @@
 <topic id="topic_u3v_1yz_ct">
   <title>Using the local git repository for configuration</title>
   <body>
-    <p>In HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 versions, inclusding Beta1, a local git
+    <p>In HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0 versions, inclusding Beta1, a local git
       repository is used to track configuration changes and for the config processor to look to for
       configuration changes. The introduction of a git workflow also means that your configuration
       history is maintained, making rollbacks easier as well as keeping a record of previous
@@ -11,14 +11,14 @@
     <p>The git repository, which is installed by the deployer, is local to your cloud servers, but
       in other ways functions like a remote git repository.</p>
  
-    <p>Below is a representation of the typical git workflow in HP Helion OpenStack 2.0. </p>
+    <p>Below is a representation of the typical git workflow in HPE Helion OpenStack 2.0. </p>
     <p><image href="../media/install/gitWorkflow.png" id="image_cbv_wg4_dt"/></p>
     <p/>
     <p>The git repository provides a way for you to merge changes that you pull down as "upstream"
       updates, and allows you to manage your own configuration changes. </p>
     <section>
       <title>Initialization on a new deployment</title>
-      <p>On a system new to HP Helion OpenStack 2.0, the deployer will prepare a git repository
+      <p>On a system new to HPE Helion OpenStack 2.0, the deployer will prepare a git repository
         under ~/helion. The deployer provisioning runs the hlm-init-deployer script automatically;
         this calls ansible-playbook -i hosts/localhost git-00-initialise.yml.</p>
       <p>As a result, the ~/helion directory is initialized as a git repo (if it's empty). It is
@@ -71,7 +71,7 @@
     </section>
     <!--    <section>
       <title>When receiving a new Helion drop</title>
-      <note>The steps for new drops will only be run on HP Helion OpenStack 2.0 Beta 1 and later.
+      <note>The steps for new drops will only be run on HPE Helion OpenStack 2.0 Beta 1 and later.
         The git repository is not present in Beta 0.</note>
       <p>When you are ready to deploy a new deployer image, you must merge any configuration changes
         into your own previous config; this is a manual step, although the standard git tools may be

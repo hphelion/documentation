@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?> <!--This work by HP Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.--> <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<?xml version="1.0" encoding="UTF-8"?> <!--This work by HPE Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.--> <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="hdp_alarm_summary">
     <title>HDP - Alarm Summary</title>
     <shortdesc>This page displays the alarms for the Helion Development Platform services. By

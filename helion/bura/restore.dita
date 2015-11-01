@@ -3,7 +3,7 @@
 <topic id="topic_sd2_wsw_dt">
   <title>Restore</title>
   <body>
-    <section><title>Introduction</title><p> As of HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Beta
+    <section><title>Introduction</title><p> As of HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0 Beta
         1, you must do the following: <ol>
           <li>Select a backup to restore.</li>
           <li>2. Define a mode for the restore: The following modes are available:<ul>
@@ -52,7 +52,7 @@
   }
 </codeblock></p>
     </section>
-    <section><title>HP Helion OpenStack Restore Process</title></section>
+    <section><title>HPE Helion OpenStack Restore Process</title></section>
     <section><title>Deployer Restore</title></section>
     <ol>
       <li>Connect to deployer.</li>

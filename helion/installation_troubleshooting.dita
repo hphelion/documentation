@@ -63,7 +63,7 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
         "completed"). Alternatively you can target specific nodes for reimage using <codeph>-e
           nodelist</codeph> as described in the section below.</p>
       <p id="reimage"><b>How to re-image an existing node</b></p>
-      <p>Once Linux for HP Helion has been successfully installed on a node, that node will be
+      <p>Once Linux for HPE Helion has been successfully installed on a node, that node will be
         marked as "installed" and subsequent runs of <codeph>bm-reimage.yml</codeph> (and related
         playbooks) will not target it. This is deliberate so that you can't reimage the node by
         accident. If you do need to reimage existing nodes you will need to use the <codeph>-e

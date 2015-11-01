@@ -10,7 +10,7 @@
       done by limiting the weights of the new drives to the smaller value and then build new rings.
       Once the replication process has finished, we can increase the weight and rebuild rings to
       trigger another round of replication.</p>
-    <p>In HP Helion OpenStack, the weight-step attribute is set in the ring specification of the
+    <p>In HPE Helion OpenStack, the weight-step attribute is set in the ring specification of the
       Input Model. The weight-step value specifies a maximum value for the change of the weight of a
       drive in any single rebalance. For example, if we add a drive of 4TB in size, we would
       normally assign a weight of 4096. However, if the weight-step attribute is set to 1024, when
