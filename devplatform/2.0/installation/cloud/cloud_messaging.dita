@@ -63,11 +63,11 @@
         </dlentry>
         <dlentry>
           <dt>deployer_ntp_servers</dt>
-          <dd>NTP servers, can be the same as the one used by HP Helion OpenStack </dd>
+          <dd>NTP servers, can be the same as the one used by HPE Helion OpenStack </dd>
         </dlentry>
         <dlentry>
           <dt>deployer_dns_servers</dt>
-          <dd>DNS servers, can be the same as the one used by HP Helion OpenStack </dd>
+          <dd>DNS servers, can be the same as the one used by HPE Helion OpenStack </dd>
         </dlentry>
         <dlentry>
           <dt>deployer_ext_net_id</dt>

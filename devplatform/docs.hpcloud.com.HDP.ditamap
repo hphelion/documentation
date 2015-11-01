@@ -2,8 +2,8 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
  
 <map xml:lang="en" linking="none" locktitle="no">
-<title>HP Helion Development Platform</title>
-  <topicref href="2.0/devplatform.index.dita" navtitle="HP Helion Development Platform 2.0"
+<title>HPE Helion Development Platform</title>
+  <topicref href="2.0/devplatform.index.dita" navtitle="HPE Helion Development Platform 2.0"
     locktitle="yes">
     <!--root level installation-->
     <topicref href="2.0/devplatform.whatsnew.dita" locktitle="yes" navtitle="What's New"/>
@@ -19,7 +19,7 @@
       <topicref href="2.0/installation/install_cloudsyaml.dita"
         navtitle="Create the clouds.yaml File" locktitle="yes"/>
       <topicref href="2.0/installation/devplatform_install_platform.dita"
-        navtitle="Install the HP Helion Development Service Installer" locktitle="yes"/>
+        navtitle="Install the HPE Helion Development Service Installer" locktitle="yes"/>
       <!--<topicref href="2.0/installation/devplatform_upgrade_to_1.3.dita" navtitle="Upgrading ALS from 1.2 to 2.0" locktitle="yes"/>-->
       <!--<topicref href="2.0/helion/admin/server/upgrade.dita" locktitle="yes" navtitle="Upgrade Existing ALS Clusters"/>-->
       <!--<topicref href="2.0/devplatform.troubleshooting.dita" locktitle="yes" navtitle="Installation Troubleshooting"/>-->
@@ -27,7 +27,7 @@
       <topicref href="2.0/installation/devplatform_install_ALS.dita"/>
       <topicref href="2.0/installation/devplatform_install_database.dita"/>
       <topicref href="2.0/installation/install_engine.dita"
-        navtitle="Install the HP Helion Code Engine (review only)" locktitle="yes"/>
+        navtitle="Install the HPE Helion Code Engine (review only)" locktitle="yes"/>
       <topicref href="2.0/installation/devplatform_install_messaging.dita"
         navtitle="Install the Messaging Service (review only)" locktitle="yes"/>
     </topichead>
@@ -91,12 +91,12 @@
           navtitle="Node MySQL Database Sample"/>
         <!--<topicref href="2.0/workbook/messaging/messaging.node.dita" locktitle="yes" navtitle="Node RabbitMQ Messaging Sample"/>-->
       </topichead>
-      <topichead navtitle="PHP Code Samples">
+      <topichead navtitle="PHPE Code Samples">
         <topicref href="2.0/workbook/helloworld/helloworld.php.dita" locktitle="yes"
-          navtitle="PHP Hello World Sample "/>
+          navtitle="PHPE Hello World Sample "/>
         <topicref href="2.0/workbook/database/database.php.dita" locktitle="yes"
-          navtitle="PHP MySQL Database Sample"/>
-        <!--<topicref href="2.0/workbook/messaging/messaging.php.dita" locktitle="yes" navtitle="PHP RabbitMQ Messaging Sample"/>-->
+          navtitle="PHPE MySQL Database Sample"/>
+        <!--<topicref href="2.0/workbook/messaging/messaging.php.dita" locktitle="yes" navtitle="PHPE RabbitMQ Messaging Sample"/>-->
       </topichead>
     </topicref>
     <!--windows stuff-->

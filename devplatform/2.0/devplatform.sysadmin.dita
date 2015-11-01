@@ -2,12 +2,12 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic853">
-  <title>HP Helion 2.0 Development Platform: Resources for IT Ops</title>
+  <title>HPE Helion 2.0 Development Platform: Resources for IT Ops</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Development Platform"/>
-      <othermeta name="product-version" content="HP Helion Development Platform 2.0"/>
+      <othermeta name="product-version" content="HPE Helion Development Platform"/>
+      <othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
       <othermeta name="role" content="Systems Administrator"/>
       <othermeta name="role" content="System Engineer"/>
       <othermeta name="role" content="Cloud Administrator"/>
@@ -21,7 +21,7 @@
   <body>
 
     <section id="installation"
-      ><!--<title>Installation</title><ul><li> <xref href="../../commercial/GA1/1.1commercial.index.dita">HP Helion <tm tmtype="reg">OpenStack</tm> Installation</xref> </li><li> <xref href="installation/devplatform_install_platform.dita">Development Platform Installation and Configuration</xref> </li><li> <xref href="installation/devplatform_install_ALS.dita">Application Lifecycle Service (ALS) Information</xref> </li><li> <xref href="helion/CLI/ALS_Client_Downloads.dita">Application Lifecycle Service Client installation</xref> </li></ul>--></section>
+      ><!--<title>Installation</title><ul><li> <xref href="../../commercial/GA1/1.1commercial.index.dita">HPE Helion <tm tmtype="reg">OpenStack</tm> Installation</xref> </li><li> <xref href="installation/devplatform_install_platform.dita">Development Platform Installation and Configuration</xref> </li><li> <xref href="installation/devplatform_install_ALS.dita">Application Lifecycle Service (ALS) Information</xref> </li><li> <xref href="helion/CLI/ALS_Client_Downloads.dita">Application Lifecycle Service Client installation</xref> </li></ul>--></section>
     <section id="administration">
       <title>Administration</title>
       <p>Access control is role-based, with each role granting permissions in either an organization

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic_amr_q3w_js">
-  <title>HP Helion 2.0 Development Platform: Deploying a Node.js Application</title>
+  <title>HPE Helion 2.0 Development Platform: Deploying a Node.js Application</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default-devplatform"/>
-      <othermeta name="product-version" content="HP Helion Development Platform"/>
-      <othermeta name="product-version" content="HP Helion Development Platform 2.0"/>
+      <othermeta name="product-version" content="HPE Helion Development Platform"/>
+      <othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
       <othermeta name="role" content="Systems Administrator"/>
       <othermeta name="role" content="System Engineer"/>
       <othermeta name="role" content="Cloud Administrator"/>
@@ -19,7 +19,7 @@
     </metadata>
   </prolog>
   <body>
-    <section><title>HP Helion 2.0 Development Platform: Deploying a Node.js Application</title>
+    <section><title>HPE Helion 2.0 Development Platform: Deploying a Node.js Application</title>
       <ph><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of
           Microsoft Corporation in the United States and/or other countries.</i></ph>
       <p>This tutorial demonstrates how to deploy a Node.js Application application. For the
@@ -37,7 +37,7 @@
       <ol>
         <li>Any edition of Visual Studio 2013, including the Community (free) edition. Visual Studio 2013 Community Edition can be downloaded 
           <xref type="external" format="html" href="http://go.microsoft.com/fwlink/?LinkId=517284">here</xref>.</li>
-        <li>An ALS cluster on an HP Helion OpenStack or Public Cloud environment. See the <xref
+        <li>An ALS cluster on an HPE Helion OpenStack or Public Cloud environment. See the <xref
             type="external" format="html"
             href="http://docs.hpcloud.com/devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.html"
             >Developer QuickStart</xref> for information on setting up an ALS cluster on Helion
