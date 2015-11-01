@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="object-storage">
-  <title>HP Helion OpenStack Object Storage (Swift)</title>
+  <title>HPE Helion OpenStack Object Storage (Swift)</title>
   <body>
     <p> </p>
     <p> A Object Storage (Swift) is Software Defined Storage (SDS) architecture, layered on top of
@@ -20,9 +20,9 @@
             scaled up as necessary. It can also be horizontally scalable to handle an increased
             number of simultaneous connections as well as large number of objects.</p></li>
       </ul></p>
-    <p>Based on OpenStack® Object Storage, the HP Helion OpenStack® Object Storage service provides
+    <p>Based on OpenStack® Object Storage, the HPE Helion OpenStack® Object Storage service provides
       a highly available, resilient, and scalable storage pool for unstructured data. It is highly
-      durable architecture with no single point of failure. Apart from this, HP Helion OpenStack
+      durable architecture with no single point of failure. Apart from this, HPE Helion OpenStack
       introduces a concept of cloud input model. In this release (<b>beta1</b>) we are providing
       three types of cloud model.</p>
     <p>

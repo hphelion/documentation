@@ -8,9 +8,9 @@
           <i>cf-mgmt </i>tool can use to import parameter values. You can download a <xref
           href="http://clients.als.hpcloud.com/1.3/config/bootstrap.yml" format="html"
           scope="external">sample file</xref>. Edit the file to fit your needs and save it in the
-        same directory where the cf-mgmt tool is installed. </p><codeblock>constructor-image-name: HP Helion Development Platform - Application Lifecycle Service Installer 1.2.0.282 
+        same directory where the cf-mgmt tool is installed. </p><codeblock>constructor-image-name: HPE Helion Development Platform - Application Lifecycle Service Installer 1.2.0.282 
 constructor-flavor: standard.xsmall 
-seed-node-image-name: HP Helion Development Platform - Application Lifecycle Service Seed Node 1.2.0.282 
+seed-node-image-name: HPE Helion Development Platform - Application Lifecycle Service Seed Node 1.2.0.282 
 core-flavor: standard.medium 
 cluster-title: &lt;My Cluster Title&gt; 
 cluster-prefix: &lt;My Cluster Prefix&gt;

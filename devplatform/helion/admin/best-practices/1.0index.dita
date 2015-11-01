@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic9421">
-<title>HP Helion 1.0 Development Platform: Best Practices</title>
+<title>HPE Helion 1.0 Development Platform: Best Practices</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.0"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.0"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Security Engineer"/>
 <othermeta name="role" content="ISV Developer"/>
@@ -14,8 +14,8 @@
 <othermeta name="role" content="Network Administrator"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.0"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.0"/>
 </metadata>
 </prolog>
 <body>
@@ -88,7 +88,7 @@ Relic</xref>
           type="section">
           <i>kato patch</i>
         </xref> command.</p>
-<p>To see a list of patches available from HP, run the following
+<p>To see a list of patches available from HPE run the following
 command on any Application Lifecycle Service VM:</p>
 <codeblock>kato patch status</codeblock>
 <p>The command will list the updates available. For example:</p>

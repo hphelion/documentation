@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="HP2.0LBaaS">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 LBaaS Configuration</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0 LBaaS Configuration</title>
   <body>
-    <p>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 LBaaS Configuration</p>
-    <p>This document describes the configuration process and requirements for the HP Helion
+    <p>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0 LBaaS Configuration</p>
+    <p>This document describes the configuration process and requirements for the HPE Helion
       <tm tmtype="reg">OpenStack</tm> 2.0 Load Balancing as a Service module.</p>
     <p>
       <ul id="LBaaSlist">
@@ -16,11 +16,11 @@
     
     <section id="Prerequisites">
       <title>Prerequisites</title>
-      <p>HP Helion <tm tmtype="reg">OpenStack</tm> must be installed. </p>
+      <p>HPE Helion <tm tmtype="reg">OpenStack</tm> must be installed. </p>
     </section>
     <section id="Configuration">
       <title>Configuration</title>
-      <p>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 LBaaS Configuration</p>
+      <p>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0 LBaaS Configuration</p>
       
       <p>You can create a new Load Balancer by executing the following command from the deployer.
         The load balancing service is installed by default and does not require installation before

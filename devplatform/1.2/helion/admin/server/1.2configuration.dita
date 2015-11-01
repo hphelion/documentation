@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic31232">
-<title>HP Helion 1.2 Development Platform: Detailed Configuration</title>
+<title>HPE Helion 1.2 Development Platform: Detailed Configuration</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.2"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
@@ -14,8 +14,8 @@
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Security Engineer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.2"/>
 </metadata>
 </prolog>
 <body>
@@ -703,7 +703,7 @@ the list. For example:</p>
 <codeblock>openssl s_client -connect api.stacka.to:443
 ---
 Certificate chain
- 0 s:/C=CA/ST=British Columbia/L=Vancouver/O=HP Software Inc./OU=Application Lifecycle Service/CN=*.stacka.to
+ 0 s:/C=CA/ST=British Columbia/L=Vancouver/O=HPE Software Inc./OU=Application Lifecycle Service/CN=*.stacka.to
    i:/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance CA-3
  1 s:/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance CA-3
    i:/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance EV Root CA

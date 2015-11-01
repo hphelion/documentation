@@ -2,10 +2,10 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic12031">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Monitoring Guide</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Monitoring Guide</title>
   <body>
     <section id="about">
-      <p>The HP Helion OpenStack Monitoring service leverages Monasca, which is a multi-tenant,
+      <p>The HPE Helion OpenStack Monitoring service leverages Monasca, which is a multi-tenant,
         scalable, fault-tolerant OpenStack monitoring service.</p>
       <p>For details on OpenStack Monasca, see <xref href="https://wiki.openstack.org/wiki/Monasca"
           format="html" scope="external">https://wiki.openstack.org/wiki/Monasca</xref></p>

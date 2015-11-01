@@ -2,16 +2,16 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the KVM
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the KVM
     Deployment</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
     </metadata>
   </prolog>
   <body>
@@ -21,7 +21,7 @@
       <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
     <p>After the Helion Lifecycle Management (HLM) is installed, the next task in installing the
         <xref href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM
-        deployment</xref> is to  deploy the HP Helion Openstack cloud.</p>
+        deployment</xref> is to  deploy the HPE Helion Openstack cloud.</p>
     <p><b>Note:</b> If you are installing the KVM + ESX deployment, see <xref
         href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing the KVM + ESX
         Deployment</xref>.</p>
@@ -46,7 +46,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
     <section id="configure-a-json-file-for-installation">
           <title>Provision the new cloud</title>
           <ol>
-        <li>Provision and configure your HP Helion OpenStack
+        <li>Provision and configure your HPE Helion OpenStack
             VM.<codeblock>hnewcloud  &lt;cloudname&gt; denver</codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create: <p>The cloud
                 name can be any combination of up to 63 digits, letters, and the <codeph>-</codeph>
@@ -67,7 +67,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
             contain a JSON template file <codeph>node-provision.json</codeph>. This template
             supplies input values to the <codeph>hprovision</codeph> script, later in the
             installation.</p></li>
-        <li>The HP Helion OpenStack deployment requires a JSON file. Edit
+        <li>The HPE Helion OpenStack deployment requires a JSON file. Edit
             <codeph>node-provision.json</codeph> file to change only the following fields:<table
             id="table_ycw_qrn_xs">
             <tgroup cols="2">
@@ -295,7 +295,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
     <section id="create-a-new-cloud-template-and-bring-the-cloud-nodes-up">
       <title>Provision the cloud nodes</title>
       <ol>
-        <li>Use the following script to start the provisioning of the HP Helion OpenStack cloud:
+        <li>Use the following script to start the provisioning of the HPE Helion OpenStack cloud:
             <codeblock>hprovision &lt;cloudname&gt; </codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create</li>
           </ul><p>This script will PXE boot the nodes specified in
@@ -309,7 +309,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
           VM.</p></li>
 
         <li>Configure the back-end drivers to enable management of the OpenStack Block Storage
-          volumes in the KVM region equipped with 3PAR and/or VSA storage arrays. The HP Block
+          volumes in the KVM region equipped with 3PAR and/or VSA storage arrays. The HPE Block
           Storage (Cinder) service allows you to configure multiple storage back-ends. Use the
           following steps to configure back-end support:<ol>
             <li>Change to the <codeph>cinder/blocks</codeph> directory:
@@ -319,11 +319,11 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
               using.</li>
             <li>Depending upon they type of storage you are using, edit one of the following files:
                 <ul id="ul_xcf_v24_1t">
-                <li>3PAR - if you plan to have only HP StoreServ (3PAR) storage attached to the KVM
+                <li>3PAR - if you plan to have only HPE StoreServ (3PAR) storage attached to the KVM
                   region, edit the <codeph>cinder_conf.hp3parSample</codeph> file.</li>
-                <li>VSA - if you plan to have only HP StoreVirtual VSA storage attached to the KVM
+                <li>VSA - if you plan to have only HPE StoreVirtual VSA storage attached to the KVM
                   region, edit the <codeph>cinder_conf.vsasample</codeph> file.</li>
-                <li>3PAR and VSA - if you plan to have HP StoreServ (3PAR) and HP StoreVirtual VSA
+                <li>3PAR and VSA - if you plan to have HPE StoreServ (3PAR) and HPE StoreVirtual VSA
                   storage attached to the KVM region, edit the
                     <codeph>cinder_conf.multiBackendSample</codeph> file, which contains variables
                   for both storage types. </li>
@@ -429,7 +429,7 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
           Password Patch</xref>.</p>
     </section>
     
-    <section><title>Apply the Reverse Path Filter Patch</title>After deploying the HP OpenStack
+    <section><title>Apply the Reverse Path Filter Patch</title>After deploying the HPE OpenStack
       cloud, you might not be able to access the Horizon interface and the OpenStack services cannot
       be accessed over the CAN network. <p>To prevent this problem, install a patch to configure the
         kernel to set the reverse path filter (<codeph>rp_filter</codeph>) to 1 in the
@@ -438,7 +438,7 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
           href="carrier-grade-install-rp-filter.dita#topic10581">Applying the Reverse Path Filter
           Patch</xref>.</p></section>
     
-    <section><title>Apply the Helion Dynamic Password Patch</title>The HP Helion OpenStack cloud
+    <section><title>Apply the Helion Dynamic Password Patch</title>The HPE Helion OpenStack cloud
       deployment creates a default password to log into the Helion interface. You can deploy a patch
       to configure the installer to generate a dynamic user name and password for the Helion
       interface. The user name can password can be retrieved from a configuration files. <p>For more
@@ -446,15 +446,15 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
           href="carrier-grade-install-helion-password-patch.dita#topic10581">Applying the Helion
           Dynamic Password Patch</xref>.</p></section>
     
-    <section><title>Apply the NIC bonding patch</title><p>HP Helion OpenStack Carrier Grade environments using NIC bonding, see the README in the download
+    <section><title>Apply the NIC bonding patch</title><p>HPE Helion OpenStack Carrier Grade environments using NIC bonding, see the README in the download
         or <xref href="carrier-grade-install-nic-patch.dita#topic10581">Applying the NIC Bonding
           Patch</xref> to install a required patch.</p></section>
     
-    <section><title>Deploy the HP Helion OpenStack cloud</title>
+    <section><title>Deploy the HPE Helion OpenStack cloud</title>
       <ol>
-        <li>Once you have correctly edited all the json files and applied the appropriate patches, run the HP Helion
+        <li>Once you have correctly edited all the json files and applied the appropriate patches, run the HPE Helion
           OpenStack Configuration Processor:
-            <codeblock>hcfgproc -d definition.json</codeblock><p>The HP Helion OpenStack
+            <codeblock>hcfgproc -d definition.json</codeblock><p>The HPE Helion OpenStack
             Configuration Processor is a script, called <codeph>hcfgproc</codeph>, that is
             incorporated into the installation environment. </p></li>
         <li>Review the CloudDiagram, <codeph>hosts.hf</codeph>, and
@@ -473,7 +473,7 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
     </section>
     <section id="patch-after">
       <title>Configure LDAP to enable CLI and use Keystone v3</title>
-      <p>By default, the HP Helion OpenStack Carrier Grade services are configured to use Keystone
+      <p>By default, the HPE Helion OpenStack Carrier Grade services are configured to use Keystone
         v2 authorization. The services need to be modified to use Keystone v3.  Users will not be
         able to execute OpenStack CLI commands until the specific changes are made on all three
         controller nodes in the non-KVM region. </p>

@@ -2,9 +2,9 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic2924">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Troubleshooting Logging</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Troubleshooting Logging</title>
   <body>
-    <p>HP Helion OpenStack is an OpenStack technology coupled with a version of <tm tmtype="reg"
+    <p>HPE Helion OpenStack is an OpenStack technology coupled with a version of <tm tmtype="reg"
         >Linux</tm> provided by HP. This topic describes all the known issues that you might
       encounter. To help you resolve these issues, we have provided possible solutions.</p>
     <section id="logging-best-practices">
@@ -89,7 +89,7 @@ yellow logstash-2015.02.11 5 1 27471823 0 13.6gb 13.6gb
     <section id="sos">
       <title>Contacting Customer Service</title>
       <p>If you need further assistance, contact <xref href="http://www.hpcloud.com/about/contact"
-          scope="external" format="html">HP Customer Support</xref>.</p>
+          scope="external" format="html">HPE Customer Support</xref>.</p>
       </section>
       -->
   </body>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5382">
-<title>HP Helion Development Platform: Developing In Ruby</title>
+<title>HPE Helion Development Platform: Developing In Ruby</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.0"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.0"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.0"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.0"/>
 </metadata>
 </prolog>
 <body>
@@ -20,9 +20,9 @@
 <!--PUBLISHED-->
  <!--./devplatform/helion/user/deploy/languages/1.0ruby.md-->
  <!--permalink: /als/v1/user/deploy/languages/ruby/--></p>
-<p>Whether you're deploying an application to the HP Helion Development Platform, a
+<p>Whether you're deploying an application to the HPE Helion Development Platform, a
 Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
-advantage of HP Helion <tm tmtype="reg">OpenStack</tm> to manage infrastructure or software services, tools
+advantage of HPE Helion <tm tmtype="reg">OpenStack</tm> to manage infrastructure or software services, tools
 to enable successful development are available in Ruby.</p>
 <!-- id="application-lifecycle-services" -->
 <section id="application-lifecycle-services"> <title>Application Lifecycle Services</title>
@@ -77,7 +77,7 @@ a console application.</p>
 </ul>
 <p>&lt;</p>
 <p>div class="section" id="hp-helion-sdk"&gt;</p>
-<section id="hp-helion-sdk"> <title>HP Helion SDK</title>
+<section id="hp-helion-sdk"> <title>HPE Helion SDK</title>
   <p>Ruby applications can communicate directly with the <xref href="../../../../../publiccloud/api.dita" >Helion APIs</xref> through a REST client
 or use the SDK. The SDK is designed to have a simple well documented API to simplify working with the
 services.</p>

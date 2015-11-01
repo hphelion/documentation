@@ -7,9 +7,9 @@
 <section>    <ol id="ol_ccd_l1b_dt">
       <li> Save this content in a text file named
           <i>bootstrap.yml</i><codeblock>file version: 1.2 
-constructor-image-name: HP Helion Development Platform - Application Lifecycle Service Installer 1.2.0.282
+constructor-image-name: HPE Helion Development Platform - Application Lifecycle Service Installer 1.2.0.282
 constructor-flavor: standard.xsmall 
-seed-node-image-name: HP Helion Development Platform - Application Lifecycle Service Seed Node 1.2.0.282 
+seed-node-image-name: HPE Helion Development Platform - Application Lifecycle Service Seed Node 1.2.0.282 
 core-flavor: standard.medium 
 cluster-title: &lt;My Cluster Title&gt;
 cluster-prefix: &lt;My Cluster Prefix&gt; 

@@ -2,18 +2,18 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="logging">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm>Flubber</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm>Flubber</title>
   <body>
-    <p>Because a typical HP Helion OpenStack cloud consists of multiple servers, locating a specific
+    <p>Because a typical HPE Helion OpenStack cloud consists of multiple servers, locating a specific
       log from a specific server can be difficult.</p>
-    <p>The HP Helion OpenStack Centralized Logging feature collects logs on a central system, rather
+    <p>The HPE Helion OpenStack Centralized Logging feature collects logs on a central system, rather
       than leaving the logs scattered across the network. The administrator can use a single Kibana
       interface to view log information in charts, graphs, tables, histograms, and other forms.</p>
-    <p>Centralized logging helps the administrator triage and troubleshoot the distributed HP Helion
+    <p>Centralized logging helps the administrator triage and troubleshoot the distributed HPE Helion
       OpenStack cloud deployment from a single location. The admin is not required to access the
       several remote servers (SSH) to view the individual log files.</p>
-    <p>In addition to each of the HP Helion services, Centralized Logging also processes logs for
-      the following HP Helion OpenStack features:</p>
+    <p>In addition to each of the HPE Helion services, Centralized Logging also processes logs for
+      the following HPE Helion OpenStack features:</p>
     <ul>
       <li>HAProxy</li>
       <li>syslog</li>
@@ -46,7 +46,7 @@
     <section id="install">
       <title>Installation</title>
       <image placement="break" href="../images/Drawing2.svg" id="image_g3r_jkc_gt" width="500"/>
-      <p>The Centralized Logging feature is automatically installed as part of the HP Helion
+      <p>The Centralized Logging feature is automatically installed as part of the HPE Helion
         OpenStack installation.</p>
       <p>No specific configuration is required to use Centralized Logging. However, you can tune or
         configure the individual components as needed for your environment.</p>

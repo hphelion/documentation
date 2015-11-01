@@ -5,7 +5,7 @@
   <body>
     <p>This page provides detailed instructions on the configuration of the input model for HP
       Helion OpenStack Object Storage and validating the object storage cloud model. </p>
-    <p> Before starting the Swift deployment ensure that HP Helion OpenStack deployer node is
+    <p> Before starting the Swift deployment ensure that HPE Helion OpenStack deployer node is
       successfully installed.</p>
     <section id="setting-up-cloud"><b>Setting up the Cloud Model</b></section>
     <section>
