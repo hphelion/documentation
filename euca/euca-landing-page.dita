@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic942">
-<title>HP Helion <tm tmtype="reg">Eucalyptus</tm> Documentation Home</title>
+<title>HPE Helion <tm tmtype="reg">Eucalyptus</tm> Documentation Home</title>
 <titlealts>
-<searchtitle>HP Helion Eucalyptus</searchtitle>
+<searchtitle>HPE Helion Eucalyptus</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
@@ -15,10 +15,10 @@
 <!--PUBLISHED-->
  <!--./euca/euca-landing-page.md-->
  <!--permalink: /eucalyptus/--></p>
-<p>HP Helion Eucalyptus is open source software for building AWS-compatible hybrid clouds using IT resources that you control. It gives IT the ability to provide the same self-service capabilities users demand without sacrificing control over data security and while keeping cloud costs down. Compatibility with the AWS API enables agile development teams to programmatically self-provision resources using the same tools and processes used with the public cloud.</p>
-<p>See <xref href="https://www.eucalyptus.com/docs/eucalyptus/4.1.0/index.html#release-notes/4.1.0/4.1.0_rn_features.html" type="section" scope="external" format="html" >What's New in HP Helion Eucalyptus 4.1</xref>.</p>
-<section id="get-started-with-hp-helion-eucalyptus"> <title>Get Started with HP Helion Eucalyptus</title>
-<p>A wealth of content and services are available to help you successfully install, configure and use your HP Helion Eucalyptus hybrid cloud.</p>
+<p>HPE Helion Eucalyptus is open source software for building AWS-compatible hybrid clouds using IT resources that you control. It gives IT the ability to provide the same self-service capabilities users demand without sacrificing control over data security and while keeping cloud costs down. Compatibility with the AWS API enables agile development teams to programmatically self-provision resources using the same tools and processes used with the public cloud.</p>
+<p>See <xref href="https://www.eucalyptus.com/docs/eucalyptus/4.1.0/index.html#release-notes/4.1.0/4.1.0_rn_features.html" type="section" scope="external" format="html" >What's New in HPE Helion Eucalyptus 4.1</xref>.</p>
+<section id="get-started-with-hp-helion-eucalyptus"> <title>Get Started with HPE Helion Eucalyptus</title>
+<p>A wealth of content and services are available to help you successfully install, configure and use your HPE Helion Eucalyptus hybrid cloud.</p>
 <p>Visit these links to learn more:</p>
 <ul>
 <li>

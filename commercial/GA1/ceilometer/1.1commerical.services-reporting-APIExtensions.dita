@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2539">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Metering Service (Ceilometer): API Extensions</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1: Metering Service (Ceilometer): API Extensions</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -17,7 +17,7 @@
  <!--./commercial/GA1/ceilometer/1.1commerical.services-reporting-APIExtensions.md-->
  <!--permalink: /helion/openstack/1.1/services/reporting/APIextensions/--></p>
 <p>APIs can be extended to provide additional functionality.</p>
-<p>HP has created and added a Health-Check API for the Ceilometer Reporting API. This Health-Check provides more response options when assessing the availability and healthiness of the Ceilometer service.</p>
+<p>HPE has created and added a Health-Check API for the Ceilometer Reporting API. This Health-Check provides more response options when assessing the availability and healthiness of the Ceilometer service.</p>
 <section id="health-check-api"> <title>Health Check API</title>
 <p>Currently the HA Proxy (Load Balancer) can validate that there is IP/HTTP connectivity with the service. If connected, it is safe to assume that it is alive; however, this assumption is not a guarantee that the service is actually functional. It could be alive but completely unable to retrieve data or perform write operations. This API extension further assesses the health of the service beyond the basic connectivity check.</p>
 <p>

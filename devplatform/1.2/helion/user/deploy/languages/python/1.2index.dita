@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic11550">
-<title>HP Helion 1.2 Development Platform: Developing In Python</title>
+<title>HPE Helion 1.2 Development Platform: Developing In Python</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.2"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.2"/>
 </metadata>
 </prolog>
 <body>
@@ -20,8 +20,8 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/user/deploy/languages/python/1.2index.md-->
  <!--permalink: /helion/devplatform/1.2/als/user/deploy/languages/python/--></p>
-<p>Whether you're deploying an application to the HP Helion Development Platform, a Cloud Foundry
-      based Platform as a Service (PaaS), or writing applications that take advantage of HP <tm
+<p>Whether you're deploying an application to the HPE Helion Development Platform, a Cloud Foundry
+      based Platform as a Service (PaaS), or writing applications that take advantage of HPE <tm
         tmtype="reg">Helion <tm tmtype="reg">OpenStack</tm></tm> to manage infrastructure or software services, tools to
       enable successful development are available in Python.</p>
 <section id="application-lifecycle-services"> <title>Application Lifecycle Services</title>
@@ -56,8 +56,8 @@
         services.</p>
 
 </section>
-<section id="controlling-hp-helion-with-your-application"> <title>Controlling HP Helion with your Application</title>
-<p>If your Python application is going to control HP Helion resources, it can communicate directly
+<section id="controlling-hp-helion-with-your-application"> <title>Controlling HPE Helion with your Application</title>
+<p>If your Python application is going to control HPE Helion resources, it can communicate directly
   with the <xref href="../../../../../../../publiccloud/api.dita" 
           outputclass="reference external">Helion REST APIs</xref> with a client or the Python SDK.
         Currently, the Python SDK is very limited in features, so you will probably be forced to use

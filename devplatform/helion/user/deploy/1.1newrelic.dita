@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5455">
-<title>HP Helion 1.1 Development Platform: New Relic Monitoring</title>
+<title>HPE Helion 1.1 Development Platform: New Relic Monitoring</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.1"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.1"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -202,7 +202,7 @@ directory of your application along with WEB-INF folder.</p>
 GitHub</xref>.</p>
 </section>
 <section id="new-relic-for-php"> <title>New Relic for PHP</title>
-<p>The New Relic agent PHP libraries are pre-installed on Application Lifecycle Service. To add
+<p>The New Relic agent PHPE libraries are pre-installed on Application Lifecycle Service. To add
 monitoring, you need to add an agent configuration file to the root
 directory of the application and make some modifications to
 <i>manifest.yml</i>.</p>

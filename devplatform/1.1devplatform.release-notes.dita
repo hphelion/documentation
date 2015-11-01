@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13767">
-<title>HP Helion 1.1 Development Platform: Release Notes for HP Helion Development Platform 1.1</title>
+<title>HPE Helion 1.1 Development Platform: Release Notes for HPE Helion Development Platform 1.1</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.1"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="System Engineer"/>
 <othermeta name="role" content="Cloud Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version3" content="HP Helion Development Platform 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version3" content="HPE Helion Development Platform 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -28,7 +28,7 @@
 <p>
 
 </p>
-<p>The following release notes are for the HP Helion Development Platform 1.1 released in February 2015. We hope you enjoy the release!</p>
+<p>The following release notes are for the HPE Helion Development Platform 1.1 released in February 2015. We hope you enjoy the release!</p>
 <ul>
 <li>
 <xref type="section" href="#topic13767/DPnotes">Development Platform Release Notes</xref>
@@ -41,9 +41,9 @@
 </li>
 </ul>
 <section id="DPnotes"> <title>Release Notes</title>
-<p>The following features have been changed in the HP Helion Development Platform:</p>
+<p>The following features have been changed in the HPE Helion Development Platform:</p>
 <p>
-<b><tm tmtype="reg">OpenStack</tm> Juno support</b> <!--A BR tag was used here in the original source.-->All of the <xref href="../commercial/GA1/1.1commerical.services-overview.dita#Openstack" type="section" scope="external"  >HP Helion OpenStack services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" >OpenStack Juno</xref>.</p>
+<b><tm tmtype="reg">OpenStack</tm> Juno support</b> <!--A BR tag was used here in the original source.-->All of the <xref href="../commercial/GA1/1.1commerical.services-overview.dita#Openstack" type="section" scope="external"  >HPE Helion OpenStack services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" >OpenStack Juno</xref>.</p>
 <p>
 <b>Updated Command Line Client</b> <!--A BR tag was used here in the original source.-->
 The <xref href="../devplatform/helion/CLI/1.1ALS_Client_Reference.dita" >ALS Cluster Management Tool</xref> (cfmgmt.exe). has been updated to provide more options for managing clusters from the command line.</p>

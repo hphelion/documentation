@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2745">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: LDAP Domain Configuration</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1: LDAP Domain Configuration</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,7 +15,7 @@
 <p>
   <!--A BR tag was used here in the original source.-->
 </p>
-<p>The HP Helion OpenStack Identity Service, known as Keystone, supports the option to specify identity driver configurations on a domain-by-domain basis, allowing, for example, a specific domain to have its own LDAP server. By default, the option to configure domain-specific drivers is enabled via the Helion installer as the following:</p>
+<p>The HPE Helion OpenStack Identity Service, known as Keystone, supports the option to specify identity driver configurations on a domain-by-domain basis, allowing, for example, a specific domain to have its own LDAP server. By default, the option to configure domain-specific drivers is enabled via the Helion installer as the following:</p>
 <codeblock>
   <codeph>[identity]
 domain_specific_drivers_enabled = True

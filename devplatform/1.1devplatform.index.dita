@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5147">
-<title>HP Helion 1.1 Development Platform: Documentation</title>
+<title>HPE Helion 1.1 Development Platform: Documentation</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.1"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="System Engineer"/>
 <othermeta name="role" content="Cloud Administrator"/>
@@ -15,8 +15,8 @@
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -24,12 +24,12 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.1devplatform.index.md-->
  <!--permalink: /helion/devplatform/1.1/--></p>
-<p> Welcome! The HP Helion Development Platform is a Platform-as-a-Service (PaaS) that helps
+<p> Welcome! The HPE Helion Development Platform is a Platform-as-a-Service (PaaS) that helps
       developers build great cloud-native applications across private and public clouds. Based on
         <xref href="http://cloudfoundry.org/index.html" scope="external" format="html"><tm
           tmtype="tm">Cloud Foundry</tm></xref> and fully integrated with <xref
-        href="../commercial/GA1/1.1commercial.index.dita">HP <tm tmtype="reg">Helion
-        <tm tmtype="reg">OpenStack</tm></tm></xref>, the HP Helion Development Platform is open and interoperable,
+        href="../commercial/GA1/1.1commercial.index.dita">HPE <tm tmtype="reg">Helion
+        <tm tmtype="reg">OpenStack</tm></tm></xref>, the HPE Helion Development Platform is open and interoperable,
       ensuring that developers can focus on building the right app for any environment.</p>
 <p>This documentation will help you get up to speed on the  Helion Development Platform as a Developer or Administrator.</p>
 <section id="platform-overview"> <title>Platform Overview</title>
@@ -43,7 +43,7 @@
   <p>The Application Lifecycle Service is <xref href="1.1devplatform_commercial_install.dita#topic24073_1/install-als" type="section" scope="external"  >installed</xref> as part of the Helion Development Platform. You can easily <xref href="1.1devplatform.deploy-ALS.dita" >create and configure</xref> Application Lifecycle Service clusters from the Horizon management console, or explore this service by setting up a <xref href="1.2/1.2devplatform.ALS-developer-trial-quick-start.dita" >Quick Start Developer Trial</xref> in the public cloud.</p>
 </section>
 <section id="application-services"> <title>Application Services</title>
-<p>The HP Helion Development Platform provides additional Application Services that integrate into the Application Lifecycle Service. These currently include:</p>
+<p>The HPE Helion Development Platform provides additional Application Services that integrate into the Application Lifecycle Service. These currently include:</p>
 </section>
 <section id="database-as-a-service"> <title>Database as a Service</title>
 <p>The <xref href="1.1devplatform.database-instance.dita" >Database as a Service (DBaaS)</xref> provides lifecycle services for MySQL database instances. Lifecycle services includes provisioning, configuration, patching, backups, restores, and monitoring that can be administered from either a CLI interface, RESTful APIs or the Horizon dashboard.</p>
@@ -125,7 +125,7 @@
             href="1.2/1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952">Quick Start
             Developer Trial</xref> (sandbox) on the public cloud.</li>
 <li>
-<b>Standard Installation</b>: Install a <xref href="../commercial/GA1/1.1commercial.install-GA-overview.dita" >Commercial HP Helion OpenStack</xref> cloud and then <xref href="1.1devplatform_commercial_install.dita" >install</xref> the Helion Development Platform.  </li>
+<b>Standard Installation</b>: Install a <xref href="../commercial/GA1/1.1commercial.install-GA-overview.dita" >Commercial HPE Helion OpenStack</xref> cloud and then <xref href="1.1devplatform_commercial_install.dita" >install</xref> the Helion Development Platform.  </li>
 </ul>
 </section>
 </body>

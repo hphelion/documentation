@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4604">
-<title>HHP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Glance-Ceph Interoperability</title>
+<title>HHPE Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Glance-Ceph Interoperability</title>
 <titlealts>
-<searchtitle>HP Helion Openstack 1.1: Glance-Ceph Interoperability</searchtitle>
+<searchtitle>HPE Helion Openstack 1.1: Glance-Ceph Interoperability</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Engineer"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -18,8 +18,8 @@
 <othermeta name="role" content="Cloud Administrator"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -135,7 +135,7 @@ glance image-list
 <li>Enable logging in <codeph>glance-api.conf</codeph>  </li>
 <li>Restart Glance services and re-run the problem step. </li>
 <li>Collect Glance debug logs in the  <codeph>/var/log/glance</codeph> directory </li>
-<li>Contact HP support team for inputs. </li>
+<li>Contact HPE support team for inputs. </li>
 </ul>
 </li>
 </ol>
@@ -199,7 +199,7 @@ For example:
 <li>Enable logging in <codeph>glance-api.conf</codeph> and <codeph>cinder.conf</codeph>. </li>
 <li>Restart Glance and Cinder services and re-run problem step. </li>
 <li>Collect Glance debug logs in <codeph>/var/log/glance</codeph> directory and Cinder debug logs in <codeph>/var/log/upstart</codeph> directory.</li>
-<li>Contact HP support team for inputs.</li>
+<li>Contact HPE support team for inputs.</li>
 </ul>
 </li>
 </ol>

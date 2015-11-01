@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic310608">
-<title>HP Helion Public Cloud Compute Service API Reference</title>
+<title>HPE Helion Public Cloud Compute Service API Reference</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -17,8 +17,8 @@
 <p>
 <b>Document Version:</b> 1.9</p>
 <section id="1-overview"> <title>1. Overview</title>
-<p>This document describes the API for the HP Helion Public Cloud Compute Service. HP Helion Public Cloud Cloud Compute is based on <tm tmtype="reg">OpenStack</tm> Nova.</p>
-<p>We will be referring to HP Helion Public Cloud Compute service in this document as simply Compute or Compute service.</p>
+<p>This document describes the API for the HPE Helion Public Cloud Compute Service. HPE Helion Public Cloud Cloud Compute is based on <tm tmtype="reg">OpenStack</tm> Nova.</p>
+<p>We will be referring to HPE Helion Public Cloud Compute service in this document as simply Compute or Compute service.</p>
 </section>
 <section id="11-api-maturity-level"> <title>1.1 API Maturity Level</title>
 <p>
@@ -103,7 +103,7 @@
 <row>
 <entry align="left">1.9</entry>
   <entry align="left">May 2014</entry>
-  <entry align="left">HP Helion updates</entry>
+  <entry align="left">HPE Helion updates</entry>
 </row>
 </tbody>
 </tgroup>
@@ -294,7 +294,7 @@ Servers which are created with the Public Cloud Console are automatically assign
 </section>
 <section id="Section2_1_5_3"> <title>2.1.5.3 CloudInit</title>
 <p>
-<xref href="https://help.ubuntu.com/community/CloudInit" scope="external" format="html" >CloudInit</xref> is a set of scripts that are run when an image boots. These scripts are provided by an Ubuntu package that is installed in the public Linux images provided by HP Helion. (CloudInit is not supported for <tm tmtype="reg">Windows</tm> images.) The scripts are controlled by a configuration which is described in <xref href="http://bazaar.launchpad.net/~cloud-init-dev/cloud-init/trunk/view/head:/doc/examples/cloud-config.txt" scope="external" format="html" >cloud-config</xref>. The configuration is the result of a merge of information from multiple sources including configuration files stored in the image, configuration parameters on the kernel command line, configuration information provided by Nova and configuration information provided by the user when creating the instance.</p>
+<xref href="https://help.ubuntu.com/community/CloudInit" scope="external" format="html" >CloudInit</xref> is a set of scripts that are run when an image boots. These scripts are provided by an Ubuntu package that is installed in the public Linux images provided by HPE Helion. (CloudInit is not supported for <tm tmtype="reg">Windows</tm> images.) The scripts are controlled by a configuration which is described in <xref href="http://bazaar.launchpad.net/~cloud-init-dev/cloud-init/trunk/view/head:/doc/examples/cloud-config.txt" scope="external" format="html" >cloud-config</xref>. The configuration is the result of a merge of information from multiple sources including configuration files stored in the image, configuration parameters on the kernel command line, configuration information provided by Nova and configuration information provided by the user when creating the instance.</p>
 <p>The scripts that are run by CloudInit perform a number of different tasks including:</p>
 <ul>
 <li>setting a default locale</li>
@@ -326,7 +326,7 @@ Servers which are created with the Public Cloud Console are automatically assign
 }
 </codeph>
 </codeblock>
-<p>The path must specify a directory in the root file system, otherwise the file will be ignored. For example, files cannot be injected in /tmp for the images provided by HP as /tmp is not in the root filesystem in these images. If a <xref type="section" href="#topic310608/ConfigurationDrive">Configuration Drive</xref> is created when the server is created, the path is relative to the file system on the configuration drive, rather than the root file system.</p>
+<p>The path must specify a directory in the root file system, otherwise the file will be ignored. For example, files cannot be injected in /tmp for the images provided by HPE as /tmp is not in the root filesystem in these images. If a <xref type="section" href="#topic310608/ConfigurationDrive">Configuration Drive</xref> is created when the server is created, the path is relative to the file system on the configuration drive, rather than the root file system.</p>
 <p>The <i>maxPersonality</i> quota limits the number of files which can be injected into a servers file system. The maximum size of the decoded file contents is restricted by the <i>maxPersonalitySize</i> quota.
 The maximum length of the file path is limited to 255 bytes.</p>
 <p>File injection is not supported for Windows images.</p>
@@ -339,13 +339,13 @@ The maximum length of the file path is limited to 255 bytes.</p>
 <li>the user's ssh public key</li>
 </ul>
 <p>The server metadata is just the metadata that is provided as the value <i>metadata</i> parameter to <xref type="section" href="#topic310608/createServer">Create Server</xref>. The injected file data is provided as the <i>personality</i> parameter to <xref type="section" href="#topic310608/createServer">Create Server</xref>. The user's public key is specified using the <i>key_name</i> parameter to <xref type="section" href="#topic310608/createServer">Create Server</xref>. These values are normally injected into the servers root file system when it is created. When a configuration drive is specified, they are injected into the filesystem on the configuration drive instead. Note that it is still possible to login to a server created in this manner as long as the server image includes CloudInit, since CloudInit will properly initialize authorized_keys with the user's public ssh_key independently of the injection of this value into the image that takes place when the server is created.</p>
-<p>It is also possible to provide an imageRef as the value of the <i>config_drive</i> parameter. However, this is not useful in the Compute environment as all images are either HP publicly available images or snapshots, neither of which can be usefully used as a configuration drive.</p>
+<p>It is also possible to provide an imageRef as the value of the <i>config_drive</i> parameter. However, this is not useful in the Compute environment as all images are either HPE publicly available images or snapshots, neither of which can be usefully used as a configuration drive.</p>
 <p>Note that the configuration drive is an API extension in later versions of OpenStack Nova.</p>
 <p>The configuration drive is not supported for servers running Windows images.</p>
 </section>
 <section id="Images"> <title>2.1.6 Images</title>
 <p>Servers are booted from disk images which are specified at the time the server is created. There are three different types of disk images: machine images, kernel images and ramdisk images. The machine image contains the root file system for the image. The kernel image is the image that is loaded when the server is launched, and the ramdisk contains drivers used to boot the server. The latter two image types are optional. The machine image is always required, but the kernel and ramdisk may or may not be required depending on how the images were built.</p>
-<p>Images may be public or private. Public images are provided by HP and are available to all users. Private images are created by taking a snapshot of the root file system of a running server using the <xref type="section" href="#topic310608/createImage">Create Image</xref> API method. Images have an attribute which distinguishes public images provided by HP from private images (snapshots) created by the user. A user can access all the public images and any private images he owns. The images available for use can be listed using the <xref type="section" href="#topic310608/listImages">List Images</xref> API method.</p>
+<p>Images may be public or private. Public images are provided by HPE and are available to all users. Private images are created by taking a snapshot of the root file system of a running server using the <xref type="section" href="#topic310608/createImage">Create Image</xref> API method. Images have an attribute which distinguishes public images provided by HPE from private images (snapshots) created by the user. A user can access all the public images and any private images he owns. The images available for use can be listed using the <xref type="section" href="#topic310608/listImages">List Images</xref> API method.</p>
 </section>
 <section id="Section2_1_6_1"> <title>2.1.6.1 Snapshots</title>
 <p>Image snapshots are copies of the (virtual) disk partition containing the root file system that can be created from a running VM using <xref type="section" href="#topic310608/createImage">Create Image</xref>. A snapshot is linked to the same kernel and ramdisk as the image which was originally booted on the VM.  In the listing above, foo100-snap and foo-snap are snapshots created by the user.</p>
@@ -5918,7 +5918,7 @@ X-Compute-Request-Id: req-14073540-26dd-4a14-9cc0-af07acba27d7
 metadata: {
     com.ubuntu.cloud__1__milestone: "release"
     com.hp__1__os_distro: "com.ubuntu"
-    description: "Ubuntu Server 14.04 LTS (amd64 20140416.1) for HP Public Cloud. Ubuntu Server is the world's most popular Linux for cloud environments. Updates and patches for Ubuntu 14.04 LTS will be available until 2019-04-17. Ubuntu Server is the perfect platform for all workloads from web applications to NoSQL databases and Hadoop. More information regarding Ubuntu Cloud is available from http://www.ubuntu.com/cloud and instructions for using Juju to deploy workloads are available from http://juju.ubuntu.com EULA: http://www.ubuntu.com/about/about-ubuntu/licensing Privacy Policy: http://www.ubuntu.com/privacy-policy"
+    description: "Ubuntu Server 14.04 LTS (amd64 20140416.1) for HPE Public Cloud. Ubuntu Server is the world's most popular Linux for cloud environments. Updates and patches for Ubuntu 14.04 LTS will be available until 2019-04-17. Ubuntu Server is the perfect platform for all workloads from web applications to NoSQL databases and Hadoop. More information regarding Ubuntu Cloud is available from http://www.ubuntu.com/cloud and instructions for using Juju to deploy workloads are available from http://juju.ubuntu.com EULA: http://www.ubuntu.com/about/about-ubuntu/licensing Privacy Policy: http://www.ubuntu.com/privacy-policy"
     com.ubuntu.cloud__1__suite: "trusty"
     com.ubuntu.cloud__1__serial: "20140416.1"
     com.hp__1__bootable_volume: "True"
@@ -5946,7 +5946,7 @@ X-Compute-Request-Id: req-6cc0b834-d36c-4673-a7ab-d56207c541e8
 &lt;metadata&gt;
     &lt;meta key="com.ubuntu.cloud__1__milestone"&gt;release&lt;/meta&gt;
     &lt;meta key="com.hp__1__os_distro"&gt;com.ubuntu&lt;/meta&gt;
-    &lt;meta key="description"&gt;Ubuntu Server 14.04 LTS (amd64 20140416.1) for HP Public Cloud. Ubuntu Server is the world's most popular Linux for cloud environments. Updates and patches for Ubuntu 14.04 LTS will be available until 2019-04-17. Ubuntu Server is the perfect platform for all workloads from web applications to NoSQL databases and Hadoop. More information regarding Ubuntu Cloud is available from http://www.ubuntu.com/cloud and instructions for using Juju to deploy workloads are available from http://juju.ubuntu.com EULA: http://www.ubuntu.com/about/about-ubuntu/licensing Privacy Policy: http://www.ubuntu.com/privacy-policy&lt;/meta&gt;
+    &lt;meta key="description"&gt;Ubuntu Server 14.04 LTS (amd64 20140416.1) for HPE Public Cloud. Ubuntu Server is the world's most popular Linux for cloud environments. Updates and patches for Ubuntu 14.04 LTS will be available until 2019-04-17. Ubuntu Server is the perfect platform for all workloads from web applications to NoSQL databases and Hadoop. More information regarding Ubuntu Cloud is available from http://www.ubuntu.com/cloud and instructions for using Juju to deploy workloads are available from http://juju.ubuntu.com EULA: http://www.ubuntu.com/about/about-ubuntu/licensing Privacy Policy: http://www.ubuntu.com/privacy-policy&lt;/meta&gt;
     &lt;meta key="com.ubuntu.cloud__1__suite"&gt;trusty&lt;/meta&gt;
     &lt;meta key="com.ubuntu.cloud__1__serial"&gt;20140416.1&lt;/meta&gt;
     &lt;meta key="com.hp__1__bootable_volume"&gt;True&lt;/meta&gt;

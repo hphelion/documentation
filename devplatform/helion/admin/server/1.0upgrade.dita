@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4886">
-<title>HP Helion 1.0 Development Platform: Upgrading Application Lifecycle Service</title>
+<title>HPE Helion 1.0 Development Platform: Upgrading Application Lifecycle Service</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.0"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.0"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
@@ -14,8 +14,8 @@
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Security Engineer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.0"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.0"/>
 </metadata>
 </prolog>
 <body>
@@ -165,7 +165,7 @@ a newer version of Application Lifecycle Service is available (or if the <codeph
   <b>Note</b>
 </p>
 <p>Using the <codeph>--force</codeph> option is not recommended unless
-you have been directed to do so by HP Application Lifecycle Service Support.</p>
+you have been directed to do so by HPE Application Lifecycle Service Support.</p>
 <p>A pre-upgrade validation check is performed on the node to check that it
 is in working order before any upgrade actions are performed. If this
 validation fails then the upgrade process is stopped. These validation
@@ -177,7 +177,7 @@ upgrade process by using the <codeph>--ignore-inspect-failures</codeph> option.<
 <p>Use this option is only if you get failures running
 <codeph>kato node inspect</codeph> that are known to be caused by
 systems outside of the control of Application Lifecycle Service, or if directed by
-HP Application Lifecycle Service Support.</p>
+HPE Application Lifecycle Service Support.</p>
 <p>Next, the upgrade packages are downloaded and a validation check is
 performed on the files to make sure everything required for an upgrade
 is available. If the node is a DEA it is then

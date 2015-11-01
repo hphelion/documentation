@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4111">
-  <title>HP Helion Public Cloud CLI Software for <tm tmtype="reg">Windows</tm> PowerShell: Block Storage Examples</title>
+  <title>HPE Helion Public Cloud CLI Software for <tm tmtype="reg">Windows</tm> PowerShell: Block Storage Examples</title>
   <prolog>
 <metadata>
   <othermeta name="layout" content="default"/>
@@ -12,7 +12,7 @@
   <!--PUBLISHED-->
   <!--./publiccloud/cli.windows.2.block-storage.md-->
   <!--permalink: /publiccloud/cli/windows/block-storage/--></p>
-<p>This page provides you some examples of how to use the various commands (sometimes called "cmdlets") for HP Helion Public Cloud CLI software for Windows PowerShell implementation of Compute.</p>
+<p>This page provides you some examples of how to use the various commands (sometimes called "cmdlets") for HPE Helion Public Cloud CLI software for Windows PowerShell implementation of Compute.</p>
 <ul>
   <li>
 <xref type="section" href="#topic4111/Navigation">Navigation</xref>
@@ -25,7 +25,7 @@
   </li>
 </ul>
 <section id="Navigation"> <title>Navigation</title>
-<p>To execute HP Helion Public Cloud commands in Windows PowerShell, first open a Windows PowerShell window; under the Start menu, it is typically under <codeph>All Programs &gt; Accessories &gt; Windows PowerShell</codeph>.  Select the shell appropriate to your system, either the 64-bit or 32-bit version.  Enter the HP Helion Public Cloud Services CLI by entering:</p>
+<p>To execute HPE Helion Public Cloud commands in Windows PowerShell, first open a Windows PowerShell window; under the Start menu, it is typically under <codeph>All Programs &gt; Accessories &gt; Windows PowerShell</codeph>.  Select the shell appropriate to your system, either the 64-bit or 32-bit version.  Enter the HPE Helion Public Cloud Services CLI by entering:</p>
 <codeblock>PS C:&gt; cd HPCS:</codeblock>
 <p>Once in the HPCS area, you can move around as if you were in a standard directory structure.  For example, entering the <b>ls</b> command:</p>
 <codeblock>PS HPCS:\&gt; ls</codeblock>

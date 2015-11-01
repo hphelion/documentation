@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic14215">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Updating the Overcloud</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.0: Updating the Overcloud</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -23,7 +23,7 @@ If the Readme.txt does not list any overcloud nodes, the update is complete. -->
 
 <ul>
 <li>
-<xref type="section" href="#topic14215/devplatstop">Stop the HP Helion Development Platform</xref>
+<xref type="section" href="#topic14215/devplatstop">Stop the HPE Helion Development Platform</xref>
 </li>
 </ul>
 </li>
@@ -34,7 +34,7 @@ If the Readme.txt does not list any overcloud nodes, the update is complete. -->
 <xref type="section" href="#topic14215/validate">Validate the update</xref>
 </li>
 <li>
-<xref type="section" href="#topic14215/devplatstart">Restart the HP Helion Development Platform</xref>
+<xref type="section" href="#topic14215/devplatstart">Restart the HPE Helion Development Platform</xref>
 </li>
 <li>
 <xref type="section" href="#topic14215/next-steps">Next Steps</xref>
@@ -121,8 +121,8 @@ mkdir -p /var/log/ansible
 </li>
 </ul>
 </section>
-<section id="devplatstop"> <title>Stop the HP Helion Development Platform</title>
-<p>Before you run the patch update on the overcloud, you must stop the HP Helion Development Platform service using a script. See <xref href="../../commercial/GA1/1.0commercial.update-101-devplat.stopstart.dita" >Stopping and Starting the Development Platform Services</xref>. After the update is complete, you can execute another script to <xref type="section" href="#topic14215/devplatstart">restart the service</xref>.</p>
+<section id="devplatstop"> <title>Stop the HPE Helion Development Platform</title>
+<p>Before you run the patch update on the overcloud, you must stop the HPE Helion Development Platform service using a script. See <xref href="../../commercial/GA1/1.0commercial.update-101-devplat.stopstart.dita" >Stopping and Starting the Development Platform Services</xref>. After the update is complete, you can execute another script to <xref type="section" href="#topic14215/devplatstart">restart the service</xref>.</p>
 </section>
 <section id="update"> <title>Update the overcloud</title>
 <p>There are two methods to update the overcloud:</p>
@@ -194,7 +194,7 @@ mkdir -p /var/log/ansible
 <li>Controller nodes (0,1) </li>
 <li>Compute service </li>
 <li>Object Operations (Swift) service </li>
-<li>HP StoreVirtual VSA (for KVM only)</li>
+<li>HPE StoreVirtual VSA (for KVM only)</li>
 </ol>
 <p>All Ansible commands must be run in the SSH session setup that has <codeph>ansible</codeph> in the command prompt.  Validation techniques may be run from any seed SSH session.</p>
 <p>Run through the appropriate commands below for this order.</p>
@@ -456,10 +456,10 @@ To manage the VMs launched using the older Compute proxy, use the same hostname 
 <p>Log in to the overcloud ControllerMgmt node.</p>
 </li>
 <li>
-<p>Delete the HP VCN L2 agents:</p>
+<p>Delete the HPE VCN L2 agents:</p>
 
 <codeblock>
-<codeph>neutron agent-delete &lt;HP VCN L2 agent ID&gt;
+<codeph>neutron agent-delete &lt;HPE VCN L2 agent ID&gt;
 </codeph>
 </codeblock>
 </li>
@@ -471,11 +471,11 @@ To manage the VMs launched using the older Compute proxy, use the same hostname 
 </li>
 </ol>
 </section>
-<section id="devplatstart"> <title>Restart the HP Helion Development Platform</title>
+<section id="devplatstart"> <title>Restart the HPE Helion Development Platform</title>
 <p>After the update is complete, you can execute a script to restart the service. See <xref href="../../commercial/GA1/1.0commercial.update-101-devplat.stopstart.dita" >Stopping and Starting the Development Platform Services</xref>.</p>
 </section>
 <section id="next-steps"> <title>Next Steps</title>
-<p>If your cloud uses the optional HP Helion OpenStack DNSaaS (Domain Name Server as a Service), upgrade DNSaaS.</p>
+<p>If your cloud uses the optional HPE Helion OpenStack DNSaaS (Domain Name Server as a Service), upgrade DNSaaS.</p>
 <p>For installation instructions, see <xref href="../../commercial/GA1/1.0commercial.install-GA-DNSaaS.dita" >DNSaaS Installation and Configuration</xref>.</p>
 <p>
   <xref href="#topic14215"> Return to Top </xref>

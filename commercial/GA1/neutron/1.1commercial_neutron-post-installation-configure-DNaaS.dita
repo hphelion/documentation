@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic20357">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: DNSaaS Installation and Configuration</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: DNSaaS Installation and Configuration</title>
 <titlealts>
-<searchtitle>HP Helion Openstack 1.1: DNSaaS Installation and Configuration</searchtitle>
+<searchtitle>HPE Helion Openstack 1.1: DNSaaS Installation and Configuration</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B, Gerladine K, Graham H,"/>
-<othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -23,11 +23,11 @@
   <p>
       <xref href="../1.0commercial.install-GA-DNSaaS.dita#topic15064" type="section" scope="external" /></p>
 <p>
-  <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
+  <b>This document describes the installation process for HPE Helion OpenStack 1.1 and HPE Helion OpenStack 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../1.1.1commercial.helion-update.dita" >HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
+<p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../1.1.1commercial.helion-update.dita" >HPE Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
 <p>Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
-<p>It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack</p>
+<p>It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HPE Helion OpenStack</p>
 <p>
 <b>Note</b>: These installation instructions assume that the associated project currently contains no instances (VMs). If this is not the case, see the instructions for <xref type="section" href="#topic20357/increasequotas">increasing quotas</xref> to ensure you have enough space before you begin.</p>
 <p>
@@ -73,7 +73,7 @@
 <p>
 <b>Note</b>: These installation instructions assume that the associated project currently contains no instances (VMs). If this is not the case, see the instructions for <xref type="section" href="#topic20357/increasequotas">increasing quotas</xref> to ensure you have enough space before you begin.</p>
 <ul>
-<li>HP Helion OpenStack is successfully installed</li>
+<li>HPE Helion OpenStack is successfully installed</li>
 <li>Download <xref type="section" href="#topic20357/publication">DNSaaS Installer Image</xref> </li>
 <li>
 <p>Obtain <xref type="section" href="#topic20357/target-cred">Target Credentials</xref>: credentials of the user+tenant where the service is to be deployed.</p>
@@ -241,17 +241,17 @@ A domain name for the nameservers ("Namesever FQDNs"). For example, if your name
 <p>c. Click <b>Configure</b> in the top-right corner of the page to display the Configure dialog box.</p>
 
 <p>d. Click <b>Sign up Now</b> below the description in the Configure dialog box.<!--A BR tag was used here in the original source.--> 
-   The page navigates to the HP Helion Product Catalog. Then, do the following:</p>
+   The page navigates to the HPE Helion Product Catalog. Then, do the following:</p>
 
-<p>e. Click <b>Sign In</b> in the top of the page to open the HP Web ID dialog box.</p>
+<p>e. Click <b>Sign In</b> in the top of the page to open the HPE Web ID dialog box.</p>
 
-<p>f. Click <b>Sign Up for Web ID</b> to create log-in credentials. The HP WEB ID dialog box is displayed.</p>
+<p>f. Click <b>Sign Up for Web ID</b> to create log-in credentials. The HPE WEB ID dialog box is displayed.</p>
 
 <p>g. Enter the required details.</p>
 
 <p>h. Select the check box next to <b>I agree to the Terms of Use</b> to accept the terms and conditions.</p>
 
-<p>i. Click <b>Submit</b>.<!--A BR tag was used here in the original source.--> The credentials are authenticated and the account is created. <!--A BR tag was used here in the original source.--> Once you register on the HP Helion Product Catalog, you are required to configure your credentials.</p>
+<p>i. Click <b>Submit</b>.<!--A BR tag was used here in the original source.--> The credentials are authenticated and the account is created. <!--A BR tag was used here in the original source.--> Once you register on the HPE Helion Product Catalog, you are required to configure your credentials.</p>
 </li>
 <li>Click <b>Download</b> against the package that you want to download on your local system from a  list of .csu file. </li>
 <li>Select the appropriate file (for example: <b>dns.csu</b>) from the list and click <b>Publish</b>. </li>
@@ -581,7 +581,7 @@ sudo -i
 
 <p>a. Run the install.</p>
 
-<p>b. Open the DNS Configuration (in <b>Start &gt; Programs &gt; HP &gt; DNS Configuration</b>) and select <b>Run as Administrator</b>.</p>
+<p>b. Open the DNS Configuration (in <b>Start &gt; Programs &gt; HPE &gt; DNS Configuration</b>) and select <b>Run as Administrator</b>.</p>
 
 <p>c. In the window that displays:</p>
 
@@ -682,14 +682,14 @@ sudo -i
 <p>For more information, see:</p>
 <ul>
 <li>
-  <xref href="../../../publiccloud/apidocs/c1.1/dns-api.dita" >HP Helion Public Cloud DNS API Specifications</xref>
+  <xref href="../../../publiccloud/apidocs/c1.1/dns-api.dita" >HPE Helion Public Cloud DNS API Specifications</xref>
 </li>
 <li>
 <xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html" >Designate DNSaaS services for OpenStack</xref>
 </li>
 </ul>
 <p>
-<b>Note</b>: Public Cloud API and HP Helion Openstack API details are similar.</p>
+<b>Note</b>: Public Cloud API and HPE Helion Openstack API details are similar.</p>
 <p>
   <xref href="#topic20357"> Return to Top </xref>
 </p>

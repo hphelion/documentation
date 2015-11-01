@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic19742">
-<title>HP Helion Public Cloud Networking: VPN setup quick start guide</title>
+<title>HPE Helion Public Cloud Networking: VPN setup quick start guide</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,7 +12,7 @@
 <!--PUBLISHED-->
  <!--./publiccloud/vpn-quickstart.md-->
  <!--permalink: /publiccloud/compute/vpn-quickstart/--></p>
-<p>With HP Helion Public Cloud Networking you can set up an IPsec, or site-to-site, VPN connecting your external network directly to your HP Helion Public Cloud virtual network. This guide provides the basic instructions for setting this up with your network using strongSwan. For more complex configuration, please refer to the <xref href="http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation" scope="external" format="html" >strongSwan documentation</xref>.</p>
+<p>With HPE Helion Public Cloud Networking you can set up an IPsec, or site-to-site, VPN connecting your external network directly to your HPE Helion Public Cloud virtual network. This guide provides the basic instructions for setting this up with your network using strongSwan. For more complex configuration, please refer to the <xref href="http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation" scope="external" format="html" >strongSwan documentation</xref>.</p>
 <p>
 <b>Note:</b> These instructions use an Ubuntu server instance. You may, of course, choose to use another instance type and still use these directions as a general guide for setting up your VPN.</p>
 <p>This guide covers the following:</p>
@@ -40,19 +40,19 @@
 </li>
 </ul>
 <section id="top"> <title>Overview</title>
-<p>HP Helion Public Cloud Networking, based on <tm tmtype="reg">OpenStack</tm> Networking, gives you a broad new spectrum of functionality to define and configure virtual networks.</p>
-<p>A default network configuration comes with HP Helion Public Cloud Compute Service activation. Your network is ready to deploy HP Helion Public Cloud Compute virtual machines (instances) without further configuration required. The default configuration includes:</p>
+<p>HPE Helion Public Cloud Networking, based on <tm tmtype="reg">OpenStack</tm> Networking, gives you a broad new spectrum of functionality to define and configure virtual networks.</p>
+<p>A default network configuration comes with HPE Helion Public Cloud Compute Service activation. Your network is ready to deploy HPE Helion Public Cloud Compute virtual machines (instances) without further configuration required. The default configuration includes:</p>
 <ul>
 <li>A network   </li>
 <li>A subnet   </li>
 <li>A router connecting the subnet to the Internet   </li>
 <li>A security group with basic server options   </li>
 </ul>
-<p>The guide provides instructions for creating an IPsec VPN (also known as a site-to-site VPN) from your external network directly into your HP Helion Public Cloud virtual network.</p>
+<p>The guide provides instructions for creating an IPsec VPN (also known as a site-to-site VPN) from your external network directly into your HPE Helion Public Cloud virtual network.</p>
 <p>
 <b>Note:</b> This guide uses strongSwan for the IPsec functionality.</p>
 <p>A site-to-site VPN allows multiple fixed locations to establish secure connections with each other over a public network such as the Internet. Site-to-site VPN extends a defined network, making computer resources from one network available to other networks.</p>
-<p>For VPN site-to-site connectivity, you will need to modify either the provided default network configuration or create your own network, subnet, router and ports using the OpenStack Networking API.  The customization can be done on either the command line or through the HP Helion Public Cloud Management Console.</p>
+<p>For VPN site-to-site connectivity, you will need to modify either the provided default network configuration or create your own network, subnet, router and ports using the OpenStack Networking API.  The customization can be done on either the command line or through the HPE Helion Public Cloud Management Console.</p>
 <p>Before starting, ensure that you have adequate permissions to accomplish each of the following steps.</p>
 <p>
 <b>Note:</b> VPN instances are a potential single point of failure. We will soon be posting a high availability VPN setup guide, so please stay tuned.</p>
@@ -66,8 +66,8 @@
 </ul>
 <p>To use this solution effectively, you should be familiar with</p>
 <ul>
-<li>Local network configuration in HP Helion Public Cloud     </li>
-<li>HP Helion Public Cloud Compute and Networking services </li>
+<li>Local network configuration in HPE Helion Public Cloud     </li>
+<li>HPE Helion Public Cloud Compute and Networking services </li>
 <li>OpenStack Nova and Neutron CLI and API   </li>
 <li>Virtual Private Networks (VPN)    </li>
 <li>strongSwan or other IPsec-based software solutions   </li>
@@ -86,7 +86,7 @@
 </p>
 </section>
 <section id="quickstart"> <title>Quick start guide</title>
-<p>This guide provides the information you will need to get started in setting up a VPN that connects your local network to your Virtual Private Cloud (VPC) located in the HP Helion Public Cloud.  In this guide, you create two instances--one as an example to use and the other as a gateway.</p>
+<p>This guide provides the information you will need to get started in setting up a VPN that connects your local network to your Virtual Private Cloud (VPC) located in the HPE Helion Public Cloud.  In this guide, you create two instances--one as an example to use and the other as a gateway.</p>
 <p>
   <image href="../media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor.jpg">
 <alt>Basic VPN setup</alt>
@@ -99,7 +99,7 @@
 <p>The following steps walk you through the process:</p>
 <ul>
 <li>
-<xref type="section" href="#topic19742/compute">Activate the Compute service in HP Helion Public Cloud</xref>  </li>
+<xref type="section" href="#topic19742/compute">Activate the Compute service in HPE Helion Public Cloud</xref>  </li>
 <li>
 <xref type="section" href="#topic19742/gtwy">Set up the private network</xref>
 </li>
@@ -144,9 +144,9 @@ $TENANT_ID = the id of the tenant<!--A BR tag was used here in the original sour
 $PORT_ID1 = id of port 1 (vm-gateway)<!--A BR tag was used here in the original source.-->
 $PORT_ID2 = id of port 2 (vm-test)<!--A BR tag was used here in the original source.-->
 $VM_GATEWAY = address of the VPN VM gateway (e.g., 10.2.0.21)</p>
-  <p>For more details on the Nova and Neutron commands please see the <xref href="apidocs/c1.1/neutron-api.dita" >HP Helion Public Cloud Networking</xref> and <xref href="apidocs/c1.1/nova-api.dita" >Compute</xref> API specifications.</p>
+  <p>For more details on the Nova and Neutron commands please see the <xref href="apidocs/c1.1/neutron-api.dita" >HPE Helion Public Cloud Networking</xref> and <xref href="apidocs/c1.1/nova-api.dita" >Compute</xref> API specifications.</p>
 </section>
-<section id="compute"> <title>Activate the Compute service in HP Helion Public Cloud</title>
+<section id="compute"> <title>Activate the Compute service in HPE Helion Public Cloud</title>
   <p>If you have not previously created an account and activated the Compute service please sign up at <xref href="http://hpcloud.com" scope="external" format="html" >http://hpcloud.com</xref>.  Once you activate the Compute service, you need to install the <xref href="apidocs/c1.1/nova-api.dita" >compute</xref> and <xref href="apidocs/c1.1/neutron-api.dita" >networking</xref> clients or the <xref href="cli.openstack.dita" >CLI</xref>. Make sure you activate a Compute service instance to access the networking and VPN capabilities.</p>
 </section>
 <section id="create-a-new-ubuntu-server-instance"> <title>Create a new Ubuntu server instance</title>
@@ -299,7 +299,7 @@ neutron floatingip-show $FLOATING_ID2
 <b>Note:</b> You can also assign floating IPs via the Nova API and subsequently call the command <codeph>nova list</codeph> to display the instances and their status.</p>
 </section>
 <section id="enableufw"> <title>Enable UFW</title>
-<p>HP strongly recommends that you use the <xref href="https://help.ubuntu.com/community/UFW" scope="external" format="html" >UFW (uncomplicated firewall)</xref> capability included in Ubuntu. Currently you need to disable port security to create a VPN; enabling UFW closes the potential security hole.</p>
+<p>HPE strongly recommends that you use the <xref href="https://help.ubuntu.com/community/UFW" scope="external" format="html" >UFW (uncomplicated firewall)</xref> capability included in Ubuntu. Currently you need to disable port security to create a VPN; enabling UFW closes the potential security hole.</p>
 <p>To enable the UFW, connect to the gateway instance and run these commands:</p>
 <codeblock>
   <codeph>prompt&gt; sudo ufw allow 22/tcp
@@ -521,10 +521,10 @@ conn vpn-test
 <section id="refs"> <title>For further information</title>
 <ul>
 <li>
-<xref href="https://docs.hpcloud.com/publiccloud/api/networking/" scope="external" format="html" >HP Helion Public Cloud Networking API Specifications</xref>
+<xref href="https://docs.hpcloud.com/publiccloud/api/networking/" scope="external" format="html" >HPE Helion Public Cloud Networking API Specifications</xref>
 </li>
 <li>
-<xref href="https://docs.hpcloud.com/publiccloud/api/compute/" scope="external" format="html" >HP Helion Public Cloud Compute Service API Reference</xref>
+<xref href="https://docs.hpcloud.com/publiccloud/api/compute/" scope="external" format="html" >HPE Helion Public Cloud Compute Service API Reference</xref>
 </li>
 <li>
 <xref href="http://wiki.strongswan.org/projects/strongswan/wiki/FAQ" scope="external" format="html" >strongSwan wiki FAQ</xref>
