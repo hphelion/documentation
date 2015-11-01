@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7556">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Identity Service (Keystone) Overview</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1: Identity Service (Keystone) Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B, Meera B,"/>
-<othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
     <p><!--PUBLISHED--><!--./commercial/GA1/1.1commerical.services-identity-overview.md--><!--permalink: /helion/openstack/1.1/services/identity/overview/--></p>
     <p> </p>
-    <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
-    <p>Based on Openstack Keystone, the HP Helion Openstack Identity service provides one-stop
+    <!-- modeled after HPE Cloud Networking Getting Started (network.getting.started.md) -->
+    <p>Based on Openstack Keystone, the HPE Helion Openstack Identity service provides one-stop
       authentication using the Keystone V2 or V3 API.</p>
     <p>The Identity service enables you to create and configure users, specify user roles and
       credentials, and issue security tokens.</p>
@@ -43,7 +43,7 @@
       limited trials and proof of concept deployments and does not offer the advanced user
       management functions often required for production deployments.</p>
     <p>
-      <b>User Management</b> - The HP Helion OpenStack Identity Service tracks users and their
+      <b>User Management</b> - The HPE Helion OpenStack Identity Service tracks users and their
       permissions. The main components of user management include:</p>
     <ul>
       <li>Users</li>
@@ -51,10 +51,10 @@
       <li>Roles</li>
     </ul>
     <p>
-      <b>Service management</b> - The HP Helion OpenStack Identity Service provides a catalog of
+      <b>Service management</b> - The HPE Helion OpenStack Identity Service provides a catalog of
       available services with their API endpoints.</p>
     <p>
-      <b>Group management</b> - The HP Helion OpenStack Identity Service allows administrators to
+      <b>Group management</b> - The HPE Helion OpenStack Identity Service allows administrators to
       create groups and add users to groups. Then, rather than assign a role to each user
       individually, the admin can assign a role to the group. Every group is in a <xref
         type="section" href="#topic7556/domain">domain</xref>.</p>
@@ -62,7 +62,7 @@
       <b>
         <xref href="../../commercial/GA1/1.1commerical.services-identity-domains.dita">Domain
           management</xref>
-      </b> - The HP Helion OpenStack Identity Service allows administrators to create tenants,
+      </b> - The HPE Helion OpenStack Identity Service allows administrators to create tenants,
       users, and groups within a <xref type="section" href="#topic7556/domain">domain</xref> and
       assign roles to users and groups.</p>
     <p>Administrators can create multiple <xref type="section" href="#topic7556/domain"
@@ -89,7 +89,7 @@
     </section>
     <section id="admins">
       <title>Administrators</title>
-      <p>The HP Helion OpenStack Identity service features three types of administrator users:</p>
+      <p>The HPE Helion OpenStack Identity service features three types of administrator users:</p>
       <ul>
         <li>Cloud Admins are super admins. This role needs a domain-scope token.</li>
         <li>Domain admins manage users, user groups, and projects in their own domain. This role

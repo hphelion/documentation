@@ -2,24 +2,24 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Configuring the DCN
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Configuring the DCN
     Components</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
     </metadata>
   </prolog>
   <body>
-    <p>After <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">the HP Helion OpenStack
+    <p>After <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">the HPE Helion OpenStack
         cloud  is installed</xref> in the <xref
         href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM + ESX
-        deployment</xref>, you must perform the following tasks to integrate the HP Helion OpenStack
-      Carrier Grade and HP Distributed Cloud Networking (DCN) environments. </p>
+        deployment</xref>, you must perform the following tasks to integrate the HPE Helion OpenStack
+      Carrier Grade and HPE Distributed Cloud Networking (DCN) environments. </p>
     <p><b>Note:</b> If you are deploying the <xref
         href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM
       deployment</xref>, you do not need to perform these tasks.</p>  
@@ -123,8 +123,8 @@ Password: cghelion</codeblock>
     </section>
     <section id="vrsg-config">
       <title>Configure the VRS-G </title>
-      <p>The HP Helion OpenStack Carrier Grade installation creates the required VRS-G gateway. You
-        need to use the HP DCN Virtualized Services Directory Architect (VSD) interface to add the
+      <p>The HPE Helion OpenStack Carrier Grade installation creates the required VRS-G gateway. You
+        need to use the HPE DCN Virtualized Services Directory Architect (VSD) interface to add the
         gateway and configure the <codeph>eth0</codeph> port.</p>
       <p><i>For more information on performing this task, refer to the latest DCN documentation
         </i></p>
@@ -210,7 +210,7 @@ VSD Server : auto </codeblock>
     </section>
     <section>
       <p>This script creates the uplink on the VRS-G, which is a requirement for the EXT-NET to
-        function with HP Helion OpenStack Carrier Grade. </p>
+        function with HPE Helion OpenStack Carrier Grade. </p>
       <ol id="ol_ks4_zhj_1t">
         <li>From the HLM host, copy the following code to create a cURL script.</li>
         <li>Modify the cURL script for your environment:<ul id="ul_bzs_r1c_1t">

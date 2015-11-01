@@ -10,9 +10,9 @@
           <!--You can download the latest from (need link) --><note>To add an existing Trove
           database, include a value for the <codeph>--database-instance-id</codeph>
           parameter.</note><!--Ensure the values for image names, image sizes and availability zones ("az") are valid for your current configuration.--><codeblock>file version: 1.2 
-constructor-image-name: HP Helion Development Platform - Application Lifecycle Service Installer 1.2.0.282 
+constructor-image-name: HPE Helion Development Platform - Application Lifecycle Service Installer 1.2.0.282 
 constructor-flavor: standard.xsmall 
-seed-node-image-name: HP Helion Development Platform - Application Lifecycle Service Seed Node 1.2.0.282 
+seed-node-image-name: HPE Helion Development Platform - Application Lifecycle Service Seed Node 1.2.0.282 
 core-flavor: standard.medium 
 cluster-title: &lt;My Cluster Title&gt; 
 cluster-prefix: &lt;My Cluster Prefix&gt;

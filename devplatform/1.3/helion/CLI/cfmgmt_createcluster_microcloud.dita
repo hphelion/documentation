@@ -13,7 +13,7 @@
           format="html"> Helion Public Cloud</xref> account. Keep your username and password handy
         as you will be asked for them during installation. </li>
       <li> Log into the <xref href="https://horizon.hpcloud.com/" scope="external" format="html"
-          >Horizon console</xref> using the HP Helion Public Cloud username and password that you
+          >Horizon console</xref> using the HPE Helion Public Cloud username and password that you
         created during registration. <image href="../../../../media/quickstartWest.png"
           id="image_isz_fxc_ks" placement="break"/></li>
       <li>In the <b>US West section</b>, in the <b>Compute</b> row, click <b>Activate</b> to

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3803">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Ceph RADOS Gateway - Client</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Ceph RADOS Gateway - Client</title>
 <titlealts>
-<searchtitle>HP Helion Openstack 1.1 Ceph RADOS Gateway - Client</searchtitle>
+<searchtitle>HPE Helion Openstack 1.1 Ceph RADOS Gateway - Client</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Engineer"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -18,8 +18,8 @@
 <othermeta name="role" content="Cloud Administrator"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Paul F, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -27,7 +27,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/ceph/1.1commercial.ceph-rados-gateway-client.md-->
  <!--permalink: /helion/openstack/1.1/ceph-rados-gateway-client/--></p>
-<p>The use cases for leveraging Ceph as an Object Store range from user-driven archives of a small MySQL instance to a well-orchestrated LOB-scripted backup consistency group spanning multiple VMs and external machines. For applications and customers who do not have existing integrations to the Swift API and do not wish to leverage the existing Swift client, often a monitored mount point that auto-archives, is required. For this use case, HP recommends Duplicity. Duplicity is an Open Source, bandwidth efficient, encrypted incremental backup tool that can be used with Swift API to archive, backup, and restore files. It archives directories by producing encrypted tar-format volumes and uploads them to the Swift API. Duplicity uses <codeph>librsync</codeph> and consequently the incremental archives are space efficient: only recording the parts of files that have changed since the last write. Duplicity uses GnuPG to encrypt and sign these archive files.</p>
+<p>The use cases for leveraging Ceph as an Object Store range from user-driven archives of a small MySQL instance to a well-orchestrated LOB-scripted backup consistency group spanning multiple VMs and external machines. For applications and customers who do not have existing integrations to the Swift API and do not wish to leverage the existing Swift client, often a monitored mount point that auto-archives, is required. For this use case, HPE recommends Duplicity. Duplicity is an Open Source, bandwidth efficient, encrypted incremental backup tool that can be used with Swift API to archive, backup, and restore files. It archives directories by producing encrypted tar-format volumes and uploads them to the Swift API. Duplicity uses <codeph>librsync</codeph> and consequently the incremental archives are space efficient: only recording the parts of files that have changed since the last write. Duplicity uses GnuPG to encrypt and sign these archive files.</p>
 <section id="installing-duplicity"> <title>Installing Duplicity</title>
 <p>To install Duplicity on any of the client user VMs, run:</p>
 <ul>
@@ -103,7 +103,7 @@ export SWIFT_AUTHVERSION=2
 <p>Perform the following steps:</p>
 <ul>
 <li>
-<p>Create Ceph pool, Ceph user as in the previous section for backup &lt;<b>placeholder of the backup</b>&gt;. Note: for large deployments where hundreds of discrete users and pools will be created, managed, and audited, consider integrating the HP Helion OpenStack Tenant Project user, Keystone, and the Ceph user and associated pool(s).</p>
+<p>Create Ceph pool, Ceph user as in the previous section for backup &lt;<b>placeholder of the backup</b>&gt;. Note: for large deployments where hundreds of discrete users and pools will be created, managed, and audited, consider integrating the HPE Helion OpenStack Tenant Project user, Keystone, and the Ceph user and associated pool(s).</p>
 </li>
 <li>
 <p>Install the Swift client (and other components as specified in the Ceph RADOSGW Client section) on the user client Virtual Machine.</p>

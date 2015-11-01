@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic_w5z_kcw_js">
- <title>HP Helion 1.3 Development Platform: Windows and .NET Applications Tools Guide</title>
+ <title>HPE Helion 1.3 Development Platform: Windows and .NET Applications Tools Guide</title>
  <prolog>
   <metadata>
    <othermeta name="layout" content="default-devplatform"/>
-    <othermeta name="product-version" content="HP Helion Development Platform"/>
-    <othermeta name="product-version" content="HP Helion Development Platform 1.3"/>
+    <othermeta name="product-version" content="HPE Helion Development Platform"/>
+    <othermeta name="product-version" content="HPE Helion Development Platform 1.3"/>
     <othermeta name="role" content="Systems Administrator"/>
     <othermeta name="role" content="System Engineer"/>
     <othermeta name="role" content="Cloud Administrator"/>
@@ -15,12 +15,12 @@
     <othermeta name="role" content="ISV Developer"/>
     <othermeta name="role" content="Service Developer"/>
     <othermeta name="role" content="Patrick F"/>
-    <othermeta name="product-version1" content="HP Helion Development Platform"/>
-    <othermeta name="product-version2" content="HP Helion Development Platform 1.3"/>
+    <othermeta name="product-version1" content="HPE Helion Development Platform"/>
+    <othermeta name="product-version2" content="HPE Helion Development Platform 1.3"/>
    </metadata>
  </prolog>
 <body>
- <section><title>HP Helion 1.3 Development Platform: <tm tmtype="reg">Windows</tm> and .NET Tools
+ <section><title>HPE Helion 1.3 Development Platform: <tm tmtype="reg">Windows</tm> and .NET Tools
     Guide</title>
    <ph><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of
      Microsoft Corporation in the United States and/or other countries.</i></ph>
@@ -253,7 +253,7 @@
 		helion login
 		helion push --stack win2012r2 </codeblock>
 
-  <p>For more information on the Helion client, see <xref format="dita"  href="../helion/user/reference/client-ref.dita#topic13355" type="section">HP Helion 1.3 Development Platform: Application Lifecycle Service Client Command Reference</xref></p>
+  <p>For more information on the Helion client, see <xref format="dita"  href="../helion/user/reference/client-ref.dita#topic13355" type="section">HPE Helion 1.3 Development Platform: Application Lifecycle Service Client Command Reference</xref></p>
 
   <p>The Helion client tool can be downloaded from the following locations: </p>
 

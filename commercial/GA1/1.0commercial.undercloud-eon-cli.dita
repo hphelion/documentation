@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5839">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Command Line Interface- EON</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.0: Command Line Interface- EON</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -83,7 +83,7 @@
 </codeph>
 </codeblock>
 <p>
-<b>Note</b>: HP Helion OpenStack supports three vCenters.</p>
+<b>Note</b>: HPE Helion OpenStack supports three vCenters.</p>
 <ul>
 <li>
 <p>&lt;VCENTER_NAME&gt;: Name of the vCenter</p>

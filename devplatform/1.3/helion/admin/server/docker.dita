@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7767">
-<title>HP Helion 1.3 Development Platform: Docker and Fence</title>
+<title>HPE Helion 1.3 Development Platform: Docker and Fence</title>
 <titlealts>
-<searchtitle>HP Helion 1.3 Development Platform: Docker and Fence</searchtitle>
+<searchtitle>HPE Helion 1.3 Development Platform: Docker and Fence</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.3"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.3"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
@@ -17,8 +17,8 @@
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Security Engineer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.3"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.3"/>
 </metadata>
 </prolog>
 <body>
@@ -183,7 +183,7 @@ sudo /usr/sbin/nrsysmond-config --set license_key=$NEW_RELIC_LICENSE_KEY
 sudo /etc/init.d/newrelic-sysmond start</codeblock><note>
         The <codeph>HELION_HOOK_ENV</codeph> environment variable is needed to expose the specified
         variables in <codeph>helion ssh</codeph> sessions, in the application container's crontab,
-        and in PHP applications using the Legacy buildpack. </note><p>The Dockerfile for creating
+        and in PHPE applications using the Legacy buildpack. </note><p>The Dockerfile for creating
         the image (see <xref type="section"
           href="#topic7767/modifying-or-updating-the-container-image">Modifying or Updating the
           Container Image</xref> ) would use the ADD directive to put a local <i>hooks</i> directory
