@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5690">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Development Platform Commercial 1.01 Update</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.0: Development Platform Commercial 1.01 Update</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,10 +12,10 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.0commercial.update-101-devplat.md-->
  <!--permalink: /helion/openstack/update/devplat/101/--></p>
-<p>The HP Helion Development Platform currently contains four products: <xref
+<p>The HPE Helion Development Platform currently contains four products: <xref
         href="../../devplatform/1.0devplatform.index.dita#topic5165">Application Lifecycle Service
         (ALS), Marketplace Service, Messaging Service and Database Service</xref>.</p>
-<p>The following sections explain how to update the HP Helion Development Platform.</p>
+<p>The following sections explain how to update the HPE Helion Development Platform.</p>
 <ul>
 <li>
 <xref type="section" href="#topic5690/prerequisites">Prerequisites</xref>
@@ -37,10 +37,10 @@
 </li>
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
-<p>The following guide outlines the steps to update HP Helion Development Platform from version 1.0 to 1.01. Before executing these steps, ensure you have upgraded HP Helion OpenStack to 1.01 as described in the <xref href="../../commercial/GA1/1.0commercial.update-101-overview.dita" >HP Helion OpenStack Update Overview</xref>.</p>
+<p>The following guide outlines the steps to update HPE Helion Development Platform from version 1.0 to 1.01. Before executing these steps, ensure you have upgraded HPE Helion OpenStack to 1.01 as described in the <xref href="../../commercial/GA1/1.0commercial.update-101-overview.dita" >HPE Helion OpenStack Update Overview</xref>.</p>
 <p>
         <b>Note:</b> If you created a new installation of 1.01, bypassing 1.0, you need to install
-        HP Helion OpenStack Development Platform Services, and not update. See
+        HPE Helion OpenStack Development Platform Services, and not update. See
           <xref href="../../devplatform/1.0devplatform_community_install.dita">Development Platform Install Guide</xref>.</p>
 </section>
 <section id="update-messaging"> <title>Update the Messaging Service</title>

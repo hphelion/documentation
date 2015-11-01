@@ -2,16 +2,16 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the KVM
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the KVM
     Deployment</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
     </metadata>
   </prolog>
   <body>
@@ -21,13 +21,13 @@
       <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
     <p>After the Helion Lifecycle Management (HLM) is installed, the next task in installing the
         <xref href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM
-        deployment</xref> is to  deploy the HP Helion Openstack cloud.</p>
+        deployment</xref> is to  deploy the HPE Helion Openstack cloud.</p>
     <p><b>Note:</b> If you are installing the KVM + ESX deployment, see <xref
         href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing the KVM + ESX
         Deployment</xref>.</p>
     <section id="configure-a-json-file-for-installation">
       <title>Configure a JSON file for installation</title>
-      <p>The HP Helion OpenStack deployment requires a JSON file. Use the following steps to install
+      <p>The HPE Helion OpenStack deployment requires a JSON file. Use the following steps to install
         and edit the file.</p>
       <ol>
         <li>Login to HLM VM.
@@ -53,7 +53,7 @@ where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
         <li>Execute the following command to switch to the root
           user:<codeblock>sudo su -</codeblock></li>
         <li>On the HLM VM, change to the home directory.<codeblock>cd ~</codeblock></li>
-        <li>Provision and configure your HP Helion OpenStack
+        <li>Provision and configure your HPE Helion OpenStack
             VM.<codeblock>hnewcloud  &lt;cloudname&gt; denver</codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create</li>
             <li><codeph>denver</codeph> is the name of the template to use. The installation kit
@@ -241,7 +241,7 @@ where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
     <section id="create-a-new-cloud-template-and-bring-the-cloud-nodes-up">
       <title>Provision the cloud nodes</title>
       <ol>
-        <li>Use the following script to start the provisioning of the HP Helion OpenStack cloud:
+        <li>Use the following script to start the provisioning of the HPE Helion OpenStack cloud:
             <codeblock>hprovision &lt;cloudname&gt; </codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create</li>
           </ul><p>This script will PXE boot the nodes specified in
@@ -254,13 +254,13 @@ where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
             that you can establish a password-less SSH connection to these nodes from HLM
           VM.</p></li>
 
-        <li>Based on your environment, you can use either HP StoreServ (3PAR) or HP StoreVirtual VSA
+        <li>Based on your environment, you can use either HPE StoreServ (3PAR) or HPE StoreVirtual VSA
           block storage Use the following steps to integrate a fully-installed block storage into HP
           Helion OpenStack Carrier Grade: <ol>
             <li>Change to the <codeph>cinder/blocks</codeph> directory:
               <codeblock>cd ~/&lt;cloudname>/services/cinder/blocks</codeblock> Where &lt;cloudname>
               is the name you assigned to the cloud.</li>
-            <li>Then:<p><b>For HP StoreServ (3PAR) storage </b>: Edit the
+            <li>Then:<p><b>For HPE StoreServ (3PAR) storage </b>: Edit the
                   <codeph>cinder_conf</codeph> file to configure the 3PAR settings. For
                   example:</p><codeblock>[DEFAULT]
 enabled_backends=hp3par,hplefthand
@@ -280,7 +280,7 @@ hp3par_debug=False
 hp3par_iscsi_chap_enabled=false
 hp3par_snapshot_retention=48
 hp3par_snapshot_expiration=72</codeblock><p><b>For
-                  HP StoreVirtual VSA storage</b> Edit the <codeph>cinder_conf</codeph> file to
+                  HPE StoreVirtual VSA storage</b> Edit the <codeph>cinder_conf</codeph> file to
                 configure the VSA settings. For example:
                 <codeblock>[DEFAULT]
 enabled_backends=hp3par,hplefthand
@@ -292,9 +292,9 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></p>
         <li>After editing the JSON files, validate each JSON file to make sure there are no
           syntactical errors using the tool of your preference. For example, using the Python
           json.tool: <codeblock>python -m json.tool &lt;filename>.json</codeblock></li>
-        <li>Once you have correctly edited all the json Cloud Model files, run the HP Helion
+        <li>Once you have correctly edited all the json Cloud Model files, run the HPE Helion
           OpenStack Configuration Processor:
-            <codeblock>hcfgproc -d definition.json</codeblock><p>The HP Helion OpenStack
+            <codeblock>hcfgproc -d definition.json</codeblock><p>The HPE Helion OpenStack
             Configuration Processor is a script, called <codeph>hcfgproc</codeph>, that is
             incorporated into the installation environment. </p></li>
         <li>Review the CloudDiagram, <codeph>hosts.hf</codeph>, and

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic64701">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Configuring Ceph Cluster and Client Nodes using Ansible Playbooks</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Configuring Ceph Cluster and Client Nodes using Ansible Playbooks</title>
 <titlealts>
-<searchtitle>HP Helion Openstack 1.1: Configuring Ceph Cluster and Client Nodes using Ansible Playbooks</searchtitle>
+<searchtitle>HPE Helion Openstack 1.1: Configuring Ceph Cluster and Client Nodes using Ansible Playbooks</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Engineer"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -18,8 +18,8 @@
 <othermeta name="role" content="Cloud Administrator"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Paul F, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -116,7 +116,7 @@ ip-address
             defined in <codeph>cephcluster.csv</codeph>. </p><p> Also, if there is only one RADOS
             node, then the type must be <codeph>radosgw-master</codeph>. </p><p>
             <b>user</b>: used to login to Ceph nodes for performing the configuration. In this case
-            it is <b>hlinux</b>. (<b>hlinux</b> refers to HP Linux for HP Helion OpenStack</p><p>
+            it is <b>hlinux</b>. (<b>hlinux</b> refers to HPE Linux for HPE Helion OpenStack</p><p>
             <b>osd-partition-type</b>: partition type to be used while formatting the disk for OSD
             storage (This attribute exists only for OSD type node).</p><p>
             <b>osd-disk-path</b>: disk to be used for OSD storage (This attribute exists only for
@@ -461,7 +461,7 @@ controller2 ansible_ssh_private_key_file=seed-id_rsa.private
         <li>Execute the following command with a specfic options (refer table below) to integrate
           various HOS components with Ceph using passthrough:<p>
             <codeblock><codeph>python /root/tripleo/hp_ceph_passthrough/hp_ceph_load_config.py</codeph></codeblock>
-          </p><p>The folllowing table provides a specific option to integrate various HP Helion
+          </p><p>The folllowing table provides a specific option to integrate various HPE Helion
             Opentack components with CEPH.</p><p>
             <simpletable frame="all" relcolwidth="1.0* 1.0* 1.0* 1.0* 1.0*"
               id="simpletable_r5t_n4p_xs">
@@ -666,7 +666,7 @@ f0:92:1c:05:33:12,helioncsel,m0ng00s3,10.1.67.123,179,163840,200,overcloud-ceph-
       <title>Heartbeat Monitoring Tool (Optional)</title>
       <p>The Heartbeat tool is written in Python and it is an open ended tool so other 3rd party
         service and status checks can be added or extended. This tool is run on the seed node from
-        the HP Helion setup. This tool continuously queries for HP Helion OpenStack services and
+        the HPE Helion setup. This tool continuously queries for HPE Helion OpenStack services and
         provides notifications to the pre-defined administrator when config file mismatches are
         detected, or when any of the specified services in config file are down. The Configuration
         service automatically reapplies the known good config files when the checksum does not
@@ -815,7 +815,7 @@ glance image-list
         <li>Enable logging in <codeph>glance-api.conf</codeph>. If you encounter a problem in any of
           the above steps, restart Glance services and re-run the problem step. If the problem
           persists, ather Glance debug logs in the <codeph>/var/log/glance</codeph> directory and
-          contact the HP support team for help.</li>
+          contact the HPE support team for help.</li>
       </ul>
     </section>
     <section id="glance-clone-copy">
@@ -868,7 +868,7 @@ rbd children &lt;glance pool name&gt;/&lt;glance-image id&gt;@&lt;snap name&gt;
             you encounter a problem in any of the above steps. Restart Glance and Cinder services
             and re-run the problem step. If necessary, gather Glance debug logs in
               <codeph>/var/log/glance</codeph> directory and Cinder debug logs in
-              <codeph>/var/log/upstart</codeph> directory and contact HP support team for help.</p>
+              <codeph>/var/log/upstart</codeph> directory and contact HPE support team for help.</p>
         </li>
       </ul>
     </section>

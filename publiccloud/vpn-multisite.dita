@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13796">
-<title>HP Helion Public Cloud Networking: VPN multi-site configuration guide</title>
+<title>HPE Helion Public Cloud Networking: VPN multi-site configuration guide</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,9 +12,9 @@
 <!--PUBLISHED-->
  <!--./publiccloud/vpn-multisite.md-->
  <!--permalink: /publiccloud/compute/vpn-multisite/--></p>
-<p>Once you have set up your initial VPN connection, you can extend your network to your different private sites. This guide provides you the basic steps to configure a VPN Virtual Machine (instance) and establish a secure connection between private sites to your HP Helion Public Cloud VPN.</p>
-  <p>For this procedure, we assume that you have an active HP Helion Public Cloud account with a VPN instance set up (see the <xref href="vpn-quickstart.dita" >VPN Quick Start Guide</xref> to set up the initial VPN instance).</p>
-<p>While you can set up your Compute service instance and VPN using any Linux OS, for the purpose of this guide, we use an Ubuntu instance and strongSwan IPsec. This configuration has been tested, but you can use this guide as a basis for connecting your sites to your HP Helion Public Cloud VPN.</p>
+<p>Once you have set up your initial VPN connection, you can extend your network to your different private sites. This guide provides you the basic steps to configure a VPN Virtual Machine (instance) and establish a secure connection between private sites to your HPE Helion Public Cloud VPN.</p>
+  <p>For this procedure, we assume that you have an active HPE Helion Public Cloud account with a VPN instance set up (see the <xref href="vpn-quickstart.dita" >VPN Quick Start Guide</xref> to set up the initial VPN instance).</p>
+<p>While you can set up your Compute service instance and VPN using any Linux OS, for the purpose of this guide, we use an Ubuntu instance and strongSwan IPsec. This configuration has been tested, but you can use this guide as a basis for connecting your sites to your HPE Helion Public Cloud VPN.</p>
 <p>This guide covers the following:</p>
 <ul>
 <li>
@@ -27,7 +27,7 @@
 <xref type="section" href="#topic13796/configvpn">Configure the VPN for the IKE and IPsec proposals</xref>
 </li>
 <li>
-<xref type="section" href="#topic13796/connect">Establish a connection with your HP Helion Public Cloud VPN</xref>
+<xref type="section" href="#topic13796/connect">Establish a connection with your HPE Helion Public Cloud VPN</xref>
 </li>
 <li>
 <xref type="section" href="#topic13796/trouble">Troubleshoot and verify connections</xref>
@@ -381,7 +381,7 @@ conn Site-C
 <p>back to the <xref type="section" href="#topic13796">top</xref>
 </p>
 </section>
-<section id="connect"> <title>Establish a connection with your HP Helion Public Cloud VPN</title>
+<section id="connect"> <title>Establish a connection with your HPE Helion Public Cloud VPN</title>
 <p>You can establish a connection with the remote router in two ways:</p>
 <ol>
 <li>The router can start the negotiation</li>
@@ -395,9 +395,9 @@ conn Site-C
 <p>In this example, either automatically start the connection from the VPC VPN (auto=start option in the <i>IPsec.conf</i> file) or configure it in passive mode listening for connections (<codeph>auto=add</codeph> option in the <i>IPsec.conf</i> file).</p>
 <p>In this router configuration, the router will only negotiate a connection when it sees a packet destined for the remote subnet in the Cloud. In this example, the site's are named Site-A, Site-B, and Site-C, but you can name them anything that makes sense to you.</p>
 <ul>
-<li>From Site-A send traffic from subnet 192.168.2.0/24 to subnet 10.2.0.0/16. HP Networking MSR router starts IKE negotiation with VPC VPN in the cloud when it receives the first packet.</li>
-<li>From Site-B send traffic from subnet 192.168.4.0/24 to subnet 10.2.0.0/16. HP Networking MSR router starts IKE negotiation with VPC VPN in the cloud when it receives the first packet.</li>
-<li>From Site-C send traffic from subnet 192.168.3.0/24 to subnet 10.2.0.0/16. HP Networking MSR router starts IKE negotiation with VPC VPN in the cloud when it receives the first packet.</li>
+<li>From Site-A send traffic from subnet 192.168.2.0/24 to subnet 10.2.0.0/16. HPE Networking MSR router starts IKE negotiation with VPC VPN in the cloud when it receives the first packet.</li>
+<li>From Site-B send traffic from subnet 192.168.4.0/24 to subnet 10.2.0.0/16. HPE Networking MSR router starts IKE negotiation with VPC VPN in the cloud when it receives the first packet.</li>
+<li>From Site-C send traffic from subnet 192.168.3.0/24 to subnet 10.2.0.0/16. HPE Networking MSR router starts IKE negotiation with VPC VPN in the cloud when it receives the first packet.</li>
 </ul>
 </section>
 <section id="trouble"> <title>Troubleshoot and verify connections</title>
@@ -408,7 +408,7 @@ conn Site-C
 <li>
 <xref href="http://wiki.strongswan.org" scope="external" format="html" >strongSwan wiki</xref>
 </li>
-<li>HP Networking MSR 20-40 Router Security Configuration Guide: <xref href="http://www.h3c.com/portal/download.do?id=1223846" scope="external" format="html" >http://www.h3c.com/portal/download.do?id=1223846</xref>
+<li>HPE Networking MSR 20-40 Router Security Configuration Guide: <xref href="http://www.h3c.com/portal/download.do?id=1223846" scope="external" format="html" >http://www.h3c.com/portal/download.do?id=1223846</xref>
 </li>
 </ul>
 <p>back to the <xref type="section" href="#topic13796">top</xref>

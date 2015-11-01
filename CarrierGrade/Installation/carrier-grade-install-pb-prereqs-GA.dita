@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7148">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installation Prerequisites</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installation Prerequisites</title>
 <titlealts>
-<searchtitle>HP Helion Openstack Installation Prerequisites</searchtitle>
+<searchtitle>HPE Helion Openstack Installation Prerequisites</searchtitle>
 </titlealts>
 <prolog>
         <metadata>
                 <othermeta name="layout" content="default"/>
-                <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+                <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
                 <othermeta name="role" content="Storage Administrator"/>
                 <othermeta name="role" content="Storage Architect"/>
                 <othermeta name="role" content="Michael B"/>
-                <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+                <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
         </metadata>
 </prolog>
 <body>
@@ -21,11 +21,11 @@
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-prereqs.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/prereqs/--></p>
 <p>This document describes the prerequisite steps and one time setup on your HLM host required to
-      install HP Helion OpenStack Carrier Grade in a baremetal environment.</p>
+      install HPE Helion OpenStack Carrier Grade in a baremetal environment.</p>
 <section id="hardware"> <title>Hardware and software requirements</title>
 <p>Before you start, if you have not done so already, make sure your environment meets the hardware
                                 and software requirements. See the <xref
-                                        href="carrier-grade-support-matrix2.dita#topic1773">HP Helion OpenStack
+                                        href="carrier-grade-support-matrix2.dita#topic1773">HPE Helion OpenStack
                                         Support Matrix</xref>.</p>
 </section>
 <section id="kvm">
@@ -56,7 +56,7 @@
                         </ul>
                         <title>Install Ubuntu Server 14.04.2 LTS</title>
                         <p>The HLM host must have Ubuntu Server 14.04.2 LTS installed before
-                                performing the HP Helion OpenStack Carrier Grade installation.</p>
+                                performing the HPE Helion OpenStack Carrier Grade installation.</p>
                 </section>
 <!--<section id="pub-key"> <title>Obtain a public key</title>
 <p>On the HLM host, the user <codeph>root</codeph> must have a public key.</p>
@@ -223,18 +223,18 @@ StrictHostKeyChecking no </codeblock></li>
 </ol>
 </section>
         <section><title>Preparing the Network for Installation</title>
-                <p>Before installing HP Helion OpenStack Carrier Grade, 
+                <p>Before installing HPE Helion OpenStack Carrier Grade, 
                         you are responsible for preparing the network for all installations.</p>
                 <p>See <xref href="carrier-grade-install-pb-network-prepare-GA.dita#topic7646">Preparing the Network for Installation</xref></p>
                 
         </section>
         <section><title>Integrating LDAP</title>
 
-        <p>OPTIONAL The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP) 
+        <p>OPTIONAL The HPE Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP) 
                 to integrate your organization's existing directory service and user account management processes.</p> 
 </section>
 <section id="getinstall"> <title>Download and unpack the installation packages</title>
-<p>Before you begin, you must download the required HP Helion OpenStack installation package(s).</p>
+<p>Before you begin, you must download the required HPE Helion OpenStack installation package(s).</p>
                         <p><b>Note:</b> When downloading installation files, always download and
                                 verify the signature file before installing.  </p>
 <ol>
@@ -247,7 +247,7 @@ StrictHostKeyChecking no </codeblock></li>
                                                 <li>After signing in, click the <b>Downloads</b>
                                                   link in the menu on the left side of the
                                                   page.</li>
-                                                <li>On the <b>Downloads</b> page, locate HP Helion
+                                                <li>On the <b>Downloads</b> page, locate HPE Helion
                                                   OpenStack Carrier Grade and click
                                                   <b>Download</b>.</li>
                                         </ul></li>
@@ -287,7 +287,7 @@ StrictHostKeyChecking no </codeblock></li>
         <section id="download-esx"><title>Download packages for KVM + ESX</title>
         <p>To integrate VMware ESX<tm tmtype="reg"/> storage, deploy the KVM + ESX topology,
                                 download the following additional packages.</p>
-                        <p><b>Note:</b> For HP internal use contact HCG R &amp; D department.  </p>
+                        <p><b>Note:</b> For HPE internal use contact HCG R &amp; D department.  </p>
                 <ol>
                                 <li> When you purchased a license for DCN, you should have received
                                         an email with all the instructions for how to obtain the DCN
@@ -330,11 +330,11 @@ StrictHostKeyChecking no </codeblock></li>
                   <li>Copy the public keys to the HLM host server, extract the keys from the
                                         compressed files. <p>The following keys are included in the
                                                 download:</p><ul>
-                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-1.pub</li>
-                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-2.pub</li>
-                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-3.pub</li>
-                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-4.pub</li>
-                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-5.pub</li>
+                                                <li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-1.pub</li>
+                                                <li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-2.pub</li>
+                                                <li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-3.pub</li>
+                                                <li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-4.pub</li>
+                                                <li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-5.pub</li>
                                                 <li>hpPublicKey.pub</li>
                                                 <li>hpPublicKey2048.pub</li>
                                         </ul></li>
@@ -344,11 +344,11 @@ StrictHostKeyChecking no </codeblock></li>
                                                 file.</p><p>The keys are then imported into the gpgp
                                                 key share:
                                                 <codeblock>gpg --import hpPublicKey.pub 
-gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-1.pub 
-gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-2.pub 
-gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-3.pub 
-gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-4.pub 
-gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-5.pub 
+gpg --import Hewlett Packard EnterpriseCompanyRSA\(HPCodesigningService\)-1.pub 
+gpg --import Hewlett Packard EnterpriseCompanyRSA\(HPCodesigningService\)-2.pub 
+gpg --import Hewlett Packard EnterpriseCompanyRSA\(HPCodesigningService\)-3.pub 
+gpg --import Hewlett Packard EnterpriseCompanyRSA\(HPCodesigningService\)-4.pub 
+gpg --import Hewlett Packard EnterpriseCompanyRSA\(HPCodesigningService\)-5.pub 
 gpg --import hpPublicKey2048.pub </codeblock></p></li>
                   <li>Use the following command to view the keys in the key store:
                                                 <codeblock>gpg --list-keys</codeblock><p>The key
@@ -357,27 +357,27 @@ gpg --import hpPublicKey2048.pub </codeblock></p></li>
 ----------------------------
 pub   2048R/F7191CB9 2014-12-19
 pub   1024D/2689B887 2005-03-11 [expired: 2015-03-09]
-uid                  Hewlett-Packard Company (HP Codesigning Service)
+uid                  Hewlett Packard Enterprise Company (HPE Codesigning Service)
 pub   2048R/B1275EA3 2014-11-19 [expires: 2024-11-16]
-uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 1
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 1
 pub   2048R/B564A643 2014-11-19 [expires: 2024-11-16]
-uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 2
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 2
 pub   2048R/FF94BC78 2014-11-19 [expires: 2024-11-16]
-uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 3
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 3
 pub   2048R/BA849975 2014-11-19 [expires: 2024-11-16]
-uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 4
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 4
 pub   2048R/C6978F0C 2014-11-19 [expires: 2024-11-16]
-uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 5
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 5
 pub   2048R/5CE2D476 2012-12-04 [expires: 2022-12-02]
-uid                  Hewlett-Packard Company RSA (HP Codesigning Service)        </codeblock></li>
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service)        </codeblock></li>
                   <li>Use the following command to verify the signature:
                                                 <codeblock>gpg --verify ./cg-hos.tar.gz.gpg.sig ./cg-hos.tar.gz.gpg</codeblock><p>The
                                                 output for the command appears similar to the
                                                 following. This indicates the signature is verified:
-                                                  <b>Good signature from "Hewlett-Packard Company
-                                                  RSA (HP Codesigning
+                                                  <b>Good signature from "Hewlett Packard Enterprise Company
+                                                  RSA (HPE Codesigning
                                         Service)</b>.</p><codeblock>gpg: Signature made Wed 22 Jul 2015 01:23:24 PM EDT using RSA key ID C6978F0C
-gpg: Good signature from "Hewlett-Packard Company RSA (HP Codesigning Service) - 5"
+gpg: Good signature from "Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 5"
 gpg: WARNING: This key is not certified with a trusted signature!
 gpg:          There is no indication that the signature belongs to the owner.
 Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</codeblock></li>
@@ -418,7 +418,7 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                         <ul id="ul_jy1_tvp_rs">
                                 <li>Configure the boot order with Network/PXE boot as the first
                                                 option:<p>For example, to set the boot order for a
-                                                HP SL390, from the iLO prompt enter <codeph>set
+                                                HPE SL390, from the iLO prompt enter <codeph>set
                                                   system1/bootconfig1/bootsource5
                                                   bootorder=1</codeph>.</p></li>
                                 <li>
@@ -447,7 +447,7 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                 
 
 <section id="next-step"> <title>Next Step</title>
-<p>Install the <xref href="carrier-grade-install-hlm-vm.dita#topic10581">HP Helion Lifecycle
+<p>Install the <xref href="carrier-grade-install-hlm-vm.dita#topic10581">HPE Helion Lifecycle
                                         Management application onto a virtual machine</xref>.  </p>
 
 </section>

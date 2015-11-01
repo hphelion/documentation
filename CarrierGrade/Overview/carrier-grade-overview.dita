@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4010">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Overview</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Overview</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
-    <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
     <othermeta name="role" content="Storage Administrator"/>
     <othermeta name="role" content="Storage Architect"/>
     <othermeta name="role" content="Michael B"/>
-    <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
   </metadata>
 </prolog>
 <body>
     <section>
       <!-- From QuickSpec Asawa, Manjari <manjari.asawa@hp.com> -->
-      <p><b>HP Helion OpenStack Carrier Grade </b> is a carrier grade OpenStack solution plus
+      <p><b>HPE Helion OpenStack Carrier Grade </b> is a carrier grade OpenStack solution plus
         compute and network functions virtualization (NFV) offering that enables CSPs to deploy
         applications on open source software platforms.  </p>
       <p>Some key examples include the host operating system (for example, Linux), server
         virtualization (KVM), network virtualization (vSwitch and SDN controllers), an installer and
         cloud lifecycle management framework, fault and performance management, and
         high-availability framework for the OpenStack control plane and the NFVI layer.</p>
-      <p>HP Helion OpenStack Carrier Grade is based on HP Helion Openstack 1.1 but
+      <p>HPE Helion OpenStack Carrier Grade is based on HPE Helion Openstack 1.1 but
         with significantly enhanced and optimized functionality, availability, scale and performance
         to meet the needs of NFV cloud deployments.</p>
       <p>Helion OpenStack Carrier Grade includes following key components:</p>
@@ -41,7 +41,7 @@
         <li>Guest software development kit (SDK) for inclusion in the guest OS of the VNF for
           performance acceleration and improving the HA framework above and beyond standard
           VIMs</li>
-        <li>HP Helion Lifecycle Manager (HLM)—cloud installer and lifecycle manager</li>
+        <li>HPE Helion Lifecycle Manager (HLM)—cloud installer and lifecycle manager</li>
       </ul>
     </section>
     <section id="focus-areas-for-hp-helion-openstack-carrier-grade">
@@ -104,8 +104,8 @@
  
     <section>
       <title>Service Overview</title>
-      <p>HP Helion OpenStack Carrier Grade is comprised of a number of services, including several
-        OpenStack and HP Helion OpenStack services.</p>
+      <p>HPE Helion OpenStack Carrier Grade is comprised of a number of services, including several
+        OpenStack and HPE Helion OpenStack services.</p>
       <p>For more information, see <xref href="carrier-grade.services-overview.dita">Services
           Overview</xref>.</p>
     </section>
@@ -113,7 +113,7 @@
   <section id="distributed-cloud-networking-dcn"> <title>Distributed Cloud Networking (DCN)</title>
 <p>Distributed Cloud Networking (DCN) is a Software-Defined Networking (SDN) solution that provides data center (DC) network virtualization and automatically establishes connectivity between compute resources upon their creation.</p>
 <p>For more information, see <xref href="../../CarrierGrade/Overview/carrier-grade-overview-dcn.dita" >Distributed Cloud Networking Overview</xref>.</p>
-<p>HP Helion OpenStack offers many services based on the different OpenStack projects to provide the functionality you need. Visit the <xref href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita" >HP Helion OpenStack Services Overview page</xref> for a complete list of services.</p>
+<p>HPE Helion OpenStack offers many services based on the different OpenStack projects to provide the functionality you need. Visit the <xref href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita" >HPE Helion OpenStack Services Overview page</xref> for a complete list of services.</p>
 <p>
   <xref type="section" href="#topic4010"> Return to Top </xref>
 </p>

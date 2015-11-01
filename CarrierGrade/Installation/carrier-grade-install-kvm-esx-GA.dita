@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the KVM + ESX<tm
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the KVM + ESX<tm
       tmtype="reg"/> Deployment</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
-    <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
     <othermeta name="role" content="Storage Administrator"/>
     <othermeta name="role" content="Storage Architect"/>
     <othermeta name="role" content="Michael B"/>
-    <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
   </metadata>
 </prolog>
 <body>
   <p>After the Helion Lifecycle Management (HLM) is installed, the next task in installing the <xref
         href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM + ESX
-        deployment</xref> is to deploy the HP Helion OpenStack cloud and install the HP Distributed
+        deployment</xref> is to deploy the HPE Helion OpenStack cloud and install the HPE Distributed
       Cloud Networking (DCN) components. You must install the VMware ESX <tm tmtype="reg"/>compute
       proxy.</p>
   <p><b>Note:</b> If you are installing the KVM deployment, see <xref
         href="carrier-grade-install-kvm.dita#topic10581">Installing the KVM Deployment</xref>.</p> 
 <section id="prereqs">
-  <p>Before starting the HP Helion OpenStack Carrier Grade installation, the VMware vSphere application and 
-    HP Distributed Cloud Networking components must be fully installed and functioning:</p>
+  <p>Before starting the HPE Helion OpenStack Carrier Grade installation, the VMware vSphere application and 
+    HPE Distributed Cloud Networking components must be fully installed and functioning:</p>
 <ul>
 <li>ESXi requirements: 
   <ul><li>	vSphere Cluster running ESXi 5.5u2 with vMotion enabled.</li> 
@@ -114,8 +114,8 @@ VSD Server : auto
   <section><title>Install the VRSVapp</title>
     <p>Please Refer to the DCN VSP 3.0 R7 installation Guide for VRSvApp installation.</p>
   </section>
-  <section id="configure-a-json-file-for-installation"> <title>Deploy HP Helion OpenStack</title>
-<p>Use the following steps on the HLM host to deploy the HP Helion OpenStack:</p>
+  <section id="configure-a-json-file-for-installation"> <title>Deploy HPE Helion OpenStack</title>
+<p>Use the following steps on the HLM host to deploy the HPE Helion OpenStack:</p>
 <ol>
 <li>Login to HLM VM.
             <codeblock>ssh &lt;HLM_VM_IP>
@@ -143,11 +143,11 @@ Password: cghelion</codeblock>
           user:<codeblock>sudo su -</codeblock></li>
     
 <li>Change to the home directory.<codeblock>cd ~</codeblock></li>
-<li>Provision and configure HP Helion
+<li>Provision and configure HPE Helion
             OpenStack.<codeblock>hnewcloud  &lt;cloudname&gt; memphis</codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create.</li>
             <li><codeph>memphis</codeph> is the name of the template to use. The installation kit
-              includes a temlate called <codeph>memphis</codeph> designed to install HP Helion
+              includes a temlate called <codeph>memphis</codeph> designed to install HPE Helion
               OpenStack, specific to the KVM + ESX deployment.</li>
           </ul><p>The command creates the <codeph>&lt;cloudname&gt;</codeph> directory, which
             contains several JSON template files. </p></li></ol>
@@ -198,7 +198,7 @@ Password: cghelion</codeblock>
                 </row>
               </tbody>
             </tgroup>
-          </table><p>*iLO is HP Integrated Lights-Out, a server management tool embedded with the
+          </table><p>*iLO is HPE Integrated Lights-Out, a server management tool embedded with the
             ProLiant servers. Consult your iLO documentation for information on how to locate the
             iLO IP address, user name, and password.</p></li>
       <li>Remove the server assigned for second VRSG.
@@ -279,7 +279,7 @@ Password: cghelion</codeblock>
   <section id="configure-esx-json">
     <title>Configure the esx.json file</title>
     <p>Modify the <codeph>esx.json</codeph> file in the <codeph>&lt;cloudname></codeph> directory on
-        the HLM VM. This file is called by the script that installs the HP Helion OpenStack cloud,
+        the HLM VM. This file is called by the script that installs the HPE Helion OpenStack cloud,
         later in the installation. </p>
     <p>To see a sample <codeph>esx.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-esx-json.dita">Sample esx.json File for Installing the
@@ -324,8 +324,8 @@ Password: cghelion</codeblock>
       <codeblock>python -m json.tool &lt;filename>.json</codeblock>
   </section>
       <section><title>Configure the ESX Compute Proxy</title>
-    <p>The HP Helion OpenStack Carrier Grade vCenter ESX compute proxy (compute proxy) is a driver
-        that enables the Compute service to communicate with a VMware vCenter server. The HP Helion
+    <p>The HPE Helion OpenStack Carrier Grade vCenter ESX compute proxy (compute proxy) is a driver
+        that enables the Compute service to communicate with a VMware vCenter server. The HPE Helion
         OpenStack Compute Service (Nova) requires this driver to interface with VMware ESX
         hypervisor APIs.</p>
     <p>For instructions on installing the ESX compute proxy, see <xref
@@ -336,7 +336,7 @@ Password: cghelion</codeblock>
 <section id="create-a-new-cloud-template-and-bring-the-cloud-nodes-up">
       <title>Provision the cloud nodes and bring the cloud nodes up</title>
       <ol>
-        <li>On the HLM host, use the following script to start the provisioning of the HP Helion
+        <li>On the HLM host, use the following script to start the provisioning of the HPE Helion
           OpenStack cloud: <codeblock>hprovision &lt;cloudname&gt;          </codeblock><p>Where:
               <codeph>&lt;cloudname&gt;</codeph>  is the name of the cloud you created.</p><p>This
             script will PXE boot the nodes specified in <codeph>node-provision.json</codeph> file.
@@ -374,8 +374,8 @@ vmware_task_poll_interval = 0.5
 vmware_max_objects_retrieval = 100
 volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver</codeblock></li>
           </ol></li>
-        <li>Run the HP Helion OpenStack Configuration Processor:
-            <codeblock>hcfgproc -d definition.json</codeblock><p>The HP Helion OpenStack
+        <li>Run the HPE Helion OpenStack Configuration Processor:
+            <codeblock>hcfgproc -d definition.json</codeblock><p>The HPE Helion OpenStack
             Configuration Processor is a script, called <codeph>hcfgproc</codeph>, that is
             incorporated into the installation environment. </p><p>When the command completes, you
             will see the following:
@@ -444,7 +444,7 @@ B52-CCP-T1-M2-NETPXE       : ok=6    changed=4    unreachable=0 failed=0
 B52-CCP-T1-M3-NETPXE       : ok=6    changed=4    unreachable=0 failed=0          
 ~/b52</codeblock>
         </li>
-        <li>Use the following command to deploy the HP Helion OpenStack cloud:
+        <li>Use the following command to deploy the HPE Helion OpenStack cloud:
             <codeblock><codeph>hdeploy &lt;cloudname&gt;</codeph></codeblock><p>When this command is
             complete, the non-KVM cloud installation is complete. Use the following sections to
             configure the Horizon interface, configure networking, and configure the ESX
@@ -474,7 +474,7 @@ Password: cghelion</codeblock>
   </section>
 
   <section><title>Create external network and subnet</title>
-      <p>Use the HP Networking Service (Neutron) service to configure the external network.</p>
+      <p>Use the HPE Networking Service (Neutron) service to configure the external network.</p>
     <ol>
       <li>Execute the following command to obtain the static IP route for the external network/FIP
           EXT Uplink Subnet: <codeblock>interface Vlan-interface &lt;vlan_id></codeblock><p>Where
@@ -530,8 +530,8 @@ source stackrc</codeblock></li>
         <li>Enter <codeph>exit</codeph> to leave the root shell.</li></ol>
   </section>
   <section id="vrsg-config"><title>Configure the VRS-G </title>
-      <p>The HP Helion OpenStack Carrier Grade installation creates the required VRS-G gateway. You
-        need to use the HP DCN Virtualized Services Directory Architect (VSD) interface to add the
+      <p>The HPE Helion OpenStack Carrier Grade installation creates the required VRS-G gateway. You
+        need to use the HPE DCN Virtualized Services Directory Architect (VSD) interface to add the
         gateway and configure the <codeph>eth0</codeph> port.</p>
       <p><i>For more information on performing these tasks, refer to the DCN documentation </i></p>
     
@@ -756,7 +756,7 @@ source stackrc</codeblock></li>
       </image>
     </section>
   <section><title>Upload a Glance VMDK Image</title>
-    <p>In order to create VM instances in HP Helion OpenStack Carrier Grade, you need at least on
+    <p>In order to create VM instances in HPE Helion OpenStack Carrier Grade, you need at least on
         ISO image file. </p>
       <p>The installation package contains an image file in the VMware VMDK format that you can
         import using the Horizon interface.</p>
