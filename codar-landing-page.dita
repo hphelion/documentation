@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1314">
-<title>HP Codar</title>
+<title>HPE Codar</title>
 <titlealts>
-<searchtitle>HP Helion Optimized Cloud Solution</searchtitle>
+<searchtitle>HPE Helion Optimized Cloud Solution</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
@@ -28,11 +28,11 @@ Get visibility and enforce requirements for promotion to next lifecycle stage by
 </li>
 <li>
 <p>Extensive Out-of-the-Box Integration: 
-Integrate with HP, open source, and third-party tools such as Jenkins, Helion Public Cloud, Docker, VMware vCenter, AWS, and more, and leverage open APIs for custom integrations.</p>
+Integrate with HPE open source, and third-party tools such as Jenkins, Helion Public Cloud, Docker, VMware vCenter, AWS, and more, and leverage open APIs for custom integrations.</p>
 </li>
 </ul>
 </section>
-<section id="hp-codar-technical-information-and-manuals-a-z"> <title>HP Codar Technical Information and Manuals (A-Z)</title>
+<section id="hp-codar-technical-information-and-manuals-a-z"> <title>HPE Codar Technical Information and Manuals (A-Z)</title>
 <p>
   <xref href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01288450" scope="external" format="html" >Codar 1.00 Documentation Library (All)</xref>
 </p>
@@ -49,7 +49,7 @@ Integrate with HP, open source, and third-party tools such as Jenkins, Helion Pu
   <xref href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01288418" scope="external" format="html" >Installation Guide</xref>
 </p>
 <p>
-  <xref href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01366161" scope="external" format="html" >Integration with HP Operations Orchestration</xref>
+  <xref href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01366161" scope="external" format="html" >Integration with HPE Operations Orchestration</xref>
 </p>
 <p>
   <xref href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01288354" scope="external" format="html" >Language Support Read Me</xref>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en" linking="none" locktitle="no">
-  <title>HP Helion</title>
+  <title>HPE Helion</title>
   <topicmeta>
     <copyright>
       <copyryear year="2015"/>
-      <copyrholder>HP Helion</copyrholder>
+      <copyrholder>HPE Helion</copyrholder>
     </copyright>
     <prodinfo>
-      <prodname>HP Helion</prodname>
+      <prodname>HPE Helion</prodname>
       <vrmlist>
         <vrm version="4.1.0"/>
       </vrmlist>
@@ -19,37 +19,37 @@
 <!-- Index -->
 <topicref href="home.dita"/>
 <!-- HoS 2.0 -->
-<topichead navtitle="HP Helion OpenStack 2.0">
-<topichead navtitle="HP Helion OpenStack Services">
+<topichead navtitle="HPE Helion OpenStack 2.0">
+<topichead navtitle="HPE Helion OpenStack Services">
 <topicref href="commercial/GA2/Monasca/2.0commercial.services-monasca.dita"/>
 </topichead>
 </topichead>
 <!--Dev Plat-->  
 <topicref format="ditamap" href="docs.hpcloud.com.HDP.ditamap" navtitle="Helion Development Platform"/>
 <!-- Euca -->
-  <topicref href="euca/euca-landing-page.dita" navtitle="HP Helion Eucalyptus" locktitle="yes">
+  <topicref href="euca/euca-landing-page.dita" navtitle="HPE Helion Eucalyptus" locktitle="yes">
     <topicref href="euca/euca.thirdparty.licensing.dita"
       navtitle="Open-Source and Third-Party License Agreements" locktitle="yes"/>
     <topicref href="euca/euca-eula.dita" navtitle="Master Services Agreement" locktitle="yes"/>
   </topicref>
-  <topichead navtitle="HP CloudSystem 9.0">
+  <topichead navtitle="HPE CloudSystem 9.0">
     <topicref href="cloudsystem/eula.dita" navtitle="Software License Terms" locktitle="yes"/>
     <topicref href="cloudsystem/thirdparty.licensing.dita"
       navtitle="Open Source and Third Party License Agreements" locktitle="yes"/>
-    <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Foundation"
+    <topicref href="cloudsystem.landingpage.dita" navtitle="HPE CloudSystem Foundation"
       locktitle="yes"/>
-    <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Enterprise"
+    <topicref href="cloudsystem.landingpage.dita" navtitle="HPE CloudSystem Enterprise"
       locktitle="yes"/>
     <topicref href="automation/csa.index.dita"/>
-    <topicref href="codar-landing-page.dita" navtitle="HP Codar"/>
+    <topicref href="codar-landing-page.dita" navtitle="HPE Codar"/>
   </topichead>
 <!-- CGH -->
-  <mapref href="docs.hpcloud.com.CGH.ditamap" navtitle="HP Helion OpenStack Carrier Grade 1.1 GA"/>  
+  <mapref href="docs.hpcloud.com.CGH.ditamap" navtitle="HPE Helion OpenStack Carrier Grade 1.1 GA"/>  
 
 <!-- BEGIN Euca -->
   
   <!-- BEGIN Public cloud -->
-  <topicref href="publiccloud/publiccloud-overview.dita" navtitle="HP Helion Public Cloud"
+  <topicref href="publiccloud/publiccloud-overview.dita" navtitle="HPE Helion Public Cloud"
     locktitle="yes">
     <topicref href="publiccloud/site-overview.dita" navtitle="Helion Public Cloud Website Overview"
       locktitle="yes"/>
@@ -140,11 +140,11 @@
     <topicref href="publiccloud/vpn-quickstart.dita" navtitle="VPN Setup Quick Start Guide"
       locktitle="yes" toc="no"/><!--set to toc=no later-->
     <topicref href="publiccloud/plugins.teamcity.dita"
-      navtitle="HP TeamCity Plugin for Helion Public Cloud" locktitle="yes" toc="no"/>
+      navtitle="HPE TeamCity Plugin for Helion Public Cloud" locktitle="yes" toc="no"/>
     <topicref href="publiccloud/glossary.dita" navtitle="Helion Public Cloud Glossary"
       locktitle="yes"/>
   </topicref>
-  <topicref href="helion.rack.solution.dita" navtitle="HP Helion Cloud Solutions" locktitle="yes"/>
+  <topicref href="helion.rack.solution.dita" navtitle="HPE Helion Cloud Solutions" locktitle="yes"/>
   
   <!-- END Public cloud -->
 </map>

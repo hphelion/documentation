@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7321">
-<title>HP Helion 1.2 Development Platform: Building and Deploying Windows DEA and SQL Server Express Images</title>
+<title>HPE Helion 1.2 Development Platform: Building and Deploying Windows DEA and SQL Server Express Images</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.2"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="System Engineer"/>
 <othermeta name="role" content="Cloud Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Patrick F"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.2"/>
 </metadata>
 </prolog>
 <body>
@@ -30,7 +30,7 @@
     <i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i>
   </ph>
 </p>
-<p>This document demonstrates how to create and deploy a Windows image in an HP Helion <tm tmtype="reg">OpenStack</tm> environment to be used in Helion Development Platform. Image creation is needed to enable Windows support. This process can take several hours (approximately 7 hours, depending on hardware and network) and in most cases can be left unattended once the scripts begin execution.</p>
+<p>This document demonstrates how to create and deploy a Windows image in an HPE Helion <tm tmtype="reg">OpenStack</tm> environment to be used in Helion Development Platform. Image creation is needed to enable Windows support. This process can take several hours (approximately 7 hours, depending on hardware and network) and in most cases can be left unattended once the scripts begin execution.</p>
 <section id="prerequsites"> <title>Prerequsites</title>
 </section>
 <section id="host-prerequisites"> <title>Host Prerequisites</title>

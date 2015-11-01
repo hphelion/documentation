@@ -2,12 +2,12 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic853">
-  <title>HP Helion 1.2 Development Platform: Resources for IT Ops</title>
+  <title>HPE Helion 1.2 Development Platform: Resources for IT Ops</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Development Platform"/>
-      <othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+      <othermeta name="product-version" content="HPE Helion Development Platform"/>
+      <othermeta name="product-version" content="HPE Helion Development Platform 1.2"/>
       <othermeta name="role" content="Systems Administrator"/>
       <othermeta name="role" content="System Engineer"/>
       <othermeta name="role" content="Cloud Administrator"/>
@@ -16,8 +16,8 @@
       <othermeta name="role" content="ISV Developer"/>
       <othermeta name="role" content="Service Developer"/>
       <othermeta name="role" content="Jayme P"/>
-      <othermeta name="product-version1" content="HP Helion Development Platform"/>
-      <othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+      <othermeta name="product-version1" content="HPE Helion Development Platform"/>
+      <othermeta name="product-version2" content="HPE Helion Development Platform 1.2"/>
     </metadata>
   </prolog>
   <body>
@@ -26,7 +26,7 @@
       <title>Installation</title>
       <ul>
         <li>
-          <xref href="../commercial/GA1/1.1commercial.index.dita">HP Helion <tm
+          <xref href="../commercial/GA1/1.1commercial.index.dita">HPE Helion <tm
               tmtype="reg">OpenStack</tm> Installation</xref>
         </li>
         <li>

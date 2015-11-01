@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2502">
-<title>HP Helion 1.2 Development Platform: Release Notes for HP Helion Development Platform 1.2</title>
+<title>HPE Helion 1.2 Development Platform: Release Notes for HPE Helion Development Platform 1.2</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.1"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="System Engineer"/>
 <othermeta name="role" content="Cloud Administrator"/>
@@ -16,17 +16,17 @@
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version3" content="HP Helion Development Platform 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version3" content="HPE Helion Development Platform 1.1"/>
 </metadata>
 </prolog>
 <body>
     <p><!--PUBLISHED--><!--./devplatform/1.2devplatform.release-notes.md--><!--permalink: /helion/devplatform/release-notes/--></p>
-    <p>The following release notes are for the HP Helion Development Platform 1.3 released in August
+    <p>The following release notes are for the HPE Helion Development Platform 1.3 released in August
       2015. We hope you enjoy the release!</p>
     <section id="DPnotes">
       <title>Release Notes</title>
-      <p>The following features have been changed in HP Helion Development Platform 1.3:</p>
+      <p>The following features have been changed in HPE Helion Development Platform 1.3:</p>
       <dl>
         <dlentry>
           <dt>Docker Image Deployment</dt>
@@ -80,12 +80,12 @@
       </dl>
     </section>
 <section>
-      <p>The following features have been changed in HP Helion Development Platform 1.2:</p>
+      <p>The following features have been changed in HPE Helion Development Platform 1.2:</p>
       <dl>
         <dlentry>
           <dt>Develop, deploy, and manage cloud-native .NET applications</dt>
-          <dd>HP is the only vendor to offer this functionality in today's Cloud Foundry technology
-            v2, which is a key part of HP Helion Development Platform. We offer Windows support by
+          <dd>HPE is the only vendor to offer this functionality in today's Cloud Foundry technology
+            v2, which is a key part of HPE Helion Development Platform. We offer Windows support by
             providing the ability to host Windows applications on a Windows DEA (Droplet Execution
             Agent) with a "bring your own Windows license" model.</dd>
         </dlentry>
@@ -103,7 +103,7 @@
         </dlentry>
         <dlentry>
           <dt>Horizon panel updates for IT operations</dt>
-          <dd>Administrators can now run even more operations from the HP Helion <tm tmtype="reg"
+          <dd>Administrators can now run even more operations from the HPE Helion <tm tmtype="reg"
               >OpenStack</tm> Horizon management console, including renaming clusters, adding DEA
             nodes, adding roles, proxy support and DNS suffixes.</dd>
         </dlentry>
@@ -115,7 +115,7 @@
         <dlentry>
           <dt>When creating a new database, <i>cf-mgmt</i>
             <i>create cluster</i> or <i>add-service</i> command fails.</dt>
-          <dd>This issue applies to HP Helion Public Cloud only. When using <i>cf-mgmt create
+          <dd>This issue applies to HPE Helion Public Cloud only. When using <i>cf-mgmt create
               cluster</i> or <i>add-service</i> commands to create a new database, the operation
             fails. There is no workaround at this time.</dd>
         </dlentry>

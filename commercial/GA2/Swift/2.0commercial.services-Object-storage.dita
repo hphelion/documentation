@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="object-storage">
-  <title>HP Helion OpenStack Object Storage (Swift)</title>
+  <title>HPE Helion OpenStack Object Storage (Swift)</title>
   <body>
     <p> </p>
     <p> A Object Storage (Swift) is Software Defined Storage (SDS) architecture, layered on top of
@@ -20,9 +20,9 @@
             scaled up as necessary. It can also be horizontally scalable to handle an increased
             number of simultaneous connections as well as large number of objects.</p></li>
       </ul></p>
-    <p>Based on OpenStack® Object Sotrage, the HP Helion OpenStack® Object Storage service provides
+    <p>Based on OpenStack® Object Sotrage, the HPE Helion OpenStack® Object Storage service provides
       a highly available, resilient, and scalable storage pool for unstructured data. It is highly
-      durable architecture with no single point of failure. Apart from this, HP Helion OpenStack
+      durable architecture with no single point of failure. Apart from this, HPE Helion OpenStack
       introduces a concept of input model. The input model allows you to define disk and
       server-role. </p>
     <p>
@@ -35,7 +35,7 @@
         <li><b>Server-role model</b>- It maps the disk-model to a particular server type.</li>
       </ul>
     </p>
-    <p> HP Helion OpenStack 2.0 Object Storage also monitors Swift cluster using Monasca. </p>
+    <p> HPE Helion OpenStack 2.0 Object Storage also monitors Swift cluster using Monasca. </p>
     <section id="arch-overview"><b>Architecture Overview</b></section>
     <p> The following diagram depicts the architectural overview of the Swift deployment into your cloud:<ul>
         <li>

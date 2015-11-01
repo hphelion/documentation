@@ -60,7 +60,7 @@
         <li> Click on the admin panel in Horizon and select the <b>Development Platform</b> Panel under
           Admin. Then click on the <b>Configure Services</b> sub-panel.</li>
         <li> Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username
-          and password for the HP Download Network (HDN). Select the Sign-up button if you do not
+          and password for the HPE Download Network (HDN). Select the Sign-up button if you do not
           have an account.</li>
       </ol>
     </section>
@@ -89,11 +89,11 @@
               instances.</li>
             <li>
               <b>External Network</b> (Required) - Network Name for the network that has external
-              network access. For HP Helion OpenStack Commercial Edition this network is named
+              network access. For HPE Helion OpenStack Commercial Edition this network is named
               <b>ext-net</b></li>
             <li>
               <b>Provider Network</b> (Required) - Network Name for the network that has network
-              access to cloud infrastructure services. For HP Helion OpenStack Commercial Edition
+              access to cloud infrastructure services. For HPE Helion OpenStack Commercial Edition
               this network is named <b>SVC</b></li>
             <li>
               <b>NTP Server IP</b> - IP Address to an NTP server to use if instances will not have
