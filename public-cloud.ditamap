@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en" linking="none" locktitle="no">
-  <title>HP Helion</title>
+  <title>HPE Helion</title>
   <topicmeta>
     <copyright>
       <copyryear year="2015"/>
-      <copyrholder>HP Helion</copyrholder>
+      <copyrholder>HPE Helion</copyrholder>
     </copyright>
     <prodinfo>
-      <prodname>HP Helion</prodname>
+      <prodname>HPE Helion</prodname>
       <vrmlist>
         <vrm version="4.1.0"/>
       </vrmlist>
@@ -23,7 +23,7 @@
   <!--Dev Plat-->
 
   <!-- BEGIN Public cloud -->
-  <topicref href="publiccloud/publiccloud-overview.dita" navtitle="HP Helion Public Cloud"
+  <topicref href="publiccloud/publiccloud-overview.dita" navtitle="HPE Helion Public Cloud"
     locktitle="yes">
     <topicref href="publiccloud/site-overview.dita" navtitle="Helion Public Cloud Website Overview"
       locktitle="yes"/>
@@ -112,7 +112,7 @@
       locktitle="yes" toc="no"/>
     <!--set to toc=no later-->
     <topicref href="publiccloud/plugins.teamcity.dita"
-      navtitle="HP TeamCity Plugin for Helion Public Cloud" locktitle="yes" toc="no"/>
+      navtitle="HPE TeamCity Plugin for Helion Public Cloud" locktitle="yes" toc="no"/>
     <topicref href="publiccloud/glossary.dita" navtitle="Helion Public Cloud Glossary"
       locktitle="yes"/>
   </topicref>

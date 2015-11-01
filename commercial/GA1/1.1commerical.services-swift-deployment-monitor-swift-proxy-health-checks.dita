@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1691">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Monitor the Object Storage (Swift) Proxy Health</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1: Monitor the Object Storage (Swift) Proxy Health</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Karthik P, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -24,7 +24,7 @@
 </b> service, which runs in the undercloud, helps cloud admin monitor the  status of the Swift proxy of all swift nodes.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
-<li>HP Helion OpenStack cloud is successfully deployed. <p><i>(Starter Object Storage (Swift) nodes
+<li>HPE Helion OpenStack cloud is successfully deployed. <p><i>(Starter Object Storage (Swift) nodes
                             are functional by default as they are part of cloud deployment)</i>
                     </p></li>
 <li>The Icinga service is active and running in the undercloud</li>

@@ -2,16 +2,16 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Applying the HLM Port Security
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Applying the HLM Port Security
     Patch</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
     </metadata>
   </prolog>
   <body>
@@ -23,7 +23,7 @@
     <p>This patch secures all ports on the HLM VM. The standard protocol ports will allow inbound
       access only and the only the cloud nodes will have inbound access to the other ports of the
       HLM VM.</p>
-    <p>If your HP Helion OpenStack Carrier Grade cloud is being used in a production environment, we
+    <p>If your HPE Helion OpenStack Carrier Grade cloud is being used in a production environment, we
       recommend applying this patch. If your cloud is in a proof-of-concept (POC) environment, where
       external access is not a concern, this patch is not recommended and is not necessary.</p>
     <p>You should have downloaded the patch files in the <xref

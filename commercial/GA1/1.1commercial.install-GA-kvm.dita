@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7417">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Installation and Configuration for KVM Hypervisor</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1: Installation and Configuration for KVM Hypervisor</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B,"/>
-<othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -21,17 +21,17 @@
 
 </p>
   <p>
-    <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
+    <b>This document describes the installation process for HPE Helion OpenStack 1.1 and HPE Helion OpenStack 1.1.1.</b>
   </p>
-  <p>(If you already have 1.1 installed, you can update HP Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
-  <p>After you have completed and verified the HP Helion OpenStack installation, perform the following tasks as appropriate.</p>
-<p>HP Helion OpenStack allows you to manage a Kernel-based Virtual Machine (KVM) hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack on a suitably specified and prepared system.</p>
-<section id="installing-hp-helion-openstack"> <title>Installing HP Helion OpenStack</title>
+  <p>(If you already have 1.1 installed, you can update HPE Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HPE Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
+  <p>After you have completed and verified the HPE Helion OpenStack installation, perform the following tasks as appropriate.</p>
+<p>HPE Helion OpenStack allows you to manage a Kernel-based Virtual Machine (KVM) hypervisor and provision virtual machines. This document provides installation instructions for HPE Helion OpenStack on a suitably specified and prepared system.</p>
+<section id="installing-hp-helion-openstack"> <title>Installing HPE Helion OpenStack</title>
 <p>The installation and configuration process for KVM consists of the following general steps:</p>
 <ul>
 <li>Verify Prerequisites</li>
 <li>Downloading and extracting the installation packages</li>
-<li>Installing HP Helion OpenStack
+<li>Installing HPE Helion OpenStack
 
 <ul>
 <li>Configure proxy information</li>
@@ -47,7 +47,7 @@
 <section id="pre"> <title>Verify Prerequisites</title>
 <p>To ensure successful installation, <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita" >perform required pre-installation tasks</xref> before you start.</p>
 </section>
-<section id="install"> <title>Installing HP Helion OpenStack</title>
+<section id="install"> <title>Installing HPE Helion OpenStack</title>
 <p>Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through the steps to be executed on the seed cloud host:</p>
 <ul>
 <li><xref href="1.1commercial.install-GA-prereqs.dita#topic9786/proxy"/>
@@ -210,7 +210,7 @@ The overcloud nodes are registered with the undercloud's ironic service.</p>
 <p>If your installation is successful, a message similar to the following is displayed:</p>
 
 <codeblock>
-<codeph>"HP - completed - Tue Oct 23 16:20:20 UTC 2014"
+<codeph>"HPE - completed - Tue Oct 23 16:20:20 UTC 2014"
 </codeph>
 </codeblock>
           <note>If the installation does not complete properly, refer to the <xref
@@ -220,7 +220,7 @@ The overcloud nodes are registered with the undercloud's ironic service.</p>
 </ol>
 </section>
 <section id="verifying-your-installation"> <title>Verify your installation</title>
-<p>To verify that the installation is successful, connect to the HP Helion OpenStack dashboard and the undercloud dashboard as shown in <xref href="../../commercial/GA1/1.1commercial.install-GA-verify.dita" >Verifying your installation</xref>.</p>
+<p>To verify that the installation is successful, connect to the HPE Helion OpenStack dashboard and the undercloud dashboard as shown in <xref href="../../commercial/GA1/1.1commercial.install-GA-verify.dita" >Verifying your installation</xref>.</p>
 <!-- Not needed in 1.1
 ## Create projects for LDAP users {#ldap}
 

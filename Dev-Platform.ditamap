@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en" linking="none" locktitle="no">
-  <title>HP Helion</title>
+  <title>HPE Helion</title>
   <topicmeta>
     <copyright>
       <copyryear year="2015"/>
-      <copyrholder>HP Helion</copyrholder>
+      <copyrholder>HPE Helion</copyrholder>
     </copyright>
     <prodinfo>
-      <prodname>HP Helion</prodname>
+      <prodname>HPE Helion</prodname>
       <vrmlist>
         <vrm version="4.1.0"/>
       </vrmlist>
@@ -25,7 +25,7 @@
 
 
   <topicref href="devplatform/1.2/1.2devplatform.index.dita"
-    navtitle="HP Helion Development Platform 1.2" locktitle="yes">
+    navtitle="HPE Helion Development Platform 1.2" locktitle="yes">
     <!--//OASIS//DTD DITA Topic//EN"-->
     <!--permalink: /helion/devplatform/1.2/3rd-party-license-agreements/-->
     <topicref href="devplatform/1.2/1.2devplatform.thirdparty.licensing.dita"
@@ -118,13 +118,13 @@
         <topicref href="devplatform/1.2/workbook/messaging/1.2messaging.node.dita" locktitle="yes"
           navtitle="Node RabbitMQ Messaging Sample"/>
       </topichead>
-      <topichead navtitle="PHP Code Samples">
+      <topichead navtitle="PHPE Code Samples">
         <topicref href="devplatform/1.2/workbook/helloworld/1.2helloworld.php.dita" locktitle="yes"
-          navtitle="PHP Hello World Sample "/>
+          navtitle="PHPE Hello World Sample "/>
         <topicref href="devplatform/1.2/workbook/database/1.2database.php.dita" locktitle="yes"
-          navtitle="PHP MySQL Database Sample"/>
+          navtitle="PHPE MySQL Database Sample"/>
         <topicref href="devplatform/1.2/workbook/messaging/1.2messaging.php.dita" locktitle="yes"
-          navtitle="PHP RabbitMQ Messaging Sample"/>
+          navtitle="PHPE RabbitMQ Messaging Sample"/>
       </topichead>
       <!--permalink: /helion/devplatform/1.2/workbook/database/node/-->
       <!--permalink: /helion/devplatform/1.2/workbook/database/php/-->

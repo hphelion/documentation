@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3321">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Add New Scale-out Object Node</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1: Add New Scale-out Object Node</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.0"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.0.1"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.0"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.0.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
-<othermeta name="role" content="Keshava HP, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.0"/>
-<othermeta name="product-version3" content="HP Helion Openstack 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Keshava HPE Binamra S"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion Openstack 1.0"/>
+<othermeta name="product-version3" content="HPE Helion Openstack 1.0.1"/>
+<othermeta name="product-version4" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -40,7 +40,7 @@
 </ol>
 <section id="preq"> <title>Prerequisite</title>
 <ul>
-<li>HP Helion OpenStack cloud is successfully deployed.<p><i>(Starter Object Storage (Swift) nodes
+<li>HPE Helion OpenStack cloud is successfully deployed.<p><i>(Starter Object Storage (Swift) nodes
               are functional by default as they are part of cloud deployment)</i>
           </p></li>
 <li>Scale-out object-ring:1 is deployed.</li>

@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the KVM + ESX<tm
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the KVM + ESX<tm
       tmtype="reg"/> Deployment</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
-    <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
     <othermeta name="role" content="Storage Administrator"/>
     <othermeta name="role" content="Storage Architect"/>
     <othermeta name="role" content="Michael B"/>
-    <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
   </metadata>
 </prolog>
 <body>
-  <p>The first phase of the HP Helion Openstack Carrier Grade installation involves creating a
-      virtual machine for the Helion Lifecycle Management (HLM), deploying the HP Helion OpenStack
+  <p>The first phase of the HPE Helion Openstack Carrier Grade installation involves creating a
+      virtual machine for the Helion Lifecycle Management (HLM), deploying the HPE Helion OpenStack
       cloud, and installing DCN components. You must install the VMware ESX <tm tmtype="reg"
       />compute proxy.</p>
     <p>The installation uses Ansible playbooks, which are files that contain scripts that execute
       required installation processes.</p>
 <section id="prereqs">
-  <p>Before starting the HP Helion OpenStack Carrier Grade installation, the VMware vSphere application and 
-    HP Distributed Cloud Networking components must be fully installed and functioning:</p>
+  <p>Before starting the HPE Helion OpenStack Carrier Grade installation, the VMware vSphere application and 
+    HPE Distributed Cloud Networking components must be fully installed and functioning:</p>
 <ul>
 <li>ESXi requirements: 
   <ul><li>	vSphere Cluster running ESXi 5.5u2 with vMotion enabled.</li> 
@@ -92,7 +92,7 @@
         <li>Locate the IP address for the HLM VM in the
             <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the HLM host under
             <codeph>hlm_clmstaticip</codeph> field. You will use this IP address to SSH into the HLM
-          VM during the HP Helion OpenStack Carrier Grade installation process.</li> 
+          VM during the HPE Helion OpenStack Carrier Grade installation process.</li> 
       </ol>
 
 </section>
