@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="DatabaseService">
-<title>HP Helion 2.0 Development Platform: Using the Database Service</title>
+<title>HPE Helion 2.0 Development Platform: Using the Database Service</title>
 <body>
 <p>The database service provides lifecycle services for MySQL, Redis, Vertica, or MondoDB database instances. Lifecycle 
   services include provisioning, configuration, patching, backups, restores, and monitoring that can be administered from either a CLI interface, RESTful APIs or the Horizon dashboard.</p>
@@ -22,7 +22,7 @@
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ol>
-<li>Install the <xref href="../installation/devplatform_commercial_install.dita" >HP Helion Development Platform</xref>. </li>
+<li>Install the <xref href="../installation/devplatform_commercial_install.dita" >HPE Helion Development Platform</xref>. </li>
 <li>
           <xref href="../installation/devplatform_install_database.dita" type="section" >Configure
             the database service</xref>.</li>

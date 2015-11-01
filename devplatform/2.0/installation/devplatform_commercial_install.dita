@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic24073">
-<title>HP Helion 2.0 Development Platform: Installation and Configuration</title>
+<title>HPE Helion 2.0 Development Platform: Installation and Configuration</title>
 <titlealts>
-<searchtitle>HP Helion 2.0 Development Platform: Commercial Installation and Configuration</searchtitle>
+<searchtitle>HPE Helion 2.0 Development Platform: Commercial Installation and Configuration</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.3"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.3"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="System Engineer"/>
 <othermeta name="role" content="Cloud Administrator"/>
@@ -19,14 +19,14 @@
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Jayme P, Patrick F"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.3"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.3"/>
 </metadata>
 </prolog>
 <body>
 <section>
-<p>HP Helion Development Platform contains the Application Lifecycle Service, Database, Marketplace, and Messaging services.</p>
-<p>The following topics explain how to install and configure a new deployment of the HP Helion
+<p>HPE Helion Development Platform contains the Application Lifecycle Service, Database, Marketplace, and Messaging services.</p>
+<p>The following topics explain how to install and configure a new deployment of the HPE Helion
         Development Platform. There is also <xref
           href="../devplatform.troubleshooting.dita">Troubleshooting</xref> documentation to handle
         issues that may occur.</p>
@@ -34,7 +34,7 @@
 <li>
           <xref href="#id_tfs_4qv_ft" format="dita">Prerequisites </xref></li>
   <li>
-  <xref href="#id_l4p_cxw_ft" format="dita">Install the HP Helion Development Platform</xref>
+  <xref href="#id_l4p_cxw_ft" format="dita">Install the HPE Helion Development Platform</xref>
 </li>
   <li> <xref href="#id_jbr_5qv_ft" format="dita">Install the Horizon UI Panels</xref></li>
 <li>

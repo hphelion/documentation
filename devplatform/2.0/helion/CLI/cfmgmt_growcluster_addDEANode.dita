@@ -8,7 +8,7 @@
       <note>This sample creates five DEAs. Ensure you have enough disk space to do so.</note>
     </p> <section>
       <title>Prerequisites</title>
-      <ul><li>The host for the examples needs to be able to reach your HP Helion OpenStack environment.</li>
+      <ul><li>The host for the examples needs to be able to reach your HPE Helion OpenStack environment.</li>
         <li><xref href="devplatform_downloadRCFile.dita#topic_rmk_gnx_ft">Download</xref> the RC
           configuration file. </li>
         <li><xref
@@ -26,9 +26,9 @@
           the values for image names, image sizes and availability zones ("az") are valid for your
           current configuration. Here is an
             example:<codeblock>file version: 1.2 
-constructor-image-name: HP Helion Development Platform - Application Lifecycle Service Installer 1.2.0.282
+constructor-image-name: HPE Helion Development Platform - Application Lifecycle Service Installer 1.2.0.282
 constructor-flavor: standard.xsmall 
-seed-node-image-name: HP Helion Development Platform - Application Lifecycle Service Seed Node 1.2.0.282 
+seed-node-image-name: HPE Helion Development Platform - Application Lifecycle Service Seed Node 1.2.0.282 
 core-flavor: standard.medium 
 cluster-title: &lt;My Cluster Title&gt;
 cluster-prefix: &lt;My Cluster Prefix&gt; 
