@@ -2,7 +2,7 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
  
 <map xml:lang="en" linking="none" locktitle="no">
-<title>HP Helion Development Platform</title>
+<title>HPE Helion Development Platform</title>
   <topichead navtitle="Database Service Reference">
     <topicref href="2.0/database/devplatform.database-instance.dita" locktitle="yes"
       navtitle="Using the Database Service"/>
