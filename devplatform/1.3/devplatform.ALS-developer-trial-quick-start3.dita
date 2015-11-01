@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic1871">
-<title>HP Helion 1.3 Development Platform: Quick Start Developer Trial</title>
+<title>HPE Helion 1.3 Development Platform: Quick Start Developer Trial</title>
 <titlealts>
 <searchtitle>Quick Start Developer Trial Step 3: Create Sandbox</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Security Engineer"/>
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
 </metadata>
 </prolog>
 <body>
@@ -32,7 +32,7 @@
               href="devplatform.ALS-developer-trial-quick-start6.dita">Explore Sample
               Applications</xref></p></stentry>
             <stentry><ol>
-            <li> Log into the <xref href="https://horizon.hpcloud.com/" scope="external" format="html">Horizon console</xref> using the HP Helion Public
+            <li> Log into the <xref href="https://horizon.hpcloud.com/" scope="external" format="html">Horizon console</xref> using the HPE Helion Public
                             Cloud username and password that you created during registration. <image href="../../media/quickstartWest.png" id="image_isz_fxc_ks" placement="break"/>
                         </li>
             <li>In the <b>US West section</b>, in the <b>Compute</b> row, click <b>Activate</b> to

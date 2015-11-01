@@ -101,7 +101,7 @@
       <codeblock>openssl s_client -connect api.stacka.to:443
 ---
 Certificate chain
- 0 s:/C=CA/ST=British Columbia/L=Vancouver/O=HP Software Inc./OU=Application Lifecycle Service/CN=*.stacka.to
+ 0 s:/C=CA/ST=British Columbia/L=Vancouver/O=HPE Software Inc./OU=Application Lifecycle Service/CN=*.stacka.to
    i:/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance CA-3
  1 s:/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance CA-3
    i:/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance EV Root CA
