@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_kvm">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry-scale Cloud
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry-scale Cloud
     with KVM</title>
   <body>
     <section id="about"><p>This page describes the common installation steps that are required for
-        each of the HP Helion OpenStack Entry-scale cloud models that utilize the KVM hypervisor on
+        each of the HPE Helion OpenStack Entry-scale cloud models that utilize the KVM hypervisor on
         the Compute nodes. This includes the following example configurations: <ul>
           <li>Entry-scale KVM with VSA model</li>
           <li>Entry-scale KVM with Ceph model</li>
@@ -59,7 +59,7 @@
         your first controller node. The default choice is to use the first controller node as the
         lifecycle-manager.</p>
       <ol>
-        <li>Download the HP Helion OpenStack 2.0.0 product from the <xref
+        <li>Download the HPE Helion OpenStack 2.0.0 product from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
             format="html" scope="external">Helion Downloads</xref> page after signing in.</li>
         <li>Boot your deployer from the ISO contained in the download.</li>
@@ -87,7 +87,7 @@
           <note>This can be added to <codeph>~stack/.bashrc</codeph> or
               <codeph>/etc/bash.bashrc</codeph>.</note></li>
       </ol>
-      <p>At the end of this section you should have a node set up with Linux for HP Helion on
+      <p>At the end of this section you should have a node set up with Linux for HPE Helion on
         it.</p>
       <p><b>Configure and Run the Lifecycle-manager</b></p>
       <note type="important">It is critical that you don't run any of the commands below as the
@@ -186,14 +186,14 @@ git commit -m "My config or other commit message"</codeblock>
     </section>
     <section id="provision"><title>Provision Your Baremetal Nodes</title>
       <p>To provision the baremetal nodes in your cloud deployment you can either use the automated
-        operating system installation process provided by HP Helion OpenStack or you can use the 3rd
+        operating system installation process provided by HPE Helion OpenStack or you can use the 3rd
         party installation tooling of your choice. We will outline both methods below:</p>
       <p id="thirdparty"><b>Using 3rd Party Baremetal Installers</b></p>
       <p>If you do not wish to use the automated operating system installation tooling included with
-        HP Helion OpenStack 2.0 then the requirements that have to be met using the installation
+        HPE Helion OpenStack 2.0 then the requirements that have to be met using the installation
         tooling of your choice are:</p>
       <ul>
-        <li>The operating system must be installed via the HP Linux for HP Helion OpenStack ISO
+        <li>The operating system must be installed via the HPE Linux for HPE Helion OpenStack ISO
           provided on the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
             format="html" scope="external">Helion Downloads</xref> page.</li>
@@ -211,7 +211,7 @@ git commit -m "My config or other commit message"</codeblock>
           Processor</xref> step.</p>
       <p>If you would like to use the automated operating system installation tools provided by HP
         Helion OpenStack 2.0 then complete all of the steps below.</p>
-      <p><b>Using the Automated Operating System Installation Provided by HP Helion
+      <p><b>Using the Automated Operating System Installation Provided by HPE Helion
         OpenStack</b></p>
       <p><b>Part One: Deploy Cobbler</b></p>
       <p>This phase of the install process takes the baremetal information that was provided in

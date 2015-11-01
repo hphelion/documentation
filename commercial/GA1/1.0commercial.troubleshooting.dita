@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic23276">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Troubleshooting</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.0: Troubleshooting</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -14,7 +14,7 @@
       <!--./commercial/GA1/1.0commercial.troubleshooting.md-->
       <!--permalink: /helion/openstack/services/troubleshooting/--></p>
     <p> </p>
-    <p>HP Helion OpenStack is an OpenStack technology coupled with a version of <tm tmtype="reg"
+    <p>HPE Helion OpenStack is an OpenStack technology coupled with a version of <tm tmtype="reg"
         >Linux</tm> provided by HP. This topic describes all the known issues that you might
       encounter. To help you resolve these issues, we have provided possible solutions.</p>
     <p>For easy reference, we categorized the known issues and solutions as follows:</p>
@@ -37,7 +37,7 @@
       </li>
     </ul>
     <p>If you need further assistance, contact <xref href="http://www.hpcloud.com/about/contact"
-        scope="external" format="html">HP Customer Support</xref>.</p>
+        scope="external" format="html">HPE Customer Support</xref>.</p>
     <section id="baremetal-install">
       <title>Baremetal installation</title>
     </section>
@@ -91,7 +91,7 @@
       <p>
         <b>System Behavior/Message</b>
       </p>
-      <p>When installing on HP ProLiant SL390s and HP ProLiant BL490d systems, the following error
+      <p>When installing on HPE ProLiant SL390s and HPE ProLiant BL490d systems, the following error
         has occasionally occurred:</p>
       <codeblock>
   <codeph>`Fatal PCI Express Device Error PCI Slot ?
@@ -169,11 +169,11 @@ $ sudo service nova-conductor restart
             systems change to a state in which the <codeph>Server Power</codeph> status as reported
             by the iLO is stuck in <codeph>RESET</codeph>. If this occurs, you must physically
             disconnect the power from the server for 10 seconds. If the problem persists after that,
-            contact HP Support as there might be a defective component in the system.</p>
+            contact HPE Support as there might be a defective component in the system.</p>
         </li>
         <li>
           <p>On the system on which the installer is run, the seed VM's networking is bridged onto
-            the external LAN. If you remove HP Helion OpenStack the network bridge persists. To
+            the external LAN. If you remove HPE Helion OpenStack the network bridge persists. To
             revert the network configuration to its pre-installation state, run the following
             commands as user root:</p>
           <codeblock>
@@ -191,11 +191,11 @@ $ sudo service nova-conductor restart
           </ul>
         </li>
         <li>
-          <p>Before you install the HP Helion OpenStack DNSaaS or if you want to use Heat with HP
+          <p>Before you install the HPE Helion OpenStack DNSaaS or if you want to use Heat with HP
             Helion OpenStack you <b>must</b> modify the /etc/heat/heat.conf file on the overcloud
             controller as follows.</p>
           <p>
-            <b>Important</b>: The installation of the HP Helion OpenStack DNSaaS fails if you do not
+            <b>Important</b>: The installation of the HPE Helion OpenStack DNSaaS fails if you do not
             make these modifications.</p>
           <ol>
             <li>
@@ -232,7 +232,7 @@ heat_watch_server_url = http://192.0.202.2:8003
       <p>
         <b>System Behavior/Message</b>
       </p>
-      <p>When installing on HP ProLiant BL490c systems, the following error has occasionally
+      <p>When installing on HPE ProLiant BL490c systems, the following error has occasionally
         occurred:</p>
       <codeblock>
   <codeph>unable to establish IPMI v2 / RMCP+ session
@@ -663,7 +663,7 @@ heat_watch_server_url = http://192.0.202.2:8003
 </codeblock>
         </li>
         <li>
-          <p>To restart HP VCN agent, execute the following command in OVSvAPP vm's</p>
+          <p>To restart HPE VCN agent, execute the following command in OVSvAPP vm's</p>
           <codeblock>
 <codeph>#service hpvcn-neutron-agent restart 
 </codeph>
@@ -764,7 +764,7 @@ heat_watch_server_url = http://192.0.202.2:8003
       <p>Perform the following steps:</p>
       <ul>
         <li>
-          <p>HP StoreVirtual VSA supports up to 7 disks</p>
+          <p>HPE StoreVirtual VSA supports up to 7 disks</p>
         </li>
         <li>
           <p>Execute <codeph>fdisk &amp;#45;l</codeph> and check for number of available drives in

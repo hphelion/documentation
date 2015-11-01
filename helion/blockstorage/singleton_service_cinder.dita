@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_l1p_vpy_jt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Managing Cinder Volume and Backup Services</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Managing Cinder Volume and Backup Services</title>
   <body><!--Needs Work; fnf edit 10/27; intro text to first procedure needs clarifying-->
     <p>Due to the single threading required in both <codeph>cinder-volume</codeph> and the drivers,
       the Cinder volume service is run as a singleton in the control plane.</p>

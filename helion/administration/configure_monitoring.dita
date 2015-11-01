@@ -2,16 +2,16 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="configure_monitoring">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring the Monitoring Service</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring the Monitoring Service</title>
   <body>
     <section id="config">
-      <p>In HP Helion OpenStack 2.0 you will have the option to specify a SMTP server for email
+      <p>In HPE Helion OpenStack 2.0 you will have the option to specify a SMTP server for email
         notifications and a database platform you want to use for the Metrics Database. These steps
         will assist in this process.</p>
     </section>
     <section id="email"><title>Specifying a SMTP Server for Email Notifications</title>
       <p>In order for the Monitoring service to be able to send email notifications about alarms, it
-        needs to be configured with an email server. The email server is not provided by HP Helion
+        needs to be configured with an email server. The email server is not provided by HPE Helion
         OpenStack, but must be specified in the configuration file described below. The email server
         must support SMTP.</p>
       <p>To configure the SMTP server, edit the <codeph>cloudConfig.yml</codeph> file during
@@ -67,7 +67,7 @@
         database is <b>Vertica</b>, which is a highly-scalable analytics database from HP. Vertica
         is free to use, up to 12TB, for all paid Helion customers as a Helion operational database
         <!--(please see eula )-->.
-        Vertica is the recommended database for HP Helion OpenStack.</p>
+        Vertica is the recommended database for HPE Helion OpenStack.</p>
       <p>You can learn more about Vertica here: <xref
           href="https://www.vertica.com/hp-vertica-documentation/" scope="external" format="html"
           >Vertica Documentation</xref></p>

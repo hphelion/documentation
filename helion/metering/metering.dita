@@ -4,7 +4,7 @@
   <title>Ceilometer APIs</title>
   <body>
     <section id="pipeline"><title>Separate pipeline.yaml for Ceilometer Post Sample API</title> Post
-      Sample API is disabled by default in HP Helion OpenStack 2.0 and is configured with a pipeline
+      Sample API is disabled by default in HPE Helion OpenStack 2.0 and is configured with a pipeline
       configuration different than the agents. The api pipeline has no meters enabled, so it needs
       to be configured with meters when the Post sample API is enabled. Exercise caution when adding
       meters to the API pipeline. Ensure that only those meters are added to this pipeline which are

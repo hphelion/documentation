@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_xq2_dw4_nt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Retrieve Swift Data Using
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Retrieve Swift Data Using
     swift-recon</title>
   <body>
     <p>You can use the <codeph>swift-recon</codeph> command to retrieve data from Swift servers and

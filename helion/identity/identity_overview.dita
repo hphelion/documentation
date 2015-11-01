@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ugs_fnd_bt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: The Identity Service</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: The Identity Service</title>
   <body>
     <section id="intro">
       <title>What is the Identity service?</title>
-      <p>The HP Helion <tm tmtype="reg">OpenStack</tm> Identity service, based on the OpenStack Keystone API, is
+      <p>The HPE Helion <tm tmtype="reg">OpenStack</tm> Identity service, based on the OpenStack Keystone API, is
         responsible for providing UserID authentication and access authorization to enable
         organizations to achieve their access security and compliance objectives and successfully
         deploy OpenStack. In short, the Identity Service is the gateway to the rest of the OpenStack
@@ -34,8 +34,8 @@
         types of authentication systems such as Multi-Factor Authentication. These types of systems
         typically require driver support and integration from the respective provider vendors. </p>
       <p><note> While support for Identity Providers and Multi-factor authentication is available in
-          Keystone, it has not yet been certified by the HP Helion OpenStack engineering team and is
-          an experimental feature in HP Helion OpenStack.</note></p>
+          Keystone, it has not yet been certified by the HPE Helion OpenStack engineering team and is
+          an experimental feature in HPE Helion OpenStack.</note></p>
       <p>LDAP-compatible directories such as OpenLDAP and Microsoft Active Directory are recommended
         alternatives to using the Keystone local authentication. Both methods are widely used by
         organizations and are integrated with a variety of other enterprise applications. These
@@ -74,16 +74,16 @@
         group membership. This provides a very consistent role-based access control (RBAC) model
         based on the upstream identity source. The configuration of this option is fairly
         straightforward. IdP vendors such as Ping and IBM are contributing to the maintenance of
-        this function and have also produced their own integration documentation. HP is using the
+        this function and have also produced their own integration documentation. HPE is using the
         Microsoft Active Directory Federation Services (ADFS) for functional testing and future
         documentation. Horizon support for web single sign-on is also now available in the OpenStack
-        Kilo release but not yet validated for HP Helion OpenStack.</p>
+        Kilo release but not yet validated for HPE Helion OpenStack.</p>
       <p>The third Keystone-supported authentication source is known as Multi-Factor Authentication
         (MFA). MFA typically requires an external source of authentication beyond a login name and
         password, and can include options such as SMS text, a temporal token generator, a
         fingerprint scanner, etc. Each of these types of MFA are usually specific to a particular
         MFA vendor. The Keystone architecture supports an MFA-based authentication system, but this
-        has not yet been certified or documented for HP Helion OpenStack.</p></section>
+        has not yet been certified or documented for HPE Helion OpenStack.</p></section>
     <section id="authorization">
       <title>Authorization</title>
       <p>The second major function provided by the Keystone service is access authorization that

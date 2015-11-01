@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_icq_hvc_5t">
-  <title>HP Helion OpenStack&#174; 2.0: Ceilometer Metering APIs</title>
+  <title>HPE Helion OpenStack&#174; 2.0: Ceilometer Metering APIs</title>
   <body>
     <section id="pipeline"><title>Separate pipeline.yml for Ceilometer Post Samples API</title> The
-      Post Sample API is disabled by default in HP Helion OpenStack 2.0 and its configured with a
+      Post Sample API is disabled by default in HPE Helion OpenStack 2.0 and its configured with a
       pipeline configuration different than the agents. The API pipeline has no meters enabled, so
       it needs to be configured with meters when the Post Samples API is enabled. Exercise caution
       when adding meters to the API pipeline. Ensure that only those meters are added to this
@@ -199,7 +199,7 @@ sinks:
         <li>Only the top 20 meters associated with the sample query results are displayed. </li>
         <li>Period duration selection should be much less than the default retention period
           (currently 7 days), to get statistics for multiple groups. </li>
-      </ul> HP Helion uses the Apache2 Web Server to provide API access. It is possible to tune
+      </ul> HPE Helion uses the Apache2 Web Server to provide API access. It is possible to tune
       performance to optimize the front end as well as the back-end database. Experience indicates
       that an excessive increase of concurrent access to the front-end tends to put a strain in the
       database. </section>

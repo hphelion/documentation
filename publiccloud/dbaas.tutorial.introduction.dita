@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic6061">
-  <title>Using HP Helion Public Cloud Relational Database</title>
+  <title>Using HPE Helion Public Cloud Relational Database</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -13,14 +13,14 @@
       <!--PUBLISHED-->
       <!--./publiccloud/dbaas.tutorial.introduction.md-->
       <!--permalink: /publiccloud/dbaas/tutorial/introduction/--></p>
-    <p>HP Helion Public Cloud Relational Database (sometimes called Database as a Service, or DBaaS)
-      provides highly optimized MySQL databases inside of the HP Helion Public Cloud.</p>
-    <p>With HP Helion Public Cloud Relational Database, you can quickly build and manage MySQL
+    <p>HPE Helion Public Cloud Relational Database (sometimes called Database as a Service, or DBaaS)
+      provides highly optimized MySQL databases inside of the HPE Helion Public Cloud.</p>
+    <p>With HPE Helion Public Cloud Relational Database, you can quickly build and manage MySQL
       database servers without having to manage the mundane details. This tutorial explains (at a
       high level) how to work with our DBaaS.</p>
     <section id="a-quick-guide-to-terminology">
       <title>A Quick Guide to Terminology</title>
-      <p>HP Helion Public Cloud Relational Database provides <i>database instances</i> (or
+      <p>HPE Helion Public Cloud Relational Database provides <i>database instances</i> (or
           <i>database servers</i>). A database instance is a MySQL server that communicates on a
         network socket.</p>
       <p>Inside of a database instance, you can create <i>users</i>, <i>schemas</i> (also often
@@ -34,14 +34,14 @@
     <section id="creating-a-new-database-server">
       <title>Creating a New Database Server</title>
       <p>When you create a new relational database instance, what you are actually creating is a
-        database server that lives on a managed compute instance. HP Helion Public Cloud takes care
+        database server that lives on a managed compute instance. HPE Helion Public Cloud takes care
         of operating that instance and keeping the database process comfortably running, and you get
         access to the MySQL server.</p>
       <p>You can create a new database server using the HTTP REST API directly (check out the <xref
           href="../publiccloud/api.dita">API documentation</xref>) or you can use one of the
         existing libraries or tools. For example, the <xref
           href="http://hpcloud.github.com/HPCloud-PHP/" scope="external" format="html">HPCloud-PHP
-          library</xref> has support for working with DBaaS. As the HP Helion Public Cloud
+          library</xref> has support for working with DBaaS. As the HPE Helion Public Cloud
         Relational Database enters public beta, you will also be able to create database servers
         through the <xref href="https://horizon.hpcloud.com/" scope="external" format="html">HP
           Helion Public Cloud Console</xref>.</p>
@@ -67,8 +67,8 @@
     </section>
     <section id="managing-your-database-servers">
       <title>Managing your Database Servers</title>
-      <p>Most of the administrative tasks of running a database server are handled by HP Helion
-        Public Cloud. We keep your instances running and maintained. In fact, for HP Helion Public
+      <p>Most of the administrative tasks of running a database server are handled by HPE Helion
+        Public Cloud. We keep your instances running and maintained. In fact, for HPE Helion Public
         Cloud Relational Database we do not provide logins to the compute instance itself. But there
         are several tasks that you can perform:</p>
       <ul>
@@ -80,7 +80,7 @@
           is brought back online.</li>
         <li>Resetting the Admin Password: While you cannot retrieve the administrative password
           after an instance is created, you <i>can</i> reset the admin password.</li>
-        <li>Delete a Database Server: You can also delete an HP Helion Public Cloud Relational
+        <li>Delete a Database Server: You can also delete an HPE Helion Public Cloud Relational
           Database instance. Doing this will destroy the database server (and all of its contents).
           That server will not be recoverable.</li>
       </ul>
@@ -94,7 +94,7 @@
       <p>It is also possible to take a <i>snapshot</i> of a MySQL server. In this process, a special
         binary copy of the database is built and stored. Snapshots are useful because they can be
         used as the basis for rapid system recovery.</p>
-      <p>HP Helion Public Cloud Relational Database provides services for taking and managing
+      <p>HPE Helion Public Cloud Relational Database provides services for taking and managing
         snapshots. Through our tools (REST API, language-specific libraries, and management
         console), you can perform the following snapshot tasks:</p>
       <ul>
@@ -109,14 +109,14 @@
           snapshot images.</li>
       </ul>
       <p>What about re-building an instance from a snapshot? At this time, that step requires
-        involvement from HP Helion Public Cloud staff.</p>
+        involvement from HPE Helion Public Cloud staff.</p>
     </section>
     <section id="more-information">
       <title>More Information</title>
-      <p>For more information about HP Helion Public Cloud Relational Database, see the <xref
+      <p>For more information about HPE Helion Public Cloud Relational Database, see the <xref
           href="https://docs.hpcloud.com/" scope="external" format="html">documentation</xref>.</p>
       <p>For information about pricing and availability, visit the <xref
-          href="https://www.hpcloud.com/products/RDB" scope="external" format="html">HP Helion
+          href="https://www.hpcloud.com/products/RDB" scope="external" format="html">HPE Helion
           Public Cloud Relational Database product home</xref>.</p>
     </section>
   </body>

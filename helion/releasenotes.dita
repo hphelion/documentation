@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="release_notes">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Release Notes</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Release Notes</title>
   <body>
     <!--Needs Edit-->
-    <p>This document provides an overview of the features contained within HP Helion <tm
+    <p>This document provides an overview of the features contained within HPE Helion <tm
         tmtype="reg">OpenStack</tm> 2.0, including known issues and workarounds for this
       release:</p>
 
     <section id="Features">
       <p><b>New GUI Installer</b></p>
-      <p>HP Helion OpenStack 2.0 introduces a GUI installer for configuring and installing the
+      <p>HPE Helion OpenStack 2.0 introduces a GUI installer for configuring and installing the
         operating system, the cloud, and OpenStack services. It provides an easy way to populate the
         configuration files needed to define the <xref href="input_model.dita">Input Model</xref>,
         and uses them to configure and install your cloud. For help using the installer, see the
@@ -24,15 +24,15 @@
           href="security/encrypted_storage.dita">Encryption of Passwords and Sensitive Data
         </xref>for more information.</p>
       <p><b>AppArmor enabled</b></p>
-      <p>AppArmor in HP Helion OpenStack 2.0 is installed and enabled on the KVM compute nodes by
+      <p>AppArmor in HPE Helion OpenStack 2.0 is installed and enabled on the KVM compute nodes by
         default. It runs in enforce mode. It enforces mandatory access control policies for the
         libvirt process. See <xref href="security/using_apparmor.dita#topic_rmq_j1v_4t">AppArmor in
-          HP Helion OpenStack 2.0</xref> for more information.</p>
+          HPE Helion OpenStack 2.0</xref> for more information.</p>
       <p><b>The lifecycle manager only supports American English language</b></p>
       <p>The lifecycle-manager installation process prompts you to select a language. The only
         supported language at this time is American English.</p>
       <p><b>Local Git repository for config tracking</b></p>
-      <p>In HP Helion OpenStack 2.0, a local git repository is used to track configuration changes
+      <p>In HPE Helion OpenStack 2.0, a local git repository is used to track configuration changes
         as well as acting as a repository for the Configuration Processor to gather configuration
         settings from. The operations work as explained below: <ul>
           <li>Operations under <codeph>~/helion</codeph> are under the aegis of git. You’ll need to
@@ -50,11 +50,11 @@
         settings. An explanation can be found <xref href="installation/using_git.dita">in this
           topic</xref>.</p>
       <p><b>New UEFI support</b></p>
-      <p>HP Helion OpenStack 2.0 includes support for UEFI (which replaces the BIOS on newer
+      <p>HPE Helion OpenStack 2.0 includes support for UEFI (which replaces the BIOS on newer
         servers), while continuing to support Legacy BIOS. Select the required mode on each node
         through its BIOS settings before beginning the install process. The installer will detect
         and use the mode you have selected for each node.</p>
-      <p><b>Updated HP Helion OpenStack Services</b></p>
+      <p><b>Updated HPE Helion OpenStack Services</b></p>
       <p>We have included the core set of OpenStack services from the <xref
           href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo" scope="external" format="html"
           >Kilo release</xref> with the exception of limitations notated in this document.</p>
@@ -67,7 +67,7 @@
         networks. Here is a description of each of these: <ul>
           <li>
             <p>LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a load
-              balancing feature set. HP Helion OpenStack 2.0 installs by default LBaaS version 2
+              balancing feature set. HPE Helion OpenStack 2.0 installs by default LBaaS version 2
               which uses an implementation of  haproxy but third-party load balancers can be
               deployed as well.  If a third-party driver doesn’t support LBaaS V2, then installing
               LBaaS V1 instead of V2 is possible.</p>
@@ -79,7 +79,7 @@
           <li>
             <p>FWaaS (Firewall-as-a-Service) is a Neutron extension that introduces a firewall
               feature set. The included reference implementation is using iptables to filter traffic
-              but third-party firewalls can be deployed with this extension into HP Helion OpenStack
+              but third-party firewalls can be deployed with this extension into HPE Helion OpenStack
               as well.</p>
             <ul>
               <li>For more information, see: <xref href="networking/fwaas.dita">Firewall (FWaaS)
@@ -97,7 +97,7 @@
             </ul>
           </li>
           <li>
-            <p>Multiple networks is a feature in HP Helion OpenStack 2.0 that enables bridging of
+            <p>Multiple networks is a feature in HPE Helion OpenStack 2.0 that enables bridging of
               multiple external physical networks to a Neutron network. Using this functionality a
               tenant can dictate the path taken by the data in the physical network outside the
               cloud. It can also be used for multi-homing to two physical networks.</p>
@@ -118,7 +118,7 @@
           For example, traffic can be separated into management, tenant, external, and service
           networks.</li>
       </ul>
-      <p><b>NIC Mapping Feature</b></p> The new NIC mappings feature in HP Helion OpenStack allows
+      <p><b>NIC Mapping Feature</b></p> The new NIC mappings feature in HPE Helion OpenStack allows
       the cloud administrator to map network interface names to PCI bus addresses. This is important
       because for well-understood reasons, Linux can sometimes name the network interfaces in a
       pseudo-random order. So in a cluster of identical machines, the <b>eth3</b> device can appear
@@ -128,7 +128,7 @@
       impossible, if most machines understand the Management Network to be <b>eth3</b>, but some
       subset of machines understand that network to be on <b>eth4</b> ( and whatever was on eth4 is
       similarly swapped to <b>eth3</b>). <p>To resolve this, and to ensure that all NIC devices have
-        consistent naming across the entire cloud, HP Helion OpenStack 2.0 includes NIC Mapping
+        consistent naming across the entire cloud, HPE Helion OpenStack 2.0 includes NIC Mapping
         facilities. This is a mechanism in the Input Model to define a specific NIC interface for a
         given PCI address for a given class of machine. Generally, when all of the network
         interfaces are defined in the <xref href="input_model.dita#input_model/co_nicmappings"
@@ -142,8 +142,8 @@
         naming must be consistent across the entire Input Model.</p>
       <p><b>Monasca-based Monitoring</b></p><p>Monasca is a multi-tenant, scalable, fault-tolerant,
         monitoring service. It uses a REST API for high-speed metrics processing and querying, and
-        has a streaming alarm and notification engine. In the HP Helion OpenStack 2.0 release, the
-        OpenStack monitoring standard, Monasca, is supported as the HP Helion OpenStack monitoring
+        has a streaming alarm and notification engine. In the HPE Helion OpenStack 2.0 release, the
+        OpenStack monitoring standard, Monasca, is supported as the HPE Helion OpenStack monitoring
         solution with the following exceptions (which are not implemented):</p>
       <ul>
         <li>Transform Engine</li>
@@ -151,7 +151,7 @@
         <li>Anomaly and Prediction Engine</li>
       </ul>
       <p>Monitoring is integrated for the following services: Logging, Neutron, Swift, Ceilometer,
-        Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HP Linux for HP
+        Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HPE Linux for HP
         Helion OpenStack.</p><p>Learn more about Monasca here: <xref
           href="operations/monitoring_service.dita">Monasca Overview</xref></p>
       <p><b>Monitoring Configuration Options Available for Metrics Database</b></p><p>In this
@@ -391,7 +391,7 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
 }</codeblock>
       <p><b>Issue: Kilo functionality not supported by the Kilo version of
         python-cinderclient</b></p>
-      <p>The version of the python-cinderclient available in HP Helion OpenStack 
+      <p>The version of the python-cinderclient available in HPE Helion OpenStack 
         2.0 does not support some functionality available from the cinder services, including incremental backup and private volume types.</p>
       If you install a new version of python-cinderclient, and if you have OS_ENDPOINT_TYPE defined, you must also define CINDER_ENDPOINT_TYPE.
       
@@ -434,7 +434,7 @@ cinder --version</codeblock></li>
       <p>If you restart your lifecycle management node, note that Apache2 will not restart on its
         own. You will need to restart it manually.</p>
       <b>Heat autoscaling not supported </b>
-      <p>In HP Helion OpenStack 2.0, the auto-scaling in Heat is not supported because the alarm
+      <p>In HPE Helion OpenStack 2.0, the auto-scaling in Heat is not supported because the alarm
         creation in Ceilometer is disabled.</p>
       <b>A Horizon create a 'bootable volume' fails UI task</b>
       <p>When you navigate to 'volumes' and choose to create a 'bootable volume,' if you do not
@@ -452,7 +452,7 @@ cinder --version</codeblock></li>
         </li>
       </ol>
       <b>IPv6 Traffic Not Supported</b>
-      <p>The HP Helion OpenStack 2.0 release includes firewall rules to prevent non-essential
+      <p>The HPE Helion OpenStack 2.0 release includes firewall rules to prevent non-essential
         traffic from accessing the physical systems. However, these rules are limited to IPv4
         traffic only. In order to prevent unsolicited or nefarious IPv6 traffic, you will need to
         block IPv6 at your router, or within the infrastructure.</p><p> You can disable IPv6 on your
@@ -483,7 +483,7 @@ Oct  7 12:49:09 hlm kernel: [31181.133060] Modules linked in: dm_service_time xt
      crc16 mbcache jbd2 dm_mod sd_mod sg lpfc qla2xxx crc_t10dif uhci_hcd ehci_pci crct10dif_generic xhci_hcd ehci_hcd scsi_transport_fc 
      hpsa usbcore usb_common scsi_mod be2net crct10dif_common
 Oct  7 12:49:09 hlm kernel: [31181.133114] CPU: 23 PID: 554 Comm: systemd-udevd Not tainted 3.14.51-1-amd64-hlinux #hlinux1
-Oct  7 12:49:09 hlm kernel: [31181.133115] Hardware name: HP ProLiant BL460c Gen9, BIOS I36 05/06/2015
+Oct  7 12:49:09 hlm kernel: [31181.133115] Hardware name: HPE ProLiant BL460c Gen9, BIOS I36 05/06/2015
 Oct  7 12:49:09 hlm kernel: [31181.133117] task: ffff883fcf0262c0 ti: ffff883f979ca000 task.ti: ffff883f979ca000
 Oct  7 12:49:09 hlm kernel: [31181.133118] RIP: 0010:[&lt;ffffffff81514f5b>]  [&lt;ffffffff81514f5b>] _raw_spin_trylock+0xb/0x40</codeblock>The
       associated stack from the softlockup will show the instruction point either holding or
@@ -515,11 +515,11 @@ Oct  7 12:49:09 hlm kernel: [31181.133118] RIP: 0010:[&lt;ffffffff81514f5b>]  [&
       to consume message from queue:(amqp): 2015-08-20 01:18:21,282 DEBUG channel _do_close Closed channel #1</codeblock></p>
     </section>
     <section><title>In the Cinder CLI no more than 1000 Cinder volumes can be displayed</title>Due
-      to a known issue with the version of the OpenStack python-cinderclient in HP Helion OpenStack
+      to a known issue with the version of the OpenStack python-cinderclient in HPE Helion OpenStack
       2.0 (1.1.3), the maximum number of volumes that can be displayed is 1000. The fixed client is
       1.3.1. The workaround is to use python-cinderclient 1.3.1. </section>
     <section id="CoreFeatures">
-      <title>Features in HP Helion OpenStack 2.0</title>
+      <title>Features in HPE Helion OpenStack 2.0</title>
       <!-- 
         
         Core and Non-core descriptions provided by Carolyn Adler (cadler@hpe.com) in Legal.
@@ -527,13 +527,13 @@ Oct  7 12:49:09 hlm kernel: [31181.133118] RIP: 0010:[&lt;ffffffff81514f5b>]  [&
         
         -->
       <p>Core features in the <tm tmtype="reg">OpenStack</tm> Foundation’s Kilo release (as
-        identified below) are enabled in the HP Helion OpenStack 2.0 standard settings and are
+        identified below) are enabled in the HPE Helion OpenStack 2.0 standard settings and are
         included in Helion standard product support. </p>
       <p>Non-core services (listed in the Features tables below) are provided as-is. Some non-core
-        services are included in this release to provide early access to features that HP may
-        support fully in future releases, but HP cannot guarantee that support will be provided or
+        services are included in this release to provide early access to features that HPE may
+        support fully in future releases, but HPE cannot guarantee that support will be provided or
         issues resolved in a future release. Other non-core features are provided in this release
-        for a limited time and may be deprecated in future releases. HP will attempt to provide
+        for a limited time and may be deprecated in future releases. HPE will attempt to provide
         guidance and telephone support for these features at its discretion. If you need additional
         support on any of these features for a specific use case, please contact the Helion
         professional services team. </p>

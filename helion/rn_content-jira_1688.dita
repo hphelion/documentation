@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_j4d_c1c_lt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: RN</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: RN</title>
   <body>
     <!--Needs Edit-->
     <p>The following table list a high level overview of the OpenStack projects/services which are
-      included in HP Helion OpenStack and their status. Only official upstream OpenStack projects
+      included in HPE Helion OpenStack and their status. Only official upstream OpenStack projects
       are included, not non-OpenStack add-ons that originate elsewhere. <note>If the service is not
-        listed in the table then it is not present in HP Helion OpenStack.</note></p>
+        listed in the table then it is not present in HPE Helion OpenStack.</note></p>
     <p>
       <simpletable frame="all" relcolwidth="1.0* 1.0*" id="simpletable_q2l_d1c_lt">
         <strow>
           <stentry>Service Name</stentry>
-          <stentry>Status in HP Helion OpenStack 2.0</stentry>
+          <stentry>Status in HPE Helion OpenStack 2.0</stentry>
         </strow>
         <strow>
           <stentry>Barbican</stentry>
@@ -102,24 +102,24 @@
     </p>
     <p/>
     <section>
-      <title>Relation of HP Helion OpenStack Services with OpenStack stable/kilo</title>
-      <p>The general policy for HP Helion OpenStack 2.0 is that each service is kept up to date
+      <title>Relation of HPE Helion OpenStack Services with OpenStack stable/kilo</title>
+      <p>The general policy for HPE Helion OpenStack 2.0 is that each service is kept up to date
         versus upstream OpenStack stable/kilo.</p>
     </section>
-    <p> Automated jobs run nightly to mirror upstream OpenStack stable/kilo down to HP Helion
+    <p> Automated jobs run nightly to mirror upstream OpenStack stable/kilo down to HPE Helion
       OpenStack's internal code mirror so, unless the sync job fails, each service should be up to
       date. The level of drift between upstream OpenStack stable/kilo and what is included in the HP
       Helion OpenStack V2.0 build is summarised here. This is automated output from all the
-      OpenStack repos included in the HP Helion OpenStack daily builds. </p>
+      OpenStack repos included in the HPE Helion OpenStack daily builds. </p>
     <p>Note that Ceilometer, Nova, Horizon, Keystone and Cinder have >2 local patches.The detailed
       list of all missing patches and all local patches is here. </p>
     <p>OpenStack Kilo Stable Patch Release Schedule</p>
     <p>The schedule for patch releases for OpenStack Kilo is at Planned stable/kilo releases (9
       months). Note that 2015.1.1 released in July and 2015.1.2 is due in mid-Sept. What 'version'
-      of OpenStack Kilo will HP Helion OpenStack V2.0 ship with?As per above, HP Helion OpenStack
-      V2.0 is built from code which is sync'd nightly with upstream OpenStack stable/kilo. HP Helion
+      of OpenStack Kilo will HPE Helion OpenStack V2.0 ship with?As per above, HPE Helion OpenStack
+      V2.0 is built from code which is sync'd nightly with upstream OpenStack stable/kilo. HPE Helion
       OpenStack V2.0 will therefore ship with the latest Kilo patches as of the final build of HP
-      Helion OpenStack V2.0. In other words, the HP Helion OpenStack V2.0 plan is that it will be
+      Helion OpenStack V2.0. In other words, the HPE Helion OpenStack V2.0 plan is that it will be
       more up to date than the 2015.1.2 "Kilo patch release".</p>
     <p/>
   </body>

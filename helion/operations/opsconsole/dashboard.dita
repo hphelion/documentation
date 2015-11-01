@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?> <!--This work by HP Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.--> <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<?xml version="1.0" encoding="UTF-8"?> <!--This work by HPE Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.--> <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="dashboard">
-    <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Dashboard</title>
+    <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Dashboard</title>
     <shortdesc>This page displays a high level overview of all cloud resources and their alarm
         status.</shortdesc>
     <conbody>

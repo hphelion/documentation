@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6584">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Icinga Overview</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1: Icinga Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -26,7 +26,7 @@
  <!--./commercial/GA1/1.1commercial.services-icinga.md-->
  <!--permalink: /helion/commercial/1.1/services/icinga/--></p>
         <p>The Icinga service, which runs in the undercloud, is the user interface which allows the
-            cloud admin to montior the HP Helion OpenStack Object Storage (Swift) cluster in any of
+            cloud admin to montior the HPE Helion OpenStack Object Storage (Swift) cluster in any of
             the followings ways:. </p>
         <p>
             <ul id="ul_v3c_1bv_ns">

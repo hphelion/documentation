@@ -2,37 +2,37 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="home">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0</title>
   <titlealts>
-    <searchtitle>HP Helion OpenStack 2.0: Documentation Home</searchtitle>
+    <searchtitle>HPE Helion OpenStack 2.0: Documentation Home</searchtitle>
   </titlealts>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack"/>
-      <othermeta name="product-version" content="HP Helion Openstack 2.0"/>
+      <othermeta name="product-version" content="HPE Helion Openstack"/>
+      <othermeta name="product-version" content="HPE Helion Openstack 2.0"/>
       <othermeta name="role" content="All"/>
-      <othermeta name="product-version1" content="HP Helion Openstack"/>
-      <othermeta name="product-version2" content="HP Helion Openstack 2.0"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack"/>
+      <othermeta name="product-version2" content="HPE Helion Openstack 2.0"/>
     </metadata>
   </prolog>
   <body>
     <!--Needs Edit-->
     <section id="top"/>
-    <p>HP Helion OpenStack is a commercial-grade distribution of <tm tmtype="reg">OpenStack</tm>
-      cloud software, the leading open source cloud computing platform. This HP Helion distribution,
-      backed by HP, lets you build, manage, and operate open source-based clouds on a resilient,
-      maintainable platform. HP Helion OpenStack enables cost-effective scalability of IT services
-      and business agility and, as part of the HP Helion portfolio, it is backed by a wide range of
+    <p>HPE Helion OpenStack is a commercial-grade distribution of <tm tmtype="reg">OpenStack</tm>
+      cloud software, the leading open source cloud computing platform. This HPE Helion distribution,
+      backed by HPE lets you build, manage, and operate open source-based clouds on a resilient,
+      maintainable platform. HPE Helion OpenStack enables cost-effective scalability of IT services
+      and business agility and, as part of the HPE Helion portfolio, it is backed by a wide range of
       related cloud products, services, and professional support.</p>
-    <!--<p>HP Helion <tm tmtype="reg">OpenStack</tm> offers many services based on the different <tm tmtype="reg">OpenStack</tm> 
-    projects to provide the functionality you need. Visit the HP Helion OpenStack Services Overview page for a complete list of services.</p>-->
+    <!--<p>HPE Helion <tm tmtype="reg">OpenStack</tm> offers many services based on the different <tm tmtype="reg">OpenStack</tm> 
+    projects to provide the functionality you need. Visit the HPE Helion OpenStack Services Overview page for a complete list of services.</p>-->
     <section id="getstart">
-      <title>Get Started with HP Helion OpenStack</title>
-      <p>The following links and tools will help you understand, deploy, and run your HP Helion
+      <title>Get Started with HPE Helion OpenStack</title>
+      <p>The following links and tools will help you understand, deploy, and run your HPE Helion
         OpenStack 2.0 cloud.</p>
       <ul>
-        <li><xref href="overview.dita">HP Helion OpenStack 2.0 Overview</xref></li>
+        <li><xref href="overview.dita">HPE Helion OpenStack 2.0 Overview</xref></li>
         <li><xref href="kilo_features.dita">OpenStack Kilo Features</xref></li>
         <li><xref href="input_model.dita">Input Model</xref></li>
         <li><xref href="example_configurations.dita">Example Configurations</xref></li>

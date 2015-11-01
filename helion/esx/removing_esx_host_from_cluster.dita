@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_srg_d5h_rt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing an ESX Host from a Cluster</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing an ESX Host from a Cluster</title>
   <body><!--Needs Work; fnf edit on 10/27; link to image is broken-->
     <p>This topic describes how to remove an existing ESX host from a cluster.<note>Before
         performing this procedure, wait until VCenter migrates all the tenant VMs to other active

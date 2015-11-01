@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_h3s_n4t_mt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding Moonshot Nodes</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding Moonshot Nodes</title>
   <body>
     <!--Needs Work-->
     <p>
       <note type="important">Moonshots are supported as compute nodes.</note>
     </p>
-    <p>HP Moonshot Servers are designed and tailored for specific workloads to deliver optimum
+    <p>HPE Moonshot Servers are designed and tailored for specific workloads to deliver optimum
       performance. These support a wide range of complex IT demands right from cloud based
-      applications to Social Media, Big Data and Mobility. HP Moonshot Server is the world’s first
+      applications to Social Media, Big Data and Mobility. HPE Moonshot Server is the world’s first
       software defined web server that will accelerate innovation while delivering breakthrough
       efficiency and scale.</p>
     <section>
       <title>Supported Moonshot Servers</title>
     </section>
-    <p>The HP Moonshot Servers are now verified hardware to run HP Helion OpenStack. The supported
+    <p>The HPE Moonshot Servers are now verified hardware to run HPE Helion OpenStack. The supported
       Moonshot Servers are :<ul id="ul_m44_rpt_mt">
-        <li>HP ProLiant m710 Server Cartridge</li>
-        <li>HP ProLiant m300 Server Cartridge</li>
+        <li>HPE ProLiant m710 Server Cartridge</li>
+        <li>HPE ProLiant m300 Server Cartridge</li>
       </ul></p>
     <section>
       <title>Configure Moonshot Nodes</title>
@@ -186,7 +186,7 @@ resource-nodes:
             the sample file, <b>role: ROLE-COMPUTE-MOONSHOT</b> identifies the role of the Moonshot
             node.</p><!-- TODO What is "truck 9"? is this a typo? --><p>Moonshot server comes with only 2 NICs. One is used for PXE and another is
             used as truck 9. <note type="important">NIC binding is not supported due to limited
-              number of NICs. Hence, the NIC mapping section in the HP Helion OpenStack input model
+              number of NICs. Hence, the NIC mapping section in the HPE Helion OpenStack input model
               should not be present for moonshot nodes.</note></p></li>
         <li><codeph>server_roles.yml</codeph><p>You specify the usage of the server or where you
             want to use a particular server. A sample file of <codeph>server_roles.yml</codeph> is

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_fld_zzy_lt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing a Compute Node</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing a Compute Node</title>
   <body><!--Needs Work-->
   <section id="removeNodes"> The process for removing a compute node requires that you run these
       steps. Note that to run any playbooks whatsoever for cloud maintenance, you will always run
@@ -141,7 +141,7 @@ stack@padawan-ccp-c0-m1-mgmt:~$ nova service-list</codeblock><codeblock>+----+--
             prevent loss of data; the config processor retains data about removed nodes and keeps
             their ID numbers from being reallocated. See the <xref
               href="../input_model.dita#input_model/persistedserverallocations">Persisted Server
-              Allocations</xref> section in HP Helion OpenStack 2.0 Input Model for information on
+              Allocations</xref> section in HPE Helion OpenStack 2.0 Input Model for information on
             how this works.</note>
           <codeblock>~$ ssh stack@hlm004-ccp-comp0004-mgmt "sudo systemctl stop nova-compute"</codeblock>
           or shut down the node. (alternatively, you may re-image the

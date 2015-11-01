@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_e32_tm2_rt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing a VSA Node For Maintenance</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing a VSA Node For Maintenance</title>
   <body>
     <!--Needs Work-->
     <section id="about">
       <p>This process is used when you want to remove a storage system/VSA node from a
-        cluster/management group for maintenance, using HP StoreVirtual Management Console
+        cluster/management group for maintenance, using HPE StoreVirtual Management Console
         (CMC).</p>
       <p>After maintenance, the VSA node is added back to the cluster.</p>
       <p><note type="caution">
@@ -15,10 +15,10 @@
               ensure that the VSA network RAID configuration/data protection aspects are taken care
               of prior to removing a VSA node. </li>
             <li>See <i>Using disk RAID with Network RAID in a cluster</i>, <i>Planning the RAID
-                configuration</i>, and the <i>Data protection</i> sections of HP StoreVirtual
+                configuration</i>, and the <i>Data protection</i> sections of HPE StoreVirtual
               Storage Online help (available in <b>StoreVirtual Management Console</b>) before
               configuring RAID. You must configure RAID before adding the storage system to the
-              management group. Refer the online help of <b>HP StoreVirtual CMC for configuring the
+              management group. Refer the online help of <b>HPE StoreVirtual CMC for configuring the
                 network RAID for storage systems.</b>
             </li>
             <li>You must set the data protection level while creating the volume type for the VSA
@@ -26,7 +26,7 @@
           </ul>
         </note></p>
       <p>Use this process to remove a storage system/VSA node from a cluster/management group for
-        maintenance using the HP StoreVirtual Management Console (CMC). After maintenance, the VSA
+        maintenance using the HPE StoreVirtual Management Console (CMC). After maintenance, the VSA
         node is added back to the cluster.</p>
       <p><note type="caution">To make the volumes available even after the VSA storage node goes
           offline, you must ensure that the VSA network RAID configuration/data protection aspects
@@ -35,13 +35,13 @@
               "Planning the RAID configuration," and "Data protection" sections of the HP
               StoreVirtual Storage Online help (available in the <b>StoreVirtual Management
                 Console</b>). You must configure RAID before adding the storage system to the
-              management group. Refer the online help of <b>HP StoreVirtual CMC for configuring the
+              management group. Refer the online help of <b>HPE StoreVirtual CMC for configuring the
                 network RAID for storage systems.</b></li>
             <li>You must set the data protection level while creating the volume type for the VSA
               volumes in OpenStack Cinder. For instructions, see the OpenStack configuration guide
                 <xref
                 href="http://docs.openstack.org/kilo/config-reference/content/HP-LeftHand-StoreVirtual-driver.html"
-                format="html" scope="external">HP LeftHand/StoreVirtual driver</xref>.</li>
+                format="html" scope="external">HPE LeftHand/StoreVirtual driver</xref>.</li>
           </ul></note></p>
     </section>
     <section>
@@ -56,7 +56,7 @@
             StoreVirtual Storage Online help in CMC.</b><p>OR</p><p>If the repair option is
             unavailable, perform either of the operations below to remove the VSA storage system for
             maintenance:</p>
-          <p>See the <i> Maintaining storage systems in clusters</i> section in HP StoreVirtual
+          <p>See the <i> Maintaining storage systems in clusters</i> section in HPE StoreVirtual
             Storage Online help in CMC and perform any of the following operations to ensure that
             the cluster functions normally and the volumes continue to be available even after the
             storage system is removed/replaced:</p></li>
@@ -68,15 +68,15 @@
       <ol>
         <li>Ensure that the volume is available if the storage system/VSA node to be removed goes
           offline. For instructions, see the "Determining volume and snapshot availability" section
-          in the <b>HP StoreVirtual Storage Online help</b>.</li>
+          in the <b>HPE StoreVirtual Storage Online help</b>.</li>
         <li>If the repair option is available for the VSA storage system, choose the appropriate
           option in repair. For instructions, see the "Using Repair Storage System" section in the
-            <b>HP StoreVirtual Storage Online help in CMC</b>.<p>OR</p><p>If the repair option is
+            <b>HPE StoreVirtual Storage Online help in CMC</b>.<p>OR</p><p>If the repair option is
             unavailable, perform either of the below steps to remove the VSA storage system for
             maintenance:</p><p>Perform any of the below operations to ensure that the cluster
             functions normally and the volumes continue to be available even after the storage
             system is removed/replaced. (For instructions see "Maintaining storage systems in
-            clusters" section in the <b>HP StoreVirtual Storage Online help in CMC</b>).</p><p>
+            clusters" section in the <b>HPE StoreVirtual Storage Online help in CMC</b>).</p><p>
             <ul id="ul_dmj_sq2_rt">
               <li>Add and remove storage systems for an existing cluster (the new storage system
                 from the list of available VSA storage systems as shown in CMC). </li>

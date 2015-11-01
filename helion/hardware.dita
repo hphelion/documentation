@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="min_hardware">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Recommended Minimum Hardware
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Recommended Minimum Hardware
     Requirements</title>
   <body>
     <!--Needs Work; 'Supported Hardware Configurations' section is confusing and seems incomplete; Notes about performance should maybe be rewritten as actual notes and/or recommendations~this section is kind of fuzzy;-->
     <section id="supported_hardware"><title>Hardware Support Matrix</title>
-      <p>For information about the supported hardware in HP Helion OpenStack 2.0, see <xref
-          href="http://helionready.hpcloud.com/ihv/" format="html" scope="external">HP Helion Ready
+      <p>For information about the supported hardware in HPE Helion OpenStack 2.0, see <xref
+          href="http://helionready.hpcloud.com/ihv/" format="html" scope="external">HPE Helion Ready
           Solution Catalog</xref>.</p>
     </section>
     <section id="supported_configs">
       <title>Supported Hardware Configurations</title>
-      <p>HP Helion OpenStack 2.0 supports the following hardware configurations for a
+      <p>HPE Helion OpenStack 2.0 supports the following hardware configurations for a
         deployment.</p>
       <p>Storage Interconnects/Protocols</p>
       <ul>

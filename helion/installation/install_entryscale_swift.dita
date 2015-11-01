@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_swift">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for HP Helion Entry-scale Cloud
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for HPE Helion Entry-scale Cloud
     with Swift Only</title>
   <body>
     <section id="about">
-      <p>This page describes the installation step requirements for the HP Helion Entry-scale Cloud
+      <p>This page describes the installation step requirements for the HPE Helion Entry-scale Cloud
         with Swift Only model.</p>
     </section>
     <section conref="install_entryscale_kvm.dita#install_kvm/important_notes"/>

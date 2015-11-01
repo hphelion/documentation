@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en" linking="none" locktitle="no">
-  <title>HP Helion OpenStack Carrier Grade 1.1</title>
+  <title>HPE Helion OpenStack Carrier Grade 1.1</title>
     <!--PDFTITLE "DO NOT GENERATE"-->
   <topicmeta>
     <copyright>
       <copyryear year="2015"/>
-      <copyrholder>HP Helion</copyrholder>
+      <copyrholder>HPE Helion</copyrholder>
     </copyright>
     <prodinfo>
-      <prodname>HP Helion</prodname>
+      <prodname>HPE Helion</prodname>
       <vrmlist>
         <vrm version="4.1.0"/>
       </vrmlist>
@@ -35,22 +35,22 @@
           navtitle="Compute Service (Nova) Overview" locktitle="yes"/>
         <topicref
           href="CarrierGrade/ServicesOverviews/carrier-grade-services-networking-overview.dita"
-          navtitle="HP Networking Service (Neutron) Overview" locktitle="yes"/>
+          navtitle="HPE Networking Service (Neutron) Overview" locktitle="yes"/>
         <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-imaging-overview.dita"
-          navtitle="HP Image Operations (Glance) Overview" locktitle="yes"/>
+          navtitle="HPE Image Operations (Glance) Overview" locktitle="yes"/>
         <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-volume-overview.dita"
-          navtitle="HP Block Storage Operations (Cinder) Overview" locktitle="yes"/>
+          navtitle="HPE Block Storage Operations (Cinder) Overview" locktitle="yes"/>
         <topicref
           href="CarrierGrade/ServicesOverviews/carrier-grade-services-orchestration-overview.dita"
-          navtitle="HP Orchestration Service (Heat) Overview" locktitle="yes"/>
+          navtitle="HPE Orchestration Service (Heat) Overview" locktitle="yes"/>
         <topicref
           href="CarrierGrade/ServicesOverviews/carrier-grade-services-identity-overview.dita"
-          navtitle="HP Identity Service (Keystone) Overview" locktitle="yes"/>
+          navtitle="HPE Identity Service (Keystone) Overview" locktitle="yes"/>
         <topicref
           href="CarrierGrade/ServicesOverviews/carrier-grade-services-metering-overview.dita"
-          navtitle="HP Metering Service (Ceilometer) Overview" locktitle="yes"/>
+          navtitle="HPE Metering Service (Ceilometer) Overview" locktitle="yes"/>
         <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
-          navtitle="HP Horizon Service Overview" locktitle="yes">
+          navtitle="HPE Horizon Service Overview" locktitle="yes">
           <topicref href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
             navtitle="Logging into the Helion Dashboard" locktitle="yes"/>
           <topicref

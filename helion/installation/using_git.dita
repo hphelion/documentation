@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="using_git">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using Git for Configuration
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using Git for Configuration
     Management</title>
   <body>
-    <p>In HP Helion OpenStack 2.0, a local git repository is used to track configuration changes and
+    <p>In HPE Helion OpenStack 2.0, a local git repository is used to track configuration changes and
       the Configuration Processor (CP) uses this repository. The introduction of a git
       workflow also means that your configuration history is maintained, making rollbacks easier as
       well as keeping a record of previous configuration settings.</p>
     <p>The git repository is installed by the deployer on the deployer node.</p>
 
-    <!--<p>Below is a representation of the typical git workflow in HP Helion OpenStack 2.0. </p>
+    <!--<p>Below is a representation of the typical git workflow in HPE Helion OpenStack 2.0. </p>
     <p/>-->
     <p>The git repository provides a way for you to merge changes that you pull down as "upstream" (i.e. from HP)
       updates, and allows you to manage your own configuration changes. </p>
     <section>
       <title>Initialization on a new deployment</title>
-      <p>On a system new to HP Helion OpenStack 2.0, the deployer will prepare a git repository
+      <p>On a system new to HPE Helion OpenStack 2.0, the deployer will prepare a git repository
         under <codeph>~/helion</codeph>. The deployer provisioning runs the <codeph>hlm-init-deployer</codeph> script automatically -
         this calls <codeph>ansible-playbook -i hosts/localhost git-00-initialise.yml</codeph>.</p>
       <p>As a result, the <codeph>~/helion</codeph> directory is initialized as a git repo (if it's empty). It is
@@ -25,7 +25,7 @@
             <dt>hos</dt>
             <dd>This holds the upstream  source code corresponding to the contents of
               the <codeph>~/helion</codeph> directory on a pristine fresh installation. Every source code release
-              that is downloaded from HP is applied as a fresh commit to this branch. This branch
+              that is downloaded from HPE is applied as a fresh commit to this branch. This branch
               contains no customization by the end user.</dd>
           </dlentry>
           <dlentry>

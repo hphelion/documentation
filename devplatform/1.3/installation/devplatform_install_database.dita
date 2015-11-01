@@ -9,7 +9,7 @@
 </section>
 
 <section id="availability-zones"> <title>Availability Zones</title> 
-<p>To configure the Database Service in a highly available manner, it is necessary to create separate availability zones. As a best practice, HP recommends creating three availability zones. All compute hosts should be placed within one of these availability zones. If a compute host is not associated with an availability zone, the Database Service will not be able to provision a database instance to it. As a result, the Database Service may run out of capacity even though there are compute hosts with free capacity.</p>
+<p>To configure the Database Service in a highly available manner, it is necessary to create separate availability zones. As a best practice, HPE recommends creating three availability zones. All compute hosts should be placed within one of these availability zones. If a compute host is not associated with an availability zone, the Database Service will not be able to provision a database instance to it. As a result, the Database Service may run out of capacity even though there are compute hosts with free capacity.</p>
 <p>The following steps show how to create three availability zones and assign a compute host to the zone.</p>
 <ol>
 <li> Connect to an overcloud controller node and execute the following commands to create three
@@ -131,7 +131,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
 <li> Click on the Admin panel in Horizon and select the <b>Development Platform</b> panel under
           Admin. Then click on the <b>Configure Services</b> sub-panel.</li>
 <li> Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username
-          and password for the HP Download Network (HDN). Select the Sign-up button if you do not
+          and password for the HPE Download Network (HDN). Select the Sign-up button if you do not
           have an account.</li>
 </ol>
 </section>
@@ -162,11 +162,11 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
               instances.</li>
             <li>
               <b>External Network</b> (Required) - Network Name for the network that has external
-              network access. For HP Helion OpenStack Commercial Edition this network is named
+              network access. For HPE Helion OpenStack Commercial Edition this network is named
                 <b>ext-net</b> .</li>
             <li>
               <b>Provider Network</b> (Required) - Network Name for the network that has network
-              access to cloud infrastructure services. For HP Helion OpenStack Commercial Edition
+              access to cloud infrastructure services. For HPE Helion OpenStack Commercial Edition
               this network is named <b>SVC</b>.</li>
             <li>
               <b>NTP Server IP</b> - IP Address to an NTP server to use if instances will not have

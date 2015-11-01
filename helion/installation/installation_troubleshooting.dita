@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="troubleshooting_installation">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Troubleshooting the Installation</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Troubleshooting the Installation</title>
   <body>
     <section id="about">
       <p>We have gathered some of the common issues that occur during installation and organized
@@ -57,7 +57,7 @@ FATAL: all hosts have already failed -- aborting</codeblock>
           <codeph>netboot-enabled: True</codeph>, which you can verify which nodes you have that are
         marked as such with this command:</p>
       <codeblock>sudo cobbler system find --netboot-enabled=1</codeblock>
-      <p>If this is on a fresh install and none of your nodes have been imaged with the HP Helion
+      <p>If this is on a fresh install and none of your nodes have been imaged with the HPE Helion
         OpenStack ISO, then you should be able to remove all of your nodes from Cobbler and re-run
         the <codeph>cobbler-deploy.yml</codeph> playbook. You can do so with these commands:</p>
       <ol>
@@ -97,7 +97,7 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
         install. This means that the node did not come back up after being powered on. To fix the
         issues you'll need to connect to the nodes' consoles and investigate.</p>
       <p id="reimage"><b>How to re-image an existing node</b></p>
-      <p>Once Linux for HP Helion has been successfully installed on a node, that node will be
+      <p>Once Linux for HPE Helion has been successfully installed on a node, that node will be
         marked as "installed" and subsequent runs of <codeph>bm-reimage.yml</codeph> (and related
         playbooks) will not target it. This is deliberate so that you can't reimage the node by
         accident. If you do need to reimage existing nodes you will need to use the <codeph>-e

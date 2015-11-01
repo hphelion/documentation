@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_esx">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry-scale Cloud
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry-scale Cloud
     with ESX</title>
   <body>
     
@@ -31,7 +31,7 @@
               <li>Installing and configuring vCenter Server</li>
               <li>Installing and configuring ESX server and ESX cluster</li>
               <li>Installing and configuring shared datastores</li>
-              <li>Establishing network connectivity between the ESX network and the HP Helion
+              <li>Establishing network connectivity between the ESX network and the HPE Helion
                 management network</li>
             </ul></li>
           <li>The VMware administration staff is responsible for the review of vCenter logs. These
@@ -440,7 +440,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
     <section id="import-cluster"><b>Import Cluster </b><p>You can use one or more ESX clusters for
         ESX Cloud Deployment. When an Import Cluster is invoked, required ESX Compute Proxy and
         OVSvApp nodes are deployed.</p><p>vCenter can have multiple clusters, but the current
-        release of HP Helion OpenStack supports only sequential import of clusters (one-by-one).
+        release of HPE Helion OpenStack supports only sequential import of clusters (one-by-one).
         Therefore, you can import only one cluster at a time using the <codeph>eon
           cluster-import</codeph> command.</p><p>
         <ol>

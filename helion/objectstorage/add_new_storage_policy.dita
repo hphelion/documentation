@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_evl_wln_pt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding a New Swift Storage Policy</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding a New Swift Storage Policy</title>
   <body>
     <p>This page describes how to add an additional storage policy to an existing system. For an
       overview of storage policies, see <xref href="storage_policies.dita"/>. </p>

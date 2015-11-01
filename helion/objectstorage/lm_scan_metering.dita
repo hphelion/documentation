@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_pcv_fy4_nt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Gathering Swift Monitoring Metrics</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Gathering Swift Monitoring Metrics</title>
   <body>
     <p>The <codeph>swiftlm-scan</codeph> command is the mechanism used to gather metrics for the
       Monasca system. These metrics are used to derive alarms. For a list of alarms that can be

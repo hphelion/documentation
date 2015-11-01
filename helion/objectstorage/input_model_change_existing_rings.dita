@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_vyp_cft_4t">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Applying Input Model Changes to Existing
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Applying Input Model Changes to Existing
     Rings</title>
   <body>
     <p>This section describes a general approach for making changes to the existing rings. This
@@ -142,7 +142,7 @@ ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
           <strow>
             <stentry>Removing Server(s)</stentry>
             <stentry>
-              <p>In HP Helion OpenStack 2.0, when you remove servers from the input model, the disk
+              <p>In HPE Helion OpenStack 2.0, when you remove servers from the input model, the disk
                 drives are removed from the ring – the weight is not gradually reduced using the
                   <codeph>weight-step</codeph> attribute. <ul id="ul_dwn_nk5_pt">
                   <li>Remove servers in phases:<ul id="ul_wqy_nk5_pt">

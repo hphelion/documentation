@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_rtc_s3t_mt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Identifying the First Swift Proxy
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Identifying the First Swift Proxy
     Server</title>
   <body>
     <p>Perform the following steps to identify the first node which is running the swift-proxy

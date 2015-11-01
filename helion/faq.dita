@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="faq">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Frequently Asked Questions</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Frequently Asked Questions</title>
   <body>
     <section id="Customization"><title>Customization</title>
       <p><b>What level of customization will be possible via modifying the configuration files and
@@ -48,7 +48,7 @@ The modes are generally further classified as those that require switch side con
         traffic. In the cloud today, management, tenant, external and services traffic types are
         segregated into their own channels.</p>
       <p><b>How does the Multiple-Network feature work?</b></p>
-      <p>Multiple networks is a feature in HP Helion OpenStack 2.0 that enables bridging of multiple
+      <p>Multiple networks is a feature in HPE Helion OpenStack 2.0 that enables bridging of multiple
         external physical networks to neutron network. Using this functionality, a tenant can
         dictate the path taken by the data in the physical network outside the cloud. It can also be
         used for multihoming to two physical networks.</p>

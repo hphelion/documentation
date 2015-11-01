@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--This work by HP Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.-->
+<!--This work by HPE Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.-->
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="input_model">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Input Model</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Input Model</title>
   <conbody>
     <section id="toc"><title>Table of Contents</title>
       <ul>
         <li><xref href="#input_model/introduction">Introduction</xref></li>
-        <li><xref href="#input_model/concepts">HP Helion OpenStack 2.0 Concepts</xref>
+        <li><xref href="#input_model/concepts">HPE Helion OpenStack 2.0 Concepts</xref>
           <ul>
             <li><xref href="#input_model/cloud">Cloud</xref></li>
             <li><xref href="#input_model/controlplanes">Control Planes</xref>
@@ -40,7 +40,7 @@
                   Configuration</xref></li>
               </ul></li>
           </ul></li>
-        <li><xref href="#input_model/configurationobjects">HP Helion OpenStack 2.0 Configuration
+        <li><xref href="#input_model/configurationobjects">HPE Helion OpenStack 2.0 Configuration
             Objects</xref>
           <ul>
             <li><xref href="#input_model/co_cloud">Cloud</xref></li>
@@ -109,9 +109,9 @@
       </ul>
     </section>
     <section id="introduction"><title>Introduction</title>
-      <p>This document describes how the HP Helion OpenStack input model can be used to define and
+      <p>This document describes how the HPE Helion OpenStack input model can be used to define and
         configure the cloud.</p>
-      <p>HP Helion OpenStack ships with a set of example input models that can be used as starting
+      <p>HPE Helion OpenStack ships with a set of example input models that can be used as starting
         points for defining a custom cloud.</p>
       <p>The input model allows you, the cloud administrator, to describe the cloud configuration in
         terms of:</p>
@@ -128,7 +128,7 @@
       <p>The document is structured as follows:</p>
       <ul>
         <li><uicontrol>Concepts</uicontrol> - This explains the ideas behind the declarative model
-          approach used in HP Helion OpenStack 2.0 and the core concepts used in describing that
+          approach used in HPE Helion OpenStack 2.0 and the core concepts used in describing that
           model</li>
         <li><uicontrol>Input Model</uicontrol> - This section provides a description of each of the
           configuration entities in the input model</li>
@@ -136,8 +136,8 @@
           definitions of some of the more important configuration entities</li>
       </ul>
     </section>
-    <section id="concepts"><title>HP Helion OpenStack 2.0 Concepts</title>
-      <p>An HP Helion OpenStack 2.0 cloud is defined by a declarative model that is described in a
+    <section id="concepts"><title>HPE Helion OpenStack 2.0 Concepts</title>
+      <p>An HPE Helion OpenStack 2.0 cloud is defined by a declarative model that is described in a
         series of configuration objects. These configuration objects are represented in YAML files
         which together constitute the various example configurations provided as templates with this
         release. These examples can be used nearly unchanged, with the exception of necessary
@@ -146,20 +146,20 @@
       <p>The following diagram shows the set of configuration objects and their relationships. All
         objects have a name that you may set to be something meaningful for your context. In the
         examples these names are provided in capital letters as a convention. These names have no
-        significance to HP Helion OpenStack, rather it is the relationships between them that define
+        significance to HPE Helion OpenStack, rather it is the relationships between them that define
         the configuration.</p>
       <p><image href="../media/inputmodel/hphelionopenstack_concepts.png"/></p>
       <p><xref href="../media/inputmodel/hphelionopenstack_concepts_lg.png" scope="external"
           format="html">Download a high-res version</xref></p>
       <p>The Configuration Processor reads and validates the input model described in the YAML files
-        discussed above, combines it with the service definitions provided by HP Helion OpenStack
+        discussed above, combines it with the service definitions provided by HPE Helion OpenStack
         and any persisted state information about the current deployment to produce a set of Ansible
         variables that can be used to deploy the cloud. It also produces a set of information files
         that provide details about the configuration.</p>
-      <p>The relationship between the file systems on the HP Helion OpenStack deployment server and
+      <p>The relationship between the file systems on the HPE Helion OpenStack deployment server and
         the Configuration Processor is shown in the following diagram. Below the line are the
         directories that you, the cloud administrator, interact with. Above the line are the
-        directories that are maintained by HP Helion OpenStack.</p>
+        directories that are maintained by HPE Helion OpenStack.</p>
       <p><image href="../media/inputmodel/hphelionopenstack_directories.png"/></p>
       <p><xref href="../media/inputmodel/hphelionopenstack_directories_lg.png" scope="external"
           format="html">Download a high-res version</xref></p>
@@ -249,13 +249,13 @@
         of a single service-component.</p>
       <p>To define your cloud, all you need to know about a service are the names of the
           <uicontrol>service-components</uicontrol>. The details of the services themselves and how
-        they interact with each other is captured in service definition files provided by HP Helion
+        they interact with each other is captured in service definition files provided by HPE Helion
         OpenStack.</p>
-      <p>When specifying your HP Helion OpenStack cloud you have to decide where components will run
+      <p>When specifying your HPE Helion OpenStack cloud you have to decide where components will run
         and how they connect to the networks. For example, should they all run in one
           <uicontrol>control-plane</uicontrol> sharing common services or be distributed across
         multiple <uicontrol>control-planes</uicontrol> to provide separate instances of some
-        services? The HP Helion OpenStack supplied examples provide solutions for some typical
+        services? The HPE Helion OpenStack supplied examples provide solutions for some typical
         configurations.</p>
       <p>Where services run is defined in the <uicontrol>control-plane</uicontrol>. How they connect
         to networks is defined in the <uicontrol>network-groups</uicontrol>.</p>
@@ -292,7 +292,7 @@
           services.</i></p>
       <p>Disk-models define how local storage is to be configured and presented to
           <uicontrol>services</uicontrol>. Disk-models are identified by a name, which you will
-        specify. The HP Helion OpenStack examples provide some typical configurations. As this is an
+        specify. The HPE Helion OpenStack examples provide some typical configurations. As this is an
         area that varies with respect to the services that are hosted on a server and the number of
         disks available, it is impossible to cover all possible permutations you may need to express
         via modifications to the examples.</p>
@@ -320,15 +320,15 @@
       <p><i><uicontrol>Servers</uicontrol> have a <uicontrol>server-role</uicontrol> which
           determines how they will be used in the cloud.</i></p>
       <p><uicontrol>Servers</uicontrol> (in the disk model) enumerate the resources available for
-        your cloud. In addition, in this definition file you can either provide HP Helion OpenStack
+        your cloud. In addition, in this definition file you can either provide HPE Helion OpenStack
         with all of the details it needs to PXE boot and install an operating system onto the
         server, or, if you prefer to use your own operating system installation tooling you can
         simply provide the details needed to be able to SSH into the servers and start the
         deployment.</p>
-      <p>The address specified for the server will be the one used by HP Helion OpenStack for
+      <p>The address specified for the server will be the one used by HPE Helion OpenStack for
         lifecycle management and must be part of a network which is in the input model. If you are
-        using HP Helion OpenStack to install the operating system this network must be an untagged
-        VLAN. The first server must be installed manually from the HP Helion OpenStack ISO and this
+        using HPE Helion OpenStack to install the operating system this network must be an untagged
+        VLAN. The first server must be installed manually from the HPE Helion OpenStack ISO and this
         server must be included in the input model as well.</p>
       <p>In addition to the network details used to install or connect to the server, each server
         defines what its <uicontrol>server-role</uicontrol> is and to which
@@ -346,7 +346,7 @@
       <p>The practice of locating physical servers in a number of racks or enclosures in a data
         center is common. Such racks generally provide a degree of physical isolation that allows
         for separate power and/or network connectivity.</p>
-      <p>In the HP Helion OpenStack model we support this configuration by allowing you to define a
+      <p>In the HPE Helion OpenStack model we support this configuration by allowing you to define a
         hierarchy of <uicontrol>server-groups</uicontrol>. Each <uicontrol>server</uicontrol> is
         associated with one <uicontrol>server-group</uicontrol>, normally at the bottom of the
         hierarchy.</p>
@@ -377,7 +377,7 @@
     <section id="servergroups_networks"><title>Server Groups and Networks</title>
       <p>Each L3 <uicontrol>network</uicontrol> in a cloud must be associated with all or some of
         the <uicontrol>servers</uicontrol>, typically following a physical pattern (such as having
-        separate networks for each rack or set of racks). This is also represented in the HP Helion
+        separate networks for each rack or set of racks). This is also represented in the HPE Helion
         OpenStack model via <uicontrol>server-groups</uicontrol>, each group lists zero or more
         networks to which <uicontrol>servers</uicontrol> associated with
           <uicontrol>server-groups</uicontrol> at or below this point in the hierarchy are
@@ -428,7 +428,7 @@
         model.</p>
       <p>In terms of <uicontrol>service</uicontrol> connectivity, all that has to be captured in the
           <uicontrol>network-groups</uicontrol> definition is the same service-component names that
-        are used when defining <uicontrol>control-planes</uicontrol>. HP Helion OpenStack also
+        are used when defining <uicontrol>control-planes</uicontrol>. HPE Helion OpenStack also
         allows a default attachment to be used to specify "all service-components" that aren't
         explicitly connected to another <uicontrol>network-group</uicontrol>. So, for example, to
         isolate Swift traffic, the swift-account, swift-container, and swift-object service
@@ -437,9 +437,9 @@
         relationship.</p>
       <p>The details of how each service connects, such as what port it uses, if it should be behind
         a load balancer, if and how it should be registered in Keystone, and so forth, are defined
-        in the service definition files provided by HP Helion OpenStack.</p>
+        in the service definition files provided by HPE Helion OpenStack.</p>
       <p>In any configuration with multiple networks, controlling the routing is a major
-        consideration. In HP Helion OpenStack, routing is controlled at the
+        consideration. In HPE Helion OpenStack, routing is controlled at the
           <uicontrol>network-group</uicontrol> level. First, all <uicontrol>networks</uicontrol> are
         configured to provide the route to any other <uicontrol>networks</uicontrol> in the same
           <uicontrol>network-group</uicontrol>. In addition, a <uicontrol>network-group</uicontrol>
@@ -451,10 +451,10 @@
           <uicontrol>network-group</uicontrol> so that services can access the internal API
         endpoints. Routes may also be required to define how to access an external storage network
         or to define a general default route.</p>
-      <p>As part of the HP Helion OpenStack deployment, networks are configured to act as the
+      <p>As part of the HPE Helion OpenStack deployment, networks are configured to act as the
         default route for all traffic that was received via that network (so that response packets
         always return via the network the request came from).</p>
-      <p>Note that HP Helion OpenStack will configure the routing rules on the servers it deploys
+      <p>Note that HPE Helion OpenStack will configure the routing rules on the servers it deploys
         and will validate that the routes between services exist in the model, but ensuring that
         gateways can provide the required routes is the responsibility of your network
         configuration. The Configuration Processor provides information about the routes it is
@@ -480,20 +480,20 @@
         "all service-components" which require a virtual IP address and are not explicitly
         configured in another <uicontrol>load-balancer</uicontrol> configuration. The details of how
         the <uicontrol>load-balancer</uicontrol> should be configured for each service, such as
-        which ports to use, how to check for service liveness, etc, are provided in the HP Helion
+        which ports to use, how to check for service liveness, etc, are provided in the HPE Helion
         OpenStack supplied service definition files.</p>
       <p>The list of endpoint roles for a <uicontrol>load-balancer</uicontrol> make it possible to
         configure separate <uicontrol>load-balancers</uicontrol> for public and internal access to
         services, and the Configuration Processor uses this information to both ensure the correct
         registrations in Keystone and to make sure the internal traffic is routed to the correct
-        endpoint. HP Helion OpenStack services are configured to only connect to other services via
+        endpoint. HPE Helion OpenStack services are configured to only connect to other services via
         internal virtual IP addresses and endpoints, allowing the name and security certificate of
         public endpoints to be controlled by the customer and set to values that may not be
         resolvable/accessible from the servers making up the cloud.</p>
       <p>Note that each <uicontrol>load-balancer</uicontrol> defined in the input model will be
         allocated a separate virtual IP address even when the load-balancers are part of the same
           <uicontrol>network-group</uicontrol>. Because of the need to be able to separate both
-        public and internal access, HP Helion OpenStack will not allow a single
+        public and internal access, HPE Helion OpenStack will not allow a single
           <uicontrol>load-balancer</uicontrol> to provide both public and internal access.
           <uicontrol>Load-balancers</uicontrol> in this context are logical entities (sets of rules
         to transfer traffic from a virtual IP address to one or more endpoints). Multiple
@@ -501,7 +501,7 @@
         cloud (e.g. a HA Proxy cluster).</p>
       <p>The following diagram shows a possible configuration in which the hostname associated with
         the public URL has been configured to resolve to a firewall controlling external access to
-        the cloud. Within the cloud, HP Helion OpenStack services are configured to use the internal
+        the cloud. Within the cloud, HPE Helion OpenStack services are configured to use the internal
         URL to access a separate virtual IP address.</p>
       <!-- NEED TO UPDATE MEDIA -->
       <p><image href="../media/inputmodel/hphelionopenstack_loadbalancers.png"/></p>
@@ -509,7 +509,7 @@
           format="html">Download a high-res version</xref></p>
     </section>
     <section id="networktags"><title>Network Tags</title>
-      <p>Network tags are defined by some HP Helion OpenStack
+      <p>Network tags are defined by some HPE Helion OpenStack
           <uicontrol>service-components</uicontrol> and are used to convey information between the
         network model and the service, allowing the dependent aspects of the service to be
         automatically configured. For example, an option in a service configuration file that needs
@@ -567,11 +567,11 @@
         server. The model allows additional user-defined rules on a per
           <uicontrol>network-group</uicontrol> basis.</p>
     </section>
-    <section id="configurationobjects"><title>HP Helion OpenStack 2.0 Configuration Objects</title>
+    <section id="configurationobjects"><title>HPE Helion OpenStack 2.0 Configuration Objects</title>
     </section>
     <section id="co_cloud"><title>Cloud</title>
       <p>The top-level cloud configuration file, <uicontrol>cloudConfig.yml</uicontrol>, defines
-        some global values for the HP Helion OpenStack Cloud, as described in the table below.</p>
+        some global values for the HPE Helion OpenStack Cloud, as described in the table below.</p>
       <table frame="all" rowsep="1" colsep="1" id="cloud_config">
         <tgroup cols="2">
           <colspec colname="c1" colnum="1"/>
@@ -1016,7 +1016,7 @@
               </row>
               <row>
                 <entry>moonshot (optional)</entry>
-                <entry>Provides the node identifier for HP Moonshot servers, e.g.
+                <entry>Provides the node identifier for HPE Moonshot servers, e.g.
                     <codeph>c4n1</codeph> where c4 is the cartridge and n1 is node 1.</entry>
               </row>
             </tbody>
@@ -1169,7 +1169,7 @@
         associated with the disk.</p>
       <p>Disks can be used as raw devices or as logical volumes and the disk model provides a
         configuration item for each.</p>
-      <p>If the operating system has been installed by the HP Helion OpenStack installation process
+      <p>If the operating system has been installed by the HPE Helion OpenStack installation process
         then the root disk will already have been set up as a volume-group with a single
         logical-volume. This logical-volume will have been created on a partition identified,
         symbolically, in the configuration files as <codeph>/dev/sda_root</codeph>. This is due to
@@ -1223,7 +1223,7 @@
       <p>Note that volume-groups are not exact analogs of device-groups. A volume-group specifies a
         set of physical volumes used to make up a volume-group that is then subdivided into multiple
         logical volumes.</p>
-      <p>The HP Helion OpenStack operating system installation automatically creates a volume-group
+      <p>The HPE Helion OpenStack operating system installation automatically creates a volume-group
         name "hlm-vg" on the first drive in the system. It creates a "root" logical volume there.
         The volume-group can be expanded by adding more physical-volumes (see examples). In
         addition, it is possible to create more logical-volumes on this volume-group to provide
@@ -1276,7 +1276,7 @@
               <row>
                 <entry>physical-volumes</entry>
                 <entry><p>A list of physical disks that make up the volume group.</p> As installed
-                  by the HP Helion OpenStack operating system install process, the volume group
+                  by the HPE Helion OpenStack operating system install process, the volume group
                   "hlm-vg" will use a large partition (sda_root) on the first disk. This can be
                   expanded by adding additional disk(s).</entry>
               </row>
@@ -1536,7 +1536,7 @@
           format="html">Linux Ethernet Bonding Driver HOWTO</xref> document. The parameter names and
         values may be specified as key-value pairs in the <codeph>options</codeph> section of
           <codeph>bond-data</codeph>.</p>
-      <p>Options used in the HP Helion OpenStack examples are:</p><table frame="all" rowsep="1"
+      <p>Options used in the HPE Helion OpenStack examples are:</p><table frame="all" rowsep="1"
         colsep="1" id="table_cj5_llk_tt">
         <tgroup cols="2">
           <colspec colname="c1" colnum="1"/>
@@ -1592,7 +1592,7 @@
         server definition file. (see <xref href="#input_model/co_servers">Servers</xref>). Devices
         should be named <codeph>hedN</codeph> to avoid name clashes with any other devices
         configured during the operating system install as well as any interfaces that are not being
-        managed by HP Helion OpenStack.</p>
+        managed by HPE Helion OpenStack.</p>
       <codeblock>---
   product:
     version: 2
@@ -1830,7 +1830,7 @@
               <row>
                 <entry>tls-components (optional)</entry>
                 <entry>The list of <uicontrol>service-components</uicontrol> for which the load
-                  balancer provides TLS-terminated virtual IP addresses for. In HP Helion OpenStack
+                  balancer provides TLS-terminated virtual IP addresses for. In HPE Helion OpenStack
                   2.0 TLS is only supported for public endpoints.</entry>
               </row>
               <row>
@@ -1849,7 +1849,7 @@
       </p>
     </section>
     <section id="co_networktags"><title>Network Tags</title>
-      <p>HP Helion OpenStack supports a small number of network tags which may be used to convey
+      <p>HPE Helion OpenStack supports a small number of network tags which may be used to convey
         information between the input model and the service components (currently only Neutron uses
         network tags). A network tag consists minimally of a tag name; but some network tags have
         additional attributes.</p>
@@ -2370,11 +2370,11 @@
       <p>The Configuration Processor is making allocation decisions on servers and needs to remember
         IP addresses between successive runs so that if new servers are added to the input model
         they don’t disrupt the previously deployed allocations.</p>
-      <p>To allow users to make multiple iterations of the input model before deployment HP Helion
+      <p>To allow users to make multiple iterations of the input model before deployment HPE Helion
         OpenStack will only persist data when the administrator confirms that they are about to
         deploy the results via the "ready-deployment" operation. To under this better, consider the
         following example:</p>
-      <p>Imagine you have completed your HP Helion OpenStack deployment with servers A, B, and C and
+      <p>Imagine you have completed your HPE Helion OpenStack deployment with servers A, B, and C and
         you want to add two new compute nodes by adding servers D and E to the input model.</p>
       <p>When you add these to the input model and re-run the Configuration Processor it will read
         the persisted data for A, B, and C and allocate D and E as new servers. The Configuration
@@ -2683,7 +2683,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml -e free_unused_addr
       <p>It does this by using the data in the services section of the input model which provides
         details of which <uicontrol>service-components</uicontrol> need to connect to each other.
         This data is not configurable by the administrator; however, it is provided as part of the
-        HP Helion OpenStack release.</p>
+        HPE Helion OpenStack release.</p>
       <p>For each <uicontrol>server</uicontrol>, the Configuration Processor looks at the list of
           <uicontrol>service-components</uicontrol> it runs and determines the network addresses of
         every other <uicontrol>service-component</uicontrol> it needs to connect to (depending on
@@ -2850,9 +2850,9 @@ attach in the interface model used by the servers.
       </ul>
       <p>The physical network infrastructure must be configured to convey the provider VLAN traffic
         as tagged VLANs to the cloud compute nodes and Neutron network nodes. Configuration of the
-        physical network infrastructure is outside the scope of the HP Helion OpenStack 2.0
+        physical network infrastructure is outside the scope of the HPE Helion OpenStack 2.0
         software.</p>
-      <p>HP Helion OpenStack 2.0 automates the server networking configuration and the Neutron
+      <p>HPE Helion OpenStack 2.0 automates the server networking configuration and the Neutron
         configuration based on information in the cloud definition. To configure the system for
         provider VLANs, specify the <codeph>neutron.networks.vlan</codeph> tag with a
           <codeph>provider-physical-network</codeph> attribute on one or more
@@ -2900,7 +2900,7 @@ attach in the interface model used by the servers.
      - name: NET_B
        tagged-vlan: false
        network-group: NET_GROUP_B</codeblock>
-      <p>When the cloud is deployed, HP Helion OpenStack 2.0 will create the appropriate bridges on
+      <p>When the cloud is deployed, HPE Helion OpenStack 2.0 will create the appropriate bridges on
         the servers, and set the appropriate attributes in the Neutron configuration files (e.g.
         bridge_mappings).</p>
       <p>After the cloud has been deployed, create Neutron network objects for each provider VLAN
@@ -3091,7 +3091,7 @@ attach in the interface model used by the servers.
     <section id="route_info_yml"><title>Route_info.yml</title>
       <p>This file provides details of routes between networks that need to be configured. Available
         routes are defined in the input model as part of the <uicontrol>network-groups</uicontrol>
-        data; this file shows which routes will actually be used. HP Helion OpenStack will
+        data; this file shows which routes will actually be used. HPE Helion OpenStack will
         reconfigure routing rules on the servers, you must configure the corresponding routes within
         your physical network. Routes must be configured to be symmetrical -- only the direction in
         which a connection is initiated is captured in this file.</p>

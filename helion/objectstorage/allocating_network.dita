@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_pcj_hzv_dt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Understanding Swift Network and Service
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Understanding Swift Network and Service
     Requirements</title>
   <body>
     <p>This topic describes Swift’s requirements for which service components must exist in the

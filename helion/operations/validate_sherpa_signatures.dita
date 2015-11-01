@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_n1v_3hs_5t">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Validating Download Signatures</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Validating Download Signatures</title>
   <body>
     <section>The Sherpa service provides a link to the remote web catalog providing a repository of
       software and patches that can be purchased and downloaded into the Helion environment. Users
@@ -49,19 +49,19 @@
           /home/stack/.gnupg/pubring.gpg
           ------------------------------
           pub   1024D/2689B887 2005-03-11 [expired: 2015-03-09]
-          uid                  Hewlett-Packard Company (HP Codesigning Service)
+          uid                  Hewlett Packard Enterprise Company (HPE Codesigning Service)
           pub   2048R/5CE2D476 2012-12-04 [expires: 2022-12-02]
-          uid                  Hewlett-Packard Company RSA (HP Codesigning Service)
+          uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service)
           pub   2048R/B1275EA3 2014-11-19 [expires: 2024-11-16]
-          uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 1
+          uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 1
           pub   2048R/B564A643 2014-11-19 [expires: 2024-11-16]
-          uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 2
+          uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 2
           pub   2048R/FF94BC78 2014-11-19 [expires: 2024-11-16]
-          uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 3
+          uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 3
           pub   2048R/BA849975 2014-11-19 [expires: 2024-11-16]
-          uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 4
+          uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 4
           pub   2048R/C6978F0C 2014-11-19 [expires: 2024-11-16]
-          uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 5</codeblock>
+          uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 5</codeblock>
           
      </li><li>Use the following command to verify the signature:
           

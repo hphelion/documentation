@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_d1s_hht_tt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Swift Requirements for Device Group
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Swift Requirements for Device Group
     Drives</title>
   <body>
     <p>To install and deploy, Swift requires that the disk drives listed in the devices list of the

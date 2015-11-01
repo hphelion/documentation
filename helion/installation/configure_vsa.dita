@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="config_vsa">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for VSA Block Storage
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for VSA Block Storage
     Backend</title>
   <body>
 
@@ -39,7 +39,7 @@
         </ul>
       </p></section>
     <section id="notes"><title>Notes</title>
-      <p>The license for the StoreVirtual VSA license is bundled with HP Helion OpenStack and comes
+      <p>The license for the StoreVirtual VSA license is bundled with HPE Helion OpenStack and comes
         with a free trial which allows a maximum limit of 50 TB per node. Hence the total amount of
         the configured storage on an individual StoreVirtual node should not exceed 50 TB. To extend
         the 50 TB per node limit, you can add nodes. A VSA cluster can support up to 16 nodes, which
@@ -200,7 +200,7 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
             StoreVirtual Centralized Management Console (CMC) GUI on your local machine:<codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock>
             <p>By default, the CMC GUI is configured to discover the StoreVirtual nodes in the
               subnet in which it is installed. This discovery functionality of VSA nodes using the
-              CMC controller node is not recommended in HP Helion OpenStack. Instead, it is
+              CMC controller node is not recommended in HPE Helion OpenStack. Instead, it is
               recommended that you manually add each VSA node.</p></li>
           <li>In the CMC GUI, click the <b>Find</b> menu and then select the <b>Find Systems</b>
             options. <p><image href="../../media/vsa/cmc1.png"/></p>
@@ -359,7 +359,7 @@ hplefthand_debug: false</codeblock>
                   address will be displayed in the tabular form. You can view your cluster ID
                   here.</li>
               </ol>
-              <p><note type="important"><p>HP Helion OpenStack 2.0 supports VSA deployment for KVM
+              <p><note type="important"><p>HPE Helion OpenStack 2.0 supports VSA deployment for KVM
                     only but it can be used as pre-deployed (or out of the band deployed) Lefthand
                     storage boxes or VSA appliances (running on ESX/hyper-v/KVM hypervisor). It also
                     supports Cinder configuration of physical Lefthand storage device and VSA

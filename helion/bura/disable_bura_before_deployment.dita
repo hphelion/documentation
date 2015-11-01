@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_i4l_xhn_tt">
-  <title>HP Helion OpenStack 2.0: Disabling Backup/Restore before Deployment</title>
+  <title>HPE Helion OpenStack 2.0: Disabling Backup/Restore before Deployment</title>
   <body>
     <!-- https://wiki.hpcloud.net/pages/viewpage.action?pageId=54739797 -->
     <section><title>Disable backup/restore jobs creation completely:</title>

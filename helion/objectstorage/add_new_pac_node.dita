@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_j2p_d1r_4t">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding a Proxy, Account, Container (PAC)
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding a Proxy, Account, Container (PAC)
     Node</title>
   <body>
     <p>This topic describes how to add new nodes/Swift proxy, account, and container (PAC) server to

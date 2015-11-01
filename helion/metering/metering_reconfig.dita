@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="reconfig_metering">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Metering Service Config and
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Metering Service Config and
     Upgrade</title>
   <body>
 
-    <section id="deploy"><title>Deployment</title> HP Helion OpenStack 2.0 automatically deploys
+    <section id="deploy"><title>Deployment</title> HPE Helion OpenStack 2.0 automatically deploys
       Ceilometer to use the shared MySQL database along with other OpenStack services such as
       Keystone. Ceilometer is configured to use a common MySQL database and deployed on the same
       control plane nodes along with other OpenStack services such as Keystone, Nova, Neutron,
@@ -34,7 +34,7 @@
 &lt;/VirtualHost>&lt;/ipaddress></codeblock>
       The Ceilometer APIs are running as WSGI processes. Each process can have a certain number of
       threads taking care of the filters and applications comprising the processing pipeline. This
-      file is configured during HP Helion OpeStack deployment and preferably should be changed by
+      file is configured during HPE Helion OpeStack deployment and preferably should be changed by
       running the <b>ceilometer-reconfigure.yml</b> playbook (see the <xref
         href="#reconfig_metering/reconfig" format="dita">Reconfigure</xref> section below). This
       configuration refers to the installed Ceilometer API version and needs to be referenced
@@ -83,12 +83,12 @@ ceilome+ 31433 31427 10 16:29 ? 00:02:43 /usr/sbin/apache2 -k start </codeblock>
 
     <section id="metering_services"><title>Enabling Services for Messaging Notifications</title>
       Nova, Cinder, Glance, Neutron and Swift are already enabled to send notifications out of the
-      box in HP Helion OpenStack 2.0. The list of meters supported out of the box for these services
+      box in HPE Helion OpenStack 2.0. The list of meters supported out of the box for these services
       are listed in the Notification Agent or Central Agent's pipeline coniguration. </section>
 
     <section id="upgrade">
       <title>Upgrade</title> Follow Standard Service upgrade mechanism available in the
-      lifecycle-manager distribution. For Ceilometer, the playbook included with HP Helion OpenStack
+      lifecycle-manager distribution. For Ceilometer, the playbook included with HPE Helion OpenStack
       is ceilometer-upgrade.yml </section>
 
 

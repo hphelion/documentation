@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_izw_1mz_4t">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Rebalancing Object Storage Rings</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Rebalancing Object Storage Rings</title>
   <body>
     <p>The ring building process tries to distribute data evenly among the available disk drives.
       The data is stored in partitions. (For more information, see <xref
@@ -22,7 +22,7 @@
     <p><!--If you move all partitions at once, there is a possibility that the data is not replicated on the new drives. Hence, Swift won't be able to find the partition of the new drive and won't be able to return the data to the user. Therefore, you must move one replica at a time. If the replica count is 3, you can first move 16.6% of the partitions and wait till all data are replicated. Then move a further 16.6% of partitions and wait again for all the data to replicate and finally move the remaining 16.6% of partitions. For any given object, only one of the replicas is moved at a time.--></p>
     <section><sectiondiv><b>Reason to move partition gradually</b></sectiondiv><p>Due to the
         following factors, you must move the partition gradually: </p><ul id="ul_jrz_q3s_4t">
-        <li>Not all devices are of the same size. HP Helion OpenStack 2.0 automatically assigns
+        <li>Not all devices are of the same size. HPE Helion OpenStack 2.0 automatically assigns
           different weights to drives so that smaller drives store fewer partitions than larger
           drives.</li>
         <li>The process attempts to keep replicas of the same partition in different servers.</li>

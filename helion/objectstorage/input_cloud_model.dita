@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="modify-input-model">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Modifying Example Configurations for Object
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Modifying Example Configurations for Object
     Storage</title>
   <body>
     <p>This section contains detailed descriptions about the Swift-specific parts of the input

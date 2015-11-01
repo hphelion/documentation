@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13180">
-<title>HP Helion 1.3 Development Platform: In-Place Upgrades of ALS Nodes and Clusters</title> 
+<title>HPE Helion 1.3 Development Platform: In-Place Upgrades of ALS Nodes and Clusters</title> 
 <body>
   <p>The Application Lifecycle Service provides the ability to upgrade a node or cluster in place
       without the need to rebuild the entire cluster. <note>
@@ -179,10 +179,10 @@ option.</p>
 <p>Before any upgrade actions are performed, <i>kato node upgrade</i> performs a self-update check to make sure it is running the latest code available. After this base check, the version of Application Lifecycle Service running on the node is checked against the latest version available. If a newer version of Application Lifecycle Service is available (or if the <codeph>--force</codeph> option was used) the upgrade process begins.</p>
 <p>
         <note type="caution">Using the <codeph>--force</codeph> option is not recommended unless you have been
-          directed to do so by HP Application Lifecycle Service Support.</note>
+          directed to do so by HPE Application Lifecycle Service Support.</note>
       </p>
 <p>A pre-upgrade validation check is performed on the node to check that it is in working order before any upgrade actions are performed. If this validation fails then the upgrade process is stopped. These validation steps can be displayed to the user as errors while still continuing the upgrade process by using the <i>--ignore-inspect-failures</i> option.</p>
-<note type="caution"> Use this option only if you get failures running <i>kato node inspect</i> that are known to be caused by systems outside of the control of Application Lifecycle Service, or if directed by HP Application Lifecycle Service Support.</note>
+<note type="caution"> Use this option only if you get failures running <i>kato node inspect</i> that are known to be caused by systems outside of the control of Application Lifecycle Service, or if directed by HPE Application Lifecycle Service Support.</note>
   <p>Next, the upgrade packages are downloaded and a validation check is performed on the files to make sure everything required for an upgrade is available. If the node is a DEA node it is then <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-retire" type="section"   >retired</xref> to ensure any applications running on the node are evacuated before the upgrade takes place.</p>
 <p>After the components have been upgraded, the node is restarted and then post-upgrade validation takes place. If any failures occur, the upgrade process is stopped and you will be given the option to roll back the upgrade. As with the pre-upgrade validation, this can be skipped using the <i>--ignore-inspect-failures</i> option (see warning above).</p>
 <p>When <i>kato node upgrade</i> completes successfully, the node is restarted running the latest version of Application Lifecycle Service.</p>

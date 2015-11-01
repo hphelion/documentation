@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="changelog">
-  <title>Updates to HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Documentation</title>
+  <title>Updates to HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0 Documentation</title>
   <body>
     <section id="about">
-      <p>The HP Helion OpenStack documentation team continuously updates the documents in this web
+      <p>The HPE Helion OpenStack documentation team continuously updates the documents in this web
         deliverable. These updates include anything from fixes for minor typos or style issues, to
         more significant changes such as bug fixes, additions, or deletions. The following table
         shows the significant changes made to this content.</p>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_msm_b1j_jt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring Brocade Fibre Channel Zone Manager </title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring Brocade Fibre Channel Zone Manager </title>
   <body><!--Needs Work-->
     <p>Zoning is a fabric-based service in a Storage Area Network (SAN), which enables you to group
       host and storage nodes that need to communicate. Zoning allows nodes to communicates with each
       other if they are the member of the same zone.</p>
-    <p>HP Helion OpenStack 2.0 supports Brocade FC Zone Manager. Block Storage (Cinder) needs to be
+    <p>HPE Helion OpenStack 2.0 supports Brocade FC Zone Manager. Block Storage (Cinder) needs to be
       configured to enable auto-zoning using Brocade FC Zone Manager. The following section
       describes the procedure to add Brocade Zone Manager configuration to
         <systemoutput>cinder.conf.j2.</systemoutput></p>
@@ -16,7 +16,7 @@
       <title id="preq">Prerequisites</title>
       <p>
         <ul id="ul_pfl_bbz_ht">
-          <li>HP Helion Cloud must be successfully deployed. </li>
+          <li>HPE Helion Cloud must be successfully deployed. </li>
           <li>Brocade switches must be available in the cloud management network.</li>
           <li>
             <p>Block Storage should be configured to use a Fibre Channel Volume Driver that supports

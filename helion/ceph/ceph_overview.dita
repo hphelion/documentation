@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_e5g_z3h_gt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceph</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceph</title>
   <body><!--Needs Work; fnf edit on 10/27; file looks like a draft and a repeat of similar file in blockstorage-->
     <section><title>What is Ceph?</title>OpenStack Ceph is a software-defined storage (SDS) system
       comprised of a block storage, object storage, and a file system. It is designed to deliver
       different types of storage interfaces to the end user in a single storage platform. Therefore
       Ceph is termed a unified storage platform.</section>
-    <section><title>HP Helion OpenStack : Ceph Overview</title><p>Based on OpenStack Ceph, HP Helion
+    <section><title>HPE Helion OpenStack : Ceph Overview</title><p>Based on OpenStack Ceph, HPE Helion
         OpenStack 2.0 Ceph Storage Solution provides a unified, scalable, and stable storage
         solution for the management of the Helion OpenStack Volume Storage (Cinder persistent
         Volumes)
@@ -16,8 +16,8 @@
         also supports user backup to the Object Storage (Swift) API service writing to the same
         unified Ceph storage platform.<?oxy_custom_end?></p>--></p>This
       release supports Ceph Firefly 0.80.7 version, which runs on the hlinux kernel 3.14.44-1.
-      Therefore, you can configure and integrate Ceph block storage with HP Helion OpenStack 2.0.
+      Therefore, you can configure and integrate Ceph block storage with HPE Helion OpenStack 2.0.
       For more information, see <xref href="../installation/install_entryscale_kvm.dita#install_kvm"
-        />.<p><!--In addition, HP Helion OpenStack2.0 introduces the concept of example cloud models. This model allows the user to provide the configuration details, based on hardware requirment, to build a ceph storage system. --></p></section>
+        />.<p><!--In addition, HPE Helion OpenStack2.0 introduces the concept of example cloud models. This model allows the user to provide the configuration details, based on hardware requirment, to build a ceph storage system. --></p></section>
   </body>
 </topic>

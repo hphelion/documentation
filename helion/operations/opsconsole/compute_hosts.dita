@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?> <!--This work by HP Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.--> <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<?xml version="1.0" encoding="UTF-8"?> <!--This work by HPE Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.--> <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="compute_hosts">
-    <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Compute Hosts</title>
+    <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Compute Hosts</title>
     <shortdesc>This page allows you to view your Compute Host resources.</shortdesc>
     <conbody>
         <section>

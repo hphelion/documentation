@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_bkr_qjh_ht">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Default Logging Settings</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Default Logging Settings</title>
   <body><!--Needs Work; 'Plane' is missing from the list of columns; Should paths/files be surrounded by codeph tags?; also what are M and G abbreviations for? MB and GB, or something else?-->
     <p>The table below describes the default logging policies for each service. The columns are as
       follows:</p>

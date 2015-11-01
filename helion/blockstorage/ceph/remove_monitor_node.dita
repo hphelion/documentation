@@ -3,7 +3,7 @@
 <topic id="topic_a3t_ptt_rt">
   <?oxy_custom_start type="oxy_content_highlight" color="153,255,255"?>
 
-  <title><?oxy_custom_end?>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing Ceph Monitor Node </title>
+  <title><?oxy_custom_end?>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing Ceph Monitor Node </title>
 
   <body>
     <p>The process to remove Ceph monitor nodes, depends on how they have been deployed - either on

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ijj_45j_nt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Replacing a Controller Node</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Replacing a Controller Node</title>
   <body>
     <section>
-      <p>For HP Helion OpenStack 2.0 versions, you must have three controller nodes. Therefore,
+      <p>For HPE Helion OpenStack 2.0 versions, you must have three controller nodes. Therefore,
         adding or removing nodes is not an option. However, if you need to repair or replace a
         controller node, you may do so by following the steps outlined here. Note that to run any
         playbooks whatsoever for cloud maintenance, you will always run from the

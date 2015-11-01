@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic22433">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Disaster Recovery</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1: Disaster Recovery</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -180,7 +180,7 @@ Some systems hang on this step, which means you could lose access to your cloud-
 <p>This enables you to connect to the instance, even without the volume attached, if you allow only connections through public keys.</p>
 </section>
 <section id="script-the-drp"> <title>Script the DRP</title>
-<p>You can download a bash script (available from HP customer support) which:</p>
+<p>You can download a bash script (available from HPE customer support) which:</p>
 <ol>
 <li>
 <p>Creates an array for instances and their attached volumes.</p>
@@ -440,7 +440,7 @@ i-000015b9 at3-ui02 running nectarkey (376, np-rcc54) 0 m1.xxlarge 2012-06-19T00
 <p>Normally power on the server using <codeph>nova start</codeph> option in the seed/undercloud or manually start the server using iLO.</p>
 </section>
 <section id="considerations4"> <title>Considerations</title>
-<p>HP recommends that you do not shut down more than one controller at the same time or the High Availability functionality will not work. If only one server is shut down, the solution should not have any downtime. When the management controller is shut down, access to the VSA will be temporarily disabled, so the user can follow the steps to start cinder-volume in one of the other controller during the downtime period.</p>
+<p>HPE recommends that you do not shut down more than one controller at the same time or the High Availability functionality will not work. If only one server is shut down, the solution should not have any downtime. When the management controller is shut down, access to the VSA will be temporarily disabled, so the user can follow the steps to start cinder-volume in one of the other controller during the downtime period.</p>
 </section>
 <section id="overcloud-compute-nodes"> <title>Overcloud Compute Nodes</title>
 </section>
@@ -450,7 +450,7 @@ i-000015b9 at3-ui02 running nectarkey (376, np-rcc54) 0 m1.xxlarge 2012-06-19T00
 <section id="power-on4"> <title>Power On</title>
 <p>Normally power on the server using <codeph>nova start</codeph> option in the seed/undercloud or manually start the server using iLO. After power on process ends, the VM`s hosted in the node will be automatically started.</p>
 <p>Considerations</p>
-<p>To reduce the down time of the instances located in the compute node HP suggests migrating the instances to another server before shutting down the node. Is possible to shut down N compute nodes at the same without problem, just remember that capacity will be reduced.</p>
+<p>To reduce the down time of the instances located in the compute node HPE suggests migrating the instances to another server before shutting down the node. Is possible to shut down N compute nodes at the same without problem, just remember that capacity will be reduced.</p>
 </section>
 <section id="overcloud-swift"> <title>Overcloud Swift</title>
 </section>
@@ -461,7 +461,7 @@ i-000015b9 at3-ui02 running nectarkey (376, np-rcc54) 0 m1.xxlarge 2012-06-19T00
 <p>Normally power on the server using <codeph>nova start</codeph> option in the seed/undercloud or manually start the server using iLO.</p>
 </section>
 <section id="considerations5"> <title>Considerations</title>
-<p>HP recommends that you do not shut down both Swift servers at the same time or the High Availability functionality will not work. If only one server is shut down, the solution should not have any downtime.</p>
+<p>HPE recommends that you do not shut down both Swift servers at the same time or the High Availability functionality will not work. If only one server is shut down, the solution should not have any downtime.</p>
 </section>
 <section id="overcloud-vsa"> <title>Overcloud VSA</title>
 </section>
@@ -472,7 +472,7 @@ i-000015b9 at3-ui02 running nectarkey (376, np-rcc54) 0 m1.xxlarge 2012-06-19T00
 <p>Normally power on the server using <codeph>nova start</codeph> option in the seed/undercloud or manually start the server using iLO.</p>
 </section>
 <section id="considerations6"> <title>Considerations</title>
-<p>HP recommends that you do not shut down both VSA servers at the same time or the High Availability functionality, depending on your configuration, may not work. In the case of only one VSA server, if the server is shut down, the solution will not have the ability to create/manage/access the volumes created during the downtime.</p>
+<p>HPE recommends that you do not shut down both VSA servers at the same time or the High Availability functionality, depending on your configuration, may not work. In the case of only one VSA server, if the server is shut down, the solution will not have the ability to create/manage/access the volumes created during the downtime.</p>
 <ol>
 <li>
 <p>Recovering from a power outage:</p>

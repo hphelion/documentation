@@ -2,15 +2,15 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic3051">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Metering Available Meter
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Metering Available Meter
     Types</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack"/>
-      <othermeta name="product-version" content="HP Helion Openstack 1.1"/>
-      <othermeta name="product-version1" content="HP Helion Openstack"/>
-      <othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+      <othermeta name="product-version" content="HPE Helion Openstack"/>
+      <othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack"/>
+      <othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
     </metadata>
   </prolog>
   <body><!--Needs Edit-->
@@ -53,7 +53,7 @@
         type="section">non-essential meters can be disabled</xref>.</p>
     <section id="helion-openstack-default-meters">
       <title>Helion OpenStack Default Meters</title>
-      <p>These meters are installed and enabled by default during an HP Helion OpenStack
+      <p>These meters are installed and enabled by default during an HPE Helion OpenStack
         installation.</p>
       <p>Detailed information on the Ceilometer API can be found at:
         http://docs.openstack.org/developer/ceilometer/webapi/v2.html.</p>

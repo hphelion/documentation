@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_mlh_wtn_rt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Understanding the Freezer Scheduler</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Understanding the Freezer Scheduler</title>
   <body>
         <section>
             <title>Freezer Scheduler Overview</title>
@@ -17,7 +17,7 @@
                 <li>Write to the freezer API the outcome of the freezer-agent execution</li>
             </ul></p>
         <note>Freezer API maintains information about jobs in Elastic Search Database.</note>
-        <section><title>Freezer Scheduler Client-ID</title><p>In HP Helion OpenStack 2.0, Freezer Scheduler is
+        <section><title>Freezer Scheduler Client-ID</title><p>In HPE Helion OpenStack 2.0, Freezer Scheduler is
                 automatically installed on the deployer/lifecycle-manager node and controller
                 nodes.</p><p>There is a client_id for each node and its corresponds to the hostname.
                 The client_id is created at registration time. The registration is done

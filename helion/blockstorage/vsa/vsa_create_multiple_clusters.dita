@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="creating_multiple_vsa_clusters">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating Multiple VSA Clusters</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating Multiple VSA Clusters</title>
   <body>
     <!--Needs Work-->
-    <p>The HP Helion OpenStack 2.0 input model comes with one cluster and three VSA nodes. This is
+    <p>The HPE Helion OpenStack 2.0 input model comes with one cluster and three VSA nodes. This is
       the default configuration available in the input model, but the input model allows you to
       create multiple VSA clusters of same or different types by modifying the YAML file. </p>
     <p>
@@ -161,7 +161,7 @@
         <li>Add a new resource node under  <b>resources</b> in <codeph>control_plane.yml</codeph>
           with  a unique name, resource-prefix, and server-role.</li>
         <li>Modify the <codeph>disk_set</codeph> for AO and without AO. Ensure that you use
-          different files and different <codeph>disk_set</codeph>. <note>In the HP Helion OpenStack
+          different files and different <codeph>disk_set</codeph>. <note>In the HPE Helion OpenStack
             2.0 input model you will find only a <codeph>disks_vsa.yml</codeph> file, which contains
             the information for AO and without AO. You must create a separate YAML file and enter
             the configuration information of AO in that file. For creating non AO disk, refer to

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_qtp_cn3_bt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Identity Service Notes and
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Identity Service Notes and
     Limitations</title>
   <body>
     <section id="notes">
@@ -63,7 +63,7 @@
           federation configurations.</li>
         <li>All end users authentication is available only via the Keystone API and OpenStackClient
           CLI.</li>
-        <li>No current HP documentation is available for this function.</li>
+        <li>No current HPE documentation is available for this function.</li>
         <li>Additional information can be found at <xref
             href="http://docs.openstack.org/developer/identity/configure_federation.html"
             format="html" scope="external"
@@ -71,9 +71,9 @@
       </ul>
       <b>Multi-Factor Authentication (MFA)</b>
       <ul id="ul_az2_jpd_bt">
-        <li>HP Helion OpenStack MFA support is a custom configuration requiring HP Professional
+        <li>HPE Helion OpenStack MFA support is a custom configuration requiring HPE Professional
           Services support.</li>
-        <li>MFA drivers are not included with HP Helion OpenStack and need to be provided by a
+        <li>MFA drivers are not included with HPE Helion OpenStack and need to be provided by a
           specific MFA vendor.</li>
         <li>Additional information can be found at <xref
             href="http://docs.openstack.org/security-guide/content/identity-authentication-methods.html#identity-authentication-methods-external-authentication-methods"

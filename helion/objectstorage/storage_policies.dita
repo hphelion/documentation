@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_gm1_4bc_jt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Designing Storage Policies</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Designing Storage Policies</title>
   <body>
     <p>Storage policies enable you to differentiate the way objects are stored. </p>
     <section>

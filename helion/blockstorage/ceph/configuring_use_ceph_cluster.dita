@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_i2z_zc3_pt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring Cinder to Use Ceph </title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring Cinder to Use Ceph </title>
   <body>
     <!--Needs Work; fnf edits on 10/26; not sure about backend as 1 word-->
     <p>This topic covers the following:<ul id="ul_vrf_jf3_pt">
