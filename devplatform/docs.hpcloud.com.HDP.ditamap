@@ -2,7 +2,7 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
  
 <map xml:lang="en" linking="none" locktitle="no">
-<title>HP Helion Development Platform</title>
+<title>HPE Helion Development Platform</title>
   <topicref href="2.0/messaging/cue_ops_overview.dita" navtitle="Messaging Service" locktitle="yes">
     <topicref href="2.0/messaging/devplatform.using-the-messaging-service.dita" locktitle="yes"
       navtitle="Using Messaging as a Service"/>
