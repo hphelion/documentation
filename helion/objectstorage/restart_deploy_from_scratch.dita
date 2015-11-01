@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_enj_cms_mt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Restarting the Object Storage Deployment</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Restarting the Object Storage Deployment</title>
   <body><!--Needs Edit-->
     <p>This page describes the various operational procedures performed by Swift.</p>
     <section>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_bl1_bfx_qt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Reconfigure Ceph Services</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Reconfigure Ceph Services</title>
   <body><!--Needs Edit-->
     <p>Perform the following steps to reconfigure the ceph services.<ol id="ol_d3k_thx_qt">
                 <li>Login to the deployer node </li>

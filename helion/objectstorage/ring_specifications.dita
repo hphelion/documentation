@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="ring-specification">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ring Specifications</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ring Specifications</title>
   <body><!--Needs Edit-->
     <p>The ring is responsible for mapping data on particular disks. There is a separate ring for
       account databases, container databases and for each object storage policy, but each ring works
       similarly. The swift-ring-builder utility is used to build and manage rings. The
       swift-ring-builder utility uses a builder file to contain ring information and additional data
-      required to build future rings. In HP Helion OpenStack 2.0, you use the cloud model to specify
+      required to build future rings. In HPE Helion OpenStack 2.0, you use the cloud model to specify
       how the rings are configured and used. This model is used to automatically invoke the
       swift-ring-builder utility as part of the deploy process. Normally, you will not run the
       swift-ring-builder utility directly.</p>

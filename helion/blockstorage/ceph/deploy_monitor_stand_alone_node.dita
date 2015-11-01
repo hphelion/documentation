@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ah5_4yx_qt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Deploying  Ceph Monitor Service(s) on Dedicated Resource Node(s)</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Deploying  Ceph Monitor Service(s) on Dedicated Resource Node(s)</title>
   <body><!--Needs Edit-->
-    <p>In HP Helion OpenStack 2.0, monitor service is installed on the controller nodes by default.
+    <p>In HPE Helion OpenStack 2.0, monitor service is installed on the controller nodes by default.
       But you can provide a dedicated resource node(s) as a monitor service(s) by modifying the
       cloud input model. <note type="attention">If you want to deploy monitor service(s) as a
-        standalone node(s) then you must decide prior to the deployment of Ceph. HP Helion OpenStack
+        standalone node(s) then you must decide prior to the deployment of Ceph. HPE Helion OpenStack
         2.0 does not support deployment transition. Once Ceph is deployed, you cannot migrate
         monitor service(s) from controller to standalone node(s). </note></p>
     <section>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_pcj_hzv_dt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Swift Network and Service Requirements</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Swift Network and Service Requirements</title>
   <body><!--Needs Edit-->
     <p>This section describes Swift’s requirements for which service components must exist in the
       input model and how these relate to the network model. This information is useful if you are

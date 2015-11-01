@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="stopStartSvcs">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Starting and Stopping Services</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Starting and Stopping Services</title>
   <body>
     <section><title>Nova compute</title> To stop the Nova comoute service, you would need to run the
       playbook associated to the service, i.e.

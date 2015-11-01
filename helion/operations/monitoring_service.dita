@@ -2,10 +2,10 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="monitoring">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Monitoring Service</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Monitoring Service</title>
   <body><!--Needs Edit-->
     <section id="about">
-      <p>The HP Helion OpenStack Monitoring service leverages Monasca, which is a multi-tenant,
+      <p>The HPE Helion OpenStack Monitoring service leverages Monasca, which is a multi-tenant,
         scalable, fault-tolerant OpenStack monitoring service.</p>
       <p>This document describes the Monasca service and contains the following sections:</p>
       <ul>
@@ -31,23 +31,23 @@
       </ul>
     </section>
     <section id="installation"><title>Installation</title>
-      <p>The Monasca service is automatically installed as part of the HP Helion OpenStack
+      <p>The Monasca service is automatically installed as part of the HPE Helion OpenStack
         installation.</p>
       <p>No specific configuration is required to use Monasca. However, you can configure the
         database for storing metrics as detailed in the <xref
           href="../administration/configure_monitoring.dita">Monitoring Configuration</xref>
         document.</p>
     </section>
-    <section id="differences"><title>Differences Between Upstream and HP Helion OpenStack
+    <section id="differences"><title>Differences Between Upstream and HPE Helion OpenStack
         Implementations</title>
-      <p>In the HP Helion OpenStack 2.0 release, the OpenStack monitoring service, Monasca, is
-        included as the HP Helion OpenStack monitoring solution with the following exceptions:</p>
+      <p>In the HPE Helion OpenStack 2.0 release, the OpenStack monitoring service, Monasca, is
+        included as the HPE Helion OpenStack monitoring solution with the following exceptions:</p>
       <ul>
         <li>Transform Engine</li>
         <li>Events Engine </li>
         <li>Anomaly and Prediction Engine</li>
       </ul>
-      <note>Icinga was supported in previous Helion versions but it has been deprecated in HP Helion
+      <note>Icinga was supported in previous Helion versions but it has been deprecated in HPE Helion
         OpenStack 2.0.</note>
     </section>
     <section id="diagram">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="postinstall_checklist">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Post-Installation Checklist</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Post-Installation Checklist</title>
   <body><!--Needs Edit-->
     <section id="post_install_cl"><title>Recommended First Steps Post-Installation</title>
       <p>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="preinstall_checklist">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Pre-Installation Checklist</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Pre-Installation Checklist</title>
   <body><!--Needs Edit-->
     <note type="attention">The formatting of this page benefits from you printing this out and
       hand-writing notes.</note>
@@ -56,7 +56,7 @@
       </p>
     </section>
     <section id="network"><title>Network Setup and Configuration</title>
-      <p>Before installing HP Helion OpenStack, the following networks must be provisioned and
+      <p>Before installing HPE Helion OpenStack, the following networks must be provisioned and
         tested. The networks are not installed or managed by the Cloud. You must install and manage
         the networks as documented in these links:</p>
       <p>
@@ -66,7 +66,7 @@
       </p>
       <p>Use these checklists to confirm and record your network configuration information.</p>
       <p><b>Router</b></p>
-      <p>The IP router used with HP Helion OpenStack must support the updated of it's ARP table
+      <p>The IP router used with HPE Helion OpenStack must support the updated of it's ARP table
         through gratuitous ARP packets.</p>
       <p><b>PXE Installation Network</b></p>
       <p>When provisioning the IP range, allocate sufficient IP addresses to cover both the current
@@ -165,7 +165,7 @@
         </table>
       </p>
       <p><b>Management Network</b></p>
-      <p>The management network is the backbone used for the majority of HP Helion OpenStack
+      <p>The management network is the backbone used for the majority of HPE Helion OpenStack
         management communications. Control messages are exchanged between the Controllers, Compute
         hosts, and Cinder backends through this network. In addition to the control flows, the
         management network is also used to transport Swift and iSCSI based Cinder block storage
@@ -273,8 +273,8 @@
       </p>
       <p><b>IPMI Network</b></p>
       <p>The IPMI network is used to connect the IPMI interfaces on the servers that are assigned
-        for use with implementing the cloud. For HP ProLiant servers, the IPMI network connects to
-        the HP iLO management device port for the server. This network is used by Cobbler to control
+        for use with implementing the cloud. For HPE ProLiant servers, the IPMI network connects to
+        the HPE iLO management device port for the server. This network is used by Cobbler to control
         the state of the servers during baremetal deployments.</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="ipmi_net_checklist">
@@ -451,7 +451,7 @@
       </p>
     </section>
     <section id="deployer"><title>Deployer</title>
-      <p>This server contains the HP Helion OpenStack installer, which is based on Git, Ansible, and
+      <p>This server contains the HPE Helion OpenStack installer, which is based on Git, Ansible, and
         Cobbler.</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="table_d2v_mk4_ht">
@@ -545,7 +545,7 @@
     </section>
     <section id="control_plane"><title>Control Plane</title>
       <p>The Control Plane consists of three servers, in a highly available cluster, that host the
-        core HP Helion OpenStack services including Nova, Keystone, Glance, Cinder, Heat, Neutron,
+        core HPE Helion OpenStack services including Nova, Keystone, Glance, Cinder, Heat, Neutron,
         Swift, Ceilometer, and Horizon. Additional services include mysql, ip-cluster, apache2,
         rabbitmq, memcached, zookeeper, kafka, influxDB, storm, monasca, logging, and cmc.</p>
       <p><b>Control Plane 1</b></p>
@@ -785,7 +785,7 @@
       </p>
     </section>
     <section id="vsa"><title>VSA Hosts</title>
-      <p>One or more servers with local disk volumes running HP StoreVirtual VSA to provide Cinder
+      <p>One or more servers with local disk volumes running HPE StoreVirtual VSA to provide Cinder
         block storage resources.</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="vsa_reqs">

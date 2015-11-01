@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="example_configurations">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Example Configurations</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Example Configurations</title>
   <body>
     <!--Needs Edit-->
-    <p>The HP Helion OpenStack 2.0 system ships with a number of pre-qualified example
+    <p>The HPE Helion OpenStack 2.0 system ships with a number of pre-qualified example
       configuration. These are designed to help you to get up and running quickly with a minimum
       number of configuration changes.</p>
-    <p>The HP Helion OpenStack input model allows a wide variety of configuration parameters that
+    <p>The HPE Helion OpenStack input model allows a wide variety of configuration parameters that
       may, at first glance, appear daunting. The example configurations are designed to simplify
       this process by providing pre-built and pre-qualified examples that need only a minimum number
       of modifications to get started.</p>
     <section id="contents">
       <!--
       <sl>
-        <sli><xref href="example_configurations.dita#example_configurations/example_configs"><i>1.0</i> HP Helion OpenStack
+        <sli><xref href="example_configurations.dita#example_configurations/example_configs"><i>1.0</i> HPE Helion OpenStack
             Example Configuration</xref></sli>
         <sli outputclass="listsuba"><xref href="example_configurations.dita#example_configurations/entryscale_kvm_vsa"
               ><i>1.1</i> Entry-scale KVM with VSA model</xref></sli>
@@ -126,14 +126,14 @@
 
       </ul>
     </section>
-    <section id="example_configs"><title>HP Helion OpenStack Example Configurations</title>
+    <section id="example_configs"><title>HPE Helion OpenStack Example Configurations</title>
       <p>This section briefly describes the various example configuration and their capabilities. It
         also describes in detail, for the entry-scale-kvm-vsa example, how you may adapt the input
         model to work in your environment.</p>
-      <p>HP Helion OpenStack 2.0 ships with two classes of sample cloud models: examples and
+      <p>HPE Helion OpenStack 2.0 ships with two classes of sample cloud models: examples and
         tech-preview. The models in the examples directory have been qualified by our Quality
         Engineering team, while the tech-preview models are more experimental.</p>
-      <p>The following pre-qualified examples are shipped with HP Helion OpenStack 2.0:</p>
+      <p>The following pre-qualified examples are shipped with HPE Helion OpenStack 2.0:</p>
       <ul>
         <li>Entry-scale KVM with VSA model (entry-scale-kvm-vsa)</li>
         <li>Entry-scale Swift Only model (entry-scale-swift)</li>
@@ -149,7 +149,7 @@
           is subdivided into a number of dedicated service clusters to provide more processing power
           for individual control plane elements. This enables a greater number of resources to be
           supported (compute nodes, Swift object servers). This model also shows how a segmented
-          network can be expressed in the HP Helion OpenStack model.</li>
+          network can be expressed in the HPE Helion OpenStack model.</li>
       </ul>
     </section>
     <section id="entryscale_kvm_vsa"><title>Entry-scale KVM with VSA model</title>
@@ -187,7 +187,7 @@
         network must be reachable from the EXTERNAL_VM network if you want virtual machines to be
         able to make API calls to the cloud. "Internal Routing" refers to whatever routing you want
         to provide to allow administrators to access the Management network.</p>
-      <p>If you are using HP Helion OpenStack to install the operating system, then an IPMI/iLO
+      <p>If you are using HPE Helion OpenStack to install the operating system, then an IPMI/iLO
         network connected to the IPMI/iLO ports of all servers and routable from the deployer server
         is also required for BIOS and power management of the nodes during the operating system
         installation process.</p>
@@ -202,12 +202,12 @@
         >Modifying the Entry-scale KVM with VSA model for your Environment</xref> describes in
       detail how to modify this example to match your environment. </section>
     <section id="entryscale_esx"><title>Entry-scale ESX model</title>
-      <p>This example shows how to integrate HP Helion OpenStack with ESX. The controller
+      <p>This example shows how to integrate HPE Helion OpenStack with ESX. The controller
         configuration is essentially the same as in the KVM example, but the resource nodes are
         provided by vCenter. In addition, a number of controller virtual machines are created for
         each vCenter cluster; one ESX Compute virtual machine (which provides the nova-compute proxy
         for vCenter) and one OVSvApp virtual machine per cluster member (which provides network
-        access). These virtual machines are created automatically by HP Helion OpenStack as part of
+        access). These virtual machines are created automatically by HPE Helion OpenStack as part of
         activating the vCenter cluster, and are therefore not defined in the example.</p>
       <p><image href="../media/examples/entry_scale_esx.png"/></p>
       <!-- HPE
@@ -223,7 +223,7 @@
         deployer. This network must be reachable from the Management network.</p>
     </section>
     <section id="entryscale_swift"><title>Entry-scale Swift model</title>
-      <p>This example shows how HP Helion OpenStack can be configured to provide a Swift only
+      <p>This example shows how HPE Helion OpenStack can be configured to provide a Swift only
         configuration, consisting of three controllers and one or more Swift object servers.</p>
       <p><image href="../media/examples/entry_scale_swift.png"/></p>
       <p><xref href="../media/examples/entry_scale_swift_lg.png" scope="external" format="html"
@@ -243,7 +243,7 @@
       <p>In the diagram "External Routing" refers to whatever routing you want to provide to allow
         users to access the External API. "Internal Routing" refers to whatever routing you want to
         provide to allow administrators to access the Management network.</p>
-      <p>If you are using HP Helion OpenStack to install the operating system then an IPMI/iLO
+      <p>If you are using HPE Helion OpenStack to install the operating system then an IPMI/iLO
         network connected to the IPMI/iLO ports of all servers and routable from the deployer is
         also required for BIOS and power management of the node during the operating system
         installation process.</p>
@@ -261,8 +261,8 @@
           >Download a high-res version</xref></p>
     </section>
     <section id="midscale_kvm_vsa"><title>Mid-scale KVM with VSA model (Tech Preview)</title>
-      <p>The mid-scale model, which is included as a technology preview in HP Helion OpenStack 2.0,
-        illustrates two important aspects of configuring HP Helion OpenStack for increased scale.
+      <p>The mid-scale model, which is included as a technology preview in HPE Helion OpenStack 2.0,
+        illustrates two important aspects of configuring HPE Helion OpenStack for increased scale.
         The controller services are distributed across a greater number of controllers and a number
         of the networks are configured as multiple L3 segments (implementing per-rack
         networking).</p>
@@ -410,7 +410,7 @@
         will be named as expected by the operating system, and it is possible that different port
         naming will exist on different servers with the same physical configuration.</p>
       <p>In order to provide a deterministic naming pattern, the input model supports an explicit
-        mapping from PCI bus address to a user specified name. HP Helion OpenStack uses the prefix
+        mapping from PCI bus address to a user specified name. HPE Helion OpenStack uses the prefix
         "hed" (Helion Ethernet Device) to name such devices to avoid any name clashes with the "eth"
         names assigned by the operating system.</p>
       <p>The example <codeph>nic_mappings.yml</codeph> file is shown below.</p>
@@ -450,7 +450,7 @@
       <p>Each mapping lists a set of ports with the following information:</p>
       <ul>
         <li><b>Logical name</b> - we use the form <codeph>hedN</codeph></li>
-        <li><b>Type</b> - only simple-port types are supported in HP Helion OpenStack 2.0</li>
+        <li><b>Type</b> - only simple-port types are supported in HPE Helion OpenStack 2.0</li>
         <li><b>Bus-address</b> - the PIC bus address of the port</li>
       </ul>
       <p>The PCI bus address can be found using the <codeph>lspci</codeph> command on one of the
@@ -905,7 +905,7 @@
     <section id="servers_yml"><title>Servers.yml</title>
       <p>The snippet below shows the insertion of an additional server used for hosting the
         lifecycle-manager. Provide the address information here for the server you are running on,
-        i.e. the node where you have installed the HP Helion OpenStack ISO.</p>
+        i.e. the node where you have installed the HPE Helion OpenStack ISO.</p>
       <codeblock>
   servers:
      # NOTE: Addresses of servers need to be changed to match your environment.

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_kvm_ceph">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for KVM Hypervisor and
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for KVM Hypervisor and
     Ceph</title>
   <body><!--Needs Edit-->
     <p>This page describes configuration, installation, and the integration of Ceph Block Storage
-      with HP Helion<tm tmtype="reg">OpenStack</tm>2.0. After the installation of Ceph you can
+      with HPE Helion<tm tmtype="reg">OpenStack</tm>2.0. After the installation of Ceph you can
       perform the OpenStack operations as documented in this page. </p>
     <section>
       <title id="preq">Prerequisite</title>
@@ -22,7 +22,7 @@
     <section>
       <title id="install-procedure">Installation Procedure</title>
       <p>Perform the following procedures to configure, install, and the integrate the Ceph Block
-        Storage with HP Helion OpenStack 2.0.</p>
+        Storage with HPE Helion OpenStack 2.0.</p>
     </section>
     <section>
       <p>
@@ -147,7 +147,7 @@
               <li>
                 <p><codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph></p>
                 <p>The <codeph>user_model.yml</codeph> has the editable values for the different
-                  pools created by HP Helion OpenStack.</p>
+                  pools created by HPE Helion OpenStack.</p>
               </li>
             </ul></li>
           <li> Commit your

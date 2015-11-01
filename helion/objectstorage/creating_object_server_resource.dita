@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_jzk_q1c_jt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating Object Server Resource
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating Object Server Resource
     Nodes</title>
   <body><!--Needs Edit-->
     <p>You must identify the control plane and node type/role when creating a resource node for

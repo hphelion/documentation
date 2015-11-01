@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="config_3par">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for 3PAR Block Storage
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring for 3PAR Block Storage
     Backend</title>
   <body><!--Needs Edit-->
     <p>This page describes how to configure your 3PAR backend for the Helion Entry Scale Cloud with
@@ -10,7 +10,7 @@
       <title id="preq">Pre-requisites</title>
       <p>
         <ul>
-          <li>Your HP Helion Entry Scale Cloud should be up and running. Installation steps can be
+          <li>Your HPE Helion Entry Scale Cloud should be up and running. Installation steps can be
             found <xref href="install_entryscale_kvm.dita">here</xref>.</li>
           <li>3PAR Storage Array should be available in cloud management network or routed to cloud
             management network and 3PAR FC and iSCSI ports configured.</li>

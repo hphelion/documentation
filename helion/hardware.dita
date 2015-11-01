@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="min_hardware">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Hardware Requirements</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Hardware Requirements</title>
   <body><!--Needs Edit-->
     <section id="supported_hardware"><title>Hardware Support Matrix</title>
-      <p>For information about the supported hardware in HP Helion OpenStack 2.0, see the <xref
+      <p>For information about the supported hardware in HPE Helion OpenStack 2.0, see the <xref
         href="http://helionready.hpcloud.com/ihv/" format="html" scope="external"
-          >HP Helion Ready Solution Catalog</xref>.</p>
+          >HPE Helion Ready Solution Catalog</xref>.</p>
     </section>
     <section id="supported_configs">
       <title>Supported Hardware Configurations</title>

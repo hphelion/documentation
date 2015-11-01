@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_e32_tm2_rt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing a VSA Node </title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing a VSA Node </title>
   <body><!--Needs Edit-->
     <p>This process is used when you want to remove storage system/VSA node from a
-      cluster/management group for maintenance using HP Storevirtual Management Console(CMC). After
+      cluster/management group for maintenance using HPE Storevirtual Management Console(CMC). After
       maintenance the VSA node is added back to the cluster. <note type="caution">
         <ul id="ul_a2n_kp2_rt">
           <li>To have the volumes available even after the VSA storage node goes offline, you must
             ensure that the VSA network RAID configuration/data protection aspects are taken care
             prior to removing a VSA node. </li>
           <li>See <i>Using disk RAID with Network RAID in a cluster</i>, <i>Planning the RAID
-              configuration</i>, and the <i>Data protection</i> sections of HP StoreVirtual Storage
+              configuration</i>, and the <i>Data protection</i> sections of HPE StoreVirtual Storage
             Online help (available in <b>StoreVirtual Management Console</b>) before configuring
             RAID. You must configure RAID before adding the storage system to the management group.
-            Refer the online help of <b>HP Storevirtual CMC for configuring the network RAID for
+            Refer the online help of <b>HPE Storevirtual CMC for configuring the network RAID for
               storage systems.</b> link required...</li>
           <li>You must set the Data protection level while creating the volume type for the VSA
             volumes in Openstack Cinder. The volume type extra spec for setting the data protection
-            is <codeph>hplh:data_pl</codeph> (<b>link not working</b>) for HP LeftHand/StoreVirtual
+            is <codeph>hplh:data_pl</codeph> (<b>link not working</b>) for HPE LeftHand/StoreVirtual
             storage. For more details refer <xref
               href="http://docs.openstack.org/kilo/config-reference/content/HP-LeftHand-StoreVirtual-driver.html"
               format="html" scope="external">Openstack Cinder configuration guide(Kilo) for HP
@@ -34,10 +34,10 @@
             storage system/VSA node that is planned to remove for maintenance goes offline.</li>
           <li>If the repair option is available for the VSA storage system, choose the appropriate
             option in repair. For detail, refer to <i>Using Repair Storage System</i>
-            <b>in HP StoreVirtual Storage Online help in CMC.</b><p>OR</p><p>If the repair option is
+            <b>in HPE StoreVirtual Storage Online help in CMC.</b><p>OR</p><p>If the repair option is
               unavailable, perform either of the below operations to remove the VSA storage system
               for maintenance:</p><p>Refer<i> Maintaining storage systems in clusters</i> section in
-              HP StoreVirtual Storage Online help in CMC and perform any of the below operations to
+              HPE StoreVirtual Storage Online help in CMC and perform any of the below operations to
               ensure that the cluster functions normally and the volumes continue to be available
               even after the storage system is removed/replaced.</p><p>
               <ul id="ul_dmj_sq2_rt">

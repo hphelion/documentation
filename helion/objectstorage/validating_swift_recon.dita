@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_xq2_dw4_nt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Gathering Swift Data</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Gathering Swift Data</title>
   <body><!--Needs Edit-->
     <p>The <b>swift-recon</b> command retrieves data from Swift servers and displays the results. To
       use <b>swift-recon</b>, log on as a root user to any node which is running the swift-proxy

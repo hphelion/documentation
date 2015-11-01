@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_bkr_qjh_ht">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Default Logging Settings</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Default Logging Settings</title>
   <body><!--Needs Edit-->
     <p>The table below describes the default logging policies for each service. Here is a
       description of each column:</p>

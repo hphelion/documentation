@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_kvm">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry Scale Cloud
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry Scale Cloud
     with KVM</title>
   <body>
     <!--Needs Edit-->
     <section id="about">
-      <p>This page describes the common installation step requirements for each of the HP Helion
+      <p>This page describes the common installation step requirements for each of the HPE Helion
         Entry Scale Cloud models that utilize the KVM hypervisor on the Compute nodes. This includes
         the following: <ul>
           <li>Entry Scale Cloud with VSA</li>
@@ -37,7 +37,7 @@
         <li>The machine hosting the deployer and all baremetal systems must be connected to a
           management network. Nodes on this management network must be able to reach the iLO
           subsystem of each baremetal system to enable host reboots as part of the install process.
-          The HP Helion OpenStack architecture requires that the IPMI network is a separate network
+          The HPE Helion OpenStack architecture requires that the IPMI network is a separate network
           and that a route exists from the management network to the IPMI network for iLO
           access.</li>
         <li>There is no requirement to have a dedicated network for OS-install and system
@@ -71,7 +71,7 @@
         configuration files. This will be discussed in each models page along with the rest of the
         unique configurations.</p>
       <ol>
-        <li>Download the HP Helion OpenStack 2.0.0 product from the <xref
+        <li>Download the HPE Helion OpenStack 2.0.0 product from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
             format="html" scope="external">Helion Downloads</xref> page after signing in.</li>
         <li>Boot your deployer from the ISO contained in the download.</li>
@@ -94,7 +94,7 @@
         <li>Set the environment variable LC_ALL: <codeph>export LC_ALL=C</codeph>
           <note>This can be added to ~stack/.bashrc or /etc/bash.bashrc</note></li>
       </ol>
-      <p>At the end of this section you should have a node set up with Linux for HP Helion on
+      <p>At the end of this section you should have a node set up with Linux for HPE Helion on
         it.</p>
     </section>
     <section id="configure_deployer">

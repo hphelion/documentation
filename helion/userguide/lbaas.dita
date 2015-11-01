@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="HP2.0LBaaS">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using Load Balancing as a Service
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using Load Balancing as a Service
     (LBaaS)</title>
   <body><!--Needs Edit-->
-    <p><b>HP Helion OpenStack 2.0 LBaaS Configuration</b></p>
+    <p><b>HPE Helion OpenStack 2.0 LBaaS Configuration</b></p>
     <p> Load Balancing as a Service (LBaaS) is an advanced networking service that allows load
       balancing of multi-node environments. It provides the ability to spread requests across
       multiple servers thereby reducing the load on any single server. This document describes  the
       configuration for LBaaS v1 and v2.</p>
 
-    <p>HP Helion OpenStack 2.0 can support either LBaaS v1 or LBaaS v2 to allow for wide ranging
+    <p>HPE Helion OpenStack 2.0 can support either LBaaS v1 or LBaaS v2 to allow for wide ranging
       customer requirements. Check with your administrator for the version that is installed before
       starting your configuration. </p>
  
  
     <section id="Configuration">
       <title>Configuration</title>
-      <p>HP Helion OpenStack 2.0 LBaaS Configuration</p>
+      <p>HPE Helion OpenStack 2.0 LBaaS Configuration</p>
       
       <sectiondiv id="CreateLBaaSNetwork">
         <p><b>Create Private Network for LBaaS</b></p>

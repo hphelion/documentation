@@ -2,15 +2,15 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic4362">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Metering Service (Ceilometer)
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Metering Service (Ceilometer)
     Components</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack"/>
-      <othermeta name="product-version" content="HP Helion Openstack 1.1"/>
-      <othermeta name="product-version1" content="HP Helion Openstack"/>
-      <othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+      <othermeta name="product-version" content="HPE Helion Openstack"/>
+      <othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack"/>
+      <othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
     </metadata>
   </prolog>
   <body><!--Needs Edit-->
@@ -18,7 +18,7 @@
       <!--PUBLISHED-->
       <!--./commercial/GA1/ceilometer/1.1commerical.services-reporting-components.md-->
       <!--permalink: /helion/openstack/1.1/services/reporting/components/--></p>
-    <p>The Metering service is installed during the HP Helion OpenStack installation process. During
+    <p>The Metering service is installed during the HPE Helion OpenStack installation process. During
       installation, the Metering service is automatically configured to collect data from the Nova,
       Cinder, Glance and Neutron services.</p>
     <p>All the metering processes have a unified configuration file that can be found at

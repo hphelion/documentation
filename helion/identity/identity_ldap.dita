@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ifg_n33_bt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: LDAP Integration</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: LDAP Integration</title>
   <body><!--Needs Edit-->
     <section><title>Integrating with an external LDAP server</title>
       <p>If your organization, like most, uses an LDAP directory service such as Active Directory,

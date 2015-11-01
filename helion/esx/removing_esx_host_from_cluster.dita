@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_srg_d5h_rt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing an Existing ESX Host from a Cluster</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing an Existing ESX Host from a Cluster</title>
   <body><!--Needs Edit-->
     <p>The process for removing an existing ESX host from cluster is as follows:<ol
         id="ol_ilq_k5h_rt">

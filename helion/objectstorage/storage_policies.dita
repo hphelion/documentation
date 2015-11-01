@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_gm1_4bc_jt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Designing Storage Policies</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Designing Storage Policies</title>
   <body><!--Needs Edit-->
     <p>Storage policies allow you to differentiate the way objects are stored. </p>
     <section><b>Reasons to use storage policies</b><p>They are as follows:<ul id="ul_q4t_cxd_jt">

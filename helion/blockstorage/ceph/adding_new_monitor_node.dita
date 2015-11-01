@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_zbc_pg4_rt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding a New Ceph Monitor Node</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding a New Ceph Monitor Node</title>
   <body><!--Needs Edit-->
-    <p>In HP Helion OpenStack 2.0, Ceph Monitor Node is installed on the Controller nodes by
+    <p>In HPE Helion OpenStack 2.0, Ceph Monitor Node is installed on the Controller nodes by
       default. A new monitor node cannot be added to an existing Ceph cluster, if Ceph is deployed
       with the default configuration. However, if monitor nodes are added on a dedicated resource
       node then you can add a new monitor node.</p>

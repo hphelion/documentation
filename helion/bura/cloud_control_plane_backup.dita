@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_jsc_qps_qt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Backing up the Cloud Control Plane </title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Backing up the Cloud Control Plane </title>
   <body>
     <section><title>Default Backup and Restore</title><p>As part of the installation procedure in HP
         Helion <tm tmtype="reg">OpenStack</tm> 2.0, automatic backup/restore jobs are uploaded from
@@ -11,7 +11,7 @@
         from the secure shell (SSH) server. You must use the following procedure to set up SSH
         backup during installation:</p></section>
     <section><title>Setting up SSH backup</title>
-      <p>By default, during HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 deployment, backup jobs
+      <p>By default, during HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0 deployment, backup jobs
         are automaticaly deployed to backup to Swift the MySQL database, the deployer, and Swift
         rings. Restore jobs are also deployed for convenience. It is more secure to store those
         backups also outside of the Helion infrastructure. If you provide all the values required in
@@ -128,7 +128,7 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
       <p>You server is now ready to receive backups. If you wish, you can check our advice on how to
         secure it.</p></section>
     <section><title>Opening ports in Helion's firewall </title><p> There is a strict policy of
-        firewalling deployed with HP Helion. If you use a non-standard SSH port, you may need to
+        firewalling deployed with HPE Helion. If you use a non-standard SSH port, you may need to
         specifically open it by using the following process:</p>
       <ol>
         <li>When creating your model, edit the following
@@ -158,7 +158,7 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
           <li>Disable SSH v1</li>
           <li>Authorize Secure File Transfer Protocol (SFTP) only for that user (disable SSH
             shell)</li>
-          <li>Firewall SSH traffic to ensure it comes from the HP Helion address range</li>
+          <li>Firewall SSH traffic to ensure it comes from the HPE Helion address range</li>
           <li>Install a Fail2Ban solution</li>
           <li>Restrict users that are allowed to SSH</li>
         </ul></p><p>Remove the key pair generated earlier on the backup server: the only thing needed is the

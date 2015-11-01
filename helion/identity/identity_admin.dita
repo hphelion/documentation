@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_qmz_fg3_bt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Identity Service Administration</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Identity Service Administration</title>
   <body><!--Needs Edit-->
     <section id="administration"><title>Post-Installation Verification and Administration</title>
       <p>Keystone identity service query and administration tasks can be performed using the
         OpenStack command line utility. The utility is installed by the deployer onto deployer node.
-        Also, HP Helion OpenStack installs convenient *.osrc files which contain exports of
+        Also, HPE Helion OpenStack installs convenient *.osrc files which contain exports of
         environment variables used by the OpenStack CLI.</p><p>
         <note>Keystone administration tasks should be performed by an <i>admin</i> user with a token
           scoped to the <i>default</i> domain via the Keystone v3 identity API. These settings are

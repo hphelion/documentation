@@ -2,15 +2,15 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic11470">
-    <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Best Practices and
+    <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Best Practices and
         Optimization</title>
     <prolog>
         <metadata>
             <othermeta name="layout" content="default"/>
-            <othermeta name="product-version" content="HP Helion Openstack"/>
-            <othermeta name="product-version" content="HP Helion Openstack 1.1"/>
-            <othermeta name="product-version1" content="HP Helion Openstack"/>
-            <othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+            <othermeta name="product-version" content="HPE Helion Openstack"/>
+            <othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
+            <othermeta name="product-version1" content="HPE Helion Openstack"/>
+            <othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
         </metadata>
     </prolog>
     <body><!--Needs Edit-->
@@ -139,7 +139,7 @@ instance_usage_audit_period=hour</codeblock>
             <title><b>Improving Reporting API responsiveness</b></title>
             <p>Reporting APIs are the main access to the Metering data stored in Ceilometer. These
                 APIs are access by Horizon to provide basic usage data and information.</p>
-            <p>HP Helion OpenStack uses Apache2 Web Server to serve the API access. It is possible
+            <p>HPE Helion OpenStack uses Apache2 Web Server to serve the API access. It is possible
                 to tune performance to optimize the front-end and back-end (database). Our
                 experience indicates that an excessive increase of concurrent access to the
                 front-end tends to put strain in the database. We are striving to improve
@@ -209,7 +209,7 @@ ceilome+ 31433 31427 10 16:29 ? 00:02:43 /usr/sbin/apache2 -k start</codeblock>
         </section>
         <section id="notification_strategy"><title>Notification Whitelisting and Polling
                 Strategies</title>
-            <p>In HP Helion 2.0 we have adopted a strategy to reduce the amount of data that is sent
+            <p>In HPE Helion 2.0 we have adopted a strategy to reduce the amount of data that is sent
                 to the storage. The main reason is that we are currently using a SQL based cluster
                 that is not highly indicated for big data. Ceilometer can be controlled for the data
                 that collects using the <b>pipeline.yaml</b> file. This configuration file is
@@ -464,7 +464,7 @@ sinks:
         </section>
         <section id="ceilometer_api"><title>Ceilometer API</title>
             <b>Separate pipeline.yaml for Ceilometer Post Sample API</b>
-            <p>Post Sample API is disabled by default in HP Helion OpenStack 2.0 and its configured
+            <p>Post Sample API is disabled by default in HPE Helion OpenStack 2.0 and its configured
                 with a pipeline configuration different than the agents. The api pipeline has no
                 meters enabled, so it needs to be configured with meters when the Post sample API is
                 enabled. Exercise caution when adding meters to the API pipeline. Ensure that only

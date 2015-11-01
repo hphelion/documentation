@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_odg_33x_rt">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Networking Solution for ESXi Hypervisor</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Networking Solution for ESXi Hypervisor</title>
   <body><!--Needs Edit-->
     <p>To provide the <b>network as a service</b> for tenant VM's hosted on ESXi Hypervisor, a
       service VM named OVSvApp VM is deployed on each ESXi Hypervisor within a cluster managed by

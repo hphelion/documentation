@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_t1y_vjs_4t">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using the Weight-Step Attributes to Prepare for Ring Changes</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using the Weight-Step Attributes to Prepare for Ring Changes</title>
   <body><!--Needs Edit-->
     <p>Rings are build during a deploy and sets the weights of disk drives such that smaller disk
       drives have a smaller weight than larger disk drives. As explained in <xref
@@ -15,7 +15,7 @@
       determine typical oldest replication times for your system. For instructions see <xref
         href="swift_safe-rebalance-deploy-ring.dita#topic_ohx_j1t_4t"
         >swift_safe-rebalance-deploy-ring.html</xref>.</p>
-    <p>In HP Helion OpenStack, the weight-step attribute is set in the ring specification of the
+    <p>In HPE Helion OpenStack, the weight-step attribute is set in the ring specification of the
       input model. The weight-step value specifies a maximum value for the change of the weight of a
       drive in any single rebalance. For example, if you add a drive of 4TB in size, you would
       normally assign a weight of 4096. However, if the weight-step attribute is set to 1024, when

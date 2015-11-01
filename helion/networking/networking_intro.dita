@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1399">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Networking Operation (Neutron) Administrator Pre and Post Installation Tasks</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Networking Operation (Neutron) Administrator Pre and Post Installation Tasks</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.0"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.0.1"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.0"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.0.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
 <othermeta name="role" content="Network Administrator"/>
 <othermeta name="role" content="Network Architect"/>
 <othermeta name="role" content="Vikas Deolaliker, Paul Kevin"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.0"/>
-<othermeta name="product-version3" content="HP Helion Openstack 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion Openstack 1.0"/>
+<othermeta name="product-version3" content="HPE Helion Openstack 1.0.1"/>
+<othermeta name="product-version4" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body><!--Needs Edit-->

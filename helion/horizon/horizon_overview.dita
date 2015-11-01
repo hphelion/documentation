@@ -2,12 +2,12 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic1564">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Horizon Service Overview</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Horizon Service Overview</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack"/>
-      <othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+      <othermeta name="product-version" content="HPE Helion Openstack"/>
+      <othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
       <othermeta name="role" content="Systems Administrator"/>
       <othermeta name="role" content="Cloud Architect"/>
       <othermeta name="role" content="Storage Administrator"/>
@@ -17,8 +17,8 @@
       <othermeta name="role" content="Application Developer"/>
       <othermeta name="role" content="Network Engineer"/>
       <othermeta name="role" content="Michael B, Nancy M"/>
-      <othermeta name="product-version1" content="HP Helion Openstack"/>
-      <othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack"/>
+      <othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
     </metadata>
   </prolog>
   <body><!--Needs Edit-->
@@ -27,9 +27,9 @@
       <!--./commercial/GA1/1.1commerical.services-horizon-overview.md-->
       <!--permalink: /helion/openstack/1.1/services/horizon/overview/--></p>
     <p> </p>
-    <p>Horizon is the OpenStack service that serves as the basis for the HP Helion OpenStack
+    <p>Horizon is the OpenStack service that serves as the basis for the HPE Helion OpenStack
       dashboards.</p>
-    <p>The dashboards provide a web-based user interface to HP Helion OpenStack services including
+    <p>The dashboards provide a web-based user interface to HPE Helion OpenStack services including
       Compute, Volume Operations, Networking, and Identity.</p>
     <section>
       <p/>
