@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="projectEdit">
-  <title>HP Helion 2.0 Development Platform: Change an Existing Project</title>
+  <title>HPE Helion 2.0 Development Platform: Change an Existing Project</title>
   <body>
     <p>Some elements of an existing project can be changed.</p>
     <section><title>Edit Project Specifications</title>

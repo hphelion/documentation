@@ -2,8 +2,8 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
  
 <map xml:lang="en" linking="none" locktitle="no">
-<title>HP Helion Development Platform</title>
-  <topicref href="2.0/codeEngine/engine_overview.dita" navtitle="HP Helion Code Engine: Continuous Integration"
+<title>HPE Helion Development Platform</title>
+  <topicref href="2.0/codeEngine/engine_overview.dita" navtitle="HPE Helion Code Engine: Continuous Integration"
     locktitle="yes">
     <topicref href="2.0/codeEngine/engine_walkthrough.dita"
       navtitle="Create an Automated Build-Test-Deploy Cycle" locktitle="yes"/>

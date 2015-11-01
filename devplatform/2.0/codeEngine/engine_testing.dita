@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_rkg_vlg_tt">
-  <title>HP Helion 2.0 Development Platform: Testing</title>
+  <title>HPE Helion 2.0 Development Platform: Testing</title>
   <body>
     <p>Each of the tech stacks and frameworks has conventions for supporting unit testing. </p>
-    <p>The HP Helion Code Engine looks for specific files in the root directory of the project. The
+    <p>The HPE Helion Code Engine looks for specific files in the root directory of the project. The
       specific file found will determine how the project is built and tested.</p><note>Only one of these files is
       expected to exist in the project root directory. The behavior is undefined in the presence of
       multiple files.</note>

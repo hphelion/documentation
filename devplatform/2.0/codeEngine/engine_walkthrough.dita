@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
 <topic id="task_sw4_1zq_dt">
-    <title>HP Helion 2.0 Development Platform: Create an Automated Build-Test-Deploy Cycle</title>
+    <title>HPE Helion 2.0 Development Platform: Create an Automated Build-Test-Deploy Cycle</title>
     <body>
     <p>The true advantage of continuous integration is creating a build-test-deploy cycle which will
             occur automatically whenever a change is committed.</p>
@@ -43,7 +43,7 @@
         <section id="post"><title>Add Post-Deployment Tasks</title><p conref="engine_create_postdeploy.dita#createPostDeploy/createpd"/></section>
         <section id="commit">
             <title>Commit and Build</title>
-           <note>You can also <xref href="engine_create_build.dita">perform a manual build</xref> at any time from the HP Helion Code Engine. </note> <p>Direct commits to the repository trigger the full automated build-test-deploy cycle. Pull
+           <note>You can also <xref href="engine_create_build.dita">perform a manual build</xref> at any time from the HPE Helion Code Engine. </note> <p>Direct commits to the repository trigger the full automated build-test-deploy cycle. Pull
                 requests, however, need to be approved. If the build runs and the test succeed, a temporary deployment is created where the proposed change can be reviewed.
                 When the pull request is approved, the temporary deployment is deleted and the build
                 is deployed to the specified final environment (staging, test, production, etc.) If

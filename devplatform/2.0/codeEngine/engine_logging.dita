@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_kdx_zqv_4t">
-  <title>HP Helion 2.0 Development Platform: Log Files for Continuous Integration</title>
+  <title>HPE Helion 2.0 Development Platform: Log Files for Continuous Integration</title>
   <body>
     
     <p>Every build, test, deployment and post-deploy event generates log files.  </p>
