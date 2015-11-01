@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic24073">
-<title>HP Helion 2.0 Development Platform: Installation and Configuration</title>
+<title>HPE Helion 2.0 Development Platform: Installation and Configuration</title>
 <body>
 <section>
-<p>Installing HP Helion Development Platform requires first installing the service deployer itself and then deploying key services.</p>
-<p>The following topics explain how to install and configure a new deployment of the HP Helion
+<p>Installing HPE Helion Development Platform requires first installing the service deployer itself and then deploying key services.</p>
+<p>The following topics explain how to install and configure a new deployment of the HPE Helion
         Development Platform. There is also <xref
           href="../devplatform.troubleshooting.dita">Troubleshooting</xref> documentation to handle
         issues that may occur.</p>
@@ -13,7 +13,7 @@
 <li>
           <xref href="#id_tfs_4qv_ft" format="dita">Prerequisites </xref></li>
   <li>
-  <xref href="#id_l4p_cxw_ft" format="dita">Install the HP Helion Development Platform</xref>
+  <xref href="#id_l4p_cxw_ft" format="dita">Install the HPE Helion Development Platform</xref>
 </li>
 <!--    <li> <xref href="#id_jbr_5qv_ft" format="dita">Install the Horizon UI Panels</xref></li>-->
 <li>

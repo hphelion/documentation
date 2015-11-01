@@ -13,7 +13,7 @@
               href="devplatform_install_platform.dita#topic_gly_xmh_ts">be installed</xref>.</li>
           <li>A properly configured <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt"
               >clouds.yaml</xref> file.</li>
-          <li>HP Helion OpenStack 2.0 installation must be completed. You must know the location of
+          <li>HPE Helion OpenStack 2.0 installation must be completed. You must know the location of
             the services.osrc file containing its configuration information</li>
           <li>A SSH public and private keypair, uploaded to openstack, configured in clouds.yml, and
             used as ssh keys on the deployer machine </li>

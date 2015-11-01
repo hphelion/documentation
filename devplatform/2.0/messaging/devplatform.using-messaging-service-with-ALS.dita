@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic3826">
-  <title>HP Helion 2.0 Development Platform: Using the Messaging Service with ALS</title>
+  <title>HPE Helion 2.0 Development Platform: Using the Messaging Service with ALS</title>
   <body>
     <p><!--going to be two pages here - how do i interface cloudfoundry with cue? dev--></p>
     <p><!--ops - how do i modify cue or CF so that users can interface with cue?
@@ -12,7 +12,7 @@ note from Min  that Arun is looking into this right now. Cue manages the message
       unmanaged service. If your application relies on high message throughput or if you want to
       move an application from dev/test into production, you should strongly consider using the
       Messaging Service instead of the RabbitMQ service embedded with ALS.</p>
-    <p>If the HP Helion <tm tmtype="reg">OpenStack</tm> cloud was configured with three availability
+    <p>If the HPE Helion <tm tmtype="reg">OpenStack</tm> cloud was configured with three availability
       zones, the Messaging Service will automatically deploy the cluster across all three so that
       the cluster is resilient to server, VM, or availability zone failures.</p>
     <section id="prerequisites">

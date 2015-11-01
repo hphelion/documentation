@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="cloudCodeEngine">
-  <title>HP Helion Code Engine</title>
+  <title>HPE Helion Code Engine</title>
   <body>
-    <section>This additional section is required only if the HP Helion Code Engine is installed. <codeblock>helionce:   
+    <section>This additional section is required only if the HPE Helion Code Engine is installed. <codeblock>helionce:   
   deployer_key: default   
   deployer_flavor: 4
   deployer_name: &lt;service>_deployer_&lt;version>   deployer_security_group: default
@@ -62,11 +62,11 @@
         </dlentry>
         <dlentry>
           <dt>deployer_ntp_servers</dt>
-          <dd>NTP servers, can be the same as the one used by HP Helion OpenStack </dd>
+          <dd>NTP servers, can be the same as the one used by HPE Helion OpenStack </dd>
         </dlentry>
         <dlentry>
           <dt>deployer_dns_servers</dt>
-          <dd>DNS servers, can be the same as the one used by HP Helion OpenStack </dd>
+          <dd>DNS servers, can be the same as the one used by HPE Helion OpenStack </dd>
         </dlentry>
         <dlentry>
           <dt>deployer_ext_net_id</dt>

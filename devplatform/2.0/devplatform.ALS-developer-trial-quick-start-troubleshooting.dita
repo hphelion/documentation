@@ -2,9 +2,9 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic2598">
-  <title>HP Helion 2.0 Development Platform: Quick Start Developer Trial</title>
+  <title>HPE Helion 2.0 Development Platform: Quick Start Developer Trial</title>
   <titlealts>
-    <searchtitle>HP Helion 2.0 Development Platform: Quick Start Developer Trial
+    <searchtitle>HPE Helion 2.0 Development Platform: Quick Start Developer Trial
       Troubleshooting</searchtitle>
   </titlealts>
   <body>
@@ -41,7 +41,7 @@
             <li>If you want to deploy more than one cluster, you need to manually edit the cluster
               title and cluster prefix in the <varname>trial.yml</varname> file after you download
               it.</li>
-            <li>If you have used this HP Public Cloud account previously, make sure that you have at
+            <li>If you have used this HPE Public Cloud account previously, make sure that you have at
               least 13 GB of quota space available for deploying the trial cluster.</li>
             <li>Check to make sure that you have at least three security groups.In the <xref
                 href="https://horizon.hpcloud.com/" scope="external" format="html">Horizon

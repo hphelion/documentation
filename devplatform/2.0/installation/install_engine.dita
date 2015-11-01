@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_gkq_fqy_rt">
-  <title>Install the HP Helion Code Engine</title>
+  <title>Install the HPE Helion Code Engine</title>
   <body>
     <section>
       <title>Prerequisites</title>
@@ -10,7 +10,7 @@
             href="devplatform_install_platform.dita#topic_gly_xmh_ts">be installed</xref>.</li>
         <li>A properly configured <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt"
             >clouds.yaml</xref> file.</li>
-        <li>HP Helion OpenStack 2.0 installation must be completed. You must know the location of
+        <li>HPE Helion OpenStack 2.0 installation must be completed. You must know the location of
           the services.osrc file containing its configuration information</li>
         <li>A SSH public and private keypair, uploaded to openstack, configured in clouds.yml, and
           used as ssh keys on the deployer machine </li>
@@ -29,7 +29,7 @@
 openstack hdpi helionce launch --os-cloud hce
 deactivate</codeblock></li>
           </ol></li>
-        <li>List all available machines to verify that the HP Helion Code Engine VM is running.
+        <li>List all available machines to verify that the HPE Helion Code Engine VM is running.
           <codeblock>source ./services.osrc
 nova list</codeblock>You should see an instance named
             <codeph>helionce_deployer</codeph>. Make a note of its IP address.</li>

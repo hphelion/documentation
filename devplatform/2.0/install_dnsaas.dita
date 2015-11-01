@@ -2,14 +2,14 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="HP2.0DNSaaS">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: DNSaaS Installation and Configuration</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: DNSaaS Installation and Configuration</title>
   <body>
-    <p><b>This document describes the installation process for HP Helion OpenStack 2.0</b></p>
+    <p><b>This document describes the installation process for HPE Helion OpenStack 2.0</b></p>
     <p>Our managed DNS service, based on the OpenStack Designate project, is engineered to help you
       create, publish, and manage your DNS zones and records securely and efficiently to either a
       public or private DNS server network.</p>
     <p>It is important to read through this page before starting your installation as it explains
-      how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack</p>
+      how to install and configure DNS as a service (DNSaaS) for HPE Helion OpenStack</p>
     
     <section id="LinkList">
       <ul>
@@ -52,7 +52,7 @@
     <section id="Prerequisites">
       <title>Prerequisites</title>
       <ul>
-        <li>HP Helion Openstack 2.0 Installation</li>
+        <li>HPE Helion Openstack 2.0 Installation</li>
         <li>Download the <xref scope="external" format="html"
             href="http://pinafore.usa.hp.com/paas-2.0/dnsaas-2.0/QA1/dnsaas-2.0.0-b.1-20151005T183829Z.tgz"
             >DNSaaS Deployer Tarball</xref>. Check against this value to ensure that you have the
@@ -76,7 +76,7 @@
       <p>Target credentials are the credentials of the user+tenant where the service is to be
         deployed. Target credentials include a tenant and a username. Service credentials can only
         be created after the Target credentials have been successfully created. <note>These commands
-          should be run from the HP Helion OpenStack deployer.</note></p>
+          should be run from the HPE Helion OpenStack deployer.</note></p>
       <ol>
         <li>You will need to update your environment by sourcing the keystone.osrc file.
           <codeblock>$ source keystone.osrc</codeblock></li>
@@ -210,7 +210,7 @@ ansible-playbook -i hosts/verb_hosts site.yml       </codeblock></li>
     <section id="PrepareDeployment">
       <title>Prepare the Deployment</title><sectiondiv>
         <b>Select an Example Deployment Model</b>
-        <p>HP Helion OpenStack DNSaaS has several example models that can be deployed. In the
+        <p>HPE Helion OpenStack DNSaaS has several example models that can be deployed. In the
           following example, the <i>powerdns</i> example deployment model is used.</p><note
           type="important">The <codeph>cp</codeph> command must be used exactly as shown - including
           the /* on the end of the example model
@@ -223,7 +223,7 @@ $ git commit -a -m "Add DNSaaS Example Model" </codeblock></sectiondiv><sectiond
             <codeph>~/helion/my_cloud/definition/data/pass-through/hos.yml</codeph> file with the
           appropriate URLs for your deployment. You can find the URLs in the service catalog
             <codeph>openstack catalog list</codeph> and the Keystone admin token in
-            <codeph>/etc/keystone/keystone.conf</codeph> on one of the HP Helion OpenStack control
+            <codeph>/etc/keystone/keystone.conf</codeph> on one of the HPE Helion OpenStack control
           plane nodes. Other values may be left invalid, they will not prevent the deployment from
           completing.</p><ol>
           <li>You will need to change directories to the my_cloud/definition directory and run nano

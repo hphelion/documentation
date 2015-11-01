@@ -17,7 +17,7 @@
     </ul>
     <section id="prerequisites"><title>Connect to your database and set up a MySql cluster</title>
       <ol>
-        <li>Log in to the installer node for your HP Helion OpenStack environment and source the service.osrc file:
+        <li>Log in to the installer node for your HPE Helion OpenStack environment and source the service.osrc file:
           <codeblock>
 . service.osrc
           </codeblock></li>

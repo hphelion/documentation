@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic19772">
-<title>HP Helion 2.0 Development Platform: Application Lifecycle Service Data Services</title>
+<title>HPE Helion 2.0 Development Platform: Application Lifecycle Service Data Services</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-  <othermeta name="product-version" content="HP Helion Development Platform 2.0"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+  <othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
@@ -571,7 +571,7 @@ Redis:         'redis-2.x' -&gt; 'redis'</codeblock>
 variable. See the following language-specific documentation:</p>
 <ul>
 <li>
-          <xref href="../deploy/languages/php.dita#topic5845/database-services">PHP Data Services
+          <xref href="../deploy/languages/php.dita#topic5845/database-services">PHPE Data Services
           </xref></li>
 </ul>
 <p>The following changes to sample applications show this modification:</p>
