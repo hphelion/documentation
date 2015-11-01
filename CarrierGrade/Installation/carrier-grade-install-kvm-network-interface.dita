@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Attaching to Networks Using an
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Attaching to Networks Using an
     Ethernet Interface</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
-    <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
     <othermeta name="role" content="Storage Administrator"/>
     <othermeta name="role" content="Storage Architect"/>
     <othermeta name="role" content="Michael B"/>
-    <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
   </metadata>
 </prolog>
   <body>
-        <p>When a compute or storage node is added to HP Helion OpenStack Carrier Grade and
+        <p>When a compute or storage node is added to HPE Helion OpenStack Carrier Grade and
           initialized, Ethernet interfaces are created automatically for each physical
           port detected.</p>  
         <p>For a network that uses Ethernet interfaces, you can edit an
@@ -36,14 +36,14 @@
           <li><b>Interface Name</b>. A name used to identify the interface.</li>
           <li><b>Network Type</b>. The type of network to which the interface is attached.
                 <p><b>Note:</b> This selection supports multiple network types on the same logical
-              interface. HP Helion OpenStack Carrier Grade also supports multiple network types on
+              interface. HPE Helion OpenStack Carrier Grade also supports multiple network types on
               the same physical interface, using VLAN interfaces.</p><p>You can select multiple
               check boxes, but the only valid multiple selection is data in addition to either
                 <codeph>mgmt</codeph> or infra on the interface connected to the management or
               infrastructure network. Depending on the interface, the check box options may include: <ul>
                 <li>none - Clears the Network Type setting.</li>
                 <li>infra - Attaches the interface to an infrastructure network. <p>When a compute
-                    or storage node is added to HP Helion OpenStack Carrier Grade, an interface must
+                    or storage node is added to HPE Helion OpenStack Carrier Grade, an interface must
                     be attached to the infrastructure network before the node can be unlocked. You
                     can edit the infrastructure interface to add a data network and provider
                     network. This allows both infrastructure and data traffic to be carried on the
@@ -52,7 +52,7 @@
                     controller nodes for administrator remote access. It is not applicable to
                     compute or storage nodes.</p></li>
                 <li>mgmt - Attaches the interface to the management network. <p>When a compute or
-                    storage node is added to HP Helion OpenStack Carrier Grade, the interface used
+                    storage node is added to HPE Helion OpenStack Carrier Grade, the interface used
                     for PXE boot is assigned automatically to the management network. In the
                     settings for this interface, mgmt is already selected. For other interfaces,
                     this selection is not used. You can edit the management interface to add a data
@@ -60,7 +60,7 @@
                     carried on the interface.</p></li>
                 <li>pci-passthrough - Provides for a direct connection to physical interface
                   hardware and the attached provider network from a virtual machine. A single VM can
-                  directly access the physical interface. For more information, see the HP Helion
+                  directly access the physical interface. For more information, see the HPE Helion
                   OpenStack Carrier Grade Administration Guide: PCI Passthrough Ethernet
                   Devices.</li>
                 <li>data - Attaches the interface to a provider network. <p>You can add a data

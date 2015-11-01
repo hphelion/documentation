@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8087">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Verifying the Install Using Embedded Tests</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Verifying the Install Using Embedded Tests</title>
 <titlealts>
-<searchtitle>HP Helion Openstack 1.1: Verifying the Install Using Embedded Tests</searchtitle>
+<searchtitle>HPE Helion Openstack 1.1: Verifying the Install Using Embedded Tests</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B, Andrea F,"/>
-<othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -21,11 +21,11 @@
  <!--./commercial/GA1/1.1commercial.install-GA-tempest-tests.md-->
  <!--permalink: /helion/openstack/1.1/install/tempest-tests/--></p>
 <p>
-  <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
+  <b>This document describes the installation process for HPE Helion OpenStack 1.1 and HPE Helion OpenStack 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
+<p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HPE Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
 <p>Tempest is a set of integration tests for OpenStack API validation, Scenarios, and other specific tests to be run against a live OpenStack cluster.</p>
-<p>A version of the upstream <xref href="http://docs.openstack.org/developer/tempest/" scope="external" format="html" >Tempest</xref> integration tests  is pre-deployed in the HP Helion OpenStack undercloud.</p>
+<p>A version of the upstream <xref href="http://docs.openstack.org/developer/tempest/" scope="external" format="html" >Tempest</xref> integration tests  is pre-deployed in the HPE Helion OpenStack undercloud.</p>
 <p>You can use these embedded tests to verify if the deployed overcloud is functional.</p>
 <ul>
 <li>

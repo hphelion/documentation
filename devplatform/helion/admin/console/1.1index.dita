@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13884">
-<title>HP Helion 1.1 Development Platform: Management Console (Admin View)</title>
+<title>HPE Helion 1.1 Development Platform: Management Console (Admin View)</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.1"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.1"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Security Engineer"/>
 <othermeta name="role" content="ISV Developer"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Net Ops Engineer"/>
 <othermeta name="role" content="NOC Engineer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -196,7 +196,7 @@ for information on using your own certificate.</p>
 <p>Once you've logged in, you can begin to add other users and admins, enable and disable services, and generally set up the system to your requirements.</p>
 <p>Basic Application Lifecycle Service administration can be done through the Management
 Console, but some maintenance and configuration tasks may need to be done at the command line using the <i>kato</i> command. See the <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref" type="section"  >Kato Command Reference</xref> for a full list of options.</p>
-<p>The Application Lifecycle Service Management Console will periodically send non-identifying pingbacks (Application Lifecycle Service version number and UUID) to HP servers to help improve the web console experience. You can disable this option by setting</p>
+<p>The Application Lifecycle Service Management Console will periodically send non-identifying pingbacks (Application Lifecycle Service version number and UUID) to HPE servers to help improve the web console experience. You can disable this option by setting</p>
 <codeblock>
   <codeph>theme_settings['pingback_allowed'] = false;
 </codeph>

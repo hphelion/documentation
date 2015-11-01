@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1790">
-<title>HP Helion Public Cloud Software Downloads</title>
+<title>HPE Helion Public Cloud Software Downloads</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,14 +12,14 @@
 <!--PUBLISHED-->
  <!--./publiccloud/downloads.md-->
  <!--permalink: /publiccloud/downloads/--></p>
-<p>HP Helion Public Cloud has a few software downloads, each of which is on its appropriate page--the Ruby Fog Bindings download is on the Ruby Fog Bindings page, for example.  But to give you quick and easy access, we have also consolidated our list of downloads here on this page.  Find what you're looking for and download away!</p>
+<p>HPE Helion Public Cloud has a few software downloads, each of which is on its appropriate page--the Ruby Fog Bindings download is on the Ruby Fog Bindings page, for example.  But to give you quick and easy access, we have also consolidated our list of downloads here on this page.  Find what you're looking for and download away!</p>
 <p>Here's what we have for you:</p>
 <ul>
 <li><xref type="section" href="#topic1790/WinCLIInstall">Windows CLI</xref></li>
 <li><xref type="section" href="#topic1790/OpenstackCLI"><tm tmtype="reg">OpenStack</tm> CLI Tools</xref></li>
 <li><xref type="section" href="#topic1790/RubyFogBindingsInstall">Ruby Fog Bindings</xref></li>
 <li><xref type="section" href="#topic1790/jcloudsBindingsInstall">Java/Clojure jclouds Bindings</xref></li>
-<li><xref type="section" href="#topic1790/PHPBindingsInstall">PHP Bindings</xref></li>
+<li><xref type="section" href="#topic1790/PHPBindingsInstall">PHPE Bindings</xref></li>
 <li><xref type="section" href="#topic1790/NetBindingsInstall">.NET Bindings</xref></li>
 <li><xref type="section" href="#topic1790/JavascriptBindingsInstall">Javascript Bindings</xref></li>
 </ul>
@@ -62,7 +62,7 @@
 <xref href="http://jclouds.apache.org/start/install/" scope="external" format="html" >Installation page</xref> (This is the <xref href="http://www.jclouds.org" scope="external" format="html" >jclouds.org</xref> installation page)</li>
 </ul>
 </section>
-<section id="PHPBindingsInstall"> <title>PHP Bindings</title>
+<section id="PHPBindingsInstall"> <title>PHPE Bindings</title>
 <ul>
 <li>
 <xref href="http://hpcloud.github.com/HPCloud-PHP/" scope="external" format="html" >Installation page</xref> (This is the GitHub repository page for the installation package)</li>

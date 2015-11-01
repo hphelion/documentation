@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic906">
-  <title>HP Helion Public Cloud CLI Software for Windows PowerShell</title>
+  <title>HPE Helion Public Cloud CLI Software for Windows PowerShell</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -12,7 +12,7 @@
       <!--PUBLISHED-->
       <!--./publiccloud/cli.windows.2.md-->
       <!--permalink: /publiccloud/cli/windows/--></p>
-<p>The HP Helion Public Cloud command-line interface (CLI) software for Windows PowerShell is a tool which allows Windows users to manage their HP Helion Public Cloud services from the command line.</p>
+<p>The HPE Helion Public Cloud command-line interface (CLI) software for Windows PowerShell is a tool which allows Windows users to manage their HPE Helion Public Cloud services from the command line.</p>
 <p>Surf to the appropriate page to learn how to install the software, use the various features, and see how to go about getting help.</p>
 <ul>
 <li>
@@ -34,6 +34,6 @@
 <xref href="../publiccloud/cli.windows.2.release-notes.dita" >Release Notes</xref>
 </li>
 </ul>
-    <p><xref href="../file/WinCLI-2.1.1.2.zip" scope="external" format="html" >Download the HP Helion Public Cloud command-line interface (CLI) software for Windows PowerShell</xref>.</p>
+    <p><xref href="../file/WinCLI-2.1.1.2.zip" scope="external" format="html" >Download the HPE Helion Public Cloud command-line interface (CLI) software for Windows PowerShell</xref>.</p>
 </body>
 </topic>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic41966">
-<title>HP Helion Public Cloud CLI Software for Windows PowerShell: Object Storage Examples</title>
+<title>HPE Helion Public Cloud CLI Software for Windows PowerShell: Object Storage Examples</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,14 +13,14 @@
 <!--PUBLISHED-->
  <!--./publiccloud/cli.windows.2.containers-and-folders.md-->
  <!--permalink: /publiccloud/cli/windows/containers-and-folders/--></p>
-<p>One of the key features of the HP Helion Public Cloud CLI software for Windows PowerShell Object Storage is that it provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  This page provides examples for how to use Object Storage via the Windows PowerShell CLI.  (See the <xref href="../publiccloud/object-storage.dita" >HP Helion Public Cloud Object Storage Overview</xref> for overview information on Object Storage.)</p>
+<p>One of the key features of the HPE Helion Public Cloud CLI software for Windows PowerShell Object Storage is that it provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HPE data centers.  This page provides examples for how to use Object Storage via the Windows PowerShell CLI.  (See the <xref href="../publiccloud/object-storage.dita" >HPE Helion Public Cloud Object Storage Overview</xref> for overview information on Object Storage.)</p>
 <p><b>Note:</b> When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:</p>
 <codeblock>
 PS: HPCS:\&gt; cd "my container:"
 PS: HPCS:\&gt; new-container -name "my new container"
 </codeblock>
 <p>
-<b>Note</b>: The HP Helion Public Cloud CLI software for Windows PowerShell supports the <xref href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx" scope="external" format="html" >standard Windows wildcard</xref> characters asterix (<codeph>*</codeph>), question mark (<codeph>?</codeph>), and range brackets (<codeph>[]</codeph>) for the <codeph>ls, copy</codeph> and <codeph>delete</codeph> object storage commands.</p>
+<b>Note</b>: The HPE Helion Public Cloud CLI software for Windows PowerShell supports the <xref href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx" scope="external" format="html" >standard Windows wildcard</xref> characters asterix (<codeph>*</codeph>), question mark (<codeph>?</codeph>), and range brackets (<codeph>[]</codeph>) for the <codeph>ls, copy</codeph> and <codeph>delete</codeph> object storage commands.</p>
 <section id="InteractingwiththeStorageService"> <title>Interacting with the Storage Service</title>
 <p>This page contains the following examples:</p>
 <ul>
@@ -72,7 +72,7 @@ PS: HPCS:\&gt; new-container -name "my new container"
 </ul>
 </section>
 <section id="CreatingStorageContainers"> <title>Creating Storage Containers</title>
-<p>Storage Containers act as a fundamental unit of storage in HP Object Storage. These items are very similar to disk volumes that one would traditionally use to maintain a set of hierarchically organized folders. PowerShell offers a natural way to represent these Storage Containers through the use of Providers. Instances of these Powershell providers are called drives and each storage container that you create is represented as one. To illustrate this concept let's first create a Storage Container with the <codeph>New-Container</codeph> command. When Powershell first opens, use the <codeph>cd HPCS:</codeph> command to use the HPCS providers</p>
+<p>Storage Containers act as a fundamental unit of storage in HPE Object Storage. These items are very similar to disk volumes that one would traditionally use to maintain a set of hierarchically organized folders. PowerShell offers a natural way to represent these Storage Containers through the use of Providers. Instances of these Powershell providers are called drives and each storage container that you create is represented as one. To illustrate this concept let's first create a Storage Container with the <codeph>New-Container</codeph> command. When Powershell first opens, use the <codeph>cd HPCS:</codeph> command to use the HPCS providers</p>
 <codeblock>
 ------------------------------------------------------------------------------------------------------
 Welcome to the HP-Cloud Object Storage Powershell Environment.
@@ -950,7 +950,7 @@ PS demo:\&gt;
 </codeblock>
 </section>
 <section id="MigratingYourFiles"> <title>Migrating Your Files From Another Storage System</title>
-<p>The Migrate-Drive command gives you the ability to migrate your data from a non-HP Helion Public Cloud storage system such as Amazon S3, Dropbox, or Microsoft Skydrive into the HP Helion Public Cloud system easily and quickly.  This example uses Amazon S3 buckets.  To move the TLPRoot and TLPTest2 Buckets in S3 and the TLPTest2 Bucket contained MikeConfig.txt and NewHelp.text files to the HP Helion Public Cloud system:</p>
+<p>The Migrate-Drive command gives you the ability to migrate your data from a non-HPE Helion Public Cloud storage system such as Amazon S3, Dropbox, or Microsoft Skydrive into the HPE Helion Public Cloud system easily and quickly.  This example uses Amazon S3 buckets.  To move the TLPRoot and TLPTest2 Buckets in S3 and the TLPTest2 Bucket contained MikeConfig.txt and NewHelp.text files to the HPE Helion Public Cloud system:</p>
 <codeblock>
 ------------------------------------------------------------------------------------------------------
 Welcome to the HP-Cloud Object Storage Powershell Environment.

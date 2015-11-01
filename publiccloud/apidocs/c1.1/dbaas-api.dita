@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic74526">
-<title>HP Helion Public Cloud Relational Database API</title>
+<title>HPE Helion Public Cloud Relational Database API</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -17,8 +17,8 @@
 <p>
 <b>Document Version:</b> 1.5</p>
 <section id="1-overview"> <title>1. Overview</title>
-<p>This document describes the HP Helion Public Cloud Relational Database API, which allows you to manage database instances and backups that you can then interact with using your favorite database client.</p>
-<p>We will be referring to HP Helion Public Cloud Relational Database in this document as simply Relational Database.</p>
+<p>This document describes the HPE Helion Public Cloud Relational Database API, which allows you to manage database instances and backups that you can then interact with using your favorite database client.</p>
+<p>We will be referring to HPE Helion Public Cloud Relational Database in this document as simply Relational Database.</p>
 </section>
 <section id="11-api-maturity-level"> <title>1.1 API Maturity Level</title>
 <p>
@@ -63,7 +63,7 @@
 <row>
 <entry align="left">1.4</entry>
   <entry align="left">May 2014</entry>
-  <entry align="left">HP Helion updates</entry>
+  <entry align="left">HPE Helion updates</entry>
 </row>
 <row>
 <entry align="left">1.5</entry>
@@ -93,7 +93,7 @@ HTTP/1.1, and JSON serialization formats.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="3-account-level-view"> <title>3. Account-level View</title>
-<p>Like all HP Helion offerings, authentication is achieved through the Identity service, which will return an X-Auth-Token that is used for subsequent requests to individual services.</p>
+<p>Like all HPE Helion offerings, authentication is achieved through the Identity service, which will return an X-Auth-Token that is used for subsequent requests to individual services.</p>
 </section>
 <section id="31-accounts"> <title>3.1 Accounts</title>
 <p>For additional details on the Identity service, please refer to https://docs.hpcloud.com/identity</p>
