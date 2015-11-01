@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3521">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Stopping and Starting the Development Platform Services During the Upgrade Process</title>
+<title>HPE <tm tmtype="reg">Helion OpenStack</tm> 1.0: Stopping and Starting the Development Platform Services During the Upgrade Process</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,7 +12,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.0commercial.update-101-devplat.stopstart.md-->
  <!--permalink: /helion/openstack/update/devplatstop/101/--></p>
-<p>If you have installed the <xref href="../../devplatform/1.0devplatform.index.dita" >HP Helion Development Platform</xref>, you need to take the service control plane down before performing updates on the overcloud.</p>
+<p>If you have installed the <xref href="../../devplatform/1.0devplatform.index.dita" >HPE Helion Development Platform</xref>, you need to take the service control plane down before performing updates on the overcloud.</p>
 <p>Services must be stopped in the correct order before the overcloud compute nodes can be updated. After the update is complete, the control plane must be restarted with a command that ensures services are restarted in order.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ol>

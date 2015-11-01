@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_lrq_dn4_ks">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Roll Your Own Installation</title>
+<title>HPE <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Roll Your Own Installation</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Micael B"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
 <p><!--PUBLISHED--><!----><!--permalink: --></p>
 <section id="roll"> <title>Roll Your Own Installation</title>
-  <p>For a one-stop installation guide for HP Helion OpenStack 1.1 and 1.1.1, see <xref href="RollYourOwn11/index.html" format="html" scope="external">Roll your own installation guide</xref> </p>
+  <p>For a one-stop installation guide for HPE Helion OpenStack 1.1 and 1.1.1, see <xref href="RollYourOwn11/index.html" format="html" scope="external">Roll your own installation guide</xref> </p>
 
 
 

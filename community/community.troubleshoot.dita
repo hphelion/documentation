@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6912">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> Community Issues and troubleshooting</title>
+<title>HPE <tm tmtype="reg">Helion OpenStack</tm> Community Issues and troubleshooting</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,7 +12,7 @@
 <!--PUBLISHED-->
  <!--./community/community.troubleshoot.md-->
  <!--permalink: /helion/community/troubleshooting/--></p>
-<p>If you encounter any issues when installing HP <tm tmtype="reg">Helion OpenStack</tm> Community, refer to the following troubleshooting tips.</p>
+<p>If you encounter any issues when installing HPE <tm tmtype="reg">Helion OpenStack</tm> Community, refer to the following troubleshooting tips.</p>
 <ul>
 <li>
 <p>If the overcloud controller is rebooted (power issue, hardware upgrade, etc.), <tm tmtype="reg">OpenStack</tm> compute tools such as <codeph>nova-list</codeph> report that the VMs are in an ERROR state, rendering the overcloud unusable. To restore the overcloud to an operational state, follow the steps below:</p>
@@ -67,7 +67,7 @@ sudo service nova-conductor restart
 </ol>
 </li>
 <li>
-<p>On the system on which the installer is run, the seed VM's networking is bridged onto the external LAN. If you remove HP <tm tmtype="reg">Helion OpenStack</tm> Community, the network bridge persists. To revert the network configuration to its pre-installation state, run the following commands as user root:</p>
+<p>On the system on which the installer is run, the seed VM's networking is bridged onto the external LAN. If you remove HPE <tm tmtype="reg">Helion OpenStack</tm> Community, the network bridge persists. To revert the network configuration to its pre-installation state, run the following commands as user root:</p>
 
 <codeblock>
 <codeph>ip addr add 192.168.185.131/16 dev eth0 scope global
@@ -88,7 +88,7 @@ ovs-vsctl del-port NIC
 <section id="known"> <title>Known issues and workarounds</title>
 <ul>
 <li>
-<p>The following error has been intermittently observed on HP ProLiant SL390s systems on which installs are being performed:</p>
+<p>The following error has been intermittently observed on HPE ProLiant SL390s systems on which installs are being performed:</p>
 
 <codeblock>
 <codeph>Fatal PCI Express Device Error PCI Slot ?
@@ -114,7 +114,7 @@ B00/D00/F00
 <li>
 <p>The BIOS must be set to the correct date and time on all systems.</p>
 
-<p>On HP ProLiant systems you can do the following:</p>
+<p>On HPE ProLiant systems you can do the following:</p>
 
 <ol>
 <li>Power UP the server and configure the BIOS (press F9)</li>
@@ -123,7 +123,7 @@ B00/D00/F00
 </ol>
 </li>
 <li>
-<p>On many HP systems, including HP servers running iLO 3 firmware, the
+<p>On many HPE systems, including HPE servers running iLO 3 firmware, the
 iLO time can be set to propagate to the BIOS on powerup.
 You should disable propagation and set the BIOS time to the correct
 date and time on all systems.</p>
@@ -204,7 +204,7 @@ should ensure that they are securely stored separately from the seed.</p>
 <p>The installer script will wait for os-collect-config to complete on the seed but times out after 10 minutes of waiting.</p>
 </li>
 <li>
-<p>The installer uses IPMI commands to reset nodes and change their power status. Some systems have been seen to get into a state where the Server Power status as reported by the iLO stays stuck in the "RESET" state. If this occurs, it is necessary to physically remove power from the server for 10 seconds. If the problem persists after that, contact HP Support - there might be a defective component in the system.</p>
+<p>The installer uses IPMI commands to reset nodes and change their power status. Some systems have been seen to get into a state where the Server Power status as reported by the iLO stays stuck in the "RESET" state. If this occurs, it is necessary to physically remove power from the server for 10 seconds. If the problem persists after that, contact HPE Support - there might be a defective component in the system.</p>
 </li>
 <li>
 <p>If using the seed vm as your gateway (default setting), you will need to execute the following commands after you have run <codeph>hp_ced_host_manager.sh</codeph> on the host machine.</p>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10467">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Working with HP 3PAR StoreServ</title>
+<title>HPE <tm tmtype="reg">Helion OpenStack</tm> 1.1: Working with HPE 3PAR StoreServ</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -25,11 +25,11 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.undercloud-storage-storeserv.md-->
  <!--permalink: /helion/openstack/1.1/undercloud/storage/storeserv/--></p>
-<!--what is HP Helion CLoud referring to in bullet 1??-->
+<!--what is HPE Helion CLoud referring to in bullet 1??-->
 <p>
 
 </p>
-<p>The StoreServ option allows you to configure HP 3PAR StoreServ as storage. HP 3PAR StoreServ is also referred to as 3PAR. Before you start working with StoreServ, ensure that it is accessible from the undercloud and you have all the required details to register the device using Sirius service.</p>
+<p>The StoreServ option allows you to configure HPE 3PAR StoreServ as storage. HPE 3PAR StoreServ is also referred to as 3PAR. Before you start working with StoreServ, ensure that it is accessible from the undercloud and you have all the required details to register the device using Sirius service.</p>
 <p>You can configure a 3PAR device by using the undercloud Horizon dashboard (<i>recommended</i>) or the <xref href="../../commercial/GA1/1.1commercial.sirius-cli-workflow.dita" >Sirius client</xref>. This page describes the different tasks that you can perform using the StoreServ option in the undercloud Horizon dashboard.</p>
 <ul>
 <li>
@@ -98,16 +98,16 @@
 <p>Before you start working with 3PAR StoreServ, ensure that the following prerequisites have been fulfilled:</p>
 <ol>
 <li>
-<p>HP Helion Cloud is deployed</p>
+<p>HPE Helion Cloud is deployed</p>
 </li>
 <li>
-<p>The HP 3PAR StoreServ device is accessible from the undercloud.</p>
+<p>The HPE 3PAR StoreServ device is accessible from the undercloud.</p>
 </li>
 <li>
-<p>The HP 3PAR StoreServ device (running operating system v 3.1.3 or later) is accessible by the Compute nodes and Cinder running in the overcloud.</p>
+<p>The HPE 3PAR StoreServ device (running operating system v 3.1.3 or later) is accessible by the Compute nodes and Cinder running in the overcloud.</p>
 </li>
 <li>
-<p>Common Provisioning Groups (CPGs) are created for HP 3PAR StoreServ</p>
+<p>Common Provisioning Groups (CPGs) are created for HPE 3PAR StoreServ</p>
 </li>
 </ol>
 </section>
@@ -121,10 +121,10 @@
 <p>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the overview page.</p>
 </li>
 <li>
-<p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreServ page is displayed.</p>
+<p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> The HPE StoreServ page is displayed.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-main-page.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP 3PAR StoreServ Main Page (opens in a new window)</xref>
+<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-main-page.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HPE 3PAR StoreServ Main Page (opens in a new window)</xref>
 </p>
 </li>
 <li>
@@ -183,7 +183,7 @@
 <p>On successful registration, the 3PAR device is added and is listed as the <b>registered</b> StoreServ.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-registered-storeserv.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Registered StoreServ in the HP StoreServ Main Page (opens in a new window)</xref>
+<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-registered-storeserv.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Registered StoreServ in the HPE StoreServ Main Page (opens in a new window)</xref>
 </p>
 </li>
 </ol>
@@ -201,7 +201,7 @@
 <p>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the overview page.</p>
 </li>
 <li>
-<p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreServ page is displayed.</p>
+<p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> The HPE StoreServ page is displayed.</p>
 </li>
 <li>
 <p>Click <b>Edit StoreServ</b>.</p>
@@ -226,7 +226,7 @@
 <p>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the overview page.</p>
 </li>
 <li>
-<p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreServ page is displayed.</p>
+<p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> The HPE StoreServ page is displayed.</p>
 
 <p>
 <xref format="html" href="javascript:window.open('/media/undercloud-storeserv-unregister-storeserv.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >UnRegister a StoreServ Option (opens in a new window)</xref>
@@ -250,7 +250,7 @@
 <p>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the overview page.</p>
 </li>
 <li>
-<p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreServ page is displayed.</p>
+<p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> The HPE StoreServ page is displayed.</p>
 </li>
 <li>
 <p>Click the checkbox displayed against the <b>Name</b> column to select all the StoreServs.</p>
@@ -267,7 +267,7 @@
 </p>
 </section>
 <section id="registering-cpg"> <title>Register 3PAR StoreServ Common Provisioning Groups (CPGs)</title>
-<p>Once you register the 3PAR device, choose the CPGs for your cloud. CPG (Common Provisioning Group) is a fundamental unit that can be configured as a Cinder backend. A single HP 3PAR StoreServ may have multiple CPGs. You can choose and allocate them to the cloud as a per your requirement. <!---First register the CPG in Sirius and then configure the CPG as backend for overcloud Cinder service. You can register a few CPGs and allocate them as and when required. The Cinder configuration file is updated only during the allocation, the registeration of the CPG just updates the Sirius database.--></p>
+<p>Once you register the 3PAR device, choose the CPGs for your cloud. CPG (Common Provisioning Group) is a fundamental unit that can be configured as a Cinder backend. A single HPE 3PAR StoreServ may have multiple CPGs. You can choose and allocate them to the cloud as a per your requirement. <!---First register the CPG in Sirius and then configure the CPG as backend for overcloud Cinder service. You can register a few CPGs and allocate them as and when required. The Cinder configuration file is updated only during the allocation, the registeration of the CPG just updates the Sirius database.--></p>
 <p>
 <b>Note</b>: Only registered CPG(s) can be configured as a storage backend for Cinder.</p>
 <p>To register the CPGs, do the following:</p>
@@ -279,7 +279,7 @@
 <p>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the overview page.</p>
 </li>
 <li>
-<p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreServ page is displayed with the list of StoreServs.</p>
+<p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> The HPE StoreServ page is displayed with the list of StoreServs.</p>
 
 <p>
 <xref format="html" href="javascript:window.open('/media/undercloud-storeserv-register-cpg.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Register CPG Option (opens in a new window)</xref>
@@ -320,7 +320,7 @@
 <p>Click <b>Register</b> to register the CPG.</p>
 </li>
 <li>
-<p>To check the status of CPG registration, in the HP StoreServ page, click the device name to display the Common Provisioning Groups page. The selected CPG displays as <b>registered</b>.</p>
+<p>To check the status of CPG registration, in the HPE StoreServ page, click the device name to display the Common Provisioning Groups page. The selected CPG displays as <b>registered</b>.</p>
 
 <p>
 <xref format="html" href="javascript:window.open('/media/undercloud-storeserv-registered-cpg.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Registered CPG Displays in the Common Provisioning Groups Page (opens in a new window)</xref>
@@ -340,7 +340,7 @@
 <p>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the overview page.</p>
 </li>
 <li>
-<p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreServ page is displayed with the list of StoreServs.</p>
+<p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> The HPE StoreServ page is displayed with the list of StoreServs.</p>
 </li>
 <li>
 <p>Click the StoreServ device name for which you want to register CPG. <!--A BR tag was used here in the original source.-->The Common Provisioning Groups page is displayed with a list of CPGs.</p>
@@ -371,7 +371,7 @@
 <p>From the left panel, click the <b>Resources</b> tab and then click <b>Storage</b> to display the overview page.</p>
 </li>
 <li>
-<p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> HP StoreServ page is displayed.</p>
+<p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> HPE StoreServ page is displayed.</p>
 </li>
 <li>
 <p>Click the StoreServ device name for which you want to unregister CPG. <!--A BR tag was used here in the original source.-->The Common Provisioning Groups page is displayed with a list of CPGs.</p>
@@ -394,7 +394,7 @@
 <p>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the overview page.</p>
 </li>
 <li>
-<p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreServ page is displayed.</p>
+<p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> The HPE StoreServ page is displayed.</p>
 </li>
 <li>
 <p>Click the StoreServ device name for which you want to unregister the CPG. <!--A BR tag was used here in the original source.-->The Common Provisioning Groups page is displayed with a list of CPGs.</p>
@@ -411,7 +411,7 @@
 </ol>
 </section>
 <section id="view-cpg"> <title>View CPG configuration</title>
-<p>Use this option to view the CPG configuration (as defined in <tm tmtype="reg">OpenStack</tm> Configuration Manual for HP 3PAR Cinder Block Storage Volume Driver).</p>
+<p>Use this option to view the CPG configuration (as defined in <tm tmtype="reg">OpenStack</tm> Configuration Manual for HPE 3PAR Cinder Block Storage Volume Driver).</p>
 <ol>
 <li>
 <p>Log in to the undercloud Horizon dashboard.</p>
@@ -420,7 +420,7 @@
 <p>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the overview page.</p>
 </li>
 <li>
-<p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreServ page is displayed.</p>
+<p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> The HPE StoreServ page is displayed.</p>
 </li>
 <li>
 <p>Click the StoreServ device name for which you want to view CPG configuration. <!--A BR tag was used here in the original source.-->The Common Provisioning Groups page is displayed with a list of CPGs.</p>

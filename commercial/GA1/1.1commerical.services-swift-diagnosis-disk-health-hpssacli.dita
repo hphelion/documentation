@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6748">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Monitoring Disk Drives in Object Storage Using hpssacli Utility</title>
+<title>HPE <tm tmtype="reg">Helion OpenStack</tm> 1.1: Monitoring Disk Drives in Object Storage Using hpssacli Utility</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.0"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.0.1"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.0"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.0.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Karthik P, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.0"/>
-<othermeta name="product-version3" content="HP Helion Openstack 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion Openstack 1.0"/>
+<othermeta name="product-version3" content="HPE Helion Openstack 1.0.1"/>
+<othermeta name="product-version4" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -26,10 +26,10 @@
 <p>
 
 </p>
-<p>HP Helion Object Storage (Swift) provides native monitoring of Swift services and hardware resources like disk drives.To monitor the health status of the disk drives of the Swift cluster, monitoring scripts are introduced for HP hardware. The monitoring solution depends on hpssacli application to fetch various details of hardware to determine its health and publish to Icinga. hpssacli utility does not get installed implicitly as part of Swift node deployment.</p>
+<p>HPE Helion Object Storage (Swift) provides native monitoring of Swift services and hardware resources like disk drives.To monitor the health status of the disk drives of the Swift cluster, monitoring scripts are introduced for HPE hardware. The monitoring solution depends on hpssacli application to fetch various details of hardware to determine its health and publish to Icinga. hpssacli utility does not get installed implicitly as part of Swift node deployment.</p>
 <p>You are advised to download and install utility as per procedure mentioned below. If utility is not installed then Icinga dashboard will reflect the various disk parameters as critical.</p>
-<section id="hp-smart-storage-administrator-cli-20220-hpssacli"> <title>HP Smart Storage Administrator CLI 2.0.22.0 (HPSSACLI)</title>
-<p>The HP Smart Storage Administrator CLI (HPSSACLI) is a command line disk configuration program for Smart Array Controllers.</p>
+<section id="hp-smart-storage-administrator-cli-20220-hpssacli"> <title>HPE Smart Storage Administrator CLI 2.0.22.0 (HPSSACLI)</title>
+<p>The HPE Smart Storage Administrator CLI (HPSSACLI) is a command line disk configuration program for Smart Array Controllers.</p>
 <p>The <b>
 <i>hpssacli</i>
 </b> utility is deployed onto the servers wherever the disks are to be monitored, usually all Object Storage(Swift), VSA, and Compute nodes.</p>

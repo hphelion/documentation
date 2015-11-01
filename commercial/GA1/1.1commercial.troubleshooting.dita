@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2105">
-  <title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Troubleshooting</title>
+  <title>HPE <tm tmtype="reg">Helion OpenStack</tm> 1.1: Troubleshooting</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack"/>
-      <othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+      <othermeta name="product-version" content="HPE Helion Openstack"/>
+      <othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
       <othermeta name="role" content="Systems Administrator"/>
       <othermeta name="role" content="Cloud Architect"/>
       <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
       <othermeta name="role" content="Application Developer"/>
       <othermeta name="role" content="Network Engineer"/>
       <othermeta name="role" content="Paul F"/>
-      <othermeta name="product-version1" content="HP Helion Openstack"/>
-      <othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack"/>
+      <othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
     </metadata>
   </prolog>
   <body>
@@ -28,7 +28,7 @@
     <p>
 
     </p>
-    <p>HP <tm tmtype="reg">Helion OpenStack</tm> is an <tm tmtype="reg">OpenStack</tm> technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP (hLinux). This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions organized into the following topics:</p>
+    <p>HPE <tm tmtype="reg">Helion OpenStack</tm> is an <tm tmtype="reg">OpenStack</tm> technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HPE (hLinux). This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions organized into the following topics:</p>
     <ul>
       <li>
         <p>
@@ -95,10 +95,10 @@
       </li>
     </ul>
     <section id="sos"> <title>Contacting Customer Service</title>
-      <p>If you need further assistance, contact <xref href="http://www.hpcloud.com/about/contact" scope="external" format="html" >HP Customer Support</xref>.</p>
+      <p>If you need further assistance, contact <xref href="http://www.hpcloud.com/about/contact" scope="external" format="html" >HPE Customer Support</xref>.</p>
     </section>
     <section id="gathering-information"> <title>Gathering information</title>
-      <p>Before contacting HP Customer Support, run the <codeph>run-sosreport</codeph> command on the affected system. You do not need to be logged in as <i>root</i> to run this command.</p>
+      <p>Before contacting HPE Customer Support, run the <codeph>run-sosreport</codeph> command on the affected system. You do not need to be logged in as <i>root</i> to run this command.</p>
       <p>The command gathers specific information into a file that will help diagnose your issue. The file is located in the <codeph>/tmp</codeph> directory under a name in the format <codeph>sosreport-&lt;system hostname&gt;-&lt;timestamp&gt;.tar.xz</codeph>. For example: <codeph>/tmp/sosreport-hLinux-20150218083619.tar.xz</codeph>.</p>
       <p>Customer Support will help determine the best way to relay the information in the file to them.</p>
     </section>
@@ -110,7 +110,7 @@
 </codeblock>
       <p>A sample of output is:</p>
       <codeblock>
-  <codeph>HP Helion Openstack 1.1.1 Build 100
+  <codeph>HPE Helion Openstack 1.1.1 Build 100
 </codeph>
 </codeblock>
       <p>

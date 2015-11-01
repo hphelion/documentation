@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4462">
-<title>HP Helion 1.0 Development Platform: Customization</title>
+<title>HPE Helion 1.0 Development Platform: Customization</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.0"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.0"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Security Engineer"/>
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.0"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.0"/>
 </metadata>
 </prolog>
 <body>
@@ -70,7 +70,7 @@
         <li>
           <b>Product Name</b>: Overrides all occurrences of 'Application Lifecycle Service'</li>
         <li>
-          <b>Company Name</b>: Overrides all occurrences of 'HP Software'</li>
+          <b>Company Name</b>: Overrides all occurrences of 'HPE Software'</li>
         <li>
           <b>Vendor Version</b>: Overrides all occurrences of the Application Lifecycle Service
           version number.</li>
@@ -135,7 +135,7 @@
         the settings object (e.g. <codeph>settings.product_name</codeph>):</p>
       <ul>
         <li>product_name: null,</li>
-        <li>company_name: 'HP Software',</li>
+        <li>company_name: 'HPE Software',</li>
         <li>vendor_version: '3.0',</li>
         <li>default_locale: 'en',</li>
         <li>product_logo_favicon_url: 'img/helion_logo_favicon.png',</li>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6434">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> Community Network Architecture and Configuration - Baremetal Installations Only</title>
+<title>HPE <tm tmtype="reg">Helion OpenStack</tm> Community Network Architecture and Configuration - Baremetal Installations Only</title>
 <titlealts>
-<searchtitle>HP Helion Openstack Community Network Architecture and Configuration -- Baremetal Installations Only</searchtitle>
+<searchtitle>HPE Helion Openstack Community Network Architecture and Configuration -- Baremetal Installations Only</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
@@ -15,7 +15,7 @@
 <!--PUBLISHED-->
  <!--./community/community.network-requirements.md-->
  <!--permalink: /helion/community/network-requirements/--></p>
-<p>This page provides an overview of important information on the network configuration required for a baremetal HP Helion OpenCloud Community edition installation.</p>
+<p>This page provides an overview of important information on the network configuration required for a baremetal HPE Helion OpenCloud Community edition installation.</p>
 <p>For virtual installations, the installation simulates the deployment of <tm tmtype="reg">OpenStack</tm> by creating and configuring a set of virtual machines (VMs) on a single system. As such, no manual network configuration is required.</p>
 <ul>
 <li>

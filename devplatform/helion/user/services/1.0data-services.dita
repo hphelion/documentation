@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic19439">
-<title>HP Helion 1.0 Development Platform: Application Lifecycle Service Data Services</title>
+<title>HPE Helion 1.0 Development Platform: Application Lifecycle Service Data Services</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -631,7 +631,7 @@ variable. See <xref type="section" href="#topic19439/database-accessing">
 general information and the following language-specific documentation:</p>
 <ul>
 <li>
-<xref href="../../../../devplatform/helion/user/deploy/languages/1.0php.dita#php-data-services" type="section" scope="external"  >PHP Data Services</xref>
+<xref href="../../../../devplatform/helion/user/deploy/languages/1.0php.dita#php-data-services" type="section" scope="external"  >PHPE Data Services</xref>
 </li>
 </ul>
 <p>The following changes to sample applications show this modification:</p>

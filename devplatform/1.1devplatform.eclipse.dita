@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5780">
-<title>HP Helion 1.1 Development Platform: Eclipse Deployment Plugin</title>
+<title>HPE Helion 1.1 Development Platform: Eclipse Deployment Plugin</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.1"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.1"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Security Engineer"/>
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version2" content="HPE Helion Development Platform 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -24,7 +24,7 @@
 <p>
 
 </p>
-<p>If you're building apps in Eclipse, use this plugin to configure, package, and deploy your app directly to the HP Helion Development Platform.</p>
+<p>If you're building apps in Eclipse, use this plugin to configure, package, and deploy your app directly to the HPE Helion Development Platform.</p>
 <p>Follow the steps outlined in this document to get the plugin up and running and to deploy one of the sample apps.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <p>If you'd like to deploy the provided <xref href="../devplatform/1.1devplatform.appdev.dita#java" type="section" scope="external"  >Java samples</xref>, you will need to install the following prerequisites. If necessary, locate the version appropriate for your environment and install it before continuing.</p>
@@ -39,9 +39,9 @@
 <li>Open the Eclipse IDE and install the plugin through the <b>Eclipse Marketplace</b> dialog.  You can find this dialog by clicking on <b>Help</b> and then <b>Eclipse Marketplace</b>.<!--A BR tag was used here in the original source.--><image href="../media/eclipseA.png" placement="break"/>
 </li>
 <li>Type in the text <b>Helion</b> and hit <b>go</b> to find the Helion Eclipse plugin in the marketplace.</li>
-<li>Click on <b>Install</b> and follow the prompts to install the <b>HP Helion Development Platform Eclipse Plugin</b>.<!--A BR tag was used here in the original source.--><image href="../media/eclipse2.png" placement="break"/>
+<li>Click on <b>Install</b> and follow the prompts to install the <b>HPE Helion Development Platform Eclipse Plugin</b>.<!--A BR tag was used here in the original source.--><image href="../media/eclipse2.png" placement="break"/>
 </li>
-<li>Once the packages are discovered, ensure <b>HP Helion Development Platform</b> is checked and click <b>Confirm</b>.<!--A BR tag was used here in the original source.--><image href="../media/eclipse3.png" placement="break"/>
+<li>Once the packages are discovered, ensure <b>HPE Helion Development Platform</b> is checked and click <b>Confirm</b>.<!--A BR tag was used here in the original source.--><image href="../media/eclipse3.png" placement="break"/>
 </li>
 <li>Accept the license agreement and Finish the wizard.</li>
 <li>You will be prompted to restart Eclipse.  </li>
@@ -51,8 +51,8 @@
 <ol>
 <li>Once Eclipse has reloaded, open the Servers window by navigating to Window-&gt; Show View-&gt; Servers. Note that if you have a different version of Eclipse, you might need to go to Window -&gt; Show View -&gt; Other -&gt; Servers.<!--A BR tag was used here in the original source.--><image href="../media/eclipse4.png" placement="break"/>
 </li>
-<li>Launch the HP Helion Development Platform plugin by clicking on the <b>Add New Server</b> link in the Servers window.  </li>
-<li>Select <b>HP Helion Development Platform</b> from the tree view and click <b>Next</b>.<!--A BR tag was used here in the original source.--><image href="../media/eclipse5.png" placement="break"/>
+<li>Launch the HPE Helion Development Platform plugin by clicking on the <b>Add New Server</b> link in the Servers window.  </li>
+<li>Select <b>HPE Helion Development Platform</b> from the tree view and click <b>Next</b>.<!--A BR tag was used here in the original source.--><image href="../media/eclipse5.png" placement="break"/>
 <image href="../media/eclipse6.png"/>
 </li>
 <li>Add a new Cloud URL by hitting the Manage Cloud button. Enter the URL of your ALS cluster and

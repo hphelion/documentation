@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en" linking="none" locktitle="no">
-  <title>HP Helion</title>
+  <title>HPE Helion</title>
   <topicmeta>
     <copyright>
       <copyryear year="2015"/>
-      <copyrholder>HP Helion</copyrholder>
+      <copyrholder>HPE Helion</copyrholder>
     </copyright>
     <prodinfo>
-      <prodname>HP Helion</prodname>
+      <prodname>HPE Helion</prodname>
       <vrmlist>
         <vrm version="4.1.0"/>
       </vrmlist>
@@ -18,7 +18,7 @@
   <!--permalink: /-->
   <topicref href="publiccloud/index.dita"/>
   <topicref href="commercial/GA1/1.1commercial.index.dita"
-    navtitle="HP Helion Openstack(R) 1.1: Documentation Home">
+    navtitle="HPE Helion Openstack(R) 1.1: Documentation Home">
     <topicref href="commercial/GA1/1.1commercial.whatsnew.dita"/>
     <topicref href="commercial/GA1/1.1.1commercial.helion-update.dita"/>
     <topicref href="commercial/GA1/1.1.1commercial.release-notes.dita"/>
@@ -277,13 +277,13 @@
         <topicref href="commercial/GA1/1.1commercial.install-laptop-demo.dita"/>
       </topichead>
     </topicref>
-    <topichead navtitle="HP Helion Openstack(R) 1.1: Post-Installation Tasks">
+    <topichead navtitle="HPE Helion Openstack(R) 1.1: Post-Installation Tasks">
       <topicref href="commercial/GA1/Landing/1.1commercial.landing.storage.dita"/>
       <topicref href="commercial/GA1/1.1.1commerical.high-availability.dita"/>
       <topicref href="commercial/GA1/1.1commerical.high-availability.dita"/>
       <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"/>
     </topichead>
-    <topichead navtitle="HP Helion Openstack(R) 1.1: Using the Undercloud Horizon Dashboard">
+    <topichead navtitle="HPE Helion Openstack(R) 1.1: Using the Undercloud Horizon Dashboard">
       <topicref href="commercial/GA1/1.1commercial.using.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-admin-settings.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-resources-overview.dita"/>
@@ -294,7 +294,7 @@
       <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config-storevirtual.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-resource-esx-manage-vm.dita"/>
     </topichead>
-    <topichead navtitle="HP Helion Openstack(R) 1.1: System Restore and Recovery">
+    <topichead navtitle="HPE Helion Openstack(R) 1.1: System Restore and Recovery">
       <topicref
         href="commercial/GA1/1.1commerical.services-remove-replace-failed-overcloud-nodes.dita"/>
       <topicref href="commercial/GA1/1.1commerical.high-availability-restore.dita"/>
@@ -333,7 +333,7 @@
      
       <topicref href="commercial/GA1/1.1commerical.flexible-control-pane-installation.dita"/>
     </topicref>
-    <topichead navtitle="HP Helion Openstack(R) 1.1: License Files">
+    <topichead navtitle="HPE Helion Openstack(R) 1.1: License Files">
       <topicref href="commercial/GA1/1.1.13rd-party-license-agreements.dita"/>
       <topicref href="commercial/GA1/1.13rd-party-license-agreements.dita"/>
       <topicref href="commercial/GA1/1.1commercial.eula.dita"/>
@@ -474,7 +474,7 @@
       </topicref>
       
       
-      <topichead navtitle="HP Helion Openstack(R) 1.0: Post-Installation Tasks">
+      <topichead navtitle="HPE Helion Openstack(R) 1.0: Post-Installation Tasks">
         <topicref href="commercial/GA1/1.0commercial.networking-maskedIP.dita"/>
         <topicref href="commercial/GA1/1.0commercial.install-GA-LDAP.dita"/>
         <topicref href="commercial/GA1/1.0commercial.install-GA-verify.dita"/>	
@@ -483,7 +483,7 @@
       </topichead>
       
       
-      <topichead navtitle="HP Helion Openstack(R) 1.1: Backup and Restore">
+      <topichead navtitle="HPE Helion Openstack(R) 1.1: Backup and Restore">
         <topicref href="commercial/GA1/1.0commercial.backup-restore-GA.dita"/>
       </topichead>
       
@@ -508,7 +508,7 @@
     </topicref>
     
     <!-- Using Undercloud -->
-    <topichead navtitle="HP Helion Openstack(R) 1.1: Using the Undercloud Horizon Dashboard">
+    <topichead navtitle="HPE Helion Openstack(R) 1.1: Using the Undercloud Horizon Dashboard">
       <topicref href="commercial/GA1/1.0commercial.undercloud-admin-settings.dita"/>
       <topicref href="commercial/GA1/1.0commercial.undercloud-resources-overview.dita"/>
       <topicref href="commercial/GA1/1.0commercial.undercloud-resources-storage.dita"/>
@@ -525,19 +525,19 @@
       <topicref href="commercial/GA1/1.0commercial.undercloud-eon-cli.dita"/>
     </topichead>
     
-    <topichead navtitle="HP Helion Openstack(R) 1.0: System Restore and Recovery">
+    <topichead navtitle="HPE Helion Openstack(R) 1.0: System Restore and Recovery">
       <topicref href="commercial/GA1/1.0commerical.services-remove-replace-failed-overcloud-nodes.dita"/>
       <topicref href="commercial/GA1/1.0commerical.high-availability.dita"/>
       
     </topichead>
     
-    <topichead navtitle="HP Helion Openstack(R) 1.0: Flexible Control Pane">
+    <topichead navtitle="HPE Helion Openstack(R) 1.0: Flexible Control Pane">
       <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-overview.dita"/>
       <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-installation.dita"/>
     </topichead>
     <topicref href="commercial/GA1/1.0commercial.map.volumetype.dita" /><!--set to toc=no later-->
     <topicref href="commercial/GA1/1.0commercial.related-topics.dita"/>
-    <topichead navtitle="HP Helion Openstack(R) 1.0: License Files">
+    <topichead navtitle="HPE Helion Openstack(R) 1.0: License Files">
       <topicref href="commercial/GA1/1.0commercial.eula.dita"/>
       <topicref href="commercial/GA1/1.03rd-party-license-agreements.dita"/>
     </topichead>
@@ -616,7 +616,7 @@
     
  
   <topicref href="devplatform/1.2/1.2devplatform.index.dita"
-    navtitle="HP Helion 1.2 Development Platform " locktitle="yes"> <!--//OASIS//DTD DITA Topic//EN"-->
+    navtitle="HPE Helion 1.2 Development Platform " locktitle="yes"> <!--//OASIS//DTD DITA Topic//EN"-->
     <!--permalink: /helion/devplatform/1.2/3rd-party-license-agreements/-->
     <topicref href="devplatform/1.2/1.2devplatform.thirdparty.licensing.dita"
       navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>
@@ -658,7 +658,7 @@
         navtitle="Uninstallation"/>
       <!--permalink: /helion/devplatform/1.2/upgrade/-->
       <topicref href="devplatform/1.2/1.2devplatform_upgrade.dita" locktitle="yes"
-        navtitle="Upgrading from HP Helion Development Platform 1.1"/>
+        navtitle="Upgrading from HPE Helion Development Platform 1.1"/>
       <!--permalink: /helion/devplatform/1.2/install/troubleshooting/-->
       <topicref href="devplatform/1.2/1.2devplatform.troubleshooting.dita" locktitle="yes"
         navtitle="Installation Troubleshooting"/>
@@ -698,13 +698,13 @@
         <topicref href="devplatform/1.2/workbook/messaging/1.2messaging.node.dita" locktitle="yes"
           navtitle="Node RabbitMQ Messaging Sample"/>
       </topichead>
-      <topichead navtitle="PHP Code Samples">
+      <topichead navtitle="PHPE Code Samples">
         <topicref href="devplatform/1.2/workbook/helloworld/1.2helloworld.php.dita" locktitle="yes"
-          navtitle="PHP Hello World Sample "/>
+          navtitle="PHPE Hello World Sample "/>
         <topicref href="devplatform/1.2/workbook/database/1.2database.php.dita" locktitle="yes"
-          navtitle="PHP MySQL Database Sample"/>
+          navtitle="PHPE MySQL Database Sample"/>
         <topicref href="devplatform/1.2/workbook/messaging/1.2messaging.php.dita" locktitle="yes"
-          navtitle="PHP RabbitMQ Messaging Sample"/>
+          navtitle="PHPE RabbitMQ Messaging Sample"/>
       </topichead>
       <!--permalink: /helion/devplatform/1.2/workbook/database/node/-->
       <!--permalink: /helion/devplatform/1.2/workbook/database/php/-->
@@ -1010,7 +1010,7 @@
     </topicref>
   </topicref>
   <topicref href="devplatform/1.1devplatform.index.dita"
-    navtitle="HP Helion 1.1 Development Platform " locktitle="yes">
+    navtitle="HPE Helion 1.1 Development Platform " locktitle="yes">
     <!--permalink: /helion/devplatform/1.1/3rd-party-license-agreements/-->
     <topicref href="devplatform/1.1devplatform.thirdparty.licensing.dita"
       navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>
@@ -1052,13 +1052,13 @@
         <topicref href="devplatform/workbook/messaging/1.1messaging.node.dita" locktitle="yes"
           navtitle="Node RabbitMQ Messaging Sample "/>
       </topichead>
-      <topichead navtitle="PHP Samples">
+      <topichead navtitle="PHPE Samples">
         <topicref href="devplatform/workbook/helloworld/1.1helloworld.php.dita" locktitle="yes"
-          navtitle="PHP Hello World Sample "/>
+          navtitle="PHPE Hello World Sample "/>
         <topicref href="devplatform/workbook/database/1.1database.php.dita" locktitle="yes"
-          navtitle="PHP MySQL Database Sample "/>
+          navtitle="PHPE MySQL Database Sample "/>
         <topicref href="devplatform/workbook/messaging/1.1messaging.php.dita" locktitle="yes"
-          navtitle="PHP RabbitMQ Messaging Sample "/>
+          navtitle="PHPE RabbitMQ Messaging Sample "/>
       </topichead>
       <!--permalink: /helion/devplatform/1.1/workbook/database/node/-->
       <!--permalink: /helion/devplatform/1.1/workbook/database/php/-->
@@ -1109,7 +1109,7 @@
       <topichead navtitle="ALS Command Line Clients">
         <topicref href="devplatform/helion/CLI/1.1ALS_Client_Downloads.dita"/>
         <topicref href="devplatform/helion/CLI/1.1ALS_Client_Reference.dita" locktitle="yes"
-          navtitle="HP Helion ALS Cluster Management Tool Reference "/>
+          navtitle="HPE Helion ALS Cluster Management Tool Reference "/>
         <topicref href="devplatform/helion/user/reference/1.1client-ref.dita" locktitle="yes"
           navtitle="Application Lifecycle Service Client Command Reference ">
           <!--permalink: /helion/devplatform/1.1/als/user/reference/client-ref/administration/-->
@@ -1186,7 +1186,7 @@
             locktitle="yes" navtitle="ALS Command Reference: User Management "/>
         </topicref>
         <topicref href="devplatform/helion/user/client/1.1index.dita" locktitle="yes"
-          navtitle="HP Helion Application Lifecycle Service Client "/>
+          navtitle="HPE Helion Application Lifecycle Service Client "/>
         <topicref href="devplatform/helion/admin/reference/1.1kato-ref.dita" locktitle="yes"
           navtitle="Kato Command Reference "/>
       </topichead>
@@ -1200,7 +1200,7 @@
       </topichead>
       <!--permalink: /helion/devplatform/1.1/als/client/constructor/-->
       <topicref href="devplatform/helion/CLI/1.1constructor_vm.dita" locktitle="yes"
-        navtitle="HP Application Lifecycle Service (ALS) Constructor Virtual Machine "/>
+        navtitle="HPE Application Lifecycle Service (ALS) Constructor Virtual Machine "/>
       <!--permalink: /helion/devplatform/1.1/als/client/download/-->
       <!--permalink: /helion/devplatform/1.1/als/client/reference/-->
       <!--permalink: /helion/devplatform/1.1/als/admin/-->
@@ -1349,7 +1349,7 @@
               <topicref href="devplatform/helion/user/deploy/languages/perl/1.1perlcgi.dita"/>
             </topicref>
             <topicref href="devplatform/helion/user/deploy/languages/1.1php.dita" locktitle="yes"
-              navtitle="PHP "/>
+              navtitle="PHPE "/>
             <topicref href="devplatform/helion/user/deploy/languages/python/1.1index.dita"
               locktitle="yes" navtitle="Python "/>
             <topicref href="devplatform/helion/user/deploy/languages/python/1.1django.dita"
@@ -1368,7 +1368,7 @@
     </topicref>
   </topicref>
   <topicref href="devplatform/1.0devplatform.index.dita"
-    navtitle="HP Helion 1.0 Development Platform " locktitle="yes">
+    navtitle="HPE Helion 1.0 Development Platform " locktitle="yes">
     <!--permalink: /helion/devplatform/3rd-party-license-agreements/-->
     <topicref href="devplatform/1.0devplatform.thirdparty.licensing.dita"
       navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>
@@ -1414,13 +1414,13 @@
           navtitle="Node RabbitMQ Messaging Sample "/>
       </topichead>
       <!--permalink: /helion/devplatform/workbook/database/php/-->
-      <topichead navtitle="PHP Samples">
+      <topichead navtitle="PHPE Samples">
         <topicref href="devplatform/workbook/database/1.0database.php.dita" locktitle="yes"
-          navtitle="PHP MySQL Database Sample "/>
+          navtitle="PHPE MySQL Database Sample "/>
         <topicref href="devplatform/workbook/helloworld/1.0helloworld.php.dita" locktitle="yes"
-          navtitle="PHP Hello World Sample "/>
+          navtitle="PHPE Hello World Sample "/>
         <topicref href="devplatform/workbook/messaging/1.0messaging.php.dita" locktitle="yes"
-          navtitle="PHP RabbitMQ Messaging Sample "/>
+          navtitle="PHPE RabbitMQ Messaging Sample "/>
       </topichead>
       <!--permalink: /helion/devplatform/workbook/helloworld/java/-->
       <!--permalink: /helion/devplatform/workbook/helloworld/node/-->
@@ -1477,10 +1477,10 @@
       </topichead>
       <topichead navtitle="ALS Command Line Clients">
         <topicref href="devplatform/helion/user/client/1.0index.dita" locktitle="yes"
-          navtitle="HP Helion Application Lifecycle Service Client ">
+          navtitle="HPE Helion Application Lifecycle Service Client ">
           <!--permalink: /als/v1/client/download/-->
           <topicref href="devplatform/helion/CLI/1.0ALS_Client_Downloads.dita" locktitle="yes"
-            navtitle="HP Application Lifecycle Service (ALS) Client "/>
+            navtitle="HPE Application Lifecycle Service (ALS) Client "/>
           <!--permalink: /als/v1/user/console/-->
           <topicref href="devplatform/helion/user/console/1.0index.dita" locktitle="yes"
             navtitle="Management Console "/>
@@ -1619,7 +1619,7 @@
           <topicref href="devplatform/helion/user/deploy/languages/1.0node.dita" locktitle="yes"
             navtitle="Node "/>
           <topicref href="devplatform/helion/user/deploy/languages/1.0php.dita" locktitle="yes"
-            navtitle=" PHP "/>
+            navtitle=" PHPE "/>
           <topicref href="devplatform/helion/user/deploy/languages/1.0ruby.dita" navtitle="Ruby"
             locktitle="yes"/>
         </topicref>
@@ -1635,7 +1635,7 @@
   </topicref>
   
   <!-- BEGIN Public cloud -->
-  <topicref href="publiccloud/publiccloud-overview.dita" navtitle="HP Helion Public Cloud"
+  <topicref href="publiccloud/publiccloud-overview.dita" navtitle="HPE Helion Public Cloud"
     locktitle="yes">
     <topicref href="publiccloud/site-overview.dita" navtitle="Helion Public Cloud Website Overview"
       locktitle="yes"/>
@@ -1726,15 +1726,15 @@
     <topicref href="publiccloud/vpn-quickstart.dita" navtitle="VPN Setup Quick Start Guide"
       locktitle="yes" /><!--set to toc=no later-->
     <topicref href="publiccloud/plugins.teamcity.dita"
-      navtitle="HP TeamCity Plugin for Helion Public Cloud" locktitle="yes" /><!--set to toc=no later-->
+      navtitle="HPE TeamCity Plugin for Helion Public Cloud" locktitle="yes" /><!--set to toc=no later-->
     <topicref href="publiccloud/glossary.dita" navtitle="Helion Public Cloud Glossary"
       locktitle="yes"/>
   </topicref>
   <!-- END Public cloud -->
   
   <topicref href="automation/csa.index.dita"/>
-  <topicref href="codar-landing-page.dita" navtitle="HP Codar"/>
-  <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Foundation" locktitle="yes"/>
-  <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Enterprise" locktitle="yes"/>
-  <topicref href="helion.rack.solution.dita" navtitle="HP Helion Cloud Solutions" locktitle="yes"/>
+  <topicref href="codar-landing-page.dita" navtitle="HPE Codar"/>
+  <topicref href="cloudsystem.landingpage.dita" navtitle="HPE CloudSystem Foundation" locktitle="yes"/>
+  <topicref href="cloudsystem.landingpage.dita" navtitle="HPE CloudSystem Enterprise" locktitle="yes"/>
+  <topicref href="helion.rack.solution.dita" navtitle="HPE Helion Cloud Solutions" locktitle="yes"/>
 </map>

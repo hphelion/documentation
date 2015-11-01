@@ -3,13 +3,13 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic12988">
   <title><tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Virtual demo installation</title>
 <titlealts>
-<searchtitle>HP Helion Openstack 1.1: Virtual demo installation</searchtitle>
+<searchtitle>HPE Helion Openstack 1.1: Virtual demo installation</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -19,8 +19,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Lou G"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -29,7 +29,7 @@
  <!--./commercial/GA1/1.1commercial.install-laptop-demo.md-->
  <!--permalink: /helion/openstack/1.1/install/laptop/demo/--></p>
 <p>
-  <b>This document describes the installation process for HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1.</b>
+  <b>This document describes the installation process for HPE <tm tmtype="reg">Helion OpenStack</tm> 1.1 and HPE <tm tmtype="reg">Helion OpenStack</tm> 1.1.1.</b>
 </p>
 <p>The purpose of this document is to provide a quick guide on how to setup <tm tmtype="reg">Helion OpenStack</tm> Enterprise Edition 1.1 into a virtual environment running on a laptop suitable to demonstrate the basic usage of product.</p>
 <p>This page covers the following topics:</p>
@@ -72,7 +72,7 @@
 <li>1 compute VM</li>
 </ul>
 <p>The above configuration requires a minimum of 64 GB of memory.</p>
-<p>If your laptop has less memory (32 GB minimum) you must follow the 32 GB specific instructions in this document. The 32 GB specific instructions will install HP Helion OpnStack with the following configuration:</p>
+<p>If your laptop has less memory (32 GB minimum) you must follow the 32 GB specific instructions in this document. The 32 GB specific instructions will install HPE Helion OpnStack with the following configuration:</p>
 <ul>
 <li>1 Overcloud Controller VM </li>
 <li>1 Overcloud Swift VM</li>
@@ -376,7 +376,7 @@ export UNDERCLOUD_STACK_TIMEOUT=240
 </ol>
 </section>
 <section id="system-access"> <title>Accessing the system</title>
-<p>The best way to view the Horizon dashboard is to connect from a remote computer other than the laptop that is running HP <tm tmtype="reg">Helion OpenStack</tm></p>
+<p>The best way to view the Horizon dashboard is to connect from a remote computer other than the laptop that is running HPE <tm tmtype="reg">Helion OpenStack</tm></p>
 <p>
   <b>Accessing Service Endpoints in your undercloud and overcloud</b>
 </p>
@@ -387,8 +387,8 @@ export UNDERCLOUD_STACK_TIMEOUT=240
     OVERCLOUD Endpoint: https://192.0.2.21:5000/v2.0/
     OVERCLOUD IP: "192.0.2.21"
     ++ date
-    + echo 'HP - completed - Wed Feb 18 16:21:59 UTC 2015'
-    HP - completed - Wed Feb 18 16:21:59 UTC 2015
+    + echo 'HPE - completed - Wed Feb 18 16:21:59 UTC 2015'
+    HPE - completed - Wed Feb 18 16:21:59 UTC 2015
     + exit 0
 </codeph>
 </codeblock>
@@ -472,7 +472,7 @@ export UNDERCLOUD_STACK_TIMEOUT=240
 </p>
 </section>
 <section id="shutdown-recovery"> <title>Shutdown and recovery</title>
-<p>The following content describes how to shutdown the laptop and recover HP <tm tmtype="reg">OpenStack</tm> installation when the laptop restarts.</p>
+<p>The following content describes how to shutdown the laptop and recover HPE <tm tmtype="reg">OpenStack</tm> installation when the laptop restarts.</p>
 </section>
 <section id="shutdown-sequence-for-the-helion-openstack-control-plane"> <title>Shutdown sequence for the <tm tmtype="reg">Helion OpenStack</tm> control plane</title>
 <p>Before you shut down the laptop and if you would like to preserve the <tm tmtype="reg">Helion OpenStack</tm> installation, you can use the host manager script to save the status of the virtual machines. To do this, follow these steps:</p>
@@ -499,7 +499,7 @@ export UNDERCLOUD_STACK_TIMEOUT=240
 </ol>
 </section>
 <section id="recover-the-helion-openstack-setup-after-restarting-the-laptop"> <title>Recover the <tm tmtype="reg">Helion OpenStack</tm> setup after restarting the laptop</title>
-<p>To recover the HP <tm tmtype="reg">Helion OpenStack</tm> setup after the laptop is powered up, follow these steps:</p>
+<p>To recover the HPE <tm tmtype="reg">Helion OpenStack</tm> setup after the laptop is powered up, follow these steps:</p>
 <ol>
 <li>
 <p>Log on to the laptop and elevate to root:</p>

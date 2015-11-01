@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8352">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Ceph Reliable Autonomic Distributed Object Store Gateway (RADOSGW)</title>
+<title>HPE <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Ceph Reliable Autonomic Distributed Object Store Gateway (RADOSGW)</title>
 <titlealts>
-<searchtitle>HP Helion Openstack 1.1: Ceph Reliable Autonomic Distributed Object Store Gateway (RADOSGW)</searchtitle>
+<searchtitle>HPE Helion Openstack 1.1: Ceph Reliable Autonomic Distributed Object Store Gateway (RADOSGW)</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Engineer"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -18,8 +18,8 @@
 <othermeta name="role" content="Cloud Administrator"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -529,7 +529,7 @@ If the user or application writes more than 1k containers, then modify the `max_
 
 ###Configuring the S3 Client
 
-The S3 client is not supported by HP for user data, other than as a validation step during installation and configuration. For the gateway instance, S3 users created can be verified using  the s3cmd tool on the gateway node or Ceph client. For more details on the s3cmd tool, refer to http://s3tools.org/s3cmd.
+The S3 client is not supported by HPE for user data, other than as a validation step during installation and configuration. For the gateway instance, S3 users created can be verified using  the s3cmd tool on the gateway node or Ceph client. For more details on the s3cmd tool, refer to http://s3tools.org/s3cmd.
 
 * To install the s3cmd tool, enter:
 

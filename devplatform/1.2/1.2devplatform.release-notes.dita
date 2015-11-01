@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2502">
-<title>HP Helion 1.2 Development Platform: Release Notes for HP Helion Development Platform 1.2</title>
+<title>HPE Helion 1.2 Development Platform: Release Notes for HPE Helion Development Platform 1.2</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.1"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="System Engineer"/>
 <othermeta name="role" content="Cloud Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version3" content="HP Helion Development Platform 1.1"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version3" content="HPE Helion Development Platform 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -25,7 +25,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/1.2devplatform.release-notes.md-->
  <!--permalink: /helion/devplatform/1.2/release-notes/--></p>
-<p>The following release notes are for the HP Helion Development Platform 1.2 released in May 2015. We hope you enjoy the release!</p>
+<p>The following release notes are for the HPE Helion Development Platform 1.2 released in May 2015. We hope you enjoy the release!</p>
 <ul>
 <li>
 <xref type="section" href="#topic2502/DPnotes">Development Platform Release Notes</xref>
@@ -35,11 +35,11 @@
 </li>
 </ul>
 <section id="DPnotes"> <title>Release Notes</title>
-<p>The following features have been changed in the HP Helion Development Platform:</p>
+<p>The following features have been changed in the HPE Helion Development Platform:</p>
 <p>
   <b>Develop, deploy, and manage cloud-native .NET applications</b>
 </p>
-<p>HP is the only vendor to offer this functionality in today's Cloud Foundry technology v2, which is a key part of HP Helion Development Platform. We offer Windows support by providing the ability to host Windows applications on a Windows DEA (Droplet Execution Agent) with a "bring your own Windows license" model.</p>
+<p>HPE is the only vendor to offer this functionality in today's Cloud Foundry technology v2, which is a key part of HPE Helion Development Platform. We offer Windows support by providing the ability to host Windows applications on a Windows DEA (Droplet Execution Agent) with a "bring your own Windows license" model.</p>
 <p>
   <b>Microsoft SQL Server integration available as an application service</b>
 </p>
@@ -50,13 +50,13 @@
 <p>The addition of the Visual Studio Cloud Foundry Explorer and MS Build tasks enable the .NET enterprise developer to deploy and manage their application directly from the favorite development IDE, command line environment or build agent.</p>
 <p>
 <b>Horizon panel updates for IT operations</b>
-Administrators can now run even more operations from the HP <tm tmtype="reg">Helion OpenStack</tm> Horizon management console, including renaming clusters, adding DEA nodes, adding roles, proxy support and DNS suffixes.</p>
+Administrators can now run even more operations from the HPE <tm tmtype="reg">Helion OpenStack</tm> Horizon management console, including renaming clusters, adding DEA nodes, adding roles, proxy support and DNS suffixes.</p>
 </section>
 <section id="known"> <title>Known Issues</title>
 <p>
   <b>When creating a new database, <i>cf-mgmt</i> <i>create cluster</i> or <i>add-service</i> command fails.</b>
 </p>
-<p>This issue applies to HP Helion Public Cloud only. When using <i>cf-mgmt create cluster</i> or <i>add-service</i> commands to create a new database, the operation fails. There is no workaround at this time.</p>
+<p>This issue applies to HPE Helion Public Cloud only. When using <i>cf-mgmt create cluster</i> or <i>add-service</i> commands to create a new database, the operation fails. There is no workaround at this time.</p>
 <p>
   <b><tm tmtype="reg">Windows</tm> DEA and SQL Server services are not available through the ALS Management Console</b>
 </p>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic21330">
-<title>Getting Started with HP Helion Public Cloud Console</title>
+<title>Getting Started with HPE Helion Public Cloud Console</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,8 +12,8 @@
 <!--PUBLISHED-->
  <!--./publiccloud/hpcloudconsole.md-->
  <!--permalink: /publiccloud/hpcloudconsole/--></p>
-<p>Welcome to HP Helion Public Cloud Horizon Console! We want you up and running quickly, so this Getting Started guide walks you through network setup and connection (if not going with the default configuration setup when you activate compute services), instance and volume creation, security options, identity parameters, and management tools that facilitate your organization's use of HP Helion Public Cloud. <b>This page takes you through the interface in the chronological order needed to get up and running, rather than the order displayed in the console</b>.</p>
-<p>After initial setup, revisit the interface to monitor usage, modify, add, and delete networks, instances, volumes, roles, groups, and more. For the latest updates to the current HP Helion Public Cloud Console release, see <xref href="../publiccloud/hz.whatsnewjan.2014.dita" >What's new with HP Helion Public Cloud Console</xref>.</p>
+<p>Welcome to HPE Helion Public Cloud Horizon Console! We want you up and running quickly, so this Getting Started guide walks you through network setup and connection (if not going with the default configuration setup when you activate compute services), instance and volume creation, security options, identity parameters, and management tools that facilitate your organization's use of HPE Helion Public Cloud. <b>This page takes you through the interface in the chronological order needed to get up and running, rather than the order displayed in the console</b>.</p>
+<p>After initial setup, revisit the interface to monitor usage, modify, add, and delete networks, instances, volumes, roles, groups, and more. For the latest updates to the current HPE Helion Public Cloud Console release, see <xref href="../publiccloud/hz.whatsnewjan.2014.dita" >What's new with HPE Helion Public Cloud Console</xref>.</p>
 <p>
   <image href="../media/landingpage.png">
 <alt/>
@@ -25,7 +25,7 @@
 <xref type="section" href="#topic21330/Createandconnect">Creating and connecting a network</xref>
 </li>
 <li>
-<xref type="section" href="#topic21330/ManageHPPublicCloud">Managing HP Helion Public Cloud</xref>
+<xref type="section" href="#topic21330/ManageHPPublicCloud">Managing HPE Helion Public Cloud</xref>
 </li>
 <li>
 <xref type="section" href="#topic21330/Forfurtherinformation">For further information</xref>
@@ -46,22 +46,22 @@
 </li>
 </ul>
 <p>
-<b>Note</b>: A default configuration comes with HP Helion Public Cloud compute activation and includes:</p>
+<b>Note</b>: A default configuration comes with HPE Helion Public Cloud compute activation and includes:</p>
 <ul>
 <li>A network </li>
 <li>A subnet</li>
 <li>A router connecting the subnets to the Internet</li>
 <li>A security group with basic server options, both SSH and Ping rules</li>
 </ul>
-<p>You can use the default network to deploy HP Helion Public Cloud compute instances (virtual servers), or create a network configuration through the HP Helion Public Cloud Console with the following instructions.</p>
+<p>You can use the default network to deploy HPE Helion Public Cloud compute instances (virtual servers), or create a network configuration through the HPE Helion Public Cloud Console with the following instructions.</p>
 </section>
 <section id="Createanetwork"> <title>Create a network</title>
 <ol>
 <li>
-<p>Login to HP Helion Public Cloud with your username and password.</p>
+<p>Login to HPE Helion Public Cloud with your username and password.</p>
 </li>
 <li>
-<p>On the HP Helion Public Cloud console interface, click "Project," on the left-side bar then "Networks" under "Manage Networks."</p>
+<p>On the HPE Helion Public Cloud console interface, click "Project," on the left-side bar then "Networks" under "Manage Networks."</p>
 
 <p>
 <image href="../media/CreateaNetworkImage1.png">
@@ -221,7 +221,7 @@
 </li>
 </ol>
 </section>
-<section id="ManageHPPublicCloud"> <title>Managing HP Helion Public Cloud</title>
+<section id="ManageHPPublicCloud"> <title>Managing HPE Helion Public Cloud</title>
 <p>You are now ready to use the options under "Manage Compute" under "Project" in the left-hand navigation. This section includes:</p>
 <ul>
 <li>
@@ -253,12 +253,12 @@
 <li>Floating IPs</li>
 <li>Security Groups</li>
 </ul>
-<p>As you use HP Helion Public Cloud, click on the "Overview" options any time to query current usage as well as usage during specific time frames.</p>
+<p>As you use HPE Helion Public Cloud, click on the "Overview" options any time to query current usage as well as usage during specific time frames.</p>
 </section>
 <section id="Instance"> <title>Create an instance</title>
 <p>An instance is a virtual server.</p>
 <p>
-<b>Note</b>: HP Helion Public Cloud provides a list of images from which you can boot an instance.  While you can also boot from an HP Helion Public Cloud instance you have launched using "Images and Snapshots," it is unnecessary to get up and running and beyond the scope of this document.</p>
+<b>Note</b>: HPE Helion Public Cloud provides a list of images from which you can boot an instance.  While you can also boot from an HPE Helion Public Cloud instance you have launched using "Images and Snapshots," it is unnecessary to get up and running and beyond the scope of this document.</p>
 <ol>
 <li>
 <p>Click "Instances" under "Manage Compute" in the left-hand navigation.</p>
@@ -302,7 +302,7 @@
 <p>Enter the number of instances you want to create under "Instance Count."</p>
 </li>
 <li>
-<p>Select the "Instance Boot Source" source from the drop-down menu. To select an HP Helion Public Cloud default image, select "Boot from Image" from the drop-down.</p>
+<p>Select the "Instance Boot Source" source from the drop-down menu. To select an HPE Helion Public Cloud default image, select "Boot from Image" from the drop-down.</p>
 
 <p>
 <image href="../media/CreateanInstanceImage3.png">
@@ -311,7 +311,7 @@
 </p>
 </li>
 <li>
-<p>Click the "Select Image" drop down under "Image Name." Select one of the images HP Helion Public Cloud provides.</p>
+<p>Click the "Select Image" drop down under "Image Name." Select one of the images HPE Helion Public Cloud provides.</p>
 
 <p>
 <image href="../media/CreateanInstanceImage4.png">
@@ -339,7 +339,7 @@
 <section id="Volumes"> <title>Create and Attach a Volume</title>
 <p>A volume is a block storage device you attach to an instance.</p>
 <p>
-<b>Note</b>: HP Helion Public Cloud provides a list of images from which you can boot an instance or volume.  While you can also boot from an HP Helion Public Cloud instance you have launched using "Images and Snapshots," it is unnecessary to get up and running in HP Helion Public Cloud and beyond the scope of this document.</p>
+<b>Note</b>: HPE Helion Public Cloud provides a list of images from which you can boot an instance or volume.  While you can also boot from an HPE Helion Public Cloud instance you have launched using "Images and Snapshots," it is unnecessary to get up and running in HPE Helion Public Cloud and beyond the scope of this document.</p>
 <ol>
 <li>
 <p>In the left-hand navigation, click "Volumes" under "Manage Compute."</p>
@@ -378,7 +378,7 @@
 </p>
 </li>
 <li>
-<p>Select an AZ. HP Helion Public Cloud recommends the pre-filled "Any Availability Zone."</p>
+<p>Select an AZ. HPE Helion Public Cloud recommends the pre-filled "Any Availability Zone."</p>
 </li>
 <li>
 <p>Click "Create Volume."</p>
@@ -420,12 +420,12 @@
   <b>Functionality Overview</b>
 </p>
 <p>
-<b>Important</b>: HP Helion Public Cloud provides a list of images from which you can boot an instance.  While you can also boot from an HP Helion Public Cloud instance you have launched and customized using "Images and Snapshots," it is unnecessary to get up and running in the Cloud and beyond the scope of this document.</p>
+<b>Important</b>: HPE Helion Public Cloud provides a list of images from which you can boot an instance.  While you can also boot from an HPE Helion Public Cloud instance you have launched and customized using "Images and Snapshots," it is unnecessary to get up and running in the Cloud and beyond the scope of this document.</p>
 <p>While this document does not cover creating snapshots, click "Images and Snapshots" in the left-hand bar to view available server and volume images and their details. For more details, click the image name on the "Images" page. Images listed under "Public" are available to anyone. "Project" images are for your specific project only.</p>
 </section>
 <section id="Accessandsecurity"> <title>Access and Security</title>
-<p>Security groups and security group rules allow you to specify the type of traffic and direction (inbound/outbound) that are allowed to pass through a project's network port(s). When you create a project in HP Helion Public Cloud, you must also create security group rules to define access types through its ports, designating security group members depending on their job functions and access needs.</p>
-<p>When a port is created in HP Helion Public Cloud Networking it is associated, unless you specify otherwise, with a default security group that allows inbound traffic from the same subnet and all outbound traffic. You can add security group rules to the default security group to modify access or create a new security group to contain the rules you need.</p>
+<p>Security groups and security group rules allow you to specify the type of traffic and direction (inbound/outbound) that are allowed to pass through a project's network port(s). When you create a project in HPE Helion Public Cloud, you must also create security group rules to define access types through its ports, designating security group members depending on their job functions and access needs.</p>
+<p>When a port is created in HPE Helion Public Cloud Networking it is associated, unless you specify otherwise, with a default security group that allows inbound traffic from the same subnet and all outbound traffic. You can add security group rules to the default security group to modify access or create a new security group to contain the rules you need.</p>
 <p>Security group rules have three parts:</p>
 <ol>
 <li>
@@ -579,16 +579,16 @@
 </li>
 </ol>
 </section>
-<section id="Identity"> <title>Organize and manage HP Helion Public Cloud access</title>
+<section id="Identity"> <title>Organize and manage HPE Helion Public Cloud access</title>
 <p>Click  "Identity" in the left-hand interface to display links:</p>
 <ul>
 <li>
-<p>Domain - The domain is your primary work space in HP Helion Public Cloud.  An individual or company can be the domain owner and enables a project with the necessary services and permissions. The first user created in a domain is considered the domain owner and placed in both the "Users" and "Domain Administrators" groups.</p>
+<p>Domain - The domain is your primary work space in HPE Helion Public Cloud.  An individual or company can be the domain owner and enables a project with the necessary services and permissions. The first user created in a domain is considered the domain owner and placed in both the "Users" and "Domain Administrators" groups.</p>
 
 <p>A domain has one owner and may have multiple users, groups and roles. A domain owner can allow users of another domain access to its projects.</p>
 </li>
 <li>
-<p>Projects - A project is a collection of HP Helion Public Cloud services, e.g., compute, storage, etc. within a domain  A project is defined by selecting services to be activated and a set of users to interact with the services. A project may contain multiple services, such as compute or object storage. Services can exist multiple times within the same project as long as they have different service endpoints, distinguished by their geography and region.</p>
+<p>Projects - A project is a collection of HPE Helion Public Cloud services, e.g., compute, storage, etc. within a domain  A project is defined by selecting services to be activated and a set of users to interact with the services. A project may contain multiple services, such as compute or object storage. Services can exist multiple times within the same project as long as they have different service endpoints, distinguished by their geography and region.</p>
 </li>
 <li>
 <p>Users - Users are defined individually and can be assigned to groups and granted roles either directly or through inclusion in groups.  A user may have multiple roles.</p>
@@ -602,9 +602,9 @@
 </ul>
 </section>
 <section id="Forfurtherinformation"> <title>For further information</title>
-<p>*For the latest updates to the current HP Helion Public Cloud Console release, see <xref href="../publiccloud/hz.whatsnewjan.2014.dita" >What's new with HP Helion Public Cloud Console</xref>..
-* For basic information about our HP Helion Public Cloud compute services, take a look at the <xref href="../publiccloud/compute.dita" >HP Helion Public Cloud compute overview</xref> page
-* If you'd rather use the HP Helion Public Cloud Command Line Interface (CLI) features, choose your topic of interest from our <xref href="../publiccloud/cli.dita" >HP Helion Public Cloud CLI</xref> pages.</p>
+<p>*For the latest updates to the current HPE Helion Public Cloud Console release, see <xref href="../publiccloud/hz.whatsnewjan.2014.dita" >What's new with HPE Helion Public Cloud Console</xref>..
+* For basic information about our HPE Helion Public Cloud compute services, take a look at the <xref href="../publiccloud/compute.dita" >HPE Helion Public Cloud compute overview</xref> page
+* If you'd rather use the HPE Helion Public Cloud Command Line Interface (CLI) features, choose your topic of interest from our <xref href="../publiccloud/cli.dita" >HPE Helion Public Cloud CLI</xref> pages.</p>
 </section>
 </body>
 </topic>
