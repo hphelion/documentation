@@ -72,13 +72,12 @@
                 id="ol_wtp_x4h_tt">
                 <li>Launch the vCenter client, at <codeph>https://&lt;vcenter
                         IP&gt;:9443/vsphere-client</codeph>.</li>
-                <li>Import the <codeph>VSD-3.2.4_134-hp.ova</codeph><p
-                        conref="carrier-grade-install-prereqs.dita#topic7148/vsd-ova"/> file into
-                    vCenter server. You should have <xref
+                <li>Import the following file into vCenter server. You should have <xref
                         href="carrier-grade-install-prereqs.dita#topic7148/getinstall">downloaded
                         this file during the prerequisites</xref>. Importing the OVA file creates
-                    the vCenter Integration Node VM.<p>For instructions, refer to the ESX
-                        documentation.</p></li>
+                    the vCenter Integration Node VM.<p
+                        conref="carrier-grade-install-prereqs.dita#topic7148/vsd-ova"/><p>For
+                        instructions, refer to the ESX documentation.</p></li>
                 <li>Login to the vCenter Integration Node VM using username <codeph>root</codeph>
                     and password <codeph>Alcateldc</codeph>. You assigned the IP address when
                     importing the OVA template file.<p><b>Important:</b> After logging in with the
@@ -101,13 +100,13 @@ GATEWAY=10.20.5.1</codeblock></p></li>
             <p>Perform the following step create a VM for HTTP and DHCP services.</p>
             <p>
                 <ol id="ol_v11_wh4_rt">
-                    <li>In the vCenter client, import the<p
-                            conref="carrier-grade-install-prereqs.dita#topic7148/itoolbox1"/>
-                        template file. You should have <xref
-                            href="carrier-grade-install-prereqs.dita#topic7148/getinstall"
-                            >downloaded this file during the prerequisites</xref>. Importing the OVA
-                        file creates the HTTP\DHCP VM.<p>For instructions, refer to the ESX
-                            documentation.</p></li>
+                    <li>In the vCenter client, import the <codeph
+                            conref="carrier-grade-install-prereqs.dita#topic7148/itoolbox1"
+                        />template file.<p>You should have <xref
+                                href="carrier-grade-install-prereqs.dita#topic7148/getinstall"
+                                >downloaded this file during the prerequisites</xref>. Importing the
+                            OVA file creates the HTTP\DHCP VM.</p><p>For instructions, refer to the
+                            ESX documentation.</p></li>
                     <li>Login to the HTTP\DHCP VM using username <codeph>root</codeph> and password
                             <codeph>cghelion</codeph>. You assigned the IP address when importing
                         the OVA template file.<p><b>Important:</b> After logging in with the default
@@ -147,9 +146,10 @@ option routers 10.20.94.209;   ###TUL network Gateway####
 }
 ######## config file end</codeblock></li>
                     <li>Restart the DHCP service:<codeblock>service dhcpd restart</codeblock></li>
-                    <li>Copy the VRSvApp template, <codeph>VRS_3.2.4-135_10062015.ovf</codeph> and
-                            <codeph>VRS_3.2.4-135_10062015-disk1.vmdk</codeph> to the DocumentRoot
-                        (/var/www/html is the default location).</li>
+                    <li>Copy the VRSvApp template files, <codeph
+                            conref="carrier-grade-install-prereqs.dita#topic7148/vrs-ovf"/> and
+                            <codeph conref="carrier-grade-install-prereqs.dita#topic7148/vrs-vmdk"/>
+                        to the DocumentRoot (/var/www/html is the default location).</li>
                     <li>Check Apache server and make sure it’s running and restart if
                         needed:<codeblock>Service httpd restart</codeblock></li>
                 </ol>
@@ -175,58 +175,92 @@ vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
                     command::<codeblock>monit start jboss</codeblock></li>
             </ol><p>The <codeph>monit</codeph> metadata plugin is automatically deployed and
                 installed. The plugin will be listed as registered in vCenter.</p></section>
-        <section><title>Configure the Deployment Toolbox</title><p>You must perform the following
-                tasks.</p><p><b>Configure vCenter Informaton</b></p><p>You must provide the VMWare
-                topology configuration to the Deployment Toolbox. This includes the
-                following:</p><ul id="ul_ucs_444_rt">
+        <section>
+            <title>Configure the Deployment Toolbox</title>
+            <p>You must perform the following tasks.</p>
+            <p><b>Configure vCenter Informaton</b></p>
+            <p>You must provide the VMWare topology configuration to the Deployment Toolbox. This
+                includes the following:</p>
+            <ul id="ul_ucs_444_rt">
                 <li>Each ESX hypervisor in the cluster(s)</li>
                 <li>Each HPE DCN cluster(s) in data center(s)</li>
                 <li>Data center(s) inside vCenter(s)</li>
-            </ul><p>The vCenter configuration requires the following:</p><ul id="ul_vcs_444_rt">
+            </ul>
+            <p>The vCenter configuration requires the following:</p>
+            <ul id="ul_vcs_444_rt">
                 <li>vCenter credential</li>
                 <li>vCenter endpoint</li>
                 <li>VRS-VM template location</li>
-            </ul><p>The data center and cluster configurations require matching the names of the
-                vCenter configuration objects on vCenter.</p><p>The ESX hypervisor inside the
-                cluster is identified based on its IP. Log into the vCenter Deployment Toolbox using
-                    <codeph>https://&lt;VSD_IP>:8443/vcenter/</codeph> to configure these
-                settings.</p><p><image href="../../media/CGH-2-install-vsdvm3.png" width="600"
-                    id="image_kbl_cr1_tt"/></p><p><b>VRS-VM Template Configuration</b></p><p>When
-                adding a new vCenter to the vCenter Deployment Toolbox, make sure the VRS-VM
-                template, <codeph>VRS_3.2.4-135_10062015.ovf</codeph>, is configured in vCenter. The
-                template is required for all the DCN-enabled hypervisors on that vCenter. The
-                template must be available over an HTTP server, and must allow connection from
-                vCenter and from the Nuage-enabled hypervisors.</p><b>Default Profile
-                Configuration</b><p>The vCenter Deployment Toolbox offers the option of setting up a
-                default vApp profile for all the VRS VM Agents. The profile is used for all default
-                parameters, which generally remain the same across all your agents. The
-                configuration on the default profile includes all the VRS vApp nodes, except the
-                ones that are obviously different for each VRS-VM agent (such as the IP
-                address).</p><p><image href="../../media/CGH-2-install-vsdvm1.png" width="800"
-                    id="image_zvq_nq1_tt"/></p><p><b>Specific Profile Override</b></p><p>Each level
-                of the topology can be overridden in order to provide different parameters at a more
-                granular level. If a parameter is configured on the level of the default profile, on
-                the cluster level and also on the ESXi level, then only the ESXi-level parameter
-                will be used.</p><p><image href="../../media/CGH-2-install-vsdvm2.png" width="800"
-                    id="image_jnn_tq1_tt"/></p></section>
+            </ul>
+            <p>The data center and cluster configurations require matching the names of the vCenter
+                configuration objects on vCenter.</p>
+            <ol id="ol_lz5_slp_wt">
+                <li>Log into the vCenter Deployment Toolbox using
+                        <codeph>https://&lt;VSD_IP>:8443/vcenter/</codeph> to configure these
+                    settings. The default credentials are <codeph>csproot/csproot</codeph>.
+                            <p><image href="../../media/CGH-2-install-vsdvm3.png" width="600"
+                            id="image_tlj_slp_wt"/></p></li>
+                <li>Create a new vCenter in the VRS Deployer using your ESX vCenter details. Provide
+                    a name, description, your vCenter IP, vCenter user, vCenter password, and path
+                    to the <codeph conref="carrier-grade-install-prereqs.dita#topic7148/vrs-ovf"/>
+                    file.. <p>The template must be available over an HTTP server, and must allow
+                        connection from vCenter and from the Nuage-enabled hypervisors.</p><p><image
+                            href="../../media/CGH-2-install-vsdvm-new-vcenter.png"
+                            id="image_uxp_4mp_wt" width="300"/></p></li>
+                <li>Add the Data Center to that vCenter you created:<p><image
+                            href="../../media/CGH-2-install-vsdvm-add-dc.png" id="image_xk5_fnp_wt"
+                            width="400"/></p></li>
+                <li>Add hosts to the Cluster you created. Provide a name, description, the ESX Host
+                    IP, vCenter user, vCenter password, select the Management, Data amd VM Network
+                    names. Select DVRS Datapath for last input.<p><image
+                            href="../../media/CGH-2-install-vsdvm-add-hyper.png"
+                            id="image_xy2_znp_wt" width="300"/></p><p>After adding all the hosts
+                        vCenter appears similar to the following:</p><p><image
+                            href="../../media/CGH-2-install-vsdvm-UI.png" id="image_nq1_l4p_wt"
+                            width="500"/></p></li>
+                <li>Create a default profile.<p>The vCenter Deployment Toolbox offers the option of
+                        setting up a default vApp profile for all the VRS VM Agents. The profile is
+                        used for all default parameters, which generally remain the same across all
+                        your agents. The configuration on the default profile includes all the VRS
+                        vApp nodes, except the ones that are obviously different for each VRS-VM
+                        agent (such as the IP address).</p><ol id="ol_hs5_nhr_wt">
+                        <li>Click the cylinder icon and add the Data(TUL) and Management (CLM)
+                            Network Info (Pay close attention to screen shot below. VSC Controllers
+                            are the active/stand-by VSC TUL IPs). <p><image
+                                    href="../../media/CGH-2-install-vsdvm-add-network.png"
+                                    width="600" id="image_vyd_dpp_wt"/></p></li>
+                        <li>Assign CLM IP and TUL IP for each of hosts in ESX Cluster in the VRS
+                            Deployer UI.</li>
+                    </ol></li>
+            </ol>
+            <p><b>Specific Profile Override</b></p>
+            <p>Each level of the topology can be overridden in order to provide different parameters
+                at a more granular level. If a parameter is configured on the level of the default
+                profile, on the cluster level and also on the ESXi level, then only the ESXi-level
+                parameter will be used.</p>
+            <p><image href="../../media/CGH-2-install-vsdvm2.png" width="800" id="image_jnn_tq1_tt"
+                /></p>
+        </section>
         <section>
             <p>
                 <b>Enabling the agent settings on each hypervisor</b></p>
             <p>Each VM that needs to be configured with the Nuage VRS-VM Agent needs to be
                 configured with generic bootstrapping agent settings.</p>
             <p>To configure these settings: <ol id="ol_kmp_cbp_rt">
-                    <li>Log in to the vSphere web client.</li>
-                    <li>In the vSphere web client, select the <b>Hypervisor</b> in the Nuage
-                        Cluster. </li>
-                    <li>Click <b>Manage</b>, then <b>Settings</b>, then <b>Agent VM
-                        Settings</b>.</li>
-                    <li>Click the <b>Edit</b> button.</li>
-                    <li>Configure the <b>Datastore and Bootstrap Network</b> settings. <p><image
-                                href="../../media/CGH-2-install-vrsvapp4.png" width="800"
-                                id="image_mpd_qy4_rt"/></p><p>The Bootstrap Network is the network
-                            on which the vCenter Integration Node VM issues DHCP requests and issues
-                            requests to the vCenter integration node in order to receive all its
-                            parameters.</p></li>
+                    <li>Launch the ESX vCenter Web Client, at <codeph>https://&lt;vcenter
+                            IP&gt;:9443/</codeph>. The IP address is the CLM IP of your
+                        vCenter.</li>
+                    <li>Select <b>Hosts and Clusters</b>.<p><image
+                                href="../../media/CGH-2-install-vsdvm-vsphere-hosts.png" width="400"
+                                id="image_tbr_gqp_wt"/></p></li>
+                    <li>Click <b>Manage</b>, then <b>Settings</b>, then <b>Agent VM Settings</b>. </li>
+                    <li>Click the <b>Edit</b> button<p><image
+                                href="../../media/CGH-2-install-vsdvm-vsphere-agent-vm.png"
+                                width="400" id="image_tcs_wsp_wt"/></p></li>
+                    <li>Configure the <b>Datastore and Bootstrap Network</b> settings. <p>The
+                            Bootstrap Network is the network on which the vCenter Integration Node
+                            VM issues DHCP requests and issues requests to the vCenter integration
+                            node in order to receive all its parameters.</p></li>
                 </ol></p>
         </section>
         <section>
@@ -256,11 +290,17 @@ vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
                                 href="../../media/CGH-2-install-vrsvapp3.png" width="800"
                                 id="image_lfr_zx4_rt"/></p></li>
                     <li>Add the Nuage cluster:<ol id="ol_ndc_r1p_rt">
-                            <li>On the left hand side of vCenter, select the cluster managed by
-                                Nuage from the list of all the clusters present in vCenter.</li>
+                            <li>Select vCenter Solutions Manager and go to the Nuage VRS Agent
+                                Manage</li>
                             <li>Add the cluster managed by Nuage to the right hand side.</li>
                             <li>Click <b>Update Configuration</b>. The Agent VMs will be deployed on
-                                that cluster. </li>
+                                that cluster. <p>This action triggers the deploy of VRSvApps for
+                                    each of the ESXi hosts:</p><p><image
+                                        href="../../media/CGH-2-install-vsdvm-vsphere-deploy.png"
+                                        width="400" id="image_tzt_gtp_wt"/></p><p>You can see the
+                                    progress in vSphere Client.</p><p><image
+                                        href="../../media/CGH-2-install-vsdvm-vsphere-progress.png"
+                                        width="600" id="image_hpb_mtp_wt"/></p></li>
                         </ol></li>
                     <li>(Optional) To remove the cluster, select the cluster and click first
                             <b>Remove</b>, then <b>Update Configuration</b>.</li>

@@ -81,10 +81,13 @@
                 <li>Copy following files you downloaded in Prerequisites to
                         <codeph>/var/www/html</codeph> location in the Toolbox VM <ul
                         id="ul_vhj_xhp_wt">
-                        <li><codeph>VRS_3.2.4-135_10062015.ovf</codeph></li>
-                        <li><codeph>VRS_3.2.4-135_10062015-disk1.vmdk</codeph></li>
+                        <li><p
+                                conref="carrier-grade-install-prereqs.dita#topic7148/vrs-ovf"/></li>
+                        <li>
+                                <p conref="carrier-grade-install-prereqs.dita#topic7148/vrs-vmdk"/>
+                            </li>
                     </ul></li>
-                <li>Eecute the following command to grant full permission to the OVF and VMDK
+                <li>Execute the following command to grant full permission to the OVF and VMDK
                     files:<codeblock>cd /var/www/html
 chmod 777 *</codeblock></li>
                 <li>Restart the HTTPD service on toolbox<codeblock/></li>

@@ -353,35 +353,36 @@ StrictHostKeyChecking no </codeblock></li>
                                                 <row>
                                                   <entry/>
                                                   <entry>
-                                                  <p id="itoolbox1">itoolbox1.ova</p>
-                                                  <p>nuage-metadata-agent_3.2.4-133_all.deb</p>
-                                                  <p>nuagenetlib_0.0.0-1729-kilo_all</p>
-                                                  <p>nuage-openstack-neutron_2015.1.1729_all.deb</p>
-                                                  <p>nuage-openvswitch-common_3.2.4-133_amd64.deb</p>
-                                                  <p>nuage-openvswitch-switch_3.2.4-133_amd64.deb</p>
-                                                  <p>nuage-python-openvswitch_3.2.4-133_all.deb</p>
-                                                  <p> vsc_singledisk.ova</p>
+                                                  <p><codeph id="itoolbox1">itoolbox1.ova</codeph></p>
+                                                  <p><codeph>nuage-metadata-agent_3.2.4-133_all.deb</codeph></p>
+                                                  <p><codeph>nuagenetlib_0.0.0-1729-kilo_all</codeph></p>
+                                                  <p><codeph>nuage-openstack-neutron_2015.1.1729_all.deb</codeph></p>
+                                                  <p><codeph>nuage-openvswitch-common_3.2.4-133_amd64.deb</codeph></p>
+                                                  <p><codeph>nuage-openvswitch-switch_3.2.4-133_amd64.deb</codeph></p>
+                                                  <p><codeph>nuage-python-openvswitch_3.2.4-133_all.deb</codeph></p>
+                                                  <p><codeph> vsc_singledisk.ova</codeph></p>
                                                   </entry>
                                                 </row>
                                                 <row>
                                                   <entry>VSD_R4_OVA</entry>
-                                                        <entry><p  id="vsd-ova">VSD-3.2.4_134-hp.ova</p></entry>
+                                                        <entry><p id="vsd-ova"><codeph>VSD-3.2.4_134-hp.ova</codeph></p></entry>
                                                 </row>
                                                 <row>
                                                   <entry>VSD-QCOW2</entry>
-                                                  <entry>VSD-3.2.4_134-hp.qcow2</entry>
+                                                  <entry><codeph>VSD-3.2.4_134-hp.qcow2</codeph></entry>
                                                 </row>
                                                 <row>
                                                   <entry>VRS-vApp</entry>
                                                   <entry>
-                                                  <p id="vrs-mf">VRS_3.2.4-135_10062015.mf</p>
-                                                  <p id="vrs-ovf">VRS_3.2.4-135_10062015.ovf</p>
-                                                  <p id="vrs-vmdk"> VRS_3.2.4-135_10062015-disk1.vmdk</p>
+                                                  <p id="vrs-mf"
+                                                  ><codeph>VRS_3.2.4-135_10062015.mf</codeph></p>
+                                                  <p><codeph id="vrs-ovf">VRS_3.2.4-135_10062015.ovf</codeph></p>
+                                                  <p><codeph  id="vrs-vmdk">VRS_3.2.4-135_10062015-disk1.vmdk</codeph></p>
                                                   </entry>
                                                 </row>
                                                 <row>
                                                   <entry>Compute-Proxy</entry>
-                                                  <entry>TEMPL-CPV9.ova</entry>
+                                                  <entry><codeph>TEMPL-CPV9.ova</codeph></entry>
                                                 </row>
                                         </tbody>
                                 </tgroup>
