@@ -90,7 +90,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock><note>Wh
               choose not to use one, just press Enter and proceed
               further.</note></li>
           <li>Run the following command to create a deployment
-            directory.<codeblock><codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
+            directory.<codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
           <li>Run the following command to configure brocade zone manager.
             <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
