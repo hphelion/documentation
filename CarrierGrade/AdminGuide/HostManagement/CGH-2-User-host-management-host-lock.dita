@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3241">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Locking and Unlocking a System</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Locking and Unlocking a System</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion OpenStack Carrier Grade 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion OpenStack Carrier Grade 2.0"/>
 </metadata>
 </prolog>
 <body>
@@ -44,10 +44,10 @@
 <section id="lock"> <title>Lock a system</title>
 <p>You can lock a host in order to bring the host out of service. </p>
 <p>On a controller node, the state transition only succeeds if there are no services running in active mode on the host.</p>
-<p>On a compute node, the state transition only succeeds if all currently running instances on the host can be live-migrated to alternative compute nodes. Live-migration of the virtual machine instances is initiated automatically by the HP Helion OpenStack Carrier Grade as soon as the state transition is requested.</p>
+<p>On a compute node, the state transition only succeeds if all currently running instances on the host can be live-migrated to alternative compute nodes. Live-migration of the virtual machine instances is initiated automatically by the HPE Helion OpenStack Carrier Grade as soon as the state transition is requested.</p>
 <ol>
         <li>
-          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HPE Helion
             OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
@@ -67,7 +67,7 @@
 <p>To unlock the host:</p>
 <ol>
         <li>
-          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HPE Helion
             OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
@@ -86,7 +86,7 @@
 <p>To force a lock on the host:</p>
 <ol>
         <li>
-          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HPE Helion
             OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>

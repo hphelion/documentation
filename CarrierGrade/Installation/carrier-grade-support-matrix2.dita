@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1773">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Support Matrix</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Support Matrix</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
-    <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
     <othermeta name="role" content="Storage Administrator"/>
     <othermeta name="role" content="Storage Architect"/>
     <othermeta name="role" content="Michael B"/>
-    <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
   </metadata>
 </prolog>
 <body>
@@ -17,7 +17,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-support-matrix.md-->
  <!--permalink: /helion/openstack/carrier/support-matrix/--></p>
-<p>To ensure the performance and stability of the HP Helion OpenStack Carrier Grade, it is very
+<p>To ensure the performance and stability of the HPE Helion OpenStack Carrier Grade, it is very
       important to meet the requirements and conform to the recommendations listed in this document. <ul>
         <li><xref href="#topic1773/hardware" format="dita">Supported Hardware</xref></li>
         <li><xref href="#topic1773/hardware-config" format="dita">Required Hardware
@@ -57,14 +57,14 @@
       </ul>
       <p><b>Notes:</b>
         <ul id="ul_mxb_gzd_ss">
-          <li>If you are using Gen9 systens, you must update the firmware to HP Service Pack for
+          <li>If you are using Gen9 systens, you must update the firmware to HPE Service Pack for
             ProLiant (SPP) Version 2015.06.0.</li>
           <li>If you are using Gen8 systems, you will experience reduced performance.</li>
         </ul></p>
     </section>
   <section>
       <title id="specs"><b>Required Specifications</b></title>
-      <p>The following table lists the specifications for the servers that will host HLM, HP Helion
+      <p>The following table lists the specifications for the servers that will host HLM, HPE Helion
         OpenStack, and the KVM region. </p>
       <p><b>Note:</b>
         <i><b>For the KVM and ESX cloud</b></i>, consult the DCN and ESX documentation for the
@@ -84,7 +84,7 @@
             </thead>
             <tbody>
               <row>
-                <entry namest="c1" nameend="c4"><b>HP ProLiant Rack Servers</b></entry>
+                <entry namest="c1" nameend="c4"><b>HPE ProLiant Rack Servers</b></entry>
               </row>
               <row>
                 <entry morerows="1">DL360 Gen9<p>DL380 Gen9</p></entry>
@@ -114,7 +114,7 @@
                     <li>2 x Intel Xeon® E5-2680v3</li>
                     <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
                     <li>4 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
-                    <li>1 x FlexFabric 10Gb 2-port 556FLR-SFP <b>AND</b> HP Ethernet 10Gb 2-port
+                    <li>1 x FlexFabric 10Gb 2-port 556FLR-SFP <b>AND</b> HPE Ethernet 10Gb 2-port
                       560SFP+ Adapter</li>
                     <li>1 x Smart Array P440ar/2G FIO Controller/2 x Ethernet 10Gb 2P 560SFP</li>
                   </ul>
@@ -131,7 +131,7 @@
                   <ul id="ul_g1f_qyd_ss">
                     <li>2 x Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.6GHz</li>
                     <li>128 GB DDR3 1600 MHz</li>
-                    <li>HP FlexFabric 10Gb 2port 554FLR-SFP+ Adapter <b>OR</b> HP FlexFabric 10Gb
+                    <li>HPE FlexFabric 10Gb 2port 554FLR-SFP+ Adapter <b>OR</b> HPE FlexFabric 10Gb
                       2port 534FLR-SFP+ Adapter</li>
                   </ul>
                 </entry>
@@ -146,14 +146,14 @@
                   <ul>
                     <li>2 x Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.8GHz </li>
                     <li>256 GB DDR3 1600 MHz </li>
-                    <li>HP FlexFabric 10Gb 2port 554FLR-SFP+ Adapter <b>AND</b> HP Ethernet 10Gb
+                    <li>HPE FlexFabric 10Gb 2port 554FLR-SFP+ Adapter <b>AND</b> HPE Ethernet 10Gb
                       2-port 560SFP+ Adapter </li>
                   </ul>
                 </entry>
               </row>
               <row>
                 <entry namest="c1" nameend="c4">
-                  <b>HP ProLiant BladeSystem</b>
+                  <b>HPE ProLiant BladeSystem</b>
                 </entry>
               </row>
               <row>
@@ -169,7 +169,7 @@
                     <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
                     <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
                     <li>1 x Smart Array P244br/1GB FBWC</li>
-                    <li>1 x HP FlexFabric 20Gb 2-port 650FLB <b>AND</b> 1 x HP Ethernet 10Gb 2-port
+                    <li>1 x HPE FlexFabric 20Gb 2-port 650FLB <b>AND</b> 1 x HPE Ethernet 10Gb 2-port
                       560M Adapter</li>
                   </ul>
                 </entry>
@@ -186,7 +186,7 @@
                     <li>2 x Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.8GHz</li>
                     <li>256 GB DDR3 1600 MHz </li>
                     <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
-                    <li>1 x HP FlexFabric 10Gb 2port 554FLB-SFP+ Adapter <b>AND</b> 1 x HP Ethernet
+                    <li>1 x HPE FlexFabric 10Gb 2port 554FLB-SFP+ Adapter <b>AND</b> 1 x HPE Ethernet
                       10Gb 2-port 560M Adapter</li>
                   </ul>
                 </entry>
@@ -196,40 +196,40 @@
         </table>
       </p>
       <!--<p>
-        <b>HP ProLiant Rack Servers</b>
+        <b>HPE ProLiant Rack Servers</b>
       </p><ul>
         <li>DL360 Gen9</li>
         <li>DL380 Gen9</li>
         <li>DL360 Gen8</li>
         <li>DL380 Gen8 </li>
-      </ul><p><b>Note:</b> If you are using Gen9 systens, you must update the firmware to HP Service
+      </ul><p><b>Note:</b> If you are using Gen9 systens, you must update the firmware to HPE Service
         Pack for ProLiant (SPP) Version 2015.06.0. </p><p id="compute"><b>Compute servers</b>
       </p><p>The following servers are supported for the compute servers in the <xref
           href="../Overview/carrier-grade-overview-kvm.dita#topic1743">KVM region</xref>. </p><p>
-        <b>HP ProLiant BladeSystem</b>
+        <b>HPE ProLiant BladeSystem</b>
       </p><ul id="ul_er1_sc2_qs">
         <li>BL460c Gen8</li>
         <li>BL460c Gen9 </li>
       </ul><p>
-        <b>HP ProLiant Rack Servers</b>
+        <b>HPE ProLiant Rack Servers</b>
       </p><ul id="ul_l4s_pc2_qs">
         <li>DL360 Gen9</li>
         <li>DL380 Gen9</li>
         <li>DL360 Gen8</li>
         <li>DL380 Gen8</li>
       </ul>
-      <p><b>Note:</b> If you are using Gen9 systems, you must update the firmware to HP Service Pack
+      <p><b>Note:</b> If you are using Gen9 systems, you must update the firmware to HPE Service Pack
         for ProLiant (SPP) Version 2015.06.0. </p>
 -->
     </section>
   <section id="hardware-config">
       <title>Required Hardware Configurations </title>
-      <p>The servers, selected from the <xref href="#topic1773/hardware" format="dita">Supported Hardware</xref> lists, must be configured as follows for HP Helion OpenStack
+      <p>The servers, selected from the <xref href="#topic1773/hardware" format="dita">Supported Hardware</xref> lists, must be configured as follows for HPE Helion OpenStack
         Carrier Grade.</p>
       <p>One (1) <b>HLM Host</b>. You must have a server with a 40GB Disk and 8,192 MB RAM for the
         HLM host. This server will also host the VSD VM.</p>
-      <p id="non-kvm-hos">Three (3) <b>HP Helion OpenStack Controllers.</b> You must have three (3)
-        baremetal systems to install the HP Helion OpenStack controllers that meet the following
+      <p id="non-kvm-hos">Three (3) <b>HPE Helion OpenStack Controllers.</b> You must have three (3)
+        baremetal systems to install the HPE Helion OpenStack controllers that meet the following
         requirements: </p>
           <ul id="ul_s1h_432_qs">
             <li>For systems with multiple NICs, only one NIC may be active or connected. </li>
@@ -300,22 +300,22 @@
 
   <section id="software"><title>Software Requirements</title><p><b>HLM Host</b>. The HLM host
         requires the Ubuntu Server 14.04.2 LTS operating system. </p>
-    <p><b>HP Helion OpenStack Controllers</b>. The servers should be baremetal. The HP Helion
+    <p><b>HPE Helion OpenStack Controllers</b>. The servers should be baremetal. The HPE Helion
         OpenStack Carrier Grade installation process installs the required software.</p>
-    <p><b>KVM controllers</b>. The servers should be baremetal. The HP Helion OpenStack Carrier
+    <p><b>KVM controllers</b>. The servers should be baremetal. The HPE Helion OpenStack Carrier
         Grade installation process installs the required software.</p>
-      <p><b>KVM compute</b>. The servers should be baremetal. The HP Helion OpenStack Carrier Grade
+      <p><b>KVM compute</b>. The servers should be baremetal. The HPE Helion OpenStack Carrier Grade
         installation process installs the required software.</p>
     <p><b><i>For a KVM and ESX cloud topology</i></b>, VMware vSphere must be fully installed and
-        operational before installing HP Helion OpenStack Carrier Grade.</p></section>
+        operational before installing HPE Helion OpenStack Carrier Grade.</p></section>
     <section>
       <title>External Storage</title>
       <p>The following back-end drivers are supported to enable management of the OpenStack Block
         Storage volumes in the non-KVM region.</p>
       <p>
         <ul id="ul_oh5_dyx_5t">
-          <li>HP 3PAR StoreServ, version 3.2.1 (MU3) or 3.2.1 (MU2).</li>
-          <li>HP StoreVirtual VSA</li>
+          <li>HPE 3PAR StoreServ, version 3.2.1 (MU3) or 3.2.1 (MU2).</li>
+          <li>HPE StoreVirtual VSA</li>
         </ul>
       </p>
       <p>You will configure the installer to integrate one or both of these drivers during the
@@ -323,10 +323,10 @@
     </section>
   
   <section id="guestOS"><title>Supported Guest Operating Systems</title> The following guest
-      operating systems (guest OSs) are supported for the HP Helion OpenStack Carrier Grade servers.
+      operating systems (guest OSs) are supported for the HPE Helion OpenStack Carrier Grade servers.
           <p><b>HLM Host</b>. There are no supported guest OSs for the HLM host server. </p><p><b>HP
           Helion OpenStack Controllers</b>. There are no supported guest OSs for the servers that
-        host the HP Helion OpenStack Controllers.</p><p><b>KVM compute and controllers</b>. The
+        host the HPE Helion OpenStack Controllers.</p><p><b>KVM compute and controllers</b>. The
         following Guest OSs are supported for the servers in the KVM region for both cloud
         topologies: </p><ul id="ul_sty_hd2_qs">
         <li>
@@ -358,8 +358,8 @@
     <!--<section id="typical"><title>Typical Configurations</title><p>The following tables list the hardware required for a typical KVM + ESX deployment cloud installation using GEN9 servers in a <xref href="#topic1773/rack" format="dita">rackmount installation</xref> or an <xref href="#topic1773/enclosure" format="dita">enclosure</xref>. </p><p>The KVM + ESX deployment requires an existing and operational VMware vSphere installation on the appropriate ESX/ESXi servers.</p><p><b>Note:</b> The KVM deployment requires the same hardware, except you need only six (6) DL360 G9 controllers, not ten (10).</p><p id="rack"><b>GEN9 Rackmount Base</b></p><table id="table_tgx_5k2_qs"><tgroup cols="2"><colspec colname="col1"/><colspec colname="col2"/><thead><row><entry>Component</entry><entry>Description</entry></row></thead><tbody><row><entry>16 x DL360 G9 (Compute)</entry><entry>See <xref href="#topic1773/specs" format="dita">Required Specifications</xref>.</entry></row><row><entry>10 x DL360 G9(Control)</entry><entry> See <xref href="#topic1773/specs" format="dita">Required Specifications</xref>. </entry></row><row><entry>TOR Switches</entry><entry><ul id="ul_wgx_5k2_qs"><li>6 x 5920AF-24XG Switch</li><li>2 x FF 5930-32QSFP+ Switch</li></ul></entry></row><row><entry>Storage</entry><entry><p> 1 x 3PAR 7400 </p></entry></row></tbody></tgroup></table><p id="enclosure"><b>GEN9 Enclosure Based</b></p><table id="table_xyv_xcs_ns"><tgroup cols="2"><colspec colname="col1"/><colspec colname="col2"/><thead><row><entry>Component</entry><entry>Description</entry></row></thead><tbody><row><entry>2 x C7000 Enclosure (Compute) </entry><entry><ul id="ul_q2d_bns_ns"><li>2 x Virtual Connect FlexFabric-20/40 F8 Module</li><li>4 x 6125XLG Blade Switch</li></ul></entry></row><row><entry><p>16 x BL460 G9 (Compute) </p></entry><entry> See <xref href="#topic1773/specs" format="dita">Required Specifications</xref>. </entry></row><row><entry><p>10 x DL360 G9 (Control)</p></entry><entry> See <xref href="#topic1773/specs" format="dita">Required Specifications</xref>. </entry></row><row><entry>TOR Switches </entry><entry><ul id="ul_ygx_5k2_qs"><li>4 x 5920AF-24XG Switch</li><li>2 x FF 5930-32QSFP+ Switch</li></ul></entry></row><row><entry>Storage</entry><entry><p><ul id="ul_ilg_fns_ns"><li>1 x 3PAR 7400 </li></ul></p></entry></row></tbody></tgroup></table></section>-->
   
 <!-- 
-  <section id="support-matrix-for-hp-distributed-cloud-networking-dcn-host"> <title>Support Matrix for HP Distributed Cloud Networking (DCN) host</title>
-<p>For key requirements needed HP Distributed Cloud Networking (DCN), see <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix-dcn.dita">Support Matrix for HP Distributed Cloud Networking</xref>.</p>
+  <section id="support-matrix-for-hp-distributed-cloud-networking-dcn-host"> <title>Support Matrix for HPE Distributed Cloud Networking (DCN) host</title>
+<p>For key requirements needed HPE Distributed Cloud Networking (DCN), see <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix-dcn.dita">Support Matrix for HPE Distributed Cloud Networking</xref>.</p>
 </section>  -->
 
   <section id="next"> <title>Next step</title>

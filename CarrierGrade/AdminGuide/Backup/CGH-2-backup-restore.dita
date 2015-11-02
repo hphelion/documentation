@@ -2,16 +2,16 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Backup and Restore
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Backup and Restore
     Configuration Files and MySQL Clusters</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
     </metadata>
   </prolog>
   <body>
@@ -19,19 +19,19 @@
     <p><!--Here is the wiki link for Attis.<xref href="https://rndwiki.corp.hpecorp.net/confluence/pages/viewpage.action?pageId=946944841" format="html" scope="external">https://rndwiki.corp.hpecorp.net/confluence/pages/viewpage.action?pageId=946944841</xref> 
 The high level design needs to be adjusted to more suite with CG(It is reflecting CS in some areas)I will soon update it. 
 But the CLI, REST API etc should all be same --></p>
-    <p>This page explains how to backup and restore HP OpenStack Carrier Grade amd HP DCN
+    <p>This page explains how to backup and restore HPE OpenStack Carrier Grade amd HPE DCN
       configuration files in the event of catastrophic failure. The page also explains how to <xref
         href="#topic10581/mysql" format="dita">recover the <tm tmtype="reg">Percona</tm>
         <tm tmtype="reg">XtraDB</tm> cluster</xref> on the cloud controllers in the event of a
       database corruption.</p>
-    <p>HP Helion OpenStack Carrier Grade includes a backup and restore application called Attis
+    <p>HPE Helion OpenStack Carrier Grade includes a backup and restore application called Attis
       which you can use to backup and restore essential system files and components of the non-KVM
       cloud. Attis is automatically installed on each of the controller nodes in the non-KVM region.
       Attis uses a command line interface. For more information, see <xref href="#topic10581"
         format="dita">Attis Backup and Restore CLI</xref>.</p>
     <p>The installation also includes the Percona XtraDB application, which takes care of
       synchronization of the data between nodes if one of the nodes goes down and comes back later.
-      You can use Percona XtraDB to backup and restore the MySQL nodes that the HP Helion OpenStack
+      You can use Percona XtraDB to backup and restore the MySQL nodes that the HPE Helion OpenStack
       Carrier Grade installs on all in the non-KVM region.</p>
     <section>
       <title>IMPORTANT: Attis Administrator Responsibilites for Protecting Credentials</title>
@@ -71,15 +71,15 @@ But the CLI, REST API etc should all be same --></p>
     <section><title>When to perform backups</title>
       <p>You should create a backup from HLM VM as follows:</p>
       <ul>
-        <li>when the HP Helion OpenStack Carrier Grade installation is complete,</li>
-        <li>when any change is made to the HP Helion OpenStack Carrier Grade components, </li>
+        <li>when the HPE Helion OpenStack Carrier Grade installation is complete,</li>
+        <li>when any change is made to the HPE Helion OpenStack Carrier Grade components, </li>
         <li>after synching the files on the HLM VM. The files should be synced periodically using a
           tool appropriate for your environment.</li>
       </ul>
     </section>
     <section>
       <title>When to restore</title>
-      <p>You should restore the HLM VM if there are any issues with the HP Helion OpenStack Carrier
+      <p>You should restore the HLM VM if there are any issues with the HPE Helion OpenStack Carrier
         Grade components, for example:</p>
       <ul>
         <li>there is any problem with a VM;</li>
@@ -92,7 +92,7 @@ But the CLI, REST API etc should all be same --></p>
     <section>
       <title>Backup and Restore the MySQL cluster</title>
       <p>This section deals with the disaster recovery scenarios of the three node MySQL cluster
-        (Percona XtraDB Cluster) that runs in cloud controller nodes. The HP Helion OpenStack
+        (Percona XtraDB Cluster) that runs in cloud controller nodes. The HPE Helion OpenStack
         Carrier Grade backup/restore process includes the MySQL cluster.</p>
       <p>If an entire cluster goes down, due to an issue (such as data corruption or MySQL defect),
         and the cluster does not come back up, you must restore the cluster to a previous well-known
@@ -109,8 +109,8 @@ But the CLI, REST API etc should all be same --></p>
       <p>For more information on the Attis backup and restore CLI see <xref
           href="CGH-2--backup-restore-cli.dita#topic10581">Backup and Restore CLI</xref>.</p>
     </section>
-    <section><title>Backing up the HP Helion OpenStack Carrier Grade</title>
-      <p>To back up an HP Helion OpenStack Carrier Grade controller, use the following steps:</p>
+    <section><title>Backing up the HPE Helion OpenStack Carrier Grade</title>
+      <p>To back up an HPE Helion OpenStack Carrier Grade controller, use the following steps:</p>
       <ol>
         <li>Log in to the controller.</li>
         <li> Authenticate using export
@@ -132,8 +132,8 @@ export OS_AUTH_URL=http://127.0.0.1:5000/v2.0</codeblock>Optionally
       </ol>
     </section>
     <section>
-      <title>Restore the HP Helion OpenStack Carrier Grade</title>
-      <p>To restore an HP Helion OpenStack Carrier Grade controller, use the following steps:</p>
+      <title>Restore the HPE Helion OpenStack Carrier Grade</title>
+      <p>To restore an HPE Helion OpenStack Carrier Grade controller, use the following steps:</p>
       <ol id="ol_vlq_wm3_pt">
         <li>Log in to the controller.</li>
         <li> Authenticate using export

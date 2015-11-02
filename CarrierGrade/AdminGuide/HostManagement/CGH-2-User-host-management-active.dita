@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4032">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Managing Hosts on an Active System</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Managing Hosts on an Active System</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion OpenStack Carrier Grade 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion OpenStack Carrier Grade 2.0"/>
 </metadata>
 </prolog>
 <body>
@@ -26,7 +26,7 @@
  <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-active.md-->
  <!--permalink: /helion/openstack/carrier/admin/host/management/active/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>You can add or remove hosts and change disks without interrupting the HP Helion OpenStack Carrier Grade.</p>
+<p>You can add or remove hosts and change disks without interrupting the HPE Helion OpenStack Carrier Grade.</p>
 <p>To make changes to a host, you must lock it. Locking a host automatically and seamlessly redirects activity to other available hosts. While the host is locked, you can safely power it down and make disk changes, or remove the host and insert a new one.</p>
 <p>After making the required configuration changes, you can unlock the host and begin using it. </p>
 <ul>
@@ -45,7 +45,7 @@
   <xref href="CGH-2-User-host-management-active-compute.dita#topic3709">Managing Active Compute Nodes</xref>
       </li>
 </ul>
-<p>Managing Compute Nodes The compute nodes in HP Helion OpenStack Carrier Grade form a resource
+<p>Managing Compute Nodes The compute nodes in HPE Helion OpenStack Carrier Grade form a resource
       pool for hosting guest instances. You can manage this pool by managing the hosts. You can
       change the resource pool in several ways: <ul id="ul_lxq_j3r_ft">
         <li>Add or remove hosts to increase or decrease the size of the pool.</li>

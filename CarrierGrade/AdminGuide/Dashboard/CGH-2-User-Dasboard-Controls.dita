@@ -19,7 +19,7 @@
     <title>Dashboard Controls</title>
 
 
-    <shortdesc>The HP Helion OpenStack Carrier Grade web administration interface provides a
+    <shortdesc>The HPE Helion OpenStack Carrier Grade web administration interface provides a
         dashboard for managing all aspects of the system.</shortdesc>
 
 
@@ -56,7 +56,7 @@
 
             <li>
                 <p> The <uicontrol>Admin</uicontrol> tab is available for users assigned as
-                        <b>admin</b> for the HP Helion OpenStack Carrier Grade.</p>
+                        <b>admin</b> for the HPE Helion OpenStack Carrier Grade.</p>
             </li>
 
 

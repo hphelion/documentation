@@ -2,23 +2,23 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Conref Installing the KVM
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Conref Installing the KVM
     + ESX<tm tmtype="reg"/> Deployment</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="product-version" content="HPE Helion Openstack Carrier Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HP Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack Carrier Grade 1.1"/>
     </metadata>
   </prolog>
   <body>
-    <section id="prereqs"><title>HP Distributed Cloud Networking Requirements</title><p>Before
-        starting the HP Helion OpenStack Carrier Grade installation, the VMware vSphere application
-        and HP Distributed Cloud Networking components must be fully installed and
-          functioning:</p><p><b>DCN Requirements</b></p><p>HP Helion Distributed Cloud Networking
+    <section id="prereqs"><title>HPE Distributed Cloud Networking Requirements</title><p>Before
+        starting the HPE Helion OpenStack Carrier Grade installation, the VMware vSphere application
+        and HPE Distributed Cloud Networking components must be fully installed and
+          functioning:</p><p><b>DCN Requirements</b></p><p>HPE Helion Distributed Cloud Networking
         (DCN) must be deployed before starting the cloud deployment. Please refer to DCN
         documentation for details. </p><p>For a quick overview of the DCN components, see <xref
           href="carrier-grade-technical-overview-esx.dita#topic3485/dcn">KVM + ESX Deployment
@@ -101,9 +101,9 @@
           OSadmin User for VSD</xref>.</p>
     </section>
     <section id="hos-install">
-      <title>Launch the HP Helion OpenStack cloud</title>
+      <title>Launch the HPE Helion OpenStack cloud</title>
       <p>Use the following steps on the HLM host to log on to the HLM VM created in <xref
-          href="carrier-grade-install-hlm-vm.dita#topic10581">Bootstrapping the HP Helion Lifecycle
+          href="carrier-grade-install-hlm-vm.dita#topic10581">Bootstrapping the HPE Helion Lifecycle
           Management Virtual Machine and Installation Services</xref>:</p>
       <ol>
         <li>Login to HLM VM. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where: HLM_VM_IP is the CLM
@@ -118,7 +118,7 @@ Password: cghelion</codeblock>
         <li>Execute the following command to switch to the root
           user:<codeblock>sudo su -</codeblock></li>
         <li>Change to the home directory.<codeblock>cd ~</codeblock></li>
-        <li>Execute the following command to provision and configure the HP Helion OpenStack cloud.
+        <li>Execute the following command to provision and configure the HPE Helion OpenStack cloud.
             <codeblock>hlm define -t memphis &lt;cloudname&gt;</codeblock><p>Where::</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create.<p>The cloud
                 name can be any combination of up to 63 digits, letters, and the <codeph>-</codeph>
@@ -134,7 +134,7 @@ Password: cghelion</codeblock>
                   </li>
                 </ul></p></li>
             <li><codeph>memphis</codeph> is the name of the template to use. The installation kit
-              includes a template called <codeph>memphis</codeph> designed to install HP Helion
+              includes a template called <codeph>memphis</codeph> designed to install HPE Helion
               OpenStack, specific to the KVM + ESX deployment.</li>
           </ul><p>The command creates the <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph>
             directory, which contains several JSON template files. </p></li>
@@ -186,7 +186,7 @@ Password: cghelion</codeblock>
                 </row>
               </tbody>
             </tgroup>
-          </table><p>*iLO is HP Integrated Lights-Out, a server management tool embedded with the
+          </table><p>*iLO is HPE Integrated Lights-Out, a server management tool embedded with the
             ProLiant servers. Consult your iLO documentation for information on how to locate the
             iLO IP address, user name, and password.</p></li>
         <li>Save and close the file.</li>
@@ -276,7 +276,7 @@ Password: cghelion</codeblock>
       <title>Configure the esx.json file</title>
       <p>Modify the <codeph>esx.json</codeph> file in the
           <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory on the HLM VM. This file is
-        called by the script that installs the HP Helion OpenStack cloud, later in the installation. </p>
+        called by the script that installs the HPE Helion OpenStack cloud, later in the installation. </p>
       <p>To see a sample <codeph>esx.json</codeph> file, see <xref
           href="carrier-grade-install-kvm-esx-json.dita">Sample esx.json File for Installing the
           KVM + ESX Topology</xref>.</p>
@@ -343,8 +343,8 @@ Password: cghelion</codeblock>
     </section>
     <section id="esx-proxy">
       <title>Configure the ESX Compute Proxy</title>
-      <p>The HP Helion OpenStack Carrier Grade vCenter ESX compute proxy (compute proxy) is a driver
-        that enables the Compute service to communicate with a VMware vCenter server. The HP Helion
+      <p>The HPE Helion OpenStack Carrier Grade vCenter ESX compute proxy (compute proxy) is a driver
+        that enables the Compute service to communicate with a VMware vCenter server. The HPE Helion
         OpenStack Compute Service (Nova) requires this driver to interface with VMware ESX
         hypervisor APIs. You can download the proxy installation files from the <xref
           href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html"
@@ -357,11 +357,11 @@ Password: cghelion</codeblock>
     <section id="create-a-new-cloud-template-and-bring-the-cloud-nodes-up">
       <title>Provision the cloud nodes and bring the cloud nodes up</title>
       <ol>
-        <li>On the HLM host, use the following script to start the provisioning of the HP Helion
+        <li>On the HLM host, use the following script to start the provisioning of the HPE Helion
           OpenStack cloud: <codeblock>hlm provision &lt;cloudname&gt;          </codeblock><p>Where:
               <codeph>&lt;cloudname&gt;</codeph> is the name of the cloud you created. The script
             takes approximately 15 to 30 minutes.</p><p>This script prepares the bare metal servers
-            for the HP Helion OpenStack Carrier Grade cloud installation including the hLinux
+            for the HPE Helion OpenStack Carrier Grade cloud installation including the hLinux
             operating system. The script also PXE boots the nodes specified in
               <codeph>node-provision.json</codeph> file and tracks the PXE boot completion process.
             The script also creates the <codeph>nodes.json</codeph> file in the directory.
@@ -384,7 +384,7 @@ Password: cghelion</codeblock>
     <section id="back-end">
       <title>Configure the back-end drivers</title>
       <p>Configure the back-end drivers to enable management of the OpenStack Block Storage volumes
-        on vCenter-managed data stores and 3PAR and/or VSA storage arrays. The HP Block Storage
+        on vCenter-managed data stores and 3PAR and/or VSA storage arrays. The HPE Block Storage
         (Cinder) service allows you to configure multiple storage back-ends. Use the following steps
         to configure back-end support:</p>
       <ol id="ul_btr_l52_xs">
@@ -395,7 +395,7 @@ Password: cghelion</codeblock>
           storage method(s) you are using.</li>
         <li>Depending upon the type of storage you are using, edit the
             <codeph>cinder_conf.multiBackendSample</codeph> file. This sample file provides all the
-          variables needed to use ESX in the non-KVM region and HP StoreVirtual VSA and/or HP
+          variables needed to use ESX in the non-KVM region and HPE StoreVirtual VSA and/or HP
           StoreServ (3PAR) attched to the KVM region.<p>Use the <codeph>enabled_backends</codeph>
             variable to list each of the back-ends you are using. You must specify at least one
             back-end for the non-KVM region and one or more for the KVM region.</p><table>
@@ -476,13 +476,13 @@ volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver</codeblock>
     </section>
     <section id="nuage"><title>Deploy the Networking Role Patch</title>Before launching the
         <codeph>hlm generate</codeph> command, deploy a patch to update the nuage role required to
-      deploy the HP Helion OpenStack Cloud.<p>For more information, see <xref
+      deploy the HPE Helion OpenStack Cloud.<p>For more information, see <xref
           href="carrier-grade-install-network-role-patch.dita#topic10581">Deploy the Networking Role
           Patch</xref>.</p></section>
     <section id="hos-cloud">
-      <title>Deploy the HP Helion OpenStack cloud</title>
+      <title>Deploy the HPE Helion OpenStack cloud</title>
       <ol>
-        <li>Run the HP Helion OpenStack Configuration Processor:
+        <li>Run the HPE Helion OpenStack Configuration Processor:
             <codeblock>hlm generate –c &lt;cloudname&gt;</codeblock><p>This command runs the HP
             Helion OpenStack Configuration Processor, a script (<codeph>hcfgproc</codeph>) that is
             incorporated into the installation environment. This command generates the necessary
@@ -511,9 +511,9 @@ The cloud &lt;cloudname> was generated successfully.
       <p></p>
     </section>
     <section id="hdeploy">
-      <title>Deploy HP Helion OpenStack</title>
+      <title>Deploy HPE Helion OpenStack</title>
       <ol>
-        <li>Use the following command to deploy the HP Helion OpenStack cloud:
+        <li>Use the following command to deploy the HPE Helion OpenStack cloud:
             <codeblock>hlm deploy –c &lt;cloudname&gt;</codeblock><p>This command takes a
             significant period of time. When this command is complete, the non-KVM cloud
             installation is complete. Use the following sections to configure the Horizon interface,
@@ -528,7 +528,7 @@ The cloud &lt;cloudname> was generated successfully.
     <section>
       <title>Deploy the Icinga Patch</title>
       <p>After launching the <codeph>hdeploy</codeph> command, deploy three patches to support the
-        monitoring of HP Helion OpenStack. </p>
+        monitoring of HPE Helion OpenStack. </p>
       <p>For more information, see <xref href="CGH-2-install-icinga-patch.dita#topic10581">Deploy
           the Icinga Patch</xref>.</p>
     </section>
@@ -538,7 +538,7 @@ The cloud &lt;cloudname> was generated successfully.
     </section>
     <section id="patch-after">
       <title>Configure LDAP to enable CLI and use Keystone v3</title>
-      <p>By default, the HP Helion OpenStack Carrier Grade services are configured to use Keystone
+      <p>By default, the HPE Helion OpenStack Carrier Grade services are configured to use Keystone
         v2 authorization. The services need to be modified to use Keystone v3. Users will not be
         able to execute OpenStack CLI commands until the specific changes are made on all three
         controller nodes in the non-KVM region. </p>

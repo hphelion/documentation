@@ -2,28 +2,28 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic7646">
-    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Bringing Up Single VSD VM
+    <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Bringing Up Single VSD VM
         Manually</title>
     <prolog>
         <metadata>
             <othermeta name="layout" content="default"/>
-            <othermeta name="product-version" content="HP Helion Openstack Carrier Grade 1.1"/>
+            <othermeta name="product-version" content="HPE Helion Openstack Carrier Grade 1.1"/>
             <othermeta name="role" content="Storage Administrator"/>
             <othermeta name="role" content="Storage Architect"/>
             <othermeta name="role" content="Michael B"/>
-            <othermeta name="product-version1" content="HP Helion Openstack Carrier Grade 1.1"/>
+            <othermeta name="product-version1" content="HPE Helion Openstack Carrier Grade 1.1"/>
         </metadata>
     </prolog>
     <body>
         <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.md--><!--permalink: /helion/openstack/carrier/install/pb/network/prepare/--></p>
         <section><b>Log into the HLM host</b><p>Use the following steps to launch the virtual
-                machine for the required HP DCN Virtualized Services Directory (<i>VSD</i>):</p><ol
+                machine for the required HPE DCN Virtualized Services Directory (<i>VSD</i>):</p><ol
                 id="ol_gtd_b1l_2t">
                 <li>Log into the HLM host.</li>
                 <li>Copy the VSD qcow image, named <codeph>VSD-3.2.4_134-hp.qcow2</codeph>, to the
                         <codeph>var/lib/libvirt/images</codeph> directory.<p><b>Note:</b> The
-                        vsd.xml is a sample created for internal HP Helion Carrier Grade development
-                        quality assurance. For a production environment, refer to the HP DCN
+                        vsd.xml is a sample created for internal HPE Helion Carrier Grade development
+                        quality assurance. For a production environment, refer to the HPE DCN
                         documentation to deploy and configure the VSD in HA mode.</p></li>
                 <li>Execute the following
                     commands:<codeblock> virsh define vsd.xml

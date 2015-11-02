@@ -2,16 +2,16 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Configuring the Backup
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Configuring the Backup
     and Restore Location </title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
     </metadata>
   </prolog>
   <body>
@@ -19,12 +19,12 @@
     <p><!--Here is the wiki link for Attis. <xref href="https://rndwiki.corp.hpecorp.net/confluence/pages/viewpage.action?pageId=946944841" format="html" scope="external">https://rndwiki.corp.hpecorp.net/confluence/pages/viewpage.action?pageId=946944841</xref> 
 The high level design needs to be adjusted to more suite with CG(It is reflecting CS in some areas)I will soon update it. 
 But the CLI, REST API etc should all be same --></p>
-    <p>HP Helion OpenStack Carrier Grade implements backup and restore as a service (BRAAS) using
+    <p>HPE Helion OpenStack Carrier Grade implements backup and restore as a service (BRAAS) using
       the <b>attis</b> service, which you can use to backup and restore essential system files and
       components of the non-KVM cloud. The attis service is automatically installed on each of the
       controller nodes in the non-KVM region. Attis uses a command line interface. For more
       information, see <xref href="#topic10581" format="dita">Backup and Restore CLI</xref>.</p>
-    <p>Before you start your first backup, you must use the attis CLI to specify where HP Helion
+    <p>Before you start your first backup, you must use the attis CLI to specify where HPE Helion
       OpenStack Carrier Grade will store backup files. </p>
     <p>You can store backup files using: </p>
     <p>
@@ -34,7 +34,7 @@ But the CLI, REST API etc should all be same --></p>
         <li>FILE: A location on the Management appliance. </li>
       </ul>
     </p>
-    <p>HP recommends that you configure CloudSystem to use an SCP or NFS server so that backup files
+    <p>HPE recommends that you configure CloudSystem to use an SCP or NFS server so that backup files
       are automatically moved to an off-appliance location in case of a catastrophic failure of the
       Management appliance trio. You can use the FILE option if you want to manually mount shared
       storage on all three nodes of the Management appliance. </p>

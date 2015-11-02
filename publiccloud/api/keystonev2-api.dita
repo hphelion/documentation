@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic70567">
-<title>HP Helion Public Cloud Identity Services v2 API</title>
+<title>HPE Helion Public Cloud Identity Services v2 API</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -17,12 +17,12 @@
 </p>
 <p>Date: November 2014</p>
 <section id="1-overview"> <title>1. Overview</title>
-<p>The HP Identity Service exposes the <tm tmtype="reg">OpenStack</tm> Keystone V2 API specification. Specifically, it supports token based operations. A few things to note about the HP Identity Service are:</p>
+<p>The HPE Identity Service exposes the <tm tmtype="reg">OpenStack</tm> Keystone V2 API specification. Specifically, it supports token based operations. A few things to note about the HPE Identity Service are:</p>
 <ul>
 <li>Token created via v2 API can be validated via v3 API</li>
 <li>Token created via v3 API can be validated via v2 API.</li>
-<li>v3 token can be created via HP User access key pair.</li>
-<li>HP Identity service will return a service catalog upon token response that only includes services and endpoints for which the token may be used.</li>
+<li>v3 token can be created via HPE User access key pair.</li>
+<li>HPE Identity service will return a service catalog upon token response that only includes services and endpoints for which the token may be used.</li>
 <li>Support for request and response in xml format.</li>
 <li>Introduction of rate limiting.</li>
 </ul>
@@ -39,7 +39,7 @@
 <p>Each user has an account. Every user belongs to a single domain. Groups can be used to group users. Projects are resource collections and user is assoicated with one or more projects via roles</p>
 </section>
 <section id="22-regions-and-availability-zones"> <title>2.2 Regions and Availability Zones</title>
-<p>The HP Identity Service is currently available in two regions which can be accessed via standard RESTful clients. As HP accounts are global, either region can be used for conducting identity operations. Choose the region closest to you for improved performance.</p>
+<p>The HPE Identity Service is currently available in two regions which can be accessed via standard RESTful clients. As HPE accounts are global, either region can be used for conducting identity operations. Choose the region closest to you for improved performance.</p>
 <p>US-West: https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/</p>
 <p>US-East: https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0/</p>
 <p>Region(s): US-West(region-a.geo-1), US-East(region-b.geo-1)</p>
@@ -1109,7 +1109,7 @@ Date: Wed, 26 Oct 2011 13:43:14 GMT
     "id": "HPAuth_4ea80e72b0be73fc0385ecef",
     "tenant": {
       "id": "90260810095453",
-      "name": "HP Swift Tenant Services"
+      "name": "HPE Swift Tenant Services"
     }
   },
   "user": {
@@ -1169,7 +1169,7 @@ Date: Wed, 26 Oct 2011 13:46:53 GMT
 
 &lt;access xmlns="http://docs.openstack.org/identity/api/v2.0" xmlns:ns2="http://docs.openstack.org/common/api/v1.0" xmlns:ns3="http://www.w3.org/2005/Atom"&gt;
    &lt;token id="HPAuth_4ea80e72b0be73fc0385ecef" expires="2011-10-26T14:13:14.311Z"&gt;
-      &lt;tenant id="90260810095453" name="HP Swift Tenant Services"/&gt;
+      &lt;tenant id="90260810095453" name="HPE Swift Tenant Services"/&gt;
    &lt;/token&gt;
    &lt;user id="53449493563804" name="testuser" domainStatus="enabled"&gt;
       &lt;roles&gt;
@@ -1266,7 +1266,7 @@ Date: Wed, 26 Oct 2011 13:46:53 GMT
 </codeblock>
 <p>Curl Example</p>
 <codeblock>
-  <codeph>curl -k -H "Content-Type: application/json" -d '{"auth":{"tenantName":"HP Swift Tenant Services","token":{"id":"HPAuth_4ea80da3b0be73fc0385eceb"}}}' -XPOST https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/tokens
+  <codeph>curl -k -H "Content-Type: application/json" -d '{"auth":{"tenantName":"HPE Swift Tenant Services","token":{"id":"HPAuth_4ea80da3b0be73fc0385eceb"}}}' -XPOST https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/tokens
 </codeph>
 </codeblock>
 <p>

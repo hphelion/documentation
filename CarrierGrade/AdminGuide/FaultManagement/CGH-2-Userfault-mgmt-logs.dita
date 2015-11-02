@@ -2,12 +2,12 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic2139">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Viewing Customer Logs</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Viewing Customer Logs</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack"/>
-      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+      <othermeta name="product-version" content="HPE Helion Openstack"/>
+      <othermeta name="product-version" content="HPE Helion OpenStack Carrier Grade 2.0"/>
       <othermeta name="role" content="Systems Administrator"/>
       <othermeta name="role" content="Cloud Architect"/>
       <othermeta name="role" content="Storage Administrator"/>
@@ -17,8 +17,8 @@
       <othermeta name="role" content="Application Developer"/>
       <othermeta name="role" content="Network Engineer"/>
       <othermeta name="role" content="Paul F"/>
-      <othermeta name="product-version1" content="HP Helion Openstack"/>
-      <othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack"/>
+      <othermeta name="product-version2" content="HPE Helion OpenStack Carrier Grade 2.0"/>
     </metadata>
   </prolog>
   <body>
@@ -58,7 +58,7 @@
         <li>To see specific details on a log, click the time stamp identifier for the log. </li>
       </ol>
     </p>
-    <p>For more information on customer logs, see the <i>HP Helion <tm tmtype="reg">OpenStack</tm>
+    <p>For more information on customer logs, see the <i>HPE Helion <tm tmtype="reg">OpenStack</tm>
         2.0 Carrier Grade Beta: Administrator Guide</i>.</p>
   </body>
 </topic>

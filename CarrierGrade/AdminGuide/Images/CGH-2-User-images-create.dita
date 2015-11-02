@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2491">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Creating and Deleting Images</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1: Creating and Deleting Images</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -16,7 +16,7 @@
         id="ul_tkv_rwx_3t">
         <li><xref href="#topic2491/create-an-image" format="dita">Create an image</xref></li>
         <li><xref href="#topic2491/delete-an-image" format="dita">Delete an image</xref></li>
-      </ul><title>Create an image</title>Creating a new image for use in HP Helion OpenStack
+      </ul><title>Create an image</title>Creating a new image for use in HPE Helion OpenStack
       requires two general steps.<p>The first step is to create an ISO image file outside of your HP
         Helion OpenStack</p><p>When the ISO image file is complete and ready for use, you use HP
         Helion OpenStack to upload the image to your cloud.</p><p>

@@ -16,10 +16,10 @@
  -->
 
 
-    <title>HP Helion OpenStack Carrier Grade 2.0 Beta: User Guide</title>
+    <title>HPE Helion OpenStack Carrier Grade 2.0 Beta: User Guide</title>
 
 
-    <shortdesc >HP Helion OpenStack Carrier Grade is a high-performance, high-availability,
+    <shortdesc >HPE Helion OpenStack Carrier Grade is a high-performance, high-availability,
 
 
         cloud operating system that enables telecommunications operators to use
@@ -46,7 +46,7 @@
     <body>
 
 
-        <p >HP Helion OpenStack Carrier Grade brings together the flexibility and scalability of the IT
+        <p >HPE Helion OpenStack Carrier Grade brings together the flexibility and scalability of the IT
 
 
             cloud, and the high-availability and performance demanded by the Telecommunications
@@ -55,7 +55,7 @@
             industry, into a unique carrier grade, industry-leading solution to deliver a
 
 
-            price-performance ratio well above alternative solutions. HP Helion OpenStack Carrier Grade is aligned
+            price-performance ratio well above alternative solutions. HPE Helion OpenStack Carrier Grade is aligned
 
 
             with the ETSI-NFV architecture.</p>
@@ -64,10 +64,10 @@
         <section id="section_N10027_N1001C_N10001" >
 
 
-            <title >Core HP Helion OpenStack Carrier Grade Capabilities</title>
+            <title >Core HPE Helion OpenStack Carrier Grade Capabilities</title>
 
 
-            <p >HP Helion OpenStack Carrier Grade leverages core Wind River virtualization and
+            <p >HPE Helion OpenStack Carrier Grade leverages core Wind River virtualization and
 
 
                 carrier-grade technologies, Intel DPDK high-performance packet processing, open
@@ -82,7 +82,7 @@
                 high-performance production systems can be deployed.</p>
 
 
-            <p >Core capabilities unique to HP Helion OpenStack Carrier Grade include:</p>
+            <p >Core capabilities unique to HPE Helion OpenStack Carrier Grade include:</p>
 
 
             <dl>
@@ -100,7 +100,7 @@
                     <dd >
 
 
-                        <p >HP Helion OpenStack Carrier Grade is designed to work with any Linux
+                        <p >HPE Helion OpenStack Carrier Grade is designed to work with any Linux
 
 
                             Distribution. Wind River Linux, Red Hat Enterprise Linux, CentOS, and
@@ -127,7 +127,7 @@
                     <dd >
 
 
-                        <p >HP Helion OpenStack Carrier Grade provides significantly improved network
+                        <p >HPE Helion OpenStack Carrier Grade provides significantly improved network
 
 
                             performance over the default open source OpenStack solution, up to 20
@@ -136,7 +136,7 @@
                             Gbps throughput through a guest application on a virtual machine.</p>
 
 
-                        <p >At the center of the HP Helion OpenStack Carrier Grade Networking is a
+                        <p >At the center of the HPE Helion OpenStack Carrier Grade Networking is a
 
 
                             DPDK-Accelerated Virtual L2 Switch (AVS), running on the compute node
@@ -181,7 +181,7 @@
                                     the Accelerated Virtual Port (AVP) drivers provided with the
 
 
-                                    HP Helion OpenStack Carrier Grade. AVP ports provide increased throughput over
+                                    HPE Helion OpenStack Carrier Grade. AVP ports provide increased throughput over
 
 
                                     plain virtio drivers when connected to the AVS.</p>
@@ -199,7 +199,7 @@
                                     can also be modified to make use of the Intel DPDK libraries and
 
 
-                                    the AVP poll-mode drivers provided by the HP Helion OpenStack Carrier Grade to
+                                    the AVP poll-mode drivers provided by the HPE Helion OpenStack Carrier Grade to
 
 
                                     connect with the AVS Switch.</p>
@@ -211,7 +211,7 @@
                         </ul>
 
 
-                        <p >In addition to AVS, HP Helion OpenStack Carrier Grade incorporates DPDK-Accelerated Neutron
+                        <p >In addition to AVS, HPE Helion OpenStack Carrier Grade incorporates DPDK-Accelerated Neutron
 
 
                             Virtual Router L3 Forwarding (AVR). Accelerated forwarding is used
@@ -238,7 +238,7 @@
                     <dd >
 
 
-                        <p >HP Helion OpenStack Carrier Grade provides a number of extensions to
+                        <p >HPE Helion OpenStack Carrier Grade provides a number of extensions to
 
 
                             OpenStack to deliver highly available hosting of virtual machines,
@@ -382,7 +382,7 @@
                                     <p >Additionally, modified guests can make use of
 
 
-                                        the HP Helion OpenStack Carrier Grade Guest Heartbeat Library to register
+                                        the HPE Helion OpenStack Carrier Grade Guest Heartbeat Library to register
 
 
                                         application-specific health check callbacks with the virtual
@@ -541,7 +541,7 @@
                                     <p >Live migration support for virtual machines
 
 
-                                        using the HP Helion OpenStack Carrier Grade high-performance networking
+                                        using the HPE Helion OpenStack Carrier Grade high-performance networking
 
 
                                         options.</p>
@@ -586,7 +586,7 @@
                                     <p >Optionally, guest applications can use the
 
 
-                                        HP Helion OpenStack Carrier Grade Guest Heartbeat Library to register to
+                                        HPE Helion OpenStack Carrier Grade Guest Heartbeat Library to register to
 
 
                                         receive process management requests such as shutdown,
@@ -643,7 +643,7 @@
                                 <dd >
 
 
-                                    <p >HP Helion OpenStack Carrier Grade HA
+                                    <p >HPE Helion OpenStack Carrier Grade HA
 
 
                                         middleware is protected by a process monitor that uses death
@@ -682,7 +682,7 @@
                     <dd >
 
 
-                        <p >HP Helion OpenStack Carrier Grade provides an improved execution
+                        <p >HPE Helion OpenStack Carrier Grade provides an improved execution
 
 
                             environment for virtual machines that contributes to their overall
@@ -784,7 +784,7 @@
                     <dd >
 
 
-                        <p >HP Helion OpenStack Carrier Grade guests can make use of VLANs to
+                        <p >HPE Helion OpenStack Carrier Grade guests can make use of VLANs to
 
 
                             encapsulate IP traffic from a single or multiple IP subnets on a virtual
@@ -799,7 +799,7 @@
                             virtualized environment.</p>
 
 
-                        <p >HP Helion OpenStack Carrier Grade tenants can define multiple IP subnets
+                        <p >HPE Helion OpenStack Carrier Grade tenants can define multiple IP subnets
 
 
                             on a single tenant network, get their traffic encapsulated on VLAN IDs
@@ -832,7 +832,7 @@
                     <dd >
 
 
-                        <p >HP Helion OpenStack Carrier Grade provides complete inventory management
+                        <p >HPE Helion OpenStack Carrier Grade provides complete inventory management
 
 
                             of hosts in the OpenStack cloud, allowing the system administrator to
@@ -1153,7 +1153,7 @@
                     <dd >
 
 
-                        <p >The Ceilometer service in the HP Helion OpenStack Carrier Grade features
+                        <p >The Ceilometer service in the HPE Helion OpenStack Carrier Grade features
 
 
                             improved performance, scalability, and usability. It has been extended
@@ -1183,7 +1183,7 @@
                     <dd >
 
 
-                        <p >HP Helion OpenStack Carrier Grade web administration interface is an
+                        <p >HPE Helion OpenStack Carrier Grade web administration interface is an
 
 
                             enhanced version of the Horizon web interface provided by OpenStack. The
@@ -1522,7 +1522,7 @@
                     <dd >
 
 
-                        <p >HP Helion OpenStack Carrier Grade integrates the
+                        <p >HPE Helion OpenStack Carrier Grade integrates the
 
 
                             following OpenStack services into its cloud solution: Nova, Neutron,
@@ -1546,7 +1546,7 @@
                     <dd >
 
 
-                        <p >HP Helion OpenStack Carrier Grade supports the following external REST
+                        <p >HPE Helion OpenStack Carrier Grade supports the following external REST
 
 
                             APIs through its OAM floating IP address:</p>
@@ -1576,7 +1576,7 @@
                                     <li >
 
 
-                                        <p >Block Storage API (with HP Helion OpenStack Carrier Grade
+                                        <p >Block Storage API (with HPE Helion OpenStack Carrier Grade
 
 
                                             extensions)</p>
@@ -1588,7 +1588,7 @@
                                     <li >
 
 
-                                        <p >Compute API  (with HP Helion OpenStack Carrier Grade
+                                        <p >Compute API  (with HPE Helion OpenStack Carrier Grade
 
 
                                             extensions)</p>
@@ -1618,7 +1618,7 @@
                                     <li >
 
 
-                                        <p >Networking API  (with HP Helion OpenStack Carrier Grade
+                                        <p >Networking API  (with HPE Helion OpenStack Carrier Grade
 
 
                                             extensions)</p>
@@ -1639,7 +1639,7 @@
                                     <li >
 
 
-                                        <p >Telemetry API (with HP Helion OpenStack Carrier Grade
+                                        <p >Telemetry API (with HPE Helion OpenStack Carrier Grade
 
 
                                             extensions)</p>
@@ -1657,7 +1657,7 @@
                             <li >
 
 
-                                <p >HP Helion OpenStack Carrier Grade REST APIs</p>
+                                <p >HPE Helion OpenStack Carrier Grade REST APIs</p>
 
 
                                 <ul id="ul_xgp_scv_ds">
@@ -1693,7 +1693,7 @@
                         <note id="note_N1053E_N104EC_N104E8_N104DF_N104D3_N10040_N1002C_N10024_N10001" >
 
 
-                            <p >HP Helion OpenStack Carrier Grade extensions use the OpenStack
+                            <p >HPE Helion OpenStack Carrier Grade extensions use the OpenStack
 
 
                                 Extension Mechanism to ensure compatibility with existing
@@ -1720,19 +1720,19 @@
                 <dlentry >
 
 
-                    <dt ><b >HP Helion OpenStack Carrier Grade SDK</b></dt>
+                    <dt ><b >HPE Helion OpenStack Carrier Grade SDK</b></dt>
 
 
                     <dd >
 
 
-                        <p >The HP Helion OpenStack Carrier Grade Software Development Kit (SDK) provides drivers,
+                        <p >The HPE Helion OpenStack Carrier Grade Software Development Kit (SDK) provides drivers,
 
 
                             daemons, API libraries, and configuration files that you can include in
 
 
-                            a guest image to leverage the extended capabilities of HP Helion OpenStack Carrier Grade.
+                            a guest image to leverage the extended capabilities of HPE Helion OpenStack Carrier Grade.
 
 
                             Available components include:</p>
@@ -1828,7 +1828,7 @@
                                 <p >OpenStack REST API Documentation—Documentation
 
 
-                                    for HP Helion OpenStack Carrier Grade REST APIs and HP Helion OpenStack Carrier Grade extensions to
+                                    for HPE Helion OpenStack Carrier Grade REST APIs and HPE Helion OpenStack Carrier Grade extensions to
 
 
                                     OpenStack REST APIs</p>
@@ -1852,7 +1852,7 @@
                         </ul>
 
 
-                        <p >For more information, see the <cite >HP Helion OpenStack Carrier Grade Software Development Kit</cite>.</p>
+                        <p >For more information, see the <cite >HPE Helion OpenStack Carrier Grade Software Development Kit</cite>.</p>
 
 
                     </dd>

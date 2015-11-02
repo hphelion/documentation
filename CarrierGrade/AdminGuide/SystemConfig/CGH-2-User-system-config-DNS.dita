@@ -2,13 +2,13 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic2139">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Changing the DNS Server
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Changing the DNS Server
     Configuration</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack"/>
-      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+      <othermeta name="product-version" content="HPE Helion Openstack"/>
+      <othermeta name="product-version" content="HPE Helion OpenStack Carrier Grade 2.0"/>
       <othermeta name="role" content="Systems Administrator"/>
       <othermeta name="role" content="Cloud Architect"/>
       <othermeta name="role" content="Storage Administrator"/>
@@ -18,22 +18,22 @@
       <othermeta name="role" content="Application Developer"/>
       <othermeta name="role" content="Network Engineer"/>
       <othermeta name="role" content="Paul F"/>
-      <othermeta name="product-version1" content="HP Helion Openstack"/>
-      <othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack"/>
+      <othermeta name="product-version2" content="HPE Helion OpenStack Carrier Grade 2.0"/>
     </metadata>
   </prolog>
   <body>
     <p><!--UNDER REVISION--><!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-controller-hostaggregate.md--><!--permalink: /helion/openstack/carrier/admin/host/management/hostaggregate/--></p>
     <!-- From the Titanium Server Admin Guide -->
-    <p>You can change the DNS servers defined for the HP Helion OpenStack Carrier Grade at any time
-      after installation. During software installation, the HP Helion OpenStack Carrier Grade is
+    <p>You can change the DNS servers defined for the HPE Helion OpenStack Carrier Grade at any time
+      after installation. During software installation, the HPE Helion OpenStack Carrier Grade is
       configured with up to two DNS server IP addresses. </p>
     <image href="../../../media/CGH-2-config-dns.png" width="600" id="image_lmy_2r2_jt"/>
     <p>
       <b>Note:</b> This feature applies only to servers in regionone.</p>
     <p>To change the DNS configuration:</p>
     <ol>
-      <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+      <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HPE Helion
           OpenStack Horizon Dashboard</xref>.</li>
       <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
           appropriate region and project</xref>.</li>
@@ -47,7 +47,7 @@
           Configuration out-of-date alarm is raised temporarily, and then cleared automatically by
           the system.. </p></li>
     </ol>
-    <p>For more information on system configuration, see the <i>HP Helion <tm tmtype="reg"
+    <p>For more information on system configuration, see the <i>HPE Helion <tm tmtype="reg"
           >OpenStack</tm> 2.0 Carrier Grade Beta: Administrator Guide</i>.</p>
   </body>
 </topic>

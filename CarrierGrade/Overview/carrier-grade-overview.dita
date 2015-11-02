@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4010">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Overview</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Overview</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
-    <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
     <othermeta name="role" content="Storage Administrator"/>
     <othermeta name="role" content="Storage Architect"/>
     <othermeta name="role" content="Michael B"/>
-    <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
   </metadata>
 </prolog>
 <body>
     <section>
       <!-- From QuickSpec Asawa, Manjari <manjari.asawa@hp.com> -->
-      <p><b>HP Helion OpenStack Carrier Grade </b> is a carrier grade OpenStack solution plus
+      <p><b>HPE Helion OpenStack Carrier Grade </b> is a carrier grade OpenStack solution plus
         compute and network functions virtualization (NFV) offering that enables CSPs to deploy
-        applications on open source software platforms. HP Helion OpenStack Carrier Grade is based
+        applications on open source software platforms. HPE Helion OpenStack Carrier Grade is based
         on OpenStack Kilo.</p>
       <p>Some key examples include the host operating system (for example, Linux), server
         virtualization (KVM), network virtualization (vSwitch and SDN controllers), an installer and
         cloud lifecycle management framework, fault and performance management, and
         high-availability framework for the OpenStack control plane and the NFVI layer.</p>
-      <p>HP Helion OpenStack Carrier Grade is based on HP Helion Openstack 1.1 but
+      <p>HPE Helion OpenStack Carrier Grade is based on HPE Helion Openstack 1.1 but
         with significantly enhanced and optimized functionality, availability, scale and performance
         to meet the needs of NFV cloud deployments.</p>
       <p>Helion OpenStack Carrier Grade includes following key components:</p>
@@ -42,7 +42,7 @@
         <li>Guest software development kit (SDK) for inclusion in the guest OS of the VNF for
           performance acceleration and improving the HA framework above and beyond standard
           VIMs</li>
-        <li>HP Helion Lifecycle Manager (HLM)—cloud installer and lifecycle manager</li>
+        <li>HPE Helion Lifecycle Manager (HLM)—cloud installer and lifecycle manager</li>
       </ul>
     </section>
     <section id="focus-areas-for-hp-helion-openstack-carrier-grade">
@@ -105,8 +105,8 @@
  
     <section>
       <title>Service Overview</title>
-      <p>HP Helion OpenStack Carrier Grade is comprised of a number of services, including several
-        OpenStack and HP Helion OpenStack services.</p>
+      <p>HPE Helion OpenStack Carrier Grade is comprised of a number of services, including several
+        OpenStack and HPE Helion OpenStack services.</p>
       <p>For more information, see <xref href="carrier-grade.services-overview.dita">Services
           Overview</xref>.</p>
     </section>
@@ -116,8 +116,8 @@
         as well as in telecom infrastructure that leverages Network Functions Virtualization (NFV).
         </p><p>In the NFV scenario, for example, the virtual switch (vSwitch) is responsible for
         switching network traffic between the core network and the virtualized applications or
-        Virtual Network Functions (VNFs) that are running in Virtual Machines (VMs). </p><b>HP DCN
-        Virtual Routing Switch (VRS)</b>. HP DCN VRS is..<p><b> Accelerated vSwitch (AVS)</b>. AVS
+        Virtual Network Functions (VNFs) that are running in Virtual Machines (VMs). </p><b>HPE DCN
+        Virtual Routing Switch (VRS)</b>. HPE DCN VRS is..<p><b> Accelerated vSwitch (AVS)</b>. AVS
         is integrated into the servers in the KVM region. AVS is an optimization of Open vSwitch
         (OVS) technology for NFV environments. Open vSwitch is a multilayer software switch licensed
         under the open source Apache 2 license.</p></section>
@@ -163,7 +163,7 @@
             migration.</li>
           <li>Has the same requirements regarding the VLAN configuration of the access
             switches.</li>
-          <li>Provides a similar configuration workflow when used on HP Helion OpenStack Carrier
+          <li>Provides a similar configuration workflow when used on HPE Helion OpenStack Carrier
             Grade.</li>
         </ul></p>
       <p>Instructions for configuring SR-IOV are available after for installation, see <xref
@@ -171,7 +171,7 @@
     </section>
     <section>
       <title>Backup and Restore</title>
-      <p>HP Helion OpenStack Carrier Grade includes a backup and restore application called Attis
+      <p>HPE Helion OpenStack Carrier Grade includes a backup and restore application called Attis
         which you can use to backup and restore essential system files and components of the non-KVM
         cloud. Attis is automatically installed on each of the controller nodes in the non-KVM
         region. For more information, see <xref
@@ -184,49 +184,49 @@
     </section>
     <section>
       <title>Centralized Logging</title>
-      <p>The HP Helion OpenStack Carrier Grade Centralized Logging feature collects logs on a
+      <p>The HPE Helion OpenStack Carrier Grade Centralized Logging feature collects logs on a
         central system, rather than leaving the logs scattered across the network. The administrator
         can use a single Kibana interface to view log information in charts, graphs, tables,
         histograms, and other forms. For more information, see <xref
           href="../AdminGuide/Logging/CHG-2-logging-overview.dita#topic5937">Centralized
           Logging</xref>.</p>
     </section>
-    <section><title>Installation Options</title>HP Helion OpenStack Carreir Grade has two baremetal
+    <section><title>Installation Options</title>HPE Helion OpenStack Carreir Grade has two baremetal
       installation options depending on your system configuration. It allows you to manage the KVM
       and VMware ESX<tm tmtype="reg"/> hypervisors and provision virtual machines.<p>You can find
         more information on the hypervisor options in the <xref
           href="../Installation/carrier-grade-technical-overview.dita#topic3485">Technical
           Overview</xref>.</p>
       <b>KVM Topology</b>
-      <p>If you install the KVM deployment, you can integrate either HP Storevirtual (VSA) or HP
+      <p>If you install the KVM deployment, you can integrate either HPE Storevirtual (VSA) or HP
         StoreServ (3PAR) storage in the KVM region.</p><ul id="ul_il4_qfp_rt">
-        <li>With HP StoreVirtual VSA storage <p>HP StoreVirtual VSA software is a Virtual Storage
+        <li>With HPE StoreVirtual VSA storage <p>HPE StoreVirtual VSA software is a Virtual Storage
             Appliance that provides the complete array functionality on top of a Linux KVM
             environment without external hardware. VSA eliminates the need for external shared
             storage required to implement Block Storage features.</p></li>
-        <li>With HP StoreServ (3PAR) storage <p>HP 3PAR StoreServ is a storage array that supports
+        <li>With HPE StoreServ (3PAR) storage <p>HPE 3PAR StoreServ is a storage array that supports
             Fibre Channel (FC) as well as iSCSI protocol.</p></li>
-      </ul><p>You must install 3PAR or VSA before starting the HP Helion OpenStack installation and
-        are independent of HP Helion OpenStack Carrier Grade. </p>
+      </ul><p>You must install 3PAR or VSA before starting the HPE Helion OpenStack installation and
+        are independent of HPE Helion OpenStack Carrier Grade. </p>
       <b>KVM with DCN Topology</b>
-      <p>The KVM topology can be optimized using HP DCN Virtual Routing Switch. </p><p>Distributed
+      <p>The KVM topology can be optimized using HPE DCN Virtual Routing Switch. </p><p>Distributed
         Cloud Networking (DCN) is a Software-Defined Networking (SDN) solution that provides data
         center (DC) network virtualization and automatically establishes connectivity between
         compute resources upon their creation.</p><b>KVM + ESX Topology</b>The ESXi/DCN integration
       enables data-center-to-data-center communications through DCN, which connects to the KVM
-      region through a gateway (VRS-G). <p>HP Helion OpenStack supports VMWare ESX hypervisor. With
+      region through a gateway (VRS-G). <p>HPE Helion OpenStack supports VMWare ESX hypervisor. With
         our ESX integration, you can provision and manage an overcloud ESX cluster. VMWare vCenter
         Compute driver is used as a part of ESX integration. The VMware vCenter driver connects to
         ESX clusters in a vCenter through Compute proxy nodes.</p><p>Virtual networking between HP
-        Helion Carrier Grade and the ESX servers is handled by HP Distributed Cloud Networking (DCN)
+        Helion Carrier Grade and the ESX servers is handled by HPE Distributed Cloud Networking (DCN)
         is a software-defined networking (SDN) solution that enhances data center (DC) network
         virtualization by automatically establishing connectivity between compute resources upon
         their creation. </p><p>The ESX integration uses the OVSvApp application to connect the
         vCenter networking to the Network Operations controller to manage workload networks.
-        </p><p>You can also integrate HP Storevirtual (VSA) or HP StoreServ (3PAR) storage in the
-        KVM region. </p><p>You must install ESX, 3PAR or VSA before starting the HP Helion OpenStack
-        installation and are independent of HP Helion OpenStack Carrier Grade. </p><p><b>Ironic
-          Baremetal Region</b></p><p>HP Helion OpenStack Carrier Grade leverages the OpenStack
+        </p><p>You can also integrate HPE Storevirtual (VSA) or HPE StoreServ (3PAR) storage in the
+        KVM region. </p><p>You must install ESX, 3PAR or VSA before starting the HPE Helion OpenStack
+        installation and are independent of HPE Helion OpenStack Carrier Grade. </p><p><b>Ironic
+          Baremetal Region</b></p><p>HPE Helion OpenStack Carrier Grade leverages the OpenStack
         Ironic service, which aims to provision bare metal machines instead of virtual machines. For
         more information, see <xref
           href="../ServicesOverviews/carrier-grade-services-ironic-overview.dita#topic1235">Ironic
@@ -236,9 +236,9 @@
   
      
  <section id="distributed-cloud-networking-dcn">
-<p>HP Helion OpenStack offers many services based on the different OpenStack projects to provide the
+<p>HPE Helion OpenStack offers many services based on the different OpenStack projects to provide the
         functionality you need. Visit the <xref
-          href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita">HP Helion
+          href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita">HPE Helion
           OpenStack Services Overview page</xref> for a complete list of services.</p>
 <p>
   <xref type="section" href="#topic4010"> Return to Top </xref>

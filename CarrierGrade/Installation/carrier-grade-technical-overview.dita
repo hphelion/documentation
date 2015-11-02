@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3485">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Technical Overview</title>
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Technical Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-  <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+  <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B"/>
-  <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+  <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
 </metadata>
 </prolog>
 <body>
     <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-technical-overview.md--><!--permalink: /helion/openstack/carrier/technical-overview/--></p>
-    <p>This page introduces you to the technical aspects of the HP Helion OpenStack Carrier Grade
+    <p>This page introduces you to the technical aspects of the HPE Helion OpenStack Carrier Grade
       environment that you will be installing.</p>
     <ul>
       <li>
-        <xref type="section" href="#topic3485/Helion-services">HP Helion OpenStack services</xref>
+        <xref type="section" href="#topic3485/Helion-services">HPE Helion OpenStack services</xref>
       </li>
       <li>
         <xref type="section" href="#topic3485/deploy-arch">Deployment architecture</xref>
@@ -28,14 +28,14 @@
       <li><xref href="#topic3485/usb-interface" format="dita"/></li>
       <li><xref href="#topic3485/net" format="dita"/></li>
     </ul>
-    <p>For more information on the HP Helion OpenStack Carrier Grade environment, also see the
+    <p>For more information on the HPE Helion OpenStack Carrier Grade environment, also see the
       Reference Logical Architecture section in the <xref
         href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf"
-        format="pdf" scope="external">HP Helion OpenStack Carrier Grade 2.0 Beta: Administrator
+        format="pdf" scope="external">HPE Helion OpenStack Carrier Grade 2.0 Beta: Administrator
         Guide</xref>.</p>
     <section id="Helion-services">
       <title>Services overview</title>
-      <p>HP Helion OpenStack Carrier Grade is comprised of several integrated OpenStack services.
+      <p>HPE Helion OpenStack Carrier Grade is comprised of several integrated OpenStack services.
         Each service works through an API (application programming interface) that allows services
         to work together and allows users to interact with the services. For a complete description
         of these services, see the <xref
@@ -111,7 +111,7 @@
     <section id="board-management-modules">
       <title>Board Management Modules</title>
       <p>For out-of-band reset and power-on/power-off capabilities, DL360 or DL380 servers equipped
-        with HP iLO (Integrated Lights Out) board management modules are required. Each module must
+        with HPE iLO (Integrated Lights Out) board management modules are required. Each module must
         be connected using port-based VLAN to a switch that has access to the internal management
         network.</p>
     </section>
@@ -199,7 +199,7 @@ Backup and restore scripts and procedures are provided for the seed VM, underclo
 
 Backup and Restore of VM instances/snapshots and volumes/snapshots for workloads in the cloud is supported using the Object Storage service.
 
-For more information see [HP Helion OpenStack Back Up and Restore]
+For more information see [HPE Helion OpenStack Back Up and Restore]
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top </a>
 -->

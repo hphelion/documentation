@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Applying the Horizon
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Applying the Horizon
     Patch</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
-    <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
     <othermeta name="role" content="Storage Administrator"/>
     <othermeta name="role" content="Storage Architect"/>
     <othermeta name="role" content="Michael B"/>
-    <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
   </metadata>
 </prolog>
 <body>
     <p>This patch is intended to update the Horizon package for windriver/rebranding changes. </p>
-    <p>After HP Helion OpenStack Carrier Grade is fully deployed, and is up and running, follow
+    <p>After HPE Helion OpenStack Carrier Grade is fully deployed, and is up and running, follow
       these steps to update the new Horizon package on your cloud: <ol id="ol_cfx_jck_nt">
         <li>Login to your HLM node as root: </li>
         <li>Delete the existing horizon debian from the CG repo<p>

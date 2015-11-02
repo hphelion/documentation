@@ -9,7 +9,7 @@
     id="jow1432757989702" xml:lang="en-us">
 
 
-    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Selecting a Region and
+    <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Selecting a Region and
         Project</title>
 
 
@@ -17,7 +17,7 @@
 
 
         <section>
-            <p>When working in HP Helion OpenStack Carrier Grade, you can work in one of two regions: </p>
+            <p>When working in HPE Helion OpenStack Carrier Grade, you can work in one of two regions: </p>
             <ul>
                 <li>the non-KVM region, also called <codeph>memphis</codeph> or
                         <codeph>denver</codeph> (based on the <xref
