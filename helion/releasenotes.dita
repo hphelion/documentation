@@ -165,9 +165,7 @@
         Horizon, Keystone, Cinder, Heat, OpsConsole, DNSaaS, LBaaS, FWaaS, and Trove.</p><p>Learn
         more about Centralized Logging here: <xref href="operations/centralized_logging.dita"
           >Centralized Logging Overview</xref></p>
-    </section>
-    <section id="CoreFeatures">
-      <title>Features in HPE Helion OpenStack 2.0</title>
+      <p><b>Core Features in HPE Helion OpenStack 2.0</b></p>
       <!-- 
         
         Core and Non-core descriptions provided by Carolyn Adler (cadler@hpe.com) in Legal.
