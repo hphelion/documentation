@@ -319,7 +319,7 @@ region_name = Memphis</codeblock>
         available at 15.242.209.8 E:\sFTP\cg-hos-2-0-builds\patches\build022\Infoblox\ patch -p1
         &lt; path_to_patch_file ex: patch -p1 &lt; /root/hp-poc-20151016-full.patch Make sure that
         no Failure/Error messaages are displayed, while running the last command.</li>
-      <li>Add the following lines to MANIFEST.in </li>
+      <li>Add the following lines to MANIFEST.in:</li>
     </ol>
     <codeblock>include neutron/db/migration/alembic_migrations/versions/172ace2194db_infoblox_net_view_to_network_id.py 
 include neutron/db/migration/alembic_migrations/versions/33150f5993b6_infoblox_management_net_handling.py 

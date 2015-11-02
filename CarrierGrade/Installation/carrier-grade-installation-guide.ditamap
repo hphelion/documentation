@@ -71,7 +71,9 @@
             <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
         </topicref>
         <topicref href="carrier-grade-install-baremetal-cloud.dita"
-            navtitle="Deploying the Baremetal Region" locktitle="yes"/>
+            navtitle="Deploying the Baremetal Region" locktitle="yes">
+            <topicref href="CGH-2-install-infoblox.dita" toc="no"/>
+        </topicref>
         <topicref href="carrier-grade-install-post.dita" navtitle="Post-Installation Tasks"
             locktitle="yes">
             <topicref href="carrier-grade-install-ldap-verify.dita"

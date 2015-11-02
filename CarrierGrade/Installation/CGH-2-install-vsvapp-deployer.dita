@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta:
+        Deploying a vApp for DCN/ESX Integration</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carrier Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body><p><i>Return to the Installing the <xref
+                    href="carrier-grade-install-kvm-esx.dita#topic10581/vapp">KVM + ESX
+                    Deployment</xref>.</i></p><p>This document describes how to install the HP
+            Distributed Cloud Networking (DCN) vSphere Solution required to properly integrate the
+            HP Distributed Cloud Networking and VMWare ESX components. </p><p>The HP Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires a VMware vApp, called
+            the VRSvApp, to integrate ESX and HP DCN. One VRSvApp is required for each ESX host.
+            There is a 1-to-1 mapping between each VRSvApp and its ESX host. The VRSvApp
+            installation package is contained in the packages you <xref
+                href="carrier-grade-install-prereqs.dita#topic7148/getinstall">downloaded in
+                the Prerequisites</xref>.</p><p>The DCN vSphere
+            Solution addresses this integration. The installation involves deploying a stand-alone
+            VM, installing the new vCenter Integration Node (called the vCenter Deployment Toolbox).
+            The VRSvApp can be deployed automatically on each ESX node in a cluster.
+            <!--From HP DCN installation guide.--></p>
+        <p><image href="../../media/CGH-2-install-vsdvm-arch.png" width="600" id="image_cjh_y45_tt"
+            /></p>
+      <p>After installing the vCenter Integration Node
+        VM  and vCenter Deployment Toolbox, you can access the toolbox by pointing a browser to
+            <codeph>https://&lt;VSD_IP&gt;:8443/vcenter/</codeph>.  Only the
+            <codeph>CSPRoot</codeph> user can log into the vCenter deployment toolbox.</p>
+        <p>The VRSvApp installation involves the following tasks:</p>
+        <p>
+            <ul id="ul_a4b_qfp_wt">
+                <li>Configuring VRSvApp Deployer</li>
+                <li>Configuring ToolBox VM</li>
+                <li>Configuring ESX details into VRSvApp Deployer</li>
+                <li>Configuring the Nuage VRS Agent Manager in vCenter Client and deploy
+                    VRSvApp</li>
+            </ul>
+        </p>
+          <section>
+            <title>Pre-requisites: </title>
+            <!--From Nayana et al. playbook-->
+            <p>Before installing the VRSvApp, make sure the following conditions are met:</p>
+            <ul id="ul_ihc_tf4_rt">
+                <li><b>Networks:</b><ul id="ul_h2r_qf4_rt">
+                        <li>The system hosting the vCenter Integration Node must have one NIC in the
+                            Management network.</li>
+                        <li>DHCP server should have one network interface in the DVRS Datapath
+                            network (TUL Network)</li>
+                        <li>DHCP server requires atleast 20 TUL IP addresses for the DHCP
+                            scope.</li>
+                    </ul></li>
+            </ul>
+        </section>
+        <section>
+            <title>Configuring VRSvApp Deployer</title>
+            <p>The <xref href="carrier-grade-install-vsd-vm.dita#topic7646">HP DCN Virtualized
+                    Services Directory (VSD)</xref> includes a VRSvApp deployer for ESX that is
+                capable of deploying a VRSvApp for each of the ESXi hosts in each of the ESX
+                clusters that you are managing as computes.</p>
+        </section><section><title>Creating a Stand-Alone Virtual Machine for the vCenter Deployment Toolbox</title>The
+            HP Helion OpenStack Carrier Grade installation requires that you install a dedicated
+            virtual machine on an ESX server for the HP DCN vSphere Solution. This VM is called the
+            vCenter Integration Node, and includes the vCenter Deployment Toolbox. <p>The toolbox is
+                a VM that hosts the VRSvApp images and also can act a DHCP server for providing TUL
+                IPs to the VRSvApp VMs. A VRSvApp VM is required on each of the ESXi Hosts that will
+                be part of our Cloud Compute Plane</p><p>The vCenter Integration Node VM does not
+                require a VSD license and does not offer VSD functionality. </p><p>To deploy the
+                vCenter Integration Node VM:</p><ol id="ol_wtp_x4h_tt">
+                <li>Launch the vCenter client, at <codeph>https://&lt;vcenter
+                        IP&gt;:9443/vsphere-client</codeph>. The IP address is the CLM IP of your
+                    vCenter.</li>
+                <li>Copy following files you downloaded in Prerequisites to
+                        <codeph>/var/www/html</codeph> location in the Toolbox VM <ul
+                        id="ul_vhj_xhp_wt">
+                        <li><codeph>VRS_3.2.4-135_10062015.ovf</codeph></li>
+                        <li><codeph>VRS_3.2.4-135_10062015-disk1.vmdk</codeph></li>
+                    </ul></li>
+                <li>Eecute the following command to grant full permission to the OVF and VMDK
+                    files:<codeblock>cd /var/www/html
+chmod 777 *</codeblock></li>
+                <li>Restart the HTTPD service on toolbox<codeblock/></li>
+                <li>Edit the <codeph>/etc/dhcp/dhcpd.conf</codeph> file:<ol id="ol_ktg_zjp_wt">
+                        <li>Assign asubnet and IP adddress range from the TUL
+                            network:<codeblock>#configuring subnet and range on TUL NETWORK
+subnet 10.20.94.0 netmask 255.255.255.0 {
+    range 10.20.94.225 10.20.94.250;
+    option broadcast-address 10.20.94.255;</codeblock></li>
+                        <li>Update the option router and provide TUL subnet gateway
+                            IP:<codeblock>####option router is the IP of the standalone VSD/deployment toolbox###
+  option routers 10.200.184.1;</codeblock></li>
+                    </ol></li>
+                <li>Restart the DHCP service:<codeblock>service dhcpd restart</codeblock></li>
+                <li>Reboot the VM.</li>
+                <li>Confirm that the toolbox is deployed correctly:<ol id="ol_qbl_tkp_wt">
+                        <li>From the browser on jumpserver, browse to <codeph>http://&lt;TULIP of
+                                Toolbox>/&lt;name of ovf file></codeph>.</li>
+                        <li>This file should get downloaded</li>
+                    </ol></li>
+            </ol></section>
+        <section>
+            <title>Configure ESX details into the VRSvApp Deployer</title>
+            <p>Before starting, obtain the following details from your ESX environment:<ul
+                    id="ul_my5_hlp_wt">
+                    <li>ESX vCenter IP and credentials</li>
+                    <li>ESX Data Center name</li>
+                    <li>ESX Cluster name</li>
+                    <li>ESX Hosts and the network names they are connected to</li>
+                </ul></p>
+            
+                <ol id="ol_lz5_slp_wt">
+                    <li>Log into the vCenter Deployment Toolbox using
+                            <codeph>https://&lt;VSD_IP>:8443/vcenter/</codeph> to configure these
+                        settings. The default credentials are <codeph>csproot/csproot</codeph>.
+                
+            <p><image href="../../media/CGH-2-install-vsdvm3.png" width="600" id="image_tlj_slp_wt"
+            /></p></li>
+                <li>Create a new vCenter in the VRS Deployer using your ESX vCenter details. Provide
+                    a name, description, your vCenter IP, vCenter user, vCenter password, and path
+                    to the OVF file.<p><image href="../../media/CGH-2-install-vsdvm-new-vcenter.png"
+                            id="image_uxp_4mp_wt" width="300"/></p></li>
+                <li>Add the Data Center to that vCenter you created:<p><image
+                            href="../../media/CGH-2-install-vsdvm-add-dc.png" id="image_xk5_fnp_wt"
+                            width="400"/></p></li>
+                <li>Add hosts to the Cluster you created. Provide a name, description, the ESX Host
+                    IP, vCenter user, vCenter password, select the Management, Data amd VM Network
+                    names. Select DVRS Datapath for last input.<p><image
+                            href="../../media/CGH-2-install-vsdvm-add-hyper.png"
+                            id="image_xy2_znp_wt" width="300"/></p><p>After adding all the hosts
+                        vCenter appears similar to the following:</p><p><image
+                            href="../../media/CGH-2-install-vsdvm-UI.png" id="image_nq1_l4p_wt"
+                            width="500"/></p></li>
+                <li>Click on the cylinder icon and add the Data(TUL) and Management (CLM) Network
+                    Info (Pay close attention to screen shot below. VSC Controllers are the
+                    active/stand-by VSC TUL IPs).<p><image
+                            href="../../media/CGH-2-install-vsdvm-add-network.png" width="600"
+                            id="image_vyd_dpp_wt"/></p></li>
+                <li>Assign CLM IP and TUL IP for each of hosts in ESX Cluster in the VRS Deployer
+                        UI.<p> </p></li>
+                </ol>
+        </section>
+        <section>
+            <title>Configure the Nuage VRS Agent Manager in vCenter Client and Deploy
+                VRSvApp</title>
+            <p>
+                <ol id="ol_jyz_5pp_wt">
+                    <li>Launch the ESX vCenter Web Client, at <codeph>https://&lt;vcenter
+                            IP&gt;:9443/</codeph>. The IP address is the CLM IP of your
+                        vCenter.</li>
+                    <li>Select <b>Hosts and Clusters</b>.<p><image
+                                href="../../media/CGH-2-install-vsdvm-vsphere-hosts.png" width="400"
+                                id="image_tbr_gqp_wt"/></p></li>
+                    <li>Select Manage tab, in Agent VM Settings select a Data Store for each
+                                host.<p><image
+                                href="../../media/CGH-2-install-vsdvm-vsphere-agent-vm.png"
+                                width="400" id="image_tcs_wsp_wt"/></p></li>
+                    <li>Click home icon on top and now select vCenter Solutions Manager and go to
+                        the Nuage VRS Agent Manager and add the cluster from LHS to RHS and
+                        update.This action triggers the deploy of VRSvApps for each of the ESXi
+                                hosts:<p><image
+                                href="../../media/CGH-2-install-vsdvm-vsphere-deploy.png"
+                                width="400" id="image_tzt_gtp_wt"/></p></li>
+                    <li>You can see the progress in vSphere Client.<p><image
+                                href="../../media/CGH-2-install-vsdvm-vsphere-progress.png"
+                                width="600" id="image_hpb_mtp_wt"/></p></li>
+                </ol>
+            </p>
+        </section><p><i>Return to the Installing the <xref
+                    href="carrier-grade-install-kvm-esx.dita#topic10581/vapp">KVM + ESX
+                    Deployment</xref>.</i></p></body>
+</topic>
