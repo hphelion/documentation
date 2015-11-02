@@ -200,8 +200,8 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
             StoreVirtual Centralized Management Console (CMC) GUI on your local machine:<codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock>
             <p>By default, the CMC GUI is configured to discover the StoreVirtual nodes in the
               subnet in which it is installed. This discovery functionality of VSA nodes using the
-              CMC controller node is not recommended in HPE Helion OpenStack. Instead, it is
-              recommended that you manually add each VSA node.</p></li>
+              CMC controller node is not supported in HPE Helion OpenStack. Instead, you must
+              manually add each VSA node, as shown below.</p></li>
           <li>In the CMC GUI, click the <b>Find</b> menu and then select the <b>Find Systems</b>
             options. <p><image href="../../media/vsa/cmc1.png"/></p>
           </li>
@@ -256,9 +256,8 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
     </section>
     <section id="config_backend">
       <title>Configure VSA as the Backend</title>
-      <p>You will use the information you input to the CMC utility as well as the volume type you
-        created in the previous step to configure your Cinder backend to use your VSA
-        environment.</p>
+      <p>You will use the information you input to the CMC utility to configure your Cinder backend
+        to use your VSA environment.</p>
       <p>To update your Cinder configuration to add VSA storage you must modify the
           <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file on your
         lifecycle-manager node as follows:</p>
@@ -408,8 +407,8 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
     </section>
     <section id="deploy-vsa-with-ao-without-ao">
       <title>VSA with AO or without AO</title>
-      <p>VSA is deployed with adaptive optimization (AO) or without AO. AO allows built-in storage
-        tiering for VSA. While deploying VSA with or without AO you must ensure to use the
+      <p>VSA may be deployed with adaptive optimization (AO) or without AO. AO allows built-in
+        storage tiering for VSA. While deploying VSA with or without AO you must ensure to use the
         appropriate disk input model.</p>
       <p>If you are using VSA with AO, you will have an extra device group section where the usage
         is identified as adaptive-optimization as described in the following example:
@@ -454,9 +453,9 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
     <section id="create_volumetype">
       <title>Create a Volume Type for your Volumes</title>
       <p>The default volume type created by VSA will be thin provisioned and will have no fault
-        tolerance. You should configure cinder to fully provision volumes, and you may want to
-        configure fault tolerance. Follow the instructions below to create a new volume type which
-        is fully provisioned and fault tolerant:</p>
+        tolerance (RAID 0). You should configure cinder to fully provision volumes, and you may want
+        to configure fault tolerance. Follow the instructions below to create a new volume type
+        which is fully provisioned and fault tolerant:</p>
       <p id="creating_volumetype">Perform the following steps to create a volume type using the
         Horizon GUI: <ol id="ol_k5n_5xv_5t">
           <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
