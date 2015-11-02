@@ -1399,8 +1399,7 @@
       <!--set to toc=no later-->
       <!--set to toc=no later-->
       <!--set to toc=no later  removed site index. not needed-->
-      <topicref href="commercial/GA1/1.1commercial.glossary.dita" navtitle="Glossary"
-        locktitle="yes" toc="no"/>
+  
       <!-- Files in MD repo Under Revision not in DITA -->
       <!-- 1.0 -->
     </topicref>
@@ -1833,7 +1832,7 @@
         <topicref href="commercial/GA1/1.0commercial.eula.dita"/>
         <topicref href="commercial/GA1/1.03rd-party-license-agreements.dita"/>
       </topichead>
-      <topicref href="commercial/GA1/1.0commercial.glossary.dita"/>
+     
     </topicref>
     <topichead navtitle="Archive">
       <topicref href="community/community.index.dita"
