@@ -301,6 +301,68 @@
           </tbody>
         </tgroup>
       </table>
+      
+    </section>
+    <section id="swift">
+      <title>Storage (Swift)</title>
+      <table>
+        <tgroup cols="6">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <colspec colname="col3"/>
+          <colspec colname="col4"/>
+          <colspec colname="col5"/>
+          <colspec colname="col6"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Name</b>
+              </entry>
+              <entry>
+                <b>Type</b>
+              </entry>
+              <entry>
+                <b>Unit</b>
+              </entry>
+              <entry>
+                <b>Resource</b>
+              </entry>
+              <entry>
+                <b>Origin</b>
+              </entry>
+              <entry>
+                <b>Note</b>
+              </entry>
+            </row>
+            <row>
+              <entry>storage.objects</entry>
+              <entry>Gauge</entry>
+              <entry>Object</entry>
+              <entry>storage ID</entry>
+              <entry>pollster</entry>
+              <entry>Number of objects</entry>
+            </row>
+            <row>
+              <entry>storage.objects.size</entry>
+              <entry>Gauge</entry>
+              <entry>B</entry>
+              <entry>storage ID</entry>
+              <entry>pollster</entry>
+              <entry>Total size of stored objects</entry>
+            </row>
+            <row>
+              <entry>storage.objects.containers</entry>
+              <entry>Gauge</entry>
+              <entry>Container</entry>
+              <entry>storage ID</entry>
+              <entry>pollster</entry>
+              <entry>Number of containers</entry>
+            </row>
+            
+          </tbody>
+        </tgroup>
+      </table>
+       
     </section>
   </body>
 </topic>
