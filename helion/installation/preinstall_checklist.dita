@@ -8,8 +8,7 @@
     <p>This checklist is focused on the Entry-scale KVM with VSA model but you can alter it to fit
       the example configuration you chose for your cloud.</p>
     <section id="bios"><title>BIOS and iLO Settings</title>
-      <p>Ensure that the following BIOS and iLO settings are applied to each baremetal server, with
-        the exception of the Deployer.</p>
+      <p>Ensure that the following BIOS and iLO settings are applied to each baremetal server:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="table_ckx_rd4_ht">
           <tgroup cols="2">
