@@ -42,13 +42,7 @@
             </row>
           </thead>
           <tbody>
-            <row>
-              <entry>Freezer Web UI</entry>
-              <entry>Web interface that interacts with the Freezer API to configure and change
-                settings. It provides most of the features from the freezerc CLI (command line
-                interface), advanced scheduler settings as multi-node backup synchronization,
-                metrics, and reporting.</entry>
-            </row>
+       
             <row>
               <entry>Freezer Scheduler</entry>
               <entry>A client side component running on the node from where the data backup is
@@ -92,7 +86,7 @@
             </row>
             <row>
               <entry>Freezer API </entry>
-              <entry>Stores and provides metadata to the Freezer Web UI and to the Freezer
+              <entry>Stores and provides metadata to the <!-- Freezer Web UI and to the--> Freezer
                 Scheduler. Also stores session information for multi node backup synchronization.
                 Workload data is not stored in the API . </entry>
             </row>
