@@ -6,10 +6,13 @@
     <section id="prerequisites"> <title>General Prerequisites</title>
      <note type="important"><ul>
         <li>
-          <p>The Cinder block storage service must be configured with either <xref href="../../../commercial/GA1/1.1commercial-vsa-overview.dita" >VSA</xref> or <xref href="../../../commercial/GA1/1.1commercial.install-3par.dita" >3Par</xref>.</p>
-        </li>
-        <li>
-          <p>If you installed HPE Helion OpenStack with <b>KVM</b> hypervisor support, configure HPE StoreVirtual VSA for Block Storage or configure HPE 3PAR StoreServ Storage.</p>
+          <p>The Cinder block storage backend must be configured to use <xref
+                href="http://docs.hpcloud.com/#helion/installation/configure_vsa.html" format="html"
+                scope="external">VSA</xref>, <xref
+                href="http://docs.hpcloud.com/#helion/installation/configure_3par.html"
+                format="html" scope="external">3Par</xref>, or <xref
+                href="http://docs.hpcloud.com/#helion/installation/configure_ceph.html"
+                format="html" scope="external">Ceph</xref>.</p>
         </li>
         <li>
           <p>The system running the installer needs to have Python 2.7. Most modern operating
@@ -19,9 +22,9 @@
         </li>
         <li>
           <p>If you did not <xref
-                href="http://docs-staging.hpcloud.com/hos2.0ga/#helion/administration/create_hdp_servicenet.html"
-                format="html" scope="external">create the Service Network</xref> after installing HP
-              Helion <tm tmtype="reg">OpenStack</tm>, you <b>must</b> do so now.</p>
+                href="http://docs.hpcloud.com/#helion/administration/create_hdp_servicenet.html"
+                format="html" scope="external">create the Service Network </xref>immediately after
+              installing HP Helion <tm tmtype="reg">OpenStack</tm>, you <b>must</b> do so now.</p>
         </li>
        <li>
          <p>For Windows and .NET support, due to licensing requirements, you must create and deploy your own Windows and SQL Server images. This requires the following:</p>

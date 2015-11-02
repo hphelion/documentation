@@ -10,8 +10,8 @@
 <p>In order to download and deploy these sample applications, you must have the necessary framework installed and configured.</p>
 <ul>
 <li>HPE Helion <tm tmtype="reg">OpenStack</tm>
-          <xref href="../../commercial/GA1/1.1commercial.index.dita">cloud [version 1.1.1]
-            deployed</xref>.</li>
+          <xref href="http://docs.hpcloud.com/#helion/installation/installation_overview.html"
+            format="html" scope="external">cloud deployed</xref>.</li>
 <li>Application Lifecycle Service <xref href="devplatform.deploy-ALS.dita">Cluster</xref> available
           with MySQL <!--and RabbitMQ -->enabled. <ul>
             <li>You can also quickly set up a cluster in the free and publicly available Helion
@@ -40,7 +40,7 @@
             Databases</xref>
           <!--A BR tag was used here in the original source.--> Create a database and execute a
           query against it. </li>
-<li><!-- <xref href="workbook/messaging/messaging.java.dita">Working with Messaging</xref>  Enter, send, and display a brief message.--></li>
+<li><xref href="workbook/messaging/messaging.java.dita">Working with Messaging</xref>  Enter, send, and display a brief message.</li>
 </ol>
 <p>More Helion <xref href="helion/user/deploy/languages/java.dita" >Java</xref> references.</p>
 </section>

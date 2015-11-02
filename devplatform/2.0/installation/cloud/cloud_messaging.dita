@@ -8,7 +8,7 @@
   mycloud:
   ... 
     messaging:   
-      deployer_key: msgaas
+      deployer_key: 
       deployer_flavor: 4
       deployer_name: msgaas_deployer_01   
       deployer_security_group: default
@@ -36,7 +36,7 @@
       user_domain_name: default              </codeblock><dl>
         <dlentry>
           <dt>deployer_key</dt>
-          <dd>The keypair to use for the deployer instance. Default value: default</dd>
+          <dd>The keypair to use to SSH into the deployer instance.</dd>
         </dlentry>
         <dlentry>
           <dt>deployer_flavor</dt>
@@ -65,7 +65,7 @@
           <dt>deployer_uri</dt>
           <dd>The location where the download the deployer tgz can be found. Will be set by the CLI
             based on information retrieved from Swift.</dd>
-        </dlentry>
+        </dlentry><dlentry><dt>deployer_cloud:</dt><dd>Value must be "msgaas"</dd></dlentry>
         <dlentry>
           <dt>deployer_net_id</dt>
           <dd>Network id for the deployer instance. Default value: The id of the network named SVC.
@@ -96,31 +96,53 @@
         <dlentry>
           <dt>deployer_cname</dt>
           <dd>CN name used to generate the certificate file.</dd>
-        </dlentry><dlentry>
-          <dt>
-            image_api_version: '1'
-          </dt>
-          <dd></dd>
-        </dlentry><dlentry>
-          <dt>            identity_api_version: '2'
-          </dt>
-          <dd></dd>
-        </dlentry><dlentry>
-          <dt>region_name: region1
-          </dt>
-          <dd></dd>
-        </dlentry><dlentry>
-          <dt>insecure: True</dt><dd></dd></dlentry>
-        
-        <dlentry><dt>auth_url</dt><dd>This URL can be found in Horizon at: Project Compute &gt; Access &amp; Security &gt; API Access or  
-          Copy the Service Endpoint URL for the Identity Service. Note that this must be
-          <codeph>https</codeph>, not simply <codeph>http</codeph>.</dd></dlentry>
-        <dlentry><dt>project_name</dt><dd>The Name of the admin project in Horizon. </dd></dlentry>
-        <dlentry><dt>username</dt><dd>The Username of an account with installation privileges (administrator role). </dd></dlentry>
-        <dlentry><dt>password</dt><dd>The Password for the same account with installation privileges (administrator role).</dd> </dlentry>
-        <dlentry><dt>project_domain_name: default</dt> <dd></dd></dlentry>
-        <dlentry><dt>user_domain_name: default </dt>
-          <dd></dd>
+        </dlentry>
+        <dlentry>
+          <dt> image_api_version: '1' </dt>
+          <dd>The default value is 1. </dd>
+        </dlentry>
+        <dlentry>
+          <dt> identity_api_version: '2' </dt>
+          <dd>The default value is 2.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>region_name: region1 </dt>
+          <dd>The default value is region1</dd>
+        </dlentry>
+        <dlentry>
+          <dt>insecure: True</dt>
+          <dd>This flag will automatically accept an internally signed cert when connecting to the
+            HPE Helion OpenStack services without prompting the user.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>auth_url</dt>
+          <dd>This URL can be found in Horizon at: Project Compute &gt; Access &amp; Security &gt;
+            API Access or Copy the Service Endpoint URL for the Identity Service. Note that this
+            must be <codeph>https</codeph>, not simply <codeph>http</codeph>. This must be the
+              <b>internal</b>, not the <i>admin</i> or <i>public</i> endpoints.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>project_name</dt>
+          <dd>This project will be created by the HDPI service installation process. This project
+            must NOT exist prior to installing the Messaging Service.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>username</dt>
+          <dd>This user will be created by the HDPI service installation process. This project must
+            NOT exist prior to installing the Messaging Service.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>password</dt>
+          <dd>The Password for the same account with installation privileges (administrator
+            role).</dd>
+        </dlentry>
+        <dlentry>
+          <dt>project_domain_name: default</dt>
+          <dd>Unless changes are required for your environment, accept the default value.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>user_domain_name: default </dt>
+          <dd>Unless changes are required for your environment, accept the default value.</dd>
         </dlentry>
       </dl>
     </section>
