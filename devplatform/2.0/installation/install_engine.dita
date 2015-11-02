@@ -114,7 +114,7 @@ stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -vvv -i hosts/loc
  
 [ OUTPUT TRIMMED ]</codeblock></li>
             <li>Run the Config Processor Play
-              <codeblock>stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -vvv -i hosts/localhost config-processor-run.yml
+              <codeblock>stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -vvv -i hosts/localhost config-processor-run.yml -e encrypt="" -e rekey=""
  
 [ OUTPUT TRIMMED ]</codeblock></li>
             <li>Run the Ready Deployment Play
