@@ -4,7 +4,7 @@
   <title>clouds.yaml Configuration File</title>
   <body>
     <p>The installer gets its configuration information from the <codeph>
-        /.config/openstack/clouds.yam</codeph>l file. </p>
+        /.config/openstack/clouds.yaml</codeph> file. </p>
     <p>Note that although the sections are separated here &#151; one for each service &#151; there
       is only one clouds.yaml file. <xref href="cloud/fullFile.dita">A sample of a complete
         file</xref>.</p>

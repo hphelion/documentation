@@ -3,27 +3,48 @@
 <topic id="cloudCodeEngine">
   <title>HPE Helion Code Engine</title>
   <body>
-    <section>This additional section is required only if the HPE Helion Code Engine is installed. <codeblock>helionce:   
-  deployer_key: default   
-  deployer_flavor: 4
-  deployer_name: &lt;service>_deployer_&lt;version>   deployer_security_group: default
-  deployer_version:    
-  deployer_image:    
-  deployer_uri:    
-  deployer_net_id:
-  deployer_cloud: 
-  deployer_ntp_servers: NTP servers, can be the same as the one used by HOS 
-  deployer_dns_servers: DNS servers, can be the same as the one used by HOS
-  deployer_ext_net_id: external network id
-  deployer_cacert: CA cert to send over to the deployer
-  deployer_cname: CN name used to generate the certificate file.             </codeblock><dl>
+    <section>These additional sections in the clouds.yaml file are required only if the HPE Helion
+      Code Engine is installed.<p>A complete clouds.yaml file is <xref
+          href="fullFile.dita#topic_mhg_f2n_vt">available here</xref> for reference.</p><codeblock>clouds:
+  mycloud:
+  ...           
+    helionce:
+      deployer_key: msgtest
+      deployer_flavor: 4
+      deployer_name: helionce_deployer_01
+      deployer_security_group: default
+      deployer_version:
+      deployer_image:
+      deployer_uri:
+      deployer_cloud: "helionce"
+      deployer_ntp_servers: 
+      deployer_dns_servers: 
+      deployer_ext_net_id: 
+      deployer_cacert: /home/stack/ca/cacert.pem
+      deployer_cname: "cname"
+  ...
+  helionce:
+    image_api_version: '1'
+    identity_api_version: '2'
+    region_name: region1
+    insecure: True
+    auth:
+      auth_url: http://##.##.##.##:##/v3
+      project_name: 
+      username: 
+      password: 
+      project_domain_name: default
+      user_domain_name: default    </codeblock><dl>
         <dlentry>
           <dt>deployer_key</dt>
           <dd>The keypair to use for the deployer instance. Default value: default</dd>
         </dlentry>
         <dlentry>
           <dt>deployer_flavor</dt>
-          <dd>The flavor to use for the deployer instance, Default value: 4 which is Large.</dd>
+          <dd>The flavor to use for the deployer instance, Default value: 3 which is Medium.
+              <note>Creating a Large deployer (value: 4)  may result in failure with an <codeph>No
+                space in directory</codeph> error message. If this happens, set the flavor value to
+              3 (medium) and try again.</note></dd>
         </dlentry>
         <dlentry>
           <dt>deployer_name</dt>
@@ -79,6 +100,31 @@
         <dlentry>
           <dt>deployer_cname</dt>
           <dd>CN name used to generate the certificate file.</dd>
+        </dlentry><dlentry>
+          <dt>
+            image_api_version: '1'
+ </dt>
+          <dd></dd>
+        </dlentry><dlentry>
+          <dt>            identity_api_version: '2'
+            </dt>
+          <dd></dd>
+        </dlentry><dlentry>
+          <dt>region_name: region1
+            </dt>
+          <dd></dd>
+        </dlentry><dlentry>
+          <dt>insecure: True</dt><dd></dd></dlentry>
+           
+            <dlentry><dt>auth_url</dt><dd>This URL can be found in Horizon at: Project Compute &gt; Access &amp; Security &gt; API Access or  
+              Copy the Service Endpoint URL for the Identity Service. Note that this must be
+              <codeph>https</codeph>, not simply <codeph>http</codeph>.</dd></dlentry>
+            <dlentry><dt>project_name</dt><dd>The Name of the admin project in Horizon. </dd></dlentry>
+            <dlentry><dt>username</dt><dd>The Username of an account with installation privileges (administrator role). </dd></dlentry>
+            <dlentry><dt>password</dt><dd>The Password for the same account with installation privileges (administrator role).</dd> </dlentry>
+            <dlentry><dt>project_domain_name: default</dt> <dd></dd></dlentry>
+        <dlentry><dt>user_domain_name: default </dt>
+          <dd></dd>
         </dlentry>
       </dl>
     </section>

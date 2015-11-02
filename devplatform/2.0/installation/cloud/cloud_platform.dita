@@ -4,15 +4,20 @@
   <title>Platform Configuration</title>
   <body>
     <section>
-      <p>This basic information is required for listing the content from HDN, which is a good test to
-        determine if the HDPI was installed correctly.</p>
+      <p>These sections in the clouds.yaml file are the absolute minimum required. Installing each
+        service will require adding sections to the file, which is documented in the installation
+        for that service. A complete clouds.yaml file is <xref href="fullFile.dita#topic_mhg_f2n_vt"
+          >available here</xref> for reference.</p>
+        
+        <note>This basic information is also  the minimum required for listing the content from HDN,
+        which is used as a test to determine if the HDPI was installed correctly.</note>
       
       <codeblock>clouds:
   mycloud:
     codn_username: 
     codn_password: 
     region_name: region1
-    cacert: /etc/ssl/certs/ca-certificates.crt
+    cacert: /home/stack/ca/cacert.pem
     auth:
       auth_url: &lt;identity url&gt;
       project_name: &lt; admin project name&gt;
@@ -27,8 +32,7 @@
           account. (The name of the download network used to be CODN.)</dd></dlentry>
         <dlentry><dt>region_name</dt><dd>Default value is <codeph>region1 </codeph></dd></dlentry>
         <dlentry><dt>cacert</dt><dd>The location where the SSL certificates can be accessed.</dd></dlentry>
-        <dlentry><dt>auth</dt><dd>The Keystone v2 address found in the <codeph>service.osrc</codeph> file.</dd></dlentry>
-        <dlentry><dt>auth_url</dt><dd>This URL can be found in Horizon at: Project Compute &gt; Access &amp; Security &gt; API Access.
+        <dlentry><dt>auth_url</dt><dd>This URL can be found in Horizon at: Project Compute &gt; Access &amp; Security &gt; API Access or  
             Copy the Service Endpoint URL for the Identity Service. Note that this must be
               <codeph>https</codeph>, not simply <codeph>http</codeph>.</dd></dlentry>
         <dlentry><dt>project_name</dt><dd>The Name of the admin project in Horizon. </dd></dlentry>
