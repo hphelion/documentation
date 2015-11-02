@@ -24,7 +24,9 @@
       <li><xref href="CFR_whats_new.dita#concept_uvz_1cx_tt"/></li>
       <li><xref href="CFR_relnotes.dita#CFR_relnotes"/></li>
       <li><xref href="CFR_TP_licensing.dita#CFR_TP_licensing"/></li>
+      <!--
       <li><xref href="CFR_license_terms.dita#concept_xzh_3f1_vt">Software License Terms</xref></li>
+      -->
     </ul>
     <ul id="ul_pph_ytf_vt">
       <li><b>Quick Start: Deploying to <keyword keyref="pubCloudLong"/></b><ul id="ul_ack_nwv_tt">
