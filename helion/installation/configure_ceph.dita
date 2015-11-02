@@ -385,8 +385,8 @@ pools:
               </li>
               <li>Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes: <ol>
                   <li>Log in to the controller nodes as a user with sudo access and run the
-                    following commands: <codeblock>ceph auth get-or-create client.cinder | tee /etc/ceph/ceph.client.cinder.keyring</codeblock>
-                    <codeblock>ceph auth get-or-create client.cinder-backup | -a tee /etc/ceph/ceph.client.cinder-backup.keyring</codeblock>
+                    following commands: <codeblock>sudo ceph auth get-or-create client.cinder | sudo tee /etc/ceph/ceph.client.cinder.keyring</codeblock>
+                    <codeblock>sudo ceph auth get-or-create client.cinder-backup | sudo tee -a /etc/ceph/ceph.client.cinder-backup.keyring</codeblock>
                     <p><b>OR</b></p></li>
                   <li>You can copy the keyring from the deployer/lifecycle-manager node to
                       <codeph>/etc/ceph</codeph> folder on all the controller nodes:
