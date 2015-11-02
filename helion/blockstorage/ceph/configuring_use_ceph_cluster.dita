@@ -88,7 +88,7 @@ ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</codeblock></li>
         </ol></p>
     </section>
     <p><!--You can also login to <xref href="../verify_backend_configuration.dita#topic_q5q_trz_jt">Horizon dashboard</xref> and perform the OpenStack operations, like creating volume, attaching volume to an instance, etc to verify the backend configuration. --></p>
-    <p>After successfully configuring Ceph as a Cinder backend, you can login to the Horizon
+    <p>After successfully configuration of  Ceph as a Cinder backend, you can login to the Horizon
       Dashboard and perform the OpenStack Operations to verify the backend configuration. For more
       information, see <xref
         href="../../installation/installation_verification.dita#install_verification/volume_verify"
