@@ -86,19 +86,19 @@
             <p>Note:
               You cannot attach to a VLAN provider network using a VLAN data interface.</p></li>
           <li>MTU. The maximum transmission unit for the interface.</li>
-          <li>IPv4 Addressing Mode. The method for assigning an IP address to the interface
-            for use with VXLAN networks (data network types only). 
-          <p>The available options are static or disabled:</p>
-            <ul>
-                  <li>Disabled - Do not assign an IPv4 address.</li>
-                  <li>Static - Use a static IPv4 address. </li>
-                   <li>IPv6 Addressing Mode. The method for assigning an IP address to the interface
-              for use with VXLAN networks (data network types only).</li></ul>
-           <ul>
-                  <li>Disabled - Do not assign an IPv6 address.</li>
-                  <li>Static - Use a static IPv6 address.</li>
-                  <li>Automatic Assignment - Use an automatically assigned IPv6 address.</li>
-                  <li>Link Local - Use a link local IPv6 address.</li></ul></li>
+          <li>IPv4 Addressing Mode. The method for assigning an IP address to the interface for use
+            with VXLAN networks (data network types only). <p>The available options are static or
+              disabled:</p><ul>
+              <li>Disabled - Do not assign an IPv4 address.</li>
+              <li>Static - Use a static IPv4 address. </li>
+              <li>IPv6 Addressing Mode. The method for assigning an IP address to the interface for
+                use with VXLAN networks (data network types only).</li>
+            </ul><ul>
+              <li>Disabled - Do not assign an IPv6 address.</li>
+              <li>Static - Use a static IPv6 address.</li>
+              <li>Automatic Assignment - Use an automatically assigned IPv6 address.</li>
+              <li>Link Local - Use a link local IPv6 address.</li>
+            </ul></li>
           <li>Virtual Functions - The number of virtual interfaces to use (pci-sriov network types only).</li>
           <li>Maximum Virtual Functions - The maximum number of virtual interfaces available (pci-sriov network type only).</li>
 

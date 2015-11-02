@@ -353,7 +353,7 @@ StrictHostKeyChecking no </codeblock></li>
                                                 <row>
                                                   <entry/>
                                                   <entry>
-                                                  <p>itoolbox1.ova</p>
+                                                  <p id="itoolbox1">itoolbox1.ova</p>
                                                   <p>nuage-metadata-agent_3.2.4-133_all.deb</p>
                                                   <p>nuagenetlib_0.0.0-1729-kilo_all</p>
                                                   <p>nuage-openstack-neutron_2015.1.1729_all.deb</p>
@@ -365,7 +365,7 @@ StrictHostKeyChecking no </codeblock></li>
                                                 </row>
                                                 <row>
                                                   <entry>VSD_R4_OVA</entry>
-                                                  <entry>VSD-3.2.4_134-hp.ova</entry>
+                                                        <entry><p  id="vsd-ova">VSD-3.2.4_134-hp.ova</p></entry>
                                                 </row>
                                                 <row>
                                                   <entry>VSD-QCOW2</entry>
@@ -374,9 +374,9 @@ StrictHostKeyChecking no </codeblock></li>
                                                 <row>
                                                   <entry>VRS-vApp</entry>
                                                   <entry>
-                                                  <p>VRS_3.2.4-135_10062015.mf</p>
-                                                  <p>VRS_3.2.4-135_10062015.ovf</p>
-                                                  <p> VRS_3.2.4-135_10062015-disk1.vmdk</p>
+                                                  <p id="vrs-mf">VRS_3.2.4-135_10062015.mf</p>
+                                                  <p id="vrs-ovf">VRS_3.2.4-135_10062015.ovf</p>
+                                                  <p id="vrs-vmdk"> VRS_3.2.4-135_10062015-disk1.vmdk</p>
                                                   </entry>
                                                 </row>
                                                 <row>
@@ -813,13 +813,8 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                 <section>
                         <title>Bring Up Single VSD VM Manually</title>
                         <p><b>Note:</b> This is applicable only for KVM + ESX Cloud Deployment. </p>
-<<<<<<< HEAD
-                        <p>You must launch a virtual machine for the required HP DCN Virtualized
-                                Services Directory (VSD) and create required users.</p>
-=======
                         <p>You must launch a virtual machine for the required HPE DCN Virtualized
                                 Services Directory (<i>VSD</i>) and create required users.</p>
->>>>>>> 5404250f247d081e74138133a4ce1eeb01ef1938
                         <p>For more information, see <xref
                                         href="carrier-grade-install-vsd-vm.dita#topic7646">Bringing
                                         Up Single VSD VM Manually</xref>.</p>

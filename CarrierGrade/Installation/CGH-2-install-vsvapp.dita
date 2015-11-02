@@ -38,6 +38,16 @@
             access the toolbox by pointing a browser to
                 <codeph>https://&lt;VSD_IP&gt;:8443/vcenter/</codeph>. Only the
                 <codeph>CSPRoot</codeph> user can log into the vCenter deployment toolbox.</p>
+        <p>The VRSvApp installation involves the following tasks:</p>
+        <p>
+            <ul id="ul_a4b_qfp_wt">
+                <li>Configuring the VRSvApp Deployer</li>
+                <li>Configuring ToolBox VM</li>
+                <li>Configuring ESX details into VRSvApp Deployer</li>
+                <li>Configuring the Nuage VRS Agent Manager in vCenter Client and deploy
+                    VRSvApp</li>
+            </ul>
+        </p>
         <section>
             <title>Pre-requisites: </title>
             <!--From Nayana et al. playbook-->
@@ -53,8 +63,8 @@
                     </ul></li>
             </ul>
         </section>
-        <section><title>Creating a Stand-Alone Virtual Machine for the vCenter Deployment
-                Toolbox</title>The HPE Helion OpenStack Carrier Grade installation requires that you
+        <section><title>Creating a Stand-Alone Virtual Machine for the vCenter Integration
+                Noed</title>The HPE Helion OpenStack Carrier Grade installation requires that you
             install a dedicated virtual machine on an ESX server for the HPE DCN vSphere Solution.
             This VM is called the vCenter Integration Node, and includes the vCenter Deployment
             Toolbox. <p>The vCenter Integration Node VM does not require a VSD license and does not
@@ -62,11 +72,13 @@
                 id="ol_wtp_x4h_tt">
                 <li>Launch the vCenter client, at <codeph>https://&lt;vcenter
                         IP&gt;:9443/vsphere-client</codeph>.</li>
-                <li>Import the <codeph>VSD-3.2.4_134-hp.ova</codeph> file into vCenter server. You
-                    should have <xref href="carrier-grade-install-prereqs.dita#topic7148/getinstall"
-                        >downloaded this file during the prerequisites</xref>. Importing the OVA
-                    file creates the vCenter Integration Node VM.<p>For instructions, refer to the
-                        ESX documentation.</p></li>
+                <li>Import the <codeph>VSD-3.2.4_134-hp.ova</codeph><p
+                        conref="carrier-grade-install-prereqs.dita#topic7148/vsd-ova"/> file into
+                    vCenter server. You should have <xref
+                        href="carrier-grade-install-prereqs.dita#topic7148/getinstall">downloaded
+                        this file during the prerequisites</xref>. Importing the OVA file creates
+                    the vCenter Integration Node VM.<p>For instructions, refer to the ESX
+                        documentation.</p></li>
                 <li>Login to the vCenter Integration Node VM using username <codeph>root</codeph>
                     and password <codeph>Alcateldc</codeph>. You assigned the IP address when
                     importing the OVA template file.<p><b>Important:</b> After logging in with the
@@ -76,21 +88,22 @@
                     static IP address for the vCenter Integration Node VM, using the TUL
                             IP.<p><u>For
                         example</u><codeblock>BOOTPROTO=”static”
-                                IPADDR=10.20.5.21
-                                NETMASK=255.255.255.0
-                                GATEWAY=10.20.5.1</codeblock></p></li>
+IPADDR=10.20.5.21
+NETMASK=255.255.255.0
+GATEWAY=10.20.5.1</codeblock></p></li>
                 <li conref="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/2"
                     conrefend="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/14"/>
                 <li id="15">After NTP is properly synchronized,execute the following command to
                     install VSD:<codeblock>/opt/vsd/install.sh</codeblock></li>
             </ol></section>
         <section>
-            <title>Create the HTTP\DHCP VM Setup for the vCenter Integration Node</title>
+            <title>Create the HTTP\DHCP VM for the vCenter Integration Node</title>
             <p>Perform the following step create a VM for HTTP and DHCP services.</p>
             <p>
                 <ol id="ol_v11_wh4_rt">
-                    <li>In the vCenter client, import the <codeph>itoolbox1.ova</codeph> template
-                        file. You should have <xref
+                    <li>In the vCenter client, import the<p
+                            conref="carrier-grade-install-prereqs.dita#topic7148/itoolbox1"/>
+                        template file. You should have <xref
                             href="carrier-grade-install-prereqs.dita#topic7148/getinstall"
                             >downloaded this file during the prerequisites</xref>. Importing the OVA
                         file creates the HTTP\DHCP VM.<p>For instructions, refer to the ESX
@@ -111,28 +124,28 @@ GATEWAY=10.20.5.1</codeblock></p></li>
                         <codeblock>service network restart</codeblock></li>
                     <li>Edit the <codeph>/etc/dhcp/dhcpd.conf</codeph> file using the below example:
                         <codeblock>######### Config file start 
-                                    # DHCP Server Configuration file.
-                                    #   see /usr/share/doc/dhcp*/dhcpd.conf.sample
-                                    #   see 'man 5 dhcpd.conf'
-                                    #
-                                    #domain
-                                    option domain-name "EAM";
-                                    #DNS
-                                    #option domain-name-servers 128.251.10.25, 128.251.10.29;
-                                    #lease
-                                    default-lease-time 600;
-                                    #specify max lease time
-                                    max-lease-time 1200;
-                                    #log
-                                    log-facility local7;
-                                    #configuring subnet and range on TUL NETWORK
-                                    subnet 10.20.94.0 netmask 255.255.255.0 {
-                                    range 10.20.94.225 10.20.94.250;
-                                    option broadcast-address 10.20.94.255;
-                                    #default gateway 10.15.1.254
-                                    option routers 10.20.94.209;   ###TUL network Gateway####
-                                    }
-                                    ######## config file end</codeblock></li>
+# DHCP Server Configuration file.
+#   see /usr/share/doc/dhcp*/dhcpd.conf.sample
+#   see 'man 5 dhcpd.conf'
+#
+#domain
+option domain-name "EAM";
+#DNS
+#option domain-name-servers 128.251.10.25, 128.251.10.29;
+#lease
+default-lease-time 600;
+#specify max lease time
+max-lease-time 1200;
+#log
+log-facility local7;
+#configuring subnet and range on TUL NETWORK
+subnet 10.20.94.0 netmask 255.255.255.0 {
+range 10.20.94.225 10.20.94.250;
+option broadcast-address 10.20.94.255;
+#default gateway 10.15.1.254
+option routers 10.20.94.209;   ###TUL network Gateway####
+}
+######## config file end</codeblock></li>
                     <li>Restart the DHCP service:<codeblock>service dhcpd restart</codeblock></li>
                     <li>Copy the VRSvApp template, <codeph>VRS_3.2.4-135_10062015.ovf</codeph> and
                             <codeph>VRS_3.2.4-135_10062015-disk1.vmdk</codeph> to the DocumentRoot
@@ -153,11 +166,11 @@ GATEWAY=10.20.5.1</codeblock></p></li>
                         <codeph>/opt/vsd/jboss/standalone/configuration/metadataplugin.properties</codeph>
                     file. Enter vCenter properties the in the fields, as
                     follows:<codeblock>vc.host=x.x.x.x //: This is the vCenter IP address:
-                                vc.http.proxy.port = 80 //: This is the default port. Do not change. 
-                                vc.https.proxy.port = 443 //: This is the default port. Do not change. 
-                                vc.user = root //: vCenter username
-                                vc.password =vmware //: vCenter password
-                                vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
+vc.http.proxy.port = 80 //: This is the default port. Do not change. 
+vc.https.proxy.port = 443 //: This is the default port. Do not change. 
+vc.user = root //: vCenter username
+vc.password =vmware //: vCenter password
+vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
                 <li>Start the JBoss application server using the following
                     command::<codeblock>monit start jboss</codeblock></li>
             </ol><p>The <codeph>monit</codeph> metadata plugin is automatically deployed and

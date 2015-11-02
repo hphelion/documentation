@@ -36,43 +36,53 @@
         hypervisors and provision virtual machines.</p>
       <p>You can find more information on the hypervisor options in the <xref
           href="carrier-grade-technical-overview.dita#topic3485">Technical Overview</xref>.</p>
-    </section>
-    <section id="kvm-Hypervisor">
-      <title>KVM Topology</title>
-      <p>If you install the KVM deployment (also called the <codeph>denver</codeph> deployment), you
-        can integrate either HPE Storevirtual (VSA) or HPE StoreServ (3PAR) storage in the KVM
-        region.</p>
+    
+    <p id="denver"><b>KVM Topology using the <i>denver</i> template</b></p>
+      <p>If installing the <codeph>denver</codeph> template, you are installing the KVM region and
+        HP Helion OpenStack AVS networking. </p>
+      <p>You can also integrate HPE Storevirtual (VSA) or HPE StoreServ (3PAR) storage in the KVM
+        region. </p>
       <p>You must install 3PAR or VSA before starting the HPE Helion OpenStack installation and are
         independent of HPE Helion OpenStack Carrier Grade. During the installation, you will
         integrate the storage into HPE Helion OpenStack Carrier Grade. See the <xref
-            href="carrier-grade-install-kvm.dita#topic10581/storage">installation
-            instructions</xref> for the 3PAR and/or VSA parameters you will need.</p>
-    </section>
-    <section id="dcn-hypervisor">
-      <title>KVM with DCN Topology</title>
-      <p>If installing the KVM with DCN deployment (also called the <codeph>tahoe</codeph>
-        deployment), you will need to perform tasks to integrate DCN with HPE Helion OpenStack
-        Carrier Grade. </p>
+          href="CGH-2-install-denver.dita#topic10581/storage">installation instructions</xref> for
+        the 3PAR and/or VSA parameters you will need.</p>
+    
+    <p id="tahoe"><b>KVM with DCN Topology using the <i>tahoe</i> template</b></p>
+      <p>If you are installing the <codeph>tahoe</codeph> template, you are installing the KVM
+        region and HP DCN VRS networking. </p>
       <p>You can also integrate HPE Storevirtual (VSA) or HPE StoreServ (3PAR) storage in the KVM
         region. </p>
       <p>You must install DCN, 3PAR or VSA before starting the HPE Helion OpenStack installation and
         are independent of HPE Helion OpenStack Carrier Grade. During the installation, you will
         integrate the storage into HPE Helion OpenStack Carrier Grade. See the <xref
-          href="carrier-grade-install-kvm.dita#topic10581/storage">installation instructions</xref>
-        for the 3PAR and/or VSA parameters you will need.</p>
-    </section>
+          href="CGH-2-install-tahoe.dita#topic10581/backend">installation instructions</xref> for
+        the 3PAR and/or VSA parameters you will need.</p>
+
     
-    <section id="esx-hypervisor">
-      <title>KVM + ESX Topology</title>
-      <p>If installing the KVM + ESX deployment (also called the <codeph>memphis</codeph>
-        deployment), you will need to perform tasks to integrate ESX and DCN with HPE Helion
-        OpenStack Carrier Grade. </p>
+    <p id="memphis"><b>KVM + ESX with DCN Topology using the <i>memphis</i> template</b></p>
+      <p>If you are installing the <codeph>memphis</codeph> template, you are installing the KVM
+        region and VMware ESX storage. The networking uses HP DCN VRS. </p>
       <p>You can also integrate HPE Storevirtual (VSA) or HPE StoreServ (3PAR) storage in the KVM
         region. </p>
       <p>You must install DCN, ESX, and 3PAR and/or VSA before starting the HPE Helion OpenStack
         installation and are independent of HPE Helion OpenStack Carrier Grade. During the
-        installation, you will integrate the storage into HPE Helion OpenStack Carrier Grade. See the
-          <xref href="carrier-grade-install-kvm.dita#topic10581/storage">installation
+        installation, you will integrate the storage into HPE Helion OpenStack Carrier Grade. See
+        the <xref href="CGH-2-install-memphis.dita#topic10581/backend">installation
+          instructions</xref> for the 3PAR and/or VSA parameters you will need.</p>
+       <p id="sacramento"><b>KVM + ESX + Ironic with DCN Topology using the <i>sacramento</i>
+          template</b></p>
+      <p>If you are installing the <codeph>sacramento</codeph> template, you are installing the KVM
+        region, VMware ESX storage, and a baremetal region (controlled by OpenStack Ironic). The
+        networking uses HP DCN VRS. </p>
+      <p>You will need to perform tasks to integrate ESX and DCN with HPE Helion OpenStack Carrier
+        Grade. </p>
+      <p>You can also integrate HPE Storevirtual (VSA) or HPE StoreServ (3PAR) storage in the KVM
+        region. </p>
+      <p>You must install DCN, ESX, and 3PAR and/or VSA before starting the HPE Helion OpenStack
+        installation and are independent of HPE Helion OpenStack Carrier Grade. During the
+        installation, you will integrate the storage into HPE Helion OpenStack Carrier Grade. See
+        the <xref href="CGH-2-install-sacramento.dita#topic10581/backend">installation
           instructions</xref> for the 3PAR and/or VSA parameters you will need.</p>
     </section>
 
@@ -109,9 +119,9 @@
                 KVM region is installed. </p><ul>
                 <li> Install <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Helion
                     Lifecycle Management and Installation Services</xref>.</li>
-                <li>Install the <xref href="carrier-grade-install-kvm.dita#topic10581">HPE Helion
-                    OpenStack cloud</xref>. These components will be installed into what is called
-                  the <i>Non-KVM region</i>.</li>
+                <li>Install the <xref href="carrier-grade-install-non-kvm.dita#topic10581">HPE
+                    Helion OpenStack cloud</xref>. These components will be installed into what is
+                  called the <i>Non-KVM region</i>.</li>
                 <li>Launch the <xref href="carrier-grade-install-launch-horizon.dita#topic10581"
                     >Helion user interface</xref>.</li>
                 <li>Install the carrier grade cloud. The carrier grade cloud is deployed into what
