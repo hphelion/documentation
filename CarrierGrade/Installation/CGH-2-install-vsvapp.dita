@@ -72,12 +72,12 @@
                 id="ol_wtp_x4h_tt">
                 <li>Launch the vCenter client, at <codeph>https://&lt;vcenter
                         IP&gt;:9443/vsphere-client</codeph>.</li>
-                <li>Import the following file into vCenter server. You should have <xref
+                <li>Import the <codeph conref="carrier-grade-install-prereqs.dita#topic7148/vsd-ova"
+                    /> file into vCenter server. You should have <xref
                         href="carrier-grade-install-prereqs.dita#topic7148/getinstall">downloaded
                         this file during the prerequisites</xref>. Importing the OVA file creates
-                    the vCenter Integration Node VM.<p
-                        conref="carrier-grade-install-prereqs.dita#topic7148/vsd-ova"/><p>For
-                        instructions, refer to the ESX documentation.</p></li>
+                    the vCenter Integration Node VM.<p>For instructions, refer to the ESX
+                        documentation.</p></li>
                 <li>Login to the vCenter Integration Node VM using username <codeph>root</codeph>
                     and password <codeph>Alcateldc</codeph>. You assigned the IP address when
                     importing the OVA template file.<p><b>Important:</b> After logging in with the

@@ -365,7 +365,7 @@ StrictHostKeyChecking no </codeblock></li>
                                                 </row>
                                                 <row>
                                                   <entry>VSD_R4_OVA</entry>
-                                                        <entry><p id="vsd-ova"><codeph>VSD-3.2.4_134-hp.ova</codeph></p></entry>
+                                                        <entry><codeph id="vsd-ova">VSD-3.2.4_134-hp.ova</codeph></entry>
                                                 </row>
                                                 <row>
                                                   <entry>VSD-QCOW2</entry>
