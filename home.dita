@@ -27,14 +27,14 @@
           complexity of cloud deployments, and is the underlying platform for the Helion Development
           Platform.</stentry>
       </strow>
-      <strow>
+      <!--<strow>
         <stentry>
           <xref href="community/community.index.dita#topic2348" type="section">HPE Helion OpenStack
             Community</xref>
         </stentry>
         <stentry>Pure and free-to-license distribution of OpenStack technology for small scale open
           cloud environments. </stentry>
-      </strow>
+      </strow>-->
       <strow>
         <stentry>
           <xref href="devplatform/1.3/devplatform.index.dita">HPE Helion Development Platform</xref>
