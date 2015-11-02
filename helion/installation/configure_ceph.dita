@@ -26,8 +26,8 @@
           href="../blockstorage/ceph/deploy_monitor_stand_alone_node.dita">Install a monitor service
           on a dedicated resource node</xref>.</p>
       <p>While executing the <codeph>site.yml</codeph> playbook with the <codeph>–-limit</codeph>
-        option, it is also expected to include the controller nodes in the list of restricted nodes
-        if the cloud is deployed with a Ceph cluster.</p>
+        option, it is also expected to include the Ceph Monitor nodes in the list of restricted
+        nodes if the cloud is deployed with a Ceph cluster.</p>
     </section>
     <section id="config_files">
       <title>Edit Your Ceph Environment Input Files</title>
