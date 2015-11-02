@@ -15,9 +15,10 @@
         </metadata>
     </prolog>
     <body>
-        <p><i>Return to the Installing the <xref
-                    href="carrier-grade-install-kvm-esx.dita#topic10581/vapp">KVM + ESX
-                    Deployment</xref>.</i></p>
+        <p><i>Return to the Installing the KVM + ESX Deployment for the <xref
+                    href="CGH-2-install-memphis.dita#topic10581/vrsvapp">memphis</xref> or <xref
+                    href="CGH-2-install-sacramento.dita#topic10581/vrsvapp">sacramento</xref>
+                template.</i></p>
         <p>This document describes how to install the HP Distributed Cloud Networking (DCN) vSphere
             Solution required to properly integrate the HPE Distributed Cloud Networking and VMWare
             ESX components. </p>
@@ -81,8 +82,7 @@
                 <li conref="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/2"
                     conrefend="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/14"/>
                 <li id="15">After NTP is properly synchronized,execute the following command to
-                    install VSD:<codeblock>/opt/vsd/install.sh</codeblock>
-                </li>
+                    install VSD:<codeblock>/opt/vsd/install.sh</codeblock></li>
             </ol></section>
         <section>
             <title>Create the HTTP\DHCP VM Setup for the vCenter Integration Node</title>
@@ -104,9 +104,9 @@
                         static IP address. For the vCenter Integration Node VM, use the HPE
                         OpenStack Carrier Grade TUL IP.<p><u>For
                             example</u><codeblock>BOOTPROTO=”static”
-                                        IPADDR=10.20.5.21
-                                        NETMASK=255.255.255.0
-                                        GATEWAY=10.20.5.1</codeblock></p></li>
+IPADDR=10.20.5.21
+NETMASK=255.255.255.0
+GATEWAY=10.20.5.1</codeblock></p></li>
                     <li>Restart the Networking service using the following command:
                         <codeblock>service network restart</codeblock></li>
                     <li>Edit the <codeph>/etc/dhcp/dhcpd.conf</codeph> file using the below example:
@@ -254,8 +254,9 @@
                 </ol>
             </p>
         </section>
-        <p><i>Return to the Installing the <xref
-                    href="carrier-grade-install-kvm-esx.dita#topic10581/vapp">KVM + ESX
-                    Deployment</xref>.</i></p>
+        <p><i>Return to the Installing the KVM + ESX Deployment for the <xref
+                    href="CGH-2-install-memphis.dita#topic10581/vrsvapp">memphis</xref> or <xref
+                    href="CGH-2-install-sacramento.dita#topic10581/vrsvapp">sacramento</xref>
+                template.</i></p>
     </body>
 </topic>

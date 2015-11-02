@@ -16,9 +16,10 @@
   </metadata>
 </prolog>
 <body>
-  <p><i>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx.dita#topic10581/vmware">KVM + ESX
-        Deployment</xref>.</i></p>
+  <p><i>Return to the Installing the KVM + ESX Deployment for the <xref
+          href="CGH-2-install-memphis.dita#topic10581/vmware">memphis</xref> or <xref
+          href="CGH-2-install-sacramento.dita#topic10581/vmware">sacramento</xref>
+      template.</i></p>
   
   <p>The HPE Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires the VMWare vSphere
       Distributed Switch (VDS). The VDS provides a centralized interface from which you can
@@ -51,9 +52,10 @@
             <codeph>dvPortGroup</codeph>, as shown:<p><image
               href="../../media/CGH-install-portgroup-name.png" id="image_eqm_ngz_zs"/></p></li>
       </ol>
-      <p>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx.dita#topic10581/vmware">KVM + ESX
-        Deployment</xref>.</p>
+      <p><i>Return to the Installing the KVM + ESX Deployment for the <xref
+            href="CGH-2-install-memphis.dita#topic10581/vmware">memphis</xref> or <xref
+            href="CGH-2-install-sacramento.dita#topic10581/vmware">sacramento</xref>
+        template.</i></p>
     </section>
 </body>
 </topic>

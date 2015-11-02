@@ -22,5 +22,8 @@
 ]>
 <oXygen:ReusableComponent id="ReusableComponent_dqy_2zw_vt">
     <oXygen:ComponentDescription>VRSvApp</oXygen:ComponentDescription>
-    <oXygen:ComponentDefinition><section id="vapp"><title>Deploy the VRSvApp</title><p>The VRSvApp you obtained from DCN must be installed. For more information, see <xref href="../CGH-2-install-vsvapp.dita#topic10581">Deploying the VRS vApp</xref></p></section></oXygen:ComponentDefinition>
+    <oXygen:ComponentDefinition><section id="vapp"><title>Deploy the VRSvApp</title><p>The VRSvApp
+                you obtained from DCN must be installed. For more information, see <xref
+                    href="../CGH-2-install-vsvapp.dita#topic10581">Deploying the VRS
+            vApp</xref></p></section></oXygen:ComponentDefinition>
 </oXygen:ReusableComponent>

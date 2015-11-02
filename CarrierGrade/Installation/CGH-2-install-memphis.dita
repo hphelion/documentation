@@ -27,8 +27,8 @@
     <section conref="conrefs/CGH-2-conref-DCN-1.dita#ReusableComponent_nms_qyw_vt/prereqs"/>
     <section
       conref="conrefs/CGH-2-conref-ESX-2.dita#ReusableComponent_z2y_tyw_vt/section_efy_tyw_vt"/>
-    <section conref="conrefs/CGH-2-conref-VDS-3.dita#ReusableComponent_gbx_czw_vt/vmware"/>
-    <section conref="conrefs/CGH-2-conref-VRSvApp-4.dita#ReusableComponent_dqy_2zw_vt/vapp"/>
+    <section conref="conrefs/CGH-2-conref-VDS-3.dita#ReusableComponent_gbx_czw_vt/vmware" id="vmware"/>
+    <section conref="conrefs/CGH-2-conref-VRSvApp-4.dita#ReusableComponent_dqy_2zw_vt/vapp" id="vrsvapp"/>
     <section conref="conrefs/CGH-2-conref-VSD-5.dita#ReusableComponent_tlk_hzw_vt/vsd"/>
     <section
       conref="conrefs/CGH-2-conref-VSD-license-6.dita#ReusableComponent_u1w_jzw_vt/vsd-license"/>
