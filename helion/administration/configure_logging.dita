@@ -340,7 +340,7 @@
                   <p>For post-deployment log level changes, commit your changes to Git and
                     re-run the following from the lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p></entry>
+ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</codeblock></p></entry>
               </row>
               <row>
                 <entry><p>ceilometer-collector</p></entry>
@@ -354,7 +354,7 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                   <p>For post-deployment log level changes, commit your changes to Git and
                     re-run the following from the lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
+ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</codeblock></p>
                 </entry>
               </row>
               <row>
@@ -375,7 +375,7 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                   <p>For post-deployment log level changes, commit your changes to Git and
                     re-run the following from the lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
+ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</codeblock></p>
                 </entry>
               </row>
               <row>
@@ -390,7 +390,7 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                   <p>For post-deployment log level changes, commit your changes to Git and
                     re-run the following from the lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
+ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</codeblock></p>
                 </entry>
               </row>
               <row>
@@ -406,7 +406,7 @@ ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codebl
                   <p>For post-deployment log level changes, commit your changes to Git and
                     re-run the following from the lifecycle-manager node:
                     <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml ceilometer-reconfigure.yml</codeblock></p>
+ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</codeblock></p>
                 </entry>
               </row>
               <row>
@@ -538,7 +538,7 @@ ansible-playbook -i hosts/verb_hosts monasca-agent-reconfigure.yml -e "monasca_l
                   <p>If you make edits to these files, you will need to run the
                       <codeph>neutron-reconfigure.yml</codeph> playbook:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml neutron-reconfigure.yml</codeblock></entry>
+ansible-playbook -i hosts/verb_hosts neutron-reconfigure.yml</codeblock></entry>
               </row>
               <row>
                 <entry morerows="1"><p>Nova</p></entry>
@@ -550,7 +550,7 @@ ansible-playbook -i hosts/verb_hosts site.yml neutron-reconfigure.yml</codeblock
                   <p>If you make edits to this file, then run the
                       <codeph>nova-reconfigure.yml</codeph> playbook:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml nova-reconfigure.yml</codeblock>
+ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</codeblock>
                 </entry>
               </row>
               <row>
@@ -561,7 +561,7 @@ ansible-playbook -i hosts/verb_hosts site.yml nova-reconfigure.yml</codeblock>
                   <p>If you make edits to this file, then run the
                       <codeph>nova-reconfigure.yml</codeph> playbook:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml nova-reconfigure.yml</codeblock></entry>
+ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</codeblock></entry>
               </row>
               <row>
                 <entry><p>Operations Console</p></entry>
@@ -597,7 +597,7 @@ ansible-playbook -i hosts/verb_hosts site.yml -e "ops_console_loglevel=DEBUG"</c
                       <codeph>swift-reconfigure.yml</codeph> playbook to commit them to the
                     environment:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml swift-reconfigure.yml</codeblock>
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock>
                 </entry>
               </row>
               <row>
