@@ -23,7 +23,7 @@
     <section><title>Installation</title>
       <ol><li>Create an instance of the Deployer VM.<ol>
             <li>Source the Virtual
-              Environment.<codeblock>source .devplatform/bin/activate</codeblock></li>
+              Environment.<codeblock>source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate</codeblock></li>
             <li>Create the instance.
               <codeblock>openstack --debug --os-cloud hce hdpi helionce install
 openstack hdpi helionce launch --os-cloud hce
