@@ -382,7 +382,7 @@ StrictHostKeyChecking no </codeblock></li>
                                                 </row>
                                                 <row>
                                                   <entry>Compute-Proxy</entry>
-                                                  <entry><codeph>TEMPL-CPV9.ova</codeph></entry>
+                                                  <entry><codeph id="esx-proxy-ova">TEMPL-CPV9.ova</codeph></entry>
                                                 </row>
                                         </tbody>
                                 </tgroup>

@@ -41,8 +41,9 @@
         <p>The VRSvApp installation involves the following tasks:</p>
         <p>
             <ul id="ul_a4b_qfp_wt">
-                <li>Configuring the VRSvApp Deployer</li>
-                <li>Configuring ToolBox VM</li>
+                <li>Create a VM for the vCenter Integration Node</li>
+                <li>Create a VM for HTTP and DHCP services</li>
+                <li>Deploy the vCenter Deployment Toolbox</li>
                 <li>Configuring ESX details into VRSvApp Deployer</li>
                 <li>Configuring the Nuage VRS Agent Manager in vCenter Client and deploy
                     VRSvApp</li>
@@ -54,21 +55,22 @@
             <p>Before installing the VRSvApp, make sure the following conditions are met:</p>
             <ul id="ul_ihc_tf4_rt">
                 <li><b>Networks:</b><ul id="ul_h2r_qf4_rt">
-                        <li>The system hosting the vCenter Integration Node must have one NIC in the
+                        <li>The system hosting the vCenter Integration Node as one NIC in the
                             Management network.</li>
-                        <li>DHCP server should have one network interface in the DVRS Datapath
+                        <li>The DHCP server should have one network interface in the DVRS Datapath
                             network (TUL Network)</li>
-                        <li>DHCP server requires atleast 20 TUL IP addresses for the DHCP
+                        <li>The DHCP server requires at least 20 TUL IP addresses for the DHCP
                             scope.</li>
                     </ul></li>
             </ul>
         </section>
         <section><title>Creating a Stand-Alone Virtual Machine for the vCenter Integration
-                Noed</title>The HPE Helion OpenStack Carrier Grade installation requires that you
+                Node</title>The HPE Helion OpenStack Carrier Grade installation requires that you
             install a dedicated virtual machine on an ESX server for the HPE DCN vSphere Solution.
             This VM is called the vCenter Integration Node, and includes the vCenter Deployment
-            Toolbox. <p>The vCenter Integration Node VM does not require a VSD license and does not
-                offer VSD functionality. </p><p>To deploy the vCenter Integration Node VM:</p><ol
+            Toolbox. <p>The vCenter Integration Node VM requires a Virtualized Services Directory
+                (VSD) instance. The instance does not require a VSD license and does not offer VSD
+                functionality. </p><p>To deploy the vCenter Integration Node VM:</p><ol
                 id="ol_wtp_x4h_tt">
                 <li>Launch the vCenter client, at <codeph>https://&lt;vcenter
                         IP&gt;:9443/vsphere-client</codeph>.</li>
@@ -83,16 +85,16 @@
                     importing the OVA template file.<p><b>Important:</b> After logging in with the
                         default password, make sure you change the password for the
                             <systemoutput>root</systemoutput> user. </p></li>
-                <li id="1">Edit <i>/etc/sysconfig/network-scripts/ifcfg-eth0</i> file to configure a
-                    static IP address for the vCenter Integration Node VM, using the TUL
-                            IP.<p><u>For
+                <li id="1">Edit the <codeph>/etc/sysconfig/network-scripts/ifcfg-eth0</codeph> file
+                    to configure a static IP address for the vCenter Integration Node VM, using the
+                    TUL IP.<p><u>For
                         example</u><codeblock>BOOTPROTO=”static”
 IPADDR=10.20.5.21
 NETMASK=255.255.255.0
 GATEWAY=10.20.5.1</codeblock></p></li>
                 <li conref="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/2"
                     conrefend="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/14"/>
-                <li id="15">After NTP is properly synchronized,execute the following command to
+                <li id="15">After NTP is properly synchronized, execute the following command to
                     install VSD:<codeblock>/opt/vsd/install.sh</codeblock></li>
             </ol></section>
         <section>
@@ -112,9 +114,9 @@ GATEWAY=10.20.5.1</codeblock></p></li>
                         the OVA template file.<p><b>Important:</b> After logging in with the default
                             password, make sure you change the password for the
                                 <systemoutput>root</systemoutput> user. </p></li>
-                    <li>Edit <i>/etc/sysconfig/network-scripts/ifcfg-eth0</i> file to configure a
-                        static IP address. For the vCenter Integration Node VM, use the HPE
-                        OpenStack Carrier Grade TUL IP.<p><u>For
+                    <li>Edit the <codeph>/etc/sysconfig/network-scripts/ifcfg-eth0</codeph> file to
+                        configure a static IP address. For the vCenter Integration Node VM, use the
+                        HPE OpenStack Carrier Grade TUL IP.<p><u>For
                             example</u><codeblock>BOOTPROTO=”static”
 IPADDR=10.20.5.21
 NETMASK=255.255.255.0
@@ -149,19 +151,20 @@ option routers 10.20.94.209;   ###TUL network Gateway####
                     <li>Copy the VRSvApp template files, <codeph
                             conref="carrier-grade-install-prereqs.dita#topic7148/vrs-ovf"/> and
                             <codeph conref="carrier-grade-install-prereqs.dita#topic7148/vrs-vmdk"/>
-                        to the DocumentRoot (/var/www/html is the default location).</li>
+                        to the DocumentRoot (<codeph>/var/www/html</codeph> is the default
+                        location).</li>
                     <li>Check Apache server and make sure it’s running and restart if
                         needed:<codeblock>Service httpd restart</codeblock></li>
                 </ol>
             </p>
         </section>
-        <section><title>Installing the vCenter Integration Node:</title>The vCenter Deployment
+        <section><title>Installing the vCenter Deployment Toolbox</title>The vCenter Deployment
             Toolbox is bundled as a metadata plug-in. <p>To install and configure the metadata
                 plugin:</p><ol id="ol_o4m_w34_rt">
                 <li>Log into the vCenter Integration Node VM using SSH. The default username is
                         <codeph>root</codeph> and password is <codeph>Alcateldc</codeph>.</li>
                 <li>Execute the following command to stop the JBoss application server on the
-                    vCenter Integration Node: <codeblock>monit stop jboss</codeblock></li>
+                    vCenter Integration Node VM: <codeblock>monit stop jboss</codeblock></li>
                 <li>Edit the
                         <codeph>/opt/vsd/jboss/standalone/configuration/metadataplugin.properties</codeph>
                     file. Enter vCenter properties the in the fields, as
@@ -203,16 +206,16 @@ vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
                 <li>Create a new vCenter in the VRS Deployer using your ESX vCenter details. Provide
                     a name, description, your vCenter IP, vCenter user, vCenter password, and path
                     to the <codeph conref="carrier-grade-install-prereqs.dita#topic7148/vrs-ovf"/>
-                    file.. <p>The template must be available over an HTTP server, and must allow
+                    file. <p>The template must be available over an HTTP server, and must allow
                         connection from vCenter and from the Nuage-enabled hypervisors.</p><p><image
                             href="../../media/CGH-2-install-vsdvm-new-vcenter.png"
                             id="image_uxp_4mp_wt" width="300"/></p></li>
                 <li>Add the Data Center to that vCenter you created:<p><image
                             href="../../media/CGH-2-install-vsdvm-add-dc.png" id="image_xk5_fnp_wt"
                             width="400"/></p></li>
-                <li>Add hosts to the Cluster you created. Provide a name, description, the ESX Host
+                <li>Add hosts to the cluster you created. Provide a name, description, the ESX Host
                     IP, vCenter user, vCenter password, select the Management, Data amd VM Network
-                    names. Select DVRS Datapath for last input.<p><image
+                    names. Select DVRS Datapath for last input<p><image
                             href="../../media/CGH-2-install-vsdvm-add-hyper.png"
                             id="image_xy2_znp_wt" width="300"/></p><p>After adding all the hosts
                         vCenter appears similar to the following:</p><p><image
@@ -224,10 +227,9 @@ vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
                         your agents. The configuration on the default profile includes all the VRS
                         vApp nodes, except the ones that are obviously different for each VRS-VM
                         agent (such as the IP address).</p><ol id="ol_hs5_nhr_wt">
-                        <li>Click the cylinder icon and add the Data(TUL) and Management (CLM)
-                            Network Info (Pay close attention to screen shot below. VSC Controllers
-                            are the active/stand-by VSC TUL IPs). <p><image
-                                    href="../../media/CGH-2-install-vsdvm-add-network.png"
+                        <li>Click the cylinder icon and add the Data (TUL) and Management (CLM)
+                            Network. The VSC Controllers are the active/stand-by VSC TUL IPs.
+                                    <p><image href="../../media/CGH-2-install-vsdvm-add-network.png"
                                     width="600" id="image_vyd_dpp_wt"/></p></li>
                         <li>Assign CLM IP and TUL IP for each of hosts in ESX Cluster in the VRS
                             Deployer UI.</li>
@@ -275,11 +277,11 @@ vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
                 <ol id="ol_scv_lp4_rt">
                     <li>In the vSphere web client, from the <b>Home</b> tab, navigate to <b>vCenter
                             Solutions Manager</b> as shown below:<p><image
-                                href="../../media/CGH-2-install-vrsvapp1.png" width="800"
+                                href="../../media/CGH-2-install-vrsvapp1.png" width="600"
                                 id="image_wd4_hq4_rt"/></p></li>
                     <li>Click the vCenter Solutions Manager to see a list of extensions, including
                         NuageVRS Agent Manager, as shown below:<p><image
-                                href="../../media/CGH-2-install-vrsvapp2.png" width="800"
+                                href="../../media/CGH-2-install-vrsvapp2.png" width="600"
                                 id="image_qs2_xx4_rt"/></p></li>
                     <li>Click the Nuage VRS Agent Manager and navigate to the <b>Solutions</b> tab.
                             <p>If a warning about a certificate issue appears, navigate to
@@ -287,20 +289,20 @@ vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
                             Confirm the security exception and add the certificate. A message
                             indicating that <codeph>EAM is up and running</codeph> appears, and you
                             can continue with the next step.</p><p><image
-                                href="../../media/CGH-2-install-vrsvapp3.png" width="800"
+                                href="../../media/CGH-2-install-vrsvapp3.png" width="600"
                                 id="image_lfr_zx4_rt"/></p></li>
                     <li>Add the Nuage cluster:<ol id="ol_ndc_r1p_rt">
                             <li>Select vCenter Solutions Manager and go to the Nuage VRS Agent
-                                Manage</li>
+                                Manager.</li>
                             <li>Add the cluster managed by Nuage to the right hand side.</li>
                             <li>Click <b>Update Configuration</b>. The Agent VMs will be deployed on
                                 that cluster. <p>This action triggers the deploy of VRSvApps for
                                     each of the ESXi hosts:</p><p><image
                                         href="../../media/CGH-2-install-vsdvm-vsphere-deploy.png"
-                                        width="400" id="image_tzt_gtp_wt"/></p><p>You can see the
-                                    progress in vSphere Client.</p><p><image
-                                        href="../../media/CGH-2-install-vsdvm-vsphere-progress.png"
-                                        width="600" id="image_hpb_mtp_wt"/></p></li>
+                                        width="400" id="image_tzt_gtp_wt"/></p></li>
+                            <li> Click the <b>Manage</b> tab. </li>
+                            <li>Click the <b>Actions</b> drop-down list and select <b>Enable
+                                    Optimized Deployment</b>.</li>
                         </ol></li>
                     <li>(Optional) To remove the cluster, select the cluster and click first
                             <b>Remove</b>, then <b>Update Configuration</b>.</li>

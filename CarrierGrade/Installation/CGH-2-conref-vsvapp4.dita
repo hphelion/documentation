@@ -25,29 +25,28 @@
     <oXygen:ComponentDefinition>
             <li id="2">Restart the Networking service using the following command:
                 <codeblock>service network restart</codeblock></li>
-            <li>Edit the <i>/etc/resolv.conf</i> file with the IP address of the DNS name
-                server:<codeblock>nameserver &lt;ip-address&gt;</codeblock></li>
-            <li>Update the <i>/etc/sysconfig/network</i> file with the <b>vsd1</b> host name. The
-                name must be the same that is configured on the DNS server. For
-                example:<codeblock>root@vsd1 ~]# cat /etc/sysconfig/network
+            <li>Edit the <codeph>/etc/resolv.conf</codeph> file with the IP address of the DNS name
+            server:<codeblock>nameserver &lt;ip-address&gt;</codeblock></li>
+            <li>Update the <codeph>/etc/sysconfig/network</codeph> file with the <b>vsd1</b> host
+            name. The name must be the same that is configured on the DNS server. For
+            example:<codeblock>cat /etc/sysconfig/network
 NETWORKING=yes
 HOSTNAME=vsd1.dcn-one.helion.cg</codeblock></li>
             <li>Execute the following command to add the VSD VM host name to the
-                <i>/etc/sysconfig/network</i> file:
+                <codeph>/etc/sysconfig/network</codeph> file:
             <codeblock>/etc/init.d/network restart </codeblock></li>
             <li>Exit the VSD VM console session, then log back in. You should see the VSD name in
-                the <i>/etc/sysconfig/network</i> file.</li>
-            <li>Configure an NTP Server for the VSD VM by editing the <i>/etc/ntp.conf</i> file.
-                Commenting out other server list and add your DNS servers. For
-                        example:<codeblock>server 10.1.64.20
+            the <codeph>/etc/sysconfig/network</codeph> file.</li>
+            <li>Configure an NTP Server for the VSD VM by editing the <codeph>/etc/ntp.conf</codeph>
+            file. Commenting out other server list and add your DNS servers. For
+                    example:<codeblock>server 10.1.64.20
 server 16.110.135.113 </codeblock><p><image
-                        href="../../media/CGH-2-ntp-vsd.png" id="image_tth_w2l_2t"/></p></li>
+                    href="../../media/CGH-2-ntp-vsd.png" id="image_tth_w2l_2t"/></p></li>
             <li>Execute the following commands to set the NTP
-                    time:<codeblock>/etc/init.d/ntpd stop
+                time:<codeblock>/etc/init.d/ntpd stop
 ntpdate &lt;ntp server>
 /etc/init.d/ntpd start</codeblock><p>Where
-                        <codeph>&lt;ntp server&gt;</codeph> is the address of your NTP
-                server.</p></li>
+                    <codeph>&lt;ntp server></codeph> is the IP address of your NTP server.</p></li>
             <li> Execute the following command to verify that the NTP servers are listed:<codeblock>ntpq –p</codeblock><p>
                     <image href="../../media/CGH-2-ntp-verify.png" id="image_ltd_b1l_2t" width="500"
                     /></p></li>
