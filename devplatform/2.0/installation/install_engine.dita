@@ -12,8 +12,8 @@
             >clouds.yaml</xref> file.</li>
         <li>HPE Helion OpenStack 2.0 installation must be completed. You must know the location of
           the services.osrc file containing its configuration information</li>
-        <li>A SSH public and private keypair, uploaded to openstack, configured in clouds.yml, and
-          used as ssh keys on the deployer machine </li>
+        <li>A SSH public and private keypair, uploaded to OpenStack, configured in clouds.yml, and
+          used as ssh keys on the deployer machine.</li>
         <li>You must know the NTP server and DNS server IP addresses.</li>
         <li>You must have an account on <xref href="http://www.github.com" format="html"
             scope="external">Github</xref>.</li>
@@ -45,9 +45,10 @@ stack@helionce-deployer:~/helionce-1.0.0-rc1$ ./helionci-init.bash
       <li>Copy the helionce deployment
           model.<codeblock>stack@helionce-deployer:~/helionce-1.0.0-rc1$ cd ~/helion/
 stack@helionce-deployer:~/helion$ cp -r examples/helionce/* my_cloud/definition/
-stack@helionce-deployer:~/helion$ cp ~/platform-pass-through.yml my_cloud/definition/data/pass-through/platform-pass-through.yml
- 
-stack@helionce-deployer:~/helion$ git add -A
+stack@helionce-deployer:~/helion$ cp ~/platform-pass-through.yml my_cloud/definition/data/pass-through/platform-pass-through.yml</codeblock></li>
+        <li>Using Git, persist these changes. This information is required for playbooks executed
+          later in this installation
+          process.<codeblock>stack@helionce-deployer:~/helion$ git add -A
 stack@helionce-deployer:~/helion$ git commit -a -m "Add HelionCE default model"</codeblock></li>
 <li>Create a Github OAuth Application.
 <ol>
@@ -82,61 +83,114 @@ stack@helionce-deployer:~/helion$ git commit -a -m "Add HelionCE default model"<
   <li>Register the application.</li>
   <li>Make a note of its <codeph>Client ID</codeph> and <codeph>Client Secret</codeph>.</li>
 </ol></li>   
-        <li>Populate the server addresses and commit the
-          changes.<codeblock>stack@helionce-deployer:~/helion$ vim ~/helion/my_cloud/definition/data/pass-through/kickstart.yml
- 
-# update the following values in the file:
-    github_client_id: "the Client ID from github application you created in an earlier step"
-    github_client_secret: "the Client Secret from github application you created in an earlier step"
- 
-# if your installation uses http proxies, configure them accordingly, 
-    https_proxy: "https://&lt;http proxy hostname>:&lt;http proxy port&gt;/"
-    http_proxy: "http://&lt;https proxy hostname>:&lt;https proxy port>/"
-    use_proxy: true
- 
-# if your installation does NOT use http proxies, configure
-    use_proxy: false
- 
-# save the file and exit.
- 
-stack@helionce-deployer:~/helion$ vim ~/helion/my_cloud/definition/cloudConfig.yml
- 
-# Update the values for nameservers and ntp servers, save the file and exit.
- 
-stack@helionce-deployer:~/helion$ git commit -a -m "Configured Deployment Model" </codeblock></li>
+        <li>Populate the server addresses.<ol>
+            <li>Navigate to and open the <codeph>kickstart.yml</codeph>
+              file<codeblock>stack@helionce-deployer:~/helion$ vim ~/helion/my_cloud/definition/data/pass-through/kickstart.yml</codeblock></li>
+            <li>Update the following values in the
+              file:<codeblock>github_client_id: &lt;the Client ID from the Github application you created in an earlier step>
+github_client_secret: &lt;the Client Secret from the Github application you created in an earlier step></codeblock></li>
+            <li>If your installation uses http proxies, configure
+              them.<codeblock>https_proxy: "https://&lt;http proxy hostname>:&lt;http proxy port&gt;/"
+http_proxy: "http://&lt;https proxy hostname>:&lt;https proxy port>/"
+use_proxy: true</codeblock></li>
+            <li>If your installation does NOT use http proxies,
+              set<codeblock>use_proxy: false</codeblock></li>
+            <li>Save the file and exit.</li>
+            <li>Open the <codeph>cloudConfig.yml
+              </codeph>file.<codeblock>stack@helionce-deployer:~/helion$ vim ~/helion/my_cloud/definition/cloudConfig.yml</codeblock></li>
+            <li>Update the values for the <b>nameservers</b> and <b>NTP</b> servers, save the file
+              and exit.</li>
+          </ol></li>
+        <li>Using Git, commit the changes. This information is required for playbooks executed later
+          in this installation
+          process.<codeblock>stack@helionce-deployer:~/helion$ git commit -a -m "Configured Deployment Model" </codeblock></li>
         
       <li>Run the Playbooks <note type="important">At the end of each playbook, ensure both
-              <codeph>unreachable</codeph> and <codeph>failed</codeph> are zero.</note><ol>
-            <li> Run the Pre-Installation Play
+              <codeph>unreachable</codeph> and <codeph>failed</codeph> are zero (0). This indicates
+            success. If not, check the output for error messages, address the errors, and try
+            running the playbook again.</note><ol>
+            <li> Run the Pre-Installation Playbook
               <codeblock>stack@helionce-deployer:~/helion$ source ~/service.osrc
 stack@helionce-deployer:~/helion$ cd hos/ansible/
-stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -vvv -i hosts/localhost hlm-pre-install.yml
- 
-[ OUTPUT TRIMMED ]</codeblock></li>
+stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -vvv -i hosts/localhost hlm-pre-install.yml</codeblock>Successful
+              output will look similar to the
+              following:<codeblock>PLAY RECAP ********************************************************************
+openstack-operations | preinstall | Create service ports ---------------- 5.14s
+openstack-operations | lookup-keystone-ids | Lookup Project ID ---------- 2.98s
+openstack-operations | preinstall | Ensure SVC Network Exists ----------- 2.75s
+openstack-operations | preinstall | Ensure External Network Exists ------ 2.73s
+openstack-operations | preinstall | Create Floating IPs necessary for load-balancers --- 2.17s
+openstack-operations | preinstall | Identify pre-existing floating IPs --- 2.07s
+openstack-operations | preinstall | Set Neutron Quotas ------------------ 2.07s
+openstack-operations | preinstall | Set Cinder Quotas ------------------- 2.01s
+openstack-operations | preinstall | Create Virtual IPs necessary for load-balancers externally managed --- 1.81s
+openstack-operations | preinstall | Set Nova Quotas --------------------- 1.77s
+-------------------------------------------------------------------------------
+Total: ----------------------------------------------------------------- 27.45s
+localhost                  : ok=20   changed=14  <b> unreachable=0 </b>   <b>failed=0 </b> </codeblock></li>
             <li>Run the Config Processor Play
-              <codeblock>stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -vvv -i hosts/localhost config-processor-run.yml -e encrypt="" -e rekey=""
- 
-[ OUTPUT TRIMMED ]</codeblock></li>
-            <li>Run the Ready Deployment Play
-              <codeblock>stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost ready-deployment.yml
- 
-[ OUTPUT TRIMMED ]
- 
-TASK: [git-operations | ready-deployment-tree-help | Tell the user what to expect] *** 
+              <codeblock>stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -vvv -i hosts/localhost config-processor-run.yml -e encrypt="" -e rekey=""</codeblock>Successful
+              output will look similar to the
+              following:<codeblock>PLAY RECAP ******************************************************************** 
+config-processor | run-config-processor | Run Configuration Processor over the given cloud configuration --- 2.44s
+git-operations | _assemble-working-directory | Assemble scratch content --- 0.76s
+git-operations | _persist-to-git | Prep new commit ---------------------- 0.69s
+config-processor | configure | Sync ansible vars for cloud deployment --- 0.67s
+config-processor | add-localhost | Add localhost group entry ------------ 0.55s
+config-processor | configure | Make directories required for osconfig network configuration --- 0.33s
+config-processor | configure | Sync generated network artefacts for cloud deployment/update --- 0.32s
+config-processor | configure | Copy hosts.hf for osconfig playbooks ----- 0.28s
+config-processor | configure | Copy ansible hosts file for cloud deployment (verb_hosts) --- 0.28s
+config-processor | add-localhost | Add localhost group ------------------ 0.17s
+-------------------------------------------------------------------------------
+Total: ------------------------------------------------------------------ 7.99s
+localhost                  : ok=21   changed=14   <b>unreachable=0    failed=0 </b> </codeblock></li>
+            <li>Run the Ready Deployment Playbook
+                <codeblock>stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock><p>Successful
+                output should look similar to the following.
+                </p><codeblock>PLAY RECAP ******************************************************************** 
+git-operations | _assemble-working-directory | Assemble scratch content --- 0.73s
+config-processor | configure | Sync ansible vars for cloud deployment --- 0.54s
+config-processor | configure | Sync ansible vars for cloud deployment --- 0.49s
+git-operations | _promote-from-staging | Update branches ---------------- 0.41s
+config-processor | configure | Make directories required for osconfig network configuration --- 0.30s
+config-processor | configure | Make directories required for osconfig network configuration --- 0.27s
+config-processor | configure | Sync generated network artefacts for cloud deployment/update --- 0.26s
+config-processor | configure | Sync generated network artefacts for cloud deployment/update --- 0.25s
+config-processor | configure | Copy ansible hosts file for cloud deployment (verb_hosts) --- 0.24s
+config-processor | configure | Copy hosts.hf for osconfig playbooks ----- 0.22s
+-------------------------------------------------------------------------------
+Total: ------------------------------------------------------------------ 5.96s
+localhost                  : ok=20   changed=11  <b> unreachable=0    failed=0</b></codeblock><note>Ignore
+                the TASK/msg message that appears in the output. Do not run the playbook at this
+                time; that playbook must be run later in the installation
+              process.</note><codeblock>TASK: [git-operations | ready-deployment-tree-help | Tell the user what to expect] *** 
 ok: [localhost] => {
     "msg": "The directory /home/stack/scratch/ansible/next/hos/ansible contains a prepared ansible tree ready to run your deployment. You should cd into that directory and run: ansible-playbook -i hosts/verb_hosts site.yml"
 }</codeblock></li>
-          
-     
-        <li>Run the Boot Infrastructure Play <note>This step takes approximately 5 minutes.</note>
-              Once this is complete, all in-cloud infrastructure (VMs, Networks, Routers, Floating
-              IPs, ports, security groups, etc) will have been created.
+            <li>Run the Boot Infrastructure Playbook<note>This step takes approximately 5
+                minutes.</note> Once this is complete, all in-cloud infrastructure (VMs, Networks,
+              Routers, Floating IPs, ports, security groups, etc) will have been created.
               <codeblock>stack@helionce-deployer:~/helion/hos/ansible$ cd ~/scratch/ansible/next/hos/ansible
-stack@helionce-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -vvv -i hosts/localhost hlm-boot-infra.yml
- 
-[ OUTPUT TRIMMED ]</codeblock></li>
-        <li>Run the "Site" or Deployment Play <note>This step takes approximately 10 to 15 minutes.
-          </note><codeblock>stack@helionce-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -i hosts/verb_hosts site.yml -vvvv
+stack@helionce-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -vvv -i hosts/localhost hlm-boot-infra.yml</codeblock>Successful
+              output will look similar to the
+              following:<codeblock>PLAY RECAP ********************************************************************
+openstack-operations | create_instance | Create controlplane instance - 227.92s
+openstack-operations | create_instance | Give cloud-init time to fetch SSH keys -- 60.07s
+openstack-operations | create_security_groups | Create tcp/icmp security groups rules -- 34.59s
+openstack-operations | create_instance | Extract port-id --------------- 19.89s
+openstack-operations | create_instance | Wait for SSH to become active -- 17.46s
+openstack-operations | create_port | Update ports to include appropriate security group(s) -- 17.24s
+openstack-operations | create_security_groups | Create security groups -- 16.18s
+openstack-operations | create_port | Associate VIP to instance ports --- 14.85s
+openstack-operations | create_port | Create instance ports ------------- 13.97s
+openstack-operations | create_security_groups | Create other security groups rules (e.g. 112 protcol) --- 9.33s
+-------------------------------------------------------------------------------
+Total: ---------------------------------------------------------------- 471.97s
+localhost                  : ok=35   changed=19   <b>unreachable=0  </b>  <b>failed=0</b></codeblock></li>
+            <li>Run the "Site" or Deployment Playbook <note>This step takes approximately 10 to 15
+                minutes.
+              </note><codeblock>stack@helionce-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -i hosts/verb_hosts site.yml -vvvv
 ...
 PLAY [HELION-CI-WEBUX[0]] *****************************************************
 TASK: [debug msg="Congratulations on installing Helion Code Engine!"] *********
@@ -150,8 +204,9 @@ ok: [hci-helionci-ccp-c1-m1-mgmt] => {
     "msg": "Browse to the web site at http://10.241.26.126:80"
 }
 ...</codeblock></li>
-        
-                <li>Make a note of the IP address in the final messages from the log. This is the web site you will want to access.</li></ol></li>
+            <li>Make a note of the IP address in the final messages from the log. This is the web
+              site you will want to access.</li>
+          </ol></li>
       </ol></section>
        
   </body>

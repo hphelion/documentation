@@ -154,8 +154,8 @@ config-processor | add-localhost | Add localhost group ------------------ 0.17s
 -------------------------------------------------------------------------------
 Total: ------------------------------------------------------------------ 7.99s
 localhost                  : ok=21   changed=14   <b>unreachable=0  </b>  <b>failed=0  </b>      </codeblock></li>
-            <li>Run the Ready Deployment Play
-                book<codeblock>stack@msgaas-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost ready-deployment.yml </codeblock><p>Successful
+            <li>Run the Ready Deployment
+                Playbook<codeblock>stack@msgaas-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost ready-deployment.yml </codeblock><p>Successful
                 output should look similar to the following. <note>Ignore the TASK/msg message at
                   the end of the output. Do not run the playbook as indicated; that playbook must be
                   run later in the installation

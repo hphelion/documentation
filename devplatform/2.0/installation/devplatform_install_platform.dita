@@ -33,7 +33,7 @@
         <li>Check to ensure that all Keystone AUTH_URL IP addresses have been added to the <xref
             href="devplatform_install_prereq.dita#topic_x54_njh_ts/proxy">no-proxy </xref>list.</li>
         <li>Check to ensure that all OS_ variables are unset. To check this, run
-          <codeblock>env | grep OSX_ </codeblock>and then <codeph>unset</codeph> any OS_ variables
+          <codeblock>env | grep OS_ </codeblock>and then <codeph>unset</codeph> any OS_ variables
           which appear in the list of results. </li>
         <li>Create and source the Virtual Environment. In this example,
             <codeph>&lt;dpi-venv&gt;.tgz</codeph> is the name of the
