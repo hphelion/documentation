@@ -146,8 +146,8 @@
       <p>The following diagram shows the set of configuration objects and their relationships. All
         objects have a name that you may set to be something meaningful for your context. In the
         examples these names are provided in capital letters as a convention. These names have no
-        significance to HPE Helion OpenStack, rather it is the relationships between them that define
-        the configuration.</p>
+        significance to HPE Helion OpenStack, rather it is the relationships between them that
+        define the configuration.</p>
       <p><image href="../media/inputmodel/hphelionopenstack_concepts.png"/></p>
       <p><xref href="../media/inputmodel/hphelionopenstack_concepts_lg.png" scope="external"
           format="html">Download a high-res version</xref></p>
@@ -251,8 +251,8 @@
           <uicontrol>service-components</uicontrol>. The details of the services themselves and how
         they interact with each other is captured in service definition files provided by HPE Helion
         OpenStack.</p>
-      <p>When specifying your HPE Helion OpenStack cloud you have to decide where components will run
-        and how they connect to the networks. For example, should they all run in one
+      <p>When specifying your HPE Helion OpenStack cloud you have to decide where components will
+        run and how they connect to the networks. For example, should they all run in one
           <uicontrol>control-plane</uicontrol> sharing common services or be distributed across
         multiple <uicontrol>control-planes</uicontrol> to provide separate instances of some
         services? The HPE Helion OpenStack supplied examples provide solutions for some typical
@@ -292,10 +292,10 @@
           services.</i></p>
       <p>Disk-models define how local storage is to be configured and presented to
           <uicontrol>services</uicontrol>. Disk-models are identified by a name, which you will
-        specify. The HPE Helion OpenStack examples provide some typical configurations. As this is an
-        area that varies with respect to the services that are hosted on a server and the number of
-        disks available, it is impossible to cover all possible permutations you may need to express
-        via modifications to the examples.</p>
+        specify. The HPE Helion OpenStack examples provide some typical configurations. As this is
+        an area that varies with respect to the services that are hosted on a server and the number
+        of disks available, it is impossible to cover all possible permutations you may need to
+        express via modifications to the examples.</p>
       <p>Within a <uicontrol>disk-model</uicontrol>, disk devices are assigned to either a
           <uicontrol>device-group</uicontrol> or a <uicontrol>volume-group</uicontrol>.</p>
       <p><image href="../media/inputmodel/hphelionopenstack_diskmodels.png"/></p>
@@ -460,7 +460,8 @@
         configuration. The Configuration Processor provides information about the routes it is
         expecting to be configured.</p>
       <p>For a detailed description of how the Configuration Processor validates routes, refer to
-        <!-- link to 5.5 --></p>
+          <xref href="input_model.dita#input_model/networkroutevalidation">Network Route
+          Validation</xref>.</p>
     </section>
     <section id="loadbalancers"><title>Load Balancers</title>
       <p><uicontrol>Load-balancers</uicontrol> provide a specific type of routing and are also
@@ -501,9 +502,8 @@
         cloud (e.g. a HA Proxy cluster).</p>
       <p>The following diagram shows a possible configuration in which the hostname associated with
         the public URL has been configured to resolve to a firewall controlling external access to
-        the cloud. Within the cloud, HPE Helion OpenStack services are configured to use the internal
-        URL to access a separate virtual IP address.</p>
-      <!-- NEED TO UPDATE MEDIA -->
+        the cloud. Within the cloud, HPE Helion OpenStack services are configured to use the
+        internal URL to access a separate virtual IP address.</p>
       <p><image href="../media/inputmodel/hphelionopenstack_loadbalancers.png"/></p>
       <p><xref href="../media/inputmodel/hphelionopenstack_loadbalancers_lg.png" scope="external"
           format="html">Download a high-res version</xref></p>
@@ -2374,8 +2374,8 @@
         OpenStack will only persist data when the administrator confirms that they are about to
         deploy the results via the "ready-deployment" operation. To under this better, consider the
         following example:</p>
-      <p>Imagine you have completed your HPE Helion OpenStack deployment with servers A, B, and C and
-        you want to add two new compute nodes by adding servers D and E to the input model.</p>
+      <p>Imagine you have completed your HPE Helion OpenStack deployment with servers A, B, and C
+        and you want to add two new compute nodes by adding servers D and E to the input model.</p>
       <p>When you add these to the input model and re-run the Configuration Processor it will read
         the persisted data for A, B, and C and allocate D and E as new servers. The Configuration
         Processor now has allocation data for A, B, C, D, and E –- which it keeps in a staging area

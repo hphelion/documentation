@@ -7,11 +7,11 @@
     <!--Needs Work-->
     <section><title>About the Operations Console</title></section>
     <section id="about">
-      <p>The Operations Console (Ops Console) for HPE Helion OpenStack 2.0 is designed for HPE Helion
-        OpenStack Administrators to have a web-based UI they can use to view data about their cloud
-        infrastructure. The Ops Console is a web-based GUI that offers the user access to data such
-        as monitoring alarms data by service, performance data, compute nodes and instances lists,
-        and a drilldown to Kibana for a deep look into logs. The Business Logic Layer is a
+      <p>The Operations Console (Ops Console) for HPE Helion OpenStack 2.0 is designed for HPE
+        Helion OpenStack Administrators to have a web-based UI they can use to view data about their
+        cloud infrastructure. The Ops Console is a web-based GUI that offers the user access to data
+        such as monitoring alarms data by service, performance data, compute nodes and instances
+        lists, and a drilldown to Kibana for a deep look into logs. The Business Logic Layer is a
         middleware component that serves as a single point of contact for the UI to communicate with
         OpenStack services such as Monasca, Nova, and others.</p>
     </section>
@@ -37,6 +37,18 @@
         more details.</note>
         -->
       <!-- TODO self-referential link here - should it go somewhere else -->
+    </section>
+    <section id="help"><title>Getting Help</title>
+      <p>On each of the Operations Console pages there is a help menu that you can click on to take
+        you to a help page specific to the console you are currently viewing.</p>
+      <p>To reach the help page:</p>
+      <ol>
+        <li>Click the help menu option in the upper-right corner of the page, depicted by the
+          question mark seen in the screenshot below.</li>
+        <li>Click on the <uicontrol>Get Help For This Page</uicontrol> link which will open the help
+          page in a new tab in your browser.</li>
+      </ol>
+      <p><image href="../../media/opsconsole/help.png"/></p>
     </section>
   </body>
 </topic>
