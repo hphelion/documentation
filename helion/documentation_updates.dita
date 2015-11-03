@@ -12,55 +12,65 @@
     <section id="changelog"><title>Documentation Revision History</title>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="changelog_tb2" outputclass="tablesorter">
-          <tgroup cols="2">
+          <tgroup cols="3">
             <colspec colname="c2" colnum="1"/>
             <colspec colname="c3" colnum="2"/>
+            <colspec colname="c4" colnum="3"/>
             <thead>
               <row>
                 <entry>Date</entry>
+                <entry>Component</entry>
                 <entry>Description</entry>
               </row>
             </thead>
             <tbody>
               <row>
                 <entry>November 3, 2015</entry>
+                <entry>Security - TLS</entry>
                 <entry>Added TLS steps required for Private CA certificates (<xref
                     href="security/tls.dita#topic_yym_nps_4t/private1">Link </xref>and <xref
                     href="security/tls.dita#topic_yym_nps_4t/private2">Link</xref>)</entry>
               </row>
               <row>
                 <entry>November 2, 2015</entry>
+                <entry>Metering - Ceilometer</entry>
                 <entry>Added Swift meters to Ceilometer default meter list (<xref
                     href="metering/metering_metertypes.dita#topic3051/swift">Link</xref>)</entry>
               </row>
               <row>
                 <entry>October 29, 2015</entry>
+                <entry>Horizon</entry>
                 <entry>Added note about meters avalable from the Metric option  (<xref
                     href="horizon/horizon_overview.dita#topic1564">Link</xref>)</entry>
               </row>
               <row>
                 <entry>October 29, 2015</entry>
+                <entry>Horizon</entry>
                 <entry>Added web browser support information to the Horizon Overview (<xref href="horizon/horizon_overview.dita">Link</xref>)</entry>
               </row>
 
               <row>
                 <entry>October 28, 2015</entry>
+                <entry>Neutron</entry>
                 <entry>Added steps for Neutron service logging level configuration (<xref
                     href="administration/configure_logging.dita">Link</xref>) </entry>
               </row>
               <row>
                 <entry>October 28, 2015</entry>
+                <entry>Monitoring</entry>
                 <entry>Added step to ensure new Compute nodes that you add to your environment are
                   included in monitoring (<xref href="operations/add_node.dita">Link</xref>) </entry>
               </row>
               <row>
                 <entry>October 28, 2015</entry>
+                <entry>Monitoring</entry>
                 <entry>Added step to ensure new Ceph monitor nodes that you add to your environment
                   are included in monitoring (<xref
                     href="blockstorage/ceph/adding_new_monitor_node.dita">Link</xref>)</entry>
               </row>
               <row>
                 <entry>October 27, 2015</entry>
+                <entry>-</entry>
                 <entry>Initial Creation</entry>
               </row>
             </tbody>
