@@ -58,7 +58,7 @@
         </dlentry>
       </dl>
      </section>   
-    <section><title>Set Proxy Shell Variables</title>
+    <section id="shell"><title>Set Proxy Shell Variables</title>
    <p>If your network uses a proxy, it may be necessary to set the
       <codeph>https_proxy</codeph> and <codeph>http_proxy</codeph> shell variables so that the
       installer may download required Python libraries from the <xref
@@ -85,7 +85,7 @@ echo 'KEYSTONE INTERNAL IP: ' $KEYSTONE_IP_INTERNAL </codeblock></li>
       </ol>
     </section><section><title>Verify Connectivity</title>
       <ol id="ol_egn_mr1_tt">
-        <li>Source the keystone RC file. <codeblock>source keystone.osrc</codeblock></li>
+        <li>Source the Keystone RC file. <codeblock>source keystone.osrc</codeblock></li>
         <li>Verify access to the <codeph>pypi</codeph> site for downloading required Python scripts:<p>
             <pre>PYPI_URL=https://pypi.python.org/pypi
 wget -t3 --timeout=5 -O/dev/null -q $PYPI_URL &amp;&amp; echo exists OK || echo ERROR cannot reach $PYPI_URL</pre>
@@ -97,7 +97,9 @@ wget -t3 --timeout=5 -O/dev/null -q $KEYSTONE_URL_PUBLIC &amp;&amp; echo exists 
           endpoint:<pre>SHERPA_URL_PUBLIC=`openstack endpoint list | grep sherpa | grep public | grep -Eo '(http|https)://{1}\S+'`
 wget -t3 --timeout=5 -O/dev/null -q $SHERPA_URL_PUBLIC &amp;&amp; echo exists OK || echo ERROR cannot reach $SHERPA_URL_PUBLIC</pre></li>
       </ol>
-    </section>
+    </section><section><title>Check OS Variables</title>Check to ensure that all OS_ variables are unset. To check
+      this, run <codeblock>    env | grep OS_ </codeblock> and then <codeph>unset</codeph> any
+      variables which appear in the list of results. </section>
     <section>
       <title>Download and Install the Virtual Environment</title>
       <note>Installing a Python package also installs any required dependencies. This may generate
