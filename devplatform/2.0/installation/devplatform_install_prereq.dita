@@ -75,7 +75,7 @@ export http_proxy=http://proxy.example.com</codeblock></li>
               address.<codeblock>KEYSTONE_IP_PUBLIC=$(openstack endpoint list | grep keystone | grep public | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
 echo 'KEYSTONE PUBLIC IP: ' $KEYSTONE_IP_PUBLIC  </codeblock></li>
             <li>Get the Keystone <b>internal</b> endpoint IP address.
-              <codeblock>KEYSTONE_IP_INTERNAL='openstack endpoint list | grep keystone | grep internal | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'' 
+              <codeblock>KEYSTONE_IP_INTERNAL='(openstack endpoint list | grep keystone | grep internal | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}') 
 echo 'KEYSTONE INTERNAL IP: ' $KEYSTONE_IP_INTERNAL </codeblock></li>
               <li id="proxy">Set the IP address values for <codeph>no_proxy</codeph>. <note
                 type="important">Ensure that each and every Keystone AUTH_URL IP is included in the
