@@ -146,8 +146,9 @@
             <p><note>Ensure that disks designated to be used for the OSD data and journal storage
                 must be in a clean state (i.e. any existing partitions must be deleted). If you do
                 not perform this step, Ceph configuration fails with errors.</note></p></li>
-          <li><p>Editable parameters for Ceph are available in the following locations:</p>
-            <ul>
+          <li>[OPTIONAL] There are parameters for Ceph that can be edited by the admin in the
+            locations described below. The default values will work but if you choose to change any
+            of these values, ensure that you also change them where they are referenced as well. <ul>
               <li><codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph>
                 <p>In the <codeph>settings.yml</codeph> file, you can edit the following
                   parameters:</p>
@@ -212,9 +213,6 @@ git commit -m "&lt;commit message>"</codeblock></li>
           href="install_entryscale_kvm.dita#install_kvm/provision">Entry-scale KVM Cloud
           installation steps.</xref></p>
     </section>
-
-
-
 
     <section id="configure_backend">
       <title>Configure Ceph as the Backend</title>
@@ -486,7 +484,7 @@ ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</codeblock></li>
       <p>See <xref href="installation_verification.dita">Verifying your Installation</xref> for more
         details.</p>
     </section>
-   <!-- <section>
+    <!-- <section>
       <title>Configuring Glance to use Ceph</title>
       <p>Perform the following procedure on the deployer/lifecycle-manager node to configure Ceph as
         a default Glance store:<ol id="ol_u12_kd3_pt">
@@ -523,6 +521,6 @@ git commit -m "&lt;commit message>"</codeblock>
 ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml</codeblock></li>
         </ol></p>
     </section> 
-    <p>Once Glance is configured, any image creation will use Ceph as the default data store.</p>--> 
+    <p>Once Glance is configured, any image creation will use Ceph as the default data store.</p>-->
   </body>
 </topic>

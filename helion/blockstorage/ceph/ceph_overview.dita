@@ -14,23 +14,20 @@
                 the concept of cloud models, where the user can modify the YAML to provide the
                 required configuration based on their environment. To deploy Ceph, and make
                 configuration changes, you must modify the cloud input model files related to
-                Ceph.</p><p>You can implementing the input model and perform the following Ceph
-                    activities:<ul id="ul_yt2_wzl_rt">
-                    <li><xref href="../../installation/configure_ceph.dita#config_ceph"/></li>
-                    <li><xref href="adding_new_osd_node.dita#topic_drm_rm5_kt"/></li>
-                    <li><xref href="adding_new_monitor_node.dita#topic_zbc_pg4_rt"/></li>
-                    <!-- DOCS-2007 <li><xref href="configuring_use_ceph_cluster_glance.dita#topic_qch_rmx_st"
-                        /></li> -->
-                    <li><xref href="deploy_monitor_stand_alone_node.dita#topic_ah5_4yx_qt"/></li>
-                    <li><xref href="defining_monitor_resource.dita#topic_owr_kf4_rt"/></li>
-                    <li><xref href="reconfigure_ceph_services.dita#topic_bl1_bfx_qt"/></li>
-                    <li><xref href="remove_osd_node.dita#topic_ipm_gnt_rt"/></li>
-                    <li><xref href="remove_monitor_node.dita#topic_a3t_ptt_rt"/></li>
-                    <li><xref href="ceph_operation.dita#topic_wbn_td3_pt"/></li>
+                Ceph.</p><p>You can implementing the input model and perform the following Ceph activities:<ul>
+                    <li><xref href="../../installation/configure_ceph.dita"/></li>
+                    <li><xref href="adding_new_osd_node.dita"/></li>
+                    <li><xref href="adding_new_monitor_node.dita"/></li>
+                    <li><xref href="deploy_monitor_stand_alone_node.dita"/></li>
+                    <li><xref href="defining_monitor_resource.dita"/></li>
+                    <li><xref href="reconfigure_ceph_services.dita"/></li>
+                    <li><xref href="remove_osd_node.dita"/></li>
+                    <li><xref href="remove_monitor_node.dita"/></li>
+                    <li><xref href="ceph_operation.dita"/></li>
                 </ul></p></section>
         <note>Ceph upgrade is a built-in, integral part of the HPE Helion Lifecycle Management
-            upgrade, and is in line with rest of the supported services. In HPE Helion OpenStack 2.0,
-            the supported version of Ceph is Firefly 0.80.7. In upcoming HPE Helion OpenStack
+            upgrade, and is in line with rest of the supported services. In HPE Helion OpenStack
+            2.0, the supported version of Ceph is Firefly 0.80.7. In upcoming HPE Helion OpenStack
             releases, new versions of Ceph will be supported and the cluster can be upgraded to new
             releases. You should not use other releases of Ceph (for example, Firefly 0.80.10) and
             run Ceph upgrade verbs to upgrade the cluster. Doing this might cause a cluster
