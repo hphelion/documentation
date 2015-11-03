@@ -46,7 +46,7 @@ hp3par_password: &#60;hp3par_password>
 hp3par_api_url: https://&#60;3par-san-ipaddr>:8080/api/v1
 hp3par_cpg: &#60;3par-cpg-name-1>[,&#60;3par-cpg-name-2>, ...]
 volume_backend_name: &#60;3par-backend-name>
-volume_driver: cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver</codeblock></li>
+volume_driver: cinder.volume.drivers.san.hp.hp_3par_fc.HP3PARFCDriver</codeblock></li>
             </ol></li>
           <li>Commit your configuration your local git repositiory:
             <codeblock>cd ~/helion/hos/ansible
