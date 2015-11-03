@@ -15,9 +15,10 @@
     </metadata>
   </prolog>
   <body>
-    <p><i>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx.dita#topic10581/vmware">KVM + ESX
-        Deployment</xref>.</i></p>
+    <p><i>Return to installing the non-KVM region for the <xref
+          href="CGH-2-install-memphis.dita#topic10581/vsd-user">memphis</xref> or <xref
+          href="CGH-2-install-sacramento.dita#topic10581/vsd-user">sacramento</xref>
+      template.</i></p>
     <section id="create-user-for-plugin-login"><p>You must create an administrative user called
         OSadmin and add it to CMS Group.</p>To create the OSadmin user: <ol>
         <li>Use a web browser such as Chrome/FireFox to launch the VSD Architect dashboard using the
@@ -46,9 +47,10 @@ VSD Server : auto</codeblock><p>The
         <li>Select the <b>CMS Group</b>, then click the link icon click <b>OSadmin</b>.</li>
       </ol></section>
     <section>
-      <p><i>Return to the Installing the <xref
-            href="carrier-grade-install-kvm-esx.dita#topic10581/vmware">KVM + ESX
-            Deployment</xref>.</i></p>
+      <p><i>Return to installing the non-KVM region for the <xref
+            href="CGH-2-install-memphis.dita#topic10581/vsd-user">memphis</xref> or <xref
+            href="CGH-2-install-sacramento.dita#topic10581/vsd-user">sacramento</xref>
+        template.</i></p>
     </section>
   </body>
 </topic>

@@ -14,7 +14,7 @@
       <othermeta name="product-version1" content="HP Helion Openstack Carrier Grade 1.1"/>
     </metadata>
   </prolog>
-  <body><p><i>Return to the Installing the KVM + ESX Deployment for the <xref
+  <body><p><i>Return to Installing the KVM + ESX Deployment for the <xref
                     href="CGH-2-install-memphis.dita#topic10581/vrsvapp">memphis</xref> or <xref
                     href="CGH-2-install-sacramento.dita#topic10581/vrsvapp">sacramento</xref>
                 template.</i></p><p>This document describes how to install the HP
@@ -176,7 +176,7 @@ subnet 10.20.94.0 netmask 255.255.255.0 {
                                 width="600" id="image_hpb_mtp_wt"/></p></li>
                 </ol>
             </p>
-        </section><p><i>Return to the Installing the KVM + ESX Deployment for the <xref
+        </section><p><i>Return to Installing the KVM + ESX Deployment for the <xref
                     href="CGH-2-install-memphis.dita#topic10581/vrsvapp">memphis</xref> or <xref
                     href="CGH-2-install-sacramento.dita#topic10581/vrsvapp">sacramento</xref>
                 template.</i></p></body>

@@ -163,9 +163,11 @@ SecurityWarning
         </li>
   </ol>
 </section>
-  <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/patch-after">KVM
-    installation</xref>.</p>
-  <p>Return to <xref href="carrier-grade-install-kvm-esx.dita#topic10581/patch-after">the KVM + ESX
-    installation</xref>.</p>
+  <p>Return installing the non-KVM region for: <ul id="ul_n3r_dfx_wt">
+        <li><xref href="CGH-2-install-denver.dita#topic10581/ldap3">denver template</xref></li>
+        <li><xref href="CGH-2-install-tahoe.dita#topic10581/ldap3">tahoe template</xref></li>
+        <li><xref href="CGH-2-install-memphis.dita#topic10581/ldap3">memphis template</xref></li>
+        <li><xref href="CGH-2-install-memphis.dita#topic10581/ldap3">sacramento template</xref></li>
+      </ul></p>
   </body>
 </topic>

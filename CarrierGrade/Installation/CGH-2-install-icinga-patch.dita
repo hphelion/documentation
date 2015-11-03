@@ -57,7 +57,10 @@ ansible -i /root/&lt;cloudname>/clouds/&lt;cloudname>/001/stage/ansible/hosts -s
 [CLOUDNAME_IN_CAPS]-CCP-T2-M3-NETCLM | success | rc=0 >> patching file check_horizon.sh </codeblock></li>
       </ol>
     </p>
-    <p>Return to the <xref href="carrier-grade-install-kvm-esx.dita#topic10581/hdeploy">KVM + ESX
-        installation</xref>.</p>
+    <p><i>Return to installing the non-KVM region for the <xref
+          href="CGH-2-install-tahoe.dita#topic10581/icinga-patch">tahoe</xref>
+        <xref href="CGH-2-install-memphis.dita#topic10581/icinga-patch">memphis</xref> or <xref
+          href="CGH-2-install-sacramento.dita#topic10581/icinga-patch">sacramento</xref>
+        template.</i></p>
   </body>
 </topic>

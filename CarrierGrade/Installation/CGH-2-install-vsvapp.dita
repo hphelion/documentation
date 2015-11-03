@@ -15,7 +15,7 @@
         </metadata>
     </prolog>
     <body>
-        <p><i>Return to the Installing the KVM + ESX Deployment for the <xref
+        <p><i>Return to installing the non-KVM region for the <xref
                     href="CGH-2-install-memphis.dita#topic10581/vrsvapp">memphis</xref> or <xref
                     href="CGH-2-install-sacramento.dita#topic10581/vrsvapp">sacramento</xref>
                 template.</i></p>
@@ -309,7 +309,7 @@ vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
                 </ol>
             </p>
         </section>
-        <p><i>Return to the Installing the KVM + ESX Deployment for the <xref
+        <p><i>Return to installing the non-KVM region for the <xref
                     href="CGH-2-install-memphis.dita#topic10581/vrsvapp">memphis</xref> or <xref
                     href="CGH-2-install-sacramento.dita#topic10581/vrsvapp">sacramento</xref>
                 template.</i></p>

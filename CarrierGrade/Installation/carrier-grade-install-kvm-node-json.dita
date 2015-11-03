@@ -18,11 +18,12 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
-    <p>The <xref href="carrier-grade-install-kvm-esx.dita#topic10581">process for installing the
-                KVM + ESX deployment</xref> requires several JSON file that will be used when
-            deploying the HPE Helion OpenStack.</p>
-        <p><i>Return to <xref href="carrier-grade-install-kvm-esx.dita#topic10581">Installing the
-                    KVM + ESX deployment</xref>.</i></p>
+    <p>The process for installing the memphis and sacramento deployments requires several JSON file
+            that will be used when deploying the HPE Helion OpenStack.</p>
+        <p><i>Return to installing the non-KVM region for the <xref
+                    href="CGH-2-install-memphis.dita#topic10581/node">memphis</xref> or <xref
+                    href="CGH-2-install-sacramento.dita#topic10581/node">sacramento</xref>
+                template.</i></p>
 <p>The <codeph>/var/hlm/clouds/node-provision.json</codeph> file contains the following fields:</p>
 <table>
 <tgroup cols="2">
@@ -161,7 +162,9 @@
     }
 ]</codeblock>
 </section>
-        <p><i>Return to <xref href="carrier-grade-install-kvm-esx.dita#topic10581">Installing the
-                    KVM + ESX deployment</xref>.</i></p>
+    <p><i>Return to installing the non-KVM region for the <xref
+        href="CGH-2-install-memphis.dita#topic10581/node">memphis</xref> or <xref
+            href="CGH-2-install-sacramento.dita#topic10581/node">sacramento</xref>
+        template.</i></p>
 </body>
 </topic>

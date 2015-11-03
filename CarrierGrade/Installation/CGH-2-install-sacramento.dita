@@ -33,9 +33,11 @@
     <section
       conref="conrefs/CGH-2-conref-VSD-license-6.dita#ReusableComponent_u1w_jzw_vt/vsd-license"/>
     <section
-      conref="conrefs/CGH-2-conref-VSD-User-7.dita#ReusableComponent_ull_mzw_vt/create-user-for-plugin-login"/>
+      conref="conrefs/CGH-2-conref-VSD-User-7.dita#ReusableComponent_ull_mzw_vt/create-user-for-plugin-login" id="vsd-user"/>
     <section
       conref="conrefs/CGH-2-conref-HLM-Define-8.dita#ReusableComponent_swm_qzw_vt/hos-install"/>
+    <section
+      conref="conrefs/CGH-2-conref-node-provision-8a.dita#ReusableComponent_ic3_q1x_wt/configure-node-provision-json"  id="node"/>
     <section
       conref="conrefs/CGH-2-conref-PXE-Boot-9.dita#ReusableComponent_t4b_wzw_vt/section_apb_wzw_vt"/>
     <section
@@ -57,7 +59,7 @@
       conref="conrefs/CGH-2-conref-Machine-json-18.dita#ReusableComponent_a5m_v1x_vt/configure-mach-json"/>
     <section
       conref="conrefs/CGH-2-conref-Verify-json-19.dita#ReusableComponent_upw_x1x_vt/verify-json"/>
-    <section conref="conrefs/CGH-2-conref-esx-proxy-20.dita#ReusableComponent_hyj_bbx_vt/esx-proxy"/>
+    <section conref="conrefs/CGH-2-conref-esx-proxy-20.dita#ReusableComponent_hyj_bbx_vt/esx-proxy" id="esx-proxy"/>
     <section
       conref="conrefs/CGH-2-conref-HLM-provision-21.dita#ReusableComponent_vds_dbx_vt/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"/>
     <section
@@ -66,11 +68,17 @@
       conref="conrefs/CGH-2-conref-generate-init-23.dita#ReusableComponent_q43_nbx_vt/hos-cloud"/>
     <section conref="conrefs/CGH-2-conref-hlm-deploy-24.dita#ReusableComponent_urx_xbx_vt/hdeploy"/>
     <section
-      conref="conrefs/CGH-2-conref-ldap-config-25.dita#ReusableComponent_y3j_1cx_vt/patch-after"/>
+      conref="conrefs/CGH-2-conref-node-icinga.dita#ReusableComponent_kxs_plx_wt/section_oxs_plx_wt" id="icinga-patch"/>
+    <section
+      conref="conrefs/CGH-2-conref-node-infoblox.dita#ReusableComponent_zf2_rlx_wt/section_dg2_rlx_wt" id="infoblox-patch"/>
+    
+    <section
+      conref="conrefs/CGH-2-conref-ldap-config-25.dita#ReusableComponent_y3j_1cx_vt/patch-after" id="ldap3"/>
     <section
       conref="conrefs/CGH-2-conref-verify-vsc-26.dita#ReusableComponent_cyy_ccx_vt/section_jyy_ccx_vt"/>
     <section
       conref="conrefs/CGH-2-conref-verify-vrsg-27.dita#ReusableComponent_ich_gcx_vt/section_mch_gcx_vt"/>
+    
     <section id="next-step">
       <title>Next Step</title>
       <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon

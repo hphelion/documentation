@@ -18,9 +18,8 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
-    <p>The <xref href="carrier-grade-install-kvm-esx.dita#topic10581">process for installing the
-                KVM + ESX deployment</xref> requires several JSON files that will be used when
-            deploying the HLM VM.</p>
+    <p>The process for installing the memphis or sacramento deployment requires several JSON files
+            that will be used when deploying the HLM VM.</p>
         
 <section id="sample-node-provisionjson-file">
             <p>The following represents a sample <codeph>ldap.json</codeph> file in the
@@ -32,8 +31,10 @@
                 <codeblock>"ldap_username": "admin", 
 "ldap_password": "admin_001", </codeblock>
             </p>
-            <p>Return to <xref href="carrier-grade-install-kvm-esx.dita#topic10581">Installing
-                    the KVM + ESX Deployment</xref>.</p>
+            <p><i>Return to installing the non-KVM region for the <xref
+                        href="CGH-2-install-memphis.dita#topic10581/json">memphis</xref> or <xref
+                        href="CGH-2-install-sacramento.dita#topic10581/json">sacramento</xref>
+                    template.</i></p>
             <codeblock>{ 
     "product": { 
         "version": 1 

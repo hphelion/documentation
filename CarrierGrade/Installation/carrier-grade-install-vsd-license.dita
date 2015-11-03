@@ -14,9 +14,10 @@
     </metadata>
   </prolog>
   <body>
-    <p><i>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx.dita#topic10581/vmware">KVM + ESX
-        Deployment</xref>.</i></p>
+    <p><i>Return to installing the non-KVM region for the <xref
+          href="CGH-2-install-memphis.dita#topic10581/vsd-license">memphis</xref> or <xref
+          href="CGH-2-install-sacramento.dita#topic10581/vsd-license">sacramento</xref>
+        template.</i></p>
     <p>You should have recevied a license file when you purchased DCN. You need to apply that
       license on the HLM host. If you do not have the license file, through the DCN post-sales
       process, you received a confirmation email. Use a browser and go to the link in the email to
@@ -45,9 +46,10 @@ VSD Server : auto</codeblock><p>The
       <li>Copy and paste the license that you have received.</li>
     </ol>
     <section>
-      <p><i>Return to the Installing the <xref
-            href="carrier-grade-install-kvm-esx.dita#topic10581/vmware">KVM + ESX
-            Deployment</xref>.</i></p>
+      <p><i>Return to installing the non-KVM region for the <xref
+            href="CGH-2-install-memphis.dita#topic10581/vsd-license">memphis</xref> or <xref
+            href="CGH-2-install-sacramento.dita#topic10581/vsd-license">sacramento</xref>
+          template.</i></p>
     </section>
   </body>
 </topic>

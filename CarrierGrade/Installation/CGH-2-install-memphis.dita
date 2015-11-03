@@ -33,13 +33,22 @@
     <section
       conref="conrefs/CGH-2-conref-VSD-license-6.dita#ReusableComponent_u1w_jzw_vt/vsd-license"/>
     <section
-      conref="conrefs/CGH-2-conref-VSD-User-7.dita#ReusableComponent_ull_mzw_vt/create-user-for-plugin-login"/>
+      conref="conrefs/CGH-2-conref-VSD-User-7.dita#ReusableComponent_ull_mzw_vt/create-user-for-plugin-login" id="vsd-user"/>
     <section
       conref="conrefs/CGH-2-conref-HLM-Define-8.dita#ReusableComponent_swm_qzw_vt/hos-install"/>
     <section
-      conref="conrefs/CGH-2-conref-PXE-Boot-9.dita#ReusableComponent_t4b_wzw_vt/section_apb_wzw_vt"/>
+      conref="conrefs/CGH-2-conref-node-provision-8a.dita#ReusableComponent_ic3_q1x_wt/configure-node-provision-json"  id="node"/>
     <section
-      conref="conrefs/CGH-2-conref-definition-json-10.dita#ReusableComponent_zsb_b1x_vt/configure-def-json"/>
+      conref="conrefs/CGH-2-conref-PXE-Boot-9.dita#ReusableComponent_t4b_wzw_vt/section_apb_wzw_vt" id="pxe"/>
+    <section id="json">
+      <title>Configuring JSON files</title>
+      <p>The process for installing the memphis and sacramento deployments requires several JSON
+        files that will be used when deploying the HLM VM.</p>
+      <p>The following sections details the files that need to be configured and contain sample JSON
+        files that can be copied and pasted into your environment.</p>
+    </section>
+    <section
+      conref="conrefs/CGH-2-conref-definition-json-10.dita#ReusableComponent_zsb_b1x_vt/configure-def-json" id="definition"/>
     <section
       conref="conrefs/CGH-2-conref-env-json-11.dita#ReusableComponent_wlx_d1x_vt/configure-env-json"/>
     <section
@@ -66,7 +75,12 @@
       conref="conrefs/CGH-2-conref-generate-init-23.dita#ReusableComponent_q43_nbx_vt/hos-cloud"/>
     <section conref="conrefs/CGH-2-conref-hlm-deploy-24.dita#ReusableComponent_urx_xbx_vt/hdeploy"/>
     <section
-      conref="conrefs/CGH-2-conref-ldap-config-25.dita#ReusableComponent_y3j_1cx_vt/patch-after"/>
+      conref="conrefs/CGH-2-conref-node-icinga.dita#ReusableComponent_kxs_plx_wt/section_oxs_plx_wt" id="icinga-patch"/>
+    <section
+      conref="conrefs/CGH-2-conref-node-infoblox.dita#ReusableComponent_zf2_rlx_wt/section_dg2_rlx_wt" id="infoblox-patch"/>
+    <section
+      conref="conrefs/CGH-2-conref-ldap-config-25.dita#ReusableComponent_y3j_1cx_vt/patch-after"
+      id="ldap3"/>
     <section
       conref="conrefs/CGH-2-conref-verify-vsc-26.dita#ReusableComponent_cyy_ccx_vt/section_jyy_ccx_vt"/>
     <section

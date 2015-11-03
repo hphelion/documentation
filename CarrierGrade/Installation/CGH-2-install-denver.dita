@@ -413,7 +413,7 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
       conref="conrefs/CGH-2-conref-generate-init-23.dita#ReusableComponent_q43_nbx_vt/hos-cloud"/>
     <section conref="conrefs/CGH-2-conref-hlm-deploy-24.dita#ReusableComponent_urx_xbx_vt/hdeploy"/>
     <section
-      conref="conrefs/CGH-2-conref-ldap-config-25.dita#ReusableComponent_y3j_1cx_vt/patch-after"/>
+      conref="conrefs/CGH-2-conref-ldap-config-25.dita#ReusableComponent_y3j_1cx_vt/patch-after" id="ldap3"/>
     <section id="next-step">
       <title>Next Step</title>
       <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon Interface</xref></p>

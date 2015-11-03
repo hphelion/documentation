@@ -14,10 +14,11 @@
     </metadata>
   </prolog>
   <body>
-    <p><i>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx.dita#topic10581/vmware">KVM + ESX
-        Deployment</xref>.</i></p>
-
+      <p><i>Return to installing the non-KVM region for the <xref
+          href="CGH-2-install-memphis.dita#topic10581/vrsvapp">memphis</xref> or <xref
+              href="CGH-2-install-sacramento.dita#topic10581/vrsvapp">sacramento</xref>
+          template.</i></p>
+      
     <p>The HPE Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires the VRSvApp. One
       VRSvApp is required for each ESX host. There is a 1-to-1 mapping between each VRSvApp and its
       ESX host. The VRSvApp installation package is contained in the packages you downloaded from
@@ -112,9 +113,10 @@
                 <li>Click <b>Finish</b>.</li>
                 </ol></li>
             </ol>
-            <p><i>Return to the Installing the <xref
-                        href="carrier-grade-install-kvm-esx.dita#topic10581/vmware">KVM + ESX
-                        Deployment</xref>.</i></p>
-        </section>
+        <p><i>Return to installing the non-KVM region for the <xref
+            href="CGH-2-install-memphis.dita#topic10581/vrsvapp">memphis</xref> or <xref
+                href="CGH-2-install-sacramento.dita#topic10581/vrsvapp">sacramento</xref>
+            template.</i></p>
+    </section>
   </body>
 </topic>

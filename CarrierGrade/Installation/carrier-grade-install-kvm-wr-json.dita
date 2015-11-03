@@ -18,9 +18,8 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
-    <p>The <xref href="carrier-grade-install-kvm-esx.dita#topic10581">process for installing the
-                KVM + ESX deployment</xref> requires several JSON files that will be used when
-            deploying the HLM VM.</p>
+    <p>The process for installing the memphis or sacramento deployment requires several JSON files
+            that will be used when deploying the HLM VM.</p>
         
 <section id="sample-node-provisionjson-file">
             <p><b>For bonded NIC environments</b>, edit the file as follows:</p>
@@ -31,8 +30,10 @@
     "interface_ports": [
     "eth0, eth1"
 ],</codeblock>
-            <p>Return to <xref href="carrier-grade-install-kvm-esx.dita#topic10581">Installing
-                    the KVM + ESX Deployment</xref>.</p>
+            <p><i>Return to installing the non-KVM region for the <xref
+                        href="CGH-2-install-memphis.dita#topic10581/json">memphis</xref> or <xref
+                        href="CGH-2-install-sacramento.dita#topic10581/json">sacramento</xref>
+                    template.</i></p>
             <p>Make sure the file contains the following lines for the TUL network. Remove any
                 additional TUL entries, if present:</p>
             <codeblock>"vswitch_type": "nuage_vrs",

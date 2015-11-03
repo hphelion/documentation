@@ -34,7 +34,10 @@
     </p>
     <p>When the <codeph>hcfgproc</codeph> command is executed, the updated configuration file will
       be used. </p>
-    <p>Return to <xref href="carrier-grade-install-kvm-esx.dita#topic10581/hdeploy">the KVM + ESX
-        installation</xref>.</p>
+    <p><i>Return to installing the non-KVM region for the <xref
+          href="CGH-2-install-tahoe.dita#topic10581/icinga-patch">tahoe</xref>
+        <xref href="CGH-2-install-memphis.dita#topic10581/icinga-patch">memphis</xref> or <xref
+          href="CGH-2-install-sacramento.dita#topic10581/icinga-patch">sacramento</xref>
+        template.</i></p>
     </body>
 </topic>

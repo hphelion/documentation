@@ -16,7 +16,7 @@
   </metadata>
 </prolog>
 <body>
-  <p><i>Return to the Installing the KVM + ESX Deployment for the <xref
+  <p><i>Return to installing the non-KVM region for the <xref
           href="CGH-2-install-memphis.dita#topic10581/vmware">memphis</xref> or <xref
           href="CGH-2-install-sacramento.dita#topic10581/vmware">sacramento</xref>
       template.</i></p>
@@ -52,7 +52,7 @@
             <codeph>dvPortGroup</codeph>, as shown:<p><image
               href="../../media/CGH-install-portgroup-name.png" id="image_eqm_ngz_zs"/></p></li>
       </ol>
-      <p><i>Return to the Installing the KVM + ESX Deployment for the <xref
+      <p><i>Return to installing the non-KVM region for the <xref
             href="CGH-2-install-memphis.dita#topic10581/vmware">memphis</xref> or <xref
             href="CGH-2-install-sacramento.dita#topic10581/vmware">sacramento</xref>
         template.</i></p>

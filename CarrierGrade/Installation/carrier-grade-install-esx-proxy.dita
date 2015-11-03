@@ -14,7 +14,7 @@
   </metadata>
 </prolog>
 <body>
-  <p><i>Return to the Installing the KVM + ESX Deployment for the <xref
+  <p><i>Return to installing the non-KVM region for the <xref
           href="CGH-2-install-memphis.dita#topic10581/esx-proxy">memphis</xref> or <xref
           href="CGH-2-install-sacramento.dita#topic10581/esx-proxy">sacramento</xref>
       template.</i></p>
@@ -80,7 +80,7 @@
         and updates hosts file on these nodes to be configured by the <codeph>hdeploy</codeph>
         process.</p>
     </section>
-  <p><i>Return to the Installing the KVM + ESX Deployment for the <xref
+  <p><i>Return to installing the non-KVM region for the <xref
           href="CGH-2-install-memphis.dita#topic10581/esx-proxy">memphis</xref> or <xref
           href="CGH-2-install-sacramento.dita#topic10581/esx-proxy">sacramento</xref>
       template.</i></p>
