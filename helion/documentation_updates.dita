@@ -23,6 +23,22 @@
             </thead>
             <tbody>
               <row>
+                <entry>November 3, 2015</entry>
+                <entry>Added TLS steps required for Private CA certificates (<xref
+                    href="security/tls.dita#topic_yym_nps_4t/private1">Link </xref>and <xref
+                    href="security/tls.dita#topic_yym_nps_4t/private2">Link</xref>)</entry>
+              </row>
+              <row>
+                <entry>November 2, 2015</entry>
+                <entry>Added Swift meters to Ceilometer default meter list (<xref
+                    href="metering/metering_metertypes.dita#topic3051/swift">Link</xref>)</entry>
+              </row>
+              <row>
+                <entry>October 29, 2015</entry>
+                <entry>Added note about meters avalable from the Metric option  (<xref
+                    href="horizon/horizon_overview.dita#topic1564">Link</xref>)</entry>
+              </row>
+              <row>
                 <entry>October 29, 2015</entry>
                 <entry>Added web browser support information to the Horizon Overview (<xref href="horizon/horizon_overview.dita">Link</xref>)</entry>
               </row>

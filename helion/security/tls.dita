@@ -17,7 +17,7 @@
         release. Having this default cert allows you to bring up a cloud without having to worry
         about certificates. It will not match your IP address, but you can ignore the warnings.
         Later, when you require a trusted certificate, you can add your own certificate and
-        redeploy.</p>
+        redeploy.</p> 
       <!--<p>
         <note type="warning">Here we are configuring and installing a test certificate. It is
           recommended that you create and sign certifcates properly for a production environment.
@@ -86,7 +86,7 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
         <li> Create or obtain a certificate to match the domain name you are going to use. </li>
         <li> Copy it to <b>helion/my_cloud/config/tls/certs/</b>
         </li>
-        <li>Replace the contents of
+        <li id="private1">Replace the contents of
             <b>~/scratch/ansible/next/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</b> with
           the new CA certificate chain file (if applicable)</li>
         <li>Edit <b>network_groups.yml </b>(as part of the general set of edits they have to make to
@@ -118,7 +118,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <li>Create or obtain a certificate tied to this address </li>
         <li>Copy the certificate (containing both public and private keys) to
             <b>helion/my_cloud/config/tls/certs/ </b></li>
-        <li>Replace the contents of<b>
+        <li id="private2">Replace the contents of<b>
             ~/scratch/ansible/next/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</b> with
           the new CA certificate chain file (if applicable) </li>
         <li>Edit <b>network_groups.yml </b>to set the value for the name of the "cert-file"</li>
