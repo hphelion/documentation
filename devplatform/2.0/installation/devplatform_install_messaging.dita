@@ -109,27 +109,15 @@ openstack-operations | preinstall | Set Nova Quotas --------------------- 1.77s
 -------------------------------------------------------------------------------
 Total: ----------------------------------------------------------------- 27.45s
 localhost                  : ok=20   changed=14  <b> unreachable=0 </b>  <b> failed=0 </b></codeblock></li>
-            <li>Configure the Input Model for TLS Support (optional) <note>This step is required to
+            <li>Configure the Input Model for TLS Support (optional)<note>This step is required to
                 enable access to the Cue public endpoint URL with SSL support (https). The
                 deployment model <xref href="#topic_t3w_fnh_ts" format="dita">customization</xref>
-                performed previously must have included the TLS configuration
-              step.</note><codeblock># locate the value of the 'external-ip' address from 'extlb' dict
-# found in ~/helion/my_cloud/definition/data/network_groups.yml
-
-stack@msgaas-deployer:~/helion/hos/ansible$ openssl req -newkey rsa:2048 -nodes -keyout msgaas-hpes.key -subj '/CN=&lt;external-ip address value from the "extlb" dict>?/emailAddress=hpcs-hes@hp.com/subjectAltName=IP.1.&lt;external-ip address value from the "extlb" dict>' -out msgaas-hpes.csr
-Generating a 2048 bit RSA private key
-..........................+++
-..........................+++
-writing new private key to 'msgaas-hpes.key'
------
-stack@msgaas-deployer:~/helion/hos/ansible$ openssl x509 -signkey msgaas-hpes.key -in msgaas-hpes.csr -req -days 365 -out msgaas-hpes.crt
-Signature ok
-subject=/CN=10.241.178.91/emailAddress=hpcs-hes@hp.com/subjectAltName=IP.1.10.241.178.91
-Getting Private key
-stack@msgaas-deployer:~/helion/hos/ansible$ cat msgaas-hpes.key msgaas-hpes.crt > ~/helion/my_cloud/config/tls/certs/msgaas-hpes-cert
- 
-stack@msgaas-deployer:~/helion/hos/ansible$ git add -A
-stack@msgaas-deployer:~/helion/hos/ansible$ git commit -a -m "Configured Deployment Model"</codeblock></li>
+                performed previously must have included the TLS configuration step.</note><ol>
+            <li>Copy your signed certificate into
+                <codeph>~/helion/my_cloud/config/tls/certs/msgaas-hpes-cert</codeph></li>
+            <li>Using Git, commit the
+                  changes.<codeblock>stack@msgaas-deployer:~/helion/hos/ansible$ git add -A
+stack@msgaas-deployer:~/helion/hos/ansible$ git commit -a -m "Configured Deployment Model"</codeblock></li></ol></li>
             <li>Run the Config Processor Playbook
                   <codeblock>stack@msgaas-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost config-processor-run.yml </codeblock><p><note>If
                   you have performed a full installation previously, you <b>must</b> remove the Cue
@@ -224,10 +212,12 @@ Total: ---------------------------------------------------------------- 611.95s
 msgaas-msgaas-ccp-c1-m1-mgmt : ok=377  changed=190  unreachable=0    failed=0   
 msgaas-msgaas-ccp-c1-m2-mgmt : ok=381  changed=194  unreachable=0    failed=0   
 msgaas-msgaas-ccp-c1-m3-mgmt : ok=382  changed=196  unreachable=0    failed=0   
-localhost                  : ok=34   changed=15   unreachable=0    failed=0   </codeblock></li></ol></li>
-            <li>Run a basic verification command to test the installation. Since you have not yet
-          created any clusters, this list of clusters will be empty, but it should also not return
-          any error messages.
+localhost                  : ok=34   changed=15   unreachable=0    failed=0   </codeblock></li></ol></li></ol></section>
+    <section><title>Verifying the Installation</title>
+      <ol>
+           <li>If you have not configured TLS, you can run a basic verification command to test the
+          installation. Since you have not yet created any clusters, this list of clusters will be
+          empty, but it should also not return any error messages.
             <codeblock>stack@msgaas-deployer:~/scratch/ansible/next/hos/ansible$ /opt/stack/service/cueclient/venv/bin/openstack message-broker cluster list</codeblock><note>If
               <codeph>ERROR: openstack Unauthorized (HTTP 401)</codeph> is received when trying to
             communicate with Cue (API), it is most likely that the Cue Keystone user has a different
@@ -241,6 +231,8 @@ localhost                  : ok=34   changed=15   unreachable=0    failed=0   </
               <li>Update the Cue user password in
                 Keystone:<codeblock>openstack user set cue --password &lt;value of admin_password></codeblock></li>
             </ol></note></li>
+        <li>If you have configured TLS, make sure that the Cue public endpoint begins with https and
+          not just http:<codeblock>openstack catalog list</codeblock></li>
           </ol>
       </section>
     
