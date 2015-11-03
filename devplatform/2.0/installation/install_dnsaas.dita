@@ -14,7 +14,7 @@
     <section id="LinkList">
       <ul>
         <li><xref type="section" href="#HP2.0DNSaaS/Prerequisites">Prerequisites</xref></li>
-        <li><xref type="section" href="#HP2.0DNSaaS/PrerequisitesCredentials">Creating Prerequisites Credentials</xref></li>
+        <li><xref type="section" href="#HP2.0DNSaaS/PrerequisiteCredentials">Creating Prerequisites Credentials</xref></li>
         <li><xref type="section" href="#HP2.0DNSaaS/CredentialsFile">DNSaaS User and Project Credentials</xref></li>
         <li><xref type="section" href="#HP2.0DNSaaS/PreparingTheDeplopyer">Prepare the Deployer
             VM</xref>
@@ -98,8 +98,6 @@
 $ openstack role add --project dnsaas --user dnsaas admin</codeblock></li>
         <li>You can view the roles with <codeph>role list</codeph>.
           <codeblock>$ openstack role list</codeblock></li>
-        <li>You can also check the role assignment list for the dnsaas user.
-          <codeblock>$ openstack role assignment list --user dnsaas --project dnsaas</codeblock></li> 
       </ol>
     </section>
     
@@ -188,8 +186,8 @@ $ neutron security-group-rule-create \
         <b>Login and Initialize the Deployer VM</b>
         <ol>
           <li>Login to the deployer.
-            <codeblock>$ ssh -i dns_shared stack@192.168.245.125</codeblock> You will need to
-            extract the dnsaas tar file and execute the dns-init.bash script.
+            <codeblock>$ ssh -i dns_shared stack@&lt;SVC-NET IP Address></codeblock> You will need
+            to extract the dnsaas tar file and execute the dns-init.bash script.
             <codeblock>$ tar xf dnsaas-2.0.0-b.1-20151005T183829Z.tar
 $ cd dnsaas-2.0.0-b.1/
 $ ./dnsaas-init.bash 
@@ -204,21 +202,6 @@ Enter same passphrase again:
 # Do not continue with the installation steps that appear here
 # Ignore this next line.
 To continue installation copy your cloud layout to: /home/stack/helion/my_cloud/definition      </codeblock></li>
-          <li>You will need to change directory to the ansible directory and add your configuration
-            to the Git repository.
-              <codeblock>cd /home/stack/helion/hos/ansible
-git add -A
-git commit -m 'My config'     
-git status </codeblock><note>Make
-              sure that there are no other files which are not committed to the Git repository. If
-              there are, begin troubleshooting.</note></li>
-          <li>Execute the installation playbooks.
-            <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml
-ansible-playbook -i hosts/localhost bm-reimage.yml
-ansible-playbook -i hosts/localhost config-processor-run.yml
-ansible-playbook -i hosts/localhost ready-deployment.yml
-cd /home/stack/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml       </codeblock></li>
         </ol></sectiondiv></section>
     
     <section id="PrepareDeployment">
@@ -233,13 +216,7 @@ $ cp -r examples/powerdns/* my_cloud/definition/
 $ git add -A
 $ git commit -a -m "Add DNSaaS Example Model" </codeblock></sectiondiv><sectiondiv>
         <b>Customize the Example Deployment Model</b>
-        <p>You will need to populate the
-            <codeph>~/helion/my_cloud/definition/data/pass-through/hos.yml</codeph> file with the
-          appropriate URLs for your deployment. You can find the URLs in the service catalog
-            <codeph>openstack catalog list</codeph> and the Keystone admin token in
-            <codeph>/etc/keystone/keystone.conf</codeph> on one of the HPE Helion OpenStack control
-          plane nodes. Other values may be left invalid, they will not prevent the deployment from
-          completing.</p><ol>
+        <ol>
           <li>You will need to change directories to the my_cloud/definition directory and run nano
             to configure your DNS and NTP servers.
             <codeblock>$ cd my_cloud/definition/
@@ -252,15 +229,51 @@ ansible-playbook -i hosts/verb_hosts platform-pass-through.yml -e pass_through_k
               <li>Copy <b>to</b>: &lt;<b>DNSaaS</b> deployer&gt;
                 ~/helion/my_cloud/definition/data/pass-through/hos.yml</li>
             </ul></li>
+          <li>Create SSL Certificates
+            <p>If you want to install a self-signed certificate that meets the needs of HPE Helion OpenStack and HPE Helion Development
+              Platform, follow these steps.</p>
+            <p>You will need a real or fictional domain name e.g. "your.domain.com" and it must match across the next 3 steps. </p>
+            <ul>
+              <li>Create a Certificate Signing Request (CSR) with a defined subject.
+                <codeblock>cd ~
+openssl req -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.csr -text \
+    -subj '/C=US/O=Helion Test Certificate/CN=your.domain.com/emailAddress=test@example.org/'
+                </codeblock></li>
+              <li>Create a file containing v3 extensions Ensure that the DNS entry matches any CN
+                entry above and provide your IP address. The IP address is what is used by HPE Helion Development Platform and
+                  the DNS is used by HPE Helion OpenStack. <note>The IP address must be the same in DNS: and IP:</note>
+                <codeblock>$ cat > v3_ext.cnf &lt;&lt; EOF
+[ v3_req ]
+subjectAltName=DNS:your.domain.com, DNS:10.0.0.1, IP:10.0.0.1
+EOF
+                </codeblock></li>
+              <li>Self-sign your certificate.
+                <codeblock>$ openssl x509 -extfile v3_ext.cnf -extensions v3_req -in my-public-cert.csr -signkey my-public-cert.key -req -out my-public-cert.crt -text</codeblock></li>
+              <li>Installing the certificate.
+                <note>If you are using a FQDN - Create or obtain a certificate to match the domain name you are going to use.</note>
+                <ul>
+                  <li>Join the private and public keys into "my-cert-file" at the required location.
+                    <codeblock>$ cat my-public-cert.key my-public-cert.crt > ~/helion/my_cloud/config/tls/certs/my-public-cert</codeblock>
+                  </li>
+                  <li>Edit network_groups.yml to set the values for "external-name" and "cert-file" under "load-balancers".
+                    <codeblock>$ nano ~/helion/my_cloud/definition/data/pass-through$network_groups.yml</codeblock></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
           <li>Add your changes to Git.
               <codeblock>$ cd ~/helion
 $ git commit -a -m "Configured Deployment Model"      
-$ git status </codeblock><note>Make
-              sure that there are no other files which are not committed to the Git repository. If
+$ git status </codeblock>
+             <note>Make sure that there are no other files which are not committed to the Git repository. If
               there are, begin troubleshooting.</note></li>
-        </ol></sectiondiv><sectiondiv>
+        </ol>
+      </sectiondiv>
+      
+      <sectiondiv>
         <b>Run the Pre-Installation Playbook</b>
-        <p>At the end of each playbook, ensure both "unreachable" and "failed" are
+        <p>Copy the ~/dnsaas.osrc file from the HPE Helion OpenStack deployer.
+          At the end of each playbook, ensure both "unreachable" and "failed" are
         zero.</p><codeblock>$ source ~/dnsaas.osrc
 $ cd ~/helion/hos/ansible/
 $ ansible-playbook -i hosts/localhost hlm-pre-install.yml</codeblock></sectiondiv><sectiondiv>
@@ -268,25 +281,31 @@ $ ansible-playbook -i hosts/localhost hlm-pre-install.yml</codeblock></sectiondi
         <p>At the end of each playbook, ensure both "unreachable" and "failed" are
           zero.</p><note>When asked for a encryption key, simply leave the value blank, pressing
           enter 4 times to
-        proceed.</note><codeblock>$ ansible-playbook -i hosts/localhost config-processor-run.yml </codeblock></sectiondiv><b>Run
+        proceed.</note><codeblock>$ ansible-playbook -i hosts/localhost config-processor-run.yml </codeblock>
+    </sectiondiv><b>Run
         the Ready Deployment Playbook</b>
       <p>At the end of each playbook, ensure both "unreachable" and "failed" are
-      zero.</p><codeblock>$ ansible-playbook -i hosts/localhost ready-deployment.yml </codeblock></section>
+      zero.</p><codeblock>$ ansible-playbook -i hosts/localhost ready-deployment.yml </codeblock>
+    </section>
     
     <section id="PerformDeployment">
-      <title>Perform the Deployment</title><sectiondiv>
+      <title>Perform the Deployment</title>
+      <sectiondiv>
         <b>Run the Boot Infrastructure Playbook</b>
         <p>Once this is complete, all in-cloud infrastructure (VMs, Networks, Routers, Floating IPs
           etc) will have been created.</p><note>This step takes approximately 15 minutes to
           run.</note><codeblock>$ cd ~/scratch/ansible/next/hos/ansible
 
-# Choose either the multiple or single control plane option; these configurations are mutually exclusive.          
+# Choose between single or multiple control plane.  You only need to execute one or the other, do not run both.          
 
-# Multiple control plane nodes
+# a) Multiple control plane nodes
 $ ansible-playbook -i hosts/localhost hlm-boot-infra.yml
           
-# Single control plane
-$ ansible-playbook -i hosts/localhost hlm-boot-infra.yml -e neutron_router_ha=False</codeblock></sectiondiv><sectiondiv>
+# b) Single control plane
+$ ansible-playbook -i hosts/localhost hlm-boot-infra.yml -e neutron_router_ha=False</codeblock>
+      </sectiondiv>
+      
+      <sectiondiv>
         <p id="RunSitePlay"><b>Run the Site Playbook</b></p>
         <note type="caution">Unlike all the previous ansible play's, the inventory file supplied to
           this play is <b>hosts/verb_hosts</b> and not <b>hosts/localhost</b>.</note>
