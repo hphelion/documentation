@@ -7,6 +7,13 @@
       <p>We have gathered some of the common issues that occur during installation and organized
         them by when they occur during the installation. These sections will coincide with the steps
         labeled in the installation instructions.</p>
+      <ul>
+        <li><xref href="installation_troubleshooting.dita#troubleshooting_installation/deployer_setup">Issues during Lifecycle-manager Setup</xref></li>
+        <li><xref href="installation_troubleshooting.dita#troubleshooting_installation/deploy_cobbler">Issues while Provisioning your Baremetal Nodes</xref></li>
+        <li><xref href="installation_troubleshooting.dita#troubleshooting_installation/config_processor">Issues while Updating Configuration Files</xref></li>
+        <li><xref href="installation_troubleshooting.dita#troubleshooting_installation/deploy_cloud">Issues while Deploying the Cloud</xref></li>
+        <li><xref href="blockstorageconfig_troubleshooting.dita">Issues during Block Storage Backend Configuration</xref></li>
+      </ul>
     </section>
     <section id="deployer_setup"><title>Issues during Lifecycle-manager Setup</title>
       <p><b>Issue: Running the <codeph>~/hos-2.0.0/hos-init.bash</codeph> script when configuring
