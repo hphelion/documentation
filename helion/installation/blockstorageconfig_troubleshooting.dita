@@ -9,6 +9,7 @@
         configuration steps and organized them by product.</p>
     </section>
     <section id="vsa"><title>Troubleshooting the VSA Configuration</title>
+      <p><b>Issue: You have forgotten the identifying information about your VSA cluster</b></p>
       <p>If you have forgotten the cluster name or IP address after creating the cluster in the CMC utility then you
         can perform the following steps to retrieve them:</p>
       <ol>
