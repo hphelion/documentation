@@ -163,10 +163,7 @@
       <topicref href="helion/blockstorage/blockstorage_overview.dita"
         navtitle="Block Storage Service" locktitle="yes">
         <topicref href="helion/blockstorage/ceph/ceph_overview.dita" navtitle="Ceph Overview"
-          locktitle="yes">
-          <topicref href="helion/blockstorage/ceph/configuring_use_ceph_cluster_glance.dita"
-            navtitle="Configuring Glance to Use Ceph" locktitle="yes"/>
-        </topicref>
+          locktitle="yes"/>
       </topicref>
       <!-- BEGIN - Administration/Networking -->
       <topicref href="helion/networking/networking_overview.dita" navtitle="Networking Service"
@@ -205,18 +202,30 @@
         navtitle="Accessing the Horizon Dashboard" locktitle="yes"/>
       <topicref href="helion/operations/opsconsole_overview.dita"
         navtitle="Using the Operations Console" locktitle="yes">
-        <topicref href="helion/operations/opsconsole/dashboard.dita" navtitle="Operations Console: Dashboard" locktitle="yes" toc="no"/>
-        <topicref href="helion/operations/opsconsole/logging.dita" navtitle="Operations Console: Logging" locktitle="yes" toc="no"/>
-        <topicref href="helion/operations/opsconsole/alarm_explorer.dita" navtitle="Operations Console: Alarm Explorer" locktitle="yes" toc="no"/>
-        <topicref href="helion/operations/opsconsole/alarm_definitions.dita" navtitle="Operations Console: Alarm Creation" locktitle="yes" toc="no"/>
-        <topicref href="helion/operations/opsconsole/notification_methods.dita" navtitle="Operations Console: Notification Methods" locktitle="yes" toc="no"/>
-        <topicref href="helion/operations/opsconsole/metric_monitoring.dita" navtitle="Operations Console: Time Series Graphs" locktitle="yes" toc="no"/>
-        <topicref href="helion/operations/opsconsole/compute_summary.dita" navtitle="Operations Console: Compute - Alarm Summary" locktitle="yes" toc="no"/>
-        <topicref href="helion/operations/opsconsole/compute_hosts.dita" navtitle="Operations Console: Compute Hosts" locktitle="yes" toc="no"/>
-        <topicref href="helion/operations/opsconsole/compute_instances.dita" navtitle="Operations Console: Compute Instances" locktitle="yes" toc="no"/>
-        <topicref href="helion/operations/opsconsole/storage_summary.dita" navtitle="Operations Console: Storage - Alarm Summary" locktitle="yes" toc="no"/>
-        <topicref href="helion/operations/opsconsole/networking_summary.dita" navtitle="Operations Console: Networking - Alarm Summary" locktitle="yes" toc="no"/>
-        <topicref href="helion/operations/opsconsole/hdp_summary.dita" navtitle="Operations Console: HDP - Alarm Summary" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/dashboard.dita"
+          navtitle="Operations Console: Dashboard" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/logging.dita"
+          navtitle="Operations Console: Logging" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/alarm_explorer.dita"
+          navtitle="Operations Console: Alarm Explorer" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/alarm_definitions.dita"
+          navtitle="Operations Console: Alarm Creation" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/notification_methods.dita"
+          navtitle="Operations Console: Notification Methods" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/metric_monitoring.dita"
+          navtitle="Operations Console: Time Series Graphs" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/compute_summary.dita"
+          navtitle="Operations Console: Compute - Alarm Summary" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/compute_hosts.dita"
+          navtitle="Operations Console: Compute Hosts" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/compute_instances.dita"
+          navtitle="Operations Console: Compute Instances" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/storage_summary.dita"
+          navtitle="Operations Console: Storage - Alarm Summary" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/networking_summary.dita"
+          navtitle="Operations Console: Networking - Alarm Summary" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/hdp_summary.dita"
+          navtitle="Operations Console: HDP - Alarm Summary" locktitle="yes" toc="no"/>
       </topicref>
       <!-- BEGIN - OPERATIONS/Node Maintenance -->
       <topichead navtitle="Node Maintenance">

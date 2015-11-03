@@ -19,8 +19,8 @@
                     <li><xref href="../../installation/configure_ceph.dita#config_ceph"/></li>
                     <li><xref href="adding_new_osd_node.dita#topic_drm_rm5_kt"/></li>
                     <li><xref href="adding_new_monitor_node.dita#topic_zbc_pg4_rt"/></li>
-                    <li><xref href="configuring_use_ceph_cluster_glance.dita#topic_qch_rmx_st"
-                        /></li>
+                    <!-- DOCS-2007 <li><xref href="configuring_use_ceph_cluster_glance.dita#topic_qch_rmx_st"
+                        /></li> -->
                     <li><xref href="deploy_monitor_stand_alone_node.dita#topic_ah5_4yx_qt"/></li>
                     <li><xref href="defining_monitor_resource.dita#topic_owr_kf4_rt"/></li>
                     <li><xref href="reconfigure_ceph_services.dita#topic_bl1_bfx_qt"/></li>
