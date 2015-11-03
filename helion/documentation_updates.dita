@@ -50,10 +50,8 @@
               </row>
               <row>
                 <entry>October 28, 2015</entry>
-                <entry>
-                  <p>Added step to ensure new Compute nodes that you add to your environment are
-                    included in monitoring (<xref href="operations/add_node.dita">Link</xref>)</p>
-                </entry>
+                <entry>Added step to ensure new Compute nodes that you add to your environment are
+                  included in monitoring (<xref href="operations/add_node.dita">Link</xref>) </entry>
               </row>
               <row>
                 <entry>October 28, 2015</entry>
