@@ -57,7 +57,9 @@
       <topicref href="helion/installation/installation_verification.dita"
         navtitle="Verifying Your Installation" locktitle="yes"/>
       <topicref href="helion/installation/installation_troubleshooting.dita"
-        navtitle="Troubleshooting Your Installation" locktitle="yes"/>
+        navtitle="Troubleshooting the Installation" locktitle="yes"/>
+      <topicref href="helion/installation/blockstorageconfig_troubleshooting.dita"
+        navtitle="Troubleshooting the Block Storage Backend Configuration" locktitle="yes"/>
       <topicref href="helion/installation/postinstall_checklist.dita"
         navtitle="Common Post-Installation Tasks" locktitle="yes"/>
     </topicref>
@@ -360,7 +362,9 @@
     <!-- BEGIN - TROUBLESHOOTING -->
     <topichead navtitle="Troubleshooting">
       <topicref href="helion/installation/installation_troubleshooting.dita"
-        navtitle="Troubleshooting Your Installation" locktitle="yes"/>
+        navtitle="Troubleshooting the Installation" locktitle="yes"/>
+      <topicref href="helion/installation/blockstorageconfig_troubleshooting.dita"
+        navtitle="Troubleshooting the Block Storage Backend Configuration" locktitle="yes"/>
       <topicref href="helion/objectstorage/troubleshooting.dita"
         navtitle="Troubleshooting the Object Storage Service" locktitle="yes">
         <topicref href="helion/objectstorage/deploy_fails_with_msdos_disks.dita"

@@ -26,6 +26,12 @@
             <tbody>
               <row>
                 <entry>11/03/2015</entry>
+                <entry>Block Storage Configuration Troubleshooting</entry>
+                <entry>Added a new page containing troubleshooting steps for configuring your Block
+                  Storage backend. (<xref href="installation/blockstorageconfig_troubleshooting.dita">Link</xref>)</entry>
+              </row>
+              <row>
+                <entry>11/03/2015</entry>
                 <entry>Security - TLS</entry>
                 <entry>Added TLS steps required for Private CA certificates (<xref
                     href="security/tls.dita#topic_yym_nps_4t/private1">Link </xref>and <xref
