@@ -40,6 +40,7 @@
       conref="conrefs/CGH-2-conref-node-provision-8a.dita#ReusableComponent_ic3_q1x_wt/configure-node-provision-json"  id="node"/>
     <section
       conref="conrefs/CGH-2-conref-PXE-Boot-9.dita#ReusableComponent_t4b_wzw_vt/section_apb_wzw_vt"/>
+    <section conref="conrefs/CGH-2-conref-json-intro.dita#ReusableComponent_dgx_hdy_wt/json"/>
     <section
       conref="conrefs/CGH-2-conref-definition-json-10.dita#ReusableComponent_zsb_b1x_vt/configure-def-json"/>
     <section

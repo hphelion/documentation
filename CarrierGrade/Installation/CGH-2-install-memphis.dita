@@ -40,13 +40,7 @@
       conref="conrefs/CGH-2-conref-node-provision-8a.dita#ReusableComponent_ic3_q1x_wt/configure-node-provision-json"  id="node"/>
     <section
       conref="conrefs/CGH-2-conref-PXE-Boot-9.dita#ReusableComponent_t4b_wzw_vt/section_apb_wzw_vt" id="pxe"/>
-    <section id="json">
-      <title>Configuring JSON files</title>
-      <p>The process for installing the memphis and sacramento deployments requires several JSON
-        files that will be used when deploying the HLM VM.</p>
-      <p>The following sections details the files that need to be configured and contain sample JSON
-        files that can be copied and pasted into your environment.</p>
-    </section>
+    <section conref="conrefs/CGH-2-conref-json-intro.dita#ReusableComponent_dgx_hdy_wt/json"/>
     <section
       conref="conrefs/CGH-2-conref-definition-json-10.dita#ReusableComponent_zsb_b1x_vt/configure-def-json" id="definition"/>
     <section

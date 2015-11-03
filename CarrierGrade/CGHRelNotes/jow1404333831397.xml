@@ -16,6 +16,13 @@
         </metadata>
     </prolog>
     <body>
+        <section><title>Backup files in cloud directories can cause installation to
+            fail</title>During the  HP Helion OpenStack Carrier Grade installation, you will need to
+            create and eddit a number of JSON configuration files. You should create backups of
+            these files, in the event you need to reinstall. Create the backups in a directory on
+                <codeph>/root/</codeph> directory or on a remote system. Do not store backups of the
+            JSON files inside your cloud directory or any where inside the
+                <codeph>/var/hlm/clouds</codeph> directory. </section>
         <section>
             <title>VMs reported as ACTIVE before compute nodes are recovered</title>
             <p>During a system recovery (for example, after a site power outage),

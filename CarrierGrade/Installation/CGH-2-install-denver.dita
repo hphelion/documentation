@@ -45,10 +45,11 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
       </ol></section>
     
     <section id="configure-a-json-file-for-installation">
-          <title>Provision the new cloud</title>
-          <ol>
+      <title>Provision the new cloud</title>
+      <ol id="ol_k5x_rdy_wt">
         <li>Provision and configure your HPE Helion OpenStack
-            VM.<codeblock>hlm define -t denver &lt;cloudname&gt;</codeblock><p>Where:</p><ul>
+            VM.<codeblock>hlm define -t denver &lt;cloudname&gt;</codeblock><p>Where:</p><ul
+            id="ul_l5x_rdy_wt">
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create: <p>The cloud
                 name can be any combination of up to 63 digits, letters, and the <codeph>-</codeph>
                   chracter:<ul id="ul_lz5_rbf_bt">
@@ -68,6 +69,12 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
             contain a JSON template file <codeph>node-provision.json</codeph>. This template
             supplies input values to the <codeph>hprovision</codeph> script, later in the
             installation.</p></li>
+      </ol>
+    </section>
+    <section conref="conrefs/CGH-2-conref-json-intro.dita#ReusableComponent_dgx_hdy_wt/json"/>
+    <section>
+      <title>Configure the node-provision.json file</title>
+      <ol id="ol_m5x_rdy_wt">
         <li>The HPE Helion OpenStack deployment requires a JSON file. Edit
             <codeph>node-provision.json</codeph> file to change only the following fields:<table
             id="table_ycw_qrn_xs">
@@ -106,8 +113,8 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
               </tbody>
             </tgroup>
           </table><p>To see a sample <codeph>node-provision.json</codeph> file, see<xref
-            href="carrier-grade-install-kvm-only-json">Sample JSON File for the
-              HLM Virtual Machine Installation</xref>. </p></li>
+              href="carrier-grade-install-kvm-only-json">Sample JSON File for the HLM Virtual
+              Machine Installation</xref>. </p></li>
         <li>Modify the <codeph>environment.json</codeph> file to configure the VLANs and network
           addresses as appropriate for your environment. Set the following for the CLM, CAN, and BLS
           network:<codeblock>"cidr": 

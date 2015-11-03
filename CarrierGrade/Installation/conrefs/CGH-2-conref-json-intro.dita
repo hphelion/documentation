@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE oXygen:ReusableComponent [
+<!ELEMENT oXygen:ReusableComponent (oXygen:ComponentDescription, oXygen:ComponentDefinition)>
+<!ATTLIST oXygen:ReusableComponent 
+    xmlns:oXygen CDATA #FIXED "http://www.oxygenxml.com/ns/dita/reuse" 
+    id CDATA #IMPLIED
+    domains CDATA "(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)     (topic oXygen-reuse-d) "
+    class CDATA "- topic/topic oXygen:ReusableComponent/oXygen:ReusableComponent "    
+    xmlns:ditaarch CDATA #FIXED "http://dita.oasis-open.org/architecture/2005/"
+    ditaarch:DITAArchVersion CDATA #FIXED "1.2" 
+    >
+<!ELEMENT oXygen:ComponentDescription (#PCDATA)>
+<!ATTLIST oXygen:ComponentDescription 
+ class CDATA "- topic/title oXygen:ReusableComponent/oXygen:ComponentDescription ">
+<!ELEMENT oXygen:ComponentDefinition ANY>
+<!ATTLIST oXygen:ComponentDefinition
+    class CDATA "- topic/body oXygen:ReusableComponent/oXygen:ComponentDefinition ">
+
+<!ENTITY % dtd PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+%dtd;
+
+]>
+<oXygen:ReusableComponent id="ReusableComponent_dgx_hdy_wt">
+    <oXygen:ComponentDescription></oXygen:ComponentDescription>
+    <oXygen:ComponentDefinition><section id="json"><title>Configuring JSON files</title><p>The process for installing the memphis and sacramento deployments requires several JSON files that will be used when deploying the HLM VM.</p><p>The following sections details the files that need to be configured and contain sample JSON files that can be copied and pasted into your environment.</p>
+            <p><b>Important:</b> Do not store backup of the JSON files inside your cloud directory
+                or any where inside the <codeph>/var/hlm/clouds</codeph> directory. You can create a
+                backup folder on <codeph>/root/</codeph> directory or on a remote system.</p></section></oXygen:ComponentDefinition>
+</oXygen:ReusableComponent>
