@@ -150,7 +150,9 @@ It is available with support for baremetal deployments (up to 30 Compute nodes).
 </ul>
 </section>
 <section id="where-can-i-report-issues-with-hp-helion-openstack"> <title>Where can I report issues with HPE Helion OpenStack<!--Removed anchor point reportissues--><!-- id="reportissues" --></title>
-<p>To report issues with HPE Helion OpenStack please visit the <xref href="http://us-support.external.hp.com/portal/site/hpsc/public" scope="external" format="html" >HPE Support Center</xref>.</p>
+<p>To report issues with HPE Helion OpenStack please visit <xref
+          href="http://www.hpe.com/support/hpsc" format="html" scope="external"
+          >http://www.hpe.com/support/hpsc</xref>.</p>
 <p>
 <!-- removed per JR's comment I We are hosting the support discussion forum for the edition at [https://ask.openstack.org](https://ask.openstack.org).  Developers in the community are very familiar with this forum and already participate in OpenStack-related discussions there. Please tag your questions with 'HPHelion' to get our attention for any questions and issues you raise.--> 
 <xref href="#topic7037"> Return to Top </xref>
