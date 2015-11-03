@@ -64,7 +64,7 @@ stack@msgaas-deployer:~/helion$ git commit -a -m "Add MSGaaS Default Model"</cod
               environment.<codeblock># Open the cloudConfig.yml file and provide appropriate NTP/DNS server IP addresses
 # If you are not sure, use the IP addresses of the HP Helion OpenStack control plane nodes
 
-stack@msgaas-deployer:~/helion$ cdmy_cloud/definition/
+stack@msgaas-deployer:~/helion$ cd my_cloud/definition/
 stack@msgaas-deployer:~/helion/my_cloud/definition$ ls
 cloudConfig.yml  data
 stack@msgaas-deployer:~/helion/my_cloud/definition$ nano cloudConfig.yml    # this is the file where the changes need to be made</codeblock></li>
@@ -79,8 +79,8 @@ stack@msgaas-deployer:~/helion/my_cloud/definition$ cd data
 stack@msgaas-deployer:~/helion/my_cloud/definition/data$ nano network_groups.yml </codeblock></li>
             <li>Using Git, persist these changes. This information is required for the Pre-Install
               playbook, which is executed later in this installation
-              process.<codeblock>stack@msgaas-deployer:~/helion/my_cloud/definition/data/pass-through$ cd~/helionstack@msgaas-deployer:~/helion$
-git commit -a -m "Configured Deployment Model"</codeblock></li>
+              process.<codeblock>stack@msgaas-deployer:/helion/my_cloud/definition/data/pass-through$ cd/helion
+stack@msgaas-deployer:~/helion$ git commit -a -m "Configured Deployment Model"</codeblock></li>
           </ol></li>
         <li>Run the Playbooks <note type="important">After each playbook runs, both
               <codeph>unreachable</codeph> and <codeph>failed</codeph> should be zero (0). This
@@ -91,8 +91,8 @@ git commit -a -m "Configured Deployment Model"</codeblock></li>
                 variable in
                   <codeph>~/helion/hos/ansible/roles/openstack-operations/defaults/main.yml</codeph>
                 to the correct
-                value.</note><codeblock>stack@msgaas-deployer:~/helion$ source~/msgaas.osrc
-stack@msgaas-deployer:~/helion$ cdhos/ansible/
+                value.</note><codeblock>stack@msgaas-deployer:~/helion$ source ~/msgaas.osrc
+stack@msgaas-deployer:~/helion$ cd hos/ansible/
 stack@msgaas-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost hlm-pre-install.yml </codeblock><p>The
                 output should look similar to the
               following:</p><codeblock>PLAY RECAP ********************************************************************
@@ -130,11 +130,17 @@ stack@msgaas-deployer:~/helion/hos/ansible$ cat msgaas-hpes.key msgaas-hpes.crt 
  
 stack@msgaas-deployer:~/helion/hos/ansible$ git add -A
 stack@msgaas-deployer:~/helion/hos/ansible$ git commit -a -m "Configured Deployment Model"</codeblock></li>
-            <li>Run the Config Processor
-                Playbook<codeblock>stack@msgaas-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhostconfig-processor-run.yml </codeblock><p>Successful
-                output should look similar to the
-              following:</p><codeblock>
-PLAY RECAP ******************************************************************** 
+            <li>Run the Config Processor Playbook
+                  <codeblock>stack@msgaas-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost config-processor-run.yml </codeblock><p><note>If
+                  you have performed a full installation previously, you <b>must</b> remove the Cue
+                  user and service from Keystone <b>before</b> running this playbook again. <ul
+                    id="ul_rsf_tfs_wt">
+                    <li> SSH into the HOS deployer, source the keystone.osrc file, and then execute
+                      these
+                      commands:<codeblock>openstack service delete cue
+openstack user delete cue </codeblock></li>
+                  </ul></note>Successful output should look similar to the following.
+              </p><codeblock>PLAY RECAP ******************************************************************** 
 config-processor | run-config-processor | Run Configuration Processor over the given cloud configuration --- 2.44s
 git-operations | _assemble-working-directory | Assemble scratch content --- 0.76s
 git-operations | _persist-to-git | Prep new commit ---------------------- 0.69s
@@ -200,7 +206,7 @@ localhost                  : ok=35   changed=19   <b>unreachable=0</b>    <b>fai
                 <codeph>hosts/localhost</codeph></note><note>This step takes approximately 10 to 15
                 minutes.
               </note><codeblock>stack@msgaas-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -i hosts/verb_hosts site.yml -vvvv</codeblock>
-              Successful output should look similar to the following.<note> If this playbook does
+              Successful output should look similar to the following:<note> If this playbook does
                 not run successfully, run it again before trying any more advanced
                 troubleshooting.</note><codeblock>PLAY RECAP ******************************************************************** 
 FND-MDB | start | Start MySQL ------------------------------------------ 85.62s
@@ -218,9 +224,25 @@ Total: ---------------------------------------------------------------- 611.95s
 msgaas-msgaas-ccp-c1-m1-mgmt : ok=377  changed=190  unreachable=0    failed=0   
 msgaas-msgaas-ccp-c1-m2-mgmt : ok=381  changed=194  unreachable=0    failed=0   
 msgaas-msgaas-ccp-c1-m3-mgmt : ok=382  changed=196  unreachable=0    failed=0   
-localhost                  : ok=34   changed=15   unreachable=0    failed=0   </codeblock></li>
-          </ol></li>
-      </ol></section>
+localhost                  : ok=34   changed=15   unreachable=0    failed=0   </codeblock></li></ol></li>
+            <li>Run a basic verification command to test the installation. Since you have not yet
+          created any clusters, this list of clusters will be empty, but it should also not return
+          any error messages.
+            <codeblock>stack@msgaas-deployer:~/scratch/ansible/next/hos/ansible$ /opt/stack/service/cueclient/venv/bin/openstack message-broker cluster list</codeblock><note>If
+              <codeph>ERROR: openstack Unauthorized (HTTP 401)</codeph> is received when trying to
+            communicate with Cue (API), it is most likely that the Cue Keystone user has a different
+            password than what was configured in cue.conf. This is usually caused by not deleting
+            the Cue user and service from Keystone prior to re-deploying the Messaging Service.
+            Synchronize the values by doing the following:<ol id="ol_t5m_2hs_wt">
+              <li> SSH into one of the Cue controller nodes.</li>
+              <li>Find the <codeph>/etc/cue/cue.conf</codeph> file</li>
+              <li>Copy the value of the <b>admin_password</b> variable.</li>
+              <li>Source <codeph>keystone.osrc</codeph></li>
+              <li>Update the Cue user password in
+                Keystone:<codeblock>openstack user set cue --password &lt;value of admin_password></codeblock></li>
+            </ol></note></li>
+          </ol>
+      </section>
     
   </body>
 </topic>
