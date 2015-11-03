@@ -2,8 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic3485">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: memphis Deployment
-    Architecture Reference (KVM + ESX with DCN )</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: memphis (KVM + ESX with
+    DCN ) Deployment Architecture Reference </title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -15,18 +15,22 @@
     </metadata>
   </prolog>
   <body>
-    <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-technical-overview.md--><!--permalink: /helion/openstack/carrier/technical-overview/--></p>
-    <p>This page introduces deployment and network architectures of the KVM with DCN deployment of
-      HPE Helion OpenStack Carrier Grade.  The KVM with DCN deployment incorprates HPE Distributed
-      Cloud Networking (DCN) virtual network solution. During the installation, use the
-        <codeph>tahoe</codeph> template that comes with the installation package to create the KVM
-      with DCN deployment.</p>
+    <p>This page introduces deployment and network architectures of the KVM + ESX deployment of HP
+      Helion OpenStack Carrier Grade. This deployment supports the integration of VMware ESX<tm
+        tmtype="reg"/> storage into HPE Helion OpenStack Carrier Grade using HP. The KVM + ESX
+      deployment incorprates HPE Distributed Cloud Networking (DCN) virtual network solution. During
+      the installation, use the <codeph>memphis</codeph> template that comes with the installation
+      package to create the KVM + ESX deployment.</p>
+    <p><b>Network/Component Architecture</b></p>
+    <p><image href="../../media/CGH-2-block-arch-memphis.png" width="750" id="image_wdn_zbw_mt"
+    /></p>
     <section id="deploy-arch">
       <title>Deployment architecture</title>
       <p>The following diagram depicts a simplified deployment scenario of HPE Helion OpenStack
         Carrier Grade.</p>
       <p>
-        <image href="../../media/CGH-architecture-esx-alpha-tahoe.png" width="800"/></p>
+        <image href="../../media/CGH-2-architecture-esx-memphis-aplha.png" width="800"
+          alt="AlphaReleaseNetwork-ComponentArchitecture.png"/></p>
       <p>The following sections describe essential aspects of this diagram.</p>
     </section>
     <section id="networkarch">
@@ -154,6 +158,7 @@
               <entry> CLM </entry>
               <entry>
                 <p>VSC IP to HLM CLM VM IP (only during deployment)</p>
+                <p>VSD IP to ESX host CLM IP (during VRS-vAp deployment)</p>
               </entry>
             </row>
             <row>
@@ -174,29 +179,29 @@
       <p>DCM, CAN/WR-OAM, EXT, WR-EXT should use routable IPs. DCM is restricted to the corporate
         network</p>
     </section>
-      <section>
-        <title>Regions</title>
-        <p>For installation and maintenance, HPE Helion OpenStack Carrier Grade consists of two
-          logical or conceptual <i>regions</i>: Non-KVM and KVM. You will see these terms used in
-          the installation process. The <xref
-            href="carrier-grade-technical-overview.dita#topic3485/deploy-arch">Deployment
-            Architecture diagram</xref> shows an illustration of these two zones. </p>
-        <p><b>Non-KVM</b></p>
-        <p>The Non-KVM region contains the HPE Helion Lifecycle Management (HLM), to deploy and
+    <section>
+      <title>Regions</title>
+      <p>For installation and maintenance, HPE Helion OpenStack Carrier Grade consists of two
+        logical or conceptual <i>regions</i>: Non-KVM and KVM. You will see these terms used in
+        the installation process. The <xref
+          href="carrier-grade-technical-overview.dita#topic3485/deploy-arch">Deployment
+          Architecture diagram</xref> shows an illustration of these two zones. </p>
+      <p><b>Non-KVM</b></p>
+      <p>The Non-KVM region contains the HPE Helion Lifecycle Management (HLM), to deploy and
         maintain HPE Helion OpenStack Carrier Grade; and HPE Helion OpenStack, a commercial-grade
-        distribution of OpenStack. The DCN components and servers also reside in the non-KVM zone. </p>
-        <p><b>KVM</b></p>
-        <p>The KVM region is the heart of HPE Helion OpenStack Carrier Grade. The KVM region consists
-          of a software platform, providing ultra-reliability and exceptional performance
-          efficiencies for telecommunications networks. </p>
-      </section>
+        distribution of OpenStack. The ESX and DCN components and servers also reside in the
+        non-KVM zone.  </p>
+      <p><b>KVM</b></p>
+      <p>The KVM region is the heart of HPE Helion OpenStack Carrier Grade. The KVM region consists
+        of a software platform, providing ultra-reliability and exceptional performance
+        efficiencies for telecommunications networks. </p>
+    </section>
     <section id="dcn"><title>HPE Distributed Cloud Networking Components </title><p>The HPE Helion
-        OpenStack Carrier Grade KVM with DCN deployment uses HPE Distributed Cloud Networking to
-        provide virtual networking within the cloud.</p><p>DCN must be deployed before starting the
-        cloud deployment. Please refer to DCN documentation for details. </p>The main components in
-      the HPE DCN solution are: Virtualized Services Directory (VSD) and Virtualized Services
-      Directory Architect (VSD-A), Virtualized Services Controller (VSC) and Virtual Routing and
-      Switching (VRS).<ul>
+      OpenStack Carrier Grade KVM + ESX deployment uses HPE Distributed Cloud Networking to provide
+      virtual networking within the cloud.</p><p>DCN must be deployed before starting the cloud
+        deployment. Please refer to DCN documentation for details. </p>The main components in the HP
+      DCN solution are: Virtualized Services Directory (VSD) and Virtualized Services Directory
+      Architect (VSD-A), Virtualized Services Controller (VSC) and Virtual Routing and Switching (VRS).<ul>
         <li>HPE Virtualized Service Directory (VSD) - The VSD is a policy engine for managing users,
           compute resources and network resources, that is located on a server outside of the HP
           Helion OpenStack Carrier Grade cloud. </li>
@@ -212,5 +217,5 @@
       </ul><p>During the installation, you will be interacting with DCN. You should be familiar with
         the major DCN components, including how to access the various systems, IP addresses, and
         user credentials. </p></section>
-    </body>
+  </body>
 </topic>

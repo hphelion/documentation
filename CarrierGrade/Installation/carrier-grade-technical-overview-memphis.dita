@@ -2,8 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic3485">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: denver Deployment
-    Architecture Reference (KVM-only)</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: tahoe (KVM with DCN)
+    Deployment Architecture Reference</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -16,25 +16,17 @@
   </prolog>
   <body>
     <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-technical-overview.md--><!--permalink: /helion/openstack/carrier/technical-overview/--></p>
-    <p>This page introduces deployment and network architectures of the KVM deployment of HPE Helion
-      OpenStack Carrier Grade. During the installation, use the <codeph>denver</codeph> template
-      that comes with the installation package to create the KVM deployment. </p>
-    <p><b>Network/Component Architecture</b></p>
-    <p><image href="../../media/CGH-2-block-arch-denver.png" width="750" id="image_wdn_zbw_mt"/></p>
-    <ul>
-      <li>
-        <xref type="section" href="#topic3485/deploy-arch">Deployment architecture</xref>
-      </li>
-      <li>
-        <xref type="section" href="#topic3485/networkarch">Network architecture</xref>
-      </li>
-    </ul>
+    <p>This page introduces deployment and network architectures of the KVM with DCN deployment of
+      HPE Helion OpenStack Carrier Grade.  The KVM with DCN deployment incorprates HPE Distributed
+      Cloud Networking (DCN) virtual network solution. During the installation, use the
+      <codeph>tahoe</codeph> template that comes with the installation package to create the KVM
+      with DCN deployment.</p>
     <section id="deploy-arch">
       <title>Deployment architecture</title>
       <p>The following diagram depicts a simplified deployment scenario of HPE Helion OpenStack
         Carrier Grade.</p>
       <p>
-        <image href="../../media/CGH-architecture-rc0.png" width="800"/></p>
+        <image href="../../media/CGH-architecture-esx-alpha-tahoe.png" width="800"/></p>
       <p>The following sections describe essential aspects of this diagram.</p>
     </section>
     <section id="networkarch">
@@ -53,43 +45,63 @@
           </thead>
           <tbody>
             <row>
-              <entry> PXE-1 and PXE-2</entry>
+              <entry> CLM</entry>
+              <entry>Cloud Management Network and Object Store Network. Shared between the non-KVM
+                and KVM regions.</entry>
+            </row>
+            <row>
+              <entry> PXE</entry>
               <entry>Boot/initial configuration network. Untagged </entry>
             </row>
             <row>
-              <entry> CLM / MGMT</entry>
-              <entry>Cloud Management Network. Shared between the Non-KVM and KVM regions.</entry>
-            </row>
-            <row>
-              <entry> CAN / OAM</entry>
-              <entry>Consumer Access Network Shared between the Non-KVM and KVM regions.</entry>
-            </row>
-            <row>
-              <entry> CTL </entry>
-              <entry>IPMI/iLO network. Shared between the Non-KVM and KVM regions.</entry>
-            </row>
-            <row>
-              <entry> BLS / INFRA</entry>
-              <entry>Block Storage Network; can be on a separate interface (`intf*`). Shared between
-                the Non-KVM and KVM regions.</entry>
-            </row>
-            <row>
-              <entry> DCM </entry>
-              <entry>Data Center Management network (accessible to KVM region) and route across
-                multiple data centers. </entry>
-            </row>
-            <row>
-              <entry> TUL/SR-IOV </entry>
-              <entry>Tenant Underlay Network from the KVM region </entry>
+              <entry> CAN</entry>
+              <entry>Consumer Access Network. Shared between the non-KVM and KVM regions.</entry>
             </row>
             <row>
               <entry> EXT </entry>
-              <entry> Provider VLAN as an External network (provides that FIP pool for the KVM
-                region). </entry>
+              <entry> External network (FIP network for the non-KVM region) region). </entry>
+            </row>
+            <row>
+              <entry> CTL </entry>
+              <entry>IPMI/iLO network. Shared between the non-KVM and KVM regions.</entry>
+            </row>
+            <row>
+              <entry> BLS</entry>
+              <entry>Block Storage Network. Shared between the non-KVM and KVM regions.</entry>
+            </row>
+            <row>
+              <entry> DCM </entry>
+              <entry>Data Center Management network (accessible to the non-KVM and KVM region).
+              </entry>
+            </row>
+            <row>
+              <entry> TUL </entry>
+              <entry> Tenant Underlay Network for the non-KVM region; routed across multi-DC for
+                VxLAN 12 extension </entry>
+            </row>
+            <row>
+              <entry> WR-TUL/SR-IOV </entry>
+              <entry>Tenant Underlay Network for the KVM region </entry>
+            </row>
+            <row>
+              <entry> WR-PXE</entry>
+              <entry>Boot/initial configuration network for the KVM region. Untagged </entry>
+            </row>
+            <row>
+              <entry> WR-EXT </entry>
+              <entry> External network (FIP network for KVM region)</entry>
             </row>
           </tbody>
         </tgroup>
       </table>
+      <!-- <row>
+<row>
+<entry> WR-BLS </entry>
+<entry> WR Cloud BLock Storage Network; can be on a separate interface (intf*) </entry>
+</row>
+
+
+-->
     </section>
     <section id="interfaces">
       <title>Interfaces</title>
@@ -127,28 +139,78 @@
               <entry> CTL </entry>
               <entry> Access iLO network for managing the lifecycle of the node </entry>
             </row>
+            <row>
+              <entry> CLM </entry>
+              <entry> EXT </entry>
+              <entry> Access external networks, for example to download patches </entry>
+            </row>
+            <row>
+              <entry> CLM </entry>
+              <entry> CAN </entry>
+              <entry> Accessing OpenStack APIs </entry>
+            </row>
+            <row>
+              <entry> DCM </entry>
+              <entry> CLM </entry>
+              <entry>
+                <p>VSC IP to HLM CLM VM IP (only during deployment)</p>
+              </entry>
+            </row>
+            <row>
+              <entry> TUL1 </entry>
+              <entry> TUL2 </entry>
+              <entry> Inter DC communication (VPN tunnel, BGP, MPLS) </entry>
+            </row>
+            <row>
+              <entry> DCM1 </entry>
+              <entry> DCM2 </entry>
+              <entry> Inter DC communication (VPN tunnel, BGP, MPLS) </entry>
+            </row>
           </tbody>
         </tgroup>
       </table>
-      <p>CLM/OBS, PXE-1, PXE-2, BLS/INFRA, TUL/SR-IOV should use RFC 1918 non-routable IPs to
-        prevent access to the CLM network from DCM, CTL, or EXT.</p>
+      <p>CLM, PXE, BLS, WR-PXE, WR-INFRA, WR-TUL should use RFC 1918 non-routable IPs to prevent
+        access to the CLM network from DCM, CTL, or EXT.</p>
+      <p>DCM, CAN/WR-OAM, EXT, WR-EXT should use routable IPs. DCM is restricted to the corporate
+        network</p>
     </section>
-    <section><title>Regions</title>
-      <p>For installation and maintenance, HPE Helion OpenStack Carrier Grade consists of three logical
-        or conceptual <i>regions</i>: Non-KVM, KVM, and Baremetal. You will see these terms used in the
-        installation process. The <xref
-          href="carrier-grade-technical-overview.dita#topic3485/deploy-arch">Deployment Architecture
-          diagram</xref> shows an illustration of these two zones. </p>
-        <p><b>Non-KVM</b></p>
-        <p>The Non-KVM region contains the HPE Helion Lifecycle Management (HLM), to deploy and
+    <section>
+      <title>Regions</title>
+      <p>For installation and maintenance, HPE Helion OpenStack Carrier Grade consists of two
+        logical or conceptual <i>regions</i>: Non-KVM and KVM. You will see these terms used in
+        the installation process. The <xref
+          href="carrier-grade-technical-overview.dita#topic3485/deploy-arch">Deployment
+          Architecture diagram</xref> shows an illustration of these two zones. </p>
+      <p><b>Non-KVM</b></p>
+      <p>The Non-KVM region contains the HPE Helion Lifecycle Management (HLM), to deploy and
         maintain HPE Helion OpenStack Carrier Grade; and HPE Helion OpenStack, a commercial-grade
-        distribution of OpenStack.   </p>
-        <p><b>KVM</b></p>
-        <p>The KVM region is the heart of HPE Helion OpenStack Carrier Grade. The KVM region consists
-          of a software platform, providing ultra-reliability and exceptional performance efficiencies
-          for telecommunications networks. </p>
-      
-      
+        distribution of OpenStack. The DCN components and servers also reside in the non-KVM zone. </p>
+      <p><b>KVM</b></p>
+      <p>The KVM region is the heart of HPE Helion OpenStack Carrier Grade. The KVM region consists
+        of a software platform, providing ultra-reliability and exceptional performance
+        efficiencies for telecommunications networks. </p>
     </section>
+    <section id="dcn"><title>HPE Distributed Cloud Networking Components </title><p>The HPE Helion
+      OpenStack Carrier Grade KVM with DCN deployment uses HPE Distributed Cloud Networking to
+      provide virtual networking within the cloud.</p><p>DCN must be deployed before starting the
+        cloud deployment. Please refer to DCN documentation for details. </p>The main components in
+      the HPE DCN solution are: Virtualized Services Directory (VSD) and Virtualized Services
+      Directory Architect (VSD-A), Virtualized Services Controller (VSC) and Virtual Routing and
+      Switching (VRS).<ul>
+        <li>HPE Virtualized Service Directory (VSD) - The VSD is a policy engine for managing users,
+          compute resources and network resources, that is located on a server outside of the HP
+          Helion OpenStack Carrier Grade cloud. </li>
+        <li>HPE Networks Virtualized Services Directory Architect (VSD Architect). The VSD Architect
+          is a browser-based interface for management tasks on the VSD.</li>
+        <li>HPE Virtual Services Controller (VSC): The VSC is a virtual machine application running
+          all the control plane tasks, maintaining a full view of per-tenant network and service
+          topologies. The VSC should be installed on the KVM host system within the HPE Helion
+          OpenStack Carrier Grade cloud.</li>
+        <li>HPE Distributed Virtual Routing and Switching (VRS): The HPE VRS is the software agent
+          that runs in each Hypervisor (HV). The HPE VRS component is an enhanced Open vSwitch (OVS)
+          implementation that constitutes the network forwarding plane.</li>
+      </ul><p>During the installation, you will be interacting with DCN. You should be familiar with
+        the major DCN components, including how to access the various systems, IP addresses, and
+        user credentials. </p></section>
   </body>
 </topic>
