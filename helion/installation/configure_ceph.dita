@@ -148,7 +148,8 @@
                 not perform this step, Ceph configuration fails with errors.</note></p></li>
           <li>[OPTIONAL] There are parameters for Ceph that can be edited by the admin in the
             locations described below. The default values will work but if you choose to change any
-            of these values, ensure that you also change them where they are referenced as well. <ul>
+            of these values, ensure that you also change them where they are referenced in your
+              <codeph>cinder.conf.j2</codeph> file in the next step as well. <ul>
               <li><codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph>
                 <p>In the <codeph>settings.yml</codeph> file, you can edit the following
                   parameters:</p>
@@ -165,25 +166,25 @@
                       </thead>
                       <tbody>
                         <row>
-                          <entry><codeph>fsid</codeph></entry>
+                          <entry>fsid</entry>
                           <entry>It is a unique identifier for the Ceph cluster.</entry>
                         </row>
                         <row>
-                          <entry><codeph>ceph_cluster</codeph></entry>
+                          <entry>ceph_cluster</entry>
                           <entry>
                             <p>Ceph clusters have a cluster name. The default cluster name is ceph,
                               but you may specify a different cluster name.</p>
                           </entry>
                         </row>
                         <row>
-                          <entry><codeph>osd_settle_time</codeph></entry>
+                          <entry>osd_settle_time</entry>
                           <entry>
                             <p>Time in seconds to wait for after starting/restarting the Ceph OSD
                               services.</p>
                           </entry>
                         </row>
                         <row>
-                          <entry><codeph>osd_journal_size</codeph></entry>
+                          <entry>osd_journal_size</entry>
                           <entry>
                             <p>The size of the journal in megabytes.</p>
                           </entry>
