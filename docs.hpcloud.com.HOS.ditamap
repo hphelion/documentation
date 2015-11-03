@@ -63,23 +63,23 @@
     </topicref>
     <!-- END - INSTALLATION -->
     <!-- BEGIN - SECURITY -->
-    <topichead navtitle="Security"  href="placeholder7.dita">
+    <topicref navtitle="Security"  href="placeholder7.dita">
       <topicref href="helion/security/tls.dita" navtitle="Configuring TLS for Public Endpoints"
         locktitle="yes"/>
       <topicref href="helion/security/encrypted_storage.dita"
         navtitle="Encryption of Passwords and Sensitive Data" locktitle="yes"/>
       <topicref href="helion/security/using_apparmor.dita"
         navtitle="Refining Access Control with AppArmor" locktitle="yes"/>
-    </topichead>
+    </topicref>
     <!-- END - SECURITY -->
     <!-- BEGIN ADMINISTRATION -->
-    <topichead navtitle="Administration"  href="placeholder8.dita">
-      <topichead navtitle="Initial Configuration"  href="placeholder9.dita">
+    <topicref navtitle="Administration"  href="placeholder8.dita">
+      <topicref navtitle="Initial Configuration"  href="placeholder9.dita">
         <topicref href="helion/administration/create_extnet.dita"
           navtitle="Creating an External Network" locktitle="yes"/>
         <topicref href="helion/administration/upload_image.dita"
           navtitle="Uploading an Image for Use" locktitle="yes"/>
-      </topichead>
+      </topicref>
       <topicref href="helion/conceptual_overviews/high_availability.dita"
         navtitle="High Availability Concepts" locktitle="yes"/>
       <topicref href="helion/administration/create_hdp_servicenet.dita" toc="no"
@@ -193,10 +193,10 @@
         <topicref href="helion/esx/scale_config_changes.dita"
           navtitle="Making SCALE Configuration Changes" locktitle="yes"/>
       </topicref>
-    </topichead>
+    </topicref>
     <!-- END - ADMINISTRATION -->
     <!-- BEGIN - OPERATIONS -->
-    <topichead navtitle="Operations" href="placeholder1.dita">
+    <topicref navtitle="Operations" href="placeholder1.dita">
       <topicref href="helion/operations/cli_reference.dita" navtitle="Command-line Reference"
         locktitle="yes" toc="no"/>
       <topicref href="helion/operations/accessing_horizon.dita"
@@ -206,7 +206,7 @@
       <topicref href="helion/operations/start_stop_services.dita"
         navtitle="Starting and Stopping Services" locktitle="yes"/>
       <!-- BEGIN - OPERATIONS/Node Maintenance -->
-      <topichead navtitle="Node Maintenance" href="placeholder2.dita">
+      <topicref navtitle="Node Maintenance" href="placeholder2.dita">
         <!-- COMPUTE -->
         <topicref href="helion/operations/add_node.dita" navtitle="Adding a Compute Node"
           locktitle="yes"/>
@@ -242,10 +242,10 @@
           navtitle="Replacing a Swift Node" locktitle="yes"/>
         <topicref href="helion/objectstorage/removing_node.dita" navtitle="Removing a Swift Node"
           locktitle="yes"/>
-      </topichead>
+      </topicref>
       <!-- END - OPERATIONS/Node Maintenance -->
       <!-- BEGIN - OPERATIONS/OBJECT STORAGE -->
-      <topichead navtitle="Object Storage"  href="placeholder3.dita">
+      <topicref navtitle="Object Storage"  href="placeholder3.dita">
         <topicref href="helion/objectstorage/add_new_storage_policy.dita"
           navtitle="Adding a New Swift Storage Policy" locktitle="yes"/>
         <topicref href="helion/objectstorage/check_objectstorage_operation.dita"
@@ -257,9 +257,9 @@
           <topicref href="helion/objectstorage/utility.dita"
             navtitle="Using the Swift Command-line Client (CLI)" locktitle="yes"/>
         </topicref>
-      </topichead>
+      </topicref>
       <!-- BEGIN - OPERATIONS/BLOCK STORAGE -->
-      <topichead navtitle="Block Storage"  href="placeholder4.dita">
+      <topicref navtitle="Block Storage"  href="placeholder4.dita">
         <topicref href="helion/blockstorage/vsa/vsa_create_multiple_clusters.dita"
           navtitle="Creating Multiple VSA Clusters" locktitle="yes"/>
         <topicref href="helion/blockstorage/ceph/deploy_monitor_stand_alone_node.dita"
@@ -272,7 +272,7 @@
           navtitle="Defining a Ceph Monitor Resource" locktitle="yes"/>
         <topicref href="helion/blockstorage/ceph/reconfigure_ceph_services.dita"
           navtitle="Reconfiguring Ceph Services" locktitle="yes"/>
-      </topichead>
+      </topicref>
       <!-- BEGIN - OPERATIONS/BURA -->
       <topicref href="helion/bura/bura_overview.dita" navtitle="Backing Up and Restoring Your Data"
         locktitle="yes">
@@ -335,10 +335,10 @@
         <topicref href="helion/operations/validate_sherpa_signatures.dita"
           navtitle="Validating Download Signatures" locktitle="yes"/>
       </topicref>
-    </topichead>
+    </topicref>
     <!-- END - OPERATIONS -->
     <!-- BEGIN - TROUBLESHOOTING -->
-    <topichead navtitle="Troubleshooting"  href="placeholder5.dita">
+    <topicref navtitle="Troubleshooting"  href="placeholder5.dita">
       <topicref href="helion/installation/installation_troubleshooting.dita"
         navtitle="Troubleshooting Your Installation" locktitle="yes"/>
       <topicref href="helion/objectstorage/troubleshooting.dita"
@@ -364,9 +364,9 @@
         navtitle="Troubleshooting the Ceilometer Metering Service" locktitle="yes"/>
       <topicref href="helion/blockstorage/ceph/troubleshooting.dita"
         navtitle="Troubleshooting the Ceph Service" locktitle="yes"/>
-    </topichead>
+    </topicref>
     <!-- BEGIN - USER GUIDE -->
-    <topichead navtitle="User Guide"  href="placeholder6.dita">
+    <topicref navtitle="User Guide"  href="placeholder6.dita">
       <!-- HORIZON -->
       <topicref href="helion/horizon/horizon_overview.dita" navtitle="Using the Horizon Dashboard"
         locktitle="yes"/>
@@ -387,7 +387,7 @@
           <navtitle>Using VPN as a Service (VPNaaS)</navtitle>
         </topicmeta>
       </topicref>
-    </topichead>
+    </topicref>
     <!-- END USER GUIDE -->
     <topicref href="helion/documentation_updates.dita"/>
   </topicref>
