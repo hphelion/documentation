@@ -67,14 +67,6 @@
 </ul>
 <section id="support-and-additional-resources1"> <title>Support and additional resources</title>
 <ul>
-<li>
-          <xref href="#topic7037/are-hp-support-services-included-with-hp-helion-openstack"
-            format="dita">Are HPE support
-            services included with HPE Helion OpenStack</xref>
-        </li>
-<li>
-<xref type="section" href="#topic7037/supportoptions">What support options are available?</xref>
-</li>
 <li><xref href="#topic7037/MoreInfo" format="dita"/>
         </li>
 <li>
@@ -154,23 +146,6 @@ It is available with support for baremetal deployments (up to 30 Compute nodes).
 </section>
 <section id="support-and-additional-resources2"> <title>Support and additional resources</title>
 </section>
-<section id="are-hp-support-services-included-with-hp-helion-openstack"> <title>Are HPE support services included with HPE Helion OpenStack<!--Removed anchor point supportservices--><!-- id="supportservices" --></title>
-<!--No. An optional paid support contract from HPE will be made available for purchase soon.-->
-<p>In the next release, we hope to deliver full life-cycle services to help you from strategy through design, implementation, support and education.</p>
-</section>
-<section id="supportoptions"> <title>What support options are available?<!--Removed anchor point supportoptions--><!-- id="supportoptions" --></title>
-<p>Foundation Care 8x5 support is included, providing additional support levels including same day and 24x7 coverage.</p>
-<p>HPE Support provides access to experts in <xref href="http://h20427.www2.hp.com/campaign/hp-cloud-centre-of-excellence/ap/en/index.html" scope="external" format="html" >HP's Global Cloud Center of Excellence</xref> as a single source of support and accountability, which also qualifies you for indemnification.
-<!--
-HPE Helion OpenStack will be covered by Foundation Care Operations support at an additional cost, which will be available in the near future. You would be able to interact with experts in [HP's Global Cloud Center of Excellence](http://h20427.www2.hp.com/campaign/hp-cloud-centre-of-excellence/ap/en/index.html) as a single source of support and accountability.
-
-You have access to:     
-* HPE OpenStack technical experts, tools and best practices 
-* HPE Helion OpenStack edition software support
-* Installation advisory support
-* Help with software features and operational support
---></p>
-</section>
 <section id="MoreInfo"> <title>Where can I find more information?<!--Removed anchor point MoreInfo--><!-- id="MoreInfo" --></title>
 <ul>
 <li>
@@ -182,7 +157,9 @@ You have access to:
 </ul>
 </section>
 <section id="where-can-i-report-issues-with-hp-helion-openstack"> <title>Where can I report issues with HPE Helion OpenStack<!--Removed anchor point reportissues--><!-- id="reportissues" --></title>
-<p>To report issues with HPE Helion OpenStack please visit the <xref href="http://us-support.external.hp.com/portal/site/hpsc/public" scope="external" format="html" >HPE Support Center</xref>.</p>
+<p>To report issues with HPE Helion OpenStack please visit <xref
+          href="http://www.hpe.com/support/hpsc" format="html" scope="external"
+          >http://www.hpe.com/support/hpsc</xref>.</p>
 <p>
 <!-- removed per JR's comment I We are hosting the support discussion forum for the edition at [https://ask.openstack.org](https://ask.openstack.org).  Developers in the community are very familiar with this forum and already participate in OpenStack-related discussions there. Please tag your questions with 'HPHelion' to get our attention for any questions and issues you raise.--> 
 <xref href="#topic7037"> Return to Top </xref>
