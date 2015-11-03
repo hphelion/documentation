@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_m3q_gms_wt">
+  <title>HPE Helion 2.0 Development Platform: Verify TLS Connectivity</title>
+  <body>
+    <p>
+      <note>This procedure only applies if TLS has been enabled for the Messaging service during
+        installation.</note>
+    </p><ol><li>Run the
+        Playbook.<codeblock>stack@msgaas-deployer:~/helion/hos/ansible$ cd ~/scratch/ansible/next/hos/ansible
+stack@msgaas-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -i hosts/verb_hosts --extra-vars "install_hosts=CUE-API install_package=cueclient" client-deploy.yml
+ </codeblock>Successful
+        output will look similar to the
+        following:<codeblock>PLAY RECAP ********************************************************************
+service-client  | install | Update venv cache --------------------------- 0.51s
+service-client | install | Install Python virtual environment client ---- 0.48s
+service-client | install | Check CLI client is avalible ----------------- 0.33s
+service-client | install | Client install details ----------------------- 0.11s
+service-client | install | Enabling CLI client for all users ------------ 0.09s
+-------------------------------------------------------------------------------
+Total: ------------------------------------------------------------------ 3.81s
+msgaas-msgaas-ccp-c1-m1-mgmt : ok=5    changed=3    unreachable=0    failed=0
+msgaas-msgaas-ccp-c1-m2-mgmt : ok=5    changed=3    unreachable=0    failed=0
+msgaas-msgaas-ccp-c1-m3-mgmt : ok=5    changed=3    unreachable=0    failed=0 </codeblock></li>
+      <li>Secure copy the msgaas.osrc
+        file.<codeblock>stack@msgaas-deployer:~/scratch/ansible/next/hos/ansible$ scp ~/msgaas.osrc stack@10.241.181.148:~ msgaas.osrc                                                                                                                                        100%  403     0.4KB/s   00:00
+</codeblock>Successful
+        output will look similar to the
+        following:<codeblock>stack@msgaas-deployer:~/scratch/ansible/next/hos/ansible$  ssh stack@10.241.181.148
+The programs included with the hLinux system are free software; the exact
+license terms for each program are described in the individual files in
+/usr/share/doc/*/copyright.
+hLinux comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+stack@msgaas-msgaas-ccp-c1-m1-mgmt:~$ logout
+Connection to 10.241.181.148 closed.
+stack@msgaas-deployer:~/scratch/ansible/next/hos/ansible$ ssh stack@10.241.181.148
+The programs included with the hLinux system are free software; the exact
+license terms for each program are described in the individual files in
+/usr/share/doc/*/copyright.
+hLinux comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.</codeblock></li>
+      <li>Certification ? see TLS topic in
+        HOS?<codeblock>stack@msgaas-msgaas-ccp-c1-m1-mgmt:~$ touch msgaas-hpes-cert
+stack@msgaas-msgaas-ccp-c1-m1-mgmt:~$ sudo cat /etc/ssl/private/msgaas-hpes-cert >> msgaas-hpes-cert
+stack@msgaas-msgaas-ccp-c1-m1-mgmt:~$ source msgaas.osrc
+stack@msgaas-msgaas-ccp-c1-m1-mgmt:~$ export OS_CACERT=msgaas-hpes-cert
+stack@msgaas-msgaas-ccp-c1-m1-mgmt:~$ /opt/stack/service/cueclient/venv/bin/openstack  message-broker cluster list</codeblock>Successful
+        output will look similar to the
+        following:<codeblock>/opt/stack/venv/cueclient-20151019T201657Z/lib/python2.7/site-packages/requests/packages/urllib3/connection.py:251: SecurityWarning: Certificate has no `subjectAltName`, falling back to check for a `commonName` for now. This feature is being removed by major browsers and deprecated by RFC 2818. (See https://github.com/shazow/urllib3/issues/497 for details.)
+  SecurityWarning
+WARNING: keystoneclient.auth.identity.base Failed to contact the endpoint at https://10.241.178.91:8795/v1 for discovery. Fallback to using that endpoint as the base url.
++--------------------------------------+------------------+--------+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| id                                   | name             | status | size | endpoints                                                                                                                                                    |
++--------------------------------------+------------------+--------+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 8ba08e3d-a512-4891-97f6-cafaf42652f0 | cue_test_cluster | ACTIVE |    3 | [{u'type': u'AMQP', u'uri': u'10.241.181.163:5672'}, {u'type': u'AMQP', u'uri': u'10.241.181.162:5672'}, {u'type': u'AMQP', u'uri': u'10.241.181.164:5672'}] |
++--------------------------------------+------------------+--------+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------</codeblock></li></ol>
+  </body>
+</topic>
