@@ -22,7 +22,6 @@
     <pre> hlm &lt;command name&gt; --help</pre>
     <p><b>Note:</b> With this new framework, all logs will be generated as /var/log/hlm/&lt;cloud
       name&gt;/&lt;command name&gt;.log</p>
-    <p> </p>
     <p>Below is the list of available commands, what they are meant for and how they can be used to
       carry out a particular functionality:</p>
     <p><b>Note: </b>Please refer to the description in code block corresponding to each command.</p>

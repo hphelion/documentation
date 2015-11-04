@@ -337,8 +337,8 @@ StrictHostKeyChecking no </codeblock></li>
                 <p id="download-esx"><b>DCN components</b></p>
                         <p>The <codeph>build22.tar</codeph> file contains the required DCN packages
                                 needed to deploy the DCN environment, in the
-                                        <codeph>build22/HLM/DCN</codeph> directory. The current
-                                supported version is DCN version 3.2 R4.</p>
+                                        <codeph>build22/HLM/DCN</codeph> directory. The currently
+                                supported version is <b id="dcn-version">DCN version 3.2 R4</b>.</p>
                         <table id="table_jl2_lyj_nt">
                                 <tgroup cols="2">
                                         <colspec colname="newCol1" colnum="1" colwidth="1*"/>

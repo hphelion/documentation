@@ -279,6 +279,8 @@
           </tgroup>
         </table></p>
       <p><b>For all deployments</b></p>
+      <p>The following hardware is required for all deployments. See <xref href="#topic1773/specs"
+          format="dita">Required Specifications</xref> for supported hardware models.</p>
       <p>One (1) <b>HLM Host</b>. You must have a server with a 40GB Disk and 8,192 MB RAM for the
         HLM host. This server will also host the VSD VM.</p>
       <p id="non-kvm-hos">Three (3) <b>HPE Helion OpenStack Controllers.</b> You must have three (3)
@@ -315,22 +317,23 @@
      
     <p><b><i>HP Distributed Cloud Networking Components</i></b></p>
       <p><i>For Tahoe, Memphis, and Sacramento</i></p>
-      <p>If you are installing DCN, you need the following additional components:</p>
+      <p>If you are installing DCN, you need the following additional components. Refer to the DCN
+        documentation for the supported hardware configurations. </p>
     <p>
       <ul>
         <li>Two (2) <b>DCN hosts</b>. You must have: <ul>
-          <li>two (2) baremetal systems for DCN VSC controllers (HA mode) ; this system will host
-                the VSC-VM.</li>
-          <li>two (2) baremetal systems for DCN VRS-G Software Gateway (HA mode); this system will
-                host the VRS-G gateway.</li>
-          <li>VRSvApp requirements VRSvApp must be installed. Please Refer to the DCN VSP 3.0 R7
-            installation Guide for VRSvApp installation. </li>
-        </ul><p>Refer to the DCN documentation for the supported hardware configurations.
-        </p><p><b>Note:</b> These systems are not required for a KVM-only cloud.</p></li></ul></p>
+              <li>two (2) baremetal systems for DCN VSC controllers (HA mode) ; this system will
+                host the VSC-VM.</li>
+              <li>two (2) baremetal systems for DCN VRS-G Software Gateway (HA mode); this system
+                will host the VRS-G gateway.</li>
+              <li>VRSvApp requirements VRSvApp must be installed. Please Refer to the DCN VSP 3.0 R7
+                installation Guide for VRSvApp installation. </li>
+            </ul></li></ul></p>
      
     <p><b><i>VMware ESX Storage</i></b></p>
       <p><i>For Memphis and Sacramento</i></p>
-      <p>If you are installing VMware ESX, you need the following additional components:</p>
+      <p>If you are installing VMware ESX, you need the following additional components. Refer to
+        the ESX documentation for the supported hardware configurations. </p>
     <p>
         <ul id="ul_s3d_pmx_dt">
           <li>Two (2) <b>ESX hosts</b>. You must have a minimum of two (2) baremetal systems for
@@ -341,33 +344,38 @@
               <li> vSphere Cluster running ESXi 5.5u2 with vMotion enabled.</li>
               <li>1 Virtual Machine Port Group with all Cloud Vlans associated to the Port Group.
               </li>
-            </ul><p><b>Note:</b> These systems are not required for a KVM-only cloud.</p></li></ul></p>
+            </ul></li></ul></p>
     </section>
     <p><b><i>Ironic Baremetal Components</i></b></p>
     <p><i>For Sacramento</i></p>
     <p>If you are installing the Ironic baremetal region, you need the following additional
-      components:</p>
+        components:<ul id="ul_anc_1c2_xt">
+        <li>One (1) <b>Controller</b>. You must have one (1) HPE ProLiant DL360 or DL380 baremetal
+          system to install the baremetal region controllers.</li>
+      </ul></p>
 
   <section id="software"><title>Software Requirements</title><p><b>HLM Host</b>. The HLM host
         requires the Ubuntu Server 14.04.2 LTS operating system. </p>
-    <p><b>HPE Helion OpenStack Controllers</b>. The servers should be baremetal. The HPE Helion
-        OpenStack Carrier Grade installation process installs the required software.</p>
-    <p><b>KVM controllers</b>. The servers should be baremetal. The HPE Helion OpenStack Carrier
-        Grade installation process installs the required software.</p>
-      <p><b>KVM compute</b>. The servers should be baremetal. The HPE Helion OpenStack Carrier Grade
-        installation process installs the required software.</p>
+    <p><b>Non-KVM Region Controllers</b>. The servers should be baremetal. The HPE Helion OpenStack
+        Carrier Grade installation process installs the required software.</p>
+    <p><b>KVM Region Controllers</b>. The servers should be baremetal. The HPE Helion OpenStack
+        Carrier Grade installation process installs the required software.</p>
+      <p><b>KVM Region Compute</b>. The servers should be baremetal. The HPE Helion OpenStack
+        Carrier Grade installation process installs the required software.</p>
     <p><b><i>VMware ESX</i></b>. if you are installing VMware, VMware vSphere must be fully
         installed and operational before installing HPE Helion OpenStack Carrier Grade.</p>
-      <p><b><i>HP DCN</i></b>. If you are intalling HP Distributed Cloud Networking (DCN), DCN must
-        be fully installed and operational before installing HPE Helion OpenStack Carrier Grade. </p></section>
+      <p><b><i>HP DCN</i></b>. If you are installing HP Distributed Cloud Networking (DCN), DCN must
+        be fully installed and operational before installing HPE Helion OpenStack Carrier Grade. The
+        currently supported version is <b
+          conref="carrier-grade-install-prereqs.dita#topic7148/dcn-version"/>.</p></section>
     <section>
       <title>External Storage</title>
       <p>The following back-end drivers are supported to enable management of the OpenStack Block
         Storage volumes in the non-KVM region.</p>
       <p>
         <ul id="ul_oh5_dyx_5t">
-          <li>HPE 3PAR StoreServ, version 3.2.1 (MU3) or 3.2.1 (MU2).</li>
-          <li>HPE StoreVirtual VSA</li>
+          <li>HPE 3PAR StoreServ, version 3.1.3 or 3.2.1 MU2 or higher .</li>
+          <li>HPE StoreVirtual VSA with LeftHand OS 11.5.</li>
         </ul>
       </p>
       <p>You will configure the installer to integrate one or both of these drivers during the
@@ -375,12 +383,12 @@
     </section>
   
   <section id="guestOS"><title>Supported Guest Operating Systems</title> The following guest
-      operating systems (guest OSs) are supported for the HPE Helion OpenStack Carrier Grade servers.
-          <p><b>HLM Host</b>. There are no supported guest OSs for the HLM host server. </p><p><b>HP
-          Helion OpenStack Controllers</b>. There are no supported guest OSs for the servers that
-        host the HPE Helion OpenStack Controllers.</p><p><b>KVM compute and controllers</b>. The
-        following Guest OSs are supported for the servers in the KVM region for both cloud
-        topologies: </p><ul id="ul_sty_hd2_qs">
+      operating systems (guest OSs) are supported for the HPE Helion OpenStack Carrier Grade
+      servers. <p><b>HLM Host</b>. There are no supported guest OSs for the HLM host server.
+          </p><p><b>Non-KVM Region Controllers</b>. There are no supported guest OSs for the servers
+        that host the HPE Helion OpenStack Controllers.</p><p><b>KVM Region Compute and
+          Controllers</b>. The following Guest OSs are supported for the servers in the KVM region
+        for both cloud topologies: </p><ul id="ul_sty_hd2_qs">
         <li>
           <p>WindRiver Linux 6.0</p>
         </li>
@@ -399,8 +407,8 @@
         <li>
           <p>OpenSUSE 12.3 </p>
         </li>
-      </ul><p><i><b>For a KVM and ESX cloud topology</b></i>, the following guest OSs are supported
-        for the servers in the Non-KVM region, when configured with ESX-DCN: </p><p>
+      </ul><p><i><b>For Tahoe, Memphis and Sacramento deployments</b></i>, the following guest OSs
+        are supported for the servers in the Non-KVM region, when configured with ESX and DCN: </p><p>
         <ul id="ul_hfp_g5r_5s">
           <li>Cirros 3.2</li>
           <li>RHEL6.5</li>
