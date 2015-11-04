@@ -10,7 +10,7 @@
       <li>In the <b>Launch Cluster</b> page, enter the following information and click <b>Launch Cluster</b>:
         <ul>
           <li><b>Cluster Name</b>: The name of the cluster to be created. The cluster ID will be generated automatically.</li>
-          <li><b>Datastore</b>: The database type to be used. MySql, Vertica, Redis and MongoDB are supported.</li>
+          <li><b>Datastore</b>: The database type to be used. MySql, Vertica Preview, Redis and MongoDB are supported.</li>
           <li><b>Flavor</b>: The instance flavor (virtual hardware template) to use for the cluster.</li>
           <li><b>Network</b>: The OpenStack network to attach to the cluster.</li>
           <li><b>Volume Size</b>: The size in GB of the new cluster. <note>MongoDB instances require a minimum volume size of 5.</note></li>

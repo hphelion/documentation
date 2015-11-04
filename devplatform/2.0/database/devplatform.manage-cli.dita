@@ -42,7 +42,7 @@
         <li><xref type="external" format="html" href="http://redis.io/topics/config">Redis</xref></li>
         <li><xref href="https://docs.mongodb.org/manual/administration/configuration/" type="external" format="html">MongoDB</xref></li>
       </ul>
-      <note>Configuration groups are not supported for Vertica.</note>
+      <note>Configuration groups are not supported for Vertica Preview.</note>
       <p><b>List configuration groups</b></p>
       <p>The following command lists configuration groups:</p>
       <p><codeblock>trove configuration-list</codeblock></p>
