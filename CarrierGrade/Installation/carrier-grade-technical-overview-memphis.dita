@@ -21,87 +21,17 @@
       Cloud Networking (DCN) virtual network solution. During the installation, use the
       <codeph>tahoe</codeph> template that comes with the installation package to create the KVM
       with DCN deployment.</p>
-    <section id="deploy-arch">
+    <section>
+    <title>Network/Component Architecture</title>
+    <p><image href="../../media/CGH-2-block-arch-tahoe.png" width="750" id="image_wdn_zbw_mt"/></p>
+    </section>
+      <section id="deploy-arch">
       <title>Deployment architecture</title>
       <p>The following diagram depicts a simplified deployment scenario of HPE Helion OpenStack
         Carrier Grade.</p>
-      <p>
-        <image href="../../media/CGH-architecture-esx-alpha-tahoe.png" width="800"/></p>
+      <p><image href="../../media/CGH-2-deploy-arch-sacramento.png" id="image_g3z_dx1_xt"
+          width="800"/></p>
       <p>The following sections describe essential aspects of this diagram.</p>
-    </section>
-    <section id="networkarch">
-      <title>Network architecture</title>
-      <p>The following information describes the network configuration, which must be configured by
-        the network administrator.</p>
-      <table>
-        <tgroup cols="2">
-          <colspec colname="col1"/>
-          <colspec colname="col2"/>
-          <thead>
-            <row>
-              <entry> Network </entry>
-              <entry> Description </entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry> CLM</entry>
-              <entry>Cloud Management Network and Object Store Network. Shared between the non-KVM
-                and KVM regions.</entry>
-            </row>
-            <row>
-              <entry> PXE</entry>
-              <entry>Boot/initial configuration network. Untagged </entry>
-            </row>
-            <row>
-              <entry> CAN</entry>
-              <entry>Consumer Access Network. Shared between the non-KVM and KVM regions.</entry>
-            </row>
-            <row>
-              <entry> EXT </entry>
-              <entry> External network (FIP network for the non-KVM region) region). </entry>
-            </row>
-            <row>
-              <entry> CTL </entry>
-              <entry>IPMI/iLO network. Shared between the non-KVM and KVM regions.</entry>
-            </row>
-            <row>
-              <entry> BLS</entry>
-              <entry>Block Storage Network. Shared between the non-KVM and KVM regions.</entry>
-            </row>
-            <row>
-              <entry> DCM </entry>
-              <entry>Data Center Management network (accessible to the non-KVM and KVM region).
-              </entry>
-            </row>
-            <row>
-              <entry> TUL </entry>
-              <entry> Tenant Underlay Network for the non-KVM region; routed across multi-DC for
-                VxLAN 12 extension </entry>
-            </row>
-            <row>
-              <entry> WR-TUL/SR-IOV </entry>
-              <entry>Tenant Underlay Network for the KVM region </entry>
-            </row>
-            <row>
-              <entry> WR-PXE</entry>
-              <entry>Boot/initial configuration network for the KVM region. Untagged </entry>
-            </row>
-            <row>
-              <entry> WR-EXT </entry>
-              <entry> External network (FIP network for KVM region)</entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table>
-      <!-- <row>
-<row>
-<entry> WR-BLS </entry>
-<entry> WR Cloud BLock Storage Network; can be on a separate interface (intf*) </entry>
-</row>
-
-
--->
     </section>
     <section id="interfaces">
       <title>Interfaces</title>
@@ -116,7 +46,7 @@
     <section id="routing-acls">
       <title>Routing ACLs</title>
       <p>Configure the following routing access lists.</p>
-      <table>
+      <table id="table_vzn_jz1_xt">
         <tgroup cols="3">
           <colspec colname="col1"/>
           <colspec colname="col2"/>
@@ -154,17 +84,34 @@
               <entry> CLM </entry>
               <entry>
                 <p>VSC IP to HLM CLM VM IP (only during deployment)</p>
+                <p>VSD IP to ESX host CLM IP (during VRS-vAp deployment)</p>
               </entry>
             </row>
             <row>
-              <entry> TUL1 </entry>
-              <entry> TUL2 </entry>
+              <entry> VxTUL1 </entry>
+              <entry> VxTUL2 </entry>
               <entry> Inter DC communication (VPN tunnel, BGP, MPLS) </entry>
             </row>
             <row>
               <entry> DCM1 </entry>
               <entry> DCM2 </entry>
               <entry> Inter DC communication (VPN tunnel, BGP, MPLS) </entry>
+            </row>
+            <row>
+              <entry>BL-CLM</entry>
+              <entry>CLM</entry>
+              <entry>Image copy from Glance to baremetal; post-provisioning, remove the untagged
+                network from the provisioned node </entry>
+            </row>
+            <row>
+              <entry>BL-CTL</entry>
+              <entry>CLM</entry>
+              <entry>Temporary access for media mounts from Swift</entry>
+            </row>
+            <row>
+              <entry>BL-CLM</entry>
+              <entry>CTL</entry>
+              <entry>Power off/on nodes through IPMI, and congifure switch </entry>
             </row>
           </tbody>
         </tgroup>

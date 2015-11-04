@@ -22,16 +22,18 @@
     <p>The KVM + ESX deployment incorprates HPE Distributed Cloud Networking (DCN) virtual network
       solution. During the installation, use the <codeph>sacramento</codeph> template that comes
       with the installation package to create the KVM + ESX deployment.</p>
-    <p><b>Network/Component Architecture</b></p>
-    <p><image href="../../media/CGH-2-block-arch-memphis.png" width="750" id="image_wdn_zbw_mt"
-    /></p>
+    <section>
+      <title>Network/Component Architecture</title>
+    <p><image href="../../media/CGH-2-block-arch-sacramento.png" width="750" id="image_wdn_zbw_mt"
+      /></p>
+    </section>
     <section id="deploy-arch">
       <title>Deployment architecture</title>
       <p>The following diagram depicts a simplified deployment scenario of HPE Helion OpenStack
         Carrier Grade.</p>
       <p>
-        <image href="../../media/CGH-2-architecture-esx-memphis-aplha.png" width="800"
-          alt="AlphaReleaseNetwork-ComponentArchitecture.png"/></p>
+        <image href="../../media/CGH-2-deploy-arch-sacramento.png" id="image_g3z_dx1_xt" width="800"
+        /></p>
       <p>The following sections describe essential aspects of this diagram.</p>
     </section>
     <section id="networkarch">
@@ -80,21 +82,26 @@
               </entry>
             </row>
             <row>
-              <entry> TUL </entry>
-              <entry> Tenant Underlay Network for the non-KVM region; routed across multi-DC for
-                VxLAN 12 extension </entry>
-            </row>
-            <row>
-              <entry> WR-TUL/SR-IOV </entry>
-              <entry>Tenant Underlay Network for the KVM region </entry>
+              <entry> VxLAN-TUL </entry>
+              <entry> VxLAN Tenant Underlay Network for the non-KVM region; routed across multi-DC
+                for VxLAN 12 extension </entry>
             </row>
             <row>
               <entry> WR-PXE</entry>
               <entry>Boot/initial configuration network for the KVM region. Untagged </entry>
             </row>
             <row>
-              <entry> WR-EXT </entry>
-              <entry> External network (FIP network for KVM region)</entry>
+              <entry>BM-CTL</entry>
+              <entry>Dedicated iLO network for the baremetal region</entry>
+            </row>
+            <row>
+              <entry>BM-CLM</entry>
+              <entry>Boot/Initial Configuration Network for the baremetal region</entry>
+            </row>
+            <row>
+              <entry> VLAN-TUL</entry>
+              <entry>Tenant Underlay Network for the baremetal region/PCI-Passthrough/SR-IOV
+                interfaces. This is a set of tagged VLANs.  </entry>
             </row>
           </tbody>
         </tgroup>
@@ -163,14 +170,30 @@
               </entry>
             </row>
             <row>
-              <entry> TUL1 </entry>
-              <entry> TUL2 </entry>
+              <entry> VxTUL1 </entry>
+              <entry> VxTUL2 </entry>
               <entry> Inter DC communication (VPN tunnel, BGP, MPLS) </entry>
             </row>
             <row>
               <entry> DCM1 </entry>
               <entry> DCM2 </entry>
               <entry> Inter DC communication (VPN tunnel, BGP, MPLS) </entry>
+            </row>
+            <row>
+              <entry>BL-CLM</entry>
+              <entry>CLM</entry>
+              <entry>Image copy from Glance to baremetal; post-provisioning, remove the untagged
+                network from the provisioned node </entry>
+            </row>
+            <row>
+              <entry>BL-CTL</entry>
+              <entry>CLM</entry>
+              <entry>Temporary access for media mounts from Swift</entry>
+            </row>
+            <row>
+              <entry>BL-CLM</entry>
+              <entry>CTL</entry>
+              <entry>Power off/on nodes through IPMI, and congifure switch </entry>
             </row>
           </tbody>
         </tgroup>
@@ -196,6 +219,8 @@
       <p>The KVM region is the heart of HPE Helion OpenStack Carrier Grade. The KVM region consists
         of a software platform, providing ultra-reliability and exceptional performance
         efficiencies for telecommunications networks. </p>
+      <p><b>BM Region</b></p>
+      <p>The BM region contains baremetal servers controlled by OpenStack Ironic.</p>
     </section>
     <section id="dcn"><title>HPE Distributed Cloud Networking Components </title><p>The HPE Helion
       OpenStack Carrier Grade KVM + ESX deployment uses HPE Distributed Cloud Networking to provide
