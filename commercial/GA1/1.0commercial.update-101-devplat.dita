@@ -117,7 +117,7 @@
 </ol>
 </section>
 <section id="update-marketplace"> <title>Update the Marketplace Service</title>
-<p>This section provides details on updating the Marketplace service for the Helion OpenStack Development Platform. This assumes that the Marketplace service is installed in your cloud.</p>
+<p>This section provides details on updating the Marketplace service for the HPE Helion OpenStack Development Platform. This assumes that the Marketplace service is installed in your cloud.</p>
 <p>
   <b>Note:</b> If the Marketplace service is not installed, see the <xref href="../../devplatform/1.0devplatform_commercial_install.dita">Helion OpenStack Development Platform Install Guide</xref>.</p>
 </section>

@@ -700,7 +700,7 @@ heartbeat-tool/src/nodeaccess.py
     </section>
     <section id="cluster-validation">
       <title>Helion OpenStack Ceph cluster validation</title>
-      <p>To validate the Helion OpenStack Ceph cluster, perform the following:</p>
+      <p>To validate the HPE Helion OpenStack Ceph cluster, perform the following:</p>
       <ol>
         <li>Verify Ceph default pools by
             entering:<codeblock><codeph>ceph osd lspools

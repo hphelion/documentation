@@ -37,7 +37,7 @@
 </ul>
 <section id="horizon"> <title>Horizon UI Not Available</title>
 <p>This initial implementation is targeted at sysadmins and developers interested in initial or proof-of-concept domain deployments. It it not integrated with the Horizon management console, regardless of the backend used (LDAP or MySQL)</p>
-<p>Domain management is not available using the Helion OpenStack Horizon console. Use the <xref href="http://developer.openstack.org/api-ref-identity-v3.html" scope="external" format="html" >Keystone V3 API</xref> or the <xref type="section" href="#topic2759/clientinstall">command line client</xref> instead.</p>
+<p>Domain management is not available using the HPE Helion OpenStack Horizon console. Use the <xref href="http://developer.openstack.org/api-ref-identity-v3.html" scope="external" format="html" >Keystone V3 API</xref> or the <xref type="section" href="#topic2759/clientinstall">command line client</xref> instead.</p>
 <p>If an admin creates a user though the CLI using a Keystone v3 token, that user will not be able to log in to the Horizon dashboard. Any user created from within Horizon is able to log into Horizon, but that user will be in the default domain.</p>
 </section>
 <section id="clientinstall"> <title>Client Installation</title>

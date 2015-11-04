@@ -7,7 +7,7 @@
       <p>This section provides details on installing the Marketplace service for the Development Platform.</p>
     </section>
     <section id="marketplace-prerequisites"> <title>Prerequisites</title> 
-      <p>The <b>Marketplace Service</b> will be installed into the admin tenant of the Helion OpenStack overcloud. The admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
+      <p>The <b>Marketplace Service</b> will be installed into the admin tenant of the HPE Helion OpenStack overcloud. The admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
       <table>
         <tgroup cols="2">
           <colspec colname="col1"/>
@@ -126,7 +126,7 @@
             <li> Identify the Virtual IP used by the controller nodes to be able to load balance the
               Helion OpenStack
               services:<codeblock>keystone endpoint-list | awk '/8082/{ print $6}' | egrep -o "[0-9].[0-9].[0-9].[0-9]"</codeblock></li>
-            <li> Update configuration on each of the Helion OpenStack controller nodes.  <b>For EACH
+            <li> Update configuration on each of the HPE Helion OpenStack controller nodes.  <b>For EACH
               node:</b><ol>
                 <li>Connect to the controller.</li>
                 <li> Open the <i>/etc/haproxy/manual/paas.cfg</i> file and add the following

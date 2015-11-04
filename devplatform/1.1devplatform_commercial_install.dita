@@ -120,7 +120,7 @@ sudo -E pip install python-novaclient</codeblock></li>
           machine that can access the overcloud, but it is recommended that you run it on the seed
           node. By default the Username is <i>admin</i> and the Region is <i>regionOne</i>. Use the
           admin <i>tenant_id</i> from the overcloud. The parameter
-            <i>location/ephemeralca-cacert.crt</i> can be found on the Helion OpenStack seed VM at
+            <i>location/ephemeralca-cacert.crt</i> can be found on the HPE Helion OpenStack seed VM at
             <i>/usr/local/share/ca-certificates/ephemeralca-cacert.crt</i>
           <codeblock>sudo ./DevelopmentPlatform_Setup.sh \
     -p {admin_user_password} \
@@ -222,7 +222,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
 </ol>
 </section>
 <section id="quotas"> <title>Quotas</title>
-<p>The <b>Database Service</b> will be installed into the admin tenant of the Helion OpenStack
+<p>The <b>Database Service</b> will be installed into the admin tenant of the HPE Helion OpenStack
         overcloud and the admin tenant must have sufficient quota available and unused resources for
         the service to use. To check existing quota availability, log-in to Horizon as the
           <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
@@ -403,7 +403,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
           <li> Identify the Virtual IP used by the controller nodes to be able to load balance the
             Helion OpenStack
             services:<codeblock>keystone endpoint-list | awk '/8779/{ print $6 }' | egrep -o "[0-9]+.[0-9]+.[0-9]+.[0-9]+"</codeblock></li>
-          <li> Update configuration on each of the Helion OpenStack controller nodes by connecting
+          <li> Update configuration on each of the HPE Helion OpenStack controller nodes by connecting
             to the controller and doing the following:<ol>
               <li>Edit the <i>/etc/haproxy/manual/paas.cfg</i> file and add the following lines. The
                 last line should be repeated once for each API server identified in step
@@ -426,7 +426,7 @@ server trove-trove&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
 <p>This section provides details on installing the Marketplace service from the Development Platform.</p>
 </section>
 <section id="prereq2"> <title>Prerequisites</title>
-<p>The <b>Marketplace Service</b> will be installed into the admin tenant of the Helion OpenStack
+<p>The <b>Marketplace Service</b> will be installed into the admin tenant of the HPE Helion OpenStack
         overcloud. The admin tenant must have sufficient quota available and unused for the
         resources the service uses. To check existing quota availability, log in to Horizon as the
           <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
@@ -545,7 +545,7 @@ Increase the Ports quota to at least 100 using the following command in the <xre
             <li> Identify the Virtual IP used by the controller nodes to be able to load balance the
               Helion OpenStack
               services:<codeblock>keystone endpoint-list | awk '/8082/{ print $6}' |  grep -Eo '([0-9]*\.){3}[0-9]*'</codeblock></li>
-            <li> Update configuration on each of the Helion OpenStack controller nodes. <b>For EACH
+            <li> Update configuration on each of the HPE Helion OpenStack controller nodes. <b>For EACH
                 node:</b><ol>
                 <li>Connect to the controller.</li>
                 <li> Open the <i>/etc/haproxy/manual/paas.cfg</i> file and add the following lines.

@@ -219,7 +219,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 </ol>
 </section>
 <section id="quotas"> <title>Quotas</title>
-<p>The <b>Database Service</b> will be installed into the admin tenant of the Helion OpenStack overcloud and the admin tenant must have sufficient quota available and unused resources for the service to use. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
+<p>The <b>Database Service</b> will be installed into the admin tenant of the HPE Helion OpenStack overcloud and the admin tenant must have sufficient quota available and unused resources for the service to use. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
 <p>If you are not configuring the Database Service to be highly available you must have the following quota available:</p>
 <table>
 <tgroup cols="2">
@@ -384,7 +384,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 </codeblock>
 </li>
 <li>
-<p>Update configuration on each of the Helion OpenStack controller nodes by connecting to the controller and doing the following:</p>
+<p>Update configuration on each of the HPE Helion OpenStack controller nodes by connecting to the controller and doing the following:</p>
 
 <p>a. Edit the /etc/haproxy/manual/paas.cfg and add the following lines. The last line should be repeated once for each API server identified in step 1.</p>
 
@@ -427,7 +427,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 <p>This section provides details on installing the Marketplace service from the Development Platform.</p>
 </section>
 <section id="marketplace-quota"> <title>Prerequisites</title>
-<p>The <b>Marketplace Service</b> will be installed into the admin tenant of the Helion OpenStack overcloud and the admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
+<p>The <b>Marketplace Service</b> will be installed into the admin tenant of the HPE Helion OpenStack overcloud and the admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
 <table>
 <tgroup cols="2">
 <colspec colname="col1"/>

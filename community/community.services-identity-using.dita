@@ -17,7 +17,7 @@
 <section id="UI"> <title>Using the dashboards</title>
 <p>You can use the <xref href="../community/community.dashboard.how-works.dita" >HPE Helion OpenStack Dashboard</xref> to work with many aspects of the Identity service.</p>
 <p>
-<b>Note</b>: <xref type="section" href="#topic5347/userdomains">Domain management</xref> is not available using the Helion OpenStack Dashboard. You can use the CLI for <xref type="section" href="#topic5347/userdomains">domain management</xref> instead.</p>
+<b>Note</b>: <xref type="section" href="#topic5347/userdomains">Domain management</xref> is not available using the HPE Helion OpenStack Dashboard. You can use the CLI for <xref type="section" href="#topic5347/userdomains">domain management</xref> instead.</p>
 </section>
 <section id="API"> <title>Using the API</title>
 <p>You can use a low-level, raw REST API to access the Identity service. See the <xref href="http://api.openstack.org/api-ref-identity-v2.html" scope="external" format="html" >OpenStack Identity API v2.0 Reference</xref>.</p>

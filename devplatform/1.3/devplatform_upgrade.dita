@@ -37,7 +37,7 @@
                         <li><xref type="section" href="#topic3949/HDPstop">Stop the Helion
                                 Development Platform services</xref> and the control plane virtual
                             machines.</li>
-                        <li>Perform the Helion OpenStack update. This will update the Marketplace,
+                        <li>Perform the HPE Helion OpenStack update. This will update the Marketplace,
                             Messaging, and Database services.</li>
                         <li>Install the new version of the Application Lifecycle Service.</li>
                         <li><xref type="section" href="#topic3949/HDPstart">Restart the Helion

@@ -83,7 +83,7 @@
             </row>
             <row>
               <entry>--no-trial-db-allowed</entry>
-              <entry>Complementary alias of --trial-db-allowed. Applies to Helion OpenStack 1.0
+              <entry>Complementary alias of --trial-db-allowed. Applies to HPE Helion OpenStack 1.0
                 only.</entry>
             </row>
             <row>
@@ -113,7 +113,7 @@
             </row>
             <row>
               <entry>--trial-db-allowed</entry>
-              <entry>Applications can use trial databases. Applies to Helion OpenStack 1.0
+              <entry>Applications can use trial databases. Applies to HPE Helion OpenStack 1.0
                 only.</entry>
             </row>
           </tbody>
@@ -162,7 +162,7 @@
             </row>
             <row>
               <entry>--no-trial-db-allowed</entry>
-              <entry>Complementary alias of --trial-db-allowed. Applies to Helion OpenStack 1.0
+              <entry>Complementary alias of --trial-db-allowed. Applies to HPE Helion OpenStack 1.0
                 only.</entry>
             </row>
             <row>
@@ -192,7 +192,7 @@
             </row>
             <row>
               <entry>--trial-db-allowed</entry>
-              <entry>Applications can use trial databases. Applies to Helion OpenStack 1.0
+              <entry>Applications can use trial databases. Applies to HPE Helion OpenStack 1.0
                 only.</entry>
             </row>
           </tbody>

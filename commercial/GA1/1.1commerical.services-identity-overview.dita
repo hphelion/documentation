@@ -105,7 +105,7 @@
     </section>
     <section id="user">
       <title>Users</title>
-      <p>A user is a person, system, or service who requests access to Helion OpenStack Users are
+      <p>A user is a person, system, or service who requests access to HPE Helion OpenStack Users are
         associated with projects and are assigned roles a project.</p>
       <p>The Identity authentication service validates incoming requests made by users using the
         login information provided by the user either through a local Keystone login or an external

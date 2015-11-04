@@ -78,7 +78,7 @@ service cinder-api restart
 </section>
 <section id="helion-openstack-cinder-backup-ceph-storage"> <title>Helion OpenStack Cinder Backup Ceph Storage</title>
 <p>The Ceph backup driver performs the data backup operation on the volume to a Ceph RADOS Block Device (RBD). Backups can be performed between different Ceph pools and Ceph clusters. This section explains the backup and restore procedure for Cinder volumes.</p>
-<p>On the Helion controller and compute node, if the Ceph client softwares are successfully installed and the Ceph configuration and keyring files are copied in the Helion controller and compute nodes, then the Helion OpenStack Ceph Configuration service performs the following steps:</p>
+<p>On the Helion controller and compute node, if the Ceph client softwares are successfully installed and the Ceph configuration and keyring files are copied in the Helion controller and compute nodes, then the HPE Helion OpenStack Ceph Configuration service performs the following steps:</p>
 <ol>
 <li>Verify Ceph health status by
             entering:<codeblock><codeph>ceph health

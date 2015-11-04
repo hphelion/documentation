@@ -54,7 +54,7 @@
     <p>If scaleout Swift nodes are already deployed, copy the rings to those nodes. With this the
       failed node is removed from the Swift cluster.</p>
     <section id="removing-replacing-nodes">
-      <title>Removing and/or Replacing the node from the Helion OpenStack Cloud</title>
+      <title>Removing and/or Replacing the node from the HPE Helion OpenStack Cloud</title>
       <p>Perform the following steps to remove and/or replace a starter Swift node in Helion
         OpenStack Cloud:<ol id="ol_qcv_1d2_ht">
           <li>Login to the seed VM.<codeblock># ssh &lt;seed VM IP>
@@ -151,10 +151,10 @@ driver_info/ipmi_address=&lt;IPMI_ADDRESS></codeblock></li>
             details with new one.</li>
           <li>Follow the same steps mentioned in <xref
               href="#topic_cgn_hgd_ht/removing-replacing-nodes" format="dita">Removing and/or
-              Replacing the node from the Helion OpenStack Cloud</xref><i> </i>with only the
+              Replacing the node from the HPE Helion OpenStack Cloud</xref><i> </i>with only the
             difference in the scale count update in the<codeph> datafile</codeph> as
               follows:<codeblock># Restore swiftproxyscale &amp; swiftstoragecount to 2</codeblock><p>Once
-              the node is removed/replaced in the Helion OpenStack cloud, execute the
+              the node is removed/replaced in the HPE Helion OpenStack cloud, execute the
                 <codeph>–update-overcloud</codeph> operation (as menitoned in <xref
                 href="http://docs.hpcloud.com/#commercial/GA1/1.1.1commercial.helion-update.html"
                 format="html" scope="external">Update Procedure</xref>) to restore the initial

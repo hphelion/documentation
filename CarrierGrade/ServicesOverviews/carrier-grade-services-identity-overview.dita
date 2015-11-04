@@ -68,7 +68,7 @@
 <p>A project is a collection of users, groups, and/or resources (such as Compute or Object Storage). Also known as a <codeph>tenant</codeph>. Each project name must be unique in an associated domain.</p>
 </section>
 <section id="user"> <title>Users</title>
-<p>A user is a person, system, or service who requests access to Helion OpenStack Users are associated with projects and are assigned roles a project.</p>
+<p>A user is a person, system, or service who requests access to HPE Helion OpenStack Users are associated with projects and are assigned roles a project.</p>
 <p>The Identity authentication service validates incoming requests made by users using the login information provided by the user either through a local Keystone login or an external authentication system. Users are provided tokens to access resources through a service catalog. Each user name must be unique in the associated domain.</p>
 </section>
 <section id="group"> <title>Group</title>

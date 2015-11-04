@@ -74,12 +74,12 @@ export EPHEMERAL_CA_KEY_FILE=/root/&lt;company-cacert.key&gt;
 export EPHEMERAL_CA_CERT_FILE=/root/&lt;company-cacert.crt&gt;
 </codeph>
 </codeblock>
-<p>If the deployer has not provided a key/cert pair, the self-signed certificate created during the installation process must be retrieved from the seed at /root/eca.crt after deployment. This certificate can then be used to authenticate the TLS connection when connecting to any of the overcloud OpenStack services in the Helion OpenStack cloud. This can be retrieved using the following command:</p>
+<p>If the deployer has not provided a key/cert pair, the self-signed certificate created during the installation process must be retrieved from the seed at /root/eca.crt after deployment. This certificate can then be used to authenticate the TLS connection when connecting to any of the overcloud OpenStack services in the HPE Helion OpenStack cloud. This can be retrieved using the following command:</p>
 <codeblock>
 <codeph>scp root@&lt;seed ip&gt;:/root/eca.crt ephemeralca.crt
 </codeph>
 </codeblock>
-<p>If a self-signed certificate was created during the Helion OpenStack installation, you must install the generated certificate in your browser as a trusted CA to prevent messages about insecure connections when connecting to the Horizon IP address. This can be done by importing the eca.crt file from the seed VM as a trusted CA into your browser software.</p>
+<p>If a self-signed certificate was created during the HPE Helion OpenStack installation, you must install the generated certificate in your browser as a trusted CA to prevent messages about insecure connections when connecting to the Horizon IP address. This can be done by importing the eca.crt file from the seed VM as a trusted CA into your browser software.</p>
 <p>Each client must use this certificate to authenticate the connection. How you achieve this will depend on the client you are using. Below are some ways you can achieve this with the OpenStack command line tools using the 'nova list' command as an example. The easiest way to make sure the clients use this certificate is to set the environmental variable OS_CACERT to point to the EPHEMERAL_CA_CERT_FILE that was copied off the seed.</p>
 <codeblock>
 <codeph>export OS_CACERT=&lt;/path/to/ephemeralca.crt&gt;

@@ -183,7 +183,7 @@ ntpq -p
 </section>
 <section id="helion-virtual-install"> <title>Helion OpenStack virtual installation</title>
 </section>
-<section id="install-the-seed-vm-first-stage-of-the-helion-openstack-installation"> <title>Install the Seed VM: first stage of the Helion OpenStack installation</title>
+<section id="install-the-seed-vm-first-stage-of-the-helion-openstack-installation"> <title>Install the Seed VM: first stage of the HPE Helion OpenStack installation</title>
 <ol>
 <li>
 <p>Log in to the laptop, and then elevate to root:</p>
@@ -202,7 +202,7 @@ ntpq -p
 </codeblock>
 </li>
 <li>
-<p>Download the Helion OpenStack Enterprise Edition from the official site.</p>
+<p>Download the HPE Helion OpenStack Enterprise Edition from the official site.</p>
 </li>
 <li>
 <p>Extract the bits to <codeph>/root/</codeph> folder:</p>
@@ -299,7 +299,7 @@ Wed Feb 18 14:56:46 GMT 2015 --- completed setup seed
 </li>
 </ol>
 </section>
-<section id="second"> <title>Second stage of the Helion OpenStack install: Seed cloud configuration and Under/Overcloud installation)</title>
+<section id="second"> <title>Second stage of the HPE Helion OpenStack install: Seed cloud configuration and Under/Overcloud installation)</title>
 <p>The second stage is the part of the installation process that create and configure under and overclouds using the seed machine.</p>
 <ol>
 <li>
@@ -361,7 +361,7 @@ export UNDERCLOUD_STACK_TIMEOUT=240
 </codeblock>
 </li>
 <li>
-<p>You can start this stage of the Helion OpenStack installation by running the following command:</p>
+<p>You can start this stage of the HPE Helion OpenStack installation by running the following command:</p>
 
 <codeblock>
 <codeph>bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh  2&gt;&amp;1|tee stackinstall.log
@@ -474,8 +474,8 @@ export UNDERCLOUD_STACK_TIMEOUT=240
 <section id="shutdown-recovery"> <title>Shutdown and recovery</title>
 <p>The following content describes how to shutdown the laptop and recover HPE OpenStack installation when the laptop restarts.</p>
 </section>
-<section id="shutdown-sequence-for-the-helion-openstack-control-plane"> <title>Shutdown sequence for the Helion OpenStack control plane</title>
-<p>Before you shut down the laptop and if you would like to preserve the Helion OpenStack installation, you can use the host manager script to save the status of the virtual machines. To do this, follow these steps:</p>
+<section id="shutdown-sequence-for-the-helion-openstack-control-plane"> <title>Shutdown sequence for the HPE Helion OpenStack control plane</title>
+<p>Before you shut down the laptop and if you would like to preserve the HPE Helion OpenStack installation, you can use the host manager script to save the status of the virtual machines. To do this, follow these steps:</p>
 <ol>
 <li>
 <p>On the laptop, close the existing ssh connection that you initiated in step 5 in the  section <xref type="section" href="#topic12988/horizon-access">Horizon access</xref> by running the following command:</p>
@@ -498,7 +498,7 @@ export UNDERCLOUD_STACK_TIMEOUT=240
 </li>
 </ol>
 </section>
-<section id="recover-the-helion-openstack-setup-after-restarting-the-laptop"> <title>Recover the Helion OpenStack setup after restarting the laptop</title>
+<section id="recover-the-helion-openstack-setup-after-restarting-the-laptop"> <title>Recover the HPE Helion OpenStack setup after restarting the laptop</title>
 <p>To recover the HPE Helion OpenStack setup after the laptop is powered up, follow these steps:</p>
 <ol>
 <li>

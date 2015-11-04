@@ -26,7 +26,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/neutron/1.1commercial_neutron-pre-installation.md-->
  <!--permalink: /helion/openstack/1.1/services/neutron/pre/installation/--></p>
-<p>Before the Helion OpenStack network can be installed, the Helion Network Administrator must complete, or verify have been completed, the tasks described in this section.</p>
+<p>Before the HPE Helion OpenStack network can be installed, the Helion Network Administrator must complete, or verify have been completed, the tasks described in this section.</p>
 <ul>
 <li>
 <xref type="section" href="#topic13492/select-hypervior">Select your hypervisor</xref>

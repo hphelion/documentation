@@ -277,7 +277,7 @@ If you are installing the HPE Helion Development Platform <b>Commercial</b> edit
 </ol>
 </section>
 <section id="database-quota"> <title>Check Project Quotas</title>
-<p>The Database service will be installed into the <b>Admin</b>project of the Helion OpenStack overcloud. The <b>Admin</b> project must have sufficient quotas available for the service to use. To check existing quota availability, log in to Horizon as the <b>Admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
+<p>The Database service will be installed into the <b>Admin</b>project of the HPE Helion OpenStack overcloud. The <b>Admin</b> project must have sufficient quotas available for the service to use. To check existing quota availability, log in to Horizon as the <b>Admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
 <p>For the Community edition, the Database service requires that the Admin project have the following quotas available:</p>
 <table>
 <tgroup cols="2">
@@ -425,7 +425,7 @@ If you are installing the HPE Helion Development Platform <b>Commercial</b> edit
 <p>Before installing, make sure the following prerequisites are met:</p>
 </section>
 <section id="marketplace-quota"> <title>Check Project Quotas</title>
-<p>The Marketplace service will be installed into the Admin project of the Helion OpenStack overcloud. The Admin project must have sufficient quota available and unused for the resources the service uses.</p>
+<p>The Marketplace service will be installed into the Admin project of the HPE Helion OpenStack overcloud. The Admin project must have sufficient quota available and unused for the resources the service uses.</p>
 <p>To check existing quota availability:</p>
 <ol>
 <li>

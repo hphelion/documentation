@@ -6,7 +6,7 @@
     <section id="devplat_installer"><title>The HPE Helion Development Platform Installer</title> 
     <ul>
       <li>
-        <p>The HPE Helion Development Platform installer (<codeph>DevelopmentPlatform_Enable.sh</codeph>) must be run on either the base or seed node of the Helion OpenStack environment. It is strongly recommended to run the installer  on the seed node. The seed node will already have the requisite key (/root/.ssh/id_rsa) for access to the overcloud; if the installation is run on the base node, this key will need to be provided to the installer (see below).</p>
+        <p>The HPE Helion Development Platform installer (<codeph>DevelopmentPlatform_Enable.sh</codeph>) must be run on either the base or seed node of the HPE Helion OpenStack environment. It is strongly recommended to run the installer  on the seed node. The seed node will already have the requisite key (/root/.ssh/id_rsa) for access to the overcloud; if the installation is run on the base node, this key will need to be provided to the installer (see below).</p>
       </li>
       <li>
         <p>The installer requires the following packages. If they are not found, it will prompt
@@ -67,7 +67,7 @@ curl --cacert ephemeral-cacert.crt  https://{ip address or host name of identity
 curl --insecure https://{ip address or host name of identity service aka keystone}:5000 # Ignore SSL</codeblock><p>Example:</p><codeblock># Use one or the other of the following two lines to verify connectivity:
 curl --cacert ephemeral-cacert.crt https://10.0.0.10:5000 # Use own CACert
 curl --insecure https://10.0.0.10:5000 # Ignore SSL</codeblock></li>
-<li> If you are installing from the Helion OpenStack base node rather than the seed node, you will
+<li> If you are installing from the HPE Helion OpenStack base node rather than the seed node, you will
           need to retrieve the CA certificate file from the overcloud controller. To do this, follow
           these steps:<ol>
             <li> Find the IP address for

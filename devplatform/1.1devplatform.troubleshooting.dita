@@ -147,7 +147,7 @@
 <b>Resolution</b>: Update the cluster with the <i>cf-fix-kato-patch</i> command line tool.</p>
 <ol>
 <li>
-<p>Set the standard OpenStack environment variables. <!--A BR tag was used here in the original source.-->The OpenStack <i>ca-certificate</i> is found in the Helion OpenStack Seed VM at:  <i>/usr/local/share/ca-certificates/ephemeralca-cacert.crt</i>
+<p>Set the standard OpenStack environment variables. <!--A BR tag was used here in the original source.-->The OpenStack <i>ca-certificate</i> is found in the HPE Helion OpenStack Seed VM at:  <i>/usr/local/share/ca-certificates/ephemeralca-cacert.crt</i>
 </p>
 
 <codeblock>

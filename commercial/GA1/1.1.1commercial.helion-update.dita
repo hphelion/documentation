@@ -28,7 +28,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1.1commercial.helion-update.md-->
  <!--permalink: /helion/openstack/1.1.1/update/--></p>
-<p>Welcome to the HPE Helion OpenStack v1.1.1 update instructions. These instructions apply to existing HPE Helion OpenStack v1.1 installations and describe how you can update your HPE Helion OpenStack cloud environment from v1.1 to v1.1.1. (The process of updating a Helion OpenStack v1.0 or v1.01 release to Helion OpenStack v1.1.1 is not supported.)</p>
+<p>Welcome to the HPE Helion OpenStack v1.1.1 update instructions. These instructions apply to existing HPE Helion OpenStack v1.1 installations and describe how you can update your HPE Helion OpenStack cloud environment from v1.1 to v1.1.1. (The process of updating a Helion OpenStack v1.0 or v1.01 release to HPE Helion OpenStack v1.1.1 is not supported.)</p>
 <p>
 <b>Note to Helion Development Platform users</b>: 
 The HPE Helion Development Platform requires HPE Helion OpenStack v1.1.1. However, HPE Helion OpenStack v1.1.1 does not currently support updating the HPE Helion Development Platform from v1.1 to v1.2.</p>
@@ -38,7 +38,7 @@ The HPE Helion Development Platform requires HPE Helion OpenStack v1.1.1. Howeve
         OpenStack</xref>. <!--verify link--></note>
 <!-- Helion OpenStack v1.1.1 update scripts update HPE Helion OpenStack v1.1 to version v1.1.1 and starts the update process of Helion Development Platform v1.1 to v1.2. To complete the HPE Helion Development Platform update to v1.2, refer to the HPE Helion Development Platform documentation listed in [Updating Helion Development Platform](/helion/devplatform/1.2/upgrade/). -->
 <!--
-**Note for Helion Development Platform version v1.1 users**: This Helion OpenStack version v1.1.1 update procedure supports Helion Development Platform version v1.2, (and only Helion Development Platform version v1.2). For users who have installed Helion OpenStack v1.1 and Helion Development Platform v1.1, when you update to Helion OpenStack v1.1.1, you also need to update to Helion Development Platform v1.2.  
+**Note for Helion Development Platform version v1.1 users**: This Helion OpenStack version v1.1.1 update procedure supports Helion Development Platform version v1.2, (and only Helion Development Platform version v1.2). For users who have installed Helion OpenStack v1.1 and Helion Development Platform v1.1, when you update to HPE Helion OpenStack v1.1.1, you also need to update to Helion Development Platform v1.2.  
 
 **Important for HPE Helion Development Platform users**: During the HPE Helion OpenStack v1.1.1 update, you will need to stop your Helion Development Platform services. Failure to do so will likely damage your existing Helion Development Platform v1.1 installation. 
 For details on the HPE Helion Development Platform update to v1.2, see [Updating Helion Development Platform](/helion/devplatform/1.2/upgrade/). -->

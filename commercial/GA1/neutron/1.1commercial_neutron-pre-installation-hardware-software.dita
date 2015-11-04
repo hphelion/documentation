@@ -302,7 +302,7 @@
 </p>
 </section>
 <section id="software-req"> <title>Meet software requirements</title>
-<p>This section explains the Helion OpenStack software requirements. The software requirement for the Seed Cloud Host is Ubuntu 14.04 with the following packages.</p>
+<p>This section explains the HPE Helion OpenStack software requirements. The software requirement for the Seed Cloud Host is Ubuntu 14.04 with the following packages.</p>
 <ul>
 <li>xrdp </li>
 <li>xfce4 </li>

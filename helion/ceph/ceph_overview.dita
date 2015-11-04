@@ -9,7 +9,7 @@
       Ceph is termed a unified storage platform.</section>
     <section><title>HPE Helion OpenStack : Ceph Overview</title><p>Based on OpenStack Ceph, HPE Helion
         OpenStack 2.0 Ceph Storage Solution provides a unified, scalable, and stable storage
-        solution for the management of the Helion OpenStack Volume Storage (Cinder persistent
+        solution for the management of the HPE Helion OpenStack Volume Storage (Cinder persistent
         Volumes)
         service.<!--<b>did not understand this line-please
         clarify</b>><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>The solution

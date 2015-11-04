@@ -27,7 +27,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
 </ol>
 </section>
 <section id="quotas"> <title>Quotas</title> 
-<p>The <b>Database Service</b> will be installed into the admin tenant of the Helion OpenStack overcloud and the admin tenant must have sufficient quota available and unused resources for the service to use. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
+<p>The <b>Database Service</b> will be installed into the admin tenant of the HPE Helion OpenStack overcloud and the admin tenant must have sufficient quota available and unused resources for the service to use. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
 <p>If you are not configuring the Database Service to be highly available you must have the following quota available:</p>
 <table>
 <tgroup cols="2">
@@ -208,7 +208,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
           <li> Identify the Virtual IP used by the controller nodes to be able to load balance the
               Helion OpenStack
             services:<codeblock>keystone endpoint-list | awk '/8779/{ print $6 }' | egrep -o "[0-9]+.[0-9]+.[0-9]+.[0-9]+"</codeblock></li>
-          <li> Update configuration on each of the Helion OpenStack controller nodes by connecting
+          <li> Update configuration on each of the HPE Helion OpenStack controller nodes by connecting
             to the controller and doing the following: <ol>
               <li>Edit the <i>/etc/haproxy/manual/paas.cfg</i> file and add the following lines. The
                 last line should be repeated once for each API server identified in step

@@ -25,7 +25,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.troubleshooting.install.md-->
  <!--permalink: /helion/openstack/1.1/services/troubleshooting/install/--></p>
-<p>This Helion installation troubleshooting guide is written for Helion OpenStack installers who, during or after building the Helion OpenStack environment, find that the cloud environment does not work as expected. The Helion OpenStack environment is not itself complex but it does include a sufficient number of components that isolating a fault can be challenging.</p>
+<p>This Helion installation troubleshooting guide is written for Helion OpenStack installers who, during or after building the HPE Helion OpenStack environment, find that the cloud environment does not work as expected. The Helion OpenStack environment is not itself complex but it does include a sufficient number of components that isolating a fault can be challenging.</p>
 <p>The goal of this guide is to help you to identify the problem or problems affecting your cloud installation and efficiently fix them.<!--A BR tag was used here in the original source.-->
 For help with troubleshooting Helion OpenStack 1.1 general issues, refer to:
   <xref href="1.0commercial.troubleshooting.dita">Troubleshooting Helion</xref>
@@ -38,7 +38,7 @@ The process of building the seed cloud host, creating the seed VM, the overcloud
 At each step, you should have confirmation that what you have done works. At the conclusion of each major installation process, you will have confirmation that your installation works or does not. If you encounter issues, you should fix them before proceeding. After taking all these steps to resolve an error being reported, you may find that your cloud installation still does not work. This document will help you troubleshoot that experience.</p>
 </section>
 <section id="helion-installation"> <title>Helion installation</title>
-<p>By the time you are ready to start the Helion OpenStack installation process, you will have confirmed that your hardware and your Linux environments are ready for it. If you do this incorrectly, your installation will likely fail.</p>
+<p>By the time you are ready to start the HPE Helion OpenStack installation process, you will have confirmed that your hardware and your Linux environments are ready for it. If you do this incorrectly, your installation will likely fail.</p>
 <p>The installation is mostly scripted such that if you run the script and if the outcome is as expected, you can reasonably expect that your installation is correct up to this point. If there are problems, you should be alerted that a problem has occurred. By the end of your installation procedure, you will either have a working Helion environment for your virtual, baremetal, KVM, or ESX environment or you should have the information you need to identify what needs fixing.</p>
 </section>
 <section id="standard-procedures"> <title>Standard procedures</title>

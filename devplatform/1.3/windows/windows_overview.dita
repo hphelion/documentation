@@ -120,7 +120,7 @@
         </section>
         <section id="tools_imaging"><title>Imaging tool</title> 
 
-            <ul><li> Glazier: This tool creates Windows images for deployment to Helion OpenStack. This tool is not needed for using Windows images in
+            <ul><li> Glazier: This tool creates Windows images for deployment to HPE Helion OpenStack. This tool is not needed for using Windows images in
                 HPE Helion Public Cloud.</li></ul>
         </section>
         <section id="tools_management"><title>Management tool set</title> 

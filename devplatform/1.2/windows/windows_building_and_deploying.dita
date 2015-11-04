@@ -40,7 +40,7 @@
 <li>Virtualization support enabled</li>
 <li>16 GB RAM recommended.</li>
 <li>100 GB available disk space</li>
-<li>Connectivity to the Internet and the Helion OpenStack environment where the Windows image will be deployed</li>
+<li>Connectivity to the Internet and the HPE Helion OpenStack environment where the Windows image will be deployed</li>
 </ul>
 </section>
 <section id="software-prerequisites"> <title>Software Prerequisites</title>

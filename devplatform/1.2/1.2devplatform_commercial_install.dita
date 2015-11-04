@@ -86,7 +86,7 @@
         <li>
           <p>The HPE Helion Development Platform installer
               (<codeph>DevelopmentPlatform_Enable.sh</codeph>) must be run on either the base or
-            seed node of the Helion OpenStack environment. It is strongly recommended to run the
+            seed node of the HPE Helion OpenStack environment. It is strongly recommended to run the
             installer on the seed node. The seed node will already have the requisite key
             (/root/.ssh/id_rsa) for access to the overcloud; if the installation is run on the base
             node, this key will need to be provided to the installer (see below).</p>
@@ -157,7 +157,7 @@ curl --cacert ephemeral-cacert.crt  https://{ip address or host name of identity
 curl --insecure https://{ip address or host name of identity service aka keystone}:5000 # Ignore SSL</codeblock><p>Example:</p><codeblock># Use one or the other of the following two lines to verify connectivity:
 curl --cacert ephemeral-cacert.crt https://10.0.0.10:5000 # Use own CACert
 curl --insecure https://10.0.0.10:5000 # Ignore SSL</codeblock></li>
-        <li> If you are installing from the Helion OpenStack base node rather than the seed node,
+        <li> If you are installing from the HPE Helion OpenStack base node rather than the seed node,
           you will need to retrieve the CA certificate file from the overcloud controller. To do
           this, follow these steps:<ol>
             <li> Find the IP address for
@@ -305,7 +305,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
     </section>
     <section id="quotas">
       <title>Quotas</title>
-      <p>The <b>Database Service</b> will be installed into the admin tenant of the Helion OpenStack
+      <p>The <b>Database Service</b> will be installed into the admin tenant of the HPE Helion OpenStack
         overcloud and the admin tenant must have sufficient quota available and unused resources for
         the service to use. To check existing quota availability, log-in to Horizon as the
           <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
@@ -494,7 +494,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
           <li> Identify the Virtual IP used by the controller nodes to be able to load balance the
             Helion OpenStack
             services:<codeblock>keystone endpoint-list | awk '/8779/{ print $6 }' | egrep -o "[0-9]+.[0-9]+.[0-9]+.[0-9]+"</codeblock></li>
-          <li> Update configuration on each of the Helion OpenStack controller nodes by connecting
+          <li> Update configuration on each of the HPE Helion OpenStack controller nodes by connecting
             to the controller and doing the following: <ol>
               <li>Edit the <i>/etc/haproxy/manual/paas.cfg</i> file and add the following lines. The
                 last line should be repeated once for each API server identified in step
@@ -702,7 +702,7 @@ server trove-trove&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
             <li> Identify the Virtual IP used by the controller nodes to be able to load balance the
               Helion OpenStack
               services:<codeblock>keystone endpoint-list | awk '/8082/{ print $6}' | egrep -o "[0-9].[0-9].[0-9].[0-9]"</codeblock></li>
-            <li> Update configuration on each of the Helion OpenStack controller nodes. <b>For EACH
+            <li> Update configuration on each of the HPE Helion OpenStack controller nodes. <b>For EACH
                 node:</b><ol>
                 <li>Connect to the controller.</li>
                 <li> Open the <i>/etc/haproxy/manual/paas.cfg</i> file and add the following

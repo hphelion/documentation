@@ -31,7 +31,7 @@
 <p>You can use the <xref href="../../commercial/GA1/1.1commercial.dashboard.how-works.dita" >HPE Helion OpenStack Dashboard</xref> to work with the Identity service.</p>
       <note>
         <xref href="../../commercial/GA1/1.1commerical.services-identity-domains.dita">Domain
-          management</xref> is not available using the Helion OpenStack Dashboard. This initial
+          management</xref> is not available using the HPE Helion OpenStack Dashboard. This initial
         implementation is targeted at sysadmins and developers interested in creating and deploying
         Domains for initial proof of concept deployments.</note>
 <p>To use Keystone v3 in Horizon, manually change the settings. See <xref href="../../commercial/GA1/1.1commerical.services-identity-configure-v3.dita" >Configuring Horizon for Keystone v3</xref> for instructions and important restrictions.</p>
