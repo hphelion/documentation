@@ -288,6 +288,8 @@ StrictHostKeyChecking no </codeblock></li>
                                         <li>cg-hos-src.tar.gz.md5</li>
                                         <li>cg-infra-src.tar.gz</li>
                                         <li>cg-infra-src.tar.gz.md5</li>
+                                        <li>cg-ironic-deploy-images.tar.gz </li>
+                                        <li>cg-ironic-deploy-images.tar.gz.md5</li>
                                 </ul>
                         </p>
                         <p id="patches"><b>Required patch files</b></p>
@@ -327,6 +329,22 @@ StrictHostKeyChecking no </codeblock></li>
                                                   <p>knc-nuage-role.txt</p>
                                                   <p> </p>
                                                   </entry>
+                                                </row>
+                                                <row>
+                                                  <entry/>
+                                                  <entry>kenobi-config-patch.patch</entry>
+                                                </row>
+                                                <row>
+                                                  <entry/>
+                                                  <entry>kenobi-node-config.patch</entry>
+                                                </row>
+                                                <row>
+                                                  <entry>Infoblox patch</entry>
+                                                  <entry>infoblox-baremetal.tar.gz</entry>
+                                                </row>
+                                                <row>
+                                                  <entry>OpenStack </entry>
+                                                  <entry>artifacts_ironic_1019_1.zip</entry>
                                                 </row>
                                         </tbody>
                                 </tgroup>

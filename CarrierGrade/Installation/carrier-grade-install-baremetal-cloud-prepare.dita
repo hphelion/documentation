@@ -14,6 +14,7 @@
   </metadata>
 </prolog>
 <body>
+  <!-- https://etherpad.hpcloud.net/p/CGHOS2_0_Ironic_Standalone_PhysicalSetup -->  
     <p>If you are installing the <codeph>sacramento</codeph> template, which includes the KVM
       region, the baremetal region, ESX storage, and uses HPE DCN VRS networking, follow these
       instructions <b><i>before</i></b> installing the HLM VM. </p>
@@ -117,25 +118,6 @@ neutron subnet-create --name tenant-subnet --gateway 192.68.61.1 --allocation-po
             <codeblock>nova boot -nic</codeblock></li>
         </ol>
       </p>
-    </section>
-    <section>
-      <title>Install the Infoblox patch</title>
-      <p>
-        <ol id="ol_tzr_mbf_xt">
-          <li>Take the infoblox-baremetal.tar.gz in
-            \\10.1.192.251\Dev_NFS_Shares\CG_Installer\infoblox_patch</li>
-          <li>mkdir &lt;cloudname>/plugins</li>
-          <li>place infoblox-baremetal.tar.gz inside plugins/</li>
-          <li>untar : tar -zxvf infoblox-baremetal.tar.gz. </li>
-          <li>change infoblox-baremetal/configure.json according to the environment.</li>
-          <li>Run command - hlm plugin -c &lt;cloudname>  -n infoblox-baremetal from the plugin
-            directory</li>
-          <li>To rollback - hlm plugin -c &lt;cloudname> -n infoblox-baremetal -r</li>
-        </ol>
-      </p>
-      <p> Wiki - <xref href="https://wiki.hpcloud.net/display/HCG/HCG+Plugin+Architecture+for+2.0"
-          format="html" scope="external"
-          >https://wiki.hpcloud.net/display/HCG/HCG+Plugin+Architecture+for+2.0</xref></p>
     </section>
     <section id="next-step">
       <title>Next Step</title>

@@ -30,14 +30,14 @@
             navtitle="Deploying the HLM VM and Installation Services" locktitle="yes"/>
         <topicref href="carrier-grade-install-non-kvm.dita" navtitle="Deploying the Non-KVM Region"
             locktitle="yes">
-            <topicref href="CGH-2-install-denver.dita" navtitle="Deploying the denver Template"
+            <topicref href="CGH-2-install-denver.dita" navtitle="Deploying the Denver Template"
                 locktitle="yes"/>
-            <topicref href="CGH-2-install-tahoe.dita" navtitle="Deploying the tahoe Template"
+            <topicref href="CGH-2-install-tahoe.dita" navtitle="Deploying the Tahoe Template"
                 locktitle="yes"/>
-            <topicref href="CGH-2-install-memphis.dita" navtitle="Deploying the memphis Template"
+            <topicref href="CGH-2-install-memphis.dita" navtitle="Deploying the Memphis Template"
                 locktitle="yes"/>
             <topicref href="CGH-2-install-sacramento.dita"
-                navtitle="Deploying the sacramento Template" locktitle="yes"/>
+                navtitle="Deploying the Sacramento Template" locktitle="yes"/>
             <topichead navtitle="Linked Files" toc="no">
                 <topicref href="carrier-grade-install-kvm-only-json"
                     navtitle="Sample JSON File for Installing the KVM Deployment" locktitle="yes"

@@ -14,10 +14,29 @@
   </metadata>
 </prolog>
 <body>
+  <!-- https://etherpad.hpcloud.net/p/CGHOS2_0_Ironic_Standalone_PhysicalSetup -->
     <p>If you are installing the <codeph>sacramento</codeph> template, which includes the KVM
       region, the baremetal region, ESX storage, and uses HPE DCN VRS networking, follow these
       instructions after installing the KVM region. If you are installing a different deployment,
       disregard these instructions.</p>
+    <section>
+      <title>Install the Infoblox patch</title>
+      <p>
+        <ol id="ol_tzr_mbf_xt">
+          <li>Log into the HLM VM.</li>
+          <li>Create a directory for the patch
+              file:<codeblock>mkdir &lt;cloudname>/plugins</codeblock><p>Where &lt;cloudname> is the
+              name of the cloud.</p></li>
+          <li>Copy the <codeph>infoblox-baremetal.tar.gz</codeph> you downloaded in the
+            Prerequisites to the <codeph>&lt;cloudname>/plugins</codeph> directory. </li>
+          <li>Extract the file <codeblock>tar -zxvf infoblox-baremetal.tar.gz</codeblock></li>
+          <li>Edit the <codeph>infoblox-baremetal/configure.json</codeph> as appropriate for your
+            environment.</li>
+          <li>In the <codeph>&lt;cloudname>/plugins</codeph> directory, execute the following
+            command <codeblock>hlm plugin -c &lt;cloudname> -n infoblox-baremetal</codeblock></li>
+        </ol>
+      </p>
+    </section>
     <section><title>Deploy Patches</title>Use the following steps to deploy required patches.<p>
         <ol id="ol_vl1_tqf_xt">
           <li>Log into the HLM VM.</li>
@@ -56,7 +75,7 @@ hoscg-python-ironicclient-*</codeblock></li>
       <p> 4. Execute the following command
         <codeblock>/root/cg-hlm/dev-tools/dpkg-scanpackages --multiversion . /dev/null | gzip -9c &gt; Packages.gz</codeblock></p>
     </section>
-  <section>
+    <section>
       <title>Configure Baremetal Cloud</title>
       <ol id="ol_syf_5sg_vt">
         <li>Log into the HLM VM.</li>
@@ -109,41 +128,41 @@ hoscg-python-ironicclient-*</codeblock></li>
               <codeph>&lt;cloudname></codeph> is the name of the baremetal cloud.</p></li>
       </ol>
     </p>
-  <section>
-    <p><b>Deploy Services and Bring up the Cloud</b></p>
-    <p>Execute the following command to from cloud base directory:</p>
-    <p>
-      <codeblock>hdeploy &lt;cloudname&gt;</codeblock>
-    </p>
-    <p>Where <codeph>&lt;cloudname></codeph> is the name of the baremetal cloud.</p>
-    <p><b>Configure bridges on Baremetal Controller:</b></p>
-    <ol id="ol_hjg_ntg_vt">
-      <li>Log into the HLM VM.</li>
-      <li>Execute the following command to login to baremetal controller through HLM VM:
-        <codeblock>ssh cghelion@&lt;baremetal controller ip></codeblock></li>
-      <li>On the baremetal controller node: <ol id="ol_ksr_rtg_vt">
-          <li>Execute the following commands to create a bridge called <codeph>br-eth1</codeph>
-            <!--(this will change to br-bm in later builds)--><codeblock>sudo ovs-vsctl add-br br-eth1
+    <section>
+      <p><b>Deploy Services and Bring up the Cloud</b></p>
+      <p>Execute the following command to from cloud base directory:</p>
+      <p>
+        <codeblock>hdeploy &lt;cloudname&gt;</codeblock>
+      </p>
+      <p>Where <codeph>&lt;cloudname></codeph> is the name of the baremetal cloud.</p>
+      <p><b>Configure bridges on Baremetal Controller:</b></p>
+      <ol id="ol_hjg_ntg_vt">
+        <li>Log into the HLM VM.</li>
+        <li>Execute the following command to login to baremetal controller through HLM VM:
+          <codeblock>ssh cghelion@&lt;baremetal controller ip></codeblock></li>
+        <li>On the baremetal controller node: <ol id="ol_ksr_rtg_vt">
+            <li>Execute the following commands to create a bridge called <codeph>br-eth1</codeph>
+              <!--(this will change to br-bm in later builds)--><codeblock>sudo ovs-vsctl add-br br-eth1
 sudo ovs-vsctl add-port br-eth1 eth1 # assuming eth1 is the interface where BM-CLM is connected.
 ifconfig eth1 up
 ifconfig br-eth1 up</codeblock></li>
-          <li>Execute the following command to restart the Open vSwitch agent (ovs-agent) on the
-            Controller.<codeblock>sudo service neutron-plugin-openvswitch-agent restart</codeblock></li>
-        </ol></li>
-      <li>Update ml2 conf with vlan ranges and specify the BM-CLM vlan in the bridge:
-        <codeblock>[ml2_type_vlan]network_vlan_ranges = physnet1:3405:3413</codeblock></li>
-      <li>Adjust 3405:3413 vlan range to your environment</li>
-      <li>Edit /etc/neutron/neutron.conf and update credential
-        secret:<codeblock>[ironic]
+            <li>Execute the following command to restart the Open vSwitch agent (ovs-agent) on the
+              Controller.<codeblock>sudo service neutron-plugin-openvswitch-agent restart</codeblock></li>
+          </ol></li>
+        <li>Update ml2 conf with vlan ranges and specify the BM-CLM vlan in the bridge:
+          <codeblock>[ml2_type_vlan]network_vlan_ranges = physnet1:3405:3413</codeblock></li>
+        <li>Adjust 3405:3413 vlan range to your environment</li>
+        <li>Edit /etc/neutron/neutron.conf and update credential
+          secret:<codeblock>[ironic]
 credential_secret = 1d0b38f0632af45c9a125aeb38c98418</codeblock></li>
-      <li>Execute the following
-        commands:<codeblock>service neutron-l3-agent restart
+        <li>Execute the following
+          commands:<codeblock>service neutron-l3-agent restart
 service neutron-dhcp-agent restart 
 service neutron-metadata-agent restart 
 service neutron-server restart 
 service neutron-plugin-openvswitch-agent restart</codeblock></li>
-      <li>Verify whether stackrcv3 and stackrc role are as
-        follows:<codeblock>stackrcv3 role
+        <li>Verify whether stackrcv3 and stackrc role are as
+          follows:<codeblock>stackrcv3 role
 
 export OS_USERNAME=admin 
 export OS_PASSWORD=9YL8BgNAVZ7 
@@ -171,54 +190,56 @@ unset OS_PROJECT_NAME
 unset OS_USER_DOMAIN_ID 
 unset OS_IDENTITY_API_VERSION 
 unset OS_AUTH_VERSION </codeblock></li>
-      <li>Execute the following command to source the <codeph>stackrcv3</codeph>
-        file:<codeblock>source stackrc</codeblock></li>
-      <li>Execute the following commands to provision the networks and baremetal nodes.<ol
-          id="ol_jf2_ws2_xt">
-          <li>Create baremetal provisioning
-            network:<codeblock>neutron net-create provisioning-network --provider:segmentation_id &lt;bm-clm-vlan-id> --provider:network_type vlan --provider:physical_network physnet1 </codeblock></li>
-          <li>Create tenant vlan
-            network:<codeblock>neutron net-create tenant-network</codeblock></li>
-        </ol></li>
-      <li>Edit the <codeph>/etc/ironic/ironic-conductor.conf</codeph> file and specify the following
-        in the DEFAULT
-        namespace:<codeblock>provisioning_network_uuid = &lt;prov-network-id&gt;network_provider= neutron_plugin </codeblock></li>
-      <li>Execute the following command to create dataase schema tables for
-        Ironic<codeblock>ironic-dbsync --config-file /etc/ironic/ironic-conductor.conf</codeblock></li>
-      <li>Execute the following commands to restart Ironic
-        services.<codeblock>service ironic-conductor restart
+        <li>Execute the following command to source the <codeph>stackrcv3</codeph>
+          file:<codeblock>source stackrc</codeblock></li>
+        <li>Execute the following commands to provision the networks and baremetal nodes.<ol
+            id="ol_jf2_ws2_xt">
+            <li>Create baremetal provisioning
+              network:<codeblock>neutron net-create provisioning-network --provider:segmentation_id &lt;bm-clm-vlan-id> --provider:network_type vlan --provider:physical_network physnet1 </codeblock></li>
+            <li>Create tenant vlan
+              network:<codeblock>neutron net-create tenant-network</codeblock></li>
+          </ol></li>
+        <li>Edit the <codeph>/etc/ironic/ironic-conductor.conf</codeph> file and specify the
+          following in the DEFAULT
+          namespace:<codeblock>provisioning_network_uuid = &lt;prov-network-id&gt;network_provider= neutron_plugin </codeblock></li>
+        <li>Execute the following command to create dataase schema tables for
+          Ironic<codeblock>ironic-dbsync --config-file /etc/ironic/ironic-conductor.conf</codeblock></li>
+        <li>Execute the following commands to restart Ironic
+          services.<codeblock>service ironic-conductor restart
 service ironic-api restart</codeblock></li>
-      <li>Create entry for switch connected to the baremetal
-        nodes:<codeblock>neutron switch-create --host &lt;switch_ip&gt; --username &lt;user&gt; --password &lt;password&gt; --type s5930 --id &lt;mac_address_of_switch&gt;
+        <li>Create entry for switch connected to the baremetal
+          nodes:<codeblock>neutron switch-create --host &lt;switch_ip&gt; --username &lt;user&gt; --password &lt;password&gt; --type s5930 --id &lt;mac_address_of_switch&gt;
 neutron subnet-create --name prov-subnet --gateway 192.168.61.1 --allocation-pool start=192.168.61.100,end=192.168.61.200 provisioning-network 192.168.61.0/24 
 neutron subnet-create --name tenant-subnet --gateway 192.68.61.1 --allocation-pool start=192.68.61.100,end=192.68.61.200 tenant-network 192.68.61.0/24 </codeblock></li>
-    </ol>
-  </section>
-  <section><title>Upload image files</title>
-  <ol>
-    <li>Upload User Image
+      </ol>
+    </section>
+    <section>
+      <title>Upload image files</title>
+      <ol>
+        <li>Upload User Image
           <codeblock>glance image-create --name ubuntu-14.04.02-amd64-disk --is-public True --disk-format qcow2 --container-format bare &lt; ubuntu.qcow2</codeblock></li>
-    <li>To perform nova boot, you need to have the deploy images first uploaded in glance: #Upload
-          Deploy Images
+        <li>To perform nova boot, you need to have the deploy images first uploaded in glance:
+          #Upload Deploy Images
             <codeblock>glance image-create --name deploy-initrd --is-public True --disk-format ari --container-format ari &lt; ironic-deploy.initramfs
 glance image-create --name deploy-kernel --is-public True --disk-format aki --container-format aki &lt; ironic-deploy.vmlinuz</codeblock><p>The
             tarball containing above images can be downloaded from
             http://15.213.237.200/ironic-agent-2.1.0001.tgz</p></li>
-  </ol>  
-  </section>
-  <section><title>View System Details</title>
-  <ol id="ol_yz4_452_xt">
-      <li>View the active servers:<codeblock>nova list</codeblock><p>The output should appear
-          similar to the
-          following:<codeblock>+--------------------------------------+-------+--------+------------+-------------+----------------------------+
+      </ol>
+    </section>
+    <section>
+      <title>View System Details</title>
+      <ol id="ol_yz4_452_xt">
+        <li>View the active servers:<codeblock>nova list</codeblock><p>The output should appear
+            similar to the
+            following:<codeblock>+--------------------------------------+-------+--------+------------+-------------+----------------------------+
 | ID                                   | Name  | Status | Task State | Power State | Networks                   |
 +--------------------------------------+-------+--------+------------+-------------+----------------------------+
 | 1b9f1f2b-4bcb-4363-bcf4-49d6a550460a | test1 | ACTIVE | -          | Running     | tenant-network=192.68.9.54 |
 +--------------------------------------+-------+--------+------------+-------------+----------------------------+</codeblock></p></li>
-      <li>View details about the
-          server:<codeblock>nova show 1b9f1f2b-4bcb-4363-bcf4-49d6a550460a</codeblock><p>The output
-          should appear similar to the
-          following:<codeblock>+--------------------------------------+-------------------------------------------------------------------+
+        <li>View details about the
+            server:<codeblock>nova show 1b9f1f2b-4bcb-4363-bcf4-49d6a550460a</codeblock><p>The
+            output should appear similar to the
+            following:<codeblock>+--------------------------------------+-------------------------------------------------------------------+
 | Property                             | Value                                                             |
 +--------------------------------------+-------------------------------------------------------------------+
 | OS-EXT-AZ:availability_zone          | nova                                                              |
@@ -250,10 +271,10 @@ glance image-create --name deploy-kernel --is-public True --disk-format aki --co
 | updated                              | 2015-10-16T15:40:21Z                                              |
 | user_id                              | 2c34ae0b4cbd47a193a597bf5248c2db                                  |
 +--------------------------------------+-------------------------------------------------------------------+</codeblock></p></li>
-      <li>View details about the network
-          <codeblock>neutron net-show tenant-network</codeblock><p>The output should appear similar
-          to the
-          following:<codeblock>+---------------------------+--------------------------------------+
+        <li>View details about the network
+            <codeblock>neutron net-show tenant-network</codeblock><p>The output should appear
+            similar to the
+            following:<codeblock>+---------------------------+--------------------------------------+
 | Field                     | Value                                |
 +---------------------------+--------------------------------------+
 | admin_state_up            | True                                 |
@@ -269,10 +290,10 @@ glance image-create --name deploy-kernel --is-public True --disk-format aki --co
 | subnets                   | 6a952e6b-903f-41db-b31d-62dc52c65dd0 |
 | tenant_id                 | c288a2816237465c8ea6efc16dc05b88     |
 +---------------------------+--------------------------------------+</codeblock></p></li>
-      <li>View detailed information about a
-          node:<codeblock>ironic --insecure node-show 5564213e-1e39-465b-be2e-5933c43650a0</codeblock><p>The
-          output should appear similar to the
-          following:<codeblock>+------------------------+--------------------------------------------------------------------------+
+        <li>View detailed information about a
+            node:<codeblock>ironic --insecure node-show 5564213e-1e39-465b-be2e-5933c43650a0</codeblock><p>The
+            output should appear similar to the
+            following:<codeblock>+------------------------+--------------------------------------------------------------------------+
 | Property               | Value                                                                    |
 +------------------------+--------------------------------------------------------------------------+
 | target_power_state     | None                                                                     |
@@ -307,10 +328,10 @@ glance image-create --name deploy-kernel --is-public True --disk-format aki --co
 |                        | u'image_source': u'4b6b5bbe-39c8-4398-b2e6-1854496ef28f', u'swap_mb':    |
 |                        | u'0', u'capabilities': u'{"boot_option": "local"}'}                      |
 +------------------------+--------------------------------------------------------------------------+</codeblock></p></li>
-      <li>View detailed information about a
-          port:<codeblock>ironic --insecure port-show 0142fb06-a425-4b6d-a41e-481a5b54b8a2</codeblock><p>The
-          output should appear similar to the
-          following:<codeblock>+-----------------------+----------------------------------------------------------------------+
+        <li>View detailed information about a
+            port:<codeblock>ironic --insecure port-show 0142fb06-a425-4b6d-a41e-481a5b54b8a2</codeblock><p>The
+            output should appear similar to the
+            following:<codeblock>+-----------------------+----------------------------------------------------------------------+
 | Property              | Value                                                                |
 +-----------------------+----------------------------------------------------------------------+
 | local_link_connection | {u'switch_info': u'ToR', u'port_id': u'Ten-GigabitEthernet1/0/12:2', |
@@ -334,19 +355,20 @@ port access vlan 102
 stp edged-port
 #
 return</codeblock></p></li>
-      <li>View detailed information about an instance:<codeblock>glance image-list</codeblock><p>The
-          output should appear similar to the
-          following:<codeblock>+--------------------------------------+----------------------------+-------------+------------------+-----------+--------+
+        <li>View detailed information about an
+            instance:<codeblock>glance image-list</codeblock><p>The output should appear similar to
+            the
+            following:<codeblock>+--------------------------------------+----------------------------+-------------+------------------+-----------+--------+
 | ID                                   | Name                       | Disk Format | Container Format | Size      | Status |
 +--------------------------------------+----------------------------+-------------+------------------+-----------+--------+
 | 93de142f-62a3-4a7e-8b94-2145c860523a | deploy-initrd              | ari         | ari              | 227564499 | active |
 | 8c21423c-eedf-4f9d-84c5-25e03f35fd76 | deploy-kernel              | aki         | aki              | 3204496   | active |
 | 4b6b5bbe-39c8-4398-b2e6-1854496ef28f | ubuntu-14.04.02-amd64-disk | qcow2       | bare             | 372047872 | active |
 +--------------------------------------+----------------------------+-------------+------------------+-----------+--------+</codeblock></p></li>
-      <li>View detailed information about a
-          hypervisor:<codeblock>nova hypervisor-show 5564213e-1e39-465b-be2e-5933c43650a0</codeblock><p>The
-          output should appear similar to the
-          following:<codeblock>+-------------------------+--------------------------------------+
+        <li>View detailed information about a
+            hypervisor:<codeblock>nova hypervisor-show 5564213e-1e39-465b-be2e-5933c43650a0</codeblock><p>The
+            output should appear similar to the
+            following:<codeblock>+-------------------------+--------------------------------------+
 | Property                | Value                                |
 +-------------------------+--------------------------------------+
 | cpu_info                |                                      |
@@ -372,8 +394,8 @@ return</codeblock></p></li>
 | vcpus                   | 8                                    |
 | vcpus_used              | 8                                    |
 +-------------------------+--------------------------------------+</codeblock></p></li>
-      <li>View a list of all running services.<codeblock>nova service-list</codeblock><p>
-          <codeblock>+----+------------------+----------------------------+----------+---------+-------+----------------------------+-----------------+
+        <li>View a list of all running services.<codeblock>nova service-list</codeblock><p>
+            <codeblock>+----+------------------+----------------------------+----------+---------+-------+----------------------------+-----------------+
 | Id | Binary           | Host                       | Zone     | Status  | State | Updated_at                 | Disabled Reason |
 +----+------------------+----------------------------+----------+---------+-------+----------------------------+-----------------+
 | 1  | nova-cert        | BMCLOUD-RCP02-T1-M1-NETCLM | internal | enabled | up    | 2015-10-19T05:39:46.000000 | -               |
@@ -382,11 +404,11 @@ return</codeblock></p></li>
 | 16 | nova-consoleauth | BMCLOUD-RCP02-T1-M1-NETCLM | internal | enabled | up    | 2015-10-19T05:39:47.000000 | -               |
 | 19 | nova-compute     | BMCLOUD-RCP02-T1-M1-NETCLM | nova     | enabled | up    | 2015-10-19T05:39:41.000000 | -               |
 +----+------------------+----------------------------+----------+---------+-------+----------------------------+-----------------+</codeblock>
-        </p></li>
-      <li>View nformation of a given port.
-          <codeblock>neutron port-show ce2014de-cf35-44a4-9255-2975c99b7f1c</codeblock><p>The output
-          should appear similar to the
-          following:<codeblock>+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+          </p></li>
+        <li>View nformation of a given port.
+            <codeblock>neutron port-show ce2014de-cf35-44a4-9255-2975c99b7f1c</codeblock><p>The
+            output should appear similar to the
+            following:<codeblock>+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Field                 | Value                                                                                                                                                                                                              |
 +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | admin_state_up        | True                                                                                                                                                                                                               |
@@ -412,8 +434,8 @@ return</codeblock></p></li>
 | tenant_id             | c288a2816237465c8ea6efc16dc05b88                                                                                                                                                                                   |
 | trunked               | False                                                                                                                                                                                                              |
 +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</codeblock></p></li>
-    </ol>
-  </section>
+      </ol>
+    </section>
     <section id="next-step">
       <title>Next Steps</title>
       <p><xref href="carrier-grade-install-post.dita#topic1107">Post-Installation Tasks</xref></p>
