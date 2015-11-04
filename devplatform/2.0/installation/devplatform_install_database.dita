@@ -11,13 +11,6 @@
         <li>A properly configured <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt"
             >clouds.yaml</xref> file.</li>
       </ul>
-      <title>Download the Latest Version </title>
-      <ol id="ol_ogs_qpt_nt">
-        <li>Navigate to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
-            format="html" scope="external">HPE Helion Download Network</xref> (HDN) and log in. If
-          necessary, create an account first.</li>
-        <li>Download the Database Service package.</li>
-      </ol>
     </section>
 
 <section id="availability-zones"> <title>Configure Availability Zones</title>
