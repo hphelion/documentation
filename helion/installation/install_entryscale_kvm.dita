@@ -83,7 +83,7 @@
       <ol>
         <li>Ensure your lifecycle-manager node has a valid DNS nameserver specified in
             <codeph>/etc/resolv.conf</codeph>.</li>
-        <li>Set the environment variable LC_ALL: <codeph>export LC_ALL=C</codeph>
+        <li>Set the environment variable LC_ALL: <codeblock>export LC_ALL=C</codeblock>
           <note>This can be added to <codeph>~stack/.bashrc</codeph> or
               <codeph>/etc/bash.bashrc</codeph>.</note></li>
       </ol>
