@@ -770,7 +770,7 @@ Currently, supported DNS servers and networks include:
 <!--this is part of release 1.5
 ##Ceph Firefly 80.7 Storage Solution
 
-The HPE Helion OpenStack 1.1 Ceph Storage Solution provides an unified scalable and stable Storage Solution for the management of Helion OpenStack Glance Images, Nova Boot Volumes, Cinder persistent Volumes. The Solution also supports User backup and archive workloads to the Swift API writing to the same unified Ceph storage platform. This Solution is supported by HP.
+The HPE Helion OpenStack 1.1 Ceph Storage Solution provides an unified scalable and stable Storage Solution for the management of HPE Helion OpenStack Glance Images, Nova Boot Volumes, Cinder persistent Volumes. The Solution also supports User backup and archive workloads to the Swift API writing to the same unified Ceph storage platform. This Solution is supported by HP.
 
 For more details on Ceph integration, refer to [HPE Helion OpenStack Enterprise Edition 1.1 Ceph Firefly 80.7 Storage Solution](/helion/openstack/1.1/ceph/)
 

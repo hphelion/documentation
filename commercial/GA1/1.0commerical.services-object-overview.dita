@@ -51,7 +51,7 @@ A Swift cluster is software defined storage (SDS) architecture layered on top of
 </b> to meet workload and redundancy requirements. The storage service can be scaled up as necessary (<xref href="../../commercial/GA1/1.0commerical.services-scale-out-swift.dita" >scale-out Swift</xref>). It can also be horizontally scalable to handle an increased number of simultaneous connections as well as large number of objects.</p>
 </section>
 <section id="expanding-the-swift-deployment"> <title>Expanding the Swift Deployment</title>
-<p>Note that the initial installation of Helion OpenStack cloud includes the creation and configuration of a basic two-node Starter All-in-one Swift deployment. Any additional rings, nodes or servers are expansions of this basic installation.</p>
+<p>Note that the initial installation of HPE Helion OpenStack cloud includes the creation and configuration of a basic two-node Starter All-in-one Swift deployment. Any additional rings, nodes or servers are expansions of this basic installation.</p>
 <p>For more information and in-depth diagrams, see <xref href="../../commercial/GA1/1.0commerical.services-scale-out-swift.dita" >About Scale-Out Swift</xref>.</p>
 <ol>
 <li>Deploy Starter Swift<!--A BR tag was used here in the original source.--><i>(completed as part of the HPE Helion OpenStack cloud deployment)</i>

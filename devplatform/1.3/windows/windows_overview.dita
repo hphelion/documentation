@@ -173,9 +173,9 @@
 
         <p>Windows support has software requirements including the following:</p>
 <ul>
-    <li> A deployment of Helion OpenStack 1.1.1 or an HPE Helion Public Cloud account. To try HPE Helion Public Cloud, see 
+    <li> A deployment of HPE Helion OpenStack 1.1.1 or an HPE Helion Public Cloud account. To try HPE Helion Public Cloud, see 
         <xref format="html" scope="external" href="http://www.hpcloud.com/cloud-credit">HPE Cloud Signup</xref>. Helion Development Platform 1.2 is not 
-        supported on Helion OpenStack 1.0 or 1.1.</li>
+        supported on HPE Helion OpenStack 1.0 or 1.1.</li>
     <li> A licensed, retail, English-language Windows 2012 R2 ISO image. Evaluation versions and non-English versions are not supported. This image 
         can be obtained through a MSDN subscription for development 
         and test purposes, but images for use in a production environment must be obtained through the OEM channel. See 

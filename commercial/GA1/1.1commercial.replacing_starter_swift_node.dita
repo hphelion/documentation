@@ -112,7 +112,7 @@ cat $TE_DATAFILE \
     </section>
     <section id="replacing-node-ironic-database">
       <title>Replacing the Node in the Ironic Database</title>
-      <p>Two starter Swift nodes are installed as a part of Helion OpenStack, which is a basic
+      <p>Two starter Swift nodes are installed as a part of HPE Helion OpenStack, which is a basic
         requirement. The removed node must be replaced with another node before any other operation.
         Please note that if there is a single Swift node up and running the Object Operations will
         still work but for any other Cloud update operations the Scale Count must match the

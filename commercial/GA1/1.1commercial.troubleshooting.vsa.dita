@@ -432,7 +432,7 @@ When there are less than two drives in the machine, the script will fail to exec
 <p>
   <b>System Behavior/Message</b>
 </p>
-<p>As of Helion OpenStack 1.1,  when you install Helion OpenStack if you do not specify the public interface for VSA (with the <codeph>VSA_PUBLIC_INTERFACE</codeph> parameter), then updates will not take this parameter into account.</p>
+<p>As of HPE Helion OpenStack 1.1,  when you install Helion OpenStack if you do not specify the public interface for VSA (with the <codeph>VSA_PUBLIC_INTERFACE</codeph> parameter), then updates will not take this parameter into account.</p>
 <p>
   <b>Resolution</b>
 </p>

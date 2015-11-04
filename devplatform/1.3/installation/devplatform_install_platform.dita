@@ -90,10 +90,10 @@ curl --insecure https://10.0.0.10:5000 # Ignore SSL</codeblock></li>
             OpenStack. You will only be allowed to install Helion Development Platform if your
             installation meets the minimum version requirement (1.1.1). If the version of Helion
             OpenStack is<b> not compatible</b>, you will see the following error:
-            <codeblock>You are attempting to install Helion Development Platform version 1.2 on Helion OpenStack Build 81.
+            <codeblock>You are attempting to install Helion Development Platform version 1.2 on HPE Helion OpenStack Build 81.
 Can not continue.
 Minimum required Helion OpenStack build number for this install is 85.  </codeblock>If
-            the version of Helion OpenStack<b> can't be determined</b>, you will see the following
+            the version of HPE Helion OpenStack<b> can't be determined</b>, you will see the following
             error:<codeblock>Can not identify Helion OpenStack version.
 Version information not found from /root/tripleo/images/overcloud-compute*.qcow2
 Can not continue.

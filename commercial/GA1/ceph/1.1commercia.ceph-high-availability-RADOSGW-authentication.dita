@@ -43,7 +43,7 @@
 </ul>
 </section>
 <section id="steps"> <title>Steps</title>
-<p>The steps to achieve integration of Helion OpenStack HAProxy, Keystone, and RADOSGW are:</p>
+<p>The steps to achieve integration of HPE Helion OpenStack HAProxy, Keystone, and RADOSGW are:</p>
 </section>
 <section id="ceph-admin-node"> <title>Ceph Admin Node</title>
 <ul>
