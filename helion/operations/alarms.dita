@@ -462,12 +462,6 @@
                 <entry>Process crashed.</entry>
                 <entry>Restart the process on the affected node. Review the associated logs.</entry>
               </row>
-              <row>
-                <entry>Host alive Check</entry>
-                <entry>hostname=***</entry>
-                <entry>Host is halted or SSH service down.</entry>
-                <entry/>
-              </row>
             </tbody>
           </tgroup>
         </table>
@@ -492,6 +486,66 @@
           </thead>
           <tbody>
             <row>
+              <entry>Elasticsearch Unassigned Shards</entry>
+              <entry>Elasticsearch</entry>
+              <entry>Elasticsearch unassigned shards count is greater than 0.</entry>
+              <entry>Environment could be misconfigured.</entry>
+              <entry>
+                <p>To find the unassigned shards, run the following command on the lifecycle-manager node
+                  from the <codeph>~/scratch/ansible/next/hos/ansible</codeph> directory:</p>
+                <codeblock>ansible -i hosts/verb_hosts LOG-SVR[0] -m shell -a "curl localhost:9200/_cat/shards?pretty -s" | grep UNASSIGNED</codeblock>
+                <p>This should show which shards are unassigned, like this:</p>
+                <codeblock>logstash-2015.10.21 4 p UNASSIGNED 11412371  3.2gb 10.241.67.11 Keith Kilham</codeblock>
+                <p>The last column shows the name that Elasticsearch uses for the node that the
+                  unassigned shards are on. To find the actual hostname, run:</p>
+                <codeblock>ansible -i hosts/verb_hosts LOG-SVR[0] -m shell -a "curl localhost:9200/_nodes/_all/name?pretty -s"</codeblock>
+                <p>Once you find the hostname, you can try the following:</p>
+                <ol>
+                  <li>Make sure the node is not out of disk space, and free up space if needed.</li>
+                  <li>Restart the node (use caution, as this may affect other services as
+                    well).</li>
+                  <li>Check to make sure all versions of Elasticsearch are the same with this:
+                    <codeblock>ansible -i hosts/verb_hosts LOG-SVR -m shell -a "curl localhost:9200/_nodes/_local/name?pretty -s" | grep version</codeblock></li>
+                  <li>Contact customer support.</li>
+                </ol>
+              </entry>
+            </row>
+            <row>
+              <entry>Elasticsearch Max Total Indices Size</entry>
+              <entry>Elasticsearch</entry>
+              <entry>Elasticsearch Total Indices size is greater than
+                elasticsearch_max_total_indices_size_in_bytes defined by user.</entry>
+              <entry>elasticsearch_max_total_indices_size_in_bytes may be set too low, or you may
+                have insufficient resources.</entry>
+              <entry>If the total size of all the indices exceeds the size of the
+                elasticsearch_max_total_indices_size_in_bytes as you have defined it, you can adjust
+                the value if you want to give more space and you have the resources. If not, you may
+                need to adjust the Curator to remove indices sooner.</entry>
+            </row>
+            <row>
+              <entry>Elasticsearch Number of Log Entries</entry>
+              <entry>Elasticsearch</entry>
+              <entry>Elasticsearch Number of Log Entries.</entry>
+              <entry>The number of log entries may get too large.</entry>
+              <entry>Older versions of Kibana (version 3 and earlier) may hang if the number of log
+                entries is too large (e.g. above 40,000), and the page size would need to be small
+                enough (about 20,000 results), because if it is larger (e.g. 200,000), it may hang
+                the browser, but Kibana 4 should not have this issue.</entry>
+            </row>
+            <row>
+              <entry>Elasticsearch Field Data Evictions</entry>
+              <entry>Elasticsearch</entry>
+              <entry>Elasticsearch Field Data Evictions count is greater than 0.</entry>
+              <entry>Field Data Evictions may be found even though it is nowhere near the limit
+                set.</entry>
+              <entry>The elasticsearch_indices_fielddata_cache_size is tuned out-of-the box, but if
+                it is insufficient, you may need to increase this configuration parameter and run a
+                reconfigure.</entry>
+            </row>
+            
+            
+            
+            <row>
               <entry>Elasticsearch Low Watermark alarm definition</entry>
               <entry>Elasticsearch</entry>
               <entry>Elasticsearch Disk LOW Watermark. Backup indices. If high watermark is reached,
@@ -515,41 +569,8 @@
                 Alternatively, adjust curator_low_watermark_percent, curator_high_watermark_percent,
                 and/or elasticsearch_max_total_indices_size_in_bytes if needed.</entry>
             </row>
-            <row>
-              <entry>Elasticsearch Unassigned Shards</entry>
-              <entry>Elasticsearch</entry>
-              <entry>Elasticsearch unassigned shards count is greater than 0.</entry>
-              <entry>Environment could be misconfigured.</entry>
-              <entry>
-                <p>To find the unassigned shards, run the following command on the lifecycle-manager node
-                  from the <codeph>~/scratch/ansible/next/hos/ansible</codeph> directory:</p>
-                <codeblock>ansible -i hosts/verb_hosts LOG-SVR[0] -m shell -a "curl localhost:9200/_cat/shards?pretty -s" | grep UNASSIGNED</codeblock>
-                  <p>This should show which shards are unassigned, like this:</p>
-                 <codeblock>logstash-2015.10.21 4 p UNASSIGNED 11412371  3.2gb 10.241.67.11 Keith Kilham</codeblock>
-                  <p>The last column shows the name that Elasticsearch uses for the node that the
-                  unassigned shards are on. To find the actual hostname, run:</p>
-                <codeblock>ansible -i hosts/verb_hosts LOG-SVR[0] -m shell -a "curl localhost:9200/_nodes/_all/name?pretty -s"</codeblock>
-                <p>Once you find the hostname, you can try the following:</p>
-                <ol>
-                  <li>Make sure the node is not out of disk space, and free up space if needed.</li>
-                  <li>Restart the node (use caution, as this may affect other services as
-                    well).</li>
-                  <li>Check to make sure all versions of Elasticsearch are the same with this:
-                 <codeblock>ansible -i hosts/verb_hosts LOG-SVR -m shell -a "curl localhost:9200/_nodes/_local/name?pretty -s" | grep version</codeblock></li>
-                  <li>Contact customer support.</li>
-                </ol>
-              </entry>
-            </row>
-            <row>
-              <entry>Elasticsearch Field Data Evictions</entry>
-              <entry>Elasticsearch</entry>
-              <entry>Elasticsearch Field Data Evictions count is greater than 0.</entry>
-              <entry>Field Data Evictions may be found even though it is nowhere near the limit
-                set.</entry>
-              <entry>The elasticsearch_indices_fielddata_cache_size is tuned out-of-the box, but if
-                it is insufficient, you may need to increase this configuration parameter and run a
-                reconfigure.</entry>
-            </row>
+            
+            
             <row>
               <entry>Elasticsearch Bulk Pool Rejected</entry>
               <entry>Elasticsearch</entry>
@@ -559,16 +580,7 @@
                 even 3000, for example). This is found in the config/logging/elasticsearch.yml.j2
                 file.</entry>
             </row>
-            <row>
-              <entry>Elasticsearch Number of Log Entries</entry>
-              <entry>Elasticsearch</entry>
-              <entry>Elasticsearch Number of Log Entries.</entry>
-              <entry>The number of log entries may get too large.</entry>
-              <entry>Older versions of Kibana (version 3 and earlier) may hang if the number of log
-                entries is too large (e.g. above 40,000), and the page size would need to be small
-                enough (about 20,000 results), because if it is larger (e.g. 200,000), it may hang
-                the browser, but Kibana 4 should not have this issue.</entry>
-            </row>
+            
             <row>
               <entry>Elasticsearch Open File Descriptors </entry>
               <entry>Elasticsearch</entry>
@@ -579,18 +591,7 @@
                 indices, to a specific number of days. This is located in the
                 config/logging-common/main.yml file.</entry>
             </row>
-            <row>
-              <entry>Elasticsearch Max Total Indices Size</entry>
-              <entry>Elasticsearch</entry>
-              <entry>Elasticsearch Total Indices size is greater than
-                elasticsearch_max_total_indices_size_in_bytes defined by user.</entry>
-              <entry>elasticsearch_max_total_indices_size_in_bytes may be set too low, or you may
-                have insufficient resources.</entry>
-              <entry>If the total size of all the indices exceeds the size of the
-                elasticsearch_max_total_indices_size_in_bytes as you have defined it, you can adjust
-                the value if you want to give more space and you have the resources. If not, you may
-                need to adjust the Curator to remove indices sooner.</entry>
-            </row>
+            
             <row>
               <entry>Process Check</entry>
               <entry>Elasticsearch</entry>
