@@ -28,20 +28,20 @@
       </ol></li>
       <li>Source the Virtual Environment.<pre>source .devplatform/bin/activate</pre></li>
       <li>List the available ALS versions to
-        install.<codeblock>openstack hdpi list --os-cloud mycloud | grep als</codeblock>The output
-        should include:<codeblock>| als | wscatalog.2670 | 2.0.0 | available |</codeblock></li>
+          install.<codeblock>openstack hdpi list --os-cloud mycloud | grep als</codeblock>The output
+          should include:<codeblock>| als | wscatalog.#### | 2.0.0 | available |</codeblock></li>
       <li> Use the ALS version number to view the details of the specific package. The output
-        provides significant administration information such as download size, version, and so
-        forth.<codeblock>openstack hdpi show wscatalog.2670 --os-cloud mycloud</codeblock> The
-        output will appear similar to:
-        <codeblock>+---------------+---------------------------------------------------------------------------------------------+
+          provides significant administration information such as download size, version, and so
+          forth.<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock> The
+          output will appear similar to:
+          <codeblock>+---------------+---------------------------------------------------------------------------------------------+
 | Field         | Value                                                                                       |
 +---------------+---------------------------------------------------------------------------------------------+
 | actions       | download                                                                                    |
 | description   | als_2.0.0.517_qcow2.csu - Application Lifecycle Service for HPE Helion Development Platform. |
 | download_size | 5157019481                                                                                  |
 | email         |                                                                                             |
-| id            | wscatalog.2670                                                                              |
+| id            | wscatalog.####                                                                              |
 | name          | Application Lifecycle Service                                                               |  
 | package_id    | g11.2e8ab198-5b0f-4bda-9ec7-8ab9c13b53dd                                                    |
 | provider_name | Hewlett Packard Company                                                                     |

@@ -28,9 +28,13 @@
       <ol>
         <li>SSH to the HPE Helion OpenStack Deployer. </li>
         <li>Create and source the Virtual Environment. In this example,
-            <codeph>&lt;dpi-venv&gt;.tgz</codeph> is the name of the
-          installer.<codeblock>sudo mkdir -p /opt/stack/venv/&lt;dpi-venv>
+            <codeph>&lt;dpi-venv&gt;.tgz</codeph> is the name of the installer. This process creates
+          a directory under /opt which is owned by root. This requires sudo to create, so the owner
+          of that folder needs to be changed to whatever the user will log in as; in this example,
+          the value is
+          <i>stack</i>.<codeblock>sudo mkdir -p /opt/stack/venv/&lt;dpi-venv>
 sudo tar -C /opt/stack/venv/&lt;dpi-venv&gt; -xzf &lt;dpi-venv&gt;.tgz
+sudo chown stack.stack /opt/stack/venv/&lt;dpi-venv&gt; 
 source /opt/stack/venv/&lt;dpi-venv&gt;/bin/activate</codeblock></li>
         <li>Test the installation by retrieving a list of installable files. The <codeph>--debug
           </codeph>option will return information vital for troubleshooting, if
