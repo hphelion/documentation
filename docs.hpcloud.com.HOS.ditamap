@@ -230,29 +230,30 @@
           navtitle="Operations Console: HDP - Alarm Summary" locktitle="yes" toc="no"/>
       </topicref>
       <!-- BEGIN - OPERATIONS/Node Maintenance -->
-      <topicref href="helion/operations/node_maintenance.dita" navtitle="Node Maintenance" locktitle="yes">
+      <topicref href="helion/operations/node_maintenance.dita" navtitle="Node Maintenance"
+        locktitle="yes">
+        <topicref href="helion/operations/replace_controller.dita"
+          navtitle="Replacing a Controller Node" locktitle="yes"/>
         <!-- COMPUTE -->
         <topicref href="helion/operations/add_node.dita" navtitle="Adding a Compute Node"
           locktitle="yes"/>
-        <topicref href="helion/operations/repair_node.dita" navtitle="Repairing a Compute Node"
-          locktitle="yes"/>
         <topicref href="helion/operations/remove_node.dita" navtitle="Removing a Compute Node"
           locktitle="yes"/>
-        <topicref href="helion/operations/replace_controller.dita"
-          navtitle="Replacing a Controller Node" locktitle="yes"/>
+        <topicref href="helion/operations/repair_node.dita" navtitle="Repairing a Compute Node"
+          locktitle="yes"/>
         <topicref href="helion/administration/adding_moonshot_nodes.dita"
           navtitle="Adding Moonshot Nodes" locktitle="yes"/>
+        <!-- BLOCK STORAGE -->
         <topicref href="helion/blockstorage/vsa/remove_node.dita" navtitle="Removing VSA Node"
           locktitle="yes"/>
         <topicref href="helion/blockstorage/vsa/remove_vsa_maintenance.dita"
           navtitle="Removing a VSA Node For Maintenance" locktitle="yes"/>
-        <!-- BLOCK STORAGE -->
         <topicref href="helion/blockstorage/ceph/adding_new_osd_node.dita"
           navtitle="Adding an Object Storage Daemon (OSD) Node" locktitle="yes"/>
         <topicref href="helion/blockstorage/ceph/remove_osd_node.dita"
           navtitle="Removing an Object Storage Daemon (OSD) Node" locktitle="yes"/>
         <topicref href="helion/blockstorage/ceph/adding_new_monitor_node.dita"
-          navtitle="Adding a New Ceph Monitor Node" locktitle="yes"/>
+          navtitle="Adding a Ceph Monitor Node" locktitle="yes"/>
         <topicref href="helion/blockstorage/ceph/remove_monitor_node.dita"
           navtitle="Removing a Ceph Monitor Node" locktitle="yes"/>
         <!-- OBJECT STORAGE -->

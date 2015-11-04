@@ -32,6 +32,8 @@
       <li><xref href="../operations/add_node.dita">Adding a Compute Node</xref></li>
       <li><xref href="../operations/remove_node.dita">Removing a Compute Node</xref></li>
       <li><xref href="../operations/repair_node.dita">Repairing a Compute Node</xref></li>
+      <li><xref href="../administration/adding_moonshot_nodes.dita">Adding Moonshot
+        Nodes</xref></li>
     </ul>
 
     <p><b>VSA Nodes</b></p>
@@ -56,6 +58,8 @@
     <p><b>Object Storage Nodes</b></p>
     <ul>
       <li><xref href="../objectstorage/add_new_node.dita">Adding a Swift Object Node</xref></li>
+      <li><xref href="../objectstorage/add_new_pac_node.dita">Adding a Proxy, Account, Container
+          (PAC) Node</xref></li>
       <li><xref href="../objectstorage/replacing_drives_swift_node.dita">Replacing Drives in a Swift
           Node</xref></li>
       <li><xref href="../objectstorage/replacing_swift_node.dita">Replacing a Swift Node</xref></li>
