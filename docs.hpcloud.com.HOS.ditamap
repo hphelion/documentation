@@ -230,7 +230,7 @@
           navtitle="Operations Console: HDP - Alarm Summary" locktitle="yes" toc="no"/>
       </topicref>
       <!-- BEGIN - OPERATIONS/Node Maintenance -->
-      <topichead navtitle="Node Maintenance">
+      <topicref href="helion/operations/node_maintenance.dita" navtitle="Node Maintenance" locktitle="yes">
         <!-- COMPUTE -->
         <topicref href="helion/operations/add_node.dita" navtitle="Adding a Compute Node"
           locktitle="yes"/>
@@ -266,7 +266,7 @@
           navtitle="Replacing a Swift Node" locktitle="yes"/>
         <topicref href="helion/objectstorage/removing_node.dita" navtitle="Removing a Swift Node"
           locktitle="yes"/>
-      </topichead>
+      </topicref>
       <!-- END - OPERATIONS/Node Maintenance -->
       <!-- BEGIN - OPERATIONS/OBJECT STORAGE -->
       <topichead navtitle="Object Storage">
