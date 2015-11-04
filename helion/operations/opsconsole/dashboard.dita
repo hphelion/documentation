@@ -27,7 +27,7 @@
                 <li><uicontrol>Critical</uicontrol> - Open alarms, identified by red indicator</li>
                 <li><uicontrol>Warning</uicontrol> - Open alarms, identified by yellow
                     indicator</li>
-                <li><uicontrol>Unknown</uicontrol> - Open alarms, inditified by gray indicator</li>
+                <li><uicontrol>Unknown</uicontrol> - Open alarms, identified by gray indicator</li>
                 <li><uicontrol>Open</uicontrol> - Complete list of open alarms</li>
                 <li><uicontrol>Total</uicontrol> - Complete list of alarms, may include Acknowledged
                     and Resolved alarms</li>
@@ -39,7 +39,7 @@
                 <li><uicontrol>Critical</uicontrol> - Open alarms, identified by red indicator</li>
                 <li><uicontrol>Warning</uicontrol> - Open alarms, identified by yellow
                     indicator</li>
-                <li><uicontrol>Unknown</uicontrol> - Open alarms, inditified by gray indicator</li>
+                <li><uicontrol>Unknown</uicontrol> - Open alarms, identified by gray indicator</li>
                 <li><uicontrol>Open</uicontrol> - Complete list of open alarms</li>
                 <li><uicontrol>Total</uicontrol> - Complete list of alarms, may include Acknowledged
                     and Resolved alarms</li>

@@ -30,7 +30,7 @@
                 <li><uicontrol>Sort by Alarm</uicontrol> displays the alarms by name.</li>
                 <li><uicontrol>Sort by Alarm ID</uicontrol> displays the alarms UUID.</li>
                 <li><uicontrol>Sort by Last Check</uicontrol> displays the alarms by the date and
-                    timestamp of the most recent occurence.</li>
+                    timestamp of the most recent occurrence.</li>
                 <li><uicontrol>Sort by Dimension</uicontrol> displays the alarms by device, hostname
                     and service which they belong to.</li>
                 <li><uicontrol>Sort by Condition</uicontrol> displays the alarms by whether the
@@ -53,7 +53,7 @@
             </ul>
             <p>The <b>Alarm</b> column identifies the alarm by the name it was given when it was
                 originally created. </p>
-            <p>The <b>Last Check</b> column displays the date and time the most recent occurence of
+            <p>The <b>Last Check</b> column displays the date and time the most recent occurrence of
                 the alarm.</p>
             <p>The <b>Dimension</b> column describes the components to check in order to clear the
                 alarm.</p>
