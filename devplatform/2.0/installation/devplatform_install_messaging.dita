@@ -23,7 +23,7 @@
             <li>SSH into the HP Helion OpenStack deployer. (This is the same location where the HDPI
           has been installed.)</li>
         <li>List all services available for download.
-            <codeblock>openstack hdpi --os-cloud mycloud hdpi list</codeblock><p>The output will
+            <codeblock>openstack --os-cloud mycloud hdpi list</codeblock><p>The output will
             look similar to the following. Make a note of the ID of the Messaging service that you
             intend to
           install.</p><codeblock>+--------------------+----------------+-----------+-----------+
