@@ -428,6 +428,11 @@ StrictHostKeyChecking no </codeblock></li>
                         <p>Download all required ESX packages needed to deploy the ESX environment,
                                 including the VMware vSphere Distributed Switch (VDS) .</p>
                 </section>
+                <section>
+                        <title>Baremetal Region  installation files </title>
+                        <p>cg-ironic-deploy-images.tar.gz </p>
+                        <p>cg-ironic-deploy-images.tar.gz.md5</p>
+                </section>
                 <section><!--<ol id="ol_b4b_pyk_2t">
                                 <li> DCN has a well-defined process for Pre-Sales and Post-Sales
                                         process to download DCN bits and obtain license. Use one of
