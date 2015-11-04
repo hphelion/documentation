@@ -26,9 +26,10 @@
             <tbody>
               <row>
                 <entry>11/03/2015</entry>
-                <entry>Block Storage Configuration Troubleshooting</entry>
-                <entry>Added a new page containing troubleshooting steps for configuring your Block
-                  Storage backend. (<xref href="installation/blockstorageconfig_troubleshooting.dita">Link</xref>)</entry>
+                <entry>Block Storage </entry>
+                <entry>Configuration Troubleshooting - Added a new page containing troubleshooting
+                  steps for configuring your Block Storage backend. (<xref
+                    href="installation/blockstorageconfig_troubleshooting.dita">Link</xref>)</entry>
               </row>
               <row>
                 <entry>11/03/2015</entry>
