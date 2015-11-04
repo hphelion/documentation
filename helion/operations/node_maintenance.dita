@@ -14,59 +14,48 @@
         change hardware-specific information, such the MAC addresses, IPMI username, IPMI IP address
         (if changed) and IPMI password.</p>
     </section>
-    <p> To add compute nodes, which can total up to 100 at this point, the process is to add entries
-      to the <b>servers.yml</b> file.</p>
-    <p>To remove compute nodes, you will remove their entries in <b>servers.yml</b> after you
-      disable provisioning, migrate any running instances, and stop the Nova compute service.</p>
-
-
-    <p>Instructions for control plane and compute node changes are in these documents:</p>
-
-    <p><b>Control Plane Nodes</b></p>
-    <ul>
-      <li><xref href="replace_controller.dita">Replacing a Controller Node</xref></li>
-    </ul>
-
-    <p><b>Compute Nodes</b></p>
-    <ul>
-      <li><xref href="../operations/add_node.dita">Adding a Compute Node</xref></li>
-      <li><xref href="../operations/remove_node.dita">Removing a Compute Node</xref></li>
-      <li><xref href="../operations/repair_node.dita">Repairing a Compute Node</xref></li>
-      <li><xref href="../administration/adding_moonshot_nodes.dita">Adding Moonshot
-        Nodes</xref></li>
-    </ul>
-
-    <p><b>VSA Nodes</b></p>
-    <ul>
-      <li><xref href="../blockstorage/vsa/remove_node.dita">Removing a VSA Node</xref></li>
-      <li><xref href="../blockstorage/vsa/remove_vsa_maintenance.dita">Removing a VSA Node for
-          Maintenance</xref></li>
-    </ul>
-
-    <p><b>Ceph Nodes</b></p>
-    <ul>
-      <li><xref href="../blockstorage/ceph/adding_new_osd_node.dita">Adding an Object Storage Daemon
-          (OSD) Node</xref></li>
-      <li><xref href="../blockstorage/ceph/remove_osd_node.dita">Removing an Object Storage Daemon
-          (OSD) Node</xref></li>
-      <li><xref href="../blockstorage/ceph/adding_new_monitor_node.dita">Adding a Ceph Monitor
+    <section id="TOC">
+      <p>Instructions for each type of node are in these documents:</p>
+      <p><b>Control Plane Nodes</b></p>
+      <ul>
+        <li><xref href="replace_controller.dita">Replacing a Controller Node</xref></li>
+      </ul>
+      <p><b>Compute Nodes</b></p>
+      <ul>
+        <li><xref href="../operations/add_node.dita">Adding a Compute Node</xref></li>
+        <li><xref href="../operations/remove_node.dita">Removing a Compute Node</xref></li>
+        <li><xref href="../operations/repair_node.dita">Repairing a Compute Node</xref></li>
+        <li><xref href="../administration/adding_moonshot_nodes.dita">Adding Moonshot
+          Nodes</xref></li>
+      </ul>
+      <p><b>VSA Nodes</b></p>
+      <ul>
+        <li><xref href="../blockstorage/vsa/remove_node.dita">Removing a VSA Node</xref></li>
+        <li><xref href="../blockstorage/vsa/remove_vsa_maintenance.dita">Removing a VSA Node for
+            Maintenance</xref></li>
+      </ul>
+      <p><b>Ceph Nodes</b></p>
+      <ul>
+        <li><xref href="../blockstorage/ceph/adding_new_osd_node.dita">Adding an Object Storage
+            Daemon (OSD) Node</xref></li>
+        <li><xref href="../blockstorage/ceph/remove_osd_node.dita">Removing an Object Storage Daemon
+            (OSD) Node</xref></li>
+        <li><xref href="../blockstorage/ceph/adding_new_monitor_node.dita">Adding a Ceph Monitor
+            Node</xref></li>
+        <li><xref href="../blockstorage/ceph/remove_monitor_node.dita">Removing a Ceph Monitor
+            Node</xref></li>
+      </ul>
+      <p><b>Object Storage Nodes</b></p>
+      <ul>
+        <li><xref href="../objectstorage/add_new_node.dita">Adding a Swift Object Node</xref></li>
+        <li><xref href="../objectstorage/add_new_pac_node.dita">Adding a Proxy, Account, Container
+            (PAC) Node</xref></li>
+        <li><xref href="../objectstorage/replacing_drives_swift_node.dita">Replacing Drives in a
+            Swift Node</xref></li>
+        <li><xref href="../objectstorage/replacing_swift_node.dita">Replacing a Swift
           Node</xref></li>
-      <li><xref href="../blockstorage/ceph/remove_monitor_node.dita">Removing a Ceph Monitor
-          Node</xref></li>
-    </ul>
-
-    <p><b>Object Storage Nodes</b></p>
-    <ul>
-      <li><xref href="../objectstorage/add_new_node.dita">Adding a Swift Object Node</xref></li>
-      <li><xref href="../objectstorage/add_new_pac_node.dita">Adding a Proxy, Account, Container
-          (PAC) Node</xref></li>
-      <li><xref href="../objectstorage/replacing_drives_swift_node.dita">Replacing Drives in a Swift
-          Node</xref></li>
-      <li><xref href="../objectstorage/replacing_swift_node.dita">Replacing a Swift Node</xref></li>
-      <li><xref href="../objectstorage/removing_node.dita">Removing a Swift Node</xref></li>
-    </ul>
-
-
-
+        <li><xref href="../objectstorage/removing_node.dita">Removing a Swift Node</xref></li>
+      </ul>
+    </section>
   </body>
 </topic>
