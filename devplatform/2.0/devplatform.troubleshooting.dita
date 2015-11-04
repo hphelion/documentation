@@ -50,14 +50,12 @@
 <p>Even after fixing some errors and retrying, the command line installation fails.</p>
 <p>Resolution:</p>
 <ol>
-<li>Locate and open the <i>dev-platform-installer</i> folder. This folder is created by the installation process.
-
-<ul>
-<li>Delete the <i>.env</i> folder.</li>
-<li>Delete the <i>dev-platform-installer.conf</i> file.</li>
-</ul>
-</li>
-<li><xref href="installation/devplatform_install_platform.dita">Run the install command</xref> again with all command line options.</li>
+<li>Locate and open the <i>dev-platform-installer</i> folder. This folder is created by the
+          installation process. <ul>
+            <li>Delete the <i>.env</i> folder.</li>
+            <li>Delete the <i>dev-platform-installer.conf</i> file.</li>
+          </ul></li>
+<li>Run the install command again with all command line options.</li>
 </ol>
 </section>
 <section id="download"> <title>Download</title>
@@ -87,14 +85,8 @@
 <li>Delete the directory <i>/var/cache/sherpa/ws.xxxx</i>
 </li>
 <li>Delete the contents of the <i>/var/lib/Sherpa/data</i> folder.</li>
-<li>
-<p>Apache must be restarted before this change will take effect. <!--A BR tag was used here in the original source.-->Run:</p>
-
-<codeblock>
-<codeph>service apache2 restart 
-</codeph>
-</codeblock>
-</li>
+<li>Apache must be restarted before this change will take effect.
+          <codeblock>service apache2 restart </codeblock></li>
 </ol>
 </section>
 <section id="horizon"> <title>Horizon</title>
@@ -105,11 +97,8 @@
 </section>
 <section id="deleted-service-still-appears-in-horizon"> <title>Deleted service still appears in Horizon</title>
 <p>Even though the Development Platform stack has been deleted, the service still shows up in Horizon.</p>
-<p>Resolution: Delete the service manually from the Keystone endpoint list. <!--A BR tag was used here in the original source.--> Start the command line client and enter:</p>
-<codeblock>
-  <codeph>keystone endpoint-delete $&lt;id&gt;
-</codeph>
-</codeblock>
+<p>Resolution: Delete the service manually from the Keystone endpoint list. </p>
+<codeblock>keystone endpoint-delete $&lt;id&gt;</codeblock>
 </section>
 <section id="dbaas"> <title>DBaaS</title>
 </section>

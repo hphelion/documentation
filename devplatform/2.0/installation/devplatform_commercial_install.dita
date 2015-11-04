@@ -15,15 +15,16 @@
   <li>
   <xref href="#id_l4p_cxw_ft" format="dita">Install the HPE Helion Development Platform</xref>
 </li>
-<!--    <li> <xref href="#id_jbr_5qv_ft" format="dita">Install the Horizon UI Panels</xref></li>-->
 <li>
   <xref href="#id_o3f_zww_ft" format="dita">Install the Application Lifecycle Service</xref></li>
 
   <li>
     <xref href="#id_xn3_1xw_ft" format="dita">Install the Database Service</xref> </li>
-<!--  <li>
-    <xref href="#id_hm5_bxw_ft" format="dita">Install the Messaging Service</xref>
-</li>-->
+        <li>
+          <xref href="#id_hm5_bxw_ft" format="dita">Install the Messaging Service</xref>
+        </li>
+  <li><xref href="#engine" format="dita">Install the Helion Code Engine</xref></li>
+  <li><xref href="#dns" format="dita">Install DNSaaS</xref></li>
 
 </ul>
 </section>
@@ -44,8 +45,12 @@
   <topic id="id_xn3_1xw_ft" conref="devplatform_install_database.dita#topic_vsf_hnh_ts">
     <title>Install the Database Service</title>
   </topic>
-  <!--<topic id="id_hm5_bxw_ft" conref="devplatform_install_messaging.dita#topic_t3w_fnh_ts">
+  <topic id="id_hm5_bxw_ft" conref="devplatform_install_messaging.dita#topic_t3w_fnh_ts">
     <title>Install the Message Service</title>
-  </topic>-->
+  </topic>
+ 
+  <topic id="engine" conref="install_engine.dita#topic_gkq_fqy_rt"><title>Install the Helion Code Engine</title>
+  </topic>  
+  <topic id="dns" conref="install_dnsaas.dita#HP2.0DNSaaS"><title>Install DNSaaS</title></topic>
   
 </topic>

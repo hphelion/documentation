@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_vsf_hnh_ts">
-  <title>Install the Database Service</title>
+  <title>HPE Helion 2.0 Development Platform: Install the Database Service</title>
   <body>
-<section id="install-database"><title>Prerequisites</title>Installing services requires that the HDP
-      Installer 2.0, also known as HDPI, has already <xref
-        href="devplatform_install_platform.dita#topic_gly_xmh_ts">been installed</xref>.<p>The
-        installer retrieves service configuration information from the clouds.yaml file. If you did
-        not create a clouds.yaml file earlier, you can <xref
-          href="install_cloudsyaml.dita#topic_wzw_r4w_rt">create one now</xref>.</p><title>Download
-        the Latest Version </title><ol id="ol_ogs_qpt_nt">
+<section id="install-database">
+      <title>Prerequisites</title>
+      <ul>
+        <li>The HDP Installer 2.0, also known as HDPI, must already <xref
+            href="devplatform_install_platform.dita#topic_gly_xmh_ts">be installed</xref>.</li>
+        <li>A properly configured <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt"
+            >clouds.yaml</xref> file.</li>
+      </ul>
+      <title>Download the Latest Version </title>
+      <ol id="ol_ogs_qpt_nt">
         <li>Navigate to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
             format="html" scope="external">HPE Helion Download Network</xref> (HDN) and log in. If
           necessary, create an account first.</li>
         <li>Download the Database Service package.</li>
-      </ol></section>
+      </ol>
+    </section>
 
 <section id="availability-zones"> <title>Configure Availability Zones</title>
 <p>To configure the Database Service in a highly available manner, it is necessary to create
