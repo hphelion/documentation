@@ -177,29 +177,29 @@ $</codeblock></li>
             </p></li>
           <li> Identify the Virtual IP used to load balance the HPE Helion OpenStack
             services:<codeblock>openstack endpoint show database -c publicurl --format value</codeblock></li>
-          <li> Update configuration on each of the HPE Helion OpenStack controller nodes. <ol>
+          <li> Update configuration on each of the HPE Helion OpenStack controller nodes. <note>The
+              last line in each codeblock should be repeated once for <b>each</b> API server
+              identified in step 1. </note><note>The <codeph>ssl cert</codeph> information in the
+                <b>bind</b> statement only applies if SSL has been enabled for public endpoints. If
+              SSL has not been enabled, omit this section of the statement. To locate the filepath,
+              navigate to <codeph>~/helion/hos/ansible/roles/tls-frontend/defaults/main.yml</codeph>
+              and find the value of the <codeph>frontend_server_cert_directory</codeph> parameter.
+              To find the file name, open the
+                <codeph>/home/stack/helion/my_cloud/definition/data/network_groups.yml</codeph> file
+              and find the value for the <codeph>cert-file</codeph> parameter. </note><ol>
               <li>Connect to the controller node and add the following lines to the
-                  <i>/etc/haproxy/haproxy.cfg</i> file. <note>The last line should be repeated once
-                  for <b>each</b> API server identified in step 1. </note><note>The <codeph>ssl
-                    cert</codeph> information in the <b>bind</b> statement only applies if SSL has
-                  been enabled for public endpoints. If SSL has not been enabled, omit this section
-                  of the statement. To locate the filepath, navigate to
-                    <codeph>~/helion/hos/ansible/roles/tls-frontend/defaults/main.yml</codeph> and
-                  find the value of the <codeph>frontend_server_cert_directory</codeph> parameter.
-                  To find the file name, open the
-                    <codeph>/home/stack/helion/my_cloud/definition/data/network_groups.yml</codeph>
-                  file and find the value for the <codeph>cert-file</codeph> parameter.
-                </note><codeblock>listen trove_api
+                  <i>/etc/haproxy/haproxy.cfg</i> file.
+                <codeblock>listen trove_api
 bind &lt;<i>virtual IP from step 2</i>&gt;:8779
 ssl crt <i>&lt;path to certificate file/certFileName&gt; </i>
 option httpchk GET /
 server trove-trove&lt;<i>n</i>&gt;_api-&lt;<i>uniqueid</i>&gt; &lt;<i>API server n's IP Address</i>&gt; check inter 2000 rise 2 fall 5</codeblock></li>
               <li>Connect to the controller node and add the following lines to the
                   <codeph>~/helion/hos/ansible/roles/haproxy/templates/haproxy.cfg</codeph> file.
-                  <note>The last line should be repeated once for <b>each</b> API server identified
-                  in step
-                1.</note><codeblock>listen trove_api 
+                This will ensure your settings persist between
+                reboots.<codeblock>listen trove_api 
 bind &lt;<i>virtual IP from step 2</i>>:8779 
+ssl crt <i>&lt;path to certificate file/certFileName&gt; </i>
 option httpchk GET / 
 server trove-trove&lt;<i>n</i>>_api-<i>&lt;uniqueid</i>> &lt;<i>API server n's IP Address</i>> check inter 2000 rise 2 fall 5</codeblock></li>
               <li>Add the following command to the <codeph>/etc/iptables/rules.v4</codeph> file.
