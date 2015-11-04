@@ -77,14 +77,14 @@
     <topichead navtitle="Installation" locktitle="yes">
       <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita"
         navtitle="Technical Overview" locktitle="yes">
+        <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-denver.dita"
+          navtitle="Denver (KVM-only) Deployment Architecture Reference" locktitle="yes"/>
         <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-memphis.dita"
-          navtitle="denver (KVM-only) Deployment Architecture Reference" locktitle="yes"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-memphis.dita"
-          navtitle="tahoe (KVM with DCN) Deployment Architecture Reference" locktitle="yes"/>
+          navtitle="Tahoe (KVM with DCN) Deployment Architecture Reference" locktitle="yes"/>
         <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-tahoe.dita"
-          navtitle="memphis (KVM + ESX with DCN ) Deployment Architecture Reference" locktitle="yes"/>
+          navtitle="Memphis (KVM + ESX with DCN ) Deployment Architecture Reference" locktitle="yes"/>
         <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-sacramento.dita"
-          navtitle="sacramento (KVM + ESX + Baremetal with DCN) Deployment Architecture Reference"
+          navtitle="Sacramento (KVM + ESX + Baremetal with DCN) Deployment Architecture Reference"
           locktitle="yes"/>
         <!--<topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-tahoe.dita" navtitle="KVM with DCN Deployment Architecture Reference " locktitle="yes" toc="no"/>-->
       </topicref>

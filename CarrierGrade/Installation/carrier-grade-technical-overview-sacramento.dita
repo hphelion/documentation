@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic3485">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: sacramento (KVM + ESX +
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Sacramento (KVM + ESX +
     Baremetal with DCN) Deployment Architecture Reference</title>
   <prolog>
     <metadata>
@@ -19,7 +19,7 @@
       Helion OpenStack Carrier Grade. This deployment supports the integration of VMware ESX<tm
         tmtype="reg"/> storage into HPE Helion OpenStack Carrier Grade using HP. This deployment
       also includes support for OpenStack Ironic to install and manage baremetal servers.</p>
-    <p>The KVM + ESX deployment incorprates HPE Distributed Cloud Networking (DCN) virtual network
+    <p>The KVM + ESX deployment incorporates HPE Distributed Cloud Networking (DCN) virtual network
       solution. During the installation, use the <codeph>sacramento</codeph> template that comes
       with the installation package to create the KVM + ESX deployment.</p>
     <section>

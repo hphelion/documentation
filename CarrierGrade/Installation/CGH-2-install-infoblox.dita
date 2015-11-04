@@ -17,7 +17,7 @@
   </prolog>
   <body>
     <p><!--https://wiki.hpcloud.net/display/HCG/Infoblox-+HCG+2.0+integration--></p>
-    <p/>
+    <p>Infoblox is a required component of the Sacramento deployment.</p>
     <section>
     <p><b>Deploy and Configure Infoblox Openstack Adapter (IOA) VM in ESX</b></p>
     <p>Infoblox vNIOS™ (Network Infrastructure Operating System) for VMware®  allows deployment of a

@@ -224,8 +224,61 @@
     </section>
   <section id="hardware-config">
       <title>Required Hardware Configurations </title>
-      <p>The servers, selected from the <xref href="#topic1773/hardware" format="dita">Supported Hardware</xref> lists, must be configured as follows for HPE Helion OpenStack
-        Carrier Grade.</p>
+      <p>The servers, selected from the <xref href="#topic1773/hardware" format="dita">Supported
+          Hardware</xref> lists, must be configured as follows for HPE Helion OpenStack Carrier
+        Grade.</p>
+      <p>The following table indicates the components required for each deployment type. If your
+        deployment indicates Yes in a column, you must install that component. If a column is blank,
+        you can disregard that component. <table frame="all" rowsep="1" colsep="1"
+          id="table_iqg_gyd_xt">
+          <tgroup cols="5">
+            <colspec colname="c2" colnum="1" colwidth="1.0*"/>
+            <colspec colname="newCol2" colnum="2" colwidth="1*"/>
+            <colspec colname="newCol3" colnum="3" colwidth="1*"/>
+            <colspec colname="c3" colnum="4" colwidth="1.0*"/>
+            <colspec colname="newCol5" colnum="5" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>Deployment</entry>
+                <entry>All Deployments</entry>
+                <entry>HP DCN</entry>
+                <entry>VMware ESX</entry>
+                <entry>Ironic Baremetal</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Denver</entry>
+                <entry>Yes</entry>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Tahoe</entry>
+                <entry>Yes</entry>
+                <entry>Yes</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Memphis</entry>
+                <entry>Yes</entry>
+                <entry>Yes</entry>
+                <entry>Yes</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Sacramento</entry>
+                <entry>Yes</entry>
+                <entry>Yes</entry>
+                <entry>Yes</entry>
+                <entry>Yes</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></p>
+      <p><b>For all deployments</b></p>
       <p>One (1) <b>HLM Host</b>. You must have a server with a 40GB Disk and 8,192 MB RAM for the
         HLM host. This server will also host the VSD VM.</p>
       <p id="non-kvm-hos">Three (3) <b>HPE Helion OpenStack Controllers.</b> You must have three (3)
@@ -260,9 +313,9 @@
           </ul><p><b>Important:</b> Using the correct NICs is essential to proper installation of HP
             Helion OpenStack Carrier Grade.</p></li></ul>
      
-    <p><b><i>For a KVM with DCN cloud topology</i></b></p>
-      <p>If you are installing the KVM with DCN topology (using the <codeph>tahoe</codeph>
-        template), you need the following additional components:</p>
+    <p><b><i>HP Distributed Cloud Networking Components</i></b></p>
+      <p><i>For Tahoe, Memphis, and Sacramento</i></p>
+      <p>If you are installing DCN, you need the following additional components:</p>
     <p>
       <ul>
         <li>Two (2) <b>DCN hosts</b>. You must have: <ul>
@@ -275,9 +328,9 @@
         </ul><p>Refer to the DCN documentation for the supported hardware configurations.
         </p><p><b>Note:</b> These systems are not required for a KVM-only cloud.</p></li></ul></p>
      
-    <p><b><i>For a KVM and ESX cloud topology</i></b></p>
-      <p>If you are installing the KVM + ESX topology (using the <codeph>memphis</codeph> template),
-        you need the following additional components:</p>
+    <p><b><i>VMware ESX Storage</i></b></p>
+      <p><i>For Memphis and Sacramento</i></p>
+      <p>If you are installing VMware ESX, you need the following additional components:</p>
     <p>
         <ul id="ul_s3d_pmx_dt">
           <li>Two (2) <b>ESX hosts</b>. You must have a minimum of two (2) baremetal systems for
@@ -288,15 +341,12 @@
               <li> vSphere Cluster running ESXi 5.5u2 with vMotion enabled.</li>
               <li>1 Virtual Machine Port Group with all Cloud Vlans associated to the Port Group.
               </li>
-            </ul><p><b>Note:</b> These systems are not required for a KVM-only cloud.</p></li>
-    <li>Two (2) <b>DCN hosts</b>. You must have: <ul>
-              <li>two (2) baremetal systems for DCN VSC controllers (HA mode) </li>
-              <li>two (2) baremetal systems for DCN VRS-G Software Gateway (HA mode)</li>
-              <li>VRSvApp requirements VRSvApp must be installed. Please Refer to the DCN VSP 3.0 R7
-                installation Guide for VRSvApp installation. </li>
-            </ul><p>Refer to the DCN documentation for the supported hardware configurations.
-                </p><p><b>Note:</b> These systems are not required for a KVM-only cloud.</p></li></ul></p>
+            </ul><p><b>Note:</b> These systems are not required for a KVM-only cloud.</p></li></ul></p>
     </section>
+    <p><b><i>Ironic Baremetal Components</i></b></p>
+    <p><i>For Sacramento</i></p>
+    <p>If you are installing the Ironic baremetal region, you need the following additional
+      components:</p>
 
   <section id="software"><title>Software Requirements</title><p><b>HLM Host</b>. The HLM host
         requires the Ubuntu Server 14.04.2 LTS operating system. </p>
@@ -306,8 +356,10 @@
         Grade installation process installs the required software.</p>
       <p><b>KVM compute</b>. The servers should be baremetal. The HPE Helion OpenStack Carrier Grade
         installation process installs the required software.</p>
-    <p><b><i>For a KVM and ESX cloud topology</i></b>, VMware vSphere must be fully installed and
-        operational before installing HPE Helion OpenStack Carrier Grade.</p></section>
+    <p><b><i>VMware ESX</i></b>. if you are installing VMware, VMware vSphere must be fully
+        installed and operational before installing HPE Helion OpenStack Carrier Grade.</p>
+      <p><b><i>HP DCN</i></b>. If you are intalling HP Distributed Cloud Networking (DCN), DCN must
+        be fully installed and operational before installing HPE Helion OpenStack Carrier Grade. </p></section>
     <section>
       <title>External Storage</title>
       <p>The following back-end drivers are supported to enable management of the OpenStack Block
