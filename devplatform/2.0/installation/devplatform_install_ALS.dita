@@ -56,14 +56,17 @@
     <section><title>Install the ALS service.</title>Run the following command:
       <codeblock>openstack --os-cloud mycloud hdpi als install --package wscatalog.2670</codeblock>
       The output will appear similar to:
-      <codeblock>Downloading Application Lifecycle Service which is available 
+        <codeblock>Downloading Application Lifecycle Service which is available 
 Application Lifecycle Service not downloaded (available) 
-Application Lifecycle Service not downloaded (downloading) ………
-Application Lifecycle Service is (downloaded) 
+Application Lifecycle Service not downloaded (downloading)
+...
+... </codeblock><note>Downloading
+        may take a significant amount of time; depending on network traffic, it could take 20-90
+        minutes.</note><codeblock>Application Lifecycle Service is (downloaded) 
 Staging Application Lifecycle Service in Glance/Swift 
 Application Lifecycle Service is staged 
 UI installed for application lifecycle service 
 Create service endpoint for service application lifecycle service 
-Completed installing application  </codeblock></section>
+Completed installing application </codeblock></section>
   </body>
 </topic>

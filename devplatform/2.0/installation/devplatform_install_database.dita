@@ -161,11 +161,12 @@ openstack aggregate create --zone AZ-3 aggregate-AZ-3</codeblock></li>
         <li>Install the database
           service.<codeblock>openstack --os-cloud mycloud hdpi database install --package wscatalog.####</codeblock>
           The output will appear similar to:
-          <codeblock>$ os hdpi database install --package wscatalog.####
+            <codeblock>$ os hdpi database install --package wscatalog.####
 Database is now downloading
 ...
-...
-Database is (downloaded)
+...</codeblock><note>Downloading
+            may take a significant amount of time; depending on network traffic, it could take 20-90
+            minutes.</note><codeblock>Database is (downloaded)
 Database is already (available)
 Database is already configured
 Launching stack...
