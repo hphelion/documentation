@@ -15,6 +15,9 @@
       </vrmlist>
     </prodinfo>
   </topicmeta>
+  
+  <mapref href="helion/HOS-keywords.ditamap" format="ditamap"/>
+  
   <topicref href="helion/index.dita">
     <!-- BEGIN - TOP LEVEL -->
     <topicref href="helion/overview.dita" navtitle="HPE Helion OpenStack 2.0 Overview"
