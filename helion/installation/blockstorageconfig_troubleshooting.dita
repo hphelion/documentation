@@ -24,6 +24,28 @@
         <li>Click <codeph>iSCSI</codeph> on the right hand side of the page. The virtual IP address
           will be displayed in the tabular form. You can view your cluster ID here.</li>
       </ol>
-    </section>
+      <p><b>Running <codeph>site.yml</codeph> during the VSA installation produces an error in the "Create VSA appliance" task step</b></p>
+      <p>If you are going through the VSA configuration and the <codeph>site.yml</codeph> playbook results in the error below then you likely did not set your locale properly.</p>
+      <p>Error:</p>
+      <codeblock>
+TASK: [VSA-DEP | deploy | Create VSA appliance] *******************************
+failed: [helion-cp1-vsa0001-mgmt] => {"changed": true, "cmd": ["./vsa_automation", "-f", "/etc/vsa/vsa_disks.json", "-ao", "False"], "delta": "0:00:00.368050", "end": "2015-10-27 11:02:18.378824", "rc": 1, "start": "2015-10-27 11:02:18.010774", "warnings": []}
+stderr: libvirt: Network Driver error : Network not found: no network with matching name 'vsa-network'
+Traceback (most recent call last):
+   File "./vsa_automation", line 83, in &#60;module>
+      deployer.install_vsa()
+   File "/opt/stack/venv/storevirtual-installer-20151022T080854Z/lib/python2.7/site-packages/storevirtual_installer/deployer.py", line 88, in install_vsa
+      self._roll_back_installation()
+   File "/opt/stack/venv/storevirtual-installer-20151022T080854Z/lib/python2.7/site-packages/storevirtual_installer/deployer.py", line 479, in _roll_back_installation
+      self._vsa_network_destroy()
+   File "/opt/stack/venv/storevirtual-installer-20151022T080854Z/lib/python2.7/site-packages/storevirtual_installer/deployer.py", line 493, in _vsa_network_destroy
+      raise vsa_excs.NetworkDestroyFailed(msg)
+storevirtual_installer.vsa_excs.NetworkDestroyFailed: Failed to destroy and undefine the network
+
+FATAL: all hosts have already failed -- aborting</codeblock>
+      <p>Fix:</p>
+      <p>Set your locale prior to running <codeph>site.yml</codeph> with this command on your lifecycle-manager/deployer node:</p>
+      <codeblock>export LC_ALL=C</codeblock>
+      </section>
   </body>
 </topic>
