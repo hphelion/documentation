@@ -2,6 +2,15 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="tech_overview">
   <title><keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version"/> : Overview</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <keyword keyref="kw-hos"/>
+        <keyword keyref="kw-cp"/>
+      </keywords>
+    </metadata>
+    
+  </prolog>
   <body>
     <!--Needs Edit-->
     <p><keyword keyref="kw-hos"/> <keyword keyref="kw-hos-version"/> is the latest OpenStack-based infrastructure-as-a-service cloud
