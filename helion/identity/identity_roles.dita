@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_iq3_nl3_bt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating Domains, Projects, Users, Groups, and Roles</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating Domains, Projects, Users, Groups,
+    and Roles</title>
   <body>
     <section id="domains_projects_roles">
       <title>Domains, Projects, Users, Groups, and Roles</title>
@@ -44,14 +45,16 @@
         <li>Each domain and project have an assigned admin.</li>
         <li>Domains are created by the "admin" service account and domain admins are assigned by the
           "admin" user.</li>
-        <li>The "admin" UserID (UID) is pre-created by the Keystone installation, has the "admin"
+        <li>The "admin" UserID (UID) is created during the Keystone installation, has the "admin"
           role assigned to it, and is defined as the "Cloud Admin". This UID is created using the
           "magic" or "secret" admin token found in the default 'keystone.conf' file installed during
-          HOS keystone installation after the Keystone service has been installed. This secret token
-          should be removed after installation and the "admin" password changed.</li>
-        <li>The "default" domain is created automatically during the HOS Keystone installation.</li>
+          HP Helion OpenStack keystone installation after the Keystone service has been installed.
+          This secret token should be removed after installation and the "admin" password
+          changed.</li>
+        <li>The "default" domain is created automatically during the HP Helion OpenStack Keystone
+          installation.</li>
         <li>The "default" domain contains all OpenStack service accounts that are installed during
-          the HOS keystone installation process.</li>
+          the HP Helion OpenStack keystone installation process.</li>
 
         <li>No users but the OpenStack service accounts should be assigned to the "default"
           domain.</li>
@@ -100,10 +103,10 @@
       and assigns the project admin role to each project to a selected UID. A UID is a project
       administrator for a given project if that UID has a project-scoped token scoped for the given
       project. There can be multiple projects per domain. The project admin sets the project quota
-      settings, adds/deletes users and groups to and from the project, and defines the user/group roles for
-      the assigned project. 
-      Users can be belong to multiple projects and have different roles on each project. 
-      Users are assigned to a specific domain and a default project. Roles are assigned per project. </section>
+      settings, adds/deletes users and groups to and from the project, and defines the user/group
+      roles for the assigned project. Users can be belong to multiple projects and have different
+      roles on each project. Users are assigned to a specific domain and a default project. Roles
+      are assigned per project. </section>
     <section id="users_groups">
       <title>Users and Groups</title> Each user belongs to one domain only. Domain assignments are
       defined either by the domain configuration files or by a domain administrator when creating a
@@ -125,12 +128,13 @@
         that user for a particular project. When a user attempts to access a specific OpenStack
         service the role is parsed by the service, compared to the service-specific policy file, and
         then granted the resource access defined for that role by the service policy
-        file.</p><p>Each service has its own service policy file with the <b>/etc/[SERVICE_CODENAME]/policy.json</b>
-        file name format where [SERVICE_CODENAME] represents a specific OpenStack service name. For
-        example, the OpenStack Nova service would have a policy file called
-          <b>/etc/nova/policy.json</b>.</p><p>HPE Helion OpenStack is deployed with 3 redundant control plane servers. If modified, the policy
-        files for each service need to be replicated in each control plane server. Service restarts
-        are NOT required for policy file changes.</p>
+        file.</p><p>Each service has its own service policy file with the
+          <b>/etc/[SERVICE_CODENAME]/policy.json</b> file name format where [SERVICE_CODENAME]
+        represents a specific OpenStack service name. For example, the OpenStack Nova service would
+        have a policy file called <b>/etc/nova/policy.json</b>.</p><p>HPE Helion OpenStack is
+        deployed with 3 redundant control plane servers. If modified, the policy files for each
+        service need to be replicated in each control plane server. Service restarts are NOT
+        required for policy file changes.</p>
     </section>
 
   </body>
