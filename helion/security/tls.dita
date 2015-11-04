@@ -28,7 +28,7 @@
             Production Environments</xref>.</note>
       </p>-->
     </section>
-    <section> When logging into the deployer to run the configuration processor and the requisite
+    <section> When logging into the deployer to run the Configuration Processor and the requisite
       playbooks, you must decide if you want to configure TLS or if you want to disable it. This
       can't be changed after deployment. Therefore, you will have to make one of the following
         changes:<ul id="ul_sdj_qfq_rt">
@@ -111,7 +111,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       </ol>
       <b>If you are using IP addresses for external ULRs: </b><ol id="ol_y3j_qfq_rt">
         <li>Edit <b>network_groups.yml</b> to comment out the "external-name" line </li>
-        <li>Commit your changes to git and run the configuration processor as in steps 4 and 5
+        <li>Commit your changes to git and run the Configuration Processor as in steps 4 and 5
           above</li>
         <li>Note the IP address used for the public URLs (from
           <b>my_cloud/info/address_info.ym</b>l) </li>
@@ -122,7 +122,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
             ~/scratch/ansible/next/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</b> with
           the new CA certificate chain file (if applicable) </li>
         <li>Edit <b>network_groups.yml </b>to set the value for the name of the "cert-file"</li>
-        <li>Again, commit your changes to git and run the configuration processor as in steps 4 and
+        <li>Again, commit your changes to git and run the Configuration Processor as in steps 4 and
           5 above</li>
         <li>Continue with the deployment as usual</li>
       </ol> Note that the certificate that is installed by default, "my-public-cert", is linked to

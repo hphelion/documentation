@@ -48,7 +48,7 @@
   min-part-time: 16
   ...</codeblock></p></li>
           <li>Repeat step 3 for other rings (container, object-0, etc).</li>
-          <li>Run the configuration processor:
+          <li>Run the Configuration Processor:
             <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <li>Use the playbook to create a deployment directory:

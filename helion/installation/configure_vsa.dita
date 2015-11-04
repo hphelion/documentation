@@ -382,7 +382,7 @@ git commit -m "&lt;your commit message>"</codeblock><note>Before
             following environment variable:<codeph> export
               HOS_USER_PASSWORD_ENCRYPT_KEY=&lt;encryption key></codeph> See <xref
               href="install_entryscale_kvm.dita#install_kvm"/> for reference.</note></li>
-        <li>Run the configuration processor:
+        <li>Run the Configuration Processor:
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <li>Run the following command to create a deployment

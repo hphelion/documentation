@@ -26,7 +26,7 @@ level: DEBUG</codeblock></li>
             <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock></li>
-          <li>Run the configuration processor as follows:
+          <li>Run the Configuration Processor as follows:
             <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <li>Prepare your environment for
@@ -137,7 +137,7 @@ ansible-playbook -i hosts/verb_hosts neutron-reconfigure.yml</codeblock></li>
             configuration:<codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock></li>
-          <li>Run the configuration processor:
+          <li>Run the Configuration Processor:
             <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <li>Prepare your environment for

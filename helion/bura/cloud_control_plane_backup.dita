@@ -31,7 +31,7 @@
       </p>
     </section>
     <section><title>Setting SSH information before deployment</title>
-      <p>Before running the configuration processor, edit the following file:
+      <p>Before running the Configuration Processor, edit the following file:
         <codeblock>~/helion/my_cloud/config/freezer/ssh_credentials.yml</codeblock>Please be advised
         that all parameters are mandatory, and take care in providing the SSH private key.</p></section>
     <section><title>Setting SSH information after deployment</title><p>If you already deployed your
