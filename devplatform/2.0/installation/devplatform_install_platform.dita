@@ -28,9 +28,9 @@
       <ol>
         <li>SSH to the HPE Helion OpenStack Deployer. </li>
         <li>Create and source the Virtual Environment. In this example,
-            <codeph>&lt;dpi-venv&gt;</codeph> is the name of the installer
-          package.<codeblock>mkdir -p /opt/stack/venv/&lt;dpi-venv> 
-tar -C /opt/stack/venv/&lt;dpi-venv&gt; -xzf &lt;dpi-venv&gt;.tgz
+            <codeph>&lt;dpi-venv&gt;.tgz</codeph> is the name of the
+          installer.<codeblock>sudo mkdir -p /opt/stack/venv/&lt;dpi-venv>
+sudo tar -C /opt/stack/venv/&lt;dpi-venv&gt; -xzf &lt;dpi-venv&gt;.tgz
 source /opt/stack/venv/&lt;dpi-venv&gt;/bin/activate</codeblock></li>
         <li>Test the installation by retrieving a list of installable files. The <codeph>--debug
           </codeph>option will return information vital for troubleshooting, if
