@@ -3,6 +3,16 @@
 <map>
     <title>HPE Helion OpenStack Keywords</title>
     
+    
+
+    <keydef keys="kw-cp">
+        <topicmeta><keywords><keyword>Configuration Processor</keyword></keywords></topicmeta>
+    </keydef>
+
+    <keydef keys="kw-cp-abbrev">
+        <topicmeta><keywords><keyword>CP</keyword></keywords></topicmeta>
+    </keydef>
+    
     <keydef keys="kw-hos">
         <topicmeta><keywords><keyword>HPE Helion OpenStack</keyword></keywords></topicmeta>
     </keydef>
