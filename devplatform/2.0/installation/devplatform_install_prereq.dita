@@ -4,39 +4,42 @@
   <title>HPE Helion 2.0 Development Platform: Installation Prerequisites</title>
   <body>
     <section id="prerequisites"> <title>General Prerequisites</title>
-     <note type="important"><ul>
+      <ul id="ul_plz_psf_xt">
         <li>
           <p>The Cinder block storage backend must be configured to use <xref
-                href="http://docs.hpcloud.com/#helion/installation/configure_vsa.html" format="html"
-                scope="external">VSA</xref>, <xref
-                href="http://docs.hpcloud.com/#helion/installation/configure_3par.html"
-                format="html" scope="external">3Par</xref>, or <xref
-                href="http://docs.hpcloud.com/#helion/installation/configure_ceph.html"
-                format="html" scope="external">Ceph</xref>.</p>
+              href="http://docs.hpcloud.com/#helion/installation/configure_vsa.html" format="html"
+              scope="external">VSA</xref>, <xref
+              href="http://docs.hpcloud.com/#helion/installation/configure_3par.html" format="html"
+              scope="external">3Par</xref>, or <xref
+              href="http://docs.hpcloud.com/#helion/installation/configure_ceph.html" format="html"
+              scope="external">Ceph</xref>.</p>
         </li>
         <li>
           <p>The system running the installer needs to have Python 2.7. Most modern operating
-              systems include this as part of their base toolkit. This document is geared toward a
-              Linux operating system, but this does not preclude the installer from running on other
-              operating systems with appropriate modifications to the command-line statements.</p>
+            systems include this as part of their base toolkit. This document is geared toward a
+            Linux operating system, but this does not preclude the installer from running on other
+            operating systems with appropriate modifications to the command-line statements.</p>
         </li>
         <li>
           <p>If you did not <xref
-                href="http://docs.hpcloud.com/#helion/administration/create_hdp_servicenet.html"
-                format="html" scope="external">create the Service Network </xref>immediately after
-              installing HP Helion <tm tmtype="reg">OpenStack</tm>, you <b>must</b> do so now.</p>
+              href="http://docs.hpcloud.com/#helion/administration/create_hdp_servicenet.html"
+              format="html" scope="external">create the Service Network </xref>immediately after
+            installing HP Helion <tm tmtype="reg">OpenStack</tm>, you <b>must</b> do so now.</p>
         </li>
-       <li>
-         <p>For Windows and .NET support, due to licensing requirements, you must create and deploy your own Windows and SQL Server images. This requires the following:</p>
-         <ul>
-           <li>Windows images must be created in a MacOS or Linux environment.</li>
-           <li>You must have a Windows Server 2012 Enterprise (non-evaluation) image.</li>
-           <li>A volume license for Windows Server 2012 Enterprise is strongly recommended.</li>
-           <li>Additional tools (VirtIO and Virtual Box) are also required. See <xref format="dita" type="local" href="../windows/windows_building_and_deploying.dita">Building and Deploying Windows DEA and SQL Server Express Images</xref>
-           for more information.</li>
-         </ul>
-       </li>
-              </ul></note>
+        <li>
+          <p>For Windows and .NET support, due to licensing requirements, you must create and deploy
+            your own Windows and SQL Server images. This requires the following:</p>
+          <ul id="ul_xnz_psf_xt">
+            <li>Windows images must be created in a MacOS or Linux environment.</li>
+            <li>You must have a Windows Server 2012 Enterprise (non-evaluation) image.</li>
+            <li>A volume license for Windows Server 2012 Enterprise is strongly recommended.</li>
+            <li>Additional tools (VirtIO and Virtual Box) are also required. See <xref format="dita"
+                type="local" href="../windows/windows_building_and_deploying.dita">Building and
+                Deploying Windows DEA and SQL Server Express Images</xref> for more
+              information.</li>
+          </ul>
+        </li>
+      </ul>
     </section>
     <section id="preparation">
       <title>Gather Information</title>
@@ -57,7 +60,12 @@
             for the selected service.</dd>
         </dlentry>
       </dl>
-     </section>   
+     </section>   <section><title>Create the <codeph>clouds.yaml</codeph> Configuration File</title>The installer
+      retrieves configuration information from a configuration file located at
+        <codeph>/.config/openstack/clouds.yaml</codeph> Each service has its own section within this
+      file where configuration information is stored.<note type="important">This file <b>must</b>
+        contain at least the<xref href="install_cloudsyaml.dita#id_ufp_fdn_vt"> Platform
+          Configuration </xref>information before the HDPI can be installed. </note></section>
     <section id="shell"><title>Set Proxy Shell Variables</title>
    <p>If your network uses a proxy, it may be necessary to set the <codeph>https_proxy</codeph> and
           <codeph>http_proxy</codeph> shell variables.</p>  <ol>

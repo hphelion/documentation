@@ -29,9 +29,8 @@
           install.</p><codeblock>+--------------------+----------------+-----------+-----------+
 | service            |     id         |  version  |   state   |
 +--------------------+----------------+-----------+-----------+
-| 1.0.0.0-b.5        | wscatalog.2716 | 0.0.0.5   | available |
-| messaging          | <b>wscatalog.2761 </b>| 2.0.0     | available |
-| messaging          | wscatalog.1803 | 1.2.0     | available | </codeblock></li>
+| 1.0.0.0-b.5        | wscatalog.#### | 0.0.0.5   | available |
+<b>| messaging          | wscatalog.#### | 1.0.0     | available |</b></codeblock></li>
         <li>Download and install the Messaging service
           package.<codeblock>(dev_platform_installer-devplat_installer-1.0.0)stack@hlm:~$ openstack --os-cloud mycloud hdpi messaging 
 
