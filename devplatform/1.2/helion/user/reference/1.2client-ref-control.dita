@@ -89,7 +89,7 @@
 </table>
 </section>
 <section id="command-restage"> <title>helion restage &lt;<i>application</i>&gt;</title>
-<p>Restages an application and regenerates its droplet. This command is new in Helion OpenStack 1.1</p>
+<p>Restages an application and regenerates its droplet. This command is new in HPE Helion OpenStack 1.1</p>
 <table>
 <tgroup cols="2">
 <colspec colname="col1"/>

@@ -264,7 +264,7 @@
     <topicref href="1.3/devplatform.sysadmin.dita" locktitle="yes"
       navtitle="Resources for IT Ops">
       <!--permalink: /helion/devplatform/connectdatabase/-->
-      <topicref href="1.3/devplatform_upgrade.dita" navtitle="Upgrading Helion OpenStack"
+      <topicref href="1.3/devplatform_upgrade.dita" navtitle="upgrading HPE Helion OpenStack"
         locktitle="yes"/>
       <topichead navtitle="Cluster Creation and Management">
         <topicref href="1.3/devplatform.deploy-ALS.dita" locktitle="yes"

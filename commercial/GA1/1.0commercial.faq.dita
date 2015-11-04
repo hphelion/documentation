@@ -98,7 +98,7 @@ It is free to download. An optional support package will be available to purchas
 </section>
 <section id="whatisovercloud"> <title>What is the overcloud?<!--Removed anchor point whatisovercloud--><!-- id="whatisovercloud" --></title>
 <p>The overcloud is the functional cloud available to run guest virtual machines and workloads. It offers access to the Nova, Neutron, Glance, Keystone, Cinder, Swift, Ironic, Heat, Horizon, and Ceilometer services.</p>
-<p>Setting up the overcloud completes the overall Helion OpenStack installation process.</p>
+<p>Setting up the overcloud completes the overall HPE Helion OpenStack installation process.</p>
 <!--####What is available in this version?<a name="preview"></a>
 
 On June 30th, we announced a preview of HPE Helion OpenStack that enables you to deploy an OpenStack TripleO-based cloud experience and evaluate the Icehouse release of OpenStack  

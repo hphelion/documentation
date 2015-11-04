@@ -56,7 +56,7 @@
 </ul>
 </section>
 <section id="gettingstarted"> <title>Domain Pre-requisites</title>
-<p>Access to the new Keystone Domains functions in Helion OpenStack is currently available only via the <xref href="http://developer.openstack.org/api-ref-identity-v3.html" scope="external" format="html" >Keystone V3 API</xref> or the common <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >OpenStack command line client</xref>.</p>
+<p>Access to the new Keystone Domains functions in HPE Helion OpenStack is currently available only via the <xref href="http://developer.openstack.org/api-ref-identity-v3.html" scope="external" format="html" >Keystone V3 API</xref> or the common <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >OpenStack command line client</xref>.</p>
 <p>Note that domains are not available in Keystone v2. You must  first <xref href="../../commercial/GA1/1.1commerical.services-identity-configure-v3.dita" >configure the Identity service</xref> to use Keystone v3.</p>
 <p>Before using the domain-specific APIs you must first:</p>
 <ol>

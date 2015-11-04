@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_cgn_hgd_ht">
-  <title>Replacing a Starter Swift Nodes in Helion OpenStack</title>
+  <title>Replacing a Starter Swift Nodes in HPE Helion OpenStack</title>
   <body>
     <p>The starter Swift nodes are created as an integral part of cloud deployment. These nodes are
       a part of the default account, container, and object rings. First identify the Swift node that

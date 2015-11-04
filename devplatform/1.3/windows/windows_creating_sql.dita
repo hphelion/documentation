@@ -16,7 +16,7 @@
     <section id="requirements"><title>System Requirements</title> 
     <p>This tutorial requires the following:</p>
       
-      <ul><li>A Helion Openstack installation or a Helion Public Cloud account</li>
+      <ul><li>a HPE Helion OpenStack installation or a Helion Public Cloud account</li>
         <li>An ALS 1.3 cluster with an instance of SQL Server added. This cluster and service is created using the <xref format="dita" href="../helion/CLI/ALS_Client_Reference.dita">ALS cluster management tool (cf-mgmt)</xref> with the following
           <xref format="dita" href="../helion/CLI/ALS_Client_Reference.dita#topic13234/commands">commands</xref>:
           <ul><li><b>create-cluster</b></li>

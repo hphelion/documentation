@@ -438,7 +438,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
           <p>The <xref
               href="http://h18013.www1.hp.com/products/servers/proliantstorage/arraycontrollers/dynamicsmartarray/index.html?jumpid=reg_r1002_usen_c-001_title_r0001"
               scope="external" format="html">HPE Dynamic Smart Array (B120i and B320i)
-              controllers</xref> use a proprietary driver that is not included in Helion OpenStack
+              controllers</xref> use a proprietary driver that is not included in HPE Helion OpenStack
             HPE recommends the use of the full featured <xref
               href="http://www8.hp.com/us/en/products/iss-controllers/index.html" scope="external"
               format="html">Smart Array adapters</xref> (such as p220, p440, etc.) in order to

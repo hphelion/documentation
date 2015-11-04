@@ -67,7 +67,7 @@ namespace HelionWCF
     </section>
     <section id="deploy"><title>Deploying the web service application</title> 
       <p>Now that you've created a WCF service hosted in a Web application, you'll deploy the application.</p>
-      <p>For this section, you'll need the connection information for a Windows DEA cluster running in Helion OpenStack or Helion Public Cloud. For the purposes of this tutorial, you'll use 
+      <p>For this section, you'll need the connection information for a Windows DEA cluster running in HPE Helion OpenStack or Helion Public Cloud. For the purposes of this tutorial, you'll use 
       a Public Cloud account. For information on creating a Windows DEA node on Public Cloud, see <xref href="windows_firstapp.dita">Building and deploying your first Windows application</xref>.</p>
       <ol>
         <li>Right-click on the project in <b>Solution Explorer</b> and select <b>Publish to Cloud Foundry</b>.</li>

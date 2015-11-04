@@ -28,7 +28,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1.1commercial.helion-update.md-->
  <!--permalink: /helion/openstack/1.1.1/update/--></p>
-<p>Welcome to the HPE Helion OpenStack v1.1.1 update instructions. These instructions apply to existing HPE Helion OpenStack v1.1 installations and describe how you can update your HPE Helion OpenStack cloud environment from v1.1 to v1.1.1. (The process of updating a Helion OpenStack v1.0 or v1.01 release to HPE Helion OpenStack v1.1.1 is not supported.)</p>
+<p>Welcome to the HPE Helion OpenStack v1.1.1 update instructions. These instructions apply to existing HPE Helion OpenStack v1.1 installations and describe how you can update your HPE Helion OpenStack cloud environment from v1.1 to v1.1.1. (The process of updating a HPE Helion OpenStack v1.0 or v1.01 release to HPE Helion OpenStack v1.1.1 is not supported.)</p>
 <p>
 <b>Note to Helion Development Platform users</b>: 
 The HPE Helion Development Platform requires HPE Helion OpenStack v1.1.1. However, HPE Helion OpenStack v1.1.1 does not currently support updating the HPE Helion Development Platform from v1.1 to v1.2.</p>

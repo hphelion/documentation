@@ -28,7 +28,7 @@
       <ul>
         <li> The default meters and other items configured for the Ceilometer API can now be
           modified and additional meters can be added. It is highly recommended that customers test
-          overall Helion OpenStack performance prior to deploying any Ceilometer modifications to
+          overall HPE Helion OpenStack performance prior to deploying any Ceilometer modifications to
           ensure the addition of new notifications or polling events does not negatively affect
           overall system performance. </li>
         <li>Ceilometer Central Agent (pollster) is now configured to support HA (Active-Active) </li>

@@ -239,7 +239,7 @@
         </sectiondiv>
         <sectiondiv>
           <p id="sherpa"><b>Sherpa</b></p>
-          <p>In Helion OpenStack 2.0, Sherpa is used by the Helion Development Platform and is not
+          <p>in HPE Helion OpenStack 2.0, Sherpa is used by the Helion Development Platform and is not
             used for Helion OpenStack Upgrade.</p>
           <p>You must take periodic backups of the Sherpa service since it does 
             maintain some state information on local disk storage on the controller. 
@@ -443,7 +443,7 @@
       
       <sectiondiv>
         <p id="deployer"><b>Deployer</b></p>
-        <p>The deployer in Helion Openstack is not highly-available. The deployer state/data are all
+        <p>The deployer in HPE Helion OpenStack is not highly-available. The deployer state/data are all
           maintained in filesystem and are backed up by the Freezer backup. In case a
           deployer/lifecycle-manager node failure, the deployer state/data can be recovered from the
           backup.</p>

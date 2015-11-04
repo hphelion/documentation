@@ -398,7 +398,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
         receive and forward HTTP requests to the VM that hosts the REST API endpoint for the
         Database Service.<note>To perform these steps you must be connected to the overcloud.</note><ol>
           <li> Identify the API server IPs on the SVC network. You should have as many API servers
-            (and IPs) as you have Availability Zones in your Helion OpenStack
+            (and IPs) as you have Availability Zones in your HPE Helion OpenStack
             installation.<codeblock>nova list | awk '/trove[0-9]*_api/{ print $4,"\t", substr($12,5) }' </codeblock></li>
           <li> Identify the Virtual IP used by the controller nodes to be able to load balance the
             Helion OpenStack

@@ -78,9 +78,9 @@
 <section id="setup-information-needed"> <title>Setup Information Needed</title> 
 <ul>
 <li>A Windows product key for Windows Server 2012R2. A multiple activation key is strongly recommended, as temporary instances will be created that need product keys.</li>
-<li>The RC file for the target Helion OpenStack environment. This can be downloaded from the Horizon interface, under <b>Project-&gt;Compute-&gt;Access &amp; Security-&gt;API Access-&gt;Download OpenStack RC File</b>.</li>
+<li>The RC file for the target HPE Helion OpenStack environment. This can be downloaded from the Horizon interface, under <b>Project-&gt;Compute-&gt;Access &amp; Security-&gt;API Access-&gt;Download OpenStack RC File</b>.</li>
 <li>
-<p>The certificate for the target Helion OpenStack environment. To retrieve this certificate, do the following:</p>
+<p>The certificate for the target HPE Helion OpenStack environment. To retrieve this certificate, do the following:</p>
 
 <ol>
 <li>Find the IP address for

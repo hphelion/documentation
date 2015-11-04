@@ -139,7 +139,7 @@ authorization tokens.</entry>
 </row>
 <row>
     <entry>--droplets</entry>
-    <entry> Limit for the number of droplets per application that are stored (older droplets that exceed this quota are removed and their associated versions can no longer be restored). This option is new in Helion OpenStack 1.1</entry>
+    <entry> Limit for the number of droplets per application that are stored (older droplets that exceed this quota are removed and their associated versions can no longer be restored). This option is new in HPE Helion OpenStack 1.1</entry>
   </row>
 <row>
 <entry>--mem</entry>

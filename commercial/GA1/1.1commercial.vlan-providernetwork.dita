@@ -298,7 +298,7 @@ neutron net-delete vlan301</codeblock>
         <codeblock>neutron net-create --provider:physical_network=physnet1 --provider:network_type=vlan --provider:segmentation_id=900 vlan900</codeblock></note>
       <note>By default, Helion OpenStack 1.01, 1.1, and 1.1.1 Helion OpenStack creates a
           <codeph>default-net</codeph> and <codeph>ext-net</codeph> which take the first two VLAN
-        IDs from your defined VLAN range. If you only define two VLANs for your Helion OpenStack
+        IDs from your defined VLAN range. If you only define two VLANs for your HPE Helion OpenStack
         installation, you will not be able to create your provider network because
           <codeph>default-net</codeph> and <codeph>ext-net</codeph> have already consumed these two
         VLAN IDs. This is why you must first delete the <codeph>default-net</codeph> and
