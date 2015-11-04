@@ -37,7 +37,7 @@
                 <codeblock>cd /opt/vsd/Packages/</codeblock>
               </p></li>
             <li> Execute the following
-              command:<codeblock>rpm -ivh CloudMgmt-vmware-3.2.2_74-1.x86_64.rpm</codeblock></li>
+              command:<codeblock>rpm –ivh CloudMgmt-vmware-3.2.4_134-1.x86_64.rpm</codeblock></li>
           </ol></li>
         <li>Change to the following
           directory:<codeblock>cd /opt/vsd/CloudMgmt-vmware/</codeblock></li>

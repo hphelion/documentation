@@ -18,6 +18,9 @@
       bootstrapping the HPE Helion Lifecycle Management virtual machine and installation services. </p>
     <p>The installation uses Ansible playbooks, which are files that contain scripts that execute
       required installation processes.</p>
+  <p><b>Note:</b> If you are installing the <b>Sacramento</b> deployment, before deploying the HLM
+      VM, go to <xref href="carrier-grade-install-baremetal-cloud-prepare.dita#topic1107">Preparing
+        the Baremetal Region</xref>.</p>
 
 <section id="prepare"> <title>Prepare the system for deployment</title>
 <p>Use the following steps to prepare the server on which the HLM VM will be deployed (the HLM host):</p>
@@ -157,15 +160,7 @@ nuage-openstack-neutron_2015.1.1725_all.deb</codeblock></li>
     </section>
 
   <section id="next-step"> <title>Next Step</title>
-<p>The next step depends upon the HPE Helion OpenStack Carrier Grade deployment model you are
-        installing: KVM or KVM + ESX. For more information on each deployment model, see <xref
-          href="carrier-grade-install-overview.dita#topic1925/install-option">KVM
-          deployment</xref></p>
-      <p>See either:</p>
-      <p><xref href="carrier-grade-install-kvm-esx.dita#topic10581"> Installing the KVM + ESX
-          Deployment</xref></p>
-      <p><xref href="carrier-grade-install-kvm.dita#topic10581">Installing the KVM
-        Deployment</xref></p>
+      <p><xref href="carrier-grade-install-non-kvm.dita#topic10581">Installing the Non-KVM Region</xref></p>
 </section>
 </body>
 </topic>

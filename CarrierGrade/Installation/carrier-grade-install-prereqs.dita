@@ -246,8 +246,7 @@ StrictHostKeyChecking no </codeblock></li>
                         <title>Preparing the Network for Installation</title>
                         <p>Before installing HPE Helion OpenStack Carrier Grade, you are responsible
                                 for preparing the network for all installations.</p>
-                        <p>See <xref
-                                        href="carrier-grade-install-network-prepare.dita#topic7646"
+                        <p>See <xref href="carrier-grade-install-network-prepare.dita#topic7646"
                                         >Preparing the Network for Installation</xref></p>
                 </section>
                 <section>
@@ -264,8 +263,8 @@ StrictHostKeyChecking no </codeblock></li>
                                 packages are located using FTP at <xref
                                         href="http://16.78.71.141/uploads/hcg-2-0-alpha/build22.tar"
                                         format="html" scope="external">HPE Helion OpenStack Carrier
-                                        Grade V2.0 Alpha Build 22</xref>. HPE internal network access
-                                is
+                                        Grade V2.0 Alpha Build 22</xref>. HPE internal network
+                                access is
                                 required.<codeblock>http://16.78.71.141/uploads/hcg-2-0-alpha/build22.tar</codeblock></p>
                         <p>The FTP download, <codeph>build22.tar</codeph>, contains all of the files
                                 you will need to install and configure HPE Helion OpenStack Carrier
@@ -274,7 +273,6 @@ StrictHostKeyChecking no </codeblock></li>
                         <p><b>Note:</b> For KVM + ESX Cloud Deployments, you will need to obtain the
                                 and install the VMware ESX<tm tmtype="reg"/> and HPE Distributed
                                 Cloud Networking (DCN) software through those entities. </p>
-                
                         <p><b>HPE Helion OpenStack Carrier Grade installation files</b></p>
                         <p>The <codeph>build22.tar</codeph> file contains the installation files for
                                 HPE Helion OpenStack Carrier Grade in the
@@ -333,8 +331,7 @@ StrictHostKeyChecking no </codeblock></li>
                                         </tbody>
                                 </tgroup>
                         </table>
-
-                <p id="download-esx"><b>DCN components</b></p>
+                        <p id="download-esx"><b>DCN components</b></p>
                         <p>The <codeph>build22.tar</codeph> file contains the required DCN packages
                                 needed to deploy the DCN environment, in the
                                         <codeph>build22/HLM/DCN</codeph> directory. The currently
@@ -353,7 +350,8 @@ StrictHostKeyChecking no </codeblock></li>
                                                 <row>
                                                   <entry/>
                                                   <entry>
-                                                  <p><codeph id="itoolbox1">itoolbox1.ova</codeph></p>
+                                                  <p><codeph id="itoolbox1"
+                                                  >itoolbox1.ova</codeph></p>
                                                   <p><codeph>nuage-metadata-agent_3.2.4-133_all.deb</codeph></p>
                                                   <p><codeph>nuagenetlib_0.0.0-1729-kilo_all</codeph></p>
                                                   <p><codeph>nuage-openstack-neutron_2015.1.1729_all.deb</codeph></p>
@@ -365,7 +363,8 @@ StrictHostKeyChecking no </codeblock></li>
                                                 </row>
                                                 <row>
                                                   <entry>VSD_R4_OVA</entry>
-                                                        <entry><codeph id="vsd-ova">VSD-3.2.4_134-hp.ova</codeph></entry>
+                                                  <entry><codeph id="vsd-ova"
+                                                  >VSD-3.2.4_134-hp.ova</codeph></entry>
                                                 </row>
                                                 <row>
                                                   <entry>VSD-QCOW2</entry>
@@ -376,19 +375,21 @@ StrictHostKeyChecking no </codeblock></li>
                                                   <entry>
                                                   <p id="vrs-mf"
                                                   ><codeph>VRS_3.2.4-135_10062015.mf</codeph></p>
-                                                  <p><codeph id="vrs-ovf">VRS_3.2.4-135_10062015.ovf</codeph></p>
-                                                  <p><codeph  id="vrs-vmdk">VRS_3.2.4-135_10062015-disk1.vmdk</codeph></p>
+                                                  <p><codeph id="vrs-ovf"
+                                                  >VRS_3.2.4-135_10062015.ovf</codeph></p>
+                                                  <p><codeph id="vrs-vmdk"
+                                                  >VRS_3.2.4-135_10062015-disk1.vmdk</codeph></p>
                                                   </entry>
                                                 </row>
                                                 <row>
                                                   <entry>Compute-Proxy</entry>
-                                                  <entry><codeph id="esx-proxy-ova">TEMPL-CPV9.ova</codeph></entry>
+                                                  <entry><codeph id="esx-proxy-ova"
+                                                  >TEMPL-CPV9.ova</codeph></entry>
                                                 </row>
                                         </tbody>
                                 </tgroup>
                         </table>
-                
-                <p id="kvm-region"><b>KVM Region Installation files</b></p>
+                        <p id="kvm-region"><b>KVM Region Installation files</b></p>
                         <p>The <codeph>build22.tar</codeph> file contains the following files
                                 requried to install the KVM region of HPE Helion OpenStack Carrier
                                 Grade, in the <codeph>build22/WR/</codeph> directory. The
@@ -399,7 +400,7 @@ StrictHostKeyChecking no </codeblock></li>
                                 <li>HCG_2.0_WR_license.lic.txt</li>
                         </ul>
                         <p>The following files are included in the installation download packages
-                                and will become available during the installation of  Helion
+                                and will become available during the installation of Helion
                                 Lifecycle Management (HLM). </p>
                         <p>
                                 <ul id="ul_oty_2cz_st">
@@ -429,7 +430,7 @@ StrictHostKeyChecking no </codeblock></li>
                                 including the VMware vSphere Distributed Switch (VDS) .</p>
                 </section>
                 <section>
-                        <title>Baremetal Region  installation files </title>
+                        <title>Baremetal Region installation files </title>
                         <p>cg-ironic-deploy-images.tar.gz </p>
                         <p>cg-ironic-deploy-images.tar.gz.md5</p>
                 </section>
@@ -672,13 +673,15 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                         <colspec colnum="1" colname="col2"/>
                                         <colspec colnum="2" colname="col3"/>
                                         <colspec colnum="3" colname="col4"/>
-                                        <tbody>
+                                        <thead>
                                                 <row>
                                                   <entry><b>File Name</b></entry>
                                                   <entry><b>To be copied in the Base HLM KVM
                                                   Host</b></entry>
                                                   <entry><b>Description</b></entry>
                                                 </row>
+                                        </thead>
+                                        <tbody>
                                                 <row>
                                                   <entry><xref
                                                   href="http://15.214.241.88/cg-hos-builds/cg-hlm.qcow2"
@@ -772,7 +775,8 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   <p> VRS_3.2.4-135_10062015-disk1.vmdk</p>
                                                   </entry>
                                                   <entry>
-                                                  <p><codeph>/var/www/html</codeph> on the KVM host. </p>
+                                                  <p><codeph>/var/www/html</codeph> on the KVM host.
+                                                  </p>
                                                   </entry>
                                                 </row>
                                                 <row>
@@ -862,8 +866,18 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                 <section id="next-step">
                         <title>Next Step</title>
                         <p>
-                                <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Deploying
-                                        the HLM VM and installation services</xref>. </p>
+                                <ul id="ul_ptv_pnf_xt">
+                                        <li>If you are installing the <b>Denver</b>, <b>Tahoe</b>,
+                                                or <b>Memphis</b> deployments, go to <xref
+                                                  href="carrier-grade-install-hlm-vm.dita#topic10581"
+                                                  >Deploying the HLM VM and installation
+                                                  services</xref>.</li>
+                                        <li>If you are installing the <b>Sacramento</b> deployment,
+                                                go to <xref
+                                                  href="carrier-grade-install-baremetal-cloud-prepare.dita#topic1107"
+                                                  >Preparing the Baremetal Region</xref>.</li>
+                                </ul>
+                        </p>
                 </section>
         </body>
 </topic>

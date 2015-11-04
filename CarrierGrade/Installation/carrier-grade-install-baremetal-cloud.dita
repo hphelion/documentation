@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107">
-<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Post-Alpha Release Build 22:
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta:
     Deploying the Baremetal Region</title>
 <prolog>
   <metadata>
@@ -16,156 +16,79 @@
 <body>
     <p>If you are installing the <codeph>sacramento</codeph> template, which includes the KVM
       region, the baremetal region, ESX storage, and uses HPE DCN VRS networking, follow these
-      instructions. If you are installing a different deployment, disregard these instructions.</p>
-    <section>
-      <title>Configure JSON files</title>
-      <p>
-        <ol id="ol_ebq_yv2_xt">
+      instructions after installing the KVM region. If you are installing a different deployment,
+      disregard these instructions.</p>
+    <section><title>Deploy Patches</title>Use the following steps to deploy required patches.<p>
+        <ol id="ol_vl1_tqf_xt">
           <li>Log into the HLM VM.</li>
-          <li>Change to the <codeph>/var/hlm/clouds/sac22/vars</codeph> directory.</li>
-          <li>Edit the <codeph>ironic.json</codeph> file to set
-              <codeph>ignore_tenant_network</codeph> to <codeph>True</codeph>.
-            <codeblock>{
-  "product": {
-        "version": 1
-  },
-  "property-groups": [
-    {
-       "name": "ironic-vars",
-       "properties": {
-         "ignore_tenant_network" : "False"       
-         }
-    }
-  ]
-}</codeblock></li>
-          <li>Edit the <codeph>neutron-bm.json</codeph> file to specify networking information.
-            <codeblock>{
-  "product": {
-        "version": 1
-  },
-  "property-groups": [
-    {
-       "name": "neutron-vars",
-       "properties": {
-         "switch_channel_timeout": "180",
-         "vlan_range": "339:340",
-         "bm_interface": "eth1",
-         "prov_network": {
-            "vlan": "1579",
-            "cidr": "10.200.79.0 /24",
-            "ip_start_address": "10.200.79.50",
-            "ip_end_address": "10.200.79.200",
-            "ip_gateway": "10.200.79.1"
-          }
-       }
-     }
-  ]
-}</codeblock></li>
-          <li>Change <codeph>kenobi-node-configuration/ansible-playbooks/roles/stackrc</codeph> to
-              <codeph>kenobi-node-configuration/ansible-playbooks/STACKRC</codeph> (lowercase to
-            uppercase)</li>
-          <li>Execute the following command to integrate these configurations into the installation
-            environment: <codeblock>hlm_prepare-env.sh</codeblock></li>
+          <li>Copy the  <codeph>kenobi-config-patch.patch</codeph> you downloaded in the
+            Prerequisites to the <codeph>/root/kenobi-configuration-processor</codeph>
+            directory.</li>
+          <li>Copy the  <codeph>kenobi-node-config.patch</codeph> you downloaded in the
+            Prerequisites to the <codeph>/root/kenobi-node-configuration</codeph> directory.</li>
+          <li>Navigate to the <codeph>/root/kenobi-configuration-processor</codeph> directory.</li>
+          <li>Execute the following command to deploy the patch:
+            <codeblock>patch -p1 &lt; kenobi-config-patch.patch</codeblock></li>
+          <li>Navigate to the <codeph>/root/kenobi-node-configuration</codeph> directory.</li>
+          <li>Execute the following command to deploy the patch:
+            <codeblock>kenobi-node-config.patch</codeblock></li>
+          <li>Execute the following command to integrate the patch into the installation
+            environment:<codeblock>cd ~/cg-hlm/hlm-build
+./hlm_prepare-env.sh</codeblock></li>
+          <li>Enter <codeph>Exit</codeph> to close the HLM VM console.</li>
         </ol>
-      </p>
-    </section>
-    <section><title>Configure baremetal node ports into access mode</title><p>Ensure that the switch
-        ports connected to baremetal instance nodes are in access mode. This is a pre-requisite
-        before provisioning baremetal instances. </p><p>To configure a port onto access mode execute
-        the following on the switch:
-        <codeblock>system-view
-interface:&lt;interface-name&gt; &lt;port&gt;
-port link-type 
-access 
-save 
-force quit 
-quit </codeblock></p>After
-      configuring other region variables as well, do hcfgproc, hnetinit and hnetping followed by
-      hdeploy</section>
+      </p></section>
     <section>
-      <title>Provision baremetal nodes</title>
+      <title>Patches for OpenStack packages:</title>
+      <p> Use the following steps to deploy required patches:</p>
       <p>
-        <ol id="ol_bns_j1f_xt">
-          <li>Execute the following commands to upload an Ubuntu disk image for provisioning The
-            image will be used in nova boot.
-            <codeblock>glance image-create --name deploy-initrd --is-public True --disk-format ari --container-format ari &lt; ironic-deploy.initramfs
-glance image-create --name deploy-kernel --is-public True --disk-format aki --container-format aki &lt; ironic-deploy.kernel 
-glance image-create --name ubuntu-disk --is-public True --disk-format qcow2 --container-format bare &lt; ubuntu.qcow2</codeblock></li>
-          <li>Execute the following commands to create a switch
-            entry:<codeblock>neutron switch-create --host &lt;switch ip&gt; --username &lt;username&gt; --password &lt;password&gt; --type s5930 --id aa:bb:cc:dd:ee:ff</codeblock></li>
-          <li>Execute the following commands to create a new
-            flavor:<codeblock>nova flavor-create baremetal auto 4096 80 2
-nova flavor-key baremetal set "capabilities:boot_option"="local" 
-nova flavor-key baremetal set "capabilities:boot_mode"="bios"</codeblock></li>
-          <li>Execute the following commands to register the Ironic
-            node:<codeblock>ironic node-create -d pxe_ipmitool -i ipmi_address=&lt;&lt;ip&gt;&gt; -i
-ipmi_username=&lt;&lt;user&gt; -i ipmi_password=&lt;&lt;password&gt; -i 
-ipmi_terminal_port=9091 -p cpus=2 -p memory_mb=4096 -p local_gb=80 -i 
-deploy_kernel=&lt;&lt;glance_deploy_kernel_id&gt;> -i 
-deploy_ramdisk=&lt;&lt;glance_deploy_ramdisk_id&gt;&gt; -i cpu_arch=amd64 
-ironic node-update &lt;&lt;node_id&gt;&gt; add properties/capabilities="boot_mode:bios,boot_option:local"</codeblock></li>
-          <li>Execute the following command to register the port for the baremetal
-            node:<codeblock>ironic port-create -a &lt;&lt;node_mac_id&gt;&gt; --local-link-connection switch_id="&lt;&lt;switch_id&gt;&gt;" --local-link-connection port_id="&lt;&lt;switch_port&gt;&gt;" --local-link-connection switch_info="ToR" -n &lt;&lt;node_id&gt;&gt;</codeblock></li>
-          <li>Execute the following commands to create a tenant
-            network:<codeblock>neutron net-create tenant-network
-neutron subnet-create --name tenant-subnet --gateway 192.68.61.1 --allocation-pool start=192.68.61.100,end=192.68.61.200 tenant-network 192.68.61.0/24</codeblock></li>
-          <li>Execute the following command to Provision the baremetal node:
-            <codeblock>nova boot -nic</codeblock></li>
+        <ol id="ol_pbt_srf_xt">
+          <li>In the HLM node, delete the existing Nova, Ironic and Ironic client packages from the
+            HLM repo in the <codeph>/var/cache/hlm/repo/debian</codeph> directory:
+            <codeblock>rm hoscg-nova-*
+hoscg-ironic-* 
+hoscg-python-ironicclient-*</codeblock></li>
         </ol>
       </p>
+      <p> 2. Copy the new packages you downloaded in the Prerequisites to the
+          <codeph>/var/cache/hlm/repo/debian</codeph> directory. </p>
+      <p> 3. Change to the HLM repo:<codeblock>cd /var/cache/hlm/repo/debian</codeblock></p>
+      <p> 4. Execute the following command
+        <codeblock>/root/cg-hlm/dev-tools/dpkg-scanpackages --multiversion . /dev/null | gzip -9c &gt; Packages.gz</codeblock></p>
     </section>
-    <section>
-      <title>Install the Infoblox patch</title>
-      <p>
-        <ol id="ol_tzr_mbf_xt">
-          <li>Take the infoblox-baremetal.tar.gz in
-            \\10.1.192.251\Dev_NFS_Shares\CG_Installer\infoblox_patch</li>
-          <li>mkdir &lt;cloudname>/plugins</li>
-          <li>place infoblox-baremetal.tar.gz inside plugins/</li>
-          <li>untar : tar -zxvf infoblox-baremetal.tar.gz. </li>
-          <li>change infoblox-baremetal/configure.json according to the environment.</li>
-          <li>Run command - hlm plugin -c &lt;cloudname>  -n infoblox-baremetal from the plugin
-            directory</li>
-          <li>To rollback - hlm plugin -c &lt;cloudname> -n infoblox-baremetal -r</li>
-        </ol>
-      </p>
-      <p> Wiki - <xref href="https://wiki.hpcloud.net/display/HCG/HCG+Plugin+Architecture+for+2.0"
-          format="html" scope="external"
-          >https://wiki.hpcloud.net/display/HCG/HCG+Plugin+Architecture+for+2.0</xref></p>
+  <section>
+      <title>Configure Baremetal Cloud</title>
+      <ol id="ol_syf_5sg_vt">
+        <li>Log into the HLM VM.</li>
+        <li>Copy the <codeph>ironic-standalone</codeph> template from the
+            <codeph>/root/kenobi-node-configuration/dev-samples/ironic-standalone</codeph> to the
+            <codeph>/opt/share/hlm/1/topologies/</codeph> directory. <p>If you execute the
+              <codeph>hnewcloud -l</codeph> command, <codeph>ironic-standalone</codeph> is listed as
+            a templates.</p></li>
+        <li>Execute the following command to create a cloud on the baremetal
+            controller:<codeblock>hnewCloud &lt;cloudname&gt; ironic-standalone</codeblock><p>Where:
+              <codeph>&lt;cloudname></codeph> is an identifying name for the cloud and
+              <codeph>ironic-standalone</codeph> is the deployment template.</p></li>
+        <li>Edit the /root/&lt;cloudname&gt;/vars/ldap.json file to disable
+          LDAP.<codeblock>"ldap_enabled": 0</codeblock></li>
+        <li>Edit the <codeph>/root/&lt;cloudname&gt;/vars/ironic.json</codeph> file to configure
+          VLAN ranges. Specify enough ranges so that the provisioning network can be on a separate
+          VLAN than the tenant VLAN ranges.</li>
+        <li>Copy the <codeph>/root/cg-hlm/dev-tools/ilopxebootonce.py</codeph> file to the
+            <codeph>/root/&lt;cloudname></codeph> directory.</li>
+        <li>Edit the environment.json file to specify the networks for the CLM (management), CAN,
+          BM-CLM (baremetal management) networks as exposed to the HLM VM.</li>
+        <li>Configure the node-provision.json to include 3 controllers in CCN control plane and 1
+          baremetal controller (BAR) in the baremetal plane.</li>
+        <li>Execute the following command to ensure that all the controllers are configured to boot
+          from PXE.<codeblock>python ilopxebootonce.py node-provision.json</codeblock></li>
+        <li>Provision controllers with base hLinux OS through
+            cobbler:<codeblock>hprovision &lt;cloudname&gt;</codeblock><p>Where
+              <codeph>&lt;cloudname></codeph> is the name of the baremetal cloud.</p>While
+          hprovision is executing, you can follow the status by launching the Cobbler UI at
+            <codeph>http://&lt;PXE STATIC IP&gt;/cobbler_web</codeph>.</li>
+      </ol>
     </section>
-  <section>  
-  <title>Configure Baremetal Cloud</title>
-    <ol id="ol_syf_5sg_vt">
-      <li>Log into the HLM VM.</li>
-      <li>Copy the <codeph>ironic-standalone</codeph> template from the
-          <codeph>/root/kenobi-node-configuration/dev-samples/ironic-standalone</codeph> to the
-          <codeph>/opt/share/hlm/1/topologies/</codeph> directory. <p>If you execute the
-            <codeph>hnewcloud -l</codeph> command, <codeph>ironic-standalone</codeph> is listed as a
-          templates.</p></li>
-      <li>Execute the following command to create a cloud on the baremetal
-          controller:<codeblock>hnewCloud &lt;cloudname&gt; ironic-standalone</codeblock><p>Where:
-            <codeph>&lt;cloudname></codeph> is an identifying name for the cloud and
-            <codeph>ironic-standalone</codeph> is the deployment template.</p></li>
-      <li>Edit the /root/&lt;cloudname&gt;/vars/ldap.json file to disable
-        LDAP.<codeblock>"ldap_enabled": 0</codeblock></li>
-      <li>Edit the <codeph>/root/&lt;cloudname&gt;/vars/ironic.json</codeph> file to configure VLAN
-        ranges. Specify enough ranges so that the provisioning network can be on a separate VLAN
-        than the tenant VLAN ranges.</li>
-      <li>Copy the <codeph>/root/cg-hlm/dev-tools/ilopxebootonce.py</codeph> file to the
-          <codeph>/root/&lt;cloudname></codeph> directory.</li>
-      <li>Edit the environment.json file to specify the networks for the CLM (management), CAN,
-        BM-CLM (baremetal management) networks as exposed to the HLM VM.</li>
-      <li>Configure the node-provision.json to include 3 controllers in CCN control plane and 1
-        baremetal controller (BAR) in the baremetal plane.</li>
-      <li>Execute the following command to ensure that all the controllers are configured to boot
-        from PXE.<codeblock>python ilopxebootonce.py node-provision.json</codeblock></li>
-      <li>Provision controllers with base hLinux OS through
-          cobbler:<codeblock>hprovision &lt;cloudname&gt;</codeblock><p>Where
-            <codeph>&lt;cloudname></codeph> is the name of the baremetal cloud.</p>While hprovision
-        is executing, you can follow the status by launching the Cobbler UI at
-          <codeph>http://&lt;PXE STATIC IP&gt;/cobbler_web</codeph>.</li>
-    </ol>
-  </section>
     <section>
       <title>Generate Baremetal Cloud Definition</title>
       <p>Execute the following from cloud base
