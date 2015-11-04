@@ -571,7 +571,7 @@ cinder --version</codeblock></li>
         id="ol_p1c_d45_tt">
         <li>Find the line starting with GRUB_CMDLINE_LINUX= </li>
         <li>Add the following at the end of the value i.e. inside the double quotes:
-          <codeblock>vga=788 console=ttyS0,9600 earlyprint=serial,ttyS0,9600</codeblock>
+          <codeblock>vga=788 console=ttyS0,9600 earlyprintk=serial,ttyS0,9600</codeblock>
         </li>
       </ol>
       <p><b>Softlockup is observed when attempting to remove many LUNs simultaneously</b></p>
