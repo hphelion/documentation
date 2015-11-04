@@ -417,5 +417,10 @@
     </topichead>
     <!-- END USER GUIDE -->
     <topicref href="helion/documentation_updates.dita"/>
+    
+    <topichead navtitle="Glossary">
+      <mapref href="helion/HOS-glossary.ditamap" format="ditamap"/>  
+    </topichead>
+    
   </topicref>
 </map>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary//EN" "glossary.dtd">
+<glossentry id="glossentry-ansible">
+    <glossterm>Ansible</glossterm>
+    <glossdef>
+        <p>Ansible is an IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT tasks 
+        such as continuous deployments or zero downtime rolling updates.</p>
+        <!--<p>
+        Ansible’s main goals are simplicity and ease-of-use. It also has a strong focus on security and reliability, featuring a minimum 
+        of moving parts, usage of OpenSSH for transport (with an accelerated socket mode and pull modes as alternatives), and a language 
+        that is designed around auditability by humans–even those not familiar with the program.</p>
+        <p>See also <term keyref="gloss-playbooks">Ansible Playbooks</term></p>-->
+    </glossdef>
+</glossentry>

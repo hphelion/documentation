@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="tech_overview">
+  
   <title><keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version"/> : Overview</title>
+  
   <prolog>
     <metadata>
       <keywords>
         <keyword keyref="kw-hos"/>
         <keyword keyref="kw-cp"/>
       </keywords>
-    </metadata>
-    
+    </metadata>    
   </prolog>
+  
   <body>
     <!--Needs Edit-->
     <p><keyword keyref="kw-hos"/> <keyword keyref="kw-hos-version"/> is the latest OpenStack-based infrastructure-as-a-service cloud
-      platform release from HP. It is based on the OpenStack Kilo release and implements core
+      platform release from HP. It is based on the <term keyref="gloss-openstack"/> Kilo release and implements core
       services and features of Kilo while providing new installation and management features.</p>
 
     <section><title>Installation, Configuration, and Management</title>
@@ -32,7 +34,7 @@
         templates and customize from there if you wish.</p>
       <p>This installation and configuration is made possible by a new feature in <keyword keyref="kw-hos"/>
         <keyword keyref="kw-hos-version"/>, the <keyword keyref="kw-cp"/>, a set of Python scripts that consume the data
-        stored in the configuration YAML files and output Ansible variables used to configure
+        stored in the configuration YAML files and output <term keyref="gloss-ansible"/> variables used to configure
         networks, services, servers, and the other applications upon which the cloud runs.</p>
       <p>As you will read in the <keyword keyref="kw-hos"/> <keyword keyref="kw-hos-version"/> <xref
         href="input_model.dita#input_model/toc">Input Model</xref> topic, the <keyword keyref="kw-cp"/> 

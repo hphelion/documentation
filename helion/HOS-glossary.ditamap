@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+    <title>HP Helion OpenStack Glossary</title>
+    
+    <topichead navtitle="A">
+        <topicref href="glossary/ansible.dita" keys="gloss-ansible"/>
+        <!--<keydef href="glossary/ansible.dita" keys="gloss-ansible" processing-role="normal"/>-->
+    </topichead>
+     
+    <topichead navtitle="O">
+        <topicref href="glossary/openstack.dita" keys="gloss-openstack"/>
+    </topichead>
+    
+    
+</map>
+
+
+
+    
+    
