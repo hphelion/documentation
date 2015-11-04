@@ -2,7 +2,8 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_x2x_vy4_lt">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: ESX ON-Boarding Service (EON)</title>
-  <body><!--Needs Work; fnf edit on 10/27; overview needs clarification; what's an activate cluster (lower down)?-->
+  <body>
+    <!--Needs Work; fnf edit on 10/27; overview needs clarification; what's an activate cluster (lower down)?-->
     <p>The HPE Helion OpenStack 2.0 EON (ESX on boarding) service is an inventory service, which
       interacts with the VMware vCenter server, and collects available information from data
       centers, clusters, datastore, dvSwitch and portgroup details. When a cloud administrator wants
@@ -23,9 +24,9 @@
         OvsvApp nodes.</p>
       <p><image href="../../media/esx/eon_arch_diagram.png"/></p>
     </section>
-    <section><title>EON CLI Operations</title><p>The EON client CLI package provides an http-client coupled command-line tool for managing EON
-        (ESX management) services. This topic contains information about the following:<ol
-          id="ol_d1l_ygf_rt">
+    <section><title>EON CLI Operations</title><p>The EON client CLI package provides an http-client
+        coupled command-line tool for managing EON (ESX management) services. This topic contains
+        information about the following:<ol id="ol_d1l_ygf_rt">
           <li><xref href="#topic_x2x_vy4_lt/vcenter-operations" format="dita">vCenter
               Operations</xref></li>
           <li><xref href="#topic_x2x_vy4_lt/cluster-operations" format="dita">Cluster
@@ -130,7 +131,8 @@
             clusters.<codeblock># eon vcenter-delete &lt;vCenter ID></codeblock></p><p><b>Example
               Output</b>:<codeblock># eon vcenter-delete BC9DED4E-1639-481D-B190-2B54A2BF5674</codeblock></p></li>
       </ul></section>
-    <section><sectiondiv id="cluster-operations"><b>Cluster Operations</b></sectiondiv><p>This section lists the cluster operations performed in a vCenter.<note>No two clusters should
+    <section><sectiondiv id="cluster-operations"><b>Cluster Operations</b></sectiondiv><p>This
+        section lists the cluster operations performed in a vCenter.<note>No two clusters should
           have the same name across datacenters in a given vCenter.</note><ul id="ul_dvm_rlf_rt">
           <li>List clusters in a vCenter<p>Displays a list of clusters in a specific
               vCenter.<codeblock># eon cluster-list --vcenter-id &lt;vCenter ID></codeblock></p><p><b>Example
@@ -144,9 +146,10 @@
             </p></li>
         </ul></p><ul id="ul_hlw_ylf_rt">
         <li>Import cluster in a vCenter<p>Import cluster allows you to import the clusters using EON
-            CLI under the given vCenter. This operation provisions (creates) the plain shell VMs for
-            compute proxy node and Ovsvapp nodes which are configured in later stages through HLM.
-            The cluster state changes from not_imported to imported when you run the following
+            CLI under the given vCenter. This operation provisions (creates) the plain shell virtual
+            machines for compute proxy node and Ovsvapp nodes which are configured in later stages
+            through the lifecycle-manager. The cluster state changes from not_imported to imported
+            when you run the following
             command.<codeblock># eon cluster-import --vcenter-id &lt;vCenter ID> --cluster-name &lt;Cluster Name> --cluster-moid &lt;Cluster Moid></codeblock></p><p>Where:<ul
               id="ul_tzq_mmf_rt">
               <li>vCenter ID - ID of the vcenter containing the cluster.</li>
@@ -209,7 +212,8 @@ Cluster domain-c21 unimport initiated</codeblock></p></li>
 | resource_name | Cluster1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | state         | imported                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 +---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</codeblock></p></li>
-      </ul><sectiondiv id="network-operations"><b>Network Operations</b></sectiondiv><p>This process involves getting a sample network information template.<ul id="ul_u3m_t4f_rt">
+      </ul><sectiondiv id="network-operations"><b>Network Operations</b></sectiondiv><p>This process
+        involves getting a sample network information template.<ul id="ul_u3m_t4f_rt">
           <li>Get network info template<p>Saves the sample network <codeph>config. json</codeph>
               file to the mentioned file
               (NETWORK_CONF_FILENAME).<codeblock># eon get-network-info-template --filename &lt;NETWORK_CONF_FILENAME></codeblock></p><p><b>Example
