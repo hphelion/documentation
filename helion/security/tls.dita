@@ -84,8 +84,8 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
     <section><b>If you are using a FQDN:</b>
       <ol id="ol_ngj_qfq_rt">
         <li> Create or obtain a certificate to match the domain name you are going to use. </li>
-        <li> Copy it to <b>helion/my_cloud/config/tls/certs/</b>
-        </li>
+        <li> Copy the certificate (containing both public and private keys) to
+            <b>helion/my_cloud/config/tls/certs/ </b></li>
         <li id="private1">Replace the contents of
             <b>~/scratch/ansible/next/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</b> with
           the new CA certificate chain file (if applicable)</li>
