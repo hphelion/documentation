@@ -18,7 +18,7 @@
       deployer_name: msgaas_deployer_01   
       deployer_security_group: default
       deployer_image: hlinux_msgaas
-      deployer_ext_net: ext-net
+      deployer_ext_net_id: ext-net
       deployer_cname: CN name used to generate the certificate file.   
       #####          
   ...
@@ -81,8 +81,8 @@
           </dd>
         </dlentry>
         <dlentry>
-          <dt>deployer_ext_net (optional)</dt>
-          <dd>The external network name. Default value: ext-net</dd>
+          <dt>deployer_ext_net_id (optional)</dt>
+          <dd>The external network name. Default value: ext-net <note>This must be specified in the configuration file, but the value is not currently read- only the default is used.</note></dd>
         </dlentry>
         <dlentry>
           <dt>deployer_cname (optional)</dt>
@@ -108,9 +108,8 @@
         <dlentry>
           <dt>auth_url</dt>
           <dd>This URL can be found in Horizon at: Project &gt; Compute &gt; Access &amp; Security
-            &gt; API Access. Copy the Service Endpoint URL for the Identity Service. Note that this
-            must be <codeph>https</codeph>, not simply <codeph>http</codeph>. This must be the
-              <b>internal</b>, not the <i>admin</i> or <i>public</i> endpoints.</dd>
+            &gt; API Access. Copy the Service Endpoint URL for the Identity Service.  This must be
+            the <b>internal</b>, not the <i>admin</i> or <i>public</i> endpoints.</dd>
         </dlentry>
         <dlentry>
           <dt>project_name</dt>

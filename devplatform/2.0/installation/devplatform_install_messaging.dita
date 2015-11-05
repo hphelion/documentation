@@ -78,14 +78,16 @@ stack@msgaas-deployer:~/helion/my_cloud/definition$ cd data
 stack@msgaas-deployer:~/helion/my_cloud/definition/data$ nano network_groups.yml </codeblock></li>
             <li>Using Git, persist these changes. This information is required for the Pre-Install
               playbook, which is executed later in this installation
-              process.<codeblock>stack@msgaas-deployer:/helion/my_cloud/definition/data/pass-through$ cd/helion
+              process.<codeblock>stack@msgaas-deployer:/helion/my_cloud/definition/data/pass-through$ cd ~/helion
 stack@msgaas-deployer:~/helion$ git commit -a -m "Configured Deployment Model"</codeblock></li>
           </ol></li>
         <li>Run the Playbooks <note type="important">After each playbook runs, both
               <codeph>unreachable</codeph> and <codeph>failed</codeph> should be zero (0). This
             indicates success. If not, check the output for error messages, address the errors, and
             try running the playbook again.</note><ol>
-            <li> Run the Pre-Install Playbook<note> If the External Network is not named
+            <li> Run the Pre-Install Playbook
+              <note>For the SVC network, the only valid name is "SVC".</note>
+              <note> If the External Network is not named
                   <codeph>ext-net</codeph>, update the value of the <b>external_net_name</b>
                 variable in
                   <codeph>~/helion/hos/ansible/roles/openstack-operations/defaults/main.yml</codeph>
@@ -170,8 +172,8 @@ hosts/verb_hosts site.yml"
             <li>Run the Boot Infrastructure Playbook <note>This step takes approximately 5
                 minutes.</note> Once this is complete, all in-cloud infrastructure (VMs, Networks,
               Routers, Floating IPs, ports, security groups, etc) will have been created.
-                <codeblock>stack@msgaas-deployer:~/helion/hos/ansible$ cd~/scratch/ansible/next/hos/ansible
-stack@msgaas-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -i hosts/localhosthlm-boot-infra.yml </codeblock><p>Successful
+                <codeblock>stack@msgaas-deployer:~/helion/hos/ansible$ cd ~/scratch/ansible/next/hos/ansible
+stack@msgaas-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -i hosts/localhost hlm-boot-infra.yml </codeblock><p>Successful
                 output should look similar to the
               following:</p><codeblock>PLAY RECAP ********************************************************************
 openstack-operations | create_instance | Create controlplane instance - 227.92s
@@ -236,4 +238,5 @@ localhost                  : ok=34   changed=15   unreachable=0    failed=0   </
       </section>
     
   </body>
+  <related-links><link scope="external" format="html" href="http://python-cueclient.readthedocs.org/en/latest/index.html" ><linktext>python-cueclient documentation</linktext></link></related-links>
 </topic>
