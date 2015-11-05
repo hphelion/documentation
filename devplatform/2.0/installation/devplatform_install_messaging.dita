@@ -34,15 +34,55 @@
         <li>Download and install the Messaging service
           package.<codeblock>(dev_platform_installer-devplat_installer-1.0.0)stack@hlm:~$ openstack --os-cloud mycloud hdpi messaging 
 
-install --package &lt;provide ID of the messaging service: for example, wscatalog.2761></codeblock></li>
+install --package &lt;provide ID of the messaging service: for example, wscatalog.2761>
+((Other method: If the user has a CSU, they would run the same cmd with --path instead of --package to install a CSU that they have downloaded locally: install --path &lt;path to locally downloaded CSU>))</codeblock></li>
         
-        <li>Launch the Messaging Deployer VM using the HDPI. <note>When the launch command indicates
-            that it finished and provides the IP address for the Messaging Deployer VM, SSH into the
-            Messaging Deployer VM and look for the <codeph>/home/stack/helion</codeph> directory.
-            Once that directory has been created and populated, continue to the next step. Do
-              <b>not</b> attempt to continue until the directory has been populated; this may take a
-            few minutes after the launch command indicates that it has completed.
-          </note><codeblock>(dev_platform_installer-devplat_installer-1.0.0)stack@hlm:~$ openstack --os-cloud mycloud hdpi messaging launch </codeblock></li>
+        <li>Launch the Messaging Deployer VM using the HDPI.  ((Put some information on  what the
+          user gets back at the command line- paste in the returned text, highlight the IP address
+          that the user needs to grab))<note>When the launch command indicates that it finished and
+            provides the IP address for the Messaging Deployer VM, SSH into the Messaging Deployer
+            VM and look for the <codeph>/home/stack/helion</codeph> directory. Once that directory
+            has been created and populated, continue to the next step. Do <b>not</b> attempt to
+            continue until the directory has been populated; this may take a few minutes after the
+            launch command indicates that it has completed.
+          </note><codeblock>(dev_platform_installer-devplat_installer-1.0.0)stack@hlm:~$ openstack --os-cloud mycloud hdpi messaging launch </codeblock>
+        <p>This will return output similar to the following:</p>
+        <codeblock>=show the server===========================================
++--------------------------------------+------------------------------------------------------------------------------------+
+| Field                                | Value                                                                              |
++--------------------------------------+------------------------------------------------------------------------------------+
+| OS-EXT-AZ:availability_zone          | nova                                                                               |
+| OS-EXT-SRV-ATTR:host                 | helion-cp1-comp0006-mgmt                                                           |
+| OS-EXT-SRV-ATTR:hypervisor_hostname  | helion-cp1-comp0006-mgmt                                                           |
+| OS-EXT-SRV-ATTR:instance_name        | instance-00000016                                                                  |
+| OS-EXT-STS:power_state               | 1                                                                                  |
+| OS-EXT-STS:task_state                | None                                                                               |
+| OS-EXT-STS:vm_state                  | active                                                                             |
+| OS-SRV-USG:launched_at               | 2015-11-04T22:45:43.000000                                                         |
+| OS-SRV-USG:terminated_at             | None                                                                               |
+| accessIPv4                           |                                                                                    |
+| accessIPv6                           |                                                                                    |
+| addresses                            | <ph outputclass="codehighlight">SVC=10.241.145.12</ph>  (( highlight this ))                                                                 |
+| config_drive                         |                                                                                    |
+| created                              | 2015-11-04T22:44:29Z                                                               |
+| flavor                               | m1.medium (3)                                                                      |
+| hostId                               | 8d1c5e76b6cbc4616ee9ee1ba4d66451f921ac5e4395b4996c04aaa0                           |
+| id                                   | 8fb9334e-ea13-4a1e-aa8c-bd20148f7a42                                               |
+| image                                | msgaas-1.0.0-rc5_cloud-1.0.20151029T002941Z (4b1ea7c6-24a6-4ae7-9456-e65130de51f9) |
+| key_name                             | msgaas                                                                             |
+| name                                 | messaging_deployer                                                                 |
+| os-extended-volumes:volumes_attached | []                                                                                 |
+| progress                             | 0                                                                                  |
+| project_id                           | 02c783d40f7b4d969a9b6847c07e5df2                                                   |
+| properties                           |                                                                                    |
+| security_groups                      | [{u'name': u'default'}]                                                            |
+| status                               | ACTIVE                                                                             |
+| updated                              | 2015-11-04T22:45:43Z                                                               |
+| user_id                              | c241938bec504ed6ac284e432cff32df                                                   |
++--------------------------------------+------------------------------------------------------------------------------------+
+=done======================================================
+Scripts complete.
+Completed launching messaging</codeblock></li>
         <li>Log in to and Initialize the Messaging Deployer VM<ol id="ol_nr4_nqr_wt">
             <li>SSH into the Messaging Deployer VM using the IP address provided after the launch
               command completed.</li>
@@ -62,13 +102,14 @@ stack@messaging-deployer:~/helion$ git commit -a -m "Add MSGaaS Default Model"</
               in your
               environment.<codeblock># Open the cloudConfig.yml file and provide appropriate NTP/DNS server IP addresses
 # If you are not sure, use the IP addresses of the HP Helion OpenStack control plane nodes
+# The NTP and DNS servers must be reachable from your HP Helion OpenStack SVC network
 
 stack@messaging-deployer:~/helion$ cd my_cloud/definition/
 stack@messaging-deployer:~/helion/my_cloud/definition$ ls
 cloudConfig.yml  data
 stack@messaging-deployer:~/helion/my_cloud/definition$ nano cloudConfig.yml    # this is the file where the changes need to be made</codeblock></li>
             <li>Navigate to and edit the <codeph>network_groups.yml</codeph> file.<note>This step is
-                optional. Perform this step only in support ot TLS (Cue API public endpoint URL with
+                optional. Perform this step only in support of TLS (Cue API public endpoint URL with
                 SSL support
               (https))</note><codeblock># comment out 'external-name:' field, 
 # add 'msgaas-cert'for'cert-file:' field,
@@ -80,6 +121,7 @@ stack@messaging-deployer:~/helion/my_cloud/definition/data$ nano network_groups.
               playbook, which is executed later in this installation
 
               process.<codeblock>stack@messaging-deployer:/helion/my_cloud/definition/data/pass-through$ cd ~/helion
+stack@messaging-deployer:~/helion$ git add -A # Required if you copied a new cert file
 stack@messaging-deployer:~/helion$ git commit -a -m "Configured Deployment Model"</codeblock></li>
 
           </ol></li>
@@ -112,15 +154,18 @@ openstack-operations | preinstall | Set Nova Quotas --------------------- 1.77s
 -------------------------------------------------------------------------------
 Total: ----------------------------------------------------------------- 27.45s
 localhost                  : ok=20   changed=14  <b> unreachable=0 </b>  <b> failed=0 </b></codeblock></li>
-            <li>Configure the Input Model for TLS Support (optional)<note>This step is required to
-                enable access to the Cue public endpoint URL with SSL support (https). The
-                deployment model <xref href="#topic_t3w_fnh_ts" format="dita">customization</xref>
-                performed previously must have included the TLS configuration step.</note><ol>
-            <li>Copy your signed certificate into
-                <codeph>~/helion/my_cloud/config/tls/certs/msgaas-cert</codeph></li>
-            <li>Using Git, commit the
+            <li>Configure the Input Model for TLS Support (optional; this step is only required for
+              IP-based TLS configuration; this step is not required if name-based TLS is
+                used.)<note>This step is required to enable access to the Cue public endpoint URL
+                with SSL support (https). The deployment model <xref href="#topic_t3w_fnh_ts"
+                  format="dita">customization</xref> performed previously must have included the TLS
+                configuration step.</note><ol>
+                <li>Copy your signed certificate into
+                    <codeph>~/helion/my_cloud/config/tls/certs/msgaas-cert</codeph></li>
+                <li>Using Git, commit the
                   changes.<codeblock>stack@messaging-deployer:~/helion/hos/ansible$ git add -A
-stack@messaging-deployer:~/helion/hos/ansible$ git commit -a -m "Configured Deployment Model"</codeblock></li></ol></li>
+stack@messaging-deployer:~/helion/hos/ansible$ git commit -a -m "Configured Deployment Model"</codeblock></li>
+              </ol></li>
             <li>Run the Config Processor Playbook
                   <codeblock>stack@messaging-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost config-processor-run.yml </codeblock><p><note>If
                   you have performed a full installation previously, you <b>must</b> remove the Cue
