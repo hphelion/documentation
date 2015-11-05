@@ -14,7 +14,7 @@
       auth_url: https:
       project_name: admin
       username: admin
-      password: 
+      password:  
     <xref href="cloud_messaging.dita#cloudMessaging">messaging</xref>:   
       deployer_key: msgaas
       deployer_flavor: 4
