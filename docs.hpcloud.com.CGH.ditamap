@@ -98,8 +98,8 @@
     <topichead navtitle="Administration" locktitle="yes">
       <topicref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.dita"
         navtitle="KVM Region Administrator Guide (PDF)" locktitle="yes"/>
-      <topicref href="CarrierGrade/AdminGuideKVM/CGH-2-KVM-Admin.ditamap"
-        navtitle="KVM Region Administrator Guide (On-Line)" locktitle="yes" format="ditamap"/>
+      <!--<topicref href="CarrierGrade/AdminGuideKVM/CGH-2-KVM-Admin.ditamap"
+        navtitle="KVM Region Administrator Guide (On-Line)" locktitle="yes" format="ditamap"/>-->
       <topicref href="CarrierGrade/AdminGuide/Logging/CHG-2-logging-overview.dita"
         navtitle="Centralized Logging" locktitle="yes"/>
       <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2-backup-restore.dita" toc="yes"
