@@ -108,7 +108,7 @@
           </ul></li>
       </ul>
     </section>
-    <section id="introduction"><title>Introduction Kilo</title>
+    <section id="introduction"><title>Introduction</title>
       <p>This document describes how the HPE Helion OpenStack input model can be used to define and
         configure the cloud.</p>
       <p>HPE Helion OpenStack ships Kilo with a set of example input models that can be used as starting
