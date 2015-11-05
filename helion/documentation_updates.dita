@@ -26,6 +26,13 @@
             </thead>
             <tbody>
               <row>
+                <entry>11/05/2015</entry>
+                <entry>Security - TLS </entry>
+                <entry>Amended  Private CA FQDN certificates steps to include copying both keys
+                    (<xref href="security/tls.dita#topic_yym_nps_4t/ol_ngj_qfq_rt"
+                  >Link</xref>)</entry>
+              </row>
+              <row>
                 <entry>11/03/2015</entry>
                 <entry>Block Storage </entry>
                 <entry>Configuration Troubleshooting - Added a new page containing troubleshooting
