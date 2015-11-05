@@ -15,104 +15,127 @@
         <li>A SSH public and private keypair, uploaded to OpenStack, configured in clouds.yml, and
           used as ssh keys on the deployer machine.</li>
         <li>You must know the NTP server and DNS server IP addresses.</li>
+        <li>You must know the proxy values and ports required for accessing external services such
+          as Github.com, Stormrunner, or Dockerhub.</li>
         <li>You must have an account on <xref href="http://www.github.com" format="html"
             scope="external">Github</xref>.</li>
       </ul>
     </section>  
     
     <section><title>Installation</title>
-      <ol><li>Create an instance of the Deployer VM.<ol>
-            <li>Source the Virtual
-              Environment.<codeblock>source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate</codeblock></li>
+      <ol>
+        <li>SSH into the HP Helion OpenStack deployer. (This is the same location where the HDPI has
+          been installed.)</li>
+        <li>Upload an SSH keypair to Nova to be used by the HPE Helion Code Engine
+          Deployer.<pre>source ./service.osrc
+nova keypair-add --pub-key ~/.ssh/id_rsa.pub helionce-shared</pre></li>    <li>Ensure all OS_ variables are unset. Run <codeblock>env | grep OS_ </codeblock> and then
+            <codeph>unset</codeph> any variables which appear in the list of results. </li>
+        <li>Create an instance of the Deployer VM.<ol>
+            <li>Source the Virtual Environment.
+              <!-- <- is this necessary? check with Cue team--><codeblock>source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate</codeblock></li>
             <li>Create the instance.
-              <codeblock>openstack --debug --os-cloud hce hdpi helionce install
+              <!--<- this may need to be replaced for sideloading--><codeblock>openstack --os-cloud hce hdpi helionce install
 openstack hdpi helionce launch --os-cloud hce
 deactivate</codeblock></li>
-          </ol></li>
-        <li>List all available machines to verify that the HPE Helion Code Engine VM is running.
-          <codeblock>source ./services.osrc
-nova list</codeblock>You should see an instance named
-            <codeph>helionce_deployer</codeph>. Make a note of its IP address.</li>
-      <li>Log in to and initialize the
-          VM.<codeblock>ssh -i helionce-shared stack@&lt;IP ADDRESS FROM PREVIOUS STEP> # helionce_deployer, use the address from the previous step
+          </ol><note>For detailed troubleshooting, turn on the debug option and run the command
+            again:
+            <codeblock>openstack --debug --os-cloud hce hdpi helionce install</codeblock></note></li>
+        <li>List all available machines to verify that the HPE Helion Code Engine VM is running. You
+          should see an instance named <codeph>helionce_deployer</codeph>. Make a note of its IP
+          address.<codeblock>source ./service.osrc
+nova list</codeblock></li>
+        <li>Log in to and initialize the VM. <note>Ignore the TASK/msg message that appears in the
+            output. Do not run the playbook at this time; that playbook must be run later in the
+            installation
+            process.</note><codeblock>ssh -i helionce-shared stack@&lt;IP ADDRESS FROM PREVIOUS STEP> 
 ...
 stack@helionce-deployer:~$ ls
-helionce-1.0.0-rc1
+helionce-1.0.0
 ...
-stack@helionce-deployer:~$ cd helionce-1.0.0-rc1/
-stack@helionce-deployer:~/helionce-1.0.0-rc1$ ./helionci-init.bash
-...</codeblock></li>
-      <li>Copy the helionce deployment
-          model.<codeblock>stack@helionce-deployer:~/helionce-1.0.0-rc1$ cd ~/helion/
+stack@helionce-deployer:~$ cd helionce-1.0.0/
+stack@helionce-deployer:~/helionce-1.0.0$ ./helionce-init.bash
+...</codeblock><note>This
+            process can take a few minutes.  When the initialization has completed, ensure both
+              <codeph>unreachable</codeph> and <codeph>failed</codeph> are zero (0). This indicates
+            success. If not, check the output for error messages, address the errors, and try
+            running the command again.</note></li>
+        <li>Copy the helionce deployment model.
+          <codeblock>stack@helionce-deployer:~/helionce-1.0.0$ cd ~/helion/
 stack@helionce-deployer:~/helion$ cp -r examples/helionce/* my_cloud/definition/
 stack@helionce-deployer:~/helion$ cp ~/platform-pass-through.yml my_cloud/definition/data/pass-through/platform-pass-through.yml</codeblock></li>
         <li>Using Git, persist these changes. This information is required for playbooks executed
           later in this installation
           process.<codeblock>stack@helionce-deployer:~/helion$ git add -A
 stack@helionce-deployer:~/helion$ git commit -a -m "Add HelionCE default model"</codeblock></li>
-<li>Create a Github OAuth Application.
-<ol>
-  <li>Create a new application at <xref href="https://github.com/settings/applications/new" format="html" scope="external">https://github.com/settings/applications/new</xref></li>
-  <li>Include the following values:     <table frame="all" rowsep="1" colsep="1">
-    <tgroup cols="2">
-      <colspec colname="c1" colnum="1" colwidth="1*"/>
-      <colspec colname="c2" colnum="2" colwidth="2.66*"/>
-            <thead>
-        <row>
-          <entry>Field</entry>
-          <entry>Value</entry>
-                  </row>
-      </thead>
-      <tbody>
-        <row>
-          <entry>Application name</entry>
-          <entry>Helion Code Engine</entry>
-        </row>
-        <row>
-          <entry>Homepage URL </entry>
-     
-          <entry>http://myhelionce/</entry>
-        </row>
-        <row>
-          <entry>Authorization callback URL</entry>
-          <entry>http://myhelionce/auth/github/callback</entry>
-        </row>
-      </tbody>
-    </tgroup>
-  </table></li>
-  <li>Register the application.</li>
-  <li>Make a note of its <codeph>Client ID</codeph> and <codeph>Client Secret</codeph>.</li>
-</ol></li>   
-        <li>Populate the server addresses.<ol>
+        <li>Create a Github OAuth Application. <ol>
+            <li>Create a new application at <xref
+                href="https://github.com/settings/applications/new" format="html" scope="external"
+                >https://github.com/settings/applications/new</xref></li>
+            <li>Include the following values: <table frame="all" rowsep="1" colsep="1">
+                <tgroup cols="2">
+                  <colspec colname="c1" colnum="1" colwidth="1*"/>
+                  <colspec colname="c2" colnum="2" colwidth="2.66*"/>
+                  <thead>
+                    <row>
+                      <entry>Field</entry>
+                      <entry>Value</entry>
+                    </row>
+                  </thead>
+                  <tbody>
+                    <row>
+                      <entry>Application name</entry>
+                      <entry>Helion Code Engine</entry>
+                    </row>
+                    <row>
+                      <entry>Homepage URL </entry>
+                      <entry>http://myhelionce/</entry>
+                    </row>
+                    <row>
+                      <entry>Authorization callback URL</entry>
+                      <entry>http://myhelionce/auth/github/callback</entry>
+                    </row>
+                  </tbody>
+                </tgroup>
+              </table></li>
+            <li>Register the application.</li>
+            <li>Make a note of its <codeph>Client ID</codeph> and <codeph>Client
+              Secret</codeph>.</li>
+          </ol></li>
+        <li>Return to the terminal window. This process populates the server addresses.<ol>
             <li>Navigate to and open the <codeph>kickstart.yml</codeph>
               file<codeblock>stack@helionce-deployer:~/helion$ vim ~/helion/my_cloud/definition/data/pass-through/kickstart.yml</codeblock></li>
             <li>Update the following values in the
               file:<codeblock>github_client_id: &lt;the Client ID from the Github application you created in an earlier step>
 github_client_secret: &lt;the Client Secret from the Github application you created in an earlier step></codeblock></li>
-            <li>If your installation uses http proxies, configure
-              them.<codeblock>https_proxy: "https://&lt;http proxy hostname>:&lt;http proxy port&gt;/"
-http_proxy: "http://&lt;https proxy hostname>:&lt;https proxy port>/"
-use_proxy: true</codeblock></li>
-            <li>If your installation does NOT use http proxies,
-              set<codeblock>use_proxy: false</codeblock></li>
+            <li>If your installation requires http proxies for access to services such as
+              Github.com, Dockerhub, or Stormrunner, configure the proxy
+              values.<codeblock>https_proxy: "https://&lt;http proxy hostname>:&lt;http proxy port&gt;/"
+http_proxy: "http://&lt;https proxy hostname>:&lt;https proxy port>/"</codeblock></li>
+            <li>If your installation will be using an ALS cluster which does not require a proxy,
+              set the <codeph>use_proxy </codeph>flag to False. This is likely if your ALS cluster
+              is in the same cloud as the HPE Helion Code Engine
+              service.<codeblock>use_proxy: false</codeblock></li>
             <li>Save the file and exit.</li>
             <li>Open the <codeph>cloudConfig.yml
               </codeph>file.<codeblock>stack@helionce-deployer:~/helion$ vim ~/helion/my_cloud/definition/cloudConfig.yml</codeblock></li>
             <li>Update the values for the <b>nameservers</b> and <b>NTP</b> servers, save the file
-              and exit.</li>
+              and
+              exit.<!-- <- will receive updated commands from Mark Mark today--><codeblock>ntp-servers: 
+  - <i>&lt;IP of your ntp-server></i>
+nameservers: 
+  - <i>&lt;IP of your Nameserver></i></codeblock></li>
           </ol></li>
         <li>Using Git, commit the changes. This information is required for playbooks executed later
           in this installation
           process.<codeblock>stack@helionce-deployer:~/helion$ git commit -a -m "Configured Deployment Model" </codeblock></li>
-        
-      <li>Run the Playbooks <note type="important">At the end of each playbook, ensure both
+        <li>Run the Playbooks <note type="important">At the end of each playbook, ensure both
               <codeph>unreachable</codeph> and <codeph>failed</codeph> are zero (0). This indicates
-            success. If not, check the output for error messages, address the errors, and try
-            running the playbook again.</note><ol>
+            success. If not, check the output for error messages, address the errors, add the Debug
+            option (-vvv) to the command line, and run the playbook again.</note><ol>
             <li> Run the Pre-Installation Playbook
               <codeblock>stack@helionce-deployer:~/helion$ source ~/service.osrc
 stack@helionce-deployer:~/helion$ cd hos/ansible/
-stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -vvv -i hosts/localhost hlm-pre-install.yml</codeblock>Successful
+stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost hlm-pre-install.yml</codeblock>Successful
               output will look similar to the
               following:<codeblock>PLAY RECAP ********************************************************************
 openstack-operations | preinstall | Create service ports ---------------- 5.14s
@@ -129,7 +152,7 @@ openstack-operations | preinstall | Set Nova Quotas --------------------- 1.77s
 Total: ----------------------------------------------------------------- 27.45s
 localhost                  : ok=20   changed=14  <b> unreachable=0 </b>   <b>failed=0 </b> </codeblock></li>
             <li>Run the Config Processor Play
-              <codeblock>stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -vvv -i hosts/localhost config-processor-run.yml -e encrypt="" -e rekey=""</codeblock>Successful
+              <codeblock>stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost config-processor-run.yml -e encrypt="" -e rekey=""</codeblock>Successful
               output will look similar to the
               following:<codeblock>PLAY RECAP ******************************************************************** 
 config-processor | run-config-processor | Run Configuration Processor over the given cloud configuration --- 2.44s
@@ -147,8 +170,10 @@ Total: ------------------------------------------------------------------ 7.99s
 localhost                  : ok=21   changed=14   <b>unreachable=0    failed=0 </b> </codeblock></li>
             <li>Run the Ready Deployment Playbook
                 <codeblock>stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock><p>Successful
-                output should look similar to the following.
-                </p><codeblock>PLAY RECAP ******************************************************************** 
+                output should look similar to the following.  <note>Ignore the TASK/msg message that
+                  appears in the output. Do not run the playbook at this time; that playbook must be
+                  run later in the installation
+              process.</note></p><codeblock>PLAY RECAP ******************************************************************** 
 git-operations | _assemble-working-directory | Assemble scratch content --- 0.73s
 config-processor | configure | Sync ansible vars for cloud deployment --- 0.54s
 config-processor | configure | Sync ansible vars for cloud deployment --- 0.49s
@@ -161,10 +186,9 @@ config-processor | configure | Copy ansible hosts file for cloud deployment (ver
 config-processor | configure | Copy hosts.hf for osconfig playbooks ----- 0.22s
 -------------------------------------------------------------------------------
 Total: ------------------------------------------------------------------ 5.96s
-localhost                  : ok=20   changed=11  <b> unreachable=0    failed=0</b></codeblock><note>Ignore
-                the TASK/msg message that appears in the output. Do not run the playbook at this
-                time; that playbook must be run later in the installation
-              process.</note><codeblock>TASK: [git-operations | ready-deployment-tree-help | Tell the user what to expect] *** 
+localhost                  : ok=20   changed=11  <b> unreachable=0    failed=0</b>
+
+TASK: [git-operations | ready-deployment-tree-help | Tell the user what to expect] *** 
 ok: [localhost] => {
     "msg": "The directory /home/stack/scratch/ansible/next/hos/ansible contains a prepared ansible tree ready to run your deployment. You should cd into that directory and run: ansible-playbook -i hosts/verb_hosts site.yml"
 }</codeblock></li>
@@ -172,7 +196,7 @@ ok: [localhost] => {
                 minutes.</note> Once this is complete, all in-cloud infrastructure (VMs, Networks,
               Routers, Floating IPs, ports, security groups, etc) will have been created.
               <codeblock>stack@helionce-deployer:~/helion/hos/ansible$ cd ~/scratch/ansible/next/hos/ansible
-stack@helionce-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -vvv -i hosts/localhost hlm-boot-infra.yml</codeblock>Successful
+stack@helionce-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -i hosts/localhost hlm-boot-infra.yml</codeblock>Successful
               output will look similar to the
               following:<codeblock>PLAY RECAP ********************************************************************
 openstack-operations | create_instance | Create controlplane instance - 227.92s
@@ -188,9 +212,8 @@ openstack-operations | create_security_groups | Create other security groups rul
 -------------------------------------------------------------------------------
 Total: ---------------------------------------------------------------- 471.97s
 localhost                  : ok=35   changed=19   <b>unreachable=0  </b>  <b>failed=0</b></codeblock></li>
-            <li>Run the "Site" or Deployment Playbook <note>This step takes approximately 10 to 15
-                minutes.
-              </note><codeblock>stack@helionce-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -i hosts/verb_hosts site.yml -vvvv
+            <li>Run the Site Playbook <note>This step takes approximately 10 to 15 minutes.
+              </note><codeblock>stack@helionce-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -i hosts/verb_hosts site.yml
 ...
 PLAY [HELION-CI-WEBUX[0]] *****************************************************
 TASK: [debug msg="Congratulations on installing Helion Code Engine!"] *********
@@ -204,9 +227,17 @@ ok: [hci-helionci-ccp-c1-m1-mgmt] => {
     "msg": "Browse to the web site at http://10.241.26.126:80"
 }
 ...</codeblock></li>
-            <li>Make a note of the IP address in the final messages from the log. This is the web
-              site you will want to access.</li>
-          </ol></li>
+            <li>Make a note of the IP address and port provided in the final messages from the log.
+              This is the web site you will want to access.</li></ol></li>
+            <li>Return to the Github application you created earlier.
+              <ol>
+            <li>Update the values in  the <b>Homepage URL</b> and <b>Authorization Callback URL</b>
+              fields based on the IP Address and Port provided by the Site Playbook. You will be
+              replacing the placeholder string <codeph>myhelionce</codeph>. For example:<image
+                placement="break" href="../../../media/ce_install_config.png" id="image_hzs_pnn_xt"
+              /></li>
+            <li/>
+              </ol></li>
       </ol></section>
        
   </body>
