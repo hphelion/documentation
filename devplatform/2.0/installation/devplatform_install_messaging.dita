@@ -37,17 +37,17 @@
 install --package &lt;provide ID of the messaging service: for example, wscatalog.2761>
 ((Other method: If the user has a CSU, they would run the same cmd with --path instead of --package to install a CSU that they have downloaded locally: install --path &lt;path to locally downloaded CSU>))</codeblock></li>
         
-        <li>Launch the Messaging Deployer VM using the HDPI.  ((Put some information on  what the
-          user gets back at the command line- paste in the returned text, highlight the IP address
-          that the user needs to grab))<note>When the launch command indicates that it finished and
-            provides the IP address for the Messaging Deployer VM, SSH into the Messaging Deployer
-            VM and look for the <codeph>/home/stack/helion</codeph> directory. Once that directory
-            has been created and populated, continue to the next step. Do <b>not</b> attempt to
-            continue until the directory has been populated; this may take a few minutes after the
-            launch command indicates that it has completed.
-          </note><codeblock>(dev_platform_installer-devplat_installer-1.0.0)stack@hlm:~$ openstack --os-cloud mycloud hdpi messaging launch </codeblock>
-        <p>This will return output similar to the following:</p>
-        <codeblock>=show the server===========================================
+        <li>Launch the Messaging Deployer VM using the
+            HDPI.<!-- ((Put some information on what the user gets back at the command line- paste in the returned text, highlight the IP address that the user needs to grab))--><note>When
+            the launch command indicates that it finished and provides the IP address for the
+            Messaging Deployer VM, SSH into the Messaging Deployer VM and look for the
+              <codeph>/home/stack/helion</codeph> directory. Once that directory has been created
+            and populated, continue to the next step. Do <b>not</b> attempt to continue until the
+            directory has been populated; this may take a few minutes after the launch command
+            indicates that it has completed.
+            </note><codeblock>(dev_platform_installer-devplat_installer-1.0.0)stack@hlm:~$ openstack --os-cloud mycloud hdpi messaging launch  </codeblock><p>This
+            will return output similar to the following:
+          </p><codeblock>=show the server===========================================
 +--------------------------------------+------------------------------------------------------------------------------------+
 | Field                                | Value                                                                              |
 +--------------------------------------+------------------------------------------------------------------------------------+
@@ -128,12 +128,12 @@ stack@messaging-deployer:~/helion$ git commit -a -m "Configured Deployment Model
         <li>Run the Playbooks <note type="important">After each playbook runs, both
               <codeph>unreachable</codeph> and <codeph>failed</codeph> should be zero (0). This
             indicates success. If not, check the output for error messages, address the errors, and
-            try running the playbook again.</note><ol>
-            <li> Run the Pre-Install Playbook
-              <note>For the SVC network, the only valid name is "SVC".</note>
-              <note> If the External Network is not named
-                  <codeph>ext-net</codeph>, update the value of the <b>external_net_name</b>
-                variable in
+            try running the playbook again.</note><note>If more detailed output is desired, add the
+            debug option (-vvv) or verbose debug option (-vvvv) to any ansible playbook call.
+            (ansible-playbook)</note><ol>
+            <li> Run the Pre-Install Playbook <note>For the SVC network, the only valid name is
+                "SVC".</note><note> If the External Network is not named <codeph>ext-net</codeph>,
+                update the value of the <b>external_net_name</b> variable in
                   <codeph>~/helion/hos/ansible/roles/openstack-operations/defaults/main.yml</codeph>
                 to the correct
                 value.</note><codeblock>stack@messaging-deployer:~/helion$ source ~/user.osrc
@@ -236,11 +236,10 @@ openstack-operations | create_security_groups | Create other security groups rul
 -------------------------------------------------------------------------------
 Total: ---------------------------------------------------------------- 471.97s
 localhost                  : ok=35   changed=19   <b>unreachable=0</b>    <b>failed=0</b></codeblock></li>
-            <li>Run the "Site" or Deployment Playbook <note type="caution">Unlike all the previous
-                ansible plays, the inventory file supplied to this play is
-                  <codeph>hosts/verb_hosts</codeph> and not
-                <codeph>hosts/localhost</codeph></note><note>This step takes approximately 10 to 15
-                minutes.
+            <li>Run the Site Playbook <note type="caution">Unlike all the previous ansible plays,
+                the inventory file supplied to this play is <codeph>hosts/verb_hosts</codeph> and
+                not <codeph>hosts/localhost</codeph></note><note>This step takes approximately 10 to
+                15 minutes.
               </note><codeblock>stack@messaging-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
               Successful output should look similar to the following:<note> If this playbook does
                 not run successfully, run it again before trying any more advanced
@@ -260,13 +259,17 @@ Total: ---------------------------------------------------------------- 611.95s
 msgaas-msgaas-ccp-c1-m1-mgmt : ok=377  changed=190  unreachable=0    failed=0   
 msgaas-msgaas-ccp-c1-m2-mgmt : ok=381  changed=194  unreachable=0    failed=0   
 msgaas-msgaas-ccp-c1-m3-mgmt : ok=382  changed=196  unreachable=0    failed=0   
-localhost                  : ok=34   changed=15   unreachable=0    failed=0   </codeblock></li></ol></li></ol></section>
-    <section><title>Verifying the Installation</title>
+localhost                  : ok=34   changed=15   unreachable=0    failed=0   </codeblock></li>
+          </ol></li></ol></section>
+    <section><title>Verifying the Installation</title><p>If you have not configured TLS, you can run a basic
+          verification command to test the installation. </p>
       <ol>
-           <li>If you have not configured TLS, you can run a basic verification command to test the
-          installation. Since you have not yet created any clusters, this list of clusters will be
-          empty, but it should also not return any error messages.
-            <codeblock>stack@messaging-deployer:~/scratch/ansible/next/hos/ansible$ /opt/stack/service/cueclient/venv/bin/openstack message-broker cluster list</codeblock><note>If
+        <li>Determine the internal endpoint for the Messaging
+          API.<codeblock>export OS_ENDPOINT_TYPE=internalURL
+export OS_INTERFACE=internal</codeblock></li>
+           <li>List all clusters. <note>Since you have not yet created any clusters, this list of
+            clusters will be empty, but it should execute without returning any error messages.
+            </note><codeblock>stack@messaging-deployer:~/scratch/ansible/next/hos/ansible$ /opt/stack/service/cueclient/venv/bin/openstack message-broker cluster list</codeblock><note>If
               <codeph>ERROR: openstack Unauthorized (HTTP 401)</codeph> is received when trying to
             communicate with Cue (API), it is most likely that the Cue Keystone user has a different
             password than what was configured in cue.conf. This is usually caused by not deleting
