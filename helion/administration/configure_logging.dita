@@ -337,9 +337,11 @@
                   <p>You can also change the log level for <codeph>ceilometer-api</codeph> only by
                     changing the file below:</p>
                   <codeblock>~/helion/hos/ansible/roles/CEI-API/templates/api-logging.conf.j2</codeblock>
-                  <p>For post-deployment log level changes, commit your changes to Git and
-                    re-run the following from the lifecycle-manager node:
-                    <codeblock>cd ~/scratch/ansible/next/hos/ansible
+                  <p>For post-deployment log level changes, commit your changes to the above files
+                    to Git and run the following commands from the lifecycle-manager node:
+                    <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml
+cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</codeblock></p></entry>
               </row>
               <row>
@@ -351,9 +353,11 @@ ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</codeblock></p><
                   <p>You can also change the log level for <codeph>ceilometer-collector</codeph>
                     only by changing the file below:</p>
                   <codeblock>~/helion/hos/ansible/roles/CEI-COL/templates/collector-logging.conf.j2</codeblock>
-                  <p>For post-deployment log level changes, commit your changes to Git and
-                    re-run the following from the lifecycle-manager node:
-                    <codeblock>cd ~/scratch/ansible/next/hos/ansible
+                  <p>For post-deployment log level changes, commit your changes to the above files
+                    to Git and run the following commands from the lifecycle-manager node:
+                    <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml
+cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</codeblock></p>
                 </entry>
               </row>
@@ -372,9 +376,11 @@ ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</codeblock></p>
                       <codeph>ceilometer-agent-notification</codeph> only by changing the file
                     below:</p>
                   <codeblock>~/helion/hos/ansible/roles/CEI-NAG/templates/agent-notification-logging.conf.j2</codeblock>
-                  <p>For post-deployment log level changes, commit your changes to Git and
-                    re-run the following from the lifecycle-manager node:
-                    <codeblock>cd ~/scratch/ansible/next/hos/ansible
+                  <p>For post-deployment log level changes, commit your changes to the above files
+                    to Git and run the following commands from the lifecycle-manager node:
+                    <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml
+cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</codeblock></p>
                 </entry>
               </row>
@@ -387,9 +393,11 @@ ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</codeblock></p>
                   <p>You can also change the log level for <codeph>ceilometer-agent-central</codeph>
                     only by changing the file below:</p>
                   <codeblock>~/helion/hos/ansible/roles/CEI-CAG/templates/agent-central-logging.conf.j2</codeblock>
-                  <p>For post-deployment log level changes, commit your changes to Git and
-                    re-run the following from the lifecycle-manager node:
-                    <codeblock>cd ~/scratch/ansible/next/hos/ansible
+                  <p>For post-deployment log level changes, commit your changes to the above files
+                    to Git and run the following commands from the lifecycle-manager node:
+                    <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml
+cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</codeblock></p>
                 </entry>
               </row>
@@ -403,9 +411,11 @@ ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</codeblock></p>
                   <p>You can also change the log level for <codeph>ceilometer-expirer</codeph> only
                     by changing the file below:</p>
                   <codeblock>~/helion/hos/ansible/roles/CEI-EXP/templates/expirer-logging.conf.j2</codeblock>
-                  <p>For post-deployment log level changes, commit your changes to Git and
-                    re-run the following from the lifecycle-manager node:
-                    <codeblock>cd ~/scratch/ansible/next/hos/ansible
+                  <p>For post-deployment log level changes, commit your changes to the above files
+                    to Git and run the following commands from the lifecycle-manager node:
+                    <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml
+cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</codeblock></p>
                 </entry>
               </row>
