@@ -55,8 +55,8 @@ fixedip_vm2=$(nova list | awk '/vm2/ {print $12}' | awk -F '=' '{print $2}' | aw
 portuuid_vm1=$(neutron port-list | grep $fixedip_vm1 | awk '{print $2}')
 portuuid_vm2=$(neutron port-list | grep $fixedip_vm2 | awk '{print $2}')</codeblock></li>
           <li>Create the associated floating IP addresses to the vm1 and vm2 instances.
-            <codeblock>neutron floatingip-create ext-net –-port-id $portuuid_vm1
-neutron floatingip-create ext-net –-port-id $portuuid_vm2</codeblock></li>
+            <codeblock>neutron floatingip-create ext-net --port-id $portuuid_vm1
+neutron floatingip-create ext-net --port-id $portuuid_vm2</codeblock></li>
           <li>Verify if the floating ip is assigned to the instance. Executing the following
             commands should show the assigned floating ips.
             <codeblock>nova show vm1
