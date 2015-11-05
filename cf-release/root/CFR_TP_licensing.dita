@@ -13,6 +13,7 @@
    are available as a PDF download.</p>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   <p><xref
     href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HPHelion_CloudFoundry_v1_OSRB.pdf"
     format="pdf" scope="external">Download the PDF document</xref><draft-comment author="michaelk"
@@ -26,8 +27,16 @@
   <note>Allow sufficient time for the document to load fully.</note>
 >>>>>>> 7d18ccf... Added placeholder for licensing
 =======
+=======
+>>>>>>> 2b2ade4... Recreating branch without old cruft in it
   <p><xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HPHelion_CloudFoundry_v1_OSRB.pdf" format="pdf" scope="external">Download the
      PDF document</xref></p>
+=======
+  <p><xref
+    href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HPHelion_CloudFoundry_v1_OSRB.pdf"
+    format="pdf" scope="external">Download the PDF document</xref><draft-comment author="michaelk"
+    >Does a new document need to be added for this version?</draft-comment></p>
+>>>>>>> de2d2bc... Recreating branch without old cruft in it
   <note type="tip">Allow sufficient time for the document to load fully.</note>
 >>>>>>> a979a9b... Added the link to the OSTPSL
  </conbody>

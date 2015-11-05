@@ -17,6 +17,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <!--
       <topicref href="root/CFR_license_terms.dita"/>
       -->
@@ -30,6 +31,13 @@
 >>>>>>> 0c7cc4c... Added EULA to HCF 1.0 docs
 =======
 >>>>>>> 1ef8d60... Removed Software License Terms per Alvaro's request
+=======
+=======
+      <!--
+      <topicref href="root/CFR_license_terms.dita"/>
+      -->
+>>>>>>> de2d2bc... Recreating branch without old cruft in it
+>>>>>>> 2b2ade4... Recreating branch without old cruft in it
       <topichead navtitle="Quick Start: Deploying to HP Public Cloud">
          <topicref href="quickstart/pubcloud/CFR_step_1.dita"/>
          <topicref href="quickstart/pubcloud/CFR_step_2.dita"/>

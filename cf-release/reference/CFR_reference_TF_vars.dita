@@ -72,8 +72,15 @@
           </row>
           <row>
             <entry><codeph>key_file</codeph></entry>
+<<<<<<< HEAD
             <entry>The location and name of the private key file that you downloaded after creating
               your key pair on <keyword keyref="pubCloudShort"/></entry>
+=======
+            <entry>The location and name of the private key <filepath>pem</filepath> file that you
+              downloaded after creating your key pair on <keyword keyref="pubCloudShort"/>, relative
+              to the <filepath>tfvars</filepath> file.<note type="tip">For convenience, you can
+                place the two files into the same directory.</note></entry>
+>>>>>>> de2d2bc... Recreating branch without old cruft in it
           </row>
           <!--
           <row>

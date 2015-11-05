@@ -3,11 +3,19 @@
 <concept id="concept_xzh_3f1_vt">
  <title>Software License Terms</title>
 <<<<<<< HEAD
+<<<<<<< HEAD
  <shortdesc><draft-comment author="michaelk">This document needs to be verified by
    Legal.</draft-comment><b>HP Helion Product Evaluation Agreement</b></shortdesc>
 =======
  <shortdesc><b>HP Helion Product Evaluation Agreement</b></shortdesc>
 >>>>>>> 0c7cc4c... Added EULA to HCF 1.0 docs
+=======
+ <shortdesc><b>HP Helion Product Evaluation Agreement</b></shortdesc>
+=======
+ <shortdesc><draft-comment author="michaelk">This document needs to be verified by
+   Legal.</draft-comment><b>HP Helion Product Evaluation Agreement</b></shortdesc>
+>>>>>>> de2d2bc... Recreating branch without old cruft in it
+>>>>>>> 2b2ade4... Recreating branch without old cruft in it
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>

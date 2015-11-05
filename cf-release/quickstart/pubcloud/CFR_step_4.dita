@@ -195,8 +195,16 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
                   href="../../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt">Terraform
                   Variables</xref>.</note></li>
             <li id="run_terraform_command">Run the following
+<<<<<<< HEAD
                 command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
                 type="tip">To improve console output on Windows, add the
+=======
+                command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note>You
+                may receive the error message <msgph>Can not find requested image</msgph> if <xref
+                  href="CFR_step_3.dita#concept_kpg_fhz_st">the various settings of your sandbox
+                  environment</xref> are not configured consistently on US East or US
+                West.</note><note type="tip">To improve console output on Windows, add the
+>>>>>>> de2d2bc... Recreating branch without old cruft in it
                   <filepath>-no-color</filepath> flag to your command. For more information, see the
                 Terraform documentation on <xref
                   href="https://terraform.io/docs/commands/apply.html" format="html"

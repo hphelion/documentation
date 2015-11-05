@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_qlr_s3c_nt">
+<<<<<<< HEAD
  <title><keyword keyref="prodLong"/>
     <keyword keyref="prodVerShort"/> Technical Preview: Documentation</title>
   <titlealts><navtitle>HPE Helion Cloud Foundry 1.0 TP</navtitle></titlealts>
@@ -13,6 +14,20 @@
  <conbody>
     <p><keyword keyref="prodLong"/> Technical Preview (TP) is a <!--certified-->distribution of <xref
         href="http://www.cloudfoundry.org/" format="html" scope="external">Cloud Foundry</xref>.</p>
+=======
+  <title><keyword keyref="prodLong"/>
+    <keyword keyref="prodVerShort"/> Technical Preview: Documentation</title>
+  <titlealts><navtitle>HPE Helion Cloud Foundry 1.0 TP</navtitle></titlealts>
+  <shortdesc/>
+  <prolog>
+    <metadata>
+      <othermeta name="author" content="Michael Khmelnitsky"/>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p><keyword keyref="prodLong"/> Technical Preview (TP) is a certified distribution of <xref
+      href="http://www.cloudfoundry.org/" format="html" scope="external">Cloud Foundry</xref>.</p>
+>>>>>>> de2d2bc... Recreating branch without old cruft in it
     <p>
       <keyword keyref="prodShort"/> uses containers for bundling all major functions, for
       representing roles, and for providing simple update and upgrade workflows. It also uses <xref
@@ -30,6 +45,7 @@
     </ul>
     <ul id="ul_pph_ytf_vt">
       <li><b>Quick Start: Deploying to <keyword keyref="pubCloudLong"/></b><ul id="ul_ack_nwv_tt">
+<<<<<<< HEAD
           <li><xref href="../quickstart/pubcloud/CFR_step_1.dita#concept_s2k_b35_st"/></li>
           <li><xref href="../quickstart/pubcloud/CFR_step_2.dita#concept_ikh_xgz_st"/></li>
           <li><xref href="../quickstart/pubcloud/CFR_step_3.dita#concept_kpg_fhz_st"/></li>
@@ -43,6 +59,21 @@
           <li><xref href="../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt"/></li>
           <li><xref href="../reference/CFR_reference_gato.dita#reference_cd3_bs3_rt"/></li>
         </ul></li>
+=======
+        <li><xref href="../quickstart/pubcloud/CFR_step_1.dita#concept_s2k_b35_st"/></li>
+        <li><xref href="../quickstart/pubcloud/CFR_step_2.dita#concept_ikh_xgz_st"/></li>
+        <li><xref href="../quickstart/pubcloud/CFR_step_3.dita#concept_kpg_fhz_st"/></li>
+        <li><xref href="../quickstart/pubcloud/CFR_step_4.dita#concept_pqc_jhz_st"/></li>
+        <li><xref href="../quickstart/pubcloud/CFR_step_5.dita#concept_cw2_thz_st"/></li>
+        <li><xref href="../quickstart/pubcloud/CFR_step_6.dita#concept_m3k_bth_tt"/></li>
+      </ul></li>
+    </ul>
+    <ul id="ul_czt_ytf_vt">
+      <li><b>Reference</b><ul id="ul_mdv_swv_tt">
+        <li><xref href="../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt"/></li>
+        <li><xref href="../reference/CFR_reference_gato.dita#reference_cd3_bs3_rt"/></li>
+      </ul></li>
+>>>>>>> de2d2bc... Recreating branch without old cruft in it
     </ul>
   </conbody>
 </concept>

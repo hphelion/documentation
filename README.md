@@ -27,7 +27,14 @@ This is the documentation for Helion Cloud Foundry. It is written in [DITA XML](
   
 ## Previewing the Document
 <<<<<<< HEAD
+<<<<<<< HEAD
 Committing and pushing your changes to the branch kicks off a Jenkins build. After it is finished, you can preview the documentation [here](http://docs-staging.hpcloud.com/hcf-1.0-cf-release-certified).
 =======
 Committing and pushing your changes to the branch kicks off a Jenkins build. After it is finished, you can preview the documentation [here](http://docs-staging.hpcloud.com/hcf-1.0-cf-release).
 >>>>>>> 766326e... Create README.md
+=======
+Committing and pushing your changes to the branch kicks off a Jenkins build. After it is finished, you can preview the documentation [here](http://docs-staging.hpcloud.com/hcf-1.0-cf-release).
+=======
+Committing and pushing your changes to the branch kicks off a Jenkins build. After it is finished, you can preview the documentation [here](http://docs-staging.hpcloud.com/hcf-1.0-cf-release-certified).
+>>>>>>> de2d2bc... Recreating branch without old cruft in it
+>>>>>>> 2b2ade4... Recreating branch without old cruft in it
