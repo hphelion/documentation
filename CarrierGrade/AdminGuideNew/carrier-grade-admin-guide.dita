@@ -1,269 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic15959">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0 Carrier Grade Beta: Installing
-    Infoblox</title>
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic15959">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Carrier Grade Beta: Administrator Guide</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HPE Helion Openstack"/>
-      <othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
+      <othermeta name="product-version" content="HP Helion Openstack"/>
+      <othermeta name="product-version" content="HP Helion Openstack 1.1"/>
       <othermeta name="role" content="All"/>
       <othermeta name="role" content="Amanda F"/>
-      <othermeta name="product-version1" content="HPE Helion Openstack"/>
-      <othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
+      <othermeta name="product-version1" content="HP Helion Openstack"/>
+      <othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
     </metadata>
   </prolog>
   <body>
-    <p><b>Steps to integrate Infoblox with HCG-2.0 </b><p> </p><ul id="ul_cvd_rfz_5t">
-        <li><b
-            id="Infoblox-HCG2.0integration-DeployandConfigureInfobloxOpenstackAdapter(IOA)VMinESX">
-            Deploy and Configure Infoblox Openstack Adapter (IOA) VM in ESX</b></li>
-      </ul><ul id="ul_dvd_rfz_5t">
-        <li>IOA template can be found under following location:</li>
-        <li>IP Address: 15.242.209.8</li>
-        <li>Location:
-          E:\sFTP\cg-hos-2-0-builds\nios-7.0.2-269928-2015-02-10-18-03-07-160G-820.ova</li>
-      </ul><p> </p><ul id="ul_evd_rfz_5t">
-        <li> Deploy nios template in ESX</li>
-      </ul><p> </p><p><image
-          href="https://wiki.hpcloud.net/download/attachments/54738286/deploy.png?version=1&amp;modificationDate=1445303506000&amp;api=v2"
-          height="230" width="367" id="image_fvd_rfz_5t"/></p><p> </p><p> </p><p> </p><p><image
-          href="https://wiki.hpcloud.net/download/attachments/54738286/deployOVA.png?version=1&amp;modificationDate=1445303802000&amp;api=v2"
-          id="image_gvd_rfz_5t"/></p><p> </p><p> Power on vNIOS VM</p><p><image
-          href="https://wiki.hpcloud.net/download/attachments/54738286/infobloxVM.PNG?version=1&amp;modificationDate=1444859356000&amp;api=v2"
-          height="214" width="420" id="image_hvd_rfz_5t"/></p><p> </p><p> </p><p>Login to VM console
-        from vCenter using user/password (admin/infoblox)</p><p> </p><p>Run command <b>set
-          network</b> to configure IP address of vNIOS</p><p><image
-          href="https://wiki.hpcloud.net/download/attachments/54738286/IOA_Console.png?version=1&amp;modificationDate=1445363941000&amp;api=v2"
-          id="image_ivd_rfz_5t"/></p><p> </p><p> Run command <b>set temp_license</b> to configure
-        trial license (60 days). Choose option 8</p><p><image
-          href="https://wiki.hpcloud.net/download/attachments/54738286/IOA_License.png?version=1&amp;modificationDate=1445364045000&amp;api=v2"
-          id="image_jvd_rfz_5t"/></p><p> </p><p> </p><p>Login to Infoblox portal using
-        admin/infoblox credentials:</p><p><image
-          href="https://wiki.hpcloud.net/download/attachments/54738286/InfobloxLogin.png?version=1&amp;modificationDate=1444859792000&amp;api=v2"
-          id="image_kvd_rfz_5t"/></p><p> </p><p> </p><p>Open web browser to login to Infoblox IPAM
-        GUI https://&lt;IPaddress&gt; (admin/infoblox)</p><p>Go to Administration &gt; Extensible
-        Attributes and add following attributes -</p><p>Configuring Extensible Attributes</p><p>For
-        details please refer to attached quickstart guide for more details
-        (OpenStack_Kilo_QSG_Draft.pdf)</p><p><image
-          href="https://wiki.hpcloud.net/download/attachments/54738286/Add_Attributes.png?version=1&amp;modificationDate=1445364162000&amp;api=v2"
-          id="image_lvd_rfz_5t"/></p><p> </p><p> </p><p> </p><table id="table_mvd_rfz_5t">
-        <tgroup cols="3">
-          <colspec colnum="1" colname="col1"/>
-          <colspec colnum="2" colname="col2"/>
-          <colspec colnum="3" colname="col3"/>
-          <tbody>
-            <row>
-              <entry>Name</entry>
-              <entry>Type </entry>
-              <entry>Comments </entry>
-            </row>
-            <row>
-              <entry>Account</entry>
-              <entry>String </entry>
-              <entry> UserID inOpenStack </entry>
-            </row>
-            <row>
-              <entry> CMPType</entry>
-              <entry>String </entry>
-              <entry> CMPtypes(OpenStack) </entry>
-            </row>
-            <row>
-              <entry>Cloud API Owned</entry>
-              <entry>String </entry>
-              <entry> Cloud API Owned</entry>
-            </row>
-            <row>
-              <entry> IsExternal </entry>
-              <entry> String </entry>
-              <entry> Fornetworks andnetwork containersonly </entry>
-            </row>
-            <row>
-              <entry>IsShared </entry>
-              <entry>String </entry>
-              <entry>Fornetworks andnetwork containersonly </entry>
-            </row>
-            <row>
-              <entry>IP Type</entry>
-              <entry>String </entry>
-              <entry> Typeof IP address </entry>
-            </row>
-            <row>
-              <entry>NetworkEncap </entry>
-              <entry>String </entry>
-              <entry> </entry>
-            </row>
-            <row>
-              <entry>NetworkID </entry>
-              <entry>String </entry>
-              <entry>NetworkID inOpenStack </entry>
-            </row>
-            <row>
-              <entry>NetworkName </entry>
-              <entry>String </entry>
-              <entry>Networkname </entry>
-            </row>
-            <row>
-              <entry>PhysicalNetworkName </entry>
-              <entry>String </entry>
-              <entry> </entry>
-            </row>
-            <row>
-              <entry> Port Attached Device - Device ID </entry>
-              <entry>String </entry>
-              <entry> </entry>
-            </row>
-            <row>
-              <entry>Port Attached Device - Device Owner </entry>
-              <entry>String </entry>
-              <entry> </entry>
-            </row>
-            <row>
-              <entry>PortID </entry>
-              <entry>String </entry>
-              <entry> </entry>
-            </row>
-            <row>
-              <entry>SegmentationID </entry>
-              <entry>String </entry>
-              <entry> </entry>
-            </row>
-            <row>
-              <entry>SubnetID </entry>
-              <entry>String </entry>
-              <entry>SubnetID in OpenStack </entry>
-            </row>
-            <row>
-              <entry>SubnetName </entry>
-              <entry>String </entry>
-              <entry>Subnetnamein OpenStack </entry>
-            </row>
-            <row>
-              <entry>TenantID </entry>
-              <entry>String </entry>
-              <entry>TenantID inOpenStack </entry>
-            </row>
-            <row>
-              <entry>Tenant Name </entry>
-              <entry>String</entry>
-              <entry>Tenant Name in OpenStack </entry>
-            </row>
-            <row>
-              <entry>VLANID </entry>
-              <entry>Integer</entry>
-              <entry>TheVLANID inOpenStack </entry>
-            </row>
-            <row>
-              <entry>VMID </entry>
-              <entry>String </entry>
-              <entry>InstanceID inOpenStack </entry>
-            </row>
-            <row>
-              <entry>VMName </entry>
-              <entry>String </entry>
-              <entry>VirtualmachineinstancenameinOpenStack </entry>
-            </row>
-            <row>
-              <entry> </entry>
-              <entry> </entry>
-              <entry> </entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table><p> </p><ul id="ul_nvd_rfz_5t">
-        <li><b id="Infoblox-HCG2.0integration-Applypatch">Apply patch</b><ul id="ul_ovd_rfz_5t">
-            <li>Download Infoblox patch from following location to HLM node</li>
-          </ul></li>
-      </ul><p>IP Address - 15.242.209.8</p><p>Location -
-        E:\sFTP\cg-hos-2-0-builds\patches\build022\Infoblox</p><ul id="ul_pvd_rfz_5t">
-        <ul id="ul_qvd_rfz_5t">
-          <li>Copy infoblox.tar.gz under &lt;clouddirectory&gt;/001/stage/ansible/ -</li>
-          <li>Untar the tarball using - tar -zvxf <i>infoblox.tar.gz </i></li>
-          <li>Modify
-              <i>/var/hlm/clouds/&lt;cloudname&gt;/desired_state/&lt;cloudname&gt;/001/base/stage/ansible</i><i>/deploy-infoblox.yml
-            </i>to include appropriate tier name (Replace &lt;CLOUDNAME&gt; with actual
-            cloudname)</li>
-          <li>Modify
-              <i>/var/hlm/clouds/&lt;cloudname&gt;/desired_state/&lt;cloudname&gt;/001/base/stage/ansible</i><i>/rollback-infoblox.yml</i>
-            to include appropriate tier name (Replace &lt;CLOUDNAME&gt; with actual cloudname)</li>
-          <li>Modify
-              <i>/var/hlm/clouds/&lt;cloudname&gt;/desired_state/&lt;cloudname&gt;/001/base/stage/ansible/roles/infoblox/defaults/main.yml
-            </i>to include environment variables: <ul id="ul_rvd_rfz_5t">
-              <li><i>ioa_ipaddress</i>: &lt;IP ADDRESS OF THE INFOBLOX OPENSTACK ADAPTER VM&gt; </li>
-              <li><i>ioa_username</i>: &lt;USERNAME TO LOGIN TO INFOBLOX OPENSTACK ADAPTER&gt; </li>
-              <li><i>ioa_password</i>: &lt;PASSWORD TO LOGIN TO INFOBLOX OPENSTACK ADAPTER&gt; </li>
-              <li><i>certfile_path</i>: &lt;CERTFILE PATH AS DEFINED IN STACKRC&gt;</li>
-            </ul></li>
-          <li>Execute following command to apply patch - <i>ansible-playbook -i hosts
-              deploy-infoblox.yml</i></li>
-        </ul>
-      </ul><b>Misc</b><b>• /etc/neutron/neutron.conf</b><p>[keystone_authtoken]</p><p>auth_url =
-          <xref href="http://BUILD19-CCP-T2-VIP-INTF0-1551:35357" format="html" scope="external"
-          >http://BUILD19-CCP-T2-VIP-INTF0-1551:35357</xref></p><p> </p><p>[DEFAULT]</p><p>
-        ipam_driver = neutron.ipam.drivers.infoblox.infoblox_ipam.InfobloxIPAM</p><p>
-        infoblox_members_config = /etc/neutron/infoblox_members.conf</p><p> conditional_config =
-        /etc/neutron/infoblox_conditional.conf</p><p> use_host_records_for_ip_allocation =
-        False</p><p> bind_dns_records_to_fixed_address = record:a,record:aaaa,record:ptr</p><p>
-        unbind_dns_records_from_fixed_address = record:a,record:aaaa,record:ptr</p><p>
-        delete_dns_records_associated_with_fixed_address =
-        record:a,record:aaaa,record:ptr,record:txt</p><p> subnet_shared_for_creation = true</p><p>
-        subnet_shared_for_deletion = true</p><p> infoblox_wapi = <xref
-          href="https://10.200.51.240/wapi/v2.0/" format="html" scope="external"
-          >https://10.200.51.240/wapi/v2.0/</xref></p><p> infoblox_username = admin</p><p>
-        infoblox_password = infoblox</p><p>nova_admin_username = nova</p><p>nova_admin_password = {{
-        NOV_API.consumes_KEY_API.vars.keystone_nova_password }}</p><p>nova_admin_tenant_id = {{
-        tenant_id.stdout }}</p><p>nova_admin_tenant_name = services</p><p> </p><p>[nova]</p><p># PEM
-        encoded client certificate cert file</p><p>certfile =
-        /etc/stunnel/ssl/hlm/certs/ca.crt</p><p># Name of nova region to use. Useful if keystone
-        manages more than one region.</p><p>region_name = Memphis</p><p
-        > </p><b>/etc/neutron/infoblox_conditional.conf</b><p>[</p><p> {</p><p> "condition":
-        "subnet_range:10.100.1.0/24",</p><p> "is_external": false,</p><p> "network_view":
-        "management",</p><p> "disable_dhcp": true,</p><p> "dhcp_members":
-        "infoblox.localdomain",</p><p> "require_dhcp_relay": false,</p><p> "domain_suffix_pattern":
-        "{subnet_name}.cloud.global.com",</p><p> "hostname_pattern":
-        "{instance_name}-{ip_address}"</p><p> },</p><p> {</p><p> "condition": "tenant",</p><p>
-        "is_external": false,</p><p> "network_view": "{tenant_name}",</p><p> "disable_dhcp":
-        true,</p><p> "dhcp_members": "infoblox.localdomain",</p><p> "require_dhcp_relay":
-        false,</p><p> "domain_suffix_pattern": "{subnet_name}.cloud.global.com",</p><p>
-        "hostname_pattern": "{instance_name}-{ip_address}"</p><p> },</p><p> {</p><p> "condition":
-        "global",</p><p> "is_external": true,</p><p> "network_view": "default",</p><p>
-        "disable_dhcp": true,</p><p> "dhcp_members": "infoblox.localdomain",</p><p>
-        "require_dhcp_relay": false,</p><p> "domain_suffix_pattern":
-        "{subnet_name}.cloud.global.com",</p><p> "hostname_pattern":
-        "{instance_name}-{ip_address}"</p><p>
-        }</p><p>]</p><b>/etc/neutron/infoblox_members.conf</b><p>Create
-        /etc/neutron.infooblox_members.conf with the following line to include IOA VM IP
-        address.</p><p>[{"ipv4addr": "10.200.51.240", "name": "infoblox.localdomain"}]</p><p>
-        NOTE:Here 10.200.51.240 is the CLM IP of the IOA VM running in ESX environment which was
-        provided during IOA configuration</p><b>Verification</b><p>Login to Infoblox
-        Dashboard</p><p>Traverse to <i>Administration &gt;&gt; Network views </i>and see if the
-        subnet pool got created</p><p><image
-          href="https://wiki.hpcloud.net/download/attachments/54738286/IPAMUtilization.png?version=1&amp;modificationDate=1444860464000&amp;api=v2"
-          id="image_svd_rfz_5t"/></p><p> </p><p> </p><b>Patching HOSCG-NEUTRON with
-        Infobloxchanges</b><p>Steps to apply infoblox patch on to the Neutron source code (<b>This
-          needs to be done only while creating the hoscg-neutron.deb and need not be executed while
-          installing the package</b> ) :</p><p>1. Checkout latest neutron source code from the
-        branch hp/cg/stable/2.0 git clone <xref href="http://git.dc.usa.hp.com/openstack/neutron"
-          format="html" scope="external">http://git.dc.usa.hp.com/openstack/neutron</xref> -b
-        hp/cg/stable/2.0</p><p>2. Get inside the neutron directory - cd neutron</p><p>3. Apply with
-        infoblox patch, on to the source code. Patch file hp-poc-20151016-full is available at
-        15.242.209.8 E:\sFTP\cg-hos-2-0-builds\patches\build022\Infoblox\ patch -p1 &lt;
-        path_to_patch_file ex: patch -p1 &lt; /root/hp-poc-20151016-full.patch Make sure that no
-        Failure/Error messaages are displayed, while running the last command.</p><p>4. Add the
-        following lines to MANIFEST.in </p><p>include
-        neutron/db/migration/alembic_migrations/versions/172ace2194db_infoblox_net_view_to_network_id.py
-        </p><p>include
-        neutron/db/migration/alembic_migrations/versions/33150f5993b6_infoblox_management_net_handling.py
-        </p><p>include neutron/db/migration/alembic_migrations/versions/78d27e9172_infoblox_db_v2.py
-        </p><p>include
-        neutron/db/migration/alembic_migrations/versions/d9841b33bd_add_infoblox_member_type.py
-        </p><p>include
-        neutron/db/migration/alembic_migrations/versions/256b90dd9824_multiple_dhcp_members.py</p><p>5.
-        The current folder (neutron) now has the neutron source code from the branch
-        hp/cg/stable/2.0 + infoblox source code patch. This source code has to be used for creating
-        the debian package for hoscg-neutron.</p><p> </p></p>
+    <section><p>Click 
+      
+      <xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/CGH-2-KVM-Admin.pdf"
+        format="pdf" scope="external">here to launch the HP Helion OpenStack Carrier Grade
+        Administrator Guide</xref>.</p>The Administrator Guide is addressed to HP Helion OpenStack
+      Carrier Grade administrators responsible for the following areas:<ul id="ul_vzg_qph_ws">
+        <li>
+          <p>Creating and maintaining resources used by end users (tenants), such as virtual
+            machines, storage pools, network objects, and access credentials.</p>
+        </li>
+        <li>
+          <p>Operating and maintaining components of the HP Helion OpenStack Carrier Grade product,
+            such as clusters, nodes, system software, licensing files, and backup and restore
+            facilities</p>
+        </li>
+      </ul></section>
     
   </body>
 </topic>
