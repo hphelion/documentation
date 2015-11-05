@@ -54,7 +54,8 @@
           <dt><filepath>role</filepath></dt>
           <dd>Manage node roles. By default, uses the <codeph>$DOCKER_HOST</codeph> environment
             variable to determine the docker server endpoint. Use the <filepath>--node</filepath>
-            flag to stop a <varname>&lt;role></varname> container on a specific node.<ul
+            flag to stop a <xref href="#reference_cd3_bs3_rt/available_role_containers"
+              format="dita"><varname>&lt;role></varname> container</xref> on a specific node.<ul
               id="ul_blk_nhj_rt">
               <li><xref href="#reference_cd3_bs3_rt/role_start" format="dita"><filepath>role
                     start</filepath></xref></li>
@@ -92,7 +93,7 @@
               </dlentry>
               <dlentry>
                 <dt><filepath>--role</filepath>, <filepath>-r</filepath></dt>
-                <dd>Get <xref href="#available_role_containers" format="dita">a specific
+                <dd>Get <xref href="#reference_cd3_bs3_rt/available_role_containers" format="dita">a specific
                     role's</xref> config variable, for example:
                   <codeblock>$ <keyword keyref="adminUtilCLI"/> config get --role uaa uaa/jwt/signing_key</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> config get --role hm9000 hm9000/url</codeblock></dd>
               </dlentry>
@@ -105,7 +106,7 @@
           <dd>Set the current value of a configuration.<dl>
               <dlentry>
                 <dt><filepath>--role</filepath>, <filepath>-r</filepath></dt>
-                <dd>Set <xref href="#available_role_containers" format="dita">a
+                <dd>Set <xref href="#reference_cd3_bs3_rt/available_role_containers" format="dita">a
                     specific role's</xref> configuration.</dd>
               </dlentry>
               <dlentry>
@@ -120,7 +121,8 @@
           <dt><filepath><keyword keyref="adminUtilCLI"/> role start <varname>[command
                 options]</varname>
               <varname>[arguments...]</varname></filepath></dt>
-          <dd>Start the <varname>&lt;role></varname> container.<dl>
+          <dd>Start the <xref href="#reference_cd3_bs3_rt/available_role_containers" format="dita"
+                ><varname>&lt;role></varname> container</xref>.<dl>
               <dlentry>
                 <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
                 <dd>Set the Docker server endpoint. Schemes and port number are required. Supported
@@ -138,7 +140,8 @@
           <dt><filepath><keyword keyref="adminUtilCLI"/> role restart <varname>[command
                 options]</varname>
               <varname>[arguments...]</varname></filepath></dt>
-          <dd>Stop or restart the <varname>&lt;role></varname> container.<dl>
+          <dd>Stop or restart the <xref href="#reference_cd3_bs3_rt/available_role_containers"
+              format="dita"><varname>&lt;role></varname> container</xref>.<dl>
               <dlentry>
                 <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
                 <dd>Set the Docker server endpoint. Schemes and port number are required. Supported
@@ -172,8 +175,8 @@
         </ul>
       </draft-comment>
     </section>
-    <section>
-      <title id="available_role_containers">Available <varname>&lt;role></varname>
+    <section id="available_role_containers">
+      <title>Available <varname>&lt;role></varname>
         Containers</title>
     </section>
     <table frame="all" rowsep="1" colsep="1" id="table_cls_wfz_wt">
