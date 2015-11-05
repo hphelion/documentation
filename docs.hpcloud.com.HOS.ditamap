@@ -175,7 +175,7 @@
         <topicref href="helion/networking/multinetwork.dita"
           navtitle="Configuring Multiple External Networks" locktitle="yes"/>
         <topicref href="helion/administration/neutron_add_thirdparty_plugin_driver.dita" navtitle="Adding a 3rd Party Driver or Plugin to
-          Neutron" locktitle="yes"/>
+          Neutron" locktitle="yes" toc="no"/>
       </topicref>
       <!-- BEGIN - Administration/EON -->
       <topicref href="helion/esx/eon_service.dita" navtitle="ESX ON-Boarding (EON) Service"
