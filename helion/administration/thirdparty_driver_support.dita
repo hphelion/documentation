@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_vd2_vth_xt">
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Third-party Driver Support</title>
+  <body>
+    <section id="about">
+      <p>This document provides an overview of deployer-side additions to an HLM deployment.</p>
+    </section>
+    <section id="venv_editing"><title>Deployer-side venv editing</title>
+      <p>Additional driver code may be required in a venv: this Python driver code can be injected
+        into a venv using the venv-edit.yml playbook.</p>
+    </section>
+    <section id="customer"><title>As a customer</title>
+      <p>The third-party driver contains a directory of packaged Python content (wheels). This can
+        be injected into a venv as follows. Assume that the wheelhouse is unpacked in
+        `/home/hlmuser/third-party-wheelhouse` and it's to be applied to the nova venv.</p>
+      <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost venv-edit.yml \
+-e source=/opt/hlm_packager/nova-20150101T120000Z.tgz \
+-e suffix=001 \
+-e wheelhouse=/home/hlmuser/third-party-wheelhouse \
+-e wheel='foo-driver'</codeblock>
+      <p>The result of this will be to create a second venv, 'nova-20150101T120000Z001.tgz' in the
+        '/opt/hlm_packager' directory, and update the 'packages' manifest in that directory to
+        record it.</p>
+      <p>At this point a deployment (or an upgrade) can take place as normal. Because the deployer
+        considers the new version number (`20150101T120000Z001`) to be in advance, that venv package
+        will be selected. For the case of an upgrade, service restarts will be performed as
+        necessary.</p>
+    </section>
+
+    <section id="patching_venv"><title>Patching a venv after a deploy has already occurred</title>
+      <p>Typically it would be advisable for a customer to patch their venvs prior to a deploy or
+        upgrade: indeed, one would expect that in most scenarios, the need for a partcular extra
+        driver will be understood in advance.</p>
+      <p>It is not, however, a hard-and-fast requirement to do this. Because the venv-edit process
+        produces a new venv with an updated version number, the driver can be inserted after an
+        initial deployment - and the typical upgrade process will replace the running venvs with the
+        newer one.</p>
+    </section>
+
+    <section id="multiple_drivers"><title>Handling multiple drivers</title>
+      <p>It is possible to apply several third-party patches at once, either one-at-a-time (with
+        suffixes 001, 002, etc.) or potentially all-at-once. To do this, the contents of the input
+        wheelhouses should be combined, and the target wheel names be given, space-separated, as the
+        `wheel` parameter to 'venv-edit.yml'.</p>
+      <codeblock>mkdir ~/third-party-wheelhouse
+cp ~/third-party-wheelhouse-{foo,bar,baz}/* ~/third-party-wheelhouse
+ansible-playbook -i hosts/localhost venv-edit.yml \
+-e source=/opt/hlm_packager/nova-20150101T120000Z.tgz \
+-e suffix=001 \
+-e wheelhouse=/home/hlmuser/third-party-wheelhouse \
+-e wheel='foo-driver bar-driver baz-driver'</codeblock>
+      <p>Whether or not this is advisable is a decision that depends upon context: for instance, it
+        might be the case that multiple additional drivers can be configured to live side-by-side in
+        the storage case; depending on the invasiveness of the driver, however, it's likely that it
+        only makes sense to have one third party driver - eg, for neutron.</p>
+    </section>
+    <section id="upgrade"><title>Rolling third-party drivers forward with new HOS versions</title>
+      <p>There is no automatic support for this; driver patches much be reapplied to their target
+        venvs every time a new Helion version is received.</p>
+    </section>
+
+    <section id="driver_packager"><title>As a driver packager</title>
+      <p>The requirement for the packager is to construct a 'wheelhouse' directory. Wheels are a
+        standard Python distribution format. They can be constructed using the 'wheel' command.
+        Typically the process might look as follows: it is not necessary that this process be
+        performed on the deployer itself; such packaging could potentially be performed in advance,
+        merely delivering the finished wheelhouse to the customer.</p>
+      <p>Note that binary contents (Python .so files) will need to be compatible with the version of
+        Python in the target venv.</p>
+      <codeblock># Assumes the source is in ~/scratch/source_dir
+virtualenv ~/scratch/v
+mkdir ~/third-party-wheelhouse
+~/scratch/v/bin/pip install -U pip wheel
+~/scratch/v/bin/pip wheel --wheel-dir ~/third-party-wheelhouse ~/scratch/source_dir</codeblock>
+      <p>At the end of this process, a number of wheels will be left in
+          <codeph>~/third-party-wheelhouse</codeph>. These may include additional dependencies
+        specified through the usual distutils machinery.</p>
+    </section>
+    <section id="binary1"><title>Binary dependencies: in-venv</title>
+      <p>Providing that the wheelhouse is constructed on a system that's binary-compatible with the
+        target venv (and therefore the host that it'll be deployed on), native extensions can be
+        packaged as wheels without any additional effort.</p>
+      <p>A compiler toolchain will be required to make this work.</p>
+    </section>
+
+    <section id="binary2"><title>Binary dependencies: at the OS layer</title>
+      <p>Some Python drivers utilise third-party binary extensions that are installed into the base
+        operating system; Ceph's `rados.py` is an example of this. For those third-party drivers,
+        the install playbook will need to be extended to ensure that the additional third-party
+        libraries are installed on the appropriate target systems.</p>
+    </section>
+
+    <section id="packaging"><title>Packaging non-pypi-based Python</title>
+      <p>In some cases it's necessary to generate a wheel out of Python code that has not been
+        suitably packaged (a missing setup.py, perhaps, or no pypi versions available).</p>
+      <p>Whilst the generation of a wheel from first principles is beyond the scope of this
+        document, the format itself is pretty trivial: see <xref
+          href="https://www.python.org/dev/peps/pep-0427/" format="html" scope="external">PEP
+          0427</xref> for details. A rudimentary - but sufficient - implementation of this can be
+        seen in <codeph>/ansible/roles/venv/templates/wheels_parallel.bash.j2</codeph>.</p>
+    </section>
+
+    <!-- NOT YET COMPLETE
+    ## Additional third-party deb packages
+    
+    (TODO)
+    
+    ## Additional install/configure/start/stop hooks
+    
+    (TODO)
+    
+    -->
+
+
+  </body>
+</topic>
