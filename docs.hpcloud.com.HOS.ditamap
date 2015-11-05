@@ -316,10 +316,7 @@
           locktitle="yes"/>
       </topicref>
       <topicref href="helion/operations/centralized_logging.dita"
-        navtitle="Centralized Logging Service" locktitle="yes">
-        <topicref href="helion/operations/logging_settings.dita" navtitle="Default Logging Settings"
-          locktitle="yes"/>
-      </topicref>
+        navtitle="Centralized Logging Service" locktitle="yes"/>
       <!-- OPS CONSOLE PAGES (will be hidden from the TOC) -->
    
    
