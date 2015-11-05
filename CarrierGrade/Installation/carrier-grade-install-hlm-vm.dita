@@ -14,20 +14,30 @@
   </metadata>
 </prolog>
 <body>
-  <p>The first phase of the HPE Helion OpenStack Carrier Grade installation involves creating a
+    <p>The first phase of the HPE Helion OpenStack Carrier Grade installation involves creating a
       bootstrapping the HPE Helion Lifecycle Management virtual machine and installation services. </p>
     <p>The installation uses Ansible playbooks, which are files that contain scripts that execute
       required installation processes.</p>
-  <p><b>Note:</b> If you are installing the <b>Sacramento</b> deployment, before deploying the HLM
+    <p><b>Note:</b> If you are installing the <b>Sacramento</b> deployment, before deploying the HLM
       VM, go to <xref href="carrier-grade-install-baremetal-cloud-prepare.dita#topic1107">Preparing
         the Baremetal Region</xref>.</p>
-
-<section id="prepare"> <title>Prepare the system for deployment</title>
-<p>Use the following steps to prepare the server on which the HLM VM will be deployed (the HLM host):</p>
-<ol>
+    <section><title>Update the Debain Repository Index File</title><p>HPE Helion OpenStack Carrier
+        Grade maintains a local Debian repository on the HLM host from where Debain packages are
+        installed. Before starting the installation, make sure the Debian files you <xref
+          href="carrier-grade-install-prereqs.dita#topic7148/getinstall">downloaded in the
+          Prerequisites</xref> are present in the repository: </p>Copy the following Debian packages
+      to <codeph>/root/cg/dcn</codeph> directory. When you run the ansible-playbook command, these
+      files will be picked up and moved into the repository.  <ul id="ul_wwn_13h_xt">
+        <li conref="carrier-grade-install-prereqs.dita#topic7148/libproto"/>
+        <li conref="carrier-grade-install-prereqs.dita#topic7148/setproc"/>
+      </ul></section>
+    <section id="prepare">
+      <title>Prepare the system for deployment</title>
+      <p>Use the following steps to prepare the server on which the HLM VM will be deployed (the HLM
+        host):</p>
+      <ol>
         <li>Log into the HLM host using the default credentials</li>
-
-  <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your
+        <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your
           environment. For information on each variable, refer to the comments in the file with each
           variable. <p>The <codeph>group_vars/all</codeph> file should appear similar to the
             following for a KVM + ESX
@@ -87,14 +97,14 @@ upstream_ntp_servers:
 - 10.x.x.x
 - 16.x.x.x
 ###################################################################################################################################</codeblock></li>
-  <li id="hosts">Check the <codeph>/root/infra-ansible-playbooks/hosts</codeph> file to enter the IP
-          address of the <codeph>vibr0</codeph> interface in the <codeph>hlm_kvm_host</codeph>
-          field, as shown in the following example. </li>
-</ol>
-<codeblock>  [hlm_kvm_host]
+        <li id="hosts">Check the <codeph>/root/infra-ansible-playbooks/hosts</codeph> file to enter
+          the IP address of the <codeph>vibr0</codeph> interface in the
+            <codeph>hlm_kvm_host</codeph> field, as shown in the following example. </li>
+      </ol>
+      <codeblock>  [hlm_kvm_host]
   192.168.122.1 </codeblock>
-</section>
-<section id="deploy-the-hlm-and-vsd-vm">
+    </section>
+    <section id="deploy-the-hlm-and-vsd-vm">
       <title>Deploy the HLM Virtual Machine</title>
       <p>Use the following steps on the HLM host to deploy the HLM VM on the HLM Host using Ansible
         playbooks.</p>
@@ -110,9 +120,9 @@ upstream_ntp_servers:
         <li>Locate the IP address for the HLM VM in the
             <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the HLM host under
             <codeph>hlm_clmstaticip</codeph> field. You will use this IP address to SSH into the HLM
-          VM during the HPE Helion OpenStack Carrier Grade installation process.</li> 
+          VM during the HPE Helion OpenStack Carrier Grade installation process.</li>
       </ol>
-</section>
+    </section>
     <section>
       <title>Configure Networking for the Baremetal Region</title>
       <p>If you are deploying the baremetal region, perform the following tasks:</p>
@@ -124,43 +134,15 @@ upstream_ntp_servers:
               Ethernet interface.</p><p>For
               example:<codeblock>route add default gw 192.168.122.1 dev eth0</codeblock></p></li>
           <li>Make sure that the vNet corresponding to eth0 is part of virbr0 bridge on the HLM
-            host.<p/></li>
+            host.</li>
+          <li>Verify that all iLO ips of the controller blades/DLs are pingable from HLM.</li>
         </ol>
-        <ul id="ul_ict_bhg_vt">
-          <li>3. Verify that all iLO ips of the controller blades/DLs are pingable from HLM.</li>
-        </ul>
-        <ul id="ul_jct_bhg_vt">
-          <li/>
-        </ul>
       </p>
     </section>
-    <section>
-      <title>Update the Debain Repository Index File</title>
-      <p>HPE Helion OpenStack Carrier Grade maintains a local Debian repository on the HLM host from
-        where Debain packages are installed. The <codeph>dpkg-scanpackages</codeph> script creates a
-        package index that enables package installation in such way that if someone executes the
-          <codeph>apt-get install &lt;packagename></codeph> command, the index would indicate the
-        correct package to install. </p>
-      <ol id="ol_yhm_ylr_st">
-        <li>Copy the following Debian packages to <codeph>/var/cache/hlm/repo/debian/</codeph>. You
-          should have <xref href="carrier-grade-install-prereqs.dita#topic7148/getinstall"
-            >downloaded these files in the
-          Prerequisites</xref>.<codeblock>protobuf-c0_0.14-1+b1_amd64.deb
-python-setproctitle_1.1.8-1_amd64.deb
-nuagenetlib_0.0.0-1729-kilo_all.deb
-nuage-openstack-neutron_2015.1.1729_all.deb</codeblock></li>
-        <li>Remove the following files from the <codeph>/var/cache/hlm/repo/debian/</codeph>
-          directory:
-          <codeblock>nuagenetlib_2015.1.3.2.4.133_all.deb
-nuage-openstack-neutron_2015.1.1725_all.deb</codeblock></li>
-        <li>Change to the <codeph>/var/cache/hlm/repo/debian/</codeph> directory.</li>
-        <li>Execute the <codeph>dpkg-scanpackages</codeph> command to update Debian repositroy index
-          file:<codeblock>/root/cg-hlm/dev-tools/dpkg-scanpackages --multiversion . /dev/null | gzip -9c &gt; Packages.gz</codeblock></li>
-      </ol>
+    <section id="next-step">
+      <title>Next Step</title>
+      <p><xref href="carrier-grade-install-non-kvm.dita#topic10581">Installing the Non-KVM
+          Region</xref></p>
     </section>
-
-  <section id="next-step"> <title>Next Step</title>
-      <p><xref href="carrier-grade-install-non-kvm.dita#topic10581">Installing the Non-KVM Region</xref></p>
-</section>
-</body>
+  </body>
 </topic>

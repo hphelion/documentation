@@ -320,14 +320,19 @@ StrictHostKeyChecking no </codeblock></li>
                                                 </row>
                                                 <row>
                                                   <entry>Nuage_Debians</entry>
-                                                  <entry>nuagenetlib_0.0.0-1729-kilo_all.deb<p>nuage-openstack-neutron_2015.1.1729_all.deb</p><p>libprotobuf-c0_0.14-1+b1_amd64.deb</p><p>python-setproctitle_1.1.8-1_amd64.deb</p></entry>
+                                                  <entry>
+                                                  <ul id="ul_zwl_chh_xt">
+                                                  <li id="libproto">libprotobuf-c0_0.14-1+b1_amd64.deb</li>
+                                                  <li id="setproc">python-setproctitle_1.1.8-1_amd64.deb</li>
+                                                  </ul>
+                                                  
+                                                  </entry>
                                                 </row>
                                                 <row>
                                                   <entry> Nuage_patch</entry>
                                                   <entry>
                                                   <p>knc-nuage-role.patch</p>
-                                                  <p>knc-nuage-role.txt</p>
-                                                  <p> </p>
+                                                  <p>knc-nuage-role.txt </p>
                                                   </entry>
                                                 </row>
                                                 <row>
@@ -755,8 +760,7 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                 <row>
                                                   <entry>Folder</entry>
                                                   <entry>File Name</entry>
-                                                  <entry>To be copied in the Base HLM KVM
-                                                  Host</entry>
+                                                  <entry>To be copied to the HLM Host</entry>
                                                 </row>
                                         </thead>
                                         <tbody>
@@ -764,8 +768,6 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   <entry/>
                                                   <entry>
                                                   <p>nuage-metadata-agent_3.2.4-133_all.deb</p>
-                                                  <p>nuagenetlib_0.0.0-1729-kilo_all</p>
-                                                  <p>nuage-openstack-neutron_2015.1.1729_all.deb</p>
                                                   <p>nuage-openvswitch-common_3.2.4-133_amd64.deb</p>
                                                   <p>nuage-openvswitch-switch_3.2.4-133_amd64.deb</p>
                                                   <p>nuage-python-openvswitch_3.2.4-133_all.deb</p>
@@ -804,8 +806,13 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                 </row>
                                         </tbody>
                                 </tgroup>
-                        </table><p><b>KVM Region Installation files</b></p>Move the downloaded files
-                        to the <codeph>/home/wrsroot/</codeph> directory of
+                        </table><b>Debian Packages</b><p>Move the downloaded files to the to the
+                                        <codeph>/root/cg/dcn</codeph> directory on the HLM host:<ul
+                                        id="ul_hq1_sjh_xt">
+                                        <li conref="#topic7148/libproto"/>
+                                        <li conref="#topic7148/setproc"/>
+                                </ul></p><p><b>KVM Region Installation files</b></p>Move the
+                        downloaded files to the <codeph>/home/wrsroot/</codeph> directory of
                                 <codeph>controller-0</codeph> in the KVM region during the
                         installation process.<ul id="ul_wt5_vcz_st">
                                 <li>wr_vrs_or_avs_bootimage_10_06.iso</li>
