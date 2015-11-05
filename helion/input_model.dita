@@ -350,7 +350,7 @@
         hierarchy of <uicontrol>server-groups</uicontrol>. Each <uicontrol>server</uicontrol> is
         associated with one <uicontrol>server-group</uicontrol>, normally at the bottom of the
         hierarchy.</p>
-      <p><uicontrol>Server-groups</uicontrol> are an optional part of the input model – if you don’t
+      <p><uicontrol>Server-groups</uicontrol> are an optional part of the input model - if you don’t
         define any then all <uicontrol>servers</uicontrol> and <uicontrol>networks</uicontrol> will
         be allocated as if they are part of the same <uicontrol>server-group</uicontrol>.</p>
     </section>
@@ -470,7 +470,7 @@
         endpoints (which may be on <uicontrol>networks</uicontrol> in the same or a different
           <uicontrol>network-group</uicontrol>).</p>
       <p>Each <uicontrol>load-balancer</uicontrol> is defined as part of the
-          <uicontrol>network-group</uicontrol> where the virtual IP will be presented – it follows
+          <uicontrol>network-group</uicontrol> where the virtual IP will be presented - it follows
         that a <uicontrol>network-group</uicontrol> containing a
           <uicontrol>load-balancer</uicontrol> can only have one <uicontrol>network</uicontrol>
         associated to it.</p>
@@ -2378,7 +2378,7 @@
         and you want to add two new compute nodes by adding servers D and E to the input model.</p>
       <p>When you add these to the input model and re-run the Configuration Processor it will read
         the persisted data for A, B, and C and allocate D and E as new servers. The Configuration
-        Processor now has allocation data for A, B, C, D, and E –- which it keeps in a staging area
+        Processor now has allocation data for A, B, C, D, and E -- which it keeps in a staging area
         (actually a special branch in git) until we get confirmation that the Configuration
         Processor has done what you intended and you are ready to deploy the revised
         configuration.</p>
@@ -2401,7 +2401,7 @@
           href="#input_model/co_servers">Servers</xref>), and include the control plane,
         cluster/resource name, and ordinal within the cluster or resource group.</p>
       <p>To guard against data loss, the Configuration Processor persists server allocations even
-        when the server ID no longer exists in the input model –- for example, if a server was
+        when the server ID no longer exists in the input model -- for example, if a server was
         removed accidentally and the Configuration Processor allocated a new server to the same
         ordinal, then it would be very difficult to recover from that situation.</p>
       <p>The following example illustrates the behavior:</p>

@@ -28,7 +28,7 @@
                 <xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml">
                     <xhtml:body>
                         <xhtml:p xhtml:class="PDFheader"><xhtml:b><MadCap:variable xhtml:name="xHPc_Basic_Variables.xHP_Book_Title" xhtml:style="font-weight: normal; color: #767676;" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /></xhtml:b>
-                            <xhtml:br /><MadCap:variable xhtml:name="Heading.Level1" xhtml:style="color: #767676;" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /><xhtml:span xhtml:style="color: #767676;">:&#160;</xhtml:span><MadCap:variable xhtml:name="Heading.FirstIndexTerm" xhtml:style="color: #767676;" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /><xhtml:span xhtml:style="color: #767676;"> – </xhtml:span><MadCap:variable xhtml:name="Heading.LastIndexTerm" xhtml:style="color: #767676;" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+                            <xhtml:br /><MadCap:variable xhtml:name="Heading.Level1" xhtml:style="color: #767676;" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /><xhtml:span xhtml:style="color: #767676;">:&#160;</xhtml:span><MadCap:variable xhtml:name="Heading.FirstIndexTerm" xhtml:style="color: #767676;" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /><xhtml:span xhtml:style="color: #767676;"> - </xhtml:span><MadCap:variable xhtml:name="Heading.LastIndexTerm" xhtml:style="color: #767676;" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
                         </xhtml:p>
                     </xhtml:body>
                 </xhtml:html>
@@ -61,7 +61,7 @@
                 <xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml">
                     <xhtml:body>
                         <xhtml:p xhtml:class="PDFheader"><xhtml:b><MadCap:variable xhtml:name="xHPc_Basic_Variables.xHP_Book_Title" xhtml:style="font-weight: normal; color: #767676;" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /></xhtml:b>
-                            <xhtml:br /><MadCap:variable xhtml:name="Heading.Level1" xhtml:style="color: #767676;" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /><xhtml:span xhtml:style="color: #767676;">:&#160;</xhtml:span><MadCap:variable xhtml:name="Heading.FirstIndexTerm" xhtml:style="color: #767676;" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /><xhtml:span xhtml:style="color: #767676;"> – </xhtml:span><MadCap:variable xhtml:name="Heading.LastIndexTerm" xhtml:style="color: #767676;" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+                            <xhtml:br /><MadCap:variable xhtml:name="Heading.Level1" xhtml:style="color: #767676;" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /><xhtml:span xhtml:style="color: #767676;">:&#160;</xhtml:span><MadCap:variable xhtml:name="Heading.FirstIndexTerm" xhtml:style="color: #767676;" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /><xhtml:span xhtml:style="color: #767676;"> - </xhtml:span><MadCap:variable xhtml:name="Heading.LastIndexTerm" xhtml:style="color: #767676;" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
                         </xhtml:p>
                     </xhtml:body>
                 </xhtml:html>

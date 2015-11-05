@@ -265,7 +265,7 @@
     <p>
         <ul id="ul_s3d_pmx_dt">
           <li><b>ESX components</b>. You must have a minimum of two (2) baremetal systems for ESXi
-            hosts. 1 – 4 ESXi clusters are supported. Refer to the ESX documentation for the
+            hosts. 1 - 4 ESXi clusters are supported. Refer to the ESX documentation for the
             supported hardware configurations. <ul>
               <li> vSphere Cluster running ESXi 5.5u2 with vMotion enabled.</li>
               <li>1 Virtual Machine Port Group with all Cloud Vlans associated to the Port Group.

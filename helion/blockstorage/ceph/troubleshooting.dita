@@ -86,10 +86,10 @@ ansible-playbook -i hosts/verb_hosts site.yml </codeblock></p>
       playbook and include the hostnames of all the <b>Ceph monitor nodes</b> in the cloud. You can
       execute the <codeph>site.yml</codeph> option in either of the following ways:<ol
         id="ol_jxh_bfq_5t">
-        <li><codeph>ansible-playbook -i hosts/verb_hosts site.yml –-limit new-compute</codeph><p>You
+        <li><codeph>ansible-playbook -i hosts/verb_hosts site.yml --limit new-compute</codeph><p>You
             must add monitor nodes in the above
-            command:<codeblock>ansible-playbook -i hosts/verb_hosts site.yml –-limit new-compute,monitor-1,monitor-2,monitor-3</codeblock></p></li>
-        <li><codeph>ansible-playbook -i hosts/verb_hosts site.yml –limit
+            command:<codeblock>ansible-playbook -i hosts/verb_hosts site.yml --limit new-compute,monitor-1,monitor-2,monitor-3</codeblock></p></li>
+        <li><codeph>ansible-playbook -i hosts/verb_hosts site.yml -limit
             @new_nodes.txt</codeph><p>You can add the monitor hosts to the text file (named
               <codeph>new_nodes.txt</codeph>), which specifies the new compute host (along with
             monitor hosts) as follows:<ul id="ul_ak5_fgq_5t">

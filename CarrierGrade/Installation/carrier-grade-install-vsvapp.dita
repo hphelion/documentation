@@ -60,7 +60,7 @@
 --url &lt;URL>                     vCenter url (example: https://localhost/sdk)          </codeblock>
           <p> </p>
           <p><b>Syntax Help</b></p>
-          <codeblock>usage: deploy_vrs [-d &lt;DATASTORE&gt;] -f &lt;PATH&gt; -m &lt;FILE&gt; -p &lt;PASSWORD&gt; [-r &lt;RESOURCEPOOL&gt;] –u &lt;USRNAME&gt; --url &lt;URL&gt;
+          <codeblock>usage: deploy_vrs [-d &lt;DATASTORE&gt;] -f &lt;PATH&gt; -m &lt;FILE&gt; -p &lt;PASSWORD&gt; [-r &lt;RESOURCEPOOL&gt;] -u &lt;USRNAME&gt; --url &lt;URL&gt;
 -d,--datastore &lt;DATASTORE&gt; Datastore name or moref. (Optional)
 -f,--path &lt;PATH&gt; VRS template path.
 -m,--metafile &lt;FILE&gt; Meta file defining VRS property values.

@@ -214,7 +214,7 @@ heat_watch_server_url = http://192.0.202.2:8003
               <p>Save the file.</p>
             </li>
             <li>
-              <p>Restart the Heat-related services – heat-api, heat-api-cfn, heat-api-cloudwatch,
+              <p>Restart the Heat-related services - heat-api, heat-api-cfn, heat-api-cloudwatch,
                 and heat-engine.</p>
             </li>
             <li>

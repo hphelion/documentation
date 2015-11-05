@@ -82,16 +82,16 @@
       
       <p>Before you modify the control_plane.yml and neutron.conf.j2 files, it is recommended that
         you back up the original versions of those files. Once you have backed them up, modify the
-        control_plane.yml and neutron.conf.j2 files – please refer to the chapter <xref
+        control_plane.yml and neutron.conf.j2 files - please refer to the chapter <xref
           href="../installation/using_git.dita#using_git">HPE Helion OpenStack®
             2.0: Using Git for Configuration Management</xref> for details on how to edit
         those configuration files.</p>
       
       <ol>
-        <li>Edit ~/helion/my_cloud/definition/data/control_plane.yml – depending on your installation the control_plane.yml file might be in a different location.</li>
-        <li>In the section specifying the compute nodes (resources/compute) replace neutron-lbaasv2-agent with neutron-lbaas-agent – there will only be one occurrence in that file.</li>
+        <li>Edit ~/helion/my_cloud/definition/data/control_plane.yml - depending on your installation the control_plane.yml file might be in a different location.</li>
+        <li>In the section specifying the compute nodes (resources/compute) replace neutron-lbaasv2-agent with neutron-lbaas-agent - there will only be one occurrence in that file.</li>
         <li>Save the modified file.</li>
-        <li>Edit the ~/helion/my_cloud/config/neutron/neutron.conf.j2  – depending on your installation the neutron.conf.j2 file might be in a different location.</li>
+        <li>Edit the ~/helion/my_cloud/config/neutron/neutron.conf.j2  - depending on your installation the neutron.conf.j2 file might be in a different location.</li>
         <li>Comment out the LBaaS v2 service_plugin and service_provider lines.</li>
         <li>Uncomment the LBaaS v1 lines.</li>
         <li>Save the file.</li>

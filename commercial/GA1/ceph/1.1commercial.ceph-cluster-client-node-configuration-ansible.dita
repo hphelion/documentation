@@ -451,10 +451,10 @@ seed0   ansible_ssh_private_key_file=seed-id_rsa.private
     </section>
     <p>You can choose to integrate CEPH with Cinder, Glance , and Nova. To integrate Ceph with these
       OpenStack components, execute the following
-      command:<codeblock>ansible-playbook –i hosts client_setup.yml</codeblock></p>
+      command:<codeblock>ansible-playbook -i hosts client_setup.yml</codeblock></p>
     <p>Execute the following command to integrate Ceph without Nova:</p>
     <p>
-      <codeblock>ansible-playbook –i hosts client_setup.yml --skip-tags computes</codeblock>
+      <codeblock>ansible-playbook -i hosts client_setup.yml --skip-tags computes</codeblock>
     </p>
     <section><b>Integration of Ceph with HOS components</b><p>Perform the following steps to
         integrate ceph with HOS components</p><ol id="ol_h12_vpp_xs">

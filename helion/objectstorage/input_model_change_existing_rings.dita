@@ -143,7 +143,7 @@ ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
             <stentry>Removing Server(s)</stentry>
             <stentry>
               <p>In HPE Helion OpenStack 2.0, when you remove servers from the input model, the disk
-                drives are removed from the ring – the weight is not gradually reduced using the
+                drives are removed from the ring - the weight is not gradually reduced using the
                   <codeph>weight-step</codeph> attribute. <ul id="ul_dwn_nk5_pt">
                   <li>Remove servers in phases:<ul id="ul_wqy_nk5_pt">
                       <li>This reduces the impact of the changes on your system.</li>
@@ -163,7 +163,7 @@ ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
           <strow>
             <stentry>Replacing Disk Drive(s)</stentry>
             <stentry><p>When a drive fails, replace it as soon as possible. Do not attempt to remove
-                it from the ring – this creates operator overhead. Swift will continue to store the
+                it from the ring - this creates operator overhead. Swift will continue to store the
                 correct number of replicas by handing off objects to other drives instead of the
                 failed drive.</p>If the disk drives are of the same size as the original when the
               drive is replaced, no ring changes are required. You can confirm this by running the
@@ -182,7 +182,7 @@ ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
                 <li>Replace drives in phases:<ul id="ul_gvy_5fz_4t">
                     <li>Avoid replacing too many drives at once.</li>
                     <li>If your rings use swift zones, upgrade a number of drives in the same zone
-                      at the same time – not drives in several zones.</li>
+                      at the same time - not drives in several zones.</li>
                     <li>It is also safer to upgrade one server instead of drives in several servers
                       at the same time.</li>
                     <li>Remember that the final size of all Swift zones must be the same, so you may

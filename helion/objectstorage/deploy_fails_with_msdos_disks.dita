@@ -26,7 +26,7 @@
               <codeph>gdisk</codeph>:<codeblock>sudo apt-get install gdisk</codeblock></li>
             <li>Convert to the GPT partition type. Following is an example for converting
                 <codeph>/dev/sdd</codeph> to the GPT partition
-              type:<codeblock>sudo sgdisk –g /dev/sdd</codeblock></li>
+              type:<codeblock>sudo sgdisk -g /dev/sdd</codeblock></li>
             <li> Reboot the node to take effect. You may then resume the deployment (repeat the
               playbook that reported the error). </li>
           </ul></stentry>

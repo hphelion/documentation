@@ -16,7 +16,7 @@
             <codeblock># scp /root/.ssh/id_rsa heat-admin@&lt;undercloud IP></codeblock></li>
           <li>Login to
             undercloud.<codeblock># ssh heat-admin@&lt;undercloud IP>
-# sudo –i
+# sudo -i
 # mv ~heat-admin/id_rsa /root/.ssh/</codeblock></li>
           <li>List the instances and identify the node to be
             removed.<codeblock># . stackrc
@@ -24,7 +24,7 @@
           <li>Execute the following commands to pull the ring files from the working Swift nodes (if
             any)<codeblock># . stackrc 
 # ringos list-swift-nodes -t starter 
-# mkdir –p /root/ring-building 
+# mkdir -p /root/ring-building 
 # rsync -qzp --rsync-path="sudo rsync" heat-admin@&lt;<b>working swift node IP</b>>:/etc/swift/object.ring.gz /root/ring-building/ 
 # rsync -qzp --rsync-path="sudo rsync" heat-admin@&lt;<b>working swift node IP</b>>:/etc/swift/account.ring.gz /root/ring-building/ 
 # rsync -qzp --rsync-path="sudo rsync" heat-admin@&lt;<b>working swift node IP</b>>:/etc/swift/container.ring.gz /root/ring-building/ 
@@ -125,7 +125,7 @@ cat $TE_DATAFILE \
 # sudo -i</codeblock></li>
           <li>Login to
             undercloud.<codeblock># ssh heat-admin@&lt;undercloud IP>
-# sudo –i</codeblock></li>
+# sudo -i</codeblock></li>
           <li>List the Ironic powered off
             node.<codeblock># . stackrc
 # ironic node-list</codeblock></li>
@@ -155,7 +155,7 @@ driver_info/ipmi_address=&lt;IPMI_ADDRESS></codeblock></li>
             difference in the scale count update in the<codeph> datafile</codeph> as
               follows:<codeblock># Restore swiftproxyscale &amp; swiftstoragecount to 2</codeblock><p>Once
               the node is removed/replaced in the HPE Helion OpenStack cloud, execute the
-                <codeph>–update-overcloud</codeph> operation (as menitoned in <xref
+                <codeph>-update-overcloud</codeph> operation (as menitoned in <xref
                 href="http://docs.hpcloud.com/#commercial/GA1/1.1.1commercial.helion-update.html"
                 format="html" scope="external">Update Procedure</xref>) to restore the initial
               configuration.</p></li>

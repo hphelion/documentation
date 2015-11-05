@@ -83,7 +83,7 @@
     <p>
       <note>The proxy service does not have any rings associated with it.</note>
     </p>
-    <example>Example: <b>PACO</b> – proxy, account, container, and object run on the same node
+    <example>Example: <b>PACO</b> - proxy, account, container, and object run on the same node
       type.<codeblock>consumer:
     name: swift
     attrs:
@@ -91,7 +91,7 @@
         - name: account
         - name: container
         - name: object-0</codeblock></example>
-    <example>Example: <b>PAC</b> – proxy, account, and container run on the same node
+    <example>Example: <b>PAC</b> - proxy, account, and container run on the same node
       type.<codeblock>consumer:
     name: swift
     attrs:

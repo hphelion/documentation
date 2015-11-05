@@ -13,7 +13,7 @@
       swift-ring-builder utility as part of the deploy process. (Normally, you will not run the
       swift-ring-builder utility directly.)</p>
     <p>The rings are specified in the input model using the <b>ring-specifications</b> key. There is
-      an entry for each distinct Swift system – hence the Keystone region name is specified in the
+      an entry for each distinct Swift system - hence the Keystone region name is specified in the
         <b>region-name</b> key of the example cloud model.</p>
     <p><b>Ring Specifications in the Input Model</b></p>
     <p>In the cloud model, a ring-specification is mentioned in the
@@ -156,7 +156,7 @@
         a timely manner.</li>
       <li>If you use a low partition power and have many disk drives, you will have tens (or maybe
         only one) partition on a drive. The Object Storage system does not use size when hashing to
-        a partition – it hashes the name.
+        a partition - it hashes the name.
           <!--If sizes and names are randomly distributed, it is normally expected a random, even,  distribution of sizes within a partition. However, this may not happen (i.e., two neighboring partitions may have different sizes). --><p>With
           many partitions on a drive, a large partition is cancelled out by a smaller partition so
           the overall drive usage is similar. However, with very small numbers of partitions, the
@@ -316,14 +316,14 @@
       help:</p>
     <p>
       <ul>
-        <li>Start with a system that is closer to your final anticipated system size – this means
+        <li>Start with a system that is closer to your final anticipated system size - this means
           that you can use a high partition power that suits your final system.</li>
       </ul>
     </p>
     <ul>
       <li>You can add additional storage policies as the system grows. These storage policies can
         have a higher partition power because there will be more drives in a larger system. Note
-        that this does not help account and container rings – storage policies are only applicable
+        that this does not help account and container rings - storage policies are only applicable
         to object rings.</li>
     </ul>
   </body>

@@ -224,13 +224,13 @@ Saved the sample file to net_conf.json
         </ul></p><ul id="ul_m5q_hqf_rt">
         <li>List the network details for a datacenter<p> Shows the persisted network details for a
             datacenter in the
-            vCenter.<codeblock># eon list-network-info –vcenter-id &lt;vCenter ID> --datacenter-name &lt;Datacenter Name></codeblock></p><p>where:<ul
+            vCenter.<codeblock># eon list-network-info -vcenter-id &lt;vCenter ID> --datacenter-name &lt;Datacenter Name></codeblock></p><p>where:<ul
               id="ul_aqv_4qf_rt">
               <li>vCenter ID - ID of the vcenter containing the cluster.</li>
-              <li>Datacenter Name – Datacenter name of the vCenter where the clusters (to be used
+              <li>Datacenter Name - Datacenter name of the vCenter where the clusters (to be used
                 for compute resource) resides.</li>
             </ul></p><p><b>Example
-            Output</b>:<codeblock># eon list-network-info –vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --datacenter-name DC1
+            Output</b>:<codeblock># eon list-network-info -vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --datacenter-name DC1
 ---------------------------------------------------------------
 {
   "computeproxy": {
@@ -320,7 +320,7 @@ Saved the sample file to net_conf.json
             json
             file.<codeblock># eon set-network-info --vcenter-id &lt;vCenter ID> --datacenter-name &lt;datacenter name> --config-json &lt;NETWORK_CONF_FILENAME></codeblock></p>
           <p><b>Example
-            Output</b>:<codeblock># eon set-network-info –vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --datacenter-name DC1 --config-json net_conf.json
+            Output</b>:<codeblock># eon set-network-info -vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --datacenter-name DC1 --config-json net_conf.json
 ---------------------------------------------------------------
 {
   "computeproxy": {

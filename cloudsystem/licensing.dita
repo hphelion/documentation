@@ -3,7 +3,7 @@
 <topic id="topic_zd5_k4l_xs">
   <title>HPE Helion CloudSystem: Software License Terms</title>
   <body>
-    <section><title>Part 1–HPE End User License Agreement </title>
+    <section><title>Part 1-HPE End User License Agreement </title>
          <ol>
         <li><b>Applicability</b>. This end user license agreement (the "Agreement") governs the use
           of accompanying HPE Helion CloudSystem Software ("Software"), unless it is subject to a
@@ -139,7 +139,7 @@
                 scope="external">http://www.hp.com/go/SWLicensing</xref>.</li>
           </ol></li></ol>
     </section><section>
-      <title>Part 2–Additional License Authorization for HPE Helion CloudSystem Software</title>
+      <title>Part 2-Additional License Authorization for HPE Helion CloudSystem Software</title>
       <p>This Part 2 includes Additional License Authorizations (ALA) for the Software, including HP
         Helion CloudSystem Foundation Software and HPE Helion CloudSystem Enterprise Software. You
         may Use (as defined below) the Software in accordance with the terms of this ALA in addition
@@ -344,7 +344,7 @@
                 Continue.</li></ul></li>
           </ol></li>
       </ul>
-</section><section><title> Part 3–Ancillary and Open Source Software</title>
+</section><section><title> Part 3-Ancillary and Open Source Software</title>
      
       <p>Additional license authorizations related to ancillary, third party and open source
         software components are available at <xref

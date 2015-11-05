@@ -156,7 +156,7 @@ For more details on the Lefthand driver, refer to <xref href="http://docs.openst
 <b>2. Medium Cost, Medium Performance, Medium Capacity Storage</b> (Silver)</p>
 <p>
 <b>3. High Cost, High Performance, Low Capacity Storage</b> (Gold)</p>
-<p>Then, as the cloud administrator, you need to create three volume types – bronze, silver and gold – and configure Cinder with three different backends. Each backend needs to be mapped to bronze, silver and gold, respectively.</p>
+<p>Then, as the cloud administrator, you need to create three volume types - bronze, silver and gold - and configure Cinder with three different backends. Each backend needs to be mapped to bronze, silver and gold, respectively.</p>
 <p>Differentiated storage offerings based on performance and quality can be realized in HPE Helion OpenStack by creating clusters of different capabilities, configuring clusters as backends and mapping these backends to different volume types as suggested above.</p>
 </section>
 <section id="scale-out-vsa"> <title>Scale Out Cinder Block Storage with StoreVirtual VSA</title>
