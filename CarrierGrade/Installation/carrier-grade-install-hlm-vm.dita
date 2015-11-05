@@ -26,8 +26,8 @@
         installed. Before starting the installation, make sure the Debian files you <xref
           href="carrier-grade-install-prereqs.dita#topic7148/getinstall">downloaded in the
           Prerequisites</xref> are present in the repository: </p>Copy the following Debian packages
-      to <codeph>/root/cg/dcn</codeph> directory. When you run the ansible-playbook command, these
-      files will be picked up and moved into the repository.  <ul id="ul_wwn_13h_xt">
+      to the <codeph>/root/cg/dcn</codeph> directory. When you run the ansible-playbook command,
+      these files will be picked up and moved into the repository.  <ul id="ul_wwn_13h_xt">
         <li conref="carrier-grade-install-prereqs.dita#topic7148/libproto"/>
         <li conref="carrier-grade-install-prereqs.dita#topic7148/setproc"/>
       </ul></section>

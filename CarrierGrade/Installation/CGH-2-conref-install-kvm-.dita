@@ -20,15 +20,15 @@
         and HPE Distributed Cloud Networking components must be fully installed and
           functioning:</p><p><b>DCN Requirements</b></p><p>HPE Helion Distributed Cloud Networking
         (DCN) must be deployed before starting the cloud deployment. Please refer to DCN
-        documentation for details. </p><p>For a quick overview of the DCN components, see <xref
-          href="carrier-grade-technical-overview-esx.dita#topic3485/dcn">KVM + ESX Deployment
+        documentation for details. </p><p>For a quick overview of the DCN components, see the
+        appropriate <xref href="carrier-grade-technical-overview.dita#topic3485">Deployment
           Architecture Reference</xref></p><p>In production cloud deployments:</p><ul
         id="ul_hnw_pry_zs">
         <li>DCN should be deployed in HA mode (with 2 VSCs, 2 VRS-Gs).</li>
         <li>VSD should be deployed in HA mode (3+1 VSDs). </li>
-        <li>VSD should be assigned a DCM IP accessible for cloud deployment. Refer to the <xref
-            href="carrier-grade-technical-overview-esx.dita#topic3485">architecture
-          diagram</xref>.</li>
+        <li>VSD should be assigned a DCM IP accessible for cloud deployment. Refer to the
+          appropriate <xref href="carrier-grade-technical-overview.dita#topic3485">architecture
+            diagram</xref>.</li>
         <li>Verify that the IP address and domain name of VSD can be accessed using PING and DIG
           commands. </li>
         <li>Make sure all the VSD services are in PASS state.</li>
@@ -520,9 +520,6 @@ The cloud &lt;cloudname> was generated successfully.
             configure networking, and configure the ESX environment. </p></li>
         <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
       </ol>
-      <p><b>Note:</b> If the <codeph>hdeploy</codeph> script fails, review the topics in <xref
-          href="carrier-grade-install-build9-workarounds.dita#topic10581">this section for
-          troubleshooting</xref>. </p>
     </section>
     <section><!--<title>Applying the HLM Port Security Patch</title>This patch secures all ports on the HLM VM. The standard protocol ports will allow inbound access only and the only the cloud nodes will have inbound access to the other ports of the HLM VM.<p>For more information, see the README in the download or <xref href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port Security Patch</xref>. </p>--></section>
     <section>

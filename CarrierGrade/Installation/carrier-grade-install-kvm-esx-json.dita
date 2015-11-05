@@ -70,8 +70,7 @@
                         </row>
                         <row>
                             <entry>name</entry>
-                            <entry>Name of OVA template  (set to
-                                <codeph>overcloud_vcenter_compute_proxy.ova</codeph>)</entry>
+                            <entry>Name of OVA template downloaded</entry>
                         </row>
                         <row>
                             <entry namest="col1" nameend="col2"><b>network:</b></entry>

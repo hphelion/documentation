@@ -18,9 +18,9 @@
             <!--UNDER REVISION-->
             <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
             <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
-        <p>The <xref href="carrier-grade-install-kvm.dita#topic10581">process for installing the KVM
-                deployment</xref> requires a JSON file that will be used when deploying the HP
-            Helion OpenStack.</p>
+        <p>The process for installing <xref href="carrier-grade-install-non-kvm.dita#topic10581">the
+                non-KVM region</xref> deployment requires a JSON file that will be used when
+            deploying the HP Helion OpenStack.</p>
         <p>The <codeph>node-provision.json</codeph> file contains the following fields:</p>
         <table>
             <tgroup cols="2">
@@ -177,11 +177,8 @@
             
             
             </codeblock>
-            <p>Return to <xref href="carrier-grade-install-kvm.dita#topic10581">
-                    Installing the KVM Deployment</xref>.</p>
-            <p>
-                <xref type="section" href="#topic4797"> Return to Top </xref>
-            </p>
+            <p>Return to <xref href="carrier-grade-install-non-kvm.dita#topic10581">the non-KVM
+                    region</xref>.</p>
         </section>
     </body>
 </topic>

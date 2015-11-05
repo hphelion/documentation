@@ -3,7 +3,7 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
     <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying a vApp for
-        DCN/ESX Integration</title>
+        DCN/ESX Integration (VRSvApp)</title>
     <prolog>
         <metadata>
             <othermeta name="layout" content="default"/>
@@ -64,22 +64,36 @@
                     </ul></li>
             </ul>
         </section>
-        <section><title>Creating a Stand-Alone Virtual Machine for the vCenter Integration
-                Node</title>The HPE Helion OpenStack Carrier Grade installation requires that you
-            install a dedicated virtual machine on an ESX server for the HPE DCN vSphere Solution.
-            This VM is called the vCenter Integration Node, and includes the vCenter Deployment
-            Toolbox. <p>The vCenter Integration Node VM requires a Virtualized Services Directory
-                (VSD) instance. The instance does not require a VSD license and does not offer VSD
-                functionality. </p><p>To deploy the vCenter Integration Node VM:</p><ol
-                id="ol_wtp_x4h_tt">
+        <section><title>Importing Templates to Create Required VMs</title><p>Two VMs are required
+                for the DCN vSphere Solution. You can use ESX vCenter client to import template
+                files to create these VMs. You should have <xref
+                    href="carrier-grade-install-prereqs.dita#topic7148/getinstall">downloaded these
+                    template files during the prerequisites</xref>.</p><p>For instructions on how to
+                import OVA files, refer to the ESX documentation.</p>To deploy the vCenter
+            Integration Node VM:<ol id="ol_mkw_drl_xt">
                 <li>Launch the vCenter client, at <codeph>https://&lt;vcenter
                         IP&gt;:9443/vsphere-client</codeph>.</li>
                 <li>Import the <codeph conref="carrier-grade-install-prereqs.dita#topic7148/vsd-ova"
-                    /> file into vCenter server. You should have <xref
-                        href="carrier-grade-install-prereqs.dita#topic7148/getinstall">downloaded
-                        this file during the prerequisites</xref>. Importing the OVA file creates
-                    the vCenter Integration Node VM.<p>For instructions, refer to the ESX
-                        documentation.</p></li>
+                    /> file into vCenter server.  Importing the OVA file creates the vCenter
+                    Integration Node VM. During the installation, you will select a network for the
+                    VM. Select the DVS Datapath (TUL) network.</li>
+                <li>Import the <codeph
+                        conref="carrier-grade-install-prereqs.dita#topic7148/itoolbox1"/>template
+                        file.<p>You should have <xref
+                            href="carrier-grade-install-prereqs.dita#topic7148/getinstall"
+                            >downloaded this file during the prerequisites</xref>. Importing the OVA
+                        file creates the HTTP\DHCP VM. During the installation, you will select a
+                        network for the VM. Select the DVS Datapath (TUL) network.</p><p>For
+                        instructions, refer to the ESX documentation.</p></li>
+            </ol></section>
+        <section><title>Confiugre the vCenter Integration Node (Deployment Toolbox)</title>The HPE
+            DCN vSphere Solution requires that you install a dedicated virtual machine on an ESX
+            server. This VM is called the vCenter Integration Node, and includes the vCenter
+            Deployment Toolbox. You created the the vCenter Integration Node when you imported the
+            OVA file above. <p>The vCenter Integration Node VM requires a Virtualized Services
+                Directory (VSD) instance. The instance does not require a VSD license and does not
+                offer VSD functionality. </p><p>To deploy the vCenter Integration Node VM:</p><ol
+                id="ol_wtp_x4h_tt">
                 <li>Login to the vCenter Integration Node VM using username <codeph>root</codeph>
                     and password <codeph>Alcateldc</codeph>. You assigned the IP address when
                     importing the OVA template file.<p><b>Important:</b> After logging in with the
@@ -98,7 +112,10 @@ GATEWAY=10.20.5.1</codeblock></p></li>
                     install VSD:<codeblock>/opt/vsd/install.sh</codeblock></li>
             </ol></section>
         <section>
-            <title>Create the HTTP\DHCP VM for the vCenter Integration Node</title>
+            <title>Configure the HTTP\DHCP VM for the vCenter Integration Node</title>
+            <p>The HPE DCN vSphere Solution requires that you install a dedicated virtual machine on
+                an ESX server for HTTP\DCHP services. You created the the HTTP\DHCP VM when you
+                imported the OVA file above. </p>
             <p>Perform the following step create a VM for HTTP and DHCP services.</p>
             <p>
                 <ol id="ol_v11_wh4_rt">

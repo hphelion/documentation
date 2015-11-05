@@ -15,10 +15,10 @@
     </metadata>
   </prolog>
   <body>
-    <p>After <xref href="carrier-grade-install-kvm-esx.dita#topic10581">the HPE Helion OpenStack
-        cloud is installed</xref>, you must perform the following tasks to prepare your cloud for
-      use. These tasks use CLI commands, the HPE Helion OpenStack Carrier Grade Horizon interface,
-      and the HPE Virtualized Services Directory Architect (VSD Architect) interface.  </p>
+    <p>After the HPE Helion OpenStack cloud is installed, you must perform the following tasks to
+      prepare your cloud for use. These tasks use CLI commands, the HPE Helion OpenStack Carrier
+      Grade Horizon interface, and the HPE Virtualized Services Directory Architect (VSD Architect)
+      interface. </p>
     <p><b>Note:</b> If you are deploying the <xref
         href="carrier-grade-install-overview.dita#topic1925/install-option">KVM
       deployment</xref>, you do not need to perform these tasks. </p>

@@ -23,8 +23,6 @@
             <topicref href="carrier-grade-install-NTP.dita" toc="no" navtitle="Configuring NTP"
                 locktitle="yes"/>
             <topicref href="carrier-grade-install-vsd-vm.dita" toc="no"/>
-            <topicref href="carrier-grade-install-baremetal-cloud-prepare.dita"
-                navtitle="Preparing the Baremetal Region" locktitle="yes"/>
         </topicref>
         <topicref href="carrier-grade-install-hlm-vm.dita"
             navtitle="Deploying the HLM VM and Installation Services" locktitle="yes"/>
