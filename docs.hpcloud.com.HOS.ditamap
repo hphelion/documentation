@@ -33,8 +33,6 @@
       locktitle="yes">
       <topicref href="helion/installation/using_git.dita"
         navtitle="Using Git for Configuration Management" locktitle="yes"/>
-      <topicref href="helion/installation/preinstall_checklist.dita"
-        navtitle="Pre-Installation Checklist" locktitle="yes"/>
       <topicref href="helion/installation/install_entryscale_kvm.dita"
         navtitle="Installation for Helion Entry-scale KVM Cloud" locktitle="yes">
         <topicref href="helion/installation/configure_vsa.dita" navtitle="VSA Configuration"
