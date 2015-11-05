@@ -10,14 +10,8 @@
     <section id="Prerequisites">
       <title>Prerequisites</title>
       <ul>
-        <li>The HDP Installer 2.0, also known as HDPI, must already <xref
-            href="devplatform_install_platform.dita#topic_gly_xmh_ts">be installed</xref>.</li>
-        <li>A properly configured <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt"
-            >clouds.yaml</xref> file.</li>
         <li>HPE Helion OpenStack 2.0 installation must be completed. You must know the location of
-          its <codeph>services.osrc</codeph> file, which contains configuration information.</li>
-        <li>A SSH public and private keypair, uploaded to OpenStack, configured in clouds.yml, and
-          used as ssh keys on the deployer machine.</li>
+          its <codeph>keystone.osrc</codeph> file, which contains configuration information.</li>
         <li>You must know the NTP server and DNS server IP addresses.</li>
         <li>Credentials of the User and Tenant where the service is to be deployed ("Target
           Credentials")</li>
@@ -26,21 +20,22 @@
         <li>The v2 CLI must be installed on all nodes due to client differences</li>
       </ul>
     </section>
-    <section><title>Download Files</title>
-    <ol>
-      <li>Navigate to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
-          format="html" scope="external">HPE Helion Download Network</xref> (HDN) and log in. If
-        necessary, create an account first.</li>
-      <li>Download the <xref scope="external" format="html"
-          href="http://pinafore.usa.hp.com/paas-2.0/dnsaas-2.0/QA1/dnsaas-2.0.0-b.1-20151005T183829Z.tgz"
-          >DNSaaS Deployer Tarball</xref>. Check against this value to ensure that you have the
-        right file: f68a9829081f864ed6414631da5e9697 dnsaas-2.0.0-b.1-20151005T183829Z.tgz</li>
-      <li>Download the <xref scope="external" format="html"
-          href="http://pinafore.usa.hp.com/paas-2.0/dnsaas-2.0/QA1/dnsaas-2.0.0-b.1_cloud-1.0.20151005T152959Z.qcow2"
-          >DNSaaS Cloud Image</xref>. Check against this value to ensure that you have the right
-        file: 48a0ae226bc0f64396c4c959b1853b75
-        dnsaas-2.0.0-b.1_cloud-1.0.20151005T152959Z.qcow2</li>
-    </ol></section>
+
+    <section>
+      <title>Download Files</title>
+      <ol>
+        <li>Navigate to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
+            format="html" scope="external">HPE Helion Download Network</xref> (HDN) and log in. If
+          necessary, create an account first.</li>
+        <li>Download the <xref scope="external" format="html"
+            href="http://pinafore.usa.hp.com/paas-2.0/dnsaas-2.0/QA1/dnsaas-2.0.0-b.1-20151005T183829Z.tgz"
+            >DNSaaS Deployer Tarball</xref>. (dnsaas-2.0.0-b.1-20151005T183829Z.tgz)</li>
+        <li>Download the <xref scope="external" format="html"
+            href="http://pinafore.usa.hp.com/paas-2.0/dnsaas-2.0/QA1/dnsaas-2.0.0-b.1_cloud-1.0.20151005T152959Z.qcow2"
+            >DNSaaS Cloud Image</xref>. (dnsaas-2.0.0-b.1_cloud-1.0.20151005T152959Z.qcow2)</li>
+      </ol>
+    </section>
+
     <section id="PrerequisiteCredentials">
       <title>Creating the Prerequisite Credentials</title>
       <p>Target credentials are the credentials of the user and project where the service is to be
@@ -69,6 +64,7 @@ $ openstack role add --project dnsaas --user dnsaas admin</codeblock></li>
           <codeblock>$ openstack role list</codeblock></li>
       </ol>
     </section>
+
     <section id="CredentialsFile">
       <title>DNSaaS User and Project Credentials</title>
       <p>Prepare the credentials files for the DNSaaS user and project.</p>
@@ -169,7 +165,10 @@ Enter same passphrase again:
 # Do not continue with the installation steps that appear here
 # Ignore this next line.
 To continue installation copy your cloud layout to: /home/stack/helion/my_cloud/definition      </codeblock></li>
-        </ol></sectiondiv></section>
+        </ol>
+      </sectiondiv>
+    </section>
+
     <section id="PrepareDeployment">
       <title>Prepare the Deployment</title><sectiondiv>
         <b>Select an Example Deployment Model</b>
@@ -180,7 +179,9 @@ To continue installation copy your cloud layout to: /home/stack/helion/my_cloud/
         path.</note><codeblock>$ cd ~/helion
 $ cp -r examples/powerdns/* my_cloud/definition/
 $ git add -A
-$ git commit -a -m "Add DNSaaS Example Model" </codeblock></sectiondiv><sectiondiv>
+$ git commit -a -m "Add DNSaaS Example Model" </codeblock>
+      </sectiondiv>
+      <sectiondiv>
         <b>Customize the Example Deployment Model</b>
         <ol>
           <li>You will need to change directories to the my_cloud/definition directory and run nano
@@ -194,42 +195,153 @@ ansible-playbook -i hosts/verb_hosts platform-pass-through.yml -e pass_through_k
               <li>Copy <b>from</b>: &lt;<b>HOS</b> deployer&gt;:~/platform-pass-through.yml </li>
               <li>Copy <b>to</b>: &lt;<b>DNSaaS</b> deployer&gt;
                 ~/helion/my_cloud/definition/data/pass-through/hos.yml</li>
-            </ul></li>
-          <li>Create SSL Certificates <p>If you want to install a self-signed certificate that meets
-              the needs of HPE Helion OpenStack and HPE Helion Development Platform, follow these
-              steps.</p>
-            <p>You will need a real or fictional domain name e.g. "your.domain.com" and it must
+            </ul>
+          </li>
+          <li>Run the Pre-Installation Playbook <p>Copy the ~/dnsaas.osrc file from the HPE Helion
+              OpenStack deployer. At the end of each playbook, ensure both "unreachable" and
+              "failed" are zero.</p>
+            <codeblock>$ source ~/dnsaas.osrc
+$ cd ~/helion/hos/ansible/
+$ ansible-playbook -i hosts/localhost hlm-pre-install.yml</codeblock>
+          </li>
+        </ol>
+      </sectiondiv>
+      
+      <sectiondiv>
+        <p><b>Create SSL Certificates</b></p>
+        <p>If you want to install a self-signed certificate that meets the needs of HPE Helion
+          OpenStack and HPE Helion Development Platform, follow the steps outlined in the FQDN-based
+          Certificate section. If you want to create an IP-address Certificate follow the steps in
+          the IP-Address Certificate section.</p>
+        
+        <p>FQDN-based Certificate</p>
+        <p>You will need a real or fictional domain name e.g. "your.domain.com" and it must
               match across the next 3 steps. </p>
-            <ul>
-              <li>Create a Certificate Signing Request (CSR) with a defined subject.
-                <codeblock>cd ~
+        <ol>
+          <li>Create a Certificate Signing Request (CSR) with a defined subject.
+            <codeblock>cd ~
 openssl req -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.csr -text \
     -subj '/C=US/O=Helion Test Certificate/CN=your.domain.com/emailAddress=test@example.org/'
-                </codeblock></li>
-              <li>Create a file containing v3 extensions Ensure that the DNS entry matches any CN
+            </codeblock></li>
+          <li>Create a file containing v3 extensions Ensure that the DNS entry matches any CN
                 entry above and provide your IP address. The IP address is what is used by HPE
                 Helion Development Platform and the DNS is used by HPE Helion OpenStack. <note>The
                   IP address must be the same in DNS: and IP:</note>
-                <codeblock>$ cat > v3_ext.cnf &lt;&lt; EOF
+            <codeblock>$ cat &gt; v3_ext.cnf &lt;&lt; EOF
 [ v3_req ]
-subjectAltName=DNS:your.domain.com, DNS:10.0.0.1, IP:10.0.0.1
+subjectAltName=DNS:your.domain.com
 EOF
-                </codeblock></li>
-              <li>Self-sign your certificate.
-                <codeblock>$ openssl x509 -extfile v3_ext.cnf -extensions v3_req -in my-public-cert.csr -signkey my-public-cert.key -req -out my-public-cert.crt -text</codeblock></li>
-              <li>Installing the certificate. <note>If you are using a FQDN - Create or obtain a
+            </codeblock></li>
+            <li>Self-sign your certificate.
+              <codeblock>$ openssl x509 -extfile v3_ext.cnf -extensions v3_req -in my-public-cert.csr -signkey my-public-cert.key -req -out my-public-cert.crt -text</codeblock></li>
+            <li>Installing the Certificate. 
+              <note>If you are using a FQDN - Create or obtain a
                   certificate to match the domain name you are going to use.</note>
-                <ul>
-                  <li>Join the private and public keys into "my-cert-file" at the required location.
-                    <codeblock>$ cat my-public-cert.key my-public-cert.crt > ~/helion/my_cloud/config/tls/certs/my-public-cert</codeblock>
-                  </li>
-                  <li>Edit network_groups.yml to set the values for "external-name" and "cert-file"
-                    under "load-balancers".
-                    <codeblock>$ nano ~/helion/my_cloud/definition/data/pass-through$network_groups.yml</codeblock></li>
-                </ul>
+              <ul>
+               <li>Join the private and public keys into "my-cert-file" at the required location.
+                <codeblock>$ cat my-public-cert.key my-public-cert.crt > ~/helion/my_cloud/config/tls/certs/my-public-cert</codeblock>
+               </li>
+               <li>Edit network_groups.yml, locate a line containing <codeph>name: extlb</codeph>.  
+                  Add the following lines at the same indentation level as <codeph>name: extlb</codeph>
+                  <codeblock>external-name: your.domain.name
+        cert-file: my-public-cert</codeblock></li>
+               <li>Rename the "components" section of the extlb for a "tls-components" section, activating TLS on all external components.
+                  <codeblock>$ nano ~/helion/my_cloud/definition/data/pass-through$network_groups.yml</codeblock></li>
+               <li>Add changes to git.
+                  <codeblock>$ git add hos/ansible/roles/tls-frontend/files/my-public-cert  my_cloud/definition/data/network_groups.yml
+$ git diff ^HEAD my_cloud/definition/data/network_groups.yml
+# --- Output example ---
+ - hostname: false
+   hostname-suffix: ext
+   load-balancers:
+-  - components:
++  - tls-components:
+     - default
+     external-ip: 172.31.0.2
+     name: extlb
++    cert-file: my-public-cert
++    external-name: your.domain.name
+     provider: ip-cluster
+     roles:
+     - public
+                    
+$ git commit -m"Configure SSL certificate"
+                  </codeblock>
+                </li>
+                <li>Commit changes to git.
+                  <codeblock>$ git commit -m"Configure SSL certificate"</codeblock>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        
+        <p>IP-Address Certificate</p>
+        <ol>
+          <li>Identify the external IP Address.
+            <codeblock>grep 'external-ip' ~/helion/my_cloud/definition/data/network_groups.yml</codeblock>
+          </li>
+          <li>Create a Certificate Signing Request (CSR) with a defined subject.
+            <codeblock>stack@dnsaas-deployer:~$ cd ~
+stack@dnsaas-deployer:~$ openssl req -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.csr -text \
+  -subj '/C=US/O=Helion Test Certificate/CN=&lt;EXTERNAL_IP_ADDRESS&gt;/emailAddress=test@example.org/'</codeblock>
+          </li>
+          <li>Create a file containing v3 extensions Ensure that the DNS entry matches any CN entr above and provide your IP address.
+            <note>The IP address must be the same in DNS: and IP:
+              The IP address is what is used by HPE Helion Development Platform and the DNS is used by HPE Helion OpenStack.</note>
+            <codeblock>stack@dnsaas-deployer:~$ cat &gt; v3_ext.cnf &lt;&lt; EOF
+[ v3_req ]
+subjectAltName=DNS:&lt;EXTERNAL_IP_ADDRESS&gt;, IP:&lt;EXTERNAL_IP_ADDRESS&gt;
+[ alt_names ]
+IP.1 = &lt;EXTERNAL_IP_ADDRESS&gt;
+DNS.1 = &lt;EXTERNAL_IP_ADDRESS&gt;
+EOF</codeblock>
+          </li>
+          <li>Self-sign your certificate.
+            <codeblock>$ openssl x509 -extfile v3_ext.cnf -extensions v3_req -in my-public-cert.csr -signkey my-public-cert.key -req -out my-public-cert.crt -text
+            </codeblock>
+          </li>
+          <li>Installing the Certificate.
+            <note>If you are using a FQDN - Create or obtain a
+              certificate to match the domain name you are going to use.</note>
+            <ul>
+              <li>Join the private and public keys into "my-cert-file" at the required location.
+                <codeblock>$ cat my-public-cert.key my-public-cert.crt > ~/helion/my_cloud/config/tls/certs/my-public-cert</codeblock>
+              </li>
+              <li>Edit network_groups.yml, locate a line containing <codeph>name: extlb</codeph>.  
+                  Add the following lines at the same indentation level as <codeph>name: extlb</codeph>
+                  <codeblock>cert-file: my-public-cert</codeblock>
+              </li>
+              <li>Rename the "components" section of the extlb for a "tls-components" section, activating TLS on all external components.
+                <codeblock>$ nano ~/helion/my_cloud/definition/data/network_groups.yml</codeblock>
+              </li>
+              <li>Add changes to git.
+                <codeblock>$ git add hos/ansible/roles/tls-frontend/files/my-public-cert  my_cloud/definition/data/network_groups.yml
+$ git diff ^HEAD my_cloud/definition/data/network_groups.yml
+# --- Output example ---
+ - hostname: false
+   hostname-suffix: ext
+   load-balancers:
+-  - components:
++  - tls-components:
+     - default
+     external-ip: 172.31.0.2
+     name: extlb
++    cert-file: my-public-cert
+     provider: ip-cluster
+     roles:
+     - public</codeblock>
+              </li>
+              <li>Commit changes to git.
+                <codeblock>$ git commit -m"Configure SSL certificate"</codeblock>
               </li>
             </ul>
           </li>
+        </ol>
+      </sectiondiv>
+      
+      <sectiondiv>
+        <p><b>Save Configured Deployment Model</b></p>
+        <ol>
           <li>Add your changes to Git. <codeblock>$ cd ~/helion
 $ git commit -a -m "Configured Deployment Model"      
 $ git status </codeblock>
@@ -238,12 +350,6 @@ $ git status </codeblock>
         </ol>
       </sectiondiv>
       <sectiondiv>
-        <b>Run the Pre-Installation Playbook</b>
-        <p>Copy the ~/dnsaas.osrc file from the HPE Helion OpenStack deployer. At the end of each
-          playbook, ensure both "unreachable" and "failed" are
-        zero.</p><codeblock>$ source ~/dnsaas.osrc
-$ cd ~/helion/hos/ansible/
-$ ansible-playbook -i hosts/localhost hlm-pre-install.yml</codeblock></sectiondiv><sectiondiv>
         <b>Run the Configuration Processor</b>
         <p>At the end of each playbook, ensure both "unreachable" and "failed" are
           zero.</p><note>When asked for a encryption key, simply leave the value blank, pressing
@@ -253,6 +359,7 @@ $ ansible-playbook -i hosts/localhost hlm-pre-install.yml</codeblock></sectiondi
       <p>At the end of each playbook, ensure both "unreachable" and "failed" are
       zero.</p><codeblock>$ ansible-playbook -i hosts/localhost ready-deployment.yml </codeblock>
     </section>
+
     <section id="PerformDeployment">
       <title>Perform the Deployment</title>
       <sectiondiv>
