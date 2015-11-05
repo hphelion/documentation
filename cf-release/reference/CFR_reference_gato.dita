@@ -59,11 +59,15 @@
           <dd>Manage node roles. By default, uses the <codeph>$DOCKER_HOST</codeph> environment
             variable to determine the docker server endpoint. Use the <filepath>--node</filepath>
 <<<<<<< HEAD
+<<<<<<< HEAD
             flag to stop <varname>&lt;role></varname> container on a specific node.<ul
 =======
             flag to stop <xref href="#available_role_containers" format="dita"
               >a <varname>&lt;role></varname> container</xref> on a specific node.<ul
 >>>>>>> de2d2bc... Recreating branch without old cruft in it
+=======
+            flag to stop a <varname>&lt;role></varname> container on a specific node.<ul
+>>>>>>> d3f9032... Removed broken xrefs
               id="ul_blk_nhj_rt">
               <li><xref href="#reference_cd3_bs3_rt/role_start" format="dita"><filepath>role
                     start</filepath></xref></li>
@@ -146,6 +150,7 @@
                 options]</varname>
               <varname>[arguments...]</varname></filepath></dt>
 <<<<<<< HEAD
+<<<<<<< HEAD
           <dd>Start the <varname>&lt;role></varname> container.<dl>
               <dlentry>
                 <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
@@ -153,6 +158,9 @@
 =======
           <dd>Start the <xref href="#available_role_containers" format="dita"
                 ><varname>&lt;role></varname> container</xref>.<dl>
+=======
+          <dd>Start the <varname>&lt;role></varname> container.<dl>
+>>>>>>> d3f9032... Removed broken xrefs
               <dlentry>
                 <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
                 <dd>Set the Docker server endpoint. Schemes and port number are required. Supported
@@ -171,6 +179,7 @@
           <dt><filepath><keyword keyref="adminUtilCLI"/> role restart <varname>[command
                 options]</varname>
               <varname>[arguments...]</varname></filepath></dt>
+<<<<<<< HEAD
 <<<<<<< HEAD
           <dd>Stop or restart the <varname>&lt;role></varname> container.<!-- The available
               <varname>&lt;role></varname> containers are: <ul id="ul_y3t_nrz_5t">
@@ -194,6 +203,9 @@
           <dd>Stop or restart the <xref href="#available_role_containers"
               format="dita"><varname>&lt;role></varname> container</xref>.<dl>
 >>>>>>> de2d2bc... Recreating branch without old cruft in it
+=======
+          <dd>Stop or restart the <varname>&lt;role></varname> container.<dl>
+>>>>>>> d3f9032... Removed broken xrefs
               <dlentry>
                 <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
                 <dd>Set the Docker server endpoint. Schemes and port number are required. Supported
