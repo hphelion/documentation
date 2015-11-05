@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_xzh_3f1_vt">
+ <title>Software License Terms</title>
+ <shortdesc><draft-comment author="michaelk">This document needs to be verified by
+   Legal.</draft-comment><b>HP Helion Product Evaluation Agreement</b></shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <p>This HP Product Evaluation Agreement (the "Agreement") is entered into between the HP entity
+   identified below ("HP") and the entity receiving the Product ("Company"), as of the date of
+   receipt of the Product a(the "Effective Date").</p>
+  <ol>
+   <li><b>Products.</b> HP shall provide the object code version of generally available or
+    pre-release software products (“Software”) and/or hardware (“Hardware”) as set forth in the
+    chart below, together with available related standard documentation of the Software or Hardware,
+    which includes applicable use restrictions and authorizations (“Documentation”). HP is providing
+    the Products for the sole purpose of enabling Company to internally test and evaluate the
+    Products in a test environment, and not for use in a production or commercial environment
+    (“Use”). “Products” include Software, Hardware, and Documentation. Any pre-release Products that
+    are not generally available shall be considered confidential information and shall not be
+    disclosed to third parties.</li>
+   <li><b>License and Ownership.</b> HP hereby grants Company a non-exclusive license to Use the
+    Products, royalty-free, at the location and by the number of authorized users as specified in
+    chart below. Company may not transfer or sublicense this license to any third party. Company may
+    make one backup or archival copy of the Software portion of the Products. To the extent the
+    Products are subject to any third party license terms or the terms of an open source license for
+    open source code, then those third party license terms or open source licenses shall govern with
+    respect to that subject technology. All worldwide right, title, and interest to the Products
+    (including any corrections, bug fixes, enhancements, updates, or other modifications thereto,
+    whether or not made by HP), and any third party products included in such (“Third Party
+    Product”), and all intellectual property rights in and to them, are and will remain the
+    exclusive property of HP and its Third Party Product licensors. Company agrees and acknowledges
+    that should it provide HP with any feedback or suggestions regarding the Products, HP shall own
+    such feedback and suggestions, and be entitled to use them for any purpose.</li>
+   <li><b>Restrictions on Use.</b> Except as expressly set forth herein, no intellectual property
+    license, and no other license of any kind is granted. Company shall not use the Products to
+    produce, market, or support its own products. Furthermore, Company shall not: (a) reproduce,
+    modify, translate, or create any derivative work of all or any portion of the Products;
+    (b) sell, rent, lease, loan, provide, distribute, or otherwise transfer all or any portion of
+    the Products; (c) reverse-engineer, reverse-assemble, or otherwise attempt to gain access to the
+    source code of all or any portion of the Software, (d) use the Software in any manner other than
+    that described in the Documentation and this Agreement; (e) display or disclose the Products to
+    any person other than those employees of Company who need to know such information; (f) use the
+    Products for third-party training, commercial time-sharing, or service bureau use; (g) remove,
+    alter, cover or obfuscate any copyright notices or other proprietary rights notices placed or
+    embedded on or in the Products; (h) use or access any Third Party Product that is included in
+    the Products, or provided to Company by HP, separately from the Products; or (i) cause,
+    authorize, or permit any third party to do any of the foregoing.</li>
+   <li><b>Delivery.</b> The Software may be provided in object code form by internet download, or HP
+    may deliver the Products in-person or shipped by a carrier.</li>
+   <li><b>Hardware.</b> If applicable, Hardware, which may include embedded Software, is loaned to
+    Company for the Term (as defined below) of this Agreement. If requested by HP, Company will
+    affix any label or marking supplied by HP evidencing HP’s ownership of the Hardware. Company
+    will maintain all Hardware in good operating order and condition at Company’s cost or expense
+    unless otherwise agreed to in writing by HP.</li>
+   <li><b>Term.</b> The term of this Agreement (the &quot;Term&quot;) is specified in the chart at
+    the bottom of this Agreement. The Term is for the specified number of days for the specific
+    Products licensed or until purchase of and payment for the Hardware or an appropriate license to
+    use the Software, as applicable, whichever is earlier. Unless Company purchases and pays for an
+    appropriate license to use the Products, upon the expiration of the Term or any earlier
+    termination of this Agreement: (a) all licenses granted hereunder shall cease; (b) Company shall
+    promptly remove or erase all intangible copies of the Products; and (c) Company shall promptly
+    return all tangible materials, including any Hardware, to HP. Company shall bear all risk of
+    loss with respect to the Hardware from receipt until such Hardware is returned to HP.</li>
+   <li><b>Precedence.</b> This Agreement governs the use of the Products and takes precedence over
+    any HP license terms included with the Products.</li>
+   <li><b>Third Party Content.</b> Certain Products may include Third Party Products. If the Third
+    Party Product includes Third Party Product click-wrap or shrink-wrap licensing terms, then those
+    terms shall apply to the Third Party Products. Products may contain software and associated
+    documentation that are confidential to, and trade secrets of, such parties. Company will not
+    take any action other than to use it as authorized under the Agreement and will not disclose it
+    to third parties.</li>
+   <li><b>Support.</b> No support is provided. Company should contact its local HP reseller or HP
+    sales representative regarding installation or technical questions. Company assumes full
+    responsibility for the effective operation and for correcting any errors within and created by
+    Products provided under this Agreement.</li>
+   <li><b>Disclaimer of Warranties.</b> COMPANY ACCEPTS THE PRODUCTS &quot;AS IS&quot;, WITH ANY
+    ERRORS OR DEFECTS. HP MAKES NO EXPRESS OR IMPLIED WARRANTY OF ANY KIND WITH RESPECT TO THE
+    PRODUCTS, AND TO THE FULLEST EXTENT PERMITTED BY LAW, HP DISCLAIMS ALL OTHER WARRANTIES. HP DOES
+    NOT WARRANT THAT THE OPERATION OF PRODUCTS WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT PRODUCTS
+    WILL OPERATE IN HARDWARE AND SOFTWARE COMBINATIONS OTHER THAN AS AUTHORIZED BY HP IN SUPPORTING
+    MATERIAL.</li>
+   <li><b>Limitation of Liability.</b> HP SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL, OR
+    CONSEQUENTIAL DAMAGES OR FOR LOST REVENUES OR PROFITS, DOWNTIME COSTS, OR LOSS OR DAMAGE TO
+    DATA.</li>
+   <li><b>Assignment.</b> Company shall not assign or otherwise transfer any rights or obligations
+    under this Agreement. Any attempted assignment or transfer shall be void.</li>
+   <li><b>Termination.</b> In the event that Company breaches this Agreement, HP may terminate this
+    Agreement immediately upon written notice to Company. Further, either party may terminate this
+    Agreement without cause on five days prior written notice. The rights and responsibilities of
+    the parties pursuant to sections 3, 7, 8, 10 and 11 above shall survive the expiration of the
+    Term or earlier termination of this Agreement.</li>
+   <li><b>Disclosure of Testing Results.</b> Company shall not disclose to any third party the
+    results of (i) any performance benchmarks Company runs on Products or (ii) specific detailed
+    comparisons Company makes between Products and any third party product, without the prior
+    written consent of HP. All such information shall be the confidential information of HP.</li>
+   <li><b>Export Requirements.</b> If Company exports, imports or otherwise transfers Products
+    provided under this Agreement, Company will be responsible for complying with applicable laws
+    and regulations and for obtaining any required export or import authorizations. HP may suspend
+    or terminate its performance under this Agreement to the extent required by laws applicable to
+    either party.</li>
+   <li><b>U.S. Governmental Rights.</b> If Software or technical data is licensed or provided to
+    Company for use in the performance of a US Government prime contract or subcontract, Company
+    agrees that consistent with FAR 12.211 and 12.212, commercial computer software, documentation
+    and technical data for commercial items are licensed under HP’s standard commercial
+    license.</li>
+   <li><b>Entire Agreement and Governing Law.</b> This Agreement represents the entire understanding
+    of the parties with respect to the subject matter herein and supersedes any previous and
+    contemporaneous communication or agreements that may exist. Modifications to the Agreement will
+    be made only through a written amendment signed by authorized representatives of both parties.
+    The Agreement will be governed by the laws of the country of HP entity signing this Agreement
+    and the courts of that locale will have jurisdiction; however, HP may, bring suit for payment in
+    the country where the Company is located. Company and HP agree that the United Nations
+    Convention on Contracts for the International Sale of Goods will not apply. Claims arising or
+    raised in the United States will be governed by the laws of the state of California, excluding
+    rules as to choice and conflict of law.</li>
+   <li><b>Product Specific Term and Use Restrictions.</b> The chart below shows the Product name and
+    any use restriction.</li>
+  </ol>
+ </conbody>
+</concept>

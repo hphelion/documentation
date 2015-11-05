@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="reference_phl_shc_rt">
+  <title>Terraform Variables</title>
+  <shortdesc>You can configure the following values in your <filepath>tfvars</filepath> file using
+    the <filepath>overrides.tfvars.sample</filepath> file included with <keyword keyref="prodLong"/>
+    as a guide.</shortdesc>
+  <prolog>
+    <metadata>
+      <othermeta name="author" content="Michael Khmelnitsky"/>
+    </metadata>
+  </prolog>
+  <refbody>
+    <table frame="all" rowsep="1" colsep="1" id="table_fjz_c3c_rt">
+      <desc>
+        <note type="important">Except for <codeph>dea_count</codeph>, specify all variable values in
+          quotation marks. These values are case-sensitive.</note>
+      </desc>
+      <tgroup cols="3">
+        <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+        <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+        <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+        <thead>
+          <row>
+            <entry>Variable</entry>
+            <entry>Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry><codeph>openstack_availability_zone</codeph></entry>
+            <entry>The unique regional location on which the deployment is launched</entry>
+          </row>
+          <row>
+            <entry><codeph>openstack_keypair</codeph></entry>
+            <entry>The name of <xref
+                href="../quickstart/pubcloud/CFR_step_3.dita#concept_kpg_fhz_st/create_a_key_pair"
+                >the key pair that you created on <keyword keyref="pubCloudShort"/></xref><note
+                type="tip">To find your key pair, on the left panel click <menucascade>
+                  <uicontrol>Project</uicontrol>
+                  <uicontrol>Computer</uicontrol>
+                  <uicontrol>Access &amp; Security</uicontrol>
+                  <uicontrol>Key Pairs</uicontrol>
+                </menucascade>.</note></entry>
+          </row>
+          <row>
+            <entry><codeph>openstack_network_id</codeph></entry>
+            <entry>The ID of <xref
+                href="../quickstart/pubcloud/CFR_step_3.dita#concept_kpg_fhz_st/create_a_network"
+                >the network that you created on <keyword keyref="pubCloudShort"/></xref><note
+                type="tip">To find the network ID, on the left panel click <menucascade>
+                  <uicontrol>Project</uicontrol>
+                  <uicontrol>Network</uicontrol>
+                  <uicontrol>Networks</uicontrol>
+                </menucascade> and then click the name of your network.</note></entry>
+          </row>
+          <row>
+            <entry><codeph>openstack_network_name</codeph></entry>
+            <entry>The name of your network</entry>
+          </row>
+          <row>
+            <entry><codeph>openstack_region</codeph></entry>
+            <entry>Your region, <codeph>us-east</codeph> by default</entry>
+          </row>
+          <row>
+            <entry><codeph>cluster_admin_username</codeph></entry>
+            <entry>The username for your cluster</entry>
+          </row>
+          <row>
+            <entry><codeph>cluster_admin_password</codeph></entry>
+            <entry>The password for your cluster</entry>
+          </row>
+          <row>
+            <entry><codeph>key_file</codeph></entry>
+            <entry>The location and name of the private key <filepath>pem</filepath> file that you
+              downloaded after creating your key pair on <keyword keyref="pubCloudShort"/>, relative
+              to the <filepath>tfvars</filepath> file.<note type="tip">For convenience, you can
+                place the two files into the same directory.</note></entry>
+          </row>
+          <!--
+          <row>
+            <entry><codeph>router_ssl_cert_file</codeph></entry>
+            <entry>The location and name of the router SSL certificate file</entry>
+          </row>
+          <row>
+            <entry><codeph>router_ssl_key_file</codeph></entry>
+            <entry>The location and name of the router SSL key file</entry>
+          </row>
+          -->
+          <row>
+            <entry><codeph>dea_count</codeph></entry>
+            <entry>The number of Droplet Execition Agent (DEA) hosts that you want to
+              create.</entry>
+          </row>        
+        </tbody>
+      </tgroup>
+    </table>
+    <example>
+      <title>A sample <codeph>.tfvars</codeph> file</title>
+      <codeblock>openstack_availability_zone = "az1"
+openstack_keypair = "myKeyPair"
+openstack_network_id = "123a1ab1-12a1-123a-1a12-a1234a123a12"
+openstack_network_name = "myNetwork"
+openstack_region = "us-west"
+cluster_admin_username = "myClusterUsername"
+cluster_admin_password = "myClusterPassword123"
+key_file = "myKeyFile.pem"           
+dea_count = 1</codeblock>
+    </example>
+  </refbody>
+</reference>
+<!--
+router_ssl_cert_file = "/etc/ssl/certs/SSL.crt"
+router_ssl_key_file = "/etc/ssl/private/SSL.key"
+-->

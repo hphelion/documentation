@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "../dtd/map.dtd">
+<map>
+   <title>HPE Helion Cloud Foundry Variables</title>
+   <keydef keys="corpLong">
+      <topicmeta>
+         <keywords>
+            <keyword>Hewlett-Packard Enterprise</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="corpShort">
+      <topicmeta>
+         <keywords>
+            <keyword>HPE</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="opnStckLong">
+      <topicmeta>
+         <keywords>
+            <keyword>HPE Helion OpenStack</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="opnStckShort">
+      <topicmeta>
+         <keywords>
+            <keyword>Helion OpenStack</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="opnStckVeryShort">
+      <topicmeta>
+         <keywords>
+            <keyword>OpenStack</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="pubCloudLong">
+      <topicmeta>
+         <keywords>
+            <keyword>HP Helion Public Cloud</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="pubCloudShort">
+      <topicmeta>
+         <keywords>
+            <keyword>Helion Public Cloud</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="prodLong">
+      <topicmeta>
+         <keywords>
+            <keyword>HPE Helion Cloud Foundry</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="prodShort">
+      <topicmeta>
+         <keywords>
+            <keyword>Helion Cloud Foundry</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="prodVerShort">
+      <topicmeta>
+         <keywords>
+            <keyword>1.0</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="prodVerLong">
+      <topicmeta>
+         <keywords>
+            <keyword>1.0.0.102</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="adminUtil">
+      <topicmeta>
+         <keywords>
+            <keyword>Gato</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="adminUtilCLI">
+      <topicmeta>
+         <keywords>
+            <keyword>gato</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep1">
+      <topicmeta>
+         <keywords>
+            <keyword>Registering an Account</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep2">
+      <topicmeta>
+         <keywords>
+            <keyword>Downloading and Installing Tools</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep3">
+      <topicmeta>
+         <keywords>
+            <keyword>Creating a Sandbox Environment</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep4">
+      <topicmeta>
+         <keywords>
+            <keyword>Creating a Cluster</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep5">
+      <topicmeta>
+         <keywords>
+            <keyword>Pushing Sample Applications</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep6">
+      <topicmeta>
+         <keywords>
+            <keyword>Troubleshooting Your Cluster</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+</map>

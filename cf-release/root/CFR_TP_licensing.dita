@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="CFR_TP_licensing">
+ <title>Open Source and Third-Party Software License Agreements</title>
+ <shortdesc></shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <p>The Open Source and Third-Party Software License Agreements for <keyword keyref="prodLong"/>
+   are available as a PDF download.</p>
+  <p><xref
+    href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HPHelion_CloudFoundry_v1_OSRB.pdf"
+    format="pdf" scope="external">Download the PDF document</xref><draft-comment author="michaelk"
+    >Does a new document need to be added for this version?</draft-comment></p>
+  <note type="tip">Allow sufficient time for the document to load fully.</note>
+ </conbody>
+</concept>
