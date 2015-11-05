@@ -25,64 +25,70 @@
             <li>You have identified the NIC ports to be used for PCI Passthrough devices from each
                 compute node</li>
         </ul>
-      <section>  
-      <p><b>Non-KVM Region</b></p>
-        <p>No changes needed on the controller nodes in the non-KVM region. However, if you need
-            information on the provider network and the VLAN ranges configured for that network,
-            view the <codeph>/etc/neutron/plugins/ml2/ml2_conf.ini</codeph> file. For example in
-            this scenario, there are two provider networks: <codeph>physnet1</codeph> and
-                <codeph>physnet2</codeph>. The examples in this document use
-                <codeph>physnet1</codeph>.</p>
-        <pre>[ml2_type_vlan]
-network_vlan_ranges = physnet1:810:813,physnet2:814:815</pre>
-      </section>
-      <section>  
-      <p><b>Configure the KVM Region Controller Nodes</b></p>
-        <p><!--this step will get automated by beta timeframe--></p>
-        <p>The <xref
+        <p>There are two methods to support PCI-PT vNICs:<ul id="ul_n5x_zbn_xt">
+                <li>Classic community using nova flavor: This option is similar to attaching any pci
+                    device i.e. not only restricted to NIC device. The type of pci device, no of pci
+                    devices are driven through nova flavors. See <xref href="#topic10581/nova"
+                        format="dita">Classic community using nova flavor</xref>.</li>
+                <li>vif-model: This option is implemented using Wind River way of launching VMs
+                    using nova's extension named 'vif-model'. See <xref href="#topic10581/vif"
+                        format="dita">Using nova vif-model extension</xref>.</li>
+            </ul></p>
+        <section id="nova"><title>Classic community using nova flavor</title>This option is similar
+            to attaching any pci device i.e. not only restricted to NIC device. The type of pci
+            device, no of pci devices are driven through nova flavors. Controller and compute use
+            the alias mechanism to chose compute and pci devices respectively. The drawback of this
+            approach is it doesn't indicate which tenant network the pci device is on and what is
+            the IP-MAC relationship recorded in neutron. In short, this implementation is neutron
+                unaware.<codeblock>nova boot vm1-pci-pt1 --flavor pci-pt --image wr-new</codeblock><p/><b>Non-KVM
+                Region</b><p>No changes needed on the controller nodes in the non-KVM region.
+                However, if you need information on the provider network and the VLAN ranges
+                configured for that network, view the
+                    <codeph>/etc/neutron/plugins/ml2/ml2_conf.ini</codeph> file. For example in this
+                scenario, there are two provider networks: <codeph>physnet1</codeph> and
+                    <codeph>physnet2</codeph>. The examples in this document use
+                    <codeph>physnet1</codeph>.</p><pre>[ml2_type_vlan]
+network_vlan_ranges = physnet1:810:813,physnet2:814:815</pre><b>Configure
+                the KVM Region Controller
+                Nodes</b><p><!--this step will get automated by beta timeframe--></p><p>The <xref
                     href="../ServicesOverviews/carrier-grade-services-compute-overview.dita#topic2237"
                     >HPE Compute Service (Nova)</xref> requires scheduling logic, based on the PCI
                 device vendor ID and its alias, to pickup the right compute node . The alias
-                typically refers to provider net. </p>
-        <p>You need to update <codeph>pci_alias</codeph> field in the
-                    <codeph>/etc/nova/nova.conf</codeph> file on both KVM region controllers to
-                indicate the PCI device to use, similar to the following example:</p>
-        <pre>[DEFAULT]
-pci_alias={"vendor_id":"8086", "product_id":"10fb", "name":"physnet1"}</pre>
-        <p>This command defines pci_alias <codeph>physnet1</codeph> to present a request for PCI
-            devices with vendor_id as <codeph>0x8086</codeph> and product_id as
-                <codeph>10fb</codeph>.
-            <!--From https://wiki.openstack.org/wiki/Pci_passthrough--></p>
-        <p>The example used <codeph>physnet1</codeph> as in the earlier steps.
-                <codeph>physnet1</codeph> represents a provider net where a set of VLANs are
-            presented.</p>
-        <p><b>Note:</b> The product ID can be retrieved from the compute node by running the
-            following command:</p>
-        <ol id="ol_pyr_5t4_tt">
-            <li>Get the PCI bus ID of one of the interfaces dedicated for PCI-passthrough interface.
-                In this example, <codeph>eth8</codeph> is the PCI device:
-                <pre>[root@mem17-compute1 ~(keystone_admin)]# ls -lrt /sys/class/net/eth8/device
+                typically refers to provider net. </p><ol id="ul_vzh_yfn_xt">
+                <li>Update the <codeph>pci_alias</codeph> field in the
+                        <codeph>/etc/nova/nova.conf</codeph> file on both KVM region controllers to
+                    indicate the PCI device to use, similar to the following
+                    example:<codeblock>[DEFAULT]
+pci_alias={"vendor_id":"8086", "product_id":"10fb", "name":"physnet1"}</codeblock>This
+                    command defines pci_alias <codeph>physnet1</codeph> to present a request for PCI
+                    devices with vendor_id as <codeph>0x8086</codeph> and product_id as
+                        <codeph>10fb</codeph>.
+                        <!--From https://wiki.openstack.org/wiki/Pci_passthrough--><p>The example
+                        used <codeph>physnet1</codeph> as in the earlier steps.
+                            <codeph>physnet1</codeph> represents a provider net where a set of VLANs
+                        are presented.</p><b>Note:</b> The product ID can be retrieved from the
+                    compute node by running the following command:</li>
+                <li>Get the PCI bus ID of one of the interfaces dedicated for PCI-passthrough
+                    interface. In this example, <codeph>eth8</codeph> is the PCI device:
+                    <pre>[root@mem17-compute1 ~(keystone_admin)]# ls -lrt /sys/class/net/eth8/device
 lrwxrwxrwx 1 root root 0 Oct 16 18:37 /sys/class/net/eth8/device -&gt; ../../../0000:87:00.0</pre></li>
-            <li>Using the PCI bus ID, you can get the product id, for example:
-                <pre>[root@mem17-compute1 ~(keystone_admin)]# cat /sys/bus/pci/devices/0000:87:00.0/device
+                <li>Using the PCI bus ID, you can get the product id, for example:
+                    <pre>[root@mem17-compute1 ~(keystone_admin)]# cat /sys/bus/pci/devices/0000:87:00.0/device
 0x10f8</pre></li>
-        </ol>
-      </section>
-      <section>  
-      <p><b>Configure the KVM Region Compute Nodes </b></p>
-        <p>Update the <codeph>pci_passthrough_whitelist</codeph> of PCI devices available to VMs.
-            This list gets created when you assign one or more interfaces as a pci-passthrough
-            device. During this assignment, make sure that the name of the provider network (-p
-            flag) is identical to the name provided in the <codeph>nova.conf</codeph> of the
-            controller nodes. </p>
-        <pre>system host-lock mem17-compute1
+            </ol>
+            <b>Configure the KVM Region Compute Nodes </b>
+            <p>Update the <codeph>pci_passthrough_whitelist</codeph> of PCI devices available to
+                VMs. This list gets created when you assign one or more interfaces as a
+                pci-passthrough device. During this assignment, make sure that the name of the
+                provider network (-p flag) is identical to the name provided in the
+                    <codeph>nova.conf</codeph> of the controller nodes.
+                </p><pre>system host-lock mem17-compute1
 system host-if-modify -nt pci-passthrough -p physnet1 mem17-compute1 eth8
-system host-unlock mem17-compute1</pre>
-        <p>In this example, Ethernet interface <codeph>eth8</codeph> is assigned the network type
-                <codeph>pci-passthrough</codeph>, and configured as connected to provider network
-                <codeph>physnet1</codeph>.</p>
-        <p>Output:</p>
-        <pre>[root@controller-0 nova(keystone_admin)]# system host-if-list mem17-compute1
+system host-unlock mem17-compute1</pre><p>In
+                this example, Ethernet interface <codeph>eth8</codeph> is assigned the network type
+                    <codeph>pci-passthrough</codeph>, and configured as connected to provider
+                network
+                <codeph>physnet1</codeph>.</p><p>Output:</p><pre>[root@controller-0 nova(keystone_admin)]# system host-if-list mem17-compute1
 +--------------------------------------+----------+-----------------+----------+---------+-----------+---------------+----------------------+------------+-------------------+
 | uuid                                 | name     | network type    | type     | vlan id | ports     | uses i/f      | used by i/f          | attributes | provider networks |
 +--------------------------------------+----------+-----------------+----------+---------+-----------+---------------+----------------------+------------+-------------------+
@@ -93,22 +99,20 @@ system host-unlock mem17-compute1</pre>
 | c67dcd7a-f117-4a01-907e-f60fc98e1b10 | mgmt0    | mgmt            | vlan     | 802     | []        | [u'pxeboot0'] | []                   | MTU=1500   | None              |
 | dbce134c-633f-4b0f-b4c9-73501ccda55c | eth9     | pci-sriov       | ethernet | None    | [u'eth9'] | []            | []                   | MTU=1500   | physnet2          |
 | fdb4b7cf-6b8b-421a-bdc2-a07209a31548 | eth7     | pci-sriov       | ethernet | None    | [u'eth7'] | []            | []                   | MTU=1500   | physnet1          |
-+--------------------------------------+----------+-----------------+----------+---------+-----------+---------------+----------------------+------------+-------------------+</pre>
-        <p>After the interface is unlocked, the newly added PCI device ID is listed in the
-                <codeph>/etc/nova/nova.conf</codeph> file.  For example:</p>
-        <pre>{"physical_network": "physnet1", "address": "0000:87:00.0"}</pre>
-        <p>Execute the following command to validate that the correct PCI bus ID is listed for the
-            interface. In this example, <codeph>eth8</codeph> is the PCI device:</p>
-        <pre>[root@mem17-compute1 ~(keystone_admin)]# ls -lrt /sys/class/net/eth8/device
-lrwxrwxrwx 1 root root 0 Oct 16 18:37 /sys/class/net/eth8/device -&gt; ../../../0000:87:00.0</pre>
-      </section>
-      <section> 
-      <p><b>Creating a Flavor</b></p>
-        <p>When crating new VM, you select a flavor to define that instance. A flavor is a list of
-                attributes applied to a virtual machine when a new instance is created. </p>
-            <p>You can create flavors that request PCI devices when you create instances. When
-                creating flavors for PCI passthrough, provide metadata similar to the following:</p>
-        <pre>[root@controller-0 nova(keystone_admin)]# nova flavor-show pci-pt
++--------------------------------------+----------+-----------------+----------+---------+-----------+---------------+----------------------+------------+-------------------+</pre><p>After
+                the interface is unlocked, the newly added PCI device ID is listed in the
+                    <codeph>/etc/nova/nova.conf</codeph> file. For
+                example:</p><pre>{"physical_network": "physnet1", "address": "0000:87:00.0"}</pre><p>Execute
+                the following command to validate that the correct PCI bus ID is listed for the
+                interface. In this example, <codeph>eth8</codeph> is the PCI
+                device:</p><pre>[root@mem17-compute1 ~(keystone_admin)]# ls -lrt /sys/class/net/eth8/device
+lrwxrwxrwx 1 root root 0 Oct 16 18:37 /sys/class/net/eth8/device -&gt; ../../../0000:87:00.0</pre><b>Creating
+                a Flavor</b><p>When crating new VM, you select a flavor to define that instance. A
+                flavor is a list of attributes applied to a virtual machine when a new instance is
+                created. </p><p>You can create flavors that request PCI devices when you create
+                instances. When creating flavors for PCI passthrough, provide metadata similar to
+                the
+                following:</p><pre>[root@controller-0 nova(keystone_admin)]# nova flavor-show pci-pt
 +----------------------------+----------------------------------------------------------------------------------------------------------+
 | Property                   | Value                                                                                                    |
 +----------------------------+----------------------------------------------------------------------------------------------------------+
@@ -123,21 +127,17 @@ lrwxrwxrwx 1 root root 0 Oct 16 18:37 /sys/class/net/eth8/device -&gt; ../../../
 | rxtx_factor                | 1.0                                                                                                      |
 | swap                       |                                                                                                          |
 | vcpus                      | 1                                                                                                        |
-+----------------------------+----------------------------------------------------------------------------------------------------------+</pre>
-        <p>In the above example, the <codeph>"pci_passthrough:alias": "physnet1:1"</codeph> value
-            indicates, schedule on the compute node which has PCI device with alias physnet1 and has
-            at least 1 pci device. If you wish to launch a VM with 4 pci devices, the value would be
-            4. </p>
-      </section>
-      <section id="vm"> 
-        <p><b>Launching a VM</b></p>
-        <p>To implement PCI-passthrough you need to launch a VM using a flavor configured for
-            passthrough. </p>
-        <p>In the following example, a VM is launched with 1 interface being virtio coming from
-            management network. The PCI interface will show up automatically inside the VM. You need
-            to manually assign IP to the raw device or create a VLAN interface and assign IP to
-            ensure VMs can communicate through PCI device. </p>
-        <codeblock>nova boot vm1-virtio-pci-pt1 --flavor pci-pt --image wr-new --nic net-id=f38149ff-b745-4453-b737-4a8e86a846dc
++----------------------------+----------------------------------------------------------------------------------------------------------+</pre><p>In
+                the above example, the <codeph>"pci_passthrough:alias": "physnet1:1"</codeph> value
+                indicates, schedule on the compute node which has PCI device with alias physnet1 and
+                has at least 1 pci device. If you wish to launch a VM with 4 pci devices, the value
+                would be 4. </p><b>Launching a VM</b><p>To implement PCI-passthrough you need to
+                launch a VM using a flavor configured for passthrough. </p><p>In the following
+                example, a VM is launched with 1 interface being virtio coming from management
+                network. The PCI interface will show up automatically inside the VM. You need to
+                manually assign IP to the raw device or create a VLAN interface and assign IP to
+                ensure VMs can communicate through PCI device.
+            </p><codeblock>nova boot vm1-virtio-pci-pt1 --flavor pci-pt --image wr-new --nic net-id=f38149ff-b745-4453-b737-4a8e86a846dc
 [root@controller-0 ~(keystone_admin)]# nova show 3096f2e0-a700-4567-8cc1-1014fbf6c157
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Property                             | Value                                                                                                                                                         |
@@ -176,8 +176,26 @@ lrwxrwxrwx 1 root root 0 Oct 16 18:37 /sys/class/net/eth8/device -&gt; ../../../
 | wrs-res:vcpus                        | [1, 1, 1]                                                                                                                                                     |
 | wrs-sg:server_group                  |                                                                                                                                                               |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-</codeblock>
-      </section>
+</codeblock></section>
+        <section id="vif"><title>Using the OpenStack Nova vif-model Extension</title><p>This option
+                is implemented by launching VMs using the Nova vif-model extension'. When a VM is
+                launched on a specific tenant network using 'vif-model' as 'pci-passthrough', a
+                    <codeph>neutron port-create</codeph> command is requested, which registers the
+                mac address and IP reservation of the PCI-Passthrough  interface and its .
+                <codeblock>nova boot vm1-pci-pt1  --image wr-new --flavor m1.small --nic net-id=64291690-4086-4cb0-a764-9fb56971e863,vif-model=pci-passthrough</codeblock></p><b>Create
+                a neutron flat or VLAN network </b><p>Example, here provider net name being used is
+                physnet1. The same value must be used when you configure compute host w/ pci device.
+                </p><codeblock>neutron net-create hrushi-sriov-net-810 --provider:network_type vlan --provider:segmentation_id 810  --provider:physical_network physnet1
+neutron subnet-create --name sriov-subnet-810 hrushi-sriov-net-810 31.31.31.0/24 --disable-dhcp --no-gateway  --allocation-pool start=31.31.31.100,end=31.31.31.200</codeblock><b>Define
+                pci devices on the compute node</b><p>Ensure the -p flag is set to the name of the
+                physnet used to create the flat network. Refer above step to define pci device and
+                its provider net name.
+                </p><pre>system host-lock mem17-compute1
+system host-if-modify -nt pci-passthrough -p physnet1 mem17-compute1 eth8
+system host-unlock mem17-compute1
+</pre><b>Launch
+                VM using nova vif-model extension</b><p>Here the net-id is the vlan or flat network
+                netid.</p><pre>nova boot vm1-pci-pt1  --image wr-new --flavor m1.small --nic net-id=64291690-4086-4cb0-a764-9fb56971e863,vif-model=pci-passthrough</pre></section>
   
     <p><b>Related links</b></p>
         <p>For more information, see <xref
