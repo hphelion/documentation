@@ -39,9 +39,11 @@
         the cluster setup script to connect to all the instances and run cluster setup commands. These keys are protected on the guest 
         instances as they are locked down by file ACLs allowing access only to the vertica processes. After the cluster create process is 
         finished, these keys are deleted from all of the nodes. </p>
-      <p>These auto-generated keys are different from the Administrator SSH key that will allow the Database Service administrator to connect to
-        the VM for day-to-day service management and operations, and to upgrade the trove guest instances. The Adminsitrator SSH
-        key is kept intact during the Cluster Create process.</p>
+      <p>These auto-generated keys are different from the Administrator SSH key that will allow the
+        Database Service administrator to connect to the VM for day-to-day service management and
+        operations, and to upgrade the trove guest instances. The Adminsitrator SSH key is kept
+        intact during the Cluster Create process. These keys should be secured by ACLs, as exposure
+        of them could result in compromise of the database service and databases.</p>
     </note>
   </body>
 </topic>
