@@ -289,6 +289,8 @@
       <topichead navtitle="Block Storage">
         <topicref href="helion/blockstorage/vsa/vsa_create_multiple_clusters.dita"
           navtitle="Creating Multiple VSA Clusters" locktitle="yes"/>
+        <topicref href="helion/blockstorage/vsa/configure_vsa_separate_iscsi_network.dita"
+          navtitle="Configuring a Separate iSCSI Network to use with VSA" locktitle="yes"/>
         <topicref href="helion/blockstorage/ceph/deploy_monitor_stand_alone_node.dita"
           navtitle="Deploying Ceph Monitor Services on Dedicated Resource Nodes" locktitle="yes"/>
         <topicref href="helion/blockstorage/ceph/ceph_operation.dita"
@@ -399,8 +401,7 @@
         locktitle="yes"/>
       <topicref href="helion/userguide/create_network.dita" navtitle="Creating a Private Network"
         locktitle="yes"/>
-      <topicref href="helion/blockstorage/vsa/configure_vsa_separate_iscsi_network.dita"
-        navtitle="Configuring a Separate iSCSI Network to use with VSA" locktitle="yes"/>
+      
       <topicref href="helion/userguide/lbaas.dita"
         navtitle="Using Load Balancing as a Service (LBaaS)" locktitle="yes"/>
       <!--  LBaaS, FWaaS, VPNaaS -->
