@@ -38,8 +38,8 @@
           </li>
           <li><b>Example 3: </b> Create a Redis instance
             <p>The following command creates a single Redis instance called <b>MyRedisInstance</b>
-              with flavor <b>m1.small</b>, allocating 1 GB of space.</p>
-            <codeblock>trove create MyRedisInstance 2 --datastore redis --size 10</codeblock>
+              with flavor <b>m1.medium</b>, allocating 1 GB of space.</p>
+            <codeblock>trove create MyRedisInstance 3 --datastore redis --size 10</codeblock>
           </li>
           <li><b>Example 4:</b>  Create a replicated MySql instance
             <p>The following command creates a MySql instance as a <xref type="external" href="https://dev.mysql.com/doc/refman/5.0/en/replication.html" format="html">replica</xref> of another MySql database (Replication is only supported

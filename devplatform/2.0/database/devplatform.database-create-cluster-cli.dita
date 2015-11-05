@@ -18,7 +18,7 @@
       <li>To verify that the cluster was created, use the <codeph>trove cluster-list</codeph> command.
       </li>
       <li>To list the instances that are part of a cluster, use the <codeph>trove cluster-list
-          &lt;clutster name></codeph> command. </li>
+          &lt;cluster name></codeph> command. </li>
       
     </ol>
     
