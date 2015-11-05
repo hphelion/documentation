@@ -3,6 +3,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="input_model">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Input Model</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <keyword>Kilo</keyword>
+        <keyword>Firewall</keyword>
+      </keywords>      
+    </metadata>
+    
+  </prolog>
   <conbody>
     <section id="toc"><title>Table of Contents</title>
       <ul>
