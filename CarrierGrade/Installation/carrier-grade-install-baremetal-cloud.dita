@@ -19,6 +19,51 @@
       region, the baremetal region, ESX storage, and uses HPE DCN VRS networking, follow these
       instructions after installing the KVM region. If you are installing a different deployment,
       disregard these instructions.</p>
+    <section><title>Configure baremetal node ports into access mode</title><p>Ensure that the switch
+        ports connected to baremetal instance nodes are in access mode. This is a pre-requisite
+        before provisioning baremetal instances. </p><p>To configure a port onto access mode execute
+        the following on the switch:
+        <codeblock>system-view
+interface:&lt;interface-name&gt; &lt;port&gt;
+port link-type 
+access 
+save 
+force quit 
+quit </codeblock></p>After
+      configuring other region variables as well, do hcfgproc, hnetinit and hnetping followed by
+      hdeploy</section>
+    <section>
+      <title>Provision baremetal nodes</title>
+      <p>
+        <ol id="ol_bns_j1f_xt">
+          <li>Execute the following commands to upload an Ubuntu disk image for provisioning The
+            image will be used in nova boot.
+            <codeblock>glance image-create --name deploy-initrd --is-public True --disk-format ari --container-format ari &lt; ironic-deploy.initramfs
+glance image-create --name deploy-kernel --is-public True --disk-format aki --container-format aki &lt; ironic-deploy.kernel 
+glance image-create --name ubuntu-disk --is-public True --disk-format qcow2 --container-format bare &lt; ubuntu.qcow2</codeblock></li>
+          <li>Execute the following commands to create a switch
+            entry:<codeblock>neutron switch-create --host &lt;switch ip&gt; --username &lt;username&gt; --password &lt;password&gt; --type s5930 --id aa:bb:cc:dd:ee:ff</codeblock></li>
+          <li>Execute the following commands to create a new
+            flavor:<codeblock>nova flavor-create baremetal auto 4096 80 2
+nova flavor-key baremetal set "capabilities:boot_option"="local" 
+nova flavor-key baremetal set "capabilities:boot_mode"="bios"</codeblock></li>
+          <li>Execute the following commands to register the Ironic
+            node:<codeblock>ironic node-create -d pxe_ipmitool -i ipmi_address=&lt;&lt;ip&gt;&gt; -i
+ipmi_username=&lt;&lt;user&gt; -i ipmi_password=&lt;&lt;password&gt; -i 
+ipmi_terminal_port=9091 -p cpus=2 -p memory_mb=4096 -p local_gb=80 -i 
+deploy_kernel=&lt;&lt;glance_deploy_kernel_id&gt;> -i 
+deploy_ramdisk=&lt;&lt;glance_deploy_ramdisk_id&gt;&gt; -i cpu_arch=amd64 
+ironic node-update &lt;&lt;node_id&gt;&gt; add properties/capabilities="boot_mode:bios,boot_option:local"</codeblock></li>
+          <li>Execute the following command to register the port for the baremetal
+            node:<codeblock>ironic port-create -a &lt;&lt;node_mac_id&gt;&gt; --local-link-connection switch_id="&lt;&lt;switch_id&gt;&gt;" --local-link-connection port_id="&lt;&lt;switch_port&gt;&gt;" --local-link-connection switch_info="ToR" -n &lt;&lt;node_id&gt;&gt;</codeblock></li>
+          <li>Execute the following commands to create a tenant
+            network:<codeblock>neutron net-create tenant-network
+neutron subnet-create --name tenant-subnet --gateway 192.68.61.1 --allocation-pool start=192.68.61.100,end=192.68.61.200 tenant-network 192.68.61.0/24</codeblock></li>
+          <li>Execute the following command to Provision the baremetal node:
+            <codeblock>nova boot -nic</codeblock></li>
+        </ol>
+      </p>
+    </section>
     <section>
       <title>Install the Infoblox patch</title>
       <p>
@@ -39,9 +84,8 @@
     </section>
     <section><title>Deploy Patches</title>Use the following steps to deploy required patches.<p>
         <ol id="ol_vl1_tqf_xt">
-          <li>Log into the HLM VM.</li>
-          <li>Copy the  <codeph>kenobi-config-patch.patch</codeph> you downloaded in the
-            Prerequisites to the <codeph>/root/kenobi-configuration-processor</codeph>
+          <li>In the HLM VM, copy the <codeph>kenobi-config-patch.patch</codeph> you downloaded in
+            the Prerequisites to the <codeph>/root/kenobi-configuration-processor</codeph>
             directory.</li>
           <li>Copy the  <codeph>kenobi-node-config.patch</codeph> you downloaded in the
             Prerequisites to the <codeph>/root/kenobi-node-configuration</codeph> directory.</li>
@@ -88,20 +132,20 @@ hoscg-python-ironicclient-*</codeblock></li>
             controller:<codeblock>hnewCloud &lt;cloudname&gt; ironic-standalone</codeblock><p>Where:
               <codeph>&lt;cloudname></codeph> is an identifying name for the cloud and
               <codeph>ironic-standalone</codeph> is the deployment template.</p></li>
-        <li>Edit the /root/&lt;cloudname&gt;/vars/ldap.json file to disable
+        <li>Edit the <codeph>/root/&lt;cloudname>/vars/ldap.json</codeph> file to disable
           LDAP.<codeblock>"ldap_enabled": 0</codeblock></li>
-        <li>Edit the <codeph>/root/&lt;cloudname&gt;/vars/ironic.json</codeph> file to configure
-          VLAN ranges. Specify enough ranges so that the provisioning network can be on a separate
-          VLAN than the tenant VLAN ranges.</li>
+        <li>Edit the <codeph>/root/&lt;cloudname>/vars/ironic.json</codeph> file to configure VLAN
+          ranges. Specify enough ranges so that the provisioning network can be on a separate VLAN
+          than the tenant VLAN ranges.</li>
         <li>Copy the <codeph>/root/cg-hlm/dev-tools/ilopxebootonce.py</codeph> file to the
             <codeph>/root/&lt;cloudname></codeph> directory.</li>
         <li>Edit the environment.json file to specify the networks for the CLM (management), CAN,
           BM-CLM (baremetal management) networks as exposed to the HLM VM.</li>
-        <li>Configure the node-provision.json to include 3 controllers in CCN control plane and 1
-          baremetal controller (BAR) in the baremetal plane.</li>
-        <li>Execute the following command to ensure that all the controllers are configured to boot
-          from PXE.<codeblock>python ilopxebootonce.py node-provision.json</codeblock></li>
-        <li>Provision controllers with base hLinux OS through
+        <li>Configure the node-provision.json to include three controllers in CCN control plane and
+          1 baremetal controller (BAR) in the baremetal plane.</li>
+        <li>Execute the following command to configure all controllers to boot from
+          PXE.<codeblock>python ilopxebootonce.py node-provision.json</codeblock></li>
+        <li>Provision the controller with base hLinux OS through
             cobbler:<codeblock>hprovision &lt;cloudname&gt;</codeblock><p>Where
               <codeph>&lt;cloudname></codeph> is the name of the baremetal cloud.</p>While
           hprovision is executing, you can follow the status by launching the Cobbler UI at
@@ -110,7 +154,7 @@ hoscg-python-ironicclient-*</codeblock></li>
     </section>
     <section>
       <title>Generate Baremetal Cloud Definition</title>
-      <p>Execute the following from cloud base
+      <p>In the HLM VM, execute the following in the cloud base
         directory:<codeblock>hcfgproc -d definition.json &lt;cloudname&gt;</codeblock></p>
       <p>Where <codeph>&lt;cloudname></codeph> is the name of the baremetal cloud.</p>
     </section>
@@ -118,10 +162,11 @@ hoscg-python-ironicclient-*</codeblock></li>
       <title>Deploy Baremetal Cloud</title>
     </section>
     <p>Use the following tasks to deploy the baremetal cloud.</p>
-    <p><b>Network Initialization on Control Plane</b></p>
+    <p><b>Initialize the Network on the Control Plane</b></p>
     <p>
       <ol id="ol_jhp_xm2_xt">
-        <li>Execute from cloud base directory:<codeblock>hnetinit &lt;cloudname&gt;</codeblock>Where
+        <li>In the HLM VM, execute in the cloud base
+          directory:<codeblock>hnetinit &lt;cloudname&gt;</codeblock>Where
             <codeph>&lt;cloudname></codeph> is the name of the baremetal cloud.</li>
         <li>Verify that all controllers are pingable
             using<codeblock>hnetping &lt;cloudname&gt;</codeblock><p>Where
@@ -130,15 +175,14 @@ hoscg-python-ironicclient-*</codeblock></li>
     </p>
     <section>
       <p><b>Deploy Services and Bring up the Cloud</b></p>
-      <p>Execute the following command to from cloud base directory:</p>
+      <p>In the HLM VM, execute the following command in the cloud base directory:</p>
       <p>
         <codeblock>hdeploy &lt;cloudname&gt;</codeblock>
       </p>
       <p>Where <codeph>&lt;cloudname></codeph> is the name of the baremetal cloud.</p>
       <p><b>Configure bridges on Baremetal Controller:</b></p>
       <ol id="ol_hjg_ntg_vt">
-        <li>Log into the HLM VM.</li>
-        <li>Execute the following command to login to baremetal controller through HLM VM:
+        <li>In the HLM VM, execute the following command to login to the baremetal controller:
           <codeblock>ssh cghelion@&lt;baremetal controller ip></codeblock></li>
         <li>On the baremetal controller node: <ol id="ol_ksr_rtg_vt">
             <li>Execute the following commands to create a bridge called <codeph>br-eth1</codeph>
@@ -147,12 +191,14 @@ sudo ovs-vsctl add-port br-eth1 eth1 # assuming eth1 is the interface where BM-C
 ifconfig eth1 up
 ifconfig br-eth1 up</codeblock></li>
             <li>Execute the following command to restart the Open vSwitch agent (ovs-agent) on the
-              Controller.<codeblock>sudo service neutron-plugin-openvswitch-agent restart</codeblock></li>
+              controller.<codeblock>sudo service neutron-plugin-openvswitch-agent restart</codeblock></li>
           </ol></li>
-        <li>Update ml2 conf with vlan ranges and specify the BM-CLM vlan in the bridge:
-          <codeblock>[ml2_type_vlan]network_vlan_ranges = physnet1:3405:3413</codeblock></li>
-        <li>Adjust 3405:3413 vlan range to your environment</li>
-        <li>Edit /etc/neutron/neutron.conf and update credential
+        <li>Update ml2 configuration file with VLAN ranges and specify the BM-CLM VLAN in the
+          bridge:
+          <codeblock>[ml2_type_vlan]network_vlan_ranges = physnet1:&lt;VLAN_range></codeblock>Where
+            <codeph>&lt;VLAN_range></codeph> is the range to use. For example:
+            <codeph>3405:3413</codeph>.</li>
+        <li>Edit the <codeph>/etc/neutron/neutron.conf</codeph> file to update credential
           secret:<codeblock>[ironic]
 credential_secret = 1d0b38f0632af45c9a125aeb38c98418</codeblock></li>
         <li>Execute the following
@@ -161,8 +207,8 @@ service neutron-dhcp-agent restart
 service neutron-metadata-agent restart 
 service neutron-server restart 
 service neutron-plugin-openvswitch-agent restart</codeblock></li>
-        <li>Verify whether stackrcv3 and stackrc role are as
-          follows:<codeblock>stackrcv3 role
+        <li>Verify that the stackrcv3 and stackrc
+          role:<codeblock>stackrcv3 role
 
 export OS_USERNAME=admin 
 export OS_PASSWORD=9YL8BgNAVZ7 
@@ -192,22 +238,22 @@ unset OS_IDENTITY_API_VERSION
 unset OS_AUTH_VERSION </codeblock></li>
         <li>Execute the following command to source the <codeph>stackrcv3</codeph>
           file:<codeblock>source stackrc</codeblock></li>
-        <li>Execute the following commands to provision the networks and baremetal nodes.<ol
-            id="ol_jf2_ws2_xt">
+        <li>Execute the following commands to provision the networks:<ol id="ol_jf2_ws2_xt">
             <li>Create baremetal provisioning
               network:<codeblock>neutron net-create provisioning-network --provider:segmentation_id &lt;bm-clm-vlan-id> --provider:network_type vlan --provider:physical_network physnet1 </codeblock></li>
             <li>Create tenant vlan
               network:<codeblock>neutron net-create tenant-network</codeblock></li>
           </ol></li>
-        <li>Edit the <codeph>/etc/ironic/ironic-conductor.conf</codeph> file and specify the
+        <li>Edit the <codeph>/etc/ironic/ironic-conductor.conf</codeph> file to specify the
           following in the DEFAULT
-          namespace:<codeblock>provisioning_network_uuid = &lt;prov-network-id&gt;network_provider= neutron_plugin </codeblock></li>
-        <li>Execute the following command to create dataase schema tables for
+            namespace:<codeblock>provisioning_network_uuid = &lt;prov-network-id> network_provider= neutron_plugin </codeblock><p>Where
+              <codeph>&lt;prov-network-id></codeph> is the ID for the provisioning network,</p></li>
+        <li>Execute the following command to create database schema tables for
           Ironic<codeblock>ironic-dbsync --config-file /etc/ironic/ironic-conductor.conf</codeblock></li>
         <li>Execute the following commands to restart Ironic
           services.<codeblock>service ironic-conductor restart
 service ironic-api restart</codeblock></li>
-        <li>Create entry for switch connected to the baremetal
+        <li>Create an entry for the switch connected to the baremetal
           nodes:<codeblock>neutron switch-create --host &lt;switch_ip&gt; --username &lt;user&gt; --password &lt;password&gt; --type s5930 --id &lt;mac_address_of_switch&gt;
 neutron subnet-create --name prov-subnet --gateway 192.168.61.1 --allocation-pool start=192.168.61.100,end=192.168.61.200 provisioning-network 192.168.61.0/24 
 neutron subnet-create --name tenant-subnet --gateway 192.68.61.1 --allocation-pool start=192.68.61.100,end=192.68.61.200 tenant-network 192.68.61.0/24 </codeblock></li>
@@ -216,10 +262,10 @@ neutron subnet-create --name tenant-subnet --gateway 192.68.61.1 --allocation-po
     <section>
       <title>Upload image files</title>
       <ol>
-        <li>Upload User Image
+        <li>Upload the User Image:
           <codeblock>glance image-create --name ubuntu-14.04.02-amd64-disk --is-public True --disk-format qcow2 --container-format bare &lt; ubuntu.qcow2</codeblock></li>
-        <li>To perform nova boot, you need to have the deploy images first uploaded in glance:
-          #Upload Deploy Images
+        <li>Upload the deploy images. To perform a Nova boot, upload the deploy images first
+          uploaded in glance:
             <codeblock>glance image-create --name deploy-initrd --is-public True --disk-format ari --container-format ari &lt; ironic-deploy.initramfs
 glance image-create --name deploy-kernel --is-public True --disk-format aki --container-format aki &lt; ironic-deploy.vmlinuz</codeblock><p>The
             tarball containing above images can be downloaded from

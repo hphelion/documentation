@@ -58,8 +58,68 @@
       conref="conrefs/CGH-2-conref-WR-json-17.dita#ReusableComponent_m5f_t1x_vt/configure-wr-json"/>
     <section
       conref="conrefs/CGH-2-conref-Machine-json-18.dita#ReusableComponent_a5m_v1x_vt/configure-mach-json"/>
-    <section
-      conref="conrefs/CGH-2-conref-Verify-json-19.dita#ReusableComponent_upw_x1x_vt/verify-json"/>
+    <section>
+      <title>Configure the ironic.json file</title>
+      <p>Modify the <codeph>ironic.json</codeph> file in the
+          <codeph>/var/hlm/clouds/sac22/vars</codeph> directory to  set
+          <codeph>ignore_tenant_network</codeph> to
+        <codeph>True</codeph>.<codeblock>{
+  "product": {
+        "version": 1
+  },
+  "property-groups": [
+    {
+       "name": "ironic-vars",
+       "properties": {
+         "ignore_tenant_network" : "False"       
+         }
+    }
+  ]
+}</codeblock></p>
+    </section>
+    <section>
+      <title>Configure the neutron-bm.json file</title>
+      <p>Modify the <codeph>neutron-bm.json</codeph> file in the
+          <codeph>/var/hlm/clouds/sac22/vars</codeph> directory to  to specify networking
+        information.</p>
+      <p>
+        <codeblock>{
+  "product": {
+        "version": 1
+  },
+  "property-groups": [
+    {
+       "name": "neutron-vars",
+       "properties": {
+         "switch_channel_timeout": "180",
+         "vlan_range": "339:340",
+         "bm_interface": "eth1",
+         "prov_network": {
+            "vlan": "1579",
+            "cidr": "10.200.79.0 /24",
+            "ip_start_address": "10.200.79.50",
+            "ip_end_address": "10.200.79.200",
+            "ip_gateway": "10.200.79.1"
+          }
+       }
+     }
+  ]
+}</codeblock>
+      </p>
+    </section>
+    <section>
+      <title>Integrate the JSON file changes</title>
+      <p>
+        <ol id="ol_kdx_lth_xt">
+          <li>Change <codeph>kenobi-node-configuration/ansible-playbooks/roles/stackrc</codeph> to
+              <codeph>kenobi-node-configuration/ansible-playbooks/STACKRC</codeph> (lowercase to
+            uppercase)</li>
+          <li>Execute the following command to integrate these configurations into the installation
+            environment: <codeblock>hlm_prepare-env.sh</codeblock></li>
+        </ol>
+      </p>
+    </section>
+    
     <section conref="conrefs/CGH-2-conref-esx-proxy-20.dita#ReusableComponent_hyj_bbx_vt/esx-proxy" id="esx-proxy"/>
     <section
       conref="conrefs/CGH-2-conref-HLM-provision-21.dita#ReusableComponent_vds_dbx_vt/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"/>
