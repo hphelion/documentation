@@ -11,15 +11,12 @@
       deployer_cloud: "msgaas"
       deployer_ntp_servers: NTP servers, can be the same as the one used by HOS
       deployer_dns_servers: DNS servers, can be the same as the one used by HOS
-      deployer_key: 
+      deployer_key: msgaas-key
       deployer_flavor: 3
       deployer_name: msgaas_deployer_01   
       deployer_security_group: default
-      deployer_version:    
-      deployer_image:    
-      deployer_uri:    
-      deployer_ext_net_id: external network id
-      deployer_cacert: CA cert to send over to the deployer
+      deployer_image: hlinux_msgaas
+      deployer_ext_net: ext-net
       deployer_cname: CN name used to generate the certificate file.             
   ...
   msgaas:
