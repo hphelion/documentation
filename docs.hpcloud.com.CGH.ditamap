@@ -114,8 +114,10 @@
       <topicref href="CarrierGrade/HLMCLI/CGH-2-hlm-cli.dita"
         navtitle="Helion Lifecycle Managment CLI Reference" locktitle="yes"/>
     </topichead>
-    <topicref href="CarrierGrade/AdminGuide/carrier-grade-User-guide.ditamap" format="ditamap"
-      navtitle="Operations" locktitle="yes"/>
+    <topichead navtitle="Operations">
+      <topicref href="CarrierGrade/AdminGuide/carrier-grade-User-guide.ditamap"
+        navtitle="User Guide" locktitle="yes" format="ditamap"/>
+    </topichead>
     <topicref href="CarrierGrade/Troubleshooting/CGH-2-troubleshooting.dita"
       navtitle="Troubleshooting" locktitle="yes"/>
     <topichead navtitle=" License Files">
