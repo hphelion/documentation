@@ -17,7 +17,12 @@
           Credentials")</li>
         <li>"openrc" credentials file for the Target user and project
           <!--why this file?: the values don't seem to be used anywhere in the process?--></li>
-        <li>The v2 CLI must be installed on all nodes due to client differences</li>
+        <li>The v2 CLI must be installed on all nodes due to client differences.</li>
+        <li>The SVC network correctly configured within HPE Helion OpenStack.
+        <note type="important">The DNSaaS installation requires that the svc network be named "SVC". 
+          User defined names for the svn network are currently not supported.
+        </note></li>
+        <li>A SSH public and private keypair.</li>
       </ul>
     </section>
 
@@ -194,9 +199,13 @@ ansible-playbook -i hosts/verb_hosts platform-pass-through.yml -e pass_through_k
           <li> Copy the contents of the <codeph>pass-through.yml</codeph> file as follows:<ul>
               <li>Copy <b>from</b>: &lt;<b>HOS</b> deployer&gt;:~/platform-pass-through.yml </li>
               <li>Copy <b>to</b>: &lt;<b>DNSaaS</b> deployer&gt;
-                ~/helion/my_cloud/definition/data/pass-through/hos.yml</li>
+                ~/helion/my_cloud/definition/data/pass-through/pass-through/hos.yml</li>
             </ul>
           </li>
+          <li>Commit the changes to git.
+            <codeblock>$ git add -A
+$ git commit -a -m "Save DNSaaS config file changes."
+            </codeblock></li>
           <li>Run the Pre-Installation Playbook <p>Copy the ~/dnsaas.osrc file from the HPE Helion
               OpenStack deployer. At the end of each playbook, ensure both "unreachable" and
               "failed" are zero.</p>
@@ -223,10 +232,10 @@ $ ansible-playbook -i hosts/localhost hlm-pre-install.yml</codeblock>
 openssl req -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.csr -text \
     -subj '/C=US/O=Helion Test Certificate/CN=your.domain.com/emailAddress=test@example.org/'
             </codeblock></li>
-          <li>Create a file containing v3 extensions Ensure that the DNS entry matches any CN
-                entry above and provide your IP address. The IP address is what is used by HPE
-                Helion Development Platform and the DNS is used by HPE Helion OpenStack. <note>The
-                  IP address must be the same in DNS: and IP:</note>
+          <li>Create a file containing v3 extensions Ensure that the DNS entry matches any CN entry
+            above and provide your IP address. The IP address is what is used by HPE Helion
+            Development Platform and the DNS is used by HPE Helion OpenStack. <note>Update the
+              "subjectAltName" value with the domain name subjectAltName=DNS:your.domain.com</note>
             <codeblock>$ cat &gt; v3_ext.cnf &lt;&lt; EOF
 [ v3_req ]
 subjectAltName=DNS:your.domain.com
@@ -248,7 +257,7 @@ EOF
                <li>Rename the "components" section of the extlb for a "tls-components" section, activating TLS on all external components.
                   <codeblock>$ nano ~/helion/my_cloud/definition/data/pass-through$network_groups.yml</codeblock></li>
                <li>Add changes to git.
-                  <codeblock>$ git add hos/ansible/roles/tls-frontend/files/my-public-cert  my_cloud/definition/data/network_groups.yml
+                <codeblock>$ git add hos/ansible/roles/tls-frontend/files/my-public-cert  my_cloud/definition/data/network_groups.yml
 $ git diff ^HEAD my_cloud/definition/data/network_groups.yml
 # --- Output example ---
  - hostname: false
@@ -265,9 +274,9 @@ $ git diff ^HEAD my_cloud/definition/data/network_groups.yml
      roles:
      - public
                     
-$ git commit -m"Configure SSL certificate"
+$ git commit -m "Configure SSL certificate"
                   </codeblock>
-                </li>
+              </li>
                 <li>Commit changes to git.
                   <codeblock>$ git commit -m"Configure SSL certificate"</codeblock>
                 </li>
@@ -301,8 +310,6 @@ EOF</codeblock>
             </codeblock>
           </li>
           <li>Installing the Certificate.
-            <note>If you are using a FQDN - Create or obtain a
-              certificate to match the domain name you are going to use.</note>
             <ul>
               <li>Join the private and public keys into "my-cert-file" at the required location.
                 <codeblock>$ cat my-public-cert.key my-public-cert.crt > ~/helion/my_cloud/config/tls/certs/my-public-cert</codeblock>
@@ -343,6 +350,7 @@ $ git diff ^HEAD my_cloud/definition/data/network_groups.yml
         <p><b>Save Configured Deployment Model</b></p>
         <ol>
           <li>Add your changes to Git. <codeblock>$ cd ~/helion
+$ git add -A
 $ git commit -a -m "Configured Deployment Model"      
 $ git status </codeblock>
             <note>Make sure that there are no other files which are not committed to the Git
@@ -354,7 +362,8 @@ $ git status </codeblock>
         <p>At the end of each playbook, ensure both "unreachable" and "failed" are
           zero.</p><note>When asked for a encryption key, simply leave the value blank, pressing
           enter 4 times to
-        proceed.</note><codeblock>$ ansible-playbook -i hosts/localhost config-processor-run.yml </codeblock>
+        proceed.</note><codeblock>$ cd ~/helion/hos/ansible
+$ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
       </sectiondiv><b>Run the Ready Deployment Playbook</b>
       <p>At the end of each playbook, ensure both "unreachable" and "failed" are
       zero.</p><codeblock>$ ansible-playbook -i hosts/localhost ready-deployment.yml </codeblock>
@@ -382,6 +391,125 @@ $ ansible-playbook -i hosts/localhost hlm-boot-infra.yml -e neutron_router_ha=Fa
           this play is <b>hosts/verb_hosts</b> and not <b>hosts/localhost</b>.</note>
         <note>This step take approximately 15 to 20 minutes to complete.</note>
         <codeblock>$ ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
+      </sectiondiv>
+    </section>
+    
+    <section id="InitialConfiguration">
+      <title>Initial Configuration</title>
+      
+      <sectiondiv>
+        <p><b>Identify Name Server Public IPs</b></p>
+        <p>To direct DNS traffic towards the DNSaaS managed nameservers, you must first 
+          identify the Floating IPs associated with each server. Each of the name servers 
+          (e.g. dnsaas-cp-ns0001-mgmt) will have two IPs listed for the DNSAAS_NET_EXT 
+          network, the second IP address (e.g. 172.31.0.10) is the Floating IP. 
+          It is recommended that you gather all IPs for the nameservers and before 
+          proceeding to the next step.</p>
+        <ol>
+          <li>Source the dnsaas.osrc file.
+            <codeblock>$ source dnsaas.osrc</codeblock></li>
+          <li>View server list.
+            <codeblock>$ openstack server list
++--------------------------------------+-----------------------+--------+----------------------------------------------------------------------------------------+
+| ID                                   | Name                  | Status | Networks                                                                               |
++--------------------------------------+-----------------------+--------+----------------------------------------------------------------------------------------+
+| 1dca52f2-cc77-425b-9652-660d29dcf172 | dnsaas-cp-ns0003-mgmt | ACTIVE | DNSAAS_NET_EXT=172.16.1.15, 172.31.0.12; SVC=169.254.2.25; DNSAAS_NET_MGMT=172.16.0.15 |
+| fbda0fb9-783e-4c77-ae61-fe58b2ccf23d | dnsaas-cp-ns0002-mgmt | ACTIVE | DNSAAS_NET_EXT=172.16.1.14, 172.31.0.11; SVC=169.254.2.24; DNSAAS_NET_MGMT=172.16.0.14 |
+| c3775219-cc84-485d-a38c-423c0c3798bc | dnsaas-cp-ns0001-mgmt | ACTIVE | DNSAAS_NET_EXT=172.16.1.13, 172.31.0.10; SVC=169.254.2.23; DNSAAS_NET_MGMT=172.16.0.13 |
+| 3fd8eac2-f952-4803-96f5-9299c635e18d | dnsaas-cp-c1-m3-mgmt  | ACTIVE | DNSAAS_NET_EXT=172.16.1.12; SVC=169.254.2.22; DNSAAS_NET_MGMT=172.16.0.12              |
+| 469ebe36-de45-4335-be70-1fc329603023 | dnsaas-cp-c1-m2-mgmt  | ACTIVE | DNSAAS_NET_EXT=172.16.1.11; SVC=169.254.2.21; DNSAAS_NET_MGMT=172.16.0.11              |
+| c2b485fa-233a-44f0-a024-b5f3c486779c | dnsaas-cp-c1-m1-mgmt  | ACTIVE | DNSAAS_NET_EXT=172.16.1.10; SVC=169.254.2.20; DNSAAS_NET_MGMT=172.16.0.10              |
+| 4cea4050-b30a-4f64-b9a8-b85f3cd4856b | dnsaas-deployer       | ACTIVE | SVC=169.254.2.19                                                                       |
++--------------------------------------+-----------------------+--------+----------------------------------------------------------------------------------------+</codeblock></li>
+        </ol>
+      </sectiondiv>
+      
+      <sectiondiv>
+       <p><b>Create Server Entries in Designate</b></p>
+        <p>For each nameserver, choose a public FQDN. For example "ns1.mycloud.com", 
+          and create the server entry in Designate.</p>
+        <ol>
+          <li>Source the dnsaas.osrc file.
+            <codeblock>$ source dnsaas.osrc</codeblock></li>
+          <li>Create server 1.
+            <codeblock>$ designate server-create --name ns1.mycloud.com.
++------------+--------------------------------------+
+| Field      | Value                                |
++------------+--------------------------------------+
+| id         | None                                 |
+| created_at | 2015-11-02T16:56:05.000000           |
+| updated_at | e93d76df-9660-45b4-83cc-c7ddec9f0add |
+| name       | ns1.mycloud.com.                     |
++------------+--------------------------------------+</codeblock></li>
+          <li>Create server 2.
+            <codeblock>$ designate server-create --name ns2.mycloud.com.
++------------+--------------------------------------+
+| Field      | Value                                |
++------------+--------------------------------------+
+| id         | None                                 |
+| created_at | 2015-11-02T16:56:09.000000           |
+| updated_at | 7dbfd84e-bf00-4a33-ae72-24ed4c67efd4 |
+| name       | ns2.mycloud.com.                     |
++------------+--------------------------------------+</codeblock></li>
+          <li>Create server 3.
+            <codeblock>$ designate server-create --name ns3.mycloud.com.
++------------+--------------------------------------+
+| Field      | Value                                |
++------------+--------------------------------------+
+| id         | None                                 |
+| created_at | 2015-11-02T16:56:12.000000           |
+| updated_at | 9da32483-7d96-4cb5-b2f8-8a1d1a0066e3 |
+| name       | ns3.mycloud.com.                     |
++------------+--------------------------------------+</codeblock></li>
+          <li>List servers.
+            <codeblock>$ designate server-list
++--------------------------------------+------------------+
+| id                                   | name             |
++--------------------------------------+------------------+
+| e93d76df-9660-45b4-83cc-c7ddec9f0add | ns1.mycloud.com. |
+| 7dbfd84e-bf00-4a33-ae72-24ed4c67efd4 | ns2.mycloud.com. |
+| 9da32483-7d96-4cb5-b2f8-8a1d1a0066e3 | ns3.mycloud.com. |
++--------------------------------------+------------------+</codeblock></li>
+        </ol>
+      </sectiondiv>
+      
+      <sectiondiv>
+        <p><b>Create the A records for each Name Server</b></p>
+        <p>The following table of data is required - the table here is based on the example outputs above.</p>
+
+        <p><table frame="all" rowsep="1" colsep="1" id="NSTable">
+            <title/>
+            <tgroup cols="3">
+              <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+              <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+              <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+              <thead>
+                <row>
+                  <entry>NS Hostname</entry>
+                  <entry>NS FQDN</entry>
+                  <entry>NS Floating IP</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>dnsaas-cp-ns0001-mgmt</entry>
+                  <entry>ns1.mycloud.com</entry>
+                  <entry>169.254.2.23</entry>
+                </row>
+                <row>
+                  <entry>dnsaas-cp-ns0002-mgmt</entry>
+                  <entry>ns2.mycloud.com</entry>
+                  <entry>169.254.2.24</entry>
+                </row>
+                <row>
+                  <entry>dnsaas-cp-ns0003-mgmt</entry>
+                  <entry>ns3.mycloud.com</entry>
+                  <entry>169.254.2.2</entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>For each name chosen, provide the external service the name and Floating IP
+          address for each nameserver, or create the matching zone and records within Designate.</p>
       </sectiondiv>
     </section>
   </body>
