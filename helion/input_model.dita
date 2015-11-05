@@ -111,7 +111,7 @@
     <section id="introduction"><title>Introduction</title>
       <p>This document describes how the HPE Helion OpenStack input model can be used to define and
         configure the cloud.</p>
-      <p>HPE Helion OpenStack ships with a set of example input models that can be used as starting
+      <p>HPE Helion OpenStack ships Kilo with a set of example input models that can be used as starting
         points for defining a custom cloud.</p>
       <p>The input model allows you, the cloud administrator, to describe the cloud configuration in
         terms of:</p>
