@@ -7,19 +7,16 @@
     <section>This additional section is required only if the Messaging Service is installed. <codeblock>clouds:
   mycloud:
   ... 
-    messaging:   
-      deployer_key: 
-      deployer_flavor: 4
+    messaging:
+      deployer_cloud: "msgaas"
+      deployer_ntp_servers: NTP servers, can be the same as the one used by HOS
+      deployer_dns_servers: DNS servers, can be the same as the one used by HOS
+      deployer_key: msgaas-key
+      deployer_flavor: 3
       deployer_name: msgaas_deployer_01   
       deployer_security_group: default
-      deployer_version:    
-      deployer_image:    
-      deployer_uri:    
-      deployer_cloud: "msgaas"
-      deployer_ntp_servers: NTP servers, can be the same as the one used by HOS 
-      deployer_dns_servers: DNS servers, can be the same as the one used by HOS
-      deployer_ext_net_id: external network id
-      deployer_cacert: CA cert to send over to the deployer
+      deployer_image: hlinux_msgaas
+      deployer_ext_net: ext-net
       deployer_cname: CN name used to generate the certificate file.             
   ...
   msgaas:
@@ -35,84 +32,72 @@
       project_domain_name: default
       user_domain_name: default              </codeblock><dl>
         <dlentry>
-          <dt>deployer_key</dt>
-          <dd>The keypair to use to SSH into the deployer instance.</dd>
+          <dt>deployer_cloud</dt>
+          <dd>The cloud identified in the clouds.yaml where the deployer will be created. Note that
+            while the deployer creation must be performed by an admin, the deployer itself may be
+            owned by someone else. Value must be "msgaas"</dd>
         </dlentry>
         <dlentry>
-          <dt>deployer_flavor</dt>
-          <dd>The flavor to use for the deployer instance. Default value: 4 which is Large.</dd>
+          <dt>deployer_ntp_servers</dt>
+          <dd>NTP servers, provided as a list. Can be the same as the one used by HPE Helion OpenStack </dd>
         </dlentry>
         <dlentry>
-          <dt>deployer_name</dt>
+          <dt>deployer_dns_servers</dt>
+          <dd>DNS servers, provided as a list. Can be the same as the one used by HPE Helion OpenStack </dd>
+        </dlentry>
+        <dlentry>
+          <dt>deployer_key (optional)</dt>
+          <dd>The keypair to use to SSH into the deployer instance. Default value: <i>project_name</i>.
+           If the keypair does not exist in nova, it  would get created using the default user 
+           SSH public key.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>deployer_flavor (optional)</dt>
+          <dd>The flavor ID to use for the deployer instance. Default value: 4 (which is Large).</dd>
+        </dlentry>
+        <dlentry>
+          <dt>deployer_name (optional)</dt>
           <dd>The name of the deployer instance. Default value:
               <i>service</i>_deployer_<i>version</i></dd>
         </dlentry>
         <dlentry>
-          <dt>deployer_security_group</dt>
+          <dt>deployer_security_group (optional)</dt>
           <dd>The name of the security group for the deployer. Default value: default</dd>
         </dlentry>
         <dlentry>
-          <dt>deployer_version</dt>
-          <dd>The version of the deployer. Default value: if not set, it will use the version in the
-            image name.</dd>
-        </dlentry>
-        <dlentry>
-          <dt>deployer_image</dt>
+          <dt>deployer_image (optional)</dt>
           <dd>The image to use for the deployer. It will attempt to find an image with the prefix
-            helionci or msgaas and containing the word hlinux.</dd>
+            <i>helionci</i> or <i>msgaas</i> and containing the word <i>hlinux</i>.</dd>
         </dlentry>
         <dlentry>
-          <dt>deployer_uri</dt>
-          <dd>The location where the download the deployer tgz can be found. Will be set by the CLI
-            based on information retrieved from Swift.</dd>
-        </dlentry><dlentry><dt>deployer_cloud:</dt><dd>Value must be "msgaas"</dd></dlentry>
-        <dlentry>
-          <dt>deployer_net_id</dt>
-          <dd>Network id for the deployer instance. Default value: The id of the network named SVC.
+          <dt>deployer_net_id (optional)</dt>
+          <dd>Network ID for the deployer instance. Default value: The ID of the network named SVC.
           </dd>
         </dlentry>
         <dlentry>
-          <dt>deployer_cloud</dt>
-          <dd>The cloud identified in the clouds.yaml where the deployer will be created. Note that
-            while the deployer creation must be performed by an admin, the deployer itself may be
-            owned by someone else.</dd>
+          <dt>deployer_ext_net (optional)</dt>
+          <dd>The external network name. Default value: ext-net</dd>
         </dlentry>
         <dlentry>
-          <dt>deployer_ntp_servers</dt>
-          <dd>NTP servers, can be the same as the one used by HPE Helion OpenStack </dd>
-        </dlentry>
-        <dlentry>
-          <dt>deployer_dns_servers</dt>
-          <dd>DNS servers, can be the same as the one used by HPE Helion OpenStack </dd>
-        </dlentry>
-        <dlentry>
-          <dt>deployer_ext_net_id</dt>
-          <dd>external network id</dd>
-        </dlentry>
-        <dlentry>
-          <dt>deployer_cacert</dt>
-          <dd>CA cert to send over to the deployer</dd>
-        </dlentry>
-        <dlentry>
-          <dt>deployer_cname</dt>
+          <dt>deployer_cname (optional)</dt>
           <dd>CN name used to generate the certificate file.</dd>
         </dlentry>
         <dlentry>
-          <dt> image_api_version: '1' </dt>
-          <dd>The default value is 1. </dd>
+          <dt> image_api_version(optional)</dt>
+          <dd>The image API version to use. The default value is 1. </dd>
         </dlentry>
         <dlentry>
-          <dt> identity_api_version: '2' </dt>
-          <dd>The default value is 2.</dd>
+          <dt> identity_api_version (optional)</dt>
+          <dd>The keystone API version to use. The default value is 2.</dd>
         </dlentry>
         <dlentry>
-          <dt>region_name: region1 </dt>
-          <dd>The default value is region1</dd>
+          <dt>region_name (optional)</dt>
+          <dd>The region name to use. The default value is region1</dd>
         </dlentry>
         <dlentry>
-          <dt>insecure: True</dt>
+          <dt>insecure (optional)</dt>
           <dd>This flag will automatically accept an internally signed cert when connecting to the
-            HPE Helion OpenStack services without prompting the user.</dd>
+            HPE Helion OpenStack services without prompting the user. Default value: True</dd>
         </dlentry>
         <dlentry>
           <dt>auth_url</dt>
