@@ -20,16 +20,7 @@
       <ol>
             <li>SSH into the HP Helion OpenStack deployer. (This is the same location where the HDPI
           has been installed.)</li>
-        <li>List all services available for download.
-            <codeblock>openstack --os-cloud mycloud hdpi list</codeblock><p>The output will look
-            similar to the following. Make a note of the ID of the Messaging service that you intend
-            to
-          install.</p><codeblock>+--------------------+----------------+-----------+-----------+
-| service            |     id         |  version  |   state   |
-+--------------------+----------------+-----------+-----------+
-| database           | wscatalog.#### | 1.0.0     | available |
-<b>| messaging          | wscatalog.#### | 1.0.0     | available |</b></codeblock></li>
-        <li>Install the Messaging service package. <ol>
+        <li>Install the Messaging service installation files. <ol>
             <li>If you <xref href="install_offline.dita#topic_w25_hqp_xt">pre-downloaded</xref> the
               installation file, run the following command to install
               it:<codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
