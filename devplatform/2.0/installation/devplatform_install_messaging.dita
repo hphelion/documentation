@@ -25,7 +25,7 @@
         <li>List the available messaging versions to install:
           <codeblock>openstack hdpi list --os-cloud mycloud | grep messaging  </codeblock>The output
           should look similar
-          to:<codeblock>messaging | wscatalog.#### <!--this number is incoming from Matty, the bits are still uploading as this is written-->| 2.0.0.0 | available</codeblock></li>
+          to:<codeblock>messaging | wscatalog.#### <!--this number is incoming from Matty, the bits are still uploading as this is written-->| 1.0.0.0 | available</codeblock></li>
         <li>Select the most recent messaging version to install and view the details of the
           package:<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock></li>
         <li>Install the Messaging service installation files. <ol>

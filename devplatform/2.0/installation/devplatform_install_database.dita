@@ -21,7 +21,8 @@
 <section id="dbaas_installation">
       <title>Install the Database Service </title>
       <ol id="ol_xct_5dz_nt">
-        
+        <li>SSH into the HP Helion OpenStack deployer. (This is the same location where the HDPI has
+          been installed.)</li>
         <li>Source the Virtual
           Environment.<codeblock>stack@hlm:~$ source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate </codeblock></li>
          <li>List the available database versions to install:
