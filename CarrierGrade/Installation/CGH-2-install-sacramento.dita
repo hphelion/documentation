@@ -120,14 +120,23 @@
       <title>Configure baremetal node ports into access mode</title>
       <p>Ensure that the switch ports connected to baremetal instance nodes are in access mode. This
         is a pre-requisite before provisioning baremetal instances. </p>
-      <p>To configure a port onto access mode execute the following on the switch:
+      <p>The following example assumes you are using an HP 5930 switch:
         <codeblock>system-view
-interface:&lt;interface-name&gt; &lt;port&gt;
-port link-type 
-access 
-save 
-force quit 
+interface &lt;interface-name&gt; &lt;port&gt;
+port link-type access 
+save force quit 
 quit </codeblock></p>
+      <p><b>Example:</b></p>
+      <codeblock>&lt;FTC-R146340-5930A&gt;system-view
+System View: return to User View with Ctrl+Z.
+[FTC-R146340-5930A]interface Ten-GigabitEthernet 1/0/9:4
+[FTC-R146340-5930A-Ten-GigabitEthernet1/0/9:4]port link-type access
+[FTC-R146340-5930A-Ten-GigabitEthernet1/0/9:4]save force
+Validating file. Please wait...
+Saved the current configuration to mainboard device successfully.
+[FTC-R146340-5930A-Ten-GigabitEthernet1/0/9:4]quit
+[FTC-R146340-5930A]quit
+&lt;FTC-R146340-5930A&gt;</codeblock>
     </section>
     <section
       conref="conrefs/CGH-2-conref-generate-init-23.dita#ReusableComponent_q43_nbx_vt/hos-cloud"/>
