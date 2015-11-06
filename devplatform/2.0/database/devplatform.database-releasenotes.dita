@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_database_release_notes">
-  <title>Database as a Service: 2.0 Beta Release Notes</title>
+  <title>Database as a Service: 2.0 Release Notes</title>
   <body>
     <section><title>No option to reset password on Vertica Preview instance on Horizon</title>
       <p>Vertica clusters can be accessed via credentials obtained by enabling root, either through Horizon or the Trove CLI. Single node 
