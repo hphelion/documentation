@@ -9,24 +9,14 @@
         <li>The HDP Installer 2.0, also known as HDPI, must already <xref
             href="devplatform_install_platform.dita#topic_gly_xmh_ts">be installed</xref>.</li>
         <li>A properly configured <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt"
-            >clouds.yaml</xref> file.</li>
+            >clouds.yaml</xref> file. Note that there is no specific sub-section in the clouds.yaml
+          file for the Application Lifecycle Service.</li>
       </ul>
     </section>
-   <section><title>Download the RC File</title>
+   <section>
 <ol>
-      <li>Download an RC file for the admin user and project. <ol id="ol_bpk_1c1_4t">
-          <li> Log in to Horizon using the admin account.</li>
-          <li>Download the OpenStack RC file. <p>
-              <image placement="break" href="../../../media/quickstartDownloadRCFile.png"
-                id="image_asb_jvy_nt"/>
-            </p></li>
-          <li>Use <codeph>scp</codeph> to copy the RC file over to the Deployer.</li>
-          <li>SSH to the Deployer and source the RC file. You will need to provide the same admin
-            password that you used to log in to Horizon. <p>
-              <codeblock> source admin-openrc.sh</codeblock>
-            </p></li>
-      </ol></li>
-      <li>Source the Virtual Environment.<pre>source .devplatform/bin/activate</pre></li>
+      <li>Source the Virtual
+          Environment.<pre>source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate </pre></li>
       <li>List the available ALS versions to
           install.<codeblock>openstack hdpi list --os-cloud mycloud | grep als</codeblock>The output
           should include:<codeblock>| als | wscatalog.#### | 2.0.0 | available |</codeblock></li>
@@ -34,35 +24,36 @@
           provides significant administration information such as download size, version, and so
           forth.<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock> The
           output will appear similar to:
-          <codeblock>+---------------+---------------------------------------------------------------------------------------------+
-| Field         | Value                                                                                       |
-+---------------+---------------------------------------------------------------------------------------------+
-| actions       | download                                                                                    |
-| description   | als_2.0.0.517_qcow2.csu - Application Lifecycle Service for HPE Helion Development Platform. |
-| download_size | 5157019481                                                                                  |
-| email         |                                                                                             |
-| id            | wscatalog.####                                                                              |
-| name          | Application Lifecycle Service                                                               |  
-| package_id    | g11.2e8ab198-5b0f-4bda-9ec7-8ab9c13b53dd                                                    |
-| provider_name | Hewlett Packard Company                                                                     |
-| service       | als                                                                                         |
-| sku           | B4CD85EA-742F-B8BA-DD39-3A81EEC89741                                                        |
-| state         | available                                                                                   |
-| type          | PaaS Workloads                                                                              |
-| version       | 2.0.0                                                                                       |
-| webpage       | http://www.hp.com/helion/devplatform                                                        |
-+---------------+---------------------------------------------------------------------------------------------+        </codeblock></li>
+          <codeblock>+---------------+--------------------------------------------------------------------+
+| Field         | Value                                                              |
++---------------+--------------------------------------------------------------------+
+| actions       | install,progress,download                                          |
+| description   | Application Lifecycle Service for HPE Helion Development Platform. |
+| download_size | 4939731158                                                         |
+| email         |                                                                    |
+| id            | wscatalog.2800                                                     |
+| name          | Application Lifecycle Service 2.0 RC3                              |
+| package_id    | x11.6f198d79-a61b-4518-9cc4-3e7629e0fb8b                           |
+| provider_name | Hewlett Packard Enterprise                                         |
+| service       | als                                                                |
+| sku           | A5FDCA94-026F-A579-0A38-BE4AE3117B7E                               |
+| state         | downloaded                                                         |
+| type          | PaaS Workloads                                                     |
+| version       | 2.0.0.548                                                          |
+| webpage       | http://www.hp.com/helion/devplatform                               |
++---------------+--------------------------------------------------------------------+</codeblock></li>
     </ol></section>
-    <section><title>Install the ALS service.</title>Run the following command:
-      <codeblock>openstack --os-cloud mycloud hdpi als install --package wscatalog.2670</codeblock>
-      The output will appear similar to:
-        <codeblock>Downloading Application Lifecycle Service which is available 
+    <section><title>Install the ALS service</title><title>If you downloaded previously: openstack
+        --os-cloud mycloud hdpi als install &lt;downloaded filename></title><title>If you have not
+        yet downloaded:</title>Run the following command: <note>Downloading may take a significant
+        amount of time; depending on network traffic, it could take 20-90
+      minutes.</note><codeblock>openstack --os-cloud mycloud hdpi als install wscatalog.####</codeblock>Either
+      way, once you start the installer bla bla The output will appear similar to:
+      <codeblock>Downloading Application Lifecycle Service which is available 
 Application Lifecycle Service not downloaded (available) 
 Application Lifecycle Service not downloaded (downloading)
-...
-... </codeblock><note>Downloading
-        may take a significant amount of time; depending on network traffic, it could take 20-90
-        minutes.</note><codeblock>Application Lifecycle Service is (downloaded) 
+... 
+Application Lifecycle Service is (downloaded) 
 Staging Application Lifecycle Service in Glance/Swift 
 Application Lifecycle Service is staged 
 UI installed for application lifecycle service 

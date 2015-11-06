@@ -275,19 +275,7 @@ localhost                  : ok=34   changed=15   unreachable=0    failed=0   </
 export OS_INTERFACE=internal</codeblock></li>
            <li>List all clusters. <note>Since you have not yet created any clusters, this list of
             clusters will be empty, but it should execute without returning any error messages.
-            </note><codeblock>stack@messaging-deployer:~/scratch/ansible/next/hos/ansible$ /opt/stack/service/cueclient/venv/bin/openstack message-broker cluster list</codeblock><note>If
-              <codeph>ERROR: openstack Unauthorized (HTTP 401)</codeph> is received when trying to
-            communicate with Cue (API), it is most likely that the Cue Keystone user has a different
-            password than what was configured in cue.conf. This is usually caused by not deleting
-            the Cue user and service from Keystone prior to re-deploying the Messaging Service.
-            Synchronize the values by doing the following:<ol id="ol_t5m_2hs_wt">
-              <li> SSH into one of the Cue controller nodes.</li>
-              <li>Find the <codeph>/etc/cue/cue.conf</codeph> file</li>
-              <li>Copy the value of the <b>admin_password</b> variable.</li>
-              <li>Source <codeph>keystone.osrc</codeph></li>
-              <li>Update the Cue user password in
-                Keystone:<codeblock>openstack user set cue --password &lt;value of admin_password></codeblock></li>
-            </ol></note></li>
+            </note><codeblock>stack@messaging-deployer:~/scratch/ansible/next/hos/ansible$ /opt/stack/service/cueclient/venv/bin/openstack message-broker cluster list</codeblock></li>
         <li>If you have configured TLS, make sure that the Cue public endpoint begins with https and
           not just http:<codeblock>openstack catalog list</codeblock></li>
           </ol>
