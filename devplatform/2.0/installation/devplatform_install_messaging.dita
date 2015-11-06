@@ -23,13 +23,13 @@
             <li>SSH into the HP Helion OpenStack deployer. (This is the same location where the HDPI
           has been installed.)</li>
         <li>List all services available for download.
-            <codeblock>openstack --os-cloud mycloud hdpi list</codeblock><p>The output will
-            look similar to the following. Make a note of the ID of the Messaging service that you
-            intend to
+            <codeblock>openstack --os-cloud mycloud hdpi list</codeblock><p>The output will look
+            similar to the following. Make a note of the ID of the Messaging service that you intend
+            to
           install.</p><codeblock>+--------------------+----------------+-----------+-----------+
 | service            |     id         |  version  |   state   |
 +--------------------+----------------+-----------+-----------+
-| database       | wscatalog.#### | 1.0.0  | available |
+| database           | wscatalog.#### | 1.0.0     | available |
 <b>| messaging          | wscatalog.#### | 1.0.0     | available |</b></codeblock></li>
         <li>Download and install the Messaging service
           package.<codeblock>(dev_platform_installer-devplat_installer-1.0.0)stack@hlm:~$ openstack --os-cloud mycloud hdpi messaging 
@@ -111,12 +111,15 @@ stack@messaging-deployer:~/helion/my_cloud/definition$ nano cloudConfig.yml    #
             <li>Navigate to and edit the <codeph>network_groups.yml</codeph> file.<note>This step is
                 optional. Perform this step only in support of TLS (Cue API public endpoint URL with
                 SSL support
-              (https))</note><codeblock># comment out 'external-name:' field, 
-# add 'msgaas-cert'for'cert-file:' field,
+              (https))</note><codeblock># comment out 'external-name:' field if an IP-based TLS certificate is used; otherwise, for name-based TLS, provide the FQDN for the external name field, 
+# add &lt;msgaas-cert> for'cert-file:' field (provide the name of your certificate here, e.g. "msgaas-cert"),
 # uncomment 'tls-components:'list and comment out 'components:' list 
 
 stack@messaging-deployer:~/helion/my_cloud/definition$ cd data
 stack@messaging-deployer:~/helion/my_cloud/definition/data$ nano network_groups.yml </codeblock></li>
+          <li>Also in the network_groups.yml file, if you have a name-based TLS certificate, copy it to the <codeph>~/helion/my_cloud/config/tls/certs/</codeph> directory.
+            Comment out the 'components:' list, and uncomment the 'tls-components:' list. Add the filename (e.g. msgaas-cert) to the 'tls-components:' list.
+          </li>
             <li>Using Git, persist these changes. This information is required for the Pre-Install
               playbook, which is executed later in this installation
 
@@ -163,7 +166,8 @@ localhost                  : ok=20   changed=14  <b> unreachable=0 </b>  <b> fai
                 <li>Copy your signed certificate into
                     <codeph>~/helion/my_cloud/config/tls/certs/msgaas-cert</codeph></li>
                 <li>Using Git, commit the
-                  changes.<codeblock>stack@messaging-deployer:~/helion/hos/ansible$ git add -A
+                  changes.
+                  <codeblock>stack@messaging-deployer:~/helion/hos/ansible$ git add -A
 stack@messaging-deployer:~/helion/hos/ansible$ git commit -a -m "Configured Deployment Model"</codeblock></li>
               </ol></li>
             <li>Run the Config Processor Playbook
