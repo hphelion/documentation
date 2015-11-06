@@ -17,10 +17,10 @@
   </prolog>
   <body>
     <p><!--https://wiki.hpcloud.net/display/HCG/Infoblox-+HCG+2.0+integration--></p>
-    <p>Infoblox is an optional component of the Sacramento deployment.  The Infoblox OpenStack
-      Adapter (IOA) integrates with the OpenStack Neutron networking service, to provide IP Address
-      Management (IPAM) networking services within OpenStack cloud platforms.Refer to the Infoblox
-      documentation for operation and maintenance information. </p>
+    <p>Infoblox is an optional component of the Memphis and Sacramento deployments.  </p>
+    <p>The Infoblox OpenStack Adapter (IOA) integrates with the OpenStack Neutron networking
+      service, to provide IP Address Management (IPAM) networking services within OpenStack cloud
+      platforms.Refer to the Infoblox documentation for operation and maintenance information. </p>
     <p>If you are not installing Infoblox, go to <xref
         href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon
         Interface</xref>.</p>
@@ -70,7 +70,7 @@
                   <entry> UserID inOpenStack </entry>
                 </row>
                 <row>
-                  <entry> CMPType</entry>
+                  <entry> CMP Type</entry>
                   <entry>String </entry>
                   <entry> CMPtypes(OpenStack) </entry>
                 </row>
@@ -80,14 +80,14 @@
                   <entry> Cloud API Owned</entry>
                 </row>
                 <row>
-                  <entry> IsExternal </entry>
+                  <entry> Is External </entry>
                   <entry> String </entry>
-                  <entry> Fornetworks andnetwork containersonly </entry>
+                  <entry> For networks and network containers only </entry>
                 </row>
                 <row>
-                  <entry>IsShared </entry>
+                  <entry>Is Shared </entry>
                   <entry>String </entry>
-                  <entry>Fornetworks andnetwork containersonly </entry>
+                  <entry>For networks and network containers only </entry>
                 </row>
                 <row>
                   <entry>IP Type</entry>
@@ -95,17 +95,17 @@
                   <entry> Typeof IP address </entry>
                 </row>
                 <row>
-                  <entry>NetworkEncap </entry>
+                  <entry>Network Encap </entry>
                   <entry>String </entry>
                   <entry> </entry>
                 </row>
                 <row>
-                  <entry>NetworkID </entry>
+                  <entry>Network ID </entry>
                   <entry>String </entry>
                   <entry>NetworkID inOpenStack </entry>
                 </row>
                 <row>
-                  <entry>NetworkName </entry>
+                  <entry>Network Name </entry>
                   <entry>String </entry>
                   <entry>Networkname </entry>
                 </row>
@@ -125,29 +125,29 @@
                   <entry> </entry>
                 </row>
                 <row>
-                  <entry>PortID </entry>
+                  <entry>Port ID </entry>
                   <entry>String </entry>
                   <entry> </entry>
                 </row>
                 <row>
-                  <entry>SegmentationID </entry>
+                  <entry>Segmentation ID </entry>
                   <entry>String </entry>
                   <entry> </entry>
                 </row>
                 <row>
-                  <entry>SubnetID </entry>
+                  <entry>Subnet ID </entry>
                   <entry>String </entry>
-                  <entry>SubnetID in OpenStack </entry>
+                  <entry>Subnet ID in OpenStack </entry>
                 </row>
                 <row>
-                  <entry>SubnetName </entry>
+                  <entry>Subnet Name </entry>
                   <entry>String </entry>
-                  <entry>Subnetnamein OpenStack </entry>
+                  <entry>Subnet name in OpenStack </entry>
                 </row>
                 <row>
-                  <entry>TenantID </entry>
+                  <entry>Tenant ID </entry>
                   <entry>String </entry>
-                  <entry>TenantID inOpenStack </entry>
+                  <entry>TenantID in OpenStack </entry>
                 </row>
                 <row>
                   <entry>Tenant Name </entry>
@@ -155,19 +155,19 @@
                   <entry>Tenant Name in OpenStack </entry>
                 </row>
                 <row>
-                  <entry>VLANID </entry>
+                  <entry>VLAN ID </entry>
                   <entry>Integer</entry>
-                  <entry>TheVLANID inOpenStack </entry>
+                  <entry>The VLANID in OpenStack </entry>
                 </row>
                 <row>
-                  <entry>VMID </entry>
+                  <entry>VM ID </entry>
                   <entry>String </entry>
-                  <entry>InstanceID inOpenStack </entry>
+                  <entry>InstanceID in OpenStack </entry>
                 </row>
                 <row>
-                  <entry>VMName </entry>
+                  <entry>VM Name </entry>
                   <entry>String </entry>
-                  <entry>VirtualmachineinstancenameinOpenStack </entry>
+                  <entry>Virtual machine instance name inOpenStack </entry>
                 </row>
               </tbody>
             </tgroup>
