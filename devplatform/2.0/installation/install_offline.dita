@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_w25_hqp_xt">
+  <title>HPE Helion 2.0 Development Platform: Preparing for Offline or Pre-Downloaded
+    Installation</title>
+  <body>
+    <p>If downloading directly to the Deployer is not an option for security or other reasons, you
+      can pre-download the installation packages for use during installation.</p>
+    <p>The pre-download also eliminates the possibility of connection interruptions during
+      installation. </p>
+    <ol id="ol_bmh_vqp_xt">
+      <li> Using your preferred Web browser, navigate to the <xref
+          href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html"
+          scope="external">HPE Helion Download Network</xref> (HDN) and log in. If necessary, create
+        an account first.</li>
+      <li>For each service:
+     <ol> <li>Locate the service to download.</li>
+      <li>Click the blue download button at the top right of the screen to download the package to
+        your local machine.</li>
+      <li>If you did not download directly to the HPE Helion OpenStack deployer, copy all the
+        downloaded packages to a USB stick or external hard drive. </li>
+      <li>Insert the USB stick or external hard drive into physical machine hosting the HPE Helion
+        OpenStack Deployer and copy the installation. Make sure there is enough space; the file
+        sizes can be significant.</li></ol></li>
+      <li>Follow the installation instructions provided for each service.<note>When installing
+          pre-downloaded files, make sure you copy the files to the local directory that you are
+          running the installer from. If the installer cannot find a file with the name you provided
+          in the local directory, it will attempt to download the files again. </note></li>
+    </ol>
+  </body>
+</topic>

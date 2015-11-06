@@ -27,11 +27,15 @@
          <li>List the available database versions to install:
           <codeblock>openstack hdpi list --os-cloud mycloud | grep database  </codeblock>The output
           should look similar
-          to:<codeblock>database | wscatalog.#### | 2.0.0.0 | available</codeblock></li>
+          to:<codeblock>database | wscatalog.#### <!--this number is incoming from Matty, the bits are still uploading as this is written-->| 2.0.0.0 | available</codeblock></li>
         <li>Select the most recent database version to install and view the details of the
           package:<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock></li>
-        <li>Install the database
-            service.<codeblock>openstack --os-cloud mycloud hdpi database install --package wscatalog.####</codeblock><note>Downloading
+        <li>Install the database service.
+       <ol> <li>If you <xref href="install_offline.dita#topic_w25_hqp_xt">pre-downloaded</xref> the
+              file:<codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
+openstack --os-cloud mycloud hdpi database install <i>&lt;filename></i></codeblock></li>
+        <li>If you did not pre-download the file,
+            run:<codeblock>openstack --os-cloud mycloud hdpi database install wscatalog.####</codeblock></li></ol><note>Downloading
             may take a significant amount of time; depending on network traffic, it could take 20-90
             minutes.</note>During installation, this command will generate output similar to the
           following:

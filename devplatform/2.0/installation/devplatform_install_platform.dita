@@ -33,7 +33,7 @@ sudo chown stack.stack /opt/stack/venv/&lt;dpi-venv&gt;
 source /opt/stack/venv/&lt;dpi-venv&gt;/bin/activate</codeblock></li>
         <li>Test the installation by retrieving a list of installable files.
             <codeblock>openstack hdpi --os-cloud mycloud list</codeblock><note>If further
-            troubleshooting information is required, add the <codeph>--debug </codeph>option to the
+            troubleshooting information is required, add the <codeph>--debug</codeph> option to the
             end of the command.</note></li>
       </ol>
     </section>
