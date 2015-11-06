@@ -39,7 +39,7 @@
         </ol></p>
     </section>
     <section>
-      <title>Configure the </title>
+      <title>Configure Extensible Attributes </title>
       <ol id="ol_rly_5jz_5t">
         <li>Power on vNIOS VM. </li>
         <li>Login to VM console from vCenter using the default credentials (admin/infoblox)</li>
@@ -175,40 +175,70 @@
       </ol>
     </section>
     <section>
-      <title id="Infoblox-HCG2.0integration-Applypatch">Apply patch</title>
+      <title id="Infoblox-HCG2.0integration-Applypatch">Deploy the Infoblox Plug-Ins </title>
+      <p>An Infoblox plug-in needs to be installed on the HLM host. For the Sacramento deployment,
+        the plug in also needs to be installed on the baremetal controller.</p>
+      <p><b>To deploy the plug-in on the HLM host:</b></p>
       <ol id="ul_ovd_rfz_5t">
-        <li>Log into the HML node.</li>
+        <li>Log into the HLM host.</li>
         <li>Copy the <codeph>infoblox.tar.gz</codeph> patch to:
-            <codeph>&lt;cloudname>/001/stage/ansible/</codeph>.</li>
-        <li>Change to the <codeph>&lt;cloudname>/001/stage/ansible/</codeph> directory.</li>
+            <codeph>/var/hlm/clouds/&lt;cloudname>/plugins</codeph>.</li>
+        <li>Change to the <codeph>/var/hlm/clouds/&lt;cloudname>/plugins</codeph> directory.<p>Where
+              <codeph>&lt;cloudname></codeph> is the name of the cloud.</p></li>
         <li>Use the following command to extract the
           patch<codeblock>tar -zvxf infoblox.tar.gz</codeblock></li>
         <li>Modify the
-            <codeph>/var/hlm/clouds/&lt;cloudname>/desired_state/&lt;cloudname>/001/base/stage/ansible/deploy-infoblox.yml</codeph>
-          file to add the appropriate cloud name. Replace the <codeph>&lt;CLOUDNAME></codeph> with
-          the name of the cloud.</li>
-        <li>Modify the
-            <codeph>/var/hlm/clouds/&lt;cloudname>/desired_state/&lt;cloudname>/001/base/stage/ansible/rollback-infoblox.yml</codeph>
-          to add the appropriate cloud name. Replace the <codeph>&lt;CLOUDNAME></codeph> with the
-          name of the cloud</li>
-        <li>Modify the
-            <codeph>/var/hlm/clouds/&lt;cloudname>/desired_state/&lt;cloudname>/001/base/stage/ansible/roles/infoblox/defaults/main.yml
-          </codeph> file to include environment variables: <ul id="ul_rvd_rfz_5t">
-            <li><i>ioa_ipaddress</i>: &lt;IP ADDRESS OF THE INFOBLOX OPENSTACK ADAPTER VM></li>
-            <li><i>ioa_username</i>: &lt;USERNAME TO LOGIN TO INFOBLOX OPENSTACK ADAPTER></li>
-            <li><i>ioa_password</i>: &lt;PASSWORD TO LOGIN TO INFOBLOX OPENSTACK ADAPTER> </li>
-            <li><i>certfile_path</i>: &lt;CERTFILE PATH AS DEFINED IN STACKRC></li>
+            <codeph>/var/hlm/clouds/&lt;cloudname>/plugins/infoblox/configure.json</codeph> based on
+          your environment: <ul id="ul_ubj_3h5_xt">
+            <li>
+              <p><codeph>ioa_ipaddress</codeph>: CLM IP of infoblox Openstack Adapter (IOA) VM </p>
+            </li>
+            <li><codeph>ioa_username</codeph>: Username to login to IOA. Default username is
+                <codeph>admin</codeph>. </li>
+            <li><codeph>ioa_password</codeph>: Password to login to IOA. Default password for user
+                <codeph>admin</codeph> is <codeph>infoblox</codeph>.</li>
+            <li><codeph>certfile_path</codeph>: certfile path as defined in stackrc file</li>
+            <li><codeph>region_name</codeph>: Region Name where the plugin will be deployed: Memphis
+              or Sacramento</li>
           </ul></li>
         <li>Execute following command to apply patch:
-          <codeblock>ansible-playbook -i hosts deploy-infoblox.yml</codeblock></li>
+              <codeblock>ansible-playbook -i hosts deploy-infoblox.yml</codeblock><p><b>To deploy
+              the plug-in on the HLM host:</b></p></li>
+      </ol>
+      <ol>
+        <li>Log into the baremetal controller.</li>
+        <li>Copy the <codeph>infoblox.tar.gz</codeph> patch to:
+            <codeph>/var/hlm/clouds/&lt;cloudname>/plugins</codeph>.</li>
+        <li>Change to the <codeph>/var/hlm/clouds/&lt;cloudname>/plugins</codeph> directory.<p>Where
+              <codeph>&lt;cloudname></codeph> is the name of the cloud.</p></li>
+            <li>Use the following command to extract the
+              patch<codeblock>tar -zvxf infoblox.tar.gz</codeblock></li>
+            <li>Modify the
+            <codeph>/var/hlm/clouds/&lt;cloudname>/plugins/infoblox/configure.json</codeph> based on
+          your environment: <ul id="ul_ipn_325_xt">
+            <li>
+              <p><codeph>ioa_ipaddress</codeph>: CLM IP of infoblox Openstack Adapter (IOA) VM </p>
+            </li>
+            <li><codeph>ioa_username</codeph>: Username to login to IOA. Default username is
+                <codeph>admin</codeph>. </li>
+            <li><codeph>ioa_password</codeph>: Password to login to IOA. Default password for user
+                <codeph>admin</codeph> is <codeph>infoblox</codeph>.</li>
+            <li><codeph>certfile_path</codeph>: certfile path as defined in stackrc file</li>
+            <li><codeph>region_name</codeph>: Region Name where the plugin will be deployed: Memphis
+              or Sacramento</li>
+          </ul></li>
+            <li>Execute following command to apply patch:
+              <codeblock>ansible-playbook -i hosts deploy-infoblox.yml</codeblock></li>
+          
       </ol>
     </section>
-    <section>
-      <p><b>Edit configuration files</b></p>
-      <ol id="ol_wkc_4s4_xt">
-        <li>On the HLM VM, modify the <codeph>/etc/neutron/neutron.conf</codeph> file with values
-          apprapriate for your environment:
-          <codeblock>[keystone_authtoken]
+    <section><p><b>Edit configuration files</b></p><p>Edit the following configuration files on the
+        HLM VM and on the baremetal controller.</p><p><b>To modify the configutation files on the
+          HLM VM:</b></p><ol id="ol_wkc_4s4_xt">
+        <li>Log into the HLM VM.</li>
+        <li>Modify the <codeph>/etc/neutron/neutron.conf</codeph> file with values appropriate for
+          your environment. For
+          example:<codeblock>[keystone_authtoken]
 auth_url = http://BUILD19-CCP-T2-VIP-INTF0-1551:35357
 
 [DEFAULT]
@@ -239,7 +269,7 @@ certfile = /etc/stunnel/ssl/hlm/certs/ca.crt
 
 region_name = Memphis</codeblock></li>
         <li>Modify the <codeph>/etc/neutron/infoblox_conditional.conf</codeph> file with values
-          apprapriate for your environment:
+          apprapriate for your environment. For example:
           <codeblock>[
    {
         "condition": "subnet_range:10.100.1.0/24",
@@ -278,8 +308,20 @@ region_name = Memphis</codeblock></li>
           </p><p>
             <b>Note:</b> In this example, 10.200.51.240 is the CLM IP of the IOA VM running in the
             ESX environment which was provided during IOA configuration.</p></li>
-      </ol>
-    </section>
+      </ol><b>To modify the configutation files on the baremetal controller:</b><ol
+        id="ol_unp_vh5_xt">
+        <li>Log into the baremetal controller.</li>
+        <li>Modify the <codeph>/etc/neutron/neutron.conf</codeph> file with values appropriate for
+          your environment. See the previous example.</li>
+        <li>Modify the <codeph>/etc/neutron/infoblox_conditional.conf</codeph> file with values
+          apprapriate for your environment. See the previous example. </li>
+        <li>Create the <codeph>/etc/neutron/infoblox_members.conf</codeph> file with the following
+          line to include IOA VM IP address. <p>
+            <codeblock>[{"ipv4addr": "10.200.51.240", "name": "infoblox.localdomain"}]</codeblock>
+          </p><p>
+            <b>Note:</b> In this example, 10.200.51.240 is the CLM IP of the IOA VM running in the
+            ESX environment which was provided during IOA configuration.</p></li>
+      </ol></section>
     <section>
       <p><b>Verification</b></p>
       <p>

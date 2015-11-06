@@ -112,6 +112,15 @@
       conref="conrefs/CGH-2-conref-Verify-json-19.dita#ReusableComponent_upw_x1x_vt/verify-json"/>
     
     <section conref="conrefs/CGH-2-conref-esx-proxy-20.dita#ReusableComponent_hyj_bbx_vt/esx-proxy" id="esx-proxy"/>
+    <section id="vmware-workaround">
+      <title>Deploy the vmWare Installation Workaround</title>
+      <p>When powering on the ESX Compute Proxy VM, you might receive a
+          <codeph>VMK_NO_MEMORY</codeph> error. This is a known problem with HP server and ESXi 5.x.
+        To prevent this issue, you need to upgrade the version of the HP Agentless Management
+        Service (AMS) that comes with the HP servers. </p>
+      <p>For more information, see <xref href="CGH-2-install-vmware-workaround.dita#topic10581"
+          >vmWare Installation Workaround</xref>.</p>
+    </section>
     <section
       conref="conrefs/CGH-2-conref-HLM-provision-21.dita#ReusableComponent_vds_dbx_vt/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"/>
     <section
@@ -120,7 +129,7 @@
       <title>Configure baremetal node ports into access mode</title>
       <p>Ensure that the switch ports connected to baremetal instance nodes are in access mode. This
         is a pre-requisite before provisioning baremetal instances. </p>
-      <p>The following example assumes you are using an HP 5930 switch:
+      <p>The following example assumes you are using an HP FlexFabric 5930 Switch:
         <codeblock>system-view
 interface &lt;interface-name&gt; &lt;port&gt;
 port link-type access 
