@@ -61,7 +61,10 @@
                     navtitle="HPE Helion OpenStack Carrier Grade 2.0 Beta: Configuring LDAP 3"
                     locktitle="yes"/>
                 <topicref href="CGH-2-install-icinga-patch.dita" toc="no"/>
+                <topicref href="CGH-2-install-infoblox-patch.dita" toc="yes"/>
+                <topicref href="CGH-2-install-kenobi-patch.dita"/>
                 <topicref href="carrier-grade-install-network-role-patch.dita" toc="no"/>
+                <topicref href="CGH-2-install-infoblox.dita" toc="no"/>
             </topichead>
         </topicref>
         <topicref href="carrier-grade-install-launch-horizon.dita"
@@ -69,10 +72,6 @@
         <topicref href="carrier-grade-install-kvm-cloud.dita" navtitle="Deploying the KVM Region"
             locktitle="yes">
             <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
-        </topicref>
-        <topicref href="carrier-grade-install-baremetal-cloud.dita"
-            navtitle="Deploying the Baremetal Region" locktitle="yes">
-            <topicref href="CGH-2-install-infoblox.dita" toc="no"/>
         </topicref>
         <topicref href="carrier-grade-install-post.dita" navtitle="Post-Installation Tasks"
             locktitle="yes">
@@ -82,6 +81,8 @@
                 locktitle="yes"/>
             <topicref href="carrier-grade-install-verify-vrsg.dita"
                 navtitle="Verifying the VRS-G Node" locktitle="yes"/>
+            <topicref href="../AdminGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita"
+                navtitle="Provision Baremetal Nodes for the Sacramento Deployment" locktitle="yes"/>
         </topicref>
         <topicref href="CGH-2-install-sr-iov.dita" navtitle="Configuring SR-IOV" locktitle="yes"/>
         <topicref href="CGH-2-install-pci-pass.dita" navtitle="Configuring PCI-Passthrough"

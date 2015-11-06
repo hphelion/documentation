@@ -61,9 +61,10 @@
     <section>
       <title>Configure the ironic.json file</title>
       <p>Modify the <codeph>ironic.json</codeph> file in the
-          <codeph>/var/hlm/clouds/sac22/vars</codeph> directory to  set
-          <codeph>ignore_tenant_network</codeph> to
-        <codeph>True</codeph>.<codeblock>{
+          <codeph>/var/hlm/clouds/&lt;cloudname>/vars</codeph> directory to set
+          <codeph>ignore_tenant_network</codeph> to <codeph>True</codeph>. Where
+          <codeph>&lt;cloudname></codeph> is the name of your
+        cloud.<codeblock>{
   "product": {
         "version": 1
   },
@@ -71,7 +72,7 @@
     {
        "name": "ironic-vars",
        "properties": {
-         "ignore_tenant_network" : "False"       
+         "ignore_tenant_network" : "True"       
          }
     }
   ]
@@ -80,8 +81,8 @@
     <section>
       <title>Configure the neutron-bm.json file</title>
       <p>Modify the <codeph>neutron-bm.json</codeph> file in the
-          <codeph>/var/hlm/clouds/sac22/vars</codeph> directory to  to specify networking
-        information.</p>
+          <codeph>/var/hlm/clouds/&lt;cloudname>/vars</codeph> directory to to specify networking
+        information. Where <codeph>&lt;cloudname></codeph> is the name of your cloud.</p>
       <p>
         <codeblock>{
   "product": {
@@ -107,24 +108,27 @@
 }</codeblock>
       </p>
     </section>
-    <section>
-      <title>Integrate the JSON file changes</title>
-      <p>
-        <ol id="ol_kdx_lth_xt">
-          <li>Change <codeph>kenobi-node-configuration/ansible-playbooks/roles/stackrc</codeph> to
-              <codeph>kenobi-node-configuration/ansible-playbooks/STACKRC</codeph> (lowercase to
-            uppercase)</li>
-          <li>Execute the following command to integrate these configurations into the installation
-            environment: <codeblock>hlm_prepare-env.sh</codeblock></li>
-        </ol>
-      </p>
-    </section>
+    <section
+      conref="conrefs/CGH-2-conref-Verify-json-19.dita#ReusableComponent_upw_x1x_vt/verify-json"/>
     
     <section conref="conrefs/CGH-2-conref-esx-proxy-20.dita#ReusableComponent_hyj_bbx_vt/esx-proxy" id="esx-proxy"/>
     <section
       conref="conrefs/CGH-2-conref-HLM-provision-21.dita#ReusableComponent_vds_dbx_vt/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"/>
     <section
       conref="conrefs/CGH-2-conref-backend-drivers-22.dita#ReusableComponent_fd1_hbx_vt/back-end" id="backend"/>
+    <section>
+      <title>Configure baremetal node ports into access mode</title>
+      <p>Ensure that the switch ports connected to baremetal instance nodes are in access mode. This
+        is a pre-requisite before provisioning baremetal instances. </p>
+      <p>To configure a port onto access mode execute the following on the switch:
+        <codeblock>system-view
+interface:&lt;interface-name&gt; &lt;port&gt;
+port link-type 
+access 
+save 
+force quit 
+quit </codeblock></p>
+    </section>
     <section
       conref="conrefs/CGH-2-conref-generate-init-23.dita#ReusableComponent_q43_nbx_vt/hos-cloud"/>
     <section conref="conrefs/CGH-2-conref-hlm-deploy-24.dita#ReusableComponent_urx_xbx_vt/hdeploy"/>

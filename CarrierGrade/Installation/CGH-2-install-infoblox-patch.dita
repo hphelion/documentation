@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying the Infoblox
+    Patch</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HPE Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack Carrier Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>All three of the following patches should be applied with the following commands from the HLM
+      host.</p>
+    <p>
+      <ul id="ul_pj3_dst_st">
+        <li>check_horizon.sh.patch.gz </li>
+        <li>check_rabbitmq_api.sh.patch.gz </li>
+        <li>icinga2_checks_fix1.patch.gz : </li>
+      </ul>
+    </p>
+    <p>
+      <ol id="ol_r51_yqt_st">
+        <li>Execute the following commands to copy each file to the <codeph>/tmp/</codeph> directory
+          on all three (3) of the non-KVM region controller nodes:
+            <codeblock>ansible -i /root/&lt;cloudname>/clouds/&lt;cloudname>/001/stage/ansible/hosts -su cghelion [CLOUDNAMEINCAPSHERE]-CCP-T2 -m copy -a "src=/tmp/check_horizon.sh.patch.gz dest=/tmp/check_horizon.sh.patch.gz" 
+ansible -i /root/&lt;cloudname>/clouds/&lt;cloudname>/001/stage/ansible/hosts -su cghelion [CLOUDNAMEINCAPSHERE]-CCP-T2 -m copy -a "src=/tmp/check_rabbitmq_api.sh.patch.gz dest=/tmp/check_rabbitmq_api.sh.patch.gz" 
+ansible -i /root/&lt;cloudname>/clouds/&lt;cloudname>/001/stage/ansible/hosts -su cghelion [CLOUDNAMEINCAPSHERE]-CCP-T2 -m copy -a "src=/tmp/icinga2_checks_fix1.patch.gz dest=/tmp/icinga2_checks_fix1.patch.gz" </codeblock><b>NOTE:</b>
+          Depending on the cloud template used the Ansible command may have to be altered from
+            <codeph>[CLOUDNAMEINCAPSHERE]-CCP-T2 to [CLOUDNAMEINCAPSHERE]-CCP-T1</codeph>
+        </li>
+        <li>Execute the following commands to test that patches will apply properly:
+              <codeblock>ansible -i /root/&lt;cloudname>/clouds/&lt;cloudname>/001/stage/ansible/hosts -su cghelion [CLOUDNAME_IN_CAPS]-CCP-T2 -m shell -a "(cd /var/tmp;zcat /tmp/check_horizon.sh.patch.gz | patch --dry-run)" 
+ansible -i /root/&lt;cloudname>/clouds/&lt;cloudname>/001/stage/ansible/hosts -su cghelion [CLOUDNAME_IN_CAPS]-CCP-T2 -m shell -a "(cd /var/tmp;zcat /tmp/check_rabbitmq_api.sh.patch.gz | patch --dry-run)" 
+ansible -i /root/&lt;cloudname>/clouds/&lt;cloudname>/001/stage/ansible/hosts -su cghelion [CLOUDNAME_IN_CAPS]-CCP-T2 -m shell -a "(cd /var/tmp;zcat /tmp/icinga2_checks_fix1.patch.gz | patch --dry-run)" If this worked in each case the text returned will look something like: </codeblock><p>Where<ul
+              id="ul_cd4_wvt_st">
+              <li><codeph>cloudname</codeph> is the name of your cloud</li>
+              <li><codeph>CLOUDNAME_IN_CAPS</codeph> is the name of your cloud in capital
+                letters</li>
+            </ul></p><p>If the test executed properly,  in each case the text returned appears
+            similar to the
+          following:</p><codeblock>[CLOUDNAMEINCAPSHERE]-CCP-T2-M1-NETCLM | success | rc=0 >> checking file check_horizon.sh 
+[CLOUDNAMEINCAPSHERE]-CCP-T2-M2-NETCLM | success | rc=0 >> checking file check_horizon.sh 
+[CLOUDNAMEINCAPSHERE]-CCP-T2-M3-NETCLM | success | rc=0 >> checking file check_horizon.sh</codeblock></li>
+        <li>If tests execute properly, execute the following commands:
+          <codeblock>ansible -i /root/&lt;cloudname>/clouds/&lt;cloudname>/001/stage/ansible/hosts -su cghelion [CLOUDNAME_IN_CAPS]-CCP-T2 -m shell -a "(cd /usr/lib/nagios/plugins/ ;zcat /tmp/check_horizon.sh.patch.gz | patch )"
+ansible -i /root/&lt;cloudname>/clouds/&lt;cloudname>/001/stage/ansible/hosts -su cghelion [CLOUDNAME_IN_CAPS]-CCP-T2 -m shell -a "(cd /usr/lib/nagios/plugins/ ;zcat /tmp/check_rabbitmq_api.sh.patch.gz | patch )"
+ansible -i /root/&lt;cloudname>/clouds/&lt;cloudname>/001/stage/ansible/hosts -su cghelion [CLOUDNAME_IN_CAPS]-CCP-T2 -m shell -a "(cd /usr/lib/nagios/plugins/ ;zcat /tmp/icinga2_checks_fix1.patch.gz | patch )" The text returned from these should look something like: </codeblock>In
+          each case the text returned appears similar to the
+          following:<codeblock>[CLOUDNAME_IN_CAPS]-CCP-T2-M2-NETCLM | success | rc=0 >> patching file check_horizon.sh 
+[CLOUDNAME_IN_CAPS]-CCP-T2-M1-NETCLM | success | rc=0 >> patching file check_horizon.sh 
+[CLOUDNAME_IN_CAPS]-CCP-T2-M3-NETCLM | success | rc=0 >> patching file check_horizon.sh </codeblock></li>
+      </ol>
+    </p>
+    <p><i>Return to installing the non-KVM region for the <xref
+          href="CGH-2-install-tahoe.dita#topic10581/icinga-patch">tahoe</xref>
+        <xref href="CGH-2-install-memphis.dita#topic10581/icinga-patch">memphis</xref> or <xref
+          href="CGH-2-install-sacramento.dita#topic10581/icinga-patch">sacramento</xref>
+        template.</i></p>
+  </body>
+</topic>

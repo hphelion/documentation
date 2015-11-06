@@ -23,7 +23,8 @@ But the CLI, REST API etc should all be same --></p>
       the <b>attis</b> service, which you can use to backup and restore essential system files and
       components of the non-KVM cloud. The attis service is automatically installed on each of the
       controller nodes in the non-KVM region. Attis uses a command line interface. For more
-      information, see <xref href="#topic10581" format="dita">Backup and Restore CLI</xref>.</p>
+      information, see <xref href="CGH-2--backup-restore-cli.dita#topic10581">Backup and Restore
+        CLI</xref>.</p>
     <p>Before you start your first backup, you must use the attis CLI to specify where HPE Helion
       OpenStack Carrier Grade will store backup files. </p>
     <p>You can store backup files using: </p>
@@ -31,7 +32,7 @@ But the CLI, REST API etc should all be same --></p>
       <ul id="ul_skz_ylx_pt">
         <li>SCP: A location on a remote server where the backup file is secure copied. </li>
         <li>NFS: A location on a network file system. </li>
-        <li>FILE: A location on the Management appliance. </li>
+        <li>FILE: A location on the cloud controller. </li>
       </ul>
     </p>
     <p>HPE recommends that you configure CloudSystem to use an SCP or NFS server so that backup files
@@ -45,6 +46,9 @@ But the CLI, REST API etc should all be same --></p>
       steps on any node of the Management appliance trio. For information about the attis CLI, see
       the <xref href="CGH-2--backup-restore-cli.dita#topic10581">Backup and Restore CLI</xref>. <ol
         id="ol_mnv_3mx_pt">
+        <li>Log into HLM node</li>
+        <li>SSH to any controller nodes from HLM using controller credentials (default username:
+          cghelion)</li>
         <li>From the management hypervisor console underlying the CloudSystem Management appliance,
           SSH to the any node of the Management appliance trio (for example, ma1). </li>
         <li>Log in to the Management appliance using the cloudadmin credentials you set during
@@ -78,8 +82,7 @@ But the CLI, REST API etc should all be same --></p>
 | c0a5c549-&lt;...>| 7abb6f30-&lt;...> | server               |                         |
 | e34ac1b2-&lt;...>| 7abb6f30-&lt;...> | private_key_filepath | /home/attis/.ssh/id_rsa |
 +---------------+----------------+----------------------+-------------------------+</codeblock></li>
-              <li> Set the attis configuration of the storage type you entered in step 4 by
-          entering:
+              <li>Set the attis configuration of the storage type you entered in step 4 by entering:
             <codeblock>attis storage --update '{"parameter":"new value", "parameter":"new value"}' --id &lt;storage_id from the table> </codeblock><p>where
             parameter in an SCP configuration is:</p><ul>
             <li>user: User to SSH into the remote SCP server.</li>
@@ -87,20 +90,68 @@ But the CLI, REST API etc should all be same --></p>
               files.</li>
             <li>server: IP address or DNS resolvable hostname of the remote server. </li>
             <li>private_key_filepath: Private key used to SSH to the remote SCP server. By default
-              /home/attis/.ssh/id_rsa on MA is prepopulated. <p>SCP Example: To specify the details
-                of an SCP server to use for backup file storage:
-                </p><codeblock>attis storage --update '{"storage_path":"/mybackupDirOnRemoteMachine","private_key_filepath":"/home/attis/.ssh/is_rsa","server":"hostofscplocation","user":"remotescpuser"}' </codeblock><p>NFS
+                <codeph>/home/attis/.ssh/id_rsa</codeph> on the controller is prepopulated. <p>SCP
+                Example: To specify the details of an SCP server to use for backup file storage:
+                </p><codeblock>attis storage --update '{"storage_path":"/mybackupDirOnRemoteMachine","private_key_filepath":"/home/attis/.ssh/is_rsa","server":"hostofscplocation","user":"remotescpuser"}' --id &lt;copy the storage_id from attis storage&gt; </codeblock><p>NFS
                 Example To specify the details of an NFS server to use for backup file storage: </p><p>
                 <codeblock>attis storage --update '{"server":"NFS server ip", "client_mount_path": "name of storage mount on management appliance", "storage_path":"mybackupDironRemoteMachine"}' --id &lt;copy the storage_id from attis storage></codeblock>
               </p><p>IMPORTANT: If you select SCP, you must copy the public key text located at
-                /home/attis/.ssh/id_rsa.pub on each node of the Management appliance trio (ma1, ma2,
-                and ma3) and paste it into the authorized_keys file of the SCP server. </p><p>If you
-                want to generate a new key for setting up trust between attis and the SCP server,
-                copy the private key to each Management appliance node. Then use the attis command
-                storage --update to update the private_key_filepath.</p></li>
+                  <codeph>/home/attis/.ssh/id_rsa.pub</codeph> on each of the three controller nodes
+                and paste it into the authorized_keys file of the SCP server. </p><p>If you want to
+                generate a new key for setting up trust between attis and the SCP server, copy the
+                private key to each controller node. Then use the attis command storage --update to
+                update the private_key_filepath.</p></li>
           </ul></li> 
-              <li>Stop and restart the attis-server on all three nodes of the
-              Management appliance (ma1, ma2, ma3). stop attis-server status attis-server Make sure
-              that attis-server has stopped, then enter: start attis-server</li>
-      </ol></section></body>
+              <li>Stop the Attis server on each of the three controller nodes.
+          <codeblock>stop attis-server </codeblock></li>
+        <li>Make sure that Attis server has stopped, then restart the
+          server<codeblock>status attis-server </codeblock></li>
+      </ol></section>
+    <section><title>Additional information</title><p><b>Tree Structure</b></p><p>Attis implements
+          <b>tree-structure</b> for certain backup/restore configurations. </p><p>For example, if
+        you wants to back up <codeph>/opt</codeph> and <codeph>/root</codeph> folders on the HLM
+        host, run <codeph>attis backup --config-id</codeph> using the
+        ID_of_HLM_Appliance_Data_Backup only. </p><p>The root config
+          <b>HLM_Appliance_Data_Backup</b> includes children config
+          <b>HLM_Appliance_opt_files_Backup</b> and <b>HLM_Appliance_root_files_Backup</b>.
+        </p><p>To verify:
+        <codeblock>run attis config --id ID_of_HLM_Appliance_Data_Backup</codeblock></p><image
+        href="../../../media/CGH-2-attis-tree.png" id="image_mzv_4cp_xt" width="600"/><p><b>Storage
+          Configuration</b></p><p>The default storage option is set to SCP. You can start running
+        Attis jobs once you’ve configured SCP storage parameters using the command
+        below:<codeblock>attis storage --update '{"parameter":"new value", "parameter":"new value"}' --id &lt;storage_id of SCP option&gt;</codeblock></p>If
+      you decide to choose File or NFS option, you have to first
+        run:<codeblock>attis storage --use FILE (to choose FILE option)
+attis storage --use NFS (to choose NFS option)</codeblock><p>
+        Then configure the storage parameter using the same
+        way:<codeblock>attis storage --update '{"parameter":"new value", "parameter":"new value"}' --id &lt;storage_id of FILE or NFS option&gt;</codeblock></p>
+      <b>Important:</b> Restart the Attis server on all three controllers if the storage option is
+      changed to NFS or FILE option:<pre>service attis-server restart</pre><p><b>VSD, VSC, and WR
+          Controller Backup/Restore</b></p><b>Backing up and Restoring the VSD</b><p>Before running
+        VSD backup, you must set up trust between the controllers and VSD. Execute the folloiwing
+        below command on all three controllers to copy the Attis public key to the VSD
+          <codeph>authorized_keys</codeph>
+        file:<codeblock>sudo su attis
+ssh-copy-id vsd_user@vsd_address</codeblock></p><p><b>Note:</b>
+        The <i>vsd_user</i> can be found by viewing the configuration file:
+        <codeblock>attis config --id Config_ID_of_VSD _Appliance_DB_Backup </codeblock>The
+          <i>vsd_address</i> can be found in the <codeph>/etc/attis/dcn_lst</codeph> file:
+        <codeblock>cat /etc/attis/dcn_lst</codeblock></p><b>Backing up and Restoring the
+        VSC</b><p>If VSC username/password is set other than defaults, modify <i>vsc_user_name</i>
+        or/and <i>vsc_user_pass</i> in the <codeph>/etc/attis/dcn_lst</codeph> file before running
+        VSC backup or restore.</p>KVM Region Controller<p>If the KVM region controller
+        username/password is set other than defaults, use the Attis CLI to update those values in
+        the KVM region controller
+        config.<codeblock>attis config --id &lt;config_id of WR_Appliance_system_files_Backup&gt; --update-parameter '{"wr_controller_backup_user":"YOUR_USER"}'
+attis config --id &lt;config_id of WR_Appliance_system_files_Restore&gt; --update-parameter '{"wr_controller_backup_password":"YOUR_PASSWORD"}'</codeblock></p><p><b>Cloud
+          Controller Database Restore</b></p><p> This job restores MySQL database of the Cloud
+        Controller. Remember to update parameters of the config template you’re using (default
+        location: /etc/attis/config_template) before you trigger restore. </p><ul id="ul_o44_rbp_xt">
+        <li>If SCP option is
+          selected:<codeblock>attis restore --config-path /etc/attis/config_template/cloudcontrollerappliancedbrestore_scp.json</codeblock></li>
+      </ul><ul id="ul_mmg_qbp_xt">
+        <li>If NFS option is
+          selected:<codeblock>attis restore --config-path /etc/attis/config_template/cloudcontrollerappliancedbrestore_NFS.json</codeblock></li>
+      </ul><p>After restore job is complete, ssh to the compute proxy nodes from HLM, and restart
+        nova-compute service.<codeblock>service nova-compute restart</codeblock></p></section></body>
 </topic>

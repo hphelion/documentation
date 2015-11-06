@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying the Kenobi
+    Patches</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HPE Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack Carrier Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <section>Use the following steps to deploy required patches.<p>
+        <ol id="ol_vl1_tqf_xt">
+          <li>In the HLM VM, copy the <codeph>kenobi-config-patch.patch</codeph> you downloaded in
+            the Prerequisites to the <codeph>/root/kenobi-configuration-processor</codeph>
+            directory.</li>
+          <li>Copy the <codeph>kenobi-node-config.patch</codeph> you downloaded in the Prerequisites
+            to the <codeph>/root/kenobi-node-configuration</codeph> directory.</li>
+          <li>Navigate to the <codeph>/root/kenobi-configuration-processor</codeph> directory.</li>
+          <li>Execute the following command to deploy the patch:
+            <codeblock>patch -p1 &lt; kenobi-config-patch.patch</codeblock></li>
+          <li>Navigate to the <codeph>/root/kenobi-node-configuration</codeph> directory.</li>
+          <li>Execute the following command to deploy the patch:
+            <codeblock>kenobi-node-config.patch</codeblock></li>
+          <li>Execute the following command to integrate the patch into the installation
+            environment:<codeblock>cd ~/cg-hlm/hlm-build
+./hlm_prepare-env.sh</codeblock></li>
+          <li>Enter <codeph>Exit</codeph> to close the HLM VM console.</li>
+        </ol>
+      </p></section>
+    <p><i>Return to installing the non-KVM region for the <xref
+          href="CGH-2-install-tahoe.dita#topic10581/icinga-patch">tahoe</xref>
+        <xref href="CGH-2-install-memphis.dita#topic10581/icinga-patch">memphis</xref> or <xref
+          href="CGH-2-install-sacramento.dita#topic10581/icinga-patch">sacramento</xref>
+        template.</i></p>
+  </body>
+</topic>
