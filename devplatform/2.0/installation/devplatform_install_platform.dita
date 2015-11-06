@@ -19,7 +19,8 @@
         <li>Navigate to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
             format="html" scope="external">HPE Helion Download Network</xref> (HDN) and log in. If
           necessary, create an account first.</li>
-        <li>Download the latest Development Platform Installer package.</li>   <li>Ensure all OS_ variables are unset. To check this, run <codeblock>env | grep OS_ </codeblock>
+        <li><xref href="install_offline.dita#topic_w25_hqp_xt">Download the latest
+          </xref>Development Platform Installer package.</li>   <li>Ensure all OS_ variables are unset. To check this, run <codeblock>env | grep OS_ </codeblock>
           and then <codeph>unset</codeph> any variables which appear in the list of results. </li>
         <li>SSH to the HPE Helion OpenStack Deployer. </li>
         <li>Create and source the Virtual Environment. In this example,
@@ -34,7 +35,7 @@ source /opt/stack/venv/&lt;dpi-venv&gt;/bin/activate</codeblock></li>
         <li>Test the installation by retrieving a list of installable files.
             <codeblock>openstack hdpi --os-cloud mycloud list</codeblock><note>If further
             troubleshooting information is required, add the <codeph>--debug</codeph> option to the
-            end of the command.</note></li>
+            end of the previous command.</note></li>
       </ol>
     </section>
   </body>
