@@ -15,7 +15,7 @@
       navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>
     <topicref href="1.3/devplatform.eula.dita" navtitle="Software License Terms" locktitle="yes"/>
     <!--permalink: /helion/devplatform/ALS-developer-trial-quick-start/-->
-    <topicref href="../placeholder1.dita" navtitle="Developer Quick Start Trial Guide">
+    <topicref href="1.3/placeholder1.dita" navtitle="Developer Quick Start Trial Guide">
       <topicref href="1.3/devplatform.ALS-developer-trial-quick-start.dita"
         navtitle="Quick Start Step 1: Register" locktitle="yes"/>
       <topicref href="1.3/devplatform.ALS-developer-trial-quick-start2.dita"
@@ -35,10 +35,10 @@
         locktitle="yes" navtitle="Quick Start Troubleshooting"/>
     </topicref>
     <!--installation-->
-    <topicref href="../placeholder2.dita" navtitle="Installation">
+    <topicref href="1.3/placeholder2.dita" navtitle="Installation">
       <topicref href="1.3/installation/devplatform_commercial_install.dita"
         navtitle="Full Platform Installation - All Services" locktitle="yes"></topicref>
-      <topicref href="../placeholder3.dita" navtitle="Individual Service Installation">
+      <topicref href="1.3/placeholder3.dita" navtitle="Individual Service Installation">
         <topicref href="1.3/installation/devplatform_install_prereq.dita"
           navtitle="Installation Prerequisites" locktitle="yes"/>
         <topicref href="1.3/installation/devplatform.horizonui.install.dita"
@@ -82,7 +82,7 @@
         navtitle="Related Documentation "/>
     </topicref>
     <!--uninstallation -->
-    <topicref href="../placeholder4.dita" navtitle="Uninstallation">  <topicref href="1.3/uninstallation/devplatform_uninstall.dita"
+    <topicref href="1.3/placeholder4.dita" navtitle="Uninstallation">  <topicref href="1.3/uninstallation/devplatform_uninstall.dita"
         navtitle="Full Uninstallation - All Services" locktitle="yes" ></topicref>
       <!--removing chunking testing conrefs do not delete
         chunk="to-content">
@@ -137,8 +137,8 @@
           navtitle="Organizations and Spaces"/>
         <!--permalink: /helion/devplatform/als/user/deploy/other-frameworks/-->
       </topicref>
-      <topicref href="../placeholder5.dita" navtitle="Language Specific Application Deployment">
-        <topicref href="../placeholder6.dita" navtitle="Docker">
+      <topicref href="1.3/placeholder5.dita" navtitle="Language Specific Application Deployment">
+        <topicref href="1.3/placeholder6.dita" navtitle="Docker">
           <topicref href="1.3/helion/user/deploy/languages/docker_apps.dita"
             navtitle="Deploying Docker Apps" locktitle="yes"/>
           <topicref href="1.3/helion/user/deploy/container_enable_deploy.dita" toc="no"
@@ -194,7 +194,7 @@
       <topicref href="1.3/devplatform.eclipse.dita" locktitle="yes"
         navtitle="Eclipse Deployment Plugin"/>
       <!--permalink: /helion/devplatform/workbook/database/java/-->
-      <topicref href="../placeholder7.dita" navtitle="JAVA Code Samples">
+      <topicref href="1.3/placeholder7.dita" navtitle="JAVA Code Samples">
         <topicref href="1.3/workbook/helloworld/helloworld.java.dita" locktitle="yes"
           navtitle="Java Hello World Sample"/>
         <topicref href="1.3/workbook/database/database.java.dita" locktitle="yes"
@@ -202,7 +202,7 @@
         <topicref href="1.3/workbook/messaging/messaging.java.dita" locktitle="yes"
           navtitle="Java RabbitMQ Messaging Sample"/>
       </topicref>
-      <topicref href="../placeholder8.dita" navtitle="Node Code Samples">
+      <topicref href="1.3/placeholder8.dita" navtitle="Node Code Samples">
         <topicref href="1.3/workbook/helloworld/helloworld.node.dita" locktitle="yes"
           navtitle="Node Hello World Sample"/>
         <topicref href="1.3/workbook/database/database.node.dita" locktitle="yes"
@@ -210,7 +210,7 @@
         <topicref href="1.3/workbook/messaging/messaging.node.dita" locktitle="yes"
           navtitle="Node RabbitMQ Messaging Sample"/>
       </topicref>
-      <topicref href="../placeholder9.dita" navtitle="PHPE Code Samples">
+      <topicref href="1.3/placeholder9.dita" navtitle="PHPE Code Samples">
         <topicref href="1.3/workbook/helloworld/helloworld.php.dita" locktitle="yes"
           navtitle="PHPE Hello World Sample "/>
         <topicref href="1.3/workbook/database/database.php.dita" locktitle="yes"
@@ -229,10 +229,10 @@
     </topicref>
     <!--permalink: /helion/devplatform/install/-->
     <!--permalink: /helion/devplatform/sysadmin/-->
-    <topicref href="../placeholder10.dita" navtitle="Windows Reference">
+    <topicref href="1.3/placeholder10.dita" navtitle="Windows Reference">
       <topicref href="1.3/windows/windows_overview.dita" locktitle="yes"
         navtitle="Windows Overview"/>
-      <topicref href="../placeholder11.dita" navtitle="Administrator Reference">
+      <topicref href="1.3/placeholder11.dita" navtitle="Administrator Reference">
         <topicref href="1.3/windows/windows_building_and_deploying.dita" locktitle="yes"
           navtitle="Building and Deploying Windows DEA and SQL Server Express Images"/>
         <topicref href="1.3/windows/windows_password.dita"
@@ -242,7 +242,7 @@
         <topicref href="1.3/windows/windows_glazier_reference_guide.dita" locktitle="yes"
           navtitle="Glazier Reference Guide"/>
       </topicref>
-      <topicref href="../placeholder12.dita" navtitle="Developer Reference">
+      <topicref href="1.3/placeholder12.dita" navtitle="Developer Reference">
         <topicref href="1.3/windows/windows_firstapp.dita" locktitle="yes"
           navtitle="Deploying your first .NET Application"/>
         <topicref href="1.3/windows/windows_adding_services.dita" locktitle="yes"
@@ -266,7 +266,7 @@
       <!--permalink: /helion/devplatform/connectdatabase/-->
       <topicref href="1.3/devplatform_upgrade.dita" navtitle="Upgrading Helion OpenStack"
         locktitle="yes"/>
-      <topicref href="../placeholder13.dita" navtitle="Cluster Creation and Management">
+      <topicref href="1.3/placeholder13.dita" navtitle="Cluster Creation and Management">
         <topicref href="1.3/devplatform.deploy-ALS.dita" locktitle="yes"
           navtitle="Create a Cluster Using Horizon"/>
         <topicref href="1.3/windows/windows_growcluster.dita"
@@ -281,7 +281,7 @@
             navtitle="Example: Add a Service" locktitle="yes"/>
           <topicref href="1.3/helion/CLI/devplatform_downloadRCFile.dita" toc="no"/>
         </topicref>
-        <topicref href="../placeholder14.dita" navtitle="ALS Management Console">
+        <topicref href="1.3/placeholder14.dita" navtitle="ALS Management Console">
           <topicref href="1.3/helion/admin/console/console_intro.dita"
             navtitle="Introduction and First Use" locktitle="yes"/>
           <topicref href="1.3/helion/admin/console/console_index.dita" locktitle="yes"
@@ -321,12 +321,12 @@
         <!--permalink: /helion/devplatform/als/admin/-->
         <topicref href="1.3/helion/CLI/constructor_vm.dita" navtitle="ALS Constructor VM"
           locktitle="yes"/>
-        <topicref href="../placeholder15.dita" navtitle="ALS Command Line Clients">
+        <topicref href="1.3/placeholder15.dita" navtitle="ALS Command Line Clients">
           <topicref href="1.3/helion/CLI/ALS_Client_Downloads.dita"
             navtitle="Command Line Client Downloads" locktitle="yes"/>
           <topicref href="1.3/helion/admin/reference/kato-ref.dita" locktitle="yes"
             navtitle="Kato Command Reference"/>
-          <topicref href="../placeholder16.dita" navtitle="ALS Helion Client">
+          <topicref href="1.3/placeholder16.dita" navtitle="ALS Helion Client">
             <topicref href="1.3/helion/user/client/client_index.dita" locktitle="yes"
               navtitle="ALS Client Installation"
               ><!--permalink: /helion/devplatform/als/client/download/--><!--permalink: /helion/devplatform/als/client/reference/--></topicref>
@@ -382,7 +382,7 @@
                 locktitle="yes" navtitle="User Management "/>
             </topicref>
           </topicref>
-          <topicref href="../placeholder17.dita" navtitle="Cluster Management Tool">
+          <topicref href="1.3/placeholder17.dita" navtitle="Cluster Management Tool">
             <topicref href="1.3/helion/CLI/ALS_Client_Reference.dita" locktitle="yes"
               navtitle="Cluster Management Tool Installation and Reference"/>
             <topicref href="1.3/helion/CLI/cf_mgmt_createcluster.dita"
@@ -395,7 +395,7 @@
                 navtitle="Example: Add a Service" locktitle="yes"/>
             </topicref>
           </topicref>
-          <topicref href="../placeholder18.dita" navtitle="ALS Management Console">
+          <topicref href="1.3/placeholder18.dita" navtitle="ALS Management Console">
             <topicref href="1.3/helion/admin/console/console_intro.dita"
               navtitle="Introduction and First Use" locktitle="yes"/>
             <topicref href="1.3/helion/admin/console/console_index.dita" locktitle="yes"
@@ -466,7 +466,7 @@
           <!--permalink: /helion/devplatform/als/admin/server/operations/-->
           <!--permalink: /helion/devplatform/als/admin/server/router/-->
           <!--permalink: /helion/devplatform/als/admin/server/upgrade/-->
-          <topicref href="../placeholder19.dita" navtitle="Reference">
+          <topicref href="1.3/placeholder19.dita" navtitle="Reference">
             <topicref href="1.3/helion/admin/reference/groups.dita" locktitle="yes"
               navtitle="Managing Groups, Users and Limits (DEPRECATED)"/>
             <topicref href="1.3/helion/admin/reference/architecture.dita" locktitle="yes"
@@ -502,7 +502,7 @@
         <topicref href="1.3/helion/admin/server/docker.dita" navtitle="Docker and Fence"
           locktitle="yes"/>
         <topicref href="1.3/helion/admin/server/network_port_configuration.dita"/>
-        <topicref href="../placeholder20.dita" navtitle="ALS Services">
+        <topicref href="1.3/placeholder20.dita" navtitle="ALS Services">
           <topicref href="1.3/helion/user/services/memcached.dita" locktitle="yes"
             navtitle="Memcached Service"/>
           <topicref href="1.3/helion/user/services/filesystem.dita" locktitle="yes"
