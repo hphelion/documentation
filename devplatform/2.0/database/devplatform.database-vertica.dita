@@ -3,7 +3,17 @@
 <topic id="topic_q1p_nnp_tt">
   <title>Managing a Vertica Preview Cluster from the Management Console </title>
   <body>
-    <p></p>
+    <p>The Vertica Management Console offers the following features for database administrators and users:</p>
+    <ul><li>Database administrators can use the Management Console to monitor cluster activity and performance,
+      the Activity and Manage sections to view cluster and node specific performance, and configure the cluster through the Settings section.</li>
+      <li>Database users can use the Management Console's database designer to design optimized projections for schemas, and the EXPLAIN features to analyze the details of queries and projections.</li>
+    </ul>
+    <p>For more information on using these features, see the following topics:</p>
+    <ul>
+      <li><xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/AdministratorsGuide/ManagementConsole/MonitoringHPVerticaUsingMC.htm">Monitoring HP Vertica Using Management Consople</xref></li>
+      <li><xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/GettingStartedGuide/UsingDatabaseDeisgner/RunDBDwithMC.htm">Running Database Designer with Management Console</xref></li>
+      <li><xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/AdministratorsGuide/EXPLAIN/ViewingEXPLAINOutputinManagementConsole.htm">Viewing EXPLAIN Output in Management Console</xref></li>
+    </ul>
     <section id="logs"><title>Viewing Logs</title>
       <p>Vertica event log information can be accessed via the 
         <xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/SQLReferenceManual/SystemTables/MONITOR/ACTIVE_EVENTS.htm">ACTIVE_EVENTS</xref> 
