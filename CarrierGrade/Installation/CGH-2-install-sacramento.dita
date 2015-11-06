@@ -144,6 +144,7 @@ quit </codeblock></p>
     
     <section id="next-step">
       <title>Next Step</title>
+      <p><xref href="CGH-2-install-infoblox.dita#topic15959">Installing Infoblox</xref></p>
       <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon
           Interface</xref></p>
       <!--<p><xref href="carrier-grade-install-kvm-cloud.dita">Deploying the KVM Region</xref></p>-->

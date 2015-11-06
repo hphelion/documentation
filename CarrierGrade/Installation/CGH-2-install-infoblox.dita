@@ -17,7 +17,13 @@
   </prolog>
   <body>
     <p><!--https://wiki.hpcloud.net/display/HCG/Infoblox-+HCG+2.0+integration--></p>
-    <p>Infoblox is a required component of the Sacramento deployment.</p>
+    <p>Infoblox is an optional component of the Sacramento deployment.  The Infoblox OpenStack
+      Adapter (IOA) integrates with the OpenStack Neutron networking service, to provide IP Address
+      Management (IPAM) networking services within OpenStack cloud platforms.Refer to the Infoblox
+      documentation for operation and maintenance information. </p>
+    <p>If you are not installing Infoblox, go to <xref
+        href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon
+        Interface</xref>.</p>
     <section>
       <p><b>Deploy and Configure Infoblox Openstack Adapter (IOA) VM in ESX</b></p>
       <p>Infoblox vNIOS™ (Network Infrastructure Operating System) for VMware® allows deployment of
@@ -284,6 +290,11 @@ region_name = Memphis</codeblock></li>
           <li>Go to <b>Administration > Network views</b>. The subnet pool should be listed.</li>
         </ol>
       </p>
+    </section>
+    <section id="next-step">
+      <title>Next Step</title>
+      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon
+        Interface</xref></p>
     </section>
   </body>
 </topic>
