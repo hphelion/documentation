@@ -10,154 +10,17 @@
             href="devplatform_install_platform.dita#topic_gly_xmh_ts">be installed</xref>.</li>
         <li>A properly configured <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt"
             >clouds.yaml</xref> file.</li>
-        <li>Configure Availability Zones, if your installation requires them.
-          <!--(pull that section and link to this li)--></li>
-        <li>Check your quotas so you don't run over.<!-- (pull section and link to li)--></li>
+        <li>Configure <xref href="install_dbaas_configureAvailabilityZones.dita#topic_hhh_lm4_xt"
+            >Availability Zones</xref>, if your installation requires them.</li>
+        <li><xref href="install_dbaas_checkQuotas.dita#topic_sjz_wm4_xt">Check your quotas</xref> to
+          ensure you have sufficient space, particularly if your installation is configured for high
+          availability.</li>
       </ul>
     </section>
 
-<section id="availability-zones"> <title>Configure Availability Zones</title>
-<p>To configure the Database Service in a highly available manner, it is necessary to create
-        separate availability zones. Best practice is to create three availability zones. <note>All
-          hosts should be associated with one of these availability zones, or the Database Service
-          will not be able to provision a database instance on that host. This may cause the
-          Database Service may run out of capacity even though there are unassociated hosts that
-          still have room.</note></p>
-<p>The following steps show how to create three availability zones and assign a compute host to the zone.</p>
-<ol>
-  <li>Download an RC file for the admin user and project.
-            <!--this is going to be replaced with a commandline command; ALS may have provided--><ol
-            id="ol_bpk_1c1_4t">
-            <li> Log in to Horizon using the admin account.</li>
-            <li>Download the OpenStack RC file. <p>
-                <image placement="break" href="../../../media/quickstartDownloadRCFile.png"
-                  id="image_asb_jvy_nt"/>
-              </p></li>
-            <li>Use <codeph>scp</codeph> to copy the RC file over to the Deployer.</li>
-            <li>SSH to the Deployer and source the RC file. You will need to provide the same admin
-              password that you used to log in to Horizon. <p>
-                <codeblock> source admin-openrc.sh</codeblock>
-              </p></li>
-          </ol></li>
-<li>Execute the following commands to create three availability zones named: "AZ-1", "AZ-2" and
-          "AZ-3".<codeblock>openstack aggregate create --zone AZ-1 aggregate-AZ-1
-openstack aggregate create --zone AZ-2 aggregate-AZ-2
-openstack aggregate create --zone AZ-3 aggregate-AZ-3</codeblock></li>
-<li> Validate that the availability zones were correctly created by issuing the following
-          command.<codeblock>openstack aggregate list</codeblock></li>
-<li> The following commands will add a host to your newly created aggregate. Execute this command
-          once for every host that you wish to associate with an
-          aggregate.<codeblock>openstack aggregate add host &lt;aggregate name or id&gt; &lt;host&gt;</codeblock></li>
-<li> The following command can be used to list all availability zones and the hosts associated with
-          each one.<codeblock>openstack availability zone list</codeblock></li>
-</ol>
-</section>
-<section id="quotas"> <title>Set Quotas<!-- (pull into separate section)--></title>
-<p>The project tenant must have sufficient quota available and unused resources for the service to
-        use. To check existing quota availability, log in to Horizon as the <b>admin</b> user and
-        open the <b>Overview</b> panel under the <b>Compute</b> tab. </p>
-<p>If you are not configuring the Database Service to be highly available you must have the following quota available:</p>
-<table>
-<tgroup cols="2">
-          <colspec colname="col1" colwidth="132pt"/>
-          <colspec colname="col2" colwidth="77.25pt"/>
-          <thead>
-            <row>
-              <entry>Resource</entry>
-              <entry align="right">Usage</entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry>Floating IPs</entry>
-              <entry align="right">6</entry>
-            </row>
-            <row>
-              <entry>Instances</entry>
-              <entry align="right">6</entry>
-            </row>
-            <row>
-              <entry>Networks</entry>
-              <entry align="right">2</entry>
-            </row>
-            <row>
-              <entry>RAM (GB)</entry>
-              <entry align="right">24</entry>
-            </row>
-            <row>
-              <entry>Routers</entry>
-              <entry align="right">2</entry>
-            </row>
-            <row>
-              <entry>Security Groups</entry>
-              <entry align="right">6</entry>
-            </row>
-            <row>
-              <entry>Volumes</entry>
-              <entry align="right">4</entry>
-            </row>
-            <row>
-              <entry>Volume Storage (GB)</entry>
-              <entry align="right">160</entry>
-            </row>
-          </tbody>
-        </tgroup>
-</table>
-<p>If you have set up Availability Zones and plan to install the Database Service in a highly-available configuration you must have the following quota available:</p>
-<table>
-<tgroup cols="2">
-          <colspec colname="col1" colwidth="120pt"/>
-          <colspec colname="col2" colwidth="87.75pt"/>
-          <thead>
-            <row>
-              <entry>Resource</entry>
-              <entry align="right">Usage</entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry>Floating IPs</entry>
-              <entry align="right">16</entry>
-            </row>
-            <row>
-              <entry>Instances</entry>
-              <entry align="right">16</entry>
-            </row>
-            <row>
-              <entry>Networks</entry>
-              <entry align="right">2</entry>
-            </row>
-            <row>
-              <entry>RAM (GB)</entry>
-              <entry align="right">64</entry>
-            </row>
-            <row>
-              <entry>Routers</entry>
-              <entry align="right">2</entry>
-            </row>
-            <row>
-              <entry>Security Groups</entry>
-              <entry align="right">6</entry>
-            </row>
-            <row>
-              <entry>Volumes</entry>
-              <entry align="right">4</entry>
-            </row>
-            <row>
-              <entry>Volume Storage (GB)</entry>
-              <entry align="right">600 </entry>
-            </row>
-          </tbody>
-        </tgroup>
-</table>
-<p>In addition to the quotas mentioned above, for every database instance that is created by a user,
-        the necessary resources to create that instance will be deducted from the admin project
-        quota. The user's database service quota will also be affected.</p>
-</section>
 <section id="dbaas_installation">
       <title>Install the Database Service </title>
       <ol id="ol_xct_5dz_nt">
-        <!--<li> Source a stack RC file for the admin user and project. <ol><li> Log in to Horizon using the admin account.</li><li> Download the OpenStack RC file. <p><image placement="break" href="../../../media/quickstartDownloadRCFile.png" id="image_asb_jvy_nt"/></p></li><li>Use <codeph>scp</codeph> to copy the RC file over to the Deployer.</li><li>SSH to the Deployer and source the RC file. You will need to provide the same admin password that you used to log in to Horizon. <p><codeblock> source admin-openrc.sh</codeblock></p></li></ol></li>-->
         
         <li>Source the Virtual
           Environment.<codeblock>stack@hlm:~$ source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate </codeblock></li>
