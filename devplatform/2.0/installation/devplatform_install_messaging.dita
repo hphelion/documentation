@@ -135,7 +135,7 @@ stack@messaging-deployer:~/helion$ git commit -a -m "Configured Deployment Model
                 update the value of the <b>external_net_name</b> variable in
                   <codeph>~/helion/hos/ansible/roles/openstack-operations/defaults/main.yml</codeph>
                 to the correct
-                value.</note><codeblock>stack@messaging-deployer:~/helion$ source ~/user.osrc
+                value.</note><codeblock>stack@messaging-deployer:~/helion$ source ~/user.src
 stack@messaging-deployer:~/helion$ cd hos/ansible/
 stack@messaging-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost hlm-pre-install.yml </codeblock><p>The
                 output should look similar to the
@@ -258,19 +258,17 @@ msgaas-msgaas-ccp-c1-m2-mgmt : ok=381  changed=194  unreachable=0    failed=0
 msgaas-msgaas-ccp-c1-m3-mgmt : ok=382  changed=196  unreachable=0    failed=0   
 localhost                  : ok=34   changed=15   unreachable=0    failed=0   </codeblock></li>
           </ol></li></ol></section>
-    <section><title>Verifying the Installation</title><p>If you have not configured TLS, you can run a basic
-          verification command to test the installation. </p>
-      <ol>
+    <section><title>Verifying the Installation</title><p>If you have not configured TLS, you can run
+        a basic verification command to test the installation. </p><ol>
         <li>Determine the internal endpoint for the Messaging
           API.<codeblock>export OS_ENDPOINT_TYPE=internalURL
 export OS_INTERFACE=internal</codeblock></li>
-           <li>List all clusters. <note>Since you have not yet created any clusters, this list of
+        <li>List all clusters. <note>Since you have not yet created any clusters, this list of
             clusters will be empty, but it should execute without returning any error messages.
-            </note><codeblock>stack@messaging-deployer:~/scratch/ansible/next/hos/ansible$ /opt/stack/service/cueclient/venv/bin/openstack message-broker cluster list</codeblock></li>
-        <li>If you have configured TLS, make sure that the Cue public endpoint begins with https and
-          not just http:<codeblock>openstack catalog list</codeblock></li>
-          </ol>
-      </section>
+          </note><codeblock>stack@messaging-deployer:~/scratch/ansible/next/hos/ansible$ /opt/stack/service/cueclient/venv/bin/openstack message-broker cluster list</codeblock></li>
+      </ol>If you have configured TLS, make sure that the Cue public endpoint begins with https and
+      not just http:<codeblock>openstack catalog list</codeblock>
+    </section>
     
   </body>
   <related-links><link scope="external" format="html" href="http://python-cueclient.readthedocs.org/en/latest/index.html"><linktext>python-cueclient documentation</linktext></link></related-links>

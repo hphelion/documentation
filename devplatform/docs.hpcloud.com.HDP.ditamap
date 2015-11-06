@@ -30,6 +30,8 @@
         navtitle="Install the HPE Helion Code Engine (review only)" locktitle="yes"/>
       <topicref href="2.0/installation/devplatform_install_messaging.dita"
         navtitle="Install the Messaging Service (review only)" locktitle="yes"/>
+      <topicref href="2.0/installation/install_offline.dita"
+        navtitle="Prepare for Offline or Pre-downloaded Installation" locktitle="yes"/>
     </topichead>
     <!--uninstallation -->
     <!--  <topichead navtitle="Uninstallation"-->

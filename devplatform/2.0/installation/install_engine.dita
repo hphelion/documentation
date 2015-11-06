@@ -128,12 +128,21 @@ http_proxy: "http://&lt;https proxy hostname>:&lt;https proxy port>/"</codeblock
             <li>Save the file and exit.</li>
             <li>Open the <codeph>cloudConfig.yml
               </codeph>file.<codeblock>stack@helionce-deployer:~/helion$ vim ~/helion/my_cloud/definition/cloudConfig.yml</codeblock></li>
-            <li>Update the values for the <b>nameservers</b> and <b>NTP</b> servers, save the file
-              and
-              exit.<!-- <- will receive updated commands from Mark Mark today--><codeblock>ntp-servers: 
-  - <i>&lt;IP of your ntp-server></i>
-nameservers: 
-  - <i>&lt;IP of your Nameserver></i></codeblock></li>
+            <li>Update the values for the <b>nameservers</b> and <b>ntp-servers</b>, save the file
+              and exit. The following codeblock is provided as a sample file
+              section.<codeblock>  product:
+    version: 2
+  cloud:
+    name: helionce
+    hostname-data:
+        host-prefix: hci
+        member-prefix: -m
+    data-dir: data
+    <b>ntp-servers:
+      - 15.126.25.4</b>
+    dns-settings:<b>
+      nameservers:
+        - 206.164.176.23</b></codeblock></li>
           </ol></li>
         <li>Using Git, commit the changes. This information is required for playbooks executed later
           in this installation
