@@ -13,8 +13,12 @@ This is the documentation for Helion Cloud Foundry. It is written in [DITA XML](
 >>>>>>> 0461b78... Update README.md
 
 ## Navigating the Document
+<<<<<<< HEAD
 * `docs.hpcloud.com.ditamap` The ditamap that links to the <docs.hpcloud.com> TOC
 >>>>>>> 766326e... Create README.md
+=======
+* `docs.hpcloud.com.ditamap` The ditamap that links to the main <docs.hpcloud.com> TOC
+>>>>>>> ba4260d... Testing disappeared build
 * `cf-release/`
   * `docs.hpcloud.com.CFR.ditamap` The ditamap of the document itself
   * `docs.hpcloud.com.CFR_variables.ditamap` The ditamap that contains the variables for everything
