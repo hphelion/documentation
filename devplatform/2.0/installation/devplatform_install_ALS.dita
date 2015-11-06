@@ -13,43 +13,20 @@
           file for the Application Lifecycle Service.</li>
       </ul>
     </section>
-   <section>
-<ol>
-      <li>Source the Virtual
-          Environment.<pre>source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate </pre></li>
-      <li>List the available ALS versions to
-          install.<codeblock>openstack hdpi list --os-cloud mycloud | grep als</codeblock>The output
-          should include:<codeblock>| als | wscatalog.#### | 2.0.0 | available |</codeblock></li>
-      <li> Use the ALS version number to view the details of the specific package. The output
-          provides significant administration information such as download size, version, and so
-          forth.<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock> The
-          output will appear similar to:
-          <codeblock>+---------------+--------------------------------------------------------------------+
-| Field         | Value                                                              |
-+---------------+--------------------------------------------------------------------+
-| actions       | install,progress,download                                          |
-| description   | Application Lifecycle Service for HPE Helion Development Platform. |
-| download_size | 4939731158                                                         |
-| email         |                                                                    |
-| id            | wscatalog.2800                                                     |
-| name          | Application Lifecycle Service 2.0 RC3                              |
-| package_id    | x11.6f198d79-a61b-4518-9cc4-3e7629e0fb8b                           |
-| provider_name | Hewlett Packard Enterprise                                         |
-| service       | als                                                                |
-| sku           | A5FDCA94-026F-A579-0A38-BE4AE3117B7E                               |
-| state         | downloaded                                                         |
-| type          | PaaS Workloads                                                     |
-| version       | 2.0.0.548                                                          |
-| webpage       | http://www.hp.com/helion/devplatform                               |
-+---------------+--------------------------------------------------------------------+</codeblock></li>
-    </ol></section>
-    <section><title>Install the ALS service</title><title>If you downloaded previously: openstack
-        --os-cloud mycloud hdpi als install &lt;downloaded filename></title><title>If you have not
-        yet downloaded:</title>Run the following command: <note>Downloading may take a significant
-        amount of time; depending on network traffic, it could take 20-90
-      minutes.</note><codeblock>openstack --os-cloud mycloud hdpi als install wscatalog.####</codeblock>Either
-      way, once you start the installer bla bla The output will appear similar to:
-      <codeblock>Downloading Application Lifecycle Service which is available 
+      <section><title>Install ALS</title><ol>
+                <li> Source the Virtual
+                    Environment.<pre>source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate </pre></li>
+                <li>If you <xref href="install_offline.dita#topic_w25_hqp_xt">pre-downloaded</xref>
+                    the installation file, run the following command to install
+                    it:<codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
+openstack --os-cloud mycloud hdpi als install <i>&lt;filename></i></codeblock></li>
+                <li>If you did not pre-download the installation file, run the following command to
+                    download and install
+                    it:<codeblock>openstack --os-cloud mycloud hdpi als install wscatalog.2800</codeblock></li>
+            </ol><note>Downloading may take a significant amount of time; depending on network
+                traffic, it could take 20-90 minutes.</note>During installation, the output will
+            appear similar to:
+            <codeblock>Downloading Application Lifecycle Service which is available 
 Application Lifecycle Service not downloaded (available) 
 Application Lifecycle Service not downloaded (downloading)
 ... 
