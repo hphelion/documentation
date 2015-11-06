@@ -191,15 +191,16 @@
             <codeph>/var/hlm/clouds/&lt;cloudname>/plugins/infoblox/configure.json</codeph> based on
           your environment: <ul id="ul_ubj_3h5_xt">
             <li>
-              <p><codeph>ioa_ipaddress</codeph>: CLM IP of infoblox Openstack Adapter (IOA) VM </p>
+              <codeph>ioa_ipaddress</codeph>: CLM IP of infoblox Openstack Adapter (IOA) VM. 
             </li>
             <li><codeph>ioa_username</codeph>: Username to login to IOA. Default username is
-                <codeph>admin</codeph>. </li>
+                <codeph>admin</codeph>.</li>
             <li><codeph>ioa_password</codeph>: Password to login to IOA. Default password for user
                 <codeph>admin</codeph> is <codeph>infoblox</codeph>.</li>
-            <li><codeph>certfile_path</codeph>: certfile path as defined in stackrc file</li>
+            <li><codeph>certfile_path</codeph>: certfile path as defined in <codeph>stackrc</codeph>
+              file.</li>
             <li><codeph>region_name</codeph>: Region Name where the plugin will be deployed: Memphis
-              or Sacramento</li>
+              or Sacramento.</li>
           </ul></li>
         <li>Execute following command to apply patch:
               <codeblock>ansible-playbook -i hosts deploy-infoblox.yml</codeblock><p><b>To deploy
@@ -217,15 +218,15 @@
             <codeph>/var/hlm/clouds/&lt;cloudname>/plugins/infoblox/configure.json</codeph> based on
           your environment: <ul id="ul_ipn_325_xt">
             <li>
-              <p><codeph>ioa_ipaddress</codeph>: CLM IP of infoblox Openstack Adapter (IOA) VM </p>
-            </li>
+              <codeph>ioa_ipaddress</codeph>: CLM IP of infoblox Openstack Adapter (IOA) VM. </li>
             <li><codeph>ioa_username</codeph>: Username to login to IOA. Default username is
-                <codeph>admin</codeph>. </li>
+                <codeph>admin</codeph>.</li>
             <li><codeph>ioa_password</codeph>: Password to login to IOA. Default password for user
                 <codeph>admin</codeph> is <codeph>infoblox</codeph>.</li>
-            <li><codeph>certfile_path</codeph>: certfile path as defined in stackrc file</li>
+            <li><codeph>certfile_path</codeph>: certfile path as defined in <codeph>stackrc</codeph>
+              file.</li>
             <li><codeph>region_name</codeph>: Region Name where the plugin will be deployed: Memphis
-              or Sacramento</li>
+              or Sacramento.</li>
           </ul></li>
             <li>Execute following command to apply patch:
               <codeblock>ansible-playbook -i hosts deploy-infoblox.yml</codeblock></li>
