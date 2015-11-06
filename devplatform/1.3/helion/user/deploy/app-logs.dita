@@ -47,9 +47,9 @@ Console</i>
     </p>
 <section id="helion-logs">
       <title>helion logs</title>
-      <note>The file being monitored must already exist <b>before</b> apptail begins monitoring. Use
-        the application code, the buildpack, a pre-staging hook or a post-staging hook to create the
-        file before the app instance is created.</note> 
+      <note id="must_exist">The file being monitored must already exist <b>before</b> apptail begins
+        monitoring. Use the application code, the buildpack, a pre-staging hook or a post-staging
+        hook to create the file before the app instance is created.</note> 
       <p>To view an application log stream, use the <xref
           href="../reference/client-ref-information.dita#topic17778/command-logs"
           type="section">
@@ -87,7 +87,8 @@ Console</i>
           (where possible).</note>
       </p>
     </section>
-<section id="adding-files-to-the-stream"> <title>Adding Files to the Stream</title> 
+<section id="adding-files-to-the-stream"> <title>Adding Files to the Stream</title>
+      <note conref="#topic5165/must_exist"/> 
 <p>By default, <codeph>helion logs</codeph> streams log data from
 <i>staging_tasks.log</i> (while staging), <i>stdout.log</i> and <i>stderr.log</i>
 (while running).</p>
