@@ -145,6 +145,14 @@
       locktitle="yes"/>
   </topicref>
   <topicref href="helion.rack.solution.dita" navtitle="HPE Helion Cloud Solutions" locktitle="yes"/>
+  <topichead navtitle="Docs as PDF files">
+    <topicref
+      href="https://a248.e.akamai.net/cdn.hpcloudsvc.com/gb7904dd273bdcfcb5adc79b472562146/prodae1/HPE_Helion_OpenStack_2.0_Complete_Documentation.pdf"
+      format="pdf" scope="external" navtitle="HOS 2.0 Complete Documentation"/>
+    <topicref
+      href="https://a248.e.akamai.net/cdn.hpcloudsvc.com/gb7904dd273bdcfcb5adc79b472562146/prodae1/HPE_Helion_Development_Platform_1.3_Complete_Documentation.pdf"
+      format="pdf" scope="external" navtitle="HDP 1.3 Complete Documentation"/>
+  </topichead>
   
   <!-- END Public cloud -->
 </map>

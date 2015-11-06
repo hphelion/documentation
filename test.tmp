@@ -1,0 +1,198 @@
+<topic source="helion/index.dita" navtitle="no navtitle provided">
+<topic source="helion/overview.dita" navtitle="HPE Helion OpenStack 2.0 Overview" />
+<topic source="helion/kilo_features.dita" navtitle="OpenStack Kilo Features" />
+<topic source="helion/input_model.dita" navtitle="Input Model" />
+<topic source="helion/example_configurations.dita" navtitle="Example Configurations" />
+<topic source="helion/hardware.dita" navtitle="Recommended Minimum Hardware Requirements" />
+<topic source="helion/releasenotes.dita" navtitle="Release Notes" />
+<topic source="helion/faq.dita" navtitle="Frequently Asked Questions" />
+<topic source="helion/eula.dita" navtitle="Software License Terms" />
+<topic source="commercial/GA1/3rd-party-license-agreements.dita" navtitle="Open Source and Third-Party Licensing" />
+<topic source="helion/installation/installation_overview.dita" navtitle="Installation" >
+<topic source="helion/installation/using_git.dita" navtitle="Using Git for Configuration Management" />
+<topic source="helion/installation/preinstall_checklist.dita" navtitle="Pre-Installation Checklist" />
+<topic source="helion/installation/install_entryscale_kvm.dita" navtitle="Installation for Helion Entry-scale KVM Cloud" >
+<topic source="helion/installation/configure_vsa.dita" navtitle="VSA Configuration" >
+</topic>
+<topic source="helion/installation/configure_ceph.dita" navtitle="Ceph Configuration" />
+<topic source="helion/installation/configure_3par.dita" navtitle="3PAR Configuration" />
+<topic source="helion/blockstorage/brocade_zone_manager.dita" navtitle="Brocade Zone Manager Configuration" />
+</topic>
+<topic source="helion/installation/install_entryscale_esx.dita" navtitle="Installation for Helion Entry-scale ESX Cloud" />
+<topic source="helion/installation/install_entryscale_swift.dita" navtitle="Installation for Helion Entry-scale Swift Cloud" />
+<topic source="helion/gui_installer.dita" navtitle="Installing via the GUI" />
+<topic source="helion/installation/installation_verification.dita" navtitle="Verifying Your Installation" />
+<topic source="helion/installation/installation_troubleshooting.dita" navtitle="Troubleshooting Your Installation" />
+<topic source="helion/installation/postinstall_checklist.dita" navtitle="Common Post-Installation Tasks" />
+</topic>
+<topic navtitle="Security"  source="placeholder7.dita" path="Security"> 
+<topic source="helion/security/tls.dita" navtitle="Configuring TLS for Public Endpoints" />
+<topic source="helion/security/encrypted_storage.dita" navtitle="Encryption of Passwords and Sensitive Data" />
+<topic source="helion/security/using_apparmor.dita" navtitle="Refining Access Control with AppArmor" />
+</topic>
+<topic navtitle="Administration"  source="placeholder8.dita" path="Administration"> 
+<topic navtitle="Initial Configuration"  source="placeholder9.dita" path="Initial Configuration"> 
+<topic source="helion/administration/create_extnet.dita" navtitle="Creating an External Network" />
+<topic source="helion/administration/upload_image.dita" navtitle="Uploading an Image for Use" />
+</topic>
+<topic source="helion/conceptual_overviews/high_availability.dita" navtitle="High Availability Concepts" />
+<topic source="helion/administration/create_hdp_servicenet.dita" toc="no" navtitle="Creating the Helion Development Platform Service Net" />
+<topic source="helion/administration/configure_monitoring.dita" navtitle="Configuring the Monitoring Service" />
+<topic source="helion/administration/configure_logging.dita" navtitle="Configuring the Centralized Logging Service" />
+<topic source="helion/identity/identity_overview.dita" navtitle="Identity Service" >
+<topic source="helion/identity/identity_roles.dita" navtitle="Creating Domains, Projects, Users, Groups, and Roles" >
+</topic>
+<topic source="helion/identity/identity_init.dita" navtitle="Configuring the Identity Service" >
+</topic>
+<topic source="helion/identity/identity_admin.dita" navtitle="Administering the Identity Service" >
+</topic>
+<topic source="helion/identity/identity_reconfigure.dita" navtitle="Reconfiguring the Identity Service" />
+<topic source="helion/identity/identity_ldap.dita" navtitle="Integrating LDAP with the Identity Service" >
+</topic>
+<topic source="helion/horizon/horizon_configure_v3.dita" navtitle="Configuring Horizon for Keystone v3"  toc="yes"/>
+<topic source="helion/identity/identity_limitations.dita" navtitle="Identity Service Notes and Limitations" >
+</topic>
+</topic>
+<topic source="helion/objectstorage/objectstorage_overview.dita" navtitle="Object Storage Service" >
+<topic source="helion/objectstorage/input_cloud_model.dita" toc="yes" navtitle="Modifying Example Configurations for Object Storage" >
+<topic source="helion/objectstorage/allocate_pac.dita" navtitle="Allocating Proxy, Account, and Container Servers for Object Storage" />
+<topic source="helion/objectstorage/allocating_server.dita" navtitle="Allocating Object Servers" />
+<topic source="helion/objectstorage/creating_roles_swift_nodes.dita" navtitle="Creating Roles for Swift Nodes" />
+<topic source="helion/objectstorage/allocating_disk_drives.dita" navtitle="Allocating Disk Drives for Object Storage" >
+<topic source="helion/objectstorage/label_on_partition.dita" toc="yes" navtitle="Verifying a Swift Partition Label" />
+<topic source="helion/objectstorage/filesystem_label.dita" navtitle="Verifying a Swift File System Label" />
+</topic>
+<topic source="helion/objectstorage/swift_device_groups.dita" navtitle="Swift Requirements for Device Group Drives" />
+<topic source="helion/objectstorage/creating_pac_cluster.dita" navtitle="Creating a Proxy, Account, and Container Cluster for Object Storage" />
+<topic source="helion/objectstorage/creating_object_server_resource.dita" navtitle="Creating Object Server Resource Nodes" />
+<topic source="helion/objectstorage/allocating_network.dita" navtitle="Understanding Swift Network and Service Requirements" />
+<topic source="helion/objectstorage/ring_specifications.dita" navtitle="Understanding Ring Specifications" />
+<topic source="helion/objectstorage/storage_policies.dita" navtitle="Designing Storage Policies" />
+</topic>
+<topic source="helion/objectstorage/ring_management.dita" navtitle="Managing Object Storage Rings" >
+<topic source="helion/objectstorage/rebalanced_explained.dita" navtitle="Rebalancing Object Storage Rings" />
+<topic source="helion/objectstorage/setting_up_weight_attributes_ring_changes.dita" navtitle="Using the Weight-Step Attributes to Prepare for Ring Changes" />
+<topic source="helion/objectstorage/playbook_linked_ring_management.dita" navtitle="Managing Rings Using Swift Playbooks" />
+<topic source="helion/objectstorage/safe_rebalance_deploy_ring.dita" navtitle="Determining When to Rebalance and Deploy a New Ring" />
+<topic source="helion/objectstorage/input_model_change_existing_rings.dita" navtitle="Applying Input Model Changes to Existing Rings" />
+<topic source="helion/objectstorage/add_new_storage_policy.dita" navtitle="Adding a New Swift Storage Policy" />
+<topic source="helion/objectstorage/how_to_change_min_part_time.dita" navtitle="Changing min-part-time in Swift" />
+</topic>
+<topic source="helion/objectstorage/modify_swift_service_config_files.dita" navtitle="Customizing Swift Service Configuration Files" />
+</topic>
+<topic source="helion/blockstorage/blockstorage_overview.dita" navtitle="Block Storage Service" >
+<topic source="helion/blockstorage/ceph/ceph_overview.dita" navtitle="Ceph Overview" >
+<topic source="helion/blockstorage/ceph/configuring_use_ceph_cluster_glance.dita" navtitle="Configuring Glance to Use Ceph" />
+</topic>
+</topic>
+<topic source="helion/networking/networking_overview.dita" navtitle="Networking Service" >
+<topic source="helion/networking/lbaas_admin.dita" navtitle="Configuring Load Balancing as a Service (LBaaS)" />
+<topic source="helion/networking/multinetwork.dita" navtitle="Configuring Multiple External Networks" />
+</topic>
+<topic source="helion/esx/eon_service.dita" navtitle="ESX ON-Boarding (EON) Service" >
+<topic source="helion/esx/network_esx_ovsvapp.dita" navtitle="Networking for ESXi Hypervisor" />
+<topic source="helion/esx/esx_host_commissioning.dita" navtitle="ESX Host Commissioning" />
+<topic source="helion/esx/enable_new_cluster_compute_resource.dita" navtitle="Enabling a New Cluster as a Compute Resource" />
+<topic source="helion/esx/remove_existing_cluster_compute_resource_pool.dita" navtitle="Removing a Cluster from the Compute Resource Pool" />
+<topic source="helion/esx/removing_esx_host_from_cluster.dita" navtitle="Removing an ESX Host from a Cluster" />
+<topic source="helion/esx/logging.dita" navtitle="Enabling Debug Logging" />
+<topic source="helion/esx/scale_config_changes.dita" navtitle="Making SCALE Configuration Changes" />
+</topic>
+</topic>
+<topic navtitle="Operations"  source="placeholder1.dita" path="Operations"> 
+<topic source="helion/operations/cli_reference.dita" navtitle="Command-line Reference"  toc="no"/>
+<topic source="helion/operations/accessing_horizon.dita" navtitle="Accessing the Horizon Dashboard" />
+<topic source="helion/operations/opsconsole_overview.dita" navtitle="Accessing the Operations Console" />
+<topic source="helion/operations/start_stop_services.dita" navtitle="Starting and Stopping Services" />
+<topic navtitle="Node Maintenance"  source="placeholder2.dita" path="Node Maintenance"> 
+<topic source="helion/operations/add_node.dita" navtitle="Adding a Compute Node" />
+<topic source="helion/operations/repair_node.dita" navtitle="Repairing a Compute Node" />
+<topic source="helion/operations/remove_node.dita" navtitle="Removing a Compute Node" />
+<topic source="helion/operations/replace_controller.dita" navtitle="Replacing a Controller Node" />
+<topic source="helion/administration/adding_moonshot_nodes.dita" navtitle="Adding Moonshot Nodes" />
+<topic source="helion/blockstorage/vsa/remove_node.dita" navtitle="Removing VSA Node" />
+<topic source="helion/blockstorage/vsa/remove_vsa_maintenance.dita" navtitle="Removing a VSA Node For Maintenance" />
+<topic source="helion/blockstorage/ceph/adding_new_osd_node.dita" navtitle="Adding an Object Storage Daemon (OSD) Node" />
+<topic source="helion/blockstorage/ceph/remove_osd_node.dita" navtitle="Removing an Object Storage Daemon (OSD) Node" />
+<topic source="helion/blockstorage/ceph/adding_new_monitor_node.dita" navtitle="Adding a New Ceph Monitor Node" />
+<topic source="helion/blockstorage/ceph/remove_monitor_node.dita" navtitle="Removing a Ceph Monitor Node" />
+<topic source="helion/objectstorage/add_new_node.dita" navtitle="Adding a Swift Object Node" />
+<topic source="helion/objectstorage/add_new_pac_node.dita" navtitle="Adding a Proxy, Account, Container (PAC) Node" />
+<topic source="helion/objectstorage/replacing_drives_swift_node.dita" navtitle="Replacing Drives in a Swift Node" />
+<topic source="helion/objectstorage/replacing_swift_node.dita" navtitle="Replacing a Swift Node" />
+<topic source="helion/objectstorage/removing_node.dita" navtitle="Removing a Swift Node" />
+</topic>
+<topic navtitle="Object Storage"  source="placeholder3.dita" path="Object Storage"> 
+<topic source="helion/objectstorage/add_new_storage_policy.dita" navtitle="Adding a New Swift Storage Policy" />
+<topic source="helion/objectstorage/check_objectstorage_operation.dita" navtitle="Checking Object Storage Status" >
+<topic source="helion/objectstorage/validating_swift_recon.dita" navtitle="Gathering Swift Data" />
+<topic source="helion/objectstorage/lm_scan_metering.dita" navtitle="Gathering Swift Monitoring Metrics" />
+<topic source="helion/objectstorage/utility.dita" navtitle="Using the Swift Command-line Client (CLI)" />
+</topic>
+</topic>
+<topic navtitle="Block Storage"  source="placeholder4.dita" path="Block Storage"> 
+<topic source="helion/blockstorage/vsa/vsa_create_multiple_clusters.dita" navtitle="Creating Multiple VSA Clusters" />
+<topic source="helion/blockstorage/ceph/deploy_monitor_stand_alone_node.dita" navtitle="Deploying Ceph Monitor Services on Dedicated Resource Nodes" />
+<topic source="helion/blockstorage/ceph/ceph_operation.dita" navtitle="Starting, Stopping, and Status for Ceph" />
+<topic source="helion/blockstorage/singleton_service_cinder.dita" navtitle="Managing Cinder Volume and Backup Services" />
+<topic source="helion/blockstorage/ceph/defining_monitor_resource.dita" navtitle="Defining a Ceph Monitor Resource" />
+<topic source="helion/blockstorage/ceph/reconfigure_ceph_services.dita" navtitle="Reconfiguring Ceph Services" />
+</topic>
+<topic source="helion/bura/bura_overview.dita" navtitle="Backing Up and Restoring Your Data" >
+<topic source="helion/bura/cloud_control_plane_backup.dita" type="topic" format="dita" navtitle="Backing up the Cloud Control Plane" />
+<topic source="helion/bura/cloud_control_plane_recovery.dita" type="topic" format="dita" navtitle="Recovering the Cloud Control Plane" />
+<topic source="helion/bura/freezer_scheduler.dita" type="topic" format="dita" navtitle="Understanding the Freezer Scheduler" />
+<topic source="helion/bura/freezer_agent.dita" type="topic" format="dita" navtitle="Understanding the Freezer Agent" />
+<topic source="helion/bura/supported_services.dita" type="topic" format="dita" navtitle="Supported Services and Limitations for Backup" />
+<topic source="helion/bura/disable_bura_before_deployment.dita" type="topic" format="dita" navtitle="Disabling Backup/Restore before Deployment" />
+<topic source="helion/bura/start_stop_freezer_services.dita" type="topic" format="dita" navtitle="Enabling and Disabling Freezer Services" />
+<topic source="helion/bura/troubleshooting.dita" navtitle="Troubleshooting Freezer Services" />
+</topic>
+<topic source="helion/metering/metering_overview.dita" navtitle="Metering Service" >
+<topic source="helion/metering/metering_apis.dita" navtitle="Ceilometer Metering APIs" />
+<topic source="helion/metering/metering_reconfig.dita" navtitle="Ceilometer Metering Service Config and Upgrade" />
+<topic source="helion/metering/metering_notifications.dita" navtitle="Ceilometer Metering Service Notifications" />
+<topic source="helion/metering/metering_failover_ha.dita" navtitle="Ceilometer Metering Failover HA Support" />
+<topic source="helion/metering/metering_rbac.dita" navtitle="Ceilometer Metering Setting Role-based Access Control" />
+<topic source="helion/metering/metering_components.dita" navtitle="Ceilometer Metering Service Components" />
+<topic source="helion/metering/metering_metertypes.dita" navtitle="Available Meter Types"  toc="no"/>
+<topic source="helion/metering/metering_bestpractice.dita" navtitle="Optimizing the Metering Service"  toc="no"/>
+</topic>
+<topic source="helion/operations/monitoring_service.dita" navtitle="Monitoring Service" >
+<topic source="helion/operations/alarms.dita" navtitle="Service Alarm Definitions" />
+</topic>
+<topic source="helion/operations/centralized_logging.dita" navtitle="Centralized Logging Service" >
+<topic source="helion/operations/logging_settings.dita" navtitle="Default Logging Settings" />
+</topic>
+<topic source="helion/operations/sherpa_overview.dita" navtitle="Sherpa Catalog Service Overview" >
+<topic source="helion/operations/accessing_sherpa.dita" navtitle="Accessing the Sherpa Catalog" />
+<topic source="helion/operations/validate_sherpa_signatures.dita" navtitle="Validating Download Signatures" />
+</topic>
+</topic>
+<topic navtitle="Troubleshooting"  source="placeholder5.dita" path="Troubleshooting"> 
+<topic source="helion/installation/installation_troubleshooting.dita" navtitle="Troubleshooting Your Installation" />
+<topic source="helion/objectstorage/troubleshooting.dita" navtitle="Troubleshooting the Object Storage Service" >
+<topic source="helion/objectstorage/deploy_fails_with_msdos_disks.dita" navtitle="Deployment Fails with a MSDOS Disks Labels Error" />
+<topic source="helion/objectstorage/examine_details_planned_ring_changes_prior_deploy.dita" navtitle="Examining Planned Ring Changes" />
+<topic source="helion/objectstorage/interpreting_swift_validate_input_model.dita"  navtitle="Interpreting Swift Input Model Validation Errors"/>
+<topic source="helion/objectstorage/first_proxy_server.dita"  navtitle="Identifying the First Swift Proxy Server"/>
+<topic source="helion/objectstorage/label_on_partition.dita"  navtitle="Verifying a Swift Partition Label"/>
+<topic source="helion/objectstorage/filesystem_label.dita"  navtitle="Verifying a Swift File System Label"/>
+<topic source="helion/objectstorage/recovering_builder_file.dita"  navtitle="Recovering Swift Builder Files"/>
+<topic source="helion/objectstorage/restart_deploy_from_scratch.dita"  navtitle="Restarting the Object Storage Deployment"/>
+</topic>
+<topic source="helion/metering/metering_troubleshoot.dita" navtitle="Troubleshooting the Ceilometer Metering Service" />
+<topic source="helion/blockstorage/ceph/troubleshooting.dita" navtitle="Troubleshooting the Ceph Service" />
+</topic>
+<topic navtitle="User Guide"  source="placeholder6.dita" path="User Guide"> 
+<topic source="helion/horizon/horizon_overview.dita" navtitle="Using the Horizon Dashboard" />
+<topic source="helion/userguide/create_network.dita" navtitle="Creating a Private Network" />
+<topic source="helion/blockstorage/vsa/configure_vsa_separate_iscsi_network.dita" navtitle="Configuring a Separate iSCSI Network to use with VSA" />
+<topic source="helion/userguide/lbaas.dita" navtitle="Using Load Balancing as a Service (LBaaS)" />
+<topic source="helion/networking/fwaas.dita" navtitle="no navtitle provided" >
+</topic>
+<topic source="helion/networking/vpnaas.dita" navtitle="no navtitle provided" >
+</topic>
+</topic>
+<topic source="helion/documentation_updates.dita" navtitle="no navtitle provided"/>
+</topic>
