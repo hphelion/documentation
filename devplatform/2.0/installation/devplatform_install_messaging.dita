@@ -9,10 +9,8 @@
       <title>Prerequisites</title>
       <p>
         <ul>
-          <li>The HDP Installer 2.0, also known as HDPI, must already <xref
-              href="devplatform_install_platform.dita#topic_gly_xmh_ts">be installed</xref>.</li>
-          <li>A properly configured <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt"
-              >clouds.yaml</xref> file.</li>
+          <li>The HDP Installer 2.0, also known as HDPI, must already <xref href="devplatform_install_platform.dita#topic_gly_xmh_ts">be installed</xref>.</li>
+          <li>A properly configured <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt">clouds.yaml</xref> file.</li>
           <li>HPE Helion OpenStack 2.0 installation must be completed. </li>
           <li>You must know the NTP server and DNS server IP addresses.</li>
         </ul>
@@ -31,11 +29,15 @@
 +--------------------+----------------+-----------+-----------+
 | database           | wscatalog.#### | 1.0.0     | available |
 <b>| messaging          | wscatalog.#### | 1.0.0     | available |</b></codeblock></li>
-        <li>Download and install the Messaging service
-          package.<codeblock>(dev_platform_installer-devplat_installer-1.0.0)stack@hlm:~$ openstack --os-cloud mycloud hdpi messaging 
-
-install --package &lt;provide ID of the messaging service: for example, wscatalog.2761>
-((Other method: If the user has a CSU, they would run the same cmd with --path instead of --package to install a CSU that they have downloaded locally: install --path &lt;path to locally downloaded CSU>))</codeblock></li>
+        <li>Install the Messaging service package. <ol>
+            <li>If you <xref href="install_offline.dita#topic_w25_hqp_xt">pre-downloaded</xref> the
+              installation file, run the following command to install
+              it:<codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
+openstack --os-cloud mycloud hdpi messaging install <i>&lt;filename></i></codeblock></li>
+            <li>If you did not pre-download the installation file, run the following command to
+              download and install
+              it:<codeblock>openstack --os-cloud mycloud hdpi messaging install wscatalog.2796</codeblock></li>
+          </ol></li>
         
         <li>Launch the Messaging Deployer VM using the
             HDPI.<!-- ((Put some information on what the user gets back at the command line- paste in the returned text, highlight the IP address that the user needs to grab))--><note>When
@@ -163,8 +165,7 @@ localhost                  : ok=20   changed=14  <b> unreachable=0 </b>  <b> fai
             <li>Configure the Input Model for TLS Support.<note>For production environments, TLS
                 (Cue API public endpoint URL with SSL support (https)) is recommended. If not using
                 TLS, for example, in a non-production proof-of-concept environment, or if using
-                name-based TLS, skip this step. The deployment model <xref href="#topic_t3w_fnh_ts/TLS"
-              >customization</xref> performed previously must have included the TLS
+                name-based TLS, skip this step. The deployment model <xref href="#topic_t3w_fnh_ts/TLS">customization</xref> performed previously must have included the TLS
                 configuration step.</note><ol>
                 <li>Copy your signed certificate into
                     <codeph>~/helion/my_cloud/config/tls/certs/msgaas-cert</codeph></li>
@@ -175,8 +176,7 @@ stack@messaging-deployer:~/helion/hos/ansible$ git commit -a -m "Configured Depl
             <li>Run the Config Processor Playbook
                   <codeblock>stack@messaging-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost config-processor-run.yml </codeblock><p><note>If
                   you have performed a full installation previously, you <b>must</b> remove the Cue
-                  user and service from Keystone <b>before</b> running this playbook again. <ul
-                    id="ul_rsf_tfs_wt">
+                  user and service from Keystone <b>before</b> running this playbook again. <ul id="ul_rsf_tfs_wt">
                     <li> SSH into the HOS deployer, source the keystone.osrc file, and then execute
                       these
                       commands:<codeblock>openstack service delete cue
@@ -282,5 +282,5 @@ export OS_INTERFACE=internal</codeblock></li>
       </section>
     
   </body>
-  <related-links><link scope="external" format="html" href="http://python-cueclient.readthedocs.org/en/latest/index.html" ><linktext>python-cueclient documentation</linktext></link></related-links>
+  <related-links><link scope="external" format="html" href="http://python-cueclient.readthedocs.org/en/latest/index.html"><linktext>python-cueclient documentation</linktext></link></related-links>
 </topic>
