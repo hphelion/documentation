@@ -16,6 +16,12 @@
       <section><title>Install ALS</title><ol>
                 <li> Source the Virtual
                     Environment.<pre>source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate </pre></li>
+          <li>List the available ALS versions to install:
+              <codeblock>openstack hdpi list --os-cloud mycloud | grep als  </codeblock>The output
+              should look similar
+              to:<codeblock>als | wscatalog.#### <!--this number is incoming from Matty, the bits are still uploading as this is written-->| 2.0.0.0 | available</codeblock></li>
+          <li>Select the most recent ALS version to install and view the details of the
+              package:<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock></li>
                 <li>If you <xref href="install_offline.dita#topic_w25_hqp_xt">pre-downloaded</xref>
                     the installation file, run the following command to install
                     it:<codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>

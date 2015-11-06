@@ -20,6 +20,14 @@
       <ol>
             <li>SSH into the HP Helion OpenStack deployer. (This is the same location where the HDPI
           has been installed.)</li>
+        <li>Source the Virtual
+          Environment.<codeblock>stack@hlm:~$ source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate </codeblock></li>
+        <li>List the available messaging versions to install:
+          <codeblock>openstack hdpi list --os-cloud mycloud | grep messaging  </codeblock>The output
+          should look similar
+          to:<codeblock>messaging | wscatalog.#### <!--this number is incoming from Matty, the bits are still uploading as this is written-->| 2.0.0.0 | available</codeblock></li>
+        <li>Select the most recent messaging version to install and view the details of the
+          package:<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock></li>
         <li>Install the Messaging service installation files. <ol>
             <li>If you <xref href="install_offline.dita#topic_w25_hqp_xt">pre-downloaded</xref> the
               installation file, run the following command to install
