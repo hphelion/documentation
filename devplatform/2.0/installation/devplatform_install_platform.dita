@@ -6,29 +6,21 @@
     <section><p>The installation procedure has changed significantly since the last release. The HDP Installer
         2.0, also known as HDPI, is a plugin for the the python-openstackclient (OSC). It is able to
         leverage the authentication, configuration and command line option parsing that is already
-        part of OSC to greatly simplify the installation process.</p>
-
-      <title>Download the Latest Version of the HPE Helion Development Platform Installation
-        Client</title>
-      <p>The installation is provided as a small compressed tar file. </p>
-      <ol id="ol_ogs_qpt_nt">
-        <li>Navigate to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
-            format="html" scope="external">HPE Helion Download Network</xref> (HDN) and log in. If
-          necessary, create an account first.</li>
-        <li>Download the latest Development Platform Installer package.</li>
-      </ol>
+        part of OSC to greatly simplify the installation process.</p><note type="warning">You must have
+            <xref href="devplatform_install_prereq.dita#topic_x54_njh_ts">satisfied all
+            prerequisites</xref> before beginning installation.</note><note type="important">Do not
+          source <codeph>service.osrc</codeph>, <codeph>keystone.osrc</codeph>, or <b>any</b> other
+          file before you begin.</note>
     </section>
 
     <section id="pre-installing-the-hp-helion-development-platform">
       <title>Install the HPE Helion Development Platform Installation Client</title>
-            <note type="warning">You must have <xref
-          href="devplatform_install_prereq.dita#topic_x54_njh_ts">satisfied all prerequisites</xref>
-        before beginning installation.</note>
-      <note type="important">Do not source <codeph>service.osrc</codeph>,
-          <codeph>keystone.osrc</codeph>, or <b>any</b> other file before you begin.</note>
-      <ol>   <li>Ensure all OS_ variables are unset. To
-          check this, run <codeblock>    env | grep OS_ </codeblock> and then <codeph>unset</codeph> any
-          variables which appear in the list of results. </li>
+      <ol>
+        <li>Navigate to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
+            format="html" scope="external">HPE Helion Download Network</xref> (HDN) and log in. If
+          necessary, create an account first.</li>
+        <li>Download the latest Development Platform Installer package.</li>   <li>Ensure all OS_ variables are unset. To check this, run <codeblock>env | grep OS_ </codeblock>
+          and then <codeph>unset</codeph> any variables which appear in the list of results. </li>
         <li>SSH to the HPE Helion OpenStack Deployer. </li>
         <li>Create and source the Virtual Environment. In this example,
             <codeph>&lt;dpi-venv&gt;.tgz</codeph> is the name of the installer. This process creates
@@ -39,9 +31,10 @@
 sudo tar -C /opt/stack/venv/&lt;dpi-venv&gt; -xzf &lt;dpi-venv&gt;.tgz
 sudo chown stack.stack /opt/stack/venv/&lt;dpi-venv&gt; 
 source /opt/stack/venv/&lt;dpi-venv&gt;/bin/activate</codeblock></li>
-        <li>Test the installation by retrieving a list of installable files. The <codeph>--debug
-          </codeph>option will return information vital for troubleshooting, if
-          necessary.<codeblock>openstack hdpi --os-cloud mycloud list --debug</codeblock></li>
+        <li>Test the installation by retrieving a list of installable files.
+            <codeblock>openstack hdpi --os-cloud mycloud list</codeblock><note>If further
+            troubleshooting information is required, add the <codeph>--debug </codeph>option to the
+            end of the command.</note></li>
       </ol>
     </section>
   </body>
