@@ -35,7 +35,9 @@
             <topicref href="CGH-2-install-memphis.dita" navtitle="Deploying the Memphis Template"
                 locktitle="yes"/>
             <topicref href="CGH-2-install-sacramento.dita"
-                navtitle="Deploying the Sacramento Template" locktitle="yes"/>
+                navtitle="Deploying the Sacramento Template" locktitle="yes">
+                <topicref href="CGH-2-install-infoblox.dita" toc="no"/>
+            </topicref>
             <topichead navtitle="Linked Files" toc="no">
                 <topicref href="carrier-grade-install-kvm-only-json"
                     navtitle="Sample JSON File for Installing the KVM Deployment" locktitle="yes"
@@ -60,11 +62,9 @@
                 <topicref href="carrier-grade-install-config-ldap3.dita" toc="no"
                     navtitle="HPE Helion OpenStack Carrier Grade 2.0 Beta: Configuring LDAP 3"
                     locktitle="yes"/>
-                <topicref href="CGH-2-install-icinga-patch.dita" toc="no"/>
-                <topicref href="CGH-2-install-infoblox-patch.dita" toc="no"/>
                 <topicref href="CGH-2-install-kenobi-patch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-network-role-patch.dita" toc="no"/>
-                <topicref href="CGH-2-install-infoblox.dita" toc="no"/>
+                <topicref href="CGH-2-install-vmware-workaround.dita" toc="no"/>
             </topichead>
         </topicref>
         <topicref href="carrier-grade-install-launch-horizon.dita"

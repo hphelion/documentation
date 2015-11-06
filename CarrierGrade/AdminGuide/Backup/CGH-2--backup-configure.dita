@@ -128,18 +128,21 @@ attis storage --use NFS (to choose NFS option)</codeblock><p>
       <b>Important:</b> Restart the Attis server on all three controllers if the storage option is
       changed to NFS or FILE option:<pre>service attis-server restart</pre><p><b>VSD, VSC, and WR
           Controller Backup/Restore</b></p><b>Backing up and Restoring the VSD</b><p>Before running
-        VSD backup, you must set up trust between the controllers and VSD. Execute the folloiwing
-        below command on all three controllers to copy the Attis public key to the VSD
-          <codeph>authorized_keys</codeph>
-        file:<codeblock>sudo su attis
-ssh-copy-id vsd_user@vsd_address</codeblock></p><p><b>Note:</b>
-        The <i>vsd_user</i> can be found by viewing the configuration file:
-        <codeblock>attis config --id Config_ID_of_VSD _Appliance_DB_Backup </codeblock>The
-          <i>vsd_address</i> can be found in the <codeph>/etc/attis/dcn_lst</codeph> file:
-        <codeblock>cat /etc/attis/dcn_lst</codeblock></p><b>Backing up and Restoring the
-        VSC</b><p>If VSC username/password is set other than defaults, modify <i>vsc_user_name</i>
-        or/and <i>vsc_user_pass</i> in the <codeph>/etc/attis/dcn_lst</codeph> file before running
-        VSC backup or restore.</p>KVM Region Controller<p>If the KVM region controller
+        VSD backup, you must set up trust between the controllers and VSD. <ol id="ol_dkt_3v5_xt">
+          <li>Execute the following command on all three controllers to copy the Attis public key to
+            the VSD <codeph>authorized_keys</codeph> file:
+                <codeblock>sudo su attis
+ssh-copy-id vsd_user@vsd_address</codeblock><p><b>Note:</b>
+              The <i>vsd_user</i> can be found by viewing the configuration file:
+              <codeblock>attis config --id Config_ID_of_VSD _Appliance_DB_Backup </codeblock>The
+                <i>vsd_address</i> can be found in the <codeph>/etc/attis/dcn_lst</codeph> file:
+              <codeblock>cat /etc/attis/dcn_lst</codeblock></p></li>
+          <li>After restore job is complete, ssh to the VSD node from controller and restart vsd
+            service.<codeblock>service vsd restart</codeblock></li>
+        </ol><b>Backing up and Restoring the VSC</b>
+      </p><p>If VSC username/password is set other than defaults, modify <i>vsc_user_name</i> or/and
+          <i>vsc_user_pass</i> in the <codeph>/etc/attis/dcn_lst</codeph> file before running VSC
+        backup or restore. </p><b>KVM Region Controller</b><p>If the KVM region controller
         username/password is set other than defaults, use the Attis CLI to update those values in
         the KVM region controller
         config.<codeblock>attis config --id &lt;config_id of WR_Appliance_system_files_Backup&gt; --update-parameter '{"wr_controller_backup_user":"YOUR_USER"}'
