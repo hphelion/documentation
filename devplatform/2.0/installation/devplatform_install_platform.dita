@@ -24,8 +24,11 @@
             <note type="warning">You must have <xref
           href="devplatform_install_prereq.dita#topic_x54_njh_ts">satisfied all prerequisites</xref>
         before beginning installation.</note>
-      <note type="important">Do not source <codeph>service.osrc</codeph>, <codeph>keystone.osrc</codeph>, or any other <codeph>*rc</codeph> file before you begin.</note>
-      <ol>
+      <note type="important">Do not source <codeph>service.osrc</codeph>,
+          <codeph>keystone.osrc</codeph>, or <b>any</b> other file before you begin.</note>
+      <ol>   <li>Ensure all OS_ variables are unset. To
+          check this, run <codeblock>    env | grep OS_ </codeblock> and then <codeph>unset</codeph> any
+          variables which appear in the list of results. </li>
         <li>SSH to the HPE Helion OpenStack Deployer. </li>
         <li>Create and source the Virtual Environment. In this example,
             <codeph>&lt;dpi-venv&gt;.tgz</codeph> is the name of the installer. This process creates
