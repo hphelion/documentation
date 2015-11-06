@@ -48,24 +48,10 @@
     identity_api_version: '2'
     region_name: region1
     insecure: True
-    auth:
-      auth_url: http://10.241.127.6:5000/v3
-      project_name: msgaas
-      username: msgaas
-      password: password
-      project_domain_name: default
-      user_domain_name: default 
   <xref href="cloud_codeengine.dita#cloudCodeEngine">helionce</xref>:
     image_api_version: '1'
     identity_api_version: '2'
     region_name: region1
-    insecure: True
-    auth:
-      auth_url: http://##.##.##.##:##/v3
-      project_name: 
-      username: 
-      password: 
-      project_domain_name: default
-      user_domain_name: default     </codeblock>
+    insecure: True    </codeblock>
   </body>
 </topic>

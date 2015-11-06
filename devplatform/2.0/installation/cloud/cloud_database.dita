@@ -6,11 +6,7 @@
     <section>
       <p>This additional section is required only if the Database Service is
         installed.<codeblock>clouds:
-  dbaas:
-    cacert: /usr/local/share/ca-certificates/hpes_cacert.crt
-    codn_username: 
-    codn_password: 
-    region_name: region1
+  mycloud:
     database:
       trove_enable_ssl: False
       ephemeral_ca_cert: /home/stack/ca/cacert.pem  
@@ -28,65 +24,50 @@
       hotpools_enabled: True
       hotpools_max_instances: 1
       hotpools_image_name: percona
-      hotpools_flavor_names:
-        - 'm1.small'
-        - 'm1.medium'
-        - 'm1.large'
-      disable_rollback: true
-      project_id: 
-  auth:
-    auth_url: 
-    project_name: admin
-    username: admin
-    password: admin</codeblock></p>
+      hotpools_flavor_names: 'm1.medium'
+      project_id: </codeblock></p>
       <dl>
-        <dlentry><dt>cacert</dt><dd>The file that enables SSL access via the public endpoints. If SSL has not been enabled, leave
-            blank.</dd></dlentry>
-        <dlentry><dt>codn_username</dt><dd>Username for the Helion Download Network user account.</dd></dlentry>
-        <dlentry>
-          <dt> codn_password</dt>
-          <dd>Helion Download Network password.</dd>
-        </dlentry>
-        <dlentry><dt>trove_enable_ssl</dt><dd>This variable only defines whether SSL is available internally to Trove. It does not indicate
-            whether or not SSL is enabled to the public endpoints. This value must be <b>False</b>. </dd></dlentry>
+        <dlentry><dt>trove_enable_ssl</dt><dd>This variable defines whether SSL is used internally by Trove. HPE Helion OpenStack 2.0
+            implements SSL using HAProxy, so in installations of version 2.0 or later, this value
+            must be <b>False</b>. </dd></dlentry>
         <dlentry><dt>ephemeral_ca_cert</dt><dd>If SSL has been enabled on the public endpoints, this value needs to be identical to the
               <codeph>cacert</codeph> value provided previously. If SSL has not been enabled,
             provide a non-blank value such as <b>unset</b>.  Do not leave blank.</dd></dlentry>
-        <dlentry><dt>external_network</dt><dd> GUID of ext-net</dd></dlentry>
-        <dlentry><dt>provider_network</dt><dd> GUID of svc-net</dd></dlentry>
-        <dlentry><dt>ntp_server</dt><dd> IP address of ntp server</dd></dlentry>
-        <dlentry><dt>keypair</dt><dd> default </dd></dlentry>
+        <dlentry><dt>external_network</dt><dd>The ID (GUID) of the external network. In a typical installation, the name of this network is
+              <b>ext-net</b>. </dd></dlentry>
+        <dlentry><dt>provider_network</dt><dd> The ID (GUID) of the service provider network. In a typical installation, the name of this
+            network is <b>svc-net</b>. </dd></dlentry>
+        <dlentry><dt>ntp_server</dt><dd> IP address of NDP server. In typical installations, this is the IP address of the first
+            Management Controller.</dd></dlentry>
+        <dlentry><dt>keypair</dt><dd> Specify the name of a keypair to use when creating the Database Service. This keypair will be
+            used for debugging purposes when logging into instances of the Database Service.
+              <note>This key must already exist in Nova prior to installation.</note></dd></dlentry>
         <dlentry><dt>enable_ha</dt><dd> Options are True or False. If True, the database will be
           created with high-availability configurations. Ensure you have enough quota to do
           so.</dd></dlentry>
-        <dlentry><dt>flavor</dt><dd> The default is m1.medium. Do not create any flavor smaller
-          than medium. Smaller sizes will cause installation to fail.</dd></dlentry>
-        <dlentry><dt>database_flavor</dt><dd> The default is m1.medium. Do not create any flavor
-          smaller than medium. Smaller sizes will cause installation to fail.</dd></dlentry>
-        <dlentry><dt>messaging_flavor: </dt><dd>The default is m1.medium. Do not create any flavor
-          smaller than medium. Smaller sizes will cause installation to fail.</dd></dlentry>
-        <dlentry><dt>database_volume_size</dt><dd> 10 </dd></dlentry>
-        <dlentry><dt>logstash_rabbitmq_host</dt><dd> IP address of logging service</dd></dlentry>
-        <dlentry><dt>logstash_rabbitmq_password</dt><dd> Password for logging service</dd></dlentry>
-        <dlentry><dt>hotpools_enabled</dt><dd> Options are True or False. If True, hotpool
-          capabilities are enabled. If False, leave all other <i>hotpools</i> configuration
-          variables blank.</dd></dlentry>
-        <dlentry><dt>hotpools_max_instances</dt><dd> Default is 3. </dd></dlentry>
-        <dlentry><dt>hotpools_image_name</dt><dd> percona </dd></dlentry>
-        <dlentry><dt>hotpools_flavor_names</dt><dd> "m1.medium,m1.small,m1.large" Do not
-          change.</dd></dlentry>
-        <dlentry><dt>disable_rollback</dt><dd> Options are True or False. If True, rollback of patch applications is
-          disabled.</dd></dlentry>
-        <dlentry><dt>project_id</dt><dd> Project id of the project where the service will be installed.</dd></dlentry>
-        <dlentry><dt>auth_url</dt><dd> This URL can be found in Horizon at: Project Compute &gt;
-          Access &amp; Security &gt; API Access. Copy the Service Endpoint URL for the Identity
-          Service. Note that this must be <codeph>https</codeph>, not simply
-          <codeph>http</codeph>.</dd></dlentry>
-        <dlentry><dt>project_name</dt><dd> The Name of the admin project in Horizon. </dd></dlentry>
-        <dlentry><dt>username</dt><dd> The Username of an account with installation privileges
-          (administrator role). </dd></dlentry>
-        <dlentry><dt>password</dt><dd> The Password for the same account with installation
-          privileges (administrator role). </dd></dlentry></dl></section>
+        <dlentry><dt>flavor</dt><dd>The default is m1.medium. This flavor size is used to create instances of the Database
+              Service.<note>The minimum size is m1.medium. </note></dd></dlentry>
+        <dlentry><dt>database_flavor</dt><dd>The default is m1.medium. This flavor size is used to create instances of the Database Service's
+            MySQL Database backend.<note>The minimum size is m1.medium. Larger flavors can be used
+              for large or complex installations.</note></dd></dlentry>
+        <dlentry><dt>messaging_flavor: </dt><dd>The default is m1.medium. This flavor size is used to create instances of the Database Services
+            Messaging backend.<note>The minimum size is m1.medium. </note></dd></dlentry>
+        <dlentry><dt>database_volume_size</dt><dd>The default value is "10"; this is measured in GB (gigabytes). This is the volume size that will
+            be used to create storage for the Database Service's MySQL database backend.</dd></dlentry>
+        <dlentry><dt>logstash_rabbitmq_host</dt><dd> The IP address of the HPE Helion OpenStack logging service. In typical installations, this is
+            the IP address of the first Management Controller.</dd></dlentry>
+        <dlentry><dt>logstash_rabbitmq_password</dt><dd> The admin password for the HPE Helion OpenStack logging service.
+            <!--shayne will get back to us with a better explanation of this one and where to find it--></dd></dlentry>
+        <dlentry><dt>hotpools_enabled</dt><dd> Options are True or False. The default value is True. If True, a pool of "hot" databases will
+            be pre-provisioned for use when a new instance is requested. This functionalty greatly
+            reduces database creation time. If False, remove all other <i>hotpools</i> configuration
+            variables.</dd></dlentry>
+        <dlentry><dt>hotpools_max_instances</dt><dd> Default is 1. This is the number of "hot" databases to keep in the pool.</dd></dlentry>
+        <dlentry><dt>hotpools_image_name</dt><dd>The default value is <codeph>percona</codeph> . For HPE Helion OpenStack installations version
+            2.0 or greater, this value must not be changed.</dd></dlentry>
+        <dlentry><dt>hotpools_flavor_names</dt><dd> The default value is <codeph>m1.medium</codeph>.  This is the set of  flavor sizes to keep in
+            the pool. </dd></dlentry>
+        <dlentry><dt>project_id</dt><dd> Project id of the project where the service will be installed.  </dd></dlentry></dl></section>
     
   </body>
 </topic>
