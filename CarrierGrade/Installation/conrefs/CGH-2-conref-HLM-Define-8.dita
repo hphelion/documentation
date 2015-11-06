@@ -34,13 +34,14 @@ Password: cghelion</codeblock>
                             </p><p><image href="../../../media/CGH-2-login-hlm.png" width="400"
                             id="image_nnb_fyb_3t"/></p></li><li>Execute the following command to switch to the root user:<codeblock>sudo su -</codeblock></li><li>Change to the home directory.<codeblock>cd ~</codeblock></li><li>Execute the following command to provision and configure the HPE Helion OpenStack cloud.
                         <codeblock>hlm define -t &lt;template> &lt;cloudname&gt;</codeblock><p>Where::</p><ul>
-                        <li><codeph>&lt;template></codeph> is the installation template to use. The
-                            installation download contains these templates.<ul id="ul_gvk_dsp_xt">
-                                <li>For the Memphis deployment, use
-                                    <codeph>memphis</codeph>:<codeblock>hlm define -t &lt;template> &lt;cloudname&gt;</codeblock></li>
-                                <li>For the Sacramento deployment, use
-                                    <codeph>sacramento</codeph>:<codeblock>hlm define -t &lt;template> &lt;cloudname></codeblock></li>
-                            </ul></li>
+                        <li><codeph>&lt;template></codeph> is the installation template to use. Use
+                            the tempate appropriate for the deployment you are installing,
+                                either:<ul id="ul_gvk_dsp_xt">
+                                <li><codeph>denver</codeph></li>
+                                <li><codeph>tahoe</codeph></li>
+                                <li><codeph>memphis</codeph></li>
+                                <li><codeph>sacramento</codeph></li>
+                            </ul><p>The installation download contains these templates.</p></li>
                         <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to
                                 create.<p>The cloud name can be any combination of up to 63 digits,
                                 letters, and the <codeph>-</codeph> chracter:<ul id="ul_lz5_rbf_bt">

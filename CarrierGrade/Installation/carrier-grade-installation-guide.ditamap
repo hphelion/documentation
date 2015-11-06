@@ -61,8 +61,8 @@
                     navtitle="HPE Helion OpenStack Carrier Grade 2.0 Beta: Configuring LDAP 3"
                     locktitle="yes"/>
                 <topicref href="CGH-2-install-icinga-patch.dita" toc="no"/>
-                <topicref href="CGH-2-install-infoblox-patch.dita" toc="yes"/>
-                <topicref href="CGH-2-install-kenobi-patch.dita"/>
+                <topicref href="CGH-2-install-infoblox-patch.dita" toc="no"/>
+                <topicref href="CGH-2-install-kenobi-patch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-network-role-patch.dita" toc="no"/>
                 <topicref href="CGH-2-install-infoblox.dita" toc="no"/>
             </topichead>
