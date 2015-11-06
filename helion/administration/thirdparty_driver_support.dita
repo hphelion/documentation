@@ -4,7 +4,10 @@
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Third-party Driver Support</title>
   <body>
     <section id="about">
-      <p>This document provides an overview of deployer-side additions to an HLM deployment.</p>
+      <p>HPE Helion OpenStack 2.0 comes with a selection of built-in plugins and drivers that
+        services use. Depending on your environment you may have a need to add additional
+        third-party plugins or drivers. This document provides an overview of deployer-side
+        additions to a HPE Helion OpenStack deployment.</p>
     </section>
     <section id="venv_editing"><title>Deployer-side venv editing</title>
       <p>Additional driver code may be required in a venv: this Python driver code can be injected
