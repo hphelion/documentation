@@ -32,5 +32,31 @@ Password: cghelion</codeblock>
                     </p><p><b>Important:</b> After logging in with the default password, make sure
                         you change the password for the <codeph>cghelion</codeph> user.
                             </p><p><image href="../../../media/CGH-2-login-hlm.png" width="400"
-                            id="image_nnb_fyb_3t"/></p></li><li>Execute the following command to switch to the root user:<codeblock>sudo su -</codeblock></li><li>Change to the home directory.<codeblock>cd ~</codeblock></li><li>Execute the following command to provision and configure the HPE Helion OpenStack cloud. <codeblock>hlm define -t memphis &lt;cloudname&gt;</codeblock><p>Where::</p><ul><li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create.<p>The cloud name can be any combination of up to 63 digits, letters, and the <codeph>-</codeph> chracter:<ul id="ul_lz5_rbf_bt"><li><p>Cannot start or end with the <codeph>-</codeph> chracter;</p></li><li><p>Must be greater than 0 characters;</p></li><li><p>No restriction on the number of letters or digits (0 or more).</p></li></ul></p></li><li><codeph>memphis</codeph> is the name of the template to use. The installation kit includes a template called <codeph>memphis</codeph> designed to install HPE Helion OpenStack, specific to the KVM + ESX deployment.</li></ul><p>The command creates the <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory, which contains several JSON template files. </p></li></ol></section></oXygen:ComponentDefinition>
+                            id="image_nnb_fyb_3t"/></p></li><li>Execute the following command to switch to the root user:<codeblock>sudo su -</codeblock></li><li>Change to the home directory.<codeblock>cd ~</codeblock></li><li>Execute the following command to provision and configure the HPE Helion OpenStack cloud.
+                        <codeblock>hlm define -t &lt;template> &lt;cloudname&gt;</codeblock><p>Where::</p><ul>
+                        <li><codeph>&lt;template></codeph> is the installation template to use. The
+                            installation download contains these templates.<ul id="ul_gvk_dsp_xt">
+                                <li>For the Memphis deployment, use
+                                    <codeph>memphis</codeph>:<codeblock>hlm define -t &lt;template> &lt;cloudname&gt;</codeblock></li>
+                                <li>For the Sacramento deployment, use
+                                    <codeph>sacramento</codeph>:<codeblock>hlm define -t &lt;template> &lt;cloudname></codeblock></li>
+                            </ul></li>
+                        <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to
+                                create.<p>The cloud name can be any combination of up to 63 digits,
+                                letters, and the <codeph>-</codeph> chracter:<ul id="ul_lz5_rbf_bt">
+                                    <li>
+                                        <p>Cannot start or end with the <codeph>-</codeph>
+                                            chracter;</p>
+                                    </li>
+                                    <li>
+                                        <p>Must be greater than 0 characters;</p>
+                                    </li>
+                                    <li>
+                                        <p>No restriction on the number of letters or digits (0 or
+                                            more).</p>
+                                    </li>
+                                </ul></p></li>
+                    </ul><p>The command creates the
+                            <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory, which
+                        contains several JSON template files. </p></li></ol></section></oXygen:ComponentDefinition>
 </oXygen:ReusableComponent>
