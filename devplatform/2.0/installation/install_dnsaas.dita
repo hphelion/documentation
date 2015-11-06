@@ -18,27 +18,19 @@
         <li>"openrc" credentials file for the Target user and project
           <!--why this file?: the values don't seem to be used anywhere in the process?--></li>
         <li>The v2 CLI must be installed on all nodes due to client differences.</li>
-        <li>The SVC network correctly configured within HPE Helion OpenStack.
-        <note type="important">The DNSaaS installation requires that the svc network be named "SVC". 
-          User defined names for the svn network are currently not supported.
-        </note></li>
+        <li>The SVC network correctly configured within HPE Helion OpenStack. <note type="important"
+            >The DNSaaS installation requires that the svc network be named "SVC". User defined
+            names for the SVC network are currently not supported. </note></li>
         <li>A SSH public and private keypair.</li>
       </ul>
     </section>
 
     <section>
       <title>Download Files</title>
-      <ol>
-        <li>Navigate to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
-            format="html" scope="external">HPE Helion Download Network</xref> (HDN) and log in. If
-          necessary, create an account first.</li>
-        <li>Download the <xref scope="external" format="html"
-            href="http://pinafore.usa.hp.com/paas-2.0/dnsaas-2.0/QA1/dnsaas-2.0.0-b.1-20151005T183829Z.tgz"
-            >DNSaaS Deployer Tarball</xref>. (dnsaas-2.0.0-b.1-20151005T183829Z.tgz)</li>
-        <li>Download the <xref scope="external" format="html"
-            href="http://pinafore.usa.hp.com/paas-2.0/dnsaas-2.0/QA1/dnsaas-2.0.0-b.1_cloud-1.0.20151005T152959Z.qcow2"
-            >DNSaaS Cloud Image</xref>. (dnsaas-2.0.0-b.1_cloud-1.0.20151005T152959Z.qcow2)</li>
-      </ol>
+      <p>Navigate to the HPE Helion Download Network (HDN) and log in. 
+        If necessary, create an account first.  Select the required package and Download 
+        the DNSaaS Installer csu file to your local directory unzip the csu to extract 
+        the deployer and cloud image tar ball.</p>
     </section>
 
     <section id="PrerequisiteCredentials">
