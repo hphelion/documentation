@@ -19,8 +19,21 @@
         <li>Navigate to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
             format="html" scope="external">HPE Helion Download Network</xref> (HDN) and log in. If
           necessary, create an account first.</li>
-        <li><xref href="install_offline.dita#topic_w25_hqp_xt">Download the latest
-          </xref>Development Platform Installer package.</li>   <li>Ensure all OS_ variables are unset. To check this, run <codeblock>env | grep OS_ </codeblock>
+        <!--<li><xref href="install_offline.dita#topic_w25_hqp_xt">Download the latest
+          </xref>Development Platform Installer package.</li>-->
+        <li>For each service:
+          <ol> <li>Locate the service to download.</li>
+            <li>Click the blue Download button at the top right of the screen to begin the download. </li>
+            <li>The best option is to download directly to the HPE Helion OpenStack Deployer. If you
+              can not download directly to the HPE Helion OpenStack deployer, copy all the downloaded
+              packages to a USB stick or external hard drive and then copy the files onto the physical
+              machine hosting the HPE Helion OpenStack Deployer. Make sure there is enough space; the
+              file sizes can be significant.</li></ol></li>
+        <li>Follow the installation instructions provided for each service.<note>When installing
+          pre-downloaded files, make sure you run the installer from the same directory where the
+          installation files are. If the installer cannot find a file with the name you provided in
+          the local directory, it will attempt to download the files again. </note></li>
+        <li>Ensure all OS_ variables are unset. To check this, run <codeblock>env | grep OS_ </codeblock>
           and then <codeph>unset</codeph> any variables which appear in the list of results. </li>
         <li>SSH to the HPE Helion OpenStack Deployer. </li>
         <li>Create and source the Virtual Environment. In this example,
