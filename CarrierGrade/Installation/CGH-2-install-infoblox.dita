@@ -21,6 +21,7 @@
     <p>The Infoblox OpenStack Adapter (IOA) integrates with the OpenStack Neutron networking
       service, to provide IP Address Management (IPAM) networking services within OpenStack cloud
       platforms.Refer to the Infoblox documentation for operation and maintenance information. </p>
+    <p>You will need to purchase a license from Infoblox before installing.</p>
     <p>If you are not installing Infoblox, go to <xref
         href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon
         Interface</xref>.</p>
@@ -32,8 +33,8 @@
       <p>To deploy the template in ESX:<ol id="ol_ezn_ybt_xs">
           <li>Launch the VMware vCenter client.</li>
           <li>Click <b>File</b>, then <b>Deploy OVF Template</b>.</li>
-          <li>In the <b>Deploy OVF Template</b> wizard, browse to the location of the
-              <codeph>nios-7.0.2-269928-2015-02-10-18-03-07-160G-820.ova</codeph> file.</li>
+          <li>In the <b>Deploy OVF Template</b> wizard, browse to the location of the your template
+            file. You should have received a template file when you purchased Infoblox.</li>
           <li>Click <b>Next</b> and complete the wizard:</li>
           <li>Review the details for the installation and click <b>Finish</b>.</li>
         </ol></p>
@@ -45,7 +46,7 @@
         <li>Login to VM console from vCenter using the default credentials (admin/infoblox)</li>
         <li>Run command <b>set network</b> to configure IP address of vNIOS </li>
         <li>Run the <b>set temp_license</b> command to configure trial license (60 days). Choose
-          option 8 </li>
+          option 8  Or, obtain a permanent license from Infoblox.</li>
         <li>Point a browser to the default Infoblox URL at
             <codeph>https://10.200.51.240/ui/</codeph>.</li>
         <li>Log into the Infoblox portal using the default credentials admin/infoblox. <p>When you
