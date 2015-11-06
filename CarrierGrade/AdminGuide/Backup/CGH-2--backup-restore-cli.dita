@@ -53,7 +53,8 @@ But the CLI, REST API etc should all be same --></p>
       <ul id="ul_ivp_wr3_pt">
         <li><codeph>--version</codeph> Shows program's version number and exits. </li>
         <li><codeph>-v, --verbose</codeph> Increases verbosity of output. Can be repeated. </li>
-        <li><codeph>--log-file</codeph> LOG_FILE Specify a file to log output. Disabled by default. </li>
+        <li><codeph>--log-file LOG_FILE</codeph> Specifies a file to log output. Disabled by
+          default. </li>
         <li><codeph>-q, --quiet</codeph> Suppresses output except warnings and errors. </li>
         <li><codeph>-h, --help</codeph> Shows help message and exits. </li>
         <li><codeph>--debug</codeph> Shows tracebacks on errors.</li>
@@ -63,7 +64,7 @@ But the CLI, REST API etc should all be same --></p>
     <p>
       <ul id="ul_f45_xr3_pt">
         <li><codeph>backup</codeph> -- Triggers the backup service. </li>
-        <li><codeph>backuplog</codeph> -- Show backup logs. </li>
+        <li><codeph>backuplog</codeph> -- Shows backup logs. </li>
         <li><codeph>complete</codeph> -- Prints bash completion command </li>
         <li><codeph>config</codeph> -- Shows stored configuration for Attis service. </li>
         <li><codeph>help</codeph> -- Shows detailed help for another command. </li>
@@ -94,11 +95,11 @@ But the CLI, REST API etc should all be same --></p>
           config location: <codeph>/etc/attis/config_template</codeph>. </li>
         <li><codeph>--os-tenant-name TENANT_NAME</codeph> Specifies the project (tenant) name of the
           user used to execute the back up. </li>
-        <li><codeph>--os-username USERNAME</codeph> Specified the user name to execute the back up </li>
+        <li><codeph>--os-username USERNAME</codeph> Specifies the user name to execute the back up </li>
         <li><codeph>--os-password PASSWORD</codeph> Specifies the password of the user used to
           execute the back up </li>
         <li><codeph>--os-auth-url AUTH_URL</codeph> Specifies the Keystone authentication URL.</li>
-        <li><codeph>--backup_type BACKUP_TYPE</codeph> Backup type is full or incremental. default
+        <li><codeph>--backup_type BACKUP_TYPE</codeph> Backup type is full or incremental. Default
           is full backup.</li>
       </ul>
     </p>
@@ -112,14 +113,14 @@ But the CLI, REST API etc should all be same --></p>
         <li><codeph>--confid CONFIG_ID</codeph> -- Restores using configuration with id. Refer to
           attis config </li>
         <li><codeph>--config-path CONFIG_PATH</codeph> -- Restores using configuration from path.
-          Example config: location:<codeph>
-            /opt/stack/attis-api/etc/attis/config_template/managementappliancedbrestore.json</codeph>
+          Example config location:<codeph>
+            /opt/stack/attis-api/etc/attis/config_template/cloudcontrollerappliancedbrestore_scp.json</codeph>
         </li>
         <li><codeph>--backup-id BACKUP_ID</codeph> -- Specifies the ID of the backup to use with the
           restore. </li>
         <li><codeph>--os-tenant-name TENANT_NAME</codeph> -- Specifies the project (tenant) name of
           the user used to execute the restore. </li>
-        <li><codeph>--os-username USERNAME</codeph> -- Specified the user name to execute the
+        <li><codeph>--os-username USERNAME</codeph> -- Specifies the user name to execute the
           restore </li>
         <li><codeph>--os-password PASSWORD</codeph> -- Specifies the password of the user used to
           execute the restore </li>
@@ -136,7 +137,7 @@ But the CLI, REST API etc should all be same --></p>
       <ul id="ul_hnd_2y3_pt">
         <li><codeph>--confid CONFIG_ID</codeph> -- Restores Attis using configuration id. Refer to
           attis config </li>
-        <li><codeph>--report-id REPORT_ID</codeph> -- Run Recovery for the specified report ID </li>
+        <li><codeph>--report-id REPORT_ID</codeph> -- Runs recovery for the specified report ID </li>
         <li><codeph>--os-tenant-name TENANT_NAME</codeph> -- Specifies the project (tenant) name of
           the user used to execute the recover. </li>
         <li><codeph>--os-username USERNAME</codeph> -- Specified the user name to execute the
@@ -186,16 +187,16 @@ But the CLI, REST API etc should all be same --></p>
         <li><codeph>--os-tenant-name TENANT_NAME</codeph> -- Specifies the project (tenant) name of
           the user used to execute the restart. </li>
         <li><codeph>--os-username USERNAME</codeph> -- Specified the user name to execute the
-          recovery restart.</li>
+          restart.</li>
         <li><codeph>--os-password PASSWORD</codeph> -- Specifies the password of the user used to
-          execute the recovery restart.</li>
+          execute the restart.</li>
         <li><codeph>--os-auth-url AUTH_URL</codeph> -- Specifies the Keystone authentication
           URL.</li>
       </ul>
     </p>
     <p><b>Storage</b></p>
     <p>The following command shows stored storage configuration for the Attis service. Use 'attis
-      help storage' for more information. <b>storageuration</b></p>
+      help storage' for more information. </p>
     <p><b>Synopsis</b></p>
     <p>
       <codeblock>attis storage --update '{"parameter":"new value", "parameter":"new value"}' --id &lt;storage_id from the table></codeblock>
@@ -208,16 +209,15 @@ But the CLI, REST API etc should all be same --></p>
         <li><codeph>--type TYPE</codeph> Shows storage with specified type </li>
         <li><codeph>--update UPDATE</codeph> Updates storage parameters with new values. Arguments
           should be dictionary format, for example: <codeph>'{"storage_path":
-            "/tmp/mybackup"}'</codeph>
-          <b> Need quotes?</b></li>
-        <li><codeph>--use USE</codeph> Using the specified storage type. The default is
+            "/tmp/mybackup"}'</codeph></li>
+        <li><codeph>--use USE</codeph> Uses the specified storage type. The default is
             <codeph>SCP</codeph>. </li>
         <li><codeph>--os-tenant-name TENANT_NAME</codeph> -- Specifies the project (tenant) name of
           the user used to execute the storage command. </li>
-        <li><codeph>--os-username USERNAME</codeph> -- Specified the user name to execute the
-          recovery storage command.</li>
+        <li><codeph>--os-username USERNAME</codeph> -- Specifies the user name to execute the
+          storage command.</li>
         <li><codeph>--os-password PASSWORD</codeph> -- Specifies the password of the user used to
-          execute the recovery storage command.</li>
+          execute the storage command.</li>
         <li><codeph>--os-auth-url AUTH_URL</codeph> -- Specifies the Keystone authentication
           URL.</li>
       </ul>
@@ -300,21 +300,17 @@ But the CLI, REST API etc should all be same --></p>
             <entry>shows the latest backup log</entry>
           </row>
           <row>
-            <entry>attis backup --config-idCONFIG_ID</entry>
-            <entry>executes backup job with parameters fetched from config id CONF_ID</entry>
+            <entry>attis backup --config-id CONFIG_ID</entry>
+            <entry>executes backup job with parameters fetched from config id CONFIG_ID</entry>
           </row>
           <row>
-            <entry>attis backup --config-idCONFIG_ID --backup_type BACKUP_TYPE</entry>
+            <entry>attis backup --config-id CONFIG_ID --backup_type BACKUP_TYPE</entry>
             <entry>executes BACKUP_TYPE - incremental or full(default) . with parameters fetched
-              from confid CONF_ID</entry>
+              from confid CONFIG_ID</entry>
           </row>
           <row>
-            <entry>attis restore --config-idCONFIG_ID</entry>
-            <entry>executes restore job with parameters fetched from config id CONF_ID</entry>
-          </row>
-          <row>
-            <entry>attis restore --config-idCONFIG_ID --backup-id BACKUP_ID</entry>
-            <entry>submits a job to restore using config id CONF_ID and BACKUP_ID: it is backup_id
+            <entry>attis restore --config-id CONFIG_ID --backup-id BACKUP_ID</entry>
+            <entry>executes restore job using config id CONF_ID and BACKUP_ID, which is backup_id
               from "attis backuplog"</entry>
           </row>
           <row>
@@ -334,9 +330,9 @@ But the CLI, REST API etc should all be same --></p>
             <entry>generates re-sync report and returns a report ID</entry>
           </row>
           <row>
-            <entry>attis recover --config-id CONFIG_ID --report-id</entry>
-            <entry>executes resync job with parameters fetched from config id CONF_ID and report-id
-              which user authorized</entry>
+            <entry>attis recover --config-id CONFIG_ID --report-id REPORT_ID</entry>
+            <entry>executes resync job with parameters fetched from config id CONFIG_ID and
+              report-id REPORT_ID which user authorized</entry>
           </row>
           <row>
             <entry>attis restart --config-id CONFIG_ID</entry>
@@ -356,7 +352,7 @@ But the CLI, REST API etc should all be same --></p>
             <entry>shows the storage configuration with type STORAGE_TYPE</entry>
           </row>
           <row>
-            <entry>attis storage --id STORAGE_ID --update '{"tmp_folderpath":""}'</entry>
+            <entry>attis storage --id STORAGE_ID --update '{"storage_path":""}'</entry>
             <entry>updates parameters from the specified storage with new values (arguments should
               be dictionary format)</entry>
           </row>

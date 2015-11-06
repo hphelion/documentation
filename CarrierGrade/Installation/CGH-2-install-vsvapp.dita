@@ -64,9 +64,9 @@
                     </ul></li>
             </ul>
         </section>
-        <section><title>Importing Templates to Create Required VMs</title><p>Two VMs are required
-                for the DCN vSphere Solution. You can use ESX vCenter client to import template
-                files to create these VMs. You should have <xref
+        <section><title>Import Templates to Create Required VMs</title><p>Two VMs are required for
+                the DCN vSphere Solution. You can use ESX vCenter client to import template files to
+                create these VMs. You should have <xref
                     href="carrier-grade-install-prereqs.dita#topic7148/getinstall">downloaded these
                     template files during the prerequisites</xref>.</p><p>For instructions on how to
                 import OVA files, refer to the ESX documentation.</p>To deploy the vCenter
@@ -74,9 +74,9 @@
                 <li>Launch the vCenter client, at <codeph>https://&lt;vcenter
                         IP&gt;:9443/vsphere-client</codeph>.</li>
                 <li>Import the <codeph conref="carrier-grade-install-prereqs.dita#topic7148/vsd-ova"
-                    /> file into vCenter server.  Importing the OVA file creates the vCenter
+                    /> file into vCenter server. Importing the OVA file creates the vCenter
                     Integration Node VM. During the installation, you will select a network for the
-                    VM. Select the DVS Datapath (TUL) network.</li>
+                    VM. Select the DVS Datapath (TUL) network. Select the</li>
                 <li>Import the <codeph
                         conref="carrier-grade-install-prereqs.dita#topic7148/itoolbox1"/>template
                         file.<p>You should have <xref
@@ -86,7 +86,7 @@
                         network for the VM. Select the DVS Datapath (TUL) network.</p><p>For
                         instructions, refer to the ESX documentation.</p></li>
             </ol></section>
-        <section><title>Confiugre the vCenter Integration Node (Deployment Toolbox)</title>The HPE
+        <section><title>Configure the vCenter Integration Node (Deployment Toolbox)</title>The HPE
             DCN vSphere Solution requires that you install a dedicated virtual machine on an ESX
             server. This VM is called the vCenter Integration Node, and includes the vCenter
             Deployment Toolbox. You created the the vCenter Integration Node when you imported the

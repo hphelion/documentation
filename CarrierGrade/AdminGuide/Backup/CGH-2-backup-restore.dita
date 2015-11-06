@@ -27,8 +27,8 @@ But the CLI, REST API etc should all be same --></p>
     <p>HPE Helion OpenStack Carrier Grade includes a backup and restore application called Attis
       which you can use to backup and restore essential system files and components of the non-KVM
       cloud. Attis is automatically installed on each of the controller nodes in the non-KVM region.
-      Attis uses a command line interface. For more information, see <xref href="#topic10581"
-        format="dita">Attis Backup and Restore CLI</xref>.</p>
+      Attis uses a command line interface. For more information, see <xref
+        href="CGH-2--backup-restore-cli.dita#topic10581">Attis Backup and Restore CLI</xref>.</p>
     <p>The installation also includes the Percona XtraDB application, which takes care of
       synchronization of the data between nodes if one of the nodes goes down and comes back later.
       You can use Percona XtraDB to backup and restore the MySQL nodes that the HPE Helion OpenStack
@@ -65,6 +65,10 @@ But the CLI, REST API etc should all be same --></p>
             for KVM + ESX deployments</li>
           <li>All files under <codeph>/etc/default/openvswitch-switch/</codeph> on the VSD host for
             KVM + ESX deployments</li>
+          <li>bog.cfg and config.cfg files on the VSC switch.</li>
+          <li>KVM-region backups from the backup utility  </li>
+          <li>MySQL databases and Neutron, Nova, Ironic files under /etc on the baremetal controller
+            (Sacramento deployments only)</li>
         </ul>
       </p>
     </section>
@@ -73,7 +77,7 @@ But the CLI, REST API etc should all be same --></p>
       <ul>
         <li>when the HPE Helion OpenStack Carrier Grade installation is complete,</li>
         <li>when any change is made to the HPE Helion OpenStack Carrier Grade components, </li>
-        <li>after synching the files on the HLM VM. The files should be synced periodically using a
+        <li>after syncing the files on the HLM VM. The files should be synced periodically using a
           tool appropriate for your environment.</li>
       </ul>
     </section>
@@ -113,13 +117,13 @@ But the CLI, REST API etc should all be same --></p>
       <p>To back up an HPE Helion OpenStack Carrier Grade controller, use the following steps:</p>
       <ol>
         <li>Log in to the controller.</li>
-        <li> Authenticate using export
-          variables:<codeblock>export OS_TENANT_NAME=admin 
-export OS_USERNAME=admin 
-export OS_PASSWORD=1234 
-export OS_AUTH_URL=http://127.0.0.1:5000/v2.0</codeblock>Optionally
-          you can pass the authentication values when you execute a CLI command
-          <codeblock>--os-tenant-name "admin" --os-username "admin" --os-password "1234" --os-auth-url "http://192.168.56.103:35357/v2.0"</codeblock></li>
+        <li> Authenticate using the <codeph>source stackrc</codeph> command or pass the variables
+          manually:<codeblock>export OS_PASSWORD=&lt;your_os_password&gt;
+export OS_AUTH_URL=&lt;your_os_auth_url&gt;
+--os-tenant-name "admin" 
+--os-username "admin" 
+--os-password &lt;your_os_password&gt;
+--os-auth-url &lt;your_os_auth_url&gt;</codeblock></li>
         <li>Execute the following command to start the
             backup:<codeblock>attis backup --config-id CONFIG_ID --backup_type BACKUP_TYPE</codeblock><p>Where </p><p>
             <ul id="ul_xvq_bm3_pt">

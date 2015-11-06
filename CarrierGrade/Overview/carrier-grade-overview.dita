@@ -191,7 +191,7 @@
           href="../AdminGuide/Logging/CHG-2-logging-overview.dita#topic5937">Centralized
           Logging</xref>.</p>
     </section>
-    <section><title>Installation Options</title>HPE Helion OpenStack Carreir Grade has two baremetal
+    <section><title>Installation Options</title>HPE Helion OpenStack Carrier Grade has two baremetal
       installation options depending on your system configuration. It allows you to manage the KVM
       and VMware ESX<tm tmtype="reg"/> hypervisors and provision virtual machines.<p>You can find
         more information on the hypervisor options in the <xref
@@ -218,17 +218,17 @@
         our ESX integration, you can provision and manage an overcloud ESX cluster. VMWare vCenter
         Compute driver is used as a part of ESX integration. The VMware vCenter driver connects to
         ESX clusters in a vCenter through Compute proxy nodes.</p><p>Virtual networking between HP
-        Helion Carrier Grade and the ESX servers is handled by HPE Distributed Cloud Networking (DCN)
-        is a software-defined networking (SDN) solution that enhances data center (DC) network
+        Helion Carrier Grade and the ESX servers is handled by HPE Distributed Cloud Networking
+        (DCN) is a software-defined networking (SDN) solution that enhances data center (DC) network
         virtualization by automatically establishing connectivity between compute resources upon
         their creation. </p><p>The ESX integration uses the OVSvApp application to connect the
         vCenter networking to the Network Operations controller to manage workload networks.
         </p><p>You can also integrate HPE Storevirtual (VSA) or HPE StoreServ (3PAR) storage in the
-        KVM region. </p><p>You must install ESX, 3PAR or VSA before starting the HPE Helion OpenStack
-        installation and are independent of HPE Helion OpenStack Carrier Grade. </p><p><b>Ironic
-          Baremetal Region</b></p><p>HPE Helion OpenStack Carrier Grade leverages the OpenStack
-        Ironic service, which aims to provision bare metal machines instead of virtual machines. For
-        more information, see <xref
+        KVM region. </p><p>You must install ESX, 3PAR or VSA before starting the HPE Helion
+        OpenStack installation and are independent of HPE Helion OpenStack Carrier Grade.
+          </p><p><b>Ironic Baremetal Region</b></p><p>HPE Helion OpenStack Carrier Grade leverages
+        the OpenStack Ironic service, which aims to provision bare metal machines instead of virtual
+        machines. For more information, see <xref
           href="../ServicesOverviews/carrier-grade-services-ironic-overview.dita#topic1235">Ironic
           Service Overview</xref>.</p><p><b>Unbonded or Bonded NIC configuration</b></p><p>The HP
         Helion OpenStack Carrier Grade installation allows for network interface card bonding
