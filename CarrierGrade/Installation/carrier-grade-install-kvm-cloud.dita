@@ -192,16 +192,10 @@ system host-if-modify compute-1 bondvrs -nt data-vrs --ipv4-mode=pool --ipv4-poo
     </section>
     <section id="next-step">
       <title>Next Steps</title>
-      <p>
-        <ul id="ul_jvz_dqf_xt">
-          <li>If you are installing the <b>Denver</b>, <b>Tahoe</b>, or <b>Memphis</b> deployments,
-            go to <xref href="carrier-grade-install-post.dita#topic1107">Post-Installation
-              Tasks</xref>.</li>
-          <li>If you are installing the <b>Sacramento</b> deployment, go to <xref
-              href="carrier-grade-install-baremetal-cloud.dita#topic1107">Deploying the Baremetal
-              Region</xref>.</li>
-        </ul>
-      </p>
+      <p><xref href="carrier-grade-install-post.dita#topic1107">Post-Installation Tasks</xref>.</p>
+      <p>If you are installing the <b>Sacramento</b> deployment, also see <xref
+          href="../AdminGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita#topic1107"
+          >Provision Baremetal Nodes for the Sacramento Deployment</xref>.</p>
     </section>
   </body>
 </topic>
