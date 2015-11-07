@@ -29,13 +29,13 @@
                 <li>If you <xref href="install_offline.dita#topic_w25_hqp_xt">pre-downloaded</xref>
                     the installation file, run the following command to install
                     it:<codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
-openstack --os-cloud mycloud hdpi als install <i>&lt;filename></i></codeblock></li>
+openstack --os-cloud mycloud hdpi als install <i>&lt;filename></i></codeblock><note>When installing
+    pre-downloaded files, make sure you run the installer from the same directory where the
+    installation files are. If the installer cannot find a file with the name you provided in
+    the local directory, it will attempt to download the files again. </note></li>
                 <li>If you did not pre-download the installation file, run the following command to
                     download and install
-                    it:<codeblock>openstack --os-cloud mycloud hdpi als install wscatalog.2800</codeblock><note>When installing
-                        pre-downloaded files, make sure you run the installer from the same directory where the
-                        installation files are. If the installer cannot find a file with the name you provided in
-                        the local directory, it will attempt to download the files again. </note></li></ol></li>
+                    it:<codeblock>openstack --os-cloud mycloud hdpi als install wscatalog.2800</codeblock></li></ol></li>
             </ol><note>Downloading may take a significant amount of time; depending on network
                 traffic, it could take 20-90 minutes.</note>During installation, the output will
             appear similar to:

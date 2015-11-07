@@ -44,15 +44,19 @@ nova keypair-add --pub-key ~/.ssh/id_rsa.pub helionce-shared</pre></li>    <li>E
             <li>If you <xref href="install_offline.dita#topic_w25_hqp_xt">pre-downloaded</xref> the
               installation file, run the following command to install
               it:<codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
-openstack --os-cloud hce <!--<- is this supposed to be hce or mycloud or some kind of placeholder name?--> hdpi helionce install <i>&lt;filename></i></codeblock></li>
-            <li>If you did not pre-download the installation file, run the following command to
-              download and install it:<codeblock>openstack --os-cloud hce hdpi helionce install wscatalog.2801</codeblock>
+openstack --os-cloud hce <!--<- is this supposed to be hce or mycloud or some kind of placeholder name?--> hdpi helionce install <i>&lt;filename></i></codeblock>
               <note>When installing pre-downloaded files, make sure you run the installer from the
                 same directory where the installation files are. If the installer cannot find a file
                 with the name you provided in the local directory, it will attempt to download the
-                files again. </note><note>For detailed installation troubleshooting, turn on the
+                files again. </note></li>
+            <li>If you did not pre-download the installation file, run the following command to
+              download and install it:<codeblock>openstack --os-cloud hce hdpi helionce install wscatalog.2801</codeblock>
+              <note>For detailed installation troubleshooting, turn on the
                 debug option and run the command again:
-                <codeblock>openstack --debug --os-cloud hce hdpi helionce install <i>&lt;filename or catalog number></i></codeblock></note></li>
+                <codeblock>openstack --debug --os-cloud hce hdpi helionce install <i>&lt;filename or catalog number></i></codeblock></note>
+              <note>Downloading
+                may take a significant amount of time; depending on network traffic, it could take 20-90
+                minutes.</note></li>
           </ol></li>
             <li>Launch the
               instance.<codeblock>openstack hdpi helionce launch --os-cloud hce
