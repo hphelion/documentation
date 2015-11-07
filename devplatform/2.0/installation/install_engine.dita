@@ -36,7 +36,7 @@ nova keypair-add --pub-key ~/.ssh/id_rsa.pub helionce-shared</pre></li>    <li>E
           <li>List the available Code Engine versions to install:
               <codeblock>openstack hdpi list --os-cloud mycloud | grep codeengine  </codeblock>The
               output should look similar
-              to:<codeblock>messaging | wscatalog.#### <!--this number is incoming from Matty, the bits are still uploading as this is written-->| 1.0.0.0 | available</codeblock></li>
+              to:<codeblock>codeengine | wscatalog.#### <!--this number is incoming from Matty, the bits are still uploading as this is written-->| 1.0.0.0 | available</codeblock></li>
           <li>Select the most recent Code Engine version to install and view the details of the
             package:<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock></li></ol>
         </li>
