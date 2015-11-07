@@ -34,8 +34,8 @@ nova keypair-add --pub-key ~/.ssh/id_rsa.pub helionce-shared</pre></li>    <li>E
             <li>Source the Virtual Environment.
               <!-- <- is this necessary? check with Cue team--><codeblock>source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate</codeblock></li>
           <li>List the available Code Engine versions to install:
-              <codeblock>openstack hdpi list --os-cloud mycloud | grep ce  </codeblock>The output
-              should look similar
+              <codeblock>openstack hdpi list --os-cloud mycloud | grep codeengine  </codeblock>The
+              output should look similar
               to:<codeblock>messaging | wscatalog.#### <!--this number is incoming from Matty, the bits are still uploading as this is written-->| 1.0.0.0 | available</codeblock></li>
           <li>Select the most recent Code Engine version to install and view the details of the
             package:<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock></li></ol>
