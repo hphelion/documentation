@@ -6,11 +6,11 @@
 <prolog>
     <metadata>
         <othermeta name="layout" content="default"/>
-        <othermeta name="product-version" content="HPE Helion Openstack Carrier Grade 1.1"/>
+        <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 1.1"/>
         <othermeta name="role" content="Storage Administrator"/>
         <othermeta name="role" content="Storage Architect"/>
         <othermeta name="role" content="Michael B"/>
-        <othermeta name="product-version1" content="HPE Helion Openstack Carrier Grade 1.1"/>
+        <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 1.1"/>
     </metadata>
 </prolog>
 <body>
@@ -19,7 +19,7 @@
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
     <p>The process for installing the memphis and sacramento deployments requires several JSON file
-            that will be used when deploying the HPE Helion OpenStack.</p>
+            that will be used when deploying the HP Helion OpenStack.</p>
         <p><i>Return to installing the non-KVM region for the <xref
                     href="CGH-2-install-memphis.dita#topic10581/node">memphis</xref> or <xref
                     href="CGH-2-install-sacramento.dita#topic10581/node">sacramento</xref>

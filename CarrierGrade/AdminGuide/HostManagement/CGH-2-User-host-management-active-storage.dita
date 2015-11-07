@@ -5,8 +5,8 @@
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HPE Helion Openstack"/>
-<othermeta name="product-version" content="HPE Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="product-version" content="HP Helion OpenStack"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HPE Helion Openstack"/>
-<othermeta name="product-version2" content="HPE Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="product-version1" content="HP Helion OpenStack"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
 </metadata>
 </prolog>
 <body>
@@ -31,11 +31,11 @@
     <p>
       <b>Note:</b> This feature applies only to servers in regionone.</p>
     <!-- ===================== horizontal rule ===================== -->
-    <p>A HPE Helion OpenStack Carrier Grade system with a Ceph storage backend uses exactly two
+    <p>A HP Helion OpenStack Carrier Grade system with a Ceph storage backend uses exactly two
       storage nodes; you cannot add or remove storage nodes. However, you can add disks to a storage
       node to increase capacity, and you can replace a faulty host.</p>
     <p>
-      <b>Note:</b> The storage node pair in a HPE Helion OpenStack Carrier Grade system provides
+      <b>Note:</b> The storage node pair in a HP Helion OpenStack Carrier Grade system provides
       redundancy for High Availability. A balanced storage capacity is recommended, in which each
       host has sufficient independent resources to meet the operational requirements of the
       system.</p>
@@ -77,7 +77,7 @@
         <ul>
           <li>For disk replacement, no additional configuration changes are needed. </li>
           <li>For disk addition, you must create a new storage volume (OSD) before you can use the
-            new disk. For more information, see the HPE Helion OpenStack Carrier Grade Software
+            new disk. For more information, see the HP Helion OpenStack Carrier Grade Software
             Installation Guide: Creating Storage Volumes.</li>
           <li>For host replacement, you must <xref
               href="CGH-2-User-host-management.dita#topic11233/delete" type="section">delete the

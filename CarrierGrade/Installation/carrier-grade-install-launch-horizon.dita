@@ -7,11 +7,11 @@
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HPE Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HPE Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 1.1"/>
     </metadata>
   </prolog>
   <body>
@@ -19,7 +19,7 @@
       <!--UNDER REVISION-->
       <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.md-->
       <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
-    <p>After the HPE Helion Openstack cloud is installed, you can launch the Horizon interface to
+    <p>After the HP Helion OpenStack cloud is installed, you can launch the Horizon interface to
       verify that the installation was successful.</p>
     <section>
       <title>Import the Horizon browser certificate</title>
@@ -38,7 +38,7 @@
     <section>
       <title>Login to Horizon</title>
       <p>At this point, you can log into the Horizon interface, a web-interface you can use to
-        manage and maintain HPE Helion OpenStack Carrier Grade. Use the <xref
+        manage and maintain HP Helion OpenStack Carrier Grade. Use the <xref
           href="carrier-grade-technical-overview.dita#topic3485">CAN IP address</xref> to launch
         Horizon. You can locate the CAN IP address in the <codeph>/root/stackrc</codeph> file on any
         of the controller nodes in the non-KVM region.</p>
@@ -71,7 +71,7 @@
       <p>For <xref href="carrier-grade-install-overview.dita#topic1925/install-option"><b>the KVM
             deployment</b></xref>, proceed to the <xref href="#topic10581/next-step" format="dita"
           >Next Step</xref>.</p>
-      <p>In order to create VM instances in HPE Helion OpenStack Carrier Grade, you need to supply at
+      <p>In order to create VM instances in HP Helion OpenStack Carrier Grade, you need to supply at
         least on ISO image file, and import that file into Horizon. </p>
       <ol id="ol_yd1_ckj_1t">
         <li>Launch the Horizon dashboard.</li>

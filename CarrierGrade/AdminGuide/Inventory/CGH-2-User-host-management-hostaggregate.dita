@@ -5,8 +5,8 @@
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HPE Helion Openstack"/>
-<othermeta name="product-version" content="HPE Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="product-version" content="HP Helion OpenStack"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HPE Helion Openstack"/>
-<othermeta name="product-version2" content="HPE Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="product-version1" content="HP Helion OpenStack"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
 </metadata>
 </prolog>
 <body>
@@ -46,7 +46,7 @@
 the <codeph>remote_storage_hosts</codeph> host aggregate. This ensures that the instance is instantiated on a host that meets the requirements of the VM.</li>
 </ul>
 <p>The Nova scheduler does not always use host aggregates. For example, if a VM does not specify either local or remote storage, the Nova scheduler can instantiate it on any resource.</p>
-<p>Some host aggregates are managed automatically by HPE Helion OpenStack Carrier Grade.</p>
+<p>Some host aggregates are managed automatically by HP Helion OpenStack Carrier Grade.</p>
 <p>
 <b>Caution:</b> Do not make manual changes to host aggregates that are managed automatically.</p>
 <p>The <codeph>local_storage_hosts</codeph> and <codeph>remote_storage_hosts</codeph> memberships are updated automatically whenever a local volume group is added or removed on a compute host. For more information, see Configuring a Compute Host to Provide Local Storage.</p>

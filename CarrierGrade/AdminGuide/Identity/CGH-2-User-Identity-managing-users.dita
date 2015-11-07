@@ -9,7 +9,7 @@
 </prolog>
 <body>
     <p><!--UNDER REVISION--><!--./UseCases/TasksforAdmins/Users/1.1commercial.managing.users.md--><!--permalink: /helion/commercial/1.1/dashboard/managing/users/--></p>
-    <p>You can use HPE Helion OpenStack to manage users.</p>
+    <p>You can use HP Helion OpenStack to manage users.</p>
     <p>As an admin, you can use the dashboards to:</p>
     <p>You can manage access to projects by assigning users and setting primary projects. You can
       also control resources by managing operational quotas.</p>

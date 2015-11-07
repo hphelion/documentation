@@ -5,11 +5,11 @@
 <prolog>
     <metadata>
         <othermeta name="layout" content="default"/>
-        <othermeta name="product-version" content="HPE Helion Openstack Carrier Grade 1.1"/>
+        <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 1.1"/>
         <othermeta name="role" content="Storage Administrator"/>
         <othermeta name="role" content="Storage Architect"/>
         <othermeta name="role" content="Michael B"/>
-        <othermeta name="product-version1" content="HPE Helion Openstack Carrier Grade 1.1"/>
+        <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 1.1"/>
     </metadata>
 </prolog>
 <body>
@@ -17,7 +17,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/network/prepare/--></p>
-<p>Before installing HPE Helion OpenStack Carrier Grade, you are responsible for preparing the network for all installations.</p>
+<p>Before installing HP Helion OpenStack Carrier Grade, you are responsible for preparing the network for all installations.</p>
         <section>
             <title>VLAN ID Reference</title>
             <p>Make sure you have all VLAN IDs defined for the networks as defined in the <xref

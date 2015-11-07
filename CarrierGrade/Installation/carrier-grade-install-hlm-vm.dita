@@ -6,22 +6,19 @@
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
-    <othermeta name="product-version" content="HPE Helion Openstack Carrier Grade 1.1"/>
+    <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 1.1"/>
     <othermeta name="role" content="Storage Administrator"/>
     <othermeta name="role" content="Storage Architect"/>
     <othermeta name="role" content="Michael B"/>
-    <othermeta name="product-version1" content="HPE Helion Openstack Carrier Grade 1.1"/>
+    <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 1.1"/>
   </metadata>
 </prolog>
 <body>
-    <p>The first phase of the HPE Helion OpenStack Carrier Grade installation involves creating a
+    <p>The first phase of the HP Helion OpenStack Carrier Grade installation involves creating a
       bootstrapping the HPE Helion Lifecycle Management virtual machine and installation services. </p>
     <p>The installation uses Ansible playbooks, which are files that contain scripts that execute
       required installation processes.</p>
-    <p><b>Note:</b> If you are installing the <b>Sacramento</b> deployment, before deploying the HLM
-      VM, go to <xref href="carrier-grade-install-baremetal-cloud-prepare.dita#topic1107">Preparing
-        the Baremetal Region</xref>.</p>
-    <section><title>Update the Debain Repository Index File</title><p>HPE Helion OpenStack Carrier
+    <section><title>Update the Debain Repository Index File</title><p>HP Helion OpenStack Carrier
         Grade maintains a local Debian repository on the HLM host from where Debain packages are
         installed. Before starting the installation, make sure the Debian files you <xref
           href="carrier-grade-install-prereqs.dita#topic7148/getinstall">downloaded in the
@@ -128,7 +125,7 @@ upstream_ntp_servers:
         <li>Locate the IP address for the HLM VM in the
             <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the HLM host under
             <codeph>hlm_clmstaticip</codeph> field. You will use this IP address to SSH into the HLM
-          VM during the HPE Helion OpenStack Carrier Grade installation process.</li>
+          VM during the HP Helion OpenStack Carrier Grade installation process.</li>
       </ol>
     </section>
     <section>

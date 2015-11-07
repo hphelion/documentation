@@ -5,11 +5,11 @@
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
-    <othermeta name="product-version" content="HPE Helion Openstack Carrier Grade 1.1"/>
+    <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 1.1"/>
     <othermeta name="role" content="Storage Administrator"/>
     <othermeta name="role" content="Storage Architect"/>
     <othermeta name="role" content="Michael B"/>
-    <othermeta name="product-version1" content="HPE Helion Openstack Carrier Grade 1.1"/>
+    <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 1.1"/>
   </metadata>
 </prolog>
 <body>
@@ -18,10 +18,10 @@
  <!--./CarrierGrade/Installation/carrier-grade-install-NTP.md-->
  <!--permalink: /helion/openstack/carrier/install/ntp/--></p>
 <p>This page provides detailed information on <xref type="section" href="#topic4740/client"
-        >configuring HPE Helion OpenStack Carrier Grade servers</xref> for Network Time Protocol
+        >configuring HP Helion OpenStack Carrier Grade servers</xref> for Network Time Protocol
       (NTP) and <xref type="section" href="#topic4740/server">instlling an NTP server on the HLM
         host</xref>.</p>
-<p>HPE Helion OpenStack Carrier Grade requires that all servers point to the same NTP server. You can
+<p>HP Helion OpenStack Carrier Grade requires that all servers point to the same NTP server. You can
       use an external NTP server or configure the HLM host as a server.</p>
 <p>
   <b>Notes:</b>
@@ -98,7 +98,7 @@ ntp0001.use 123 10.22.170.17    2365    4   4   1d0 1000    384
 <section id="fudge"> <title>Fudging a stratum lower than 10</title>
 <p>NTP uses a hierarchical, semi-layered system of time sources. Each level of this hierarchy is termed a <i>stratum</i> and is assigned a number starting with zero at the top. The number represents the distance from the reference clock and is used to prevent cyclical dependencies in the hierarchy.</p>
 <p>The numerically lower the stratum value, the higher priority that clock has.</p>
-<p>HPE Helion OpenStack Carrier Grade uses stratum 10. Using a numerically high stratum ensures that
+<p>HP Helion OpenStack Carrier Grade uses stratum 10. Using a numerically high stratum ensures that
         this is only used if all external clocks fail. This will mitigate skew until external clocks
         return to service.</p>
 <p>If your NTP stratum is numerically less than 10, set up your host as the time source by fudging a stratum 10.</p>

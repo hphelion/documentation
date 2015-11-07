@@ -6,8 +6,8 @@
         <metadata>
             <othermeta name="layout" content="default"/>
              <othermeta name="product" content="carrier-grade"/>
-            <othermeta name="product-version1" content="HPE Helion OpenStack"/>
-            <othermeta name="product-version2" content="HPE Helion OpenStack Carrier Grade 2.0"/>
+            <othermeta name="product-version1" content="HP Helion OpenStack"/>
+            <othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
             <othermeta name="role1" content="Systems Administrator "/>
             <othermeta name="role2" content="Cloud Architect "/>
             <othermeta name="role3" content="Storage Administrator "/>
@@ -26,7 +26,7 @@
 <!-- permalink: /helion/openstack/carrier/admin/host/management/inventory/ --> 
  
 <!-- From the Titanium Server Admin Guide -->
-        <p>The HPE Helion OpenStack Carrier Grade cluster is represented internally by a unique
+        <p>The HP Helion OpenStack Carrier Grade cluster is represented internally by a unique
             object referred to as the <i>system</i> within this document. Information about this
             object is available from the <b>Systems</b> table on the <b>System Inventory</b> page. </p>
         <p><image href="../../../media/CGH-2-inventory-storage.png" width="600"
@@ -36,7 +36,7 @@
         <p>To edit the name of the system:<ol>
                 <li>
                     <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the
-                        HPE Helion OpenStack Horizon Dashboard</xref>.</li>
+                        HP Helion OpenStack Horizon Dashboard</xref>.</li>
                 <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702"
                         >Select the appropriate region and project</xref>.</li>
                 <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the

@@ -7,8 +7,8 @@
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HPE Helion Openstack"/>
-      <othermeta name="product-version" content="HPE Helion OpenStack Carrier Grade 2.0"/>
+      <othermeta name="product-version" content="HP Helion OpenStack"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
       <othermeta name="role" content="Systems Administrator"/>
       <othermeta name="role" content="Cloud Architect"/>
       <othermeta name="role" content="Storage Administrator"/>
@@ -18,15 +18,15 @@
       <othermeta name="role" content="Application Developer"/>
       <othermeta name="role" content="Network Engineer"/>
       <othermeta name="role" content="Paul F"/>
-      <othermeta name="product-version1" content="HPE Helion Openstack"/>
-      <othermeta name="product-version2" content="HPE Helion OpenStack Carrier Grade 2.0"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack"/>
+      <othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
     </metadata>
   </prolog>
   <body>
     <p><!--UNDER REVISION--><!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-controller-hostaggregate.md--><!--permalink: /helion/openstack/carrier/admin/host/management/hostaggregate/--></p>
     <!-- From the Titanium Server Admin Guide -->
-    <p>You can make changes to the HPE Helion OpenStack Carrier Grade's initial configuration at any
-      time after installation. The HPE Helion OpenStack Carrier Grade's initial configuration is
+    <p>You can make changes to the HP Helion OpenStack Carrier Grade's initial configuration at any
+      time after installation. The HP Helion OpenStack Carrier Grade's initial configuration is
       defined during software installation. After installation, you can make changes using the web
       administration interface or the CLI. For most types of changes, you can do this without
       interrupting system operations.</p>
@@ -50,7 +50,7 @@
             href="../FaultManagement/CGH-2-Userfault-mgmt-alarms.dita#topic2139">the Fault
             Management page</xref>.</li>
       </ul></p>
-    <p>During these changes, the HPE Helion OpenStack Carrier Grade can remain online and
+    <p>During these changes, the HP Helion OpenStack Carrier Grade can remain online and
       operational.</p>
     <p>You can make the following changes:<ul id="ul_ep5_dn2_jt">
         <li><xref href="CGH-2-User-system-config-OAM.dita#topic2139">Change the OAM IP

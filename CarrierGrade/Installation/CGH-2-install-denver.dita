@@ -7,11 +7,11 @@
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HPE Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HPE Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 1.1"/>
     </metadata>
   </prolog>
   <body>
@@ -21,7 +21,7 @@
       <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
     <p>After Helion lifecycle management is installed, the next task in installing the <xref
         href="carrier-grade-install-overview.dita#topic1925/install-option">KVM topology</xref>
-      is to deploy the HPE Helion Openstack cloud.</p>
+      is to deploy the HP Helion OpenStack cloud.</p>
     <p>If you are installing the <codeph>denver</codeph> template, which includes the KVM region and
       uses AVS networking, follow these instructions. If you are installing a different deployment,
       disregard these instructions. </p>
@@ -47,7 +47,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
     <section id="configure-a-json-file-for-installation">
       <title>Provision the new cloud</title>
       <ol id="ol_k5x_rdy_wt">
-        <li>Provision and configure your HPE Helion OpenStack
+        <li>Provision and configure your HP Helion OpenStack
             VM.<codeblock>hlm define -t denver &lt;cloudname&gt;</codeblock><p>Where:</p><ul
             id="ul_l5x_rdy_wt">
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create: <p>The cloud
@@ -75,7 +75,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
     <section>
       <title>Configure the node-provision.json file</title>
       <ol id="ol_m5x_rdy_wt">
-        <li>The HPE Helion OpenStack deployment requires a JSON file. Edit
+        <li>The HP Helion OpenStack deployment requires a JSON file. Edit
             <codeph>node-provision.json</codeph> file to change only the following fields:<table
             id="table_ycw_qrn_xs">
             <tgroup cols="2">
@@ -292,7 +292,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
     <section id="create-a-new-cloud-template-and-bring-the-cloud-nodes-up">
       <title>Provision the cloud nodes</title>
       <ol>
-        <li>Use the following script to start the provisioning of the HPE Helion OpenStack cloud:
+        <li>Use the following script to start the provisioning of the HP Helion OpenStack cloud:
             <codeblock>hlm provision &lt;cloudname&gt; </codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create</li>
           </ul><p>This script will PXE boot the nodes specified in

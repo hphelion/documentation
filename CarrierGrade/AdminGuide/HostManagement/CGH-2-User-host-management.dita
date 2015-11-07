@@ -5,8 +5,8 @@
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HPE Helion Openstack"/>
-<othermeta name="product-version" content="HPE Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="product-version" content="HP Helion OpenStack"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,15 +16,15 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HPE Helion Openstack"/>
-<othermeta name="product-version2" content="HPE Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="product-version1" content="HP Helion OpenStack"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
 </metadata>
 </prolog>
 <body>
     <p><!--UNDER REVISION--><!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.md--><!--permalink: /helion/openstack/carrier/admin/host/management/inventory/host/--></p>
     <!-- From the Titanium Server Admin Guide -->
     <p>The <b>Hosts</b> table on the <b>Inventory</b> panel provides an overview of the current
-      state of all hosts in the HPE Helion OpenStack Carrier Grade cluster. </p>
+      state of all hosts in the HP Helion OpenStack Carrier Grade cluster. </p>
     <image href="../../../media/CGH-2-inventory-host.png" width="600" id="image_dd3_c3g_ht"/>
     <p>From this table, you can obtain detailed information about the hosts, and execute maintenance
       operations.</p>
@@ -118,7 +118,7 @@
           <b>Availability State</b> - The availability state of the host. It can be in one of the
           following states: <ul>
             <li>
-              <b>Offline</b> - The host is known to the HPE Helion OpenStack Carrier Grade, but is
+              <b>Offline</b> - The host is known to the HP Helion OpenStack Carrier Grade, but is
               not reachable for maintenance purposes.</li>
             <li>
               <b>Online</b> - The host is reachable and ready to be unlocked.</li>
@@ -135,7 +135,7 @@
               on page 139 for details.</li>
             <li>
               <b>Failed</b> - A major fault has occurred and the host is no longer providing any
-              services. The HPE Helion OpenStack Carrier Grade maintenance system automatically tries
+              services. The HP Helion OpenStack Carrier Grade maintenance system automatically tries
               to recover hosts in this state.</li>
             <li>
               <b>Power-off</b> - The host is known to have been powered off by a previous
@@ -214,7 +214,7 @@ system host-power-off &lt;hostname&gt;</codeblock>
       is the name of the system. </section>
     <section id="reinstall">
       <title>Reinstall a Host</title>
-      <p>Forces a full re-installation of the HPE Helion OpenStack Carrier Grade software on the
+      <p>Forces a full re-installation of the HP Helion OpenStack Carrier Grade software on the
         host. The host's hard drive is erased, and the installation process is started afresh.</p>
       <p>To reinstall a host:</p>
       <ol>

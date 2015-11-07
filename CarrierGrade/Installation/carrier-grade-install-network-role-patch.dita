@@ -7,16 +7,16 @@
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HPE Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HPE Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 1.1"/>
     </metadata>
   </prolog>
   <body>
     <p>Before launching the <codeph>hlm generate</codeph> command, deploy the following patch to
-      update the nuage role required to deploy the HPE Helion OpenStack Cloud. </p>
+      update the nuage role required to deploy the HP Helion OpenStack Cloud. </p>
     <p>
       <ol id="ol_pn3_141_mt">
         <li>Download the <codeph>knc-nuage-role.patch</codeph> file.</li>

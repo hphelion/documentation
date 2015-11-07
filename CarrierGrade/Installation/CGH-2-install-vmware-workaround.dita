@@ -7,11 +7,11 @@
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HPE Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HPE Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 1.1"/>
     </metadata>
   </prolog>
   <body>
@@ -42,9 +42,9 @@
         >https://h20566.www2.hpe.com/hpsc/swd/public/detail?swItemId=MTX_b05d4c644fb742aa87cb5f5da1&amp;lang=en-us&amp;cc=us</xref>.
       This page also contains installation instructions.</p>
     <p><i>Return to installing the non-KVM region for the <xref
-          href="CGH-2-install-tahoe.dita#topic10581/icinga-patch">tahoe</xref>
-        <xref href="CGH-2-install-memphis.dita#topic10581/icinga-patch">memphis</xref> or <xref
-          href="CGH-2-install-sacramento.dita#topic10581/icinga-patch">sacramento</xref>
+          href="CGH-2-install-tahoe.dita#topic10581/vmware-patch">tahoe</xref>
+      <xref href="CGH-2-install-memphis.dita#topic10581/vmware-patch">memphis</xref> or <xref
+        href="CGH-2-install-sacramento.dita#topic10581/vmware-patch">sacramento</xref>
         template.</i></p>
   </body>
 </topic>

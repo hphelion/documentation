@@ -7,18 +7,18 @@
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HPE Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HPE Helion Openstack Carrier Grade 1.1"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 1.1"/>
     </metadata>
   </prolog>
   <body>
     <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Helion Lifecycle
         Management (HLM) VM is installed</xref>, the next task in installing the <xref
         href="carrier-grade-install-overview.dita#topic1925/install-option">KVM + ESX
-        deployment</xref> is to deploy the HPE Helion OpenStack cloud and install the HPE Distributed
+        deployment</xref> is to deploy the HP Helion OpenStack cloud and install the HPE Distributed
       Cloud Networking (DCN) components. You must install the VMware ESX<tm tmtype="reg"/> compute
       proxy. </p>
     <p>If you are installing the <codeph>sacramento</codeph> template, which includes the KVM
@@ -150,8 +150,6 @@ Saved the current configuration to mainboard device successfully.
     <section
       conref="conrefs/CGH-2-conref-generate-init-23.dita#ReusableComponent_q43_nbx_vt/hos-cloud"/>
     <section conref="conrefs/CGH-2-conref-hlm-deploy-24.dita#ReusableComponent_urx_xbx_vt/hdeploy"/>
-    <section
-      conref="conrefs/CGH-2-conref-node-icinga.dita#ReusableComponent_kxs_plx_wt/section_oxs_plx_wt" id="icinga-patch"/>
     
     <section
       conref="conrefs/CGH-2-conref-ldap-config-25.dita#ReusableComponent_y3j_1cx_vt/patch-after" id="ldap3"/>

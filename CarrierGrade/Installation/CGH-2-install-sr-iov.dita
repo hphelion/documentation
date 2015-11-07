@@ -7,11 +7,11 @@
     <prolog>
         <metadata>
             <othermeta name="layout" content="default"/>
-            <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
+            <othermeta name="product-version" content="HP Helion OpenStack Carreir Grade 1.1"/>
             <othermeta name="role" content="Storage Administrator"/>
             <othermeta name="role" content="Storage Architect"/>
             <othermeta name="role" content="Michael B"/>
-            <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
+            <othermeta name="product-version1" content="HP Helion OpenStack Carreir Grade 1.1"/>
         </metadata>
     </prolog>
     <body>
@@ -126,7 +126,7 @@ nova boot sriov-fixed --image wrl --flavor 2 --nic port-id=abd5b42a-e8f5-4297-91
                 NFV-D. If you do not use the Orchestrator must manually assign IP. </p>Also see the
                 <xref
                 href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/CGH-2-KVM-Admin.pdf"
-                format="pdf" scope="external">HPE Helion OpenStack® 2.0 Carrier Grade Beta:
+                format="pdf" scope="external">HP Helion OpenStack® 2.0 Carrier Grade Beta:
                 Administrator Guide</xref>.</section>
 
 

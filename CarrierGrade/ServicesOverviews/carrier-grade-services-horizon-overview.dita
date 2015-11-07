@@ -5,8 +5,8 @@
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HPE Helion Openstack"/>
-<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HP Helion OpenStack"/>
+<othermeta name="product-version" content="HP Helion OpenStack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Michael B, Nancy M"/>
-<othermeta name="product-version1" content="HPE Helion Openstack"/>
-<othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HP Helion OpenStack"/>
+<othermeta name="product-version2" content="HP Helion OpenStack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -25,15 +25,15 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.md-->
  <!--permalink: /helion/openstack/carrier/services/horizon/overview/--></p>
-<p>Horizon is the OpenStack service that serves as the basis for the HPE Helion OpenStack Carrier
+<p>Horizon is the OpenStack service that serves as the basis for the HP Helion OpenStack Carrier
       Grade web interface or <b>dashboard</b>.</p>
-<p>The dashboard provides a web-based user interface to HPE Helion OpenStack Carrier Grade services
+<p>The dashboard provides a web-based user interface to HP Helion OpenStack Carrier Grade services
       including Compute, Volume Operations, Networking, and Identity.</p>
 <p>The Horizon dashboard includes several tabs, including <b>Project</b>, <b>Admin</b>,
         <b>System</b> tabs. These tabs provide administrators and users with a graphical interface
       to access, provision and automate cloud-based resources.</p>
 <section id="for-more-information"> <title>For more information</title>
-<p>For information on using the dashboards, see <xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita" >HPE Helion OpenStack Dashboard</xref>.</p>
+<p>For information on using the dashboards, see <xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita" >HP Helion OpenStack Dashboard</xref>.</p>
 </section>
 <!-- 
   <section id="horizon-dashboard-examples"> <title>Horizon Dashboard Examples</title>

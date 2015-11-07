@@ -6,8 +6,8 @@
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HPE Helion Openstack"/>
-<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HP Helion OpenStack"/>
+<othermeta name="product-version" content="HP Helion OpenStack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -17,12 +17,12 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HPE Helion Openstack"/>
-<othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HP Helion OpenStack"/>
+<othermeta name="product-version2" content="HP Helion OpenStack 1.1"/>
 </metadata>
 </prolog>
 <body>
-<p>The HPE Helion OpenStack Carrier Grade Block Storage Volume Operations uses the OpenStack Cinder
+<p>The HP Helion OpenStack Carrier Grade Block Storage Volume Operations uses the OpenStack Cinder
       service to manage storage volumes, including creating volumes, creating volume snapshots, and
       configuring volumes.</p>
 <p>Once created, you can easily disconnect block storage volumes from one instance and attach them to another. You can also create snapshots of these volumes.</p>
@@ -47,7 +47,7 @@
 <!--
 ## How To's with the HPE Helion Volume Operations Service<a name="howto"></a>
  
-The following lists of tasks can be performed by a user or administrator through the [HPE Helion OpenStack Dashboard](/helion/openstack/1.1/dashboard/how-works/), the [API](http://developer.openstack.org/api-ref-blockstorage-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/cinderclient_commands.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/dashboard/how-works/), the [API](http://developer.openstack.org/api-ref-blockstorage-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/cinderclient_commands.html).
 
 Depending upon your user type, [user](#user) or [administrator](#admin), you can perform the following tasks.
 

@@ -522,17 +522,6 @@ The cloud &lt;cloudname> was generated successfully.
       </ol>
     </section>
     <section><!--<title>Applying the HLM Port Security Patch</title>This patch secures all ports on the HLM VM. The standard protocol ports will allow inbound access only and the only the cloud nodes will have inbound access to the other ports of the HLM VM.<p>For more information, see the README in the download or <xref href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port Security Patch</xref>. </p>--></section>
-    <section>
-      <title>Deploy the Icinga Patch</title>
-      <p>After launching the <codeph>hdeploy</codeph> command, deploy three patches to support the
-        monitoring of HPE Helion OpenStack. </p>
-      <p>For more information, see <xref href="CGH-2-install-icinga-patch.dita#topic10581">Deploy
-          the Icinga Patch</xref>.</p>
-    </section>
-    <section>
-      <title>Deploy the Infoblox patch</title>
-      <p>Deploy the Infoblox patch.</p>
-    </section>
     <section id="patch-after">
       <title>Configure LDAP to enable CLI and use Keystone v3</title>
       <p>By default, the HPE Helion OpenStack Carrier Grade services are configured to use Keystone

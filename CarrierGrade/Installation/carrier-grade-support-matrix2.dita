@@ -5,11 +5,11 @@
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
-    <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="product-version" content="HP Helion OpenStack Carreir Grade 1.1"/>
     <othermeta name="role" content="Storage Administrator"/>
     <othermeta name="role" content="Storage Architect"/>
     <othermeta name="role" content="Michael B"/>
-    <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="product-version1" content="HP Helion OpenStack Carreir Grade 1.1"/>
   </metadata>
 </prolog>
 <body>
@@ -17,7 +17,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-support-matrix.md-->
  <!--permalink: /helion/openstack/carrier/support-matrix/--></p>
-<p>To ensure the performance and stability of the HPE Helion OpenStack Carrier Grade, it is very
+<p>To ensure the performance and stability of the HP Helion OpenStack Carrier Grade, it is very
       important to meet the requirements and conform to the recommendations listed in this document. <ul>
         <li><xref href="#topic1773/hardware" format="dita">Supported Hardware</xref></li>
         <li><xref href="#topic1773/hardware-config" format="dita">Required Hardware
@@ -204,7 +204,7 @@
           </tgroup>
         </table>
       </p>
-      <!--<p>
+      <!--<p>  
         <b>HPE ProLiant Rack Servers</b>
       </p><ul>
         <li>DL360 Gen9</li>
@@ -234,7 +234,7 @@
   <section id="hardware-config">
       <title>Required Hardware Configurations </title>
       <p>The servers, selected from the <xref href="#topic1773/hardware" format="dita">Supported
-          Hardware</xref> lists, must be configured as follows for HPE Helion OpenStack Carrier
+          Hardware</xref> lists, must be configured as follows for HP Helion OpenStack Carrier
         Grade.</p>
       <p>The following table indicates the components required for each deployment type. If your
         deployment indicates Yes in a column, you must install that component. If a column is blank,
@@ -292,8 +292,8 @@
           format="dita">Required Specifications</xref> for supported hardware models.</p>
       <p>One (1) <b>HLM Host</b>. You must have a server with a 40GB Disk and 8,192 MB RAM for the
         HLM host. This server will also host the VSD VM.</p>
-      <p id="non-kvm-hos">Three (3) <b>HPE Helion OpenStack Controllers.</b> You must have three (3)
-        baremetal systems to install the HPE Helion OpenStack controllers that meet the following
+      <p id="non-kvm-hos">Three (3) <b>HP Helion OpenStack Controllers.</b> You must have three (3)
+        baremetal systems to install the HP Helion OpenStack controllers that meet the following
         requirements: </p>
           <ul id="ul_s1h_432_qs">
             <li>For systems with multiple NICs, only one NIC may be active or connected. </li>
@@ -365,16 +365,16 @@
 
   <section id="software"><title>Software Requirements</title><p><b>HLM Host</b>. The HLM host
         requires the Ubuntu Server 14.04.2 LTS operating system. </p>
-    <p><b>Non-KVM Region Controllers</b>. The servers should be baremetal. The HPE Helion OpenStack
+    <p><b>Non-KVM Region Controllers</b>. The servers should be baremetal. The HP Helion OpenStack
         Carrier Grade installation process installs the required software.</p>
-    <p><b>KVM Region Controllers</b>. The servers should be baremetal. The HPE Helion OpenStack
+    <p><b>KVM Region Controllers</b>. The servers should be baremetal. The HP Helion OpenStack
         Carrier Grade installation process installs the required software.</p>
-      <p><b>KVM Region Compute</b>. The servers should be baremetal. The HPE Helion OpenStack
+      <p><b>KVM Region Compute</b>. The servers should be baremetal. The HP Helion OpenStack
         Carrier Grade installation process installs the required software.</p>
     <p><b><i>VMware ESX</i></b>. if you are installing VMware, VMware vSphere must be fully
-        installed and operational before installing HPE Helion OpenStack Carrier Grade.</p>
+        installed and operational before installing HP Helion OpenStack Carrier Grade.</p>
       <p><b><i>HP DCN</i></b>. If you are installing HP Distributed Cloud Networking (DCN), DCN must
-        be fully installed and operational before installing HPE Helion OpenStack Carrier Grade. The
+        be fully installed and operational before installing HP Helion OpenStack Carrier Grade. The
         currently supported version is <b
           conref="carrier-grade-install-prereqs.dita#topic7148/dcn-version"/>.</p></section>
     <section>
@@ -392,10 +392,10 @@
     </section>
   
   <section id="guestOS"><title>Supported Guest Operating Systems</title> The following guest
-      operating systems (guest OSs) are supported for the HPE Helion OpenStack Carrier Grade
+      operating systems (guest OSs) are supported for the HP Helion OpenStack Carrier Grade
       servers. <p><b>HLM Host</b>. There are no supported guest OSs for the HLM host server.
           </p><p><b>Non-KVM Region Controllers</b>. There are no supported guest OSs for the servers
-        that host the HPE Helion OpenStack Controllers.</p><p><b>KVM Region Compute and
+        that host the HP Helion OpenStack Controllers.</p><p><b>KVM Region Compute and
           Controllers</b>. The following Guest OSs are supported for the servers in the KVM region
         for both cloud topologies: </p><ul id="ul_sty_hd2_qs">
         <li>

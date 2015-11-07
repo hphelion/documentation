@@ -6,8 +6,8 @@
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HPE Helion Openstack"/>
-<othermeta name="product-version" content="HPE Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="product-version" content="HP Helion OpenStack"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -17,8 +17,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Michael B"/>
-<othermeta name="product-version1" content="HPE Helion Openstack"/>
-<othermeta name="product-version2" content="HPE Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="product-version1" content="HP Helion OpenStack"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
 </metadata>
 </prolog>
 <body>
@@ -26,7 +26,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.md-->
  <!--permalink: /helion/openstack/carrier/dashboard/how-works/--></p>
-<p>The HPE Helion OpenStack Commercial dashboards are browser-based user interfaces that allow you to interact with the HPE Helion OpenStack Carrier Grade.</p>
+<p>The HP Helion OpenStack Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Carrier Grade.</p>
 <p>The interface, based on OpenStack Horizon, is grouped into tabs, including <xref type="section"
         href="#topic6108/DashProject">Project</xref>, <xref type="section"
         href="#topic6108/DashAdmin">Admin</xref> and <xref type="section"
