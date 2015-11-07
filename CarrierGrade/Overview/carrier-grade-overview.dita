@@ -15,20 +15,20 @@
 <body>
     <section>
       <!-- From QuickSpec Asawa, Manjari <manjari.asawa@hp.com> -->
-      <p><b>HPE Helion OpenStack Carrier Grade </b> is a carrier grade OpenStack solution plus
-        compute and network functions virtualization (NFV) offering that enables CSPs to deploy
-        applications on open source software platforms.  </p>
-      <p>Some key examples include the host operating system (for example, Linux), server
-        virtualization (KVM), network virtualization (vSwitch and SDN controllers), an installer and
-        cloud lifecycle management framework, fault and performance management, and
-        high-availability framework for the OpenStack control plane and the NFVI layer.</p>
+      <p><b>HP Helion OpenStack Carrier Grade </b> is a carrier grade OpenStack solution that
+        enables CSPs to deploy applications on open source software platforms. HP Helion OpenStack
+        Carrier Grade is based on OpenStack Kilo.</p>
+      <p>Some key aspects include Linux host operating systems, server virtualization (KVM), network
+        virtualization (vSwitch and SDN controllers), an installer and cloud lifecycle management
+        framework, fault and performance management, and high-availability framework for the
+        OpenStack control plane.</p>
       <p>HPE Helion OpenStack Carrier Grade is based on HPE Helion Openstack 1.1 but
         with significantly enhanced and optimized functionality, availability, scale and performance
         to meet the needs of NFV cloud deployments.</p>
       <p>Helion OpenStack Carrier Grade includes following key components:</p>
       <ul>
         <li>OpenStack—core services including Horizon, Nova, Neutron, Cinder, Glance, Swift,
-          Keystone, Ceilometer, and Heat. Other services will be added as needed in the future.</li>
+          Keystone, Ceilometer, and Heat.</li>
         <li>Compute node software package that includes: <ul>
             <li>Carrier-grade Linux (host operating system [OS] running on the compute nodes)</li>
             <li>Carrier-grade KVM (for virtualization of the compute node)</li>
