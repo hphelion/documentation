@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Attaching to Networks Using an
-    Ethernet Interface</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Attaching to Networks
+    Using an Ethernet Interface</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
@@ -60,7 +60,7 @@
                     carried on the interface.</p></li>
                 <li>pci-passthrough - Provides for a direct connection to physical interface
                   hardware and the attached provider network from a virtual machine. A single VM can
-                  directly access the physical interface. For more information, see the HPE Helion
+                  directly access the physical interface. For more information, see the HP Helion
                   OpenStack Carrier Grade Administration Guide: PCI Passthrough Ethernet
                   Devices.</li>
                 <li>data - Attaches the interface to a provider network. <p>You can add a data

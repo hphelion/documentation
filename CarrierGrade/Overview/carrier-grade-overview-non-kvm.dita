@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1495">
-<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Non-KVM Region Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Non-KVM Region Overview</title>
 <titlealts>
 <searchtitle>HP Helion OpenStack Carrier Grade: HP Helion OpenStack Overview</searchtitle>
 </titlealts>
@@ -18,13 +18,13 @@
 <body>
     <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of three logical
       or conceptual <i>regions</i>: Non-KVM, KVM, and baremetal. </p>
-    <p>The Non-KVM region contains the HPE Helion Lifecycle Management (HLM), to deploy and maintain
+    <p>The Non-KVM region contains the HP Helion Lifecycle Management (HLM), to deploy and maintain
       HP Helion OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade distribution of
       OpenStack.</p>
     <p><b>Note:</b> These regions do not function as OpenStack regions. </p>
 
-<section><title>HPE Helion Lifecycle Management</title>
-  <p>The Non-KVM environment includes a full installation of HPE Helion Lifecycle Management (HLM).
+<section><title>HP Helion Lifecycle Management</title>
+  <p>The Non-KVM environment includes a full installation of HP Helion Lifecycle Management (HLM).
     HLM is an application that is used to deploy HP Helion OpenStack Carrier
     Grade and can be used for ongoing operations and maintenance of the system.</p>
   <ul id="ul_bhj_clv_ls">
@@ -96,7 +96,7 @@
   <p>HP Helion OpenStack Carrier Grade is a carrier-grade distribution of OpenStack the leading open source cloud computing platform. This
       distribution, backed by HPE enables customers to more easily build, manage, and use
       open-source based hybrid cloud in a resilient, maintainable platform. HP Helion OpenStack enables cost-effective scalability of IT services and business
-      agility and, as part of the HPE Helion portfolio, it is backed by a wide range of related cloud
+      agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud
       products, services, and professional support.</p>
 <p>HP Helion OpenStack offers many services based on the different OpenStack projects to provide the functionality you need. Visit the <xref href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita" >HP Helion OpenStack Services Overview page</xref> for a complete list of services.</p>
     <!-- From http://wiki.hpcloud.net/display/core/Helion+Lifecycle+Management+Root -->

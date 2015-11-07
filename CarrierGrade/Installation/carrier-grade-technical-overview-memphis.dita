@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic3485">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Tahoe (KVM with DCN)
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Tahoe (KVM with DCN)
     Deployment Architecture Reference</title>
   <prolog>
     <metadata>
@@ -129,7 +129,7 @@
           href="carrier-grade-technical-overview.dita#topic3485/deploy-arch">Deployment
           Architecture diagram</xref> shows an illustration of these two zones. </p>
       <p><b>Non-KVM</b></p>
-      <p>The Non-KVM region contains the HPE Helion Lifecycle Management (HLM), to deploy and
+      <p>The Non-KVM region contains the HP Helion Lifecycle Management (HLM), to deploy and
         maintain HP Helion OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade
         distribution of OpenStack. The DCN components and servers also reside in the non-KVM zone. </p>
       <p><b>KVM</b></p>
@@ -137,7 +137,7 @@
         of a software platform, providing ultra-reliability and exceptional performance
         efficiencies for telecommunications networks. </p>
     </section>
-    <section id="dcn"><title>HPE Distributed Cloud Networking Components </title><p>The HPE Helion
+    <section id="dcn"><title>HPE Distributed Cloud Networking Components </title><p>The HP Helion
       OpenStack Carrier Grade KVM with DCN deployment uses HPE Distributed Cloud Networking to
       provide virtual networking within the cloud.</p><p>DCN must be deployed before starting the
         cloud deployment. Please refer to DCN documentation for details. </p>The main components in
@@ -151,7 +151,7 @@
           is a browser-based interface for management tasks on the VSD.</li>
         <li>HPE Virtual Services Controller (VSC): The VSC is a virtual machine application running
           all the control plane tasks, maintaining a full view of per-tenant network and service
-          topologies. The VSC should be installed on the KVM host system within the HPE Helion
+          topologies. The VSC should be installed on the KVM host system within the HP Helion
           OpenStack Carrier Grade cloud.</li>
         <li>HPE Distributed Virtual Routing and Switching (VRS): The HPE VRS is the software agent
           that runs in each Hypervisor (HV). The HPE VRS component is an enhanced Open vSwitch (OVS)

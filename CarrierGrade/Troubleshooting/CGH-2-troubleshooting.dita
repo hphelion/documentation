@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Troubleshooting</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Troubleshooting</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -83,7 +83,7 @@
     </section>
     <section><title>See Also</title>
       <p>For troubleshooting tips related to the HP Helion OpenStack cloud, see <xref
-          href="../../commercial/GA1/1.1commercial.troubleshooting.dita#topic2105">HPE Helion
+          href="../../commercial/GA1/1.1commercial.troubleshooting.dita#topic2105">HP Helion
           OpenStack 1.1: Troubleshooting</xref>.</p>
     </section>
   </body>

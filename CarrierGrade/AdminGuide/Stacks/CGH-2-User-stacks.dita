@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1631">
-<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Using Stacks</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Using Stacks</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -16,7 +16,7 @@
       called a service (also known as a stack).</p>
     <p>Service resources can be flavors, images, instances, tenant networks, volumes, security
       groups, users, floating IP addresses, or any other entities defined and configured in
-      templates. Most types of resources offered by BHPE Helion OpenStack Carrier Grade can be
+      templates. Most types of resources offered by HP Helion OpenStack Carrier Grade can be
       defined in templates and included in services.</p>
     <p>See the following topics on using stacks:</p>
     <ul id="ul_n5c_tnt_jt">

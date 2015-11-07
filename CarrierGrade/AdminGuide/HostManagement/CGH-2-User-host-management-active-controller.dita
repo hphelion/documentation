@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3238">
-<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Replacing Active Controller Nodes</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Replacing Active Controller Nodes</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -39,7 +39,7 @@ However, you can replace the primary or secondary disks, and you can replace fau
 <ol>
       <li>
         <p>
-          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HPE Helion
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
             OpenStack Horizon Dashboard</xref>.</p>
         <ul>
           <li>Use the IP address for the appropriate region where you want to make the change,

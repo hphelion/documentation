@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic2139">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Viewing Alarms and
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Viewing Alarms and
     Logs</title>
   <prolog>
     <metadata>
@@ -42,7 +42,7 @@
           </ul></li>
       </ol>
     </p>
-    <p>For more information on alarms, see the <i>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0
+    <p>For more information on alarms, see the <i>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0
         Carrier Grade: Administrator Guide</i>.</p>
     <section id="active"><title>Viewing Active Alarms</title>A list of all active or set alarms in the system.
           <p><image href="../../../media/CGH-2-fault-alarm-active.png" width="600"

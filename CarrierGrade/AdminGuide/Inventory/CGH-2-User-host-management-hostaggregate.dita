@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2139">
-<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Working with Host Aggregates</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Working with Host Aggregates</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -31,7 +31,7 @@
       /></p>
 <p>To view host aggregates, open the Host Aggregates page from the Admin menu.</p>
     <ol id="ol_l3x_xj5_ht">
-      <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HPE Helion
+      <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
           OpenStack Horizon Dashboard</xref>.</li>
       <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
           appropriate region and project</xref>.</li>

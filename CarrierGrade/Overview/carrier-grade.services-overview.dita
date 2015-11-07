@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4220">
-<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Services Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Services Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -76,7 +76,7 @@
           href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-compute-overview.dita"
           >Overview of the Compute service</xref>. </p><p><b>Networking Operations (Neutron)</b>.
         The Networking Operations service is a virtual networking service that leverages the
-        OpenStack Neutron service to provide network connectivity and addressing to HPE Helion
+        OpenStack Neutron service to provide network connectivity and addressing to HP Helion
         OpenStack Carrier Grade devices. </p><p>See <xref
           href="../ServicesOverviews/carrier-grade-services-networking-overview.dita#topic2677"
           >Overview of the Network Operations service</xref>.</p><p><b>Image Operations
@@ -103,7 +103,7 @@
         Identity Management service enables you to create and administer users and security groups,
         and control access to your cloud environment.</p><p>See <xref
           href="../ServicesOverviews/carrier-grade-services-identity-overview.dita#topic7556"
-          >Overview of the Identity Management service</xref>.</p><p><b>Ironic</b>. HPE Helion
+          >Overview of the Identity Management service</xref>.</p><p><b>Ironic</b>. HP Helion
         OpenStack leverages the OpenStack Ironic service during the installation for provisioning of
         the controller and KVM compute host in a baremetal deployment.</p><p>See <xref
           href="../ServicesOverviews/carrier-grade-services-ironic-overview.dita#topic1235">Overview of the Ironic Service</xref></p>
@@ -164,7 +164,7 @@ See [Overview of Sherpa Service](/helion/openstack/carrier/services/sherpa/overv
         <b>Horizon</b>. The Horizon service is the basis of the <xref
           href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita"
           >HP Helion OpenStack dashboards</xref> for creating and managing HP Helion OpenStack
-        Carrier Grade resources. The Horizon dashboard is developed by HPE for use with HPE Helion
+        Carrier Grade resources. The Horizon dashboard is developed by HPE for use with HP Helion
         OpenStack</p>
       <p>You can use the Horizon dashboard to view, allocate, and manage all virtual resources
         within a cloud. See <xref

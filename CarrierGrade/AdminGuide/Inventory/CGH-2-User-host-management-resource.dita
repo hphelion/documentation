@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8785">
-<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Resource Usage</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Resource Usage</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -136,7 +136,7 @@
           <li>Click <b>Report</b>.</li>
         </ol>
       </p></section>
-<section id="backend"><title>Pipeline (CSV Performance Monitoring Backend)</title><p>The HPE Helion
+<section id="backend"><title>Pipeline (CSV Performance Monitoring Backend)</title><p>The HP Helion
         OpenStack Carrier Grade provides access to performance measurement samples in the form of
         comma-separated values (CSV) files. They provide the following benefits:</p><ul>
         <li>off-line permanent storage of large samples history</li>

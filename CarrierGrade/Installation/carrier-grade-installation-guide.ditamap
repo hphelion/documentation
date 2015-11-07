@@ -1,11 +1,12 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en" linking="none" locktitle="no">
     
-    <title> HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Installation Guide</title>
+    <title> HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Installation
+        Guide</title>
     <topicmeta>
         <copyright>
             <copyryear year="2015"/>
-            <copyrholder>HPE Helion</copyrholder>
+            <copyrholder>HP Helion</copyrholder>
         </copyright>
         <prodinfo>
             <prodname >HP Helion OpenStack Carrier Grade</prodname>

@@ -5,10 +5,10 @@
   <topicmeta>
     <copyright>
       <copyryear year="2015"/>
-      <copyrholder>HPE Helion</copyrholder>
+      <copyrholder>HP Helion</copyrholder>
     </copyright>
     <prodinfo>
-      <prodname>HPE Helion</prodname>
+      <prodname>HP Helion</prodname>
       <vrmlist>
         <vrm version="4.1."/>
       </vrmlist>
@@ -126,7 +126,7 @@
     <topichead navtitle=" License Files">
       <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"
         navtitle="Open Source and Third-Party Software License Agreement" locktitle="yes"/>
-      <topicref href="CarrierGrade/carrier-grade-eula.dita" toc="no"
+      <topicref href="CarrierGrade/carrier-grade-eula.dita" toc="yes"
         navtitle="Software License Terms" locktitle="yes"/>
     </topichead>
     <topichead navtitle="Files in map not TOC" toc="no">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1773">
-<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Support Matrix</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Support Matrix</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
@@ -64,7 +64,7 @@
     </section>
   <section>
       <title id="specs"><b>Required Specifications</b></title>
-      <p>The following table lists the specifications for the servers that will host HLM, HPE Helion
+      <p>The following table lists the specifications for the servers that will host HLM, HP Helion
         OpenStack, and the KVM region. </p>
       <p><b>Note:</b>
         <i><b>For the KVM and ESX cloud</b></i>, consult the DCN and ESX documentation for the

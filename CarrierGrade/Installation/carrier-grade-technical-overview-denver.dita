@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic3485">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta:
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta:
     Denver (KVM-only) Deployment Architecture Reference</title>
   <prolog>
     <metadata>
@@ -148,7 +148,7 @@
           href="carrier-grade-technical-overview.dita#topic3485/deploy-arch">Deployment Architecture
           diagram</xref> shows an illustration of these two zones. </p>
       <p><b>Non-KVM</b></p>
-      <p>The Non-KVM region contains the HPE Helion Lifecycle Management (HLM), to deploy and
+      <p>The Non-KVM region contains the HP Helion Lifecycle Management (HLM), to deploy and
         maintain HP Helion OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade
         distribution of OpenStack.   </p>
       <p><b>KVM</b></p>

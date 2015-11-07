@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4010">
-<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Overview</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
@@ -42,7 +42,7 @@
         <li>Guest software development kit (SDK) for inclusion in the guest OS of the VNF for
           performance acceleration and improving the HA framework above and beyond standard
           VIMs</li>
-        <li>HPE Helion Lifecycle Manager (HLM)—cloud installer and lifecycle manager</li>
+        <li>HP Helion Lifecycle Manager (HLM)—cloud installer and lifecycle manager</li>
       </ul>
     </section>
     <section id="focus-areas-for-hp-helion-openstack-carrier-grade">
@@ -224,7 +224,7 @@
         their creation. </p><p>The ESX integration uses the OVSvApp application to connect the
         vCenter networking to the Network Operations controller to manage workload networks.
         </p><p>You can also integrate HPE Storevirtual (VSA) or HPE StoreServ (3PAR) storage in the
-        KVM region. </p><p>You must install ESX, 3PAR or VSA before starting the HPE Helion
+        KVM region. </p><p>You must install ESX, 3PAR or VSA before starting the HP Helion
         OpenStack installation and are independent of HP Helion OpenStack Carrier Grade.
           </p><p><b>Ironic Baremetal Region</b></p><p>HP Helion OpenStack Carrier Grade leverages
         the OpenStack Ironic service, which aims to provision bare metal machines instead of virtual
@@ -238,7 +238,7 @@
  <section id="distributed-cloud-networking-dcn">
 <p>HP Helion OpenStack offers many services based on the different OpenStack projects to provide the
         functionality you need. Visit the <xref
-          href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita">HPE Helion
+          href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita">HP Helion
           OpenStack Services Overview page</xref> for a complete list of services.</p>
 <p>
   <xref type="section" href="#topic4010"> Return to Top </xref>

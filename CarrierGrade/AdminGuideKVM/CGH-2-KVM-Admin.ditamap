@@ -3,7 +3,7 @@
 <map xml:lang="en" linking="none" locktitle="no">
     <!-- Modification History
  -->
-    <title>HPE Helion OpenStack Carrier Grade 2.0 Beta: Administration Guide
+    <title>HP Helion OpenStack Carrier Grade 2.0 Beta: Administration Guide
             (On-Line)
     </title>
     <topicmeta>
@@ -21,7 +21,7 @@
     <topichead navtitle="KVM Region Administrator Guide (On-Line)">
         <topicref href="jow1404333560080.xml">
             <topicmeta>
-                <navtitle>HPE Helion OpenStack Carrier Grade Overview</navtitle>
+                <navtitle>HP Helion OpenStack Carrier Grade Overview</navtitle>
             </topicmeta>
             <topicref href="jow1404333563170.xml"/>
             <topicref href="jow1404333563834.xml"/>

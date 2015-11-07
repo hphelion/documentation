@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2677">
-<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Networking Service (Neutron)
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Networking Service (Neutron)
     Overview</title>
 <prolog>
 <metadata>
@@ -33,7 +33,7 @@
 <section id="UI"> <title>Using the dashboards</title>
 <p>You can use <xref
           href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita"
-          >HPE Helion Dashboard</xref>  to work with the Networking service.</p>
+          >HP Helion Dashboard</xref>  to work with the Networking service.</p>
 </section>
 <section id="API"> <title>Using the API</title>
 <p>You can use a low-level, raw REST API to access the Networking service. See the <xref href="http://developer.openstack.org/api-ref-networking-v2.html" scope="external" format="html" >OpenStack Networking API v2.0 Reference</xref>.</p>

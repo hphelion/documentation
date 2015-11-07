@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2237">
-<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Compute Service (Nova)
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Compute Service (Nova)
     Overview</title>
 <prolog>
 <metadata>
@@ -40,7 +40,7 @@ The HP Helion OpenStack compute service can be configured to [write metadata to 
       <title>Using the dashboards</title>
       <p>You can use the <xref
           href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita"
-          >HPE Helion Dashboard</xref> to work with the Compute service.</p>
+          >HP Helion Dashboard</xref> to work with the Compute service.</p>
     </section>
     <section id="API">
       <title>Using the API</title>

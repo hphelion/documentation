@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Configuring the Backup
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Configuring the Backup
     and Restore Location </title>
   <prolog>
     <metadata>
@@ -25,7 +25,7 @@ But the CLI, REST API etc should all be same --></p>
       controller nodes in the non-KVM region. Attis uses a command line interface. For more
       information, see <xref href="CGH-2--backup-restore-cli.dita#topic10581">Backup and Restore
         CLI</xref>.</p>
-    <p>Before you start your first backup, you must use the attis CLI to specify where HPE Helion
+    <p>Before you start your first backup, you must use the attis CLI to specify where HP Helion
       OpenStack Carrier Grade will store backup files. </p>
     <p>You can store backup files using: </p>
     <p>

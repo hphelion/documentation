@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic7148">
-        <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Installation
+        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Installation
                 Prerequisites</title>
         <titlealts>
                 <searchtitle>HP Helion OpenStack Installation Prerequisites</searchtitle>
@@ -457,9 +457,9 @@ StrictHostKeyChecking no </codeblock></li>
                                         </ul><ul id="ul_whv_rcf_bt">
                                                 <li>Internal HPE partners will follow DCN Pre-Sales
                                                   Process:<ol id="ol_xhv_rcf_bt">
-                                                  <li>Internal HPE partners can contact HPE Helion
+                                                  <li>Internal HPE partners can contact HP Helion
                                                   OpenStack Carrier Grade team for help.</li>
-                                                  <li>Internal HPE partners can refer to HPE Helion
+                                                  <li>Internal HPE partners can refer to HP Helion
                                                   OpenStack Carrier Grade Engineering Wiki under the
                                                   <i>HOS CG 1.1 GA: ESX (non-KVM region) DCN package
                                                   details</i> section.</li>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2606">
-<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Block Storage Volume Operations
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Block Storage Volume Operations
     (Cinder) Overview</title>
 <prolog>
 <metadata>
@@ -32,7 +32,7 @@
 <section id="UI"> <title>Using the dashboards</title>
 <p>You can use the <xref
           href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita"
-          >HPE Helion Dashboard</xref> to work with the Volume Operations service.</p>
+          >HP Helion Dashboard</xref> to work with the Volume Operations service.</p>
 </section>
 <section id="API"> <title>Using the API</title>
 <p>You can use a low-level, raw REST API for access to the Volume Operations service. See the <xref
@@ -45,7 +45,7 @@
           scope="external" format="html">OpenStack Command Line Interface Reference</xref>.</p>
   <p>For more information on installing the command-line interface for interacting with services, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >installing the OpenStack command-line clients</xref>.</p>
 <!--
-## How To's with the HPE Helion Volume Operations Service<a name="howto"></a>
+## How To's with the HP Helion Volume Operations Service<a name="howto"></a>
  
 The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/dashboard/how-works/), the [API](http://developer.openstack.org/api-ref-blockstorage-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/cinderclient_commands.html).
 

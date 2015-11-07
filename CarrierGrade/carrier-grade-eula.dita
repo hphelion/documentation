@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic15959">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1 Carrier Grade: Software License Terms</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 Carrier Grade: Software License Terms</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -14,5 +14,8 @@
     </metadata>
   </prolog>
   <body>
+    <p>The HP Helion OpenStack Carrier Grade end user license agreement is available as a <xref
+        href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_Carrier_Grade_EULA%20_072915.pdf"
+        format="pdf" scope="external">PDF download</xref>. </p>
   </body>
 </topic>

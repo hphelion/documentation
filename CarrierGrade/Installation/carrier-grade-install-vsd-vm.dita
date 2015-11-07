@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic7646">
-    <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Bringing Up Single VSD VM
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Bringing Up Single VSD VM
         Manually</title>
     <prolog>
         <metadata>
@@ -22,7 +22,7 @@
                 <li>Log into the HLM host.</li>
                 <li>Copy the VSD qcow image, named <codeph>VSD-3.2.4_134-hp.qcow2</codeph>, to the
                         <codeph>var/lib/libvirt/images</codeph> directory.<p><b>Note:</b> The
-                        vsd.xml is a sample created for internal HPE Helion Carrier Grade development
+                        vsd.xml is a sample created for internal HP Helion Carrier Grade development
                         quality assurance. For a production environment, refer to the HPE DCN
                         documentation to deploy and configure the VSD in HA mode.</p></li>
                 <li>Execute the following

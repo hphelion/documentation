@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107">
-<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying the KVM Region</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying the KVM Region</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
@@ -38,11 +38,11 @@ ifconfig eth0 up</codeblock></li>
     <section>
       <p><b>Install the KVM region license</b></p>
       <p>The servers in the KVM region require a specific license file to be installed.
-        <!--You must download this file from the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">HPE Helion Download Network(HDN)</xref>. --></p>
+        <!--You must download this file from the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">HP Helion Download Network(HDN)</xref>. --></p>
       <p>Before installing the patch, make sure the KVM region controller-0 was properly installed
         by the HP Helion OpenStack Carrier Grade installation. </p>
       <ol id="ol_mdt_dd3_ys">
-        <!--<li>In a browser, navigate to <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">HPE Helion Download Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs"><li>Click <b>Sign In</b> to log in using your account. </li><li>After signing in, click the <b>Downloads</b> link in the menu on the left side of the page.</li><li>On the <b>Downloads</b> page, locate HP Helion OpenStack Carrier Grade and click <b>Download</b>.</li></ul></li><li>Download and extract the <b id="productShow_apcodeph">Helion Carrier Grade 2.0 Windriver License patch signature file</b> and the associated signature and checksum files. For information on performing verifications of the download, see the Prerequistues. </li>-->
+        <!--<li>In a browser, navigate to <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">HP Helion Download Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs"><li>Click <b>Sign In</b> to log in using your account. </li><li>After signing in, click the <b>Downloads</b> link in the menu on the left side of the page.</li><li>On the <b>Downloads</b> page, locate HP Helion OpenStack Carrier Grade and click <b>Download</b>.</li></ul></li><li>Download and extract the <b id="productShow_apcodeph">Helion Carrier Grade 2.0 Windriver License patch signature file</b> and the associated signature and checksum files. For information on performing verifications of the download, see the Prerequistues. </li>-->
         <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the
             <codeph>controller-0</codeph>. <ul id="ul_mpn_hnr_bt">
             <li><codeph>license.lic</codeph></li>
