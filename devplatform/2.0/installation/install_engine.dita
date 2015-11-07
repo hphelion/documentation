@@ -58,14 +58,13 @@ openstack --os-cloud hce <!--<- is this supposed to be hce or mycloud or some ki
               instance.<codeblock>openstack hdpi helionce launch --os-cloud hce
 deactivate</codeblock></li>
         <li>List all available machines. You should see an instance named
-            <codeph>helionce_deployer</codeph>. Make a note of its IP address.  This is also a quick
+            <codeph>helionce_deployer</codeph>. Make a note of its IP address. This is also a quick
           test to verify that the HPE Helion Code Engine VM is
-          running.<codeblock>source ./service.osrc
-nova list</codeblock></li>
+          running.<codeblock>openstack --os-cloud hce server list</codeblock></li>
         <li>Log in to and initialize the VM. <note>Ignore the TASK/msg message that appears in the
             output. Do not run the playbook at this time; that playbook must be run later in the
             installation
-            process.</note><codeblock>ssh -i helionce-shared stack@&lt;IP ADDRESS FROM PREVIOUS STEP> 
+            process.</note><codeblock>ssh -i ~/.ssh/id_rsa.pub stack@&lt;IP address> 
 ...
 stack@helionce-deployer:~$ ls
 helionce-1.0.0
@@ -73,7 +72,7 @@ helionce-1.0.0
 stack@helionce-deployer:~$ cd helionce-1.0.0/
 stack@helionce-deployer:~/helionce-1.0.0$ ./helionce-init.bash
 ...</codeblock><note>This
-            process can take a few minutes.  When the initialization has completed, ensure both
+            process can take a few minutes. When the initialization has completed, ensure both
               <codeph>unreachable</codeph> and <codeph>failed</codeph> are zero (0). This indicates
             success. If not, check the output for error messages, address the errors, and try
             running the command again.</note></li>
@@ -160,7 +159,7 @@ http_proxy: "http://&lt;https proxy hostname>:&lt;https proxy port>/"</codeblock
             success. If not, check the output for error messages, address the errors, add the Debug
             option (-vvv) to the command line, and run the playbook again.</note><ol>
             <li> Run the Pre-Installation Playbook
-              <codeblock>stack@helionce-deployer:~/helion$ source ~/service.osrc
+              <codeblock>stack@helionce-deployer:~/helion$ source ~/user.osrc
 stack@helionce-deployer:~/helion$ cd hos/ansible/
 stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost hlm-pre-install.yml</codeblock>Successful
               output will look similar to the
