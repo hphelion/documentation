@@ -18,7 +18,7 @@
     </section>
     <section><title>Installation</title>
       <ol>
-            <li>SSH into the HP Helion OpenStack deployer. (This is the same location where the HDPI
+            <li>SSH into the HP Helion OpenStack Deployer. (This is the same location where the HDPI
           has been installed.)</li>
         <li>Source the Virtual
           Environment.<codeblock>stack@hlm:~$ source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate </codeblock></li>
@@ -35,7 +35,10 @@
 openstack --os-cloud mycloud hdpi messaging install <i>&lt;filename></i></codeblock></li>
             <li>If you did not pre-download the installation file, run the following command to
               download and install
-              it:<codeblock>openstack --os-cloud mycloud hdpi messaging install wscatalog.2796</codeblock></li>
+              it:<codeblock>openstack --os-cloud mycloud hdpi messaging install wscatalog.2796</codeblock><note>When installing
+                pre-downloaded files, make sure you run the installer from the same directory where the
+                installation files are. If the installer cannot find a file with the name you provided in
+                the local directory, it will attempt to download the files again. </note></li>
           </ol></li>
         
         <li>Launch the Messaging Deployer VM using the

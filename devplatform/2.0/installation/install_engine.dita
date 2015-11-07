@@ -24,7 +24,7 @@
     
     <section><title>Installation</title>
       <ol>
-        <li>SSH into the HP Helion OpenStack deployer. (This is the same location where the HDPI has
+        <li>SSH into the HP Helion OpenStack Deployer. (This is the same location where the HDPI has
           been installed.)</li>
         <li>Upload an SSH keypair to Nova to be used by the HPE Helion Code Engine
           Deployer.<pre>source ./service.osrc
@@ -34,27 +34,29 @@ nova keypair-add --pub-key ~/.ssh/id_rsa.pub helionce-shared</pre></li>    <li>E
             <li>Source the Virtual Environment.
               <!-- <- is this necessary? check with Cue team--><codeblock>source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate</codeblock></li>
           <li>List the available Code Engine versions to install:
-            <codeblock>openstack hdpi list --os-cloud mycloud | grep ce  </codeblock>The output
-            should look similar
-            to:<codeblock>messaging | wscatalog.#### <!--this number is incoming from Matty, the bits are still uploading as this is written-->| 2.0.0.0 | available</codeblock></li>
+              <codeblock>openstack hdpi list --os-cloud mycloud | grep ce  </codeblock>The output
+              should look similar
+              to:<codeblock>messaging | wscatalog.#### <!--this number is incoming from Matty, the bits are still uploading as this is written-->| 1.0.0.0 | available</codeblock></li>
           <li>Select the most recent Code Engine version to install and view the details of the
-            package:<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock></li>
-            <li>Install the service. <ol>
-                <li>If you <xref href="install_offline.dita#topic_w25_hqp_xt">pre-downloaded</xref>
-                  the installation file, run the following command to install
-                  it:<codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
+            package:<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock></li></ol>
+        </li>
+            <li>Install the Code Engine service installation files. <ol>
+            <li>If you <xref href="install_offline.dita#topic_w25_hqp_xt">pre-downloaded</xref> the
+              installation file, run the following command to install
+              it:<codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
 openstack --os-cloud hce <!--<- is this supposed to be hce or mycloud or some kind of placeholder name?--> hdpi helionce install <i>&lt;filename></i></codeblock></li>
-                <li>If you did not pre-download the installation file, run the following command to
-                  download and install
-                    it:<codeblock>openstack --os-cloud hce hdpi helionce install wscatalog.2801</codeblock><note>For
-                    detailed installation troubleshooting, turn on the debug option and run the
-                    command again:
-                    <codeblock>openstack --debug --os-cloud hce hdpi helionce install <i>&lt;filename or catalog number></i></codeblock></note></li>
-              </ol></li>
+            <li>If you did not pre-download the installation file, run the following command to
+              download and install it:<codeblock>openstack --os-cloud hce hdpi helionce install wscatalog.2801</codeblock>
+              <note>When installing pre-downloaded files, make sure you run the installer from the
+                same directory where the installation files are. If the installer cannot find a file
+                with the name you provided in the local directory, it will attempt to download the
+                files again. </note><note>For detailed installation troubleshooting, turn on the
+                debug option and run the command again:
+                <codeblock>openstack --debug --os-cloud hce hdpi helionce install <i>&lt;filename or catalog number></i></codeblock></note></li>
+          </ol></li>
             <li>Launch the
               instance.<codeblock>openstack hdpi helionce launch --os-cloud hce
 deactivate</codeblock></li>
-          </ol></li>
         <li>List all available machines. You should see an instance named
             <codeph>helionce_deployer</codeph>. Make a note of its IP address.  This is also a quick
           test to verify that the HPE Helion Code Engine VM is

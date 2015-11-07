@@ -14,7 +14,7 @@
       </ul>
     </section>
       <section><title>Install ALS</title><ol>
-          <li>SSH into the HP Helion OpenStack deployer. (This is the same location where the HDPI has
+          <li>SSH into the HP Helion OpenStack Deployer. (This is the same location where the HDPI has
               been installed.)</li>
                 <li> Source the Virtual
                     Environment.<pre>source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate </pre></li>
@@ -32,7 +32,10 @@
 openstack --os-cloud mycloud hdpi als install <i>&lt;filename></i></codeblock></li>
                 <li>If you did not pre-download the installation file, run the following command to
                     download and install
-                    it:<codeblock>openstack --os-cloud mycloud hdpi als install wscatalog.2800</codeblock></li></ol></li>
+                    it:<codeblock>openstack --os-cloud mycloud hdpi als install wscatalog.2800</codeblock><note>When installing
+                        pre-downloaded files, make sure you run the installer from the same directory where the
+                        installation files are. If the installer cannot find a file with the name you provided in
+                        the local directory, it will attempt to download the files again. </note></li></ol></li>
             </ol><note>Downloading may take a significant amount of time; depending on network
                 traffic, it could take 20-90 minutes.</note>During installation, the output will
             appear similar to:

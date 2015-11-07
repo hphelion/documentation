@@ -21,7 +21,7 @@
 <section id="dbaas_installation">
       <title>Install the Database Service </title>
       <ol id="ol_xct_5dz_nt">
-        <li>SSH into the HP Helion OpenStack deployer. (This is the same location where the HDPI has
+        <li>SSH into the HP Helion OpenStack Deployer. (This is the same location where the HDPI has
           been installed.)</li>
         <li>Source the Virtual
           Environment.<codeblock>stack@hlm:~$ source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate </codeblock></li>
@@ -38,7 +38,10 @@ openstack --os-cloud mycloud hdpi database install <i>&lt;filename></i></codeblo
         <li>If you did not pre-download the file,
             run:<codeblock>openstack --os-cloud mycloud hdpi database install wscatalog.####</codeblock></li></ol><note>Downloading
             may take a significant amount of time; depending on network traffic, it could take 20-90
-            minutes.</note>During installation, this command will generate output similar to the
+            minutes.</note><note>When installing
+              pre-downloaded files, make sure you run the installer from the same directory where the
+              installation files are. If the installer cannot find a file with the name you provided in
+              the local directory, it will attempt to download the files again. </note>During installation, this command will generate output similar to the
           following:
           <codeblock>Database is (downloaded)
 Database is already (available)

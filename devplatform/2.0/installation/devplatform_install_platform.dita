@@ -20,8 +20,10 @@
           format="html" scope="external">HPE Helion Download Network</xref> (HDN) and  create an account.</li>
         <li>SSH to the HPE Helion OpenStack Deployer. </li>
        
-        <li>To download the HP Helion Development Platform installation package, enter the following, using your credentials for the HPE Helion Download Network:
-        <codeblock>wget https://<i>&lt;username&gt;</i>:<i>&lt;password&gt;@</i>https://mp.hpwsportal.com/#/Catalog%20Items/items/a9.06bbf6f5-fd08-4c85-91bb-e409d0f1c0e1/1.0.0/details</codeblock></li>
+        <li>To download the HP Helion Development Platform installation package, enter the
+          following, using your credentials for the HPE Helion Download Network: <codeblock>wget https://<i>&lt;username&gt;</i>:<i>&lt;password&gt;@</i>https://mp.hpwsportal.com/#/Catalog%20Items/items/a9.06bbf6f5-fd08-4c85-91bb-e409d0f1c0e1/1.0.0/details</codeblock>
+          <note>If your deployment node does not have Internet access, you can download this file to
+            another computer and move it to your Deployer node using a USB drive.</note></li>
         
         
         <li>Create and source the Virtual Environment. In this example,
