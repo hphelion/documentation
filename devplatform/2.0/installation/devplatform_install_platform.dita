@@ -16,15 +16,17 @@
     <section id="pre-installing-the-hp-helion-development-platform">
       <title>Install the HPE Helion Development Platform Installation Client</title>
       <ol>
-        <li>If you have not already done so, navigate to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
-          format="html" scope="external">HPE Helion Download Network</xref> (HDN) and  create an account.</li>
+        <li>Using your preferred web browser, navigate to <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
+          format="html" scope="external">HPE Helion Download Network</xref> (HDN) and  create an account if you haven't done so already.</li>
+        <li>Select the HPE Helion Development Platform download package:
+        <ol>
+          <li>Click the blue Download button at the top right of the screen to begin the download.
+            <image placement="break" href="../../../media/hdp_download.png"></image></li>
+          <li>The best option is to download directly to the HPE Helion OpenStack Deployer. If you can not download directly to the HPE Helion OpenStack deployer,
+            copy all the downloaded packages to a USB stick or external hard drive and then copy the files onto the physical machine hosting the HPE Helion OpenStack 
+            Deployer. Make sure there is enough space; the file sizes can be significant.</li>
+        </ol></li>
         <li>SSH to the HPE Helion OpenStack Deployer. </li>
-       
-        <li>To download the HP Helion Development Platform installation package, enter the
-          following, using your credentials for the HPE Helion Download Network: <codeblock>wget https://<i>&lt;username&gt;</i>:<i>&lt;password&gt;@</i>https://mp.hpwsportal.com/#/Catalog%20Items/items/a9.06bbf6f5-fd08-4c85-91bb-e409d0f1c0e1/1.0.0/details</codeblock>
-          <note>If your deployment node does not have Internet access, you can download this file to
-            another computer and move it to your Deployer node using a USB drive.</note></li>
-        
         
         <li>Create and source the Virtual Environment. In this example,
             <codeph>&lt;dpi-venv&gt;.tgz</codeph> is the name of the installer. This process creates
