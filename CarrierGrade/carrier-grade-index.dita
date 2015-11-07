@@ -15,7 +15,8 @@
 <body>
 <!-- From HP/WR OpenStack Summit press release  http://www.windriver.com/news/press/pr.html?ID=13261-->
 <p>HP Helion OpenStack Carrier Grade is a carrier-grade distribution of OpenStack the leading open source cloud computing platform.</p>
-<p>HP Helion OpenStack Carrier Grade enables carrier grade network functions virtualization (NFV) capabilities to provide communications service providers (CSPs) with an open source based cloud platform that meets their demanding reliability requirements and accelerate their transition to NFV deployments.</p>
+<p>HP Helion OpenStack Carrier Grade provide communications service providers (CSPs) with an open
+      source based cloud platform that meets their demanding reliability requirements.</p>
 <section id="installing-hp-openstack-carrier-grade"> <title>Installing HPE OpenStack Carrier Grade</title>
 <p>Use the following links to begin installing HPE OpenStack Carrier Grade:</p>
 <ul>
