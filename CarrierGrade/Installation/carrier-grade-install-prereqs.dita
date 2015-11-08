@@ -263,13 +263,13 @@ StrictHostKeyChecking no </codeblock></li>
                                 packages are located using FTP at <xref
                                         href="http://16.78.71.141/uploads/hcg-2-0-beta/hcg-2-0-beta.tar"
                                         format="html" scope="external">HP Helion OpenStack Carrier
-                                        Grade V2.0 Alpha Build 22</xref>. HPE internal network
-                                access is
+                                        Grade V2.0 Beta</xref>. HPE internal network access is
                                 required.<codeblock><xref href="http://16.78.71.141/uploads/hcg-2-0-beta/hcg-2-0-beta.tar" format="html" scope="external">http://16.78.71.141/uploads/hcg-2-0-beta/hcg-2-0-beta.tar</xref></codeblock></p>
-                        <p>The FTP download, <codeph>build22.tar</codeph>, contains all of the files
-                                you will need to install and configure HP Helion OpenStack Carrier
-                                Grade. This is a large file that might take a significant amount of
-                                time to download, depending upon the speed of your network.</p>
+                        <p>The FTP download, <codeph>hcg-2-0-beta.tar</codeph>, contains all of the
+                                files you will need to install and configure HP Helion OpenStack
+                                Carrier Grade. This is a large file that might take a significant
+                                amount of time to download, depending upon the speed of your
+                                network.</p>
                         <p><b>Note:</b> For KVM + ESX Cloud Deployments, you will need to obtain the
                                 and install the VMware ESX<tm tmtype="reg"/> and HPE Distributed
                                 Cloud Networking (DCN) software through those entities. </p>
@@ -281,7 +281,7 @@ StrictHostKeyChecking no </codeblock></li>
                                 patches:</p>
                         <p>
                                 <ul id="ul_zcx_pzy_st">
-                                        <li>cg-hlm.qcow2</li>
+                                        <li>cg-hlm.qcow2 </li>
                                         <li>cg-hlm.qcow2.md5</li>
                                         <li>cg-hos-misc.tar.gz</li>
                                         <li>cg-hos-misc.tar.gz.md5</li>
