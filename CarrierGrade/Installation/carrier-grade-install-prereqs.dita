@@ -261,11 +261,11 @@ StrictHostKeyChecking no </codeblock></li>
                         <p>Before you begin, you must download the required HP Helion OpenStack
                                 installation package(s). For the 10/16 POC release, the installation
                                 packages are located using FTP at <xref
-                                        href="http://16.78.71.141/uploads/hcg-2-0-alpha/build22.tar"
+                                        href="http://16.78.71.141/uploads/hcg-2-0-beta/hcg-2-0-beta.tar"
                                         format="html" scope="external">HP Helion OpenStack Carrier
                                         Grade V2.0 Alpha Build 22</xref>. HPE internal network
                                 access is
-                                required.<codeblock>http://16.78.71.141/uploads/hcg-2-0-alpha/build22.tar</codeblock></p>
+                                required.<codeblock><xref href="http://16.78.71.141/uploads/hcg-2-0-beta/hcg-2-0-beta.tar" format="html" scope="external">http://16.78.71.141/uploads/hcg-2-0-beta/hcg-2-0-beta.tar</xref></codeblock></p>
                         <p>The FTP download, <codeph>build22.tar</codeph>, contains all of the files
                                 you will need to install and configure HP Helion OpenStack Carrier
                                 Grade. This is a large file that might take a significant amount of
@@ -274,10 +274,11 @@ StrictHostKeyChecking no </codeblock></li>
                                 and install the VMware ESX<tm tmtype="reg"/> and HPE Distributed
                                 Cloud Networking (DCN) software through those entities. </p>
                         <p><b>HP Helion OpenStack Carrier Grade installation files</b></p>
-                        <p>The <codeph>build22.tar</codeph> file contains the installation files for
-                                HP Helion OpenStack Carrier Grade in the
-                                        <codeph>build22/HLM/</codeph> directory. The installation
-                                instructions indicate when and how to deploy the patches:</p>
+                        <p>The <codeph>hcg-2-0-beta.tar</codeph> file contains the installation
+                                files for HP Helion OpenStack Carrier Grade in the
+                                        <codeph>/uploads/hcg-2-0-beta</codeph> directory. The
+                                installation instructions indicate when and how to deploy the
+                                patches:</p>
                         <p>
                                 <ul id="ul_zcx_pzy_st">
                                         <li>cg-hlm.qcow2</li>
