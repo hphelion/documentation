@@ -193,10 +193,10 @@
           <row>
             <entry><filepath>api</filepath><draft-comment author="michaelk"
               >cloud_controller_ng</draft-comment></entry>
-            <entry>The Cloud Controller provides the primary Cloud Foundry API to the Cloud Froundry
+            <entry>The Cloud Controller provides the primary Cloud Foundry API to the Cloud Foundry
               command-line interface (CLI). The Cloud Controller uses a database to keep tables for
               organizations, spaces, applications, services, service instances, user roles, so on.
-              Typically. multiple instances of Cloud Controller are load balanced.</entry>
+              Typically, multiple instances of Cloud Controller are load balanced.</entry>
           </row>
           <row>
             <entry><filepath>api_worker</filepath><draft-comment author="michaelk"
