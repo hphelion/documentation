@@ -5,14 +5,14 @@
   <body>
     <p> </p>
     <p>HPE Helion OpenStack through its centralized logging infrastructure (Logstash,) can be
-      configured to send events and logs to an HP ArcSight endpoint. The HP ArcSight connector can,
-      in turn, be configured to receive logs and events in real time from this Logstash
-      configuration inside an HP Helion OpenStack environment.</p>
+      configured to send events and logs to an HPE ArcSight endpoint. The HPE ArcSight connector
+      can, in turn, be configured to receive logs and events in real time from this Logstash
+      configuration inside an HPE Helion OpenStack environment.</p>
     <p> </p>
     <p>HPE Helion OpenStack, through its centralized logging infrastructure (Logstash), can be
       configured to send events and logs to an HPE ArcSight endpoint (connector or ESM or Logger).
       Integration with HPE ArcSight provides the ability to monitor, analyze, and correlate HPE
-      Helion OpenStack logs through HP ArcSight Logger and ESM and supports continuous security
+      Helion OpenStack logs through HPE ArcSight Logger and ESM and supports continuous security
       monitoring of the entire HPE Helion OpenStack infrastructure.The HPE ArcSight connector in
       turn, can be configured to receive logs and events in real time from this Logstash
       configuration inside an HPE Helion OpenStack environment, further converting it to a Common
@@ -31,6 +31,6 @@
     <p>Technical details of this integration along with a step-by-step tutorial are available in the
       whitepaper entitled <xref
         href="http://www8.hp.com/h20195/V2/GetDocument.aspx?docname=4AA5-8025ENW&amp;cc=us&amp;lc=en"
-        format="html" scope="external">Monitoring HP Helion OpenStack with HP ArcSight</xref>.</p>
+        format="html" scope="external">Monitoring HPE Helion OpenStack with HP ArcSight</xref>.</p>
   </body>
 </topic>
