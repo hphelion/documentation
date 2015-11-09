@@ -11,8 +11,8 @@
         credentials for both the Administrator user (<codeph>admin</codeph>) and your Demo user
           (<codeph>demo</codeph>) which you will use to perform many other actions on your
         cloud.</p>
-      <p>If you are using the Entry-scale KVM with VSA model and used the default naming scheme
-        given in the example configuration files, you can use these commands on your
+      <p>For example, if you are using the Entry-scale KVM with VSA model and used the default
+        naming scheme given in the example configuration files, you can use these commands on your
         lifecycle-manager node to GREP for your user credentials:</p>
       <p><b>Administrator</b></p>
       <codeblock>grep keystone_admin_pwd entry-scale-kvm-vsa-control-plane-1</codeblock>
