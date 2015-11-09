@@ -328,7 +328,7 @@
             <topicref href="1.3/helion/user/client/client_index.dita" locktitle="yes"
               navtitle="ALS Client Installation"/>
             <topicref href="1.3/helion/user/reference/client-ref.dita" locktitle="yes"
-              navtitle="ALS Client Command Reference" otherprops="test">
+              navtitle="ALS Client Command Reference" otherprops="command-line">
               <topicref href="1.3/helion/user/reference/client-ref-administration.dita"
                 locktitle="yes" navtitle="Administration"/>
               <topicref href="1.3/helion/user/reference/client-ref-applications.dita"
