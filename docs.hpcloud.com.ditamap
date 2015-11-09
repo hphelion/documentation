@@ -15,10 +15,12 @@
     </prodinfo>
   </topicmeta>
   <!-- Index -->
+  <topicref href="helion/upgradefrom2.0.dita"/>
   <topicref href="home.dita"/>
   <!-- HoS 2.0 -->
   <topicref href="helion/index.dita">
     <topicref href="helion/upgrade_from_beta2.dita"/>
+    
     <topicref href="helion/releasenotes.dita"/>
     <topicref href="helion/supportedconfigs.dita"/>
     <topicref href="helion/hardware.dita"/>
