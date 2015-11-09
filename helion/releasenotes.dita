@@ -313,14 +313,36 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
       </p>
       <p>If the command output reports that the metrics are being reported then the system is fine
         and the alarm can be ignored.</p>
-    <!--
-      <p><b>The Threshold Engine is not deployed properly if you use a single Control Plane node</b></p>
-      <p>If you are using a cloud model that has a single control plane (controller) node, as specified by having the <codeph>member-count</codeph> value in your <codeph>control_plane.yml</codeph> set to <codeph>1</codeph> for your control-planes, then the Storm supervisor processes will not get properly installed. This causes the threshold engine to not run.</p>
+      <p><b>The Threshold Engine is not deployed properly if you use a single Control Plane
+        node</b></p>
+      <p>If you are using a cloud model that has a single control plane (controller) node, as
+        specified by having the <codeph>member-count</codeph> value in your
+          <codeph>control_plane.yml</codeph> set to <codeph>1</codeph> for your control-planes, then
+        the Storm supervisor processes will not get properly installed. This causes the threshold
+        engine to not run.</p>
       <p>The workaround is as follows:</p>
       <ol>
-        <li>Ed</li>
+        <li>Make the following change to the
+            <codeph>~/helion/hos/ansible/roles/storm/vars/nodes.yml</codeph> file. <p>Change the
+              <codeph>storm_supervisor_enabled</codeph> line below:</p>
+          <p>From:
+            <codeblock>storm_supervisor_enabled: "{% if thresh_node_count | int == 1 or host.vars.member_id != thresh_host_list[0].member_id %}True{% else %}False{% endif %}"</codeblock></p>
+          <p>To: <codeblock>storm_supervisor_enabled: True</codeblock></p>
+        </li>
+        <li>Commit the changes:
+        <codeblock>cd ~helion/hos/ansible
+git add ~/helion/hos/ansible/roles/storm/vars/nodes.yml
+git commit -m "update storm_supervisor_enabled value"</codeblock></li>
+        <li>Run the configuration processor:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+        <li>Create the deployment directory:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        <li>Deploy the change:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible 
+ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
       </ol>
-      -->
       <!-- OPS CONSOLE -->
       <p><b>Operations Console (Ops Console)</b></p> The Operations Console has the following
       limitations (listed below by menu option in the console): <ul id="ul_wv1_d45_tt">

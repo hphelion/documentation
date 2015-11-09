@@ -26,6 +26,12 @@
             </thead>
             <tbody>
               <row>
+                <entry>11/09/2015</entry>
+                <entry>Hardware and Software Support Matrix </entry>
+                <entry>Added Guest OS support information (<xref
+                    href="hardware.dita">Link</xref>)</entry>
+              </row>
+              <row>
                 <entry>11/05/2015</entry>
                 <entry>Security - TLS </entry>
                 <entry>Amended  Private CA FQDN certificates steps to include copying both keys
