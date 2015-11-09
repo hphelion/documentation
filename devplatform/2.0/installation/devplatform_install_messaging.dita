@@ -281,9 +281,8 @@ msgaas-msgaas-ccp-c1-m2-mgmt : ok=381  changed=194  unreachable=0    failed=0
 msgaas-msgaas-ccp-c1-m3-mgmt : ok=382  changed=196  unreachable=0    failed=0   
 localhost                  : ok=34   changed=15   unreachable=0    failed=0   </codeblock></li>
           </ol></li></ol></section>
-    <section><title>Verifying the Installation</title><p>If you have not configured TLS, you can run
-        a basic verification command to test the installation. </p><ol>
-        <li>Determine the internal endpoint for the Messaging
+    <section><title>Verifying the Installation</title><ol>
+        <li>Set endpoint type to internal (Cannot access public endpoint from messaging deployer)
           API.<codeblock>export OS_ENDPOINT_TYPE=internalURL
 export OS_INTERFACE=internal</codeblock></li>
         <li>List all clusters. <note>Since you have not yet created any clusters, this list of
