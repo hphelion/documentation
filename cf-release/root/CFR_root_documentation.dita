@@ -26,6 +26,7 @@
   </prolog>
   <conbody>
     <p><keyword keyref="prodLong"/> Technical Preview (TP) is a certified distribution of <xref
+<<<<<<< HEAD
       href="http://www.cloudfoundry.org/" format="html" scope="external">Cloud Foundry</xref>.</p>
 >>>>>>> de2d2bc... Recreating branch without old cruft in it
     <p>
@@ -33,6 +34,17 @@
       representing roles, and for providing simple update and upgrade workflows. It also uses <xref
         href="https://www.consul.io/" format="html" scope="external">Consul</xref> for centralized
       configuration storage that runs on each instance.</p>
+=======
+        href="http://www.cloudfoundry.org/" format="html" scope="external">Cloud Foundry</xref>
+        (<xref href="https://github.com/cloudfoundry/cf-release/releases/tag/v217" format="html"
+        scope="external">cf-release v217</xref>). <keyword keyref="prodShort"/> uses containers for
+      bundling all major functions, for representing roles, and for providing simple update and
+      upgrade workflows and <xref href="https://www.consul.io/" format="html" scope="external"
+        >Consul</xref> for centralized configuration storage that runs on each instance.</p>
+    <note>For detailed descriptions of the components of <keyword keyref="prodLong"/>, see <xref
+        href="../reference/CFR_reference_gato.dita#reference_cd3_bs3_rt/available_role_containers"
+      />.</note>
+>>>>>>> b356ad4... Fixed typos + added xref & note to intro
     <p>The following sections will help you get started with exploring <keyword keyref="prodShort"/>
       and pushing your first apps.</p>
     <ul id="ul_nlv_fct_5t">
