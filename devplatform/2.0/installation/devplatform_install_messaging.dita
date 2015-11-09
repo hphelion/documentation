@@ -90,7 +90,7 @@ openstack --os-cloud mycloud hdpi messaging install <i>&lt;filename></i></codebl
 Scripts complete.
 Completed launching messaging</codeblock></li>
         <li>Log in to and Initialize the Messaging Deployer VM<ol id="ol_nr4_nqr_wt">
-            <li>SSH into the Messaging Deployer VM using the IP address provided after the launch
+            <li>SSH into the Messaging Deployer VM using the IP address provided (highlighted above) after the launch
               command completed.</li>
             <li>Copy the <codeph>msgaas</codeph> deployment model.<note>The <codeph>cp</codeph>
                 command must be used <b>exactly</b> as shown - including the /* on the end of the
@@ -114,23 +114,22 @@ stack@messaging-deployer:~/helion$ cd my_cloud/definition/
 stack@messaging-deployer:~/helion/my_cloud/definition$ ls
 cloudConfig.yml  data
 stack@messaging-deployer:~/helion/my_cloud/definition$ nano cloudConfig.yml    # this is the file where the changes need to be made</codeblock></li>
-            <li id="TLS">If you have a name-based TLS certificate, copy it to the
-                <codeph>~/helion/my_cloud/config/tls/certs/</codeph> directory.</li>
-            <li>Navigate to and open the <codeph>network_groups.yml</codeph> file for
-                editing.<note>For production environments, TLS (Cue API public endpoint URL with SSL
+            <li id="TLS">This step is required for configuring TLS in Cue API endpoint.  <note>For production environments, TLS (Cue API public endpoint URL with SSL
                 support (https)) is recommended. If not using TLS, for example, in a non-production
                 proof-of-concept environment, skip this
-              step.</note><codeblock>stack@messaging-deployer:~/helion/my_cloud/definition$ cd data
+              step.</note></li>
+            <li>Navigate to and open the <codeph>network_groups.yml</codeph> file for
+                editing.<codeblock>stack@messaging-deployer:~/helion/my_cloud/definition$ cd data
 stack@messaging-deployer:~/helion/my_cloud/definition/data$ nano network_groups.yml </codeblock><ol>
           <li>If an IP-based TLS certificate is used, comment out the
-                    <codeph>external-name:</codeph> field . For name-based TLS, provide the FQDN in
-                  the  <codeph>external-name:</codeph> field </li>
+                    <codeph>external-name:</codeph> field. For name-based TLS, provide the FQDN name in
+                  the  <codeph>external-name:</codeph> field and copy the signed certificate to the <codeph>~/helion/my_cloud/config/tls/certs/</codeph> directory. </li>
             <li>Comment out the <codeph>components:</codeph> list and uncomment the
                     <codeph>tls-components:</codeph> list.</li>
-            <li>In the <codeph>tls-components:</codeph>, provide the TLS certificate file name in
-                  the <codeph>cert-file</codeph>: field. In a typical installation, the name will be
-                    <b>msgaas-cert</b>.</li></ol></li><li> Using
-              Git, persist these changes. This information is required for the Pre-Install playbook,
+            <li>Un-comment the <codeph>tls-components:</codeph> list.</li>
+            <li>provide the TLS certificate file name in
+                  the <codeph>cert-file</codeph>: field. This name will have to match the name of the cert-file placed in <codeph>~/helion/my_cloud/config/tls/certs/</codeph> (e.g. <b>msgaas-cert</b>).</li></ol></li>
+          <li> Using Git, persist these changes. This information is required for the Pre-Install playbook,
               which is executed later in this installation
               process.<codeblock>stack@messaging-deployer:/helion/my_cloud/definition/data/pass-through$ cd ~/helion
 stack@messaging-deployer:~/helion$ git add -A # Required if you copied a new cert file
@@ -166,13 +165,13 @@ openstack-operations | preinstall | Set Nova Quotas --------------------- 1.77s
 -------------------------------------------------------------------------------
 Total: ----------------------------------------------------------------- 27.45s
 localhost                  : ok=20   changed=14  <b> unreachable=0 </b>  <b> failed=0 </b></codeblock></li>
-            <li>Configure the Input Model for TLS Support.<note>For production environments, TLS
-                (Cue API public endpoint URL with SSL support (https)) is recommended. If not using
-                TLS, for example, in a non-production proof-of-concept environment, or if using
-                name-based TLS, skip this step. The deployment model <xref href="#topic_t3w_fnh_ts/TLS">customization</xref> performed previously must have included the TLS
+            <li>Configure the Input Model for TLS Support in Cue API (Optional).<note>If using
+                name-based TLS, skip this step, otherwise the deployment model <xref href="#topic_t3w_fnh_ts/TLS">customization</xref> performed previously must have included the TLS
                 configuration step.</note><ol>
+                <li>Navigate to and open the <codeph>network_groups.yml</codeph> file, capture the ip address shown in
+                    the <codeph>external-ip:</codeph> field.  Now create and sign an IP-based TLS certificate based on this IP address.</li>
                 <li>Copy your signed certificate into
-                    <codeph>~/helion/my_cloud/config/tls/certs/msgaas-cert</codeph></li>
+                    <codeph>~/helion/my_cloud/config/tls/certs/</codeph>.  Ensure the certificate name matches the name you provided in <codeph>cert-file:</codeph> field. </li>
                 <li>Using Git, commit the changes.
                   <codeblock>stack@messaging-deployer:~/helion/hos/ansible$ git add -A
 stack@messaging-deployer:~/helion/hos/ansible$ git commit -a -m "Configured Deployment Model"</codeblock></li>
