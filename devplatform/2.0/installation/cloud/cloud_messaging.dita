@@ -108,8 +108,9 @@
         <dlentry>
           <dt>auth_url</dt>
           <dd>This URL can be found in Horizon at: Project &gt; Compute &gt; Access &amp; Security
-            &gt; API Access. Copy the Service Endpoint URL for the Identity Service.  This must be
-            the <b>internal</b>, not the <i>admin</i> or <i>public</i> endpoints.</dd>
+            &gt; API Access. Copy the Service Endpoint URL for the Identity Service. This must be
+            the <b>internal</b>, not the <i>admin</i> or <i>public</i> endpoints. If the default
+            endpoint value ends in <codeph>/v2</codeph>, change it to <codeph>/v3</codeph> .</dd>
         </dlentry>
         <dlentry>
           <dt>project_name</dt>
