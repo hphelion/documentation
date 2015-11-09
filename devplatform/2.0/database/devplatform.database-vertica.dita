@@ -8,6 +8,9 @@
       the Activity and Manage sections to view cluster and node specific performance, and configure the cluster through the Settings section.</li>
       <li>Database users can use the Management Console's database designer to design optimized projections for schemas, and the EXPLAIN features to analyze the details of queries and projections.</li>
     </ul>
+    <p>To access the Vertica Management Console, in Horizon, select <b>Project</b>, <b>Database</b>, <b>Clusters</b>, and select the cluster in the <b>Cluster Name</b> column. Select the <b>Management Console</b> link in the 
+      <b>Overview</b> tab.</p>
+    <note>The Vertica Management Console is only available for Vertica Preview clusters. It is not available for Vertica Preview instances.</note>
     <p>For more information on using these features, see the following topics:</p>
     <ul>
       <li><xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/AdministratorsGuide/ManagementConsole/MonitoringHPVerticaUsingMC.htm">Monitoring HP Vertica Using Management Consople</xref></li>
