@@ -44,7 +44,7 @@ openstack --os-cloud mycloud hdpi messaging install <i>&lt;filename></i></codebl
           </ol></li>
         
         <li>Launch the Messaging Deployer VM using the
-            HDPI.<!-- ((Put some information on what the user gets back at the command line- paste in the returned text, highlight the IP address that the user needs to grab))--><note>When
+            HDPI.<note>When
             the launch command indicates that it finished and provides the IP address for the
             Messaging Deployer VM, SSH into the Messaging Deployer VM and look for the
               <codeph>/home/stack/helion</codeph> directory. Once that directory has been created
@@ -68,7 +68,7 @@ openstack --os-cloud mycloud hdpi messaging install <i>&lt;filename></i></codebl
 | OS-SRV-USG:terminated_at             | None                                                                               |
 | accessIPv4                           |                                                                                    |
 | accessIPv6                           |                                                                                    |
-| addresses                            | <ph outputclass="codehighlight">SVC=10.241.145.12</ph>  (( highlight this ))                                                                 |
+| addresses                            | <codeph outputclass="codehighlight">SVC=10.241.145.12</codeph>                             |
 | config_drive                         |                                                                                    |
 | created                              | 2015-11-04T22:44:29Z                                                               |
 | flavor                               | m1.medium (3)                                                                      |
