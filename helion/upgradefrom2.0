@@ -4,7 +4,7 @@
   <title>Updating from HPE Helion OpenStack&#174; 2.0</title>
   <body>
     <section>
-      <title>Performing the Upgrade from HPE Helion OpenStack 2.0</title>
+      <title>Performing the Upgrade from HPE Helion OpenStack 2.0 </title>
       <note><b>The names of the download files and other details are likely to change before the
           update bits are released.</b></note> The starting point for upgrading is a working
       deployment of the HPE Helion OpenStack 2.0 released version. You must have an operational
