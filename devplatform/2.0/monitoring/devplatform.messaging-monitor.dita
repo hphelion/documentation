@@ -38,6 +38,18 @@
               <entry>cue-monitor process crashed</entry>
               <entry>Restart cue-monitor service</entry>
             </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>process_name=mysqld</entry>
+              <entry>mysql process crashed</entry>
+              <entry>Restart mysql service</entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>process_name=org.apache.zookeeper.server</entry>
+              <entry>zookeeper process crashed</entry>
+              <entry>Restart zookeeper service</entry>
+            </row>
           </tbody>
         </tgroup>
       </table></p>
