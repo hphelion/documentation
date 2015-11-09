@@ -13,16 +13,12 @@
       are found in the installation guide.</section>
     <section>To begin the upgrade process, log in to the deployer/lifecyce manager node as the user
       you created during the HPE Helion OpenStack 2.0 deployment, and mount the install media at
-        <b>/media/cdrom</b>; for example:
-      <codeblock>sudo mount hLinux-cattleprod-amd64-blaster-netinst-20151005-hlm.&lt;<i>build-date_sha1</i>>.iso /media/cdrom</codeblock>
+        <b>/media/cdrom</b>; for example: <b>Note needs file name
+      </b><codeblock>sudo mount hLinux-cattleprod-amd64-blaster-netinst-20151005-hlm.&lt;<i>build-date_sha1</i>>.iso /media/cdrom  </codeblock>
       Unpack the following tarball: <b>Note needs file name
       </b><codeblock>tar faxv /media/cdrom/hos/hos-2.0.0-rc1-20151012T062322Z.tar</codeblock> Run
       the included initialization script to update the deployer:
-      <codeblock>~/hos-2.0.0-b.rc1/hos-init.bash</codeblock> Prepare the new Ansible tree for the
-      upgrade run,, assuming you have made the necessary YAML config file changes above. Resolve any
-      merge conflicts that may have arisen: <codeblock>cd ~/helion
-git status</codeblock> Run the
-      configuration processor:
+      <codeblock>~/hos-2.0.0-b.rc1/hos-init.bash</codeblock> Run the configuration processor:
       <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
       Run the ready deployment playbook:
