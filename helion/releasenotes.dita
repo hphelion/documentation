@@ -4,11 +4,19 @@
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Release Notes</title>
   <body>
     <!--Needs Edit-->
-    <p>This document provides an overview of the features contained within HPE Helion <tm
-        tmtype="reg">OpenStack</tm> 2.0, including known issues and workarounds for this
-      release:</p>
+    <section id="about">
+      <p>This document provides an overview of the features contained within HPE Helion <tm
+          tmtype="reg">OpenStack</tm> 2.0, including known issues and workarounds for this
+        release:</p>
+      <ul>
+        <li><xref href="releasenotes.dita#release_notes/featuers">Features Available in this
+            Release</xref></li>
+        <li><xref href="releasenotes.dita#release_notes/known_issues">Known Issues in this
+            Release</xref></li>
+      </ul>
+    </section>
 
-    <section id="Features">
+    <section id="features"><title>Features Available in this Release</title>
       <p><b>New GUI Installer</b></p>
       <p>HPE Helion OpenStack 2.0 introduces a GUI installer for configuring and installing the
         operating system, the cloud, and OpenStack services. It provides an easy way to populate the
@@ -259,8 +267,8 @@
     </section>
 
 
-    <section id="KnownIssues">
-      <title>Limitations in this Release</title>
+    <section id="known_issues">
+      <title>Known Issues in this Release</title>
       <!-- INSTALLATION -->
       <p><b>Installing Swift</b></p>
       <p>Swift installs with the following limitations:</p>
@@ -330,7 +338,7 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
           <p>To: <codeblock>storm_supervisor_enabled: True</codeblock></p>
         </li>
         <li>Commit the changes:
-        <codeblock>cd ~helion/hos/ansible
+          <codeblock>cd ~helion/hos/ansible
 git add ~/helion/hos/ansible/roles/storm/vars/nodes.yml
 git commit -m "update storm_supervisor_enabled value"</codeblock></li>
         <li>Run the configuration processor:
