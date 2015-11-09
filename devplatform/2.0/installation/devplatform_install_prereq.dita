@@ -1,39 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_x54_njh_ts">
-  <title>HPE Helion Development Platform Installation Prerequisites</title>
+  <title>HPE Helion 2.0 Development Platform: Installation Prerequisites</title>
   <body>
-    <section id="prerequisites"> <title>General Prerequisites</title>
-     <note type="important"><ul>
+    <section id="prerequisites">
+      <title>General Prerequisites</title>
+      <ul id="ul_plz_psf_xt">
         <li>
-          <p>The Cinder block storage service must be configured with either <xref href="../../../commercial/GA1/1.1commercial-vsa-overview.dita" >VSA</xref> or <xref href="../../../commercial/GA1/1.1commercial.install-3par.dita" >3Par</xref>.</p>
-        </li>
-        <li>
-          <p>If you installed HPE Helion OpenStack with <b>KVM</b> hypervisor support, configure HPE StoreVirtual VSA for Block Storage or configure HPE 3PAR StoreServ Storage.</p>
+          <p>The Cinder block storage backend must be configured to use <xref
+              href="http://docs.hpcloud.com/#helion/installation/configure_vsa.html" format="html"
+              scope="external">VSA</xref>, <xref
+              href="http://docs.hpcloud.com/#helion/installation/configure_3par.html" format="html"
+              scope="external">3Par</xref>, or <xref
+              href="http://docs.hpcloud.com/#helion/installation/configure_ceph.html" format="html"
+              scope="external">Ceph</xref>.</p>
         </li>
         <li>
           <p>The system running the installer needs to have Python 2.7. Most modern operating
-              systems include this as part of their base toolkit. This document is geared toward a
-              Linux operating system, but this does not preclude the installer from running on other
-              operating systems with appropriate modifications to the command-line statements.</p>
+            systems include this as part of their base toolkit. This document is geared toward a
+            Linux operating system, but this does not preclude the installer from running on other
+            operating systems with appropriate modifications to the command-line statements.</p>
         </li>
         <li>
           <p>If you did not <xref
-                href="http://docs-staging.hpcloud.com/hos2.0ga/#helion/administration/create_hdp_servicenet.html"
-                format="html" scope="external">create the Service Network</xref> after installing HP
-              Helion <tm tmtype="reg">OpenStack</tm>, you <b>must</b> do so now.</p>
+              href="http://docs.hpcloud.com/#helion/administration/create_hdp_servicenet.html"
+              format="html" scope="external">create the Service Network </xref>immediately after
+            installing HP Helion <tm tmtype="reg">OpenStack</tm>, you <b>must</b> do so now.</p>
         </li>
-       <li>
-         <p>For Windows and .NET support, due to licensing requirements, you must create and deploy your own Windows and SQL Server images. This requires the following:</p>
-         <ul>
-           <li>Windows images must be created in a MacOS or Linux environment.</li>
-           <li>You must have a Windows Server 2012 Enterprise (non-evaluation) image.</li>
-           <li>A volume license for Windows Server 2012 Enterprise is strongly recommended.</li>
-           <li>Additional tools (VirtIO and Virtual Box) are also required. See <xref format="dita" type="local" href="../windows/windows_building_and_deploying.dita">Building and Deploying Windows DEA and SQL Server Express Images</xref>
-           for more information.</li>
-         </ul>
-       </li>
-              </ul></note>
+        <li>
+          <p>For Windows and .NET support, due to licensing requirements, you must create and deploy
+            your own Windows and SQL Server images. This requires the following:</p>
+          <ul id="ul_xnz_psf_xt">
+            <li>Windows images must be created in a MacOS or Linux environment.</li>
+            <li>You must have a Windows Server 2012 Enterprise (non-evaluation) image.</li>
+            <li>A volume license for Windows Server 2012 Enterprise is strongly recommended.</li>
+            <li>Additional tools (VirtIO and Virtual Box) are also required. See <xref format="dita"
+                type="local" href="../windows/windows_building_and_deploying.dita">Building and
+                Deploying Windows DEA and SQL Server Express Images</xref> for more
+              information.</li>
+          </ul>
+        </li>
+      </ul>
     </section>
     <section id="preparation">
       <title>Gather Information</title>
@@ -41,7 +48,7 @@
       <dl>
         <dlentry>
           <dt>Deployer</dt>
-          <dd>IP address of the Deployer.</dd>
+          <dd>IP address of the HPE Helion OpenStack Deployer.</dd>
         </dlentry>
         <dlentry>
           <dt>Username </dt>
@@ -54,12 +61,22 @@
             for the selected service.</dd>
         </dlentry>
       </dl>
-     </section>   
-    <section><title>Set Proxy Shell Variables</title>
-   <p>If your network uses a proxy, it may be necessary to set the
-      <codeph>https_proxy</codeph> and <codeph>http_proxy</codeph> shell variables so that the
-      installer may download required Python libraries from the <xref
-        href="https://pypi.python.org/pypi" scope="external" format="html">pypi</xref> site.</p>  <ol>
+    </section>
+
+      <note>All of the following procedures are performed on the HPE Helion OpenStack Deployer. SSH
+      to the Deployer before attempting any of these procedures.</note>
+    
+    <section><title>Create the <codeph>clouds.yaml</codeph> Configuration File</title>The installer
+      retrieves configuration information from a configuration file located at
+      <xref href="install_cloudsyaml.dita#id_ufp_fdn_vt">  <codeph>/.config/openstack/clouds.yaml</codeph> </xref>Each service has its own section within this
+      file where configuration information is stored.<note type="important">This file <b>must</b>
+        contain at least the<xref href="install_cloudsyaml.dita#id_ufp_fdn_vt"> Platform
+          Configuration </xref>information before the HDPI can be installed. </note></section>
+    <section id="shell">
+      <title>Set Proxy Shell Variables</title>
+      <p>If your network uses a proxy, it may be necessary to set the <codeph>https_proxy</codeph>
+        and <codeph>http_proxy</codeph> shell variables.</p>
+      <ol>
         <li>To set the shell variables, enter the following commands:
           <codeblock>export https_proxy={ip address or url of https proxy} 
 export http_proxy={ip address or url of http proxy} </codeblock>Example:
@@ -72,40 +89,40 @@ export http_proxy=http://proxy.example.com</codeblock></li>
               address.<codeblock>KEYSTONE_IP_PUBLIC=$(openstack endpoint list | grep keystone | grep public | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
 echo 'KEYSTONE PUBLIC IP: ' $KEYSTONE_IP_PUBLIC  </codeblock></li>
             <li>Get the Keystone <b>internal</b> endpoint IP address.
-              <codeblock>KEYSTONE_IP_INTERNAL='openstack endpoint list | grep keystone | grep internal | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'' 
+              <codeblock>KEYSTONE_IP_INTERNAL=$(openstack endpoint list | grep keystone | grep internal | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
 echo 'KEYSTONE INTERNAL IP: ' $KEYSTONE_IP_INTERNAL </codeblock></li>
-              <li id="proxy">Set the IP address values for <codeph>no_proxy</codeph>. <note
+            <li id="proxy">Set the IP address values for <codeph>no_proxy</codeph>. <note
                 type="important">Ensure that each and every Keystone AUTH_URL IP is included in the
                 no-proxy
-              list.</note><codeblock>export no_proxy=localhost,127.0.0.1,$KEYSTONE_IP_PUBLIC,$KEYSTONE_IP_INTERNAL </codeblock></li>
+              list.</note><codeblock>export no_proxy=localhost,127.0.0.1,$KEYSTONE_IP_PUBLIC,$KEYSTONE_IP_INTERNAL </codeblock></li> </ol></li>
+            <li>Set the Sherpa proxy shell variables. If the HOS environment is behind a firewall, a
+          proxy may be necessary for the Sherpa service to communicate out to the Helion Download
+          Network (HDN)  <!--does this need to be done if you are using the pre-downloaded files?  should we put this in the troubleshooting? if your install hangs and exits, check this? bug DOCS2042-->
+          <ol>
+            <li>On each of the HPE Helion OpenStack controller nodes, edit the
+                <codeph>sherpa.conf</codeph> file as
+              follows:<codeblock>sudo nano /etc/sherpa/sherpa.conf </codeblock>3. Verify that the
+              http_proxy and http_proxy is set appropriately for your
+              environment.<codeblock>http_proxy=http://myproxy.example.com 
+https_proxy=https://myproxy.example.com</codeblock>
+              4. After editing the file, restart Apache2.
+              <codeblock>sudo sevice apache2 restart</codeblock></li>
           </ol></li>
+         
       </ol>
-    </section><section><title>Verify Connectivity</title>
+    </section>
+    
+    <section>
+      <title>Verify Connectivity</title>
       <ol id="ol_egn_mr1_tt">
-        <li>Source the keystone RC file. <codeblock>source keystone.osrc</codeblock></li>
-        <li>Verify access to the <codeph>pypi</codeph> site for downloading required Python scripts:<p>
-            <pre>PYPI_URL=https://pypi.python.org/pypi
-wget -t3 --timeout=5 -O/dev/null -q $PYPI_URL &amp;&amp; echo exists OK || echo ERROR cannot reach $PYPI_URL</pre>
-          </p></li>
+        <li>Source the Keystone RC file. <codeblock>source keystone.osrc</codeblock></li>
         <li>Verify access to the Keystone public endpoint:
           <codeblock>KEYSTONE_URL_PUBLIC=`openstack endpoint list | grep keystone | grep public | grep -Eo '(http|https)://{1}\S+'`
 wget -t3 --timeout=5 -O/dev/null -q $KEYSTONE_URL_PUBLIC &amp;&amp; echo exists OK || echo ERROR cannot reach $KEYSTONE_URL_PUBLIC</codeblock></li>
         <li>Verify access to the public Sherpa
-          endpoint:<pre>SHERPA_URL_PUBLIC=`openstack endpoint list | grep sherpa | grep public | grep -Eo '(http|https)://{1}\S+'`
+          endpoint:<pre>SHERPA_URL_PUBLIC=`openstack endpoint list | grep sherpa | grep public | grep -Eo '(http|https)://{1}\S+' | sed -e 's/v1$//‘`
 wget -t3 --timeout=5 -O/dev/null -q $SHERPA_URL_PUBLIC &amp;&amp; echo exists OK || echo ERROR cannot reach $SHERPA_URL_PUBLIC</pre></li>
       </ol>
     </section>
-    <section>
-      <title>Download and Install the Virtual Environment</title>
-      <note>Installing a Python package also installs any required dependencies. This may generate
-        several syntax warnings inline as the install occurs. This is expected behavior, and unless
-        the output of the pip install reflects a fatal error, the install is considered
-        "clean".</note>
-      <ol>
-        <li>SSH to the Deployer. </li>
-        <li>Install <codeph>virtualenv</codeph>
-          <codeblock>sudo apt-get install -y virtualenv</codeblock></li>
-      </ol>
-    </section> 
   </body>
 </topic>

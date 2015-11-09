@@ -42,25 +42,63 @@
 </li>
 </ul>
 <section id="installation"> <title>Installation</title>
+  
+  <dl><dlentry>
+    <dt>When installing Messaging, the installer hangs and does not progress.</dt>
+    <dd><p><b>Cause</b>: User is uploading an image to Glance which already exists.</p> 
+      <p><b>Resolution</b>: Delete existing images and upload again. SSH into the HPE Helion
+              OpenStack deployer and
+                run:<codeblock>glance image-list | grep -iE '('"$PRODUCT"')' | cut -d '|' -f2 | tr -d ' ' | xargs -I {} -n1 glance image-delete {}</codeblock><note
+                type="caution">This will remove ALL MSGaaS images.</note></p></dd>
+  </dlentry><dlentry>
+    <dt>When trying to communicate with Cue (API), <codeph>ERROR: openstack Unauthorized (HTTP 401)</codeph> is received.</dt>
+    <dd>It is most likely that the Cue Keystone user has a different
+      password than what was configured in cue.conf. This is usually caused by not deleting
+      the Cue user and service from Keystone prior to re-deploying the Messaging Service.
+      Synchronize the values by doing the following:<ol id="ol_t5m_2hs_wt">
+        <li> SSH into one of the Cue controller nodes.</li>
+        <li>Find the <codeph>/etc/cue/cue.conf</codeph> file</li>
+        <li>Copy the value of the <b>admin_password</b> variable.</li>
+        <li>Source <codeph>keystone.osrc</codeph></li>
+        <li>Update the Cue user password in
+          Keystone:<codeblock>openstack user set cue --password &lt;value of admin_password></codeblock></li>
+      </ol></dd>
+  </dlentry>
+    <dlentry>
+      <dt>After installation, the final output window is closed before you can make a note of the IP address, etc.</dt>
+      <dd>       
+        from the HOS deployer, run openstack --os-cloud msgaas server list
+        you just ran the install and lost the last window
+        you already have the hdpi environment sourced
+        so you're running commands against the messaging user, this is the msgas user 
+        as defined in clouds.yaml
+        this will list the list of servers created by the user
+        that will include the deployer 
+        control plane nodes
+        clusters, if created, and everything else
+        ip will appear in the list for sshing purposes</dd>
+    </dlentry>
+    <dlentry id="command-line-installer-fails-to-install">
+      <dt>Command line installer fails to install</dt>
+      <dd>Resolution: <b>Set</b> https_proxy and <b>unset</b> http_proxy values.</dd>
+    </dlentry>
+    <dlentry id="command-line-installer-fails-to-install-with-authentication-error">
+      <dt>Command line installer fails to install with Authentication Error</dt>
+      <dd><p>Even after fixing some errors and retrying, the command line installation fails.</p>
+        <p>Resolution:</p>
+        <ol>
+          <li>Locate and open the <i>dev-platform-installer</i> folder. This folder is created by the
+            installation process. <ul>
+              <li>Delete the <i>.env</i> folder.</li>
+              <li>Delete the <i>dev-platform-installer.conf</i> file.</li>
+            </ul></li>
+          <li>Run the install command again with all command line options.</li>
+        </ol></dd>
+    </dlentry>
+  </dl>
 </section>
-<section id="command-line-installer-fails-to-install"> <title>Command line installer fails to install</title>
-<p>Resolution: <b>Set</b> https_proxy and <b>unset</b> http_proxy values.</p>
-</section>
-<section id="command-line-installer-fails-to-install-with-authentication-error"> <title>Command line installer fails to install with Authentication Error</title>
-<p>Even after fixing some errors and retrying, the command line installation fails.</p>
-<p>Resolution:</p>
-<ol>
-<li>Locate and open the <i>dev-platform-installer</i> folder. This folder is created by the installation process.
 
-<ul>
-<li>Delete the <i>.env</i> folder.</li>
-<li>Delete the <i>dev-platform-installer.conf</i> file.</li>
-</ul>
-</li>
-<li>
-  <xref href="installation/devplatform_install_platform.dita#topic_gly_xmh_ts/commandline" type="section">Run the install command</xref> again with all command line options.</li>
-</ol>
-</section>
+
 <section id="download"> <title>Download</title>
 </section>
 <section id="service-is-stuck-in-download"> <title>Service is stuck in download</title>
@@ -88,14 +126,8 @@
 <li>Delete the directory <i>/var/cache/sherpa/ws.xxxx</i>
 </li>
 <li>Delete the contents of the <i>/var/lib/Sherpa/data</i> folder.</li>
-<li>
-<p>Apache must be restarted before this change will take effect. <!--A BR tag was used here in the original source.-->Run:</p>
-
-<codeblock>
-<codeph>service apache2 restart 
-</codeph>
-</codeblock>
-</li>
+<li>Apache must be restarted before this change will take effect.
+          <codeblock>service apache2 restart </codeblock></li>
 </ol>
 </section>
 <section id="horizon"> <title>Horizon</title>
@@ -106,11 +138,8 @@
 </section>
 <section id="deleted-service-still-appears-in-horizon"> <title>Deleted service still appears in Horizon</title>
 <p>Even though the Development Platform stack has been deleted, the service still shows up in Horizon.</p>
-<p>Resolution: Delete the service manually from the Keystone endpoint list. <!--A BR tag was used here in the original source.--> Start the command line client and enter:</p>
-<codeblock>
-  <codeph>keystone endpoint-delete $&lt;id&gt;
-</codeph>
-</codeblock>
+<p>Resolution: Delete the service manually from the Keystone endpoint list. </p>
+<codeblock>keystone endpoint-delete $&lt;id&gt;</codeblock>
 </section>
 <section id="dbaas"> <title>DBaaS</title>
 </section>
@@ -119,11 +148,6 @@
 </section>
 <section id="dbaas-instance-fails-to-start"> <title>DbaaS instance fails to start</title>
 <p>Resolution: Check if you can create and start a Nova instance with the same flavor and verify you can attach a volume to that Nova instance. Verify that the Nova flavors have not been updated to invalid values. Verify that the flavor's ID is correct, as flavor updates cause the flavor IDs to change.</p>
-</section>
-<section id="marketplace"> <title>Marketplace</title>
-</section>
-<section id="vertica-installation-fails-after-successful-marketplace-installation"> <title>Vertica installation fails after successful Marketplace installation</title>
-<p>Resolution: Immediately after installing Marketplace, log out of Horizon and then back in before beginning the Vertica installation.</p>
 </section>
 <section id="ALS"> <title>ALS</title>
 <p>
@@ -137,7 +161,7 @@
 </section>
 <section id="instance-create"> <title>Creating Instances</title>
 </section>
-<section id="dbaas-instances-als-clusters-marketplace-and-messaging-clusters-all-fail-to-start"> <title>DbaaS instances, ALS clusters, Marketplace, and Messaging clusters all fail to start.</title>
+<section id="dbaas-instances-als-clusters-marketplace-and-messaging-clusters-all-fail-to-start"> <title>DbaaS instances, ALS clusters, and Messaging clusters all fail to start.</title>
 <p>Resolution: Nova and Neutron quotas have been exceeded. Increase quotas to support your desired configuration.</p>
 </section>
 <section id="issue-no-valid-host-was-found-error-received-during-installation-of-the-development-platform-and-dnaas"> <title>Issue: "No valid host was found" Error Received During Installation of the Development Platform and DNaaS</title>
