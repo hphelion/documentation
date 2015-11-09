@@ -2,18 +2,18 @@
 <!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
 <reference id="reference_cd3_bs3_rt">
   <title><keyword keyref="adminUtil"/> Command Reference</title>
-  <shortdesc><filepath><keyword keyref="adminUtil"/></filepath> is the <keyword keyref="prodLong"/>
-    administration utility.</shortdesc>
+  <shortdesc/>
   <prolog>
     <metadata>
       <othermeta name="author" content="Michael Khmelnitsky"/>
     </metadata>
   </prolog>
   <refbody>
-    <section>
-      <title>Usage</title>
-      <codeblock><keyword keyref="adminUtilCLI"/> <varname>[global options]</varname> <varname>command</varname> <varname>[command options]</varname> <varname>[arguments...]</varname></codeblock>
-    </section>
+    <section><keyword keyref="adminUtil"/> is the <keyword keyref="prodLong"/> administration
+      utility. You can run <keyword keyref="adminUtil"/> commands <xref
+        href="../quickstart/pubcloud/CFR_step_6.dita#concept_m3k_bth_tt/connecting_to_your_cluster"
+        >after connecting to the core node using
+        <filepath>ssh</filepath></xref>.<title>Usage</title><codeblock><keyword keyref="adminUtilCLI"/> <varname>[global options]</varname> <varname>command</varname> <varname>[command options]</varname> <varname>[arguments...]</varname></codeblock></section>
     <section>
       <title>Global Options</title>
       <dl>

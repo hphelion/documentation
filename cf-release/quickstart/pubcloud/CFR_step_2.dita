@@ -142,7 +142,7 @@
             </li>
           </ul><note type="tip">To decompress <filepath>tar.gz</filepath> files on Windows, you can
             use a file archiver such as <xref href="http://www.7-zip.org/" format="html"
-              scope="external">7zip</xref>.</note><b>Downloading and Installing the Cloud Foundy
+              scope="external">7zip</xref>.</note><b>Downloading and Installing the Cloud Foundry
             Command-Line Interface (CLI)</b><p>You can use the Cloud Foundry CLI to deploy and
             manage your applications. Click the download link appropriate for your operating
             system:</p><ul id="ul_bp4_fpb_tt">

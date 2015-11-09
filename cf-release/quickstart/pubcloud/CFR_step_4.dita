@@ -187,13 +187,14 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
                       variables.</uicontrol></li>
                 </ul></note></li>
             <li>Decompress the <keyword keyref="prodShort"/> file into a convenient directory.</li>
-            <li>Navigate to the <keyword keyref="prodShort"/> directory and copy the
-                <filepath>overrides.tfvars.sample</filepath> file, for example to
-                <filepath>myVars.tfvars</filepath>.</li>
-            <li>Add the necessary keys and credentials for your cluster to your
-                <filepath>tfvars</filepath> file.<note>For more information, see <xref
-                  href="../../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt">Terraform
-                  Variables</xref>.</note></li>
+            <li>Navigate to the <keyword keyref="prodShort"/> directory and make a copy of the
+                <filepath>overrides.tfvars.sample</filepath> file, for example
+                <filepath>myVars.tfvars</filepath>.<note>The <filepath>tfvars</filepath> file
+                contains the keys and credentials for your cluster.</note></li>
+            <li>Add the necessary variables to your <filepath>tfvars</filepath> file. For more
+              information and examples, see <xref
+                href="../../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt">Terraform
+                Variables</xref>.</li>
             <li id="run_terraform_command">Run the following
 <<<<<<< HEAD
                 command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
