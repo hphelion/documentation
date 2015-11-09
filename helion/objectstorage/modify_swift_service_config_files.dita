@@ -36,7 +36,8 @@ container_ratelimit_5000000 = 50</codeblock>This
           containers with between 1,000,000 and 5,000,000 objects will vary linearly from between
           100 and 50 requests per second as the container object count increases.</li>
         <li>Commit your
-          changes:<codeblock>git add -A
+          changes:<codeblock>cd ~/helion/hos/ansible
+git add -A
 git commit -m "&lt;commit message>"</codeblock></li>
         <li>Run the configuration
           processor:<codeblock>cd ~/helion/hos/ansible
@@ -60,7 +61,8 @@ ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
 .
 log_level = DEBUG</codeblock></li>
           <li>Commit your
-            changes:<codeblock>git add -A
+            changes:<codeblock>cd ~/helion/hos/ansible
+git add -A
 git commit -m "&lt;commit message>"</codeblock></li>
           <li>Run the configuration
             processor:<codeblock>cd ~/helion/hos/ansible
