@@ -35,7 +35,7 @@
 The modes are generally further classified as those that require switch side configuration and those that are generic (i.e. don’t require switch config). Modes 0, 2, and 4 require switch support. They are also the most widely deployed modes. When no switch support is available, administrators use Mode 6 to increase throughput and enable failover. Mode 0 is sometime uses to replicate data between two servers that connected to each other on a link.</p>
 <p>Links within a bond can fail. This requires that the bond logic software (driver) monitor and links in a bond. There are two ways of doing this monitoring. MII monitoring  and ARP monitoring. Miimon queries registers on the NIC (based on the MII (Media Independent Interface) standard) to determine the health of the network link. The querying interval is set using HLM GUI. There are times when the link fails deeper in the network i.e. several hops deep. In this case ARP monitoring can be used. ARP monitoring requires setting the interval for the ARP monitor to send ARP (Address Resolution Protocol) queries to a remove IP address in the network. The health of the link is determined based on the responses receive from the remote address.</p>
   -->
-      <p><b>How does network separation work and what benefit does it provide?</b></p>
+      <p><b>How does network separation work and what benefit does it provide?</b>  </p>
       <p>Network separation is the name given for the practice of segregation of traffic by types.
         The primary drivers for this are performance and security. Having a dedicated channel
         enables a network administrator to exercise better control over the SLA offered to the
