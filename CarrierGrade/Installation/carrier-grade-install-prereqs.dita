@@ -290,167 +290,148 @@ StrictHostKeyChecking no </codeblock></li>
                         <p><b>HP Helion OpenStack Carrier Grade installation files</b></p>
                         <p>The <codeph>hcg-2-0-beta.tar</codeph> file contains the installation
                                 files for HP Helion OpenStack Carrier Grade in the
-                                        <codeph>/uploads/hcg-2-0-beta</codeph> directory. The
-                                installation instructions indicate when and how to deploy the
-                                patches:</p>
+                                        <codeph>/uploads/hcg-2-0-beta/</codeph> directory. </p>
                         <p>
-                                <ul id="ul_zcx_pzy_st">
-                                        <li>cg-hlm.qcow2 </li>
-                                        <li>cg-hlm.qcow2.md5</li>
-                                        <li>cg-hos-misc.tar.gz</li>
-                                        <li>cg-hos-misc.tar.gz.md5</li>
-                                        <li>cg-hos-src.tar.gz</li>
-                                        <li>cg-hos-src.tar.gz.md5</li>
-                                        <li>cg-infra-src.tar.gz</li>
-                                        <li>cg-infra-src.tar.gz.md5</li>
-                                        <li>cg-ironic-deploy-images.tar.gz </li>
-                                        <li>cg-ironic-deploy-images.tar.gz.md5</li>
-                                </ul>
-                        </p>
-                        <p id="patches"><b>Required patch files</b></p>
-                        <p>The <codeph>build22.tar</codeph> file contains the required patches in
-                                the <codeph>build22/HLM/patches</codeph> directory. The installation
-                                instructions indicate when and how to deploy the patches.</p>
-                        <table id="table_ich_gs5_mt">
-                                <tgroup cols="2">
-                                        <colspec colnum="1" colname="col2"/>
-                                        <colspec colnum="2" colname="col3"/>
-                                        <tbody>
-                                                <row>
+                                <ol id="ol_nkj_qg4_yt">
+                                        <li>Extract the <codeph>hcg-2-0-beta.tar</codeph> file:<ul
+                                                  id="ul_hh2_rg4_yt">
+                                                  <li>HCG2.0Beta.tar.gz</li>
+                                                  <li>HCG2.0Beta.tar.gz.md5</li>
+                                                  <li>HCG2.0BetaDCN.tar.gz</li>
+                                                  <li>HCG2.0BetaDCN.tar.gz.md5</li>
+                                                  <li>HCG2.0BetaInfobloxPlugin.tar.gz</li>
+                                                  <li>HCG2.0BetaInfobloxPlugin.tar.gz.md5</li>
+                                                </ul></li>
+                                        <li>Extract the <codeph>HCG2.0Beta.tar.gz</codeph> file: <ul
+                                                  id="ul_zcx_pzy_st">
+                                                  <li>cg-hlm.qcow2 </li>
+                                                  <li>cg-hlm.qcow2.md5</li>
+                                                  <li>cg-hos-misc.tar.gz</li>
+                                                  <li>cg-hos-misc.tar.gz.md5</li>
+                                                  <li>cg-hos-src.tar.gz</li>
+                                                  <li>cg-hos-src.tar.gz.md5</li>
+                                                  <li>cg-infra-src.tar.gz</li>
+                                                  <li>cg-infra-src.tar.gz.md5</li>
+                                                  <li>cg-ironic-deploy-images.tar.gz </li>
+                                                  <li>cg-ironic-deploy-images.tar.gz.md5</li>
+                                                  <li>TEMPL-CPV9.ova</li>
+                                                </ul><p>The <b>WR-HCG-2_0</b> directory contains
+                                                  files required to install the KVM region. The
+                                                  installation instructions indicate when and how to
+                                                  deploy the files: <ul id="ul_elg_f34_yt">
+                                                  <li>cg-windriver-iso.tar.gz</li>
+                                                  <li>cg-windriver-iso.tar.gz.md5</li>
+                                                  </ul></p><p>The following files are included in
+                                                  the installation download packages and will become
+                                                  available during the installation of the Lifecycle
+                                                  Manager. </p><p>
+                                                  <ul id="ul_oty_2cz_st">
+                                                  <li><codeph>license.lic</codeph> Located in the
+                                                  <codeph>/root/cg-hlm/windriver-files</codeph>
+                                                  directory on the HLM host.</li>
+                                                  <li><codeph>region_config</codeph> Located in the
+                                                  /<codeph>var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
+                                                  directory on the HLM host.</li>
+                                                  <li><codeph>cakey.pem</codeph> Located in the
+                                                  <codeph>/var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
+                                                  directory on the HLM host.</li>
+                                                  </ul>
+                                                </p><p>You can download these files to any location.
+                                                  You will copy these files to the
+                                                  <codeph>/home/wrsroot/</codeph> directory of
+                                                  <codeph>controller-0</codeph> in the KVM region
+                                                  during the installation process. </p><p>The
+                                                  <b>Patches</b> folder contains patches for the
+                                                  Attic backup and restore service and the OpenStack
+                                                  Ironic service:<table id="table_ich_gs5_mt">
+                                                  <tgroup cols="2">
+                                                  <colspec colnum="1" colname="col2"/>
+                                                  <colspec colnum="2" colname="col3"/>
+                                                  <tbody>
+                                                  <row>
                                                   <entry><b>File Name</b></entry>
                                                   <entry><b>Files within the folder</b></entry>
-                                                </row>
-                                                <row>
-                                                  <entry>Infoblox</entry>
-                                                  <entry>hoscg-neutron-2015.1.2.211-1.deb<p>hoscg-python-neutronclient-2.4.0.57-1.deb</p><p>hp-poc-20151016-full.patch</p></entry>
-                                                </row>
-                                                <row>
-                                                  <entry>Ironic build tarball patch</entry>
-                                                  <entry>processtarball.yml</entry>
-                                                </row>
-                                                <row>
-                                                  <entry/>
-                                                  <entry/>
-                                                </row>
-                                                <row>
-                                                  <entry>Nuage_Debians</entry>
+                                                  </row>
+                                                  <row>
+                                                  <entry>Attis</entry>
                                                   <entry>
-                                                  <ul id="ul_zwl_chh_xt">
-                                                  <li id="libproto">libprotobuf-c0_0.14-1+b1_amd64.deb</li>
-                                                  <li id="setproc">python-setproctitle_1.1.8-1_amd64.deb</li>
+                                                  <ul id="ul_e5y_zk4_yt">
+                                                  <li>1cb299775c75_insert_wr_appliance_config.py</li>
+                                                  <li>vsc_config_backup.yml</li>
+                                                  <li>vsc_config_restore.yml</li>
+                                                  <li>wr_cc_system_backup.yml</li>
+                                                  <li>wr_cc_system_restore.yml</li>
                                                   </ul>
-                                                  
                                                   </entry>
-                                                </row>
-                                                <row>
-                                                  <entry>Infoblox patch</entry>
-                                                  <entry>infoblox-baremetal.tar.gz</entry>
-                                                </row>
-                                        </tbody>
-                                </tgroup>
-                        </table>
-                        <p id="download-esx"><b>DCN components</b></p>
-                        <p>The <codeph>build22.tar</codeph> file contains the required DCN packages
-                                needed to deploy the DCN environment, in the
-                                        <codeph>build22/HLM/DCN</codeph> directory. The currently
-                                supported version is <b id="dcn-version">DCN version 3.2 R4</b>.</p>
-                        <table id="table_jl2_lyj_nt">
-                                <tgroup cols="2">
-                                        <colspec colname="newCol1" colnum="1" colwidth="1*"/>
-                                        <colspec colnum="2" colname="col2" colwidth="3.26*"/>
-                                        <thead>
-                                                <row>
-                                                  <entry>Folder</entry>
-                                                  <entry>File Name</entry>
-                                                </row>
-                                        </thead>
-                                        <tbody>
-                                                <row>
-                                                  <entry/>
+                                                  </row>
+                                                  <row>
+                                                  <entry>Ironic build tarball patch</entry>
                                                   <entry>
-                                                  <p><codeph id="itoolbox1"
-                                                  >itoolbox1.ova</codeph></p>
-                                                  <p><codeph>nuage-metadata-agent_3.2.4-133_all.deb</codeph></p>
-                                                  <p><codeph>nuagenetlib_0.0.0-1729-kilo_all</codeph></p>
-                                                  <p><codeph>nuage-openstack-neutron_2015.1.1729_all.deb</codeph></p>
-                                                  <p><codeph>nuage-openvswitch-common_3.2.4-133_amd64.deb</codeph></p>
-                                                  <p><codeph>nuage-openvswitch-switch_3.2.4-133_amd64.deb</codeph></p>
-                                                  <p><codeph>nuage-python-openvswitch_3.2.4-133_all.deb</codeph></p>
-                                                  <p><codeph> vsc_singledisk.ova</codeph></p>
+                                                  <ul id="ul_hvv_dl4_yt">
+                                                  <li>processtarball.yml</li>
+                                                  </ul>
                                                   </entry>
-                                                </row>
-                                                <row>
-                                                  <entry>VSD_R4_OVA</entry>
-                                                  <entry><codeph id="vsd-ova"
-                                                  >VSD-3.2.4_134-hp.ova</codeph></entry>
-                                                </row>
-                                                <row>
-                                                  <entry>VSD-QCOW2</entry>
-                                                  <entry><codeph>VSD-3.2.4_134-hp.qcow2</codeph></entry>
-                                                </row>
-                                                <row>
-                                                  <entry>VRS-vApp</entry>
-                                                  <entry>
-                                                  <p id="vrs-mf"
-                                                  ><codeph>VRS_3.2.4-135_10062015.mf</codeph></p>
-                                                  <p><codeph id="vrs-ovf"
-                                                  >VRS_3.2.4-135_10062015.ovf</codeph></p>
-                                                  <p><codeph id="vrs-vmdk"
-                                                  >VRS_3.2.4-135_10062015-disk1.vmdk</codeph></p>
-                                                  </entry>
-                                                </row>
-                                                <row>
-                                                  <entry>Compute-Proxy</entry>
-                                                  <entry><codeph id="esx-proxy-ova"
-                                                  >TEMPL-CPV9.ova</codeph></entry>
-                                                </row>
-                                        </tbody>
-                                </tgroup>
-                        </table>
-                        <p id="kvm-region"><b>KVM Region Installation files</b></p>
-                        <p>The <codeph>build22.tar</codeph> file contains the following files
-                                requried to install the KVM region of HP Helion OpenStack Carrier
-                                Grade, in the <codeph>build22/WR/</codeph> directory. The
-                                installation instructions indicate when and how to deploy the
-                                patches </p>
-                        <ul id="ul_ynd_ncz_st">
-                                <li>wr_vrs_or_avs_bootimage_10_06.iso</li>
-                                <li>HCG_2.0_WR_license.lic.txt</li>
-                        </ul>
-                        <p>The following files are included in the installation download packages
-                                and will become available during the installation of the Lifecycle
-                                Manager. </p>
+                                                  </row>
+                                                  </tbody>
+                                                  </tgroup>
+                                                  </table></p></li>
+                                        <li>Extract the <codeph>HCG2.0BetaDCN.tar.gz</codeph>
+                                                  file.<p>The <codeph>hcg-2-0-beta.tar</codeph> file
+                                                  contains the required DCN packages needed to
+                                                  deploy the DCN environment, in the
+                                                  <codeph>build22/HLM/DCN</codeph> directory. The
+                                                  currently supported version is <b>DCN version 3.2
+                                                  R4</b>.</p><ul id="ul_w3c_yj4_yt">
+                                                  <li>5930-Nuage-D2423.ipe</li>
+                                                  <li>itoolbox1.ova</li>
+                                                  <li>nuage-metadata-agent_3.2.4-133_all.deb</li>
+                                                  <li>nuagenetlib_0.0.0-1729-kilo_all.deb</li>
+                                                  <li>nuage-openstack-neutron_2015.1.1745_all.deb</li>
+                                                  <li>nuage-openvswitch-common_3.2.4-133_amd64.deb</li>
+                                                  <li>nuage-openvswitch-switch_3.2.4-133_amd64.deb</li>
+                                                  <li>nuage-python-openvswitch_3.2.4-133_all.deb </li>
+                                                  <li>VRS_3.2.4-135_10062015.ovf</li>
+                                                  <li>VRS_3.2.4-135_10062015-disk1.vmdk</li>
+                                                  <li>vsc_singledisk.qcow2</li>
+                                                  <li>VSD-3.2.4_134-hp.ova</li>
+                                                  <li>VSD-3.2.4_134-hp.qcow2</li>
+                                                </ul></li>
+                                        <li>Extract the
+                                                  <codeph>HCG2.0BetaInfobloxPlugin.tar.gz</codeph>
+                                                  file:<ul id="ul_gxx_3h4_yt">
+                                                  <li>infoblox.tar.gz</li>
+                                                  <li>infoblox.tar.gz.md5</li>
+                                                  <li>infoblox-baremetal.tar.gz</li>
+                                                  <li>infoblox-baremetal.tar.gz.md5</li>
+                                                </ul>Do not extract these files. You will copy the
+                                                compressed files later in the installation
+                                                process.</li>
+                                </ol>
+                        </p>
+                </section>
+                <section>
+                        <title>Obtain the required Debian packages</title>
+                        <p>HP Helion OpenStack Carrier Grade maintains a local Debian repository on
+                                the HLM host from where Debain packages are installed. Download
+                                these files from a trusted source and copy them to the
+                                        <systemoutput>/root/cg/dcn</systemoutput> directory. </p>
                         <p>
-                                <ul id="ul_oty_2cz_st">
-                                        <li><codeph>license.lic</codeph> Located in the
-                                                  <codeph>/root/cg-hlm/windriver-files</codeph>
-                                                directory on the HLM host.</li>
-                                        <li><codeph>region_config</codeph> Located in the
-                                                  /<codeph>var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
-                                                directory on the HLM host.</li>
-                                        <li><codeph>cakey.pem</codeph> Located in the
-                                                  <codeph>/var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
-                                                directory on the HLM host.</li>
+                                <ul id="ul_xjq_cm4_yt">
+                                        <li>libprotobuf-c0_0.14-1+b1_amd64.deb</li>
+                                        <li>python-setproctitle_1.1.8-1_amd64.deb</li>
                                 </ul>
                         </p>
-                        <p>You can download these files to any location. You will copy these files
-                                to the <codeph>/home/wrsroot/</codeph> directory of
-                                        <codeph>controller-0</codeph> in the KVM region during the
-                                installation process. </p>
                 </section>
                 <section>
                         <title>Download the ESX packages</title>
-                        <p><b>Note:</b> This is applicable only for deployments using ESX. </p>
-                        <p>To integrate VMware ESX<tm tmtype="reg"/> storage, deploy the KVM + ESX
-                                topology, download the following additional packages.</p>
-                        <p><b>ESX components</b></p>
-                        <p>Download all required ESX packages needed to deploy the ESX environment,
-                                including the VMware vSphere Distributed Switch (VDS) .</p>
-                </section>
-                <section>
-                        <title>Baremetal Region installation files </title>
-                        <p>cg-ironic-deploy-images.tar.gz </p>
-                        <p>cg-ironic-deploy-images.tar.gz.md5</p>
+                        <p><b>Note:</b> This is not applicable for the <xref
+                                        href="carrier-grade-technical-overview-tahoe.dita#topic3485"
+                                        >Tahoe deployment</xref>. </p>
+                        <p>To integrate VMware ESX<tm tmtype="reg"/> storage, download all required
+                                ESX packages needed to deploy the ESX environment, including the
+                                VMware vSphere Distributed Switch (VDS) . The
+                                        <codeph>hcg-2-0-beta.tar</codeph> file contains the template
+                                file required for the ESX Compute Proxy.</p>
                 </section>
                 <section><!--<ol id="ol_b4b_pyk_2t">
                                 <li> DCN has a well-defined process for Pre-Sales and Post-Sales
@@ -763,10 +744,13 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   <entry/>
                                                   <entry>
                                                   <p>nuage-metadata-agent_3.2.4-133_all.deb</p>
+                                                  <p>nuagenetlib_0.0.0-1729-kilo_all.deb</p>
+                                                  <p>nuage-openstack-neutron_2015.1.1729_all.deb</p>
                                                   <p>nuage-openvswitch-common_3.2.4-133_amd64.deb</p>
                                                   <p>nuage-openvswitch-switch_3.2.4-133_amd64.deb</p>
                                                   <p>nuage-python-openvswitch_3.2.4-133_all.deb</p>
-                                                  <p> vsc_singledisk.ova</p>
+                                                  <p>
+                                                  <b><i><u>vsc_singledisk.ova</u></i></b></p>
                                                   </entry>
                                                   <entry>
                                                   <p>/root/cg/dcn</p>
@@ -785,7 +769,7 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   <entry>VRS-vApp</entry>
                                                   <entry>
                                                   <p>itoolbox1.ova</p>
-                                                  <p>VRS_3.2.4-135_10062015.mf</p>
+                                                  <p><b><u><i>VRS_3.2.4-135_10062015.mf</i></u></b></p>
                                                   <p>VRS_3.2.4-135_10062015.ovf</p>
                                                   <p> VRS_3.2.4-135_10062015-disk1.vmdk</p>
                                                   </entry>
@@ -793,11 +777,6 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   <p><codeph>/var/www/html</codeph> on the KVM host.
                                                   </p>
                                                   </entry>
-                                                </row>
-                                                <row>
-                                                  <entry>Compute-Proxy</entry>
-                                                  <entry>TEMPL-CPV9.ova</entry>
-                                                  <entry>Upload to the ESX Cluster</entry>
                                                 </row>
                                         </tbody>
                                 </tgroup>

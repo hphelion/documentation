@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ifg_n33_bt">
+        <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Integrating LDAP with the Identity
+                Service</title>
+        <body>
+                <section><title>Integrating with an external LDAP server</title>
+                        <p>If your organization, like most, uses an LDAP directory service such as Active Directory,
+                                you can integrate it with Keystone by following the steps outlined below.</p>
+                        <p>Integration with an external LDAP server is supported via the Keystone domain-specific
+                                configuration.</p>
+                        <ol>
+                                <li>Ensure that the <codeph>domain_specific_drivers_enabled</codeph> option is set to
+                                        <codeph>True</codeph> in the main configuration file template in this file:
+                                        <codeblock>/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2</codeblock></li>
+                                <li>Create a YAML file which contains the definition of the LDAP server connection. The
+                                        sample file below is already provided as part of the lifecycle-managers <xref
+                                                href="../installation/using_git.dita#using_git">local git repository</xref>. It is
+                                        available on a deployer/lifecycle-manager node in the following file:
+                                        <codeblock>/home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_sample.yml</codeblock>.
+                                        <p>Save a copy of this file with a new name, for example:</p>
+                                        <codeblock>/home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_my.yml</codeblock>
+                                        <note>Please refer to [ldap] section of the <xref
+                                                href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
+                                                scope="external" format="html">Keystone</xref> documentation for OpenStack Kilo for
+                                                the full option list and description.</note>
+                                        <p>Here is the sample YAML configuration, optimized for Microsoft Active Directory
+                                                server:</p>
+                                        <codeblock>---
+                                                
+                                                keystone_domainldap_conf:
+                                                
+                                                # CA certificates file content.
+                                                # Certificates are stored in Base64 PEM format. This may be entire LDAP server
+                                                # certificate (in case of self-signed certificates), certificate of authority 
+                                                # which issued LDAP server certificate, or a full certificate chain (Root CA
+                                                # certificate, intermediate CA certificate(s), issuer certificate).
+                                                #
+                                                cert_settings:
+                                                cacert: |
+                                                -----BEGIN CERTIFICATE-----
+                                                
+                                                certificate appears here
+                                                
+                                                -----END CERTIFICATE-----
+                                                
+                                                # A domain will be created in MySQL with this name, and associated with ldap backend.
+                                                # Installer will also generate a config file named /etc/keystone/domains/keystone.&lt;domain_name>.conf
+                                                #
+                                                domain_settings:
+                                                name: dept1
+                                                description: Dedicated domain for dept1 users
+                                                
+                                                conf_settings:
+                                                identity:
+                                                driver: keystone.identity.backends.ldap.Identity
+                                                
+                                                assignment:
+                                                driver: keystone.assignment.backends.sql.Assignment
+                                                
+                                                # For full list and description of ldap configuration options, please refer to
+                                                # https://github.com/openstack/keystone/blob/master/etc/keystone.conf.sample or
+                                                # http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html.
+                                                #
+                                                # Please note:
+                                                #  1. LDAP configuration is read-only. Configuration which performs write operations (i.e. creates users, groups, etc)
+                                                #     is not supported at the moment.
+                                                #  2. LDAP is only supported for identity operations (reading users and groups from LDAP). Assignment
+                                                #     operations with LDAP (i.e. managing roles, projects) are not supported.
+                                                #  3. LDAP is configured as non-default domain. Configuring LDAP as a default domain is not supported.
+                                                #
+                                                ldap:
+                                                url: ldap://ad.myorg.com
+                                                suffix: DC=acme,DC=net
+                                                user_tree_dn: CN=Users,DC=acme,DC=net
+                                                user : CN=admin,CN=Users,DC=acme,DC=net
+                                                password: REDACTED
+                                                user_objectclass: user
+                                                user_id_attribute: cn
+                                                user_name_attribute: cn
+                                                user_allow_create: False
+                                                user_allow_update: False
+                                                user_allow_delete: False
+                                                group_tree_dn: CN=Users,DC=acme,DC=net
+                                                group_objectclass: group
+                                                group_id_attribute: cn
+                                                group_name_attribute: cn
+                                                group_allow_create: False
+                                                group_allow_update: False
+                                                group_allow_delete: False
+                                                use_pool: True
+                                                user_enabled_attribute: userAccountControl
+                                                user_enabled_mask: 2
+                                                user_enabled_default: 512
+                                                use_tls: True
+                                                tls_req_cert: demand
+                                                # if you are configuring multiple LDAP domains, and LDAP server certificates are issued
+                                                # by different authorities, make sure that you place certs for all the LDAP backend domains in the 
+                                                # cacert parameter as seen in this sample yml file so that all the certs are combined in a single CA file 
+                                                # and every LDAP domain configuration points to the combined CA file.
+                                                # Note: There is a known issue on one cert per CA file per domain when the system processes 
+                                                # concurrent requests to multiple LDAP domains. Using the single CA file with all certs combined 
+                                                # shall get the system working properly*.
+                                                # The issue is in the underlying SSL library. Upstream is not investing in python-ldap package anymore. It is also not python3
+                                                # compliant. At <xref href="https://etherpad.openstack.org/p/keystone-mitaka-summit-brainstorm" format="html" scope="external">Mitaka summit</xref>, we will be proposing a transition off python-ldap to use python3-ldap.
+                                                
+                                                tls_cacertfile: /etc/keystone/ssl/certs/all_ldapca.pem</codeblock>
+                                </li>
+                                <li>As suggested at <xref
+                                                href="../installation/using_git.dita#using_git"
+                                                >Using Git for Configuration Management</xref>,
+                                        commit the new file into local git repository, and rerun
+                                        Configuration Processor / deployment area preparation
+                                        playbooks :
+                                        <codeblock>$ cd ~/helion
+$ git checkout site
+$ git add my_cloud/config/keystone/keystone_configure_ldap_my.yml
+$ git commit -m "Adding LDAP server integration config"
+$ cd ~/helion/hos/ansible
+$ ansible-playbook -i hosts/localhost config-processor-run.yml
+$ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
+                                </li>
+                                <li> Run reconfiguration playbook in a deployment area, passing a YAML file created at
+                                        previous step as command line option:
+                                        <codeblock>$ cd ~/scratch/ansible/next/hos/ansible
+                                                $ ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml -e@/home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_my.yml</codeblock>
+                                </li>
+                                <li> Follow these same steps for each LDAP domain with which you are integrating Keystone,
+                                        creating a yaml file for each and running the reconfigure playbook once for each
+                                        additional domain. </li>
+                                <li>Ensure that a new domain was created for LDAP (Microsoft AD in this example): <codeblock># Set environment variables for admin level access
+                                        $ source keystone.osrc
+                                        
+                                        # Get list of domains
+                                        $ openstack domain list
+                                        +----------------------------------+---------+---------+----------------------------------------------------------------------+
+                                        | ID                               | Name    | Enabled | Description                                                          |
+                                        +----------------------------------+---------+---------+----------------------------------------------------------------------+
+                                        | 6740dbf7465a4108a36d6476fc967dbd | heat    | True    | Owns users and projects created by heat                              |
+                                        | default                          | Default | True    | Owns users and tenants (i.e. projects) available on Identity API v2. |
+                                        | b2aac984a52e49259a2bbf74b7c4108b | ad      | True    | Dedicated domain for users managed by Microsoft AD server            |
+                                        +----------------------------------+---------+---------+----------------------------------------------------------------------+
+                                        
+                                        # Get list of LDAP groups
+                                        $ openstack group list --domain ad
+                                        +------------------------------------------------------------------+------------+
+                                        | ID                                                               | Name       |
+                                        +------------------------------------------------------------------+------------+
+                                        | 03976b0ea6f54a8e4c0032e8f756ad581f26915c7e77500c8d4aaf0e83afcdc6 | testgroup1 |
+                                        | 7ba52ee1c5829d9837d740c08dffa07ad118ea1db2d70e0dc7fa7853e0b79fcf | testgroup2 |
+                                        +------------------------------------------------------------------+------------+</codeblock>
+                                        <note>LDAP domain is read-only. This means that you can not create new user or group
+                                                record in it.</note>
+                                </li>
+                                <li> Once LDAP user is granted appropriate role, it can authenticate within specified
+                                        domain:
+                                        <codeblock># Set environment variables for admin level access
+                                                $ source keystone.osrc
+                                                
+                                                # Get user record within ad domain
+                                                $ openstack user show testuser1 --domain ad
+                                                +-----------+------------------------------------------------------------------+
+                                                | Field     | Value                                                            |
+                                                +-----------+------------------------------------------------------------------+
+                                                | domain_id | 143af847018c4dc7bd35390402395886                                 |
+                                                | id        | e6d8c90abdc4510621271b73cc4dda8bc6009f263e421d8735d5f850f002f607 |
+                                                | name      | testuser1                                                        |
+                                                +-----------+------------------------------------------------------------------+
+                                                
+                                                # Create a new role. Please note that role is not bound to domain.
+                                                $ openstack role create testrole1
+                                                +-------+----------------------------------+
+                                                | Field | Value                            |
+                                                +-------+----------------------------------+
+                                                | id    | 02251585319d459ab847409dea527dee |
+                                                | name  | testrole1                        |
+                                                +-------+----------------------------------+
+                                                
+                                                # Grant user a role within domain. Please note that due to current Openstack CLI limitation, we have to use user ID rather then user name
+                                                # when working with non-default domain.
+                                                $ openstack role add testrole1 --user e6d8c90abdc4510621271b73cc4dda8bc6009f263e421d8735d5f850f002f607 --domain ad
+                                                
+                                                # Verify if role was successfully granted
+                                                $ openstack role assignment list --user e6d8c90abdc4510621271b73cc4dda8bc6009f263e421d8735d5f850f002f607 --domain ad
+                                                +----------------------------------+------------------------------------------------------------------+-------+---------+----------------------------------+
+                                                | Role                             | User                                                             | Group | Project | Domain                           |
+                                                +----------------------------------+------------------------------------------------------------------+-------+---------+----------------------------------+
+                                                | 02251585319d459ab847409dea527dee | e6d8c90abdc4510621271b73cc4dda8bc6009f263e421d8735d5f850f002f607 |       |         | 143af847018c4dc7bd35390402395886 |
+                                                +----------------------------------+------------------------------------------------------------------+-------+---------+----------------------------------+
+                                                
+                                                # Authenticate (get a domain-scoped token) as new user with a new role. The --os-* command line parameters specified below override respective OS_* environment
+                                                # variables set by keystone.osrc script to provide admin access. To ensure that command below is executed in clean environment, you may want log out from
+                                                # the node and log in again. 
+                                                $ openstack --os-identity-api-version 3 \
+                                                --os-username testuser1 \
+                                                --os-password testuser1_password \
+                                                --os-auth-url http://10.0.0.6:35357/v3 \
+                                                --os-domain-name ad \
+                                                --os-user-domain-name ad \
+                                                token issue
+                                                +-----------+------------------------------------------------------------------+
+                                                | Field     | Value                                                            |
+                                                +-----------+------------------------------------------------------------------+
+                                                | domain_id | 143af847018c4dc7bd35390402395886                                 |
+                                                | expires   | 2015-09-09T21:36:15.306561Z                                      |
+                                                | id        | 6f8f9f1a932a4d01b7ad9ab061eb0917                                 |
+                                                | user_id   | e6d8c90abdc4510621271b73cc4dda8bc6009f263e421d8735d5f850f002f607 |
+                                                +-----------+------------------------------------------------------------------+</codeblock>
+                                </li>
+                                
+                                <li>Users can also have a project within domain and get a project-scoped token:
+                                        <codeblock># Set environment variables for admin level access
+                                                $ source keystone.osrc
+                                                
+                                                # Create a new project within domain
+                                                $ openstack project create testproject1 --domain ad
+                                                +-------------+----------------------------------+
+                                                | Field       | Value                            |
+                                                +-------------+----------------------------------+
+                                                | description |                                  |
+                                                | domain_id   | 143af847018c4dc7bd35390402395886 |
+                                                | enabled     | True                             |
+                                                | id          | d065394842d34abd87167ab12759f107 |
+                                                | name        | testproject1                     |
+                                                +-------------+----------------------------------+
+                                                
+                                                # Grant user a role with a project, re-using a role created in previous example.  Please note that due to current Openstack CLI limitation, we have to use
+                                                # user ID rather then user name when working with non-default domain.
+                                                $ openstack role add testrole1 --user e6d8c90abdc4510621271b73cc4dda8bc6009f263e421d8735d5f850f002f607 --project testproject1
+                                                
+                                                # Verify if role was successfully granted
+                                                $ openstack role assignment list --user e6d8c90abdc4510621271b73cc4dda8bc6009f263e421d8735d5f850f002f607 --project testproject1
+                                                +----------------------------------+------------------------------------------------------------------+-------+----------------------------------+--------+
+                                                | Role                             | User                                                             | Group | Project                          | Domain |
+                                                +----------------------------------+------------------------------------------------------------------+-------+----------------------------------+--------+
+                                                | 02251585319d459ab847409dea527dee | e6d8c90abdc4510621271b73cc4dda8bc6009f263e421d8735d5f850f002f607 |       | d065394842d34abd87167ab12759f107 |        |
+                                                +----------------------------------+------------------------------------------------------------------+-------+----------------------------------+--------+
+                                                
+                                                # Authenticate (get a project-scoped token) as new user with a new role. The --os-* command line parameters specified below override respective OS_* environment
+                                                # variables set by keystone.osrc script to provide admin access. To ensure that command below is executed in clean environment, you may want log out from
+                                                # the node and log in again. Please note that both --os-project-domain-name and --os-project-user-name parameters are needed to justify that both user and
+                                                # project are not in default domain.
+                                                $ openstack --os-identity-api-version 3 \
+                                                --os-username testuser1 \
+                                                --os-password testuser1_password \
+                                                --os-auth-url http://10.0.0.6:35357/v3 \
+                                                --os-project-name testproject1 \
+                                                --os-project-domain-name ad \
+                                                --os-user-domain-name ad \
+                                                token issue
+                                                +------------+------------------------------------------------------------------+
+                                                | Field      | Value                                                            |
+                                                +------------+------------------------------------------------------------------+
+                                                | expires    | 2015-09-09T21:50:49.945893Z                                      |
+                                                | id         | 328e18486f69441fb13f4842423f52d1                                 |
+                                                | project_id | d065394842d34abd87167ab12759f107                                 |
+                                                | user_id    | e6d8c90abdc4510621271b73cc4dda8bc6009f263e421d8735d5f850f002f607 |
+                                                +------------+------------------------------------------------------------------+</codeblock>
+                                </li>
+                                
+                                
+                                
+                        </ol>
+                </section>
+                <section id="encrypt"><title>Transport Layer Security (TLS) Support</title>
+                        <p> The Identity service supports various encryption options when an external LDAP or
+                                Microsoft Active Directory is configured for external authentication including: </p>
+                        <ul>
+                                <li>External authentication with LDAP and Microsoft Active Directory systems</li>
+                                <li>LDAPS specific support</li>
+                                <li>STARTTLS</li>
+                                
+                        </ul>
+                </section>
+                
+                <!-- <section><title>Support and Troubleshooting</title>
+    
+    </section>-->
+        </body>
+</topic>

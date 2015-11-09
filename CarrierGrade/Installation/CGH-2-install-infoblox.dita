@@ -205,7 +205,7 @@
           </ul></li>
         <li>Execute following command to apply patch:
               <codeblock>ansible-playbook -i hosts deploy-infoblox.yml</codeblock><p><b>To deploy
-              the plug-in on the HLM host:</b></p></li>
+              the plug-in on the baremetal region controller:</b></p></li>
       </ol>
       <ol>
         <li>Log into the baremetal controller.</li>
