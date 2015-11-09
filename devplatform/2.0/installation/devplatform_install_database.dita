@@ -25,33 +25,46 @@
           been installed.)</li>
         <li>Source the Virtual
           Environment.<codeblock>stack@hlm:~$ source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate </codeblock></li>
-         <li>List the available database versions to install:
-          <codeblock>openstack hdpi list --os-cloud mycloud | grep database  </codeblock>The output
-          should look similar
-          to:<codeblock>database | wscatalog.#### <!--this number is incoming from Matty, the bits are still uploading as this is written-->| 2.0.0.0 | available</codeblock></li>
-        <li>Select the most recent database version to install and view the details of the
-          package:<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock></li>
         <li>Install the database service.
        <ol> <li>If you <xref href="install_offline.dita#topic_w25_hqp_xt">pre-downloaded</xref> the
-              file:<codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
-openstack --os-cloud mycloud hdpi database install <i>&lt;filename></i></codeblock><note>When installing
-  pre-downloaded files, make sure you run the installer from the same directory where the
-  installation files are. If the installer cannot find a file with the name you provided in
-  the local directory, it will attempt to download the files again. </note></li>
-        <li>If you did not pre-download the file,
-            run:<codeblock>openstack --os-cloud mycloud hdpi database install wscatalog.####</codeblock></li></ol><note>Downloading
-            may take a significant amount of time; depending on network traffic, it could take 20-90
-            minutes.</note>During installation, this command will generate output similar to the
-          following:
-          <codeblock>Database is (downloaded)
+              installation
+                files:<codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
+openstack --os-cloud mycloud hdpi database install <i>&lt;filename></i></codeblock><note>Make
+                sure you run the installer from the <b>same</b> directory where the installation
+                files are saved. If the installer cannot find a file with the name you provided in
+                the local directory, it will attempt to download the files again. </note></li>
+        <li>If you did not pre-download the file: <ol>
+                <li>Find the most recent version of the
+                  file.<pre>openstack --os-cloud mycloud hdpi list</pre>The output should look
+                  similar
+                  to:<pre>+----------------------------+----------------+-----------+------------+
+| service                    | id             | version   | state      |
++----------------------------+----------------+-----------+------------+
+| Helion Code Engine         | wscatalog.2776 | 1.0.0     | available  |
+| als                        | wscatalog.2765 | 2.0.0.539 | available  |
+| als                        | wscatalog.2800 | 2.0.0.548 | available  |
+| database                   | wscatalog.2762 | 2.0.0.32  | available  |
+<b>| database                   | wscatalog.2803 | 2.0.0.37  | available  |</b>
+| messaging                  | wscatalog.2761 | 1.0.0     | available  |
+| messaging                  | wscatalog.2796 | 1.0.0.165 | available  |
++----------------------------+----------------+-----------+------------+</pre></li>
+                <li>Find the<b> ID number</b> of the most recent version of the service (the highest
+                  ID number for that service).</li>
+                <li>If desired, inspect the installation files for size, version, and other detailed
+                  information.<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock></li>
+                <li>Begin the download and
+                  installation:<codeblock>openstack --os-cloud mycloud hdpi database install wscatalog.####</codeblock></li>
+              </ol><note> Downloading may take a significant amount of time; depending on network
+                traffic, it could take 20-90 minutes.</note>During installation, this command will
+              generate output similar to the following:
+              <codeblock>Database is (downloaded)
 Database is already (available)
 Database is already configured
 Launching stack...
 Stack trove creating
 Completed installing database
-$</codeblock></li>
-      </ol>
-    </section>
+$</codeblock></li></ol></li></ol></section>
+
 <section id="configure_haproxy"><sectiondiv><p><b>Configure HAProxy</b></p>The following steps will configure HAProxy to receive and
         forward HTTP requests to the VM that hosts the REST API endpoint for the Database Service.<ol>
           <li> Identify all the API server IPs on the SVC network. <p>

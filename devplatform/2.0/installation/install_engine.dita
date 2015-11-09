@@ -30,33 +30,41 @@
           Deployer.<pre>source ./service.osrc
 nova keypair-add --pub-key ~/.ssh/id_rsa.pub helionce-shared</pre></li>    <li>Ensure all OS_ variables are unset. Run <codeblock>env | grep OS_ </codeblock> and then
             <codeph>unset</codeph> any variables which appear in the list of results. </li>
-        <li>Create an instance of the Deployer VM.<ol>
-            <li>Source the Virtual Environment.
-              <!-- <- is this necessary? check with Cue team--><codeblock>source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate</codeblock></li>
-          <li>List the available Code Engine versions to install:
-              <codeblock>openstack hdpi list --os-cloud mycloud | grep codeengine  </codeblock>The
-              output should look similar
-              to:<codeblock>codeengine | wscatalog.#### <!--this number is incoming from Matty, the bits are still uploading as this is written-->| 1.0.0.42 | available</codeblock></li>
-          <li>Select the most recent Code Engine version to install and view the details of the
-            package:<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock></li></ol>
-        </li>
-            <li>Install the Code Engine service installation files. <ol>
+        <li>Source the Virtual Environment.
+          <!-- <- is this necessary? check with Cue team--><codeblock>source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate</codeblock></li>
+        <li> Install the Code Engine service installation files. <ol id="ol_mdn_zgq_yt">
             <li>If you <xref href="install_offline.dita#topic_w25_hqp_xt">pre-downloaded</xref> the
               installation file, run the following command to install
-              it:<codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
-openstack --os-cloud hce <!--<- is this supposed to be hce or mycloud or some kind of placeholder name?--> hdpi helionce install <i>&lt;filename></i></codeblock>
-              <note>When installing pre-downloaded files, make sure you run the installer from the
-                same directory where the installation files are. If the installer cannot find a file
-                with the name you provided in the local directory, it will attempt to download the
-                files again. </note></li>
-            <li>If you did not pre-download the installation file, run the following command to
-              download and install it:<codeblock>openstack --os-cloud hce hdpi helionce install wscatalog.2801</codeblock>
-              <note>For detailed installation troubleshooting, turn on the
-                debug option and run the command again:
-                <codeblock>openstack --debug --os-cloud hce hdpi helionce install <i>&lt;filename or catalog number></i></codeblock></note>
-              <note>Downloading
-                may take a significant amount of time; depending on network traffic, it could take 20-90
-                minutes.</note></li>
+                it:<codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
+openstack --os-cloud hce hdpi helionce install <i>&lt;filename></i></codeblock><note>When
+                installing pre-downloaded files, make sure you run the installer from the same
+                directory where the installation files are saved. If the installer cannot find a
+                file with the name you provided in the local directory, it will attempt to download
+                the files again. </note></li>
+            <li>If you did not pre-download the installation file:
+           <ol> <li>List the available Code Engine versions to install:
+                  <codeblock>openstack hdpi list --os-cloud mycloud | grep codeengine  </codeblock>The
+                  output should look similar
+                  to:<codeblock>+----------------------------+----------------+-----------+------------+
+| service                    | id             | version   | state      |
++----------------------------+----------------+-----------+------------+<b>
+| Helion Code Engine         | wscatalog.2776 | 1.0.0     | available  |</b>
+| als                        | wscatalog.2765 | 2.0.0.539 | downloaded |
+| als                        | wscatalog.2800 | 2.0.0.548 | downloaded |
+| database                   | wscatalog.2762 | 2.0.0.32  | available  |
+| database                   | wscatalog.2803 | 2.0.0.37  | available  |
+| messaging                  | wscatalog.2761 | 1.0.0     | available  |
+| messaging                  | wscatalog.2796 | 1.0.0.165 | available  |
++----------------------------+----------------+-----------+------------+</codeblock></li>
+            <li>Review the details of the installation
+                  package.<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock></li>
+            <li> Download and install the package.<note>Downloading may take a significant amount of
+                    time; depending on network traffic, it could take 20-90
+                  minutes.</note><codeblock>openstack --os-cloud hce hdpi helionce install wscatalog.####</codeblock>For
+                  detailed installation troubleshooting, turn on the debug option and run the
+                  command again:
+                  <codeblock>openstack --debug --os-cloud hce hdpi helionce install <i>&lt;filename or catalog number></i></codeblock>
+                </li></ol></li>
           </ol></li>
             <li>Launch the
               instance.<codeblock>openstack hdpi helionce launch --os-cloud hce
