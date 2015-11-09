@@ -21,9 +21,8 @@
         </prolog>
         <body>
                 <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-install-pb-prereqs.md--><!--permalink: /helion/openstack/carrier/install/pb/prereqs/--></p>
-                <p>This document describes the prerequisite steps and one time setup on your HLM
-                        host required to install HP Helion OpenStack Carrier Grade in a baremetal
-                        environment.</p>
+                <p>This document describes the prerequisite steps required to install HP Helion
+                        OpenStack Carrier Grade in a baremetal environment.</p>
                 <section id="hardware">
                         <title>Hardware and software requirements</title>
                         <p>Before you start, if you have not done so already, make sure your
@@ -51,14 +50,17 @@
                                                 href="#topic7148/ntp" format="dita"
                                         /><?oxy_insert_end?></li>
                                 <li><xref href="#topic7148/ssh" format="dita"/></li>
+                                <li><xref href="#topic7148/ssh" format="dita"/></li>
+                                <li><xref href="#topic7148/network" format="dita"/></li>
+                                <li><xref href="#topic7148/ldap" format="dita"/></li>
                                 <li><xref href="#topic7148/getinstall" format="dita"/></li>
                                 <li><xref href="#topic7148/kvm-region" format="dita">Download the
                                                 installation packages for the KVM region</xref></li>
-                                <li><xref href="#topic7148/patches" format="dita">Download required
-                                                patches</xref></li>
                                 <!--<li><xref href="#topic7148/download-esx" format="dita"/> This is applicable only for KVM + ESX Cloud Deployment. </li>-->
                                 <!--<li><xref href="#topic7148/verify" format="dita"/></li>-->
                                 <li><xref href="#topic7148/checksum" format="dita"/></li>
+                                <li><xref href="#topic7148/extract" format="dita"/></li>
+                                <li><xref href="#topic7148/vsd" format="dita"/></li>
                                 <li><xref href="#topic7148/prepbare" format="dita"/></li>
                         </ul>
                         <title>Install Ubuntu Server 14.04.2 LTS</title>
@@ -88,13 +90,14 @@
 </codeph></codeblock></li>
                                 <li>Edit the <codeph>/etc/environment</codeph> file to add the
                                         following lines, using values specific to your environment.
-                                        the <codeph>export no-proxy</codeph> command is
-                                                optional<!-- per Lakshmi email 10/9/15-->:<codeblock><codeph>PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+                                                  <p><b>Note:</b> The <codeph>export
+                                                  no-proxy</codeph> command is
+                                                optional<!-- per Lakshmi email 10/9/15-->:</p><codeblock><codeph>PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export http_proxy=http://&lt;web_proxy_IP&gt;/
 export https_proxy=http://&lt;web_proxy_IP&gt;/
 export no_proxy=localhost,127.0.0.1,&lt;HLM_host_IP_address>,&lt;provider_network></codeph></codeblock><p>Where:</p><codeblock>&lt;web_proxy_IP> is your web proxy IP address.
 &lt;HLM_host_IP_address> is the IP address of the HLM Host</codeblock></li>
-                                <li>Source the <codeph>environments</codeph>
+                                <li>Source the <codeph>environment</codeph>
                                         file:<codeblock><codeph>source /etc/environment
 </codeph></codeblock></li>
                         </ol>
@@ -134,8 +137,8 @@ export no_proxy=localhost,127.0.0.1,&lt;HLM_host_IP_address>,&lt;provider_networ
                         </ul>
                         <p>To install the packages on the KVM host:</p>
                         <ol>
-                                <li>On the KLM host, run the following all in one command to install
-                                        packages:
+                                <li>On the KLM host, run the following command to install all
+                                        required packages:
                                         <codeblock><codeph>sudo su -l -c "apt-get install -y ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager xorg gnome-core gnome-system-tools gnome-app-install sshpass gnupg jq vlan sudo ansible
 </codeph></codeblock></li>
                                 <li>Add the 802.1q module to the kernel on boot. The 802.1q standard
@@ -148,23 +151,25 @@ export no_proxy=localhost,127.0.0.1,&lt;HLM_host_IP_address>,&lt;provider_networ
                         </ol>
                 </section>
                 <section id="configure-the-xrdp-remote-desktop-display"><title>Configure the XRDP
-                                remote desktop display</title><p>Configure XRDP on the KVM host for
+                                remote desktop display</title><p>Configure XRDP on the HLM host for
                                 the remote desktop connection to access the server remotely as
                                 follows.</p><ol>
-                                <li>Edit the <codeph>sesman.ini</codeph> file: vi
-                                        /etc/xrdp/sesman.ini <ol>
+                                <li>Edit the <codeph>sesman.ini</codeph> file: <ol>
+                                                <li>Open the file:
+                                                  <codeblock>vi /etc/xrdp/sesman.ini </codeblock></li>
                                                 <li>Update the<codeph>MaxSessions=1</codeph> to
                                                   <codeph>MaxSessions=50</codeph>.</li>
                                                 <li>Save and close the file.</li>
                                         </ol></li>
-                                <li>Configure the system to use
+                                <li>Execute the following command to configure the system to use
                                         XRDP:<codeblock><codeph>echo "xfce4-session" &gt; ~/.xinitrc
 </codeph></codeblock></li>
-                                <li>Restart the XDRP service:
+                                <li>Execute the following command to restart the XDRP service:
                                         <codeblock>sudo /etc/init.d/xrdp restart</codeblock></li>
                         </ol><p>If the XDRP display does not work as expected, (you see a gray
-                                screen), update the <codeph>startwm.sh</codeph>
-                                file:</p><codeblock><codeph>vi /etc/xrdp/startwm.sh
+                                screen): <ol id="ol_hnf_vpk_yt">
+                                        <li>Update the <codeph>startwm.sh</codeph>
+                                                  file:<codeblock><codeph>vi /etc/xrdp/startwm.sh
 
 #!/bin/sh
 
@@ -176,18 +181,23 @@ fi
 #. /etc/X11/Xsession
 . /usr/bin/startxfce4
 </codeph>
-</codeblock><p>Make
-                                sure you add a space after "." then restart
-                                XDRP:</p><codeblock><codeph>sudo /etc/init.d/xrdp restart
+</codeblock><p><b>Note:</b>
+                                                  Make sure you add a space between
+                                                  <codeph>.</codeph> and
+                                                <codeph>/</codeph>.</p></li>
+         
+                                
+                                <li>Restart
+                                XDRP:<codeblock><codeph>sudo /etc/init.d/xrdp restart
 </codeph></codeblock><p>When
                                 you XRDP to the KVM host, the screen appears similar to the
                                 following image:</p><image href="../../media/CGH-install-xrdp.png"
                                 id="image_pln_cdm_vs">
-                                <alt>XRDP display</alt>
-                        </image></section>
+                                
+                        </image> </li></ol></p></section>
                 <section id="ntp">
                         <title>Install and configure NTP</title>
-                        <p>You must configure the HLM Host as an NTP client.</p>
+                        <p>You must configure the HLM host as an NTP client.</p>
                         <p>You can install NTP on the HLM host and configure it as an NTP server.
                                 Or, you can use a pre-existing NTP server that is reachable from the
                                 management network. </p>
@@ -203,16 +213,16 @@ fi
                         <p>On the HLM host, the OpenSSH server must be running and the firewall
                                 configuration should allow access to the SSH ports.</p>
                         <ol>
-                                <li>Enable root login in the <codeph>/etc/ssh/sshd_config</codeph>
-                                        by setting the following values and save the file:
-                                        <codeblock># Authentication:
+                                <li>Enable root login in the <codeph>/etc/ssh/sshd_config</codeph>:
+                                                <ol id="ol_h13_kqk_yt">
+                                                <li>Set the following values: </li>
+                                        </ol><codeblock># Authentication:
 LoginGraceTime 120
 #PermitRootLogin without-password
 PermitRootLogin yes
 #StrictModes yes
 StrictModes no
-PermitRootLogin yes
-</codeblock></li>
+PermitRootLogin yes</codeblock></li>
                                 <!--<li>In the <codeph>sshd_config</codeph> file, set the following
           variables:<codeblock><codeph># Authentication:
 LoginGraceTime 120
@@ -220,11 +230,14 @@ LoginGraceTime 120
 StrictModes no
 </codeph></codeblock></li>
 -->
-                                <li>Disable strict host key checking: in the
-                                                <codeph>~/.ssh/config</codeph> file (create the file
-                                        if it does not exist) add following lines and save the file:
-                                        <codeblock>Host *
+                                <li>Disable strict host key checking: <ol id="ol_cxy_4rk_yt">
+                                                <li>In the <codeph>~/.ssh/config</codeph> file
+                                                  (create the file if it does not exist) add
+                                                  following
+                                                  lines<codeblock>Host *
 StrictHostKeyChecking no </codeblock></li>
+                                                <li>Save the file,</li>
+                                        </ol></li>
                                 <li>Restart the SSH
                                         service:<codeblock><codeph>service ssh restart</codeph></codeblock></li>
                                 <li>Configure the public key and passwordless SSH access.<p>a. Enter
@@ -233,28 +246,29 @@ StrictHostKeyChecking no </codeblock></li>
                                                 Press Enter to use default path
                                                   (<codeph>/root/.ssh/id_rsa</codeph>)</p><p>c.
                                                 Press Enter when prompted for the
-                                                  <codeph>passphrase</codeph>.</p><p>d. Press enter
-                                                again to confirm the empty
-                                                  <codeph>passphrase</codeph>.</p><p>The output of
-                                                the public key will display, similar to the
+                                                  <codeph>passphrase</codeph>.</p><p>d. Press Enter
+                                                to confirm the empty
+                                                <codeph>passphrase</codeph>.</p><p>The output of the
+                                                public key will display, similar to the
                                                 following:</p><codeblock><codeph>ssh-copy-id 192.168.122.1 </codeph></codeblock><p>If
                                                 you get a <i>permission denied</i> error, make sure
                                                 you are logged in as root.</p></li>
                         </ol>
                 </section>
-                <section>
+                <section id="network">
                         <title>Preparing the Network for Installation</title>
                         <p>Before installing HP Helion OpenStack Carrier Grade, you are responsible
                                 for preparing the network for all installations.</p>
                         <p>See <xref href="carrier-grade-install-network-prepare.dita#topic7646"
                                         >Preparing the Network for Installation</xref></p>
                 </section>
-                <section>
+                <section id="ldap">
                         <title>Integrating LDAP</title>
                         <p><b>OPTIONAL:</b> The HP Helion OpenStack Identity service can use
                                 Lightweight Directory Access Protocol (LDAP) to integrate your
                                 organization's existing directory service and user account
                                 management processes.</p>
+                        <p>See </p>
                 </section>
                 <section id="getinstall">
                         <title>Download and unpack the installation packages</title>
@@ -270,8 +284,8 @@ StrictHostKeyChecking no </codeblock></li>
                                 Carrier Grade. This is a large file that might take a significant
                                 amount of time to download, depending upon the speed of your
                                 network.</p>
-                        <p><b>Note:</b> For KVM + ESX Cloud Deployments, you will need to obtain the
-                                and install the VMware ESX<tm tmtype="reg"/> and HPE Distributed
+                        <p><b>Note:</b> For deployments using  ESX and DCN, you will need to obtain
+                                the and install the VMware ESX<tm tmtype="reg"/> and HPE Distributed
                                 Cloud Networking (DCN) software through those entities. </p>
                         <p><b>HP Helion OpenStack Carrier Grade installation files</b></p>
                         <p>The <codeph>hcg-2-0-beta.tar</codeph> file contains the installation
@@ -404,8 +418,8 @@ StrictHostKeyChecking no </codeblock></li>
                                 <li>HCG_2.0_WR_license.lic.txt</li>
                         </ul>
                         <p>The following files are included in the installation download packages
-                                and will become available during the installation of Helion
-                                Lifecycle Management (HLM). </p>
+                                and will become available during the installation of the Lifecycle
+                                Manager. </p>
                         <p>
                                 <ul id="ul_oty_2cz_st">
                                         <li><codeph>license.lic</codeph> Located in the
@@ -425,8 +439,8 @@ StrictHostKeyChecking no </codeblock></li>
                                 installation process. </p>
                 </section>
                 <section>
-                        <title>Download the ESX packages for KVM + ESX</title>
-                        <p><b>Note:</b> This is applicable only for KVM + ESX Cloud Deployment. </p>
+                        <title>Download the ESX packages</title>
+                        <p><b>Note:</b> This is applicable only for deployments using ESX. </p>
                         <p>To integrate VMware ESX<tm tmtype="reg"/> storage, deploy the KVM + ESX
                                 topology, download the following additional packages.</p>
                         <p><b>ESX components</b></p>
@@ -826,9 +840,9 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img
 WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                         </ol>-->
                 <!--<section id="extract"><ol><li>Copy the <codeph>cg-hlm.qcow2</codeph> file to the images folder: <codeph>/var/lib/libvirt/images</codeph>. </li><li>Copy the <codeph>cg-infra-playbooks.tar.gz</codeph> file from the <codeph>hcg_1.1.0.tar</codeph> files to the <codeph>/root</codeph> directory.</li></ol><p>The following table lists the installation and patch files and indicates where you need to copy those files.</p><table id="table_yhb_zny_zs"><tgroup cols="3"><colspec colnum="1" colname="col2" colwidth="1*"/><colspec colnum="2" colname="col3" colwidth="1.11*"/><colspec colnum="3" colname="col4" colwidth="1.11*"/><thead><row><entry>File Name</entry><entry>Extracted from</entry><entry>Copy the file to: </entry></row></thead><tbody><row><entry><codeph>cg-hlm.qcow2</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/var/lib/libvirt/images</codeph> on the HLM host</entry></row><row><entry><codeph>cg-infra-playbooks.tar.gz</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on the HLM host</entry></row><row><entry><codeph>TEMPL-CPV9.ova</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry>Any location on any server that can be accessed by the VMware vCenter client.</entry></row><row><entry><codeph>ldap_patch_1.1.tar.gz and hoscg-update.tgz </codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1/</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>gre_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry>Any directory on the HLM host. Make note of the location.</entry></row><row><entry><codeph>compute_proxy_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>random-password.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>horizon_web_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>WR/HP-HCG-Server-host-installer-15.05-b10.iso</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on <codeph>controller-0</codeph> in the KVM region.</entry></row><row><entry><codeph>WR/extras/HP-HCG-SDK-15.05-b10.tgz WR/extras/HP-HCG-SDK-15.05-b10.tgz.md5</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on <codeph>controller-0</codeph> in the KVM region. SDK files to be used as needed.</entry></row><row><entry><codeph>WR/extras/HP-HCG-sample-guest-15.05-b9.img WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on <codeph>controller-0</codeph> in the KVM region. Sample guestt OS files to be used as needed.</entry></row></tbody></tgroup></table></section>-->
-                <section>
+                <section id="vsd">
                         <title>Bring Up Single VSD VM Manually</title>
-                        <p><b>Note:</b> This is applicable only for KVM + ESX Cloud Deployment. </p>
+                        <p><b>Note:</b> This is applicable only for deployments using DCN. </p>
                         <p>You must launch a virtual machine for the required HPE DCN Virtualized
                                 Services Directory (<i>VSD</i>) and create required users.</p>
                         <p>For more information, see <xref
