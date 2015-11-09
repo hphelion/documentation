@@ -125,6 +125,9 @@ helion/my_cloud/definition/    Directory contains the config input files
 helion/my_cloud/config/        Directory contains .j2 files which are symlinks to the /hos/ansible directory
 helion/hos/                    Directory contains files used by the installer
 helion/tech-preview            Directory contains the config input files of the tech-preview clouds</codeblock>
+      <note type="warning">It's important that you do not add any extra files in the
+          <codeph>~/helion</codeph> directory on your lifecycle-manager. This includes temporary
+        save files. Doing so will cause errors during the installation.</note>
       <p>For any troubleshooting information regarding these steps, see <xref
           href="installation_troubleshooting.dita#troubleshooting_installation/deployer_setup"
           >Troubleshooting Your Installation</xref></p>
@@ -186,8 +189,8 @@ git commit -m "My config or other commit message"</codeblock>
     </section>
     <section id="provision"><title>Provision Your Baremetal Nodes</title>
       <p>To provision the baremetal nodes in your cloud deployment you can either use the automated
-        operating system installation process provided by HPE Helion OpenStack or you can use the 3rd
-        party installation tooling of your choice. We will outline both methods below:</p>
+        operating system installation process provided by HPE Helion OpenStack or you can use the
+        3rd party installation tooling of your choice. We will outline both methods below:</p>
       <p id="thirdparty"><b>Using 3rd Party Baremetal Installers</b></p>
       <p>If you do not wish to use the automated operating system installation tooling included with
         HPE Helion OpenStack 2.0 then the requirements that have to be met using the installation
@@ -203,8 +206,8 @@ git commit -m "My config or other commit message"</codeblock>
         <li>There should be a LVM logical volume as <codeph>/root</codeph> on each node.</li>
         <li>If the LVM volume group name for the volume group holding the "root" LVM logical volume
           is hlm-vg then it will align with the disk input models in the examples.</li>
-        <li>Ensure that <codeph>openssh-server</codeph>, <codeph>python</codeph>, <codeph>python-apt</codeph>, and
-            <codeph>rsync</codeph> are installed.</li>
+        <li>Ensure that <codeph>openssh-server</codeph>, <codeph>python</codeph>,
+            <codeph>python-apt</codeph>, and <codeph>rsync</codeph> are installed.</li>
       </ul>
       <p>If you chose this method for installing your baremetal hardware, skip forward to the <xref
           href="install_entryscale_kvm.dita#install_kvm/config_processor">Run the Configuration
