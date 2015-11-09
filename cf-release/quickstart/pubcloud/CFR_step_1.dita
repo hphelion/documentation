@@ -27,8 +27,9 @@
      /></xref></stentry>
     <stentry><b>Registering for a <keyword keyref="pubCloudShort"/> Account</b><p>Ensure that you
       have an <xref href="https://horizon.hpcloud.com/" format="html" scope="external"><keyword
-        keyref="pubCloudLong"/></xref> account.</p><note type="tip">Keep your username and password
-      handy. You will need them to <xref href="CFR_step_3.dita#concept_kpg_fhz_st">create a sandbox
+        keyref="pubCloudLong"/></xref> account and sufficient cloud credit to cover the hosting
+      costs for your sandbox environment.</p><note type="tip">Keep your username and password handy.
+      You will need them to <xref href="CFR_step_3.dita#concept_kpg_fhz_st">create a sandbox
        environment</xref>.</note><xref href="CFR_step_2.dita#concept_ikh_xgz_st">
       <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
      </xref></stentry>

@@ -13,8 +13,8 @@
   <refbody>
     <table frame="all" rowsep="1" colsep="1" id="table_fjz_c3c_rt">
       <desc>
-        <note type="important">Except for <codeph>dea_count</codeph>, specify all variable values in
-          quotation marks. These values are case-sensitive.</note>
+        <note type="important">All values are required. Except for <codeph>dea_count</codeph>,
+          specify all variable values in quotation marks. These values are case-sensitive.</note>
       </desc>
       <tgroup cols="3">
         <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -29,7 +29,8 @@
         <tbody>
           <row>
             <entry><codeph>openstack_availability_zone</codeph></entry>
-            <entry>The unique regional location on which the deployment is launched</entry>
+            <entry>The unique regional location on which the deployment is launched,
+                <codeph>az1</codeph> by default</entry>
           </row>
           <row>
             <entry><codeph>openstack_keypair</codeph></entry>

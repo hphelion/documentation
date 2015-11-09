@@ -26,7 +26,34 @@
               <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5.
                 <b><keyword keyref="quickStartHPcloudStep5" id="quickStartHPcloudStep5"/></b></p>6.
             <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
-    <stentry><b>Getting Ready to Push Your First Application</b><ol id="ol_zdy_p53_tt">
+    <stentry><b>Sample Applications</b><p>The following sample applications will get your started
+            with the <codeph>cf push</codeph> workflow:<dl>
+              <dlentry>
+                <dt><xref href="https://github.com/Stackato-Apps/go-env" format="html"
+                    scope="external">go-env</xref> (Go)</dt>
+                <dd>A simple Go application to display environment variables</dd>
+              </dlentry>
+              <dlentry>
+                <dt><xref href="https://github.com/Stackato-Apps/node-env" format="html"
+                    scope="external">node-env</xref> (Node.js)</dt>
+                <dd>A simple demo that prints the server's environment variables</dd>
+              </dlentry>
+              <dlentry>
+                <dt><xref href="https://github.com/hpcloud/cf-demo-dashboard" format="html"
+                    scope="external">cf-demo-dashboard</xref> (Ruby)</dt>
+                <dd>Github stats widget for dashing</dd>
+              </dlentry>
+              <dlentry>
+                <dt><xref href="https://github.com/Stackato-Apps/phpinfo" format="html"
+                    scope="external">phpinfo</xref> (PHP)</dt>
+                <dd>Outputs information about PHP's configuration</dd>
+              </dlentry>
+              <dlentry>
+                <dt><xref href="https://github.com/hpcloud/python-env" format="html"
+                    scope="external">python-env</xref> (Python)</dt>
+                <dd>A simple Python app to show environment variables</dd>
+              </dlentry>
+            </dl></p><b>Getting Ready to Push Your First Application</b><ol id="ol_zdy_p53_tt">
             <li>Ensure that you are targeting the desired cluster, for
                 example:<codeblock id="target_cluster">cf api http://api.203.0.113.0.xip.io</codeblock><note>To
                 skip SSL validation, add the <filepath>--skip-ssl-validation</filepath> option to
@@ -81,34 +108,7 @@ cf target -o myOrg -s mySpace</codeblock></note></li>
                       format="html" scope="external">Troubleshooting Application Deployment and
                       Health</xref></li>
                 </ul></note></li>
-          </ol><b>Sample Applications</b><p>The following sample applications will get your started
-            with the <codeph>cf push</codeph> workflow:<dl>
-              <dlentry>
-                <dt><xref href="https://github.com/Stackato-Apps/go-env" format="html"
-                    scope="external">go-env</xref> (Go)</dt>
-                <dd>A simple Go application to display environment variables</dd>
-              </dlentry>
-              <dlentry>
-                <dt><xref href="https://github.com/Stackato-Apps/node-env" format="html"
-                    scope="external">node-env</xref> (Node.js)</dt>
-                <dd>A simple demo that prints the server's environment variables</dd>
-              </dlentry>
-              <dlentry>
-                <dt><xref href="https://github.com/hpcloud/cf-demo-dashboard" format="html"
-                    scope="external">cf-demo-dashboard</xref> (Ruby)</dt>
-                <dd>Github stats widget for dashing</dd>
-              </dlentry>
-              <dlentry>
-                <dt><xref href="https://github.com/Stackato-Apps/phpinfo" format="html"
-                    scope="external">phpinfo</xref> (PHP)</dt>
-                <dd>Outputs information about PHP's configuration</dd>
-              </dlentry>
-              <dlentry>
-                <dt><xref href="https://github.com/hpcloud/python-env" format="html"
-                    scope="external">python-env</xref> (Python)</dt>
-                <dd>A simple Python app to show environment variables</dd>
-              </dlentry>
-            </dl></p><xref href="CFR_step_6.dita#concept_m3k_bth_tt">
+          </ol><xref href="CFR_step_6.dita#concept_m3k_bth_tt">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
           </xref></stentry>
    </strow>
