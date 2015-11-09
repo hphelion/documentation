@@ -5,7 +5,7 @@
   <body>
     <section>
       <p>This additional section is required only if the Database Service is
-        installed.<codeblock>clouds:
+                installed.<codeblock>clouds:
   mycloud:
     database:
       trove_enable_ssl: False
@@ -20,7 +20,7 @@
       messaging_flavor: m1.medium
       database_volume_size: 10
       logstash_rabbitmq_host:
-      logstash_rabbitmq_password: guest
+      logstash_rabbitmq_password:
       hotpools_enabled: True
       hotpools_max_instances: 1
       hotpools_image_name: percona

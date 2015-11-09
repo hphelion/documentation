@@ -13,35 +13,52 @@
           file for the Application Lifecycle Service.</li>
       </ul>
     </section>
-      <section><title>Install ALS</title><ol>
-          <li>SSH into the HP Helion OpenStack Deployer. (This is the same location where the HDPI has
-              been installed.)</li>
+      <section>
+            <title>Install ALS</title>
+            <ol>
+                <li>SSH into the HP Helion OpenStack Deployer. (This is the same location where the
+                    HDPI has been installed.)</li>
                 <li> Source the Virtual
                     Environment.<pre>source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate </pre></li>
-          <li>List the available ALS versions to install:
-              <codeblock>openstack hdpi list --os-cloud mycloud | grep als  </codeblock>The output
-              should look similar
-              to:<codeblock>als | wscatalog.#### <!--this number is incoming from Matty, the bits are still uploading as this is written-->| 2.0.0.0 | available</codeblock></li>
-          <li>Select the most recent ALS version to install and view the details of the
-              package:<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock></li>
-          <li>Install the Application Lifecycle Service <ol>
+                <li>Install the Application Lifecycle Service <ol>
                         <li>If you <xref href="install_offline.dita#topic_w25_hqp_xt"
                                 >pre-downloaded</xref> the installation file, run the following
                             command to install
                                 it:<codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
-openstack --os-cloud mycloud hdpi als install <i>&lt;filename></i></codeblock><note>When
-                                installing pre-downloaded files, make sure you run the installer
-                                from the same directory where the installation files are. If the
-                                installer cannot find a file with the name you provided in the local
-                                directory, it will attempt to download the files again. </note></li>
-                        <li>If you did not pre-download the installation file, run the following
-                            command to download and install
-                            it:<codeblock>openstack --os-cloud mycloud hdpi als install wscatalog.2800</codeblock></li>
-                    </ol></li>
-            </ol><note>Downloading may take a significant amount of time; depending on network
-                traffic, it could take 20-90 minutes.</note>During installation, the output will
-            appear similar to:
-            <codeblock>Downloading Application Lifecycle Service which is available 
+openstack --os-cloud mycloud hdpi als install <i>&lt;filename></i></codeblock><note>Make
+                                sure you run the installer from the same directory where the
+                                installation files are. If the installer cannot find a file with the
+                                name you provided in the local directory, it will attempt to
+                                download the files again. </note></li>
+                        <li>If you did not pre-download the file: 
+                            
+                            <ol>
+                                <li>Find the most recent version of the
+                                    file.<pre>openstack --os-cloud mycloud hdpi list</pre>The output
+                                    should look similar
+                                    to:<pre>+----------------------------+----------------+-----------+------------+
+| service                    | id             | version   | state      |
++----------------------------+----------------+-----------+------------+
+| Helion Code Engine         | wscatalog.2776 | 1.0.0     | available  |
+| als                        | wscatalog.2765 | 2.0.0.539 | available  |
+<b>| als                        | wscatalog.2800 | 2.0.0.548 | available  |</b>
+| database                   | wscatalog.2762 | 2.0.0.32  | available  |
+| database                   | wscatalog.2803 | 2.0.0.37  | available  |
+| messaging                  | wscatalog.2761 | 1.0.0     | available  |
+| messaging                  | wscatalog.2796 | 1.0.0.165 | available  |
++----------------------------+----------------+-----------+------------+</pre></li>
+                                <li>Find the<b> ID number</b> of the most recent version of the
+                                    service (the highest ID number for that service).</li>
+                                <li>If desired, inspect the installation files for size, version,
+                                    and other detailed
+                                    information.<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock></li>
+                                <li>Begin the download and
+                                        installation:<codeblock>openstack --os-cloud mycloud hdpi als install wscatalog.####</codeblock><note>
+                                        Downloading may take a significant amount of time; depending
+                                        on network traffic, it could take 20-90
+                                    minutes.</note>During installation, this command will generate
+                                    output similar to the following:
+                                    <codeblock>Downloading Application Lifecycle Service which is available 
 Application Lifecycle Service not downloaded (available) 
 Application Lifecycle Service not downloaded (downloading)
 ... 
@@ -50,6 +67,8 @@ Staging Application Lifecycle Service in Glance/Swift
 Application Lifecycle Service is staged 
 UI installed for application lifecycle service 
 Create service endpoint for service application lifecycle service 
-Completed installing application </codeblock></section>
+Completed installing application </codeblock>
+                                </li></ol></li></ol></li></ol></section>
+        
   </body>
 </topic>

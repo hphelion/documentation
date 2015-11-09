@@ -8,14 +8,13 @@
     <p>The pre-download also eliminates the possibility of connection interruptions during
       installation. </p>
     <ol id="ol_bmh_vqp_xt">
-      <li> Using your preferred Web browser, navigate to the <xref
+      <li>Using your preferred Web browser, navigate to the <xref
           href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html"
           scope="external">HPE Helion Download Network</xref> (HDN) and log in. If necessary, create
         an account first.</li>
-      <li>Click the blue <b>Download</b> button at the top right of the screen to begin the
-        download. This will download the most recent versions of all the services that comprise the
-        HPE Helion Development Platform.<image placement="break"
-          href="../../../media/hdp_download.png" id="image_hsb_gpq_yt"/></li>
+      <li>Click on the Download button in the left navigation panel.</li>
+      <li>Click the service you wish to download. Click the blue <b>Download</b> button at the top
+        right of the screen to begin the download. </li>
       <li>The best option is to download directly to the HPE Helion OpenStack Deployer. If you can
         not download directly to the HPE Helion OpenStack deployer, copy all the downloaded packages
         to a USB stick or external hard drive and then copy the files onto the physical machine
