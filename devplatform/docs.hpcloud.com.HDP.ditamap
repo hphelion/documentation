@@ -39,7 +39,7 @@
       <topicref href="2.0/installation/devplatform_install_prereq.dita"
         navtitle="Installation Prerequisites" locktitle="yes"/>
       <topicref href="2.0/installation/install_cloudsyaml.dita"
-        navtitle="Create the clouds.yaml File"/>
+        navtitle="Create the clouds.yaml Configuration File" locktitle="yes"/>
       <topicref href="2.0/installation/devplatform_install_platform.dita"
         navtitle="Install the HPE Helion Development Platform Service Installer" locktitle="yes"/>
       <topicref href="2.0/installation/devplatform_install_ALS.dita"
@@ -47,9 +47,9 @@
       <topicref href="2.0/installation/devplatform_install_database.dita"
         navtitle="Install the Database Service" locktitle="yes"/>
       <topicref href="2.0/installation/install_engine.dita"
-        navtitle="Install the HPE Helion Code Engine (review only)"/>
+        navtitle="Install the HPE Helion Code Engine" locktitle="yes"/>
       <topicref href="2.0/installation/devplatform_install_messaging.dita"
-        navtitle="Install the Messaging Service (review only)"/>
+        navtitle="Install the Messaging Service" locktitle="yes"/>
     </topichead>
     <topichead navtitle="Service Monitoring">
       <topicref href="2.0/monitoring/devplatform.messaging-monitor.dita"/>
