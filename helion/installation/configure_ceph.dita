@@ -149,8 +149,8 @@
           <li>[OPTIONAL] There are parameters for Ceph that can be edited by the admin in the
             locations described below. The default values will work but if you choose to change any
             of these values, ensure that you also change them where they are referenced in your
-              <codeph>cinder.conf.j2</codeph> file, which we cover in the next section of this guide. 
-            <ul>
+              <codeph>cinder.conf.j2</codeph> file, which we cover in the next section of this
+            guide. <ul>
               <li><codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph>
                 <p>In the <codeph>settings.yml</codeph> file, you can edit the following
                   parameters:</p>
@@ -327,71 +327,94 @@ pools:
                   </tgroup>
                 </table>
               </li>
-              <li>To enable Cinder to backup to Ceph, make the following changes to the
-                  <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file: <ol>
-                  <li>Uncomment the <codeph>ceph backup</codeph> section and fill the values: <codeblock>[DEFAULT]
+            </ol></li>
+          <li>To enable Cinder to backup to Ceph, make the following changes to the
+              <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file: <ol>
+              <li>Uncomment the <codeph>ceph backup</codeph> section and fill the values: <codeblock>[DEFAULT]
 backup_driver = cinder.backup.drivers.ceph
 backup_ceph_conf = &#60;ceph-config-file>
 backup_ceph_user = &#60;ceph-backup-user>
 backup_ceph_pool = &#60;ceph-backup-pool></codeblock>
-                    <p>where:</p>
-                    <table frame="all" rowsep="1" colsep="1" id="ceph_backup">
-                      <tgroup cols="2">
-                        <colspec colname="c1" colnum="1"/>
-                        <colspec colname="c2" colnum="2"/>
-                        <thead>
-                          <row>
-                            <entry>Value</entry>
-                            <entry>Description</entry>
-                          </row>
-                        </thead>
-                        <tbody>
-                          <row>
-                            <entry>backup_driver</entry>
-                            <entry>Cinder volume driver. Leave this as the default value specified
-                              for Ceph.</entry>
-                          </row>
-                          <row>
-                            <entry>backup_ceph_conf</entry>
-                            <entry>Enter your Ceph configuration file location, usually
-                                <codeph>/etc/ceph/ceph.conf</codeph></entry>
-                          </row>
-                          <row>
-                            <entry>backup_ceph_user</entry>
-                            <entry>Use the user name value from the
-                                <codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph> file,
-                              highlighted below::
-                              <codeblock>- user:
+                <p>where:</p>
+                <table frame="all" rowsep="1" colsep="1" id="ceph_backup">
+                  <tgroup cols="2">
+                    <colspec colname="c1" colnum="1"/>
+                    <colspec colname="c2" colnum="2"/>
+                    <thead>
+                      <row>
+                        <entry>Value</entry>
+                        <entry>Description</entry>
+                      </row>
+                    </thead>
+                    <tbody>
+                      <row>
+                        <entry>backup_driver</entry>
+                        <entry>Cinder volume driver. Leave this as the default value specified for
+                          Ceph.</entry>
+                      </row>
+                      <row>
+                        <entry>backup_ceph_conf</entry>
+                        <entry>Enter your Ceph configuration file location, usually
+                            <codeph>/etc/ceph/ceph.conf</codeph></entry>
+                      </row>
+                      <row>
+                        <entry>backup_ceph_user</entry>
+                        <entry>Use the user name value from the
+                            <codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph> file,
+                          highlighted below::
+                          <codeblock>- user:
     name: <b>cinder-backup</b>
     type: openstack
 pools:
     - name: backups</codeblock></entry>
-                          </row>
-                          <row>
-                            <entry>backup_ceph_pool</entry>
-                            <entry>Use the pool name value from the
-                                <codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph> file,
-                              highlighted below::
-                              <codeblock>- user:
+                      </row>
+                      <row>
+                        <entry>backup_ceph_pool</entry>
+                        <entry>Use the pool name value from the
+                            <codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph> file,
+                          highlighted below::
+                          <codeblock>- user:
     name: <b>cinder-backup</b>
     type: openstack
 pools:
     - name: <b>backups</b></codeblock></entry>
-                          </row>
-                        </tbody>
-                      </tgroup>
-                    </table></li>
-                </ol>
+                      </row>
+                    </tbody>
+                  </tgroup>
+                </table></li>
+            </ol>
+          </li>
+          <li>To enable Ceph as your Glance backend, make the following changes to the
+              <codeph>~/helion/my_cloud/config/glance/glance-api.conf.j2</codeph> file: <ol>
+              <li>Uncomment and edit the following values:
+                <codeblock>default_store = rbd
+stores = rbd
+rbd_store_pool = images
+rbd_store_user = glance
+rbd_store_ceph_conf = /etc/ceph/ceph.conf
+rbd_store_chunk_size = 8</codeblock></li>
+              <li>In the same file, comment out the following references to Swift:
+                <codeblock>stores = {{ glance_stores }}
+default_store = {{ glance_default_store }}</codeblock></li>
+            </ol></li>
+          <li>Copy the corresponding keyring files to the controller nodes: <ol>
+              <li>Log in to the controller nodes as a user with sudo access and run the following
+                commands: <p>For Ceph as your volume backend:
+                  <codeblock>sudo ceph auth get-or-create client.cinder | sudo tee /etc/ceph/ceph.client.cinder.keyring</codeblock></p>
+                <p>For Ceph as your volume backup backend:
+                  <codeblock>sudo ceph auth get-or-create client.cinder-backup | sudo tee -a /etc/ceph/ceph.client.cinder-backup.keyring</codeblock></p>
+                <p>For Ceph as your Glance backend:
+                  <codeblock>sudo ceph auth get-or-create client.glance | sudo tee -a  /etc/ceph/ceph.client.glance.keyring</codeblock></p>
+                <p><b>OR</b></p>
               </li>
-              <li>Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes: <ol>
-                  <li>Log in to the controller nodes as a user with sudo access and run the
-                    following commands: <codeblock>sudo ceph auth get-or-create client.cinder | sudo tee /etc/ceph/ceph.client.cinder.keyring</codeblock>
-                    <codeblock>sudo ceph auth get-or-create client.cinder-backup | sudo tee -a /etc/ceph/ceph.client.cinder-backup.keyring</codeblock>
-                    <p><b>OR</b></p></li>
-                  <li>You can copy the keyring from the deployer/lifecycle-manager node to
-                      <codeph>/etc/ceph</codeph> folder on all the controller nodes:
-                    <codeblock>scp /etc/ceph/ceph.client.cinder.keyring</codeblock></li>
-                </ol></li>
+              <li>You can copy the keyring from the deployer/lifecycle-manager node to
+                  <codeph>/etc/ceph</codeph> folder on all the controller nodes: <p>For Ceph as your
+                  volume backend:
+                  <codeblock>scp /etc/ceph/ceph.client.cinder.keyring</codeblock></p>
+                <p>For Ceph as your volume backup backend:
+                  <codeblock>scp /etc/ceph/ceph.client.cinder-backup.keyring</codeblock></p>
+                <p>For Ceph as your Glance backend:
+                  <codeblock>scp /etc/ceph/ceph.client.glance.keyring</codeblock></p></li>
               <li>Commit your configuration to a <xref href="using_git.dita">local
                 repository</xref>: <codeblock>cd ~/helion/hos/ansible
 git add -A
@@ -400,19 +423,17 @@ git commit -m "&lt;your commit message>"</codeblock>
                   key in the following environment variable:<codeph> export
                     HOS_USER_PASSWORD_ENCRYPT_KEY=&lt;encryption key></codeph> See <xref
                     href="install_entryscale_kvm.dita#install_kvm"/> for reference.</note></li>
-              <li>Run the Configuration Processor:
-                <codeblock>cd ~/helion/hos/ansible
+            </ol></li>
+          <li>Run the Configuration Processor:
+            <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
-              <li>Run the following command to create a deployment directory:
-                <codeblock>cd ~/helion/hos/ansible
+          <li>Run the following command to create a deployment directory:
+            <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
-              <li>Run the Cinder Reconfigure Playbook:
-                <codeblock>cd ~/scratch/ansible/next/hos/ansible
+          <li>Run the Cinder Reconfigure Playbook:
+            <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
-            </ol>
-          </li>
-        </ol>
-      </p>
+        </ol></p>
     </section>
     <section id="attach_ceph">
       <title>Configure Nova to Allow Attachment of Ceph Volumes to Instances</title>
@@ -486,43 +507,5 @@ ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</codeblock></li>
       <p>See <xref href="installation_verification.dita">Verifying your Installation</xref> for more
         details.</p>
     </section>
-    <!-- <section>
-      <title>Configuring Glance to use Ceph</title>
-      <p>Perform the following procedure on the deployer/lifecycle-manager node to configure Ceph as
-        a default Glance store:<ol id="ol_u12_kd3_pt">
-          <li>Edit <codeph>~/helion/my_cloud/config/glance/glance-api.conf.j2</codeph> to add the
-            following
-            values:<codeblock>default_store = rbd
-stores = rbd
-rbd_store_pool = images
-rbd_store_user = glance
-rbd_store_ceph_conf = /etc/ceph/ceph.conf
-rbd_store_chunk_size = 8</codeblock></li>
-          <li>In the same file, comment out the following references to
-            Swift:<codeblock>stores = {{ glance_stores }}
-default_store = {{ glance_default_store }}</codeblock></li>
-          <li> Copy <codeph>ceph.client.glance.keyring</codeph> to all the controller nodes:<ol
-              id="ol_m5r_k23_pt">
-              <li>Login to the controller nodes as a root user and run the following
-                    command:<codeblock>ceph auth get-or-create client.glance | tee /etc/ceph/ceph.client.glance.keyring</codeblock><p><b>OR</b></p></li>
-              <li>You can copy the keyring from the deployer/lifecycle-manager node to
-                  <codeph>/etc/ceph</codeph> folder on all the controller
-                nodes:<codeblock>scp /etc/ceph/ceph.client.glance.keyring</codeblock></li>
-            </ol></li>
-          <li>Commit your configuration to the local repository to configure Cinder on the
-            deployer/lifecycle-manager node.<p>
-              <codeblock>cd ~/helion/hos/ansible
-git add -A
-git commit -m "&lt;commit message>"</codeblock>
-            </p></li>
-          <li>Create a deployment
-            directory:<codeblock>cd ~/helion/hos/ansible
-<codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
-          <li>Run the Ansible
-            playbook:<codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml</codeblock></li>
-        </ol></p>
-    </section> 
-    <p>Once Glance is configured, any image creation will use Ceph as the default data store.</p>-->
   </body>
 </topic>
