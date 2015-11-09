@@ -26,13 +26,12 @@
             </thead>
             <tbody>
               <row>
-                <entry>11/09/2015</entry>
+                <entry morerows="1">11/09/2015</entry>
                 <entry>Hardware and Software Support Matrix </entry>
                 <entry>Added Guest OS support information (<xref
                     href="hardware.dita">Link</xref>)</entry>
               </row>
               <row>
-                <entry>11/09/2015</entry>
                 <entry>Release Notes</entry>
                 <entry>Added workaround for Monitoring Service Threshold Engine issue when using a single control plane node (<xref
                   href="releasenotes.dita">Link</xref>)</entry>
@@ -45,14 +44,13 @@
                   >Link</xref>)</entry>
               </row>
               <row>
-                <entry>11/03/2015</entry>
+                <entry morerows="1">11/03/2015</entry>
                 <entry>Block Storage </entry>
                 <entry>Configuration Troubleshooting - Added a new page containing troubleshooting
                   steps for configuring your Block Storage backend. (<xref
                     href="installation/blockstorageconfig_troubleshooting.dita">Link</xref>)</entry>
               </row>
               <row>
-                <entry>11/03/2015</entry>
                 <entry>Security - TLS</entry>
                 <entry>Added TLS steps required for Private CA certificates (<xref
                     href="security/tls.dita#topic_yym_nps_4t/private1">Link </xref>and <xref
@@ -65,31 +63,28 @@
                     href="metering/metering_metertypes.dita#topic3051/swift">Link</xref>)</entry>
               </row>
               <row>
-                <entry>10/29/2015</entry>
+                <entry morerows="1">10/29/2015</entry>
                 <entry>Horizon</entry>
                 <entry>Added note about meters avalable from the Metric option  (<xref
                     href="horizon/horizon_overview.dita#topic1564">Link</xref>)</entry>
               </row>
               <row>
-                <entry>10/29/2015</entry>
                 <entry>Horizon</entry>
                 <entry>Added web browser support information to the Horizon Overview (<xref href="horizon/horizon_overview.dita">Link</xref>)</entry>
               </row>
 
               <row>
-                <entry>10/28/2015</entry>
+                <entry morerows="2">10/28/2015</entry>
                 <entry>Neutron</entry>
                 <entry>Added steps for Neutron service logging level configuration (<xref
                     href="administration/configure_logging.dita">Link</xref>) </entry>
               </row>
               <row>
-                <entry>10/28/2015</entry>
                 <entry>Monitoring</entry>
                 <entry>Added step to ensure new Compute nodes that you add to your environment are
                   included in monitoring (<xref href="operations/add_node.dita">Link</xref>) </entry>
               </row>
               <row>
-                <entry>10/28/2015</entry>
                 <entry>Monitoring</entry>
                 <entry>Added step to ensure new Ceph monitor nodes that you add to your environment
                   are included in monitoring (<xref
