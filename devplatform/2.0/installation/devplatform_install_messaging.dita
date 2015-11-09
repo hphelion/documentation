@@ -68,7 +68,7 @@ openstack --os-cloud mycloud hdpi messaging install <i>&lt;filename></i></codebl
 | OS-SRV-USG:terminated_at             | None                                                                               |
 | accessIPv4                           |                                                                                    |
 | accessIPv6                           |                                                                                    |
-| addresses                            | <codeph outputclass="codehighlight">SVC=10.241.145.12</codeph>                             |
+| addresses                            | <ph outputclass="codehighlight">SVC=10.241.145.12</ph>                             |
 | config_drive                         |                                                                                    |
 | created                              | 2015-11-04T22:44:29Z                                                               |
 | flavor                               | m1.medium (3)                                                                      |
