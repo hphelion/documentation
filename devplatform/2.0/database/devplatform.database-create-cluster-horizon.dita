@@ -13,7 +13,7 @@
           <li><b>Datastore</b>: The database type to be used. MySql, Vertica Preview, Redis and MongoDB are supported.</li>
           <li><b>Flavor</b>: The instance flavor (virtual hardware template) to use for the cluster.</li>
           <li><b>Network</b>: The OpenStack network to attach to the cluster.</li>
-          <li><b>Volume Size</b>: The size in GB of the new cluster. <note>MongoDB instances require a minimum volume size of 5.</note></li>
+          <li><b>Volume Size</b>: The size in GB of the new cluster. <note>Databases require a minimum volume size of 5, with a recommended size of 10.</note></li>
           <li><b>Number of Shards</b> (MongoDB only): The number of MongoDB shards to span the database across. One shard will be 
             used to create the database cluster; this value cannot be changed. See 
             <xref type="external" href="http://docs.mongodb.org/manual/sharding/" format="html">Sharding</xref>
