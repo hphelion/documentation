@@ -33,6 +33,11 @@
         <li><b>Example 4:</b> Create a Vertica Preview cluster called MyVerticaCluster with three database instances of flavor m1.large and volume size 2
         <codeblock>trove cluster-create MyVerticaCluster vertica_preview 7.1 --instance flavor=4,volume=2 --instance flavor=4,volume=2 --instance flavor=4,volume=2</codeblock></li>
       </ul>
+      <p>For High Availability (HA), it is recommended that the database instances be created on specific Availability Zones (AZ). The following example shows how to create instances on specific AZs:</p>
+      <ul>
+        <li><b>Example 5:</b> Create a MySql cluster with instances in specific availability zones
+        <codeblock>trove cluster-create MyCluster mysql-cluster 5.5 --instance flavor=3,volume=10,<ph outputclass="codehighlight">availability_zone=AZ1</ph> --instance flavor=3,volume=3,<ph outputclass="codehighlight">availability_zone=AZ2</ph> --instance flavor=3,volume=3,<ph outputclass="codehighlight">availability_zone=AZ3</ph></codeblock></li>
+      </ul>
     </section>
     <note>
       <p>As part of Vertica Preview cluster creation, the Database Service generates SSH keys for instances on the vertica cluster that allow 
