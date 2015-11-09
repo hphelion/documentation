@@ -9,6 +9,20 @@
     <section id="about">
       <p>This document lists the details about the supported hardware and software for HPE Helion
         OpenStack 2.0</p>
+      <ul>
+        <li><xref href="hardware.dita#min_hardware/openstack">OpenStack Version
+          Information</xref></li>
+        <li><xref href="hardware.dita#min_hardware/supported_hardware">Supported
+          Hardware</xref></li>
+        <li><xref href="hardware.dita#min_hardware/supported_configs">Supported Hardware
+            Configurations</xref></li>
+        <li><xref href="hardware.dita#min_hardware/perf_notes">Notes about Performance</xref></li>
+        <li><xref href="hardware.dita#min_hardware/min_requirements_kvm">Recommended Minimum
+            Hardware Requirements for a KVM model</xref></li>
+        <li><xref href="hardware.dita#min_hardware/min_requirements_esx">Recommended Minimum
+            Hardware Requirements for an ESX model</xref></li>
+        <li><xref href="hardware.dita#min_hardware/guestos">Guest OS Support</xref></li>
+      </ul>
     </section>
     <section id="openstack"><title>OpenStack Version Information</title>
       <p>HPE Helion OpenStack 2.0 services have been updated to the <xref
@@ -50,7 +64,7 @@
     </section>
 
 
-    <section id="MinimumRequirements">
+    <section id="min_requirements_kvm">
       <title>Recommended Minimum Hardware Requirements for a KVM model</title>
       <table>
         <tgroup cols="5">
@@ -196,7 +210,7 @@
     </section>
 
 
-    <section id="minimum-node-esx"><title>Recommended Minimum Hardware Requirements for an ESX
+    <section id="min_requirements_esx"><title>Recommended Minimum Hardware Requirements for an ESX
         model</title>
       <table id="table_ixh_np2_dt">
         <tgroup cols="7">
