@@ -32,6 +32,12 @@
                     href="hardware.dita">Link</xref>)</entry>
               </row>
               <row>
+                <entry>11/09/2015</entry>
+                <entry>Release Notes</entry>
+                <entry>Added workaround for Monitoring Service Threshold Engine issue when using a single control plane node (<xref
+                  href="releasenotes.dita">Link</xref>)</entry>
+              </row>
+              <row>
                 <entry>11/05/2015</entry>
                 <entry>Security - TLS </entry>
                 <entry>Amended  Private CA FQDN certificates steps to include copying both keys
