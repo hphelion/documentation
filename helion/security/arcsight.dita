@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_n5d_tjn_yt">
-  <title>HPE Helion OpenStack&#174; Threat Monitoring and Integration with HPE ArcSight</title>
+  <title>HPE Helion OpenStack&#174; 2.0 Threat Monitoring and Integration with HPE ArcSight</title>
   <body>
     <p> </p>
     <p>HPE Helion OpenStack through its centralized logging infrastructure (Logstash,) can be
