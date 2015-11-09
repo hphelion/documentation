@@ -59,7 +59,7 @@
         <dlentry>
           <dt>deployer_flavor (optional)</dt>
           <dd>The flavor ID to use for the deployer instance. Default value: 4 (which is
-            Large).</dd>
+            Large).  Recommended flavor: 3 (Medium)</dd>
         </dlentry>
         <dlentry>
           <dt>deployer_name (optional)</dt>
