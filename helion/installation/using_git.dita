@@ -151,7 +151,7 @@
           <li>Commit the changes to the <b>site</b> branch.
             <codeblock>git add -A
 git commit -m "your commit message goes here in quotes"</codeblock>
-          </li>
+<!-- note -->          </li>
           <li> Run the configuration
             processor:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml
