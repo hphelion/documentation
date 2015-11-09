@@ -5,7 +5,7 @@
 <title>HPE Helion Development Platform</title>
    <!--PDFTITLE "HPE Helion Development Platform 1.3 Complete Documentation"-->
   <topicref href="1.3/devplatform.index.dita"
-    navtitle="HPE Helion Development Platform 1.3" locktitle="yes">
+    navtitle="HPE Helion Development Platform 1.3" locktitle="yes" otherprops="">
     <!--permalink: /helion/devplatform/eula/-->
     <!--permalink: /helion/devplatform/whatsnew/-->
     <topicref href="1.3/devplatform.whatsnew.dita" locktitle="yes" navtitle="What's New"/>
@@ -326,8 +326,7 @@
             navtitle="Kato Command Reference"/>
           <topicref href="1.3/placeholder16.dita" navtitle="ALS Helion Client" otherprops="test">
             <topicref href="1.3/helion/user/client/client_index.dita" locktitle="yes"
-              navtitle="ALS Client Installation"
-              ><!--permalink: /helion/devplatform/als/client/download/--><!--permalink: /helion/devplatform/als/client/reference/--></topicref>
+              navtitle="ALS Client Installation"/>
             <topicref href="1.3/helion/user/reference/client-ref.dita" locktitle="yes"
               navtitle="ALS Client Command Reference" otherprops="test">
               <topicref href="1.3/helion/user/reference/client-ref-administration.dita"
@@ -487,11 +486,7 @@
           <topicref href="1.3/helion/user/quick-start/quickstart_index.dita"
             navtitle="ALS Quick Start" locktitle="yes"/>
           <topicref href="1.3/helion/user/reference/api.dita" locktitle="yes"
-            navtitle="Application Lifecycle Service API"
-            ><!--permalink: /helion/devplatform/als/user/reference/client-ref/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/administration/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/applications/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/brokers/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/buildpacks/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/control/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/domains/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/flags/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/gettingstarted/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/history/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/information/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/management/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/miscellaneous/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/organizations/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/placement/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/quotas/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/routes/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/securitygroups/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/servicemanagement/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/serviceplans/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/services/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/spacequotas/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/spaces/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/tokens/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/usermanagement/--></topicref>
-          <!--permalink: /helion/devplatform/als/user/reference/api/-->
-          <!--permalink: /helion/devplatform/als/user/reference/environment/-->
-          <!--permalink: /helion/devplatform/als/user/reference/glossary/-->
+            navtitle="Application Lifecycle Service API"/>
           <topicref href="1.3/helion/user/reference/glossary.dita" locktitle="yes"
             navtitle="Glossary"/>
           <!--permalink: /helion/devplatform/als/user/reference/troubleshoot/-->
