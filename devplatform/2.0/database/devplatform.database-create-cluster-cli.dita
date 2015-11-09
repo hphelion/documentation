@@ -18,7 +18,7 @@
       <li>To verify that the cluster was created, use the <codeph>trove cluster-list</codeph> command.
       </li>
       <li>To list the instances that are part of a cluster, use the <codeph>trove cluster-list
-          &lt;clutster name></codeph> command. </li>
+          &lt;cluster name></codeph> command. </li>
       
     </ol>
     
@@ -26,22 +26,29 @@
       <ul>
         <li><b>Example 1:</b> Create a MySql cluster called MyCluster with three database instances of flavor m1.medium and volume size 3
         <codeblock>trove cluster-create MyCluster mysql-cluster 5.5 --instance flavor=3,volume=3 --instance flavor=3,volume=3 --instance flavor=3,volume=3 </codeblock></li>
-        <li><b>Example 2:</b> Create a Redis cluster called MyRedisCluster with two database instances of flavor m1.small and volume size 4
-        <codeblock>trove cluster-create MyRedisCluster redis 3.0 --instance flavor=2,volume=4 --instance flavor=2,volume=4</codeblock></li>
+        <li><b>Example 2:</b> Create a Redis cluster called MyRedisCluster with two database instances of flavor m1.large and volume size 4
+        <codeblock>trove cluster-create MyRedisCluster redis 3.0 --instance flavor=4,volume=4 --instance flavor=4,volume=4</codeblock></li>
         <li><b>Example 3:</b> Create a MongoDB cluster called MyMongoDBCluster with three database instances of flavor m1.large and volume size 2 
         <codeblock>trove cluster-create MyMongoDBCluster mongodb 3.0 --instance flavor=4,volume=5 --instance flavor=4,volume=5 --instance flavor=4,volume=5</codeblock></li>
-        <li><b>Example 4:</b> Create a Vertica cluster called MyVerticaCluster with three database instances of flavor m1.large and volume size 2
+        <li><b>Example 4:</b> Create a Vertica Preview cluster called MyVerticaCluster with three database instances of flavor m1.large and volume size 2
         <codeblock>trove cluster-create MyVerticaCluster vertica_preview 7.1 --instance flavor=4,volume=2 --instance flavor=4,volume=2 --instance flavor=4,volume=2</codeblock></li>
+      </ul>
+      <p>For High Availability (HA), it is recommended that the database instances be created on specific Availability Zones (AZ). The following example shows how to create instances on specific AZs:</p>
+      <ul>
+        <li><b>Example 5:</b> Create a MySql cluster with instances in specific availability zones
+        <codeblock>trove cluster-create MyCluster mysql-cluster 5.5 --instance flavor=3,volume=10,<ph outputclass="codehighlight">availability_zone=AZ1</ph> --instance flavor=3,volume=3,<ph outputclass="codehighlight">availability_zone=AZ2</ph> --instance flavor=3,volume=3,<ph outputclass="codehighlight">availability_zone=AZ3</ph></codeblock></li>
       </ul>
     </section>
     <note>
-      <p>As part of Vertica cluster creation, the Database Service generates SSH keys for instances on the vertica cluster that allow 
+      <p>As part of Vertica Preview cluster creation, the Database Service generates SSH keys for instances on the vertica cluster that allow 
         the cluster setup script to connect to all the instances and run cluster setup commands. These keys are protected on the guest 
         instances as they are locked down by file ACLs allowing access only to the vertica processes. After the cluster create process is 
         finished, these keys are deleted from all of the nodes. </p>
-      <p>These auto-generated keys are different from the Administrator SSH key that will allow the Database Service administrator to connect to
-        the VM for day-to-day service management and operations, and to upgrade the trove guest instances. The Adminsitrator SSH
-        key is kept intact during the Cluster Create process.</p>
+      <p>These auto-generated keys are different from the Administrator SSH key that will allow the
+        Database Service administrator to connect to the VM for day-to-day service management and
+        operations, and to upgrade the trove guest instances. The Adminsitrator SSH key is kept
+        intact during the Cluster Create process. These keys should be secured by ACLs, as exposure
+        of them could result in compromise of the database service and databases.</p>
     </note>
   </body>
 </topic>

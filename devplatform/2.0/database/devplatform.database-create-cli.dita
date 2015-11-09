@@ -10,71 +10,47 @@
       <li>Use the <codeph>trove create</codeph> command to create the new database. The syntax is as follows:
         <p></p><codeph>trove create &lt;name&gt; &lt;flavor&gt;</codeph>
         <sl>
-          <sli><codeph>[--size &lt;size&gt;]</codeph>: Size of the new database in gigabytes</sli>
+          <sli><codeph>[--size &lt;size&gt;]</codeph>: Size of the new database in gigabytes. This should be a minimum size of 5, with a recommended size of 10 or greater.</sli>
           <sli><codeph>[--databases &lt;databases&gt; [&lt;databases&gt; ...]]</codeph>: The names of one or more databases to be created on the new instance.</sli>
           <sli><codeph>[--users &lt;users&gt; [&lt;users&gt; ...]] [--backup &lt;backup&gt;]</codeph>: Users to be created on the instance.</sli>
           <sli><codeph>[--availability_zone &lt;availability_zone&gt;]</codeph>: The OpenStack availability zone in which to create the new instance</sli>
           <sli><codeph>[--datastore &lt;datastore&gt;]</codeph>: The architecture to use for the new datastore (MySql, Redis, etc.). The default is MySql. To list valid values, enter <codeph>trove datastore-list</codeph></sli>
           <sli><codeph>[--datastore_version &lt;datastore_version&gt;]</codeph>: The database version. To list valid values, enter <codeph>trove datastore-version-list &lt;datastore&gt;</codeph></sli>
-          <sli><codeph>[--nic &lt;net-id=net-uuid,v4-fixed-ip=ip-addr,port-id=port-uuid&gt;]</codeph>: The OpenStack network on which to create the new instance.</sli>
+          <sli><codeph>[--nic &lt;net-id=net-uuid,v4-fixed-ip=ip-addr,port-id=port-uuid&gt;]</codeph>: The OpenStack network on which to create the new instance. This is required, and should be the same network that any application that accesses the
+            database is on.</sli>
           <sli><codeph>[--configuration &lt;configuration&gt;]</codeph>: The configuration group to which to add the new instance. Configuration groups can be applied after instance creation using <codeph>trove configuration-attach</codeph></sli>
           <sli><codeph>[--replica_of &lt;source_instance&gt;] [--replica_count &lt;count&gt;]</codeph></sli>
         </sl>
-        <note>MongoDB instances require a minimum volume size of 5.</note>
+        <note>Database instances require a minimum volume size of 5, with a recommended size of 10.</note>
+        <note>Database instances require a minimum flavor of 2 for MySql, 3 for MongoDB and Redis, 
+          and 4 for Vertica Preview.</note>
         <ul>
           <li><b>Example 1:</b> Create a single MySql instance
-            <p>The following command creates a single (non-clustered) MySql instance called <b>MyInstance</b> with flavor <b>m1.medium</b>, allocating 3 GB of space (the MySql datastore is the default):</p>
-            <codeblock>trove create MyInstance 3 --size 3</codeblock>
+            <p>The following command creates a single (non-clustered) MySql instance called <b>MyInstance</b> with flavor <b>m1.medium</b>, allocating 10 GB of space (the MySql datastore is the default):</p>
+            <codeblock>trove create MyInstance 3 --size 10</codeblock>
           </li>
-          <li><b>Example 2: </b>Create a MongoDB instance
+          <li><b>Example 2: </b> Create a MongoDB instance
             <p>The following command creates a single MongoDB instance called
-              <b>MyMongoDBInstance</b> with flavor <b>m1.large</b>, allocating 5 GB of space,
+              <b>MyMongoDBInstance</b> with flavor <b>m1.large</b>, allocating 10 GB of space,
               creating a database called <b>MyMongoDatabase</b>, and a user called Admin with
               password <b>password</b>:</p>
-            <codeblock>trove create MyMongoDBInstance 4 --datastore mongodb --size 5 --databases MyMongoDatabase --users admin:password</codeblock>
+            <codeblock>trove create MyMongoDBInstance 4 --datastore mongodb --size 10 --databases MyMongoDatabase --users admin:password</codeblock>
           </li>
           <li><b>Example 3: </b> Create a Redis instance
             <p>The following command creates a single Redis instance called <b>MyRedisInstance</b>
-              with flavor <b>m1.small</b>, allocating 1 GB of space.</p>
-            <codeblock>trove create MyRedisInstance 2 --datastore redis --size 1</codeblock>
+              with flavor <b>m1.medium</b>, allocating 1 GB of space.</p>
+            <codeblock>trove create MyRedisInstance 3 --datastore redis --size 10</codeblock>
           </li>
           <li><b>Example 4:</b>  Create a replicated MySql instance
             <p>The following command creates a MySql instance as a <xref type="external" href="https://dev.mysql.com/doc/refman/5.0/en/replication.html" format="html">replica</xref> of another MySql database (Replication is only supported
               for MySql databases).</p>
             <codeblock>trove create MyReplicatedInstance 4 --replica_of 18afdf3c-3f38-4bda-b40a-13b675c7f857</codeblock>
           </li>
-          <li><b>Example 5:</b> Create a Vertica instance
-          <p>The following command creates a single Vertica instance called <b>MyVerticaInstance</b> with flavor m1.large, allocating 2 GB of space.</p>
-          <codeblock>trove create --size 2 --datastore vertica_preview --datastore_version 7.1 MyVerticaInstance 4</codeblock></li>
+          <li><b>Example 5:</b> Create a Vertica Preview instance
+          <p>The following command creates a single Vertica Preview instance called <b>MyVerticaInstance</b> with flavor m1.large, allocating 2 GB of space.</p>
+          <codeblock>trove create --size 10 --datastore vertica_preview --datastore_version 7.1 MyVerticaInstance 4</codeblock></li>
         </ul>
-        <dl>
-          <dlentry>
-            <dt>Example 1: Create a single MySql instance
-              </dt>
-            <dd>The following command creates a single (non-clustered) MySql instance called <b>MyInstance</b> with flavor <b>m1.medium</b>, allocating 3 GB of space (the MySql datastore is the default):
-              <codeblock>trove create MyInstance 3 --size 3</codeblock></dd>
-          </dlentry>
-          <dlentry>
-            <dt>Example 2: Create a MongoDB instance</dt>
-            <dd>The following command creates a single MongoDB instance called
-                <b>MyMongoDBInstance</b> with flavor <b>m1.large</b>, allocating 5 GB of space,
-              creating a database called <b>MyMongoDatabase</b>, and a user called Admin with
-              password <b>password</b>:
-              <codeblock>trove create MyMongoDBInstance 4 --datastore mongodb --size 5 --databases MyMongoDatabase --users admin:password</codeblock></dd>
-          </dlentry>
-          <dlentry>
-            <dt>Example 3: Create a Redis instance</dt>
-            <dd>The following command creates a single Redis instance called <b>MyRedisInstance</b>
-              with flavor <b>m1.small</b>, allocating 1 GB of space.
-              <codeblock>trove create MyRedisInstance 2 --datastore redis --size 1</codeblock></dd>
-          </dlentry>
-          <dlentry>
-            <dt>Example 4: Create a replicated MySql instance</dt>
-            <dd>The following command creates a MySql instance as a <xref type="external" href="https://dev.mysql.com/doc/refman/5.0/en/replication.html" format="html">replica</xref> of another MySql database (Replication is only supported
-            for MySql databases).
-            <codeblock>trove create MyReplicatedInstance 4 --replica_of 18afdf3c-3f38-4bda-b40a-13b675c7f857</codeblock></dd>
-          </dlentry>
-        </dl>
+        
       </li>
       <li><p>To view created instances, use the <codeph>trove list</codeph> command:</p>
         <image href="../../../media/dbaas_list.PNG" placement="break" /></li>
