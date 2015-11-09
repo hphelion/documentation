@@ -72,6 +72,8 @@
         navtitle="Encryption of Passwords and Sensitive Data" locktitle="yes"/>
       <topicref href="helion/security/using_apparmor.dita"
         navtitle="Refining Access Control with AppArmor" locktitle="yes"/>
+      <topicref href="helion/security/arcsight.dita" navtitle="Threat Monitoring and Integration with HPE ArcSight"
+        locktitle="yes"/>
     </topichead>
     <!-- END - SECURITY -->
     <!-- BEGIN ADMINISTRATION -->
