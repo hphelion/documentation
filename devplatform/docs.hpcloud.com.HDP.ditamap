@@ -13,7 +13,7 @@
   
        
     <!--quick start
-    <topichead navtitle="Developer Quick Start Trial Guide">
+    <topichead navtitle="Developer Quick Start Trial Guide"> 
       <topicref href="2.0/devplatform.ALS-developer-trial-quick-start.dita"
         navtitle="Quick Start Step 1: Register" locktitle="yes"/>
       <topicref href="2.0/devplatform.ALS-developer-trial-quick-start2.dita"
