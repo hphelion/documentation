@@ -135,11 +135,14 @@ $ openstack endpoint create database public 'http://<i>&lt;public-VIP-IP-address
               <li>Support for wildcard records.</li>
               <li>Support for Secondary Zones.</li>
             </ul>
+            <b>Known Issues</b>
+            <ul>
+              <li>Selecting a flavor larger than m1.medium for the Deployer or Control Plane nodes 
+                fails due to a failure to re-size LVM. The recommended flavors for the Deployer and 
+                Control Plane nodes are m1.small or m1.medium.</li>
+            </ul>
             <b>Not included in the release</b>
             <ul>
-              <li>The v2 CLI tool is not shipped as part of the this release. In order to 
-                make V2 API CLI calls please refer to http://docs.openstack.org/developer/python-designateclient/installation.html 
-                for information on how to install the V2 CLI. NOTE: This is not a supported part of the release.</li>
               <li>Backend support for BIND9 / DynECT / Akamai is not included in this release.</li>
               <li>Support for Ceilometer is not included in this release.</li>
               <li>There is no backup and restore functionality currently.</li>

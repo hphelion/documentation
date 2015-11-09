@@ -22,15 +22,18 @@
             >The DNSaaS installation requires that the svc network be named "SVC". User defined
             names for the SVC network are currently not supported. </note></li>
         <li>A SSH public and private keypair.</li>
+        <li><note type="important">Selecting a flavor larger than m1.medium for the Deployer or 
+          Control Plane nodes fails due to a failure to re-size LVM. The recommended flavors for the 
+          Deployer and Control Plane nodes are m1.small or m1.medium.</note></li>
       </ul>
     </section>
 
     <section>
       <title>Download Files</title>
-      <p>Navigate to the HPE Helion Download Network (HDN) and log in. 
-        If necessary, create an account first.  Select the required package and Download 
-        the DNSaaS Installer csu file to your local directory unzip the csu to extract 
-        the deployer and cloud image tar ball.</p>
+      <p>Navigate to the <xref scope="external" format="html" href="https://helion.hpwsportal.com/catalog.html#/Home/Show">
+        HPE Helion Download Network (HDN)</xref> and log in. If necessary, create an
+        account first. Select the required package and Download the DNSaaS Installer csu file to
+        your local directory unzip the csu to extract the deployer and cloud image tar ball.</p>
     </section>
 
     <section id="PrerequisiteCredentials">
@@ -191,7 +194,7 @@ ansible-playbook -i hosts/verb_hosts platform-pass-through.yml -e pass_through_k
           <li> Copy the contents of the <codeph>pass-through.yml</codeph> file as follows:<ul>
               <li>Copy <b>from</b>: &lt;<b>HOS</b> deployer&gt;:~/platform-pass-through.yml </li>
               <li>Copy <b>to</b>: &lt;<b>DNSaaS</b> deployer&gt;
-                ~/helion/my_cloud/definition/data/pass-through/pass-through/hos.yml</li>
+                ~/helion/my_cloud/definition/data/pass-through/platform-pass-through/hos.yml</li>
             </ul>
           </li>
           <li>Commit the changes to git.
@@ -270,8 +273,8 @@ $ git commit -m "Configure SSL certificate"
                   </codeblock>
               </li>
                 <li>Commit changes to git.
-                  <codeblock>$ git commit -m"Configure SSL certificate"</codeblock>
-                </li>
+                <codeblock>$ git commit -m "Configure SSL certificate"</codeblock>
+              </li>
               </ul>
             </li>
           </ol>
@@ -331,7 +334,7 @@ $ git diff ^HEAD my_cloud/definition/data/network_groups.yml
      - public</codeblock>
               </li>
               <li>Commit changes to git.
-                <codeblock>$ git commit -m"Configure SSL certificate"</codeblock>
+                <codeblock>$ git commit -m "Configure SSL certificate"</codeblock>
               </li>
             </ul>
           </li>
@@ -503,6 +506,14 @@ $ ansible-playbook -i hosts/localhost hlm-boot-infra.yml -e neutron_router_ha=Fa
           </table>For each name chosen, provide the external service the name and Floating IP
           address for each nameserver, or create the matching zone and records within Designate.</p>
       </sectiondiv>
+    </section>
+    
+    <section id="MoreInformation">
+      <title>More Information</title>
+      <p>For more information on creating servers, domains and examples, see the 
+        <xref format="html" scope="external" href="http://docs.openstack.org/developer/designate/rest.html">OpenStack REST API 
+      documentation</xref>.</p>
+      
     </section>
   </body>
 </topic>
