@@ -496,14 +496,13 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
     </section>
     
     <section id="extra-spec"><title>Extra Specification Options</title>
-      <p>VSA supports volumes creation with varying attributes like thin provisioning enable, raid
-        type, AO enabled volume etc. All these attributes can be specified using extra spec of
-        volume type. The administrator is expected to define appropriate extra spec for VSA volume type as per
-        the guidelines provided at <xref
+      <p>VSA supports volumes creation with additional attributes. All these attributes can be
+        specified using the extra specs options for your volume type. The administrator is expected
+        to define appropriate extra spec for VSA volume type as per the guidelines provided at <xref
           href="http://docs.openstack.org/kilo/config-reference/content/hp-lefthand-supported-ops-rest.html"
           format="html" scope="external"/>.</p>
       <p>The following Cinder Volume Type extra-specs options enable control over the VSA storage
-        provisioning type (thin or full) and specify protection for backend volumes:<table
+        provisioning type (thin or full) and specify protection for your volume backend:<table
           frame="all" rowsep="1" colsep="1" id="table_ntq_swv_yt">
           <tgroup cols="3">
             <colspec colname="c1" colnum="1"/>
@@ -525,8 +524,9 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
               <row>
                 <entry>hplh:data_pl</entry>
                 <entry>r-0, r-5, r-10-2, r-10-3, r-10-4, or r-6</entry>
-                <entry><p>The protection level options enable different data protection configurations.
-                  Supported data protection options are:</p>
+                <entry>
+                  <p>The protection level options enable different data protection configurations.
+                    Supported data protection options are:</p>
                   <ul>
                     <li>r-0 (RAID 0) provides the best data capacity and processing performance, but
                       offers no data protection (no fault tolerance) in the event of a failure.</li>
@@ -540,7 +540,8 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
                     <li>r-6 (RAID 6) is based on and extends RAID5. It requires a minimum of four
                       drives and creates multiple parity sets such that the array can function with
                       up to two drives failing at the same time.</li>
-                  </ul></entry>
+                  </ul>
+                </entry>
               </row>
             </tbody>
           </tgroup>
