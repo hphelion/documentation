@@ -23,7 +23,9 @@ ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml \
     -e PROV_NET_VLAN_ID=&#60;vlan_id&#62; \
     -e SVC_NET_CIDR=&#60;provider_network_cidr&#62; \
     -e SVC_NET_DEST=&#60;svc_net_destination&#62; \
-    -e SVC_NET_GATEWAY="gateway_used_by_the_network"           </codeblock>Example:
+    -e SVC_NET_GATEWAY="gateway_used_by_the_network" \
+    -e SVC_ALLOCATION_START="10.241.0.70" \
+    -e SVC_ALLOCATION_END="10.241.0.125"</codeblock>Example:
               Given a management network with the following attributes: <sl>
                 <sli>MGMT Net = 192.168.245.1/32</sli>
                 <sli>SVC Net = 10.55.66.0/24</sli>
