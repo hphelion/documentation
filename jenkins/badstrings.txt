@@ -1,8 +1,6 @@
-%Configuration Processor%=Capitalization.  Use configuration processor.
-%Configuration processor%=Capitalization.  Use configuration processor.
+%Configuration [Pp]rocessor%=Capitalization.  Use configuration processor.
 %lifecycle-manager%=Syntax.  Use lifecycle manager.
-%deployer/lifecycle-manager%=Syntax.  Use lifecycle manager.
-%deployer\\lifecycle-manager%=Syntax.  Use lifecycle manager.
+%deployer[\\/]lifecycle-manager%=Syntax.  Use lifecycle manager.
 %lifecycle-manager/deployer%=Syntax.  Use lifecycle manager.
 %deployer%=Syntax.  Use lifecycle manager.
 %[Bb]eta%=do not use in HOS docs
