@@ -28,7 +28,7 @@
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ol>
-<li>Install the <xref href="../installation/devplatform_commercial_install.dita" >HPE Helion Development Platform</xref>and configure the services.</li>
+<li>Install the <xref href="../installation/devplatform_install_platform.dita" >HPE Helion Development Platform</xref>and configure the services.</li>
 </ol>
 </section>
 <section id="create"> <title>Creating a RabbitMQ Cluster</title>
