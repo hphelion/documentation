@@ -18,6 +18,8 @@
             your Volumes</xref></li>
         <li><xref href="configure_vsa.dita#config_vsa/associate_volumetype">Associate the Volume
             Type to the Backend</xref></li>
+        <li><xref href="configure_vsa.dita#config_vsa/extra_specs">Extra Specification
+            Options</xref></li>
         <li><xref href="configure_vsa.dita#config_vsa/post_install">Verifying your VSA
             backend</xref></li>
       </ul>
@@ -466,7 +468,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
       <p>The newly created volume type will be displayed in the <b>Volume Types</b> list confirming
         its creation.</p>
     </section>
-    
+
     <section id="associate_volumetype">
       <title>Associate the Volume Type to the Backend</title>
       <p> After the volume type names have been created, you can assign extra_specs to the volumes
@@ -494,8 +496,8 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
       <p>Once the volume type is mapped to the backend, you can create volumes with this volume
         type.</p>
     </section>
-    
-    <section id="extra-spec"><title>Extra Specification Options</title>
+
+    <section id="extra_specs"><title>Extra Specification Options</title>
       <p>VSA supports volumes creation with additional attributes. All these attributes can be
         specified using the extra specs options for your volume type. The administrator is expected
         to define appropriate extra spec for VSA volume type as per the guidelines provided at <xref
@@ -547,31 +549,31 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
           </tgroup>
         </table></p>
       <p>To add additional extra specs to your volume type, do the following:</p>
-        <ol>
+      <ol>
         <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
-          >Accessing Horizon</xref> for details.</li>
+            >Accessing Horizon</xref> for details.</li>
         <li>Ensure that you are scoped to your <b>admin</b> Project. Then under the <b>Admin</b>
           menu in the navigation pane, click on <b>Volumes</b> under the <b>System</b> subheading.
-          <p><image href="../../media/vsa/createvoltype1.png"/></p></li>
+              <p><image href="../../media/vsa/createvoltype1.png"/></p></li>
         <li>Click the <b>Volume Type</b> tab to list the volume types. <p><image
-          href="../../media/vsa/associatevoltype2.png"/></p></li>
-        <li>In the <b>Actions</b> column of the Volume Type you created earlier, click the
-          drop-down option and select <b>View Extra Specs</b> which will bring up the <b>Volume
-            Type Extra Specs</b> options. <p><image href="../../media/vsa/associatevoltype3.png"
-            /></p></li>
-          <li>Click the <b>Create</b> button on the <b>Volume Type Extra Specs</b> screen. <p><image
-            href="../../media/vsa/extraspecs1.png"/></p></li>
-          <li>In the <b>Key</b> field, enter the extra spec you want to add. In the
-            <b>Value</b> box, enter the value for that spec. Once you have completed that, click the <b>Create</b> button to create the extra
-            volume type specs. 
-            <p>In this example below, we are adding the <codeph>hplh:provisioning</codeph> spec with a value of <codeph>full</codeph>:</p>
-              <p><image href="../../media/vsa/extraspecs2.png"/></p></li>
-          <li>Once you have completed your list of extra specs, you can click the <b>Close</b> button.</li>
-        </ol>
+              href="../../media/vsa/associatevoltype2.png"/></p></li>
+        <li>In the <b>Actions</b> column of the Volume Type you created earlier, click the drop-down
+          option and select <b>View Extra Specs</b> which will bring up the <b>Volume Type Extra
+            Specs</b> options. <p><image href="../../media/vsa/associatevoltype3.png"/></p></li>
+        <li>Click the <b>Create</b> button on the <b>Volume Type Extra Specs</b> screen. <p><image
+              href="../../media/vsa/extraspecs1.png"/></p></li>
+        <li>In the <b>Key</b> field, enter the extra spec you want to add. In the <b>Value</b> box,
+          enter the value for that spec. Once you have completed that, click the <b>Create</b>
+          button to create the extra volume type specs. <p>In this example below, we are adding the
+              <codeph>hplh:provisioning</codeph> spec with a value of <codeph>full</codeph>:</p>
+          <p><image href="../../media/vsa/extraspecs2.png"/></p></li>
+        <li>Once you have completed your list of extra specs, you can click the <b>Close</b>
+          button.</li>
+      </ol>
       <p>Here is what a completed list of extra specs may look like:</p>
       <p><image href="../../media/vsa/extraspecs3.png"/></p>
     </section>
-    
+
     <section id="post_install"><title>Verifying your VSA backend</title>
       <p>After you have configured VSA as your Block Storage backend, you can verify this all
         completed successfully by creating a new volume.</p>
