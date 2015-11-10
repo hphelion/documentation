@@ -241,69 +241,58 @@ StrictHostKeyChecking no </codeblock></li>
                                 Carrier Grade. This is a large file that might take a significant
                                 amount of time to download, depending upon the speed of your
                                 network.</p>
-                        <p><b>Note:</b> For deployments using  ESX and DCN, you will need to obtain
+                        <p><b>Note:</b> For deployments using ESX and DCN, you will need to obtain
                                 the and install the VMware ESX<tm tmtype="reg"/> and HPE Distributed
                                 Cloud Networking (DCN) software through those entities. </p>
                         <p><b>HP Helion OpenStack Carrier Grade installation files</b></p>
                         <p>The <codeph>hcg-2-0-beta.tar</codeph> file contains the installation
                                 files for HP Helion OpenStack Carrier Grade in the
                                         <codeph>/uploads/hcg-2-0-beta/</codeph> directory. </p>
-                        
-                                
-                        hcg-2-0-beta.tar
-                                        HCG2.0Beta.tar.gz
-                                        HCG2.0Beta.tar.gz.md5
-                                        HCG2.0BetaDCN.tar.gz
-                                        HCG2.0BetaDCN.tar.gz.md5
-                                        HCG2.0BetaInfobloxPlugin.tar.gz
-                                        HCG2.0BetaInfobloxPlugin.tar.gz.md5
-                                        
-                                        <li>Extract the <codeph>HCG2.0Beta.tar.gz</codeph> file: <ul
-                                                  id="ul_zcx_pzy_st">
-                                                  <li>cg-hlm.qcow2 </li>
-                                                  <li>cg-hlm.qcow2.md5</li>
-                                                  <li>cg-hos-misc.tar.gz</li>
-                                                  <li>cg-hos-misc.tar.gz.md5</li>
-                                                  <li>cg-hos-src.tar.gz</li>
-                                                  <li>cg-hos-src.tar.gz.md5</li>
-                                                  <li>cg-infra-src.tar.gz</li>
-                                                  <li>cg-infra-src.tar.gz.md5</li>
-                                                  <li>cg-ironic-deploy-images.tar.gz </li>
-                                                  <li>cg-ironic-deploy-images.tar.gz.md5</li>
-                                                  <li>TEMPL-CPV9.ova</li>
-                                                </ul><p>The <b>WR-HCG-2_0</b> directory contains
-                                                  files required to install the KVM region. The
-                                                  installation instructions indicate when and how to
-                                                  deploy the files: <ul id="ul_elg_f34_yt">
-                                                  <li>cg-windriver-iso.tar.gz</li>
-                                                  <li>cg-windriver-iso.tar.gz.md5</li>
-                                                  </ul></p><p>The following files are included in
-                                                  the installation download packages and will become
-                                                  available during the installation of the Lifecycle
-                                                  Manager. </p><p>
-                                                  <ul id="ul_oty_2cz_st">
-                                                  <li><codeph>license.lic</codeph> Located in the
+                        hcg-2-0-beta.tar HCG2.0Beta.tar.gz HCG2.0Beta.tar.gz.md5
+                        HCG2.0BetaDCN.tar.gz HCG2.0BetaDCN.tar.gz.md5
+                        HCG2.0BetaInfobloxPlugin.tar.gz HCG2.0BetaInfobloxPlugin.tar.gz.md5
+                        <ph/>Extract the <codeph>HCG2.0Beta.tar.gz</codeph> file: <ul
+                                id="ul_zcx_pzy_st">
+                                <li>cg-hlm.qcow2 </li>
+                                <li>cg-hlm.qcow2.md5</li>
+                                <li>cg-hos-misc.tar.gz</li>
+                                <li>cg-hos-misc.tar.gz.md5</li>
+                                <li>cg-hos-src.tar.gz</li>
+                                <li>cg-hos-src.tar.gz.md5</li>
+                                <li>cg-infra-src.tar.gz</li>
+                                <li>cg-infra-src.tar.gz.md5</li>
+                                <li>cg-ironic-deploy-images.tar.gz </li>
+                                <li>cg-ironic-deploy-images.tar.gz.md5</li>
+                                <li>TEMPL-CPV9.ova</li>
+                        </ul><p>The <b>WR-HCG-2_0</b> directory contains files required to install
+                                the KVM region. The installation instructions indicate when and how
+                                to deploy the files: <ul id="ul_elg_f34_yt">
+                                        <li>cg-windriver-iso.tar.gz</li>
+                                        <li>cg-windriver-iso.tar.gz.md5</li>
+                                </ul></p><p>The following files are included in the installation
+                                download packages and will become available during the installation
+                                of the Lifecycle Manager. </p><p>
+                                <ul id="ul_oty_2cz_st">
+                                        <li><codeph>license.lic</codeph> Located in the
                                                   <codeph>/root/cg-hlm/windriver-files</codeph>
-                                                  directory on the HLM host.</li>
-                                                  <li><codeph>region_config</codeph> Located in the
+                                                directory on the HLM host.</li>
+                                        <li><codeph>region_config</codeph> Located in the
                                                   /<codeph>var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
-                                                  directory on the HLM host.</li>
-                                                  <li><codeph>cakey.pem</codeph> Located in the
+                                                directory on the HLM host.</li>
+                                        <li><codeph>cakey.pem</codeph> Located in the
                                                   <codeph>/var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
-                                                  directory on the HLM host.</li>
-                                                  </ul>
-                                                </p><p>You can download these files to any location.
-                                                  You will copy these files to the
-                                                  <codeph>/home/wrsroot/</codeph> directory of
-                                                  <codeph>controller-0</codeph> in the KVM region
-                                                  during the installation process. </p><p>The
-                                                  <b>Patches</b> folder contains patches for the
-                                                  Attic backup and restore service and the OpenStack
-                                                  Ironic service:<table id="table_ich_gs5_mt">
-                                                  <tgroup cols="2">
-                                                  <colspec colnum="1" colname="col2"/>
-                                                  <colspec colnum="2" colname="col3"/>
-                                                  <tbody>
+                                                directory on the HLM host.</li>
+                                </ul>
+                        </p><p>You can download these files to any location. You will copy these
+                                files to the <codeph>/home/wrsroot/</codeph> directory of
+                                        <codeph>controller-0</codeph> in the KVM region during the
+                                installation process. </p><p>The <b>Patches</b> folder contains
+                                patches for the Attic backup and restore service and the OpenStack
+                                Ironic service:<table id="table_ich_gs5_mt">
+                                        <tgroup cols="2">
+                                                <colspec colnum="1" colname="col2"/>
+                                                <colspec colnum="2" colname="col3"/>
+                                                <tbody>
                                                   <row>
                                                   <entry><b>File Name</b></entry>
                                                   <entry><b>Files within the folder</b></entry>
@@ -328,42 +317,38 @@ StrictHostKeyChecking no </codeblock></li>
                                                   </ul>
                                                   </entry>
                                                   </row>
-                                                  </tbody>
-                                                  </tgroup>
-                                                  </table></p></li>
-                                        <li>Extract the <codeph>HCG2.0BetaDCN.tar.gz</codeph>
-                                                  file.<p>The <codeph>hcg-2-0-beta.tar</codeph> file
-                                                  contains the required DCN packages needed to
-                                                  deploy the DCN environment, in the
-                                                  <codeph>build22/HLM/DCN</codeph> directory. The
-                                                  currently supported version is <b>DCN version 3.2
-                                                  R4</b>.</p><ul id="ul_w3c_yj4_yt">
-                                                  <li>5930-Nuage-D2423.ipe</li>
-                                                  <li>itoolbox1.ova</li>
-                                                  <li>nuage-metadata-agent_3.2.4-133_all.deb</li>
-                                                  <li>nuagenetlib_0.0.0-1729-kilo_all.deb</li>
-                                                  <li>nuage-openstack-neutron_2015.1.1745_all.deb</li>
-                                                  <li>nuage-openvswitch-common_3.2.4-133_amd64.deb</li>
-                                                  <li>nuage-openvswitch-switch_3.2.4-133_amd64.deb</li>
-                                                  <li>nuage-python-openvswitch_3.2.4-133_all.deb </li>
-                                                  <li>VRS_3.2.4-135_10062015.ovf</li>
-                                                  <li>VRS_3.2.4-135_10062015-disk1.vmdk</li>
-                                                  <li>vsc_singledisk.qcow2</li>
-                                                  <li>VSD-3.2.4_134-hp.ova</li>
-                                                  <li>VSD-3.2.4_134-hp.qcow2</li>
-                                                </ul></li>
-                                        <li>Extract the
-                                                  <codeph>HCG2.0BetaInfobloxPlugin.tar.gz</codeph>
-                                                  file:<ul id="ul_gxx_3h4_yt">
-                                                  <li>infoblox.tar.gz</li>
-                                                  <li>infoblox.tar.gz.md5</li>
-                                                  <li>infoblox-baremetal.tar.gz</li>
-                                                  <li>infoblox-baremetal.tar.gz.md5</li>
-                                                </ul>Do not extract these files. You will copy the
-                                                compressed files later in the installation
-                                                process.</li>
-                                
-                        
+                                                </tbody>
+                                        </tgroup>
+                                </table></p>
+                        <ol>
+                        <li>Extract the <codeph>HCG2.0BetaDCN.tar.gz</codeph> file.<p>The
+                                                <codeph>hcg-2-0-beta.tar</codeph> file contains the
+                                        required DCN packages needed to deploy the DCN environment,
+                                        in the <codeph>build22/HLM/DCN</codeph> directory. The
+                                        currently supported version is <b>DCN version 3.2
+                                        R4</b>.</p><ul id="ul_w3c_yj4_yt">
+                                        <li>5930-Nuage-D2423.ipe</li>
+                                        <li>itoolbox1.ova</li>
+                                        <li>nuage-metadata-agent_3.2.4-133_all.deb</li>
+                                        <li>nuagenetlib_0.0.0-1729-kilo_all.deb</li>
+                                        <li>nuage-openstack-neutron_2015.1.1745_all.deb</li>
+                                        <li>nuage-openvswitch-common_3.2.4-133_amd64.deb</li>
+                                        <li>nuage-openvswitch-switch_3.2.4-133_amd64.deb</li>
+                                        <li>nuage-python-openvswitch_3.2.4-133_all.deb </li>
+                                        <li>VRS_3.2.4-135_10062015.ovf</li>
+                                        <li>VRS_3.2.4-135_10062015-disk1.vmdk</li>
+                                        <li>vsc_singledisk.qcow2</li>
+                                        <li>VSD-3.2.4_134-hp.ova</li>
+                                        <li>VSD-3.2.4_134-hp.qcow2</li>
+                                </ul></li>
+                        <li>Extract the <codeph>HCG2.0BetaInfobloxPlugin.tar.gz</codeph> file:<ul
+                                        id="ul_gxx_3h4_yt">
+                                        <li>infoblox.tar.gz</li>
+                                        <li>infoblox.tar.gz.md5</li>
+                                        <li>infoblox-baremetal.tar.gz</li>
+                                        <li>infoblox-baremetal.tar.gz.md5</li>
+                                </ul>Do not extract these files. You will copy the compressed files
+                                later in the installation process.</li></ol>
                 </section>
                 <section>
                         <title>Obtain the required Debian packages</title>
