@@ -30,28 +30,39 @@
       deployer_cacert: /home/stack/ca/cacert.pem
       deployer_cname: "cname"             
     <xref href="cloud_codeengine.dita#cloudCodeEngine">helionce</xref>:
-      deployer_key: msgtest
-      deployer_flavor: 4
-      deployer_name: helionce_deployer_01
-      deployer_security_group: default
-      deployer_version:
-      deployer_image:
-      deployer_uri:
-      deployer_cloud: "helionce"
-      deployer_ntp_servers: 
-      deployer_dns_servers: 
-      deployer_ext_net_id: 
-      deployer_cacert: /home/stack/ca/cacert.pem
-      deployer_cname: "cname"
-  <xref href="cloud_messaging.dita#cloudMessaging">msgaas</xref>:
-    image_api_version: '1'
-    identity_api_version: '2'
-    region_name: region1
-    insecure: True
-  <xref href="cloud_codeengine.dita#cloudCodeEngine">helionce</xref>:
-    image_api_version: '1'
-    identity_api_version: '2'
-    region_name: region1
-    insecure: True    </codeblock>
+      deployer_key: helionce-shared
+      deployer_flavor: 3
+      deployer_dns_servers: dnsservers
+      deployer_ntp_servers: ntpservers
+      deployer_cloud: 'mycloud'
+      auth:
+        auth_url: http://10.22.200.2:35357/v3
+        project_name: admin
+        username: admin
+        password: 
+   <xref href="cloud_messaging.dita#cloudMessaging">msgaas</xref>:
+      image_api_version: '1'
+      identity_api_version: '2'
+      region_name: region1
+      insecure: True
+    <xref href="cloud_database.dita#cloudDatabase">database</xref>:
+      trove_enable_ssl: False
+      ephemeral_ca_cert: /home/stack/ca/cacert.pem  
+      external_network: 
+      provider_network:
+      ntp_server: 
+      keypair: default
+      enable_ha: False
+      flavor: m1.medium
+      database_flavor: m1.medium
+      messaging_flavor: m1.medium
+      database_volume_size: 10
+      logstash_rabbitmq_host:
+      logstash_rabbitmq_password:
+      hotpools_enabled: True
+      hotpools_max_instances: 1
+      hotpools_image_name: percona
+      hotpools_flavor_names: 'm1.medium'
+      project_id:    </codeblock>
   </body>
 </topic>

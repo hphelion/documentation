@@ -22,8 +22,8 @@
         username: admin
         password: verystrongpassword</pre></section>
     
-    <section>
-      <title>Modify the Following Parameters</title>
+    <section><title>Leave these Parameters Unchanged </title>
+  
       <dl>
         <dlentry>
           <dt>deployer_key</dt>
@@ -38,14 +38,17 @@
         </dlentry>
         <dlentry>
           <dt>deployer_ntp_servers</dt>
-          <dd>Default value: ntpservers</dd>
-          <dd>Do not change this value.</dd>
-        </dlentry>
-        <dlentry>
+          <dd>Provided value: ntpservers</dd>
+          <dd>Do not change this value. </dd>
+        </dlentry>     <dlentry>
           <dt>deployer_dns_servers</dt>
-          <dd>Default value: dnsservers</dd>
+          <dd>Provided value: dnsservers</dd>
           <dd>Do not change this value.</dd>
-        </dlentry>
+        </dlentry></dl></section>
+      
+      <section><title>Modify the Following Parameters</title><dl>
+
+    
         <dlentry>
           <dt>deployer_cloud</dt>
           <dd>This value must match the name of the section you created in the <xref
