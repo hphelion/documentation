@@ -59,6 +59,7 @@
             groups associated with it.</p><note type="tip">If the <filepath>destroy</filepath>
             process enters a loop, delete the <filepath>terraform.tfstate</filepath> file and run
             the command again.</note><b>To Terminate Instances and Security Groups from <keyword
+<<<<<<< HEAD
               keyref="pubCloudShort"/></b><p>Using <keyword keyref="pubCloudShort"/> to terminate
             instances or security groups is not recommended. Use the following steps only if you run
             into difficulties with Terraform.</p><ol id="ol_zqt_ld3_tt">
@@ -144,6 +145,8 @@
             id="ol_zqt_ld3_tt">
 >>>>>>> 076fff9... Modified instruction steps 5 & 6
 =======
+=======
+>>>>>>> 792be12... Revised structured language
               keyref="pubCloudShort"/></b><p>Using <keyword keyref="pubCloudShort"/> to terminate
             instances or security groups is not recommended. Use the following steps only if you run
             into difficulties with Terraform.</p><ol id="ol_zqt_ld3_tt">

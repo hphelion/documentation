@@ -182,7 +182,7 @@
               conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6. <xref
             conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
     <stentry>
-          <b>Creating a Sandbox Environment</b><ol id="ol_ur4_yq1_tt">
+          <b>To Create a Sandbox Environment</b><ol id="ol_ur4_yq1_tt">
             <li>Log into the <xref href="https://horizon.hpcloud.com/" format="html"
                 scope="external"><keyword keyref="pubCloudShort"/></xref> with the username and
               password that you created <xref href="CFR_step_1.dita#concept_s2k_b35_st">during
@@ -266,7 +266,8 @@
                     <xref href="mailto:billing@hpcloud.com" format="html" scope="external"
                     >billing@hpcloud.com</xref>.</li>
               </ol></li>
-          </ol><b id="download_config_file">Downloading the Configuration File and Key Pair</b><ol id="ol_gy1_f1q_tt">
+          </ol><b id="download_config_file">TO Download the Configuration File and Key Pair</b><ol
+            id="ol_gy1_f1q_tt">
             <li>To download the <filepath>sh</filepath> configuration file, click <menucascade>
                 <uicontrol>Project</uicontrol>
                 <uicontrol>Compute</uicontrol>

@@ -198,7 +198,7 @@ cf target -o myOrg -s mySpace</codeblock></note></li>
                     scope="external">python-env</xref> (Python)</dt>
                 <dd>A simple Python app to show environment variables</dd>
               </dlentry>
-            </dl></p><b>Getting Ready to Push Your First Application</b><ol id="ol_zdy_p53_tt">
+            </dl></p><b>To Prepare for Pushing Your First Application</b><ol id="ol_zdy_p53_tt">
             <li>Ensure that you are targeting the desired cluster, for
                 example:<codeblock id="target_cluster">cf api http://api.203.0.113.0.xip.io</codeblock><note>To
                 skip SSL validation, add the <filepath>--skip-ssl-validation</filepath> option to
@@ -225,8 +225,12 @@ cf create-org myOrg
 cf target -o myOrg
 cf create-space mySpace -o myOrg
 cf target -o myOrg -s mySpace</codeblock></note></li>
+<<<<<<< HEAD
 >>>>>>> de2d2bc... Recreating branch without old cruft in it
           </ol><b>Pushing a GitHub Application to Your Cluster</b><ol id="ol_idl_1mw_tt">
+=======
+          </ol><b>To Push a GitHub Application to Your Cluster</b><ol id="ol_idl_1mw_tt">
+>>>>>>> fc5c9f3... Revised structured language
             <li>Navigate to the GitHub page of the application and click <uicontrol>Download
                 ZIP</uicontrol>.</li>
             <li>Decompress the <filepath>zip</filepath> file into a convenient directory.</li>
