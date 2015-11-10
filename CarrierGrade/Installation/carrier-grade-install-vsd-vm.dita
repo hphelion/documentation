@@ -16,15 +16,17 @@
     </prolog>
     <body>
         <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.md--><!--permalink: /helion/openstack/carrier/install/pb/network/prepare/--></p>
-        <section><b>Log into the HLM host</b><p>Use the following steps to launch the virtual
-                machine for the required HPE DCN Virtualized Services Directory (<i>VSD</i>):</p><ol
-                id="ol_gtd_b1l_2t">
+        <p>Use the following steps to launch the virtual machine for the required HPE DCN
+            Virtualized Services Directory (<i>VSD</i>):</p>
+        <section><title>Install the VSD VM</title><ol id="ol_gtd_b1l_2t">
                 <li>Log into the HLM host.</li>
-                <li>Copy the VSD qcow image, named <codeph>VSD-3.2.4_134-hp.qcow2</codeph>, to the
+                <li>Copy the VSD qcow image, named <ph
+                        conref="carrier-grade-install-prereqs.dita#topic7148/vsd-qcow"/>
+                    <codeph>VSD-3.2.4_134-hp.qcow2</codeph>, to the
                         <codeph>var/lib/libvirt/images</codeph> directory.<p><b>Note:</b> The
-                        vsd.xml is a sample created for internal HP Helion Carrier Grade development
-                        quality assurance. For a production environment, refer to the HPE DCN
-                        documentation to deploy and configure the VSD in HA mode.</p></li>
+                        vsd.xml is a sample created for internal HP Helion OpenStack Carrier Grade
+                        development quality assurance. For a production environment, refer to the
+                        HPE DCN documentation to deploy and configure the VSD in HA mode.</p></li>
                 <li>Execute the following
                     commands:<codeblock> virsh define vsd.xml
  virsh autostart vsd
@@ -35,25 +37,24 @@ Login creds
 Login: root
 Password: Alcateldc</codeblock>
                     </p>Where <codeph>&lt;vsdname></codeph> is the name of your VSD. </li>
-                    <li id="1">Edit <i>/etc/sysconfig/network-scripts/ifcfg-eth0</i> file to configure a
-                        static IP address. <p>
-                            <ul id="ul_wf5_bng_tt">
-                                <li>For the VSD VM installed as a prerequisite, use the DCM IP.</li>
-                                <li>For the vCenter Integration Node VM required for the VRSvApp deployment,
-                                    use the TUL IP.</li>
-                            </ul>
-                        </p><p><u>For
-                            example</u><codeblock>BOOTPROTO=”static”
+                <li id="1">Edit <i>/etc/sysconfig/network-scripts/ifcfg-eth0</i> file to configure a
+                    static IP address. <p>
+                        <ul id="ul_wf5_bng_tt">
+                            <li>For the VSD VM installed as a prerequisite, use the DCM IP.</li>
+                            <li>For the vCenter Integration Node VM required for the VRSvApp
+                                deployment, use the TUL IP.</li>
+                        </ul>
+                    </p><p><u>For
+                        example</u><codeblock>BOOTPROTO=”static”
                                 IPADDR=10.20.5.21
                                 NETMASK=255.255.255.0
                                 GATEWAY=10.20.5.1</codeblock></p></li>
                 <li conref="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/2"
                     conrefend="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/14"/>
-            
-                    <li id="15">After NTP is properly synchronized,execute the following command to
+                <li id="15">After NTP is properly synchronized,execute the following command to
                     install
                     VSD:<codeblock>/opt/vsd/install.sh xmpp.&lt;domain_name> -t s -y</codeblock></li>
-                </ol><b>Verify that VSD is installed</b>
+            </ol><b>Verify that VSD is installed</b>
             <ol id="ol_mgf_hgl_2t">
                 <li>Start a console session to the VSD VM from HLM host using the following command:
                         <codeblock>virsh console &lt;vsdname&gt; </codeblock><p>Where
@@ -107,6 +108,8 @@ VSD Server : auto</codeblock><p>The
                 <li>Click the Groups icon to add the user to the CMS Group</li>
                 <li>Select the <b>CMS Group</b>, then click the link icon click <b>OSadmin</b>.</li>
             </ol>
+            <p>Return to the <xref href="carrier-grade-install-prereqs.dita#topic7148">Installation
+                    Prerequisites</xref>.</p>
         </section>
     </body>
 </topic>

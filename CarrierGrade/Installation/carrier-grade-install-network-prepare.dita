@@ -161,9 +161,9 @@
         </table>
         </section>
     <section id="configure-vlan-networking-on-the-kvm-host">
-            <title>Configure VLAN networking on the KVM host</title>
+            <title>Configure VLAN networking on the HLM host</title>
             <ol>
-                <li>Launch a terminal and log in to your KVM host as root:
+                <li>Launch a terminal and log in to your HLM host as root:
                     <codeblock>sudo su -</codeblock></li>
                 <li>Edit <codeph>/etc/network/interfaces</codeph> file to provide network details on
                     the each interface:<codeblock><codeph>auto lo
@@ -280,7 +280,7 @@ ovs_version: "2.0.2"</codeblock></li>
 <p>The installation process will create a virtual machine for HP Helion Lifecycle Management.</p>
 <p>Perform the following steps to enable networks that will be associated with HLM VM.</p>
 <ol>
-<li>Launch a terminal and log in to your KVM host as root:<p>
+<li>Launch a terminal and log in to your HLM host as root:<p>
                         <codeblock>sudo su -</codeblock>
                     </p></li>
 <li>Create the <codeph>br-clm</codeph> network by creating an XML definition file:<p>a. Manually
@@ -361,7 +361,7 @@ ifup &lt;yourinterface&gt;</codeph></codeblock></li>
                     IP address of the primary
                     interface.<codeblock><codeph>ifconfig | more</codeph></codeblock></li>
 <li>Reboot the system.</li>
-<li>Execute the following command to make sure the primary interface does not have IP address and
+<li>Execute the following command to make sure the primary interface does not have an IP address and
                     confirm the IP address of the <codeph>br-pxe</codeph>
                     network:<codeblock><codeph>ifconfig | more</codeph></codeblock></li>
 <li>Execute the following command to view the routing table. Make sure all of the networks are
@@ -408,7 +408,7 @@ ifup br-clm</codeph></codeblock></li>
 </ol>
 </section>
 <section id="networking-issues-ubuntu-1404"> <title>Networking Issues Ubuntu 14.04</title>
-<p>Open vSwitch 2.0.x with bridge might not able to ping or SSH after reboot or running Anisble
+<p>Open vSwitch 2.0.x with a bridge might not able to ping or SSH after reboot or running Anisble
                 playbooks to create new bridges. This is a known issue in the Ubuntu community. For
                 more details on the issue, see <xref
                     href="https://bugs.launchpad.net/ubuntu/+source/ifupdown/+bug/1301015"
@@ -435,7 +435,7 @@ ifup br-dcm</codeph></codeblock></li>
                         >prerequisites</xref>.</b></p>
 <!-- Hide this; might not be needed 
 
-1. On the KVM host, change to the `/root/infra-ansible-playbooks/roles/HLM-CFG/` directory.
+1. On the HLM host, change to the `/root/infra-ansible-playbooks/roles/HLM-CFG/` directory.
 
         cd /root/infra-ansible-playbooks/roles/HLM-CFG/
 

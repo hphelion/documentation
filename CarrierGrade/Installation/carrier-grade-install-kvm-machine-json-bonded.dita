@@ -24,7 +24,7 @@
   <p>The following represents a sample <codeph>machine_architecture.json</codeph> file for <xref
                     href="carrier-grade-install-overview.dita#topic1925/nic">a bonded NIC
                     installation</xref>. Use values appropriate for your environment. You can use
-                the following command on the KVM host to gather the required PCI network info: </p>
+                the following command on the HLM host to gather the required PCI network info: </p>
             <p>
                 <codeblock>ls -l /sys/class/net | egrep pci | sed -e 's/^.*pci//' -e 's%/net.*$%%' </codeblock>
             </p>

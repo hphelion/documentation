@@ -91,7 +91,7 @@ But the CLI, REST API etc should all be same --></p>
         <li>there is any problem with the installation that cannot be corrected.</li>
       </ul>
       <p><b>Important:</b> During the restore process the original HLM VM will be deleted from the
-        KVM Host. </p>
+        HLM host. </p>
     </section>
     <section>
       <title>Backup and Restore the MySQL cluster</title>

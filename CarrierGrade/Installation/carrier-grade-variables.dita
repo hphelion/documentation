@@ -2,8 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic7148">
-        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Installation
-                Prerequisites</title>
+        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Variables</title>
         <titlealts>
                 <searchtitle>HP Helion OpenStack Installation Prerequisites</searchtitle>
         </titlealts>
@@ -23,50 +22,8 @@
                 <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-install-pb-prereqs.md--><!--permalink: /helion/openstack/carrier/install/pb/prereqs/--></p>
                 <p>This document describes the prerequisite steps required to install HP Helion
                         OpenStack Carrier Grade in a baremetal environment.</p>
-                <section id="hardware">
-                        <title>Hardware and software requirements</title>
-                        <p>Before you start, if you have not done so already, make sure your
-                                environment meets the hardware and software requirements. See the
-                                        <xref href="carrier-grade-support-matrix2.dita#topic1773">HP
-                                        Helion OpenStack Support Matrix</xref>.</p>
-                </section>
-                <section id="kvm">
-                        <title>Preparing the HLM host</title>
-                        <p>Perform the following tasks on the HLM host:</p>
-                        <ul>
-                                <li><?oxy_insert_start author="burkmich" timestamp="20150727T182851-0400"?><xref
-                                                href="#topic7148/proxy" format="dita"
-                                        /><?oxy_insert_end?></li>
-                                <li><?oxy_insert_start author="burkmich" timestamp="20150727T183005-0400"?><xref
-                                                href="#topic7148/ssh" format="dita"
-                                        /><?oxy_insert_end?></li>
-                                <li><?oxy_insert_start author="burkmich" timestamp="20150727T183030-0400"?><xref
-                                                href="#topic7148/packages" format="dita"
-                                        /><?oxy_insert_end?></li>
-                                <li><?oxy_insert_start author="burkmich" timestamp="20150727T183112-0400"?><xref
-                                                href="#topic7148/configure-the-xrdp-remote-desktop-display"
-                                                format="dita"/><?oxy_insert_end?></li>
-                                <li><?oxy_insert_start author="burkmich" timestamp="20150727T183118-0400"?><xref
-                                                href="#topic7148/ntp" format="dita"
-                                        /><?oxy_insert_end?></li>
-                                <li><xref href="#topic7148/ssh" format="dita"/></li>
-                                <li><xref href="#topic7148/ssh" format="dita"/></li>
-                                <li><xref href="#topic7148/network" format="dita"/></li>
-                                <li><xref href="#topic7148/ldap" format="dita"/></li>
-                                <li><xref href="#topic7148/getinstall" format="dita"/></li>
-                                <li><xref href="#topic7148/kvm-region" format="dita">Download the
-                                                installation packages for the KVM region</xref></li>
-                                <!--<li><xref href="#topic7148/download-esx" format="dita"/> This is applicable only for KVM + ESX Cloud Deployment. </li>-->
-                                <!--<li><xref href="#topic7148/verify" format="dita"/></li>-->
-                                <li><xref href="#topic7148/checksum" format="dita"/></li>
-                                <li><xref href="#topic7148/extract" format="dita"/></li>
-                                <li><xref href="#topic7148/vsd" format="dita"/></li>
-                                <li><xref href="#topic7148/prepbare" format="dita"/></li>
-                        </ul>
-                        <title>Install Ubuntu Server 14.04.2 LTS</title>
-                        <p>The HLM host must have Ubuntu Server 14.04.2 LTS installed before
-                                performing the HP Helion OpenStack Carrier Grade installation.</p>
-                </section>
+                <p>Ubuntu Server <ph id="ubuntu-version">14.04.2 LTS</ph>
+                </p>
                 <!--<section id="pub-key"> <title>Obtain a public key</title>
 <p>On the HLM host, the user <codeph>root</codeph> must have a public key.</p>
 <ol>
@@ -291,17 +248,16 @@ StrictHostKeyChecking no </codeblock></li>
                         <p>The <codeph>hcg-2-0-beta.tar</codeph> file contains the installation
                                 files for HP Helion OpenStack Carrier Grade in the
                                         <codeph>/uploads/hcg-2-0-beta/</codeph> directory. </p>
-                        <p>
-                                <ol id="ol_nkj_qg4_yt">
-                                        <li>Extract the <codeph>hcg-2-0-beta.tar</codeph> file:<ul
-                                                  id="ul_hh2_rg4_yt">
-                                                  <li>HCG2.0Beta.tar.gz</li>
-                                                  <li>HCG2.0Beta.tar.gz.md5</li>
-                                                  <li>HCG2.0BetaDCN.tar.gz</li>
-                                                  <li>HCG2.0BetaDCN.tar.gz.md5</li>
-                                                  <li>HCG2.0BetaInfobloxPlugin.tar.gz</li>
-                                                  <li>HCG2.0BetaInfobloxPlugin.tar.gz.md5</li>
-                                                </ul></li>
+                        
+                                
+                        hcg-2-0-beta.tar
+                                        HCG2.0Beta.tar.gz
+                                        HCG2.0Beta.tar.gz.md5
+                                        HCG2.0BetaDCN.tar.gz
+                                        HCG2.0BetaDCN.tar.gz.md5
+                                        HCG2.0BetaInfobloxPlugin.tar.gz
+                                        HCG2.0BetaInfobloxPlugin.tar.gz.md5
+                                        
                                         <li>Extract the <codeph>HCG2.0Beta.tar.gz</codeph> file: <ul
                                                   id="ul_zcx_pzy_st">
                                                   <li>cg-hlm.qcow2 </li>
@@ -394,8 +350,7 @@ StrictHostKeyChecking no </codeblock></li>
                                                   <li>VRS_3.2.4-135_10062015-disk1.vmdk</li>
                                                   <li>vsc_singledisk.qcow2</li>
                                                   <li>VSD-3.2.4_134-hp.ova</li>
-                                                  <li><ph id="vsd-qcow"
-                                                  >VSD-3.2.4_134-hp.qcow2</ph></li>
+                                                  <li>VSD-3.2.4_134-hp.qcow2</li>
                                                 </ul></li>
                                         <li>Extract the
                                                   <codeph>HCG2.0BetaInfobloxPlugin.tar.gz</codeph>
@@ -407,8 +362,8 @@ StrictHostKeyChecking no </codeblock></li>
                                                 </ul>Do not extract these files. You will copy the
                                                 compressed files later in the installation
                                                 process.</li>
-                                </ol>
-                        </p>
+                                
+                        
                 </section>
                 <section>
                         <title>Obtain the required Debian packages</title>
@@ -761,10 +716,7 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                 </row>
                                                 <row>
                                                   <entry>VSD-QCOW2</entry>
-                                                  <entry><ph conref="#topic7148/vsd-qcow"/><ul
-                                                  id="ul_abg_2lx_yt">
-                                                  <li><ph conref="#topic7148/vsd-qcow"/></li>
-                                                  </ul></entry>
+                                                  <entry>VSD-3.2.4_134-hp.qcow2</entry>
                                                   <entry>
                                                   <p>/var/lib/libvirt/images</p>
                                                   </entry>
