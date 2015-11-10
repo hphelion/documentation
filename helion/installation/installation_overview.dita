@@ -4,6 +4,7 @@
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation Overview</title>
   <body>
     <section id="overview">
+      <!-- test -->
       <p>Before jumping into your installation, we recommend taking the time to read through our
           <xref href="../example_configurations.dita">Example Configurations</xref> documentation to
         get an overview of the sample configurations HPE Helion OpenStack 2.0 offers. We have highly
