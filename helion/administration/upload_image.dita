@@ -5,7 +5,7 @@
   <body>
     <section id="about">
       <p>To create a Compute instance, you need to obtain an image that you can use. The HPE Helion
-        OpenStack lifecycle-manager provides an Ansible playbook that will download a CirrOS Linux
+        OpenStack lifecycle manager provides an Ansible playbook that will download a CirrOS Linux
         image, and then upload it as a public image to your image repository for use across your
         projects.</p>
     </section>

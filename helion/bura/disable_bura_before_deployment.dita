@@ -15,8 +15,8 @@
       <p>In hlm-upgrade.ym:<codeblock># - include: freezer-upgrade.yml</codeblock></p>
     </section>
     <section><title>Disable backup/restore jobs creation completely:</title><p>It is possible to
-        continue deploying Freezer and prevent the lifecycle-manager from creating automatic backup
-        jobs.</p><p>By default, the lifecycle-manager deployment automatically creates jobs for the
+        continue deploying Freezer and prevent the lifecycle manager from creating automatic backup
+        jobs.</p><p>By default, the lifecycle manager deployment automatically creates jobs for the
         backup and restore of the following:<ul>
           <li>Deployer/Lifecycle-manager node</li>
           <li>MySQL database</li>

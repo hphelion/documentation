@@ -148,7 +148,7 @@
         <li>Import cluster in a vCenter<p>Import cluster allows you to import the clusters using EON
             CLI under the given vCenter. This operation provisions (creates) the plain shell virtual
             machines for compute proxy node and Ovsvapp nodes which are configured in later stages
-            through the lifecycle-manager. The cluster state changes from not_imported to imported
+            through the lifecycle manager. The cluster state changes from not_imported to imported
             when you run the following
             command.<codeblock># eon cluster-import --vcenter-id &lt;vCenter ID> --cluster-name &lt;Cluster Name> --cluster-moid &lt;Cluster Moid></codeblock></p><p>Where:<ul
               id="ul_tzq_mmf_rt">

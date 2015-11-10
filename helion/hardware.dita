@@ -84,8 +84,8 @@
           </thead>
           <tbody>
             <row>
-              <entry morerows="3">Dedicated lifecycle-manager (optional, the default configuration
-                uses the first controller node as the lifecycle-manager)</entry>
+              <entry morerows="3">Dedicated lifecycle manager (optional, the default configuration
+                uses the first controller node as the lifecycle manager)</entry>
               <entry morerows="3">Lifecycle-manager</entry>
               <entry morerows="3">1</entry>
               <entry>Disk </entry>
@@ -234,8 +234,8 @@
           </thead>
           <tbody>
             <row>
-              <entry>Dedicated lifecycle-manager (optional, the default configuration uses the first
-                controller node as the lifecycle-manager)</entry>
+              <entry>Dedicated lifecycle manager (optional, the default configuration uses the first
+                controller node as the lifecycle manager)</entry>
               <entry>Lifecycle-manager</entry>
               <entry>1</entry>
               <entry> 8 GB</entry>

@@ -9,7 +9,7 @@
           <codeph>network_groups.yml</codeph> file during the configuration process for your cloud
         then Horizon will be accessed over port 80 on that hostname.</p>
       <p>If your administrator did not set a hostname value then in order to determine which IP
-        address to use to access Horizon you can use this command from your lifecycle-manager
+        address to use to access Horizon you can use this command from your lifecycle manager
         node:</p>
       <codeblock>grep vip-HZN-WEB /etc/hosts</codeblock>
       <p>The output of that command will show you the virtual IP address for Horizon that you should

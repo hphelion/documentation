@@ -14,7 +14,7 @@
             <codeph>True</codeph> in the main configuration file template in this file:
           <codeblock>/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2</codeblock></li>
         <li>Create a YAML file which contains the definition of the LDAP server connection. The
-          sample file below is already provided as part of the lifecycle-managers <xref
+          sample file below is already provided as part of the lifecycle manager <xref
             href="../installation/using_git.dita#using_git">local git repository</xref>. It is
           available on a lifecycle manager in the following file:
           <codeblock>/home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_sample.yml</codeblock>.

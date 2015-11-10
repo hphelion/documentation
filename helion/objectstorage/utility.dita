@@ -4,7 +4,7 @@
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using the Swift Command-line Client
     (CLI)</title>
   <body>
-    <p>The <codeph>swift</codeph> utility (or CLI) is installed on the deployer/lifecycle-manager
+    <p>The <codeph>swift</codeph> utility (or CLI) is installed on the lifecycle manager
       node and also on all other nodes running the Swift proxy service. To use this utility, set the
       following environment variables:</p>
     <note>You do not need to be the root user.</note>

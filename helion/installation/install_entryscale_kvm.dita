@@ -54,10 +54,10 @@
     <section id="setup_deployer">
       <title>Set up the Lifecycle-manager</title>
       <p><b>Installing the Lifecycle-manager</b></p>
-      <p>The lifecycle-manager will contain the installation scripts and configuration files to
-        deploy your cloud. You can set up the lifecycle-manager on a dedicated node or you do so on
+      <p>The lifecycle manager will contain the installation scripts and configuration files to
+        deploy your cloud. You can set up the lifecycle manager on a dedicated node or you do so on
         your first controller node. The default choice is to use the first controller node as the
-        lifecycle-manager.</p>
+        lifecycle manager.</p>
       <ol>
         <li>Download the HPE Helion OpenStack 2.0.0 product from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
@@ -78,7 +78,7 @@
           </ul>
         </li>
       </ol>
-      <p>Once the initial installation is finished, complete the lifecycle-manager setup with these
+      <p>Once the initial installation is finished, complete the lifecycle manager setup with these
         steps:</p>
       <ol>
         <li>Ensure your lifecycle manager has a valid DNS nameserver specified in
@@ -126,7 +126,7 @@ helion/my_cloud/config/        Directory contains .j2 files which are symlinks t
 helion/hos/                    Directory contains files used by the installer
 helion/tech-preview            Directory contains the config input files of the tech-preview clouds</codeblock>
       <note type="warning">It's important that you do not add any extra files in the
-          <codeph>~/helion</codeph> directory on your lifecycle-manager. This includes temporary
+          <codeph>~/helion</codeph> directory on your lifecycle manager. This includes temporary
         save files. Doing so will cause errors during the installation.</note>
       <p>For any troubleshooting information regarding these steps, see <xref
           href="installation_troubleshooting.dita#troubleshooting_installation/deployer_setup"
@@ -138,7 +138,7 @@ helion/tech-preview            Directory contains the config input files of the 
         example configuration input files to match your cloud environment. You should use the <xref
           href="../example_configurations.dita">Example Configurations</xref> documentation for
         detailed information on how to do this. There is also a README.md file included in each of
-        the example directories on the lifecycle-manager that has useful information about the
+        the example directories on the lifecycle manager that has useful information about the
         models.</p>
       <p>In the steps below we show how to set up the directory structure with the example input
         files as well as use the optional encryption methods for your sensitive data.</p>

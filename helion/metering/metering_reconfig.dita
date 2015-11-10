@@ -88,7 +88,7 @@ ceilome+ 31433 31427 10 16:29 ? 00:02:43 /usr/sbin/apache2 -k start </codeblock>
 
     <section id="upgrade">
       <title>Upgrade</title> Follow Standard Service upgrade mechanism available in the
-      lifecycle-manager distribution. For Ceilometer, the playbook included with HPE Helion OpenStack
+      lifecycle manager distribution. For Ceilometer, the playbook included with HPE Helion OpenStack
       is ceilometer-upgrade.yml </section>
 
 

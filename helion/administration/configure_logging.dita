@@ -20,7 +20,7 @@
     </section>
     <section id="config_files"><title>Main Configuration Files</title>
       <p>Centralized Logging can be configured via the configuration files in the
-          <codeph>~/helion/my_cloud/config/logging/</codeph> directory on the lifecycle-manager.
+          <codeph>~/helion/my_cloud/config/logging/</codeph> directory on the lifecycle manager.
         These files and their use are described below:</p>
       <table frame="all" rowsep="1" colsep="1" id="table_wtv_rc5_st">
         <tgroup cols="2">
@@ -476,7 +476,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml -e cinder_logstash_l
                 <entry><p>glance-api</p><p>glance-registry</p></entry>
                 <entry><p>INFO</p></entry>
                 <entry>
-                  <p>Glance exposes the logging configuration templates on the lifecycle-manager in
+                  <p>Glance exposes the logging configuration templates on the lifecycle manager in
                     the following file:</p>
                   <codeblock>~/helion/my_cloud/config/glance/ glance-[api,registry]-logging.conf</codeblock>.
                     <p>After the needed changes are done (for example logging level changes to local
@@ -496,7 +496,7 @@ ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml</codeblock></entry>
 ~/helion/my_cloud/config/heat/engine-logging.conf.j2</codeblock>
                   <p>Users can edit these files and set the desired log level for both local as well
                     as centralized logging. After making the changes, run the
-                      <codeph>heat-reconfigure</codeph> playbook from the lifecycle-manager to apply
+                      <codeph>heat-reconfigure</codeph> playbook from the lifecycle manager to apply
                     the changes:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts heat-reconfigure.yml</codeblock></entry>

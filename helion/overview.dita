@@ -56,7 +56,7 @@
       <p>In addition to initial installation and deployment, the addition of the Configuration
         Processor means that you can reconfigure your cloud easily after deployment. Note that due
         to its combination of deployment and lifecycle-management features, we may use the terms
-        deployer and lifecycle-manager interchangeably throughout the HPE Helion 2.0 documentation
+        deployer and lifecycle manager interchangeably throughout the HPE Helion 2.0 documentation
         to refer to the features described in this document.</p>
       <p>By executing pre-written, supplied Ansible playbooks in the form of a single command, you
         may perform management tasks such as those below, along with many others. <ul>

@@ -37,7 +37,7 @@
         libvirt process. See <xref href="security/using_apparmor.dita#topic_rmq_j1v_4t">AppArmor in
           HPE Helion OpenStack 2.0</xref> for more information.</p>
       <p><b>The lifecycle manager only supports American English language</b></p>
-      <p>The lifecycle-manager installation process prompts you to select a language. The only
+      <p>The lifecycle manager installation process prompts you to select a language. The only
         supported language at this time is American English.</p>
       <p><b>Local Git repository for config tracking</b></p>
       <p>In HPE Helion OpenStack 2.0, a local git repository is used to track configuration changes
@@ -427,7 +427,7 @@ ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
         memory values incorrectly as values that are slightly less than what they actually are. So,
         for example, if you have 32GB of RAM you should fall into the "Small" auto-tuning category
         but because of this incorrectly reported value you are actually falling into the "Demo"
-        category. We recommend that you manually modify the heap values on the lifecycle-manager
+        category. We recommend that you manually modify the heap values on the lifecycle manager
         node for systems with the specified amount of RAM in the table below to the values listed.
         You will edit these values in the <codeph>logging_possible_tunings</codeph> section of the
         file below:</p>

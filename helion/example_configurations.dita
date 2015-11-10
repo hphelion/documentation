@@ -115,7 +115,7 @@
         scale of 100 compute nodes.</p>
       <p>The example is focused on the minimum server count to support a highly-available (HA)
         compute cloud deployment. The first (manually installed) server, often referred to as the
-        deployer or lifecycle-manager, is also used as one of the controller nodes. This model
+        deployer or lifecycle manager, is also used as one of the controller nodes. This model
         consists of a minimum server count of seven, with three controllers, three VSA storage
         servers, and one compute server. Swift storage in this example is contained on the
         controllers.</p>
@@ -148,7 +148,7 @@
         to provide to allow administrators to access the Management network.</p>
       <p>If you are using HPE Helion OpenStack to install the operating system, then an IPMI/iLO
         network connected to the IPMI/iLO ports of all servers and routable from the
-        lifecycle-manager server is also required for BIOS and power management of the nodes during
+        lifecycle manager server is also required for BIOS and power management of the nodes during
         the operating system installation process.</p>
       <p>The example uses the following disk configurations:</p>
       <ul>
@@ -178,7 +178,7 @@
         exception of the GUEST network which uses tenant VLANs as the Neutron networking model
         rather than VxLAN.</p>
       <p>A separate configuration network (CONF) is required for configuration access from the
-        lifecycle-manager. This network must be reachable from the Management network.</p>
+        lifecycle manager. This network must be reachable from the Management network.</p>
     </section>
     <section id="entryscale_swift"><title>Entry-Scale Swift Model</title>
       <p>This example shows how HPE Helion OpenStack can be configured to provide a Swift-only
@@ -203,7 +203,7 @@
         provide to allow administrators to access the Management network.</p>
       <p>If you are using HPE Helion OpenStack to install the operating system, then an IPMI/iLO
         network connected to the IPMI/iLO ports of all servers and routable from the
-        lifecycle-manager is also required for BIOS and power management of the node during the
+        lifecycle manager is also required for BIOS and power management of the node during the
         operating system installation process.</p>
       <p>In the example the controllers use one disk for the operating system and two disks for
         Swift proxy and account storage. The Swift object servers use one disk for the operating
@@ -731,12 +731,12 @@
                   mkfs-opts: -O large_file</codeblock>
     </section>
     <section id="standalone"><title>Using a Standalone Lifecycle-Manager Node</title>
-      <p>All of the examples described above host the lifecycle-manager on one of the control nodes.
+      <p>All of the examples described above host the lifecycle manager on one of the control nodes.
         It is also possible to deploy this service on a dedicated node, as shown below: </p>
       <p><image href="../media/examples/entry_scale_kvm_vsa_shared.png"/></p>
       <p><xref href="../media/examples/entry_scale_kvm_vsa_shared_lg.png" scope="external"
           format="html">Download a high-resolution version</xref></p>
-      <p>A typical use case for wanting to run the dedicated lifecycle-manager is to be able to test
+      <p>A typical use case for wanting to run the dedicated lifecycle manager is to be able to test
         the deployment of different configurations without having to re-install the first server.
         Some administrators might also prefer the additional security of keeping all of the
         configuration data on a separate server from those that users of the cloud connect to
@@ -744,19 +744,19 @@
       <p>This requires the following changes to the configuration files:</p>
       <ul>
         <li>Update <uicontrol>control_plane.yml</uicontrol> to add the lifecycle manager.</li>
-        <li>Update <uicontrol>server_roles.yml</uicontrol> to add the lifecycle-manager role.</li>
+        <li>Update <uicontrol>server_roles.yml</uicontrol> to add the lifecycle manager role.</li>
         <li>Update <uicontrol>net_interfaces.yml</uicontrol> to add the interface definition for the
           lifecycle manager.</li>
         <li>Create a <uicontrol>disks_lifecycle_manager.yml</uicontrol> file to define the disk
           layout for the lifecycle manager.</li>
-        <li>Update <uicontrol>servers.yml</uicontrol> to add the dedicated lifecycle-manager
+        <li>Update <uicontrol>servers.yml</uicontrol> to add the dedicated lifecycle manager
           node.</li>
       </ul>
     </section>
     <section id="control_plane_yml"><title>Control_plane.yml</title>
       <p>The snippet below shows the addition of a single node cluster into the control plane to
-        host the lifecycle-manager service. Note that, in addition to adding the new cluster, you
-        also have to remove the lifecycle-manager component from the <codeph>cluster1</codeph> in
+        host the lifecycle manager service. Note that, in addition to adding the new cluster, you
+        also have to remove the lifecycle manager component from the <codeph>cluster1</codeph> in
         the examples:</p>
       <codeblock>
   clusters:
@@ -776,7 +776,7 @@
          - lifecycle-manager
             - ntp-server</codeblock>
       <p>This specifies a single node of role <codeph>LIFECYCLE-MANAGER-ROLE</codeph> hosting the
-        lifecycle-manager.</p>
+        lifecycle manager.</p>
     </section>
     <section id="server_roles_yml"><title>Server_roles.yml</title>
       <p>The snippet below shows the insertion of the new server roles definition:</p>
@@ -853,7 +853,7 @@
     </section>
     <section id="servers_yml"><title>Servers.yml</title>
       <p>The snippet below shows the insertion of an additional server used for hosting the
-        lifecycle-manager. Provide the address information here for the server you are running on,
+        lifecycle manager. Provide the address information here for the server you are running on,
         i.e., the node where you have installed the HPE Helion OpenStack ISO.</p>
       <codeblock>
   servers:
