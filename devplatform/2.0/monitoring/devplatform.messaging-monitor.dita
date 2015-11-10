@@ -53,6 +53,8 @@
           </tbody>
         </tgroup>
       </table></p>
-   
+    <note> When looking at the Ops Console, alarms for MySQL and Zookeeper appear in the <b>No
+        Service Defined </b>panel, not the<b> Messaging as a Service</b> panel. This is a known
+      issue.</note>
   </body>
 </topic>
