@@ -84,14 +84,17 @@ But the CLI, REST API etc should all be same --></p>
     <p><b>Back up</b></p>
     <p>The following command triggers the backup service. Use <codeph>attis help backup</codeph> for
       more information.</p>
-    <codeblock>$attis help backup usage: attis backup [-h] [--confid CONFIG_ID] [--os-tenant-name TENANT_NAME] [--os-username USERNAME] [--os-password PASSWORD] [--os-auth-url AUTH_URL]</codeblock>
+    <codeblock>attis backup [-h] [--config-id CONFIG_ID] [--config-path CONFIG_PATH]                   
+        [--os-tenant-name TENANT_NAME] [--os-username USERNAME]                   
+        [--os-password PASSWORD] [--os-auth-url AUTH_URL]
+                        [--backup-type BACKUP_TYPE] </codeblock>
     <p><b>Arguments:</b>
     </p>
     <p>
       <ul id="ul_t3w_x53_pt">
-        <li><codeph>--confid CONFIG_ID</codeph> Backup using configuration with id. Refer to attis
-          config. </li>
-        <li><codeph>--confpath CONFIG_PATH</codeph> Backup using configuration from path. Default
+        <li><codeph>--config-id CONFIG_ID</codeph> Backup using configuration with id. Refer to
+          attis config. </li>
+        <li><codeph>--config-path CONFIG_PATH</codeph> Backup using configuration from path. Default
           config location: <codeph>/etc/attis/config_template</codeph>. </li>
         <li><codeph>--os-tenant-name TENANT_NAME</codeph> Specifies the project (tenant) name of the
           user used to execute the back up. </li>
@@ -99,18 +102,21 @@ But the CLI, REST API etc should all be same --></p>
         <li><codeph>--os-password PASSWORD</codeph> Specifies the password of the user used to
           execute the back up </li>
         <li><codeph>--os-auth-url AUTH_URL</codeph> Specifies the Keystone authentication URL.</li>
-        <li><codeph>--backup_type BACKUP_TYPE</codeph> Backup type is full or incremental. Default
+        <li><codeph>--backup-type BACKUP_TYPE</codeph> Backup type is full or incremental. Default
           is full backup.</li>
       </ul>
     </p>
     <p><b>Restore</b></p>
     <p>The following command triggers a restore. Use <codeph>attis help restore</codeph> for more
       information.</p>
-    <codeblock>attis restore [-h] [--confid CONFIG_ID] [--backup-id BACKUP_ID] [--os-tenant-name TENANT_NAME] [--os-username USERNAME] [--os-password PASSWORD] [--os-auth-url AUTH_URL]</codeblock>
+    <codeblock>attis restore [-h] [--config-id CONFIG_ID] [--config-path CONFIG_PATH]                    
+        [--backup-id BACKUP_ID] [--os-tenant-name TENANT_NAME]                    
+        [--os-username USERNAME] [--os-password PASSWORD]
+      [--os-auth-url AUTH_URL] </codeblock>
     <p><b>Arguments</b></p>
     <p>
       <ul id="ul_rrj_fw3_pt">
-        <li><codeph>--confid CONFIG_ID</codeph> -- Restores using configuration with id. Refer to
+        <li><codeph>--config-id CONFIG_ID</codeph> -- Restores using configuration with id. Refer to
           attis config </li>
         <li><codeph>--config-path CONFIG_PATH</codeph> -- Restores using configuration from path.
           Example config location:<codeph>
@@ -131,12 +137,14 @@ But the CLI, REST API etc should all be same --></p>
     <p><b>Recover / Resync</b></p>
     <p>The following command triggers Attis recover service. Use <codeph>attis help recover</codeph>
       for more information.</p>
-    <codeblock>attis recover [-h] [--confid CONFIG_ID] [--report-id REPORT_ID][--os-tenant-name TENANT_NAME] [--os-username USERNAME][--os-password PASSWORD] [--os-auth-url AUTH_URL]</codeblock>
+    <codeblock>attis recover [-h] [--config-id CONFIG_ID] [--report-id REPORT_ID]                    
+        [--os-tenant-name TENANT_NAME] [--os-username USERNAME]
+      [--os-password PASSWORD] [--os-auth-url AUTH_URL] </codeblock>
     <p><b>Arguments</b></p>
     <p>
       <ul id="ul_hnd_2y3_pt">
-        <li><codeph>--confid CONFIG_ID</codeph> -- Restores Attis using configuration id. Refer to
-          attis config </li>
+        <li><codeph>--config-id CONFIG_ID</codeph> -- Restores Attis using configuration id. Refer
+          to attis config </li>
         <li><codeph>--report-id REPORT_ID</codeph> -- Runs recovery for the specified report ID </li>
         <li><codeph>--os-tenant-name TENANT_NAME</codeph> -- Specifies the project (tenant) name of
           the user used to execute the recover. </li>
@@ -149,9 +157,12 @@ But the CLI, REST API etc should all be same --></p>
       </ul>
     </p>
     <p><b>Recovery Report</b></p>
-    <p>The following command shows recovery reports. Use 'attis help report' for more
+    <p>The following command shows recovery reports. Use <codeph>attis help report</codeph> for more
       information.</p>
-    <codeblock>attis report [-h] [--list] [--generate] [--id ID] [--name NAME] [--confid CONFIG_ID] [--os--tenant-name TENANT_NAME] [--os--username USERNAME] [--os--password PASSWORD] [--os--auth-url AUTH_URL]</codeblock>
+    <codeblock>attis report [-h] [--list] [--generate] [--id ID] [--name NAME]                    
+                [--config-id CONFIG_ID] [--os--tenant-name TENANT_NAME]                   
+        [--os--username USERNAME] [--os--password PASSWORD]               
+      [--os--auth-url AUTH_URL] </codeblock>
     <p><b>Arguments</b></p>
     <p>
       <ul id="ul_lcj_mtl_pt">
@@ -159,8 +170,8 @@ But the CLI, REST API etc should all be same --></p>
         <li><codeph>--generate</codeph> Generates the recovery report. </li>
         <li><codeph>--id ID</codeph> Shows the recovery report with specified id </li>
         <li><codeph>--name NAME</codeph> Shows the recovery report with specified name </li>
-        <li><codeph>--confid CONFIG_ID</codeph> Generates a recovery report using configuration with
-          id. Refer to attis config </li>
+        <li><codeph>--config-id CONFIG_ID</codeph> Generates a recovery report using configuration
+          with id. Refer to attis config </li>
         <li><codeph>--os-tenant-name TENANT_NAME</codeph> -- Specifies the project (tenant) name of
           the user used to execute the recovery report. </li>
         <li><codeph>--os-username USERNAME</codeph> -- Specified the user name to execute the
@@ -172,10 +183,11 @@ But the CLI, REST API etc should all be same --></p>
       </ul>
     </p>
     <p><b>Restart</b></p>
-    <p>The following command restarts the Attis service. Use 'attis help restart' for more
-      information.</p>
+    <p>The following command restarts the Attis service. Use <codeph>attis help restart</codeph> for
+      more information.</p>
     <p>
-      <codeblock>attis restart [-h] [--config-id CONFIG_ID] [--os-tenant-name TENANT_NAME] [--os-username USERNAME] [--os-password PASSWORD] [--os-auth-url AUTH_URL]</codeblock>
+      <codeblock>attis restart [-h] [--config-id CONFIG_ID] [--os-tenant-name TENANT_NAME] 
+                [--os-username USERNAME] [--os-password PASSWORD] [--os-auth-url AUTH_URL]</codeblock>
     </p>
     <p><b>Arguments</b></p>
     <p>
@@ -195,8 +207,8 @@ But the CLI, REST API etc should all be same --></p>
       </ul>
     </p>
     <p><b>Storage</b></p>
-    <p>The following command shows stored storage configuration for the Attis service. Use 'attis
-      help storage' for more information. </p>
+    <p>The following command shows stored storage configuration for the Attis service. Use
+        <codeph>attis help storage</codeph> for more information. </p>
     <p><b>Synopsis</b></p>
     <p>
       <codeblock>attis storage --update '{"parameter":"new value", "parameter":"new value"}' --id &lt;storage_id from the table></codeblock>
@@ -305,7 +317,7 @@ But the CLI, REST API etc should all be same --></p>
           </row>
           <row>
             <entry>attis backup --config-id CONFIG_ID --backup_type BACKUP_TYPE</entry>
-            <entry>executes BACKUP_TYPE - incremental or full(default) . with parameters fetched
+            <entry>executes an incremental or full (default) BACKUP_TYPE, with parameters fetched
               from confid CONFIG_ID</entry>
           </row>
           <row>
@@ -344,12 +356,12 @@ But the CLI, REST API etc should all be same --></p>
           </row>
           <row>
             <entry>attis storage --id STORAGE_ID</entry>
-            <entry>shows detail storage configuration of type STORAGE_ID, including
-              parameters</entry>
+            <entry>shows the detail of the storage configuration with the specified STORAGE_ID,
+              including parameters</entry>
           </row>
           <row>
             <entry>attis storage --type STORAGE_TYPE</entry>
-            <entry>shows the storage configuration with type STORAGE_TYPE</entry>
+            <entry>shows the the storage configuration with the specified  STORAGE_TYPE</entry>
           </row>
           <row>
             <entry>attis storage --id STORAGE_ID --update '{"storage_path":""}'</entry>

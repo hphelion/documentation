@@ -19,7 +19,7 @@
     <p><!--Here is the wiki link for Attis.<xref href="https://rndwiki.corp.hpecorp.net/confluence/pages/viewpage.action?pageId=946944841" format="html" scope="external">https://rndwiki.corp.hpecorp.net/confluence/pages/viewpage.action?pageId=946944841</xref> 
 The high level design needs to be adjusted to more suite with CG(It is reflecting CS in some areas)I will soon update it. 
 But the CLI, REST API etc should all be same --></p>
-    <p>This page explains how to backup and restore HPE OpenStack Carrier Grade amd HPE DCN
+    <p>This page explains how to backup and restore HPE OpenStack Carrier Grade and HPE DCN
       configuration files in the event of catastrophic failure. The page also explains how to
       recover the <tm tmtype="reg">Percona</tm>
       <tm tmtype="reg">XtraDB</tm> cluster on the cloud controllers in the event of a database
@@ -101,8 +101,8 @@ But the CLI, REST API etc should all be same --></p>
       <p>If an entire cluster goes down, due to an issue (such as data corruption or MySQL defect),
         and the cluster does not come back up, you must restore the cluster to a previous well-known
         state (backup) and start the cluster from that point.</p>
-      <p>You should use to take full backups of the MySQL cluster frequently, such as on a daily
-        basis. Backing up the node on any single controller will backup the full cluster.</p>
+      <p>You should take full backups of the MySQL cluster frequently, such as on a daily basis.
+        Backing up the node on any single controller will backup the full cluster.</p>
       <p>If the full cluster goes down or some data corruption occurs, delete the current data in
         all of the three nodes of MySQL and restore the backup copy on the same node from which
         backup was taken. Then, bootstrap the cluster and bring up rest of the nodes to synchronize
@@ -117,13 +117,11 @@ But the CLI, REST API etc should all be same --></p>
       <p>To back up an HP Helion OpenStack Carrier Grade controller, use the following steps:</p>
       <ol>
         <li>Log in to the controller.</li>
-        <li> Authenticate using the <codeph>source stackrc</codeph> command or pass the variables
+        <li> Authenticate using the <codeph>source stackrc</codeph> command or export the variables
           manually:<codeblock>export OS_PASSWORD=&lt;your_os_password&gt;
-export OS_AUTH_URL=&lt;your_os_auth_url&gt;
---os-tenant-name "admin" 
---os-username "admin" 
---os-password &lt;your_os_password&gt;
---os-auth-url &lt;your_os_auth_url&gt;</codeblock></li>
+export OS_USERNAME=admin
+export OS_TENANT_NAME=admin
+export OS_AUTH_URL=&lt;your_os_auth_url&gt;</codeblock></li>
         <li>Execute the following command to start the
             backup:<codeblock>attis backup --config-id CONFIG_ID --backup_type BACKUP_TYPE</codeblock><p>Where </p><p>
             <ul id="ul_xvq_bm3_pt">
@@ -153,8 +151,8 @@ export OS_AUTH_URL=http://127.0.0.1:5000/v2.0</codeblock>Optionally
               <li><codeph>config-id CONFIG_ID</codeph> authenticates using the ID configuration
                 file.</li>
               <li><codeph>backup-id BACKUP_ID</codeph> is the name of the backup from which you want
-                to perform the restore. Use the <codeph>attis backuplog --id BACKUP_LOG_ID</codeph>
-                command to get a list of backup jobs.</li>
+                to perform the restore. Use the <codeph>attis backuplog</codeph> command to get a
+                list of backup jobs.</li>
             </ul>
           </p></li>
       </ol>

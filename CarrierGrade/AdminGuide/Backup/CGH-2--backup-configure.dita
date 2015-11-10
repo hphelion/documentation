@@ -35,10 +35,10 @@ But the CLI, REST API etc should all be same --></p>
         <li>FILE: A location on the cloud controller. </li>
       </ul>
     </p>
-    <p>HPE recommends that you configure CloudSystem to use an SCP or NFS server so that backup files
-      are automatically moved to an off-appliance location in case of a catastrophic failure of the
-      Management appliance trio. You can use the FILE option if you want to manually mount shared
-      storage on all three nodes of the Management appliance. </p>
+    <p>HPE recommends that you use an SCP or NFS server so that backup files are automatically moved
+      to an off-appliance location in case of a catastrophic failure of the cloud controllers. You
+      can use the FILE option if you want to manually mount shared storage on all three nodes of the
+      Management appliance. </p>
     <p>IMPORTANT: If you do not set a storage location, the backup will not succeed. In the backup
       job list, you will see that SSH connection to the storage path failed, and the state is
       Failed. </p>
@@ -49,10 +49,6 @@ But the CLI, REST API etc should all be same --></p>
         <li>Log into HLM node</li>
         <li>SSH to any controller nodes from HLM using controller credentials (default username:
           cghelion)</li>
-        <li>From the management hypervisor console underlying the CloudSystem Management appliance,
-          SSH to the any node of the Management appliance trio (for example, ma1). </li>
-        <li>Log in to the Management appliance using the cloudadmin credentials you set during
-          First-Time Installation. </li>
         <li>Switch to the root user by running sudo –i. </li>
         <li>Set the type of backup storage location. <ul id="ul_nxl_kmx_pt">
             <li>To set the backup storage location to an SCP server, run: attis storage --use SCP </li>
@@ -103,19 +99,19 @@ But the CLI, REST API etc should all be same --></p>
                 update the private_key_filepath.</p></li>
           </ul></li> 
               <li>Stop the Attis server on each of the three controller nodes.
-          <codeblock>stop attis-server </codeblock></li>
+          <codeblock>service attis-server stop </codeblock></li>
         <li>Make sure that Attis server has stopped, then restart the
-          server<codeblock>status attis-server </codeblock></li>
+          server<codeblock>service attis-server start</codeblock></li>
       </ol></section>
     <section><title>Additional information</title><p><b>Tree Structure</b></p><p>Attis implements
           <b>tree-structure</b> for certain backup/restore configurations. </p><p>For example, if
         you wants to back up <codeph>/opt</codeph> and <codeph>/root</codeph> folders on the HLM
-        host, run <codeph>attis backup --config-id</codeph> using the
-        ID_of_HLM_Appliance_Data_Backup only. </p><p>The root config
-          <b>HLM_Appliance_Data_Backup</b> includes children config
+        host, run:
+        <codeblock><codeph>attis backup --config-id &lt;ID_of_HLM_Appliance_Data_Backup></codeph></codeblock></p><p>The
+        root config <b>HLM_Appliance_Data_Backup</b> includes children config
           <b>HLM_Appliance_opt_files_Backup</b> and <b>HLM_Appliance_root_files_Backup</b>.
-        </p><p>To verify:
-        <codeblock>run attis config --id ID_of_HLM_Appliance_Data_Backup</codeblock></p><image
+        </p><p>To verify, execute:
+        <codeblock>attis config --id &lt;ID_of_HLM_Appliance_Data_Backup></codeblock></p><image
         href="../../../media/CGH-2-attis-tree.png" id="image_mzv_4cp_xt" width="600"/><p><b>Storage
           Configuration</b></p><p>The default storage option is set to SCP. You can start running
         Attis jobs once you’ve configured SCP storage parameters using the command
@@ -125,7 +121,7 @@ But the CLI, REST API etc should all be same --></p>
 attis storage --use NFS (to choose NFS option)</codeblock><p>
         Then configure the storage parameter using the same
         way:<codeblock>attis storage --update '{"parameter":"new value", "parameter":"new value"}' --id &lt;storage_id of FILE or NFS option&gt;</codeblock></p>
-      <b>Important:</b> Restart the Attis server on all three controllers if the storage option is
+      <b>Important:</b> Restart Attis server on all three controllers if the storage option is
       changed to NFS or FILE option:<pre>service attis-server restart</pre><p><b>VSD, VSC, and WR
           Controller Backup/Restore</b></p><b>Backing up and Restoring the VSD</b><p>Before running
         VSD backup, you must set up trust between the controllers and VSD. <ol id="ol_dkt_3v5_xt">
@@ -134,14 +130,14 @@ attis storage --use NFS (to choose NFS option)</codeblock><p>
                 <codeblock>sudo su attis
 ssh-copy-id vsd_user@vsd_address</codeblock><p><b>Note:</b>
               The <i>vsd_user</i> can be found by viewing the configuration file:
-              <codeblock>attis config --id Config_ID_of_VSD _Appliance_DB_Backup </codeblock>The
-                <i>vsd_address</i> can be found in the <codeph>/etc/attis/dcn_lst</codeph> file:
-              <codeblock>cat /etc/attis/dcn_lst</codeblock></p></li>
+              <codeblock>attis config --id &lt;Config_ID_of_VSD_Appliance_DB_Backup> </codeblock>The
+                <i>vsd_address</i> can be found in the <codeph>/etc/attis/dcn.lst</codeph> file:
+              <codeblock>cat /etc/attis/dcn.lst</codeblock></p></li>
           <li>After restore job is complete, ssh to the VSD node from controller and restart vsd
             service.<codeblock>service vsd restart</codeblock></li>
         </ol><b>Backing up and Restoring the VSC</b>
       </p><p>If VSC username/password is set other than defaults, modify <i>vsc_user_name</i> or/and
-          <i>vsc_user_pass</i> in the <codeph>/etc/attis/dcn_lst</codeph> file before running VSC
+          <i>vsc_user_pass</i> in the <codeph>/etc/attis/dcn_.st</codeph> file before running VSC
         backup or restore. </p><b>KVM Region Controller</b><p>If the KVM region controller
         username/password is set other than defaults, use the Attis CLI to update those values in
         the KVM region controller
