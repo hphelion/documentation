@@ -5,7 +5,7 @@
     Backup and Restore</title>
   <body>
     <p>By default, backups include the following: <ul>
-        <li>All important information on the deployer</li>
+        <li>All important information on the lifecycle manager</li>
         <li>MySQL database</li>
         <li>Swift rings</li>
       </ul></p>

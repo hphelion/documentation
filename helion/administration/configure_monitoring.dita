@@ -84,7 +84,7 @@
             Your Environment</xref> portion of the installation, ensure you make these configuration
           file edits:</p>
         <ol>
-          <li>On your deployer, edit the following two files: <ol>
+          <li>On your lifecycle manager, edit the following two files: <ol>
               <li>Edit the <codeph>~/helion/my_cloud/definition/data/control_plane.yml</codeph> file
                 and under your control plane cluster <codeph>service-clusters</codeph> section, edit
                 the entry for <codeph>vertica</codeph> to read <codeph>influxdb</codeph>.</li>

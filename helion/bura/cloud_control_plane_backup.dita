@@ -12,7 +12,7 @@
         backup during installation:</p></section>
     <section><title>Setting up SSH backup</title>
       <p>By default, during HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0 deployment, backup jobs
-        are automatically deployed to Swift, the MySQL database, the deployer, and Swift rings.
+        are automatically deployed to Swift, the MySQL database, the lifecycle manager, and Swift rings.
         Restore jobs are also deployed for convenience. It is more secure to store those backups
         also outside of the Helion infrastructure. If you provide all the values required in the
         following file, jobs will also be deployed to backup and restore to/from an SSH server of

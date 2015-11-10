@@ -3,9 +3,9 @@
 <topic id="topic_tb4_lqy_qt">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Recovering the Cloud Control Plane</title>
   <body>
-    <section><title>Point in time database recovery</title><p>Everything is still running (deployer,
-        cloud controller nodes (CCNs), and compute nodes (CPNs) but you want to restore the MySQL
-        database to an old state.</p></section>
+    <section><title>Point in time database recovery</title><p>Everything is still running (lifecycle
+        manager, cloud controller nodes (CCNs), and compute nodes (CPNs) but you want to restore the
+        MySQL database to an old state.</p></section>
     <section><title>Restore from a Swift backup</title></section>
     <ol>
       <li>On the first MySQL node, run the following steps:
@@ -29,7 +29,7 @@ freezer-scheduler -c &lt;hostname&gt; job-start -j &lt;job-id&gt;
  
 # Wait for some time, you can follow the /var/log/freezer-agent/freezer-agent.log</codeblock>
       </li>
-      <li>From the deployer run the following steps:
+      <li>From the lifecycle manager run the following steps:
         <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts percona-stop.yml</codeblock></li>
       <li>On the first MySQL node run the following steps:
@@ -48,7 +48,7 @@ ansible-playbook -i hosts/verb_hosts percona-bootstrap.yml</codeblock></li>
       <p>If restoring MySQL fails during the percona-bootstrap procedure, you can use the following
         procedure instead:</p>
       <ol>
-        <li>From the deployer, launch the following commands to stop the MySQL
+        <li>From the lifecycle manager, launch the following commands to stop the MySQL
           cluster:<codeblock>
 cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts percona-stop.yml</codeblock></li>
@@ -94,7 +94,7 @@ systemctl start mysql
 systemctl status mysql</codeblock></li>
 
           </ol></li>
-        <li>From the deployer, launch the following commands to start all
+        <li>From the lifecycle manager, launch the following commands to start all
           MySQLs:<codeblock>
 cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts percona-start.yml
@@ -123,8 +123,9 @@ ok: [helion-cp1-c1-m3-mgmt] => {
 }</codeblock></li>
       </ol>
     </section>
-    <section><title>Point in time swift rings recovery</title><p>Everything is still running (deployer, CCNs, and CPNs) but you want to restore the Swift rings to
-        an old state.</p><note>Freezer backs up and restores for Swift rings only, not Swift
+    <section><title>Point in time swift rings recovery</title><p>Everything is still running
+        (lifecycle manager, CCNs, and CPNs) but you want to restore the Swift rings to an old
+        state.</p><note>Freezer backs up and restores for Swift rings only, not Swift
       data.</note></section>
     <section><title>Restore from a Swift backup</title><ol>
         <li>On the first Swift Proxy (SWF-PRX[0]) node run the following
@@ -147,7 +148,7 @@ freezer-scheduler -c &lt;hostname&gt; job-list
 freezer-scheduler -c &lt;hostname&gt; job-start -j &lt;job-id&gt;
  
 # Wait for some time, you can follow the /var/log/freezer-agent/freezer-agent.log</codeblock></li>
-        <li>On the deployer:
+        <li>On the lifecycle manager:
           <codeblock>
 cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-stop.yml</codeblock></li>
@@ -155,16 +156,18 @@ ansible-playbook -i hosts/verb_hosts swift-stop.yml</codeblock></li>
           <codeblock>
 # Copy restored files
 cp -pr /tmp/hlm_builder_dir_restore/* /etc/swiftlm/builder_dir/</codeblock></li>
-        <li>On the deployer:
+        <li>On the lifecycle manager:
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
       </ol></section>
     <section><title>Restore from an SSH backup</title><p>Follow the same procedure as for Swift but
         select the job "HLM Default: Swift restore from SSH".</p></section>
-    <section><title>Point in time deployer recovery</title><p>Everything is still running (deployer, CCNs, and CPNs) but you want to restore the deployer to an
-        old state.</p></section>
+    <section><title>Point in time lifecycle manager recovery</title><p>Everything is still running
+        (lifecycle manager, CCNs, and CPNs) but you want to restore the lifecycle manager to an old
+        state.</p></section>
     <section>
-      <title>Restore from a Swift backup</title><p>On the deployer, run the following steps:
+      <title>Restore from a Swift backup</title><p>On the lifecycle manager, run the following
+        steps:
         <codeblock>
 # Become root
 sudo su
@@ -173,7 +176,7 @@ sudo su
 source /opt/stack/service/freezer-agent/etc/backup.osrc
  
 # List jobs
-freezer-scheduler -c &lt;deployer hostname&gt; job-list
+freezer-scheduler -c &lt;lifecycle manager hostname&gt; job-list
  
 # Get the id corresponding to the job "HLM Default: Deployer restore from swift"
  
@@ -181,7 +184,7 @@ freezer-scheduler -c &lt;deployer hostname&gt; job-list
 systemctl stop dayzero
  
 # Launch the restore
-freezer-scheduler -c &lt;deployer hostname&gt; job-start -j &lt;job-id&gt;
+freezer-scheduler -c &lt;lifecycle manager hostname&gt; job-start -j &lt;job-id&gt;
  
 # Wait for some time, you can follow the /var/log/freezer-agent/freezer-agent.log
  
@@ -190,9 +193,10 @@ systemctl start dayzero</codeblock></p>
     </section>
     <section><title>Restore from an SSH backup</title><p> Follow the same procedure as for Swift but
         select the job "HLM Default: Deployer restore from SSH".</p></section>
-    <section><title>One or two CCN disaster recovery</title><p>Everything is still running (deployer, CCN, and CPNs) but you lost one or two CCNs.</p></section>
-    <section><title>Restore from other nodes</title><p>On the lifecycle manager,
-        install the nodes that got destroyed:
+    <section><title>One or two CCN disaster recovery</title><p>Everything is still running
+        (lifecycle manager, CCN, and CPNs) but you lost one or two CCNs.</p></section>
+    <section><title>Restore from other nodes</title><p>On the lifecycle manager, install the nodes
+        that got destroyed:
         <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml --limit padawan-ccp-c1-m2-mgmt</codeblock></p></section>
     <section><title>Restore from a Swift backup</title><p>You shouldn’t need to restore anything:
@@ -209,7 +213,7 @@ cd ~/scratch/ansible/next/hos/ansible
  
 ansible-playbook -i hosts/verb_hosts site.yml --limit padawan-ccp-c1-m1-mgmt,padawan-ccp-c1-m2-mgmt,padawan-ccp-c1-m3-mgmt -e '{ "freezer_backup_jobs_upload": false }'</codeblock></li>
               <li>You can now perform the procedure: "Point in time database recovery:"</li>
-              <li>Once everything is restored, re-enable the backups. From the deployer:
+              <li>Once everything is restored, re-enable the backups. From the lifecycle manager:
                 <codeblock>
 cd ~/scratch/ansible/next/hos/ansible
  
@@ -217,7 +221,8 @@ ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</codeblock></li>
             </ol>
           </p></li>
       </ul></section>
-    <section><title>Deployer disaster recovery</title><p>Everything is still running (CCNs and CPNs) but you lost the deployer.</p><ul>
+    <section><title>Deployer disaster recovery</title><p>Everything is still running (CCNs and CPNs)
+        but you lost the lifecycle manager.</p><ul>
         <li><b>Restore from a Swift backup</b>
           <ol>
             <li>On the lifecycle manager, install the freezer-agent, as
@@ -225,13 +230,13 @@ ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</codeblock></li>
 cd ~/helion/hos/ansible/
 ansible-playbook -i hosts/localhost _deployer_restore_helper.yml</codeblock></li>
             <li>You must retrieve a few files from any compute or controller node and put them in
-              the directory /opt/stack/service/freezer-agent/etc/ of the
-              deployer:<codeblock>
+              the directory /opt/stack/service/freezer-agent/etc/ of the lifecycle
+              manager:<codeblock>
 /opt/stack/service/freezer-agent/etc/backup.osrc
 and
 /opt/stack/service/freezer-agent/etc/systemd_env_vars.cfg</codeblock></li>
             <li>You must retrieve the /etc/hosts file from any compute or controller node and
-              replace the deployer's one with the retrieved
+              replace the lifecycle manager's one with the retrieved
               one:<codeblock>
 # Be sure to edit the 127.0.0.1 line so it points to hlinux like
  
@@ -273,16 +278,16 @@ freezer-scheduler -c &lt;hostname&gt; job-start -j &lt;job-id&gt;
  
 # Start the dayzero UI
 systemctl start dayzero</codeblock></li>
-            <li>When the deployer is restored, re-run the deployment to ensure the deployer is in
-              the correct
+            <li>When the lifecycle manager is restored, re-run the deployment to ensure the
+              lifecycle manager is in the correct
               state:<codeblock>
 cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml --limit localhost</codeblock></li>
           </ol></li>
         <li><b>Restore from an SSH backup</b>
           <ol>
-            <li>On the lifecycle manager, edit the following file so it contains the
-              same information as previously:
+            <li>On the lifecycle manager, edit the following file so it contains the same
+              information as previously:
               <codeblock>~/helion/my_cloud/config/freezer/ssh_credentials.yml</codeblock></li>
             <li>On the lifecycle manager:
               <codeblock>
@@ -302,8 +307,8 @@ systemctl stop dayzero
  
 # Start the Dayzero UI
 systemctl start dayzero</codeblock></li>
-            <li>When the deployer is restored, re-run the deployment to ensure the deployer is in
-              the correct state:
+            <li>When the lifecycle manager is restored, re-run the deployment to ensure the
+              lifecycle manager is in the correct state:
               <codeblock>
 cd ~/scratch/ansible/next/hos/ansible
  
@@ -313,8 +318,8 @@ ansible-playbook -i hosts/verb_hosts site.yml --limit localhost</codeblock></li>
     <section><title>Full disaster recovery</title><p>Everything is dead.</p><ul>
         <li><b>Restore from a Swift backup:</b><p>This is not possible (Swift is gone).</p></li>
         <li><b>Restore from an SSH backup: </b><ol>
-            <li>On the lifecycle manager, edit the following file so it contains the
-              same information as previously:
+            <li>On the lifecycle manager, edit the following file so it contains the same
+              information as previously:
               <codeblock>~/helion/my_cloud/config/freezer/ssh_credentials.yml file</codeblock></li>
             <li>On the lifecycle manager:
               <codeblock>cp -r ~/hp-ci/padawan/* ~/helion/my_cloud/definition/
@@ -338,7 +343,7 @@ systemctl start dayzero</codeblock></li>
  
 ansible-playbook -i hosts/verb_hosts site.yml -e '{ "freezer_backup_jobs_upload": false }'</codeblock></li>
             <li>You can now perform the procedures to restore MySQL and Swift.</li>
-            <li>Once everything is restored, re-enable the backups from the deployer:
+            <li>Once everything is restored, re-enable the backups from the lifecycle manager:
               <codeblock>cd ~/scratch/ansible/next/hos/ansible
  
 ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</codeblock></li>
@@ -353,12 +358,12 @@ ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</codeblock></li>
             that tar file is in the directory /etc/swiftlm/builder_dir/ on the first Swift Proxy
             node (SWF-PXR[0] role). <ul>
               <li>Run swift-reconfigure if the rings were
-                corrupted:<codeblock># On the deployer run 
+                corrupted:<codeblock># On the lifecycle manager run 
  
 cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
               <li>Or swift-deploy if one node was
-                lost:<codeblock># On the deployer run 
+                lost:<codeblock># On the lifecycle manager run 
 cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-deploy.yml</codeblock></li>
             </ul>

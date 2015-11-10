@@ -41,7 +41,7 @@
         </section>
         <p>
             <ol>
-                <li>Log into any machine (for example, deployer or controller) and create the
+                <li>Log into any machine (for example, lifecycle manager or controller) and create the
                     job.</li>
                 <li>Remember to source the operating system variables and use the correct client_id. (The
                     client-id corresponds to the node where the backup files/directory/database

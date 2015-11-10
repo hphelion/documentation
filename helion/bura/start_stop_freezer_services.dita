@@ -4,12 +4,12 @@
   <!-- Needs Work -->
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Enabling and Disabling Freezer Services</title>
   <body>
-    <section id="main"><p>To stop Freezer globally, launch the following playbook from the deployer (this will stop all
+    <section id="main"><p>To stop Freezer globally, launch the following playbook from the lifecycle manager (this will stop all
         freezer-api and all freezer-agent running on your
         clusters):<codeblock>
 ansible-playbook -i hosts/verb_hosts freezer-stop.yml</codeblock></p>
     <p>To start Freezer globally, launch the following playbook from the
-        deployer:<codeblock>
+        lifecycle manager:<codeblock>
 ansible-playbook -i hosts/verb_hosts freezer-start.yml</codeblock></p>
     <p>It is possible to target only specific nodes using the ansible --limit parameter.</p></section>
     <section id="manual"><title>Manually</title><p><i>For the freezer-agent: </i><ol>
