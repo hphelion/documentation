@@ -10,6 +10,8 @@
     </ul>
     <p>To access the Vertica Management Console, in Horizon, select <b>Project</b>, <b>Database</b>, <b>Clusters</b>, and select the cluster in the <b>Cluster Name</b> column. Select the <b>Management Console</b> link in the 
       <b>Overview</b> tab.</p>
+    <p>In the management console, you can access the various areas of functionality.</p>
+    <image placement="break" href="../../../media/vertica_home.png"></image>
     <note>The Vertica Management Console is only available for Vertica Preview clusters. It is not available for Vertica Preview instances.</note>
     <p>For more information on using these features, see the following topics:</p>
     <ul>
