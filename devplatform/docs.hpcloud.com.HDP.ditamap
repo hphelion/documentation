@@ -295,6 +295,21 @@
       <topicref href="2.0/installation/install_dbaas_configureAvailabilityZones.dita" toc="no"/>
       <topicref href="2.0/installation/install_dbaas_checkQuotas.dita" toc="no"/>
     </topichead>
+    <topichead navtitle="Messaging Service Reference">
+      <topicref href="2.0/messaging/devplatform.using-the-messaging-service.dita"
+        navtitle="Using Messaging as a Service"/>
+      <topicref href="2.0/messaging/devplatform.using-messaging-service-with-ALS.dita"
+        navtitle="Using the Messaging Service with ALS"/>
+      <topicref href="2.0/messaging/cue_dev_createCluster.dita"
+        navtitle="Create a Cluster from the Command Line"/>
+      <topicref href="2.0/messaging/cue_ops_manageCluster.dita"
+        navtitle="Manage a Cluster from the Command Line"/>
+      <topicref href="2.0/messaging/cue_ops_loadBalancer.dita"
+        navtitle="Accessing RabbitMQ via a Load Balancer"/>
+      <topicref href="2.0/messaging/cue_ops_referenceArchitecture.dita"
+        navtitle="Cue Reference Architecture"/>
+      <topicref href="2.0/messaging/cue_ops_bestPractices.dita" navtitle="Cue Best Practices"/>
+    </topichead>
     
 <!-- messaging -->
 
