@@ -509,7 +509,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
           <tgroup cols="3">
             <colspec colname="c1" colnum="1"/>
             <colspec colname="c2" colnum="2"/>
-            <colspec colname="newCol3" colnum="3" colwidth="1*"/>
+            <colspec colname="c3" colnum="3"/>
             <thead>
               <row>
                 <entry>Key</entry>
