@@ -12,7 +12,7 @@
         make the changes:
         <!--You must add a new node details in the <codeph>server.yml</codeph> file. --></p>
       <p>Then, perform the following steps to add a new node:<ol id="ol_p4w_gbr_4t">
-          <li><!--Log in to the deployer node.-->Get the<codeph> servers.yml</codeph> file stored in
+          <li><!--Log in to the lifecycle manager node.-->Get the<codeph> servers.yml</codeph> file stored in
             Git:<codeblock>cd ~/helion/my_cloud/definition/data
 git checkout site</codeblock></li>
           <li>If not already done, set the <codeph>weight-step</codeph> attribute.  For

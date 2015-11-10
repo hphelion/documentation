@@ -28,7 +28,7 @@
             Production Environments</xref>.</note>
       </p>-->
     </section>
-    <section> When logging into the deployer to run the Configuration Processor and the requisite
+    <section> When logging into the lifecycle manager to run the Configuration Processor and the requisite
       playbooks, you must decide if you want to configure TLS or if you want to disable it. This
       can't be changed after deployment. Therefore, you will have to make one of the following
         changes:<ul id="ul_sdj_qfq_rt">
@@ -171,7 +171,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <dt>cert-file:</dt>
           <dd> the default my-public-cert is already part of the playbook but you can specify your
             own name. When you specify your own you also need to have the certificate copied in
-              <b>~/helion/my_cloud/config/tls/certs</b> on the deployer, as noted above. </dd>
+              <b>~/helion/my_cloud/config/tls/certs</b> on the lifecycle manager, as noted above. </dd>
         </dlentry>
       </dl>
       <note>Do not enable TLS to the internal load balancer. </note>
@@ -289,7 +289,7 @@ ansible-playbook -i hosts/verb_hosts FND-CLU-deploy.yml</codeblock>
         <li>Have a name resolver for myhelion.test - It could /etc/hosts or dnsmasq reading from a
           hosts file </li>
         <li>Install the CA certificate that signed the test server certificate. This file can be
-          found in the deployer under <b>roles/tls-trust/files/frontend_cacert.pem</b>. </li>
+          found in the lifecycle manager under <b>roles/tls-trust/files/frontend_cacert.pem</b>. </li>
         <li>Make an entry for the VIP inside the /etc/hosts file pointing to myhelion.test </li>
         <li>Run the playbook below to install the certificate.
           <codeblock>ansible-playbook -i hosts/verb_hosts tls-trust-deploy.yml</codeblock></li>
@@ -298,7 +298,7 @@ ansible-playbook -i hosts/verb_hosts FND-CLU-deploy.yml</codeblock>
     <section><title>Testing public endpoints using the test certificate with a virtual cloud</title>
       The following write up is for people trying to test the public endpoints using the bundled
       test certificate with a virtual cloud. There are three use cases here. <ul id="ul_z51_djg_rt">
-        <li>Access public endpoints from the deployer </li>
+        <li>Access public endpoints from the lifecycle manager </li>
         <li>Access public endpoints from the machine hosting the virtual cloud </li>
         <li>Access public endpoints from a machine other than the machine hosting the virtual cloud
         </li>
@@ -306,7 +306,7 @@ ansible-playbook -i hosts/verb_hosts FND-CLU-deploy.yml</codeblock>
         <li>Have a name resolver for myhelion.test - It could /etc/hosts or dnsmasq reading from a
           hosts file </li>
         <li>Install the CA certificate that signed the test server certificate. This file can be
-          found in the deployer under <b>roles/tls-trust/files/frontend_cacert.pem</b>. This file is
+          found in the lifecycle manager under <b>roles/tls-trust/files/frontend_cacert.pem</b>. This file is
           not symlinked via the config directory to customers because we generally don't need the CA
           certificate signing the external certificate inside the cloud. </li>
       </ol>
@@ -315,7 +315,7 @@ ansible-playbook -i hosts/verb_hosts FND-CLU-deploy.yml</codeblock>
       <ol id="ol_ddb_djg_rt">
         <li>Make an entry for the VIP inside the /etc/hosts file pointing to myhelion.test </li>
         <li>Copy the CA certificate from the
-          deployer:/home/stack/scratch/ansible/next/hos/ansible/roles/tls-trust/files/frontend_cacert.pem
+          lifecycle manager:/home/stack/scratch/ansible/next/hos/ansible/roles/tls-trust/files/frontend_cacert.pem
           to /usr/local/share/ca-certificates/helion-ca.crt </li>
         <li>Run <codeblock>sudo update-ca-certificates - -fresh</codeblock></li>
       </ol>

@@ -118,7 +118,7 @@
           an external network and registered and image, this step can be skipped.</p>
 
          <ol>
-          <li>You can run commands from the deployer or from a shell with access to the API nodes.
+          <li>You can run commands from the lifecycle manager or from a shell with access to the API nodes.
             Run the playbook which registers a Cirros image and creates a public network under
             Neutron. <note>Running this step configures 172.16.0.0/16 by default as the external
               network with name <i>ext-net</i> and registers a Cirros image.  You will need to

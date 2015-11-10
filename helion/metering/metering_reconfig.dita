@@ -93,7 +93,7 @@ ceilome+ 31433 31427 10 16:29 ? 00:02:43 /usr/sbin/apache2 -k start </codeblock>
 
 
     <section id="reconfig"><title>Reconfigure</title> Make changes in the Ceilometer available
-      configuration files at on deployer machine. Make changes in the target configuration file
+      configuration files at on lifecycle manager machine. Make changes in the target configuration file
       found is these directories. <p>For a temporary change go
       to:</p><codeblock>cd /home/stack/scratch/ansible/next/my_cloud/config/ceilometer/</codeblock>
       For a persistent change, go to

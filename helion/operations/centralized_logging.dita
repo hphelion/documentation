@@ -212,7 +212,7 @@
               <entry>High</entry>
               <entry>High</entry>
               <entry>Yes</entry>
-              <entry>These are backed up as part of deployer repo changes maintained by the
+              <entry>These are backed up as part of lifecycle manager repo changes maintained by the
                 administrator.</entry>
             </row>
             <row>
@@ -221,7 +221,7 @@
               <entry>High</entry>
               <entry>High</entry>
               <entry>Yes</entry>
-              <entry>These are backed up as part of deployer repo changes maintained by the
+              <entry>These are backed up as part of lifecycle manager repo changes maintained by the
                 administrator.</entry>
             </row>
             <row>
@@ -231,7 +231,7 @@
               <entry>Medium</entry>
               <entry>Yes</entry>
               <entry>Cron job to periodically run and keep the old Elasticsearch indices
-                pruned/closed. These are backed up as part of deployer repos changes maintained by
+                pruned/closed. These are backed up as part of lifecycle manager repos changes maintained by
                 the administrator.</entry>
             </row>
           </tbody>

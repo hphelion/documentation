@@ -8,7 +8,7 @@
       and the Configuration Processor (CP) uses this repository. The introduction of a git workflow
       also means that your configuration history is maintained, making rollbacks easier as well as
       keeping a record of previous configuration settings.</p>
-    <p>The git repository is installed by the deployer on the deployer node.</p>
+    <p>The git repository is installed by the lifecycle manager on the lifecycle manager node.</p>
 
     <!--<p>Below is a representation of the typical git workflow in HPE Helion OpenStack 2.0. </p>
     <p/>-->
@@ -16,8 +16,8 @@
       (i.e. from HP) updates, and allows you to manage your own configuration changes. </p>
     <section>
       <title>Initialization on a new deployment</title>
-      <p>On a system new to HPE Helion OpenStack 2.0, the deployer will prepare a git repository
-        under <codeph>~/helion</codeph>. The deployer provisioning runs the
+      <p>On a system new to HPE Helion OpenStack 2.0, the lifecycle manager will prepare a git repository
+        under <codeph>~/helion</codeph>. The lifecycle manager provisioning runs the
           <codeph>hlm-init-deployer</codeph> script automatically - this calls
           <codeph>ansible-playbook -i hosts/localhost git-00-initialise.yml</codeph>.</p>
       <p>As a result, the <codeph>~/helion</codeph> directory is initialized as a git repo (if it's

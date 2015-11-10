@@ -17,7 +17,7 @@
     </section>
     <section id="deployer_setup"><title>Issues during Lifecycle-manager Setup</title>
       <p><b>Issue: Running the hos-init.bash script when configuring
-          your deployer does not complete</b></p>
+          your lifecycle manager does not complete</b></p>
       <p>Part of what the <codeph>~/hos-2.0.0/hos-init.bash</codeph> script does is install git and so if your
         DNS nameserver(s) is not specified in your <codeph>/etc/resolv.conf</codeph> file, is not
         valid, or is not functioning properly on your lifecycle manager then it won't be able

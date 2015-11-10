@@ -11,9 +11,9 @@
         lifecycle manager.</p>
       <note>Do not add entries for a new server; instead, just update the entries for the broken
         one. Also note that if you are replacing a control plane node that also happens to be
-        running the deployer, that process is different. You’ll need to restore you deployer data
+        running the lifecycle manager, that process is different. You’ll need to restore you lifecycle manager data
         first. </note><note>Be aware that all management commands are run on the node where the
-        deployer is running. </note>
+        lifecycle manager is running. </note>
       <b>Update your model with replacement server information</b>
       <ol>
         <li> Update your cloud model (<b>servers.yml </b>) Update your cloud model (servers.yml )
@@ -35,7 +35,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
       </ol>
       <b>Image the new node</b>
       <ol>
-        <li>Log onto the node that is running the deployer. Remove the broken control plane node
+        <li>Log onto the node that is running the lifecycle manager. Remove the broken control plane node
           from cobbler by running sudo cobbler system remove --name &lt;server-id>. Here's an
           example:<codeblock> sudo cobbler system remove --name controller2</codeblock>
         </li>

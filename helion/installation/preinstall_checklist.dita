@@ -447,7 +447,7 @@
         </table>
       </p>
     </section>
-    <section id="deployer"><title>Deployer</title>
+    <section id="deployer"><title>Lifecycle Manager</title>
       <p>This server contains the HPE Helion OpenStack installer, which is based on Git, Ansible,
         and Cobbler.</p>
       <p>
@@ -507,7 +507,7 @@
         </table>
       </p>
       <p><b>VLAN Information for Troubleshooting</b></p>
-      <p>From your deployer, run the following command and use this information for your
+      <p>From your lifecycle manager, run the following command and use this information for your
           <codeph>nic_mappings.yml</codeph> file:
         <codeblock>sudo lspci -D |grep -i eth</codeblock></p>
       <p>

@@ -37,7 +37,7 @@
       
      <ol><li>The main Keystone Identity Service configuration file (<b>/etc/keystone/keystone.conf</b>),
           located on each control plane server is generated from the following template file located
-          on a deployer: <b>/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2</b>
+          on a lifecycle manager: <b>/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2</b>
           <p>Modify this template file as appropriate. Please refer to <xref
               href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
               format="html" scope="external">Keystone Kilo documentation</xref> for full

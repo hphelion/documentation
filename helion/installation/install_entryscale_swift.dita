@@ -60,11 +60,11 @@
             </li>
           </ol>
           <!--
-          <p>If you chose to use your first controller node as your deployer, ensure that your
+          <p>If you chose to use your first controller node as your lifecycle manager, ensure that your
               <codeph>servers.yml</codeph> file contains the <codeph>is-deployer: true</codeph>
-            notation in your controller options. If you are using a dedicated deployer node you can
+            notation in your controller options. If you are using a dedicated lifecycle manager node you can
             omit this. Here is an example snippet of a <codeph>servers.yml</codeph> file where a
-            user is using their first controller node as their deployer:
+            user is using their first controller node as their lifecycle manager:
             <codeblock># Controllers
   - id: controller1
     ip-addr: 192.168.10.3

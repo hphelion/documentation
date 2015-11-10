@@ -62,7 +62,7 @@
         <li>Download the HPE Helion OpenStack 2.0.0 product from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
             format="html" scope="external">Helion Downloads</xref> page after signing in.</li>
-        <li>Boot your deployer from the ISO contained in the download.</li>
+        <li>Boot your lifecycle manager from the ISO contained in the download.</li>
         <li>Enter "install" to start installation. <note>"install" is all lower case</note></li>
         <li>Select the language. Note that only the English language selection is currently
           supported.</li>
@@ -97,7 +97,7 @@
       <ol>
         <li>Log into your lifecycle manager as the user you created and mount the install media
           at <codeph>/media/cdrom</codeph>. It may be necessary to use <codeph>wget</codeph> or
-          another file transfer method to transfer the install media to the deployer before
+          another file transfer method to transfer the install media to the lifecycle manager before
           completing this step. Here is the command to mount the media:
           <codeblock>sudo mount Helion-OpenStack-2.0.0.iso /media/cdrom</codeblock></li>
         <li>Unpack the tarball that is in the <codeph>/media/cdrom/hos2.0.0/</codeph> directory:
@@ -226,9 +226,9 @@ git commit -m "My config or other commit message"</codeblock>
         live node by accident.</p>
       <p>The <codeph>cobbler-deploy.yml</codeph> playbook prompts for a password - this is the
         password that will be encrypted and stored in Cobbler, which is associated with the user
-        running the command on the deployer, that you will use to log in to the nodes via their
+        running the command on the lifecycle manager, that you will use to log in to the nodes via their
         consoles after install. The username is the same as the user set up in the initial dialogue
-        when installing the deployer from the iso, and is the same user that is running the
+        when installing the lifecycle manager from the iso, and is the same user that is running the
         cobbler-deploy play.</p>
       <ol>
         <li>Run the following playbook which confirms that there is iLo connectivity for each of
