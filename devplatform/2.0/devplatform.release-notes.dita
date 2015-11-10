@@ -50,6 +50,10 @@ $ openstack endpoint create database public 'http://<i>&lt;public-VIP-IP-address
     <section>
       <title>Known Issues</title>
       <dl><dlentry>
+        <dt>Alarms appear in "No Service Defined" Panel</dt>
+        <dd>If the Message Broker sends alarms for MySQL or Zookeeper, they appear in the "No Service Defined" panel of the Opsconsole, not the Messaging as a Service panel. This is a known issue.</dd>
+      </dlentry>
+        <dlentry>
         <dt>Creating an ALS cluster results in error: 413 Request Entity Too Large</dt>
         <dd>When using the <codeph>cf-mgmt</codeph> tool, cluster creation fails because the payload
             sent to OpenStack to boot a new instance was too large. This is caused by including

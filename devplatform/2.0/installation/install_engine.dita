@@ -172,7 +172,7 @@ http_proxy: "http://&lt;https proxy hostname>:&lt;https proxy port>/"</codeblock
             success. If not, check the output for error messages, address the errors, add the Debug
             option (-vvv) to the command line, and run the playbook again.</note><ol>
             <li> Run the Pre-Installation Playbook
-              <codeblock>stack@helionce-deployer:~/helion$ source ~/user.osrc
+              <codeblock>stack@helionce-deployer:~/helion$ source ~/service.osrc
 stack@helionce-deployer:~/helion$ cd hos/ansible/
 stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost hlm-pre-install.yml</codeblock>Successful
               output will look similar to the
