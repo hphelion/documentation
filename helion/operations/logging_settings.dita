@@ -290,7 +290,7 @@
               <entry>
                 <p>/var/log/keystone/keystone-json.log</p>
               </entry>
-              <entry/>
+              
             </row>
             <row>
               <entry>
