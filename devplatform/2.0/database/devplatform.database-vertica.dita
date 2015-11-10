@@ -15,7 +15,9 @@
     <note>The Vertica Management Console is only available for Vertica Preview clusters. It is not available for Vertica Preview instances.</note>
     <p>For more information on using these features, see the following topics:</p>
     <ul>
-      <li><xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/AdministratorsGuide/ManagementConsole/MonitoringHPVerticaUsingMC.htm">Monitoring HP Vertica Using Management Consople</xref></li>
+      <li><xref type="external" format="html"
+          href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/AdministratorsGuide/ManagementConsole/MonitoringHPVerticaUsingMC.htm"
+          >Monitoring HP Vertica Using Management Console</xref></li>
       <li><xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/GettingStartedGuide/UsingDatabaseDeisgner/RunDBDwithMC.htm">Running Database Designer with Management Console</xref></li>
       <li><xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/AdministratorsGuide/EXPLAIN/ViewingEXPLAINOutputinManagementConsole.htm">Viewing EXPLAIN Output in Management Console</xref></li>
     </ul>
