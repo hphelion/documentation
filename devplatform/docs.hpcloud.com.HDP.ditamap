@@ -166,6 +166,8 @@
           locktitle="yes"/>
         <topicref href="2.0/windows/windows_glazier_reference_guide.dita" locktitle="yes"
           navtitle="Glazier Reference Guide"/>
+        <topicref href="2.0/windows/windows_growcluster.dita"
+          navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
       </topichead>
       <topichead navtitle="Developer Reference">
         <topicref href="2.0/windows/windows_firstapp.dita" locktitle="yes"
@@ -429,8 +431,6 @@
           navtitle="Create an ALS Cluster Using Horizon"/>
         <topicref href="2.0/database/devplatform.database-create-cluster-horizon.dita"
           navtitle="Create a Database Cluster Using Horizon" locktitle="yes"/>
-        <topicref href="2.0/windows/windows_growcluster.dita"
-          navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
         <topicref href="2.0/helion/CLI/cf_mgmt_createcluster.dita"
           navtitle="Create Clusters and Add Services from the Command Line" locktitle="yes">
           <topicref href="2.0/helion/CLI/cfmgmt_createcluster_starter.dita"
