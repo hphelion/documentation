@@ -31,7 +31,11 @@
             implements SSL using HAProxy, so in installations of version 2.0 or later, this value
             must be <b>False</b>. </dd></dlentry>
         <dlentry><dt>ephemeral_ca_cert</dt><dd>If SSL has been enabled on the public endpoints, this value needs to be identical to the
-                            <codeph>cacert</codeph> value provided previously. Do not leave blank. </dd></dlentry>
+                            <codeph>cacert</codeph> value provided previously. </dd>
+                    <dd>If SSL has <b>not</b> been enabled,<xref
+                            href="../install_dbaasNoTLS.dita#topic_gxm_4xw_yt"> follow these
+                            additional instructions</xref> to determine the value that should be
+                        provided here. </dd></dlentry>
         <dlentry><dt>external_network</dt><dd>The ID (GUID) of the external network. In a typical installation, the name of this network is
               <b>ext-net</b>. </dd></dlentry>
         <dlentry><dt>provider_network</dt><dd> The ID (GUID) of the service provider network. In a typical installation, the name of this
