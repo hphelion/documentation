@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
   </topicmeta>
-  <topicref href="helion/index.dita">
+  <topicref href="helion/index.dita"  otherprops="">
     <!-- BEGIN - TOP LEVEL -->
     <topicref href="helion/overview.dita" navtitle="HPE Helion OpenStack 2.0 Overview"
       locktitle="yes"/>
@@ -115,7 +115,8 @@
           <topicref href="helion/objectstorage/creating_roles_swift_nodes.dita"
             navtitle="Creating Roles for Swift Nodes" locktitle="yes"/>
           <topicref href="helion/objectstorage/allocating_disk_drives.dita"
-            navtitle="Allocating Disk Drives for Object Storage" locktitle="yes" otherprops="disk-drives">
+            navtitle="Allocating Disk Drives for Object Storage" locktitle="yes"
+            otherprops="disk-drives">
             <topicref href="helion/objectstorage/label_on_partition.dita" toc="yes"
               navtitle="Verifying a Swift Partition Label" locktitle="yes"/>
             <topicref href="helion/objectstorage/filesystem_label.dita"
@@ -369,12 +370,12 @@
       <topicref href="helion/userguide/lbaas.dita"
         navtitle="Using Load Balancing as a Service (LBaaS)" locktitle="yes"/>
       <!--  LBaaS, FWaaS, VPNaaS -->
-      <topicref href="helion/networking/fwaas.dita" locktitle="yes">
+      <topicref href="helion/networking/fwaas.dita" locktitle="yes" otherprops="fwass">
         <topicmeta>
           <navtitle>Using Firewall as a Service (FWaaS)</navtitle>
         </topicmeta>
       </topicref>
-      <topicref href="helion/networking/vpnaas.dita" locktitle="yes">
+      <topicref href="helion/networking/vpnaas.dita" locktitle="yes"  otherprops="vpnass">
         <topicmeta>
           <navtitle>Using VPN as a Service (VPNaaS)</navtitle>
         </topicmeta>
