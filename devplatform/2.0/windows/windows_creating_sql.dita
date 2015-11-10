@@ -25,7 +25,9 @@
           </li>
       </ul></section>
     <section id="create"><title>Create a Microsoft SQL Server service instance</title>
-      <note>If you have already created a Microsoft SQL Server instance (such as in the <xref href="../devplatform.ALS-developer-trial-quick-start.dita">Developer Quickstart</xref>), you don't need to create another.</note>
+      <note>If you have already created a Microsoft SQL Server
+        instance<!-- (such as in the <xref href="../devplatform.ALS-developer-trial-quick-start.dita">Developer Quickstart</xref>)-->,
+        you don't need to create another.</note>
       <p>To create a Microsoft SQL Server service instance, use the <xref format="dita" href="../helion/CLI/ALS_Client_Downloads.dita">Helion ALS Client</xref>. To create a service
         instance, first connect the Helion ALS client to your ALS cluster using <xref format="dita" type="section" href="../helion/user/reference/client-ref-getting-started.dita#topic2439/command-login">helion login</xref>
         and <xref type="section" format="dita" href="../helion/user/reference/client-ref-getting-started.dita#topic2439/command-target">helion target</xref>.</p>

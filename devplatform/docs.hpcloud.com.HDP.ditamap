@@ -30,12 +30,13 @@
         locktitle="yes" navtitle="Quick Start Termination"/>
       <topicref
         href="2.0/devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
-        locktitle="yes" navtitle="Quick Start Troubleshooting"/>
     </topichead>-->
     
     
     <!--installation-->
     <topichead navtitle="Installation">
+      <topicref href="2.0/installation/install_offline.dita"
+        navtitle="Downloding for Offline Installation" locktitle="yes"/>
       <topicref href="2.0/installation/devplatform_install_prereq.dita"
         navtitle="Installation Prerequisites" locktitle="yes"/>
       <topicref href="2.0/installation/install_cloudsyaml.dita"
@@ -250,7 +251,7 @@
           navtitle="Java Hello World Sample"/>
         <topicref href="2.0/workbook/database/database.java.dita" locktitle="yes"
           navtitle="Java MySQL Database Sample"/>
-        <!--<topicref href="2.0/workbook/messaging/messaging.java.dita" locktitle="yes" navtitle="Java RabbitMQ Messaging Sample"/>-->
+        <topicref href="2.0/workbook/messaging/messaging.java.dita" locktitle="yes" navtitle="Java RabbitMQ Messaging Sample"/>
       </topichead>
       <topichead navtitle="Node Code Samples">
         <topicref href="2.0/workbook/helloworld/helloworld.node.dita" locktitle="yes"
@@ -291,6 +292,8 @@
       <topicref href="2.0/database/devplatform.database-create-loadbalancer.dita"/>
       <topicref href="2.0/database/devplatform.database-ALS.dita" locktitle="yes"
         navtitle="Connecting the Database Service with the Application Lifecycle Service"/>
+      <topicref href="2.0/installation/install_dbaas_configureAvailabilityZones.dita" toc="no"/>
+      <topicref href="2.0/installation/install_dbaas_checkQuotas.dita" toc="no"/>
     </topichead>
     
 <!-- messaging -->
