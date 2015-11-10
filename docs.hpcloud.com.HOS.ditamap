@@ -30,13 +30,13 @@
     <!-- END - TOP LEVEL -->
     <!-- BEGIN - INSTALLATION -->
     <topicref href="helion/installation/installation_overview.dita" navtitle="Installation"
-      locktitle="yes">
+      locktitle="yes" otherprops="test">
       <topicref href="helion/installation/using_git.dita"
         navtitle="Using Git for Configuration Management" locktitle="yes"/>
       <topicref href="helion/installation/install_entryscale_kvm.dita"
-        navtitle="Installation for Helion Entry-scale KVM Cloud" locktitle="yes">
+        navtitle="Installation for Helion Entry-scale KVM Cloud" locktitle="yes" otherprops="test">
         <topicref href="helion/installation/configure_vsa.dita" navtitle="VSA Configuration"
-          locktitle="yes"> </topicref>
+          locktitle="yes"/>
         <topicref href="helion/installation/configure_ceph.dita" navtitle="Ceph Configuration"
           locktitle="yes"/>
         <topicref href="helion/installation/configure_3par.dita" navtitle="3PAR Configuration"
@@ -58,7 +58,7 @@
     </topicref>
     <!-- END - INSTALLATION -->
     <!-- BEGIN - SECURITY -->
-    <topicref navtitle="Security"  href="placeholder7.dita">
+    <topicref navtitle="Security" href="placeholder7.dita" otherprops="test">
       <topicref href="helion/security/tls.dita" navtitle="Configuring TLS for Public Endpoints"
         locktitle="yes"/>
       <topicref href="helion/security/encrypted_storage.dita"
