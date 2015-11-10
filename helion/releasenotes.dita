@@ -599,7 +599,7 @@ cinder --version</codeblock></li>
       <p>In HPE Helion OpenStack 2.0, the auto-scaling in Heat is not supported because the alarm
         creation in Ceilometer is disabled.</p>
       <!-- BAREMETAL -->
-      <p><b>Restarting lifecycle-manager node leaves Apache2 down</b></p>
+      <p><b>Restarting lifecycle manager leaves Apache2 down</b></p>
       <p>If you restart your lifecycle management node, note that Apache2 will not restart on its
         own. You will need to restart it manually.</p>
       <p><b>Moonshot remote console goes blank after operating system install</b></p>

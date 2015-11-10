@@ -6,7 +6,7 @@
   <body>
     <p>Perform the following steps to identify the first node which is running the swift-proxy
         service:<ol id="ol_tqx_qjt_mt">
-        <li>Log on to the deployer/lifecycle-manager node.</li>
+        <li>Log on to the lifecycle manager.</li>
         <li>Edit the following
           file:<codeblock>vi  ~/scratch/ansible/next/hos/ansible/hosts/verb_hosts </codeblock></li>
         <li>Search the entry with the name

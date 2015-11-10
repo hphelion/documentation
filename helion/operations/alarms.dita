@@ -491,7 +491,7 @@
               <entry>Elasticsearch unassigned shards count is greater than 0.</entry>
               <entry>Environment could be misconfigured.</entry>
               <entry>
-                <p>To find the unassigned shards, run the following command on the lifecycle-manager node
+                <p>To find the unassigned shards, run the following command on the lifecycle manager
                   from the <codeph>~/scratch/ansible/next/hos/ansible</codeph> directory:</p>
                 <codeblock>ansible -i hosts/verb_hosts LOG-SVR[0] -m shell -a "curl localhost:9200/_cat/shards?pretty -s" | grep UNASSIGNED</codeblock>
                 <p>This should show which shards are unassigned, like this:</p>

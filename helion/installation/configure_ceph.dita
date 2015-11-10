@@ -33,7 +33,7 @@
       <title>Edit Your Ceph Environment Input Files</title>
       <p>
         <ol>
-          <li>Log in to the deployer/lifecycle-manager node.</li>
+          <li>Log in to the lifecycle manager.</li>
           <li>Copy the example configuration files into the required setup directory and edit them
             to contain the details of your environment: <codeblock>cp -r ~/helion/examples/entry-scale-kvm-ceph/* ~/helion/my_cloud/definition/</codeblock>
             <p>Begin inputting your environment information into the configuration files in the
@@ -220,7 +220,7 @@ git commit -m "&lt;commit message>"</codeblock></li>
       <title>Configure Ceph as the Backend</title>
       <p>You can use Ceph as either the backend for volumes or volume backups or both. These steps
         will show you how to do this.</p>
-      <p>Perform the following procedure on the deployer/lifecycle-manager node to configure Ceph as
+      <p>Perform the following procedure on the lifecycle manager to configure Ceph as
         a volume backend:</p>
       <p><b>Prerequisites</b></p>
       <p>In order for Ceph to be used as a backend for volumes, the nodes running these services
@@ -236,7 +236,7 @@ ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
       <p>Continue with the Ceph configuration with the steps below:</p>
       <p>
         <ol>
-          <li>Log in to the lifecycle-manager node.</li>
+          <li>Log in to the lifecycle manager.</li>
           <li>Make the following changes to the
               <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file: <ol>
               <li>Add your Ceph backend to the <codeph>enabled_backends</codeph> section:
@@ -407,7 +407,7 @@ default_store = {{ glance_default_store }}</codeblock></li>
                   <codeblock>sudo ceph auth get-or-create client.glance | sudo tee -a  /etc/ceph/ceph.client.glance.keyring</codeblock></p>
                 <p><b>OR</b></p>
               </li>
-              <li>You can copy the keyring from the deployer/lifecycle-manager node to
+              <li>You can copy the keyring from the lifecycle manager to
                   <codeph>/etc/ceph</codeph> folder on all the controller nodes: <p>For Ceph as your
                   volume backend:
                   <codeblock>scp /etc/ceph/ceph.client.cinder.keyring</codeblock></p>
@@ -442,7 +442,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
       <p>Perform the following steps to configure Nova to allow attachment of a Ceph volume to an
         instance:</p>
       <ol>
-        <li>Log in to the lifecycle-manager node.</li>
+        <li>Log in to the lifecycle manager.</li>
         <li>Make the following changes to the
             <codeph>~/helion/my_cloud/config/nova/kvm-hypervisor.conf.j2</codeph> file: <ol>
             <li>Uncomment the Ceph backend lines and edit them as follows: <codeblock>[libvirt]

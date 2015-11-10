@@ -445,7 +445,7 @@
         <p id="deployer"><b>Deployer</b></p>
         <p>The deployer in HPE Helion OpenStack is not highly-available. The deployer state/data are all
           maintained in filesystem and are backed up by the Freezer backup. In case a
-          deployer/lifecycle-manager node failure, the deployer state/data can be recovered from the
+          lifecycle manager failure, the deployer state/data can be recovered from the
           backup.</p>
       </sectiondiv>
       

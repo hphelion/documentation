@@ -8,7 +8,7 @@
     <p><b>To Add a New OSD Node</b></p>
     <p>Perform the following steps to add a new OSD node to an existing Ceph cluster:<ol
         id="ol_v2t_xm5_kt">
-        <li>Login to the Deployer/lifecycle-manager node.</li>
+        <li>Login to the lifecycle manager.</li>
         <li>Edit the <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> file to define a
           new OSD
             node:<codeblock>- id: osd4
@@ -44,7 +44,7 @@ ansible-playbook -i hosts/verb_hosts guard-deployment.yml
 ansible-playbook -i hosts/verb_hosts osconfig-run.yml
 ansible-playbook -i hosts/verb_hosts ceph-deploy.yml</codeblock>
           </p><p>The new OSD node is deployed in an existing Ceph cluster.</p><p><b>To Verify the
-              Newly Added OSD Node</b></p><p>From the Deployer/lifecycle-manager node, run the
+              Newly Added OSD Node</b></p><p>From the lifecycle manager, run the
             following command:<codeblock>$ceph --cluster ceph  osd tree</codeblock>
                 <note><p>If the Ceph
               cluster name is different than the default (i.e. <b>ceph</b>), you need to modify the

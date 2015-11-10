@@ -16,7 +16,7 @@
         use.</p>
       <p>The default username for the Administrator user is <codeph>admin</codeph>. In order to find
         the randomized password that is created for this user you will need to look into the
-          <codeph>~/service.osrc</codeph> file on the lifecycle-manager node. You can do that with
+          <codeph>~/service.osrc</codeph> file on the lifecycle manager. You can do that with
         this command:</p>
       <codeblock>cat ~/service.osrc</codeblock>
       <!--

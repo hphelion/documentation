@@ -20,7 +20,7 @@
           your deployer does not complete</b></p>
       <p>Part of what the <codeph>~/hos-2.0.0/hos-init.bash</codeph> script does is install git and so if your
         DNS nameserver(s) is not specified in your <codeph>/etc/resolv.conf</codeph> file, is not
-        valid, or is not functioning properly on your lifecycle-manager node then it won't be able
+        valid, or is not functioning properly on your lifecycle manager then it won't be able
         to complete.</p>
       <p>To resolve this issue, double check your nameserver in your
           <codeph>/etc/resolv.conf</codeph> file and then re-run the script.</p>

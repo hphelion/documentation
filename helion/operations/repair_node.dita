@@ -7,7 +7,7 @@
       <p>There are a number of routine operations you must perform in the ongoing running and
         maintenance of your cloud, including the repair of a node when, for example, you need to
         replace part of the server, such as a disk. Note that to run any playbooks whatsoever for
-        cloud maintenance, you will always run from the deployer/lifecycle-manager node.</p> Typical
+        cloud maintenance, you will always run from the lifecycle manager.</p> Typical
       scenarios in which you will need to repair a node include: <ul>
         <li>The node has already failed; i.e., it is down. </li>
         <li>The node is working but the Nova compute process is not responding, so instances are

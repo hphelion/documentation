@@ -35,13 +35,13 @@
               <p>The result should be a file named
                   <codeph>networking_l2gw-2015.1.1-py2-none-any.whl</codeph> in your
                 'third-party-wheelhouse' directory.</p></li>
-            <li>On your lifecycle-manager/deployer node, create a new directory named 'wheelhouse':
+            <li>On your lifecycle manager, create a new directory named 'wheelhouse':
               <codeblock>mkdir ~/wheelhouse</codeblock></li>
             <li>Copy the <codeph>networking_l2gw-2015.1.1-py2-none-any.whl</codeph> file from your
               local workstation into the <codeph>~/wheelhouse</codeph> directory that you
               created.</li>
           </ol></li>
-        <li>On your lifecycle-manager/deployer node, run the <codeph>venv-edit.yml</codeph> playbook
+        <li>On your lifecycle manager, run the <codeph>venv-edit.yml</codeph> playbook
           to add the driver or plugin package to the desired virtual environment. <ol>
             <li>For our 'networking-l2gw' example we would use this command using the wheel file we
               created in the previous step:

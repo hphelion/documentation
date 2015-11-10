@@ -15,12 +15,12 @@
     <p>Moreover, EON is not installed by default. To install EON service, you must uncomment the
         <systemoutput>eon-deploy.yml</systemoutput> file at
         <systemoutput>~/helion/hos/ansible/hlm-deploy.yml</systemoutput> in the
-      deployer/lifecycle-manager node. For instructions, see <xref
+      lifecycle manager. For instructions, see <xref
         href="../installation/install_entryscale_esx.dita#install_esx"/>.</p>
     <section>
       <title><b>Architecture</b></title>
       <p>EON is installed on the master control plane node, and the EON CLI is installed on the HLM
-        deployer/lifecycle-manager node, used by the Cloud Admin to setup vCenter Compute Proxy and
+        lifecycle manager, used by the Cloud Admin to setup vCenter Compute Proxy and
         OvsvApp nodes.</p>
       <p><image href="../../media/esx/eon_arch_diagram.png"/></p>
     </section>

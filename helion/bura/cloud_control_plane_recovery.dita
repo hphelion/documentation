@@ -38,7 +38,7 @@ sudo rm -r /var/lib/mysql/*
  
 # Copy restored files
 sudo cp -pr /tmp/hlm_mysql_restore/* /var/lib/mysql</codeblock></li>
-      <li>From the deployer/lifecycle-manager node run the following steps:
+      <li>From the lifecycle manager run the following steps:
         <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts percona-bootstrap.yml</codeblock></li>
     </ol>
@@ -191,7 +191,7 @@ systemctl start dayzero</codeblock></p>
     <section><title>Restore from an SSH backup</title><p> Follow the same procedure as for Swift but
         select the job "HLM Default: Deployer restore from SSH".</p></section>
     <section><title>One or two CCN disaster recovery</title><p>Everything is still running (deployer, CCN, and CPNs) but you lost one or two CCNs.</p></section>
-    <section><title>Restore from other nodes</title><p>On the deployer/lifecycle-manager node,
+    <section><title>Restore from other nodes</title><p>On the lifecycle manager,
         install the nodes that got destroyed:
         <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml --limit padawan-ccp-c1-m2-mgmt</codeblock></p></section>
@@ -203,7 +203,7 @@ ansible-playbook -i hosts/verb_hosts site.yml --limit padawan-ccp-c1-m2-mgmt</co
         <li><b>Restore from a Swift backup: </b><p>This is not possible (Swift is gone).</p></li>
         <li><b>Restore from an SSH backup: </b><p>
             <ol>
-              <li>On deployer/lifecycle-manager node, follow the procedure to deploy the CCNs:
+              <li>On lifecycle manager, follow the procedure to deploy the CCNs:
                 <codeblock>
 cd ~/scratch/ansible/next/hos/ansible
  
@@ -220,7 +220,7 @@ ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</codeblock></li>
     <section><title>Deployer disaster recovery</title><p>Everything is still running (CCNs and CPNs) but you lost the deployer.</p><ul>
         <li><b>Restore from a Swift backup</b>
           <ol>
-            <li>On the deployer/lifecycle-manager node, install the freezer-agent, as
+            <li>On the lifecycle manager, install the freezer-agent, as
               follows:<codeblock>
 cd ~/helion/hos/ansible/
 ansible-playbook -i hosts/localhost _deployer_restore_helper.yml</codeblock></li>
@@ -240,7 +240,7 @@ and
 ff02::1         ip6-allnodes
 ff02::2         ip6-allrouters
 127.0.0.1       hlinux</codeblock></li>
-            <li>On the deployer/lifecycle-manager node:
+            <li>On the lifecycle manager:
               <codeblock>
 # Become root
 sudo su
@@ -281,10 +281,10 @@ ansible-playbook -i hosts/verb_hosts site.yml --limit localhost</codeblock></li>
           </ol></li>
         <li><b>Restore from an SSH backup</b>
           <ol>
-            <li>On the deployer/lifecycle-manager node, edit the following file so it contains the
+            <li>On the lifecycle manager, edit the following file so it contains the
               same information as previously:
               <codeblock>~/helion/my_cloud/config/freezer/ssh_credentials.yml</codeblock></li>
-            <li>On the deployer/lifecycle-manager node:
+            <li>On the lifecycle manager:
               <codeblock>
 cp -r ~/hp-ci/padawan/* ~/helion/my_cloud/definition/
 cd ~/helion/hos/ansible/
@@ -313,10 +313,10 @@ ansible-playbook -i hosts/verb_hosts site.yml --limit localhost</codeblock></li>
     <section><title>Full disaster recovery</title><p>Everything is dead.</p><ul>
         <li><b>Restore from a Swift backup:</b><p>This is not possible (Swift is gone).</p></li>
         <li><b>Restore from an SSH backup: </b><ol>
-            <li>On the deployer/lifecycle-manager node, edit the following file so it contains the
+            <li>On the lifecycle manager, edit the following file so it contains the
               same information as previously:
               <codeblock>~/helion/my_cloud/config/freezer/ssh_credentials.yml file</codeblock></li>
-            <li>On the deployer/lifecycle-manager node:
+            <li>On the lifecycle manager:
               <codeblock>cp -r ~/hp-ci/padawan/* ~/helion/my_cloud/definition/
 cd ~/helion/hos/ansible/
 ansible-playbook -i hosts/localhost _deployer_restore_helper.yml</codeblock></li>

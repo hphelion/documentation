@@ -8,7 +8,7 @@
         adding or removing nodes is not an option. However, if you need to repair or replace a
         controller node, you may do so by following the steps outlined here. Note that to run any
         playbooks whatsoever for cloud maintenance, you will always run from the
-        deployer/lifecycle-manager node.</p>
+        lifecycle manager.</p>
       <note>Do not add entries for a new server; instead, just update the entries for the broken
         one. Also note that if you are replacing a control plane node that also happens to be
         running the deployer, that process is different. You’ll need to restore you deployer data

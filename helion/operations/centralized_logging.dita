@@ -275,7 +275,7 @@
       <p><b>Login Credentials</b></p>
       <p>The default username for Kibana is <codeph>kibana</codeph> and the password is randomized
         during installation. To retrieve it, look in the following directory on your
-        lifecycle-manager node:</p>
+        lifecycle manager:</p>
       <codeblock>~/scratch/ansible/next/hos/ansible/group_vars/</codeblock>
       <p>In that directory you will have a file for your control plane node and you will need to
         GREP for the <codeph>logging_kibana_password</codeph>. For example, if you were using the

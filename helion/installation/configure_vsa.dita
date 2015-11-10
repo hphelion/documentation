@@ -80,7 +80,7 @@
         Helion OpenStack firewall to ensure this traffic is allowed. These steps walk you through
         this process:</p>
       <ol>
-        <li>Log in to your lifecycle-manager node.</li>
+        <li>Log in to your lifecycle manager.</li>
         <li>Edit your <codeph>~/helion/my_cloud/definition/data/firewall_rules.yml</codeph> file and
           add the lines below to ensure the VNC ports are allowed through the firewall: <codeblock>
   - name: VNC
@@ -180,11 +180,11 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
         (not shown in the documentation) is <xref href="http://mobaxterm.mobatek.net/"
           scope="external" format="html">MobaXterm</xref>. <ol>
           <li>Download and install <b>Xming</b> on a Windows machine that can access the
-            lifecycle-manager node. You can download Xming from <xref
+            lifecycle manager. You can download Xming from <xref
               href="http://sourceforge.net/projects/xming/" format="html" scope="external"
               >Sourceforge.net</xref>.</li>
           <li>Select <b>Enable X11 forwarding</b> checkbox on the PuTTy session for
-            deployer/lifecycle-manager node. You can do this in PuTTY by: <ol>
+            lifecycle manager. You can do this in PuTTY by: <ol>
               <li>Navigate to the <codeph>Connection -> SSH -> X11</codeph> option in PuTTy</li>
               <li>Click the <codeph>Enable X11 forwarding box to ensure it has a checkmark in
                   it</codeph></li>
@@ -262,9 +262,9 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
         to use your VSA environment.</p>
       <p>To update your Cinder configuration to add VSA storage you must modify the
           <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file on your
-        lifecycle-manager node as follows:</p>
+        lifecycle manager as follows:</p>
       <ol>
-        <li>Log in to the lifecycle-manager node.</li>
+        <li>Log in to the lifecycle manager.</li>
         <li>Make the following changes to the
             <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file: <ol>
             <li>Add your VSA backend to the <codeph>enabled_backends</codeph> section:

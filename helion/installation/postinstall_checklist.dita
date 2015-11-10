@@ -5,7 +5,7 @@
   <body>
     <!--Needs Work-->
     <section id="creds"><title>Determining Your User Credentials</title>
-      <p>On your lifecycle-manager node, in the
+      <p>On your lifecycle manager, in the
           <codeph>~/scratch/ansible/next/hos/ansible/group_vars/</codeph> directory you will find
         several files. In the one labeled as first control plane node you can locate the user
         credentials for both the Administrator user (<codeph>admin</codeph>) and your Demo user
@@ -13,7 +13,7 @@
         cloud.</p>
       <p>For example, if you are using the Entry-scale KVM with VSA model and used the default
         naming scheme given in the example configuration files, you can use these commands on your
-        lifecycle-manager node to GREP for your user credentials:</p>
+        lifecycle manager to GREP for your user credentials:</p>
       <p><b>Administrator</b></p>
       <codeblock>grep keystone_admin_pwd entry-scale-kvm-vsa-control-plane-1</codeblock>
       <p><b>Demo</b></p>
@@ -37,14 +37,14 @@ ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml</codeblock>
     </section>
     <section id="sshkeys"><title>Backup Your SSH Keys</title>
       <p>As part of the cloud deployment setup process, SSH keys to access the systems are generated
-        and stored in <codeph>~/.ssh</codeph> on your deployer/lifecycle-manager node.</p>
+        and stored in <codeph>~/.ssh</codeph> on your lifecycle manager.</p>
       <p>These SSH keys allow access to the subsequently deployed systems and should be included in
         the list of content to be archived in any backup strategy.</p>
     </section>
     <section id="endpoints"><title>Retrieving Service Endpoints</title>
       <!--  TODO add some content here  <p>text</p>-->
       <ol>
-        <li><p>From your deployer/lifecycle-manager node, source the admin creds setup during the
+        <li><p>From your lifecycle manager, source the admin creds setup during the
             installation:</p>
           <p><codeblock>unset OS_TENANT_NAME
 source ~/keystone.osrc</codeblock></p></li>

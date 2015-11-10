@@ -4,7 +4,7 @@
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Reconfiguring Ceph Services</title>
   <body>
     <p>Perform the following steps to reconfigure the Ceph services.<ol id="ol_d3k_thx_qt">
-                <li>Login to the Deployer/lifecycle-manager node </li>
+                <li>Login to the lifecycle manager </li>
                 <li>Configure the following parameters in the
                         <codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph> file. <ul
                         id="ul_qsg_dv4_rt">

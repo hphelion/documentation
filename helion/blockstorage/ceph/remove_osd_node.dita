@@ -5,7 +5,7 @@
   <body>
     <p>Perform the following steps to remove the object storage daemon (OSD) node:<ol
         id="ol_v3t_4nt_rt">
-        <li> Login to the Deployer/lifecycle-manager node.</li>
+        <li> Login to the lifecycle manager.</li>
         <li>Make a note of the OSD numbers on the OSD node to be removed. A sample of OSD node is as
             follows:<codeblock>$ ceph osd tree
 # id    weight  type name       up/down reweight

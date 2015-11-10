@@ -743,12 +743,12 @@
         (although all of the data can be encrypted and SSH keys can be password protected).</p>
       <p>This requires the following changes to the configuration files:</p>
       <ul>
-        <li>Update <uicontrol>control_plane.yml</uicontrol> to add the lifecycle-manager node.</li>
+        <li>Update <uicontrol>control_plane.yml</uicontrol> to add the lifecycle manager.</li>
         <li>Update <uicontrol>server_roles.yml</uicontrol> to add the lifecycle-manager role.</li>
         <li>Update <uicontrol>net_interfaces.yml</uicontrol> to add the interface definition for the
-          lifecycle-manager node.</li>
+          lifecycle manager.</li>
         <li>Create a <uicontrol>disks_lifecycle_manager.yml</uicontrol> file to define the disk
-          layout for the lifecycle-manager node.</li>
+          layout for the lifecycle manager.</li>
         <li>Update <uicontrol>servers.yml</uicontrol> to add the dedicated lifecycle-manager
           node.</li>
       </ul>

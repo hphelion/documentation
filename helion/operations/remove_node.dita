@@ -5,7 +5,7 @@
   <body><!--Needs Work-->
   <section id="removeNodes"> The process for removing a compute node requires that you run these
       steps. Note that to run any playbooks whatsoever for cloud maintenance, you will always run
-      from the deployer/lifecycle-manager node.<ol>
+      from the lifecycle manager.<ol>
         <li>Disable provisioning to prevent new instances from being created on this node. </li>
         <li>If possible migrate any instances on the node to other nodes. </li>
         <li>Shut down the node or stop the nova-compute service. </li>
@@ -198,7 +198,7 @@ stack@padawan-ccp-c0-m1-mgmt:~$ nova service-list</codeblock><codeblock>+----+--
 | 13 | hlm004-ccp-comp0003-mgmt | up    | enabled |
 | 16 | hlm004-ccp-comp0001-mgmt | up    | enabled |
 +----+--------------------------+-------+---------+</codeblock>
-      </li><li>Then, on the deployer/lifecycle-manager node, remove the node from <b>servers.yml </b><note>Make
+      </li><li>Then, on the lifecycle manager, remove the node from <b>servers.yml </b><note>Make
             sure you are removing the correct node from <b>servers.yml</b> by ensuring you remove
             the stanza that contains the IP address that matches the node to be removed.</note> Edit
             <b>servers.yml </b>to remove the entry for removed node.

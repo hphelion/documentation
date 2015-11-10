@@ -13,7 +13,7 @@
     <p><b>To Add a New Monitor Node</b></p>
     <p>Perform the following procedure to add a new monitor node to an existing Ceph cluster:<ol
         id="ol_zsj_134_rt">
-        <li>Login to the Deployer/lifecycle-manager node.</li>
+        <li>Login to the lifecycle manager.</li>
         <li>Edit the <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> file to define a
           new monitor node as shown
             below:<codeblock>- id: mon4
@@ -55,7 +55,7 @@ ansible-playbook -i hosts/verb_hosts monasca-deploy.yml --tags active_ping_check
       </ol></p>
     <p>The new monitor node is deployed in an existing Ceph cluster.</p>
     <p><b>To Verify the Newly-Added Monitor Node</b></p>
-    <p>From the Deployer/lifecycle-manager node, run the following
+    <p>From the lifecycle manager, run the following
         command:<codeblock>ceph --cluster ceph -f json quorum_status</codeblock><note>If the Ceph
         cluster name is different than the default (i.e. ceph), you need to modify the above command
         accordingly.</note></p>

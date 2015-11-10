@@ -44,7 +44,7 @@ storevirtual_installer.vsa_excs.NetworkDestroyFailed: Failed to destroy and unde
 
 FATAL: all hosts have already failed -- aborting</codeblock>
       <p>Fix:</p>
-      <p>Set your locale prior to running <codeph>site.yml</codeph> with this command on your lifecycle-manager/deployer node:</p>
+      <p>Set your locale prior to running <codeph>site.yml</codeph> with this command on your lifecycle manager:</p>
       <codeblock>export LC_ALL=C</codeblock>
       </section>
   </body>

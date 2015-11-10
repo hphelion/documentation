@@ -6,7 +6,7 @@
     <section> To add a new compute node to your cloud, you will need to add it to the
         <b>servers.yml</b> file and then run the playbooks that update your cloud configuration.
       Note that to run any playbooks whatsoever for cloud maintenance, you will always run them from
-      the deployer/lifecycle-manager node.</section>
+      the lifecycle manager.</section>
     <section>To begin, access the <b>servers.yml</b> file by checking out the git branch where you
       are required to make the changes: <ol id="ol_bw1_rg5_tt">
         <li>Get the <b>servers.yml</b> file stored in

@@ -20,7 +20,7 @@
               guide.<note>If you want to enable multipath for Cinder volumes carved from 3PAR
               FC/iSCSI storage system, please go through the
                 <codeph>/home/stack/helion/hos/ansible/roles/multipath/README.md </codeph> file on
-              the lifecycle-manager node. The README.md file contains detailed procedures for
+              the lifecycle manager. The README.md file contains detailed procedures for
               configuring multipath for 3PAR FC/iSCSI Cinder volumes.</note></li>
         </ul>
       </p>
@@ -29,7 +29,7 @@
       <title>Configure 3PAR FC as a Cinder Backend</title>
       <p>You must modify the <codeph>cinder.conf.j2</codeph> to configure the FC details.</p>
       <p>Perform the following steps to configure 3PAR FC as Cinder backend:<ol id="ol_dj2_qcz_ht">
-          <li>Log in to lifecycle-manager node.</li>
+          <li>Log in to lifecycle manager.</li>
           <li>Make the following changes to the
               <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file: <ol>
               <li>Add your 3PAR backend to the <codeph>enabled_backends</codeph> section:
@@ -82,7 +82,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
       <p>You must modify the <codeph>cinder.conf.j2</codeph> to configure the iSCSI details.</p>
       <p>Perform the following steps to configure 3PAR iSCSI as Cinder backend:</p>
       <ol id="iSCSI">
-        <li>Log in to lifecycle-manager node.</li>
+        <li>Log in to lifecycle manager.</li>
         <li>Make the following changes to the
             <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file: <ol>
             <li>Add your 3PAR backend to the <codeph>enabled_backends</codeph> section:

@@ -81,7 +81,7 @@
       <p>Once the initial installation is finished, complete the lifecycle-manager setup with these
         steps:</p>
       <ol>
-        <li>Ensure your lifecycle-manager node has a valid DNS nameserver specified in
+        <li>Ensure your lifecycle manager has a valid DNS nameserver specified in
             <codeph>/etc/resolv.conf</codeph>.</li>
         <li>Set the environment variable LC_ALL: <codeblock>export LC_ALL=C</codeblock>
           <note>This can be added to <codeph>~stack/.bashrc</codeph> or
@@ -95,7 +95,7 @@
         the steps. Run then as the user you just created (or <codeph>stack</codeph> if you left the
         default of "stack").</note>
       <ol>
-        <li>Log into your lifecycle-manager node as the user you created and mount the install media
+        <li>Log into your lifecycle manager as the user you created and mount the install media
           at <codeph>/media/cdrom</codeph>. It may be necessary to use <codeph>wget</codeph> or
           another file transfer method to transfer the install media to the deployer before
           completing this step. Here is the command to mount the media:

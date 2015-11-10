@@ -117,12 +117,12 @@
           it's back online</b></title>
       <p>Even after the removable of a VSA node, it should continue to remain in the
           <codeph>data/servers.yml</codeph> file. You should also create a
-          <codeph>servers.yml</codeph> file on the deployer/lifecycle-manager node with a list of
+          <codeph>servers.yml</codeph> file on the lifecycle manager with a list of
         VSA nodes that are currently offline, so that these nodes get excluded from any further
         reconfiguration or upgrades. This prevents a VSA node that is offline from being included in
         deployments.</p>
       <p>Perform the following steps to remove the VSA node for maintenance:<ol>
-          <li>Login to the deployer/lifecycle-manager node.</li>
+          <li>Login to the lifecycle manager.</li>
           <li>Verify the node that needs to be kept under maintenance from
               <codeph>hosts/verb_hosts</codeph>
             file:<codeblock>cd ~/scratch/ansible/next/hos/ansible
@@ -144,7 +144,7 @@ ansible-playbook -i hosts/verb_hosts</codeblock></li>
               are offline.</p></li>
         </ol></p>
       <p>Perform the following steps to remove the VSA node for maintenance.<ol>
-          <li>Login to the Deployer/lifecycle-manager node.</li>
+          <li>Login to the lifecycle manager.</li>
           <li>Verify that the node that needs to be kept under maintenance from
               <codeph>hosts/verb_hosts</codeph>
             file:<codeblock>cd ~/scratch/ansible/next/hos/ansible

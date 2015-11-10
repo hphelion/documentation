@@ -21,14 +21,14 @@
           <codeph>network_groups.yml</codeph> file during the configuration process for your cloud
         then the Operations Console will be accessed over port 9095 on that hostname.</p>
       <p>If your administrator did not set a hostname value then in order to determine which IP
-        address to use to access Horizon you can use this command from your lifecycle-manager node:
+        address to use to access Horizon you can use this command from your lifecycle manager:
         <codeblock>grep vip-HZN-WEB /etc/hosts</codeblock></p>
       <p>The output of that command will show you the virtual IP address you should use. It is
         listening over port 9095 on that virtual IP address, so you can use the following syntax to
         access it:<codeblock>http://VIP:9095</codeblock></p>
       <p>The default username for the Administrator user is <codeph>admin</codeph>. In order to find
         the randomized password that is created for this user you will need to look into the
-          <codeph>~/service.osrc</codeph> file on the deployer/lifecycle-manager node. You can do
+          <codeph>~/service.osrc</codeph> file on the lifecycle manager. You can do
         that with this command:</p>
       <codeblock>cat ~/service.osrc</codeblock>
       <!-- 
