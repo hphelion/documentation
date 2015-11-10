@@ -466,38 +466,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
       <p>The newly created volume type will be displayed in the <b>Volume Types</b> list confirming
         its creation.</p>
     </section>
-    <section id="extra-spec"><title>Extra Specifications Options</title>
-      <p>VSA supports volumes creation with varying attributes like thin provisioning enable, raid
-        type, AO enabled volume etc. All these attributes can be specified using extra spec of
-        volume type. Admin is expected to define appropriate extra spec for VSA volume type as per
-        the guidelines provided at <xref
-          href="http://docs.openstack.org/kilo/config-reference/content/hp-lefthand-supported-ops-rest.html"
-          format="html" scope="external"/>.</p>
-      <p>The following Cinder Volume Type extra-specs options enable control over the VSA storage
-        provisioning type (thin or full) and specify protection for backend volumes:</p>
-      <codeblock>hplh:provisioning thin or full
-hplh:data_pl r-0 or r-5 or r-10-2 or r-10-3 or r-10-4 or r-6</codeblock>
-      <p>For example:</p>
-      <codeblock>hplh:provisioning thin
-hplh:data_pl r-5 
-volume_backend_name MyVolumeBackend</codeblock>
-      <p>The protection level options enable different data protection configurations. Supported
-        data protection options are:</p>
-      <ul>
-        <li>r-0 (RAID 0) provides the best data capacity and processing performance, but offers no
-          data protection (no fault tolerance) in the event of a failure.</li>
-        <li>r-5 (RAID 5) consists of three or more physical disk drives in an array. Stores parity
-          data across all drives. If one drive fails, the remaining drives use the parity data to
-          allow the array to continue to operate until the failed drive is replaced. If more than
-          one drive fails, the array fails.</li>
-        <li>r-10-2 (RAID 10+2) stripes and mirrors data across four or more disks.</li>
-        <li>r-10-3 (RAID 10+3) stripes and mirrors data across five or more disks.</li>
-        <li>r-10-4 RAID 10+4) stripes and mirrors data across six or more disks.</li>
-        <li>r-6 (RAID 6) is based on and extends RAID5. It requires a minimum of four drives and
-          creates multiple parity sets such that the array can function with up to two drives
-          failing at the same time.</li>
-      </ul>
-    </section>
+    
     <section id="associate_volumetype">
       <title>Associate the Volume Type to the Backend</title>
       <p> After the volume type names have been created, you can assign extra_specs to the volumes
@@ -525,6 +494,83 @@ volume_backend_name MyVolumeBackend</codeblock>
       <p>Once the volume type is mapped to the backend, you can create volumes with this volume
         type.</p>
     </section>
+    
+    <section id="extra-spec"><title>Extra Specification Options</title>
+      <p>VSA supports volumes creation with varying attributes like thin provisioning enable, raid
+        type, AO enabled volume etc. All these attributes can be specified using extra spec of
+        volume type. The administrator is expected to define appropriate extra spec for VSA volume type as per
+        the guidelines provided at <xref
+          href="http://docs.openstack.org/kilo/config-reference/content/hp-lefthand-supported-ops-rest.html"
+          format="html" scope="external"/>.</p>
+      <p>The following Cinder Volume Type extra-specs options enable control over the VSA storage
+        provisioning type (thin or full) and specify protection for backend volumes:<table
+          frame="all" rowsep="1" colsep="1" id="table_ntq_swv_yt">
+          <tgroup cols="3">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="newCol3" colnum="3" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value</entry>
+                <entry>Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>hplh:provisioning</entry>
+                <entry>thin or full</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>hplh:data_pl</entry>
+                <entry>r-0, r-5, r-10-2, r-10-3, r-10-4, or r-6</entry>
+                <entry><p>The protection level options enable different data protection configurations.
+                  Supported data protection options are:</p>
+                  <ul>
+                    <li>r-0 (RAID 0) provides the best data capacity and processing performance, but
+                      offers no data protection (no fault tolerance) in the event of a failure.</li>
+                    <li>r-5 (RAID 5) consists of three or more physical disk drives in an array.
+                      Stores parity data across all drives. If one drive fails, the remaining drives
+                      use the parity data to allow the array to continue to operate until the failed
+                      drive is replaced. If more than one drive fails, the array fails.</li>
+                    <li>r-10-2 (RAID 10+2) stripes and mirrors data across four or more disks.</li>
+                    <li>r-10-3 (RAID 10+3) stripes and mirrors data across five or more disks.</li>
+                    <li>r-10-4 RAID 10+4) stripes and mirrors data across six or more disks.</li>
+                    <li>r-6 (RAID 6) is based on and extends RAID5. It requires a minimum of four
+                      drives and creates multiple parity sets such that the array can function with
+                      up to two drives failing at the same time.</li>
+                  </ul></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></p>
+      <p>To add additional extra specs to your volume type, do the following:</p>
+        <ol>
+        <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
+          >Accessing Horizon</xref> for details.</li>
+        <li>Ensure that you are scoped to your <b>admin</b> Project. Then under the <b>Admin</b>
+          menu in the navigation pane, click on <b>Volumes</b> under the <b>System</b> subheading.
+          <p><image href="../../media/vsa/createvoltype1.png"/></p></li>
+        <li>Click the <b>Volume Type</b> tab to list the volume types. <p><image
+          href="../../media/vsa/associatevoltype2.png"/></p></li>
+        <li>In the <b>Actions</b> column of the Volume Type you created earlier, click the
+          drop-down option and select <b>View Extra Specs</b> which will bring up the <b>Volume
+            Type Extra Specs</b> options. <p><image href="../../media/vsa/associatevoltype3.png"
+            /></p></li>
+          <li>Click the <b>Create</b> button on the <b>Volume Type Extra Specs</b> screen. <p><image
+            href="../../media/vsa/extraspecs1.png"/></p></li>
+          <li>In the <b>Key</b> field, enter the extra spec you want to add. In the
+            <b>Value</b> box, enter the value for that spec. Once you have completed that, click the <b>Create</b> button to create the extra
+            volume type specs. 
+            <p>In this example below, we are adding the <codeph>hplh:provisioning</codeph> spec with a value of <codeph>full</codeph>:</p>
+              <p><image href="../../media/vsa/extraspecs2.png"/></p></li>
+          <li>Once you have completed your list of extra specs, you can click the <b>Close</b> button.</li>
+        </ol>
+      <p>Here is what a completed list of extra specs may look like:</p>
+      <p><image href="../../media/vsa/extraspecs3.png"/></p>
+    </section>
+    
     <section id="post_install"><title>Verifying your VSA backend</title>
       <p>After you have configured VSA as your Block Storage backend, you can verify this all
         completed successfully by creating a new volume.</p>
