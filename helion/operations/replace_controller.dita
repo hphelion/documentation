@@ -26,7 +26,7 @@ git checkout site</codeblock> then change,
           as necessary, the mac-addr, ilo-ip, ilo-password, and ilo-user fields of this existing
           controller node. Save and commit the change
           <codeblock>git commit -a -m "repaired node X"</codeblock></li>
-        <li>Run the Configuration Processor as follows:
+        <li>Run the configuration processor as follows:
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
           Then run ready-deployment:

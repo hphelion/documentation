@@ -35,7 +35,7 @@
           <li>Collect the IP addresses of the VSA virtual machines and cluster virtual IP addresses
             allocated from the<codeph>
               ~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph> file. This file is
-            generated as part of output of the Configuration Processor during installation. You need
+            generated as part of output of the configuration processor during installation. You need
             these IP address to discover deployed VSA servers and to create the storage
             clusters.</li>
         </ul>
@@ -100,7 +100,7 @@
           <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "firewall rule update"</codeblock></li>
-        <li>Run the Configuration Processor:
+        <li>Run the configuration processor:
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <li>Create the deployment directory structure:
@@ -384,7 +384,7 @@ git commit -m "&lt;your commit message>"</codeblock><note>Before
             following environment variable:<codeph> export
               HOS_USER_PASSWORD_ENCRYPT_KEY=&lt;encryption key></codeph> See <xref
               href="install_entryscale_kvm.dita#install_kvm"/> for reference.</note></li>
-        <li>Run the Configuration Processor:
+        <li>Run the configuration processor:
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <li>Run the following command to create a deployment

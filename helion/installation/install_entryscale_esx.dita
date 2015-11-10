@@ -148,7 +148,7 @@ git commit -m "My config or other commit message"</codeblock>
         nodes so that they are accessible to be re-imaged in a later step:
         <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost bm-power-status.yml</codeblock></li>
-      <li>Run the Configuration Processor, as follows:
+      <li>Run the configuration processor, as follows:
         <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
     </ol>

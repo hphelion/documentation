@@ -5,7 +5,7 @@
     Management</title>
   <body>
     <p>In HPE Helion OpenStack 2.0, a local git repository is used to track configuration changes
-      and the Configuration Processor (CP) uses this repository. The introduction of a git workflow
+      and the configuration processor (CP) uses this repository. The introduction of a git workflow
       also means that your configuration history is maintained, making rollbacks easier as well as
       keeping a record of previous configuration settings.</p>
     <p>The git repository is installed by the lifecycle manager on the lifecycle manager node.</p>
@@ -94,14 +94,14 @@
         is not met. As a result of this step, the 'site' branch gets a configuration under the
         my_cloud/definition subdirectory. </p>
       <p>
-        <b>Run the Configuration Processor</b>
+        <b>Run the configuration processor</b>
       </p>
-      <p>Once you have committed configuration settings, you must run the Configuration Processor,
+      <p>Once you have committed configuration settings, you must run the configuration processor,
         which takes as input your configuration, and also any persistent data saved from a previous
         run. (That data contains things such as the allocation of roles to servers, etc.) It
         produces as output a set of ansible variable settings (amongst other input to the ansible
         playbooks); and may update its persistent state. </p>
-      <p>To run the Configuration Processor, you must execute
+      <p>To run the configuration processor, you must execute
         <codeblock>ansible-playbook -i hosts/localhost config-proessor-run.yml </codeblock> However,
         the CP persistent state and the ansible outputs now reside on different branches, not
         immediately visible to you. If the config processor run was unsuccessful, you may continue
@@ -163,7 +163,7 @@ git commit -m "your commit message goes here in quotes"</codeblock>
             processor:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml
 </codeblock>
-            to produce the required Configuration Processor output from those changes. Review the
+            to produce the required configuration processor output from those changes. Review the
             output files manually if required.</li>
           <li>Ready the deployment area
             <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>

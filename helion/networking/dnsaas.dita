@@ -29,7 +29,7 @@
             <li><xref href="#HP2.0DNSaaS/ExampleDeployment">Select an Example Deployment Model</xref></li>
             <li><xref href="#HP2.0DNSaaS/CustomizeExample">Customize the Example Deployment Model</xref></li>
             <li><xref href="#HP2.0DNSaaS/RunPreInstallPlaybook">Run the Pre-Installation Playbook</xref></li>
-            <li><xref href="#HP2.0DNSaaS/RunConfigProcessor">Run the Configuration Processor</xref></li>
+            <li><xref href="#HP2.0DNSaaS/RunConfigProcessor">Run the configuration processor</xref></li>
             <li><xref href="#HP2.0DNSaaS/RunReadyDeploymentPlay">Run the Ready Deployment Playbook</xref></li>
           </ul>
         </li>
@@ -498,7 +498,7 @@ localhost                  : ok=19   changed=12   unreachable=0    failed=0
       </sectiondiv>
       
       <sectiondiv>
-        <p id="RunConfigProcessor"><b>Run the Configuration Processor</b></p>
+        <p id="RunConfigProcessor"><b>Run the configuration processor</b></p>
         <p>At the end of each playbook, ensure both "unreachable" and "failed" are zero.</p>
         <codeblock>$ ansible-playbook -i hosts/localhost config-processor-run.yml
           
@@ -507,7 +507,7 @@ localhost                  : ok=19   changed=12   unreachable=0    failed=0
 [ OUTPUT TRIMMED ]
           
 PLAY RECAP ******************************************************************** 
-config-processor | run-config-processor | Run Configuration Processor over the given cloud configuration --- 2.44s
+config-processor | run-config-processor | Run configuration processor over the given cloud configuration --- 2.44s
 git-operations | _assemble-working-directory | Assemble scratch content --- 0.76s
 git-operations | _persist-to-git | Prep new commit ---------------------- 0.69s
 config-processor | configure | Sync ansible vars for cloud deployment --- 0.67s

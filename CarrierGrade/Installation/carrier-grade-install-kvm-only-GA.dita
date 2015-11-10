@@ -317,7 +317,7 @@ Password: cghelion</codeblock></p></li>
 
   <pre>{</pre><pre>    "product": {</pre><pre>        "version": 1</pre><pre>    },</pre><pre> </pre><pre>    "node-type": [</pre><pre>        {</pre><pre>            "name": "CCN",</pre><pre>            "interface-map": [</pre><pre>                {</pre><pre>                    "name": "INTF0",</pre><pre>                    "ethernet-port-map": {</pre><pre>                        "interface-ports": [ "eth0" ]</pre><pre>                    },</pre><pre>                    "logical-network-map": [</pre><pre>                        {</pre><pre>                            "name": "CLM",</pre><pre>                            "type": "vlan",</pre><pre>                            "segment-id": "502",</pre><pre>                            "network-address": {</pre><pre>                                "cidr": "10.50.2.0/24",</pre><pre>                                "start-address": "10.50.2.10",</pre><pre>                                "gateway": "10.50.2.1"</pre><pre>                            }</pre><pre>                        },</pre><pre>                        {</pre><pre>                            "name": "CAN",</pre><pre>                            "type": "vlan",</pre><pre>                            "segment-id": "504",</pre><pre>                            "network-address": {</pre><pre>                                "cidr": "10.50.4.0/24",</pre><pre>                                "start-address": "10.50.4.10"</pre><pre>                            }</pre><pre>                        },</pre><pre>                        {</pre><pre>                            "name": "BLS",</pre><pre>                            "type": "vlan",</pre><pre>                            "segment-id": "76",</pre><pre>                            "network-address": {</pre><pre>                                "cidr": "172.16.76.0/19",</pre><pre>                                "start-address": "172.16.76.10"</pre><pre>                            }</pre><pre>                        }</pre><pre>                    ]</pre><pre>                }</pre><pre>            ]</pre><pre>        }</pre><pre>    ]</pre><pre>}</pre><p>
 
-            <b>NOTE:</b> The Helion Configuration Processor assigns the first address of the CLM
+            <b>NOTE:</b> The Helion configuration processor assigns the first address of the CLM
             address range to itself for serving python and debian repositories. Make sure that you
             set the first IP address of the CLM range for the eth2 (CLM) address of the HLM
             node.</p></li>
@@ -447,7 +447,7 @@ volume_driver=cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver
 hp3par_debug=False
 hp3par_iscsi_chap_enabled=false</codeblock></li></ul></li>            
 <li>Once you have correctly edited all the json Cloud Model files, run the HPE Helion OpenStack
-          Configuration Processor: <codeblock>hcfgproc -d definition.json</codeblock><p>The
+          configuration processor: <codeblock>hcfgproc -d definition.json</codeblock><p>The
               <codeph>hcfgproc</codeph> script gets installed in <codeph>/usr/local/bin</codeph> by
             the <codeph>prepare-env</codeph> script. The script generates a <codeph>clouds/</codeph>
             directory within the directory. </p></li>

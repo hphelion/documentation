@@ -32,7 +32,7 @@ ansible-playbook -i hosts/verb_hosts osconfig-run.yml -limit helion-cp1-swobj000
             information and instructions, see <xref href="first_proxy_server.dita#topic_rtc_s3t_mt"/>
             <xref href="recovering_builder_file.dita#topic_gbz_13t_mt"/>.)</li>
           <li>Configure services on the node using the <codeph>site.yml</codeph> playbook. If you
-            have used an encryption password when running the Configuration Processor include the
+            have used an encryption password when running the configuration processor include the
               <codeph>--ask-vault-pass</codeph>
               argument.<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --ask-vault-pass --limit &lt;hostname></codeblock><p>For
               example:<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --ask-vault-pass --limit helion-cp1-swobj0002*</codeblock></p></li>

@@ -484,9 +484,9 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></li
         
     <section><title>Deploy the HPE Helion OpenStack cloud</title>
       <ol>
-        <li>Run the HPE Helion OpenStack Configuration Processor:
+        <li>Run the HPE Helion OpenStack configuration processor:
             <codeblock>hcfgproc -d definition.json</codeblock><p>The HPE Helion OpenStack
-            Configuration Processor is a script, called <codeph>hcfgproc</codeph>, that is
+            configuration processor is a script, called <codeph>hcfgproc</codeph>, that is
             incorporated into the installation environment. This command generates the necessary
             configuration for the cloud. </p><p>When the command completes, you will see the
             following:

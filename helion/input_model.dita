@@ -95,7 +95,7 @@
             <li><xref href="#input_model/configneutronprovidervlans">Configuring Neutron Provider
                 VLANs</xref></li>
           </ul></li>
-        <li><xref href="#input_model/cpinfofiles">Configuration Processor Information Files</xref>
+        <li><xref href="#input_model/cpinfofiles">configuration processor Information Files</xref>
           <ul>
             <li><xref href="#input_model/address_info_yml">Address_info.yml</xref></li>
             <li><xref href="#input_model/firewall_info_yml">Firewall_info.yml</xref></li>
@@ -122,7 +122,7 @@
         <li>Network traffic separation</li>
         <li>CIDR and VLAN assignments</li>
       </ul>
-      <p>The input model is consumed by the Configuration Processor which parses and validates the
+      <p>The input model is consumed by the configuration processor which parses and validates the
         input model and outputs the effective configuration that will be deployed to each server
         that makes up your cloud.</p>
       <p>The document is structured as follows:</p>
@@ -151,13 +151,13 @@
       <p><image href="../media/inputmodel/hphelionopenstack_concepts.png"/></p>
       <p><xref href="../media/inputmodel/hphelionopenstack_concepts_lg.png" scope="external"
           format="html">Download a high-res version</xref></p>
-      <p>The Configuration Processor reads and validates the input model described in the YAML files
+      <p>The configuration processor reads and validates the input model described in the YAML files
         discussed above, combines it with the service definitions provided by HPE Helion OpenStack
         and any persisted state information about the current deployment to produce a set of Ansible
         variables that can be used to deploy the cloud. It also produces a set of information files
         that provide details about the configuration.</p>
       <p>The relationship between the file systems on the HPE Helion OpenStack deployment server and
-        the Configuration Processor is shown in the following diagram. Below the line are the
+        the configuration processor is shown in the following diagram. Below the line are the
         directories that you, the cloud administrator, interact with. Above the line are the
         directories that are maintained by HPE Helion OpenStack.</p>
       <p><image href="../media/inputmodel/hphelionopenstack_directories.png"/></p>
@@ -165,19 +165,19 @@
           format="html">Download a high-res version</xref></p>
       <p>The input model is read from the <codeph>~/helion/my_cloud/definition</codeph> directory.
         Although the supplied examples use separate files for each type of object in the model, the
-        names and layout of the files have no significance to the Configuration Processor, it simply
+        names and layout of the files have no significance to the configuration processor, it simply
         reads all of the .yml files in this directory. Cloud administrators are therefore free to
         use whatever structure is best for their context. For example, you may decide to maintain
         separate files or sub-directories for each physical rack of servers.</p>
       <p>As mentioned, the examples use the conventional upper casing for object names, but these
         strings are used only to define the relationship between objects. They have no specific
-        significance to the Configuration Processor.</p>
+        significance to the configuration processor.</p>
     </section>
     <section id="cloud"><title>Cloud</title>
       <p>The Cloud definition includes a few top-level configuration values such as the name of the
         cloud, the host prefix, details of external services (NTP, DNS, SMTP) and the firewall
         settings.</p>
-      <p>The location of the cloud configuration file also tells the Configuration Processor where
+      <p>The location of the cloud configuration file also tells the configuration processor where
         to look for the files that define all of the other objects in the input model.</p>
     </section>
     <section id="controlplanes"><title>Control Planes</title>
@@ -196,7 +196,7 @@
         (use) another service (such as Neutron consuming MySQL, Nova consuming Neutron) always use
         the service within the same <uicontrol>control-plane</uicontrol> before looking in any
         related <uicontrol>control-planes</uicontrol>. It is one of the functions of the
-        Configuration Processor to resolve these relationships and make sure that each
+        configuration processor to resolve these relationships and make sure that each
         consumer/service is provided with the configuration details to connect to the appropriate
         provider/service.</p>
       <p>Each <uicontrol>control-plane</uicontrol> is structured as <uicontrol>clusters</uicontrol>
@@ -366,7 +366,7 @@
       <p><image href="../media/inputmodel/hphelionopenstack_servergroups.png"/></p>
       <p><xref href="../media/inputmodel/hphelionopenstack_servergroups_lg.png" scope="external"
           format="html">Download a high-res version</xref></p>
-      <p>When allocating <uicontrol>servers</uicontrol>, the Configuration Processor will traverse
+      <p>When allocating <uicontrol>servers</uicontrol>, the configuration processor will traverse
         down the hierarchy of <uicontrol>server-groups</uicontrol> listed as failure zones until it
         can find an available server with the required <uicontrol>server-role</uicontrol>. If the
         allocation policy is defined to be strict, it will allocate <uicontrol>servers</uicontrol>
@@ -382,7 +382,7 @@
         networks to which <uicontrol>servers</uicontrol> associated with
           <uicontrol>server-groups</uicontrol> at or below this point in the hierarchy are
         connected.</p>
-      <p>When the Configuration Processor needs to resolve the specific
+      <p>When the configuration processor needs to resolve the specific
           <uicontrol>network</uicontrol> a <uicontrol>server</uicontrol> should be configured to
         use, it traverses up the hierarchy of <uicontrol>server-groups</uicontrol>, starting with
         the group the server is directly associated with, until it finds a server-group that lists a
@@ -457,9 +457,9 @@
       <p>Note that HPE Helion OpenStack will configure the routing rules on the servers it deploys
         and will validate that the routes between services exist in the model, but ensuring that
         gateways can provide the required routes is the responsibility of your network
-        configuration. The Configuration Processor provides information about the routes it is
+        configuration. The configuration processor provides information about the routes it is
         expecting to be configured.</p>
-      <p>For a detailed description of how the Configuration Processor validates routes, refer to
+      <p>For a detailed description of how the configuration processor validates routes, refer to
           <xref href="input_model.dita#input_model/networkroutevalidation">Network Route
           Validation</xref>.</p>
     </section>
@@ -485,7 +485,7 @@
         OpenStack supplied service definition files.</p>
       <p>The list of endpoint roles for a <uicontrol>load-balancer</uicontrol> make it possible to
         configure separate <uicontrol>load-balancers</uicontrol> for public and internal access to
-        services, and the Configuration Processor uses this information to both ensure the correct
+        services, and the configuration processor uses this information to both ensure the correct
         registrations in Keystone and to make sure the internal traffic is routed to the correct
         endpoint. HPE Helion OpenStack services are configured to only connect to other services via
         internal virtual IP addresses and endpoints, allowing the name and security certificate of
@@ -562,7 +562,7 @@
         to be used for network connections and consumed by services in a future release.</p>
     </section>
     <section id="firewallconfiguration"><title>Firewall Configuration</title>
-      <p>The Configuration Processor uses the details it has about which networks and ports
+      <p>The configuration processor uses the details it has about which networks and ports
           <uicontrol>service-components</uicontrol> use to create a set of firewall rules for each
         server. The model allows additional user-defined rules on a per
           <uicontrol>network-group</uicontrol> basis.</p>
@@ -952,7 +952,7 @@
               <row>
                 <entry>ip-addr</entry>
                 <entry>
-                  <p>The IP address is used by the Configuration Processor to install and configure
+                  <p>The IP address is used by the configuration processor to install and configure
                     the service components on this server.</p>
                   <p>This IP address must be within the range of a <uicontrol>network</uicontrol>
                     defined in this model.</p>
@@ -2108,7 +2108,7 @@
     </section>
     <section id="co_firewallrules">
       <title>Firewall Rules</title>
-      <p>The Configuration Processor will automatically generate "allow" firewall rules for each
+      <p>The configuration processor will automatically generate "allow" firewall rules for each
         server based on the services deployed and block all other ports. The firewall rules in the
         input model allow the customer to define additional rules for each network group.</p>
       <p>Administrator-defined rules are applied after all rules generated by the Configuration
@@ -2256,7 +2256,7 @@
 
     <section id="othertopics"><title>Other Topics</title></section>
     <section id="namegeneration"><title>Name Generation</title>
-      <p>Names are generated by the Configuration Processor for all allocated IP addresses. A server
+      <p>Names are generated by the configuration processor for all allocated IP addresses. A server
         connected to multiple networks will have multiple names associated with it. One of these may
         be assigned as the hostname for a server via the network-group configuration (see <xref
           href="#input_model/co_nicmappings">NIC Mappings</xref>). Names are generated from data
@@ -2299,7 +2299,7 @@
             </row>
             <row>
               <entry>&lt;member_id></entry>
-              <entry>is the ordinal within the cluster, generated by the Configuration Processor as
+              <entry>is the ordinal within the cluster, generated by the configuration processor as
                 servers are allocated to the cluster</entry>
             </row>
             <row>
@@ -2347,7 +2347,7 @@
             </row>
             <row>
               <entry>&lt;member_id></entry>
-              <entry>is the ordinal within the cluster, generated by the Configuration Processor as
+              <entry>is the ordinal within the cluster, generated by the configuration processor as
                 servers are allocated to the cluster, padded with leading zeroes to four
                 digits.</entry>
             </row>
@@ -2367,7 +2367,7 @@
 
 
     <section id="persisteddata"><title>Persisted Data</title>
-      <p>The Configuration Processor is making allocation decisions on servers and needs to remember
+      <p>The configuration processor is making allocation decisions on servers and needs to remember
         IP addresses between successive runs so that if new servers are added to the input model
         they don’t disrupt the previously deployed allocations.</p>
       <p>To allow users to make multiple iterations of the input model before deployment HPE Helion
@@ -2376,22 +2376,22 @@
         following example:</p>
       <p>Imagine you have completed your HPE Helion OpenStack deployment with servers A, B, and C
         and you want to add two new compute nodes by adding servers D and E to the input model.</p>
-      <p>When you add these to the input model and re-run the Configuration Processor it will read
+      <p>When you add these to the input model and re-run the configuration processor it will read
         the persisted data for A, B, and C and allocate D and E as new servers. The Configuration
         Processor now has allocation data for A, B, C, D, and E -- which it keeps in a staging area
         (actually a special branch in git) until we get confirmation that the Configuration
         Processor has done what you intended and you are ready to deploy the revised
         configuration.</p>
       <p>If you noticed that the role of E was wrong and it became a Swift node instead of a Nova
-        node you need to be able to change the input mode and re-run the Configuration Processor.
+        node you need to be able to change the input mode and re-run the configuration processor.
         This is fine because the allocations of D and E have not been confirmed, and so the
-        Configuration Processor will re-read the data about A, B, C and re-allocate D and E now to
+        configuration processor will re-read the data about A, B, C and re-allocate D and E now to
         the correct clusters, updating the persisted data in the staging area.</p>
-      <p>You can loop though this as many times as needed. Each time, the Configuration Processor is
+      <p>You can loop though this as many times as needed. Each time, the configuration processor is
         processing the deltas to what is deployed, not the results of the previous run. When you are
-        ready to use the results of the Configuration Processor, you run
+        ready to use the results of the configuration processor, you run
           <codeph>ready-deployment.yml</codeph> which commits the data in the staging area into the
-        persisted data. The next run of the Configuration Processor will then start from the
+        persisted data. The next run of the configuration processor will then start from the
         persisted data for A, B, C, D, and E.</p>
     </section>
 
@@ -2400,9 +2400,9 @@
       <p>Server allocations are persisted by the administrator-defined server ID (see <xref
           href="#input_model/co_servers">Servers</xref>), and include the control plane,
         cluster/resource name, and ordinal within the cluster or resource group.</p>
-      <p>To guard against data loss, the Configuration Processor persists server allocations even
+      <p>To guard against data loss, the configuration processor persists server allocations even
         when the server ID no longer exists in the input model -- for example, if a server was
-        removed accidentally and the Configuration Processor allocated a new server to the same
+        removed accidentally and the configuration processor allocated a new server to the same
         ordinal, then it would be very difficult to recover from that situation.</p>
       <p>The following example illustrates the behavior:</p>
       <p>A cloud is deployed with four servers with IDs of A, B, C, and D that can all be used in a
@@ -2466,7 +2466,7 @@
       </p>
       <p>(In this example server D has not been allocated because the group is at its max size, and
         there are no other groups that required this server)</p>
-      <p>If server B is removed from the input model and the Configuration Processor is re-run, the
+      <p>If server B is removed from the input model and the configuration processor is re-run, the
         state is changed to:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="persist_exam_2">
@@ -2524,7 +2524,7 @@
           </tgroup>
         </table>
       </p>
-      <p>The details associated with server B are still retained, but the Configuration Processor
+      <p>The details associated with server B are still retained, but the configuration processor
         will not generate any deployment data for this server. Server D has been added to the group
         to meet the minimum size requirement but has been given a different ordinal and hence will
         get different names and IP addresses than were given to server B.</p>
@@ -2585,40 +2585,40 @@
           </tgroup>
         </table>
       </p>
-      <p>The Configuration Processor will issue a warning that server B cannot be returned to the
+      <p>The configuration processor will issue a warning that server B cannot be returned to the
         compute group because it would exceed the max-size constraint. However, because the
-        Configuration Processor knows that server B is associated with this group it won’t allocate
+        configuration processor knows that server B is associated with this group it won’t allocate
         it to any other group that could use it, since that might lead to data loss on that
         server.</p>
       <p>If the max-size value of the group was increased, then server B would be allocated back to
         the group, with its previous name and addresses
         (<codeph>mycloud-cp1-compute0002</codeph>).</p>
-      <p>Note that the Configuration Processor relies on the server ID to identify a physical
-        server. If the ID value of a server is changed the Configuration Processor will treat it as
+      <p>Note that the configuration processor relies on the server ID to identify a physical
+        server. If the ID value of a server is changed the configuration processor will treat it as
         a new server. Conversely, if a different physical server is added with the same ID as a
-        deleted server the Configuration Processor will assume that it is the original server being
+        deleted server the configuration processor will assume that it is the original server being
         returned to the model.</p>
       <p>You can force the removal of persisted data for server that are no longer in the input
-        model by running the Configuration Processor with the
+        model by running the configuration processor with the
           <codeph>remove_deleted_servers</codeph> option, like below:</p>
       <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml -e remove_deleted_servers="y"</codeblock>
     </section>
     <section id="persistedaddressallocations"><title>Persisted Address Allocations</title>
-      <p>The Configuration Processor persists IP address allocations by the generated name (see
+      <p>The configuration processor persists IP address allocations by the generated name (see
           <xref href="#input_model/namegeneration">Name Generation</xref> for how names are
         generated). As with servers once an address has been allocated, that address will remain
-        allocated until the Configuration Processor is explicitly told that it is no longer
-        required. The Configuration Processor will generate warnings for addresses that are
+        allocated until the configuration processor is explicitly told that it is no longer
+        required. The configuration processor will generate warnings for addresses that are
         persisted but no longer used.</p>
       <p>You can remove persisted address allocations that are no longer used in the input model by
-        running the Configuration Processor with the <codeph>free_unused_addresses</codeph> option,
+        running the configuration processor with the <codeph>free_unused_addresses</codeph> option,
         like below:</p>
       <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml -e free_unused_addresses="y"</codeblock>
     </section>
     <section id="serverallocation"><title>Server Allocation</title>
-      <p>The Configuration Processor allocates servers to a cluster or resource group in the
+      <p>The configuration processor allocates servers to a cluster or resource group in the
         following sequence:</p>
       <ol>
         <li>Any <uicontrol>servers</uicontrol> that are persisted with a state of "allocated" are
@@ -2637,7 +2637,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml -e free_unused_addr
           current deployment, and so you must resolve any conflicts before they can be
           redeployed.</li>
         <li>If the <uicontrol>cluster</uicontrol> or <uicontrol>resource group</uicontrol> is still
-          below its minimum size, the Configuration Processor will allocate additional
+          below its minimum size, the configuration processor will allocate additional
             <uicontrol>servers</uicontrol> that meet the <uicontrol>failure-zone</uicontrol> and
             <uicontrol>server-role</uicontrol> criteria. If the allocation policy is set to "strict"
           then the failure zones of servers already in the cluster or resource group are not
@@ -2645,7 +2645,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml -e free_unused_addr
       </ol>
     </section>
     <section id="servernetworkselection"><title>Server Network Selection</title>
-      <p>Once the Configuration Processor has allocated a <uicontrol>server</uicontrol> to a
+      <p>Once the configuration processor has allocated a <uicontrol>server</uicontrol> to a
           <uicontrol>cluster</uicontrol> or <uicontrol>resource group</uicontrol> it uses the
         information in the associated <uicontrol>interface-model</uicontrol> to determine which
           <uicontrol>networks</uicontrol> need to be configured. It does this by:</p>
@@ -2669,13 +2669,13 @@ ansible-playbook -i hosts/localhost config-processor-run.yml -e free_unused_addr
           <uicontrol>interface-model</uicontrol> doesn't include the required
           <uicontrol>network-group</uicontrol>, or there is no <uicontrol>network</uicontrol> from
         that group in the appropriate part of the <uicontrol>server-groups</uicontrol> hierarchy,
-        then the Configuration Processor will generate an error.</p>
-      <p>The Configuration Processor will also generate an error if the
+        then the configuration processor will generate an error.</p>
+      <p>The configuration processor will also generate an error if the
           <uicontrol>server</uicontrol> address does not match any of the networks it will be
         connected to.</p>
     </section>
     <section id="networkroutevalidation"><title>Network Route Validation</title>
-      <p>Once the Configuration Processor has allocated all of the required
+      <p>Once the configuration processor has allocated all of the required
           <uicontrol>servers</uicontrol> and matched them to the appropriate
           <uicontrol>networks</uicontrol>, it validates that all
           <uicontrol>service-components</uicontrol> have the required network routes to other
@@ -2684,7 +2684,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml -e free_unused_addr
         details of which <uicontrol>service-components</uicontrol> need to connect to each other.
         This data is not configurable by the administrator; however, it is provided as part of the
         HPE Helion OpenStack release.</p>
-      <p>For each <uicontrol>server</uicontrol>, the Configuration Processor looks at the list of
+      <p>For each <uicontrol>server</uicontrol>, the configuration processor looks at the list of
           <uicontrol>service-components</uicontrol> it runs and determines the network addresses of
         every other <uicontrol>service-component</uicontrol> it needs to connect to (depending on
         the service, this might be a virtual IP address on a load balancer or a set of addresses for
@@ -2706,7 +2706,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml -e free_unused_addr
       <p>A warning is given for any routes which are using the "default" route since it is possible
         that the user did not intend to route this traffic. Such warning can be removed by adding
         the appropriate <uicontrol>network-group</uicontrol> to the list of routes.</p>
-      <p>The Configuration Processor provides details of all routes between networks that it is
+      <p>The configuration processor provides details of all routes between networks that it is
         expecting to be configured in the <codeph>info/route_info.yml</codeph> file.</p>
       <p>To illustrate how network routing is defined in the input model, consider the following
         example:</p>
@@ -2769,16 +2769,16 @@ ansible-playbook -i hosts/localhost config-processor-run.yml -e free_unused_addr
         network-groups:
           - MANAGEMENT
           - ISCSI</codeblock>
-      <p>When validating the route from nova-compute to the Neutron API, the Configuration Processor
+      <p>When validating the route from nova-compute to the Neutron API, the configuration processor
         will detect that the target address is on a network in the INTERNAL-API network group, and
         that the MANAGEMENT network (which is connected to the compute server) provides a route to
         this network, and thus considers this route valid.</p>
-      <p>When validating the route from nova-compute to VSA, the Configuration Processor will detect
+      <p>When validating the route from nova-compute to VSA, the configuration processor will detect
         that the target address is on a network in the ISCSI network group. However, because there
         is no service component on the compute server connected to the ISCSI network (according to
         the network-group definition) the ISCSI network will not have been configured on the compute
         server (see <xref href="#input_model/servernetworkselection">Server Network
-        Selection</xref>. The Configuration Processor will detect that the MANAGEMENT network-group
+        Selection</xref>. The configuration processor will detect that the MANAGEMENT network-group
         provides a "default" route and thus considers the route as valid (it is, of course, valid to
         route ISCSI traffic); however, because this is using the default route, a warning will be
         issued:</p>
@@ -2815,7 +2815,7 @@ attach in the interface model used by the servers.
              - MANAGEMENT
           forced-network-groups:
              - ISCSI</codeblock>
-      <p>With the attachment to the ISCSI network group forced, the Configuration Processor will
+      <p>With the attachment to the ISCSI network group forced, the configuration processor will
         attach the compute server to a network in that group and validate the route as either being
         direct or between networks in the same network-group.</p>
       <p>The generated <codeph>route_info.yml</codeph> file will include entries such as the
@@ -2909,12 +2909,12 @@ attach in the interface model used by the servers.
       <codeblock>neutron net-create --provider:network_type vlan --provider:physical_network physnet2 --provider:segmentation_id 234 mynet234</codeblock>
     </section>
     <section id="cpinfofiles">
-      <title>Configuration Processor Information Files</title>
+      <title>configuration processor Information Files</title>
       <p>In addition to producing all of the data needed to deploy and configure the cloud, the
-        Configuration Processor also creates a number of information files that provide details of
+        configuration processor also creates a number of information files that provide details of
         the resulting configuration.</p>
       <p>These files can be found in <codeph>~/helion/my_cloud/info</codeph> after the first
-        Configuration Processor run. This directory is also rebuilt each time the Configuration
+        configuration processor run. This directory is also rebuilt each time the Configuration
         Processor is run.</p>
       <p>Most of the files are in YAML format, allowing them to be used in further automation tasks
         if required.</p>
@@ -2963,7 +2963,7 @@ attach in the interface model used by the servers.
             </row>
             <row>
               <entry>explain.txt </entry>
-              <entry>An explanation of the decisions the Configuration Processor has made when
+              <entry>An explanation of the decisions the configuration processor has made when
                 allocating servers and networks</entry>
             </row>
           </tbody>
@@ -3193,7 +3193,7 @@ MANAGEMENT-NET-RACK1:
     </section>
     <section id="explain_txt"><title>Explain.txt</title>
       <p>This file provides details of the server allocation and network configuration decisions the
-        Configuration Processor has made. The sequence of information recorded is:</p>
+        configuration processor has made. The sequence of information recorded is:</p>
       <ul>
         <li>Any service components that are automatically added</li>
         <li>Allocation of servers to clusters and resource groups</li>

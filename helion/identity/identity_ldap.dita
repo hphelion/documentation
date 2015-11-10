@@ -108,7 +108,7 @@ keystone_domainldap_conf:
         </li>
         <li>As suggested at <xref href="../installation/using_git.dita#using_git">Using Git for
             Configuration Management</xref>, commit the new file into local git repository, and
-          rerun Configuration Processor / deployment area preparation playbooks :
+          rerun configuration processor / deployment area preparation playbooks :
           <codeblock>$ cd ~/helion
 $ git checkout site
 $ git add my_cloud/config/keystone/keystone_configure_ldap_my.yml

@@ -165,7 +165,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
         }
     ]
 }</codeblock>
-            <b>NOTE:</b> The Helion Configuration Processor assigns the first address of the CLM
+            <b>NOTE:</b> The Helion configuration processor assigns the first address of the CLM
             address range to itself for serving python and debian repositories. Make sure that you
             set the first IP address of the CLM range for the eth2 (CLM) address of the HLM
             node.</p></li>
@@ -453,9 +453,9 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
     <section><title>Deploy the HPE Helion OpenStack cloud</title>
       <ol>
         <li>Once you have correctly edited all the json files and applied the appropriate patches, run the HPE Helion
-          OpenStack Configuration Processor:
+          OpenStack configuration processor:
             <codeblock>hcfgproc -d definition.json</codeblock><p>The HPE Helion OpenStack
-            Configuration Processor is a script, called <codeph>hcfgproc</codeph>, that is
+            configuration processor is a script, called <codeph>hcfgproc</codeph>, that is
             incorporated into the installation environment. </p></li>
         <li>Review the CloudDiagram, <codeph>hosts.hf</codeph>, and
             <codeph>net/interfaces.d/eth.cfg</codeph> files to make sure the network settings are

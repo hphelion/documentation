@@ -22,7 +22,7 @@
         describing a few common configurations. You may base your deployment on one of these
         templates and customize from there if you wish.</p>
       <p>This installation and configuration is made possible by a new feature in HPE Helion
-        OpenStack 2.0, the Configuration Processor, a set of Python scripts that consume the data
+        OpenStack 2.0, the configuration processor, a set of Python scripts that consume the data
         stored in the configuration YAML files and output Ansible variables used to configure
         networks, services, servers, and the other applications upon which the cloud runs.</p>
       <p>As you will read in the HPE Helion OpenStack 2.0 <xref

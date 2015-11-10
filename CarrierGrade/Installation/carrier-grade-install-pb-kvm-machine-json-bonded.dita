@@ -68,7 +68,7 @@
 }</codeblock>
     
     
-    <p> NOTE: The Helion Configuration Processor assigns the first address of the CLM address range to itself for serving python 
+    <p> NOTE: The Helion configuration processor assigns the first address of the CLM address range to itself for serving python 
         and debian repositories. Make sure that you set the first IP address of the CLM range for the eth2 (CLM) address of the HLM node.</p>
     
         </section>

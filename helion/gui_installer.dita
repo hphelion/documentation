@@ -12,7 +12,7 @@
       Ansible scripts that initiate the installation of HPE Helion OpenStack, the UI application runs
       them behind the scenes. </section>
     <section>While the UI app does more than simply populate the configuration files that the
-      Configuration Processor uses as input to its processes, it does populate them. Therefore you
+      configuration processor uses as input to its processes, it does populate them. Therefore you
       can inspect the files whenever you like, or before reconfiguring your cloud. </section>
     <section>Note, however, that if you decide to look at or try to modify configuration files
       during the process, none of your values are actually written to the configuration files until
@@ -79,7 +79,7 @@
                 >Operating system install help for ESX-based clouds</xref></li>
           </ul>
           <note>When following the guidance for operating system installation on those pages, stop
-            before the sections for <b>Running the Configuration Processor</b>. The GUI installer
+            before the sections for <b>Running the configuration processor</b>. The GUI installer
             will run those steps, and in the case where you have the GUI also install the operating
             systems, it will run all the previous steps (playbooks) as well.</note></li>
         

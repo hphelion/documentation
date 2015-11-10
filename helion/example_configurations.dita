@@ -246,7 +246,7 @@
       </ol>
       <p>Note that, as a convention, the examples use upper case for the object names, but these
         strings are only used to define the relationships between objects and have no specific
-        significance to the Configuration Processor. You can change the names to values that are
+        significance to the configuration processor. You can change the names to values that are
         relevant to your context providing you do so consistently across the input model.</p>
     </section>
     <section id="localizing_inputmodel"><title>Localizing the Input Model</title>
@@ -535,7 +535,7 @@
         Keystone. Users of your cloud will need to be able to resolve this URL to access the cloud
         APIs, and if you are using the TLS, the name must match the certificate used.</p>
       <p>Because this value is difficult to change after initial deployment, this value is left
-        blank in the supplied example which prevents the Configuration Processor from running until
+        blank in the supplied example which prevents the configuration processor from running until
         a value has been supplied. If you want to register the public URLs as IP addresses instead
         of a name, then you can comment out this line.</p>
       <p><b>cert-file</b> - Provide the name of the file located in

@@ -41,20 +41,20 @@
         supported language at this time is American English.</p>
       <p><b>Local Git repository for config tracking</b></p>
       <p>In HPE Helion OpenStack 2.0, a local git repository is used to track configuration changes
-        as well as acting as a repository for the Configuration Processor to gather configuration
+        as well as acting as a repository for the configuration processor to gather configuration
         settings from. The operations work as explained below: <ul>
           <li>Operations under <codeph>~/helion</codeph> are under the aegis of git. You’ll need to
-            commit any config into git (on the "site" branch) before the Configuration Processor can
+            commit any config into git (on the "site" branch) before the configuration processor can
             run it. The script that runs the config processor now guards against uncommitted
             changes.</li>
           <li>Deployment operations are run from a scratch directory that's assembled from various
-            parts (the ansible output of the Configuration Processor and the playbooks). The
+            parts (the ansible output of the configuration processor and the playbooks). The
             directory is created using <codeph>ready-deployment.yml</codeph>.</li>
           <li>All deployment operations should be run from
               <codeph>~/scratch/ansible/next/hos/ansible</codeph>.</li>
         </ul>
       </p>
-      <p>The Configuration Processor uses the config files stored in the repo to apply configuration
+      <p>The configuration processor uses the config files stored in the repo to apply configuration
         settings. An explanation can be found <xref href="installation/using_git.dita">in this
           topic</xref>.</p>
       <p><b>New UEFI support</b></p>

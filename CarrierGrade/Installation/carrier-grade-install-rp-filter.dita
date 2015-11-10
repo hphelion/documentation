@@ -32,7 +32,7 @@
           <codeblock>tar -zxvf rp_filter.tar.gz</codeblock></li>
       </ol>
     </section>
-      <section><title>Apply the patch to the Configuration Processor</title>
+      <section><title>Apply the patch to the configuration processor</title>
         <ol>
         <li>Change to the following directory:
           <codeblock>cd ~/kenobi-node-configuration</codeblock></li>

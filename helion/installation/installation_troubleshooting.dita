@@ -162,7 +162,7 @@ bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------</codeblock>
       <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "commit message"</codeblock>
-      <p>You can then re-run the Configuration Processor:</p>
+      <p>You can then re-run the configuration processor:</p>
       <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
     </section>

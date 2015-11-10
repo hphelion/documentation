@@ -28,7 +28,7 @@
         any backups.</p></section>
     <section><title>Disable the backup/restore jobs of a specific service:</title>
       <p>If some fine tuning is required, you can edit the following file before running the
-        Configuration Processor and ready deployment scripts:
+        configuration processor and ready deployment scripts:
         <codeblock>~/helion/hos/ansible/_freezer_manage_jobs.yml</codeblock></p>
       <p>You can combine the following instructions to disable the creation of multiple service
         jobs. <ul>
@@ -228,7 +228,7 @@
     </section>
     <section><title>Disable the creation of one specific job:</title>
       <p>If some fine tuning is required, you can edit the following file before running the
-        Configuration Processor and ready deployment
+        configuration processor and ready deployment
         scripts:<codeblock>~/helion/hos/ansible/_freezer_manage_jobs.yml</codeblock></p>
       <p>The following example shows how to disable Swift jobs only. You can do this, for example,
         to ensure no space is used in Swift to store backups (in that case, be sure to have some SSH

@@ -44,7 +44,7 @@ git checkout site</codeblock> Add
       ilo_password: "whatever"</codeblock>
         </li>
         <li> Commit the changes <codeblock>git commit -a -m "Add node &lt;name>"</codeblock> Then
-          run the Configuration Processor and the ready deployment
+          run the configuration processor and the ready deployment
           playbooks:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
@@ -159,7 +159,7 @@ padawan-ccp-c1-m3-mgmt     : ok=3    changed=1    unreachable=0    failed=0</cod
     </section>
     <section><title>Server names and IDs</title> The server id is a name you, the user assign to an
       entry in the servers.yml file. This entry will usually represent a physical machine and may be
-      the corporate asset number for example. When the Configuration Processor is run against the
+      the corporate asset number for example. When the configuration processor is run against the
       servers.yml file it will generate a <b>server_info.yml</b> file in
         <b>/helion/my_cloud/info</b> which contains the mapping between the entry in the<b>
         servers.yml</b> file and the machine entity created in your cloud as seen in the output from
