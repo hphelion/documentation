@@ -11,11 +11,11 @@
     </section>
     <section id="Features">
 
-      <title outputclass="h3">Features in HP Helion OpenStack 2.0</title>
+      <title outputclass="h3">this is an H3 12345 ABCDE abcde</title>
       <p>Updated HP Helion OpenStack Services - We have included the core set of OpenStack
       </p>
     </section>
-    <section><title outputclass="h4">Features in HPE Helion OpenStack 2.0</title>
+    <section><title outputclass="h4">this is an H4 12345 ABCDE abcde</title>
       <p><b>Updated HPE Helion OpenStack Services</b> - We have included the core set of OpenStack
 
         services from the <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo"
