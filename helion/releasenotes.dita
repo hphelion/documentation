@@ -3,23 +3,21 @@
 <topic xml:lang="en-us" id="topic12031">
   <title>Beta 0: Release Notes</title>
   <body>
-<<<<<<< HEAD
+
     <section><title>Intro</title>
-    <p>This document provides an overview of the features contained within HP Helion <tm
-=======
-    <p>This document provides an overview of the features contained within HPE Helion <tm
->>>>>>> e873a48c3fc4eda38bef4a27420658d4d51ec636
-        tmtype="reg">OpenStack</tm> 2.0 Beta 0, including known issues and workarounds for this
+
+    <p>This document provides an overview of the features contained within HPE Helion OpenStack 2.0 Beta 0, including known issues and workarounds for this
       release:</p>
     </section>
     <section id="Features">
-<<<<<<< HEAD
+
       <title outputclass="h3">Features in HP Helion OpenStack 2.0</title>
       <p><b>Updated HP Helion OpenStack Services</b> - We have included the core set of OpenStack
-=======
-      <title>Features in HPE Helion OpenStack 2.0</title>
+      </p>
+    </section>
+    <section><title outputclass="h4">Features in HPE Helion OpenStack 2.0</title>
       <p><b>Updated HPE Helion OpenStack Services</b> - We have included the core set of OpenStack
->>>>>>> e873a48c3fc4eda38bef4a27420658d4d51ec636
+
         services from the <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo"
           scope="external" format="html">Kilo release</xref> with the exception of limitations
         notated in this document.</p>
