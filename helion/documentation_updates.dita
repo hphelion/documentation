@@ -26,6 +26,12 @@
             </thead>
             <tbody>
               <row>
+                <entry>11/10/2015</entry>
+                <entry>Security - ArcSight </entry>
+                <entry>Added ArcSight page (<xref href="security/arcsight.dita#topic_n5d_tjn_yt"
+                    >Link</xref>)</entry>
+              </row>
+              <row>
                 <entry>11/09/2015</entry>
                 <entry>Hardware and Software Support Matrix </entry>
                 <entry>Added Guest OS support information (<xref
