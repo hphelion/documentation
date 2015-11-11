@@ -40,8 +40,8 @@
               <b>ext-net</b>. </dd></dlentry>
         <dlentry><dt>provider_network</dt><dd> The ID (GUID) of the service provider network. In a typical installation, the name of this
             network is <b>svc-net</b>. </dd></dlentry>
-        <dlentry><dt>ntp_server</dt><dd> IP address of NDP server. In typical installations, this is the IP address of the first
-            Management Controller.</dd></dlentry>
+        <dlentry><dt>ntp_server</dt><dd> IP address of NTP server. In typical installations, this is the IP address of the first
+                        Management Controller.</dd></dlentry>
         <dlentry><dt>keypair</dt><dd> Specify the name of a keypair to use when creating the Database Service. This keypair will be
             used for debugging purposes when logging into instances of the Database Service.
               <note>This key must already exist in Nova prior to installation.</note></dd></dlentry>
