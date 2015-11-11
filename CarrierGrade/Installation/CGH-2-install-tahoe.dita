@@ -23,34 +23,27 @@
     <p>If you are installing the <codeph>tahoe</codeph> template, which includes the KVM region and
       uses HPE DCN VRS networking, follow these instructions. If you are installing a different
       deployment, disregard these instructions. </p>
-    <section conref="conrefs/CGH-2-conref-DCN-1.dita#ReusableComponent_nms_qyw_vt/prereqs"/>
-    <section conref="conrefs/CGH-2-conref-VSD-5.dita#ReusableComponent_tlk_hzw_vt/vsd"/>
-    <section
-      conref="conrefs/CGH-2-conref-VSD-license-6.dita#ReusableComponent_u1w_jzw_vt/vsd-license"/>
-    <section
-      conref="conrefs/CGH-2-conref-VSD-User-7.dita#ReusableComponent_ull_mzw_vt/create-user-for-plugin-login"/>
-    <section
-      conref="conrefs/CGH-2-conref-HLM-Define-8.dita#ReusableComponent_swm_qzw_vt/hos-install"> </section>
-    <section
-      conref="conrefs/CGH-2-conref-PXE-Boot-9.dita#ReusableComponent_t4b_wzw_vt/section_apb_wzw_vt"/>
-    <section conref="conrefs/CGH-2-conref-json-intro.dita#ReusableComponent_dgx_hdy_wt/json"/>
-    <section
-      conref="conrefs/CGH-2-conref-definition-json-10.dita#ReusableComponent_zsb_b1x_vt/configure-def-json"/>
-    <section
-      conref="conrefs/CGH-2-conref-env-json-11.dita#ReusableComponent_wlx_d1x_vt/configure-env-json"/>
-    <section
-      conref="conrefs/CGH-2-conref-ansible-json-12.dita#ReusableComponent_dkh_g1x_vt/configure-ansible-json"/>
-    <section
-      conref="conrefs/CGH-2-conref-LDAP-json-14.dita#ReusableComponent_vjm_l1x_vt/configure-ldap-json"/>
-    <section conref="conrefs/CGH-2-conref-DCN-json-15.dita#ReusableComponent_cjk_41x_vt/dcn-json"/>
-    <section
-      conref="conrefs/CGH-2-conref-CCP-json-16.dita#ReusableComponent_art_q1x_vt/ccp-dcn-esx-json"/>
-    <section
-      conref="conrefs/CGH-2-conref-WR-json-17.dita#ReusableComponent_m5f_t1x_vt/configure-wr-json"/>
-    <section
-      conref="conrefs/CGH-2-conref-Machine-json-18.dita#ReusableComponent_a5m_v1x_vt/configure-mach-json"/>
-    <section
-      conref="conrefs/CGH-2-conref-Verify-json-19.dita#ReusableComponent_upw_x1x_vt/verify-json"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-network"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-vsd"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-vsd-license"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-admin-user"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-hos-install"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-node-provision-json"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-pxe-boot"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-json"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-def-json"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-env-json"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-ansible-json"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-ldap-json"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-dcn-json"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-ccp-dcn-esx-json"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-wr-json"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-mach-json"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-verify-json"/>
+    
+    
+    
+    
     <section
       conref="conrefs/CGH-2-conref-HLM-provision-21.dita#ReusableComponent_vds_dbx_vt/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"/>
     <section

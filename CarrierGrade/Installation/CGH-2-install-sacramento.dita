@@ -24,40 +24,350 @@
     <p>If you are installing the <codeph>sacramento</codeph> template, which includes the KVM
       region, the baremetal region, ESX storage, and uses HPE DCN VRS networking, follow these
       instructions. If you are installing a different deployment, disregard these instructions. </p>
-    <section conref="conrefs/CGH-2-conref-DCN-1.dita#ReusableComponent_nms_qyw_vt/prereqs"/>
-    <section
-      conref="conrefs/CGH-2-conref-ESX-2.dita#ReusableComponent_z2y_tyw_vt/section_efy_tyw_vt"/>
-    <section conref="conrefs/CGH-2-conref-VDS-3.dita#ReusableComponent_gbx_czw_vt/vmware" id="vmware"/>
-    <section conref="conrefs/CGH-2-conref-VRSvApp-4.dita#ReusableComponent_dqy_2zw_vt/vapp" id="vrsvapp"/>
-    <section conref="conrefs/CGH-2-conref-VSD-5.dita#ReusableComponent_tlk_hzw_vt/vsd"/>
-    <section
-      conref="conrefs/CGH-2-conref-VSD-license-6.dita#ReusableComponent_u1w_jzw_vt/vsd-license"  id="vsd-license"/>
-    <section
-      conref="conrefs/CGH-2-conref-VSD-User-7.dita#ReusableComponent_ull_mzw_vt/create-user-for-plugin-login" id="vsd-user"/>
-    <section
-      conref="conrefs/CGH-2-conref-HLM-Define-8.dita#ReusableComponent_swm_qzw_vt/hos-install"/>
-    <section
-      conref="conrefs/CGH-2-conref-node-provision-8a.dita#ReusableComponent_ic3_q1x_wt/configure-node-provision-json"  id="node"/>
-    <section
-      conref="conrefs/CGH-2-conref-PXE-Boot-9.dita#ReusableComponent_t4b_wzw_vt/section_apb_wzw_vt"/>
-    <section conref="conrefs/CGH-2-conref-json-intro.dita#ReusableComponent_dgx_hdy_wt/json" id="json"/>
-    <section
-      conref="conrefs/CGH-2-conref-definition-json-10.dita#ReusableComponent_zsb_b1x_vt/configure-def-json"/>
-    <section
-      conref="conrefs/CGH-2-conref-env-json-11.dita#ReusableComponent_wlx_d1x_vt/configure-env-json"/>
-    <section
-      conref="conrefs/CGH-2-conref-ansible-json-12.dita#ReusableComponent_dkh_g1x_vt/configure-ansible-json"/>
-    <section
-      conref="conrefs/CGH-2-conref-esx-json-13.dita#ReusableComponent_oy4_31x_vt/configure-esx-json"/>
-    <section
-      conref="conrefs/CGH-2-conref-LDAP-json-14.dita#ReusableComponent_vjm_l1x_vt/configure-ldap-json"/>
-    <section conref="conrefs/CGH-2-conref-DCN-json-15.dita#ReusableComponent_cjk_41x_vt/dcn-json"/>
-    <section
-      conref="conrefs/CGH-2-conref-CCP-json-16.dita#ReusableComponent_art_q1x_vt/ccp-dcn-esx-json"/>
-    <section
-      conref="conrefs/CGH-2-conref-WR-json-17.dita#ReusableComponent_m5f_t1x_vt/configure-wr-json"/>
-    <section
-      conref="conrefs/CGH-2-conref-Machine-json-18.dita#ReusableComponent_a5m_v1x_vt/configure-mach-json"/>
+    <section id="conref-network"><title>HPE Distributed Cloud Networking Requirements</title><p>Before
+        starting the HPE Helion OpenStack Carrier Grade installation, the VMware vSphere application
+        and HPE Distributed Cloud Networking components must be fully installed and
+          functioning:</p><p><b>DCN Requirements</b></p><p>HPE Helion Distributed Cloud Networking
+        (DCN) must be deployed before starting the cloud deployment. Please refer to DCN
+        documentation for details. </p><p>For a quick overview of the DCN components, see the
+        appropriate <xref href="../carrier-grade-technical-overview.dita#topic3485">Deployment
+          Architecture Reference</xref></p><p>In production cloud deployments:</p><ul
+        id="ul_hnw_pry_zs">
+        <li>DCN should be deployed in HA mode (with 2 VSCs, 2 VRS-Gs).</li>
+        <li>VSD should be deployed in HA mode (3+1 VSDs). </li>
+        <li>VSD should be assigned a DCM IP accessible for cloud deployment. Refer to the <xref
+            href="../carrier-grade-technical-overview.dita#topic3485">architecture
+          diagram</xref>.</li>
+        <li>Verify that the IP address and domain name of VSD can be accessed using PING and DIG
+          commands. </li>
+        <li>Make sure all the VSD services are in PASS state.</li>
+        <li><xref href="../CGH-2-conref-install-kvm-.dita#topic10581/vsd" format="dita">Apply the
+            VSD license</xref> based on single or clustered VSD setup. </li>
+        <li><xref href="../CGH-2-conref-install-kvm-.dita#topic10581" format="dita">Create the
+            required VSD users</xref>.</li>
+      </ul><p>Optionally, you can integrate LDAP into the DCN environment.</p><p><b>DNS
+          Configuration</b></p><p>Configure appropriate entries for VSD into DNS so that the SRV
+        record for <codeph>_xmpp-client</codeph> resolves. This is required for DCN Cloud. Refer to
+        the DCN documentation examples of <codeph>BIND</codeph> commands and instructions for
+        testing the DNS configuration, such as shown in the following example:</p><p><image
+          href="../../media/CGH-2-install-DNS-config.png" width="400" id="image_eyr_z5z_jt"
+      /></p>Make sure that reverse DNS resolution <b>is not enabled</b> the for xmpp Host
+          record:<p><image href="../../media/CGH-2-install-DNS-config-example.png" width="400"
+          id="image_ugq_rvz_jt"/></p></section>
+    <section id="conref-esx">
+      <title>ESXi requirements</title>
+      <p>ESX should be deployed before starting the cloud deployment. For more information, refer to
+        the VMware product documentation.</p>
+      <p>In production cloud deployments:</p>
+      <ul id="ul_ejv_35y_zs">
+        <li>ESX Cluster is installed and functional with external storage connected to all the hosts
+          that are part of ESX cluster</li>
+        <li>ESX Cluster with two (2) or more hosts installed with ESXi 5.5 U2 and above</li>
+        <li>ESX Cluster should have HA, DRS &amp; Vmotion Enabled</li>
+        <li>ESX Cluster should have Shared Storage</li>
+        <li>vCenter is working with the supported versions. One vCenter is
+          supported<!-- with HCG 2.0 Build#9-->.</li>
+        <li>The CLM and TUL networks must be available to all ESX hosts VMNICs</li>
+      </ul>
+      <p><b>ESX Network Configuration Requriements</b></p>
+      <p>In production cloud deployments, you will need to create the following three (3) port
+        groups.</p>
+      <ul id="ul_mdl_r5y_zs">
+        <li>Cloud Lab Management (CLM VLAN)</li>
+        <li>DVRS Datapath (TUL VLAN)</li>
+        <li>Trunk Network (All VLANS)</li>
+      </ul>
+      <p>The names are case sensitive.</p>
+      <p>In the VMware vCenter client, the port group list should appear as follows:</p>
+      <p><image href="../../../media/CGH-install-ESX-ports.png" id="image_os2_2vy_zs"/></p>
+    </section>
+    <section id="conref-vmware">
+      <title>Deploy the VMware vSphere Distributed Switch</title>
+      <p>The VMware vSphere Distributed Switch you obtained from VMware must be installed. For more
+        information, see <xref href="carrier-grade-install-vsphere-switch.dita#topic10581"
+          >Deploying the VMware vSphere Distributed Switch</xref>. </p>
+    </section>
+    <section id="conref-vapp">
+      <title>Deploy the VRSvApp</title>
+      <p>The VRSvApp you obtained from DCN must be installed. For more information, see <xref
+          href="CGH-2-install-vsvapp.dita#topic10581">Deploying the VRS vApp</xref></p>
+    </section>
+    <section id="conref-vsd">
+      <title>Verify VSD is running</title>
+      <p>Make sure the VSD node is installed by logging into the VSD VM using SSH and running the
+        following command:</p>
+      <codeblock>service vsd status</codeblock>
+      <p>You should see the status as below from VSD VM.</p>
+      <p>
+        <image href="../../media/CGH-install-virsh-vsd.png" width="400" id="image_gbd_x2f_zt"
+        /></p>
+    </section>
+    <section id="conrref-vsd-license"><title>Apply the VSD License</title>You should have recevied a license
+      file when you purchased DCN. You need to apply that license on the KVM Host. For more
+      information, see <xref href="carrier-grade-install-vsd-license.dita#topic10581"
+      />.</section>
+    <section id="conref-admin-user">
+      <title>Create an OSadmin user for VSD</title>
+      <p>You must create an administrative user called OSadmin and add it to CMS Group. For more
+        information, see <xref href="carrier-grade-install-vsd-user.dita#topic10581">Create an
+          OSadmin User for VSD</xref>.</p>
+    </section>
+    <section id="conref-hos-install">
+      <title>Launch the HPE Helion OpenStack cloud</title>
+      <p>Use the following steps on the KVM Host to log on to the lifecycle manager created in <xref
+          href="carrier-grade-install-hlm-vm.dita#topic10581">Bootstrapping the HPE Helion
+          Lifecycle Management Virtual Machine and Installation Services</xref>:</p>
+      <ol id="ol_ncd_wff_zt">
+        <li>Log into the lifecycle manager. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where:
+            HLM_VM_IP is the CLM IP of the lifecycle manager. Locate the IP address for the
+            lifecycle manager in the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph>
+            file under <codeph>hlm_clmstaticip</codeph> field.</p><p>Use the default credentials: </p><p>
+            <codeblock>User Name: root
+Password: cghelion</codeblock>
+          </p><p><b>Important:</b> After logging in with the default password, make sure you change
+            the password for the <codeph>cghelion</codeph> user. </p><p><image
+              href="../../media/CGH-2-login-hlm.png" width="400" id="image_nnb_fyb_3t"/></p></li>
+        <li>Execute the following command to switch to the root
+          user:<codeblock>sudo su -</codeblock></li>
+        <li>Change to the home directory.<codeblock>cd ~</codeblock></li>
+        <li>Execute the following command to provision and configure the HPE Helion OpenStack cloud.
+            <codeblock>hlm define -t &lt;template> &lt;cloudname&gt;</codeblock><p>Where::</p><ul
+            id="ul_ocd_wff_zt">
+            <li><codeph>&lt;template></codeph> is the installation template to use. Use the tempate
+              appropriate for the deployment you are installing, either:<ul id="ul_gvk_dsp_xt">
+                <li><codeph>denver</codeph></li>
+                <li><codeph>tahoe</codeph></li>
+                <li><codeph>memphis</codeph></li>
+                <li><codeph>sacramento</codeph></li>
+              </ul><p>The installation download contains these templates.</p></li>
+            <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create.<p>The cloud
+                name can be any combination of up to 63 digits, letters, and the <codeph>-</codeph>
+                  chracter:<ul id="ul_lz5_rbf_bt">
+                  <li>
+                    <p>Cannot start or end with the <codeph>-</codeph> chracter;</p>
+                  </li>
+                  <li>
+                    <p>Must be greater than 0 characters;</p>
+                  </li>
+                  <li>
+                    <p>No restriction on the number of letters or digits (0 or more).</p>
+                  </li>
+                </ul></p></li>
+          </ul><p>The command creates the <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph>
+            directory, which contains several JSON template files. </p></li>
+      </ol>
+    </section>
+    <section id="conref-node-provision-json">
+      <title>Configure the node-provision JSON file</title>
+      <p>Modify the <codeph>node-provision.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname></codeph> directory of the lifecycle manager. This
+        file supplies input values to the <codeph>hprovision</codeph> script, later in the
+        installation. </p>
+      <p><b>Note:</b> To see a sample <codeph>node-provision.json</codeph> file, see <xref
+          href="carrier-grade-install-kvm-node-json.dita">Sample node-provision.json File for
+          Installing the KVM + ESX Topology</xref>.</p>
+      <ol id="ol_ub2_xfl_zs">
+        <li>Change to the <codeph>&lt;cloudname&gt;</codeph>
+          directory:<codeblock>cd /var/hlm/clouds/&lt;cloudname&gt;</codeblock></li>
+        <li>Edit <codeph>node-provision.json</codeph> file to change only the following fields:
+            <table id="table_i3b_mgf_zt">
+            <tgroup cols="2">
+              <colspec colname="col1" colsep="1" rowsep="1"/>
+              <colspec colname="col2" colsep="1" rowsep="1"/>
+              <thead>
+                <row>
+                  <entry colsep="1" rowsep="1">Field</entry>
+                  <entry colsep="1" rowsep="1">Description</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>Pxe-mac-address</entry>
+                  <entry>The MAC address of the interface you want to PXE boot onto. This is not
+                    same as iLO* MAC address.</entry>
+                </row>
+                <row>
+                  <entry>pm_ip</entry>
+                  <entry>The power management IP address (iLO IP address).</entry>
+                </row>
+                <row>
+                  <entry>pm_user</entry>
+                  <entry>The power management user name (iLO user name).</entry>
+                </row>
+                <row>
+                  <entry>pm_pass</entry>
+                  <entry>The power management password (iLO password).</entry>
+                </row>
+                <row>
+                  <entry>failure_zone, vendor, model, os_partition_size, data_partition_size</entry>
+                  <entry>The values in these fields are added to the <codeph>nodes.json</codeph>
+                    file used during cloud deployment. </entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table><p>*iLO is HPE Integrated Lights-Out, a server management tool embedded with the
+            ProLiant servers. Consult your iLO documentation for information on how to locate the
+            iLO IP address, user name, and password.</p></li>
+        <li>Save and close the file.</li>
+      </ol>
+    </section>
+    <section id="conref-pxe-boot">
+      <title>Configure PXE boot</title>
+      <p>After you edit the <codeph>node-provision.json</codeph> file, you must enable one-time PXE
+        boot on the servers to set the correct boot order. Execute the following on the lifecycle
+        manager:</p>
+      <ol id="ol_d5m_dhf_zt">
+        <li>Copy the <codeph>ilopxebootonce.py</codeph> from the
+            <systemoutput>/root/cg-hlm/dev-tools/ilopxebootonce.py</systemoutput> to the
+            <codeph>&lt;cloudname></codeph> directory where you have the
+            <codeph>node-provision.json</codeph> file.</li>
+        <li>Execute the following script:
+          <codeblock>python ilopxebootonce.py node-provision.json</codeblock></li>
+      </ol>
+      <p>After the script is run, the <codeph>Current One-Time Boot Option</codeph> is set to
+          <codeph>Network Device 1</codeph> on all the servers listed in
+          <codeph>node-provision.json</codeph> file.</p>
+    </section>
+    <section id="conref-json">
+      <title>Configuring JSON files</title>
+      <p>The process for installing the memphis and sacramento deployments requires several JSON
+        files that will be used when deploying the lifecycle manager.</p>
+      <p>The following sections details the files that need to be configured and contain sample JSON
+        files that can be copied and pasted into your environment.</p>
+      <p><b>Important:</b> Do not store backup of the JSON files inside your cloud directory or any
+        where inside the <codeph>/var/hlm/clouds</codeph> directory. You can create a backup folder
+        on <codeph>/root/</codeph> directory or on a remote system.</p>
+    </section>
+    <section id="conref-def-json">
+      <title>Configure the definition.json file</title>
+      <p>Modify the <codeph>definition.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the lifecycle manager to
+        define the number of ESX compute proxies required in your environment. You need one proxy
+        per vCenter; make sure this value is set to
+        2<!--set this value to the number of vCenters you have.-->, as shown in the following
+        example.</p>
+      <p><b>Note:</b> To see a sample <codeph>definition.json</codeph> file, see <xref
+          href="../carrier-grade-install-kvm-def-json.dita#topic4797">Sample definition.json File
+          for Installing the KVM + ESX Topology</xref>.<ol id="ol_zzr_khl_zs">
+          <li>Set the number of compute systems to 2 for an HA VRS-G installation under control
+            plane.<codeblock>"control-planes": [
+        {
+            "file": ".hos/ccp-dcn-esx.json",
+            "resource-nodes": [
+                {
+                    "file": ".hos/ccp-cpx.json",
+                    "count": 2
+                },
+                {
+                    "file": ".hos/ccp-vrsg.json",
+                    "count": 1
+                }
+ 
+            ]
+        }
+    ]</codeblock></li>
+        </ol></p>
+    </section>
+    <section id="conref-env-json">
+      <title>Configure the environment.json file</title>
+      <p>Modify the <codeph>environment.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the lifecycle manager to
+        configure the VLANs and network addresses as appropriate for your environment. Configure the
+        CLM (management), CAN (api), and BLS (blockstore) networks.</p>
+      <p><b>Note:</b> To see a sample <codeph>environment.json</codeph> file, see one of the
+        following: <ul id="ul_smq_yqt_bt">
+          <li><xref href="../carrier-grade-install-kvm-env-json.dita">For an Unbonded NIC
+              Environment</xref>. <p>For each network provide:
+                </p><codeblock>{
+              "name": "management",
+              "type": "vlan",
+              "segment-id": "1551",
+              "network-address": {
+              "cidr": "10.x.x.x/24",
+              "start-address": "10.x.x.x",
+              "gateway": "10.x.x.x"
+              }
+              },        </codeblock><p><b>Note:</b>
+              In the example, the IP addresses are masked for security purposes. Use values
+              appropriate for your environment.</p></li>
+          <li><xref href="../carrier-grade-install-kvm-env-json-bonded.dita#topic4797">For a Bonded
+              NIC Environment</xref></li>
+        </ul></p>
+    </section>
+    <section id="conref-ansible-json">
+      <title>Configure the ansible.json file</title>
+      <p>Modify the <codeph>ansible.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;/vars</codeph> directory of the lifecycle
+        manager.</p>
+      <p>To see a sample <codeph>ansible.json</codeph> file, see <xref
+          href="../carrier-grade-install-kvm-ansible-json.dita">Sample ansible.json File for
+          Installing the KVM + ESX Topology</xref>.</p>
+    </section>
+    <section id="conref-esx-json">
+      <title>Configure the esx.json file</title>
+      <p>Modify the <codeph>esx.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory on the lifecycle manager.
+        This file is called by the script that installs the HPE Helion OpenStack cloud, later in the
+        installation. </p>
+      <p>To see a sample <codeph>esx.json</codeph> file, see <xref
+          href="carrier-grade-install-kvm-esx-json.dita">Sample esx.json File for Installing the
+          KVM + ESX Topology</xref>.</p>
+    </section>
+    <section id="conref-ldap-json">
+      <title>Configure the ldap.json file</title>
+      <p>Modify the <codeph>ldap.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;/vars</codeph> directory of the lifecycle
+        manager.</p>
+      <p>To see a sample <codeph>ldap.json</codeph> file, see <xref
+          href="carrier-grade-install-kvm-ldap-json.dita">Sample ldap.json File for Installing
+          the KVM + ESX Topology</xref>. </p>
+    </section>
+    <section id="conref-dcn-json">
+      <title>Configure the dcn.json file</title>
+      <p>Modify the <codeph>dcn.json</codeph> file in the
+          <codeph>/opt/share/hlm/1/site/services/dcn.json</codeph> directory of the lifecycle
+        manager to remove <b>both</b> instances of the following code:
+        <codeblock>      {
+          "description": "Ingress 47 GRE",
+          "firewall": {
+            "direction": "in",
+            "protocol": "gre"
+            },
+           "port": 47,
+            "scope": "private"
+      },    </codeblock></p>
+    </section>
+    <section id="conref-ccp-dcn-esx-json">
+      <title>Configure the ccp-dcn-esx.json file</title>
+      <p>Modify the <codeph>member-count</codeph> field in the <codeph>ccp-dcn-esx.json</codeph> in
+        the <codeph>/var/hlm/clouds/&lt;cloudname&gt;/.hos/</codeph> directory of the lifecycle
+        manager. Make sure the <codeph>member-count</codeph> field in the <codeph>tiers</codeph>
+        section is set to <b>1</b> as shown:</p>
+      <p><!--By default it will be “2”, change to “1” for Build#15.--></p>
+      <codeblock>"tiers": [
+  {
+    "id": "1",
+    "member-count": 1,      </codeblock>
+    </section>
+    <section id="conref-wr-json">
+      <title>Configure the wr.json file</title>
+      <p><b>For bonded NIC environments</b>, modify the <codeph>wr.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;/&lt;cloudname>/vars</codeph> directory on the
+        lifecycle manager.</p>
+      <p>To see a sample <codeph>wr.json</codeph> file, see <xref
+          href="../carrier-grade-install-kvm-wr-json.dita">Sample wr.json File for Installing the
+          KVM + ESX Topology</xref>. </p>
+    </section>
+    <section id="conref-mach-json">
+      <title>Configure the machine_architecture.json file</title>
+      <p><b>For bonded NIC environments</b>, modify the <codeph>machine_architecture.json</codeph>
+        file in the <codeph>/opt/share/hlm/1/site/</codeph> directory of the lifecycle manager to
+        fit your hardware model. You have to gather the correct PCI SLOT INFO and add ports
+        accordingly on the hardware slots or cards used for networking.</p>
+      <p><b>Note:</b> To see a sample <codeph>machine_architecture.json</codeph> file, see <xref
+          href="../carrier-grade-install-kvm-env-json-bonded.dita#topic4797">Sample enviroment.json
+          File for Installing the KVM + ESX Topology in an Bonded NIC Environment</xref>.</p>
+    </section>
     <section>
       <title>Configure the ironic.json file</title>
       <p>Modify the <codeph>ironic.json</codeph> file in the
@@ -108,8 +418,12 @@
 }</codeblock>
       </p>
     </section>
-    <section
-      conref="conrefs/CGH-2-conref-Verify-json-19.dita#ReusableComponent_upw_x1x_vt/verify-json"/>
+    <section id="conref-verify-json">
+      <title>Verify the JSON files</title>
+      <p>After editing the JSON files, validate each JSON file to make sure there are no syntax
+        errors using the tool of your preference. For example, using the Python json.tool: </p>
+      <codeblock>python -m json.tool &lt;filename>.json</codeblock>
+    </section>
     
     <section conref="conrefs/CGH-2-conref-esx-proxy-20.dita#ReusableComponent_hyj_bbx_vt/esx-proxy" id="esx-proxy"/>
     <section id="vmware-workaround">
