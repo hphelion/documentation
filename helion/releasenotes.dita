@@ -3,14 +3,23 @@
 <topic xml:lang="en-us" id="topic12031">
   <title>Beta 0: Release Notes</title>
   <body>
+<<<<<<< HEAD
     <section><title>Intro</title>
     <p>This document provides an overview of the features contained within HP Helion <tm
+=======
+    <p>This document provides an overview of the features contained within HPE Helion <tm
+>>>>>>> e873a48c3fc4eda38bef4a27420658d4d51ec636
         tmtype="reg">OpenStack</tm> 2.0 Beta 0, including known issues and workarounds for this
       release:</p>
     </section>
     <section id="Features">
+<<<<<<< HEAD
       <title outputclass="h3">Features in HP Helion OpenStack 2.0</title>
       <p><b>Updated HP Helion OpenStack Services</b> - We have included the core set of OpenStack
+=======
+      <title>Features in HPE Helion OpenStack 2.0</title>
+      <p><b>Updated HPE Helion OpenStack Services</b> - We have included the core set of OpenStack
+>>>>>>> e873a48c3fc4eda38bef4a27420658d4d51ec636
         services from the <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo"
           scope="external" format="html">Kilo release</xref> with the exception of limitations
         notated in this document.</p>
@@ -68,7 +77,7 @@
         <li>Anomaly and Prediction Engine</li>
       </ul>
       <p>Monitoring is integrated for the following services: Logging, Neutron, Swift, Ceilometer,
-        Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HP Linux for HP
+        Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HPE Linux for HP
         Helion OpenStack.</p>
       <p><b>Centralized Logging</b> - Logging for the services below is enabled in the default
         configuration. You will have the ability to disable per-service logging as needed.</p>
@@ -91,7 +100,7 @@
       <ul>
         <li>See the workaround to install Horizon in the installation instructions.</li>
       </ul>
-      <p><b>HP Helion Development Platform</b></p>
+      <p><b>HPE Helion Development Platform</b></p>
       <ul>
         <li>Helion Development Platform is not supported on Beta 0.</li>
       </ul>
