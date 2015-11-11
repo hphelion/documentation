@@ -20,13 +20,11 @@
     <!--Needs Edit-->
     <section id="top"/>
     <p>HPE Helion OpenStack is a commercial-grade distribution of <tm tmtype="reg">OpenStack</tm>
-      cloud software, the leading open source cloud computing platform. This HPE Helion distribution,
-      backed by HPE lets you build, manage, and operate open source-based clouds on a resilient,
-      maintainable platform. HPE Helion OpenStack enables cost-effective scalability of IT services
-      and business agility and, as part of the HPE Helion portfolio, it is backed by a wide range of
-      related cloud products, services, and professional support.</p>
-    <!--<p>HPE Helion <tm tmtype="reg">OpenStack</tm> offers many services based on the different <tm tmtype="reg">OpenStack</tm> 
-    projects to provide the functionality you need. Visit the HPE Helion OpenStack Services Overview page for a complete list of services.</p>-->
+      cloud software, the leading open source cloud computing platform. This HPE Helion
+      distribution, backed by HPE lets you build, manage, and operate open source-based clouds on a
+      resilient, maintainable platform. HPE Helion OpenStack enables cost-effective scalability of
+      IT services and business agility and, as part of the HPE Helion portfolio, it is backed by a
+      wide range of related cloud products, services, and professional support.</p>
     <section id="getstart">
       <title>Get Started with HPE Helion OpenStack</title>
       <p>The following links and tools will help you understand, deploy, and run your HPE Helion
@@ -41,6 +39,12 @@
         <li><xref href="faq.dita">Frequently Asked Questions</xref></li>
         <li><xref href="installation/installation_overview.dita">Installation</xref></li>
       </ul>
+    </section>
+    <section id="pdf">
+      <p><xref
+          href="https://a248.e.akamai.net/cdn.hpcloudsvc.com/gb7904dd273bdcfcb5adc79b472562146/prodae1/HPE_Helion_OpenStack_2.0_Complete_Documentation.pdf"
+          scope="external" format="html">Download</xref> the entire HPE Helion OpenStack 2.0
+        document set in PDF form.</p>
     </section>
   </body>
 </topic>
