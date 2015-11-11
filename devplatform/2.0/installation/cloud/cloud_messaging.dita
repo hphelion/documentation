@@ -5,7 +5,8 @@
   <body>
     
     <section>This additional section of the clouds.yaml file is required only if the Messaging
-      Broker Service is installed. <codeblock>clouds:
+      Broker Service is installed.
+      <codeblock>clouds:
   mycloud:
   ... 
     messaging:
@@ -33,7 +34,7 @@
       username: 
       password: 
       project_domain_name: default
-      user_domain_name: default              </codeblock><dl>
+      user_domain_name: default              </codeblock></section><section><title>Service Configuration Parameters for the HDPI Installer</title><dl>
         <dlentry>
           <dt>deployer_cloud</dt>
           <dd>The cloud identified in the clouds.yaml where the deployer will be created. Note that
@@ -76,11 +77,6 @@
               <i>helionci</i> or <i>msgaas</i> and containing the word <i>hlinux</i>.</dd>
         </dlentry>
         <dlentry>
-          <dt>deployer_net_id (optional)</dt>
-          <dd>Network ID for the deployer instance. Default value: The ID of the network named SVC.
-          </dd>
-        </dlentry>
-        <dlentry>
           <dt>deployer_ext_net_id (optional)</dt>
           <dd>The external network name. Default value: ext-net <note>This must be specified in the
               configuration file, but the value is not currently read- only the default is
@@ -89,7 +85,10 @@
         <dlentry>
           <dt>deployer_cname (optional)</dt>
           <dd>CN name used to generate the certificate file.</dd>
-        </dlentry>
+        </dlentry></dl>
+      </section>
+      <section><title>Cloud Configuration Parameters for the Messaging Installer</title>
+        <dl>
         <dlentry>
           <dt> image_api_version(optional)</dt>
           <dd>The image API version to use. The default value is 1. </dd>

@@ -28,7 +28,8 @@
         <li>Install the database service.
        <ol> <li>If you <xref href="install_offline.dita#topic_w25_hqp_xt">pre-downloaded</xref> the
               installation
-                files:<codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
+                files:
+         <codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
 openstack --os-cloud mycloud hdpi database install <i>&lt;filename></i></codeblock><note>Make
                 sure you run the installer from the <b>same</b> directory where the installation
                 files are saved. If the installer cannot find a file with the name you provided in
@@ -84,8 +85,8 @@ $</codeblock></li></ol></li></ol></section>
                   file.<codeblock>listen trove_api
 bind &lt;<i>virtual IP from step 2</i>&gt;:8779 ssl crt <i>&lt;path to certificate file/certFileName&gt; </i>
 option httpchk GET /
-server trove-trove&lt;<i>n</i>&gt;_api-&lt;<i>uniqueid</i>&gt; &lt;<i>API server n's IP Address</i>&gt; check inter 2000 rise 2 fall 5
-server trove-trove&lt;<i>n+1</i>&gt;_api-&lt;<i>uniqueid</i>&gt; &lt;<i>API server n+1's IP Address</i>&gt; check inter 2000 rise 2 fall 5</codeblock><note>The
+server trove-trove&lt;<i>n</i>>_api-&lt;<i>uniqueid</i>> &lt;<i>API server n's IP Address</i>> check inter 2000 rise 2 fall 5
+server trove-trove&lt;<i>n+1</i>>_api-&lt;<i>uniqueid</i>> &lt;<i>API server n+1's IP Address</i>> check inter 2000 rise 2 fall 5</codeblock><note>The
                   last line in the codeblock should be repeated once for <b>each</b> API server
                   identified in step 1. </note><note>The <codeph>ssl cert</codeph> information in
                   the <b>bind</b> statement only applies if SSL has been enabled for public
