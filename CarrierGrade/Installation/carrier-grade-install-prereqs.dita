@@ -761,10 +761,7 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                 </row>
                                                 <row>
                                                   <entry>VSD-QCOW2</entry>
-                                                  <entry><ph conref="#topic7148/vsd-qcow"/><ul
-                                                  id="ul_abg_2lx_yt">
-                                                  <li><ph conref="#topic7148/vsd-qcow"/></li>
-                                                  </ul></entry>
+                                                  <entry><ph conref="#topic7148/vsd-qcow"/></entry>
                                                   <entry>
                                                   <p>/var/lib/libvirt/images</p>
                                                   </entry>
@@ -797,13 +794,13 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                 <li>HCG_2.0_WR_license.lic.txt</li>
                                 <li><codeph>license.lic</codeph> Located in the
                                                 <codeph>/root/cg-hlm/windriver-files</codeph>
-                                        directory on the HLM host.</li>
+                                        directory on the HLM VM.</li>
                                 <li><codeph>region_config</codeph> Located in the
                                                 /<codeph>var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
-                                        directory on the HLM host.</li>
+                                        directory on the HLM VM.</li>
                                 <li><codeph>cakey.pem</codeph> Located in the
                                                 <codeph>/var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
-                                        directory on the HLM host.</li>
+                                        directory on the HLM VM.</li>
                         </ul></section>
                 <!--<ol>
                                 <li>Extract the <codeph>hcg_1.1.0.tar</codeph> file. The following

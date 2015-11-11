@@ -38,10 +38,9 @@ HOSTNAME=vsd1.dcn-one.helion.cg</codeblock></li>
             <li>Exit the VSD VM console session, then log back in. You should see the VSD name in
             the <codeph>/etc/sysconfig/network</codeph> file.</li>
             <li>Configure an NTP Server for the VSD VM by editing the <codeph>/etc/ntp.conf</codeph>
-            file. Commenting out other server list and add your DNS servers. For
-                    example:<codeblock>server 10.1.64.20
-server 16.110.135.113 </codeblock><p><image
-                    href="../../media/CGH-2-ntp-vsd.png" id="image_tth_w2l_2t"/></p></li>
+            file. Comment out the other server in the list and add your DNS servers. For
+                    example:<p><image href="../../media/CGH-2-ntp-vsd.png" id="image_tth_w2l_2t"
+                /></p></li>
             <li>Execute the following commands to set the NTP
                 time:<codeblock>/etc/init.d/ntpd stop
 ntpdate &lt;ntp server>

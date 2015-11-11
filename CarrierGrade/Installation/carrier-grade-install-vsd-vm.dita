@@ -20,13 +20,13 @@
             Virtualized Services Directory (<i>VSD</i>):</p>
         <section><title>Install the VSD VM</title><ol id="ol_gtd_b1l_2t">
                 <li>Log into the HLM host.</li>
-                <li>Copy the VSD qcow image, named <ph
-                        conref="carrier-grade-install-prereqs.dita#topic7148/vsd-qcow"/>
-                    <codeph>VSD-3.2.4_134-hp.qcow2</codeph>, to the
-                        <codeph>var/lib/libvirt/images</codeph> directory.<p><b>Note:</b> The
-                        vsd.xml is a sample created for internal HP Helion OpenStack Carrier Grade
-                        development quality assurance. For a production environment, refer to the
-                        HPE DCN documentation to deploy and configure the VSD in HA mode.</p></li>
+                <li>Copy the VSD qcow image, named <codeph><ph
+                            conref="carrier-grade-install-prereqs.dita#topic7148/vsd-qcow"
+                        /></codeph>, to the <codeph>var/lib/libvirt/images</codeph>
+                            directory.<p><b>Note:</b> The vsd.xml is a sample created for internal
+                        HP Helion OpenStack Carrier Grade development quality assurance. For a
+                        production environment, refer to the HPE DCN documentation to deploy and
+                        configure the VSD in HA mode.</p></li>
                 <li>Execute the following
                     commands:<codeblock> virsh define vsd.xml
  virsh autostart vsd
@@ -37,18 +37,12 @@ Login creds
 Login: root
 Password: Alcateldc</codeblock>
                     </p>Where <codeph>&lt;vsdname></codeph> is the name of your VSD. </li>
-                <li id="1">Edit <i>/etc/sysconfig/network-scripts/ifcfg-eth0</i> file to configure a
-                    static IP address. <p>
-                        <ul id="ul_wf5_bng_tt">
-                            <li>For the VSD VM installed as a prerequisite, use the DCM IP.</li>
-                            <li>For the vCenter Integration Node VM required for the VRSvApp
-                                deployment, use the TUL IP.</li>
-                        </ul>
-                    </p><p><u>For
+                <li id="1">Edit <codeph>/etc/sysconfig/network-scripts/ifcfg-eth0</codeph> file to
+                    configure the DCM IP as a static IP address. <p><u>For
                         example</u><codeblock>BOOTPROTO=”static”
-                                IPADDR=10.20.5.21
-                                NETMASK=255.255.255.0
-                                GATEWAY=10.20.5.1</codeblock></p></li>
+IPADDR=10.20.5.21
+NETMASK=255.255.255.0
+GATEWAY=10.20.5.1</codeblock></p></li>
                 <li conref="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/2"
                     conrefend="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/14"/>
                 <li id="15">After NTP is properly synchronized,execute the following command to
@@ -65,21 +59,21 @@ Password: Alcateldc</codeblock>
                             id="image_wty_ygl_2t"/></p></li>
             </ol></section>
             <section>
-            <title>Logging into VSD node, creating user and applying License</title>
+            <title>Logging into the VSD node, creating a user and applying the license</title>
             <ol>
-                <li>Use a web browser such as Chrome or Firefox to launch the VSD Architect
-                    dashboard using the DCM IP and port 8443. For example:
-                        <codeblock>https://10.x.x.x:8443/
-Default credentials: 
+                <li>Use a web browser to launch the VSD Architect dashboard using the DCM IP and
+                    port 8443. For example: <codeblock>https://10.x.x.x:8443/</codeblock></li>
+                <li>Log into the the VSD Architect. The following are the default credentials.
+                        <codeblock>Default credentials: 
 User Name: csproot 
 Password: csproot
 Org: csp 
 VSD Server : auto</codeblock><p>The
-                        main page appears, similar to the following. If you see the following
-                        message, you need to apply the VSD license.</p><p><image
+                        main page appears. If you see the <b>No Valid License Found</b> message, you
+                        need to apply the VSD license.</p><p><image
                             href="../../media/CGH-2-vsd-launch.png" id="image_ptd_b1l_2t"
                             width="650"/></p></li>
-                <li>To apply the licnese click the <b>Open Platform Configuration</b> tab on the top
+                <li>To apply the license click the <b>Open Platform Configuration</b> tab on the top
                     right corner of the dashboard. </li>
                 <li>Click the <b>Settings</b> tab. <p><image
                             href="../../media/CGH-2-vsd_license2.png" id="image_zl1_tjl_2t"
@@ -101,12 +95,11 @@ VSD Server : auto</codeblock><p>The
                     on the top right corner of the dashboard.</li>
                 <li>Click the <b>CSP Users </b>tab and click <b>+</b>.</li>
                 <li>Create a user named <i>OSadmin</i> with the password <i>OSadmin</i>. The name
-                    and password are case-sensitive. Do not copy and paste from here into the
-                            field.<p><image href="../../media/CGH-2-vsd-user.png"
+                    and password are case-sensitive. <p><image href="../../media/CGH-2-vsd-user.png"
                             id="image_vgl_xkl_2t" width="350"/></p></li>
                 <li>Click <b>Create</b>.</li>
-                <li>Click the Groups icon to add the user to the CMS Group</li>
-                <li>Select the <b>CMS Group</b>, then click the link icon click <b>OSadmin</b>.</li>
+                <li>Click the Groups icon to add the user to the CMS Group.</li>
+                <li>Select the <b>CMS Group</b>, then click <b>OSadmin</b> to add the user.</li>
             </ol>
             <p>Return to the <xref href="carrier-grade-install-prereqs.dita#topic7148">Installation
                     Prerequisites</xref>.</p>
