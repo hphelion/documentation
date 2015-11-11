@@ -3,7 +3,7 @@
 <topic xml:lang="en-us" id="faq">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Frequently Asked Questions</title>
   <body>
-    <section id="Customization"><title>Customization</title>
+    <section id="Customization"><title outputclass="testTitle">Customization</title>
       <p><b>What level of customization will be possible via modifying the configuration files and
           using them to deploy?</b></p>
       <p>For full details about the input model and what options are available can be found, see
