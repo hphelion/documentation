@@ -4,6 +4,9 @@
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry-scale Cloud
     with KVM</title>
   <body>
+    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
+      href="http://docs.hpcloud.com/helion/input_model.html" scope="external" format="html">Click
+      here</xref> for a frameless version of this page where the links should work.</note>
     <section id="about"><p>This page describes the common installation steps that are required for
         each of the HPE Helion OpenStack Entry-scale cloud models that utilize the KVM hypervisor on
         the Compute nodes. This includes the following example configurations: <ul>
