@@ -15,6 +15,18 @@
         suggested to access Vertica event data directly through the database's ACTIVE_EVENTS,
         QUERY_EVENTS and QUERY_REQUESTS tables, as described in <xref
           href="devplatform.database-vertica.dita#topic_q1p_nnp_tt">Managing a Vertica Preview Cluster from the Management Console</xref>.</p></section>
-    
+    <section><title>"Stack trove in status ROLLBACK_COMPLETE" message when DBaaS installation fails</title>
+    <p>The installation process may display a <codeph>ROLLBACK_COMPLETE</codeph> message when installation fails. This may look like the following:</p>
+    <codeblock>.devplatform)stack@redwood:~$ openstack --os-cloud mycloud hdpi database install --path dbaas-qcow2_2.0.0.31.csu
+dbaas-qcow2_2.0.0.31.csu is already downloaded
+dbaas-qcow2_2.0.0.31.csu is already (installed)
+Disabling SSL Features for databaseervice
+Launching stack...
+Stack trove creating
+Stack trove in status ROLLBACK_COMPLETE
+UI installed for database
+Create service endpoint for service database
+Completed installing database
+(.devplatform)stack@redwood:~$</codeblock></section>
   </body>
 </topic>
