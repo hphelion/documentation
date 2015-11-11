@@ -332,10 +332,10 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
       <ol>
         <li>Make the following change to the
             <codeph>~/helion/hos/ansible/roles/storm/vars/nodes.yml</codeph> file. <p>Change the
-              <codeph>storm_supervisor_enabled</codeph> line below:</p>
+              <codeph>thresh_node_count</codeph> line below:</p>
           <p>From:
-            <codeblock>storm_supervisor_enabled: "{% if thresh_node_count | int == 1 or host.vars.member_id != thresh_host_list[0].member_id %}True{% else %}False{% endif %}"</codeblock></p>
-          <p>To: <codeblock>storm_supervisor_enabled: True</codeblock></p>
+            <codeblock>thresh_node_count: "{{ MON_THR.members.admin | length }}"</codeblock></p>
+          <p>To: <codeblock>thresh_node_count: "{{ groups['MON-THR'] | length }}"</codeblock></p>
         </li>
         <li>Commit the changes:
           <codeblock>cd ~helion/hos/ansible
