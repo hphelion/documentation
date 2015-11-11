@@ -11,11 +11,11 @@
     </section>
     <section id="Features">
 
-      <title outputclass="hthree">Features in HP Helion OpenStack 2.0</title>
-      <p><b>Updated HP Helion OpenStack Services</b> - We have included the core set of OpenStack
+      <title outputclass="h3">Features in HP Helion OpenStack 2.0</title>
+      <p>Updated HP Helion OpenStack Services - We have included the core set of OpenStack
       </p>
     </section>
-    <section><title outputclass="hfour">Features in HPE Helion OpenStack 2.0</title>
+    <section><title outputclass="h4">Features in HPE Helion OpenStack 2.0</title>
       <p><b>Updated HPE Helion OpenStack Services</b> - We have included the core set of OpenStack
 
         services from the <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo"
