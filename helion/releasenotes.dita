@@ -22,7 +22,7 @@
           scope="external" format="html">Kilo release</xref> with the exception of limitations
         notated in this document.</p>
       <p><b>The ability to bond network interface cards (NICs)</b></p>
-      <p><b>Neutron LBaaS and FWaaS Extensions</b> - We have implemented networking extensions for
+      <p outputclass="h3">Neutron LBaaS and FWaaS Extensions - We have implemented networking extensions for
         load balancing and firewalls. Here is a description of each of these:</p>
       <ul>
         <li>LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a load
