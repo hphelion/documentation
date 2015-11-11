@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8312">
-<title>HPE Helion 2.0 Development Platform: Java RabbitMQ Messaging Sample</title>
+<title>HPE Helion 2.0 Development Platform: Java Messaging Sample</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,7 +15,7 @@
 </metadata>
 </prolog>
 <body>
-<p>This very simple Servlet-based Java web app displays a simple form that takes a string from the user, adds the message to a queue, reads it from the queue and prints the message back to the screen. This is a demonstration of the minimum requirements to build an application that can connect to a RabbitMQ cluster provided by ALS and interact with it. Use this sample to ensure that you have set up your environment correctly for connecting to and working with RabbitMQ on the Helion Development Platform.</p>
+<p>This very simple Servlet-based Java web app displays a simple form that takes a string from the user, adds the message to a queue, reads it from the queue and prints the message back to the screen. This is a demonstration of the minimum requirements to build an application that can connect to a messaging cluster provided by ALS and interact with it. Use this sample to ensure that you have set up your environment correctly for connecting to and working with RabbitMQ on the Helion Development Platform.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <p>If you are missing any of these items, please install them.</p>
 <ol>
@@ -38,7 +38,7 @@
 <li>Click <b>Save</b>.</li>
 </ol>
 <p>
-<b>Note</b>: If an application needs increased message throughput and/or increased availability beyond the single-instance, unmanaged RabbitMQ service provided by ALS, please follow <xref href="../../messaging/devplatform.using-the-messaging-service.dita" >these instructions</xref> to create and manage a RabbitMQ cluster in the Messaging Service and link that instance to your ALS cluster.</p>
+<note>If an application needs increased message throughput and/or increased availability, please follow <xref href="../../messaging/devplatform.using-the-messaging-service.dita" >these instructions</xref>.</note></p>
 </section>
 <section id="jdk"> <title>JDK</title>
 <p>Install the Java Development Kit (JDK) before installing other prerequisites.</p>
@@ -175,7 +175,7 @@ GetResponse responseMsg = channel.basicGet("hello", autoAck);
         &lt;/dependency&gt;
     &lt;/dependencies&gt;
 &lt;/project&gt;</codeblock>
-<p>The <i>manifest.yml</i> file is the configuration information used by ALS to set up the environment. The <b>services</b> element informs ALS on how to bind the RabbitMQ service provided by the ALS cluster to the application.</p>
+<p>The <i>manifest.yml</i> file is the configuration information used by ALS to set up the environment. The <b>services</b> element informs ALS on how to bind the messaging service to the application.</p>
 <codeblock>---
 applications: 
 - name: rabbitmq-java

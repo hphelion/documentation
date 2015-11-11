@@ -47,14 +47,12 @@
 <section id="messaging-service">
       <title>Messaging Service</title>
       <p>The <xref href="messaging/devplatform.using-the-messaging-service.dita">Messaging
-          Service</xref> provides developers with the ability to provision RabbitMQ clusters using a
+          Service</xref> provides developers with the ability to provision messaging clusters using a
         wizard-based UI directly from Horizon.</p>
       <ul id="ul_srf_bbs_wt">
-        <li>The Messaging Service integrates with <xref
-            href="../../commercial/GA1/1.1commerical.services-identity-overview.dita"
-            >Keystone</xref> to remove the need to create separate credentials for RabbitMQ access. </li>
+        <li>The Messaging Broker Service integrates with Keystone to remove the need to create and manage separate credentials. </li>
         <li>The Messaging Service allows developers to focus on building their apps without worrying
-          about installing, configuring, and troubleshooting RabbitMQ.</li>
+          about installing, configuring, or troubleshooting.</li>
       </ul>
       <p>The Messaging Service is optionally installed as part of the Helion Development Platform.
         If not installed as part of the platform, you can <xref

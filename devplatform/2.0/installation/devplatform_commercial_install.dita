@@ -46,7 +46,7 @@
     <title>Install the Database Service</title>
   </topic>
   <topic id="id_hm5_bxw_ft" conref="devplatform_install_messaging.dita#topic_t3w_fnh_ts">
-    <title>Install the Message Service</title>
+    <title>Install the Message Broker Service</title>
   </topic>
  
   <topic id="engine" conref="install_engine.dita#topic_gkq_fqy_rt"><title>Install the Helion Code Engine</title>
