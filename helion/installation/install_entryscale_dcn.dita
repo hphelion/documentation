@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_fvh_2cy_yt">
+<topic id="install_dcn">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry-scale Cloud
     with DCN / Nuage</title>
   <body>
@@ -102,5 +102,22 @@ git commit -m "My config or other commit message"</codeblock></li>
     </section>
     <section conref="install_entryscale_kvm.dita#install_kvm/provision"/>
     <section conref="install_entryscale_kvm.dita#install_kvm/deploy"/>
+    
+    <section id="post_deploy"><title>DCN on an Existing Installation</title>
+    <p>If you have already deployed a HPE Helion OpenStack 2.0 cloud and want to add DCN to it, follow the steps in the <xref href="install_entryscale_dcn.dita#install_dcn/configure">Configure Your Cloud</xref> section to setup your configuration files and commit them to your local git repository.  Once you have completed that, then run the following commands:</p>
+      <ol>
+        <li>Run the configuration processor with this command:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+        <li>Use the playbook below to create a deployment directory:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        <li>Deploy DCN:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible/
+ansible-playbook -i hosts/verb_hosts dcn-deploy.yml</codeblock></li>
+      </ol>
+
+    
+    </section>
   </body>
 </topic>
