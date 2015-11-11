@@ -110,8 +110,8 @@
           <li>Commit your
             changes.<codeblock>git add -A
 git commit -m "Add Node &lt;name>"</codeblock></li>
-          <li>Run the Configuration
-            Processor:<codeblock>cd ~/helion/hos/ansible
+          <li>Run the configuration
+            processor:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <li>Run the following command to create a deployment
             directory.<codeblock>cd ~/helion/hos/ansible
