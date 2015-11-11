@@ -30,7 +30,7 @@
             <topicref href="carrier-grade-variables.dita" toc="no"/>
         </topicref>
         <topicref href="carrier-grade-install-hlm-vm.dita"
-            navtitle="Deploying the HLM VM and Installation Services" locktitle="yes"/>
+            navtitle="Deploying the lifecycle manager and Installation Services" locktitle="yes"/>
         <topicref href="carrier-grade-install-non-kvm.dita" navtitle="Deploying the Non-KVM Region"
             locktitle="yes">
             <topicref href="CGH-2-install-denver.dita" navtitle="Deploying the Denver Template"

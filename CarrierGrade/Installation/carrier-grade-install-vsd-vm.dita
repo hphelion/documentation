@@ -19,7 +19,7 @@
         <p>Use the following steps to launch the virtual machine for the required HPE DCN
             Virtualized Services Directory (<i>VSD</i>):</p>
         <section><title>Install the VSD VM</title><ol id="ol_gtd_b1l_2t">
-                <li>Log into the HLM host.</li>
+                <li>Log into the KVM Host.</li>
                 <li>Copy the VSD qcow image, named <codeph><ph
                             conref="carrier-grade-install-prereqs.dita#topic7148/vsd-qcow"
                         /></codeph>, to the <codeph>var/lib/libvirt/images</codeph>
@@ -31,7 +31,7 @@
                     commands:<codeblock> virsh define vsd.xml
  virsh autostart vsd
  virsh start vsd</codeblock></li>
-                <li>Start a console session to the VSD VM from HLM host using the following command: <p>
+                <li>Start a console session to the VSD VM from KVM Host using the following command: <p>
                         <codeblock>virsh console &lt;vsdname&gt;
 Login creds  
 Login: root
@@ -50,7 +50,7 @@ GATEWAY=10.20.5.1</codeblock></p></li>
                     VSD:<codeblock>/opt/vsd/install.sh xmpp.&lt;domain_name> -t s -y</codeblock></li>
             </ol><b>Verify that VSD is installed</b>
             <ol id="ol_mgf_hgl_2t">
-                <li>Start a console session to the VSD VM from HLM host using the following command:
+                <li>Start a console session to the VSD VM from KVM Host using the following command:
                         <codeblock>virsh console &lt;vsdname&gt; </codeblock><p>Where
                             <codeph>&lt;vsdname&gt;</codeph> is the name of your VSD.</p></li>
                 <li>Execute the following command to confirm that you can access VSD.

@@ -125,7 +125,7 @@
     </section>
     <section id="net">
       <title>Network Requirements</title>
-      <p>The KVM regions networking environment incorporates up to five types of network:</p>
+      <p>The networking environment incorporates several types of network:</p>
       <ul>
         <li><xref href="#topic3485/internal-management-network" format="dita">the internal
             management network</xref></li>
@@ -168,8 +168,7 @@
             operations.</p>
         </li>
       </ul><p>The server compute nodes always use the controller nodes as the time server for the
-        entire cluster.</p>
-    </section>
+        entire cluster. </p></section>
     <section id="provider-network"><b>Provider Network</b>
       <p>There are no specific requirements for network services to be available on the provider
         network. However, you must ensure that all network services required by the guests running

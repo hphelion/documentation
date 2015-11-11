@@ -22,7 +22,7 @@
 ]>
 <oXygen:ReusableComponent id="ReusableComponent_dgx_hdy_wt">
     <oXygen:ComponentDescription></oXygen:ComponentDescription>
-    <oXygen:ComponentDefinition><section id="json"><title>Configuring JSON files</title><p>The process for installing the memphis and sacramento deployments requires several JSON files that will be used when deploying the HLM VM.</p><p>The following sections details the files that need to be configured and contain sample JSON files that can be copied and pasted into your environment.</p>
+    <oXygen:ComponentDefinition><section id="json"><title>Configuring JSON files</title><p>The process for installing the memphis and sacramento deployments requires several JSON files that will be used when deploying the lifecycle manager.</p><p>The following sections details the files that need to be configured and contain sample JSON files that can be copied and pasted into your environment.</p>
             <p><b>Important:</b> Do not store backup of the JSON files inside your cloud directory
                 or any where inside the <codeph>/var/hlm/clouds</codeph> directory. You can create a
                 backup folder on <codeph>/root/</codeph> directory or on a remote system.</p></section></oXygen:ComponentDefinition>

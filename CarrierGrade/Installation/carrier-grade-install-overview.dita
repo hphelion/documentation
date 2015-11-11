@@ -174,7 +174,7 @@
     <section id="first-step">
       <title>First Step</title>
       <p>Perform the <xref href="carrier-grade-install-prereqs.dita#topic7148">prerequisite
-          steps and one time setup</xref> on your HLM host required to install HP Helion OpenStack
+          steps and one time setup</xref> on your KVM Host required to install HP Helion OpenStack
         Carrier Grade in a baremetal environment.</p>
     </section>
   </body>

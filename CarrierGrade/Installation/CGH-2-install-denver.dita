@@ -20,19 +20,19 @@
       <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.md-->
       <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
     <p>After Helion lifecycle management is installed, the next task in installing the <xref
-        href="carrier-grade-install-overview.dita#topic1925/install-option">KVM topology</xref>
-      is to deploy the HP Helion OpenStack cloud.</p>
+        href="carrier-grade-install-overview.dita#topic1925/install-option">KVM topology</xref> is
+      to deploy the HP Helion OpenStack cloud.</p>
     <p>If you are installing the <codeph>denver</codeph> template, which includes the KVM region and
       uses AVS networking, follow these instructions. If you are installing a different deployment,
       disregard these instructions. </p>
-    
+
     <section>
       <title>Log into the Helion lifecycle management VM (VM)</title>
       <p>To log into the VM you created in the previous page.</p>
       <ol>
-        <li>Login to the HLM VM.
-            <codeblock>ssh &lt;HLM_VM_IP>
-where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
+        <li>Login to the lifecycle manager.
+            <codeblock>ssh &lt;IP_address>
+where: IP_address is the CLM IP of the lifecycle manager. </codeblock><p>Use
             the <codeph>cghelion</codeph> credentials:
             <codeblock>User Name: cghelion
 Password: cghelion</codeblock></p><p><b>Important:</b>
@@ -41,9 +41,9 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
               width="400" id="image_nnb_fyb_3t"/></p></li>
         <li>Execute the following command to switch to the root
           user:<codeblock>sudo su -</codeblock></li>
-        <li>On the HLM VM, change to the home directory.<codeblock>cd ~</codeblock></li>
+        <li>On the lifecycle manager, change to the home directory.<codeblock>cd ~</codeblock></li>
       </ol></section>
-    
+
     <section id="configure-a-json-file-for-installation">
       <title>Provision the new cloud</title>
       <ol id="ol_k5x_rdy_wt">
@@ -113,7 +113,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
               </tbody>
             </tgroup>
           </table><p>To see a sample <codeph>node-provision.json</codeph> file, see<xref
-              href="carrier-grade-install-kvm-only-json">Sample JSON File for the HLM Virtual
+              href="carrier-grade-install-kvm-only-json">Sample JSON File for the lifecycle manager Virtual
               Machine Installation</xref>. </p></li>
         <li>Modify the <codeph>environment.json</codeph> file to configure the VLANs and network
           addresses as appropriate for your environment. Set the following for the CLM, CAN, and BLS
@@ -175,8 +175,8 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
 }</codeblock>
             <b>NOTE:</b> The Helion Configuration Processor assigns the first address of the CLM
             address range to itself for serving python and debian repositories. Make sure that you
-            set the first IP address of the CLM range for the eth2 (CLM) address of the HLM
-            host.</p></li>
+            set the first IP address of the CLM range for the eth2 (CLM) address of the KVM
+            Host.</p></li>
         <li>Modify the <codeph>definition.json</codeph> file: <ol id="ol_t3x_btn_xs">
             <li>Set the number of compute systems to 2.
               <codeblock>"count": 2, //number of computes in the resource pool</codeblock></li>
@@ -302,8 +302,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
         <li>Make sure the nodes are booted up.<p>a. Change to the <codeph>&lt;cloudname&gt;</codeph>
             directory:</p><codeblock>cd ~/&lt;cloudname&gt;</codeblock><p>b. Once the baremetal
             nodes are provisioned, make sure the <codeph>nodes.json</codeph> file is generated and
-            that you can establish a password-less SSH connection to these nodes from HLM
-          VM.</p></li>
+              that you can establish a password-less SSH connection to these nodes from the lifecycle manager.</p></li>
         <li>Configure the back-end drivers to enable management of the OpenStack Block Storage
           volumes in the KVM region equipped with 3PAR and/or VSA storage arrays. The HPE Block
           Storage (Cinder) service allows you to configure multiple storage back-ends. Use the
@@ -420,10 +419,12 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
       conref="conrefs/CGH-2-conref-generate-init-23.dita#ReusableComponent_q43_nbx_vt/hos-cloud"/>
     <section conref="conrefs/CGH-2-conref-hlm-deploy-24.dita#ReusableComponent_urx_xbx_vt/hdeploy"/>
     <section
-      conref="conrefs/CGH-2-conref-ldap-config-25.dita#ReusableComponent_y3j_1cx_vt/patch-after" id="ldap3"/>
+      conref="conrefs/CGH-2-conref-ldap-config-25.dita#ReusableComponent_y3j_1cx_vt/patch-after"
+      id="ldap3"/>
     <section id="next-step">
       <title>Next Step</title>
-      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon Interface</xref></p>
+      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon
+          Interface</xref></p>
       <!--<p><xref href="carrier-grade-install-kvm-cloud.dita">Deploying the KVM Region</xref></p>-->
     </section>
   </body>

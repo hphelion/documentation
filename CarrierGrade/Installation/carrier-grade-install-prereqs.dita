@@ -31,8 +31,8 @@
                                         Helion OpenStack Support Matrix</xref>.</p>
                 </section>
                 <section id="kvm">
-                        <title>Preparing the HLM host</title>
-                        <p>Perform the following tasks on the HLM host:</p>
+                        <title>Preparing the KVM Host</title>
+                        <p>Perform the following tasks on the KVM Host:</p>
                         <ul>
                                 <li><?oxy_insert_start author="burkmich" timestamp="20150727T182851-0400"?><xref
                                                 href="#topic7148/proxy" format="dita"
@@ -64,28 +64,28 @@
                                 <li><xref href="#topic7148/prepbare" format="dita"/></li>
                         </ul>
                         <title>Install Ubuntu Server 14.04.2 LTS</title>
-                        <p>The HLM host must have Ubuntu Server 14.04.2 LTS installed before
+                        <p>The KVM Host must have Ubuntu Server 14.04.2 LTS installed before
                                 performing the HP Helion OpenStack Carrier Grade installation.</p>
                 </section>
                 <!--<section id="pub-key"> <title>Obtain a public key</title>
-<p>On the HLM host, the user <codeph>root</codeph> must have a public key.</p>
+<p>On the KVM Host, the user <codeph>root</codeph> must have a public key.</p>
 <ol>
-<li>Launch a terminal and log in to your HLM host as root:<p>sudo su -</p></li>
+<li>Launch a terminal and log in to your KVM Host as root:<p>sudo su -</p></li>
 <li>Use the following command to create the key. Accept the default
           values.<p>/root/.ssh/id_rsa</p></li>
-<li>Install the public key into the authorized keys on the HLM
-            host:<codeblock><codeph>ssh-copy-id &lt;IP_address&gt;
+<li>Install the public key into the authorized keys on the KVM
+            Host:<codeblock><codeph>ssh-copy-id &lt;IP_address&gt;
 </codeph></codeblock><p>Enter the
-            IP address of the default network gateway on the HLM host.</p></li>
+            IP address of the default network gateway on the KVM Host.</p></li>
 </ol>
 </section>
 -->
                 <section id="proxy">
                         <title>Configure proxy information</title>
-                        <p>Before you begin your installation on the HLM host, configure the proxy
+                        <p>Before you begin your installation on the KVM Host, configure the proxy
                                 information for your environment using the following steps:</p>
                         <ol>
-                                <li>Launch a terminal and log in to your HLM host as
+                                <li>Launch a terminal and log in to your KVM Host as
                                         root:<codeblock><codeph>sudo su -
 </codeph></codeblock></li>
                                 <li>Edit the <codeph>/etc/environment</codeph> file to add the
@@ -95,8 +95,8 @@
                                                 optional<!-- per Lakshmi email 10/9/15-->:</p><codeblock><codeph>PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export http_proxy=http://&lt;web_proxy_IP&gt;/
 export https_proxy=http://&lt;web_proxy_IP&gt;/
-export no_proxy=localhost,127.0.0.1,&lt;HLM_host_IP_address>,&lt;provider_network></codeph></codeblock><p>Where:</p><codeblock>&lt;web_proxy_IP> is your web proxy IP address.
-&lt;HLM_host_IP_address> is the IP address of the HLM Host</codeblock></li>
+export no_proxy=localhost,127.0.0.1,&lt;KVM_Host_IP_address>,&lt;provider_network></codeph></codeblock><p>Where:</p><codeblock>&lt;web_proxy_IP> is your web proxy IP address.
+&lt;KVM_Host_IP_address> is the IP address of the KVM Host</codeblock></li>
                                 <li>Source the <codeph>environment</codeph>
                                         file:<codeblock><codeph>source /etc/environment
 </codeph></codeblock></li>
@@ -105,7 +105,7 @@ export no_proxy=localhost,127.0.0.1,&lt;HLM_host_IP_address>,&lt;provider_networ
                 <section id="packages">
                         <title>Install Ubuntu packages</title>
                         <p>Before starting the installation, you must install the following packages
-                                on the HLM host.</p>
+                                on the KVM Host.</p>
                         <ul id="ul_szw_sh4_rs">
                                 <li>ntp </li>
                                 <li>firefox </li>
@@ -135,7 +135,7 @@ export no_proxy=localhost,127.0.0.1,&lt;HLM_host_IP_address>,&lt;provider_networ
                                 <li>sudo</li>
                                 <li>ansible</li>
                         </ul>
-                        <p>To install the packages on the HLM host:</p>
+                        <p>To install the packages on the KVM Host:</p>
                         <ol>
                                 <li>On the KLM host, run the following command to install all
                                         required packages:
@@ -146,12 +146,12 @@ export no_proxy=localhost,127.0.0.1,&lt;HLM_host_IP_address>,&lt;provider_networ
                                         network.<codeblock><codeph>sudo su -c 'echo "8021q" &gt;&gt; /etc/modules'
 </codeph></codeblock></li>
                                 <li>Reboot the server</li>
-                                <li>Log out and re-login to the HLM host to activate the proxy
+                                <li>Log out and re-login to the KVM Host to activate the proxy
                                         configuration.</li>
                         </ol>
                 </section>
                 <section id="configure-the-xrdp-remote-desktop-display"><title>Configure the XRDP
-                                remote desktop display</title><p>Configure XRDP on the HLM host for
+                                remote desktop display</title><p>Configure XRDP on the KVM Host for
                                 the remote desktop connection to access the server remotely as
                                 follows.</p><ol>
                                 <li>Edit the <codeph>sesman.ini</codeph> file: <ol>
@@ -190,27 +190,27 @@ fi
                                 <li>Restart
                                 XDRP:<codeblock><codeph>sudo /etc/init.d/xrdp restart
 </codeph></codeblock><p>When
-                                you XRDP to the HLM host, the screen appears similar to the
+                                you XRDP to the KVM Host, the screen appears similar to the
                                 following image:</p><image href="../../media/CGH-install-xrdp.png"
                                 id="image_pln_cdm_vs">
                                 
                         </image> </li></ol></p></section>
                 <section id="ntp">
                         <title>Install and configure NTP</title>
-                        <p>You must configure the HLM host as an NTP client.</p>
-                        <p>You can install NTP on the HLM host and configure it as an NTP server.
+                        <p>You must configure the KVM Host as an NTP client.</p>
+                        <p>You can install NTP on the KVM Host and configure it as an NTP server.
                                 Or, you can use a pre-existing NTP server that is reachable from the
                                 management network. </p>
-                        <p>For information on configuring the HLM host as an NTP client, see <xref
+                        <p>For information on configuring the KVM Host as an NTP client, see <xref
                                         href="carrier-grade-install-NTP.dita#topic4740/client"
                                 />.</p>
-                        <p>For information on installing NTP on the HLM host, see <xref
+                        <p>For information on installing NTP on the KVM Host, see <xref
                                         href="../../CarrierGrade/Installation/carrier-grade-install-NTP.dita"
                                         >Installing an NTP Server</xref>.</p>
                 </section>
                 <section id="ssh">
                         <title>Configure SSH</title>
-                        <p>On the HLM host, the OpenSSH server must be running and the firewall
+                        <p>On the KVM Host, the OpenSSH server must be running and the firewall
                                 configuration should allow access to the SSH ports.</p>
                         <ol>
                                 <li>Enable root login in the <codeph>/etc/ssh/sshd_config</codeph>:
@@ -328,13 +328,13 @@ StrictHostKeyChecking no </codeblock></li>
                                                   <ul id="ul_oty_2cz_st">
                                                   <li><codeph>license.lic</codeph> Located in the
                                                   <codeph>/root/cg-hlm/windriver-files</codeph>
-                                                  directory on the HLM host.</li>
+                                                  directory on the KVM Host.</li>
                                                   <li><codeph>region_config</codeph> Located in the
                                                   /<codeph>var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
-                                                  directory on the HLM host.</li>
+                                                  directory on the KVM Host.</li>
                                                   <li><codeph>cakey.pem</codeph> Located in the
                                                   <codeph>/var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
-                                                  directory on the HLM host.</li>
+                                                  directory on the KVM Host.</li>
                                                   </ul>
                                                 </p><p>You can download these files to any location.
                                                   You will copy these files to the
@@ -413,7 +413,7 @@ StrictHostKeyChecking no </codeblock></li>
                 <section>
                         <title>Obtain the required Debian packages</title>
                         <p>HP Helion OpenStack Carrier Grade maintains a local Debian repository on
-                                the HLM host from where Debain packages are installed. Download
+                                the KVM Host from where Debain packages are installed. Download
                                 these files from a trusted source and copy them to the
                                         <systemoutput>/root/cg/dcn</systemoutput> directory. </p>
                         <p>
@@ -470,8 +470,8 @@ StrictHostKeyChecking no </codeblock></li>
                                                   server)</li>
                                                 <li>DCN-VSD-QCOW-3.0R8 (copy to VSD server)</li>
                                         </ul></li>
-                                <li>Create the <codeph>~/cg/dcn</codeph> directory on the HLM
-                                        host.</li>
+                                <li>Create the <codeph>~/cg/dcn</codeph> directory on the KVM
+                                        Host.</li>
                                 <li>Extract the compressed download packages. 
                                         <table
                                                 id="table_e4b_pyk_2t">
@@ -486,7 +486,7 @@ StrictHostKeyChecking no </codeblock></li>
                                                   <entry>File Name</entry>
                                                   <entry>List of files to be used after
                                                   Extraction</entry>
-                                                  <entry>Copy the files to directory on HLM
+                                                  <entry>Copy the files to directory on the KVM
                                                   Host</entry>
                                                   </row>
                                                   </thead>
@@ -551,7 +551,7 @@ StrictHostKeyChecking no </codeblock></li>
                                                                         <entry>File Name</entry>
                                                                         <entry>List of files to be used after
                                                                                 Extraction</entry>
-                                                                        <entry>Copy the files to directory on HLM
+                                                                        <entry>Copy the files to directory on the KVM
                                                                                 Host</entry>
                                                                 </row>
                                                         </thead>
@@ -606,11 +606,11 @@ StrictHostKeyChecking no </codeblock></li>
                         </ol>--></section>
                 <section><!--<p>Launch the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Distribution Network (HDN)</xref>. You must <xref href="https://idm.pod1.prod-core.hpwsportal.com/webid/" format="html" scope="external">obtain a user account on HDN</xref> in order to download these files. </p><p>Click the <b>Downloads</b> tab and locate the following downloads. <ul id="ul_dcw_yld_gt"><li><b>Helion Carrier Grade 1.1.0</b>. Installation files for HP Helion OpenStack Carrier Grade. This link will download the <codeph>hcg.1.1.0.tar</codeph> file. Also download the <b> Helion Carrier Grade 1.1.0 Checksum File</b> and <b id="productShow_appName">Helion Carrier Grade 1.1.0 Signature File</b>.</li><li><b>Helion Carrier Grade 1.1.0 Wind River License Patch</b>. Required license file for the KVM region servers. Also download the <b> Helion Carrier Grade 1.1.0 Windriver License patch checksum file</b> and <b> Helion Carrier Grade 1.1.0 Windriver License patch signature file</b>.</li><li><b>Horizon Patch Tar File for Helion Carrier Grade 1.1.0</b>. Required patch for the Horizon UI. Also download the <b> Helion Carrier Grade 1.1.0 Horizon Patch Checksum File</b> and <b>Helion Carrier Grade 1.1.0 Horizon Patch Signature File</b>.</li><li><b>GPG keys to verify signature files</b>. A set of GPG keys to verify download signatures. GPG-HPCSS-Public-Keys(1).tar</li></ul></p><p><b>Note:</b> When downloading installation files, always download and verify the signature file before installing. </p>--><!--<ol>
                                 
-                                <li>In a browser, navigate to <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Download Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs"><li>Click <b>Sign In</b> to log in using your account. </li><li>After signing in, click the <b>Downloads</b> link in the menu on the left side of the page.</li><li>On the <b>Downloads</b> page, locate HP Helion OpenStack Carrier Grade and click <b>Download</b>.</li></ul></li><li>Download the following files: <ul><li><b>Helion Carrier Grade 2.0.0</b>. The file is named <codeph>hcg_1.1.0.tar</codeph>. Also download the <b>Helion Carrier Grade 2.0.0 Checksum</b> and <b>Helion Carrier Grade 2.0.0 Signature</b> files.</li><li><b>Horizon Patch Tar File for Helion Carrier Grade</b>. The file is named <codeph>hcg_1.1.0_horizon_patch1.tar</codeph>. Also download the <b>Horizon Patch Tar File for Helion Carrier Grade Checksum</b> and <b>Horizon Patch Tar File for Helion Carrier Grade Signature</b> files.</li><li><b id="productShow_apcodeph">Helion Carrier Grade 1.1.0 Windriver License patch signature file</b> and the <b>Helion Carrier Grade 2.0.0 Windriver License patch</b> signature file signature and <b>Helion Carrier Grade 2.0.0 Windriver License patch</b> signature file checksum files.</li><li>LDAP patch. Download the <codeph>ldap_patch_1.1.tar.gz and hoscg-update.tgz</codeph> file. </li><li>Compute Proxy patch. Dowload the <codeph>compute_proxy_patch_1.1.tar.gz</codeph> file.</li><li>GRE tunnel. Download the <codeph>gre_patch_1.1.tar.gz</codeph> file. </li><li>HLM port security patch. Download the <codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph> file.</li><li>Rabbit MQ Random Password patch. Download the <codeph>random-password.tar.gz</codeph> file.</li><li>Helion Dynamic Password patch. Download the <codeph>horizon_web_patch_1.1.tar.gz</codeph> file.</li><li>NIC Bonding Patch. If you are using bonded NIC, download the <codeph>cg-hos-nic-bonding.patch</codeph> file.</li><li><b>GPG keys to verify signature files</b>. This file is named <codeph>GPG-HPCSS-Public-Keys.tar</codeph>.</li></ul></li>
+                                <li>In a browser, navigate to <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Download Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs"><li>Click <b>Sign In</b> to log in using your account. </li><li>After signing in, click the <b>Downloads</b> link in the menu on the left side of the page.</li><li>On the <b>Downloads</b> page, locate HP Helion OpenStack Carrier Grade and click <b>Download</b>.</li></ul></li><li>Download the following files: <ul><li><b>Helion Carrier Grade 2.0.0</b>. The file is named <codeph>hcg_1.1.0.tar</codeph>. Also download the <b>Helion Carrier Grade 2.0.0 Checksum</b> and <b>Helion Carrier Grade 2.0.0 Signature</b> files.</li><li><b>Horizon Patch Tar File for Helion Carrier Grade</b>. The file is named <codeph>hcg_1.1.0_horizon_patch1.tar</codeph>. Also download the <b>Horizon Patch Tar File for Helion Carrier Grade Checksum</b> and <b>Horizon Patch Tar File for Helion Carrier Grade Signature</b> files.</li><li><b id="productShow_apcodeph">Helion Carrier Grade 1.1.0 Windriver License patch signature file</b> and the <b>Helion Carrier Grade 2.0.0 Windriver License patch</b> signature file signature and <b>Helion Carrier Grade 2.0.0 Windriver License patch</b> signature file checksum files.</li><li>LDAP patch. Download the <codeph>ldap_patch_1.1.tar.gz and hoscg-update.tgz</codeph> file. </li><li>Compute Proxy patch. Dowload the <codeph>compute_proxy_patch_1.1.tar.gz</codeph> file.</li><li>GRE tunnel. Download the <codeph>gre_patch_1.1.tar.gz</codeph> file. </li><li>KLM port security patch. Download the <codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph> file.</li><li>Rabbit MQ Random Password patch. Download the <codeph>random-password.tar.gz</codeph> file.</li><li>Helion Dynamic Password patch. Download the <codeph>horizon_web_patch_1.1.tar.gz</codeph> file.</li><li>NIC Bonding Patch. If you are using bonded NIC, download the <codeph>cg-hos-nic-bonding.patch</codeph> file.</li><li><b>GPG keys to verify signature files</b>. This file is named <codeph>GPG-HPCSS-Public-Keys.tar</codeph>.</li></ul></li>
                         --><!--<li><b>vCenter Proxy Appliance</b>. For the KVM + ESX deployment, download this file, named <codeph>overcloud_vcenter_compute_proxy.tar</codeph>. Also download the Signature files. This file will need to be moved to the system that hosts the VMware vCenter client. You can move the file to that system or download the file later.</li><li><b id="productShow_apcodeph">VCN OVSvApp Appliance</b>.  For the KVM + ESX deployment, download this file, named   Also download the Signature files. HPE Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).</li>--><!--  <li><xref href="#topic7148/verify" format="dita">Verify the
                                                 signature and checksums</xref>. </li>
                         </ol>--></section>
-                <!--<section id="verify"><title>Verify the downloaded signature</title><p>After downloading the installation packages, you should verify the signature of the download. You can use the GPG utility, which is already installed on the HLM node. Signed by the signature file.</p><p>A set of GPG public keys are available on <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Download Network(HDN)</xref> . If you did not download the public keys in the previous section, click the <b>GPG keys to verify signature files</b> link in HDN to download the <codeph>cg-hos.tar.gz.</codeph> file. </p><ol><li>Copy the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file to the <codeph>/root/cg/</codeph> directory. You wlll need to create this directory:<codeblock>mkdir /root/cg/</codeblock></li><li>Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file.<codeblock> tar xvf GPG-HPCSS-Public-Keys.tar </codeblock></li><li>Copy the public keys to the HLM host server, extract the keys from the compressed files. <p>The following keys are included in the download:</p><ul id="ul_uzg_xmq_bt"><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-1.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-2.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-3.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-4.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-5.pub</li><li>hpPublicKey.pub</li><li>hpPublicKey2048.pub</li></ul></li><li>Execute the following command to import the keys: <codeblock>gpg -\-import "&lt;filename>"</codeblock><p>Where &lt;filename> is the name of the extracted file.</p><p>The keys are then imported into the gpgp key share: <codeblock>gpg -\-import hpPublicKey.pub 
+                <!--<section id="verify"><title>Verify the downloaded signature</title><p>After downloading the installation packages, you should verify the signature of the download. You can use the GPG utility, which is already installed on the KVM Host. Signed by the signature file.</p><p>A set of GPG public keys are available on <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Download Network(HDN)</xref> . If you did not download the public keys in the previous section, click the <b>GPG keys to verify signature files</b> link in HDN to download the <codeph>cg-hos.tar.gz.</codeph> file. </p><ol><li>Copy the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file to the <codeph>/root/cg/</codeph> directory. You wlll need to create this directory:<codeblock>mkdir /root/cg/</codeblock></li><li>Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file.<codeblock> tar xvf GPG-HPCSS-Public-Keys.tar </codeblock></li><li>Copy the public keys to the KVM Host server, extract the keys from the compressed files. <p>The following keys are included in the download:</p><ul id="ul_uzg_xmq_bt"><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-1.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-2.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-3.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-4.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-5.pub</li><li>hpPublicKey.pub</li><li>hpPublicKey2048.pub</li></ul></li><li>Execute the following command to import the keys: <codeblock>gpg -\-import "&lt;filename>"</codeblock><p>Where &lt;filename> is the name of the extracted file.</p><p>The keys are then imported into the gpgp key share: <codeblock>gpg -\-import hpPublicKey.pub 
 gpg -\-import Hewlett Packard EnterpriseCompanyRSA\(HPCodesigningService\)-1.pub 
 gpg -\-import Hewlett Packard EnterpriseCompanyRSA\(HPCodesigningService\)-2.pub 
 gpg -\-import Hewlett Packard EnterpriseCompanyRSA\(HPCodesigningService\)-3.pub 
@@ -676,7 +676,7 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                         <thead>
                                                 <row>
                                                   <entry><b>File Name</b></entry>
-                                                  <entry><b>To be copied in the Base HLM KVM
+                                                  <entry><b>Copy to location on the KVM
                                                   Host</b></entry>
                                                   <entry><b>Description</b></entry>
                                                 </row>
@@ -706,7 +706,7 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   <p>/root/cg</p>
                                                   <p> </p>
                                                   <p><b>Create cg folder if you don’t have in the
-                                                  HLM host</b></p>
+                                                  KVM Host</b></p>
                                                   </entry>
                                                   <entry> </entry>
                                                 </row>
@@ -737,7 +737,7 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                 <row>
                                                   <entry>Folder</entry>
                                                   <entry>File Name</entry>
-                                                  <entry>To be copied to the HLM Host</entry>
+                                                  <entry>To be copied to the KVM Host</entry>
                                                 </row>
                                         </thead>
                                         <tbody>
@@ -756,7 +756,7 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   <entry>
                                                   <p>/root/cg/dcn</p>
                                                   <p><b>Create dcn folder uncer /root/cg if you
-                                                  don’t have in the HLM host</b></p>
+                                                  don’t have in the KVM Host</b></p>
                                                   </entry>
                                                 </row>
                                                 <row>
@@ -775,14 +775,14 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   <p> VRS_3.2.4-135_10062015-disk1.vmdk</p>
                                                   </entry>
                                                   <entry>
-                                                  <p><codeph>/var/www/html</codeph> on the HLM host.
+                                                  <p><codeph>/var/www/html</codeph> on the KVM Host.
                                                   </p>
                                                   </entry>
                                                 </row>
                                         </tbody>
                                 </tgroup>
                         </table><b>Debian Packages</b><p>Move the downloaded files to the to the
-                                        <codeph>/root/cg/dcn</codeph> directory on the HLM host:<ul
+                                        <codeph>/root/cg/dcn</codeph> directory on the KVM Host:<ul
                                         id="ul_hq1_sjh_xt">
                                                 <li conref="#topic7148/libproto"/>
                                         <li conref="#topic7148/setproc"/>
@@ -794,13 +794,13 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                 <li>HCG_2.0_WR_license.lic.txt</li>
                                 <li><codeph>license.lic</codeph> Located in the
                                                 <codeph>/root/cg-hlm/windriver-files</codeph>
-                                        directory on the HLM VM.</li>
+                                        directory on the lifecycle manager.</li>
                                 <li><codeph>region_config</codeph> Located in the
                                                 /<codeph>var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
-                                        directory on the HLM VM.</li>
+                                        directory on the lifecycle manager.</li>
                                 <li><codeph>cakey.pem</codeph> Located in the
                                                 <codeph>/var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
-                                        directory on the HLM VM.</li>
+                                        directory on the lifecycle manager.</li>
                         </ul></section>
                 <!--<ol>
                                 <li>Extract the <codeph>hcg_1.1.0.tar</codeph> file. The following
@@ -819,7 +819,7 @@ WR/extras/HP-HCG-SDK-15.05-b10.tgz.md5
 WR/extras/HP-HCG-sample-guest-15.05-b9.img
 WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                         </ol>-->
-                <!--<section id="extract"><ol><li>Copy the <codeph>cg-hlm.qcow2</codeph> file to the images folder: <codeph>/var/lib/libvirt/images</codeph>. </li><li>Copy the <codeph>cg-infra-playbooks.tar.gz</codeph> file from the <codeph>hcg_1.1.0.tar</codeph> files to the <codeph>/root</codeph> directory.</li></ol><p>The following table lists the installation and patch files and indicates where you need to copy those files.</p><table id="table_yhb_zny_zs"><tgroup cols="3"><colspec colnum="1" colname="col2" colwidth="1*"/><colspec colnum="2" colname="col3" colwidth="1.11*"/><colspec colnum="3" colname="col4" colwidth="1.11*"/><thead><row><entry>File Name</entry><entry>Extracted from</entry><entry>Copy the file to: </entry></row></thead><tbody><row><entry><codeph>cg-hlm.qcow2</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/var/lib/libvirt/images</codeph> on the HLM host</entry></row><row><entry><codeph>cg-infra-playbooks.tar.gz</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on the HLM host</entry></row><row><entry><codeph>TEMPL-CPV9.ova</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry>Any location on any server that can be accessed by the VMware vCenter client.</entry></row><row><entry><codeph>ldap_patch_1.1.tar.gz and hoscg-update.tgz </codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1/</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>gre_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry>Any directory on the HLM host. Make note of the location.</entry></row><row><entry><codeph>compute_proxy_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>random-password.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>horizon_web_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>WR/HP-HCG-Server-host-installer-15.05-b10.iso</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on <codeph>controller-0</codeph> in the KVM region.</entry></row><row><entry><codeph>WR/extras/HP-HCG-SDK-15.05-b10.tgz WR/extras/HP-HCG-SDK-15.05-b10.tgz.md5</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on <codeph>controller-0</codeph> in the KVM region. SDK files to be used as needed.</entry></row><row><entry><codeph>WR/extras/HP-HCG-sample-guest-15.05-b9.img WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on <codeph>controller-0</codeph> in the KVM region. Sample guestt OS files to be used as needed.</entry></row></tbody></tgroup></table></section>-->
+                <!--<section id="extract"><ol><li>Copy the <codeph>cg-hlm.qcow2</codeph> file to the images folder: <codeph>/var/lib/libvirt/images</codeph>. </li><li>Copy the <codeph>cg-infra-playbooks.tar.gz</codeph> file from the <codeph>hcg_1.1.0.tar</codeph> files to the <codeph>/root</codeph> directory.</li></ol><p>The following table lists the installation and patch files and indicates where you need to copy those files.</p><table id="table_yhb_zny_zs"><tgroup cols="3"><colspec colnum="1" colname="col2" colwidth="1*"/><colspec colnum="2" colname="col3" colwidth="1.11*"/><colspec colnum="3" colname="col4" colwidth="1.11*"/><thead><row><entry>File Name</entry><entry>Extracted from</entry><entry>Copy the file to: </entry></row></thead><tbody><row><entry><codeph>cg-hlm.qcow2</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/var/lib/libvirt/images</codeph> on the KVM Host</entry></row><row><entry><codeph>cg-infra-playbooks.tar.gz</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on the KVM Host</entry></row><row><entry><codeph>TEMPL-CPV9.ova</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry>Any location on any server that can be accessed by the VMware vCenter client.</entry></row><row><entry><codeph>ldap_patch_1.1.tar.gz and hoscg-update.tgz </codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1/</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>gre_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry>Any directory on the KVM Host. Make note of the location.</entry></row><row><entry><codeph>compute_proxy_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>random-password.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>horizon_web_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>WR/HP-HCG-Server-host-installer-15.05-b10.iso</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on <codeph>controller-0</codeph> in the KVM region.</entry></row><row><entry><codeph>WR/extras/HP-HCG-SDK-15.05-b10.tgz WR/extras/HP-HCG-SDK-15.05-b10.tgz.md5</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on <codeph>controller-0</codeph> in the KVM region. SDK files to be used as needed.</entry></row><row><entry><codeph>WR/extras/HP-HCG-sample-guest-15.05-b9.img WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on <codeph>controller-0</codeph> in the KVM region. Sample guestt OS files to be used as needed.</entry></row></tbody></tgroup></table></section>-->
                 <section id="vsd">
                         <title>Bring Up Single VSD VM Manually</title>
                         <p><b>Note:</b> This is not applicable for the <xref
@@ -867,7 +867,7 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                 </section>
                 <section id="next-step">
                         <title>Next Step</title>
-                        <p><xref href="carrier-grade-install-hlm-vm.dita#topic10581">Deploying the HLM VM and installation
+                        <p><xref href="carrier-grade-install-hlm-vm.dita#topic10581">Deploying the lifecycle manager and installation
                                                   services</xref>.
                                 
                         </p>

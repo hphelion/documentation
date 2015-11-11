@@ -19,9 +19,9 @@
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
     <p>The process for installing the memphis or sacramento deployment requires several JSON files
-            that will be used when deploying the HLM VM.</p>
+            that will be used when deploying the lifecycle manager.</p>
         <p>The <codeph>esx.json</codeph> file in the
-                <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the HLM VM contains
+                <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the lifecycle manager contains
             the following fields:</p>
    <p> <table frame="all" rowsep="1" colsep="1" id="table_c54_dxd_ss">
         <tgroup cols="2">

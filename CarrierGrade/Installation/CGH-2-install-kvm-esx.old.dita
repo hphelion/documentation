@@ -100,7 +100,7 @@
         <image href="../../media/CGH-install-virsh-vsd.png" width="400"/></p>
     </section>
     <section id="vsd-license"><title>Apply the VSD License</title>You should have recevied a license
-      file when you purchased DCN. You need to apply that license on the HLM host. For more
+      file when you purchased DCN. You need to apply that license on the KVM Host. For more
       information, see <xref href="carrier-grade-install-vsd-license.dita#topic10581"/>.</section>
     <section id="create-user-for-plugin-login">
       <title>Create an OSadmin user for VSD</title>
@@ -110,12 +110,12 @@
     </section>
     <section id="hos-install">
       <title>Launch the HPE Helion OpenStack cloud</title>
-      <p>Use the following steps on the HLM host to log on to the HLM VM created in <xref
+      <p>Use the following steps on the KVM Host to log on to the lifecycle manager created in <xref
           href="carrier-grade-install-hlm-vm.dita#topic10581">Bootstrapping the HPE Helion Lifecycle
           Management Virtual Machine and Installation Services</xref>:</p>
       <ol>
-        <li>Login to HLM VM. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where: HLM_VM_IP is the CLM
-            IP of the HLM VM. Locate the IP address for the HLM VM in the
+        <li>Login to lifecycle manager. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where: HLM_VM_IP is the CLM
+            IP of the lifecycle manager. Locate the IP address for the lifecycle manager in the
               <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file under
               <codeph>hlm_clmstaticip</codeph> field.</p><p>Use the default credentials: </p><p>
             <codeblock>User Name: root
@@ -151,7 +151,7 @@ Password: cghelion</codeblock>
     <section id="configure-node-provision-json">
       <title>Configure the node-provision JSON file</title>
       <p>Modify the <codeph>node-provision.json</codeph> file in the
-          <codeph>/var/hlm/clouds/&lt;cloudname></codeph> directory of the HLM VM. This file
+          <codeph>/var/hlm/clouds/&lt;cloudname></codeph> directory of the lifecycle manager. This file
         supplies input values to the <codeph>hprovision</codeph> script, later in the installation. </p>
       <p><b>Note:</b> To see a sample <codeph>node-provision.json</codeph> file, see <xref
           href="carrier-grade-install-kvm-node-json.dita">Sample node-provision.json File for
@@ -204,7 +204,7 @@ Password: cghelion</codeblock>
       <b>Configure PXE boot</b>
     </p>
     <p>After you edit the <codeph>node-provision.json</codeph> file, you must enable one-time PXE
-      boot on the servers to set the correct boot order. Execute the following on the HLM VM:</p>
+      boot on the servers to set the correct boot order. Execute the following on the lifecycle manager:</p>
     <ol>
       <li>Copy the <codeph>ilopxebootonce.py</codeph> from the
           <systemoutput>/root/cg-hlm/dev-tools/ilopxebootonce.py</systemoutput> to the
@@ -219,7 +219,7 @@ Password: cghelion</codeblock>
     <section id="configure-def-json">
       <title>Configure the definition.json file</title>
       <p>Modify the <codeph>definition.json</codeph> file in the
-          <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the HLM VM to define the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the lifecycle manager to define the
         number of ESX compute proxies required in your environment. You need one proxy per vCenter;
         make sure this value is set to 2<!--set this value to the number of vCenters you have.-->,
         as shown in the following example.</p>
@@ -248,7 +248,7 @@ Password: cghelion</codeblock>
     <section id="configure-env-json">
       <title>Configure the environment.json file</title>
       <p>Modify the <codeph>environment.json</codeph> file in the
-          <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the HLM VM to configure
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the lifecycle manager to configure
         the VLANs and network addresses as appropriate for your environment. Configure the CLM
         (management), CAN (api), and BLS (blockstore) networks.</p>
       <p><b>Note:</b> To see a sample <codeph>environment.json</codeph> file, see one of the
@@ -274,7 +274,7 @@ Password: cghelion</codeblock>
     <section id="configure-ansible-json">
       <title>Configure the ansible.json file</title>
       <p>Modify the <codeph>ansible.json</codeph> file in the
-          <codeph>/var/hlm/clouds/&lt;cloudname&gt;/vars</codeph> directory of the HLM VM.</p>
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;/vars</codeph> directory of the lifecycle manager.</p>
       <p>To see a sample <codeph>ansible.json</codeph> file, see <xref
           href="carrier-grade-install-kvm-ansible-json.dita">Sample ansible.json File for
           Installing the KVM + ESX Topology</xref>.</p>
@@ -282,7 +282,7 @@ Password: cghelion</codeblock>
     <section id="configure-esx-json">
       <title>Configure the esx.json file</title>
       <p>Modify the <codeph>esx.json</codeph> file in the
-          <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory on the HLM VM. This file is
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory on the lifecycle manager. This file is
         called by the script that installs the HPE Helion OpenStack cloud, later in the installation. </p>
       <p>To see a sample <codeph>esx.json</codeph> file, see <xref
           href="carrier-grade-install-kvm-esx-json.dita">Sample esx.json File for Installing the
@@ -291,7 +291,7 @@ Password: cghelion</codeblock>
     <section id="configure-ldap-json">
       <title>Configure the ldap.json file</title>
       <p>Modify the <codeph>ldap.json</codeph> file in the
-          <codeph>/var/hlm/clouds/&lt;cloudname&gt;/vars</codeph> directory of the HLM VM.</p>
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;/vars</codeph> directory of the lifecycle manager.</p>
       <p>To see a sample <codeph>ldap.json</codeph> file, see <xref
           href="carrier-grade-install-kvm-ldap-json.dita">Sample ldap.json File for Installing
           the KVM + ESX Topology</xref>. </p>
@@ -299,7 +299,7 @@ Password: cghelion</codeblock>
     <section id="dcn-json">
       <title>Configure the dcn.json file</title>
       <p>Modify the <codeph>dcn.json</codeph> file in the
-          <codeph>/opt/share/hlm/1/site/services/dcn.json</codeph> directory of the HLM VM to remove
+          <codeph>/opt/share/hlm/1/site/services/dcn.json</codeph> directory of the lifecycle manager to remove
           <b>both</b> instances of the following code:
         <codeblock>      {
           "description": "Ingress 47 GRE",
@@ -314,7 +314,7 @@ Password: cghelion</codeblock>
     <section id="ccp-dcn-esx-json">
       <title>Configure the ccp-dcn-esx.json file</title>
       <p>Modify the <codeph>member-count</codeph> field in the <codeph>ccp-dcn-esx.json</codeph> in
-        the <codeph>/var/hlm/clouds/&lt;cloudname&gt;/.hos/</codeph> directory of the HLM VM. Make
+        the <codeph>/var/hlm/clouds/&lt;cloudname&gt;/.hos/</codeph> directory of the lifecycle manager. Make
         sure the <codeph>member-count</codeph> field in the <codeph>tiers</codeph> section is set to
           <b>1</b> as shown:</p>
       <p><!--By default it will be “2”, change to “1” for Build#15.--></p>
@@ -327,7 +327,7 @@ Password: cghelion</codeblock>
       <title>Configure the wr.json file</title>
       <p><b>For bonded NIC environments</b>, modify the <codeph>wr.json</codeph> file in the
           <codeph>/var/hlm/clouds/&lt;cloudname&gt;/&lt;cloudname>/vars</codeph> directory on the
-        HLM VM.</p>
+        lifecycle manager.</p>
       <p>To see a sample <codeph>wr.json</codeph> file, see <xref
           href="carrier-grade-install-kvm-wr-json.dita">Sample wr.json File for Installing the
           KVM + ESX Topology</xref>. </p>
@@ -335,7 +335,7 @@ Password: cghelion</codeblock>
     <section id="configure-mach-json">
       <title>Configure the machine_architecture.json file</title>
       <p><b>For bonded NIC environments</b>, modify the <codeph>machine_architecture.json</codeph>
-        file in the <codeph>/opt/share/hlm/1/site/</codeph> directory of the HLM VM to fit your
+        file in the <codeph>/opt/share/hlm/1/site/</codeph> directory of the lifecycle manager to fit your
         hardware model. You have to gather the correct PCI SLOT INFO and add ports accordingly on
         the hardware slots or cards used for networking.</p>
       <p><b>Note:</b> To see a sample <codeph>machine_architecture.json</codeph> file, see <xref
@@ -364,7 +364,7 @@ Password: cghelion</codeblock>
     <section id="create-a-new-cloud-template-and-bring-the-cloud-nodes-up">
       <title>Provision the cloud nodes and bring the cloud nodes up</title>
       <ol>
-        <li>On the HLM host, use the following script to start the provisioning of the HPE Helion
+        <li>On the KVM Host, use the following script to start the provisioning of the HPE Helion
           OpenStack cloud: <codeblock>hlm provision &lt;cloudname&gt;          </codeblock><p>Where:
               <codeph>&lt;cloudname&gt;</codeph> is the name of the cloud you created. The script
             takes approximately 15 to 30 minutes.</p><p>This script prepares the bare metal servers
@@ -381,9 +381,9 @@ Password: cghelion</codeblock>
           file is generated. The <codeph>nodes.json</codeph> file will have entries of 3
           controllers, 1 DCN Hosts, 1 VRS-G and the 2 compute proxy nodes.</li>
         <li>Verify that each node in the <codeph>nodes.json</codeph> file is installed and active. <ol>
-            <li>Ping proxy node from HLM VM with the IP using IP specified in
+            <li>Ping proxy node from lifecycle manager with the IP using IP specified in
                 <codeph>nodes.json</codeph> file.</li>
-            <li>SSH to the compute proxy node from the HLM VM using IP specified in
+            <li>SSH to the compute proxy node from the lifecycle manager using IP specified in
                 <codeph>nodes.json</codeph> file.</li>
           </ol></li>
       </ol>
@@ -530,7 +530,7 @@ The cloud &lt;cloudname> was generated successfully.
           href="carrier-grade-install-build9-workarounds.dita#topic10581">this section for
           troubleshooting</xref>. </p>
     </section>
-    <section><!--<title>Applying the HLM Port Security Patch</title>This patch secures all ports on the HLM VM. The standard protocol ports will allow inbound access only and the only the cloud nodes will have inbound access to the other ports of the HLM VM.<p>For more information, see the README in the download or <xref href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port Security Patch</xref>. </p>--></section>
+    <section><!--<title>Applying the HLM Port Security Patch</title>This patch secures all ports on the lifecycle manager. The standard protocol ports will allow inbound access only and the only the cloud nodes will have inbound access to the other ports of the lifecycle manager.<p>For more information, see the README in the download or <xref href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port Security Patch</xref>. </p>--></section>
     <section>
       <title>Deploy the Icinga Patch</title>
       <p>After launching the <codeph>hdeploy</codeph> command, deploy three patches to support the
@@ -556,7 +556,7 @@ The cloud &lt;cloudname> was generated successfully.
       <p>The installation process creates virtual machines for VSC. Use the following steps to
         verify that the VSC VMs are installed and are operational:</p>
       <ol id="ol_fkv_xjj_1t">
-        <li>SSH to your VSC VM from HLM Host using the DCM IP. The default username and password:
+        <li>SSH to your VSC VM from KVM Host using the DCM IP. The default username and password:
             <codeph>admin/admin</codeph><p>
             <codeblock>ssh cghelion@&lt;CLM IP of DCN Host&gt;</codeblock>
           </p></li>

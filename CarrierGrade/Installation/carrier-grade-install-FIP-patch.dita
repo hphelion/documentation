@@ -21,7 +21,7 @@
       <ol id="ol_pn3_141_mt">
         <li>Download the <codeph>kcp-windriver-build-15-only.patch</codeph> and
             <codeph>knc-horizon-helion-theme-dashboard.patch</codeph> files.</li>
-        <li>Copy the patch files to the  <codeph>~/</codeph> directroy on the HLM host. </li>
+        <li>Copy the patch files to the  <codeph>~/</codeph> directroy on the KVM Host. </li>
         <li> Change to the <codeph>kenobi-configuration-processor</codeph> directory:<p>
             <codeblock>cd ~/kenobi-configuration-processor</codeblock>
           </p></li>

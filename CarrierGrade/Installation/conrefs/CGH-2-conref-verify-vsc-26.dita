@@ -22,7 +22,7 @@
 ]>
 <oXygen:ReusableComponent id="ReusableComponent_cyy_ccx_vt">
     <oXygen:ComponentDescription>Verify the VSC VM</oXygen:ComponentDescription>
-    <oXygen:ComponentDefinition><section id="section_jyy_ccx_vt"><title>Verify the VSC VMs</title><p>The installation process creates virtual machines for VSC. Use the following steps to verify that the VSC VMs are installed and are operational:</p><ol id="ol_fkv_xjj_1t"><li>SSH to your VSC VM from HLM Host using the DCM IP. The default username and password: <codeph>admin/admin</codeph><p><codeblock>ssh cghelion@&lt;CLM IP of DCN Host&gt;</codeblock></p></li><li>Execute the following command: <codeblock>admin display-config</codeblock></li><li>Execute the following commands to verify the VMs are active: <codeblock>show vswitch-controller vsd
+    <oXygen:ComponentDefinition><section id="section_jyy_ccx_vt"><title>Verify the VSC VMs</title><p>The installation process creates virtual machines for VSC. Use the following steps to verify that the VSC VMs are installed and are operational:</p><ol id="ol_fkv_xjj_1t"><li>SSH to your VSC VM from KVM Host using the DCM IP. The default username and password: <codeph>admin/admin</codeph><p><codeblock>ssh cghelion@&lt;CLM IP of DCN Host&gt;</codeblock></p></li><li>Execute the following command: <codeblock>admin display-config</codeblock></li><li>Execute the following commands to verify the VMs are active: <codeblock>show vswitch-controller vsd
 show vswitch-controller xmpp-server
 ping router "management" &lt;vsd IP or domain name>  </codeblock></li></ol></section></oXygen:ComponentDefinition>
 </oXygen:ReusableComponent>

@@ -22,8 +22,8 @@
 ]>
 <oXygen:ReusableComponent id="ReusableComponent_swm_qzw_vt">
     <oXygen:ComponentDescription>HLM Define</oXygen:ComponentDescription>
-    <oXygen:ComponentDefinition><section id="hos-install"><title>Launch the HPE Helion OpenStack cloud</title><p>Use the following steps on the HLM host to log on to the HLM VM created in <xref href="../carrier-grade-install-hlm-vm.dita#topic10581">Bootstrapping the HPE Helion Lifecycle Management Virtual Machine and Installation Services</xref>:</p><ol><li>Log into the HLM VM. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where: HLM_VM_IP is the CLM IP
-                        of the HLM VM. Locate the IP address for the HLM VM in the
+    <oXygen:ComponentDefinition><section id="hos-install"><title>Launch the HPE Helion OpenStack cloud</title><p>Use the following steps on the KVM Host to log on to the lifecycle manager created in <xref href="../carrier-grade-install-hlm-vm.dita#topic10581">Bootstrapping the HPE Helion Lifecycle Management Virtual Machine and Installation Services</xref>:</p><ol><li>Log into the lifecycle manager. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where: HLM_VM_IP is the CLM IP
+                        of the lifecycle manager. Locate the IP address for the lifecycle manager in the
                             <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file under
                             <codeph>hlm_clmstaticip</codeph> field.</p><p>Use the default
                         credentials: </p><p>

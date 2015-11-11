@@ -22,7 +22,7 @@
 ]>
 <oXygen:ReusableComponent id="ReusableComponent_cjk_41x_vt">
     <oXygen:ComponentDescription>DCN JSON</oXygen:ComponentDescription>
-    <oXygen:ComponentDefinition><section id="dcn-json"><title>Configure the dcn.json file</title><p>Modify the <codeph>dcn.json</codeph> file in the <codeph>/opt/share/hlm/1/site/services/dcn.json</codeph> directory of the HLM VM to remove <b>both</b> instances of the following code: <codeblock>      {
+    <oXygen:ComponentDefinition><section id="dcn-json"><title>Configure the dcn.json file</title><p>Modify the <codeph>dcn.json</codeph> file in the <codeph>/opt/share/hlm/1/site/services/dcn.json</codeph> directory of the lifecycle manager to remove <b>both</b> instances of the following code: <codeblock>      {
           "description": "Ingress 47 GRE",
           "firewall": {
             "direction": "in",

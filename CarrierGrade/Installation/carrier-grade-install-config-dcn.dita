@@ -56,7 +56,7 @@ VSD Server : auto </codeblock>
       <p>Use the following command to change <codeph>eth0</codeph> from network to access and allow
         VLANs.</p>
       <ol>
-        <li>From the HLM VM, SSH to the VRS-G nodes using the default username and password.<p>
+        <li>From the lifecycle manager, SSH to the VRS-G nodes using the default username and password.<p>
             <codeblock>User Name: cghelion
 Password: cghelion</codeblock>
           </p></li>
@@ -144,7 +144,7 @@ Hide for alpha
       <p>This script creates the uplink on the VRS-G, which is a requirement for the EXT-NET to
         function with HP Helion OpenStack Carrier Grade. </p>
       <ol id="ol_ks4_zhj_1t">
-        <li>From the HLM host, copy the following code to create a cURL script.</li>
+        <li>From the KVM Host, copy the following code to create a cURL script.</li>
         <li>Modify the cURL script for your environment:<ul id="ul_bzs_r1c_1t">
             <li>FIP_NAME is the one that is retrieved from previous step.</li>
             <li>GW_NAME is the redundant gateway name.</li>

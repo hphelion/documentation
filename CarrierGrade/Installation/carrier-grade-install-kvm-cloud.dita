@@ -15,7 +15,7 @@
 <body>
     <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-cloud.md-->
     <!--permalink: /helion/openstack/carrier/install/pb/hlm-cloud/-->
-    <p>After the HLM VM is up and running and HP Helion OpenStack is installed, use the following
+    <p>After the lifecycle manager is up and running and HP Helion OpenStack is installed, use the following
       steps to deploy the KVM region.</p>
     <section>
       <title>Bring Up Controller-0 in the KVM Region</title>

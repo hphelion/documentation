@@ -22,5 +22,5 @@
 ]>
 <oXygen:ReusableComponent id="ReusableComponent_u1w_jzw_vt">
     <oXygen:ComponentDescription>VSD License</oXygen:ComponentDescription>
-    <oXygen:ComponentDefinition><section id="vsd-license"><title>Apply the VSD License</title>You should have recevied a license file when you purchased DCN. You need to apply that license on the HLM host. For more information, see <xref href="../carrier-grade-install-vsd-license.dita#topic10581"/>.</section></oXygen:ComponentDefinition>
+    <oXygen:ComponentDefinition><section id="vsd-license"><title>Apply the VSD License</title>You should have recevied a license file when you purchased DCN. You need to apply that license on the KVM Host. For more information, see <xref href="../carrier-grade-install-vsd-license.dita#topic10581"/>.</section></oXygen:ComponentDefinition>
 </oXygen:ReusableComponent>

@@ -23,7 +23,7 @@
         <p>The installation process creates virtual machines for VSC. Use the following steps to
           verify that the VSC VMs are installed and are operational:</p>
         <ol id="ol_fkv_xjj_1t">
-          <li>SSH to your VSC VM from HLM Host using the DCM IP. The default username and password:
+          <li>SSH to your VSC VM from KVM Host using the DCM IP. The default username and password:
             <codeph>admin/admin</codeph></li>
           <li>Execute the following command: <codeblock>admin display-config</codeblock></li>
           <li>Execute the following commands to verify the VMs are active:

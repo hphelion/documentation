@@ -20,9 +20,9 @@
 <p>This page provides detailed information on <xref type="section" href="#topic4740/client"
         >configuring Network Time Protocol (NTP) on HP Helion OpenStack Carrier Grade servers</xref>
       and, optionally, <xref type="section" href="#topic4740/server">installing an NTP server on the
-        HLM host</xref>.</p>
+        KVM Host</xref>.</p>
 <p>HP Helion OpenStack Carrier Grade requires that all servers point to the same NTP server. You can
-      use an external NTP server or configure the HLM host as a server.</p>
+      use an external NTP server or configure the KVM Host as a server.</p>
 <p>
   <b>Notes:</b>
 </p>
@@ -30,11 +30,11 @@
 <li>NTP clients should use only stratum 2 and higher servers (meaning stratum 1 or stratum 0).</li>
 <li>All the Helion servers use UTC as a time zone.</li>
 </ul>
-<section id="server"><title>Install an NTP server on the HLM host</title><p>You can use the HLM host
+<section id="server"><title>Install an NTP server on the KVM Host</title><p>You can use the KVM Host
         system as the NTP server. This is not required and you can use any appropriate NTP server,
         based on your organizational needs or requirements. </p>To configure an NTP server, follow
       these steps:<ol>
-        <li>Log in to the HLM host.<codeblock><codeph>sudo su -
+        <li>Log in to the KVM Host.<codeblock><codeph>sudo su -
 </codeph></codeblock></li>
         <li>Install the NTP package using the following
           command:<codeblock><codeph>sudo apt-get install ntp

@@ -22,5 +22,5 @@
 ]>
 <oXygen:ReusableComponent id="ReusableComponent_dkh_g1x_vt">
     <oXygen:ComponentDescription>Ansible JSON</oXygen:ComponentDescription>
-    <oXygen:ComponentDefinition><section id="configure-ansible-json"><title>Configure the ansible.json file</title><p>Modify the <codeph>ansible.json</codeph> file in the <codeph>/var/hlm/clouds/&lt;cloudname&gt;/vars</codeph> directory of the HLM VM.</p><p>To see a sample <codeph>ansible.json</codeph> file, see <xref href="../carrier-grade-install-kvm-ansible-json.dita">Sample ansible.json File for Installing the KVM + ESX Topology</xref>.</p></section></oXygen:ComponentDefinition>
+    <oXygen:ComponentDefinition><section id="configure-ansible-json"><title>Configure the ansible.json file</title><p>Modify the <codeph>ansible.json</codeph> file in the <codeph>/var/hlm/clouds/&lt;cloudname&gt;/vars</codeph> directory of the lifecycle manager.</p><p>To see a sample <codeph>ansible.json</codeph> file, see <xref href="../carrier-grade-install-kvm-ansible-json.dita">Sample ansible.json File for Installing the KVM + ESX Topology</xref>.</p></section></oXygen:ComponentDefinition>
 </oXygen:ReusableComponent>

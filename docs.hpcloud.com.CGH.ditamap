@@ -115,7 +115,7 @@
       <topicref href="CarrierGrade/API/carrier-grade-api.dita" navtitle="API and SDK Reference"
         locktitle="yes"/>
       <topicref href="CarrierGrade/HLMCLI/CGH-2-hlm-cli.dita"
-        navtitle="Helion Lifecycle Managment CLI Reference" locktitle="yes"/>
+        navtitle="Lifecycle Manager CLI Reference" locktitle="yes"/>
     </topichead>
     <topichead navtitle="Operations">
       <topicref href="CarrierGrade/AdminGuide/carrier-grade-User-guide.ditamap"

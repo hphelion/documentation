@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying the HLM VM and
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying the lifecycle manager and
     Installation Services</title>
 <prolog>
   <metadata>
@@ -19,7 +19,7 @@
     <p>The installation uses Ansible playbooks, which are files that contain scripts that execute
       required installation processes.</p>
     <section><title>Update the Debain Repository Index File</title><p>HP Helion OpenStack Carrier
-        Grade maintains a local Debian repository on the HLM host from where Debain packages are
+        Grade maintains a local Debian repository on the KVM Host from where Debain packages are
         installed. Before starting the installation, make sure the Debian files you <xref
           href="carrier-grade-install-prereqs.dita#topic7148/getinstall">downloaded in the
           Prerequisites</xref> are present in the repository: </p>Copy the following Debian packages
@@ -30,10 +30,10 @@
       </ul></section>
     <section id="prepare">
       <title>Prepare the system for deployment</title>
-      <p>Use the following steps to prepare the server on which the HLM VM will be deployed (the HLM
-        host):</p>
+      <p>Use the following steps to prepare the server on which the lifecycle manager will be deployed (the KVM
+        Host):</p>
       <ol>
-        <li>Log into the HLM host using the default credentials</li>
+        <li>Log into the KVM Host using the default credentials</li>
         <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your
           environment. For information on each variable, refer to the comments in the file with each
           variable. <p>The <codeph>group_vars/all</codeph> file should appear similar to the
@@ -110,21 +110,21 @@ upstream_ntp_servers:
         host:<codeblock>/root/infra-ansible-playbooks/roles/HLM-CFG/tasks/processtarball.yml</codeblock></p>
     </section>
     <section id="deploy-the-hlm-and-vsd-vm">
-      <title>Deploy the HLM Virtual Machine</title>
-      <p>Use the following steps on the HLM host to deploy the HLM VM on the HLM Host using Ansible
+      <title>Deploy the Lifecycle Manager Mirtual Machine</title>
+      <p>Use the following steps on the KVM Host to deploy the lifecycle manager on the KVM Host using Ansible
         playbooks.</p>
       <ol>
         <li>Execute the following command: <codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock>
-          <!-- The command will do the following:<ul><li>Copy both installation files (tar balls) to the HLM host, decrypt, 
+          <!-- The command will do the following:<ul><li>Copy both installation files (tar balls) to the KVM Host, decrypt, 
             and extract the files.</li>
             <li>Execute the <codeph>updatepackages</codeph> command.</li>
             <li>Execute the <codeph>prepareenv</codeph> command.</li><li>Execute the <codeph>Init cobbler</codeph> command.</li><li>Execute the <codeph>Importiso</codeph> command.<p>You will see a message similar to the following image when the playbook is run successful:</p></li></ul>-->
           <image href="../../media/CGH-ansible-playbook-run.png" id="image_bfp_pjm_vs">
             <alt>Sample Ansible Playbook run output</alt>
           </image></li>
-        <li>Locate the IP address for the HLM VM in the
-            <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the HLM host under
-            <codeph>hlm_clmstaticip</codeph> field. You will use this IP address to SSH into the HLM
+        <li>Locate the IP address for the lifecycle manager in the
+            <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the KVM Host under
+          <codeph>hlm_clmstaticip</codeph> field. You will use this IP address to SSH into the lifecycle manager
           VM during the HP Helion OpenStack Carrier Grade installation process.</li>
       </ol>
     </section>
@@ -133,14 +133,14 @@ upstream_ntp_servers:
       <p>If you are deploying the baremetal region, perform the following tasks:</p>
       <p>
         <ol id="ol_uvk_chg_vt">
-          <li>Execute the following command to add a BM-CTL route in HLM:
+          <li>Execute the following command to add a BM-CTL route:
               <codeblock>route add default gw &lt;ip-address> dev &lt;int></codeblock><p>Where
                 <codeph>&lt;ip-address></codeph> is the gateway and <codeph>&lt;eth></codeph> is the
               Ethernet interface.</p><p>For
               example:<codeblock>route add default gw 192.168.122.1 dev eth0</codeblock></p></li>
-          <li>Make sure that the vNet corresponding to eth0 is part of virbr0 bridge on the HLM
-            host.</li>
-          <li>Verify that all iLO ips of the controller blades/DLs are pingable from HLM.</li>
+          <li>Make sure that the vNet corresponding to eth0 is part of virbr0 bridge on the KVM
+            Host.</li>
+          <li>Verify that all iLO ips of the controller blades/DLs are pingable from KVM Host.</li>
         </ol>
       </p>
     </section>

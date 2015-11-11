@@ -24,7 +24,7 @@
             <codeph>kcp-icinga-monitor-subservices.patch</codeph> file. You should have downloaded
           these file <xref href="carrier-grade-install-prereqs.dita#topic7148/patches">in the
             prerequisites</xref>.</li>
-        <li>Copy the patch file to the <codeph>~/</codeph> directroy on the HLM host. </li>
+        <li>Copy the patch file to the <codeph>~/</codeph> directroy on the KVM Host. </li>
         <li> Change to the <codeph>kenobi-configuration-processor</codeph> directory:<p>
             <codeblock>cd ~/kenobi-configuration-processor</codeblock>
           </p></li>

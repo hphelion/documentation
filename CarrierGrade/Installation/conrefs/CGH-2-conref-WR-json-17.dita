@@ -22,5 +22,5 @@
 ]>
 <oXygen:ReusableComponent id="ReusableComponent_m5f_t1x_vt">
     <oXygen:ComponentDescription>WR JSON</oXygen:ComponentDescription>
-    <oXygen:ComponentDefinition><section id="configure-wr-json"><title>Configure the wr.json file</title><p><b>For bonded NIC environments</b>, modify the <codeph>wr.json</codeph> file in the <codeph>/var/hlm/clouds/&lt;cloudname&gt;/&lt;cloudname>/vars</codeph> directory on the HLM VM.</p><p>To see a sample <codeph>wr.json</codeph> file, see <xref href="../carrier-grade-install-kvm-wr-json.dita">Sample wr.json File for Installing the KVM + ESX Topology</xref>. </p></section></oXygen:ComponentDefinition>
+    <oXygen:ComponentDefinition><section id="configure-wr-json"><title>Configure the wr.json file</title><p><b>For bonded NIC environments</b>, modify the <codeph>wr.json</codeph> file in the <codeph>/var/hlm/clouds/&lt;cloudname&gt;/&lt;cloudname>/vars</codeph> directory on the lifecycle manager.</p><p>To see a sample <codeph>wr.json</codeph> file, see <xref href="../carrier-grade-install-kvm-wr-json.dita">Sample wr.json File for Installing the KVM + ESX Topology</xref>. </p></section></oXygen:ComponentDefinition>
 </oXygen:ReusableComponent>

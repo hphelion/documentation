@@ -21,7 +21,7 @@
       <p>To prevent this problem, install a patch to configure the kernel to set the reverse path
         filter (<codeph>rp_filter</codeph>)  to 1 in the <codeph>all</codeph> and
           <codeph>default</codeph> configuration files. </p>
-      <p><b>Note:</b> You need the Ubuntu patch utility installed on the HLM host. If you do not
+      <p><b>Note:</b> You need the Ubuntu patch utility installed on the KVM Host. If you do not
         have the utility installed, use the following command:</p>
       <codeblock>apt-get install patch </codeblock>
       <p>To apply the patch:</p>

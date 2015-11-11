@@ -177,11 +177,11 @@
     </section>
     <section>
       <title id="Infoblox-HCG2.0integration-Applypatch">Deploy the Infoblox Plug-Ins </title>
-      <p>An Infoblox plug-in needs to be installed on the HLM host. For the Sacramento deployment,
+      <p>An Infoblox plug-in needs to be installed on the KVM Host. For the Sacramento deployment,
         the plug in also needs to be installed on the baremetal controller.</p>
-      <p><b>To deploy the plug-in on the HLM host:</b></p>
+      <p><b>To deploy the plug-in on the KVM Host:</b></p>
       <ol id="ul_ovd_rfz_5t">
-        <li>Log into the HLM host.</li>
+        <li>Log into the KVM Host.</li>
         <li>Copy the <codeph>infoblox.tar.gz</codeph> patch to:
             <codeph>/var/hlm/clouds/&lt;cloudname>/plugins</codeph>.</li>
         <li>Change to the <codeph>/var/hlm/clouds/&lt;cloudname>/plugins</codeph> directory.<p>Where
@@ -235,9 +235,9 @@
       </ol>
     </section>
     <section><p><b>Edit configuration files</b></p><p>Edit the following configuration files on the
-        HLM VM and on the baremetal controller.</p><p><b>To modify the configutation files on the
-          HLM VM:</b></p><ol id="ol_wkc_4s4_xt">
-        <li>Log into the HLM VM.</li>
+        lifecycle manager and on the baremetal controller.</p><p><b>To modify the configutation files on the
+          lifecycle manager:</b></p><ol id="ol_wkc_4s4_xt">
+        <li>Log into the lifecycle manager.</li>
         <li>Modify the <codeph>/etc/neutron/neutron.conf</codeph> file with values appropriate for
           your environment. For
           example:<codeblock>[keystone_authtoken]

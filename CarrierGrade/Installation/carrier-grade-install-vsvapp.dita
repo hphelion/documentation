@@ -49,7 +49,7 @@
             <p>To install the VRSvApp:</p>
             <ol id="ol_hf4_nvy_zs">
                 <li>Copy the downloaded <codeph>VRS_3.2.3-104_08282015.ovf</codeph> and
-                        <codeph>VRS_3.2.3-104_08282015-disk1.vmdk</codeph> files from HLM host to
+                        <codeph>VRS_3.2.3-104_08282015-disk1.vmdk</codeph> files from KVM Host to
                     VSD node in the <codeph>/opt/vsd/</codeph> directory. For more information on
                     downloading DCN files, see <xref
                         href="carrier-grade-install-prereqs.dita#topic7148/download-esx"

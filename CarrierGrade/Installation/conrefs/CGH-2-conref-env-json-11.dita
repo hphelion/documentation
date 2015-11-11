@@ -22,7 +22,7 @@
 ]>
 <oXygen:ReusableComponent id="ReusableComponent_wlx_d1x_vt">
     <oXygen:ComponentDescription>Environment JSON</oXygen:ComponentDescription>
-    <oXygen:ComponentDefinition><section id="configure-env-json"><title>Configure the environment.json file</title><p>Modify the <codeph>environment.json</codeph> file in the <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the HLM VM to configure the VLANs and network addresses as appropriate for your environment. Configure the CLM (management), CAN (api), and BLS (blockstore) networks.</p><p><b>Note:</b> To see a sample <codeph>environment.json</codeph> file, see one of the following: <ul id="ul_smq_yqt_bt"><li><xref href="../carrier-grade-install-kvm-env-json.dita">For an Unbonded NIC Environment</xref>. <p>For each network provide: </p><codeblock>{
+    <oXygen:ComponentDefinition><section id="configure-env-json"><title>Configure the environment.json file</title><p>Modify the <codeph>environment.json</codeph> file in the <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the lifecycle manager to configure the VLANs and network addresses as appropriate for your environment. Configure the CLM (management), CAN (api), and BLS (blockstore) networks.</p><p><b>Note:</b> To see a sample <codeph>environment.json</codeph> file, see one of the following: <ul id="ul_smq_yqt_bt"><li><xref href="../carrier-grade-install-kvm-env-json.dita">For an Unbonded NIC Environment</xref>. <p>For each network provide: </p><codeblock>{
               "name": "management",
               "type": "vlan",
               "segment-id": "1551",

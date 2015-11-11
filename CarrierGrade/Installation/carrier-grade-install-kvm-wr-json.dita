@@ -19,7 +19,7 @@
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
     <p>The process for installing the memphis or sacramento deployment requires several JSON files
-            that will be used when deploying the HLM VM.</p>
+            that will be used when deploying the lifecycle manager.</p>
         
 <section id="sample-node-provisionjson-file">
             <p><b>For bonded NIC environments</b>, edit the file as follows:</p>
@@ -54,7 +54,7 @@
             <title>Sample wr.json file</title>
             <p>The following represents a sample <codeph>wr.json</codeph> file in the
                     <codeph>/var/hlm/clouds/&lt;cloudname&gt;/&lt;cloudname>/vars</codeph> directory
-                on the HLM VM. The IP addresses are masked for security purposes. Use values
+                on the lifecycle manager. The IP addresses are masked for security purposes. Use values
                 appropriate for your environment.</p>
             <codeblock>{
     "product": {

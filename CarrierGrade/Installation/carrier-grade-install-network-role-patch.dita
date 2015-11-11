@@ -20,7 +20,7 @@
     <p>
       <ol id="ol_pn3_141_mt">
         <li>Download the <codeph>knc-nuage-role.patch</codeph> file.</li>
-        <li>Copy the patch file to the <codeph>~/</codeph> directroy on the HLM host. </li>
+        <li>Copy the patch file to the <codeph>~/</codeph> directroy on the KVM Host. </li>
         <li> Change to the <codeph>kenobi-configuration-processor</codeph> directory:<p>
             <codeblock>cd ~/kenobi-configuration-processor</codeblock>
           </p></li>

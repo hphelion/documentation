@@ -17,7 +17,7 @@
   <body>
     <section>Use the following steps to deploy required patches.<p>
         <ol id="ol_vl1_tqf_xt">
-          <li>In the HLM VM, copy the <codeph>kenobi-config-patch.patch</codeph> you downloaded in
+          <li>In the lifecycle manager, copy the <codeph>kenobi-config-patch.patch</codeph> you downloaded in
             the Prerequisites to the <codeph>/root/kenobi-configuration-processor</codeph>
             directory.</li>
           <li>Copy the <codeph>kenobi-node-config.patch</codeph> you downloaded in the Prerequisites
@@ -31,7 +31,7 @@
           <li>Execute the following command to integrate the patch into the installation
             environment:<codeblock>cd ~/cg-hlm/hlm-build
 ./hlm_prepare-env.sh</codeblock></li>
-          <li>Enter <codeph>Exit</codeph> to close the HLM VM console.</li>
+          <li>Enter <codeph>Exit</codeph> to close the lifecycle manager console.</li>
         </ol>
       </p></section>
     <p><i>Return to installing the non-KVM region for the <xref
