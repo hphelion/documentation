@@ -159,19 +159,23 @@
       </dl>
       <draft-comment author="michaelk">
         <ul id="ul_rg4_tmm_xt">
-          <li>To find descriptions for everything except <filepath>doppler</filepath> and
-              <filepath>loggregator_trafficcontroller</filepath>, <xref
-              href="https://github.com/cloudfoundry/cf-release/tree/v217/jobs" format="html"
+          <li>To find descriptions for everything except <filepath>doppler</filepath>,
+              <filepath>loggregator_trafficcontroller</filepath>, and <filepath>etcd</filepath>
+            <xref href="https://github.com/cloudfoundry/cf-release/tree/v217/jobs" format="html"
               scope="external">go here</xref> and drill down to
               <uicontrol>&lt;component>/spec</uicontrol>.</li>
-          <li>To find a description of <filepath>loggregator_trafficcontroller</filepath>, <xref
-              href="https://github.com/cloudfoundry/loggregator/blob/lgr-cf-v217/README.md"
+          <li>To find a description for Consul, <xref href="https://consul.io/intro/index.html"
               format="html" scope="external">go here</xref>.</li>
           <li>To find a description of <filepath>doppler</filepath>, <xref
               href="https://github.com/cloudfoundry/loggregator/tree/lgr-cf-v217#architecture"
               format="html" scope="external">go here</xref>.</li>
-          <li>To find a description for Consul, <xref href="https://consul.io/intro/index.html"
-              format="html" scope="external">go here</xref>.</li>
+          <li>To find a description of <filepath>etcd</filepath>, <xref
+              href="https://github.com/coreos/etcd" format="html" scope="external">go here</xref>
+            and <xref href="https://coreos.com/etcd/docs/latest/getting-started-with-etcd.html"
+              format="html" scope="external">also here</xref>.</li>
+          <li>To find a description of <filepath>loggregator_trafficcontroller</filepath>, <xref
+              href="https://github.com/cloudfoundry/loggregator#architecture" format="html"
+              scope="external">go here</xref>.</li>
         </ul>
       </draft-comment>
     </section>
@@ -223,10 +227,12 @@
               them to third-party syslog drains.</entry>
           </row>
           <row>
-            <entry><filepath>etcd</filepath><draft-comment author="michaelk"
-              >etcd_metrics_server</draft-comment></entry>
-            <entry>The ETCD Metrics Server, when collocated with the ETCD server, collects and
-              exposes runtime statistics for the stats collector.</entry>
+            <entry><filepath>etcd</filepath></entry>
+            <entry>etcd is a key value store that provides shared configuration and service
+              discovery for clusters. etcd runs on each machine in a cluster and gracefully handles
+              master election during network partitions and the loss of the current master.
+              Application containers running on your cluster can read and write data into
+              etcd.</entry>
           </row>
           <row>
             <entry><filepath>ha_proxy</filepath></entry>
@@ -242,11 +248,10 @@
           </row>
           <row>
             <entry><filepath>loggregator_trafficcontroller</filepath></entry>
-            <entry>Loggregator is the user application logging subsystem of Cloud Foundry. It allows
-              users to tail their application logs, dump a set of recent application logs,
-              continually drain their application logs to third-party log archive and analysis
-              services, and access the firehose which includes the combined stream of logs from all
-              apps, in addition to metrics data from Cloud Foundry components.</entry>
+            <entry>Traffic Controller is a component of Loggregator that is responsible for handling
+              client requests for logs, for gathering and collating messages from all Doppler
+              servers, and for providing external API and message translation, as needed for legacy
+              APIs.</entry>
           </row>
           <row>
             <entry><filepath>nats</filepath></entry>
