@@ -83,18 +83,17 @@
           Horizon interface, under <b>Project-&gt;Compute-&gt;Access &amp; Security-&gt;API
             Access-&gt;Download OpenStack RC File</b>.</li>
 <li>
-<p>The certificate for the target HPE Helion OpenStack environment. To retrieve this certificate, do
-            the following:</p>
-
-<ol>
-<li> Find the IP address for
-              <codeph>controller0</codeph>:<codeblock><codeph>OVERCLOUD_CONTROLLER=$(ssh root@192.0.2.1 -C ' export TE_DATAFILE=~/tripleo/ce_env.json; source ~/tripleo/tripleo-incubator/undercloudrc; nova list |grep controller0 |cut -d= -f2 |cut -d" " -f1')
-</codeph></codeblock></li>
-<li>Copy the CA Certificate
-                locally:<codeblock><codeph>scp -o StrictHostKeyChecking=no $OVERCLOUD_CONTROLLER:/usr/local/share/ca-certificates/ephemeralca-cacert.crt /root/ephemeralca-cacert.crt. 
-</codeph></codeblock><p>The
-                path to the certificate must be set in the OS_CACERT environment variable.</p></li>
-</ol>
+<p>The certificate for the target HPE Helion OpenStack environment. The location of this certificate
+            can be found in the cacert field in the <xref
+              href="../installation/install_cloudsyaml.dita#topic_wzw_r4w_rt">clouds.yaml
+              configuration file</xref>:</p>
+<codeblock>clouds:
+  mycloud:
+    codn_username: 
+    codn_password: 
+    region_name: region1
+    <ph outputclass="codehighlight">cacert: /home/stack/ca/cacert.pem</ph>
+</codeblock>
 </li>
 </ul>
 </section>
