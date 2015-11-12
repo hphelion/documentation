@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_hotpools">
+  <title>Using HotPools</title>
+  <body>
+    <p>HotPools are initialized, unconfigured MySql database instances used to speed up database creation. When a 
+      user creates a MySql database instance, if there is a HotPool instance available of the desired flavor, that 
+      instance is used and configured, instead of creating a new instance. Having an instance already initialized
+      saves 60 to 75 percent of the time needed to create a new instance.</p>
+    <p>HotPools provide a resource vs. performance tradeoff; in order to speed instance creation, resources are allocated to keep instances running and available. HotPools
+    should only be used if speeding up instance creation is necessary.</p>
+    <note>HotPools are only available for MySql instances; HotPools for Vertica Preview, MongoDB, and Redis
+    are not available.</note>
+    <note>HotPools can only be configured when the Database Service is installed; there is currently no method for modifying HotPools configuration post-installation.</note>
+    <section id="enable"><title>Enabling and configuring HotPools</title>
+      <p>HotPools are enabled and configured using <b>clouds.yaml</b>. The following settings are
+        used to configure HotPools:</p>
+        <ul><li><b>hotpools_enabled</b>: Set to <b>True</b> to enable HotPools.</li>
+        <li><b>hotpools_max_instances</b>: The number of instances of each flavor to maintain.</li>
+        <li><b>hotpools_image_name</b>: The image used to create the HotPool instances. The only valid value is <b>percona</b>.</li>
+        <li><b>hotpools_flavor_names</b>: A comma-delimited list of the flavors of HotPool instances to create.</li></ul>
+      <p><b>Example 1:</b> Create three instances of flavor <b>m1.medium</b>:</p>
+      <codeblock>clouds:
+  mycloud:
+    database:
+      hotpools_enabled: True
+      hotpools_max_instances: 3
+      hotpools_image_name: percona
+      hotpools_flavor_names: 'm1.medium'
+</codeblock>
+    <p><b>Example 2:</b> Create two instances each of flavor <b>m1.medium</b> and <b>m1.large</b>:</p>
+      <codeblock>clouds:
+  mycloud:
+    database:
+      hotpools_enabled: True
+      hotpools_max_instances: 2
+      hotpools_image_name: percona
+      hotpools_flavor_names: 'm1.medium,m1.large'</codeblock>
+    </section>
+    <section id="details"><title>Details</title>
+    <p>When HotPools instances are created, they are assigned to one tenant. They will appear as instances named <codeph>hot_pools</codeph> when listed using <codeph>nova list</codeph>.
+    When an instance is created, and there is a HotPools instance available of the correct flavor, the HotPools instance will be renamed <codeph>hot_pools_&lt;yourinstance&gt;</codeph> 
+      while it is being configured. A new HotPools instance will then start to spawn.</p></section>
+  </body>
+</topic>
