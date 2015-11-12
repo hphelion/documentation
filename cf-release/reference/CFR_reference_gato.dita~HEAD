@@ -32,13 +32,9 @@
       <dl>
         <dlentry>
           <dt><filepath>api</filepath></dt>
-<<<<<<< HEAD
-          <dd>Set  a <keyword keyref="prodShort"/> config store.</dd>
-=======
           <dd>Set <keyword keyref="adminUtilCLI"/> to use the specified <keyword keyref="prodShort"
             /> config store for subsequent operations. For
             example:<codeblock>$ <keyword keyref="adminUtilCLI"/> api http://hcf-consul-server.hcf:8501</codeblock></dd>
->>>>>>> de2d2bc... Recreating branch without old cruft in it
         </dlentry>
         <dlentry>
           <dt><filepath>config</filepath></dt>
@@ -58,21 +54,8 @@
           <dt><filepath>role</filepath></dt>
           <dd>Manage node roles. By default, uses the <codeph>$DOCKER_HOST</codeph> environment
             variable to determine the docker server endpoint. Use the <filepath>--node</filepath>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            flag to stop <varname>&lt;role></varname> container on a specific node.<ul
-=======
-            flag to stop <xref href="#available_role_containers" format="dita"
-              >a <varname>&lt;role></varname> container</xref> on a specific node.<ul
->>>>>>> de2d2bc... Recreating branch without old cruft in it
-=======
-            flag to stop a <varname>&lt;role></varname> container on a specific node.<ul
->>>>>>> d3f9032... Removed broken xrefs
-=======
             flag to stop a <xref href="#reference_cd3_bs3_rt/available_role_containers"
               format="dita"><varname>&lt;role></varname> container</xref> on a specific node.<ul
->>>>>>> 4619deb... Finally fixed the xrefs
               id="ul_blk_nhj_rt">
               <li><xref href="#reference_cd3_bs3_rt/role_start" format="dita"><filepath>role
                     start</filepath></xref></li>
@@ -89,12 +72,8 @@
           <dd>Retrieve the status of a <keyword keyref="prodShort"/> cluster.<dl>
               <dlentry>
                 <dt><filepath>--all</filepath>, <filepath>-a</filepath></dt>
-<<<<<<< HEAD
-                <dd>Show each individual process.</dd>
-=======
                 <dd>Show each individual process, for
                   example:<codeblock>$ <keyword keyref="adminUtilCLI"/> status --all</codeblock></dd>
->>>>>>> de2d2bc... Recreating branch without old cruft in it
               </dlentry>
             </dl></dd>
         </dlentry>
@@ -107,28 +86,16 @@
           <dt><filepath><keyword keyref="adminUtilCLI"/> config get <varname>[command
                 options]</varname>
               <varname>[arguments...]</varname></filepath></dt>
-<<<<<<< HEAD
-          <dd>Look up the current and default values of a configuration.<dl>
-=======
           <dd>Look up the current and default values of a configuration, for example: <codeblock>$ <keyword keyref="adminUtilCLI"/> config get nats/user</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> config get nats/password</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> config get nats/machines</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> config get system_domain</codeblock><dl>
->>>>>>> de2d2bc... Recreating branch without old cruft in it
               <dlentry>
                 <dt><filepath>--quiet</filepath>, <filepath>-q</filepath></dt>
                 <dd>Output only the config values.</dd>
               </dlentry>
               <dlentry>
                 <dt><filepath>--role</filepath>, <filepath>-r</filepath></dt>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                <dd>Get a specific role's config variable.</dd>
-=======
-                <dd>Get <xref href="#available_role_containers" format="dita">a specific
-=======
                 <dd>Get <xref href="#reference_cd3_bs3_rt/available_role_containers" format="dita">a specific
->>>>>>> 4619deb... Finally fixed the xrefs
                     role's</xref> config variable, for example:
                   <codeblock>$ <keyword keyref="adminUtilCLI"/> config get --role uaa uaa/jwt/signing_key</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> config get --role hm9000 hm9000/url</codeblock></dd>
->>>>>>> de2d2bc... Recreating branch without old cruft in it
               </dlentry>
             </dl></dd>
         </dlentry>
@@ -139,16 +106,8 @@
           <dd>Set the current value of a configuration.<dl>
               <dlentry>
                 <dt><filepath>--role</filepath>, <filepath>-r</filepath></dt>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                <dd>Set a specific role's configuration.</dd>
-=======
-                <dd>Set <xref href="#available_role_containers" format="dita">a
-=======
                 <dd>Set <xref href="#reference_cd3_bs3_rt/available_role_containers" format="dita">a
->>>>>>> 4619deb... Finally fixed the xrefs
                     specific role's</xref> configuration.</dd>
->>>>>>> de2d2bc... Recreating branch without old cruft in it
               </dlentry>
               <dlentry>
                 <dt><filepath>--file</filepath>, <filepath>-f</filepath></dt>
@@ -162,27 +121,11 @@
           <dt><filepath><keyword keyref="adminUtilCLI"/> role start <varname>[command
                 options]</varname>
               <varname>[arguments...]</varname></filepath></dt>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <dd>Start the <varname>&lt;role></varname> container.<dl>
-=======
           <dd>Start the <xref href="#reference_cd3_bs3_rt/available_role_containers" format="dita"
                 ><varname>&lt;role></varname> container</xref>.<dl>
->>>>>>> 4619deb... Finally fixed the xrefs
-              <dlentry>
-                <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
-                <dd>Set  the Docker server endpoint. Schemes and port number are required. Supported
-=======
-          <dd>Start the <xref href="#available_role_containers" format="dita"
-                ><varname>&lt;role></varname> container</xref>.<dl>
-=======
-          <dd>Start the <varname>&lt;role></varname> container.<dl>
->>>>>>> d3f9032... Removed broken xrefs
               <dlentry>
                 <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
                 <dd>Set the Docker server endpoint. Schemes and port number are required. Supported
->>>>>>> de2d2bc... Recreating branch without old cruft in it
                   schemes: <codeph>tcp://</codeph>
                   <codeph>unix://</codeph>
                   <codeph>http://</codeph>
@@ -197,38 +140,8 @@
           <dt><filepath><keyword keyref="adminUtilCLI"/> role restart <varname>[command
                 options]</varname>
               <varname>[arguments...]</varname></filepath></dt>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <dd>Stop or restart the <varname>&lt;role></varname> container.<!-- The available
-              <varname>&lt;role></varname> containers are: <ul id="ul_y3t_nrz_5t">
-              <li>uaa</li>
-              <li>stats</li>
-              <li>runner</li>
-              <li>router</li>
-              <li>postgres</li>
-              <li>nats</li>
-              <li>loggregator_trafficcontroller</li>
-              <li>hm9000</li>
-              <li>ha_proxy</li>
-              <li>etcd</li>
-              <li>doppler</li>
-              <li>consul</li>
-              <li>clock_global</li>
-              <li>api_worker</li>
-              <li>api</li>
-            </ul>--><dl>
-=======
-          <dd>Stop or restart the <xref href="#available_role_containers"
-              format="dita"><varname>&lt;role></varname> container</xref>.<dl>
->>>>>>> de2d2bc... Recreating branch without old cruft in it
-=======
-          <dd>Stop or restart the <varname>&lt;role></varname> container.<dl>
->>>>>>> d3f9032... Removed broken xrefs
-=======
           <dd>Stop or restart the <xref href="#reference_cd3_bs3_rt/available_role_containers"
               format="dita"><varname>&lt;role></varname> container</xref>.<dl>
->>>>>>> 4619deb... Finally fixed the xrefs
               <dlentry>
                 <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
                 <dd>Set the Docker server endpoint. Schemes and port number are required. Supported
@@ -244,9 +157,6 @@
             </dl></dd>
         </dlentry>
       </dl>
-<<<<<<< HEAD
-    </section>
-=======
       <draft-comment author="michaelk">
         <ul id="ul_rg4_tmm_xt">
           <li>To find descriptions for everything except <filepath>doppler</filepath> and
@@ -385,6 +295,5 @@
         </tbody>
       </tgroup>
     </table>
->>>>>>> de2d2bc... Recreating branch without old cruft in it
   </refbody>
 </reference>

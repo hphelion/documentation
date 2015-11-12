@@ -3,24 +3,192 @@
 <map>
    <title>HP Helion Cloud Foundry</title>
    <mapref href="docs.hpcloud.com.CFR_variables.ditamap"/>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
    <topicref href="root/CFR_root_documentation.dita">
       <topicref href="root/CFR_whats_new.dita"/>
       <topicref href="root/CFR_relnotes.dita"/>
       <topicref href="root/CFR_TP_licensing.dita"/>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
       <!--
       <topicref href="root/CFR_license_terms.dita"/>
       -->
+=======
+   <topicref href="root/CFR_root_documentation.dita">
+>>>>>>> 9d80273... Testing theme changes on Linux
+=======
+>>>>>>> 62e2344... Corrected typos and restructured notes
+=======
+      <topicref href="root/CFR_license_terms.dita"/>
+>>>>>>> 0c7cc4c... Added EULA to HCF 1.0 docs
+=======
+>>>>>>> 1ef8d60... Removed Software License Terms per Alvaro's request
+=======
+=======
+      <!--
+      <topicref href="root/CFR_license_terms.dita"/>
+      -->
+>>>>>>> de2d2bc... Recreating branch without old cruft in it
+>>>>>>> 2b2ade4... Recreating branch without old cruft in it
       <topichead navtitle="Quick Start: Deploying to HP Public Cloud">
          <topicref href="quickstart/pubcloud/CFR_step_1.dita"/>
          <topicref href="quickstart/pubcloud/CFR_step_2.dita"/>
          <topicref href="quickstart/pubcloud/CFR_step_3.dita"/>
+<<<<<<< HEAD
+         <topicref href="quickstart/pubcloud/CFR_step_4.dita">
+            <topicref href="quickstart/pubcloud/CFR_TF_vars.dita"/>
+         </topicref>
+         <topicref href="quickstart/pubcloud/CFR_step_5.dita"/>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
          <topicref href="quickstart/pubcloud/CFR_step_4.dita"/>
          <topicref href="quickstart/pubcloud/CFR_step_5.dita"/>
+>>>>>>> 62e2344... Corrected typos and restructured notes
          <topicref href="quickstart/pubcloud/CFR_step_6.dita"/>
       </topichead>
       <topichead navtitle="Reference">
          <topicref href="reference/CFR_reference_TF_vars.dita"/>
          <topicref href="reference/CFR_reference_gato.dita"/>
       </topichead>      
+<<<<<<< HEAD
    </topicref>
+=======
+   <topicref href="root/CFR_documentation.dita" navtitle="Helion Cloud Foundry 1.0: Documentation"/>
+=======
+   <topicref href="root/CFR_root_documentation.dita"/>
+<<<<<<< HEAD
+>>>>>>> dbe18b3... Adding a new Quick Start section with some temp files to be removed later
+=======
+         <topichead navtitle="crap">
+=======
+         <topichead navtitle="DO NOT LOOK HERE--TESTING">
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 67bf605... Fixed single-sourced navigation internals
+            <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_tools.dita"/>
+=======
+>>>>>>> 86ae294... Added new content
+            <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_sandbox.dita"/>
+=======
+>>>>>>> c59d3cd... Minor clean-up
+            <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_cluster.dita"/>
+            <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_terminate.dita"/>
+            <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_troubleshoot.dita"/>
+         </topichead>
+      </topichead>
+      <topicref href="reference/CFR_reference_gato.dita"/>
+   </topicref>
+>>>>>>> 9d80273... Testing theme changes on Linux
+=======
+   <topicref href="root/CFR_root_documentation.dita"/>
+<<<<<<< HEAD
+   <!--<topichead navtitle="Quick Start: Deploying to HPE Public Cloud"/>-->
+   <topicref href="quickstart/pubcloud/CFR_step_1.dita"/>
+   <topicref href="quickstart/pubcloud/CFR_step_2.dita"/>
+   <topicref href="quickstart/pubcloud/CFR_step_3.dita"/>
+   <topicref href="quickstart/pubcloud/CFR_step_4.dita"/>
+   <topicref href="quickstart/pubcloud/CFR_step_5.dita"/>
+   <topicref href="quickstart/pubcloud/CFR_step_6.dita"/>
+<<<<<<< HEAD
+   <topicref href="reference/CFR_reference_gato.dita"/>
+>>>>>>> 3206261... More content reorg
+=======
+>>>>>>> 58d9d55... Even more content reorg
+=======
+   <topichead navtitle="Quick Start: Deploying to HPE Public Cloud">
+=======
+=======
+   <topicref href="root/CFR_root_documentation.dita">
+      <topicref href="root/CFR_whats_new.dita"/>      
+=======
+   <topicref href="root/CFR_root_documentation.dita" navtitle="HPE Helion Cloud Foundry 1.0">
+=======
+   <topicref href="root/CFR_root_documentation.dita">
+>>>>>>> 6eb154a... Added placeholder for relnotes + xref to What's New
+      <topicref href="root/CFR_whats_new.dita"/>
+      <topicref href="root/CFR_relnotes.dita"/>
+      <topicref href="root/CFR_TP_licensing.dita"/>      
+>>>>>>> 7d18ccf... Added placeholder for licensing
+   </topicref>
+>>>>>>> 963943a... Added "What's New" section
+   <topichead navtitle="Quick Start: Deploying to HP Public Cloud">
+>>>>>>> e175940... Revised the instructions more
+      <topicref href="quickstart/pubcloud/CFR_step_1.dita"/>
+      <topicref href="quickstart/pubcloud/CFR_step_2.dita"/>
+      <topicref href="quickstart/pubcloud/CFR_step_3.dita"/>
+      <topicref href="quickstart/pubcloud/CFR_step_4.dita"/>
+      <topicref href="quickstart/pubcloud/CFR_step_5.dita"/>
+      <topicref href="quickstart/pubcloud/CFR_step_6.dita"/>
+   </topichead>
+>>>>>>> 746ce9d... More structure reorg
+=======
+   </topicref>
+<<<<<<< HEAD
+>>>>>>> 62e2344... Corrected typos and restructured notes
+   <!--
+   <topicref href="root/HCF_release_notes.dita" navtitle="Release Notes"/>
+   <topicref href="root/HCF_license_agreements.dita" navtitle="Open Source and Third-Party Software License Agreements"/>
+   <topicref href="root/HCF_software_license_terms.dita" navtitle="Software License Terms"/>
+   -->
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+   <topicref href="deploy/CFR_deploy.dita"/>
+>>>>>>> 603ec39... Added the initial files per Colin Henry's demo
+=======
+   <topicref href="deploy/CFR_deploy.dita">
+      <topicref href="deploy/CFR_TF_vars.dita"/>
+   </topicref>
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> d69391b... Added .tfvars file reference
+=======
+   <topicref href="reference/CFR_gato.dita"/>
+>>>>>>> e00821a... Added initial Gato command reference
+=======
+   <topichead navtitle="Quick Start">
+      <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_deploying.dita">
+         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_register.dita"/>
+         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_tools.dita"/>
+         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_sandbox.dita"/>
+         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_cluster.dita"/>
+         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_windows.dita"/>
+         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_explore.dita"/>
+         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_terminate.dita"/>
+         <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_troubleshoot.dita"/>
+      </topicref>
+   </topichead>
+   <topicref href="reference/CFR_reference_gato.dita"/>
+>>>>>>> dbe18b3... Adding a new Quick Start section with some temp files to be removed later
+=======
+>>>>>>> 9d80273... Testing theme changes on Linux
+=======
+   <topichead navtitle="DO NOT LOOK HERE--TESTING">
+      <topicref href="deploy/pubcloud/CFR_deploy_pubcloud_troubleshoot.dita"/>
+   </topichead>
+>>>>>>> 3206261... More content reorg
+=======
+>>>>>>> 6a42967... Added more content; removed temp content
+=======
+   <topichead navtitle="Reference">
+      <topicref href="reference/CFR_reference_TF_vars.dita"/>
+      <topicref href="reference/CFR_reference_gato.dita"/>
+   </topichead>
+>>>>>>> 58d9d55... Even more content reorg
+=======
+>>>>>>> 62e2344... Corrected typos and restructured notes
+=======
+>>>>>>> 262dd0e... Trying to fix TOC display
 </map>

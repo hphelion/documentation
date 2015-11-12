@@ -9,13 +9,27 @@
   </metadata>
  </prolog>
  <conbody>
+<<<<<<< HEAD
+<<<<<<< HEAD
   <section>
    <title><!--Updates-->Features and Functionality</title>
    <p>The following features and functionality have been added to <keyword keyref="prodLong"/>:</p>
+=======
+  <p>This is the first release of <keyword keyref="prodLong"/>.</p>
+  <section>
+   <title>Updates</title>
+>>>>>>> 963943a... Added "What's New" section
+=======
+  <section>
+   <title><!--Updates-->Features and Functionality</title>
+   <p>The following features and functionality have been added to <keyword keyref="prodLong"/>:</p>
+>>>>>>> 6eb154a... Added placeholder for relnotes + xref to What's New
    <dl>
     <dlentry>
      <dt>Terraform</dt>
      <dd>If you have worked with Cloud Foundry before, <keyword keyref="prodShort"/> will allow you
+<<<<<<< HEAD
+<<<<<<< HEAD
       to work in a familiar environment where instead of BOSH, <keyword keyref="prodShort"/> uses
        <xref href="https://terraform.io/" format="html" scope="external">Terraform</xref>, a service
       management command-line tool.</dd>
@@ -35,6 +49,47 @@
        Controller and runs within the Docker overlay Virtual Extensible LAN
        (VXLAN).</draft-comment><draft-comment author="michaelk">Link to the Dev Center:
        http://dev.hpcloud.com/</draft-comment></dd>
+=======
+      to work in a familiar environment that uses <xref href="https://terraform.io/" format="html"
+       scope="external">Terraform</xref>, a service management command-line tool, instead of
+      BOSH.</dd>
+=======
+      to work in a familiar environment where instead of BOSH, <keyword keyref="prodShort"/> uses
+       <xref href="https://terraform.io/" format="html" scope="external">Terraform</xref>, a service
+      management command-line tool.</dd>
+>>>>>>> 3e3c394... More additions and corrections per Sam
+    </dlentry>
+    <dlentry>
+     <dt><keyword keyref="adminUtil"/></dt>
+     <dd>If you have worked with <xref
+       href="http://www8.hp.com/us/en/cloud/helion-devplatform-overview.html" format="html"
+<<<<<<< HEAD
+       scope="external">HPE Helion Development Platform</xref> before, <keyword keyref="prodShort"/>
+      will allow you to work in a familiar environment that uses <keyword keyref="adminUtil"/>, a
+      new command-line administration utility, instead of <filepath>kato</filepath>. For more
+      information, see the <xref href="../reference/CFR_reference_gato.dita#reference_cd3_bs3_rt"
+<<<<<<< HEAD
+      />.</dd>
+>>>>>>> 963943a... Added "What's New" section
+=======
+       />.<draft-comment author="michaelk"><keyword keyref="adminUtil"/> communicates with <xref
+        href="https://www.consul.io/" format="html" scope="external">Consul</xref> instead of Cloud
+       Controller and runs within the Docker overlay Virtual Extensible LAN
+      (VXLAN).</draft-comment></dd>
+>>>>>>> f8e0eef... Renamed gato target to gato api + draft comment in What's New
+=======
+       scope="external">HPE Helion Stackato</xref> or with the <xref
+       href="http://devdocspjaytb3moy.devcloud.acquia-sites.com/hdp" format="html" scope="external"
+       >HPE Helion Development Platform</xref> before, <keyword keyref="prodShort"/> will allow you
+      to work with <keyword keyref="adminUtil"/>, a new command-line administration utility that
+      shares some functionality with Kato. For more information, see the <xref
+       href="../reference/CFR_reference_gato.dita#reference_cd3_bs3_rt"/>.<draft-comment
+       author="michaelk"><keyword keyref="adminUtil"/> communicates with <xref
+        href="https://www.consul.io/" format="html" scope="external">Consul</xref> instead of Cloud
+       Controller and runs within the Docker overlay Virtual Extensible LAN
+       (VXLAN).</draft-comment><draft-comment author="michaelk">Link to the Dev Center:
+       http://dev.hpcloud.com/</draft-comment></dd>
+>>>>>>> 3e3c394... More additions and corrections per Sam
     </dlentry>
    </dl>
   </section>

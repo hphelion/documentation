@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en" linking="none" locktitle="no">
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
  <mapref href="cf-release/docs.hpcloud.com.CFR.ditamap"/>
+=======
+ <mapref href="cloudfoundry/docs.hpcloud.com.HDP.ditamap"/>
+>>>>>>> b40d79b... Revising file/dir structure
+=======
+ <mapref href="cloudfoundry/docs.hpcloud.com.HCF.ditamap"/>
+>>>>>>> 519f6f6... Trying to get the HCF docs to build
+=======
+ <mapref href="cf-release/docs.hpcloud.com.CFR.ditamap"/>
+>>>>>>> 603ec39... Added the initial files per Colin Henry's demo
 </map>

@@ -1,15 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_kpg_fhz_st">
+<<<<<<< HEAD
+<<<<<<< HEAD
  <title>Quick Start Step 3: <keyword keyref="quickStartHPcloudStep3"/></title>
  <shortdesc>During this step you will log into <keyword keyref="pubCloudLong"/> and use the web
+<<<<<<< HEAD
     console to create a sandbox environment.</shortdesc>
+=======
+ <title>Quick Start Step 3: Create a Sandbox Environment</title>
+ <shortdesc></shortdesc>
+>>>>>>> 9d80273... Testing theme changes on Linux
+=======
+ <title>Quick Start Step 3: <keyword keyref="quickStartHPcloudStep3"/></title>
+<<<<<<< HEAD
+ <shortdesc>During this tep you will log into <keyword keyref="pubCloudShort"/> and use the web
+  console to create a sandbox environment.</shortdesc>
+>>>>>>> 86ae294... Added new content
+=======
+ <shortdesc>During this step you will log into <keyword keyref="pubCloudShort"/> and use the web
+=======
+>>>>>>> 416fc79... Final check for HCF 1.0 docs before sending for comments
+    console to create a sandbox environment.</shortdesc>
+>>>>>>> 0c75500... Even more content
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
   </metadata>
  </prolog>
  <conbody>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
   <simpletable>
    <strow>
     <stentry>1. <xref conref="CFR_step_2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
@@ -143,5 +165,150 @@
         </stentry>
    </strow>
   </simpletable>
+=======
+  <p></p>
+>>>>>>> 9d80273... Testing theme changes on Linux
+=======
+  <simpletable id="simpletable_zlb_lpz_st">
+=======
+  <simpletable>
+>>>>>>> be539c9... Added Step 6
+   <strow>
+    <stentry>1. <xref conref="CFR_step_2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
+              <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3.
+                <b><keyword keyref="quickStartHPcloudStep3" id="quickStartHPcloudStep3"
+            /></b></p><p>4. <xref
+              conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5. <xref
+              conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6. <xref
+            conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
+    <stentry>
+          <b>To Create a Sandbox Environment</b><ol id="ol_ur4_yq1_tt">
+            <li>Log into the <xref href="https://horizon.hpcloud.com/" format="html"
+                scope="external"><keyword keyref="pubCloudShort"/></xref> with the username and
+              password that you created <xref href="CFR_step_1.dita#concept_s2k_b35_st">during
+                registration</xref>.</li>
+            <li id="create_a_network">Create a network.<ol id="ol_xvb_qyp_tt">
+                <li>On the left panel, click <menucascade>
+                    <uicontrol>Project</uicontrol>
+                    <uicontrol>Network</uicontrol>
+                    <uicontrol>Networks</uicontrol>
+                  </menucascade> and then click <uicontrol>Create Network</uicontrol> on the
+                  right.</li>
+                <li>Enter a <uicontrol>Network Name</uicontrol> and click
+                    <uicontrol>Next</uicontrol>.</li>
+                <li>Enter a <uicontrol>Subnet Name</uicontrol>, a <uicontrol>Network
+                    Address</uicontrol> (for example, <codeph>10.0.0.0/24</codeph>), and click
+                    <uicontrol>Next</uicontrol>.</li>
+                <li>Enter <uicontrol>Allocation Pools</uicontrol> (for example,
+                    <codeph>10.0.0.2,10.0.0.254</codeph>), and click
+                    <uicontrol>Create</uicontrol>.<note type="tip">To find the network ID, click the
+                    name of your network. You will need it to <xref
+                      href="../../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt"
+                      >configure your <filepath>tfvars</filepath> file</xref> and <xref
+                      href="CFR_step_4.dita#concept_pqc_jhz_st/run_terraform_command">run terraform
+                      commands.</xref></note></li>
+              </ol></li>
+            <li>Create a router.<ol id="ol_vkh_fr1_tt">
+                <li>On the left panel, click <menucascade>
+                    <uicontrol>Project</uicontrol>
+                    <uicontrol>Network</uicontrol>
+                    <uicontrol>Routers</uicontrol>
+                  </menucascade> and then click <uicontrol>Create Router</uicontrol> on the
+                  right.</li>
+                <li>Enter a router name and click <uicontrol>Create Router</uicontrol>.</li>
+                <li>To connect your router to the external network (Ext-Net), click <uicontrol>Set
+                    Gateway</uicontrol> in the <uicontrol>Actions</uicontrol> column of your
+                  router's row.</li>
+                <li>Under <uicontrol>External Network</uicontrol>, select
+                    <uicontrol>Ext-Net</uicontrol> and click <uicontrol>Set
+                  Gateway</uicontrol>.</li>
+              </ol></li>
+            <li>Create an interface.<ol id="ol_uvc_3zp_tt">
+                <li>On the left panel, click <menucascade>
+                    <uicontrol>Project</uicontrol>
+                    <uicontrol>Network</uicontrol>
+                    <uicontrol>Routers</uicontrol>
+                  </menucascade> and then click the name of your router.</li>
+                <li>Click <uicontrol>Add Interface</uicontrol> on the right.</li>
+                <li>Select the <uicontrol>Subnet</uicontrol> you created when you have created your
+                  network and click <uicontrol>Add Interface</uicontrol>.</li>
+              </ol></li>
+            <li>Confirm that your sandbox environment is configured correctly.<ol id="ol_bf3_qzp_tt">
+                <li>On the left panel, click <menucascade>
+                    <uicontrol>Project</uicontrol>
+                    <uicontrol>Network</uicontrol>
+                    <uicontrol>Network Topology</uicontrol>
+                  </menucascade>.</li>
+                <li>Ensure that your router is shown connected to your network and the external
+                  network.</li>
+              </ol></li>
+            <li>Activate the Compute service required for creating clusters.<ol id="ol_kpw_4sp_tt">
+                <li>Click <menucascade>
+                    <uicontrol>Manage Services</uicontrol>
+                    <uicontrol>Activate Services</uicontrol>
+                  </menucascade>.</li>
+                <li>In the <uicontrol>US West</uicontrol> section, click
+                    <uicontrol>Activate</uicontrol> in the <uicontrol>Actions</uicontrol> column of
+                  the <uicontrol>Compute</uicontrol> row. </li>
+              </ol><note>Due to load balancing, your account may be provisioned to use US East
+                instead of US West. If <uicontrol>Launch Instance</uicontrol> is disabled in the <menucascade>
+                  <uicontrol>Project</uicontrol>
+                  <uicontrol>Computer</uicontrol>
+                  <uicontrol>Instances</uicontrol>
+                </menucascade> pane, try the other region.</note></li>
+            <li>Ensure that you have at least 16GB of RAM.<ol id="ol_m1h_dmv_tt">
+                <li>To view your current limits, click <menucascade>
+                    <uicontrol>Project</uicontrol>
+                    <uicontrol>Compute</uicontrol>
+                    <uicontrol>Overview</uicontrol>
+                  </menucascade>.</li>
+                <li>If you have fewer than 15GB of RAM, request additional resources by emailing
+                    <xref href="mailto:billing@hpcloud.com" format="html" scope="external"
+                    >billing@hpcloud.com</xref>.</li>
+              </ol></li>
+          </ol><b id="download_config_file">TO Download the Configuration File and Key Pair</b><ol
+            id="ol_gy1_f1q_tt">
+            <li>To download the <filepath>sh</filepath> configuration file, click <menucascade>
+                <uicontrol>Project</uicontrol>
+                <uicontrol>Compute</uicontrol>
+                <uicontrol>Access and Security</uicontrol>
+                <uicontrol>API Access</uicontrol>
+              </menucascade> and then click <uicontrol>Download OpenStack RC File</uicontrol> on the
+                right.<note>The
+                  <filepath><varname>&lt;number></varname>-Project-openrc.sh</filepath> file
+                contains information about the hosted service, including region, tenant, and other
+                information required to create a cluster. This file is pre-configured for your
+                sandbox environment.</note></li>
+            <li id="create_a_key_pair">Create a key pair.<ol id="ol_hlp_1v1_tt">
+                <li>Click <menucascade>
+                    <uicontrol>Project</uicontrol>
+                    <uicontrol>Compute</uicontrol>
+                    <uicontrol>Access &amp; Security</uicontrol>
+                    <uicontrol>Key Pairs</uicontrol>
+                  </menucascade> and then click <uicontrol>Create Key Pair</uicontrol> on the
+                  right.</li>
+                <li>Enter a key pair name and click <uicontrol>Create Key Pair</uicontrol>.</li>
+                <li>If the key pair does not download automatically, click the link and save the
+                    <filepath>pem</filepath> file in a convenient location.</li>
+              </ol><note type="tip">The <filepath>pem</filepath> file contains the RSA private key
+                that you will need to <xref
+                  href="CFR_step_4.dita#concept_pqc_jhz_st/run_terraform_command">run Terraform
+                  commands</xref> and to <xref
+                  href="CFR_step_6.dita#concept_m3k_bth_tt/connecting_to_your_cluster">SSH into your
+<<<<<<< HEAD
+                  cluster</xref>.</note></li>
+=======
+                  cluster</xref>. The location of the <filepath>pem</filepath> file is relative to
+                  <xref href="../../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt">the
+                    <filepath>tfvars</filepath> file in which it is specified</xref>. For
+                convenience, you can place the two files into the same directory.</note></li>
+>>>>>>> de2d2bc... Recreating branch without old cruft in it
+          </ol><xref href="CFR_step_4.dita#concept_pqc_jhz_st">
+            <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
+          </xref>
+        </stentry>
+   </strow>
+  </simpletable>
+>>>>>>> e6e046d... Inserting the "Wizard" structure a la HDP docs
  </conbody>
 </concept>
