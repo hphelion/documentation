@@ -28,7 +28,7 @@
     <topicref href="helion/releasenotes.dita" navtitle="Release Notes" locktitle="yes"/>
     <topicref href="helion/faq.dita" navtitle="Frequently Asked Questions" locktitle="yes"/>
     <topicref href="helion/eula.dita" navtitle="Software License Terms" locktitle="yes"/>
-    <topicref href="commercial/GA1/3rd-party-license-agreements.dita"
+    <topicref href="helion/3rd-party-license-agreements.dita"
       navtitle="Open Source and Third-Party Licensing" locktitle="yes"/>
     <!-- END - TOP LEVEL -->
     <!-- BEGIN - INSTALLATION -->
