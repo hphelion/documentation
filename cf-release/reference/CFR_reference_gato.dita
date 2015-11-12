@@ -111,7 +111,7 @@
               </dlentry>
               <dlentry>
                 <dt><filepath>--file</filepath>, <filepath>-f</filepath></dt>
-                <dd>Read values from file or from stdin if followed by dash (-).</dd>
+                <dd>Read values from file or from stdin if followed by a dash (-).</dd>
               </dlentry>
             </dl></dd>
         </dlentry>
