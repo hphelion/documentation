@@ -24,7 +24,7 @@
           referenced by HPE which may be software license information, additional license
           authorizations, software specifications, published warranties, supplier terms, open source
           software licenses and similar content ("Supporting Material"). Additional license
-          authorizations are below and at <xref href="devplatform.thirdparty.licensing.dita">HP
+          authorizations are below and at <xref href="devplatform.thirdparty.licensing.dita">HPE
             Helion Development Platform Open Source and Third-Party Software License
             Agreements</xref>.</li>
         <li>
@@ -72,27 +72,25 @@
           <b>Copyright Notices.</b> You must reproduce copyright notices on software and
           documentation for authorized copies.</li>
         <li>
-          <b>90-day Limited Warranty for HPE Software.</b> HP-branded software is free of malware at
-          the time of delivery; if you notify HPE within 90 days of delivery of non-conformance to
-          this warranty, HPE will replace your copy. This Agreement states all remedies for warranty
-          claims. -HPE does not warrant that the operation of software will be uninterrupted or error
-          free, or that software will operate in hardware and software combinations other than as
-          authorized by HPE in Supporting Material. To the extent permitted by law, HPE disclaims all
-          other warranties.</li>
+          <b>90-day Limited Warranty for HPE Software.</b> HPE-branded software is free of malware
+          at the time of delivery; if you notify HPE within 90 days of delivery of non-conformance
+          to this warranty, HPE will replace your copy. This Agreement states all remedies for
+          warranty claims. HPE does not warrant that the operation of software will be uninterrupted
+          or error free, or that software will operate in hardware and software combinations other
+          than as authorized by HPE in Supporting Material. To the extent permitted by law, HPE
+          disclaims all other warranties.</li>
         <li>
-          <b>Intellectual Property Rights Infringement.</b> Except for those components subject to
-          third party license terms as provided in Section 14(e) of this Part 1, HPE will defend
-          and/or settle any claims against you that allege that HP-branded software as supplied
-          under this Agreement infringes the intellectual property rights of a third party. HPE will
-          rely on your prompt notification of the claim and cooperation with our defense. HPE may
-          modify the software so as to be non-infringing and materially equivalent, or we may
-          procure a license. If these options are not available, we will refund to you the amount
-          paid for the affected product in the first year or the depreciated value thereafter, and
-          HPE will have no further obligations under this Section 11 for your continued use of the
-          software. HPE is not responsible for claims resulting from any unauthorized use of the
-          software.</li>
+          <b>Intellectual Property Rights Infringement.</b>  Subject to Section 14(e) of this Part
+          1, HPE will defend and/or settle any claims against you that allege that HPE-branded
+          software as supplied under this Agreement infringes the intellectual property rights of a
+          third party. HPE will rely on your prompt notification of the claim and cooperation with
+          our defense. HPE may modify the software so as to be non-infringing and materially
+          equivalent, or we may procure a license. If these options are not available, we will
+          refund to you the amount paid for the affected product in the first year or the
+          depreciated value thereafter. HPE is not responsible for claims resulting from any
+          unauthorized use of the software.</li>
         <li>
-          <b>Limitation of Liability.</b> HP's liability to you under this Agreement is limited to
+          <b>Limitation of Liability.</b> HPE's liability to you under this Agreement is limited to
           the amount actually paid by you to HPE for the relevant software, except for amounts in
           Section 11 ("Intellectual Property Rights Infringement"). Neither you nor HPE will be
           liable for lost revenues or profits, downtime costs, loss or damage to data or indirect,
@@ -104,7 +102,7 @@
           <b>Termination.</b> This Agreement is effective until terminated or in the case of a
           limited-term license, upon expiration; however, your rights under this Agreement terminate
           if you fail to comply with it. Immediately upon termination or expiration, you will
-          destroy the software and documentation and any copies, or return them to HP. You may keep
+          destroy the software and documentation and any copies, or return them to HPE. You may keep
           one copy of software and documentation for archival purposes. We may ask you to certify in
           writing you have complied with this section. Warranty disclaimers, the limitation of
           liability, this section on termination, and Section 14 ("General") will survive
@@ -112,18 +110,18 @@
         <li>
           <b>14. General.</b>
           <ol>
-            <li>Assignment. You may not assign this Agreement without prior written consent of HP,
-              payment of transfer fees and compliance with HP's software license transfer policies.
-              Authorized assignments will terminate your license to the software and you must
-              deliver software and documentation and copies thereof to the assignee. The assignee
-              will agree in writing to this Agreement. You may only transfer firmware if you
-              transfer associated hardware.</li>
-            <li>U.S. Government. If the software is licensed to you for use in the performance of a
-              U.S. Government prime contract or subcontract, you agree that, consistent with FAR
-              12.211 and 12.212, commercial computer software, computer software documentation and
-              technical data for commercial items are licensed under HP's standard commercial
-              license.</li>
-            <li>Global Trade Compliance. You agree to comply with the trade-related laws and
+            <li><b>Assignment</b>. You may not assign this Agreement without prior written consent
+              of HPE, payment of transfer fees, and compliance with HPE's software license transfer
+              policies. Authorized assignments will terminate your license to the software and you
+              must deliver software and documentation and copies thereof to the assignee. The
+              assignee will agree in writing to this Agreement. You may only transfer firmware if
+              you transfer associated hardware.</li>
+            <li><b>U.S. Government</b>. If the software is licensed to you for use in the
+              performance of a U.S. Government prime contract or subcontract, you agree that,
+              consistent with FAR 12.211 and 12.212, commercial computer software, computer software
+              documentation and technical data for commercial items are licensed under HPE's
+              standard commercial license.</li>
+            <li><b>Global Trade Compliance</b>. You agree to comply with the trade-related laws and
               regulations of the U.S. and other national governments. If you export, import or
               otherwise transfer products provided under this Agreement, you will be responsible for
               obtaining any required export or import authorizations. You confirm that you are not
@@ -131,30 +129,31 @@
               N. Korea, N. Sudan, and Syria) and further agree that you will not retransfer the
               products to any such country. HPE may suspend its performance under this Agreement to
               the extent required by laws applicable to either party.</li>
-            <li>Audit. HPE may audit you for compliance with the software license terms. Upon
+            <li><b>Audit</b>. HPE may audit you for compliance with the software license terms. Upon
               reasonable notice, HPE may conduct an audit during normal business hours (with the
-              auditor's costs being at HP's expense). If an audit reveals underpayments then you
+              auditor's costs being at HPE's expense). If an audit reveals underpayments then you
               will pay to HPE such underpayments. If underpayments discovered exceed five (5)
               percent, you will reimburse HPE for the auditor costs</li>
-            <li>Third Party and Open Source Components. To the extent any component of the software
-              is subject to any third party license terms, including open source license terms, then
-              those third party license terms or open source license terms shall govern with respect
-              to the subject component; otherwise, the terms of this Agreement shall govern.</li>
-            <li>Notices. Written notices under this Agreement may be provided to HPE via the method
-              provided in the Supporting Material or if none, via "contact HP" site on <xref
+            <li><b>Third Party and Open Source Components</b>. To the extent any component of the
+              software is subject to any third party license terms, including open source license
+              terms, then those third party license terms or open source license terms shall govern
+              with respect to the subject component; otherwise, the terms of this Agreement shall
+              govern.</li>
+            <li><b>Notices</b>. Written notices under this Agreement may be provided to HPE via the
+              method provided in the Supporting Material or if none, via "contact HPE" site on <xref
                 href="http://www.hp.com" scope="external" format="html">www.hp.com</xref>.</li>
-            <li>Governing Law. This Agreement will be governed by the laws of the state of
-              California, U.S.A., excluding rules as to choice and conflict of law. You and HPE agree
-              that the United Nations Convention on Contracts for the International Sale of Goods
-              will not apply.</li>
-            <li>Force Majeure. Neither party will be liable for performance delays nor for
+            <li><b>Governing Law</b>. This Agreement will be governed by the laws of the state of
+              California, U.S.A., excluding rules as to choice and conflict of law. You and HPE
+              agree that the United Nations Convention on Contracts for the International Sale of
+              Goods will not apply.</li>
+            <li><b>Force Majeure</b>. Neither party will be liable for performance delays nor for
               non-performance due to causes beyond its reasonable control, except for payment
               obligations.</li>
-            <li>Entire Agreement. This Agreement represents our entire understanding with respect to
-              its subject matter and supersedes any previous communication or agreements that may
-              exist. Modifications to the Agreement will be made only through a written amendment
-              signed by both parties. If HPE doesn't exercise its rights under this Agreement, such
-              delay is not a waiver of its rights.</li>
+            <li><b>Entire Agreement</b>. This Agreement represents our entire understanding with
+              respect to its subject matter and supersedes any previous communication or agreements
+              that may exist. Modifications to the Agreement will be made only through a written
+              amendment signed by both parties. If HPE doesn't exercise its rights under this
+              Agreement, such delay is not a waiver of its rights.</li>
           </ol></li>
         <li>
           <b>Australian Consumers.</b> If you acquired the software as a consumer within the meaning
@@ -171,20 +170,25 @@
 <section id="definitions"> <title>Definitions</title>
 <p>Capitalized terms not otherwise defined in this Additional License Authorizations document are defined in the governing Agreement.</p>
 <p>
-<b>Commercial Service Provider</b> means a Customer acting as a third party service provider contracted by an end user to provide commercial services to that end user.</p>
+        <b>Cloud Fabric</b> means a collection of physical and virtual operating system environments
+        that are configured and operated as a unit to provide virtualization, networking, website,
+        storage and file services.</p>
 <p>
-<b>Development Platform</b>    means a collection of services that run on top of an HPE Helion <tm tmtype="reg">OpenStack</tm> Cloud Fabric that are configured and operated to create a development and application runtime environment.</p>
+        <b>Internal Use</b> means use of the Software for purposes of supporting Customer’s internal
+        business operations or functions.</p>
+      <p><b>Platform Management Software </b>means an HPE Helion Development Platform management
+        software running on a Physical Server for the purpose of enabling development, deployment,
+        or management of applications on a Cloud Fabric.</p>
 <p>
-<b>HPE Helion OpenStack  Cloud Fabric</b>   means a collection of physical and virtual operating system environments using HPE Helion OpenStack Software that are configured and operated as a unit to provide virtualization, networking, website, storage and file services.</p>
+        <b>Physical Server</b> means a single, physical hardware server or other computer but is not
+        a Virtual Machine.</p>
+      <p>
+        <b>Term of Use</b> means the period of time licensed for use of the Software.</p>
 <p>
-<b>HPE Helion OpenStack Software</b>  means an HPE Helion OpenStack software product used for building, managing and consuming cloud services</p>
-<p>
-<b>Internal Use</b>    means use of the Software for purposes of supporting Customer's internal business operations or functions.</p>
-<p>
-<b>Physical Server</b> means a single, physical hardware server or other computer but is not a Virtual Machine.</p>
-<p>
-<b>Use</b> means to use, install, store, load, execute and display the Software in accordance with the particular license(s) purchased by Customer.</p>
-<p>**Virtual Machine(s) ** means a computer that does not physically exist but is simulated by another computer.</p>
+        <b>Use</b> means to use, install, store, load, execute and display the Software in
+        accordance with the particular license(s) purchased by Customer.</p>
+<p><b>Virtual Machine(s)</b> means a computer that does not physically exist but is simulated by
+        another computer.</p>
 </section>
 <section id="additional-license-terms"> <title>Additional License Terms</title>
 <p><b>1. Software:</b> Subject to Customer's compliance with the terms and conditions of this
@@ -193,18 +197,39 @@
         development and application runtime environment on a per Physical Server basis for the term
         as specified in the purchase agreement.</p>
 <ul>
-<li>Per Server License: Following purchase, this per-server license is to be assigned to a Physical Server that is properly licensed to Use HPE Helion OpenStack Software.  After assigning this license, you may Use the Software on these Physical Servers in order to create your Development Platform on top of your HPE Helion OpenStack Cloud Fabric</li>
+<li>Per Server License: Following purchase, this per-server license is to be assigned to a Physical
+          Server that will be used to run your Cloud Fabric. After the Physical Servers are licensed
+          and those licenses are properly assigned, you may run any number of instances of the
+          Platform Management Software to deploy, configure, manage and operate your HPE Helion
+          Development Platform on your Cloud Fabric. The right to Use the Software may not be
+          transferred from the initial licensed Physical Server to a new or replacement Physical
+          Server, except according to Section 2(i) below. Subject to Customer’s continuing
+          compliance with the terms and conditions of this Agreement, following the Term of Use,
+          Customer may continue to Use the Software on the Physical Server that was licensed and in
+          operation before the end of the Term of Use.</li>
 </ul>
 <p>
   <b>2. Other Terms:</b>
 </p><p>
-<b>a. Trademarks.</b>  Notwithstanding anything to the contrary in this Section, you may not distribute the Software or components of the Software using HPE trademarks unless permitted to do so under a separate written agreement with HP.</p>
+        <b>a. Trademarks.</b> Notwithstanding anything to the contrary in this Section, you may not
+        distribute the Software or components of the Software using HPE trademarks unless permitted
+        to do so under a separate written agreement with HPE.</p>
 <p>
-<b>b. Assigning Licenses:</b>  Before you can Use the Software to deploy your Development Platform, you must assign the per-Physical Server license to a Physical Server that is already validly licensed to run the HPE Helion OpenStack Cloud Fabric. Each Physical Server to which you assign a license is a licensed host server.</p>
+        <b>b. Assigning Licenses:</b> Before you can install and use the Platform Management
+        Software to deploy the development platform on your Cloud Fabric, you must assign to each
+        Physical Server running the host fabric one per-Physical Server license. Each Physical
+        Server to which you assign a license is a licensed host server.</p>
 <p>
-<b>c. Commercial Service Providers:</b> You must have an active HPE Partner One agreement, Cloud Agile Service Provider agreement, Helion Network agreement or other HPE resale or service provider agreement in order to resell Software or provide commercial services using the Software.  If you do not have an active reseller or service provider agreement you may only use the Software for Internal Use purposes.</p>
+        <b>c. Commercial Service Providers:</b> Customers must accept the terms contained in a
+        supplemental agreement in order to provide commercial services to third parties using the
+        Software, found at <xref
+          href="http://www.hp.com/go/HPE%20Helion%20End%20User%20License%20Supplement%20for%20Commercial%20Service%20Providers"
+          format="html" scope="external">www.hp.com/go/HPE Helion End User License Supplement for
+          Commercial Service Providers</xref></p>
 <p>
-<b>d. Compliance and Audit:</b>  HPE shall have the right to audit the customer's use of the Software at HP's expense and in accordance with any agreement between the parties related to confidentiality.</p>
+        <b>d. Compliance and Audit:</b> HPE shall have the right to audit the customer's use of the
+        Software at HPE's expense and in accordance with any agreement between the parties related
+        to confidentiality.</p>
 <p>
 <b>e. Confidentiality:</b> The Software contains confidential and proprietary information of HPE (“Confidential Information”). Customer will hold in confidence and not use or disclose any Confidential Information, except as expressly permitted in the Agreement. To the extent this restriction is not prohibited under applicable law, and except as specifically authorized under in writing by HPE customer shall not disclose to any third party the results of (i) any performance benchmarks you run on the Software, or any portion thereof, or (ii) specific detailed comparisons you make between the Software, or any portion thereof, and any product owned by you or a third-party product.</p>
 <p>
@@ -214,9 +239,17 @@
 <p>
 <b>h. Outsourcing Software Management:</b>  You may install and run the Software on your Physical Servers that are under the day-to-day management and control of third parties, provided all such Physical Servers and other devices are and remain fully dedicated to your use. You are responsible for all of the obligations under this Agreement regardless of the physical location of the hardware upon which the Software is used.</p>
 <p>
-<b>i. Reassigning Licenses:</b>  You may not reassign Software licenses to a substitute Physical Server on a short-term basis (within 90 days of the last assignment) unless the licensed Physical Server has been retired due to permanent hardware failure.</p>
+        <b>i. Reassigning Licenses:</b> During the Term of Use, You may reassign the Software
+        license to a substitute Physical Server, except that no reassignment is permitted within
+        ninety (90) days of a previous reassignment unless such reassignment is made to a
+        replacement Physical Server that has been replaced due to permanent hardware failure.
+        Following the Term of Use, no license transfers or reassignments are permitted.</p>
 <p>
-<b>j. Rights to use other versions:</b>  You may create, store, install, run or access a copy or instance of a prior version of the Software in place of the latest release of the Software. The permitted use of an earlier version does not extend the support lifecycle of the earlier version.</p>
+        <b>j. Rights to use other versions:</b> You may create, store, install, run or access a copy
+        or instance of a prior version of the Software in place of the latest release of the
+        Software. The permitted use of an earlier version does not extend the support lifecycle of
+        the earlier version. The permitted use of a version of the Software does not extend to
+        updated versions released after the Term of Use.</p>
 <p>
 <b>k. Third Party Licenses:</b>  You are responsible for complying with all terms of use for any third party software, content, service or website you load, create or access when using the Software.</p>
 <p>
