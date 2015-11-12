@@ -181,7 +181,8 @@
       <p>
         <b>Use</b> - To use, install, store, load, execute and display the Software in accordance with the particular license(s) purchased by Customer.</p>
       <p>
-        <b>Virtual Machine(s)</b>- A computer that does not physically exist but is simulated by another computer.</p>
+        <b>Virtual Machine(s)</b> - A computer that does not physically exist but is simulated by
+        another computer.</p>
     </section>
     <section id="additional-license-terms"> <title>Additional License Terms</title>
       <ol>
@@ -201,74 +202,74 @@
               following the Term of Use, Customer may continue to Use the Software on the Physical
               Server that was licensed and in operation before the end of the Term of Use.</li>
           </ul></li>
-          <li><b>2. Other Terms:</b>
-            <ol>
-              <li>
+          <li><b>Other Terms:</b>
+          <ol>
+            <li>
               <b>Trademarks.</b> Notwithstanding anything to the contrary in this Section, you may
               not distribute the Software or components of the Software using HPE trademarks unless
               permitted to do so under a separate written agreement with HPE.</li>
-              <li><b>Assigning Licenses:</b> Before you can install and use the Management Software
-              to deploy your Cloud Fabric, you must assign to each Physical Server running the host
+            <li><b>Assigning Licenses:</b> Before you can install and use the Management Software to
+              deploy your Cloud Fabric, you must assign to each Physical Server running the host
               fabric one per-Physical Server license. Each Physical Server to which you assign a
               license is a licensed host server.</li>
-          <li>
+            <li>
               <b>Commercial Service Providers:</b> Customers must accept the terms contained in a
               supplemental agreement in order to provide commercial services to third parties using
               the Software, found at <xref
                 href="http://www.hp.com/go/HPE%20Helion%20End%20User%20License%20Supplement%20for%20Commercial%20Service%20Providers"
                 format="html" scope="external">www.hp.com/go/HPE Helion End User License Supplement
                 for Commercial Service Providers</xref></li>
-          <li>
+            <li>
               <b>Compliance and Audit:</b> HPE shall have the right to audit the customer's use of
               the Software at HPE's expense and in accordance with any agreement between the parties
               related to confidentiality. </li>
-          <li><b>Confidentiality:</b> The Software contains confidential and proprietary information
-              of HPE ("Confidential Information"). Customer will hold in confidence and not use or
-              disclose any Confidential Information, except as expressly permitted in the Agreement.
-              To the extent this restriction is not prohibited under applicable law, and except as
-              specifically authorized under in writing by HPE customer shall not disclose to any
-              third party the results of (i) any performance benchmarks you run on the Software, or
-              any portion thereof, or (ii) specific detailed comparisons you make between the
-              Software, or any portion thereof, and any product owned by you or a third-party
-              product.</li>
-          <li>
+            <li><b>Confidentiality:</b> The Software contains confidential and proprietary
+              information of HPE ("Confidential Information"). Customer will hold in confidence and
+              not use or disclose any Confidential Information, except as expressly permitted in the
+              Agreement. To the extent this restriction is not prohibited under applicable law, and
+              except as specifically authorized under in writing by HPE customer shall not disclose
+              to any third party the results of (i) any performance benchmarks you run on the
+              Software, or any portion thereof, or (ii) specific detailed comparisons you make
+              between the Software, or any portion thereof, and any product owned by you or a
+              third-party product.</li>
+            <li>
               <b>Copyright Notices:</b> Customer must reproduce all copyright notices that appear in
               or on the Software (including documentation) on all permitted copies or adaptions.
               Copies of documentation are limited to internal use.</li>
-          <li>
+            <li>
               <b>Delivery:</b> Customer agrees to accept the Software upon receipt. </li>
-          <li>
+            <li>
               <b>Outsourcing Software Management:</b> You may install and run the Software on your
               Physical Servers that are under the day-to-day management and control of third
               parties, provided all such Physical Servers and other devices are and remain fully
               dedicated to your use. You are responsible for all of the obligations under this
               Agreement regardless of the physical location of the hardware upon which the Software
               is used.</li>
-          <li>
+            <li>
               <b>Reassigning Licenses:</b> During the Term of Use, You may reassign the Software
               license to a substitute Physical Server, except that no reassignment is permitted
               within ninety (90) days of a previous reassignment unless such reassignment is made to
               a replacement Physical Server that has been replaced due to permanent hardware
               failure. Following the Term of Use, no license transfers or reassignments are
               permitted.</li>
-        <li>
+            <li>
               <b>Rights to use other versions:</b> You may create, store, install, run or access a
               copy or instance of a prior version of the Software in place of the latest release of
               the Software. The permitted use of an earlier version does not extend the support
               lifecycle of the earlier version. The permitted use of a version of the Software does
               not extend to updated versions released after the Term of Use.</li>
-          <li>
+            <li>
               <b>Third Party Licenses:</b> You are responsible for complying with all terms of use
               for any third party software, content, service or website you load, create or access
               when using the Software.</li>
-          <li>
+            <li>
               <b>Updates and Supplements:</b> We may update or supplement the Software. If so, you
               may use that update or supplement with the Software, subject to any additional terms
               that accompany the update or supplement.</li>
-          <li> The OpenStack word mark and the Square O Design, together or apart, are trademarks or
-              registered trademarks of OpenStack Foundation in the United States and other
+            <li> The OpenStack word mark and the Square O Design, together or apart, are trademarks
+              or registered trademarks of OpenStack Foundation in the United States and other
               countries, and are used with the OpenStack Foundation's permission.</li>
-            </ol></li></ol>
+          </ol></li></ol>
     </section>
     <section id="ancilliary"> <title>Part 3: Ancillary and Open Source Software for Software</title>
       <p>Additional license authorizations related to ancillary, third party and open source
