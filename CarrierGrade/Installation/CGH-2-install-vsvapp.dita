@@ -104,8 +104,9 @@
 IPADDR=10.20.5.21
 NETMASK=255.255.255.0
 GATEWAY=10.20.5.1</codeblock></p></li>
-                <li conref="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/2"
-                    conrefend="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/14"/>
+                    
+                    <li conref="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/2"
+                        conrefend="CGH-2-conref-vsvapp4.dita#ReusableComponent_mmq_bnc_tt/14"/>
                 <li id="15">After NTP is properly synchronized, execute the following command to
                     install VSD:<codeblock>/opt/vsd/install.sh</codeblock></li>
             </ol></section>

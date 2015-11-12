@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic916">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 Carrier Grade: Open Source and Third-Party
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Open Source and Third-Party
     Software License Agreements</title>
   <prolog>
     <metadata>
@@ -20,8 +20,11 @@
       <!--./commercial/GA1/1.13rd-party-license-agreements.md-->
       <!--permalink: /helion/openstack/1.1/3rd-party-license-agreements/--></p>
     <p>The Open Source and Third-Party Software License Agreements for HP Helion OpenStack Carrier
-      Grade are available as a <xref
-        href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HDP-OSRB-v1.2.pdf"
-        format="pdf" scope="external">PDF download</xref>.</p>
+      Grade are available as a PDF download:<ul id="ul_nqs_15l_zt">
+        <li>For the <xref
+            href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HDP-OSRB-v1.2.pdf"
+            format="pdf" scope="external">HCG-AVS (Denver) deployment</xref></li>
+        <li>For the HCG-DCN (Tahoe/Memphis/Sacramento) deployments</li>
+      </ul></p>
   </body>
 </topic>
