@@ -125,9 +125,11 @@
       navtitle="Troubleshooting" locktitle="yes"/>
     <topichead navtitle=" License Files">
       <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"
-        navtitle="Open Source and Third-Party Software License Agreement" locktitle="yes"/>
+        navtitle="HP Helion OpenStack Carrier Grade: Open Source and Third-Party Software License Agreement"
+        locktitle="yes"/>
+      <topicref href="CarrierGrade/carrier-grade-dcn-license-osrb.dita"/>
       <topicref href="CarrierGrade/carrier-grade-eula.dita" toc="yes"
-        navtitle="Software License Terms" locktitle="yes"/>
+        navtitle="HP Helion OpenStack Carrier Grade: Software License Terms" locktitle="yes"/>
     </topichead>
     <topichead navtitle="Files in map not TOC" toc="no">
       <topicref

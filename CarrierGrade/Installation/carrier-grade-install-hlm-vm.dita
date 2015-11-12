@@ -119,7 +119,7 @@ upstream_ntp_servers:
           <!-- The command will do the following:<ul><li>Copy both installation files (tar balls) to the KVM Host, decrypt, 
             and extract the files.</li>
             <li>Execute the <codeph>updatepackages</codeph> command.</li>
-            <li>Execute the <codeph>prepareenv</codeph> command.</li><li>Execute the <codeph>Init cobbler</codeph> command.</li><li>Execute the <codeph>Importiso</codeph> command.<p>You will see a message similar to the following image when the playbook is run successful:</p></li></ul>-->
+            <li>Execute the <codeph>prepareenv</codeph> command.</li><li>Execute the <codeph>Init cobbler</codeph> command.</li><li>Execute the <codeph>Importiso</codeph> command.<p>You will see a message similar to the following image when the playbook is run successful:</p></li></ul> GET WHAT THESE SCRIPTS DO AND UNCOMMENT-->
           <image href="../../media/CGH-ansible-playbook-run.png" id="image_bfp_pjm_vs">
             <alt>Sample Ansible Playbook run output</alt>
           </image></li>
