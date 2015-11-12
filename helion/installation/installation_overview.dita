@@ -3,6 +3,8 @@
 <topic id="install_overview">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation Overview</title>
   <body>
+    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref href="http://docs.hpcloud.com/helion/installation_overview.html" scope="external" format="html">Click
+      here</xref> for a frameless version of this page where the links should work.</note>
     <section id="overview">
       <p>Before jumping into your installation, we recommend taking the time to read through our
           <xref href="../example_configurations.dita">Example Configurations</xref> documentation to

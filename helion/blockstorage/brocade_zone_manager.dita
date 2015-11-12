@@ -3,6 +3,9 @@
 <topic id="topic_msm_b1j_jt">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring Brocade Fibre Channel Zone Manager </title>
   <body><!--Needs Work-->
+    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
+      href="http://docs.hpcloud.com/helion/blockstorage/brocade_zone_manager.html" scope="external" format="html">Click
+      here</xref> for a frameless version of this page where the links should work.</note>
     <p>Zoning is a fabric-based service in a Storage Area Network (SAN), which enables you to group
       host and storage nodes that need to communicate. Zoning allows nodes to communicates with each
       other if they are the member of the same zone.</p>

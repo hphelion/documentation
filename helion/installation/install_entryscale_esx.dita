@@ -4,7 +4,9 @@
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry-scale Cloud
     with ESX</title>
   <body>
-    
+    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
+      href="http://docs.hpcloud.com/helion/installation/install_entryscale_esx.html" scope="external" format="html">Click
+      here</xref> for a frameless version of this page where the links should work.</note>
     <p>This document describes the procedure for the deployment of an ESX cloud using input model and
       adding more ESX hosts to an already activated cluster.</p>
     <p> It contains the following topics:<ul id="ul_wrs_dwq_lt">

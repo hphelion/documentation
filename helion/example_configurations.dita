@@ -3,6 +3,8 @@
 <topic id="example_configurations">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Example Configurations</title>
   <body>
+    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref href="http://docs.hpcloud.com/helion/example_configurations.html" scope="external" format="html">Click
+      here</xref> for a frameless version of this page where the links should work.</note>
     <p>The HPE Helion OpenStack 2.0 system ships with a collection of pre-qualified example
       configurations. These are designed to help you to get up and running quickly with a minimum
       number of configuration changes.</p>
@@ -15,69 +17,40 @@
         <li><xref href="example_configurations.dita#example_configurations/example_configs">HP
             Helion OpenStack Example Configurations</xref>
           <ul>
-            <li><xref href="example_configurations.dita#example_configurations/entryscale_kvm_vsa"
-                >Entry-Scale KVM with VSA Model</xref></li>
-            <li><xref href="example_configurations.dita#example_configurations/entryscale_esx"
-                >Entry-Scale ESX Model</xref></li>
-            <li><xref href="example_configurations.dita#example_configurations/entryscale_swift"
-                >Entry-Scale Swift Model</xref></li>
-            <li><xref href="example_configurations.dita#example_configurations/entryscale_ceph"
-                >Entry-Scale KVM with Ceph Model</xref></li>
-            <li><xref href="example_configurations.dita#example_configurations/midscale_kvm_vsa"
-                >Mid-Scale KVM with VSA Model</xref></li>
+            <li><xref href="example_configurations.dita#example_configurations/entryscale_kvm_vsa">Entry-Scale KVM with VSA Model</xref></li>
+            <li><xref href="example_configurations.dita#example_configurations/entryscale_esx">Entry-Scale ESX Model</xref></li>
+            <li><xref href="example_configurations.dita#example_configurations/entryscale_swift">Entry-Scale Swift Model</xref></li>
+            <li><xref href="example_configurations.dita#example_configurations/entryscale_ceph">Entry-Scale KVM with Ceph Model</xref></li>
+            <li><xref href="example_configurations.dita#example_configurations/midscale_kvm_vsa">Mid-Scale KVM with VSA Model</xref></li>
           </ul></li>
-        <li><xref
-            href="example_configurations.dita#example_configurations/modify_entryscale_kvm_vsa"
-            >Modifying the Entry-scale KVM with VSA Model for Your Environment</xref>
+        <li><xref href="example_configurations.dita#example_configurations/modify_entryscale_kvm_vsa">Modifying the Entry-scale KVM with VSA Model for Your Environment</xref>
           <ul>
-            <li><xref
-                href="example_configurations.dita#example_configurations/localizing_inputmodel"
-                >Localizing the Input Model</xref>
+            <li><xref href="example_configurations.dita#example_configurations/localizing_inputmodel">Localizing the Input Model</xref>
               <ul>
-                <li><xref href="example_configurations.dita#example_configurations/networks"
-                    >Networks.yml</xref></li>
-                <li><xref href="example_configurations.dita#example_configurations/nicmappings"
-                    >Nic_mappings.yml</xref></li>
-                <li><xref href="example_configurations.dita#example_configurations/netinterfaces"
-                    >Net_interfaces.yml</xref></li>
-                <li><xref href="example_configurations.dita#example_configurations/networkgroups"
-                    >Network_groups.yml</xref></li>
-                <li><xref href="example_configurations.dita#example_configurations/servers"
-                    >Servers.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/networks">Networks.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/nicmappings">Nic_mappings.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/netinterfaces">Net_interfaces.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/networkgroups">Network_groups.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/servers">Servers.yml</xref></li>
               </ul></li>
-            <li><xref
-                href="example_configurations.dita#example_configurations/customizing_inputmodel"
-                >Customizing the Input Model</xref>
+            <li><xref href="example_configurations.dita#example_configurations/customizing_inputmodel">Customizing the Input Model</xref>
               <ul>
-                <li><xref href="example_configurations.dita#example_configurations/disks_controller"
-                    >Disks_controller.yml</xref>
+                <li><xref href="example_configurations.dita#example_configurations/disks_controller">Disks_controller.yml</xref>
                   <ul>
-                    <li><xref href="example_configurations.dita#example_configurations/filesystems"
-                        >File Systems Storage</xref></li>
-                    <li><xref href="example_configurations.dita#example_configurations/swiftstorage"
-                        >Swift Storage</xref></li>
+                    <li><xref href="example_configurations.dita#example_configurations/filesystems">File Systems Storage</xref></li>
+                    <li><xref href="example_configurations.dita#example_configurations/swiftstorage">Swift Storage</xref></li>
                   </ul></li>
-                <li><xref href="example_configurations.dita#example_configurations/disks_vsa"
-                    >Disks_vsa.yml</xref></li>
-                <li><xref href="example_configurations.dita#example_configurations/disks_compute"
-                    >Disks_compute.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/disks_vsa">Disks_vsa.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/disks_compute">Disks_compute.yml</xref></li>
               </ul></li>
             <li><xref href="example_configurations.dita#example_configurations/standalone">Using a
                 Standalone Lifecycle-Manager Node</xref>
               <ul>
-                <li><xref
-                    href="example_configurations.dita#example_configurations/control_plane_yml"
-                    >Control_plane.yml</xref></li>
-                <li><xref href="example_configurations.dita#example_configurations/server_roles_yml"
-                    >Server_roles.yml</xref></li>
-                <li><xref
-                    href="example_configurations.dita#example_configurations/net_interfaces_yml"
-                    >Net_interfaces.yml</xref></li>
-                <li><xref
-                    href="example_configurations.dita#example_configurations/disks_lifecycle_manager_yml"
-                    >Disks_lifecycle_manager.yml</xref></li>
-                <li><xref href="example_configurations.dita#example_configurations/servers_yml"
-                    >Servers.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/control_plane_yml">Control_plane.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/server_roles_yml">Server_roles.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/net_interfaces_yml">Net_interfaces.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/disks_lifecycle_manager_yml">Disks_lifecycle_manager.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/servers_yml">Servers.yml</xref></li>
               </ul></li>
           </ul></li>
 
@@ -125,8 +98,7 @@
         storage device, such as a 3PAR array, which would reduce the minimum server count to
         four.</p>
       <p><image href="../media/examples/entry_scale_kvm_vsa.png"/></p>
-      <p><xref href="../media/examples/entry_scale_kvm_vsa_lg.png" scope="external" format="html"
-          >Download a high-resolution version</xref></p>
+      <p><xref href="../media/examples/entry_scale_kvm_vsa_lg.png" scope="external" format="html">Download a high-resolution version</xref></p>
       <p>The example requires the following networks:</p>
       <ul>
         <li><b>External API</b> - This is the network that users will use to make requests to the
@@ -156,9 +128,7 @@
         <li><b>VSA</b> - One operating system disk and two disks for VSA storage.</li>
         <li><b>Compute</b> - One operating system disk and one disk for virtual machine ephemeral
           storage.</li>
-      </ul>For details about how to modify this example to match your environment, see <xref
-        href="example_configurations.dita#example_configurations/modify_entryscale_kvm_vsa"
-        >Modifying the Entry-scale KVM with VSA model for your Environment</xref>. </section>
+      </ul>For details about how to modify this example to match your environment, see <xref href="example_configurations.dita#example_configurations/modify_entryscale_kvm_vsa">Modifying the Entry-scale KVM with VSA model for your Environment</xref>. </section>
     <section id="entryscale_esx"><title>Entry-Scale ESX Model</title>
       <p>This example shows how to integrate HPE Helion OpenStack with ESX. The controller
         configuration is essentially the same as in the KVM example, but the resource nodes are
@@ -172,8 +142,7 @@
         <p><image href="../media/examples/entry_scale_esx_hpe.png"/></p>
         <p><xref href="../media/examples/entry_scale_esx_hpe_lg.png" scope="external" format="html">Download a high-res version</xref></p>
         -->
-      <p><xref href="../media/examples/entry_scale_esx_lg.png" scope="external" format="html"
-          >Download a high-resolution version</xref></p>
+      <p><xref href="../media/examples/entry_scale_esx_lg.png" scope="external" format="html">Download a high-resolution version</xref></p>
       <p>The physical networking configuration is also largely the same as the KVM example, with the
         exception of the GUEST network which uses tenant VLANs as the Neutron networking model
         rather than VxLAN.</p>
@@ -184,8 +153,7 @@
       <p>This example shows how HPE Helion OpenStack can be configured to provide a Swift-only
         configuration, consisting of three controllers and one or more Swift object servers.</p>
       <p><image href="../media/examples/entry_scale_swift.png"/></p>
-      <p><xref href="../media/examples/entry_scale_swift_lg.png" scope="external" format="html"
-          >Download a high-resolution version</xref></p>
+      <p><xref href="../media/examples/entry_scale_swift_lg.png" scope="external" format="html">Download a high-resolution version</xref></p>
       <p>The example requires the following networks:</p>
       <ul>
         <li><b>External API</b> - This is the network that users will use to make requests to the
@@ -215,8 +183,7 @@
         compute configuration are essentially the same as in the KVM example, but the backend Cinder
         storage is provided by Ceph.</p>
       <p><image href="../media/examples/entry_scale_kvm_ceph.png"/></p>
-      <p><xref href="../media/examples/entry_scale_kvm_ceph_lg.png" scope="external" format="html"
-          >Download a high-resolution version</xref></p>
+      <p><xref href="../media/examples/entry_scale_kvm_ceph_lg.png" scope="external" format="html">Download a high-resolution version</xref></p>
     </section>
     <section id="midscale_kvm_vsa"><title>Mid-Scale KVM with VSA Model (Technical Preview)</title>
       <p>The mid-scale model, which is included as a technology preview in HPE Helion OpenStack 2.0,
@@ -226,8 +193,7 @@
         networking).</p>
       <p><image href="../media/examples/mid_scale_kvm_vsa.png"/></p>
       <p><image href="../media/examples/mid_scale_kvm_vsa_notes.png"/></p>
-      <p><xref href="../media/examples/mid_scale_kvm_vsa_lg.png" scope="external" format="html"
-          >Download a high-resolution version</xref></p>
+      <p><xref href="../media/examples/mid_scale_kvm_vsa_lg.png" scope="external" format="html">Download a high-resolution version</xref></p>
       <p>The distribution of services across controllers is only one possible configuration, and
         other combinations can also be expressed.</p>
     </section>
@@ -585,8 +551,7 @@
       <p><b>role</b> - A string that refers to an entry in <codeph>server_roles.yml</codeph> that
         tells the system how to configure the disks and network interfaces for this server. Roles
         are also used to define which servers can be used for specific purposes. Adding and changing
-        roles is beyond the scope of this walkthrough - for more information, see <xref
-          href="input_model.dita">HPE Helion OpenStack 2.0 Input Model</xref>.</p>
+        roles is beyond the scope of this walkthrough - for more information, see <xref href="input_model.dita">HPE Helion OpenStack 2.0 Input Model</xref>.</p>
       <p><b>server-group</b> - Tells the system how this server is physically related to networks
         and other servers. Server groups are used to ensure that servers in a cluster are selected
         from different physical groups. The example provides a set of server groups that divide the
@@ -594,16 +559,14 @@
         server group structure is beyond the scope of this walkthrough - for more information, see
           <xref href="input_model.dita">HPE Helion OpenStack 2.0 Input Model</xref>.</p>
       <p><b>nic-mapping</b> - The name of a network port mapping definition (for more information,
-        see <xref href="example_configurations.dita#example_configurations/nicmappings"
-          >Nic_mappings.yml</xref>). You need to set this to the mapping that corresponds to this
+        see <xref href="example_configurations.dita#example_configurations/nicmappings">Nic_mappings.yml</xref>). You need to set this to the mapping that corresponds to this
         server.</p>
       <p><b>mac-addr</b> - The MAC address of the interface associated with this server that will be
         used for PXE boot.</p>
       <p><b>ilo-ip</b> - The IP address of the iLO or IPMI port for this server.</p>
       <p><b>ilo-user and ilo-password</b> - The login details used to access the iLO or IPMI port of
         this server. The iLO password value can be provided as an OpenSSL encrypted string. (For
-        instructions on how to generate encrypted passwords, see <xref
-          href="installation/install_entryscale_kvm.dita#install_kvm/configuration"/>.</p>
+        instructions on how to generate encrypted passwords, see <xref href="installation/install_entryscale_kvm.dita#install_kvm/configuration"/>.</p>
     </section>
     <section id="customizing_inputmodel"><title>Customizing the Input Model</title>
       <p>This section covers additional changes that you can make to further adapt the example to
@@ -680,16 +643,14 @@
                  - account
                  - container
                        - object-0</codeblock>
-      <p>For instruction to configure additional Swift storage, see <xref
-          href="objectstorage/allocating_disk_drives.dita"/>.</p>
+      <p>For instruction to configure additional Swift storage, see <xref href="objectstorage/allocating_disk_drives.dita"/>.</p>
     </section>
     <section id="disks_vsa"><title>Disks_vsa.yml</title>
       <p>VSA storage is configured as a device-group and has a syntax that allows disks to be
         allocated for data storage or for adaptive optimization (caching). As a best practice, you
         should use solid state drives for adaptive optimization. The example disk configuration for
         VSA nodes has two disks, one for data and one of adaptive optimization. (For more
-        information, see <xref
-          href="installation/configure_vsa.dita#config_vsa/deploy-vsa-with-ao-without-ao">VSA with
+        information, see <xref href="installation/configure_vsa.dita#config_vsa/deploy-vsa-with-ao-without-ao">VSA with
           AO or without AO</xref>.)</p>
       <codeblock>
    device-groups:
@@ -734,8 +695,7 @@
       <p>All of the examples described above host the lifecycle manager on one of the control nodes.
         It is also possible to deploy this service on a dedicated node, as shown below: </p>
       <p><image href="../media/examples/entry_scale_kvm_vsa_shared.png"/></p>
-      <p><xref href="../media/examples/entry_scale_kvm_vsa_shared_lg.png" scope="external"
-          format="html">Download a high-resolution version</xref></p>
+      <p><xref href="../media/examples/entry_scale_kvm_vsa_shared_lg.png" scope="external" format="html">Download a high-resolution version</xref></p>
       <p>A typical use case for wanting to run the dedicated lifecycle manager is to be able to test
         the deployment of different configurations without having to re-install the first server.
         Some administrators might also prefer the additional security of keeping all of the
@@ -811,9 +771,7 @@
           network-groups:
              - MANAGEMENT</codeblock>
       <p>This assumes that the server uses the same physical networking layout as the other servers
-        in the example. For details on how to modify this to match your configuration, see <xref
-          href="example_configurations.dita#example_configurations/netinterfaces"
-          >Net_interfaces.yml</xref>.</p>
+        in the example. For details on how to modify this to match your configuration, see <xref href="example_configurations.dita#example_configurations/netinterfaces">Net_interfaces.yml</xref>.</p>
     </section>
     <section id="disks_lifecycle_manager_yml"><title>Disks_lifecycle_manager.yml</title>
       <p>In the examples, disk-models are provided as separate files (this is just a convention, not

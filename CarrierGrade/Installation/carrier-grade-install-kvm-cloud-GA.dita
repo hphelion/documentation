@@ -68,7 +68,7 @@ ifconfig eth0 up</codeblock></li>
     <ol>
         <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the
           controller-0. The files are located in the <codeph>/root/cg-hlm/windriver-files</codeph>
-          directory on the HLM host.<ul>
+          directory on the HLM VM.<ul>
             <li>TS_15.05_PATCH_0001.patch</li>
             <li>TS_15.05_PATCH_0002.patch</li>
             <li>TS_15.05_DESIGN_PATCH_HEAT.patch</li>
@@ -76,13 +76,13 @@ ifconfig eth0 up</codeblock></li>
           </ul></li>
         <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the
           controller-0. The files are located in the <codeph>/root/cg-hlm/windriver-files</codeph>
-          directory on the HLM host.<ul id="ul_mpn_hnr_bt">
+          directory on the HLM VM.<ul id="ul_mpn_hnr_bt">
             <li>region_config </li>
             <li>cakey.pem</li>
           </ul></li>
         <li> Copy the following file to <codeph>/opt/branding</codeph> on the
             <codeph>controller-0</codeph>. The file is located in the
-            <codeph>/root/cg-hlm/windriver-files</codeph> directory on the HLM host.<ul
+            <codeph>/root/cg-hlm/windriver-files</codeph> directory on the HLM VM.<ul
             id="ul_rzd_pnr_bt">
             <li>helion_branding-v1.3.tgz</li>
           </ul></li>
