@@ -340,7 +340,7 @@ StrictHostKeyChecking no </codeblock></li>
                                                   You will copy these files to the
                                                   <codeph>/home/wrsroot/</codeph> directory of
                                                   <codeph>controller-0</codeph> in the KVM region
-                                                  during the installation process. </p><p>The
+                                                  during the installation process. </p><p id="patches">The
                                                   <b>Patches</b> folder contains patches for the
                                                   Attic backup and restore service and the OpenStack
                                                   Ironic service:<table id="table_ich_gs5_mt">

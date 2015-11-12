@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying the lifecycle manager and
-    Installation Services</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying the Lifecycle
+    Manager and Installation Services</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
@@ -105,12 +105,13 @@ upstream_ntp_servers:
       <title>Deploying the Ironic Patch</title>
       <p>A YML file needs to be added to the <codeph>/root/infra-ansible-playbooks</codeph>
         directory before running the ansible-playbook command. You should have downloaded the
-          <codeph>processtarball.yml</codeph> file in the Prerequisites. </p>
+          <codeph>processtarball.yml</codeph> file <xref
+          href="carrier-grade-install-prereqs.dita#topic7148/patches">in the Prerequisites</xref>. </p>
       <p>Copy the <codeph>processtarball.yml</codeph> file to following location on HML
         host:<codeblock>/root/infra-ansible-playbooks/roles/HLM-CFG/tasks/processtarball.yml</codeblock></p>
     </section>
     <section id="deploy-the-hlm-and-vsd-vm">
-      <title>Deploy the Lifecycle Manager Mirtual Machine</title>
+      <title>Deploy the Lifecycle Manager Virtual Machine</title>
       <p>Use the following steps on the KVM Host to deploy the lifecycle manager on the KVM Host using Ansible
         playbooks.</p>
       <ol>

@@ -73,13 +73,11 @@
             Integration Node VM:<ol id="ol_mkw_drl_xt">
                 <li>Launch the vCenter client, at <codeph>https://&lt;vcenter
                         IP&gt;:9443/vsphere-client</codeph>.</li>
-                <li>Import the <codeph conref="carrier-grade-install-prereqs.dita#topic7148/vsd-ova"
-                    /> file into vCenter server. Importing the OVA file creates the vCenter
-                    Integration Node VM. During the installation, you will select a network for the
-                    VM. Select the DVS Datapath (TUL) network. Select the</li>
-                <li>Import the <codeph
-                        conref="carrier-grade-install-prereqs.dita#topic7148/itoolbox1"/>template
-                        file.<p>You should have <xref
+                <li>Import the <codeph>VSD-3.2.4_134-hp.ova</codeph> file into vCenter server.
+                    Importing the OVA file creates the vCenter Integration Node VM. During the
+                    installation, you will select a network for the VM. Select the DVS Datapath
+                    (TUL) network. Select the</li>
+                <li>Import the <codeph>itoolbox1.ova</codeph> template file.<p>You should have <xref
                             href="carrier-grade-install-prereqs.dita#topic7148/getinstall"
                             >downloaded this file during the prerequisites</xref>. Importing the OVA
                         file creates the HTTP\DHCP VM. During the installation, you will select a
@@ -119,9 +117,8 @@ GATEWAY=10.20.5.1</codeblock></p></li>
             <p>Perform the following step create a VM for HTTP and DHCP services.</p>
             <p>
                 <ol id="ol_v11_wh4_rt">
-                    <li>In the vCenter client, import the <codeph
-                            conref="carrier-grade-install-prereqs.dita#topic7148/itoolbox1"
-                        />template file.<p>You should have <xref
+                    <li>In the vCenter client, import the <codeph>itoolbox1.ova</codeph>template
+                            file.<p>You should have <xref
                                 href="carrier-grade-install-prereqs.dita#topic7148/getinstall"
                                 >downloaded this file during the prerequisites</xref>. Importing the
                             OVA file creates the HTTP\DHCP VM.</p><p>For instructions, refer to the
@@ -165,11 +162,9 @@ option routers 10.20.94.209;   ###TUL network Gateway####
 }
 ######## config file end</codeblock></li>
                     <li>Restart the DHCP service:<codeblock>service dhcpd restart</codeblock></li>
-                    <li>Copy the VRSvApp template files, <codeph
-                            conref="carrier-grade-install-prereqs.dita#topic7148/vrs-ovf"/> and
-                            <codeph conref="carrier-grade-install-prereqs.dita#topic7148/vrs-vmdk"/>
-                        to the DocumentRoot (<codeph>/var/www/html</codeph> is the default
-                        location).</li>
+                    <li>Copy the VRSvApp template files, <codeph>VRS_3.2.4-135_10062015.ovf</codeph>
+                        and <codeph>VRS_3.2.4-135_10062015-disk1.vmdk</codeph> to the DocumentRoot
+                            (<codeph>/var/www/html</codeph> is the default location).</li>
                     <li>Check Apache server and make sure it’s running and restart if
                         needed:<codeblock>Service httpd restart</codeblock></li>
                 </ol>
@@ -222,9 +217,9 @@ vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
                             id="image_tlj_slp_wt"/></p></li>
                 <li>Create a new vCenter in the VRS Deployer using your ESX vCenter details. Provide
                     a name, description, your vCenter IP, vCenter user, vCenter password, and path
-                    to the <codeph conref="carrier-grade-install-prereqs.dita#topic7148/vrs-ovf"/>
-                    file. <p>The template must be available over an HTTP server, and must allow
-                        connection from vCenter and from the Nuage-enabled hypervisors.</p><p><image
+                    to the <codeph>VRS_3.2.4-135_10062015.ovf</codeph> file. <p>The template must be
+                        available over an HTTP server, and must allow connection from vCenter and
+                        from the Nuage-enabled hypervisors.</p><p><image
                             href="../../media/CGH-2-install-vsdvm-new-vcenter.png"
                             id="image_uxp_4mp_wt" width="300"/></p></li>
                 <li>Add the Data Center to that vCenter you created:<p><image

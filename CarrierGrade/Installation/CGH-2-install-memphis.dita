@@ -29,9 +29,10 @@
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-vmware"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-vapp"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-vsd"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-vsd-license"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conrref-vsd-license"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-admin-user"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-hos-install"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-provision"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-node-provision-json"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-pxe-boot"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-json"/>
@@ -45,27 +46,15 @@
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-wr-json"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-mach-json"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-verify-json"/>
-
-    
-    
-    <section conref="conrefs/CGH-2-conref-esx-proxy-20.dita#ReusableComponent_hyj_bbx_vt/esx-proxy" id="esx-proxy"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/vmware-workaround"/>
-    <section
-      conref="conrefs/CGH-2-conref-HLM-provision-21.dita#ReusableComponent_vds_dbx_vt/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"/>
-    <section
-      conref="conrefs/CGH-2-conref-backend-drivers-22.dita#ReusableComponent_fd1_hbx_vt/back-end" id="backend"/>
-    <section
-      conref="conrefs/CGH-2-conref-generate-init-23.dita#ReusableComponent_q43_nbx_vt/hos-cloud"/>
-    <section conref="conrefs/CGH-2-conref-hlm-deploy-24.dita#ReusableComponent_urx_xbx_vt/hdeploy"/>
-    <section
-      conref="conrefs/CGH-2-conref-node-infoblox.dita#ReusableComponent_zf2_rlx_wt/section_dg2_rlx_wt" id="infoblox-patch"/>
-    <section
-      conref="conrefs/CGH-2-conref-ldap-config-25.dita#ReusableComponent_y3j_1cx_vt/patch-after"
-      id="ldap3"/>
-    <section
-      conref="conrefs/CGH-2-conref-verify-vsc-26.dita#ReusableComponent_cyy_ccx_vt/section_jyy_ccx_vt"/>
-    <section
-      conref="conrefs/CGH-2-conref-verify-vrsg-27.dita#ReusableComponent_ich_gcx_vt/section_mch_gcx_vt"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-esx-proxy"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-vmware-workaround"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-create-cloud"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-back-end"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-config-proc"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-hdeploy"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-ldap-keystone"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-vsc-vm"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-vrs-g"/>
     <section id="next-step">
       <title>Next Step</title>
       <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon

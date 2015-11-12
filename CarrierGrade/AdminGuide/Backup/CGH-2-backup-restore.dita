@@ -157,6 +157,38 @@ export OS_AUTH_URL=http://127.0.0.1:5000/v2.0</codeblock>Optionally
           </p></li>
       </ol>
     </section>
+    <section>
+      <title>Post-Restore Tasks</title>
+      <p>After restoring, perform these tasks as required:</p>
+      <p><b>After restoring VSD</b></p>
+      <p>SSH to VSD node and execute the following command after restoring
+        VSD:<codeblock>service vsd restart</codeblock></p>
+      <p><b>After restoring the controller database:</b></p>
+      
+        <ol id="ol_blr_crk_zt">
+          <li>After restore job is complete, from the HLM host, SSH to the compute proxy nodes. </li>
+          <li>Execute the following command to restart the Compute (Nova) service
+            <codeblock>service nova-compute restart</codeblock></li>
+        </ol>
+            <p>
+            <b>After restoring VSC/WR
+              backup/restore</b></p>
+              <p>
+        <ol id="ol_b4k_nrk_zt">
+          <li>Copy/Replace the following files to the
+              <codeph>/usr/share/attis-content/playbooks/cg/</codeph> directory on all controller
+            nodes:. You should have <xref
+              href="../../Installation/carrier-grade-install-prereqs.dita#topic7148/patches"
+              >downloaded these files in the Prerequisites</xref>.<ul id="ul_awb_srk_zt">
+              <li>vsc_config_backup.yml</li>
+              <li>vsc_config_restore.yml </li>
+              <li>wr_cc_system_backup.yml</li>
+              <li>wr_cc_system_restore.yml </li>
+            </ul></li>
+        </ol>
+      </p>
+      
+    </section>
     <p/>
   </body>
 </topic>
