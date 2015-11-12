@@ -2,18 +2,8 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_m3k_bth_tt">
  <title>Quick Start Step 6: <keyword keyref="quickStartHPcloudStep6"/></title>
-<<<<<<< HEAD
-<<<<<<< HEAD
  <shortdesc>You can easily take down your <keyword keyref="prodLong"/> instances and security groups
     on <keyword keyref="pubCloudLong"/>.</shortdesc>
-=======
- <shortdesc>You can easily take down your instances and security groups on <keyword
-   keyref="pubCloudShort"/>.</shortdesc>
->>>>>>> be539c9... Added Step 6
-=======
- <shortdesc>You can easily take down your <keyword keyref="prodLong"/> instances and security groups
-    on <keyword keyref="pubCloudLong"/>.</shortdesc>
->>>>>>> 62e2344... Corrected typos and restructured notes
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
@@ -28,20 +18,10 @@
               <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5.
               <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6.
               <b><keyword keyref="quickStartHPcloudStep6"/></b></stentry>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 02d6422... Added a tip per Jan's request and added additional xrefs
        <stentry><b id="connecting_to_your_cluster">Connecting to Your Cluster</b><p>To administer
             and troubleshoot your cluster, you can connect to it using SSH and then run <keyword
               keyref="adminUtil"/> commands. To connect, specify the IP address of your <keyword
               keyref="prodShort"/> core and the location of your RSA private key, for
-<<<<<<< HEAD
             example:<codeblock>ssh ubuntu@203.0.113.0 -i ~/.ssh/myPrivateKey.pem</codeblock></p><note
             type="note">For more information, see the <xref
               href="../../reference/CFR_reference_gato.dita#reference_cd3_bs3_rt"
@@ -59,98 +39,9 @@
             groups associated with it.</p><note type="tip">If the <filepath>destroy</filepath>
             process enters a loop, delete the <filepath>terraform.tfstate</filepath> file and run
             the command again.</note><b>To Terminate Instances and Security Groups from <keyword
-<<<<<<< HEAD
               keyref="pubCloudShort"/></b><p>Using <keyword keyref="pubCloudShort"/> to terminate
             instances or security groups is not recommended. Use the following steps only if you run
             into difficulties with Terraform.</p><ol id="ol_zqt_ld3_tt">
-=======
-       <stentry><b>Terminating an Instance</b><ol id="ol_zqt_ld3_tt">
->>>>>>> 3296354... Added new content
-=======
-       <stentry><b>Terminating Instances and Security Groups from the Command Line</b><p>To
-            terminate your instance and its security groups, run the following command and enter
-              <userinput>yes</userinput> when prompted.<note type="caution">This action will delete
-              all of your managed infrastructure and it cannot be
-=======
-       <stentry><b>Terminating Instances and Security Groups from the Command Line</b><p>To terminate your instance and its security groups, run the following command and enter
-              <userinput>yes</userinput> when prompted.<note type="caution" id="delete_cluster">This
-              action will delete all of your managed infrastructure and it cannot be
->>>>>>> e6f67c6... Added warning about cluster creation
-            undone.</note></p><codeblock>terraform destroy -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
-=======
-       <stentry><b>Terminating Instances and Security Groups from the Command Line</b><p>To
-=======
-       <stentry><b>Connecting to Your Cluster</b><p>To administer and troubleshoot your cluster, you
-            can connect to it using SSH and then run <keyword keyref="adminUtil"/> commands. To
-            connect, specify the IP address of your <keyword keyref="prodShort"/> core and the
-            location of your RSA private key, for
-=======
->>>>>>> 02d6422... Added a tip per Jan's request and added additional xrefs
-            example:<codeblock>ssh ubuntu@203.0.113.0 -i ~/.ssh/myPrivateKey.pem</codeblock></p><note
-            type="note">For more information, see the <xref
-              href="../../reference/CFR_reference_gato.dita#reference_cd3_bs3_rt"
-            />.</note><b>Terminating Instances and Security Groups from the Command Line</b><p>To
->>>>>>> a979a9b... Added the link to the OSTPSL
-            terminate your instance and its security groups, run the following command and enter
-              <userinput>yes</userinput> when prompted:</p><note type="important"
-            id="delete_cluster">This action will delete all of your managed infrastructure and it
-<<<<<<< HEAD
-<<<<<<< HEAD
-            cannot be
-            undone.</note><codeblock>terraform destroy -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 7d18ccf... Added placeholder for licensing
-            type="tip">For more information, see <xref href="CFR_TF_vars.dita#reference_phl_shc_rt"
-              >Terraform Variables</xref>.</note><note type="important">If the
-              <filepath>destroy</filepath> process enters a loop, delete the
-              <filepath>terraform.tfstate</filepath> file and run the command
-            again.</note><p>Terraform cleanly terminates the instance and the security groups
-            associated with it.</p><b>Terminating Instances and Security Groups from <keyword
-<<<<<<< HEAD
-              keyref="pubCloudShort"/></b><note type="caution">Using <keyword keyref="pubCloudShort"
-            /> to terminate instances or security groups is not recommended. Use the following steps
-            if you run into difficulties with Terraform.</note><ol id="ol_zqt_ld3_tt">
->>>>>>> 6151c83... Added instructions for pushing an application
-=======
-=======
-            type="tip">For more information, see <xref
-=======
-=======
-            cannot be undone. For more information, see the Terraform documentatio on <xref
-=======
-            cannot be undone. For more information, see the Terraform documentation on <xref
->>>>>>> e0c7c0c... Revised wording
-              href="https://terraform.io/docs/commands/destroy.html" format="html" scope="external"
-              >Command:
-            Destroy</xref>.</note><codeblock>terraform destroy -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
->>>>>>> fccff96... Added external docs references
-            type="note">For more information, see <xref
->>>>>>> 62e2344... Corrected typos and restructured notes
-              href="../../reference/CFR_reference_TF_vars.dita#reference_phl_shc_rt">Terraform
-              Variables</xref>.</note><p>Terraform cleanly terminates the instance and the security
-            groups associated with it.</p><note type="tip">If the <filepath>destroy</filepath>
-            process enters a loop, delete the <filepath>terraform.tfstate</filepath> file and run
-<<<<<<< HEAD
-            the command again.</note><p>Terraform cleanly terminates the instance and the security
-            groups associated with it.</p><b>Terminating Instances and Security Groups from <keyword
->>>>>>> a979a9b... Added the link to the OSTPSL
-=======
-            the command again.</note><b>Terminating Instances and Security Groups from <keyword
-<<<<<<< HEAD
->>>>>>> 416fc79... Final check for HCF 1.0 docs before sending for comments
-              keyref="pubCloudShort"/></b><note type="important">Using <keyword
-              keyref="pubCloudShort"/> to terminate instances or security groups is not recommended.
-            Use the following steps only if you run into difficulties with Terraform.</note><ol
-            id="ol_zqt_ld3_tt">
->>>>>>> 076fff9... Modified instruction steps 5 & 6
-=======
-=======
->>>>>>> 792be12... Revised structured language
-              keyref="pubCloudShort"/></b><p>Using <keyword keyref="pubCloudShort"/> to terminate
-            instances or security groups is not recommended. Use the following steps only if you run
-            into difficulties with Terraform.</p><ol id="ol_zqt_ld3_tt">
->>>>>>> 62e2344... Corrected typos and restructured notes
             <li>Log into <xref href="https://horizon.hpcloud.com/" format="html" scope="external"
                   ><keyword keyref="pubCloudShort"/></xref>.</li>
             <li>Click <menucascade>
@@ -159,62 +50,17 @@
                 <uicontrol>Instances</uicontrol>
               </menucascade>.</li>
             <li>Click the checkbox next to your instance, for example
-<<<<<<< HEAD
-<<<<<<< HEAD
                 <uicontrol>hcf-core</uicontrol>.</li>
             <li>Click <uicontrol>Terminate Instances</uicontrol>.</li>
-=======
-                <uicontrol>cluster1-core</uicontrol>.</li>
-=======
-                <uicontrol>hcf-core</uicontrol>.</li>
->>>>>>> 14a0149... Revised minor errors per Rob's feedback
-            <li>Click <uicontrol>Terminate Instances</uicontrol>.</li>
-<<<<<<< HEAD
-          </ol><b>Terminating Security Groups</b><ol id="ol_aqw_zd3_tt">
-            <li>Log into <xref href="https://horizon.hpcloud.com/" format="html" scope="external"
-                  ><keyword keyref="pubCloudShort"/></xref>.</li>
->>>>>>> 3296354... Added new content
-=======
->>>>>>> 6151c83... Added instructions for pushing an application
             <li>Click <menucascade>
                 <uicontrol>Project</uicontrol>
                 <uicontrol>Compute</uicontrol>
                 <uicontrol>Access and Security</uicontrol>
               </menucascade>.</li>
-<<<<<<< HEAD
-<<<<<<< HEAD
             <li>Click the checkbox next to your security group, for example
                 <uicontrol>hcf-container-host</uicontrol>.</li>
             <li>Click <uicontrol>Delete Security Groups</uicontrol>.</li>
           </ol></stentry>
-=======
-       <stentry>Congratulations! You are now ready to begin deploying apps to your new sandbox
-         environment. We have provided some sample applications in multiple programming languages for
-         you to examine and deploy. These very simple applications provide insight on how to push
-         applications and connect those applications to <keyword keyref="opnStckLong"/> services.<xref
-           href="CFR_step_6.dita#concept_m3k_bth_tt">
-           <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
-         </xref></stentry>
->>>>>>> be539c9... Added Step 6
-=======
-            <li>Click the checkbox next to the security groups, for example
-                <uicontrol>cluster1-SSH</uicontrol>, <uicontrol>cluster-1-Router</uicontrol>, and
-                <uicontrol>cluster-1-Internal</uicontrol>.</li>
-            <li>Click <uicontrol>Delete Security Groups</uicontrol>.</li>
-<<<<<<< HEAD
-          </ol><image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
-        </stentry>
->>>>>>> 3296354... Added new content
-=======
-          </ol><image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"
-          /></stentry>
->>>>>>> 6151c83... Added instructions for pushing an application
-=======
-            <li>Click the checkbox next to your security group, for example
-                <uicontrol>hcf-container-host</uicontrol>.</li>
-            <li>Click <uicontrol>Delete Security Groups</uicontrol>.</li>
-          </ol></stentry>
->>>>>>> 14a0149... Revised minor errors per Rob's feedback
      </strow>
    </simpletable>
  </conbody>
