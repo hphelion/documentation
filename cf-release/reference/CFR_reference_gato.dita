@@ -91,12 +91,6 @@
                 <dt><filepath>--quiet</filepath>, <filepath>-q</filepath></dt>
                 <dd>Output only the config values.</dd>
               </dlentry>
-              <dlentry>
-                <dt><filepath>--role</filepath>, <filepath>-r</filepath></dt>
-                <dd>Get <xref href="#reference_cd3_bs3_rt/available_role_containers" format="dita">a specific
-                    role's</xref> config variable, for example:
-                  <codeblock>$ <keyword keyref="adminUtilCLI"/> config get --role uaa uaa/jwt/signing_key</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> config get --role hm9000 hm9000/url</codeblock></dd>
-              </dlentry>
             </dl></dd>
         </dlentry>
         <dlentry id="config_set">
