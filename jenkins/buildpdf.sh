@@ -6,11 +6,10 @@ export ANT_HOME="/usr/bin/ant"
 export JAVA_HOME="/usr/lib/jvm/java-1.7.0-openjdk-amd64" 
  
 
+rm -r tools
 git clone git@github.com:hphelion/tools.git 
 cd tools/DITA-OT
-git clean -fd
 git checkout pdf_test
-
  
 export DITA_HOME="`pwd`"
 
