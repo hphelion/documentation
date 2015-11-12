@@ -735,8 +735,7 @@
        member-count: 3
        allocation-policy: strict
        service-components:
-         - lifecycle-manager
-            - ntp-server</codeblock>
+         - ntp-server</codeblock>
       <p>This specifies a single node of role <codeph>LIFECYCLE-MANAGER-ROLE</codeph> hosting the
         lifecycle manager.</p>
     </section>
