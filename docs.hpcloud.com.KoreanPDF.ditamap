@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en" linking="none" locktitle="no">
+  <title>HPE Helion</title>
+  <!--PDFTITLE "DO NOT GENERATE"-->
+  <topicmeta>
+    <copyright>
+      <copyryear year="2015"/>
+      <copyrholder>HPE Helion</copyrholder>
+    </copyright>
+    <prodinfo>
+      <prodname>HPE Helion</prodname>
+      <vrmlist>
+        <vrm version="4.1.0"/>
+      </vrmlist>
+    </prodinfo>
+  </topicmeta>
+  <topicref href="helion/index.dita">
+    <!-- BEGIN - TOP LEVEL -->
+    <!-- END - TOP LEVEL -->
+    <!-- BEGIN - INSTALLATION -->
+    <!-- END - INSTALLATION -->
+    <!-- BEGIN - SECURITY -->
+    <!-- END - SECURITY -->
+    <!-- BEGIN ADMINISTRATION -->
+    <!-- END - ADMINISTRATION -->
+    <!-- BEGIN - OPERATIONS -->
+    <topichead navtitle="Operations">
+      <topicref href="helion/operations/cli_reference.dita" navtitle="Command-line Reference"
+        locktitle="yes" toc="no"/>
+      <topicref href="helion/operations/start_stop_services.dita"
+        navtitle="Starting and Stopping Services" locktitle="yes"/>
+      <topicref href="helion/operations/accessing_horizon.dita"
+        navtitle="Accessing the Horizon Dashboard" locktitle="yes"/>
+      <topicref href="helion/operations/opsconsole_overview.dita"
+        navtitle="Using the Operations Console" locktitle="yes">
+        <topicref href="helion/operations/opsconsole/dashboard.dita"
+          navtitle="Operations Console: Dashboard" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/logging.dita"
+          navtitle="Operations Console: Logging" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/alarm_explorer.dita"
+          navtitle="Operations Console: Alarm Explorer" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/alarm_definitions.dita"
+          navtitle="Operations Console: Alarm Creation" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/notification_methods.dita"
+          navtitle="Operations Console: Notification Methods" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/metric_monitoring.dita"
+          navtitle="Operations Console: Time Series Graphs" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/compute_summary.dita"
+          navtitle="Operations Console: Compute - Alarm Summary" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/compute_hosts.dita"
+          navtitle="Operations Console: Compute Hosts" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/compute_instances.dita"
+          navtitle="Operations Console: Compute Instances" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/storage_summary.dita"
+          navtitle="Operations Console: Storage - Alarm Summary" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/networking_summary.dita"
+          navtitle="Operations Console: Networking - Alarm Summary" locktitle="yes" toc="no"/>
+        <topicref href="helion/operations/opsconsole/hdp_summary.dita"
+          navtitle="Operations Console: HDP - Alarm Summary" locktitle="yes" toc="no"/>
+      </topicref>
+      <!-- BEGIN - OPERATIONS/Node Maintenance -->
+      <topicref href="helion/operations/node_maintenance.dita" navtitle="Node Maintenance"
+        locktitle="yes">
+        <topicref href="helion/operations/replace_controller.dita"
+          navtitle="Replacing a Controller Node" locktitle="yes"/>
+        <!-- COMPUTE -->
+        <topicref href="helion/operations/add_node.dita" navtitle="Adding a Compute Node"
+          locktitle="yes"/>
+        <topicref href="helion/operations/remove_node.dita" navtitle="Removing a Compute Node"
+          locktitle="yes"/>
+        <topicref href="helion/operations/repair_node.dita" navtitle="Repairing a Compute Node"
+          locktitle="yes"/>
+        <topicref href="helion/administration/adding_moonshot_nodes.dita"
+          navtitle="Adding Moonshot Nodes" locktitle="yes"/>
+        <!-- BLOCK STORAGE -->
+        <topicref href="helion/blockstorage/vsa/remove_node.dita" navtitle="Removing VSA Node"
+          locktitle="yes"/>
+        <topicref href="helion/blockstorage/vsa/remove_vsa_maintenance.dita"
+          navtitle="Removing a VSA Node For Maintenance" locktitle="yes"/>
+        <topicref href="helion/blockstorage/ceph/adding_new_osd_node.dita"
+          navtitle="Adding an Object Storage Daemon (OSD) Node" locktitle="yes"/>
+        <topicref href="helion/blockstorage/ceph/remove_osd_node.dita"
+          navtitle="Removing an Object Storage Daemon (OSD) Node" locktitle="yes"/>
+        <topicref href="helion/blockstorage/ceph/adding_new_monitor_node.dita"
+          navtitle="Adding a Ceph Monitor Node" locktitle="yes"/>
+        <topicref href="helion/blockstorage/ceph/remove_monitor_node.dita"
+          navtitle="Removing a Ceph Monitor Node" locktitle="yes"/>
+        <!-- OBJECT STORAGE -->
+        <topicref href="helion/objectstorage/add_new_node.dita"
+          navtitle="Adding a Swift Object Node" locktitle="yes"/>
+        <topicref href="helion/objectstorage/add_new_pac_node.dita"
+          navtitle="Adding a Proxy, Account, Container (PAC) Node" locktitle="yes"/>
+        <topicref href="helion/objectstorage/replacing_drives_swift_node.dita"
+          navtitle="Replacing Drives in a Swift Node" locktitle="yes"/>
+        <topicref href="helion/objectstorage/replacing_swift_node.dita"
+          navtitle="Replacing a Swift Node" locktitle="yes"/>
+        <topicref href="helion/objectstorage/removing_node.dita" navtitle="Removing a Swift Node"
+          locktitle="yes"/>
+      </topicref>
+      <!-- END - OPERATIONS/Node Maintenance -->
+      <!-- BEGIN - OPERATIONS/OBJECT STORAGE -->
+      <topichead navtitle="Object Storage">
+        <topicref href="helion/objectstorage/add_new_storage_policy.dita"
+          navtitle="Adding a New Swift Storage Policy" locktitle="yes"/>
+        <topicref href="helion/objectstorage/check_objectstorage_operation.dita"
+          navtitle="Checking Object Storage Status" locktitle="yes">
+          <topicref href="helion/objectstorage/validating_swift_recon.dita"
+            navtitle="Gathering Swift Data" locktitle="yes"/>
+          <topicref href="helion/objectstorage/lm_scan_metering.dita"
+            navtitle="Gathering Swift Monitoring Metrics" locktitle="yes"/>
+          <topicref href="helion/objectstorage/utility.dita"
+            navtitle="Using the Swift Command-line Client (CLI)" locktitle="yes"/>
+        </topicref>
+      </topichead>
+      <!-- BEGIN - OPERATIONS/BLOCK STORAGE -->
+      <topichead navtitle="Block Storage">
+        <topicref href="helion/blockstorage/vsa/vsa_create_multiple_clusters.dita"
+          navtitle="Creating Multiple VSA Clusters" locktitle="yes"/>
+        <topicref href="helion/blockstorage/vsa/configure_vsa_separate_iscsi_network.dita"
+          navtitle="Configuring a Separate iSCSI Network to use with VSA" locktitle="yes"/>
+        <topicref href="helion/blockstorage/ceph/deploy_monitor_stand_alone_node.dita"
+          navtitle="Deploying Ceph Monitor Services on Dedicated Resource Nodes" locktitle="yes"/>
+        <topicref href="helion/blockstorage/ceph/ceph_operation.dita"
+          navtitle="Starting, Stopping, and Status for Ceph" locktitle="yes"/>
+        <topicref href="helion/blockstorage/singleton_service_cinder.dita"
+          navtitle="Managing Cinder Volume and Backup Services" locktitle="yes"/>
+        <topicref href="helion/blockstorage/ceph/defining_monitor_resource.dita"
+          navtitle="Defining a Ceph Monitor Resource" locktitle="yes"/>
+        <topicref href="helion/blockstorage/ceph/reconfigure_ceph_services.dita"
+          navtitle="Reconfiguring Ceph Services" locktitle="yes"/>
+      </topichead>
+      <!-- BEGIN - OPERATIONS/BURA -->
+      <topicref href="helion/bura/bura_overview.dita" navtitle="Backing Up and Restoring Your Data"
+        locktitle="yes">
+        <topicref href="helion/bura/cloud_control_plane_backup.dita" type="topic" format="dita"
+          navtitle="Backing up the Cloud Control Plane" locktitle="yes"/>
+        <topicref href="helion/bura/cloud_control_plane_recovery.dita" type="topic" format="dita"
+          navtitle="Recovering the Cloud Control Plane" locktitle="yes"/>
+        <topicref href="helion/bura/freezer_scheduler.dita" type="topic" format="dita"
+          navtitle="Understanding the Freezer Scheduler" locktitle="yes"/>
+        <topicref href="helion/bura/freezer_agent.dita" type="topic" format="dita"
+          navtitle="Understanding the Freezer Agent" locktitle="yes"/>
+        <topicref href="helion/bura/supported_services.dita" type="topic" format="dita"
+          navtitle="Supported Services and Limitations for Backup" locktitle="yes"/>
+        <topicref href="helion/bura/disable_bura_before_deployment.dita" type="topic" format="dita"
+          navtitle="Disabling Backup/Restore before Deployment" locktitle="yes"/>
+        <topicref href="helion/bura/start_stop_freezer_services.dita" type="topic" format="dita"
+          navtitle="Enabling and Disabling Freezer Services" locktitle="yes"/>
+        <topicref href="helion/bura/troubleshooting.dita"
+          navtitle="Troubleshooting Freezer Services" locktitle="yes"/>
+      </topicref>
+      <!-- BEGIN - OPERATIONS/Metering -->
+      <topicref href="helion/metering/metering_overview.dita" navtitle="Metering Service"
+        locktitle="yes">
+        <topicref href="helion/metering/metering_apis.dita" navtitle="Ceilometer Metering APIs"
+          locktitle="yes"/>
+        <topicref href="helion/metering/metering_reconfig.dita"
+          navtitle="Ceilometer Metering Service Config and Upgrade" locktitle="yes"/>
+        <topicref href="helion/metering/metering_notifications.dita"
+          navtitle="Ceilometer Metering Service Notifications" locktitle="yes"/>
+        <topicref href="helion/metering/metering_failover_ha.dita"
+          navtitle="Ceilometer Metering Failover HA Support" locktitle="yes"/>
+        <topicref href="helion/metering/metering_rbac.dita"
+          navtitle="Ceilometer Metering Setting Role-based Access Control" locktitle="yes"/>
+        <!--  old  -->
+        <topicref href="helion/metering/metering_components.dita"
+          navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
+        <topicref href="helion/metering/metering_metertypes.dita" navtitle="Available Meter Types"
+          locktitle="yes"/>
+        <topicref href="helion/metering/metering_bestpractice.dita"
+          navtitle="Optimizing the Metering Service" locktitle="yes" toc="no"/>
+      </topicref>
+      <!-- BEGIN - OPERATIONS/MONITORING / LOGGING -->
+      <topicref href="helion/operations/monitoring_service.dita" navtitle="Monitoring Service"
+        locktitle="yes">
+        <topicref href="helion/operations/alarms.dita" navtitle="Service Alarm Definitions"
+          locktitle="yes"/>
+      </topicref>
+      <topicref href="helion/operations/centralized_logging.dita"
+        navtitle="Centralized Logging Service" locktitle="yes">
+        <topicref href="helion/operations/logging_settings.dita" navtitle="Default Logging Settings"
+          locktitle="yes"/>
+      </topicref>
+      <!-- BEGIN - OPERATIONS/SHERPA -->
+      <topicref href="helion/operations/sherpa_overview.dita"
+        navtitle="Sherpa Catalog Service Overview" locktitle="yes">
+        <topicref href="helion/operations/accessing_sherpa.dita"
+          navtitle="Accessing the Sherpa Catalog" locktitle="yes"/>
+        <topicref href="helion/operations/validate_sherpa_signatures.dita"
+          navtitle="Validating Download Signatures" locktitle="yes"/>
+      </topicref>
+    </topichead>
+    <!-- END - OPERATIONS -->
+    <!-- BEGIN - TROUBLESHOOTING -->
+    <topichead navtitle="Troubleshooting">
+      <topicref href="helion/installation/installation_troubleshooting.dita"
+        navtitle="Troubleshooting the Installation" locktitle="yes"/>
+      <topicref href="helion/installation/blockstorageconfig_troubleshooting.dita"
+        navtitle="Troubleshooting the Block Storage Backend Configuration" locktitle="yes"/>
+      <topicref href="helion/objectstorage/troubleshooting.dita"
+        navtitle="Troubleshooting the Object Storage Service" locktitle="yes">
+        <topicref href="helion/objectstorage/deploy_fails_with_msdos_disks.dita"
+          navtitle="Deployment Fails with a MSDOS Disks Labels Error" locktitle="yes"/>
+        <topicref href="helion/objectstorage/examine_details_planned_ring_changes_prior_deploy.dita"
+          navtitle="Examining Planned Ring Changes" locktitle="yes"/>
+        <topicref href="helion/objectstorage/interpreting_swift_validate_input_model.dita"
+          locktitle="yes" navtitle="Interpreting Swift Input Model Validation Errors"/>
+        <topicref href="helion/objectstorage/first_proxy_server.dita" locktitle="yes"
+          navtitle="Identifying the First Swift Proxy Server"/>
+        <topicref href="helion/objectstorage/label_on_partition.dita" locktitle="yes"
+          navtitle="Verifying a Swift Partition Label"/>
+        <topicref href="helion/objectstorage/filesystem_label.dita" locktitle="yes"
+          navtitle="Verifying a Swift File System Label"/>
+        <topicref href="helion/objectstorage/recovering_builder_file.dita" locktitle="yes"
+          navtitle="Recovering Swift Builder Files"/>
+        <topicref href="helion/objectstorage/restart_deploy_from_scratch.dita" locktitle="yes"
+          navtitle="Restarting the Object Storage Deployment"/>
+      </topicref>
+      <topicref href="helion/metering/metering_troubleshoot.dita"
+        navtitle="Troubleshooting the Ceilometer Metering Service" locktitle="yes"/>
+      <topicref href="helion/blockstorage/ceph/troubleshooting.dita"
+        navtitle="Troubleshooting the Ceph Service" locktitle="yes"/>
+    </topichead>
+    <!-- BEGIN - USER GUIDE -->
+    <!-- END USER GUIDE -->
+  </topicref>
+</map>
