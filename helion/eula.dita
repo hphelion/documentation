@@ -190,18 +190,20 @@
           Agreement, HPE grants to Customer a non-exclusive, limited, non-sublicenseable,
           non-transferable, revocable license to Use Software to manage cloud services on a per
           Physical Server basis for the term as specified in the purchase agreement. 
-          <ul>
-            <li><b>Per Server License</b>: Following purchase, this per-server license is to be
+          <sl>
+            <sli><b>Per Server License</b>: Following purchase, this per-server license is to be
               assigned to a Physical Server that will be used to run your Cloud Fabric. After the
               Physical Servers are licensed and those licenses are properly assigned, you may run
               any number of instances of the Management Software to deploy, configure, manage and
               operate your HPE Helion OpenStack based Cloud Fabric. The right to Use the Software
               may not be transferred from the initial licensed Physical Server to a new or
-              replacement Physical Server, except according to Section 2(i) below. Subject to
+              replacement Physical Server, except according to Section 2(i) below. </sli>
+            <sli></sli>
+            <sli>Subject to
               Customer’s continuing compliance with the terms and conditions of this Agreement,
               following the Term of Use, Customer may continue to Use the Software on the Physical
-              Server that was licensed and in operation before the end of the Term of Use.</li>
-          </ul></li>
+              Server that was licensed and in operation before the end of the Term of Use.</sli>
+          </sl></li>
           <li><b>Other Terms:</b>
           <ol>
             <li>
@@ -216,7 +218,7 @@
               <b>Commercial Service Providers:</b> Customers must accept the terms contained in a
               supplemental agreement in order to provide commercial services to third parties using
               the Software, found at <xref
-                href="http://www.hp.com/go/HPE%20Helion%20End%20User%20License%20Supplement%20for%20Commercial%20Service%20Providers"
+                href="https://h20392.www2.hpe.com/portal/swdepot/displayProductInfo.do?productNumber=CS_SRV_PRVD"
                 format="html" scope="external">www.hp.com/go/HPE Helion End User License Supplement
                 for Commercial Service Providers</xref></li>
             <li>
