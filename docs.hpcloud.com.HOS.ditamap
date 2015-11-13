@@ -202,8 +202,7 @@
     <!-- END - ADMINISTRATION -->
     <!-- BEGIN - OPERATIONS -->
     <topichead navtitle="Operations">
-      <topicref href="helion/operations/cli_reference.dita" navtitle="Command-line Reference"
-        locktitle="yes" toc="no"/>
+
       <topicref href="helion/operations/start_stop_services.dita"
         navtitle="Starting and Stopping Services" locktitle="yes"/>
       <topicref href="helion/operations/accessing_horizon.dita"
