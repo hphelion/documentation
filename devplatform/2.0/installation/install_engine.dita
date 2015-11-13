@@ -94,7 +94,7 @@ stack@helionce-deployer:~/helionce-1.0.0$ ./helionce-init.bash
             running the command again.</note></li>
         <li>Copy the helionce deployment model.
           <codeblock>stack@helionce-deployer:~/helionce-1.0.0$ cd ~/helion/
-stack@helionce-deployer:~/helion$ cp -r examples/helionce/* my_cloud/definition/
+stack@helionce-deployer:~/helion$ cp -R /home/stack/helion/examples/helionce/* /home/stack/helion/my_cloud/definition
 stack@helionce-deployer:~/helion$ cp ~/platform-pass-through.yml my_cloud/definition/data/pass-through/platform-pass-through.yml</codeblock></li>
         <li>Using Git, persist these changes. This information is required for playbooks executed
           later in this installation
