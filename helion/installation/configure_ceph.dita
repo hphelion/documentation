@@ -503,6 +503,43 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
 ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</codeblock></li>
       </ol>
     </section>
+    
+    <section conref="configure_vsa.dita#config_vsa/create_volumetype"/>
+    <section conref="configure_vsa.dita#config_vsa/associate_volumetype"/>
+    
+    <section id="extra_specs"><title>Extra Specification Options</title>
+      <p>Ceph supports volumes creation with additional attributes. All these attributes can be
+        specified using the extra specs options for your volume type. The administrator is expected
+        to define appropriate extra spec for Ceph volume type as per the guidelines provided at <xref
+          href="http://docs.openstack.org/kilo/config-reference/content/ceph-rados.html#d6e2255"
+          format="html" scope="external">here</xref>.</p>
+      <p>The following Cinder Volume Type extra-specs option specifies the volume backend name that is used:</p>
+        <p><table frame="all"
+          rowsep="1" colsep="1" id="table_ntq_swv_yt">
+          <tgroup cols="3">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value</entry>
+                <entry>Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>volume_backend_name</entry>
+                <entry><i>volume backend name</i></entry>
+                <entry>The name of the backend to which you want to associate the volume type, which
+                  you also specified earlier in the <codeph>cinder.conf.j2</codeph> file.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></p>
+      <p>Here is what a completed list of extra specs may look like:</p>
+      <p><image href="../../media/blockstorage/extraspecs_ceph.png"/></p>
+    </section>
 
     <section id="post_install"><title>Verifying your Ceph backend</title>
       <p>After you have configured Ceph as your Block Storage backend, you can verify this all

@@ -458,14 +458,12 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
               >Accessing Horizon</xref> for details.</li>
           <li>Ensure that you are scoped to your <b>admin</b> Project. Then under the <b>Admin</b>
             menu in the navigation pane, click on <b>Volumes</b> under the <b>System</b> subheading.
-                <p><image href="../../media/vsa/createvoltype1.png" id="image_avn_5xv_5t"/></p></li>
+                <p><image href="../../media/blockstorage/create_voltype1.png"/></p></li>
           <li>Select the <b>Volume Types</b> tab and then click the <b>Create Volume Type</b> button
-            to display a dialog box. <p><image href="../../media/vsa/createvoltype2.png"
-                id="image_qvn_5xv_5t"/></p>
+            to display a dialog box. <p><image href="../../media/blockstorage/create_voltype2.png"/></p>
           </li>
           <li>Enter a unique name for the volume type and then click the <b>Create Volume Type</b>
-            button to complete the action. <p><image href="../../media/vsa/createvoltype3.png"
-                id="image_rvn_5xv_5t_new"/></p></li>
+            button to complete the action. <p><image href="../../media/blockstorage/create_voltype3.png"/></p></li>
         </ol></p>
       <p>The newly created volume type will be displayed in the <b>Volume Types</b> list confirming
         its creation.</p>
@@ -480,20 +478,18 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
               >Accessing Horizon</xref> for details.</li>
           <li>Ensure that you are scoped to your <b>admin</b> Project. Then under the <b>Admin</b>
             menu in the navigation pane, click on <b>Volumes</b> under the <b>System</b> subheading.
-                <p><image href="../../media/vsa/createvoltype1.png"/></p></li>
+            <p><image href="../../media/blockstorage/associate_voltype1.png"/></p></li>
           <li>Click the <b>Volume Type</b> tab to list the volume types. <p><image
-                href="../../media/vsa/associatevoltype2.png"/></p></li>
+            href="../../media/blockstorage/associate_voltype2.png"/></p></li>
           <li>In the <b>Actions</b> column of the Volume Type you created earlier, click the
             drop-down option and select <b>View Extra Specs</b> which will bring up the <b>Volume
-              Type Extra Specs</b> options. <p><image href="../../media/vsa/associatevoltype3.png"
+              Type Extra Specs</b> options. <p><image href="../../media/blockstorage/associate_voltype3.png"
               /></p></li>
           <li>Click the <b>Create</b> button on the <b>Volume Type Extra Specs</b> screen. <p><image
-                href="../../media/vsa/associatevoltype4.png"/></p></li>
-          <li>In the <b>Key</b> field, enter <codeph>volume_backend_name</codeph>. In the
-              <b>Value</b> box, enter the name of the backend to which you want to associate the
-            volume type, which you also specified earlier in the <codeph>cinder.conf.j2</codeph>
-            file. Once you have completed that, click the <b>Create</b> button to create the extra
-            volume type specs. <p><image href="../../media/vsa/associatevoltype5.png"/></p></li>
+            href="../../media/blockstorage/extraspecs1.png"/></p></li>
+          <li>In the <b>Key</b> field, enter one of the key values in the table in the next section. In the
+              <b>Value</b> box, enter it's corresponding value. Once you have completed that, click the <b>Create</b> button to create the extra
+            volume type specs. <p><image href="../../media/blockstorage/extraspecs2.png"/></p></li>
         </ol></p>
       <p>Once the volume type is mapped to the backend, you can create volumes with this volume
         type.</p>
@@ -504,9 +500,10 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
         specified using the extra specs options for your volume type. The administrator is expected
         to define appropriate extra spec for VSA volume type as per the guidelines provided at <xref
           href="http://docs.openstack.org/kilo/config-reference/content/hp-lefthand-supported-ops-rest.html"
-          format="html" scope="external"/>.</p>
+          format="html" scope="external">here</xref>.</p>
       <p>The following Cinder Volume Type extra-specs options enable control over the VSA storage
-        provisioning type (thin or full) and specify protection for your volume backend:<table
+        provisioning type (thin or full) and specify protection for your volume backend:</p>
+      <p><table
           frame="all" rowsep="1" colsep="1" id="table_ntq_swv_yt">
           <tgroup cols="3">
             <colspec colname="c1" colnum="1"/>
@@ -521,12 +518,19 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
             </thead>
             <tbody>
               <row>
-                <entry>hplh:provisioning</entry>
+                <entry>volume_backend_name</entry>
+                <entry><i>volume backend name</i></entry>
+                <entry>The name of the backend to which you want to associate the
+                  volume type, which you also specified earlier in the <codeph>cinder.conf.j2</codeph>
+                  file.</entry>
+              </row>
+              <row>
+                <entry>hplh:provisioning (optional)</entry>
                 <entry>thin or full</entry>
                 <entry/>
               </row>
               <row>
-                <entry>hplh:data_pl</entry>
+                <entry>hplh:data_pl (optional)</entry>
                 <entry>r-0, r-5, r-10-2, r-10-3, r-10-4, or r-6</entry>
                 <entry>
                   <p>The protection level options enable different data protection configurations.
@@ -550,30 +554,8 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
             </tbody>
           </tgroup>
         </table></p>
-      <p>To add additional extra specs to your volume type, do the following:</p>
-      <ol>
-        <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"
-            >Accessing Horizon</xref> for details.</li>
-        <li>Ensure that you are scoped to your <b>admin</b> Project. Then under the <b>Admin</b>
-          menu in the navigation pane, click on <b>Volumes</b> under the <b>System</b> subheading.
-              <p><image href="../../media/vsa/createvoltype1.png"/></p></li>
-        <li>Click the <b>Volume Type</b> tab to list the volume types. <p><image
-              href="../../media/vsa/associatevoltype2.png"/></p></li>
-        <li>In the <b>Actions</b> column of the Volume Type you created earlier, click the drop-down
-          option and select <b>View Extra Specs</b> which will bring up the <b>Volume Type Extra
-            Specs</b> options. <p><image href="../../media/vsa/associatevoltype3.png"/></p></li>
-        <li>Click the <b>Create</b> button on the <b>Volume Type Extra Specs</b> screen. <p><image
-              href="../../media/vsa/extraspecs1.png"/></p></li>
-        <li>In the <b>Key</b> field, enter the extra spec you want to add. In the <b>Value</b> box,
-          enter the value for that spec. Once you have completed that, click the <b>Create</b>
-          button to create the extra volume type specs. <p>In this example below, we are adding the
-              <codeph>hplh:provisioning</codeph> spec with a value of <codeph>full</codeph>:</p>
-          <p><image href="../../media/vsa/extraspecs2.png"/></p></li>
-        <li>Once you have completed your list of extra specs, you can click the <b>Close</b>
-          button.</li>
-      </ol>
-      <p>Here is what a completed list of extra specs may look like:</p>
-      <p><image href="../../media/vsa/extraspecs3.png"/></p>
+     <p>Here is what a completed list of extra specs may look like:</p>
+      <p><image href="../../media/blockstorage/extraspecs_vsa.png"/></p>
     </section>
 
     <section id="post_install"><title>Verifying your VSA backend</title>

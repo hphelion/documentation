@@ -108,8 +108,8 @@ hp3par_iscsi_chap_enabled=true</codeblock></li>
           </ol></li>
         <li>Commit your configuration your local git repositiory:
           <codeblock>cd ~/helion/hos/ansible
-            git add -A
-            git commit -m "&lt;commit message>"</codeblock></li>
+git add -A
+git commit -m "&lt;commit message>"</codeblock></li>
         <li>Run the configuration processor: <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
           <p>When you run the configuration processor you will be prompted for two passwords. Enter
@@ -135,8 +135,56 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
       </ol>
     </section>
-    <p>To verify the 3PAR FC and iSCSI backends are configured successfully, please refer to <xref
-        href="installation_verification.dita#install_verification/volume_verify">Verify Backend
-        Configuration</xref>.</p>
+    
+    <section conref="configure_vsa.dita#config_vsa/create_volumetype"/>
+    <section conref="configure_vsa.dita#config_vsa/associate_volumetype"/>
+    
+    <section id="extra_specs"><title>Extra Specification Options</title>
+      <p>3PAR supports volumes creation with additional attributes. All these attributes can be
+        specified using the extra specs options for your volume type. The administrator is expected
+        to define appropriate extra spec for 3PAR volume type as per the guidelines provided at <xref
+          href="http://docs.openstack.org/kilo/config-reference/content/hp-3par-supported-ops.html"
+          format="html" scope="external">here</xref>.</p>
+      <p>The following Cinder Volume Type extra-specs options enable control over the 3PAR storage
+        provisioning type:</p>
+      <p><table
+          frame="all" rowsep="1" colsep="1" id="table_ntq_swv_yt">
+          <tgroup cols="3">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value</entry>
+                <entry>Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>volume_backend_name</entry>
+                <entry><i>volume backend name</i></entry>
+                <entry>The name of the backend to which you want to associate the
+                  volume type, which you also specified earlier in the <codeph>cinder.conf.j2</codeph>
+                  file.</entry>
+              </row>
+              <row>
+                <entry>hp3par:provisioning (optional)</entry>
+                <entry>thin, full, or dedup</entry>
+                <entry/>
+              </row>
+           </tbody>
+          </tgroup>
+        </table></p>
+      <p>Here is what a completed list of extra specs may look like:</p>
+      <p><image href="../../media/blockstorage/extraspecs_3par.png"/></p>
+    </section>
+    
+    <section id="post_install"><title>Verifying your Ceph backend</title>
+      <p>After you have configured 3PAR FC and iSCSI as your Block Storage backend, you can verify this all
+        completed successfully by creating a new volume.</p>
+      <p>See <xref href="installation_verification.dita">Verifying your Installation</xref> for more
+        details.</p>
+    </section>
   </body>
 </topic>
