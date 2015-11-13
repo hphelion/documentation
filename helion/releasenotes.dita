@@ -11,7 +11,7 @@
           tmtype="reg">OpenStack</tm> 2.0, including known issues and workarounds for this
         release:</p>
       <ul>
-        <li><xref href="releasenotes.dita#release_notes/featuers">Features Available in this
+        <li><xref href="releasenotes.dita#release_notes/features">Features Available in this
             Release</xref></li>
         <li><xref href="releasenotes.dita#release_notes/known_issues">Known Issues in this
             Release</xref></li>
