@@ -46,7 +46,12 @@ ironic node-update &lt;&lt;node_id&gt;&gt; add properties/capabilities="boot_mod
             network:<codeblock>neutron net-create tenant-network
 neutron subnet-create --name tenant-subnet --gateway 192.68.61.1 --allocation-pool start=192.68.61.100,end=192.68.61.200 tenant-network 192.68.61.0/24</codeblock></li>
           <li>Execute the following command to Provision the baremetal node:
-            <codeblock>nova boot -nic</codeblock></li>
+                <codeblock><b>nova boot --nic net-id=&lt;tenant network id&gt; --image &lt;image&gt; --flavor &lt;flavor></b></codeblock><p>Where:<ul
+                id="ul_x5n_t3r_zt">
+                <li>&lt;tenant network id> is the UUID of the tenant network.  </li>
+                <li>&lt;image> is the name or ID of image (see 'nova image-list')</li>
+                <li>&lt;flavor> is the name or ID of flavor (see 'nova flavor-list')</li>
+              </ul></p></li>
         </ol>
       </p>
       <title>View System Details</title>
