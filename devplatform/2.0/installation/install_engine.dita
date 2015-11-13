@@ -74,9 +74,9 @@ openstack --os-cloud mycloud hdpi helionce install <i>&lt;filename></i></codeblo
           instance.<codeblock>openstack hdpi helionce launch --os-cloud mycloud
 deactivate</codeblock></li>
         <li>List all available machines. You should see an instance named
-            <codeph>helionce_deployer</codeph>. Make a note of its IP address. This is also a quick
-          test to verify that the HPE Helion Code Engine VM is
-          running.<codeblock>openstack --os-cloud mycloud server list</codeblock></li>
+            <codeph>helionce_deployer</codeph>. Make a note of its IP address.
+          <codeblock>source helionce.osrc
+openstack server list</codeblock></li>
         <li>Log in to and initialize the VM. <note>Ignore the TASK/msg message that appears in the
             output. Do not run the playbook at this time; that playbook must be run later in the
             installation
