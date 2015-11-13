@@ -349,7 +349,7 @@ StrictHostKeyChecking no </codeblock></li>
                                                   <colspec colnum="2" colname="col3"/>
                                                   <tbody>
                                                   <row>
-                                                  <entry><b>File Name</b></entry>
+                                                  <entry><b>Folder Name</b></entry>
                                                   <entry><b>Files within the folder</b></entry>
                                                   </row>
                                                   <row>
@@ -365,10 +365,28 @@ StrictHostKeyChecking no </codeblock></li>
                                                   </entry>
                                                   </row>
                                                   <row>
+                                                  <entry>horizon update</entry>
+                                                  <entry>
+                                                  <ul id="ul_xsg_xvn_zt">
+                                                  <li>cg-horizon-update.tar.gz</li>
+                                                  <li>cg-hos-update.patch</li>
+                                                  </ul>
+                                                  </entry>
+                                                  </row>
+                                                  <row>
                                                   <entry>Ironic build tarball patch</entry>
                                                   <entry>
                                                   <ul id="ul_hvv_dl4_yt">
                                                   <li>processtarball.yml</li>
+                                                  </ul>
+                                                  </entry>
+                                                  </row>
+                                                  <row>
+                                                  <entry>keystone neutron patch</entry>
+                                                  <entry>
+                                                  <ul id="ul_ov5_svn_zt">
+                                                  <li>knc-keystone-role.patch</li>
+                                                  <li>knc-neutron-role.patch</li>
                                                   </ul>
                                                   </entry>
                                                   </row>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying the Keystone
+    and Neutron Role Patches</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>Before launching the <codeph>hlm generate</codeph> command, deploy the patches to update the
+      Keystone and Neutron roles on kenobi-node-configuration. You should have <xref
+        href="carrier-grade-install-prereqs.dita#topic7148/patches">downloaded the patch files in
+        the Prerequisites</xref>.</p>
+   
+      <p>To apply the patches:<ol id="ol_ww1_kwn_zt">
+          <li>Copy the patch files to the <codeph>~/</codeph> directory. </li>
+          <li>Change to the  <codeph>~/kenobi-node-configuration</codeph>
+            directory:<codeblock>cd ~/kenobi-node-configuration</codeblock></li>
+          <li>Execute the following command to deploy the Keystone patch.
+            <codeblock>patch -p1 &lt; ../knc-keystone-role.patch</codeblock></li>
+          <li>Execute the following command to deploy the Neutron patch:
+            <codeblock>patch --binary -p1 &lt; ../knc-neutron-role.patch</codeblock></li>
+          <li>Execute the following command to integrate the patch into the installation
+          environment:: <codeblock>hlm_prepare-env.sh</codeblock></li>
+        </ol></p>
+    
+    <p>When the <codeph>hlm generate</codeph>  command is executed, the updated roles will be used. </p>
+    <p><i>Return to installing the non-KVM region for the <xref
+          href="CGH-2-install-tahoe.dita#topic10581/icinga-patch">tahoe</xref>
+        <xref href="CGH-2-install-memphis.dita#topic10581/icinga-patch">memphis</xref> or <xref
+          href="CGH-2-install-sacramento.dita#topic10581/icinga-patch">sacramento</xref>
+        template.</i></p>
+  </body>
+</topic>

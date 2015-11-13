@@ -598,6 +598,15 @@ Saved the current configuration to mainboard device successfully.
 [FTC-R146340-5930A]quit
 &lt;FTC-R146340-5930A&gt;</codeblock>
     </section>
+    <section id="keystone-neutron-patch">
+      <title>Deploy the Keystone and Neutron Role Patches</title>
+      <p>Apply these patches to update the Keystone and Neutron roles on kenobi-node-configuration.
+        You should have <xref href="carrier-grade-install-prereqs.dita#topic7148/patches">downloaded
+          the patch files in the Prerequisites</xref>.</p>
+      <p>For more information, see <xref
+          href="carrier-grade-install-keystone-neutron-role-patch.dita#topic10581">Deploying the
+          Keystone and Neutron Role Patches</xref>.</p>
+    </section>
     <section id="conref-config-proc">
       <title>Deploy the HPE Helion OpenStack cloud</title>
       <ol id="ol_bst_mmf_zt">

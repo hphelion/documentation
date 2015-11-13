@@ -68,6 +68,7 @@
                     navtitle="HP Helion OpenStack Carrier Grade 2.0 Beta: Configuring LDAP 3"
                     locktitle="yes"/>
                 <topicref href="CGH-2-install-vmware-workaround.dita" toc="no"/>
+                <topicref href="carrier-grade-install-keystone-neutron-role-patch.dita" toc="no"/>
             </topichead>
         </topicref>
         <topicref href="carrier-grade-install-launch-horizon.dita"
