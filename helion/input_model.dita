@@ -98,7 +98,7 @@
             <li><xref href="#input_model/configneutronprovidervlans">Configuring Neutron Provider
                 VLANs</xref></li>
           </ul></li>
-        <li><xref href="#input_model/cpinfofiles">configuration processor Information Files</xref>
+        <li><xref href="#input_model/cpinfofiles">Configuration Processor Information Files</xref>
           <ul>
             <li><xref href="#input_model/address_info_yml">Address_info.yml</xref></li>
             <li><xref href="#input_model/firewall_info_yml">Firewall_info.yml</xref></li>
