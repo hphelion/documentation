@@ -5,12 +5,28 @@
     Backend</title>
   <body>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
-      href="http://docs.hpcloud.com/helion/installation/configure_3par.html" scope="external" format="html">Click
-      here</xref> for a frameless version of this page where the links should work.</note>
+        href="http://docs.hpcloud.com/helion/installation/configure_3par.html" scope="external"
+        format="html">Click here</xref> for a frameless version of this page where the links should
+      work.</note>
     <p>This page describes how to configure your 3PAR backend for the Helion Entry-scale Cloud with
       KVM model.</p>
+    <ul>
+      <li><xref href="configure_3par.dita#config_3par/prereq">Prerequisites</xref></li>
+      <li><xref href="configure_3par.dita#config_3par/config_fc">Configure 3PAR FC as the
+          Backend</xref></li>
+      <li><xref href="configure_3par.dita#config_3par/config_iscsi">Configure 3PAR iSCSI as the
+          Backend</xref></li>
+      <li><xref href="configure_3par.dita#config_3par/create_voltype">Create a Volume Type for your
+          Volumes</xref></li>
+      <li><xref href="configure_3par.dita#config_3par/associate_voltype">Associate the Volume Type
+          to the Backend</xref></li>
+      <li><xref href="configure_3par.dita#config_3par/extra_specs">Extra Specification
+          Options</xref></li>
+      <li><xref href="configure_3par.dita#config_3par/post_install">Verifying your 3PAR
+          backend</xref></li>
+    </ul>
     <section>
-      <title id="preq">Prerequisites</title>
+      <title id="prereq">Prerequisites</title>
       <p>
         <ul>
           <li>Your HPE Helion Entry-scale KVM Cloud should be up and running. Installation steps can
@@ -23,12 +39,12 @@
               guide.<note>If you want to enable multipath for Cinder volumes carved from 3PAR
               FC/iSCSI storage system, please go through the
                 <codeph>/home/stack/helion/hos/ansible/roles/multipath/README.md </codeph> file on
-              the lifecycle manager. The README.md file contains detailed procedures for
-              configuring multipath for 3PAR FC/iSCSI Cinder volumes.</note></li>
+              the lifecycle manager. The README.md file contains detailed procedures for configuring
+              multipath for 3PAR FC/iSCSI Cinder volumes.</note></li>
         </ul>
       </p>
     </section>
-    <section id="configure-3par-fc">
+    <section id="config_fc">
       <title>Configure 3PAR FC as a Cinder Backend</title>
       <p>You must modify the <codeph>cinder.conf.j2</codeph> to configure the FC details.</p>
       <p>Perform the following steps to configure 3PAR FC as Cinder backend:<ol id="ol_dj2_qcz_ht">
@@ -80,7 +96,7 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
         </ol></p>
     </section>
-    <section>
+    <section id="config_iscsi">
       <title>Configure 3PAR iSCSI as Cinder backend</title>
       <p>You must modify the <codeph>cinder.conf.j2</codeph> to configure the iSCSI details.</p>
       <p>Perform the following steps to configure 3PAR iSCSI as Cinder backend:</p>
@@ -135,20 +151,20 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
       </ol>
     </section>
-    
-    <section conref="configure_vsa.dita#config_vsa/create_volumetype"/>
-    <section conref="configure_vsa.dita#config_vsa/associate_volumetype"/>
-    
+
+    <section conref="configure_vsa.dita#config_vsa/create_volumetype" id="create_voltype"/>
+    <section conref="configure_vsa.dita#config_vsa/associate_volumetype" id="associate_voltype"/>
+
     <section id="extra_specs"><title>Extra Specification Options</title>
       <p>3PAR supports volumes creation with additional attributes. All these attributes can be
         specified using the extra specs options for your volume type. The administrator is expected
-        to define appropriate extra spec for 3PAR volume type as per the guidelines provided at <xref
+        to define appropriate extra spec for 3PAR volume type as per the guidelines provided at
+          <xref
           href="http://docs.openstack.org/kilo/config-reference/content/hp-3par-supported-ops.html"
           format="html" scope="external">here</xref>.</p>
       <p>The following Cinder Volume Type extra-specs options enable control over the 3PAR storage
         provisioning type:</p>
-      <p><table
-          frame="all" rowsep="1" colsep="1" id="table_ntq_swv_yt">
+      <p><table frame="all" rowsep="1" colsep="1" id="table_ntq_swv_yt">
           <tgroup cols="3">
             <colspec colname="c1" colnum="1"/>
             <colspec colname="c2" colnum="2"/>
@@ -164,25 +180,24 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
               <row>
                 <entry>volume_backend_name</entry>
                 <entry><i>volume backend name</i></entry>
-                <entry>The name of the backend to which you want to associate the
-                  volume type, which you also specified earlier in the <codeph>cinder.conf.j2</codeph>
-                  file.</entry>
+                <entry>The name of the backend to which you want to associate the volume type, which
+                  you also specified earlier in the <codeph>cinder.conf.j2</codeph> file.</entry>
               </row>
               <row>
                 <entry>hp3par:provisioning (optional)</entry>
                 <entry>thin, full, or dedup</entry>
                 <entry/>
               </row>
-           </tbody>
+            </tbody>
           </tgroup>
         </table></p>
       <p>Here is what a completed list of extra specs may look like:</p>
       <p><image href="../../media/blockstorage/extraspecs_3par.png"/></p>
     </section>
-    
+
     <section id="post_install"><title>Verifying your Ceph backend</title>
-      <p>After you have configured 3PAR FC and iSCSI as your Block Storage backend, you can verify this all
-        completed successfully by creating a new volume.</p>
+      <p>After you have configured 3PAR FC and iSCSI as your Block Storage backend, you can verify
+        this all completed successfully by creating a new volume.</p>
       <p>See <xref href="installation_verification.dita">Verifying your Installation</xref> for more
         details.</p>
     </section>

@@ -16,6 +16,12 @@
           Backend</xref></li>
       <li><xref href="configure_ceph.dita#config_ceph/attach_ceph">Configure Nova to Allow
           Attachment of Ceph Volumes to Instances</xref></li>
+      <li><xref href="configure_ceph.dita#config_ceph/create_voltype">Create a Volume Type for
+        your Volumes</xref></li>
+      <li><xref href="configure_ceph.dita#config_ceph/associate_voltype">Associate the Volume
+        Type to the Backend</xref></li>
+      <li><xref href="configure_ceph.dita#config_ceph/extra_specs">Extra Specification
+        Options</xref></li>
       <li><xref href="configure_ceph.dita#config_ceph/post_install">Verifying your Ceph
           backend</xref></li>
     </ul>
@@ -504,8 +510,8 @@ ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</codeblock></li>
       </ol>
     </section>
     
-    <section conref="configure_vsa.dita#config_vsa/create_volumetype"/>
-    <section conref="configure_vsa.dita#config_vsa/associate_volumetype"/>
+    <section conref="configure_vsa.dita#config_vsa/create_volumetype" id="create_voltype"/>
+    <section conref="configure_vsa.dita#config_vsa/associate_volumetype" id="associate_voltype"/>
     
     <section id="extra_specs"><title>Extra Specification Options</title>
       <p>Ceph supports volumes creation with additional attributes. All these attributes can be
