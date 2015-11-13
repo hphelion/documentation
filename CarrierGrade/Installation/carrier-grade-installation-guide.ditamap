@@ -87,6 +87,9 @@
                 navtitle="Verifying the VRS-G Node" locktitle="yes"/>
             <topicref href="../AdminGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita"
                 navtitle="Provision Baremetal Nodes for the Sacramento Deployment" locktitle="yes"/>
+            <topicref href="carrier-grade-install-5930-switch.dita"
+                navtitle="Configuring 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports"
+                locktitle="yes"/>
         </topicref>
         <topicref href="CGH-2-install-sr-iov.dita" navtitle="Configuring SR-IOV" locktitle="yes"/>
         <topicref href="CGH-2-install-pci-pass.dita" navtitle="Configuring PCI-Passthrough"
