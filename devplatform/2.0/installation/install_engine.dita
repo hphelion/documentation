@@ -80,14 +80,14 @@ deactivate</codeblock></li>
         <li>Log in to and initialize the VM. <note>Ignore the TASK/msg message that appears in the
             output. Do not run the playbook at this time; that playbook must be run later in the
             installation
-            process.</note><codeblock>ssh -i ~/.ssh/id_rsa.pub stack@&lt;IP address> 
+            process.</note><pre>ssh -i helionce-shared stack@&lt;IP address&gt;
 ...
 stack@helionce-deployer:~$ ls
 helionce-1.0.0
 ...
 stack@helionce-deployer:~$ cd helionce-1.0.0/
 stack@helionce-deployer:~/helionce-1.0.0$ ./helionce-init.bash
-...</codeblock><note>This
+...</pre><note>This
             process can take a few minutes. When the initialization has completed, ensure both
               <codeph>unreachable</codeph> and <codeph>failed</codeph> are zero (0). This indicates
             success. If not, check the output for error messages, address the errors, and try
