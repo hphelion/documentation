@@ -88,7 +88,7 @@
       </topichead>
       <topicref href="helion/conceptual_overviews/high_availability.dita"
         navtitle="High Availability Concepts" locktitle="yes"/>
-      <topicref href="helion/administration/create_hdp_servicenet.dita" toc="no"
+      <topicref href="helion/administration/create_hdp_servicenet.dita"
         navtitle="Creating the Helion Development Platform Service Net" locktitle="yes"/>
       <topicref href="helion/administration/configure_monitoring.dita"
         navtitle="Configuring the Monitoring Service" locktitle="yes"/>
