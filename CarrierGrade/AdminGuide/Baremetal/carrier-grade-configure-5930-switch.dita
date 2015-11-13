@@ -28,7 +28,7 @@
             domain. See the figure:</p>
         </li>
       </ul>
-      <p><image href="../../media/CGH-install-5930-diagram.png" id="image_uyn_rzr_zt" width="600"
+      <p><image href="../../../media/CGH-install-5930-diagram.png" id="image_uyn_rzr_zt" width="600"
         /></p>
     </section>
     <section>
@@ -1131,10 +1131,7 @@
       </li>
     </ol>
     <section>
-      <p><i>Return to installing the non-KVM region for the <xref
-            href="CGH-2-install-memphis.dita#topic10581/vmware">memphis</xref> or <xref
-            href="CGH-2-install-sacramento.dita#topic10581/vmware">sacramento</xref>
-        template.</i></p>
+      <p/>
     </section>
 </body>
 </topic>
