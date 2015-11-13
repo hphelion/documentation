@@ -101,9 +101,14 @@ stack@helionce-deployer:~/helion$ cp ~/platform-pass-through.yml my_cloud/defini
           process.<codeblock>stack@helionce-deployer:~/helion$ git add -A
 stack@helionce-deployer:~/helion$ git commit -a -m "Add HelionCE default model"</codeblock></li>
         <li>Create a Github OAuth Application. <ol>
-            <li>Create a new application at <xref
-                href="https://github.com/settings/applications/new" format="html" scope="external"
-                >https://github.com/settings/applications/new</xref></li>
+            <li>Create a new application.
+            <ol><li>If you are using the public GitHub.com, create the new application at <xref
+                    href="https://github.com/settings/applications/new" format="html"
+                    scope="external">https://github.com/settings/applications/new</xref></li>
+            <li>If you are using a custom, hosted GitHub Enterprise, create the new application at
+                    <codeph>https://&lt;hostname&gt;/settings/applications/new</codeph>. You may
+                  need to contact your System Administrator to get the <codeph>hostname</codeph> for
+                  your GitHub instance.</li></ol></li>
             <li>Include the following values: <table frame="all" rowsep="1" colsep="1">
                 <tgroup cols="2">
                   <colspec colname="c1" colnum="1" colwidth="1*"/>
