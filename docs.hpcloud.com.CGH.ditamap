@@ -96,7 +96,7 @@
         format="ditamap" navtitle="Installation Guide" locktitle="yes"/>
     </topichead>
     <topichead navtitle="Administration" locktitle="yes">
-      <topichead navtitle="KVM region Administrator Guide (On-Line)" locktitle="yes">
+      <topichead navtitle="KVM Region Administrator Guide (On-Line)" locktitle="yes">
         <topicref href="CarrierGrade/AdminGuideKVM/CGH-2-KVM-Admin.ditamap" format="ditamap"/>
       </topichead>
       <topicref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.dita"
