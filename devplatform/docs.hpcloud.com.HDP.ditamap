@@ -210,13 +210,13 @@
         <topicref href="1.3/workbook/messaging/messaging.node.dita" locktitle="yes"
           navtitle="Node RabbitMQ Messaging Sample"/>
       </topichead>
-      <topichead navtitle="PHPE Code Samples">
+      <topichead navtitle="PHP Code Samples">
         <topicref href="1.3/workbook/helloworld/helloworld.php.dita" locktitle="yes"
-          navtitle="PHPE Hello World Sample "/>
+          navtitle="PHP Hello World Sample "/>
         <topicref href="1.3/workbook/database/database.php.dita" locktitle="yes"
-          navtitle="PHPE MySQL Database Sample"/>
+          navtitle="PHP MySQL Database Sample"/>
         <topicref href="1.3/workbook/messaging/messaging.php.dita" locktitle="yes"
-          navtitle="PHPE RabbitMQ Messaging Sample"/>
+          navtitle="PHP RabbitMQ Messaging Sample"/>
       </topichead>
       <!--permalink: /helion/devplatform/workbook/database/node/-->
       <!--permalink: /helion/devplatform/workbook/database/php/-->

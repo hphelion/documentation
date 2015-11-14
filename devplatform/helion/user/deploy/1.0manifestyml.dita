@@ -362,7 +362,7 @@ the command line option --runtime, -f (eg.
 <p>
   <b>Note</b>
 </p>
-<p>Node.js, Perl, PHPE and Python frameworks only.</p>
+<p>Node.js, Perl, PHP and Python frameworks only.</p>
 <p>Setting a deeper document root directory avoids the problem of exposing
 supporting files (e.g. <i>manifest.yml</i>) over HTTP.</p>
 <p>Example:</p>

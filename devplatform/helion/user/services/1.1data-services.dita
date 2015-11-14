@@ -634,7 +634,7 @@ Redis:         'redis-2.x' -&gt; 'redis'
 variable. See the following language-specific documentation:</p>
 <ul>
 <li>
-<xref href="../../../../devplatform/helion/user/deploy/languages/1.1php.dita#php-data-services" type="section"  >PHPE Data Services</xref>
+<xref href="../../../../devplatform/helion/user/deploy/languages/1.1php.dita#php-data-services" type="section"  >PHP Data Services</xref>
 </li>
 </ul>
 <p>The following changes to sample applications show this modification:</p>

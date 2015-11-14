@@ -631,7 +631,7 @@ variable. See <xref type="section" href="#topic19439/database-accessing">
 general information and the following language-specific documentation:</p>
 <ul>
 <li>
-<xref href="../../../../devplatform/helion/user/deploy/languages/1.0php.dita#php-data-services" type="section"  >PHPE Data Services</xref>
+<xref href="../../../../devplatform/helion/user/deploy/languages/1.0php.dita#php-data-services" type="section"  >PHP Data Services</xref>
 </li>
 </ul>
 <p>The following changes to sample applications show this modification:</p>

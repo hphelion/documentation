@@ -30,7 +30,7 @@ to enable successful development are available in PHP.</p>
 <p>For more information on working with object storage, 
 see the <xref href="../../../../../commercial/GA1/1.0commerical.services-object-overview.dita" >HPE Helion OpenStack Object Storage Service Overview</xref>.</p>
 <section id="application-lifecycle-services"> <title>Application Lifecycle Services</title>
-<p>Application Lifecycle Service (ALS) provides a means to execute PHPE applications on a managed platform, controlling application lifecycle through a PaaS tier. Deploying
+<p>Application Lifecycle Service (ALS) provides a means to execute PHP applications on a managed platform, controlling application lifecycle through a PaaS tier. Deploying
 applications to this platform is as easy as adding details to a YAML configuration file and using
 a console application to push the application to ALS.
 At its simplest form, the configuration file <i>manifest.yml</i>, which is located at the root of a project, 
@@ -40,7 +40,7 @@ name: php-web-app
 framework:
     type: php
 </codeblock>
-<p>This will set the ALS framework type for a PHPE web application.</p>
+<p>This will set the ALS framework type for a PHP web application.</p>
 <p>To create a worker non-http application set the web process to <b>null</b> (~) and specify
 the command to <b>run</b>. For example:</p>
 <codeblock>
@@ -65,7 +65,7 @@ the command to <b>run</b>. For example:</p>
 a console application. To learn more see the <xref href="../../../../../devplatform/helion/user/deploy/1.0manifestyml.dita" >manifest.yml</xref> reference.</p>
 </section>
 <section id="deployment"> <title>Deployment</title>
-<p>You will need at least two files to deploy a PHPE app on Application Lifecycle Service:
+<p>You will need at least two files to deploy a PHP app on Application Lifecycle Service:
 <i>index.php</i>, and <i>manifest.yml</i>.</p>
 <p>The <i>manifest.yml</i> must specify <b>php</b> as the framework type:</p>
 <codeblock>
@@ -152,7 +152,7 @@ found in the <b>$_SERVER</b> variable, under
 </codeblock>
 </section>
 <section id="phpini"> <title>PHP.ini</title>
-<p>Additional PHPE ini files will be loaded from the
+<p>Additional PHP ini files will be loaded from the
 <codeph>$HELION_APP_ROOT/apache/php/</codeph> directory. Refer to
 the example below for more information.</p>
 </section>
@@ -186,7 +186,7 @@ source tree which you do not want exposed to end users.</p>
 <section id="server-name-server-port"> <title>SERVER_NAME &amp; SERVER_PORT</title>
 <p>Application Lifecycle Service serves web applications port 80 and/or 443 at the router, but
 within the application container Apache will be running on a different
-port. PHPE will report this internal IP address and port in the
+port. PHP will report this internal IP address and port in the
 SERVER_ADDR and SERVER_PORT Apache environment variables respectively.</p>
 <p>If your application makes use of these variables, you may need to adjust
 them by using an <xref href="http://httpd.apache.org/docs/2.4/howto/htaccess.html" scope="external" format="html" >.htaccess
@@ -196,7 +196,7 @@ one or more
 directives to correct the server name or port in URLs.</p>
 </section>
 <section id="persistent-sessions-php"> <title>Persistent Sessions (PHP)</title>
-<p>One of the issues with managing a PHPE application running multiple
+<p>One of the issues with managing a PHP application running multiple
 instances is dealing with user sessions.</p>
 <p>If your application uses a <xref href="../../../../../devplatform/helion/user/services/1.0filesystem.dita#persistent-file-system" type="section"  >
 <i>shared filesystem
@@ -204,7 +204,7 @@ service</i>
 </xref>, you
 can store user sessions there. The following <i>manifest.yml</i> snippet
 creates a persistent filesystem service, creates a directory for
-sessions, and writes a PHPE config file to set the path to the session
+sessions, and writes a PHP config file to set the path to the session
 directory:</p>
 <codeblock>
   <codeph>services:

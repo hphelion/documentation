@@ -310,7 +310,7 @@ the command line option --runtime, -f (eg.
 </section>
 <section id="document-root"> <title>document-root:</title>
 <p>Overrides the default document-root setting (\$HOME) for the web server.</p>
-      <note type="restriction"> Applies to Node.js, Perl, PHPE and Python frameworks only.</note>
+      <note type="restriction"> Applies to Node.js, Perl, PHP and Python frameworks only.</note>
 <p>Setting a deeper document root directory avoids the problem of exposing
 supporting files (e.g. <i>manifest.yml</i>) over HTTP.</p>
 <p>Example:</p>

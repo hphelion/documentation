@@ -19,7 +19,7 @@
 <li><xref type="section" href="#topic1790/OpenstackCLI"><tm tmtype="reg">OpenStack</tm> CLI Tools</xref></li>
 <li><xref type="section" href="#topic1790/RubyFogBindingsInstall">Ruby Fog Bindings</xref></li>
 <li><xref type="section" href="#topic1790/jcloudsBindingsInstall">Java/Clojure jclouds Bindings</xref></li>
-<li><xref type="section" href="#topic1790/PHPBindingsInstall">PHPE Bindings</xref></li>
+<li><xref type="section" href="#topic1790/PHPBindingsInstall">PHP Bindings</xref></li>
 <li><xref type="section" href="#topic1790/NetBindingsInstall">.NET Bindings</xref></li>
 <li><xref type="section" href="#topic1790/JavascriptBindingsInstall">Javascript Bindings</xref></li>
 </ul>
@@ -62,7 +62,7 @@
 <xref href="http://jclouds.apache.org/start/install/" scope="external" format="html" >Installation page</xref> (This is the <xref href="http://www.jclouds.org" scope="external" format="html" >jclouds.org</xref> installation page)</li>
 </ul>
 </section>
-<section id="PHPBindingsInstall"> <title>PHPE Bindings</title>
+<section id="PHPBindingsInstall"> <title>PHP Bindings</title>
 <ul>
 <li>
 <xref href="http://hpcloud.github.com/HPCloud-PHP/" scope="external" format="html" >Installation page</xref> (This is the GitHub repository page for the installation package)</li>

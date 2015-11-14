@@ -234,13 +234,13 @@
           <topicref href="devplatform/1.2/workbook/messaging/1.2messaging.node.dita" locktitle="yes"
             navtitle="Node RabbitMQ Messaging Sample"/>
         </topichead>
-        <topichead navtitle="PHPE Code Samples">
+        <topichead navtitle="PHP Code Samples">
           <topicref href="devplatform/1.2/workbook/helloworld/1.2helloworld.php.dita"
-            locktitle="yes" navtitle="PHPE Hello World Sample "/>
+            locktitle="yes" navtitle="PHP Hello World Sample "/>
           <topicref href="devplatform/1.2/workbook/database/1.2database.php.dita" locktitle="yes"
-            navtitle="PHPE MySQL Database Sample"/>
+            navtitle="PHP MySQL Database Sample"/>
           <topicref href="devplatform/1.2/workbook/messaging/1.2messaging.php.dita" locktitle="yes"
-            navtitle="PHPE RabbitMQ Messaging Sample"/>
+            navtitle="PHP RabbitMQ Messaging Sample"/>
         </topichead>
         <!--permalink: /helion/devplatform/1.2/workbook/database/node/-->
         <!--permalink: /helion/devplatform/1.2/workbook/database/php/-->
@@ -582,13 +582,13 @@
           <topicref href="devplatform/workbook/messaging/1.1messaging.node.dita" locktitle="yes"
             navtitle="Node RabbitMQ Messaging Sample "/>
         </topichead>
-        <topichead navtitle="PHPE Samples">
+        <topichead navtitle="PHP Samples">
           <topicref href="devplatform/workbook/helloworld/1.1helloworld.php.dita" locktitle="yes"
-            navtitle="PHPE Hello World Sample "/>
+            navtitle="PHP Hello World Sample "/>
           <topicref href="devplatform/workbook/database/1.1database.php.dita" locktitle="yes"
-            navtitle="PHPE MySQL Database Sample "/>
+            navtitle="PHP MySQL Database Sample "/>
           <topicref href="devplatform/workbook/messaging/1.1messaging.php.dita" locktitle="yes"
-            navtitle="PHPE RabbitMQ Messaging Sample "/>
+            navtitle="PHP RabbitMQ Messaging Sample "/>
         </topichead>
         <!--permalink: /helion/devplatform/1.1/workbook/database/node/-->
         <!--permalink: /helion/devplatform/1.1/workbook/database/php/-->
@@ -874,7 +874,7 @@
                 <topicref href="devplatform/helion/user/deploy/languages/perl/1.1perlcgi.dita"/>
               </topicref>
               <topicref href="devplatform/helion/user/deploy/languages/1.1php.dita" locktitle="yes"
-                navtitle="PHPE "/>
+                navtitle="PHP "/>
               <topicref href="devplatform/helion/user/deploy/languages/python/1.1index.dita"
                 locktitle="yes" navtitle="Python "/>
               <topicref href="devplatform/helion/user/deploy/languages/python/1.1django.dita"
@@ -1450,13 +1450,13 @@
             navtitle="Node RabbitMQ Messaging Sample "/>
         </topichead>
         <!--permalink: /helion/devplatform/workbook/database/php/-->
-        <topichead navtitle="PHPE Samples">
+        <topichead navtitle="PHP Samples">
           <topicref href="devplatform/workbook/database/1.0database.php.dita" locktitle="yes"
-            navtitle="PHPE MySQL Database Sample "/>
+            navtitle="PHP MySQL Database Sample "/>
           <topicref href="devplatform/workbook/helloworld/1.0helloworld.php.dita" locktitle="yes"
-            navtitle="PHPE Hello World Sample "/>
+            navtitle="PHP Hello World Sample "/>
           <topicref href="devplatform/workbook/messaging/1.0messaging.php.dita" locktitle="yes"
-            navtitle="PHPE RabbitMQ Messaging Sample "/>
+            navtitle="PHP RabbitMQ Messaging Sample "/>
         </topichead>
         <!--permalink: /helion/devplatform/workbook/helloworld/java/-->
         <!--permalink: /helion/devplatform/workbook/helloworld/node/-->
@@ -1651,7 +1651,7 @@
             <topicref href="devplatform/helion/user/deploy/languages/1.0node.dita" locktitle="yes"
               navtitle="Node "/>
             <topicref href="devplatform/helion/user/deploy/languages/1.0php.dita" locktitle="yes"
-              navtitle=" PHPE "/>
+              navtitle=" PHP "/>
             <topicref href="devplatform/helion/user/deploy/languages/1.0ruby.dita" navtitle="Ruby"
               locktitle="yes"/>
           </topicref>

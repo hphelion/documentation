@@ -110,7 +110,7 @@ sudo /usr/sbin/nrsysmond-config --set license_key=$NEW_RELIC_LICENSE_KEY
 sudo /etc/init.d/newrelic-sysmond start</codeblock>
       <note> The <codeph>HELION_HOOK_ENV</codeph> environment variable is needed to expose the
         specified variables in <codeph>helion ssh</codeph> sessions, in the application container's
-        crontab, and in PHPE applications using the Legacy buildpack. </note>
+        crontab, and in PHP applications using the Legacy buildpack. </note>
   <p>The Dockerfile for creating the image (see <xref type="section" href="#topic7767/modifying-or-updating-the-container-image">Modifying or Updating the
 Container Image</xref> ) would use the ADD
 directive to put a local <i>hooks</i> directory in the Docker image's

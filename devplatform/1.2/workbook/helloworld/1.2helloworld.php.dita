@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3770">
-<title>HPE Helion 1.2 Development Platform: PHPE Hello World Sample</title>
+<title>HPE Helion 1.2 Development Platform: PHP Hello World Sample</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -21,7 +21,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/workbook/helloworld/1.2helloworld.php.md-->
  <!--permalink: /helion/devplatform/1.2/workbook/helloworld/php/--></p>
-<p>This very simple PHPE web app displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.</p>
+<p>This very simple PHP web app displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
 <li>An installation of the <xref href="../../../../devplatform/1.2/1.2devplatform_commercial_install.dita" >HPE Helion Development Platform</xref>.</li>
@@ -46,8 +46,8 @@ instructions further down. But before you push the button, ensure that you have 
   <xref href="https://github.com/HelionDevPlatform/helion-hello-world-php" scope="external" format="html" >Click here to access the code repository.</xref>
 </p>
 <p>
-<i>Manifest.yml</i> is a configuration file used to specify settings. For PHPE only the <b>name</b> and <b>buildpack</b> fields are required. The <b>buildpack</b> field is a URL for the buildpack that supports the necessary language and/or framework.</p>
-<p>This app uses the <xref href="https://github.com/cloudfoundry/php-buildpack" scope="external" format="html" >Cloud Foundry PHPE buildpack</xref>. For more technical details about buildpacks and the <i>composer.json</i> file, please see the README included in the <xref href="https://github.com/HelionDevPlatform/helion-rabbitmq-php/" scope="external" format="html" >download package</xref>.</p>
+<i>Manifest.yml</i> is a configuration file used to specify settings. For PHP only the <b>name</b> and <b>buildpack</b> fields are required. The <b>buildpack</b> field is a URL for the buildpack that supports the necessary language and/or framework.</p>
+<p>This app uses the <xref href="https://github.com/cloudfoundry/php-buildpack" scope="external" format="html" >Cloud Foundry PHP buildpack</xref>. For more technical details about buildpacks and the <i>composer.json</i> file, please see the README included in the <xref href="https://github.com/HelionDevPlatform/helion-rabbitmq-php/" scope="external" format="html" >download package</xref>.</p>
 </section>
 <section id="deploy-the-application"> <title>Deploy the Application</title>
 <p>
@@ -107,14 +107,14 @@ instructions further down. But before you push the button, ensure that you have 
 </ol>
 </section>
 <section id="key-code-snippets"> <title>Key Code Snippets</title>
-<p>This simple PHPE script prints "Hello World".</p>
+<p>This simple PHP script prints "Hello World".</p>
 <codeblock>
   <codeph>&lt;?php
 echo "\n Hello World \n";
 ?&gt;
 </codeph>
 </codeblock>
-<p>The <i>manifest.yml</i> file is the configuration information used by ALS to set up the environment. The <b>buildpack</b> element here informs ALS on the correct buildpack to use for PHPE which ensures the correct tools and runtimes are installed in the application environment.</p>
+<p>The <i>manifest.yml</i> file is the configuration information used by ALS to set up the environment. The <b>buildpack</b> element here informs ALS on the correct buildpack to use for PHP which ensures the correct tools and runtimes are installed in the application environment.</p>
 <codeblock>
   <codeph>---
 applications:
