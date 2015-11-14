@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1443819602961" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1443819602961" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -11,30 +11,30 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N1001E_N1001B_N10001">
+        
             <p><draft-comment author="jowens">US64069 new
                     topic</draft-comment>For more information about sensors and sensor groups, see
                     <xref href="jow1443819549360.xml"/>.</p>
             <p>To use the command-line interface, see <xref href="jow1443819706243.xml"/>.</p>
-        </context>
+        
         <steps id="steps_zdg_53f_4t">
             <step conref="jow1426453628262.xml#jow1426453628262/step_N1002B_N10028_N1001C_N10001" id="step_N10047_N10043_N1001F_N10001">
                 <cmd/>
-            </step>
-            <step id="step_N10056_N10040_N1001F_N10001">
-                <cmd>Select the <uicontrol>Sensors</uicontrol> tab.</cmd>
-            </step>
-            <step id="step_N10063_N10040_N1001F_N10001">
-                <cmd>In the <codeph>Sensor Groups</codeph>
-                    list, click <uicontrol>Edit SensorGroup</uicontrol> for the
-                    group you want to configure. </cmd>
+            
+             
+                <li>Select the <b>Sensors</b> tab.</li>
+            
+             
+                <li>In the <codeph>Sensor Groups</codeph>
+                    list, click <b>Edit SensorGroup</b> for the
+                    group you want to configure. </li>
                 
-                    <fig id="fig_nlk_pjf_4t">
+                    
                         <image href="jow1443885204993.image" id="image_qwz_3kf_4t">
                             <alt>TiS Edit SensorGroup</alt>
                         </image>
-                    </fig>
-                    <p>In the <wintitle>Edit SensorGroup</wintitle> dialog box, change the settings
+                    
+                    <p>In the <b>Edit SensorGroup</b> dialog box, change the settings
                         as required.</p>
                     <dl>
                         <dlentry>
@@ -80,7 +80,7 @@
                         </dlentry>
                     </dl>
                 
-            </step>
+            
         </ol>
     </body>
-</task-wr>
+</topic>

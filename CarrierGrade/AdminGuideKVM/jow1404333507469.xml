@@ -14,19 +14,19 @@
     </prolog>
     <taskbody>
         <prereq conref="jow1404333506062.xml#jow1404333506062/prerequisites" id="prereq_N1002B_N10028_N10001" ixia_locid="7"/>
-        <context id="context_N1007D_N1002E_N10001" ixia_locid="282" product="tis_small">
+        
             <p ixia_locid="283">For a minimal two-server configuration,  the procedure varies
                 slightly. The data interfaces for the compute function are defined before
                     <nameliteral ixia_locid="285">controller-1</nameliteral> is unlocked.</p>
-        </context>
+        
         <steps id="steps_nvd_tz5_k4">
-            <step id="step_N1003B_N10037_N1002E_N10001" ixia_locid="359">
+             
                 <cmd ixia_locid="360">Power on the node to be configured as <nameliteral ixia_locid="361">controller-1</nameliteral>.</cmd>
             </step>
-            <step id="step_N1003D_N10030_N10028_N10001" ixia_locid="10">
+             
                 <cmd ixia_locid="11">Using the web administration interface, assign the node as a
                     controller host.</cmd><!-- an expectant message appears on the display (Waiting for this node to be configured) and hangs around until you select Edit Host.  This one tripped Ron up, so we may want to mention it or add a screen shot. -->
-                <substeps id="substeps_ids_zz5_k4">
+                 <ol>
                     <substep conref="jow1404333506062.xml#jow1404333506062/open-hosts-list" ixia_locid="12">
                         <cmd ixia_locid="13"/>
                     </substep>
@@ -46,7 +46,7 @@
                         <cmd conref="jow1404333506062.xml#jow1404333506062/cmd-save-personality" ixia_locid="87"/>
                         <stepresult ixia_locid="88">
                             <p conref="jow1404333506062.xml#jow1404333506062/p-save-personality" ixia_locid="89"/>
-                            <fig id="fig_kwg_kry_4p" ixia_locid="90">
+                            
                                 <image href="jow1412193160572.image" id="image_ixn_r1q_pp" ixia_locid="91" width="3.5in">
                                     <alt ixia_locid="92">HP Helion OpenStack Carrier Grade Controller Node Install</alt>
                                 </image>
@@ -64,18 +64,18 @@
                 </info>
                 <stepresult conref="jow1404333506062.xml#jow1404333506062/node_locked_available_online" ixia_locid="95"/>
             </step>
-            <step id="step_N1045B_N1008E_N1002E_N10001" ixia_locid="362" product="tis_small">
+             
                 <cmd ixia_locid="363">If you are installing a minimal two-server configuration,
                     attach the data interfaces.</cmd>
                 <info ixia_locid="301">
                     <p ixia_locid="302">For details, see <xref href="jow1426948577755.xml" ixia_locid="303"/>.</p>
                 </info>
             </step>
-            <step id="step_N1011B_N10048_N1002E_N10001" ixia_locid="364" product="tis_small">
+             
                 <cmd ixia_locid="365"><draft-comment author="jowens" ixia_locid="396">US65502 added
                         step</draft-comment>If you are installing a minimal two-server
                     configuration, configure local storage on both hosts.</cmd>
-                <substeps id="substeps_plc_3jn_4t">
+                 <ol>
                     <substep ixia_locid="366">
                         <cmd ixia_locid="367">Configure local storage on <nameliteral ixia_locid="368">controller-1</nameliteral>
                             while it is locked, as follows:</cmd>
@@ -84,7 +84,7 @@
                                 <li ixia_locid="370">
                                     <p ixia_locid="371">Open the <nameliteral ixia_locid="372">Inventory Detail</nameliteral> for
                                         controller-1, and then select the
-                                            <nameliteral ixia_locid="373">Storage</nameliteral> tab.<fig id="fig_atv_4s5_jr" ixia_locid="374">
+                                            <nameliteral ixia_locid="373">Storage</nameliteral> tab.
                                             <image href="jow1426459038579.image" id="image_rhh_ps5_jr" ixia_locid="375" width="6in">
                                                 <alt ixia_locid="37">Compute Node Storage tab</alt>
                                             </image>
@@ -95,7 +95,7 @@
                                         use the <wintitle ixia_locid="379">Create Local Volume Group</wintitle>
                                         dialog box to add the default
                                             <nameliteral ixia_locid="380">nova-local</nameliteral> local volume
-                                            group.<fig id="fig_wrr_vs5_jr" ixia_locid="38">
+                                            group.
                                             <image href="jow1426459253956.image" id="image_ask_bt5_jr" ixia_locid="39">
                                                 <alt ixia_locid="381">Create Local Volume Group</alt>
                                             </image>
@@ -104,7 +104,7 @@
                                 <li ixia_locid="382">
                                     <p ixia_locid="383">On the Storage tab, click <uicontrol ixia_locid="384">Add Physical Volume</uicontrol>, and
                                         then use the Create Physical Volume dialog box to select a
-                                            disk.<fig id="fig_myv_tdz_jr" ixia_locid="54">
+                                            disk.
                                             <image href="jow1426511807740.image" id="image_dhp_12z_jr" ixia_locid="55">
                                                 <alt ixia_locid="56">Create Physical Volume dialog
                                                   box</alt>
@@ -114,7 +114,7 @@
                                 <li ixia_locid="385">
                                     <p ixia_locid="115">In the <nameliteral ixia_locid="116">Local
                                             Volume Groups</nameliteral> list, click <uicontrol ixia_locid="117">nova-local</uicontrol> to open the
-                                        Local Volume Group Detail page.<fig id="fig_n1g_rwm_4t" ixia_locid="118">
+                                        Local Volume Group Detail page.
                                             <image href="jow1443974043719.image" id="image_ng4_rwm_4t" ixia_locid="119">
                                                 <alt ixia_locid="120">TiS Local Volume Group
                                                   Detail</alt>
@@ -122,7 +122,7 @@
                                         </fig></p>
                                 </li>
                                 <li ixia_locid="386">
-                                    <p ixia_locid="121">Select the <uicontrol ixia_locid="122">Parameters</uicontrol> tab.<fig id="fig_y1n_cxm_4t" ixia_locid="123">
+                                    <p ixia_locid="121">Select the <uicontrol ixia_locid="122">Parameters</uicontrol> tab.
                                             <image href="jow1443974983289.image" id="image_htz_qym_4t" ixia_locid="124">
                                                 <alt ixia_locid="125">TiS Local Volume Group Detail
                                                   Parameters tab</alt>
@@ -131,7 +131,7 @@
                                 </li>
                                 <li ixia_locid="387">
                                     <p ixia_locid="126">Click <uicontrol ixia_locid="127">Edit</uicontrol>, and then set the <uicontrol ixia_locid="128">Instances Logical Volume
-                                            Size</uicontrol>.<fig id="fig_ok5_1ym_4t" ixia_locid="129">
+                                            Size</uicontrol>.
                                             <image href="jow1443975258969.image" id="image_a3q_3zm_4t" ixia_locid="130">
                                                 <alt ixia_locid="131">TiS Edit Local Volume Group
                                                   Parameter dialog</alt>

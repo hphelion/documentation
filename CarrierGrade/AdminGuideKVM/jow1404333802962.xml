@@ -13,10 +13,10 @@
     <body>
         <p>A simplified view of the health monitoring system is illustrated in the
             following figure:</p>
-        <fig id="fig_N10023_N1001C_N10001">
+        
             <title>Hardware and software health monitoring</title>
             <image href="jow1404333801231.image" id="image_w22_prw_g4"/>
-        </fig>
+        
         <dl>
             <dlentry>
                 <dt>Host monitoring</dt>

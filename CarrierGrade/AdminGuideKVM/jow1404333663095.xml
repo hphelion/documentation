@@ -12,24 +12,24 @@
         <author></author>
     </prolog>
     <body>
-        <p>You can create and edit flavors using the <wintitle>Flavors</wintitle>
+        <p>You can create and edit flavors using the <b>Flavors</b>
             page of the web administration interface. To access this page, open the
-                <uicontrol>Admin</uicontrol> menu, expand the <uicontrol>System</uicontrol> section,
-            and then select <uicontrol>Flavors</uicontrol>.</p>
+                <b>Admin</b> menu, expand the <b>System</b> section,
+            and then select <b>Flavors</b>.</p>
         <ul id="ul_iln_ycv_tr">
             <li>
-                <p>To create a flavor, click the <uicontrol>Create
-                        Flavor</uicontrol> button. The <wintitle>Create
-                        Flavor</wintitle> window appears, as illustrated below:</p>
-                <fig id="fig_N10027_N1001C_N10001">
+                <p>To create a flavor, click the <b>Create
+                        Flavor</b> button. The <b>Create
+                        Flavor</b> window appears, as illustrated below:</p>
+                
                     <image href="jow1404333661555.image" id="image_tl3_33x_zn" placement="inline"/>
-                </fig>
-                <p>The <wintitle>Create Flavor</wintitle> window
+                
+                <p>The <b>Create Flavor</b> window
                     has two tabs.</p>
                 <dl>
                     <dlentry>
-                        <dt><uicontrol>Flavor
-                                Information</uicontrol></dt>
+                        <dt><b>Flavor
+                                Information</b></dt>
                         <dd>
                             <p>Defines basic information for the flavor.</p>
                             <dl>
@@ -112,7 +112,7 @@
                         </dd>
                     </dlentry>
                     <dlentry>
-                        <dt><uicontrol>Flavor Access</uicontrol></dt>
+                        <dt><b>Flavor Access</b></dt>
                         <dd>
                             <p>Controls which projects can see and use the flavor. </p>
                         </dd>

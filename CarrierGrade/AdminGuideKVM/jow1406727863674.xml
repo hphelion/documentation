@@ -25,7 +25,7 @@
   <section id="section_N10036_N10024_N10001">
    <title>Configuration for External Access</title>
    <p>For external access, do not configure a board management network during the
-    controller configuration script (press <userinput>n</userinput> when prompted). </p>
+    controller configuration script (press <codeph>n</codeph> when prompted). </p>
    <p>After completing the script, you must also do the following:</p>
    <ul id="ul_kw4_qpp_ds">
     <li>
@@ -43,17 +43,17 @@
   <section id="section_N1006F_N10024_N10001">
    <title>Configuration for Internal Access</title>
    <p>For internal access, configure a board management network during the
-    controller configuration script (press <userinput>y</userinput> when prompted,
+    controller configuration script (press <codeph>y</codeph> when prompted,
     and then specify a VLAN ID and a subnet). This configures a VLAN ID on the controller management
     interface for use with a board management network. To complete the VLAN, you must connect the
     modules to VLAN-tagged ports on an internal L2 switch. The modules are assigned IP addresses
     from the specified subnet.</p>
-   <fig id="fig_lwg_xlp_ds">
+   
     <title>Internal-access board management network</title>
     <image href="psa1408575952625.image" id="image_mwg_xlp_ds" width="6in">
      <alt>board management network</alt>
     </image>
-   </fig>
+   
    <p>The figure above illustrates how the board management network operates when
     configured for internal access. Compute nodes connect using iLO modules, while
     controller nodes use the management port in tagged mode. As indicated in the figure, the
@@ -127,8 +127,8 @@
    </ul>
    <p>For module provisioning, consult the user documentation supplied with the
     equipment.</p>
-   <p>For host provisioning, you can use the <wintitle>Board
-     Management</wintitle> tab on the <wintitle>Edit Host</wintitle> dialog box, or
+   <p>For host provisioning, you can use the <b>Board
+     Management</b> tab on the <b>Edit Host</b> dialog box, or
     the CLI. For more information, see the <cite>HP Helion OpenStack Carrier Grade Software Installation
     Guide</cite>.</p>
   </section>

@@ -13,7 +13,7 @@
             <author ixia_locid="6">Pedro Sanchez</author>
         </prolog>
         <taskbody id="taskbody_N10036_N1000E_N10001">
-            <context id="context_N1003B_N10037_N1000F_N10001" ixia_locid="375">
+            
                 <p ixia_locid="289">To create a provider network using the CLI, use the following
                     command:</p>
                 <codeblock ixia_locid="290"><systemoutput ixia_locid="291">~(keystone_admin)$ </systemoutput><userinput ixia_locid="292">neutron providernet-create name \
@@ -46,8 +46,8 @@
                         </pd>
                     </plentry>
                 </parml>
-            </context>
-            <context id="context_N100C3_N10032_N1000F_N10001" ixia_locid="403">
+            
+            
                 <p ixia_locid="306">To add a segmentation range using the CLI, use the following
                     command:</p>
                 <codeblock ixia_locid="307"><systemoutput ixia_locid="308">~(keystone_admin)$ </systemoutput><userinput ixia_locid="309">neutron providernet-range-create <varname ixia_locid="310">provider_network</varname> \
@@ -135,26 +135,26 @@
                         </pd>
                     </plentry>
                 </parml>
-            </context>
-            <context id="context_N101CB_N10037_N1000F_N10001" ixia_locid="377">
+            
+            
                 <p ixia_locid="376">You can obtain information about provider networks and
                     segmentation ranges using the following commands.</p>
                 <codeblock ixia_locid="378"><systemoutput ixia_locid="379">~(keystone_admin)$ </systemoutput><userinput ixia_locid="380">neutron net-list-on-providernet <varname ixia_locid="381">providernet</varname></userinput></codeblock>
                 <codeblock ixia_locid="382"><systemoutput ixia_locid="383">~(keystone_admin)$ </systemoutput><userinput ixia_locid="384">neutron providernet-range-show <varname ixia_locid="385">providernet-range</varname></userinput></codeblock>
-            </context>
-            <context id="context_N1002B_N10028_N10001" ixia_locid="7">
+            
+            
                 <p ixia_locid="8">You must configure at least one provider network in order to
                     assign data interfaces to compute nodes and unlock the hosts. In the example
                     that follows, two provider networks, <nameliteral ixia_locid="9">provider-net-a</nameliteral> and <nameliteral ixia_locid="10">provider-net-b</nameliteral>, are configured. </p>
-            </context>
-            <prereq id="prereq_N1003C_N10028_N10001" ixia_locid="11">
+            
+            
                 <p conref="jow1404333506062.xml#jow1404333506062/prereq-controller-0-ready" ixia_locid="12"/>
             </prereq>
             <steps id="steps_hkv_vdp_wq">
                 <step conref="jow1404766496848.xml#jow1404766496848/source-nova-openrc" id="step_N10054_N10051_N1002E_N10001" ixia_locid="53">
                     <cmd ixia_locid="54"/>
                 </step>
-                <step id="step_N10051_N10045_N10028_N10001" ixia_locid="15">
+                 
                     <cmd ixia_locid="16">On the active controller's console, create the two example
                         provider networks.</cmd>
                     <stepxmp ixia_locid="18">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1441133993989" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1441133993989" xml:lang="en-us">
     <!-- Modification History
         
 -->
@@ -12,7 +12,7 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N1001D_N1001A_N10001">
+        
             <p><draft-comment author="jowens">CGTS-2523 (nominal)
                     added new topic, using material moved from an existing topic. The options for
                     setting a gateway differ for the admin user acting as admin (rather than as the
@@ -23,8 +23,8 @@
                 in this section assume you are the <codeph>admin</codeph> user.</p>
             <p>To add a gateway interface, use a command of the following form:</p>
             <codeblock>
-<systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron router-gateway-set <varname>router_id</varname> <varname>externalnet_id</varname> \
-[--disable-snat] [--fixed-ip <varname>gateway_addr</varname>]</userinput></codeblock>
+<codeph>~(keystone_admin)$ neutron router-gateway-set <varname>router_id</varname> <varname>externalnet_id</varname> \
+[--disable-snat] [--fixed-ip <varname>gateway_addr</varname>]</codeblock>
             <p>where</p>
             <parml>
                 <plentry>
@@ -53,81 +53,78 @@
                     options require administrator privileges. For more about the SNAT option, see
                         <xref href="jow1438192116883.xml"/>.</p>
             </note>
-        </context>
+        
         <ol>
-            <step id="step_N10066_N10063_N1001C_N10001">
-                <cmd>Log in as the user associated with the tenant.</cmd>
-            </step>
-            <step id="step_N1006F_N10063_N1001C_N10001">
-                <cmd>Open the <wintitle>Routers</wintitle> page.</cmd>
-                <choices id="choices_sf5_jkn_ft">
-                    <choice>
-                        <p>To open the page with tenant privileges, select <menucascade>
-                                <uicontrol>Project</uicontrol>
-                                <uicontrol>Network</uicontrol>
-                                <uicontrol>Routers</uicontrol>
-                            </menucascade>.</p>
-                    </choice>
-                    <choice>
-                        <p>To open the page with administrator privileges, select <menucascade>
-                                <uicontrol>Admin</uicontrol>
-                                <uicontrol>System</uicontrol>
-                                <uicontrol>Routers</uicontrol>
-                            </menucascade>.</p>
-                    </choice>
-                </choices>
-            </step>
-            <step id="step_N1008B_N10063_N1001C_N10001">
-                <cmd>In the list of existing routers, click the name of the router
-                    to be configured.</cmd>
+             
+                <li>Log in as the user associated with the tenant.</li>
+            
+             
+                <li>Open the <b>Routers</b> page.
                 
-                    <p>The <wintitle>Router Details</wintitle> page
+                    <ul>
+                        <li>To open the page with tenant privileges, select 
+                                <b>Project</b>, then
+                                <b>Network</b>, then
+                                <b>Routers</b>.
+                            </li>
+                        <li>To open the page with administrator privileges, select 
+                                <b>Admin</b>
+                                <b>System</b>
+                                <b>Routers</b>.</li>
+                    </ul>
+                
+                </li>
+             
+                <li>In the list of existing routers, click the name of the router
+                    to be configured.
+                
+                    <p>The <b>Router Details</b> page
                         appears.</p>
-                    <fig id="fig_N100C4_N100B5_N100AE_N100AA_N100A3_N10034_N1001C_N10001">
+                    
                         <image href="jow1441134829532.image" id="image_qyv_pxh_ft">
                             <alt>TiS Add Gateway</alt>
                         </image>
-                    </fig>
-                
-            </step>
-            <step id="step_N101A2_N100BA_N1001F_N10001">
-                <cmd>On the <uicontrol>Interfaces</uicontrol> tab,
-                    click <uicontrol>Set Gateway</uicontrol>.</cmd>
+                    
+                </li>
+            
+             
+                <li>On the <b>Interfaces</b> tab,
+                    click <b>Set Gateway</b>.
                 
                     <note id="note_N101CE_N101CA_N101B4_N100CF_N1001F_N10001">
-                        <p>If a gateway has already been added, a <uicontrol>Clear Gateway</uicontrol> button is present
+                        <p>If a gateway has already been added, a <b>Clear Gateway</b> button is present
                             instead.</p>
                         <p> </p>
                     </note>
-                    <p>The <wintitle>Set Gateway</wintitle> dialog
+                    <p>The <b>Set Gateway</b> dialog
                         box appears. </p>
-                    <fig id="fig_N10159_N1014A_N10143_N1011B_N10114_N10034_N1001C_N10001">
+                    
                         <image href="jow1441136505281.image" id="image_k1p_kb3_ft">
                             <alt>Tis Set Gateway admin</alt>
                         </image>
-                    </fig>
+                    
                     <dl>
                         <dlentry>
-                            <dt><uicontrol>External Network</uicontrol></dt>
+                            <dt><b>External Network</b></dt>
                             <dd>
                                 <p>Select a tenant network configured to provide
                                     external access.</p>
                             </dd>
                         </dlentry>
                         <dlentry>
-                            <dt><uicontrol>Router Name</uicontrol></dt>
+                            <dt><b>Router Name</b></dt>
                             <dd>
                                 <p>This field is shown for information only.</p>
                             </dd>
                         </dlentry>
                         <dlentry>
-                            <dt><uicontrol>Router ID</uicontrol></dt>
+                            <dt><b>Router ID</b></dt>
                             <dd>
                                 <p>This field is shown for information only.</p>
                             </dd>
                         </dlentry>
                         <dlentry>
-                            <dt><uicontrol>IP Address (optional)</uicontrol></dt>
+                            <dt><b>IP Address (optional)</b></dt>
                             <dd>
                                 <p>This field is shown only for users with
                                     administrator privileges. You can optionally specify an IP
@@ -136,7 +133,7 @@
                             </dd>
                         </dlentry>
                         <dlentry>
-                            <dt><uicontrol>Enable SNAT</uicontrol></dt>
+                            <dt><b>Enable SNAT</b></dt>
                             <dd>
                                 <p>This control is shown only for users with
                                     administrator privileges.  For more about the SNAT option, see
@@ -145,9 +142,9 @@
                         </dlentry>
                     </dl>
                     <p>To save the gateway gettings and close the dialog box, click
-                            <uicontrol>Set Gateway</uicontrol>.</p>
-                
-            </step>
+                            <b>Set Gateway</b>.</p>
+                </li>
+            
         </ol>
     </body>
-</task-wr>
+</topic>

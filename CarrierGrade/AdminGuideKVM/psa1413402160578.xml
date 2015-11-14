@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1413402160578">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic domains="(topic task topic)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1413402160578">
 <!-- Modification History
         
 -->
@@ -14,7 +14,7 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N10023_N10020_N10001">
+        
             <p>For all purposes, a PCI passthrough interface behaves as if it were
                 physically attached to the virtual machine. Therefore any potential throughput
                 limitations coming from the virtualized environment, such as the ones introduced by
@@ -49,8 +49,8 @@
                     <codeph>user1</codeph> on tenant <codeph>tenant1</codeph>, with a passthrough interface connected to
                 the tenant network <codeph>net0</codeph> identified with
                 VLAN ID 10.</p>
-        </context>
-        <prereq id="prereq_N10065_N10020_N10001">
+        
+        
             <note id="note_N10096_N10082_N10029_N10001">
                 <p>To use PCI passthrough or SR-IOV interfaces, you must have Intel
                     VT-d features enabled in the BIOS.</p>
@@ -58,70 +58,70 @@
             <p>The exercise assumes that the underlying provider network
                     <codeph>group0-data0</codeph> exists already, and that VLAN ID 10 is a
                 valid segmentation ID assigned to <codeph>tenant1</codeph>.</p>
-        </prereq>
+        
         <ol>
-            <step id="step_N10079_N10076_N10020_N10001">
-                <cmd>Log in as the <codeph>admin</codeph> user to the web management
-                    interface.</cmd>
-            </step>
-            <step id="step_N1009B_N10088_N10024_N10001">
-                <cmd>Lock the compute node you want to configure.</cmd>
-            </step>
-            <step id="step_N10086_N10076_N10020_N10001">
-                <cmd>Configure the Ethernet interface to be used as a PCI
-                    passthrough interface.</cmd>
+             
+                <li>Log in as the <codeph>admin</codeph> user to the web management
+                    interface.</li>
+            
+             
+                <li>Lock the compute node you want to configure.</li>
+            
+             
+                <li>Configure the Ethernet interface to be used as a PCI
+                    passthrough interface.
                 
-                    <p>Select the <wintitle>System
-                            Inventory</wintitle> window from the <uicontrol>Admin</uicontrol> panel, click the <uicontrol>Hosts</uicontrol> tab, click the name of the compute node where the PCI
-                        interface is available, click the <uicontrol>Interfaces</uicontrol> tab, and finally click the <uicontrol>Edit Interface</uicontrol> button associated with the
+                    <p>Select the <b>System
+                            Inventory</b> window from the <b>Admin</b> panel, click the <b>Hosts</b> tab, click the name of the compute node where the PCI
+                        interface is available, click the <b>Interfaces</b> tab, and finally click the <b>Edit Interface</b> button associated with the
                         interface you want to configure. Fill in the window as illustrated
                         below:</p>
-                    <fig id="fig_hfk_cfh_rr">
+                    
                         <image href="psa1428772332800.image" id="image_whc_5kh_rr">
                             <alt>TiS Edit PCI Passthrough Interface</alt>
                         </image>
-                    </fig>
+                    
                     <p>In this example, Ethernet interface <codeph>eth8</codeph> is assigned the network type <term>pci-passthrough</term>, and configured as connected to provider network
                             <codeph>group0-data0</codeph>. Click the
-                            <uicontrol>Save</uicontrol> button to proceed.</p>
+                            <b>Save</b> button to proceed.</p>
                     <p>The interface can also be configured from the CLI as
                         illustrated below:</p>
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-if-modify \
--nt pci-passthrough -p group0-data0 compute-0 eth8</userinput></codeblock>
+                    <codeblock>~(keystone_admin)$ system host-if-modify \
+-nt pci-passthrough -p group0-data0 compute-0 eth8</codeblock>
                 
-            </step>
-            <step id="step_N100E9_N10076_N10020_N10001">
-                <cmd>Create the <codeph>net0</codeph>
-                    tenant network</cmd>
+                </li>
+             
+                <li>Create the <codeph>net0</codeph>
+                    tenant network
                 
-                    <p>Select the <wintitle>Networks</wintitle>
-                        window from the <uicontrol>Admin</uicontrol> panel, click
-                        the <uicontrol>Networks</uicontrol> tab, and then click the
-                            <uicontrol>Create Network</uicontrol> button. Fill in
-                        the <wintitle>Create Network</wintitle> window as
+                    <p>Select the <b>Networks</b>
+                        window from the <b>Admin</b> panel, click
+                        the <b>Networks</b> tab, and then click the
+                            <b>Create Network</b> button. Fill in
+                        the <b>Create Network</b> window as
                         illustrated below. You must ensure that:</p>
                     <ul id="ul_pcn_vb4_tp">
                         <li>
                             <p>The <codeph>tenant1</codeph> tenant has access to the tenant network,
                                 either assigning it as the owner, as in the illustration (using
-                                    <uicontrol>Project</uicontrol>), or by enabling the shared
+                                    <b>Project</b>), or by enabling the shared
                                 flag.</p>
                         </li>
                         <li>
                             <p>The segmentation ID is set to 10. </p>
                         </li>
                     </ul>
-                    <fig id="fig_kwr_hd4_tp">
+                    
                         <image href="psa1413406273455.image" id="image_ofd_kd4_tp" placement="inline">
                             <alt>Creating a tenant network for use with PCI
                                 passthrough devices</alt>
                         </image>
-                    </fig>
-                    <p>Click the <uicontrol>Create Network</uicontrol> button to proceed.</p>
+                    
+                    <p>Click the <b>Create Network</b> button to proceed.</p>
                 
-            </step>
-            <step id="step_N10144_N10076_N10020_N10001">
-                <cmd>Configure the access switch.</cmd>
+                </li>
+             
+                <li>Configure the access switch.
                 
                     <p>Configure the physical port on the access switch used to
                         connect to Ethernet interface <codeph>eth8</codeph> as an access port with default VLAN ID of 10.
@@ -134,56 +134,57 @@
                             <xref href="jow1404333739778.xml"/> for other details regarding the
                         configuration of the access switch.</p>
                 
-            </step>
-            <step id="step_N101A0_N10088_N10024_N10001">
-                <cmd>Unlock the compute node.</cmd>
-            </step>
-            <step id="step_N1015D_N10076_N10020_N10001">
-                <cmd>Launch the virtual machine.</cmd>
-                <substeps id="substeps_snp_klt_tp">
-                    <substep>
-                        <cmd>Log in as user <codeph>user1</codeph> to the web management
-                            interface.</cmd>
-                    </substep>
-                    <substep>
-                        <cmd>Configure the network interfaces for the new virtual machine.</cmd>
+                </li>
+             
+                <li>Unlock the compute node.</li>
+            
+             
+                <li>Launch the virtual machine.
+                 <ol>
+                    
+                        <li>Log in as user <codeph>user1</codeph> to the web management
+                            interface.</li>
+                    
+                    
+                        <li>Configure the network interfaces for the new virtual machine.
                         
-                            <p>Open the <wintitle>Launch
-                                    Instance</wintitle> dialog by clicking the <uicontrol>Launch Interface</uicontrol> button on the
-                                    <wintitle>Instances</wintitle> window. Configure
+                            <p>Open the <b>Launch
+                                    Instance</b> dialog by clicking the <b>Launch Interface</b> button on the
+                                    <b>Instances</b> window. Configure
                                 the necessary options for the new virtual machine. In particular,
-                                click the <uicontrol>Networking</uicontrol> tab and
+                                click the <b>Networking</b> tab and
                                 add a PCI passthrough interface on the tenant network <codeph>net0</codeph>, as illustrated below. Add
                                 other network interfaces as needed.</p>
-                            <fig id="fig_yxy_t1g_tp">
+                            
                                 <image href="psa1413311389905.image" id="image_dbb_4dg_tp" placement="inline" width="5.5in">
                                     <alt>Assigning Passthrough PCI Ethernet
                                         Devices</alt>
                                 </image>
-                            </fig>
-                            <p>Click the <uicontrol>Launch</uicontrol> button to proceed.</p>
+                            
+                            <p>Click the <b>Launch</b> button to proceed.</p>
                             <p>Passthrough interfaces can be attached from the CLI when booting a
                                 new virtual machine, as illustrated below:</p>
-                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova boot \
+                            <codeblock>~(keystone_admin)$ nova boot \
 --nic net-id=704e9f3b,vif-model=pci-passthrough \
---flavor small --image cgcs-guest my-new-vm</userinput></codeblock>
+--flavor small --image cgcs-guest my-new-vm</codeblock>
                             <note id="note_N10230_N101DF_N101D6_N101C3_N101B9_N1008C_N10028_N10001">
                                 <p>By default, a VM that requires a PCI passthrough
                                     interface is instantiated only if a host NUMA node with a
                                     directly attached PCI interface is available. You can specify
                                     best-effort instantiation by using an extra specification. For
                                     more information, see <xref href="jow1436197980621.xml"/>.</p>
-                            </note>
-                        
-                    </substep>
-                </substeps>
-            </step>
+                            </note></li>
+                        </ol></li>
+                    
+                
+            
         </ol>
         
             <p>The new virtual machine instance is up now. It has a PCI passthrough
                 connection to the <codeph>net0</codeph> tenant network
                 identified with VLAN ID 10.</p>
-        </result>
-        <p conref="jow1439307476374.xml#jow1439307476374/p_N1023B_N10024_N10001" id="p_N10262_N10029_N10001"/>
+        <p conref="jow1439307476374.xml#jow1439307476374/postreq_N1023B_N10024_N10001"/>
+        
+        
     </body>
-</task-wr>
+</topic>

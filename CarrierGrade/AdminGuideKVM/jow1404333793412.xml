@@ -4,16 +4,16 @@
     <!-- Modification History
    -->
     <title>Overview</title>
-    <shortdesc>The <uicontrol>Overview</uicontrol> tab on the
-            <wintitle>Inventory Detail</wintitle> page summarizes core details about
+    <shortdesc>The <b>Overview</b> tab on the
+            <b>Inventory Detail</b> page summarizes core details about
         a host object.</shortdesc>
     <prolog><author/>
         <author/>
     </prolog>
     <body>
-        <fig id="fig_N10027_N10024_N10001">
+        
             <image href="jow1404333790747.image" id="image_zdr_ljz_l4"/>
-        </fig>
+        
         <p>The following items are included in the summary:</p>
         <ul id="ul_mjj_fkz_l4">
             <li>
@@ -27,7 +27,7 @@
                         &lt;hostname&gt; serialid=xxx</cmdname> to update it.</p>
             </li>
             <li>
-                <p>location, as entered by the operator using the <wintitle>Edit Host</wintitle> window (see
+                <p>location, as entered by the operator using the <b>Edit Host</b> window (see
             <xref href="jow1404333790046.xml"/>)</p>
             </li>
             <li>

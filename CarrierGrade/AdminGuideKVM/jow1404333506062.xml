@@ -12,7 +12,7 @@
         <author ixia_locid="5">Jim Owens</author>
     </prolog>
     <rcbody>
-        <context id="context_N10027_N10024_N10001" ixia_locid="6">
+        
             <p ixia_locid="7">You can assign one of the following personalities.</p>
             <simpletable id="simpletable_ysx_xr5_k4">
                 <strow>
@@ -40,8 +40,8 @@
                     </stentry>
                 </strow>
             </simpletable>
-        </context>
-        <prereq id="prerequisites" ixia_locid="20">
+        
+        
             <p ixia_locid="111">Before initializing a node, ensure that the following conditions are
                 satisfied:</p>
             <ul id="ul_adx_kts_v4">
@@ -74,7 +74,7 @@
             </ul>
         </prereq>
         <steps id="steps_N100AB_N10029_N10001">
-            <step id="step_N1007C_N10079_N1002E_N10001" ixia_locid="232">
+             
                 <!-- For a host-add installation, the first step (1 of 2).-->
                 <!-- For a host-update installation, not used. -->
                 <!-- For a Horizon installation, not used. -->
@@ -217,7 +217,7 @@
                     <codeblock ixia_locid="251"><systemoutput ixia_locid="253">~(keystone_admin)$ </systemoutput><userinput ixia_locid="255">system host-add -n controller-1 -p controller -m 08:00:27:23:BD:18</userinput></codeblock>
                 </stepxmp>
             </step>
-            <step id="boot-node" ixia_locid="569">
+             
                 <!--For a host-add installation, the second step (2 of 2). -->
                 <!--For a host-update installation, not used. -->
                 <!--For a Horizon installation, not used.  -->
@@ -230,7 +230,7 @@
                         bootstrap program.</p -->
     <!-- draft-comment>Jim - too much detail?</draft-comment -->
                     <p ixia_locid="574">The host boots from the network.</p>
-                    <fig id="fig_N100BC_N100A9_N100A1_N10091_N10024_N10001" ixia_locid="575">
+                    
                         <image alt="Waiting for this node to be configured." href="jow1404333500016.image" id="image_whb_vjd_gn" ixia_locid="576" width="4in"/>
                     </fig>
                     <p ixia_locid="622">It is assigned the personality specified in the
@@ -238,14 +238,14 @@
                         automatically.</p>
                     <p ixia_locid="624">A display-device menu appears on the console, with text
                         customized for the personality (Controller, Storage, or Compute Node). </p>
-                    <fig id="fig_jyd_4k2_lt" ixia_locid="552">
+                    
                         <image href="jow1412193160572.image" id="image_o5d_dmj_pt" ixia_locid="766">
                             <alt ixia_locid="767">HP Helion OpenStack Carrier Grade Controller Node Install</alt>
                         </image>
                     </fig>
                 </info>
             </step>
-            <step id="step_N10353_N100E2_N10029_N10001" ixia_locid="578">
+             
                 <!--For a host-add installation, not used. -->
                 <!--For a host-update installation, the first step (1 of 3). -->
                 <!--For a Horizon installation, the first step (1 of 2).  -->
@@ -257,12 +257,12 @@
                         bootstrap program.</p -->
                     <!-- draft-comment>Jim - too much detail?</draft-comment -->
                     <p ixia_locid="583">The host boots from the network.</p>
-                    <fig id="fig_frf_252_lt" ixia_locid="584">
+                    
                         <image alt="Waiting for this node to be configured." href="jow1404333500016.image" id="image_fwf_252_lt" ixia_locid="585" width="4in"/>
                     </fig>
                 </info>
             </step>
-            <step id="step_N104CA_N100E2_N10029_N10001" ixia_locid="434">
+             
                 <!--For a host-add installation, not used: -->
                 <!--For a host-update installation, the second step (2 of 3). -->
                 <!--For a Horizon installation, not used.  -->
@@ -284,7 +284,7 @@
                         configured.</p>
                 </info>
             </step>
-            <step id="step_N100B1_N10066_N1002C_N10001" ixia_locid="444">
+             
                 <!--For a host-add installation, not used: -->
                 <!--For a host-update installation, the third step (3 of 3).  -->
                 <!--For a Horizon installation, not used.  -->
@@ -418,19 +418,19 @@ boot_device=<varname ixia_locid="522">boot_device</varname> rootfs_device=<varna
                         automatically pushes the HP Helion OpenStack Carrier Grade installer image over the network
                         for the host to boot. The console of the host displays the HP Helion OpenStack Carrier Grade
                         welcome screen.</p>
-                    <fig id="fig_N100E3_N100CA_N100AE_N10066_N1002C_N10001" ixia_locid="504">
+                    
                         <image href="jow1412193160572.image" id="image_fld_lmj_pt" ixia_locid="768">
                             <alt ixia_locid="769">HP Helion OpenStack Carrier Grade Controller Node Install</alt>
                         </image>
                     </fig>
                 </stepresult>
             </step>
-            <step id="assign-personality" ixia_locid="421">
+             
                 <!--For a host-add installation, not used: -->
                 <!--For a host-update installation, not used.  -->
                 <!--For a Horizon installation, the second step (2 of 2).  -->
                 <cmd ixia_locid="422">Assign the required personality to the node.</cmd>
-                <substeps id="substeps_cdx_ds4_k4">
+                 <ol>
                     <substep id="open-hosts-list" ixia_locid="423">
                         <cmd id="open-hosts-lists-cmd" ixia_locid="424">Select the <uicontrol ixia_locid="425">Hosts</uicontrol> list.</cmd>
                         <info ixia_locid="43">
@@ -443,7 +443,7 @@ boot_device=<varname ixia_locid="522">boot_device</varname> rootfs_device=<varna
                             <p id="open-hosts-lists-new-node" ixia_locid="49">The new node is listed
                                 with an empty <uicontrol ixia_locid="50">Host Name</uicontrol> and
                                     <uicontrol ixia_locid="430">Personality</uicontrol>.</p>
-                            <fig id="fig_N10108_N100E4_N100D7_N100D3_N100CB_N10091_N10024_N10001" ixia_locid="431">
+                            
                                 <image href="jow1404333501487.image" id="image_yld_2zd_gn" ixia_locid="432" width="6in"/>
                             </fig>
                         </stepresult>
@@ -456,7 +456,7 @@ boot_device=<varname ixia_locid="522">boot_device</varname> rootfs_device=<varna
                         <stepresult ixia_locid="107">
                             <p ixia_locid="108">The <wintitle ixia_locid="131">Edit Host</wintitle> window
                                 appears.</p>
-                            <fig id="fig_N10129_N1011E_N10116_N100D3_N100CB_N10091_N10024_N10001" ixia_locid="59">
+                            
                                 <image href="jow1404333503033.image" id="image_wfz_h54_k4" ixia_locid="60"/>
                             </fig>
                         </stepresult>
@@ -485,7 +485,7 @@ boot_device=<varname ixia_locid="522">boot_device</varname> rootfs_device=<varna
                             <p ixia_locid="700">You can optionally set the boot device, rootfs device, and display
                                 mode for installation on the <uicontrol ixia_locid="701">Installation
                                     Parameters</uicontrol> tab.</p>
-                            <fig id="fig_u3p_bbn_mt" ixia_locid="702">
+                            
                                 <image href="jow1443358337894.image" id="image_rwg_kbn_mt" ixia_locid="703">
                                     <alt ixia_locid="704">TiS Edit Host Installation Parameters</alt>
                                 </image>
@@ -541,7 +541,7 @@ boot_device=<varname ixia_locid="522">boot_device</varname> rootfs_device=<varna
                             <p id="p-save-personality" ixia_locid="562">The node is restarted
                                 automatically, and a display-device menu appears on the node
                                 console.</p>
-                            <fig id="fig_N10166_N1015E_N10152_N100D3_N100CB_N10091_N10024_N10001" ixia_locid="563">
+                            
                                 <image href="jow1412193160572.image" id="image_lbd_4mj_pt" ixia_locid="770">
                                     <alt ixia_locid="771">HP Helion OpenStack Carrier Grade Controller Node Install</alt>
                                 </image>

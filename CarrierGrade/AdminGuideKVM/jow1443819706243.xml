@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr id="jow1443819706243" xml:lang="en-us">
+<topic id="jow1443819706243" xml:lang="en-us">
 <!-- Modification History
 
  -->
@@ -58,8 +58,8 @@
     </li>
    </ul>
   <p>For
-   example:<systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-sensor-modify controller-0 \
-d9af9433-44dd-4526-b0fd-8d7a0cdb877b suppress=True</userinput></p>
+   example:<codeph>~(keystone_admin)$ system host-sensor-modify controller-0 \
+d9af9433-44dd-4526-b0fd-8d7a0cdb877b suppress=True</codeph></p>
   <p>For more information about sensors and sensor groups, see <xref href="jow1443819549360.xml"/>.</p>
  </body>
 </topic>

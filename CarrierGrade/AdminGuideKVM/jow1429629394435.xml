@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1429629394435" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1429629394435" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -11,7 +11,7 @@
        
     </prolog>
     <body>
-        <context id="context_N10028_N1001C_N10001">
+        
             <p>To add a router to a tenant, you must be logged in as the user
                 associated with the tenant.</p>
             <p>As an alternative to the web administration interface, you can use
@@ -19,7 +19,7 @@
                 The examples in this section assume you are the <codeph>admin</codeph> user.</p>
             <p>To create a router from the CLI, use the <cmdname>neutron router-create</cmdname> command. For example: </p>
             <codeblock>
-<systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron router-create <varname>router_name</varname> --distributed=True</userinput></codeblock>
+<codeph>~(keystone_admin)$ neutron router-create <varname>router_name</varname> --distributed=True</codeblock>
             <p>where <varname>router_name</varname> is a name
                 assigned to the router.</p>
             <p>This example creates a distributed virtual router. If the <option>--distributed</option> option is omitted, the default setting
@@ -28,50 +28,50 @@
                 <p>Only the <codeph>admin</codeph> tenant can add a distributed virtual
                     router.</p>
             </note>
-        </context>
+        
         <ol>
-            <step id="step_N10064_N10061_N1001C_N10001">
-                <cmd>Log in as the user associated with the tenant.</cmd>
+             
+                <li>Log in as the user associated with the tenant.
                 
                     <p>The following instructions assume that the <codeph>admin</codeph>
                         tenant is logged in.</p>
                 
-            </step>
-            <step id="step_N1006D_N10061_N1001C_N10001">
-                <cmd>Select <menucascade>
-                        <uicontrol>Project</uicontrol>
-                        <uicontrol>Network</uicontrol>
-                        <uicontrol>Routers</uicontrol>
-                    </menucascade>.</cmd>
-            </step>
-            <step id="step_N10089_N10061_N1001C_N10001">
-                <cmd>On the <wintitle>Routers</wintitle> page, click <uicontrol>Create
-                        Router</uicontrol>.</cmd>
-                <stepresult>
+                </li>
+             
+                <li>Select 
+                        <b>Project</b>, then
+                        <b>Network</b>, then 
+                        <b>Routers</b>.
+                    .</li>
+            
+             
+                <li>On the <b>Routers</b> page, click <b>Create
+                        Router</b>
+                
                     <p>The Create Router dialog box appears.</p>
-                    <fig id="fig_zbr_vgc_5r">
+                    
                         <image href="jow1429637898140.image" id="image_lxp_f1h_1t">
                             <alt>Create Router (Admin tenant)</alt>
                         </image>
-                    </fig>
-                </stepresult>
-            </step>
-            <step id="step_N100B3_N10061_N1001C_N10001">
-                <cmd>Provide a <uicontrol>Router Name</uicontrol>.</cmd>
-            </step>
-            <step id="step_N100FA_N10081_N1001F_N10001" importance="optional">
-                <cmd>To add a connection to a tenant network configured for external access, select
-                    from the <codeph>External Network</codeph> drop-down menu.</cmd>
+                    
+                </li>
+            
+             
+                <li>Provide a <b>Router Name</b>.</li>
+            
+             
+                <li>To add a connection to a tenant network configured for external access, select
+                    from the <codeph>External Network</codeph> drop-down menu.
                 
                     <p>This adds a gateway for the router.  Alternatively, you can add a gateway
                         after the router is created. For more information, see <xref href="jow1429631834947.xml"/>.</p>
                 
-            </step>
-            <step id="step_N100C0_N10061_N1001C_N10001">
-                <cmd>Select the <uicontrol>Router Type</uicontrol>.</cmd>
+                </li>
+             
+                <li>Select the <b>Router Type</b>.
                 
                     <note id="note_N100CA_N100C7_N100BC_N10061_N1001C_N10001">
-                        <p>The <uicontrol>Router Type</uicontrol>
+                        <p>The <b>Router Type</b>
                             field is shown only for the <codeph>admin</codeph> user. For other tenants, a centralized router
                             is added. The <codeph>admin</codeph> user can
                             change this setting on behalf of another tenant after the router has
@@ -101,14 +101,14 @@
                     </dl>
                     <p>For more information about these choices, see <xref href="jow1429628777191.xml"/>.</p>
                 
-            </step>
-            <step id="step_N10120_N10061_N1001C_N10001">
-                <cmd>To save your settings and close the dialog box, click
-                        <uicontrol>Create Router</uicontrol>.</cmd>
-            </step>
+                </li>
+             
+                <li>To save your settings and close the dialog box, click
+                        <b>Create Router</b>.
+                </li>
         </ol>
-        <p id="p_N10127_N1001C_N10001">
+        
             <p>To attach router interfaces to tenant networks, see <xref href="jow1429631834947.xml"/>.</p>
-        </p>
+        
     </body>
-</task-wr>
+</topic>

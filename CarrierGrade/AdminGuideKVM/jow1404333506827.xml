@@ -11,15 +11,15 @@
         <author ixia_locid="3">Jim Owens</author>
     </prolog>
     <rcbody>
-        <context id="context_N1001F_N1001C_N10001" ixia_locid="4">
+        
             <p ixia_locid="5">Unlocking causes the host to be rebooted so that its configuration can
                 be updated.</p>
             <note id="note_N10027_N1001F_N1001C_N10001" ixia_locid="6">
                 <p ixia_locid="7">A newly added host is locked by default. To make it operational,
                     you must unlock it manually.</p>
             </note>
-        </context>
-        <prereq id="prereq_N10030_N1001C_N10001" ixia_locid="8">
+        
+        
             <p ixia_locid="9">Ensure that the required network interfaces have been defined.</p>
             <ul id="ul_gkf_wcn_m4">
                 <li ixia_locid="10">
@@ -33,7 +33,7 @@
             </ul>
         </prereq>
         <steps id="steps_N10066_N1001F_N10001">
-            <step id="lock-node" ixia_locid="48">
+             
                 <cmd ixia_locid="49">Lock the host to prepare it for configuration changes.</cmd>
                 <info ixia_locid="50">
                     <p ixia_locid="51">In the <uicontrol ixia_locid="52">Hosts</uicontrol> list,
@@ -43,7 +43,7 @@
                         and <uicontrol ixia_locid="59">Online</uicontrol>.</p>
                 </info>
             </step>
-            <step id="lock-or-unlock-node" ixia_locid="16">
+             
                 <cmd ixia_locid="17">In the <uicontrol ixia_locid="18">Hosts</uicontrol> list, on
                     the row associated with the host, click <uicontrol ixia_locid="19">More</uicontrol> to display a menu of actions.</cmd>
                 <choices id="choices_e2n_qfr_l4">
@@ -60,7 +60,7 @@
                     </choice>
                 </choices>
             </step>
-            <step id="unlock-node" ixia_locid="34">
+             
                 <cmd ixia_locid="35">Unlock the host to make it available for use.</cmd>
                 <info ixia_locid="36">
                     <p ixia_locid="37">In the <uicontrol ixia_locid="38">Hosts</uicontrol> list,  on the row associated with the

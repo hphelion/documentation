@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr id="jow1426182913166" xml:lang="en-us">
+<topic id="jow1426182913166" xml:lang="en-us">
 <!-- Modification History
 
  -->
@@ -14,13 +14,13 @@
   <note id="note_N10022_N1001F_N10001">
    <p>The information in this topic is preliminary and subject to change.</p>
   </note>
-  <p>To view host aggregates, open the <wintitle>Host Aggregates</wintitle> page from the
-    <uicontrol>Admin</uicontrol> menu.</p>
-  <fig id="fig_fjl_2y1_kr">
+  <p>To view host aggregates, open the <b>Host Aggregates</b> page from the
+    <b>Admin</b> menu.</p>
+  
    <image href="jow1426532903039.image" id="image_k2w_2y1_kr" width="6in">
     <alt>Host Aggregates page</alt>
    </image>
-  </fig>
+  
   <p>When the Nova Scheduler selects a compute node to instantiate a VM, it can use
    host aggregates to narrow the selection. For example, if the VM requires local storage, the Nova
    scheduler selects a host from the <codeph>local_storage_hosts</codeph>

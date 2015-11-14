@@ -33,19 +33,19 @@
             </li>
         </ul>
         <p>Use the following command to enable source MAC address filtering:</p>
-        <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron setting-update --tenant-id=&lt;TENANTID&gt; \
---mac-filtering={True|False}</userinput></codeblock>
+        <codeblock>~(keystone_admin)$ neutron setting-update --tenant-id=&lt;TENANTID&gt; \
+--mac-filtering={True|False}</codeblock>
         <p>Filtering can be enabled or disabled from the web management interface.
-            As the administrator, select <uicontrol>Projects</uicontrol> from the
-                <uicontrol>Identity</uicontrol> menu to display the <wintitle>Projects</wintitle> window. Then select the option <option>Edit Project</option> from the <option>More</option>
+            As the administrator, select <b>Projects</b> from the
+                <b>Identity</b> menu to display the <b>Projects</b> window. Then select the option <option>Edit Project</option> from the <option>More</option>
             drop-down menu of the desired tenant, as illustrated below.</p>
-        <fig id="fig_N10067_N1001A_N10001">
+        
             <image href="jow1404333733225.image" id="image_urc_nzt_m4" placement="inline" width="6in"/>
-        </fig>
-        <p>The <wintitle>Edit Project</wintitle> window is
-            displayed. The filtering option is available from the tab <uicontrol>Settings</uicontrol>, as illustrated below.</p>
-        <fig id="fig_N1007F_N1001A_N10001">
+        
+        <p>The <b>Edit Project</b> window is
+            displayed. The filtering option is available from the tab <b>Settings</b>, as illustrated below.</p>
+        
             <image href="jow1404333734792.image" id="image_q2j_pzt_m4" placement="inline" width="6in"/>
-        </fig>
+        
     </body>
 </topic>

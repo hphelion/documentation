@@ -4,16 +4,16 @@
     <!-- Modification History
    -->
     <title>Storage</title>
-    <shortdesc>The <uicontrol>Storage</uicontrol> tab on the <wintitle>Inventory Detail</wintitle> page presents storage details for a
+    <shortdesc>The <b>Storage</b> tab on the <b>Inventory Detail</b> page presents storage details for a
         host.</shortdesc>
     <prolog><author/>
         
         <author/>
     </prolog>
     <body>
-        <fig id="fig_N10027_N10024_N10001">
+        
             <image href="jow1404333782424.image" id="image_z11_xvg_m4" width="6in"/>
-        </fig>
+        
         <p>The information is presented in one or more lists, as determined by the
             host type.</p>
         <section id="section_N10043_N1002D_N10001">
@@ -204,29 +204,29 @@
 
         <section id="section_N100F6_N10024_N10001">
             <title>Creating a Storage Profile</title>
-            <p>Use the button <uicontrol>Create Storage Profile</uicontrol> on the
-          <uicontrol>Storage</uicontrol> tab to display the <wintitle>Create Storage
-          Profile</wintitle> window. From there you can create a new storage profile out of the
+            <p>Use the button <b>Create Storage Profile</b> on the
+          <b>Storage</b> tab to display the <b>Create Storage
+          Profile</b> window. From there you can create a new storage profile out of the
         currently defined storage volumes. An example for a storage node is illustrated below.</p>
-            <fig id="fig_N1010F_N100F7_N10024_N10001">
+            
                 <image href="jow1404333784081.image" id="image_vyp_lyg_m4" width="4in"/>
-            </fig>
+            
             <p>In this window you enter the name of the new profile,
           <codeph>hp-360-storage-profile</codeph> in this case, and then click the button
-          <uicontrol>Create Storage Profile</uicontrol> to execute. Available storage profiles are
-        listed, and can be removed, from the <wintitle>System Inventory</wintitle> page, as
+          <b>Create Storage Profile</b> to execute. Available storage profiles are
+        listed, and can be removed, from the <b>System Inventory</b> page, as
         described in <xref href="jow1404333787693.xml"/>.</p>
         </section>
          
         <section id="creating-storage-volume">
             <title>Creating a Storage Volume</title>
-            <p>Use the button <uicontrol>Create Storage
-                    Volume</uicontrol> on the <uicontrol>Storage</uicontrol> tab to
-                display the <wintitle>Create Storage Volume</wintitle> window, as
+            <p>Use the button <b>Create Storage
+                    Volume</b> on the <b>Storage</b> tab to
+                display the <b>Create Storage Volume</b> window, as
                 illustrated below.</p>
-            <fig id="fig_N10148_N10130_N10024_N10001">
+            
                 <image href="jow1404333785750.image" id="image_ndm_yyg_m4" width="4in"/>
-            </fig>
+            
             <p>The following fields are available:</p>
             <dl>
                 <dlentry>

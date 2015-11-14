@@ -4,15 +4,15 @@
     <!-- Modification History
    -->
     <title>Ports</title>
-    <shortdesc>The tab <uicontrol>Ports</uicontrol> on the <wintitle>Inventory Detail</wintitle> page presents information about the physical
+    <shortdesc>The tab <b>Ports</b> on the <b>Inventory Detail</b> page presents information about the physical
         ports on a host, as illustrated below.</shortdesc>
     <prolog><author/>
         <author/>
     </prolog>
     <body>
-        <fig id="fig_N10027_N10024_N10001">
+        
             <image href="jow1404333796281.image" id="image_vlm_zxz_l4" width="6in"/>
-        </fig>
+        
         <p>Currently none of the port attributes is configurable; they are all read
             directly from the hardware. Port information is presented in several columns, as
             follows:</p>

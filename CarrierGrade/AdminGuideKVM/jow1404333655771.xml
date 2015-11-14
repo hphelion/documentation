@@ -47,14 +47,14 @@
             live-migrates all virtual machine instances off of the compute node before
             administratively locking it.</p>
         <p>The <codeph>admin</codeph> user can also
-            initiate live migrations manually from the <wintitle>Instances</wintitle> page available by clicking the option <option>Instances</option> on the <uicontrol>Admin</uicontrol> side pane of
+            initiate live migrations manually from the <b>Instances</b> page available by clicking the option <option>Instances</option> on the <b>Admin</b> side pane of
             the web management interface. The <option>More</option> button of the
             selected instance provides the option <option>Live Migrate
-                Instance</option>. When selected, the <wintitle>Live
-                Migrate</wintitle> window is displayed as illustrated below:</p>
-        <fig id="fig_N1005C_N1001C_N10001">
+                Instance</option>. When selected, the <b>Live
+                Migrate</b> window is displayed as illustrated below:</p>
+        
             <image href="jow1404333654305.image" id="image_klp_d5n_j4" width="4in"/>
-        </fig>
+        
         <p>The following fields are available:</p>
         <dl>
             <dlentry>

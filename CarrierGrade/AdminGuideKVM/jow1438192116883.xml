@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1438192116883" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1438192116883" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -13,7 +13,7 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N10022_N1001F_N10001">
+        
             <p>You can enable or disable Source Network Address Translation for each
                 individual external network connection on a virtual router. By default, SNAT is
                 enabled for all external networks.</p>
@@ -26,8 +26,8 @@
                 required.</p>
             <p>System administrators can enable or disable SNAT using the following
                 command:</p>
-            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron router-update <varname>routername</varname> --external_gateway_info type=dict \
-network_id=<varname>externalnetwork</varname>,enable_snat=<varname>boolean</varname></userinput></codeblock>
+            <codeblock>~(keystone_admin)$ neutron router-update <varname>routername</varname> --external_gateway_info type=dict \
+network_id=<varname>externalnetwork</varname>,enable_snat=<varname>boolean</varname></codeblock>
             <p>where:</p>
             <parml>
                 <plentry>
@@ -70,6 +70,6 @@ network_id=<varname>externalnetwork</varname>,enable_snat=<varname>boolean</varn
                 <p>To overcome these limitations, you can use floating IP addresses
                     or make internal addresses public. For more information, see <xref href="jow1438192231731.xml"/>.</p>
             </note>
-        </context>
+        
     </body>
-</task-wr>
+</topic>

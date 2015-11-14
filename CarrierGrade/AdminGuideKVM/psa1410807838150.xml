@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410807838150">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic domains="(topic task topic)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410807838150">
 <!-- Modification History
         
 -->
@@ -13,7 +13,7 @@
         <author></author>
     </prolog>
     <body>
-        <context id="context_N1001F_N1001C_N10001">
+        
             <note id="note_N1002C_N10027_N10024_N10001" product="tis_small">
                 <p>The following procedure is for use with a system that has
                     separate controller and compute nodes. For a system with combined controller and
@@ -22,17 +22,17 @@
             <p>Restoring a HP Helion OpenStack Carrier Grade cluster from a set of backup files is done
                 by restoring one host at a time, starting with the controllers, then the storage
                 nodes, and finally the compute nodes.</p>
-        </context>
+        
         <prereq conref="jow1437656331081.xml#maintask/prereq_N1002D_N1001F_N10001" id="prereq_N1003F_N10024_N10001"/>
         <ol>
             <step conref="jow1437656331081.xml#maintask/common_start" conrefend="jow1437656331081.xml#maintask/common_end" id="step_N10077_N10074_N10024_N10001">
                 <cmd/>
-            </step>
+            
             <step conref="jow1437656331081.xml#maintask/restore_controller_1" conrefend="jow1437656331081.xml#maintask/restore_computes" id="step_N10054_N10045_N10024_N10001">
                 <cmd/>
-            </step>
+            
         </ol>
         <result conref="jow1437656331081.xml#maintask/result" id="result_N10065_N10024_N10001"/>
         <p conref="jow1437656331081.xml#maintask/restore_passwords" id="p_N1006B_N10024_N10001"/>
     </body>
-</task-wr>
+</topic>

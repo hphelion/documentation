@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr id="jow1443819549360" xml:lang="en-us">
+<topic id="jow1443819549360" xml:lang="en-us">
 <!-- Modification History
 
  -->
  <title>Sensors</title>
- <shortdesc>The <uicontrol>Sensors</uicontrol> tab on the <wintitle>Inventory Detail</wintitle> page presents details for sensors used to monitor host
+ <shortdesc>The <b>Sensors</b> tab on the <b>Inventory Detail</b> page presents details for sensors used to monitor host
   hardware health.</shortdesc>
  <prolog><author/>
   <author/>
@@ -20,11 +20,11 @@
    <p>Currrently, sensor support is implemented for Quanta BMCs. For more about BMC
     modules, see <xref href="jow1406727863674.xml"/>.</p>
   </note>
-  <fig id="fig_wnh_pk1_4t">
+  
    <image href="jow1443825878164.image" id="image_mxs_pk1_4t">
     <alt>TiS Inventory Detail Sensors tab</alt>
    </image>
-  </fig>
+  
   <section id="section_N100AE_N10024_N10001">
    <title>Sensor Status</title>
    <p>Each of the individual sensors in the <codeph>Sensors</codeph> list can report the following <codeph>Status</codeph> conditions:</p>

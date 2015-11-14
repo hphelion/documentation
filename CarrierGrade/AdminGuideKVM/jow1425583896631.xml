@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1425583896631" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1425583896631" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -12,7 +12,7 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N10022_N1001F_N10001">
+        
             <p>A VXLAN is a Layer 2 overlay network scheme on a Layer 3 network
                 infrastructure. Packets originating from VMs and destined for other VMs are
                 encapsulated with IP, UDP, and VXLAN headers and sent as Layer 3 packets. The IP
@@ -20,30 +20,30 @@
                 headers.</p>
             <p> You can configure VXLANs on HP Helion OpenStack Carrier Grade using the following
                 workflow.</p>
-        </context>
+        
         <steps id="steps_anc_b5z_gr">
-            <step id="step_N10036_N10032_N1001F_N10001">
-                <cmd>Set up a provider network of the VXLAN type.</cmd>
+             
+                <li>Set up a provider network of the VXLAN type.</li>
                 
                     <p>For details, see <xref href="jow1425585636142.xml"/>.</p>
                 
-            </step>
-            <step id="step_N1004B_N10032_N1001F_N10001">
-                <cmd>Configure the endpoint IP addresses of the compute nodes.</cmd>
+            
+             
+                <li>Configure the endpoint IP addresses of the compute nodes.</li>
                 
                     <p>For details, see <xref href="jow1425584170078.xml"/>.</p>
                 
-            </step>
-            <step id="step_N10060_N10032_N1001F_N10001">
-                <cmd>Establish routes between the hosts.</cmd>
+            
+             
+                <li>Establish routes between the hosts.</li>
                 
                     <p>For details, see <xref href="jow1425584215069.xml"/></p>
                 
-            </step>
+            
         </ol>
         <p id="p_N10072_N1001F_N10001">
             <p>You must also ensure that the networking environment meets certain
                 minimum requirements. For more information, see <xref href="jow1404333739174.xml"/>.</p>
         </p>
     </body>
-</task-wr>
+</topic>

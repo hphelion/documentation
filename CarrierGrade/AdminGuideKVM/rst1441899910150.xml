@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="rst1441899910150" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="rst1441899910150" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -11,7 +11,7 @@
         <author>Ron Stone</author>
     </prolog>
     <body>
-        <context id="context_N1001F_N1001C_N10001">
+        
             <p><draft-comment author="rstone">Topic added for
                     US61157</draft-comment>If this extra spec is not added, then the system will
                 automatically recover failed virtual machine instances. Set this option to false if,
@@ -29,47 +29,47 @@
                 the following:</p>
             <ul id="ul_orz_33t_lt">
                 <li>
-                    <p>As <term>admin</term>, use the <uicontrol>Instance Auto Recovery</uicontrol> selection in the <uicontrol>Create Flavor Extra Spec</uicontrol> drop-down menu. To
+                    <p>As <term>admin</term>, use the <b>Instance Auto Recovery</b> selection in the <b>Create Flavor Extra Spec</b> drop-down menu. To
                         access this menu, see <xref href="jow1429538642910.xml"/>.</p>
                 </li>
 
                     <li>
                     <p>As either <term>admin</term> or a tenant,
                         select <menucascade>
-                            <uicontrol>System</uicontrol>
-                            <uicontrol>Images</uicontrol>
-                            <uicontrol>Edit Image</uicontrol>
+                            <b>System</b>
+                            <b>Images</b>
+                            <b>Edit Image</b>
                             <uicontrol/>
-                        </menucascade> for the desired images and uncheck the <uicontrol>Instance Auto Recovery</uicontrol> option. </p>
+                        </menucascade> for the desired images and uncheck the <b>Instance Auto Recovery</b> option. </p>
                 </li>
                 <!-- RS: Old/alternate method
                     <li>
                     <p>As either <term>admin</term> or a tenant, select <menucascade>
-                            <uicontrol>System</uicontrol>
-                            <uicontrol>Images</uicontrol>
-                            <uicontrol>Edit Image</uicontrol>
-                            <uicontrol>Update Metadata</uicontrol>
+                            <b>System</b>
+                            <b>Images</b>
+                            <b>Edit Image</b>
+                            <b>Update Metadata</b>
                         </menucascade> for the desired images and add an entry with:</p>
                     <codeblock>sw_wrs_auto_recovery=false</codeblock>
                 </li> -->
             </ul>
-        </context>
+        
         <ol>
-            <step id="step_N1003F_N1003C_N1001C_N10001">
-                <cmd>To set the option from the command line do one of the
-                    following.</cmd>
+             
+                <li>To set the option from the command line do one of the
+                    following.</li>
                 <choices id="choices_cdc_hl5_ht">
-                    <choice>
+                    <ul>
                         <p>As <term>admin</term>, add an extra spec to a
                             flavor:</p>
-                        <codeblock><systemoutput>~(keystone)admin)$ </systemoutput><userinput>nova flavor-key <varname>flavorName</varname> set sw:wrs:auto_recovery=false</userinput></codeblock>
-                    </choice>
-                    <choice>
+                        <codeblock>~(keystone)admin)$ nova flavor-key <varname>flavorName</varname> set sw:wrs:auto_recovery=false</codeblock>
+                    </ul>
+                    <ul>
                         <p>As <term>admin</term> or a tenant:</p>
-                        <codeblock><systemoutput>~(keystone)admin)$ </systemoutput><userinput>glance image-update --property sw_wrs_auto_recovery=false <varname>imageName</varname></userinput></codeblock>
-                    </choice>
+                        <codeblock>~(keystone)admin)$ glance image-update --property sw_wrs_auto_recovery=false <varname>imageName</varname></codeblock>
+                    </ul>
                 </choices>
-            </step>
+            
         </ol>
     </body>
-</task-wr>
+</topic>

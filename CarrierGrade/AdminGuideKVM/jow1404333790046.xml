@@ -4,7 +4,7 @@
     <!-- Modification History
    -->
     <title>Host Inventory</title>
-    <shortdesc>The <uicontrol>Hosts</uicontrol> tab on the <wintitle>System Inventory</wintitle> page provides an overview of the current
+    <shortdesc>The <b>Hosts</b> tab on the <b>System Inventory</b> page provides an overview of the current
         state of all hosts in the HP Helion OpenStack Carrier Grade cluster. From this tab, you can obtain detailed
         information about the hosts, and execute maintenance operations.</shortdesc>
     <prolog><author/>
@@ -12,9 +12,9 @@
     </prolog>
     <body>
         <p>A sample hosts tab is illustrated below:</p>
-        <fig id="fig_N1002B_N10024_N10001">
+        
             <image href="jow1404333756975.image" id="image_fkn_nbs_l4" placement="inline" width="6in"/>
-        </fig>
+        
         <p>The information is refreshed periodically to reflect the ongoing changes
             on the cluster. It consists of the following columns:</p>
         <dl>
@@ -188,16 +188,16 @@
                     <p>The actions columns presents two buttons, as follows:</p>
                     <dl>
                         <dlentry>
-                            <dt><uicontrol>Edit Host</uicontrol></dt>
+                            <dt><b>Edit Host</b></dt>
                             <dd>
-                                <p>Clicking this button displays the <wintitle>Edit Host</wintitle> window as illustrated
+                                <p>Clicking this button displays the <b>Edit Host</b> window as illustrated
                                     below for a compute node:</p>
-                                <fig id="fig_N101C5_N101BA_N101B1_N101AE_N101A7_N101A0_N1003B_N10024_N10001">
+                                
                                     
                                     <image href="jow1404333534720.image" id="image_czz_xgn_mt">
                                         <alt>Edit Host interface profiles</alt>
                                     </image>
-                                </fig>
+                                
                                 <p>From this window you can modify the host name
                                     (compute nodes only), and apply profiles as needed.
                                     For more about profiles, see <xref href="jow1404333787693.xml"/>.</p>
@@ -207,8 +207,8 @@
                                     effect if the host is re-installed. For more information, see
                                     the <cite>HP Helion OpenStack Carrier Grade Software Installation
                                     Guide</cite>.</p>
-                                <p>The <uicontrol>Board
-                                        Management</uicontrol> tab gives you access to the
+                                <p>The <b>Board
+                                        Management</b> tab gives you access to the
                                     configuration of the management board, if available on the host.
                                     See <xref href="jow1406727863674.xml"/> for details.</p>
                                 <p>Note that this is the same window you use to
@@ -217,7 +217,7 @@
                             </dd>
                         </dlentry>
                         <dlentry>
-                            <dt><uicontrol>More</uicontrol> (when
+                            <dt><b>More</b> (when
                                 host is locked)</dt>
                             <dd>
                                 <p>This button gives you access to the list of
@@ -240,7 +240,7 @@
                                                 which no data interfaces are defined.</p>
                                             <p>You can unlock a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput> <userinput>system host-unlock <varname>hostname</varname></userinput></codeblock>
+                                            <codeblock>~(keystone_admin)$ </codeph> <codeph>system host-unlock <varname>hostname</varname></codeblock>
                                         </dd>
                                     </dlentry>
                                     <dlentry>
@@ -254,7 +254,7 @@
                                                 powered-on state. </p>
                                             <p>You can power off a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput> <userinput>system host-power-off <varname>hostname</varname></userinput></codeblock>
+                                            <codeblock>~(keystone_admin)$ </codeph> <codeph>system host-power-off <varname>hostname</varname></codeblock>
                                         </dd>
                                     </dlentry>
                                     <dlentry>
@@ -266,7 +266,7 @@
                                                 and the host is in a powered-off state.</p>
                                             <p>You can power on a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput> <userinput>system host-power-on <varname>hostname</varname></userinput></codeblock>
+                                            <codeblock>~(keystone_admin)$ </codeph> <codeph>system host-power-on <varname>hostname</varname></codeblock>
                                         </dd>
                                     </dlentry>
                                     <dlentry>
@@ -277,14 +277,14 @@
                                                 off first. The host then reboots automatically.</p>
                                             <p>You can reboot a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput> <userinput>system host-reboot <varname>hostname</varname></userinput></codeblock>
+                                            <codeblock>~(keystone_admin)$ </codeph> <codeph>system host-reboot <varname>hostname</varname></codeblock>
                                         </dd>
                                     </dlentry>
                                     <dlentry>
                                         <dt>Reset Host</dt>
                                         <dd>
                                             <p>Use this selection only if
-                                                  <uicontrol>Reboot Host</uicontrol> fails.  It
+                                                  <b>Reboot Host</b> fails.  It
                                                 performs an out-of-band reset, stopping and
                                                 restarting the host without ensuring that all system
                                                 processes are shut off first.</p>
@@ -294,7 +294,7 @@
                                                 powered-on state. </p>
                                             <p>You can reset a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput> <userinput>system host-reset <varname>hostname</varname></userinput></codeblock>
+                                            <codeblock>~(keystone_admin)$ </codeph> <codeph>system host-reset <varname>hostname</varname></codeblock>
                                         </dd>
                                     </dlentry>
                                     <dlentry>
@@ -314,7 +314,7 @@
                         erased.</p>
                                             <p>You can delete a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput> <userinput>system host-delete <varname>hostname</varname></userinput></codeblock>
+                                            <codeblock>~(keystone_admin)$ </codeph> <codeph>system host-delete <varname>hostname</varname></codeblock>
                                         </dd>
                                     </dlentry>
                                     <dlentry>
@@ -331,7 +331,7 @@
                             </dd>
                         </dlentry>
                         <dlentry>
-                            <dt><uicontrol>More</uicontrol> (when
+                            <dt><b>More</b> (when
                                 host is unlocked)</dt>
                             <dd>
                                 <p>This button gives you access to the list of
@@ -359,7 +359,7 @@
                                             </note>
                                             <p>You can lock a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput> <userinput>system host-lock <varname>hostname</varname></userinput></codeblock>
+                                            <codeblock>~(keystone_admin)$ </codeph> <codeph>system host-lock <varname>hostname</varname></codeblock>
                                         </dd>
                                     </dlentry>
                                     <dlentry>
@@ -374,7 +374,7 @@
                                                 Use this option with caution.</p>
                                             <p>You can force lock a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput> <userinput>system host-lock --force <varname>hostname</varname></userinput></codeblock>
+                                            <codeblock>~(keystone_admin)$ </codeph> <codeph>system host-lock --force <varname>hostname</varname></codeblock>
                                             <p>Note that a force lock operation on a
                                                 compute node causes an immediate service outage on
                                                 all hosted virtual machines.</p>
@@ -402,7 +402,7 @@
                                                 components.</p>
                                             <p>You can swact a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput> <userinput>system host-swact --force <varname>hostname</varname></userinput></codeblock>
+                                            <codeblock>~(keystone_admin)$ </codeph> <codeph>system host-swact --force <varname>hostname</varname></codeblock>
                                         </dd>
                                     </dlentry>
                                     <dlentry>
@@ -431,10 +431,10 @@
             <p>The current state of a host is determined by the allowed
                 combinations of the administrative, operational, and availability states at any
                 given time. The following figure illustrates the life cycle of a host.</p>
-            <fig id="fig_N1029C_N10290_N10024_N10001">
+            
                 <title>The Life Cycle of a Host</title>
                 <image href="jow1404333788253.image" id="image_szm_1lq_n4" placement="inline" width="4in"/>
-            </fig>
+            
             <p>In this figure:</p>
             <ul id="ul_opf_4lq_n4">
                 <li>

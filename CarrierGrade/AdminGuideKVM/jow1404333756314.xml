@@ -11,22 +11,22 @@
         <author/>
     </prolog>
     <body>
-        <p>Information about this object is available from the <uicontrol>Systems</uicontrol> tab on the
-        <wintitle>System Inventory</wintitle> page, as illustrated below.</p>
-        <fig id="fig_N1002F_N10020_N10001">
+        <p>Information about this object is available from the <b>Systems</b> tab on the
+        <b>System Inventory</b> page, as illustrated below.</p>
+        
             <image href="jow1404333751864.image" id="image_htj_rx4_k4" width="6in"/>
-        </fig>
+        
         <p>By default, the name of the system object is its internal UUID, and it
-            has no description. This can be changed from the <wintitle>Edit
-                System</wintitle> dialog box, accessible by clicking <uicontrol>Edit
-                System</uicontrol>, as follows:</p>
-        <fig id="fig_N10047_N10020_N10001">
+            has no description. This can be changed from the <b>Edit
+                System</b> dialog box, accessible by clicking <b>Edit
+                System</b>, as follows:</p>
+        
             <image href="jow1404333753420.image" id="image_hn2_cy4_k4"/>
-        </fig>
-        <p>After committing the changes, the <uicontrol>Systems</uicontrol> tab is displayed with the updated information:</p>
-        <fig id="fig_N1005B_N10020_N10001">
+        
+        <p>After committing the changes, the <b>Systems</b> tab is displayed with the updated information:</p>
+        
             <image href="jow1404333754858.image" id="image_c2y_qy4_k4"/>
-        </fig>
+        
         <p>The new name displays on the top left corner of the web management
             interface, and on the welcome message when logging in to the nodes using an SSH
             client.</p>

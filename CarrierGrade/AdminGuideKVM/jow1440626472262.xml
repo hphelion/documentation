@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1440626472262" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1440626472262" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -11,7 +11,7 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N1001E_N1001B_N10001">
+        
             <p><draft-comment author="jowens">US53369 topic
                     added</draft-comment>The <codeph>vtrace</codeph>
                 command initiates a packet-trace capture on a logical interface. To use it, you must
@@ -26,7 +26,7 @@
                     <codeph>tcpdump</codeph> option except <option>-i</option> to filter
                 and analyze the captured data.</p>
             <p>To initiate a packet trace, use the following
-                command:<codeblock><systemoutput>$ </systemoutput><userinput>sudo vtrace <varname>interface-uuid</varname> <varname>tcpdump-options</varname> <varname>filter-expression</varname></userinput></codeblock></p>
+                command:<codeblock>$ sudo vtrace <varname>interface-uuid</varname> <varname>tcpdump-options</varname> <varname>filter-expression</varname></codeblock></p>
             <p>where</p>
             <parml>
                 <plentry>
@@ -55,6 +55,6 @@
                     </pd>
                 </plentry>
             </parml>
-        </context>
+        
     </body>
-</task-wr>
+</topic>

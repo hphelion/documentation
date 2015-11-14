@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1426618822854" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1426618822854" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -12,10 +12,10 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N1001F_N1001C_N10001">
+        
             <p>You can use the web administration interface or the CLI to set up shared physical CPUs.</p>
             <p>To add or remove a shared physical CPU from the CLI, use a command of the following form:</p>
-            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-cpu-modify -f shared -p<varname>processor</varname> <varname>use_shared</varname> <varname>hostname</varname></userinput></codeblock>
+            <codeblock>~(keystone_admin)$ system host-cpu-modify -f shared -p<varname>processor</varname> <varname>use_shared</varname> <varname>hostname</varname></codeblock>
             <p>where</p>
             <parml>
                 <plentry>
@@ -39,46 +39,46 @@
             </parml>
             <p>For example, to set up a shared physical CPU on processor <codeph>0</codeph> of
                     <codeph>compute-0</codeph>:</p>
-            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-cpu-modify -f shared -p0 1 compute-0</userinput></codeblock>
-        </context>
+            <codeblock>~(keystone_admin)$ system host-cpu-modify -f shared -p0 1 compute-0</codeblock>
+        
         <ol>
             <step conref="jow1426453628262.xml#jow1426453628262/lock_host" id="step_N10096_N10093_N1001C_N10001">
                 <cmd/>
-            </step>
+            
             <step conref="jow1426453628262.xml#jow1426453628262/open_details_locked_host" id="step_N1009F_N10093_N1001C_N10001">
                 <cmd/>
-            </step>
-            <step id="step_N100A8_N10093_N1001C_N10001">
-                <cmd>Select the <uicontrol>Processor</uicontrol> tab.</cmd>
-            </step>
-            <step id="step_N100B5_N10093_N1001C_N10001">
-                <cmd>Click <uicontrol>Edit CPU Assignments</uicontrol>.</cmd>
+            
+             
+                <li>Select the <b>Processor</b> tab.</li>
+            
+             
+                <li>Click <b>Edit CPU Assignments</b>.</li>
                 
                     <p>This control is available only if the host is locked.</p>
                 
-            </step>
-            <step id="step_N100CA_N10093_N1001C_N10001">
-                <cmd>In the <wintitle>Edit CPU
-                        Assignments</wintitle> dialog box, use the <uicontrol>Shared</uicontrol>
-                    Function section to enable shared physical CPUs.</cmd>
+            
+             
+                <li>In the <b>Edit CPU
+                        Assignments</b> dialog box, use the <b>Shared</b>
+                    Function section to enable shared physical CPUs.</li>
                 
-                    <fig id="fig_gb4_h53_kr">
+                    
                         <image href="jow1426626160742.image" id="image_cs5_h53_kr" width="3in">
                             <alt>Edit CPU Assignments: Function Shared</alt>
                         </image>
-                    </fig>
+                    
                     <p>You can designate one core on each physical processor for
                         use as a shared physical CPU. The actual core is assigned from the pool of
                         available cores for the processor.</p>
                     <p>For example, to use a core on processor 0 as a shared physical CPU,
-                        set the <uicontrol># of Shared Physical Cores on Processor
-                            0</uicontrol> to 1. Valid values are <codeph>1</codeph> (to assign a core as a shared physical CPU) or <codeph>0</codeph> (if a shared physical CPU is not required on
+                        set the <b># of Shared Physical Cores on Processor
+                            0</b> to 1. Valid values are <codeph>1</codeph> (to assign a core as a shared physical CPU) or <codeph>0</codeph> (if a shared physical CPU is not required on
                         the processor.) </p>
                 
-            </step>
+            
         </ol>
         <p id="p_N10100_N1001C_N10001">
             <p>To configure a VM to use a shared physical CPU, see <xref href="jow1426625051841.xml"/>.</p>
         </p>
     </body>
-</task-wr>
+</topic>

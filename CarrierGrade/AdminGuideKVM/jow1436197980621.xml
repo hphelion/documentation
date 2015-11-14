@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1436197980621" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1436197980621" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -11,7 +11,7 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N1001F_N1001C_N10001">
+        
             <p>By default, when a VM is configured to use an SR-IOV or
                 PCI-passthrough interface, the VM is affined to a NUMA node that has direct hardware
                 access to the physical PCI interface. If none is available, the instantiation fails. </p>
@@ -24,7 +24,7 @@
                 drop-down menu. To access this menu, see <xref href="jow1429538642910.xml"/>.</p>
             <p>You can also specify the extra spec from the CLI by setting the following parameter
                 for a flavor:</p>
-            <codeblock><userinput>hw:wrs:pci_numa_affinity=<varname>pci_affinity</varname></userinput></codeblock>
+            <codeblock>hw:wrs:pci_numa_affinity=<varname>pci_affinity</varname></codeblock>
             <p>where <varname>pci_affinity</varname> is one of the
                 following:</p>
             <dl>
@@ -46,6 +46,6 @@
                 </dlentry>
             </dl>
             <p>For more information about using PCI interfaces, see <xref href="psa1413402160578.xml"/> and <xref href="psa1428687672712.xml"/>.</p>
-        </context>
+        
     </body>
-</task-wr>
+</topic>

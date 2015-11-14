@@ -75,8 +75,8 @@
     for changes.</p>
   </note>
   <p>To make changes using the web administration interface, you must be logged in
-   as the <codeph>admin</codeph> user.  Use the <wintitle>System Configuration</wintitle> pane, is available from the <uicontrol>System
-    Panel</uicontrol> section of the <uicontrol>Admin</uicontrol> menu. </p>
+   as the <codeph>admin</codeph> user.  Use the <b>System Configuration</b> pane, is available from the <b>System
+    Panel</b> section of the <b>Admin</b> menu. </p>
   <p>To make changes using the CLI, you must be logged in as the
     <codeph>wrsroot</codeph> user on the active controller, and sourced as the Keystone
     <codeph>admin</codeph> user. For more information, see <xref href="jow1413729179585.xml"/>.</p>

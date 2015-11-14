@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="psa1428687672712" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="psa1428687672712" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -13,7 +13,7 @@
         <author></author>
     </prolog>
     <body>
-        <context id="context_N10022_N1001F_N10001">
+        
             <p>The PCI-SIG Single Root I/O Virtualization and Sharing (SR-IOV)
                 specification defines a standardized mechanism to create individual virtual Ethernet
                 devices from a single physical Ethernet interface. For each exposed virtual Ethernet
@@ -55,8 +55,8 @@
                     <codeph>user1</codeph> on tenant <codeph>tenant1</codeph>, with a VF interface connected to the
                 tenant network <codeph>tenant1-net1</codeph> identified
                 with VLAN ID 20.</p>
-        </context>
-        <prereq id="prereq_N10065_N10020_N10001">
+        
+        
             <note id="note_N100B9_N100A5_N10024_N10001">
                 <p>To use PCI passthrough or SR-IOV interfaces, you must have Intel
                     VT-d features enabled in the BIOS.</p>
@@ -64,40 +64,40 @@
             <p>The exercise assumes that the underlying provider network
                     <codeph>group0-data0</codeph> exists already, and that
                 VLAN ID 20 is a valid segmentation ID assigned to <codeph>tenant1</codeph>.</p>
-        </prereq>
+        
         <ol>
-            <step id="step_N10079_N10076_N10020_N10001">
-                <cmd>Log in as the <codeph>admin</codeph>
-                    user to the web management interface.</cmd>
-            </step>
-            <step id="step_N100BC_N100A9_N1001F_N10001">
-                <cmd>Lock the compute node you want to configure.</cmd>
-            </step>
-            <step id="step_N10086_N10076_N10020_N10001">
-                <cmd>Configure the Ethernet interface to be used as a SR-IOV
-                    interface.</cmd>
+             
+                <li>Log in as the <codeph>admin</codeph>
+                    user to the web management interface.</li>
+            
+             
+                <li>Lock the compute node you want to configure.</li>
+            
+             
+                <li>Configure the Ethernet interface to be used as a SR-IOV
+                    interface.
                 
-                    <p>Select the <wintitle>System
-                            Inventory</wintitle> window from the <uicontrol>Admin</uicontrol> panel, click the <uicontrol>Hosts</uicontrol> tab, click the name of the compute node where the PCI
-                        interface is available, click the <uicontrol>Interfaces</uicontrol> tab, and finally click the <uicontrol>Edit Interface</uicontrol> button associated with the
+                    <p>Select the <b>System
+                            Inventory</b> window from the <b>Admin</b> panel, click the <b>Hosts</b> tab, click the name of the compute node where the PCI
+                        interface is available, click the <b>Interfaces</b> tab, and finally click the <b>Edit Interface</b> button associated with the
                         interface you want to configure. Fill in the window as illustrated
                         below:</p>
-                    <fig id="fig_hfk_cfh_rr">
+                    
                         <image href="psa1428767288855.image" id="image_zl3_ffh_rr">
                             <alt>TiS Edit SR-IOV Interface</alt>
                         </image>
-                    </fig>
+                    
                     <p>In this example, Ethernet interface <codeph>eth8</codeph> is assigned the network type <term>pci-sriov</term>, enabled to use 4 VFs, and configured as connected to
                         provider network <codeph>group0-data0</codeph>.
-                        Click the <uicontrol>Save</uicontrol> button to proceed.</p>
+                        Click the <b>Save</b> button to proceed.</p>
                     <p>The Maximum number of VFs displayed in this form is a read-only item which is
                         auto-discovered by the system by inspecting the specific NIC model. This
                         value is reported as 0 when the selected interface does not support
                         SR-IOV.</p>
                     <p>The interface can also be configured from the CLI as
                         illustrated below:</p>
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-if-modify \
--nt pci-sriov -N 4 -p group0-data0 compute-0 eth8</userinput></codeblock>
+                    <codeblock>~(keystone_admin)$ system host-if-modify \
+-nt pci-sriov -N 4 -p group0-data0 compute-0 eth8</codeblock>
                     <note id="note_N1013C_N100D7_N100CD_N100AF_N10023_N10001">
                         <p>By default, a VM that requires an SR-IOV interface is
                             instantiated only if a host NUMA node with a directly attached PCI
@@ -105,9 +105,9 @@
                             using an extra specification. For more information, see <xref href="jow1436197980621.xml"/>.</p>
                     </note>
                 
-            </step>
-            <step id="step_N10080_N1007D_N1001F_N10001">
-                <cmd>Create the <codeph>tenant1-net1</codeph> tenant network.</cmd>
+                </li>
+             
+                <li>Create the <codeph>tenant1-net1</codeph> tenant network.
                 
                     <p>You must ensure that:</p>
                     <ul id="ul_pcn_vb4_tp">
@@ -120,57 +120,57 @@
                             <p>The segmentation ID is set to 20. </p>
                         </li>
                     </ul>
-                
-            </step>
-            <step id="step_N10160_N100A9_N1001F_N10001">
-                <cmd>Configure the access switch.</cmd>
+                </li>
+            
+             
+                <li>Configure the access switch.
                 
                     <p>Configure the physical port on the access switch used to
                         connect to Ethernet interface <codeph>eth8</codeph> as an access port with default VLAN ID of 20.</p>
                 
-            </step>
-            <step id="step_N10178_N100A9_N1001F_N10001">
-                <cmd>Unlock the compute node.</cmd>
-            </step>
-            <step id="step_N10181_N100A9_N1001F_N10001">
-                <cmd>Launch the virtual machine.</cmd>
-                <substeps id="substeps_snp_klt_tp">
-                    <substep>
-                        <cmd>Log in as user <codeph>user1</codeph> to the web management interface.</cmd>
-                    </substep>
-                    <substep>
-                        <cmd>Configure the network interfaces for the new virtual
-                            machine.</cmd>
+                </li>
+             
+                <li>Unlock the compute node.</li>
+            
+             
+                <li>Launch the virtual machine.
+                 <ol>
+                    
+                        <li>Log in as user <codeph>user1</codeph> to the web management interface.</li>
+                    
+                    
+                        <li>Configure the network interfaces for the new virtual
+                            machine.
                         
-                            <p>Open the <wintitle>Launch
-                                    Instance</wintitle> dialog by clicking the <uicontrol>Launch Interface</uicontrol> button on the
-                                    <wintitle>Instances</wintitle> window. Configure
+                            <p>Open the <b>Launch
+                                    Instance</b> dialog by clicking the <b>Launch Interface</b> button on the
+                                    <b>Instances</b> window. Configure
                                 the necessary options for the new virtual machine. In particular,
-                                click the <uicontrol>Networking</uicontrol> tab and
+                                click the <b>Networking</b> tab and
                                 add a SR-IOV interface on the tenant network <codeph>tenant1-net1</codeph>, as illustrated
                                 below. Add other network interfaces as needed, there are as many
                                 SR-IOV ports available as VFs have been enabled.</p>
-                            <fig id="fig_yxy_t1g_tp">
+                            
                                 <image href="psa1428773859042.image" id="image_g4g_b4h_rr" width="6in">
                                     <alt>TiS Assign SR-IOV interface</alt>
                                 </image>
-                            </fig>
-                            <p>Click the <uicontrol>Launch</uicontrol> button to proceed.</p>
+                            
+                            <p>Click the <b>Launch</b> button to proceed.</p>
                             <p>SR-IOV interfaces can be attached from the CLI when
                                 booting a new virtual machine, as illustrated below:</p>
-                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova boot \
+                            <codeblock>~(keystone_admin)$ nova boot \
 --nic net-id=704e9f3b,vif-model=pci-sriov --flavor small \
---image cgcs-guest my-new-vm</userinput></codeblock>
+--image cgcs-guest my-new-vm</codeblock>
                         
-                    </substep>
-                </substeps>
-            </step>
+                        </li>
+                 </ol>
+                </li>
         </ol>
-        Host
+        
             <p>The new virtual machine instance is up now. It has a SR-IOV VF
                 connection to the <codeph>tenant1-net1</codeph> tenant
                 network identified with VLAN ID 20.</p>
-        </result>
-        <p conref="jow1439307476374.xml#jow1439307476374/p_N1023B_N10024_N10001" id="p_N10243_N10024_N10001"/>
+        
+        
     </body>
-</task-wr>
+</topic>

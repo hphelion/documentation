@@ -6,7 +6,7 @@
     <task id="maintask">
         <title ixia_locid="279"/>
         <taskbody>
-            <prereq id="prereq_N1002D_N1001F_N10001" ixia_locid="8">
+            
                 <p ixia_locid="9">Before you start the restore procedure you must ensure the following conditions are
                     in place:</p>
                 <ul id="ul_rfq_qfg_mp">
@@ -38,7 +38,7 @@
                 </ul>
             </prereq>    
         <steps id="steps_dxn_ldb_5s">
-            <step id="common_start" ixia_locid="6">
+             
                 <cmd ixia_locid="7">Install the HP Helion OpenStack Carrier Grade software on <nameliteral ixia_locid="140">controller-0</nameliteral> from the USB flash drive.</cmd>
                 <info ixia_locid="20">
                     <p ixia_locid="21">Refer to the <cite ixia_locid="241">HP Helion OpenStack Carrier Grade Software
@@ -50,10 +50,10 @@
                         interface.</p>
                 </stepresult>
             </step>
-            <step id="step_N10085_N1005F_N1001F_N10001" ixia_locid="25">
+             
                 <cmd ixia_locid="26">Log in to the console as user <nameliteral ixia_locid="27">wrsroot</nameliteral> with password <nameliteral ixia_locid="28">wrsroot</nameliteral>.</cmd>
             </step>
-            <step id="step_N10096_N1005F_N1001F_N10001" ixia_locid="29">
+             
                 <cmd ixia_locid="30">Ensure the backup files are available to the controller.</cmd>
                 <info ixia_locid="31">
                     <p ixia_locid="32">Plug the USB flash drive containing the backup files into the
@@ -63,7 +63,7 @@
                         available from a USB flash drive mounted in <filepath ixia_locid="41">/media/wrsroot</filepath> in the directory <filepath ixia_locid="42">backups</filepath>.</p>
                 </info>
             </step>
-            <step id="step_N100CB_N1005F_N1001F_N10001" ixia_locid="43">
+             
                 <cmd ixia_locid="44">Update the controller's software to the previous patching
                     level.</cmd>
                 <info ixia_locid="173">
@@ -101,7 +101,7 @@ COMPUTECONFIG             Available       n/a
 LIBCUNIT_CONTROLLER_ONLY   Applied        n/a</systemoutput></codeblock>
                 </stepresult>
             </step>
-            <step id="step_N10125_N1006E_N1001F_N10001" ixia_locid="194">
+             
                 <cmd ixia_locid="195">Restore the system configuration.</cmd>
                 <info ixia_locid="196">
                     <p ixia_locid="197">The controller's software is up to date now, at the same
@@ -122,7 +122,7 @@ Step 0 of 0 [#############################################] [100%]
 System restore complete </systemoutput></codeblock>
                 </stepxmp>
             </step>
-            <step id="step_N10101_N10011_N1000E_N10001" ixia_locid="52">
+             
                 <cmd ixia_locid="53">Authenticate to the system as Keystone user <nameliteral ixia_locid="54">admin</nameliteral>.</cmd>
                 <info ixia_locid="55">
                     <p ixia_locid="56">Source the <nameliteral ixia_locid="57">admin</nameliteral>
@@ -132,7 +132,7 @@ System restore complete </systemoutput></codeblock>
                     <codeblock ixia_locid="59"><systemoutput ixia_locid="256">$ </systemoutput><userinput ixia_locid="61">cd; source /etc/nova/openrc</userinput></codeblock>
                 </stepxmp>
             </step>
-            <step id="common_end" ixia_locid="62">
+             
                 <cmd ixia_locid="63">Restore the system images.</cmd>
                 <stepxmp ixia_locid="64">
                     <codeblock ixia_locid="65"><systemoutput ixia_locid="257">~(keystone_admin)$ </systemoutput><userinput ixia_locid="67">sudo config_controller --restore-images \
@@ -149,9 +149,9 @@ Images restore complete</systemoutput></codeblock>
                         remove it now.</p>
                 </info>
             </step><!-- The next steps are for the original separate-nodes procedure. They are brought in using conref and conrefend. After them, some of the same steps, specialized for small footprint, are included. -->
-            <step id="restore_controller_1" ixia_locid="280">
+             
                 <cmd ixia_locid="281">Restore <nameliteral ixia_locid="282">controller-1</nameliteral>.</cmd>
-                <substeps id="substeps_wt4_5dh_mp">
+                 <ol>
                     <substep ixia_locid="283">
                         <cmd ixia_locid="284">List the current state of the hosts.</cmd>
                         <stepxmp ixia_locid="285">
@@ -210,7 +210,7 @@ Images restore complete</systemoutput></codeblock>
                         before proceeding to the next step.</p>
                 </stepresult>
             </step>
-            <step id="step_N101BB_N1005F_N1001F_N10001" ixia_locid="105">
+             
                 <cmd ixia_locid="106">Restore the storage nodes.</cmd>
                 <info ixia_locid="109">
                     <p ixia_locid="110">You need to restore the storage nodes if you are using the
@@ -231,13 +231,13 @@ Images restore complete</systemoutput></codeblock>
 +----+--------------+-------------+----------------+-------------+--------------+</systemoutput></codeblock>
                 </stepresult>
             </step>
-            <step id="restore_cinder_vols" ixia_locid="101">
+             
                 <cmd ixia_locid="102">Restore Cinder volumes.</cmd>
                 <info ixia_locid="103">
                     <p ixia_locid="104">You restore Cinder volumes by importing them from the backup
                         files. You must import all volume backup files, one at a time.</p>
                 </info>
-                <substeps id="substeps_xhg_151_np">
+                 <ol>
                     <substep ixia_locid="204">
                         <cmd ixia_locid="205">Delete any snapshots that may exist in the
                             system.</cmd>
@@ -320,7 +320,7 @@ Images restore complete</systemoutput></codeblock>
                     </substep>
                 </substeps>
             </step>
-            <step id="remove_error_vols" ixia_locid="346">
+             
                 <cmd ixia_locid="347">Remove any <i ixia_locid="348">in-use</i> volumes that remain
                     in error.</cmd>
                 <info ixia_locid="349">
@@ -334,7 +334,7 @@ Images restore complete</systemoutput></codeblock>
                             <nameliteral ixia_locid="354">53ad007a-...</nameliteral> failed to
                         restore. Its status is then reported as <nameliteral ixia_locid="355">error</nameliteral>.</p>
                 </info>
-                <substeps id="substeps_trd_3hq_pp">
+                 <ol>
                     <substep ixia_locid="356">
                         <cmd ixia_locid="357">Find the associated virtual machine instance.</cmd>
                         <info ixia_locid="358">
@@ -358,7 +358,7 @@ Images restore complete</systemoutput></codeblock>
                     </substep>
                 </substeps>
             </step>
-            <step id="restore_computes" ixia_locid="374">
+             
                 <cmd ixia_locid="375">Restore the compute nodes, one at a time.</cmd>
                 <info ixia_locid="376">
                     <p ixia_locid="377">You restore these hosts following the same procedure used to
@@ -380,7 +380,7 @@ Images restore complete</systemoutput></codeblock>
                 </stepresult>
             </step>
             <!-- The next steps are specialized versions for small footprint -->
-            <step id="remove_error_vols_small" ixia_locid="386">
+             
                 <cmd ixia_locid="387">Remove any <i ixia_locid="388">in-use</i> volumes that remain
                     in error.</cmd>
                 <info ixia_locid="389">
@@ -395,7 +395,7 @@ Images restore complete</systemoutput></codeblock>
                         <nameliteral ixia_locid="394">53ad007a-...</nameliteral> failed to
                         restore. Its status is then reported as <nameliteral ixia_locid="395">error</nameliteral>.</p>
                 </info>
-                <substeps id="substeps_trd_3hq_pp_small">
+                 <ol>
                     <substep ixia_locid="396">
                         <cmd ixia_locid="397">Find the associated virtual machine instance.</cmd>
                         <info ixia_locid="398">
@@ -419,7 +419,7 @@ Images restore complete</systemoutput></codeblock>
                     </substep>
                 </substeps>
             </step>
-                    <step id="step_N104E9_N10062_N1001D_N10012_N1000F_N10001" ixia_locid="414">
+                     
                         <cmd ixia_locid="415">Restore the compute functions, one at a time.</cmd>
                         <info ixia_locid="416">
                             <p ixia_locid="417">You restore these hosts following the same procedure
@@ -441,9 +441,9 @@ Images restore complete</systemoutput></codeblock>
                                 automatically.</p>
                         </stepresult>
                     </step>
-                    <step id="restore_controller_1_small" ixia_locid="311">
+                     
                         <cmd ixia_locid="312">Restore <nameliteral ixia_locid="313">controller-1</nameliteral>.</cmd>
-                        <substeps id="substeps_hyb_znc_5s">
+                         <ol>
                             <substep ixia_locid="314">
                                 <cmd ixia_locid="315">List the current state of the hosts.</cmd>
                                 <stepxmp ixia_locid="316">

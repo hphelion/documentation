@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="rst1443102141092" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="rst1443102141092" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -12,19 +12,19 @@
         
     </prolog>
     <body>
-        <context id="context_N10025_N10022_N10001">
+        
             <p>To configure a management LAG interface you first need to remove the
                 management network type from the existing management Ethernet interface and then add
                 a new AE interface, specifying the <option>mgmt</option> network
                 type, <option>ae</option> interface type, <option>802.3 AE</option> mode, transmit hash policy and the slave interfaces.</p>
-        </context>
-        <prereq id="prereq_N10043_N10026_N10001">
+        
+        
             <p>The node must be locked to edit an interface.</p>
-        </prereq>
-        <context id="context_N1004E_N10026_N10001">
+        
+        
             <p>From the command line, you would first delete and then recreate the
                 management interface.</p>
-            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-if-modify â€“nt none <varname>node</varname> <varname>interface</varname></userinput></codeblock>
+            <codeblock>~(keystone_admin)$ system host-if-modify â€“nt none <varname>node</varname> <varname>interface</varname></codeblock>
             <p>where</p>
             <parml>
                 <plentry>
@@ -42,7 +42,7 @@
                 </plentry>
             </parml>
             <p>You would then create the new interface.</p>
-            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-if-add -nt mgmt -a 802.3ad -x layer2 <varname>node</varname> <varname>interface</varname> ae none <varname>ports</varname></userinput></codeblock>
+            <codeblock>~(keystone_admin)$ system host-if-add -nt mgmt -a 802.3ad -x layer2 <varname>node</varname> <varname>interface</varname> ae none <varname>ports</varname></codeblock>
             <p>where</p>
             <parml>
                 <plentry>
@@ -65,44 +65,44 @@
                 </plentry>
             </parml>
             <p>For example:</p>
-            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-if-add -nt mgmt -a 802.3ad -x layer2 compute-0 bond0 ae none eth0 eth1</userinput></codeblock>
-        </context>
+            <codeblock>~(keystone_admin)$ system host-if-add -nt mgmt -a 802.3ad -x layer2 compute-0 bond0 ae none eth0 eth1</codeblock>
+        
         
 <!-- RS: Commenting out until able to confirm UI & grab screen
             <ol>
-            <step id="step_N100DF_N100DC_N10022_N10001">
-                <cmd>List existing interfaces on the node. </cmd>
+             
+                <li>List existing interfaces on the node. </li>
                 
                     <p>From <menucascade>
-                        <uicontrol>System</uicontrol>
-                        <uicontrol>Inventory</uicontrol>
-                        <uicontrol>/>
-                        <uicontrol>/>
-                    </menucascade> select the <uicontrol>Hosts</uicontrol> tab.</p>
+                        <b>System</b>
+                        <b>Inventory</b>
+                        <b>/>
+                        <b>/>
+                    </menucascade> select the <b>Hosts</b> tab.</p>
                 
-            </step>
-            <step id="step_N10106_N100DC_N10022_N10001">
-                <cmd>From the <wintitle>Inventory Detail</wintitle>, open the
-                    <uicontrol>Interfaces</uicontrol> tab and click <uicontrol>Edit</uicontrol>
-                    for the interface you wish to change.</cmd>
-            </step>
-            <step id="step_N1011B_N100DC_N10022_N10001">
-                <cmd>Un-check the current network type, select <uicontrol>none</uicontrol> as the
-                    network type, and click <uicontrol>Save</uicontrol>.</cmd>
+            
+             
+                <li>From the <b>Inventory Detail</b>, open the
+                    <b>Interfaces</b> tab and click <b>Edit</b>
+                    for the interface you wish to change.</li>
+            
+             
+                <li>Un-check the current network type, select <b>none</b> as the
+                    network type, and click <b>Save</b>.</li>
                 
-                    <fig id="fig_N1012B_N10128_N10119_N100DC_N10022_N10001">
+                    
                         <image href="rst1443030764664.image"/>
-                    </fig>
+                    
                 
-            </step>
-            <step id="step_N1013A_N100DC_N10022_N10001">
-                <cmd>Edit the interface as follows. </cmd>
+            
+             
+                <li>Edit the interface as follows. </li>
                 
                     <p>AE interface, specifying the <option>mgmt</option> network type,
                             <option>ae</option> interface type, <option>802.3 AE</option> mode,
                         transmit hash policy and the slave interfaces.</p>
                 
-            </step>
+            
         </ol>-->
     </body>
-</task-wr>
+</topic>

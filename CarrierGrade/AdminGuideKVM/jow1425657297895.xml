@@ -11,12 +11,12 @@
             <author ixia_locid="3">Jim Owens</author>
         </prolog>
         <taskbody id="taskbody_N10031_N1000E_N10001">
-            <prereq id="prereq_N10027_N10024_N10001" ixia_locid="266">
+            
                 <p ixia_locid="22">This task assumes that provider networks have already been
                     created to unlock the compute nodes and make the system operational. For more
                     information, see <xref href="jow1424192677556.xml" ixia_locid="355"/>.</p>
             </prereq>
-            <context id="context_N10037_N10024_N10001" ixia_locid="230">
+            
                 <p id="seg_range_definition" ixia_locid="267">Segmentation ranges are sets of
                     contiguous identifiers defined on a provider network. Each ID is used to
                     implement a tenant network. </p>
@@ -28,9 +28,9 @@
                     six VLAN IDs are needed. Several large segmentation ranges are defined, using
                     both provider networks, so that more than enough VLAN IDs are available to meet
                     the requirements.</p>
-            </context>
+            
             <steps id="steps_f4b_2gf_hr">
-                <step id="step_N10037_N10034_N1001C_N10001" ixia_locid="9">
+                 
                     <cmd ixia_locid="10">List the provider networks currently defined on the
                         system.</cmd>
                     <info ixia_locid="11">
@@ -40,7 +40,7 @@
                     <stepresult ixia_locid="16">
                         <p ixia_locid="17">The <wintitle ixia_locid="18">Provider
                                 Networks</wintitle> page appears.</p>
-                        <fig id="fig_N1005D_N10052_N10037_N10034_N1001C_N10001" ixia_locid="19">
+                        
                             <image href="jow1411603875640.image" id="image_qcn_cls_np" ixia_locid="24" placement="inline" width="5.5in">
                                 <alt ixia_locid="25">Two provider networks with no segmentation
                                     ranges</alt>
@@ -52,7 +52,7 @@
                             use any two provider networks of the VLAN type.</p>
                     </stepresult>
                 </step>
-                <step id="step_N100A8_N1004A_N10024_N10001" ixia_locid="272">
+                 
                     <cmd ixia_locid="273">Click the name of the provider network where you want to
                         create a segmentation range.</cmd>
                     <info ixia_locid="358">
@@ -61,12 +61,12 @@
                     <stepresult ixia_locid="246">
                         <p ixia_locid="248">The <wintitle ixia_locid="250">Provider Network
                                 Overview</wintitle> page appears. </p>
-                        <fig id="fig_jzv_qbj_wq" ixia_locid="252">
+                        
                             <image href="jow1404333678017.image" id="image_tzv_qbj_wq" ixia_locid="254" placement="inline" width="6in"/>
                         </fig>
                     </stepresult>
                 </step>
-                <step id="step_N100E6_N1004A_N10024_N10001" ixia_locid="275">
+                 
                     <cmd id="cmd_add_seg_range" ixia_locid="276">Add a segmentation range and assign it to a tenant. </cmd>
                     <info id="info_add_seg-range" ixia_locid="176">
                         <p id="p_create_range" ixia_locid="178">On the <wintitle ixia_locid="180">Provider Network
@@ -159,12 +159,12 @@
                     <info id="info_pnet_a_tenant1_screen" ixia_locid="361">
                         <p ixia_locid="362">To add a segmentation range on <nameliteral ixia_locid="277">provider-net-a</nameliteral> for use by <nameliteral ixia_locid="279">tenant1</nameliteral>, fill in the form as
                             illustrated below.</p>
-                        <fig id="fig_ucw_mxh_wq" ixia_locid="186">
+                        
                             <image href="jow1404333680994.image" id="image_odw_mxh_wq" ixia_locid="92" placement="inline" width="4in"/>
                         </fig>
                     </info>
                 </step>
-                <step id="step_N101B9_N1005C_N10032_N1000F_N10001" ixia_locid="377">
+                 
                     <cmd id="cmd_commit_seg_range" ixia_locid="378">Click <uicontrol ixia_locid="190">Create Segmentation Range</uicontrol> to
                         commit the changes.</cmd>
                 </step>

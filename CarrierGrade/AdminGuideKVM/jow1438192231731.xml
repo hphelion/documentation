@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1438192231731" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1438192231731" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -11,7 +11,7 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N1001F_N1001C_N10001">
+        
             <p>You can use source network address translation (SNAT) or floating IP
                 addresses to expose VMs to an external network. Alternatively, you can use an
                 external NAT device, or use a network address space for the VMs that is directly
@@ -82,12 +82,12 @@
             <p>To enable or disable SNAT, see <xref href="jow1438192116883.xml"/>.</p>
             <p>To configure floating IP addresses for VMs, refer to the public
                 OpenStack documentation.</p>
-        </context>
-        <prereq id="prereq_N100FD_N1001F_N10001">
+        
+        
             <p>To connect VMs to external networks, you require an internal tenant network for the
                 VMs, an external tenant network connected to an edge router, and a virtual router
                 attached to both networks. For more information about adding and configuring these
                 components, see the <cite>HP Helion OpenStack Carrier Grade Reference Deployment Scenarios</cite>.</p>
-        </prereq>
+        
     </body>
-</task-wr>
+</topic>

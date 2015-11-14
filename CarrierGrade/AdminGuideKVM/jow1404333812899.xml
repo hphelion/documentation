@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333812899">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic ditaarch:DITAArchVersion="1.2" domains="(topic task topic)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333812899">
     <!-- Modification History
         
 -->
@@ -12,7 +12,7 @@
         
     </prolog>
     <body>
-        <context id="context_N10023_N10020_N10001">
+        
             <p>This HOT template creates a load balancer VM
                     (<codeph>OS::Nova::Server</codeph>) and a scalable pool of server VMs
                     (<codeph>OS::Heat::AutoScalingGroup</codeph> of
@@ -21,68 +21,68 @@
                 utilization meter. Instances are added or removed based on this information.</p>
             <p>Use an <codeph>admin</codeph> account to run
                 this template.</p>
-        </context>
+        
         <ol>
-            <step id="step_N1005C_N10059_N10020_N10001">
-                <cmd>Collect the required parameter values for this template.</cmd>
-                <substeps id="substeps_wqc_mlv_34">
-                    <substep>
+             
+                <li>Collect the required parameter values for this template.</li>
+                 <ol>
+                    
                         <cmd conref="jow1404333809730.xml#jow1404333809730/locate-flavor"/>
-                    </substep>
-                    <substep>
+                    
+                    
                         <cmd conref="jow1404333809730.xml#jow1404333809730/locate-keypair"/>
-                    </substep>
-                    <substep>
+                    
+                    
                         <cmd conref="jow1404333809730.xml#jow1404333809730/locate-image"/>
-                    </substep>
-                    <substep>
-                        <cmd>On the <menucascade>
-                                <uicontrol>Admin</uicontrol>
-                                <uicontrol>System Panel</uicontrol>
-                                <uicontrol>Networks</uicontrol>
-                            </menucascade> page, click the <uicontrol>Name</uicontrol> of each required network in turn, in order to open
-                            the Network Overview page and obtain the network <uicontrol>ID</uicontrol>. For this template, a public network
-                            ID and an internal network ID are required.</cmd>
-                    </substep>
+                    
+                    
+                        <li>On the <menucascade>
+                                <b>Admin</b>
+                                <b>System Panel</b>
+                                <b>Networks</b>
+                            </menucascade> page, click the <b>Name</b> of each required network in turn, in order to open
+                            the Network Overview page and obtain the network <b>ID</b>. For this template, a public network
+                            ID and an internal network ID are required.</li>
+                    
                 </substeps>
-            </step>
-            <step conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N10096_N10059_N10020_N10001"><cmd/></step>
-            <step conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N1009D_N10059_N10020_N10001"><cmd/></step>
             
-            <step id="step_N100A4_N10059_N10020_N10001">
-                <cmd>Select<uicontrol> File</uicontrol>, then click
-                        <uicontrol>Browse</uicontrol> and select <filepath>CombinationAutoscaling.yaml</filepath> from the local
-                    disk.</cmd>
-            </step>
-            <step id="step_N100CA_N10059_N10020_N10001">
-                <cmd>Use the <wintitle>Launch Stack</wintitle> form to provide the required
-                    parameter values for the template. </cmd>
+            <step conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N10096_N10059_N10020_N10001"><cmd/>
+            <step conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N1009D_N10059_N10020_N10001"><cmd/>
+            
+             
+                <li>Select<b> File</b>, then click
+                        <b>Browse</b> and select <filepath>CombinationAutoscaling.yaml</filepath> from the local
+                    disk.</li>
+            
+             
+                <li>Use the <b>Launch Stack</b> form to provide the required
+                    parameter values for the template. </li>
                 
-                    <fig id="fig_N100D4_N100D1_N100C6_N10059_N10020_N10001">
+                    
                         <image alt="CPUScale Launch Stack form" href="jow1404333811339.image" id="image_dvz_1wj_j4" width="4in"/>
-                    </fig>
+                    
                     <note id="note_N100E1_N100D1_N100C6_N10059_N10020_N10001">
                         <p>The parameters are presented in a single column. This image has been
                             edited to present them in two columns.</p>
                     </note>
                 
-            </step>
-            <step id="step_N100F1_N10059_N10020_N10001" importance="optional">
-                <cmd>Adjust existing values to meet your requirements.</cmd>
+            
+             
+                <li>Adjust existing values to meet your requirements.</li>
                 <choicetable id="choicetable_nqn_msw_34" keycol="1" relcolwidth="1.0* 2.0*">
                     <chrow>
                         <choption>
-                            <p><uicontrol>KeyName</uicontrol></p>
+                            <p><b>KeyName</b></p>
                         </choption>
                         <chdesc>
-                            <p>The <uicontrol>KeyPair</uicontrol>
-                                name from the<wintitle> Access &amp;
-                                    Security</wintitle> page.</p>
+                            <p>The <b>KeyPair</b>
+                                name from the<b> Access &amp;
+                                    Security</b> page.</p>
                         </chdesc>
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>ViFModel</uicontrol></p>
+                            <p><b>ViFModel</b></p>
                         </choption>
                         <chdesc>
                             <p>The virtual interface model to use. For valid
@@ -92,44 +92,44 @@
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>InstanceType</uicontrol></p>
+                            <p><b>InstanceType</b></p>
                         </choption>
                         <chdesc>
-                            <p>The <uicontrol>Flavor
-                                    Name</uicontrol> from the <wintitle>Flavors</wintitle> page.</p>
+                            <p>The <b>Flavor
+                                    Name</b> from the <b>Flavors</b> page.</p>
                         </chdesc>
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>ImageId</uicontrol></p>
+                            <p><b>ImageId</b></p>
                         </choption>
                         <chdesc>
-                            <p>The <uicontrol>Image
-                                    Name</uicontrol> from the <wintitle>Images</wintitle> page.</p>
+                            <p>The <b>Image
+                                    Name</b> from the <b>Images</b> page.</p>
                         </chdesc>
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>PublicNetId</uicontrol></p>
+                            <p><b>PublicNetId</b></p>
                         </choption>
                         <chdesc>
-                            <p>The <uicontrol>ID</uicontrol> from
-                                the <wintitle>Network Overview</wintitle> page.</p>
+                            <p>The <b>ID</b> from
+                                the <b>Network Overview</b> page.</p>
                         </chdesc>
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>InternalNetId</uicontrol></p>
+                            <p><b>InternalNetId</b></p>
                         </choption>
                         <chdesc>
-                            <p>The <uicontrol>ID</uicontrol> from
-                                the <wintitle>Network Overview</wintitle> page.
+                            <p>The <b>ID</b> from
+                                the <b>Network Overview</b> page.
                                 <!-- this and the similar entry above need attention. We need two network IDs (or are the Names enough?) when we collect the parameters. --></p>
                         </chdesc>
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>MinClusterSize</uicontrol></p>
+                            <p><b>MinClusterSize</b></p>
                         </choption>
                         <chdesc>
                             <p>The minimum number of VMs to launch. The stack cannot
@@ -138,7 +138,7 @@
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>MaxClusterSize</uicontrol></p>
+                            <p><b>MaxClusterSize</b></p>
                         </choption>
                         <chdesc>
                             <p>The maximum number of VMs that can be launched.</p>
@@ -146,7 +146,7 @@
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>CustomMeterName</uicontrol></p>
+                            <p><b>CustomMeterName</b></p>
                         </choption>
                         <chdesc>
                             <p>The name of a custom Ceilometer metric to store.<!-- For
@@ -155,7 +155,7 @@
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>CustomMeterUnit</uicontrol></p>
+                            <p><b>CustomMeterUnit</b></p>
                         </choption>
                         <chdesc>
                             <p>The unit of measurement to display for the custom
@@ -164,7 +164,7 @@
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>MetricHighWaterMark</uicontrol></p>
+                            <p><b>MetricHighWaterMark</b></p>
                         </choption>
                         <chdesc>
                             <p>The value that triggers autoscaling to add
@@ -173,7 +173,7 @@
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>MetricLowWaterMark</uicontrol></p>
+                            <p><b>MetricLowWaterMark</b></p>
                         </choption>
                         <chdesc>
                             <p>The value that triggers autoscaling to remove
@@ -181,7 +181,7 @@
                         </chdesc>
                     </chrow>
                 </choicetable>
-            </step>
+            
         </ol>
     </body>
-</task-wr>
+</topic>

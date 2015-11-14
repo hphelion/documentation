@@ -4,7 +4,7 @@
 <title ixia_locid="207">[RC] taskbody: TiS Initializing Controller-0 [for main trunk]</title>
 <rcbody>
         <taskbody id="taskbody_N10011_N1000E_N10001">
-            <prereq id="prereq_N1002B_N10028_N10001" ixia_locid="166">
+            
                 <p ixia_locid="169">Before installing the software on the first controller, ensure
                     the following:</p>
                 <ul id="ul_p5w_hwh_g4">
@@ -30,18 +30,18 @@
                 </ul>
             </prereq>
             <steps id="all_steps">
-                <step id="power_on_host" ixia_locid="61">
+                 
                     <cmd ixia_locid="62">Power on the host to be configured as <nameliteral ixia_locid="184">controller-0</nameliteral>.</cmd>
                 </step>
-                <step id="configure_BIOS_for_boot" ixia_locid="11">
+                 
                     <cmd ixia_locid="12">Configure the host BIOS boot sequence to boot from a USB
                         removable storage device.</cmd>
                 </step>
-                <step id="insert_USB_flash_drive" ixia_locid="14">
+                 
                     <cmd ixia_locid="15">Insert the USB flash drive and boot the host.</cmd>
                     <stepresult ixia_locid="16">
                         <p ixia_locid="17">The installer welcome screen appears.</p>
-                        <fig id="fig_N10059_N10052_N1004B_N1003C_N10028_N10001" ixia_locid="18">
+                        
                             <title ixia_locid="19">HP Helion OpenStack Carrier Grade Installer Welcome Screen</title>
                             <image href="jow1433084986736.image" id="image_yzn_skg_fs" ixia_locid="208" product="tis_not_small">
                                 <alt ixia_locid="209">TiS Installer screen (basic)</alt>
@@ -52,7 +52,7 @@
                         </fig>
                     </stepresult>
                 </step>
-                <step id="select_installation_type" ixia_locid="21">
+                 
                     <cmd ixia_locid="22">Select the type of installation and the display device to
                         be used during initialization, and then press <uicontrol ixia_locid="23">Enter</uicontrol>.</cmd>
                     <info ixia_locid="145">
@@ -131,7 +131,7 @@ rootfs_device=sda initrd=initrd</codeblock></p>
                         </note>
                     </info>
                 </step>
-                <step id="monitor_initialization" ixia_locid="70">
+                 
                     <cmd ixia_locid="71">Monitor the initialization until it is complete.</cmd>
                     <info ixia_locid="72">
                         <p ixia_locid="73">The installer initializes the target hard drive with the
@@ -139,7 +139,7 @@ rootfs_device=sda initrd=initrd</codeblock></p>
                             initiated on the host. </p>
                     </info>
                 </step>
-                <step id="remove_usb_flash_drive" ixia_locid="189">
+                 
                     <cmd importance="high" ixia_locid="192">Immediately remove the USB flash drive
                         from the host to ensure that the host reboots from the hard drive.</cmd>
                     <info ixia_locid="195">
@@ -150,14 +150,14 @@ rootfs_device=sda initrd=initrd</codeblock></p>
                                 instead of the hard drive.</p>
                         </note>
                         <p id="grub_displayed" ixia_locid="47"> After a few minutes, the host
-                            reboots from the hard drive and displays the <wintitle ixia_locid="48">GNU GRUB</wintitle> welcome screen.<fig id="fig_N100DB_N100D0_N100C9_N1003C_N10028_N10001" ixia_locid="49">
+                            reboots from the hard drive and displays the <wintitle ixia_locid="48">GNU GRUB</wintitle> welcome screen.
                                 <image alt="GNU GRUB screen" href="jow1404333488777.image" id="image_jb1_gfz_cn" ixia_locid="51" width="4in"/>
                             </fig></p>
                         <p ixia_locid="52">After a brief delay, the system boots automatically into
                             the HP Helion OpenStack Carrier Grade image.</p>
                     </info>
                 </step>
-                <step id="log_in" ixia_locid="53">
+                 
                     <cmd ixia_locid="54">Log into the host as <userinput ixia_locid="55">wrsroot</userinput>, with password <userinput ixia_locid="56">wrsroot</userinput>.</cmd>
                     <info ixia_locid="140">
                         <note id="note_N1016E_N1016A_N10156_N1007D_N1002E_N10001" ixia_locid="149">

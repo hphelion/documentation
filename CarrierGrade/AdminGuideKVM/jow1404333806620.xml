@@ -37,7 +37,7 @@
             <li>
                 <p>on the command line, using the<option> -P
                     </option>option. Multiple <option>-P</option> arguments are supported.</p>
-                <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>heat stack-create -P <varname>key1</varname>=<varname>val1</varname> -P <varname>key2</varname>=<varname>val2</varname></userinput></codeblock>
+                <codeblock>~(keystone_admin)$ heat stack-create -P <varname>key1</varname>=<varname>val1</varname> -P <varname>key2</varname>=<varname>val2</varname></codeblock>
             </li>
             <li>
                 <p>in an environment file:</p>

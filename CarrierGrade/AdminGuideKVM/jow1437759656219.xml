@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1437759656219" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1437759656219" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -11,16 +11,16 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N1001F_N1001C_N10001">
+        
             <p>In a redundant ToR switch configuration, each link in a link
                 aggregate is connected to a different switch, as shown in the accompanying figure.
                 If one switch fails, another is available to service the link aggregate.</p>
-            <fig id="fig_z3x_cqg_vs">
+            
                 <title>Redundant Top-of-Rack Switches</title>
                 <image href="jow1438030468959.image" id="image_fnv_nqg_vs">
                     <alt>Redundant Top-of-Rack Switches</alt>
                 </image>
-            </fig>
+            
             <p>Switches that support Virtual Port Channel (VPC) are recommended. When
                 VPC is used, the aggregated links on the switches act as a single LAG interface.
                 Both switches are normally active, providing full bandwidth to the LAG. If there are
@@ -38,6 +38,6 @@
                 <p>You can further enhance system reliability by using redundant
                     routers. For more information, refer to your router documentation.</p>
             </note>
-        </context>
+        
     </body>
-</task-wr>
+</topic>

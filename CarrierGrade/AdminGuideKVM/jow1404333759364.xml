@@ -16,8 +16,8 @@
             board management modules, if present. For more information, see <xref href="jow1443819549360.xml"/>.</p>
         <p>The supported interfaces to the alarms subsystem are the command line
             interface (see <xref href="psa1419970253127.xml"/>), the web interface
-            (click the <uicontrol>Fault Management</uicontrol> menu on the
-                <uicontrol>Admin</uicontrol> tab), SNMP, and the system REST
+            (click the <b>Fault Management</b> menu on the
+                <b>Admin</b> tab), SNMP, and the system REST
             API.</p>
         <section id="section_N10027_N1001F_N10001">
             <title>About SNMP Support</title>
@@ -74,7 +74,7 @@
                         <p>A read-write system attribute used to populate the
                             <codeph>sysContact</codeph> attribute of the SNMP System
                             group. The contact value can be set with the following command:</p>
-                        <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system modify contact="the-site-contact"</userinput></codeblock>
+                        <codeblock>~(keystone_admin)$ system modify contact="the-site-contact"</codeblock>
                     </dd>
                 </dlentry>
                 <dlentry>
@@ -83,7 +83,7 @@
                         <p>A read-write system attribute used to populate the
                                 <codeph>sysLocation</codeph> attribute of the SNMP System
                             group. The location value can be set with the following command:</p>
-                        <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system modify location="some-location"</userinput></codeblock>
+                        <codeblock>~(keystone_admin)$ system modify location="some-location"</codeblock>
                     </dd>
                 </dlentry>
                 <dlentry>
@@ -93,7 +93,7 @@
                                 <codeph>sysName</codeph> attribute of the
                             SNMP System group. The name value can be set with the following
                             command:</p>
-                        <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system modify name="the-system-name"</userinput></codeblock>
+                        <codeblock>~(keystone_admin)$ system modify name="the-system-name"</codeblock>
                     </dd>
                 </dlentry>
                 <dlentry>
@@ -212,16 +212,16 @@
                                             <p><varname>SuppressionAllowed</varname></p>
                                         </li>
                                     </ul>
-                                    <p>On the web interface, click the <uicontrol>Fault
-                                            Management</uicontrol> menu on the
-                                            <uicontrol>Admin</uicontrol> tab, and then select the
-                                            <uicontrol>Active Alarms</uicontrol> tab. Active alarms
+                                    <p>On the web interface, click the <b>Fault
+                                            Management</b> menu on the
+                                            <b>Admin</b> tab, and then select the
+                                            <b>Active Alarms</b> tab. Active alarms
                                         are displayed as illustrated below:</p>
-                                    <fig id="fig_bgh_ldl_qq">
+                                    
                                         <image href="psa1420475905055.image" id="image_cqk_xdl_qq" placement="inline" width="550">
                                             <alt>Active Alarms</alt>
                                         </image>
-                                    </fig>
+                                    
                                 </dd>
                             </dlentry>
                             <dlentry>
@@ -232,16 +232,16 @@
                                         active alarm table, plus the variable
                                             <varname>AlarmState</varname> used to indicate whether
                                         the table entry is a SET or a CLEAR operation.</p>
-                                    <p>On the web interface, click the <uicontrol>Fault
-                                            Management</uicontrol> menu on the
-                                            <uicontrol>Admin</uicontrol> tab, and then select the
-                                            <uicontrol>Historical Alarms</uicontrol> tab. The alarm
+                                    <p>On the web interface, click the <b>Fault
+                                            Management</b> menu on the
+                                            <b>Admin</b> tab, and then select the
+                                            <b>Historical Alarms</b> tab. The alarm
                                         history is displayed as illustrated below:</p>
-                                    <fig id="fig_mwl_12l_qq">
+                                    
                                         <image href="psa1420476170224.image" id="image_lzp_22l_qq" placement="inline" width="550">
                                             <alt>Historical Alarms</alt>
                                         </image>
-                                    </fig>
+                                    
                                 </dd>
                             </dlentry>
                             <dlentry>
@@ -251,16 +251,16 @@
                                         The table includes the same variables as the Active Alarm
                                         Table, with the exception that <varname>ProposedRepairAction</varname> and  <varname>SuppressionAllowed</varname> are
                                         excluded.</p>
-                                    <p>On the web interface, click the <uicontrol>Fault Management</uicontrol> menu on
-                                        the <uicontrol>Admin</uicontrol> tab, and
-                                        then select the <uicontrol>Customer
-                                            Logs</uicontrol> tab. Logs are displayed as illustrated
+                                    <p>On the web interface, click the <b>Fault Management</b> menu on
+                                        the <b>Admin</b> tab, and
+                                        then select the <b>Customer
+                                            Logs</b> tab. Logs are displayed as illustrated
                                         below:</p>
-                                    <fig id="fig_cyy_xqx_bs">
+                                    
                                         <image href="jow1432054510610.image" id="image_ixf_drx_bs" width="5in">
                                             <alt>TiS Customer Logs</alt>
                                         </image>
-                                    </fig>
+                                    
                                 </dd>
                             </dlentry>
                             <dlentry>

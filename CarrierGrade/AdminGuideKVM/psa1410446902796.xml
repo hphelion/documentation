@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410446902796">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic domains="(topic task topic)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410446902796">
     <!-- Modification History
         
 -->
@@ -12,7 +12,7 @@
         <author></author>
     </prolog>
     <body>
-        <context id="context_N1001D_N1001A_N10001">
+        
             <p>Rolling back patches is conceptually identical to installing patches.
                 A roll-back operation can be commanded for a patch in either the <i>Applied</i> or the <i>Partial-Apply</i> states. As the patch is
                 removed, it goes through the following state transitions:</p>
@@ -42,64 +42,64 @@
                     <xref href="psa1410446976545.xml"/>, but this time removing
                 instead of installing the patch. The steps are therefore presented in simplified
                 form.</p>
-        </context>
+        
         <ol>
-            <step id="step_N10029_N10026_N1001A_N10001">
-                <cmd>Log in as Keystone user <codeph>admin</codeph> to the active controller.</cmd>
-            </step>
-            <step id="step_N100B2_N1009F_N10027_N10001">
-                <cmd>Verify the state of the patch.</cmd>
-                <stepxmp>
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>sudo sw-patch query</userinput>
-<systemoutput>﻿       Patch ID             Patch State
+             
+                <li>Log in as Keystone user <codeph>admin</codeph> to the active controller.</li>
+            
+             
+                <li>Verify the state of the patch.</li>
+                
+                    <codeblock>~(keystone_admin)$ sudo sw-patch query</codeph>
+<codeph>﻿       Patch ID             Patch State
 =========================   ===========
-TITANIUM_14.10_PATCH_0001   Applied</systemoutput></codeblock>
+TITANIUM_14.10_PATCH_0001   Applied</codeblock>
                     <p>In this example the patch is listed in the <i>Applied</i> state, but it could
                         be in the <i>Partial-Apply</i> state as well.</p>
-                </stepxmp>
-            </step>
-            <step id="step_N100DD_N1009F_N10027_N10001">
-                <cmd>Remove the patch.</cmd>
-                <stepxmp>
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>sudo sw-patch remove TITANIUM_14.10_PATCH_0001</userinput>
-<systemoutput>TITANIUM_14.10_PATCH_0001 has been removed from the repo</systemoutput></codeblock>
-                </stepxmp>
-                <stepresult>
+                
+            
+             
+                <li>Remove the patch.</li>
+                
+                    <codeblock>~(keystone_admin)$ sudo sw-patch remove TITANIUM_14.10_PATCH_0001</codeph>
+<codeph>TITANIUM_14.10_PATCH_0001 has been removed from the repo</codeblock>
+                
+                
                     <p>The patch is now in the <i>Partial-Remove</i>
                         state, ready to be removed from the impacted hosts where it was already
                         installed.</p>
-                </stepresult>
-            </step>
-            <step id="step_N10103_N1009F_N10027_N10001">
-                <cmd>Query the patching status of all hosts in the cluster.</cmd>
-                <stepxmp>
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>sudo sw-patch query-hosts</userinput>
-<systemoutput>﻿  Hostname      IP Address    Patch Current  Reboot Required
+                
+            
+             
+                <li>Query the patching status of all hosts in the cluster.</li>
+                
+                    <codeblock>~(keystone_admin)$ sudo sw-patch query-hosts</codeph>
+<codeph>﻿  Hostname      IP Address    Patch Current  Reboot Required
 ============  ==============  =============  ===============
 compute-0     192.168.204.15       Yes             No
 controller-0  192.168.204.3        No              Yes
-controller-1  192.168.204.4        No              Yes</systemoutput></codeblock>
+controller-1  192.168.204.4        No              Yes</codeblock>
                     <p>In this example, the controllers have patches ready to be
                         removed, and therefore must be rebooted.</p>
-                </stepxmp>
-            </step>
-            <step id="step_N10121_N1009F_N10027_N10001">
-                <cmd>Remove all pending-for-removal patches from <codeph>controller-0</codeph>.</cmd>
-                <substeps id="substeps_kzv_x13_pp">
-                    <substep>
-                        <cmd>Swact controller services.</cmd>
-                    </substep>
-                    <substep>
-                        <cmd>Run the patching sequence.</cmd>
-                        <stepxmp>
-                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-patch-reboot controller-0</userinput></codeblock>
-                        </stepxmp>
-                    </substep>
-                </substeps>
-            </step>
-            <step id="step_N1017D_N1009F_N10027_N10001">
-                <cmd>Remove all pending patches from <codeph>controller-1</codeph>.</cmd>
-            </step>
+                
+            
+             
+                <li>Remove all pending-for-removal patches from <codeph>controller-0</codeph>.</li>
+                 <ol>
+                    
+                        <li>Swact controller services.</li>
+                    
+                    
+                        <li>Run the patching sequence.</li>
+                        
+                            <codeblock>~(keystone_admin)$ system host-patch-reboot controller-0</codeblock>
+                        
+                    
+                </ol>
+            
+             
+                <li>Remove all pending patches from <codeph>controller-1</codeph>.</li>
+            
         </ol>
         Host
             <p>The Titanium cluster is up to date now. All patches have been
@@ -108,6 +108,6 @@ controller-1  192.168.204.4        No              Yes</systemoutput></codeblock
             <p>It is important to note the role of the command <cmdname>wrs-path
                     host-install</cmdname> as a tool that both installs and removes patches as
                 necessary.</p>
-        </result>
+        
     </body>
-</task-wr>
+</topic>

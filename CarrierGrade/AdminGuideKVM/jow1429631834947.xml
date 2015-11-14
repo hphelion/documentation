@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1429631834947" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1429631834947" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -11,58 +11,58 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N10022_N1001F_N10001">
+        
             <p><draft-comment author="jowens">CGTS-2523 (nominal) Remove material
                     about adding a gateway</draft-comment>For more information about virtual
                 routers, see <xref href="jow1429628777191.xml"/>.</p>
-        </context>
-        <prereq id="prereq_N10022_N1001F_N10001">
+        
+        
             <p>Before you can create interfaces to tenant networks, you must create
                 the tenant networks and associated subnets. For examples, see the <cite>HP Helion OpenStack Carrier Grade Reference Deployment Scenarios</cite>. For more
                 information about tenant networks and subnets, see <xref href="jow1404333739174.xml"/> and <xref href="psa1412702861873.xml"/>. </p>
-        </prereq>
-        <context id="context_N1001F_N1001C_N10001">
+        
+        
             <p>As an alternative to the web administration interface, you can use
                 CLI commands to add router interfaces. First, become the appropriate keystone user.
                 The examples in this section assume you are the <codeph>admin</codeph> user.</p>
             <p>Then use the <cmdname>neutron
                     router-interface-add</cmdname> command to add interfaces. For example: </p>
             <codeblock>
-<systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron router-interface-add <varname>router_id</varname> <varname>subnet-id</varname></userinput></codeblock>
+<codeph>~(keystone_admin)$ neutron router-interface-add <varname>router_id</varname> <varname>subnet-id</varname></codeblock>
             <p>where <varname>router_id</varname> is the name or
                 UUID of the router, and <varname>subnet_id</varname> is the name or
                 UUID of the subnet to which you want to attach an interface. By default, the
                 interface is assigned the gateway address on the subnet.</p>
-        </context>
+        
         <ol>
-            <step id="step_N10066_N10063_N1001C_N10001">
-                <cmd>Log in as the user associated with the tenant.</cmd>
-            </step>
-            <step id="step_N1006F_N10063_N1001C_N10001">
-                <cmd>Select <menucascade>
-                        <uicontrol>Project</uicontrol>
-                        <uicontrol>Network</uicontrol>
-                        <uicontrol>Routers</uicontrol>
-                    </menucascade>.</cmd>
-            </step>
-            <step id="step_N1008B_N10063_N1001C_N10001">
-                <cmd>In the list of existing routers, click the name of the router to be
-                    configured.</cmd>
+             
+                <li>Log in as the user associated with the tenant.</li>
+            
+             
+                <li>Select 
+                        <b>Project</b>, then
+                        <b>Network</b>, then
+                        <b>Routers</b>
+                    .</li>
+            
+             
+                <li>In the list of existing routers, click the name of the router to be
+                    configured.
                 
-                    <p>The <wintitle>Router Details</wintitle> page
+                    <p>The <b>Router Details</b> page
                         appears.</p>
-                    <fig id="fig_N100C4_N100B5_N100AE_N100AA_N100A3_N10034_N1001C_N10001">
+                    
                         <image href="jow1404333604053.image" id="image_kr5_jz2_yn" placement="inline"/>
-                    </fig>
+                    
+                </li>
+            
+             
+                <li>On the <b>Interfaces</b> tab, click <b>Add Interface</b>.
                 
-            </step>
-            <step id="step_N100AE_N10063_N1001C_N10001">
-                <cmd>On the <uicontrol>Interfaces</uicontrol> tab, click <uicontrol>Add Interface</uicontrol>.</cmd>
-                
-                    <p>The <wintitle>Add Interface</wintitle> dialog box appears.</p>
-                    <fig id="fig_N100E4_N100D9_N100D2_N100AA_N100A3_N10034_N1001C_N10001">
+                    <p>The <b>Add Interface</b> dialog box appears.</p>
+                    
                         <image href="jow1404333605539.image" id="image_yrl_qbf_yn" placement="inline"/>
-                    </fig>
+                    
                     <dl>
                         <dlentry>
                             <dt>Subnet</dt>
@@ -95,14 +95,14 @@
                         </dlentry>
                     </dl>
                 
-            </step>
-            <step id="step_N10129_N10063_N1001C_N10001">
-                <cmd>To save your settings and close the dialog box, click
-                        <uicontrol>Add Interface</uicontrol>.</cmd>
-                <stepresult>
-                    <p>The new interface is shown in the <wintitle>Router Details</wintitle>.</p>
-                </stepresult>
-            </step>
+                </li>
+             
+                <li>To save your settings and close the dialog box, click
+                        <b>Add Interface</b>.
+                
+                    <p>The new interface is shown in the <b>Router Details</b>.</p>
+                
+                </li>
         </ol>
     </body>
-</task-wr>
+</topic>

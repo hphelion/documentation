@@ -106,16 +106,16 @@
       and the dependencies of the affected service.</p>
         <p>For maintenance purposes, when one of the controller nodes needs to be powered down for
       service, it is necessary to force all currently active service groups in one controller to
-      switch to the other. This can be done from the <uicontrol>Hosts</uicontrol> tab on the
-        <wintitle>Inventory</wintitle> page, by selecting the option <option>swact</option> (switch
-      active) in the <uicontrol>More</uicontrol> menu of the controller you want to take out of
+      switch to the other. This can be done from the <b>Hosts</b> tab on the
+        <b>Inventory</b> page, by selecting the option <option>swact</option> (switch
+      active) in the <b>More</b> menu of the controller you want to take out of
       service.</p>
         <section id="section_N100EE_N1001F_N10001">
             <title>The Active Controller</title>
             <p>Services in the <codeph>Controller
                     Services</codeph> group drive core functionality in HP Helion OpenStack Carrier Grade. The
-                controller where they are running is referred to as the <term>active</term> controller. The <uicontrol>Hosts</uicontrol> tab
-                in the <wintitle>System Inventory</wintitle> page of the <uicontrol>Admin</uicontrol> panel lists the status of all hosts in the
+                controller where they are running is referred to as the <term>active</term> controller. The <b>Hosts</b> tab
+                in the <b>System Inventory</b> page of the <b>Admin</b> panel lists the status of all hosts in the
                 cluster; it reports the active controller as having the <term>Controller-Active</term> personality.</p>
             <p>When working from the CLI on a controller node it is often important
                 to ensure that you are working on the active controller, for example, to execute

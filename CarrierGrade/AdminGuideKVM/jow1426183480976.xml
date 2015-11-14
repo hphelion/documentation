@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1426183480976" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1426183480976" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -11,7 +11,7 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N10022_N1001F_N10001">
+        
             <p>Local storage can be used to provide improved disk access
                 performance for VMs instantiated on the host.</p>
             <note conref="jow1426942555025.xml#jow1426942555025/note_local_storage_ephemeral" id="note_N1002C_N10022_N1001F_N10001"/>
@@ -30,16 +30,16 @@
                 
             <p>As an alternative to the web administration interface, you can use
                 the CLI to configure the host for local storage. For more information, see <xref href="jow1426181291481.xml"/> and <xref href="jow1426182435441.xml"/>.</p>
-        </context>
+        
         <ol>
             <step conref="jow1426453628262.xml#jow1426453628262/lock_host" id="step_N1002A_N10027_N1001F_N10001">
                 <cmd/>
-            </step>
+            
             <step conref="jow1426453628262.xml#jow1426453628262/open_details_locked_host" id="step_N10033_N10027_N1001F_N10001">
                 <cmd/>
-            </step>
-            <step id="step_N1002B_N10028_N1001C_N10001">
-                <cmd>Select the <uicontrol>Storage</uicontrol> tab.</cmd>
+            
+             
+                <li>Select the <b>Storage</b> tab.</li>
                 
                     <p>For a compute node, the storage tab displays three lists:</p>
                     <dl>
@@ -65,16 +65,16 @@
                             </dd>
                         </dlentry>
                     </dl>
-                    <fig id="fig_atv_4s5_jr">
+                    
                         <image href="jow1426459038579.image" id="image_rhh_ps5_jr" width="6in">
                             <alt>Compute Node Storage tab</alt>
                         </image>
-                    </fig>
+                    
                 
-            </step>
-            <step id="step_N10042_N10027_N1001F_N10001">
-                <cmd>If required, add the <codeph>nova-local</codeph> group to the <codeph>Local
-                        Volume Groups</codeph> list.</cmd>
+            
+             
+                <li>If required, add the <codeph>nova-local</codeph> group to the <codeph>Local
+                        Volume Groups</codeph> list.</li>
                 
                     <p>The <codeph>Local Volume
                             Groups</codeph> list displays groups of physical volumes designated
@@ -83,80 +83,80 @@
                         you can create it by clicking <codeph>Add Local Volume
                             Group</codeph>, and then accepting the defaults in the dialog box
                         that appears.</p>
-                    <fig id="fig_wrr_vs5_jr">
+                    
                         <image href="jow1426459253956.image" id="image_ask_bt5_jr">
                             <alt>Create Local Volume Group</alt>
                         </image>
-                    </fig>
+                    
                 
-                <stepresult>
+                
                     <p>The <codeph>nova-local</codeph> group is shown in the list.</p>
-                    <fig id="fig_i4s_p1z_jr">
+                    
                         <image href="jow1426510376255.image" id="image_w1l_z1z_jr" width="6in">
                             <alt>Local Volume Groups</alt>
                         </image>
-                    </fig>
-                </stepresult>
-            </step>
-            <step id="step_N10107_N10027_N1001F_N10001">
-                <cmd>Add a physical volume to the <codeph>nova-local</codeph> group.</cmd>
+                    
+                
+            
+             
+                <li>Add a physical volume to the <codeph>nova-local</codeph> group.</li>
                 
                     <p>The <codeph>Physical
                             Volumes</codeph> list displays LVM volumes that have been created
                         and added to a Local Volume Group. To add a new one, click <codeph>Add Physical Volume</codeph> and complete the
                         dialog box that appears.</p>
-                    <fig id="fig_myv_tdz_jr">
+                    
                         <image href="jow1426511807740.image" id="image_dhp_12z_jr">
                             <alt>Create Physical Volume dialog box</alt>
                         </image>
-                    </fig>
+                    
                     <note id="note_N1013A_N10112_N10107_N10027_N1001F_N10001">
-                        <p>The <uicontrol>Local Volume
-                                Group</uicontrol> drop-down selection is automatically set to
+                        <p>The <b>Local Volume
+                                Group</b> drop-down selection is automatically set to
                                 <codeph>nova-local</codeph>, and cannot be
                             changed.</p>
                     </note>
-                    <p>Use the <uicontrol>Disks</uicontrol>
+                    <p>Use the <b>Disks</b>
                         drop-down menu to select a disk to provide storage. For the root disk, a
                         designated partition  (<codeph>local_pv</codeph>) is used.</p>
                     <p>You can add any number of physical volumes to the
                             <codeph>nova-local</codeph> group, limited
                         only by the number of available disks.</p>
                 
-                <stepresult>
+                
                     <p>A physical volume is created and added to the
                             <codeph>nova-local</codeph> group.</p>
-                    <fig id="fig_ajv_p2z_jr">
+                    
                         <image href="jow1426512224610.image" id="image_c4b_w2z_jr" width="6in">
                             <alt>Physical Volumes list</alt>
                         </image>
-                    </fig>
-                </stepresult>
-            </step>
-            <step id="step_N101F7_N1007F_N1001F_N10001">
-                <cmd><draft-comment author="jowens">US65502 step added</draft-comment>Allocate space
-                    for the instances logical volume.</cmd>
+                    
+                
+            
+             
+                <li><draft-comment author="jowens">US65502 step added</draft-comment>Allocate space
+                    for the instances logical volume.</li>
                 
                     <p>In the <codeph>Local Volume Groups</codeph> list, click
-                            <uicontrol>nova-local</uicontrol> to open the Local Volume Group Detail
-                            page.<fig id="fig_n1g_rwm_4t">
+                            <b>nova-local</b> to open the Local Volume Group Detail
+                            page.
                             <image href="jow1443974043719.image" id="image_ng4_rwm_4t">
                                 <alt>TiS Local Volume Group Detail</alt>
                             </image>
-                        </fig></p>
-                    <p>Select the <uicontrol>Parameters</uicontrol> tab.<fig id="fig_y1n_cxm_4t">
+                        </p>
+                    <p>Select the <b>Parameters</b> tab.
                             <image href="jow1443974983289.image" id="image_htz_qym_4t">
                                 <alt>TiS Local Volume Group Detail Parameters tab</alt>
                             </image>
-                        </fig></p>
-                    <p>Click <uicontrol>Edit</uicontrol>, and then
-                        set the <uicontrol>Instances Logical Volume
-                            Size</uicontrol>.<fig id="fig_ok5_1ym_4t">
+                        </p>
+                    <p>Click <b>Edit</b>, and then
+                        set the <b>Instances Logical Volume
+                            Size</b>.
                             <image href="jow1443975258969.image" id="image_a3q_3zm_4t">
                                 <alt>TiS Edit Local Volume Group Parameter
                                     dialog</alt>
                             </image>
-                        </fig></p>
+                        </p>
                     <p>If the total space in the volume group is less than 80GB
                         (81920 MiB), then you must allocate at least 2048 MiB. If the volume group
                         is greater than 80GB (81920 MiB), then you must allocate at least 5120 MiB.
@@ -165,10 +165,10 @@
                             <xref href="jow1443470081421.xml"/>
                     </p>
                 
-            </step>
-            <step id="step_N1019C_N10027_N1001F_N10001">
-                <cmd>Unlock the host to make the changes take effect.</cmd>
-            </step>
+            
+             
+                <li>Unlock the host to make the changes take effect.</li>
+            
         </ol>
         Host
             <p>The compute host is ready to provide local  storage for use by VMs.
@@ -180,7 +180,7 @@
                 <p>VMs instantiated on the compute node must be migrated or terminated before the
                     host is reconfigured for remote storage.</p>
             </note>
-        </result>
+        
         <p id="p_N1017B_N1001F_N10001">
             <p>To configure a VM to use local storage or remote Cinder-based
                 storage, or to be instantiated on any compute host regardless of storage type, see
@@ -189,4 +189,4 @@
             </p>
         </p>
     </body>
-</task-wr>
+</topic>

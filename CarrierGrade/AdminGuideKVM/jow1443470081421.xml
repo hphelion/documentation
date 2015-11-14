@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr id="jow1443470081421" xml:lang="en-us">
+<topic id="jow1443470081421" xml:lang="en-us">
 <!-- Modification History
 
  -->
@@ -25,9 +25,9 @@
       you must specify at least this amount. You can allocate more to support the anticipated number
       of boot-from-image VMs, up to 50% of the maximum available storage for the local volume group.
       At least 50% free space in the volume group is required to provide space for allocating
-      logical volume disks for launched instances. The value provided for the <uicontrol>Instance LV Size</uicontrol> is limited by this maximum.</p>
-  <p>Instructions for allocating the <uicontrol>Instances LV
-    Size</uicontrol> using the web administration interface are included in <xref href="jow1426183480976.xml"/>. To allocate space using the CLI, use the
+      logical volume disks for launched instances. The value provided for the <b>Instance LV Size</b> is limited by this maximum.</p>
+  <p>Instructions for allocating the <b>Instances LV
+    Size</b> using the web administration interface are included in <xref href="jow1426183480976.xml"/>. To allocate space using the CLI, use the
     <cmdname>system host-lvg-modify</cmdname> command.</p>
   <note id="note_N10059_N10022_N1001F_N10001" type="caution">
    <p>If less than the minimum required space is available, the compute host cannot

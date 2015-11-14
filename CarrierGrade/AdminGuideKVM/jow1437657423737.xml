@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1437657423737">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic domains="(topic task topic)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1437657423737">
 <!-- Modification History
         
 -->
@@ -12,7 +12,7 @@
         <author></author>
     </prolog>
     <body>
-        <context id="context_N1001F_N1001C_N10001">
+        
             <p>The restore procedure for a minimal-two server configuration differs
                 from the procedure for separate controller and compute nodes. In a system with
                 separate nodes, the controller node is restored first, and then any storage nodes.
@@ -26,24 +26,24 @@
                 combined controller-compute node can be restored. Because this type of system does
                 not use Ceph storage, there is no requirement to restore the controller before
                 restoring the Cinder volumes.</p>
-        </context>
+        
         <prereq conref="jow1437656331081.xml#maintask/prereq_N1002D_N1001F_N10001" id="prereq_N1003C_N10024_N10001"/>
         <ol>
             <step conref="jow1437656331081.xml#maintask/common_start" conrefend="jow1437656331081.xml#maintask/common_end" id="step_N10077_N10074_N10024_N10001">
                 <cmd/>
-            </step>
+            
             <step conref="jow1437656331081.xml#maintask/restore_cinder_vols" id="step_N10050_N10041_N10024_N10001">
                 <cmd/>
-            </step>
+            
             <step conref="jow1437656331081.xml#maintask/remove_error_vols_small" id="step_N10059_N10041_N10024_N10001">
                 <cmd/>
-            </step>
-            <step id="step_N10062_N1003D_N10024_N10001">
-                <cmd>Restore the compute function on <codeph>controller-0</codeph>.</cmd>
+            
+             
+                <li>Restore the compute function on <codeph>controller-0</codeph>.</li>
                 
                     <p>Use the following command:</p>
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system compute-config-complete</userinput>
-<systemoutput>Manifests are being created and applied, the controller will restart upon     completion.
+                    <codeblock>~(keystone_admin)$ system compute-config-complete</codeph>
+<codeph>Manifests are being created and applied, the controller will restart upon     completion.
 +-------------------+--------------------------------------+
 | Property          | Value                                |
 +-------------------+--------------------------------------+
@@ -78,14 +78,14 @@
 | updated_at        | 2015-07-07T20:55:43.926852+00:00     |
 | uptime            | 1370                                 |
 | uuid              | bd213301-0130-4698-89eb-8a58386ffe03 |
-+-------------------+--------------------------------------+</systemoutput></codeblock>
++-------------------+--------------------------------------+</codeblock>
                 
-            </step>
+            
             <step conref="jow1437656331081.xml#maintask/restore_controller_1_small" id="step_N10062_N10041_N10024_N10001">
                 <cmd/>
-            </step>
+            
         </ol>
         <result conref="jow1437656331081.xml#maintask/result" id="result_N10073_N10024_N10001"/>
         <p conref="jow1437656331081.xml#maintask/restore_passwords" id="p_N10079_N10024_N10001"/>
     </body>
-</task-wr>
+</topic>

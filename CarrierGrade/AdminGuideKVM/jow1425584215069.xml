@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1425584215069" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1425584215069" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -11,12 +11,12 @@
         <author/>
     </prolog>
     <body>
-        <prereq id="prereq_N1001F_N1001C_N10001">
+        
             <p>The compute node must be locked.</p>
-        </prereq>
-        <context id="context_N1002D_N1001F_N10001">
+        
+        
             <p>To add routes, use the following command.</p>
-            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-route-add <varname>node</varname> <varname>ifname</varname> <varname>network</varname> <varname>prefix</varname> <varname>gateway</varname> <varname>metric</varname></userinput></codeblock>
+            <codeblock>~(keystone_admin)$ system host-route-add <varname>node</varname> <varname>ifname</varname> <varname>network</varname> <varname>prefix</varname> <varname>gateway</varname> <varname>metric</varname></codeblock>
             <p>where</p>
             <parml>
                 <plentry>
@@ -57,10 +57,10 @@
                 </plentry>
             </parml>
             <p>To delete routes, use the following command.</p>
-            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-route-delete <varname>uuid</varname> <varname>ifname</varname> <varname>network</varname> <varname>prefix</varname> <varname>gateway</varname> <varname>metric</varname></userinput></codeblock>
+            <codeblock>~(keystone_admin)$ system host-route-delete <varname>uuid</varname> <varname>ifname</varname> <varname>network</varname> <varname>prefix</varname> <varname>gateway</varname> <varname>metric</varname></codeblock>
             <p>where <codeph>uuid</codeph> is the UUID of the route to be deleted.</p>
             <p>To list existing routes, including their UUIDs, use the following command.</p>
-            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-route-list compute-0</userinput></codeblock>
-        </context>
+            <codeblock>~(keystone_admin)$ system host-route-list compute-0</codeblock>
+        
     </body>
-</task-wr>
+</topic>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr id="rst1442341292102" xml:lang="en-us">
+<topic id="rst1442341292102" xml:lang="en-us">
 <!-- Modification History
 
  -->
@@ -15,19 +15,19 @@
  </prolog>
  <body>
   <p>VLAN Transparent must be supported on a provider network before a VLAN
-   Transparent tenant network can be created on that provider network. The <uicontrol>VLAN Transparent</uicontrol> column in the list of defined provider networks on
-   the <uicontrol>Provider Networks</uicontrol> tab of the <menucascade>
-    <uicontrol>System</uicontrol>
-    <uicontrol>Networks</uicontrol>
+   Transparent tenant network can be created on that provider network. The <b>VLAN Transparent</b> column in the list of defined provider networks on
+   the <b>Provider Networks</b> tab of the <menucascade>
+    <b>System</b>
+    <b>Networks</b>
    </menucascade> page indicates availability. </p>
   <p>VLAN Priority attributes are propagated to the provider VLAN tag and then restored to the guest
    VLAN tag.</p>
-  <fig id="fig_glw_vwk_jt">
+  
    <image href="rst1442405927569.image" id="image_dbb_wwk_jt"/>
-  </fig>
+  
   <p>This information is also available from the following command.</p>
-  <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron providernet-show provider1-vt</userinput>
-<systemoutput>+------------------+--------------------------------------------------------+
+  <codeblock>~(keystone_admin)$ neutron providernet-show provider1-vt</codeph>
+<codeph>+------------------+--------------------------------------------------------+
 | Field            | Value                                                  |
 +------------------+--------------------------------------------------------+
 | description      |                                                        |
@@ -46,19 +46,19 @@
 | status           | DOWN                                                   |
 | type             | vlan                                                   |
 | vlan_transparent | True                                                   |
-+------------------+--------------------------------------------------------+</systemoutput></codeblock>
++------------------+--------------------------------------------------------+</codeblock>
   <p>The summary information available by selecting a tenant network name form the
-    <uicontrol>Provider Networks</uicontrol> tab of the <menucascade>
-    <uicontrol>System</uicontrol>
-    <uicontrol>Networks</uicontrol>
+    <b>Provider Networks</b> tab of the <menucascade>
+    <b>System</b>
+    <b>Networks</b>
    </menucascade> page indicates if a tenant network will request VLAN Transparent services from a
    provider network.</p>
-  <fig id="fig_t5z_4vk_jt">
+  
    <image href="rst1442405324298.image" id="image_utg_pvk_jt"/>
-  </fig>
+  
   <p>This information is also available from the following command.</p>
-  <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron net-show tenant1-vt</userinput>
-<systemoutput>+---------------------------+--------------------------------------+
+  <codeblock>~(keystone_admin)$ neutron net-show tenant1-vt</codeph>
+<codeph>+---------------------------+--------------------------------------+
 | Field                     | Value                                |
 +---------------------------+--------------------------------------+
 | admin_state_up            | True                                 |
@@ -75,7 +75,7 @@
 |                           | dedcd9e0-d4ee-4306-a6bf-194104baa9b4 |
 | tenant_id                 | c17a85ac5283496da1152ce68b79e606     |
 | vlan_transparent          | True                                 |
-+---------------------------+--------------------------------------+</systemoutput></codeblock>
++---------------------------+--------------------------------------+</codeblock>
   <p>For more information on setting up provider networks, see <cite>HP Helion OpenStack Carrier Grade Software Installation Guide: Configuring Provider Networks</cite> and <cite>HP Helion OpenStack Carrier Grade Software Installation Guide: Configuring Provider Networks Using
     the CLI</cite>. For more information on setting up tenant networks, see <xref href="rst1442339291916.xml"/>.</p>
   <table frame="all" id="table_njv_rkd_jt">

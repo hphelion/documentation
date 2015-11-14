@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1425584170078" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1425584170078" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -11,21 +11,21 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N10022_N1001F_N10001">
+        
             <p>For VXLAN connectivity between VMs, the compute nodes that host the VMs must be
                 configured with endpoint IP addresses.</p>
-        </context>
-        <prereq id="prereq_N1001F_N1001C_N10001">
+        
+        
             <p>To make interface changes, you must lock the compute node first.</p>
-        </prereq>
+        
         <steps id="steps_zkx_d1h_hr">
-            <step id="step_N1003C_N10038_N1001F_N10001">
-                <cmd>Lock the compute node.</cmd>
-            </step>
-            <step id="step_N10045_N10038_N1001F_N10001">
-                <cmd>Set the interface to support an IPv4 or IPv6 address, or both. </cmd>
+             
+                <li>Lock the compute node.</li>
+            
+             
+                <li>Set the interface to support an IPv4 or IPv6 address, or both. </li>
                 
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-if-modify <varname>node</varname> <varname>ifname</varname> --ipv4-mode=<varname>ipv4mode</varname> --ipv6-mode=<varname>ipv6mode</varname></userinput></codeblock>
+                    <codeblock>~(keystone_admin)$ system host-if-modify <varname>node</varname> <varname>ifname</varname> --ipv4-mode=<varname>ipv4mode</varname> --ipv6-mode=<varname>ipv6mode</varname></codeblock>
                     <p>where</p>
                     <parml>
                         <plentry>
@@ -56,11 +56,11 @@
                         </plentry>
                     </parml>
                 
-            </step>
-            <step id="step_N100C0_N10038_N1001F_N10001">
-                <cmd>Add an IPv4 or IPv6 address to the interface.</cmd>
+            
+             
+                <li>Add an IPv4 or IPv6 address to the interface.</li>
                 
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-addr-add <varname>node</varname> <varname>ifname</varname> <varname>ip_address</varname> <varname>prefix</varname></userinput></codeblock>
+                    <codeblock>~(keystone_admin)$ system host-addr-add <varname>node</varname> <varname>ifname</varname> <varname>ip_address</varname> <varname>prefix</varname></codeblock>
                     <p>where</p>
                     <parml>
                         <plentry>
@@ -89,15 +89,15 @@
                         </plentry>
                     </parml>
                     <p>To delete an address, use the following commands:</p>
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-addr-list</userinput></codeblock>
+                    <codeblock>~(keystone_admin)$ system host-addr-list</codeblock>
                     <p>This displays the UUIDs of existing addresses.</p>
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-addr-delete <varname>uuid</varname></userinput></codeblock>
+                    <codeblock>~(keystone_admin)$ system host-addr-delete <varname>uuid</varname></codeblock>
                     <p>where <codeph>uuid</codeph> is the UUID of the address.</p>
                 
-            </step>
-            <step id="step_N10152_N10038_N1001F_N10001">
-                <cmd>Unlock the compute node and wait for it to become available.</cmd>
-            </step>
+            
+             
+                <li>Unlock the compute node and wait for it to become available.</li>
+            
         </ol>
     </body>
-</task-wr>
+</topic>

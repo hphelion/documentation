@@ -14,15 +14,15 @@
         <p>QoS policies are created by the cluster administrator, and selected by the
             tenant users to apply on a per-tenant network basis. To create a new QoS policy, log in
             as administrator, select the option <option>Networks</option> from the
-                <uicontrol>Admin</uicontrol> menu, and visit the <uicontrol>QoS Policies</uicontrol> tab on the <wintitle>Networks</wintitle> page, as illustrated below.</p>
-        <fig id="fig_N10031_N1001A_N10001">
+                <b>Admin</b> menu, and visit the <b>QoS Policies</b> tab on the <b>Networks</b> page, as illustrated below.</p>
+        
             <image href="jow1404333740550.image" id="image_hyt_rrm_44" placement="inline" width="5in"/>
-        </fig>
-        <p>Click the button <uicontrol>Create QoS Policy</uicontrol> to display the <wintitle>Create QoS
-    Policy</wintitle> window.</p>
-        <fig id="fig_N10049_N1001A_N10001">
+        
+        <p>Click the button <b>Create QoS Policy</b> to display the <b>Create QoS
+    Policy</b> window.</p>
+        
             <image href="jow1404333742007.image" id="image_mw1_1vm_44" placement="inline"/>
-        </fig>
+        
         <p>The following fields are available:</p>
         <dl>
             <dlentry>
@@ -80,7 +80,7 @@
             </dlentry>
         </dl>
         <p>Tenant users can select available QoS policies when the tenant networks
-            are created from the <wintitle>Create Network</wintitle> window. They
-            can also apply a QoS policy to an already existing tenant network from the <wintitle>Edit Network</wintitle> window.</p>
+            are created from the <b>Create Network</b> window. They
+            can also apply a QoS policy to an already existing tenant network from the <b>Edit Network</b> window.</p>
     </body>
 </topic>

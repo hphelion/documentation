@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="psa1414084582159" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="psa1414084582159" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -12,7 +12,7 @@
         <author></author>
     </prolog>
     <body>
-        <context id="context_N1001E_N1001B_N10001">
+        
             <p>When installing the HP Helion OpenStack Carrier Grade software on new hardware, it is
                 recommended that you install the latest available patches on <codeph>controller-0</codeph> before running the
                     <cmdname>config_controller</cmdname> script, and before installing the software
@@ -29,93 +29,93 @@
             </ul>
             <p>This exercise assumes that the patches to install are available on a USB flash drive,
                 or from a server reachable by <codeph>controller-0</codeph>.</p>
-        </context>
+        
         <ol>
-            <step id="step_N1004F_N1004C_N1001B_N10001">
-                <cmd>Initialize <codeph>controller-0</codeph>.</cmd>
+             
+                <li>Initialize <codeph>controller-0</codeph>.</li>
                 
                     <p>Use the HP Helion OpenStack Carrier Grade bootable ISO image to initialize
                             <codeph>controller-0</codeph>. See the <cite>HP Helion OpenStack Carrier Grade
                             Software Installation Guide</cite> for details.</p>
                 
-                <stepresult>
+                
                     <p>This step takes you to the point where you use the console
                         port to log in to <codeph>controller-0</codeph> as
                         user <codeph>wrsroot</codeph>.</p>
-                </stepresult>
-            </step>
-            <step id="step_N1007C_N1004C_N1001B_N10001">
-                <cmd>Copy the patches to the local file system.</cmd>
+                
+            
+             
+                <li>Copy the patches to the local file system.</li>
                 
                     <p>If the patches are on a USB flash drive, copy them from the
                         appropriate mount point to some directory in the local file system. For
                         example:</p>
                 
-                <stepxmp>
-                    <codeblock><systemoutput>$ </systemoutput><userinput>mkdir /tmp/patches</userinput>
-<systemoutput>$ </systemoutput><userinput>cp /media/wrsroot/data/TITANIUM_CONTROLLER_14.10_PATCH_0001.patch /tmp/patches</userinput></codeblock>
-                </stepxmp>
+                
+                    <codeblock>$ mkdir /tmp/patches</codeph>
+<codeph>$ cp /media/wrsroot/data/TITANIUM_CONTROLLER_14.10_PATCH_0001.patch /tmp/patches</codeblock>
+                
                 
                     <p>If the patches are available from a remote server, you need
                         to manually initialize a suitable Ethernet interface first, and then
                         transfer them to the local file system. For example:</p>
-                    <codeblock><systemoutput>$ </systemoutput><userinput>mkdir /tmp/patches</userinput>
-<systemoutput>$ </systemoutput><userinput>sudo ifconfig eth3 192.168.1.100 netmask 255.255.255.0 up</userinput>
-<systemoutput>$ </systemoutput><userinput>scp \
+                    <codeblock>$ mkdir /tmp/patches</codeph>
+<codeph>$ sudo ifconfig eth3 192.168.1.100 netmask 255.255.255.0 up</codeph>
+<codeph>$ scp \
 me@192.168.1.150:/usr/local/patches/TITANIUM_CONTROLLER_14.10_PATCH_0001.patch \
-/tmp/patches</userinput></codeblock>
+/tmp/patches</codeblock>
                 
-                <stepresult>
+                
                     <p>All patches are now in the directory <filepath>/tmp/patches</filepath>.</p>
-                </stepresult>
-            </step>
-            <step id="step_N100CC_N1004C_N1001B_N10001">
-                <cmd>Populate the patch storage area.</cmd>
+                
+            
+             
+                <li>Populate the patch storage area.</li>
                 
                     <p>Upload the patches using the command <cmdname>sw-patch upload</cmdname> or <cmdname>sw-patch
                             upload-dir</cmdname> as described in <xref href="psa1410446807133.xml"/>.</p>
                 
-            </step>
-            <step id="step_N1011E_N10059_N1001E_N10001">
-                <cmd>Apply the patches.</cmd>
+            
+             
+                <li>Apply the patches.</li>
                 
                     <p>Apply the patches using the command <cmdname>sw-patch apply --all</cmdname>.</p>
                 
-                <stepresult>
+                
                     <p>The patches are now in the software updates repository, ready to be
                         installed.</p>
-                </stepresult>
-            </step>
-            <step id="step_N100E9_N1004C_N1001B_N10001">
-                <cmd>Install the patches locally.</cmd>
-                <stepxmp>
-                    <codeblock><systemoutput>$ </systemoutput><userinput>sudo sw-patch install-local</userinput>
-<systemoutput>Patch installation is complete.
-Please reboot before continuing with configuration.</systemoutput></codeblock>
-                </stepxmp>
-                <stepresult>
+                
+            
+             
+                <li>Install the patches locally.</li>
+                
+                    <codeblock>$ sudo sw-patch install-local</codeph>
+<codeph>Patch installation is complete.
+Please reboot before continuing with configuration.</codeblock>
+                
+                
                     <p>This command installs all applied patches on <codeph>controller-0</codeph>.</p>
-                </stepresult>
-            </step>
-            <step id="step_N1010B_N1004C_N1001B_N10001">
-                <cmd>Reboot <codeph>controller-0</codeph>.</cmd>
+                
+            
+             
+                <li>Reboot <codeph>controller-0</codeph>.</li>
                 
                     <p>You must reboot the controller to ensure that it is running with the software
                         fully patched.</p>
                 
-            </step>
-            <step id="step_N10120_N1004C_N1001B_N10001">
-                <cmd>Continue the installation.</cmd>
+            
+             
+                <li>Continue the installation.</li>
                 
                     <p>Log in again as <codeph>wrsroot</codeph> and
                         continue with the software installation by running the <cmdname>config_controller</cmdname> script. See the <cite>HP Helion OpenStack Carrier Grade Software Installation Guide</cite> for
                         further details and directions.</p>
                 
-            </step>
+            
         </ol>
         Host
             <p>Once all hosts in the cluster are initialized, they are all running
                 fully patched software. The HP Helion OpenStack Carrier Grade cluster is up to date.</p>
-        </result>
+        
     </body>
-</task-wr>
+</topic>

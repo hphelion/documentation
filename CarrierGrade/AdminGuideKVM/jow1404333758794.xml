@@ -4,16 +4,16 @@
     <!-- Modification History
    -->
     <title>Inventory Detail</title>
-    <shortdesc>From the <wintitle>Inventory Detail</wintitle> page you
+    <shortdesc>From the <b>Inventory Detail</b> page you
         can see detailed information about a host, and use it to define hardware profiles that can
         be used across the cluster.</shortdesc>
     <prolog><author/>
         <author/>
     </prolog>
     <body>
-        <p>You access the <wintitle>Inventory Detail</wintitle> page
-            by clicking the host name on the <uicontrol>Hosts</uicontrol> tab of the
-                <wintitle>Systems Inventory</wintitle> page, as described in <xref href="jow1404333646078.xml"/>. The inventory detail for a host
+        <p>You access the <b>Inventory Detail</b> page
+            by clicking the host name on the <b>Hosts</b> tab of the
+                <b>Systems Inventory</b> page, as described in <xref href="jow1404333646078.xml"/>. The inventory detail for a host
             consists of multiple tabs, each addressing a different aspect of the host. They
             include:</p>
         <ul id="ul_ayq_s3z_l4">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="rst1441822551049" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="rst1441822551049" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -12,7 +12,7 @@
         <author>Ron Stone</author>
     </prolog>
     <body>
-        <context id="context_N1001F_N1001C_N10001">
+        
             <p><draft-comment author="rstone">Topic created for
                     US60539</draft-comment>If no value is set, the default is 800 seconds.</p>
             <p>If the value is exceeded, the migration is canceled and a customer
@@ -34,7 +34,7 @@
             <p>To set this option using the web administration interface:</p>
             <ul id="ul_xy2_v3y_lt">
                 <li>
-                    <p>As <term>admin</term>, use the <uicontrol>Live Migration Timeout</uicontrol> selection in the <uicontrol>Create Flavor Extra Spec</uicontrol> drop-down menu. To
+                    <p>As <term>admin</term>, use the <b>Live Migration Timeout</b> selection in the <b>Create Flavor Extra Spec</b> drop-down menu. To
                         access this menu, see <xref href="jow1429538642910.xml"/>.</p>
                 </li>
             </ul>
@@ -43,34 +43,34 @@
                 <li>
                     <p>As either <term>admin</term> or a tenant, select
                             <menucascade>
-                            <uicontrol>System</uicontrol>
-                            <uicontrol>Images</uicontrol>
-                            <uicontrol>Edit Image</uicontrol>
-                            <uicontrol>Update Metadata</uicontrol>
+                            <b>System</b>
+                            <b>Images</b>
+                            <b>Edit Image</b>
+                            <b>Update Metadata</b>
                         </menucascade> for the desired images and add an entry with:</p>
                     <codeblock>hw_wrs_live_migration_timeout=<varname>seconds</varname></codeblock>
                 </li>
             </ul>
-        </context>
+        
         <ol>
-            <step id="step_N10035_N10032_N1001C_N10001">
-                <cmd>Set the timer from the command line:</cmd>
+             
+                <li>Set the timer from the command line:</li>
                 
                     <p>The following examples set the timeout to 400 seconds.</p>
                 
                 <choices id="choices_iks_2wn_ht">
-                    <choice>
+                    <ul>
                         <p>As <term>admin</term>, add an extra spec to a flavor
                             by:</p>
-                        <codeblock><systemoutput>~(keystone)admin)$ </systemoutput><userinput>nova flavor-key <varname>flavorName</varname> set hw:wrs:live_migration_timeout=400</userinput></codeblock>
-                    </choice>
-                    <choice>
+                        <codeblock>~(keystone)admin)$ nova flavor-key <varname>flavorName</varname> set hw:wrs:live_migration_timeout=400</codeblock>
+                    </ul>
+                    <ul>
                         <p>As <term>admin</term> or a tenant, update the metadata
                             of an image by:</p>
-                        <codeblock><systemoutput>~(keystone)admin)$ </systemoutput><userinput>glance image-update --property hw_wrs_live_migration_timeout=400 <varname>imageName</varname></userinput></codeblock>
-                    </choice>
+                        <codeblock>~(keystone)admin)$ glance image-update --property hw_wrs_live_migration_timeout=400 <varname>imageName</varname></codeblock>
+                    </ul>
                 </choices>
-            </step>
+            
         </ol>
     </body>
-</task-wr>
+</topic>

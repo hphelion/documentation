@@ -11,7 +11,7 @@
         <author/>
     </prolog>
     <body>
-        <p>The following types of hardware profiles are available from the <wintitle>Systems Inventory</wintitle> page, each presented on a separate
+        <p>The following types of hardware profiles are available from the <b>Systems Inventory</b> page, each presented on a separate
             tab:</p>
         <ul id="ul_lrp_w4q_l4">
             <li>
@@ -70,12 +70,12 @@
         number of threads of all types, a default CPU allocation is done automatically when the
         system software is initially installed.</p>
             <!-- 2015-07-10 According to Juhn King (in connection with US58452), a small-footprint system (aka minimal two-server configuration, aka combined controller-compute node) is allocated two CPUs by default. -->
-            <p>A list of the currently defined CPU profiles is available from the <uicontrol>CPU
-          Profiles</uicontrol> tab on the <wintitle>System Inventory</wintitle> page, as illustrated
+            <p>A list of the currently defined CPU profiles is available from the <b>CPU
+          Profiles</b> tab on the <b>System Inventory</b> page, as illustrated
         below.</p>
-            <fig id="fig_N1009C_N1004C_N10020_N10001">
+            
                 <image href="jow1404333761616.image" id="image_a1p_t2r_l4" width="6in"/>
-            </fig>
+            
             <p>This example lists one CPU profile, named <codeph>HP-360-C1</codeph>, with the
         following processor and core allocation:</p>
             <table frame="all" id="table_s32_fdr_l4">
@@ -122,7 +122,7 @@
                     </tbody>
                 </tgroup>
             </table>
-            <p>CPU profiles can be deleted using the button <uicontrol>Delete CPU Profiles</uicontrol> on this page. When clicked, it
+            <p>CPU profiles can be deleted using the button <b>Delete CPU Profiles</b> on this page. When clicked, it
                 deletes all check-marked profiles in the list. The delete operation does not affect
                 CPU profiles already applied.</p>
             <p>See <xref href="jow1404333768530.xml"/> for more information of how to change
@@ -148,11 +148,11 @@
                 </dlentry>
             </dl>
             <p>A list of the currently defined interface profiles is available from the
-          <uicontrol>Interface Profiles</uicontrol> tab on the <wintitle>System Inventory</wintitle>
+          <b>Interface Profiles</b> tab on the <b>System Inventory</b>
         page, as illustrated below.</p>
-            <fig id="fig_N10174_N10138_N10020_N10001">
+            
                 <image href="jow1404333769085.image" id="image_svc_jgr_l4" width="6in"/>
-            </fig>
+            
             <p>This example lists two interface profiles, as follows:</p>
             <table frame="all" id="table_gxd_hmr_l4">
                 <title>Interface Profiles</title>
@@ -221,7 +221,7 @@
             <p>The interface profile <codeph>HP-360-ctrl-iface-profile</codeph> belongs to a
         controller node. It lists two physical ports, eth0, and eth1, and two logical L2 interfaces
         connecting these ports to the OAM and internal management networks.</p>
-            <p>Interface profiles can be deleted using the button <uicontrol>Delete Interface Profiles</uicontrol> on this page. When
+            <p>Interface profiles can be deleted using the button <b>Delete Interface Profiles</b> on this page. When
                 clicked, it deletes all check-marked profiles in the list.  The delete operation
                 does not affect interface profiles already applied.</p>
             <p>See <xref href="jow1404333777760.xml"/> for more
@@ -250,12 +250,12 @@
                     </dd>
                 </dlentry>
             </dl>
-            <p>A list of the currently defined storage profiles is available from the <uicontrol>Storage
-          Profiles</uicontrol> tab on the <wintitle>System Inventory</wintitle> page, as illustrated
+            <p>A list of the currently defined storage profiles is available from the <b>Storage
+          Profiles</b> tab on the <b>System Inventory</b> page, as illustrated
         below.</p>
-            <fig id="fig_N1028F_N1024B_N10020_N10001">
+            
                 <image href="jow1404333778322.image" id="image_bny_1vg_m4" width="6in"/>
-            </fig>
+            
             <p>This example lists one storage profile named <codeph>storprofile-1</codeph> with
         three storage resources on the hard drives <filepath>/dev/sdc</filepath>,
           <filepath>/dev/sdd</filepath>, and <filepath>/dev/sde</filepath>. All storage resources

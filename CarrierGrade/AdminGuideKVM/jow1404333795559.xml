@@ -4,16 +4,16 @@
     <!-- Modification History
    -->
     <title>Memory</title>
-    <shortdesc>Visit the <uicontrol>Memory</uicontrol> tab on the
-            <wintitle>Inventory Detail</wintitle> page to display host memory
+    <shortdesc>Visit the <b>Memory</b> tab on the
+            <b>Inventory Detail</b> page to display host memory
         details.</shortdesc>
     <prolog><author/>
         <author/>
     </prolog>
     <body>
-        <fig id="fig_N10027_N10024_N10001">
+        
             <image href="jow1404333794155.image" id="image_zbk_dwz_l4"/>
-        </fig>
+        
         <p>The information is presented in three columns, as follows:</p>
         <dl>
             <dlentry>

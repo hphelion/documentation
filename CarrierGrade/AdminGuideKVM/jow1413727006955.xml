@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1413727006955" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1413727006955" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -11,52 +11,52 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N1001F_N1001C_N10001">
+        
             <p>During software installation, HP Helion OpenStack Carrier Grade is configured with up
                 to two DNS server IP addresses. You change these addresses using the web
                 administration interface or the CLI.</p>
-        </context>
+        
         <ol>
-            <step id="step_N1002B_N10028_N1001C_N10001">
-                <cmd>In the HP Helion OpenStack Carrier Grade web administration interface, open the
-                        <wintitle>System Configuration</wintitle> pane.</cmd>
+             
+                <li>In the HP Helion OpenStack Carrier Grade web administration interface, open the
+                        <b>System Configuration</b> pane.
                 
-                    <p>The <wintitle>System Configuration</wintitle> pane is available from the
-                            <uicontrol>System Panel</uicontrol> section of the
-                            <uicontrol>Admin</uicontrol> menu. </p>
+                    <p>The <b>System Configuration</b> pane is available from the
+                            <b>System Panel</b> section of the
+                            <b>Admin</b> menu. </p>
                 
-            </step>
-            <step id="step_N1004A_N10028_N1001C_N10001">
-                <cmd>Select the <wintitle>DNS</wintitle> tab.</cmd>
-                <stepresult>
-                    <p>The <wintitle>DNS</wintitle> page appears, showing the
+                </li>
+             
+                <li>Select the <b>DNS</b> tab.
+                
+                    <p>The <b>DNS</b> page appears, showing the
                         currently defined DNS servers and their IP addresses.</p>
-                    <fig id="fig_t3s_4mz_5p">
+                    
                         <image href="jow1413850250201.image" id="image_w35_jnz_5p" width="6in">
                             <alt>DNS page</alt>
                         </image>
-                    </fig>
-                </stepresult>
-            </step>
-            <step id="step_N10070_N10028_N1001C_N10001">
-                <cmd>Click <uicontrol>Edit DNS</uicontrol>.</cmd>
-                <stepresult>
-                    <p>The <wintitle>Edit DNS</wintitle> dialog box appears.</p>
-                    <fig id="fig_tmw_qnz_5p">
+                    
+                </li>
+            
+             
+                <li>Click <b>Edit DNS</b>.
+                
+                    <p>The <b>Edit DNS</b> dialog box appears.</p>
+                    
                         <image href="jow1413850386429.image" id="image_yq1_tnz_5p" width="4in">
                             <alt>Edit DNS dialog</alt>
                         </image>
-                    </fig>
-                </stepresult>
-            </step>
-            <step id="step_N1009A_N10028_N1001C_N10001">
-                <cmd>Replace the DNS Server IP addresses with different ones as required.</cmd>
-            </step>
+                    
+                
+                </li>
+             
+                <li>Replace the DNS Server IP addresses with different ones as required.</li>
+            
         </ol>
-        Host
+        
             <p>Upon completion of the DNS configuration change, a <codeph>250.001 Configuration
                     out-of-date</codeph> alarm is raised temporarily, and then cleared
                 automatically by the system.</p>
-        </result>
+        
     </body>
-</task-wr>
+</topic>

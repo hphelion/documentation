@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410446976545">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic ditaarch:DITAArchVersion="1.2" domains="(topic task topic)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410446976545">
 <!-- Modification History
         
 -->
@@ -14,23 +14,23 @@
         <author></author>
     </prolog>
     <body>
-        <prereq id="prereq_N10026_N10023_N10001">
+        
             <p>Before you can install a patch, you must make it <term>available</term> by adding it
                 to the patch storage area. For more information, see <xref href="psa1410446807133.xml"/>.</p>
-        </prereq>
-        <context id="context_N1001E_N1001B_N10001">
+        
+        
             <p>Some of the available patches may be required on controller hosts
                 only, while others may be required on compute or storage hosts. When you
                     <term>apply</term> an available patch, it is added to the software updates
                 repository, ready for installation on any host type that requires it.  You can then
                 install all applicable patches to each host in turn.</p>
             <p>To keep track of patch installation, you can use the <cmdname>sw-patch query</cmdname> command.</p>
-            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>sudo sw-patch query</userinput>
-<systemoutput>﻿       Patch ID             Patch State
+            <codeblock>~(keystone_admin)$ sudo sw-patch query</codeph>
+<codeph>﻿       Patch ID             Patch State
 =========================   ===========
 TITANIUM_14.10_PATCH_0001   Available
 TITANIUM_14.10_PATCH_0002   Available
-TITANIUM_14.10_PATCH_0003   Available</systemoutput></codeblock>
+TITANIUM_14.10_PATCH_0003   Available</codeblock>
             <p>This shows the <codeph>Patch State</codeph> for each of the
                 patches in the patch storage area:</p>
             <dl>
@@ -66,72 +66,72 @@ TITANIUM_14.10_PATCH_0003   Available</systemoutput></codeblock>
                     query-hosts</cmdname> command to see which hosts are fully patched (<codeph>Patch Current</codeph>). This also shows which hosts
                 require reboot, either because they are not fully patched, or because they are fully
                 patched but need restarting to make the patches take effect.</p>
-            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>sudo sw-patch query-hosts</userinput>
-<systemoutput>﻿  Hostname      IP Address    Patch Current  Reboot Required
+            <codeblock>~(keystone_admin)$ sudo sw-patch query-hosts</codeph>
+<codeph>﻿  Hostname      IP Address    Patch Current  Reboot Required
 ============  ==============  =============  ===============
 compute-0     192.168.204.15       Yes             No
 controller-0  192.168.204.3        No              Yes
-controller-1  192.168.204.4        No              Yes</systemoutput></codeblock>
+controller-1  192.168.204.4        No              Yes</codeblock>
             <p>The following example illustrates the process of installing a single
                 patch on the cluster. It assumes that the patch is in the <i>Available</i> state already, as described in <xref href="psa1410446807133.xml"/>, and that only the controller nodes must be patched.</p>
-        </context>
+        
         <ol>
-            <step conref="psa1410446807133.xml#psa1410446807133/cli-admin-login" id="step_N10084_N10081_N1001F_N10001">
-                <cmd/>
-            </step>
-            <step id="step_N1002A_N10027_N1001B_N10001">
-                <cmd>Verify that the patches are available using the command <cmdname>sw-patch query</cmdname>.</cmd>
-                <stepxmp>
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>sudo sw-patch query</userinput>
-<systemoutput>﻿       Patch ID             Patch State
+            <li conref="psa1410446807133.xml#psa1410446807133/cli-admin-login" id="step_N10084_N10081_N1001F_N10001">
+            </li>
+            
+             
+                <li>Verify that the patches are available using the command <cmdname>sw-patch query</cmdname>.
+                
+                    <codeblock>~(keystone_admin)$ sudo sw-patch query</codeph>
+<codeph>﻿       Patch ID             Patch State
 =========================   ===========
 TITANIUM_14.10_PATCH_0001   Available
 TITANIUM_14.10_PATCH_0002   Available
-TITANIUM_14.10_PATCH_0003   Available</systemoutput></codeblock>
-                </stepxmp>
-            </step>
-            <step id="step_N100AD_N10081_N1001F_N10001">
-                <cmd>Apply the patch.</cmd>
-                <stepxmp>
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>sudo sw-patch apply TITANIUM_14.10_PATCH_0001</userinput>
-<systemoutput>TITANIUM_14.10_PATCH_0001 is now in the repo</systemoutput></codeblock>
-                </stepxmp>
-                <stepresult>
+TITANIUM_14.10_PATCH_0003   Available</codeblock>
+                
+                </li>
+             
+                <li>Apply the patch.
+                
+                    <codeblock>~(keystone_admin)$ sudo sw-patch apply TITANIUM_14.10_PATCH_0001</codeph>
+<codeph>TITANIUM_14.10_PATCH_0001 is now in the repo</codeblock>
+                
+                
                     <p>The patch is now in the <i>Partial-Apply</i>
                         state, ready for installation from the software updates repository on the
                         impacted hosts.</p>
-                </stepresult>
-            </step>
-            <step id="step_N100FB_N1009F_N1001F_N10001" importance="optional">
-                <cmd>Apply all available patches in a single operation.</cmd>
-                <stepxmp>
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>sudo sw-patch apply --all</userinput>
-<systemoutput>TITANIUM_14.10_PATCH_0001 is now in the repo</systemoutput>
-<systemoutput>TITANIUM_14.10_PATCH_0002 is now in the repo</systemoutput>
-<systemoutput>TITANIUM_14.10_PATCH_0003 is now in the repo</systemoutput></codeblock>
-                </stepxmp>
+                
+                </li>
+             
+                <li>Apply all available patches in a single operation.
+                
+                    <codeblock>~(keystone_admin)$ sudo sw-patch apply --all</codeph>
+<codeph>TITANIUM_14.10_PATCH_0001 is now in the repo</codeph>
+<codeph>TITANIUM_14.10_PATCH_0002 is now in the repo</codeph>
+<codeph>TITANIUM_14.10_PATCH_0003 is now in the repo</codeblock>
+                
                 
                     <p>In this example there are three patches ready now for
                         installation from the software updates repository.</p>
                 
-            </step>
-            <step id="step_N1012A_N1009F_N1001F_N10001">
-                <cmd>Query the patching status of all hosts in the cluster.</cmd>
+                </li>
+             
+                <li>Query the patching status of all hosts in the cluster.
                 
                     <p>You can query the patching status of all hosts at any time as
                         illustrated below. Note that the reported status is the accumulated result
                         of all applied and removed patches in the software updates repository, and
                         not just the status due to a particular patch.</p>
                 
-                <stepxmp>
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>sudo sw-patch query-hosts</userinput>
-<systemoutput>﻿  Hostname      IP Address    Patch Current  Reboot Required
+                
+                    <codeblock>~(keystone_admin)$ sudo sw-patch query-hosts</codeph>
+<codeph>﻿  Hostname      IP Address    Patch Current  Reboot Required
 ============  ==============  =============  ===============
 compute-0     192.168.204.15       Yes             No
 controller-0  192.168.204.3        No              Yes
-controller-1  192.168.204.4        No              Yes</systemoutput></codeblock>
-                </stepxmp>
-                <stepresult>
+controller-1  192.168.204.4        No              Yes</codeblock>
+                
+                
                     <p>For each host in the cluster, the following patch status
                         fields are displayed:</p>
                     <dl>
@@ -158,31 +158,31 @@ controller-1  192.168.204.4        No              Yes</systemoutput></codeblock
                     <p>In this example, <codeph>compute-0</codeph> is up to date, no patches need to be installed
                         and no reboot is required. By contrast, the controllers are not patch
                         current, and therefore a reboot is required to install the patch.</p>
-                </stepresult>
-            </step>
-            <step id="step_N10190_N1009F_N1001F_N10001">
-                <cmd>Install all pending patches on <codeph>controller-0</codeph>.</cmd>
-                <substeps id="substeps_kzv_x13_pp">
-                    <substep>
-                        <cmd>Swact controller services.</cmd>
-                        <stepxmp>
-                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-swact controller-0</userinput></codeblock>
-                        </stepxmp>
+                </li>
+            
+             
+                <li>Install all pending patches on <codeph>controller-0</codeph>.
+                 <ol>
+                    
+                        <li>Swact controller services.
+                        
+                            <codeblock>~(keystone_admin)$ system host-swact controller-0</codeblock>
+                        
                         
                             <p>Before patching a controller node, you must transfer
                                 any active services running on the host to the other controller.
                                 Only then it is safe to lock the host.</p>
                         
-                    </substep>
-                    <substep>
-                        <cmd>Run the patching sequence.</cmd>
+                </li>
+                    
+                        <li>Run the patching sequence.
                         
                             <p>The patching sequence locks the host, installs the
                                 patches, and forces a host reboot.</p>
                         
-                        <stepxmp>
-                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-patch-reboot controller-0</userinput>
-<systemoutput>host-patch-reboot controller-0 may take several minutes to complete.
+                        
+                            <codeblock>~(keystone_admin)$ system host-patch-reboot controller-0</codeph>
+<codeph>host-patch-reboot controller-0 may take several minutes to complete.
  
 2014-10-17-20-39-59_host-patch-reboot start.
 ...
@@ -199,65 +199,65 @@ Installing patch for host controller-0 ...
 Patch response Info: Patch installation was successful on controller-0.
  
 2014-10-17-20-40-16_host-patch-reboot host-unlock
-Restoring initial administrative state: unlocked. Unlocking host controller-0 to return to initial administrative state.</systemoutput></codeblock>
-                        </stepxmp>
-                    </substep>
-                </substeps>
-                <stepresult>
+Restoring initial administrative state: unlocked. Unlocking host controller-0 to return to initial administrative state.</codeblock>
+                        </li>
+                    
+                </ol>
+                
                     <p>All patches are now installed on <codeph>controller-0</codeph>. Querying the current patch
                         status displays the following information:</p>
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>sudo sw-patch query-hosts</userinput>
-<systemoutput>﻿  Hostname      IP Address    Patch Current  Reboot Required
+                    <codeblock>~(keystone_admin)$ sudo sw-patch query-hosts</codeph>
+<codeph>﻿  Hostname      IP Address    Patch Current  Reboot Required
 ============  ==============  =============  ===============
 compute-0     192.168.204.15       Yes             No
 controller-0  192.168.204.3        Yes             No
-controller-1  192.168.204.4        No              Yes</systemoutput></codeblock>
-                </stepresult>
-            </step>
-            <step id="step_N1023A_N100A0_N1001F_N10001" importance="optional">
-                <cmd>Manually install all pending patches on <codeph>controller-0</codeph>.</cmd>
+controller-1  192.168.204.4        No              Yes</codeblock>
+                
+                </li>
+             
+                <li>Manually install all pending patches on <codeph>controller-0</codeph>.
                 
                     <p>You may want to have finer control of the patching steps
                         executed by the <cmdname>system host-patch-reboot</cmdname>
                         command to determine when to install the patches and unlock the host.</p>
                 
-                <substeps id="substeps_ck5_3qx_5p">
-                    <substep>
-                        <cmd>Swact controller services.</cmd>
-                        <stepxmp>
-                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-swact controller-0</userinput></codeblock>
-                        </stepxmp>
+                 <ol>
+                    
+                        <li>Swact controller services.
+                        
+                            <codeblock>~(keystone_admin)$ system host-swact controller-0</codeblock>
+                
                         
                             <p>Before patching a controller node, you must transfer
                                 any active services running on the host to the other controller.
                                 Only then it is safe to lock the host.</p>
                         
-                    </substep>
-                    <substep>
-                        <cmd>Lock the host.</cmd>
-                        <stepxmp>
-                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-lock controller-0</userinput></codeblock>
-                        </stepxmp>
+                        </li>    
+                    
+                        <li>Lock the host.
+                        
+                            <codeblock>~(keystone_admin)$ system host-lock controller-0</codeblock>
+                        
                         
                             <p>You must lock the target host, controller, compute,
                                 or storage, before installing patches.</p>
                         
-                    </substep>
-                    <substep>
-                        <cmd>Install the pending patches.</cmd>
-                        <stepxmp>
-                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>sudo sw-patch host-install controller-0</userinput>
-<systemoutput>Patch installation was successful on controller-0</systemoutput></codeblock>
-                        </stepxmp>
-                        <stepresult>
+                        </li>
+                    
+                        <li>Install the pending patches.
+                        
+                            <codeblock>~(keystone_admin)$ sudo sw-patch host-install controller-0</codeph>
+<codeph>Patch installation was successful on controller-0</codeblock>
+                        
+                        
                             <p>All patches are now installed on <codeph>controller-0</codeph>. Querying the
                                 current patching status displays the following information:</p>
-                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>sudo sw-patch query-hosts</userinput>
-<systemoutput>﻿  Hostname      IP Address    Patch Current  Reboot Required
+                            <codeblock>~(keystone_admin)$ sudo sw-patch query-hosts</codeph>
+<codeph>﻿  Hostname      IP Address    Patch Current  Reboot Required
 ============  ==============  =============  ===============
 compute-0     192.168.204.15       Yes             No
 controller-0  192.168.204.3        Yes             Yes
-controller-1  192.168.204.4        No              Yes</systemoutput></codeblock>
+controller-1  192.168.204.4        No              Yes</codeblock>
                             <p>For illustration purposes in this section, the
                                 command <cmdname>sw-patch host-install</cmdname> is
                                 presented as the tool to <i>install</i> patches.
@@ -265,76 +265,76 @@ controller-1  192.168.204.4        No              Yes</systemoutput></codeblock
                                 patches as well, as described in <xref href="psa1410446902796.xml"/>. The command is better described then as the
                                 tool to install and remove all patches in the <i>Partial-Apply</i> and <i>Partial-Remove</i>
                                 states on a host.</p>
-                        </stepresult>
-                    </substep>
-                    <substep>
-                        <cmd>Unlock the target host.</cmd>
-                        <stepxmp>
-                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-unlock controller-0</userinput></codeblock>
-                        </stepxmp>
-                        <stepresult>
+                        
+                        </li>
+                    
+                        <li>Unlock the target host.
+                        
+                            <codeblock>~(keystone_admin)$ system host-unlock controller-0</codeblock>
+                        
+                        
                             <p>Unlocking the host forces a reset of the host
                                 followed by a reboot. This ensures that the host is restarted in a
                                 known state.</p>
-                        </stepresult>
-                    </substep>
-                </substeps>
-                <stepresult>
+                        
+                        </li>
+                </ol>
+                
                     <p>All patches are now installed on <codeph>controller-0</codeph>.</p>
-                </stepresult>
-            </step>
-            <step id="step_N10260_N1009F_N1001F_N10001">
-                <cmd>Install all pending patches on <codeph>controller-1</codeph>.</cmd>
+                
+                </li>
+             
+                <li>Install all pending patches on <codeph>controller-1</codeph>.
                 
                     <p>Repeat the previous step targeting <codeph>controller-1</codeph>
                         this time.</p>
                 
-                <stepresult>
+                
                     <p>All patches are now installed on <codeph>controller-1</codeph> as well. Querying the
                         current patching status displays the following information:</p>
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>sudo sw-patch query-hosts</userinput>
-<systemoutput>﻿  Hostname      IP Address    Patch Current  Reboot Required
+                    <codeblock>~(keystone_admin)$ sudo sw-patch query-hosts</codeph>
+<codeph>﻿  Hostname      IP Address    Patch Current  Reboot Required
 ============  ==============  =============  ===============
 compute-0     192.168.204.15       Yes             No
 controller-0  192.168.204.3        Yes             No
-controller-1  192.168.204.4        Yes             No</systemoutput></codeblock>
-                </stepresult>
-            </step>
-            <step id="step_N10388_N100A4_N10023_N10001">
-                <cmd>Install any pending patches for the compute or storage
-                    hosts.</cmd>
+controller-1  192.168.204.4        Yes             No</codeblock>
+                
+                </li>
+             
+                <li>Install any pending patches for the compute or storage
+                    hosts.
                 
                     <p>If the <codeph>Patch
                             Current</codeph> status for a compute or storage host is
                             <codeph>No</codeph>, apply the pending
                         patches using the following command:</p>
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-patch-reboot <varname>hostname</varname></userinput></codeblock>
+                    <codeblock>~(keystone_admin)$ system host-patch-reboot <varname>hostname</varname></codeblock>
                     <p>where <varname>hostname</varname> is the
                         name of the host (for example, <codeph>compute-0</codeph>). This applies the patch and then reboots the
                         host.</p>
                 
-            </step>
-            <step id="step_N103BC_N100A4_N10023_N10001">
-                <cmd>Confirm that all patches are installed and the HP Helion OpenStack Carrier Grade
-                    cluster is up-to-date.</cmd>
+                </li>
+             
+                <li>Confirm that all patches are installed and the HP Helion OpenStack Carrier Grade
+                    cluster is up-to-date.
                 
                     <p>Use the <cmdname>sw-patch query</cmdname>
                         command to verify that all patches are <codeph>Applied</codeph>.</p>
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>sudo sw-patch query</userinput>
-<systemoutput>﻿       Patch ID             Patch State
+                    <codeblock>~(keystone_admin)$ sudo sw-patch query</codeph>
+<codeph>﻿       Patch ID             Patch State
 =========================   ===========
-TITANIUM_14.10_PATCH_0001   Applied</systemoutput></codeblock>
+TITANIUM_14.10_PATCH_0001   Applied</codeblock>
                     <p>If the <codeph>Patch
                             State</codeph> for any patch is still shown as <codeph>Available</codeph> or <codeph>Partial-Apply</codeph>, use the <codeph>sw-patch query-hosts</codeph> command to identify
                         which hosts are not <codeph>Patch
                             Current</codeph>, and then apply patches to them as described in
                         the preceding steps.</p>
-                
-            </step>
+                </li>
+            
         </ol>
-        Host
+        
             <p>The Titanium cluster is up to date now. All patches are
                 installed.</p>
-        </result>
+        
     </body>
-</task-wr>
+</topic>

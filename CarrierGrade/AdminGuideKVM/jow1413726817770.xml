@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr id="jow1413726817770" xml:lang="en-us">
+<topic id="jow1413726817770" xml:lang="en-us">
 <!-- Modification History
 
  -->
@@ -27,15 +27,15 @@
      administrative actions.</p>
    </li>
   </ul>
-  <p>Alarms appear on the <wintitle>Fault Management</wintitle> pane, and related
-   status messages appear on the <wintitle>Hosts</wintitle> tab on the
-    <wintitle>Inventory</wintitle> pane. A variety of alarms may be reported on the Fault Management
+  <p>Alarms appear on the <b>Fault Management</b> pane, and related
+   status messages appear on the <b>Hosts</b> tab on the
+    <b>Inventory</b> pane. A variety of alarms may be reported on the Fault Management
    page, depending on the configuration change.</p>
   <note id="note_N1002C_N1001F_N10001" type="caution">
    <p>To help identify alarms raised during a configuration change, ensure that any existing system
     alarms are cleared before you begin. </p>
   </note>
-  <p>On the <wintitle>Hosts</wintitle> tab of the <wintitle>System Inventory</wintitle> pane, the status <codeph>Config
+  <p>On the <b>Hosts</b> tab of the <b>System Inventory</b> pane, the status <codeph>Config
     out-of-date</codeph> is shown for hosts affected by the change.  Each host with this status
    must be locked and then unlocked to update its configuration and clear the alarm.</p>
  </body>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410807811981">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic domains="(topic task topic)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410807811981">
 <!-- Modification History
         
 -->
@@ -11,7 +11,7 @@
         <author></author>
     </prolog>
     <body>
-        <context id="context_N1001F_N1001C_N10001">
+        
             <p>System data backups include:</p>
             <ul id="ul_enh_3dl_lp">
                 <li>
@@ -46,31 +46,32 @@
                         root access is needed.</p>
                 </li>
             </ul>
-        </context>
+        
         <ol>
-            <step id="step_N10081_N1007E_N1001C_N10001">
-                <cmd>Log in as user <codeph>wrsroot</codeph> to the active controller.</cmd>
+             
+                <li>Log in as user <codeph>wrsroot</codeph> to the active controller.
                 
                     <p>You can log in directly on the console or remotely using
                             <codeph>ssh</codeph>.</p>
+                </li>
+            
+             
+                <li>Execute the system backup.
                 
-            </step>
-            <step id="step_N1008E_N1007E_N1001C_N10001">
-                <cmd>Execute the system backup.</cmd>
-                <stepxmp>
-                    <codeblock><systemoutput>$ </systemoutput><userinput>sudo config_controller --backup titanium_backup_20140918</userinput>
-<systemoutput>Performing backup (this will take several minutes):
+                    <codeblock>
+$ sudo config_controller --backup titanium_backup_20140918
+Performing backup (this will take several minutes):
 Step 13 of 13 [#############################################] [100%]
 System backup file created: /opt/backups/titanium_backup_20140918_system.tgz
 Images backup file created: /opt/backups/titanium_backup_20140918_images.tgz
 
-Backup complete</systemoutput></codeblock>
-                </stepxmp>
+Backup complete</codeblock>
+                
                 
                     <p>In this example, the argument <term>titanium_backup_20140918</term> to the <option>--backup</option> option is an arbitrary identifier you want to use for
                         the backup.</p>
                 
-                <stepresult>
+                
                     <p>Upon successful execution of the command, the following two files are
                         available on the controller's file system:</p>
                     <ul id="ul_tx1_jyy_lp">
@@ -83,28 +84,28 @@ Backup complete</systemoutput></codeblock>
                     </ul>
                     <p>Together, these two files represent the entire system
                         data.</p>
-                </stepresult>
-            </step>
-            <step id="step_N100D9_N1007E_N1001C_N10001">
-                <cmd>Transfer the backup files to an external storage resource.</cmd>
+                
+                </li>            
+             
+                <li>Transfer the backup files to an external storage resource.
                 
                     <p>You can use a command such as <cmdname>scp</cmdname> to transfer the backup
                         files to a server reachable over the OAM network. You can also copy them to
                         a locally attached storage device, such as an external USB drive.</p>
                 
-            </step>
-            <step id="step_N100EE_N1007E_N1001C_N10001" importance="optional">
-                <cmd>Delete the backup files.</cmd>
+                </li>
+             
+                <li>Delete the backup files.
                 
                     <p>You may want to free up disk space on the controller to accommodate upcoming
                         Cinder volume backups.</p>
-                
-            </step>
+                </li>
+            
         </ol>
-        Host
+        
             <p>The system data backup is now complete. The backup files must be kept
                 in a secured location, probably holding multiple copies of them for redundancy
                 purposes.</p>
-        </result>
+        
     </body>
-</task-wr>
+</topic>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1425236791428" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1425236791428" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -11,11 +11,11 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N1001F_N1001C_N10001">
+        
             <p>Use the following command:</p>
-            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput>nova show <varname>instance</varname></codeblock>
+            <codeblock>~(keystone_admin)$ </codeph>nova show <varname>instance</varname></codeblock>
             <p>where <codeph>instance</codeph> is the name or UUID of the instance.</p>
             <!-- need sample output, plus an explanation of it -->
-        </context>
+        
     </body>
-</task-wr>
+</topic>

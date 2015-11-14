@@ -4,14 +4,14 @@
     <!-- Modification History
    -->
     <title>Cluster Overview</title>
-    <shortdesc>The <wintitle>Overview</wintitle> page appears when you
+    <shortdesc>The <b>Overview</b> page appears when you
         log into the HP Helion OpenStack Carrier Grade web management interface as the administrator. It presents a
         dashboard providing a quick health-check overview of the cluster.</shortdesc>
     <prolog><author/>
         <author/>
     </prolog>
     <body>
-        <p>The <wintitle>Overview</wintitle> page is an enhanced
+        <p>The <b>Overview</b> page is an enhanced
             version of its OpenStack counterpart. It includes the following features:</p>
         <ul id="ul_rff_dwh_34">
             <li>
@@ -60,7 +60,7 @@
                 <p>Hovering the mouse over the charts overlays information windows with detailed values.</p>
             </li>
             <li>
-                <p>History information is lost when the <wintitle>Overview</wintitle> page is no longer
+                <p>History information is lost when the <b>Overview</b> page is no longer
           displayed.</p>
             </li>
         </ul>
@@ -69,9 +69,9 @@
             <dlentry>
                 <dt>Compute vCPU Usage</dt>
                 <dd>
-                    <fig id="fig_N100A3_N100A0_N10099_N10096_N10020_N10001">
+                    
                         <image href="jow1404333631568.image" id="image_k1s_h13_34" width="2.25in"/>
-                    </fig>
+                    
                     <p>Presents information about the number of virtual CPUs across the entire cluster,
             available and allocated to virtual machines, and their average level of utilization.
             Elements in this chart are as follows:</p>
@@ -99,9 +99,9 @@
             <dlentry>
                 <dt>Instance CPU Utilization</dt>
                 <dd>
-                    <fig id="fig_N10107_N10104_N100FD_N10096_N10020_N10001">
+                    
                         <image href="jow1404333633038.image" id="image_yf5_2p3_34" width="2.25in"/>
-                    </fig>
+                    
                     <p>Presents information about virtual CPU utilization levels on virtual machines, across
             the entire cluster or for individual instances. Elements in this chart are as
             follows:</p>
@@ -130,9 +130,9 @@
             <dlentry>
                 <dt>Compute Memory Usage</dt>
                 <dd>
-                    <fig id="fig_N10150_N1014D_N10146_N10096_N10020_N10001">
+                    
                         <image href="jow1404333634455.image" id="image_u2h_gv3_34" width="2.25in"/>
-                    </fig>
+                    
                     <p>Presents information about memory usage levels on the compute nodes across the entire
             cluster. Elements in this chart are as follows:</p>
                     <ul id="ul_zzm_xv3_34">
@@ -154,9 +154,9 @@
             <dlentry>
                 <dt>Compute Disk Usage</dt>
                 <dd>
-                    <fig id="fig_N1019D_N1019A_N10193_N10096_N10020_N10001">
+                    
                         <image href="jow1404333635945.image" id="image_a35_lv3_34" width="2.25in"/>
-                    </fig>
+                    
                     <p>Presents information about disk usage levels on the compute nodes across the entire
             cluster. Elements in this chart are as follows:</p>
                     <ul id="ul_qws_xv3_34">
@@ -178,9 +178,9 @@
             <dlentry>
                 <dt>AVS CPU Utilization</dt>
                 <dd>
-                    <fig id="fig_N101D6_N101D3_N101CC_N10096_N10020_N10001">
+                    
                         <image href="jow1404333637433.image" id="image_ms4_3v3_34" width="2.25in"/>
-                    </fig>
+                    
                     <p>Presents information about AVS CPU utilization levels on the
                         compute nodes across the entire cluster. Elements in this chart are as
                         follows:</p>
@@ -201,9 +201,9 @@
             <dlentry>
                 <dt>Provider Network Port Utilization</dt>
                 <dd>
-                    <fig id="fig_N10237_N10234_N1022D_N10096_N10020_N10001">
+                    
                         <image href="jow1404333638899.image" id="image_zcq_4v3_34" width="2.25in"/>
-                    </fig>
+                    
                     <p>Presents information about network traffic levels on provider networks across the
             entire cluster. Elements in this chart are as follows:</p>
                     <ul id="ul_t5r_yv3_34">

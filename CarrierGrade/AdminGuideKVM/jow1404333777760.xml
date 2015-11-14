@@ -4,28 +4,28 @@
     <!-- Modification History
    -->
     <title>Interfaces</title>
-    <shortdesc>The <uicontrol>Interfaces</uicontrol> tab on the
-            <wintitle>Inventory Detail</wintitle> page presents details about the
+    <shortdesc>The <b>Interfaces</b> tab on the
+            <b>Inventory Detail</b> page presents details about the
         logical L2 network interfaces on a node, as illustrated below for an unlocked controller
         node.</shortdesc>
     <prolog><author/>
         <author/>
     </prolog>
     <body>
-        <fig id="fig_N10027_N10024_N10001">
+        
             <image href="jow1404333771094.image" id="image_v3c_dc1_m4" width="6in"/>
-        </fig>
+        
         <p><!-- screen shot needs to match text! -->In this example the node has two allocated interfaces,
                 <codeph>eth0</codeph> connecting to the OAM network, and
                 <codeph>eth1</codeph> connecting to the internal management network. These
             interfaces are mandatory and therefore cannot be deleted. They reflect the allocation
             given when the node was provisioned. See the <cite>HP Helion OpenStack Carrier Grade
                 Software Installation Guide</cite> for details.</p>
-        <p>On a properly configured compute node, the <uicontrol>Interfaces</uicontrol> tab presents additional logical interfaces, as illustrated
+        <p>On a properly configured compute node, the <b>Interfaces</b> tab presents additional logical interfaces, as illustrated
             below for a locked node:</p>
-        <fig id="fig_N10047_N10024_N10001">
+        
             <image href="jow1404333772968.image" id="image_xyx_c21_m4" width="6in"/>
-        </fig>
+        
         <p><!-- screen shot needs to match text! -->In this example the node has three allocated interfaces, <codeph>eth1</codeph> connecting to the internal management network,
             and <codeph>data0</codeph> and <codeph>data1</codeph> connecting to the provider networks <codeph>group0-data0</codeph> and <codeph>group0-data1</codeph> respectively. The interface <codeph>eth1</codeph> is auto-provisioned as part of the automated software
             installation process on the compute node. It can be modified but not deleted.</p>
@@ -122,35 +122,35 @@
                 <dd>
                     <p>On a locked node, you can modify a logical interface, and
                         execute management operations on it. This is implemented using the buttons
-                            <uicontrol>Edit Interface</uicontrol> and <uicontrol>More</uicontrol>. These buttons are not available when
+                            <b>Edit Interface</b> and <b>More</b>. These buttons are not available when
                         the node is unlocked.</p>
                 </dd>
             </dlentry>
         </dl>
         <section id="section_N10133_N10024_N10001">
             <title>Creating an Interface Profile</title>
-            <p>Use the <uicontrol>Create Interface
-                    Profile</uicontrol> button on the <uicontrol>Interfaces</uicontrol> tab to display the <wintitle>Create
-                    Interface Profile</wintitle> window. From there you can create a new interface
+            <p>Use the <b>Create Interface
+                    Profile</b> button on the <b>Interfaces</b> tab to display the <b>Create
+                    Interface Profile</b> window. From there you can create a new interface
                 profile out of the currently defined node interfaces. An example for a compute node
                 is illustrated below.</p>
-            <fig id="fig_N1014D_N10135_N10024_N10001">
+            
                 <image href="jow1404333774522.image" id="image_gpp_pp1_m4" width="4in"/>
-            </fig>
+            
             <p>In this window you enter the name of the new profile,
           <codeph>HP-360-cmpt-iface-profile</codeph> in this case, and then click the
-        button <uicontrol>Create Interface Profile</uicontrol> to execute. Available interface
-        profiles are listed, and can be removed, from the <wintitle>System Inventory</wintitle>
+        button <b>Create Interface Profile</b> to execute. Available interface
+        profiles are listed, and can be removed, from the <b>System Inventory</b>
         page, as described in <xref href="jow1404333787693.xml"/>.</p>
         </section>
         <section id="section_N1016B_N10024_N10001">
             <title>Managing Interfaces</title>
-            <p>New logical interfaces can be created using the <uicontrol>Create Interface</uicontrol> button on the <uicontrol>Interfaces</uicontrol> tab. This button is available only on
-                nodes in the locked state. When the button is clicked, the window <wintitle>Create Interface</wintitle> is displayed, as illustrated
+            <p>New logical interfaces can be created using the <b>Create Interface</b> button on the <b>Interfaces</b> tab. This button is available only on
+                nodes in the locked state. When the button is clicked, the window <b>Create Interface</b> is displayed, as illustrated
                 below.</p>
-            <fig id="fig_N10186_N1016E_N10024_N10001">
+            
                 <image href="jow1404333776177.image" id="image_dz4_jr1_m4"/>
-            </fig>
+            
             <p>The following fields are available:</p>
             <dl>
                 <dlentry>
@@ -208,7 +208,7 @@
         </section>
         <section id="section_N10203_N10024_N10001">
             <p>To edit or remove a logical interface of network type <codeph>data</codeph> or <codeph>infra</codeph> you
-                must first lock the target node. You can then use the <uicontrol>Edit Interface</uicontrol> and <uicontrol>More</uicontrol>
+                must first lock the target node. You can then use the <b>Edit Interface</b> and <b>More</b>
                 buttons to perform these maintenance actions.</p>
             <p>Logical interfaces of network types <codeph>oam</codeph> and <codeph>mgmt</codeph> cannot
                 be deleted. They can only be modified to use different physical ports when required. </p>

@@ -13,13 +13,13 @@
         <author ixia_locid="6">Tom Towle</author>
     </prolog>
     <taskbody>
-        <context id="context_N10031_N1002E_N10001" ixia_locid="396">
+        
             <p ixia_locid="397"><draft-comment author="jowens" ixia_locid="398">US62804 mention controller configuration
                     file</draft-comment>You can perform the configuration interactively, as
                 described in this section, or you can use a prepared configuration file. For more
                 about using a configuration file, see <xref href="jow1441306845507.xml" ixia_locid="399"/>.</p>
-        </context>
-        <prereq id="prereq_N1002B_N10028_N10001" ixia_locid="7">
+        
+        
             <p ixia_locid="8">Before running the configuration script:</p>
             <ul id="ul_hk2_wmr_g4">
                 <li ixia_locid="9">
@@ -42,17 +42,17 @@
                 </li>
             </ul>
         </prereq>
-        <context id="context_N1007D_N1002E_N10001" ixia_locid="282" product="tis_small">
+        
             <p ixia_locid="283">For a minimal two-server configuration, in which the controller and
                 compute functions are combined on a single host, the procedure varies slightly. The
                 compute function on <nameliteral ixia_locid="284">controller-0</nameliteral> is
                 configured before the <nameliteral ixia_locid="285">controller-1</nameliteral>
                 configuration is started.</p>
-        </context>
+        
         <steps>
-            <step id="step_N10102_N10031_N1001E_N10001" ixia_locid="201">
+             
                 <cmd ixia_locid="232">Copy the license file to the controller node.</cmd>
-                <substeps id="substeps_rqq_nn2_hq">
+                 <ol>
                     <substep ixia_locid="235">
                         <cmd ixia_locid="193">Connect the controller to the OAM network.</cmd>
                         <info ixia_locid="234">
@@ -91,7 +91,7 @@
                     </substep>
                 </substeps>
             </step>
-            <step id="step_N1015F_N10092_N1002E_N10001" importance="optional" ixia_locid="343">
+             
                 <cmd ixia_locid="344">Copy a digital certificate file to the controller node. </cmd>
                 <info ixia_locid="345">
                     <p ixia_locid="346">If you require secure REST API access using HTTPS, copy a
@@ -102,14 +102,14 @@
                     <codeblock ixia_locid="332"><systemoutput ixia_locid="334">$ </systemoutput><userinput ixia_locid="336">scp <varname ixia_locid="338">username</varname>@<varname ixia_locid="340">sourcehost</varname>:<varname ixia_locid="342">sourcepath</varname>/<varname ixia_locid="351">pem_file</varname> /home/wrsroot/<varname ixia_locid="352">pem_file</varname></userinput></codeblock>
                 </stepxmp>
             </step>
-            <step id="step_N101CB_N10031_N1001E_N10001" ixia_locid="481">
+             
                 <cmd ixia_locid="482">Install any required patches.</cmd>
                 <info ixia_locid="483">
                     <p ixia_locid="484">For more information about obtaining and using patches,
                         refer to the <cite ixia_locid="321">HP Helion OpenStack Carrier Grade Administration Guide:
                             Managing Software Patches</cite>.</p>
                 </info>
-                <substeps id="substeps_mm2_2yf_hq">
+                 <ol>
                     <substep ixia_locid="485">
                         <cmd ixia_locid="263">Copy the patches from a connected server.</cmd>
                         <info ixia_locid="486">
@@ -154,7 +154,7 @@
                     <p ixia_locid="508">Patch installation is complete.</p>
                 </stepresult>
             </step>
-            <step id="step_N10058_N10055_N10028_N10001" ixia_locid="16">
+             
                 <cmd ixia_locid="17">Start the controller configuration script.</cmd>
                 <stepxmp ixia_locid="18">
                     <codeblock ixia_locid="19"><systemoutput ixia_locid="509">$ </systemoutput><userinput ixia_locid="21">sudo config_controller</userinput>
@@ -163,7 +163,7 @@
 Enter Q at any prompt to abort...</systemoutput></codeblock>
                 </stepxmp>
             </step>
-            <step id="step_N10072_N10055_N10028_N10001" ixia_locid="23">
+             
                 <cmd ixia_locid="24">Configure the controller options as requested by the configuration script. </cmd>
                 <info ixia_locid="25">
                     <note id="note_N1007B_N10078_N10071_N10055_N10028_N10001" ixia_locid="26">
@@ -323,7 +323,7 @@ Enter Q at any prompt to abort...</systemoutput></codeblock>
                         appears.</p>
                 </stepresult>
             </step>
-            <step id="step_N1023D_N10087_N1002E_N10001" ixia_locid="162">
+             
                 <cmd ixia_locid="163">Change to the Keystone <nameliteral ixia_locid="164">admin</nameliteral> account.</cmd>
                 <info ixia_locid="177">
                     <p ixia_locid="253">Use the <cmdname ixia_locid="512">source</cmdname> command to become the Keystone
@@ -333,7 +333,7 @@ Enter Q at any prompt to abort...</systemoutput></codeblock>
                 </info>
             </step>
             
-            <step id="step_N101C3_N10055_N10028_N10001" ixia_locid="89">
+             
                 <cmd ixia_locid="90">Verify that the HP Helion OpenStack Carrier Grade controller services are running.</cmd>
                 <stepxmp ixia_locid="375">
                     <codeblock ixia_locid="376"><systemoutput ixia_locid="377">~(keystone_admin)$ </systemoutput><userinput ixia_locid="378">nova service-list</userinput>
@@ -352,7 +352,7 @@ Enter Q at any prompt to abort...</systemoutput></codeblock>
                     </note>
                 </stepxmp>
             </step>
-            <step id="step_N10407_N10093_N1002E_N10001" ixia_locid="383" product="tis_small">
+             
                 <cmd ixia_locid="384">For a minimal two-server configuration, verify that the
                     controller and compute subfunctions are present. </cmd>
                 <stepxmp ixia_locid="385">
@@ -361,7 +361,7 @@ Enter Q at any prompt to abort...</systemoutput></codeblock>
 </codeblock>
                 </stepxmp>
             </step>
-            <step id="step_N101DE_N10055_N10028_N10001" ixia_locid="96">
+             
                 <cmd ixia_locid="97">Verify that <nameliteral ixia_locid="98">controller-0</nameliteral> is in the state
                         <nameliteral ixia_locid="99">unlocked-enabled-available</nameliteral>.</cmd>
                 <stepxmp ixia_locid="100">
@@ -373,7 +373,7 @@ Enter Q at any prompt to abort...</systemoutput></codeblock>
 +----+--------------+-------------+----------------+-------------+--------------+</systemoutput></codeblock>
                 </stepxmp>
             </step>
-            <step id="step_N10200_N10055_N10028_N10001" importance="optional" ixia_locid="105">
+             
                 <cmd ixia_locid="106">Synchronize the RAID array.</cmd>
                 <info ixia_locid="107">
                     <p ixia_locid="108">Normally, the RAID array is already synchronized. If you need to synchronize
@@ -382,7 +382,7 @@ Enter Q at any prompt to abort...</systemoutput></codeblock>
                         keyboard. For details, consult the OEM documentation for the RAID.</p>
                 </info>
             </step>
-            <step id="step_N10212_N10055_N10028_N10001" ixia_locid="109">
+             
                 <cmd ixia_locid="110">Using a Web browser, navigate to the OAM floating IP address
                     to verify that the HP Helion OpenStack Carrier Grade web administration interface is
                     available.</cmd>
@@ -393,39 +393,39 @@ Enter Q at any prompt to abort...</systemoutput></codeblock>
                 <stepresult ixia_locid="114">
                     <p ixia_locid="115">The <wintitle ixia_locid="116">HP Helion OpenStack Carrier Grade</wintitle> login
                         screen appears.</p>
-                    <fig id="fig_N10228_N1021D_N1020A_N10055_N10028_N10001" ixia_locid="117">
+                    
                         <title ixia_locid="118">HP Helion OpenStack Carrier Grade login screen</title>
                         <image alt="Carrier Grade Communication Server login screen" href="jow1404333491396.image" id="image_t5q_4b1_dn" ixia_locid="119" placement="inline" width="2.5in"/>
                     </fig>
                 </stepresult>
             </step>
-            <step id="step_N10244_N10055_N10028_N10001" ixia_locid="120">
+             
                 <cmd ixia_locid="121">Log in using the cloud <nameliteral ixia_locid="122">admin</nameliteral> account.</cmd>
                 <stepresult ixia_locid="123">
                     <p ixia_locid="124">The <wintitle ixia_locid="125">HP Helion OpenStack Carrier Grade</wintitle> web
                         administration interface appears.</p>
-                    <fig id="fig_N10251_N10246_N1023B_N10055_N10028_N10001" ixia_locid="184">
+                    
                         <title ixia_locid="186">HP Helion OpenStack Carrier Grade web administration interface</title>
                         <image alt="Carrier Grade Communication Server web administration interface" href="jow1404333493002.image" id="image_pzt_1ts_g4" ixia_locid="192" placement="inline" width="5.5in"/>
                     </fig>
                 </stepresult>
             </step>
-            <step id="step_N1026E_N10055_N10028_N10001" ixia_locid="129">
+             
                 <cmd ixia_locid="194">In the left-hand pane, on the <uicontrol ixia_locid="131">Admin</uicontrol> tab, click
                         <uicontrol ixia_locid="196">Inventory</uicontrol>, and then select the
                         <uicontrol ixia_locid="133">Hosts</uicontrol> tab.</cmd>
                 <stepresult ixia_locid="198">
                     <p ixia_locid="135"><nameliteral ixia_locid="200">Controller-0</nameliteral> is reported in the hosts inventory
                         list.</p>
-                    <fig id="fig_N10281_N10277_N10264_N10055_N10028_N10001" ixia_locid="182">
+                    
                         <image alt="Hosts list showing controller-0" href="jow1404333494735.image" id="image_f1p_dtm_jn" ixia_locid="188" placement="inline" width="5.5in"/>
                     </fig>
                 </stepresult>
             </step>
-            <step id="step_N1045B_N1008E_N1002E_N10001" ixia_locid="286" product="tis_small">
+             
                 <cmd ixia_locid="287">If you are installing a minimal two-server configuration,
                     configure the compute function on <nameliteral ixia_locid="288">controller-0</nameliteral>.</cmd>
-                <substeps id="substeps_u5p_fth_yr">
+                 <ol>
                     <substep ixia_locid="289">
                         <cmd ixia_locid="290">Configure provider networks.</cmd>
                         <info ixia_locid="291">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1411061325242">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic ditaarch:DITAArchVersion="1.2" domains="(topic task topic)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1411061325242">
 <!-- Modification History
         
 -->
@@ -11,22 +11,25 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N10023_N10020_N10001">
+        
             <p>A Cinder volume in the <i>available</i> state is the ideal
                 candidate for a backup operation in that there are no running instances using it. </p>
-        </context>
-        <ol>
-            <step conref="psa1410446807133.xml#psa1410446807133/cli-admin-login" id="step_N1003A_N10037_N10024_N10001">
-                <cmd/>
-            </step>
-            <step id="step_N1002E_N1002B_N10020_N10001">
-                <cmd>Identify the volume you want to back up.</cmd>
-                <substeps id="substeps_aqf_dsz_lp">
-                    <substep>
-                        <cmd>List Cinder volumes from all tenants.</cmd>
-                        <stepxmp>
-                            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>cinder list --all-tenants</userinput>
-<systemoutput>﻿+--------------+-----------+-----------------+------+-------------+----------
+        
+       
+            
+            
+            <ol>
+            
+                <li conref="psa1410446807133.xml#psa1410446807133/cli-admin-login"/>
+             
+                <li>Identify the volume you want to back up.
+                 <ol>
+                    
+                        <li>List Cinder volumes from all tenants.
+                        
+                            <codeblock>
+~(keystone_admin)$ cinder list --all-tenants﻿
++--------------+-----------+-----------------+------+-------------+----------
 |   ID         |   Status  |   Display Name  | Size | Volume Type | Bootable 
 +--------------+-----------+-----------------+------+-------------+----------
 | 593111d8-... | in-use    | volume-1        |  1   |     None    |   true   
@@ -37,28 +40,29 @@
 +---------------+
 |  ﻿b998107b-... |
 |               |
-+---------------+﻿</systemoutput></codeblock>
-                        </stepxmp>
++---------------+﻿</codeblock>
                         
-                            <p>Cinder volumes are listed also on the <wintitle>Volumes</wintitle> page of the web
+                        
+                            <p>Cinder volumes are listed also on the <b>Volumes</b> page of the web
                                 administration interface.</p>
                         
-                    </substep>
-                    <substep>
-                        <cmd>Identify the volume to back up.</cmd>
+                        </li>                    
+                    
+                        <li>Identify the volume to back up.
                         
                             <p>In the list above, <codeph>volume-1</codeph> is a disk image associated with a
                                 running instance. The volume <codeph>volume-2</codeph>, with UUID <codeph>53ad007a-...</codeph>, is available and can be safely
                                 backed up. </p>
-                        
-                    </substep>
-                </substeps>
-            </step>
-            <step id="step_N10097_N10036_N10024_N10001">
-                <cmd>Export the target volume to the controller's file system.</cmd>
-                <stepxmp>
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>cinder export 53ad007a-841a-4fd3-a22b-813d4a6a8a85</userinput>
-<systemoutput>+---------------------+--------------------------------------+
+                        </li>
+                    
+                </ol>
+                </li>
+             
+                <li>Export the target volume to the controller's file system.
+                
+                    <codeblock>
+~(keystone_admin)$ cinder export 53ad007a-841a-4fd3-a22b-813d4a6a8a85
++---------------------+--------------------------------------+
 |       Property      |                Value                 |
 +---------------------+--------------------------------------+
 | display_description |                                      |
@@ -67,8 +71,8 @@
 |        status       |              exporting               |
 |      updated_at     |      2014-09-18T21:36:15.247881      |
 |     volume_type     |                 None                 |
-+---------------------+--------------------------------------+</systemoutput></codeblock>
-                </stepxmp>
++---------------------+--------------------------------------+</codeblock>
+                
                 
                     <p>Exporting the volume takes some time, longer times for larger
                         volumes. While it is taking place, the status of the volume is set to <i>exporting</i>, which you can verify by issuing the
@@ -82,38 +86,39 @@
                         export operation was successful. The state of the volume should be set to
                             <i>available</i> again.</p>
                 
-                <stepresult>
+                
                     <p>When the export operation completes, the backup file is ready, as illustrated
                         in the following example:</p>
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>ls -lh /opt/backups</userinput>
-<systemoutput>total 306M
+                    <codeblock>
+~(keystone_admin)$ ls -lh /opt/backups
+total 306M
 drwx------ 2 root root  16K Sep 10 17:42 lost+found
 drwxr-xr-x 2 root root 4.0K Sep 18 21:42 temp
--rw-r--r-- 1 root root 305M Sep 18 21:42 volume-53ad007a-841a-4fd3-a22b-813d4a6a8a85-20140918-213918.tgz</systemoutput></codeblock>
-                </stepresult>
-            </step>
-            <step id="step_N100E2_N10036_N10024_N10001">
-                <cmd>Transfer the backup file to an external storage resource.</cmd>
+-rw-r--r-- 1 root root 305M Sep 18 21:42 volume-53ad007a-841a-4fd3-a22b-813d4a6a8a85-20140918-213918.tgz</codeblock>
+                
+                </li>            
+             
+                <li>Transfer the backup file to an external storage resource.
                 
                     <p>The following example uses the <cmdname>scp</cmdname> command to transfer the
                         backup file to the directory <filepath>/backups/titanium</filepath> on a
                         server named <codeph>backups-server.wrs.com</codeph>:</p>
                 
-                <stepxmp>
-                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>scp /opt/backups/volume-53ad007a-841a-4fd3-a22b-813d4a6a8a85-20140918-213918.tgz admin@backups-server.wrs.com:/backups/titanium</userinput></codeblock>
-                </stepxmp>
-            </step>
-            <step id="step_N1010C_N10036_N10024_N10001">
-                <cmd> importance="optional">Delete the backup file.</cmd>
+                
+                    <codeblock>~(keystone_admin)$ scp /opt/backups/volume-53ad007a-841a-4fd3-a22b-813d4a6a8a85-20140918-213918.tgz admin@backups-server.wrs.com:/backups/titanium</codeblock>
+                
+                </li>
+             
+                <li> importance="optional">Delete the backup file.
                 
                     <p>You may want to free up disk space on the controller to
                         accommodate additional Cinder volume backups.</p>
-                
-            </step>
+                </li>
+                 
         </ol>
-        Host
+        
             <p>The volume backup is complete. Repeat this procedure with all other Cinder volumes in
                 the <i>available</i> state in the system.</p>
-        </result>
+        
     </body>
-</task-wr>
+</topic>

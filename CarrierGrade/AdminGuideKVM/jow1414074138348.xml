@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1414074138348" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1414074138348" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -12,7 +12,7 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N10024_N10021_N10001">
+        
             <p>A HP Helion OpenStack Carrier Grade system with a Ceph storage backend uses exactly
                 two storage nodes; you cannot add or remove storage nodes. However, you can add
                 disks to a storage node to increase capacity, and you can replace a faulty host.</p>
@@ -22,30 +22,30 @@
                     which each host has sufficient independent resources to meet the operational
                     requirements of the system.</p>
             </note>
-        </context>
+        
         <ol>
-            <step id="step_N10039_N10036_N10021_N10001">
-                <cmd>Lock the host to be modified or replaced.</cmd>
+             
+                <li>Lock the host to be modified or replaced.</li>
                 
-                    <p>Open the <wintitle>Hosts</wintitle> list by
-                        clicking <uicontrol>Inventory</uicontrol> on the<wintitle> System Panel</wintitle> section of the <wintitle>Admin</wintitle> menu, and then selecting the <uicontrol>Hosts</uicontrol> tab.</p>
+                    <p>Open the <b>Hosts</b> list by
+                        clicking <b>Inventory</b> on the<b> System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
                     <p>Click <menucascade>
-                            <uicontrol>More</uicontrol>
-                            <uicontrol>Lock Host</uicontrol>
+                            <b>More</b>
+                            <b>Lock Host</b>
                         </menucascade> for the host. </p>
                     <p>Wait for the procedure to be completed.</p>
                 
-            </step>
-            <step id="step_N1007C_N10036_N10021_N10001">
-                <cmd>Power down the host and make any required hardware
-                    changes.</cmd>
+            
+             
+                <li>Power down the host and make any required hardware
+                    changes.</li>
                 
                     <p>This may involve replacing or adding disks, or replacing the
                         host completely.</p>
                 
-            </step>
-            <step id="step_N1008D_N10036_N10021_N10001">
-                <cmd>Place the new or modified host node into service.</cmd>
+            
+             
+                <li>Place the new or modified host node into service.</li>
                 
                     <ul id="ul_zhp_2fv_hp">
                         <li>
@@ -62,8 +62,8 @@
                         <li>
                             <p>For host replacement, you must delete the existing
                                 host using <menucascade>
-                                    <uicontrol>More</uicontrol>
-                                    <uicontrol>Delete Host</uicontrol>
+                                    <b>More</b>
+                                    <b>Delete Host</b>
                                 </menucascade>. Then you must initialize the new host with a
                                 personality as a storage node, configure its interfaces, and create
                                 storage volumes. For more information on initializing and
@@ -73,7 +73,7 @@
                         </li>
                     </ul>
                 
-            </step>
+            
         </ol>
     </body>
-</task-wr>
+</topic>

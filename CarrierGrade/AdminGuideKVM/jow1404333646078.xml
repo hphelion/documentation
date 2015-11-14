@@ -10,8 +10,8 @@
         <author></author>
     </prolog>
     <body>
-        <p>To access the <wintitle>System Inventory</wintitle> page on the web management interface,
-      click the <option>Inventory</option> option of the <uicontrol>Admin</uicontrol> tab on the
+        <p>To access the <b>System Inventory</b> page on the web management interface,
+      click the <option>Inventory</option> option of the <b>Admin</b> tab on the
       side panel.</p>
     </body>
 </topic>

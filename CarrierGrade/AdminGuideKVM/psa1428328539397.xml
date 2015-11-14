@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr id="psa1428328539397" xml:lang="en-us">
+<topic id="psa1428328539397" xml:lang="en-us">
 <!-- Modification History
 
  -->
@@ -52,17 +52,17 @@
     network they are creating, or to an existing one. See the <cite>HP Helion OpenStack Carrier Grade
      Reference Deployment Scenarios</cite> for examples of how to create tenant networks.</p>
    <p>From the web management interface you add the VLAN ID of the guest VLAN to the
-     <uicontrol>Subnet Detail</uicontrol> tab of the <wintitle>Create Subnet</wintitle> window. In the following example a guest VLAN with ID of 10 will be
+     <b>Subnet Detail</b> tab of the <b>Create Subnet</b> window. In the following example a guest VLAN with ID of 10 will be
     created when the subnet is added.</p>
-   <fig id="fig_yts_jrw_pr">
+   
     <title>Creating a guest VLAN</title>
     <image href="psa1428335880496.image" id="image_upj_qrw_pr">
      <alt>Creating a guest VLAN</alt>
     </image>
-   </fig>
+   
    <p>From the command line interface, a guest VLAN can be defined using the <option>--vlan-id</option> option when creating a new subnet, as illustrated below:</p>
-   <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron subnet-create --tenant-id ${tenant_UUID} \
---name my-new-subnet --vlan-id 10</userinput></codeblock>
+   <codeblock>~(keystone_admin)$ neutron subnet-create --tenant-id ${tenant_UUID} \
+--name my-new-subnet --vlan-id 10</codeblock>
   </section>
   <section id="section_N10086_N1001C_N10001">
    <title>Guest VLAN Implementation</title>

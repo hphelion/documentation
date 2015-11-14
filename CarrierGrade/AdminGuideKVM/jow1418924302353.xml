@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1418924302353" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1418924302353" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -13,39 +13,39 @@
         <ol>
             <step conref="jow1426453628262.xml#jow1426453628262/lock_host" id="step_N10025_N10022_N1001F_N10001">
                 <cmd/>
-            </step>
-            <step id="step_N1004C_N10028_N1001C_N10001">
-                <cmd>Power off the host.</cmd>
-            </step>
-            <step id="step_N10055_N10028_N1001C_N10001">
-                <cmd>Make any required resource changes (for example, BIOS changes
-                    required for proper operation).</cmd>
+            
+             
+                <li>Power off the host.</li>
+            
+             
+                <li>Make any required resource changes (for example, BIOS changes
+                    required for proper operation).</li>
                 
                     <p>If you are adding a disk to provide additional local storage for VMs, you can
                         install an unpartitioned disk.  New disks are detected by the compute node
                         operating system and automatically configured with a single partition.</p>
                 
-            </step>
-            <step id="step_N1005E_N10028_N1001C_N10001">
-                <cmd>Power on the host, and wait for it to reboot fully.</cmd>
+            
+             
+                <li>Power on the host, and wait for it to reboot fully.</li>
                 
-                    <p>When the host is fully rebooted, it is shown as <codeph>Locked</codeph>, <codeph>Enabled</codeph>, and <codeph>Available</codeph> in the <wintitle>Hosts</wintitle> list.</p>
+                    <p>When the host is fully rebooted, it is shown as <codeph>Locked</codeph>, <codeph>Enabled</codeph>, and <codeph>Available</codeph> in the <b>Hosts</b> list.</p>
                     <note id="note_N10079_N10062_N1005B_N10028_N1001C_N10001">
                         <p>Do not unlock the host until it is fully rebooted.</p>
                     </note>
                 
-            </step>
-            <step id="step_N10088_N10028_N1001C_N10001">
-                <cmd>Unlock the host.</cmd>
+            
+             
+                <li>Unlock the host.</li>
                 
                     <p>The host is rebooted a second time.</p>
                 
-            </step>
+            
         </ol>
         Host
             <p>When the host is reported as <codeph>Unlocked</codeph>,
                     <codeph>Enabled</codeph>, and <codeph>Available</codeph>, it
                 is ready for use with the adjusted resources.</p>
-        </result>
+        
     </body>
-</task-wr>
+</topic>

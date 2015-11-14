@@ -13,7 +13,7 @@
     </prolog>
     <body>
         <p>For more information on HP Helion OpenStack Carrier Grade architecture, see the <xref
-                href="../../Users/burkmich/documentation/documentation/CarrierGrade/Installation/carrier-grade-technical-overview.dita#topic3485"
+                href="../Installation/carrier-grade-technical-overview.dita#topic3485"
             >Technical Overview</xref>.</p>
         <dl>
             <dlentry>
@@ -274,7 +274,7 @@
                                     used to support the implementation of a single tenant
                                     network.</p>
                                 <p>A segmentation range can be shared by multiple
-                                    tenants if its <nameliteral
+                                    tenants if its <codeph
                                         >shared</codeph> flag is set. Otherwise, the
                                     segmentation range supports tenant networks belonging to a
                                     single specified tenant.</p>

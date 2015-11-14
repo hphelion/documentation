@@ -13,7 +13,7 @@
             <author ixia_locid="5">Tom Towle</author>
         </prolog>
         <taskbody id="taskbody_N10031_N1000E_N10001">
-            <context id="context_N10027_N10024_N10001" ixia_locid="6">
+            
                 <p ixia_locid="244">A <term ixia_locid="192">provider network</term> is a layer-2
                     virtual network associated with a physical network. Provider networks are used
                     to provide connectivity for tenant networks.</p>
@@ -33,8 +33,8 @@
                             on different Layer 2 segments separated by one or more L3 routers.</p>
                     </li>
                 </ul>
-            </context>
-            <context id="context_N10069_N10032_N1000F_N10001" ixia_locid="231">
+            
+            
                 <p ixia_locid="228">For more about provider networks and tenant networks, see the
                         <cite ixia_locid="193">HP Helion OpenStack Carrier Grade Administration Guide: Network
                         Requirements</cite>.</p>
@@ -42,14 +42,14 @@
                     network must be mapped to an Ethernet interface on a compute node. At least one
                     such interface must be set up before the compute node can be unlocked. For more
                     information, see <xref href="jow1426948577755.xml" ixia_locid="368"/>.</p>
-            </context>
-            <context id="note_for_RDS_setup" ixia_locid="362">
+            
+            
                 <note id="note_N1003D_N10038_N10029_N10001" ixia_locid="364">
                     <p ixia_locid="365">If you plan to follow the exercises in the <cite ixia_locid="196">HP Helion OpenStack Carrier Grade Reference Deployment Scenarios</cite>,
                         set up two provider networks of the <nameliteral ixia_locid="367">vlan</nameliteral> type, named <nameliteral ixia_locid="197">provider-net-a</nameliteral> and <nameliteral ixia_locid="198">provider-net-b</nameliteral>.</p>
                 </note>
-            </context>
-            <context id="context_N10096_N10032_N1000F_N10001" ixia_locid="230">
+            
+            
                 <p id="usually_set_up_at_installation" ixia_locid="216"> Provider networks are
                     required before compute nodes can be unlocked. For this reason, they are often
                     set up as part of system installation.</p>
@@ -62,9 +62,9 @@
                 <p id="for_more_see_install_guide" ixia_locid="220">For more information about
                     setting up provider networks, see the <cite ixia_locid="221">HP Helion OpenStack Carrier Grade
                         Software Installation Guide: Configuring Provider Networks</cite>. </p>
-            </context>
+            
             <steps id="steps_hxh_rdh_wq">
-                <step id="step_N1003F_N1003C_N10024_N10001" ixia_locid="11">
+                 
                     <cmd ixia_locid="12">Open the HP Helion OpenStack Carrier Grade web administration
                         interface.</cmd>
                     <info ixia_locid="13">
@@ -72,7 +72,7 @@
                             and log in as <nameliteral ixia_locid="15">admin</nameliteral>.</p>
                     </info>
                 </step>
-                <step id="step_N10054_N1003C_N10024_N10001" ixia_locid="16">
+                 
                     <cmd ixia_locid="17">In the left-hand pane, select <menucascade ixia_locid="369">
                             <uicontrol ixia_locid="18">Admin</uicontrol>
                             <uicontrol ixia_locid="370">System</uicontrol>
@@ -81,12 +81,12 @@
                             Networks</uicontrol> tab.</cmd>
                     <stepresult ixia_locid="21">
                         <p ixia_locid="22">The Provider Networks list is displayed.</p>
-                        <fig id="fig_N1006D_N10066_N10053_N1003C_N10024_N10001" ixia_locid="23">
+                        
                             <image alt="Provider networks list" href="jow1404333508484.image" id="image_eyn_cmf_kn" ixia_locid="24" width="5.5in"/>
                         </fig>
                     </stepresult>
                 </step>
-                <step id="step_N1007D_N1003C_N10024_N10001" ixia_locid="25">
+                 
                     <cmd ixia_locid="29">Create the provider network
                             <nameliteral ixia_locid="238">provider-net-a</nameliteral>.</cmd>
                     <info id="Provider_Network_dialog" ixia_locid="35">
@@ -154,14 +154,14 @@
                     </info>
                     <info ixia_locid="233">
                         <p ixia_locid="234">In this case, set the <uicontrol ixia_locid="242">Name</uicontrol> to <nameliteral ixia_locid="235">provider-net-a</nameliteral>, and set the <uicontrol ixia_locid="243">Type</uicontrol> to <nameliteral ixia_locid="236">vlan</nameliteral>.</p>
-                        <fig id="fig_N100A8_N100A5_N10096_N10086_N1007B_N1003C_N10024_N10001" ixia_locid="36">
+                        
                             <image href="jow1421957717045.image" id="image_nln_3wf_vq" ixia_locid="199" width="4in">
                                 <alt ixia_locid="200">HP Helion OpenStack Carrier Grade: create provider-net-a</alt>
                             </image>
                         </fig>
                     </info>
                 </step>
-                <step id="step_N10127_N1003C_N10024_N10001" ixia_locid="64">
+                 
                     <cmd ixia_locid="65">Commit the changes.</cmd>
                     <info ixia_locid="66">
                         <p ixia_locid="67">Click <uicontrol ixia_locid="68">Create Provider
@@ -171,7 +171,7 @@
                         <p ixia_locid="70">The new provider network is added to the <wintitle ixia_locid="71">Provider Networks</wintitle> list.</p>
                     </stepresult>
                 </step>
-                <step id="step_N10258_N1003C_N10024_N10001" ixia_locid="135">
+                 
                     <cmd ixia_locid="136">Repeat the steps to create a provider network named
                             <nameliteral ixia_locid="137">provider-net-b</nameliteral>.</cmd>
                     <info ixia_locid="138">
@@ -200,7 +200,7 @@
             </steps>
             Host
                 <p ixia_locid="146">The new provider networks are shown in the <wintitle ixia_locid="147">Provider Networks</wintitle> list.</p>
-                <fig id="fig_N1028A_N1027E_N10024_N10001" ixia_locid="148">
+                
                     <image href="jow1421958268861.image" id="image_rhl_mxf_vq" ixia_locid="203" width="5.5in">
                         <alt ixia_locid="204">HP Helion OpenStack Carrier Grade: show provider networks</alt>
                     </image>

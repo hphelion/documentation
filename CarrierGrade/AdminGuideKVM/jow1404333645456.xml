@@ -60,15 +60,15 @@
             <p>Additionally, all database queries are user-initiated, as opposed to event-initiated. This
         provides a different user workflow, whereby all required report parameters and filters are
         configured first, before the database query is executed</p>
-            <p>Access to Ceilometer reports is available from the <uicontrol>Stats</uicontrol> tab on the <wintitle>Resource
-                    Usage Overview</wintitle> page. This page can be accessed from the web
+            <p>Access to Ceilometer reports is available from the <b>Stats</b> tab on the <b>Resource
+                    Usage Overview</b> page. This page can be accessed from the web
                 management interface by selecting the option <option>Resource
-                    Usage</option> on the <uicontrol>Admin</uicontrol> tab of the
-                system panel. The <uicontrol>Stats</uicontrol> tab is presented as
+                    Usage</option> on the <b>Admin</b> tab of the
+                system panel. The <b>Stats</b> tab is presented as
                 follows:</p>
-            <fig id="fig_N100B3_N1006E_N1001C_N10001">
+            
                 <image href="jow1404333641017.image" id="image_bsy_t3s_j4" placement="inline" width="4in"/>
-            </fig>
+            
             <p>The following fields are available:</p>
             <dl>
                 <dlentry>
@@ -95,7 +95,7 @@
                         </ul>
                         <p>On the CLI, use the following command to list the available metrics, and find their
               resource IDs:</p>
-                        <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>ceilometer meter-list</userinput></codeblock>
+                        <codeblock>~(keystone_admin)$ ceilometer meter-list</codeblock>
                     </dd>
                 </dlentry>
                 <dlentry>
@@ -153,7 +153,7 @@
                         <p>The pull-down menu is auto-populated with the corresponding attributes for the
               selected metric. On the CLI, use the following command to list the metadata associated
               with a metric identified with its resource ID:</p>
-                        <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>ceilometer resource-show <varname>resource_id</varname></userinput></codeblock>
+                        <codeblock>~(keystone_admin)$ ceilometer resource-show <varname>resource_id</varname></codeblock>
                     </dd>
                 </dlentry>
                 <dlentry>
@@ -186,18 +186,18 @@
         administrator, or automatically by an operations and support server (OSS/BSS) configured
         with the appropriate login credentials.</p>
             <p>Recording of samples and management of CSV files is done through
-                special Ceilometer pipelines available from the <uicontrol>Pipelines</uicontrol> tab, as illustrated below:</p>
-            <fig id="fig_N101DC_N101AB_N1001C_N10001">
+                special Ceilometer pipelines available from the <b>Pipelines</b> tab, as illustrated below:</p>
+            
                 <image href="jow1404333642494.image" id="image_dkk_ptz_j4" placement="inline" width="6in"/>
-            </fig>
+            
             <p>The <codeph>csv</codeph> pipeline collects system information with the
                 exception of AVS switching meters. The latter are collected by the
                     <codeph>vswitch_avg</codeph> pipeline.</p>
-            <p>Click the button <uicontrol>Update
-                    Settings</uicontrol> to configure the behavior of a pipeline. The <wintitle>Edit Pipeline</wintitle> window is presented as follows:</p>
-            <fig id="fig_N101F4_N101AB_N1001C_N10001">
+            <p>Click the button <b>Update
+                    Settings</b> to configure the behavior of a pipeline. The <b>Edit Pipeline</b> window is presented as follows:</p>
+            
                 <image href="jow1404333644008.image" id="image_ckk_gvz_j4" placement="inline"/>
-            </fig>
+            
             <p>The following fields are available:</p>
             <dl>
                 <dlentry>
@@ -212,35 +212,35 @@
                         <p>An editable field displaying the list of comma-separated
                             meters included in the pipeline. The list must be enclosed in square
                             brackets, as follows:</p>
-                        <codeblock><userinput>[meter1,meter2,...]</userinput></codeblock>
+                        <codeblock>[meter1,meter2,...]</codeblock>
                         <p>The following syntax rules apply to the specified meters:</p>
                         <ul id="ul_ipr_k42_1p">
                             <li>
                                 <p>A meter specification is a text string of the form
                                         <term>metergroup.metersubgroup.meter</term>, for example,
-                                        <userinput>disk.read.bytes</userinput></p>
+                                        <codeph>disk.read.bytes</codeph></p>
                             </li>
                             <li>
                                 <p>A meter specification supports a trailing wild-card to include
                                     all <term>meters</term> within a <term>metergroup</term>. For
-                                    example, the text <userinput>disk.*</userinput> matches the
-                                    meters <userinput>disk.read.bytes</userinput> and
-                                        <userinput>disk.write.bytes</userinput>.</p>
+                                    example, the text <codeph>disk.*</codeph> matches the
+                                    meters <codeph>disk.read.bytes</codeph> and
+                                        <codeph>disk.write.bytes</codeph>.</p>
                             </li>
                             <li>
                                 <p>A meter specification supports a trailing
-                                    wild-card to include all <term>metersubgroups</term> within a <term>metergroup</term>. For example, the text <userinput>disk.read.*</userinput> matches the meter
-                                        <userinput>disk.read.bytes</userinput>.</p>
+                                    wild-card to include all <term>metersubgroups</term> within a <term>metergroup</term>. For example, the text <codeph>disk.read.*</codeph> matches the meter
+                                        <codeph>disk.read.bytes</codeph>.</p>
                             </li>
                             <li>
                                 <p>Meter specifications support a leading exclamation mark to
                                     exclude the specified meter, as follows:</p>
-                                <codeblock><userinput>[!meter1,!meter2,...]</userinput></codeblock>
+                                <codeblock>[!meter1,!meter2,...]</codeblock>
                                 <p>Such a pipeline includes all meters but the ones in the list.</p>
                                 <p>Exclamation marks cannot be applied selectively in a list of
                                     meters. Either all meters use them or none at all. The following
                                     list is therefore invalid:</p>
-                                <codeblock><userinput>[meter1,!meter2,meter3]</userinput></codeblock>
+                                <codeblock>[meter1,!meter2,meter3]</codeblock>
                             </li>
                         </ul>
                     </dd>
@@ -289,23 +289,23 @@
             <p>Performance samples are kept in the database for a limited period of time known as
                 the <term>retention period</term>. Its  default value is 86400 seconds, or 24
                 hours.</p>
-            <p>Click the <uicontrol>Edit Retention Period</uicontrol> button in the
-                    <uicontrol>Retention Period</uicontrol> tab to modify the current value. You
+            <p>Click the <b>Edit Retention Period</b> button in the
+                    <b>Retention Period</b> tab to modify the current value. You
                 must ensure that the configured value is equal or higher than the period over which
                 you intend to gather statistics.</p>
             <p>You can also control the retention period from the CLI. To view the current settings,
                 use the following command.</p>
-            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system pm-show</userinput></codeblock>
+            <codeblock>~(keystone_admin)$ system pm-show</codeblock>
             <p>To change the retention period from the CLI, use the following command syntax.</p>
-            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system pm-modify retention_secs=<varname>retention_period</varname></userinput></codeblock>
+            <codeblock>~(keystone_admin)$ system pm-modify retention_secs=<varname>retention_period</varname></codeblock>
             <p>For example:</p>
-            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system pm-modify retention_secs=172800</userinput></codeblock>
+            <codeblock>~(keystone_admin)$ system pm-modify retention_secs=172800</codeblock>
             <note id="note_N1041B_N103CD_N1001F_N10001">
                 <p>Changes to the retention period cause <codeph>250.001 Configuration
                         out-of-date</codeph> alarms to be raised briefly for the controller
                     nodes. During this period, the status <codeph>Config
                         out-of-date</codeph> is displayed for the controller nodes on the
-                        <wintitle>Host</wintitle> tab of the <wintitle>Inventory</wintitle> pane.
+                        <b>Host</b> tab of the <b>Inventory</b> pane.
                     These alarms are resolved and cleared automatically after a few seconds.</p>
             </note>
         </section>

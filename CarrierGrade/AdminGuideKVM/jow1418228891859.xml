@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1418228891859" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1418228891859" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -11,7 +11,7 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N10023_N10020_N10001">
+        
             <p>This HOT template creates a VM instance with vCPU autoscaling. The number of online
                 vCPUS for the instance is scaled up or down depending on vCPU utilization. The
                 scaling range (minimum and maximum number of vCPUs) is determined by the launch
@@ -24,58 +24,58 @@
                 available.</p>
             <p>The VM image selected for launch must be capable of scaling. For more information
                 about VM scaling, see <xref href="jow1417813748326.xml"/>.</p>
-        </context>
+        
         <ol>
-            <step id="step_N10077_N10074_N10020_N10001">
-                <cmd>Collect the required parameters.</cmd>
-                <substeps id="substeps_wqc_mlv_34">
-                    <substep>
+             
+                <li>Collect the required parameters.</li>
+                 <ol>
+                    
                         <cmd conref="jow1404333809730.xml#jow1404333809730/locate-flavor"/>
-                    </substep>
-                    <substep>
+                    
+                    
                         <cmd conref="jow1404333809730.xml#jow1404333809730/locate-keypair"/>
-                    </substep>
-                    <substep>
+                    
+                    
                         <cmd conref="jow1404333809730.xml#jow1404333809730/locate-image"/>
-                    </substep>
-                    <substep>
-                        <cmd>On the <menucascade>
-                                <uicontrol>Admin</uicontrol>
-                                <uicontrol>System Panel</uicontrol>
-                                <uicontrol>Networks</uicontrol>
-                            </menucascade> page, obtain the <uicontrol>Name</uicontrol> of the private network.</cmd>
-                    </substep>
-                    <substep>
+                    
+                    
+                        <li>On the <menucascade>
+                                <b>Admin</b>
+                                <b>System Panel</b>
+                                <b>Networks</b>
+                            </menucascade> page, obtain the <b>Name</b> of the private network.</li>
+                    
+                    
                         <cmd conref="jow1404333809730.xml#jow1404333809730/locate-user"/>
-                    </substep>
-                </substeps>
-            </step>
+                    
+                </ol>
+            
             <step conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N10096_N10059_N10020_N10001">
                 <cmd/>
-            </step>
+            
             <step conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N1009D_N10059_N10020_N10001">
                 <cmd/>
-            </step>
-            <step id="step_N100A4_N10059_N10020_N10001">
-                <cmd>Select<uicontrol> File</uicontrol>, then click
-                        <uicontrol>Browse</uicontrol> and select <filepath>VMAutoScaling.yaml</filepath> from the local disk.</cmd>
-            </step>
-            <step id="step_N100DC_N10074_N10020_N10001">
-                <cmd>Adjust the parameters in the <wintitle>Launch Stack</wintitle> form to meet
-                    your requirements.</cmd>
+            
+             
+                <li>Select<b> File</b>, then click
+                        <b>Browse</b> and select <filepath>VMAutoScaling.yaml</filepath> from the local disk.</li>
+            
+             
+                <li>Adjust the parameters in the <b>Launch Stack</b> form to meet
+                    your requirements.</li>
                 <choicetable id="choicetable_nqn_msw_34" keycol="1" relcolwidth="30* 70*">
                     <chrow>
                         <choption>
-                            <p><uicontrol>KeyName</uicontrol></p>
+                            <p><b>KeyName</b></p>
                         </choption>
                         <chdesc>
-                            <p>The <uicontrol>KeyPair</uicontrol> name from
-                                    the<wintitle> Access &amp; Security</wintitle> page.</p>
+                            <p>The <b>KeyPair</b> name from
+                                    the<b> Access &amp; Security</b> page.</p>
                         </chdesc>
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>TenantUserID</uicontrol></p>
+                            <p><b>TenantUserID</b></p>
                         </choption>
                         <chdesc>
                             <p>The tenant user ID associated with the instance
@@ -85,35 +85,35 @@
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>FlavorName</uicontrol></p>
+                            <p><b>FlavorName</b></p>
                         </choption>
                         <chdesc>
-                            <p>The <uicontrol>Flavor Name</uicontrol> from the
-                                    <wintitle>Flavors</wintitle> page.</p>
+                            <p>The <b>Flavor Name</b> from the
+                                    <b>Flavors</b> page.</p>
                         </chdesc>
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>ImageName</uicontrol></p>
+                            <p><b>ImageName</b></p>
                         </choption>
                         <chdesc>
-                            <p>The <uicontrol>Image Name</uicontrol> from the
-                                    <wintitle>Images</wintitle> page.</p>
+                            <p>The <b>Image Name</b> from the
+                                    <b>Images</b> page.</p>
                         </chdesc>
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>PrivateNetName</uicontrol></p>
+                            <p><b>PrivateNetName</b></p>
                         </choption>
                         <chdesc>
-                            <p>The <uicontrol>Name</uicontrol>
-                                from the <wintitle>Network Overview</wintitle>
+                            <p>The <b>Name</b>
+                                from the <b>Network Overview</b>
                                 page.</p>
                         </chdesc>
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>InstanceName</uicontrol></p>
+                            <p><b>InstanceName</b></p>
                         </choption>
                         <chdesc>
                             <p>The name of the instance to create.</p>
@@ -121,7 +121,7 @@
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>CustomMeterName</uicontrol></p>
+                            <p><b>CustomMeterName</b></p>
                         </choption>
                         <chdesc>
                             <p>The name of a custom Ceilometer metric to store.<!-- For
@@ -130,7 +130,7 @@
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>CustomMeterUnit</uicontrol></p>
+                            <p><b>CustomMeterUnit</b></p>
                         </choption>
                         <chdesc>
                             <p>The unit of measurement to display for the custom
@@ -139,7 +139,7 @@
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>MetricHighWaterMark</uicontrol></p>
+                            <p><b>MetricHighWaterMark</b></p>
                         </choption>
                         <chdesc>
                             <p>The value that triggers autoscaling to add
@@ -148,7 +148,7 @@
                     </chrow>
                     <chrow>
                         <choption>
-                            <p><uicontrol>MetricLowWaterMark</uicontrol></p>
+                            <p><b>MetricLowWaterMark</b></p>
                         </choption>
                         <chdesc>
                             <p>The value that triggers autoscaling to remove
@@ -156,7 +156,7 @@
                         </chdesc>
                     </chrow>
                 </choicetable>
-            </step>
+            
         </ol>
     </body>
-</task-wr>
+</topic>

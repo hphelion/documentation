@@ -11,7 +11,7 @@
         <author ixia_locid="3">Jim Owens</author>
     </prolog>
     <taskbody>
-        <context id="context_N1001F_N1001C_N10001" ixia_locid="4">
+        
             <p ixia_locid="5"><draft-comment author="jowens" ixia_locid="6">US62804 new topic</draft-comment>The controller
                 configuration script accepts a path to a configuration file as an optional
                 parameter:</p>
@@ -32,6 +32,6 @@
             <p ixia_locid="21">For information about the configuration file validator utility, see
                     <cite ixia_locid="22">HP Helion OpenStack Carrier Grade Software Development Kit:
                     wrs-configutilities—Configuration Utilities</cite>.</p>
-        </context>
+        
     </taskbody>
 </task-wr>

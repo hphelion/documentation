@@ -104,8 +104,8 @@
             </dl>
             <p>The LVM/iSCSCI and Ceph-based storage backend options are exclusive.
                 You select one or another when configuring <codeph>controller-0</codeph> by selecting the appropriate storage option. Select
-                    <uicontrol>lvm</uicontrol> for the LVM/iSCSCI backend, or
-                    <uicontrol>ceph</uicontrol> for the Ceph backend. See the <cite>HP Helion OpenStack Carrier Grade Software Installation Guide</cite> for
+                    <b>lvm</b> for the LVM/iSCSCI backend, or
+                    <b>ceph</b> for the Ceph backend. See the <cite>HP Helion OpenStack Carrier Grade Software Installation Guide</cite> for
                 details.</p>
             <p>As an alternative to persistent storage provided by the Cinder
                 service, you can implement ephemeral local storage on the compute nodes where the

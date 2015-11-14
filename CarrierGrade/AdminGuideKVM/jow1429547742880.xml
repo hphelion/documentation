@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1429547742880" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1429547742880" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -12,7 +12,7 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N1001F_N1001C_N10001">
+        
             <p>This extra specification applies to non-boot virtual CPUs. For the
                 boot CPU, the Linux scheduler and priority are fixed to normal time-shared
                 scheduling policy with a <i>nice</i> priority of 0.</p>
@@ -32,15 +32,15 @@
                     <dt>Real-Time FIFO</dt>
                     <dd>
                         <p>Assigns a real-time, first-in-first-out policy, with
-                            priority in the range of 1‒99, specified in the associated <uicontrol>VCPU Priority</uicontrol> field.</p>
+                            priority in the range of 1‒99, specified in the associated <b>VCPU Priority</b> field.</p>
                     </dd>
                 </dlentry>
                 <dlentry>
                     <dt>Real-Time Round Robin</dt>
                     <dd>
                         <p>Assigns a real-time, round-robin policy, with priority
-                            of 1‒99, specified in the associated <uicontrol>VCPU
-                                Priority</uicontrol> field.</p>
+                            of 1‒99, specified in the associated <b>VCPU
+                                Priority</b> field.</p>
                     </dd>
                 </dlentry>
             </dl>
@@ -51,8 +51,8 @@
                     policy of time-shared scheduling with <i>nice</i> priority of 0. See <xref href="jow1426625051841.xml"/> for details.</p>
             </note>
             <p>To add this extra spec to a flavor using the web administration
-                interface, use the <uicontrol>VCPU Scheduler Policy</uicontrol>
-                selection in the <uicontrol>Create Flavor Extra Spec</uicontrol>
+                interface, use the <b>VCPU Scheduler Policy</b>
+                selection in the <b>Create Flavor Extra Spec</b>
                 drop-down menu. To access this menu, see <xref href="jow1429538642910.xml"/>.</p>
             <p>You can specify the scheduler policy and priority for non-boot
                 virtual CPUs from the CLI using the <option>hw:wrs:vcpu:scheduler</option> parameter on the <cmdname>nova
@@ -83,20 +83,20 @@
                     </dd>
                 </dlentry>
             </dl>
-        </context>
+        
         <example>
             <p>To set real-time schedulers and priorities on virtual CPU 1 (FIFO,
                 50) and virtual CPU 2 (Round Robin, 80):</p>
-            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key <varname>flavor_name</varname> set hw:wrs:vcpu:scheduler="fifo:50:1;rr:80:2"</userinput></codeblock>
+            <codeblock>~(keystone_admin)$ nova flavor-key <varname>flavor_name</varname> set hw:wrs:vcpu:scheduler="fifo:50:1;rr:80:2"</codeblock>
             <p>To set real-time Round Robin schedulers for three virtual CPU (Round
                 Robin, 80):</p>
-            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key <varname>flavor_name</varname> set hw:wrs:vcpu:scheduler=rr:80:1-3</userinput></codeblock>
+            <codeblock>~(keystone_admin)$ nova flavor-key <varname>flavor_name</varname> set hw:wrs:vcpu:scheduler=rr:80:1-3</codeblock>
             <p>To set the FIFO scheduler with priority 50 on all virtual CPUs
                 except virtual CPU 0:</p>
-            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key <varname>flavor_name</varname> set hw:wrs:vcpu:scheduler=fifo:50</userinput></codeblock>
+            <codeblock>~(keystone_admin)$ nova flavor-key <varname>flavor_name</varname> set hw:wrs:vcpu:scheduler=fifo:50</codeblock>
             <p>To reset all scheduler settings to default values (non real-time
                 scheduler with priority 0):</p>
-            <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key <varname>flavor_name</varname> unset hw:wrs:vcpu:scheduler</userinput></codeblock>
+            <codeblock>~(keystone_admin)$ nova flavor-key <varname>flavor_name</varname> unset hw:wrs:vcpu:scheduler</codeblock>
         </example>
     </body>
-</task-wr>
+</topic>

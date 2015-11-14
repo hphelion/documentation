@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1439393204460" xml:lang="en-us">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1439393204460" xml:lang="en-us">
 <!-- Modification History
         
 -->
@@ -10,30 +10,30 @@
         <author/>
     </prolog>
     <body>
-        <context id="context_N1001F_N1001C_N10001">
+        
             <p>The use of Cinder volumes is recommended for fast instance booting.</p>
-        </context>
+        
         <ol>
-            <step id="step_N1002B_N10028_N1001C_N10001">
-                <cmd>Log in as the appropriate tenant.</cmd>
-            </step>
-            <step id="step_N10034_N10028_N1001C_N10001">
-                <cmd>On the <uicontrol>Project</uicontrol> menu, open the
-                        <uicontrol>Compute</uicontrol> section, and then click
-                        <uicontrol>Volumes</uicontrol>.</cmd>
-            </step>
-            <step id="step_N10049_N10028_N1001C_N10001">
-                <cmd>On the <wintitle>Volumes</wintitle> page, click <uicontrol>Create
-                        Volume</uicontrol></cmd>
-            </step>
-            <step id="step_N10059_N10028_N1001C_N10001">
-                <cmd>Complete the <wintitle>Create Volume</wintitle> form.</cmd>
+             
+                <li>Log in as the appropriate tenant.</li>
+            
+             
+                <li>On the <b>Project</b> menu, open the
+                        <b>Compute</b> section, and then click
+                        <b>Volumes</b>.</li>
+            
+             
+                <li>On the <b>Volumes</b> page, click <b>Create
+                        Volume</b></li>
+            
+             
+                <li>Complete the <b>Create Volume</b> form.</li>
                 
                     <p>For an example, see the <cite>HP Helion OpenStack Carrier Grade Reference Deployment Scenarios:
                             Creating a Volume</cite>.</p>
                     <!-- p>For settings information, see <xref href="jow1439393574682.xml"/>.</p -->
                 
-            </step>
+            
         </ol>
     </body>
-</task-wr>
+</topic>
