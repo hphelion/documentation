@@ -51,8 +51,7 @@
                     <pt>engine-list</pt>
                     <pd>
                         <p>Lists details for the packet processing
-                            engine.<codeblock>$ sudo vshell -H compute-1 engine-list</codeph>
-<codeph>+---------+----+-------+-----------+-----------+-----------+
+                            engine.<codeblock>$ sudo vshell -H compute-1 engine-list +---------+----+-------+-----------+-----------+-----------+
 | uuid    | id | cpuid | socket-id | rxq-count | txq-count |
 +---------+----+-------+-----------+-----------+-----------+
 | dfcd... | 0  | 1     | 0         | 29        | 41        |
@@ -64,8 +63,7 @@
                     <pt>port-list</pt>
                     <pd>
                         <p>Lists attributes for virtual and physical ports.</p>
-                        <codeblock>$ sudo vshell -H compute-1 port-list</codeph>
-<codeph>+-------+----+-----------+-----------+-------------+------------+------+
+                        <codeblock>$ sudo vshell -H compute-1 port-list +-------+----+-----------+-----------+-------------+------------+------+
 | uuid  | id | type      | socket-id | admin-state | link-state | mtu  |
 +-------+----+-----------+-----------+-------------+------------+- ----+
 | 21... | 0  | physical  | 0         | up          | up         | 1600 |
@@ -88,8 +86,7 @@
                     <pt>interface-list</pt>
                     <pd>
                         <p>Lists attributes for logical interfaces.</p>
-                        <codeblock>$ sudo vshell -H compute-1 interface-list</codeph>
-<codeph>+-------+----------+----------+-----------+-------------+------+
+                        <codeblock>$ sudo vshell -H compute-1 interface-list +-------+----------+----------+-----------+-------------+------+
 | uuid  | type     | class    | name      | mac-address | mtu  |
 +--------------------------------------+----------+-----+------+
 | c6... | ae       | provider | ae0       | 90:e2:ba... | 1600 |
@@ -115,8 +112,7 @@
                     <pd>
                         <p>lists the learned Link Layer Discovery Protocol (LLDP)
                             neighbors of physical ports.</p>
-                        <codeblock>$ sudo vshell -H compute-1 lldp-neighbour-list</codeph>
-<codeph>+---------+-------------+----------------+-------------+--------+
+                        <codeblock>$ sudo vshell -H compute-1 lldp-neighbour-list +---------+-------------+----------------+-------------+--------+
 | port-id | remote-port | remote-address | mac-address | rx-ttl |
 +---------+-------------+----------------+-------------+--------+
 | 0       | xe40        |                | 00:08:a2... | 120    |
@@ -136,8 +132,7 @@
                     <pd>
                         <p>Lists the learned and static MAC addresses of logical interfaces and
                             network segments.</p>
-                        <codeblock>$ sudo vshell -H compute-1 network-table-list</codeph>
-<codeph>+-------------+---------+----------------+---------------+--------------+
+                        <codeblock>$ sudo vshell -H compute-1 network-table-list +-------------+---------+----------------+---------------+--------------+
 | mac-address | type    | interface-name | network-uuid  | network-name |
 +------------ +---------+----------------+---------------+--------------+
 | fa:16:3e... | dynamic | ae0.664        | 4326a83a-4... | net-4326a83a |
@@ -158,8 +153,7 @@
                     <pt>address-list</pt>
                     <pd>
                         <p>Lists IPv4 and IPv6 network addresses assigned to logical interfaces.</p>
-                        <codeblock>$ sudo vshell -H compute-1 address-list</codeph>
-<codeph>+---------+----------------+----------------+----------------+--------------------+
+                        <codeblock>$ sudo vshell -H compute-1 address-list +---------+----------------+----------------+----------------+--------------------+
 | address | interface-uuid | interface-name | valid-lifetime | preferred-lifetime |
 +---------+----------------+----------------+----------------+--------------------+
 | 192.... | c67943b7-d1... | ae0            | infinity       | infinity           |
@@ -182,8 +176,7 @@
                     <pt>route-list</pt>
                     <pd>
                         <p>Lists the configured IPv4 and IPv6 network routes of virtual routers</p>
-                        <codeblock>$ sudo vshell -H compute-1 route-list</codeph>
-<codeph>
+                        <codeblock>$ sudo vshell -H compute-1 route-list 
 +--------+------------------+----------+----------------+----------------+
 | router | prefix           | type     | interface-uuid | interface-name |
 +--------+------------------+----------+----------------+----------------+
@@ -232,8 +225,7 @@
                             groups to enable or disable statistics collection for network-related
                             activity. For performance reasons, the groups are disabled by
                             default.</p>
-                        <codeblock>$ sudo vshell -H compute-1 statistic-group-list</codeph>
-<codeph>+-----------+----------+
+                        <codeblock>$ sudo vshell -H compute-1 statistic-group-list +-----------+----------+
 | name      | state    |
 +-----------+----------+
 | bridge    | disabled |
@@ -279,9 +271,7 @@
                             statistics for the packet processing engine. To collect fresh
                             statistics, enable the <codeph>engine</codeph> statistic
                             group.</p>
-                        <codeblock>$ sudo vshell -H compute-1 statistic-group-enable engine</codeph>
-<codeph>$ sudo vshell -H compute-1 engine-stats-list</codeph>
-<codeph>+-------+----+-------+------------+------------+-------------+
+                        <codeblock>$ sudo vshell -H compute-1 statistic-group-enable engine $ sudo vshell -H compute-1 engine-stats-list +-------+----+-------+------------+------------+-------------+
 | uuid  | id | cpuid | rx-packets | tx-packets | tx-disabled |
 +-------+----+-------+------------+------------+-------------+
 | df... | 0  | 1     | 2536       | 7911       | 0           |
@@ -293,8 +283,7 @@
 -------------+------------+------------+-------+
  0           | 0          | 0          | 0.00% |
  0           | 0          | 0          | 0.00% |
--------------+------------+------------+-------+</codeph>
-</codeblock>
+-------------+------------+------------+-------+</codeblock>
                         <p>For best performance, disable the group when you are finished. </p>
                         <codeblock>$ sudo vshell -H compute-1 statistic-group-disable engine
 </codeblock>
@@ -306,8 +295,7 @@
                         <p>Displays packet processing statistics by port. For this
                             list, there is no corresponding statistic group. Collection is always
                             enabled.</p>
-                        <codeblock>sudo vshell -H compute-1 port-stats-list</codeph>
-<codeph>+-------+----+-----------+------------+------------+----------+----------+
+                        <codeblock>sudo vshell -H compute-1 port-stats-list +-------+----+-----------+------------+------------+----------+----------+
 | uuid  | id | type      | rx-packets | tx-packets | rx-bytes | tx-bytes |
 +-------+----+-----------+------------+------------+----------+----------+
 | 21... | 0  | physical  | 423017     | 154532     | 85008801 | 36865698 |
@@ -319,8 +307,7 @@
 -----------+-----------+-----------+
  0         | 0         | 0         |
  0         | 0         | 0         |
------------+-----------+-----------+</codeph>
-</codeblock>
+-----------+-----------+-----------+</codeblock>
                     </pd>
                 </plentry>
                 <plentry>
@@ -329,9 +316,7 @@
                         <p>Displays packet processing statistics by interface. To
                             collect fresh statistics, enable the
                                 <codeph>interface</codeph> statistic group.</p>
-                        <codeblock>$ sudo vshell -H compute-1 statistic-group-enable interface</codeph>
-<codeph>$ sudo vshell -H compute-1 interface-stats-list</codeph>
-<codeph>+-------+----------+-----------+------------+------------+----------+----------+
+                        <codeblock>$ sudo vshell -H compute-1 statistic-group-enable interface $ sudo vshell -H compute-1 interface-stats-list +-------+----------+-----------+------------+------------+----------+----------+
 | uuid  | type     | name      | rx-packets | tx-packets | rx-bytes | tx-bytes |
 +-------+----------+-----------+------------+------------+----------+----------+
 | c6... | ae       | ae0       | 0          | 0          | 0        | 0        |
@@ -349,8 +334,7 @@
  0         | 0         | 0           | 0           | 0         | 0          |
  0         | 0         | 0           | 0           | 0         | 0          |
  0         | 0         | 0           | 0           | 0         | 0          |
------------+-----------+-------------+-------------+-----------+------------+</codeph>
-</codeblock>
+-----------+-----------+-------------+-------------+-----------+------------+</codeblock>
                         <p>For best performance, disable the group when you are finished. </p>
                         <codeblock>$ sudo vshell -H compute-1 statistic-group-disable interface
 </codeblock>
@@ -362,9 +346,7 @@
                         <p>Displays packet processing statistics for the IP stack.
                             To collect fresh statistics, enable the <codeph>ip</codeph>
                             statistic group.</p>
-                        <codeblock>$ sudo vshell -H compute-1 statistic-group-enable ip</codeph>
-<codeph>$ sudo vshell -H compute-1 ip-stats-list</codeph>
-<codeph>+--------+-------+----------+--------------+--------------+
+                        <codeblock>$ sudo vshell -H compute-1 statistic-group-enable ip $ sudo vshell -H compute-1 ip-stats-list +--------+-------+----------+--------------+--------------+
 | family | cpuid | rx-total | rx-broadcast | rx-multicast |
 +--------+-------+----------+--------------+--------------+
 | ipv4   | 0     | 0        | 0            | 0            |
@@ -396,7 +378,6 @@
  0             | 0             | 0            | 0             | 0              |
  0             | 0             | 0            | 0             | 0              |
 ---------------+---------------+--------------+---------------+----------------+
-</codeph>
 </codeblock>
                         <p>For best performance, disable the group when you are finished. </p>
                         <codeblock>$ sudo vshell -H compute-1 statistic-group-disable ip

@@ -42,8 +42,7 @@
                 <li>Restore the compute function on <codeph>controller-0</codeph>.</li>
                 
                     <p>Use the following command:</p>
-                    <codeblock>~(keystone_admin)$ system compute-config-complete</codeph>
-<codeph>Manifests are being created and applied, the controller will restart upon     completion.
+                    <codeblock>~(keystone_admin)$ system compute-config-complete Manifests are being created and applied, the controller will restart upon     completion.
 +-------------------+--------------------------------------+
 | Property          | Value                                |
 +-------------------+--------------------------------------+

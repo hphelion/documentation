@@ -19,7 +19,7 @@
                 The examples in this section assume you are the <codeph>admin</codeph> user.</p>
             <p>To create a router from the CLI, use the <cmdname>neutron router-create</cmdname> command. For example: </p>
             <codeblock>
-<codeph>~(keystone_admin)$ neutron router-create <varname>router_name</varname> --distributed=True</codeblock>
+~(keystone_admin)$ neutron router-create <varname>router_name</varname> --distributed=True</codeblock>
             <p>where <varname>router_name</varname> is a name
                 assigned to the router.</p>
             <p>This example creates a distributed virtual router. If the <option>--distributed</option> option is omitted, the default setting

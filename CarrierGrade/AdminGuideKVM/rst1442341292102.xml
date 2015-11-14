@@ -16,18 +16,17 @@
  <body>
   <p>VLAN Transparent must be supported on a provider network before a VLAN
    Transparent tenant network can be created on that provider network. The <b>VLAN Transparent</b> column in the list of defined provider networks on
-   the <b>Provider Networks</b> tab of the <menucascade>
-    <b>System</b>
+   the <b>Provider Networks</b> tab of the
+    <b>System</b>, then
     <b>Networks</b>
-   </menucascade> page indicates availability. </p>
+    page indicates availability. </p>
   <p>VLAN Priority attributes are propagated to the provider VLAN tag and then restored to the guest
    VLAN tag.</p>
   
    <image href="rst1442405927569.image" id="image_dbb_wwk_jt"/>
   
   <p>This information is also available from the following command.</p>
-  <codeblock>~(keystone_admin)$ neutron providernet-show provider1-vt</codeph>
-<codeph>+------------------+--------------------------------------------------------+
+  <codeblock>~(keystone_admin)$ neutron providernet-show provider1-vt +------------------+--------------------------------------------------------+
 | Field            | Value                                                  |
 +------------------+--------------------------------------------------------+
 | description      |                                                        |
@@ -48,17 +47,16 @@
 | vlan_transparent | True                                                   |
 +------------------+--------------------------------------------------------+</codeblock>
   <p>The summary information available by selecting a tenant network name form the
-    <b>Provider Networks</b> tab of the <menucascade>
-    <b>System</b>
+    <b>Provider Networks</b> tab of the 
+    <b>System</b>, then 
     <b>Networks</b>
-   </menucascade> page indicates if a tenant network will request VLAN Transparent services from a
+    page indicates if a tenant network will request VLAN Transparent services from a
    provider network.</p>
   
    <image href="rst1442405324298.image" id="image_utg_pvk_jt"/>
   
   <p>This information is also available from the following command.</p>
-  <codeblock>~(keystone_admin)$ neutron net-show tenant1-vt</codeph>
-<codeph>+---------------------------+--------------------------------------+
+  <codeblock>~(keystone_admin)$ neutron net-show tenant1-vt +---------------------------+--------------------------------------+
 | Field                     | Value                                |
 +---------------------------+--------------------------------------+
 | admin_state_up            | True                                 |

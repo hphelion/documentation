@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic ditaarch:DITAArchVersion="1.2" domains="(topic task topic)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333812899">
+<topic id="jow1404333812899">
     <!-- Modification History
         
 -->
@@ -24,30 +24,30 @@
         
         <ol>
              
-                <li>Collect the required parameter values for this template.</li>
+                <li>Collect the required parameter values for this template.
                  <ol>
                     
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-flavor"/>
+                        <li conref="jow1404333809730.xml#jow1404333809730/locate-flavor"/>
                     
                     
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-keypair"/>
+                        <li conref="jow1404333809730.xml#jow1404333809730/locate-keypair"/>
                     
                     
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-image"/>
+                        <li conref="jow1404333809730.xml#jow1404333809730/locate-image"/>
                     
                     
-                        <li>On the <menucascade>
-                                <b>Admin</b>
-                                <b>System Panel</b>
+                        <li>On the
+                                <b>Admin</b>, then
+                                <b>System Panel</b>, then
                                 <b>Networks</b>
-                            </menucascade> page, click the <b>Name</b> of each required network in turn, in order to open
+                             page, click the <b>Name</b> of each required network in turn, in order to open
                             the Network Overview page and obtain the network <b>ID</b>. For this template, a public network
                             ID and an internal network ID are required.</li>
                     
-                </substeps>
-            
-            <step conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N10096_N10059_N10020_N10001"><cmd/>
-            <step conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N1009D_N10059_N10020_N10001"><cmd/>
+                </ol>
+                </li>
+            <li conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N10096_N10059_N10020_N10001"></li>
+            <li conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N1009D_N10059_N10020_N10001"></li>
             
              
                 <li>Select<b> File</b>, then click
@@ -56,7 +56,7 @@
             
              
                 <li>Use the <b>Launch Stack</b> form to provide the required
-                    parameter values for the template. </li>
+                    parameter values for the template. 
                 
                     
                         <image alt="CPUScale Launch Stack form" href="jow1404333811339.image" id="image_dvz_1wj_j4" width="4in"/>
@@ -66,122 +66,125 @@
                             edited to present them in two columns.</p>
                     </note>
                 
-            
+                </li>
              
-                <li>Adjust existing values to meet your requirements.</li>
-                <choicetable id="choicetable_nqn_msw_34" keycol="1" relcolwidth="1.0* 2.0*">
-                    <chrow>
-                        <choption>
+                <li>Adjust existing values to meet your requirements.
+                <table>
+                    <tgroup cols="2">
+                        <tbody>
+                         
+                    <row>
+                        <entry>
                             <p><b>KeyName</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The <b>KeyPair</b>
                                 name from the<b> Access &amp;
                                     Security</b> page.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>ViFModel</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The virtual interface model to use. For valid
                                 choices, see <cite>Multiple NIC Support</cite> in
                                     <xref href="jow1404333807231.xml"/>.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>InstanceType</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The <b>Flavor
                                     Name</b> from the <b>Flavors</b> page.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>ImageId</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The <b>Image
                                     Name</b> from the <b>Images</b> page.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>PublicNetId</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The <b>ID</b> from
                                 the <b>Network Overview</b> page.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>InternalNetId</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The <b>ID</b> from
                                 the <b>Network Overview</b> page.
                                 <!-- this and the similar entry above need attention. We need two network IDs (or are the Names enough?) when we collect the parameters. --></p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>MinClusterSize</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The minimum number of VMs to launch. The stack cannot
                                 autoscale below this value.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>MaxClusterSize</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The maximum number of VMs that can be launched.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>CustomMeterName</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The name of a custom Ceilometer metric to store.<!-- For
                                 information about custom metrics, see <xref href="jow1404916152577.xml"/>.--></p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>CustomMeterUnit</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The unit of measurement to display for the custom
                                 metric; for example, 'Percent'.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>MetricHighWaterMark</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The value that triggers autoscaling to add
                                 resources.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>MetricLowWaterMark</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The value that triggers autoscaling to remove
                                 resources.</p>
-                        </chdesc>
-                    </chrow>
-                </choicetable>
-            
+                        </entry>
+                    </row>
+                </tbody></tgroup></table>
+                </li>
         </ol>
     </body>
 </topic>

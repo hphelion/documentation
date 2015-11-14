@@ -20,8 +20,7 @@
                 take snapshots of all <i>in-use</i> volumes, regardless of whether
                 the associated instances are running. If you prefer, you can use the <cmdname>nova list</cmdname> command with the option <option>--all-tenants</option> to identify which instances are running,
                 and then take snapshots selectively.</p>
-            <codeblock>~[keystone_admin]$ nova list --all-tenants</codeph>
-<codeph>
+            <codeblock>~[keystone_admin]$ nova list --all-tenants 
 +--------+--------+-----------+--------+------------+-------------+----------+
 | ID     | Name   | Tenant ID | Status | Task State | Power State | Networks |                                                                                                        |
 +--------+--------+-----------+--------+------------+-------------+----------+
@@ -40,8 +39,7 @@
                     
                         <li>List Cinder volumes from all tenants.</li>
                         
-                            <codeblock>~(keystone_admin)$ cinder list --all-tenants</codeph>
-<codeph>+--------------+-----------+--------------+... +----------+--------------+
+                            <codeblock>~(keystone_admin)$ cinder list --all-tenants +--------------+-----------+--------------+... +----------+--------------+
 |     ID       |   Status  | Display Name |... | Bootable | Attached to  |
 +--------------+-----------+--------------+... +----------+--------------+
 | 53ad007a-... |   in-use  |   volume-1   |... |  false   | c820df55-... |
@@ -85,8 +83,7 @@
                 <li>Create a volume snapshot.</li>
                 
                     <codeblock>~(keystone_admin)$ cinder snapshot-create --force True --display-name test-vm-snapshot \
-578da734-a416-47e7-97de-137aa10b90f8</codeph>
-<codeph>+---------------------+--------------------------------------+
+578da734-a416-47e7-97de-137aa10b90f8 +---------------------+--------------------------------------+
 |       Property      |                Value                 |
 +---------------------+--------------------------------------+
 |      created_at     |      2014-09-19T14:18:47.269583      |
@@ -104,8 +101,7 @@
                         becomes <i>available</i> before proceeding.</p>
                     <p>You can verify the status of all Cinder snapshots using the
                         following command:</p>
-                    <codeblock>~(keystone_admin)$ cinder snapshot-list --all-tenants</codeph>
-<codeph>+--------------+--------------+-----------+------------------+------+
+                    <codeblock>~(keystone_admin)$ cinder snapshot-list --all-tenants +--------------+--------------+-----------+------------------+------+
 |    ID        | Volume ID    |   Status  |   Display Name   | Size |
 +--------------+--------------+-----------+------------------+------+
 | 53b5237c-... | 578da734-... | available | test-vm-snapshot |  1   |
@@ -118,8 +114,7 @@
              
                 <li>Export the snapshot to the controller's file system.</li>
                 
-                    <codeblock>~(keystone_admin)$ cinder snapshot-export test-vm-snapshot</codeph>
-<codeph>+---------------------+--------------------------------------+
+                    <codeblock>~(keystone_admin)$ cinder snapshot-export test-vm-snapshot +---------------------+--------------------------------------+
 |       Property      |                Value                 |
 +---------------------+--------------------------------------+
 | display_description |                 None                 |
@@ -139,8 +134,7 @@
                 
                     <p>When the export operation completes, the backup file is
                         ready, as illustrated in the following example:</p>
-                    <codeblock>~(keystone_admin)$ ls -lh /opt/backups</codeph>
-<codeph>total 258M
+                    <codeblock>~(keystone_admin)$ ls -lh /opt/backups total 258M
 drwx------ 2 root root  16K Sep 10 17:42 lost+found
 drwxr-xr-x 2 root root 4.0K Sep 19 14:30 temp
 -rw-r--r-- 1 root root 258M Sep 19 14:30 volume-578da734-a416-47e7-97de-137aa10b90f8-20140919-142732.tgz</codeblock>

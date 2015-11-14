@@ -24,8 +24,7 @@
   <section id="section_N100C8_N1001F_N10001">
    <title>OAM IP Configuration</title>
    <p>To view the existing OAM IP configuration, use the following command.</p>
-   <codeblock>~(keystone_admin)$ system oam-show</codeph>
-<codeph>+-----------------+--------------------------------------+
+   <codeblock>~(keystone_admin)$ system oam-show +-----------------+--------------------------------------+
 | Property        | Value                                |
 +-----------------+--------------------------------------+
 | uuid            | bacf5c9d-47a1-43df-845a-f38a88e1dcd4 |
@@ -67,8 +66,7 @@ action=apply</codeblock>
   <section id="section_N1002F_N1001C_N10001">
    <title>DNS Server Configuration</title>
    <p>To view the existing DNS server configuration, use the following command.</p>
-   <codeblock>~(keystone_admin)$ system dns-show</codeph>
-<codeph>+--------------+--------------------------------------+
+   <codeblock>~(keystone_admin)$ system dns-show +--------------+--------------------------------------+
 | Property     | Value                                |
 +--------------+--------------------------------------+
 | uuid         | cd2d645f-d8ca-4344-995b-aab480b1951d |
@@ -91,8 +89,7 @@ nameservers=8.8.8.8,8.8.4.4 action=apply</codeblock>
   <section id="section_N10080_N1001F_N10001">
    <title>NTP Server Configuration</title>
    <p>To view the existing NTP server configuration, use the following command.</p>
-   <codeblock>~(keystone_admin)$ system ntp-show</codeph>
-<codeph>+--------------+----------------------------------------------+
+   <codeblock>~(keystone_admin)$ system ntp-show +--------------+----------------------------------------------+
 | Property     | Value                                        |
 +--------------+----------------------------------------------+
 | uuid         | 33bf8ad6-9426-4e10-b5b2-0be1b23a22c9         |
@@ -119,8 +116,7 @@ action=apply</codeblock>
   <section id="section_N1011F_N1001F_N10001">
    <title>Controller Storage Configuration</title>
    <p>To view the existing storage configuration, use the following command.</p>
-   <codeblock>~(keystone_admin)$ system controllerfs-show</codeph>
-<codeph>+--------------+--------------------------------------+
+   <codeblock>~(keystone_admin)$ system controllerfs-show +--------------+--------------------------------------+
 | Property     | Value                                |
 +--------------+--------------------------------------+
 | uuid         | b1242c7f-7cb1-4878-a088-aac02c3f424b |

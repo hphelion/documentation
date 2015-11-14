@@ -12,15 +12,14 @@
     </prolog>
     <body>
         
-            <p>In a redundant ToR switch configuration, each link in a link
-                aggregate is connected to a different switch, as shown in the accompanying figure.
-                If one switch fails, another is available to service the link aggregate.</p>
-            
-                <title>Redundant Top-of-Rack Switches</title>
-                <image href="jow1438030468959.image" id="image_fnv_nqg_vs">
-                    <alt>Redundant Top-of-Rack Switches</alt>
-                </image>
-            
+            <p>In a redundant ToR switch configuration, each link in a link aggregate is connected
+            to a different switch, as shown in the accompanying figure. If one switch fails, another
+            is available to service the link aggregate. </p>
+        <p><b>Redundant Top-of-Rack Switches </b><image href="jow1438030468959.image"
+                id="image_fnv_nqg_vs">
+                <alt>Redundant Top-of-Rack Switches</alt>
+            </image>
+        </p>
             <p>Switches that support Virtual Port Channel (VPC) are recommended. When
                 VPC is used, the aggregated links on the switches act as a single LAG interface.
                 Both switches are normally active, providing full bandwidth to the LAG. If there are

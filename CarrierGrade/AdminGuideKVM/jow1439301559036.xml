@@ -14,13 +14,11 @@
         
             <p>To view information for a provider network from the CLI, use the following
                 command:</p>
-            <codeblock>~(keystone_admin)$ neutron providernet-show <varname>providernet</varname></codeph>
-</codeblock>
+            <codeblock>~(keystone_admin)$ neutron providernet-show <varname>providernet</varname></codeblock>
             <p>where <varname>providernet</varname> is the name or
                 UUID of the provider network.</p>
             <p>For example:</p>
-            <codeblock>~(keystone_admin)$ neutron providernet-show a507bb89-8e78-48e4-8c8a-d8bac14fc097</codeph>
-</codeblock>
+            <codeblock>~(keystone_admin)$ neutron providernet-show a507bb89-8e78-48e4-8c8a-d8bac14fc097</codeblock>
             <draft-comment author="jowens">Need to create output to match screen
                 shot. Output may need updating for VLAN Transparent info (US60634)</draft-comment>
             <draft-comment author="jowens">Add commands for viewing seg ranges and
@@ -33,13 +31,11 @@
             <title>Viewing PCI Resource Usage from the CLI </title>
             <p>To view information about PCI interface resources for a provider
                 network from the CLI, use the following command:</p>
-            <codeblock>~(keystone_admin)$ nova providernet-show <varname>providernet</varname></codeph>
-</codeblock>
+            <codeblock>~(keystone_admin)$ nova providernet-show <varname>providernet</varname></codeblock>
             <p>where <varname>providernet</varname> is the UUID of
                 the provider network.</p>
             <p>For example:</p>
-            <codeblock>~(keystone_admin)$ nova providernet-show a507bb89-8e78-48e4-8c8a-d8bac14fc097</codeph>
-<codeph>+--------------------+--------------------------------------+
+            <codeblock>~(keystone_admin)$ nova providernet-show a507bb89-8e78-48e4-8c8a-d8bac14fc097 +--------------------+--------------------------------------+
 | Property           | Value                                |
 +--------------------+--------------------------------------+
 | id                 | a507bb89-8e78-48e4-8c8a-d8bac14fc097 |
@@ -87,11 +83,11 @@
         
         <ol>
              
-                <li>From the left pane menu select <menucascade>
-                        <b>Admin</b>
-                        <b>System</b>
+                <li>From the left pane menu select 
+                        <b>Admin</b>, then
+                        <b>System</b>, then
                         <b>Networks</b>
-                    </menucascade> to display the <b>Networks</b> page.</li>
+                     to display the <b>Networks</b> page.</li>
             
              
                 <li>Select the <b>Provider
@@ -99,7 +95,7 @@
             
              
                 <li>Click the name of the provider network to open the <b>Provider Network
-                        Overview</b> page.</li>
+                        Overview</b> page.
                 
                     <p>Details for the provider network are displayed, including any associated
                         segmentation ranges and tenant networks.</p>
@@ -108,7 +104,7 @@
                             <alt>TiS Provider Network Overview for Admin Guide</alt>
                         </image>
                     
-                
+                </li>
             
         </ol>
     </body>

@@ -22,7 +22,7 @@
                     <p ixia_locid="490">For a minimal two-server configuration, the controller and
                         compute functions are combined on a single host.</p>
                 </note>
-                
+                <fig id="fig-logical-architecture" ixia_locid="5">
                     <title ixia_locid="6">HP Helion OpenStack Carrier Grade Reference Logical Architecture</title>
                     <image href="jow1404333560781.image" id="image_c1k_wtk_cn" ixia_locid="7" width="6in">
                         <alt ixia_locid="455">HP Helion OpenStack Carrier Grade logical view</alt>

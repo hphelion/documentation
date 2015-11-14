@@ -24,8 +24,7 @@
       <p>The command <cmdname>system alarm-list</cmdname> lists
         currently active alarms, as illustrated below (the output is split in two pieces for
         presentation purposes only):</p>
-      <codeblock>~(keystone_admin)$ system alarm-list</codeph>
-<codeph>
+      <codeblock>~(keystone_admin)$ system alarm-list 
 +--------------+----------+--------------------+----------+---------------
 | UUID         | Alarm ID | Entity Instance ID | Severity |  Time Stamp   
 +--------------+----------+--------------------+----------+---------------
@@ -121,8 +120,7 @@ entity_instance_id=host=compute-0</codeblock>
       <title>system alarm-show</title>
       <p>The command <cmdname>system alarm-show</cmdname> presents
         additional information about a currently active alarm, as illustrated below:</p>
-      <codeblock>~(keystone_admin)$ system alarm-show 4ab5698a-19cb-4c17-bd63-302173fef62c </codeph>
-<codeph>
+      <codeblock>~(keystone_admin)$ system alarm-show 4ab5698a-19cb-4c17-bd63-302173fef62c  
 +------------------------+-------------------------------------------------+
 | Property               | Value                                           |
 +------------------------+-------------------------------------------------+

@@ -28,7 +28,7 @@
             <p>Then use the <cmdname>neutron
                     router-interface-add</cmdname> command to add interfaces. For example: </p>
             <codeblock>
-<codeph>~(keystone_admin)$ neutron router-interface-add <varname>router_id</varname> <varname>subnet-id</varname></codeblock>
+~(keystone_admin)$ neutron router-interface-add <varname>router_id</varname> <varname>subnet-id</varname></codeblock>
             <p>where <varname>router_id</varname> is the name or
                 UUID of the router, and <varname>subnet_id</varname> is the name or
                 UUID of the subnet to which you want to attach an interface. By default, the

@@ -25,8 +25,7 @@
                 repository, ready for installation on any host type that requires it.  You can then
                 install all applicable patches to each host in turn.</p>
             <p>To keep track of patch installation, you can use the <cmdname>sw-patch query</cmdname> command.</p>
-            <codeblock>~(keystone_admin)$ sudo sw-patch query</codeph>
-<codeph>﻿       Patch ID             Patch State
+            <codeblock>~(keystone_admin)$ sudo sw-patch query ﻿       Patch ID             Patch State
 =========================   ===========
 TITANIUM_14.10_PATCH_0001   Available
 TITANIUM_14.10_PATCH_0002   Available
@@ -66,8 +65,7 @@ TITANIUM_14.10_PATCH_0003   Available</codeblock>
                     query-hosts</cmdname> command to see which hosts are fully patched (<codeph>Patch Current</codeph>). This also shows which hosts
                 require reboot, either because they are not fully patched, or because they are fully
                 patched but need restarting to make the patches take effect.</p>
-            <codeblock>~(keystone_admin)$ sudo sw-patch query-hosts</codeph>
-<codeph>﻿  Hostname      IP Address    Patch Current  Reboot Required
+            <codeblock>~(keystone_admin)$ sudo sw-patch query-hosts ﻿  Hostname      IP Address    Patch Current  Reboot Required
 ============  ==============  =============  ===============
 compute-0     192.168.204.15       Yes             No
 controller-0  192.168.204.3        No              Yes
@@ -82,8 +80,7 @@ controller-1  192.168.204.4        No              Yes</codeblock>
              
                 <li>Verify that the patches are available using the command <cmdname>sw-patch query</cmdname>.
                 
-                    <codeblock>~(keystone_admin)$ sudo sw-patch query</codeph>
-<codeph>﻿       Patch ID             Patch State
+                    <codeblock>~(keystone_admin)$ sudo sw-patch query ﻿       Patch ID             Patch State
 =========================   ===========
 TITANIUM_14.10_PATCH_0001   Available
 TITANIUM_14.10_PATCH_0002   Available
@@ -93,8 +90,7 @@ TITANIUM_14.10_PATCH_0003   Available</codeblock>
              
                 <li>Apply the patch.
                 
-                    <codeblock>~(keystone_admin)$ sudo sw-patch apply TITANIUM_14.10_PATCH_0001</codeph>
-<codeph>TITANIUM_14.10_PATCH_0001 is now in the repo</codeblock>
+                    <codeblock>~(keystone_admin)$ sudo sw-patch apply TITANIUM_14.10_PATCH_0001 TITANIUM_14.10_PATCH_0001 is now in the repo</codeblock>
                 
                 
                     <p>The patch is now in the <i>Partial-Apply</i>
@@ -105,10 +101,7 @@ TITANIUM_14.10_PATCH_0003   Available</codeblock>
              
                 <li>Apply all available patches in a single operation.
                 
-                    <codeblock>~(keystone_admin)$ sudo sw-patch apply --all</codeph>
-<codeph>TITANIUM_14.10_PATCH_0001 is now in the repo</codeph>
-<codeph>TITANIUM_14.10_PATCH_0002 is now in the repo</codeph>
-<codeph>TITANIUM_14.10_PATCH_0003 is now in the repo</codeblock>
+                    <codeblock>~(keystone_admin)$ sudo sw-patch apply --all TITANIUM_14.10_PATCH_0001 is now in the repo TITANIUM_14.10_PATCH_0002 is now in the repo TITANIUM_14.10_PATCH_0003 is now in the repo</codeblock>
                 
                 
                     <p>In this example there are three patches ready now for
@@ -124,8 +117,7 @@ TITANIUM_14.10_PATCH_0003   Available</codeblock>
                         not just the status due to a particular patch.</p>
                 
                 
-                    <codeblock>~(keystone_admin)$ sudo sw-patch query-hosts</codeph>
-<codeph>﻿  Hostname      IP Address    Patch Current  Reboot Required
+                    <codeblock>~(keystone_admin)$ sudo sw-patch query-hosts ﻿  Hostname      IP Address    Patch Current  Reboot Required
 ============  ==============  =============  ===============
 compute-0     192.168.204.15       Yes             No
 controller-0  192.168.204.3        No              Yes
@@ -181,8 +173,7 @@ controller-1  192.168.204.4        No              Yes</codeblock>
                                 patches, and forces a host reboot.</p>
                         
                         
-                            <codeblock>~(keystone_admin)$ system host-patch-reboot controller-0</codeph>
-<codeph>host-patch-reboot controller-0 may take several minutes to complete.
+                            <codeblock>~(keystone_admin)$ system host-patch-reboot controller-0 host-patch-reboot controller-0 may take several minutes to complete.
  
 2014-10-17-20-39-59_host-patch-reboot start.
 ...
@@ -206,8 +197,7 @@ Restoring initial administrative state: unlocked. Unlocking host controller-0 to
                 
                     <p>All patches are now installed on <codeph>controller-0</codeph>. Querying the current patch
                         status displays the following information:</p>
-                    <codeblock>~(keystone_admin)$ sudo sw-patch query-hosts</codeph>
-<codeph>﻿  Hostname      IP Address    Patch Current  Reboot Required
+                    <codeblock>~(keystone_admin)$ sudo sw-patch query-hosts ﻿  Hostname      IP Address    Patch Current  Reboot Required
 ============  ==============  =============  ===============
 compute-0     192.168.204.15       Yes             No
 controller-0  192.168.204.3        Yes             No
@@ -246,14 +236,12 @@ controller-1  192.168.204.4        No              Yes</codeblock>
                     
                         <li>Install the pending patches.
                         
-                            <codeblock>~(keystone_admin)$ sudo sw-patch host-install controller-0</codeph>
-<codeph>Patch installation was successful on controller-0</codeblock>
+                            <codeblock>~(keystone_admin)$ sudo sw-patch host-install controller-0 Patch installation was successful on controller-0</codeblock>
                         
                         
                             <p>All patches are now installed on <codeph>controller-0</codeph>. Querying the
                                 current patching status displays the following information:</p>
-                            <codeblock>~(keystone_admin)$ sudo sw-patch query-hosts</codeph>
-<codeph>﻿  Hostname      IP Address    Patch Current  Reboot Required
+                            <codeblock>~(keystone_admin)$ sudo sw-patch query-hosts ﻿  Hostname      IP Address    Patch Current  Reboot Required
 ============  ==============  =============  ===============
 compute-0     192.168.204.15       Yes             No
 controller-0  192.168.204.3        Yes             Yes
@@ -292,8 +280,7 @@ controller-1  192.168.204.4        No              Yes</codeblock>
                 
                     <p>All patches are now installed on <codeph>controller-1</codeph> as well. Querying the
                         current patching status displays the following information:</p>
-                    <codeblock>~(keystone_admin)$ sudo sw-patch query-hosts</codeph>
-<codeph>﻿  Hostname      IP Address    Patch Current  Reboot Required
+                    <codeblock>~(keystone_admin)$ sudo sw-patch query-hosts ﻿  Hostname      IP Address    Patch Current  Reboot Required
 ============  ==============  =============  ===============
 compute-0     192.168.204.15       Yes             No
 controller-0  192.168.204.3        Yes             No
@@ -320,8 +307,7 @@ controller-1  192.168.204.4        Yes             No</codeblock>
                 
                     <p>Use the <cmdname>sw-patch query</cmdname>
                         command to verify that all patches are <codeph>Applied</codeph>.</p>
-                    <codeblock>~(keystone_admin)$ sudo sw-patch query</codeph>
-<codeph>﻿       Patch ID             Patch State
+                    <codeblock>~(keystone_admin)$ sudo sw-patch query ﻿       Patch ID             Patch State
 =========================   ===========
 TITANIUM_14.10_PATCH_0001   Applied</codeblock>
                     <p>If the <codeph>Patch

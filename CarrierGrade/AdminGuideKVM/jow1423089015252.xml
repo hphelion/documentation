@@ -74,8 +74,7 @@
              
                 <li>Wait for the host to be reported as <codeph>available</codeph>. </li>
                 
-                    <codeblock>(keystone_admin)$ system host-list <varname>hostname</varname></codeph>
-<codeph>+----+--------------+-------------+----------------+-------------+--------------+
+                    <codeblock>(keystone_admin)$ system host-list <varname>hostname</varname> +----+--------------+-------------+----------------+-------------+--------------+
 | id | hostname     | personality | administrative | operational | availability |
 +----+--------------+-------------+----------------+-------------+--------------+
 | 1  | controller-0 | controller  | unlocked       | enabled     | available    |

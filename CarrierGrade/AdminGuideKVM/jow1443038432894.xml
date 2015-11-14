@@ -22,12 +22,12 @@
         
             <p>To make interface changes, you must lock the compute host first.</p>
         
-        <steps id="steps_zkx_d1h_hr">
+        <ol>
              
                 <li>Lock the compute host.</li>
             
              
-                <li>Set the interface to support an IPv4 or IPv6 address, or both. </li>
+                <li>Set the interface to support an IPv4 or IPv6 address, or both. 
                 <!-- These substeps are based on memory, since I can't find a lab I can use. -->
                  <ol>
                     
@@ -47,57 +47,57 @@
                         <li>In the <b>Edit Interface</b> dialog box, set the
                                 <b>IPv4 Addressing Mode</b> or the <b>IPv6
                                 Addressing Mode</b> to
-                            <codeph>Static</codeph>.</li>
+                            <codeph>Static</codeph>.
                         
                             
                                 <image href="jow1443040379028.image" id="image_xdf_phm_lt">
                                     <alt>TiS Edit Interface, IPv4 Static</alt>
                                 </image>
                             
-                        
+                        </li>
                     
-                </substeps>
-            
+                 </ol></li>
+                
              
-                <li>Add an IPv4 or IPv6 address to the interface.</li>
+                <li>Add an IPv4 or IPv6 address to the interface.
                  <ol>
                     
                         <li>On the <b>Inventory Detail</b> page, click the
                                 <b>Name</b> of the interface to open the
-                                <b>Interface Detail</b> page.</li>
+                                <b>Interface Detail</b> page.
                         
                             
                                 <image href="jow1443041105867.image" id="image_jjh_cjm_lt">
                                     <alt>TiS Interface Detail page</alt>
                                 </image>
                             
-                        
+                        </li>
                     
                     
                         <li>Click <b>Create Address</b> to open the
-                                <b>Create Address</b> dialog box.</li>
+                                <b>Create Address</b> dialog box.
                         
                             
                                 <image href="jow1442607685238.image" id="image_rf4_bkm_lt">
                                     <alt>TiS Create Address</alt>
                                 </image>
                             
-                        
+                        </li>
                     
                     
                         <li>Enter the IPv4 or IPv6 address and netmask (for example,
                             192.168.1.3/24), and then click <b>Create
                             Address</b>.
-                        </li>
                     
-                </substeps>
+                    
+                
                 
                     <p>The new address is added to the <codeph>Address List</codeph>.</p>
                 
-            
+                        </li>
              
                 <li>Unlock the compute node and wait for it to become available.</li>
             
-        </ol>
+                 </ol></li></ol>
     </body>
 </topic>

@@ -19,54 +19,52 @@
                 network and add segmentation ranges using the web administration interface. For
                 information about using CLI commands, see <xref href="jow1425677233816.xml"/>.</p>
         
-        <steps id="steps_rvq_zr2_hr">
-            <step conref="jow1424191621914.xml#jow1424191621914/step_N1003F_N1003C_N10024_N10001" id="step_N10031_N1002D_N1001F_N10001">
-                <cmd/>
+        <ol>
+            <li conref="jow1424191621914.xml#jow1424191621914/step_N1003F_N1003C_N10024_N10001"
+                id="step_N10031_N1002D_N1001F_N10001"/>
+                
             
-            <step conref="jow1424191621914.xml#jow1424191621914/step_N10054_N1003C_N10024_N10001" id="step_N1003A_N1002D_N1001F_N10001">
-                <cmd/>
+            <li conref="jow1424191621914.xml#jow1424191621914/step_N10054_N1003C_N10024_N10001"
+                id="step_N1003A_N1002D_N1001F_N10001"/>
+                
             
              
-                <li>Create a  provider network.</li>
-                <info conref="jow1424191621914.xml#jow1424191621914/Provider_Network_dialog"/>
-                
-                    
+                <li>Create a  provider network.
+                <ol>
+                    <li conref="jow1424191621914.xml#jow1424191621914/Provider_Network_dialog">
                         <image href="jow1425675012586.image" id="image_jss_vsg_hr">
                             <alt>i-ccs-create-provider-network-generic</alt>
                         </image>
-                    
-                    <p>For the <codeph>Type</codeph>, select <codeph>VXLAN</codeph>.</p>
-                    <p>For the MTU, set a maximum transmission unit that allows for the overhead
-                        required by VXLAN encapsulation. For more information, see <xref href="jow1404333732592.xml"/>.</p>
+                        <p>For the <codeph>Type</codeph>, select <codeph>VXLAN</codeph>.</p>
+                        <p>For the MTU, set a maximum transmission unit that allows for the overhead
+                            required by VXLAN encapsulation. For more information, see <xref
+                                href="jow1404333732592.xml"/>.</p>
+                    </li>
+               </ol> </li>
+            <li conref="jow1424191621914.xml#jow1424191621914/step_N10127_N1003C_N10024_N10001"
+                id="step_N1005D_N1002D_N1001F_N10001"/>
                 
-            
-            <step conref="jow1424191621914.xml#jow1424191621914/step_N10127_N1003C_N10024_N10001" id="step_N1005D_N1002D_N1001F_N10001">
-                <cmd/>
             
              
-                <li>Add one or more segmentation ranges.</li>
-                
-                    <p conref="jow1425657297895.xml#jow1425657297895/seg_range_definition"/>
-                
-                <info conref="jow1425657297895.xml#jow1425657297895/info_add_seg-range"/>
+                <li>Add one or more segmentation ranges. <p
+                    conref="jow1425657297895.xml#jow1425657297895/seg_range_definition"/>
+                <p conref="jow1425657297895.xml#jow1425657297895/p_create_range"/>
                 <!--RS: removed following UI element definitions because latest version of dialog does not show them-->
-                
-                    <!--
+                <!--
 <dl conref="jow1425657297895.xml#jow1425657297895/dl_VxLAN_extras">
                         <dlentry>
                             <dt>"/>
                             <dd>"/>
                         </dlentry>
                     </dl>-->
-                    
-                        <image href="jow1425669118942.image" id="image_o4n_cgg_hr" width="5in">
-                            <alt>i-css-create-seg-range-vxlan</alt>
-                        </image>
-                    
-                
+                <image href="jow1425669118942.image" id="image_o4n_cgg_hr" width="5in">
+                    <alt>i-css-create-seg-range-vxlan</alt>
+                </image>
+            </li>
             
              
-                <cmd conref="jow1425657297895.xml#jow1425657297895/cmd_commit_seg_range"/>
+                <li
+                conref="jow1425657297895.xml#jow1425657297895/step_N101B9_N1005C_N10032_N1000F_N10001"/>
             
         </ol>
     </body>

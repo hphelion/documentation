@@ -96,7 +96,7 @@
         
         <ol>
              
-                <li>List the tenant networks currently defined on the system.</li>
+                <li>List the tenant networks currently defined on the system.
                 
                     <p>Select <b>Networks</b> in the
                         System Panel section of the <b>Admin</b> tab
@@ -106,10 +106,10 @@
                     
                         <image href="jow1404333693122.image" width="6in"/>
                     
-                
+                </li>
             
              
-                <li>Create the tenant network.</li>
+                <li>Create the tenant network.
                 
                     <p>From the <codeph>Networks</codeph> tab, click <codeph>Create
                         Network</codeph> and fill in the form as illustrated below:</p>
@@ -119,9 +119,9 @@
                     <p>Click <b>Create Network</b>
                         to commit the changes.</p>
                 
-            
+                </li>
              
-                <li>Create any required subnets.</li>
+                <li>Create any required subnets.
                  <ol>
                     
                         <li>Select <b>Networks</b> in the System
@@ -139,7 +139,7 @@
                                 <b>Subnet Details</b> tabs, then click
                                 <b>Create</b></li>
                     
-                </substeps>
+                </ol></li>
             
         </ol>
     </body>

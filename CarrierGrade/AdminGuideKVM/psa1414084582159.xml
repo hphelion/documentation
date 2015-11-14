@@ -52,16 +52,13 @@
                         example:</p>
                 
                 
-                    <codeblock>$ mkdir /tmp/patches</codeph>
-<codeph>$ cp /media/wrsroot/data/TITANIUM_CONTROLLER_14.10_PATCH_0001.patch /tmp/patches</codeblock>
+                    <codeblock>$ mkdir /tmp/patches $ cp /media/wrsroot/data/TITANIUM_CONTROLLER_14.10_PATCH_0001.patch /tmp/patches</codeblock>
                 
                 
                     <p>If the patches are available from a remote server, you need
                         to manually initialize a suitable Ethernet interface first, and then
                         transfer them to the local file system. For example:</p>
-                    <codeblock>$ mkdir /tmp/patches</codeph>
-<codeph>$ sudo ifconfig eth3 192.168.1.100 netmask 255.255.255.0 up</codeph>
-<codeph>$ scp \
+                    <codeblock>$ mkdir /tmp/patches $ sudo ifconfig eth3 192.168.1.100 netmask 255.255.255.0 up $ scp \
 me@192.168.1.150:/usr/local/patches/TITANIUM_CONTROLLER_14.10_PATCH_0001.patch \
 /tmp/patches</codeblock>
                 
@@ -89,8 +86,7 @@ me@192.168.1.150:/usr/local/patches/TITANIUM_CONTROLLER_14.10_PATCH_0001.patch \
              
                 <li>Install the patches locally.</li>
                 
-                    <codeblock>$ sudo sw-patch install-local</codeph>
-<codeph>Patch installation is complete.
+                    <codeblock>$ sudo sw-patch install-local Patch installation is complete.
 Please reboot before continuing with configuration.</codeblock>
                 
                 

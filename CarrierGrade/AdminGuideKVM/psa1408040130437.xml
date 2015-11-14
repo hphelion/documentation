@@ -21,8 +21,7 @@
                 <li>Configure IP address 10.10.10.1 to receive SNMP notifications
                     using the community string <term>commstr1</term>.</li>
                 
-                    <codeblock>~(keystone_admin)$ system snmp-trapdest-add -c commstr1 --ip_address 10.10.10.1</codeph>
-<codeph>+------------+--------------------------------------+
+                    <codeblock>~(keystone_admin)$ system snmp-trapdest-add -c commstr1 --ip_address 10.10.10.1 +------------+--------------------------------------+
 | Property   | Value                                |
 +------------+--------------------------------------+
 | uuid       | c7b6774e-7f45-40f5-bcca-3668de2a186f |
@@ -31,8 +30,7 @@
 | type       | snmpv2c_trap                         |
 | port       | 162                                  |
 | transport  | udp                                  |
-+------------+--------------------------------------+</codeph>
-</codeblock>
++------------+--------------------------------------+</codeblock>
                 
                 
                     <p>The following are attributes associated with the new
@@ -85,20 +83,17 @@
              
                 <li>List defined trap destinations.</li>
                 
-                    <codeblock>~(keystone_admin)$ system snmp-trapdest-list</codeph>
-<codeph>+------------+----------------+------+--------------+-----------+
+                    <codeblock>~(keystone_admin)$ system snmp-trapdest-list +------------+----------------+------+--------------+-----------+
 | IP Address  | SNMP Community | Port | Type         | Transport |
 +-------------+----------------+------+--------------+-----------+
 | 10.10.10.1  | commstr1       | 162  | snmpv2c_trap | udp       |
-+-------------+----------------+------+--------------+-----------+</codeph>
-</codeblock>
++-------------+----------------+------+--------------+-----------+</codeblock>
                 
             
              
                 <li>Query access details of a specific trap destination.</li>
                 
-                    <codeblock>~(keystone_admin)$ system snmp-trapdest-show 10.10.10.1</codeph>
-<codeph>+------------+--------------------------------------+
+                    <codeblock>~(keystone_admin)$ system snmp-trapdest-show 10.10.10.1 +------------+--------------------------------------+
 | Property   | Value                                |
 +------------+--------------------------------------+
 | uuid       | c7b6774e-7f45-40f5-bcca-3668de2a186f |
@@ -114,8 +109,7 @@
                 <li>Disable the sending of SNMP notifications to a specific IP
                     address.</li>
                 
-                    <codeblock>~(keystone_admin)$ system snmp-trapdest-delete 10.10.10.1</codeph>
-<codeph>Deleted ip 10.10.10.1</codeblock>
+                    <codeblock>~(keystone_admin)$ system snmp-trapdest-delete 10.10.10.1 Deleted ip 10.10.10.1</codeblock>
                 
             
         </ol>

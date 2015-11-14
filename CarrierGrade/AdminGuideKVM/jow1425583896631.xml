@@ -21,29 +21,29 @@
             <p> You can configure VXLANs on HP Helion OpenStack Carrier Grade using the following
                 workflow.</p>
         
-        <steps id="steps_anc_b5z_gr">
+        <ol>
              
-                <li>Set up a provider network of the VXLAN type.</li>
+                <li>Set up a provider network of the VXLAN type.
                 
                     <p>For details, see <xref href="jow1425585636142.xml"/>.</p>
                 
-            
+                </li>
              
-                <li>Configure the endpoint IP addresses of the compute nodes.</li>
+                <li>Configure the endpoint IP addresses of the compute nodes.
                 
                     <p>For details, see <xref href="jow1425584170078.xml"/>.</p>
                 
-            
+                </li>
              
-                <li>Establish routes between the hosts.</li>
+                <li>Establish routes between the hosts.
                 
                     <p>For details, see <xref href="jow1425584215069.xml"/></p>
                 
-            
+                </li>
         </ol>
-        <p id="p_N10072_N1001F_N10001">
+        
             <p>You must also ensure that the networking environment meets certain
                 minimum requirements. For more information, see <xref href="jow1404333739174.xml"/>.</p>
-        </p>
+        
     </body>
 </topic>

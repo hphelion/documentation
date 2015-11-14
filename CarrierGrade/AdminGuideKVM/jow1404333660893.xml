@@ -97,14 +97,12 @@
             <p>Server groups can be created and deleted using the CLI as illustrated in the
                 following examples:</p>
             <codeblock>~(keystone_admin)$ nova server-group-create --policy affinity \ 
---metadata wrs-sg:best_effort=true --metadata wrs-sg:group_size=2 ht-group-test</codeph>
-<codeph>+--------------+---------------+----------------+---------+------------+
+--metadata wrs-sg:best_effort=true --metadata wrs-sg:group_size=2 ht-group-test +--------------+---------------+----------------+---------+------------+
 | Id           | Name          | Policies       | Members | Metadata   |
 +--------------+---------------+----------------+---------+------------+
 | 63752c24-... | ht-group-test | [u'affinity... | []      | {u'best... |
 +--------------+---------------+----------------+---------+------------+
-~(keystone_admin)$ nova server-group-delete 63752c24-...</codeph>
-<codeph>Server group 63752c24-... has been successfully deleted.</codeblock>
+~(keystone_admin)$ nova server-group-delete 63752c24-... Server group 63752c24-... has been successfully deleted.</codeblock>
         </section>
     </body>
 </topic>

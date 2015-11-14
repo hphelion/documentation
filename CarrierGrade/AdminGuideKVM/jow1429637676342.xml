@@ -30,25 +30,25 @@
    <li>
     <p>To list routers:</p>
     <codeblock>
-<codeph>~(keystone_admin)$ neutron router-list</codeblock>
+~(keystone_admin)$ neutron router-list</codeblock>
    </li>
    <li>
     <p>To show details for a router:</p>
     <codeblock>
-<codeph>~(keystone_admin)$ neutron router-show <varname>router_id</varname></codeblock>
+~(keystone_admin)$ neutron router-show <varname>router_id</varname></codeblock>
     <p>where <varname>router_id</varname> is the name or UUID of the router.</p>
    </li>
    <li>
     <p>To update a router:</p>
     <codeblock>
-<codeph>~(keystone_admin)$ neutron router-update <varname>router_id</varname> --distributed=True</codeblock>
+~(keystone_admin)$ neutron router-update <varname>router_id</varname> --distributed=True</codeblock>
     <p>where <varname>router_id</varname> is the name or UUID of the router. This example updates a
      router to make it a distributed virtual router. </p>
    </li>
    <li>
     <p>To delete a router:</p>
     <codeblock>
-<codeph>~(keystone_admin)$ neutron router-delete <varname>router_id</varname></codeblock>
+~(keystone_admin)$ neutron router-delete <varname>router_id</varname></codeblock>
    </li>
   </ul>
  </body>

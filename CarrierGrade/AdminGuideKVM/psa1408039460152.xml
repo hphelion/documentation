@@ -36,8 +36,7 @@
 | uuid      | eccf5729-e400-4305-82e2-bdf344eb868d |
 | community | commstr1                             |
 | view      | .1                                   |
-+-----------+--------------------------------------+</codeph>
-</codeblock>
++-----------+--------------------------------------+</codeblock>
                 
                 
                     <p>The following are attributes associated with the new community string:</p>
@@ -73,20 +72,17 @@
              
                 <li>List available community strings.
                 
-                    <codeblock>~(keystone_admin)$ system snmp-comm-list</codeph>
-<codeph>+----------------+--------------------+--------+
+                    <codeblock>~(keystone_admin)$ system snmp-comm-list +----------------+--------------------+--------+
 | SNMP community | View               | Access |
 +----------------+--------------------+--------+
 | commstr1       | .1                 | ro     |
-+----------------+--------------------+--------+</codeph>
-</codeblock>
++----------------+--------------------+--------+</codeblock>
                 
                 </li>
              
                 <li>Query details of a specific community string.
                 
-                    <codeblock>~(keystone_admin)$ system snmp-comm-show commstr1</codeph>
-<codeph>+------------+--------------------------------------+
+                    <codeblock>~(keystone_admin)$ system snmp-comm-show commstr1 +------------+--------------------------------------+
 | Property   | Value                                |
 +------------+--------------------------------------+
 | access     | ro                                   |
@@ -94,15 +90,13 @@
 | uuid       | eccf5729-e400-4305-82e2-bdf344eb868d |
 | community  | commstr1                             |
 | view       | .1                                   |
-+------------+--------------------------------------+</codeph>
-</codeblock>
++------------+--------------------------------------+</codeblock>
                 
             
                 </li>
                 <li>Delete a community string.
                 
-                    <codeblock>~(keystone_admin)$ system snmp-comm-delete commstr1</codeph>
-<codeph>Deleted community commstr1</codeblock>
+                    <codeblock>~(keystone_admin)$ system snmp-comm-delete commstr1 Deleted community commstr1</codeblock>
                 
                 </li>
         </ol>

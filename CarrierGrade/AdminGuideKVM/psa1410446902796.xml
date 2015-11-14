@@ -50,8 +50,7 @@
              
                 <li>Verify the state of the patch.</li>
                 
-                    <codeblock>~(keystone_admin)$ sudo sw-patch query</codeph>
-<codeph>﻿       Patch ID             Patch State
+                    <codeblock>~(keystone_admin)$ sudo sw-patch query ﻿       Patch ID             Patch State
 =========================   ===========
 TITANIUM_14.10_PATCH_0001   Applied</codeblock>
                     <p>In this example the patch is listed in the <i>Applied</i> state, but it could
@@ -61,8 +60,7 @@ TITANIUM_14.10_PATCH_0001   Applied</codeblock>
              
                 <li>Remove the patch.</li>
                 
-                    <codeblock>~(keystone_admin)$ sudo sw-patch remove TITANIUM_14.10_PATCH_0001</codeph>
-<codeph>TITANIUM_14.10_PATCH_0001 has been removed from the repo</codeblock>
+                    <codeblock>~(keystone_admin)$ sudo sw-patch remove TITANIUM_14.10_PATCH_0001 TITANIUM_14.10_PATCH_0001 has been removed from the repo</codeblock>
                 
                 
                     <p>The patch is now in the <i>Partial-Remove</i>
@@ -73,8 +71,7 @@ TITANIUM_14.10_PATCH_0001   Applied</codeblock>
              
                 <li>Query the patching status of all hosts in the cluster.</li>
                 
-                    <codeblock>~(keystone_admin)$ sudo sw-patch query-hosts</codeph>
-<codeph>﻿  Hostname      IP Address    Patch Current  Reboot Required
+                    <codeblock>~(keystone_admin)$ sudo sw-patch query-hosts ﻿  Hostname      IP Address    Patch Current  Reboot Required
 ============  ==============  =============  ===============
 compute-0     192.168.204.15       Yes             No
 controller-0  192.168.204.3        No              Yes

@@ -70,8 +70,7 @@
 -n <varname>interfacename</varname> <varname>hostname</varname> <varname>port</varname></codeblock>
                     <p>For example:</p>
                     <codeblock>~(keystone_admin)$ system host-if-modify -nt infra \
--n infra0 controller-1 eth3</codeph>
-<codeph>+------------------+--------------------------------------+
+-n infra0 controller-1 eth3 +------------------+--------------------------------------+
 | Property         | Value                                |
 +------------------+--------------------------------------+
 | ifname           | infra0                               |
@@ -100,8 +99,7 @@
                 
                     <p> For example:</p>
                     <codeblock>~(keystone_admin)$ system host-if-modify -nt infra \
--n infra0 controller-0 eth3</codeph>
-<codeph>+------------------+--------------------------------------+
+-n infra0 controller-0 eth3 +------------------+--------------------------------------+
 | Property         | Value                                |
 +------------------+--------------------------------------+
 | ifname           | infra0                               |
@@ -170,8 +168,7 @@ infra_subnet=192.168.205.0/24 action=apply</codeph>
              
                 <li>Reboot the active controller.</li>
                 
-                    <codeblock>~(keystone_admin)$ sudo reboot</codeph>
-<codeph>The system is going down for reboot NOW!</codeblock>
+                    <codeblock>~(keystone_admin)$ sudo reboot The system is going down for reboot NOW!</codeblock>
                     <p>Wait for the controller to reboot.</p>
                 
             
@@ -179,15 +176,13 @@ infra_subnet=192.168.205.0/24 action=apply</codeph>
                 <li>Log in to the active controller and become the Keystone
                         <codeph>admin</codeph> user.</li>
                 
-                    <codeblock>$ source /etc/nova/openrc</codeph>
-</codeblock>
+                    <codeblock>$ source /etc/nova/openrc</codeblock>
                 
             
              
                 <li>Unlock the standby controller.</li>
                 
-                    <codeblock>~(keystone_admin)$ system host-unlock controller-1</codeph>
-<codeph>+-----------------+--------------------------------------+
+                    <codeblock>~(keystone_admin)$ system host-unlock controller-1 +-----------------+--------------------------------------+
 | Property        | Value                                |
 +-----------------+--------------------------------------+
 | action          | none                                 |
@@ -218,7 +213,6 @@ infra_subnet=192.168.205.0/24 action=apply</codeph>
 | uptime          | 1955                                 |
 | uuid            | 62657285-cc9c-45a2-962e-ecb01647916f |
 +-----------------+--------------------------------------+
-</codeph>
 </codeblock>
                 
             
@@ -227,8 +221,7 @@ infra_subnet=192.168.205.0/24 action=apply</codeph>
                 
                     <p>For each node, use the following command.</p>
                     <codeblock>~(keystone_admin)$ system host-if-modify -nt infra \
--n <varname>networkname</varname> <varname>hostname</varname> <varname>port</varname></codeph>
-<codeph>+------------------+--------------------------------------+
+-n <varname>networkname</varname> <varname>hostname</varname> <varname>port</varname> +------------------+--------------------------------------+
 | Property         | Value                                |
 +------------------+--------------------------------------+
 | ifname           | infra0                               |

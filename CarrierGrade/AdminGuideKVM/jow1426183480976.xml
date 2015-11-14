@@ -32,14 +32,16 @@
                 the CLI to configure the host for local storage. For more information, see <xref href="jow1426181291481.xml"/> and <xref href="jow1426182435441.xml"/>.</p>
         
         <ol>
-            <step conref="jow1426453628262.xml#jow1426453628262/lock_host" id="step_N1002A_N10027_N1001F_N10001">
-                <cmd/>
+            <li conref="jow1426453628262.xml#jow1426453628262/lock_host"
+                id="step_N1002A_N10027_N1001F_N10001"/>
+                
             
-            <step conref="jow1426453628262.xml#jow1426453628262/open_details_locked_host" id="step_N10033_N10027_N1001F_N10001">
-                <cmd/>
+            <li conref="jow1426453628262.xml#jow1426453628262/open_details_locked_host"
+                id="step_N10033_N10027_N1001F_N10001"/>
+                
             
              
-                <li>Select the <b>Storage</b> tab.</li>
+                <li>Select the <b>Storage</b> tab.
                 
                     <p>For a compute node, the storage tab displays three lists:</p>
                     <dl>
@@ -70,11 +72,11 @@
                             <alt>Compute Node Storage tab</alt>
                         </image>
                     
-                
+                </li>
             
              
                 <li>If required, add the <codeph>nova-local</codeph> group to the <codeph>Local
-                        Volume Groups</codeph> list.</li>
+                        Volume Groups</codeph> list.
                 
                     <p>The <codeph>Local Volume
                             Groups</codeph> list displays groups of physical volumes designated
@@ -96,10 +98,10 @@
                             <alt>Local Volume Groups</alt>
                         </image>
                     
-                
+                </li>
             
              
-                <li>Add a physical volume to the <codeph>nova-local</codeph> group.</li>
+                <li>Add a physical volume to the <codeph>nova-local</codeph> group.
                 
                     <p>The <codeph>Physical
                             Volumes</codeph> list displays LVM volumes that have been created
@@ -131,11 +133,11 @@
                             <alt>Physical Volumes list</alt>
                         </image>
                     
-                
+                </li>
             
              
                 <li><draft-comment author="jowens">US65502 step added</draft-comment>Allocate space
-                    for the instances logical volume.</li>
+                    for the instances logical volume.
                 
                     <p>In the <codeph>Local Volume Groups</codeph> list, click
                             <b>nova-local</b> to open the Local Volume Group Detail
@@ -165,12 +167,12 @@
                             <xref href="jow1443470081421.xml"/>
                     </p>
                 
-            
+                </li>
              
                 <li>Unlock the host to make the changes take effect.</li>
             
         </ol>
-        Host
+        
             <p>The compute host is ready to provide local  storage for use by VMs.
                 Because a <codeph>nova-local</codeph> local volume group
                 has been added, the host is automatically included in the <codeph>local_storage_hosts</codeph> host aggregate.</p>
@@ -181,12 +183,12 @@
                     host is reconfigured for remote storage.</p>
             </note>
         
-        <p id="p_N1017B_N1001F_N10001">
+        
             <p>To configure a VM to use local storage or remote Cinder-based
                 storage, or to be instantiated on any compute host regardless of storage type, see
                     <xref href="jow1426181040008.xml"/>. </p>
             <p>To add disks to a compute node for extra local storage, see <xref href="jow1418924302353.xml"/>
             </p>
-        </p>
+        
     </body>
 </topic>

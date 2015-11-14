@@ -64,8 +64,9 @@
                     <p>Source the script <filepath>/etc/nova/openrc</filepath> while
                         working on the active controller to acquire Keystone administrative
                         privileges.</p>
-                    <codeblock>$ source /etc/nova/openrc</codeph>
-<codeph>[wrsroot@controller-0 ~(keystone_admin)]$ </codeblock>
+                    <codeblock>
+$ source /etc/nova/openrc 
+[wrsroot@controller-0 ~(keystone_admin)]$ </codeblock>
                     <p>The system prompt changes to indicate the new acquired
                         privileges.</p>
                     <note id="note_N100F4_N100C7_N1007A_N1002A_N10022_N10001">
@@ -196,10 +197,10 @@
                 sudoers list. Included commands are <cmdname>lsldap</cmdname>,
                     <cmdname>ldapadduser</cmdname>, <cmdname>ldapdeleteuser</cmdname>, and several others starting with the prefix <cmdname>ldap</cmdname>. Use the command option <option>--help</option> on any command to display a brief help message, as illustrated
                 below.</p>
-            <codeblock>$ ldapadduser --help</codeph>
-<codeph>Usage : /usr/local/sbin/ldapadduser &lt;username&gt; &lt;groupname | gid&gt; [uid]</codeph>
-<codeph>$ ldapdeleteuser --help</codeph>
-<codeph>Usage : /usr/local/sbin/ldapdeleteuser &lt;username | uid&gt;</codeblock>
+            <codeblock>$ ldapadduser --help
+Usage : /usr/local/sbin/ldapadduser &lt;username&gt; &lt;groupname | gid&gt; [uid]
+$ ldapdeleteuser --help
+Usage : /usr/local/sbin/ldapdeleteuser &lt;username | uid&gt;</codeblock>
         </section>
     </body>
 </topic>

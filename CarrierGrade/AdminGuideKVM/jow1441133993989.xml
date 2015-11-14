@@ -23,7 +23,7 @@
                 in this section assume you are the <codeph>admin</codeph> user.</p>
             <p>To add a gateway interface, use a command of the following form:</p>
             <codeblock>
-<codeph>~(keystone_admin)$ neutron router-gateway-set <varname>router_id</varname> <varname>externalnet_id</varname> \
+~(keystone_admin)$ neutron router-gateway-set <varname>router_id</varname> <varname>externalnet_id</varname> \
 [--disable-snat] [--fixed-ip <varname>gateway_addr</varname>]</codeblock>
             <p>where</p>
             <parml>
