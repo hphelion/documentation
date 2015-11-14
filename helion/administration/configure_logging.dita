@@ -478,8 +478,8 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml -e cinder_logstash_l
                 <entry>
                   <p>Glance exposes the logging configuration templates on the lifecycle manager in
                     the following files:</p>
-                  <codeblock>~/helion/my_cloud/config/glance/glance-api-logging.conf
-~/helion/my_cloud/config/glance/glance-registry-logging.conf</codeblock>.
+                  <codeblock>~/helion/my_cloud/config/glance/glance-api-logging.conf.j2
+~/helion/my_cloud/config/glance/glance-registry-logging.conf.j2</codeblock>.
                     <p>After the needed changes are done (for example logging level changes to local
                     or centralized logging), run the <codeph>glance-reconfigure.yml</codeph>
                     playbook, targeting relevant nodes to deploy the configuration change:</p>
