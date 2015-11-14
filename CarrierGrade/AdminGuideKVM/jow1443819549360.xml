@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <concept-wr id="jow1443819549360" xml:lang="en-us">
 <!-- Modification History
 
@@ -10,7 +10,7 @@
  <prolog><author/>
   <author/>
  </prolog>
- <conbody>
+ <body>
   <p><draft-comment author="jowens">US64069 new
    topic</draft-comment>If an optional board management control (BMC) module is present on the host
    and configured for the host in the HP Helion OpenStack Carrier Grade inventory, and sensor support is implemented
@@ -27,7 +27,7 @@
   </fig>
   <section id="section_N100AE_N10024_N10001">
    <title>Sensor Status</title>
-   <p>Each of the individual sensors in the <nameliteral>Sensors</nameliteral> list can report the following <nameliteral>Status</nameliteral> conditions:</p>
+   <p>Each of the individual sensors in the <codeph>Sensors</codeph> list can report the following <codeph>Status</codeph> conditions:</p>
    <ul id="ul_uzg_q5t_4t">
     <li>
      <p>OK</p>
@@ -69,8 +69,8 @@
     </dlentry>
    </dl -->
    <p>The status of each sensor is audited periodically to refresh the system
-    monitoring data. You can configure the refresh period, or <nameliteral>audit
-     interval</nameliteral>, for sensor groups.</p>
+    monitoring data. You can configure the refresh period, or <codeph>audit
+     interval</codeph>, for sensor groups.</p>
    <!-- NOT FOR ER2: p>Ceilometer meter samples are generated for each sensor at intervals of one hour, or more
     frequently if a significant change occurs.</p -->
   </section>
@@ -84,8 +84,8 @@
       <dd>
        <p>This generates a HP Helion OpenStack Carrier Grade alarm with a severity level corresponding
         to the sensor status level. For more about HP Helion OpenStack Carrier Grade alarms, see <xref href="jow1432045490465.xml"/>.</p>
-       <p>For the status levels <nameliteral>Major</nameliteral> and
-         <nameliteral>Critical</nameliteral>, it also sets the <nameliteral>Availability State</nameliteral> of the host to <nameliteral>Degraded</nameliteral>. For more about availability states, see <xref href="jow1404333790046.xml"/>.</p>
+       <p>For the status levels <codeph>Major</codeph> and
+         <codeph>Critical</codeph>, it also sets the <codeph>Availability State</codeph> of the host to <codeph>Degraded</codeph>. For more about availability states, see <xref href="jow1404333790046.xml"/>.</p>
       </dd>
      </dlentry>
      <dlentry>
@@ -96,14 +96,14 @@
      </dlentry>
     </dl>
    </p>
-   <p>You can suppress the configured <nameliteral>Action</nameliteral> for individual sensors or groups of sensors. Suppressed sensors are still
-    audited, and their status is reported in the <nameliteral>Sensors</nameliteral>
+   <p>You can suppress the configured <codeph>Action</codeph> for individual sensors or groups of sensors. Suppressed sensors are still
+    audited, and their status is reported in the <codeph>Sensors</codeph>
     list. For more information, see <xref href="jow1443819658894.xml"/>. </p>
   </section>
   <section id="section_N1004D_N10024_N10001">
    <title>Sensor Groups</title>
    <p>Sensors that perform the same type of monitoring are collected into
-     <nameliteral>Sensor Groups</nameliteral>. You can configure audit intervals and
+     <codeph>Sensor Groups</codeph>. You can configure audit intervals and
     alarm actions for each group. The configured values apply to all sensors in the group. For more
     information, see <xref href="jow1443819602961.xml"/>.</p>
    <p>The available Sensor Groups and their membership are predefined in Titanium
@@ -141,5 +141,5 @@
     </dlentry>
    </dl>
   </section>
- </conbody>
-</concept-wr>
+ </body>
+</topic>

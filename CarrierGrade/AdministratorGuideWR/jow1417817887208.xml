@@ -4,7 +4,7 @@
 <!-- Modification History
 
  -->
- <title >CPU Scaling</title>
+ <title>CPU Scaling</title>
  <shortdesc >HP Helion OpenStack Carrier Grade supports CPU up/down scaling for instances.</shortdesc>
  <prolog>
   <author >Jim Owens</author>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333745550" xml:lang="en-us">
-    <title >DiffServ-Based Priority Queuing and Scheduling</title>
+    <title>DiffServ-Based Priority Queuing and Scheduling</title>
     <shortdesc >Differentiated Services, or DiffServ, is a packet-based traffic
         management mechanism that allows end devices to specify an expected per-hop behavior (PHB)
         from upstream switches and routers when handling their traffic during overload conditions. </shortdesc>

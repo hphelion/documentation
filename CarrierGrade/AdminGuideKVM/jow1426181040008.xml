@@ -11,12 +11,12 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N10022_N1001F_N10001">
-            <p>Each new flavor is automatically assigned a <nameliteral>Storage Type</nameliteral> extra spec that specifies, as the
+            <p>Each new flavor is automatically assigned a <codeph>Storage Type</codeph> extra spec that specifies, as the
                 default, instantiation on hosts without local storage. You can change this extra
                 spec so that hosts with local storage are used. Ephemeral storage resources
-                    (<nameliteral>Ephemeral Disk</nameliteral> and <nameliteral>Swap Disk</nameliteral> space) defined for the flavor use this
+                    (<codeph>Ephemeral Disk</codeph> and <codeph>Swap Disk</codeph> space) defined for the flavor use this
                 local storage, which is allocated from the Local Volume Group on the host.</p>
             <p>If the extra spec is set for local storage and instance is booted
                 from an image, then the root disk is ephemeral and also uses local storage. If the
@@ -36,11 +36,11 @@
             <note conref="jow1426942555025.xml#jow1426942555025/note_local_storage_ephemeral" id="note_N10037_N10032_N1001F_N10001"/>
             <p>To change the extra specification using the web administration
                 interface, click <uicontrol>Edit</uicontrol> for the existing
-                    <nameliteral>Storage Type</nameliteral> extra specification,
+                    <codeph>Storage Type</codeph> extra specification,
                 and then select the <uicontrol>Local Storage</uicontrol> check box.
                 To access the extra specification, see <xref href="jow1429538642910.xml"/>. </p>
             <note id="note_N10064_N10042_N1001F_N10001" type="caution">
-                <p>If the <nameliteral>Storage Type</nameliteral>
+                <p>If the <codeph>Storage Type</codeph>
                     extra spec is not specified, instantiated VMs may use hosts with or without
                     local storage. To ensure that instantiated VMs use storage of a known type, do
                     not delete this extra spec.</p>
@@ -71,5 +71,5 @@ set aggregate_instance_extra_specs:localstorage=false</userinput></codeblock>
             <p>The local storage key is added by default on flavor creation and set
                 to false (hosts with no local storage).</p>
         </context>
-    </taskbody>
+    </body>
 </task-wr>

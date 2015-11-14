@@ -16,7 +16,7 @@
 -->
 
 
-    <title >PCI Passthrough Ethernet Interfaces</title>
+    <title>PCI Passthrough Ethernet Interfaces</title>
 
 
     <shortdesc >A <term >passthrough</term> Ethernet interface is a physical PCI Ethernet NIC on a

@@ -3,7 +3,7 @@
 <topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333646078" xml:lang="en-us">
     <!-- Modification History
    -->
-    <title >Managing Hardware Inventory</title>
+    <title>Managing Hardware Inventory</title>
     <shortdesc >The maintenance and inventory component of HP Helion OpenStack Carrier Grade allows the administrator to
     install, configure, and manage the hosts of the HP Helion OpenStack Carrier Grade cluster.</shortdesc>
     <prolog>

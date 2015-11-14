@@ -10,7 +10,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <p>During software installation, HP Helion OpenStack Carrier Grade is configured with up
                 to three NTP server IP addresses. You change these addresses using the web
@@ -28,11 +28,11 @@
             <step id="step_N1002B_N10028_N1001C_N10001">
                 <cmd>In the HP Helion OpenStack Carrier Grade web administration interface, open the
                         <wintitle>System Configuration</wintitle> pane.</cmd>
-                <info>
+                
                     <p>The <wintitle>System Configuration</wintitle>
                         pane is available from the <uicontrol>System
                             Panel</uicontrol> section of the <uicontrol>Admin</uicontrol> menu. </p>
-                </info>
+                
             </step>
             <step id="step_N1004A_N10028_N1001C_N10001">
                 <cmd>Select the <wintitle>NTP</wintitle> tab.</cmd>
@@ -61,74 +61,74 @@
             <step id="step_N1009A_N10028_N1001C_N10001">
                 <cmd>Replace the NTP Server IP addresses or names with different
                     ones as required.</cmd>
-                <info>
+                
                     <p>If you specify the NTP servers using FQDNs you must have at
                         least one valid DNS server defined on your system. You must use IP addresses
                         otherwise.</p>
-                </info>
+                
             </step>
             <step id="step_N100CE_N1003A_N1001D_N10001">
                 <cmd>Click <uicontrol>Save</uicontrol>.</cmd>
-                <info>
+                
                     <p>This raises major alarms against the controllers and
                         services. You can view the alarms on the Fault Management page.</p>
-                </info>
+                
             </step>
             <step id="step_N100BF_N1002B_N1001D_N10001">
                 <cmd>Lock and unlock the controllers to clear the alarms.</cmd>
-                <info>
+                
                     <p>Open the <wintitle>Hosts</wintitle> list by
                         clicking <uicontrol>Inventory</uicontrol> on the<wintitle> System Panel</wintitle> section of the <wintitle>Admin</wintitle> menu, and then selecting the <uicontrol>Hosts</uicontrol> tab. Hosts requiring attention are
-                        shown with the status <nameliteral>Config
-                            out-of-date</nameliteral>.</p>
+                        shown with the status <codeph>Config
+                            out-of-date</codeph>.</p>
                     <p> To lock or unlock a host, click <uicontrol>More</uicontrol> for the host and then use the menu selections.</p>
-                </info>
+                
                 <substeps id="substeps_zyf_rsz_5p">
                     <substep>
                         <cmd>Lock the standby controller. </cmd>
-                        <info>
+                        
                             <p>Wait for the lock operation to be completed.</p>
-                        </info>
+                        
                     </substep>
                     <substep>
                         <cmd>Unlock the standby controller.</cmd>
-                        <info>
+                        
                             <p>Wait for the host to become available. It is updated
                                 with the new NTP server addresses, and its error message is
                                 cleared.</p>
-                        </info>
+                        
                     </substep>
                     <substep>
                         <cmd>Perform a swact on the active controller.</cmd>
-                        <info>
+                        
                             <p>Click <menucascade>
                                     <uicontrol>More</uicontrol>
                                     <uicontrol>Swact Host</uicontrol>
                                     <uicontrol> </uicontrol>
                                 </menucascade> for the active controller.</p>
-                        </info>
+                        
                     </substep>
                     <substep>
                         <cmd>Lock the original controller (now in standby
                             mode).</cmd>
-                        <info>
+                        
                             <p>Wait for the lock operation to be completed.</p>
-                        </info>
+                        
                     </substep>
                     <substep>
                         <cmd>Unlock the original controller.</cmd>
-                        <info>
+                        
                             <p>Wait for it to become available. It is updated with
                                 the new NTP server addresses, and its error message is cleared.</p>
-                        </info>
+                        
                     </substep>
                 </substeps>
             </step>
             <step id="step_N1025E_N100B7_N1001F_N10001">
-                <cmd>Ensure that the <nameliteral>250.001
-                        Configuration out-of-date</nameliteral> alarms are cleared for both
+                <cmd>Ensure that the <codeph>250.001
+                        Configuration out-of-date</codeph> alarms are cleared for both
                     controllers.</cmd>
             </step>
-        </steps>
-    </taskbody>
+        </ol>
+    </body>
 </task-wr>

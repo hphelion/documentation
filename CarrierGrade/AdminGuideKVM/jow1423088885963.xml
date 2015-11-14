@@ -12,13 +12,13 @@
         <author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <prereq id="prereq_N1002C_N10029_N10001">
             <p>Before requesting huge pages on a host, ensure that the host has
                 enough available memory. For details, see <xref href="jow1423087781001.xml"/>. If a huge page request cannot be allocated from the available
                 memory, an informative message is displayed.</p>
         </prereq>
-        <steps>
+        <ol>
             <step id="step_N10033_N10030_N10024_N10001">
                 <cmd>On the <uicontrol>Inventory</uicontrol> pane, lock the host you
                     want to edit.</cmd>
@@ -30,19 +30,19 @@
             <step id="step_N10058_N10039_N10029_N10001">
                 <cmd>On the <uicontrol>Memory</uicontrol> tab, click
                         <uicontrol>Update Memory</uicontrol>.</cmd>
-                <info>
+                
                     <fig id="fig_gcz_rdf_2r">
                         <image href="jow1424729372811.image" id="image_kg3_sdf_2r" width="5in">
                             <alt>Update Memory button</alt>
                         </image>
                     </fig>
-                </info>
+                
             </step>
             <step id="step_N1006A_N10039_N10029_N10001">
                 <cmd>Use the <wintitle>Update Memory
                         Allocation</wintitle> dialog box to set the memory allocations for each NUMA
                     node. </cmd>
-                <info>
+                
                     <p>For each available NUMA node, three fields are supplied, as
                         illustrated in the following example screen for two NUMA nodes.</p>
                     <fig id="fig_u13_tdf_2r">
@@ -94,15 +94,15 @@
                         suitable image metadata, to use these 4 KiB pages as the backing mechanism
                         for VM memory allocation requests. See <xref href="jow1424723681500.xml"/>
                         for details.</p>
-                </info>
+                
             </step>
             <step id="step_N100D6_N10039_N10029_N10001">
                 <cmd>Click <uicontrol>Save</uicontrol>.</cmd>
             </step>
             <step id="step_N100EB_N10039_N10029_N10001">
                 <cmd>Unlock the host and wait for it to be reported as
-                        <nameliteral>Available</nameliteral>.</cmd>
+                        <codeph>Available</codeph>.</cmd>
             </step>
-        </steps>
-    </taskbody>
+        </ol>
+    </body>
 </task-wr>

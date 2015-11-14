@@ -10,7 +10,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <prereq id="prereq_N1001F_N1001C_N10001">
             <p>To view customer logs, you must be logged in with administrative
                 privileges.</p>
@@ -23,7 +23,7 @@
                 steps given later in this section.</p>
             <ul id="ul_agw_zby_bs">
                 <li>
-                    <p>To acquire Keystone <nameliteral>admin</nameliteral> credentials, type the following command:</p>
+                    <p>To acquire Keystone <codeph>admin</codeph> credentials, type the following command:</p>
                     <codeblock><systemoutput>$ </systemoutput><userinput>source /etc/nova/openrc</userinput></codeblock>
                 </li>
                 <li>
@@ -48,7 +48,7 @@
                     </dl>
                     <p>For example:</p>
                     <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system log-list -q severity=critical -l 20</userinput></codeblock>
-                    <p>returns the 20 most recent logs with <nameliteral>critical</nameliteral> severity.</p>
+                    <p>returns the 20 most recent logs with <codeph>critical</codeph> severity.</p>
                 </li>
                 <li>
                     <p>To view details for an individual log, use the following
@@ -60,7 +60,7 @@
                 </li>
             </ul>
         </context>
-        <steps>
+        <ol>
             <step id="step_N100BC_N100B9_N1001C_N10001">
                 <cmd>In the main menu, select <menucascade>
                         <uicontrol>Admin</uicontrol>
@@ -71,7 +71,7 @@
             <step id="step_N100D5_N100B9_N1001C_N10001">
                 <cmd>On the Fault Management page, select the <uicontrol>Customer Logs</uicontrol>
                     tab.</cmd>
-                <info>
+                
                     <p>The logs are displayed in chronological order, beginning with
                         the most recent.</p>
                     <fig id="fig_cyy_xqx_bs">
@@ -86,19 +86,19 @@
                     <p>You can also filter the items using the <uicontrol>Filter</uicontrol> text box. Type the filter string, and
                         then click the magnifying-glass icon. The results include only those logs
                         that contain the string in the Customer Log Detail.</p>
-                </info>
+                
             </step>
             <step id="step_N10113_N100B9_N1001C_N10001">
                 <cmd>To see the Customer Log Detail, click the <uicontrol>Timestamp</uicontrol>
                     identifier for the log.</cmd>
-                <info>
+                
                     <fig id="fig_hs4_gsx_bs">
                         <image href="jow1432055065375.image" id="image_fq4_msx_bs" width="3in">
                             <alt>TiS Customer Log Detail</alt>
                         </image>
                     </fig>
-                </info>
+                
             </step>
-        </steps>
-    </taskbody>
+        </ol>
+    </body>
 </task-wr>

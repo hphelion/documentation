@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1413726521641" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="jow1413726521641">
 <!-- Modification History
 
  -->
@@ -10,9 +10,9 @@
  <prolog><author/>
   
  </prolog>
- <conbody>
+ <body>
   <p>The initial configuration is defined during software installation, using the
-    <nameliteral>config_controller</nameliteral> script (see the <cite>HP Helion OpenStack Carrier Grade Software Installation Guide: Configuring Controller-0). </cite> After
+    <codeph>config_controller</codeph> script (see the <cite>HP Helion OpenStack Carrier Grade Software Installation Guide: Configuring Controller-0). </cite> After
    installation, you can make changes using the web administration interface or the CLI. For most
    types of changes, you can do this without interrupting system operations.</p>
   <p>You can change the initial configuration as follows:</p>
@@ -46,11 +46,11 @@
     <p>All hosts are unlocked.</p>
    </li>
    <li>
-    <p>No <nameliteral>Major</nameliteral> or <nameliteral>Critical</nameliteral>
+    <p>No <codeph>Major</codeph> or <codeph>Critical</codeph>
      alarms are shown for the system on the Fault Management page.</p>
    </li>
    <li>
-    <p>No <nameliteral>250.001 Configuration out-of-date</nameliteral> alarms are
+    <p>No <codeph>250.001 Configuration out-of-date</codeph> alarms are
      shown for the system on the Fault Management page.</p>
    </li>
   </ul>
@@ -58,7 +58,7 @@
    some types of changes, alarms are raised while the settings are in transition. To make the
    changes take effect and to clear the alarms, individual hosts must be locked and then unlocked
    one at a time. For more information, see <xref href="jow1413726817770.xml"/>.</p>
-  <p>Only hosts with <nameliteral>250.001 Configuration out-of-date</nameliteral>
+  <p>Only hosts with <codeph>250.001 Configuration out-of-date</codeph>
    alarms need to be locked and then unlocked. When locking and unlocking the hosts to clear the
    alarms, use the following order:</p>
   <ol id="ol_wnd_nzd_vp">
@@ -75,10 +75,10 @@
     for changes.</p>
   </note>
   <p>To make changes using the web administration interface, you must be logged in
-   as the <nameliteral>admin</nameliteral> user.  Use the <wintitle>System Configuration</wintitle> pane, is available from the <uicontrol>System
+   as the <codeph>admin</codeph> user.  Use the <wintitle>System Configuration</wintitle> pane, is available from the <uicontrol>System
     Panel</uicontrol> section of the <uicontrol>Admin</uicontrol> menu. </p>
   <p>To make changes using the CLI, you must be logged in as the
-    <nameliteral>wrsroot</nameliteral> user on the active controller, and sourced as the Keystone
-    <nameliteral>admin</nameliteral> user. For more information, see <xref href="jow1413729179585.xml"/>.</p>
- </conbody>
-</concept-wr>
+    <codeph>wrsroot</codeph> user on the active controller, and sourced as the Keystone
+    <codeph>admin</codeph> user. For more information, see <xref href="jow1413729179585.xml"/>.</p>
+ </body>
+</topic>

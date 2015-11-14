@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <concept-wr id="jow1417818508589" xml:lang="en-us">
 <!-- Modification History
 
@@ -10,7 +10,7 @@
  <prolog><author/>
   <author/>
  </prolog>
- <conbody>
+ <body>
   <p>You can define and monitor performance thresholds for metrics such as CPU
    activity, and then add or remove resources when the thresholds are crossed. This allows you to
    make efficient use of the hardware in the cluster, by allocating resources only when they are
@@ -36,5 +36,5 @@
   <p>Performance metrics can be collected and reported by the HP Helion OpenStack Carrier Grade
    platform, or by the guests using guest metrics.<!-- For more information about guest metrics, see
     <xref href="jow1404916152577.xml"/>.--> </p>
- </conbody>
-</concept-wr>
+ </body>
+</topic>

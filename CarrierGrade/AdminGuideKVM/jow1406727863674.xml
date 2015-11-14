@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1406727863674" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="jow1406727863674">
 <!-- Modification History
 
  -->
@@ -10,7 +10,7 @@
  <prolog><author/>
   
  </prolog>
- <conbody>
+ <body>
   <draft-comment author="rstone">US64066 adds Quanta; US64069 mention
    sensors</draft-comment>
   <p>This network provides access to iLO3, iLO4 or Quanta Integrated Lights Out
@@ -132,5 +132,5 @@
     the CLI. For more information, see the <cite>HP Helion OpenStack Carrier Grade Software Installation
     Guide</cite>.</p>
   </section>
- </conbody>
-</concept-wr>
+ </body>
+</topic>

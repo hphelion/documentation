@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333777760" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="jow1404333777760">
     <!-- Modification History
    -->
     <title>Interfaces</title>
@@ -11,13 +11,13 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <conbody>
+    <body>
         <fig id="fig_N10027_N10024_N10001">
             <image href="jow1404333771094.image" id="image_v3c_dc1_m4" width="6in"/>
         </fig>
         <p><!-- screen shot needs to match text! -->In this example the node has two allocated interfaces,
-                <nameliteral>eth0</nameliteral> connecting to the OAM network, and
-                <nameliteral>eth1</nameliteral> connecting to the internal management network. These
+                <codeph>eth0</codeph> connecting to the OAM network, and
+                <codeph>eth1</codeph> connecting to the internal management network. These
             interfaces are mandatory and therefore cannot be deleted. They reflect the allocation
             given when the node was provisioned. See the <cite>HP Helion OpenStack Carrier Grade
                 Software Installation Guide</cite> for details.</p>
@@ -26,8 +26,8 @@
         <fig id="fig_N10047_N10024_N10001">
             <image href="jow1404333772968.image" id="image_xyx_c21_m4" width="6in"/>
         </fig>
-        <p><!-- screen shot needs to match text! -->In this example the node has three allocated interfaces, <nameliteral>eth1</nameliteral> connecting to the internal management network,
-            and <nameliteral>data0</nameliteral> and <nameliteral>data1</nameliteral> connecting to the provider networks <nameliteral>group0-data0</nameliteral> and <nameliteral>group0-data1</nameliteral> respectively. The interface <nameliteral>eth1</nameliteral> is auto-provisioned as part of the automated software
+        <p><!-- screen shot needs to match text! -->In this example the node has three allocated interfaces, <codeph>eth1</codeph> connecting to the internal management network,
+            and <codeph>data0</codeph> and <codeph>data1</codeph> connecting to the provider networks <codeph>group0-data0</codeph> and <codeph>group0-data1</codeph> respectively. The interface <codeph>eth1</codeph> is auto-provisioned as part of the automated software
             installation process on the compute node. It can be modified but not deleted.</p>
         <p>Information about interfaces is presented in several columns, as follows:</p>
         <dl>
@@ -43,21 +43,21 @@
                     <p>The type of network the logical network interface is connected to. The options are:</p>
                     <ul id="ul_rtx_4g1_m4">
                         <li>
-                            <p><nameliteral>data</nameliteral>, for a compute node data interface</p>
+                            <p><codeph>data</codeph>, for a compute node data interface</p>
                         </li>
                         <li>
-                            <p><nameliteral>infra</nameliteral>, for
+                            <p><codeph>infra</codeph>, for
                                 the optional infrastructure network</p>
                         </li>
                         <li>
-                            <p><nameliteral>mgmt</nameliteral>, for
+                            <p><codeph>mgmt</codeph>, for
                                 the internal management network</p>
                         </li>
                         <li>
-                            <p><nameliteral>oam</nameliteral>, for the OAM network</p>
+                            <p><codeph>oam</codeph>, for the OAM network</p>
                         </li>
                         <li>
-                            <p><nameliteral>pci-passthrough</nameliteral>, for a PCI passthrough
+                            <p><codeph>pci-passthrough</codeph>, for a PCI passthrough
                                 interface</p>
                         </li>
                     </ul>
@@ -73,7 +73,7 @@
                 <dt>Vlan ID</dt>
                 <dd>
                     <p>The VLAN ID of the network listed in the
-                            <nameliteral>Network Type</nameliteral> column,  if the network uses a
+                            <codeph>Network Type</codeph> column,  if the network uses a
                         shared interface. For more information about shared interfaces, see <xref href="jow1423173019489.xml"/>.</p>
                 </dd>
             </dlentry>
@@ -88,9 +88,9 @@
                 <dt>Uses</dt>
                 <dd>
                     <p>The interface used by the network listed in the
-                            <nameliteral>Network Type</nameliteral> column, if the network uses a
+                            <codeph>Network Type</codeph> column, if the network uses a
                         shared interface. The VLAN ID of the network is shown in the
-                            <nameliteral>Vlan ID</nameliteral> field.</p>
+                            <codeph>Vlan ID</codeph> field.</p>
                 </dd>
             </dlentry>
             <dlentry>
@@ -105,7 +105,7 @@
                 <dt>Provider Networks</dt>
                 <dd>
                     <p>This option is relevant for compute nodes only, and for interfaces of the
-              <nameliteral>data</nameliteral> network type. It lists the provider networks
+              <codeph>data</codeph> network type. It lists the provider networks
             associated with the data interface.</p>
                 </dd>
             </dlentry>
@@ -138,7 +138,7 @@
                 <image href="jow1404333774522.image" id="image_gpp_pp1_m4" width="4in"/>
             </fig>
             <p>In this window you enter the name of the new profile,
-          <nameliteral>HP-360-cmpt-iface-profile</nameliteral> in this case, and then click the
+          <codeph>HP-360-cmpt-iface-profile</codeph> in this case, and then click the
         button <uicontrol>Create Interface Profile</uicontrol> to execute. Available interface
         profiles are listed, and can be removed, from the <wintitle>System Inventory</wintitle>
         page, as described in <xref href="jow1404333787693.xml"/>.</p>
@@ -178,7 +178,7 @@
                     <dt>Network Type</dt>
                     <dd>
                         <p>The type of network to attach the new logical interface
-                            to (<nameliteral>data</nameliteral> or <nameliteral>infra</nameliteral>, for compute node data
+                            to (<codeph>data</codeph> or <codeph>infra</codeph>, for compute node data
                             interfaces and infrastructure network connections respectively). Note
                             that connections to the OAM and internal management networks are
                             auto-provisioned during the software installation process. </p>
@@ -189,7 +189,7 @@
                     <dd>
                         <p>A list of provider networks available to the new logical
                             interface, with corresponding check-mark boxes. They can be selected for
-                            networks of type <nameliteral>data</nameliteral>, to
+                            networks of type <codeph>data</codeph>, to
                             which multiple provider networks can be attached. Provider networks
                             already allocated to other data interfaces are not listed, since no
                             provider network can be associated with more than a single data
@@ -207,11 +207,11 @@
             </dl>
         </section>
         <section id="section_N10203_N10024_N10001">
-            <p>To edit or remove a logical interface of network type <nameliteral>data</nameliteral> or <nameliteral>infra</nameliteral> you
+            <p>To edit or remove a logical interface of network type <codeph>data</codeph> or <codeph>infra</codeph> you
                 must first lock the target node. You can then use the <uicontrol>Edit Interface</uicontrol> and <uicontrol>More</uicontrol>
                 buttons to perform these maintenance actions.</p>
-            <p>Logical interfaces of network types <nameliteral>oam</nameliteral> and <nameliteral>mgmt</nameliteral> cannot
+            <p>Logical interfaces of network types <codeph>oam</codeph> and <codeph>mgmt</codeph> cannot
                 be deleted. They can only be modified to use different physical ports when required. </p>
         </section>
-    </conbody>
-</concept-wr>
+    </body>
+</topic>

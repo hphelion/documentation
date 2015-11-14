@@ -10,7 +10,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N10022_N1001F_N10001">
             <p><draft-comment author="jowens">CGTS-2523 (nominal) Remove material
                     about adding a gateway</draft-comment>For more information about virtual
@@ -24,7 +24,7 @@
         <context id="context_N1001F_N1001C_N10001">
             <p>As an alternative to the web administration interface, you can use
                 CLI commands to add router interfaces. First, become the appropriate keystone user.
-                The examples in this section assume you are the <nameliteral>admin</nameliteral> user.</p>
+                The examples in this section assume you are the <codeph>admin</codeph> user.</p>
             <p>Then use the <cmdname>neutron
                     router-interface-add</cmdname> command to add interfaces. For example: </p>
             <codeblock>
@@ -34,7 +34,7 @@
                 UUID of the subnet to which you want to attach an interface. By default, the
                 interface is assigned the gateway address on the subnet.</p>
         </context>
-        <steps>
+        <ol>
             <step id="step_N10066_N10063_N1001C_N10001">
                 <cmd>Log in as the user associated with the tenant.</cmd>
             </step>
@@ -48,17 +48,17 @@
             <step id="step_N1008B_N10063_N1001C_N10001">
                 <cmd>In the list of existing routers, click the name of the router to be
                     configured.</cmd>
-                <info>
+                
                     <p>The <wintitle>Router Details</wintitle> page
                         appears.</p>
                     <fig id="fig_N100C4_N100B5_N100AE_N100AA_N100A3_N10034_N1001C_N10001">
                         <image href="jow1404333604053.image" id="image_kr5_jz2_yn" placement="inline"/>
                     </fig>
-                </info>
+                
             </step>
             <step id="step_N100AE_N10063_N1001C_N10001">
                 <cmd>On the <uicontrol>Interfaces</uicontrol> tab, click <uicontrol>Add Interface</uicontrol>.</cmd>
-                <info>
+                
                     <p>The <wintitle>Add Interface</wintitle> dialog box appears.</p>
                     <fig id="fig_N100E4_N100D9_N100D2_N100AA_N100A3_N10034_N1001C_N10001">
                         <image href="jow1404333605539.image" id="image_yrl_qbf_yn" placement="inline"/>
@@ -94,7 +94,7 @@
                             </dd>
                         </dlentry>
                     </dl>
-                </info>
+                
             </step>
             <step id="step_N10129_N10063_N1001C_N10001">
                 <cmd>To save your settings and close the dialog box, click
@@ -103,6 +103,6 @@
                     <p>The new interface is shown in the <wintitle>Router Details</wintitle>.</p>
                 </stepresult>
             </step>
-        </steps>
-    </taskbody>
+        </ol>
+    </body>
 </task-wr>

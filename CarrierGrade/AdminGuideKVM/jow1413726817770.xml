@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <concept-wr id="jow1413726817770" xml:lang="en-us">
 <!-- Modification History
 
@@ -11,7 +11,7 @@
  <prolog><author/>
   <author/>
  </prolog>
- <conbody>
+ <body>
   <p>Configuration changes require multiple hosts to be reconfigured, during which
    the settings across the cluster are not consistent. This causes alarms to be raised for the
    system.</p>
@@ -35,8 +35,8 @@
    <p>To help identify alarms raised during a configuration change, ensure that any existing system
     alarms are cleared before you begin. </p>
   </note>
-  <p>On the <wintitle>Hosts</wintitle> tab of the <wintitle>System Inventory</wintitle> pane, the status <nameliteral>Config
-    out-of-date</nameliteral> is shown for hosts affected by the change.  Each host with this status
+  <p>On the <wintitle>Hosts</wintitle> tab of the <wintitle>System Inventory</wintitle> pane, the status <codeph>Config
+    out-of-date</codeph> is shown for hosts affected by the change.  Each host with this status
    must be locked and then unlocked to update its configuration and clear the alarm.</p>
- </conbody>
-</concept-wr>
+ </body>
+</topic>

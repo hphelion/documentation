@@ -11,7 +11,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N10022_N1001F_N10001">
             <p>A VXLAN is a Layer 2 overlay network scheme on a Layer 3 network
                 infrastructure. Packets originating from VMs and destined for other VMs are
@@ -24,26 +24,26 @@
         <steps id="steps_anc_b5z_gr">
             <step id="step_N10036_N10032_N1001F_N10001">
                 <cmd>Set up a provider network of the VXLAN type.</cmd>
-                <info>
+                
                     <p>For details, see <xref href="jow1425585636142.xml"/>.</p>
-                </info>
+                
             </step>
             <step id="step_N1004B_N10032_N1001F_N10001">
                 <cmd>Configure the endpoint IP addresses of the compute nodes.</cmd>
-                <info>
+                
                     <p>For details, see <xref href="jow1425584170078.xml"/>.</p>
-                </info>
+                
             </step>
             <step id="step_N10060_N10032_N1001F_N10001">
                 <cmd>Establish routes between the hosts.</cmd>
-                <info>
+                
                     <p>For details, see <xref href="jow1425584215069.xml"/></p>
-                </info>
+                
             </step>
-        </steps>
-        <postreq id="postreq_N10072_N1001F_N10001">
+        </ol>
+        <p id="p_N10072_N1001F_N10001">
             <p>You must also ensure that the networking environment meets certain
                 minimum requirements. For more information, see <xref href="jow1404333739174.xml"/>.</p>
-        </postreq>
-    </taskbody>
+        </p>
+    </body>
 </task-wr>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333736207" xml:lang="en-us">
-    <title >Address Filtering on Virtual Interfaces</title>
+    <title>Address Filtering on Virtual Interfaces</title>
     <shortdesc >The AVS on compute nodes can be configured to filter out packets based
         on source MAC address.</shortdesc>
     <prolog>

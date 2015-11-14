@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Reference//EN" "reference-wr.dtd">
-<reference-wr domains="(topic reference reference-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1419970253127" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<reference-wr domains="(topic reference reference-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1419970253127">
 <!-- Modification History
     
 -->
@@ -16,7 +16,7 @@
           alarm-list</cmdname>, <cmdname>system alarm-show</cmdname>, <cmdname>system
           alarm-delete</cmdname>, and <cmdname>system alarm-history-list</cmdname>. Before using the
         commands you must log in to the active controller as the Keystone
-          <nameliteral>admin</nameliteral> user. See <xref href="jow1404333563834.xml"/> for
+          <codeph>admin</codeph> user. See <xref href="jow1404333563834.xml"/> for
         details.</p>
     </section>
     <section id="section_N10040_N1001C_N10001">
@@ -38,7 +38,7 @@
   | /dev/sda3 severity critical threshold set (0.00 MB left) |
 --+----------------------------------------------------------+
 </systemoutput></codeblock>
-      <p>This example lists a single critical alarm on host <nameliteral>controller-0</nameliteral> regarding running out of space on disk unit
+      <p>This example lists a single critical alarm on host <codeph>controller-0</codeph> regarding running out of space on disk unit
           <filepath>/dev/sda3</filepath>. Each alarm object is listed with a unique
         UUID which you can use to obtain additional information.</p>
       <p>Specific subsets of alarms, or a particular alarm, can be listed using one
@@ -140,11 +140,11 @@ entity_instance_id=host=compute-0</userinput></codeblock>
 | timestamp              | 2014-06-25T16:58:57.324613                      |
 | uuid                   | 4ab5698a-19cb-4c17-bd63-302173fef62c            |
 +------------------------+-------------------------------------------------+</systemoutput></codeblock>
-      <p>The pair of attributes <nameliteral>(alarm_id,
-          entity_instance_id)</nameliteral> uniquely identifies an active alarm:</p>
+      <p>The pair of attributes <codeph>(alarm_id,
+          entity_instance_id)</codeph> uniquely identifies an active alarm:</p>
       <dl>
         <dlentry>
-          <dt><nameliteral>alarm_id</nameliteral></dt>
+          <dt><codeph>alarm_id</codeph></dt>
           <dd>
             <p>An ID identifying the particular alarm condition. Note that there are
               some alarm conditions, such as <i>administratively locked</i> , that
@@ -152,7 +152,7 @@ entity_instance_id=host=compute-0</userinput></codeblock>
           </dd>
         </dlentry>
         <dlentry>
-          <dt><nameliteral>entity_instance_id</nameliteral></dt>
+          <dt><codeph>entity_instance_id</codeph></dt>
           <dd>
             <p>Type and instance information of the object raising the alarm. A
               period-separated list of (key, value) pairs, representing the containment structure of

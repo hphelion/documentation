@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1437657423737" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1437657423737">
 <!-- Modification History
         
 -->
-    <title ixia_locid="1">Performing a System Restore for a Minimal Two-server Configuration</title>
-    <shortdesc ixia_locid="2">You can restore a minimal two-server HP Helion OpenStack Carrier Grade cluster from
+    <title>Performing a System Restore for a Minimal Two-server Configuration</title>
+    <shortdesc>You can restore a minimal two-server HP Helion OpenStack Carrier Grade cluster from
         available system data and Cinder volume backup files.</shortdesc>
     <prolog>
-        <author ixia_locid="278">Jim Owens</author>
+        <author>Jim Owens</author>
         <author></author>
     </prolog>
-    <taskbody>
-        <context id="context_N1001F_N1001C_N10001" ixia_locid="4">
-            <p ixia_locid="281">The restore procedure for a minimal-two server configuration differs
+    <body>
+        <context id="context_N1001F_N1001C_N10001">
+            <p>The restore procedure for a minimal-two server configuration differs
                 from the procedure for separate controller and compute nodes. In a system with
                 separate nodes, the controller node is restored first, and then any storage nodes.
                 On systems that use a Ceph storage backend, these are required to provide the Ceph
                 infrastructure used for Cinder volumes. The Cinder volumes are restored next to
                 provide data for VMs. Finally, the compute nodes and any VMs running on them are
                 restored.</p>
-            <p ixia_locid="283">For a minimal two-server configuration, the Cinder volumes are
+            <p>For a minimal two-server configuration, the Cinder volumes are
                 restored first to ensure that the VMs on the compute portion of the combined node
                 have access to Cinder volume data. After the Cinder volumes are restored, the
                 combined controller-compute node can be restored. Because this type of system does
                 not use Ceph storage, there is no requirement to restore the controller before
                 restoring the Cinder volumes.</p>
         </context>
-        <prereq conref="jow1437656331081.xml#maintask/prereq_N1002D_N1001F_N10001" id="prereq_N1003C_N10024_N10001" ixia_locid="284"/>
-        <steps>
-            <step conref="jow1437656331081.xml#maintask/common_start" conrefend="jow1437656331081.xml#maintask/common_end" id="step_N10077_N10074_N10024_N10001" ixia_locid="279">
-                <cmd ixia_locid="280"/>
+        <prereq conref="jow1437656331081.xml#maintask/prereq_N1002D_N1001F_N10001" id="prereq_N1003C_N10024_N10001"/>
+        <ol>
+            <step conref="jow1437656331081.xml#maintask/common_start" conrefend="jow1437656331081.xml#maintask/common_end" id="step_N10077_N10074_N10024_N10001">
+                <cmd/>
             </step>
-            <step conref="jow1437656331081.xml#maintask/restore_cinder_vols" id="step_N10050_N10041_N10024_N10001" ixia_locid="285">
-                <cmd ixia_locid="286"/>
+            <step conref="jow1437656331081.xml#maintask/restore_cinder_vols" id="step_N10050_N10041_N10024_N10001">
+                <cmd/>
             </step>
-            <step conref="jow1437656331081.xml#maintask/remove_error_vols_small" id="step_N10059_N10041_N10024_N10001" ixia_locid="287">
-                <cmd ixia_locid="288"/>
+            <step conref="jow1437656331081.xml#maintask/remove_error_vols_small" id="step_N10059_N10041_N10024_N10001">
+                <cmd/>
             </step>
-            <step id="step_N10062_N1003D_N10024_N10001" ixia_locid="293">
-                <cmd ixia_locid="294">Restore the compute function on <nameliteral ixia_locid="295">controller-0</nameliteral>.</cmd>
-                <info ixia_locid="296">
-                    <p ixia_locid="300">Use the following command:</p>
-                    <codeblock ixia_locid="298"><systemoutput ixia_locid="275">~(keystone_admin)$ </systemoutput><userinput ixia_locid="299">system compute-config-complete</userinput>
-<systemoutput ixia_locid="301">Manifests are being created and applied, the controller will restart upon     completion.
+            <step id="step_N10062_N1003D_N10024_N10001">
+                <cmd>Restore the compute function on <codeph>controller-0</codeph>.</cmd>
+                
+                    <p>Use the following command:</p>
+                    <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system compute-config-complete</userinput>
+<systemoutput>Manifests are being created and applied, the controller will restart upon     completion.
 +-------------------+--------------------------------------+
 | Property          | Value                                |
 +-------------------+--------------------------------------+
@@ -79,13 +79,13 @@
 | uptime            | 1370                                 |
 | uuid              | bd213301-0130-4698-89eb-8a58386ffe03 |
 +-------------------+--------------------------------------+</systemoutput></codeblock>
-                </info>
+                
             </step>
-            <step conref="jow1437656331081.xml#maintask/restore_controller_1_small" id="step_N10062_N10041_N10024_N10001" ixia_locid="289">
-                <cmd ixia_locid="290"/>
+            <step conref="jow1437656331081.xml#maintask/restore_controller_1_small" id="step_N10062_N10041_N10024_N10001">
+                <cmd/>
             </step>
-        </steps>
-        <result conref="jow1437656331081.xml#maintask/result" id="result_N10073_N10024_N10001" ixia_locid="291"/>
-        <postreq conref="jow1437656331081.xml#maintask/restore_passwords" id="postreq_N10079_N10024_N10001" ixia_locid="292"/>
-    </taskbody>
+        </ol>
+        <result conref="jow1437656331081.xml#maintask/result" id="result_N10073_N10024_N10001"/>
+        <p conref="jow1437656331081.xml#maintask/restore_passwords" id="p_N10079_N10024_N10001"/>
+    </body>
 </task-wr>

@@ -10,7 +10,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001E_N1001B_N10001">
             <p><draft-comment author="jowens">US53369 topic
                     added</draft-comment>The <cmdname>vshell</cmdname> utility
@@ -254,7 +254,7 @@
                     <pt>statistic-group-enable</pt>
                     <pd>
                         <p>Enables the statistic group specified by <varname>groupname</varname>. The following example enables
-                            the <nameliteral>engine</nameliteral> group:</p>
+                            the <codeph>engine</codeph> group:</p>
                         <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 statistic-group-enable engine
 </userinput></codeblock>
                         <note id="note_N10159_N1014B_N10142_N100BC_N100A9_N10024_N10001" type="caution">
@@ -267,7 +267,7 @@
                     <pt>statistic-group-disable</pt>
                     <pd>
                         <p>Disables the statistic group specified by <varname>groupname</varname>. The following example disables
-                            the <nameliteral>engine</nameliteral> group:</p>
+                            the <codeph>engine</codeph> group:</p>
                         <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 statistic-group-disable engine
 </userinput></codeblock>
                     </pd>
@@ -277,7 +277,7 @@
                     <pd>
                         <p>Displays packet processing and CPU utilization
                             statistics for the packet processing engine. To collect fresh
-                            statistics, enable the <nameliteral>engine</nameliteral> statistic
+                            statistics, enable the <codeph>engine</codeph> statistic
                             group.</p>
                         <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 statistic-group-enable engine</userinput>
 <systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 engine-stats-list</userinput>
@@ -328,7 +328,7 @@
                     <pd>
                         <p>Displays packet processing statistics by interface. To
                             collect fresh statistics, enable the
-                                <nameliteral>interface</nameliteral> statistic group.</p>
+                                <codeph>interface</codeph> statistic group.</p>
                         <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 statistic-group-enable interface</userinput>
 <systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 interface-stats-list</userinput>
 <systemoutput>+-------+----------+-----------+------------+------------+----------+----------+
@@ -360,7 +360,7 @@
                     <pt>ip-stats-list</pt>
                     <pd>
                         <p>Displays packet processing statistics for the IP stack.
-                            To collect fresh statistics, enable the <nameliteral>ip</nameliteral>
+                            To collect fresh statistics, enable the <codeph>ip</codeph>
                             statistic group.</p>
                         <codeblock><systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 statistic-group-enable ip</userinput>
 <systemoutput>$ </systemoutput><userinput>sudo vshell -H compute-1 ip-stats-list</userinput>
@@ -405,5 +405,5 @@
                 </plentry>
             </parml>
         </section>
-    </taskbody>
+    </body>
 </task-wr>

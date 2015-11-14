@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1417813748326" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="jow1417813748326">
 <!-- Modification History
 
  -->
@@ -10,7 +10,7 @@
  <prolog><author/>
   <author/>
  </prolog>
- <conbody>
+ <body>
   <p>Currently, the CPU resources for an instance are scalable.</p>
   <p>For an instance to be scalable, the following requirements must be
    satisfied:</p>
@@ -47,5 +47,5 @@
     all available resources are already allocated to other instances, you may need to free up
     resources manually.</p>
   </note>
- </conbody>
-</concept-wr>
+ </body>
+</topic>

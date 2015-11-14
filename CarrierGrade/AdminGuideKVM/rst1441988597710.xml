@@ -11,7 +11,7 @@
     <prolog><author/>
         <author>Ron Stone</author>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <p>If this extra spec is not added, then the default 500 milliseconds
                 is used. The minimum timer value is 100 milliseconds.</p>
@@ -61,10 +61,10 @@
         <steps id="steps_sf1_1wb_3t">
             <step id="step_N10035_N10032_N1001C_N10001">
                 <cmd>Set the timer from the command line:</cmd>
-                <info>
+                
                     <p>The following examples set the timeout to 350
                         milliseconds.</p>
-                </info>
+                
                 <choices id="choices_iks_2wn_ht">
                     <choice>
                         <p>As <term>admin</term>, add an extra spec to a
@@ -78,6 +78,6 @@
                     </choice>
                 </choices>
             </step>
-        </steps>
-    </taskbody>
+        </ol>
+    </body>
 </task-wr>

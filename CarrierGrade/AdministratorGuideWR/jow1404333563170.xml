@@ -16,7 +16,7 @@
  -->
 
 
-    <title >Reference Logical Architecture</title>
+    <title>Reference Logical Architecture</title>
 
 
     <shortdesc >The HP Helion OpenStack Carrier Grade architecture supports various types of host,
@@ -658,7 +658,7 @@
         <section id="section_N101EC_N1001C_N10001" >
 
 
-            <title >About Tenants (Projects) and Users</title>
+            <title>About Tenants (Projects) and Users</title>
 
 
             <p >Tenants and users are system resources managed by the OpenStack

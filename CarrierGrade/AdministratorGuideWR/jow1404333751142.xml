@@ -3,7 +3,7 @@
 <topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333751142" xml:lang="en-us">
     <!-- Modification History
    -->
-    <title >Managing Hardware Resources</title>
+    <title>Managing Hardware Resources</title>
     <shortdesc >The HP Helion OpenStack Carrier Grade reports status information about the hosts in the
         cluster, and provides a set of tools to operate on them to execute commands, configure
         parameters, and monitor status.</shortdesc>

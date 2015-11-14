@@ -10,12 +10,12 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <p>When a virtual machine is launched, a Nova scheduler filter
                 restricts the target compute nodes to those with available cores of the requested
                 model or better. If no such compute node is available, the error <term>No valid host was found</term> is reported. </p>
-            <p>If no <nameliteral>VCPU Model</nameliteral> extra
+            <p>If no <codeph>VCPU Model</codeph> extra
                 spec is added, then by default the QEMU virtual processor is used.</p>
             <p>The following selections are available:</p>
             <ul id="ul_wmm_b45_tr">
@@ -80,5 +80,5 @@
                 is not supplied with the <cmdname>nova flavor-key</cmdname>
                 command, then the default QEMU model is used.</p>
         </context>
-    </taskbody>
+    </body>
 </task-wr>

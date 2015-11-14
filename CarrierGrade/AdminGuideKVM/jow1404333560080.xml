@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-
-<topic domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333560080" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="jow1404333560080">
     <!-- Modification History
 
  -->
-    <title>HP Helion OpenStack Carrier Grade 2.0: Overview</title>
+    <title>HP Helion OpenStack Carrier Grade Overview</title>
     <shortdesc>WHP Helion OpenStack Carrier Grade is a high-performance, high-availability,
         cloud operating system that enables telecommunications operators to use
         Commercial-off-the-shelf (COTS) hardware to manage Virtualized Network Functions (VNF)
@@ -15,7 +13,7 @@
         <author/>
         <author/>
     </prolog>
-    <conbody>
+    <body>
         <p>HP Helion OpenStack Carrier Grade brings together the flexibility and scalability of the IT
             cloud, and the high-availability and performance demanded by the Telecommunications
             industry, into a unique carrier grade, industry-leading solution to deliver a
@@ -31,8 +29,8 @@
             <p>Core capabilities unique to HP Helion OpenStack Carrier Grade include:</p>
             <dl>
                 <!--<dlentry>
-                    <dt><nameliteral>Supported Guest
-                            OSs</nameliteral></dt>
+                    <dt><codeph>Supported Guest
+                            OSs</codeph></dt>
                     <dd>
                         <p>HP Helion OpenStack Carrier Grade is designed to work with any Linux
                             Distribution. Linux, Red Hat Enterprise Linux, CentOS, and
@@ -40,8 +38,8 @@
                     </dd>
                 </dlentry>--><!-- 2014-12-18 moved to Release Notes -->
                 <dlentry>
-                    <dt><nameliteral>High-Performance
-                            Networking</nameliteral></dt>
+                    <dt><codeph>High-Performance
+                            Networking</codeph></dt>
                     <dd>
                         <p>HP Helion OpenStack Carrier Grade provides significantly improved network
                             performance over the default open source OpenStack solution, up to 20
@@ -84,7 +82,7 @@
                     </dd>
                 </dlentry>
                 <dlentry>
-                    <dt><nameliteral>High-Availability</nameliteral></dt>
+                    <dt><codeph>High-Availability</codeph></dt>
                     <dd>
                         <p>HP Helion OpenStack Carrier Grade provides a number of extensions to
                             OpenStack to deliver highly available hosting of virtual machines,
@@ -229,8 +227,8 @@
                     </dd>
                 </dlentry>
                 <dlentry>
-                    <dt><nameliteral>Virtual Machine
-                            Performance</nameliteral></dt>
+                    <dt><codeph>Virtual Machine
+                            Performance</codeph></dt>
                     <dd>
                         <p>HP Helion OpenStack Carrier Grade provides an improved execution
                             environment for virtual machines that contributes to their overall
@@ -266,7 +264,7 @@
                     </dd>
                 </dlentry>
                 <dlentry>
-                    <dt><nameliteral>Guest VLANs</nameliteral></dt>
+                    <dt><codeph>Guest VLANs</codeph></dt>
                     <dd>
                         <p>HP Helion OpenStack Carrier Grade guests can make use of Titanium
                             Server-defined VLANs to encapsulate IP traffic from a single or multiple
@@ -296,8 +294,8 @@
                     </dd>
                 </dlentry>
                 <dlentry>
-                    <dt><nameliteral>Inventory
-                            Management</nameliteral></dt>
+                    <dt><codeph>Inventory
+                            Management</codeph></dt>
                     <dd>
                         <p>HP Helion OpenStack Carrier Grade provides complete inventory management
                             of hosts in the OpenStack cloud, allowing the system administrator to
@@ -401,11 +399,11 @@
                         </ul>
                     </dd>
                 </dlentry>
-                <!--Hide per 1.1 review <dlentry><dt><nameliteral>Highly Automated Installation and Commissioning</nameliteral></dt><dd><p>HP Helion OpenStack Carrier Grade substantially simplifies and integrates the installation and commissioning sequence. The initial controller node installs the software from a USB flash drive, and is commissioned with a single configuration wizard script. All subsequent hosts get their software installed over the internal management network from the initial controller node, and are configured using either the web administration interface, or the command line on the controller.</p><p>This is in contrast with the installation and commissioning sequence of the open-source OpenStack, which involves the setup of numerous individual configuration files, the installation of various backends supporting OpenStack components, and the configuration of multiple Linux services and other open-source programs.</p></dd></dlentry>-->
-                <!--<dlentry><dt><nameliteral>Power Management</nameliteral></dt><dd><p>A cloud orchestration service that monitors and manages the resource usage on the compute nodes to power down servers during periods of low usage. This service contributes to saving power and operational costs.</p><p>By continuously monitoring the resource usage, the power management service can de-fragment the service cloud by live-migrating virtual machine instances onto a smaller set of compute nodes. Unused hosts can then be manually powered down.</p><p>As the cloud usage levels rise, unused compute nodes can be manually powered on to host new virtual machine instances.</p></dd></dlentry>-->
+                <!--Hide per 1.1 review <dlentry><dt><codeph>Highly Automated Installation and Commissioning</codeph></dt><dd><p>HP Helion OpenStack Carrier Grade substantially simplifies and integrates the installation and commissioning sequence. The initial controller node installs the software from a USB flash drive, and is commissioned with a single configuration wizard script. All subsequent hosts get their software installed over the internal management network from the initial controller node, and are configured using either the web administration interface, or the command line on the controller.</p><p>This is in contrast with the installation and commissioning sequence of the open-source OpenStack, which involves the setup of numerous individual configuration files, the installation of various backends supporting OpenStack components, and the configuration of multiple Linux services and other open-source programs.</p></dd></dlentry>-->
+                <!--<dlentry><dt><codeph>Power Management</codeph></dt><dd><p>A cloud orchestration service that monitors and manages the resource usage on the compute nodes to power down servers during periods of low usage. This service contributes to saving power and operational costs.</p><p>By continuously monitoring the resource usage, the power management service can de-fragment the service cloud by live-migrating virtual machine instances onto a smaller set of compute nodes. Unused hosts can then be manually powered down.</p><p>As the cloud usage levels rise, unused compute nodes can be manually powered on to host new virtual machine instances.</p></dd></dlentry>-->
                 <dlentry>
-                    <dt><nameliteral>Performance Management
-                            Extensions</nameliteral></dt>
+                    <dt><codeph>Performance Management
+                            Extensions</codeph></dt>
                     <dd>
                         <p>The Ceilometer service included with HP Helion OpenStack Carrier Grade
                             features improved performance, scalability, and usability. It has been
@@ -416,8 +414,8 @@
                     </dd>
                 </dlentry>
                 <dlentry>
-                    <dt><nameliteral>Improved Web Administration
-                            Interface</nameliteral></dt>
+                    <dt><codeph>Improved Web Administration
+                            Interface</codeph></dt>
                     <dd>
                         <p>HP Helion OpenStack Carrier Grade web administration interface is an
                             enhanced version of the Horizon web interface provided by OpenStack. The
@@ -484,7 +482,7 @@
                     </dd>
                 </dlentry>
                 <dlentry>
-                    <dt><nameliteral>Heat Extensions</nameliteral></dt>
+                    <dt><codeph>Heat Extensions</codeph></dt>
                     <dd>
                         <p>The OpenStack Heat orchestration service is enhanced to include:</p>
                         <ul id="ul_n5s_kbh_tp">
@@ -500,21 +498,21 @@
                     </dd>
                 </dlentry>
                 <dlentry>
-                    <dt><nameliteral>Backup and Restore</nameliteral></dt>
+                    <dt><codeph>Backup and Restore</codeph></dt>
                     <dd>
                         <p>Tools and procedures to backup and restore system data, and virtual machines.</p>
                     </dd>
                 </dlentry>
                 <dlentry>
-                    <dt><nameliteral>Patching</nameliteral></dt>
+                    <dt><codeph>Patching</codeph></dt>
                     <dd>
                         <p>Tools and procedures to patch system images to ensure they are always up
                             to date with the latest release and security fixes.</p>
                     </dd>
                 </dlentry>
                 <dlentry>
-                    <dt><nameliteral>Alarms Generation and
-                        Reporting</nameliteral></dt>
+                    <dt><codeph>Alarms Generation and
+                        Reporting</codeph></dt>
                     <dd>
                         <ul id="ul_ltp_xch_tp">
                             <li>
@@ -528,8 +526,8 @@
                     </dd>
                 </dlentry>
                 <dlentry>
-                    <dt><nameliteral>Supported OpenStack
-                            Services</nameliteral></dt>
+                    <dt><codeph>Supported OpenStack
+                            Services</codeph></dt>
                     <dd>
                         <p>HP Helion OpenStack Carrier Grade integrates the following OpenStack
                             services into its cloud solution: Nova, Neutron, Keystone, Glance,
@@ -537,7 +535,7 @@
                     </dd>
                 </dlentry>
                 <dlentry>
-                    <dt><nameliteral>REST API</nameliteral></dt>
+                    <dt><codeph>REST API</codeph></dt>
                     <dd>
                         <p>HP Helion OpenStack Carrier Grade supports the following external REST
                             APIs through its OAM floating IP address:</p>
@@ -594,7 +592,7 @@
                     </dd>
                 </dlentry>
                 <dlentry>
-                    <dt><nameliteral>HP Helion OpenStack Carrier Grade SDK</nameliteral></dt>
+                    <dt><codeph>HP Helion OpenStack Carrier Grade SDK</codeph></dt>
                     <dd>
                         <p>The HP Helion OpenStack Carrier Grade Software Development Kit (SDK) provides drivers,
                             daemons, API libraries, and configuration files that you can include in
@@ -643,5 +641,5 @@
                 </dlentry>
             </dl>
         </section>
-    </conbody>
+    </body>
 </topic>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333795559" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="jow1404333795559">
     <!-- Modification History
    -->
     <title>Memory</title>
@@ -10,7 +10,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <conbody>
+    <body>
         <fig id="fig_N10027_N10024_N10001">
             <image href="jow1404333794155.image" id="image_zbk_dwz_l4"/>
         </fig>
@@ -39,9 +39,9 @@
                     <p>This column is relevant on compute nodes only.</p>
                     <p>The size of the pages, and the total and available page
                         figures. If changes to the huge page allocations have been requested for a
-                        locked host, they are shown as <nameliteral>Pending</nameliteral>.</p>
+                        locked host, they are shown as <codeph>Pending</codeph>.</p>
                 </dd>
             </dlentry>
         </dl>
-    </conbody>
-</concept-wr>
+    </body>
+</topic>

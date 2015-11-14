@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <concept-wr id="jow1429628777191" xml:lang="en-us">
 <!-- Modification History
 
@@ -10,7 +10,7 @@
  <prolog><author/>
   
  </prolog>
- <conbody>
+ <body>
   <p> The user associated with a tenant can add a designated number of virtual
    routers (Neutron routers) to the tenant. The maximum number is specified in the quotas for the
    tenant. </p>
@@ -21,9 +21,9 @@
   <p>A virtual router can be implemented as a centralized router, or a distributed
    virtual router (DVR).</p>
   <note id="note_N10031_N1001F_N10001">
-   <p>Only the <nameliteral>admin</nameliteral> user can specify a distributed
+   <p>Only the <codeph>admin</codeph> user can specify a distributed
     router. For other tenants, this choice is not available, and a centralized router is implemented
-    by default. The <nameliteral>admin</nameliteral> user can change a centralized router to a
+    by default. The <codeph>admin</codeph> user can change a centralized router to a
     distributed router on behalf of other tenants (see <xref href="jow1429637676342.xml"/>).</p>
    <p>A distributed router cannot be converted to a centralized router.</p>
   </note>
@@ -59,5 +59,5 @@
    Forwarding and SNAT may also be accelerated by implementing the centralized-portion of the router
    as a VM configured to use multiple dedicated cores, instead of sharing the single platform core
    with TiS and OpenStack Agents.</p> -->
- </conbody>
-</concept-wr>
+ </body>
+</topic>

@@ -16,7 +16,7 @@
 -->
 
 
-    <title >Creating and Using Memory Profiles</title>
+    <title>Creating and Using Memory Profiles</title>
 
 
     <shortdesc >You can optionally save the huge pages configuration for a host as a profile, and

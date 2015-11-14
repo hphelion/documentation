@@ -13,7 +13,7 @@
    -->
 
 
-    <title >Resource Usage</title>
+    <title>Resource Usage</title>
 
 
     <shortdesc >Usage of system resources is monitored by Ceilometer, the standard
@@ -106,7 +106,7 @@
         <section id="section_N10048_N1001C_N10001" >
 
 
-            <title >Optimized Ceilometer Filters</title>
+            <title>Optimized Ceilometer Filters</title>
 
 
             <p >The Ceilometer implementation in HP Helion OpenStack Carrier Grade is specially tuned
@@ -130,7 +130,7 @@
         <section id="section_N1006E_N1001C_N10001" >
 
 
-            <title >On-Line Ceilometer Reports</title>
+            <title>On-Line Ceilometer Reports</title>
 
 
             <p >On-line, on-demand, Ceilometer reports in HP Helion OpenStack Carrier Grade benefit
@@ -511,7 +511,7 @@
         <section id="section_N101AA_N1001C_N10001" >
 
 
-            <title >CSV Performance Monitoring Backend</title>
+            <title>CSV Performance Monitoring Backend</title>
 
 
             <p >HP Helion OpenStack Carrier Grade provides access to performance measurement samples in
@@ -850,7 +850,7 @@
         <section id="section_N103F2_N1001F_N10001" >
 
 
-            <title >Retention Period</title>
+            <title>Retention Period</title>
 
 
             <p >Performance samples are kept in the database for a limited period of time known as

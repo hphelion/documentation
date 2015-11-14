@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1411066086436" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1411066086436">
 <!-- Modification History
         
 -->
@@ -10,7 +10,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N10022_N1001F_N10001">
             <p>A Cinder volume in the <i>in-use</i> state is
                 associated with an existing instance, either as the instance's disk image or as an
@@ -30,7 +30,7 @@
 +--------+--------+-----------+--------+------------+-------------+----------+
 </systemoutput></codeblock>
         </context>
-        <steps>
+        <ol>
             <step conref="psa1410446807133.xml#psa1410446807133/cli-admin-login" id="step_N1003A_N10037_N10024_N10001">
                 <cmd/>
             </step>
@@ -49,26 +49,26 @@
 | 593111d8-... | available |   volume-2   |... |  true    |              |
 +--------------+-----------+--------------+... +----------+--------------+</systemoutput></codeblock>
                         </stepxmp>
-                        <info>
+                        
                             <p>Cinder volumes are listed also on the <wintitle>Volumes</wintitle> page of the web
                                 administration interface.</p>
-                        </info>
+                        
                     </substep>
                     <substep>
                         <cmd>Identify the volume to back up.</cmd>
-                        <info>
+                        
                             <p>In the list above, two volumes are listed in the <i>in-use</i> state:</p>
                             <ul id="ul_lfh_xv2_mp">
                                 <li>
-                                    <p>A volume named <nameliteral>volume-1</nameliteral> with ID
-                                            <nameliteral>53ad007a-...</nameliteral>, attached to the
-                                        running image  <nameliteral>c820df55-...</nameliteral>. The
+                                    <p>A volume named <codeph>volume-1</codeph> with ID
+                                            <codeph>53ad007a-...</codeph>, attached to the
+                                        running image  <codeph>c820df55-...</codeph>. The
                                         bootable flag is <i>false</i>, which indicates that
                                         this is not a disk image.</p>
                                 </li>
                                 <li>
-                                    <p>An unnamed volume with ID <nameliteral>578da734-...</nameliteral>, attached to
-                                        the running image <nameliteral>c820df55-...</nameliteral>. The bootable flag is <i>true</i>, which indicates that this
+                                    <p>An unnamed volume with ID <codeph>578da734-...</codeph>, attached to
+                                        the running image <codeph>c820df55-...</codeph>. The bootable flag is <i>true</i>, which indicates that this
                                         is the instance's disk image. Unnamed volumes are
                                         dynamically created when the option <option>Instance Boot Source</option> in the <wintitle>Launch Instance</wintitle> window of the
                                         web management interface is set to <i>Boot from image (creates a new volume)</i> or <i>Boot from volume snapshot (creates a new
@@ -77,7 +77,7 @@
                             </ul>
                             <p>This example uses the unnamed disk image to
                                 illustrate the backup procedure, but you must back up all <i>in-use</i> volumes appropriately.</p>
-                        </info>
+                        
                     </substep>
                 </substeps>
             </step>
@@ -99,7 +99,7 @@
 |      volume_id      | 578da734-a416-47e7-97de-137aa10b90f8 |
 +---------------------+--------------------------------------+</systemoutput></codeblock>
                 </stepxmp>
-                <info>
+                
                     <p>The status of the new snapshot is <i>creating</i>, which means that it is in process. You must wait until it
                         becomes <i>available</i> before proceeding.</p>
                     <p>You can verify the status of all Cinder snapshots using the
@@ -111,9 +111,9 @@
 | 53b5237c-... | 578da734-... | available | test-vm-snapshot |  1   |
 +--------------+--------------+-----------+------------------+------+</systemoutput></codeblock>
                     <p>In this example, the state of the snapshot
-                            <nameliteral>test-vm-snapshot</nameliteral> is <i>available</i>
+                            <codeph>test-vm-snapshot</codeph> is <i>available</i>
                         already.</p>
-                </info>
+                
             </step>
             <step id="step_N1012C_N10035_N10023_N10001">
                 <cmd>Export the snapshot to the controller's file system.</cmd>
@@ -130,12 +130,12 @@
 |     volume_type     |                 None                 |
 +---------------------+--------------------------------------+</systemoutput></codeblock>
                 </stepxmp>
-                <info>
+                
                     <p>The status of the snapshot is <i>exporting</i>, which means that it is not yet ready on the controller's
                         file system. As before, you can use the command <cmdname>cinder snapshot-show </cmdname>
                         <varname>UUID</varname> to verify the current status, and wait until the
                         snapshot's state is <i>available</i> again.</p>
-                </info>
+                
                 <stepresult>
                     <p>When the export operation completes, the backup file is
                         ready, as illustrated in the following example:</p>
@@ -150,11 +150,11 @@ drwxr-xr-x 2 root root 4.0K Sep 19 14:30 temp
             </step>
             <step id="step_N100E2_N10036_N10024_N10001">
                 <cmd>Transfer the backup file to an external storage resource.</cmd>
-                <info>
+                
                     <p>The following example uses the <cmdname>scp</cmdname> command to transfer the backup file to a server named
-                            <nameliteral>backups-server.wrs.com</nameliteral> in the
+                            <codeph>backups-server.wrs.com</codeph> in the
                         directory <filepath>/backups/titanium</filepath>:</p>
-                </info>
+                
                 <stepxmp>
                     <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>scp /opt/backups/volume-578da734-a416-47e7-97de-137aa10b90f8-20140919-142732.tgz \
 admin@backups-server.wrs.com:/backups/titanium</userinput></codeblock>
@@ -165,24 +165,24 @@ admin@backups-server.wrs.com:/backups/titanium</userinput></codeblock>
                 <stepxmp>
                     <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>cinder snapshot-delete test-vm-snapshot</userinput></codeblock>
                 </stepxmp>
-                <info>
+                
                     <p>You can confirm that the snapshot is deleted using
                             <cmdname>cinder snapshot-list --all-tenants</cmdname>.</p>
                     <p>Once the snapshot has been exported, you should remove it
                         from the Cinder repositories to free up disk space.</p>
-                </info>
+                
             </step>
             <step id="step_N1010C_N10036_N10024_N10001">
                 <cmd> importance="optional">Delete the backup file.</cmd>
-                <info>
+                
                     <p>You may want to free up disk space on the controller to
                         accommodate additional Cinder volume backups.</p>
-                </info>
+                
             </step>
-        </steps>
-        <result id="result_N1011B_N10024_N10001">
+        </ol>
+        Host
             <p>The volume backup is complete. Repeat this procedure with all other
                 Cinder volumes in the <i>in-use</i> state in the system.</p>
         </result>
-    </taskbody>
+    </body>
 </task-wr>

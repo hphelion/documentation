@@ -173,7 +173,7 @@
                 <cmd ixia_locid="34"/>
             </step>
         </steps>
-        <result id="result_N100F4_N1002E_N10001" ixia_locid="307">
+        Host
             <p ixia_locid="308">Both controllers are now available, with one active and one
                 redundant.</p>
             <note id="note_N103FA_N103E7_N10033_N10001" ixia_locid="355">

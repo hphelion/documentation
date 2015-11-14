@@ -10,22 +10,22 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N10023_N10020_N10001">
             <p>This HOT template creates a VM instance with vCPU autoscaling. The number of online
                 vCPUS for the instance is scaled up or down depending on vCPU utilization. The
                 scaling range (minimum and maximum number of vCPUs) is determined by the launch
                 flavor. </p>
-            <p>For up/down scaling, the CPU measurement uses a <nameliteral>vcpu_util</nameliteral> meter, which takes into account the
+            <p>For up/down scaling, the CPU measurement uses a <codeph>vcpu_util</codeph> meter, which takes into account the
                 current number of online vCPUs when measuring usage. This is in contrast to the
-                    <nameliteral>cpu_util</nameliteral> meter, which always uses
-                the maximum number of vCPUs. Using <nameliteral>cpu_util</nameliteral> for up/down scaling would produce an inaccurate
+                    <codeph>cpu_util</codeph> meter, which always uses
+                the maximum number of vCPUs. Using <codeph>cpu_util</codeph> for up/down scaling would produce an inaccurate
                 usage/availability ratio if any vCPUs were offline, since it assumes all VCPUs are
                 available.</p>
             <p>The VM image selected for launch must be capable of scaling. For more information
                 about VM scaling, see <xref href="jow1417813748326.xml"/>.</p>
         </context>
-        <steps>
+        <ol>
             <step id="step_N10077_N10074_N10020_N10001">
                 <cmd>Collect the required parameters.</cmd>
                 <substeps id="substeps_wqc_mlv_34">
@@ -157,6 +157,6 @@
                     </chrow>
                 </choicetable>
             </step>
-        </steps>
-    </taskbody>
+        </ol>
+    </body>
 </task-wr>

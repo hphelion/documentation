@@ -9,7 +9,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001E_N1001B_N10001">
             <p>Select this option when you expect one or more of the guest
                 applications running on the virtual machine to make use of the HP Helion OpenStack Carrier Grade Guest
@@ -25,15 +25,15 @@
                 in the <uicontrol>Create Flavor Extra Spec</uicontrol> drop-down
                 menu.  To access this menu, see <xref href="jow1429538642910.xml"/>. </p>
             <note id="note_N1004E_N10021_N1001E_N10001">
-                <p>The non-default value <nameliteral>True</nameliteral> is offered when the extra spec is added using the web
+                <p>The non-default value <codeph>True</codeph> is offered when the extra spec is added using the web
                     administration interface.</p>
             </note>
             <p>To enable the Guest Heartbeat API using the CLI, use the following
                 command:</p>
             <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key <varname>flavor_name</varname> set sw:wrs:guest:heartbeat=<varname>value</varname></userinput></codeblock>
             <p>where <varname>value</varname> is either
-                    <nameliteral>True</nameliteral> or <nameliteral>False</nameliteral>. If any other value is supplied, it is
-                ignored and the default value <nameliteral>False</nameliteral> is used.</p>
+                    <codeph>True</codeph> or <codeph>False</codeph>. If any other value is supplied, it is
+                ignored and the default value <codeph>False</codeph> is used.</p>
         </context>
-    </taskbody>
+    </body>
 </task-wr>

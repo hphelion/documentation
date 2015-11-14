@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333807231" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="jow1404333807231">
     <!-- Modification History
 
  -->
@@ -9,7 +9,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <conbody>
+    <body>
         <p>The HP Helion OpenStack Carrier Grade Extensions are supported only for OpenStack resources,
             which are the primary resources used with HOT format.</p>
         <section id="section_N10027_N1001F_N10001">
@@ -95,11 +95,11 @@ resources:
         <section id="section_N10143_N1001F_N10001">
             <title>Greater Control over Resource Allocations</title>
             <p>When creating a network resource using OS::Neutron::Net, you can use
-                a <nameliteral>depends_on</nameliteral> attribute to ensure that the requirements of
+                a <codeph>depends_on</codeph> attribute to ensure that the requirements of
                 other resources are given priority before the resource is created. The attribute
                 takes another resource as an argument. In the following example, it is used to
-                specify that the resource <nameliteral>external_network </nameliteral>must be
-                created before <nameliteral>internal_network</nameliteral> is created.</p>
+                specify that the resource <codeph>external_network </codeph>must be
+                created before <codeph>internal_network</codeph> is created.</p>
             <codeblock>internal_network:
       type: OS::Neutron::Net
       properties:
@@ -125,7 +125,7 @@ wrl5_Glance_Image:
         </section>
         <section id="section_N1011B_N1001F_N10001">
             <title>Support for name Property in Nova Flavor</title>
-            <p>A <nameliteral>name</nameliteral> property is added to the Flavor
+            <p>A <codeph>name</codeph> property is added to the Flavor
                 resource to support user-friendly names for Heat-generated flavors.</p>
         </section>
         <section id="section_N10154_N1001F_N10001">
@@ -168,5 +168,5 @@ wrl5_Glance_Image:
                 </dlentry>
             </dl>
         </section>
-    </conbody>
-</concept-wr>
+    </body>
+</topic>

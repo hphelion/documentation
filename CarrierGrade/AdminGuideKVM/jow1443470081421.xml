@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <concept-wr id="jow1443470081421" xml:lang="en-us">
 <!-- Modification History
 
  -->
  <title>Instances Logical Volume Considerations</title>
  <shortdesc>On compute nodes that use local storage, dedicated space is required by
-    the <nameliteral>nova</nameliteral> service.</shortdesc>
+    the <codeph>nova</codeph> service.</shortdesc>
  <prolog><author/>
   <author/>
  </prolog>
- <conbody>
+ <body>
   <p><draft-comment author="jowens"> US65502 new
         topic</draft-comment>The space is needed to store files that track each launched instance,
       and to cache boot images for boot-by-image VMs. Boot images are always cached in RAW format;
@@ -18,8 +18,8 @@
       instance launch, because the image does not need to be fetched from the Glance image
       store.</p>
     <p>In HP Helion OpenStack Carrier Grade, the space is called the <term>instances
-        logical volume</term> or <nameliteral>Instances LV</nameliteral> space. To
-      provide for scalability, it is located on the <nameliteral>nova-local</nameliteral> local volume group instead of the root partition.</p>
+        logical volume</term> or <codeph>Instances LV</codeph> space. To
+      provide for scalability, it is located on the <codeph>nova-local</codeph> local volume group instead of the root partition.</p>
   <p>By default, no size is specified. The minimum required space is 2 GB for a
       volume group with a total size less that 80 GB, and 5 GB for a volume group larger than 80 GB;
       you must specify at least this amount. You can allocate more to support the anticipated number
@@ -33,5 +33,5 @@
    <p>If less than the minimum required space is available, the compute host cannot
     be unlocked.</p>
   </note>
- </conbody>
-</concept-wr>
+ </body>
+</topic>

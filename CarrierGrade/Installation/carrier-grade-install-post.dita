@@ -15,7 +15,7 @@
 </prolog>
 <body>
     <p>After HP Helion OpenStack Carrier Grade is fully installed and deployed, perform the tasks in
-      this section.</p>
+      this section. </p>
     <section>
       <title>Verify the VSC VMs</title>
       <p>The installation process creates virtual machines for VSC. VSC VMs are installed and are

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333810324" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333810324">
     <!-- Modification History
         
 -->
@@ -10,20 +10,20 @@
     <prolog><author/>
         
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N10023_N10020_N10001">
             <p>This HOT template creates a volume and a VM using this volume. The VM
                 name is specified as a parameter in the template, illustrating the use of Titanium
-                Server extensions to simplify VM instance naming. It is used by the <nameliteral>OS::Nova::Server</nameliteral> resources, which define the
+                Server extensions to simplify VM instance naming. It is used by the <codeph>OS::Nova::Server</codeph> resources, which define the
                 construction of the VMs.</p>
             <p>The VM has two attached networks.</p>
         </context>
-        <steps>
+        <ol>
             <step id="step_N10043_N10040_N10020_N10001">
                 <cmd>Collect the required parameter values for this template.</cmd>
-                <info>
+                
                     <p>For information about flavors, keypairs, images, or tenant networks, see the <cite>HP Helion OpenStack Carrier Grade Reference Deployment Scenarios: User Tasks</cite>.</p>
-                </info>
+                
                 <substeps id="substeps_wqc_mlv_34">
                     <substep>
                         <cmd conref="jow1404333809730.xml#jow1404333809730/locate-flavor"/>
@@ -52,12 +52,12 @@
             <step id="step_N100B9_N10040_N10020_N10001">
                 <cmd>Use the <wintitle>Launch Stack</wintitle> form to provide the required
                     parameter values for the template.</cmd>
-                <info>
+                
                     <fig id="fig_N100C3_N100C0_N100B5_N10040_N10020_N10001">
                         <image alt="2NamedVMs Launch Stack form" href="jow1404333626947.image" id="image_pw4_5vj_j4" width="1.5in"/>
                     </fig>
-                </info>
+                
             </step>
-        </steps>
-    </taskbody>
+        </ol>
+    </body>
 </task-wr>

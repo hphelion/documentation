@@ -16,7 +16,7 @@
 -->
 
 
-  <title >Sample Templates for HP Helion OpenStack Carrier Grade</title>
+  <title>Sample Templates for HP Helion OpenStack Carrier Grade</title>
 
 
   <shortdesc >You can evaluate selected features of Heat using sample templates
@@ -58,7 +58,7 @@
     <section id="section_N1002D_N1001F_N10001" >
 
 
-      <title >HOT Templates—Simple</title>
+      <title>HOT Templates—Simple</title>
 
 
       <p >The templates in the <filepath >hot/simple</filepath>
@@ -847,7 +847,7 @@
     <section id="section_N10235_N1001F_N10001" >
 
 
-      <title >HOT Templates—Scenarios</title>
+      <title>HOT Templates—Scenarios</title>
 
 
       <p >The templates in the <filepath >hot/scenarios</filepath>
@@ -1240,7 +1240,7 @@
     <section id="section_N10285_N1001F_N10001" >
 
 
-      <title >CFN Templates</title>
+      <title>CFN Templates</title>
 
 
       <p >The templates in the <filepath >cfn</filepath> directory

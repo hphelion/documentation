@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1409240700100" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="jow1409240700100">
 <!-- Modification History
 
  -->
@@ -10,20 +10,20 @@
  <prolog><author/>
   <author/>
  </prolog>
- <conbody>
-  <p>You can include user data by defining a <nameliteral>UserData</nameliteral> property for an instance. This sends configuration instructions to
+ <body>
+  <p>You can include user data by defining a <codeph>UserData</codeph> property for an instance. This sends configuration instructions to
       the instance at launch. For an example of user data, see the <filepath>CombinationAutoScaling.yaml</filepath> template included with HP Helion OpenStack Carrier Grade.</p>
   <p>Normally, this requires <libraryname>cloud-init</libraryname> to
       be installed in the guest, because the user data is converted to MIME format and then
       interpreted by <libraryname>cloud-init</libraryname>. For instances that do not
       include <libraryname>cloud-init</libraryname>, you can bypass the MIME
       conversion of user data by invoking an extension property and assigning the value
-        <nameliteral>'RAW'</nameliteral>. This allows the VM to retrieve the
+        <codeph>'RAW'</codeph>. This allows the VM to retrieve the
       specified user data in unaltered format through a simple REST API call to the metadata server.
       The name of the property follows the convention for the associated resource type. For an AWS
-      resource (for example, <nameliteral>AWS::EC2::Instance</nameliteral>), use
+      resource (for example, <codeph>AWS::EC2::Instance</codeph>), use
         <parmname>UserDataType</parmname>. For an OpenStack resource (for example,
-        <nameliteral>OS::Nova::Server</nameliteral>), use <parmname>user_data_type</parmname>. The following code fragment shows the property used with an AWS
+        <codeph>OS::Nova::Server</codeph>), use <parmname>user_data_type</parmname>. The following code fragment shows the property used with an AWS
       resource.</p>
   <codeblock>... 
 Srv:
@@ -53,5 +53,5 @@ Srv:
         network or an internal network. The Neutron router provides a route to the metadata server,
         which provides instances with access to user data.</p>
     </note>
- </conbody>
-</concept-wr>
+ </body>
+</topic>

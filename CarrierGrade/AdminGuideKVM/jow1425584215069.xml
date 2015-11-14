@@ -10,7 +10,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <prereq id="prereq_N1001F_N1001C_N10001">
             <p>The compute node must be locked.</p>
         </prereq>
@@ -58,9 +58,9 @@
             </parml>
             <p>To delete routes, use the following command.</p>
             <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-route-delete <varname>uuid</varname> <varname>ifname</varname> <varname>network</varname> <varname>prefix</varname> <varname>gateway</varname> <varname>metric</varname></userinput></codeblock>
-            <p>where <nameliteral>uuid</nameliteral> is the UUID of the route to be deleted.</p>
+            <p>where <codeph>uuid</codeph> is the UUID of the route to be deleted.</p>
             <p>To list existing routes, including their UUIDs, use the following command.</p>
             <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-route-list compute-0</userinput></codeblock>
         </context>
-    </taskbody>
+    </body>
 </task-wr>

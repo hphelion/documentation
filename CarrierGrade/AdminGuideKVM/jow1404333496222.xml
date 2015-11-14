@@ -463,7 +463,7 @@ Enter Q at any prompt to abort...</systemoutput></codeblock>
                 </substeps>
             </step>
         </steps>
-        <result id="result_N1028D_N10028_N10001" ixia_locid="190">
+        Host
             <p ixia_locid="140">The host <nameliteral ixia_locid="141">controller-0</nameliteral> is
                 now fully operational. It can be used to initialize all other hosts in the Titanium
                 Server cluster.</p>

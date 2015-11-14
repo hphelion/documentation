@@ -10,7 +10,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <p>By default, when a VM is configured to use an SR-IOV or
                 PCI-passthrough interface, the VM is affined to a NUMA node that has direct hardware
@@ -19,8 +19,8 @@
                 satisifed, the VM is instantiated on another NUMA node with mediated access to the
                 interface.</p>
             <p>To add this extra spec to a flavor using the web administration
-                interface, use the <nameliteral>PCI NUMA Affinity</nameliteral>
-                selection in the <nameliteral>Create Flavor Extra Spec</nameliteral>
+                interface, use the <codeph>PCI NUMA Affinity</codeph>
+                selection in the <codeph>Create Flavor Extra Spec</codeph>
                 drop-down menu. To access this menu, see <xref href="jow1429538642910.xml"/>.</p>
             <p>You can also specify the extra spec from the CLI by setting the following parameter
                 for a flavor:</p>
@@ -47,5 +47,5 @@
             </dl>
             <p>For more information about using PCI interfaces, see <xref href="psa1413402160578.xml"/> and <xref href="psa1428687672712.xml"/>.</p>
         </context>
-    </taskbody>
+    </body>
 </task-wr>

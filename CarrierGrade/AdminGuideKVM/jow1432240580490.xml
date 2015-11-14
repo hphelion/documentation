@@ -10,7 +10,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <p> If this extra spec is not added, then by default this API is
                 disabled.</p>
@@ -23,22 +23,22 @@
                 Messaging API is enabled for the VM. To enable the API, select this option. For more
                 information about the Server Group Messaging API, refer to the <cite>HP Helion OpenStack Carrier Grade Software Development Kit</cite>.</p>
             <note id="note_N10036_N10022_N1001F_N10001">
-                <p>The non-default value <nameliteral>True</nameliteral> is offered when the extra
+                <p>The non-default value <codeph>True</codeph> is offered when the extra
                     spec is added.</p>
             </note>
             <p>The service provides three types of messaging:</p>
             <ul id="ul_dtr_pkn_cs">
                 <li>
-                    <p><nameliteral>Broadcast</nameliteral>—allows the server to send a
+                    <p><codeph>Broadcast</codeph>—allows the server to send a
                         datagram of up to 3050 bytes to all other servers in the server group.</p>
                 </li>
                 <li>
-                    <p><nameliteral>Notification</nameliteral>—provides servers with
+                    <p><codeph>Notification</codeph>—provides servers with
                         information about changes to the state of other servers in the server
                         group.</p>
                 </li>
                 <li>
-                    <p><nameliteral>Status</nameliteral>—allows
+                    <p><codeph>Status</codeph>—allows
                         the server to query the current state of all servers in the group (including
                         the originating server).</p>
                 </li>
@@ -57,5 +57,5 @@
             <p>where <varname>value</varname> is either
                     <option>False</option> or <option>True</option>.</p>
         </context>
-    </taskbody>
+    </body>
 </task-wr>

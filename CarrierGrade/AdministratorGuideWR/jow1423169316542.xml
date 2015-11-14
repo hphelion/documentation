@@ -4,7 +4,7 @@
 <!-- Modification History
 
  -->
- <title >Ethernet Interface Configuration</title>
+ <title>Ethernet Interface Configuration</title>
  <shortdesc >You can review and modify the configuration for physical or virtual
   Ethernet interfaces using the web administration interface or the CLI.</shortdesc>
  <prolog>
@@ -12,7 +12,7 @@
  </prolog>
  <body>
   <section id="section_N1001F_N1001C_N10001" >
-   <title >Physical Ethernet Interfaces</title>
+   <title>Physical Ethernet Interfaces</title>
    <p >The physical Ethernet interfaces on HP Helion OpenStack Carrier Grade nodes are configured to
     use the following networks: </p>
    <ul id="ul_lk1_b4j_zq">
@@ -48,7 +48,7 @@
      compute nodes must also be configured manually to specify the interface type.</p>
    </note>
    <table frame="all" id="table_xs4_npp_zq">
-    <title >Interface Configuration by Network Type</title>
+    <title>Interface Configuration by Network Type</title>
     <tgroup cols="3">
      <colspec colname="c1" colnum="1" colwidth="1.02*"/>
      <colspec colname="c2" colnum="2" colwidth="1.04*"/>
@@ -119,7 +119,7 @@
     see <xref href="jow1404333777760.xml" />.</p>
   </section>
   <section id="section_N10059_N1001C_N10001" >
-   <title >Virtual Ethernet Interfaces</title>
+   <title>Virtual Ethernet Interfaces</title>
    <p >The virtual Ethernet interfaces for guest VMs running on HP Helion OpenStack Carrier Grade are
     defined when an instance is launched. They connect the VM to <term >tenant
      networks</term>, which are virtual networks defined over <term >provider

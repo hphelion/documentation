@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1423173019489" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="jow1423173019489">
 <!-- Modification History
 
  -->
@@ -10,7 +10,7 @@
  <prolog><author/>
   <author/>
  </prolog>
- <conbody>
+ <body>
     <p>As explained in <xref href="jow1404333674324.xml"/>, the
       internal management network cannot use VLAN tagging. However, the OAM, infrastructure, and
       data networks can use VLAN tagging, allowing them to share an Ethernet or aggregated Ethernet
@@ -54,7 +54,7 @@
         Guide: The Controller Configuration Script</cite>). To attach an interface to other networks
       after configuration, you can edit the interface; for details, see the <cite>HP Helion OpenStack Carrier Grade Installation Guide: Attaching to Networks Using a VLAN Interface</cite>. </p>
     <p>You can also use the command line by logging into the active controller and
-      becoming the Keystone <nameliteral>admin</nameliteral> user, and then using a
+      becoming the Keystone <codeph>admin</codeph> user, and then using a
       command such as the following for each node:</p>
     <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>system host-if-add controller-0 -V 22 -nt infra infra0 vlan none eth1</userinput>
 <systemoutput>+------------------+--------------------------------------+
@@ -79,9 +79,9 @@
 | updated_at       | None                                 |
 +------------------+--------------------------------------+
 </systemoutput></codeblock>
-    <p>This example configures the <nameliteral>eth1</nameliteral>
-      interface on <nameliteral>controller-0</nameliteral> to connect to the
-      infrastructure network using VLAN ID 22. (The <nameliteral>none</nameliteral>
+    <p>This example configures the <codeph>eth1</codeph>
+      interface on <codeph>controller-0</codeph> to connect to the
+      infrastructure network using VLAN ID 22. (The <codeph>none</codeph>
       parameter is used in place of a provider network name, indicating no provider network.)</p>
     <p>To display VLAN information as well as dependencies, use a command such as
       the following:</p>
@@ -95,10 +95,10 @@
 ...+--------+------...+----------+---------+-----------+------------+-------------+...</systemoutput>
 </codeblock>
     <p>The output lists all interfaces and associated networks. For each network
-      that uses VLAN tagging, the <nameliteral>vlan id</nameliteral> is shown, as
-      well as the shared interface used (in the <nameliteral>uses i/f</nameliteral>
+      that uses VLAN tagging, the <codeph>vlan id</codeph> is shown, as
+      well as the shared interface used (in the <codeph>uses i/f</codeph>
       column). For shared interfaces, the names of the networks that use VLAN tagging on the
-      interface are shown (in the <nameliteral>used by i/f</nameliteral>
+      interface are shown (in the <codeph>used by i/f</codeph>
       column).</p>
     <p>For a LAG interface, the dependencies are shown as follows.</p>
     <codeblock><systemoutput>...+--------+------...+----------+---------+-----------+------------+-------------+...
@@ -121,5 +121,5 @@
 ...| oam0   | oam  ...| ethernet | None    | [u'eth0'] | []         | []          |...
 ...| mgmt0  | mgmt ...| ethernet | None    | [u'eth1'] | []         | [u'infra0'] |...
 ...+--------+------...+----------+---------+-----------+------------+-------------+...</systemoutput></codeblock>
-  </conbody>
-</concept-wr>
+  </body>
+</topic>

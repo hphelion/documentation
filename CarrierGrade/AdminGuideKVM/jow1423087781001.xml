@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <concept-wr id="jow1423087781001" xml:lang="en-us">
 <!-- Modification History
 
@@ -12,7 +12,7 @@
   <author/>
   <author/>
  </prolog>
- <conbody>
+ <body>
   <p>Memory not reserved for platform use is made available as VM memory. By
    default, the VM memory is partitioned using 2 MiB huge pages. You can change this for individual
    NUMA nodes to use a combination of 2 MiB, and 1 GiB huge pages. Using larger pages can reduce
@@ -26,5 +26,5 @@
    information, see <xref href="jow1429811350849.xml"/>.</p>
   <p>For individual VMs, you can specify which page size to use. For more
    information, see <xref href="jow1424723681500.xml"/>.</p>
- </conbody>
-</concept-wr>
+ </body>
+</topic>

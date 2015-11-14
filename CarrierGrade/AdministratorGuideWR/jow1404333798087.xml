@@ -3,7 +3,7 @@
 <topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333798087" xml:lang="en-us">
     <!-- Modification History
    -->
-    <title >Ports</title>
+    <title>Ports</title>
     <shortdesc >The tab <uicontrol >Ports</uicontrol> on the <wintitle >Inventory Detail</wintitle> page presents information about the physical
         ports on a host, as illustrated below.</shortdesc>
     <prolog>

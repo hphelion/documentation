@@ -10,10 +10,10 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001E_N1001B_N10001">
             <p><draft-comment author="jowens">US53369 topic
-                    added</draft-comment>The <nameliteral>vtrace</nameliteral>
+                    added</draft-comment>The <codeph>vtrace</codeph>
                 command initiates a packet-trace capture on a logical interface. To use it, you must
                 log on with root privileges to the host running the vSwitch instance.<note id="note_N1003A_N1002B_N10026_N10023_N10001" type="caution">
                     <p>This command can cause significant packet loss on the trace
@@ -22,8 +22,8 @@
             <p>When <cmdname>vtrace</cmdname> is used, all transmit and receive packets passing
                 through the logical interface are mirrored to a dynamically created Linux host
                 interface. The utility uses the vSwitch packet tracing API to enable tracing, and
-                invokes <nameliteral>tcpdump</nameliteral> on the host interface. You can use any
-                    <nameliteral>tcpdump</nameliteral> option except <option>-i</option> to filter
+                invokes <codeph>tcpdump</codeph> on the host interface. You can use any
+                    <codeph>tcpdump</codeph> option except <option>-i</option> to filter
                 and analyze the captured data.</p>
             <p>To initiate a packet trace, use the following
                 command:<codeblock><systemoutput>$ </systemoutput><userinput>sudo vtrace <varname>interface-uuid</varname> <varname>tcpdump-options</varname> <varname>filter-expression</varname></userinput></codeblock></p>
@@ -40,7 +40,7 @@
                     <pt>tcpdump-options</pt>
                     <pd>
                         <p>are the options for the packet trace. For details, refer
-                            to the public documentation for <nameliteral>tcpdump</nameliteral>.</p>
+                            to the public documentation for <codeph>tcpdump</codeph>.</p>
                         <note id="note_N100B2_N100A9_N100A0_N10084_N10027_N10024_N10001">
                             <p>Do not use the <option>-i</option> option.</p>
                         </note>
@@ -51,10 +51,10 @@
                     <pd>
                         <p>is an expression for filtering packet trace results. For
                             details, refer to the public documentation for
-                                <nameliteral>tcpdump</nameliteral>.</p>
+                                <codeph>tcpdump</codeph>.</p>
                     </pd>
                 </plentry>
             </parml>
         </context>
-    </taskbody>
+    </body>
 </task-wr>

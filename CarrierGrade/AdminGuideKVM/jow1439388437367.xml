@@ -10,7 +10,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <p>You can launch a virtual machine from the CLI using the <cmdname>nova boot</cmdname>
                 command. For an example, see the <cite>HP Helion OpenStack Carrier Grade Reference Deployment
@@ -21,7 +21,7 @@
         <prereq id="prereq_N10034_N1001C_N10001">
             <p>To support fast booting, a Cinder volume is recommended. To prepare one, see <xref href="jow1439393204460.xml"/>.</p>
         </prereq>
-        <steps>
+        <ol>
             <step id="step_N10044_N10041_N1001C_N10001">
                 <cmd>Log in as the appropriate tenant.</cmd>
             </step>
@@ -36,7 +36,7 @@
             </step>
             <step id="step_N10072_N10041_N1001C_N10001">
                 <cmd>Complete the <wintitle>Launch Instances</wintitle> form.</cmd>
-                <info>
+                
                     <p>For examples, see the <cite>HP Helion OpenStack Carrier Grade
                             Reference Deployment Scenarios: Deploying the Bridging Scenario</cite>
                         and <cite>Deploying the Routing Scenario</cite>.</p>
@@ -54,10 +54,10 @@
                     <note id="note_N1008B_N1007A_N1006F_N10041_N1001C_N10001">
                         <p>For fast instance booting, use a prepared Cinder volume,
                             and set the <uicontrol>Instance Boot Source</uicontrol>
-                            to <nameliteral>Boot from Volume</nameliteral>.</p>
+                            to <codeph>Boot from Volume</codeph>.</p>
                     </note>
-                </info>
+                
             </step>
-        </steps>
-    </taskbody>
+        </ol>
+    </body>
 </task-wr>

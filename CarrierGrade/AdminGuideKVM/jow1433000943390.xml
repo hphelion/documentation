@@ -175,7 +175,7 @@ rootfs_device=sda initrd=initrd</codeblock></p>
                     </info>
                 </step>
             </steps>
-            <result id="result_N10100_N10028_N10001" ixia_locid="57">
+            Host
                 <p ixia_locid="58">The host is now ready for configuration as <nameliteral ixia_locid="144">controller-0</nameliteral>.</p>
             </result>
         </taskbody>

@@ -4,7 +4,7 @@
     <!-- Modification History
 
  -->
-    <title >Configuration Planning</title>
+    <title>Configuration Planning</title>
     <shortdesc >System configuration options are available when installing the
         HP Helion OpenStack Carrier Grade software. You should prepare a set of selected values and features ready to
         use which are applicable to a specific deployment scenario.</shortdesc>

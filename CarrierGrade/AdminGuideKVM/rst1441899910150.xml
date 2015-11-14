@@ -10,7 +10,7 @@
     <prolog><author/>
         <author>Ron Stone</author>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <p><draft-comment author="rstone">Topic added for
                     US61157</draft-comment>If this extra spec is not added, then the system will
@@ -54,7 +54,7 @@
                 </li> -->
             </ul>
         </context>
-        <steps>
+        <ol>
             <step id="step_N1003F_N1003C_N1001C_N10001">
                 <cmd>To set the option from the command line do one of the
                     following.</cmd>
@@ -70,6 +70,6 @@
                     </choice>
                 </choices>
             </step>
-        </steps>
-    </taskbody>
+        </ol>
+    </body>
 </task-wr>

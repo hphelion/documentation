@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333806049" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="jow1404333806049">
     <!-- Modification History
 
  -->
@@ -10,7 +10,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <conbody>
+    <body>
         <p>Templates specify the resources to include in a stack, and relationships
             between them.</p>
         <p>A template contains several sections, including:</p>
@@ -72,5 +72,5 @@
             are expressed using YAML, which is the recommended notation for HOT. Heat templates may
             also be expressed using JSON, which is the usual notation for CFN.</p>
         <p>For more information on the content and syntax of Heat templates, see the online <xref format="html" href="http://docs.openstack.org/developer/heat/template_guide/index.html" scope="external">OpenStack Template Guide</xref>.</p>
-    </conbody>
-</concept-wr>
+    </body>
+</topic>

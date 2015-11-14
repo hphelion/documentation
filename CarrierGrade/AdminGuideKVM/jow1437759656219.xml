@@ -10,7 +10,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <p>In a redundant ToR switch configuration, each link in a link
                 aggregate is connected to a different switch, as shown in the accompanying figure.
@@ -39,5 +39,5 @@
                     routers. For more information, refer to your router documentation.</p>
             </note>
         </context>
-    </taskbody>
+    </body>
 </task-wr>

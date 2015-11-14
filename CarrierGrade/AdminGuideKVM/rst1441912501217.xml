@@ -10,7 +10,7 @@
     <prolog><author/>
         <author>Ron Stone</author>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <p><draft-comment author="rstone">Topic added for:
                     US60525</draft-comment>This ensures that the untrusted virtual machine cannot
@@ -37,13 +37,13 @@
                 only be launched on hosts that meet this requirement. For more information on using
                 huge pages, see <xref href="jow1423087781001.xml"/>.</p>
         </prereq>
-        <steps>
+        <ol>
             <step id="step_N1003F_N1003C_N1001C_N10001">
                 <cmd>Set this option using the CLI:</cmd>
                 <stepxmp>
                     <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key flavorName set hw:wrs:nic_isolation=true</userinput></codeblock>
                 </stepxmp>
             </step>
-        </steps>
-    </taskbody>
+        </ol>
+    </body>
 </task-wr>

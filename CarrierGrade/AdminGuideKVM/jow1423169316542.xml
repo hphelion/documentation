@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <concept-wr id="jow1423169316542" xml:lang="en-us">
 <!-- Modification History
 
@@ -10,7 +10,7 @@
  <prolog><author/>
   <author/>
  </prolog>
- <conbody>
+ <body>
   <section id="section_N1001F_N1001C_N10001">
    <title>Physical Ethernet Interfaces</title>
    <p>The physical Ethernet interfaces on HP Helion OpenStack Carrier Grade nodes are configured to
@@ -130,5 +130,5 @@
    <p>You can also connect a VM directly to a physical interface using PCI
     passthrough (see <xref href="psa1413402160578.xml"/>) or SR-IOV (see <xref href="psa1428687672712.xml"/>).</p>
   </section>
- </conbody>
-</concept-wr>
+ </body>
+</topic>

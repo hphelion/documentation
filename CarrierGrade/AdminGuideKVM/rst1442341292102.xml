@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <concept-wr id="rst1442341292102" xml:lang="en-us">
 <!-- Modification History
 
@@ -13,7 +13,7 @@
  <prolog><author/>
   <author></author>
  </prolog>
- <conbody>
+ <body>
   <p>VLAN Transparent must be supported on a provider network before a VLAN
    Transparent tenant network can be created on that provider network. The <uicontrol>VLAN Transparent</uicontrol> column in the list of defined provider networks on
    the <uicontrol>Provider Networks</uicontrol> tab of the <menucascade>
@@ -177,5 +177,5 @@
     </tbody>
    </tgroup>
   </table>
- </conbody>
-</concept-wr>
+ </body>
+</topic>

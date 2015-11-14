@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410807758201" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="psa1410807758201">
 <!-- Modification History
 
  -->
@@ -11,11 +11,11 @@
  <prolog><author/>
   
  </prolog>
- <conbody>
+ <body>
   <p>The backup and restore procedures can be summarized as follows:</p>
   <ul id="ul_at2_h3y_lp">
    <li>
-    <p>Log in as user <nameliteral>wrsroot</nameliteral> to the
+    <p>Log in as user <codeph>wrsroot</codeph> to the
           console of the active controller.</p>
    </li>
    <li>
@@ -42,5 +42,5 @@
       Cinder block storage database.</p>
   <p>The backup and restore tools are designed to operate on an entire Titanium
    Server cluster. They are not suitable as a tool to back up and restore individual hosts.</p>
- </conbody>
-</concept-wr>
+ </body>
+</topic>

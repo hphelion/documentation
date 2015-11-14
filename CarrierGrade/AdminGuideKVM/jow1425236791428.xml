@@ -10,12 +10,12 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <p>Use the following command:</p>
             <codeblock><systemoutput>~(keystone_admin)$ </systemoutput>nova show <varname>instance</varname></codeblock>
-            <p>where <nameliteral>instance</nameliteral> is the name or UUID of the instance.</p>
+            <p>where <codeph>instance</codeph> is the name or UUID of the instance.</p>
             <!-- need sample output, plus an explanation of it -->
         </context>
-    </taskbody>
+    </body>
 </task-wr>

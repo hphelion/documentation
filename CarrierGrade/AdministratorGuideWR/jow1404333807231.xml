@@ -16,7 +16,7 @@
  -->
 
 
-    <title >HP Helion OpenStack Carrier Grade Extensions to Heat</title>
+    <title>HP Helion OpenStack Carrier Grade Extensions to Heat</title>
 
 
     <shortdesc >Several extensions to Heat are included with HP Helion OpenStack Carrier Grade.</shortdesc>
@@ -43,7 +43,7 @@
         <section id="section_N10027_N1001F_N10001" >
 
 
-            <title >Multiple NIC Support</title>
+            <title>Multiple NIC Support</title>
 
 
             <p >When launching a VM instance initially or in an autoscaling stack, you
@@ -280,7 +280,7 @@ LaunchConfig:
         <section id="section_N1003F_N1001F_N10001" >
 
 
-            <title >Simplified Network Interface Configuration</title>
+            <title>Simplified Network Interface Configuration</title>
 
 
             <p >You can specify a network interface for a server or instance resource
@@ -397,7 +397,7 @@ LaunchConfig:
         <section id="section_N10052_N1001F_N10001" >
 
 
-            <title >Simplified VM Instance Naming</title>
+            <title>Simplified VM Instance Naming</title>
 
 
             <p >The HP Helion OpenStack Carrier Grade introduces minor changes to the OpenStack VM
@@ -598,7 +598,7 @@ LaunchConfig:
         <section id="section_N10097_N1001F_N10001" >
 
 
-            <title >Support for Server Groups</title>
+            <title>Support for Server Groups</title>
 
 
             <p >You can create Server Groups and add VM Instances to them.</p>
@@ -766,7 +766,7 @@ cirros_server1:
         <section id="section_N100E2_N1001F_N10001" >
 
 
-            <title >Improved Metrics Communication</title>
+            <title>Improved Metrics Communication</title>
 
 
             <p >HP Helion OpenStack Carrier Grade addresses reliability issues with the OpenStack
@@ -787,7 +787,7 @@ cirros_server1:
         <section id="section_N10117_N1001F_N10001" >
 
 
-            <title >Relaxed Requirements for Passing User Data</title>
+            <title>Relaxed Requirements for Passing User Data</title>
 
 
             <p >The property <parmname >UserDataType</parmname> is a
@@ -808,7 +808,7 @@ cirros_server1:
         <section id="section_N10136_N1001F_N10001" >
 
 
-            <title >Improved User Access to Stacks</title>
+            <title>Improved User Access to Stacks</title>
 
 
             <p >Stacks can be created, modified, or deleted by admin or non-admin users.</p>
@@ -835,7 +835,7 @@ cirros_server1:
         <section id="section_N10143_N1001F_N10001" >
 
 
-            <title >Greater Control over Resource Allocations</title>
+            <title>Greater Control over Resource Allocations</title>
 
 
             <p >When creating a network resource using OS::Neutron::Net, you can use
@@ -883,7 +883,7 @@ cirros_server1:
         <section id="section_N10154_N1001F_N10001" >
 
 
-            <title >Additional Heat Resources</title>
+            <title>Additional Heat Resources</title>
 
 
             <p >In addition to the standard OpenStack resources available for Heat templates, you can

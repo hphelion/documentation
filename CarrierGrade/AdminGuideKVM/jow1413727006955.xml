@@ -10,21 +10,21 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <p>During software installation, HP Helion OpenStack Carrier Grade is configured with up
                 to two DNS server IP addresses. You change these addresses using the web
                 administration interface or the CLI.</p>
         </context>
-        <steps>
+        <ol>
             <step id="step_N1002B_N10028_N1001C_N10001">
                 <cmd>In the HP Helion OpenStack Carrier Grade web administration interface, open the
                         <wintitle>System Configuration</wintitle> pane.</cmd>
-                <info>
+                
                     <p>The <wintitle>System Configuration</wintitle> pane is available from the
                             <uicontrol>System Panel</uicontrol> section of the
                             <uicontrol>Admin</uicontrol> menu. </p>
-                </info>
+                
             </step>
             <step id="step_N1004A_N10028_N1001C_N10001">
                 <cmd>Select the <wintitle>DNS</wintitle> tab.</cmd>
@@ -52,11 +52,11 @@
             <step id="step_N1009A_N10028_N1001C_N10001">
                 <cmd>Replace the DNS Server IP addresses with different ones as required.</cmd>
             </step>
-        </steps>
-        <result id="result_N100C6_N1001F_N10001">
-            <p>Upon completion of the DNS configuration change, a <nameliteral>250.001 Configuration
-                    out-of-date</nameliteral> alarm is raised temporarily, and then cleared
+        </ol>
+        Host
+            <p>Upon completion of the DNS configuration change, a <codeph>250.001 Configuration
+                    out-of-date</codeph> alarm is raised temporarily, and then cleared
                 automatically by the system.</p>
         </result>
-    </taskbody>
+    </body>
 </task-wr>

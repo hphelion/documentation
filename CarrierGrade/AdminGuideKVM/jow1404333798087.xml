@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333798087" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="jow1404333798087">
     <!-- Modification History
    -->
     <title>Ports</title>
@@ -9,7 +9,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <conbody>
+    <body>
         <fig id="fig_N10027_N10024_N10001">
             <image href="jow1404333796281.image" id="image_vlm_zxz_l4" width="6in"/>
         </fig>
@@ -73,5 +73,5 @@
                 </dd>
             </dlentry>
         </dl>
-    </conbody>
-</concept-wr>
+    </body>
+</topic>

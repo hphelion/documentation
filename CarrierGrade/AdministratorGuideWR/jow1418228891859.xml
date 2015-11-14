@@ -16,7 +16,7 @@
 -->
 
 
-    <title >Creating an Up/Down Autoscaling Resource</title>
+    <title>Creating an Up/Down Autoscaling Resource</title>
 
 
     <shortdesc >The <filepath >VMAutoscaling.yaml</filepath> template illustrates the

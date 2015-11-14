@@ -7,7 +7,7 @@
 <topic id="jow1404333563834" xml:lang="en-us">
 
 
-    <title >Linux User Accounts</title>
+    <title>Linux User Accounts</title>
 
 
     <shortdesc >Linux user accounts are available on all hosts for administration,
@@ -58,7 +58,7 @@
         <section id="section_N10025_N1001D_N10001" >
 
 
-            <title >The wrsroot Account</title>
+            <title>The wrsroot Account</title>
 
 
             <p >This is a local, per-host, account created automatically in the KVM
@@ -250,7 +250,7 @@
         <section id="section_N10094_N1001D_N10001" >
 
 
-            <title >Local User Accounts</title>
+            <title>Local User Accounts</title>
 
 
             <p >You can manage regular Linux user accounts on any host in the cluster
@@ -295,7 +295,7 @@
         <section id="section_N100E3_N1001A_N10001" >
 
 
-            <title >LDAP User Accounts</title>
+            <title>LDAP User Accounts</title>
 
 
             <p >You can create regular Linux user accounts using the HP Helion OpenStack Carrier Grade
@@ -556,7 +556,7 @@
         <section id="section_N1019F_N1001D_N10001" >
 
 
-            <title >Managing LDAP User Accounts</title>
+            <title>Managing LDAP User Accounts</title>
 
 
             <p >Although the scope of operations for the LDAP user accounts is local,

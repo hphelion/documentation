@@ -12,7 +12,7 @@
     <prolog><author/>
        
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <note id="note_N10096_N10022_N1001F_N10001">
                 <p>Cinder volume storage is allotted using 3PAR, not on the
@@ -64,7 +64,7 @@
             <p>To pass the disk-space checks, any replacement disks must be
                 installed before the allotments are changed.</p>
             <note id="note_N100A9_N10022_N1001F_N10001" type="caution">
-                <p> The configurations for <nameliteral>controller-0</nameliteral> and <nameliteral>controller-1</nameliteral> must be identical. If you make changes to one,
+                <p> The configurations for <codeph>controller-0</codeph> and <codeph>controller-1</codeph> must be identical. If you make changes to one,
                     you must make the same changes to the other.</p>
             </note>
             <p>Changes to the storage allotments require a reinstallation of the
@@ -87,15 +87,15 @@
                 </li>
             </ul>
         </prereq>
-        <steps>
+        <ol>
             <step id="step_N100F4_N100F1_N1001F_N10001">
                 <cmd>If necessary, install replacement disks in the controllers.</cmd>
-                <info>
+                
                     <p>If you do not need to replace disks, you can skip this step. To determine
                         whether you need to replace disks, calculate your storage requirements. Be
                         sure to include the headroom required on the primary disk.</p>
                     <p>To replace disks in the controllers, follow these steps.</p>
-                </info>
+                
                 <substeps id="substeps_wzh_2kt_4q">
                     <substep>
                         <cmd>Lock the standby controller.</cmd>
@@ -129,11 +129,11 @@
                 <substeps id="substeps_kvh_bh5_4q">
                     <substep>
                         <cmd>In the HP Helion OpenStack Carrier Grade web administration interface, open the <wintitle>System Configuration</wintitle> pane.</cmd>
-                        <info>
+                        
                             <p> The <wintitle>System
                                     Configuration</wintitle> pane is available from the <uicontrol>System Panel</uicontrol> section of the
                                     <uicontrol>Admin</uicontrol> menu. </p>
-                        </info>
+                        
                     </substep>
                     <substep>
                         <cmd>Select the <wintitle>Controller Filesystem</wintitle>
@@ -174,13 +174,13 @@
                         <cmd>Click <uicontrol>Save</uicontrol>.</cmd>
                     </substep>
                 </substeps>
-                <info>
+                
                     <p>This raises major alarms against the controllers
-                            (<nameliteral>250.001 Configuration
-                            out-of-date</nameliteral>). You can view the alarms on the Fault
-                        Management page. In addition, the status <nameliteral>Config out-of-date</nameliteral> is shown for the controllers in the
+                            (<codeph>250.001 Configuration
+                            out-of-date</codeph>). You can view the alarms on the Fault
+                        Management page. In addition, the status <codeph>Config out-of-date</codeph> is shown for the controllers in the
                             <wintitle>Hosts</wintitle> list.</p>
-                </info>
+                
             </step>
             <step id="step_N100BF_N1002B_N1001D_N10001">
                 <cmd>Lock the standby controller. </cmd>
@@ -188,18 +188,18 @@
             <step id="step_N102CD_N100F1_N1001F_N10001">
                 <cmd>Reinstall the HP Helion OpenStack Carrier Grade software on the standby
                     controller.</cmd>
-                <info>
+                
                     <p>This step is required to update the system configuration, even if you have
                         already reinstalled the HP Helion OpenStack Carrier Grade software as part of the disk
                         replacement procedure.</p>
-                </info>
+                
             </step>
             <step id="step_N102D6_N100F1_N1001F_N10001">
                 <cmd>Unlock the standby controller.</cmd>
-                <info>
-                    <p>When the controller is unlocked, the <nameliteral>250.001 Configuration out-of-date</nameliteral> alarms
+                
+                    <p>When the controller is unlocked, the <codeph>250.001 Configuration out-of-date</codeph> alarms
                         against the controller are cleared.</p>
-                </info>
+                
             </step>
             <step id="step_N102DF_N100F1_N1001F_N10001">
                 <cmd>Swact the controllers.</cmd>
@@ -215,14 +215,14 @@
                 <cmd>Unlock the controller.</cmd>
             </step>
             <step id="step_N1025E_N100B7_N1001F_N10001">
-                <cmd>Confirm that the <nameliteral>250.001
-                        Configuration out-of-date</nameliteral> alarms are cleared for both
+                <cmd>Confirm that the <codeph>250.001
+                        Configuration out-of-date</codeph> alarms are cleared for both
                     controllers.</cmd>
             </step>
-        </steps>
-        <postreq id="postreq_N10323_N1001F_N10001">
+        </ol>
+        <p id="p_N10323_N1001F_N10001">
             <p>After making these changes, ensure that the configuration plan for
                 your system is updated with the new storage allotments and disk sizes.</p>
-        </postreq>
-    </taskbody>
+        </p>
+    </body>
 </task-wr>

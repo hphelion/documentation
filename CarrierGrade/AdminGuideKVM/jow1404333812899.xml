@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333812899" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333812899">
     <!-- Modification History
         
 -->
@@ -11,18 +11,18 @@
     <prolog><author/>
         
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N10023_N10020_N10001">
             <p>This HOT template creates a load balancer VM
-                    (<nameliteral>OS::Nova::Server</nameliteral>) and a scalable pool of server VMs
-                    (<nameliteral>OS::Heat::AutoScalingGroup</nameliteral> of
-                    <nameliteral>OS::Nova:Server</nameliteral>). The associated OS::Ceilometer:Alarm
+                    (<codeph>OS::Nova::Server</codeph>) and a scalable pool of server VMs
+                    (<codeph>OS::Heat::AutoScalingGroup</codeph> of
+                    <codeph>OS::Nova:Server</codeph>). The associated OS::Ceilometer:Alarm
                 and OS::Heat::ScalingPolicy resources are based on a passed-in platform link
                 utilization meter. Instances are added or removed based on this information.</p>
-            <p>Use an <nameliteral>admin</nameliteral> account to run
+            <p>Use an <codeph>admin</codeph> account to run
                 this template.</p>
         </context>
-        <steps>
+        <ol>
             <step id="step_N1005C_N10059_N10020_N10001">
                 <cmd>Collect the required parameter values for this template.</cmd>
                 <substeps id="substeps_wqc_mlv_34">
@@ -57,7 +57,7 @@
             <step id="step_N100CA_N10059_N10020_N10001">
                 <cmd>Use the <wintitle>Launch Stack</wintitle> form to provide the required
                     parameter values for the template. </cmd>
-                <info>
+                
                     <fig id="fig_N100D4_N100D1_N100C6_N10059_N10020_N10001">
                         <image alt="CPUScale Launch Stack form" href="jow1404333811339.image" id="image_dvz_1wj_j4" width="4in"/>
                     </fig>
@@ -65,7 +65,7 @@
                         <p>The parameters are presented in a single column. This image has been
                             edited to present them in two columns.</p>
                     </note>
-                </info>
+                
             </step>
             <step id="step_N100F1_N10059_N10020_N10001" importance="optional">
                 <cmd>Adjust existing values to meet your requirements.</cmd>
@@ -182,6 +182,6 @@
                     </chrow>
                 </choicetable>
             </step>
-        </steps>
-    </taskbody>
+        </ol>
+    </body>
 </task-wr>

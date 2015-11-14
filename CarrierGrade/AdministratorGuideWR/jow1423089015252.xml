@@ -16,7 +16,7 @@
 -->
 
 
-    <title >Provisioning Huge Pages Using the CLI</title>
+    <title>Provisioning Huge Pages Using the CLI</title>
 
 
     <shortdesc >You can edit the huge page attributes for a NUMA node from the

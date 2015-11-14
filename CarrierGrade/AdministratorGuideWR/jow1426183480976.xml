@@ -16,10 +16,10 @@
 -->
 
 
-    <title >Configuring a Compute Host to Provide Local  Storage</title>
+    <title>Configuring a Compute Host to Provide Local  Storage</title>
 
 
-    <shortdesc >You can configure a compute host to provide local storage for use by
+    <shortdesc>You can configure a compute host to provide local storage for use by
 
 
         VMs. </shortdesc>

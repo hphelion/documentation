@@ -12,7 +12,7 @@
         <author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <p>Memory requested by a guest is allocated as one or more pages of a
                 specified size. Once allocated, the memory is unavailable for use by other guests
@@ -64,9 +64,9 @@
                 </dlentry> 
             </dl>
             <p>If any other value is supplied, it is ignored and the default value
-                of <nameliteral>2048</nameliteral> is used.</p>
+                of <codeph>2048</codeph> is used.</p>
             <p>It is suggested that NFV applications use explicit huge page sizes to
-                ensure predictable memory access at run time. Use of <nameliteral>large</nameliteral> and <nameliteral>any</nameliteral> sizes
+                ensure predictable memory access at run time. Use of <codeph>large</codeph> and <codeph>any</codeph> sizes
                 may cause VM migration issues when the available page size on the destination node
                 is different. </p>
             <p>For example, to set a 1 GiB huge page size on a flavor that has
@@ -77,9 +77,9 @@
                 following example:</p>
             <codeblock><systemoutput>~(keystone)admin)$ </systemoutput><userinput>nova image-meta <varname>image</varname> set hw_mem_page_size=<varname>pagesize</varname></userinput></codeblock>
             <p>Note that if you use image metadata to request a page size, the image
-                is unable to access a <nameliteral>large</nameliteral> page unless
-                the setting for the flavor is <nameliteral>large</nameliteral> or
-                    <nameliteral>any</nameliteral>.</p>
+                is unable to access a <codeph>large</codeph> page unless
+                the setting for the flavor is <codeph>large</codeph> or
+                    <codeph>any</codeph>.</p>
         </context>
         <prereq id="prereq_N10022_N1001F_N10001">
             <p>Host memory on compute nodes reserved for use by VMs is partitioned
@@ -87,5 +87,5 @@
                 the backing mechanism for VM virtual memory allocation requests. See <xref href="jow1423087781001.xml"/> for details on how to modify the
                 memory partitioning scheme for a host.</p>
         </prereq>
-    </taskbody>
+    </body>
 </task-wr>

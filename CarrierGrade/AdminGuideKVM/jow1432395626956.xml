@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <concept-wr id="jow1432395626956" xml:lang="en-us">
 <!-- Modification History
 
@@ -10,12 +10,12 @@
  <prolog><author/>
   
  </prolog>
- <conbody>
+ <body>
   <p>HP Helion OpenStack Carrier Grade supports programming access using REST APIs. By default, access using the HTTP
    protocol is supported. For increased security, you can enable  HTTPS access during system
    installation.</p>
   <p>To enable HTTPS access, you must obtain a digital certificate and copy it to the first
    controller before starting the controller configuration script. For more information, see the
     <cite>HP Helion OpenStack Carrier Grade Software Installation Guide</cite>.</p>
- </conbody>
-</concept-wr>
+ </body>
+</topic>

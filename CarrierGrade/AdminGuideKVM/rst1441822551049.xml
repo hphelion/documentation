@@ -11,7 +11,7 @@
     <prolog><author/>
         <author>Ron Stone</author>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <p><draft-comment author="rstone">Topic created for
                     US60539</draft-comment>If no value is set, the default is 800 seconds.</p>
@@ -52,12 +52,12 @@
                 </li>
             </ul>
         </context>
-        <steps>
+        <ol>
             <step id="step_N10035_N10032_N1001C_N10001">
                 <cmd>Set the timer from the command line:</cmd>
-                <info>
+                
                     <p>The following examples set the timeout to 400 seconds.</p>
-                </info>
+                
                 <choices id="choices_iks_2wn_ht">
                     <choice>
                         <p>As <term>admin</term>, add an extra spec to a flavor
@@ -71,6 +71,6 @@
                     </choice>
                 </choices>
             </step>
-        </steps>
-    </taskbody>
+        </ol>
+    </body>
 </task-wr>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1408040130437" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1408040130437">
 <!-- Modification History
         
 -->
@@ -10,13 +10,13 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001E_N1001B_N10001">
             <p>Destination hosts are specified by IP address, or by host name if it
                 can be properly resolved by HP Helion OpenStack Carrier Grade. Notifications are sent to the hosts
                 using a designated community string so that they can be validated.</p>
         </context>
-        <steps>
+        <ol>
             <step id="step_N10040_N1003D_N1001C_N10001">
                 <cmd>Configure IP address 10.10.10.1 to receive SNMP notifications
                     using the community string <term>commstr1</term>.</cmd>
@@ -34,7 +34,7 @@
 +------------+--------------------------------------+</systemoutput>
 </codeblock>
                 </stepxmp>
-                <info>
+                
                     <p>The following are attributes associated with the new
                         community string:</p>
                     <dl>
@@ -80,7 +80,7 @@
                             </dd>
                         </dlentry>
                     </dl>
-                </info>
+                
             </step>
             <step id="step_N100AA_N1003D_N1001C_N10001">
                 <cmd>List defined trap destinations.</cmd>
@@ -118,6 +118,6 @@
 <systemoutput>Deleted ip 10.10.10.1</systemoutput></codeblock>
                 </stepxmp>
             </step>
-        </steps>
-    </taskbody>
+        </ol>
+    </body>
 </task-wr>

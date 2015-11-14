@@ -3,7 +3,7 @@
 <topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333640333" xml:lang="en-us">
     <!-- Modification History
    -->
-    <title >Cluster Overview</title>
+    <title>Cluster Overview</title>
     <shortdesc >The <wintitle >Overview</wintitle> page appears when you
         log into the HP Helion OpenStack Carrier Grade web management interface as the administrator. It presents a
         dashboard providing a quick health-check overview of the cluster.</shortdesc>

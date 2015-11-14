@@ -16,7 +16,7 @@
  -->
 
 
- <title >Customizing Guest Images with User Data</title>
+ <title>Customizing Guest Images with User Data</title>
 
 
  <shortdesc >You can provide bootstrap configuration for an instance at launch by including user data

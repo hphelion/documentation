@@ -75,7 +75,7 @@
                     </info>
                 </step>
             </steps>
-            <result id="result_N1011E_N1001C_N10001" ixia_locid="63">
+            Host
                 <p ixia_locid="64">The interface is attached to the network.</p>
             </result>
         </taskbody>

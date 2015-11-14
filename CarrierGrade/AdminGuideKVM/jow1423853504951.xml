@@ -168,7 +168,7 @@
                     </info>
                 </step>
             </steps>
-            <result id="result_N100D3_N10028_N10001" ixia_locid="50">
+            Host
                 <p ixia_locid="51">Two VLAN provider networks are defined. They can be referenced
                     when configuring the compute node's network interfaces.</p>
             </result>

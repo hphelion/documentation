@@ -10,7 +10,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N10022_N1001F_N10001">
             <p>You may need to remove a compute node in order to replace a failed host, or to change
                 the configuration of a host. If the host is active, you can migrate instances on it
@@ -22,10 +22,10 @@
                     available on other hosts to migrate any running instances.</p>
             </note>
         </prereq>
-        <steps>
+        <ol>
             <step id="step_N10048_N10045_N1001C_N10001">
                 <cmd>Lock the host to be removed.</cmd>
-                <info>
+                
                     <p>Open the <wintitle>Hosts</wintitle> list by
                         clicking <uicontrol>Inventory</uicontrol> on the<wintitle> System Panel</wintitle> section of the <wintitle>Admin</wintitle> menu, and then selecting the <uicontrol>Hosts</uicontrol> tab.</p>
                     <p>Click <menucascade>
@@ -33,20 +33,20 @@
                             <uicontrol>Lock Host</uicontrol>
                         </menucascade> for the host. </p>
                     <p>Wait for the procedure to be completed.</p>
-                </info>
+                
             </step>
             <step id="step_N1008B_N10045_N1001C_N10001">
                 <cmd>Delete the host from the HP Helion OpenStack Carrier Grade system.</cmd>
-                <info>
+                
                     <p>Click <menucascade>
                             <uicontrol>More</uicontrol>
                             <uicontrol>Delete Host</uicontrol>
                         </menucascade> for the host. </p>
-                </info>
+                
             </step>
             <step id="step_N100AA_N10045_N1001C_N10001">
                 <cmd>Power down the host and remove the hardware from the cluster.</cmd>
             </step>
-        </steps>
-    </taskbody>
+        </ol>
+    </body>
 </task-wr>

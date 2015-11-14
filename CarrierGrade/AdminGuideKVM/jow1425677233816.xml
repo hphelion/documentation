@@ -10,7 +10,7 @@
     <prolog><author/>
         
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N10022_N1001F_N10001">
             <p>VXLAN provider networks are an alternative to VLAN provider networks
                 when VM L2 connectivity is required across separate Layer 2 network segments
@@ -26,5 +26,5 @@
                 web administration interface.</p>
         </context>
         <context conref="jow1423853504951.xml#jow1423853504951/context_N101CB_N10037_N1000F_N10001" id="context_N10041_N1001F_N10001"/>
-    </taskbody>
+    </body>
 </task-wr>

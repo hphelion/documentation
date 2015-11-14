@@ -16,7 +16,7 @@
  -->
 
 
-    <title >Storage Planning</title>
+    <title>Storage Planning</title>
 
 
     <shortdesc >Storage resources on the controller are used to maintain internal
@@ -148,7 +148,7 @@
         <section id="section_N1005C_N1001C_N10001" >
 
 
-            <title >Storage for Virtual Machines</title>
+            <title>Storage for Virtual Machines</title>
 
 
             <p >For VMs, you can use remote Cinder storage or local storage.</p>

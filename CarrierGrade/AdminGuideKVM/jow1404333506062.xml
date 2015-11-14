@@ -609,7 +609,7 @@ boot_device=<varname ixia_locid="522">boot_device</varname> rootfs_device=<varna
                 </stepresult>
             </step>
         </steps>
-        <result id="assign-result" ixia_locid="102">
+        Host
             <p ixia_locid="103">The new host is initialized with an operating system, rebooted, and
                 configured with the assigned personality.</p>
         </result>

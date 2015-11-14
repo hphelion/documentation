@@ -16,7 +16,7 @@
 -->
 
 
-    <title >Configuring the NUMA Node Allocations for a VM</title>
+    <title>Configuring the NUMA Node Allocations for a VM</title>
 
 
     <shortdesc >You can use flavor extra specs or image properties to allocate virtual

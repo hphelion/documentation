@@ -87,7 +87,7 @@
                     the dialog box. </cmd>
             </step>
         </steps>
-        <result id="result_N1012D_N1001C_N10001" ixia_locid="190">
+        Host
             <p ixia_locid="191">The interface is created and attached to the network.</p>
         </result>
     </taskbody>

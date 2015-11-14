@@ -12,7 +12,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N10022_N1001F_N10001">
             <p>You can enable or disable Source Network Address Translation for each
                 individual external network connection on a virtual router. By default, SNAT is
@@ -71,5 +71,5 @@ network_id=<varname>externalnetwork</varname>,enable_snat=<varname>boolean</varn
                     or make internal addresses public. For more information, see <xref href="jow1438192231731.xml"/>.</p>
             </note>
         </context>
-    </taskbody>
+    </body>
 </task-wr>

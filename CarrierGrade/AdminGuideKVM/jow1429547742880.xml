@@ -11,7 +11,7 @@
         <author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <p>This extra specification applies to non-boot virtual CPUs. For the
                 boot CPU, the Linux scheduler and priority are fixed to normal time-shared
@@ -98,5 +98,5 @@
                 scheduler with priority 0):</p>
             <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key <varname>flavor_name</varname> unset hw:wrs:vcpu:scheduler</userinput></codeblock>
         </example>
-    </taskbody>
+    </body>
 </task-wr>

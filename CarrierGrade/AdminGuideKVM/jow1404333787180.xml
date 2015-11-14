@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333787180" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="jow1404333787180">
     <!-- Modification History
    -->
     <title>Storage</title>
@@ -10,7 +10,7 @@
         
         <author/>
     </prolog>
-    <conbody>
+    <body>
         <fig id="fig_N10027_N10024_N10001">
             <image href="jow1404333782424.image" id="image_z11_xvg_m4" width="6in"/>
         </fig>
@@ -83,7 +83,7 @@
                     <dt>Function</dt>
                     <dd>
                         <p>The type of storage backend handling the storage volume.
-                            The type <nameliteral>OSD</nameliteral> indicates that
+                            The type <codeph>OSD</codeph> indicates that
                             the storage volume is using the Ceph backend.</p>
                     </dd>
                 </dlentry>
@@ -212,7 +212,7 @@
                 <image href="jow1404333784081.image" id="image_vyp_lyg_m4" width="4in"/>
             </fig>
             <p>In this window you enter the name of the new profile,
-          <nameliteral>hp-360-storage-profile</nameliteral> in this case, and then click the button
+          <codeph>hp-360-storage-profile</codeph> in this case, and then click the button
           <uicontrol>Create Storage Profile</uicontrol> to execute. Available storage profiles are
         listed, and can be removed, from the <wintitle>System Inventory</wintitle> page, as
         described in <xref href="jow1404333787693.xml"/>.</p>
@@ -239,7 +239,7 @@
                     <dt>Function</dt>
                     <dd>
                         <p>The type of storage backend to use. At this time,
-                                <nameliteral>OSD</nameliteral> is the only supported
+                                <codeph>OSD</codeph> is the only supported
                             option.</p>
                     </dd>
                 </dlentry>
@@ -260,5 +260,5 @@
             </dl>
         </section>
         -->
-    </conbody>
-</concept-wr>
+    </body>
+</topic>

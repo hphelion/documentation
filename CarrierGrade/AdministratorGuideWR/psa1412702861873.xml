@@ -4,7 +4,7 @@
 <!-- Modification History
 
  -->
- <title >Managed and Unmanaged Subnets</title>
+ <title>Managed and Unmanaged Subnets</title>
  <shortdesc >Use the <term >System Managed Subnet</term> and <term >Enable DHCP</term> subnet attributes to determine how IP addresses are allocated
   and offered on an IP subnet.</shortdesc>
  <prolog>
@@ -76,7 +76,7 @@ my-tenant-net 172.18.0.0/24</userinput></codeblock>
 --unmanaged --disable-dhcp \
 my-tenant-net 172.18.0.0/24</userinput></codeblock>
   <section id="section_N100A6_N10020_N10001" >
-   <title >Accessing the Metadata Server</title>
+   <title>Accessing the Metadata Server</title>
    <p >Access to the system's metadata server is available using the well known URL
     ﻿http://169.254.169.254. In the HP Helion OpenStack Carrier Grade implementation, access to this address is
     provided by a virtual router attached to the tenant on which the access request is made. Virtual

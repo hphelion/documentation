@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333790046" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="jow1404333790046">
     <!-- Modification History
    -->
     <title>Host Inventory</title>
@@ -10,7 +10,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <conbody>
+    <body>
         <p>A sample hosts tab is illustrated below:</p>
         <fig id="fig_N1002B_N10024_N10001">
             <image href="jow1404333756975.image" id="image_fkn_nbs_l4" placement="inline" width="6in"/>
@@ -387,9 +387,9 @@
                                                 controller nodes only, and should be run on the
                                                 active controller to initiate a switch of the
                                                 active/standby roles.</p>
-                                            <p><nameliteral>Swact</nameliteral> is an abbreviated form of the
-                                                term <nameliteral>Switch
-                                                  Active</nameliteral> (host). When selected, this
+                                            <p><codeph>Swact</codeph> is an abbreviated form of the
+                                                term <codeph>Switch
+                                                  Active</codeph> (host). When selected, this
                                                 option forces the other controller to become the
                                                 active one in the HA cluster. This means that all
                                                 active system services on this controller move to
@@ -454,7 +454,7 @@
             <p>The life cycle of a new host starts when it is discovered by the
                 active controller on the internal management network. A new host is initially
                 reported as <i>Offline</i>. As an exception, the first controller,
-                    <nameliteral>controller-0</nameliteral>, is automatically set
+                    <codeph>controller-0</codeph>, is automatically set
                 to <i>available</i> during initial commissioning. The following are
                 the available transitions. Numbers are attached to them for easier reference:</p>
             <dl>
@@ -481,7 +481,7 @@
                             requests to move the host from the locked to the unlocked administrative
                             states. The host reboots first. After it finishes booting, it
                             establishes maintenance communication and enters the transient
-                                <nameliteral>InTest</nameliteral> state. While in
+                                <codeph>InTest</codeph> state. While in
                             this state, the configuration is applied, and a set of hardware and
                             software tests are executed to ensure the integrity of the host.</p>
                     </dd>
@@ -495,7 +495,7 @@
                     </dt>
                     <dd>
                         <p>The transition is initiated automatically after the
-                            activities in the transient state <nameliteral>inTest</nameliteral> are complete. Depending on the outcome, the
+                            activities in the transient state <codeph>inTest</codeph> are complete. Depending on the outcome, the
                             host goes into one the three states.</p>
                     </dd>
                 </dlentry>
@@ -541,5 +541,5 @@
                 </dlentry>
             </dl>
         </section>
-    </conbody>
-</concept-wr>
+    </body>
+</topic>

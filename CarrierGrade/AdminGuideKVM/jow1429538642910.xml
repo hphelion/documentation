@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <concept-wr id="jow1429538642910" xml:lang="en-us">
 <!-- Modification History
 
@@ -10,7 +10,7 @@
  <prolog><author/>
   <author/>
  </prolog>
- <conbody>
+ <body>
   <p>Extra specifications are key-value pairs you can add to an existing flavor to
    be included when the flavor is used with a new virtual machine. The HP Helion OpenStack Carrier Grade <uicontrol>Extra Specs</uicontrol> tab for a flavor includes extensions specific to
    HP Helion OpenStack Carrier Grade.</p>
@@ -25,7 +25,7 @@
   <p>The <uicontrol>Extra Specs</uicontrol> tab lists extra
    specifications that have been added for the flavor. </p>
   <note id="note_N10060_N10024_N10001">
-   <p>A <nameliteral>Storage Type</nameliteral> extra spec is added by default for all new flavors.
+   <p>A <codeph>Storage Type</codeph> extra spec is added by default for all new flavors.
     To ensure that instantiated VMs use storage of a known type, do not delete this extra spec. For
     more information, see <xref href="jow1426181040008.xml"/>.</p>
   </note>
@@ -72,7 +72,7 @@
       compute host. If this extra spec is not added, then by default the VM does not use a shared
       CPU. For more information, see <xref href="jow1426618822854.xml"/> and <xref href="jow1426625051841.xml"/>.</p>
      <note id="note_N102CA_N102BE_N102B5_N101CC_N10154_N1001F_N10001">
-      <p>To use this extra specification, you must also set the <nameliteral>CPU Policy</nameliteral> extra specification for the flavor to <option>Dedicated</option>. This enables the VM to run a single house-keeping
+      <p>To use this extra specification, you must also set the <codeph>CPU Policy</codeph> extra specification for the flavor to <option>Dedicated</option>. This enables the VM to run a single house-keeping
        virtual CPU on a shared physical core, while keeping all its high-performance virtual CPUs on
        dedicated physical cores.</p>
      </note>
@@ -190,5 +190,5 @@
     </dd>
    </dlentry>
   </dl>
- </conbody>
-</concept-wr>
+ </body>
+</topic>

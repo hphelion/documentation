@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333768530" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="jow1404333768530">
     <!-- Modification History
    -->
     <title>Processor</title>
@@ -11,7 +11,7 @@
         <author/>
         <author/>
     </prolog>
-    <conbody>
+    <body>
         <fig id="fig_N10027_N10024_N10001">
             <image href="jow1404333763192.image" id="image_iqn_jlz_l4" width="6in"/>
         </fig>
@@ -36,7 +36,7 @@
                         <image href="jow1404333764867.image" id="image_mj3_zmz_l4" width="4in"/>
                     </fig>
                     <p>In this example, you are about to create a CPU Profile named
-              <nameliteral>HP-360-C1</nameliteral> out of the current CPU assignments found in a
+              <codeph>HP-360-C1</codeph> out of the current CPU assignments found in a
             compute node.</p>
                 </dd>
             </dlentry>
@@ -52,7 +52,7 @@
                         <image href="jow1404333766847.image" id="image_khm_xsz_l4"/>
                     </fig>
                     <note id="note_N100CC_N100AF_N100A3_N1006C_N1002E_N10001">
-                        <p>On a controller or storage node, only the <nameliteral>Platform</nameliteral> function is shown, and all
+                        <p>On a controller or storage node, only the <codeph>Platform</codeph> function is shown, and all
                             available cores are automatically assigned as platform cores.</p>
                     </note>
                     <dl>
@@ -137,15 +137,15 @@ compute-2:  Model:SandyBridge, Arch:x86_64, Vendor:Intel, Sockets=2, Cores/Socke
 |  thread_id |  0 |  0 |  0 |... |  0 |  0 |  0 |  0 |... |  1 |  1 |
 | sibling_id | 24 | 25 | 26 |... | 35 | 36 | 37 | 38 |... | 22 | 23 |
 +-\-\-\-\-\-\-\-\-\-\-\-+-\-\-\-+-\-\-\-+-\-\-\-+... +-\-\-\-+-\-\-\-+-\-\-\-+-\-\-\-+... +-\-\-\-+-\-\-\-+</systemoutput></codeblock>
-            <p>The example shows two compute nodes, <nameliteral>compute-1</nameliteral> with two sockets, 12 cores per socket, and no
-                Hyper-Threading (Threads/Core=1), and <nameliteral>compute-2</nameliteral> with two sockets, 12 cores per socket, and
+            <p>The example shows two compute nodes, <codeph>compute-1</codeph> with two sockets, 12 cores per socket, and no
+                Hyper-Threading (Threads/Core=1), and <codeph>compute-2</codeph> with two sockets, 12 cores per socket, and
                 Hyper-Threading enabled with two logical processors per core (Threads/Core=2). The
-                rows <nameliteral>cpu_id</nameliteral> and <nameliteral>sibling_id</nameliteral> on <nameliteral>compute-2</nameliteral> node show the hyperthread sibling processors; cores in
+                rows <codeph>cpu_id</codeph> and <codeph>sibling_id</codeph> on <codeph>compute-2</codeph> node show the hyperthread sibling processors; cores in
                 this compute node can therefore be described by the sequence [0, 24] [1, 25] [2, 26]
                 ... [46, 22] [47, 23].</p>
             <p>Use the command <cmdname>vm-topology -\-help</cmdname> to list other available options
                 to include information about virtual machine flavors, instances (servers), server
                 groups, and  migrations in progress.</p>
         </section>
--->    </conbody>
-</concept-wr>
+-->    </body>
+</topic>

@@ -10,13 +10,13 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <p>By default, when instances are launched or migrated, the virtual NUMA
                 nodes defined for the VMs are mapped to available host NUMA nodes. You can
                 optionally designate a specific host NUMA node for a virtual NUMA node, using either
-                a flavor extra specification (which takes the general form <nameliteral>hw:specification</nameliteral>), or an image property (which
-                takes the general form <nameliteral>hw_specification</nameliteral>).
+                a flavor extra specification (which takes the general form <codeph>hw:specification</codeph>), or an image property (which
+                takes the general form <codeph>hw_specification</codeph>).
                 This enables you to co-locate VM processes with AVS vSwitch processes for
                 high-performance networking. </p>
             <p><!-- For information about exposing multiple NUMA nodes to a VM, see <xref
@@ -49,9 +49,9 @@
                     </pd>
                 </plentry>
             </parml>
-            <p>For example, given flavor <nameliteral>numa.pinned.asym</nameliteral>, use the following command to assign virtual
+            <p>For example, given flavor <codeph>numa.pinned.asym</codeph>, use the following command to assign virtual
                 NUMA node 0 to host NUMA node 1:</p>
             <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>nova flavor-key numa.pinned.asym set hw:numa_node.0=1</userinput></codeblock>
         </context>
-    </taskbody>
+    </body>
 </task-wr>

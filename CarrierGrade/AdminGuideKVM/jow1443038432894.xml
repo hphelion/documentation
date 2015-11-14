@@ -10,7 +10,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N10022_N1001F_N10001">
             <draft-comment author="jowens">US62814 new topic</draft-comment>
             <p>For VXLAN connectivity between VMs, you must add appropriate endpoint
@@ -47,14 +47,14 @@
                         <cmd>In the <wintitle>Edit Interface</wintitle> dialog box, set the
                                 <uicontrol>IPv4 Addressing Mode</uicontrol> or the <uicontrol>IPv6
                                 Addressing Mode</uicontrol> to
-                            <nameliteral>Static</nameliteral>.</cmd>
-                        <info>
+                            <codeph>Static</codeph>.</cmd>
+                        
                             <fig id="fig_ckc_dhm_lt">
                                 <image href="jow1443040379028.image" id="image_xdf_phm_lt">
                                     <alt>TiS Edit Interface, IPv4 Static</alt>
                                 </image>
                             </fig>
-                        </info>
+                        
                     </substep>
                 </substeps>
             </step>
@@ -65,24 +65,24 @@
                         <cmd>On the <wintitle>Inventory Detail</wintitle> page, click the
                                 <uicontrol>Name</uicontrol> of the interface to open the
                                 <wintitle>Interface Detail</wintitle> page.</cmd>
-                        <info>
+                        
                             <fig id="fig_a4y_bjm_lt">
                                 <image href="jow1443041105867.image" id="image_jjh_cjm_lt">
                                     <alt>TiS Interface Detail page</alt>
                                 </image>
                             </fig>
-                        </info>
+                        
                     </substep>
                     <substep>
                         <cmd>Click <uicontrol>Create Address</uicontrol> to open the
                                 <wintitle>Create Address</wintitle> dialog box.</cmd>
-                        <info>
+                        
                             <fig id="fig_c33_xjm_lt">
                                 <image href="jow1442607685238.image" id="image_rf4_bkm_lt">
                                     <alt>TiS Create Address</alt>
                                 </image>
                             </fig>
-                        </info>
+                        
                     </substep>
                     <substep>
                         <cmd>Enter the IPv4 or IPv6 address and netmask (for example,
@@ -92,12 +92,12 @@
                     </substep>
                 </substeps>
                 <stepresult>
-                    <p>The new address is added to the <nameliteral>Address List</nameliteral>.</p>
+                    <p>The new address is added to the <codeph>Address List</codeph>.</p>
                 </stepresult>
             </step>
             <step id="step_N10152_N10038_N1001F_N10001">
                 <cmd>Unlock the compute node and wait for it to become available.</cmd>
             </step>
-        </steps>
-    </taskbody>
+        </ol>
+    </body>
 </task-wr>

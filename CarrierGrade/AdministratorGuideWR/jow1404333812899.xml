@@ -16,7 +16,7 @@
 -->
 
 
-    <title >Creating an In/Out Autoscaling Resource</title>
+    <title>Creating an In/Out Autoscaling Resource</title>
 
 
     <shortdesc >The <filepath >CPUScale.yaml</filepath> template

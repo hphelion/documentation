@@ -9,7 +9,7 @@
     <prolog><author/><author/>
         
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N10022_N1001F_N10001">
             <p>To create a tenant network using the CLI, use the following command:</p>
             
@@ -94,14 +94,14 @@
                 </plentry>
             </parml>
         </context>
-        <steps>
+        <ol>
             <step id="step_N10104_N10101_N1001F_N10001">
                 <cmd>List the tenant networks currently defined on the system.</cmd>
-                <info>
+                
                     <p>Select <uicontrol>Networks</uicontrol> in the
                         System Panel section of the <uicontrol>Admin</uicontrol> tab
                         to open the <wintitle>Networks</wintitle> page.</p>
-                </info>
+                
                 <stepresult>
                     <fig id="fig_N10122_N1011F_N10104_N10101_N1001F_N10001">
                         <image href="jow1404333693122.image" width="6in"/>
@@ -110,15 +110,15 @@
             </step>
             <step id="step_N10130_N10101_N1001F_N10001">
                 <cmd>Create the tenant network.</cmd>
-                <info>
-                    <p>From the <nameliteral>Networks</nameliteral> tab, click <nameliteral>Create
-                        Network</nameliteral> and fill in the form as illustrated below:</p>
+                
+                    <p>From the <codeph>Networks</codeph> tab, click <codeph>Create
+                        Network</codeph> and fill in the form as illustrated below:</p>
                     <fig id="fig_N10145_N10136_N1012F_N10101_N1001F_N10001">
                         <image href="jow1404333710921.image" placement="inline" width="4in"/>
                     </fig>
                     <p>Click <uicontrol>Create Network</uicontrol>
                         to commit the changes.</p>
-                </info>
+                
             </step>
             <step id="step_N101C8_N10159_N1001F_N10001">
                 <cmd>Create any required subnets.</cmd>
@@ -141,6 +141,6 @@
                     </substep>
                 </substeps>
             </step>
-        </steps>
-    </taskbody>
+        </ol>
+    </body>
 </task-wr>

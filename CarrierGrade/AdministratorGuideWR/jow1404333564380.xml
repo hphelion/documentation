@@ -16,7 +16,7 @@
  -->
 
 
-    <title >Network Requirements</title>
+    <title>Network Requirements</title>
 
 
     <shortdesc >The networking environment of the HP Helion OpenStack Carrier Grade incorporates up to
@@ -49,7 +49,7 @@
         <section id="section_N1001F_N1001C_N10001" >
 
 
-            <title >PXE Network</title>
+            <title>PXE Network</title>
 
 
             <p >The PXE network must be implemented as a single, dedicated, Layer 2
@@ -133,7 +133,7 @@
         <section id="section_N10030_N1001C_N10001" >
 
 
-            <title >Infrastructure Network</title>
+            <title>Infrastructure Network</title>
 
 
             <p >The infrastructure network must be implemented as a single,
@@ -163,7 +163,7 @@
         <section id="section_N10041_N1001C_N10001" >
 
 
-            <title >DCM Network</title>
+            <title>DCM Network</title>
 
 
             <p >You should ensure that the following services are available on the
@@ -250,7 +250,7 @@
         <section id="section_N1007A_N1001C_N10001" >
 
 
-            <title >Provider Network</title>
+            <title>Provider Network</title>
 
 
             <p >There are no specific requirements for network services to be available on the provider
@@ -274,7 +274,7 @@
         <section id="section_N100A2_N1001F_N10001" >
 
 
-            <title >Board Management CTL (IPMI Control) Network</title>
+            <title>Board Management CTL (IPMI Control) Network</title>
 
 
                 <p>External access to the

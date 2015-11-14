@@ -10,25 +10,25 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <p>This section presents a example patching workflow using the single patch
                 TITANIUM_14.10_PATCH_0001. </p>
         </context>
-        <steps>
+        <ol>
             <step id="step_N1002B_N10028_N1001C_N10001">
                 <cmd>Log in to the web administration interface as the
-                        <nameliteral>admin</nameliteral> user.</cmd>
+                        <codeph>admin</codeph> user.</cmd>
             </step>
             <step id="step_N10038_N10028_N1001C_N10001">
                 <cmd>Visit the <wintitle>Patches</wintitle> page to see the current patch
                     status.</cmd>
-                <info>
+                
                     <p>Click the <uicontrol>Admin</uicontrol> tab on the System Panel, select
                             <uicontrol>Inventory</uicontrol> to display the <wintitle>System
                             Inventory</wintitle> page, and then click the
                             <uicontrol>Patches</uicontrol> tab.</p>
-                </info>
+                
                 <stepresult>
                     <p>The <wintitle>Patches</wintitle> page is
                         displayed presenting the current status of all patches uploaded to the
@@ -43,13 +43,13 @@
             </step>
             <step id="step_N1007A_N10028_N1001C_N10001">
                 <cmd>Upload the patch file to the patch storage area.</cmd>
-                <info>
+                
                     <p>Click the <uicontrol>Upload
                             Patch</uicontrol> button to display an upload window from which you can
                         browse your workstation's file system to select the patch file. Press the
                             <uicontrol>Upload Patch</uicontrol> button once the
                         selection is done.</p>
-                </info>
+                
                 <stepresult>
                     <p>The patch file is available now in the patch storage area, but it has yet to
                         be applied to the cluster. This is reflected in the
@@ -63,14 +63,14 @@
             </step>
             <step id="step_N100B0_N10028_N1001C_N10001">
                 <cmd>Apply the patch.</cmd>
-                <info>
+                
                     <p>Click the <uicontrol>Apply
                             Patch</uicontrol> button associated with the patch. Alternatively,
                         select the patch first using the selection boxes on the left, and then click
                         the <uicontrol>Apply Patches</uicontrol> button at the top.
                         You can use this selection process to apply all patches, or a selected
                         subset, in a single operation.</p>
-                </info>
+                
                 <stepresult>
                     <p>The <wintitle>Patches</wintitle> page is updated to report the patch to be in
                         the <i>Partial-Apply</i> state.</p>
@@ -92,12 +92,12 @@
                 </stepresult>
             </step>
             <step id="step_N10107_N10028_N1001C_N10001">
-                <cmd>Install the patch on <nameliteral>controller-0</nameliteral>.</cmd>
+                <cmd>Install the patch on <codeph>controller-0</codeph>.</cmd>
                 <substeps id="substeps_gvv_wh3_rq">
                     <substep>
                         <cmd>Transfer active services to the standby controller.</cmd>
-                        <info>
-                            <p>Swact <nameliteral>controller-0</nameliteral> using the <option>Swact
+                        
+                            <p>Swact <codeph>controller-0</codeph> using the <option>Swact
                                     Host</option> option from the <uicontrol>More</uicontrol> button
                                 associated with the host.</p>
                             <fig id="fig_rm4_533_rq">
@@ -108,13 +108,13 @@
                             <note id="note_N1013D_N10119_N10112_N1010E_N10103_N10028_N1001C_N10001">
                                 <p>Access to the web administration interface may be lost briefly
                                     during the active controller transition. You may have to log in
-                                    as user <nameliteral>admin</nameliteral> again.</p>
+                                    as user <codeph>admin</codeph> again.</p>
                             </note>
-                        </info>
+                        
                         <stepresult>
-                            <p>After a suitable delay, <nameliteral>controller-1</nameliteral>
+                            <p>After a suitable delay, <codeph>controller-1</codeph>
                                 becomes the active controller and
-                                    <nameliteral>controller-0</nameliteral> is the standby
+                                    <codeph>controller-0</codeph> is the standby
                                 controller. It is safe then to install the patch.</p>
                             <fig id="fig_uww_tj3_rq">
                                 <image href="psa1420752134726.image" id="image_wdr_bk3_rq" width="550">
@@ -125,10 +125,10 @@
                     </substep>
                     <substep>
                         <cmd>Install the patch.</cmd>
-                        <info>
+                        
                             <p>Select the <option>Install Patches</option> option from the
                                     <uicontrol>More</uicontrol> button associated with
-                                    <nameliteral>controller-0</nameliteral>. </p>
+                                    <codeph>controller-0</codeph>. </p>
                             <fig id="fig_cxx_hl3_rq">
                                 <image href="psa1420752753002.image" id="image_mh4_kl3_rq" width="150">
                                     <alt>TiS install patches option</alt>
@@ -143,9 +143,9 @@
                                     <alt>TiS patches confirm installation</alt>
                                 </image>
                             </fig>
-                        </info>
+                        
                         <stepresult>
-                            <p>The patch is now installed on <nameliteral>controller-0</nameliteral> which resumes operation as the
+                            <p>The patch is now installed on <codeph>controller-0</codeph> which resumes operation as the
                                 standby controller.</p>
                             <fig id="fig_el2_4p3_rq">
                                 <image href="psa1420754739770.image" id="image_nd4_tp3_rq" width="550">
@@ -155,13 +155,13 @@
                         </stepresult>
                     </substep>
                     <substep>
-                        <cmd>Let <nameliteral>controller-0</nameliteral> resume the active controller role.</cmd>
-                        <info>
+                        <cmd>Let <codeph>controller-0</codeph> resume the active controller role.</cmd>
+                        
                             <p>Select the <option>Swact
                                     Host</option> option again on either controller to transition
-                                    <nameliteral>controller-0</nameliteral> to the
+                                    <codeph>controller-0</codeph> to the
                                 active controller role. </p>
-                        </info>
+                        
                         <stepresult>
                             <p>The updated host list looks then as follows:</p>
                             <fig id="fig_grm_ys3_rq">
@@ -175,18 +175,18 @@
                 </substeps>
             </step>
             <step id="step_N1020A_N10028_N1001C_N10001">
-                <cmd>Install the patch on <nameliteral>controller-1</nameliteral>.</cmd>
-                <info>
+                <cmd>Install the patch on <codeph>controller-1</codeph>.</cmd>
+                
                     <p>Select the <option>Install Patches</option>
                         option from the <uicontrol>More</uicontrol> button
-                        associated with <nameliteral>controller-1</nameliteral> in
+                        associated with <codeph>controller-1</codeph> in
                         the <wintitle>Hosts</wintitle> window, and wait for the host to resume its
                         standby controller role.</p>
-                </info>
+                
             </step>
             <step id="step_N1022B_N10028_N1001C_N10001">
                 <cmd>Verify the state of the patch.</cmd>
-                <info>
+                
                     <p>Visit the <wintitle>Patches</wintitle> page again. The patch is now in the
                             <i>Applied</i> state as illustrated below.</p>
                     <fig id="fig_mvq_153_rq">
@@ -194,15 +194,15 @@
                             <alt>TiS patches applied</alt>
                         </image>
                     </fig>
-                </info>
+                
             </step>
-        </steps>
-        <result id="result_N1024E_N1001C_N10001">
+        </ol>
+        Host
             <p>The patch is applied now, all affected hosts have been updated.</p>
             <p>Patches can be removed using the <uicontrol>Remove
                     Patches</uicontrol> button from the <wintitle>Patches</wintitle> page. The workflow is similar to the one presented in this
                 section, with the exception that patches are being removed from each host instead of
                 being applied.</p>
         </result>
-    </taskbody>
+    </body>
 </task-wr>

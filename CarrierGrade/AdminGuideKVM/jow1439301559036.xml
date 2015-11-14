@@ -10,7 +10,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <p>To view information for a provider network from the CLI, use the following
                 command:</p>
@@ -85,7 +85,7 @@
             <p>To view the information from the web administration interface, follow
                 these steps:</p>
         </context>
-        <steps>
+        <ol>
             <step id="step_N100A9_N100A6_N1001C_N10001">
                 <cmd>From the left pane menu select <menucascade>
                         <uicontrol>Admin</uicontrol>
@@ -100,7 +100,7 @@
             <step id="step_N100CF_N100A6_N1001C_N10001">
                 <cmd>Click the name of the provider network to open the <wintitle>Provider Network
                         Overview</wintitle> page.</cmd>
-                <info>
+                
                     <p>Details for the provider network are displayed, including any associated
                         segmentation ranges and tenant networks.</p>
                     <fig id="fig_b5c_j1k_zs">
@@ -108,8 +108,8 @@
                             <alt>TiS Provider Network Overview for Admin Guide</alt>
                         </image>
                     </fig>
-                </info>
+                
             </step>
-        </steps>
-    </taskbody>
+        </ol>
+    </body>
 </task-wr>

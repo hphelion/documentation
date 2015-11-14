@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333737981" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
-    <title ixia_locid="1">The OAM Network</title>
-    <shortdesc ixia_locid="2">The OAM (operations, administration, and management) network enables
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="jow1404333737981">
+    <title>The OAM Network</title>
+    <shortdesc>The OAM (operations, administration, and management) network enables
         the web administration interface, the command-line management clients, SNMP interface, and
         the REST APIs to manage the HP Helion OpenStack Carrier Grade cluster.</shortdesc>
     <prolog>
-        <author ixia_locid="18">Jim Owens</author>
+        <author>Jim Owens</author>
         <author></author>
     </prolog>
-    <conbody>
-        <p ixia_locid="19">On systems where an optional board management network is configured for external access,
+    <body>
+        <p>On systems where an optional board management network is configured for external access,
             the OAM network also provides access to the board management modules.</p>
-        <p ixia_locid="4">You must consider the following guidelines:</p>
+        <p>You must consider the following guidelines:</p>
         <ul id="ul_uj3_yk2_4n">
-            <li ixia_locid="5">
-                <p ixia_locid="373">Deploy proper firewall mechanisms to access this network. Ensuring
+            <li>
+                <p>Deploy proper firewall mechanisms to access this network. Ensuring
                     that access to the HP Helion OpenStack Carrier Grade management interfaces is not compromised
                     should be of primary concern.</p>
-                <p ixia_locid="374"><draft-comment author="jowens" ixia_locid="375">US65292 added
+                <p><draft-comment author="jowens">US65292 added
                         para about default firewall and optional rules file:</draft-comment>Titanium
-                    Server includes a default firewall for the OAM network, using the <nameliteral ixia_locid="376">Netfilter</nameliteral> framework. You can optionally
+                    Server includes a default firewall for the OAM network, using the <codeph>Netfilter</codeph> framework. You can optionally
                     configure the system to support additional rules. For more information, see the
-                        <cite ixia_locid="372">HP Helion OpenStack Carrier Grade Installation Guide: Firewall
+                        <cite>HP Helion OpenStack Carrier Grade Installation Guide: Firewall
                         Options</cite>.</p>
             </li>
-            <li ixia_locid="7">
-                <p ixia_locid="8">Consider whether the OAM management network needs access to the
+            <li>
+                <p>Consider whether the OAM management network needs access to the
                     open Internet. Limiting access to an internal network might be advisable,
                     keeping in mind that access to configured DNS and NTP servers may still be
                     needed.</p>
             </li>
-            <li ixia_locid="9">
-                <p ixia_locid="10">VLAN tagging is supported, enabling this network to share an
+            <li>
+                <p>VLAN tagging is supported, enabling this network to share an
                     interface with the management or infrastructure networks.</p>
             </li>
-            <li ixia_locid="11">
-                <p ixia_locid="12">For the IPv4 address plan, consider the following:</p>
+            <li>
+                <p>For the IPv4 address plan, consider the following:</p>
                 <ul id="ul_ipp_qs2_4n">
-                    <li ixia_locid="13">
-                        <p ixia_locid="14">The OAM IP floating address is the only address that
+                    <li>
+                        <p>The OAM IP floating address is the only address that
                             needs to be visible externally. Therefore you must plan for valid
                             definitions of its IPv4 subnet and default gateway.</p>
                     </li>
-                    <li ixia_locid="15">
-                        <p ixia_locid="16">The physical IPv4 addresses for the controllers don't
+                    <li>
+                        <p>The physical IPv4 addresses for the controllers don't
                             need to be visible externally, unless you plan to use them during
-                                <nameliteral ixia_locid="17">ssh</nameliteral> sessions to prevent potential service
+                                <codeph>ssh</codeph> sessions to prevent potential service
                             breaks during the connection. You still need to plan for their IPv4
                             subnet, but you can limit access to them as required.</p>
                     </li>
                 </ul>
             </li>
-            <li ixia_locid="20">
-                <p conref="jow1419267499106.xml#jow1419267499106/multicast_in_use" ixia_locid="21"/>
+            <li>
+                <p conref="jow1419267499106.xml#jow1419267499106/multicast_in_use"/>
             </li>
         </ul>
-    </conbody>
-</concept-wr>
+    </body>
+</topic>

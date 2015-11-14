@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <concept-wr id="jow1418931203210" xml:lang="en-us">
 <!-- Modification History
 
@@ -10,7 +10,7 @@
  <prolog><author/>
   <author/>
  </prolog>
- <conbody>
+ <body>
   <p> You can change the resource pool in several ways:</p>
   <ul id="ul_bb3_1mk_lq">
    <li>
@@ -33,5 +33,5 @@
   </note>
   <p>Complete instructions for adding a compute node are provided in the <cite>HP Helion OpenStack Carrier Grade Software Installation Guide: Initializing and Configuring
     Compute Nodes</cite>.</p>
- </conbody>
-</concept-wr>
+ </body>
+</topic>

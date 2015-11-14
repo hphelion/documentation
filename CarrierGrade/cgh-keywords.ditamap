@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en" linking="none" locktitle="no">
+ <title>HPE Helion Keywords</title>
+ 
+ <keydef keys="kw-hos">
+  <topicmeta><keywords><keyword>HPE Helion OpenStack</keyword></keywords></topicmeta>        
+ </keydef>
+ 
+ <keydef keys="kw-hos-tm">
+  <topicmeta><keywords><keyword>HPE Helion <tm tmtype="reg">OpenStack</tm></keyword></keywords></topicmeta>        
+ </keydef>
+ 
+ <keydef keys="kw-hos-version">
+  <topicmeta><keywords><keyword>2.0</keyword></keywords></topicmeta>        
+ </keydef>  
+ 
+</map>

@@ -10,7 +10,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <p>Physical volumes provide storage using local disks. You can use the
                 web administration or the CLI to manage them. For web administration interface
@@ -27,21 +27,21 @@
         <context id="context_N10042_N1001F_N10001">
             <p>The following CLI commands are available for managing physical volumes.</p>
             <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>host-pv-add <varname>hostname</varname> <varname>groupname</varname> <varname>disk_uuid</varname></userinput></codeblock>
-            <p>where <nameliteral>groupname</nameliteral> is the name of the local volume group to
+            <p>where <codeph>groupname</codeph> is the name of the local volume group to
                 which the physical volume is added.</p>
             <note id="note_N1007A_N1004F_N1001F_N10001">
-                <p>The only valid <nameliteral>groupname</nameliteral> is
-                        <nameliteral>nova-local</nameliteral>.</p>
+                <p>The only valid <codeph>groupname</codeph> is
+                        <codeph>nova-local</codeph>.</p>
             </note>
-            <p>When <nameliteral>disk_uuid</nameliteral> indicates
+            <p>When <codeph>disk_uuid</codeph> indicates
                 the root disk, the physical volume uses a system-designated partition on the root
                 disk. For any other disk, the physical volume uses the entire disk.</p>
             <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>host-pv-delete <varname>hostname</varname> <varname>nova-local</varname> <varname>disk_uuid</varname></userinput></codeblock>
             <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>host-pv-list <varname>hostname</varname></userinput></codeblock>
             <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>host-pv-show <varname>hostname</varname></userinput></codeblock>
         </context>
-        <postreq id="postreq_N100E8_N1001F_N10001">
+        <p id="p_N100E8_N1001F_N10001">
             <p>To configure VMs to use local storage, see <xref href="jow1426181040008.xml"/>.</p>
-        </postreq>
-    </taskbody>
+        </p>
+    </body>
 </task-wr>

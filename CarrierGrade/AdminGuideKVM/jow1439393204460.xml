@@ -9,11 +9,11 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001F_N1001C_N10001">
             <p>The use of Cinder volumes is recommended for fast instance booting.</p>
         </context>
-        <steps>
+        <ol>
             <step id="step_N1002B_N10028_N1001C_N10001">
                 <cmd>Log in as the appropriate tenant.</cmd>
             </step>
@@ -28,12 +28,12 @@
             </step>
             <step id="step_N10059_N10028_N1001C_N10001">
                 <cmd>Complete the <wintitle>Create Volume</wintitle> form.</cmd>
-                <info>
+                
                     <p>For an example, see the <cite>HP Helion OpenStack Carrier Grade Reference Deployment Scenarios:
                             Creating a Volume</cite>.</p>
                     <!-- p>For settings information, see <xref href="jow1439393574682.xml"/>.</p -->
-                </info>
+                
             </step>
-        </steps>
-    </taskbody>
+        </ol>
+    </body>
 </task-wr>

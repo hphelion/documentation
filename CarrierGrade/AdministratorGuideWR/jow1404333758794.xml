@@ -3,7 +3,7 @@
 <topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333758794" xml:lang="en-us">
     <!-- Modification History
    -->
-    <title >Inventory Detail</title>
+    <title>Inventory Detail</title>
     <shortdesc >From the <wintitle >Inventory Detail</wintitle> page you
         can see detailed information about a host, and use it to define hardware profiles that can
         be used across the cluster.</shortdesc>

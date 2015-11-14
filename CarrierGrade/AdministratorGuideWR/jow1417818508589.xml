@@ -4,7 +4,7 @@
 <!-- Modification History
 
  -->
- <title >Resource Scaling (Autoscaling)</title>
+ <title>Resource Scaling (Autoscaling)</title>
  <shortdesc >You can use Heat to reassign stack resources automatically to meet changing
   conditions.</shortdesc>
  <prolog>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <concept-wr id="psa1412702861873" xml:lang="en-us">
 <!-- Modification History
 
@@ -10,7 +10,7 @@
  <prolog><author/>
   
  </prolog>
- <conbody>
+ <body>
   <p>With the proper configuration in place, DHCP services can be provided by the built-in Neutron
    DHCP server, by a standalone server available from an external network infrastructure, or by
    both.</p>
@@ -109,5 +109,5 @@ my-new-vm</userinput></codeblock>
     </li>
    </ol>
   </section>
- </conbody>
-</concept-wr>
+ </body>
+</topic>

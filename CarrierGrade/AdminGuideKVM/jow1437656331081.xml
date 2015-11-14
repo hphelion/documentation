@@ -501,7 +501,7 @@ Images restore complete</systemoutput></codeblock>
                         </stepresult>
                     </step>
         </steps>
-                <result id="result" ixia_locid="130">
+                Host
                     <p ixia_locid="131">The HP Helion OpenStack Carrier Grade is fully restored. The state of the
                         system, including storage resources and virtual machines, is identical to
                         the state the cluster was in when the backup procedure took place.</p>

@@ -7,7 +7,7 @@
 <topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333731990" xml:lang="en-us">
 
 
-    <title >Ethernet Interfaces</title>
+    <title>Ethernet Interfaces</title>
 
 
     <shortdesc >Ethernet interfaces, both physical and virtual, play a key role in the overall
@@ -154,7 +154,7 @@
         <section id="section_N1006F_N1001A_N10001" >
 
 
-            <title >About LAG/AE Interfaces</title>
+            <title>About LAG/AE Interfaces</title>
 
 
             <p >Ethernet interfaces in a LAG group should be attached to the same L2

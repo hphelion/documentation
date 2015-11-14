@@ -4,7 +4,7 @@
 <!-- Modification History
 
  -->
- <title >Compute Node Management</title>
+ <title>Compute Node Management</title>
  <shortdesc >The compute nodes in HP Helion OpenStack Carrier Grade form a resource pool for hosting
   guest instances. You can manage this pool by managing the hosts.</shortdesc>
  <prolog>

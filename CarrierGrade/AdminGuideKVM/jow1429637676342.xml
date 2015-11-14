@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <concept-wr id="jow1429637676342" xml:lang="en-us">
 <!-- Modification History
 
@@ -10,14 +10,14 @@
  <prolog><author/>
  
  </prolog>
- <conbody>
+ <body>
   <p>The <wintitle>Routers</wintitle> page accessed from <menucascade>
     <uicontrol>Admin</uicontrol>
     <uicontrol>System</uicontrol>
     <uicontrol>Routers</uicontrol>
    </menucascade> provides central control of all virtual routers. From this page, you can edit
-   router names, change router types, change the status of routers (<nameliteral>Up</nameliteral> or
-    <nameliteral>Down</nameliteral>), and delete routers. </p>
+   router names, change router types, change the status of routers (<codeph>Up</codeph> or
+    <codeph>Down</codeph>), and delete routers. </p>
   <p>Only users with administrative privileges can convert a centralized router to a distributed
    router.</p>
   <note id="note_N10043_N1001C_N10001">
@@ -27,7 +27,7 @@
    routers on the tenant associated with the
    user.<!-- You can also change the router type for other tenants to Distributed, an option that is not available when you define the router type as a non-admin tenant. I don't understand this. Greg had some specualtions, but pointed out that this is just how OpenStack does it. --></p>
   <p>As an alternative to the web administration interface, you can use the CLI.  The following
-   examples assume you have become the <nameliteral>admin</nameliteral> user.</p>
+   examples assume you have become the <codeph>admin</codeph> user.</p>
   <ul id="ul_en4_bbd_5r">
    <li>
     <p>To list routers:</p>
@@ -54,5 +54,5 @@
 <systemoutput>~(keystone_admin)$ </systemoutput><userinput>neutron router-delete <varname>router_id</varname></userinput></codeblock>
    </li>
   </ul>
- </conbody>
-</concept-wr>
+ </body>
+</topic>

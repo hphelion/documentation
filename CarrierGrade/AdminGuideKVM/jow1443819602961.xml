@@ -10,7 +10,7 @@
     <prolog><author/>
         <author/>
     </prolog>
-    <taskbody>
+    <body>
         <context id="context_N1001E_N1001B_N10001">
             <p><draft-comment author="jowens">US64069 new
                     topic</draft-comment>For more information about sensors and sensor groups, see
@@ -25,10 +25,10 @@
                 <cmd>Select the <uicontrol>Sensors</uicontrol> tab.</cmd>
             </step>
             <step id="step_N10063_N10040_N1001F_N10001">
-                <cmd>In the <nameliteral>Sensor Groups</nameliteral>
+                <cmd>In the <codeph>Sensor Groups</codeph>
                     list, click <uicontrol>Edit SensorGroup</uicontrol> for the
                     group you want to configure. </cmd>
-                <info>
+                
                     <fig id="fig_nlk_pjf_4t">
                         <image href="jow1443885204993.image" id="image_qwz_3kf_4t">
                             <alt>TiS Edit SensorGroup</alt>
@@ -50,37 +50,37 @@
                             <dt>Sensor Group Critical Actions</dt>
                             <dd>
                                 <p>The action to take if the sensor status is
-                                        <nameliteral>Critical</nameliteral>. If this
-                                    is set to <nameliteral>Alarm</nameliteral>, then
+                                        <codeph>Critical</codeph>. If this
+                                    is set to <codeph>Alarm</codeph>, then
                                     when this status is reported, a corresponding HP Helion OpenStack Carrier Grade
                                     alarm is generated, and the host availability is set to
-                                        <nameliteral>Degraded</nameliteral>. </p>
+                                        <codeph>Degraded</codeph>. </p>
                             </dd>
                         </dlentry>
                         <dlentry>
                             <dt>Sensor Group Major Actions</dt>
                             <dd>
                                 <p>The action to take if the sensor status is
-                                        <nameliteral>Major</nameliteral>. If this is
-                                    set to <nameliteral>Alarm</nameliteral>, then
+                                        <codeph>Major</codeph>. If this is
+                                    set to <codeph>Alarm</codeph>, then
                                     when this status is reported, a  corresponding HP Helion OpenStack Carrier Grade
                                     alarm is generated, and the host availability is set to
-                                        <nameliteral>Degraded</nameliteral>.</p>
+                                        <codeph>Degraded</codeph>.</p>
                             </dd>
                         </dlentry>
                         <dlentry>
                             <dt>Sensor Group Minor Actions</dt>
                             <dd>
                                 <p>The action to take if the sensor status is
-                                        <nameliteral>Minor</nameliteral>. If this is
-                                    set to <nameliteral>Alarm</nameliteral>, then
+                                        <codeph>Minor</codeph>. If this is
+                                    set to <codeph>Alarm</codeph>, then
                                     when this status is reported,  a  corresponding HP Helion OpenStack Carrier Grade
                                     alarm is generated.</p>
                             </dd>
                         </dlentry>
                     </dl>
-                </info>
+                
             </step>
-        </steps>
-    </taskbody>
+        </ol>
+    </body>
 </task-wr>

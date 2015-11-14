@@ -16,7 +16,7 @@
 -->
 
 
-    <title >Adding an SNMP Community String</title>
+    <title>Adding an SNMP Community String</title>
 
 
     <shortdesc >To enable SNMP services you need to define one or more SNMP community strings using
