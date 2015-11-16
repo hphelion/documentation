@@ -74,8 +74,8 @@
         navtitle="Encryption of Passwords and Sensitive Data" locktitle="yes"/>
       <topicref href="helion/security/using_apparmor.dita"
         navtitle="Refining Access Control with AppArmor" locktitle="yes"/>
-      <topicref href="helion/security/arcsight.dita" navtitle="Threat Monitoring and Integration with HPE ArcSight"
-        locktitle="yes"/>
+      <topicref href="helion/security/arcsight.dita"
+        navtitle="Threat Monitoring and Integration with HPE ArcSight" locktitle="yes"/>
     </topichead>
     <!-- END - SECURITY -->
     <!-- BEGIN ADMINISTRATION -->
@@ -90,7 +90,8 @@
         navtitle="High Availability Concepts" locktitle="yes"/>
       <topicref href="helion/administration/create_hdp_servicenet.dita"
         navtitle="Creating the Helion Development Platform Service Net" locktitle="yes"/>
-      <topicref href="helion/administration/configure_firewall.dita" navtitle="Configuring the HPE Helion OpenStack Firewall" locktitle="yes"/>
+      <topicref href="helion/administration/configure_firewall.dita"
+        navtitle="Configuring the HPE Helion OpenStack Firewall" locktitle="yes"/>
       <topicref href="helion/administration/configure_monitoring.dita"
         navtitle="Configuring the Monitoring Service" locktitle="yes"/>
       <topicref href="helion/administration/configure_logging.dita"
@@ -176,13 +177,15 @@
       <topicref href="helion/networking/networking_overview.dita" navtitle="Networking Service"
         locktitle="yes">
         <mapref href="http://docs.hpcloud.com/#devplatform/2.0/installation/install_dnsaas.html"
-          navtitle="Installing the DNS Service" locktitle="yes" format="html" scope="external"/>
+          scope="external" format="html" navtitle="Installing the DNS Service"/>
         <topicref href="helion/networking/lbaas_admin.dita"
           navtitle="Configuring Load Balancing as a Service (LBaaS)" locktitle="yes"/>
         <topicref href="helion/networking/multinetwork.dita"
           navtitle="Configuring Multiple External Networks" locktitle="yes"/>
-        <topicref href="helion/administration/neutron_add_thirdparty_plugin_driver.dita" navtitle="Adding a 3rd Party Driver or Plugin to
-          Neutron" locktitle="yes" toc="no"/>
+        <topicref href="helion/administration/neutron_add_thirdparty_plugin_driver.dita"
+          navtitle="Adding a 3rd Party Driver or Plugin to
+          Neutron" locktitle="yes"
+          toc="no"/>
       </topicref>
       <!-- BEGIN - Administration/EON -->
       <topicref href="helion/esx/eon_service.dita" navtitle="ESX ON-Boarding (EON) Service"
@@ -407,7 +410,7 @@
         locktitle="yes"/>
       <topicref href="helion/userguide/create_network.dita" navtitle="Creating a Private Network"
         locktitle="yes"/>
-      
+
       <topicref href="helion/userguide/lbaas.dita"
         navtitle="Using Load Balancing as a Service (LBaaS)" locktitle="yes"/>
       <!--  LBaaS, FWaaS, VPNaaS -->
