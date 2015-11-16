@@ -5,7 +5,7 @@
         
 -->
     <title ixia_locid="1">Initializing Controller-0 from a Local Device</title>
-    <shortdesc ixia_locid="2"> You can initialize <nameliteral ixia_locid="3">controller-0</nameliteral> using the HP Helion OpenStack Carrier Grade bootable ISO image. </shortdesc>
+    <shortdesc ixia_locid="2"> You can initialize <i>controller-0</i> using the HP Helion OpenStack Carrier Grade bootable ISO image. </shortdesc>
     <prolog>
         <author ixia_locid="4">Jim Owens</author>
         <author ixia_locid="5">Pedro Sanchez</author>
