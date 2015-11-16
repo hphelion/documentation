@@ -41,7 +41,7 @@
                         </thead>
                         <tbody>
                             <row>
-                                <entryHostnameend="comments" namest="prompt">
+                                <entry nameend="comments" namest="prompt">
                                     <p id="date_time_section" ixia_locid="535"><nameliteral ixia_locid="536">System date and time:</nameliteral></p>
                                 </entry>
                             </row>
@@ -72,7 +72,7 @@
                                 </entry>
                             </row>
                             <row>
-                                <entryHostnameend="comments" namest="prompt">
+                                <entry nameend="comments" namest="prompt">
                                     <p id="storage_section" ixia_locid="538"><nameliteral ixia_locid="539">Storage:</nameliteral></p>
                                 </entry>
                             </row>
@@ -84,18 +84,18 @@
                                 <entry ixia_locid="374">
                                     <p id="backend" ixia_locid="259">The storage resource type for
                                         VMs and VM data.</p>
-                                    <note id="note_N10109_N100AF_N100A2_N1006D_N10041_N1003D_N10027_N10024_N10001"Hosttype="caution">
+                                    <note id="note_N10109_N100AF_N100A2_N1006D_N10041_N1003D_N10027_N10024_N10001" type="caution">
                                         <p ixia_locid="360">The Cinder storage type cannot be
                                             changed after the system is installed.</p>
                                     </note>
                                     <ul id="backend_Quick">
                                         <li ixia_locid="260">
                                             <p ixia_locid="261">For a system with storage nodes,
-                                                type <userinput ixia_locid="262">ceph</userinput>.</p>
+                                                type ceph.</p>
                                         </li>
                                         <li ixia_locid="263">
                                             <p ixia_locid="264">For a system without storage nodes,
-                                                type <userinput ixia_locid="265">lvm</userinput>.
+                                                type lvm.
                                                 (This uses shares on the controller secondary
                                                 disk).</p>
                                         </li>
@@ -237,7 +237,7 @@
                                 </entry>
                             </row>
                             <row>
-                                <entryHostnameend="comments" namest="prompt">
+                                <entry nameend="comments" namest="prompt">
                                     <p id="mgmt_network_section" ixia_locid="484"><nameliteral ixia_locid="485">Management
                                             Network:</nameliteral></p>
                                 </entry>
@@ -359,7 +359,7 @@
                                 </entry>
                             </row>
                             <row>
-                                <entryHostnameend="comments" namest="prompt">
+                                <entry nameend="comments" namest="prompt">
                                     <p id="bd_mgmt_network_section" ixia_locid="278"><nameliteral ixia_locid="349">Board
                                             Management Control Network:</nameliteral></p>
                                 </entry>
@@ -380,7 +380,7 @@
                                     <note id="config_bd_mgmt_OAM_note" ixia_locid="456">
                                         <p ixia_locid="457">To use an external baseboard management network
                                             (accessible from the OAM network), type
-                                                <userinput ixia_locid="458">N</userinput>. For more information, see
+                                                N. For more information, see
                                             the <cite ixia_locid="459">HP Helion OpenStack Carrier Grade Administration Guide: The
                                                 Board Management Network.</cite></p>
                                     </note>
@@ -433,7 +433,7 @@
                                 </entry>
                             </row>
                             <row>
-                                <entryHostnameend="comments" namest="prompt">
+                                <entry nameend="comments" namest="prompt">
                                     <p id="infra_network_section" ixia_locid="279"><nameliteral ixia_locid="350">Infrastructure
                                             Network:</nameliteral></p>
                                 </entry>
@@ -451,7 +451,7 @@
                                         infrastructure network.</p>
                                     <p id="config_infra_if" ixia_locid="378">For a system using Ceph storage, an
                                         infrastructure network is required.</p>
-                                    <note id="infra_no_change_after_install"Hosttype="caution">
+                                    <note id="infra_no_change_after_install" type="caution">
                                         <p ixia_locid="418">This choice cannot be changed after the system is
                                             installed.</p>
                                     </note>
@@ -576,7 +576,7 @@
                                 </entry>
                             </row>
                             <row>
-                                <entryHostnameend="comments" namest="prompt">
+                                <entry nameend="comments" namest="prompt">
                                     <p id="ext_OAM_section" ixia_locid="280"><nameliteral ixia_locid="351">External OAM
                                             Network:</nameliteral></p>
                                 </entry>
@@ -722,7 +722,7 @@
                                 </entry>
                             </row>
                             <row>
-                                <entryHostnameend="comments" namest="prompt">
+                                <entry nameend="comments" namest="prompt">
                                     <p id="DNS_section" ixia_locid="333"><nameliteral ixia_locid="352">Domain Name
                                             System (DNS):</nameliteral></p>
                                 </entry>
@@ -741,7 +741,7 @@
                                 </entry>
                             </row>
                             <row>
-                                <entryHostnameend="comments" namest="prompt">
+                                <entry nameend="comments" namest="prompt">
                                     <p id="NTP_section" ixia_locid="334"><nameliteral ixia_locid="353">Network Time
                                             Protocol (NTP):</nameliteral></p>
                                 </entry>
@@ -759,7 +759,7 @@
                                             the HP Helion OpenStack Carrier Grade cluster.</ph>
                                         <ph id="timeservers_ntp_pool" ixia_locid="393">The default
                                             values are addresses of public NTP servers available
-                                            from the <xref format="html" href="http://www.pool.ntp.org"Hostscope="external">NTP Pool Project</xref>.</ph>
+                                            from the <xref format="html" href="http://www.pool.ntp.org" scope="external">NTP Pool Project</xref>.</ph>
                                     </p>
                                     <p id="timeservers_Install" ixia_locid="366">The use of an NTP
                                         server is recommended. If no NTP server is available, the
@@ -770,7 +770,7 @@
                                 </entry>
                             </row>
                             <row>
-                                <entryHostnameend="comments" namest="prompt">
+                                <entry nameend="comments" namest="prompt">
                                     <p id="license_section" ixia_locid="427"><nameliteral ixia_locid="429">Licensing:</nameliteral></p>
                                 </entry>
                             </row>
@@ -809,9 +809,11 @@
                                 <entry ixia_locid="565">
                                     <p id="firewall_desc" ixia_locid="566">An option to change the
                                         firewall rules for the OAM network. The default rules
-                                        included with HP Helion OpenStack Carrier Grade are recommended for most
-                                        applications. If required, you can override or augment them.
-                                        For more information, see <xref href="jow1443627833422.xml" ixia_locid="572"/>.</p>
+                                        included with HP Helion OpenStack Carrier Grade are
+                                        recommended for most applications. If required, you can
+                                        override or augment them. For more information, see <xref
+                                            href="jow1443627833422.xml" ixia_locid="572">Firewall
+                                            Options</xref>.</p>
                                 </entry>
                             </row>
                             <row>
@@ -835,7 +837,7 @@
                                         secure REST API access. This certificate is provided for
                                         evaluation purposes, and is not recommended for deployed
                                         systems.</p>
-                                    <note id="api_https_caution"Hosttype="caution">
+                                    <note id="api_https_caution" type="caution">
                                         <p ixia_locid="461">For the current release, the certificate selected during
                                             controller configuration cannot be updated after installation.</p>
                                     </note>
@@ -866,7 +868,7 @@
                                 </entry>
                             </row>
                             <row>
-                                <entryHostnameend="comments" namest="prompt">
+                                <entry nameend="comments" namest="prompt">
                                     <p id="auth_section" ixia_locid="346"><nameliteral ixia_locid="355">Authentication:</nameliteral></p>
                                 </entry>
                             </row>

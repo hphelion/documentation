@@ -4,7 +4,7 @@
 <title ixia_locid="207">[RC] taskbody: TiS Initializing Controller-0 [for main trunk]</title>
 <rcbody>
         <taskbody id="taskbody_N10011_N1000E_N10001">
-            
+            <prereq id="prereq_N1002B_N10028_N10001" ixia_locid="166" class="- topic/section task/prereq ">
                 <p ixia_locid="169">Before installing the software on the first controller, ensure
                     the following:</p>
                 <ul id="ul_p5w_hwh_g4">
@@ -30,33 +30,33 @@
                 </ul>
             </prereq>
             <steps id="all_steps">
-                 
+            <step>     
                     <cmd ixia_locid="62">Power on the host to be configured as <nameliteral ixia_locid="184">controller-0</nameliteral>.</cmd>
                 </step>
-                 
+                <step>     
                     <cmd ixia_locid="12">Configure the host BIOS boot sequence to boot from a USB
                         removable storage device.</cmd>
                 </step>
-                 
+                <step>
                     <cmd ixia_locid="15">Insert the USB flash drive and boot the host.</cmd>
                     <stepresult ixia_locid="16">
                         <p ixia_locid="17">The installer welcome screen appears.</p>
                         
-                            <title ixia_locid="19">HP Helion OpenStack Carrier Grade Installer Welcome Screen</title>
-                            <image href="jow1433084986736.image" id="image_yzn_skg_fs"Hostproduct="tis_not_small">
+                            <p ixia_locid="19">HP Helion OpenStack Carrier Grade Installer Welcome Screen</p>
+                            <image href="jow1433084986736.image" id="image_yzn_skg_fs">
                                 <alt ixia_locid="209">TiS Installer screen (basic)</alt>
                             </image>
-                            <image href="jow1404333487370.image" id="image_wvh_5kg_fs"Hostproduct="tis_small">
+                            <image href="jow1404333487370.image" id="image_wvh_5kg_fs">
                                 <alt ixia_locid="211">TiS Installer screen with two-server configuration</alt>
                             </image>
-                        </fig>
+                        
                     </stepresult>
                 </step>
-                 
+                <step>
                     <cmd ixia_locid="22">Select the type of installation and the display device to
                         be used during initialization, and then press <uicontrol ixia_locid="23">Enter</uicontrol>.</cmd>
                     <info ixia_locid="145">
-                        <pHostproduct="tis_small">To install a standalone controller, select from the
+                        <p>To install a standalone controller, select from the
                             first group.</p>
                         <dl>
                             <dlentry ixia_locid="187">
@@ -87,7 +87,7 @@
                                 </dd>
                             </dlentry>
                         </dl>
-                        <pHostproduct="tis_small">To install a minimal two-server configuration, in which
+                        <p>To install a minimal two-server configuration, in which
                             the controller and compute functions are implemented on a single host,
                             select from the second group.</p>
                         <dl product="tis_small">
@@ -131,7 +131,7 @@ rootfs_device=sda initrd=initrd</codeblock></p>
                         </note>
                     </info>
                 </step>
-                 
+                <step>
                     <cmd ixia_locid="71">Monitor the initialization until it is complete.</cmd>
                     <info ixia_locid="72">
                         <p ixia_locid="73">The installer initializes the target hard drive with the
@@ -139,11 +139,11 @@ rootfs_device=sda initrd=initrd</codeblock></p>
                             initiated on the host. </p>
                     </info>
                 </step>
-                 
+                <step>
                     <cmd importance="high" ixia_locid="192">Immediately remove the USB flash drive
                         from the host to ensure that the host reboots from the hard drive.</cmd>
                     <info ixia_locid="195">
-                        <note id="note_N100C5_N100C2_N100B8_N1004B_N1002E_N10001"Hosttype="caution">
+                        <note id="note_N100C5_N100C2_N100B8_N1004B_N1002E_N10001" type="caution">
                             <p ixia_locid="198">If the USB flash drive is still attached when the
                                 host reboots, then unless the boot sequence has been configured to
                                 prevent it, the host will boot from the USB flash drive again
@@ -151,31 +151,31 @@ rootfs_device=sda initrd=initrd</codeblock></p>
                         </note>
                         <p id="grub_displayed" ixia_locid="47"> After a few minutes, the host
                             reboots from the hard drive and displays the <wintitle ixia_locid="48">GNU GRUB</wintitle> welcome screen.
-                                <image alt="GNU GRUB screen" href="jow1404333488777.image" id="image_jb1_gfz_cn"Hostwidth="4in"/>
-                            </fig></p>
+                                <image alt="GNU GRUB screen" href="jow1404333488777.image" id="image_jb1_gfz_cn"/>
+                            </p>
                         <p ixia_locid="52">After a brief delay, the system boots automatically into
                             the HP Helion OpenStack Carrier Grade image.</p>
                     </info>
                 </step>
-                 
-                    <cmd ixia_locid="54">Log into the host as <userinput ixia_locid="55">wrsroot</userinput>, with password <userinput ixia_locid="56">wrsroot</userinput>.</cmd>
+                <step>
+                    <cmd ixia_locid="54">Log into the host as <i>wrsroot</i>, with password <i>wrsroot</i>.</cmd>
                     <info ixia_locid="140">
                         <note id="note_N1016E_N1016A_N10156_N1007D_N1002E_N10001" ixia_locid="149">
                             <p ixia_locid="150">Typed responses to password prompts are suppressed
                                 and do not appear on the display.</p>
                         </note>
-                        <p ixia_locid="142">The first time you log in as <userinput ixia_locid="143">wrsroot</userinput>, you are required to change your password.</p>
-                        <codeblock ixia_locid="151"><systemoutput ixia_locid="152">Changing password for wrsroot.
-(current) UNIX Password:</systemoutput></codeblock>
+                        <p ixia_locid="142">The first time you log in as wrsroot, you are required to change your password.</p>
+                        <codeblock ixia_locid="151">Changing password for wrsroot.
+(current) UNIX Password:</codeblock>
                         <p ixia_locid="153">Enter the current password (<nameliteral ixia_locid="154">wrsroot</nameliteral>).</p>
-                        <codeblock ixia_locid="155"><systemoutput ixia_locid="156">New password:</systemoutput></codeblock>
+                        <codeblock ixia_locid="155">New password:</codeblock>
                         <p ixia_locid="157">Enter a new password for the <nameliteral ixia_locid="161">wrsroot </nameliteral>account.</p>
-                        <codeblock ixia_locid="158"><systemoutput ixia_locid="159">Retype new password:</systemoutput></codeblock>
+                        <codeblock ixia_locid="158">Retype new password:</codeblock>
                         <p ixia_locid="160">Enter the new password again to confirm it.</p>
                     </info>
                 </step>
             </steps>
-            Host
+<result>
                 <p ixia_locid="58">The host is now ready for configuration as <nameliteral ixia_locid="144">controller-0</nameliteral>.</p>
             </result>
         </taskbody>

@@ -22,89 +22,89 @@
         
         <ol>
              
-                <li>Lock the standby controller.</li>
+                <li>Lock the standby controller.
                 
                     <p>Open the <b>Hosts</b> list by
                         clicking <b>Inventory</b> on the<b> System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
-                    <p>Click <menucascade>
-                            <b>More</b>
+                    <p>Click 
+                            <b>More</b>, then 
                             <b>Lock Host</b>
-                        </menucascade> for the controller. </p>
+                         for the controller. </p>
                     <p>Wait for the procedure to be completed.</p>
                 
-            
+                </li>
              
                 <li>Power down the standby controller and make any required
-                    hardware changes.</li>
+                    hardware changes.
                 
                     <p>This may involve replacing disks, or replacing the host
                         completely. </p>
                 
-            
+                </li>
              
-                <li>Place the new or modified controller into service.</li>
-                <info/>
+                <li>Place the new or modified controller into service.
+                
                  <ol>
                     
-                        <li>Power up the controller.</li>
+                        <li>Power up the controller.
                         
                             <p>Wait until the controller is reported as
                                     <codeph>Locked</codeph>, <codeph>Enabled</codeph>, and <codeph>Available</codeph>.</p>
-                        
+                </li>
                     
                     
                         <li>If required, reinstall the HP Helion OpenStack Carrier Grade software on the
-                            controller.</li>
+                            controller.
                         
                             <p>If you are making disk changes to increase storage
                                 capacity, you must re-install the HP Helion OpenStack Carrier Grade software. For more
                                 information, see <xref href="jow1413727075983.xml"/>.</p>
                             <p>To reinstall the software on a host , click
-                                    <menucascade>
-                                    <b>More</b>
+                                    
+                                    <b>More</b>, then 
                                     <b>Reinstall</b>
-                                </menucascade>.</p>
+                                .</p>
                             <note conref="rst1432737677834.xml#rst1432737677834/note_N10195_N10154_N1001F_N10001" id="note_N10195_N10154_N1001F_N10001"/>                            
                             <p>Wait for the host to be reported as <codeph>Locked</codeph>, <codeph>Disabled</codeph>, and <codeph>Online</codeph>.</p>
                         
+                        </li>
                     
-                    
-                        <li>Perform a swact.</li>
+                        <li>Perform a swact.
                         
-                            <p>Click <menucascade>
-                                    <b>More</b>
+                            <p>Click 
+                                    <b>More</b>, then 
                                     <b>Swact Host</b>
-                                </menucascade> for the active controller.</p>
+                                 for the active controller.</p>
                         
                         
                             <p>The standby controller becomes the active controller, and the
                                 original active controller is placed into standby.</p>
                         
-                    
+                        </li>
                 </ol>
             
-             
-                <li>Lock the original active controller (now in standby).</li>
+                </li>
+                <li>Lock the original active controller (now in standby).
                 
                     <p>Open the <b>Hosts</b> list by
                         clicking <b>Inventory</b> on the<b> System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
-                    <p>Click <menucascade>
-                            <b>More</b>
+                    <p>Click 
+                            <b>More</b>, then
                             <b>Lock Host</b>
-                        </menucascade> for the controller. </p>
+                         for the controller. </p>
                     <p>Wait for the procedure to be completed.</p>
                 
-            
+                </li>
              
                 <li>Power down the controller and make the same hardware
-                    changes.</li>
+                    changes.
                 
                     <note id="note_N1002F_N1001F_N1001C_N10001" type="caution">
                         <p>The configurations for controller-0 and controller-1,
                             including disk types and sizes, must be identical.</p>
                     </note>
                 
-            
+                </li>
              
                 <li>Power up the new or modified controller.</li>
             
@@ -112,7 +112,7 @@
                 <li>If required, reinstall the HP Helion OpenStack Carrier Grade software on the controller.</li>
             
         </ol>
-        Host
+        
             <p>The updated controllers are now in service.  The controller that was formerly active
                 is now the standby controller. </p>
         

@@ -62,15 +62,15 @@
         
         <ol>
              
-                <li>In the main menu, select <menucascade>
-                        <b>Admin</b>
-                        <b>System</b>
+                <li>In the main menu, select 
+                        <b>Admin</b>, then
+                    <b>System</b>, then
                         <b>Fault Management</b>
-                    </menucascade>.</li>
+                   .</li>
             
              
                 <li>On the Fault Management page, select the <b>Customer Logs</b>
-                    tab.</li>
+                    tab.
                 
                     <p>The logs are displayed in chronological order, beginning with
                         the most recent.</p>
@@ -87,17 +87,17 @@
                         then click the magnifying-glass icon. The results include only those logs
                         that contain the string in the Customer Log Detail.</p>
                 
-            
+                </li>
              
                 <li>To see the Customer Log Detail, click the <b>Timestamp</b>
-                    identifier for the log.</li>
+                    identifier for the log.
                 
                     
                         <image href="jow1432055065375.image" id="image_fq4_msx_bs" width="3in">
                             <alt>TiS Customer Log Detail</alt>
                         </image>
                     
-                
+                </li>
             
         </ol>
     </body>

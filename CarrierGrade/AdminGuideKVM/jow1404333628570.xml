@@ -24,8 +24,10 @@
         
         
         <ol>
-            <li conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N1004F_N1004C_N10029_N10001"/>
-            <li conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N10056_N1004C_N10029_N10001"/>
+            <li conref="jow1404832975002.xml#jow1404832975002/open-stack-list"
+                id="step_N1004F_N1004C_N10029_N10001"/>
+            <li conref="jow1404833049288.xml#jow1404833049288/launch-stack"
+                id="step_N10056_N1004C_N10029_N10001"/>
             
              
                 <li>Complete the <b>Launch Stack</b> form to provide any parameter

@@ -13,20 +13,22 @@
         <author ixia_locid="6">Pedro Sanchez</author>
     </prolog>
     <taskbody>
-        <prereq conref="jow1404333506062.xml#jow1404333506062/prerequisites" id="prereq_N1002B_N10028_N10001" ixia_locid="7"/>
-        
+        <prereq conref="jow1404333506062.xml#jow1404333506062/prereq_N1002B_N10028_N10001"
+            id="prereq_N1002B_N10028_N10001" ixia_locid="7"/>
+        <context>
             <p ixia_locid="283">For a minimal two-server configuration,  the procedure varies
                 slightly. The data interfaces for the compute function are defined before
                     <nameliteral ixia_locid="285">controller-1</nameliteral> is unlocked.</p>
-        
+        </context>
         <steps id="steps_nvd_tz5_k4">
-             
-                <cmd ixia_locid="360">Power on the node to be configured as <nameliteral ixia_locid="361">controller-1</nameliteral>.</cmd>
+             <step>
+                 
+            <cmd ixia_locid="360">Power on the node to be configured as <nameliteral ixia_locid="361">controller-1</nameliteral>.</cmd>
             </step>
-             
+            <step>
                 <cmd ixia_locid="11">Using the web administration interface, assign the node as a
                     controller host.</cmd><!-- an expectant message appears on the display (Waiting for this node to be configured) and hangs around until you select Edit Host.  This one tripped Ron up, so we may want to mention it or add a screen shot. -->
-                 <ol>
+                 <substeps>
                     <substep conref="jow1404333506062.xml#jow1404333506062/open-hosts-list" ixia_locid="12">
                         <cmd ixia_locid="13"/>
                     </substep>
@@ -43,14 +45,15 @@
                         <cmd ixia_locid="358"/>
                     </substep>
                     <substep ixia_locid="86">
-                        <cmd conref="jow1404333506062.xml#jow1404333506062/cmd-save-personality" ixia_locid="87"/>
+                        <cmd conref="jow1404333506062.xml#jow1404333506062/cmd-save-personality"
+                            ixia_locid="87"/>
                         <stepresult ixia_locid="88">
-                            <p conref="jow1404333506062.xml#jow1404333506062/p-save-personality" ixia_locid="89"/>
-                            
-                                <image href="jow1412193160572.image" id="image_ixn_r1q_pp"Hostwidth="3.5in">
-                                    <alt ixia_locid="92">HP Helion OpenStack Carrier Grade Controller Node Install</alt>
-                                </image>
-                            </fig>
+                            <p conref="jow1404333506062.xml#jow1404333506062/p-save-personality"
+                                ixia_locid="89"/>
+                            <image href="jow1412193160572.image" id="image_ixn_r1q_pp">
+                                <alt ixia_locid="92">HP Helion OpenStack Carrier Grade Controller
+                                    Node Install</alt>
+                            </image>
                         </stepresult>
                     </substep>
                     <substep conref="jow1404333506062.xml#jow1404333506062/wait_for_login_prompt" ixia_locid="93">
@@ -62,20 +65,22 @@
                         partition size. Larger partitions require more time for synchronization with
                             <uicontrol ixia_locid="32">controller-0</uicontrol>. </p>
                 </info>
-                <stepresult conref="jow1404333506062.xml#jow1404333506062/node_locked_available_online" ixia_locid="95"/>
+                <stepresult
+                    conref="jow1404333506062.xml#jow1404333506062/node_locked_available_online"
+                    ixia_locid="95"/>
             </step>
-             
+            <step>
                 <cmd ixia_locid="363">If you are installing a minimal two-server configuration,
                     attach the data interfaces.</cmd>
                 <info ixia_locid="301">
                     <p ixia_locid="302">For details, see <xref href="jow1426948577755.xml" ixia_locid="303"/>.</p>
                 </info>
             </step>
-             
+            <step> 
                 <cmd ixia_locid="365"><draft-comment author="jowens" ixia_locid="396">US65502 added
                         step</draft-comment>If you are installing a minimal two-server
                     configuration, configure local storage on both hosts.</cmd>
-                 <ol>
+                 <substeps>
                     <substep ixia_locid="366">
                         <cmd ixia_locid="367">Configure local storage on <nameliteral ixia_locid="368">controller-1</nameliteral>
                             while it is locked, as follows:</cmd>
@@ -85,10 +90,10 @@
                                     <p ixia_locid="371">Open the <nameliteral ixia_locid="372">Inventory Detail</nameliteral> for
                                         controller-1, and then select the
                                             <nameliteral ixia_locid="373">Storage</nameliteral> tab.
-                                            <image href="jow1426459038579.image" id="image_rhh_ps5_jr"Hostwidth="6in">
+                                            <image href="jow1426459038579.image" id="image_rhh_ps5_jr">
                                                 <alt ixia_locid="37">Compute Node Storage tab</alt>
                                             </image>
-                                        </fig></p>
+                                        </p>
                                 </li>
                                 <li ixia_locid="376">
                                     <p ixia_locid="377">Click <uicontrol ixia_locid="378">Add Local Volume Group</uicontrol>, and then
@@ -99,7 +104,7 @@
                                             <image href="jow1426459253956.image" id="image_ask_bt5_jr" ixia_locid="39">
                                                 <alt ixia_locid="381">Create Local Volume Group</alt>
                                             </image>
-                                        </fig></p>
+                                       </p>
                                 </li>
                                 <li ixia_locid="382">
                                     <p ixia_locid="383">On the Storage tab, click <uicontrol ixia_locid="384">Add Physical Volume</uicontrol>, and
@@ -109,7 +114,7 @@
                                                 <alt ixia_locid="56">Create Physical Volume dialog
                                                   box</alt>
                                             </image>
-                                        </fig></p>
+                                        </p>
                                 </li>
                                 <li ixia_locid="385">
                                     <p ixia_locid="115">In the <nameliteral ixia_locid="116">Local
@@ -119,7 +124,7 @@
                                                 <alt ixia_locid="120">TiS Local Volume Group
                                                   Detail</alt>
                                             </image>
-                                        </fig></p>
+                                        </p>
                                 </li>
                                 <li ixia_locid="386">
                                     <p ixia_locid="121">Select the <uicontrol ixia_locid="122">Parameters</uicontrol> tab.
@@ -127,7 +132,7 @@
                                                 <alt ixia_locid="125">TiS Local Volume Group Detail
                                                   Parameters tab</alt>
                                             </image>
-                                        </fig></p>
+                                        </p>
                                 </li>
                                 <li ixia_locid="387">
                                     <p ixia_locid="126">Click <uicontrol ixia_locid="127">Edit</uicontrol>, and then set the <uicontrol ixia_locid="128">Instances Logical Volume
@@ -136,7 +141,7 @@
                                                 <alt ixia_locid="131">TiS Edit Local Volume Group
                                                   Parameter dialog</alt>
                                             </image>
-                                        </fig></p>
+                                        </p>
                                     <p ixia_locid="132">If the total space in the volume group is
                                         less than 80GB (81920 MiB), then you must allocate at least
                                         2048 MiB. If the volume group is greater than 80GB (81920
@@ -169,11 +174,12 @@
                     </substep>
                 </substeps>
             </step>
-            <step conref="jow1404333506827.xml#jow1404333506827/unlock-node" id="step_N1009C_N10030_N10028_N10001" ixia_locid="33">
-                <cmd ixia_locid="34"/>
+            
+            <step conref="jow1404333506827.xml#jow1404333506827/unlock-node">
+                <cmd/>
             </step>
         </steps>
-        Host
+<result>
             <p ixia_locid="308">Both controllers are now available, with one active and one
                 redundant.</p>
             <note id="note_N103FA_N103E7_N10033_N10001" ixia_locid="355">

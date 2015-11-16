@@ -14,9 +14,9 @@
             <context id="context_N1003B_N10037_N1000F_N10001" ixia_locid="375" class="- topic/section task/context ">
                 <p ixia_locid="289" class="- topic/p ">To create a provider network using the CLI, use the following
                     command:</p>
-                <codeblock ixia_locid="290" class="+ topic/pre pr-d/codeblock "><systemoutput ixia_locid="291" class="+ topic/ph sw-d/systemoutput ">~(keystone_admin)$ </systemoutput><userinput ixia_locid="292" class="+ topic/ph sw-d/userinput ">neutron providernet-create name \
+                <codeblock ixia_locid="290" class="+ topic/pre pr-d/codeblock "><systemoutput ixia_locid="291" class="+ topic/ph sw-d/systemoutput ">~(keystone_admin)$ <userinput ixia_locid="292" class="+ topic/ph sw-d/userinput ">neutron providernet-create name \
 --type=<varname ixia_locid="365" class="+ topic/keyword sw-d/varname ">type --description=<varname ixia_locid="293" class="+ topic/keyword sw-d/varname ">description mtu <varname ixia_locid="357" class="+ topic/keyword sw-d/varname ">mtu_size \
---vlan-transparent={True,False}</userinput></codeblock>
+--vlan-transparent={True,False}</codeblock>
                 <p ixia_locid="294" class="- topic/p ">where</p>
                 <parml class="+ topic/dl pr-d/parml ">
                     <plentry ixia_locid="295" class="+ topic/dlentry pr-d/plentry ">
@@ -48,11 +48,11 @@
             <context id="context_N100C3_N10032_N1000F_N10001" ixia_locid="403" class="- topic/section task/context ">
                 <p ixia_locid="306" class="- topic/p ">To add a segmentation range using the CLI, use the following
                     command:</p>
-                <codeblock ixia_locid="307" class="+ topic/pre pr-d/codeblock "><systemoutput ixia_locid="308" class="+ topic/ph sw-d/systemoutput ">~(keystone_admin)$ </systemoutput><userinput ixia_locid="309" class="+ topic/ph sw-d/userinput ">neutron providernet-range-create <varname ixia_locid="310" class="+ topic/keyword sw-d/varname ">provider_network \
+                <codeblock ixia_locid="307" class="+ topic/pre pr-d/codeblock "><systemoutput ixia_locid="308" class="+ topic/ph sw-d/systemoutput ">~(keystone_admin)$ <userinput ixia_locid="309" class="+ topic/ph sw-d/userinput ">neutron providernet-range-create <varname ixia_locid="310" class="+ topic/keyword sw-d/varname ">provider_network \
 --name=<varname ixia_locid="311" class="+ topic/keyword sw-d/varname ">range_name --tenant_id=<varname ixia_locid="312" class="+ topic/keyword sw-d/varname ">tenant \
 --description=<varname ixia_locid="313" class="+ topic/keyword sw-d/varname ">description --range <varname ixia_locid="314" class="+ topic/keyword sw-d/varname ">min-<varname ixia_locid="315" class="+ topic/keyword sw-d/varname ">max \
 --group <varname ixia_locid="316" class="+ topic/keyword sw-d/varname ">multicast_address --port=<varname ixia_locid="317" class="+ topic/keyword sw-d/varname ">udp_port \
---ttl=<varname ixia_locid="318" class="+ topic/keyword sw-d/varname ">time_to_live</userinput></codeblock>
+--ttl=<varname ixia_locid="318" class="+ topic/keyword sw-d/varname ">time_to_live</codeblock>
                 <p ixia_locid="319" class="- topic/p ">where</p>
                 <parml class="+ topic/dl pr-d/parml ">
                     <plentry ixia_locid="320" class="+ topic/dlentry pr-d/plentry ">
@@ -137,8 +137,8 @@
             <context id="context_N101CB_N10037_N1000F_N10001" ixia_locid="377" class="- topic/section task/context ">
                 <p ixia_locid="376" class="- topic/p ">You can obtain information about provider networks and
                     segmentation ranges using the following commands.</p>
-                <codeblock ixia_locid="378" class="+ topic/pre pr-d/codeblock "><systemoutput ixia_locid="379" class="+ topic/ph sw-d/systemoutput ">~(keystone_admin)$ </systemoutput><userinput ixia_locid="380" class="+ topic/ph sw-d/userinput ">neutron net-list-on-providernet <varname ixia_locid="381" class="+ topic/keyword sw-d/varname ">providernet</userinput></codeblock>
-                <codeblock ixia_locid="382" class="+ topic/pre pr-d/codeblock "><systemoutput ixia_locid="383" class="+ topic/ph sw-d/systemoutput ">~(keystone_admin)$ </systemoutput><userinput ixia_locid="384" class="+ topic/ph sw-d/userinput ">neutron providernet-range-show <varname ixia_locid="385" class="+ topic/keyword sw-d/varname ">providernet-range</userinput></codeblock>
+                <codeblock ixia_locid="378" class="+ topic/pre pr-d/codeblock "><systemoutput ixia_locid="379" class="+ topic/ph sw-d/systemoutput ">~(keystone_admin)$ <userinput ixia_locid="380" class="+ topic/ph sw-d/userinput ">neutron net-list-on-providernet <varname ixia_locid="381" class="+ topic/keyword sw-d/varname ">providernet</codeblock>
+                <codeblock ixia_locid="382" class="+ topic/pre pr-d/codeblock "><systemoutput ixia_locid="383" class="+ topic/ph sw-d/systemoutput ">~(keystone_admin)$ <userinput ixia_locid="384" class="+ topic/ph sw-d/userinput ">neutron providernet-range-show <varname ixia_locid="385" class="+ topic/keyword sw-d/varname ">providernet-range</codeblock>
             </context>
             <context id="context_N1002B_N10028_N10001" ixia_locid="7" class="- topic/section task/context ">
                 <p ixia_locid="8" class="- topic/p ">You must configure at least one provider network in order to
@@ -156,8 +156,8 @@
                     <cmd ixia_locid="16" class="- topic/ph task/cmd ">On the active controller's console, create the two example
                         provider networks.</cmd>
                     <stepxmp ixia_locid="18" class="- topic/itemgroup task/stepxmp ">
-                        <codeblock ixia_locid="19" class="+ topic/pre pr-d/codeblock "><systemoutput ixia_locid="254" class="+ topic/ph sw-d/systemoutput ">~(keystone_admin)$ </systemoutput><userinput ixia_locid="21" class="+ topic/ph sw-d/userinput ">neutron providernet-create provider-net-a --type vlan</userinput>
-<systemoutput ixia_locid="255" class="+ topic/ph sw-d/systemoutput ">~(keystone_admin)$ </systemoutput><userinput ixia_locid="23" class="+ topic/ph sw-d/userinput ">neutron providernet-create provider-net-b --type vlan</userinput></codeblock>
+                        <codeblock ixia_locid="19" class="+ topic/pre pr-d/codeblock "><systemoutput ixia_locid="254" class="+ topic/ph sw-d/systemoutput ">~(keystone_admin)$ <userinput ixia_locid="21" class="+ topic/ph sw-d/userinput ">neutron providernet-create provider-net-a --type vlan
+<systemoutput ixia_locid="255" class="+ topic/ph sw-d/systemoutput ">~(keystone_admin)$ <userinput ixia_locid="23" class="+ topic/ph sw-d/userinput ">neutron providernet-create provider-net-b --type vlan</codeblock>
                     </stepxmp>
                     <info ixia_locid="24" class="- topic/itemgroup task/info ">
                         <p ixia_locid="404" class="- topic/p ">Both provider networks are created as type <nameliteral ixia_locid="26" class="+ topic/ph hi-d/b wr-sw-d/nameliteral ">vlan</nameliteral>. This means that they can be

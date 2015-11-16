@@ -7,7 +7,7 @@
             <cmd ixia_locid="84">Log in to the active controller as the Keystone <nameliteral ixia_locid="90">admin</nameliteral> user.</cmd>
             <!-- remove example, per Pedro's guidance -->
             <!-- stepxmp ixia_locid="85">
-                <codeblock ixia_locid="86"><systemoutput ixia_locid="87">$ </systemoutput><userinput ixia_locid="88">source /etc/nova/openrc</userinput></codeblock>
+                <codeblock ixia_locid="86">$ <userinput ixia_locid="88">source /etc/nova/openrc</codeblock>
             </stepxmp -->            
         </step>
     </rcbody>

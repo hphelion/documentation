@@ -12,7 +12,8 @@
         <author ixia_locid="5">Jim Owens</author>
     </prolog>
     <rcbody>
-        
+        <prereq conref="#jow1404333506062/prereq_N1002B_N10028_N10001"
+            id="prereq_N1002B_N10028_N10001" ixia_locid="7"/>
             <p ixia_locid="7">You can assign one of the following personalities.</p>
             <simpletable id="simpletable_ysx_xr5_k4">
                 <strow>
@@ -72,52 +73,52 @@
                 </li>
             </ul>
 
-        <ol>
-             
+        <steps id="steps_N100AB_N10029_N10001" class="- topic/ol task/steps ">
+            <step id="step_N1007C_N10079_N1002E_N10001" ixia_locid="232" class="- topic/li task/step ">
                 <!-- For a host-add installation, the first step (1 of 2).-->
                 <!-- For a host-update installation, not used. -->
                 <!-- For a Horizon installation, not used. -->
-                <li>Add the host to the system inventory.</li>
-                <info ixia_locid="234">
-                    <note id="note_N10086_N10083_N1007C_N10079_N1002E_N10001" ixia_locid="235">
-                        <p ixia_locid="236">The host must be added to the system inventory before it
+                <cmd ixia_locid="233" class="- topic/ph task/cmd ">Add the host to the system inventory.</cmd>
+                <info ixia_locid="234" class="- topic/itemgroup task/info ">
+                    <note id="note_N10086_N10083_N1007C_N10079_N1002E_N10001" ixia_locid="235" class="- topic/note ">
+                    <p ixia_locid="236">The host must be added to the system inventory before it
                             is powered on.</p>
                     </note>
                     <p ixia_locid="237">On <nameliteral ixia_locid="238">controller-0</nameliteral>,
                         acquire Keystone administrative privileges:</p>
-                    <codeblock ixia_locid="239"><systemoutput ixia_locid="240">$ </systemoutput><userinput ixia_locid="241">source /etc/nova/openrc</userinput></codeblock>
+                    <codeblock ixia_locid="239">$ source /etc/nova/openrc</codeblock>
                     <p ixia_locid="242"><draft-comment author="jowens" ixia_locid="538">US62814,
                             US62816 update host-add parameters</draft-comment><draft-comment author="rstone" ixia_locid="745">US63466 adds -D</draft-comment>Use the <cmdname ixia_locid="621">system host-add</cmdname> command to add a host and
                         specify its personality. You can also specify the device used to display
                         messages during boot.</p>
-                    <codeblock ixia_locid="356"><systemoutput ixia_locid="357">~(keystone_admin)$ </systemoutput><userinput ixia_locid="358">system host-add -n <varname ixia_locid="246">hostname -p <varname ixia_locid="359">personality \
-[-l <varname ixia_locid="666">location] [-o <varname ixia_locid="361">install_output[-c <varname ixia_locid="360">console]] [-b <varname ixia_locid="735">boot_device] \
-[-r <varname ixia_locid="736">rootfs_device] [-m <varname ixia_locid="248">mgmt_mac] [-i <varname ixia_locid="362">mgmt_ip] [-D <varname ixia_locid="746">ttys_dcd] \
-[-T <varname ixia_locid="309">bm_type -M <varname ixia_locid="310">bm_mac -I <varname ixia_locid="311">bm_ip -U <varname ixia_locid="312">bm_username -P <varname ixia_locid="313">bm_password]</userinput>
+                    <codeblock ixia_locid="356">~(keystone_admin)$ system host-add -n hostname -p personality \
+[-l location] [-o install_output[-c console]] [-b boot_device] \
+[-r rootfs_device] [-m mgmt_mac] [-i mgmt_ip] [-D ttys_dcd] \
+[-T bm_type -M bm_mac -I bm_ip -U bm_username -P bm_password]
 </codeblock>
                     <p ixia_locid="363">where</p>
                     <parml id="host-add_parms">
                         <plentry ixia_locid="364">
-                            <pt ixia_locid="365"><varname ixia_locid="366">hostname</pt>
+                            <pt ixia_locid="365">hostname</pt>
                             <pd ixia_locid="367">
                                 <p ixia_locid="368">is a name to assign to the host</p>
                             </pd>
                         </plentry>
                         <plentry ixia_locid="639">
-                            <pt ixia_locid="640"><varname ixia_locid="641">personality</pt>
+                            <pt ixia_locid="640">personality</pt>
                             <pd ixia_locid="642">
-                                <pHostproduct="tis_region">is the host type (<option ixia_locid="644">controller</option> or <option ixia_locid="645">compute</option>)</p>
-                                <pHostproduct="tis_standard">is the host type <ph ixia_locid="647">(<option ixia_locid="648">controller</option>, <option ixia_locid="649">storage</option>, or <option ixia_locid="650">compute</option>)</ph></p>
+                                <p>is the host type (<option ixia_locid="644">controller</option> or <option ixia_locid="645">compute</option>)</p>
+                                <p>is the host type <ph ixia_locid="647">(<option ixia_locid="648">controller</option>, <option ixia_locid="649">storage</option>, or <option ixia_locid="650">compute</option>)</ph></p>
                             </pd>
                         </plentry>
                         <plentry ixia_locid="667">
-                            <pt ixia_locid="668"><varname ixia_locid="669">location</pt>
+                            <pt ixia_locid="668">location</pt>
                             <pd ixia_locid="670">
                                 <p ixia_locid="671">is a string describing the location of the host</p>
                             </pd>
                         </plentry>
                         <plentry ixia_locid="376">
-                            <pt ixia_locid="377"><varname ixia_locid="378">console</pt>
+                            <pt ixia_locid="377">console</pt>
                             <pd ixia_locid="379">
                                 <p ixia_locid="380">is the output device to use for message display
                                     on the host (for example, <option ixia_locid="381">tty0</option>). The default is <option ixia_locid="382">ttys0,
@@ -125,14 +126,14 @@
                             </pd>
                         </plentry>
                         <plentry ixia_locid="383">
-                            <pt ixia_locid="384"><varname ixia_locid="385">install_output</pt>
+                            <pt ixia_locid="384">install_output</pt>
                             <pd ixia_locid="386">
                                 <p ixia_locid="387">is the format for console output on the host
                                         (<option ixia_locid="388">text</option> or <option ixia_locid="389">graphical</option>). The default is <option ixia_locid="390">text</option>.</p>
                             </pd>
                         </plentry>
                         <plentry ixia_locid="508">
-                            <pt ixia_locid="509"><varname ixia_locid="510">boot_device</pt>
+                            <pt ixia_locid="509">boot_device</pt>
                             <pd ixia_locid="511">
                                 <p ixia_locid="512">is the host device for boot partition, relative
                                     to <filepath ixia_locid="513">/dev</filepath>. The default is
@@ -140,7 +141,7 @@
                             </pd>
                         </plentry>
                         <plentry ixia_locid="515">
-                            <pt ixia_locid="516"><varname ixia_locid="517">rootfs_device</pt>
+                            <pt ixia_locid="516">rootfs_device</pt>
                             <pd ixia_locid="518">
                                 <p ixia_locid="519">is the host device for rootfs partition,
                                     relative to<filepath ixia_locid="520"> /dev</filepath>. The
@@ -148,25 +149,25 @@
                             </pd>
                         </plentry>
                         <plentry ixia_locid="405">
-                            <pt ixia_locid="406"><varname ixia_locid="407">mgmt_mac</pt>
+                            <pt ixia_locid="406">mgmt_mac</pt>
                             <pd ixia_locid="408">
                                 <p ixia_locid="409">is the MAC address of the port connected to the
                                     management or PXE boot network.</p>
                             </pd>
                         </plentry>
                         <plentry ixia_locid="410">
-                            <pt ixia_locid="411"><varname ixia_locid="412">mgmt_ip</pt>
+                            <pt ixia_locid="411">mgmt_ip</pt>
                             <pd ixia_locid="413">
                                 <p ixia_locid="414">is the IP address of the port connected to the
                                     management or PXE boot network, if static IP address allocation
-                                    is used.<note id="note_N1029B_N10297_N10293_N10287_N1017A_N100F6_N100E6_N100E2_N10029_N10001"Hostproduct="tis_region">
-                                        <p ixia_locid="682"> The <varname ixia_locid="734">mgmt_ip option
+                                    is used.<note id="note_N1029B_N10297_N10293_N10287_N1017A_N100F6_N100E6_N100E2_N10029_N10001">
+                                        <p ixia_locid="682"> The mgmt_ip option
                                             is not used for a controller node.</p>
                                     </note></p>
                             </pd>
                         </plentry>
                         <plentry ixia_locid="747">
-                            <pt ixia_locid="748"><varname ixia_locid="749">ttys_dcd</pt>
+                            <pt ixia_locid="748">ttys_dcd</pt>
                             <pd ixia_locid="750">
                                 <p ixia_locid="751">is set to True to have any active console
                                     session automatically logged out when the Serial Console cable
@@ -175,35 +176,35 @@
                             </pd>
                         </plentry>
                         <plentry ixia_locid="315">
-                            <pt ixia_locid="321"><varname ixia_locid="327">bm_type</pt>
+                            <pt ixia_locid="321">bm_type</pt>
                             <pd ixia_locid="333">
                                 <draft-comment author="rstone" ixia_locid="743">US64066 adds Quanta</draft-comment>
                                 <p ixia_locid="339">is the board management controller type (<option ixia_locid="348">iLO3</option>, <option ixia_locid="353">iOL4</option> or <option ixia_locid="744">Quanta</option>)</p>
                             </pd>
                         </plentry>
                         <plentry ixia_locid="316">
-                            <pt ixia_locid="322"><varname ixia_locid="328">bm_mac</pt>
+                            <pt ixia_locid="322">bm_mac</pt>
                             <pd ixia_locid="334">
                                 <p ixia_locid="340">is the board management controller MAC
                                     address</p>
                             </pd>
                         </plentry>
                         <plentry ixia_locid="317">
-                            <pt ixia_locid="323"><varname ixia_locid="329">bm_ip</pt>
+                            <pt ixia_locid="323">bm_ip</pt>
                             <pd ixia_locid="335">
                                 <p ixia_locid="341">is the board management controller IP
                                     address</p>
                             </pd>
                         </plentry>
                         <plentry ixia_locid="318">
-                            <pt ixia_locid="324"><varname ixia_locid="330">bm_username</pt>
+                            <pt ixia_locid="324">bm_username</pt>
                             <pd ixia_locid="336">
                                 <p ixia_locid="342">is the username for board management controller
                                     access</p>
                             </pd>
                         </plentry>
                         <plentry ixia_locid="415">
-                            <pt ixia_locid="416"><varname ixia_locid="417">bm_password</pt>
+                            <pt ixia_locid="416">bm_password</pt>
                             <pd ixia_locid="418">
                                 <p ixia_locid="419">is the password for board management controller
                                     access</p>
@@ -213,11 +214,12 @@
                 </info>
                 <stepxmp ixia_locid="279">
                     <p ixia_locid="280">For example:</p>
-                    <codeblock ixia_locid="251"><systemoutput ixia_locid="253">~(keystone_admin)$ </systemoutput><userinput ixia_locid="255">system host-add -n controller-1 -p controller -m 08:00:27:23:BD:18</userinput></codeblock>
+                    <codeblock ixia_locid="251">~(keystone_admin)$ system host-add -n controller-1 -p controller -m 08:00:27:23:BD:18</codeblock>
                 </stepxmp>
             </step>
-             
-                <!--For a host-add installation, the second step (2 of 2). -->
+             <step>
+                 
+            <!--For a host-add installation, the second step (2 of 2). -->
                 <!--For a host-update installation, not used. -->
                 <!--For a Horizon installation, not used.  -->
                 <cmd ixia_locid="570">Power on the host.</cmd>
@@ -230,8 +232,8 @@
     <!-- draft-comment>Jim - too much detail?</draft-comment -->
                     <p ixia_locid="574">The host boots from the network.</p>
                     
-                        <image alt="Waiting for this node to be configured." href="jow1404333500016.image" id="image_whb_vjd_gn"Hostwidth="4in"/>
-                    </fig>
+                        <image alt="Waiting for this node to be configured." href="jow1404333500016.image" id="image_whb_vjd_gn" width="4in"/>
+                    
                     <p ixia_locid="622">It is assigned the personality specified in the
                             <cmdname ixia_locid="623">system host-add</cmdname> parameters, and restarted
                         automatically.</p>
@@ -241,10 +243,10 @@
                         <image href="jow1412193160572.image" id="image_o5d_dmj_pt" ixia_locid="766">
                             <alt ixia_locid="767">HP Helion OpenStack Carrier Grade Controller Node Install</alt>
                         </image>
-                    </fig>
+                    
                 </info>
             </step>
-             
+            <step>
                 <!--For a host-add installation, not used. -->
                 <!--For a host-update installation, the first step (1 of 3). -->
                 <!--For a Horizon installation, the first step (1 of 2).  -->
@@ -257,11 +259,11 @@
                     <!-- draft-comment>Jim - too much detail?</draft-comment -->
                     <p ixia_locid="583">The host boots from the network.</p>
                     
-                        <image alt="Waiting for this node to be configured." href="jow1404333500016.image" id="image_fwf_252_lt"Hostwidth="4in"/>
-                    </fig>
+                        <image alt="Waiting for this node to be configured." href="jow1404333500016.image" id="image_fwf_252_lt" width="4in"/>
+                    
                 </info>
             </step>
-             
+            <step>
                 <!--For a host-add installation, not used: -->
                 <!--For a host-update installation, the second step (2 of 3). -->
                 <!--For a Horizon installation, not used.  -->
@@ -271,19 +273,19 @@
                         detected. To update the host with a personality from the command line, the
                         id is required.</p>
                     <p ixia_locid="438">You can obtain the id using the <cmdname ixia_locid="439">system host-list</cmdname> command , as follows:</p>
-                    <codeblock ixia_locid="440"><systemoutput ixia_locid="441">~(keystone_admin)$ </systemoutput><userinput ixia_locid="442">system host-list</userinput>
-<systemoutput ixia_locid="443">+----+--------------+-------------+----------------+-------------+--------------+
+                    <codeblock ixia_locid="440">~(keystone_admin)$ system host-list
++----+--------------+-------------+----------------+-------------+--------------+
 | id | hostname     | personality | administrative | operational | availability |
 +----+--------------+-------------+----------------+-------------+--------------+
 | 1  | controller-0 | controller  | unlocked       | enabled     | available    |
 | 2  | None         | None        | locked         | disabled    | offline      |
-+----+--------------+-------------+----------------+-------------+--------------+ </systemoutput></codeblock>
++----+--------------+-------------+----------------+-------------+--------------+ </codeblock>
                     <p ixia_locid="506">This example shows the output when the first host is powered
                         on after <nameliteral ixia_locid="507">controller-0</nameliteral> has been
                         configured.</p>
                 </info>
             </step>
-             
+            <step>
                 <!--For a host-add installation, not used: -->
                 <!--For a host-update installation, the third step (3 of 3).  -->
                 <!--For a Horizon installation, not used.  -->
@@ -293,13 +295,13 @@
                             US62816 update host-update parameters</draft-comment><draft-comment author="rstone" ixia_locid="752">US63466 adds ttys_dcd</draft-comment>Use a command of
                         the following form to specify the name and personality of the host, as well
                         as the settings for displaying messages during boot:</p>
-                    <codeblock ixia_locid="449"><systemoutput ixia_locid="450">~(keystone_admin)$ </systemoutput><userinput ixia_locid="451">system host-update <varname ixia_locid="452">hostid personality=<varname ixia_locid="454">personality location=<varname ixia_locid="672">location \
-console=<varname ixia_locid="455">console install_output=<varname ixia_locid="456">install_output ttys_dcd=<varname ixia_locid="753">serial \
-boot_device=<varname ixia_locid="522">boot_device rootfs_device=<varname ixia_locid="523">rootfs_device</userinput></codeblock>
+                    <codeblock ixia_locid="449">~(keystone_admin)$ system host-update hostid personality=personality location=location \
+console=console install_output=install_output ttys_dcd=serial \
+boot_device=boot_device rootfs_device=rootfs_device</codeblock>
                     <p ixia_locid="457">where</p>
                     <parml id="host-update_parms">
                         <plentry ixia_locid="458">
-                            <pt ixia_locid="459"><varname ixia_locid="460">hostid</pt>
+                            <pt ixia_locid="459">hostid</pt>
                             <pd ixia_locid="461">
                                 <p ixia_locid="462">is the numeric id of the host obtained using the
                                         <cmdname ixia_locid="463">system host-list</cmdname>
@@ -307,26 +309,26 @@ boot_device=<varname ixia_locid="522">boot_device rootfs_device=<varname ixia_lo
                             </pd>
                         </plentry>
                         <plentry ixia_locid="464">
-                            <pt ixia_locid="465"><varname ixia_locid="466">hostname</pt>
+                            <pt ixia_locid="465">hostname</pt>
                             <pd ixia_locid="467">
                                 <p ixia_locid="468">is a name to assign to the host</p>
                             </pd>
                         </plentry>
                         <plentry ixia_locid="654">
-                            <pt ixia_locid="655"><varname ixia_locid="656">personality</pt>
+                            <pt ixia_locid="655">personality</pt>
                             <pd ixia_locid="657">
-                                <pHostproduct="tis_region">is the host type (<option ixia_locid="659">controller</option> or <option ixia_locid="660">compute</option>)</p>
-                                <pHostproduct="tis_standard">is the host type <ph ixia_locid="662">(<option ixia_locid="663">controller</option>, <option ixia_locid="664">storage</option>, or <option ixia_locid="665">compute</option>)</ph></p>
+                                <p>is the host type (<option ixia_locid="659">controller</option> or <option ixia_locid="660">compute</option>)</p>
+                                <p>is the host type <ph ixia_locid="662">(<option ixia_locid="663">controller</option>, <option ixia_locid="664">storage</option>, or <option ixia_locid="665">compute</option>)</ph></p>
                             </pd>
                         </plentry>
                         <plentry ixia_locid="673">
-                            <pt ixia_locid="674"><varname ixia_locid="675">location</pt>
+                            <pt ixia_locid="674">location</pt>
                             <pd ixia_locid="676">
                                 <p ixia_locid="677">is a string describing the location of the host</p>
                             </pd>
                         </plentry>
                         <plentry ixia_locid="476">
-                            <pt ixia_locid="477"><varname ixia_locid="478">console</pt>
+                            <pt ixia_locid="477">console</pt>
                             <pd ixia_locid="479">
                                 <p ixia_locid="683">is the output device to use for message display
                                     on the host (for example, <option ixia_locid="684">tty0</option>). The default is <option ixia_locid="685">ttys0,
@@ -334,14 +336,14 @@ boot_device=<varname ixia_locid="522">boot_device rootfs_device=<varname ixia_lo
                             </pd>
                         </plentry>
                         <plentry ixia_locid="483">
-                            <pt ixia_locid="484"><varname ixia_locid="485">install_output</pt>
+                            <pt ixia_locid="484">install_output</pt>
                             <pd ixia_locid="486">
                                 <p ixia_locid="686">is the format for console output on the host
                                         (<option ixia_locid="687">text</option> or <option ixia_locid="688">graphical</option>). The default is <option ixia_locid="689">text</option>.</p>
                             </pd>
                         </plentry>                        
                         <plentry ixia_locid="754">
-                            <pt ixia_locid="755"><varname ixia_locid="756">serial</pt>
+                            <pt ixia_locid="755">serial</pt>
                             <pd ixia_locid="757">
                                 <draft-comment author="rstone" ixia_locid="758">US63466 adds</draft-comment>
                                 <p ixia_locid="759">is set to true to True to have any active
@@ -351,7 +353,7 @@ boot_device=<varname ixia_locid="522">boot_device rootfs_device=<varname ixia_lo
                             </pd>
                         </plentry>
                         <plentry ixia_locid="524">
-                            <pt ixia_locid="525"><varname ixia_locid="526">boot_device</pt>
+                            <pt ixia_locid="525">boot_device</pt>
                             <pd ixia_locid="527">
                                 <p ixia_locid="690">is the host device for boot partition, relative
                                     to <filepath ixia_locid="691">/dev</filepath>. The default is
@@ -359,7 +361,7 @@ boot_device=<varname ixia_locid="522">boot_device rootfs_device=<varname ixia_lo
                             </pd>
                         </plentry>
                         <plentry ixia_locid="531">
-                            <pt ixia_locid="532"><varname ixia_locid="533">rootfs_device</pt>
+                            <pt ixia_locid="532">rootfs_device</pt>
                             <pd ixia_locid="534">
                                 <p ixia_locid="693">is the host device for rootfs partition,
                                     relative to<filepath ixia_locid="694"> /dev</filepath>. The
@@ -370,8 +372,8 @@ boot_device=<varname ixia_locid="522">boot_device rootfs_device=<varname ixia_lo
                 </info>
                 <stepxmp ixia_locid="495">
                     <p ixia_locid="540">For example:</p>
-                    <codeblock ixia_locid="496"><systemoutput ixia_locid="497">~(keystone_admin)$ </systemoutput><userinput ixia_locid="498">system host-update 2 personality=controller</userinput>
-<systemoutput ixia_locid="146">+-----------------+--------------------------------------+
+                    <codeblock ixia_locid="496">~(keystone_admin)$ system host-update 2 personality=controller
++-----------------+--------------------------------------+
 | Property        | Value                                |
 +-----------------+--------------------------------------+
 | action          | none                                 |
@@ -406,7 +408,7 @@ boot_device=<varname ixia_locid="522">boot_device rootfs_device=<varname ixia_lo
 | updated_at      | 2015-09-28T13:13:36.337484+00:00     |
 | uptime          | 242757                               |
 | uuid            | 4e83bc2f-57d4-4508-9550-564d74dc32d4 |
-+-----------------+--------------------------------------+</systemoutput></codeblock>
++-----------------+--------------------------------------+</codeblock>
                 </stepxmp>
                 <stepresult ixia_locid="499">
                     <p ixia_locid="500"><nameliteral ixia_locid="501">Controller-0</nameliteral>
@@ -421,15 +423,15 @@ boot_device=<varname ixia_locid="522">boot_device rootfs_device=<varname ixia_lo
                         <image href="jow1412193160572.image" id="image_fld_lmj_pt" ixia_locid="768">
                             <alt ixia_locid="769">HP Helion OpenStack Carrier Grade Controller Node Install</alt>
                         </image>
-                    </fig>
+
                 </stepresult>
             </step>
-             
+            <step>
                 <!--For a host-add installation, not used: -->
                 <!--For a host-update installation, not used.  -->
                 <!--For a Horizon installation, the second step (2 of 2).  -->
                 <cmd ixia_locid="422">Assign the required personality to the node.</cmd>
-                 <ol>
+                 <substeps>
                     <substep id="open-hosts-list" ixia_locid="423">
                         <cmd id="open-hosts-lists-cmd" ixia_locid="424">Select the <uicontrol ixia_locid="425">Hosts</uicontrol> list.</cmd>
                         <info ixia_locid="43">
@@ -443,8 +445,8 @@ boot_device=<varname ixia_locid="522">boot_device rootfs_device=<varname ixia_lo
                                 with an empty <uicontrol ixia_locid="50">Host Name</uicontrol> and
                                     <uicontrol ixia_locid="430">Personality</uicontrol>.</p>
                             
-                                <image href="jow1404333501487.image" id="image_yld_2zd_gn"Hostwidth="6in"/>
-                            </fig>
+                                <image href="jow1404333501487.image" id="image_yld_2zd_gn" width="6in"/>
+
                         </stepresult>
                     </substep>
                     <substep id="click-edit-hosts" ixia_locid="433">
@@ -457,7 +459,7 @@ boot_device=<varname ixia_locid="522">boot_device rootfs_device=<varname ixia_lo
                                 appears.</p>
                             
                                 <image href="jow1404333503033.image" id="image_wfz_h54_k4" ixia_locid="60"/>
-                            </fig>
+
                         </stepresult>
                     </substep>
                     <substep id="select-personality" ixia_locid="61">
@@ -488,7 +490,7 @@ boot_device=<varname ixia_locid="522">boot_device rootfs_device=<varname ixia_lo
                                 <image href="jow1443358337894.image" id="image_rwg_kbn_mt" ixia_locid="703">
                                     <alt ixia_locid="704">TiS Edit Host Installation Parameters</alt>
                                 </image>
-                            </fig>
+
                             <dl>
                                 <dlentry ixia_locid="705">
                                     <dt ixia_locid="706"><uicontrol ixia_locid="707">Boot Device</uicontrol></dt>
@@ -544,7 +546,7 @@ boot_device=<varname ixia_locid="522">boot_device rootfs_device=<varname ixia_lo
                                 <image href="jow1412193160572.image" id="image_lbd_4mj_pt" ixia_locid="770">
                                     <alt ixia_locid="771">HP Helion OpenStack Carrier Grade Controller Node Install</alt>
                                 </image>
-                            </fig>
+                            
                         </stepresult>
                     </substep>
                     <substep id="select-display-device" importance="optional" ixia_locid="89">
@@ -594,7 +596,7 @@ boot_device=<varname ixia_locid="522">boot_device rootfs_device=<varname ixia_lo
                         <info ixia_locid="118">
                             <p ixia_locid="122">After a few minutes, the node is reported as <uicontrol ixia_locid="123">Locked</uicontrol>, <uicontrol ixia_locid="125">Disabled</uicontrol>, and <uicontrol ixia_locid="127">Online</uicontrol> in the<uicontrol ixia_locid="101">
                                     Hosts</uicontrol> list.</p>
-                            <note id="note_N10263_N1025C_N10255_N10119_N1010F_N100BF_N10029_N10001"Hosttype="caution">
+                            <note id="note_N10263_N1025C_N10255_N10119_N1010F_N100BF_N10029_N10001" type="caution">
                                 <p ixia_locid="121">To ensure a successful installation, wait for
                                     the node to be reported as <uicontrol ixia_locid="124">Locked</uicontrol>, <uicontrol ixia_locid="126">Disabled</uicontrol>, and <uicontrol ixia_locid="128">Online</uicontrol>, and ensure that the login prompt
                                     appears on the host console. If the process is interrupted
@@ -607,8 +609,8 @@ boot_device=<varname ixia_locid="522">boot_device rootfs_device=<varname ixia_lo
                     <p ixia_locid="97">The host is now configured with a personality.</p>
                 </stepresult>
             </step>
-        </ol>
-        Host
+        </steps>
+        <result>
             <p ixia_locid="103">The new host is initialized with an operating system, rebooted, and
                 configured with the assigned personality.</p>
         </result>

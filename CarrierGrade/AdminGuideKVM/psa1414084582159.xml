@@ -32,7 +32,7 @@
         
         <ol>
              
-                <li>Initialize <codeph>controller-0</codeph>.</li>
+                <li>Initialize <codeph>controller-0</codeph>.
                 
                     <p>Use the HP Helion OpenStack Carrier Grade bootable ISO image to initialize
                             <codeph>controller-0</codeph>. See the <cite>HP Helion OpenStack Carrier Grade
@@ -43,9 +43,9 @@
                         port to log in to <codeph>controller-0</codeph> as
                         user <codeph>wrsroot</codeph>.</p>
                 
-            
+                </li>
              
-                <li>Copy the patches to the local file system.</li>
+                <li>Copy the patches to the local file system.
                 
                     <p>If the patches are on a USB flash drive, copy them from the
                         appropriate mount point to some directory in the local file system. For
@@ -65,16 +65,16 @@ me@192.168.1.150:/usr/local/patches/TITANIUM_CONTROLLER_14.10_PATCH_0001.patch \
                 
                     <p>All patches are now in the directory <filepath>/tmp/patches</filepath>.</p>
                 
-            
+                </li>
              
-                <li>Populate the patch storage area.</li>
+                <li>Populate the patch storage area.
                 
                     <p>Upload the patches using the command <cmdname>sw-patch upload</cmdname> or <cmdname>sw-patch
                             upload-dir</cmdname> as described in <xref href="psa1410446807133.xml"/>.</p>
                 
-            
+                </li>
              
-                <li>Apply the patches.</li>
+                <li>Apply the patches.
                 
                     <p>Apply the patches using the command <cmdname>sw-patch apply --all</cmdname>.</p>
                 
@@ -82,9 +82,9 @@ me@192.168.1.150:/usr/local/patches/TITANIUM_CONTROLLER_14.10_PATCH_0001.patch \
                     <p>The patches are now in the software updates repository, ready to be
                         installed.</p>
                 
-            
+                </li>
              
-                <li>Install the patches locally.</li>
+                <li>Install the patches locally.
                 
                     <codeblock>$ sudo sw-patch install-local Patch installation is complete.
 Please reboot before continuing with configuration.</codeblock>
@@ -92,24 +92,24 @@ Please reboot before continuing with configuration.</codeblock>
                 
                     <p>This command installs all applied patches on <codeph>controller-0</codeph>.</p>
                 
-            
+                </li>
              
-                <li>Reboot <codeph>controller-0</codeph>.</li>
+                <li>Reboot <codeph>controller-0</codeph>.
                 
                     <p>You must reboot the controller to ensure that it is running with the software
                         fully patched.</p>
                 
-            
+                </li>
              
-                <li>Continue the installation.</li>
+                <li>Continue the installation.
                 
                     <p>Log in again as <codeph>wrsroot</codeph> and
                         continue with the software installation by running the <cmdname>config_controller</cmdname> script. See the <cite>HP Helion OpenStack Carrier Grade Software Installation Guide</cite> for
                         further details and directions.</p>
-                
+                </li>
             
         </ol>
-        Host
+        
             <p>Once all hosts in the cluster are initialized, they are all running
                 fully patched software. The HP Helion OpenStack Carrier Grade cluster is up to date.</p>
         

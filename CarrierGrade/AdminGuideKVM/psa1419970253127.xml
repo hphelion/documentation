@@ -16,7 +16,7 @@
           alarm-list</cmdname>, <cmdname>system alarm-show</cmdname>, <cmdname>system
           alarm-delete</cmdname>, and <cmdname>system alarm-history-list</cmdname>. Before using the
         commands you must log in to the active controller as the Keystone
-          <codeph>admin</codeph> user. See <xref href="jow1404333563834.xml"/> for
+          admin user. See <xref href="jow1404333563834.xml"/> for
         details.</p>
     </section>
     <section id="section_N10040_N1001C_N10001">
@@ -37,7 +37,7 @@
   | /dev/sda3 severity critical threshold set (0.00 MB left) |
 --+----------------------------------------------------------+
 </codeblock>
-      <p>This example lists a single critical alarm on host <codeph>controller-0</codeph> regarding running out of space on disk unit
+      <p>This example lists a single critical alarm on host controller-0 regarding running out of space on disk unit
           <filepath>/dev/sda3</filepath>. Each alarm object is listed with a unique
         UUID which you can use to obtain additional information.</p>
       <p>Specific subsets of alarms, or a particular alarm, can be listed using one
@@ -138,11 +138,11 @@ entity_instance_id=host=compute-0</codeblock>
 | timestamp              | 2014-06-25T16:58:57.324613                      |
 | uuid                   | 4ab5698a-19cb-4c17-bd63-302173fef62c            |
 +------------------------+-------------------------------------------------+</codeblock>
-      <p>The pair of attributes <codeph>(alarm_id,
-          entity_instance_id)</codeph> uniquely identifies an active alarm:</p>
+      <p>The pair of attributes (alarm_id,
+          entity_instance_id) uniquely identifies an active alarm:</p>
       <dl>
         <dlentry>
-          <dt><codeph>alarm_id</codeph></dt>
+          <dt>alarm_id</dt>
           <dd>
             <p>An ID identifying the particular alarm condition. Note that there are
               some alarm conditions, such as <i>administratively locked</i> , that
@@ -150,7 +150,7 @@ entity_instance_id=host=compute-0</codeblock>
           </dd>
         </dlentry>
         <dlentry>
-          <dt><codeph>entity_instance_id</codeph></dt>
+          <dt>entity_instance_id</dt>
           <dd>
             <p>Type and instance information of the object raising the alarm. A
               period-separated list of (key, value) pairs, representing the containment structure of
@@ -181,7 +181,7 @@ entity_instance_id=host=compute-0</codeblock>
         command lists the 30 more recent change events:</p>
       <codeblock>~(keystone_admin)$ system alarm-history-list -l 30</codeblock>
       <p>The console output is automatically paginated when the list size is greater than 20. Press
-        the <codeph>Enter</codeph> key to go the next page, or press <codeph>q</codeph>
+        the Enter key to go the next page, or press q
         to quit.</p>
       <p>Specific alarms, or alarm subsets, in the ring buffer can be listed using
         the <option>--query</option> command filters accepted by the <cmdname>system alarms-list</cmdname> command. For example, use the following
@@ -222,9 +222,9 @@ end=﻿2014-11-26T18:59:53</codeblock>
         </strow>
       </simpletable>
       <p>Time stamps must be entered in a suitable ISO 8601 date and time format. Some examples are:
-          <codeph>2014</codeph>, <codeph>2014-11-26</codeph>,
-          <codeph>2014-11-28T16:39</codeph>, and
-          <codeph>2014-11-28T16:42:35.647157</codeph>.</p>
+          2014, 2014-11-26,
+          2014-11-28T16:39, and
+          2014-11-28T16:42:35.647157.</p>
       <p>Query command filters can be combined into a single expression separated by semicolons, as
         illustrated in the following example:</p>
       <codeblock>~(keystone_admin)$ system alarm-history-list -l 10 \

@@ -19,7 +19,7 @@
         <ol>
              
                 <li>Configure IP address 10.10.10.1 to receive SNMP notifications
-                    using the community string <term>commstr1</term>.</li>
+                    using the community string <term>commstr1</term>.
                 
                     <codeblock>~(keystone_admin)$ system snmp-trapdest-add -c commstr1 --ip_address 10.10.10.1 +------------+--------------------------------------+
 | Property   | Value                                |
@@ -79,9 +79,9 @@
                         </dlentry>
                     </dl>
                 
-            
+                </li>
              
-                <li>List defined trap destinations.</li>
+                <li>List defined trap destinations.
                 
                     <codeblock>~(keystone_admin)$ system snmp-trapdest-list +------------+----------------+------+--------------+-----------+
 | IP Address  | SNMP Community | Port | Type         | Transport |
@@ -89,9 +89,9 @@
 | 10.10.10.1  | commstr1       | 162  | snmpv2c_trap | udp       |
 +-------------+----------------+------+--------------+-----------+</codeblock>
                 
-            
+                </li>
              
-                <li>Query access details of a specific trap destination.</li>
+                <li>Query access details of a specific trap destination.
                 
                     <codeblock>~(keystone_admin)$ system snmp-trapdest-show 10.10.10.1 +------------+--------------------------------------+
 | Property   | Value                                |
@@ -104,14 +104,14 @@
 | transport  | udp                                  |
 +------------+--------------------------------------+</codeblock>
                 
-            
+                </li>
              
                 <li>Disable the sending of SNMP notifications to a specific IP
-                    address.</li>
+                    address.
                 
                     <codeblock>~(keystone_admin)$ system snmp-trapdest-delete 10.10.10.1 Deleted ip 10.10.10.1</codeblock>
                 
-            
+                </li>
         </ol>
     </body>
 </topic>

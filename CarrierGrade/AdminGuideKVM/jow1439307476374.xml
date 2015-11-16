@@ -3,8 +3,8 @@
 <referable-content id="jow1439307476374" xml:lang="en-us">
 <title ixia_locid="148">[RC:postreq] PCI passthrough and SR-IOV postrequisites</title>
 <rcbody>
-        <postreq id="postreq_N1023B_N10024_N10001" ixia_locid="127">
-            <p ixia_locid="128">Access switches must be properly configured to ensure that virtual
+        
+            <p id="postreq_N1023B_N10024_N10001" ixia_locid="127">Access switches must be properly configured to ensure that virtual
                 machines using PCI-passthrough or SR-IOV Ethernet interfaces (the latter discussed
                 in <xref href="psa1428687672712.xml" ixia_locid="129"/>) have the expected
                 connectivity. In a common scenario, the virtual machine using these interfaces
@@ -29,7 +29,7 @@
                         establish connections to the intended end points.</p>
                 </li>
             </ul>
-            <p ixia_locid="136">For connectivity to other virtual machines in the cluster the
+    <p id="ul_ngs_nvw_rrr">For connectivity to other virtual machines in the cluster the
                 following configuration is also required:</p>
             <ul id="ul_ngs_nvw_rr">
                 <li ixia_locid="137">
@@ -50,6 +50,6 @@
                         and the AVS port.</p>
                 </li>
             </ul>
-        </postreq>
+        
     </rcbody>
 </referable-content>

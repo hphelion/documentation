@@ -39,10 +39,13 @@
     <p ixia_locid="17">To attach an Ethernet interface, see <xref href="jow1426949897008.xml" ixia_locid="18"/>.</p>
    </li>
    <li ixia_locid="19">
-    <p ixia_locid="20">To attach an aggregated Ethernet interface, see <xref href="jow1426951671346.xml" ixia_locid="21"/>.</p>
+    <p ixia_locid="20">To attach an aggregated Ethernet interface, see <xref
+      href="jow1426951671346.xml" ixia_locid="21">Attaching to Networks Using an Aggregated Ethernet
+      Interface</xref>.</p>
    </li>
    <li ixia_locid="22">
-    <p ixia_locid="23">To attach a VLAN interface, see <xref href="jow1426951757970.xml" ixia_locid="24"/>.</p>
+    <p ixia_locid="23">To attach a VLAN interface, see <xref href="jow1426951757970.xml"
+      ixia_locid="24">Attaching to Networks Using a VLAN Interface</xref>.</p>
     <note id="note_N1007F_N10071_N1004F_N1001F_N10001" ixia_locid="34">
      <p ixia_locid="35">To attach a data network to an existing management or infrastructure network
       interface<!-- using a method that supports VLAN provider networks-->, see <xref href="jow1414000462559.xml" ixia_locid="36"/>.</p>
@@ -58,7 +61,8 @@
    <p ixia_locid="33">On controller nodes, interfaces are attached to the management, OAM, and
     optional infrastructure networks automatically according to the settings specified during the
     controller configuration script. They do not require further provisioning before system
-    deployment. For more information, see <xref href="jow1419271369349.xml" ixia_locid="5"/>.</p>
+    deployment. For more information, see <xref href="jow1419271369349.xml" ixia_locid="5">The
+     Controller Configuration Script</xref>.</p>
   </note>
  </conbody>
 </concept-wr>

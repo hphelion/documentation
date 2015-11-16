@@ -398,7 +398,7 @@ StrictHostKeyChecking no </codeblock></li>
                                                   contains the required DCN packages needed to
                                                   deploy the DCN environment, in the
                                                   <codeph>build22/HLM/DCN</codeph> directory. The
-                                                  currently supported version is <b>DCN version 3.2
+                                                  currently supported version is <b id="dcn-version">DCN version 3.2
                                                   R4</b>.</p><ul id="ul_w3c_yj4_yt">
                                                   <li>5930-Nuage-D2423.ipe</li>
                                                   <li>itoolbox1.ova</li>

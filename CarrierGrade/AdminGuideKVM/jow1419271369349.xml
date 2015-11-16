@@ -58,7 +58,7 @@
               </entry>
             </row>
             <row>
-              <entryHostnameend="comments" namest="prompt">
+              <entry namest="prompt">
                 <p conref="jow1419271183630.xml#jow1419271183630/storage_section" ixia_locid="577"/>
               </entry>
             </row>
@@ -147,7 +147,7 @@
               </entry>
             </row>
             <row>
-              <entryHostnameend="comments" namest="prompt">
+              <entry namest="prompt">
                 <p conref="jow1419271183630.xml#jow1419271183630/mgmt_network_section" ixia_locid="410"/>
               </entry>              
             </row>            
@@ -227,7 +227,7 @@
               </entry>
             </row>
             <row>
-              <entryHostnameend="comments" namest="prompt">
+              <entry namest="prompt">
                 <p conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_network_section" ixia_locid="421"/>
               </entry>
             </row>
@@ -268,7 +268,7 @@
               </entry>
             </row>
             <row>
-              <entryHostnameend="comments" namest="prompt">
+              <entry namest="prompt">
                 <p conref="jow1419271183630.xml#jow1419271183630/infra_network_section" ixia_locid="432"/>
               </entry>
             </row>
@@ -357,7 +357,7 @@
               </entry>
             </row>
             <row>
-              <entryHostnameend="comments" namest="prompt">
+              <entry namest="prompt">
                 <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_section" ixia_locid="447"/>
               </entry>
             </row>
@@ -445,7 +445,7 @@
               </entry>
             </row>
             <row>
-              <entryHostnameend="comments" namest="prompt">
+              <entry namest="prompt">
                 <p conref="jow1419271183630.xml#jow1419271183630/DNS_section" ixia_locid="466"/>
               </entry>
             </row>
@@ -456,7 +456,7 @@
               </entry>
             </row>
             <row>
-              <entryHostnameend="comments" namest="prompt">
+              <entry nameend="comments" namest="prompt">
                 <p conref="jow1419271183630.xml#jow1419271183630/NTP_section" ixia_locid="469"/>
               </entry>
             </row>
@@ -469,7 +469,7 @@
               </entry>
             </row>
             <row>
-              <entryHostnameend="comments" namest="prompt">
+              <entry nameend="comments" namest="prompt">
                 <p conref="jow1419271183630.xml#jow1419271183630/license_section" ixia_locid="473"/>
               </entry>
             </row>
@@ -536,7 +536,7 @@
               </entry>
             </row>
             <row>
-              <entryHostnameend="comments" namest="prompt">
+              <entry nameend="comments" namest="prompt">
                 <p conref="jow1419271183630.xml#jow1419271183630/auth_section" ixia_locid="476"/>
               </entry>
             </row>

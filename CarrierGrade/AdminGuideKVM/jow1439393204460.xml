@@ -27,12 +27,12 @@
                         Volume</b></li>
             
              
-                <li>Complete the <b>Create Volume</b> form.</li>
+                <li>Complete the <b>Create Volume</b> form.
                 
                     <p>For an example, see the <cite>HP Helion OpenStack Carrier Grade Reference Deployment Scenarios:
                             Creating a Volume</cite>.</p>
                     <!-- p>For settings information, see <xref href="jow1439393574682.xml"/>.</p -->
-                
+                </li>
             
         </ol>
     </body>

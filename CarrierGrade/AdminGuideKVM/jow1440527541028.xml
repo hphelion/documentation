@@ -11,8 +11,10 @@
         <author/>
     </prolog>
     <body>
-        <ol>
-            <li conref="jow1404333506827.xml#jow1404333506827/lock-node" id="step_N10023_N1001F_N1001C_N10001" />
+       <ol>         
+        <li> Lock the host to prepare it for configuration changes.</li>
+            
+           
                 
             
              
@@ -23,7 +25,7 @@
                         maker of the host computer. </p>
                 
                 </li>
-            <li conref="jow1404333506827.xml#jow1404333506827/unlock-node" id="step_N1003D_N1001F_N1001C_N10001" />
+           <li>Unlock the host to make it available for use.</li>
                 
             
              

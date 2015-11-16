@@ -29,19 +29,19 @@
             
              
                 <li>On the <b>Memory</b> tab, click
-                        <b>Update Memory</b>.</li>
+                        <b>Update Memory</b>.
                 
                     
                         <image href="jow1424729372811.image" id="image_kg3_sdf_2r" width="5in">
                             <alt>Update Memory button</alt>
                         </image>
                     
-                
+                </li>
             
              
                 <li>Use the <b>Update Memory
                         Allocation</b> dialog box to set the memory allocations for each NUMA
-                    node. </li>
+                    node. 
                 
                     <p>For each available NUMA node, three fields are supplied, as
                         illustrated in the following example screen for two NUMA nodes.</p>
@@ -95,7 +95,7 @@
                         for VM memory allocation requests. See <xref href="jow1424723681500.xml"/>
                         for details.</p>
                 
-            
+                </li>
              
                 <li>Click <b>Save</b>.</li>
             

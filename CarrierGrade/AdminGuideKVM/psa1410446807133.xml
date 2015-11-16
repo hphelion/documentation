@@ -11,7 +11,8 @@
     <prolog>
         <author></author>
     </prolog>
-    <body>
+    <taskbody class="- topic/body task/taskbody ">
+        
         <context id="context_N1001F_N1001C_N10001" ixia_locid="4"/>
         <steps>
             <step id="cli-admin-login" ixia_locid="18">
@@ -25,8 +26,8 @@
             <step id="step_N1002B_N10028_N1001C_N10001" ixia_locid="6">
                 <cmd ixia_locid="7">Upload the patch file to the patch storage area.</cmd>
                 <stepxmp ixia_locid="11">
-                    <codeblock ixia_locid="12"><systemoutput ixia_locid="64">~(keystone_admin)$ </systemoutput><userinput ixia_locid="14">sudo sw-patch upload /tmp/patches/TITANIUM_CONTROLLER_14.10_PATCH_0001.patch</userinput>
-<systemoutput ixia_locid="65">TITANIUM_CONTROLLER_14.10_PATCH_0001 is now available</systemoutput></codeblock>
+                    <codeblock ixia_locid="12">~(keystone_admin)$ sudo sw-patch upload /tmp/patches/TITANIUM_CONTROLLER_14.10_PATCH_0001.patch
+TITANIUM_CONTROLLER_14.10_PATCH_0001 is now available</codeblock>
                 </stepxmp>
                 <info ixia_locid="8">
                     <p ixia_locid="9">This example uploads a single patch to the storage area. You
@@ -34,7 +35,7 @@
                         with spaces.</p>
                     <p ixia_locid="32">Alternatively, you can upload all patch files stored in a directory using a
                         single command, as illustrated in the following example:</p>
-                    <codeblock ixia_locid="33"><systemoutput ixia_locid="66">~(keystone_admin)$ </systemoutput><userinput ixia_locid="35">sudo sw-patch upload-dir /tmp/patches</userinput></codeblock>
+                    <codeblock ixia_locid="33">~(keystone_admin)$ sudo sw-patch upload-dir /tmp/patches</codeblock>
                 </info>
                 <stepresult ixia_locid="36">
                     <p ixia_locid="37">The patch files are available now in the patch storage area, but they have
@@ -44,15 +45,15 @@
             <step id="step_N10051_N10028_N1001C_N10001" ixia_locid="16">
                 <cmd ixia_locid="17">Verify the status of the patch.</cmd>
                 <stepxmp ixia_locid="38">
-                    <codeblock ixia_locid="39"><systemoutput ixia_locid="67">~(keystone_admin)$ </systemoutput><userinput ixia_locid="41">sudo sw-patch query</userinput>
-<systemoutput ixia_locid="68">﻿       Patch ID             Patch State
+                    <codeblock ixia_locid="39">~(keystone_admin)$ sudo sw-patch query
+﻿       Patch ID             Patch State
 =========================   ===========
-TITANIUM_14.10_PATCH_0001   Available</systemoutput></codeblock>
+TITANIUM_14.10_PATCH_0001   Available</codeblock>
                     <p ixia_locid="43">The patch state is <i ixia_locid="44">Available</i> now, indicating that it is included in
                         the patch storage area. Further details about the patch can be retrieved as
                         follows:</p>
-                    <codeblock ixia_locid="45"><systemoutput ixia_locid="69">~(keystone_admin)$ </systemoutput><userinput ixia_locid="47">sudo sw-patch show TITANIUM_14.10_PATCH_0001</userinput>
-<systemoutput ixia_locid="70">TITANIUM_14.10_PATCH_0001:
+                    <codeblock ixia_locid="45">~(keystone_admin)$ sudo sw-patch show TITANIUM_14.10_PATCH_0001
+TITANIUM_14.10_PATCH_0001:
     Patch State:    Available
     Release Status: Released
     Summary:        Add logs to hbsClient and libalarm-clock
@@ -72,7 +73,7 @@ TITANIUM_14.10_PATCH_0001   Available</systemoutput></codeblock>
                     titanium-mtce-common-dev-1.0-r23.x86_64.rpm
                     titanium-mtce-common-pmon-1.0-r23.x86_64.rpm
                     titanium-mtce-common-rmon-1.0-r23.x86_64.rpm
-                    libalarm-clock-1.0-r1.x86_64.rpm</systemoutput></codeblock>
+                    libalarm-clock-1.0-r1.x86_64.rpm</codeblock>
                 </stepxmp>
             </step>
             <step id="step_N100D8_N1002D_N1001F_N10001" ixia_locid="49">
@@ -82,7 +83,7 @@ TITANIUM_14.10_PATCH_0001   Available</systemoutput></codeblock>
                         deleted as illustrated in the following command:</p>
                 </info>
                 <stepxmp ixia_locid="54">
-                    <codeblock ixia_locid="55"><systemoutput ixia_locid="71">~(keystone_admin)$ </systemoutput><userinput ixia_locid="57">sudo sw-patch delete TITANIUM_14.10_PATCH_0001</userinput></codeblock>
+                    <codeblock ixia_locid="55">~(keystone_admin)$ sudo sw-patch delete TITANIUM_14.10_PATCH_0001</codeblock>
                     <p ixia_locid="58">The patch to delete from the patch storage area is identified
                         by the patch ID reported by the <cmdname ixia_locid="59">sw-patch
                             query</cmdname> command. You can provide multiple patch IDs to the
@@ -90,5 +91,5 @@ TITANIUM_14.10_PATCH_0001   Available</systemoutput></codeblock>
                 </stepxmp>
             </step>
         </steps>
-    </body>
+    </taskbody>
 </task-wr>

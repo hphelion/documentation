@@ -29,13 +29,17 @@
         
 
         <ol>
-            <li conref="jow1437656331081.xml#maintask/common_start" conrefend="jow1437656331081.xml#maintask/common_end" id="step_N10077_N10074_N10024_N10001" />
+            <li conref="jow1437656331081.xml#maintask/common_start"
+                conrefend="jow1437656331081.xml#maintask/common_end"
+                id="step_N10077_N10074_N10024_N10001"/>
                 
             
-            <li conref="jow1437656331081.xml#maintask/restore_cinder_vols" id="step_N10050_N10041_N10024_N10001" />
+            <li conref="jow1437656331081.xml#maintask/restore_cinder_vols"
+                id="step_N10050_N10041_N10024_N10001"/>
                 
             
-            <li conref="jow1437656331081.xml#maintask/remove_error_vols_small" id="step_N10059_N10041_N10024_N10001" />
+            <li conref="jow1437656331081.xml#maintask/remove_error_vols_small"
+                id="step_N10059_N10041_N10024_N10001"/>
                 
             
              
@@ -80,11 +84,15 @@
 +-------------------+--------------------------------------+</codeblock>
                 
                 </li>
-            <li conref="jow1437656331081.xml#maintask/restore_controller_1_small" id="step_N10062_N10041_N10024_N10001" />
+            <li conref="jow1437656331081.xml#maintask/restore_controller_1_small"
+                id="step_N10062_N10041_N10024_N10001"/>
                 
             
         </ol>
         
-        <p conref="jow1437656331081.xml#maintask/restore_passwords" id="p_N10079_N10024_N10001"/>
+        <p>Passwords for local user accounts must be restored manually since
+                they are not included as part of the backup and restore procedures. See <xref
+                    href="jow1404333563834.xml"/> for additional information.</p>
+        
     </body>
 </topic>

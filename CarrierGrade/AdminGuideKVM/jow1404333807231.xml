@@ -85,7 +85,7 @@ resources:
             <title>Relaxed Requirements for Passing User Data</title>
             <p>The property <parmname>UserDataType</parmname> is a HP Helion OpenStack Carrier Grade template extension
                 that you can use to pass user data to an instance even if the instance does not have
-                    <libraryname>cloud-init</libraryname> installed.  For more information, see
+                    <codeph>cloud-init</codeph> installed.  For more information, see
                     <xref href="jow1409240700100.xml"/>.</p>
         </section>
         <section id="section_N10136_N1001F_N10001">

@@ -35,7 +35,7 @@
                     click <b>Launch Instance</b>.</li>
             
              
-                <li>Complete the <b>Launch Instances</b> form.</li>
+                <li>Complete the <b>Launch Instances</b> form.
                 
                     <p>For examples, see the <cite>HP Helion OpenStack Carrier Grade
                             Reference Deployment Scenarios: Deploying the Bridging Scenario</cite>
@@ -57,7 +57,7 @@
                             to <codeph>Boot from Volume</codeph>.</p>
                     </note>
                 
-            
+                </li>
         </ol>
     </body>
 </topic>

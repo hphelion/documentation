@@ -48,7 +48,7 @@
                 <li>Log in as Keystone user <codeph>admin</codeph> to the active controller.</li>
             
              
-                <li>Verify the state of the patch.</li>
+                <li>Verify the state of the patch.
                 
                     <codeblock>~(keystone_admin)$ sudo sw-patch query ﻿       Patch ID             Patch State
 =========================   ===========
@@ -56,9 +56,9 @@ TITANIUM_14.10_PATCH_0001   Applied</codeblock>
                     <p>In this example the patch is listed in the <i>Applied</i> state, but it could
                         be in the <i>Partial-Apply</i> state as well.</p>
                 
-            
+                </li>
              
-                <li>Remove the patch.</li>
+                <li>Remove the patch.
                 
                     <codeblock>~(keystone_admin)$ sudo sw-patch remove TITANIUM_14.10_PATCH_0001 TITANIUM_14.10_PATCH_0001 has been removed from the repo</codeblock>
                 
@@ -67,9 +67,9 @@ TITANIUM_14.10_PATCH_0001   Applied</codeblock>
                         state, ready to be removed from the impacted hosts where it was already
                         installed.</p>
                 
-            
+                </li>
              
-                <li>Query the patching status of all hosts in the cluster.</li>
+                <li>Query the patching status of all hosts in the cluster.
                 
                     <codeblock>~(keystone_admin)$ sudo sw-patch query-hosts ﻿  Hostname      IP Address    Patch Current  Reboot Required
 ============  ==============  =============  ===============
@@ -79,26 +79,26 @@ controller-1  192.168.204.4        No              Yes</codeblock>
                     <p>In this example, the controllers have patches ready to be
                         removed, and therefore must be rebooted.</p>
                 
-            
+                </li>
              
-                <li>Remove all pending-for-removal patches from <codeph>controller-0</codeph>.</li>
+                <li>Remove all pending-for-removal patches from <codeph>controller-0</codeph>.
                  <ol>
                     
                         <li>Swact controller services.</li>
                     
                     
-                        <li>Run the patching sequence.</li>
+                        <li>Run the patching sequence.
                         
                             <codeblock>~(keystone_admin)$ system host-patch-reboot controller-0</codeblock>
                         
-                    
+                        </li>
                 </ol>
-            
+                </li>
              
                 <li>Remove all pending patches from <codeph>controller-1</codeph>.</li>
             
         </ol>
-        Host
+        
             <p>The Titanium cluster is up to date now. All patches have been
                 removed, and the patch TITANIUM_14.10_PATCH_0001 can be deleted from the patch
                 storage area if necessary.</p>

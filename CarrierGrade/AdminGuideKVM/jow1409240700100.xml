@@ -13,10 +13,10 @@
  <body>
   <p>You can include user data by defining a <codeph>UserData</codeph> property for an instance. This sends configuration instructions to
       the instance at launch. For an example of user data, see the <filepath>CombinationAutoScaling.yaml</filepath> template included with HP Helion OpenStack Carrier Grade.</p>
-  <p>Normally, this requires <libraryname>cloud-init</libraryname> to
+  <p>Normally, this requires <codeph>cloud-init</codeph> to
       be installed in the guest, because the user data is converted to MIME format and then
-      interpreted by <libraryname>cloud-init</libraryname>. For instances that do not
-      include <libraryname>cloud-init</libraryname>, you can bypass the MIME
+      interpreted by <codeph>cloud-init</codeph>. For instances that do not
+      include <codeph>cloud-init</codeph>, you can bypass the MIME
       conversion of user data by invoking an extension property and assigning the value
         <codeph>'RAW'</codeph>. This allows the VM to retrieve the
       specified user data in unaltered format through a simple REST API call to the metadata server.

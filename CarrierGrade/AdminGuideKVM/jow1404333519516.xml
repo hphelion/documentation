@@ -21,8 +21,8 @@
                 <cmd ixia_locid="7"/>
             </step>
             <step conref="jow1424191621914.xml#jow1424191621914/step_N10054_N1003C_N10024_N10001" id="step_N1003A_N1002D_N1001F_N10001" ixia_locid="366">
-                <cmd ixia_locid="9"/>
-            </step>
+                
+         
              
                 <cmd ixia_locid="11">Create a provider network.</cmd>
                 <info conref="jow1424191621914.xml#jow1424191621914/Provider_Network_dialog" ixia_locid="12"/>
@@ -31,7 +31,7 @@
                         <image href="jow1425675012586.image" id="image_jss_vsg_hr" ixia_locid="360">
                             <alt ixia_locid="361">i-ccs-create-provider-network-generic</alt>
                         </image>
-                    </fig>
+         
                 </info>
             </step>
             <step conref="jow1424191621914.xml#jow1424191621914/step_N10127_N1003C_N10024_N10001" id="step_N1005D_N1002D_N1001F_N10001" ixia_locid="16">

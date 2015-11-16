@@ -11,7 +11,7 @@
         <author ixia_locid="3">Jim Owens</author>
     </prolog>
     <rcbody>
-        
+        <prereq id="prereq_N10030_N1001C_N10001" ixia_locid="8" class="- topic/section task/prereq ">    
             <p ixia_locid="5">Unlocking causes the host to be rebooted so that its configuration can
                 be updated.</p>
             <note id="note_N10027_N1001F_N1001C_N10001" ixia_locid="6">
@@ -33,8 +33,8 @@
             </ul>
         </prereq>
         <steps id="steps_N10066_N1001F_N10001">
-             
-                <cmd ixia_locid="49">Lock the host to prepare it for configuration changes.</cmd>
+             <step>
+                 <cmd id="lock-node" ixia_locid="49">Lock the host to prepare it for configuration changes.</cmd>
                 <info ixia_locid="50">
                     <p ixia_locid="51">In the <uicontrol ixia_locid="52">Hosts</uicontrol> list,
                         click <uicontrol ixia_locid="54">More</uicontrol> for the host, and then
@@ -43,7 +43,7 @@
                         and <uicontrol ixia_locid="59">Online</uicontrol>.</p>
                 </info>
             </step>
-             
+            <step>
                 <cmd ixia_locid="17">In the <uicontrol ixia_locid="18">Hosts</uicontrol> list, on
                     the row associated with the host, click <uicontrol ixia_locid="19">More</uicontrol> to display a menu of actions.</cmd>
                 <choices id="choices_e2n_qfr_l4">
@@ -60,17 +60,18 @@
                     </choice>
                 </choices>
             </step>
-             
-                <cmd ixia_locid="35">Unlock the host to make it available for use.</cmd>
-                <info ixia_locid="36">
-                    <p ixia_locid="37">In the <uicontrol ixia_locid="38">Hosts</uicontrol> list,  on the row associated with the
-                        node, click <menucascade ixia_locid="39"><uicontrol ixia_locid="40">More</uicontrol><uicontrol ixia_locid="41">Unlock Host</uicontrol></menucascade>.</p>
+            <step id="unlock-node" ixia_locid="34" class="- topic/li task/step ">
+                <cmd ixia_locid="35" class="- topic/ph task/cmd ">Unlock the host to make it available for use.</cmd>
+                <info ixia_locid="36" class="- topic/itemgroup task/info ">
+                    <p ixia_locid="37" class="- topic/p ">In the <uicontrol ixia_locid="38" class="+ topic/ph ui-d/uicontrol ">Hosts</uicontrol> list,  on the row associated with the
+                        node, click <menucascade ixia_locid="39" class="+ topic/ph ui-d/menucascade "><uicontrol ixia_locid="40" class="+ topic/ph ui-d/uicontrol ">More</uicontrol><uicontrol ixia_locid="41" class="+ topic/ph ui-d/uicontrol ">Unlock Host</uicontrol></menucascade>.</p>
                 </info>
-                <stepresult ixia_locid="60">
-                    <p ixia_locid="42">The host is rebooted, and its <uicontrol ixia_locid="43">Availability State</uicontrol> is reported as <uicontrol ixia_locid="44">In-Test</uicontrol>. After a few minutes, it is reported
-                        as <uicontrol ixia_locid="45">Unlocked</uicontrol>, <uicontrol ixia_locid="46">Enabled</uicontrol>, and <uicontrol ixia_locid="47">Available</uicontrol>.</p>
+                <stepresult ixia_locid="60" class="- topic/itemgroup task/stepresult ">
+                    <p ixia_locid="42" class="- topic/p ">The host is rebooted, and its <uicontrol ixia_locid="43" class="+ topic/ph ui-d/uicontrol ">Availability State</uicontrol> is reported as <uicontrol ixia_locid="44" class="+ topic/ph ui-d/uicontrol ">In-Test</uicontrol>. After a few minutes, it is reported
+                        as <uicontrol ixia_locid="45" class="+ topic/ph ui-d/uicontrol ">Unlocked</uicontrol>, <uicontrol ixia_locid="46" class="+ topic/ph ui-d/uicontrol ">Enabled</uicontrol>, and <uicontrol ixia_locid="47" class="+ topic/ph ui-d/uicontrol ">Available</uicontrol>.</p>
                 </stepresult>
             </step>
+            
         </steps>
     </rcbody>
 </referable-content>

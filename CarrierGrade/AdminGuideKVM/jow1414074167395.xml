@@ -24,26 +24,26 @@
         
         <ol>
              
-                <li>Lock the host to be removed.</li>
+                <li>Lock the host to be removed.
                 
                     <p>Open the <b>Hosts</b> list by
                         clicking <b>Inventory</b> on the<b> System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
-                    <p>Click <menucascade>
-                            <b>More</b>
+                    <p>Click 
+                            <b>More</b>, then
                             <b>Lock Host</b>
-                        </menucascade> for the host. </p>
+                         for the host. </p>
                     <p>Wait for the procedure to be completed.</p>
                 
             
-             
-                <li>Delete the host from the HP Helion OpenStack Carrier Grade system.</li>
+                </li>
+                <li>Delete the host from the HP Helion OpenStack Carrier Grade system.
                 
-                    <p>Click <menucascade>
-                            <b>More</b>
+                    <p>Click 
+                            <b>More</b>, then
                             <b>Delete Host</b>
-                        </menucascade> for the host. </p>
+                         for the host. </p>
                 
-            
+                </li>
              
                 <li>Power down the host and remove the hardware from the cluster.</li>
             

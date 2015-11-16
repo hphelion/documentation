@@ -16,7 +16,8 @@
         <section id="section_N10027_N10024_N10001" ixia_locid="6">
             <p ixia_locid="7">If you select link aggregation (also known as Aggregate Ethernet) when
                 configuring the management, infrastructure, or OAM networks, you can choose from the
-                following operational modes. For more information, refer to the Linux kernel <xref format="html" href="https://www.kernel.org/doc/Documentation/networking/bonding.txt"Hostscope="external">Ethernet Bonding Driver</xref>
+                following operational modes. For more information, refer to the Linux kernel 
+                <xref format="html" href="https://www.kernel.org/doc/Documentation/networking/bonding.txt">Ethernet Bonding Driver</xref>
                 documentation.</p>
             <note id="note_N1003E_N1002C_N10029_N10001" ixia_locid="93">
                 <p ixia_locid="94">Ensure that the LAG mode on the corresponding Top-of-Rack (ToR)
