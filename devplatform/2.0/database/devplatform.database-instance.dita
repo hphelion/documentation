@@ -28,9 +28,7 @@
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ol>
-<li>Install the <xref
-              href="../installation/devplatform_install_platform.dita">HPE Helion Development
-              Platform</xref>. </li>
+<li>Install the <xref href="../installation/devplatform_commercial_install.dita" >HPE Helion Development Platform</xref>. </li>
 <li>
           <xref href="../installation/devplatform_install_database.dita" type="section" >Configure
             the database service</xref>.</li>
