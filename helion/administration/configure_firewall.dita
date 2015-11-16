@@ -7,13 +7,17 @@
     <section id="about">
       <p>During the installation process, the configuration processor will automatically generate
         "allow" firewall rules for each server based on the services deployed and block all other
-        ports. The <codeph>firewall_rules.yml</codeph> file in the input model allows you to define
-        additional rules for each network group.</p>
-      <p>You can read more about this <xref
+        ports. These are populated in <codeph>~/helion/my_cloud/info/firewall_info.yml</codeph>,
+        which includes a list of all the ports by network, including the addresses on which the
+        ports will be opened. This is described in more details <xref
+          href="../input_model.dita#input_model/input_model__firewall_info_yml">here</xref>.</p>
+      <p>The <codeph>firewall_rules.yml</codeph> file in the input model allows you to define
+        additional rules for each network group. You can read more about this <xref
           href="../input_model.dita#input_model/input_model__co_firewallrules">here</xref>.</p>
       <p>The purpose of this document is to show you how to make post-installation changes to the
         firewall rules if the need arises.</p>
-      <note type="important">This process is not to be confused with the <xref href="../networking/fwaas.dita">Firewall as a Service</xref>.</note>
+      <note type="important">This process is not to be confused with the <xref
+          href="../networking/fwaas.dita">Firewall as a Service</xref>.</note>
     </section>
     <section id="howto"><title>Making Changes to the Firewall Rules</title>
       <ol>
@@ -52,7 +56,8 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts osconfig-iptables-deploy.yml</codeblock></li>
       </ol>
-      <p>You can repeat these steps as needed to add, remove, or edit any of these firewall rules.</p>
+      <p>You can repeat these steps as needed to add, remove, or edit any of these firewall
+        rules.</p>
     </section>
   </body>
 </topic>
