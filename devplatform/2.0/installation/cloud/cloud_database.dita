@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="cloudDatabase">
-  <title>Database Configuration</title>
+  <title>HPE Helion 2.0 Development Platform: Database Configuration</title>
   <body>
     <section>
       <p>This additional section is required only if the Database Service is

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_mhg_f2n_vt">
-  <title>Full clouds.yaml Sample File</title>
+  <title>HPE Helion 2.0 Development Platform: Full clouds.yaml Sample File</title>
   <body>
     <p>For information on each variable, see the service-specific documentation.</p>
     <codeblock><xref href="cloud_platform.dita#cloudPlatform">clouds</xref>:
