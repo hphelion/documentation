@@ -13,11 +13,11 @@
         workflow. Installation of the basic cloud requires that you run a handful of commands, or
         use the new installation GUI to step through installation in a wizard-like fashion.</p>
       <p>OpenStack services are installed during the installation process, so there is no need to
-        install and configure them individually. Instead, in HPE Helion OpenStack 2.0, configuration,
-        including which services to install, how many nodes you will have, what their individual
-        roles will be, what storage will be used, which networks will handle which traffic, and
-        installation and configuration of the underlying operating system on each node is declared
-        in configuration objects stored in YAML files. </p>
+        install and configure them individually. Instead, in HPE Helion OpenStack 2.0,
+        configuration, including which services to install, how many nodes you will have, what their
+        individual roles will be, what storage will be used, which networks will handle which
+        traffic, and installation and configuration of the underlying operating system on each node
+        is declared in configuration objects stored in YAML files. </p>
       <p>These files allow customization, and HPE Helion OpenStack 2.0 ships with complete sets
         describing a few common configurations. You may base your deployment on one of these
         templates and customize from there if you wish.</p>
@@ -59,29 +59,33 @@
         deployer and lifecycle manager interchangeably throughout the HPE Helion 2.0 documentation
         to refer to the features described in this document.</p>
       <p>By executing pre-written, supplied Ansible playbooks in the form of a single command, you
-        may perform management tasks such as those below, along with many others. <ul>
-          <li>start, stop, and get the status of OpenStack services</li>
-          <li>add and remove controller, compute, and storage nodes </li>
-          <li>back up or restore control plane nodes </li>
-          <li>migrate Cinder volumes</li>
-          <li>get Ceph status</li>
-          <li>start and stop logging</li>
-          <li>erase nodes to baremetal</li>
-          <li>re-image nodes</li>
-          <li>reconfigure Swift to add or replace drives</li>
-          <li>validate Swift drives against the storage model declared</li>
-        </ul>
-      </p> While the internal management of OpenStack services and the configuration of their
-      functionality still occurs via the service APIs and follows the methodology outlined by
-      OpenStack, the high-level management of the services themselves and their interaction with the
-      cloud is accomplished via the Ansible playbooks mentioned here. </section>
-    <section><title>Configuration Versioning</title> In HPE Helion OpenStack 2.0, the YAML files
-      that define your cloud configuration are stored in a local git repository that is installed
-      along with the cloud. The cloud deployment Ansible playbooks look in the appropriate git
-      directories and execute changes when run. This allows you to keep an historical record of
-      configuration changes as well as help you identify issues that arise later.</section>
+        may perform management tasks such as those below, along with many others.</p>
+      <ul>
+        <li>start, stop, and get the status of OpenStack services</li>
+        <li>add and remove controller, compute, and storage nodes </li>
+        <li>back up or restore control plane nodes </li>
+        <li>migrate Cinder volumes</li>
+        <li>get Ceph status</li>
+        <li>start and stop logging</li>
+        <li>erase nodes to baremetal</li>
+        <li>re-image nodes</li>
+        <li>reconfigure Swift to add or replace drives</li>
+        <li>validate Swift drives against the storage model declared</li>
+      </ul>
+      <p>While the internal management of OpenStack services and the configuration of their
+        functionality still occurs via the service APIs and follows the methodology outlined by
+        OpenStack, the high-level management of the services themselves and their interaction with
+        the cloud is accomplished via the Ansible playbooks mentioned here.</p>
+    </section>
+    <section><title>Configuration Versioning</title>
+      <p>In HPE Helion OpenStack 2.0, the YAML files that define your cloud configuration are stored
+        in a local git repository that is installed along with the cloud. The cloud deployment
+        Ansible playbooks look in the appropriate git directories and execute changes when run. This
+        allows you to keep an historical record of configuration changes as well as help you
+        identify issues that arise later.</p>
+    </section>
 
-   <!-- <section><title>What's New in Documentation</title>
+    <!-- <section><title>What's New in Documentation</title>
     </section>-->
   </body>
 </topic>
