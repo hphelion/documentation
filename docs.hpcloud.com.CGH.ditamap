@@ -95,10 +95,6 @@
       <topicref href="CarrierGrade/Installation/carrier-grade-installation-guide.ditamap"
         format="ditamap"/>
     </topicref>
-    <topichead navtitle="Installation" locktitle="yes">
-      <mapref href="CarrierGrade/Installation/carrier-grade-installation-guide.ditamap"
-        format="ditamap" navtitle="Installation Guide" locktitle="yes"/>
-    </topichead>
     <topichead navtitle="Administration" locktitle="yes">
       <topichead navtitle="KVM Region Administrator Guide (On-Line)" locktitle="yes">
         <mapref href="CarrierGrade/AdminGuideKVM/CGH-2-KVM-Admin.ditamap"/>
@@ -126,8 +122,6 @@
       <topicref href="CarrierGrade/AdminGuide/Baremetal/carrier-grade-configure-5930-switch.dita"
         navtitle="Configuring 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports" locktitle="yes"/>
     </topichead>
-    <topicref href="CarrierGrade/AdminGuideKVM/Test1.ditamap" format="ditamap" navtitle="Test"
-      locktitle="yes"/>
     <topichead navtitle="Operations">
       <topicref href="CarrierGrade/AdminGuide/carrier-grade-User-guide.ditamap"
         navtitle="User Guide" locktitle="yes" format="ditamap"/>
