@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_l51_22v_xs">
+  <title>Network Port Configuration</title>
+  <body>
+    <p>The ALS <xref href="../../user/reference/glossary.dita#topic6187/term-micro-cloud"
+        >micro-cloud</xref> runs with the following ports exposed: <table>
+        <tgroup cols="3">
+          <tbody>
+            <row>
+              <entry>Port</entry>
+              <entry>Type</entry>
+              <entry>Service</entry>
+            </row>
+            <row>
+              <entry>22</entry>
+              <entry>tcp</entry>
+              <entry>ssh</entry>
+            </row>
+            <row>
+              <entry>25</entry>
+              <entry>tcp</entry>
+              <entry>smtp</entry>
+            </row>
+            <row>
+              <entry>80</entry>
+              <entry>tcp</entry>
+              <entry>http</entry>
+            </row>
+            <row>
+              <entry>111</entry>
+              <entry>tcp</entry>
+              <entry>portmapper</entry>
+            </row>
+            <row>
+              <entry>111</entry>
+              <entry>udp</entry>
+              <entry>portmapper</entry>
+            </row>
+            <row>
+              <entry>443</entry>
+              <entry>tcp</entry>
+              <entry>https</entry>
+            </row>
+            <row>
+              <entry>3306</entry>
+              <entry>tcp</entry>
+              <entry>mysql</entry>
+            </row>
+            <row>
+              <entry>5432</entry>
+              <entry>tcp</entry>
+              <entry>postgresql</entry>
+            </row>
+            <row>
+              <entry>5678</entry>
+              <entry>tcp</entry>
+              <entry>DEA directory server</entry>
+            </row>
+            <row>
+              <entry>8181</entry>
+              <entry>tcp</entry>
+              <entry>upload server</entry>
+            </row>
+            <row>
+              <entry>9001</entry>
+              <entry>tcp</entry>
+              <entry>supervisord</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table> On a production cluster, or a micro cloud running on a cloud hosting provider, only
+      ports 22 (SSH), 80 (HTTPS) and 443 (HTTPS) need to be exposed externally (e.g. for the Router
+      / Core node). </p>
+     <p> 
+      Within the cluster (i.e. behind the firewall), it is advisable to allow
+      communication between the cluster nodes on all ports. This can be done
+      safely by using the security group / security policy tools provided by
+      your hypervisor. <!-- :      
+      * :ref:`EC2 Security Group Settings server-vm-ec2-firewall`
+        * :ref:`HPE Cloud ServicesSecurity Group Settings server-vm-hpcs-firewall` --></p>
+          
+         <p> If you wish to restrict ports between some nodes, for example, if you do not
+          have the option to use security groups, the following summary describes
+          which ports are used by which components. <b>Source</b> nodes initiate the
+           communication; <b>Destination</b> nodes need to listen on the specified port.</p>
+          
+<p>
+      <simpletable frame="all" relcolwidth="1.0* 1.0* 1.0* 1.0* 1.0*" id="simpletable_zjp_nhv_xs">
+        <sthead>
+          <stentry>Port Range</stentry>
+          <stentry>Type</stentry>
+          <stentry>Source</stentry>
+          <stentry>Destination</stentry>
+          <stentry>Required by</stentry>
+        </sthead>
+        <strow>
+          <stentry>22</stentry>
+          <stentry>tcp</stentry>
+          <stentry> all nodes </stentry>
+          <stentry>all nodes </stentry>
+          <stentry>ssh/scp/sshfs </stentry>
+        </strow>
+        <strow>
+          <stentry>4222 </stentry>
+          <stentry>tcp</stentry>
+          <stentry> all nodes</stentry>
+          <stentry> controller</stentry>
+          <stentry><xref href="../../user/reference/glossary.dita#topic6187/term-NATS">NATS</xref></stentry>
+        </strow>
+        <strow>
+          <stentry>3306</stentry>
+          <stentry>tcp </stentry>
+          <stentry>dea,controller</stentry>
+          <stentry> mysql nodes </stentry>
+          <stentry>MySQL </stentry>
+        </strow>
+        <strow>
+          <stentry>5432</stentry>
+          <stentry>tcp </stentry>
+          <stentry>dea,controller</stentry>
+          <stentry> postgresql nodes </stentry>
+          <stentry>PostgreSQL</stentry>
+        </strow>
+        <strow>
+          <stentry> 5454</stentry>
+          <stentry> tcp</stentry>
+          <stentry>all nodes</stentry>
+          <stentry> controller </stentry>
+          <stentry>redis </stentry>
+        </strow>
+        <strow>
+          <stentry>6464</stentry>
+          <stentry> tcp </stentry>
+          <stentry>all nodes</stentry>
+          <stentry> all nodes </stentry>
+          <stentry>applog (redis) </stentry>
+        </strow>
+        <strow>
+          <stentry>7000 - 7999</stentry>
+          <stentry> tcp</stentry>
+          <stentry>all nodes</stentry>
+          <stentry> all nodes </stentry>
+          <stentry>``kato log tail`` </stentry>
+        </strow>
+        <strow>
+          <stentry>7474</stentry>
+          <stentry> tcp </stentry>
+          <stentry>all nodes</stentry>
+          <stentry> all nodes </stentry>
+          <stentry>config (redis) </stentry>
+        </strow>
+        <strow>
+          <stentry>8181</stentry>
+          <stentry> tcp </stentry>
+          <stentry>router</stentry>
+          <stentry> controller </stentry>
+          <stentry>upload server </stentry>
+        </strow>
+        <strow>
+          <stentry>9001</stentry>
+          <stentry> tcp </stentry>
+          <stentry>controller</stentry>
+          <stentry> all nodes</stentry>
+          <stentry><xref href="../../user/reference/glossary.dita#topic6187/term-supervisord">supervisord</xref></stentry>
+        </strow>
+        <strow>
+          <stentry>9022</stentry>
+          <stentry> tcp</stentry>
+          <stentry>dea </stentry>
+          <stentry>controller </stentry>
+          <stentry>droplets </stentry>
+        </strow>
+        <strow>
+          <stentry>9022</stentry>
+          <stentry> tcp </stentry>
+          <stentry>controller</stentry>
+          <stentry> dea </stentry>
+          <stentry>droplets </stentry>
+        </strow>
+        <strow>
+          <stentry>9025</stentry>
+          <stentry> tcp </stentry>
+          <stentry>controller</stentry>
+          <stentry> router </stentry>
+          <stentry>stackato-rest </stentry>
+        </strow>
+        <strow>
+          <stentry>9026</stentry>
+          <stentry> tcp </stentry>
+          <stentry>controller</stentry>
+          <stentry> all nodes</stentry>
+          <stentry>stackato-rest </stentry>
+        </strow>
+        <strow>
+          <stentry>41000 - 61000</stentry>
+          <stentry> tcp </stentry>
+          <stentry>dea,controller</stentry>
+          <stentry> service nodes </stentry>
+          <stentry>service gateways </stentry>
+        </strow>
+      </simpletable>
+    </p>
+          
+    <p>Each node can be internally firewalled using <xref href="http://manpages.ubuntu.com/manpages/man8/iptables.8.html" format="html" scope="external">iptables</xref> to apply the above rules.</p>
+            
+            <p>Comments:</p>
+         <ul>  
+           <li>Ports 80 and 443 need only be open to the world on router nodes.</li>
+            
+           <li>Port 4222 should be open on all nodes for <xref href="../../user/reference/glossary.dita#topic6187/term-NATS">NATS</xref> communication with the MBUS IP
+        (core Cloud Controller)</li>
+            
+             <li>Port 9022 should be open to allow transfer of droplets to and
+               from the DEAs and Cloud Controllers.</li>
+            
+               <li>Port 7845 is required if you plan to stream logs from all nodes
+                 in a cluster using the <codeph>kato log tail</codeph> command.</li>
+            
+                 <li>External access on port 22 can be restricted if necessary to the subnet you
+                   expect to connect from. If you are providing the <codeph>helion ssh</codeph> feature to your users
+        (recommended), define a distinct security group for the public-facing Cloud Controller node
+        that is the same as a generic group, but has the additional policy of allowing SSH (Port 22)
+        from hosts external to the cluster.</li>
+            
+                   <li>Within the cluster, port 22 should be open on all hosts to allow
+            administrative access over SSH. Port 22 is also used to mount
+            Filesystem service partitions in application containers on the DEA
+            nodes (via SSHFS).</li>
+            
+                     <li>The optional Harbor port service has a configurable port range
+                       (default 41000 - 61000) which can be exposed externally if required.</li>
+         </ul> 
+            <section><title>Service Nodes</title>In addition to the ports listed above for service
+      nodes and gateways, several service nodes assign a port for each individual user-requested
+      service instance. These ranges should be kept open between DEA nodes and their respective
+      service nodes. The default ranges are: <ul>
+        <li>harbor: 35000 - 40000</li>
+        <li>memcached: 45001 - 50000</li>
+        <li>mongodb: 15001 - 25000</li>
+        <li>rabbit: 35001 - 40000</li>
+        <li>rabbit3: 25001 - 30000</li>
+        <li>redis: 5000 - 15000</li>
+      </ul><p>You can check the currently configured port range for each service with <codeph>kato
+          config</codeph> commands like <codeph>kato config get redis_node
+      port_range</codeph>).</p></section>
+          <section id="ports-hosts-allowed"><title>Container Allowed Hosts and Ports</title> For
+      security reasons, Docker application containers restrict access to hosts on the eth0 subnet.
+      By default, only ports and hosts for built-in services and components (e.g. service instances
+      bound to an application) are explicitly allowed. The following settings are available to allow
+      or restrict access from the application containers: <dl>
+        <dlentry>
+          <dt>fence docker/allowed_host_ports</dt>
+          <dd>If applications need access to custom services on a specific port, but the IP address
+            changes or is not known ahead of time, add the port to this list. For
+            example:<codeblock>kato config push fence docker/allowed_host_ports 25</codeblock></dd>
+        </dlentry>
+        <dlentry>
+          <dt>fence docker/allowed_subnet_ips</dt>
+          <dd>If the specific IP address for the service is static and known, add the IP address
+            with or without the port specification:
+            <codeblock>kato config push fence docker/allowed_subnet_ips 10.0.0.54
+            kato config push fence docker/allowed_subnet_ips 10.0.0.55:9001</codeblock></dd>
+        </dlentry>
+        <dlentry>
+          <dt>fence docker/block_network_ips</dt>
+          <dd>To explicitly block access to a specific IP address (internal or external):
+            <codeblock>kato config push fence docker/block_network_ips 8.8.8.8</codeblock></dd>
+        </dlentry>
+      </dl>Restart the DEA role to apply these changes for new application containers. If
+      applications which require access to these IP addresses have already been deployed, they will
+      need to be restarted. <p>Two additional settings are exposed in <codeph>kato config</codeph>
+        but should not generally be modified:</p><dl>
+        <dlentry>
+          <dt>fence docker/exposed_container_ports</dt>
+          <dd> Container ports to be accessed over the subnet (internal services)</dd>
+        </dlentry>
+        <dlentry>
+          <dt>fence docker/network_interface</dt>
+          <dd>The Docker bridge interface.<b> Do not modify.</b></dd>
+        </dlentry>
+      </dl>
+    </section>     
+            </body>
+</topic>

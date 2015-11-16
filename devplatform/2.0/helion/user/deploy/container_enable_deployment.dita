@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_qs2_sgy_kt">
+  <title>HPE Helion 2.0 Development Platform: Enable Container Deployment</title>
+  <body>
+    <p>For security, Docker container deployments are disabled. You can enable container deployment
+      in two ways:<ul id="ul_ztf_ghy_kt">
+        <li>Add <codeph>sudo</codeph> permissions to users within an organization</li>
+        <li>Disable <codeph>sudo</codeph> requirement for Docker apps</li>
+      </ul></p>
+    <section><title>To Add <codeph>sudo</codeph> Permission for All Users</title>
+      <ol id="ol_hnw_thy_kt">
+        <li>Open the Helion Management Console.</li>
+        <li>Click <menucascade>
+            <uicontrol>Admin</uicontrol>
+            <uicontrol>Quotas</uicontrol>
+          </menucascade>.</li>
+        <li>Click a quota plan and then click <uicontrol>Edit Quota</uicontrol>.</li>
+        <li>Check the <uicontrol>Allow Sudo</uicontrol> checkbox and then click
+            <uicontrol>Update</uicontrol>.<image placement="break"
+            href="../../../../../media/docker_sudo_quota.png" align="" id="image_ul4_y24_xt"/></li>
+        <li>For the setting to take effect, restart any apps running under the quota plan.</li>
+      </ol></section>
+    <section><title>To Remove <codeph>sudo</codeph> Requirement for Docker App Deployment</title>
+      <ol id="ol_qj4_33y_kt">
+        <li>Open the Helion Management Console.</li>
+        <li>Click <menucascade>
+            <uicontrol>Settings</uicontrol>
+            <uicontrol>HPE Helion Development Platform Settings</uicontrol>
+          </menucascade>.</li>
+        <li>On the left panel, lick <uicontrol>Docker Apps Settings</uicontrol>.</li>
+        <li>Uncheck the <uicontrol>Require Sudo</uicontrol> checkbox.<image placement="break"
+            href="../../../../../media/docker_sudo_disable_horizon.png" id="image_w2r_l3y_kt"/></li>
+      </ol></section>
+  </body>
+</topic>

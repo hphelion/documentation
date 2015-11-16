@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic1693">
+<title>HPE Helion 2.0 Development Platform: Application Lifecycle Service User Guide</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>The Application Lifecycle Service is a polyglot Platform-as-a-Service (PaaS). You can easily
+      deploy applications written in a wide range of languages and web frameworks using a variety of
+      data services simply by pushing your source code to the system.</p>
+<p>Application Lifecycle Service handles the automatic configuration of the language runtime,
+web server, application dependencies, databases, and other services.</p>
+<section id="quick-start"> <title>Quick Start</title>
+<ul>
+<li>
+  <xref href="quick-start/quickstart_index.dita">ALS Quick Start </xref>.</li>
+<li>
+  <xref href="quick-start/quickstart_index.dita#topic4745/management-console" type="section"  >Management Console</xref>
+</li>
+<li>
+  <xref href="quick-start/quickstart_index.dita#topic4745/helion-client" type="section"  >Application Lifecycle Service Client</xref>
+</li>
+<li>
+  <xref href="quick-start/quickstart_index.dita#topic4745/setting-organization-and-space" type="section"  >Setting Organization and Space</xref>
+</li>
+<li>
+  <xref href="quick-start/quickstart_index.dita#topic4745/deploying-apps" type="section"  >Deploying Apps</xref>
+</li>
+</ul>
+</section>
+<section id="helion-client"> <title>Application Lifecycle Service Client</title>
+<ul>
+<li>
+<xref href="../user/reference/client-ref.dita">Application Lifecycle Service Client Command Reference</xref>
+</li>
+<li>
+          <xref href="../user/client/client_index.dita">Application Lifecycle Service Client</xref>
+          <ul>
+            <li>
+              <xref href="../user/client/client_index.dita#topic3165/helion-client-setup" type="section"  >Application
+                Lifecycle Service Client Setup</xref>
+            </li>
+            <li>
+              <xref href="../user/client/client_index.dita#topic3165/getting-help" type="section"  >Getting Help</xref>
+            </li>
+            <li>
+              <xref href="../user/client/client_index.dita#topic3165/targeting-the-api-endpoint" type="section"  
+                >Targeting the API Endpoint</xref>
+            </li>
+            <li>
+              <xref href="../user/client/client_index.dita#topic3165/http-proxies" type="section"  >HTTP Proxies</xref>
+            </li>
+            <li>
+              <xref href="../user/client/client_index.dita#topic3165/removing-the-client" type="section"  >Removing the
+                Client</xref>
+            </li>
+          </ul></li>
+</ul>
+</section>
+<section id="deploying-applications"><title>Deploying Applications</title>
+<ul>
+<li>
+<xref href="../user/deploy/deploy_index.dita">General Deployment</xref>
+</li>
+<li>
+<xref href="../user/deploy/manifestyml.dita">Manifest.yml Options</xref>
+</li>
+<li>
+  <xref href="../user/deploy/app-debug.dita">Remote Debugging</xref>
+</li>
+<li>
+          <xref href="../user/deploy/deploy_index.dita">Frameworks &amp; Languages</xref>
+          <ul>
+            <li>Frameworks <ul>
+                <li>
+                  <xref href="../user/deploy/orgs-spaces.dita">Organizations &amp; Spaces</xref>
+                </li>
+                <li>
+                  <xref href="../user/deploy/buildpack.dita">Buildpacks</xref>
+                </li>
+                <li>
+                  <xref href="../user/deploy/other-frameworks.dita">Generic &amp; Standalone
+                    Frameworks</xref>
+                </li>
+              </ul></li>
+            <li>Languages <ul>
+                <li>
+                  <xref href="../user/deploy/languages/java.dita">Java</xref>
+                </li>
+                <li>
+                  <xref href="../user/deploy/languages/node.dita">Node.js</xref>
+                </li>
+                <li>
+                  <xref href="../user/deploy/languages/php.dita">PHP</xref>
+                </li>
+                <li><xref href="deploy/languages/perl/perl_index.dita">Perl</xref></li>
+                <li><xref href="deploy/languages/python/python_index.dita">Python</xref></li>
+                <li><xref href="deploy/languages/clojure.dita">Clojure</xref></li>
+                <li><xref href="deploy/languages/go.dita">Go</xref></li>
+                <li><xref href="deploy/languages/ruby.dita">Ruby</xref></li>
+              </ul></li>
+          </ul></li>
+</ul>
+</section>
+<section id="services"> <title>Services</title>
+<ul>
+<li>
+<xref href="../user/services/data-services.dita">Data Services</xref>
+</li>
+<li>
+<xref href="../user/services/filesystem.dita">Persistent File System</xref>
+</li>
+<li>
+<xref href="../user/services/memcached.dita">Memcached Service</xref>
+</li>
+<li>
+<xref href="../user/services/port-service.dita">Port Service</xref>
+</li>
+<li>
+<xref href="../user/services/user-provided.dita">User-Provided Services</xref>
+</li>
+</ul>
+</section>
+<section id="logging-monitoring"> <title>Logging &amp; Monitoring</title>
+<ul>
+<li>
+<xref href="../user/deploy/app-logs.dita">Application Logs</xref>
+</li>
+</ul>
+</section>
+<section id="management-console"> <title>Management Console</title>
+<ul>
+        <li><xref href="console/console_index.dita">Management Console User View</xref></li>
+      </ul>
+</section>
+</body>
+</topic>

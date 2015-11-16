@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2729">
+<title>HPE Helion 2.0 Development Platform: Organizations and Spaces</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>Organizations and Spaces are the main organizational units in Application Lifecycle Service.</p>
+<ul>
+<li>Organizations have Users, Spaces, and Domains</li>
+<li>Spaces have Users, Applications, and Service Instances</li>
+<li>Applications have Routes (which are derived from Domains)</li>
+</ul>
+<section id="organizations"> <title>Organizations</title>
+<p>An organization is a top-level group of users, spaces, and domains. Only
+Application Lifecycle Service admins (accounts with global superuser privileges) can manage
+Organizations.</p>
+  <p>Each organization is assigned a <xref
+          href="../../admin/server/configuration.dita#topic31232/quota-definitions">Quota
+          Definition</xref>, a set of limits on memory, applications, and service instances which is
+        shares between all members of the organization.</p>
+</section>
+<section id="spaces"> <title>Spaces</title>
+<p>An organization can contain multiple spaces (e.g. <b>development</b>,
+<b>test</b>, and <b>production</b>). A domain can be mapped to multiple spaces
+but a route can be mapped to only one space.</p>
+</section>
+<section id="domains"> <title>Domains</title>
+<p>A domain in Application Lifecycle Service is a fully-qualified, second-level or lower domain name (e.g. "example.com" or "helion.example.com").</p>
+<p>Organizations and spaces can have custom domains, but are often able to use a system domain by default as well (e.g. "myorg.net" and "helion.example.com"). Domains belong to an organization. They are associated with one or more spaces within that organization, but are not directly bound to apps. Apps are assigned a "hostname + domain" combination called a Route.</p>
+</section>
+<section id="routes"> <title>Routes</title>
+<p>A route is a virtual hostname followed by a domain name or
+fully-qualified sub-domain (e.g. "myapp.myorg.example.com").</p>
+</section>
+<section id="management"> <title>Management</title>
+<p>You can manage spaces and organizations with the <xref href="../reference/client-ref.dita" >helion client</xref> or the <xref href="../console/console_index.dita" >Management Console</xref>.</p>
+</section>
+<section id="users-roles"> <title>Users and Roles</title>
+<p>Application Lifecycle Service users can take on one or more roles within Orgs and Spaces. These roles can be assigned by a Manager of the relevant scope or an Application Lifecycle Service Admin:</p>
+</section>
+<section id="org-roles"> <title>Org Roles</title>
+<ul>
+<li>Manager: Can add/remove Spaces and Domains, edit the roles of Org members, and change the name of the Org </li>
+<li>Billing Manager: Can edit/change the billing account info, payment info</li>
+<li>Auditor: View-only access to all org and space info, settings, and reports</li>
+</ul>
+</section>
+<section id="space-roles"> <title>Space Roles</title>
+<ul>
+<li>Space Manager: Manager: Can add/remove Org members to the space (as managers, developers or auditors) and rename the space. The role does not automatically inherit Space Developer permissions, but Managers have permission to add that role to their own account. </li>
+<li>Space Developer: Can create, delete, manage applications and services, full access to all usage reports and logs</li>
+<li>Space Auditor: View-only access to all space information, settings, reports, and logs</li>
+</ul>
+</section>
+</body>
+</topic>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2394">
+<title>HPE Helion 2.0 Development Platform: Deploying Windows Applications with the IIS Buildpack</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="System Engineer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Patrick F"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./devplatform/windows/windows_custom_buildpacks.md-->
+ <!--permalink: /helion/devplatform/windows/buildpack/--></p>
+<p>
+  <!--Original: <span @class=>--><ph>
+    <i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i>
+  </ph>
+</p>
+<p>A <b>Buildpack</b> is a collection of scripts that specify what frameworks and runtimes are to be deployed with an application.</p>
+<p>When you build and deploy a Windows application, the following steps take place:</p>
+<ol>
+<li> You will be prompted for connection data (Endpoint, login, and password), and whether to ignore
+        SSL errors. You should check "Ignore SSL errors" in the dialog if your deployment
+        environment uses self-signed SSL certificates (such as HPE Helion Public Cloud).<p>
+          <image href="../../../media/windows_publish_credentials.png" placement="break"/>
+        </p></li>
+<li>Application settings are collected from <codeph>manifest.yml</codeph>.</li>
+<li>If a local build is requested, projects in the solution directory are deployed to a temporary folder and compiled with <b>MSBuild</b>.</li>
+<li>Projects are deployed using the <b>CloudFoundry MS Build Tasks</b>.</li>
+</ol>
+<p>After the project is deployed, the IIS Buildpack performs the following tasks:</p>
+<ol>
+<li>If there is no solution or project file present, the application is simply copied to the "Build Path" directory (This is a directory determined internally by the Buildpack).</li>
+<li>If a project file is present, but no solution file, the application is built with <b>MSBuild</b> with no parameters, and the built application is copied to the "Build Path" directory.</li>
+<li>If a solution file is present, NuGet packages listed in the solution file will be restored, and the application will be built with <b>MSBuild</b>, and the application is copied to the "Build Path" directory.</li>
+</ol>
+<p>This process can fail if any of the following are true:</p>
+<ol>
+<li>There is more than one solution file present</li>
+<li>The number of folders in the deployed site is not correct</li>
+<li>There is no <codeph>Web.Config</codeph> file in the root of the "Build Path" directory after deployment</li>
+</ol>
+<p>For more information, please refer to the <xref href="https://github.com/hpcloud/cf-iis8-buildpack" scope="external" format="html" >Buildpack git project</xref>.</p>
+
+</body>
+</topic>

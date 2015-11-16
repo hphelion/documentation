@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="createProject">
+    <title>HPE Helion 2.0 Development Platform: Create a New Project</title>
+    <body>
+        <p>The Project is a workspace where the application is built. </p>
+    
+        <p id="project_create">
+            
+        <ol>
+           
+                <li>Click the <b>Projects</b> tab and then click <b>New Project</b>.<image
+                        placement="break" href="../../../media/engine_project_create.png"
+                        id="image_dzh_2vm_zt"/></li>
+            
+            
+                <li>Specify the source for this project:  <image placement="break"
+                    href="../../../media/engine_project_create_source.png" id="image_ux2_sqy_kt"/><ol>
+                        <li>Enter a <b>Project Name</b>.</li>
+                        <li>Select a source:<ul id="ul_y4x_hn5_st">
+                                <li><b>GitHub</b>: Click to connect to a repository hosted on GitHub
+                                    that you own or have admin rights to. Select the repository to
+                                    associate with this project and then click <b>Select</b>.</li>
+                                <li><b>Git</b>: Connect to a repository hosted locally. Enter the
+                                        <b>Name</b> of the repo and the <b>Clone URL</b> and click
+                                        <b>Select</b>.</li>
+                            </ul></li>
+                        <li>Click <b>Next</b>.</li>
+                    </ol></li>
+                <li>Define the Pipeline: <image placement="break"
+                        href="../../../media/engine_project_create_pipeline.png" id="image_nht_xry_kt"
+                        /><ol id="ul_i32_rlc_3t">
+                        <li><b>Branch</b>: Select the target environment to deploy to. If the target
+                            environment has not yet been created, click <xref
+                                href="engine_environment_create.dita">Create New
+                            Environment</xref>.</li>
+                        <li><b>Project Type</b>: Select the appropriate development language. </li>
+                            
+            <li>Click <b>Next</b>.</li> </ol></li>
+            <li>Define the Environment<image placement="break"
+                        href="../../../media/engine_project_create_environment.png"
+                        id="image_xq3_zzm_zt"/></li>
+                <li>Team <image placement="break"
+                        href="../../../media/engine_project_create_team.png" id="image_rvp_nfn_zt"
+                    /></li>
+                <li>Notification.<image placement="break"
+                        href="../../../media/engine_project_create_notifications.png"
+                        id="image_onm_4xy_kt"/><ol id="ol_a4z_sym_zt">
+                        <li id="defineNotifications">Select the <b>Type</b> of Notification and then
+                            provide the required credentials.<ul id="ul_vpz_sym_zt">
+                                <li><b>HTTP Post </b><ul id="ul_wqz_sym_zt">
+                                        <li>Notification Target Name: Enter the name of the person
+                                            to notify.</li>
+                                        <li>HTTP Endpoint: Specify an endpoint where HelionCI events
+                                            should be sent. Very similar to defining a webhook.
+                                            Examples would be the URL of an internal website, a
+                                            communication tool, or an RSS feed. </li>
+                                        <li>Token: Generate a token as required for the target
+                                            endpoint. The method will vary depending on the target. </li>
+                                        <li>Click <b>Save</b>.</li>
+                                    </ul></li>
+                                <li><b>HipChat </b><ul id="ul_vrz_sym_zt">
+                                        <li>Notification Target Name: Enter the name of the person
+                                            to notify.</li>
+                                        <li>Hipchat Room Number: <xref
+                                                href="engine_hipchat_data.dita#topic_ak1_yjd_3t/roomnumber"
+                                                >How to Find</xref></li>
+                                        <li>Token: <xref
+                                                href="engine_hipchat_data.dita#topic_ak1_yjd_3t/token"
+                                                >How to Generate</xref></li>
+                                        <li>Click <b>Save</b>.</li>
+                                    </ul></li>
+                                <li><b>Flowdock</b>
+                                    <ul id="ul_rsz_sym_zt">
+                                        <li>Notification Target Name: Enter the name of the person
+                                            to notify.</li>
+                                        <li>API Endpoint: <xref href="https://api.flowdock.com"
+                                                format="html" scope="external">How to
+                                            Find</xref></li>
+                                        <li>Token: <xref
+                                                href="https://www.flowdock.com/api/authentication#source-token"
+                                                format="html" scope="external">How to
+                                                Generate</xref></li>
+                                        <li>Click <b>Save</b>.</li>
+                                    </ul></li>
+                            </ul></li>
+                        <li>Click <b>Save</b>.</li>
+                    </ol></li></ol></p>
+        </body>
+</topic>

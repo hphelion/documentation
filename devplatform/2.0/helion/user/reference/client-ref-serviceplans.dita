@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4355">
+<title>HPE Helion 2.0 Development Platform: ALS Command Reference: Service Plans</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic4355/command-hide-service-plan">helion hide-service-plan</xref>: Hide the specified service-plan from the named organization.</li>
+<li>
+<xref type="section" href="#topic4355/command-service-plan">helion service-plan</xref>: Show the details of the specified service plan</li>
+<li>
+<xref type="section" href="#topic4355/command-service-plans">helion service-plans</xref>: List all available plans of the supported services</li>
+<li>
+<xref type="section" href="#topic4355/command-show-service-plan">helion show-service-plan</xref>: Make the specified service plan visible to the named organization.</li>
+<li>
+<xref type="section" href="#topic4355/command-update-service-plan">helion update-service-plan</xref>: Update the target's knowledge of the named service plan.</li>
+</ul>
+<section id="syntax"> <title>Syntax</title>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
+<p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="command-hide-service-plan"> <title>helion hide-service-plan  &lt;<i>name</i>&gt; &lt;<i>organization</i>&gt;</title>
+<p>Hide the specified service-plan from the named organization.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--provider</entry>
+    <entry>The service provider. Use this to disambiguate between multiple providers of the same vendor/type.</entry>
+  </row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+<row>
+    <entry>--vendor</entry>
+    <entry>Name of the service type the specified plan belongs to.</entry>
+  </row>
+<row>
+    <entry>--version</entry>
+    <entry>The service version. Use this to disambiguate between multiple versions of the same vendor/type.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-service-plan"> <title>helion service-plan &lt;<i>name</i>&gt;</title>
+<p>Show the details of the specified service plan.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--json</entry>
+    <entry>Print raw json as output, not human-formatted data.</entry>
+  </row>
+<row>
+    <entry>--provider</entry>
+    <entry>The service provider. Use this to disambiguate between multiple providers of the same vendor/type.</entry>
+  </row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+<row>
+    <entry>--vendor</entry>
+    <entry>Name of the service type the specified plan belongs to.</entry>
+  </row>
+<row>
+    <entry>--version</entry>
+    <entry>The service version. Use this to disambiguate between multiple versions of the same vendor/type.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-service-plans"> <title>helion service-plans</title>
+<p>List all available plans of the supported services.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--json</entry>
+    <entry>Print raw json as output, not human-formatted data.</entry>
+  </row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-show-service-plan"> <title>helion show-service-plan &lt;<i>name</i>&gt; &lt;<i>organization</i>&gt;</title>
+<p>Make the specified service plan visible to the named organization.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--provider</entry>
+    <entry>The service provider. Use this to disambiguate between multiple providers of the same vendor/type.</entry>
+  </row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+<row>
+    <entry>--vendor</entry>
+    <entry>Name of the service type the specified plan belongs to.</entry>
+  </row>
+<row>
+    <entry>--version</entry>
+    <entry>The service version. Use this to disambiguate between multiple versions of the same vendor/type.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-update-service-plan"> <title>helion update-service-plan &lt;<i>name</i>&gt; &lt;<i>NewName</i>&gt;</title>
+<p>Update the target's knowledge of the named service plan.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--description</entry>
+    <entry>Change the plan's description.</entry>
+  </row>
+<row>
+    <entry>--free</entry>
+    <entry>Mark the plan as free.</entry>
+  </row>
+<row>
+    <entry>--no-free</entry>
+    <entry>Complementary alias of --free.</entry>
+  </row>
+<row>
+    <entry>--no-public</entry>
+    <entry>Complementary alias of --public.</entry>
+  </row>
+<row>
+    <entry>--public</entry>
+    <entry>Mark the plan as globally public.</entry>
+  </row>
+<row>
+    <entry>--provider</entry>
+    <entry>The service provider. Use this to disambiguate between multiple providers of the same vendor/type.</entry>
+  </row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+<row>
+    <entry>--vendor</entry>
+    <entry>Name of the service type the specified plan belongs to.</entry>
+  </row>
+<row>
+    <entry>--version</entry>
+    <entry>The service version. Use this to disambiguate between multiple versions of the same vendor/type.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</body>
+</topic>

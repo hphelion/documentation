@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_database_create_cluster_horizon">
+  <title>Creating a database cluster from Horizon</title>
+  <body>
+    <p>This document describes how to create a database cluster from the Horizon interface.</p>
+    <ol>
+      <li>Log into the Horizon web interface. Select <b>Project</b>, <b>Database</b>, <b>Clusters</b>. Click <b>Launch Cluster</b>.
+        <image href="../../../media/dbaas_clusters_1.PNG" placement="break" /></li>
+      <li>In the <b>Launch Cluster</b> page, enter the following information and click <b>Launch
+          Cluster</b>: <ul>
+          <li><b>Cluster Name</b>: The name of the cluster to be created. The cluster ID will be
+            generated automatically.</li>
+          <li><b>Datastore</b>: The database type to be used. MySql, Vertica Preview, Redis and
+            MongoDB are supported.</li>
+          <li><b>Flavor</b>: The instance flavor (virtual hardware template) to use for the
+            cluster.</li>
+          <li><b>Network</b>: The OpenStack network to attach to the cluster.</li>
+          <li><b>Volume Size</b>: The size in GB of the new cluster. <note>Databases require a
+              minimum volume size of 5, with a recommended size of 10.</note></li>
+          <li><b>Number of Shards</b> (MongoDB only): The number of MongoDB shards to span the
+            database across. One shard will be used to create the database cluster; this value
+            cannot be changed. See <xref type="external"
+              href="http://docs.mongodb.org/manual/sharding/" format="html">Sharding</xref> for more
+            information.</li>
+          <li><b>Number of Instances</b>: The number of OpenStack instances to span the database
+            across. Three instances will be used to create the cluster; this value cannot be
+            changed, but more instances can be added later.</li>
+          <li>
+            <note>The number of instances and shards is not editable.</note>
+          </li>
+        </ul>
+        <note>When a database cluster is created from the Horizon interface, the instances are
+          created with random Availability Zones (AZ) across the available zones. To specify AZs for
+          specific instances, you must create the database cluster using the command line. See <xref
+            href="devplatform.database-create-cluster-cli.dita#topic_database_create_cluster_cli"
+            >Creating a database cluster from the command line</xref> for more details.</note>
+        <image href="../../../media/dbaas_clusters_1.PNG" placement="break"/></li>
+      <li>The new cluster will be created, and appear in the Clusters page. Once it is done creating, the status will display as
+        <b>None</b>, indicating that the cluster is finished provisioning. Click on the name of the cluster to see details of the cluster and the status of the cluster.
+      </li>
+    </ol>
+    <note>
+      <p>As part of Vertica cluster creation, the Database Service generates SSH keys for instances on the vertica cluster that allow 
+        the cluster setup script to connect to all the instances and run cluster setup commands. These keys are protected on the guest 
+        instances as they are locked down by file ACLs allowing access only to the vertica processes. After the cluster create process is 
+        finished, these keys are deleted from all of the nodes. </p>
+      <p>These auto-generated keys are different from the Administrator SSH key that will allow the Database Service administrator to connect to
+        the VM for day-to-day service management and operations, and to upgrade the trove guest instances. The Adminsitrator SSH
+        key is kept intact during the Cluster Create process. These keys should be secured by ACLs, as exposure of them could result in compromise 
+        of the database service and databases.</p>
+    </note>
+  </body>
+</topic>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic24073">
+<title>HPE Helion 2.0 Development Platform: Installation and Configuration</title>
+<body>
+<section>
+<p>Installing HPE Helion Development Platform requires first installing the service deployer itself and then deploying key services.</p>
+<p>The following topics explain how to install and configure a new deployment of the HPE Helion
+        Development Platform. There is also <xref
+          href="../devplatform.troubleshooting.dita">Troubleshooting</xref> documentation to handle
+        issues that may occur.</p>
+<ul>
+<li>
+          <xref href="#id_tfs_4qv_ft" format="dita">Prerequisites </xref></li>
+  <li>
+  <xref href="#id_l4p_cxw_ft" format="dita">Install the HPE Helion Development Platform</xref>
+</li>
+<li>
+  <xref href="#id_o3f_zww_ft" format="dita">Install the Application Lifecycle Service</xref></li>
+
+  <li>
+    <xref href="#id_xn3_1xw_ft" format="dita">Install the Database Service</xref> </li>
+        <li>
+          <xref href="#id_hm5_bxw_ft" format="dita">Install the Messaging Service</xref>
+        </li>
+  <li><xref href="#engine" format="dita">Install the Helion Code Engine</xref></li>
+  <li><xref href="#dns" format="dita">Install DNSaaS</xref></li>
+
+</ul>
+</section>
+  
+</body>
+  <topic id="id_tfs_4qv_ft" conref="devplatform_install_prereq.dita#topic_x54_njh_ts">
+    <title>Prerequisites</title>
+  </topic>
+  <topic id="id_l4p_cxw_ft" conref="devplatform_install_platform.dita#topic_gly_xmh_ts">
+    <title/>
+  </topic>
+ <!-- <topic id="id_jbr_5qv_ft" conref="devplatform.horizonui.install.dita#topic4029">
+    <title>Install the Horizon UI Panels</title>
+  </topic> -->
+  <topic id="id_o3f_zww_ft" conref="devplatform_install_ALS.dita#topic_txg_cnh_ts">
+    <title>Install the Application Lifecycle Service</title>
+  </topic>
+  <topic id="id_xn3_1xw_ft" conref="devplatform_install_database.dita#topic_vsf_hnh_ts">
+    <title>Install the Database Service</title>
+  </topic>
+  <topic id="id_hm5_bxw_ft" conref="devplatform_install_messaging.dita#topic_t3w_fnh_ts">
+    <title>Install the Message Broker Service</title>
+  </topic>
+ 
+  <topic id="engine" conref="install_engine.dita#topic_gkq_fqy_rt"><title>Install the Helion Code Engine</title>
+  </topic>  
+  <topic id="dns" conref="install_dnsaas.dita#HP2.0DNSaaS"><title>Install DNSaaS</title></topic>
+  
+</topic>

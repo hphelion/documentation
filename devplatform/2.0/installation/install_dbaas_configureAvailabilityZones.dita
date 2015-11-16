@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_hhh_lm4_xt">
+  <title>HPE Helion 2.0 Development Platform: Configure Availability Zones for Database Service
+    Installation</title>
+  <body>
+    
+    <section id="availability-zones">
+      <p>To configure the Database Service in a highly available manner, it is necessary to create
+        separate availability zones. Best practice is to create three availability zones. <note>All
+          hosts should be associated with one of these availability zones, or the Database Service
+          will not be able to provision a database instance on that host. This may cause the
+          Database Service may run out of capacity even though there are unassociated hosts that
+          still have room.</note></p>
+      <p>The following steps show how to create three availability zones and assign a compute host to the zone.</p>
+      <ol>
+        <li>Download an RC file for the admin user and project.
+          <!--this is going to be replaced with a commandline command; ALS may have provided--><ol
+            id="ol_bpk_1c1_4t">
+            <li> Log in to Horizon using the admin account.</li>
+            <li>Download the OpenStack RC file. <p>
+              <image placement="break" href="../../../media/quickstartDownloadRCFile.png"
+                id="image_asb_jvy_nt"/>
+            </p></li>
+            <li>Use <codeph>scp</codeph> to copy the RC file over to the Deployer.</li>
+            <li>SSH to the Deployer and source the RC file. You will need to provide the same admin
+              password that you used to log in to Horizon. <p>
+                <codeblock> source admin-openrc.sh</codeblock>
+              </p></li>
+          </ol></li>
+        <li>Execute the following commands to create three availability zones named: "AZ-1", "AZ-2" and
+          "AZ-3".<codeblock>openstack aggregate create --zone AZ-1 aggregate-AZ-1
+openstack aggregate create --zone AZ-2 aggregate-AZ-2
+openstack aggregate create --zone AZ-3 aggregate-AZ-3</codeblock></li>
+        <li> Validate that the availability zones were correctly created by issuing the following
+          command.<codeblock>openstack aggregate list</codeblock></li>
+        <li> The following commands will add a host to your newly created aggregate. Execute this command
+          once for every host that you wish to associate with an
+          aggregate.<codeblock>openstack aggregate add host &lt;aggregate name or id&gt; &lt;host&gt;</codeblock></li>
+        <li> The following command can be used to list all availability zones and the hosts associated with
+          each one.<codeblock>openstack availability zone list</codeblock></li>
+      </ol>
+    </section>
+  </body>
+</topic>

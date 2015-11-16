@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic853">
+  <title>HPE Helion 2.0 Development Platform: Resources for IT Ops</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HPE Helion Development Platform"/>
+      <othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+      <othermeta name="role" content="Systems Administrator"/>
+      <othermeta name="role" content="System Engineer"/>
+      <othermeta name="role" content="Cloud Administrator"/>
+      <othermeta name="role" content="Network Administrator"/>
+      <othermeta name="role" content="Application Developer"/>
+      <othermeta name="role" content="ISV Developer"/>
+      <othermeta name="role" content="Service Developer"/>
+      <othermeta name="role" content="Jayme P"/>
+    </metadata>
+  </prolog>
+  <body>
+
+    <section id="installation"
+      ><!--<title>Installation</title><ul><li> <xref href="../../commercial/GA1/1.1commercial.index.dita">HPE Helion <tm tmtype="reg">OpenStack</tm> Installation</xref> </li><li> <xref href="installation/devplatform_install_platform.dita">Development Platform Installation and Configuration</xref> </li><li> <xref href="installation/devplatform_install_ALS.dita">Application Lifecycle Service (ALS) Information</xref> </li><li> <xref href="helion/CLI/ALS_Client_Downloads.dita">Application Lifecycle Service Client installation</xref> </li></ul>--></section>
+    <section id="administration">
+      <title>Administration</title>
+      <p>Access control is role-based, with each role granting permissions in either an organization
+        or an application space. To create users and manage user roles, use the ALS <xref
+          href="helion/user/reference/client-ref.dita">Command Line
+          Interface (CLI)</xref>. For more information, see <xref
+          href="helion/user/reference/client-ref-organizations.dita">Organizations</xref>.</p>
+      <ul>
+        <li>
+          <xref href="helion/admin/helion_admin_index.dita">Application Lifecycle
+            Service (ALS) Administrators Guide</xref>
+        </li>
+        <li>
+          <xref href="helion/user/console/console_index.dita">Management
+            Console</xref>
+        </li>
+        <li>
+          <xref href="helion/user/deploy/app-logs.dita">Logs, Streams, and
+            Drains</xref>
+        </li>
+      </ul>
+    </section>
+  </body>
+</topic>

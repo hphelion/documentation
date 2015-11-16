@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cue_createCluster">
+  <title>HPE Helion 2.0 Development Platform: Create a Cluster from the Command Line</title>
+  <body>
+    <section>
+      <dl>
+        <dlentry>
+          <dt>Syntax</dt>
+          <dd>
+            <codeblock>message-broker cluster create</codeblock>
+          </dd>
+        </dlentry>
+        <dlentry>
+          <dt>Required Fields</dt>
+          <dd>name, network-id, flavor and size
+          <note>Flavor must be at least 2 (m1.small).</note></dd>
+        </dlentry>
+        <dlentry>
+          <dt>Sample</dt>
+          <dd>
+            <codeblock outputclass="language-python">#!/usr/bin/env python
+
+from keystoneclient.auth.identity import v3 as keystone_v3_auth
+from keystoneclient import session as keystone_session
+from cueclient.v1 import client
+
+auth = keystone_v3_auth.Password(
+        auth_url="http://example.com:5000/v3",
+        username="admin",
+        password="password",
+        project_name="admin",
+        project_domain_name="default",
+        user_domain_name="default"
+)
+
+session = keystone_session.Session(auth=auth)
+cue_client = client.Client(session=session)
+
+# Cluster create
+create_response = cue_client.clusters.create(name="test_binding5", nic="55555", flavor="2",size="2",volume_size="0", <!--username, password-->)</codeblock>
+          </dd>
+        </dlentry>
+      </dl>
+    </section>
+    <p>For more details on working with Cue clusters from the command line, see <xref
+        href="http://python-cueclient.readthedocs.org/en/latest/command-line.html#cluster-create"
+        format="html" scope="external">Cue Command Line Tool</xref>.</p>
+  </body>
+</topic>
+
+<!--add the cue client from the read the docs here, that's what the "command line" concept is about, using the cue client
+this example is more for an app developer perspective.-->

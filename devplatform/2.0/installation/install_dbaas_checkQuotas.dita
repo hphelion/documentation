@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_sjz_wm4_xt">
+  <title>HPE Helion 2.0 Development Platform: Check Quotas for Database Service Installation</title>
+  <body>
+    
+    <section id="quotas">
+      <p>The project tenant must have sufficient quota available and unused resources for the service to
+        use. To check existing quota availability, log in to Horizon as the <b>admin</b> user and
+        open the <b>Overview</b> panel under the <b>Compute</b> tab. </p>
+      <p>If you are not configuring the Database Service to be highly available you must have the following quota available:</p>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="col1" colwidth="132pt"/>
+          <colspec colname="col2" colwidth="77.25pt"/>
+          <thead>
+            <row>
+              <entry>Resource</entry>
+              <entry align="right">Usage</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Floating IPs</entry>
+              <entry align="right">6</entry>
+            </row>
+            <row>
+              <entry>Instances</entry>
+              <entry align="right">6</entry>
+            </row>
+            <row>
+              <entry>Networks</entry>
+              <entry align="right">2</entry>
+            </row>
+            <row>
+              <entry>RAM (GB)</entry>
+              <entry align="right">24</entry>
+            </row>
+            <row>
+              <entry>Routers</entry>
+              <entry align="right">2</entry>
+            </row>
+            <row>
+              <entry>Security Groups</entry>
+              <entry align="right">6</entry>
+            </row>
+            <row>
+              <entry>Volumes</entry>
+              <entry align="right">4</entry>
+            </row>
+            <row>
+              <entry>Volume Storage (GB)</entry>
+              <entry align="right">160</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>If you have set up Availability Zones and plan to install the Database Service in a highly-available configuration you must have the following quota available:</p>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="col1" colwidth="120pt"/>
+          <colspec colname="col2" colwidth="87.75pt"/>
+          <thead>
+            <row>
+              <entry>Resource</entry>
+              <entry align="right">Usage</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Floating IPs</entry>
+              <entry align="right">16</entry>
+            </row>
+            <row>
+              <entry>Instances</entry>
+              <entry align="right">16</entry>
+            </row>
+            <row>
+              <entry>Networks</entry>
+              <entry align="right">2</entry>
+            </row>
+            <row>
+              <entry>RAM (GB)</entry>
+              <entry align="right">64</entry>
+            </row>
+            <row>
+              <entry>Routers</entry>
+              <entry align="right">2</entry>
+            </row>
+            <row>
+              <entry>Security Groups</entry>
+              <entry align="right">6</entry>
+            </row>
+            <row>
+              <entry>Volumes</entry>
+              <entry align="right">4</entry>
+            </row>
+            <row>
+              <entry>Volume Storage (GB)</entry>
+              <entry align="right">600 </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>In addition to the quotas mentioned above, for every database instance that is created by a user,
+        the necessary resources to create that instance will be deducted from the admin project
+        quota. The user's database service quota will also be affected.</p>
+    </section>
+  </body>
+</topic>

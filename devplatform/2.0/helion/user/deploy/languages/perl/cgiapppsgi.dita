@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1236">
+<title>HPE Helion 2.0 Development Platform: CGI Application: PSGI</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+  <othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>An app using the CGI::Application::PSGI framework needs an <i>app.psgi</i>
+and <i>requirements.txt</i> file.</p>
+<p>In the <i>requirements.txt</i> file, list any module requirements, with at
+least:</p>
+<codeblock>CGI::Application::PSGI
+Plack::Builder</codeblock>
+<p>In the <i>app.psgi</i> file, the basic code will be something like:</p>
+<codeblock>#perl
+
+use lib "lib";
+
+use strict;
+use Plack::Builder;
+use CGI::Application::PSGI;
+use AppCore;
+
+my $handler = sub {
+  my $env = shift;
+  my $app = AppCore-&gt;new({ QUERY =&gt; CGI::PSGI-&gt;new($env) });
+  CGI::Application::PSGI-&gt;run($app);
+};
+
+builder {
+  enable 'Plack::Middleware::ContentLength';
+  $handler;
+};</codeblock>
+<p>In the above example, AppCore.pm is located in the local lib folder and
+handles processing of the data and the response as per the
+<xref href="http://search.cpan.org/~markstos/CGI-Application-4.50/lib/CGI/Application.pm" scope="external" format="html" >CGI::Application</xref>
+documentation.</p>
+<p>
+      <note>The <codeph>Plack::Middleware::ContentLength</codeph> code adds the Content-Length
+        header which is currently required for Perl apps under Application Lifecycle Service.</note>
+    </p>
+<section id="examples"> <title>Examples</title>
+<ul>
+<li>
+<xref href="https://github.com/Stackato-Apps/rubric" scope="external" format="html" >Rubric</xref>: The winning entry from our Application Lifecycle Service contest.</li>
+</ul>
+</section>
+</body>
+</topic>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2750">
+<title>HPE Helion 2.0 Development Platform: ALS Command Reference: Routes</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic2750/command-delete-route">helion delete-route</xref>: Delete the named route.</li>
+<li>
+<xref type="section" href="#topic2750/command-routes">helion routes</xref>: List all routes or routes available in the specified space. </li>
+</ul>
+<section id="syntax"> <title>Syntax</title>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
+<p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="command-delete-route"> <title>helion delete-route &lt;<i>name</i>&gt;</title>
+<p>Delete the named route.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--all</entry>
+    <entry>Delete all routes which are not used by any application (--unused) across all domains. Cannot be used together with route names.</entry>
+  </row>
+<row>
+<entry>--organization</entry>
+<entry>The name of the organization to use as context. Defaults to the current organization. A current organization is automatically set if there is none, either by taking the one organization the user has, or asking the user to choose among the possibilities.
+Cannot be used together with --all.</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The name of the space to use as context. Defaults to the current space. A current space is automatically set if there is none, either by taking the one space the user has, or asking the user to choose among the possibilities.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+<row>
+    <entry>--unused</entry>
+    <entry>Delete all routes which are not used by any application. Cannot be used together with route names.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-routes"> <title>helion routes</title>
+<p>List all available routes or all routes in the specified space.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--all</entry>
+    <entry>Query information about all domains. Cannot be used together with a space.</entry>
+  </row>
+<row>
+<entry>--organization</entry>
+<entry>The name of the organization to use as context. Defaults to the current organization. A current organization is automatically set if there is none, either by taking the one organization the user has, or asking the user to choose among the possibilities.
+Cannot be used together with --all.
+</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The name of the space to use as context. Defaults to the current space. A current space is automatically set if there is none, either by taking the one space the user has, or asking the user to choose among the possibilities.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+<row>
+    <entry>--unused</entry>
+    <entry>Filter output to show only the routes which are not used by any application.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</body>
+</topic>

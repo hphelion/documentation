@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_rmk_gnx_ft">
+  <title>Download the OpenStack RC File</title>
+  <body>
+    <ol>
+      <li> Log into the <xref href="https://horizon.hpcloud.com/" scope="external" format="html">Horizon console</xref> using the HPE Helion Public
+        Cloud username and password that you created during registration. <image href="../../../../media/quickstartWest.png" id="image_isz_fxc_ks" placement="break"/>
+      </li>
+      <li>In the <b>US West section</b>, in the <b>Compute</b> row, click <b>Activate</b> to
+        activate the Compute service.Activating the Compute service is required
+        for creating VM instances.<image href="../../../../media/quickstartWestActivate.png" id="image_dlk_hxc_ks" placement="break"/>
+      </li>
+      <li>Click the <b>Project</b> panel and then the <b>Compute</b> sub-panel.<image href="../../../../media/quickstartC11.png" placement="break"/>
+      </li>
+      <li> Download the configuration file (RC file). RC files contain information about a
+        hosted service, including region, tenant, and other information required to create a
+        cluster. This RC file has been pre-configured for this sandbox project. 
+        <ol>
+          <li>Click <b>Access &amp; Security</b> and then click the <b>API Access</b>
+            tab.</li>
+          <li> Click <b>Download <tm tmtype="reg">OpenStack</tm> RC file</b>.<image
+            href="../../../../media/quickstartDownloadRCFile_small.png" placement="break"/></li>
+        </ol></li></ol>
+  </body>
+</topic>

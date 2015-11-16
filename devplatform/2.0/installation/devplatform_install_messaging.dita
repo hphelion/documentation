@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_t3w_fnh_ts">
+  <title>HPE Helion 2.0 Development Platform: Install the Messaging Service</title>
+  <body>
+    <p>This section provides details on installing the Messaging service for the Development
+      Platform.</p>
+    <section>
+      <title>Prerequisites</title>
+      <p>
+        <ul>
+          <li>The HDP Installer 2.0, also known as HDPI, must already <xref href="devplatform_install_platform.dita#topic_gly_xmh_ts">be installed</xref>.</li>
+          <li>A properly configured <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt">clouds.yaml</xref> file.</li>
+          <li>HPE Helion OpenStack 2.0 installation must be completed. </li>
+          <li>You must know the NTP server and DNS server IP addresses.</li>
+        </ul>
+      </p>
+    </section>
+    <section><title>Installation</title>
+      <ol>
+            <li>SSH into the HP Helion OpenStack Deployer. (This is the same location where the HDPI
+          has been installed.)</li>
+        <li>Source the Virtual
+          Environment.<codeblock>stack@hlm:~$ source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate </codeblock></li>
+        <li>Install the Messaging service installation files. <ol>
+            <li>If you <xref href="install_offline.dita#topic_w25_hqp_xt">pre-downloaded</xref> the
+              installation file, run the following command to install
+              it:<codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
+openstack --os-cloud mycloud hdpi messaging install <i>&lt;filename></i></codeblock><note>When installing
+  pre-downloaded files, make sure you run the installer from the same directory where the
+  installation files are. If the installer cannot find a file with the name you provided in
+  the local directory, it will attempt to download the files again. </note></li>
+          <li>If you did not pre-download the installation file, <ol>
+                <li>Find the most recent version of the file. Note that this command provides only a
+                  quick list of recent files; there are <xref
+                    href="install_listOptions.dita#listContent">more complete listing options</xref>
+                  available that include installation
+                  status.<pre>openstack --os-cloud mycloud hdpi list</pre>The output should look
+                  similar
+                  to:<pre>+----------------------------+----------------+-----------+------------+
+| service                    | id             | version   | state      |
++----------------------------+----------------+-----------+------------+
+| Helion Code Engine         | wscatalog.2776 | 1.0.0     | available  |
+| als                        | wscatalog.2765 | 2.0.0.539 | available  |
+| als                        | wscatalog.2800 | 2.0.0.548 | available  |
+| database                   | wscatalog.2762 | 2.0.0.32  | available  |
+| database                   | wscatalog.2803 | 2.0.0.37  | available  |
+| messaging                  | wscatalog.2761 | 1.0.0     | available  |<b>
+| messaging                  | wscatalog.2796 | 1.0.0.165 | available  |</b>
++----------------------------+----------------+-----------+------------+</pre></li>
+                <li>Find the<b> ID number</b> of the most recent version of the service (the highest
+                  ID number for that service).</li>
+                <li>If desired, inspect the installation files for size, version, and other detailed
+                  information.<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock></li>
+                <li>Begin the download and
+                  installation:<codeblock>openstack --os-cloud mycloud hdpi messaging install wscatalog.####</codeblock></li>
+              </ol></li>
+          </ol></li>
+        
+        <li>Launch the Messaging Deployer VM using the
+            HDPI.<note>When
+            the launch command indicates that it finished and provides the IP address for the
+            Messaging Deployer VM, SSH into the Messaging Deployer VM and look for the
+              <codeph>/home/stack/helion</codeph> directory. Once that directory has been created
+            and populated, continue to the next step. Do <b>not</b> attempt to continue until the
+            directory has been populated; this may take a few minutes after the launch command
+            indicates that it has completed.
+            </note><codeblock>(dev_platform_installer-devplat_installer-1.0.0)stack@hlm:~$ openstack --os-cloud mycloud hdpi messaging launch  </codeblock><p>This
+            will return output similar to the following:
+          </p><codeblock>=show the server===========================================
++--------------------------------------+------------------------------------------------------------------------------------+
+| Field                                | Value                                                                              |
++--------------------------------------+------------------------------------------------------------------------------------+
+| OS-EXT-AZ:availability_zone          | nova                                                                               |
+| OS-EXT-SRV-ATTR:host                 | helion-cp1-comp0006-mgmt                                                           |
+| OS-EXT-SRV-ATTR:hypervisor_hostname  | helion-cp1-comp0006-mgmt                                                           |
+| OS-EXT-SRV-ATTR:instance_name        | instance-00000016                                                                  |
+| OS-EXT-STS:power_state               | 1                                                                                  |
+| OS-EXT-STS:task_state                | None                                                                               |
+| OS-EXT-STS:vm_state                  | active                                                                             |
+| OS-SRV-USG:launched_at               | 2015-11-04T22:45:43.000000                                                         |
+| OS-SRV-USG:terminated_at             | None                                                                               |
+| accessIPv4                           |                                                                                    |
+| accessIPv6                           |                                                                                    |
+| addresses                            | <ph outputclass="codehighlight">SVC=10.241.145.12</ph>                             |
+| config_drive                         |                                                                                    |
+| created                              | 2015-11-04T22:44:29Z                                                               |
+| flavor                               | m1.medium (3)                                                                      |
+| hostId                               | 8d1c5e76b6cbc4616ee9ee1ba4d66451f921ac5e4395b4996c04aaa0                           |
+| id                                   | 8fb9334e-ea13-4a1e-aa8c-bd20148f7a42                                               |
+| image                                | msgaas-1.0.0-rc5_cloud-1.0.20151029T002941Z (4b1ea7c6-24a6-4ae7-9456-e65130de51f9) |
+| key_name                             | msgaas                                                                             |
+| name                                 | messaging_deployer                                                                 |
+| os-extended-volumes:volumes_attached | []                                                                                 |
+| progress                             | 0                                                                                  |
+| project_id                           | 02c783d40f7b4d969a9b6847c07e5df2                                                   |
+| properties                           |                                                                                    |
+| security_groups                      | [{u'name': u'default'}]                                                            |
+| status                               | ACTIVE                                                                             |
+| updated                              | 2015-11-04T22:45:43Z                                                               |
+| user_id                              | c241938bec504ed6ac284e432cff32df                                                   |
++--------------------------------------+------------------------------------------------------------------------------------+
+=done======================================================
+Scripts complete.
+Completed launching messaging</codeblock></li>
+        <li>Log in to and Initialize the Messaging Deployer VM<ol id="ol_nr4_nqr_wt">
+            <li>SSH into the Messaging Deployer VM using the IP address provided (highlighted above) after the launch
+              command completed.</li>
+            <li>Copy the <codeph>msgaas</codeph> deployment model.<note>The <codeph>cp</codeph>
+                command must be used <b>exactly</b> as shown - including the /* on the end of the
+                example model path.
+              </note><codeblock>stack@messaging-deployer:~/msgaas-1.0.0-rc1$ cd ~/helion/
+stack@messaging-deployer:~/helion$ cp -r examples/msgaas/* my_cloud/definition/
+stack@messaging-deployer:~/helion$ cp ~/platform-pass-through.yml my_cloud/definition/data/pass-through/platform-pass-through.yml</codeblock></li>
+            <li>Using Git, persist the input model that you are about to deploy with. This
+              information is required for the Pre-Install playbook, which is executed later in this
+              installation
+              process.<codeblock>stack@messaging-deployer:~/helion$ git add -A
+stack@messaging-deployer:~/helion$ git commit -a -m "Add MSGaaS Default Model"</codeblock></li>
+            <li id="customize">Change to the default values in order to customize the deployment
+              model. <note type="important">Do not skip this step or the installation playbooks may
+                not execute as expected in your
+              environment.</note><codeblock># Open the cloudConfig.yml file and provide appropriate NTP/DNS server IP addresses
+# If you are not sure, use the IP addresses of the HP Helion OpenStack control plane nodes
+# The NTP and DNS servers must be reachable from your HP Helion OpenStack SVC network
+
+stack@messaging-deployer:~/helion$ cd my_cloud/definition/
+stack@messaging-deployer:~/helion/my_cloud/definition$ ls
+cloudConfig.yml  data
+stack@messaging-deployer:~/helion/my_cloud/definition$ nano cloudConfig.yml    # this is the file where the changes need to be made</codeblock></li>
+            <li id="TLS">This step is required for configuring TLS in Cue API endpoint.  <note>For production environments, TLS (Cue API public endpoint URL with SSL
+                support (https)) is recommended. If not using TLS, for example, in a non-production
+                proof-of-concept environment, skip this
+              step.</note></li>
+            <li>Navigate to and open the <codeph>network_groups.yml</codeph> file for
+                editing.<codeblock>stack@messaging-deployer:~/helion/my_cloud/definition$ cd data
+stack@messaging-deployer:~/helion/my_cloud/definition/data$ nano network_groups.yml </codeblock><ol>
+          <li>If an IP-based TLS certificate is used, comment out the
+                    <codeph>external-name:</codeph> field. For name-based TLS, provide the FQDN name in
+                  the  <codeph>external-name:</codeph> field and copy the signed certificate to the <codeph>~/helion/my_cloud/config/tls/certs/</codeph> directory. </li>
+            <li>Comment out the <codeph>components:</codeph> list and uncomment the
+                    <codeph>tls-components:</codeph> list.</li>
+            <li>Un-comment the <codeph>tls-components:</codeph> list.</li>
+            <li>provide the TLS certificate file name in
+                  the <codeph>cert-file</codeph>: field. This name will have to match the name of the cert-file placed in <codeph>~/helion/my_cloud/config/tls/certs/</codeph> (e.g. <b>msgaas-cert</b>).</li></ol></li>
+          <li> Using Git, persist these changes. This information is required for the Pre-Install playbook,
+              which is executed later in this installation
+              process.<codeblock>stack@messaging-deployer:/helion/my_cloud/definition/data/pass-through$ cd ~/helion
+stack@messaging-deployer:~/helion$ git add -A # Required if you copied a new cert file
+stack@messaging-deployer:~/helion$ git commit -a -m "Configured Deployment Model"</codeblock></li>
+
+          </ol></li>
+        <li>Run the Playbooks <note type="important">After each playbook runs, both
+              <codeph>unreachable</codeph> and <codeph>failed</codeph> should be zero (0). This
+            indicates success. If not, check the output for error messages, address the errors, and
+            try running the playbook again.</note><note>If more detailed output is desired, add the
+            debug option (-vvv) or verbose debug option (-vvvv) to any ansible playbook call.
+            (ansible-playbook)</note><ol>
+            <li> Run the Pre-Install Playbook <note>For the SVC network, the only valid name is
+                "SVC".</note><note> If the External Network is not named <codeph>ext-net</codeph>,
+                update the value of the <b>external_net_name</b> variable in
+                  <codeph>~/helion/hos/ansible/roles/openstack-operations/defaults/main.yml</codeph>
+                to the correct
+                value.</note><codeblock>stack@messaging-deployer:~/helion$ source ~/user.src
+stack@messaging-deployer:~/helion$ cd hos/ansible/
+stack@messaging-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost hlm-pre-install.yml </codeblock><p>The
+                output should look similar to the
+              following:</p><codeblock>PLAY RECAP ********************************************************************
+openstack-operations | preinstall | Create service ports ---------------- 5.14s
+openstack-operations | lookup-keystone-ids | Lookup Project ID ---------- 2.98s
+openstack-operations | preinstall | Ensure SVC Network Exists ----------- 2.75s
+openstack-operations | preinstall | Ensure External Network Exists ------ 2.73s
+openstack-operations | preinstall | Create Floating IPs necessary for load-balancers --- 2.17s
+openstack-operations | preinstall | Identify pre-existing floating IPs --- 2.07s
+openstack-operations | preinstall | Set Neutron Quotas ------------------ 2.07s
+openstack-operations | preinstall | Set Cinder Quotas ------------------- 2.01s
+openstack-operations | preinstall | Create Virtual IPs necessary for load-balancers externally managed --- 1.81s
+openstack-operations | preinstall | Set Nova Quotas --------------------- 1.77s
+-------------------------------------------------------------------------------
+Total: ----------------------------------------------------------------- 27.45s
+localhost                  : ok=20   changed=14  <b> unreachable=0 </b>  <b> failed=0 </b></codeblock></li>
+            <li>Configure the Input Model for TLS Support in Cue API (Optional).<note>If using
+                name-based TLS, skip this step, otherwise the deployment model <xref href="#topic_t3w_fnh_ts/TLS">customization</xref> performed previously must have included the TLS
+                configuration step.</note><ol>
+                <li>Navigate to and open the <codeph>network_groups.yml</codeph> file, capture the ip address shown in
+                    the <codeph>external-ip:</codeph> field.  Now create and sign an IP-based TLS certificate based on this IP address.</li>
+                <li>Copy your signed certificate into
+                    <codeph>~/helion/my_cloud/config/tls/certs/</codeph>.  Ensure the certificate name matches the name you provided in <codeph>cert-file:</codeph> field. </li>
+                <li>Using Git, commit the changes.
+                  <codeblock>stack@messaging-deployer:~/helion/hos/ansible$ git add -A
+stack@messaging-deployer:~/helion/hos/ansible$ git commit -a -m "Configured Deployment Model"</codeblock></li>
+              </ol></li>
+            <li>Run the Config Processor Playbook
+                  <codeblock>stack@messaging-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost config-processor-run.yml </codeblock><p><note>If
+                  you have performed a full installation previously, you <b>must</b> remove the Cue
+                  user and service from Keystone <b>before</b> running this playbook again. <ul id="ul_rsf_tfs_wt">
+                    <li> SSH into the HOS deployer, source the keystone.osrc file, and then execute
+                      these
+                      commands:<codeblock>openstack service delete cue
+openstack user delete cue </codeblock></li>
+                  </ul></note>Successful output should look similar to the following.
+              </p><codeblock>PLAY RECAP ******************************************************************** 
+config-processor | run-config-processor | Run Configuration Processor over the given cloud configuration --- 2.44s
+git-operations | _assemble-working-directory | Assemble scratch content --- 0.76s
+git-operations | _persist-to-git | Prep new commit ---------------------- 0.69s
+config-processor | configure | Sync ansible vars for cloud deployment --- 0.67s
+config-processor | add-localhost | Add localhost group entry ------------ 0.55s
+config-processor | configure | Make directories required for osconfig network configuration --- 0.33s
+config-processor | configure | Sync generated network artefacts for cloud deployment/update --- 0.32s
+config-processor | configure | Copy hosts.hf for osconfig playbooks ----- 0.28s
+config-processor | configure | Copy ansible hosts file for cloud deployment (verb_hosts) --- 0.28s
+config-processor | add-localhost | Add localhost group ------------------ 0.17s
+-------------------------------------------------------------------------------
+Total: ------------------------------------------------------------------ 7.99s
+localhost                  : ok=21   changed=14   <b>unreachable=0  </b>  <b>failed=0  </b>      </codeblock></li>
+            <li>Run the Ready Deployment
+                Playbook<codeblock>stack@messaging-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost ready-deployment.yml </codeblock><p>Successful
+                output should look similar to the following. <note>Ignore the TASK/msg message at
+                  the end of the output. Do not run the playbook as indicated; that playbook must be
+                  run later in the installation
+              process.</note></p><codeblock>PLAY RECAP ******************************************************************** 
+git-operations | _assemble-working-directory | Assemble scratch content --- 0.73s
+config-processor | configure | Sync ansible vars for cloud deployment --- 0.54s
+config-processor | configure | Sync ansible vars for cloud deployment --- 0.49s
+git-operations | _promote-from-staging | Update branches ---------------- 0.41s
+config-processor | configure | Make directories required for osconfig network configuration --- 0.30s
+config-processor | configure | Make directories required for osconfig network configuration --- 0.27s
+config-processor | configure | Sync generated network artefacts for cloud deployment/update --- 0.26s
+config-processor | configure | Sync generated network artefacts for cloud deployment/update --- 0.25s
+config-processor | configure | Copy ansible hosts file for cloud deployment (verb_hosts) --- 0.24s
+config-processor | configure | Copy hosts.hf for osconfig playbooks ----- 0.22s
+-------------------------------------------------------------------------------
+Total: ------------------------------------------------------------------ 5.96s
+localhost                  : ok=20   changed=11   <b>unreachable=0 </b>   <b>failed=0   </b>
+
+TASK: [git-operations | ready-deployment-tree-help | Tell the user what to expect] ***
+ok: [localhost] => {
+    "msg": "The directory /home/stack/scratch/ansible/next/hos/ansible contains a prepared ansible tree 
+ready to run your deployment. You should cd into that directory and run: ansible-playbook -i
+hosts/verb_hosts site.yml"
+}</codeblock></li>
+            <li>Run the Boot Infrastructure Playbook <note>This step takes approximately 5
+                minutes.</note> Once this is complete, all in-cloud infrastructure (VMs, Networks,
+              Routers, Floating IPs, ports, security groups, etc) will have been created.
+                <codeblock>stack@messaging-deployer:~/helion/hos/ansible$ cd ~/scratch/ansible/next/hos/ansible
+stack@messaging-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -i hosts/localhost hlm-boot-infra.yml </codeblock><p>Successful
+                output should look similar to the
+              following:</p><codeblock>PLAY RECAP ********************************************************************
+openstack-operations | create_instance | Create controlplane instance - 227.92s
+openstack-operations | create_instance | Give cloud-init time to fetch SSH keys -- 60.07s
+openstack-operations | create_security_groups | Create tcp/icmp security groups rules -- 34.59s
+openstack-operations | create_instance | Extract port-id --------------- 19.89s
+openstack-operations | create_instance | Wait for SSH to become active -- 17.46s
+openstack-operations | create_port | Update ports to include appropriate security group(s) -- 17.24s
+openstack-operations | create_security_groups | Create security groups -- 16.18s
+openstack-operations | create_port | Associate VIP to instance ports --- 14.85s
+openstack-operations | create_port | Create instance ports ------------- 13.97s
+openstack-operations | create_security_groups | Create other security groups rules (e.g. 112 protcol) --- 9.33s
+-------------------------------------------------------------------------------
+Total: ---------------------------------------------------------------- 471.97s
+localhost                  : ok=35   changed=19   <b>unreachable=0</b>    <b>failed=0</b></codeblock></li>
+            <li>Run the Site Playbook <note type="caution">Unlike all the previous ansible plays,
+                the inventory file supplied to this play is <codeph>hosts/verb_hosts</codeph> and
+                not <codeph>hosts/localhost</codeph></note><note>This step takes approximately 10 to
+                15 minutes.
+              </note><codeblock>stack@messaging-deployer:~/scratch/ansible/next/hos/ansible$ ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
+              Successful output should look similar to the following:<note> If this playbook does
+                not run successfully, run it again before trying any more advanced
+                troubleshooting.</note><codeblock>PLAY RECAP ******************************************************************** 
+FND-MDB | start | Start MySQL ------------------------------------------ 85.62s
+FND-MDB | install | Install MDB packages ------------------------------- 75.00s
+rabbitmq | install | Install rabbitmq application ---------------------- 20.34s
+rabbitmq | install | Install rabbitmq application ---------------------- 20.28s
+rabbitmq | install | Install rabbitmq application ---------------------- 19.75s
+DES-PDN | install | Install Power DNS packages ------------------------- 17.48s
+FND-MDB | configure | Bootstrap MDB Master ----------------------------- 11.26s
+logging-producer | configure | Setup config files for services that have subscribed for logging -- 10.87s
+logging-producer | configure | Include default log files for centralized logging --- 9.83s
+Install keepalived package ---------------------------------------------- 9.21s
+-------------------------------------------------------------------------------
+Total: ---------------------------------------------------------------- 611.95s
+msgaas-msgaas-ccp-c1-m1-mgmt : ok=377  changed=190  unreachable=0    failed=0   
+msgaas-msgaas-ccp-c1-m2-mgmt : ok=381  changed=194  unreachable=0    failed=0   
+msgaas-msgaas-ccp-c1-m3-mgmt : ok=382  changed=196  unreachable=0    failed=0   
+localhost                  : ok=34   changed=15   unreachable=0    failed=0   </codeblock></li>
+          </ol></li></ol></section>
+    <section><title>Verifying the Installation</title><ol>
+        <li>Set endpoint type to internal (Cannot access public endpoint from messaging deployer)
+          API.<codeblock>export OS_ENDPOINT_TYPE=internalURL
+export OS_INTERFACE=internal</codeblock></li>
+        <li>List all clusters. <note>Since you have not yet created any clusters, this list of
+            clusters will be empty, but it should execute without returning any error messages.
+          </note><codeblock>stack@messaging-deployer:~/scratch/ansible/next/hos/ansible$ /opt/stack/service/cueclient/venv/bin/openstack message-broker cluster list</codeblock></li>
+      </ol>If you have configured TLS, make sure that the Cue public endpoint begins with https and
+      not just http:<codeblock>openstack catalog list</codeblock>
+    </section>
+    
+  </body>
+  <related-links><link scope="external" format="html" href="http://python-cueclient.readthedocs.org/en/latest/index.html"><linktext>python-cueclient documentation</linktext></link></related-links>
+</topic>

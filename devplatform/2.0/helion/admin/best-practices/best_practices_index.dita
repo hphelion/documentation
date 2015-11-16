@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic16169">
+<title>HPE Helion 2.0 Development Platform: Best Practices</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="System Engineer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Storage Engineer"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic16169/passwordless">Passwordless SSH Authentication</xref>
+</li>
+<li>
+<xref type="section" href="#topic16169/applying-updates">Applying Updates</xref>
+</li>
+<li>
+        <xref type="section" href="#topic16169/bestpractices-ubuntu-security">Security
+          Patches</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic16169/upgrade-docker">Upgrade the Docker image</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic16169/upgrade-vm">Upgrade the VM</xref>
+          </li>
+        </ul></li>
+<li>
+<xref type="section" href="#topic16169/bestpractices-migration">Backup &amp; Migration</xref>
+</li>
+<li>
+        <xref type="section" href="#topic16169/limitations">Limitations</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic16169/custom-services">Custom Services</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic16169/hard-coded-database-connection-info">Hard-coded
+              Database Connection Info</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic16169/deas">DEAs</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic16169/exporting-the-server-data">Exporting the server
+              data</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic16169/scheduled-backups">Scheduled backups</xref>
+          </li>
+        </ul></li>
+<li>
+<xref type="section" href="#topic16169/importing-the-server-data">Importing the server data</xref>
+</li>
+<li>
+        <xref type="section" href="#topic16169/upgrade">Upgrading</xref>
+      </li>
+<li>
+<xref type="section" href="#topic16169/bestpractices-snapshots">Snapshots</xref>
+</li>
+<li>
+        <xref type="section" href="#topic16169/bestpractices-persistent-storage">Persistent
+          Storage</xref>
+        <ul>
+          <li>
+            <xref
+              href="#topic16169/relocating-services-droplets-and-containers-relocating-services-droplets-and-containers"
+              format="dita">Relocating Services, Droplets, and Containers</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic16169/enabling-filesystem-quotas">Enabling Filesystem
+              Quotas</xref>
+          </li>
+        </ul></li>
+<li>
+<xref type="section" href="#topic16169/system-monitoring-with-nagios">System Monitoring with Nagios</xref>
+</li>
+</ul>
+<section id="passwordless"> <title>Passwordless SSH Authentication</title>
+<p>Routine cluster configuration and maintenance operations such as cluster
+upgrades are simpler if the cluster nodes are configured with
+<xref href="https://help.ubuntu.com/community/SSH/OpenSSH/Keys#Key-Based_SSH_Logins" type="section" scope="external" format="html" >key-based passwordless SSH login</xref>.</p>
+<p>This can be done either prior to cluster setup and role assignment or
+afterwards.</p>
+<p>The Constructor VM automatically generates a new 2048 bit RSA keypair on first boot which can be used for this purpose. If you wish to use a stronger key, or one with a passphrase, follow the Ubuntu documentation on <xref href="https://help.ubuntu.com/community/SSH/OpenSSH/Keys#Generating_RSA_Keys" type="section" scope="external" format="html" >Generating RSA Keys</xref>.</p>
+<p>To transfer the public key from the Core node to all non-Core nodes execute:</p>
+<codeblock>ssh-copy-id stackato@&lt;node hostname or IP&gt;</codeblock>
+<p>With the Core node's public key in place on all cluster nodes, you can
+<xref href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#Disable_Password_Authentication" type="section" scope="external" format="html" >disable password authentication</xref> if desired.</p>
+</section>
+<section id="applying-updates"> <title>Applying Updates</title>
+  <p>Major version upgrades of Application Lifecycle Service can be done using <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-upgrade">
+<i>kato node
+upgrade</i>
+</xref> or a <xref type="section" href="#topic16169/bestpractices-migration">
+<i>migration to a new VM
+or cluster</i>
+</xref>, but patch releases (normally
+minor fixes to particular components) can be applied in place using the
+  <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-patch" type="section"   >
+<i>kato patch</i>
+</xref>
+command.</p>
+<p>
+        <note> If there is a web proxy on your network between the ALS systems and the ActiveState
+          servers, first configure all nodes as per the <xref href="../server/https_and_ssl.dita#topic_gwr_qgd_ws/http-proxy">Proxy Settings</xref> documentation.</note>
+      </p>
+<p>To see a list of patches available from HPE run the following
+command on any Application Lifecycle Service VM:</p>
+<codeblock>kato patch status</codeblock>
+<p>The command will list the updates available. For example:</p>
+<codeblock>  1 update available to be installed.
+
+Known updates:
+  dea-memory-usage-reporting: Fix the reporting of helion stats usage on the DEA end.
+    severity: required
+    roles affected: dea</codeblock>
+<p>To apply all patches to all relevant cluster nodes:</p>
+<codeblock>kato patch install</codeblock>
+<p>To apply a particular patch, specify it by name:</p>
+<codeblock>kato patch install dea-memory-usage-reporting</codeblock>
+<p>Applying patches will automatically restart all patched roles. To
+prevent this, use the <codeph>--no-restart</codeph> option.</p>
+<p>To apply a patch only to the local Application Lifecycle Service VM (not the whole cluster),
+use the <b>--local</b> option.</p>
+</section>
+<section id="bestpractices-ubuntu-security"> <title>Security Patches</title>
+<p>Both the ALS VM and the Docker base image used for application containers run Ubuntu. To maintain an up-to-date system with all known security patches in place, the VM and Docker base images should be updated with the following process whenever an important security update becomes available in the Ubuntu repositories.</p>
+</section>
+<section id="upgrade-vm"> <title>Upgrade the VM</title>
+<p>To upgrade the VM, run the following command on all cluster nodes, one node at a time:</p>
+<codeblock>sudo unattended-upgrades -d</codeblock>
+<p>If you are using a proxy you may need to export http_proxy and
+https_proxy environment variables. For example:</p>
+<codeblock>sudo sh -c "http_proxy=http://myproxy.example.com:3128 \
+https_proxy=http://myproxy.example.com:3128 unattended-upgrades -d"</codeblock>
+<p>This will run the <xref href="http://manpages.ubuntu.com/manpages/lucid/man8/unattended-upgrade.8.html" scope="external" format="html" >unattended-upgrades</xref> script to install all upgrades from the <i>-security</i> stream.</p>
+<p>Each node should be rebooted after <i>unattended-upgrades</i> completes to
+ensure that all new kernels, modules, and libraries are loaded.</p>
+</section>
+<section id="upgrade-docker"> <title>Upgrade the Docker image</title>
+<p>The base Docker image used for application containers should also be upgraded once the VM is up-to-date. Perform the following steps on each DEA node in the cluster, one node at a time:</p>
+<ol>
+<li> Create a new working
+          directory:<codeblock>mkdir ~/upgrade-alsek &amp;&amp; cd $_</codeblock></li>
+<li> Create a <i>Dockerfile</i> in the new directory. Create a file named <b>Dockerfile</b> and add
+          the
+          following:<codeblock>FROM helion/stack-alsek:kato-patched
+RUN apt-get update
+RUN unattended-upgrades -d
+RUN apt-get clean &amp;&amp; apt-get autoremove </codeblock></li>
+</ol>
+<p>The <b>kato-patched</b> tag is attached to the image most recently updated by <i>kato patch</i>. Use this as a starting point rather than <i>latest</i> to prevent the accumulation of too many AUFS filesystem layers.</p>
+<ol>
+<li> Build the docker image with the <b>--no-cache=true</b> option. Give the image a tag relevant to
+          this particular upgrade (e.g.
+            upgrade-2014-09-19)<codeblock>sudo docker build --no-cache=true -rm -t helion/stack-alsek:upgrade-2014-09-19 .</codeblock><p>The
+              <b>.</b> (dot) at the end is important! It specifies that the <i>Dockerfile</i> to use
+            is the one in the current directory.</p></li>
+<li> Tag the Docker image as the <i>latest</i> stack-alsek
+          image:<codeblock>sudo docker tag helion/stack-alsek:upgrade-2014-09-19 helion/stack-alsek:latest</codeblock></li>
+<li> All running applications will need to be restarted by their owners or admins (using the Helion
+          management console or the ALS client) in order for security upgrades to take effect within
+          their application containers. You can check which image running apps are using by running
+            <i>docker ps</i> on your DEAs (but <b>do not</b> use <i>docker restart</i>).</li>
+</ol>
+</section>
+<section id="bestpractices-migration"> <title>Backup &amp; Migration</title>
+<p>This section describes backing up Application Lifecycle Service data and importing it into a
+new Application Lifecycle Service system. The export/import cycle is required for:</p>
+<ul>
+<li>backups of system data</li>
+<li>moving an Application Lifecycle Service cluster to a new location</li>
+</ul>
+</section>
+<section id="limitations"> <title>Limitations</title>
+<p>Before deciding on a backup, upgrade or migration strategy, it's
+important to understand what data the Application Lifecycle Service system can save, and what
+may have to be reset, redeployed, or reconfigured. This is especially
+important when migrating to a new cluster.</p>
+</section>
+<section id="custom-services"> <title>Custom Services</title>
+  <p>Application Lifecycle Service can export and import data from built-in data services running on
+        Application Lifecycle Service nodes, but it has no mechanism to handle data in <xref
+          href="../cluster/external-db.dita#topic4533">external databases</xref> unless <i>kato
+          export|import</i> has also been modified to recognize the custom service.</p>
+<p>Backing up or moving such databases should be handled separately from databases implemented as an Application Lifecycle Service data service. User applications should be reconfigured and/or redeployed after the update to ensure they connect properly to the new database host.</p>
+</section>
+<section id="hard-coded-database-connection-info"> <title>Hard-coded Database Connection Info</title>
+<p>Applications which write database connection details during staging rather than taking them from environment variables at run time must be re-staged (redeployed or updated) to pick up the new service location and credentials. Restarting the application will not automatically force restaging.</p>
+</section>
+<section id="deas"> <title>DEAs</title>
+<p>Droplet Execution Agent (DEA) nodes are not migrated directly from old
+nodes to new nodes. Instead, the application droplets (zip files
+containing staged applications) are re-deployed to new DEA nodes from
+the Controller.</p>
+</section>
+<section id="dea-exporting-the-server-data"> <title>Exporting the server data</title>
+  <p>Data export is done with the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-data-export" type="section"   >
+<i>kato data
+export</i>
+</xref>
+command. The command can export:</p>
+<ul>
+<li>internal Application Lifecycle Service data (users, groups, quotas, settings, etc.)</li>
+<li>application droplets</li>
+<li>data services</li>
+</ul>
+<p>Start by logging into the VM via <codeph>ssh</codeph>:</p>
+<codeblock>ssh stackato@&lt;node hostname or IP&gt;</codeblock>
+<p>A single-node micro cloud VM can be backed up with a single command:</p>
+<codeblock>kato data export --only-this-node</codeblock>
+<p>A clustered setup can be backed up with a single command:</p>
+<codeblock>kato data export --cluster</codeblock>
+<p>Once the export completes, you can use
+<xref href="http://manpages.ubuntu.com/manpages/lucid/man1/scp.1.html" scope="external" format="html" >scp</xref> or
+another utility (e.g. sftp, rsync) to move the .tgz file to another
+system, or save the file directly to a mounted external filesystem by
+specifying the full path and filename during export (see backup example
+below).</p>
+      <note>Exporting data can take several minutes. For clusters with constant usage or large
+        numbers of users, apps, and databases, put the exporting system in <xref
+          href="../console/console_settings.dita">Maintenance Mode</xref> (e.g.
+        during a scheduled maintenance window) before exporting.</note>
+</section>
+<section id="scheduled-backups"> <title>Scheduled backups</title>
+<p>Regular backup of controller data, apps, droplets, and service data is
+recommended for any production system. Implementation of a regular
+backup routine is left to the discretion of the Application Lifecycle Service administrator, but using <xref href="http://manpages.ubuntu.com/manpages/oneiric/man1/crontab.1.html" scope="external" format="html" >cron/crontab</xref> is one simple way is to automate this. For example, you could create an entry like the following in the root user's crontab on the filesystem node:</p>
+<codeblock>0 3 * * * su - helion /bin/bash -c '/home/helion/bin/kato data export --cluster /mnt/nas/helion-backup.tgz'</codeblock>
+<p>This runs <codeph>kato data export --cluster</codeph> every morning
+at 3AM as <codeph>root</codeph> using the <codeph>helion</codeph> user's login environment (required) and saves a .tgz file to a
+mounted external filesystem.</p>
+<p>Scheduled (non-interactive) backups using the <codeph>kato export</codeph> command will need to be run by <codeph>root</codeph> as
+some shell operations performed in the export require <codeph>sudo</codeph> when run interactively. For clusters, password authentication will have to be <xref href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication" type="section"  format="html" >disabled</xref> between the Core node and all other nodes. The command should be run on the node hosting the <i>filesystem</i> role, as some shell commands need to be run locally for that service.</p>
+</section>
+<section id="importing-the-server-data"> <title>Importing the server data</title>
+<p>To import Application Lifecycle Service data, transfer the exported .tgz file to the target VM or note the hostname of the old VM / Core node.</p>
+<p>
+  <b>Before you Begin</b>
+</p>
+<p>Before importing data to a new micro-cloud or cluster:</p>
+<ul>
+<li>
+<p>Make sure you have completed first-user (admin) setup in the Application Lifecycle Service Horizon console and accepted the terms and conditions.</p>
+</li>
+<li>
+<p>Ensure that all services you intend to use are enabled. (In previous versions of ALS, different services are disabled by default.)</p>
+</li>
+<li>Ensure that all roles required by any services are enabled and running.</li>
+</ul>
+<p>
+  <b>Import the Data</b>
+</p>
+<p>Log in to the Application Lifecycle Service VM (or Core node) and run <codeph>kato data import</codeph> with the appropriate options. For example, to import all data into a new cluster from a .tgz file:</p>
+<codeblock>kato data import --cluster helion-export-xxxxxxxxxx.tgz</codeblock>
+<p>To import data from a running Application Lifecycle Service system instead, specify the hostname of the old Core node:</p>
+<codeblock>kato data import --cluster helion-host.example.com</codeblock>
+</section>
+<section id="upgrade"> <title>Upgrading</title>
+<p>The <i>kato data import</i> command automatically detects if you are upgrading from earlier
+        versions:</p>
+<ul>
+<li>Users will be imported, and each user will be added to their own Organization.</li>
+<li>Existing admin users will have corresponding (global) admin privileges in the new system.</li>
+<li>Groups (deprecated) will be converted into Organizations. </li>
+<li>All apps and users will be placed within a "default" Space within each organization.</li>
+<li>Services will be imported.</li>
+<li>Apps will be automatically redeployed. Any apps which fail to do so will be listed, and must be redeployed manually by their owners. Some apps are <xref type="section" href="#topic16169/incompatible">known to be incompatible</xref> with automatic redeployment.</li>
+<li>AOK (LDAP) configuration will be imported.</li>
+</ul>
+<p>Other than these notes, the migration will follow the same Export and Import steps outlined below.</p>
+</section>
+<section id="incompatible"> <title>Incompatible Apps</title>
+<p>Applications that use the following techniques will not import successfully from version 2.10 to newer systems and will need to be modified or manually redeployed.</p>
+<ul>
+<li>Hard-coded references to port 3000 for HTTP within the application container. Use the <b>$PORT</b> environment variable instead to get the value dynamically.</li>
+<li>Use of <b>$VMC_</b> environment variables. Use the <b>$VCAP_</b> equivalents. </li>
+<li>Hard-coded paths using <i>/app</i> or <i>/app/app</i>. Use paths relative to <i>\$HELION_APP_ROOT</i> instead.</li>
+</ul>
+</section>
+<section id="exporting-the-server-data"> <title>Exporting the server data</title>
+<p>Data export is done with the <i>kato data export</i> command. The command can export:</p>
+<ul>
+<li>Internal data (users, groups, quotas, settings, etc.)</li>
+<li>Application droplets</li>
+<li>Data services</li>
+</ul>
+<p>You can save the .tgz output file directly to a mounted external filesystem by specifying the full path and filename during export (see backup example below). Alternately, wait until after the export and move the .tgz file to another system using <xref href="http://manpages.ubuntu.com/manpages/lucid/man1/scp.1.html" scope="external" format="html" >scp</xref> or another utility (sftp, rsync).</p>
+<p>Start by logging into the VM via SSH:</p>
+<codeblock>ssh stackato@&lt;node hostname or IP&gt;</codeblock>
+<p>A single-node micro cloud VM can be backed up with a single command:</p>
+<codeblock>kato data export --only-this-node</codeblock>
+<p>A clustered setup can be backed up with a single command:</p>
+<codeblock>kato data export -cluster</codeblock>
+<p>
+<b>Note</b>: Exporting data can take several minutes. For clusters with constant usage or large numbers of users, apps, and databases, put the exporting system in Maintenance Mode, ideally during a scheduled maintenance window, before beginning the export.</p>
+</section>
+<section id="bestpractices-snapshots"> <title>Snapshots</title>
+<p>Snapshots can be an effective way to save the state of a running virtual machine for backup, but caution is required when taking snapshots of a multi-node cluster.</p>
+<p>The system state of cluster nodes is highly interdependent. A snapshot rollback of multiple nodes which is not perfectly in sync may not return the cluster to a fully functional state. For example, a service node restored from a snapshot may be missing database instances which the Cloud Controller has created. Applications bound to existing services may be missing records.</p>
+<p>If snapshots are a part of your backup or disaster recovery strategy, the following techniques can minimize potential problems:</p>
+<ul>
+<li>snapshot VMs in a stopped state during scheduled maintenance (if possible)</li>
+<li>run <i>kato stop</i> on all roles prior to snapshotting (if possible)</li>
+<li>put the cluster in Maintenance Mode</li>
+<li>snapshot all nodes simultaneously</li>
+</ul>
+</section>
+
+<section id="system-monitoring-with-nagios"> <title>System Monitoring with Nagios</title>
+<p>Though Application Lifecycle Service has an internal mechanism for supervising processes on a server or cluster (<xref href="http://supervisord.org/" scope="external" format="html" >Supervisor</xref>), it is
+advisable to add some external monitoring for production systems. <xref href="http://www.nagios.org/" scope="external" format="html" >Nagios</xref> is a free, open source system monitoring tool that can provide this external monitoring.</p>
+<p>Detailed instructions on installing and configuring Nagios can be found
+in the <xref href="http://nagios.sourceforge.net/docs/3_0/toc.html" scope="external" format="html" >Nagios Core
+Documentation</xref>
+</p>
+</section>
+<section id="bestpractices-persistent-storage"> <title>Persistent Storage</title>
+<p>Cloud hosting providers have different default partition sizes and configurations. The default root volumes on some cloud hosted VM instances are often fairly small and are usually ephemeral. Data service and filesystem nodes should always be backed by some kind of persistent storage that has enough free filesystem space to accommodate the projected use of the services.</p>
+<p>Do not relocate the filesystem service to an NFS mount. Use the block storage mechanism native to your hypervisor or SSHFS.</p>
+</section>
+<section id="relocating-services-droplets-and-containers-relocating-services-droplets-and-containers"> <title>Relocating Services, Droplets, and Containers {#relocating-services-droplets-and-containers</title>
+<p>To move database services, application droplets, and application containers to larger partitions:</p>
+<ul>
+<li>mount the filesystem and/or block storage service on the instance (with <xref type="section" href="#topic16169/enabling-filesystem-quotas">quotas enabled</xref>)</li>
+<li>create directories for the items you wish to move,</li>
+  <li>run the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-relocate" type="section"   >
+<i>kato
+relocate</i>
+</xref>
+command(s).</li>
+</ul>
+<p>For example:</p>
+<codeblock>  kato stop
+...
+kato relocate services /mnt/ebs/services
+...
+kato relocate docker_registry /mnt/ebs/docker_registry
+...                              
+kato relocate droplets /mnt/ebs/droplets
+...
+kato relocate containers /mnt/ebs/containers
+...</codeblock>
+<p>
+        <note>For performance reasons, containers should not be relocated to EBS volumes.</note>
+      </p>
+</section>
+<section id="enabling-filesystem-quotas"> <title>Enabling Filesystem Quotas</title>
+<p>The Application Lifecycle Service filesystem quotas cannot be enforced by the system unless
+they are mounted on partitions which support Linux quotas. This may need
+to be specified explicitly when running the <codeph>mount</codeph>
+  command. The <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-relocate" type="section"   >
+<i>kato relocate</i>
+</xref> command
+will warn if this is necessary.</p>
+<p>For the example above, the <codeph>mount</codeph> step might look
+like this:</p>
+<codeblock>sudo mount -o remount,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0 /mnt/containers
+sudo quotacheck -vgumb /mnt/containers
+sudo quotaon -v /mnt/containers</codeblock>
+<p>To ensure the quotas are preserved after reboot, edit
+<i>/etc/init.d/setup_helion_lxc</i> to include mount commands for each
+partition. The example above would require a block such as this:</p>
+<codeblock>  # enable quotas for Application Lifecycle Service containers
+if [[ -f "/mnt/containers/aquota.user" ]]; then
+  mount -o remount,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0 /mnt/containers
+  quotaon -v /mnt/containers
+fi</codeblock>
+</section>
+</body>
+</topic>

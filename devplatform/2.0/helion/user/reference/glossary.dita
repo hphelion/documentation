@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6187">
+<title>HPE Helion 2.0 Development Platform: Glossary</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 1.1"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HPE Helion Development Platform"/>
+<othermeta name="product-version3" content="HPE Helion Development Platform 1.1"/>
+</metadata>
+</prolog>
+<body>
+<section id="term-AMQP"> <title>AMQP</title>
+<p>Acronym for <xref href="http://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol" scope="external" format="html" >Advanced Message Queuing Protocol</xref>.</p>
+</section>
+<section id="term-ANT"> <title>Apache ANT</title>
+<p>A software tool for automating software build processes. See <xref href="http://ant.apache.org/" scope="external" format="html" >Ant</xref> for more info.</p>
+</section>
+<section id="term-Maven"> <title>Apache Maven</title>
+<p>A build automation tool typically used for Java projects. See
+    <xref href="http://maven.apache.org/" scope="external" format="html" >Maven</xref> for more info.</p>
+</section>
+<section id="term-app"> <title>app</title>
+<p>Any application software intended for instantiation in Application Lifecycle Service. At minimum it consists of the application, expressed in a dynamic language, plus a configuration file named <i>manifest.yml</i>.</p>
+</section>
+<section id="term-Avahi"> <title>Avahi</title>
+<p>An implementation of <xref type="section" href="#topic6187/term-multicast-dns">multicast DNS</xref> and related protocols.</p>
+</section>
+<section id="term-cluster"> <title>cluster</title>
+<p>A set of interconnected physical processors or virtual machines, managed at least conceptually as a single entity but otherwise operating autonomously. Historically the term carried a variety of proprietary meanings, but came into general use with the rapid development of supercomputing based upon <xref href="http://en.wikipedia.org/wiki/Beowulf_cluster" scope="external" format="html" >Beowulf    Clusters</xref>. An Application Lifecycle Service cluster is one in which <xref type="section" href="#topic6187/term-role">role</xref> are assigned or replicated to multiple cluster <xref type="section" href="#topic6187/term-node">nodes</xref>.</p>
+</section>
+<section id="term-component"> <title>component</title>
+<p>Within Application Lifecycle Service, the term <b>component</b> is used when naming a discrete part of the Application Lifecycle Service server. For example, a    <xref type="section" href="#topic6187/term-role">role</xref> is made up of one or more components.</p>
+</section>
+<section id="term-container"> <title>container</title>
+<p>A lightweight form of virtualization which provides resource
+    isolation and secure separation for multiple instances of the same
+    base system. According to circumstances it may be used in addition
+    to or instead of hypervisor virtualization.</p>
+</section>
+<section id="term-CPAN"> <title>CPAN</title>
+<p>Acronym for <xref href="http://www.cpan.org/" scope="external" format="html" >Comprehensive Perl Archive Network</xref>.</p>
+</section>
+<section id="term-doozerd"> <title>doozerd</title>
+<p>A consistent distributed data store. Used for cluster management in Application Lifecycle Service. (see <xref href="https://github.com/ha/doozerd#readme" type="section" scope="external" format="html" >Doozer project on GitHub</xref>)</p>
+</section>
+<section id="term-DHCP"> <title>DHCP</title>
+<p>
+<xref href="http://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol" scope="external" format="html" >Dynamic Host Configuration
+    Protocol</xref>.
+    The DHCP service is used to allocate IP addresses to clients on
+    demand and to supply other basic network information they need, such
+    as the addresses of a default router and DNS server.</p>
+</section>
+<section id="term-DNS"> <title>DNS</title>
+<p>
+<xref href="http://en.wikipedia.org/wiki/Domain_Name_System" scope="external" format="html" >Domain Name
+    System</xref>. Resolves
+    domain names to IP addresses.</p>
+</section>
+<section id="term-dnsmasq"> <title>dnsmasq</title>
+<p>A <xref href="http://en.wikipedia.org/wiki/Dnsmasq" scope="external" format="html" >lightweight server</xref> for
+    locally integrating DNS with DHCP/BOOTP.</p>
+</section>
+<section id="term-dynamicDNS"> <title>dynamic DNS</title>
+<p>A means of rapidly updating the Domain Name System, possibly making use of <xref href="http://tools.ietf.org/html/rfc2136" scope="external" format="html" >RFC 2136</xref> Dynamic Updates.</p>
+</section>
+<section id="term-filesystem"> <title>filesystem</title>
+<p>In Application Lifecycle Service, <b>filesystem</b> refers to persistent storage accessed by an application <xref type="section" href="#topic6187/term-service">service</xref> specified in <i>manifest.yml</i> through a server which has been assigned the filesystem <xref type="section" href="#topic6187/term-role">role</xref>.</p>
+</section>
+<section id="term-JSON"> <title>JSON</title>
+<p>A notation for structured text data, acronym for <xref href="http://en.wikipedia.org/wiki/JSON" scope="external" format="html" >JavaScript Object Notation</xref>.</p>
+</section>
+<section id="term-MBUS"> <title>MBUS</title>
+<p>Application Lifecycle Service's implementation of an <xref href="http://tools.ietf.org/html/rfc3259" scope="external" format="html" >RFC 3259</xref> message queue used  for interprocess communication. See also: <xref type="section" href="#topic6187/term-NATS">NATS</xref>.</p>
+</section>
+<section id="term-memcached"> <title>memcached</title>
+<p>Free &amp; open source, high-performance, distributed memory object
+    caching system, generic in nature, but intended for use in speeding
+    up dynamic web applications by alleviating database load. (see
+    <xref href="http://memcached.org/" scope="external" format="html" >Memcached project page</xref>)</p>
+</section>
+<section id="term-micro-cloud"> <title>micro cloud</title>
+<p>A preconfigured Application Lifecycle Service virtual machine image consisting of a single generic <xref type="section" href="#topic6187/term-node">node</xref> enabled for all the <xref type="section" href="#topic6187/term-role">roles</xref> necessary for basic operation, but with no pre-installed <xref type="section" href="#topic6187/term-app">apps</xref> or <xref type="section" href="#topic6187/term-service">services</xref>s.</p>
+</section>
+<section id="term-mongodb"> <title>mongodb</title>
+<p>A popular <xref href="http://en.wikipedia.org/wiki/NoSQL" scope="external" format="html" >noSQL</xref> database management system.</p>
+</section>
+<section id="term-multicast-dns"> <title>multicast DNS</title>
+<p>A distributed means of configuring DNS by <xref href="http://en.wikipedia.org/wiki/Multicast_DNS" scope="external" format="html" >multicast discovery</xref>. It is supported on Application Lifecycle Service <xref type="section" href="#topic6187/term-micro-cloud">micro cloud</xref> servers using <xref type="section" href="#topic6187/term-Avahi">Avahi</xref>.</p>
+</section>
+<section id="term-mysql"> <title>mysql</title>
+<p>A relational database management system.</p>
+</section>
+<section id="term-NAT"> <title>NAT</title>
+<p>Acronym for <xref href="http://en.wikipedia.org/wiki/Network_address_translation" scope="external" format="html" >Network Address Translation</xref>.</p>
+</section>
+<section id="term-NATS"> <title>NATS</title>
+<p>In Application Lifecycle Service, a publish-subscribe message system implemented as a  process called <codeph>nats-server</codeph> which listens on a network interface, normally on port 4222/tcp. Messages published across the network to a particular <xref type="section" href="#topic6187/term-MBUS">MBUS</xref> queue managed by the nats-server are communicated to clients which are subscribed to that queue.</p>
+</section>
+<section id="term-Nginx"> <title>Nginx</title>
+<p>
+<xref href="http://wiki.nginx.org/" scope="external" format="html" >Nginx</xref> is a high-performance, event-driven web server.</p>
+</section>
+<section id="term-node"> <title>Node</title>
+<p>An Application Lifecycle Service <b>node</b> is a single processing host in a <xref type="section" href="#topic6187/term-cluster">cluster</xref>. It is typically a virtual machine running under a hypervisor.</p>
+</section>
+<section id="term-OVF"> <title>OVF</title>
+<p>Acronym for <xref href="http://dmtf.org/standards/ovf" scope="external" format="html" >Open Virtualization Format</xref>, a specification for virtual machine images developed by the DMTF industry consortium.</p>
+</section>
+<section id="term-PaaS"> <title>PaaS</title>
+<p>Acronym for <xref href="http://en.wikipedia.org/wiki/Platform_as_a_service" scope="external" format="html" >Platform as a Service</xref>.</p>
+</section>
+<section id="term-pip"> <title>pip</title>
+<p>A tool for installing and managing Python packages, such as those
+    found in the Python Package Index. It's a replacement for
+    easy_install. See
+    <xref href="http://www.pip-installer.org/en/latest/" scope="external" format="html" >pip-installer</xref> for more
+    information.</p>
+</section>
+<section id="term-pypm"> <title>PyPM</title>
+<p>PyPM is the <i>binary</i> package manager for ActivePython. It is usually
+    the fastest and most reliable way of installing PyPI packages for
+    your Application Lifecycle Service applications. The PyPM repository hosts almost all of
+    the Python packages registered in PyPI and includes their latest
+    versions. See <xref href="http://code.activestate.com/pypm" scope="external" format="html" >PyPM</xref> for more
+    information.</p>
+</section>
+<section id="term-Polipo"> <title>Polipo</title>
+<p>A lightweight caching web proxy intended for small applications.</p>
+</section>
+<section id="term-postgresql"> <title>postgresql</title>
+<p>A relational database management system.</p>
+</section>
+<section id="term-privatePaaS"> <title>private PaaS</title>
+<p>A private <xref type="section" href="#topic6187/term-PaaS">PaaS</xref> is one which is hosted on your private cloud, behind your firewall.</p>
+</section>
+<section id="term-RabbitMQ"> <title>RabbitMQ</title>
+<p>A <xref href="http://en.wikipedia.org/wiki/Message_broker" scope="external" format="html" >message broker</xref> subsystem which implements <xref type="section" href="#topic6187/term-AMQP">AMQP</xref>.</p>
+</section>
+<section id="term-Redis"> <title>Redis</title>
+<p>An implementation of memory resident key-value store.</p>
+</section>
+<section id="term-resolvconf"> <title>resolvconf</title>
+<p>A system configuration tool typically used by hook scripts at boot time. See the <xref href="http://manpages.ubuntu.com/manpages/utopic/en/man8/resolvconf.8.html" scope="external" format="html" >resolvconf man page</xref> for details.</p>
+</section>
+<section id="term-role"> <title>role</title>
+<p>Each <xref type="section" href="#topic6187/term-node">node</xref> in an Application Lifecycle Service <xref type="section" href="#topic6187/term-cluster">cluster</xref> may be assigned certain selectable capabilities within the Application Lifecycle Service architecture. These capabilities are called <b>roles</b>, and are usually denoted in lowercase. Examples of essential roles are <b>router</b>, <b>primary</b>, <b>controller</b>, and <b>dea</b>. In addition, there are <b>role groups</b> (for convenience) such as <b>data-services</b> that represent all data-services. (postgresql mysql rabbit mongodb redis filesystem memcached)</p>
+</section>
+<section id="term-service"> <title>service</title>
+<p>In Application Lifecycle Service, a <b>service</b> is a type of <xref type="section" href="#topic6187/term-role">role</xref> that may be provisioned on a server and accessed by an application as specified in <i>manifest.yml</i>.</p>
+</section>
+<section id="term-supervisord"> <title>supervisord</title>
+<p>A process control system used by Application Lifecycle Service internally. (see
+    <xref href="http://supervisord.org/" scope="external" format="html" >Supervisor project page</xref>)</p>
+</section>
+<section id="term-tty-console"> <title>tty console</title>
+<p>The hypervisor window which provides serial console access to one of
+    its virtual machines.</p>
+</section>
+<section id="term-YAML"> <title>YAML </title>
+<p>A notation for structured text data, acronym for <xref href="http://en.wikipedia.org/wiki/YAML" scope="external" format="html" >YAML Ain't Markup Language</xref>, used in <i>manifest.yml</i> configuration files.</p>
+</section>
+</body>
+</topic>

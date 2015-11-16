@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_zqb_nk4_xs">
+  <title>HPE Helion 2.0 Development Platform Management Console: Introduction</title>
+  <body>
+    <p>The Management Console is a web interface that allows the  administration and management of the ALS Server.</p>
+    <p>Your hypervisor provides <xref href="../../user/reference/glossary.dita#topic6187/term-tty-console">tty console</xref> access to
+      each of its virtual
+      machines<!--. After startup, the VM displays:: <codeblock>Helion Management Console at 
+https://helion-xxxx.local  </codeblock>--><!-- On a <xref href="../reference/glossary.dita#topic6187/term-micro-cloud">micro cloud</xref> VM where the local network supports <xref href="../reference/glossary.dita#topic6187/term-multicast-dns">multicast DNS</xref>, the hostname will be <codeph>horixon-xxxx.local</codeph>.-->
+      If you have configured the <xref
+        href="../server/configuration.dita#topic31232/server-config-hostname">hostname</xref> and
+        <xref href="../server/configuration.dita#topic31232/server-config-hostname">DNS</xref> of
+      the server manually, or are connecting to a server administered by someone else, supply the
+      assigned hostname [Example: <codeph>api.helion-test.example.com</codeph>] Enter that URL into
+      your web browser and the Management Console will load. </p>    <p>The Console is supported on the following browsers:  
+        <ul>
+          <li>Chrome 30+ (WebKit) </li>
+          <li>Firefox 20+ </li>
+          <li>IE 10+  </li>        
+        </ul> Using a browser which fully supports WebSockets is recommended.</p>
+      
+      <note>The SSL certificate for the ALS Management Console is self-signed. You will need to manually accept this certificate in your browser. See the <xref href="../server/https_and_ssl.dita#topic_gwr_qgd_ws/using-your-own-ssl-certificate">HTTPS documentation</xref> for information on using your own certificate.</note>   
+      
+      <p>When you first access the Management Console, you will be prompted to create a primary
+      administrative user. Enter an email address as the username, set a secure password, then
+      review and accept the license agreement. </p><note type="important">The password you choose here becomes the login password for the <codeph>helion</codeph> user on the VM. This user and password is used for <codeph>ssh</codeph> access.  </note>  
+      <p>Once you've logged in, you can add other users and admins, enable and disable services, and
+      generally set up the system to meet your requirements. note that advanced maintenance and
+      configuration tasks may need to be done at the command line using the <codeph>kato</codeph>
+      command utility or the <codeph>cf-mgmt</codeph> cluster creation tool. See the command-line
+      tool references (<xref href="../reference/kato-ref.dita#topic39432">kato</xref>, <xref
+        href="../../CLI/ALS_Client_Reference.dita#topic13234">cf-mgmt</xref>, or the <xref
+        href="../../user/reference/client-ref.dita#topic13355">helion client</xref>) for a full
+      list of options. </p>
+  </body>
+</topic>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5490">
+<title>HPE Helion 2.0 Development Platform: Documentation</title>
+<body>
+<p>Welcome! The HPE Helion Development Platform is a Platform-as-a-Service (PaaS) that helps
+      developers build great cloud-native applications across private and public clouds. Based on
+        <xref href="http://cloudfoundry.org/" scope="external" format="html"><tm tmtype="tm">Cloud
+          Foundry</tm></xref> and fully integrated with <xref
+        href="http://docs.hpcloud.com/#helion/index.html" format="html" scope="external">HPE Helion
+          <tm tmtype="reg">OpenStack</tm></xref>, the HPE Helion Development Platform is open and
+      interoperable, ensuring that developers can focus on building the right app for any
+      environment.</p>
+<section id="platform-overview"> <title>Platform Overview</title>
+<p>The Helion Development Platform is a Cloud Foundry-based, managed runtime environment for applications.</p>
+<ul>
+  <li>It supports <xref href="devplatform.appdev.dita#topic2457/java" >Java</xref>, <xref href="devplatform.appdev.dita#topic2457/node" >Node</xref>, <xref href="devplatform.appdev.dita#topic2457/PHP" type="section">PHP</xref>, and other language runtimes.</li>
+<li>It provides easy access to services like MySQL, PostgreSQL, RabbitMQ, and Memcache.</li>
+<li>It allows Disk, Memory and Placement Zone constraints to be set per application.</li>
+<li>It provides auto-scaling and application log drains.</li>
+</ul>
+      <p>The Application Lifecycle Service is <xref href="installation/devplatform_install_ALS.dita"
+          >installed</xref> as part of the Helion Development Platform. You can easily <xref
+          href="helion/admin/helion_admin_index.dita#topic2276/wizard-based-cluster-creation"
+          type="section">create and configure</xref> Application Lifecycle Service clusters from the
+        Horizon management console.<!--, or explore this service by setting up a <xref
+          href="devplatform.ALS-developer-trial-quick-start.dita">Quick Start Developer Trial</xref>
+        in the public cloud.--></p>
+<p>Helion Development Platform now includes a full end-to-end solution for creating and deploying .NET  applications. Windows developers can now leverage their knowledge and use the tools they are accustomed to in order to leverage the power of the Helion Development Platform. For more information on Windows and .NET support, see the <xref href="windows/windows_overview.dita" >Windows Overview</xref>.</p>
+</section>
+<section id="application-services"> <title>Application Services</title>
+<p>The HPE Helion Development Platform provides additional Application Services that integrate into the Application Lifecycle Service. These currently include:</p>
+</section>
+<section id="database-as-a-service"> <title>Database as a Service</title>
+  <p>The <xref href="database/devplatform.database-instance.dita" >Database as a Service (DBaaS)</xref> provides lifecycle services for MySQL database instances. Lifecycle services includes provisioning, configuration, patching, backups, restores, and monitoring that can be administered from either a CLI interface, RESTful APIs or the Horizon dashboard.</p>
+<ul>
+  <li>An implementation of <xref href="https://wiki.openstack.org/wiki/Trove" scope="external" format="html" >OpenStack Trove</xref>, <xref href="database/devplatform.database-instance.dita" >Database as a Service</xref> provides scalable and reliable cloud database provisioning functionality for both relational and non-relational databases.  </li>
+<li>The Database service provides a simple and easy way to access and utilize features in a database without the overhead of administration.  </li>
+</ul>
+      <p>The <xref href="database/devplatform.database-ALS.dita">Database as a Service</xref> is
+        optionally <xref href="installation/devplatform_install_database.dita" type="section"
+          >installed and configured</xref> as part of the Helion Development Platform. If not
+        installed as part of the platform, you can install it and then configure it for <xref
+          href="database/devplatform.database-ALS.dita">use from within the Application Lifecycle
+          Service</xref>.</p>
+</section>
+<section id="messaging-service">
+      <title>Messaging Service</title>
+      <p>The <xref href="messaging/devplatform.using-the-messaging-service.dita">Messaging
+          Service</xref> provides developers with the ability to provision messaging clusters using a
+        wizard-based UI directly from Horizon.</p>
+      <ul id="ul_srf_bbs_wt">
+        <li>The Messaging Broker Service integrates with Keystone to remove the need to create and manage separate credentials. </li>
+        <li>The Messaging Service allows developers to focus on building their apps without worrying
+          about installing, configuring, or troubleshooting.</li>
+      </ul>
+      <p>The Messaging Service is optionally installed as part of the Helion Development Platform.
+        If not installed as part of the platform, you can <xref
+          href="installation/devplatform_install_messaging.dita">install</xref> it and then <xref
+          href="messaging/devplatform.using-the-messaging-service.dita">configure</xref> it for
+          <xref href="messaging/devplatform.using-messaging-service-with-ALS.dita">use from within
+          the Application Lifecycle Service</xref>.</p>
+    </section>
+<section id="platform-tools"> <title>Platform Tools</title>
+<p>The Helion Development Platform is accessible via the following tools:</p>
+<p>
+        <b><xref href="helion/user/reference/client-ref.dita#topic13355" type="section" >Helion Command-Line
+            Interface (CLI)</xref></b>
+      </p>
+<p>Use the Helion CLI to deploy your app to the development platform through the command line. <xref
+  href="helion/user/client/client_index.dita#topic3165/helion-client-setup"
+          >Setup</xref> instructions are available for here both <tm tmtype="reg">Windows</tm> and
+        Unix/Mac operating systems.</p>
+<p>
+<b>Eclipse Plugin</b>
+
+ If your developers work in the Eclipse IDE, <xref href="devplatform.eclipse.dita" >install and use</xref> the Eclipse plug-in to quickly configure the Helion Development Platform as a deployment target for your app.</p>
+</section>
+  <section><title>Related Documentation</title>
+      <p> The HPE Helion Development Platform is based on <tm tmtype="tm">Cloud
+          Foundry</tm> and <tm tmtype="reg">OpenStack</tm> technology along with an HP-configured
+        Linux operating system.</p>
+      <p>You can find related information on the following sites:</p>
+      <ul id="ul_kxs_rjj_pt">
+        <li>
+          <xref href="http://docs.cloudfoundry.org/" scope="external" format="html"><tm tmtype="tm"
+              >Cloud Foundry</tm></xref>
+        </li>
+        <li>OpenStack<xref href="https://wiki.openstack.org/wiki/Trove" scope="external"
+            format="html">Trove</xref>
+        </li>
+      </ul>
+    </section>
+</body>
+</topic>

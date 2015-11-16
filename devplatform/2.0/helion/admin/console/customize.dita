@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic5029">
+  <title>HPE Helion 2.0 Development Platform: Management Console Customization</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HPE Helion Development Platform"/>
+      <othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+      <othermeta name="role" content="Application Developer"/>
+      <othermeta name="role" content="Security Engineer"/>
+      <othermeta name="role" content="ISV Developer"/>
+      <othermeta name="role" content="Service Developer"/>
+      <othermeta name="role" content="Network Administrator"/>
+      <othermeta name="role" content="Systems Administrator"/>
+      <othermeta name="role" content="Net Ops Engineer"/>
+      <othermeta name="role" content="NOC Engineer"/>
+      <othermeta name="role" content="Jayme P"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>The Management Console can be extensively customized and themed. Administrators can add or
+      remove runtimes, frameworks and services from the system, and change the look and content of
+      the <xref href="console_index.dita">Management Console</xref> interface.</p>
+    <ul>
+      <li>
+        <xref type="section" href="#topic5029/console-settings">Console Settings</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic5029/product">Product</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic5029/look-and-feel">Look and Feel</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic5029/welcome-page">Welcome Page</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic5029/support-page">Support Page</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic5029/eula-content">Eula Content</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic5029/custom_error">Error Pages</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic5029/custom-stylesheet">Custom Stylesheet</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic5029/settings-variables">Settings Variables</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic5029/restoring-values">Restoring values</xref>
+          </li>
+        </ul></li>
+    </ul>
+    <section id="console-settings">
+      <title>Console Settings</title>
+      <p>The Management Console is modified mainly through the <b>Settings &gt; Console</b> pages.
+        Settings are saved as variables which can subsequently be used in HTML pages via the <xref
+          href="http://embeddedjs.com/" scope="external" format="html">Embedded JavaScript
+          (EJS)</xref> templating engine.</p>
+    </section>
+    <section id="product">
+      <title>Product</title>
+      <ul>
+        <li>
+          <b>Product Name</b>: Overrides all occurrences of 'Application Lifecycle Service'</li>
+        <li>
+          <b>Company Name</b>: Overrides all occurrences of 'HPE Software'</li>
+        <li>
+          <b>Vendor Version</b>: Overrides all occurrences of the Application Lifecycle Service
+          version number.</li>
+        <li>
+          <b>Default Locale</b>: Sets the default locale of the console if the users current locale
+          isn't recognized. Currently, only the 'en' localization is complete.</li>
+        <li>
+          <b>External Docs URL</b>: The link that directs users to documentation. Defaults to the
+          current documentation published to docs.hpcloud.com. Ticking 'Use local docs' will cause
+          this URL to be ignored and the docs from the VM will be served instead.</li>
+      </ul>
+    </section>
+    <section id="look-and-feel">
+      <title>Look and Feel</title>
+      <ul>
+        <li>
+          <b>Favicon Logo URL</b>: The favicon to use. Recommended to be 32x32px image/png.</li>
+        <li>
+          <b>Header Logo URL</b>: The logo image to use in the header. Size can vary although
+          anything bigger than 50px vertically may result in some distortion of the header (fixable
+          with a custom style sheet).</li>
+        <li>
+          <b>Footer Logo URL</b>: The logo image to use in the footer. Same as above but height is
+          about 40px before distortion occurs.</li>
+        <li>
+          <b>Background Color</b>: Sets the background color of the console.</li>
+      </ul>
+    </section>
+    <section id="welcome-page">
+      <title>Welcome Page</title>
+      <p>The HTML/EJS to show on the Welcome page. The <xref type="section"
+          href="#topic5029/settings-variables">
+          <i>settings-variables</i>
+        </xref> and <codeph>username</codeph> variable (current user) are available via EJS, but
+        plain HTML will work for simple use cases.</p>
+    </section>
+    <section id="support-page">
+      <title>Support Page</title>
+      <p>The HTML/EJS to show on the Support page. The <xref type="section"
+          href="#topic5029/settings-variables">
+          <i>settings-variables</i>
+        </xref> and <codeph>support_email</codeph> variable (see Settings &gt; Controller) are
+        available.</p>
+    </section>
+    <section id="eula-content">
+      <title>Eula Content</title>
+      <p>The HTML/EJS to show in the EULA overlay. The <xref type="section"
+          href="#topic5029/settings-variables">
+          <i>settings-variables</i>
+        </xref> are available.</p>
+    </section>
+    <section id="custom_error">
+      <title>Custom Error Pages</title>
+      <p>To expose customized error pages, create the following HTML files in
+          <i>/home/stackato/stackato/static/vendor/errors/</i> on <b>each</b> Router node:</p>
+      <ul>
+        <li>404.html</li>
+        <li>422.html</li>
+        <li>500.html</li>
+        <li>502.html</li>
+        <li>app-not-available.html</li>
+      </ul>
+      <p>When present, these files will be used to display the corresponding HTTP errors. The
+        default error page files (located at <i>/home/stackato/stackato/code/console/errors/</i>)
+        can be used as a reference, but should not be modified directly as changes may be lost
+        during upgrades or patches.</p>
+    </section>
+    <section id="custom-stylesheet">
+      <title>Custom Stylesheet</title>
+      <p>CSS defined here will be applied to the page after the default CSS has been loaded, and
+        override/replace any style. Use this to change the layout and color of any element in the
+        Management Console. Use web development tools like Firebug or Chrome DevTools to inspect
+        elements and find the relevant styles.</p>
+    </section>
+    <section id="settings-variables">
+      <title>Settings Variables</title>
+      <p>The following variables (with their default values) are available in the EJS templates on
+        the settings object (e.g. <i>settings.product_name</i>):</p>
+      <ul>
+        <li>product_name: null,</li>
+        <li>company_name: 'HPE Software',</li>
+        <li>vendor_version: '3.0',</li>
+        <li>default_locale: 'en',</li>
+        <li>product_logo_favicon_url: 'img/helion_logo_favicon.png',</li>
+        <li>product_logo_header_url: 'img/helion_logo_header.png',</li>
+        <li>product_logo_footer_url: 'img/helion_logo_footer.png',</li>
+        <li>background_color: '#ffffff',</li>
+        <li>style: '',</li>
+        <li>support_template: SupportTemplate,</li>
+        <li>eula_template: EulaTemplate,</li>
+        <li>welcome_template: WelcomeTemplate,</li>
+        <li>external_docs_url: 'http://docs.hpcloud.com',</li>
+        <li>use_local_docs: "false"</li>
+      </ul>
+    </section>
+    <section id="restoring-values">
+      <title>Restoring values</title>
+      <p>Each setting has an individual <b>Load Default</b> button (refresh icon to the left of the
+        value field) which will replace the customized value with the default for that setting.
+        Click 'Save' to apply the changes.</p>
+      <p>The red <b>Load Defaults</b> button at the top of the page deletes all customizations and
+        loads defaults for all settings.</p>
+      <p>As a failsafe for when style changes have obscured the interface, admins can also reset
+        specific settings by loading a URL with the following format:</p>
+      <codeblock>https://&lt;helion-url&gt;#settings/console/reset/setting_name</codeblock>
+      <p>Replace <b>setting_name</b> with one of the variables above and that value will be reset to
+        the default.</p>
+    </section>
+  </body>
+</topic>

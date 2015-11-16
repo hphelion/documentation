@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_create_database_horizon">
+  <title>Creating a database instance from Horizon</title>
+  <body>
+    <p>This topic describes how to create a database instance from the Horizon interface.</p>
+    <ol>
+      <li> Log into the Horizon console.<p>Under your project, open the Database panel and then click the <b>Instances</b> tab. 
+        <image href="../../../media/createDBinstance1_2.PNG" placement="break" id="image_yb1_mlp_ms" /></p></li>
+      <li> Click <b>Launch Instance</b>.</li>
+      <li> In the <b>Details</b> tab, specify the following options:
+        <image href="../../../media/createDBinstance2_2.png" placement="break" scale="75"/>
+        <ol>
+          <li><b>Instance Name</b> - the name of the instance to create </li>
+          <li><b>Flavor</b> - the size of the instance to host the database on.  This is a minimum of m2.small for MySql, m3.medium for MongoDB and Redis, 
+            and m4.large for Vertica Preview. </li>
+          <li><b>Volume Size</b> - the size of the volume to host the data on (in GB). 
+            <note>Instances should have a minimum volume size of 5, and have a recommended size of 10.</note></li>
+          <li><b>Datastore</b> - The database architecture and version to use for the new instance.
+            Options are as follows: <ul>
+              <li><b>mongodb</b> version 3.0</li>
+              <li><b>redis</b> version 3.0</li>
+              <li><b>mysql</b> version 5.5 (A single instance of MySql)</li>
+              <li><b>vertica_preview</b> version 7.1</li>
+            </ul> Vertica Preview, MongoDB and Redis instances can be used for single-instance or clustered
+            databases; for a MySql database, using the single-instance version provides some
+            performance enhancements over the clustered version. </li>
+          
+          <li> Under the <b>Networking</b> tab, specify the network to associate the database instance with. This is required and should be the same network that any application that accesses the
+            database is on. <image href="../../../media/createDBinstance3.png" placement="break" id="image_dbb_ylp_ms"/></li>
+          <li>Optional - Specify the initial database to create on the database instance. This option can be used to pre-populate the instance with a database, a user for that database, and an IP address of a single host allowed to 
+            access the database (Leave this field blank to allow all hosts to access the database). 
+            <image href="../../../media/createDBinstance4.png" placement="break" scale="75"/></li>
+        </ol></li>
+      <li>Click <b>Launch</b>.</li>
+      <li>In the <b>Database</b> tab, open the <b>Instances</b> panel. This panel displays the status of the newly created database instance. <image href="../../../media/createDBinstance5_2.png" placement="break"/></li>
+      <li>Once the database instance has reached <b>Active</b> status, the instance is ready to use.</li>
+    </ol>
+  </body>
+</topic>

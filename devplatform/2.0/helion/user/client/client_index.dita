@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3165">
+<title>HPE Helion 2.0 Development Platform: HPE Helion Application Lifecycle Service Client</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>The Helion ALS client is the command-line interface for the Application Lifecycle Service. You can use it to push application code up to the server, start and stop applications, create data services and link them to
+applications, and a number of other application management operations.</p>
+  <p>The <xref href="../reference/client-ref.dita">Command Reference</xref> has full
+descriptions of all client commands and options. These details are also
+available at the command line via the <i>helion help</i> command.</p>
+<ul>
+<li>
+<xref type="section" href="#topic3165/download">Download</xref>
+</li>
+<li>
+<xref type="section" href="#topic3165/installation">Installation</xref>
+</li>
+<li>
+<xref type="section" href="#topic3165/configuration">Configuration</xref>
+</li>
+<li>
+<xref type="section" href="#topic3165/removing-the-client">Uninstallation</xref>
+</li>
+<li>
+<xref type="section" href="#topic3165/getting-help">Getting Help from Within the Client</xref>
+</li>
+<li>
+  <xref href="../reference/client-ref.dita">Full Command Reference</xref>
+</li>
+</ul>
+<section id="helion-client-setup"> <title>Application Lifecycle Service Client Installation</title>
+<p>
+        <note>Using the Windows Helion client with <xref href="http://www.cygwin.com/"
+            scope="external" format="html">Cygwin</xref> is not supported.</note>
+      </p>
+</section>
+<section id="download"> <title>Download</title>
+<p>You may <xref href="../../CLI/ALS_Client_Downloads.dita" >download the ALS client</xref> appropriate for your operating system.</p>
+<p>Or you may download the client from within the Horizon console:</p>
+<ol>
+<li>Click the <b>ALS</b> tab to expand it.</li>
+<li>Click <b>Download the Client</b>.</li>
+<li>Select the version appropriate for your operating system and download the file.</li>
+</ol>
+</section>
+<section id="installation"> <title>Installation</title>
+<ol>
+<li>Unzip the archive into a convenient directory.</li>
+<li>Add the executable to your system/shell <codeph>\$PATH</codeph> by:<ul>
+            <li>
+              <b>Windows</b>: path = %path%; (where path is the path to the Helion client)</li>
+            <li>
+              <b>Linux</b>, <b>OS X</b>: moving it to a directory in your
+              <codeph>\$PATH</codeph>,</li>
+            <li>creating a symlink from a directory in your <codeph>\$PATH</codeph>, or</li>
+            <li>creating a shell alias for the executable.</li>
+          </ul></li>
+<li> For Linux or Mac OS X: Make sure the file is set as
+          executable<codeblock>chmod +x helion</codeblock></li>
+<li> On some systems read access is also necessary.<codeblock>chmod 755 helion</codeblock></li>
+<li> Confirm that the client is installed correctly by launching it and running <i>helion
+          help</i>.</li>
+</ol>
+</section>
+<section id="configuration"> <title>Configuration</title>
+<p>After installation, perform the following configuration steps before attempting to use the client.</p>
+</section>
+<section id="targeting-the-api-endpoint"> <title>Target the API endpoint</title>
+<p>Before you can use the client, you must <xref
+          href="../reference/client-ref-getting-started.dita#topic2439/command-target">set the
+          target URL</xref>, which is also known as the API Endpoint. This tells the client the
+        location where it will push applications to. For example:</p>
+<codeblock>helion target api.helion.example.com</codeblock>
+<p>For a micro-cloud VM, it might be something like:</p>
+<codeblock>helion target api.helion-xxxx.local</codeblock>
+</section>
+<section id="http-proxies"> <title>Configure HTTP Proxies</title>
+<p>
+        <note>This configuration step should not be necessary on the <tm tmtype="reg">Windows</tm>
+          operating system, as the client queries the Internet Settings values.</note>
+      </p>
+<p>If there is an HTTP/HTTPS proxy on your network between your client and
+the Application Lifecycle Service API endpoint, set the following environment variables in your shell as appropriate for your proxy.</p>
+<ul>
+<li>https_proxy (e.g. "<i>https://yourproxy.example.com</i>:443/")</li>
+<li>http_proxy (e.g. "<i>http://yourproxy.example.com</i>:8080/")</li>
+<li>http_proxy_user</li>
+<li>http_proxy_pass</li>
+</ul>
+<p>With these values set properly, the client will route appropriately.</p>
+</section>
+<section id="removing-the-client"> <title>Uninstallation</title>
+<p>To remove or uninstall the client, simply delete the executable and remove any aliases or <codeph>\$PATH</codeph> modifications you have made for it.</p>
+</section>
+<section id="getting-help"> <title>Getting Help</title>
+<p>To get a list of available commands or help on a particular command, enter:</p>
+<codeblock>helion help [COMMAND]</codeblock>
+  <p>See also the <xref href="../reference/client-ref.dita">Command Reference</xref> for a full
+list of commands.</p>
+</section>
+</body>
+</topic>

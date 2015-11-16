@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4745">
+<title>HPE Helion 2.0 Development Platform: Prerequisites</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>This guide covers the basics of using the Application Lifecycle Service (ALS).</p>
+<p>To follow along,
+you will need:</p>
+<ul>
+<li>a user account</li>
+<li>a copy of the Helion CLI client</li>
+<li>a web browser</li>
+</ul>
+<section id="management-console"> <title>Management Console</title>
+<p>The web interface for Application Lifecycle Service is called the <xref href="../../admin/console/customize.dita" >Management Console</xref>. You can use it to:</p>
+<ul>
+<li>see your current usage and quota</li>
+<li>monitor and manage applications you have deployed</li>
+<li>see which runtimes, frameworks, and services are available</li>
+<li>deploy applications from the Marketplace</li>
+</ul>
+<p>To use it, open the API Endpoint URL (e.g. <i>https://api.10.0.0.1.xip.io</i>) in your favorite browser. Log in with the username and password that have
+been set up for you on the system.</p>
+<p>The interface should be mostly self-explanatory. It exposes most of the
+functionality you have access to as an end user, but to deploy your own
+applications from source code on your local machine you will need to install and use the Helion <xref href="../client/client_index.dita" >Application Lifestyle Service client</xref>.</p>
+<p>There is also an <xref href="../../../devplatform.eclipse.dita" >Eclipse plugin</xref> available for the Management Console to facilitate pushing applications.</p>
+</section>
+<section id="helion-client"> <title>Application Lifecycle Service Client</title>
+<p>The Helion client pushes applications and provides access to the system from the command line.</p>
+<ol>
+<li>
+<xref href="../../CLI/ALS_Client_Downloads.dita" >Download the client for your platform</xref>.</li>
+<li>Unzip the archive in a convenient directory.</li>
+<li>Add the executable to your system/shell \$PATH by: <ul>
+            <li>moving it to a directory in your \$PATH,</li>
+            <li>creating a symlink from a directory in your \$PATH, or</li>
+            <li>creating a shell alias for the executable.</li>
+          </ul></li>
+<li>Confirm that the client is installed correctly by executing
+<codeph>cfmgmt help</codeph>.</li>
+</ol>
+<p>Refer to the <xref href="../reference/client-ref.dita" >Application Lifecycle Service Client Command Reference</xref> for a complete list of commands and options.</p>
+</section>
+<section id="target-and-login"> <title>Target and Log In</title>
+<p>To connect the helion client to the PaaS, use
+the <codeph>target</codeph> command to specify the API Endpoint
+URL. This is normally the hostname prepended with "api." for example:</p>
+<codeblock>helion target api.example.hphelion.com
+Target:       https://api.example.hphelion.com
+Organization: &lt;none&gt;
+Space:        &lt;none&gt;
+Successfully targeted to [https://api.example.hphelion.com]</codeblock>
+<p>Once you have successfully targeted Application Lifecycle Service, you must authenticate
+using <codeph>helion login</codeph> with the credentials that
+have been created for you:</p>
+<codeblock>helion login user@example.com
+Attempting login to [https://api.example.hphelion.com]
+Password: ********
+Successfully logged into [https://api.example.hphelion.com]</codeblock>
+</section>
+<section id="setting-organization-and-space"> <title>Setting Organization and Space</title>
+<p>If you are logging in for the first time, your user account will not
+automatically choose an <xref href="../deploy/orgs-spaces.dita" >Organization and Space</xref> for deployment. You will need to set these manually.</p>
+<p>To set the Organization you belong to:</p>
+<codeblock>helion switch-org *org-name*
+Switching to organization *org-name* ... OK
+Unsetting current space ... OK
+Target:       https://api.stacka.to
+Organization: *org-name*
+Space:        &lt;none&gt;</codeblock>
+<p>To set the Space you want to deploy applications to:</p>
+<codeblock>helion switch-space dev
+Switching to organization *org-name* ... OK
+Switching to space dev ... OK
+Target:       https://api.stacka.to
+Organization: test-org
+Space:        dev</codeblock>
+      <note> If your account is not a member of a Space, you will need an Organization Manager to
+        add you as a Developer. If you are an Organization Manager or Admin, you can create new
+        Spaces in the <xref href="../../admin/console/customize.dita">
+          <i>Management Console</i>
+        </xref> or with the <xref href="../reference/client-ref-spaces.dita">
+          <i>helion create-space</i>
+        </xref> command.</note>
+</section>
+<section id="deploying-apps"> <title>Deploying Apps</title>
+<p>The steps for deploying applications will vary slightly depending on the
+language or framework used, but the basic command is:</p>
+<codeblock>helion push --as [appname]</codeblock>
+<p>By default, the client will take application code from your current
+working directory and push it to Application Lifecycle Service for further staging and configuration, prompting for additional configuration information as necessary.</p>
+</section>
+<section id="sample-applications"> <title>Sample Applications</title>
+<p>Small <xref href="../../../devplatform.appdev.dita" >sample applications</xref> in various  programming languages are available. These applications demonstrate the basics of ALS deployment (hello world), connect to a database, and exercise the messaging service.</p>
+<p>Additional more advanced sample applications are available from <xref href="https://github.com/Stackato-Apps" scope="external" format="html" >Application Lifecycle Service-Apps</xref> on Github, each with a
+README.md file showing how to deploy it on Application Lifecycle Service.</p>
+<p>Many of these have a <xref href="../deploy/manifestyml.dita" >
+<i>manifest.yml</i>
+</xref> configuration
+file, so you can skip the interactive prompts by using the
+<codeph>-n</codeph> option.</p>
+<codeblock>helion push -n [appname]</codeblock>
+</section>
+<section id="test-the-application"> <title>Test the Application</title>
+<p>The output of <codeph>helion push</codeph> will show the URL of
+the running application. Paste this URL into a web browser to try the
+application or run:</p>
+<codeblock>helion open [appname]</codeblock>
+<p>Documentation on configuring applications in specific languages and
+frameworks is available in the <xref href="../deploy/deploy_index.dita" >
+<i>Deploying Apps</i>
+</xref> section.</p>
+</section>
+</body>
+</topic>

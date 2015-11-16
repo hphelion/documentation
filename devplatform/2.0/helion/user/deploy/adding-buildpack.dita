@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_pg2_qbl_ls">
+  <title>HPE Helion 2.0 Development Platform: Adding Buildpacks</title>
+  <body>
+    <section>
+      <p> The Application Lifecycle Service (ALS) has a number of built-in buildpacks installed by
+        default. Administrators can install additional buildpacks, making them available to
+        developers pushing applications. </p></section><section><title>Building Packages</title> Buildpacks are normally hosted in Git
+        repositories with a standard structure described in <xref
+          href="https://devcenter.heroku.com/articles/buildpack-api" format="html" scope="external"
+          >Heroku's Buildpack API documentation</xref>. These repositories can be packaged into .zip
+        archives and uploaded to ALS alongside the other built-in buildpacks. Built-in buildpacks
+        come in two types: <ul id="ul_lqf_vbl_ls">
+          <li><b>Online</b> buildpacks fetch dependencies and artifacts from the internet during
+            application staging. </li>
+          <li><b>Offline</b> buildpacks bundle all software dependencies the application needs.</li>
+        </ul>The buildpack .zip files are typically much larger, but can stage and run applications
+        on DEA nodes without access to the internet. Note: ALS ships with online buildpacks to keep
+        the size of the VM to a minimum. Once the system is set up, changing these to offline
+        versions can improve staging times substantially. Examples of buildpacks with offline
+        versions are: <ul id="ul_k3d_xbl_ls">
+          <li><xref href="https://github.com/cloudfoundry/buildpack-ruby" format="html"
+              scope="external">cloudfoundry/buildpack-ruby </xref></li>
+          <li><xref href="https://github.com/cloudfoundry/java-buildpack" format="html" scope="external">
+            cloudfoundry/java-buildpack</xref></li>
+        </ul> When run with "offline" options, the bin/package script or package build target for
+        these buildpacks fetch the external assets and bundle them in the .zip file. See their
+        respective README files for more information. </section><section><title>Installing Packaged Buildpacks</title> Use the create-buildpack command to upload
+      and install buildpack .zip archives. For example:
+      <codeblock>helion create-buildpack June2014CF-ruby ruby_buildpack.zip
+Creating new buildpack June2014CF-ruby ... OK
+Uploading buildpack bits ... 100% OK 
+OK</codeblock></section>
+    <section><title>Buildpack Order</title> When users push applications to the system without
+      specifying an external buildpack, ALS cycles through the detect scripts of the installed
+      buildpacks looking for one to match the pushed application type. The first buildpack to match
+      the application detection heuristics will stage and run the pushed application. The order in
+      which these detect scripts are run is displayed by the <i>buildpacks</i> command. These are
+      the default values:<table frame="all" rowsep="1" colsep="1" id="table_esk_sdl_ls">
+        <tgroup cols="5">
+          <colspec colname="c1" colnum="1" colwidth="1*"/>
+          <colspec colname="c2" colnum="2" colwidth="2.45*"/>
+          <colspec colname="c3" colnum="3" colwidth="2.66*"/>
+          <colspec colname="c4" colnum="4" colwidth="1.81*"/>
+          <colspec colname="c5" colnum="5" colwidth="1.81*"/>
+          <thead>
+            <row>
+              <entry># </entry>
+              <entry>Name </entry>
+              <entry>Filename </entry>
+              <entry>Enabled </entry>
+              <entry>Locked</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>1</entry>
+              <entry>Java</entry>
+              <entry> java.zip      </entry>
+              <entry>Yes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>2</entry>
+              <entry>Ruby</entry>
+              <entry>ruby.zip</entry>
+              <entry>Yes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>3</entry>
+              <entry>Node.js</entry>
+              <entry>nodejs.zip</entry>
+              <entry>Yes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>4</entry>
+              <entry>Python</entry>
+              <entry>python.zip   </entry>
+              <entry>Yes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>5</entry>
+              <entry>Go</entry>
+              <entry>go.zip </entry>
+              <entry>Yes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>6</entry>
+              <entry>Clojure</entry>
+              <entry>clojure.zip   </entry>
+              <entry>Yes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>7</entry>
+              <entry>Scala</entry>
+              <entry>scala.zip</entry>
+              <entry>Yes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>8</entry>
+              <entry>Perl</entry>
+              <entry>perl.zip  </entry>
+              <entry>Yes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>9</entry>
+              <entry>June2014CF-ruby</entry>
+              <entry>ruby_buildpack.zip</entry>
+              <entry>Yes</entry>
+              <entry>No</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>To change the order, use the <i>update-buildpack</i> command to set the
+        <codeph>--position</codeph> of the specified buildpack in this
+      queue:<codeblock>helion update-buildpack --position 1 python
+Updating buildpack [python] ... 
+   Position ... Changed to 1
+   Enabled ... Unchanged 
+   Locked ... Unchanged 
+OK</codeblock>
+      Built-in buildpacks can be enabled or disabled using the <codeph>--enable</codeph> and
+        <codeph>--disable</codeph> options for this command.</section>
+  </body>
+</topic>

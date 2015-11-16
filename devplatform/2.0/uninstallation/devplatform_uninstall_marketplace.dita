@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="concept_yqc_xfj_rs">
+ <title>Uninstall the Marketplace Service</title>
+ <shortdesc>Process for uninstalling the Marketplace Service from the HPE Helion Development Platform.</shortdesc>
+ <body>  <note type="restriction">These services cannot be uninstalled from the Horizon console.</note><note type="notice">The uninstall instructions listed here do not delete existing database
+  instances. Perform all backups as necessary and then delete your existing database instances
+  as applicable. </note>
+  <section id="uninstall-marketplace"> 
+   <ol>
+    <li>Log in to the Helion seed node.</li>
+    <li> Set environment
+     variables.<codeblock>export TE_DATAFILE=/root/tripleo/ce_env.json
+export TRIPLEO_ROOT=/root/tripleo
+PATH=$PATH:$TRIPLEO_ROOT/tripleo-incubator/scripts/</codeblock></li>
+    <li> Source the overcloud administrator
+     credentials.<codeblock>source $TRIPLEO_ROOT/tripleo-incubator/overcloudrc</codeblock></li>
+    <li> Remove the service from
+     Keystone.<codeblock>SERVICE_SHORT_NAME="marketplace"
+SERVICE_ID=$(keystone service-list | grep $SERVICE_SHORT_NAME | cut -d" " -f2
+keystone service-delete $SERVICE_ID</codeblock></li>
+    <li> Find the ID's for the following image types: <codeph>marketplace-api_x.x.x.x</codeph>,
+     <codeph>marketplace-database_x.x.x.x</codeph>,
+     <codeph>marketplace-engine_x.x.x.x</codeph>,
+     <codeph>marketplace-messaging_x.x.x.x</codeph>
+     <codeblock>glance image-list</codeblock></li>
+    <li> Remove the images from Glance.<codeblock>glance image-delete &lt;IMAGE_ID&gt;</codeblock></li>
+    <li> Remove Heat templates from
+     Swift.<codeblock>swift delete marketplace-heat-templates</codeblock></li>
+    <li>Find the Marketplace CSU images in the Sherpa cache. These images will be named
+     <codeph>marketplace_.x.x.x.x.csu</codeph>
+     <codeblock>swift list sherpa-cache</codeblock></li>
+    <li> Delete the images from the
+     cache.<codeblock>swift delete sherpa-cache &lt;ITEM&gt;</codeblock></li>
+   </ol>
+  </section>
+ </body>
+</topic>

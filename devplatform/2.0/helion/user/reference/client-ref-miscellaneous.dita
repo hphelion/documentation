@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3989">
+<title>HPE Helion 2.0 Development Platform: ALS Command Reference: Miscellaneous</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic3989/command-admin">helion admin</xref>: A set of administrative tasks.</li>
+<li>
+<xref type="section" href="#topic3989/command-alias">helion alias</xref>: Create a shortcut for a command.  </li>
+<li>
+<xref type="section" href="#topic3989/command-aliases">helion aliases</xref>: List the known aliases (shortcuts).</li>
+<li>
+<xref type="section" href="#topic3989/command-color">helion color</xref>: Management of terminal colors.</li>
+<li>
+<xref type="section" href="#topic3989/command-curl">helion curl</xref>: Run a raw REST request against the chosen target.</li>
+<li>
+        <xref href="#topic3989/command-drain" format="dita">helion drain</xref>: Commands for the
+        management of drains attached to applications.</li>
+<li>
+<xref type="section" href="#topic3989/command-guid">helion guid</xref>: Map the specified name into a GUID given the type.</li>
+<li>
+<xref type="section" href="#topic3989/command-help">helion help</xref>: Retrieve help for a command or command set.</li>
+<li>
+<xref type="section" href="#topic3989/command-named-entities">helion named-entities</xref>: List the entity types usable for GUID.</li>
+<li>
+<xref type="section" href="#topic3989/command-trace">helion trace</xref>: Print the saved REST trace for the last client command to stdout.</li>
+<li>
+<xref type="section" href="#topic3989/command-unalias">helion unalias</xref>: Remove a shortcut by name.</li>
+</ul>
+<section id="syntax"> <title>Syntax</title>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
+<p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="command-admin"> <title>helion admin</title>
+<p>A set of administrative tasks.</p>
+<table>
+<tgroup cols="1">
+<colspec colname="col1"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-alias"> <title>helion alias &lt;<i>name</i>&gt; &lt;<i>command</i>&gt;</title>
+<p>Create a shortcut (alias) for a command.</p>
+<table>
+<tgroup cols="1">
+<colspec colname="col1"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-aliases"> <title>helion aliases</title>
+<p>List the known aliases (shortcuts).</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-color"> <title>helion color</title>
+<p>Management of terminal colors</p>
+<table>
+<tgroup cols="1">
+<colspec colname="col1"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-curl"> <title>helion curl &lt;<i>operation</i>&gt; &lt;<i>path</i>&gt; &lt;<i>header</i>&gt;</title>
+<p>Run a raw REST request against the chosen target.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--data, -d</entry>
+    <entry>Payload to use for PUT and POST. Cannot be used with neither GET nor DELETE. A value of "-" or "stdin" causes the client to read the data from stdin.</entry>
+  </row>
+<row>
+    <entry>--form</entry>
+    <entry>Zero or more form fields to be added to the base url. Data is in the form of "key: value".</entry>
+  </row>
+<row>
+    <entry>--output, -o</entry>
+    <entry>Path to the file to write the returned payload to. A value of "-" or "stdin" causes the client to write the data to stdout.</entry>
+  </row>
+<row>
+    <entry>--port</entry>
+    <entry>The port to use for the request. Only relevant to websocket operation.</entry>
+  </row>
+<row>
+    <entry>--reconnect</entry>
+    <entry>Automatically reconnect when the websocket server closes the connection. Only relevant to websocket operation.</entry>
+  </row>
+<row>
+    <entry>--show-extended</entry>
+    <entry>Show additional information about the request; for example, response headers.</entry>
+  </row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+<row>
+    <entry>--web-socket, -ws</entry>
+    <entry>Switch to WebSocket mode for GET. Cannot be used with any other operation.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-drain"> <title>helion drain {command-drain}</title>
+<p>Commands for the management of drains attached to applications.</p>
+<table>
+<tgroup cols="1">
+<colspec colname="col1"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-guid"> <title>helion guid &lt;<i>type</i>&gt; &lt;<i>name</i>&gt;</title>
+<p>Map the specified name into a uuid, given the type.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--no-prompt</entry>
+<entry>Disable interactive queries.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>-n</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-help"> <title>helion help &lt;<i>CommandName</i>&gt;</title>
+<p>Retrieve help for a command or command set. Without an argument, help for all commands is given. The default format is <i>--full</i>.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--full</entry>
+<entry>Activate full form of the help.</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Activate json form of the help.</entry>
+</row>
+<row>
+<entry>--list</entry>
+<entry>Activate list form of the help.</entry>
+</row>
+<row>
+<entry>--short</entry>
+<entry>Activate short form of the help.</entry>
+</row>
+<row>
+<entry>--width, -w</entry>
+<entry>The line width to format the help for. Defaults to the terminal
+width, or 80 when no terminal is available. </entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-named-entities"> <title>helion named-entities</title>
+<p>List the entity types usable for 'guid'. I.e. the types of the
+    named entities known to the client.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-trace"> <title>helion trace</title>
+<p>Print the saved REST trace for the last client command to stdout.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--short</entry>
+<entry>Shows only the short list of requests without details like headers and responses.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-unalias"> <title>helion unalias &lt;<i>name</i>&gt;</title>
+<p>Remove a shortcut (alias) by name.</p>
+<table>
+<tgroup cols="1">
+<colspec colname="col1"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</body>
+</topic>

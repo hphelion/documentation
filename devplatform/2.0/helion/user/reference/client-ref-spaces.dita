@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic9898">
+<title>HPE Helion 2.0 Development Platform: ALS Command Reference: Spaces</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+  <othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic9898/command-create-space">helion create-space</xref>: Create a new space.</li>
+<li>
+<xref type="section" href="#topic9898/command-delete-space">helion delete-space</xref>: Delete the named space.</li>
+<li>
+<xref type="section" href="#topic9898/command-link-user-space">helion link-user-space</xref>: Add the specified user to the named space in various roles. </li>
+<li>
+<xref type="section" href="#topic9898/command-rename-space">helion rename-space</xref>: Rename the named space.</li>
+<li>
+<xref type="section" href="#topic9898/command-space">helion space</xref>: Show the named space's information.   </li>
+<li>
+<xref type="section" href="#topic9898/command-spaces">helion spaces</xref>: List the available spaces in the specified organization.</li>
+<li>
+<xref type="section" href="#topic9898/command-space-users">helion space-users</xref>: Show the users for the space by role.</li>
+<li>
+<xref type="section" href="#topic9898/command-switch-space">helion switch-space</xref>: Switch from the current space to the named space. This may switch the <xref href="client-ref-organizations.dita" >organization</xref> as well. </li>
+<li>
+<xref type="section" href="#topic9898/command-unlink-user-space">helion unlink-user-space</xref>: Remove the specified user from the named space in various roles.</li>
+<li>
+<xref type="section" href="#topic9898/command-update-space">helion update-space</xref>: Change one or more attributes of a space in a single call.</li>
+</ul>
+<section id="syntax"> <title>Syntax</title>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
+<p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="command-create-space"> <title>helion create-space &lt;<i>name</i>&gt;</title>
+<p>Create a new space.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--auditor</entry>
+<entry>Add yourself to the new space, as auditor. By request.</entry>
+</row>
+<row>
+<entry>--developer</entry>
+<entry>Add yourself to the new space, as developer. Done by default.</entry>
+</row>
+<row>
+<entry>--manager</entry>
+<entry>Add yourself to the new space, as manager. Done by default.</entry>
+</row>
+<row>
+<entry>--no-activate</entry>
+<entry>Complementary alias of --activate.</entry>
+</row>
+<row>
+<entry>--no-auditor</entry>
+<entry>Complementary alias of --auditor.</entry>
+</row>
+<row>
+<entry>--no-developer</entry>
+<entry>Complementary alias of --developer.</entry>
+</row>
+<row>
+<entry>--no-manager</entry>
+<entry>Complementary alias of --manager.</entry>
+</row>
+<row>
+<entry>--no-prompt</entry>
+<entry>Disable interactive queries.</entry>
+</row>
+<row>
+<entry>--no-trace</entry>
+<entry>Complementary alias of --trace.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--organization</entry>
+<entry>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-delete-space"> <title>helion delete-space &lt;<i>name</i>&gt;</title>
+<p>Delete the named space.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--no-trace</entry>
+<entry>Complementary alias of --trace.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--organization</entry>
+<entry>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</entry>
+</row>
+<row>
+<entry>--recursive</entry>
+<entry>Remove all sub-ordinate parts, and relations.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-link-user-space"> <title>helion link-user-space &lt;<i>user</i>&gt; &lt;<i>space</i>&gt;</title>
+<p>Add the specified user to the named space in various roles.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--developer</entry>
+<entry>Affect the developer role</entry>
+</row>
+<row>
+<entry>--manager</entry>
+<entry>Affect the manager role</entry>
+</row>
+<row>
+<entry>--no-prompt</entry>
+<entry>Disable interactive queries.</entry>
+</row>
+<row>
+<entry>--no-trace</entry>
+<entry>Complementary alias of --trace.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--organization</entry>
+<entry>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-rename-space"> <title>helion rename-space &lt;<i>name</i>&gt; &lt;<i>NewName</i>&gt;</title>
+<p>Rename the named space.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--no-trace</entry>
+<entry>Complementary alias of --trace.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--organization</entry>
+<entry>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-space"> <title>helion space &lt;<i>name</i>&gt;</title>
+<p>Show the named space's information.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--no-prompt</entry>
+<entry>Disable interactive queries.</entry>
+</row>
+<row>
+<entry>--no-trace</entry>
+<entry>Complementary alias of --trace.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--organization, -o</entry>
+<entry>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-spaces"> <title>helion spaces</title>
+<p>List the available spaces in the specified organization.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--no-prompt</entry>
+<entry>Disable interactive queries.</entry>
+</row>
+<row>
+<entry>--no-trace</entry>
+<entry>Complementary alias of --trace.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--organization</entry>
+<entry>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-space-users"> <title>helion space-users</title>
+<p>Show the users for the space by role.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--organization, -o</entry>
+<entry>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-switch-space"> <title>helion switch-space &lt;<i>NewName</i>&gt;</title>
+<p>Switch from the current space to the named space. If the new space is in a different <xref href="client-ref-organizations.dita" >organization</xref>, this command may switch the organization as well.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--no-trace</entry>
+<entry>Complementary alias of --trace.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--organization</entry>
+<entry>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-unlink-user-space"> <title>helion unlink-user-space &lt;<i>user</i>&gt; &lt;<i>space</i>&gt;</title>
+<p>Remove the specified user from the named space in various roles.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--developer</entry>
+<entry>Affect the developer role</entry>
+</row>
+<row>
+<entry>--manager</entry>
+<entry>Affect the manager role</entry>
+</row>
+<row>
+<entry>--no-prompt</entry>
+<entry>Disable interactive queries.</entry>
+</row>
+<row>
+<entry>--no-trace</entry>
+<entry>Complementary alias of --trace.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--organization</entry>
+<entry>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-update-space"> <title>helion update-space</title>
+<p>Change one or more attributes of a space in a single call.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--newname</entry>
+<entry>A new name to give to the space.</entry>
+</row>
+<row>
+<entry>--no-default</entry>
+<entry>Make the current space no longer the default for users without explicit spaces.</entry>
+</row>
+<row>
+<entry>--organization</entry>
+<entry>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</body>
+</topic>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="inviteUser">
+  <title>HPE Helion 2.0 Development Platform: Invite Users to a Project</title>
+  <body>
+<section><p>Only individuals assigned to a project as a
+      User can work on that project. <ol id="invite_user">
+        <li>Click the <b>Projects</b> tab.</li>
+        <li>Note the URL listed after <b>Invite</b>.</li>
+        <li>Copy and send this URL to the person you want to add as a User.</li>
+      </ol></p>
+    </section>
+  </body>
+</topic>

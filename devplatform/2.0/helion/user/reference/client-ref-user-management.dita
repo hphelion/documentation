@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7058">
+<title>HPE Helion 2.0 Development Platform: ALS Command Reference: User Management</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+  <othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic7058/command-add-user">helion add-user</xref>: Register a new user in the current or specified target. This operation requires administrator privileges.</li>
+<li>
+<xref type="section" href="#topic7058/command-delete-user">helion delete-user</xref>: Delete the named user and the user's applications and services from the current or specified target. This operation requires administrator privileges.</li>
+<li>
+<xref type="section" href="#topic7058/command-login-fields">helion login-fields</xref>: Show the names of the credential fields needed for a login. </li>
+<li>
+<xref type="section" href="#topic7058/command-passwd">helion passwd</xref>: Change the password of the current user in the current or specified target.</li>
+<li>
+<xref type="section" href="#topic7058/command-register">helion register</xref>: Register a new user in the current or specified target. This operation requires administrator privileges</li>
+<li>
+<xref type="section" href="#topic7058/command-token">helion token</xref>: Interactively set authentication token.</li>
+<li>
+<xref type="section" href="#topic7058/command-unregister">helion unregister</xref>: Delete the named user and the user's applications and services from the current or specified target. Requires admin privileges.</li>
+<li>
+<xref type="section" href="#topic7058/command-users">helion users</xref>: Show the list of users known to the current or specified target.</li>
+</ul>
+<section id="syntax"> <title>Syntax</title>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
+<p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="command-add-user"> <title>helion add-user &lt;<i>name</i>&gt;</title>
+<p>Register a new user in the current or specified target. This operation requires administrator privileges.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--apps</entry>
+<entry>Limit for the number of applications in the group.</entry>
+</row>
+<row>
+<entry>--appuris</entry>
+<entry>Limit for the number of mapped uris per application.</entry>
+</row>
+<row>
+<entry>--auditor</entry>
+<entry>Add the new user to the organization as auditor.</entry>
+</row>
+<row>
+<entry>--drains</entry>
+<entry>Limit for the number of drains in the group.</entry>
+</row>
+<row>
+<entry>--email</entry>
+<entry>The email of the user to create.</entry>
+</row>
+<row>
+<entry>--family</entry>
+<entry>The family name of the user. Left empty if not specified.</entry>
+</row>
+<row>
+<entry>--given</entry>
+<entry>The given name of the user. Left empty if not specified.</entry>
+</row>
+<row>
+<entry>--manager</entry>
+<entry>Add the new user to the organization as manager.</entry>
+</row>
+<row>
+<entry>--mem</entry>
+<entry>Amount of memory applications can use.</entry>
+</row>
+<row>
+<entry>--no-auditor</entry>
+<entry>Adds the new user to the organization as not an auditor.</entry>
+</row>
+<row>
+<entry>--no-manager</entry>
+<entry>Adds the new user to the organization as not a manager.</entry>
+</row>
+<row>
+<entry>--no-organization</entry>
+<entry>Flag to indicate that the new user should not be placed into any organization. Cannot be used together with <varname>--organization</varname>. When used any <varname>manager</varname> and <varname>auditor</varname> flags are ignored.</entry>
+</row>
+<row>
+<entry>--no-sudo</entry>
+<entry>Applications cannot use <varname>--sudo</varname>.</entry>
+</row>
+<row>
+<entry>--organization, -o</entry>
+<entry>The organization to place the new user into. Defaults to the
+current organization.</entry>
+</row>
+<row>
+<entry>--password, --passwd</entry>
+<entry>The password to use.</entry>
+</row>
+<row>
+<entry>--services</entry>
+<entry>Limit for the number of services in the group.</entry>
+</row>
+<row>
+<entry>--sudo</entry>
+<entry>Applications can use <varname>--sudo</varname> (although they don't have to).</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-delete-user"> <title>helion delete-user &lt;<i>email</i>&gt;</title>
+<p>Delete the named user and the user's applications and services from the current or specified target. This operation requires administrator privileges.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-login-fields"> <title>helion login-fields</title>
+<p>Show the names of the credential fields needed for a login.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-passwd"> <title>helion passwd</title>
+<p>Change the password of the current user in the current or specified target.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--passwd</entry>
+<entry>Alias of --password.</entry>
+</row>
+<row>
+<entry>--password</entry>
+<entry>The new password. If not present it will be interactively asked
+for.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-register"> <title>helion register &lt;<i>name</i>&gt;</title>
+<p>Register a new user in the current or specified target. This operation requires administrator privileges.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--apps</entry>
+<entry>Limit for the number of applications in the group.</entry>
+</row>
+<row>
+<entry>--appuris</entry>
+<entry>Limit for the number of mapped uris per application.</entry>
+</row>
+<row>
+<entry>--auditor</entry>
+<entry>Add the new user to the organization as auditor.</entry>
+</row>
+<row>
+<entry>--drains</entry>
+<entry>Limit for the number of drains in the group.</entry>
+</row>
+<row>
+<entry>--email</entry>
+<entry>The email of the user to create. This is an Application Lifecycle Service 3 specific
+option.</entry>
+</row>
+<row>
+<entry>--family</entry>
+<entry>The family name of the user. Left empty if not specified.</entry>
+</row>
+<row>
+<entry>--given</entry>
+<entry>The given name of the user. Left empty if not specified.</entry>
+</row>
+<row>
+<entry>--manager</entry>
+<entry>Add the new user to the organization as manager.</entry>
+</row>
+<row>
+<entry>--mem</entry>
+<entry>Amount of memory applications can use.</entry>
+</row>
+<row>
+<entry>--no-auditor</entry>
+<entry>Adds the new user to the organization as not an auditor.</entry>
+</row>
+<row>
+<entry>--no-manager</entry>
+<entry>Adds the new user to the organization as not a manager.</entry>
+</row>
+<row>
+<entry>--no-organization</entry>
+<entry>Flag to indicate that the new user should not be placed into any organization. Cannot be used together with <varname>--organization</varname>. When used any <varname>manager</varname> and <varname>auditor</varname> flags are ignored.</entry>
+</row>
+<row>
+<entry>--no-sudo</entry>
+<entry>Applications cannot use <varname>--sudo</varname>.</entry>
+</row>
+<row>
+<entry>--organization, -o</entry>
+<entry>The organization to place the new user into. Defaults to the current organization.</entry>
+</row>
+<row>
+<entry>--password, --passwd</entry>
+<entry>The password to use.</entry>
+</row>
+<row>
+<entry>--services</entry>
+<entry>Limit for the number of services in the group.</entry>
+</row>
+<row>
+<entry>--sudo</entry>
+<entry>Applications can use <varname>--sudo</varname> (although they don't have to).</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-token"> <title>helion token</title>
+<p>Interactively set the authentication token.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-unregister"> <title>helion unregister &lt;<i>email</i>&gt;</title>
+<p>Delete the named user and the user's applications and services from the current or specified target. This operation requires administrator privileges.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-users"> <title>helion users</title>
+<p>Show the list of users known to the current or specified target.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--mode</entry>
+<entry>Select the details to show: <varname>name</varname> information (default); <varname>related</varname> entities; or <varname>all</varname>.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+    </row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</body>
+</topic>

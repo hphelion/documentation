@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_backup_database">
+  <title>Backing up a database</title>
+  <body>
+    <p>This document describes how to back up an existing database instance. This will take a backup of the entire database instance. If necessary, the backup can be restored to a new instance at a later time.</p>
+    <ul>
+      <li><xref href="#topic_backup_database/horizon" format="dita">Backing up a database from
+          Horizon</xref></li>
+      <li><xref href="#topic_backup_database/cli" format="dita">Backing up a database from the
+          command line</xref></li>
+    </ul>
+    <note>Backing up a MongoDB database is not supported.</note>
+    <section id="horizon"><title>Backing up a database from Horizon</title>
+    <ol>
+      <li>Log in to the Horizon console.</li>
+      <li>Under your project, open the <b>Database</b> panel and then click the <b>Instances</b> tab.</li>
+      <li>A list of active database instances will be displayed. Identify the database instance to back up
+        and click <b>Create Backup</b> next to that
+        instance.<image
+          href="../../../media/createDBinstance6.png" placement="break"/></li>
+      <li>In the <b>Backup Database</b> dialog, specify the following information:
+        
+        <ul>
+          <li>
+            <b>Name</b> - the name of the backup to create. This name will help you identify the backup in the future.</li>
+          <li>
+            <b>Database Instance</b> - The database instance that will be backed up.</li>
+          <li>
+            <b>Description</b> - a text description of the backup (optional).</li>
+          <li>
+            <b>Parent Backup</b> - if a previous backup of this database instance exists. it is
+            possible to take an incremental backup. An incremental backup will process faster
+            because it only stores the differences between the two. Select the previous backup if
+            an incremental backup is desired.<image href="../../../media/createDBinstance7.png"
+              placement="break" scale="75"/></li>
+        </ul>
+      </li>
+      <li>Click <b>Backup</b>.</li>
+      <li>In the <b>Database</b> panel, click the <b>Backups</b> tab to view all existing backups,
+        including the newly-created
+        backup.<!--A BR tag was used here in the original source.--><image
+          href="../../../media/createDBinstance8.png" placement="break"/></li>
+    </ol>
+    </section>
+    <section id="cli"><title>Backing up a database from the command line</title>
+      <ol>
+        <li>To work with backups from the command line, log in to the installer node for your HPE Helion OpenStack environment and source the service.osrc file:
+          <codeblock>. service.osrc</codeblock></li>
+        <li><b>Back up a database:</b> To back up a database, use the <codeph>trove backup-create</codeph> command, passing in the database instance (by name or ID) to back up, and the name of the backup to be created.</li>
+        <li>
+          <dl>
+            <dlentry>
+              <dt>Example: Creating a backup by name</dt>
+              <dd><codeblock>trove backup-create myRedisInstance myBackup</codeblock></dd>
+            </dlentry>
+            <dlentry>
+              <dt>Example: Creating a backup by ID</dt>
+              <dd><codeblock>trove backup-create 0043b7e3-7376-44e6-8239-06156e03c5cd myBackup</codeblock></dd>
+            </dlentry>
+          </dl>
+        </li>
+        <li><b>List created backups: </b>To view the created backups, use the <codeph>trove backup-list</codeph> command</li>
+        <li><b>Restore a database from a backup: </b>To restore a backup (that is, create a new instance from a backup), use the <codeph>trove create --backup &lt;backup ID&gt;</codeph> command</li>
+      </ol>
+    </section>
+    <section id="vertica"><title>Backing up a Vertica Preview database</title>
+      <p>Vertica backups can be performed by taking advantage of Vertica's export and import capabilities via the VSQL interface. 
+        The Vertica documentation provides details on exporting data. Data can also be exported to an external file via SELECT 
+        and imported via COPY LOCAL.</p>
+      <p>For more information on these procedures, see the following topics:</p>
+      <ul>
+        <li><xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/AdministratorsGuide/CopyExportData/CopyingAndExportingData.htm">
+            Copying and Exporting Data
+        </xref></li>
+        <li><xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/SQLReferenceManual/Statements/SELECT/SELECT.htm">
+          SELECT
+        </xref></li>
+        <li><xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/SQLReferenceManual/Statements/COPY/COPYLOCAL.htm">
+          COPY LOCAL
+        </xref></li>
+      </ul>
+    </section>
+  </body>
+</topic>
