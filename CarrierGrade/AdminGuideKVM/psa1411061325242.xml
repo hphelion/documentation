@@ -77,7 +77,7 @@
                     <p>Exporting the volume takes some time, longer times for larger
                         volumes. While it is taking place, the status of the volume is set to <i>exporting</i>, which you can verify by issuing the
                         command <cmdname>cinder show </cmdname>
-                        <varname>UUID</varname>, or <cmdname>cinder list
+                        UUID, or <cmdname>cinder list
                             --all-tenants</cmdname> again. This new state is automatically reported
                         on the Web administration interface.</p>
                     <p>You must wait for the export operation to complete. Use the

@@ -11,20 +11,53 @@
         
     </prolog>
     <body>
+        <p>VXLAN provider networks are an alternative to VLAN provider networks when VM L2
+            connectivity is required across separate Layer 2 network segments separated by one or
+            more Layer 3 routers.</p>
+        <p>The steps in this section describe how to set up a VXLAN provider network and add
+            segmentation ranges using the command line interface. For information about using the
+            web administration interface, see <xref href="jow1425585636142.xml"/>.</p>
         
-            <p>VXLAN provider networks are an alternative to VLAN provider networks
-                when VM L2 connectivity is required across separate Layer 2 network segments
-                separated by one or more Layer 3 routers.</p>
-            <p>The steps in this section describe how to set up a VXLAN provider
-                network and add segmentation ranges using the command line interface. For
-                information about using the web administration interface, see <xref href="jow1425585636142.xml"/>.</p>
+            <p>To create a provider network using the CLI, use
+                the following command:</p>
+            <codeblock>
+                ~(keystone_admin)$ neutron providernet-create name \
+                --type=type --description=description mtu mtu_size</codeblock>
+            <p>where</p>
+            <parml class="+ topic/dl pr-d/parml ">
+                <plentry>
+                    <pt>name</pt>
+                    <pd>
+                        <p>is a name for the provider
+                            network</p>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>type</pt>
+                    <pd>
+                        <p>is the type of provider network
+                                (<b>flat</b>,
+                                <b>vlan</b>,
+                            or <b>vxlan</b>)</p>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>description</pt>
+                    <pd>
+                        <p>is a brief description for reference
+                            purposes</p>
+                    </pd>
+                </plentry>
+                <plentry>
+                    <pt>mtu_size</pt>
+                    <pd>
+                        <p>is the maximum transmission unit
+                            size</p>
+                    </pd>
+                </plentry>
+            </parml>
         
-        <context conref="jow1423853504951.xml#jow1423853504951/context_N1003B_N10037_N1000F_N10001" id="context_N10032_N1001F_N10001"/>
-        <context conref="jow1423853504951.xml#jow1423853504951/context_N100C3_N10032_N1000F_N10001" id="context_N1003D_N1001F_N10001"/>
-        
-            <p>For more about these parameters, refer to the steps for using the
-                web administration interface.</p>
-        
-        <context conref="jow1423853504951.xml#jow1423853504951/context_N101CB_N10037_N1000F_N10001" id="context_N10041_N1001F_N10001"/>
+        <p>For more about these parameters, refer to the steps for using the web administration
+            interface.</p>
     </body>
 </topic>

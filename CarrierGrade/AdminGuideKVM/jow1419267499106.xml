@@ -18,13 +18,13 @@
                 <title ixia_locid="453">System Architecture</title>
                 <p ixia_locid="454">The HP Helion OpenStack Carrier Grade system consists of a set of hosts connected
                     to internal and external networks, as illustrated in the following figure.</p>
-                <note id="note_N10087_N10036_N10027_N1000F_N10001" ixia_locid="489" product="tis_small">
+                <note id="note_N10087_N10036_N10027_N1000F_N10001">
                     <p ixia_locid="490">For a minimal two-server configuration, the controller and
                         compute functions are combined on a single host.</p>
                 </note>
                 <fig id="fig-logical-architecture" ixia_locid="5">
                     <title ixia_locid="6">HP Helion OpenStack Carrier Grade Reference Logical Architecture</title>
-                    <image href="jow1404333560781.image" id="image_c1k_wtk_cn" ixia_locid="7" width="6in">
+                    <image href="jow1404333560781.image">
                         <alt ixia_locid="455">HP Helion OpenStack Carrier Grade logical view</alt>
                     </image>
                 </fig>
@@ -121,7 +121,7 @@
                             <!-- the next version of this row is for small-footprint.
                                  NOTE: It uses an additional row into which it straddles.-->
                             <row id="hw_qty_ha_small">
-                                <entry ixia_locid="534" morerows="1">
+                                <entry>
                                     <p ixia_locid="536">Recommended for HA</p>
                                 </entry>
                                 <entry ixia_locid="538">
@@ -134,13 +134,13 @@
                                 <entry ixia_locid="546">
                                     <p ixia_locid="548">Two or more </p>
                                 </entry>
-                                <entry ixia_locid="550" morerows="1">
+                                <entry>
                                     <p ixia_locid="552">Two (optional)</p>
                                 </entry>
                             </row>
                             <!-- THis row is also required for small footprint, to complete the straddle. -->
                             <row id="combined_note">
-                                <entry ixia_locid="573" nameend="compute" namest="controller">
+                                <entry>
                                     <note id="note_N10166_N10160_N1015D_N100E4_N1009F_N1009B_N10091_N10027_N1000F_N10001" ixia_locid="574">
                                         <p ixia_locid="575">For a minimal two-server configuration, the controller
                                             and compute functions are combined on a single host.</p>
@@ -165,7 +165,7 @@
                             <!-- (2) the next version of this row is for small-footprint.
                                  NOTE: It uses an additional row into which it straddles.-->
                             <row id="hw_ram_small">
-                                <entry ixia_locid="584" morerows="1">
+                                <entry>
                                     <p ixia_locid="585">RAM (min)</p>
                                 </entry>
                                 <entry ixia_locid="586">
@@ -174,13 +174,13 @@
                                 <entry ixia_locid="588">
                                     <p ixia_locid="589">32 GB</p>
                                 </entry>
-                                <entry ixia_locid="590" morerows="1">
+                                <entry>
                                     <p ixia_locid="591">64 GB</p>
                                 </entry>
                             </row>
                             <!-- (2) THis row is also required for small footprint, to complete the straddle. -->
                             <row id="combined_note_RAM">
-                                <entry ixia_locid="592" nameend="compute" namest="controller">
+                                <entry>
                                     <note id="note_small_min_RAM" ixia_locid="593">
                                         <p ixia_locid="594">For a minimal two-server configuration, 64 GB is required.</p>
                                     </note>
@@ -593,7 +593,7 @@
                         </thead>
                         <tbody>
                             <row product="tis_not_small">
-                                <entry ixia_locid="553" morerows="2">
+                                <entry>
                                     <p ixia_locid="555">Controller</p>
                                 </entry>
                                 <entry ixia_locid="557">
@@ -605,7 +605,7 @@
                                 </entry>
                             </row>
                             <row product="tis_small">
-                                <entry ixia_locid="554" morerows="3"> <!-- for tis_small, adjust straddle for "storage disk" row -->
+                                <entry> <!-- for tis_small, adjust straddle for "storage disk" row -->
                                     <p ixia_locid="556">Controller</p>
                                 </entry>
                                 <entry ixia_locid="558">
@@ -635,7 +635,7 @@
                                 </entry>
                             </row>
                             <row>
-                                <entry ixia_locid="186" nameend="c3" namest="c2">
+                                <entry>
                                     <note id="note_N1013A_N10135_N10132_N100FE_N100C9_N100C0_N100A7_N1001C_N10001" ixia_locid="188">
                                         <p ixia_locid="190">The configurations for <nameliteral ixia_locid="192">controller-0</nameliteral> and
                                                 <nameliteral ixia_locid="194">controller-1</nameliteral> must be identical.</p>
@@ -643,7 +643,7 @@
                                 </entry>
                             </row>
                             <row>
-                                <entry ixia_locid="196" morerows="1">
+                                <entry>
                                     <p ixia_locid="198">Compute</p>
                                 </entry>
                                 <entry ixia_locid="504">
@@ -664,7 +664,7 @@
                                 </entry>
                             </row>
                             <row>
-                                <entry ixia_locid="208" morerows="1">
+                                <entry>
                                     <p ixia_locid="210">Storage</p>
                                 </entry>
                                 <entry ixia_locid="212">
@@ -714,7 +714,7 @@
                     booting.</p>
                 <p ixia_locid="486">HP Helion OpenStack Carrier Grade supports provisioning multiple ports on
                     supported NICs.</p>
-                <note id="note_N1070F_N106FB_N10027_N1000F_N10001" ixia_locid="487" type="caution">
+                <note id="note_N1070F_N106FB_N10027_N1000F_N10001">
                     <p ixia_locid="488"> For a Mellanox CX3, all ports must be used either for data interfaces, or
                         for non-data interfaces. It is not possible to use some ports for data
                         interfaces and others for non-data interfaces on the same Mellanox CX3
@@ -751,7 +751,7 @@
                         </thead>
                         <tbody>
                             <row>
-                                <entry ixia_locid="249" morerows="1">
+                                <entry>
                                     <p ixia_locid="251">Controller Node</p>
                                 </entry>
                                 <entry ixia_locid="253">
@@ -760,7 +760,7 @@
                                     <p ixia_locid="257">One 1G or 10G interface (OAM)</p>
                                     <p ixia_locid="507">One optional 10G interface (Infrastructure
                                         network)</p>
-                                    <p ixia_locid="508" product="tis_small">For combined
+                                    <p>For combined
                                         controller/compute hosts, one 1G, 10G, or 40G interface per
                                         Provider Network</p>
                                 </entry>
@@ -770,13 +770,13 @@
                                     <p ixia_locid="265">Two 1G or 10G interfaces (OAM)</p>
                                     <p ixia_locid="267">Two optional 10G interfaces (Infrastructure
                                         network)</p>
-                                    <p ixia_locid="509" product="tis_small">For combined
+                                    <p>For combined
                                         controller/compute hosts, two 1G, 10G, or 40G interface per
                                         Provider Network</p>
                                 </entry>
                             </row>
                             <row>
-                                <entry ixia_locid="269" nameend="c3" namest="c2">
+                                <entry>
                                     <note id="note_N10246_N10241_N1023E_N1020E_N101D8_N101CF_N101C3_N1001C_N10001" ixia_locid="271">
                                         <p ixia_locid="273">The controller-0 and controller-1 port
                                             configurations must be identical.</p>

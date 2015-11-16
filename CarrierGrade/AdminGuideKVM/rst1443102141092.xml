@@ -24,7 +24,7 @@
         
             <p>From the command line, you would first delete and then recreate the
                 management interface.</p>
-            <codeblock>~(keystone_admin)$ system host-if-modify â€“nt none <varname>node</varname> <varname>interface</varname></codeblock>
+            <codeblock>~(keystone_admin)$ system host-if-modify â€“nt none node interface</codeblock>
             <p>where</p>
             <parml>
                 <plentry>
@@ -42,7 +42,7 @@
                 </plentry>
             </parml>
             <p>You would then create the new interface.</p>
-            <codeblock>~(keystone_admin)$ system host-if-add -nt mgmt -a 802.3ad -x layer2 <varname>node</varname> <varname>interface</varname> ae none <varname>ports</varname></codeblock>
+            <codeblock>~(keystone_admin)$ system host-if-add -nt mgmt -a 802.3ad -x layer2 node interface ae none ports</codeblock>
             <p>where</p>
             <parml>
                 <plentry>

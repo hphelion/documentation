@@ -17,9 +17,9 @@
                     <xref href="jow1443819549360.xml"/>.</p>
             <p>To use the command-line interface, see <xref href="jow1443819706243.xml"/>.</p>
         
-        <steps id="steps_zdg_53f_4t">
-            <step conref="jow1426453628262.xml#jow1426453628262/step_N1002B_N10028_N1001C_N10001" id="step_N10047_N10043_N1001F_N10001">
-                <cmd/>
+        <ol>
+            <li conref="jow1426453628262.xml#jow1426453628262/step_N1002B_N10028_N1001C_N10001" id="step_N10047_N10043_N1001F_N10001" />
+                
             
              
                 <li>Select the <b>Sensors</b> tab.</li>
@@ -27,7 +27,7 @@
              
                 <li>In the <codeph>Sensor Groups</codeph>
                     list, click <b>Edit SensorGroup</b> for the
-                    group you want to configure. </li>
+                    group you want to configure. 
                 
                     
                         <image href="jow1443885204993.image" id="image_qwz_3kf_4t">
@@ -80,7 +80,7 @@
                         </dlentry>
                     </dl>
                 
-            
+                </li>
         </ol>
     </body>
 </topic>

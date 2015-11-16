@@ -55,8 +55,8 @@
                 To access this menu, see <xref href="jow1429538642910.xml"/>. </p>
             <p>You can also specify the extra spec from the CLI using the following
                 command:</p>
-            <codeblock>~(keystone_admin)$ nova flavor-key <varname>flavor_name</varname> set hw:cpu_model=<varname>cpu_model</varname></codeblock>
-            <p>where <varname>cpu_model</varname> is one of the
+            <codeblock>~(keystone_admin)$ nova flavor-key flavor_name set hw:cpu_model=cpu_model</codeblock>
+            <p>where cpu_model is one of the
                 following:</p>
             <ul id="ul_np4_13b_ks">
                 <li>

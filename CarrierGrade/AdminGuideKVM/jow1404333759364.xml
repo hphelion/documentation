@@ -179,37 +179,37 @@
                                         following variables:</p>
                                     <ul id="ul_y1w_4lk_qq">
                                         <li>
-                                            <p><varname>UUID</varname></p>
+                                            <p>UUID</p>
                                         </li>
                                         <li>
-                                            <p><varname>AlarmID</varname></p>
+                                            <p>AlarmID</p>
                                         </li>
                                         <li>
-                                            <p><varname>EntityInstanceID</varname></p>
+                                            <p>EntityInstanceID</p>
                                         </li>
                                         <li>
-                                            <p><varname>DateAndTime</varname></p>
+                                            <p>DateAndTime</p>
                                         </li>
                                         <li>
-                                            <p><varname>AlarmSeverity</varname></p>
+                                            <p>AlarmSeverity</p>
                                         </li>
                                         <li>
-                                            <p><varname>ReasonText</varname></p>
+                                            <p>ReasonText</p>
                                         </li>
                                         <li>
-                                            <p><varname>EventType</varname></p>
+                                            <p>EventType</p>
                                         </li>
                                         <li>
-                                            <p><varname>ProbableCause</varname></p>
+                                            <p>ProbableCause</p>
                                         </li>
                                         <li>
-                                            <p><varname>ProposedRepairAction</varname></p>
+                                            <p>ProposedRepairAction</p>
                                         </li>
                                         <li>
-                                            <p><varname>ServiceAffecting</varname></p>
+                                            <p>ServiceAffecting</p>
                                         </li>
                                         <li>
-                                            <p><varname>SuppressionAllowed</varname></p>
+                                            <p>SuppressionAllowed</p>
                                         </li>
                                     </ul>
                                     <p>On the web interface, click the <b>Fault
@@ -230,7 +230,7 @@
                                     <p>A history of set and clear alarm operations
                                         in the system. The table includes the same variables as the
                                         active alarm table, plus the variable
-                                            <varname>AlarmState</varname> used to indicate whether
+                                            AlarmState used to indicate whether
                                         the table entry is a SET or a CLEAR operation.</p>
                                     <p>On the web interface, click the <b>Fault
                                             Management</b> menu on the
@@ -249,7 +249,7 @@
                                 <dd>
                                     <p>A list of all customer logs in the system.
                                         The table includes the same variables as the Active Alarm
-                                        Table, with the exception that <varname>ProposedRepairAction</varname> and  <varname>SuppressionAllowed</varname> are
+                                        Table, with the exception that ProposedRepairAction and  SuppressionAllowed are
                                         excluded.</p>
                                     <p>On the web interface, click the <b>Fault Management</b> menu on
                                         the <b>Admin</b> tab, and
@@ -302,10 +302,10 @@
                         <p>For Critical, Major, Minor, Warning, and Message traps, all
                             variables in the active alarm table are included as <term>varbinds</term>.</p>
                         <p>For the Clear trap, <term>varbinds</term> include
-                            only the <varname>AlarmID</varname>, <varname>EntityInstanceID</varname>, <varname>DateAndTime</varname>,
-                            and <varname>ReasonText</varname> variables.</p>
-                        <p>For the HierarchicalClear trap, <term>varbinds</term> include only the <varname>EntityInstanceID</varname>, <varname>DateAndTime</varname>,
-                            and <varname>ReasonText</varname> variables.</p>
+                            only the AlarmID, EntityInstanceID, DateAndTime,
+                            and ReasonText variables.</p>
+                        <p>For the HierarchicalClear trap, <term>varbinds</term> include only the EntityInstanceID, DateAndTime,
+                            and ReasonText variables.</p>
                     </dd>
                 </dlentry>
             </dl>

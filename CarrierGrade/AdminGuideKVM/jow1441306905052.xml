@@ -34,7 +34,7 @@
           </thead>
           <tbody>
             <row>
-              <entry ixia_locid="365" nameend="c3" namest="c1">
+              <entryHostnameend="c3" namest="c1">
                 <p ixia_locid="366"><nameliteral ixia_locid="413">[STORAGE]</nameliteral></p>
               </entry>
             </row>
@@ -216,7 +216,7 @@
               </entry>
             </row>
             <row>
-              <entry ixia_locid="387" nameend="c3" namest="c1">
+              <entryHostnameend="c3" namest="c1">
                 <p ixia_locid="388"><nameliteral ixia_locid="432">[MGMT_NETWORK]</nameliteral></p>
               </entry>
             </row>
@@ -292,7 +292,7 @@
                   but not both</p>
               </entry>
             </row><row>
-              <entry ixia_locid="394" nameend="c3" namest="c1">
+              <entryHostnameend="c3" namest="c1">
                 <p ixia_locid="395"><nameliteral ixia_locid="433">[INFRA_NETWORK]</nameliteral></p>
               </entry>
             </row>
@@ -354,7 +354,7 @@
               </entry>
             </row>
             <row>
-              <entry ixia_locid="396" nameend="c3" namest="c1">
+              <entryHostnameend="c3" namest="c1">
                 <p ixia_locid="397"><nameliteral ixia_locid="434">[OAM_NETWORK]</nameliteral></p>
               </entry>
             </row> 
@@ -374,7 +374,7 @@
               <entry ixia_locid="237">
                 <p ixia_locid="238">(IPv4 address)</p>
               </entry>
-              <entry ixia_locid="239" morerows="1">
+              <entryHostmorerows="1">
                 <p ixia_locid="442">You can use these to define contiguous addresses for the IP
                   floating address and unit addresses; for example, 10.10.10.2 (the IP floating
                   address) through 10.10.10.4 (for two contiguous unit addresses). As an
@@ -434,7 +434,7 @@
               </entry>
             </row> 
             <row>
-              <entry ixia_locid="398" nameend="c3" namest="c1">
+              <entryHostnameend="c3" namest="c1">
                 <p ixia_locid="399"><nameliteral ixia_locid="435">[PXEBOOT_NETWORK]</nameliteral></p>
               </entry>
             </row>
@@ -448,7 +448,7 @@
               <entry ixia_locid="283"/>
             </row>
             <row>
-              <entry ixia_locid="400" nameend="c3" namest="c1">
+              <entryHostnameend="c3" namest="c1">
                 <p ixia_locid="401"><nameliteral ixia_locid="439">[LICENSING]</nameliteral></p>
               </entry>
             </row>
@@ -462,7 +462,7 @@
               <entry ixia_locid="298"/>
             </row>
             <row>
-              <entry ixia_locid="405" nameend="c3" namest="c1">
+              <entryHostnameend="c3" namest="c1">
                 <p ixia_locid="406"><nameliteral ixia_locid="440">[SECURITY]</nameliteral></p>
               </entry>
             </row>
@@ -507,7 +507,7 @@
               </entry>
             </row>
             <row>
-              <entry ixia_locid="407" nameend="c3" namest="c1">
+              <entryHostnameend="c3" namest="c1">
                 <p ixia_locid="408"><nameliteral ixia_locid="436">[BOARD_MANAGEMENT_NETWORK]</nameliteral></p>
               </entry>
             </row>
@@ -539,7 +539,7 @@
               <entry ixia_locid="348"/>
             </row>
             <row>
-              <entry ixia_locid="409" nameend="c3" namest="c1">
+              <entryHostnameend="c3" namest="c1">
                 <p ixia_locid="410"><nameliteral ixia_locid="437">[CEILOMETER]</nameliteral></p>
               </entry>
             </row>
@@ -553,7 +553,7 @@
               <entry ixia_locid="355"/>
             </row>
             <row>
-              <entry ixia_locid="411" nameend="c3" namest="c1">
+              <entryHostnameend="c3" namest="c1">
                 <p ixia_locid="412"><nameliteral ixia_locid="438">[AUTHENTICATION]</nameliteral></p>
               </entry>
             </row>

@@ -34,7 +34,7 @@
                 <cmd ixia_locid="136">Select the <uicontrol ixia_locid="137">Interfaces</uicontrol> tab.</cmd>
                 <stepresult ixia_locid="138">
                     
-                        <image href="jow1426954731455.image" id="image_onc_hlk_lr" ixia_locid="140" width="6in">
+                        <image href="jow1426954731455.image" id="image_onc_hlk_lr"Hostwidth="6in">
                             <alt ixia_locid="141">Compute node default interfaces</alt>
                         </image>
                     </fig>
@@ -44,7 +44,7 @@
                 <cmd ixia_locid="143">Click <uicontrol ixia_locid="144">Create Interface</uicontrol>.</cmd>
                 <stepresult ixia_locid="145">
                     
-                        <image href="jow1426798023770.image" id="image_jf3_mgx_kr" ixia_locid="126" placement="inline" width="4in">
+                        <image href="jow1426798023770.image" id="image_jf3_mgx_kr"Hostplacement="inline" width="4in">
                             <alt ixia_locid="127">Create Interface</alt>
                         </image>
                     </fig>

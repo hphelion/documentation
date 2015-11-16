@@ -31,7 +31,8 @@
              
                 <li>Create a  provider network.
                 <ol>
-                    <li conref="jow1424191621914.xml#jow1424191621914/Provider_Network_dialog">
+                    <li
+                        conref="jow1424191621914.xml#jow1424191621914/step_N1007D_N1003C_N10024_N10001">
                         <image href="jow1425675012586.image" id="image_jss_vsg_hr">
                             <alt>i-ccs-create-provider-network-generic</alt>
                         </image>

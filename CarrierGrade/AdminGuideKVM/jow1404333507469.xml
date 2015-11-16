@@ -47,7 +47,7 @@
                         <stepresult ixia_locid="88">
                             <p conref="jow1404333506062.xml#jow1404333506062/p-save-personality" ixia_locid="89"/>
                             
-                                <image href="jow1412193160572.image" id="image_ixn_r1q_pp" ixia_locid="91" width="3.5in">
+                                <image href="jow1412193160572.image" id="image_ixn_r1q_pp"Hostwidth="3.5in">
                                     <alt ixia_locid="92">HP Helion OpenStack Carrier Grade Controller Node Install</alt>
                                 </image>
                             </fig>
@@ -85,7 +85,7 @@
                                     <p ixia_locid="371">Open the <nameliteral ixia_locid="372">Inventory Detail</nameliteral> for
                                         controller-1, and then select the
                                             <nameliteral ixia_locid="373">Storage</nameliteral> tab.
-                                            <image href="jow1426459038579.image" id="image_rhh_ps5_jr" ixia_locid="375" width="6in">
+                                            <image href="jow1426459038579.image" id="image_rhh_ps5_jr"Hostwidth="6in">
                                                 <alt ixia_locid="37">Compute Node Storage tab</alt>
                                             </image>
                                         </fig></p>

@@ -15,8 +15,8 @@
             <p ixia_locid="5"><draft-comment author="jowens" ixia_locid="6">US62804 new topic</draft-comment>The controller
                 configuration script accepts a path to a configuration file as an optional
                 parameter:</p>
-            <codeblock ixia_locid="7"><systemoutput ixia_locid="8">$ </systemoutput><userinput ixia_locid="9">config_controller --config-file <varname ixia_locid="10">filename</varname></userinput></codeblock>
-            <p ixia_locid="11">where <varname ixia_locid="17">filename</varname> is the path and name of the file.</p>
+            <codeblock ixia_locid="7"><systemoutput ixia_locid="8">$ </systemoutput><userinput ixia_locid="9">config_controller --config-file <varname ixia_locid="10">filename</userinput></codeblock>
+            <p ixia_locid="11">where <varname ixia_locid="17">filename is the path and name of the file.</p>
             <p ixia_locid="13">The configuration file contains all the settings required by the
                 script, expressed using INI format. You can create one manually, or you can use the
                 configuration file generator utility provided with the HP Helion OpenStack Carrier Grade Guest

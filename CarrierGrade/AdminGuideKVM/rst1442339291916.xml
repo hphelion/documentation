@@ -13,13 +13,13 @@
         
             <p>To create a tenant network using the CLI, use the following command:</p>
             
-            <codeblock>~(keystone_admin)$ neutron net-create --tenant-id <varname>UUID</varname> \
---provider:physical_network=<varname>network</varname> \
---provider:network_type=<varname>type</varname> \
---provider:segmentation_id=<varname>segment</varname> \
+            <codeblock>~(keystone_admin)$ neutron net-create --tenant-id UUID \
+--provider:physical_network=network \
+--provider:network_type=type \
+--provider:segmentation_id=segment \
 --shared --router:external --admin-state-down \
---vlan-transparent=<varname>state</varname> \
-<varname>name</varname></codeblock>
+--vlan-transparent=state \
+name</codeblock>
             <p>where</p>
             <parml>
                 <plentry>
@@ -64,8 +64,8 @@
             </parml>
             
             <p>To create a tenant subnet using the CLI, use the following command:</p>
-            <codeblock>~(keystone_admin)$ neutron subnet-create --tenant-id <varname>UUID</varname> \
---name <varname>name</varname> --gateway <varname>gateway</varname> --disable-dhcp external-net <varname>externalIP</varname></codeblock>
+            <codeblock>~(keystone_admin)$ neutron subnet-create --tenant-id UUID \
+--name name --gateway gateway --disable-dhcp external-net externalIP</codeblock>
             <p>where</p>
             <parml>
                 <plentry>

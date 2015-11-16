@@ -27,11 +27,11 @@
             <li ixia_locid="21">
                 <p ixia_locid="22">hard drive</p>
             </li>
-            <li ixia_locid="36" product="tis_standard">
+            <liHostproduct="tis_standard">
                 <p ixia_locid="38">network (PXE), over an interface connected to the internal
                     management network</p>
             </li>
-            <li ixia_locid="37" product="tis_region">
+            <liHostproduct="tis_region">
                 <p ixia_locid="39">network (PXE), over an interface connected
                     to the PXE boot network</p>
             </li>

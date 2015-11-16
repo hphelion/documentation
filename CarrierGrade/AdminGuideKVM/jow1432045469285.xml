@@ -49,10 +49,10 @@
                         <p>700.001</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; is enabled</p>
+                        <p>Instance &lt;instance-name&gt; is enabled</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -63,10 +63,10 @@
                         <p>700.002</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; has crashed</p>
+                        <p>Instance &lt;instance-name&gt; has crashed</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -77,10 +77,10 @@
                         <p>700.003</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; has failed</p>
+                        <p>Instance &lt;instance-name&gt; has failed</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -91,10 +91,10 @@
                         <p>700.004</p>
                     </stentry>
                     <stentry>
-                        <p>Deleting instance &lt;<varname>instance-name</varname>&gt;</p>
+                        <p>Deleting instance &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -105,24 +105,10 @@
                         <p>700.005</p>
                     </stentry>
                     <stentry>
-                        <p>Deleted instance &lt;<varname>instance-name</varname>&gt;</p>
+                        <p>Deleted instance &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>C</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry>
-                        <p>700.006</p>
-                    </stentry>
-                    <stentry>
-                        <p>Pause issued against instance &lt;<varname>instance-name</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -133,10 +119,24 @@
                         <p>700.006</p>
                     </stentry>
                     <stentry>
-                        <p>Pause rejected for instance &lt;<varname>instance-name</varname>&gt;, reason=&lt;<varname>reason-text</varname>&gt;</p>
+                        <p>Pause issued against instance &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>C</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <p>700.006</p>
+                    </stentry>
+                    <stentry>
+                        <p>Pause rejected for instance &lt;instance-name&gt;, reason=&lt;reason-text&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -147,24 +147,10 @@
                         <p>700.007</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; is paused</p>
+                        <p>Instance &lt;instance-name&gt; is paused</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>C</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry>
-                        <p>700.008</p>
-                    </stentry>
-                    <stentry>
-                        <p>Unpause issued against instance &lt;<varname>instance-name</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -175,10 +161,24 @@
                         <p>700.008</p>
                     </stentry>
                     <stentry>
-                        <p>Unpause rejected for instance &lt;<varname>instance-name</varname>&gt;, reason=&lt;<varname>reason-text</varname>&gt;</p>
+                        <p>Unpause issued against instance &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>C</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <p>700.008</p>
+                    </stentry>
+                    <stentry>
+                        <p>Unpause rejected for instance &lt;instance-name&gt;, reason=&lt;reason-text&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -189,10 +189,10 @@
                         <p>700.009</p>
                     </stentry>
                     <stentry>
-                        <p>Suspend issued against instance &lt;<varname>instance-name</varname>&gt;</p>
+                        <p>Suspend issued against instance &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -203,10 +203,10 @@
                         <p>700.009</p>
                     </stentry>
                     <stentry>
-                        <p>Suspend rejected for instance &lt;<varname>instance-name</varname>&gt;, reason=&lt;<varname>reason-text</varname>&gt;</p>
+                        <p>Suspend rejected for instance &lt;instance-name&gt;, reason=&lt;reason-text&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -217,24 +217,10 @@
                         <p>700.010</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; is supended</p>
+                        <p>Instance &lt;instance-name&gt; is supended</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>C</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry>
-                        <p>700.011</p>
-                    </stentry>
-                    <stentry>
-                        <p>Resume issued against instance &lt;<varname>instance-name</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -245,10 +231,24 @@
                         <p>700.011</p>
                     </stentry>
                     <stentry>
-                        <p>Resume rejected for instance &lt;<varname>instance-name</varname>&gt;, reason=&lt;<varname>reason-text</varname>&gt;</p>
+                        <p>Resume issued against instance &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>C</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <p>700.011</p>
+                    </stentry>
+                    <stentry>
+                        <p>Resume rejected for instance &lt;instance-name&gt;, reason=&lt;reason-text&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -259,24 +259,10 @@
                         <p>700.012</p>
                     </stentry>
                     <stentry>
-                        <p>Live-Migrate issued against instance &lt;<varname>instance-name</varname>&gt;</p>
+                        <p>Live-Migrate issued against instance &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>C</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry>
-                        <p>700.012</p>
-                    </stentry>
-                    <stentry>
-                        <p>Live-Migrate rejected for instance &lt;<varname>instance-name</varname>&gt;, reason=&lt;<varname>reason-text</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -287,24 +273,10 @@
                         <p>700.012</p>
                     </stentry>
                     <stentry>
-                        <p>Live-Migrate failed for instance &lt;<varname>instance-name</varname>&gt;</p>
+                        <p>Live-Migrate rejected for instance &lt;instance-name&gt;, reason=&lt;reason-text&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>C</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry>
-                        <p>700.012</p>
-                    </stentry>
-                    <stentry>
-                        <p>Live-Migrate inprogress for instance &lt;<varname>instance-name</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -315,11 +287,39 @@
                         <p>700.012</p>
                     </stentry>
                     <stentry>
-                        <p>Live-Migrate aborted for instance &lt;<varname>instance-name</varname>&gt;,
-                                reason=&lt;<varname>reason for abort</varname>&gt;</p>
+                        <p>Live-Migrate failed for instance &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>C</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <p>700.012</p>
+                    </stentry>
+                    <stentry>
+                        <p>Live-Migrate inprogress for instance &lt;instance-name&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>instance=&lt;instance_uuid&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>C</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <p>700.012</p>
+                    </stentry>
+                    <stentry>
+                        <p>Live-Migrate aborted for instance &lt;instance-name&gt;,
+                                reason=&lt;reason for abort&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -330,24 +330,10 @@
                         <p>700.013</p>
                     </stentry>
                     <stentry>
-                        <p>Cold-Migrate issued against instance &lt;<varname>instance-name</varname>&gt;</p>
+                        <p>Cold-Migrate issued against instance &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>C</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry>
-                        <p>700.013</p>
-                    </stentry>
-                    <stentry>
-                        <p>Cold-Migrate rejected for instance &lt;<varname>instance-name</varname>&gt;, reason=&lt;<varname>reason-text</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -358,10 +344,10 @@
                         <p>700.013</p>
                     </stentry>
                     <stentry>
-                        <p>Cold-Migrate failed for instance &lt;<varname>instance-name</varname>&gt;</p>
+                        <p>Cold-Migrate rejected for instance &lt;instance-name&gt;, reason=&lt;reason-text&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -372,10 +358,24 @@
                         <p>700.013</p>
                     </stentry>
                     <stentry>
-                        <p>Cold-Migrate inprogress for instance &lt;<varname>instance-name</varname>&gt;</p>
+                        <p>Cold-Migrate failed for instance &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>C</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <p>700.013</p>
+                    </stentry>
+                    <stentry>
+                        <p>Cold-Migrate inprogress for instance &lt;instance-name&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -386,10 +386,10 @@
                         <p>700.014</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; has been cold-migrated</p>
+                        <p>Instance &lt;instance-name&gt; has been cold-migrated</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -401,10 +401,10 @@
                     </stentry>
                     <stentry>
                         <p>Cold-Migrate-Confirm issued against instance
-                                &lt;<varname>instance-name</varname>&gt;</p>
+                                &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -415,24 +415,10 @@
                         <p>700.015</p>
                     </stentry>
                     <stentry>
-                        <p>Cold-Migrate-Confirm rejected for instance &lt;<varname>instance-name</varname>&gt;, reason=&lt;<varname>reason-text</varname>&gt;</p>
+                        <p>Cold-Migrate-Confirm rejected for instance &lt;instance-name&gt;, reason=&lt;reason-text&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>C</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry>
-                        <p>700.016</p>
-                    </stentry>
-                    <stentry>
-                        <p>Cold-Migrate-Revert issued against instance &lt;<varname>instance-name</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -443,10 +429,24 @@
                         <p>700.016</p>
                     </stentry>
                     <stentry>
-                        <p>Cold-Migrate-Revert rejected for instance &lt;<varname>instance-name</varname>&gt;, reason=&lt;<varname>reason-text</varname>&gt;</p>
+                        <p>Cold-Migrate-Revert issued against instance &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>C</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <p>700.016</p>
+                    </stentry>
+                    <stentry>
+                        <p>Cold-Migrate-Revert rejected for instance &lt;instance-name&gt;, reason=&lt;reason-text&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -457,24 +457,10 @@
                         <p>700.017</p>
                     </stentry>
                     <stentry>
-                        <p>Evacuate issued against instance &lt;<varname>instance-name</varname>&gt;</p>
+                        <p>Evacuate issued against instance &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>C</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry>
-                        <p>700.017</p>
-                    </stentry>
-                    <stentry>
-                        <p>Evacuate rejected for instance &lt;<varname>instance-name</varname>&gt;, reason=&lt;<varname>reason-text</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -485,10 +471,24 @@
                         <p>700.017</p>
                     </stentry>
                     <stentry>
-                        <p>Evacuating instance &lt;<varname>instance-name</varname>&gt;</p>
+                        <p>Evacuate rejected for instance &lt;instance-name&gt;, reason=&lt;reason-text&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>C</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <p>700.017</p>
+                    </stentry>
+                    <stentry>
+                        <p>Evacuating instance &lt;instance-name&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -499,10 +499,10 @@
                         <p>700.018</p>
                     </stentry>
                     <stentry>
-                        <p>Start issued against instance &lt;<varname>instance-name</varname>&gt;</p>
+                        <p>Start issued against instance &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -513,24 +513,10 @@
                         <p>700.018</p>
                     </stentry>
                     <stentry>
-                        <p>Start rejected for instance &lt;<varname>instance-name</varname>&gt;, reason=&lt;<varname>reason-text</varname>&gt;</p>
+                        <p>Start rejected for instance &lt;instance-name&gt;, reason=&lt;reason-text&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>C</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry>
-                        <p>700.019</p>
-                    </stentry>
-                    <stentry>
-                        <p>Stop issued against instance &lt;<varname>instance-name</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -541,10 +527,24 @@
                         <p>700.019</p>
                     </stentry>
                     <stentry>
-                        <p>Stop rejected for instance &lt;<varname>instance-name</varname>&gt;, reason=&lt;<varname>reason-text</varname>&gt;</p>
+                        <p>Stop issued against instance &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>C</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <p>700.019</p>
+                    </stentry>
+                    <stentry>
+                        <p>Stop rejected for instance &lt;instance-name&gt;, reason=&lt;reason-text&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -555,24 +555,10 @@
                         <p>700.020</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; is stopped</p>
+                        <p>Instance &lt;instance-name&gt; is stopped</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>C</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry>
-                        <p>700.021</p>
-                    </stentry>
-                    <stentry>
-                        <p>Reboot issued against instance &lt;<varname>instance-name</varname>&gt;, soft-reboot</p>
-                    </stentry>
-                    <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -583,24 +569,10 @@
                         <p>700.021</p>
                     </stentry>
                     <stentry>
-                        <p>Reboot issued against instance &lt;<varname>instance-name</varname>&gt;, hard-reboot</p>
+                        <p>Reboot issued against instance &lt;instance-name&gt;, soft-reboot</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>C</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry>
-                        <p>700.021</p>
-                    </stentry>
-                    <stentry>
-                        <p>Reboot rejected for instance &lt;<varname>instance-name</varname>&gt;, reason=&lt;<varname>reason-text</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -611,10 +583,38 @@
                         <p>700.021</p>
                     </stentry>
                     <stentry>
-                        <p>Rebooting instance &lt;<varname>instance-name</varname>&gt;</p>
+                        <p>Reboot issued against instance &lt;instance-name&gt;, hard-reboot</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>C</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <p>700.021</p>
+                    </stentry>
+                    <stentry>
+                        <p>Reboot rejected for instance &lt;instance-name&gt;, reason=&lt;reason-text&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>instance=&lt;instance_uuid&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>C</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <p>700.021</p>
+                    </stentry>
+                    <stentry>
+                        <p>Rebooting instance &lt;instance-name&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -625,24 +625,10 @@
                         <p>700.022</p>
                     </stentry>
                     <stentry>
-                        <p>Rebuild issued against instance &lt;<varname>instance-name</varname>&gt;</p>
+                        <p>Rebuild issued against instance &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>C</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry>
-                        <p>700.022</p>
-                    </stentry>
-                    <stentry>
-                        <p>Rebuild rejected for instance &lt;<varname>instance-name</varname>&gt;, reason=&lt;<varname>reason-text</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -653,10 +639,24 @@
                         <p>700.022</p>
                     </stentry>
                     <stentry>
-                        <p>Rebuilding instance &lt;<varname>instance-name</varname>&gt;</p>
+                        <p>Rebuild rejected for instance &lt;instance-name&gt;, reason=&lt;reason-text&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>C</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <p>700.022</p>
+                    </stentry>
+                    <stentry>
+                        <p>Rebuilding instance &lt;instance-name&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -667,24 +667,10 @@
                         <p>700.023</p>
                     </stentry>
                     <stentry>
-                        <p>Resize issued against instance &lt;<varname>instance-name</varname>&gt;</p>
+                        <p>Resize issued against instance &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>C</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry>
-                        <p>700.023</p>
-                    </stentry>
-                    <stentry>
-                        <p>Resize rejected for instance &lt;<varname>instance-name</varname>&gt;, reason=&lt;<varname>reason-text</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -695,10 +681,24 @@
                         <p>700.023</p>
                     </stentry>
                     <stentry>
-                        <p>Resizing instance &lt;<varname>instance-name</varname>&gt;</p>
+                        <p>Resize rejected for instance &lt;instance-name&gt;, reason=&lt;reason-text&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>C</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <p>700.023</p>
+                    </stentry>
+                    <stentry>
+                        <p>Resizing instance &lt;instance-name&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -709,24 +709,10 @@
                         <p>700.024</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; has been resized</p>
+                        <p>Instance &lt;instance-name&gt; has been resized</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>C</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry>
-                        <p>700.025</p>
-                    </stentry>
-                    <stentry>
-                        <p>>Resize-Confirm issued against instance &lt;<varname>instance-name</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -737,10 +723,24 @@
                         <p>700.025</p>
                     </stentry>
                     <stentry>
-                        <p>Resize-Confirm rejected for instance &lt;<varname>instance-name</varname>&gt;, reason=&lt;<varname>reason-text</varname>&gt;</p>
+                        <p>>Resize-Confirm issued against instance &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>C</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <p>700.025</p>
+                    </stentry>
+                    <stentry>
+                        <p>Resize-Confirm rejected for instance &lt;instance-name&gt;, reason=&lt;reason-text&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -751,10 +751,10 @@
                         <p>700.026</p>
                     </stentry>
                     <stentry>
-                        <p>Resize-Revert issued against instance &lt;<varname>instance-name</varname>&gt;</p>
+                        <p>Resize-Revert issued against instance &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -765,52 +765,10 @@
                         <p>700.026</p>
                     </stentry>
                     <stentry>
-                        <p>Resize-Revert rejected for instance &lt;<varname>instance-name</varname>&gt;, reason=&lt;<varname>reason-text</varname>&gt;</p>
+                        <p>Resize-Revert rejected for instance &lt;instance-name&gt;, reason=&lt;reason-text&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>C</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry>
-                        <p>700.027</p>
-                    </stentry>
-                    <stentry>
-                        <p>Guest Heartbeat established for instance &lt;<varname>instance-name</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>M</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry>
-                        <p>700.027</p>
-                    </stentry>
-                    <stentry>
-                        <p>Guest Heartbeat disconnected for instance &lt;<varname>instance-name</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>M</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry>
-                        <p>700.027</p>
-                    </stentry>
-                    <stentry>
-                        <p>Guest Heartbeat failed for instance &lt;<varname>instance-name</varname>&gt;</p>
-                    </stentry>
-                    <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -821,11 +779,53 @@
                         <p>700.027</p>
                     </stentry>
                     <stentry>
-                        <p>Guest Heartbeat failed for instance &lt;<varname>instance-name</varname>&gt;, soft-reboot repair
+                        <p>Guest Heartbeat established for instance &lt;instance-name&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>instance=&lt;instance_uuid&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>M</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <p>700.027</p>
+                    </stentry>
+                    <stentry>
+                        <p>Guest Heartbeat disconnected for instance &lt;instance-name&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>instance=&lt;instance_uuid&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>M</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <p>700.027</p>
+                    </stentry>
+                    <stentry>
+                        <p>Guest Heartbeat failed for instance &lt;instance-name&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>instance=&lt;instance_uuid&gt;</p>
+                    </stentry>
+                    <stentry>
+                        <p>C</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <p>700.027</p>
+                    </stentry>
+                    <stentry>
+                        <p>Guest Heartbeat failed for instance &lt;instance-name&gt;, soft-reboot repair
                             action requested</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -836,11 +836,11 @@
                         <p>700.027</p>
                     </stentry>
                     <stentry>
-                        <p>Guest Heartbeat failed for instance &lt;<varname>instance-name</varname>&gt;, stop repair action
+                        <p>Guest Heartbeat failed for instance &lt;instance-name&gt;, stop repair action
                             requested</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>

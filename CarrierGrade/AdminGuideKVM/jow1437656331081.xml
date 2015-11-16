@@ -247,7 +247,7 @@ Images restore complete</systemoutput></codeblock>
                                 snapshots with the command <cmdname ixia_locid="208">﻿cinder
                                     snapshot-list --all-tenants</cmdname>, and remove them with the
                                 command <cmdname ixia_locid="209">﻿cinder snapshot-delete</cmdname>
-                                <varname ixia_locid="212">snapshot-id</varname>.</p>
+                                <varname ixia_locid="212">snapshot-id.</p>
                         </info>
                     </substep>
                     <substep ixia_locid="144">

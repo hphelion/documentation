@@ -38,14 +38,14 @@
                     compute node, the virtual machine may fail to launch</p>
             </note>
         
-        <steps id="steps_q4v_blj_gr">
+        <ol>
              
-                <li>Declare the number of NUMA nodes to create on the guest.</li>
+                <li>Declare the number of NUMA nodes to create on the guest.
                 
                     <p>The following extra specification sets the number of NUMA
                         nodes:</p>
-                    <codeblock>hw:numa_nodes=<varname>n</varname></codeblock>
-                    <p>where <varname>n</varname> is the number of
+                    <codeblock>hw:numa_nodes=n</codeblock>
+                    <p>where n is the number of
                         NUMA nodes to create (1 or more).</p>
                 
                 
@@ -55,16 +55,16 @@
                 
                 
                     <p>To set an image property instead, you can use the following command:</p>
-                    <codeblock>~(keystone_admin)$ nova image-meta <varname>image</varname> hw_numa_nodes=2</codeblock>
+                    <codeblock>~(keystone_admin)$ nova image-meta image hw_numa_nodes=2</codeblock>
                 
-            
+                </li>
              
-                <li>For each NUMA node, assign a list of CPUs.</li>
+                <li>For each NUMA node, assign a list of CPUs.
                 
                     <p>This step is optional. By default, available CPUs for the
                         flavor are distributed evenly across the available NUMA nodes.</p>
                     <p>The following extra specification assigns CPUs to a NUMA node:</p>
-                    <codeblock>hw:numa_cpus.<varname>vnode_id</varname>=<varname>cpu_list</varname></codeblock>
+                    <codeblock>hw:numa_cpus.vnode_id=cpu_list</codeblock>
                     <p>where</p>
                     <parml>
                         <plentry>
@@ -90,14 +90,14 @@
                     <codeblock>~(keystone_admin)$ nova flavor-key numa.pinned.asym set hw:numa_cpus.0=0 \
 hw:numa_cpus.1=1,2</codeblock>
                 
-            
+                </li>
              
-                <li>For each NUMA node, assign an amount of memory.</li>
+                <li>For each NUMA node, assign an amount of memory.
                 
                     <p>This step is optional. By default, available memory for the
                         flavor is distributed evenly across the available NUMA nodes.</p>
                     <p>The following extra specification assigns memory to a NUMA node:</p>
-                    <codeblock>hw:numa_mem.<varname>vnode_id</varname>=<varname>ram_size</varname></codeblock>
+                    <codeblock>hw:numa_mem.vnode_id=ram_size</codeblock>
                     <p>where</p>
                     <parml>
                         <plentry>
@@ -121,25 +121,25 @@ hw:numa_cpus.1=1,2</codeblock>
                     <codeblock>~(keystone_admin)$ nova flavor-key numa.pinned.asym set hw:numa_mem.0=512 \
 hw:numa_mem.1=512</codeblock>
                 
-            
+                </li>
              
                 <li>Specify whether memory for the flavor can be drawn from more than one NUMA node
-                    if necessary. </li>
+                    if necessary. 
                 
                     <p>This step is optional. By default, memory is allocated from the designated
                         host NUMA node only.</p>
                     <p>To control whether memory for the flavor can be drawn from more than one host
                         NUMA node, use the following extra specification:</p>
-                    <codeblock>hw:numa_mempolicy=<varname>policy</varname></codeblock>
+                    <codeblock>hw:numa_mempolicy=policy</codeblock>
                     <p>where <parmname>policy</parmname> is either
                             <codeph>strict</codeph> (to use only memory
                         from the designated host NUMA node) or <codeph>preferred</codeph> (to permit memory from other host NUMA nodes to
                         be used if necessary).</p>
-                
+                </li>
             
         </ol>
-        <p id="p_N1012F_N1001F_N10001">
+        
             <p>To pin the virtual NUMA nodes to host NUMA nodes, see <xref href="jow1425236723556.xml"/>.</p>
-        </p>
+        
     </body>
 </topic>

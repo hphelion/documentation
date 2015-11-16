@@ -26,24 +26,24 @@
                 required.</p>
             <p>System administrators can enable or disable SNAT using the following
                 command:</p>
-            <codeblock>~(keystone_admin)$ neutron router-update <varname>routername</varname> --external_gateway_info type=dict \
-network_id=<varname>externalnetwork</varname>,enable_snat=<varname>boolean</varname></codeblock>
+            <codeblock>~(keystone_admin)$ neutron router-update routername --external_gateway_info type=dict \
+network_id=externalnetwork,enable_snat=boolean</codeblock>
             <p>where:</p>
             <parml>
                 <plentry>
-                    <pt><varname>routername</varname></pt>
+                    <pt>routername</pt>
                     <pd>
                         <p>is the name or UUID of the virtual router</p>
                     </pd>
                 </plentry>
                 <plentry>
-                    <pt><varname>externalnetwork</varname></pt>
+                    <pt>externalnetwork</pt>
                     <pd>
                         <p>is the name or UUID of the external network</p>
                     </pd>
                 </plentry>
                 <plentry>
-                    <pt><varname>boolean</varname></pt>
+                    <pt>boolean</pt>
                     <pd>
                         <p>is <option>true</option> (to enable SNAT)
                             or <option>false</option> (to disable SNAT)</p>

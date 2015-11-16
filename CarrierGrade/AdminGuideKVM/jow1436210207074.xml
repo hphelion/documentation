@@ -23,8 +23,8 @@
                 drop-down menu. To access this menu, see <xref href="jow1429538642910.xml"/>.</p>
             <p>You can also specify the extra spec from the CLI by setting the following parameter
                 for a flavor:</p>
-            <codeblock>hw:wrs:vswitch_numa_affinity=<varname>vswitch_affinity</varname></codeblock>
-            <p>where <varname>vswitch_affinity</varname> is one of
+            <codeblock>hw:wrs:vswitch_numa_affinity=vswitch_affinity</codeblock>
+            <p>where vswitch_affinity is one of
                 the following:</p>
             <dl>
                 <dlentry>

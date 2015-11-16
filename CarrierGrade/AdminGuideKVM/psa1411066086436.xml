@@ -30,14 +30,14 @@
 </codeblock>
         
         <ol>
-            <step conref="psa1410446807133.xml#psa1410446807133/cli-admin-login" id="step_N1003A_N10037_N10024_N10001">
-                <cmd/>
+            <li conref="psa1410446807133.xml#psa1410446807133/cli-admin-login" id="step_N1003A_N10037_N10024_N10001" />
+                
             
              
-                <li>Identify the volume you want to back up.</li>
+                <li>Identify the volume you want to back up.
                  <ol>
                     
-                        <li>List Cinder volumes from all tenants.</li>
+                        <li>List Cinder volumes from all tenants.
                         
                             <codeblock>~(keystone_admin)$ cinder list --all-tenants +--------------+-----------+--------------+... +----------+--------------+
 |     ID       |   Status  | Display Name |... | Bootable | Attached to  |
@@ -51,9 +51,9 @@
                             <p>Cinder volumes are listed also on the <b>Volumes</b> page of the web
                                 administration interface.</p>
                         
+                        </li>
                     
-                    
-                        <li>Identify the volume to back up.</li>
+                        <li>Identify the volume to back up.
                         
                             <p>In the list above, two volumes are listed in the <i>in-use</i> state:</p>
                             <ul id="ul_lfh_xv2_mp">
@@ -75,12 +75,12 @@
                             </ul>
                             <p>This example uses the unnamed disk image to
                                 illustrate the backup procedure, but you must back up all <i>in-use</i> volumes appropriately.</p>
-                        
+                        </li>
                     
                 </ol>
-            
+                </li>
              
-                <li>Create a volume snapshot.</li>
+                <li>Create a volume snapshot.
                 
                     <codeblock>~(keystone_admin)$ cinder snapshot-create --force True --display-name test-vm-snapshot \
 578da734-a416-47e7-97de-137aa10b90f8 +---------------------+--------------------------------------+
@@ -101,7 +101,8 @@
                         becomes <i>available</i> before proceeding.</p>
                     <p>You can verify the status of all Cinder snapshots using the
                         following command:</p>
-                    <codeblock>~(keystone_admin)$ cinder snapshot-list --all-tenants +--------------+--------------+-----------+------------------+------+
+                    <codeblock>~(keystone_admin)$ cinder snapshot-list --all-tenants 
++--------------+--------------+-----------+------------------+------+
 |    ID        | Volume ID    |   Status  |   Display Name   | Size |
 +--------------+--------------+-----------+------------------+------+
 | 53b5237c-... | 578da734-... | available | test-vm-snapshot |  1   |
@@ -110,11 +111,12 @@
                             <codeph>test-vm-snapshot</codeph> is <i>available</i>
                         already.</p>
                 
-            
+                </li>            
              
-                <li>Export the snapshot to the controller's file system.</li>
+                <li>Export the snapshot to the controller's file system.
                 
-                    <codeblock>~(keystone_admin)$ cinder snapshot-export test-vm-snapshot +---------------------+--------------------------------------+
+                    <codeblock>~(keystone_admin)$ cinder snapshot-export test-vm-snapshot 
++---------------------+--------------------------------------+
 |       Property      |                Value                 |
 +---------------------+--------------------------------------+
 | display_description |                 None                 |
@@ -128,7 +130,7 @@
                 
                     <p>The status of the snapshot is <i>exporting</i>, which means that it is not yet ready on the controller's
                         file system. As before, you can use the command <cmdname>cinder snapshot-show </cmdname>
-                        <varname>UUID</varname> to verify the current status, and wait until the
+                        UUID to verify the current status, and wait until the
                         snapshot's state is <i>available</i> again.</p>
                 
                 
@@ -141,9 +143,9 @@ drwxr-xr-x 2 root root 4.0K Sep 19 14:30 temp
                     <p>Note that the UUID used in the file name is the volume's and
                         not the snapshot's.</p>
                 
-            
+                </li>            
              
-                <li>Transfer the backup file to an external storage resource.</li>
+                <li>Transfer the backup file to an external storage resource.
                 
                     <p>The following example uses the <cmdname>scp</cmdname> command to transfer the backup file to a server named
                             <codeph>backups-server.wrs.com</codeph> in the
@@ -153,9 +155,9 @@ drwxr-xr-x 2 root root 4.0K Sep 19 14:30 temp
                     <codeblock>~(keystone_admin)$ scp /opt/backups/volume-578da734-a416-47e7-97de-137aa10b90f8-20140919-142732.tgz \
 admin@backups-server.wrs.com:/backups/titanium</codeblock>
                 
-            
+                </li>
              
-                <li>Delete the snapshot.</li>
+                <li>Delete the snapshot.
                 
                     <codeblock>~(keystone_admin)$ cinder snapshot-delete test-vm-snapshot</codeblock>
                 
@@ -165,16 +167,16 @@ admin@backups-server.wrs.com:/backups/titanium</codeblock>
                     <p>Once the snapshot has been exported, you should remove it
                         from the Cinder repositories to free up disk space.</p>
                 
-            
+                </li>
              
-                <li> importance="optional">Delete the backup file.</li>
+                <li> importance="optional">Delete the backup file.
                 
                     <p>You may want to free up disk space on the controller to
                         accommodate additional Cinder volume backups.</p>
                 
-            
+                </li>
         </ol>
-        Host
+        
             <p>The volume backup is complete. Repeat this procedure with all other
                 Cinder volumes in the <i>in-use</i> state in the system.</p>
         

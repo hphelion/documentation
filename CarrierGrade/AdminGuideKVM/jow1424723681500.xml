@@ -23,8 +23,8 @@
                 menu. To access this menu, see <xref href="jow1429538642910.xml"/>.</p>
             <p>You can also specify the extra spec from the CLI by setting the
                 following parameter for a flavor:</p>
-            <codeblock>hw:mem_page_size=<varname>pagesize</varname></codeblock>
-            <p>where <varname>pagesize</varname> is one of the
+            <codeblock>hw:mem_page_size=pagesize</codeblock>
+            <p>where pagesize is one of the
                 following:</p>
             <dl>
                 <dlentry>
@@ -71,11 +71,11 @@
                 is different. </p>
             <p>For example, to set a 1 GiB huge page size on a flavor that has
                 already been created, use the following command:</p>
-            <codeblock>~(keystone)admin)$ nova flavor-key <varname>flavor_name</varname> set hw:mem_page_size=1048576</codeblock>
+            <codeblock>~(keystone)admin)$ nova flavor-key flavor_name set hw:mem_page_size=1048576</codeblock>
             <p>You can also define an image with the required property by including
                 the <parmname>hw_mem_page_size</parmname> parameter, as in the
                 following example:</p>
-            <codeblock>~(keystone)admin)$ nova image-meta <varname>image</varname> set hw_mem_page_size=<varname>pagesize</varname></codeblock>
+            <codeblock>~(keystone)admin)$ nova image-meta image set hw_mem_page_size=pagesize</codeblock>
             <p>Note that if you use image metadata to request a page size, the image
                 is unable to access a <codeph>large</codeph> page unless
                 the setting for the flavor is <codeph>large</codeph> or

@@ -61,7 +61,7 @@
                     <p>Platform CPU threshold exceeded; threshold x%, actual y% .</p>
                 </stentry>
                 <stentry>
-                    <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                    <p>host=&lt;hostname&gt;</p>
                 </stentry>
                 <stentry>
                     <p>C, M, m </p>
@@ -78,7 +78,7 @@
                     <p>VSwitch CPU threshold exceeded; threshold x%, actual y% .</p>
                 </stentry>
                 <stentry>
-                    <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                    <p>host=&lt;hostname&gt;</p>
                 </stentry>
                 <stentry>
                     <p>C, M, m</p>
@@ -95,7 +95,7 @@
                     <p>Memory threshold exceeded; threshold x%, actual y% .</p>
                 </stentry>
                 <stentry>
-                    <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                    <p>host=&lt;hostname&gt;</p>
                 </stentry>
                 <stentry>
                     <p>C, M, m</p>
@@ -112,7 +112,7 @@
                     <p>File System threshold exceeded; threshold x%, actual y% .</p>
                 </stentry>
                 <stentry>
-                    <p>host=&lt;<varname>hostname</varname>&gt;.filesystem=&lt;mount-dir&gt;
+                    <p>host=&lt;hostname&gt;.filesystem=&lt;mount-dir&gt;
                     </p><p>OR
                     </p><p>filesystem=&lt;mount-dir&gt;</p>
                 </stentry>
@@ -131,7 +131,7 @@
                     <p/>
                 </stentry>
                 <stentry>
-                    <p>host=&lt;<varname>hostname</varname>&gt;.volumegroup=&lt;volumegroup-name&gt;</p>
+                    <p>host=&lt;hostname&gt;.volumegroup=&lt;volumegroup-name&gt;</p>
                 </stentry>
                 <stentry>
                     <p/>
@@ -148,7 +148,7 @@
                     <p>No access to remote VM volumes.</p>
                 </stentry>
                 <stentry>
-                    <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                    <p>host=&lt;hostname&gt;</p>
                 </stentry>
                 <stentry>
                     <p>M</p>
@@ -165,7 +165,7 @@
                     <p>'OAM' Port failed.</p>
                 </stentry>
                 <stentry>
-                    <p>host=&lt;<varname>hostname</varname>&gt;.port=&lt;port-name&gt;</p>
+                    <p>host=&lt;hostname&gt;.port=&lt;port-name&gt;</p>
                 </stentry>
                 <stentry>
                     <p>M</p>
@@ -184,7 +184,7 @@
                     </p><p>'OAM' Interface failed.</p>
                 </stentry>
                 <stentry>
-                    <p>host=&lt;<varname>hostname</varname>&gt;.interface=&lt;if-name&gt;</p>
+                    <p>host=&lt;hostname&gt;.interface=&lt;if-name&gt;</p>
                 </stentry>
                 <stentry>
                     <p>C, M</p>
@@ -201,7 +201,7 @@
                     <p>'MGMT' Port failed.</p>
                 </stentry>
                 <stentry>
-                    <p>host=&lt;<varname>hostname</varname>&gt;.port=&lt;port-name&gt;</p>
+                    <p>host=&lt;hostname&gt;.port=&lt;port-name&gt;</p>
                 </stentry>
                 <stentry>
                     <p>M</p>
@@ -220,7 +220,7 @@
                     </p><p>'MGMT' Interface failed.</p>
                 </stentry>
                 <stentry>
-                    <p>host=&lt;<varname>hostname</varname>&gt;.interface=&lt;if-name&gt;</p>
+                    <p>host=&lt;hostname&gt;.interface=&lt;if-name&gt;</p>
                 </stentry>
                 <stentry>
                     <p>C, M</p>
@@ -237,7 +237,7 @@
                     <p>'INFRA' Port failed.</p>
                 </stentry>
                 <stentry>
-                    <p>host=&lt;<varname>hostname</varname>&gt;.port=&lt;port-name&gt;</p>
+                    <p>host=&lt;hostname&gt;.port=&lt;port-name&gt;</p>
                 </stentry>
                 <stentry>
                     <p>M</p>
@@ -256,7 +256,7 @@
                     </p><p>'INFRA' Interface failed.</p>
                 </stentry>
                 <stentry>
-                    <p>host=&lt;<varname>hostname</varname>&gt;.interface=&lt;if-name&gt;</p>
+                    <p>host=&lt;hostname&gt;.interface=&lt;if-name&gt;</p>
                 </stentry>
                 <stentry>
                     <p>C, M </p>
@@ -296,7 +296,7 @@
                         <p>Host was administratively locked to take it out-of-service.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                        <p>host=&lt;hostname&gt;</p>
                     </stentry>
                     <stentry>
                         <p>W</p>
@@ -314,7 +314,7 @@
                         </p><p>Resetting Host.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                        <p>host=&lt;hostname&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -336,7 +336,7 @@
                         </p><p>Resetting Host.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                        <p>host=&lt;hostname&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C, M </p>
@@ -358,7 +358,7 @@
                         </p><p>Resetting Host.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                        <p>host=&lt;hostname&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C, M </p>
@@ -375,7 +375,7 @@
                         <p>One or more Critical:'&lt;process list&gt;' and/or Degraded:'&lt;process list&gt;' processes on Host have failed and can not be recovered.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                        <p>host=&lt;hostname&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C, M </p>
@@ -399,7 +399,7 @@
                         </p><p>Host is reporting a 'minor' out-of-tolerance reading from the '&lt;sensorname&gt;' sensor</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;.sensor=&lt;sensorname&gt;</p>
+                        <p>host=&lt;hostname&gt;.sensor=&lt;sensorname&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C, M, m </p>
@@ -416,7 +416,7 @@
                         <p>ntpd' process has failed on Host.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                        <p>host=&lt;hostname&gt;</p>
                     </stentry>
                     <stentry>
                         <p>m</p>
@@ -433,7 +433,7 @@
                         <p>Access to board management module has failed.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                        <p>host=&lt;hostname&gt;</p>
                     </stentry>
                     <stentry>
                         <p>W</p>
@@ -450,7 +450,7 @@
                         <p>Host encountered a critical configuration failure during initialization. Resetting Host.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                        <p>host=&lt;hostname&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -467,7 +467,7 @@
                         <p>In-Service failure of host's controller function while compute services remain healthy.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                        <p>host=&lt;hostname&gt;</p>
                     </stentry>
                     <stentry>
                         <p>M</p>
@@ -484,7 +484,7 @@
                         <p>In-Service failure of host's compute function on host with only available and healthy controller service.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                        <p>host=&lt;hostname&gt;</p>
                     </stentry>
                     <stentry>
                         <p>M</p>
@@ -501,7 +501,7 @@
                         <p>The Hardware Monitor was unable to load, configure and monitor one or more hardware sensors.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                        <p>host=&lt;hostname&gt;</p>
                     </stentry>
                     <stentry>
                         <p>m</p>
@@ -541,7 +541,7 @@
                         </p><p>1 mons down, quorum 1,2 controller-1,storage-0</p>
                     </stentry>
                     <stentry>
-                        <p>cluster=&lt;<varname>dist-fs-uuid</varname>&gt;</p>
+                        <p>cluster=&lt;dist-fs-uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C, M </p>
@@ -580,7 +580,7 @@
                         <p>'Data' Port failed.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;.port=&lt;port-uuid&gt;</p>
+                        <p>host=&lt;hostname&gt;.port=&lt;port-uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>M</p>
@@ -599,7 +599,7 @@
                         </p><p>'Data' Interface failed.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;.interface=&lt;if-uuid&gt;</p>
+                        <p>host=&lt;hostname&gt;.interface=&lt;if-uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>M, C </p>
@@ -616,7 +616,7 @@
                         <p>Networking Agent not responding.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;.agent=&lt;agent-uuid&gt;</p>
+                        <p>host=&lt;hostname&gt;.agent=&lt;agent-uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>M</p>
@@ -633,7 +633,7 @@
                         <p>No enabled compute host with connectivity to provider network.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;.providernet=&lt;pnet-uuid&gt;</p>
+                        <p>host=&lt;hostname&gt;.providernet=&lt;pnet-uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>M</p>
@@ -676,7 +676,7 @@
                         </p><p>Service group warning; &lt;list of affected services&gt;.</p>
                     </stentry>
                     <stentry>
-                        <p>service_domain=&lt;domain_name&gt;.service_group=&lt;group_name&gt;.host=&lt;<varname>hostname</varname>&gt;</p>
+                        <p>service_domain=&lt;domain_name&gt;.service_group=&lt;group_name&gt;.host=&lt;hostname&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C, M, m </p>
@@ -720,7 +720,7 @@
                         </p><p>Evaluation license key will expire on &lt;date&gt;; there is only 1 day remaining in this evaluation.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                        <p>host=&lt;hostname&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -737,7 +737,7 @@
                         <p>Service group software modification detected; &lt;list of affected files&gt;.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                        <p>host=&lt;hostname&gt;</p>
                     </stentry>
                     <stentry>
                         <p>M</p>
@@ -756,7 +756,7 @@
                         </p><p>Communication failure detected with peer over port &lt;linux-ifname&gt; within the last 30 seconds.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;.network=&lt;mgmt | oam | infra&gt;</p>
+                        <p>host=&lt;hostname&gt;.network=&lt;mgmt | oam | infra&gt;</p>
                     </stentry>
                     <stentry>
                         <p>M</p>
@@ -832,16 +832,16 @@
                         <p>250.001</p>
                     </stentry>
                     <stentry>
-                        <p>&lt;<varname>hostname</varname>&gt; Configuation is out-of-date.</p>
+                        <p>&lt;hostname&gt; Configuation is out-of-date.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                        <p>host=&lt;hostname&gt;</p>
                     </stentry>
                     <stentry>
                         <p>M</p>
                     </stentry>
                     <stentry>
-                        <p>Administratively lock and unlock &lt;<varname>hostname</varname>&gt;  to update config.</p>
+                        <p>Administratively lock and unlock &lt;hostname&gt;  to update config.</p>
                     </stentry>
                 </strow>
                 <strow>
@@ -849,16 +849,16 @@
                         <p>250.01</p>
                     </stentry>
                     <stentry>
-                        <p>&lt;<varname>hostname</varname>&gt; Provisioning compute required.  (This alarm only applies in the 2-Server/Combined load).</p>
+                        <p>&lt;hostname&gt; Provisioning compute required.  (This alarm only applies in the 2-Server/Combined load).</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                        <p>host=&lt;hostname&gt;</p>
                     </stentry>
                     <stentry>
                         <p>M</p>
                     </stentry>
                     <stentry>
-                        <p>Administratively lock and unlock &lt;<varname>hostname</varname>&gt;  to update provisioning of Coimpute functionality.</p>
+                        <p>Administratively lock and unlock &lt;hostname&gt;  to update provisioning of Coimpute functionality.</p>
                     </stentry>
                 </strow>                
             </simpletable>            
@@ -925,7 +925,7 @@
                         <p>Patch host install failure.</p>
                     </stentry>
                     <stentry>
-                        <p>host=&lt;<varname>hostname</varname>&gt;</p>
+                        <p>host=&lt;hostname&gt;</p>
                     </stentry>
                     <stentry>
                         <p>M</p>
@@ -960,10 +960,10 @@
                         <p>700.003</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; is failed</p>
+                        <p>Instance &lt;instance-name&gt; is failed</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -977,10 +977,10 @@
                         <p>700.007</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; is paused</p>
+                        <p>Instance &lt;instance-name&gt; is paused</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -994,10 +994,10 @@
                         <p>700.009</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; is suspended</p>
+                        <p>Instance &lt;instance-name&gt; is suspended</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -1011,10 +1011,10 @@
                         <p>700.012</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; is live migrating</p>
+                        <p>Instance &lt;instance-name&gt; is live migrating</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>W</p>
@@ -1028,10 +1028,10 @@
                         <p>700.013</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; is cold migrating</p>
+                        <p>Instance &lt;instance-name&gt; is cold migrating</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -1045,10 +1045,10 @@
                         <p>700.014</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; has been cold-migrated</p>
+                        <p>Instance &lt;instance-name&gt; has been cold-migrated</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -1062,10 +1062,10 @@
                         <p>700.017</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; is evacuating</p>
+                        <p>Instance &lt;instance-name&gt; is evacuating</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -1079,10 +1079,10 @@
                         <p>700.020</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; is stopped</p>
+                        <p>Instance &lt;instance-name&gt; is stopped</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -1096,10 +1096,10 @@
                         <p>700.021</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; is rebooting</p>
+                        <p>Instance &lt;instance-name&gt; is rebooting</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -1113,10 +1113,10 @@
                         <p>700.022</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; is rebuilding</p>
+                        <p>Instance &lt;instance-name&gt; is rebuilding</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -1130,10 +1130,10 @@
                         <p>700.023</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; is resizing</p>
+                        <p>Instance &lt;instance-name&gt; is resizing</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -1147,10 +1147,10 @@
                         <p>700.024</p>
                     </stentry>
                     <stentry>
-                        <p>Instance &lt;<varname>instance-name</varname>&gt; has been resized</p>
+                        <p>Instance &lt;instance-name&gt; has been resized</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>C</p>
@@ -1164,10 +1164,10 @@
                         <p>700.027</p>
                     </stentry>
                     <stentry>
-                        <p>Guest Heartbeat not established for instance &lt;<varname>instance-name</varname>&gt;</p>
+                        <p>Guest Heartbeat not established for instance &lt;instance-name&gt;</p>
                     </stentry>
                     <stentry>
-                        <p>instance=&lt;<varname>instance_uuid</varname>&gt;</p>
+                        <p>instance=&lt;instance_uuid&gt;</p>
                     </stentry>
                     <stentry>
                         <p>M</p>

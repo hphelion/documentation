@@ -20,9 +20,9 @@
             <p>For more information about sensors and sensor groups, see <xref href="jow1443819549360.xml"/>.</p>
             <p>To use the command-line interface, see <xref href="jow1443819706243.xml"/>.</p>
         
-        <steps id="steps_zdg_53f_4t">
-            <step conref="jow1426453628262.xml#jow1426453628262/step_N1002B_N10028_N1001C_N10001" id="step_N10047_N10043_N1001F_N10001">
-                <cmd/>
+        <ol>
+            <li conref="jow1426453628262.xml#jow1426453628262/step_N1002B_N10028_N1001C_N10001" id="step_N10047_N10043_N1001F_N10001" />
+                
             
              
                 <li>Select the <b>Sensors</b>
@@ -30,34 +30,35 @@
             
              
                 <li>Use the controls on the <codeph>Sensors</codeph> tab to suppress actions for individual sensors or
-                    sensor groups.</li>
-                <choices id="choices_ezl_jvf_4t">
+                    sensor groups.
+                
                     <ul>
-                        <p>To suppress actions for a group of sensors, open the
+                        <li>To suppress actions for a group of sensors, open the
                                 <b>Actions</b> menu for the group,
                             and then select <b>Suppress
-                                SensorGroup</b>.</p>
+                                SensorGroup</b>.
                         
                             <image href="jow1443890971677.image" id="image_z5f_vwf_4t">
                                 <alt>TiS Suppress SensorGroup</alt>
                             </image>
-                        
+                        </li>
                     </ul>
+                
                     <ul>
-                        <p>To suppress actions for an individual sensor, locate the
+                        <li>To suppress actions for an individual sensor, locate the
                             sensor in the <codeph>Sensors</codeph> list,
                             and then click <b>Suppress
-                            Sensor</b>.</p>
+                            Sensor</b>.
                         
                             <image href="jow1443890898358.image" id="image_ltm_wwf_4t">
                                 <alt>TiS Suppress Sensor</alt>
                             </image>
-                        
+                        </li>
                     </ul>
-                </choices>
-            
+                
+                </li>
         </ol>
-        Host
+        
             <p>The <codeph>Suppression</codeph> field in
                 the list is updated to show that actions are suppressed for the sensor.</p>
         

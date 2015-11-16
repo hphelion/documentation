@@ -11,17 +11,17 @@
         
     </prolog>
     <body>
-        <steps id="steps_brf_p33_dr">
+        <ol>
              
-                <li>Lock the affected host.</li>
+                <li>Lock the affected host.
                 
-                    <codeblock>(keystone_admin)$ system host-lock <varname>hostname</varname></codeblock>
+                    <codeblock>(keystone_admin)$ system host-lock hostname</codeblock>
                 
-            
+                </li>
              
-                <li>Use the following command to set the memory allocations.</li>
+                <li>Use the following command to set the memory allocations.
                 
-                    <codeblock>(keystone_admin)$ system host-memory-modify <varname>hostname</varname> <varname>processor</varname> [-m <varname>reserved</varname>] [-2M <varname>2Mpages</varname>] [-1G <varname>1Gpages</varname>]</codeblock>
+                    <codeblock>(keystone_admin)$ system host-memory-modify hostname processor [-m reserved] [-2M 2Mpages] [-1G 1Gpages]</codeblock>
                     <p>where</p>
                     <parml>
                         <plentry>
@@ -64,17 +64,17 @@
                         on NUMA node 1 of compute node <codeph>compute-0</codeph> :</p>
                     <codeblock>(keystone_admin)$ system host-memory-modify compute-0 1 -2M 4</codeblock>
                 
-            
+                </li>
              
-                <li>Unlock the host.</li>
+                <li>Unlock the host.
                 
-                    <codeblock>(keystone_admin)$ system host-unlock <varname>hostname</varname></codeblock>
+                    <codeblock>(keystone_admin)$ system host-unlock hostname</codeblock>
                 
-            
+                </li>
              
-                <li>Wait for the host to be reported as <codeph>available</codeph>. </li>
+                <li>Wait for the host to be reported as <codeph>available</codeph>. 
                 
-                    <codeblock>(keystone_admin)$ system host-list <varname>hostname</varname> +----+--------------+-------------+----------------+-------------+--------------+
+                    <codeblock>(keystone_admin)$ system host-list hostname +----+--------------+-------------+----------------+-------------+--------------+
 | id | hostname     | personality | administrative | operational | availability |
 +----+--------------+-------------+----------------+-------------+--------------+
 | 1  | controller-0 | controller  | unlocked       | enabled     | available    |
@@ -82,7 +82,7 @@
 | 3  | compute-0    | compute     | unlocked       | enabledd    | available      |
 +----+--------------+-------------+----------------+-------------+--------------+</codeblock>
                 
-            
+                </li>
         </ol>
     </body>
 </topic>

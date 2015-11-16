@@ -26,7 +26,7 @@
                     <codeph>tcpdump</codeph> option except <option>-i</option> to filter
                 and analyze the captured data.</p>
             <p>To initiate a packet trace, use the following
-                command:<codeblock>$ sudo vtrace <varname>interface-uuid</varname> <varname>tcpdump-options</varname> <varname>filter-expression</varname></codeblock></p>
+                command:<codeblock>$ sudo vtrace interface-uuid tcpdump-options filter-expression</codeblock></p>
             <p>where</p>
             <parml>
                 <plentry>

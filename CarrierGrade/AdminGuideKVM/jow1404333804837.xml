@@ -25,18 +25,18 @@
             </li>
             <li>
                 <p><cmdname>heat stack-show</cmdname>
-                    <varname>name</varname> shows details about the named stack</p>
+                    name shows details about the named stack</p>
             </li>
             <li>
-                <p><cmdname>heat stack-create</cmdname> <varname>name</varname> creates the named stack with
+                <p><cmdname>heat stack-create</cmdname> name creates the named stack with
      given parameters</p>
             </li>
             <li>
-                <p><cmdname>heat stack-modify</cmdname> <varname>name</varname> modifies the named stack
+                <p><cmdname>heat stack-modify</cmdname> name modifies the named stack
      according to given parameters</p>
             </li>
             <li>
-                <p><cmdname>heat stack-delete</cmdname> <varname>name</varname> deletes the named stack</p>
+                <p><cmdname>heat stack-delete</cmdname> name deletes the named stack</p>
             </li>
         </ul>
         <p>Stacks can include <term>static</term> and <term>autoscaling</term> resources.</p>

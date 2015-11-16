@@ -30,8 +30,8 @@
             </note>
             <p>To enable the Guest Heartbeat API using the CLI, use the following
                 command:</p>
-            <codeblock>~(keystone_admin)$ nova flavor-key <varname>flavor_name</varname> set sw:wrs:guest:heartbeat=<varname>value</varname></codeblock>
-            <p>where <varname>value</varname> is either
+            <codeblock>~(keystone_admin)$ nova flavor-key flavor_name set sw:wrs:guest:heartbeat=value</codeblock>
+            <p>where value is either
                     <codeph>True</codeph> or <codeph>False</codeph>. If any other value is supplied, it is
                 ignored and the default value <codeph>False</codeph> is used.</p>
         

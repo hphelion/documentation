@@ -31,7 +31,7 @@
                     <b>Host NUMA Node</b>. To access this menu, see <xref href="jow1429538642910.xml"/>.</p>
             <p>You can also pin NUMA nodes using the CLI.  The following extra
                 specification assigns a specific host NUMA node to a virtual NUMA node:</p>
-            <codeblock>hw:numa_node.<varname>vnode_id</varname>=<varname>pnode_id</varname></codeblock>
+            <codeblock>hw:numa_node.vnode_id=pnode_id</codeblock>
             <p>where</p>
             <parml>
                 <plentry>

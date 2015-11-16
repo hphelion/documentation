@@ -58,9 +58,9 @@
                         <info ixia_locid="234">
                             <p ixia_locid="237">On the controller, assign the correct OAM network
                                 address to the appropriate port.</p>
-                            <codeblock ixia_locid="239"><systemoutput ixia_locid="466">$ </systemoutput><userinput ixia_locid="467">sudo ip addr add <varname ixia_locid="215">OAM_IP_address/mask</varname> dev <varname ixia_locid="218">port</varname></userinput>
-<systemoutput ixia_locid="468">$ </systemoutput><userinput ixia_locid="316">sudo ip link set <varname ixia_locid="319">port</varname> up</userinput>
-<systemoutput ixia_locid="469">$ </systemoutput><userinput ixia_locid="317">sudo route add default gw <varname ixia_locid="320">gateway_addr</varname></userinput></codeblock>
+                            <codeblock ixia_locid="239"><systemoutput ixia_locid="466">$ </systemoutput><userinput ixia_locid="467">sudo ip addr add <varname ixia_locid="215">OAM_IP_address/mask dev <varname ixia_locid="218">port</userinput>
+<systemoutput ixia_locid="468">$ </systemoutput><userinput ixia_locid="316">sudo ip link set <varname ixia_locid="319">port up</userinput>
+<systemoutput ixia_locid="469">$ </systemoutput><userinput ixia_locid="317">sudo route add default gw <varname ixia_locid="320">gateway_addr</userinput></codeblock>
                             <note id="note_N10139_N10115_N1010C_N10108_N10101_N10031_N1001E_N10001" ixia_locid="222">
                                 <p ixia_locid="223">To identify the controller-0 port and IP
                                     address, refer to your OAM network plan.</p>
@@ -86,7 +86,7 @@
                                 path, and specify the path during configuration.</p>
                         </info>
                         <stepxmp ixia_locid="474">
-                            <codeblock ixia_locid="475"><systemoutput ixia_locid="476">$ </systemoutput><userinput ixia_locid="477">scp <varname ixia_locid="478">username</varname>@<varname ixia_locid="479">sourcehost</varname>:<varname ixia_locid="480">sourcepath</varname>/license.lic /home/wrsroot/license.lic</userinput></codeblock>
+                            <codeblock ixia_locid="475"><systemoutput ixia_locid="476">$ </systemoutput><userinput ixia_locid="477">scp <varname ixia_locid="478">username@<varname ixia_locid="479">sourcehost:<varname ixia_locid="480">sourcepath/license.lic /home/wrsroot/license.lic</userinput></codeblock>
                         </stepxmp>
                     </substep>
                 </substeps>
@@ -99,7 +99,7 @@
                         The recommended path is <filepath ixia_locid="350">/home/wrsroot</filepath>.</p>
                 </info>
                 <stepxmp ixia_locid="330">
-                    <codeblock ixia_locid="332"><systemoutput ixia_locid="334">$ </systemoutput><userinput ixia_locid="336">scp <varname ixia_locid="338">username</varname>@<varname ixia_locid="340">sourcehost</varname>:<varname ixia_locid="342">sourcepath</varname>/<varname ixia_locid="351">pem_file</varname> /home/wrsroot/<varname ixia_locid="352">pem_file</varname></userinput></codeblock>
+                    <codeblock ixia_locid="332"><systemoutput ixia_locid="334">$ </systemoutput><userinput ixia_locid="336">scp <varname ixia_locid="338">username@<varname ixia_locid="340">sourcehost:<varname ixia_locid="342">sourcepath/<varname ixia_locid="351">pem_file /home/wrsroot/<varname ixia_locid="352">pem_file</userinput></codeblock>
                 </stepxmp>
             </step>
              
@@ -113,13 +113,13 @@
                     <substep ixia_locid="485">
                         <cmd ixia_locid="263">Copy the patches from a connected server.</cmd>
                         <info ixia_locid="486">
-                            <codeblock ixia_locid="487"><systemoutput ixia_locid="268">$ </systemoutput> <userinput ixia_locid="229">scp <varname ixia_locid="217">username</varname>@<varname ixia_locid="221">sourcehost</varname>:<varname ixia_locid="231">sourcepath</varname>/<varname ixia_locid="488">patchfile</varname> /home/wrsroot/<varname ixia_locid="489">patchfile</varname></userinput></codeblock>
+                            <codeblock ixia_locid="487"><systemoutput ixia_locid="268">$ </systemoutput> <userinput ixia_locid="229">scp <varname ixia_locid="217">username@<varname ixia_locid="221">sourcehost:<varname ixia_locid="231">sourcepath/<varname ixia_locid="488">patchfile /home/wrsroot/<varname ixia_locid="489">patchfile</userinput></codeblock>
                         </info>
                     </substep>
                     <substep ixia_locid="420">
                         <cmd ixia_locid="490">Upload the patches to the patch storage area.</cmd>
                         <info ixia_locid="491">
-                            <codeblock ixia_locid="492"><systemoutput ixia_locid="269">$ </systemoutput><userinput ixia_locid="323">sudo sw-patch upload ./<varname ixia_locid="493">patchfile</varname></userinput></codeblock>
+                            <codeblock ixia_locid="492"><systemoutput ixia_locid="269">$ </systemoutput><userinput ixia_locid="323">sudo sw-patch upload ./<varname ixia_locid="493">patchfile</userinput></codeblock>
                         </info>
                     </substep>
                     <substep ixia_locid="276">
@@ -346,7 +346,7 @@ Enter Q at any prompt to abort...</systemoutput></codeblock>
 | nova-scheduler   | controller-0 | int... | enabled | disabled   | up    | ...
 +------------------+--------------+--------+---------+------------+-------+ ...</systemoutput>
 </codeblock>
-                    <note id="note_N103F7_N103E1_N103D7_N10093_N1002E_N10001" ixia_locid="400" product="tis_small">
+                    <note id="note_N103F7_N103E1_N103D7_N10093_N1002E_N10001"Hostproduct="tis_small">
                         <p ixia_locid="401">For a minimal two-server  configuration, the
                                 <nameliteral ixia_locid="382">nova-compute</nameliteral> service is also listed.</p>
                     </note>
@@ -395,7 +395,7 @@ Enter Q at any prompt to abort...</systemoutput></codeblock>
                         screen appears.</p>
                     
                         <title ixia_locid="118">HP Helion OpenStack Carrier Grade login screen</title>
-                        <image alt="Carrier Grade Communication Server login screen" href="jow1404333491396.image" id="image_t5q_4b1_dn" ixia_locid="119" placement="inline" width="2.5in"/>
+                        <image alt="Carrier Grade Communication Server login screen" href="jow1404333491396.image" id="image_t5q_4b1_dn"Hostplacement="inline" width="2.5in"/>
                     </fig>
                 </stepresult>
             </step>
@@ -406,7 +406,7 @@ Enter Q at any prompt to abort...</systemoutput></codeblock>
                         administration interface appears.</p>
                     
                         <title ixia_locid="186">HP Helion OpenStack Carrier Grade web administration interface</title>
-                        <image alt="Carrier Grade Communication Server web administration interface" href="jow1404333493002.image" id="image_pzt_1ts_g4" ixia_locid="192" placement="inline" width="5.5in"/>
+                        <image alt="Carrier Grade Communication Server web administration interface" href="jow1404333493002.image" id="image_pzt_1ts_g4"Hostplacement="inline" width="5.5in"/>
                     </fig>
                 </stepresult>
             </step>
@@ -418,7 +418,7 @@ Enter Q at any prompt to abort...</systemoutput></codeblock>
                     <p ixia_locid="135"><nameliteral ixia_locid="200">Controller-0</nameliteral> is reported in the hosts inventory
                         list.</p>
                     
-                        <image alt="Hosts list showing controller-0" href="jow1404333494735.image" id="image_f1p_dtm_jn" ixia_locid="188" placement="inline" width="5.5in"/>
+                        <image alt="Hosts list showing controller-0" href="jow1404333494735.image" id="image_f1p_dtm_jn"Hostplacement="inline" width="5.5in"/>
                     </fig>
                 </stepresult>
             </step>
@@ -467,13 +467,13 @@ Enter Q at any prompt to abort...</systemoutput></codeblock>
             <p ixia_locid="140">The host <nameliteral ixia_locid="141">controller-0</nameliteral> is
                 now fully operational. It can be used to initialize all other hosts in the Titanium
                 Server cluster.</p>
-            <note id="note_N105D7_N105C8_N1002E_N10001" ixia_locid="391" product="tis_small">
+            <note id="note_N105D7_N105C8_N1002E_N10001"Hostproduct="tis_small">
                 <p ixia_locid="392">For a minimal two-server configuration, you can verify that the
                         <nameliteral ixia_locid="393">nova-compute</nameliteral> service is running on the controller
                     by using the <cmdname ixia_locid="394">nova service-list</cmdname> command.</p>
             </note>
         </result>
-        <postreq id="postreq_N106BD_N1002E_N10001" ixia_locid="525" product="tis_small">
+        <postreq id="postreq_N106BD_N1002E_N10001"Hostproduct="tis_small">
             <p ixia_locid="526"><draft-comment author="jowens" ixia_locid="527">US65502 added</draft-comment>For a minimal two-server
                 configuration, you must also set up local storage. This means that after configuring
                     <nameliteral ixia_locid="528">controller-1</nameliteral>, you must swact the controllers in order

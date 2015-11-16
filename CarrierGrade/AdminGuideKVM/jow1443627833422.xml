@@ -39,9 +39,9 @@
   </ul>
   <p ixia_locid="23">For the default rules used by HP Helion OpenStack Carrier Grade, see <xref href="jow1443627881098.xml" ixia_locid="24"/>. For more about custom rules, see <xref href="jow1443627902662.xml" ixia_locid="25"/>.</p>
   <p ixia_locid="26">You can validate the file using the following
-   command:<codeblock ixia_locid="27"><systemoutput ixia_locid="28">$ </systemoutput><userinput ixia_locid="29">iptables-restore --noflush --test &lt; <varname ixia_locid="30">filename</varname></userinput></codeblock>where
-    <varname ixia_locid="31">filename</varname> is the path and name of the file.</p>
-  <note id="note_N100A2_N1001F_N10001" ixia_locid="32" type="caution">
+   command:<codeblock ixia_locid="27"><systemoutput ixia_locid="28">$ </systemoutput><userinput ixia_locid="29">iptables-restore --noflush --test &lt; <varname ixia_locid="30">filename</userinput></codeblock>where
+    <varname ixia_locid="31">filename is the path and name of the file.</p>
+  <note id="note_N100A2_N1001F_N10001"Hosttype="caution">
    <p ixia_locid="33">Validation is recommended before you run the configuration controller script. If the file is
     invalid, you must correct any errors and then start the script again from the beginning.</p>
   </note>

@@ -3,7 +3,7 @@
 <referable-content id="jow1426942555025" xml:lang="en-us">
 <title ixia_locid="85">Conref caution: local storage is ephemeral</title>
 <rcbody>
-        <note id="note_local_storage_ephemeral" ixia_locid="12" type="caution">
+        <note id="note_local_storage_ephemeral">
             <p ixia_locid="81">Local storage is ephemeral.</p>
             <ul id="ul_a14_dph_kr">
                 <li ixia_locid="82">

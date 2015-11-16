@@ -24,12 +24,12 @@
         
         
         <ol>
-            <step conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N1004F_N1004C_N10029_N10001"><cmd/>
-            <step conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N10056_N1004C_N10029_N10001"><cmd/>
+            <li conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N1004F_N1004C_N10029_N10001"/>
+            <li conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N10056_N1004C_N10029_N10001"/>
             
              
                 <li>Complete the <b>Launch Stack</b> form to provide any parameter
-                    values required by the template.</li>
+                    values required by the template.
                 
                     <note id="note_N1005E_N1005B_N10050_N10041_N10024_N10001">
                         <p>The form is created dynamically based on the Parameters section of the
@@ -38,7 +38,7 @@
                     </note>
                     
                         <image alt="Launch Stack" href="jow1404333626947.image" id="image_xrx_kkv_34"/>
-                    
+                </li>
                 
             
         </ol>

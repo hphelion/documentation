@@ -295,8 +295,8 @@ controller-1  192.168.204.4        Yes             No</codeblock>
                             Current</codeph> status for a compute or storage host is
                             <codeph>No</codeph>, apply the pending
                         patches using the following command:</p>
-                    <codeblock>~(keystone_admin)$ system host-patch-reboot <varname>hostname</varname></codeblock>
-                    <p>where <varname>hostname</varname> is the
+                    <codeblock>~(keystone_admin)$ system host-patch-reboot hostname</codeblock>
+                    <p>where hostname is the
                         name of the host (for example, <codeph>compute-0</codeph>). This applies the patch and then reboots the
                         host.</p>
                 

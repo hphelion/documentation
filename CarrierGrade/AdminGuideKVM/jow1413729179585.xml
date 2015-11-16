@@ -45,11 +45,11 @@
 </codeblock>
    <p>To change the OAM IP subnet, floating IP address, gateway IP address, or
     controller IP addresses, use the following command syntax. </p>
-   <codeblock>~(keystone_admin)$ system oam-modify oam_subnet=<varname>subnet</varname>/<varname>netmask</varname> \
-oam_gateway_ip=<varname>gateway_ip_address</varname> \
-oam_floating_ip=<varname>floating_IP_address</varname> \
-oam_c0_ip=<varname>controller-0_IP_address</varname> \
-oam_c1_ip=<varname>controller-1_ip_address</varname> \
+   <codeblock>~(keystone_admin)$ system oam-modify oam_subnet=subnet/netmask \
+oam_gateway_ip=gateway_ip_address \
+oam_floating_ip=floating_IP_address \
+oam_c0_ip=controller-0_IP_address \
+oam_c1_ip=controller-1_ip_address \
 action=apply</codeblock>
    <p>For example:</p>
    <codeblock>~(keystone_admin)$ system oam-modify oam_subnet=10.10.10.0/24 \
@@ -81,7 +81,7 @@ action=apply</codeblock>
      <option>nameservers</option> option takes a comma-delimited list of DNS server
     IP addresses. </p>
    <codeblock>~(keystone_admin)$ system dns-modify \
-nameservers=<varname>IP_address_1[,IP_address_2][,IP_address_3]</varname> action=apply</codeblock>
+nameservers=IP_address_1[,IP_address_2][,IP_address_3] action=apply</codeblock>
    <p>For example:</p>
    <codeblock>~(keystone_admin)$ system dns-modify \
 nameservers=8.8.8.8,8.8.4.4 action=apply</codeblock>
@@ -104,7 +104,7 @@ nameservers=8.8.8.8,8.8.4.4 action=apply</codeblock>
      <option>ntpservers</option> option takes a comma-delimited list of NTP server
     names.</p>
    <codeblock>~(keystone_admin)$ system ntp-modify \
-ntpservers=<varname>server_1[,server_2][,server_3]</varname> action=apply</codeblock>
+ntpservers=server_1[,server_2][,server_3] action=apply</codeblock>
    <p>For example:</p>
    <codeblock>~(keystone_admin)$ system ntp-modify \
 ntpservers=0.north-america.pool.ntp.org,\
@@ -138,16 +138,16 @@ action=apply</codeblock>
     changes, you must reinstall the HP Helion OpenStack Carrier Grade software on each controller during the disk
     replacement procedure. This is required even if the primary disk is not directly affected by the
     change. To reinstall the software, you can use the following command:</p>
-   <codeblock>~(keystone_admin)$ </codeph>system host-reinstall <varname>controller_name</varname></codeblock>
+   <codeblock>~(keystone_admin)$ system host-reinstall controller_name</codeblock>
     <note conref="rst1432737677834.xml#rst1432737677834/note_N10195_N10154_N1001F_N10001" id="note_N10195_N10154_N1001F_N10001"/>
    <p>To change the database, image, or backup storage allotment, or the Cinder
     volume storage allotment on a system with an LVM storage backend, use the following command
     syntax, where the allotments are in GiB.</p>
    <codeblock>~(keystone_admin)$ system controllerfs-modify \
-database_gib=<varname>database_allotment</varname> \
-image_gib=<varname>image_allotment</varname> \
-backup_gib=<varname>backup_allotment</varname> \
-cinder_gib=<varname>cinder_volume_allotment</varname> \
+database_gib=database_allotment \
+image_gib=image_allotment \
+backup_gib=backup_allotment \
+cinder_gib=cinder_volume_allotment \
 action=apply</codeblock>
    <p>For example:</p>
    <codeblock>~(keystone_admin)$ system controllerfs-modify \
@@ -155,7 +155,7 @@ database_gib=10 image_gib=13 backup_gib=22 action=apply</codeblock>
    <p>After changing the controller storage configuration, you must lock each
     controller and reinstall the HP Helion OpenStack Carrier Grade software, even if you have already done so as part
     of changing the controller disks. You can use the following command:</p>
-   <codeblock>~(keystone_admin)]$ </codeph>system host-reinstall <varname>controller_name</varname></codeblock>
+   <codeblock>~(keystone_admin)]$ system host-reinstall controller_name</codeblock>
    <p>Then you can unlock the controller to clear any <codeph>Configuration
      out-of-date </codeph>alarms. A controller swact is required to update both
     controllers.</p>

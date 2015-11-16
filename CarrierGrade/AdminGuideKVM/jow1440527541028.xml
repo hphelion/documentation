@@ -11,28 +11,28 @@
         <author/>
     </prolog>
     <body>
-        <steps id="steps_v2v_cv3_dt">
-            <step conref="jow1404333506827.xml#jow1404333506827/lock-node" id="step_N10023_N1001F_N1001C_N10001">
-                <cmd/>
+        <ol>
+            <li conref="jow1404333506827.xml#jow1404333506827/lock-node" id="step_N10023_N1001F_N1001C_N10001" />
+                
             
              
                 <li>Edit the host BIOS settings to enable or disable
-                    hyper-threading.</li>
+                    hyper-threading.
                 
                     <p>For more about editing the BIOS, refer to the documentation provided by the
                         maker of the host computer. </p>
                 
-            
-            <step conref="jow1404333506827.xml#jow1404333506827/unlock-node" id="step_N1003D_N1001F_N1001C_N10001">
-                <cmd/>
+                </li>
+            <li conref="jow1404333506827.xml#jow1404333506827/unlock-node" id="step_N1003D_N1001F_N1001C_N10001" />
+                
             
              
-                <li>Confirm the hyper-threading status in HP Helion OpenStack Carrier Grade.</li>
+                <li>Confirm the hyper-threading status in HP Helion OpenStack Carrier Grade.
                 
                     <p>The hyper-threading status is reported on the <b>Processor</b> tab for the host. For more
                         information, see <xref href="jow1404333768530.xml"/>.</p>
                 
-            
+                </li>
         </ol>
     </body>
 </topic>

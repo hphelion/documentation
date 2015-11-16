@@ -240,7 +240,7 @@
                                                 which no data interfaces are defined.</p>
                                             <p>You can unlock a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock>~(keystone_admin)$ </codeph> <codeph>system host-unlock <varname>hostname</varname></codeblock>
+                                            <codeblock>~(keystone_admin)$ system host-unlock hostname</codeblock>
                                         </dd>
                                     </dlentry>
                                     <dlentry>
@@ -254,7 +254,7 @@
                                                 powered-on state. </p>
                                             <p>You can power off a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock>~(keystone_admin)$ </codeph> <codeph>system host-power-off <varname>hostname</varname></codeblock>
+                                            <codeblock>~(keystone_admin)$ system host-power-off hostname</codeblock>
                                         </dd>
                                     </dlentry>
                                     <dlentry>
@@ -266,7 +266,7 @@
                                                 and the host is in a powered-off state.</p>
                                             <p>You can power on a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock>~(keystone_admin)$ </codeph> <codeph>system host-power-on <varname>hostname</varname></codeblock>
+                                            <codeblock>~(keystone_admin)$ system host-power-on hostname</codeblock>
                                         </dd>
                                     </dlentry>
                                     <dlentry>
@@ -277,7 +277,7 @@
                                                 off first. The host then reboots automatically.</p>
                                             <p>You can reboot a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock>~(keystone_admin)$ </codeph> <codeph>system host-reboot <varname>hostname</varname></codeblock>
+                                            <codeblock>~(keystone_admin)$ system host-reboot hostname</codeblock>
                                         </dd>
                                     </dlentry>
                                     <dlentry>
@@ -294,7 +294,7 @@
                                                 powered-on state. </p>
                                             <p>You can reset a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock>~(keystone_admin)$ </codeph> <codeph>system host-reset <varname>hostname</varname></codeblock>
+                                            <codeblock>~(keystone_admin)$ system host-reset hostname</codeblock>
                                         </dd>
                                     </dlentry>
                                     <dlentry>
@@ -314,7 +314,7 @@
                         erased.</p>
                                             <p>You can delete a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock>~(keystone_admin)$ </codeph> <codeph>system host-delete <varname>hostname</varname></codeblock>
+                                            <codeblock>~(keystone_admin)$ system host-delete hostname</codeblock>
                                         </dd>
                                     </dlentry>
                                     <dlentry>
@@ -359,7 +359,7 @@
                                             </note>
                                             <p>You can lock a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock>~(keystone_admin)$ </codeph> <codeph>system host-lock <varname>hostname</varname></codeblock>
+                                            <codeblock>~(keystone_admin)$ system host-lock hostname</codeblock>
                                         </dd>
                                     </dlentry>
                                     <dlentry>
@@ -374,7 +374,7 @@
                                                 Use this option with caution.</p>
                                             <p>You can force lock a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock>~(keystone_admin)$ </codeph> <codeph>system host-lock --force <varname>hostname</varname></codeblock>
+                                            <codeblock>~(keystone_admin)$ system host-lock --force hostname</codeblock>
                                             <p>Note that a force lock operation on a
                                                 compute node causes an immediate service outage on
                                                 all hosted virtual machines.</p>
@@ -402,7 +402,7 @@
                                                 components.</p>
                                             <p>You can swact a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock>~(keystone_admin)$ </codeph> <codeph>system host-swact --force <varname>hostname</varname></codeblock>
+                                            <codeblock>~(keystone_admin)$ system host-swact --force hostname</codeblock>
                                         </dd>
                                     </dlentry>
                                     <dlentry>

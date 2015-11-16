@@ -49,14 +49,14 @@
         
         <ol>
              
-                <li>Lock all hosts except the active controller.</li>
+                <li>Lock all hosts except the active controller.
                 
                     <p>For each host, use the following command.</p>
-                    <codeblock>~(keystone_admin)$ system host-lock <varname>hostname</varname></codeblock>
+                    <codeblock>~(keystone_admin)$ system host-lock hostname</codeblock>
                 
-            
+                </li>
              
-                <li>Add an infrastructure interface on the standby controller.</li>
+                <li>Add an infrastructure interface on the standby controller.
                 
                     <note id="note_N100A0_N10097_N1008D_N10065_N1001E_N10001">
                         <p>You can also add an infrastructure network to a shared
@@ -66,8 +66,7 @@
                         use the following command, specifying a name for the network and the port to
                         use for the network connection. To identify the port to use for an
                         infrastructure network, consult your configuration plan.</p>
-                    <codeblock>~(keystone_admin)$ system host-if-modify -nt infra \
--n <varname>interfacename</varname> <varname>hostname</varname> <varname>port</varname></codeblock>
+                    <codeblock>~(keystone_admin)$ system host-if-modify -nt infra \-n interfacename hostname port</codeblock>
                     <p>For example:</p>
                     <codeblock>~(keystone_admin)$ system host-if-modify -nt infra \
 -n infra0 controller-1 eth3 +------------------+--------------------------------------+
@@ -93,9 +92,9 @@
 +------------------+--------------------------------------+
 </codeblock>
                 
-            
+                </li>
              
-                <li>Add the same infrastructure network on the active controller.</li>
+                <li>Add the same infrastructure network on the active controller.
                 
                     <p> For example:</p>
                     <codeblock>~(keystone_admin)$ system host-if-modify -nt infra \
@@ -121,19 +120,17 @@
 | updated_at       | None                                 |
 +------------------+--------------------------------------+</codeblock>
                 
-            
+                </li>
              
-                <li>Specify the infrastructure subnet.</li>
+                <li>Specify the infrastructure subnet.
                 
-                    <codeblock>~(keystone_admin)$ system infra-modify \
-infra_subnet=<varname>subnet/mask</varname> action=apply</codeblock>
+                    <codeblock>~(keystone_admin)$ system infra-modify \ infra_subnet=subnet/mask action=apply</codeblock>
                     <p>For example:</p>
                     <draft-comment author="jowens">US62814 update infra-modify
                         output</draft-comment>
-                    <codeblock>~(keystone_admin)$ system infra-modify \
-infra_subnet=192.168.205.0/24 action=apply</codeph>
+                    <codeblock>~(keystone_admin)$ system infra-modify \ infra_subnet=192.168.205.0/24 action=apply
 
-<codeph>+--------------+--------------------------------------+
++--------------+--------------------------------------+
 | Property     | Value                                |
 +--------------+--------------------------------------+
 | uuid         | cc549ef3-5c81-4fbf-8c50-5163c89e5039 |
@@ -147,9 +144,9 @@ infra_subnet=192.168.205.0/24 action=apply</codeph>
 | updated_at   | 2015-01-02T16:06:39.275800+00:00     |
 +--------------+--------------------------------------+</codeblock>
                 
-            
+                </li>            
              
-                <li>Reboot the standby controller.</li>
+                <li>Reboot the standby controller.
                 
                     <codeblock>~(keystone_admin)$ system host-reboot controller-1</codeblock>
                     <p>This updates its configuration.</p>
@@ -164,23 +161,23 @@ infra_subnet=192.168.205.0/24 action=apply</codeph>
                             standby controller until the active controller is also rebooted.</p>
                     </note>
                 
-            
+                </li>
              
-                <li>Reboot the active controller.</li>
+                <li>Reboot the active controller.
                 
                     <codeblock>~(keystone_admin)$ sudo reboot The system is going down for reboot NOW!</codeblock>
                     <p>Wait for the controller to reboot.</p>
                 
-            
+                </li>
              
                 <li>Log in to the active controller and become the Keystone
-                        <codeph>admin</codeph> user.</li>
+                        <codeph>admin</codeph> user.
                 
                     <codeblock>$ source /etc/nova/openrc</codeblock>
                 
-            
+                </li>
              
-                <li>Unlock the standby controller.</li>
+                <li>Unlock the standby controller.
                 
                     <codeblock>~(keystone_admin)$ system host-unlock controller-1 +-----------------+--------------------------------------+
 | Property        | Value                                |
@@ -215,13 +212,13 @@ infra_subnet=192.168.205.0/24 action=apply</codeph>
 +-----------------+--------------------------------------+
 </codeblock>
                 
-            
+                </li>
              
-                <li>Add infrastructure interfaces to each compute node.</li>
+                <li>Add infrastructure interfaces to each compute node.
                 
                     <p>For each node, use the following command.</p>
-                    <codeblock>~(keystone_admin)$ system host-if-modify -nt infra \
--n <varname>networkname</varname> <varname>hostname</varname> <varname>port</varname> +------------------+--------------------------------------+
+                    <codeblock>~(keystone_admin)$ system host-if-modify -nt infra \ -n networkname hostname port
++------------------+--------------------------------------+
 | Property         | Value                                |
 +------------------+--------------------------------------+
 | ifname           | infra0                               |
@@ -246,7 +243,7 @@ infra_subnet=192.168.205.0/24 action=apply</codeph>
                     <p>You can now unlock the compute nodes. This clears any
                             <codeph>Configuration out-of-date</codeph>
                         errors.</p>
-                
+                </li>                
             
         </ol>
     </body>

@@ -23,27 +23,27 @@
                 in this section assume you are the <codeph>admin</codeph> user.</p>
             <p>To add a gateway interface, use a command of the following form:</p>
             <codeblock>
-~(keystone_admin)$ neutron router-gateway-set <varname>router_id</varname> <varname>externalnet_id</varname> \
-[--disable-snat] [--fixed-ip <varname>gateway_addr</varname>]</codeblock>
+~(keystone_admin)$ neutron router-gateway-set router_id externalnet_id \
+[--disable-snat] [--fixed-ip gateway_addr]</codeblock>
             <p>where</p>
             <parml>
                 <plentry>
-                    <pt><varname>router_id</varname></pt>
+                    <pt>router_id</pt>
                     <pd>
                         <p>is the name or UUID of the router</p>
                     </pd>
                 </plentry>
                 <plentry>
-                    <pt><varname>externalnet_id</varname></pt>
+                    <pt>externalnet_id</pt>
                     <pd>
                         <p> is the name or UUID of a tenant network configured to provide external
                             connections</p>
                     </pd>
                 </plentry>
                 <plentry>
-                    <pt><varname>gateway_addr</varname></pt>
+                    <pt>gateway_addr</pt>
                     <pd>
-                        <p>is the gateway interface IP address.  If <varname>gateway_addr</varname> is not specified, the server allocates the
+                        <p>is the gateway interface IP address.  If gateway_addr is not specified, the server allocates the
                             next available external IP address.</p>
                     </pd>
                 </plentry>

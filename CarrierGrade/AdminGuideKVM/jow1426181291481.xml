@@ -18,7 +18,7 @@
         
         
             <p>Before you can modify the settings for a host, you must lock the host: </p>
-            <codeblock>~(keystone_admin)$ host-lock <varname>hostname</varname></codeblock>
+            <codeblock>~(keystone_admin)$ host-lock hostname</codeblock>
         
         
             <p>To configure a compute host to provide local storage for use by VMs,
@@ -26,14 +26,14 @@
             <p><draft-comment author="jowens">US65502 added host-lvg-modify and
                     associated parameter information</draft-comment>The following CLI commands are
                 available for managing local volume groups.</p>
-            <codeblock>~(keystone_admin)$ host-lvg-list <varname>hostname</varname></codeblock>
-            <codeblock>~(keystone_admin)$ host-lvg-show <varname>hostname</varname></codeblock>
-            <codeblock>~(keystone_admin)$ host-lvg-add <varname>hostname</varname> <varname>groupname</varname></codeblock>
-            <codeblock>~(keystone_admin)$ host-lvg-delete <varname>hostname</varname> <varname>groupname</varname></codeblock>
-            <codeblock>~(keystone_admin)$ host-lvg-modify <varname>hostname</varname> <varname>groupname</varname> -l nova-local -i <varname>size</varname></codeblock>
+            <codeblock>~(keystone_admin)$ host-lvg-list hostname</codeblock>
+            <codeblock>~(keystone_admin)$ host-lvg-show hostname</codeblock>
+            <codeblock>~(keystone_admin)$ host-lvg-add hostname groupname</codeblock>
+            <codeblock>~(keystone_admin)$ host-lvg-delete hostname groupname</codeblock>
+            <codeblock>~(keystone_admin)$ host-lvg-modify hostname groupname -l nova-local -i size</codeblock>
             <p>where <dl>
                     <dlentry>
-                        <dt><varname>groupname</varname></dt>
+                        <dt>groupname</dt>
                         <dd>
                             <p> is the name of the local volume group</p>
                             <note id="note_N1006E_N10048_N1001F_N10001">
@@ -42,7 +42,7 @@
                         </dd>
                     </dlentry>
                     <dlentry>
-                        <dt><varname>size</varname></dt>
+                        <dt>size</dt>
                         <dd>
                             <p> is the space in MB to allot for instances logical
                                 volume space.. </p>
@@ -50,12 +50,12 @@
                     </dlentry>
                 </dl></p>
         
-        <p id="p_N100BD_N1001F_N10001">
+        
             <p>To complete the configuration of a compute host for local storage,
                 you must also add physical volumes to the <codeph>nova-local</codeph> local volume group. For more information, see <xref href="jow1426182435441.xml"/>.</p>
             <p><draft-comment author="jowens">US65502 added
                 </draft-comment>In addition, you must set the instances logical volume size. For
                 more information, see <xref href="jow1443470081421.xml"/>. </p>
-        </p>
+        
     </body>
 </topic>

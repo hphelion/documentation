@@ -14,8 +14,8 @@
         
             <p>To view information for a provider network from the CLI, use the following
                 command:</p>
-            <codeblock>~(keystone_admin)$ neutron providernet-show <varname>providernet</varname></codeblock>
-            <p>where <varname>providernet</varname> is the name or
+            <codeblock>~(keystone_admin)$ neutron providernet-show providernet</codeblock>
+            <p>where providernet is the name or
                 UUID of the provider network.</p>
             <p>For example:</p>
             <codeblock>~(keystone_admin)$ neutron providernet-show a507bb89-8e78-48e4-8c8a-d8bac14fc097</codeblock>
@@ -31,8 +31,8 @@
             <title>Viewing PCI Resource Usage from the CLI </title>
             <p>To view information about PCI interface resources for a provider
                 network from the CLI, use the following command:</p>
-            <codeblock>~(keystone_admin)$ nova providernet-show <varname>providernet</varname></codeblock>
-            <p>where <varname>providernet</varname> is the UUID of
+            <codeblock>~(keystone_admin)$ nova providernet-show providernet</codeblock>
+            <p>where providernet is the UUID of
                 the provider network.</p>
             <p>For example:</p>
             <codeblock>~(keystone_admin)$ nova providernet-show a507bb89-8e78-48e4-8c8a-d8bac14fc097 +--------------------+--------------------------------------+

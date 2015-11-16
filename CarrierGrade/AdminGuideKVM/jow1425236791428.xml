@@ -13,7 +13,7 @@
     <body>
         
             <p>Use the following command:</p>
-            <codeblock>~(keystone_admin)$ </codeph>nova show <varname>instance</varname></codeblock>
+            <codeblock>~(keystone_admin)$ nova show instance</codeblock>
             <p>where <codeph>instance</codeph> is the name or UUID of the instance.</p>
             <!-- need sample output, plus an explanation of it -->
         

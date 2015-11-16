@@ -16,7 +16,7 @@
         
         
             <p>To add routes, use the following command.</p>
-            <codeblock>~(keystone_admin)$ system host-route-add <varname>node</varname> <varname>ifname</varname> <varname>network</varname> <varname>prefix</varname> <varname>gateway</varname> <varname>metric</varname></codeblock>
+            <codeblock>~(keystone_admin)$ system host-route-add node ifname network prefix gateway metric</codeblock>
             <p>where</p>
             <parml>
                 <plentry>
@@ -57,7 +57,7 @@
                 </plentry>
             </parml>
             <p>To delete routes, use the following command.</p>
-            <codeblock>~(keystone_admin)$ system host-route-delete <varname>uuid</varname> <varname>ifname</varname> <varname>network</varname> <varname>prefix</varname> <varname>gateway</varname> <varname>metric</varname></codeblock>
+            <codeblock>~(keystone_admin)$ system host-route-delete uuid ifname network prefix gateway metric</codeblock>
             <p>where <codeph>uuid</codeph> is the UUID of the route to be deleted.</p>
             <p>To list existing routes, including their UUIDs, use the following command.</p>
             <codeblock>~(keystone_admin)$ system host-route-list compute-0</codeblock>

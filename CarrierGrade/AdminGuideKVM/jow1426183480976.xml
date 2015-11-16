@@ -14,7 +14,8 @@
         
             <p>Local storage can be used to provide improved disk access
                 performance for VMs instantiated on the host.</p>
-            <note conref="jow1426942555025.xml#jow1426942555025/note_local_storage_ephemeral" id="note_N1002C_N10022_N1001F_N10001"/>
+            <note conref="jow1426942555025.xml#jow1426942555025/note_local_storage_ephemeral"
+            id="note_N1002C_N10022_N1001F_N10001"/>
             <p>To provide local storage on a compute host, add a local volume group
                 called <codeph>nova-local</codeph> to the host. This
                 automatically includes the host in the <codeph>local_storage_hosts</codeph> host aggregate. The Nova scheduler draws from
@@ -28,8 +29,9 @@
                     <p>If less than the minimum required space is available for the
                         instances logical volume, the compute host cannot be unlocked.</p></note>
                 
-            <p>As an alternative to the web administration interface, you can use
-                the CLI to configure the host for local storage. For more information, see <xref href="jow1426181291481.xml"/> and <xref href="jow1426182435441.xml"/>.</p>
+            <p>As an alternative to the web administration interface, you can use the CLI to
+            configure the host for local storage. For more information, see  <xref
+                href="jow1426181291481.xml"/> and <xref href="jow1426182435441.xml"/>.</p>
         
         <ol>
             <li conref="jow1426453628262.xml#jow1426453628262/lock_host"

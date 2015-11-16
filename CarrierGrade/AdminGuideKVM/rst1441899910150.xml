@@ -35,12 +35,12 @@
 
                     <li>
                     <p>As either <term>admin</term> or a tenant,
-                        select <menucascade>
-                            <b>System</b>
-                            <b>Images</b>
+                        select 
+                            <b>System</b> then
+                            <b>Images</b> then
                             <b>Edit Image</b>
                             <uicontrol/>
-                        </menucascade> for the desired images and uncheck the <b>Instance Auto Recovery</b> option. </p>
+                         for the desired images and uncheck the <b>Instance Auto Recovery</b> option. </p>
                 </li>
                 <!-- RS: Old/alternate method
                     <li>
@@ -57,18 +57,19 @@
         <ol>
              
                 <li>To set the option from the command line do one of the
-                    following.</li>
-                <choices id="choices_cdc_hl5_ht">
+                    following.
+                
                     <ul>
-                        <p>As <term>admin</term>, add an extra spec to a
-                            flavor:</p>
-                        <codeblock>~(keystone)admin)$ nova flavor-key <varname>flavorName</varname> set sw:wrs:auto_recovery=false</codeblock>
-                    </ul>
+                        <li>As <term>admin</term>, add an extra spec to a
+                            flavor:
+                        <codeblock>~(keystone)admin)$ nova flavor-key flavorName set sw:wrs:auto_recovery=false</codeblock>
+                        </li></ul>
                     <ul>
-                        <p>As <term>admin</term> or a tenant:</p>
-                        <codeblock>~(keystone)admin)$ glance image-update --property sw_wrs_auto_recovery=false <varname>imageName</varname></codeblock>
+                        <li>As <term>admin</term> or a tenant:
+                        <codeblock>~(keystone)admin)$ glance image-update --property sw_wrs_auto_recovery=false imageName</codeblock>
+                        </li>
                     </ul>
-                </choices>
+                </li>
             
         </ol>
     </body>

@@ -47,8 +47,8 @@
             </note>
             <p>You can also specify the extra spec from the CLI by setting the
                 following parameter for a flavor:</p>
-            <codeblock>aggregate_instance_extra_specs:localstorage=<varname>loc_storage</varname></codeblock>
-            <p>where <varname>loc_storage</varname> is one of the
+            <codeblock>aggregate_instance_extra_specs:localstorage=loc_storage</codeblock>
+            <p>where loc_storage is one of the
                 following:</p>
             <dl>
                 <dlentry>
@@ -66,7 +66,7 @@
                 </dlentry>
             </dl>
             <p>For example:</p>
-            <codeblock>~(keystone_admin)$ nova flavor-key <varname>flavor_name</varname> \
+            <codeblock>~(keystone_admin)$ nova flavor-key flavor_name \
 set aggregate_instance_extra_specs:localstorage=false</codeblock>
             <p>The local storage key is added by default on flavor creation and set
                 to false (hosts with no local storage).</p>

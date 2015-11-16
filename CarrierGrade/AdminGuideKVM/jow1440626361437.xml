@@ -19,17 +19,17 @@
             <p>You can run the utility from the active controller, or locally on the
                 compute host. You must be logged in with root privileges. </p>
             <p>To run <cmdname>vshell</cmdname>, use the following syntax:</p>
-            <codeblock>$ sudo vshell [-H <varname>hostname</varname>] <varname>command</varname></codeblock>
+            <codeblock>$ sudo vshell [-H hostname] command</codeblock>
             <p>where<parml>
                     <plentry>
-                        <pt><varname>hostname</varname></pt>
+                        <pt>hostname</pt>
                         <pd>
                             <p>is the name of the host, if the utility is run from
                                 the controller.</p>
                         </pd>
                     </plentry>
                     <plentry>
-                        <pt><varname>command</varname></pt>
+                        <pt>command</pt>
                         <pd>
                             <p>is the vshell command to run. </p>
                         </pd>
@@ -201,7 +201,7 @@
                     <pd>
                         <p>Initiate an ICMP echo request to a far-end IP address for connectivity
                             testing</p>
-                        <codeblock>$ sudo vshell -H compute-1 ping <varname>ip-address</varname> <varname>source-interface</varname></codeblock>
+                        <codeblock>$ sudo vshell -H compute-1 ping ip-address source-interface</codeblock>
                         <p>where<parml>
                                 <plentry>
                                     <pt>ip-address</pt>
@@ -245,7 +245,7 @@
                 <plentry>
                     <pt>statistic-group-enable</pt>
                     <pd>
-                        <p>Enables the statistic group specified by <varname>groupname</varname>. The following example enables
+                        <p>Enables the statistic group specified by groupname. The following example enables
                             the <codeph>engine</codeph> group:</p>
                         <codeblock>$ sudo vshell -H compute-1 statistic-group-enable engine
 </codeblock>
@@ -258,7 +258,7 @@
                 <plentry>
                     <pt>statistic-group-disable</pt>
                     <pd>
-                        <p>Disables the statistic group specified by <varname>groupname</varname>. The following example disables
+                        <p>Disables the statistic group specified by groupname. The following example disables
                             the <codeph>engine</codeph> group:</p>
                         <codeblock>$ sudo vshell -H compute-1 statistic-group-disable engine
 </codeblock>

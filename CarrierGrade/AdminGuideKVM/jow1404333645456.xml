@@ -153,7 +153,7 @@
                         <p>The pull-down menu is auto-populated with the corresponding attributes for the
               selected metric. On the CLI, use the following command to list the metadata associated
               with a metric identified with its resource ID:</p>
-                        <codeblock>~(keystone_admin)$ ceilometer resource-show <varname>resource_id</varname></codeblock>
+                        <codeblock>~(keystone_admin)$ ceilometer resource-show resource_id</codeblock>
                     </dd>
                 </dlentry>
                 <dlentry>
@@ -297,7 +297,7 @@
                 use the following command.</p>
             <codeblock>~(keystone_admin)$ system pm-show</codeblock>
             <p>To change the retention period from the CLI, use the following command syntax.</p>
-            <codeblock>~(keystone_admin)$ system pm-modify retention_secs=<varname>retention_period</varname></codeblock>
+            <codeblock>~(keystone_admin)$ system pm-modify retention_secs=retention_period</codeblock>
             <p>For example:</p>
             <codeblock>~(keystone_admin)$ system pm-modify retention_secs=172800</codeblock>
             <note id="note_N1041B_N103CD_N1001F_N10001">

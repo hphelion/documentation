@@ -15,17 +15,17 @@
             <p>For more information about host memory allocation, see <xref href="jow1423087781001.xml"/>.</p>
             <p>As an alternative to the web administration interface, you can use the following CLI
                 command to create a memory profile:</p>
-            <codeblock>~(keystone-admin)$ system memprofile-add <varname>memoryprofile</varname> <varname>hostid</varname></codeblock>
-            <p>where <varname>memoryprofile</varname> is the name or UUID of the memory profile, and
-                    <varname>hostid</varname> is the name or UUID of the host from which to create
+            <codeblock>~(keystone-admin)$ system memprofile-add memoryprofile hostid</codeblock>
+            <p>where memoryprofile is the name or UUID of the memory profile, and
+                    hostid is the name or UUID of the host from which to create
                 the profile.</p>
         
         <ol>
-            <step conref="jow1426453628262.xml#jow1426453628262/step_N1002B_N10028_N1001C_N10001" id="step_N1002F_N1002C_N1001C_N10001">
-                <cmd/>
+            <li conref="jow1426453628262.xml#jow1426453628262/step_N1002B_N10028_N1001C_N10001" id="step_N1002F_N1002C_N1001C_N10001" /> 
+                
             
              
-                <li>On the Memory tab, click <b>Create Memory Profile</b>.</li>
+                <li>On the Memory tab, click <b>Create Memory Profile</b>.
                 
                     <p>The <b>Create Memory Profile</b> dialog box appears.</p>
                     
@@ -34,7 +34,7 @@
                         </image>
                     
                 
-            
+                </li>
              
                 <li>Type a name for the memory profile.</li>
             
@@ -43,14 +43,14 @@
                         Profile</b> to save the profile and close the dialog box.</li>
             
         </ol>
-        Host
+        
             <p>You can apply this profile to other hosts by editing the host
                 settings in the web administration interface. For information about editing a host,
                 see <xref href="jow1404333790046.xml"/>. You can also use the
                 following CLI command to apply a memory profile to a host:</p>
-            <codeblock>~(keystone-admin)$ system host-apply-memprofile <varname>hostid</varname> <varname>memoryprofile</varname></codeblock>
-            <p>where <varname>hostid</varname> is the name or UUID
-                of the host, and <varname>memoryprofile</varname> is the name or
+            <codeblock>~(keystone-admin)$ system host-apply-memprofile hostid memoryprofile</codeblock>
+            <p>where hostid is the name or UUID
+                of the host, and memoryprofile is the name or
                 UUID of the memory profile.</p>
             <p>To manage memory profiles, you can use the <b>Memory Profiles</b> tab
                 on the <b>System Inventory</b> page, or you can use the following CLI
@@ -62,14 +62,14 @@
                 </li>
                 <li>
                     <p>To show details for a memory profile:</p>
-                    <codeblock>~(keystone-admin)$ system memprofile-show <varname>memoryprofile</varname></codeblock>
-                    <p>where <varname>memoryprofile</varname> is the name or UUID of the memory
+                    <codeblock>~(keystone-admin)$ system memprofile-show memoryprofile</codeblock>
+                    <p>where memoryprofile is the name or UUID of the memory
                         profile.</p>
                 </li>
                 <li>
                     <p>To delete a memory profile:</p>
-                    <codeblock>~(keystone-admin)$ system memprofile-delete <varname>memoryprofile</varname></codeblock>
-                    <p>where <varname>memoryprofile</varname> is the name or UUID of the memory
+                    <codeblock>~(keystone-admin)$ system memprofile-delete memoryprofile</codeblock>
+                    <p>where memoryprofile is the name or UUID of the memory
                         profile.</p>
                 </li>
             </ul>

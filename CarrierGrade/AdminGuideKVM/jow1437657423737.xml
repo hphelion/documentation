@@ -27,19 +27,19 @@
                 not use Ceph storage, there is no requirement to restore the controller before
                 restoring the Cinder volumes.</p>
         
-        <prereq conref="jow1437656331081.xml#maintask/prereq_N1002D_N1001F_N10001" id="prereq_N1003C_N10024_N10001"/>
+
         <ol>
-            <step conref="jow1437656331081.xml#maintask/common_start" conrefend="jow1437656331081.xml#maintask/common_end" id="step_N10077_N10074_N10024_N10001">
-                <cmd/>
+            <li conref="jow1437656331081.xml#maintask/common_start" conrefend="jow1437656331081.xml#maintask/common_end" id="step_N10077_N10074_N10024_N10001" />
+                
             
-            <step conref="jow1437656331081.xml#maintask/restore_cinder_vols" id="step_N10050_N10041_N10024_N10001">
-                <cmd/>
+            <li conref="jow1437656331081.xml#maintask/restore_cinder_vols" id="step_N10050_N10041_N10024_N10001" />
+                
             
-            <step conref="jow1437656331081.xml#maintask/remove_error_vols_small" id="step_N10059_N10041_N10024_N10001">
-                <cmd/>
+            <li conref="jow1437656331081.xml#maintask/remove_error_vols_small" id="step_N10059_N10041_N10024_N10001" />
+                
             
              
-                <li>Restore the compute function on <codeph>controller-0</codeph>.</li>
+                <li>Restore the compute function on <codeph>controller-0</codeph>.
                 
                     <p>Use the following command:</p>
                     <codeblock>~(keystone_admin)$ system compute-config-complete Manifests are being created and applied, the controller will restart upon     completion.
@@ -79,12 +79,12 @@
 | uuid              | bd213301-0130-4698-89eb-8a58386ffe03 |
 +-------------------+--------------------------------------+</codeblock>
                 
-            
-            <step conref="jow1437656331081.xml#maintask/restore_controller_1_small" id="step_N10062_N10041_N10024_N10001">
-                <cmd/>
+                </li>
+            <li conref="jow1437656331081.xml#maintask/restore_controller_1_small" id="step_N10062_N10041_N10024_N10001" />
+                
             
         </ol>
-        <result conref="jow1437656331081.xml#maintask/result" id="result_N10073_N10024_N10001"/>
+        
         <p conref="jow1437656331081.xml#maintask/restore_passwords" id="p_N10079_N10024_N10001"/>
     </body>
 </topic>

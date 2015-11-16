@@ -25,7 +25,7 @@
              
                 <li>Set the interface to support an IPv4 or IPv6 address, or both. 
                 
-                    <codeblock>~(keystone_admin)$ system host-if-modify <varname>node</varname> <varname>ifname</varname> --ipv4-mode=<varname>ipv4mode</varname> --ipv6-mode=<varname>ipv6mode</varname></codeblock>
+                    <codeblock>~(keystone_admin)$ system host-if-modify node ifname --ipv4-mode=ipv4mode --ipv6-mode=ipv6mode</codeblock>
                     <p>where</p>
                     <parml>
                         <plentry>
@@ -60,7 +60,7 @@
              
                 <li>Add an IPv4 or IPv6 address to the interface.
                 
-                    <codeblock>~(keystone_admin)$ system host-addr-add <varname>node</varname> <varname>ifname</varname> <varname>ip_address</varname> <varname>prefix</varname></codeblock>
+                    <codeblock>~(keystone_admin)$ system host-addr-add node ifname ip_address prefix</codeblock>
                     <p>where</p>
                     <parml>
                         <plentry>
@@ -91,7 +91,7 @@
                     <p>To delete an address, use the following commands:</p>
                     <codeblock>~(keystone_admin)$ system host-addr-list</codeblock>
                     <p>This displays the UUIDs of existing addresses.</p>
-                    <codeblock>~(keystone_admin)$ system host-addr-delete <varname>uuid</varname></codeblock>
+                    <codeblock>~(keystone_admin)$ system host-addr-delete uuid</codeblock>
                     <p>where <codeph>uuid</codeph> is the UUID of the address.</p>
                 
                 </li>

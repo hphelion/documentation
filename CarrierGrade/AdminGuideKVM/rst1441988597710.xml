@@ -21,8 +21,8 @@
                     source VM instance and destination VM instance, resulting in a temporary service
                     interruption. Adjust this timer to avoid excessive down times that may violate
                     service level agreements. When this threshold cannot be achieved within the
-                        <varname>live_migration_timeout</varname>, the migration is
-                    aborted. For more information about <varname>live_migration_timeout</varname>, see <xref href="rst1441822551049.xml"/>.</p>
+                        live_migration_timeout, the migration is
+                    aborted. For more information about live_migration_timeout, see <xref href="rst1441822551049.xml"/>.</p>
             </note>
             <p>The live migration process will actually attempt to achieve a much smaller downtime
                 than specified by this parameter by starting with a lower value approximately 1/10th
@@ -48,35 +48,35 @@
             <ul id="ul_qxq_hyy_lt">
                 <li>
                     <p>As either <term>admin</term> or a tenant,
-                        select <menucascade>
-                            <b>System</b>
-                            <b>Images</b>
-                            <b>Edit Image</b>
+                        select 
+                            <b>System</b> then
+                            <b>Images</b>, then
+                            <b>Edit Image</b>, then 
                             <b>Update Metadata</b>
-                        </menucascade> for the desired images and add an entry with:</p>
-                    <codeblock>hw_wrs_live_migration_max_downtime=<varname>milliseconds</varname></codeblock>
+                         for the desired images and add an entry with:</p>
+                    <codeblock>hw_wrs_live_migration_max_downtime=milliseconds</codeblock>
                 </li>
             </ul>
         
-        <steps id="steps_sf1_1wb_3t">
+        <ol>
              
-                <li>Set the timer from the command line:</li>
+                <li>Set the timer from the command line:
                 
                     <p>The following examples set the timeout to 350
                         milliseconds.</p>
                 
-                <choices id="choices_iks_2wn_ht">
+                
                     <ul>
-                        <p>As <term>admin</term>, add an extra spec to a
-                            flavor:</p>
-                        <codeblock>~(keystone)admin)$ nova flavor-key <varname>flavorName</varname> set hw:wrs:live_migration_max_downtime=350</codeblock>
-                    </ul>
+                        <li>As <term>admin</term>, add an extra spec to a
+                            flavor:
+                        <codeblock>~(keystone)admin)$ nova flavor-key flavorName set hw:wrs:live_migration_max_downtime=350</codeblock>
+                        </li></ul>
                     <ul>
-                        <p>As <term>admin</term> or a tenant, update the metadata
-                            of an image:</p>
-                        <codeblock>~(keystone)admin)$ glance image-update --property hw_wrs_live_migration_max_downtime=350 <varname>imageName</varname></codeblock>
-                    </ul>
-                </choices>
+                        <li>As <term>admin</term> or a tenant, update the metadata
+                            of an image:
+                        <codeblock>~(keystone)admin)$ glance image-update --property hw_wrs_live_migration_max_downtime=350 imageName</codeblock>
+                    </li></ul>
+                </li>
             
         </ol>
     </body>

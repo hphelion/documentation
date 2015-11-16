@@ -15,7 +15,7 @@
         
             <p>You can use the web administration interface or the CLI to set up shared physical CPUs.</p>
             <p>To add or remove a shared physical CPU from the CLI, use a command of the following form:</p>
-            <codeblock>~(keystone_admin)$ system host-cpu-modify -f shared -p<varname>processor</varname> <varname>use_shared</varname> <varname>hostname</varname></codeblock>
+            <codeblock>~(keystone_admin)$ system host-cpu-modify -f shared -pprocessor use_shared hostname</codeblock>
             <p>where</p>
             <parml>
                 <plentry>
@@ -42,25 +42,25 @@
             <codeblock>~(keystone_admin)$ system host-cpu-modify -f shared -p0 1 compute-0</codeblock>
         
         <ol>
-            <step conref="jow1426453628262.xml#jow1426453628262/lock_host" id="step_N10096_N10093_N1001C_N10001">
-                <cmd/>
+            <li conref="jow1426453628262.xml#jow1426453628262/lock_host" id="step_N10096_N10093_N1001C_N10001" />
+                
             
-            <step conref="jow1426453628262.xml#jow1426453628262/open_details_locked_host" id="step_N1009F_N10093_N1001C_N10001">
-                <cmd/>
+            <li conref="jow1426453628262.xml#jow1426453628262/open_details_locked_host" id="step_N1009F_N10093_N1001C_N10001" />
+                
             
              
                 <li>Select the <b>Processor</b> tab.</li>
             
              
-                <li>Click <b>Edit CPU Assignments</b>.</li>
+                <li>Click <b>Edit CPU Assignments</b>.
                 
                     <p>This control is available only if the host is locked.</p>
                 
-            
+                </li>
              
                 <li>In the <b>Edit CPU
                         Assignments</b> dialog box, use the <b>Shared</b>
-                    Function section to enable shared physical CPUs.</li>
+                    Function section to enable shared physical CPUs.
                 
                     
                         <image href="jow1426626160742.image" id="image_cs5_h53_kr" width="3in">
@@ -74,11 +74,11 @@
                         set the <b># of Shared Physical Cores on Processor
                             0</b> to 1. Valid values are <codeph>1</codeph> (to assign a core as a shared physical CPU) or <codeph>0</codeph> (if a shared physical CPU is not required on
                         the processor.) </p>
-                
+                </li>
             
         </ol>
-        <p id="p_N10100_N1001C_N10001">
+        
             <p>To configure a VM to use a shared physical CPU, see <xref href="jow1426625051841.xml"/>.</p>
-        </p>
+        
     </body>
 </topic>

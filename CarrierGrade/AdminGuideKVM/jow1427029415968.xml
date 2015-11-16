@@ -40,7 +40,7 @@
    address to an interface, use the <cmdname ixia_locid="285">system host-addr-add</cmdname> command. This is
    required for the management and infrastructure networks if static IP address assignment is in
    use.</p>
-  <codeblock ixia_locid="286"><systemoutput ixia_locid="287">~(keystone_admin)$ </systemoutput><userinput ixia_locid="46">system host-addr-add <varname ixia_locid="47">node</varname> <varname ixia_locid="288">ifname</varname> <varname ixia_locid="49">ip_address</varname> <varname ixia_locid="50">prefix</varname></userinput></codeblock>
+  <codeblock ixia_locid="286"><systemoutput ixia_locid="287">~(keystone_admin)$ </systemoutput><userinput ixia_locid="46">system host-addr-add <varname ixia_locid="47">node <varname ixia_locid="288">ifname <varname ixia_locid="49">ip_address <varname ixia_locid="50">prefix</userinput></codeblock>
   <p ixia_locid="51">where</p>
   <parml>
    <plentry ixia_locid="52">
@@ -72,8 +72,8 @@
    <title ixia_locid="72">Ethernet Interfaces</title>
    <p ixia_locid="73">Ethernet interfaces are created automatically. To attach one to a network, use
     a command of the following form:</p>
-   <codeblock ixia_locid="74"><systemoutput ixia_locid="299">~(keystone_admin)$ </systemoutput><userinput ixia_locid="75">system host-if-modify -n <varname ixia_locid="76">ifname</varname> -m <varname ixia_locid="77">mtu</varname> \
--nt <varname ixia_locid="78">networktype</varname> <varname ixia_locid="79">hostname</varname> <varname ixia_locid="80">ethname</varname> [-p <varname ixia_locid="249">providernetworklist</varname>]</userinput></codeblock>
+   <codeblock ixia_locid="74"><systemoutput ixia_locid="299">~(keystone_admin)$ </systemoutput><userinput ixia_locid="75">system host-if-modify -n <varname ixia_locid="76">ifname -m <varname ixia_locid="77">mtu \
+-nt <varname ixia_locid="78">networktype <varname ixia_locid="79">hostname <varname ixia_locid="80">ethname [-p <varname ixia_locid="249">providernetworklist]</userinput></codeblock>
    <p ixia_locid="81">where</p>
    <parml>
     <plentry ixia_locid="82">
@@ -112,7 +112,7 @@
       <p ixia_locid="264">is a list of provider networks, delimited by quotes and separated by
        spaces; for example, <userinput ixia_locid="266">"provider-net-a provider-net-b"</userinput>.
        To specify a single provider network, omit the quotes. This parameter is required only if the
-        <varname ixia_locid="268">networktype</varname> is set to <option ixia_locid="269">data</option>.</p>
+        <varname ixia_locid="268">networktype is set to <option ixia_locid="269">data</option>.</p>
      </pd>
     </plentry>
    </parml>
@@ -126,9 +126,9 @@
    <title ixia_locid="109">Aggregated Ethernet Interfaces</title>
    <p ixia_locid="110">To create an aggregated Ethernet interface and attach it to a network, use a command of the
     following form:</p>
-   <codeblock ixia_locid="111"><systemoutput ixia_locid="69">~(keystone_admin)$ </systemoutput><userinput ixia_locid="112">system host-if-add <varname ixia_locid="113">hostname</varname> -m <varname ixia_locid="114">mtu</varname> \
--a <varname ixia_locid="115">aemode</varname> -x <varname ixia_locid="116">policy</varname> <varname ixia_locid="117">ifname</varname> \
- ae "<varname ixia_locid="118">providernetworklist</varname>" <varname ixia_locid="119">ethname1</varname> <varname ixia_locid="120">ethname2</varname></userinput> </codeblock>
+   <codeblock ixia_locid="111"><systemoutput ixia_locid="69">~(keystone_admin)$ </systemoutput><userinput ixia_locid="112">system host-if-add <varname ixia_locid="113">hostname -m <varname ixia_locid="114">mtu \
+-a <varname ixia_locid="115">aemode -x <varname ixia_locid="116">policy <varname ixia_locid="117">ifname \
+ ae "<varname ixia_locid="118">providernetworklist" <varname ixia_locid="119">ethname1 <varname ixia_locid="120">ethname2</userinput> </codeblock>
    <p ixia_locid="121">where</p>
    <parml>
     <plentry ixia_locid="122">
@@ -191,8 +191,8 @@
    <title ixia_locid="162">VLAN Interfaces</title>
    <p ixia_locid="163">To create a VLAN interface and attach it to a network, use a command of the following
     form:</p>
-   <codeblock ixia_locid="164"><systemoutput ixia_locid="166">~(keystone_admin)$ </systemoutput><userinput ixia_locid="168">system host-if-add <varname ixia_locid="170">hostname</varname> -V <varname ixia_locid="171">vlan_id</varname> \
--nt <varname ixia_locid="172">networktype</varname> <varname ixia_locid="173">ifname</varname> <varname ixia_locid="175">ethname</varname> [-p <varname ixia_locid="257">providernetworklist</varname>]</userinput>
+   <codeblock ixia_locid="164"><systemoutput ixia_locid="166">~(keystone_admin)$ </systemoutput><userinput ixia_locid="168">system host-if-add <varname ixia_locid="170">hostname -V <varname ixia_locid="171">vlan_id \
+-nt <varname ixia_locid="172">networktype <varname ixia_locid="173">ifname <varname ixia_locid="175">ethname [-p <varname ixia_locid="257">providernetworklist]</userinput>
 </codeblock>
    <p ixia_locid="176">where</p>
    <parml>
@@ -232,7 +232,7 @@
       <p ixia_locid="265">is a list of provider networks, delimited by quotes and separated by
        spaces; for example, <userinput ixia_locid="267">"provider-net-a provider-net-b"</userinput>.
        To specify a single provider network, omit the quotes. This parameter is required only if the
-        <varname ixia_locid="270">networktype</varname> is set to <option ixia_locid="271">data</option>.</p>
+        <varname ixia_locid="270">networktype is set to <option ixia_locid="271">data</option>.</p>
      </pd>
     </plentry>
    </parml>

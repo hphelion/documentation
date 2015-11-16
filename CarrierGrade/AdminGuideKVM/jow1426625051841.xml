@@ -24,7 +24,7 @@
                     Spec</b> drop-down menu. To access this menu, see <xref href="jow1429538642910.xml"/>.</p>
             <p>To set the Shared VCPU ID from the CLI, use a command of the
                 following form:</p>
-            <codeblock>~(keystone_admin)$ nova flavor-key <varname>flavor_name</varname> set hw:wrs:shared_vcpu=<varname>vcpu_id</varname></codeblock>
+            <codeblock>~(keystone_admin)$ nova flavor-key flavor_name set hw:wrs:shared_vcpu=vcpu_id</codeblock>
             <p>where <codeph>vcpu_id</codeph> is an
                 integer that identifies the vcpu. The valid range starts at 0 and must be less than
                 the <codeph>VCPUs</codeph> value defined for the flavor.</p>

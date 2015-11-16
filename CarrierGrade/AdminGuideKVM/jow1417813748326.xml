@@ -38,10 +38,10 @@
    autoscaling, see <xref href="jow1417818508589.xml"/>. If required, you can scale resources
    manually from the command line using the <cmdname>nova scale</cmdname> command, with the
    following syntax:</p>
-  <codeblock>~(keystone_admin)$ nova scale <varname>instance_id</varname> <varname>resource</varname> {up | down}</codeblock>
+  <codeblock>~(keystone_admin)$ nova scale instance_id resource {up | down}</codeblock>
   <p>For example, to reduce the number of CPUs allotted to an instance, you can use this
    command:</p>
-  <codeblock>~(keystone_admin)$ nova scale <varname>instance_id</varname> cpu down</codeblock>
+  <codeblock>~(keystone_admin)$ nova scale instance_id cpu down</codeblock>
   <note id="note_N1006A_N1001C_N10001">
    <p>To scale up the resources for an instance, sufficient resources are required on the host. If
     all available resources are already allocated to other instances, you may need to free up

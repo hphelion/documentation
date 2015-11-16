@@ -89,7 +89,7 @@
         
         <ol>
              
-                <li>If necessary, install replacement disks in the controllers.</li>
+                <li>If necessary, install replacement disks in the controllers.
                 
                     <p>If you do not need to replace disks, you can skip this step. To determine
                         whether you need to replace disks, calculate your storage requirements. Be
@@ -121,23 +121,23 @@
                     
                         <li>Repeat these steps for the new standby
                             controller.</li>
-                    
-                </substeps>
+                
+                
             
              
-                <li>Edit the disk storage allotments.</li>
+                <li>Edit the disk storage allotments.
                  <ol>
                     
-                        <li>In the HP Helion OpenStack Carrier Grade web administration interface, open the <b>System Configuration</b> pane.</li>
+                        <li>In the HP Helion OpenStack Carrier Grade web administration interface, open the <b>System Configuration</b> pane.
                         
                             <p> The <b>System
                                     Configuration</b> pane is available from the <b>System Panel</b> section of the
                                     <b>Admin</b> menu. </p>
                         
                     
-                    
+                        </li>
                         <li>Select the <b>Controller Filesystem</b>
-                            tab.</li>
+                            tab.
                         
                             <p>The <b>Controller
                                     Filesystem</b> page appears, showing the currently
@@ -148,10 +148,10 @@
                                 </image>
                             
                         
-                    
+                        </li>
                     
                         <li>Click <b>Edit
-                                Filesystem</b>.</li>
+                                Filesystem</b>.
                         
                             <p>The <b>Edit Controller
                                     Filesystem</b> dialog box appears.</p>
@@ -166,14 +166,14 @@
                                     the LVM backend.</p>
                             </note>
                         
+                        </li>
                     
+                        <li>Replace the storage allotments as required.
                     
-                        <li>Replace the storage allotments as required.</li>
-                    
-                    
+                        </li>
                         <li>Click <b>Save</b>.</li>
                     
-                </substeps>
+                 </ol>
                 
                     <p>This raises major alarms against the controllers
                             (<codeph>250.001 Configuration
@@ -181,26 +181,26 @@
                         Management page. In addition, the status <codeph>Config out-of-date</codeph> is shown for the controllers in the
                             <b>Hosts</b> list.</p>
                 
-            
+                </li>
              
                 <li>Lock the standby controller. </li>
             
              
                 <li>Reinstall the HP Helion OpenStack Carrier Grade software on the standby
-                    controller.</li>
+                    controller.
                 
                     <p>This step is required to update the system configuration, even if you have
                         already reinstalled the HP Helion OpenStack Carrier Grade software as part of the disk
                         replacement procedure.</p>
                 
-            
+                </li>
              
-                <li>Unlock the standby controller.</li>
+                <li>Unlock the standby controller.
                 
                     <p>When the controller is unlocked, the <codeph>250.001 Configuration out-of-date</codeph> alarms
                         against the controller are cleared.</p>
                 
-            
+                </li>
              
                 <li>Swact the controllers.</li>
             
@@ -220,9 +220,10 @@
                     controllers.</li>
             
         </ol>
-        <p id="p_N10323_N1001F_N10001">
+                </li></ol>
+        
             <p>After making these changes, ensure that the configuration plan for
                 your system is updated with the new storage allotments and disk sizes.</p>
-        </p>
+        
     </body>
 </topic>

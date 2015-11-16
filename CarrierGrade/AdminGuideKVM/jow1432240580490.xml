@@ -53,8 +53,8 @@
                     Flavor Extra Spec</b> drop-down menu. To access this menu, see <xref href="jow1429538642910.xml"/>.</p>
             <p>To enable the Server Group Messaging API using the CLI, use the following
                 command:</p>
-            <codeblock>~(keystone_admin)$ nova flavor-key <varname>flavor_name</varname> set sw:wrs:srv_grp_messaging=<varname>value</varname></codeblock>
-            <p>where <varname>value</varname> is either
+            <codeblock>~(keystone_admin)$ nova flavor-key flavor_name set sw:wrs:srv_grp_messaging=value</codeblock>
+            <p>where value is either
                     <option>False</option> or <option>True</option>.</p>
         
     </body>

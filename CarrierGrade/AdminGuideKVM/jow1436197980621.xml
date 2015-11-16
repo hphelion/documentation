@@ -24,8 +24,8 @@
                 drop-down menu. To access this menu, see <xref href="jow1429538642910.xml"/>.</p>
             <p>You can also specify the extra spec from the CLI by setting the following parameter
                 for a flavor:</p>
-            <codeblock>hw:wrs:pci_numa_affinity=<varname>pci_affinity</varname></codeblock>
-            <p>where <varname>pci_affinity</varname> is one of the
+            <codeblock>hw:wrs:pci_numa_affinity=pci_affinity</codeblock>
+            <p>where pci_affinity is one of the
                 following:</p>
             <dl>
                 <dlentry>

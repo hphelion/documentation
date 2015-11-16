@@ -11,38 +11,38 @@
     </prolog>
     <body>
         <ol>
-            <step conref="jow1426453628262.xml#jow1426453628262/lock_host" id="step_N10025_N10022_N1001F_N10001">
-                <cmd/>
+            <li conref="jow1426453628262.xml#jow1426453628262/lock_host" id="step_N10025_N10022_N1001F_N10001" />
+                
             
              
                 <li>Power off the host.</li>
             
              
                 <li>Make any required resource changes (for example, BIOS changes
-                    required for proper operation).</li>
+                    required for proper operation).
                 
                     <p>If you are adding a disk to provide additional local storage for VMs, you can
                         install an unpartitioned disk.  New disks are detected by the compute node
                         operating system and automatically configured with a single partition.</p>
                 
-            
+                </li>
              
-                <li>Power on the host, and wait for it to reboot fully.</li>
+                <li>Power on the host, and wait for it to reboot fully.
                 
                     <p>When the host is fully rebooted, it is shown as <codeph>Locked</codeph>, <codeph>Enabled</codeph>, and <codeph>Available</codeph> in the <b>Hosts</b> list.</p>
                     <note id="note_N10079_N10062_N1005B_N10028_N1001C_N10001">
                         <p>Do not unlock the host until it is fully rebooted.</p>
                     </note>
                 
-            
+                </li>
              
-                <li>Unlock the host.</li>
+                <li>Unlock the host.
                 
                     <p>The host is rebooted a second time.</p>
-                
+                </li>
             
         </ol>
-        Host
+        
             <p>When the host is reported as <codeph>Unlocked</codeph>,
                     <codeph>Enabled</codeph>, and <codeph>Available</codeph>, it
                 is ready for use with the adjusted resources.</p>

@@ -39,10 +39,10 @@
         
         <ol>
              
-                <li>Set this option using the CLI:</li>
+                <li>Set this option using the CLI:
                 
                     <codeblock>~(keystone_admin)$ nova flavor-key flavorName set hw:wrs:nic_isolation=true</codeblock>
-                
+                </li>
             
         </ol>
     </body>

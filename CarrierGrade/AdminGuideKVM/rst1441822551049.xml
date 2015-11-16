@@ -42,35 +42,35 @@
             <ul id="ul_sbp_djy_lt">
                 <li>
                     <p>As either <term>admin</term> or a tenant, select
-                            <menucascade>
-                            <b>System</b>
-                            <b>Images</b>
-                            <b>Edit Image</b>
+                            
+                            <b>System</b>, then
+                            <b>Images</b>, then 
+                            <b>Edit Image</b>, then 
                             <b>Update Metadata</b>
-                        </menucascade> for the desired images and add an entry with:</p>
-                    <codeblock>hw_wrs_live_migration_timeout=<varname>seconds</varname></codeblock>
+                         for the desired images and add an entry with:</p>
+                    <codeblock>hw_wrs_live_migration_timeout=seconds</codeblock>
                 </li>
             </ul>
         
         <ol>
              
-                <li>Set the timer from the command line:</li>
+                <li>Set the timer from the command line:
                 
                     <p>The following examples set the timeout to 400 seconds.</p>
                 
-                <choices id="choices_iks_2wn_ht">
+                
                     <ul>
-                        <p>As <term>admin</term>, add an extra spec to a flavor
-                            by:</p>
-                        <codeblock>~(keystone)admin)$ nova flavor-key <varname>flavorName</varname> set hw:wrs:live_migration_timeout=400</codeblock>
-                    </ul>
+                        <li>As <term>admin</term>, add an extra spec to a flavor
+                            by:
+                        <codeblock>~(keystone)admin)$ nova flavor-key flavorName set hw:wrs:live_migration_timeout=400</codeblock>
+                        </li></ul>
                     <ul>
-                        <p>As <term>admin</term> or a tenant, update the metadata
-                            of an image by:</p>
-                        <codeblock>~(keystone)admin)$ glance image-update --property hw_wrs_live_migration_timeout=400 <varname>imageName</varname></codeblock>
-                    </ul>
-                </choices>
-            
+                        <li>As <term>admin</term> or a tenant, update the metadata
+                            of an image by:
+                        <codeblock>~(keystone)admin)$ glance image-update --property hw_wrs_live_migration_timeout=400 imageName</codeblock>
+                </li></ul>
+                
+                </li>
         </ol>
     </body>
 </topic>

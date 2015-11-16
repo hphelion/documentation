@@ -59,8 +59,8 @@
                 the <b>Create Flavor Extra Spec</b> drop-down menu.
                 To access this menu, see <xref href="jow1429538642910.xml"/>.</p>
             <p>To add the extra spec using the CLI, use the following command:</p>
-            <codeblock>~(keystone_admin)$ nova flavor-key <varname>flavor_name</varname> set hw:cpu_policy=<varname>policy</varname></codeblock>
-            <p>where <varname>policy</varname> is either <option>dedicated</option> or <option>shared</option>.
+            <codeblock>~(keystone_admin)$ nova flavor-key flavor_name set hw:cpu_policy=policy</codeblock>
+            <p>where policy is either <option>dedicated</option> or <option>shared</option>.
                 If any other value is suppied, the policy is set to
                     <codeph>Dedicated</codeph>.</p>
             <note id="note_N10271_N101E7_N101DE_N101C7_N1014F_N1001F_N10001">

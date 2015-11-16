@@ -23,16 +23,16 @@
                 by restoring one host at a time, starting with the controllers, then the storage
                 nodes, and finally the compute nodes.</p>
         
-        <prereq conref="jow1437656331081.xml#maintask/prereq_N1002D_N1001F_N10001" id="prereq_N1003F_N10024_N10001"/>
+        
         <ol>
-            <step conref="jow1437656331081.xml#maintask/common_start" conrefend="jow1437656331081.xml#maintask/common_end" id="step_N10077_N10074_N10024_N10001">
-                <cmd/>
+            <li conref="jow1437656331081.xml#maintask/common_start" conrefend="jow1437656331081.xml#maintask/common_end" id="step_N10077_N10074_N10024_N10001" />
+                
             
-            <step conref="jow1437656331081.xml#maintask/restore_controller_1" conrefend="jow1437656331081.xml#maintask/restore_computes" id="step_N10054_N10045_N10024_N10001">
-                <cmd/>
+            <li conref="jow1437656331081.xml#maintask/restore_controller_1" conrefend="jow1437656331081.xml#maintask/restore_computes" id="step_N10054_N10045_N10024_N10001" />
+                
             
         </ol>
-        <result conref="jow1437656331081.xml#maintask/result" id="result_N10065_N10024_N10001"/>
+
         <p conref="jow1437656331081.xml#maintask/restore_passwords" id="p_N1006B_N10024_N10001"/>
     </body>
 </topic>

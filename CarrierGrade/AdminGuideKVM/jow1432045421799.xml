@@ -28,18 +28,18 @@
                 </li>
                 <li>
                     <p>To list logs, use the following command:</p>
-                    <codeblock>~(keystone_admin)$ system log-list [-q <varname>query</varname>] [-l <varname>limit</varname>]</codeblock>
+                    <codeblock>~(keystone_admin)$ system log-list [-q query] [-l limit]</codeblock>
                     <p>where</p>
                     <dl>
                         <dlentry>
-                            <dt><varname>query</varname></dt>
+                            <dt>query</dt>
                             <dd>
                                 <p>is a list of one or more key-value pairs with comparison
                                     operators, separated by semicolons.</p>
                             </dd>
                         </dlentry>
                         <dlentry>
-                            <dt><varname>limit</varname></dt>
+                            <dt>limit</dt>
                             <dd>
                                 <p>is the maximum number of logs to return, beginning with the most
                                     recent.</p>
@@ -53,8 +53,8 @@
                 <li>
                     <p>To view details for an individual log, use the following
                         command:</p>
-                    <codeblock>~(keystone_admin)$ system log-show <varname>uuid</varname></codeblock>
-                    <p>where <varname>uuid</varname> is the unique
+                    <codeblock>~(keystone_admin)$ system log-show uuid</codeblock>
+                    <p>where uuid is the unique
                         identifier for the log (obtained using the <cmdname>system
                             log-list</cmdname> command).</p>
                 </li>

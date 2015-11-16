@@ -27,34 +27,34 @@
         
         <ol>
              
-                <li>Collect the required parameters.</li>
+                <li>Collect the required parameters.
                  <ol>
                     
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-flavor"/>
+                        <li conref="jow1404333809730.xml#jow1404333809730/locate-flavor"/>
                     
                     
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-keypair"/>
+                        <li conref="jow1404333809730.xml#jow1404333809730/locate-keypair"/>
                     
                     
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-image"/>
+                        <li conref="jow1404333809730.xml#jow1404333809730/locate-image"/>
                     
                     
-                        <li>On the <menucascade>
-                                <b>Admin</b>
-                                <b>System Panel</b>
+                        <li>On the
+                                <b>Admin</b>, then
+                                <b>System Panel</b>, then
                                 <b>Networks</b>
-                            </menucascade> page, obtain the <b>Name</b> of the private network.</li>
+                             page, obtain the <b>Name</b> of the private network.</li>
                     
                     
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-user"/>
-                    
+                        <li conref="jow1404333809730.xml#jow1404333809730/locate-user"/>
+                
                 </ol>
+                </li>
+            <li conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N10096_N10059_N10020_N10001" />
+               
             
-            <step conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N10096_N10059_N10020_N10001">
-                <cmd/>
-            
-            <step conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N1009D_N10059_N10020_N10001">
-                <cmd/>
+            <li conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N1009D_N10059_N10020_N10001" />
+                
             
              
                 <li>Select<b> File</b>, then click
@@ -62,101 +62,103 @@
             
              
                 <li>Adjust the parameters in the <b>Launch Stack</b> form to meet
-                    your requirements.</li>
-                <choicetable id="choicetable_nqn_msw_34" keycol="1" relcolwidth="30* 70*">
-                    <chrow>
-                        <choption>
-                            <p><b>KeyName</b></p>
-                        </choption>
-                        <chdesc>
+                    your requirements.
+                <table>
+                    <tgroup cols="2">
+                        <tbody>
+                            
+                    <row>
+                        <entry><b>KeyName</b>></entry>
+                        
+                        <entry>
                             <p>The <b>KeyPair</b> name from
                                     the<b> Access &amp; Security</b> page.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>TenantUserID</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The tenant user ID associated with the instance
                                 launch. Scaling of the  instance resources can only be performed by
                                 the tenant associated with the launch.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>FlavorName</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The <b>Flavor Name</b> from the
                                     <b>Flavors</b> page.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>ImageName</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The <b>Image Name</b> from the
                                     <b>Images</b> page.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>PrivateNetName</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The <b>Name</b>
                                 from the <b>Network Overview</b>
                                 page.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>InstanceName</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The name of the instance to create.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>CustomMeterName</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The name of a custom Ceilometer metric to store.<!-- For
                                 information about custom metrics, see <xref href="jow1404916152577.xml"/>.--></p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>CustomMeterUnit</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The unit of measurement to display for the custom
                                 metric; for example, 'Percent'.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>MetricHighWaterMark</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The value that triggers autoscaling to add
                                 resources.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
                             <p><b>MetricLowWaterMark</b></p>
-                        </choption>
-                        <chdesc>
+                        </entry>
+                        <entry>
                             <p>The value that triggers autoscaling to remove
                                 resources.</p>
-                        </chdesc>
-                    </chrow>
-                </choicetable>
-            
+                        </entry>
+                    </row>
+                </tbody></tgroup></table>
+        </li>
         </ol>
     </body>
 </topic>
