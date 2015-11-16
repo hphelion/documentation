@@ -18,8 +18,8 @@
   <!--permalink: -->
   <!--permalink: /-->
   <topicref href="home.dita"/>
-  <mapref href="devplatform/docs.hpcloud.com.HDP.ditamap" format="ditamap"/>
   <mapref href="docs.hpcloud.com.HOS.ditamap" />
+  <mapref href="devplatform/docs.hpcloud.com.HDP.ditamap" format="ditamap"/>
 
   <!-- Community -->
 
