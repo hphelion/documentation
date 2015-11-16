@@ -7,6 +7,8 @@
     <section id="removeNodes"> The process for removing a compute node requires that you run these
       steps. Note that to run any playbooks whatsoever for cloud maintenance, you will always run
       from the lifecycle manager.<ol>
+        <li>If availability zones are configured, remove the affected node from its availability
+          zone.</li>
         <li>Disable provisioning to prevent new instances from being created on this node. </li>
         <li>If possible migrate any instances on the node to other nodes. </li>
         <li>Shut down the node or stop the nova-compute service. </li>
@@ -14,8 +16,7 @@
         <li>Amend servers.yml in the cloud configuration to remove entry for this node, commit the
           change and re run the config processor </li>
         <li>Remove the node from cobbler</li>
-        <li>If you have availability zones configured, first remove nodes in availability zones
-          steps first.</li>
+
       </ol>
     </section>
 
@@ -54,13 +55,13 @@
 | 7  | AZ3  | AZ3               |
 +----+------+-------------------+</codeblock></li>
         <!--  TODO missing content here -->
-        <li>Check that the AZ has been
+        <li>Check that the availability zone has been
           removed:<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova aggregate-remove-host AZ2 padawan-ccp-comp0002-mgmt</codeblock><codeblock>Host padawan-ccp-comp0002-mgmt has been successfully removed from aggregate 4</codeblock><codeblock>+----+------+-------------------+-------+-------------------------+
 | Id | Name | Availability Zone | Hosts | Metadata                |
 +----+------+-------------------+-------+-------------------------+
 | 4  | AZ2  | AZ2               |       | 'availability_zone=AZ2' |
 +----+------+-------------------+-------+-------------------------+</codeblock></li>
-        <li>Get Availability Zone aggregate
+        <li>Get availability zone aggregate
           details<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova aggregate-details AZ2</codeblock><codeblock>+----+------+-------------------+-------+-------------------------+
 | Id | Name | Availability Zone | Hosts | Metadata                |
 +----+------+-------------------+-------+-------------------------+
