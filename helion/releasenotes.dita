@@ -277,6 +277,25 @@
       <ul>
         <li>Only one Swift zone is supported.</li>
       </ul>
+      <p><b>Rsync Requests are Blocked by the Firewall on Systems with a Dedicated Swift Network</b></p>
+      <p>When a dedicated network is used for the Swift backend network traffic, requests by the Swift replication process to rsync are blocked by the firewall. To resolve this issue, add the <codeph>swift-rsync</codeph> service to the <codeph>component-endpoints</codeph> in the <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> file before deploying for the SWIFT network group.</p>
+      <p>For example:</p>
+      <codeblock>
+  #
+  # SWIFT
+  #
+  # This is the network group that will be used to for
+  # Swift back-end traffic between proxy, container, account
+  # and object servers
+  #
+  - name: SWIFT
+    hostname-suffix: swift
+  
+    component-endpoints:
+      - swift-container
+      - swift-account
+      - swift-object
+      - swift-rsync</codeblock>
       <!-- SERVICES -->
       <!-- MONITORING -->
       <p><b>Monitoring (Monasca) Limitations</b></p> The monitoring service has the following
