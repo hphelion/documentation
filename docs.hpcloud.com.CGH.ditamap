@@ -101,7 +101,7 @@
     </topichead>
     <topichead navtitle="Administration" locktitle="yes">
       <topichead navtitle="KVM Region Administrator Guide (On-Line)" locktitle="yes">
-        <topicref href="CarrierGrade/AdminGuideKVM/CGH-2-KVM-Admin.ditamap" format="ditamap"/>
+        <mapref href="CarrierGrade/AdminGuideKVM/CGH-2-KVM-Admin.ditamap"/>
       </topichead>
       <topicref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.dita"
         navtitle="KVM Region Administrator Guide (PDF)" locktitle="yes"/>
