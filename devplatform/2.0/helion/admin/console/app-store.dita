@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5271">
+<title>HPE Helion 2.0 Development Platform: Sample Applications</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>The Sample Applications are a collection of ready-to-run applications which can be
+deployed with a couple of clicks. This interface uses the same API as the CLI client to pull the source code from a Git repository rather than push an archive from the user's local
+filesystem.</p>
+<ul>
+<li>
+<xref type="section" href="#topic5271/creating-an-app-store">Creating Sample Applications</xref>
+
+<ul>
+<li>
+<xref type="section" href="#topic5271/app-store-definition">Sample Applications Definition File</xref>
+</li>
+<li>
+<xref type="section" href="#topic5271/hosting-the-store-definition-files">Hosting Definition Files</xref>
+</li>
+</ul>
+</li>
+<li>
+<xref type="section" href="#topic5271/adding-the-app-store-to-helion">Adding the Sample Applications to the Application Lifecycle Service</xref>
+</li>
+</ul>
+<p>Users have access to the main Sample Applications interface (see the <xref href="../../user/helion_user_index.dita" >Application Lifecycle Service User Guide</xref>, but do not have access to add new applications or add/modify the definition file.</p>
+<section id="creating-an-app-store"> <title>Creating Sample Applications</title>
+<p>The Sample Applications interface exposes multiple "stores" which specify the
+available applications. These stores are sourced from definition files
+specified in the main <xref href="console_settings.dita">Console Settings</xref> page of
+  the Management Console or set using <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >kato
+config</xref>.</p>
+</section>
+<section id="app-store-definition"> <title>Sample Applications Definition File</title>
+<p>
+  <xref href="../../user/reference/glossary.dita#topic6187/term-YAML" type="section"   >YAML</xref> files describe the settings for each set of apps, including the container and a link to the source  repository for
+each app. For example:</p>
+<codeblock>store:
+  title: Third Party Apps for Application Lifecycle Service Development Platform
+  contact: Application Lifecycle Service Development Platform Support 
+  icon: http://static.als.hpcloud.com/hp.ico
+
+apps:
+- name: Bugzilla
+  id: bugzilla
+  desc: A bug tracking system for individuals or groups of developers
+  framework: perl
+  runtime: perl514
+  services: mysql
+  license: MPL
+  commit: master
+  src: https://github.com/Helion-Apps/bugzilla.git
+  info: https://github.com/Helion-Apps/bugzilla.git#readme
+  icon: https://get.helion.com/store/icon/bugzilla.png
+  mem: 256
+
+- name: Django CMS
+  id: django-cms
+  desc: A content management system platform for publishing content on the internet.
+  framework: python
+  runtime: python27
+  services: postgresql
+  license: BSD
+  commit: helion
+  src: https://github.com/Helion-Apps/django-cms.git
+  info: https://github.com/Helion-Apps/django-cms.git#readme
+  icon: https://get.helion.com/store/icon/django-cms.png
+  mem: 128
+
+- name: Node Chat
+  id: node-chat
+  desc: A simple chat application in Node.js with no other dependencies. Originally written by Ryan Dahl, the creator of Node.js.
+  framework: node
+  runtime: node
+  commit: master
+  icon: https://get.helion.com/store/icon/chat.png
+  mem: 64
+  license: MIT
+  src: https://github.com/Helion-Apps/node-chat.git
+  info: https://github.com/Helion-Apps/node-chat.git#readme</codeblock>
+<p>The YAML string requires two top-level keys: <b>store</b>
+and <b>apps</b>.</p>
+</section>
+<section id="store"> <title>store</title>
+<p>Contains entries that define the container for each set of Sample Applications.</p>
+<p>
+<b>title</b>:Text used as a display name for the Sample Applications in the Management Console.</p>
+<p>
+<b>contact</b>: The name and email address of the party responsible for maintaining these sample applications.</p>
+<p>
+<b>icon</b>: An image used for the Sample Applications icon. Specified as a full URL.</p>
+</section>
+<section id="apps"> <title>apps</title>
+<p>This is an array of items (see YAML format above), one for each app in the container. Each app is defined by the following fields:</p>
+<p>
+<b>name</b>:   The name of the app as displayed in the Sample Applications list.</p>
+<p>
+<b>desc</b>:   A short description of the app, displayed below the name.</p>
+<p>
+<b>id</b>: A short, lowercase, unique string associated with the app. Apps are sorted alphabetically in the list based on this field.</p>
+<dl>
+<dlentry>
+<dt>
+<b>repo</b>
+</dt>
+<dd>URL of the Git repository where the app code resides.</dd>
+</dlentry>
+
+
+<dlentry>
+<dt>
+<b>commit</b>
+</dt>
+<dd>Branch name, tag name, or exact commit hash to use. If unspecified, the HEAD commit of <i>master</i> branch is used.</dd>
+</dlentry>
+
+
+<dlentry>
+<dt>
+<b>framework</b>
+</dt>
+  <dd>The framework the app uses, if the app is deployed using the <xref href="../../user/deploy/buildpack.dita#topic3370/built-in-buildpacks" type="section"   >Legacy Buildpack</xref>(e.g. perl, python, node, rails3).</dd>
+</dlentry>
+
+
+<dlentry>
+<dt>
+<b>icon</b>
+</dt>
+<dd>An image used for the app icon specified either as a full URL, a file relative to the <b>store</b> key <b>icon-url</b>
+URL, <b>default</b>, or other variable value.</dd>
+</dlentry>
+
+
+<dlentry>
+<dt>
+<b>info</b>
+</dt>
+<dd>A URL pointing to documentation for the app.</dd>
+</dlentry>
+
+
+<dlentry>
+<dt>
+<b>license</b>
+</dt>
+<dd>Optional string indicating the software license of the app (e.g.
+ <codeph>MIT</codeph>, <codeph>MPL</codeph>,
+ <codeph>BSD</codeph>).</dd>
+</dlentry>
+
+
+<dlentry>
+<dt>
+<b>mem</b>
+</dt>
+<dd>Memory requirements of the app (integer, in MB).</dd>
+</dlentry>
+
+
+<dlentry>
+<dt>
+<b>runtime</b>
+</dt>
+  <dd>The runtime, if the app is deployed using the <xref href="../../user/deploy/buildpack.dita#topic3370/built-in-buildpacks" type="section"   >Legacy Buildpack</xref> (e.g. java, python32, ruby19, php, perl518).
+<b>services</b>
+</dd>
+<dd>Data services required by the app.</dd>
+</dlentry>
+
+
+
+</dl>
+      <note> The store definition settings do <b>not</b> override settings in the application's
+          <i>manifest.yml</i> file.</note>
+</section>
+<section id="hosting-the-store-definition-files"> <title>Hosting the Definition Files</title>
+<p>The YAML files defining the stores can be served via HTTP or HTTPS by
+any web server at a URL accessible from the Cloud Controller.</p>
+</section>
+<section id="adding-the-app-store-to-helion"> <title>Adding the Sample Applications to Application Lifecycle Service</title>
+<ol>
+<li>Log into the <xref href="console_index.dita">Management
+Console</xref>,</li>
+<li>Select <b>Settings &gt; Cloud Controller</b> from the menu.</li>
+<li>In the <b>Sample Applications URLs</b> section, enter a name and content URL for
+your store definition YAML file then click <b>Add Sample Applications URL</b>.</li>
+</ol>
+<p>To confirm the Sample Applications are loading correctly, select <b>Sample Applications</b> in the menu and view the list of applications displayed. A <b>CC Catalog Manager</b> error appears in the Event Log if a Sample Applications URL fails to load.</p>
+<p>Sample Applications URLs can also be viewed, added, deleted, enabled, and disabled
+  with <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >kato config</xref>. For
+example:</p>
+<codeblock>kato config get cloud_controller_ng app_store</codeblock>
+</section>
+</body>
+</topic>

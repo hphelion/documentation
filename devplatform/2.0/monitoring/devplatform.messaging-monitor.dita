@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_messaging_manage_horizon">
+  <title>Monitoring the messaging service from the Operations Console</title>
+  <body>
+    <p>This topic describes monitoring information available through the Operations Console. </p>
+    <p>The monitoring console can generate the following alarms:
+      <table frame="all" rowsep="1" colsep="1" id="table_cry_hwm_nt">
+        <tgroup cols="4">
+          <colspec colname="AlarmName" colnum="1" colwidth="1.0*"/>
+          <colspec colname="Metric" colnum="2" colwidth="1.0*"/>
+          <colspec colname="AlarmID" colnum="3" colwidth="1.0*"/>
+          <colspec colname="Threshold" colnum="4" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Alarm name</entry>
+              <entry>Description</entry>
+              <entry>Likely Cause</entry>
+              <entry>Mitigation tasks to perform</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>HTTP Status</entry>
+              <entry>component=cue-api</entry>
+              <entry>API is unresponsive</entry>
+              <entry>Restart Apache</entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>process_name=cue-worker</entry>
+              <entry>Supervisor stopped</entry>
+              <entry>Use supervisor to start all workers</entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>process_name=cue-monitor</entry>
+              <entry>cue-monitor process crashed</entry>
+              <entry>Restart cue-monitor service</entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>process_name=mysqld</entry>
+              <entry>mysql process crashed</entry>
+              <entry>Restart mysql service</entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>process_name=org.apache.zookeeper.server</entry>
+              <entry>zookeeper process crashed</entry>
+              <entry>Restart zookeeper service</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table></p>
+    <note> When looking at the Ops Console, alarms for MySQL and Zookeeper appear in the <b>No
+        Service Defined </b>panel, not the<b> Messaging as a Service</b> panel. This is a known
+      issue.</note>
+  </body>
+</topic>

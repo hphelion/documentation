@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2065">
+<title>HPE Helion 2.0 Development Platform: Connecting the Database Service with the Application Lifecycle Service</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="System Engineer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+    <p>If a more durable or scalable MySQL database service is needed, ensure your ALS cluster is
+      configured to use a database instance or master/slave pair provided by the Database Service.
+      This is an option at cluster create time.</p>
+    <p><cite>ALS cluster create wizard </cite></p>
+    <p>
+      <image href="../../../media/databaseALS.png"/>
+    </p>
+    <section id="configure">
+      <title>Configuration</title>
+      <p>Alternatively, if the Database Service was not integrated with the cluster at the time of
+        cluster creation, the administrator of the ALS cluster can switch from the unmanaged MySQL
+        service to the managed Database Service using the following kato commands:</p>
+      <ol>
+        <li>Enable the root user on the database instance you want to join to the ALS cluster</li>
+        <li>SSH to the ALS cluster instances and use the kato admin client. </li>
+        <li>Set the endpoint details including hostname, port, root user, and
+          password:<codeblock>kato config set mysql_node mysql/host 10.5.120.101
+kato config set mysql_node mysql/port 3306
+kato config set mysql_node mysql/user root
+kato config set mysql_node mysql/pass CorrectHorseBatteryStaple</codeblock></li>
+        <li>Increase the timeout settings to make the <xref href="http://code.macournoyer.com/thin/"
+            scope="external" format="html">
+            <i>thin</i>
+          </xref> mysql_gateway connect reliably to the database instance. </li>
+        <li>Run the following
+          commands:<codeblock>kato config set mysql_node connection_wait_timeout 100
+kato config set mysql_node keep_alive_interval 60</codeblock></li>
+      </ol>
+      <p>Application deployment does not change between the managed and unmanaged versions of the
+        MySQL service. A developer connects to and interacts with the MySQL database in exactly the
+        same way regardless of which service is used.</p>
+      <p>The benefits of the unmanaged service include a lighter footprint (fewer virtual machines)
+        and no dependency on the Database Service being configured and available. The managed
+        service provides full lifecycle management and scalability; capabilities not found in the
+        unmanaged service.</p>
+    </section>
+  </body>
+</topic>

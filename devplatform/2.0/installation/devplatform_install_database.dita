@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_vsf_hnh_ts">
+  <title>HPE Helion 2.0 Development Platform: Install the Database Service</title>
+  <body>
+<section id="install-database">
+      <title>Prerequisites</title>
+      <ul>
+        <li>The HDP Installer 2.0, also known as HDPI, must already <xref
+            href="devplatform_install_platform.dita#topic_gly_xmh_ts">be installed</xref>.</li>
+        <li>A properly configured <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt"
+            >clouds.yaml</xref> file.</li>
+        <li>Configure <xref href="install_dbaas_configureAvailabilityZones.dita#topic_hhh_lm4_xt"
+            >Availability Zones</xref>, if your installation requires them.</li>
+        <li><xref href="install_dbaas_checkQuotas.dita#topic_sjz_wm4_xt">Check your quotas</xref> to
+          ensure you have sufficient space, particularly if your installation is configured for high
+          availability.</li>
+      </ul>
+    </section>
+
+<section id="dbaas_installation">
+      <title>Install the Database Service </title>
+      <ol id="ol_xct_5dz_nt">
+        <li>SSH into the HP Helion OpenStack Deployer. (This is the same location where the HDPI has
+          been installed.)</li>
+        <li>Source the Virtual
+          Environment.<codeblock>source /opt/stack/venv/&lt;dpi-venv&gt;/bin/activate</codeblock></li>
+        <li>Install the database service.
+       <ol> <li>If you <xref href="install_offline.dita#topic_w25_hqp_xt">pre-downloaded</xref> the
+              installation
+                files:
+         <codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
+openstack --os-cloud mycloud hdpi database install <i>&lt;filename></i></codeblock><note>Make
+                sure you run the installer from the <b>same</b> directory where the installation
+                files are saved. If the installer cannot find a file with the name you provided in
+                the local directory, it will attempt to download the files again. </note></li>
+        <li>If you did not pre-download the file: <ol id="ol_fcs_t5r_yt">
+                <li>Find the most recent version of the file. Note that this command provides only a
+                  quick list of recent files; there are <xref
+                    href="install_listOptions.dita#listContent">more complete listing options</xref>
+                  available that include installation
+                  status.<pre>openstack --os-cloud mycloud hdpi list</pre>The output should look
+                  similar
+                  to:<pre>+----------------------------+----------------+-----------+------------+
+| service                    | id             | version   | state      |
++----------------------------+----------------+-----------+------------+
+| Helion Code Engine         | wscatalog.2776 | 1.0.0     | available  |
+| als                        | wscatalog.2765 | 2.0.0.539 | available  |
+| als                        | wscatalog.2800 | 2.0.0.548 | available  |
+| database                   | wscatalog.2762 | 2.0.0.32  | available  |
+<b>| database                   | wscatalog.2803 | 2.0.0.37  | available  |</b>
+| messaging                  | wscatalog.2761 | 1.0.0     | available  |
+| messaging                  | wscatalog.2796 | 1.0.0.165 | available  |
++----------------------------+----------------+-----------+------------+</pre></li>
+                <li>Find the<b> ID number</b> of the most recent version of the service (the highest
+                  ID number for that service).</li>
+                <li>If desired, inspect the installation files for size, version, and other detailed
+                  information.<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock></li>
+                <li>Begin the download and
+                  installation:<codeblock>openstack --os-cloud mycloud hdpi database install wscatalog.####</codeblock></li>
+              </ol><note> Downloading may take a significant amount of time; depending on network
+                traffic, it could take 20-90 minutes.</note></li>
+            <li>During installation, this command will generate output similar to the following:
+              <codeblock>Database is (downloaded)
+Database is already (available)
+Database is already configured
+Launching stack...
+Stack trove creating
+Completed installing database
+$</codeblock></li></ol></li></ol></section>
+
+<section id="configure_haproxy"><sectiondiv><p><b>Configure HAProxy</b></p>The following steps will configure HAProxy to receive and
+        forward HTTP requests to the VM that hosts the REST API endpoint for the Database Service.<ol>
+          <li> Identify all the API server IPs on the SVC network. <p>
+              <codeblock>openstack server list | awk '/trove[0-9]*_api/{ print $4,"\t", substr($8,5) }'</codeblock>
+            </p></li>
+          <li> Identify the Virtual IP used to load balance the HPE Helion OpenStack
+            services.<codeblock>openstack endpoint list | grep database | grep public | awk '{ print $14 }' | awk -F':' '{ print $2 }' | awk -F'/' '{ print $3 }'</codeblock></li>
+          <li> Update configuration of the HPE Helion OpenStack controller nodes. The following
+            commands are run from the HLM deployer node.<ol>
+              <li>Navigate to the following directory.
+                <codeblock>cd ~/helion/my_cloud/config/haproxy/</codeblock></li>
+              <li>Open the <codeph>haproxy.cfg.j2</codeph> file for editing. Add the following lines
+                to the Custom Configuration section at the bottom of the
+                  file.<codeblock>listen trove_api
+bind &lt;<i>virtual IP from step 2</i>&gt;:8779 ssl crt <i>&lt;path to certificate file/certFileName&gt; </i>
+option httpchk GET /
+server trove-trove&lt;<i>n</i>>_api-&lt;<i>uniqueid</i>> &lt;<i>API server n's IP Address</i>> check inter 2000 rise 2 fall 5
+server trove-trove&lt;<i>n+1</i>>_api-&lt;<i>uniqueid</i>> &lt;<i>API server n+1's IP Address</i>> check inter 2000 rise 2 fall 5</codeblock><note>The
+                  last line in the codeblock should be repeated once for <b>each</b> API server
+                  identified in step 1. </note><note>The <codeph>ssl cert</codeph> information in
+                  the <b>bind</b> statement only applies if SSL has been enabled for public
+                  endpoints. If SSL has not been enabled, omit this section of the statement. To
+                  locate the filepath, navigate to
+                    <codeph>~/helion/hos/ansible/roles/tls-frontend/defaults/main.yml</codeph> and
+                  find the value of the <codeph>frontend_server_cert_directory</codeph> parameter.
+                  To find the file name, open the
+                    <codeph>/home/stack/helion/my_cloud/definition/data/network_groups.yml</codeph>
+                  file and find the value for the <codeph>cert-file</codeph> parameter. </note></li>
+              <li>Persist the updated configuration
+                file.<codeblock>git commit -a -m "updated haproxy for database service"</codeblock></li>
+              <li>Ready a new HLM
+                deployment.<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+              <li>Update the HAProxy
+                configuration.<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts FND-CLU-reconfigure.yml</codeblock></li>
+            </ol></li>
+          <li>On each controller node, edit the IP table filtering rules to permit access by the
+            Trove service on port 8779.
+            <codeblock>sudo iptables -I INPUT -p tcp --dport 8779 -j ACCEPT</codeblock></li>
+        </ol></sectiondiv></section>
+
+ 
+  </body>
+</topic>

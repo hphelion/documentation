@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5165">
+<title>HPE Helion 2.0 Development Platform: Application Logs</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+  <othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>Logs for applications running on Application Lifecycle Service are aggregated into streams so that data from multiple instances can be viewed together and filtered. Application log streams can be accessed via:</p>
+<ul>
+<li>the <xref href="../../admin/console/customize.dita">
+          <i>Management Console</i>
+        </xref> using the <b>View Logs</b> button on the Application Details page, or</li>
+  <li>the <xref href="../reference/client-ref-information.dita#topic17778/command-files" type="section"   >
+<i>helion logs</i>
+</xref>
+command</li>
+  <li>application log <xref href="#topic5165/helion-drain" format="dita"><i>drains</i>
+        </xref></li>
+</ul>
+<p>Log streams are tailed output from actual log files in each application
+container, which are generally found in the <i>/home/helion/logs/</i> directory.
+  These files can be accessed with the <xref href="../reference/client-ref-information.dita#topic17778/command-files" type="section"   >
+<i>helion
+files</i>
+</xref> command or from the
+Application details page of the <xref href="../../admin/console/customize.dita">
+<i>Management
+Console</i>
+</xref>.</p>
+<p>
+      <note>These files are not automatically rotated. For long-running applications or verbose
+        logs, you should <xref href="#topic5165/rotating-application-log-files" format="dita"
+            ><i>rotate them</i></xref> to avoid filling up the application container's filesystem.</note>
+    </p>
+<section id="helion-logs">
+      <title>helion logs</title>
+
+      <note id="must_exist">The file being monitored must already exist <b>before</b> apptail begins
+        monitoring. Use the application code, the buildpack, a pre-staging hook or a post-staging
+        hook to create the file before the app instance is created.</note> 
+      <p>To view an application log stream, use the <xref
+          href="../reference/client-ref-information.dita#topic17778/command-logs"
+          type="section">
+          <i>helion logs</i>
+        </xref> command:</p>
+      <codeblock>helion logs myapp</codeblock>
+      <p>To limit the number of lines displayed, use the <codeph>--num</codeph> option:</p>
+      <codeblock>helion logs myapp --num 50</codeblock>
+      <p>To view a log stream as it is updated, use the <codeph>--follow</codeph> option:</p>
+      <codeblock>helion logs myapp --follow</codeblock>
+      <p>Log streams can be filtered on a number of parameters:</p>
+      <ul>
+        <li>
+          <b>--text</b> does a glob pattern match on the log message</li>
+        <li>
+          <b>--instance</b> shows only logs from the specified application instances (starting at
+          instance 0).</li>
+        <li>
+          <b>--filename</b> filters based on the log filename (e.g. 'stderr.log')</li>
+        <li>
+          <b>--source</b> shows only logs from the specified source ('app' or 'staging'). Without a
+          source specified, the log stream includes staging and application logs as well as cloud
+          events relevant to app.</li>
+      </ul>
+      <p>The <codeph>--json</codeph> flag can be used to return each log line as a JSON object. </p>
+      <p>
+        <note>
+          <codeph>helion logs</codeph> buffers only 400 lines of the log stream history (i.e. lines
+          generated prior to it being run). If you need earlier log lines, use the <xref
+            href="../reference/client-ref-information.dita#topic17778/command-files"
+            type="section">
+            <i>helion files</i>
+          </xref> command to fetch the relevant log file from the <i>logs/</i> directory or create a
+          log <xref href="#topic5165/helion-drain" format="dita"><i>drain</i></xref> preemptively
+          (where possible).</note>
+      </p>
+    </section>
+<section id="adding-files-to-the-stream"> <title>Adding Files to the Stream</title>
+      <note conref="#topic5165/must_exist"/> 
+<p>By default, <codeph>helion logs</codeph> streams log data from
+<i>staging_tasks.log</i> (while staging), <i>stdout.log</i> and <i>stderr.log</i>
+(while running).</p>
+<p>You can add up to five additional files to the log stream by modifying
+the <b>HELION_LOG_FILES</b> environment variable in the
+<xref href="manifestyml.dita">
+<i>manifest.yml</i>
+</xref> file or using <xref href="../reference/client-ref-management.dita#topic50918/command-set-env" type="section"   >
+<i>helion set-env</i>
+</xref>.</p>
+<p>The variable should contain a list of named files separated with ":" in
+the following format:</p>
+<codeblock>name=/path/to/file.log:name=/path/to/another.log</codeblock>
+<p>The <i>name</i> used in the value or individual variable name becomes part of
+each log line, and can be used for filtering the stream.</p>
+<p>For example, to add a specific Tomcat log file to the default \$HELION_LOG_FILES variable, you could add the following lines to <i>manifest.yml</i>:</p>
+<codeblock>env:
+  HELION_LOG_FILES: tomcat=/home/helion/tomcat/logs/catalina.2013-11-04.log:$HELION_LOG_FILES</codeblock>
+<p>Paths can be fully specified or specified relative to \$HELION_APP_ROOT.</p>
+</section>
+<section id="helion-drain"> <title>helion drain</title>
+  <p>The <xref href="../reference/client-ref-management.dita#topic50918/command-drain-add" type="section"   >
+<i>helion drain add</i>
+</xref> command is used to create a log drain which forwards application logs to external log aggregation services, log analysis tools, or Redis databases. For example:</p>
+<codeblock>helion drain add myapp appdrain udp://logs.papertrailapp.com:12345</codeblock>
+<p>This creates a UDP drain called <b>appdrain</b> for the application <b>myapp</b> which forwards all log messages and events for that application to <xref href="http://papertrailapp.com/" scope="external" format="html" >Papertrail</xref> on port 12345.</p>
+<p>The log drain URL can contain only:</p>
+<ul>
+<li>
+<b>scheme</b>: <codeph>udp://</codeph> or <codeph>tcp://</codeph>
+</li>
+<li>
+<b>host</b>: IP address or hostname</li>
+<li>
+<b>port</b>: number</li>
+</ul>
+<p>Any additional parameters are discarded.</p>
+<p>To delete the drain:</p>
+<codeblock>helion drain delete appdrain</codeblock>
+<p>Use the --json option send the log lines in JSON format:</p>
+<codeblock>helion drain add myapp jsondrain --json udp://logs.papertrailapp.com:12346</codeblock>
+<p>To check the status of your application drains, use the <i>helion drain list</i> command.</p>
+<p>
+        <note>If the service at the receiving end of the drain goes offline or becomes disconnected,
+          Application Lifecycle Service will retry the connection at increasing intervals.</note>
+      </p>
+</section>
+<section id="rotating-application-log-files"> <title>Rotating Application Log Files</title>
+<p>Application Lifecycle Service does not automatically rotate application log files in
+<i>/home/helion/logs/</i>. However, you can add log rotation for these
+files yourself using <codeph>cron</codeph> and
+<codeph>logrotate</codeph>. Programming languages, frameworks, and utilities handle logging
+operations in different ways. Check for incompatibilities with
+<codeph>logrotate</codeph> before implementing log rotation scheme using it.</p>
+<ol>
+<li> Add a cron key in <i>manifest.yml</i> to run <codeph>logrotate</codeph>. Set
+          HELION_CRON_INSTANCES to "all" to specify that the job should be run in all application
+          instances. For
+            example:<codeblock>env:
+  HELION_CRON_INSTANCES: all
+cron:
+  - 0 1 * * * /usr/sbin/logrotate --state /home/helion/app/logrotate-state /home/helion/app/app-logrotate.conf</codeblock><p>The
+              <codeph>--state</codeph> option must be set because the <codeph>helion</codeph> user
+            does not have permission to update the default state file.</p></li>
+<li> Add an <i>app-logrotate.conf</i> file to the base directory of your application to specify
+          which log files to rotate, and which <codeph>logrotate</codeph> options to use. For
+          example:<codeblock>/home/helion/logs/\*.log {
+  daily
+  compress
+  copytruncate
+  dateext
+  missingok
+  notifempty
+  rotate 3
+  maxage 7
+  size 3M
+}</codeblock></li>
+</ol>
+</section>
+</body>
+</topic>

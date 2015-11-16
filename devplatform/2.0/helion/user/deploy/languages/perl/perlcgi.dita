@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic751">
+<title>HPE Helion 2.0 Development Platform: Perl CGI</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>The <i>perlcgi</i> framework can be used to run any CGI script. Like the <xref
+        href="perl_index.dita#topic8895">perl</xref> framework, it provides ActivePerl in the default
+      PATH and supports module installation via <xref type="section"
+        href="perl_index.dita#topic8895/cpan-modules-via-ppm">PPM</xref> and <xref type="section"
+          href="perl_index.dita#topic8895/cpan-modules-via-cpanm">cpanm</xref>. </p>
+    <p>Unlike the perl framework, setting the <xref type="section"
+        href="../../../deploy/manifestyml.dita#topic20922/start-file"><i>start-file</i></xref>
+      option has no effect, as there is no permanently running application. A new instance of a CGI
+      script is started for each request.</p>
+<p>Perl scripts deployed with this framework should begin with: </p>
+<codeblock>#!/usr/bin/env perl</codeblock>
+<section id="example"> <title>Example</title>
+<ul>
+<li>
+<xref href="https://github.com/Stackato-Apps/perlcgi-env" scope="external" format="html" >perlcgi-env</xref>: A simple Perl CGI script that displays environment variables.</li>
+</ul>
+</section>
+</body>
+</topic>

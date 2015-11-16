@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic958">
+<title>HPE Helion 2.0 Development Platform: ALS Command Reference: History</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic958/command-history-clear">helion history clear</xref>: Clear the saved history.</li>
+<li>
+<xref type="section" href="#topic958/command-history-limit">helion history limit</xref>: Limit the size of the history or display the current limit.</li>
+<li>
+<xref type="section" href="#topic958/command-history-list">helion history list</xref>: Show the saved history of commands.</li>
+</ul>
+<section id="syntax"> <title>Syntax</title>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
+<p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="command-history-clear"> <title>helion history clear</title>
+<p>Clear the saved history.</p>
+<table>
+<tgroup cols="1">
+<colspec colname="col1"/>
+<tbody>
+<row>
+    <entry>
+      <b>Option</b>
+    </entry>
+  </row>
+<row>
+    <entry>None.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-history-limit"> <title>helion history limit &lt;<i>n</i>&gt;</title>
+<p>Limit the size of the history. If no limit is specified in the command, the current limit is displayed.</p>
+<table>
+<tgroup cols="1">
+<colspec colname="col1"/>
+<tbody>
+<row>
+    <entry>
+      <b>Option</b>
+    </entry>
+  </row>
+<row>
+    <entry>None.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-history-list"> <title>helion history list</title>
+<p>Show the saved history of commands.</p>
+<table>
+<tgroup cols="1">
+<colspec colname="col1"/>
+<tbody>
+<row>
+    <entry>
+      <b>Option</b>
+    </entry>
+  </row>
+<row>
+    <entry>None.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</body>
+</topic>

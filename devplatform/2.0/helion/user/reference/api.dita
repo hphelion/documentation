@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic455">
+<title>HPE Helion 2.0 Development Platform: Application Lifecycle Service API</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>HPE Helion Development Platform Application Lifecycle Service is fully compatible with the <xref href="http://docs.cloudfoundry.org/services/api-v2.0.html" scope="external" format="html" >Cloud Foundry v2 API</xref>.</p>
+<section id="related-documentation"> <title>Related Documentation </title>
+<ul>
+<li>
+<xref href="client-ref.dita" >Client Command Reference</xref>
+</li>
+<li>
+<xref href="../../admin/reference/kato-ref.dita" >
+<i>kato</i> Command Reference</xref>
+</li>
+</ul>
+</section>
+</body>
+</topic>

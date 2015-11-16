@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_txg_cnh_ts">
+  <title>HPE Helion 2.0 Development Platform: Install the Application Lifecycle Service
+    (ALS)</title>
+  <body><section>
+      <title>Prerequisites</title>
+      <ul id="ul_p2s_flz_wt">
+        <li>The HDP Installer 2.0, also known as HDPI, must already <xref
+            href="devplatform_install_platform.dita#topic_gly_xmh_ts">be installed</xref>.</li>
+        <li>A properly configured <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt"
+            >clouds.yaml</xref> file. Note that there is no specific sub-section in the clouds.yaml
+          file for the Application Lifecycle Service.</li>
+      </ul>
+    </section>
+      <section>
+            <title>Install ALS</title>
+            <ol>
+                <li>SSH into the HP Helion OpenStack Deployer. (This is the same location where the
+                    HDPI has been installed.)</li>
+                <li> Source the Virtual
+                    Environment.<pre>source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate </pre></li>
+                <li>Install the Application Lifecycle Service <ol>
+                        <li>If you <xref href="install_offline.dita#topic_w25_hqp_xt"
+                                >pre-downloaded</xref> the installation file, run the following
+                            command to install
+                                it:<codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
+openstack --os-cloud mycloud hdpi als install <i>&lt;filename></i></codeblock><note>Make
+                                sure you run the installer from the same directory where the
+                                installation files are. If the installer cannot find a file with the
+                                name you provided in the local directory, it will attempt to
+                                download the files again. </note></li>
+                        <li>If you did not pre-download the file: 
+                            
+                            <ol>
+                                <li>Find the most recent version of the file.  Note that this
+                                    command provides only a quick list of recent files; there are
+                                        <xref href="install_listOptions.dita#listContent">more
+                                        complete listing options</xref> available that include
+                                    installation
+                                    status.<pre>openstack --os-cloud mycloud hdpi list</pre> The
+                                    output should look similar
+                                    to:<pre>+----------------------------+----------------+-----------+------------+
+| service                    | id             | version   | state      |
++----------------------------+----------------+-----------+------------+
+| Helion Code Engine         | wscatalog.2776 | 1.0.0     | available  |
+| als                        | wscatalog.2765 | 2.0.0.539 | available  |
+<b>| als                        | wscatalog.2800 | 2.0.0.548 | available  |</b>
+| database                   | wscatalog.2762 | 2.0.0.32  | available  |
+| database                   | wscatalog.2803 | 2.0.0.37  | available  |
+| messaging                  | wscatalog.2761 | 1.0.0     | available  |
+| messaging                  | wscatalog.2796 | 1.0.0.165 | available  |
++----------------------------+----------------+-----------+------------+</pre></li>
+                                <li>Find the<b> ID number</b> of the most recent version of the
+                                    service (the highest ID number for that service).</li>
+                                <li>If desired, inspect the installation files for size, version,
+                                    and other detailed
+                                    information.<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock></li>
+                                <li>Begin the download and
+                                        installation:<codeblock>openstack --os-cloud mycloud hdpi als install wscatalog.####</codeblock><note>
+                                        Downloading may take a significant amount of time; depending
+                                        on network traffic, it could take 20-90
+                                    minutes.</note>During installation, this command will generate
+                                    output similar to the following:
+                                    <codeblock>Downloading Application Lifecycle Service which is available 
+Application Lifecycle Service not downloaded (available) 
+Application Lifecycle Service not downloaded (downloading)
+... 
+Application Lifecycle Service is (downloaded) 
+Staging Application Lifecycle Service in Glance/Swift 
+Application Lifecycle Service is staged 
+UI installed for application lifecycle service 
+Create service endpoint for service application lifecycle service 
+Completed installing application </codeblock>
+                                </li></ol></li></ol></li></ol></section>
+        
+  </body>
+</topic>

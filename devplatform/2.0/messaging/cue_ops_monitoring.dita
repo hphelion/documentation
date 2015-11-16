@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ycg_5yd_lt">
+  <title>HPE Helion 2.0 Development Platform: Monitoring Messaging</title>
+  <body>
+    <p>Each service team has configured alarms for its service. This page documents the recommended
+      troubleshooting steps for each alarm.</p>
+   <section><title>Cue</title>
+      <table frame="all" rowsep="1" colsep="1" id="table_jsq_hqs_wt">
+           <tgroup cols="4">
+          <colspec colname="c1" colnum="1"/>
+          <colspec colname="c2" colnum="2"/>
+          <colspec colname="c3" colnum="3"/>
+          <colspec colname="c4" colnum="4"/>
+          <thead>
+            <row>
+              <entry>Alarm Name</entry>
+              <entry>Description</entry>
+              <entry>Likely Cause</entry>
+              <entry>Mitigation Tasks to Perform</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>HTTP Status </entry>
+              <entry>component=cue-api</entry>
+              <entry> API is unresponsive </entry>
+              <entry>Restart Apache </entry>
+            </row>
+            <row>
+              <entry>Process Check </entry>
+              <entry>process_name=cue-worker </entry>
+              <entry>Supervisor stopped </entry>
+              <entry>Use supervisor to start all workers </entry>
+            </row>
+            <row>
+              <entry>Process Check </entry>
+              <entry>process_name=cue-monitor</entry>
+              <entry>Process crashed</entry>
+              <entry>Restart cue-monitor service </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section><section><title>RabbitMQ</title>
+      <table frame="all" rowsep="1" colsep="1">
+        <tgroup cols="4">
+          <colspec colname="c1" colnum="1" colwidth="1*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.25*"/>
+          <colspec colname="c3" colnum="3" colwidth="1.56*"/>
+          <colspec colname="c4" colnum="4" colwidth="2.41*"/>
+          <thead>
+            <row>
+              <entry>Alarm Name</entry>
+              <entry>Description</entry>
+              <entry>Likely Cause</entry>
+              <entry>Mitigation Tasks to Perform</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Process Check  </entry>
+              <entry>rabbitmq-server process not running</entry>
+              <entry> Process crashed. </entry>
+              <entry>
+                <ul id="ul_u2p_3ts_wt">
+                  <li>Restart process on affected node.</li>
+                  <li>Review logs to determine cause.</li>
+                </ul>
+              </entry>
+            </row>
+            <row>
+              <entry>RabbitMQ Queue Depth </entry>
+              <entry>Alarms when the depth of the message queue is high. </entry>
+              <entry>
+                <ul id="ul_s1v_lts_wt">
+                  <li>System load or a slow/failed consumer.</li>
+                  <li>If only a single queue is slowing, the consumer could be down. </li>
+                </ul>
+              </entry>
+              <entry>Look for high load throughout the system. This alarm can fire for multiple
+                queues and multiple machines. Finding out which ones it fired on will help determine
+                the cause. </entry>
+            </row>
+          </tbody>
+        </tgroup></table>
+    
+    </section>
+  </body>
+</topic>

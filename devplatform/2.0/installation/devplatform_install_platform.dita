@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_gly_xmh_ts">
+  <title>HPE Helion 2.0 Development Platform: Install the Service Installer</title>
+  <body>
+    <section><p>The installation procedure has changed significantly since the last release. The HDP Installer
+        2.0, also known as HDPI, is a plugin for the python-openstackclient (OSC). It is able to
+        leverage the authentication, configuration and command line option parsing that is already
+        part of OSC to greatly simplify the installation process.</p><note type="warning">You must have
+            <xref href="devplatform_install_prereq.dita#topic_x54_njh_ts">satisfied all
+            prerequisites</xref> before beginning installation.</note><note type="important">Do not
+          source <codeph>service.osrc</codeph>, <codeph>keystone.osrc</codeph>, or <b>any</b> other
+          file before you begin.</note>
+    </section>
+
+    <section id="pre-installing-the-hp-helion-development-platform">
+      <title>Install the HPE Helion Development Platform Installation Client</title>
+      <ol>
+        <li>Using your preferred web browser, navigate to <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
+          format="html" scope="external">HPE Helion Download Network</xref> (HDN) and  create an account if you haven't done so already.</li>
+        <li>Click the <b>HPE Helion Development Platform</b> download package.<image
+            placement="break" href="../../../media/hdp_download.png" id="image_aqj_crq_yt"/></li>
+        <li>From the list of options, click <b>HPE Helion Development Platform 2.0</b>. </li>
+        <li>Click the blue <b>Download</b> button in the upper right hand corner.</li>
+        <li>The best option is to download directly to the HPE Helion OpenStack Deployer. If you can
+          not download directly to the HPE Helion OpenStack deployer, copy all the downloaded
+          packages to a USB stick or external hard drive and then copy the files onto the physical
+          machine hosting the HPE Helion OpenStack Deployer. Make sure there is enough space; the
+          file sizes can be significant.</li>
+        <li>SSH to the HPE Helion OpenStack Deployer. </li>
+        
+        <li>Create and source the Virtual Environment. In this example,
+            <codeph>&lt;dpi-venv&gt;.gz</codeph> is the name of the installer. This process creates
+          a directory under /opt which is owned by root. This directory requires sudo permissions to
+          create, so the owner of that folder needs to be changed to whatever the user will log in
+          as; in this example, the value is
+          <i>stack</i>.<codeblock>sudo mkdir -p /opt/stack/venv/&lt;dpi-venv>
+sudo tar -C /opt/stack/venv/&lt;dpi-venv&gt; -xzf &lt;dpi-venv&gt;.gz
+sudo chown stack.stack /opt/stack/venv/&lt;dpi-venv&gt; 
+source /opt/stack/venv/&lt;dpi-venv&gt;/bin/activate</codeblock></li>
+        <li>Test the installation by retrieving a list of installable files.
+            <codeblock>openstack hdpi --os-cloud mycloud list</codeblock><note>If further
+            troubleshooting information is required, add the <codeph>--debug</codeph> option to the
+            end of the previous command.</note></li>
+      </ol>
+    </section>
+  </body>
+</topic>

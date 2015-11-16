@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_gwr_qgd_ws">
+  <title>HTTP and SSL Configuration</title>
+  <body>
+    <section>
+      <p>HTTPS mode provides access to the provisioned apps using wild card SSL certificates through
+        the router or <xref href="../../user/reference/glossary.dita#topic6187/term-Nginx"
+          type="section">Nginx</xref> web server.</p>
+      <p>The ALS VM generates self-signed wildcard SSL certificates to match the unique
+          <codeph>.local</codeph> hostname it assigns itself at first boot. These certificates can
+        be found in:</p>
+      <ul id="ul_emb_1hd_ws">
+        <li>
+          <codeph>/etc/ssl/certs/helion.crt</codeph> (Public Certificate)</li>
+        <li>
+          <codeph>/etc/ssl/private/helion.key</codeph> (Used to generate the signed
+          certificates)</li>
+      </ul>
+      <p>Since these certificates are self-signed, rather than issued by a certificate authority
+        (CA), web browsers will warn that the certificate cannot be verified and prompt the user to
+        add a manual exception. To avoid this, the generated certificate for the base URL of the
+        PaaS can be replaced with a signed certificate issued by a CA. For additional Org-owned and
+        Shared domains, SSL certificates can be added using the SNI method described further
+        below.</p>
+    </section>
+    <ul>
+      <li><xref type="section" href="#topic_gwr_qgd_ws/using-your-own-ssl-certificate">Using your own SSL
+          certificate</xref>
+      </li>
+      <li>
+        <xref type="section" href="#topic_gwr_qgd_ws/adding-custom-ssl-certs-sni">Adding More SSL
+          Certificates (SNI)</xref>
+      </li>
+      <li>
+        <xref type="section" href="#topic_gwr_qgd_ws/ca-certificate-chaining">CA Certificate
+          Chaining</xref>
+      </li>
+      <li>
+        <xref type="section" href="#topic_gwr_qgd_ws/cipher">Customizing the Cipher Suites</xref>
+      </li>
+      <li>
+        <xref type="section" href="#topic_gwr_qgd_ws/generating-a-self-signed-ssl-certificate">Generating
+          a self-signed SSL certificate</xref>
+      </li>
+      <li>
+        <xref type="section" href="#topic_gwr_qgd_ws/using-your-own-ssl-certificate">Replacing the Default
+          SSL Certificate</xref>
+      </li>              <li>
+        <xref type="section" href="#topic_gwr_qgd_ws/staging-cache-app-http-proxy">Staging Cache &amp; App
+          HTTP Proxy</xref>
+      </li>
+      <li>
+        <xref type="section" href="#topic_gwr_qgd_ws/http-proxy">Upstream HTTP Proxy
+          Settings</xref>
+      </li>
+    </ul>
+    <section id="using-your-own-ssl-certificate">
+      <title>Using Your Own SSL Certificate (Replacing the Default)</title>
+      <p>On all router and controller nodes, upload your <i>.key</i> file to the
+          <i>/etc/ssl/private/</i> directory and your <i>.crt</i> file to
+        <i>/etc/ssl/certs/</i>.</p>
+      <p>Change the following settings with <i>kato config</i> to point to the new files:</p>
+      <codeblock>"sslKeyFile": "/etc/ssl/private/example.key",
+"sslCertFile": "/etc/ssl/certs/example.crt",</codeblock>
+      <p>If you are using a signed certificate and wish to enable strict SSL checking on the
+        internal REST interface (used for communication between the web console and controller), run
+        the following additional command:</p>
+      <codeblock>kato config set stackato_rest ssl/strict_ssl true </codeblock>
+    </section>
+    <section id="adding-custom-ssl-certs-sni">
+      <title>Adding More SSL Certs (SNI)</title>
+      <p>The Application Lifecycle Service router supports <xref
+          href="http://en.wikipedia.org/wiki/Server_Name_Indication" scope="external" format="html"
+          >SNI</xref>, and custom SSL certificates for domains resolving to the system can be added
+        using the <xref
+          href="../reference/kato-ref.dita#topic39432/kato-command-ref-op-custom_ssl_cert"
+          type="section">kato op custom_ssl_cert install</xref> command. Usage:</p>
+      <codeblock>kato op custom_ssl_cert install &lt;key-path&gt; &lt;cert-path&gt; &lt;domain&gt; [--wildcard-subdomains]</codeblock>
+      <p>This must be run on all router nodes in a cluster: the first one as above, subsequent
+        routers using the <codeph>--update</codeph> flag.</p>
+      <note> SNI support with multiple Application Lifecycle Service routers works only with TCP
+        load balancers (e.g. HAProxy, iptables, F5) not HTTP load balancers (e.g. Nginx, Application
+        Lifecycle Service load balancer).</note>
+    </section>
+    <section id="ca-certificate-chaining">
+      <title>CA Certificate Chaining</title>
+      <p>When using a signed certificate for Application Lifecycle Service, the certificates in the
+        chain must be concatenated in a specific order:</p>
+      <ul>
+        <li>the domain's crt file</li>
+        <li>intermediate certs</li>
+        <li>the root cert</li>
+      </ul>
+      <p>For example, to create the final certificate for the chain in Nginx format:</p>
+      <codeblock>sudo su -c "cat /etc/ssl/certs/site.crt /path/to/intermediate.crt /path/to/rootCA.crt &gt; /etc/ssl/certs/helion.crt"</codeblock>
+      <p>Once the cert is chained, restart the router processes:</p>
+      <codeblock>kato restart router</codeblock>
+      <p>Verify that the full chain is being sent by Nginx using <codeph>openssl</codeph>. You
+        should see more than one number in the list. For example:</p>
+      <codeblock>openssl s_client -connect api.stacka.to:443
+---
+Certificate chain
+ 0 s:/C=CA/ST=British Columbia/L=Vancouver/O=HPE Software Inc./OU=Application Lifecycle Service/CN=*.stacka.to
+   i:/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance CA-3
+ 1 s:/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance CA-3
+   i:/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance EV Root CA
+ 2 s:/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance EV Root CA
+   i:/C=US/O=Entrust.net/OU=www.entrust.net/CPS incorp. by ref. (limits liab.)/OU=(c) 1999 Entrust.net Limited/CN=Entrust.net Secure Server Certification Authority</codeblock>
+    </section>
+    <section id="cipher">
+      <title>Customizing the Cipher Suites</title>
+      <p/>
+    </section>
+    <section id="generating-a-self-signed-ssl-certificate">
+      <title>Generating a self-signed SSL certificate</title>
+      <p>You can re-generate Application Lifecycle Service's self-signed SSL certificate by running
+        the following command on the VM:</p>
+      <codeblock>kato op regenerate ssl_cert</codeblock>
+      <p>To do essentially the same operation manually (substituting "hostname.mydomain.com" with
+        your own details):</p>
+      <codeblock>mkdir ~/hostname.mydomain.com
+cd ~/hostname.mydomain.com
+(umask 077 &amp;&amp; touch host.key host.cert host.info)
+openssl genrsa 2048 &gt; host.key
+openssl req -new -x509 -nodes -sha1 -days 365 -key host.key -multivalue-rdn \
+        -subj "/C=CA/emailAddress=email@mydomain.com/O=company_name/CN=*.mydomain.com/CN=mydomain.com" \
+        &gt;host.crt</codeblock>
+      <p>For specific configurations that can be used in the <codeph>-subj</codeph> option, see the
+          <xref href="http://www.openssl.org/docs/apps/req.html" scope="external" format="html">Open
+          SSL</xref> documentation.</p>
+      <p>Following that, run:</p>
+      <codeblock>openssl x509 -noout -fingerprint -text &lt; host.crt &gt; host.info
+chmod 400 host.key host.crt</codeblock>
+      <p>To get the router to use the new certificate and key files, follow the steps in the <xref
+        type="section" href="#topic_gwr_qgd_ws/using-your-own-ssl-certificate">
+          <i>Using your own SSL certificate</i>
+        </xref> section above.</p>
+      <p>With any self-signed SSL certificate, you will get browser warning messages. The
+        certificate will need to be added to the browser exception rules, which you will be prompted
+        to do so when visiting one of your apps via HTTPS for the first time.</p>
+    </section>
+    <section id="http-proxy"> <title>HTTP Proxy</title>
+      <note> If your network has an HTTP proxy, the Helion client may attempt to use this when
+        connecting to api.helion-xxxx.local and fail because the changes in
+        <codeph>/etc/hosts</codeph> file are not reflected in the proxy. To work around this
+        problem in Windows, enable <codeph>\*.local</codeph> in the <codeph>ProxyOverride</codeph>
+        registry key <codeph>HCU/Software/Microsoft/Windows/CurrentVersion/Internet
+          Settings</codeph>.</note>
+      <p>In some cases, it may be a requirement that any HTTP request is first
+        handled through an upstream or parent proxy (HTTP requests may not be
+        directly routable otherwise).</p>
+      <p>In this case it is necessary to tell <xref href="../../user/reference/glossary.dita#topic6187/term-Polipo" type="section" >Polipo</xref> about the proxy so it knows how to handle this correctly.</p>
+      <ol id="ol_ljh_bkq_ms">
+        <li>Open the Polipo config file <codeph>/etc/polipo/config</codeph> and add the
+          lines:<codeblock>parentProxy = &lt;IP&gt;:&lt;PORT&gt;
+parentAuthCredentials = "myuser:mypassw"</codeblock></li>
+        <li> Then restart Polipo:<codeblock>sudo /etc/init.d/polipo restart</codeblock></li>
+        <li> If you are using a SOCKS proxy, edit the file in the same way but with the
+          lines:<codeblock>socksParentProxy=&lt;IP&gt;:&lt;PORT&gt;
+socksProxyType=socks4a | OR | socks5;</codeblock></li>
+        <li>Then restart Polipo on each
+          DEA:<codeblock>sudo /etc/init.d/polipo restart</codeblock></li>
+      </ol>
+      <p>For log info, any errors reported by Polipo are available on the
+        Application Lifecycle Service server in <codeph>/var/log/polipo/polipo.log</codeph>.</p>
+    </section>
+    <section id="staging-cache-app-http-proxy"> <title>Staging Cache &amp; App HTTP Proxy</title>
+      <p>Application Lifecycle Service caches all application dependencies that are downloaded by module managers that support the <xref href="../../user/reference/environment.dita#topic7631/http-proxy" type="section" >HTTP_PROXY</xref> environment variable (e.g. pip, PyPM, PPM, NPM, etc). This is limited to 100MB of in-memory cache.</p>
+      <p>If you have an upstream HTTP proxy that deployed applications and the
+        staging system need to traverse to access the internet, use the
+        <codeph>kato op upstream_proxy ...</codeph> command on all DEA
+        nodes:</p>
+      <codeblock>kato op upstream_proxy set 192.168.0.99:3128</codeblock>
+      <p>To remove the proxy setting:</p>
+      <codeblock>kato op upstream_proxy delete</codeblock>
+      <p>To set an HTTP proxy exclusively for apps, add an <b>environment\app_http_proxy</b> setting in the dea_ng
+        config using <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-config" type="section" >kato config set</xref>. For example:</p>
+      <codeblock>kato config set dea_ng environment/app_http_proxy 10.0.0.47:3000</codeblock>
+      <p>Adding this configuration sets the 'http_proxy' environment variable
+        within all subsequently created application containers.</p>
+      <p>Add the <i>--no-proxy</i> option to bypass the proxy when accessing certain (normally internal) domains. For example:</p>
+      <codeblock>kato op upstream_proxy set 192.168.0.99:3128 --no-proxy internal.example.net </codeblock>
+    </section></body>
+</topic>

@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic11202">
+<title>HPE Helion 2.0 Development Platform: ALS Command Reference: Administration</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic11202/command-admin-grant">helion admin grant</xref>: Grant the named user administrator privileges for the current or specified target.</li>
+<li>
+<xref type="section" href="#topic11202/command-admin-list">helion admin list</xref>: Show a list of the administrators for the current or specified target.</li>
+<li>
+<xref type="section" href="#topic11202/command-admin-patch">helion admin patch</xref>: Apply a patch to the current or specified target.</li>
+<li>
+<xref type="section" href="#topic11202/command-admin-report">helion admin report</xref>: Retrieve a report containing the logs of the current or specified target.</li>
+<li>
+<xref type="section" href="#topic11202/command-admin-revoke">helion admin revoke</xref>:Revoke administrator privileges for the named user at the current or specified target.</li>
+<li>
+<xref type="section" href="#topic11202/command-info">helion info</xref>: Show the basic system and account information.</li>
+<li>
+<xref type="section" href="#topic11202/command-show-token">helion show-token</xref>: Print the current target's authorization token.</li>
+<li>
+<xref type="section" href="#topic11202/command-stacks">helion stacks</xref>: List the supported stacks of the target.</li>
+<li>
+<xref type="section" href="#topic11202/command-targets">helion targets</xref>: List the available targets and their authorization tokens, if any.</li>
+<li>
+<xref type="section" href="#topic11202/command-tokens">helion tokens</xref>: List the available targets and their authorization tokens, if any.</li>
+<li>
+<xref type="section" href="#topic11202/command-usage">helion usage</xref>: Show the current memory allocation and usage of the specified or current space.</li>
+<li>
+<xref type="section" href="#topic11202/command-user">helion user</xref>: Show the name of the current user in the current or specified target.</li>
+<li>
+<xref type="section" href="#topic11202/command-user-info">helion user-info</xref>: Shows the information of a user in the current or specified target.</li>
+<li>
+<xref type="section" href="#topic11202/command-version">helion version</xref>: Print the version number of the client.</li>
+</ul>
+<section id="syntax"> <title>Syntax</title>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
+<p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="command-admin-grant"> <title>helion admin grant &lt;<i>email</i>&gt;</title>
+<p>Grant the named user administrator privileges for the current or specified target.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--no-prompt</entry>
+<entry>Disable interactive queries.</entry>
+</row>
+<row>
+<entry>--no-trace</entry>
+<entry>Complementary alias of --trace.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--trace</entry>
+<entry>Activate tracing of the issued REST requests and responses. This
+option is a no-op now. Tracing is always active. See the 'trace'
+command to print the saved trace to stdout.</entry>
+</row>
+<row>
+<entry>-n</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>-t</entry>
+<entry>Alias of --trace.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-admin-list"> <title>helion admin list</title>
+<p>Show a list of the administrators for the current or specified target.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+    <entry>
+      <b>Option</b>
+    </entry>
+    <entry>
+      <b>Description</b>
+    </entry>
+  </row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--no-prompt</entry>
+<entry>Disable interactive queries.</entry>
+</row>
+<row>
+<entry>--no-trace</entry>
+<entry>Complementary alias of --trace.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+<row>
+<entry>--trace</entry>
+<entry>Activate tracing of the issued REST requests and responses. This
+option is a no-op now. Tracing is always active. See the 'trace'
+command to print the saved trace to stdout.</entry>
+</row>
+<row>
+<entry>-n</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>-t</entry>
+<entry>Alias of --trace.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-admin-patch"> <title>helion admin patch &lt;<i>patch</i>&gt;</title>
+<p>Apply a patch to the current or specified target.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+    <entry>
+      <b>Option</b>
+    </entry>
+    <entry>
+      <b>Description</b>
+    </entry>
+  </row>
+<row>
+<entry>--dry</entry>
+<entry>Print the low-level ssh command to stdout instead of executing it.</entry>
+</row>
+<row>
+<entry>--dry-run</entry>
+<entry>Alias of --dry.</entry>
+</row>
+<row>
+<entry>--no-prompt</entry>
+<entry>Disable interactive queries.</entry>
+</row>
+<row>
+<entry>--no-trace</entry>
+<entry>Complementary alias of --trace.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+<row>
+<entry>--trace</entry>
+<entry>Activate tracing of the issued REST requests and responses. This
+option is a no-op now. Tracing is always active. See the 'trace'
+command to print the saved trace to stdout.</entry>
+</row>
+<row>
+<entry>-n</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>-t</entry>
+<entry>Alias of --trace.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-admin-report"> <title>helion admin report &lt;<i>destination</i>&gt;</title>
+<p>Retrieve a report containing the logs of the current or specified target.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+    <entry>
+      <b>Option</b>
+    </entry>
+    <entry>
+      <b>Description</b>
+    </entry>
+  </row>
+<row>
+<entry>--no-prompt</entry>
+<entry>Disable interactive queries.</entry>
+</row>
+<row>
+<entry>--no-trace</entry>
+<entry>Complementary alias of --trace.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+<row>
+<entry>--trace</entry>
+<entry>Activate tracing of the issued REST requests and responses. This
+option is a no-op now. Tracing is always active. See the 'trace'
+command to print the saved trace to stdout.</entry>
+</row>
+<row>
+<entry>-n</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>-t</entry>
+<entry>Alias of --trace.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-admin-revoke"> <title>helion admin revoke &lt;<i>email</i>&gt;</title>
+<p>Revoke administrator privileges for the named user at the current or specified target.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+    <entry>
+      <b>Option</b>
+    </entry>
+    <entry>
+      <b>Description</b>
+    </entry>
+  </row>
+<row>
+<entry>--no-prompt</entry>
+<entry>Disable interactive queries.</entry>
+</row>
+<row>
+<entry>--no-trace</entry>
+<entry>Complementary alias of --trace.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--trace</entry>
+<entry>Activate tracing of the issued REST requests and responses. This
+option is a no-op now. Tracing is always active. See the 'trace'
+command to print the saved trace to stdout.</entry>
+</row>
+<row>
+<entry>-n</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>-t</entry>
+<entry>Alias of --trace.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-info"> <title>helion info</title>
+<p>Show the basic system and account information.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+    <entry>
+      <b>Option</b>
+    </entry>
+    <entry>
+      <b>Description</b>
+    </entry>
+  </row>
+<row>
+<entry>--group</entry>
+<entry>The once-off group to use for the current operation. This is a
+Application Lifecycle Service 2 option.</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--no-prompt</entry>
+<entry>Disable interactive queries.</entry>
+</row>
+<row>
+<entry>--no-trace</entry>
+<entry>Complementary alias of --trace.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--organization</entry>
+<entry>The once-off organization to use for the current operation.</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The once-off space to use for the current operation, specified by
+name.  Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by
+guid. Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-show-token"> <title>helion show-token</title>
+<p>Print the current target's authorization token.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-stacks"> <title>helion stacks</title>
+<p>List the supported stacks of the target.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--no-prompt</entry>
+<entry>Disable interactive queries.</entry>
+</row>
+<row>
+<entry>--no-trace</entry>
+<entry>Complementary alias of --trace.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+<row>
+<entry>--trace</entry>
+<entry>Activate tracing of the issued REST requests and responses. This
+option is a no-op now. Tracing is always active. See the 'trace'
+command to print the saved trace to stdout.</entry>
+</row>
+<row>
+<entry>-n</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>-t</entry>
+<entry>Alias of --trace.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-targets"> <title>helion targets</title>
+<p>List the available targets and their authorization tokens, if any.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--no-prompt</entry>
+<entry>Disable interactive queries.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+<row>
+<entry>-n</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-tokens"> <title>helion tokens</title>
+<p>List the available targets and their authorization tokens, if any.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--no-prompt</entry>
+<entry>Disable interactive queries.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+<row>
+<entry>-n</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-usage"> <title>helion usage &lt;<i>UserOrGroup</i>&gt;</title>
+<p>Show the current memory allocation and usage of the specified or current space.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--group</entry>
+<entry>The once-off group to use for the current operation. This is a
+Application Lifecycle Service 2 option.</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--no-prompt</entry>
+<entry>Disable interactive queries.</entry>
+</row>
+<row>
+<entry>--no-trace</entry>
+<entry>Complementary alias of --trace.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--organization</entry>
+<entry>The once-off organization to use for the current operation.</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The once-off space to use for the current operation, specified by
+name. Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by
+guid. Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+<row>
+<entry>--trace</entry>
+<entry>Activate tracing of the issued REST requests and responses. This
+option is a no-op now. Tracing is always active. See the 'trace'
+command to print the saved trace to stdout.</entry>
+</row>
+<row>
+<entry>-n</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>-o</entry>
+<entry>Alias of --organization.</entry>
+</row>
+<row>
+<entry>-t</entry>
+<entry>Alias of --trace.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-user"> <title>helion user</title>
+<p>Show the name of the current user in the current or specified target.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--no-prompt</entry>
+<entry>Disable interactive queries.</entry>
+</row>
+<row>
+<entry>--no-trace</entry>
+<entry>Complementary alias of --trace.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+<row>
+<entry>--trace</entry>
+<entry>Activate tracing of the issued REST requests and responses. This
+option is a no-op now. Tracing is always active. See the 'trace'
+command to print the saved trace to stdout.</entry>
+</row>
+<row>
+<entry>-n</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>-t</entry>
+<entry>Alias of --trace.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-user-info"> <title>helion user-info &lt;<i>name</i>&gt;</title>
+<p>Shows the information of a user in the current or specified target. Defaults to the current user.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--no-prompt</entry>
+<entry>Disable interactive queries.</entry>
+</row>
+<row>
+<entry>--no-trace</entry>
+<entry>Complementary alias of --trace.</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+<row>
+<entry>--trace</entry>
+<entry>Activate tracing of the issued REST requests and responses. This
+option is a no-op now. Tracing is always active. See the 'trace'
+command to print the saved trace to stdout.</entry>
+</row>
+<row>
+<entry>-n</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>-t</entry>
+<entry>Alias of --trace.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-version"> <title>helion version</title>
+<p>Print the version number of the client.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--non-interactive</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>--noprompt</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+<row>
+<entry>-n</entry>
+<entry>Alias of --no-prompt.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</body>
+</topic>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_wzw_r4w_rt">
+  <title>HPE Helion 2.0 Development Platform: The clouds.yaml Configuration File</title>
+  <body>
+    <p>The installer gets its configuration information from the <codeph>
+        /.config/openstack/clouds.yaml</codeph> file. </p>
+    <p>Note that although the sections are separated here &#151; one for each service &#151; there
+      is only one clouds.yaml file. <xref href="cloud/fullFile.dita">A sample of a complete
+        file</xref>.</p>
+    <p>Information on each field follows the code block. For highly-detailed information, see the
+      OpenStack <xref
+        href="http://docs.openstack.org/developer/python-openstackclient/configuration.html"
+        format="html" scope="external">client configuration documentation</xref>. </p><section><title>Create the clouds.yaml File</title>
+    <ol id="ol_apx_khy_rt">
+      <li> Create this directory: <codeblock>mkdir -p ~/.config/openstack/</codeblock></li>
+      <li>Create a plaintext file called <codeph>clouds.yaml</codeph> in that directory.</li>
+      <li>Enter the configuration information for the service(s) being installed, as detailed
+        below.</li>
+    </ol>
+    </section>
+  </body>
+  <topic id="id_ufp_fdn_vt" conref="cloud/cloud_platform.dita#cloudPlatform">
+    <title/>
+  </topic>
+  <topic id="id_h4q_gdn_vt" conref="cloud/cloud_database.dita#cloudDatabase">
+    <title/>
+  </topic>
+  <topic id="id_s4f_hdn_vt" conref="cloud/cloud_messaging.dita#cloudMessaging">
+    <title/>
+  </topic>
+  <topic id="id_xnd_3dn_vt" conref="cloud/cloud_codeengine.dita#cloudCodeEngine">
+    <title/>
+  </topic>
+  
+  
+</topic>

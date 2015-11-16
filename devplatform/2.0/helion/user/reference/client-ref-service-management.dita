@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10567">
+<title>HPE Helion 2.0 Development Platform: ALS Command Reference: Service Management</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic10567/command-bind-service">helion bind-service</xref>: Bind the named service to the specified application.</li>
+<li>
+<xref type="section" href="#topic10567/command-clone-services">helion clone-services</xref>: Copy the service bindings of the source application to the destination application.</li>
+<li>
+<xref type="section" href="#topic10567/command-create-service">helion create-service</xref>: Create a new provisioned service and optionally bind it to an application.</li>
+<li>
+<xref type="section" href="#topic10567/command-delete-service">helion delete-service</xref>: Delete the named provisioned service.</li>
+<li>
+<xref type="section" href="#topic10567/command-rename-service">helion rename-service</xref>:  Rename the specified service instance.</li>
+<li>
+<xref type="section" href="#topic10567/command-tunnel">helion tunnel</xref>: Create a local tunnel to a service and optionally start a local client as well.</li>
+<li>
+<xref type="section" href="#topic10567/command-unbind-service">helion unbind-service</xref>: Disconnect the named service from the specified application.</li>
+<li>
+<xref type="section" href="#topic10567/command-update-user-provided-service">helion update-user-provided-service</xref>: Update the credentials of a user provided service.</li>
+</ul>
+<section id="syntax"> <title>Syntax</title>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
+<p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="command-bind-service"> <title>helion bind-service &lt;<i>service</i>&gt; &lt;<i>application</i>&gt;</title>
+<p>Bind the named service to the specified application.</p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="5.25*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--no-tail</entry>
+              <entry>Request target to stop streaming the log.</entry>
+            </row>
+            <row>
+              <entry>--organization, -o</entry>
+              <entry>The once-off organization to use for the current operation. </entry>
+            </row>
+            <row>
+              <entry>--path</entry>
+              <entry>Path of the directory holding the application files to push. Defaults to the
+                current working directory.</entry>
+            </row>
+            <row>
+              <entry>--space</entry>
+              <entry>The once-off space to use for the current operation, specified by name. Cannot
+                be used together with <varname>--space-guid</varname>.</entry>
+            </row>
+            <row>
+              <entry>--space-guid</entry>
+              <entry>The once-off space to use for the current operation, specified by guid. Cannot
+                be used together with <varname>--space-guid</varname>.</entry>
+            </row>
+            <row>
+              <entry>--tail</entry>
+              <entry>Request target to stream the log.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--timeout</entry>
+              <entry>The time the client waits for an application to start before giving up and
+                returning, in seconds. Note that this is measured from the last entry seen in the
+                log stream. While there is activity in the log the timeout is reset. The default is
+                2 minutes. Use the suffixes 'm', 'h', and 'd' for the convenient specification of
+                minutes, hours, and days. The optional suffix 's' stands for seconds.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+</section>
+<section id="command-clone-services"> <title>helion clone-services &lt;<i>source</i>&gt; &lt;<i>application</i>&gt;</title>
+<p>Copy the service bindings of the source application to the destination application.</p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="5.67*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--organization. -o</entry>
+              <entry>The once-off organization to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--space</entry>
+              <entry>The once-off space to use for the current operation, specified by name. Cannot
+                be used together with <varname>--space-guid</varname>.</entry>
+            </row>
+            <row>
+              <entry>--space-guid</entry>
+              <entry>The once-off space to use for the current operation, specified by guid. Cannot
+                be used together with <varname>--space</varname>.</entry>
+            </row>
+            <row>
+              <entry>--tail</entry>
+              <entry>Request target to stream the log.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--timeout</entry>
+              <entry>The time the client waits for an application to start before giving up and
+                returning, in seconds. Note that this is measured from the last entry seen in the
+                log stream. While there is activity in the log the timeout is reset. The default is
+                2 minutes. Use the suffixes 'm', 'h', and 'd' for the convenient specification of
+                minutes, hours, and days. The optional suffix 's' stands for seconds.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+</section>
+<section id="command-create-service"> <title>helion create-service &lt;<i>vendor</i>&gt; &lt;<i>name</i>&gt; &lt;<i>application</i>&gt;</title>
+<p>Create a new provisioned service and optionally bind it to an application.</p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="5.06*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--no-tail</entry>
+              <entry>Request target to stop streaming the log.</entry>
+            </row>
+            <row>
+              <entry>--organization, -o</entry>
+              <entry>The once-off organization to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--plan</entry>
+              <entry>The service plan to use.</entry>
+            </row>
+            <row>
+              <entry>--provider</entry>
+              <entry>The service provider. Use this to disambiguate between multiple providers of
+                the same vendor/type.</entry>
+            </row>
+            <row>
+              <entry>--space</entry>
+              <entry>The once-off space to use for the current operation, specified by name. Cannot
+                be used together with <varname>--space-guid</varname>.</entry>
+            </row>
+            <row>
+              <entry>--space-guid</entry>
+              <entry>The once-off space to use for the current operation, specified by guid. Cannot
+                be used together with <varname>--space</varname>.</entry>
+            </row>
+            <row>
+              <entry>--tail</entry>
+              <entry>Request target to stream the log.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--timeout</entry>
+              <entry>The time the client waits for an application to start before giving up and
+                returning, in seconds. Note that this is measured from the last entry seen in the
+                log stream. While there is activity in the log the timeout is reset. The default is
+                2 minutes. Use the suffixes 'm', 'h', and 'd' for the convenient specification of
+                minutes, hours, and days. The optional suffix 's' stands for seconds.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+            <row>
+              <entry>--version</entry>
+              <entry>The service version. Use this to disambiguate between multiple versions of the
+                same vendor/type.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+</section>
+<section id="command-delete-service"> <title>helion delete-service &lt;<i>service</i>&gt;</title>
+<p>Delete the named provisioned service.</p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="4.56*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--all</entry>
+              <entry>Delete all services. Cannot be used together with named service
+                instances.</entry>
+            </row>
+            <row>
+              <entry>--organization, -o</entry>
+              <entry>The once-off organization to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--space</entry>
+              <entry>The once-off space to use for the current operation, specified by name. Cannot
+                be used together with <varname>--space-guid</varname>.</entry>
+            </row>
+            <row>
+              <entry>--space-guid</entry>
+              <entry>The once-off space to use for the current operation, specified by guid. Cannot
+                be used together with <varname>--space</varname>.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+            <row>
+              <entry>--unbind</entry>
+              <entry>Unbind service from applications before deleting. By default bound services are
+                skipped and not deleted.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+</section>
+<section id="command-rename-service"> <title>helion rename-service &lt;<i>service</i>&gt; &lt;<i>name</i>&gt;</title>
+<p>Rename the specified service instance.</p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="5.45*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--organization, -o</entry>
+              <entry>The once-off organization to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--space</entry>
+              <entry>The once-off space to use for the current operation, specified by name. Cannot
+                be used together with <varname>--space-guid</varname>.</entry>
+            </row>
+            <row>
+              <entry>--space-guid</entry>
+              <entry>The once-off space to use for the current operation, specified by guid. Cannot
+                be used together with <varname>--space</varname>.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+</section>
+<section id="command-tunnel"> <title>helion tunnel &lt;<i>service</i>&gt; &lt;<i>TunnelClient</i>&gt;</title>
+<p>Create a local tunnel to a service and optionally start a local client as well.</p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="5.25*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--allow-http</entry>
+              <entry>Required to prevent the client from rejecting http urls.</entry>
+            </row>
+            <row>
+              <entry>--no-tail</entry>
+              <entry>Request target to stop streaming the log.</entry>
+            </row>
+            <row>
+              <entry>--organization, -o</entry>
+              <entry>The once-off organization to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--port</entry>
+              <entry>Port used for the tunnel.</entry>
+            </row>
+            <row>
+              <entry>--space</entry>
+              <entry>The once-off space to use for the current operation, specified by name. Cannot
+                be used together with <varname>--space-guid</varname>.</entry>
+            </row>
+            <row>
+              <entry>--space-guid</entry>
+              <entry>The once-off space to use for the current operation, specified by guid. Cannot
+                be used together with <varname>--space</varname>.</entry>
+            </row>
+            <row>
+              <entry>--tail</entry>
+              <entry>Request target to stream the log.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+            <row>
+              <entry>--url</entry>
+              <entry>Url the tunnel helper application is mapped to and listens on. Relevant if and
+                only if the helper has to be pushed; for example, on first use of the
+                  <varname>tunnel</varname> command.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+</section>
+<section id="command-unbind-service"> <title>helion unbind-service &lt;<i>service</i>&gt; &lt;<i>application</i>&gt;</title>
+<p>Disconnect the named service from the specified application.</p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="4.13*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--manifest</entry>
+              <entry>Path of the manifest file to use. If not specified a search is done.</entry>
+            </row>
+            <row>
+              <entry>--no-tail</entry>
+              <entry>Request target to stop streaming the log.</entry>
+            </row>
+            <row>
+              <entry>--no-trace</entry>
+              <entry>Complementary alias of --trace.</entry>
+            </row>
+            <row>
+              <entry>--non-interactive</entry>
+              <entry>Alias of --no-prompt.</entry>
+            </row>
+            <row>
+              <entry>--noprompt</entry>
+              <entry>Alias of --no-prompt.</entry>
+            </row>
+            <row>
+              <entry>--organization, -o</entry>
+              <entry>The once-off organization to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--path</entry>
+              <entry>Path of the directory holding the application files to push. Defaults to the
+                current working directory.</entry>
+            </row>
+            <row>
+              <entry>--space</entry>
+              <entry>The once-off space to use for the current operation, specified by name. Cannot
+                be used together with <varname>--space-guid</varname>.</entry>
+            </row>
+            <row>
+              <entry>--space-guid</entry>
+              <entry>The once-off space to use for the current operation, specified by guid. Cannot
+                be used together with <varname>--space</varname>.</entry>
+            </row>
+            <row>
+              <entry>--tail</entry>
+              <entry>Request target to stream the log.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--timeout</entry>
+              <entry>The time the client waits for an application to start before giving up and
+                returning, in seconds. Note that this is measured from the last entry seen in the
+                log stream. While there is activity in the log the timeout is reset. The default is
+                2 minutes. Use the suffixes 'm', 'h', and 'd' for the convenient specification of
+                minutes, hours, and days. The optional suffix 's' stands for seconds.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+</section>
+<section id="command-update-user-provided-service"> <title>helion update-user-provided-service &lt;<i>service</i>&gt;</title>
+<p>Update the credentials of a user provided service.</p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="6.41*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--credentials</entry>
+              <entry>The new credentials to use. They entirely replace the old credentials. Each use
+                of the option declares a single element, using the form "key: value" for the
+                argument.</entry>
+            </row>
+            <row>
+              <entry>--notail</entry>
+              <entry>Request target to stop streaming the log.</entry>
+            </row>
+            <row>
+              <entry>--tail</entry>
+              <entry>Request target to stream the log.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--timeout</entry>
+              <entry>The time the client waits for an application to start before giving up and
+                returning, in seconds. Note that this is measured from the last entry seen in the
+                log stream. While there is activity in the log the timeout is reset. The default is
+                2 minutes. Use the suffixes 'm', 'h', and 'd' for the convenient specification of
+                minutes, hours, and days. The optional suffix 's' stands for seconds.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+</section>
+</body>
+</topic>

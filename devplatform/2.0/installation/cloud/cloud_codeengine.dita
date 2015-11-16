@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cloudCodeEngine">
+  <title>HPE Helion 2.0 Development Platform: HPE Helion Code Engine Configuration</title>
+  <body>
+    <section>A complete clouds.yaml file is <xref href="fullFile.dita#topic_mhg_f2n_vt">available
+        here</xref> for reference.</section>
+    <section><p>If you are deploying Helion Code Engine, append the <codeph>helionce</codeph>
+        section to the <codeph>clouds.yml</codeph> file as described
+      below:</p><pre>clouds:
+  mycloud:
+  ...           
+    helionce:
+      deployer_key: helionce-shared
+      deployer_flavor: 3
+      deployer_ntp_servers: ntpservers
+      deployer_dns_servers: dnsservers
+      deployer_cloud: 'mycloud'
+      auth:
+        auth_url: http://10.22.200.2:35357/v3
+        project_name: admin
+        username: admin
+        password: verystrongpassword</pre></section>
+    
+    <section><title>Leave these Parameters Unchanged </title>
+  
+      <dl>
+        <dlentry>
+          <dt>deployer_key</dt>
+          <dd>Default value: <codeph>helionce-shared</codeph></dd>
+          <dd>Do not change this value.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>deployer_flavor</dt>
+          <dd>The flavor to use for the deployer instance,</dd>
+          <dd>Default value: 3</dd>
+          <dd>Do not change this value.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>deployer_ntp_servers</dt>
+          <dd>Provided value: ntpservers</dd>
+          <dd>Do not change this value. </dd>
+        </dlentry>     <dlentry>
+          <dt>deployer_dns_servers</dt>
+          <dd>Provided value: dnsservers</dd>
+          <dd>Do not change this value.</dd>
+        </dlentry></dl></section>
+      
+      <section><title>Modify the Following Parameters</title><dl>
+
+    
+        <dlentry>
+          <dt>deployer_cloud</dt>
+          <dd>This value must match the name of the section you created in the <xref
+              href="cloud_platform.dita#cloudPlatform">Platform Configuration</xref> section. In the
+            examples, the name is <i>mycloud</i></dd>
+        </dlentry>
+        <dlentry>
+          <dt>auth_url</dt>
+          <dd>
+            <p>This is the value of the <codeph>OS_AUTH_URL</codeph> variable from
+                <codeph>~/service.osrc</codeph></p>
+            <p>Example:</p>
+            <p>
+              <pre>user@host:~$ grep OS_AUTH_URL ~/service.osrc</pre>
+              <pre>export OS_AUTH_URL=http://10.22.200.2:35357/v3</pre>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry>
+          <dt>project_name</dt>
+          <dd>
+            <p>This is the value of the <codeph>OS_PROJECT_NAME</codeph> variable from
+                <codeph>~/service.osrc</codeph></p>
+            <p>Example:<pre>user@host:~$ grep OS_AUTH_URL ~/service.osrc</pre><pre>export OS_PROJECT_NAME=admin</pre></p>
+          </dd>
+        </dlentry>
+        <dlentry>
+          <dt>username</dt>
+          <dd>
+            <p>This is the value of the <codeph>OS_USERNAME</codeph> variable from
+                <codeph>~/service.osrc</codeph></p>
+            <p>Example:</p>
+            <p>
+              <pre>user@host:~$ grep OS_USERNAME ~/service.osrc</pre>
+              <pre>export OS_USERNAME=admin</pre>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry>
+          <dt>password</dt>
+          <dd>
+            <p>This is the value of the <codeph>OS_PASSWORD </codeph>variable from
+                <codeph>~/service.osrc</codeph></p>
+            <p>Example:<pre>user@host:~$ grep OS_PASSWORD ~/service.osrc</pre><pre>export OS_PASSWORD=verystrongpassword</pre></p>
+          </dd>
+        </dlentry>
+      </dl>
+    </section>
+  </body>
+</topic>

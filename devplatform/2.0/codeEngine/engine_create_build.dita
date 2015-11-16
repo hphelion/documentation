@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_a34_wqb_3t">
+  <title>HPE Helion 2.0 Development Platform: Create a New Manual Build</title>
+  <body>
+    <p>This process selects an available source commit and builds it.</p>
+    <p id="build_create"><ol>
+      
+      <li>Click the <b>Builds</b> tab and then click <b>New Build</b>.<image placement="break"
+            href="../../../media/engine_build_create.png" id="image_cp2_3cz_kt"/></li>
+      
+      
+      <li>Select the target project from the dropdown list.</li>
+      <li>Select the commit to build and then click <b>Launch Build</b>.<image placement="break"
+            href="../../../media/engine_build_launch.png" id="image_cbk_pqt_st"/></li>
+    </ol></p><p>When the build has completed, if the <b>Results</b> value is <b>Success</b>, click <b>View</b> to
+      view the deployed application.</p>
+  </body>
+</topic>

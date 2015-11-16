@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_yw1_w3r_dt">
+  <title>HPE Helion 2.0 Development Platform: Create Your First Docker App</title>
+  <body><section>
+    <p>This Helion Development Platform release introduces the ability to deploy Docker images. This example takes an existing app and creates a
+      Docker image that will run in ALS and take advantage of the provisioned services. </p></section><section>
+      <title>Start With a New Stack</title>
+      <p>One of the advantages to using Docker is the ability to run different flavors of Linux.
+        While ALS is based on Ubuntu 12.04 LTS, Docker images can be based on a different distro,
+        such as Debian, CentOS, or even Alpine Linux images. This example uses the openSUSE base
+        image. </p>
+      <p>Docker can compartmentalize system configuration into separate Docker layers, either by
+        breaking up configuration steps into separate RUN directives in a single Dockerfile, or by
+        creating separate images and chaining them together with the FROM directive at the top of
+        each separate Dockerfile. This example includes both methods.</p>
+    </section>
+    
+    <section><title>Prerequisites </title><note type="important">For security, Docker container
+        deployments are disabled. The organization administrator needs to explicitly <xref
+          href="container_enable_deployment.dita#topic_qs2_sgy_kt">enable container
+        deployments</xref>.</note> Before attempting to create Docker applications, ensure you have
+      the following: <ul>
+        <li>A DockerHub account.</li>
+        <li>On OSX you also need Boot2Docker installed and running. [Boot2Docker does not need
+            <codeph>sudo</codeph> commands.]</li>
+        <li>On a Linux machine you also need Docker.</li>
+      </ul></section>
+    
+    
+    
+    
+    
+    <section><title>Update and Installing Operating System Packages</title>
+        <p>Create a Dockerfile with the content below. This Dockerfile executes an update using the
+        package manager; on openSUSE, this is done with <codeph>zypper</codeph>. </p>
+          <codeblock>FROM opensuse:13.2  
+MAINTAINER Troy Topnik &lt;troyt@activestate.com&gt;
+
+RUN zypper -n up &amp;&amp; zypper -n install python python-pip ca-certificates-mozilla vim 
+git curl wget</codeblock>  
+        <p>The openSUSE base image is intentionally minimal, so this also installs:
+          <dl><dlentry>
+            <dt>python</dt>
+            <dd>Required for a Python web app </dd>
+          </dlentry>
+            <dlentry>
+              <dt>python-pip</dt>
+              <dd>For installing Python dependencies</dd>
+            </dlentry>
+            <dlentry>
+              <dt>ca-certificates-mozilla</dt>
+              <dd>Required by pip to use SSL </dd>
+            </dlentry>
+            <dlentry>
+              <dt>vim</dt>
+              <dd>Editor</dd>
+            </dlentry><dlentry>
+              <dt>git</dt>
+              <dd>For cloning repos or installation from git sources </dd>
+            </dlentry><dlentry>
+              <dt>curl</dt>
+              <dd>For general HTTP testing</dd>
+            </dlentry><dlentry><dt>wget</dt><dd>For fetching of potentially useful things.</dd></dlentry>
+          </dl></p>
+<p>These installations provide the tools that are most likely necessary to script the installation of a Python application, try things out interactively in a locally running Docker container, or troubleshoot apps (through an ssh session).</p>
+      
+      <p>Notice that a couple of commands were chained together in the RUN statement.
+      Every time a RUN command is used in a Dockerfile, it generates another image layer, and there's a hard
+      limit of 127 layers in the current versions of Docker (the AUFS default limit). Bundling
+      related commands together reduces the number of layers, helping ensure that the maximum is not exceeded.
+      If there are relatively few layers, having the update and package install steps in separate RUN commands can take advantage of Docker's ability to
+      use cached layers when rebuilding, which can speed up the build significantly.</p>
+      </section><section><title>Build, test, and push Docker Images</title> 
+      <p>The new "base+1" image layer is named '<i>&lt;myrepo></i>/opensuse-python'. </p><p>To build it, run this command in a directory that is empty
+      except for the Dockerfile:</p><codeblock> $ sudo docker build --no-cache -t &lt;myrepo>/opensuse-python .</codeblock><p>In this case, <codeph>--no-cache</codeph> is used to ensure that the <codeph>zypper</codeph> update runs each time it builds, rather than relying on the cached image layer from previous builds.</p>
+        <p>After the build completes, open an interactive shell and verify that it went as expected:</p>
+<codeblock>sudo docker run -i -t troytop/opensuse-python /bin/sh 
+sh-4.2# pip -V
+pip 1.5 from /usr/lib/python2.7/site-packages (python 2.7) 
+sh-4.2# exit </codeblock> 
+        <p>Note that if an app is to be shared, it should be pushed to the <xref
+          href="https://registry.hub.docker.com/" format="html" scope="external">Docker Hub</xref>
+        or other registry server:</p><codeblock>$ sudo docker push &lt;myrepo>/opensuse-python</codeblock></section>
+    
+    <section><title>Create an Application Container:<i> bottle-currency-suse</i></title><p>First,
+        clone the Docker version of the example app (bottle-currency). This app is based on Ubuntu
+        12.04, so the Dockerfile can be adapted to work with an opensuse-python image.</p><p>
+        <codeblock>git clone <xref href="https://github.com/Stackato-Apps/bottle-currency.git" format="html" scope="external">https://github.com/Stackato-Apps/bottle-currency.git</xref></codeblock>
+      </p><p> Once the project is cloned, create a Docker file using the following the
+      steps:</p><codeblock>FROM <i>&lt;myrepo></i>/opensuse-python 
+MAINTAINER <i>&lt;myname> &lt;myemail></i></codeblock>Use
+      a different container as a starting point and identify yourself as the maintainer.
+      <codeblock>RUN useradd -d /home/www -m -s /bin/bash www 
+USER www 
+WORKDIR /home/www</codeblock>This
+      creates a new user called <codeph>www</codeph> and sets the active user and the working
+        directory.<note>For maximum security, no app should run as root unless absolutely
+        necessary.</note><codeblock>COPY . . </codeblock>Since the Dockerfile exists in the base
+      directory of the bottle-currency sources, this command will recursively copy the contents of
+      the current directory into the WORKDIR defined above.
+      <codeblock>RUN pip install --user -r requirements.txt </codeblock>This installs the modules
+      required by the application. With a staged application, this part would be handled by the
+      buildpack instead. <codeblock>EXPOSE 8080</codeblock>Without a $PORT environment variable,
+      apps default to running on port 8080. This command EXPOSEs the default port in the container
+      so that it's routed to an external port on the DEA host. The ALS router will in turn be able
+      to route to the app by forwarding external requests to this <i>hostname:port</i>.<p>With
+        Docker Apps, only one port must be exposed. When running a staged app, the application code
+        or the Procfile would have to reference the $PORT variable provided in the
+      container.</p><codeblock>CMD python wsgi.py</codeblock>This command starts the web process. In
+      a staged app, this would be specified in a Procfile. Now that the Dockerfile is ready, the
+      next step is to create, test and push the image.repeat the same steps used for the
+      opensuse-python image to build, test, and push the image. <p>To build it, run this command in
+        a directory that is empty except for the
+      Dockerfile:</p><pre>$ sudo docker build --no-cache -t &lt;myrepo&gt;/bottle-currency-suse .</pre>Assuming
+      all work was done on localhost, connecting to <codeph>http://localhost:8000 </codeph>with a
+      browser will show the running web app, but the error message "An error occurred while
+      contacting the server" will appear. The conversion app does not function yet because it
+      requires a Redis data service. <p>Push the new image to the Docker Hub:
+      </p><codeblock>sudo docker push &lt;myrepo&gt;/bottle-currency-suse</codeblock></section><section><title>Deploying the App</title><p>The bottle-currency app looks for a Redis data service
+        exposed by a REDIS_URL environment variable. <xref
+          href="../reference/environment.dita#topic7631">Environment variables</xref>
+        (VCAP_SERVICES) are injected into the Docker containers to provide connection information
+        for any services that have been bound to the app. This is the <xref
+          href="http://12factor.net/config" format="html" scope="external">12-Factor method</xref>,
+        which has always been standard practice for Cloud Foundry. </p>Deploy the app with the
+      following
+      command:<codeblock>helion push -n --docker-image &lt;myrepo&gt;/bottle-currency-suse --mem 128 --as docker-currency</codeblock>This
+      fetches the Docker image from the Hub and deploys it, but without a database.<note>There are a
+        number of ways to parse environment variables when connecting to the data services. If you
+        are deploying a Docker image written by a third party, the credentials provided by ALS will
+        need to be reformatted into variables that the app can understand. To do this, add another
+        layer on top of the third-party image which parses the provided environment variables,
+        reformats them in a way the app will understand, and reiterates the CMD / ENTRYPOINT line
+        from the original image.</note></section>
+  </body>
+</topic>

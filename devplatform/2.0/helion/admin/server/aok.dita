@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8359">
+<title>HPE Helion 2.0 Development Platform: AOK Authentication Server</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="System Engineer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>AOK is Application Lifecycle Service's authentication management service (replacing Cloud
+      Foundry's UAA Server). It issues tokens via OAuth2 for client applications such as the
+        <b>helion</b> client and the ALS Console. AOK can connect to other back-end SSO services
+      such as LDAP by using different <xref href="#topic8359/strategies" format="dita"
+        >Strategies</xref>.</p>
+<ul>
+<li>
+<xref type="section" href="#topic8359/web">End User Login: Web</xref>
+</li>
+<li>
+<xref type="section" href="#topic8359/client">End User Login: Client</xref>
+</li>
+<li>
+<xref type="section" href="#topic8359/strategies">Strategies</xref>
+</li>
+<li>
+<xref type="section" href="#topic8359/configuration">Configuration</xref>
+</li>
+<li>
+<xref type="section" href="#topic8359/activedir">Active Directory Example Settings</xref>
+</li>
+<li>
+<xref type="section" href="#topic8359/user-management">User Management</xref>
+</li>
+<li>
+<xref type="section" href="#topic8359/first-admin-user-setup">First Admin User Setup</xref>
+</li>
+<li>
+<xref type="section" href="#topic8359/regular-ldap-user-setup">Regular LDAP User Setup</xref>
+</li>
+</ul>
+<section id="web"> <title>End User Login: Web</title>
+<p>Users log in to the web-based ALS Management Console as they would with any other web application. The ALS Console checks with the AOK endpoint (e.g. https://aok.helion.example.com) in the background.</p>
+</section>
+<section id="client"> <title>End User Login: Client</title>
+<p>If the strategy has been changed to something other than <b>builtin</b> (see <xref
+          href="#topic8359/strategies" format="dita">Strategies</xref>) then users connecting with
+        the <xref href="../../user/client/client_index.dita">ALS
+          command-line client</xref> should be aware that:</p>
+<ul>
+<li>The user must enter identifiers in the format expected by the <xref type="section" href="#topic8359/strategies">strategy</xref> used by AOK (e.g. username or email
+address).</li>
+<li>When using an existing authentication token to log in as a second user (for example, an admin connecting as another user), use the second user's username, <b>not</b> the identifier used by AOK's strategy.</li>
+</ul>
+<p>These caveats also apply when using other Cloud-Foundry-compatible clients.</p>
+</section>
+<section id="strategies"> <title>Strategies</title>
+<p>The term <b>strategy</b> refers to the method used to authenticate users.
+There are currently two supported strategies:</p>
+<ul>
+<li>
+<p>
+<b>builtin</b>: The default builtin strategy uses a local database of
+users and passwords to authenticate.</p>
+</li>
+<li>
+<p>
+            <b>ldap</b>: The ldap strategy authenticates using the LDAP server specified in <xref
+              href="#topic8359/configuration" format="dita"><i>kato config</i></xref> . Any user
+            that can successfully authenticate with the LDAP server will be allowed to use
+            Application Lifecycle Service and will have a (non-admin) user account created for them
+            automatically. The LDAP server must return an email address for the user to allow them
+            to log in to Application Lifecycle Service. AOK will look for the email address under
+            the <b>mail</b>, <b>email</b>, and <b>userPrincipalName</b> attributes.</p>
+</li>
+</ul>
+<p>LDAP groups are not currently supported as a visible construct in the Application Lifecycle Service.</p>
+<p>The use key in the configuration controls the strategy that AOK will
+use. This value must correspond exactly to one of the supported strategy
+names.</p>
+</section>
+<section id="configuration"> <title>Configuration</title>
+  <p>To configure AOK, set the following keys in the AOK config using the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-config" type="section" >kato
+config set</xref> commands:</p>
+<ul>
+<li>
+<p>strategy:</p>
+
+<ul>
+<li>
+<p>use: set to either <b>builtin</b> (the default) or <b>ldap</b>. The <b>builtin</b> strategy requires no further modification. The <b>ldap</b> strategy requires setting options in the corresponding block below.</p>
+</li>
+<li>
+<p>ldap:</p>
+
+<ul>
+<li>
+<p>host: hostname or IP of the LDAP server</p>
+</li>
+<li>
+<p>port: LDAP server port, typically 389</p>
+</li>
+<li>
+<p>method: plain, ssl, or tls</p>
+</li>
+<li>
+<p>base: list of domain components (e.g. 'dc=example, dc=com')</p>
+</li>
+<li>
+<p>uid: LDAP attribute name for the user name that will used in
+the login form. Active Directory (AD) is typically
+'sAMAccountName' or 'UserPrincipalName', while OpenLDAP is
+'uid'.</p>
+</li>
+<li>
+<p>email: the LDAP attribute containing the user's fully
+qualified email address. An email address attribute is
+necessary for AOK to work properly with the cloud
+controller. This may be a scalar attribute or an array of
+attributes to search. The default is shown. The first
+non-null attribute will be used (AOK will not validate that
+this is an email address). The default attributes are:</p>
+
+<ul>
+<li>mail</li>
+<li>email</li>
+<li>userPrincipalName</li>
+</ul>
+</li>
+<li>
+<p>bind_dn: (optional) credentials for user lookup (e.g.
+'cn=Administrator,cn=Users,dc=example,dc=com'). LDAP servers
+that allow anonymous bind will not require this setting.</p>
+</li>
+<li>
+<p>password: (optional) default credentials for user lookup</p>
+</li>
+<li>
+<p>try_sasl: (optional) when set to true attempts a SASL
+connection to the LDAP server</p>
+</li>
+<li>
+<p>sasl_mechanims: (optional) 'DIGEST-MD5' or 'GSS-SPNEGO'</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section><section><title>Replace Usernames with Email Addresses</title>
+<p>An additional 'name_proc' option in the 'ldap' block allows users to
+enter email addresses instead of LDAP user names, matching the user name
+entered with the format of the uid attributes. For example, value of
+'sAMAccountName' in AD contains only the Windows user name. If your
+users prefer using email to login, the following 'name_proc' value will
+trim the email string down to just the Windows login name:</p>
+<codeblock>Proc.new {|name| name.gsub(/@.*$/,'')}</codeblock>
+<p>Value must be valid Ruby code. Since the provided code will be accepting
+arbitrary user input, administrators are urged to use this setting only
+when absolutely necessary, and to check the code thoroughly for possible
+security implications.</p>
+<p>To see the default AOK configuration (default settings) run the
+command:</p>
+<codeblock>kato config get aok</codeblock>
+<p>Settings are nested as per the option list above. To set an option,
+specify the full config path to that option. For example:</p>
+<codeblock>kato config set aok strategy/ldap/base 'dc=yourdomain, dc=com'</codeblock>
+<p>To add an attribute to the 'email' array:</p>
+<codeblock>kato config push aok strategy/ldap/email "ADMailAcct"</codeblock>
+<p>To set the entire array in one step, use the <codeph>--json</codeph> option:</p>
+<codeblock>kato config set --json aok strategy/ldap/email '["mail","ADMailAcct", "email"]'</codeblock>
+<!-- not supported in ALS
+##LDAP Groups {#ldap}
+
+With the LDAP strategy enabled, ALS can query LDAP groups to define which LDAP groups are authorized to use ALS and which LDAP groups get admin privileges.
+
+###Groups for Authorization
+
+To limit which LDAP groups get access to ALS, the following three options must be set in AOK's strategy/ldap settings:
+
+- group\_query: The query to run to determine which groups a user belongs to (set in conjunction with group_attribute). For example:
+
+        kato config set aok strategy/ldap/group_query '(&(objectClass=posixGroup)(memberUid=%{username}))'
+
+    This queries for posixGroups that the user belongs to. %{username} is replaced with the value of the field specified by uid and %{dn} is replaced by the dn of the authenticated user.
+
+
+- group\_attribute: The LDAP attribute to extract from the query above (requires a valid group_query setting). For example:
+
+        kato config set aok strategy/ldap/group_attribute 'cn'
+    
+    This extracts the name of the group(s) returned by the group_query above if the group's 'cn' (common name) attribute contains its name.
+
+- allowed\_groups: A list of LDAP groups that are allowed to access ALS. (requires **group\_attribute** and **group\_query** settings). For example:
+
+        kato config set aok strategy/ldap/allowed_groups '["dev", "engineering"]'
+    
+    This would allow access to members of the 'dev' or 'engineering' groups only.
+
+###Admin Groups
+
+Members of certain LDAP groups can be granted admin accounts for ALS. This requires the following settings:
+
+- group_query (as above)
+- group_attribute (as above)
+- admin_groups: A list of LDAP groups that get admin privileges. For example:
+
+        kato config set aok strategy/ldap/admin_groups '["admins", "bosses"]'
+
+    This command would automatically grant admin privileges to all members of the 'admins' and 'bosses' LDAP groups.
+
+- allowed_groups is an option that can be specified if limiting regular-user-level access is also desired.
+
+Individual Organizations for LDAP Users
+
+
+As an alternative to putting new users in one default :ref:`Organization
+<orgs-spaces>`, Stackato can be set to automatically create an new,
+single-user Organization for each new LDAP user that logs in. This
+simulates the behavior of older Stackato and Cloud Foundry systems where
+individual users had their own quotas.
+
+The new organizations have the same name as the user (which may be an
+email address if ``use_email_for_username`` is set in AOK).
+
+To enable this behavior, add the following settings to the
+``cloud_controller_ng`` configuration:
+
+* **uaa/new_user_strategy**: global (default) or individual. When set
+  to ``individual`` creates a default org and space when an LDAP user
+  logs in to the management console for the first time. If unset, the
+  default (``global``) behavior described above is used.
+
+* **uaa/new_user_strategies/individual**: contains the following
+  sub-keys defining how new individual orgs are set up:
+  
+  * **quota_name**: name of the :ref:`quota plan
+    <console-settings-quota-plans>` for the org. You should set up a new
+    quota plan specifically for single-user orgs with limits appropriate
+    to the number of users you plan to add to the system.
+    
+  * **space_name**: name of the default space created for each new user
+    within their individual org.
+  
+  * **space_role**: role of the user in the created space. May be
+    one of manager, auditor or developer (default). 
+
+  * **organization_role**: The role of the user in the created
+    organization - manager, billing_manager, auditor or user (default).
+
+Use :ref:`kato config set <kato-command-ref-config>` to set these values,
+for example::
+
+  $ kato config set cloud_controller_ng uaa/new_user_strategy individual
+  ...
+  $ kato config set cloud_controller_ng uaa/new_user_strategies/individual/space_name dev
+  
+Restart the controller to make the configuration changes active::
+
+  $ kato restart controller
+
+Individual Organization Example
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A typical configuration for creating individual organizations might look
+like this::
+
+  $ kato config get cloud_controller_ng uaa
+  
+  uaa:
+    url: https://aok.paas.example.com/uaa
+    resource_id: cloud_controller
+    symmetric_secret: jezmyCXJ45YWAqr4sG9hvsrlhwMHIK//drcBd76a+L4PMitJTAR4XZKvoUHSuDSL
+    new_user_strategy: individual
+    new_user_strategies:
+      individual:
+        space_name: default
+        quota_name: single-user
+        space_role: manager
+        organization_role: manager
+
+This creates a new organization for each LDAP user that logs in, makes
+the user a manager of their org, creates a space called "default", and
+makes the user a manager for that space.</pre>-->
+</section>
+<section id="activedir"> <title>Active Directory Example Settings</title>
+<p>The following example shows what a typical AOK configuration might look like for an Active Directory server. This configuration:</p>
+<ul>
+<li>connects an Active Directory host called 'ad.example.com'</li>
+<li>authenticates with the 'reader' account</li>
+<li>queries the 'group' object</li>
+<li>allows access to members of the 'developers' and 'admins' groups</li>
+<li>
+<p>gives an admin account to each member of the 'admins' group</p>
+
+<codeblock>use: ldap
+ldap:
+  host: directory.example.com
+  port: 389
+  method: plain
+  base: DC=directory,DC=example,DC=com
+  uid: sAMAccountName
+  email:
+  - mail
+  - email
+  - userPrincipalName
+  bind_dn: CN=reader,CN=admins,DC=example,DC=com
+  password: passwordhere
+  group_query: (&amp;(objectCategory=group)(member=%{dn}))
+  group_attribute: cn
+  allowed_groups:
+  - developers
+  - admins
+  admin_groups:
+  - admins</codeblock>
+</li>
+</ul>
+<p>See also <xref href="http://msdn.microsoft.com/en-us/library/aa746468%28v=vs.85%29.aspx" scope="external" format="html" >Searching Active Directory</xref> (Microsoft Developer Network) and <xref href="https://www.google.com/support/enterprise/static/gapps/docs/admin/en/gads/admin/ldap.5.4.html" scope="external" format="html" >Common LDAP Queries</xref> (Google Apps Directory Sync Administration Guide) for more information on creating <i>group_query</i>.</p>
+</section>
+<section id="user-management"> <title>User Management</title>
+<p>When using AOK with any strategy other than <b>builtin</b>, users in Application Lifecycle Service will be created automatically for any user who successfully authenticates.</p>
+<p>Administrators can still use the functions as before, but should be
+aware of the following caveats:</p>
+<ul>
+<li>Admins may manually create users if they wish. This may be useful if
+the admin wants to pre-assign users to groups in Application Lifecycle Service before
+those users have logged in for the first time. The admin must create
+the user with the same username that AOK will receive from the
+strategy.</li>
+<li>Passwords set while creating users or using the password-change
+function will be disregarded - Application Lifecycle Service/AOK does not manage the
+external authentication systems.</li>
+<li>Admins may delete users, but the user will be recreated if they log
+in again via AOK. If an admin wishes to prevent a user from using
+Application Lifecycle Service, the user's login credentials should be revoked in the
+external authentication system.</li>
+</ul>
+</section>
+<section id="first-admin-user-setup"> <title>First Admin User Setup</title>
+<p>When setting up an Application Lifecycle Service system using AOK, complete the "Set Up First
+Admin User" form shown by the ALS Management Console before configuring
+LDAP authentication. This creates an administrative user and changes
+the password of the 'helion' user on the VM to match whatever was
+entered in the form.</p>
+<p>You may use either a temporary username (e.g. "firstuser") which will be
+deleted later, or use the LDAP username you will ultimately use once AOK
+is configured.</p>
+<p>Once the first user has been created:</p>
+<ol>
+<li>Log in to the micro cloud VM or Core node as the 'helion' user (with the password set previously)</li>
+<li>
+          <xref href="#topic8359/configuration" format="dita">Configure AOK</xref> to use LDAP</li>
+<li> Set the <codeph>admin_user</codeph> key with the desired LDAP admin
+            username:<codeblock>kato config set aok strategy/ldap/admin_user &lt;username&gt;</codeblock><p>This
+            user will be granted admin privileges when logging in for the first time.</p></li>
+<li>If you created a temporary admin user, delete it at this point.</li>
+</ol>
+</section>
+<section id="regular-ldap-user-setup"> <title>Regular LDAP User Setup</title>
+<p>New users logging in to the ALS Console for the first time using LDAP authentication will not be a member of any organization (and won't be able to do anything). An admin will have to add each user to an organization after their initial login.</p>
+</section>
+</body>
+</topic>

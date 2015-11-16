@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="listContent">
+  <title>HPE Helion 2.0 Development Platform: List Available HDN Content</title>
+  <body><p>There are two ways to retrieve the list the HDN content available to you. </p>   
+    
+  <section id="option1"><title>Option 1: Quick list of recent versions only with no installation
+        state</title><p>This option lists the most recent versions that are available to you. It
+        does not list every package you could install, and it does not indicate which packages are
+        currently installed. </p><p>This is the fastest option if you are just looking for a
+          <codeph>wscatalog</codeph>
+      number.</p><codeblock>openstack hdpi list --os-cloud mycloud</codeblock>The list will look
+      similar to the
+      following:<codeblock>+----------------------------+----------------+-----------+-----------+
+| service                    | id             | version   | state     |
++----------------------------+----------------+-----------+-----------+
+| Helion Code Engine         | wscatalog.2776 | 1.0.0     | available |
+| Helion Code Engine 2.0     | wscatalog.2812 | 1.0.0.42  | available |
+| als                        | wscatalog.2765 | 2.0.0.539 | available |
+| als                        | wscatalog.2800 | 2.0.0.548 | available |
+| database                   | wscatalog.2762 | 2.0.0.32  | available |
+| database                   | wscatalog.2803 | 2.0.0.37  | available |
+| database                   | wscatalog.2804 | 2.0.0.38  | available |
+| messaging                  | wscatalog.2761 | 1.0.0     | available |
+| messaging                  | wscatalog.2796 | 1.0.0.165 | available |
++----------------------------+----------------+-----------+-----------+</codeblock></section>
+    
+    <section id="option2"><title>Option 2: Full list of all versions and installation
+        state</title><p>This options lists everything that is available to you. It lists every
+        package you could install, and it also indicates which options are currently installed.
+        </p><p>This is a quick way to check whether a service has already been
+      installed.</p><codeblock>openstack hdpi list --all --os-cloud mycloud</codeblock>The list will
+      look similar to the
+      following:<codeblock>+-----------------------------+------------------+-----------+-----------+
+| service                     | id               | version   | state     |
++-----------------------------+------------------+-----------+-----------+
+| DNS Service 2.0             | wscatalog.2798   | 2.0.0.190 | available |
+| Helion Code Engine 2.0      | wscatalog.2812   | 1.0.0.42  | available |
+| als                         | wscatalog.2765   | 2.0.0.539 | available |
+| als                         | wscatalog.2800   | 2.0.0.548 | installed |
+| database                    | wscatalog.2762   | 2.0.0.32  | available |
+| database                    | wscatalog.2803   | 2.0.0.37  | available |
+| database                    | wscatalog.2804   | 2.0.0.38  | installed |
+| database                    | wscatalog.2678   | 2.0.0.9   | available |
+| messaging                   | wscatalog.2761   | 1.0.0     | available |
+| messaging                   | wscatalog.2796   | 1.0.0.165 | installed |
++-----------------------------+------------------+-----------+-----------+</codeblock></section>
+  </body>
+</topic>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1342">
+<title>HPE Helion 2.0 Development Platform: Clojure</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+  <othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>Application Lifecycle Service supports deploying Clojure applications using
+<xref href="https://github.com/technomancy/leiningen" scope="external" format="html" >leiningen</xref>.</p>
+<p>To create a new Clojure web application, install leiningen and
+<xref href="http://webnoir.org/" scope="external" format="html" >Noir</xref> (a Clojure web framework):</p>
+<codeblock>lein plugin install lein-noir 1.1.0</codeblock>
+<p>Create a Noir project:</p>
+<codeblock>lein noir new myapp
+...
+cd myapp/</codeblock>
+<p>Now deploy to Application Lifecycle Service. Accept the defaults for each prompt:</p>
+<codeblock>helion push myapp
+[...]
+Application Deployed URL: 'myapp.helion-xxxx.local'?
+[...]
+Starting Application: OK</codeblock>
+<p>Open the application's URL in your browser to see the default Noir welcome
+page.</p>
+<section id="clojure-database-services-example"> <title>Clojure Database Services Example</title>
+<p>Taken from the <xref href="https://github.com/Stackato-Apps/4clojure/blob/stackato/src/foreclojure/config.clj#L6" type="section" scope="external" format="html" >4clojure sample
+app</xref>:</p>
+<codeblock>(defn assoc-cloud-env
+  "Import Cloud Foundry / Application Lifecycle Service environment settings"
+  [config]
+  (let [port (Integer/parseInt (System/getenv "PORT"))
+        srv  (parse-string (System/getenv "VCAP_SERVICES"))
+        cred ((first (srv "mongodb-1.8")) "credentials")]
+    (assoc config
+      :jetty-port port
+      :db-host    (cred "host")
+      :db-port    (cred "port")
+      :db-user    (cred "username")
+      :db-pwd     (cred "password")
+      :db-dbname  (cred "db"))))</codeblock>
+</section>
+</body>
+</topic>

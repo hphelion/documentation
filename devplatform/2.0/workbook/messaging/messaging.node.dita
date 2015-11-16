@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5325">
+<title>HPE Helion 2.0 Development Platform: Node RabbitMQ Messaging Sample</title>
+
+<body>
+<p>This  very simple Node.js web app displays a simple form that takes a string from the user, adds the message to a queue, reads it from the queue and prints the message back to the screen. This is a demonstration of the minimum requirements to build an application that can connect to a RabbitMQ cluster provided by ALS and interact with it. Use this sample to ensure that you have set up your environment correctly for connecting to, and working with RabbitMQ on the Helion Development Platform.</p>
+<section id="prerequisites"> <title>Prerequisites</title>
+<p>If you are missing any of these items, you must <xref href="../../devplatform.appdev.dita" >install them</xref>.</p>
+<ul>
+<li>Access to an Application Lifecycle Service (ALS) <xref href="../../helion/admin/cluster/cluster_index.dita" >Cluster</xref>
+</li>
+<li>The  <xref href="../../helion/user/client/client_index.dita" >Helion command-line interface (CLI)</xref> must be installed.</li>
+<li>Access to the web-based <xref href="../../helion/CLI/ALS_Client_Downloads.dita" >Helion Management Console</xref>.</li>
+</ul>
+</section>
+<section id="rabbitmq"> <title>RabbitMQ</title>
+<p>If the RabbitMQ service is not enabled on your cluster, or if you are not sure, follow these steps:</p>
+<ol>
+<li>Go to the Administrative console for your ALS cluster. (e.g. <i>https://api.xx.xx.xx.xx.xip.io</i>);  substitute your own cluster's link)</li>
+<li>On the <b>Admin</b> tab, click <b>Cluster</b>.</li>
+<li>Click <b>Cluster Nodes</b> on the left side of the page.</li>
+<li>Click the <b>Settings</b> icon (a gear icon in the upper right corner)</li>
+<li>Both of the <b>Rabbit</b> and <b>Rabbit3</b> check boxes should be checked. If they are not, check them.</li>
+<li>Click <b>Save</b>.</li>
+</ol>
+<p>
+<b>Note</b>: If an application needs increased message throughput and/or increased availability beyond the single-instance, unmanaged RabbitMQ service provided by ALS, please follow <xref href="../../messaging/devplatform.using-the-messaging-service.dita" >these instructions</xref> to create and manage a RabbitMQ cluster in the Messaging Service and link that instance to your ALS cluster.</p>
+</section>
+<section id="download-the-application-files"> <title>Download the Application Files</title>
+<p>
+<xref href="https://github.com/HelionDevPlatform/helion-rabbitmq-node" scope="external" format="html" >Click here to access the code repository</xref>.</p>
+</section>
+<section id="deploy-the-application"> <title>Deploy the Application</title>
+<p>
+        <b>Note</b>: Application Lifecycle Service clusters that require an upstream HTTP proxy to
+        access the internet will need to be <xref
+          href="../../helion/admin/server/https_and_ssl.dita#topic_gwr_qgd_ws/staging-cache-app-http-proxy"
+          >made aware of the proxy</xref>. The sample applications require access to the Internet in
+        order to download dependent packages.</p>
+<p>Use the Helion client to deploy your app to Helion Development Platform.</p>
+<ol>
+<li>Open the <xref href="../../helion/user/reference/client-ref.dita" >Helion command-line interface (CLI)</xref>
+</li>
+<li>Ensure that you are targeting your desired environment.
+          <!--A BR tag was used here in the original source.--> If you are not,
+          execute<codeblock><codeph>helion target https://api.xx.xx.xx.xx.xip.io    </codeph></codeblock></li>
+<li> Ensure that you are logged in to your desired environment.
+          <!--A BR tag was used here in the original source.-->If you are not,
+          execute<codeblock><codeph>helion login</codeph></codeblock></li>
+<li> If you are not already there, <codeph>cd</codeph> to the root directory of the sample.</li>
+<li> Deploy the application by using the
+          command:<codeblock><codeph>helion push</codeph>
+</codeblock></li>
+<li> Accept any default values that you may be prompted for.
+            <!--A BR tag was used here in the original source.--><b>Note</b>: By default, ALS
+          clusters are configured with two domains (private and public). In some situations, the
+          Helion CLI may prompt you to select a target domain. If prompted, select the public domain
+          from the given list (i.e. <i>&lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io</i>)</li>
+</ol>
+</section>
+<section id="key-code-snippets"> <title>Key Code Snippets</title>
+<p>This section of the messaging.js file shows how to retrieve the connection information for the RabbitMQ cluster from the application's environment variables. The code then creates a connection to the cluster and publishes a message to a queue.</p>
+<codeblock>  <codeph>//get the rabbitMQ connection string from the environment variables.
+var connectionString = process.env.RABBITMQ_URL || "amqp://localhost";
+
+//Connect to RabbitMQ.
+var rabbitMqConnection = amqp.createConnection({ url: connectionString });
+
+...
+
+rabbitMqConnection.once('ready', function() {
+    rabbitMqConnection.queue('msg-queue', {}, function(queue) {
+      rabbitMqConnection.publish('msg-queue', { message: newMessage });
+</codeph></codeblock>
+<p>This section of the messaging.js file shows how to create a connection to the RabbitMQ cluster then subscribe to a message queue and extract the message text.</p>
+<codeblock>  <codeph>//Connect to RabbitMQ.
+var rabbitMqConnection = amqp.createConnection({ url: connectionString });
+
+...
+
+rabbitMqConnection.once('ready', function() {
+    rabbitMqConnection.queue('msg-queue', {}, function(queue) {
+      queue.subscribe(function(msg) {
+        var message = msg.message;
+</codeph></codeblock>
+<p>The <i>manifest.yml</i> file is the configuration information used by ALS to set up the environment. The <i>services</i> element listed below instructs ALS on how to bind the RabbitMQ service provided by the ALS cluster to the application.</p>
+<codeblock>  <codeph>---
+applications:
+  .:    framework:
+      name: node
+ name: rabbitmq-node
+ mem: 128M
+ services:
+     rabbitmq:
+       type: rabbitmq3
+    instances: 1
+</codeph></codeblock>
+</section>
+<section id="run-the-application"> <title>Run the Application</title>
+<ol>
+<li>Open the Helion Management Console. This is the web-based administrative interface.</li>
+<li>Click <b>Applications</b>.</li>
+<li>If the file push was successful, you should see <b>rabbitmq-node</b> in the list of available applications.</li>
+<li>The status of the application should be <b>Started</b>. Click the name of the application to launch it.</li>
+<li>In the upper right-hand corner, click <b>View App</b>.</li>
+</ol>
+</section>
+<section id="key-learnings"> <title>Key Learnings</title>
+<ul>
+<li>You will need to provide configuration information so that ALS can bind to a RabbitMQ service.</li>
+<li>You will need to retrieve connection information for RabbitMQ from the application's environment variables.</li>
+  <li>You interact with and deploy your app using the Helion CLI or the You interact with and deploy your app using the <xref href="../../helion/user/reference/client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../helion/user/console/console_index.dita" >ALS Management Console</xref>.</li>
+</ul>
+<p>
+<xref href="../../devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../database/database.node.dita" >Previous Sample</xref> | <xref href="../helloworld/helloworld.node.dita" >Next Sample</xref>
+</p>
+</section>
+</body>
+</topic>

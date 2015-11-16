@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8844">
+<title>HPE Helion 2.0 Development Platform: Management Console: User View</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>The Management Console is a web interface for Application Lifecycle Service (ALS). Using the same API as the Helion CLI client, it provides access to a subset of features for deploying, scaling, and configuring applications as well as monitoring quota usage, and viewing logs.</p>
+<p>The interface differs for Admin and non-Admin users. The features described below are available and visible to end users. For information on the Management Console view for Admins, see the <xref href="../../admin/console/console_index.dita" >Console Admin Guide</xref>.</p>
+<ul>
+<li>
+<xref type="section" href="#topic8844/welcome">Welcome Page</xref>
+</li>
+<li>
+        <xref type="section" href="#topic8844/app-list">Applications List</xref>
+      </li>
+      <li>
+        <xref type="section" href="#topic8844/application-view">Application View</xref>
+      </li>
+<li>
+        <xref type="section" href="#topic8844/organization-list">Organizations List</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic8844/organization-view">Organization View</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic8844/space-view">Spaces View</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic8844/service-instance-view">Service Instance
+              View</xref>
+          </li>
+        </ul></li>
+<li>
+<xref type="section" href="#topic8844/sample-apps">Sample Applications</xref>
+</li>
+<li>
+<xref type="section" href="#topic8844/support">Support</xref>
+</li>
+</ul>
+<section id="welcome"> <title>Welcome Page</title>
+<p>The top-level page of the Management Console displays quick links to the most commonly used resources:</p>
+<ul>
+<li>
+<b>Read the Documentation</b>: By default, this links to the documentation at <xref href="http://docs.hpcloud.com" scope="external" format="html">docs.hpcloud.com</xref>
+</li>
+<li>
+          <b>Contact Support</b>: Link to the <xref href="#topic8844/support" format="dita"
+            >Support</xref> page.</li>
+<li>
+  <b>Download the Client</b>: Link to the locally hosted <xref href="../../CLI/ALS_Client_Downloads.dita">CLI client</xref> download.</li>
+<li>
+          <b>Deploy Sample Applications</b>: Link to the <xref href="#topic8844/sample-apps"
+            format="dita">Sample Applications</xref>.</li>
+<li>
+          <b>Organizations Membership</b>: Link to the end user view of the <xref
+            href="#topic8844/welcome" format="dita">Organizations</xref> page.</li>
+<li>
+<b>Account Details</b>: Shows the account details of the current user. Also accessible from the drop down list at the top left.</li>
+</ul>
+</section>
+<section id="app-list"> <title>Applications List</title>
+<p>The Applications list is accessible from the top menu. It shows all applications deployed under the current user's Organizations.</p>
+<p>The list shows:</p>
+<ul>
+<li>the application name</li>
+<li>the Organization it belongs to</li>
+<li>the Space it was deployed to</li>
+<li>the Description field</li>
+<li>its current state (STARTED or STOPPED)</li>
+<li>its staging state (STAGED or FAILED)</li>
+<li>Application Access (whether Application SSO is enabled)</li>
+</ul>
+<p>The list can be sorted by name or state, and filtered by:</p>
+<ul>
+<li>State</li>
+<li>Staging State</li>
+<li>Application Access</li>
+<li>Restart Required</li>
+</ul>
+<p>The list includes applications deployed to all Spaces in the current user's Organizations, even those for which the user may not have access. Applications in such Spaces are visible, but no changes can be made to them.</p>
+<p>Clicking on the application name opens its Application View.</p>
+</section>
+<section id="application-view"> <title>Application View</title>
+<p>The top navigation of the Application view gives the name and status of the application followed by its organization / space.</p>
+<p>This view also includes the following <b>Tabs</b>:</p>
+<ul>
+<li>
+<b>Summary</b>: General information about the app including its description (optional), which buildpack it uses, when it was created, and when it was last modified. The application state will appear in parentheses beside the application name, and will be one of the following:
+
+<ul>
+<li>
+<b>Staging</b>: currently staging the application droplet.</li>
+<li>
+<b>Staging Failed. Check Logs</b>: staging of application droplet has failed</li>
+<li>
+<b>Online</b>: successfully staged as a droplet and application instances are running</li>
+<li>
+<b>Flapping</b>: successfully staged as a droplet and application instances are running, but 1 or more instances are flapping (see below)</li>
+<li>
+<b>Down</b>: successfully staged as a droplet and application instances have been created, but all instances are down. This state will typically not be seen as any one instance will only be down for a short period of time before starting or being removed.</li>
+<li>
+<b>Offline</b>: successfully staged the application droplet, but no application instances have been created and started.</li>
+</ul>
+</li>
+<li>
+<b>Timeline</b>: A real-time stream of events and discussions relevant to the Application. Events in the application's history appear here as notifications which can be commented on by members of the Space.</li>
+<li>
+<b>App Versions</b>: A rolling list of code and setting changes to an application. Clicking Rollback to this version for any listed version reverts the application to the selected version's state and creates a new version. </li>
+<li>
+<b>Environment Variables</b>: Environment variables that have been explicitly set in the application container (via application config, client commands, or this interface). Default variables, those set by the application framework, or those added by the system for data services are excluded from this view.</li>
+<li>
+<b>Settings</b>: The number of application instances, disk space, and memory allotment used by the application. This usage counts against the organization's quota.</li>
+<li>
+<b>Instances</b>: List of application instances showing the status and host DEA IP address of each.</li>
+</ul>
+</section>
+<section id="organization-list"> <title>Organizations List</title>
+  <p>The Organizations list is accessible from the top menu. It shows all <xref href="../../user/deploy/orgs-spaces.dita#topic2729/organizations" type="section"   >Organizations</xref> which the current user is a member of. The list is searchable by name.</p>
+<p>Clicking on any Organization name opens the Organization view.</p>
+</section>
+<section id="organization-view"> <title>Organization View</title>
+  <p>The Organizations page shows a list of all <xref href="../../user/deploy/orgs-spaces.dita#topic2729/organizations" type="section"   >Organizations</xref> that the current user is a member of. Depending on how ALS has been set up, it is possible be a member of only a single Organization.</p>
+<p>Clicking on the Organization's name opens a view of that organization, including the following tabs:</p>
+<ul>
+<li>
+<b>Spaces</b>: A list of Spaces that belong to the Organization, showing the current number of applications and services deployed to that space. Clicking on a Space in the list opens a <xref type="section" href="#topic8844/space-view">view of that Space</xref>.</li>
+<li>
+          <b>Users</b>: A list of Users who are members of the Organization, showing the Email
+          address and Organization <xref
+            href="../../user/deploy/orgs-spaces.dita#topic2729/org-roles"
+            type="section">Roles</xref> of each. <ul>
+            <li>
+              <b>Users</b>: can view organization quotas, domains, spaces and users.</li>
+            <li>
+              <b>Manager</b>: can add domains and spaces to the organization, but not users.</li>
+          </ul></li>
+<li>
+<b>Space Quota Plans</b>: A filterable list of space quota plans.</li>
+<li>
+          <b>Quota Usage</b>: <ul>
+            <li>
+              <b>Memory</b>: The amount of RAM (in GB) available to the Organization, and how much
+              of it is currently used by applications.</li>
+            <li>
+              <b>Services</b>: The number of deployed / allotted services.</li>
+          </ul></li>
+<li>
+  <b>Domains</b>: Domains belonging to the Organization that can be used by applications deployed to <xref href="../deploy/orgs-spaces.dita#topic2729/spaces" type="section"   >Spaces</xref> in the Organization. Typically, these will be a subdomain of the Application Lifecycle Service system itself. For example, an Organization called <i>acme</i> on a PaaS with the address <i>api.example.org</i> might have the domain <i>*.acme.example.org</i>.</li>
+</ul>
+<p>
+        <note> There is currently no interface in the Management Console for Managers, Auditors, or
+          Billing Managers to view or adjust billing/payment info and spending limits.</note>
+      </p>
+</section>
+<section id="space-view"> <title>Space View</title>
+<ul>
+<li>
+<b>Apps</b>: A filterable list of applications in the Space. Clicking an app name opens an administrative view of that application.</li>
+<li>
+<b>Timeline</b>: A real-time stream of events and discussions relevant to the Space. The creation, update, and deletion of apps and services appear here as notifications which can be commented on by members of the service-instance-viewSpace. Discussions can be started by any member, tagged, and assigned to an application (which makes the item visible in the Application view).</li>
+<li>
+          <b>Quota Usage</b>: <ul>
+            <li>
+              <b>Memory</b>: The amount of RAM (in GB) available to the Organization, and how much
+              of it is currently used by applications.</li>
+            <li>
+              <b>Services</b>: The number of deployed / allotted services.</li>
+            <li>
+              <b>Routes</b>: The number of created / allotted routes.</li>
+          </ul></li>
+<li>
+          <b>Services</b>: A list of services bound to applications in the Space. Clicking a service
+          name in either section opens an administrative view of that service. <ul>
+            <li>
+              <b>Managed</b>: A list of managed services bound to applications in the Space.</li>
+            <li>
+              <b>User Provided</b>: A list of user provided services bound to applications in the
+              Space. New user provided services can be created by clicking the <b>Create User
+                Provided Service</b> button.</li>
+          </ul></li>
+<li>
+<b>Managers</b>: Managers can invite/manage users, enable features for a given space.</li>
+<li>
+<b>Developers</b>: Developers can create, delete, manage applications and services, full access to all usage reports and logs.</li>
+<li>
+<b>Auditors</b>: Auditors have view-only access to all space information, settings, reports, and logs.</li>
+</ul>
+</section>
+<section id="service-instance-view"> <title>Service Instance View</title>
+<p>Clicking a service instance's name anywhere in the interface brings up a view of that service instance showing the summary.</p>
+<p>The summary of a service displays:</p>
+<ul>
+<li>a description of the service instance type</li>
+<li>when it was created</li>
+<li>when it was last modified</li>
+<li>which host it is running on</li>
+<li>which port it is exposed on</li>
+<li>the service instance name (not the canonical database name)</li>
+<li>its current state</li>
+</ul>
+  <p>For more information on a service instance, such as its credentials, use the <xref href="../reference/client-ref-services.dita#topic3675/command-service" type="section"   >helion service</xref> command.</p>
+<p>
+  <b>Credentials</b>
+</p>
+<p>Lists the credentials for the service instance. If the service is a User Provided Service, new
+        credentials can be added and existing credentials may be edited.</p>
+<p>
+  <b>App Bindings</b>
+</p>
+  <p>A list of applications that have bindings to this service instance. Clicking an app name opens an <xref href="../../admin/console/console_index.dita#topic13823/applications" type="section"   >administrative view of that application</xref>.</p>
+</section>
+<section id="sample-apps"> <title>Sample Applications</title>
+<p>The Sample Apps are collection of ready-to-run applications which can be deployed to Application Lifecycle Service by fetching the source code from the repository.</p>
+<p>Click the <b>Deploy App</b> button to start it on Application Lifecycle Service. You will be
+prompted to choose a Space and Domain for the app if there are multiple
+options available.</p>
+</section>
+<section id="support"> <title>Support</title>
+<p>A list of resources for getting support on using the Management Console.</p>
+</section>
+</body>
+</topic>

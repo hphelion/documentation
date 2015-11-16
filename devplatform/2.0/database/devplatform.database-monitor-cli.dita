@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_database_monitor_cli">
+  <title>Monitoring a database from the command line</title>
+  <body>
+    <p>Monitoring client databases from the command line is not supported in Helion Development Platform 2.0 Beta 1.</p>
+  </body>
+</topic>

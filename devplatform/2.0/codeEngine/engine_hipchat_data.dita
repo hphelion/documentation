@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ak1_yjd_3t">
+  <title>HPE Helion 2.0 Development Platform: Where to Find HipChat Notification Data</title>
+  <body>
+    <p>
+      <note>You must be the owner of the HipChat room where the notifications will appear.</note>
+    </p>
+    <section id="roomnumber"><title>The Room Number</title><ol id="ol_zjl_1kd_3t">
+        <li>In the HipChat client, enter the HipChat room where the notifications should
+          appear.</li>
+        <li>From the <b>Settings</b> dropdown, select <b>Integration</b>. (Or press CTRL-G)</li>
+        <li>Log in to the HipChat web administration interface. </li>
+        <li>Where the UI says Rooms / Name of Room click <b> Name of Room</b> to show the room's
+          details. </li>
+        <li>The API ID number is the one you want. <note type="tip">For faster future reference,
+            look at the browser's address bar. The room number also appears at the end of the URL.
+              <codeph>https://hipchat.hpcloud.net/rooms/show/###</codeph></note></li>
+      </ol></section>
+    <section id="token"><title>Create a New Token</title>
+      
+      <ol id="ol_okl_1kd_3t">
+        <li>In the HipChat client, enter the HipChat room where the notifications should
+          appear.</li>
+        <li>From the Settings dropdown, select integration. (Or press CTRL-G)</li>
+        <li>Log in to the HipChat web administration interface.</li>
+        <li>Where the UI says Rooms / Name of Room click <b> Name of Room</b> to show the room's
+          details.</li>
+        <li>In the menu on the left, click <b>Tokens</b>. </li>
+        <li>Enter a descriptive name in the <b>Label</b> field and then click <b>Create</b>.</li>
+        <li>The token will be generated. Copy and paste the entire token from HipChat into the
+            <b>Token</b> field. </li>
+      </ol></section>
+  </body>
+</topic>

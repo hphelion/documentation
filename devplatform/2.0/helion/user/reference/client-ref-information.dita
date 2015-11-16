@@ -1,0 +1,1071 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic17778">
+<title>HPE Helion 2.0 Development Platform: ALS Command Reference: Information</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic17778/command-crashes">helion crashes</xref> List recent application crashes.</li>
+<li>
+<xref type="section" href="#topic17778/command-crashlogs">helion crashlogs</xref> Display log information for the application.</li>
+<li>
+<xref type="section" href="#topic17778/command-disk">helion disk</xref> Show the disk reservation for a deployed application.</li>
+<li>
+<xref type="section" href="#topic17778/command-drain-list">helion drain list</xref>, <xref type="section" href="#topic17778/command-drains">helion drains</xref>  Show the list of drains attached to the application.</li>
+<li>
+<xref type="section" href="#topic17778/command-env">helion env</xref> List the application's environment variables.</li>
+<li>
+<xref type="section" href="#topic17778/command-events">helion events</xref> Show recorded application events for an application or space.</li>
+<li>
+<xref type="section" href="#topic17778/command-file">helion file</xref>, <xref type="section" href="#topic17778/command-files">helion files</xref> Display directory listing or file.</li>
+<li>
+<xref type="section" href="#topic17778/command-health">helion health</xref> Report the health of the specified application(s).</li>
+<li>
+<xref type="section" href="#topic17778/command-instances">helion instances</xref> List application instances for a deployed application.</li>
+<li>
+<xref type="section" href="#topic17778/command-logs">helion logs</xref> Display the application log stream.</li>
+<li>
+<xref type="section" href="#topic17778/command-mem">helion mem</xref> Show the memory reservation for a deployed application.</li>
+<li>
+<xref type="section" href="#topic17778/command-stats">helion stats</xref> Display the resource usage for a deployed application.</li>
+<li>
+<xref type="section" href="#topic17778/command-tail">helion tail</xref> Monitor file for changes and stream the changes.</li>
+</ul>
+<section id="syntax"> <title>Syntax</title>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
+<p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="command-crashes"> <title>helion crashes &lt;<i>application</i>&gt;</title>
+<p>List recent application crashes.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--manifest</entry>
+<entry>Path of the manifest file to use. If not specified, a search is performed.</entry>
+</row>
+<row>
+<entry>--organization, -o</entry>
+<entry>The organization to use. This is an ALS 3-specific option. If not specified programmatically, the user is prompted to choose an organization.</entry>
+</row>
+<row>
+<entry>--path</entry>
+<entry>Path of the directory holding the application files to push. Defaults to the current working directory.</entry>
+</row>
+<row>
+<entry>--space, -s</entry>
+<entry>The once-off space to use for the current operation, specified by name. Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by name. Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation only.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current operation only.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-crashlogs"> <title>helion crashlogs &lt;<i>application</i>&gt;</title>
+<p>Display log information for the application. An alias of 'logs'.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--filename</entry>
+<entry>Filter the log stream by origin file (glob pattern).</entry>
+</row>
+<row>
+<entry>--follow, -f</entry>
+<entry>Tail -f the log stream.</entry>
+</row>
+<row>
+<entry>--instance</entry>
+<entry> The id of the instance to filter the log stream for. </entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>  Print the raw json log stream, not human-formatted data.
+</entry>
+</row>
+<row>
+<entry> --manifest</entry>
+<entry>Path of the manifest file to use. If not specified a search is
+done. </entry>
+</row>
+<row>
+<entry>--num</entry>
+<entry>Show the last num entries of the log stream.</entry>
+</row>
+<row>
+<entry>--organization, -o</entry>
+<entry> The once-off organization to use for the current operation.</entry>
+</row>
+<row>
+<entry>    --path </entry>
+<entry>    Path of the directory holding the application files to push.
+Defaults to the current working directory.</entry>
+</row>
+<row>
+<entry>  --source </entry>
+<entry> Filter the log stream by origin stage (glob pattern).</entry>
+</row>
+<row>
+<entry>  --space </entry>
+<entry>The once-off space to use for the current operation, specified by
+name. Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid </entry>
+<entry>The once-off space to use for the current operation, specified by
+guid. Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+<entry>--tail</entry>
+<entry>Request target to stream the log.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--text</entry>
+<entry> Filter the log stream by log entry text (glob pattern).</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+<row>
+<entry>--trace</entry>
+<entry>Activate tracing of the issued REST requests and responses.This
+option is a no-op now. Tracing is always active. See the 'trace'
+command to print the saved trace to stdout.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-disk"> <title>helion disk &lt;<i>application</i>&gt;</title>
+<p>Show the disk reservation for a deployed application.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry> --manifest </entry>
+<entry>Path of the manifest file to use. If not specified a search is done.</entry>
+</row>
+<row>
+<entry> --organization, -o</entry>
+<entry> The once-off organization to use for the current operation.</entry>
+</row>
+<row>
+<entry> --path</entry>
+<entry> Path of the directory holding the application files to push.
+Defaults to the current working directory.</entry>
+</row>
+<row>
+<entry> --space</entry>
+<entry>  The once-off space to use for the current operation, specified by name. Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry> --space-guid</entry>
+<entry> The once-off space to use for the current operation, specified by guid. Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+<entry> --target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>    --token</entry>
+<entry>The once-off authentication token to use for the current operation.</entry>
+</row>
+<row>
+<entry> --token-file</entry>
+<entry>Path to an existing and readable file containing the targets and authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-drain-list"> <title>helion drain list &lt;<i>application</i>&gt;</title>
+<p>Show the list of drains attached to the application.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--json </entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+
+</row>
+<row>
+<entry> --manifest</entry>
+<entry>    Path of the manifest file to use. If not specified a search is done.</entry>
+
+</row>
+<row>
+<entry> --organization, -o</entry>
+<entry> The once-off organization to use for the current operation.</entry>
+
+</row>
+<row>
+<entry> --path</entry>
+<entry> Path of the directory holding the application files to push. Defaults to the current working directory.</entry>
+
+</row>
+<row>
+<entry> --space</entry>
+<entry> The once-off space to use for the current operation, specified by name. Cannot be used together with <varname>--space-guid</varname>.</entry>
+
+</row>
+<row>
+<entry> --space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by guid. Cannot be used together with 
+<varname>--space</varname>.</entry>
+
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+
+</row>
+<row>
+<entry> --token</entry>
+<entry> The once-off authentication token to use for the current operation.</entry>
+
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and authorization tokens.</entry>
+
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-drains"> <title>helion drains &lt;<i>application</i>&gt;</title>
+<p>Show the list of drains attached to the application.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--manifest</entry>
+<entry>Path of the manifest file to use. If not specified a search is
+done.</entry>
+</row>
+<row>
+<entry>--organization, -o</entry>
+<entry>The once-off organization to use for the current operation.</entry>
+</row>
+<row>
+<entry>--path</entry>
+<entry>Path of the directory holding the application files to push.
+Defaults to the current working directory.</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The once-off space to use for the current operation, specified by
+name.  Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by
+guid.  Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+<entry>--tail</entry>
+<entry>Request target to stream the log.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-env"> <title>helion env &lt;<i>application</i>&gt;</title>
+<p>List the application's environment variables.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--manifest</entry>
+<entry>Path of the manifest file to use. If not specified a search is
+done.</entry>
+</row>
+<row>
+<entry>--organization</entry>
+<entry>The once-off organization to use for the current operation.</entry>
+</row>
+<row>
+<entry>--path</entry>
+<entry>Path of the directory holding the application files to push.
+Defaults to the current working directory.</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The once-off space to use for the current operation, specified by
+name.  Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by
+guid.  Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-events"> <title>helion events &lt;<i>application</i>&gt;</title>
+<p>Show recorded application events for an application or space. Without an application given, the current or specified space is used, otherwise the specified application is used.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--manifest</entry>
+<entry>Path of the manifest file to use. If not specified a search is
+done.</entry>
+</row>
+<row>
+<entry>--organization, -o</entry>
+<entry>The once-off organization to use for the current operation. </entry>
+</row>
+<row>
+<entry>--path</entry>
+<entry>Path of the directory holding the application files to push.
+Defaults to the current working directory.</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The once-off space to use for the current operation, specified by
+name.  Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by
+guid.  Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+<entry>--tail</entry>
+<entry>Request target to stream the log.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-files"> <title>helion files &lt;<i>application</i>&gt; &lt;<i>path</i>&gt;</title>
+<p>Display directory listing or files. Relative paths are interpreted relative to $HELION_APP_ROOT on the target. Without apath it defaults to $HELION_APP_ROOT on the target.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--all</entry>
+    <entry>When present, access all instances for the file or directory. Cannot be used together with <varname>--instance</varname>.</entry>
+  </row>
+<row>
+<entry>--instance</entry>
+<entry>When present the instance to query. Cannot be used together with <varname>--all</varname>. Defaults to 0 (except when --all is present).</entry>
+</row>
+<row>
+<entry>--manifest</entry>
+<entry>Path of the manifest file to use. If not specified a search is
+done.</entry>
+</row>
+<row>
+<entry>--organization</entry>
+<entry>The once-off organization to use for the current operation.</entry>
+</row>
+<row>
+<entry>--path</entry>
+<entry>Path of the directory holding the application files to push.
+Defaults to the current working directory.</entry>
+</row>
+<row>
+<entry>--prefix</entry>
+<entry>Put instance information before each line of a shown file or
+directory listing. Effective only for --all.</entry>
+</row>
+<row>
+<entry>--prefix-logs</entry>
+<entry>Alias of --prefix.</entry>
+</row>
+<row>
+<entry>--prefixlogs</entry>
+<entry>Alias of --prefix.</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The once-off space to use for the current operation, specified by
+name.  Cannot be used together with
+<varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by
+guid.  Cannot be used together with
+<varname>--space</varname>.</entry>
+</row>
+<row>
+<entry>--tail</entry>
+<entry>Request target to stream the log.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+ authorization tokens.</entry>
+ </row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-file"> <title>helion file &lt;<i>application</i>&gt; &lt;<i>path</i>&gt;</title>
+<p>Display directory listing or file. Relative paths are interpreted relative to $HELION_APP_ROOT on the target. Without a path it defaults to $HELION_APP_ROOT on the target.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--all</entry>
+    <entry>When present, access all instances for the file or directory. Cannot be used together with <varname>--instance</varname>.</entry>
+  </row>
+<row>
+<entry>--instance</entry>
+<entry>When present the instance to query. Cannot be used together with <varname>--all</varname>. Defaults to 0 (except when --all is present).</entry>
+</row>
+<row>
+<entry>--manifest</entry>
+<entry>Path of the manifest file to use. If not specified a search is
+done.</entry>
+</row>
+<row>
+<entry>--organization</entry>
+<entry>The once-off organization to use for the current operation.</entry>
+</row>
+<row>
+<entry>--path</entry>
+<entry>Path of the directory holding the application files to push.
+Defaults to the current working directory.</entry>
+</row>
+<row>
+<entry>--prefix</entry>
+<entry>Put instance information before each line of a shown file or
+directory listing. Effective only for --all.</entry>
+</row>
+<row>
+<entry>--prefix-logs</entry>
+<entry>Alias of --prefix.</entry>
+</row>
+<row>
+<entry>--prefixlogs</entry>
+<entry>Alias of --prefix.</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The once-off space to use for the current operation, specified by
+name.  Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by
+guid.  Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+<entry>--tail</entry>
+<entry>Request target to stream the log.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-health"> <title>helion health &lt;<i>application</i>&gt;</title>
+<p>Report the health of the specified application(s).</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--all</entry>
+    <entry>Report on all applications in the current space. Cannot be used together with application names.</entry>
+  </row>
+<row>
+<entry>--manifest</entry>
+<entry>Path of the manifest file to use. If not specified a search is
+done.</entry>
+</row>
+<row>
+<entry>--organization</entry>
+<entry>The once-off organization to use for the current operation.</entry>
+</row>
+<row>
+<entry>--path</entry>
+<entry>Path of the directory holding the application files to push.
+Defaults to the current working directory.</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The once-off space to use for the current operation, specified by
+name.  Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by
+guid.  Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-instances"> <title>helion instances &lt;<i>application</i>&gt;</title>
+<p>List application instances for a deployed application.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--manifest</entry>
+<entry>Path of the manifest file to use. If not specified a search is
+done.</entry>
+</row>
+<row>
+<entry>--organization</entry>
+<entry>The once-off organization to use for the current operation.</entry>
+</row>
+<row>
+<entry>--path</entry>
+<entry>Path of the directory holding the application files to push.
+Defaults to the current working directory.</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The once-off space to use for the current operation, specified by
+name.  Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by
+guid.  Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-logs"> <title>helion logs &lt;<i>application</i>&gt;</title>
+<p>Display the application log stream.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--filename</entry>
+<entry>Filter the log stream by origin file (glob pattern).</entry>
+</row>
+<row>
+<entry>--follow</entry>
+<entry>Tail -f the log stream.</entry>
+</row>
+<row>
+<entry>--instance</entry>
+<entry>The id of the instance to filter the log stream for.</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print the raw json log stream, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--manifest</entry>
+<entry>Path of the manifest file to use. If not specified a search is
+done.</entry>
+</row>
+<row>
+<entry>--num</entry>
+<entry>Show the last num entries of the log stream.</entry>
+</row>
+<row>
+<entry>--organization</entry>
+<entry>The once-off organization to use for the current operation.</entry>
+</row>
+<row>
+<entry>--path</entry>
+<entry>Path of the directory holding the application files to push.
+Defaults to the current working directory.</entry>
+</row>
+<row>
+<entry>--source</entry>
+<entry>Filter the log stream by origin stage (glob pattern).</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The once-off space to use for the current operation, specified by
+name.  Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by
+guid.  Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+<entry>--tail</entry>
+<entry>Request target to stream the log.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--text</entry>
+<entry>Filter the log stream by log entry text (glob pattern). </entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-mem"> <title>helion mem &lt;<i>application</i>&gt;</title>
+<p>Show the memory reservation for a deployed application.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--manifest</entry>
+<entry>Path of the manifest file to use. If not specified a search is
+done.</entry>
+</row>
+<row>
+<entry>--organization, -o</entry>
+<entry>The once-off organization to use for the current operation.</entry>
+</row>
+<row>
+<entry>--path</entry>
+<entry>Path of the directory holding the application files to push.
+Defaults to the current working directory.</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The once-off space to use for the current operation, specified by
+name.  Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by
+guid.  Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-stats"> <title>helion stats &lt;<i>application</i>&gt;</title>
+<p>Display the resource usage for a deployed application.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--manifest</entry>
+<entry>Path of the manifest file to use. If not specified a search is
+done.</entry>
+</row>
+<row>
+<entry>--organization</entry>
+<entry>The once-off organization to use for the current operation.</entry>
+</row>
+<row>
+<entry>--path</entry>
+<entry>Path of the directory holding the application files to push.
+Defaults to the current working directory.</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The once-off space to use for the current operation, specified by
+name.  Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by
+guid.  Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-tail"> <title>helion tail &lt;<i>application</i>&gt; &lt;<i>path</i>&gt;</title>
+<p>Monitor file for changes and stream the changes.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--instance</entry>
+<entry>When present the instance to query.</entry>
+</row>
+<row>
+<entry>--manifest</entry>
+<entry>Path of the manifest file to use. If not specified a search is
+done.</entry>
+</row>
+<row>
+<entry>--organization</entry>
+<entry>The once-off organization to use for the current operation.</entry>
+</row>
+<row>
+<entry>--path</entry>
+<entry>Path of the directory holding the application files to push.
+Defaults to the current working directory.</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The once-off space to use for the current operation, specified by
+name.  Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by
+guid.  Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+<entry>--tail</entry>
+<entry>Request target to stream the log.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</body>
+</topic>

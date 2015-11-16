@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2870">
+<title>HPE Helion 2.0 Development Platform: Configuring and Deploying an Application Lifecycle Service Cluster</title>
+<body>
+<p>This document explains the process to configure and deploy an Application Lifecycle Service (ALS) cluster from the Horizon user interface.</p>
+<p>The document covers the following sections:</p>
+<ul>
+<li>
+<xref type="section" href="#topic2870/prereq">Prerequisites</xref>
+</li>
+<li>
+<xref type="section" href="#topic2870/configure">Configuring and Deploying  an ALS Cluster</xref>
+</li>
+</ul>
+<section id="prereq"> <title>Prerequisites</title>
+  <p>You need to <xref href="installation/devplatform_commercial_install.dita">install</xref> the Helion
+        Development Platform and the <xref
+          href="installation/devplatform_install_ALS.dita">Application Lifecycle
+          Service</xref>.</p>
+</section>
+<section id="configure"> <title>Configuring an ALS Cluster</title>
+<ol>
+<li> In the Horizon UI, from the <b>Project</b> tab, open the <b>Application Lifecycle Service</b>
+          tab, and select the <b>Clusters</b>
+            sub-tab.<image
+            href="../../media/ALSConfig1.png" placement="break" id="image_a4v_mzc_ks"/>
+        </li>
+<li> Click <b>Create Cluster</b> to bring up the <b>Create Cluster</b> dialog.<image
+            href="../../media/ALSConfig2.png" placement="break" id="image_csq_4zc_ks"/>
+        </li>
+<li> Fill out the required fields in the Details tab of the Create Cluster dialog, including<ul>
+            <li>
+              <b>Title</b> - name of cluster</li>
+            <li>
+              <b>Prefix</b> - DNS acceptable hostname string (not fully qualified DNS name) used to
+              name the virtual machines created for the cluster.</li>
+            <li>
+              <b>Admin Email</b>
+            </li>
+            <li>
+              <b>Admin Password</b>
+            </li>
+            <li>
+              <b>Availability Zone</b> - where the cluster will be created.</li>
+            <li>
+              <b>DEA flavor</b> - <xref
+                href="http://docs.cloudfoundry.org/concepts/architecture/execution-agent.html"
+                scope="external" format="html">Droplet Execution Agents (DEAs)</xref> are
+              responsible for running and staging applications in ALS. DEA flavors specify different
+              amounts of RAM available per DEA instance, ranging from 0.5GB to 16GB. <b>Note</b>:
+              ALS DEA Nodes must be <i>m1.medium</i> or larger. Sizes <i>m1.tiny</i> and
+                <i>m1.small</i> are too small to support the ALS Virtual Machine Image and will
+              trigger an error state.</li>
+            <li>
+              <b>DEA Instance Count</b> - the number of DEA instances to use in the cluster.</li>
+            <li>
+              <b>Key Pair</b> - required for authentication.</li>
+          </ul></li>
+<li> Click on the <b>Networking</b> tab of the Create Cluster dialog and drag an available network
+          to the <b>Selected Networks</b> area.<image href="../../media/ALSConfig3.png"
+            placement="break" id="image_hwy_pzc_ks"/>
+        </li>
+<li> Select the <b>Application Services</b> tab of the <b>Create Cluster</b> dialog. Select the
+          application services to enable in this cluster.<image href="../../media/ALSConfig4.png"
+            placement="break" id="image_htf_qzc_ks"/>
+        </li>
+<li> Select the <b>Database</b> tab of the <b>Create</b>
+          <b>Cluster</b> dialog, and choose the databases to enable in the cluster. Detailed notes
+          on how to create or connect to a MySQL database can be found <xref
+            href="database/devplatform.database-ALS.dita">here</xref>. <image
+            href="../../media/ALSConfig5.png" placement="break" id="image_dwp_rzc_ks"/>
+        </li>
+<li>Click on the <b>Proxies</b> tab of the Create Cluster dialog and enter the addresses of the
+          proxy servers for your environment (if any). Be sure to use the correct protocol prefixes
+          and specify the correct port numbers. <image href="../../media/ALSConfig5_1.png"
+            placement="break" id="image_x1w_szc_ks"/>
+        </li>
+<li> Click <b>Create</b>. You will see the cluster building as shown below.<image
+            href="../../media/ALSConfig6.png" placement="break" id="image_n3d_tzc_ks"/>
+        </li>
+<li>Once the cluster has been built, you can access it by clicking on the URL of the created
+          cluster, which can be reached in the <b>Clusters</b> view or by the <b>Cluster Details</b>
+          page. <image href="../../media/ALSConfig7.png" placement="break" id="image_hyv_tzc_ks"/>
+        </li>
+<li>The <xref href="helion/helion_index.dita">Application Lifecycle Service Documentation </xref>
+          provides an overview of how to administer and use the configured cluster.</li>
+</ol>
+</section> 
+</body>
+</topic>

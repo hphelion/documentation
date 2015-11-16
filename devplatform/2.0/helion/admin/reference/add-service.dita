@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4486">
+<title>HPE Helion 2.0 Development Platform: Adding System Services</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="System Engineer"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Application Architect"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>The Application Lifecycle Service has three <i>Service</i> definitions:</p>
+<ul>
+<li>
+<b>System Services</b>: Service <i>types</i> (e.g. MySQL, RabbitMQ, Filesystem) available for use.</li>
+<li>
+<b>Provisioned Services</b>: <i>Instances</i> of the System Services created for use by end-user applications.</li>
+<li>
+<xref href="../../user/services/user-provided.dita" >
+<b>User-Provided Service Instances</b>
+</xref>: Credentials and connection information for <i>external</i> services.</li>
+</ul>
+  <p>The <xref href="../../user/reference/client-ref-services.dita" >helion services</xref> command will show a list of all System Services available on the current target. This command will also display a list of Provisioned Services allocated to the currently authenticated user.</p>
+<p>Administrators can configure external data services to work in the same way that core System Services do, providing users and applications with access to existing software and infrastructure.</p>
+<section id="service-brokers"> <title>Service Brokers</title>
+<p>Service brokers are RESTful web services which connect Helion to services that the hosted apps can consume.</p>
+<p>The built-in system services have their own service brokers which handle the provisioning of service instances, but you can add your own service brokers to provide custom services (databases, message queues, etc.) to end users.</p>
+<p>The Cloud Foundry v2 Service Broker API provides a simplified mechanism for connecting data services to the system. A service broker is responsible for:</p>
+<ul>
+<li>implementing a REST server to interface with the Cloud Controller</li>
+<li>authenticating requests using HTTP basic auth</li>
+<li>providing an interface to the data service for all provision/unprovision &amp; bind/unbind events</li>
+<li>maintaining a catalog of available services and associated service plans</li>
+<li>maintaining a consistent record of the provisioned service instances and bindings to ensure services are persistent between broker restarts</li>
+</ul>
+</section>
+<section id="cf-services-connector-nodejs"> <title>CF Services Connector (Node.js)</title>
+<p>ActiveState has created an open-source service broker library written in Node.js called <i>cf-services-connector</i> to help you create custom service brokers.</p>
+<p>You can install the library with <i>npm install cf-services-connector</i> or include it in the <i>package.json</i> file of your service broker implementation.</p>
+</section>
+<section id="example-echo-service"> <title>Example Echo Service</title>
+<p>The <i>cf-services-connector-nodejs</i> repository provides an example service broker called <xref href="https://github.com/hpcloud/cf-services-connector-nodejs/tree/master/example/echo-service" scope="external" format="html" >
+<b>echo-service</b>
+</xref>.</p>
+<p>Review the echo-service.json file and change the <b>authUser</b>, <b>authPassword</b>, and <b>database: encryptionKey</b>  settings before deploying it.</p>
+<p>Descriptions of the settings from the <b>services</b> block in this file can be found in the following Cloud Foundry documentation:</p>
+<ul>
+<li>
+<xref href="http://docs.cloudfoundry.org/services/api.html#catalog-mgmt" type="section" scope="external" format="html" >Service Broker API: Catalog Management</xref>
+</li>
+<li>
+<xref href="http://docs.cloudfoundry.org/services/catalog-metadata.html" scope="external" format="html" >Catalog Metadata</xref>
+</li>
+</ul>
+  <p>Once the echo-service application has been deployed, an admin can add the service broker with the <xref href="../../user/reference/client-ref-brokers.dita#topic5507/command-add-service-broker" type="section" >add-service-broker</xref> command.</p>
+<codeblock>helion add-service-broker
+Enter name: echo-broker
+Enter url: http://echo-service-broker.example.com
+Enter username: admin
+Enter password: mypasswd
+Creating new service broker [echo-broker] ... OK</codeblock>
+<p>Once the service broker has been added to the system, the services it provides will become available to users:</p>
+<codeblock>helion services
+============== Service Plans ================
+
++----+-------------+-------------------------------+----------+---------+-----------+----------------------------+------+
+|    | Name        | Description                   | Provider | Version | Plan      | Details                    | Orgs |
++----+-------------+-------------------------------+----------+---------+-----------+----------------------------+------+
+| F- | echoservice | Echo Service - it echoes      |          |         | default   | This is the first plan     |      |
+| F- | echoservice | Echo Service - it echoes      |          |         | secondary | This is the secondary plan |      |
+| FP | filesystem  | Persistent filesystem service | core     | 1.0     | free      | free                       |      |
+| FP | mysql       | MySQL database service        | core     | 5.5     | free      | free                       |      |
+| FP | postgresql  | PostgreSQL database service   | core     | 9.1     | free      | free                       |      |
++----+-------------+-------------------------------+----------+---------+-----------+----------------------------+------+</codeblock>
+<p>By default, service plans are created as private (the "P" in the leftmost column above). To make the plan available to your Organization, run the following command:</p>
+<codeblock>helion update-service-plan --vendor echoservice --public default</codeblock>
+</section>
+</body>
+</topic>

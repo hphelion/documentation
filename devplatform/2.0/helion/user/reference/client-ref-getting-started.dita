@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2439">
+<title>HPE Helion 2.0 Development Platform: ALS Command Reference: Getting Started</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic2439/command-login">helion login</xref> Logs in to the current or specified target with the named user.</li>
+<li>
+<xref type="section" href="#topic2439/command-logout">helion logout</xref> Logs the current user out of the current, specified, or all targets.</li>
+<li>
+<xref type="section" href="#topic2439/command-target">helion target</xref> Set the target API endpoint for the client or report the current target.</li>
+</ul>
+<section id="syntax"> <title>Syntax</title>
+<codeblock>helion [options] command [arguments] [command-options] </codeblock>
+<p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="command-login"> <title>helion login &lt;<i>username</i>&gt;</title>
+<p>Logs the named user in to the current or specified target.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--credentials</entry>
+<entry>The credentials to use. Each use of the option declares a single element, using the form "key: value" for the argument.</entry>
+</row>
+<row>
+<entry>--group</entry>
+<entry>Deprecated. Do not use.</entry>
+</row>
+<row>
+<entry>--ignore-missing</entry>
+<entry>Disable errors generated for missing organization and/or space.</entry>
+</row>
+<row>
+<entry>--organization,  --o</entry>
+<entry>The organization to use. If not specified programmatically, the user is prompted to choose an organization.</entry>
+</row>
+<row>
+<entry>--password, --passwd</entry>
+<entry>The password to use. This is a shorthand for <varname>--credentials 'password:</varname>
+</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The space (in the organization) to use. If not specified, the user is prompted to choose among the possible spaces in either the specified organization or all organizations that the user belongs to.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation only.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current operation only.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-logout"> <title>helion logout &lt;<i>target</i>&gt;</title>
+<p>Logs the current user out of the current, specified, or all targets.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--all</entry>
+<entry>When present, log out of all targets we know. Cannot be used together with a target.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-target"> <title>helion target &lt;<i>url</i>&gt;</title>
+<p>Set the target API endpoint for the client or report the current target.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--allow-http</entry>
+<entry>Required to prevent the client from rejecting http URLs.</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--organization, -o</entry>
+<entry>The organization to set as current for this target.</entry>
+</row>
+<row>
+<entry>--space, -s</entry>
+<entry>The space to set as current for this target.</entry>
+</row>
+<row>
+<entry>--verbose</entry>
+<entry>More verbose operation.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</body>
+</topic>

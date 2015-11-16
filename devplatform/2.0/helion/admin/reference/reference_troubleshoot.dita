@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4317">
+<title>HPE Helion 2.0 Development Platform: Troubleshooting</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic4317/server-log-files">Server Log Files</xref>
+</li>
+<li>
+<xref type="section" href="#topic4317/health-manager-log">health_manager.log</xref>
+</li>
+<li>
+<xref type="section" href="#topic4317/inspecting-user-apps-as-an-admin">Inspecting User Apps as an Admin</xref>
+</li>
+<li>
+<xref type="section" href="#topic4317/system-diagnosis">System Diagnosis</xref>
+</li>
+<li>
+<xref type="section" href="#topic4317/specific-cases">Specific Error Cases</xref>
+</li>
+</ul>
+<section id="server-log-files"> <title>Server Log Files</title>
+<p>If you need to troubleshoot or monitor Application Lifecycle Service logs with a third party,
+they can be found in the \~/helion/logs/* directory on the Application Lifecycle Service
+server.</p>
+<p>These logs are under daily log rotation with the use of
+<xref href="http://manpages.ubuntu.com/manpages/utopic/en/man8/logrotate.8.html" scope="external" format="html" >logrotate</xref>.
+Up to three days worth of compressed logs are kept before deletion of
+the oldest archive.</p>
+<p>To modify the log rotation, edit the <i>/etc/logrotate.d/helion</i> file as
+needed. To disable Application Lifecycle Service log rotation, delete the file or move it to
+another folder.</p>
+</section>
+<section id="health-manager-log"> <title>health_manager.log</title>
+<p>The <codeph>health_manager</codeph> process is responsible for
+monitoring containers and making sure they are relaunched if there's a
+problem. The <i>health_manager.log</i> file contains information on all
+application instances running on the system.</p>
+<p>Sometimes you may see "CRASHED" notifications such as this:</p>
+<codeblock>[2013-04-07 22:42:01.329571] hm - pid=2701 tid=5b3b fid=5cbf  DEBUG -- healthmanager.status: {"droplet":119,"state":"CRASHED"}</codeblock>
+<p>A CRASHED status means that the app crashed within the container and the
+health_manager is no longer able to find a running process that looks
+like that app (e.g. for a Node app, the node process isn't running; for
+a Java app, there is no Java process, etc.). Most of the time this is a
+problem with the app within the container.</p>
+<p>Cross reference the droplet ID in the <i>dea.log</i> or <i>stager.log</i> files to
+find the application name, then check the logs for the application (e.g.
+'helion crashlogs'). By far the most common cause of crashing apps is
+a lack of memory, allocating more memory to an app is a good first step
+to see if this fixes the problem.</p>
+</section>
+<section id="inspecting-user-apps-as-an-admin"> <title>Inspecting User Apps as an Admin</title>
+<p>Application Lifecycle Service Admin accounts have root-like privileges. They can inspect all
+user applications and service instances running on the system.</p>
+<p>The helion group \&lt;command-users-groups-limits&gt; command can be used
+by admin accounts to inspect applications and service instances for any
+group or user. For example:</p>
+<codeblock>helion group jane.doe@example.com</codeblock>
+<p>This sets the scope of subsequent operations to the specified user. Use
+<codeph>helion group --reset</codeph> to return to the scope of
+the logged-in admin user.</p>
+</section>
+<section id="system-diagnosis"> <title>System Diagnosis</title>
+<p>There may be cases where resolving an issue requires a complete view of
+the system metrics. This functionality is provided by the
+<codeph>helion admin report</codeph> command. It generates a
+single file (by default named <i>\&lt;target&gt;-report.tgz</i>) that can be
+provided to the Application Lifecycle Service support team for analysis:</p>
+<codeblock>helion admin report</codeblock>
+<p>The file is several megabytes in size and will take a few seconds to
+generate. Send it, along with a detailed description of your problem, to
+HPE at: <xref href="mailto:als-support@hp.com" format="html" >als-support@hp.com</xref>
+</p>
+</section>
+<section id="specific-cases"> <title>Specific Error Cases</title>
+<p>
+  <b>When pushing an app, the Application Lifecycle Service Client reports OK but app isn't running</b>
+</p>
+<p>The final output from pushing an app should look like:</p>
+<codeblock>Staging Application: OK
+Starting Application: OK</codeblock>
+<p>If the app is being pushed to multiple instances, the client waits
+until at least one instance is running, and exits at that point (it
+does not wait until all instances are active). If afterwards you run
+<codeph>helion apps</codeph> and find the Health status at 0%,
+it is because the app crashed after starting successfully, not because
+the Application Lifecycle Service client reported incorrectly.</p>
+<p>
+  <b>DNS queries returning "connection refused"</b>
+</p>
+<p>This error is reported when the Application Lifecycle Service server does not have an IP
+Address. To investigate and resolve, try the following:</p>
+<ul>
+<li>
+  <p>Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service server through its <xref href="../../user/reference/glossary.dita#topic6187/term-tty-console">tty console</xref>:</p>
+
+<codeblock>arp -n</codeblock>
+</li>
+<li>
+<p>Check that the DHCP client is running:</p>
+
+<codeblock>pgrep dhclient
+grep dhclient /var/log/syslog</codeblock>
+</li>
+<li>
+<p>Connect to the DHCP server and verify that it is receiving client requests from the Application Lifecycle Service server.</p>
+</li>
+<li>
+<p>If your network is statically configured, assign an IP address on the Application Lifecycle Service server by editing the <xref href="http://manpages.ubuntu.com/manpages/utopic/en/man5/interfaces.5.html" scope="external" format="html" >interfaces</xref> file:</p>
+
+<codeblock>/etc/network/interfaces</codeblock>
+</li>
+</ul>
+</section>
+</body>
+</topic>

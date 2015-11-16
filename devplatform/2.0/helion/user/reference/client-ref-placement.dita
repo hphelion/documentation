@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4565">
+<title>HPE Helion 2.0 Development Platform: ALS Command Reference: Placement Zones</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic4565/command-placement-zone">helion placement-zone</xref>: Show the list of DEAs associated with the specified placement zone.</li>
+<li>
+<xref type="section" href="#topic4565/command-placement-zones">helion placement-zones</xref>: Show the available placement zones.</li>
+<li>
+<xref type="section" href="#topic4565/command-set-placement-zone">helion set-placement-zone</xref>: Associate the application with a specific placement zone.</li>
+<li>
+<xref type="section" href="#topic4565/command-unset-placement-zone">helion unset-placement-zone</xref>: Remove the association between an application and its current placement zone.</li>
+</ul>
+<section id="syntax"> <title>Syntax</title>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
+<p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="command-placement-zone"> <title>helion placement-zone &lt;<i>zone</i>&gt;</title>
+<p>Show the list of DEAs associated with the specified placement zone.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>le containing
+        the targets and authorization tokens.</p>
+</section>
+<section id="command-placement-zones"> <title>helion placement-zones</title>
+<p>Show the available placement zones.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-set-placement-zone"> <title>helion set-placement-zone &lt;<i>application</i>&gt; &lt;<i>zone</i>&gt;</title>
+<p>Associate the application with a specific placement zone.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--manifest</entry>
+<entry>Path of the manifest file to use. If not specified, a search is performed.</entry>
+</row>
+<row>
+    <entry>--no-tail</entry>
+    <entry>Complementary alias of --tail.</entry>
+  </row>
+<row>
+<entry>--organization, -o</entry>
+<entry>The once-off organization to use for the current operation..</entry>
+</row>
+<row>
+<entry>--path</entry>
+<entry>Path of the directory holding the application files to push. Defaults to the current working directory.</entry>
+</row>
+<row>
+<entry>--space, -s</entry>
+<entry>The once-off space to use for the current operation, specified by name. Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by GUID. Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+    <entry>--tail</entry>
+    <entry>Request target to stream the log.</entry>
+  </row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation only.</entry>
+</row>
+<row>
+    <entry>--timeout</entry>
+    <entry>The time the client waits for an application to start before giving up and returning, in seconds. Note that this is measured from the last entry seen in the log stream. While there is activity in the log the timeout is reset. The default is 2 minutes. Use the suffixes 'm', 'h', and 'd' for the convenient specification of minutes, hours, and days. The optional suffix 's' stands for seconds.</entry>
+  </row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current operation only.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-unset-placement-zone"> <title>helion unset-placement-zone  &lt;<i>application</i>&gt; &lt;<i>zone</i>&gt;</title>
+<p>Remove the association between application and its current placement zone.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--manifest</entry>
+<entry>Path of the manifest file to use. If not specified, a search is performed.</entry>
+</row>
+<row>
+    <entry>--no-tail</entry>
+    <entry>Complementary alias of --tail.</entry>
+  </row>
+<row>
+<entry>--organization, -o</entry>
+<entry>The once-off organization to use for the current operation..</entry>
+</row>
+<row>
+<entry>--path</entry>
+<entry>Path of the directory holding the application files to push. Defaults to the current working directory.</entry>
+</row>
+<row>
+<entry>--space, -s</entry>
+<entry>The once-off space to use for the current operation, specified by name. Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by GUID. Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+    <entry>--tail</entry>
+    <entry>Request target to stream the log.</entry>
+  </row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation only.</entry>
+</row>
+<row>
+    <entry>--timeout</entry>
+    <entry>The time the client waits for an application to start before giving up and returning, in seconds. Note that this is measured from the last entry seen in the log stream. While there is activity in the log the timeout is reset. The default is 2 minutes. Use the suffixes 'm', 'h', and 'd' for the convenient specification of minutes, hours, and days. The optional suffix 's' stands for seconds.</entry>
+  </row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current operation only.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</body>
+</topic>

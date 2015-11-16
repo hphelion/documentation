@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="DatabaseArchitecture ">
+<title>Database Service Architecture</title>
+<body>
+  <section id="introduction">
+    <p>The database service provides lifecycle services for MySQL, Vertica Preview, Redis, or MongoDB database instances.
+      Lifecycle services include provisioning, configuration, patching, backups, restores, and
+      monitoring that can be administered from either a CLI interface, RESTful APIs or the Horizon
+      dashboard.</p>
+    <p>The Database Service is an implementation of <xref href="https://wiki.openstack.org/wiki/Trove" format="html"
+      scope="external">OpenStack Trove</xref>, the integrated database as a service project within the OpenStack Project. The Database Service provides lifecycle management of database instances 
+      via a control plane and automates common administration tasks including replication full and incremental backups, restore, database and user management, and scaling. Users can consume the service 
+      via the REST API, CLI, or HPE Helion OpenStack console.</p>
+    <p>The Database service provides a simple and easy way to access and utilize features in a
+        database without the overhead of administration. It consists of several components including
+        an API server, message bus, task manager, conductor and guest agent. If HPE Helion OpenStack
+        is configured as a Multi-AZ (Availaility Zone), the Database Service will install across all
+        zones using intelligent orchestration and data-level clustering. This results in the
+        deployed service being resilient to single AZ failures as illustrated in the <xref
+          href="#DatabaseArchitecture/architecture_graphic" format="dita">Database Service
+          Architecture diagram</xref> below.</p>
+    <p>The Database Service is deployed as an In-Cloud service and is composed of the following components:</p>
+    <ul>
+      <li><b>Control plane</b>: a set of services deployed on 15 VMs (Virtual Machines) that are managing and running the Database Service. These services are the API, message bus, task manager, conductor, and database. </li>
+      <li><b>Customer Database Service instances</b>: These host the guest agent and the database engine (MySQL, Redis, or MongoDB) itself.  In the diagram below, there is one user with a single database on the left.  
+        On the right is an example of a MySQL master/slave configuration. Each database server consists of a VM and OpenStack Block Storage for the database files.  Users only have access to the database via the database's protocol.</li>
+    </ul>
+  </section>
+  <section id="architecture_graphic">
+    <image placement="break" href="../../../media/dbaas_architecture.png" />
+  </section>
+  <section id="components">
+    <title>Components</title>    
+    <p>The Database Service is composed of the following components:</p>
+    <table>
+      <tgroup cols="2">
+        <colspec colname="component" />
+        <colspec colname="function" />
+        <thead>
+          <row>
+            <entry colname="component">Component</entry>
+            <entry colname="function">Function</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>API</entry>
+            <entry>A REST API that provides access to common provisioning and administration tasks such as creating a database instance, resizing, adding users, managing backups, changing the instance configuration and creating replicas.  
+              The API communicates with the Task Manager and the Guest Agent. It accepts requests, converts them into messages, validates the request and then forwards them to the Task Manager or Guest Agent. The API provides a single 
+              way for users and developers to interact with individual database management systems in a consistent manner without having to be experts in a particular database technology.</entry>
+          </row>
+          <row>
+            <entry>Message Bus</entry>
+            <entry>Manages interaction between API endpoints, the Task Manager and the Guest Agent. The Message Bus is implemented using RabbitMQ.</entry>
+          </row>
+          <row>
+            <entry>Task Manager</entry>
+            <entry>Provisions instances, manages the lifecycle, performance and operations of the database instance. The Task Manager receives messages from the API server, responds with consent and begins the task. It initiates complex 
+              process flows within the system and manages them as they execute across multiple, distributed systems.</entry>
+          </row>
+          <row>
+            <entry>Guest Agent</entry>
+            <entry>Responsible for managing and performing operations on the database instance. It is a service that runs within the guest instance.  The Guest Agent brings the database online and also sends heartbeat messages to the API 
+              via the Conductor. There is a Guest Agent for each datastore (database technology) implementation that is able to perform specific operations for that datastore.</entry>
+          </row>
+          <row>
+            <entry>Conductor</entry>
+            <entry>Responsible for receiving messages from guest instances to update information on the host.</entry>
+          </row>
+          <row>
+            <entry>Database</entry>
+            <entry>Provides persistent storage for maintaining the state of the service.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+      
+    </table>
+  </section>
+  <section id="Deployment">
+    <title>Deployment</title>
+    <p>The Database Service uses HPE Helion Orchestration (OpenStack Heat) in the OverCloud to orchestrate its deployment. The default configuration sets up the service in a high-availability (HA) model across three AZs. If only a 
+      single AZ exists the service control plane will not be deployed in a HA configuration. The HPE Helion OpenStack post install steps for setting up host aggregates to create AZs are documented and should be carried out before 
+      deploying the HPE Helion Platform services.</p>
+    <p>By default, the control plane instances of the Database Service will use 15 medium flavor VMs for a 3 AZ deployment as illustrated in Figure 5. The size of the control plane and of the selected VM flavor are not configurable 
+      in this release.</p>
+    <p>Once the Database Service is running, the individual VMs in the control plane forward their logs to the Centralized Logging Service in the UnderCloud via the service network.</p>
+    <p>When a user requests a database via the Database Service API, CLI, or horizon console, they provide the amount of OpenStack Block storage required for the database and VM instance flavor to be used.</p>
+    <p>When using a MySQL database, users can easily create MySQL slave databases of an existing MySQL database by selecting the ‘Use replica’ option when creating a new database.  The Database Service will configure this new database 
+      to start receiving replication data from the MySQL master specified.</p>
+    <p>Once a new database becomes active users connect to it via the MySQL command line client, MySQL tools, or MySQL libraries used by applications.  Users can also assign a floating IP address to the database and update the security 
+      group to allow for connection from outside the external-network.</p>
+  </section>
+  <section id="Data_Durability">
+    <title>Data Durability</title>
+    <p>The Database service ensures database content is protected through its integration with the HPE Helion OpenStack Block Storage. HPE Helion Openstack offers two cinder block storage plugins choices that provide Highly Available 
+      RAID protected Storage volumes for use by the user databases</p>
+    <ul>
+      <li>HPE 3PAR storage arrays</li>
+      <li>StoreVirtual VSA software running on ProLiant servers that creates a virtual array using the ProLiant server internal disks.</li>
+    </ul>
+    <p>For more information on HPE Helion OpenStack Cinder block storage and on capacity estimation
+        guidelines, see <xref
+          href="http://docs.hpcloud.com/#commercial/GA1/1.1commercial.-vsa-overview.html"
+          format="html" scope="external">Cinder Block Storage Using HPE StoreVirtual VSA</xref>.</p>
+  </section>
+</body>
+</topic>

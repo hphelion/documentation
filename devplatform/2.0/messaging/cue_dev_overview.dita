@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_mbc_yyd_lt">
+  <title>HPE Helion 2.0 Development Platform: Messaging</title>
+  <body>
+    <p>Developers may provision message broker clusters using the Cue API, a command-line tool, or
+      from the Horizon console. Alternatively, application developers may leverage messaging
+      resources for their applications.  </p>
+    <ul id="ul_vxf_kzd_lt">
+            <li>Installation cue (ops via the command line installer)</li>
+            <li>installing the cue client (dev)</li>
+      <li>Create a Cluster using Horizon</li>
+      <li><xref href="cue_dev_createCluster.dita#cue_createCluster">Create a Cluster from the
+          Command Line</xref></li>
+      <li><xref href="cue_ops_manageCluster.dita#cue_manageCluster">Manage a Cluster from the
+          Command Line</xref></li>
+      <li>Write an App for RabbitMQ<!-- <- using with ALS original topic and connecting--></li>
+      <li>Best Practices for RabbitMQ <!--<- user defined services etc see Arun--></li>
+      <li><xref href="http://cue.readthedocs.org/en/latest/rest.html" format="html" scope="external"
+                    >REST API Docs</xref>
+                <!--<- lift and shift these, they need to be static.--></li>
+            <li>Troubleshooting (assuming we have any content to put here before release)</li>
+    </ul>
+    <section>
+      <title>Overview Sample</title>
+      <p>The following sample is a simple example of how to instantiate and perform basic tasks using the bindings.</p>
+      <codeblock outputclass="language-python">#!/usr/bin/env python
+
+from keystoneclient.auth.identity import v3 as keystone_v3_auth
+from keystoneclient import session as keystone_session
+from cueclient.v1 import client
+
+auth = keystone_v3_auth.Password(
+        auth_url="http://example.com:5000/v3",
+        username="admin",
+        password="password",
+        project_name="admin",
+        project_domain_name="default",
+        user_domain_name="default"
+)
+
+session = keystone_session.Session(auth=auth)
+
+# Create an instance of the client
+cue_client = client.Client(session=session)
+
+# Cluster List - returns list of cluster objects
+list_response = cue_client.clusters.list()
+
+# Iterate the list, printing some useful information
+for cluster in list_response:
+
+    print "Cluster ID: %s \t Name: %s \t NetworkId: %s \t Flavor: %s \t Size: %s" % \
+           (cluster.id, cluster.name, cluster.network_id, cluster.flavor, cluster.size)</codeblock>
+      <p>And the output this program might produce:</p>
+      <codeblock outputclass="language-python">$ python /example.py
+Cluster ID: 213cdd06-c361-4cca-93b5-7ed651d46936       Name: test_binding2     NetworkId: 33333        Flavor: 1       Size: 2
+Cluster ID: 24f299fd-0509-4218-bf80-6c0481452480       Name: test_binding4     NetworkId: 44444        Flavor: 1       Size: 2      </codeblock>
+      
+    </section>
+  </body>
+</topic>

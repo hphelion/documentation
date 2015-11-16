@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="createPostDeploy">
+  <title>HPE Helion 2.0 Development Platform: Create Post-Deployment Actions</title>
+  <body>
+    <p>Post-deployment actions take place automatically right after an application is deployed.</p>
+    <note>Currently, only StormRunner integration is supported.</note>
+    <p  id="createpd"> 
+    <ol><li>Click the <b>Projects</b> tab.</li>
+      <li>Find the target project in the list and click <b>View Details</b>.</li>
+      <li>Scroll down to the <b>Post Deploy Actions</b> section and click <b>New Action</b>.</li>
+        <li>Select the desired Post Deployment Action. <note>At this time, only StormRunner actions
+            are supported.</note><image placement="break"
+            href="../../../media/engine_create_postDeploy.png" id="image_prw_55m_lt"/></li>
+      <li>Specify the information required for the action. <ul>
+            <li>For StormRunner load testing:<ul id="ul_k5w_ctt_st">
+                <li>Create a new StormRunner Account.</li>
+                <li>Note your <b>Username</b>, <b>Password</b> and <b>Tenant ID</b>.</li>
+                <li>Create a test and note the <b>Test Number</b>.</li>
+                <li>Provide an <b>Action Name</b> to identify what this test does.</li>
+              </ul></li>
+          </ul></li>
+      <li>Click <b>Save</b>.</li>
+    </ol></p>
+  </body>
+</topic>

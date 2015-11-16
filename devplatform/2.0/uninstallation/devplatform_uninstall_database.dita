@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="concept_vrb_bgj_rs">
+ <title>Uninstall the Database Service</title>
+ <shortdesc>Process for uninstalling the Database Service from the HPE Helion Development Platform.</shortdesc>
+ <body>
+  <section id="uninstall-database">     <note type="restriction">These services cannot be uninstalled from the Horizon console.</note><note type="notice">The uninstall instructions listed here do not delete existing database
+   instances. Perform all backups as necessary and then delete your existing database instances
+   as applicable. </note>
+   <ol>
+    <li> Log in to the Helion seed node.</li>
+    <li> Set environment
+     variables.<codeblock>export TE_DATAFILE=/root/tripleo/ce_env.json
+export TRIPLEO_ROOT=/root/tripleo
+PATH=$PATH:$TRIPLEO_ROOT/tripleo-incubator/scripts/</codeblock></li>
+    <li> Source the overcloud administrator
+     credentials.<codeblock>source $TRIPLEO_ROOT/tripleo-incubator/overcloudrc</codeblock></li>
+    <li> Remove the service from
+     Keystone.<codeblock>SERVICE_SHORT_NAME="database"
+SERVICE_ID=$(keystone service-list | grep $SERVICE_SHORT_NAME | cut -d" " -f2)
+keystone service-delete $SERVICE_ID</codeblock></li>
+    <li> Find the ID's for the database images. The images will have the following names:
+     <codeph>dbaas-api_x.x.x.x</codeph>, <codeph>dbaas-conductor_x.x.x.x</codeph>,
+     <codeph>dbaas-database_x.x.x.x</codeph>, <codeph>dbaas-guest_x.x.x.x</codeph>,
+     <codeph>dbaas-messaging_x.x.x.x</codeph>, <codeph>dbaas-taskmanager_x.x.x.x</codeph>
+     <codeblock>glance image-list</codeblock></li>
+    <li> Remove the images from Glance.<codeblock>glance image-delete &lt;IMAGE_ID&gt;</codeblock></li>
+    <li> Remove the Heat templates from
+     Swift.<codeblock>swift delete DBaaS-heat-templates</codeblock></li>
+    <li> Find the DBaaS CSU images in the Sherpa
+     cache.<codeblock>swift list sherpa-cache</codeblock></li>
+    <li> Delete the items from the
+     cache.<codeblock>swift delete sherpa-cache &lt;ITEM&gt;</codeblock></li>
+    <li> Delete the Database as a Service (Trove) control
+     plane:<codeblock>heat stack-delete trove</codeblock></li>
+   </ol>
+  </section>
+ </body>
+</topic>

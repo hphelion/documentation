@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3247">
+<title>HPE Helion 2.0 Development Platform: ALS Command Reference: Control</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic3247/command-migrate">helion migrate</xref>: Move the application to a different space.</li>
+<li>
+<xref type="section" href="#topic3247/command-restage">helion restage</xref>: Restage an application and regenerate its droplet.</li>
+</ul>
+<section id="syntax"> <title>Syntax</title>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
+<p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
+</section>
+<section id="command-migrate"> <title>helion migrate &lt;<i>application</i>&gt; &lt;<i>destination</i>&gt;</title>
+<p>Move the application to a different space.</p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="2.92*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--destination-organization, --dest-org, -D</entry>
+              <entry>The organization of the destination space, if not the current org.</entry>
+            </row>
+            <row>
+              <entry>--manifest</entry>
+              <entry>Path of the manifest file to use. If not specified, a search is
+                performed.</entry>
+            </row>
+            <row>
+              <entry>--organization, -o</entry>
+              <entry>The organization to use. If not specified programmatically, the user is
+                prompted to choose an organization.</entry>
+            </row>
+            <row>
+              <entry>--path</entry>
+              <entry>Path of the directory or file holding the application files to push. Defaults
+                to the current working directory.</entry>
+            </row>
+            <row>
+              <entry>--space, -s</entry>
+              <entry>The once-off space to use for the current operation, specified by name. Cannot
+                be used together with <varname>--space-guid</varname>.</entry>
+            </row>
+            <row>
+              <entry>--space-guid</entry>
+              <entry>The once-off space to use for the current operation, specified by GUID. Cannot
+                be used together with <varname>--space</varname>.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation only.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation
+                only.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+</section>
+<section id="command-restage"> <title>helion restage &lt;<i>application</i>&gt;</title>
+<p>Restages an application and regenerates its droplet. </p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="5.45*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--manifest</entry>
+              <entry>Path of the manifest file to use. If not specified, a search is
+                performed.</entry>
+            </row>
+            <row>
+              <entry>--no-tail</entry>
+              <entry>Request the target to stop streaming the log.</entry>
+            </row>
+            <row>
+              <entry>--organization, -o</entry>
+              <entry>The organization to use. If not specified programmatically, the user is
+                prompted to choose an organization.</entry>
+            </row>
+            <row>
+              <entry>--path</entry>
+              <entry>Path of the directory or file holding the application files to push. Defaults
+                to the current working directory.</entry>
+            </row>
+            <row>
+              <entry>--space, -s</entry>
+              <entry>The once-off space to use for the current operation, specified by name. Cannot
+                be used together with <varname>--space-guid</varname>.</entry>
+            </row>
+            <row>
+              <entry>--space-guid</entry>
+              <entry>The once-off space to use for the current operation, specified by GUID. Cannot
+                be used together with <varname>--space</varname>.</entry>
+            </row>
+            <row>
+              <entry>--tail</entry>
+              <entry>Request the target to start streaming the log.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+</section>
+</body>
+</topic>

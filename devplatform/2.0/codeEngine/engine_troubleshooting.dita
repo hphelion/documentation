@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_lt4_cvc_dt">
+  <title>HPE Helion 2.0 Development Platform: Troubleshooting</title>
+  <body>
+    <p>Troubleshooting information for installation, configuration, administration, and use.</p>
+    
+    <section><title>Environments</title>
+    <dl>
+      <dlentry>
+        <dt>Desired Organization doesn't appear in the list.</dt>
+        <dd>Organization doesn't exist. <xref
+          href="../helion/user/reference/client-ref-organizations.dita#topic6634/command-create-org"
+          >Create it</xref>.</dd>
+      </dlentry>
+      <dlentry>
+        <dt>Desired Space doesn't appear in the list.</dt>
+        <dd>Space doesn't exist. <xref
+              href="../helion/user/reference/client-ref-spaces.dita#topic9898/command-create-space"
+              >Create it</xref>.</dd>
+      </dlentry>
+    </dl></section>
+    <section><title>Projects</title>
+      <dl>
+        <dlentry>
+          <dt>Desired Project doesn't appear in the list.</dt>
+          <dd>You may not be a User on this project. Have someone <xref
+              href="engine_project_invite.dita">add you to the
+              project</xref>.</dd>
+        </dlentry>
+      </dl></section>
+    <!--<section><title>Builds</title></section><section><title>Installation</title></section><section><title>Configuration</title></section>-->
+  </body>
+</topic>

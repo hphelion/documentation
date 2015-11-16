@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_gxm_4xw_yt">
+  <title> HPE Helion 2.0 Development Platform: Install the Database Service without SSL</title>
+  <body>
+    <p>The installer requires a filename for the ephemeral ca cert file. When public SSL is not
+      enabled, this file does not exist. </p>
+    <p>The workaround is to create and pass a placeholder file and then modify the endpoint URLs
+      after installation completes. </p>
+    
+   <ol>
+      <li>Before installation, create an empty file on the deployer. This will serve as a
+        placeholder during installation.<codeblock>touch /tmp/empty-file</codeblock></li> 
+    
+    <li>Open the <codeph>~/.config/openstack/clouds.yaml</codeph> file for editing.</li>
+      <li>In the <codeph>database</codeph> section, set the value of <b>ephemeral_ca_cert</b> to the
+        empty file you just created.<codeblock>ephemeral_ca_cert: /tmp/empty-file </codeblock></li>
+      <li>Complete the installation.</li>
+      <li>After installation has completed, manually modify the endpoint URLs. <ol> 
+      <li>SSH into the deployer.</li>
+      <li>List the database
+            endpoints.<codeblock>user@host:~$ openstack endpoint list | grep database</codeblock>The
+            output will look similar to the
+            following.<codeblock>6962276204934327a09501c0e44fca08	region1	database	database	True	internal	https://10.241.127.69:8779/v1.0/$(tenant_id)s
+a042121327374301b5106bec388e6146	region1	database	database	True	admin	https://10.241.127.69:8779/v1.0/$(tenant_id)s
+c02dbcc653824bd4baa7ac2bfe1d4fab	region1	database	database	True	public	https://10.241.127.69:8779/v1.0/$(tenant_id)s</codeblock></li>
+<li> Change each endpoint URL from <codeph>https</codeph> to <codeph>http</codeph>. This is the only
+            change you need to
+            make.<codeblock>user@host:~$ openstack endpoint set --url 'http://10.241.127.69:8779/v1.0/$(tenant_id)s' 6962276204934327a09501c0e44fca08
+user@host:~$ openstack endpoint set --url 'http://10.241.127.69:8779/v1.0/$(tenant_id)s' a042121327374301b5106bec388e6146
+user@host:~$ openstack endpoint set --url 'http://10.241.127.69:8779/v1.0/$(tenant_id)s' c02dbcc653824bd4baa7ac2bfe1d4fab</codeblock></li>
+      <li>List the database endpoints again for
+            verification:<codeblock>user@host:~$ openstack endpoint list | grep database</codeblock>The
+            output will look similar to the following. Verify that all URLs now begin with
+              <codeph>http</codeph>. If not, change them using the instructions provided
+            above.<codeblock>6962276204934327a09501c0e44fca08	region1	database	database	True	internal	http://10.241.127.69:8779/v1.0/s
+a042121327374301b5106bec388e6146	region1	database	database	True	admin	http://10.241.127.69:8779/v1.0/s
+c02dbcc653824bd4baa7ac2bfe1d4fab	region1	database	database	True	public	http://10.241.127.69:8779/v1.0/s</codeblock></li></ol>
+      </li>
+    </ol>
+    
+    
+  </body>
+</topic>
