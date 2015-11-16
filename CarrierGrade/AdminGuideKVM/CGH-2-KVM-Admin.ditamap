@@ -17,15 +17,6 @@
             <edition>Patch 0003</edition>
         </bookid -->
     </bookmeta>
-    <frontmatter>
-        <preface href="psa1420762251633.xml" locktitle="yes" toc="no">
-            <topicmeta>
-                <navtitle>Preface (TiS Admin)</navtitle>
-            </topicmeta>
-        </preface>
-        <booklists>
-            <toc/>
-        </booklists></frontmatter>
     <chapter href="jow1404333560080.xml">
         <topicmeta>
             <navtitle>HP Helion OpenStack Carrier Grade Overview</navtitle>

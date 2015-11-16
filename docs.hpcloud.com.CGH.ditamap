@@ -104,7 +104,7 @@
         <mapref href="CarrierGrade/AdminGuideKVM/CGH-2-KVM-Admin.ditamap"/>
       </topichead>
       <topicref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.dita"
-        navtitle="KVM Region Administrator Guide (PDF)" locktitle="yes"/>
+        navtitle="KVM Region Administrator Guide" locktitle="yes"/>
       <!--<topicref href="CarrierGrade/AdminGuideKVM/CGH-2-KVM-Admin.ditamap"
         navtitle="KVM Region Administrator Guide (On-Line)" locktitle="yes" format="ditamap"/>-->
       <topicref href="CarrierGrade/AdminGuide/Logging/CHG-2-logging-overview.dita"
