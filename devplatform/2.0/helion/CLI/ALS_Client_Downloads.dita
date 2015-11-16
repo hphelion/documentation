@@ -6,8 +6,7 @@
 <body>
 <section id="hp-helion-application-lifecycle-service-als-client"> <title>HPE Helion Application Lifecycle Service (ALS) Client</title>
 <p>Click the download link that is appropriate for your operating system.</p>
-  <note>For Beta 1, the 1.3 versions of these clients are the most current.</note>
-  <ul> 
+    <ul> 
     <li> 
       <xref href="http://clients.als.hpcloud.com/helion-1.3.0-win32-ix86.zip" scope="external" format="html"><tm tmtype="reg">Windows</tm></xref> 
       </li> 
@@ -26,13 +25,13 @@
         both Keystone v2 and v3.</p>
 <ul>
 <li>
-  <xref href="http://bit.ly/1Lmc07E" scope="external" format="html">Windows</xref>
+  <xref href="http://clients.als.hpcloud.com/cf-mgmt-2.0.0-windows-x86_64.zip" scope="external" format="html">Windows</xref>
 </li>
 <li>
-  <xref href="http://bit.ly/1jinM81" scope="external" format="html">Linux x64</xref>
+  <xref href="https://clients.als.hpcloud.com/cf-mgmt-2.0.0-linux-x86_64.zip" scope="external" format="html">Linux x64</xref>
 </li>
 <li>
-  <xref href="http://bit.ly/1VJs6cY" scope="external" format="html">Mac OS X</xref> </li>
+  <xref href="http://clients.als.hpcloud.com/cf-mgmt-2.0.0-osx-x86_64.zip" scope="external" format="html">Mac OS X</xref> </li>
 </ul>
 <p>For more information, see the full ALS Cluster Management Tool <xref href="ALS_Client_Reference.dita" >command reference</xref>.</p>
 <p>Click to download a sample configuration file for use with the <i>cf-mgmt</i> tool.</p>
