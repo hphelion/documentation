@@ -16,7 +16,7 @@
         <li>Amend servers.yml in the cloud configuration to remove entry for this node, commit the
           change and re run the config processor </li>
         <li>Remove the node from cobbler</li>
-
+<li>Remove the node from monitoring</li>
       </ol>
     </section>
 
